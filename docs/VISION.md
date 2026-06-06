@@ -84,22 +84,21 @@ Fastest path to a working prototype: use **Hyperagent as the orchestrator now**,
 
 **Documents:** one analysis document per book at `analysis/<book-slug>.md`, organized by **category, not by chapter**. Entries are **unnumbered bullets, each a single self-contained statement** (may be long) so any point can be deleted without renumbering. **No provenance / observation tags.** Strong, well-written sentences are **copied verbatim** in quotation marks. (Copyright is explicitly out of scope for this phase.)
 
-**Processing model: sequential within each book, all three books in parallel.**
-- Within a book: chapter by chapter in order, carrying the accumulating document + a "Method Arc" running summary forward.
-- Across books: run the three in parallel (independent documents) to speed the process up.
-- Chunk on chapter boundaries; books are short (≤ 100 pages).
-- *Rejected:* single whole-book pass (shallow, "lost in the middle"); parallelizing chapters *within* a book (write conflicts + fragments the cumulative method/arc). Parallelism happens *across* books, where the documents are independent.
+**Processing model (round 2): chunked, fresh-context.** For each book, 2 Opus agents run in sequence (first half, then a *fresh* second-half agent); each reads ONE ~10-page window at a time, writes to the doc, then reads the next; a single agent covers at most half a book. The three books run in parallel. Each doc opens with a ranked **Core Signal** block, then category sections (most-important-first), plus a verbatim **Memorable Lines & Quotations** section. No **Cautions** section. Inclusion test: *would this help create a new belief-changing book?* (the master plan AND the prose), so powerful verbatim quotes are kept.
+- *Round 1 (superseded):* one agent read each whole book in a single pass — produced flat, unprioritized output. Replaced by the chunked approach above.
 
-**Inputs:** PDFs uploaded to `books/` (see `books/README.md`).
+**Inputs:** PDFs in `books/` (see `books/README.md`); intermediate cleaned text + 10-page window files are regenerated locally from the PDFs (not committed).
 
-**Prompt:** `prompts/book-analysis-agent.md` (Opus-hardened; copyright- and tag-free per latest direction).
+**Prompt:** `prompts/book-analysis-agent.md` (v4 — chunked fresh-context; no Cautions; broadened inclusion test; tag-free, unnumbered single-statement bullets).
 
-**Status — first pass COMPLETE (3 books analyzed):**
-- `analysis/easyway-caffeine.md` — Allen Carr, *The Easy Way to Quit Caffeine* (44 sections)
-- `analysis/freedom-model.md` — *The Freedom Model for Addictions* (abridged), Slate/Scheeren/Dunbar (18 units)
-- `analysis/burgeon.md` — *Burgeon* (uncredited; quit-PMO/porn book, neuroregen.org) (10 chapters)
+**Status — round 2 COMPLETE & committed (`abba9de`):**
+- `analysis/easyway-caffeine.md` — Allen Carr, *The Easy Way to Quit Caffeine*
+- `analysis/freedom-model.md` — *The Freedom Model for Addictions* (abridged), Slate/Scheeren/Dunbar
+- `analysis/burgeon.md` — *Burgeon* (uncredited; quit-PMO/porn book, neuroregen.org)
 
-Cross-book finding: all three run the same core Easyway engine — dismantle the perceived benefit so quitting feels like escape not sacrifice; freedom is immediate (no day-counting); the "pleasure" is only relief of self-created withdrawal. Next: human curation of each doc, then distill a shared method guide + style guide.
+Cross-book finding: all three run the same core Easyway engine — dismantle the perceived benefit so quitting feels like escape not sacrifice; freedom is immediate (no day-counting); the "pleasure" is only relief of self-created withdrawal.
+
+**⚠ OPEN DECISION (resume here):** Round-2 prioritization is good (Core Signal at top), but the close 10-page reading made the docs ~2–3× LONGER, not shorter (caffeine ~13.4k w, freedom ~10k w, burgeon ~13.7k w). Pending choice: run a **condensation pass** (1 Opus/doc) to ~5–6k w (or ~3k w for max density) — keeping Core Signal + best quotes + load-bearing techniques — vs. keep the long version as a deep reference. Round-1 and round-2 full versions are both preserved in git history.
 
 ---
 
