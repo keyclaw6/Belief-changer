@@ -80,20 +80,21 @@ Fastest path to a working prototype: use **Hyperagent as the orchestrator now**,
 
 ## Book Analysis — Approach (MVP Step 1)
 
-**Goal:** Sub-agents analyze foundational books (Easyway, The Freedom Model, + a third TBD) and produce *editable* structured documents capturing the transferable mechanism — philosophy, method, approach, belief-change tactics, emotional framing — for the user to curate (keep / cut / add). Priority: philosophy, method, and framing over surface style.
+**Goal:** Sub-agents analyze the foundational books (Easyway, The Freedom Model, + a third TBD) and produce one *editable* analysis document **per book** capturing the transferable mechanism — philosophy, method, approach, belief-change tactics, emotional framing — plus a catalog of analogies and verbatim memorable lines. The human curates each document (delete any point, add their own). Priority: philosophy, method, and framing over surface style.
 
-**Chunking decision (recommended): sequential, one chapter per pass + a final synthesis pass.**
-- One chapter per pass (combine adjacent *short* chapters toward ~4–8k words); always chunk on chapter boundaries, never arbitrary token windows.
-- Each pass reads its chunk **plus a compact running state** (the section list + a short "method-so-far" synopsis), NOT the whole growing document — deep attention without the bloat that drives repetition.
-- Appends to a shared structured document under fixed sections; never overwrites prior entries (the user curates).
-- A final **synthesis / reduce pass** over the full document recovers the cross-cutting method *arc* and de-duplicates.
-- *Rejected:* single whole-book pass (shallow + "lost in the middle"); pure parallel-per-chapter (write conflicts on the shared doc, and it fragments the cumulative method/arc — speed is its only real win, and we optimize for quality on a handful of foundational books).
+**Documents:** one analysis document per book at `analysis/<book-slug>.md`, organized by **category, not by chapter**. Entries are **unnumbered bullets, each a single self-contained statement** (may be long) so any point can be deleted without renumbering. **No provenance / observation tags.** Strong, well-written sentences are **copied verbatim** in quotation marks. (Copyright is explicitly out of scope for this phase.)
 
-**Section taxonomy** (the analysis doc's fixed sections): Core Philosophy / Worldview · The Method · Approach & Structure · Belief-Change Tactics · Emotional-Impact & Framing · Voice & Style (lower priority) · Signature Analogies & Metaphors · Transferable Principles · Cautions / Non-Transferable · Arc Notes.
+**Processing model: sequential within each book, all three books in parallel.**
+- Within a book: chapter by chapter in order, carrying the accumulating document + a "Method Arc" running summary forward.
+- Across books: run the three in parallel (independent documents) to speed the process up.
+- Chunk on chapter boundaries; books are short (≤ 100 pages).
+- *Rejected:* single whole-book pass (shallow, "lost in the middle"); parallelizing chapters *within* a book (write conflicts + fragments the cumulative method/arc). Parallelism happens *across* books, where the documents are independent.
 
-**Prompt:** `prompts/book-analysis-agent.md` (hardened via an Opus sub-agent review).
+**Inputs:** PDFs uploaded to `books/` (see `books/README.md`).
 
-**To actually run, still needed:** the book texts (PDF / ePub / txt) uploaded, and the third book's title.
+**Prompt:** `prompts/book-analysis-agent.md` (Opus-hardened; copyright- and tag-free per latest direction).
+
+**Still needed to run:** the three PDFs uploaded, and the third book's title.
 
 ---
 
@@ -143,7 +144,7 @@ A **free, open-source, nonprofit platform** hosting a growing library of belief-
 - **Method ≠ style.** Easyway's power is its psychological *method* (remove the illusion of benefit so there's no feeling of sacrifice), not just its prose. Encode the method explicitly, separately from voice.
 - **Non-shaming framing.** The method works precisely because it is *not* willpower- or shame-based. Generated books must avoid moralizing; reframe so the reader feels they're escaping a trap, not being lectured. Shame-based self-help tends to backfire.
 - **Topic sensitivity.** Some targets (porn/masturbation, gaming) touch mental health; claims and framing need care, and the **goal should be explicit per book** (abstinence vs. moderation). Note: Easyway and The Freedom Model differ philosophically here (Freedom Model rejects the disease/abstinence-only model) — decide the stance per topic.
-- **Copyright** (see Q2 reasoning).
+- **Copyright** — deferred. Out of scope for the analysis/MVP phase; revisit only before public distribution of generated books.
 - **Evaluation.** "Reviewer accepts" needs explicit criteria — a rubric for what makes a chapter good (method fidelity, voice consistency, no repetition, does the argument land?). Buildable as a Hyperagent rubric and reused by the reviewer agent.
 
 ---
