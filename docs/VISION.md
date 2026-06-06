@@ -94,7 +94,12 @@ Fastest path to a working prototype: use **Hyperagent as the orchestrator now**,
 
 **Prompt:** `prompts/book-analysis-agent.md` (Opus-hardened; copyright- and tag-free per latest direction).
 
-**Still needed to run:** the three PDFs uploaded, and the third book's title.
+**Status — first pass COMPLETE (3 books analyzed):**
+- `analysis/easyway-caffeine.md` — Allen Carr, *The Easy Way to Quit Caffeine* (44 sections)
+- `analysis/freedom-model.md` — *The Freedom Model for Addictions* (abridged), Slate/Scheeren/Dunbar (18 units)
+- `analysis/burgeon.md` — *Burgeon* (uncredited; quit-PMO/porn book, neuroregen.org) (10 chapters)
+
+Cross-book finding: all three run the same core Easyway engine — dismantle the perceived benefit so quitting feels like escape not sacrifice; freedom is immediate (no day-counting); the "pleasure" is only relief of self-created withdrawal. Next: human curation of each doc, then distill a shared method guide + style guide.
 
 ---
 
