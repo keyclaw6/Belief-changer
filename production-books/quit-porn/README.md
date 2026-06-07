@@ -1,17 +1,17 @@
 # Quit Porn — working title
 
 **Target behavior:** Porn & compulsive masturbation (PMO)
-**Status:** researching  (brief → **researching** → framing → planning → drafting ch.N → done)
+**Status:** framing  (brief → researching → **framing** → planning → drafting ch.N → done)
 **Created:** 2026-06-07
 
 A self-contained working folder for the quit-porn Belief-Changer book. It fills up **in order**: brief → research → framing → master plan (+ Opus review) → chapters.
 
 ## Artifacts (check off as created)
-- [ ] `00-brief.md` — topic, reader, goal, fork decisions
-- [ ] `research/research-log.md` — chronological log of every search
-- [ ] `research/sources/` — raw source dumps (any format), one file per source
-- [ ] `research/lived-experience.md` — synthesized from `sources/`: why they do it, why they can't stop, shame, testimonials
-- [ ] `research/scientific-evidence.md` — synthesized from `sources/`: studies & mechanisms (supported vs contested)
+- [x] `00-brief.md` — topic, reader, goal, fork decisions (partially filled; forks TBD in framing)
+- [x] `research/research-log.md` — 8 sub-questions decomposed; Exa gap-fill logged
+- [x] `research/sources/` — 9 source files: Grok deep-dump + EasyPeasy + Burgeon + 6 Exa gap-fills
+- [x] `research/lived-experience.md` — synthesized: 66 bullets + 7 block quotes across 6 themes
+- [x] `research/scientific-evidence.md` — synthesized: 63 bullets; 32 CONTESTED tags; Grubbs MI model faithfully represented
 - [ ] `framing.md` — book-specific adaptation (style guide §4 forks + §10 playbook)
 - [ ] `master-plan.md` — chapter-by-chapter blueprint
 - [ ] `master-plan-review.md` — Opus reviewer critique + resolution (required)
