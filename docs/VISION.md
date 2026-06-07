@@ -98,7 +98,13 @@ Fastest path to a working prototype: use **Hyperagent as the orchestrator now**,
 
 Cross-book finding: all three run the same core Easyway engine — dismantle the perceived benefit so quitting feels like escape not sacrifice; freedom is immediate (no day-counting); the "pleasure" is only relief of self-created withdrawal.
 
-**⚠ OPEN DECISION (resume here):** Round-2 prioritization is good (Core Signal at top), but the close 10-page reading made the docs ~2–3× LONGER, not shorter (caffeine ~13.4k w, freedom ~10k w, burgeon ~13.7k w). Pending choice: run a **condensation pass** (1 Opus/doc) to ~5–6k w (or ~3k w for max density) — keeping Core Signal + best quotes + load-bearing techniques — vs. keep the long version as a deep reference. Round-1 and round-2 full versions are both preserved in git history.
+**DECISION (resolved): keep the detailed round-2 reports as-is** — they are our deep reference instructions for each book; no condensation.
+
+**Repo reorg:** reference PDFs are grouped with their analyses under `analysis/reference-books/`; the root `books/` folder is retired in favor of `production-books/` (for books the pipeline generates). *(The binary PDFs must be dragged into `analysis/reference-books/` via the GitHub UI — the agent cannot commit binaries through its API.)*
+
+**Style guide created — `prompts/style-guide.md`:** the canonical writing prompt, distilled by an Opus sub-agent from all three reports. Contents: each book's philosophy → **the convergent 8-mechanism engine** (the heart) → **5 divergence "forks" with our house position** → belief-change toolkit → emotional-framing techniques → voice rules → an **Easyway-based, behavior-agnostic chapter-arc template** → guardrails → a per-behavior adaptation playbook → exemplars. **This is fed to every chapter-writer and used by the master-plan step.**
+
+**Next:** build the master-plan prompt (consumes the style guide), then the chapter-writer + reviewer loop. Pick the MVP target behavior (gaming is the running candidate).
 
 ---
 
