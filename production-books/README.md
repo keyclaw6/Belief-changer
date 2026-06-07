@@ -16,9 +16,9 @@ production-books/<book-slug>/
 ├── 00-brief.md                  # topic, reader, goal, fork decisions
 ├── research/
 │   ├── research-log.md          # chronological log of every search (preserves order found)
-│   ├── lived-experience.md      # why they do it / can't stop / shame / testimonials
-│   ├── scientific-evidence.md   # studies & mechanisms (supported vs contested)
-│   └── sources.md               # bibliography / links
+│   ├── sources/                 # raw source dumps (any format) — one file per source; synthesized later
+│   ├── lived-experience.md      # synthesized from sources/: why they do it / can't stop / shame / testimonials
+│   └── scientific-evidence.md   # synthesized from sources/: studies & mechanisms (supported vs contested)
 ├── framing.md                   # book-specific adaptation (style guide §4 forks + §10 playbook)
 ├── master-plan.md               # chapter-by-chapter blueprint (the master-plan skill's output)
 ├── master-plan-review.md        # Opus reviewer critique + resolution (REQUIRED)
@@ -28,7 +28,7 @@ production-books/<book-slug>/
 
 ## The flow (artifacts accumulate in this order)
 1. **Brief** — define the behavior, reader, and the fork decisions (`00-brief.md`).
-2. **Research** — gather lived experience + scientific evidence; log every search (`research/`).
+2. **Research** — dump raw sources (scrapes, threads, studies, transcripts — any format) into `research/sources/`, logging each in `research-log.md`; then synthesize them into `lived-experience.md` and `scientific-evidence.md`.
 3. **Framing** — adapt the style guide to this behavior (`framing.md`).
 4. **Master plan** — run the `belief-changer-master-plan` skill → `master-plan.md`. It pulls in `/prompts/style-guide.md` + this folder's research & framing, and is **refined via a required Opus sub-agent review** (`master-plan-review.md`).
 5. **Chapters** — write one (or two) at a time. Each chapter-writer sees only the master plan + the previous chapter + the style guide; a reviewer loop critiques each before moving on.

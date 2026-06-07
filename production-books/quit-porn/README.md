@@ -1,10 +1,10 @@
-# <Book Title / Working Title>
+# Quit Porn — working title
 
-**Target behavior:** <e.g. gaming / doom-scrolling / porn / sugar>
-**Status:** brief → researching → framing → planning → drafting ch.N → done
-**Created:** <YYYY-MM-DD>
+**Target behavior:** Porn & compulsive masturbation (PMO)
+**Status:** researching  (brief → **researching** → framing → planning → drafting ch.N → done)
+**Created:** 2026-06-07
 
-A self-contained working folder for one Belief-Changer book. It fills up **in order**: brief → research → framing → master plan (+ Opus review) → chapters. Copy this `_template/` folder to `production-books/<book-slug>/` to start a new book.
+A self-contained working folder for the quit-porn Belief-Changer book. It fills up **in order**: brief → research → framing → master plan (+ Opus review) → chapters.
 
 ## Artifacts (check off as created)
 - [ ] `00-brief.md` — topic, reader, goal, fork decisions
@@ -20,3 +20,7 @@ A self-contained working folder for one Belief-Changer book. It fills up **in or
 ## Canonical references (global — read, never copy in)
 - **Style guide:** `/prompts/style-guide.md` (the writing bible)
 - **Reference-book analyses:** `/analysis/` (where the style was extracted from)
+
+## This book — notes
+- **Same-topic reference:** [`../../analysis/burgeon.md`](../../analysis/burgeon.md) — *Burgeon* is a quit-PMO book we already reverse-engineered; mine it for what lands and what to avoid.
+- **Research approach:** deep-research prompt #2 (the quit-porn dossier) feeds raw material into `research/sources/`, which is then synthesized into `research/lived-experience.md` + `research/scientific-evidence.md`.
