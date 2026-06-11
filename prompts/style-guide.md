@@ -1,6 +1,6 @@
 # The Belief-Changer Style Guide & Writing Prompt (v2)
 
-**Status:** Canonical, reusable craft asset for the whole project — behavior-agnostic by design. v2 adds **Part B: The Prose Engine**, derived from a full computational + close-reading analysis of Allen Carr's *The Easy Way to Quit Caffeine* (`analysis/easyway-prose-patterns.md`). Part A (the method) is distilled from all three reference books.
+**Status:** Canonical, reusable craft asset for the whole project — behavior-agnostic by design. v2 adds **Part B: The Prose Engine**, derived from full computational + close-reading analyses of Allen Carr's *The Easy Way to Quit Caffeine* (`analysis/easyway-prose-patterns.md`) and — v2.1 — *Good Sugar Bad Sugar* (`analysis/sugar-prose-patterns.md`), which validated every Part B pattern at 3.5× length and contributed the full-length architecture (§B10). Part A (the method) is distilled from the original three reference books.
 
 **Who reads this:** (1) Every chapter-writing agent, before drafting any chapter. (2) The master-plan step, when architecting a new book for a target behavior — the master plan must produce the per-book sheets defined in §B8.
 
@@ -468,6 +468,11 @@ The master plan must derive a per-book **mantra sheet** instantiating each arche
 | **The cost formula** | The fixed word-triple naming the addict's permanent state | "tired, run down and lethargic" | Recurs wherever the behavior's ongoing cost appears |
 | **The fact-assertion frame** | Not a phrase about the behavior but a repeated *operator* that trains the reader to receive reframes as settled fact | "The fact is..." | Evenly spread; ~1 per 1,000 words |
 | **The replacement thought (terminal mantra)** | The thought script the reader keeps forever; what to think whenever the behavior crosses their mind. ALL-CAPS, exclamatory, joyful | "FANTASTIC! I'M FREE!" | Debuts in the instructions (final 15%) and repeats there 3–5×; it is the book's final word on the subject |
+| **The named anti-method** | The enemy METHOD (not just the enemy substance): every past failure is reattributed to it, never to the reader | "the willpower method" (38× in the sugar book; defined formally in ch. 1, owns its own chapter) | Defined early; recurs wherever failure, sacrifice, or "hard to quit" appears; signature image: pushing on the door's hinges |
+| **The named conflict model** | Names the addict's torn state and gives it a geometry whose resolution is built in: both ropes belong to the trap | "the tug-of-war (of fear)" (23×) | Debuts with the trap chapters; owns the fear chapter; echoed until the quit |
+| **The named positive authority** | The alternate authority the reader obeys AFTER the brainwashing is gone — paired with 1–3 operational instruments (tests, gauges, rules-of-thumb) so freedom comes with tools, not just beliefs | "Nature's Guide" + the raw-test, the 0–20 hunger gauge, primary/secondary foods | Own chapter(s) early-mid; instruments delivered mid-book; becomes the post-quit operating manual |
+| **The claim block** | The full-sentence promise repeated verbatim as a set-piece (a mantra at paragraph scale) | "Eat as much of your favourite foods as you want, whenever you want... without willpower or feeling deprived" | Planted in ch. 1; re-quoted 2–3× mid-book; returns in ALL-CAPS at the pre-quit pivot |
+| **The ease-operator** | The recurring clause that closes every loop by restating the contract's ease | "All you have to do is follow (all) the instructions." (13×) | Sprinkled throughout; especially at chapter ends and after hard arguments |
 
 ### Mantra sheet format (lives in the master plan)
 
@@ -503,8 +508,8 @@ The vocabulary does the reframing in every sentence, whether or not that sentenc
 
 Voice metrics first — the reviewer checks these (per ~1,000 words unless noted):
 
-- Direct address: ~25–30 "you/your"; "we" present throughout (see triangle below).
-- **Questions: ~10% of all sentences.**
+- Direct address: ~25–33 "you/your" per 1,000 words; "we" present throughout (see triangle below). (Caffeine book: 28.3/1k; sugar book: 32.8/1k.)
+- **Questions: 8–10% of all sentences.**
 - **~20% of sentences under 8 words**, clustered at argument peaks.
 - Average sentence ~15–17 words. At least one concrete analogy per ~600 words.
 - ALL-CAPS: instructions, the terminal mantra, and 2–4 peak moments per book — no more.
@@ -528,6 +533,8 @@ The operators:
 ---
 
 ## B6. The book architecture (Carr's structure, verified against the source)
+
+> **Format note:** §B6 describes the compressed pocket-book architecture. For full-length books (15+ chapters), §B10 — the empirically verified full-length architecture (chapter anatomy, instruction spine, redefinition move, structural slots) — takes precedence.
 
 Part A §8's arc stands. The verified caffeine book adds these structural specifics the master plan must honor:
 
@@ -571,6 +578,9 @@ Because chapter writers see only the master plan + previous chapter + this guide
 6. **The persona notes** — which reader types (from research) each chapter must speak to, and the ventriloquism lines for each.
 7. **The strongest-case scene** and the **moment-of-revelation prediction** for this behavior.
 8. **The fork decisions** (Part A §4) stated explicitly for this book.
+9. **The instruction spine sheet** (§B10): the numbered instructions, their one-per-chapter assignments, the mid-book recap point, and the final recap chapter with chapter cross-references. Include the epistemic-firewall instructions.
+10. **The redefinition decision** (§B10): for behaviors that cannot be quit as a whole category, the precise Good-X/Bad-X line, the CAPS name for the bad subset, and the margin-for-error doctrine.
+11. **Structural-slot assignments** (§B10): which chapters carry the embedded testimonial, the myths Q&A battery, the meta-inoculation, the pre-endgame knowledge recap, and the perception homework.
 
 ---
 
@@ -583,3 +593,46 @@ Because chapter writers see only the master plan + previous chapter + this guide
 - "We" for the trap, "you" for the escape — checked?
 - Does the chapter's freedom-language level match its position on the crescendo?
 - Would this chapter still make stopping feel like *escape* if read in isolation?
+
+---
+
+## B10. The full-length book architecture (validated on *Good Sugar Bad Sugar*, ~60K words)
+
+The pocket-book format (§B6) compresses these away; at full length Carr runs them explicitly. The master plan decides per book which apply (any book over ~15 chapters should use all of them). Source analysis: `analysis/sugar-prose-patterns.md`.
+
+### The chapter anatomy (every chapter, no exceptions)
+1. **"IN THIS CHAPTER"** — bullet preview of the chapter's section headings.
+2. **Italic thesis line** — the chapter's reframe in one sentence.
+3. **Body** — ONE belief-move, built through titled sections, landing on ALL-CAPS verdict lines.
+4. **The chapter's instruction** (when assigned) — delivered at the climax, numbered cumulatively.
+5. **"SUMMARY"** — clipped bullets restating the chapter's claims, carrying assigned mantras VERBATIM.
+
+The reader meets every reframe at least twice per chapter (argued + recapped). **Previews and summaries are licensed recap zones — exempt from the no-verbatim-repetition rule, exactly like mantras.**
+
+### The instruction spine
+- Instructions are **doled out one per chapter at the chapter's climax**, numbered cumulatively (the sugar book has 12 across 20 chapters).
+- Include all four types: behavioral ("don't quit yet"), epistemic ("keep an open mind"), emotional ("begin with elation"), and **epistemic firewalls** ("ignore any advice that conflicts with the method", "ignore anyone who quit by willpower", "avoid the influence of other addicts") — explicitly quarantining future belief-threats.
+- **Mid-book recap**: the instructions-so-far re-listed verbatim once (~25% mark).
+- **The final chapter is the recap**: nothing but the numbered instructions with chapter cross-references ("8. NEVER DOUBT YOUR DECISION TO QUIT. (CH9)") plus a gate for page-skippers ("if you've jumped straight to this page, the method will not work — go back to Chapter 1").
+
+### The redefinition move (for behaviors that can't be quit wholesale)
+When the behavior category is essential or unquittable (eating, screens for work, possibly gaming-adjacent socializing), **redraw the target**:
+- Define the bad subset precisely and early (ch. 1), box the definition, give it a CAPS name ("BAD SUGAR" = refined sugar + processed carbs + starchy carbs), and issue a definitional decree ("when I say X, take it to mean BAD-X").
+- The CAPS name then carries the definition in every sentence (387 uses) — naming IS the repetition.
+- **Run full total-abstinence trap logic inside the line** ("there is no healthy level other than zero") while the good subset becomes part of the positive authority's menu.
+- **The margin for error**: a named non-catastrophic buffer for accidental/gray-zone consumption — "your body can cope with an occasional blip, but your mind will not" → a slip revives nothing unless the belief (Big-Monster-equivalent) is allowed back. Guard the belief, not the behavior. (Seatbelt image: it's there for accidents, not for driving erratically.)
+- Optional **conditional-bonus extensions**: adjacent indulgences (alcohol, dairy) are NOT required to stop — "you're not reading this book to quit X" — but the upgrade is framed as an exciting option with a pointer to where help lives. Autonomy preserved; the door is left open.
+
+### Structural slots (assign each to a chapter in the master plan)
+- **The fear chapter**: dismantle fear-of-failure (the prison-door scene; "succumb to the fear of failure and you guarantee the very thing you fear") and fear-of-success (the released-convict analogy; the identity excuse), then collapse both: every rope of the tug-of-war is held by the trap.
+- **The anti-method chapter**: the named anti-method gets its own chapter; the reader's strong will is REframed as evidence FOR them ("it takes a strong will to persist in something that goes against all your instincts"; "wilful, not weak-willed"); sub-characters (the braggers and the whingers); "with the willpower method, there is no finish line."
+- **The identity-excuse chapter**: cause-effect inversion ("the traits shared by addicts are the RESULT of the addiction, not the cause") + the **historical-evidence operator** (population-scale statistics vs the genetic/personality claim) + the graceful concession ("even if you DID have an addictive personality, the method still frees you").
+- **The pre-endgame knowledge recap** (immediately before the quit chapters): a "• You know that..." litany re-stating every installed belief — the book audits its own installation before firing.
+- **The embedded long-form testimonial** ("In his own words — [name]"): 1–2 pages of first-person escape story with concrete numbers and sensory details, including an authority-conflict arc where the reader-surrogate prevails. Drawn from the research banks' freedom testimonies; written original.
+- **The myths Q&A battery**: a rapid-fire annex (chapter appendix) — each myth as a quoted reader-voice line, each demolished in 2–6 sentences.
+- **The meta-inoculation**: ventriloquize the strongest objection TO THE METHOD ITSELF ("how do I know it's not YOU brainwashing me?") and answer it (counter-brainwashing; "question both sides — don't accept it blindly").
+- **Scare-then-disown**: where hard facts must appear, deliver them, then explicitly disown fear as the motivator ("I don't want you to use this information to be frightened — understand it, then put it behind you"). The fact does its perception work; the loss-frame is removed.
+- **Perception homework**: 1–3 physical exercises the reader performs (the sensory immersion in the genuine pleasure; the falsification test on the illusory one; the audit exercise). The belief change is enacted, not just read.
+- **The vow with "expect the unexpected"**: the final ritual includes guided sensory disgust-attention, the solemn vow with visualization, instant conferral ("CONGRATULATIONS! YOU'VE WON!") — and pre-loads future danger moments INTO the vow ("fix these thoughts now while they are vivid, so when the memory fades the resolution does not"). Plus the **meaningless-days demolition**: no New Year's, no landmark days — STOP NOW.
+- **Practical-safety guardrail** (when the behavior touches medication/health): a boxed advisory routing medical specifics to a professional, kept outside the belief argument.
+
