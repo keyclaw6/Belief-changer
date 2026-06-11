@@ -46,6 +46,8 @@
 
 *Why this is smart:* LLMs over-repeat phrases and structures that sit in their context window. Feeding only the previous chapter preserves coherence while starving the model of the bulk context that drives repetition. The master plan keeps whole-book structure intact; the style guide keeps voice constant. This is a genuinely strong design choice and should be preserved.
 
+**★★ Correction (mantra exception) — DECIDED.** The Easyway prose analysis (`analysis/easyway-prose-patterns.md`) showed Carr's method *depends* on deliberate, scheduled, **verbatim** repetition of a small set of fixed mantras ("nothing to lose and everything to gain", "FANTASTIC! I'M FREE!", the trap-namer, the illusion-namer, etc.). The anti-repetition context strategy suppresses exactly this, so the good repetition must be **specified, not emergent**: the master plan carries a per-book **mantra sheet** (frozen wording, debut chapter, repetition schedule, hand-over form) and every chapter sets or reinforces a mantra. **The law: mantras are repeated verbatim; everything else is never repeated verbatim.** See `prompts/style-guide.md` Part B.
+
 ---
 
 ## Orchestration Architecture
@@ -102,7 +104,9 @@ Cross-book finding: all three run the same core Easyway engine — dismantle the
 
 **Repo reorg:** reference PDFs are grouped with their analyses under `analysis/reference-books/`; the root `books/` folder is retired in favor of `production-books/` (for books the pipeline generates). *(The binary PDFs must be dragged into `analysis/reference-books/` via the GitHub UI — the agent cannot commit binaries through its API.)*
 
-**Style guide created — `prompts/style-guide.md`:** the canonical writing prompt, distilled by an Opus sub-agent from all three reports. Contents: each book's philosophy → **the convergent 8-mechanism engine** (the heart) → **5 divergence "forks" with our house position** → belief-change toolkit → emotional-framing techniques → voice rules → an **Easyway-based, behavior-agnostic chapter-arc template** → guardrails → a per-behavior adaptation playbook → exemplars. **This is fed to every chapter-writer and used by the master-plan step.**
+**Style guide v2 — `prompts/style-guide.md`:** restructured into Part A (method) + **Part B (the prose engine)**: the mantra system & repetition law, repetition-schedule curves, two-register lexicon sheets, sentence-operator toolkit with voice metrics, verified Carr book architecture, per-chapter writing contract, and the per-book sheets the master plan must carry (§B8). Research stage redesigned as slot-filling **raw material banks** with persona segmentation — `prompts/research-agent.md`. Prose-pattern analysis: `analysis/easyway-prose-patterns.md`. *(v1 description below kept for history:)*
+
+**Style guide v1 (superseded) — `prompts/style-guide.md`:** the canonical writing prompt, distilled by an Opus sub-agent from all three reports. Contents: each book's philosophy → **the convergent 8-mechanism engine** (the heart) → **5 divergence "forks" with our house position** → belief-change toolkit → emotional-framing techniques → voice rules → an **Easyway-based, behavior-agnostic chapter-arc template** → guardrails → a per-behavior adaptation playbook → exemplars. **This is fed to every chapter-writer and used by the master-plan step.**
 
 **Next:** build the master-plan prompt (consumes the style guide), then the chapter-writer + reviewer loop. Pick the MVP target behavior (gaming is the running candidate).
 

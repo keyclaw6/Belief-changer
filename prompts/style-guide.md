@@ -1,12 +1,18 @@
-# The Belief-Changer Style Guide & Writing Prompt
+# The Belief-Changer Style Guide & Writing Prompt (v2)
 
-**Status:** Canonical, reusable craft asset for the whole project. Distilled from three analyzed reference books — Allen Carr's *The Easy Way to Quit Caffeine* (the canonical Easyway structure), *The Freedom Model for Addictions*, and *Burgeon* (quit-PMO).
+**Status:** Canonical, reusable craft asset for the whole project — behavior-agnostic by design. v2 adds **Part B: The Prose Engine**, derived from a full computational + close-reading analysis of Allen Carr's *The Easy Way to Quit Caffeine* (`analysis/easyway-prose-patterns.md`). Part A (the method) is distilled from all three reference books.
 
-**Who reads this:** (1) Every chapter-writing agent, before drafting any chapter. (2) The master-plan step, when architecting a new book for a target behavior. It is both standing instructions and craft reference.
+**Who reads this:** (1) Every chapter-writing agent, before drafting any chapter. (2) The master-plan step, when architecting a new book for a target behavior — the master plan must produce the per-book sheets defined in §B8.
 
 **The one job of every book we write:** Move the reader to a frame of mind where, whenever they think about the target behavior, they feel *relief and freedom that they no longer do it* — so that stopping feels like **escaping a trap, not sacrificing a pleasure**. We change the belief; the behavior then changes on its own, without willpower and without shame.
 
+**THE REPETITION LAW (governs everything):** *Mantras are repeated VERBATIM, on schedule, exactly as frozen in the master plan's mantra sheet. Everything else is never repeated verbatim.* (Full system: §B1–§B2.)
+
+**Structure:** **PART A — THE METHOD** (the worldview, the engine, the forks, the moves, the arc). **PART B — THE PROSE ENGINE** (the binding writing contract: the mantra system, repetition schedule, lexicon, sentence operators, per-chapter contract). Where Part B is more specific, Part B wins.
+
 ---
+
+# PART A — THE METHOD
 
 ## 0. How to use this guide
 
@@ -410,3 +416,170 @@ These are the *shapes* that work — drawn from the three books. **Do not copy t
 - [ ] Did I avoid **fear-as-motivator**, **commands**, **"instead"/"giving up" phrasing**, and **inner-monster personification**?
 - [ ] If this is a back-half chapter, does it **guard the belief** and **pre-forgive slips** without licensing them?
 - [ ] Does it sound like a **fellow escapee handing over a key**, not an authority issuing verdicts?
+
+
+---
+---
+
+# PART B — THE PROSE ENGINE (how Carr actually writes)
+
+> **Status:** Derived from a full computational + close-reading analysis of *The Easy Way to Quit Caffeine* (see `analysis/easyway-prose-patterns.md`). Part A gives you the worldview and the argument; **Part B is the binding writing contract** — it governs the actual sentences. Where Part B is more specific than Part A, Part B wins.
+>
+> Everything here is **behavior-agnostic**. Anything behavior-specific lives in the master plan's per-book sheets (§B8), which the master-plan step derives using this section plus the research banks.
+
+---
+
+## B1. THE REPETITION LAW (the one rule that reconciles everything)
+
+Easyway prose is built on deliberate, scheduled, *verbatim* repetition of a small set of fixed phrases — and on the near-total absence of accidental repetition everywhere else. Our pipeline's context strategy (chapter writer sees only the master plan + the previous chapter) suppresses accidental repetition by design. That means the deliberate repetition **cannot emerge on its own — it must be specified**. Hence:
+
+**THE LAW: Mantras are repeated VERBATIM, on schedule, exactly as frozen in the master plan's mantra sheet. Everything else is never repeated verbatim.**
+
+- A mantra is an incantation. Its power comes from arriving in *exactly* the same words every time, so it accumulates weight and eventually fires in the reader's head unprompted. **Paraphrasing a mantra kills it.** If the mantra sheet says "you have nothing to lose and everything to gain," you may not write "there's no downside, only upside."
+- Conversely, any striking sentence that is *not* a mantra must appear once and only once in the book. If you find yourself rebuilding an argument the master plan says a previous chapter already made, invoke its mantra token instead of re-arguing it.
+- The chapter writer never invents a new mantra and never alters one. Missing or mangled mantras are reviewer-blocking defects.
+
+---
+
+## B2. The Mantra System
+
+### The lifecycle (how a belief gets installed)
+
+Every core belief in the book runs the same four-stage lifecycle:
+
+1. **ARGUE** — the belief gets one full treatment in its debut chapter: the argument, the analogy, the emotional landing. This happens exactly once.
+2. **COMPRESS** — within or at the end of the debut, the belief is crystallized into a fixed phrase: the mantra. The compression should feel like the chapter's conclusion arriving in portable form.
+3. **REPEAT** — later chapters re-invoke the mantra verbatim, *without re-arguing it*. Each repetition is brief — a clause, a reminder, a drumbeat — and lands in a new context, which is what generalizes the belief.
+4. **HAND OVER** — in the book's final movement, the mantra is explicitly given to the reader as a thought script: "whenever you think X, replace it with [mantra]." The book ends by transferring its own voice into the reader's inner monologue.
+
+### The mantra archetypes (every book instantiates these)
+
+The master plan must derive a per-book **mantra sheet** instantiating each archetype with frozen wording adapted to the target behavior. Six to ten mantras total; each chapter sets or reinforces at least one (a project decision — see §B7).
+
+| Archetype | Job | Carr's instance (reference) | Placement rule |
+|---|---|---|---|
+| **The entry promise** | Risk-reversal that buys the reader's compliance with the instructions; deployed at the exact moments the reader is asked to believe something outrageous | "you have absolutely nothing to lose and everything to gain" | First 10% of the book, 2–3×; may return once near the quit |
+| **The promise triad** | The impossible-sounding contract, stated with total confidence | "easily, immediately and permanently" | Front matter + method chapter; heavily front-loaded, then assumed |
+| **The trap-namer** | The central metaphor that makes stopping an *escape*, not a sacrifice | "the caffeine trap" → ours: "the [X] trap" | Debuts early, frequency *rises* toward the exit chapters |
+| **The illusion-namer** | A fixed dyad/phrase that names the perceived benefit so it can be referenced and demolished as a single object | "a genuine pleasure or crutch" | Debuts in the axis-switch chapter; thereafter the perceived benefit is *only ever* called by this token |
+| **The mechanism characters** | Named, proprietary vocabulary for the two-part mechanism (physical loop + belief), so one word re-invokes the whole argument | "the little monster" / "the big monster" — *per Fork 1, ours names the trap/lie/industry, never an inner beast to battle* | Debut in the mechanism chapter (~30% mark); recur to the last page |
+| **The sensory definition** | A canonical adjective-string describing the behavior's discomfort/withdrawal, repeated identically so the reader re-labels their own body in our words | "a mild, empty, slightly insecure, slightly uptight feeling" | Debuts in mechanism chapter; repeated whenever withdrawal/craving is mentioned, including in the final instructions |
+| **The stakes phrase** | A dual-valence time-horizon phrase used as BOTH threat and reward | "for the rest of your life" (hooked... / free...) | Spread throughout; both valences must appear |
+| **The cost formula** | The fixed word-triple naming the addict's permanent state | "tired, run down and lethargic" | Recurs wherever the behavior's ongoing cost appears |
+| **The fact-assertion frame** | Not a phrase about the behavior but a repeated *operator* that trains the reader to receive reframes as settled fact | "The fact is..." | Evenly spread; ~1 per 1,000 words |
+| **The replacement thought (terminal mantra)** | The thought script the reader keeps forever; what to think whenever the behavior crosses their mind. ALL-CAPS, exclamatory, joyful | "FANTASTIC! I'M FREE!" | Debuts in the instructions (final 15%) and repeats there 3–5×; it is the book's final word on the subject |
+
+### Mantra sheet format (lives in the master plan)
+
+For each mantra: **(a)** frozen exact wording — including capitalization and punctuation; **(b)** archetype; **(c)** the belief it installs; **(d)** debut chapter (where it gets its full argument); **(e)** repetition schedule (which chapters re-invoke it, roughly how often); **(f)** hand-over form (how the final movement gives it to the reader). The chapter writer receives the full sheet with every chapter and an explicit list: *mantras this chapter debuts / mantras this chapter must echo*.
+
+---
+
+## B3. The repetition schedule (the shape of the whole book)
+
+The analysis of the caffeine book shows concept frequency is *engineered as curves*, not constants. The master plan must lay these curves; chapter writers must know where on each curve their chapter sits.
+
+- **Cumulative lexicon.** Each named concept has a debut chapter, then joins the permanent recurring vocabulary. Nothing important is said once. By the final third, one sentence can invoke trap + mechanism-character + freedom + deprivation in passing, because all tokens are installed.
+- **The freedom crescendo.** Freedom/escape language is established in the opening promise, then *deliberately suppressed* through the middle demolition phase, then detonated in the final quarter — the last 20% of the book should contain more freedom-language than the rest combined. The emotional shape is: promise → demolition → release.
+- **Front-load the promise.** "Easy"-register words cluster at the entry (the contract), then recede — the ease is *assumed*, not re-argued.
+- **The command frame opens and closes the book.** Numbered instructions at the entry (how to read); numbered instructions at the exit (how to be free); **both recapped verbatim as scannable lists at the very end.** The book repeats itself in summary — this is the only place whole sentences may repeat besides mantras.
+- **Save one fresh reframe for the ending.** At least one powerful concept (Carr: "don't mourn the death of an enemy") must appear *only* in the final movement, so the ending is a revelation, not just a recap.
+- **Demolition-phase vocabulary peaks mid-book** (brainwashing/illusion/manufactured desire) and largely hands off to freedom vocabulary in the back half.
+
+---
+
+## B4. The lexicon sheet (two registers, no neutral middle)
+
+The vocabulary does the reframing in every sentence, whether or not that sentence is arguing. The master plan derives a per-book **lexicon sheet** with two registers; the chapter writer may not use neutral or willpower-register words for the core concepts.
+
+- **Trap register** (for the behavior, always): the behavior's units are renamed as doses ("shot," "dose," "fix," "hit"), the behavior as a drug/trap/con, its practice as feeding the addiction, its community-normal status as brainwashing, its users as trapped/conned (with warmth — *we* were all conned). Apply the hardest-drug lexicon plausibly available to the behavior.
+- **Freedom register** (for stopping and the stopped state, always): escape, free, freedom, marvellous, wonderful, exciting, rejoice, celebrate, relief, "get on with enjoying your life."
+- **Banned register**: "give up," "quit cold turkey" (as framing), "resist," "stay strong," "discipline," "abstain," "sacrifice" (except when naming the *illusion* of sacrifice), "trying to stop," "one day at a time," "recovery journey." These smuggle the willpower model back in. ("Quit" itself is acceptable as a plain verb; "giving something up" is not.)
+- The lexicon sheet also imports the **community's own slang** (from the research banks) for ventriloquized reader-voice — the reader must hear their own dialect in the quoted thoughts.
+
+---
+
+## B5. The sentence-operator toolkit (reach for these by name)
+
+Voice metrics first — the reviewer checks these (per ~1,000 words unless noted):
+
+- Direct address: ~25–30 "you/your"; "we" present throughout (see triangle below).
+- **Questions: ~10% of all sentences.**
+- **~20% of sentences under 8 words**, clustered at argument peaks.
+- Average sentence ~15–17 words. At least one concrete analogy per ~600 words.
+- ALL-CAPS: instructions, the terminal mantra, and 2–4 peak moments per book — no more.
+
+**The pronoun triangle (non-shaming machine):** **"I"** = the guide's authority — testimony, promises, warnings. **"we"** = every description of falling into and living in the trap — the confession voice that makes ruthless critique shame-free because the author is inside it. **"you"** = instructions, promises, and the escape. **Falling into the trap is "we"; escaping it is "you."**
+
+The operators:
+
+1. **Fact-assertion** — deliver reframes as flat settled fact: "The fact is..." / "The reality is..." Never hedge ("studies suggest," "many people find" are banned for core claims).
+2. **Self-answered question** — ask, then answer immediately with total confidence: "Do you want to stop? Of course you do – that's why you're reading this book."
+3. **Trap question** — a question whose only honest answer concedes the argument: "If you genuinely choose it, why would you need this book?"
+4. **Ventriloquism** — quote the reader's inner voice in quotation marks (their justifications, their future temptations) and answer it. Early: print the full justification menu as quotes, then demolish one per chapter. Late: pre-play the future tempting thought so it arrives pre-refuted.
+5. **The inversion** — "It's not X, it's Y": "It causes the aggravation; it doesn't relieve it." "It's you that's [the benefit], not the [behavior]." Often capped with: "It's the other way around."
+6. **Killer-line pair** — two short mirrored sentences at the peak: build-up, then verdict. One per major argument, no more.
+7. **Reassurance–challenge cycle** — *schedule* the reader's disbelief: name it ("I know this is hard to accept"), welcome it, re-invite the open mind. Doubt is never ignored; it is pre-empted on a cadence.
+8. **Future-pacing** — predict the reader's specific upcoming thoughts, situations, and the named **moment of revelation**. Every prediction that lands transfers authority to the claims that can't be verified.
+9. **Permission paradox** — explicitly permit the behavior while reading ("carry on exactly as normal until you finish"). Disarms resistance and proves this isn't willpower.
+10. **Credit reassignment scene** — take a cherished scene, strip the behavior out of it, show the pleasure was the scene all along ("it was only ever sneaking a ride").
+11. **Instruction voice** — numbered, imperative, ALL-CAPS headline, each instruction followed by its warm rationale. Instructions are thought-substitution rules: "rather than think [old thought], think [mantra]."
+
+---
+
+## B6. The book architecture (Carr's structure, verified against the source)
+
+Part A §8's arc stands. The verified caffeine book adds these structural specifics the master plan must honor:
+
+- **Front matter carries the authority dossier** (origin story, scale of the method's success, the skeptical-convert testimony of the narrator) *and* the full contract: the promise triad, the entry promise, and the five reading instructions — before any argument.
+- **The justification menu appears early and verbatim** — the reader's stated reasons printed as a quoted list ("It helps me concentrate." / "It's sociable." / ...), which then becomes the table of contents for the demolition phase: one short chapter per justification, each ending with its credit reassigned.
+- **Chapters are short and single-purpose** (the caffeine book averages ~400 words per section under punchy titles, many phrased as questions or as the reader's own words: "Maybe I'll quit tomorrow"). One reframe per chapter; land it; stop.
+- **The mechanism chapter (~30% in) is the hinge** — it debuts the mechanism characters and the sensory definition, splits the trivial physical component from the dominant belief component, and everything after it leans on its vocabulary.
+- **The strongest case is met head-on, late** — after the easy demolitions, the single most seductive scene gets its own chapter and a hands-on perception demo (an experiential proof that the reader's felt certainty can be flatly wrong).
+- **The quit is a staged ritual**: readiness gate ("by now you should be champing at the bit — if not, review the text again"), the ceremonial final act with a solemn vow, instant conferral of freedom ("you're free the moment you finish — don't wait to be free, you already are"), and the warning against the two relapse doors (the bad-day rescue offer; the "just one can't hurt" thought).
+- **The back half is instruction-dense**: the numbered post-quit instructions ARE the relapse-proofing, each one a pre-played scenario + thought script.
+- **The book ends with verbatim recap lists** of both instruction sets, then a single outward push into life. The last content the reader sees is the portable manual plus the terminal mantra.
+
+---
+
+## B7. The per-chapter writing contract
+
+Every chapter delivered by a chapter writer must satisfy ALL of:
+
+1. **One job.** The chapter makes exactly one belief-move (from the master plan), lands it, and stops. No second thesis.
+2. **One mantra set or reinforced.** The chapter either *debuts* a mantra (full argue→compress lifecycle) or *echoes* assigned mantras verbatim at natural moments — per the chapter's mantra assignment in the master plan. Echoes are brief; never re-argue a debuted mantra.
+3. **Curve-aware vocabulary.** Use the lexicon registers; respect where the chapter sits on the freedom-crescendo and demolition curves (a mid-book chapter doesn't bathe in freedom language; a final-quarter chapter does).
+4. **At least one concrete analogy or scene** doing the chapter's argumentative work (from the master plan's analogy assignment or the analogy bank).
+5. **Operator-rich, metric-true prose** per §B5 (questions ~10%, killer-pair at the peak, ventriloquism where the reader would object, no hedging).
+6. **Triangle discipline**: "we" for the trap, "you" for the escape, "I" for testimony and instruction.
+7. **Non-shaming and gain-framed throughout** (Part A guardrails all apply).
+8. **No verbatim repetition of anything except mantras** and no re-argument of previous chapters' settled points — invoke their tokens instead.
+
+The reviewer rejects a chapter that: mangles or paraphrases a mantra; misses its mantra assignment; re-argues settled material; uses banned-register vocabulary; hedges a core reframe; or drifts off its single job.
+
+---
+
+## B8. What the master plan must carry (per-book sheets)
+
+Because chapter writers see only the master plan + previous chapter + this guide, the master plan is the carrier of all book-specific repetition. It must include:
+
+1. **The mantra sheet** (§B2 format) — the frozen phrases, schedules, and per-chapter assignments.
+2. **The lexicon sheet** (§B4) — trap register, freedom register, banned list, community slang.
+3. **The justification menu** — the reader's reasons, verbatim from research, mapped to demolition chapters.
+4. **The analogy assignment** — which analogy does which job in which chapter (from the research analogy bank).
+5. **The curve map** — where each chapter sits on the freedom-crescendo / demolition curves; which concept debuts where; the saved-for-ending reframe.
+6. **The persona notes** — which reader types (from research) each chapter must speak to, and the ventriloquism lines for each.
+7. **The strongest-case scene** and the **moment-of-revelation prediction** for this behavior.
+8. **The fork decisions** (Part A §4) stated explicitly for this book.
+
+---
+
+## B9. Pre-flight checklist (Part B additions — run with Part A §12)
+
+- Every mantra in this chapter's assignment present, **verbatim**, correctly cased and punctuated?
+- Did I debut anything the master plan says was already debuted? (If so, compress to its token.)
+- Any banned-register words? Any hedged core claims?
+- Question rate ~10%? A killer-pair at the peak? Sentences under 8 words present?
+- "We" for the trap, "you" for the escape — checked?
+- Does the chapter's freedom-language level match its position on the crescendo?
+- Would this chapter still make stopping feel like *escape* if read in isolation?
