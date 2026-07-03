@@ -127,6 +127,19 @@ Cross-book finding: all three run the same core Easyway engine — dismantle the
 
 ---
 
+## The Platform (website) — expanded vision & architecture (DECIDED 2026-07)
+
+**The delivery arm of the north star:** a beautiful, free website hosting every generated book — **EPUB download, in-browser reading, and audiobook, in every language** — all produced by agents. Around the library, three loops make the system self-evolving:
+1. **Feedback loop** — readers submit structured feedback + personal experiences per book; accepted feedback flows back into the book's research banks → a revision run → a new version (books are version-controlled, changelogs public).
+2. **Splitting loop** — when one book accumulates feedback spanning too many sub-cases (personas), it splits into focused editions (the persona segmentation in research v2 is the seam line).
+3. **Request loop** — visitors request new belief-change targets and vote; when a target crosses a threshold, the pipeline (research → framing → master plan → chapters) fires automatically and the site announces the new book.
+
+**Architecture decision:**
+- **Monorepo.** The site lives inside this repo (`/site`) alongside `production-books/` (content source of truth), `prompts/`, and `analysis/` — one place for full observability; the site builds directly from the book files, so a merged chapter is a deployed chapter.
+- **Stack: Next.js (App Router) + TypeScript + Tailwind CSS** — chosen explicitly as the stack the coding agents are most fluent in; file-convention-driven, statically generates the library pages from the book markdown, API routes handle feedback/requests. Deploy on Vercel (or any Node host).
+- **Data:** Postgres (Supabase or Neon) for feedback, requests, votes, thresholds. **Media:** EPUBs + audiobooks in object storage (S3/R2) behind a CDN — binaries never in git. **Book text** (all languages) stays as markdown in the repo: it IS the version control.
+- **Build steps (agent-run):** markdown → EPUB (pandoc); markdown → audiobook (TTS per language); translation runs are pipeline jobs writing `production-books/<slug>/translations/<lang>/`.
+
 ## North Star (End Goal)
 
 A **free, open-source, nonprofit platform** hosting a growing library of belief-change books. Each book available as:
