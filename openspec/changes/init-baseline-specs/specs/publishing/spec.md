@@ -3,10 +3,10 @@
 ## ADDED Requirements
 
 ### Requirement: Founder-gated publication
-A book reaches the published state (`books/` or the future site) only after founder review. A book is not published by an agent run alone.
+A book reaches the published state (the future site, per `docs/VISION.md`) only after founder review. A book is not published by an agent run alone.
 
 #### Scenario: An agent attempts to publish
-WHEN an agent run proposes to mark a book published or move it to `books/`
+WHEN an agent run proposes to mark a book published or deploy it to the site
 THEN the action is blocked
 AND the founder must review and approve publication.
 

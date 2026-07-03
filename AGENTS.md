@@ -10,7 +10,7 @@ Method integrity means: non-shaming framing, willpower-free logic, original text
 ## Truth Hierarchy
 1. `openspec/specs/` — behavior and method truth. Read the relevant spec before changing pipeline or content behavior; author changes under `openspec/changes/<slug>/`.
 2. Code and prompts — implementation truth. Keep them legible instead of describing them in prose.
-3. Books under `books/` and `production-books/` — product artifacts, not truth about the system.
+3. Books under `production-books/` — product artifacts, not truth about the system.
 4. `docs/` — only what agents cannot succeed without.
 
 ## Golden Principles (YAGNI)
@@ -38,7 +38,7 @@ Understand or recreate: prefer dependencies fully reasoned about in-repo; reimpl
 Use the codebase-memory-mcp tools: blast-radius (`detect_changes`) before modifying existing code, `search_graph`/`trace_path` when exploring, `manage_adr` for architecture decisions instead of docs.
 
 ## Repo Map
-- `books/` — published book artifacts. `production-books/<slug>/` — the per-book workshop.
+- `production-books/<slug>/` — the per-book workshop. Published output targets the future site (see `docs/VISION.md`); the retired root `books/` held reference texts now in `analysis/reference-books/`.
 - `prompts/` — the pipeline's prompt assets. `openspec/` — specs and changes.
 - `scripts/` — gates and tooling (`check.sh` is the canonical gate). `docs/` — VISION.md and the minimal load-bearing set.
 
