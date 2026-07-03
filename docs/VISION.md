@@ -89,7 +89,7 @@ Fastest path to a working prototype: use **Hyperagent as the orchestrator now**,
 **Processing model (round 2): chunked, fresh-context.** For each book, 2 Opus agents run in sequence (first half, then a *fresh* second-half agent); each reads ONE ~10-page window at a time, writes to the doc, then reads the next; a single agent covers at most half a book. The three books run in parallel. Each doc opens with a ranked **Core Signal** block, then category sections (most-important-first), plus a verbatim **Memorable Lines & Quotations** section. No **Cautions** section. Inclusion test: *would this help create a new belief-changing book?* (the master plan AND the prose), so powerful verbatim quotes are kept.
 - *Round 1 (superseded):* one agent read each whole book in a single pass — produced flat, unprioritized output. Replaced by the chunked approach above.
 
-**Inputs:** PDFs in `books/` (see `books/README.md`); intermediate cleaned text + 10-page window files are regenerated locally from the PDFs (not committed).
+**Inputs:** PDFs in `analysis/reference-books/` (grouped with their analyses); intermediate cleaned text + 10-page window files are regenerated locally from the PDFs (not committed).
 
 **Prompt:** `prompts/book-analysis-agent.md` (v4 — chunked fresh-context; no Cautions; broadened inclusion test; tag-free, unnumbered single-statement bullets).
 
@@ -102,7 +102,7 @@ Cross-book finding: all three run the same core Easyway engine — dismantle the
 
 **DECISION (resolved): keep the detailed round-2 reports as-is** — they are our deep reference instructions for each book; no condensation.
 
-**Repo reorg:** reference PDFs are grouped with their analyses under `analysis/reference-books/`; the root `books/` folder is retired in favor of `production-books/` (for books the pipeline generates). *(The binary PDFs must be dragged into `analysis/reference-books/` via the GitHub UI — the agent cannot commit binaries through its API.)*
+**Repo reorg:** reference PDFs/EPUB are grouped with their analyses under `analysis/reference-books/`; the root `books/` folder is retired in favor of `production-books/` (for books the pipeline generates). *(The binary move is now done via `git mv` + the `belief-changer-repo-push` skill's PAT, which can commit binaries — the old "GitHub UI only" constraint is lifted.)*
 
 **Style guide v2 — `prompts/style-guide.md`:** restructured into Part A (method) + **Part B (the prose engine)**: the mantra system & repetition law, repetition-schedule curves, two-register lexicon sheets, sentence-operator toolkit with voice metrics, verified Carr book architecture, per-chapter writing contract, and the per-book sheets the master plan must carry (§B8). Research stage redesigned as slot-filling **raw material banks** with persona segmentation — `prompts/research-agent.md`. Prose-pattern analysis: `analysis/easyway-prose-patterns.md`. *(v1 description below kept for history:)*
 
