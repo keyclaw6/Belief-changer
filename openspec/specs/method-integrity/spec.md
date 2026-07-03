@@ -1,7 +1,7 @@
 # method-integrity Specification
 
 ## Purpose
-TBD - created by archiving change init-baseline-specs. Update Purpose after archive.
+The non-negotiable rules that bind every writing agent: non-shaming framing, willpower-free logic, original content only, evidence grading, and source traceability. A book that violates any of these has failed regardless of polish.
 ## Requirements
 ### Requirement: Non-shaming framing
 The method works because it reframes the behavior as escaping a trap, not being lectured or shamed. Every generated chapter must address the reader as someone caught in a trap, warm to the person and harsh to the trap. Every generated chapter SHALL frame the behavior as an external trap the reader is escaping and SHALL NOT shame, moralize, or frighten the reader.

@@ -1,7 +1,7 @@
 # publishing Specification
 
 ## Purpose
-TBD - created by archiving change init-baseline-specs. Update Purpose after archive.
+The gate from production to published: a book reaches the published state only after founder review, and published artifacts are immutable (corrections produce new versions, not in-place edits).
 ## Requirements
 ### Requirement: Founder-gated publication
 A book reaches the published state (the future site, per `docs/VISION.md`) only after founder review. A book is not published by an agent run alone. A book SHALL reach the published state only after founder review and MUST NOT be published by an agent run alone.

@@ -1,7 +1,7 @@
 # book-pipeline Specification
 
 ## Purpose
-TBD - created by archiving change init-baseline-specs. Update Purpose after archive.
+The artifact contract of the production flow — brief, research sources, synthesized research, framing, master plan, and chapters — one requirement per artifact: what it is, where it lives, and what gates it. The per-book folder layout is a stable external contract agent skills depend on.
 ## Requirements
 ### Requirement: Per-book folder contract
 Each book occupies one folder `production-books/<slug>/` with a fixed layout. The layout is a stable external contract — agent skills hard-code these paths — and must not be restructured. Each book SHALL occupy exactly one folder `production-books/<slug>/` with a fixed layout, and that layout MUST NOT be restructured.

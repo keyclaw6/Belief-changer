@@ -1,6 +1,6 @@
 # Reference Books
 
-The source texts we reverse-engineered to extract the belief-change **philosophy, method, framing, and style**. Each has a detailed analysis report one level up in `analysis/`. The source **PDFs belong in this folder** (grouped with their analyses).
+The source texts we reverse-engineered to extract the belief-change **philosophy, method, framing, and style**. Each has a detailed analysis report one level up in `analysis/`. The source **files (PDFs and one EPUB) belong in this folder** (grouped with their analyses).
 
 | Book | Author(s) | Target behavior | Analysis report |
 |---|---|---|---|

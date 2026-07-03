@@ -1,7 +1,7 @@
 # languages Specification
 
 ## Purpose
-TBD - created by archiving change init-baseline-specs. Update Purpose after archive.
+English is the baseline language; each additional language is introduced by an explicit spec change that decides translation vs native generation per book and fixes one frozen translation per mantra.
 ## Requirements
 ### Requirement: English-first
 Books are authored in English first. English is the default and baseline language; no additional language is produced until a spec change adds it. Books SHALL be authored in English first, and no additional language MUST be produced until a spec change adds it.
