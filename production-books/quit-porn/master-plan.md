@@ -1,33 +1,72 @@
-# Master Plan — <Book Title>
+# Master Plan — Quit Porn (working title)
 
-> Produced with the `belief-changer-master-plan` skill. **Reviewed by an Opus sub-agent** (see `master-plan-review.md`). This file — plus `/prompts/style-guide.md` and the immediately previous chapter — is the entire context each chapter-writer receives. So it must be exhaustive and concrete: no placeholders.
+> Produced with the `belief-changer-master-plan` skill (v2). **Reviewed by an Opus sub-agent** (see `master-plan-review.md`). This file — plus `/prompts/style-guide.md` and the immediately previous chapter — is the entire context each chapter-writer receives. It is therefore **the sole carrier of the book's deliberate repetition**: the mantra schedule, the instruction spine, the curves. Exhaustive and concrete; no placeholders; a mantra without frozen wording is a plan failure.
 
 **Target behavior:**
-**Reader:**
-**Outcome stance / forks:** <from 00-brief.md>
+**Reader / personas:**
+**Format:** pocket (§B6) | full-length (§B10)
+**Outcome stance / forks:** <from framing.md>
 **The load-bearing false belief this book dismantles:** <one sentence>
 
 ## Through-line (the argument arc, 5–8 sentences)
 <the spine end to end: trust → participation → dissolve choice → switch the axis → demolish benefits → diagnose the inversion → close escape routes → widen the indictment → strongest scene → demystify → the quit → relapse-proof → push into life>
 
-## Recurring devices for THIS book
-- **Signature analogies (original, behavior-specific):**
-- **Coined vocabulary (name the trap/belief, never an inner beast):**
-- **The rescuer-as-perpetrator image:**
+---
 
-## Chapters
-<one spec per chapter, in the format the skill defines. Example shape:>
+# PART 1 — THE BOOK SHEETS (§B8; write these FIRST)
+
+## 1. The mantra sheet
+<one entry per §B2 archetype — entry promise, promise triad, trap-namer, illusion-namer, mechanism characters (Fork 1: trap/lie/industry, never an inner beast), sensory definition, stakes phrase, cost formula, fact-assertion frame, terminal mantra, named anti-method, named conflict model, named positive authority + instruments, claim block, ease-operator. Each entry:>
+- **[archetype] — FROZEN WORDING:** "<exact words, caps, punctuation>" | **installs:** <belief> | **debut:** ch. <N> | **schedule:** <which chapters echo it> | **hand-over form:** <the thought script the reader keeps>
+
+## 2. The lexicon sheet
+- **Trap register (for the behavior, always):** <renamed units ("dose/fix/shot"-equivalents), the drug/trap/con vocabulary, community-fitted>
+- **Freedom register (for stopping, always):** <escape/free/marvellous set>
+- **BANNED (willpower register):** <"give up", "resist", "stay strong", "discipline", "one day at a time", + behavior-specific>
+- **Community slang (for ventriloquism):** <the reader's dialect, from research>
+
+## 3. The instruction spine
+<numbered instructions with frozen wording; one-per-chapter assignments at climaxes; all four types (behavioral, epistemic, emotional, epistemic-firewall); the mid-book recap point; the final recap chapter with chapter cross-references>
+
+## 4. The justification menu
+<the reader's stated reasons, verbatim from research, persona-tagged, each mapped to its demolition chapter>
+
+## 5. The analogy assignment
+<each original analogy: the image, the job it does (by §5/§B5 move name), its chapter>
+
+## 6. The curve map
+<per chapter: freedom-language level (suppressed / neutral / crescendo), demolition phase, concept debuts; the saved-for-ending reframe; promise front-load>
+
+## 7. Structural-slot assignments (§B10)
+<fear chapter; anti-method chapter; identity-excuse chapter; pre-endgame knowledge recap; embedded long-form testimonial (source material named); myths Q&A battery; meta-inoculation; scare-then-disown placements; perception homework; the vow with expect-the-unexpected; meaningless-days demolition; medical-safety guardrail if relevant>
+
+## 8. Persona notes
+<per persona: ventriloquism lines (their dialect), strongest-case scene, moment-of-revelation prediction>
+
+## 9. Fork decisions (stated, final)
+<the five §4 forks + the redefinition decision if applicable (Good-X/Bad-X line, CAPS name, margin-for-error doctrine)>
+
+---
+
+# PART 2 — CHAPTER SPECS
+
+<one spec per chapter, ALL fields, concrete:>
 
 ### Chapter 1 — <working title>
-- **Engine function(s) (style guide §3):**
-- **Arc beat (§8):**
+- **Engine function(s) (§3):**
+- **Arc beat (§8/§B10):**
 - **Job (1–2 sentences):**
 - **Belief(s)/justification(s) targeted:**
-- **Moves to use (§5, by name):**
+- **Mantra assignment — DEBUTS:** <archetype + frozen wording restated> | **ECHOES:** <frozen wordings restated>
+- **Instruction:** <number + frozen wording, or "none">
+- **Chapter anatomy:** IN THIS CHAPTER bullets: <...> | italic thesis line: "<...>" | ALL-CAPS landing line(s): "<...>" | SUMMARY bullets: <claims + mantras restated verbatim>
+- **Curve position:** <freedom level / demolition phase / concept debuts>
+- **Structural slot:** <if assigned>
+- **Moves to use (§5 + §B5 operators, by name):**
 - **Framing / emotional beats (§6):**
-- **Scientific evidence to weave in (cited, with stance):**
-- **Lived experience / testimonials to weave in (specific quotes + the belief each illustrates):**
+- **Scientific evidence to weave in (cited as labelled in research, with stance):**
+- **Lived experience / testimonials to weave in (specific quotes + the belief each illustrates, persona-tagged):**
 - **Analogy(ies) to invent (what each must accomplish):**
-- **Continuity:** receives from previous → / hands to next →
+- **Continuity:** receives from previous → / hands to next → / mantra-state (already debuted): <list>
 - **Target length & tone notes:**
-- **Guardrails to watch here:**
+- **Guardrails to watch here (§9):**
