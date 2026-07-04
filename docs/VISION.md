@@ -1,32 +1,62 @@
 # Belief-Changer — Vision & Working Tracker
 
-> Living document. Mirrors the Hyperagent tracker doc. Repo: github.com/keyclaw6/Belief-changer
+> Living document. **Part I is the canonical vision** — the product intent every change in this repo serves; read it before working here. Part II is the working tracker (pipeline design, status, decisions, open questions). Repo: github.com/keyclaw6/Belief-changer
 
 ---
 
-## Core Thesis & Philosophy
+# Part I — The Vision
 
-**Premise:** Humans always choose what they believe, in the moment, is the happiest option available to them. The problem is that our *beliefs* about which option is happiest are frequently misaligned with reality — we act on an incomplete or distorted model of consequences.
+## Founder's statement
 
-**Example (junk food):** In the moment you weigh only "this tastes good." You don't viscerally weigh the full consequence set — lost agility, weight gain, energy crashes, long-term health. If the *true, complete* consequence model were present at the moment of choice, you would choose differently — not through willpower or deprivation, but because the option would simply no longer look appealing.
+Allen Carr's Easyway books have helped countless people change their beliefs and, through that, change their lives. The method is proven wherever it has been applied — and yet the original series covers only a handful of behaviors. There is so much pain in the world caused by beliefs that are quietly ruining people's lives, and far too few who can help. Easyway has helped a lot of people, but its scope is limited; we are here to broaden that scope.
 
-**The lever is therefore belief change, not willpower.** Correct the internal model of what each option actually costs and delivers, and behavior follows naturally — without a sense of sacrifice.
+Because LLMs have become so powerful, what was impossible before is now buildable: an Easyway-style **belief-change book generation machine** — free and available to everyone, able to produce a book for every belief people want to change. This is my contribution to the world: the way I help as many people as possible, together with helping myself.
 
-**Inspirations:**
-- **Allen Carr's Easyway** — a proven method (esp. stop smoking) with high real-world success rates.
-- **The Freedom Model** — a non-12-step, non-disease-model framework for addiction arguing that change happens when a person genuinely sees that a behavior no longer serves their happiness. This aligns almost exactly with the "happiest-option" thesis above.
+## The core belief
+
+**We act the way we believe.** In every moment a person chooses what they believe is their happiest available option. The problem is that beliefs about which option is happiest are frequently misaligned with reality — we act on an incomplete or distorted model of what each option actually costs and delivers.
+
+*Example (junk food):* in the moment, you weigh only "this tastes good." You don't viscerally weigh the full consequence set — lost agility, weight gain, energy crashes, long-term health. If the true, complete consequence model were present at the moment of choice, you would choose differently — not through willpower or deprivation, but because the option would simply no longer look appealing.
+
+**The only thing that changes behavior long-term is changing those beliefs.** Willpower, shame, and discipline fight the choice while leaving the belief that drives it untouched — which is why they fail. Correct the belief, and the behavior changes on its own: quitting stops feeling like sacrifice and starts feeling like **escape**. Allen Carr's Easyway proved this works in the real world (smoking above all). The Freedom Model — a non-12-step, non-disease-model framework for addiction — reaches the same conclusion: change happens when a person genuinely sees that the behavior no longer serves their happiness. The method is not the bottleneck; coverage is.
+
+## The gap
+
+Where an Easyway book exists, it works. But the catalog is tiny relative to the need. There is no equivalent high-quality resource for doom-scrolling social media, gaming, pornography and masturbation, complaining about things outside your control — and hundreds of other behaviors people struggle with alone. The need is vast, unmet, and — until now — unserveable.
+
+## What we are building
+
+A book **generation machine**, plus a **platform** that hands its output to the world:
+
+- **Endless books** — one for every belief people want to change, produced by the agent pipeline (research → framing → master plan → chapters) under a founder-held quality bar.
+- **Free for everyone, forever** — open-source and nonprofit. No paywall between a person and escape from a trap.
+- **Every format** — EPUB e-book, in-browser reading, and audiobook. (Print-on-demand may follow where it extends reach.)
+- **Every language** — AI translation makes every book available worldwide.
+- **Every part built by agents** — research, writing, review, translation, narration, publishing. Humans set direction and hold the quality bar.
+
+## The self-evolving library
+
+A website hosts every book and turns readers into contributors, so the library improves and grows on its own:
+
+1. **Feedback loop** — readers submit feedback and personal experiences on each book they've read; accepted feedback flows into the book's research banks and triggers a revision run. Books are version-controlled with public changelogs — they get better over time.
+2. **Request loop** — anyone can request a book for a new behavior and contribute their personal experience of it. When enough people have requested a topic and contributed their experiences, the pipeline fires automatically and the site announces the new book.
+3. **Splitting loop** — as a book's feedback spans more and more distinct situations, it splits into focused editions for specific personas and problems, so every reader finds the exact book matched to their situation.
+
+End state: **thousands of books, in hundreds of languages, continuously improving — a belief-change system, not a shelf.**
+
+## Beyond books
+
+Once book generation is up and running: **guided courses connected to each book**, walking a person through surfacing and assessing their own current beliefs — deepening the belief-change journey the book begins.
+
+## The mission
+
+This tool is for the benefit of all humans on the planet. The measure of success is people freed from traps — never revenue, never engagement for its own sake. Warm to the person, harsh to the trap; escape, not sacrifice; free, for everyone, always.
+
+*The operating rules that protect this vision live in `AGENTS.md`, `prompts/style-guide.md`, and `openspec/specs/method-integrity/`.*
 
 ---
 
-## The Opportunity & Gap
-
-**Easyway's strength:** Where a book exists, it works. The method dismantles the *perceived* benefit so that quitting feels like escaping a trap rather than giving something up.
-
-**The gap:** Easyway covers very few topics. There is vast unmet need across behaviors people struggle with — **gaming, doom-scrolling, pornography/masturbation**, and many others — with no equivalent high-quality resource.
-
-**The thesis:** AI is now (finally) capable of producing this kind of book at genuinely high quality. Build an **"Easyway-style book creation machine"** that can generate a high-quality belief-change book for *any* target behavior.
-
----
+# Part II — Working Tracker
 
 ## Content Generation Pipeline
 
@@ -127,32 +157,14 @@ Cross-book finding: all three run the same core Easyway engine — dismantle the
 
 ---
 
-## The Platform (website) — expanded vision & architecture (DECIDED 2026-07)
+## Platform (website) — architecture (DECIDED 2026-07)
 
-**The delivery arm of the north star:** a beautiful, free website hosting every generated book — **EPUB download, in-browser reading, and audiobook, in every language** — all produced by agents. Around the library, three loops make the system self-evolving:
-1. **Feedback loop** — readers submit structured feedback + personal experiences per book; accepted feedback flows back into the book's research banks → a revision run → a new version (books are version-controlled, changelogs public).
-2. **Splitting loop** — when one book accumulates feedback spanning too many sub-cases (personas), it splits into focused editions (the persona segmentation in research v2 is the seam line).
-3. **Request loop** — visitors request new belief-change targets and vote; when a target crosses a threshold, the pipeline (research → framing → master plan → chapters) fires automatically and the site announces the new book.
+The delivery arm of the vision (Part I): every book as EPUB, in-browser reading, and audiobook, in every language, with the three community loops (feedback, request, splitting) making the library self-evolving. Architecture decisions:
 
-**Architecture decision:**
 - **Monorepo.** The site lives inside this repo (`/site`) alongside `production-books/` (content source of truth), `prompts/`, and `analysis/` — one place for full observability; the site builds directly from the book files, so a merged chapter is a deployed chapter.
 - **Stack: Next.js (App Router) + TypeScript + Tailwind CSS** — chosen explicitly as the stack the coding agents are most fluent in; file-convention-driven, statically generates the library pages from the book markdown, API routes handle feedback/requests. Deploy on Vercel (or any Node host).
 - **Data:** Postgres (Supabase or Neon) for feedback, requests, votes, thresholds. **Media:** EPUBs + audiobooks in object storage (S3/R2) behind a CDN — binaries never in git. **Book text** (all languages) stays as markdown in the repo: it IS the version control.
 - **Build steps (agent-run):** markdown → EPUB (pandoc); markdown → audiobook (TTS per language); translation runs are pipeline jobs writing `production-books/<slug>/translations/<lang>/`.
-
-## North Star (End Goal)
-
-A **free, open-source, nonprofit platform** hosting a growing library of belief-change books. Each book available as:
-- **Print-on-demand** (Amazon)
-- **E-book** download
-- **Audiobook** (spoken)
-- In **many languages** (AI translation)
-
-**Plus:**
-- Reader feedback collected per book → incorporated → **version-controlled**.
-- When a book spans too many sub-cases, **split into focused editions** (by personality, gender, parents, etc.).
-- A **"belief-change system"**: readers find the exact version matched to their situation.
-- Long-term: **thousands of books across hundreds of languages.**
 
 ---
 

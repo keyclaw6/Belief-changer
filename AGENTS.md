@@ -1,7 +1,8 @@
 # AGENTS.md
 
 ## Mission
-Generate high-quality, Allen Carr "Easyway"-style belief-change books — free, open-source, nonprofit, eventually multi-language with a website. Correcting misaligned beliefs changes behavior automatically, without willpower.
+Generate high-quality, Allen Carr "Easyway"-style belief-change books — free, open-source, nonprofit, in every language and format (EPUB, audiobook), delivered on a self-evolving community website. Correcting misaligned beliefs changes behavior automatically, without willpower.
+**Required reading: `docs/VISION.md` Part I** — the canonical founder vision every change in this repo serves. Read it before your first task here.
 
 ## Priorities
 When priorities conflict: 1. Method integrity. 2. Quality. 3. Simplicity. 4. Reach. 5. Cost.
