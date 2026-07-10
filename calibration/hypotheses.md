@@ -44,10 +44,23 @@ diagnosis before promoting any of these to TESTING.
 - Prediction: flow rises; whole-book escalation rises at Stage B.
 - Result: —
 
-## H-005 — writer-model arm                          [PROPOSED]
-- Gap: unknown which family writes this register best; assumption untested.
-- Lever: manifest only — same plan, writer = family A vs family B (one run each, no other changes).
-- Prediction: none (measurement). Cross-family judge rule (§9) guards scoring.
+## H-005 — writer-model arms (founder-specified bake-off)   [PROPOSED]
+- Gap: unknown which model/reasoning config writes this register best; assumption untested.
+- Lever: manifest only — same plan, same prompts, ONE arm per attempt (HARNESS §8):
+  W1 GPT 5.6 Sol · W2 Opus 4.6 reasoning-none · W3 Opus 4.6 reasoning-medium · W4 Gemini 3.1 Pro · W5 Moose Spark 1.1 (when on OpenRouter).
+- Prediction: none (measurement). Cross-family judging (§9) guards scoring; exact OpenRouter IDs + reasoning configs recorded in each manifest.
+- Result: —
+
+## H-007 — planner reasoning effort                  [PROPOSED]
+- Gap: does high reasoning effort at the PLAN stage buy chapter quality downstream, or only cost?
+- Lever: manifest only — same inputs, planner at reasoning effort none vs medium vs high; compare plan-review cycles + downstream judge scores.
+- Prediction: none (measurement); expectation to test: plan-stage effort matters more than writer-stage effort.
+- Result: —
+
+## H-008 — tooling adoption (scripts vs framework)   [PROPOSED — operator's decision]
+- Gap: plain scripts + operator orchestration may bottleneck on sub-call management (fresh contexts, retries, parallel arms) as runs scale.
+- Lever: HARNESS §13 — build a small runner or adopt Agents SDK / PI fork on the lab branch; the file contract stays the interface.
+- Prediction: adopt only if it measurably cuts run wall-time or error rate; log what it replaced and what it improved.
 - Result: —
 
 ## H-006 — reviewer criteria aligned to judge dimensions [PROPOSED]

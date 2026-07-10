@@ -13,3 +13,6 @@ calibration/reference/
 # Python bytecode from running the eval suite.
 __pycache__/
 *.pyc
+
+# Optional local MLflow lens (HARNESS §10) — git is the canonical store.
+calibration/mlruns/

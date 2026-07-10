@@ -20,11 +20,13 @@ You are the Calibration Operator for the Belief-changer factory.
 
 Every improvement must land in a **generic method asset** (`prompts/style-guide.md`, `prompts/master-plan-skill-v2.md`, `prompts/master-plan-reviewer-v2.md`, `prompts/chapter-writer.md`, `prompts/chapter-reviewer.md`, `prompts/research-agent.md`, or the `production-books/_template/` structure), phrased **behavior-agnostically** so it would help a book on gaming or doom-scrolling equally. Amendments that mention sugar, this reference book, or any of its phrasings are FORBIDDEN. Fixing the quit-sugar artifacts directly (plan, chapters) is only legitimate as the *output of re-running a stage* with amended generic assets — never by hand-editing prose.
 
+**Operator authority (full reign).** You are the DESIGN AGENT of this auto-research, not the executor of a fixed script. On `calibration-lab` you own everything: this manual (improve it and commit — it must always describe what the loop actually does), the judge prompts and gate thresholds (under the new-baseline + ledger discipline of §4/§5), the eval scripts, the run and experiment design, and any tooling you build or adopt (§13). Only four things are founder-law, outside your reign: the method-integrity rules, the blindness/anti-overfit rules (§4), the records discipline (§10 — every decision reconstructable from files), and canon `main` (merges are founder-approved). Everything else: decide, log, proceed — do not wait for permission.
+
 ## §2 Environment setup
 
 1. `git clone https://github.com/keyclaw6/Belief-changer.git` (if the clone 407s behind a proxy, retry with `git -c http.proxyAuthMethod=basic clone …`). Work on branch **`calibration-lab`**. You need push access; if you lack it, escalate (§11).
 2. `python3` (stdlib only — no pip installs needed).
-3. Model access: env `LITELLM_BASE_URL` + `LITELLM_API_KEY` (the founder's proxy; models by alias). Needed for cross-family judging and any sub-role you don't run natively.
+3. Model access: env `OPENROUTER_API_KEY` (the founder's key; base `https://openrouter.ai/api/v1`, OpenAI-compatible) — needed for the writer arms (§8) and cross-family judging. Alternate: `LITELLM_BASE_URL` + `LITELLM_API_KEY` (the founder's proxy); `scripts/eval/judge_panel.py` accepts either. **Resolve exact model IDs at runtime from `GET /api/v1/models`** (bearer auth) — never guess an ID; each model's `reasoning` object there lists its supported effort levels and whether reasoning is mandatory. Reasoning is the unified body param: `"reasoning": {"effort": "medium"}`, or `{"effort": "none"}` to disable.
 4. Extract the reference (LOCAL ONLY — `calibration/reference/` is gitignored; never commit extracted book text):
    ```
    python3 scripts/eval/extract_reference.py \
@@ -52,7 +54,7 @@ The anti-repetition context law (writer sees only plan + previous chapter + styl
 1. **Pipeline sub-calls are blind to the reference.** No sub-role (researcher, framer, planner, writer, reviewer) may receive: anything in `calibration/reference/`, the reference EPUB, anything in `analysis/`, or judge outputs. The style guide is the ONLY sanctioned carrier of reference-derived (generic) patterns.
 2. **Research source exclusions:** no Allen Carr / Easyway books or derivatives (incl. EasyPeasy-style rewrites) as sources for this book's research. Lived experience comes from real communities; science from studies.
 3. **Amendment scope:** generic assets only (§1). Justify every amendment by a *mechanism* ("echoes land at paragraph ends, weakening hand-over") — never by resemblance to the reference ("GSBS does X here").
-4. **Judge-prompt freeze:** judge prompts + gate thresholds are FROZEN within a stage. Changing either = a new baseline run and a ledger entry; never tune judges to move numbers.
+4. **Judge-prompt discipline:** judge prompts + gate thresholds are yours to improve (§1 authority), but changing either invalidates comparability: it requires a new baseline run, a ledger entry, and a stated mechanism. Never tune judges to move numbers on the same candidate.
 5. **Overfit tripwires:** cross-book n-gram overlap is a hard originality gate (`run_evals`); rising overlap across runs = mimicry drift → revert. Stage C (holdout) is the final proof: `analysis/easyway-caffeine.md` and the caffeine PDF stay untouched by all tuning.
 
 ## §5 Stages and gates (initial thresholds — founder-tunable; changes are ledger entries)
@@ -89,19 +91,30 @@ The anti-repetition context law (writer sees only plan + previous chapter + styl
 
 Length is planned, not hoped for: (a) the master plan's curve map assigns **every chapter a word budget**; budgets must sum to 0.9–1.1× the reference total (~54k–66k words, ~20 chapters, ~3,000-word mean — see `reference-metrics.json` for the real curve); (b) each chapter spec hands its budget to the writer; (c) the chapter reviewer flags >±20% deviations as revision items; (d) `metrics.py` verifies. If budgets are systematically missed, that's a writer-prompt or plan-spec hypothesis — not a manual trim.
 
-## §8 Model matrix (roles are config, not code)
+## §8 Model matrix & the writer arms (roles are config, not code)
 
-Declared per run in `manifest.json`. Starting recommendation:
+Declared per run in `manifest.json`. Fixed-role recommendation:
 
 | Role | Model | Note |
 |---|---|---|
 | Researcher | operator-native (needs web access) | if no web access: escalate — research will be provided |
-| Planner | strongest reasoning model available | plan quality dominates book quality |
-| Writer | strongest prose model, ONE family per attempt | writer-model is itself a tunable (A/B as a hypothesis, e.g. H-005) |
-| Chapter reviewer | strong model, **different family than writer** when possible | avoids family-blindness to its own tics |
+| Planner | strongest reasoning model available | plan quality dominates book quality; planner reasoning effort is itself an arm (H-007) |
+| Chapter reviewer | strong model, **different family than the writer** | avoids family-blindness to its own tics |
 | Plan reviewer | strongest available | "fit to write from" is the costliest gate to get wrong |
 | Summarizer (Stage B) | cheap fast model | same prompt for both books |
-| Judges | **both families, always** (§9) | via LiteLLM aliases |
+| Judges | **both families, always** (§9) | never writer-family-only |
+
+**The writer arms (founder-specified 2026-07-10; ledger H-005).** The writer model is the most consequential tunable. Test these arms — same plan, same prompts, ONE arm per attempt, judged cross-family:
+
+| Arm | Writer model | Reasoning config |
+|---|---|---|
+| W1 | GPT 5.6 Sol | operator-native default |
+| W2 | Claude Opus 4.6 | `{"effort": "none"}` (non-reasoning) |
+| W3 | Claude Opus 4.6 | `{"effort": "medium"}` |
+| W4 | Gemini 3.1 Pro | model default |
+| W5 | Moose Spark 1.1 (Meta) | when it appears on OpenRouter — poll `/models` |
+
+Resolve each arm's exact OpenRouter ID from `/api/v1/models` at run time and record it, with the reasoning config, in the manifest (`arm` field). If an arm is unavailable (W5 pre-release) or a model rejects `effort: none` (check its `reasoning.mandatory` flag), record that in the ledger and proceed with the available arms. Run the bake-off early in Stage A — chapters-1–3 scale keeps it cheap — then freeze the winning arm for gate progress; re-open arms only as a ledgered hypothesis.
 
 ## §9 Judging protocol
 
@@ -114,6 +127,8 @@ Declared per run in `manifest.json`. Starting recommendation:
 ## §10 Observability & records
 
 Per run: `manifest.json` (config), `metrics.json` (objective), `judgments/` (raw judge transcripts + summary), `report.md` (analysis) — all committed. Cross-run: `LEDGER.md` (one row per run: stage, verdict, key numbers, hypothesis, amendment) and `hypotheses.md` (the science log). The founder reads the ledger + reports asynchronously; keep both current enough that a fresh agent could resume from files alone (repo law).
+
+**Canonical store is git** — manifests, metrics, judgments, reports are diffable, portable, and survive any tooling change. OPTIONAL lens: MLflow 3.x has a GenAI suite (tracing, LLM-as-judge, prompt registry) and runs serverless with a local file store — if you want run-comparison UX, mirror each run's params/metrics into `calibration/mlruns/` (gitignored). Adopt only if it pays for itself (your call — one ledger line); the git records remain the source of truth either way.
 
 ## §11 Escalation & stop rules
 
@@ -130,3 +145,7 @@ Founder merges: canon (`main`) style-guide/prompt changes are founder-approved �
 ## §12 Definition of done
 
 Stage C passes (parity on the caffeine holdout with zero new tuning) → write the final ledger entry + a summary report, escalate DONE. The factory is then declared calibrated; quit-porn (paused at framing) resumes as the first novel-topic production book, and the standalone harness product (VISION Part II, Q1) inherits this loop's proven requirements.
+
+## §13 Tooling: scripts now, frameworks when they earn it
+
+The eval scripts are **measurement instruments** — deterministic, stdlib-only, runnable anywhere. They are not the orchestration layer; YOU are. If sub-call management (fresh contexts, retries, parallel arms) becomes your bottleneck, build a small runner or adopt a framework (OpenAI Agents SDK, a PI fork, or your environment's native harness) on the lab branch — provided the file contract stays the interface: every artifact readable/writable as repo files, evals runnable standalone. Log the decision as hypothesis H-008 (what it replaces, what it must measurably improve). Your experience here becomes the requirements list for the standalone harness product (VISION Part II, Q1 — decided direction: Agents SDK or PI fork, base chosen from real calibration experience).

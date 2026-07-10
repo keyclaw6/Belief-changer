@@ -4,8 +4,9 @@ For each selected chapter pair (ours vs reference), each judge model scores the
 pair BLIND in both A/B orders. Raw responses are saved; a summary aggregates
 win-rates per dimension, overall verdicts, and real-Carr detection accuracy.
 
-Requires an OpenAI-compatible endpoint (the founder's LiteLLM proxy):
-  env LITELLM_BASE_URL (e.g. https://proxy.example/v1) and LITELLM_API_KEY.
+Endpoint (OpenAI-compatible), resolved in this order:
+  --base-url/--api-key-env args > LITELLM_BASE_URL + LITELLM_API_KEY >
+  OPENROUTER_API_KEY (base defaults to https://openrouter.ai/api/v1).
 
 Usage:
   python3 scripts/eval/judge_panel.py \
@@ -134,15 +135,26 @@ def main():
     ap.add_argument("--ref", required=True)
     ap.add_argument("--chapters", default="1-3")
     ap.add_argument("--pairs", default="", help="override pairing, e.g. 1:2,2:3")
-    ap.add_argument("--models", required=True, help="comma-separated proxy aliases")
+    ap.add_argument("--models", required=True, help="comma-separated model ids/aliases")
     ap.add_argument("--prompt", required=True)
     ap.add_argument("--out", required=True)
+    ap.add_argument("--base-url", default="", help="override endpoint base URL")
+    ap.add_argument("--api-key-env", default="", help="env var holding the API key")
     a = ap.parse_args()
 
-    base_url = os.environ.get("LITELLM_BASE_URL")
-    api_key = os.environ.get("LITELLM_API_KEY")
+    if a.base_url:
+        base_url = a.base_url
+        api_key = os.environ.get(a.api_key_env or "LITELLM_API_KEY") or \
+            os.environ.get("OPENROUTER_API_KEY")
+    elif os.environ.get("LITELLM_BASE_URL"):
+        base_url = os.environ["LITELLM_BASE_URL"]
+        api_key = os.environ.get("LITELLM_API_KEY")
+    else:
+        base_url = "https://openrouter.ai/api/v1"
+        api_key = os.environ.get("OPENROUTER_API_KEY")
     if not base_url or not api_key:
-        raise SystemExit("judge_panel: set LITELLM_BASE_URL and LITELLM_API_KEY")
+        raise SystemExit("judge_panel: provide OPENROUTER_API_KEY, or LITELLM_BASE_URL"
+                         " + LITELLM_API_KEY, or --base-url/--api-key-env")
     cfg = {"base_url": base_url, "api_key": api_key,
            "prompt": Path(a.prompt).read_text(encoding="utf-8")}
 

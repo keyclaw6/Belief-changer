@@ -1,7 +1,7 @@
 # Quit Sugar — working title
 
 **Target behavior:** refined/added sugar & junk-carb compulsion ("bad sugar")
-**Status:** CALIBRATION — awaiting run-001 (Stage A baseline). Operator: GPT 5.6 Sole. Manual: `calibration/HARNESS.md`.
+**Status:** CALIBRATION — awaiting run-001 (Stage A baseline). Operator: GPT 5.6 Sol. Manual: `calibration/HARNESS.md`.
 **Created:** 2026-07-10
 Pipeline position: brief → **researching** → framing → planning → drafting ch.N → done
 

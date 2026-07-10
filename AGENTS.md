@@ -33,7 +33,7 @@ Write no documentation by default. A doc must be load-bearing (an agent cannot c
 - Published books are immutable artifacts; corrections produce new versions.
 
 ## Dependencies
-Understand or recreate: prefer dependencies fully reasoned about in-repo; reimplement small subsets over adopting frameworks. Model access goes through the founder's LiteLLM proxy with the `belief-changer` virtual key, by alias — no provider keys in this repo.
+Understand or recreate: prefer dependencies fully reasoned about in-repo; reimplement small subsets over adopting frameworks. Model access goes through the founder's endpoints — the LiteLLM proxy (`belief-changer` virtual key, by alias) or the founder's OpenRouter key (calibration) — always via env vars; no provider keys in this repo.
 
 ## Code Intelligence
 Use the codebase-memory-mcp tools: blast-radius (`detect_changes`) before modifying existing code, `search_graph`/`trace_path` when exploring, `manage_adr` for architecture decisions instead of docs.
