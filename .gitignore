@@ -6,3 +6,10 @@
 .DS_Store
 *.swp
 *~
+
+# Calibration reference texts — regenerated locally from the reference EPUB (scripts/eval/extract_reference.py); extracted book text is never committed.
+calibration/reference/
+
+# Python bytecode from running the eval suite.
+__pycache__/
+*.pyc

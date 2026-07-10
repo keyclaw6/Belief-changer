@@ -1,0 +1,28 @@
+{
+  "run": "run-NNN",
+  "date": "YYYY-MM-DD",
+  "stage": "A | B | C",
+  "operator": "gpt-5.6-sole",
+  "branch": "calibration-lab",
+  "scope": "framing+plan+ch1-3 | full-book | holdout-caffeine",
+  "hypotheses_tested": [],
+  "models": {
+    "researcher": "",
+    "planner": "",
+    "plan_reviewer": "",
+    "writer": "",
+    "chapter_reviewer": "",
+    "summarizer": "",
+    "judges": []
+  },
+  "asset_versions": {
+    "prompts/style-guide.md": "<git short sha>",
+    "prompts/master-plan-skill-v2.md": "<git short sha>",
+    "prompts/master-plan-reviewer-v2.md": "<git short sha>",
+    "prompts/chapter-writer.md": "<git short sha>",
+    "prompts/chapter-reviewer.md": "<git short sha>",
+    "prompts/research-agent.md": "<git short sha>"
+  },
+  "stages_rerun_because": "",
+  "notes": ""
+}
