@@ -19,7 +19,7 @@
 2. …
 
 ## Hypothesis outcomes
-<H-NNN: SUPPORTED/REFUTED + the number that decided it>
+<H-NNN: SUPPORTED/REFUTED + the number that decided it. REFUTED requires the autopsy: the mechanism that produced the failure, with evidence (metric deltas, judge notes, transcript excerpts) — no preemptive burials (HARNESS §10)>
 
 ## Amendments proposed for next run
 <≤1 lever (or attributed batch): asset, change, hypothesis it tests>

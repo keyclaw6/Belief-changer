@@ -7,17 +7,17 @@
   "scope": "framing+plan+ch1-3 | full-book | holdout-caffeine",
   "hypotheses_tested": [],
   "model_api": "openrouter | litellm",
-  "arm": "W1-W5 per HARNESS §8, or -",
+  "arm": "P1-P4 / R1-R3 per HARNESS §8, or -",
   "models": {
-    "researcher": "",
-    "planner": "",
+    "researcher": "<arm R1-R3 — exact id resolved from GET /api/v1/models>",
+    "planner": "<arm P1-P4 — exact id resolved from GET /api/v1/models>",
     "planner_reasoning": "none | low | medium | high | native-default",
     "plan_reviewer": "",
-    "writer": "<exact id resolved from GET /api/v1/models>",
-    "writer_reasoning": "none | low | medium | high | native-default",
-    "chapter_reviewer": "",
+    "writer": "Claude Opus 4.6 — FIXED (resolve exact id at runtime)",
+    "writer_reasoning": "none — FIXED (founder 2026-07-10)",
+    "chapter_reviewer": "<strong non-Anthropic default>",
     "summarizer": "",
-    "judges": []
+    "judges": ["<always >=1 strong non-Anthropic>"]
   },
   "asset_versions": {
     "prompts/style-guide.md": "<git short sha>",
