@@ -80,12 +80,13 @@ class PairwiseSchemaTests(unittest.TestCase):
         """Infra: malformed responses remain observable and unmapped."""
         rec = J.judge_pair(
             {"base_url": "x", "api_key": "x", "prompt": "judge",
-             "reasoning_efforts": {"model": "high"}},
+             "reasoning_efforts": {"model": "high"},
+             "max_output_allowances": {"model": 32768}},
             "model", 1, "ours", "ref", 0)
 
         self.assertNotIn("mapped", rec)
         self.assertIn("validation_error", rec)
-        _chat.assert_called_once_with("x", "x", "model", mock.ANY, "high")
+        _chat.assert_called_once_with("x", "x", "model", mock.ANY, "high", 32768)
 
 
 class PanelCompletenessTests(unittest.TestCase):
@@ -132,6 +133,7 @@ class PanelCompletenessTests(unittest.TestCase):
             argv = ["judge_panel.py", "--ours", "ours", "--ref", "ref",
                     "--chapters", "1", "--models", "judge-model",
                     "--reasoning-efforts", "judge-model=high",
+                    "--max-output-allowances", "judge-model=32768",
                     "--prompt", str(prompt), "--out", str(out)]
             chapters = [(Path("chapter.md"), "chapter text")]
             with (mock.patch.object(sys, "argv", argv),
@@ -154,15 +156,39 @@ class ReasoningEffortTests(unittest.TestCase):
         response.__enter__.return_value.read.return_value = json.dumps({
             "choices": [{"message": {"content": "ok"}}]}).encode()
         with mock.patch.object(J.urllib.request, "urlopen", return_value=response) as urlopen:
-            J.chat("https://example.test", "key", "provider/model", "judge", "max")
+            J.chat("https://example.test", "key", "provider/model", "judge", "max", 65536)
 
         request = urlopen.call_args.args[0]
-        self.assertEqual(json.loads(request.data)["reasoning"], {"effort": "max"})
+        body = json.loads(request.data)
+        self.assertEqual(body["reasoning"], {"effort": "max"})
+        self.assertEqual(body["max_tokens"], 65536)
+
+    def test_models_metadata_supplies_full_completion_allowance(self):
+        """Infra: judge allowance comes from endpoint metadata, not a local cap."""
+        response = mock.MagicMock()
+        response.__enter__.return_value.read.return_value = json.dumps({
+            "data": [{"id": "provider/model",
+                      "top_provider": {"max_completion_tokens": 131072}}]
+        }).encode()
+        with mock.patch.object(J.M.urllib.request, "urlopen", return_value=response):
+            values = J.M.resolve_output_allowances(
+                "https://example.test/v1", "key", ["provider/model"])
+
+        self.assertEqual(values, {"provider/model": 131072})
+
+    def test_explicit_endpoint_allowances_are_complete_and_positive(self):
+        """Infra: proxy metadata fallback cannot omit or zero a judge ceiling."""
+        self.assertEqual(J.M.parse_output_allowances("a=10,b=20", ["a", "b"]),
+                         {"a": 10, "b": 20})
+        for raw in ("a=10", "a=0,b=20", "a=many,b=20"):
+            with self.subTest(raw=raw), self.assertRaises(ValueError):
+                J.M.parse_output_allowances(raw, ["a", "b"])
 
     def test_main_rejects_missing_model_mapping_before_any_call(self):
         """Infra: reasoning preflight prevents partially configured panels."""
         argv = ["judge_panel.py", "--ours", "ours", "--ref", "ref",
                 "--models", "provider/a,provider/b", "--reasoning-efforts", "provider/a=high",
+                "--max-output-allowances", "provider/a=100,provider/b=100",
                 "--prompt", "prompt", "--out", "out"]
         with (mock.patch.object(sys, "argv", argv),
               mock.patch.object(J, "chat") as chat,
@@ -201,6 +227,7 @@ class ScopeValidationTests(unittest.TestCase):
         """Infra: zero cannot index the last chapter through the CLI."""
         argv = ["judge_panel.py", "--ours", "ours", "--ref", "ref", "--pairs", "0:1",
                 "--models", "provider/a", "--reasoning-efforts", "provider/a=high",
+                "--max-output-allowances", "provider/a=100",
                 "--prompt", "prompt", "--out", "out"]
         chapters = [(Path("chapter.md"), "chapter text")]
         with (mock.patch.object(sys, "argv", argv),

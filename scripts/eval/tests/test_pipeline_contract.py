@@ -34,7 +34,15 @@ class ResearchContractTests(unittest.TestCase):
             "source** means a distinct underlying URL/document",
             "research architect, not a lone summarizer",
             "not a prescribed chain of thought",
-            "at least four separate fresh-context specialists",
+            "Source-authorization and retention gate",
+            "Never use fingerprint spoofing",
+            "Reddit for Researchers",
+            "Access / retention basis",
+            "at least four separate fresh-context scout/specialist tracks",
+            "retrieval subagent",
+            "A one-shot broad web search",
+            "visible retrieval artifact",
+            "candidate's visible retrieval artifacts",
             "Three is a floor, not a ceiling",
             "Never cap personas, communities, or assignments",
             "maximum completion/output allowance supported",
@@ -54,6 +62,8 @@ class ResearchContractTests(unittest.TestCase):
         for required in (
             "## Visit history",
             "## Captured raw source text",
+            "Access / retention basis:",
+            "Deletion / refresh obligations:",
             "Worker ID:",
             "Search settings:",
             "Research-log event IDs:",
@@ -92,6 +102,8 @@ class ResearchContractTests(unittest.TestCase):
         ):
             self.assertIn(required, harness)
         self.assertIn("deterministic code MUST NOT plan, render, or validate", spec)
+        self.assertIn("Authorized and retention-safe source access", spec)
+        self.assertIn("MUST NOT bypass access controls", spec)
         self.assertIn("usage, cost, and latency are descriptive metadata", spec)
 
     def test_templates_preserve_handoff_and_arm_measurement(self):
@@ -108,6 +120,9 @@ class ResearchContractTests(unittest.TestCase):
         for required in ("Captured raw source text", "Evidence ID:", "Capture ID:",
                          "Persona tags:", "Bank slots:", "Maximum output allowance:"):
             self.assertIn(required, packets)
+        for required in ("Access / retention basis:", "Deletion / refresh obligations:"):
+            self.assertIn(required, packets)
+        self.assertIn("Access / retention basis", log)
         for bank in (1, 2, 3, 4, 5, 6, 9, 10):
             self.assertIn(f"## Bank {bank}", lived)
         for bank in (7, 8):
@@ -157,7 +172,7 @@ class PlanningContractTests(unittest.TestCase):
         """OpenSpec: no role may drift to an unapproved or lower-quality model."""
         spec = read("openspec/changes/calibration-ready-research-pipeline/specs/book-pipeline/spec.md")
 
-        for role in ("Research architects", "reviewers, and synthesizers", "Framers, planners",
+        for role in ("Research scouts, retrieval subagents", "reviewers, and synthesizers", "Framers, planners",
                      "Stage-B summarizers, and judges"):
             self.assertIn(role, spec)
         for model in ("DeepSeek V4 Pro", "MiniMax M3", "GPT‑5.6 Luna",
@@ -165,6 +180,10 @@ class PlanningContractTests(unittest.TestCase):
             self.assertIn(model, spec)
         self.assertIn("Gemini 3.1 Flash Lite is forbidden in every role", spec)
         self.assertIn("maximum endpoint-supported output allowance", spec)
+        wholebook = read("calibration/judges/wholebook-judge.md")
+        self.assertIn("allowed planning/judge model", wholebook)
+        self.assertIn("highest supported reasoning mode", wholebook)
+        self.assertNotIn("cheap model", wholebook)
 
 
 class HarnessBoundaryTests(unittest.TestCase):
@@ -175,12 +194,17 @@ class HarnessBoundaryTests(unittest.TestCase):
 
         framing_row = next(line for line in harness.splitlines()
                            if line.startswith("| Framing |"))
+        research_row = next(line for line in harness.splitlines()
+                            if line.startswith("| Research |"))
         self.assertIn("`00-brief.md`", framing_row)
+        self.assertIn("role-specific exact handoffs", research_row)
+        self.assertIn("visible predecessor artifacts", research_row)
         self.assertIn("baseline_boundary", manifest)
         self.assertIn("research_orchestration", manifest)
         self.assertIn("model_output_allowance_policy", manifest)
         self.assertIn("research_lead", manifest["models"])
         self.assertIn("research_architects", manifest["models"])
+        self.assertIn("research_retrieval_agents", manifest["models"])
         self.assertIn("research_reviewer", manifest["models"])
         self.assertIn("research_workers", manifest["models"])
 
@@ -191,6 +215,25 @@ class HarnessBoundaryTests(unittest.TestCase):
         for forbidden in ("Good Sugar Bad Sugar", "calibration/", "analysis/",
                           "reference metrics", "factory-calibration"):
             self.assertNotIn(forbidden, brief)
+
+    def test_invalid_reddit_pilot_artifacts_are_removed(self):
+        """OpenSpec: the affected calibration pilot retains no invalid source packets."""
+        forbidden = (
+            "calibration/pilots/council/persona-architect-annotations.json",
+            "calibration/pilots/council/persona-architect-output.md",
+            "calibration/pilots/council/persona-architect-review.md",
+            "calibration/pilots/council/a1-q3-f01",
+            "calibration/pilots/council/retrieval-a1-luna-empty.md",
+            "calibration/pilots/council/retrieval-a1-minimax-domain-empty.md",
+            "calibration/pilots/council/retrieval-a1-minimax-offdomain-annotations.json",
+            "calibration/pilots/council/retrieval-a1-minimax-offdomain.md",
+            "calibration/pilots/council/retrieval-a1-q3-web.md",
+            "calibration/pilots/council/retrieval-a1-q3-deepseek-validation.md",
+            "calibration/pilots/council/retrieval-a1-q3-minimax-review.md",
+            "calibration/pilots/council/retrieval-a1-q3-luna-review.md",
+        )
+        for path in forbidden:
+            self.assertFalse((ROOT / path).exists(), path)
 
 
 if __name__ == "__main__":

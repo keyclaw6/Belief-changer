@@ -10,11 +10,11 @@ Plan coverage before collection, then append every search, model call, and sourc
 
 ## Assignment / coverage matrix
 
-Before collection, fill the first ten fields for each focused community/source × persona × bank-slot responsibility. Focus defines ownership, not a reasoning, search, output, time, or subagent limit. Update the yield and verdict fields after collection; unsupported interpretations and duplicate URLs do not count.
+Before collection, fill the source, permission, persona, bank, query, and runtime fields for each focused community/source × persona × bank-slot responsibility. Focus defines ownership, not a reasoning, search, output, time, or subagent limit. Update the yield and verdict fields after collection; unauthorized sources, unsupported interpretations, and duplicate URLs do not count.
 
-| Assignment ID | Worker ID | Community / source scope | Persona | Bank | Target | Query / search settings | Runtime model ID | Reasoning config | Max output allowance | Accepted items | Distinct sources | Qualitative verdict | Status / follow-up |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| Assignment ID | Worker ID | Community / source scope | Access / retention basis | Persona | Bank | Target | Query / search settings | Runtime model ID | Reasoning config | Max output allowance | Accepted items | Distinct sources | Qualitative verdict | Status / follow-up |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 
 ## Activity ledger — append only
 

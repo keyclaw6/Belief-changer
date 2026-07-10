@@ -1,7 +1,7 @@
 ## ADDED Requirements
 
 ### Requirement: Structured research decomposition
-Research SHALL use a fresh-context agentic council with at least four separate architecture specialists: persona discovery, community discovery, scientific-source mapping, and investigative-source mapping. Specialists receive only the research prompt, filled brief, and one focus assignment; the architecture lead receives only the prompt, brief, and visible specialist artifacts; the architecture reviewer receives only the prompt, brief, and complete candidate architecture; collection workers receive only the prompt, brief, and one approved assignment; and the synthesis lead receives only the prompt, brief, approved research log, and accepted packets. No role receives hidden reasoning or unrelated agent context. The lead records a community × persona × bank-slot coverage matrix before collection and commissions targeted follow-ups for uncovered cells. Assignment focus defines responsibility, not a token, output, search, time, subagent, or spend limit.
+Research SHALL use a fresh-context agentic council with at least four separate scout/specialist tracks: persona discovery, community discovery, scientific-source mapping, and investigative-source mapping. A scout receives only the research prompt, filled brief, and one focus assignment and returns a retrieval commission. Retrieval subagents receive only the prompt, brief, and one retrieval assignment and return visible URLs, excerpts, metadata, and gaps. The specialist receives only the prompt, brief, its focus, and those visible retrieval artifacts; the architecture lead receives specialist artifacts; the architecture reviewer receives the complete candidate and its retrieval artifacts; collection workers receive one approved assignment; and the synthesis lead receives the approved research log and accepted packets. No role receives hidden reasoning or unrelated agent context. The lead records a community × persona × bank-slot coverage matrix before collection and commissions targeted follow-ups for uncovered cells. Assignment focus defines responsibility, not a token, output, search, time, subagent, or spend limit.
 
 #### Scenario: Research begins
 - **WHEN** a book with a filled brief enters research
@@ -46,8 +46,30 @@ The exact-input brief MUST contain only product facts and MUST NOT contain refer
 - **WHEN** a role's brief names the reference, a reference/calibration path, a reference-derived aggregate, or run instructions
 - **THEN** the caller rejects the brief and removes that metadata before dispatch
 
+### Requirement: Authorized and retention-safe source access
+Every proposed community or source family SHALL pass a source-authorization gate before retrieval. The caller and research council MUST verify that the access method, automated retrieval, excerpt use, retention, deletion handling, and repository redistribution required by the packet contract are permitted. Research MUST NOT bypass access controls, mask automation to evade a source's guardrails, or accept data whose terms require approval that has not been documented. A source that permits temporary research access but forbids raw-data redistribution or durable retention MUST NOT produce packets committed to this repository.
+
+#### Scenario: A community requires research approval
+- **WHEN** current source terms require an approved research program, API grant, license, or written consent
+- **THEN** the community remains blocked until that authorization is documented
+- **THEN** the lead commissions a terms-compatible alternative rather than bypassing the restriction
+
+#### Scenario: A proposed browser masks automation
+- **WHEN** a transport proposes fingerprint spoofing, stealth behavior, rotating identities, or another mechanism to defeat a source's technical guardrail
+- **THEN** the live retrieval trial is rejected unless the source has explicitly authorized that access method
+
+#### Scenario: Source data cannot be redistributed or retained
+- **WHEN** a source's terms require deletion refreshes, project-limited retention, or prohibit redistribution of raw content
+- **THEN** raw captures, user identifiers, and derivative quote packets are not committed to repository history
+- **THEN** the source does not count toward coverage unless a compliant provenance/output contract is approved
+
+#### Scenario: Reddit is proposed as a research source
+- **WHEN** the run lacks documented Reddit for Researchers approval or a separate written agreement from Reddit expressly covering the exact access, retention, and output contract
+- **THEN** Reddit retrieval and Reddit-derived evidence are rejected
+- **THEN** no stealth browser or public-feed workaround is used as a substitute for authorization
+
 ### Requirement: Provenance-preserving source packets
-Every distinct accepted URL SHALL have one source packet under `research/sources/`, and every search/call/source capture MUST be recorded in `research/research-log.md`. A packet MUST record a stable source ID, URL, title, retrieval date, community/source type, query and assignment ID, model and reasoning configuration, captured raw excerpt or text, and evidence items tagged by persona and bank slot.
+Every distinct accepted, authorization-safe URL SHALL have one source packet under `research/sources/`, and every search/call/source capture MUST be recorded in `research/research-log.md`. A packet MUST record a stable source ID, URL, title, retrieval date, community/source type, query and assignment ID, model and reasoning configuration, access/retention basis, captured raw excerpt or text, and evidence items tagged by persona and bank slot.
 
 #### Scenario: A worker captures a quote
 - **WHEN** wording is labeled as an exact quote
@@ -95,6 +117,11 @@ Every research model SHALL run at its highest supported reasoning mode with the 
 - **WHEN** a candidate architecture claims compliance but contains weak personas, communities, source scopes, queries, or assignments
 - **THEN** a fresh top-reasoning research reviewer regenerates the complete artifact or commissions another specialist
 - **THEN** the operator does not repair the artifact by hand or replace model judgment with a deterministic validator
+
+#### Scenario: Broad web augmentation returns irrelevant evidence
+- **WHEN** a scout or specialist receives web results that do not support the claimed URLs, quotations, or source families
+- **THEN** it rejects that yield and commissions focused retrieval subagents
+- **THEN** no architecture claim is accepted unless it resolves to a visible retrieval artifact supplied to the synthesizing specialist
 
 ### Requirement: Reconstructable research-arm measurement
 Every research arm SHALL record the exact runtime model ID, highest supported reasoning configuration, maximum output allowance, substantive objective, chosen strategy/search settings, usage and cost when available, accepted sources, verified quotes, filled bank/persona cells, and rejected or unverifiable items. Model or orchestration comparisons MUST hold the blind brief, substantive objective, exclusions, access, and quality bar fixed while allowing every arm to choose whatever reasoning path, searches, tools, and agentic follow-ups maximize quality.

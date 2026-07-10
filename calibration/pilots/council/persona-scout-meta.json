@@ -1,0 +1,57 @@
+{
+  "pilot_id": "RP-011",
+  "role": "persona architecture scout",
+  "request_model": "deepseek/deepseek-v4-pro",
+  "actual_model": "deepseek/deepseek-v4-pro-20260423",
+  "provider": "WandB",
+  "reasoning_request": {
+    "effort": "xhigh"
+  },
+  "include_reasoning": false,
+  "endpoint_context_length": 1048576,
+  "endpoint_max_output_after_input": 1043000,
+  "key_authorization_ceiling": 388842,
+  "request_max_tokens": 388842,
+  "continuation_policy": "continue automatically only if finish_reason is length",
+  "finish_reason": "stop",
+  "response_id": "gen-1783703790-24ZIYBNxikb0KufbIxPH",
+  "usage": {
+    "prompt_tokens": 4541,
+    "completion_tokens": 6955,
+    "total_tokens": 11496,
+    "cost": 0.03210474,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.03210474,
+      "upstream_inference_prompt_cost": 0.00790134,
+      "upstream_inference_completions_cost": 0.0242034
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 3624,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "boundary": {
+    "basis": "sanitized bootstrap input snapshot",
+    "prompt_blob": "e2d1e64ee9edc9b2bf4a59298277630a206f8749",
+    "brief_blob": "a272394a8fd32787db145ebcb3327a8ba9094c0c",
+    "focus_blob": "2c109a01a7968cfa500135ff2f8979d69bddbebc"
+  },
+  "preflight": [
+    {
+      "request_max_tokens": 1048576,
+      "result": "HTTP 400: input plus output exceeded endpoint context"
+    },
+    {
+      "request_max_tokens": 1043000,
+      "result": "HTTP 402: disposable-key authorization ceiling reported as 388842"
+    }
+  ]
+}

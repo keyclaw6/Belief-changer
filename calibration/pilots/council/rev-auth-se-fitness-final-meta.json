@@ -1,0 +1,30 @@
+{
+  "call_id": "gen-1783717257-KoC2Z7LaM1IAjXNSKyXY",
+  "boundary": "sanitized bootstrap input snapshot",
+  "request_payload_sha256": "a14d45617d448b9dab0c32722459f6ed4cf73c7cf5314f02106b4eae3c9ff497",
+  "requested_model": "openai/gpt-5.6-luna",
+  "actual_model": "openai/gpt-5.6-luna-20260709",
+  "provider": "OpenAI",
+  "reasoning_configuration": "max",
+  "maximum_output_allowance": 85362,
+  "endpoint_maximum_output_allowance": 128000,
+  "key_authorization_ceiling": 85362,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 9049,
+    "completion_tokens": 7111,
+    "reasoning_tokens": 6214,
+    "total_tokens": 16160,
+    "cost_usd": 0.0539765
+  },
+  "input_blobs": {
+    "prompts/research-agent.md": "0f34e07acf44a448c5c463c0846b55b09861bfbc",
+    "production-books/quit-sugar/00-brief.md": "a272394a8fd32787db145ebcb3327a8ba9094c0c",
+    "calibration/pilots/council/rev-auth-se-fitness-retrieval.md": "85de1881a5d6690374c43a8c4eca3edf025e4764",
+    "calibration/pilots/council/rev-auth-se-fitness-luna-decision.md": "76e43983d2ade7bae8bbf158fd094e2eca2b495f",
+    "calibration/pilots/council/rev-auth-se-fitness-followup-retrieval.md": "70e9f24eb3458e781c204caf2f1b8f8276bdb85b"
+  },
+  "output_sha256": "99a25c12f3de045b8cc7bb1e53ce7b56854952b72498efdd13897ff9f896e079",
+  "response_recorded_utc": "2026-07-10T21:02:22Z",
+  "disposition": "REJECTED — REPLACE WITH AUTHORIZATION-COMPATIBLE SOURCE FAMILIES"
+}

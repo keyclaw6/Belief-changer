@@ -4,6 +4,8 @@ Store one Markdown packet per distinct **accepted URL** in this folder. Name it 
 
 Search summaries may guide discovery, but they are not evidence unless the exact returned excerpt is preserved below. An exact quote is valid only when its wording appears verbatim in a captured block and its evidence item links that capture and locator.
 
+Before retrieval, verify that the access method, automation, excerpt use, durable retention, deletion handling, and redistribution of packet content are permitted. Do not store a source whose terms require ungranted approval or conflict with an open Git repository.
+
 ## Source packet schema
 
 ````markdown
@@ -14,6 +16,8 @@ Search summaries may guide discovery, but they are not evidence unless the exact
 - **Title:** <page, thread, paper, transcript, or report title>
 - **Retrieved (UTC):** <YYYY-MM-DDTHH:MM:SSZ>
 - **Community / source type:** <community and platform | study | report | transcript | investigative source>
+- **Access / retention basis:** <permission, license, and current policy URL/version>
+- **Deletion / refresh obligations:** none — otherwise this source cannot become a repository packet; an approved alternative storage design must remain outside durable Git
 - **Query ID:** Q-001
 - **Assignment ID:** A-001
 - **Worker ID:** W-001

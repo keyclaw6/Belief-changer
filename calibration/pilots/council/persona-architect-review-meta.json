@@ -1,0 +1,43 @@
+{
+  "id": "gen-1783702896-rzeIlyBzlBiSivQSn1gz",
+  "model": "minimax/minimax-m3-20260531",
+  "provider": "Parasail",
+  "created": 1783702896,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 19315,
+    "completion_tokens": 11094,
+    "total_tokens": 30409,
+    "cost": 0.01907658,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 128,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.01907658,
+      "upstream_inference_prompt_cost": 0.00576378,
+      "upstream_inference_completions_cost": 0.0133128
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 4111,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "content_chars": 30949,
+  "request": {
+    "model": "minimax/minimax-m3",
+    "reasoning": {
+      "enabled": true
+    },
+    "max_tokens": 400000,
+    "provider": "Parasail",
+    "prompt_blob": "ca55eca9b759b69fbabb71410c74c646e6cd286f",
+    "brief_blob": "a272394a8fd32787db145ebcb3327a8ba9094c0c",
+    "quarantined_inputs": "locator intentionally removed during source remediation",
+    "boundary_commit": "981b0a6"
+  }
+}

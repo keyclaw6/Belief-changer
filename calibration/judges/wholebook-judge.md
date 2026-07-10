@@ -2,8 +2,9 @@
 
 ## Part 1 — Summarizer protocol (operator runs this first, per book)
 
-For EACH book separately, with the SAME cheap model and this exact instruction,
-in a fresh context per book:
+For EACH book separately, with the SAME allowed planning/judge model at its
+highest supported reasoning mode and maximum endpoint-supported output allowance,
+using this exact instruction in a fresh context per book:
 
 > For each chapter of the attached book, in order, produce exactly two sentences:
 > (1) what the chapter argues or does to the reader, (2) how it ends / what it

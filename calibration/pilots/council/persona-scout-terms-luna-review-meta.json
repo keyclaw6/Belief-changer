@@ -1,0 +1,28 @@
+{
+  "call_id": "gen-1783716208-OMhAqiU2830oOHAoTRcE",
+  "boundary": "sanitized bootstrap input snapshot",
+  "request_payload_sha256": "a7f7d417e5b6ee7c0169146f0d9ca5da6306a678f7a6b155617cc1ffdc2c5f21",
+  "requested_model": "openai/gpt-5.6-luna",
+  "actual_model": "openai/gpt-5.6-luna-20260709",
+  "provider": "OpenAI",
+  "reasoning_configuration": "max",
+  "maximum_output_allowance": 128000,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 16914,
+    "completion_tokens": 36074,
+    "reasoning_tokens": 31033,
+    "total_tokens": 52988,
+    "cost_usd": 0.23758575
+  },
+  "input_blobs": {
+    "prompts/research-agent.md": "0f34e07acf44a448c5c463c0846b55b09861bfbc",
+    "production-books/quit-sugar/00-brief.md": "a272394a8fd32787db145ebcb3327a8ba9094c0c",
+    "calibration/pilots/council/persona-scout-terms-candidate.md": "2e564c5251e30e7ded37adf3dae1036682dca6ac",
+    "calibration/pilots/council/persona-scout-terms-minimax-review.md": "7656178641eddc8ab5390807f3b0acdb79fee5ec"
+  },
+  "review_assignment": "Act as the next fresh top-reasoning research architecture reviewer required by section 2. No retrieval artifacts are supplied. Audit the complete scout candidate and the complete prior reviewer artifact below against every source-authorization, provenance, scout/synthesis, persona-depth, reconstructability, blindness, and quality requirement. Choose your own reasoning path and further agentic work. Do not accept any verification or persona claim that lacks visible evidence. Return a decisive verdict and either a genuinely complete corrected artifact or a model-owned retrieval commission for whatever must happen before regeneration; never ask the operator to patch rows. Quality is the only optimizer.",
+  "output_sha256": "f78c1b6a7685a6a34203e3cf553cb503f9c2ee25908183d452599ec4914b38fd",
+  "response_recorded_utc": "2026-07-10T20:48:32Z",
+  "disposition": "PASS — PRE-REGENERATION RETRIEVAL COMMISSION; RESEARCH BLOCKED BEFORE COLLECTION"
+}

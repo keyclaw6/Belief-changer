@@ -15,6 +15,9 @@
     "research_architects": [
       {"role": "persona | community | science | investigation", "model": "<allowed R1-R3 exact id>", "reasoning": "xhigh | max | enabled", "max_output_allowance": "<exact request value/provider maximum>"}
     ],
+    "research_retrieval_agents": [
+      {"commission": "<scout/retrieval assignment IDs>", "model": "<allowed R1-R3 exact id>", "reasoning": "xhigh | max | enabled", "max_output_allowance": "<exact request value/provider maximum>", "artifacts": ["<visible URL/excerpt artifact paths>"]}
+    ],
     "research_lead": "<allowed R1-R3 exact id resolved from GET /api/v1/models>",
     "research_lead_reasoning": "xhigh | max | enabled",
     "research_lead_max_output_allowance": "<exact request value/provider maximum>",

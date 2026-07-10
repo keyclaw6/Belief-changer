@@ -7,18 +7,17 @@ import sys
 import time
 import urllib.error, urllib.request
 from pathlib import Path
-
 sys.path.insert(0, str(Path(__file__).parent))
 import evallib as E
-
+import model_endpoint as M
 DIMS = ["click", "flow", "warmth", "mantra_discipline", "voice", "pacing"]
 CRITICAL_FAILURES = {"shame_moralizing", "willpower_framing", "fear_as_motivator",
                      "medical_overreach", "plagiarism_suspect", "broken_continuity"}
-
-def chat(base_url, api_key, model, content, reasoning_effort, temperature=0.2, retries=3):
+def chat(base_url, api_key, model, content, reasoning_effort, max_tokens,
+         temperature=0.2, retries=3):
     url = base_url.rstrip("/") + "/chat/completions"
     body = {"model": model, "messages": [{"role": "user", "content": content}],
-            "reasoning": {"effort": reasoning_effort}}
+            "reasoning": {"effort": reasoning_effort}, "max_tokens": max_tokens}
     if temperature is not None:
         body["temperature"] = temperature
     for attempt in range(retries):
@@ -40,7 +39,6 @@ def chat(base_url, api_key, model, content, reasoning_effort, temperature=0.2, r
                 continue
             raise
     raise RuntimeError(f"chat: exhausted retries for {model}")
-
 def extract_json(text: str):
     start = text.find("{")
     while start != -1:
@@ -57,14 +55,16 @@ def extract_json(text: str):
                         break
         start = text.find("{", start + 1)
     return None
-
 def judge_pair(cfg, model, ch_n, ours_text, ref_text, order):
     a_text, b_text = (ours_text, ref_text) if order == 0 else (ref_text, ours_text)
     content = (cfg["prompt"] + "\n\n=== TEXT A ===\n" + a_text +
                "\n\n=== TEXT B ===\n" + b_text)
-    raw = chat(cfg["base_url"], cfg["api_key"], model, content, cfg["reasoning_efforts"][model])
+    allowance = cfg["max_output_allowances"][model]
+    raw = chat(cfg["base_url"], cfg["api_key"], model, content,
+               cfg["reasoning_efforts"][model], allowance)
     parsed = extract_json(raw)
-    rec = {"chapter": ch_n, "model": model, "order": order, "raw": raw, "parsed": parsed}
+    rec = {"chapter": ch_n, "model": model, "order": order,
+           "max_output_allowance": allowance, "raw": raw, "parsed": parsed}
     if parsed is None:
         rec["validation_error"] = "no complete JSON object found"
     else:
@@ -74,7 +74,6 @@ def judge_pair(cfg, model, ch_n, ours_text, ref_text, order):
         except ValueError as exc:
             rec["validation_error"] = str(exc)
     return rec
-
 def validate_pairwise(p):
     if not isinstance(p, dict):
         raise ValueError("response must be a JSON object")
@@ -111,7 +110,6 @@ def validate_pairwise(p):
     notes = p.get("notes")
     if not isinstance(notes, str) or len(notes.split()) > 60:
         raise ValueError("notes must be a string of at most 60 words")
-
 def map_verdict(p, ours_key, ref_key):
     validate_pairwise(p)
     out = {"dims": {}, "critical_ours": p["critical_failures"][ours_key]}
@@ -123,7 +121,6 @@ def map_verdict(p, ours_key, ref_key):
     real = p["which_is_real_carr"]
     out["real_guess_correct"] = (real == ref_key) if real in ("A", "B") else 0.5
     return out
-
 def summarize_dims(records):
     out = {}
     for dim in DIMS:
@@ -136,7 +133,6 @@ def summarize_dims(records):
                 "ref_mean": round(sum(p["ref"] for p in pairs) / len(pairs), 2),
                 "win_rate_incl_half_ties": round((wins + 0.5 * ties) / len(pairs), 3)}
     return out
-
 def parse_reasoning_efforts(raw, models):
     try:
         efforts = dict(item.rsplit("=", 1) for item in raw.split(","))
@@ -149,7 +145,6 @@ def parse_reasoning_efforts(raw, models):
     if missing:
         raise ValueError("missing reasoning effort for: " + ", ".join(missing))
     return efforts
-
 def parse_pairs(raw, ours_count, ref_count):
     pairs = []
     for item in raw.split(","):
@@ -161,7 +156,6 @@ def parse_pairs(raw, ours_count, ref_count):
             raise SystemExit(f"judge_panel: out-of-bounds --pairs entry: {item!r}")
         pairs.append(pair)
     return pairs
-
 def aggregate(records):
     ok = [r for r in records if r.get("mapped")]
     invalid = len(records) - len(ok)
@@ -188,7 +182,6 @@ def aggregate(records):
     summary["critical_failures_ours"] = sorted({c for r in ok
                                                 for c in r["mapped"]["critical_ours"]})
     return summary
-
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--ours", required=True)
@@ -198,6 +191,8 @@ def main():
     ap.add_argument("--models", required=True, help="comma-separated model ids/aliases")
     ap.add_argument("--reasoning-efforts", required=True,
                     help="comma-separated exact model=effort mappings")
+    ap.add_argument("--max-output-allowances", default="",
+                    help="exact endpoint-reported model=integer mappings; omitted queries /models")
     ap.add_argument("--prompt", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--base-url", default="", help="override endpoint base URL")
@@ -210,12 +205,10 @@ def main():
         reasoning_efforts = parse_reasoning_efforts(a.reasoning_efforts, models)
     except ValueError as exc:
         ap.error(str(exc))
-
     ours = E.load_chapters(a.ours)
     ref = E.load_chapters(a.ref, exts=(".txt", ".md"))
     pairing = (parse_pairs(a.pairs, len(ours), len(ref)) if a.pairs else
                [(n, n) for n in E.parse_range(a.chapters, min(len(ours), len(ref)))])
-
     if a.base_url:
         base_url = a.base_url
         api_key = os.environ.get(a.api_key_env or "LITELLM_API_KEY") or \
@@ -229,9 +222,16 @@ def main():
     if not base_url or not api_key:
         raise SystemExit("judge_panel: provide OPENROUTER_API_KEY, or LITELLM_BASE_URL"
                          " + LITELLM_API_KEY, or --base-url/--api-key-env")
-    cfg = {"base_url": base_url, "api_key": api_key, "reasoning_efforts": reasoning_efforts,
+    try:
+        max_output_allowances = (M.parse_output_allowances(a.max_output_allowances, models)
+                                 if a.max_output_allowances else
+                                 M.resolve_output_allowances(base_url, api_key, models))
+    except (ValueError, urllib.error.URLError, json.JSONDecodeError) as exc:
+        raise SystemExit(f"judge_panel: cannot resolve endpoint output allowance: {exc}")
+    cfg = {"base_url": base_url, "api_key": api_key,
+           "reasoning_efforts": reasoning_efforts,
+           "max_output_allowances": max_output_allowances,
            "prompt": Path(a.prompt).read_text(encoding="utf-8")}
-
     outdir = Path(a.out)
     outdir.mkdir(parents=True, exist_ok=True)
     records = []
@@ -255,6 +255,5 @@ def main():
     if summary["invalid_judgments"]:
         raise SystemExit("judge_panel: incomplete panel; "
                          f"{summary['invalid_judgments']} judgment(s) failed validation")
-
 if __name__ == "__main__":
     main()

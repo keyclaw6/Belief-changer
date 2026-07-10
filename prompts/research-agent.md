@@ -8,9 +8,11 @@ Fill ten behavior-specific raw-material banks with independent, source-traceable
 
 The agentic council uses these fresh-context handoffs and no others:
 
-- an **architecture specialist** receives this prompt, the filled `production-books/<slug>/00-brief.md`, and one focused persona/community/science/investigation assignment;
+- an **architecture scout** receives this prompt, the filled `production-books/<slug>/00-brief.md`, and one focused persona/community/science/investigation assignment, then returns a retrieval commission rather than unsupported factual synthesis;
+- a **retrieval subagent** receives this prompt, the same brief, and one focused retrieval assignment from a scout or reviewer, then returns visible URLs, captured excerpts, retrieval metadata, and gaps;
+- an **architecture specialist** receives this prompt, the same brief, its focus assignment, and the visible artifacts from all commissioned retrieval subagents;
 - the **architecture lead** receives this prompt, the same brief, and the visible returned artifacts from its commissioned specialists;
-- an **architecture reviewer** receives this prompt, the same brief, and the complete candidate architecture it must audit or regenerate;
+- an **architecture reviewer** receives this prompt, the same brief, the complete candidate architecture it must audit or regenerate, and that candidate's visible retrieval artifacts;
 - a **collection worker** receives this prompt, the same brief, and one focused assignment record from the approved architecture;
 - the **synthesis lead** receives this prompt, the same brief, the approved research log, and accepted source packets from this run.
 
@@ -28,34 +30,50 @@ The **caller**, not the language model inside the call, resolves endpoint metada
 
 The caller is also the persistence boundary. A role may write files directly when its environment exposes repository tools; otherwise it returns complete artifact-ready Markdown blocks with their destination paths, and the caller persists them verbatim. Lack of direct filesystem access is not a blocker. Architecture specialists and reviewers SHOULD have source-retrieval capability when it can improve community/source discovery or verification; collection workers MUST have it and return their log events and packets as specified below.
 
+## 1a. Source-authorization and retention gate
+
+Quality evidence must also be lawfully and durably usable. Before a proposed community, platform, API, feed, page, or document becomes `READY`, the caller and council verify the current access terms, robots/access controls, automation permission, research approval or license, excerpt/quotation rights, retention/deletion duties, and whether the raw captures and packet excerpts may be committed and redistributed in this open repository. Record the verified basis and policy URL/version in the assignment.
+
+Do not scrape, search, fetch, or count a source that requires permission the run does not have. Never use fingerprint spoofing, stealth behavior, rotating identities, security-challenge workarounds, or another transport to bypass access controls or rate limits. If a transport is blocked, report the block and commission a permitted alternative.
+
+A source that permits only project-limited or revocable research access, requires deletion refreshes, or forbids raw-data redistribution cannot satisfy this repository's packet contract unless a separate compliant storage/output design is explicitly approved. Do not commit its raw text, user identifiers, or derivative quote packets.
+
+As of 2026-07-10, Reddit research requires documented Reddit for Researchers approval or a separate written agreement from Reddit expressly covering the exact access, retention, deletion, and output contract. Moderator, community, or individual-author permission is not platform authorization. Without Reddit's approval, reject Reddit and Reddit-derived evidence rather than using public feeds, search snippets, browser stealth, or an unofficial scraper. Source-policy changes must be rechecked at runtime.
+
 ## 2. Lead: build an agentic research council, then declare the assignment matrix
 
-The lead is a research architect, not a lone summarizer. Before synthesis, the caller runs at least four separate fresh-context specialists—one each for persona discovery, community discovery, scientific-source mapping, and investigative-source mapping—on the allowed research arms at top reasoning with maximum supported output allowance. A separate adversarial architecture reviewer follows the lead synthesis. The lead and reviewer may request any number of additional agents whenever independent judgment or deeper coverage would improve quality.
+The lead is a research architect, not a lone summarizer. Before synthesis, the caller runs at least four separate fresh-context scout/specialist tracks—one each for persona discovery, community discovery, scientific-source mapping, and investigative-source mapping—on the allowed research arms at top reasoning with maximum supported output allowance. Each scout first commissions focused retrieval subagents. The specialist synthesizes only after their visible artifacts return. A separate adversarial architecture reviewer follows the lead synthesis. Scouts, specialists, the lead, and the reviewer may request any number of additional agents whenever independent judgment or deeper coverage would improve quality.
 
 The bank, matrix, log, and packet schemas are output/provenance contracts, not a prescribed chain of thought. Every agent chooses its own reasoning path, search strategy, exploration order, recursion, and additional subagent decomposition.
+
+A one-shot broad web search over this entire prompt is not deep research. Retrieval assignments isolate one research question, source family, community, or query cluster so the retrieval agent can search it deeply. A specialist may cite a URL, quote, or factual excerpt only when it appears in a visible retrieval artifact supplied to that specialist. If the available artifacts are irrelevant, thin, or contradictory, reject them and commission more retrieval agents; never bridge the gap with a plausible-looking source or quotation.
 
 From the brief and council yield, identify **all materially distinct provisional personas**, segmented first by the function the behavior serves and second by materially different life situations. Three is a floor, not a ceiling. Never cap personas, communities, or assignments to save tokens, time, output length, or money; merge only personas that are substantively redundant. Identify the recovery/experience communities where each persona speaks in its own words and the independent scientific or investigative source families needed for Banks 7–8. Declare targets at least as strict as §4.
 
 Before broad collection, write one row per planned community/source-scope × persona × bank cell at the top of `research/research-log.md`:
 
-| Assignment ID | Worker ID | Community / source scope | Persona | Bank | Target | Query / search settings | Runtime model ID | Reasoning config | Max output allowance | Accepted items | Distinct sources | Qualitative verdict | Status / follow-up |
-|---|---|---|---|---|---|---|---|---|---|---:|---:|---|---|
+| Assignment ID | Worker ID | Community / source scope | Access / retention basis | Persona | Bank | Target | Query / search settings | Runtime model ID | Reasoning config | Max output allowance | Accepted items | Distinct sources | Qualitative verdict | Status / follow-up |
+|---|---|---|---|---|---|---|---|---|---|---|---:|---:|---|---|
 
-An assignment may cover several rows only when it still names one focused community/source scope, an explicit persona scope, explicit bank slots and targets, its chosen query/search strategy, a worker ID, an allowed model configuration, and the endpoint's maximum output allowance. “Focused” defines subject responsibility only; it never limits reasoning, output, searches, time, spend, or the ability to commission more agents. Use `ALL` as the persona only for genuinely persona-neutral science; explain every `N/A`. Reject and focus any assignment missing a scope, persona, or bank.
+An assignment may cover several rows only when it still names one focused community/source scope, a verified access/retention basis, an explicit persona scope, explicit bank slots and targets, its chosen query/search strategy, a worker ID, an allowed model configuration, and the endpoint's maximum output allowance. “Focused” defines subject responsibility only; it never limits reasoning, output, searches, time, spend, or the ability to commission more agents. Use `ALL` as the persona only for genuinely persona-neutral science; explain every `N/A`. Reject and focus any assignment missing a scope, authorization basis, persona, or bank.
 
 In the numeric floors, a **source** means a distinct underlying URL/document, not a distinct community or worker. One community assignment can collect several independent URLs, but the lead should assign as many independent communities and workers as quality requires. Do not create duplicate rows merely to satisfy a numeric source floor, and do not suppress a valuable community merely to keep the matrix small. Return the complete artifact-ready persona list, matrix, and whatever validation notes are needed to preserve the council's judgment.
 
-Every matrix row must be independently reconstructable: repeat the complete source scope, target, chosen query/search strategy, runtime request model ID, reasoning configuration, and maximum output allowance in that row. The `Bank` cell contains exactly one integer from `1` through `10`, never a range, list, or named sub-claim; repeat an assignment ID across separate rows when one worker covers several banks. Never use `same`, `as above`, ditto marks, or an implicit carry-forward. Each row names exactly one fixed community or one fixed scientific/investigative source family. Do not hide alternate, supplemental, fallback, or "if thin" communities in the scope or query; a follow-up source is a new declared row.
+Every matrix row must be independently reconstructable: repeat the complete source scope, access/retention basis and policy version, target, chosen query/search strategy, runtime request model ID, reasoning configuration, and maximum output allowance in that row. The `Bank` cell contains exactly one integer from `1` through `10`, never a range, list, or named sub-claim; repeat an assignment ID across separate rows when one worker covers several banks. Never use `same`, `as above`, ditto marks, or an implicit carry-forward. Each row names exactly one fixed community or one fixed scientific/investigative source family. Do not hide alternate, supplemental, fallback, or "if thin" communities in the scope or query; a follow-up source is a new declared row.
 
 Treat the brief's non-goals as research-scope exclusions; do not mine a community whose defining condition is excluded from the book merely because some symptoms overlap. Any architecture role that cannot retrieve a named community labels it `CANDIDATE — VALIDATION REQUIRED`; it does not pretend to verify existence. Before worker dispatch, retrieval-capable specialists or the lead validate the canonical community URL and topical fit, replace invalid candidates, and change only validated rows to `READY`.
 
-Before dispatch, a fresh top-reasoning research reviewer receives this prompt, the blind brief, and the complete candidate artifact. It audits persona coverage, source/community depth, query fit, blindness, reconstructability, model configurations, and every bank's qualitative sufficiency. If anything is weak, the reviewer returns a complete corrected artifact or commissions another specialist through the caller; it never asks the operator to patch rows by hand. Research workers run only after an independent reviewer says the architecture is genuinely strong enough.
+No row becomes `READY` until its source-authorization and retention basis also passes §1a. A community that is topically ideal but incompatible with the repository's access, retention, deletion, or redistribution contract is rejected and replaced; evidence depth never excuses an unauthorized source.
+
+Before dispatch, a fresh top-reasoning research reviewer receives this prompt, the blind brief, the complete candidate artifact, and its visible retrieval artifacts. It audits persona coverage, source/community depth, query fit, source-to-claim fidelity, blindness, reconstructability, model configurations, and every bank's qualitative sufficiency. If anything is weak, the reviewer returns a complete corrected artifact or commissions another specialist through the caller; it never asks the operator to patch rows by hand. Research workers run only after an independent reviewer says the architecture is genuinely strong enough.
 
 Before returning any matrix, reject and replace every shorthand, out-of-scope population, multi-bank cell, vague source family, or assignment that bundles more than one focused community/source responsibility. Before collection, reject every named community still unvalidated or nonexistent.
 
 ## 3. Worker: collect provenance-preserving yield
 
 Own the assigned community/source responsibility deeply. Follow promising leads and commission further agents whenever that improves evidence quality; record adjacent scopes as explicit follow-up assignments rather than silently blending provenance. Community work should reach first-person recovery or experience discussions; Banks 7–8 should use independent primary scientific or investigative sources where available. A search-result summary may guide discovery but is not evidence unless its exact returned excerpt is saved unchanged.
+
+Before the first search or fetch, confirm the assignment's recorded access/retention basis still applies. Stop and return a policy gap if the source blocks the documented method, changes its terms, requires ungranted approval, or cannot support the packet's durable open-source retention. Do not attempt another identity, stealth layer, mirror, feed, or endpoint to evade the restriction.
 
 Every search, model call, accepted or rejected source capture, and URL revisit produces a chronological log event with its query and assignment IDs, tool/search settings, exact model/reasoning configuration, usage and cost when available, disposition and reason, output/source IDs, and cells filled.
 
@@ -69,6 +87,8 @@ Create one Markdown packet under `research/sources/` for each distinct accepted 
 - **Title:** <page, thread, paper, transcript, or report title>
 - **Retrieved (UTC):** <timestamp>
 - **Community / source type:** <named community or source family>
+- **Access / retention basis:** <permission, license, policy URL/version, and why repository retention/redistribution is allowed>
+- **Deletion / refresh obligations:** none — otherwise this source cannot become a repository packet; an approved alternative storage design must remain outside durable Git
 - **Query ID:** <ID>
 - **Assignment ID:** <ID>
 - **Worker ID:** <ID>
@@ -142,7 +162,7 @@ Research may close only when:
 - every exact quote passes character-for-character verification;
 - every source/call/search event and rejection is logged.
 
-For each failing row, issue a fresh targeted follow-up assignment naming the exact community/source responsibility, persona, bank, missing quantity or quality, chosen search strategy, worker, model configuration, and maximum output allowance. Append it to the matrix and repeat the quality review. If evidence remains unavailable, report the unresolved row and keep research blocked; never fill it by invention.
+For each failing row, issue a fresh targeted follow-up assignment naming the exact authorization-safe community/source responsibility, persona, bank, missing quantity or quality, chosen search strategy, worker, model configuration, and maximum output allowance. Append it to the matrix and repeat the quality review. If evidence remains unavailable or permission cannot be established, report the unresolved row and keep research blocked; never fill it by invention or access-control bypass.
 
 ## 6. Two-file synthesis
 

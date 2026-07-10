@@ -1,0 +1,27 @@
+{
+  "call_id": "gen-1783715273-0hf3y9WqMTiv67zJnu7H",
+  "boundary": "sanitized bootstrap input snapshot",
+  "request_payload_sha256": "204d31e3c564711992e5fe98a8fb88283ea4685424445b8cddedd5f963d9d15f",
+  "requested_model": "minimax/minimax-m3",
+  "actual_model": "minimax/minimax-m3-20260531",
+  "provider": "Parasail",
+  "reasoning_configuration": "enabled (no effort ladder reported)",
+  "maximum_output_allowance": 696599,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 9476,
+    "completion_tokens": 18139,
+    "reasoning_tokens": 13105,
+    "total_tokens": 27615,
+    "cost_usd": 0.02457888
+  },
+  "input_blobs": {
+    "prompts/research-agent.md": "0f34e07acf44a448c5c463c0846b55b09861bfbc",
+    "production-books/quit-sugar/00-brief.md": "a272394a8fd32787db145ebcb3327a8ba9094c0c",
+    "calibration/pilots/council/persona-scout-terms-candidate.md": "2e564c5251e30e7ded37adf3dae1036682dca6ac"
+  },
+  "review_assignment": "Act as the fresh top-reasoning research architecture reviewer required by section 2. No retrieval artifacts are supplied. Audit the complete candidate below for source authorization, retention and redistribution safety, persona depth, source depth, reconstructability, blindness, and every protocol requirement. Do not trust a claim of verification without visible evidence. If it is not genuinely dispatch-ready, do not ask the operator to patch it: return a complete corrected commission or commission whatever independent policy/source retrieval is required before a complete regeneration. Choose your own reasoning path and any further agentic work needed; quality is the only optimizer.",
+  "output_sha256": "1d7aca1e7a0ad1f9e81cdfb5ec82f4584ee8b81bf532e24c20305244ad21d3e9",
+  "response_recorded_utc": "2026-07-10T20:39:37Z",
+  "disposition": "REJECTED REGENERATION — PROVENANCE AND RECONSTRUCTABILITY FAILURES; LUNA REVIEW REQUIRED"
+}

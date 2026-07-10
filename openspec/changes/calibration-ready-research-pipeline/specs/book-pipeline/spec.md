@@ -1,7 +1,7 @@
 ## ADDED Requirements
 
 ### Requirement: Role model isolation
-The pipeline SHALL resolve exact model IDs at runtime and MUST preserve the founder-approved role boundaries. Research architects, leads, workers, reviewers, and synthesizers MUST use DeepSeek V4 Pro, MiniMax M3, or GPT‑5.6 Luna. Framers, planners, plan reviewers, chapter reviewers, Stage-B summarizers, and judges MUST use Gemini 3.1 Pro, GPT‑5.6 Sol, or Grok 4.5. Gemini 3.1 Flash Lite is forbidden in every role. Every non-writer call MUST use that model's highest supported reasoning mode and maximum endpoint-supported output allowance. Claude Opus 4.6 MUST be used only for chapter writing and MUST run with reasoning disabled.
+The pipeline SHALL resolve exact model IDs at runtime and MUST preserve the founder-approved role boundaries. Research scouts, retrieval subagents, architects, leads, workers, reviewers, and synthesizers MUST use DeepSeek V4 Pro, MiniMax M3, or GPT‑5.6 Luna. Framers, planners, plan reviewers, chapter reviewers, Stage-B summarizers, and judges MUST use Gemini 3.1 Pro, GPT‑5.6 Sol, or Grok 4.5. Gemini 3.1 Flash Lite is forbidden in every role. Every non-writer call MUST use that model's highest supported reasoning mode and maximum endpoint-supported output allowance. Claude Opus 4.6 MUST be used only for chapter writing and MUST run with reasoning disabled.
 
 #### Scenario: Opus is assigned outside chapter writing
 - **WHEN** a run config assigns Opus to research, planning, review, judging, or synthesis

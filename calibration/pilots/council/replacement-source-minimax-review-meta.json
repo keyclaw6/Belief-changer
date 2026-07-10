@@ -1,0 +1,28 @@
+{
+  "call_id": "gen-1783718490-DRgH7rXS05m49dYCUuTG",
+  "boundary": "sanitized bootstrap input snapshot",
+  "request_payload_sha256": "103415b5ce90ed5ffa3bca511e75f54820850d0097d55ed052dd62597a202a09",
+  "requested_model": "minimax/minimax-m3",
+  "actual_model": "minimax/minimax-m3-20260531",
+  "provider": "AtlasCloud",
+  "reasoning_configuration": "enabled (no effort ladder reported)",
+  "maximum_output_allowance": 348772,
+  "endpoint_maximum_output_allowance": 1039409,
+  "key_authorization_ceiling": 348772,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 7399,
+    "completion_tokens": 9589,
+    "reasoning_tokens": 6130,
+    "total_tokens": 16988,
+    "cost_usd": 0.01369914
+  },
+  "input_blobs": {
+    "prompts/research-agent.md": "0f34e07acf44a448c5c463c0846b55b09861bfbc",
+    "production-books/quit-sugar/00-brief.md": "a272394a8fd32787db145ebcb3327a8ba9094c0c",
+    "calibration/pilots/council/replacement-source-scout-deepseek.md": "07c4ef45e7cbbb3e733869dfbf507c00a5c7f6b9"
+  },
+  "output_sha256": "25fe60f30e76344e5777f9c296e92a5825fdbbdaaccecce50837b85c1c04d43b",
+  "response_recorded_utc": "2026-07-10T21:24:15Z",
+  "disposition": "REJECTED REGENERATION — SAFETY, QUALITY-CAP, AND PROVENANCE FAILURES; LUNA REVIEW REQUIRED"
+}
