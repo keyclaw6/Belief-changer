@@ -16,4 +16,4 @@
 
 - [x] 3.1 Record the three-candidate H-011 code audit and the no-adoption decision in the hypothesis ledger and harness.
 - [x] 3.2 Validate the OpenSpec change strictly, run `bash scripts/check.sh`, inspect the full diff for blindness and model-role compliance, then commit and push the pre-run contract.
-- [ ] 3.3 Close RP-000–RP-027 as the autopsied bootstrap boundary, validate and commit the model-led contract, then create immutable run-001 and begin real research there.
+- [x] 3.3 Close RP-000–RP-027 as the autopsied bootstrap boundary, validate and commit the model-led contract, then create immutable run-001 and begin real research there.
