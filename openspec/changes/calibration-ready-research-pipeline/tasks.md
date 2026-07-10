@@ -14,4 +14,4 @@
 
 - [x] 3.1 Record the three-candidate H-011 code audit and the no-adoption decision in the hypothesis ledger and harness.
 - [x] 3.2 Validate the OpenSpec change strictly, run `bash scripts/check.sh`, inspect the full diff for blindness and model-role compliance, then commit and push the pre-run contract.
-- [ ] 3.3 Complete and version a bounded pre-run H-010/H-009 bootstrap pilot; record source/quote/coverage/cost evidence and every failure autopsy before creating the immutable run-001 baseline.
+- [ ] 3.3 Complete and version an unrestricted quality-first H-010/H-009 bootstrap pilot; record source/quote/coverage evidence, descriptive usage metadata, and every failure autopsy before creating the immutable run-001 baseline.

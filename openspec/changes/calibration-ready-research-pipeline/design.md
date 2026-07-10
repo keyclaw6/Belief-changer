@@ -11,7 +11,7 @@ Three OSS candidates were inspected at current HEAD: LangChain `open_deep_resear
 - Produce deep, community-grounded, source-traceable research through fresh focused workers.
 - Make research completion a visible coverage decision rather than a token/time guess.
 - Preserve the existing `research/sources/`, log, and two-synthesis file contract.
-- Compare research models and later orchestration arms using reconstructable yield/cost measures.
+- Compare research models and later orchestration arms using reconstructable quality and yield evidence; usage/cost are descriptive only.
 - Keep every research/planning sub-call blind to reference books and `analysis/`.
 
 **Non-Goals:**
@@ -25,15 +25,15 @@ Three OSS candidates were inspected at current HEAD: LangChain `open_deep_resear
 
 ### 1. Use prompt-structured lead/worker handoffs for run-001
 
-A fresh research lead receives only `prompts/research-agent.md` and the book brief. It first records a coverage matrix in `research/research-log.md`, then dispatches fresh workers by community and a bounded bank/persona assignment. Workers receive only the same two files plus their assignment. The lead commissions missing-slot follow-ups and performs synthesis only after the coverage gate passes.
+The council uses at least four separate architecture specialists—persona discovery, community discovery, scientific-source mapping, and investigative-source mapping—with explicit blind handoffs. Specialists receive `prompts/research-agent.md`, the book brief, and one focus assignment; the architecture lead receives the same prompt/brief plus their visible returned artifacts; an independent reviewer receives the prompt/brief plus the complete candidate architecture; collection workers receive the prompt/brief plus one approved assignment; and the synthesis lead receives the prompt/brief plus the approved log and accepted packets. No role receives hidden reasoning or unrelated agent context. “Focused” bounds subject responsibility, never reasoning, output, searches, subagent count, time, or spend. The lead commissions missing-slot follow-ups and performs synthesis only after the coverage gate passes.
 
 Each matrix row represents exactly one numeric bank and one fixed community or source family, and repeats its complete scope, target, query settings, model ID, and reasoning configuration. Shorthand, bank ranges, and conditional fallback communities are not reconstructable. Brief non-goals constrain community selection, so an excluded clinical or special population cannot silently become a proxy source for a general reader.
 
-Coverage-source counts refer to distinct URLs/documents, not distinct communities or workers. The initial matrix uses 3–4 materially distinct personas and one primary community row per persona/bank; fifth or sixth personas and second communities are evidence-driven follow-ups rather than preemptive Cartesian duplication.
+Coverage-source counts refer to distinct URLs/documents, not distinct communities or workers. The lead uses every materially distinct persona and every community that improves research quality. It does not duplicate assignments merely to satisfy a numeric source floor, but it never suppresses a useful persona, community, worker, or source to reduce output size or cost.
 
-Because the first lead call intentionally has no web access, named communities are candidates rather than facts. A retrieval-capable lead validation pass resolves their canonical URLs and topical fit before any row becomes dispatch-ready. Calibration identity, reference paths, and reference-derived targets remain operator/run metadata and never enter the exact-input brief.
+Because the first architecture call may have no web access, named communities are candidates rather than facts. A retrieval-capable lead validation pass resolves their canonical URLs and topical fit before any row becomes dispatch-ready. A separate fresh top-reasoning research reviewer audits and, when needed, fully regenerates the architecture before dispatch. Calibration identity, reference paths, and reference-derived targets remain operator/run metadata and never enter the exact-input brief.
 
-This is H-010's own-build arm. H-011 does not adopt an OSS framework for run-001: the audited candidates require substantial forks and bring unrelated UI, deployment, RAG, export, or cloud stacks. Useful ideas—parallel fan-out, URL ledgers, and context-budget fuses—remain eligible for selective reimplementation after a concrete failure.
+This is H-010's own-build arm. H-011 does not adopt an OSS framework for run-001: the audited candidates require substantial forks and bring unrelated UI, deployment, RAG, export, or cloud stacks. Useful agentic ideas—parallel fan-out, specialist delegation, adversarial review, and URL ledgers—remain eligible when they improve research quality.
 
 ### 2. Make the existing files the orchestration boundary
 
@@ -61,11 +61,11 @@ The lead may raise targets, but the Stage A default floor is:
 - Bank 7: every candidate scientific claim has an evidence grade and at least two independent sources, or is explicitly CONTESTED.
 - Bank 8: at least three independently sourced mechanisms showing how demand is engineered.
 
-All selected personas must clear their applicable rows. The initial matrix selects 3–4; a fifth or sixth is added only when collected evidence demonstrates a distinct uncovered function or life-situation pattern. A numeric floor does not override the prompt's qualitative sufficiency tests; both must pass.
+All selected personas must clear their applicable rows. Three personas are a floor, not a ceiling; the lead and independent reviewer include every materially distinct function or life-situation pattern. A numeric floor does not override the prompt's qualitative sufficiency tests; both must pass.
 
 ### 6. Keep model arms explicit and at top reasoning
 
-Allowed research arms are DeepSeek V4 Pro (`xhigh`), MiniMax M3 (reasoning enabled; no effort ladder reported), and GPT‑5.6 Luna (`max`). Exact runtime IDs, request configuration, usage, search cost, accepted source count, verified quote count, bank/persona cells filled, and rejected/unverifiable items are recorded. Arm comparisons reuse the same assignment and search settings and rank verified cells/quotes per dollar before prose quality.
+Allowed research arms are DeepSeek V4 Pro (`xhigh`), MiniMax M3 (reasoning enabled; no effort ladder reported), and GPT‑5.6 Luna (`max`). Each receives the maximum endpoint-supported completion/output allowance and may use as many agentic follow-ups as quality requires. Exact runtime IDs, request configuration, maximum output allowance, actual strategy, usage, accepted source count, verified quote count, bank/persona cells filled, and rejected/unverifiable items are recorded. Arm comparisons hold the blind brief, substantive objective, exclusions, and quality bar fixed while each model chooses its own search path, tools, and subagents. Rank community/persona coverage, source depth, verified quotes, belief-changing insight, scientific rigor, and synthesis quality. Cost, tokens, and latency never affect selection.
 
 ### 7. Preserve calibration-specific commit and blindness behavior
 
@@ -77,14 +77,14 @@ Research, framing, planning, review, and writing never receive reference text, `
 - **More workers increase duplicate yield** → one-file-per-URL merging plus the lead's coverage matrix makes duplicates visible and non-counting.
 - **Numeric quotas reward filler** → require distinct sources, exact evidence, and the existing qualitative sufficiency test for every bank.
 - **Search plugins return shallow snippets** → assign community-specific follow-up workers and reject snippets that cannot support the claimed slot.
-- **Prompt orchestration becomes the bottleneck** → measure wall time/error rate; reconsider the smallest OSS fan-out layer only after two autopsied prompt/handoff failures or a measured H-008 bottleneck.
-- **Model-arm comparisons confound search breadth and synthesis** → hold assignment/search settings constant and report raw-yield and synthesis measures separately.
+- **Prompt orchestration needs more independent judgment** → add fresh specialist and adversarial-review agents; adopt an OSS agent framework only if it improves research depth or reliability without replacing model judgment.
+- **Model-arm comparisons confound search breadth and synthesis** → hold the blind objective and quality bar constant, record each arm's freely chosen strategy, and report raw-yield and synthesis measures separately.
 
 ## Migration Plan
 
 1. Update the delta specs and validate the change strictly.
 2. Rewrite the research prompt and research templates to encode the lead/worker/source/coverage contract.
 3. Remove forbidden reference inputs and Opus plan-review requirements from planning assets; make the brief an explicit framing input.
-4. Run a bounded H-010/H-009 research pilot, record failures, and correct the prompt before full run-001 research.
+4. Run an unrestricted quality-first H-010/H-009 research pilot, record failures, and correct the agentic prompt/handoffs before full run-001 research.
 5. Commit and push the blinded brief, prompt, and workshop schemas; bootstrap calls remain under `calibration/pilots/` and contribute no Stage A evidence.
 6. Create and execute run-001 through the unchanged downstream file contract. Rollback is a revert of the pre-run contract commit; no stored data migration is required.

@@ -1,7 +1,7 @@
 ## ADDED Requirements
 
 ### Requirement: Role model isolation
-The pipeline SHALL resolve exact model IDs at runtime and MUST preserve the founder-approved role boundaries. Research leads and workers MUST use DeepSeek V4 Pro, MiniMax M3, or GPT‑5.6 Luna; planners, plan reviewers, and chapter reviewers MUST use Gemini 3.1 Pro, GPT‑5.6 Sol, or Grok 4.5; every non-writer call MUST use that model's highest supported reasoning mode. Claude Opus 4.6 MUST be used only for chapter writing and MUST run with reasoning disabled.
+The pipeline SHALL resolve exact model IDs at runtime and MUST preserve the founder-approved role boundaries. Research architects, leads, workers, reviewers, and synthesizers MUST use DeepSeek V4 Pro, MiniMax M3, or GPT‑5.6 Luna. Framers, planners, plan reviewers, chapter reviewers, Stage-B summarizers, and judges MUST use Gemini 3.1 Pro, GPT‑5.6 Sol, or Grok 4.5. Gemini 3.1 Flash Lite is forbidden in every role. Every non-writer call MUST use that model's highest supported reasoning mode and maximum endpoint-supported output allowance. Claude Opus 4.6 MUST be used only for chapter writing and MUST run with reasoning disabled.
 
 #### Scenario: Opus is assigned outside chapter writing
 - **WHEN** a run config assigns Opus to research, planning, review, judging, or synthesis
@@ -10,6 +10,10 @@ The pipeline SHALL resolve exact model IDs at runtime and MUST preserve the foun
 #### Scenario: A non-writer model is below top reasoning
 - **WHEN** runtime model metadata reports a higher supported reasoning mode than the requested one
 - **THEN** the stage stops and corrects the request before the model call
+
+#### Scenario: An unapproved model is assigned to a role
+- **WHEN** a run assigns a model outside the role's enumerated allowed set, including Gemini 3.1 Flash Lite in any role
+- **THEN** the affected stage stops before the model call
 
 ## MODIFIED Requirements
 

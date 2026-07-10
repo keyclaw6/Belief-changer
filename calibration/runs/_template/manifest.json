@@ -7,14 +7,22 @@
   "scope": "framing+plan+ch1-3 | full-book | holdout-caffeine",
   "hypotheses_tested": [],
   "model_api": "openrouter | litellm | native+openrouter",
+  "model_output_allowance_policy": "endpoint maximum after input context; never economy-capped",
   "arms": {"researcher": "R1-R3", "planner": "P1-P3"},
   "baseline_boundary": "<bootstrap contract-repair commit(s); no calibration-quality amendments>",
   "research_orchestration": {"arm": "H-010 prompt-structured", "oss_framework": "none"},
   "models": {
+    "research_architects": [
+      {"role": "persona | community | science | investigation", "model": "<allowed R1-R3 exact id>", "reasoning": "xhigh | max | enabled", "max_output_allowance": "<exact request value/provider maximum>"}
+    ],
     "research_lead": "<allowed R1-R3 exact id resolved from GET /api/v1/models>",
     "research_lead_reasoning": "xhigh | max | enabled",
+    "research_lead_max_output_allowance": "<exact request value/provider maximum>",
+    "research_reviewer": "<allowed R1-R3 exact id>",
+    "research_reviewer_reasoning": "xhigh | max | enabled",
+    "research_reviewer_max_output_allowance": "<exact request value/provider maximum>",
     "research_workers": [
-      {"assignment": "<worker/task IDs>", "model": "<allowed R1-R3 exact id>", "reasoning": "xhigh | max | enabled"}
+      {"assignment": "<worker/task IDs>", "model": "<allowed R1-R3 exact id>", "reasoning": "xhigh | max | enabled", "max_output_allowance": "<exact request value/provider maximum>"}
     ],
     "planner": "<arm P1-P3 — exact endpoint id or pinned native Codex model>",
     "planner_reasoning": "high | max | ultra (native Codex Sol)",
@@ -28,8 +36,8 @@
     "summarizer": "<allowed planning/judge model at top reasoning; Stage B only>",
     "summarizer_reasoning": "high | max | ultra (native Codex Sol) | -",
     "judges": [
-      {"model": "<Gemini 3.1 Pro | GPT 5.6 Sol | Grok 4.5>", "reasoning": "high | max"},
-      {"model": "<a different allowed model>", "reasoning": "high | max"}
+      {"model": "<Gemini 3.1 Pro | GPT 5.6 Sol | Grok 4.5>", "reasoning": "high | max", "max_output_allowance": "<endpoint maximum>"},
+      {"model": "<a different allowed model>", "reasoning": "high | max", "max_output_allowance": "<endpoint maximum>"}
     ]
   },
   "asset_versions": {

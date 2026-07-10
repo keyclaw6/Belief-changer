@@ -46,7 +46,7 @@ The correction changed the failure mechanism: reasoning summaries show the model
 
 ### RP-001/RP-002 autopsy and decision
 
-The second corrected attempt tripled the completion headroom and reproduced the same zero-artifact mechanism. The broad lead task induces Luna `max` to elaborate the full persona × bank matrix entirely in reasoning without reaching an answer. This is not evidence about source quality, but it is decisive orchestration-efficiency evidence: accepted cells and quotes per dollar are both zero after $0.1629372 of corrected calls. Per the harness failure rule, the same retry is stopped. The approved DeepSeek V4 Pro `xhigh` arm takes the lead role; Luna remains in the later small equal-assignment H-009 comparison so the broad-task failure is not overgeneralized.
+The second corrected attempt tripled the completion headroom and reproduced the same zero-artifact mechanism. At the time, the operator stopped the broad Luna retry and moved the lead role to DeepSeek. The founder's later quality-only correction invalidates that economy-driven stop: these calls are execution autopsies, not model-quality evidence, and Luna must receive an unrestricted maximum-allowance architect or worker trial before H-009 is judged.
 
 ## RP-003 — DeepSeek lead draft (rejected at matrix gate)
 
@@ -112,6 +112,7 @@ All calls used exactly one user message containing the named research prompt fol
 | RP-006 | blob `fcb1423db96b5929fcc3c2d23ed91e63ab282c9f` (adds H-028 one-bank/one-scope rule) | same | MiniMax reasoning enabled, `max_tokens=30000` |
 | RP-007 | blob `2178b2e06749e5e465178c984eabd8113ae5c72c` (`ccbee2d`) | blob `a272394a8fd32787db145ebcb3327a8ba9094c0c` (`ccbee2d`) | MiniMax reasoning enabled, `max_tokens=30000` |
 | RP-008 | blob `a58dcb0fca028a63727a31b8e1b437ffa853b360` (`5b1f217`) | blob `a272394a8fd32787db145ebcb3327a8ba9094c0c` (`5b1f217`) | DeepSeek `xhigh`, `max_tokens=30000` |
+| RP-009 | same as RP-008 | same | DeepSeek `xhigh`, `max_tokens=60000` |
 
 The exact uncommitted prompt additions are preserved in H-026/H-027/H-028 and the final versioned prompt diff. The API key was supplied only through the secure environment and is absent from all artifacts.
 
@@ -149,7 +150,7 @@ Its plan then enumerates 12 lived-community assignments—two communities for ea
 
 ### RP-007 failure autopsy and H-029 correction
 
-The prompt's atomic-cell correction worked in the model's plan: it explicitly intended one bank per row and no shorthand. But it interpreted each bank's `≥2 sources` floor as requiring two independent community assignments for every persona/bank. Six personas × two communities × seven lived banks, plus science/analogy rows, became 91 planned rows. The 30k top-reasoning call ended before the matrix was visible, so nothing was dispatchable. This does not refute H-028 because no rows were returned for inspection. H-029 clarifies that sources are URLs/documents, caps the initial persona set at 3–4, and defers second communities until observed gaps.
+The prompt's atomic-cell correction worked in the model's plan: it explicitly intended one bank per row and no shorthand. But it interpreted each bank's `≥2 sources` floor as requiring two independent community assignments for every persona/bank. Six personas × two communities × seven lived banks, plus science/analogy rows, became 91 planned rows. The 30k top-reasoning call ended before the matrix was visible, so nothing was dispatchable. H-029 then tried to shrink the architecture; that lever is now retired because the founder requires quality-first persona/community breadth and maximum model allowance.
 
 ## RP-008 — clean DeepSeek lead (rejected: reasoning exhausted artifact budget)
 
@@ -173,4 +174,34 @@ All visible rows keep one numeric bank and one fixed scope and repeat their quer
 
 ### RP-008 failure autopsy and H-030 correction
 
-H-029 removed RP-007's Cartesian growth: the response used four personas and one primary community. The provider nevertheless counted internal reasoning and visible artifact against the same 30k completion cap. With 27,118 reasoning tokens, only about 2,882 tokens remained for the matrix, which ended mid-row with `finish_reason=length`. The artifact cannot be dispatched or operator-repaired. H-030 preserves the committed prompt and `xhigh` setting and tests 60k completion headroom; it does not authorize more personas, communities, or prose.
+H-029 removed RP-007's Cartesian growth: the response used four personas and one primary community. The provider nevertheless counted internal reasoning and visible artifact against the same 30k completion cap. With 27,118 reasoning tokens, only about 2,882 tokens remained for the matrix, which ended mid-row with `finish_reason=length`. The artifact cannot be dispatched or operator-repaired. The later founder correction establishes that both this 30k cap and H-030's 60k cap were invalid experimental constraints; future calls use the endpoint maximum and agentic continuation.
+
+## RP-009 — clean DeepSeek lead (rejected: complete-looking invalid matrix)
+
+- **Call ID:** `gen-1783699118-9RUjVancYz8aWiHWJOrd`
+- **Requested / actual model:** `deepseek/deepseek-v4-pro` `xhigh` / `deepseek/deepseek-v4-pro-20260423`
+- **Provider:** StreamLake
+- **Exact committed inputs:** prompt blob `a58dcb0fca028a63727a31b8e1b437ffa853b360` and blind-brief blob `a272394a8fd32787db145ebcb3327a8ba9094c0c`; identical to RP-008
+- **Usage / cost:** 3,481 prompt + 15,970 completion = 19,451 tokens; 12,105 reasoning tokens; $0.018489762
+- **Finish:** `stop`
+- **Raw visible yield:** four personas, 31 matrix rows, and validation notes
+- **Accepted yield:** zero rows because the matrix fails its own dispatch contract
+- **Disposition:** `REJECTED — NON-RECONSTRUCTABLE / UNRESOLVED CONFIG / MULTI-SCOPE`
+
+### Verbatim gate evidence
+
+Most later lived rows contain only a query expression, unlike the first row's fixed sort/time/limit settings:
+
+> `| A1 | W1 | Reddit r/sugarfree | Afternoon Slumper | 2 | ≥3 items, ≥2 sources | "sugar belief" OR ... | ... | CANDIDATE |`
+
+The Bank 8 scope combines an archive, books, a lecture, and an industry source in one cell. Bank 6 is unresolved:
+
+> `| A7 | W7 (later) | Synthesis of collected source packets (Banks 1-5) + inventive reasoning | ALL | 6 | ... | N/A ... | TBD | TBD | ... |`
+
+The response's own validation note nevertheless says, `All rows are independently reconstructable—no ditto marks or implicit carry-forwards exist.`
+
+### RP-009 failure autopsy and founder correction
+
+The 60k cap removed RP-008's immediate truncation, but RP-009 still produced a false-positive self-audit. More importantly, the founder corrected the experiment's objective: the 30k and 60k limits were invalid because research quality—not tokens, cost, speed, or latency—is the only optimization target. These capped calls remain reconstructable execution autopsies but do not rank model quality.
+
+No deterministic research validator, renderer, or state machine was implemented or committed. H-031 instead uses unrestricted top-reasoning persona, community, science, investigation, and adversarial-review subagents, followed by a lead that regenerates the complete architecture. Future calls receive the selected endpoint's maximum supported completion/output allowance; provider ceilings trigger agentic continuation or a larger-capacity endpoint, never task compression.

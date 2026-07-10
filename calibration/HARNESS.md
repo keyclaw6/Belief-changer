@@ -19,7 +19,7 @@ First actions, in order:
    prompts/style-guide.md.
 2. BUILD-AND-TEST the harness before any book run: env per §2
    (OPENROUTER_API_KEY, push access, web access); extract the reference;
-   run the eval suite against the reference itself; make one cheap
+   run the eval suite against the reference itself; make one
    judge_panel call to prove endpoint connectivity; fix anything broken
    and commit the fixes.
 3. Design the deep-research subsystem per §3b — structured multi-subagent
@@ -44,6 +44,7 @@ Every improvement must land in a **generic method asset** (`prompts/style-guide.
 1. `git clone https://github.com/keyclaw6/Belief-changer.git` (if the clone 407s behind a proxy, retry with `git -c http.proxyAuthMethod=basic clone …`). Work on branch **`calibration-lab`**. You need push access; if you lack it, escalate (§11).
 2. `python3` (stdlib only — no pip installs needed).
 3. Model access: env `OPENROUTER_API_KEY` (the founder's key; base `https://openrouter.ai/api/v1`, OpenAI-compatible). Alternate: `LITELLM_BASE_URL` + `LITELLM_API_KEY` (the founder's proxy); `scripts/eval/judge_panel.py` accepts either. **Resolve exact model IDs at runtime from `GET /api/v1/models`** (bearer auth) — never guess an ID. Every non-writer role uses the highest mode reported by that model's `reasoning` object. The writer is the sole exception: Opus 4.6 with reasoning disabled via `{"reasoning": {"enabled": false}}`.
+   **Quality-only execution law (founder correction, 2026-07-10):** cost, speed, latency, and token use are observations, never optimization targets or stop conditions. Give every model the maximum completion/output allowance supported by the selected endpoint (after input context), never a lower cap for economy or convenience. If a provider ceiling is reached, continue agentically or use a larger-capacity endpoint; do not compress the task to fit. Usage and cost remain recorded only for reconstruction.
 4. Extract the reference (LOCAL ONLY — `calibration/reference/` is gitignored; never commit extracted book text):
    ```
    python3 scripts/eval/extract_reference.py \
@@ -69,12 +70,16 @@ The anti-repetition context law (writer sees only plan + previous chapter + styl
 ## §3b Research depth doctrine (founder, 2026-07-10)
 
 Shallow research produces generic books. Research must go **deep into the places people actually talk** — recovery forums, subreddits, support communities, comment threads under quit-content — first-person experience in the community's own words. A research run is sufficient only when:
-1. **Structured decomposition, not one long prompt:** a research-lead spawns focused sub-researchers (per community, per persona, per bank slot) and merges their yield into the banks. The single-agent-long-prompt approach is the H-010 baseline arm, expected to lose — prove it.
+1. **Structured decomposition, not one long prompt:** H-010 is an unrestricted research council. Independent persona, community, science, and investigation specialists feed a lead; an adversarial reviewer challenges the complete architecture; every role may commission further agents. Do not spend a trial on a deliberately weaker monolithic arm.
 2. **Slot-filling against the style guide's bank schema** (lived-experience themes, justification menu, community lexicon, persona segmentation) with per-slot sufficiency targets — research ends when the slots are full, not when the agent is tired.
 3. **Verbatim + provenance:** quotes captured verbatim with source references; never fabricated, never paraphrased into blandness; CONTESTED tags where the science is disputed.
 4. **OSS deep-research frameworks are on the table** (H-011), but their claims are verified in code before any paid arm: `langchain-ai/open_deep_research` has mature generic supervisor fan-out but no community/bank/provenance contract; `RobertoDeLaCamara/Research-Agent` fans out fixed source searches (its Reddit path is a single site-search, and its post-synthesis evaluator is not source-grounded fact checking); `extracurricular-ai/open-deep-research-with-web-ui` is a generic smolagents manager/UI with no Reddit connector at audited HEAD. Adopt or tune one ONLY per §13 doctrine: it must measurably beat the prompt-structured approach it replaces.
 
-**Run-001 implementation:** prompt-structured lead/worker handoffs (H-010), with the repo files as the orchestration boundary. The three H-011 candidates were audited at source before adoption; none currently satisfies the bank/persona task schema, exact-quote provenance, top-reasoning model config, and factory output contract without a core rewrite. Reconsider only after a measured prompt/handoff failure or equal-assignment win; the audit is recorded in `calibration/hypotheses.md` and the active OpenSpec change.
+**Quality is the only research optimizer.** Do not cap personas, communities, subagents, searches, reasoning tokens, output tokens, wall time, or spend to make the run cheaper or faster. Decomposition is for depth and independent judgment, not to constrain the model. Use fresh top-reasoning research architects, community workers, science workers, and independent reviewers; let them commission further focused agents until the evidence and insight are genuinely sufficient.
+
+The matrix, log, source-packet, and synthesis schemas are handoff/provenance outputs, not a prescribed reasoning process. Agents choose their own internal reasoning, search order, recursion, tools, and delegation.
+
+**Run-001 implementation:** prompt-structured agent council and worker handoffs (H-010), with the repo files as the orchestration boundary. The three H-011 candidates were audited at source before adoption; none currently satisfies the bank/persona task schema, exact-quote provenance, top-reasoning model config, and factory output contract without a core rewrite. Reconsider only if an OSS agentic arm demonstrates a research-quality or reliability win without replacing model judgment; the audit is recorded in `calibration/hypotheses.md` and the active OpenSpec change.
 
 **Bootstrap research pilot:** contract/connectivity calls made while the research handoff is still changing live under `calibration/pilots/`, never under `calibration/runs/run-NNN`. They may diagnose execution failures but do not count as run evidence or arm-quality results. Version the final prompt, blinded brief, and workshop schema in a pushed boundary commit before creating immutable `run-001`.
 
@@ -128,20 +133,22 @@ Length is planned, not hoped for: (a) the master plan's curve map assigns **ever
 | Role | Model | Note |
 |---|---|---|
 | Writer | **Opus 4.6, reasoning disabled — FIXED** | chapter prose only; never research, plan, review, or judge |
-| Research lead + workers | **ARMS below** (needs web access + long context) | DeepSeek V4 Pro / MiniMax M3 / GPT 5.6 Luna only; record each sub-role |
+| Research council + workers | **ARMS below** (needs web access + long context) | architects, lead, reviewers, synthesis: DeepSeek V4 Pro / MiniMax M3 / GPT 5.6 Luna only; record each sub-role |
 | Planner | **ARMS below** | Gemini 3.1 Pro / GPT 5.6 Sol / Grok 4.5 only |
-| Plan reviewer | strongest allowed planning model | "fit to write from" is the costliest gate to get wrong |
+| Plan reviewer | strongest allowed planning model | "fit to write from" is the highest-leverage gate |
 | Chapter reviewer | strongest allowed planning/judge model | cross-family to the fixed Opus writer |
 | Summarizer (Stage B) | one allowed planning/judge model at top reasoning | same model and prompt for both books |
 | Judges | ≥2 of the allowed planning/judge models | every panel is non-Anthropic because the writer is fixed to Opus |
 
 **Planner/reviewer/judge arms (H-005):** P1 GPT 5.6 Sol (OpenRouter `max`; native surface's top setting) · P2 Gemini 3.1 Pro (`high`) · P3 Grok 4.5 (`high`). Use native GPT 5.6 Sol when the environment can pin the exact model/top setting and preserve the exact-input/fresh-context contract; otherwise use the runtime-resolved OpenRouter ID. No lower-effort sweep: top reasoning is fixed.
 
+**Gemini 3.1 Flash Lite is forbidden in every role.** Framers, planners, plan/chapter reviewers, Stage-B summarizers, and judges use only the three planning/judge arms above.
+
 For subscription-backed native Sol in this Codex environment, use a fresh `codex exec --ephemeral --model gpt-5.6-sol` invocation with the per-call top setting `model_reasoning_effort="ultra"`; the current CLI accepted that exact preflight on 2026-07-10. Record the command/config in the manifest. Do not infer the planner model from the mutable global Codex default or from a collaboration spawn that exposes no model selector. OpenRouter Sol continues to use its endpoint-reported `max` setting.
 
-**Researcher arms (H-009):** R1 `deepseek/deepseek-v4-pro` (`xhigh`) · R2 `minimax/minimax-m3` (reasoning enabled; `/models` exposes no effort ladder) · R3 GPT 5.6 Luna (`max`, runtime-resolved ID). Measure: bank slots filled per dollar, verbatim-quote yield with provenance, synthesis quality into the two banks.
+**Researcher arms (H-009):** R1 `deepseek/deepseek-v4-pro` (`xhigh`) · R2 `minimax/minimax-m3` (reasoning enabled; `/models` exposes no effort ladder) · R3 GPT 5.6 Luna (`max`, runtime-resolved ID). Rank only by research quality: community and persona coverage, source depth, verified verbatim evidence, belief-changing insight, scientific rigor, and synthesis quality. Usage, cost, and latency are descriptive metadata and never break a quality tie.
 
-One arm change per attempt; record exact resolved IDs + reasoning configs in the manifest. If an allowed arm or its required top-reasoning config is unavailable at runtime, note it in the ledger and proceed with the remaining allowed arms.
+Use as many independent allowed arms as quality and adversarial diversity demand; record every exact resolved ID, reasoning config, and maximum output allowance in the manifest. If an allowed arm or its required top-reasoning config is unavailable at runtime, note it in the ledger and proceed with the remaining allowed arms.
 
 ## §9 Judging protocol
 
@@ -177,6 +184,6 @@ Stage C passes (parity on the caffeine holdout with zero new tuning) → write t
 
 ## §13 Tooling doctrine: prompts over determinism
 
-**Founder doctrine (2026-07-10): current LLMs systematically underestimate how intelligent current LLMs are — including themselves.** Left alone, they wrap problems in deterministic scaffolding (state machines, retry matrices, format validators) that a well-briefed intelligent agent simply doesn't need. In this lab, optimize with PROMPTS and clever HANDOFFS first: a better-briefed sub-agent beats a thicker wrapper, every time it's tried honestly. Add deterministic code only where determinism IS the point (measurement, reproducibility, gates — the eval scripts) or after a prompt-level fix has failed twice and the failure is understood (autopsied, §10). Bloat is a failure mode; delete it.
+**Founder doctrine (corrected 2026-07-10): current LLMs systematically underestimate how intelligent current LLMs are — including themselves.** Left alone, they wrap problems in deterministic scaffolding (state machines, retry matrices, format validators) that a well-briefed intelligent agent simply doesn't need. Research, framing, planning, reviewing, and writing remain agentic: improve prompts, add independent subagents, or add a stronger fresh-context reviewer. Deterministic code is reserved for measuring completed artifacts and reproducibility records; it must not decide research steps, render a model's plan, cap reasoning, or replace an intelligent quality review. Bloat is a failure mode; delete it.
 
-The eval scripts are **measurement instruments** — deterministic, stdlib-only, runnable anywhere. They are not the orchestration layer; YOU are. If sub-call management (fresh contexts, retries, parallel arms) becomes your bottleneck, build a small runner or adopt a framework (OpenAI Agents SDK, a PI fork, or your environment's native harness) on the lab branch — provided the file contract stays the interface: every artifact readable/writable as repo files, evals runnable standalone. Log the decision as hypothesis H-008 (what it replaces, what it must measurably improve). Your experience here becomes the requirements list for the standalone harness product (VISION Part II, Q1 — decided direction: Agents SDK or PI fork, base chosen from real calibration experience).
+The eval scripts are **measurement instruments** — deterministic, stdlib-only, runnable anywhere. They are not the orchestration layer; YOU and the model subagents are. A runner or adopted agent framework may transport fresh contexts, parallel calls, tools, and file handoffs, but it may not prescribe the research reasoning path or trade quality for throughput. The repo file contract remains the interface and every decision stays reconstructable. Log any adoption as H-008. Your experience here becomes the requirements list for the standalone harness product (VISION Part II, Q1 — decided direction: Agents SDK or PI fork, base chosen from real calibration experience).

@@ -12,14 +12,14 @@ def read(path):
 
 
 class ResearchContractTests(unittest.TestCase):
-    def test_roles_receive_only_blind_bounded_inputs(self):
-        """OpenSpec: research begins; unbounded and forbidden work is rejected."""
+    def test_roles_receive_only_blind_focused_inputs(self):
+        """OpenSpec: research begins; unfocused and forbidden work is rejected."""
         prompt = read("prompts/research-agent.md")
 
         for required in (
-            "fresh-context **research lead**",
-            "same filled brief",
-            "one bounded assignment record",
+            "fresh-context handoffs",
+            "the same brief",
+            "one focused assignment record",
             "community/source scope",
             "persona scope",
             "bank slots",
@@ -30,13 +30,18 @@ class ResearchContractTests(unittest.TestCase):
             "Never use `same`, `as above`",
             "brief's non-goals as research-scope exclusions",
             "CANDIDATE — VALIDATION REQUIRED",
-            "retrieval-capable lead pass validates",
+            "retrieval-capable specialists or the lead validate",
             "source** means a distinct underlying URL/document",
-            "one primary community row per persona/bank",
-            "3–4 initial provisional personas",
-            "A fifth or sixth persona is an evidence-driven follow-up",
-            "add another community only as a targeted follow-up after measured yield is thin",
-            "Return only the artifact-ready persona list, matrix",
+            "research architect, not a lone summarizer",
+            "not a prescribed chain of thought",
+            "at least four separate fresh-context specialists",
+            "Three is a floor, not a ceiling",
+            "Never cap personas, communities, or assignments",
+            "maximum completion/output allowance supported",
+            "fresh top-reasoning research reviewer",
+            "Rank only by research quality",
+            "never selection criteria",
+            "Return the complete artifact-ready persona list, matrix",
             "reject it and every dependent finding",
         ):
             self.assertIn(required, prompt)
@@ -70,9 +75,24 @@ class ResearchContractTests(unittest.TestCase):
             "MUST NOT try to inspect invisible request metadata",
             "returns complete artifact-ready Markdown blocks",
             "Lack of direct filesystem access is not a blocker",
-            "first call returns provisional personas",
+            "Architecture specialists and reviewers SHOULD have source-retrieval capability",
         ):
             self.assertIn(required, prompt)
+
+    def test_research_execution_is_quality_first_and_agentic(self):
+        """OpenSpec: model depth is never capped or replaced by deterministic research code."""
+        harness = read("calibration/HARNESS.md")
+        spec = read("openspec/changes/calibration-ready-research-pipeline/specs/deep-research/spec.md")
+
+        for required in (
+            "Quality-only execution law",
+            "maximum completion/output allowance",
+            "Quality is the only research optimizer",
+            "Research, framing, planning, reviewing, and writing remain agentic",
+        ):
+            self.assertIn(required, harness)
+        self.assertIn("deterministic code MUST NOT plan, render, or validate", spec)
+        self.assertIn("usage, cost, and latency are descriptive metadata", spec)
 
     def test_templates_preserve_handoff_and_arm_measurement(self):
         """OpenSpec: syntheses trace to packets and equal-arm yields are reconstructable."""
@@ -82,10 +102,11 @@ class ResearchContractTests(unittest.TestCase):
         science = read("production-books/_template/research/scientific-evidence.md")
 
         for required in ("Assignment / coverage matrix", "Research-arm summary",
-                         "Runtime model ID", "Reasoning config", "Cost (USD)"):
+                         "Runtime model ID", "Reasoning config", "Max output allowance",
+                         "Cost (USD)"):
             self.assertIn(required, log)
         for required in ("Captured raw source text", "Evidence ID:", "Capture ID:",
-                         "Persona tags:", "Bank slots:"):
+                         "Persona tags:", "Bank slots:", "Maximum output allowance:"):
             self.assertIn(required, packets)
         for bank in (1, 2, 3, 4, 5, 6, 9, 10):
             self.assertIn(f"## Bank {bank}", lived)
@@ -132,6 +153,19 @@ class PlanningContractTests(unittest.TestCase):
             self.assertIn(model, review_template)
         self.assertEqual("needs changes first", review_template.rstrip().splitlines()[-1])
 
+    def test_all_role_model_boundaries_are_explicit(self):
+        """OpenSpec: no role may drift to an unapproved or lower-quality model."""
+        spec = read("openspec/changes/calibration-ready-research-pipeline/specs/book-pipeline/spec.md")
+
+        for role in ("Research architects", "reviewers, and synthesizers", "Framers, planners",
+                     "Stage-B summarizers, and judges"):
+            self.assertIn(role, spec)
+        for model in ("DeepSeek V4 Pro", "MiniMax M3", "GPT‑5.6 Luna",
+                      "Gemini 3.1 Pro", "GPT‑5.6 Sol", "Grok 4.5"):
+            self.assertIn(model, spec)
+        self.assertIn("Gemini 3.1 Flash Lite is forbidden in every role", spec)
+        self.assertIn("maximum endpoint-supported output allowance", spec)
+
 
 class HarnessBoundaryTests(unittest.TestCase):
     def test_brief_and_research_roles_are_manifested(self):
@@ -144,7 +178,10 @@ class HarnessBoundaryTests(unittest.TestCase):
         self.assertIn("`00-brief.md`", framing_row)
         self.assertIn("baseline_boundary", manifest)
         self.assertIn("research_orchestration", manifest)
+        self.assertIn("model_output_allowance_policy", manifest)
         self.assertIn("research_lead", manifest["models"])
+        self.assertIn("research_architects", manifest["models"])
+        self.assertIn("research_reviewer", manifest["models"])
         self.assertIn("research_workers", manifest["models"])
 
     def test_subrole_brief_contains_no_calibration_or_reference_metadata(self):

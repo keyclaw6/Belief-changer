@@ -2,22 +2,19 @@
 
 ## Mission
 
-Fill ten behavior-specific raw-material banks with independent, source-traceable evidence. Research ends when every applicable community × persona × bank cell passes both its numeric floor and its qualitative test, not when a search budget expires. Do not write book prose.
+Fill ten behavior-specific raw-material banks with independent, source-traceable evidence. Research ends when every applicable community × persona × bank cell passes both its numeric floor and its qualitative test, never because of token use, cost, latency, or wall time. Do not write book prose.
 
 ## 1. Exact inputs and model gate
 
-The fresh-context **research lead** receives exactly:
+The agentic council uses these fresh-context handoffs and no others:
 
-1. this prompt;
-2. the filled `production-books/<slug>/00-brief.md`.
+- an **architecture specialist** receives this prompt, the filled `production-books/<slug>/00-brief.md`, and one focused persona/community/science/investigation assignment;
+- the **architecture lead** receives this prompt, the same brief, and the visible returned artifacts from its commissioned specialists;
+- an **architecture reviewer** receives this prompt, the same brief, and the complete candidate architecture it must audit or regenerate;
+- a **collection worker** receives this prompt, the same brief, and one focused assignment record from the approved architecture;
+- the **synthesis lead** receives this prompt, the same brief, the approved research log, and accepted source packets from this run.
 
-The lead may subsequently inspect only worker returns and research artifacts created in this run. Each fresh-context **worker** receives exactly:
-
-1. this prompt;
-2. the same filled brief;
-3. one bounded assignment record from the lead's matrix.
-
-Do not provide any role with reference books, files under `analysis/`, calibration reference text, reference identity or paths, aggregate reference targets, run instructions, judge output, Allen Carr/Easyway derivatives, prose-pattern analysis, prior book prose, or another worker's context. The caller rejects an exact-input brief containing calibration/reference metadata before dispatch. If forbidden material appears, reject it and every dependent finding; its cells remain unfilled.
+Do not provide any role with reference books, files under `analysis/`, calibration reference text, reference identity or paths, aggregate reference targets, run instructions, judge output, Allen Carr/Easyway derivatives, prose-pattern analysis, prior book prose, hidden chain-of-thought, or unrelated context from another agent. Visible council and worker artifacts from this run are allowed only in the handoffs above. The caller rejects an exact-input brief containing calibration/reference metadata before dispatch. If forbidden material appears, reject it and every dependent finding; its cells remain unfilled.
 
 Research leads, workers, and research synthesis may use only these arms, at the runtime-reported highest reasoning mode:
 
@@ -27,32 +24,38 @@ Research leads, workers, and research synthesis may use only these arms, at the 
 | MiniMax M3 | `minimax/minimax-m3` | reasoning enabled; no effort ladder |
 | GPT-5.6 Luna | `openai/gpt-5.6-luna` | `max` |
 
-The **caller**, not the language model inside the call, resolves endpoint metadata and verifies the exact request model ID and top reasoning configuration before dispatch. Afterward the caller records the API response's actual model ID, request reasoning setting, usage, and cost in the returned artifact metadata. A role MUST NOT try to inspect invisible request metadata or treat lack of direct endpoint-metadata access as a blocker. The caller must not dispatch if it cannot perform this preflight, and must stop rather than substitute an unapproved model or lower mode. Opus is not a research model.
+The **caller**, not the language model inside the call, resolves endpoint metadata and verifies the exact request model ID and top reasoning configuration before dispatch. The caller gives every role the maximum completion/output allowance supported by the selected endpoint after input context; it never lowers reasoning or output allowance for cost, speed, or convenience. If a provider ceiling is reached, the caller continues the role agentically or selects a larger-capacity endpoint. Afterward the caller records the API response's actual model ID, request reasoning setting, usage, and cost in the returned artifact metadata, but those observations never rank or stop research. A role MUST NOT try to inspect invisible request metadata or treat lack of direct endpoint-metadata access as a blocker. The caller must not dispatch if it cannot perform this preflight, and must stop rather than substitute an unapproved model or lower mode. Opus is not a research model.
 
-The caller is also the persistence boundary. A role may write files directly when its environment exposes repository tools; otherwise it returns complete artifact-ready Markdown blocks with their destination paths, and the caller persists them verbatim. Lack of direct filesystem access is not a blocker. The lead's first call returns provisional personas and the pre-collection assignment matrix; it does not need web access. Collection workers require source-retrieval capability and return their log events and packets as specified below.
+The caller is also the persistence boundary. A role may write files directly when its environment exposes repository tools; otherwise it returns complete artifact-ready Markdown blocks with their destination paths, and the caller persists them verbatim. Lack of direct filesystem access is not a blocker. Architecture specialists and reviewers SHOULD have source-retrieval capability when it can improve community/source discovery or verification; collection workers MUST have it and return their log events and packets as specified below.
 
-## 2. Lead: declare the assignment matrix before collection
+## 2. Lead: build an agentic research council, then declare the assignment matrix
 
-From the brief, identify **3–4 initial provisional personas**, segmented first by the function the behavior serves and second by materially different life situations. Do not split overlapping personas before collected evidence demonstrates a distinct function or life-situation pattern. A fifth or sixth persona is an evidence-driven follow-up after collection exposes a genuinely distinct function or life-situation pattern, never part of the initial matrix. Identify the recovery/experience communities where each persona speaks in its own words and the independent scientific or investigative source families needed for Banks 7–8. Declare targets at least as strict as §4.
+The lead is a research architect, not a lone summarizer. Before synthesis, the caller runs at least four separate fresh-context specialists—one each for persona discovery, community discovery, scientific-source mapping, and investigative-source mapping—on the allowed research arms at top reasoning with maximum supported output allowance. A separate adversarial architecture reviewer follows the lead synthesis. The lead and reviewer may request any number of additional agents whenever independent judgment or deeper coverage would improve quality.
+
+The bank, matrix, log, and packet schemas are output/provenance contracts, not a prescribed chain of thought. Every agent chooses its own reasoning path, search strategy, exploration order, recursion, and additional subagent decomposition.
+
+From the brief and council yield, identify **all materially distinct provisional personas**, segmented first by the function the behavior serves and second by materially different life situations. Three is a floor, not a ceiling. Never cap personas, communities, or assignments to save tokens, time, output length, or money; merge only personas that are substantively redundant. Identify the recovery/experience communities where each persona speaks in its own words and the independent scientific or investigative source families needed for Banks 7–8. Declare targets at least as strict as §4.
 
 Before broad collection, write one row per planned community/source-scope × persona × bank cell at the top of `research/research-log.md`:
 
-| Assignment ID | Worker ID | Community / source scope | Persona | Bank | Target | Query / search settings | Runtime model ID | Reasoning config | Accepted items | Distinct sources | Qualitative verdict | Status / follow-up |
-|---|---|---|---|---|---|---|---|---|---:|---:|---|---|
+| Assignment ID | Worker ID | Community / source scope | Persona | Bank | Target | Query / search settings | Runtime model ID | Reasoning config | Max output allowance | Accepted items | Distinct sources | Qualitative verdict | Status / follow-up |
+|---|---|---|---|---|---|---|---|---|---|---:|---:|---|---|
 
-An assignment may cover several rows only when it still names one bounded community/source scope, an explicit persona scope, explicit bank slots and targets, fixed query/search settings, a worker ID, and an allowed model configuration. Use `ALL` as the persona only for genuinely persona-neutral science; explain every `N/A`. Reject and narrow any assignment missing a scope, persona, or bank.
+An assignment may cover several rows only when it still names one focused community/source scope, an explicit persona scope, explicit bank slots and targets, its chosen query/search strategy, a worker ID, an allowed model configuration, and the endpoint's maximum output allowance. “Focused” defines subject responsibility only; it never limits reasoning, output, searches, time, spend, or the ability to commission more agents. Use `ALL` as the persona only for genuinely persona-neutral science; explain every `N/A`. Reject and focus any assignment missing a scope, persona, or bank.
 
-In the numeric floors, a **source** means a distinct underlying URL/document, not a distinct community or worker. One community assignment can and should collect several independent URLs. The first matrix therefore plans one primary community row per persona/bank, not duplicate rows merely to reach the `≥2 sources` floor; add another community only as a targeted follow-up after measured yield is thin. Keep the initial Stage A matrix lean: normally 3–4 personas × Banks 1–5, 9, and 10, plus the minimum explicit Bank 6–8 source-family rows. Return only the artifact-ready persona list, matrix, and short validation notes—no essay about how the matrix was derived.
+In the numeric floors, a **source** means a distinct underlying URL/document, not a distinct community or worker. One community assignment can collect several independent URLs, but the lead should assign as many independent communities and workers as quality requires. Do not create duplicate rows merely to satisfy a numeric source floor, and do not suppress a valuable community merely to keep the matrix small. Return the complete artifact-ready persona list, matrix, and whatever validation notes are needed to preserve the council's judgment.
 
-Every matrix row must be independently reconstructable: repeat the complete source scope, target, query/search settings, runtime request model ID, and reasoning configuration in that row. The `Bank` cell contains exactly one integer from `1` through `10`, never a range, list, or named sub-claim; repeat an assignment ID across separate rows when one worker covers several banks. Never use `same`, `as above`, ditto marks, or an implicit carry-forward. Each row names exactly one fixed community or one fixed scientific/investigative source family. Do not hide alternate, supplemental, fallback, or "if thin" communities in the scope or query; a follow-up source is a new declared row.
+Every matrix row must be independently reconstructable: repeat the complete source scope, target, chosen query/search strategy, runtime request model ID, reasoning configuration, and maximum output allowance in that row. The `Bank` cell contains exactly one integer from `1` through `10`, never a range, list, or named sub-claim; repeat an assignment ID across separate rows when one worker covers several banks. Never use `same`, `as above`, ditto marks, or an implicit carry-forward. Each row names exactly one fixed community or one fixed scientific/investigative source family. Do not hide alternate, supplemental, fallback, or "if thin" communities in the scope or query; a follow-up source is a new declared row.
 
-Treat the brief's non-goals as research-scope exclusions; do not mine a community whose defining condition is excluded from the book merely because some symptoms overlap. The no-web first lead call labels each named community `CANDIDATE — VALIDATION REQUIRED`; it does not pretend to verify existence. Before worker dispatch, a retrieval-capable lead pass validates the canonical community URL and topical fit, replaces invalid candidates, and changes only validated rows to `READY`.
+Treat the brief's non-goals as research-scope exclusions; do not mine a community whose defining condition is excluded from the book merely because some symptoms overlap. Any architecture role that cannot retrieve a named community labels it `CANDIDATE — VALIDATION REQUIRED`; it does not pretend to verify existence. Before worker dispatch, retrieval-capable specialists or the lead validate the canonical community URL and topical fit, replace invalid candidates, and change only validated rows to `READY`.
 
-Before returning any matrix, reject and replace every shorthand, out-of-scope population, multi-bank cell, vague source family, or assignment that bundles more than one bounded community/source scope. Before collection, reject every named community still unvalidated or nonexistent.
+Before dispatch, a fresh top-reasoning research reviewer receives this prompt, the blind brief, and the complete candidate artifact. It audits persona coverage, source/community depth, query fit, blindness, reconstructability, model configurations, and every bank's qualitative sufficiency. If anything is weak, the reviewer returns a complete corrected artifact or commissions another specialist through the caller; it never asks the operator to patch rows by hand. Research workers run only after an independent reviewer says the architecture is genuinely strong enough.
+
+Before returning any matrix, reject and replace every shorthand, out-of-scope population, multi-bank cell, vague source family, or assignment that bundles more than one focused community/source responsibility. Before collection, reject every named community still unvalidated or nonexistent.
 
 ## 3. Worker: collect provenance-preserving yield
 
-Search the assigned community/source scope only. Community work should reach first-person recovery or experience discussions; Banks 7–8 should use independent primary scientific or investigative sources where available. A search-result summary may guide discovery but is not evidence unless its exact returned excerpt is saved unchanged.
+Own the assigned community/source responsibility deeply. Follow promising leads and commission further agents whenever that improves evidence quality; record adjacent scopes as explicit follow-up assignments rather than silently blending provenance. Community work should reach first-person recovery or experience discussions; Banks 7–8 should use independent primary scientific or investigative sources where available. A search-result summary may guide discovery but is not evidence unless its exact returned excerpt is saved unchanged.
 
 Every search, model call, accepted or rejected source capture, and URL revisit produces a chronological log event with its query and assignment IDs, tool/search settings, exact model/reasoning configuration, usage and cost when available, disposition and reason, output/source IDs, and cells filled.
 
@@ -71,13 +74,14 @@ Create one Markdown packet under `research/sources/` for each distinct accepted 
 - **Worker ID:** <ID>
 - **Runtime model ID:** <exact ID>
 - **Reasoning config:** <exact request setting>
+- **Maximum output allowance:** <endpoint maximum after input context>
 - **Search settings:** <engine, filters, date range, limits>
 - **Research-log event IDs:** <IDs>
 - **Disposition:** ACCEPTED
 
 ## Visit history
 
-| Retrieved UTC | Assignment / worker | Query ID / query | Runtime model ID / reasoning config | Search settings | Capture IDs | Log event ID |
+| Retrieved UTC | Assignment / worker | Query ID / query | Runtime model / reasoning / max output | Search settings | Capture IDs | Log event ID |
 |---|---|---|---|---|---|---|
 
 ## Captured raw source text
@@ -138,7 +142,7 @@ Research may close only when:
 - every exact quote passes character-for-character verification;
 - every source/call/search event and rejection is logged.
 
-For each failing row, issue a fresh targeted follow-up assignment naming the exact community/source scope, persona, bank, missing quantity or quality, fixed search settings, worker, and model configuration. Append it to the matrix and repeat the gate. If evidence remains unavailable, report the unresolved row and keep research blocked; never fill it by invention.
+For each failing row, issue a fresh targeted follow-up assignment naming the exact community/source responsibility, persona, bank, missing quantity or quality, chosen search strategy, worker, model configuration, and maximum output allowance. Append it to the matrix and repeat the quality review. If evidence remains unavailable, report the unresolved row and keep research blocked; never fill it by invention.
 
 ## 6. Two-file synthesis
 
@@ -149,4 +153,4 @@ Only after the coverage gate passes, synthesize accepted packets into:
 
 Every source ID must resolve to its packet. Preserve material disagreements as `CONTESTED`; do not average them away. Bank 6 invented candidates still cite the packets grounding their behavior-specific texture. Remove or re-source any untraceable bullet. Framing remains blocked until both files pass this traceability check.
 
-For model or orchestration comparisons, reuse the same assignment and search settings. Record exact runtime IDs/configs, usage/cost, accepted sources, verified quotes, cells filled, and rejected/unverifiable yield; report raw yield separately from synthesis quality and rank verified cells and quotes per dollar.
+For model or orchestration comparisons, hold only the blind brief, substantive research objective, exclusions, and quality bar fixed. Every arm chooses its own search strategy, exploration order, tools, subagents, reasoning, and output depth. Record exact runtime IDs/configs, maximum output allowance, actual strategies, usage/cost, accepted sources, verified quotes, cells filled, and rejected/unverifiable yield. Rank only by research quality: community/persona coverage, source depth, quote fidelity, insight, scientific rigor, and synthesis quality. Cost, tokens, and latency are descriptive and never selection criteria.

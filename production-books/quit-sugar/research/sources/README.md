@@ -19,13 +19,14 @@ Search summaries may guide discovery, but they are not evidence unless the exact
 - **Worker ID:** W-001
 - **Runtime model ID:** <exact provider/model returned at runtime>
 - **Reasoning config:** <highest supported exact request setting>
+- **Maximum output allowance:** <endpoint maximum after input context>
 - **Search settings:** <engine, filters, date range, limits>
 - **Research-log event IDs:** <L-001, ...>
 - **Disposition:** ACCEPTED
 
 ## Visit history
 
-| Retrieved UTC | Assignment / worker | Query ID / query | Runtime model ID / reasoning config | Search settings | Capture IDs | Log event ID |
+| Retrieved UTC | Assignment / worker | Query ID / query | Runtime model / reasoning / max output | Search settings | Capture IDs | Log event ID |
 |---|---|---|---|---|---|---|
 |  |  |  |  |  |  |  |
 

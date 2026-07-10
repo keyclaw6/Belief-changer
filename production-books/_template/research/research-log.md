@@ -10,24 +10,24 @@ Plan coverage before collection, then append every search, model call, and sourc
 
 ## Assignment / coverage matrix
 
-Before collection, fill the first nine fields for each bounded community/source × persona × bank-slot assignment. Update the yield and verdict fields after collection; unsupported interpretations and duplicate URLs do not count.
+Before collection, fill the first ten fields for each focused community/source × persona × bank-slot responsibility. Focus defines ownership, not a reasoning, search, output, time, or subagent limit. Update the yield and verdict fields after collection; unsupported interpretations and duplicate URLs do not count.
 
-| Assignment ID | Worker ID | Community / source scope | Persona | Bank | Target | Query / search settings | Runtime model ID | Reasoning config | Accepted items | Distinct sources | Qualitative verdict | Status / follow-up |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-|  |  |  |  |  |  |  |  |  |  |  |  |  |
+| Assignment ID | Worker ID | Community / source scope | Persona | Bank | Target | Query / search settings | Runtime model ID | Reasoning config | Max output allowance | Accepted items | Distinct sources | Qualitative verdict | Status / follow-up |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 
 ## Activity ledger — append only
 
 Use one row per search, model call, or source capture. Disposition values include `ACCEPTED`, `REJECTED`, `DUPLICATE-MERGED`, `UNVERIFIABLE`, `ERROR`, and `COMPLETE`; give the reason whenever the result is not accepted.
 
-| UTC time | Log event ID / type | Assignment / worker | Query ID, URL, and search settings | Runtime model ID | Reasoning config | Usage (input/output/search) | Cost (USD) | Output / source IDs | Disposition / reason |
-|---|---|---|---|---|---|---|---|---|---|
-|  |  |  |  |  |  |  |  |  |  |
+| UTC time | Log event ID / type | Assignment / worker | Query ID, URL, and search settings | Runtime model ID | Reasoning config | Max output allowance | Usage (input/output/search) | Cost (USD) | Output / source IDs | Disposition / reason |
+|---|---|---|---|---|---|---|---|---|---|---|
+|  |  |  |  |  |  |  |  |  |  |  |
 
 ## Research-arm summary
 
-Complete when comparing models or orchestration arms; reuse the same assignments and search settings.
+Complete when comparing models or orchestration arms. Hold the blind brief, substantive objective, exclusions, and quality bar fixed; record each arm's freely chosen strategy and subagent structure.
 
-| Arm ID | Assignment IDs / search settings | Model ID / reasoning | Total usage / cost | Accepted source IDs | Verified quotes | Filled persona-bank cells | Rejected / unverifiable | Wall time / errors |
+| Arm ID | Objective / strategy / subagents | Model / reasoning / max output | Total usage / cost | Accepted source IDs | Verified quotes | Filled persona-bank cells | Rejected / unverifiable | Quality review |
 |---|---|---|---|---|---|---|---|---|
 |  |  |  |  |  |  |  |  |  |
