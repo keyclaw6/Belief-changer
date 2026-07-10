@@ -529,3 +529,31 @@ DeepSeek was preflighted first but not run: the disposable key could authorize o
 The scout stayed policy-only and declared no channel authorized, but its commission again violates the prerequisite it is meant to enforce: it sends raw policy text and even archived/search excerpts into normal `research/sources/` packets before the policy page's own retention/redistribution basis passes. It also redundantly reopens already rejected Reddit/Stack Exchange channels, prescribes a vast fixed channel list, treats a missing policy version date as an automatic block, and surfaces unresolved project distribution-license, raw-user-content, identifier, deletion, commercial-status, approval-record, mirror, adversarial-source, and transcription decisions.
 
 The repository inspection confirmed the central ambiguity: no `LICENSE`, `COPYING`, `NOTICE`, package license field, or other outbound license declaration exists. The active packet contract nevertheless requires models to prove compatibility with “this open repository.” Together with three-plus consecutive source-authorization failures and the shrinking model-key ceilings, HARNESS §11 now requires a committed escalation and stop before another reviewer or retrieval call.
+
+## Bootstrap closeout — bird's-eye autopsy (2026-07-11)
+
+This bootstrap is closed. It is not a gate to another pilot.
+
+An independent bird's-eye audit found 28 calibration commits, roughly 6,242
+inserted lines, RP-000–RP-027, zero accepted sources, zero run rows, and zero
+chapters. The early work proved model routing, blindness, quote-provenance review,
+and the need to reject unauthorized evidence. The later work optimized a
+mandatory council graph, atomic matrices, numeric floors, and policy recursion
+before the simplest research loop had run. Models spent their intelligence
+satisfying or criticizing the protocol rather than learning about the behavior.
+
+Mechanism: the prompt and tests described the intended evidence process so
+minutely that the schema became a deterministic research planner even though no
+deterministic orchestration code existed. Requiring a complete bootstrap before
+run-001 then made the bootstrap the product.
+
+Founder correction: use the simplest end-to-end system first. One strong lead
+gets the blind brief and outcome, chooses and runs its own subagents and web
+research, produces source packets plus the two syntheses, and receives one fresh
+independent review. Real research begins in run-001. Only observed research or
+chapter failures justify later hypotheses and prompt amendments.
+
+The 2026-07-11 boundary also declares the repository license, limits Git evidence
+to minimum permitted rights/privacy-safe excerpts, retires the theoretical
+endpoint-maximum stop, and preserves Reddit as excluded without authorization.
+No pilot result counts as run evidence.

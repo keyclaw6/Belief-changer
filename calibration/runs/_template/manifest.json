@@ -6,41 +6,56 @@
   "branch": "calibration-lab",
   "scope": "framing+plan+ch1-3 | full-book | holdout-caffeine",
   "hypotheses_tested": [],
-  "model_api": "openrouter | litellm | native+openrouter",
-  "model_output_allowance_policy": "endpoint maximum after input context; never economy-capped",
-  "arms": {"researcher": "R1-R3", "planner": "P1-P3"},
-  "baseline_boundary": "<bootstrap contract-repair commit(s); no calibration-quality amendments>",
-  "research_orchestration": {"arm": "H-010 prompt-structured", "oss_framework": "none"},
+  "model_api": "openrouter | litellm | native+openrouter | meta",
+  "model_output_allowance_policy": "greatest allowance actually authorized after input; request endpoint maximum; continue on length",
+  "baseline_boundary": "<pre-run executable-contract commit; no calibration-quality amendments>",
+  "research_orchestration": {
+    "arm": "H-010 prompt-structured, model-led",
+    "lead_chooses_subagents_and_workflow": true,
+    "oss_framework": "none"
+  },
   "models": {
-    "research_architects": [
-      {"role": "persona | community | science | investigation", "model": "<allowed R1-R3 exact id>", "reasoning": "xhigh | max | enabled", "max_output_allowance": "<exact request value/provider maximum>"}
+    "research_lead": {
+      "model": "<allowed R1-R3 exact runtime id>",
+      "reasoning": "xhigh | max | enabled",
+      "requested_output": "<value>",
+      "authorized_output": "<value>"
+    },
+    "research_calls": [
+      {
+        "role_and_objective": "<model-chosen lead/subagent/reviewer work>",
+        "requested_model": "<allowed R1-R3 id>",
+        "actual_model": "<runtime id>",
+        "reasoning": "xhigh | max | enabled",
+        "requested_output": "<value>",
+        "authorized_output": "<value>",
+        "finish_reason": "<stop | length>",
+        "artifacts": []
+      }
     ],
-    "research_retrieval_agents": [
-      {"commission": "<scout/retrieval assignment IDs>", "model": "<allowed R1-R3 exact id>", "reasoning": "xhigh | max | enabled", "max_output_allowance": "<exact request value/provider maximum>", "artifacts": ["<visible URL/excerpt artifact paths>"]}
-    ],
-    "research_lead": "<allowed R1-R3 exact id resolved from GET /api/v1/models>",
-    "research_lead_reasoning": "xhigh | max | enabled",
-    "research_lead_max_output_allowance": "<exact request value/provider maximum>",
-    "research_reviewer": "<allowed R1-R3 exact id>",
-    "research_reviewer_reasoning": "xhigh | max | enabled",
-    "research_reviewer_max_output_allowance": "<exact request value/provider maximum>",
-    "research_workers": [
-      {"assignment": "<worker/task IDs>", "model": "<allowed R1-R3 exact id>", "reasoning": "xhigh | max | enabled", "max_output_allowance": "<exact request value/provider maximum>"}
-    ],
-    "planner": "<arm P1-P3 — exact endpoint id or pinned native Codex model>",
+    "research_reviewer": "<allowed R1-R3 exact runtime id>",
+    "planner": "<Gemini 3.1 Pro | GPT 5.6 Sol | Grok 4.5 exact runtime id>",
     "planner_reasoning": "high | max | ultra (native Codex Sol)",
     "planner_execution": "<openrouter | exact ephemeral codex exec invocation>",
     "plan_reviewer": "<Gemini 3.1 Pro | GPT 5.6 Sol | Grok 4.5>",
     "plan_reviewer_reasoning": "high | max | ultra (native Codex Sol)",
-    "writer": "Claude Opus 4.6 — FIXED (resolve exact id at runtime)",
-    "writer_reasoning": "disabled — reasoning.enabled=false — FIXED",
+    "writer": {
+      "model": "Claude Opus 4.6 exact runtime id",
+      "reasoning": "disabled",
+      "api": "openrouter",
+      "arm": "run-001 fixed baseline"
+    },
+    "later_writer_arm": {
+      "model": "muse-spark-1.1",
+      "reasoning": "xhigh",
+      "api": "meta",
+      "status": "after Opus baseline; requires official route and credential"
+    },
     "chapter_reviewer": "<Gemini 3.1 Pro | GPT 5.6 Sol | Grok 4.5>",
     "chapter_reviewer_reasoning": "high | max | ultra (native Codex Sol)",
-    "summarizer": "<allowed planning/judge model at top reasoning; Stage B only>",
-    "summarizer_reasoning": "high | max | ultra (native Codex Sol) | -",
     "judges": [
-      {"model": "<Gemini 3.1 Pro | GPT 5.6 Sol | Grok 4.5>", "reasoning": "high | max", "max_output_allowance": "<endpoint maximum>"},
-      {"model": "<a different allowed model>", "reasoning": "high | max", "max_output_allowance": "<endpoint maximum>"}
+      {"model": "<allowed planning/judge model>", "reasoning": "high | max", "authorized_output": "<value>"},
+      {"model": "<different allowed model>", "reasoning": "high | max", "authorized_output": "<value>"}
     ]
   },
   "asset_versions": {

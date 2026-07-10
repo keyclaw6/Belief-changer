@@ -12,7 +12,7 @@ The science log of the calibration loop. One entry per hypothesis; the operator 
 - Result: <what happened; run refs; if REFUTED: the autopsy (WHY, with evidence)>
 ```
 
-Seeded by the harness builder (2026-07-10) as starting capital — derive priorities from run-001's diagnosis; statuses and new entries are yours (operator). Constants, not hypotheses: writer = Opus 4.6 reasoning-none (founder-FIXED); the anti-repetition context law; the mantra law.
+Seeded by the harness builder (2026-07-10) as starting capital — derive priorities from run-001's diagnosis; statuses and new entries are yours (operator). Constants: run-001 writer = Opus 4.6 reasoning-none; the anti-repetition context law; the mantra law. A later Muse Spark 1.1 arm is a separate end-to-end writer hypothesis.
 
 ---
 
@@ -48,17 +48,17 @@ Seeded by the harness builder (2026-07-10) as starting capital — derive priori
 - Prediction: the exact-input DeepSeek `xhigh` rerun retains 3–4 personas and one primary community per persona, returns the complete persona list/matrix/validation notes, and finishes `stop` within 60k total completion tokens.
 - Result: RP-009 finished `stop` but still returned a weak architecture. More importantly, choosing 30k then 60k was itself invalid: the founder requires maximum endpoint-supported allowance, with agentic continuation or a larger endpoint if needed. H-030 is retired rather than tuned; no future research call uses an economy/latency-driven completion cap.
 
-## H-031 — independent research architect council         [TESTING bootstrap-pilot]
+## H-031 — independent research architect council         [RETIRED — PREMATURE ARCHITECTURE]
 - Gap: after H-027 through H-030, a fluent lead can still claim every row is reconstructable while returning omitted settings, bundled scopes, bare candidate states, or unresolved model configuration.
 - Lever: use unrestricted fresh top-reasoning subagents for persona mapping, community mapping, science/investigative mapping, and adversarial architecture review; a lead synthesizer receives their artifacts and regenerates the whole architecture when review finds weakness. Calls get the endpoint's maximum output allowance. No deterministic research planner, validator, or renderer is built.
 - Prediction: the council produces a deeper, fully dispatchable architecture with every materially distinct persona/community represented, complete source/query/model responsibility, and no operator editing; independent reviewers find no material weakness.
-- Result: The first unrestricted persona architect (RP-010) produced six useful functional clusters but claimed many unverified Reddit/Medium excerpts while its 25 raw web annotations were unrelated. A fresh MiniMax reviewer correctly rejected the artifact and commissioned retrieval specialists, supporting the independent-review mechanism but leaving the council prediction unpassed. H-032 corrects the broad one-shot retrieval handoff.
+- Result: The first unrestricted persona architect (RP-010) produced six useful functional clusters but claimed unverified excerpts while its web annotations were unrelated. A fresh MiniMax reviewer correctly rejected it, supporting independent review but not the mandatory council. Bird's-eye autopsy after RP-027: 28 calibration commits and 27 pilots produced zero accepted evidence and zero chapters because the fixed council/matrix became the product. Keep independent subagents and final review; retire the prescribed architecture before run-001.
 
-## H-032 — scout/retrieval/synthesis source integrity     [TESTING bootstrap-pilot]
+## H-032 — scout/retrieval/synthesis source integrity     [RETIRED — PREMATURE WORKFLOW]
 - Gap: a one-shot web plugin over the full prompt returned unrelated annotations, yet the specialist synthesized plausible-looking URLs and quotations as if it had deeply trawled communities.
 - Lever: each architecture specialist first returns a retrieval commission; the caller spawns any number of focused retrieval subagents; the specialist then synthesizes only from their visible URL/excerpt artifacts and requests more retrieval when evidence is thin. A source claim absent from retrieval artifacts is rejected. No deterministic planner or validator is introduced.
 - Prediction: the next persona architecture cites only retrieved URLs/excerpts, covers every materially distinct function surfaced by the retrieval agents, and passes an independent top-reasoning provenance review without operator editing.
-- Result: RP-011 through RP-018 support the separation mechanism: scouts commission focused retrieval, allowed models refuse empty/off-scope results, and reviewers catch fabricated or unsupported evidence. RP-017 stayed in scout mode but overclaimed a license; RP-018's MiniMax reviewer rejected it then failed its own regeneration. RP-019 Luna rejected both complete artifacts, accepted no persona or policy claim, and returned a policy-first pre-regeneration commission instead of inventing an architecture. No operator row was patched. The hypothesis remains testing until visible retrieval supports a persona synthesis that passes fresh review.
+- Result: RP-011 through RP-019 showed that visible retrieval and independent review catch unsupported evidence, but the compulsory scout/retrieval/synthesis chain recursively generated commissions instead of research. The useful mechanism survives as a simple rule—claims need visible sources and the lead may commission subagents. The fixed workflow is retired; run-001 tests the model-led version.
 
 ## H-009 — researcher-model quality arms                 [TESTING bootstrap-pilot]
 - Gap: unknown which allowed model produces the deepest, most source-faithful community research and synthesis when fully resourced.
@@ -66,11 +66,11 @@ Seeded by the harness builder (2026-07-10) as starting capital — derive priori
 - Prediction: measurement; rank community/persona coverage, source depth, verified quotes, insight, scientific rigor, and synthesis quality only. Cost, tokens, and latency are descriptive.
 - Result: Contaminated preflight and founder-invalidated capped calls are excluded. RP-017 DeepSeek produced the cleanest scout boundary so far but overclaimed license verification. RP-018 MiniMax was a strong critic but its regeneration repeated provenance and schema failures. RP-019 Luna was the strongest reviewer: it caught both chains' failures, refused unsupported regeneration, and commissioned visible policy/research retrieval with disconfirmation and counterevidence arms. This ranks only reviewer-artifact quality, not yet community research or synthesis; all three corrected retrieval/synthesis arms remain pending.
 
-## H-010 — prompt-structured research council             [TESTING bootstrap-pilot]
-- Gap: monolithic lead calls self-certify shallow or structurally weak artifacts and cannot independently challenge their own persona, community, and source choices.
-- Lever: run independent unrestricted persona, community, science, and investigation specialists; a lead synthesizes their visible artifacts; a separate adversarial research reviewer approves or fully regenerates the architecture. Every role may commission more agents and receives maximum endpoint allowance.
-- Prediction: the council yields deeper community coverage, more faithful source strategy, stronger belief-changing insight, and a reviewer-approved architecture without operator editing.
-- Result: pending first clean unrestricted council. The former single-long-prompt comparison is retired by founder direction; no deliberately weaker non-agentic arm will be run.
+## H-010 — model-led multi-agent research baseline        [TESTING run-001]
+- Gap: a lone call can be shallow, but prescribing a council graph before observing a run consumed 27 pilots without producing evidence.
+- Lever: `prompts/research-agent.md` gives one top-reasoning lead the blind objective and evidence rules, requires independent subagents, and lets the lead choose their roles, searches, recursion, and sufficiency; one fresh reviewer audits the completed evidence.
+- Prediction: run-001 produces accepted source packets and both useful syntheses without an architecture pilot or operator-authored research steps, then reaches framing and Chapter 1.
+- Result: RP-000–RP-027 are the failure autopsy for the prescriptive version: zero accepted sources, zero bank cells, zero chapters. The simplified arm begins only in run-001; no quality claim exists yet.
 
 ## H-011 — adopt/tune an OSS deep-research framework     [TESTING — source audit NO-GO]
 - Gap: building deep research from scratch may duplicate solved work (parallel source connectors, dedup, fact-check layers).
@@ -94,29 +94,29 @@ Seeded by the harness builder (2026-07-10) as starting capital — derive priori
 - Falsifier: any dependence on opaque hosted state, text normalization, incomplete comment retrieval, irreproducible evasion, unsafe credential handling, licensing blocker, or no quality/reliability gain is a version-pinned NO-GO.
 - Result: source-audit NO-GO at PyPI `0.2.1` / `andyless/human-browser-use@c493412`. It is an alpha stealth/interaction wrapper, not a provenance retrieval system: no raw-body recorder, Reddit connector, comment-tree completeness proof, permalink/parent extraction, or exact-text exporter. Its hard-coded fingerprint/canvas spoofing cannot repair an IP-layer block and would be an unauthorized guardrail-evasion trial. Its unbounded `browser-use` dependency currently resolves to an incompatible release, telemetry is on by default, and live Reddit testing is prohibited without documented authorization. A future fork may be fixture-tested only for generic passive CDP capture; no live D01/D11 trial will run under current policy.
 
-## H-035 — source authorization before community depth   [ESCALATED — FOUNDER DECISION REQUIRED]
+## H-035 — source authorization before community depth   [SUPPORTED — CONTRACT DECIDED]
 - Gap: the original council treated topical fit and quote provenance as sufficient, allowing an unauthorized, non-redistributable Reddit path to progress into raw captures before policy review.
 - Lever: every scout and reviewer must establish current access, automation, quotation, retention/deletion, and open-repository redistribution permission before a source becomes `READY`; blocked sources are replaced by terms-compatible first-person communities without lowering persona/bank coverage.
 - Prediction: the next council architecture contains only permission-backed sources, records a verifiable access/retention basis for every row and packet, uses no stealth or guardrail bypass, and still meets the original research-depth and provenance bar.
-- Result: active OpenSpec, HARNESS, research prompt, and council focuses amended after RP-016. RP-026 produced a safe channel-first commission. RP-027's channel scout declared no channel authorized but again proposed raw policy/search/archive captures before their retention rights pass, and it exposed an irreducible ambiguity: the repository has no declared outbound license against which source-license compatibility can be evaluated. With repeated same-dimension failures and shrinking key ceilings, HARNESS §11 escalation is triggered. H-035 remains testing and no content source, quote, persona, or bank cell is accepted.
+- Result: the founder delegated the decision on 2026-07-11. Run-001 retains only minimum permitted excerpts with rights/privacy provenance; deletion-sensitive/nonredistributable material stays out of Git and out of evidence; no external store is built. Reddit remains excluded. This is now a gate, not a separate policy-research stage.
 
-## H-036 — declared outbound license gates source reuse  [ESCALATED — FOUNDER DECISION REQUIRED]
+## H-036 — declared outbound license gates source reuse  [SUPPORTED — IMPLEMENTED]
 - Gap: the factory requires open-repository redistribution rights, but the repository has no declared code or content license, so compatibility with CC/public-domain/open-government sources cannot be established.
 - Lever: founder declares exact outbound licenses and how third-party licensed research packets are separated, attributed, and redistributed.
 - Prediction: a fresh authorization reviewer can make deterministic compatibility findings from a named repository license instead of returning the question to the lead.
-- Result: RP-027 repository audit found no license declaration; `calibration/ESCALATION.md` records the blocking decision.
+- Result: commit `aeb85ca` declares `AGPL-3.0-or-later` for software and `CC-BY-SA-4.0` for project-owned content, with explicit third-party exclusions and attribution/rights scope.
 
-## H-037 — endpoint-max allowance needs an uncapped key  [ESCALATED — INFRASTRUCTURE REQUIRED]
+## H-037 — endpoint-max allowance needs an uncapped key  [RETIRED — FOUNDER CORRECTION]
 - Gap: the disposable key's declining total limit now authorizes materially less output than Luna, DeepSeek, and MiniMax endpoints expose, contradicting the quality-only execution law.
 - Lever: use a fresh disposable OpenRouter key or remove/raise the existing key total limit; still continue on any actual `length` finish.
 - Prediction: preflight reaches the true post-input endpoint maximum for every allowed role rather than a credit-derived ceiling.
-- Result: latest ceilings were 67,471 vs 128,000 for Luna, 58,457 vs about 1,042,000 for DeepSeek, and 169,527 vs about 1,042,000 for MiniMax. Further model calls stopped pending new access.
+- Result: treating the theoretical endpoint maximum as a prerequisite blocked useful calls that had naturally stopped far below it. On 2026-07-11 the founder directed continued use of the supplied key. The corrected law requests endpoint max, uses the greatest exact allowance actually authorized, and continues on `length`; it never chooses an economy cap.
 
-## H-012 — persona research quotas                        [PROPOSED]
+## H-012 — persona research quotas                        [RETIRED — PREMATURE OPTIMIZATION]
 - Gap: research banks skew toward the loudest persona (young heavy users), starving framing's persona set and the future splitting seams.
 - Lever: research-agent prompt — per-persona minimum yield quotas (items + quotes per persona) before research may close.
 - Prediction: framing personas cite ≥N items each; Stage B persona notes stop being thin; warmth/click steadier across sampled chapters.
-- Result: —
+- Result: retired before a book run. Fixed quotas and atomic persona-bank rows contributed to protocol work without evidence. Run-001 records coverage diagnostically; a concrete thin-persona failure may justify a narrower future hypothesis.
 
 ## H-013 — dedicated community-lexicon harvester          [PROPOSED]
 - Gap: the two-register lexicon sheet (style guide Part B) is only as good as the community's own words; generic research yields generic lexicon.
@@ -180,7 +180,13 @@ Seeded by the harness builder (2026-07-10) as starting capital — derive priori
 - Prediction: flow rises; whole-book escalation rises at Stage B.
 - Result: —
 
-# Writer stage (model FIXED — these tune how it writes)
+# Writer stage (Opus baseline first; Muse arm later)
+
+## H-038 — Muse Spark 1.1 writer arm                    [PROPOSED AFTER run-001]
+- Gap: Opus 4.6 reasoning-none is the fixed baseline, but the newly released Muse Spark 1.1 may produce stronger chapter prose with a much larger context/output envelope.
+- Lever: after the Opus Stage-A baseline, run `muse-spark-1.1` at `xhigh` on the identical plan, prompt, previous-chapter input, reviewers, and judges. Use only an official Meta or runtime-listed OpenRouter route.
+- Prediction: measurement; compare objective gates and blind judge dimensions, with no cost/speed preference.
+- Result: official preflight on 2026-07-11 found no OpenRouter route. Meta's direct route requires a separate credential and cannot disable reasoning, so this is an end-to-end writer+reasoning comparison and does not block run-001.
 
 ## H-003 — echoes land at argumentative peaks             [PROPOSED]
 - Gap: scheduled mantra echoes placed as paragraph-end garnish read as pasted rhythm, not conviction.

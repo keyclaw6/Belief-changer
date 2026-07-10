@@ -43,8 +43,8 @@ Every improvement must land in a **generic method asset** (`prompts/style-guide.
 
 1. `git clone https://github.com/keyclaw6/Belief-changer.git` (if the clone 407s behind a proxy, retry with `git -c http.proxyAuthMethod=basic clone …`). Work on branch **`calibration-lab`**. You need push access; if you lack it, escalate (§11).
 2. `python3` (stdlib only — no pip installs needed).
-3. Model access: env `OPENROUTER_API_KEY` (the founder's key; base `https://openrouter.ai/api/v1`, OpenAI-compatible). Alternate: `LITELLM_BASE_URL` + `LITELLM_API_KEY` (the founder's proxy); `scripts/eval/judge_panel.py` accepts either. **Resolve exact model IDs at runtime from `GET /api/v1/models`** (bearer auth) — never guess an ID. Every non-writer role uses the highest mode reported by that model's `reasoning` object. The writer is the sole exception: Opus 4.6 with reasoning disabled via `{"reasoning": {"enabled": false}}`.
-   **Quality-only execution law (founder correction, 2026-07-10):** cost, speed, latency, and token use are observations, never optimization targets or stop conditions. Give every model the maximum completion/output allowance supported by the selected endpoint (after input context), never a lower cap for economy or convenience. If a provider ceiling is reached, continue agentically or use a larger-capacity endpoint; do not compress the task to fit. Usage and cost remain recorded only for reconstruction.
+3. Model access: env `OPENROUTER_API_KEY` (the founder's key; base `https://openrouter.ai/api/v1`, OpenAI-compatible). Alternate: `LITELLM_BASE_URL` + `LITELLM_API_KEY` (the founder's proxy); `scripts/eval/judge_panel.py` accepts either. **Resolve exact model IDs at runtime from `GET /api/v1/models`** (bearer auth) — never guess an ID. Every non-writer role uses the highest mode reported by that model's `reasoning` object. The run-001 writer is the exception: Opus 4.6 with reasoning disabled via `{"reasoning": {"enabled": false}}`.
+   **Quality-only execution law (founder correction, 2026-07-10; clarified 2026-07-11):** cost, speed, latency, and token use are observations, never optimization targets or stop conditions. Request the endpoint maximum; if the endpoint or supplied key returns a lower exact authorization ceiling, use that greatest available allowance rather than inventing a smaller cap or blocking the run. Continue on `finish_reason=length`; never compress the objective for economy or convenience. Usage and cost remain records only.
 4. Extract the reference (LOCAL ONLY — `calibration/reference/` is gitignored; never commit extracted book text):
    ```
    python3 scripts/eval/extract_reference.py \
@@ -60,30 +60,24 @@ The factory is a file-contract state machine in `production-books/quit-sugar/`. 
 
 | Stage | Prompt | Inputs (exactly) | Output | Gate |
 |---|---|---|---|---|
-| Research | `prompts/research-agent.md` | role-specific exact handoffs in that prompt: every role gets the prompt + `00-brief.md`, plus only its focus/assignment and visible predecessor artifacts | `research/sources/*`, then synthesized `research/lived-experience.md` + `research/scientific-evidence.md` | source authorization/retention passes first; then operator judges bank coverage |
+| Research | `prompts/research-agent.md` | lead gets prompt + `00-brief.md`; its subagents get only their lead-chosen commission and needed visible artifacts | `research/sources/*`, `research-log.md`, then the two research syntheses | one fresh reviewer accepts depth, traceability, rights/privacy, and bank/persona coverage |
 | Framing | template in book folder | `00-brief.md` + `framing.md` template + style guide + the two research files | filled `framing.md` | operator decides forks for THIS calibration book; log decisions in the run report |
 | Master plan | `prompts/master-plan-skill-v2.md` | that prompt + style guide + `00-brief.md` + `framing.md` + the two research files | `master-plan.md` (§B8 book sheets FIRST) | fresh-context reviewer (`prompts/master-plan-reviewer-v2.md`, strongest model) iterated to **"fit to write from"**, ≤3 cycles |
 | Chapter N | `prompts/chapter-writer.md` | that prompt + style guide + `master-plan.md` + chapter N−1 ONLY | `chapters/chapter-NN.md` | fresh-context reviewer (`prompts/chapter-reviewer.md`) to ACCEPT, ≤3 cycles each |
 
 The anti-repetition context law (writer sees only plan + previous chapter + style guide) is the factory's core design — never widen a writer's inputs.
 
-## §3b Research depth doctrine (founder, 2026-07-10)
+## §3b Research depth doctrine (founder, 2026-07-10; corrected 2026-07-11)
 
-Shallow research produces generic books. Research must go **deep into the places people actually talk** — authorization-safe recovery forums, support communities, permitted comment threads under quit-content, and other first-person sources in the community's own words. A research run is sufficient only when:
-1. **Structured decomposition, not one long prompt:** H-010 is an unrestricted research council. Independent persona, community, science, and investigation scouts commission focused retrieval subagents; specialists synthesize only their visible URL/excerpt artifacts; a lead merges the specialist work; an adversarial reviewer challenges the complete architecture. Every role may commission further agents. Do not spend a trial on a deliberately weaker monolithic arm.
-2. **Slot-filling against the style guide's bank schema** (lived-experience themes, justification menu, community lexicon, persona segmentation) with per-slot sufficiency targets — research ends when the slots are full, not when the agent is tired.
-3. **Verbatim + provenance:** quotes captured verbatim with source references; never fabricated, never paraphrased into blandness; CONTESTED tags where the science is disputed.
-4. **OSS deep-research frameworks are on the table** (H-011), but their claims are verified in code before any paid arm: `langchain-ai/open_deep_research` has mature generic supervisor fan-out but no community/bank/provenance contract; `RobertoDeLaCamara/Research-Agent` fans out fixed source searches (its Reddit path is a single site-search, and its post-synthesis evaluator is not source-grounded fact checking); `extracurricular-ai/open-deep-research-with-web-ui` is a generic smolagents manager/UI with no Reddit connector at audited HEAD. Adopt or tune one ONLY per §13 doctrine: it must measurably beat the prompt-structured approach it replaces.
+Shallow research produces generic books. A fresh top-reasoning lead therefore owns the research method: it chooses personas, communities, source families, searches, tools, delegation, recursion, and sufficiency. It must use multiple fresh-context subagents for independent depth, but no prompt, matrix, caller, or framework prescribes a scout→worker→specialist chain, role count, search order, or numeric stopping quota. Repo schemas record the evidence after intelligent work; they do not plan the work.
 
-**Source authorization precedes depth.** Current access terms, automation permission, research approval/license, quotation use, retention/deletion duties, and repository redistribution must pass before a community becomes `READY`. Never bypass access controls, rate limits, or security challenges with stealth/fingerprint masking. As of 2026-07-10, Reddit research requires documented Reddit for Researchers approval or a separate written agreement from Reddit expressly covering the exact use, and its research retention/non-redistribution rules conflict with raw packets in an open Git repository. Without an approved compliant storage/output design outside durable Git, Reddit and Reddit-derived evidence are excluded. H-033/H-034 browser transports may be source-audited or fixture-tested, but never live-tested as a workaround for permission.
+Research must reach specific lived experience, recovery texture, independent science, and investigative evidence across all ten style-guide banks. Counts expose gaps but never manufacture completion. The lead continues when material is generic, repetitive, contradictory, or thin for a materially distinct persona, regardless of cost, time, calls, searches, or tokens.
 
-**Quality is the only research optimizer.** Do not cap personas, communities, subagents, searches, reasoning tokens, output tokens, wall time, or spend to make the run cheaper or faster. Decomposition is for depth and independent judgment, not to constrain the model. Use fresh top-reasoning research architects, community workers, science workers, and independent reviewers; let them commission further focused agents until the evidence and insight are genuinely sufficient.
+Every retained claim traces to an accepted packet. Exact quotes are character-for-character; interpretations are unquoted; scientific disagreement remains `CONTESTED`. One fresh top-reasoning reviewer audits the complete packets and syntheses for depth, usefulness, provenance, rights/privacy, persona coverage, and scientific rigor, then accepts or commissions more work. The operator never patches evidence by hand.
 
-The matrix, log, source-packet, and synthesis schemas are handoff/provenance outputs, not a prescribed reasoning process. Agents choose their own internal reasoning, search order, recursion, tools, and delegation.
+Evidence enters Git only after its access, excerpt, retention, redistribution, attribution, and privacy basis passes. Store the minimum necessary permitted excerpt—never full community posts, bulk user dumps, identity mappings, or deletion-sensitive/nonredistributable user content. Run-001 has no speculative external store; material that needs one stays outside Git and outside evidence. Reddit remains excluded without explicit Reddit authorization, and browser stealth is never a substitute.
 
-**Run-001 implementation:** prompt-structured agent council and worker handoffs (H-010), with the repo files as the orchestration boundary. The three H-011 candidates were audited at source before adoption; none currently satisfies the bank/persona task schema, exact-quote provenance, top-reasoning model config, and factory output contract without a core rewrite. Reconsider only if an OSS agentic arm demonstrates a research-quality or reliability win without replacing model judgment; the audit is recorded in `calibration/hypotheses.md` and the active OpenSpec change.
-
-**Bootstrap research pilot:** contract/connectivity calls made while the research handoff is still changing live under `calibration/pilots/`, never under `calibration/runs/run-NNN`. They may diagnose execution failures but do not count as run evidence or arm-quality results. Version the final prompt, blinded brief, and workshop schema in a pushed boundary commit before creating immutable `run-001`.
+**Run-001 implementation:** H-010 is a prompt-structured, model-led multi-agent run with repo files as visible handoffs. H-011 stays unadopted because audited frameworks have not proved a quality/reliability gain over that baseline. RP-000–RP-027 are the completed autopsy of an over-prescribed bootstrap protocol. They prove routing, blindness, and provenance review but contribute no run evidence. No more pilot is required: version this corrected boundary, create `run-001`, and perform real research there.
 
 ## §4 Blindness & anti-overfit rules (absolute)
 
@@ -130,17 +124,18 @@ Length is planned, not hoped for: (a) the master plan's curve map assigns **ever
 
 ## §8 Model matrix & arms (roles are config, not code)
 
-**FIXED (founder corrections, 2026-07-10): the chapter writer is Claude Opus 4.6 with `"reasoning": {"enabled": false}` and Opus may serve NO other role.** Resolve the exact OpenRouter ID at runtime; do NOT run writer-model experiments. Writer-stage hypotheses tune HOW it writes (H-018..H-021), never WHICH model writes.
+**BASELINE FIXED:** run-001 uses Claude Opus 4.6 with `"reasoning": {"enabled": false}`, and Opus serves no other role. After that baseline, Muse Spark 1.1 may run as a separate same-plan Stage-A writer arm at its highest supported reasoning when an official route and credential exist. Muse cannot disable reasoning, so report model + inference-time reasoning as one end-to-end comparison rather than a causal model-only A/B.
 
 | Role | Model | Note |
 |---|---|---|
-| Writer | **Opus 4.6, reasoning disabled — FIXED** | chapter prose only; never research, plan, review, or judge |
-| Research council + workers | **ARMS below** (needs web access + long context) | architects, lead, reviewers, synthesis: DeepSeek V4 Pro / MiniMax M3 / GPT 5.6 Luna only; record each sub-role |
+| Run-001 writer | **Opus 4.6, reasoning disabled — FIXED BASELINE** | chapter prose only; never research, plan, review, or judge |
+| Later writer arm | **Muse Spark 1.1, top reasoning** | same plan/inputs/reviewers/judges; only after Opus baseline and only through an official route |
+| Research lead + chosen subagents | **ARMS below** (needs web access + long context) | DeepSeek V4 Pro / MiniMax M3 / GPT 5.6 Luna only; the lead chooses the organization |
 | Planner | **ARMS below** | Gemini 3.1 Pro / GPT 5.6 Sol / Grok 4.5 only |
 | Plan reviewer | strongest allowed planning model | "fit to write from" is the highest-leverage gate |
-| Chapter reviewer | strongest allowed planning/judge model | cross-family to the fixed Opus writer |
+| Chapter reviewer | strongest allowed planning/judge model | cross-family to the configured writer |
 | Summarizer (Stage B) | one allowed planning/judge model at top reasoning | same model and prompt for both books |
-| Judges | ≥2 of the allowed planning/judge models | every panel is non-Anthropic because the writer is fixed to Opus |
+| Judges | ≥2 of the allowed planning/judge models | every panel remains independent of the writer family |
 
 **Planner/reviewer/judge arms (H-005):** P1 GPT 5.6 Sol (OpenRouter `max`; native surface's top setting) · P2 Gemini 3.1 Pro (`high`) · P3 Grok 4.5 (`high`). Use native GPT 5.6 Sol when the environment can pin the exact model/top setting and preserve the exact-input/fresh-context contract; otherwise use the runtime-resolved OpenRouter ID. No lower-effort sweep: top reasoning is fixed.
 
@@ -150,12 +145,14 @@ For subscription-backed native Sol in this Codex environment, use a fresh `codex
 
 **Researcher arms (H-009):** R1 `deepseek/deepseek-v4-pro` (`xhigh`) · R2 `minimax/minimax-m3` (reasoning enabled; `/models` exposes no effort ladder) · R3 GPT 5.6 Luna (`max`, runtime-resolved ID). Rank only by research quality: community and persona coverage, source depth, verified verbatim evidence, belief-changing insight, scientific rigor, and synthesis quality. Usage, cost, and latency are descriptive metadata and never break a quality tie.
 
+**Muse route status (2026-07-11):** the official OpenRouter catalog has no Muse entry, so do not guess a slug. Meta's direct model ID is `muse-spark-1.1`; it requires a separate Meta Model API credential and rejects reasoning `none`. Route availability is checked again after run-001 and never blocks the Opus baseline.
+
 Use as many independent allowed arms as quality and adversarial diversity demand; record every exact resolved ID, reasoning config, and maximum output allowance in the manifest. If an allowed arm or its required top-reasoning config is unavailable at runtime, note it in the ledger and proceed with the remaining allowed arms.
 
 ## §9 Judging protocol
 
 - Pairwise judge prompt: `calibration/judges/pairwise-judge.md`. Blind A/B; per-dimension 1–9 scores; which-is-real-Carr probe; strict JSON.
-- **Cross-family rule:** every panel includes ≥1 judge model from a family DIFFERENT from the writer's (self-preference guard). With the writer fixed to Opus 4.6, this means **every panel carries ≥1 strong non-Anthropic judge**. A parity verdict counts only if the cross-family judge's win-rate alone also clears the gate (−0.05 tolerance).
+- **Cross-family rule:** every panel includes ≥1 judge model from a family different from the configured writer. The allowed Google/OpenAI/xAI panel is cross-family to both the Anthropic baseline and the later Meta arm. A parity verdict counts only if the cross-family judge's win-rate alone also clears the gate (−0.05 tolerance).
 - Both A/B orders per pair (the runner does this); ≥2 models × 2 orders × 3 chapters = 12 judgments minimum per Stage A run.
 - Aggregates come from `judgments/judge-summary.json`; `real_detection_accuracy` ≈ 0.5 means judges can't tell ours from Carr — the convergence signal.
 - Judges judge ONLY the two texts in front of them; never show them run history, hypotheses, or amendments.

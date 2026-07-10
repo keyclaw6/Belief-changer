@@ -1,7 +1,7 @@
 ## ADDED Requirements
 
 ### Requirement: Role model isolation
-The pipeline SHALL resolve exact model IDs at runtime and MUST preserve the founder-approved role boundaries. Research scouts, retrieval subagents, architects, leads, workers, reviewers, and synthesizers MUST use DeepSeek V4 Pro, MiniMax M3, or GPT‑5.6 Luna. Framers, planners, plan reviewers, chapter reviewers, Stage-B summarizers, and judges MUST use Gemini 3.1 Pro, GPT‑5.6 Sol, or Grok 4.5. Gemini 3.1 Flash Lite is forbidden in every role. Every non-writer call MUST use that model's highest supported reasoning mode and maximum endpoint-supported output allowance. Claude Opus 4.6 MUST be used only for chapter writing and MUST run with reasoning disabled.
+The pipeline SHALL resolve exact model IDs at runtime and MUST preserve the founder-approved role boundaries. Research leads, subagents, reviewers, and synthesizers MUST use DeepSeek V4 Pro, MiniMax M3, or GPT‑5.6 Luna. Framers, planners, plan reviewers, chapter reviewers, Stage-B summarizers, and judges MUST use Gemini 3.1 Pro, GPT‑5.6 Sol, or Grok 4.5. Gemini 3.1 Flash Lite is forbidden in every role. Every non-writer call MUST use that model's highest supported reasoning mode and greatest output allowance actually authorized for the call. Run-001 chapter writing MUST use Claude Opus 4.6 with reasoning disabled, and Opus MUST serve no other role. After the Opus baseline, Muse Spark 1.1 MAY be tested as a separate Stage-A writer arm at its highest reasoning mode when an official route and credential are available; Muse MUST serve no other role and MUST NOT replace the run-001 baseline.
 
 #### Scenario: Opus is assigned outside chapter writing
 - **WHEN** a run config assigns Opus to research, planning, review, judging, or synthesis
@@ -10,6 +10,10 @@ The pipeline SHALL resolve exact model IDs at runtime and MUST preserve the foun
 #### Scenario: A non-writer model is below top reasoning
 - **WHEN** runtime model metadata reports a higher supported reasoning mode than the requested one
 - **THEN** the stage stops and corrects the request before the model call
+
+#### Scenario: Muse is proposed before the baseline
+- **WHEN** a run-001 config assigns Muse Spark 1.1 as writer or assigns it outside chapter writing
+- **THEN** the affected stage stops before the model call
 
 #### Scenario: An unapproved model is assigned to a role
 - **WHEN** a run assigns a model outside the role's enumerated allowed set, including Gemini 3.1 Flash Lite in any role
@@ -25,7 +29,7 @@ The brief defines the behavior, reader, scope, and non-goals for one book. It li
 - **THEN** the step stops and the brief is completed first
 
 ### Requirement: Raw research sources
-Raw source material SHALL be stored one file per distinct source in `production-books/<slug>/research/sources/`. Each source file MUST use a stable source ID and preserve its URL, retrieval metadata, captured evidence, and bank/persona tags; every search, model call, and accepted or rejected source MUST be logged in `research/research-log.md`.
+Accepted source material SHALL be stored one file per distinct source in `production-books/<slug>/research/sources/`. Each source file MUST use a stable source ID and preserve its URL, retrieval metadata, rights/privacy basis, required attribution, minimum necessary excerpt, precise locator, and bank/persona tags. Full community posts, bulk user dumps, deletion-sensitive material, and nonredistributable user content MUST NOT enter Git or run evidence. Model calls and meaningful accepted or rejected source decisions MUST be logged in `research/research-log.md` without prescribing the research reasoning process.
 
 #### Scenario: A source is found but not logged
 - **WHEN** a source file is added to `research/sources/`
@@ -72,7 +76,7 @@ The master plan is the chapter-by-chapter blueprint and sole carrier of book-spe
 - **THEN** the chapter step does not proceed
 
 ### Requirement: Chapter writing loop
-Chapters SHALL be written one at a time, in order, each by a fresh-context Opus 4.6 writer with reasoning disabled that sees only the style guide, master plan, and immediately previous chapter. Each chapter MUST be reviewed by a fresh allowed non-Opus reviewer at top reasoning and iterated to ACCEPT before advancing.
+Chapters SHALL be written one at a time, in order, each by a fresh-context approved writer that sees only the style guide, master plan, and immediately previous chapter. Run-001 MUST use Opus 4.6 with reasoning disabled. A later Muse Spark 1.1 Stage-A arm MUST use the same plan, prompt, inputs, reviewers, and judges at its highest supported reasoning and MUST be reported as an end-to-end writer comparison because Muse reasoning cannot be disabled. Every chapter MUST be reviewed by a fresh allowed non-writer reviewer at top reasoning and iterated to ACCEPT before advancing.
 
 #### Scenario: A writer is given extra chapter context
 - **WHEN** a chapter writer receives chapters other than the immediately previous one

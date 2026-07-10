@@ -1,33 +1,56 @@
-# Research Log — <Book Title>
+# Research Log — Quit Sugar
 
-Plan coverage before collection, then append every search, model call, and source capture. Use stable IDs (`P-01`, `A-001`, `W-001`, `Q-001`, `S-001`) throughout. Record unavailable usage or cost as `n/a`, never as zero.
+Record what happened without prescribing how the lead must think or delegate.
+Use stable source IDs (`S-001`) throughout. Unavailable usage or cost is `n/a`,
+never zero.
 
-## Provisional personas
+## Model and subagent calls
 
-| Persona ID | Function served / defining context | Applicable banks |
-|---|---|---|
-|  |  |  |
+One row per substantive model call. Describe the model-chosen objective and
+strategy plainly; link visible output artifacts.
 
-## Assignment / coverage matrix
+| UTC | Call / role | Objective and model-chosen strategy | Requested → actual model | Reasoning | Requested / authorized output | Finish | Usage / cost | Visible outputs | Disposition |
+|---|---|---|---|---|---|---|---|---|---|
+|  |  |  |  |  |  |  |  |  |  |
 
-Before collection, fill the source, permission, persona, bank, query, and runtime fields for each focused community/source × persona × bank-slot responsibility. Focus defines ownership, not a reasoning, search, output, time, or subagent limit. Update the yield and verdict fields after collection; unauthorized sources, unsupported interpretations, and duplicate URLs do not count.
+## Source decisions
 
-| Assignment ID | Worker ID | Community / source scope | Access / retention basis | Persona | Bank | Target | Query / search settings | Runtime model ID | Reasoning config | Max output allowance | Accepted items | Distinct sources | Qualitative verdict | Status / follow-up |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| UTC | Source ID / family | URL or scope | Rights / privacy basis | Decision and reason |
+|---|---|---|---|---|
+|  |  |  |  |  |
 
-## Activity ledger — append only
+## Personas discovered
 
-Use one row per search, model call, or source capture. Disposition values include `ACCEPTED`, `REJECTED`, `DUPLICATE-MERGED`, `UNVERIFIABLE`, `ERROR`, and `COMPLETE`; give the reason whenever the result is not accepted.
+| Persona ID | Function served / defining context | Evidence source IDs | Thin spots |
+|---|---|---|---|
+|  |  |  |  |
 
-| UTC time | Log event ID / type | Assignment / worker | Query ID, URL, and search settings | Runtime model ID | Reasoning config | Max output allowance | Usage (input/output/search) | Cost (USD) | Output / source IDs | Disposition / reason |
-|---|---|---|---|---|---|---|---|---|---|---|
-|  |  |  |  |  |  |  |  |  |  |  |
+## Final bank audit
+
+Counts are diagnostics, not quotas. A bank passes only when its material is
+specific, nonredundant, source-traceable, and strong enough for belief-changing
+framing across every applicable persona.
+
+| Bank | Applicable personas | Source IDs / verified quotes | Strongest insight | Remaining gap | Verdict |
+|---|---|---|---|---|---|
+| 1 |  |  |  |  |  |
+| 2 |  |  |  |  |  |
+| 3 |  |  |  |  |  |
+| 4 |  |  |  |  |  |
+| 5 |  |  |  |  |  |
+| 6 |  |  |  |  |  |
+| 7 |  |  |  |  |  |
+| 8 |  |  |  |  |  |
+| 9 |  |  |  |  |  |
+| 10 |  |  |  |  |  |
+
+## Rejected or unresolved yield
+
+Record only failures that affect research quality, provenance, rights/privacy,
+or the next decision. Include the mechanism and the follow-up taken.
 
 ## Research-arm summary
 
-Complete when comparing models or orchestration arms. Hold the blind brief, substantive objective, exclusions, and quality bar fixed; record each arm's freely chosen strategy and subagent structure.
-
-| Arm ID | Objective / strategy / subagents | Model / reasoning / max output | Total usage / cost | Accepted source IDs | Verified quotes | Filled persona-bank cells | Rejected / unverifiable | Quality review |
-|---|---|---|---|---|---|---|---|---|
-|  |  |  |  |  |  |  |  |  |
+| Arm | Freely chosen strategy / subagents | Model / reasoning / allowance | Accepted sources | Verified quotes | Coverage and quality | Rejected yield | Reviewer verdict |
+|---|---|---|---|---|---|---|---|
+|  |  |  |  |  |  |  |  |

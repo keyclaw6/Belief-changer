@@ -12,117 +12,85 @@ def read(path):
 
 
 class ResearchContractTests(unittest.TestCase):
-    def test_roles_receive_only_blind_focused_inputs(self):
-        """OpenSpec: research begins; unfocused and forbidden work is rejected."""
+    def test_lead_owns_decomposition_and_remains_blind(self):
+        """OpenSpec: research begins under model-owned delegation and blindness."""
         prompt = read("prompts/research-agent.md")
 
         for required in (
-            "fresh-context handoffs",
-            "the same brief",
-            "one focused assignment record",
-            "community/source scope",
-            "persona scope",
-            "bank slots",
-            "caller rejects an exact-input brief containing calibration/reference metadata",
-            "Every matrix row must be independently reconstructable",
-            "exactly one integer from `1` through `10`",
-            "Do not hide alternate, supplemental, fallback",
-            "Never use `same`, `as above`",
-            "brief's non-goals as research-scope exclusions",
-            "CANDIDATE — VALIDATION REQUIRED",
-            "retrieval-capable specialists or the lead validate",
-            "source** means a distinct underlying URL/document",
-            "research architect, not a lone summarizer",
-            "not a prescribed chain of thought",
-            "Source-authorization and retention gate",
-            "Never use fingerprint spoofing",
-            "Reddit for Researchers",
-            "Access / retention basis",
+            "Choose your own research plan",
+            "Use multiple fresh subagents",
+            "There is no required role graph, matrix, quota, or sequence",
+            "Do not ask the operator to design the research",
+            "Never use reference books",
+            "Never invent a source, quote, or finding",
+            "Generic volume is not depth",
+        ):
+            self.assertIn(required, prompt)
+        for obsolete in (
+            "Assignment / coverage matrix",
             "at least four separate fresh-context scout/specialist tracks",
-            "retrieval subagent",
-            "A one-shot broad web search",
-            "visible retrieval artifact",
-            "candidate's visible retrieval artifacts",
-            "Three is a floor, not a ceiling",
-            "Never cap personas, communities, or assignments",
-            "maximum completion/output allowance supported",
-            "fresh top-reasoning research reviewer",
-            "Rank only by research quality",
-            "never selection criteria",
-            "Return the complete artifact-ready persona list, matrix",
-            "reject it and every dependent finding",
+            "Every matrix row must be independently reconstructable",
+            "one focused assignment record",
         ):
-            self.assertIn(required, prompt)
-        self.assertNotIn("harvested (from the communities, the reference analyses", prompt)
+            self.assertNotIn(obsolete, prompt)
 
-    def test_source_packets_and_coverage_are_measurable(self):
-        """OpenSpec: quotes remain verifiable and weak numeric coverage stays open."""
+    def test_evidence_is_minimal_rights_safe_and_verifiable(self):
+        """OpenSpec: accepted evidence is durable, private enough, and exact."""
         prompt = read("prompts/research-agent.md")
-
-        for required in (
-            "## Visit history",
-            "## Captured raw source text",
-            "Access / retention basis:",
-            "Deletion / refresh obligations:",
-            "Worker ID:",
-            "Search settings:",
-            "Research-log event IDs:",
-            "Capture ID:",
-            "EXACT_QUOTE | INTERPRETATION",
-            "character-for-character verification",
-            "qualitative verdict is `PASS`",
-            "≥5 moments/persona from ≥2 sources",
-            "≥8 terms/persona",
-        ):
-            self.assertIn(required, prompt)
-
-    def test_caller_owns_invisible_runtime_metadata_and_persistence(self):
-        """OpenSpec: a bare model call returns artifacts instead of false-blocking."""
-        prompt = read("prompts/research-agent.md")
-
-        for required in (
-            "The **caller**, not the language model inside the call",
-            "MUST NOT try to inspect invisible request metadata",
-            "returns complete artifact-ready Markdown blocks",
-            "Lack of direct filesystem access is not a blocker",
-            "Architecture specialists and reviewers SHOULD have source-retrieval capability",
-        ):
-            self.assertIn(required, prompt)
-
-    def test_research_execution_is_quality_first_and_agentic(self):
-        """OpenSpec: model depth is never capped or replaced by deterministic research code."""
-        harness = read("calibration/HARNESS.md")
-        spec = read("openspec/changes/calibration-ready-research-pipeline/specs/deep-research/spec.md")
-
-        for required in (
-            "Quality-only execution law",
-            "maximum completion/output allowance",
-            "Quality is the only research optimizer",
-            "Research, framing, planning, reviewing, and writing remain agentic",
-        ):
-            self.assertIn(required, harness)
-        self.assertIn("deterministic code MUST NOT plan, render, or validate", spec)
-        self.assertIn("Authorized and retention-safe source access", spec)
-        self.assertIn("MUST NOT bypass access controls", spec)
-        self.assertIn("usage, cost, and latency are descriptive metadata", spec)
-
-    def test_templates_preserve_handoff_and_arm_measurement(self):
-        """OpenSpec: syntheses trace to packets and equal-arm yields are reconstructable."""
-        log = read("production-books/_template/research/research-log.md")
         packets = read("production-books/_template/research/sources/README.md")
+
+        for required in (
+            "minimum permitted excerpt",
+            "deletion-sensitive/nonredistributable material",
+            "Reddit is excluded",
+            "character-for-character",
+            "CONTESTED",
+        ):
+            self.assertIn(required, prompt)
+        for required in (
+            "License / quotation basis:",
+            "Required attribution:",
+            "Retention / deletion status:",
+            "Privacy judgment:",
+            "## Minimum retained excerpt",
+            "EXACT_QUOTE | INTERPRETATION",
+            "Persona tags:",
+            "Bank slots:",
+        ):
+            self.assertIn(required, packets)
+
+    def test_execution_is_quality_first_without_theoretical_ceiling_block(self):
+        """OpenSpec: the greatest live allowance is used without shrinking work."""
+        harness = read("calibration/HARNESS.md")
+        spec = read(
+            "openspec/changes/calibration-ready-research-pipeline/"
+            "specs/deep-research/spec.md"
+        )
+
+        self.assertIn("Quality-only execution law", harness)
+        self.assertIn("greatest available allowance", harness)
+        self.assertIn("Continue on `finish_reason=length`", harness)
+        self.assertIn("greatest completion allowance actually authorized", spec)
+        self.assertIn("no caller, prompt, framework", spec)
+        self.assertIn("MUST NOT be stopped, narrowed, ranked, or selected", spec)
+
+    def test_templates_record_results_without_planning_reasoning(self):
+        """OpenSpec: files preserve evidence and arm records, not a workflow graph."""
+        log = read("production-books/_template/research/research-log.md")
         lived = read("production-books/_template/research/lived-experience.md")
         science = read("production-books/_template/research/scientific-evidence.md")
 
-        for required in ("Assignment / coverage matrix", "Research-arm summary",
-                         "Runtime model ID", "Reasoning config", "Max output allowance",
-                         "Cost (USD)"):
+        for required in (
+            "Model and subagent calls",
+            "Objective and model-chosen strategy",
+            "Requested → actual model",
+            "Requested / authorized output",
+            "Source decisions",
+            "Final bank audit",
+            "Research-arm summary",
+        ):
             self.assertIn(required, log)
-        for required in ("Captured raw source text", "Evidence ID:", "Capture ID:",
-                         "Persona tags:", "Bank slots:", "Maximum output allowance:"):
-            self.assertIn(required, packets)
-        for required in ("Access / retention basis:", "Deletion / refresh obligations:"):
-            self.assertIn(required, packets)
-        self.assertIn("Access / retention basis", log)
+        self.assertNotIn("Assignment / coverage matrix", log)
         for bank in (1, 2, 3, 4, 5, 6, 9, 10):
             self.assertIn(f"## Bank {bank}", lived)
         for bank in (7, 8):
@@ -147,86 +115,82 @@ class PlanningContractTests(unittest.TestCase):
         for forbidden in (
             "analysis/easyway-prose-patterns.md",
             "analysis/sugar-prose-patterns.md",
-            "master-plan-reviewer.md`",
             "Opus sub-agent",
-            "Commit both directly to `main`",
         ):
             self.assertNotIn(forbidden, prompt)
 
-    def test_plan_and_review_gate_explicit_budgets_and_allowed_models(self):
-        """OpenSpec: only a fit reviewed plan can reach chapter writing."""
-        plan_prompt = read("prompts/master-plan-skill-v2.md")
-        review_prompt = read("prompts/master-plan-reviewer-v2.md")
-        plan_template = read("production-books/_template/master-plan.md")
-        review_template = read("production-books/_template/master-plan-review.md")
+    def test_live_and_generic_plans_have_review_and_budget_gates(self):
+        """OpenSpec: only a fit, budgeted, non-Opus-reviewed plan reaches writing."""
+        for plan_path in (
+            "production-books/_template/master-plan.md",
+            "production-books/quit-sugar/master-plan.md",
+        ):
+            plan = read(plan_path)
+            self.assertIn("54,000–66,000", plan)
+            self.assertIn("Planned chapter count", plan)
+            self.assertIn("single integer", plan)
+            self.assertNotIn("Reviewed by an Opus sub-agent", plan)
 
-        for text in (plan_prompt, review_prompt, plan_template):
-            self.assertIn("54,000–66,000", text)
-            self.assertRegex(text, r"(?:single-integer|single integer|explicit integer)")
-        for model in ("Gemini 3.1 Pro", "GPT-5.6 Sol", "Grok 4.5"):
-            self.assertIn(model, review_prompt)
-            self.assertIn(model, review_template)
-        self.assertEqual("needs changes first", review_template.rstrip().splitlines()[-1])
+        for review_path in (
+            "production-books/_template/master-plan-review.md",
+            "production-books/quit-sugar/master-plan-review.md",
+        ):
+            review = read(review_path)
+            for model in ("Gemini 3.1 Pro", "GPT-5.6 Sol", "Grok 4.5"):
+                self.assertIn(model, review)
+            self.assertEqual("needs changes first", review.rstrip().splitlines()[-1])
 
-    def test_all_role_model_boundaries_are_explicit(self):
-        """OpenSpec: no role may drift to an unapproved or lower-quality model."""
-        spec = read("openspec/changes/calibration-ready-research-pipeline/specs/book-pipeline/spec.md")
+    def test_role_models_and_writer_arms_are_explicit(self):
+        """OpenSpec: run-001 stays Opus; Muse is isolated after the baseline."""
+        spec = read(
+            "openspec/changes/calibration-ready-research-pipeline/"
+            "specs/book-pipeline/spec.md"
+        )
 
-        for role in ("Research scouts, retrieval subagents", "reviewers, and synthesizers", "Framers, planners",
-                     "Stage-B summarizers, and judges"):
-            self.assertIn(role, spec)
-        for model in ("DeepSeek V4 Pro", "MiniMax M3", "GPT‑5.6 Luna",
-                      "Gemini 3.1 Pro", "GPT‑5.6 Sol", "Grok 4.5"):
+        for model in (
+            "DeepSeek V4 Pro", "MiniMax M3", "GPT‑5.6 Luna",
+            "Gemini 3.1 Pro", "GPT‑5.6 Sol", "Grok 4.5",
+            "Claude Opus 4.6", "Muse Spark 1.1",
+        ):
             self.assertIn(model, spec)
         self.assertIn("Gemini 3.1 Flash Lite is forbidden in every role", spec)
-        self.assertIn("maximum endpoint-supported output allowance", spec)
-        wholebook = read("calibration/judges/wholebook-judge.md")
-        self.assertIn("allowed planning/judge model", wholebook)
-        self.assertIn("highest supported reasoning mode", wholebook)
-        self.assertNotIn("cheap model", wholebook)
+        self.assertIn("greatest output allowance actually authorized", spec)
+        self.assertIn("MUST NOT replace the run-001 baseline", spec)
 
 
 class HarnessBoundaryTests(unittest.TestCase):
-    def test_brief_and_research_roles_are_manifested(self):
-        """OpenSpec: downstream stages stop when the brief or role record is missing."""
-        harness = read("calibration/HARNESS.md")
+    def test_manifest_records_simple_model_led_research(self):
+        """OpenSpec: the run records calls without prescribing an org chart."""
         manifest = json.loads(read("calibration/runs/_template/manifest.json"))
 
-        framing_row = next(line for line in harness.splitlines()
-                           if line.startswith("| Framing |"))
-        research_row = next(line for line in harness.splitlines()
-                            if line.startswith("| Research |"))
-        self.assertIn("`00-brief.md`", framing_row)
-        self.assertIn("role-specific exact handoffs", research_row)
-        self.assertIn("visible predecessor artifacts", research_row)
-        self.assertIn("baseline_boundary", manifest)
-        self.assertIn("research_orchestration", manifest)
-        self.assertIn("model_output_allowance_policy", manifest)
-        self.assertIn("research_lead", manifest["models"])
-        self.assertIn("research_architects", manifest["models"])
-        self.assertIn("research_retrieval_agents", manifest["models"])
-        self.assertIn("research_reviewer", manifest["models"])
-        self.assertIn("research_workers", manifest["models"])
+        self.assertTrue(
+            manifest["research_orchestration"]["lead_chooses_subagents_and_workflow"]
+        )
+        models = manifest["models"]
+        for key in ("research_lead", "research_calls", "research_reviewer",
+                    "writer", "later_writer_arm"):
+            self.assertIn(key, models)
+        for obsolete in ("research_architects", "research_retrieval_agents",
+                         "research_workers"):
+            self.assertNotIn(obsolete, models)
 
-    def test_subrole_brief_contains_no_calibration_or_reference_metadata(self):
-        """HARNESS §4: the style guide alone carries reference-derived patterns."""
+    def test_subrole_brief_contains_no_calibration_metadata(self):
+        """HARNESS §4: only the style guide carries reference-derived patterns."""
         brief = read("production-books/quit-sugar/00-brief.md")
 
-        for forbidden in ("Good Sugar Bad Sugar", "calibration/", "analysis/",
-                          "reference metrics", "factory-calibration"):
+        for forbidden in (
+            "Good Sugar Bad Sugar", "calibration/", "analysis/",
+            "reference metrics", "factory-calibration",
+        ):
             self.assertNotIn(forbidden, brief)
 
     def test_invalid_reddit_pilot_artifacts_are_removed(self):
-        """OpenSpec: the affected calibration pilot retains no invalid source packets."""
+        """OpenSpec: unauthorized source packets remain absent."""
         forbidden = (
             "calibration/pilots/council/persona-architect-annotations.json",
             "calibration/pilots/council/persona-architect-output.md",
             "calibration/pilots/council/persona-architect-review.md",
             "calibration/pilots/council/a1-q3-f01",
-            "calibration/pilots/council/retrieval-a1-luna-empty.md",
-            "calibration/pilots/council/retrieval-a1-minimax-domain-empty.md",
-            "calibration/pilots/council/retrieval-a1-minimax-offdomain-annotations.json",
-            "calibration/pilots/council/retrieval-a1-minimax-offdomain.md",
             "calibration/pilots/council/retrieval-a1-q3-web.md",
             "calibration/pilots/council/retrieval-a1-q3-deepseek-validation.md",
             "calibration/pilots/council/retrieval-a1-q3-minimax-review.md",

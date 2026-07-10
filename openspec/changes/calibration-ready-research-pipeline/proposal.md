@@ -4,11 +4,11 @@ The calibration factory cannot run without violating its own contracts: research
 
 ## What Changes
 
-- Add a blind deep-research capability that decomposes work by community, persona, and bank slot; preserves verbatim evidence and provenance; and closes only on measurable bank coverage.
+- Add blind, model-led multi-agent research in which a top-reasoning lead chooses its own communities, personas, subagents, searches, recursion, and sufficiency judgment while preserving visible evidence and provenance.
 - Define comparable H-010/H-011 research arms and reconstructable quality/yield records without coupling the artifact contract to an orchestration framework or optimizing for cost, tokens, or speed.
 - Make raw-source capture, research-log entries, worker yield, and the two synthesized research banks one traceable handoff.
 - Remove reference-analysis inputs from research and planning, and make the brief an explicit framing input.
-- **BREAKING:** reserve Opus 4.6 exclusively for chapter writing; planning, review, research, and judging use the founder-approved non-Opus model sets at their highest supported reasoning.
+- **BREAKING:** reserve Opus 4.6 for the run-001 chapter-writing baseline; planning, review, research, and judging use the founder-approved non-writer model sets at top reasoning. Permit a later isolated Muse Spark 1.1 Stage-A writer arm without replacing the baseline.
 - Clarify that calibration commits complete runs on `calibration-lab`, while normal production retains accepted-chapter commits to `main`.
 
 ## Capabilities
@@ -23,4 +23,4 @@ The calibration factory cannot run without violating its own contracts: research
 
 ## Impact
 
-Affected assets are `prompts/research-agent.md`, the master-plan and reviewer prompts, the per-book research templates, `calibration/HARNESS.md`, calibration manifests/hypotheses, and the `book-pipeline` specification. The folder contract and anti-repetition chapter context remain unchanged. Research remains model-led and agentic; no deterministic research planner, validator, or renderer is added.
+Affected assets are `prompts/research-agent.md`, the master-plan and reviewer prompts, the per-book research templates, `calibration/HARNESS.md`, calibration manifests/hypotheses, and the `book-pipeline` specification. The folder contract and anti-repetition chapter context remain unchanged. Schemas record completed evidence; they do not prescribe a scout/worker matrix, quotas, or a deterministic reasoning path.
