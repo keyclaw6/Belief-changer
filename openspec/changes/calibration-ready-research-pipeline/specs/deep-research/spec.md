@@ -1,0 +1,67 @@
+## ADDED Requirements
+
+### Requirement: Structured research decomposition
+Research SHALL be led by a fresh-context research lead that receives only the research prompt and filled brief, records a community × persona × bank-slot coverage matrix before collection, and delegates bounded assignments to fresh-context workers. Each worker MUST receive only the research prompt, brief, and its assignment; the lead MUST commission targeted follow-ups for uncovered cells.
+
+#### Scenario: Research begins
+- **WHEN** a book with a filled brief enters research
+- **THEN** the lead records communities, provisional personas, bank-slot assignments, numeric targets, and worker IDs before any broad synthesis
+
+#### Scenario: A worker receives an unbounded task
+- **WHEN** a proposed worker assignment omits its community/source scope, persona scope, or bank slots
+- **THEN** the assignment is rejected and narrowed before the worker runs
+
+### Requirement: Independent research sources
+Research workers SHALL use lived-experience communities and scientific or investigative sources, and MUST NOT receive or use reference books, files under `analysis/`, calibration reference text, judge outputs, Allen Carr/Easyway derivatives, or prose-pattern analyses. Search-result summaries MAY guide discovery but MUST NOT be treated as verbatim evidence unless their exact returned excerpt is saved.
+
+#### Scenario: A forbidden source appears
+- **WHEN** a worker returns an Easyway-derived source or any reference/analysis material
+- **THEN** the source and every dependent finding are rejected and the affected coverage cells remain unfilled
+
+### Requirement: Provenance-preserving source packets
+Every distinct accepted URL SHALL have one source packet under `research/sources/`, and every search/call/source capture MUST be recorded in `research/research-log.md`. A packet MUST record a stable source ID, URL, title, retrieval date, community/source type, query and assignment ID, model and reasoning configuration, captured raw excerpt or text, and evidence items tagged by persona and bank slot.
+
+#### Scenario: A worker captures a quote
+- **WHEN** wording is labeled as an exact quote
+- **THEN** the wording appears verbatim in the packet's captured source text and carries a source locator
+
+#### Scenario: A quote cannot be verified
+- **WHEN** returned wording cannot be found verbatim in captured source text
+- **THEN** it is recaptured, converted to an explicitly labeled interpretation without quotation marks, or rejected
+
+#### Scenario: The same URL is revisited
+- **WHEN** another assignment yields evidence from an already accepted URL
+- **THEN** the existing packet is enriched and the new visit is logged instead of creating a duplicate source file
+
+### Requirement: Measurable bank sufficiency
+The lead SHALL declare numeric coverage targets before research and MUST require both those targets and the qualitative sufficiency tests in the research prompt to pass. Every selected persona MUST pass its applicable targets; duplicate sources or unsupported interpretations MUST NOT count toward coverage.
+
+#### Scenario: A numeric target is met with weak material
+- **WHEN** a bank reaches its item count but fails the prompt's qualitative sufficiency test
+- **THEN** the bank remains incomplete and the lead commissions a targeted follow-up
+
+#### Scenario: One persona is underrepresented
+- **WHEN** any selected persona fails an applicable bank target
+- **THEN** research MUST NOT close even if aggregate item counts are high
+
+### Requirement: Complete two-file synthesis
+The lead SHALL synthesize accepted source packets into `research/lived-experience.md` for Banks 1–6, 9, and 10 and `research/scientific-evidence.md` for Banks 7–8. Every synthesized bullet MUST name its bank and source IDs; lived evidence MUST carry persona tags, and scientific evidence MUST carry SUPPORTED, MIXED, or CONTESTED.
+
+#### Scenario: Synthesis contains an untraceable bullet
+- **WHEN** a synthesized bullet lacks accepted source IDs or cannot be traced to their packets
+- **THEN** the bullet is removed or re-sourced before framing begins
+
+#### Scenario: A contested claim is synthesized
+- **WHEN** sources materially disagree on a scientific claim
+- **THEN** the claim is tagged CONTESTED and the disagreement is preserved rather than averaged away
+
+### Requirement: Reconstructable research-arm measurement
+Every research arm SHALL record the exact runtime model ID, highest supported reasoning configuration, assignment, search settings, usage and cost when available, accepted sources, verified quotes, filled bank/persona cells, and rejected or unverifiable items. Model or orchestration comparisons MUST reuse the same assignment and search settings.
+
+#### Scenario: Research models are compared
+- **WHEN** H-009 compares two allowed researcher models
+- **THEN** the report separates raw-yield measures from synthesis quality and ranks verified coverage or quote yield per dollar
+
+#### Scenario: An OSS framework is proposed for adoption
+- **WHEN** H-011 proposes replacing prompt-structured handoffs
+- **THEN** adoption is rejected unless an equal-assignment comparison shows a measurable gain in coverage, verified provenance yield, cost, or orchestration reliability without breaking the file contract

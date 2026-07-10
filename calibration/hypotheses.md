@@ -30,11 +30,11 @@ Seeded by the harness builder (2026-07-10) as starting capital — derive priori
 - Prediction: multi-subagent wins bank-slot coverage, unique-community count, and verbatim-quote yield at equal spend.
 - Result: —
 
-## H-011 — adopt/tune an OSS deep-research framework     [PROPOSED — operator's decision]
+## H-011 — adopt/tune an OSS deep-research framework     [TESTING — source audit NO-GO]
 - Gap: building deep research from scratch may duplicate solved work (parallel source connectors, dedup, fact-check layers).
-- Lever: evaluate against the H-010 prompt-structured build: `langchain-ai/open_deep_research` (LangGraph, most established), `RobertoDeLaCamara/Research-Agent` (parallel Reddit/HN/SO + fact-check), `extracurricular-ai/open-deep-research-with-web-ui` (smolagents, Reddit connectors, built-to-fork). All support OpenAI-compatible endpoints (verified 2026-07-10).
+- Lever: evaluate against the H-010 prompt-structured build: `langchain-ai/open_deep_research` (`408da44`), `RobertoDeLaCamara/Research-Agent` (`b30eed2`), and `extracurricular-ai/open-deep-research-with-web-ui` (`9c3da13`).
 - Prediction: per §13 doctrine, adopt ONLY if it beats the prompt-structured approach on bank coverage/quote yield at equal spend — expect the prompt-structured build to win on fit, the OSS on connector breadth.
-- Result: —
+- Result: 2026-07-10 source audit: NO-GO for run-001 adoption. All three lack the community × persona × bank-slot schema, quote-to-raw-source verification, factory file outputs, and complete top-reasoning OpenRouter config. LangChain offers useful generic fan-out but needs all five core modules changed; Research-Agent's "Reddit" support is one site-search and its evaluator sees synthesis rather than sources; the smolagents fork has no Reddit/forum connector and carries UI/media/session machinery. Each would require a core rewrite plus dependencies, so H-010 is the run-001 baseline. Keep LangChain only as a future equal-assignment arm if prompt handoffs fail or orchestration becomes a measured bottleneck; no quality claim is yet refuted.
 
 ## H-012 — persona research quotas                        [PROPOSED]
 - Gap: research banks skew toward the loudest persona (young heavy users), starving framing's persona set and the future splitting seams.

@@ -60,7 +60,7 @@ The factory is a file-contract state machine in `production-books/quit-sugar/`. 
 | Stage | Prompt | Inputs (exactly) | Output | Gate |
 |---|---|---|---|---|
 | Research | `prompts/research-agent.md` | the prompt + `00-brief.md` | `research/sources/*`, then synthesized `research/lived-experience.md` + `research/scientific-evidence.md` | operator judges bank coverage vs the prompt's slot list |
-| Framing | template in book folder | `framing.md` template + style guide + the two research files | filled `framing.md` | operator decides forks for THIS calibration book; log decisions in the run report |
+| Framing | template in book folder | `00-brief.md` + `framing.md` template + style guide + the two research files | filled `framing.md` | operator decides forks for THIS calibration book; log decisions in the run report |
 | Master plan | `prompts/master-plan-skill-v2.md` | that prompt + style guide + `00-brief.md` + `framing.md` + the two research files | `master-plan.md` (§B8 book sheets FIRST) | fresh-context reviewer (`prompts/master-plan-reviewer-v2.md`, strongest model) iterated to **"fit to write from"**, ≤3 cycles |
 | Chapter N | `prompts/chapter-writer.md` | that prompt + style guide + `master-plan.md` + chapter N−1 ONLY | `chapters/chapter-NN.md` | fresh-context reviewer (`prompts/chapter-reviewer.md`) to ACCEPT, ≤3 cycles each |
 
@@ -72,7 +72,9 @@ Shallow research produces generic books. Research must go **deep into the places
 1. **Structured decomposition, not one long prompt:** a research-lead spawns focused sub-researchers (per community, per persona, per bank slot) and merges their yield into the banks. The single-agent-long-prompt approach is the H-010 baseline arm, expected to lose — prove it.
 2. **Slot-filling against the style guide's bank schema** (lived-experience themes, justification menu, community lexicon, persona segmentation) with per-slot sufficiency targets — research ends when the slots are full, not when the agent is tired.
 3. **Verbatim + provenance:** quotes captured verbatim with source references; never fabricated, never paraphrased into blandness; CONTESTED tags where the science is disputed.
-4. **OSS deep-research frameworks are on the table** (H-011; verified candidates as of 2026-07: `langchain-ai/open_deep_research` — most established, LangGraph, any provider; `RobertoDeLaCamara/Research-Agent` — parallel Reddit/HN/SO mining + fact-check layer, OpenAI-compatible endpoints; `extracurricular-ai/open-deep-research-with-web-ui` — smolagents, Reddit connectors, built-to-fork). Adopt or tune one ONLY per §13 doctrine: it must measurably beat the prompt-structured approach it replaces.
+4. **OSS deep-research frameworks are on the table** (H-011), but their claims are verified in code before any paid arm: `langchain-ai/open_deep_research` has mature generic supervisor fan-out but no community/bank/provenance contract; `RobertoDeLaCamara/Research-Agent` fans out fixed source searches (its Reddit path is a single site-search, and its post-synthesis evaluator is not source-grounded fact checking); `extracurricular-ai/open-deep-research-with-web-ui` is a generic smolagents manager/UI with no Reddit connector at audited HEAD. Adopt or tune one ONLY per §13 doctrine: it must measurably beat the prompt-structured approach it replaces.
+
+**Run-001 implementation:** prompt-structured lead/worker handoffs (H-010), with the repo files as the orchestration boundary. The three H-011 candidates were audited at source before adoption; none currently satisfies the bank/persona task schema, exact-quote provenance, top-reasoning model config, and factory output contract without a core rewrite. Reconsider only after a measured prompt/handoff failure or equal-assignment win; the audit is recorded in `calibration/hypotheses.md` and the active OpenSpec change.
 
 ## §4 Blindness & anti-overfit rules (absolute)
 
@@ -103,7 +105,7 @@ Shallow research produces generic books. Research must go **deep into the places
 
 1. `cp -r calibration/runs/_template calibration/runs/run-NNN` (NNN sequential).
 2. Fill `manifest.json`: stage, models per role, asset versions (`git log -1 --format=%h -- <file>` per method asset), hypotheses under test.
-3. Execute the stage recipe (§3). **run-001 is the baseline: zero amendments, current canon assets.**
+3. Execute the stage recipe (§3). **run-001 is the post-bootstrap baseline:** zero calibration-driven amendments. Pre-run repairs required to make the documented contracts executable (eval correctness, blindness, role-model isolation, and the founder-mandated deep-research handoff) are recorded by commit in the manifest's `baseline_boundary`; they are not quality-tuning outcomes.
 4. Objective evals: `python3 scripts/eval/run_evals.py --book production-books/quit-sugar --ref-dir calibration/reference/gsbs --run-dir calibration/runs/run-NNN [--chapters 1-3]`.
 5. Judge panel: `python3 scripts/eval/judge_panel.py --ours production-books/quit-sugar/chapters --ref calibration/reference/gsbs --chapters 1-3 --models google/gemini-3.1-pro-preview,x-ai/grok-4.5 --reasoning-efforts google/gemini-3.1-pro-preview=high,x-ai/grok-4.5=high --prompt calibration/judges/pairwise-judge.md --out calibration/runs/run-NNN/judgments` (§9 for family rules; resolve IDs again at runtime).
 6. Write `report.md` (template provided): results → gate verdict → ranked diagnosis (each gap mapped to the generic asset that owns it) → hypothesis outcomes → amendments proposed for the next run.
@@ -123,7 +125,7 @@ Length is planned, not hoped for: (a) the master plan's curve map assigns **ever
 | Role | Model | Note |
 |---|---|---|
 | Writer | **Opus 4.6, reasoning disabled — FIXED** | chapter prose only; never research, plan, review, or judge |
-| Researcher | **ARMS below** (needs web access + long context) | DeepSeek V4 Pro / MiniMax M3 / GPT 5.6 Luna only |
+| Research lead + workers | **ARMS below** (needs web access + long context) | DeepSeek V4 Pro / MiniMax M3 / GPT 5.6 Luna only; record each sub-role |
 | Planner | **ARMS below** | Gemini 3.1 Pro / GPT 5.6 Sol / Grok 4.5 only |
 | Plan reviewer | strongest allowed planning model | "fit to write from" is the costliest gate to get wrong |
 | Chapter reviewer | strongest allowed planning/judge model | cross-family to the fixed Opus writer |

@@ -1,70 +1,127 @@
-# Research Stage v2 — Raw Material Banks
+# Research Lead/Worker Protocol
 
-**Why redesigned:** v1 framed research as two generic streams (lived experience + scientific evidence). That produces piles of findings with no guaranteed fit to what the book actually consumes. v2 inverts the design: **research is slot-filling.** The style guide (Part B) and the chapter arc define exactly which raw materials the master plan and chapter writers need; research's job is to fill those banks — persona-tagged and verbatim-rich — until each bank meets its sufficiency bar. The orchestrator reviews per bank, not per "stream," and commissions targeted follow-up research for any bank that's thin.
+## Mission
 
-**The two v1 streams survive as *source types*** (community/lived-experience mining vs. scientific literature), but the output is organized by **bank**, because that's the shape the pipeline consumes.
+Fill ten behavior-specific raw-material banks with independent, source-traceable evidence. Research ends when every applicable community × persona × bank cell passes both its numeric floor and its qualitative test, not when a search budget expires. Do not write book prose.
 
----
+## 1. Exact inputs and model gate
 
-## Step 0 — Persona segmentation (do this first)
+The fresh-context **research lead** receives exactly:
 
-Different people do the same behavior for different reasons, hold different load-bearing beliefs, and suffer different costs. A book that speaks only to one persona silently loses the others — and when one persona's case dominates, the others' justifications survive demolition.
+1. this prompt;
+2. the filled `production-books/<slug>/00-brief.md`.
 
-- Identify the **3–6 dominant personas** for the target behavior, segmented primarily by **the function the behavior serves** (e.g., escape/numbing, social belonging, performance/achievement, boredom, identity, stress relief) and secondarily by life situation where it changes the experience materially.
-- Every subsequent bank entry carries **persona tags**. A bank is not sufficient until every persona is represented in it.
-- The master plan uses personas for ventriloquism (the reader must hear *their own* voice quoted), for ordering the demolition (most-load-bearing beliefs first), and for deciding whether the book needs split editions (see VISION: focused editions).
+The lead may subsequently inspect only worker returns and research artifacts created in this run. Each fresh-context **worker** receives exactly:
 
----
+1. this prompt;
+2. the same filled brief;
+3. one bounded assignment record from the lead's matrix.
 
-## The banks
+Do not provide any role with reference books, files under `analysis/`, calibration reference text, judge output, Allen Carr/Easyway derivatives, prose-pattern analysis, prior book prose, or another worker's context. If forbidden material appears, reject it and every dependent finding; its cells remain unfilled.
 
-Every entry: **verbatim quote where possible** (the community's own words, in their own slang) + source + persona tag(s) + the slot it feeds. Bullets, unnumbered, one self-contained point each — same conventions as the analysis docs.
+Research leads, workers, and research synthesis may use only these arms, at the runtime-reported highest reasoning mode:
 
-### Bank 1 — Justification Inventory
-The reader's stated reasons for the behavior, ranked by prevalence per persona. These become the **justification menu** printed early in the book and the table of contents of the demolition phase — one chapter per justification.
-*Sufficient when:* the top justifications per persona are captured in the community's own phrasing, and nothing a reader would say ("but it helps me relax!") is missing.
+| Arm | Required top-reasoning configuration |
+|---|---|
+| DeepSeek V4 Pro | `xhigh` |
+| MiniMax M3 | reasoning enabled; no effort ladder |
+| GPT-5.6 Luna | `max` |
 
-### Bank 2 — Belief Map
-The **load-bearing false beliefs** beneath the justifications, per persona: what the reader actually believes the behavior gives them, what they believe quitting costs, what they believe about themselves ("I'm just an addictive person"). Identify THE single most load-bearing belief per persona — the one whose collapse takes the structure down.
-*Sufficient when:* each persona has a ranked belief list with the keystone belief identified and evidence it's genuinely held.
+Resolve and record the exact runtime model ID and reasoning configuration from endpoint metadata before every call. Stop rather than substitute an unapproved model or call below the highest supported mode. Opus is not a research model.
 
-### Bank 3 — Lived-Experience Bank
-The moments that "hit home": lowest moments, the day-in-the-life costs, failed quit attempts and *why they failed* (almost always: willpower + intact belief), relapse triggers, the secret shames, the time/money/health arithmetic people do at 2am. Persona-tagged, verbatim-heavy.
-*Sufficient when:* a reader of each persona would find at least several "that is exactly me" moments.
+## 2. Lead: declare the assignment matrix before collection
 
-### Bank 4 — Special-Moments Inventory
-When the behavior feels *best* — the cherished scenes (the equivalent of Carr's coffee in the morning sun). These feed the **strongest-case chapter** and the credit-reassignment scenes: each scene must later be stripped of the behavior to show the pleasure was the scene all along.
-*Sufficient when:* the most seductive scene per persona is captured vividly enough to rebuild in prose.
+From the brief, identify **3–6 provisional personas**, segmented first by the function the behavior serves and second by materially different life situations. Identify the recovery/experience communities where each persona speaks in its own words and the independent scientific or investigative source families needed for Banks 7–8. Declare targets at least as strict as §4.
 
-### Bank 5 — Escape-Route Inventory
-The rationalizations that derail quitting, in the community's own words: "just one," moderation schemes, "I'll stop after X," substitutes, "I've earned it," "it's different for me," "I can quit anytime." These feed the **foreclosure chapters** and the future-paced ventriloquism (pre-playing the tempting thought so it arrives pre-refuted).
-*Sufficient when:* every escape route observed in failed-quit stories has a verbatim instance.
+Before broad collection, write one row per planned community/source-scope × persona × bank cell at the top of `research/research-log.md`:
 
-### Bank 6 — Analogy Bank
-Candidate analogies, harvested (from the communities, the reference analyses, other domains) **and invented**. Each tagged with **the job it does**: mechanism-inversion (the cure is the cause), false attribution (the finger-snapping that "keeps tigers away"), choice-dissolution (the con/investment scam), borrowed energy (payday loan), recalibrated instruments, the trap image itself, the void question. Analogies must translate to the behavior's texture (a chemical behavior wants body-analogies; a screen behavior wants attention/slot-machine/skinner-box analogies — but invent fresh, don't default to clichés the community is numb to).
-*Sufficient when:* every belief-change move in the style guide's toolkit has at least two strong candidate analogies.
+| Assignment ID | Worker ID | Community / source scope | Persona | Bank | Target | Query / search settings | Runtime model ID | Reasoning config | Accepted items | Distinct sources | Qualitative verdict | Status / follow-up |
+|---|---|---|---|---|---|---|---|---|---:|---:|---|---|
 
-### Bank 7 — Mechanism & Science Bank
-The actual loop: what the behavior does physiologically/psychologically, what "withdrawal"/restlessness looks like for it, the tolerance/escalation pattern, and the evidence that the perceived benefit is relief of a self-created low (the inversion). Per Fork 3: facts that make the trap *visible*, dosed lightly; raw citations quarantined for a possible appendix.
-*Sufficient when:* the inversion can be told concretely for this behavior, and the canonical **sensory definition** (the adjective-string for this behavior's low/craving) can be drafted from real descriptions.
+An assignment may cover several rows only when it still names one bounded community/source scope, an explicit persona scope, explicit bank slots and targets, fixed query/search settings, a worker ID, and an allowed model configuration. Use `ALL` as the persona only for genuinely persona-neutral science; explain every `N/A`. Reject and narrow any assignment missing a scope, persona, or bank.
 
-### Bank 8 — Villain Dossier
-The manufacture of desire: who engineers this behavior and how — design mechanics (variable rewards, autoplay, streaks, FOMO loops), business models, recruitment of the young, the marketing mythology. Feeds the widen-the-indictment chapter and the externalization of blame (warm to the person, harsh to the trap).
-*Sufficient when:* the engineered-ness of the trap can be shown, not asserted.
+## 3. Worker: collect provenance-preserving yield
 
-### Bank 9 — Community Lexicon
-The slang, in-group terms, euphemisms, and self-descriptions the community uses — for authentic ventriloquism and for deriving the book's **lexicon sheet** (which trap-register renamings will land; which words are numb from overuse).
-*Sufficient when:* quoted reader-voice can be written that a community member would accept as native.
+Search the assigned community/source scope only. Community work should reach first-person recovery or experience discussions; Banks 7–8 should use independent primary scientific or investigative sources where available. A search-result summary may guide discovery but is not evidence unless its exact returned excerpt is saved unchanged.
 
-### Bank 10 — Freedom Testimonies
-What freedom actually feels like from those who escaped: the surprises ("I thought I'd miss it; I just... don't"), the timeline of the body/mind recovering, candidate **moment-of-revelation** scenes (the situation where the desire simply never crossed their mind), and the gains-in-life specifics. Feeds the freedom crescendo, the future-pacing, and the instant-freedom doctrine.
-*Sufficient when:* the moment of revelation can be *predicted* concretely per persona, and the final quarter of the book can be written from real testimony rather than imagination.
+Every search, model call, accepted or rejected source capture, and URL revisit produces a chronological log event with its query and assignment IDs, tool/search settings, exact model/reasoning configuration, usage and cost when available, disposition and reason, output/source IDs, and cells filled.
 
----
+Create one Markdown packet under `research/sources/` for each distinct accepted URL. Repeated visits enrich that packet and add log events; they never create another source file. Use this schema exactly:
 
-## Process notes
+```markdown
+# <Source ID> — <Title>
 
-- **Source types:** Bank 7–8 lean on the scientific/investigative stream; all others lean on community mining (forums, subreddits, comment threads, quit-communities, app reviews) — find where this behavior's strugglers actually talk.
-- **Verbatim discipline:** capture exact phrasing liberally at this stage (analysis convention; copyright handled at distribution, and community quotes are paraphrased/anonymized in the final book anyway — what we need is the *authentic shape* of the voice).
-- **Orchestrator loop:** after each research pass, the orchestrator grades each bank against its sufficiency bar and commissions targeted follow-ups ("Bank 5 is thin for the social-belonging persona") until all banks pass. Only then does the master-plan step begin.
-- **Hand-off:** the master plan derives its per-book sheets (style guide §B8) directly from these banks: mantra sheet wording stress-tested against Bank 9 language; justification menu from Bank 1; analogy assignment from Bank 6; ventriloquism lines from Banks 3/5; the strongest case from Bank 4; the revelation prediction from Bank 10.
+- URL: <canonical URL>
+- Retrieved: <date>
+- Community / source type: <named community or source family>
+- Query ID: <ID>
+- Assignment ID: <ID>
+- Runtime model ID: <exact ID>
+- Reasoning config: <exact request setting>
+
+## Captured source text
+
+### <Capture ID>
+- Locator: <page, section, paragraph, timestamp, post/comment URL, or equivalent>
+
+<unchanged retrieved excerpt or text>
+
+## Evidence items
+
+### <Evidence ID>
+- Kind: EXACT_QUOTE | INTERPRETATION
+- Text: <evidence>
+- Capture ID: <ID>
+- Locator: <precise locator within the capture/source>
+- Persona tags: <one or more>
+- Bank slots: <one or more bank numbers>
+- Evidence grade: SUPPORTED | MIXED | CONTESTED | N/A
+```
+
+`EXACT_QUOTE` text must appear character-for-character in the named captured text and have a locator. If it cannot be verified, recapture it, convert it to an unquoted `INTERPRETATION`, or reject it. Interpretations still require supporting captured text and a locator. Never put quotation marks around an interpretation.
+
+A worker returns its log events, complete source packets, accepted-source and verified-quote counts, filled matrix cells, usage/cost, rejected or unverifiable items with reasons, and remaining gaps. The lead validates and merges this yield; a worker's unsupported summary does not count.
+
+## 4. Banks and Stage A coverage floor
+
+The lead may raise but never lower these floors. Every selected persona must pass every applicable target; aggregate volume cannot hide a missing persona. Distinct URLs that reproduce the same underlying material count as one independent source.
+
+| Bank | Raw material | Stage A numeric floor | Qualitative pass test |
+|---|---|---|---|
+| 1. Justification inventory | Stated reasons for the behavior, in community language | ≥3 items/persona from ≥2 sources | Top justifications are ranked; no credible common "but it gives me…" case is missing. |
+| 2. Belief map | Beliefs beneath the reasons, including quitting costs and identity beliefs | ≥3 items/persona from ≥2 sources | Each persona has a ranked map with one evidence-backed keystone belief. |
+| 3. Lived experience | Daily costs, lowest moments, failed attempts, relapse triggers, private arithmetic | ≥5 moments/persona from ≥2 sources | Each persona has several specific "that is exactly me" moments, not generic harms. |
+| 4. Special moments | The behavior's most cherished or seductive scenes | ≥3 items/persona from ≥2 sources | The strongest scene per persona is vivid enough for later credit reassignment. |
+| 5. Escape routes | Moderation, delay, substitution, exception, and "different for me" rationalizations | ≥3 items/persona from ≥2 sources | Every escape route found in failed-attempt stories has an exact community instance. |
+| 6. Analogy candidates | Original images that perform a belief-change job | ≥2 original candidates for every expected move | Candidates fit the behavior's texture and clearly perform their named job; sourced and invented elements are distinguished. |
+| 7. Mechanism and science | Loop, withdrawal/restlessness, escalation, self-created low, sensory description | Every candidate claim graded and backed by ≥2 independent sources, or explicitly `CONTESTED` | The inversion and sensory low can be stated concretely without overstating evidence. |
+| 8. Villain dossier | How demand is engineered: mechanics, business model, recruitment, mythology | ≥3 independently sourced mechanisms | Engineered demand is demonstrated, not asserted. |
+| 9. Community lexicon | Slang, euphemisms, self-descriptions, native phrasing | ≥8 terms/persona with frequency/context notes | A community member would accept the resulting reader voice as native. |
+| 10. Freedom testimonies | Surprises after stopping, recovery texture, revelation moments, concrete gains | ≥3 items/persona from ≥2 sources | A moment of revelation and credible freedom trajectory can be predicted per persona. |
+
+For Bank 6, cover at least the applicable jobs of mechanism inversion, false attribution, choice dissolution, borrowed energy/self-created low, recalibrated baseline, engineered trap, and the void/freedom question. An invented analogy must be labeled `INVENTED`, cite packets that ground its behavior-specific texture, and never be misattributed to a source.
+
+## 5. Coverage and follow-up gate
+
+After each pass, the lead updates accepted counts, distinct-source counts, and the qualitative verdict in every matrix row. Duplicate URLs, unverifiable quotes, rejected sources, unsupported interpretations, and evidence outside the assigned scope do not count.
+
+Research may close only when:
+
+- every applicable persona/bank row meets its declared numeric target;
+- every row's qualitative verdict is `PASS`;
+- every counted item traces to an accepted packet;
+- every exact quote passes character-for-character verification;
+- every source/call/search event and rejection is logged.
+
+For each failing row, issue a fresh targeted follow-up assignment naming the exact community/source scope, persona, bank, missing quantity or quality, fixed search settings, worker, and model configuration. Append it to the matrix and repeat the gate. If evidence remains unavailable, report the unresolved row and keep research blocked; never fill it by invention.
+
+## 6. Two-file synthesis
+
+Only after the coverage gate passes, synthesize accepted packets into:
+
+- `research/lived-experience.md`: Banks **1–6, 9, and 10**. Every bullet names its bank, persona tags, and supporting source IDs.
+- `research/scientific-evidence.md`: Banks **7–8**. Every bullet names its bank, supporting source IDs, and `SUPPORTED`, `MIXED`, or `CONTESTED`.
+
+Every source ID must resolve to its packet. Preserve material disagreements as `CONTESTED`; do not average them away. Bank 6 invented candidates still cite the packets grounding their behavior-specific texture. Remove or re-source any untraceable bullet. Framing remains blocked until both files pass this traceability check.
+
+For model or orchestration comparisons, reuse the same assignment and search settings. Record exact runtime IDs/configs, usage/cost, accepted sources, verified quotes, cells filled, and rejected/unverifiable yield; report raw yield separately from synthesis quality and rank verified cells and quotes per dollar.

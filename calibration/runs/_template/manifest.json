@@ -8,9 +8,14 @@
   "hypotheses_tested": [],
   "model_api": "openrouter | litellm | native+openrouter",
   "arms": {"researcher": "R1-R3", "planner": "P1-P3"},
+  "baseline_boundary": "<bootstrap contract-repair commit(s); no calibration-quality amendments>",
+  "research_orchestration": {"arm": "H-010 prompt-structured", "oss_framework": "none"},
   "models": {
-    "researcher": "<arm R1-R3 — exact id resolved from GET /api/v1/models>",
-    "researcher_reasoning": "xhigh | max | enabled",
+    "research_lead": "<allowed R1-R3 exact id resolved from GET /api/v1/models>",
+    "research_lead_reasoning": "xhigh | max | enabled",
+    "research_workers": [
+      {"assignment": "<worker/task IDs>", "model": "<allowed R1-R3 exact id>", "reasoning": "xhigh | max | enabled"}
+    ],
     "planner": "<arm P1-P3 — exact id resolved from GET /api/v1/models>",
     "planner_reasoning": "high | max",
     "plan_reviewer": "<Gemini 3.1 Pro | GPT 5.6 Sol | Grok 4.5>",
