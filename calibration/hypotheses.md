@@ -20,8 +20,8 @@ Seeded by the harness builder (2026-07-10) as starting capital — derive priori
 
 ## H-009 — researcher-model arms (cost/depth bake-off)   [PROPOSED]
 - Gap: research is the highest-token stage; unknown which model mines communities and synthesizes banks best per dollar.
-- Lever: manifest only — R1 GPT 5.6 Sol (native) · R2 `deepseek/deepseek-v4-pro` (verified 2026-07-10: 1M ctx, ~$0.435/$0.87 per M — the 1M context lets one synthesis call hold an entire forum yield) · R3 Gemini 3.1 Pro.
-- Prediction: measurement; expect R2 to win cost-per-slot-filled and tie on quality for mining, with synthesis quality the open question.
+- Lever: manifest only, always top reasoning — R1 `deepseek/deepseek-v4-pro` (`xhigh`) · R2 `minimax/minimax-m3` (reasoning enabled; no effort ladder reported) · R3 GPT 5.6 Luna (`max`).
+- Prediction: measurement; expect the long-context low-cost arms to lead cost-per-slot-filled, with verbatim provenance and synthesis quality the open questions.
 - Result: —
 
 ## H-010 — multi-subagent research vs one long prompt    [PROPOSED]
@@ -52,15 +52,15 @@ Seeded by the harness builder (2026-07-10) as starting capital — derive priori
 
 ## H-005 — planner-model arms                             [PROPOSED — REVISED 2026-07-10]
 - Gap: unknown which model plans this book architecture best. (Supersedes the writer-arms version: founder fixed the writer to Opus 4.6 reasoning-none.)
-- Lever: manifest only — P1 GPT 5.6 Sol · P2 Opus 4.6 `effort: medium` · P3 Gemini 3.1 Pro · P4 Moose Spark 1.1 (when live). Same inputs, same prompts.
+- Lever: manifest only, always top reasoning — P1 GPT 5.6 Sol (`max`) · P2 Gemini 3.1 Pro (`high`) · P3 Grok 4.5 (`high`). Opus is chapter-writer-only. Same inputs, same prompts.
 - Prediction: measurement; judged by plan-review cycles to "fit to write from" + downstream chapter judge scores off each plan.
 - Result: —
 
-## H-007 — planner reasoning effort                       [PROPOSED]
-- Gap: does high reasoning effort at the PLAN stage buy chapter quality downstream, or only cost?
-- Lever: manifest only — winning planner at effort none vs medium vs high.
-- Prediction: plan-stage effort matters more than writer-stage effort would have; medium≈high >> none.
-- Result: —
+## H-007 — planner reasoning effort                       [RETIRED — founder-fixed 2026-07-10]
+- Gap: a reasoning-effort sweep was proposed before the founder fixed every allowed non-writer model to its top supported reasoning mode.
+- Lever: none — configuration is now a constant, not a calibration variable.
+- Prediction: retired without a model call; no quality claim was tested or refuted.
+- Result: Superseded by the fixed top-reasoning rule in HARNESS §8.
 
 ## H-001 — explicit per-chapter word budgets              [PROPOSED]
 - Gap: nothing in the plan template forces chapter lengths, so book length is emergent, not planned (HARNESS §7 requires planned).

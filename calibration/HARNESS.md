@@ -43,7 +43,7 @@ Every improvement must land in a **generic method asset** (`prompts/style-guide.
 
 1. `git clone https://github.com/keyclaw6/Belief-changer.git` (if the clone 407s behind a proxy, retry with `git -c http.proxyAuthMethod=basic clone …`). Work on branch **`calibration-lab`**. You need push access; if you lack it, escalate (§11).
 2. `python3` (stdlib only — no pip installs needed).
-3. Model access: env `OPENROUTER_API_KEY` (the founder's key; base `https://openrouter.ai/api/v1`, OpenAI-compatible) — needed for the writer arms (§8) and cross-family judging. Alternate: `LITELLM_BASE_URL` + `LITELLM_API_KEY` (the founder's proxy); `scripts/eval/judge_panel.py` accepts either. **Resolve exact model IDs at runtime from `GET /api/v1/models`** (bearer auth) — never guess an ID; each model's `reasoning` object there lists its supported effort levels and whether reasoning is mandatory. Reasoning is the unified body param: `"reasoning": {"effort": "medium"}`, or `{"effort": "none"}` to disable.
+3. Model access: env `OPENROUTER_API_KEY` (the founder's key; base `https://openrouter.ai/api/v1`, OpenAI-compatible). Alternate: `LITELLM_BASE_URL` + `LITELLM_API_KEY` (the founder's proxy); `scripts/eval/judge_panel.py` accepts either. **Resolve exact model IDs at runtime from `GET /api/v1/models`** (bearer auth) — never guess an ID. Every non-writer role uses the highest mode reported by that model's `reasoning` object. The writer is the sole exception: Opus 4.6 with reasoning disabled via `{"reasoning": {"enabled": false}}`.
 4. Extract the reference (LOCAL ONLY — `calibration/reference/` is gitignored; never commit extracted book text):
    ```
    python3 scripts/eval/extract_reference.py \
@@ -105,7 +105,7 @@ Shallow research produces generic books. Research must go **deep into the places
 2. Fill `manifest.json`: stage, models per role, asset versions (`git log -1 --format=%h -- <file>` per method asset), hypotheses under test.
 3. Execute the stage recipe (§3). **run-001 is the baseline: zero amendments, current canon assets.**
 4. Objective evals: `python3 scripts/eval/run_evals.py --book production-books/quit-sugar --ref-dir calibration/reference/gsbs --run-dir calibration/runs/run-NNN [--chapters 1-3]`.
-5. Judge panel: `python3 scripts/eval/judge_panel.py --ours production-books/quit-sugar/chapters --ref calibration/reference/gsbs --chapters 1-3 --models <family-A>,<family-B> --prompt calibration/judges/pairwise-judge.md --out calibration/runs/run-NNN/judgments` (§9 for family rules).
+5. Judge panel: `python3 scripts/eval/judge_panel.py --ours production-books/quit-sugar/chapters --ref calibration/reference/gsbs --chapters 1-3 --models google/gemini-3.1-pro-preview,x-ai/grok-4.5 --reasoning-efforts google/gemini-3.1-pro-preview=high,x-ai/grok-4.5=high --prompt calibration/judges/pairwise-judge.md --out calibration/runs/run-NNN/judgments` (§9 for family rules; resolve IDs again at runtime).
 6. Write `report.md` (template provided): results → gate verdict → ranked diagnosis (each gap mapped to the generic asset that owns it) → hypothesis outcomes → amendments proposed for the next run.
 7. Update `calibration/runs/LEDGER.md` (one row) and `calibration/hypotheses.md` (statuses; new hypotheses from the diagnosis).
 8. Amend method assets for the next run: **≤1 lever per run** (or a small batch ONLY if each item carries its own attribution rationale and touches a different failure).
@@ -118,23 +118,23 @@ Length is planned, not hoped for: (a) the master plan's curve map assigns **ever
 
 ## §8 Model matrix & arms (roles are config, not code)
 
-**FIXED (founder correction, 2026-07-10): the chapter writer is Claude Opus 4.6 with `"reasoning": {"effort": "none"}`.** Resolve the exact OpenRouter ID at runtime; do NOT run writer-model experiments. Writer-stage hypotheses tune HOW it writes (H-018..H-021), never WHICH model writes.
+**FIXED (founder corrections, 2026-07-10): the chapter writer is Claude Opus 4.6 with `"reasoning": {"enabled": false}` and Opus may serve NO other role.** Resolve the exact OpenRouter ID at runtime; do NOT run writer-model experiments. Writer-stage hypotheses tune HOW it writes (H-018..H-021), never WHICH model writes.
 
 | Role | Model | Note |
 |---|---|---|
-| Writer | **Opus 4.6, reasoning none — FIXED** | the one non-negotiable in this matrix |
-| Researcher | **ARMS below** (needs web access + long context) | if no web access: escalate |
-| Planner | **ARMS below** | plan quality dominates book quality |
-| Plan reviewer | strongest available | "fit to write from" is the costliest gate to get wrong |
-| Chapter reviewer | strong **non-Anthropic** default | cross-family to the fixed Opus writer |
-| Summarizer (Stage B) | cheap fast model | same prompt for both books |
-| Judges | multiple families, **always ≥1 strong non-Anthropic** (§9) | writer family is fixed ⇒ guard is concrete |
+| Writer | **Opus 4.6, reasoning disabled — FIXED** | chapter prose only; never research, plan, review, or judge |
+| Researcher | **ARMS below** (needs web access + long context) | DeepSeek V4 Pro / MiniMax M3 / GPT 5.6 Luna only |
+| Planner | **ARMS below** | Gemini 3.1 Pro / GPT 5.6 Sol / Grok 4.5 only |
+| Plan reviewer | strongest allowed planning model | "fit to write from" is the costliest gate to get wrong |
+| Chapter reviewer | strongest allowed planning/judge model | cross-family to the fixed Opus writer |
+| Summarizer (Stage B) | one allowed planning/judge model at top reasoning | same model and prompt for both books |
+| Judges | ≥2 of the allowed planning/judge models | every panel is non-Anthropic because the writer is fixed to Opus |
 
-**Planner arms (H-005):** P1 GPT 5.6 Sol · P2 Opus 4.6 `effort: medium` · P3 Gemini 3.1 Pro · P4 Moose Spark 1.1 (Meta — poll `/models` until live). Plus the reasoning-effort sweep on the winning planner (H-007).
+**Planner/reviewer/judge arms (H-005):** P1 GPT 5.6 Sol (`max`) · P2 Gemini 3.1 Pro (`high`) · P3 Grok 4.5 (`high`). Use native GPT 5.6 Sol at max when the environment can preserve the exact-input/fresh-context contract; otherwise use the runtime-resolved OpenRouter ID. No lower-effort sweep: top reasoning is fixed.
 
-**Researcher arms (H-009):** R1 GPT 5.6 Sol (operator-native) · R2 **`deepseek/deepseek-v4-pro`** (founder-flagged for cost — verified on OpenRouter 2026-07-10: 1M-token context, ~$0.435/$0.87 per M tokens, tool calling, reasoning modes; the 1M context is a real edge for synthesis over huge forum yields) · R3 Gemini 3.1 Pro. Measure: bank slots filled per dollar, verbatim-quote yield with provenance, synthesis quality into the two banks.
+**Researcher arms (H-009):** R1 `deepseek/deepseek-v4-pro` (`xhigh`) · R2 `minimax/minimax-m3` (reasoning enabled; `/models` exposes no effort ladder) · R3 GPT 5.6 Luna (`max`, runtime-resolved ID). Measure: bank slots filled per dollar, verbatim-quote yield with provenance, synthesis quality into the two banks.
 
-One arm change per attempt; record exact resolved IDs + reasoning configs in the manifest (`arm` field). Unavailable arms (P4 pre-release) or rejected configs (check each model's `reasoning.mandatory` flag in `/models`): note in the ledger, proceed with the rest.
+One arm change per attempt; record exact resolved IDs + reasoning configs in the manifest. If an allowed arm or its required top-reasoning config is unavailable at runtime, note it in the ledger and proceed with the remaining allowed arms.
 
 ## §9 Judging protocol
 
@@ -159,7 +159,7 @@ STOP and write `calibration/ESCALATION.md` (committed, with run refs) when:
 - a method-integrity violation (shame/willpower/fear framing) recurs after a targeted amendment;
 - judge families disagree by >2 points on the same dimension across a whole run (judge-prompt defect — do not tune it silently; propose the fix in the escalation);
 - an amendment would need to touch founder-gated canon in a way you can't phrase behavior-agnostically;
-- you lack push access, web access for research, or the LiteLLM endpoint;
+- you lack push access, web access for research, or both supported model endpoints;
 - anything in this manual is ambiguous in practice (name the gap; the founder/Hyperagent fixes the manual, per the AGENTS.md harness rule).
 
 Founder merges: canon (`main`) style-guide/prompt changes are founder-approved — batch your winning amendments in the escalation/ledger notes; do not merge `calibration-lab` → `main` yourself.

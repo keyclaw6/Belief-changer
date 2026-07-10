@@ -75,18 +75,34 @@ def load_chapters(dirpath, exts=(".md", ".txt")) -> list:
 
 
 def parse_range(spec: str, upper: int) -> list:
-    """'1-3' or '1,2,5' -> [1,2,3] / [1,2,5]; None/'' -> 1..upper."""
-    if not spec:
+    """Parse a chapter selection; reject any invalid explicit selection."""
+    if spec is None:
         return list(range(1, upper + 1))
+    if not spec.strip():
+        raise SystemExit("evallib: --chapters selection is empty")
+
     out = []
-    for part in spec.split(","):
-        part = part.strip()
-        if "-" in part:
-            a, b = part.split("-", 1)
-            out.extend(range(int(a), int(b) + 1))
-        elif part:
+    for raw in spec.split(","):
+        part = raw.strip()
+        if not part:
+            raise SystemExit(f"evallib: invalid --chapters selection: {spec!r}")
+        match = re.fullmatch(r"(\d+)\s*-\s*(\d+)", part)
+        if match:
+            start, end = (int(value) for value in match.groups())
+            if start > end:
+                raise SystemExit(f"evallib: descending --chapters range: {part!r}")
+            out.extend(range(start, end + 1))
+        elif part.isdigit():
             out.append(int(part))
-    return [i for i in out if 1 <= i <= upper]
+        else:
+            raise SystemExit(f"evallib: invalid --chapters selection: {part!r}")
+
+    unavailable = sorted({chapter for chapter in out if not 1 <= chapter <= upper})
+    if unavailable:
+        raise SystemExit(
+            f"evallib: requested chapter(s) unavailable (have 1-{upper}): {unavailable}"
+        )
+    return out
 
 
 def first_quoted(line: str):

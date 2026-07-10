@@ -28,7 +28,7 @@ def main():
     ap.add_argument("--book", required=True, help="book folder (with chapters/, master-plan.md)")
     ap.add_argument("--ref-dir", required=True, help="extracted reference dir")
     ap.add_argument("--run-dir", required=True)
-    ap.add_argument("--chapters", default="", help="e.g. 1-3 for Stage A")
+    ap.add_argument("--chapters", default=None, help="e.g. 1-3 for Stage A")
     ap.add_argument("--cross-tripwire", type=float, default=R.CROSS_TRIPWIRE)
     a = ap.parse_args()
 
@@ -42,12 +42,16 @@ def main():
 
     chapters = E.load_chapters(book / "chapters")
     sel = E.parse_range(a.chapters, len(chapters))
+    selected = set(sel)
+    # Empty placeholders keep repetition findings numbered as source chapters.
+    scoped_chapters = [(name, raw if i in selected else "")
+                       for i, (name, raw) in enumerate(chapters, 1)]
     hard_fails, warnings = [], []
 
     # 1. metrics vs reference
     ours = M.book_metrics(chapters)
     ref = json.loads(ref_metrics_path.read_text(encoding="utf-8"))
-    cmpres = M.compare(ours, ref, sel if a.chapters else None)
+    cmpres = M.compare(ours, ref, sel if a.chapters is not None else None)
     warnings += cmpres["warnings"]
     print(M.fmt_table(cmpres["rows"]))
 
@@ -60,19 +64,19 @@ def main():
             for f in mantra_res["failures"]:
                 hard_fails.append(f"mantra: {f}")
         else:
-            warnings.append("mantra sheet not parseable/unfilled — mantra law UNCHECKED")
+            hard_fails.append("mantra: mantra sheet not parseable/unfilled")
     else:
-        warnings.append("no master-plan.md — mantra law UNCHECKED")
+        hard_fails.append("mantra: no master-plan.md")
 
     # 3. repetition law within the book
     wl = [m["wording"] for m in (mantra_res and mantra_res.get("mantras") or [])]
-    within = R.within_book(chapters, wl)
+    within = R.within_book(scoped_chapters, wl)
     if within["hard_fails"]:
         hard_fails += [f"repetition: {s['len']}-gram x{s['count']} ch{s['chapters']}: "
                        f"{s['text'][:70]}" for s in within["hard_fails"][:5]]
 
     # 4. originality vs reference
-    cross = R.cross_book(chapters, a.ref_dir, tripwire=a.cross_tripwire)
+    cross = R.cross_book(scoped_chapters, a.ref_dir, tripwire=a.cross_tripwire)
     if cross["tripped"]:
         hard_fails.append(f"originality: cross-overlap {cross['overlap_ratio']*100:.3f}% "
                           f"> tripwire {a.cross_tripwire*100:.1f}%")

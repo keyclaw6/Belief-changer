@@ -88,18 +88,22 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--plan", required=True)
     ap.add_argument("--book", required=True)
-    ap.add_argument("--chapters", default="")
+    ap.add_argument("--chapters", default=None)
     ap.add_argument("--json", dest="json_out")
     a = ap.parse_args()
 
-    plan_text = Path(a.plan).read_text(encoding="utf-8", errors="replace")
+    plan_path = Path(a.plan)
+    if not plan_path.is_file():
+        print(f"[mantra] FAIL: plan not found: {plan_path}")
+        sys.exit(2)
+    plan_text = plan_path.read_text(encoding="utf-8", errors="replace")
     mantras = parse_mantra_sheet(plan_text)
     chapters = E.load_chapters(a.book)
     sel = E.parse_range(a.chapters, len(chapters))
     if not mantras:
-        print("[mantra] WARNING: no filled mantra-sheet lines parsed from plan "
+        print("[mantra] FAIL: no filled mantra-sheet lines parsed from plan "
               "(template unfilled, or format drifted — fix the plan or the parser)")
-        sys.exit(0)
+        sys.exit(2)
     res = verify(mantras, chapters, sel)
     print(f"[mantra] {len(mantras)} mantras parsed | chapters checked: {res['chapters_checked']}")
     for r in res["mantras"]:

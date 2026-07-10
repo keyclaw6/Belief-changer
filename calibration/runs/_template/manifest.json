@@ -6,18 +6,25 @@
   "branch": "calibration-lab",
   "scope": "framing+plan+ch1-3 | full-book | holdout-caffeine",
   "hypotheses_tested": [],
-  "model_api": "openrouter | litellm",
-  "arm": "P1-P4 / R1-R3 per HARNESS §8, or -",
+  "model_api": "openrouter | litellm | native+openrouter",
+  "arms": {"researcher": "R1-R3", "planner": "P1-P3"},
   "models": {
     "researcher": "<arm R1-R3 — exact id resolved from GET /api/v1/models>",
-    "planner": "<arm P1-P4 — exact id resolved from GET /api/v1/models>",
-    "planner_reasoning": "none | low | medium | high | native-default",
-    "plan_reviewer": "",
+    "researcher_reasoning": "xhigh | max | enabled",
+    "planner": "<arm P1-P3 — exact id resolved from GET /api/v1/models>",
+    "planner_reasoning": "high | max",
+    "plan_reviewer": "<Gemini 3.1 Pro | GPT 5.6 Sol | Grok 4.5>",
+    "plan_reviewer_reasoning": "high | max",
     "writer": "Claude Opus 4.6 — FIXED (resolve exact id at runtime)",
-    "writer_reasoning": "none — FIXED (founder 2026-07-10)",
-    "chapter_reviewer": "<strong non-Anthropic default>",
-    "summarizer": "",
-    "judges": ["<always >=1 strong non-Anthropic>"]
+    "writer_reasoning": "disabled — reasoning.enabled=false — FIXED",
+    "chapter_reviewer": "<Gemini 3.1 Pro | GPT 5.6 Sol | Grok 4.5>",
+    "chapter_reviewer_reasoning": "high | max",
+    "summarizer": "<allowed planning/judge model at top reasoning; Stage B only>",
+    "summarizer_reasoning": "high | max | -",
+    "judges": [
+      {"model": "<Gemini 3.1 Pro | GPT 5.6 Sol | Grok 4.5>", "reasoning": "high | max"},
+      {"model": "<a different allowed model>", "reasoning": "high | max"}
+    ]
   },
   "asset_versions": {
     "prompts/style-guide.md": "<git short sha>",

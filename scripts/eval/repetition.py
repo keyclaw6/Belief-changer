@@ -14,6 +14,7 @@ Usage:
 """
 import argparse
 import json
+import re
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -23,6 +24,8 @@ import evallib as E
 
 N_SOFT, N_HARD = 8, 12
 CROSS_TRIPWIRE = 0.003
+_HEADING_RE = re.compile(r"^\s{0,3}(#{1,6})\s+(.+?)\s*#*\s*$")
+_LICENSED_RECAP_HEADINGS = {"in this chapter", "summary"}
 
 
 def _mantra_whitelist(plan_path):
@@ -41,15 +44,31 @@ def _is_whitelisted(shingle: str, wl_tokenized: list) -> bool:
     return False
 
 
+def _without_licensed_recaps(text: str) -> str:
+    """Remove Markdown preview/summary sections from within-book checking."""
+    kept, skipping = [], False
+    for line in text.splitlines(keepends=True):
+        heading = _HEADING_RE.match(line)
+        if heading:
+            skipping = heading.group(2).strip().casefold() in _LICENSED_RECAP_HEADINGS
+        if not skipping:
+            kept.append(line)
+    return "".join(kept)
+
+
 def within_book(chapters, whitelist, n_soft=N_SOFT, n_hard=N_HARD):
     wl_tok = [E.words(w) for w in whitelist]
     occurrences = defaultdict(list)  # shingle -> [(ch_idx, pos)]
-    tokens_per_ch = []
+    hard_occurrences = defaultdict(list)
+    shingles_per_ch = []
     for idx, (_, raw) in enumerate(chapters, 1):
-        toks = E.words(E.strip_markdown(raw))
-        tokens_per_ch.append(toks)
-        for pos, sh in enumerate(E.shingles(toks, n_soft)):
+        toks = E.words(E.strip_markdown(_without_licensed_recaps(raw)))
+        shingles = E.shingles(toks, n_soft)
+        shingles_per_ch.append(shingles)
+        for pos, sh in enumerate(shingles):
             occurrences[sh].append((idx, pos))
+        for pos, sh in enumerate(E.shingles(toks, n_hard)):
+            hard_occurrences[sh].append((idx, pos))
     repeated = {sh: locs for sh, locs in occurrences.items()
                 if len(locs) > 1 and not _is_whitelisted(sh, wl_tok)}
     # merge chains of consecutive repeated shingles for readable reporting
@@ -57,24 +76,35 @@ def within_book(chapters, whitelist, n_soft=N_SOFT, n_hard=N_HARD):
     for sh, locs in repeated.items():
         if sh in seen:
             continue
-        chain, cur = [sh], sh
+        chain, support = [sh], locs
         while True:
-            nxt = [s for s in repeated if s not in seen and s != cur
-                   and s.split()[:-1] == cur.split()[1:]]
-            if not nxt:
+            continuations = defaultdict(list)
+            offset = len(chain)
+            for ch_idx, start in support:
+                pos = start + offset
+                if pos < len(shingles_per_ch[ch_idx - 1]):
+                    nxt = shingles_per_ch[ch_idx - 1][pos]
+                    if nxt in repeated and nxt not in seen:
+                        continuations[nxt].append((ch_idx, start))
+            candidates = [(nxt, next_support) for nxt, next_support in continuations.items()
+                          if len(next_support) > 1]
+            if not candidates:
                 break
-            cur = nxt[0]
-            chain.append(cur)
-            seen.add(cur)
-        seen.add(sh)
-        first, full = chain[0].split(), chain[0].split()
+            nxt, support = max(candidates, key=lambda item: len(item[1]))
+            chain.append(nxt)
+        seen.update(chain)
+        full = chain[0].split()
         for link in chain[1:]:
             full.append(link.split()[-1])
         spans.append({"text": " ".join(full), "len": len(full),
-                      "count": len(repeated[chain[0]]),
-                      "chapters": sorted({c for c, _ in repeated[chain[0]]})})
+                      "count": len(support),
+                      "chapters": sorted({c for c, _ in support})})
     spans.sort(key=lambda s: (-s["len"], -s["count"]))
-    hard = [s for s in spans if s["len"] >= n_hard]
+    hard = [{"text": sh, "len": n_hard, "count": len(locs),
+             "chapters": sorted({c for c, _ in locs})}
+            for sh, locs in hard_occurrences.items()
+            if len(locs) > 1 and not _is_whitelisted(sh, wl_tok)]
+    hard.sort(key=lambda s: (-s["count"], s["text"]))
     return {"repeated_ngrams": len(repeated), "spans_top": spans[:20],
             "hard_fails": hard, "whitelist_size": len(whitelist)}
 

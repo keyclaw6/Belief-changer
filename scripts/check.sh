@@ -38,9 +38,9 @@ else
   echo "check.sh: openspec not installed — skipping spec validation (run belief-changer-bootstrap)" >&2
 fi
 
-# 4. Tests, when code with a test runner exists.
-if [ -f "$ROOT/scripts/test" ] && [ -x "$ROOT/scripts/test" ]; then
-  "$ROOT/scripts/test" || status=$?
+# 4. Stdlib regression tests for the deterministic evaluation instruments.
+if [ -d "$ROOT/scripts/eval/tests" ]; then
+  python3 -m unittest discover -s "$ROOT/scripts/eval/tests" -p 'test_*.py' || status=$?
 fi
 
 exit "$status"
