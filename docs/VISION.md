@@ -32,7 +32,7 @@ A book **generation machine**, plus a **platform** that hands its output to the 
 - **Free for everyone, forever** — open-source and nonprofit. No paywall between a person and escape from a trap.
 - **Every format** — EPUB e-book, in-browser reading, and audiobook. (Print-on-demand may follow where it extends reach.)
 - **Every language** — AI translation makes every book available worldwide.
-- **Every part built by agents** — research, writing, review, translation, narration, publishing. Humans set direction and hold the quality bar.
+- **Every part built by agents — and run by agents.** Research, writing, review, translation, narration, publishing — and the organization itself: feedback triage, reader correspondence, site telemetry and reporting, page deployment. Agents are the project's employees and maintainers from the start; humans set direction and hold the quality bar. This is how a tiny team helps millions.
 
 ## The self-evolving library
 
@@ -57,6 +57,40 @@ This tool is for the benefit of all humans on the planet. The measure of success
 ---
 
 # Part II — Working Tracker
+
+## Adopted Plan — Build & Launch (DECIDED 2026-07-10)
+
+The Build & Launch Proposal (five-layer architecture: factory → library → platform → evolution engine → quality; sequenced launch L0–L3) is **adopted with founder amendments** and recorded here. Deliberately **not** openspec changes yet: *prove the factory first; spec changes land stage-by-stage as each part is actually built.*
+
+**The five layers (adopted):**
+1. **Factory** — the book pipeline (research → framing → master plan → chapters), a file-contract state machine in this repo; any competent agent environment can run it from files alone.
+2. **Library** — books as versioned markdown (golden copy = English); EPUB (pandoc), audiobook (TTS), translations as pipeline jobs that translate + freeze the §B8 book sheets (one frozen mantra translation per language) before chapters.
+3. **Platform** — static site from book markdown (every chapter an indexable page; read/download/listen with no signup, no tracking), Postgres for feedback/requests/votes, object storage + CDN for binaries.
+4. **Evolution engine** — the three loops as scheduled agent jobs: feedback → research banks → revisions; requests → new book at threshold (contributed experiences seed the lived-experience bank); splitting on persona seams.
+5. **Quality** — laddered evals (objective scripts → blind judge panels), outcome surveys once live, three learning tiers (book banks → style guide [founder-gated] → catalog).
+
+**PRIME FOCUS (before all else): the factory must reliably produce books of real Easyway quality — the universal Easyway-book creation machine.** Everything else (site, loops, languages, launch) waits on this proof.
+
+**The calibration program** — prove the factory against ground truth by generating a book Carr already wrote, and tuning until parity:
+- **Target:** a covered behavior so the real book is the benchmark. **Primary candidate: sugar/eating** (*Good Sugar Bad Sugar* is already in `analysis/reference-books/` with its prose patterns extracted in `analysis/sugar-prose-patterns.md`). *Smoking* is the canonical alternative if the founder supplies the text. **Caffeine** (also in-repo, analyzed) is **reserved untouched as the Stage C generalization target**.
+- **Stage A — chapter parity (cheap loop):** generate chapters 1–3 of the calibration book; blind-compare against the real book's chapters 1–3; diagnose, amend, regenerate. Most tuning iterations happen here.
+- **Stage B — full-book parity (expensive loop):** generate the whole book; evaluate length, chapter arc, flow, mantra schedule across the book, the ending; iterate to parity — then push to surpass (win-rate > 50% on the click/flow dimensions, judged blind).
+- **Stage C — universality gate:** a fresh factory run on the second covered topic (caffeine) with **zero topic-specific tuning**; parity without new amendments proves the "any belief" machine. Only then do novel-topic books proceed.
+- **Evaluation stack:** (a) **objective scripts** — word/chapter counts vs target, mantra-schedule compliance (frozen wording appears on schedule), within-book verbatim-repetition detector (the anti-repetition law), n-gram overlap vs the real book (originality guard), voice metrics from style guide Part B; (b) **blind comparative judge panels** — fresh-context judges score unlabeled ours-vs-real chapter pairs on: the click, flow, warmth/non-shaming, mantra discipline, absence of generic-self-help smell; position-swapped, multi-judge; (c) **cross-model judging** — books written by model X are judged by model Y and vice versa (guards self-preference bias); a parity verdict requires cross-model agreement; (d) founder spot-reads as an optional anchor, never a required gate.
+- **Amendment protocol:** every run = a run manifest (writer/judge models, prompt + skill versions, parameters) + a run report, committed. The tuner amends method assets (style guide, plan templates, writer/reviewer prompts) on **calibration branches**; the canon style guide on `main` stays founder-approved — winning amendments merge in founder-reviewed batches. Each judged gap maps to the method asset that owns it.
+- **Environments:** the repo is the state machine, so the loop runs anywhere. Near-term: **Hyperagent** (run 0 — shakes out the runbook) + the founder's **GPT 5.6 agent environment** for sustained autonomous loops. If a `gpt-5.6` alias is added to the LiteLLM proxy, GPT 5.6 is also available as writer and/or judge from any environment — the writer model is itself a tunable.
+
+**Q1 CLOSED (2026-07-10, revised from the proposal):** the factory becomes a **standalone custom harness — its own product** — built on the OpenAI Agents SDK or a PI fork (base chosen after the first calibration runs reveal the real requirements). Not required for the first runs: Hyperagent + the GPT 5.6 environment carry the loop until the harness product stabilizes. Rationale: the auto-research/calibration loop ultimately needs an environment we fully control — no host system prompt underneath — stable and usable outside Hyperagent.
+
+**Agent-run organization (decided principle):** the project is operated by agents as its employees/maintainers from the get-go — site telemetry reports to an agent; feedback handling, reader email, and page deployments are agent-run; humans set direction and hold the gates. This is a scale requirement, not a flourish.
+
+**Translation & revision QA (decided — supersedes the proposal's community-reviewer idea):** **no human review layer for translations, at any scale.** Agents translate and agents QA (frozen mantra sheets per the languages spec); reader feedback surfaces real errors and fixes ship fast. The English **golden copy revs frequently** as personal experiences accumulate — **speed is our advantage** — and translations follow the golden copy automatically. *(Flagged tension to resolve when we get there: the publishing spec's founder gate vs high-frequency multi-language revisions — likely resolution: gate English golden versions; translations auto-follow. Needs a spec change when the translation pipeline is built.)*
+
+**Sequencing:** `production-books/quit-porn/` is **paused at framing** until Stage C passes; its research stays valid and it becomes the first novel-topic book of the proven factory.
+
+**Deferred decisions** (not before an English calibration book exists): public name/domain, beta outreach identity, donations, age-gating, TTS voices, request-loop thresholds, analytics stance confirmation.
+
+---
 
 ## Content Generation Pipeline
 
@@ -144,7 +178,7 @@ Cross-book finding: all three run the same core Easyway engine — dismantle the
 
 ## Open Questions / Decisions Needed
 
-**Q1 — Orchestration framework** (for the eventual standalone system). Two candidates (OpenCode dropped):
+**Q1 — Orchestration framework — CLOSED (2026-07-10).** Decided in the Adopted Plan above: a standalone custom harness built as **its own product**, on the OpenAI Agents SDK or a PI fork; the base is picked after the first calibration runs reveal the real requirements. Original candidates kept for history:
 - *Forked PI (π) agent* — PI is extremely minimal (~30-line system prompt). Plan: fork it and strip/replace that prompt so we control 100% of what the book-creation agent receives; gives a hackable base **and** PI's interface for watching sub-agents. No native sub-agents, but a sub-agent plugin can be built/added.
 - *OpenAI Agents SDK* — no baked-in prompts, purpose-built for orchestration; no UI out of the box.
 
@@ -189,6 +223,8 @@ The delivery arm of the vision (Part I): every book as EPUB, in-browser reading,
 ---
 
 ## Next Steps / Parking Lot
+
+*(Superseded by the Adopted Plan at the top of Part II — kept for history.)*
 
 - Decide the **MVP target behavior** (gaming is the running example — a good first candidate).
 - Run the **book analysis** for Easyway + The Freedom Model + the third book → produce editable method/style documents.

@@ -1,7 +1,8 @@
 # Quit Porn — working title
 
 **Target behavior:** Porn & compulsive masturbation (PMO)
-**Status:** framing  (brief → researching → **framing** → planning → drafting ch.N → done)
+**Status:** PAUSED at framing — factory calibration comes first (see `docs/VISION.md` Part II → "Adopted Plan", DECIDED 2026-07-10). Research is complete and stays valid; this becomes the first novel-topic book once calibration Stage C (universality) passes.
+Pipeline position: brief → researching → **framing (paused)** → planning → drafting ch.N → done
 **Created:** 2026-06-07
 
 A self-contained working folder for the quit-porn Belief-Changer book. It fills up **in order**: brief → research → framing → master plan (+ Opus review) → chapters.
