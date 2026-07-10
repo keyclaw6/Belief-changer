@@ -36,6 +36,34 @@
         "finish_reason": "stop",
         "usage": {"prompt": 122890, "completion": 1642, "reasoning": 676, "total": 124532, "web_searches": 16, "cost_usd": 0.096341292},
         "artifacts": ["79 local URL annotations; no accepted repository evidence"]
+      },
+      {
+        "call_id": "gen-1783724520-oomt2mtaOUB9wjUrdrU7",
+        "role_and_objective": "model-owned selection of the visible discovery inventory for a key-sized synthesis context",
+        "requested_model": "minimax/minimax-m3",
+        "actual_model": "minimax/minimax-m3-20260531",
+        "provider": "DeepInfra",
+        "reasoning": "enabled",
+        "endpoint_requested_output": 131072,
+        "authorized_output": 7719,
+        "actual_request_output": 7719,
+        "finish_reason": "length",
+        "usage": {"prompt": 5336, "completion": 7719, "reasoning": 5614, "total": 13055, "cost_usd": 0.01083288},
+        "artifacts": ["local partial source ranking; no accepted repository evidence"]
+      },
+      {
+        "call_id": "gen-1783725456-hyCb2tvlFULvhR9ct2g9",
+        "role_and_objective": "continuation of source selection and explicit rights audit",
+        "requested_model": "minimax/minimax-m3",
+        "actual_model": "minimax/minimax-m3-20260531",
+        "provider": "DeepInfra",
+        "reasoning": "enabled",
+        "endpoint_requested_output": 131072,
+        "authorized_output": 6816,
+        "actual_request_output": 6816,
+        "finish_reason": "stop",
+        "usage": {"prompt": 6335, "completion": 4781, "reasoning": 3322, "total": 11116, "cost_usd": 0.00637818},
+        "artifacts": ["local corrected rights audit and three focused retrieval commissions"]
       }
     ],
     "research_reviewer": "<fresh allowed R1-R3 exact runtime id after synthesis>",
