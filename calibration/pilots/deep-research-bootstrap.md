@@ -111,6 +111,7 @@ All calls used exactly one user message containing the named research prompt fol
 | RP-004/RP-005 | RP-003 + H-027 independently repeated fields/non-goal rule | same | DeepSeek `xhigh`, `max_tokens=30000` |
 | RP-006 | blob `fcb1423db96b5929fcc3c2d23ed91e63ab282c9f` (adds H-028 one-bank/one-scope rule) | same | MiniMax reasoning enabled, `max_tokens=30000` |
 | RP-007 | blob `2178b2e06749e5e465178c984eabd8113ae5c72c` (`ccbee2d`) | blob `a272394a8fd32787db145ebcb3327a8ba9094c0c` (`ccbee2d`) | MiniMax reasoning enabled, `max_tokens=30000` |
+| RP-008 | blob `a58dcb0fca028a63727a31b8e1b437ffa853b360` (`5b1f217`) | blob `a272394a8fd32787db145ebcb3327a8ba9094c0c` (`5b1f217`) | DeepSeek `xhigh`, `max_tokens=30000` |
 
 The exact uncommitted prompt additions are preserved in H-026/H-027/H-028 and the final versioned prompt diff. The API key was supplied only through the secure environment and is absent from all artifacts.
 
@@ -149,3 +150,27 @@ Its plan then enumerates 12 lived-community assignments—two communities for ea
 ### RP-007 failure autopsy and H-029 correction
 
 The prompt's atomic-cell correction worked in the model's plan: it explicitly intended one bank per row and no shorthand. But it interpreted each bank's `≥2 sources` floor as requiring two independent community assignments for every persona/bank. Six personas × two communities × seven lived banks, plus science/analogy rows, became 91 planned rows. The 30k top-reasoning call ended before the matrix was visible, so nothing was dispatchable. This does not refute H-028 because no rows were returned for inspection. H-029 clarifies that sources are URLs/documents, caps the initial persona set at 3–4, and defers second communities until observed gaps.
+
+## RP-008 — clean DeepSeek lead (rejected: reasoning exhausted artifact budget)
+
+- **Call ID:** `gen-1783698551-SjgiZf0QsEuCCb2mjeie`
+- **Requested / actual model:** `deepseek/deepseek-v4-pro` `xhigh` / `deepseek/deepseek-v4-pro-20260423`
+- **Provider:** StreamLake
+- **Exact committed inputs:** prompt blob `a58dcb0fca028a63727a31b8e1b437ffa853b360` and blind-brief blob `a272394a8fd32787db145ebcb3327a8ba9094c0c` at `5b1f217`
+- **Usage / cost:** 3,481 prompt + 30,000 completion = 33,481 tokens; 27,118 reasoning tokens; $0.033137082
+- **Finish:** `length`
+- **Raw visible yield:** four persona IDs, 22 complete atomic rows, and one partial row; output cuts off inside Persona D's Bank 2 row
+- **Accepted yield:** zero rows because the matrix and validation notes are incomplete
+- **Disposition:** `REJECTED — INCOMPLETE ARTIFACT / REASONING-BUDGET COLLISION`
+
+### Verbatim shape evidence
+
+The response began `# Research Log — Quit Sugar (Pre-collection Matrix)` and emitted rows such as:
+
+> `| A-001 | W1 | Reddit r/sugarfree | A | 2 | ≥3 items, ≥2 sources | ... | deepseek/deepseek-v4-pro | xhigh | ... | CANDIDATE — VALIDATION REQUIRED |`
+
+All visible rows keep one numeric bank and one fixed scope and repeat their query/model/reasoning fields. The fourth persona appears as `D-001`; no second community, grouped bank, shorthand, fallback, or excluded population appears in the returned artifact.
+
+### RP-008 failure autopsy and H-030 correction
+
+H-029 removed RP-007's Cartesian growth: the response used four personas and one primary community. The provider nevertheless counted internal reasoning and visible artifact against the same 30k completion cap. With 27,118 reasoning tokens, only about 2,882 tokens remained for the matrix, which ended mid-row with `finish_reason=length`. The artifact cannot be dispatched or operator-repaired. H-030 preserves the committed prompt and `xhigh` setting and tests 60k completion headroom; it does not authorize more personas, communities, or prose.

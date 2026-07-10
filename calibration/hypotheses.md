@@ -30,23 +30,29 @@ Seeded by the harness builder (2026-07-10) as starting capital — derive priori
 - Prediction: the exact-input DeepSeek `xhigh` rerun contains no shorthand, no excluded population, and passes the pre-collection matrix gate without operator repair.
 - Result: RP-005 removed `same` shorthand and excluded clinical populations, but still grouped Banks 1–5/9/10 in single cells and hid conditional supplemental communities in queries. Autopsy: the lever named field repetition but did not explicitly define a one-bank/one-scope row, so the model preserved compactness along an unguarded axis. The matrix remained non-dispatchable; see `calibration/pilots/deep-research-bootstrap.md`. Corrected as H-028 rather than silently widening H-027 after its outcome.
 
-## H-028 — one-bank, one-scope matrix cells               [TESTING bootstrap-pilot]
+## H-028 — one-bank, one-scope matrix cells               [SUPPORTED bootstrap-pilot]
 - Gap: RP-005 is readable but cannot serve as the file boundary: grouped bank cells cannot hold per-bank yield/verdict, and fallback communities make the assignment's source scope mutable after dispatch.
 - Lever: `prompts/research-agent.md` requires exactly one numeric bank and one fixed community/source family per row; every fallback/follow-up is a separately declared row.
 - Prediction: the next allowed lead call returns only single-bank/single-scope rows with no `same`, bank ranges, conditional supplements, vague source families, or excluded populations.
-- Result: The first MiniMax call was aborted on brief contamination and has no outcome. Clean call `gen-1783697696-Q9YjzSVhZnKRHPJSDLfz` planned one-bank rows but expanded 6 personas × 2 communities into 91 rows and exhausted 30,000 completion tokens before emitting the matrix ($0.03696534; 28,286 reasoning tokens). Its visible plan supports H-028's atomicity mechanism, but no matrix rows were returned, so the full no-shorthand/no-fallback prediction remains untested. H-029 corrects the adjacent source-semantics and output-bounding failure; the next complete lead artifact tests both hypotheses.
+- Result: The first MiniMax call was aborted on brief contamination and clean RP-007 emitted no matrix rows. Clean DeepSeek call `gen-1783698551-SjgiZf0QsEuCCb2mjeie` returned 22 complete rows plus one partial row; every complete row had one numeric bank, one fixed community, repeated query/model/reasoning fields, and no shorthand, fallback, excluded population, or bank grouping. The call later truncated, but the H-028 row-shape prediction is supported. Completeness is a separate H-029/H-030 concern.
 
-## H-029 — lean primary matrix and source semantics       [TESTING bootstrap-pilot]
+## H-029 — lean primary matrix and source semantics       [REFUTED bootstrap-pilot]
 - Gap: a formally atomic matrix can still be unusable when persona overlap and preemptive multi-community duplication create 91 rows before any yield is observed.
 - Lever: `prompts/research-agent.md` defines a source as a distinct URL/document, starts with the smallest distinct 3–4 personas, plans one primary community row per persona/bank, and adds communities only as measured follow-ups.
 - Prediction: the next clean allowed lead returns a complete artifact with 3–4 personas, single-bank/single-scope rows, no shorthand/fallbacks, and no output-cap truncation.
-- Result: pending clean DeepSeek V4 Pro `xhigh` lead call.
+- Result: RP-008 obeyed the lever: four personas were visible, each used one primary `r/sugarfree` assignment, and returned rows were atomic. It still ended `length` mid-row at 30,000 completion tokens after spending 27,118 tokens on required `xhigh` reasoning ($0.033137082). Accepted yield was zero because the artifact was incomplete. Autopsy: prompt compactness fixed the Cartesian mechanism but the request cap left only ~2.9k visible tokens; H-030 corrects the execution budget without changing the prompt.
+
+## H-030 — top-reasoning artifact headroom                [TESTING bootstrap-pilot]
+- Gap: both clean broad-lead calls consumed over 27k internal reasoning tokens, so a 30k total completion cap cannot also carry a complete matrix even after H-029 bounds its size.
+- Lever: keep the committed H-029 prompt and highest reasoning mode fixed, but raise the lead-call completion cap to 60k; do not spend the extra budget on a wider persona/community plan.
+- Prediction: the exact-input DeepSeek `xhigh` rerun retains 3–4 personas and one primary community per persona, returns the complete persona list/matrix/validation notes, and finishes `stop` within 60k total completion tokens.
+- Result: pending.
 
 ## H-009 — researcher-model arms (cost/depth bake-off)   [TESTING bootstrap-pilot]
 - Gap: research is the highest-token stage; unknown which model mines communities and synthesizes banks best per dollar.
 - Lever: manifest only, always top reasoning — R1 `deepseek/deepseek-v4-pro` (`xhigh`) · R2 `minimax/minimax-m3` (reasoning enabled; no effort ladder reported) · R3 GPT 5.6 Luna (`max`).
 - Prediction: measurement; expect the long-context low-cost arms to lead cost-per-slot-filled, with verbatim provenance and synthesis quality the open questions.
-- Result: Contaminated preflight calls are excluded. First clean broad-lead result: MiniMax reasoning-enabled returned no complete matrix at a 30k cap ($0.03696534; 28,286 reasoning tokens) because it planned 91 rows. This is orchestration-yield evidence only, not the bounded equal-assignment source-yield result; clean DeepSeek lead and all three bounded worker arms remain pending.
+- Result: Contaminated preflight calls are excluded. Clean broad-lead results are orchestration evidence only: MiniMax returned no matrix at a 30k cap after planning 91 rows ($0.03696534; 28,286 reasoning tokens), while DeepSeek returned an atomic but incomplete four-persona matrix ($0.033137082; 27,118 reasoning tokens). Neither is bounded source-yield evidence; all three equal-assignment worker arms remain pending.
 
 ## H-010 — multi-subagent research vs one long prompt    [PROPOSED]
 - Gap: a single agent with a long prompt searches shallowly, samples few communities, and paraphrases quotes (founder-observed pattern).
