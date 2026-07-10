@@ -29,6 +29,8 @@ A fresh research lead receives only `prompts/research-agent.md` and the book bri
 
 Each matrix row represents exactly one numeric bank and one fixed community or source family, and repeats its complete scope, target, query settings, model ID, and reasoning configuration. Shorthand, bank ranges, and conditional fallback communities are not reconstructable. Brief non-goals constrain community selection, so an excluded clinical or special population cannot silently become a proxy source for a general reader.
 
+Coverage-source counts refer to distinct URLs/documents, not distinct communities or workers. The initial matrix uses 3–4 materially distinct personas and one primary community row per persona/bank; fifth or sixth personas and second communities are evidence-driven follow-ups rather than preemptive Cartesian duplication.
+
 Because the first lead call intentionally has no web access, named communities are candidates rather than facts. A retrieval-capable lead validation pass resolves their canonical URLs and topical fit before any row becomes dispatch-ready. Calibration identity, reference paths, and reference-derived targets remain operator/run metadata and never enter the exact-input brief.
 
 This is H-010's own-build arm. H-011 does not adopt an OSS framework for run-001: the audited candidates require substantial forks and bring unrelated UI, deployment, RAG, export, or cloud stacks. Useful ideas—parallel fan-out, URL ledgers, and context-budget fuses—remain eligible for selective reimplementation after a concrete failure.
@@ -59,7 +61,7 @@ The lead may raise targets, but the Stage A default floor is:
 - Bank 7: every candidate scientific claim has an evidence grade and at least two independent sources, or is explicitly CONTESTED.
 - Bank 8: at least three independently sourced mechanisms showing how demand is engineered.
 
-All 3–6 selected personas must clear their applicable rows. A numeric floor does not override the prompt's qualitative sufficiency tests; both must pass.
+All selected personas must clear their applicable rows. The initial matrix selects 3–4; a fifth or sixth is added only when collected evidence demonstrates a distinct uncovered function or life-situation pattern. A numeric floor does not override the prompt's qualitative sufficiency tests; both must pass.
 
 ### 6. Keep model arms explicit and at top reasoning
 

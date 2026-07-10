@@ -24,6 +24,16 @@ Research SHALL be led by a fresh-context research lead that receives only the re
 - **THEN** its rows remain `CANDIDATE — VALIDATION REQUIRED`
 - **THEN** a retrieval-capable lead pass verifies the canonical URL and topical fit before the rows become `READY`
 
+#### Scenario: A lead interprets source floors as community floors
+- **WHEN** a bank requires items from two or more sources
+- **THEN** sources mean distinct underlying URLs/documents within the bounded assignment
+- **THEN** the lead does not duplicate every matrix cell across communities before observing a coverage gap
+
+#### Scenario: Initial persona segmentation expands preemptively
+- **WHEN** the lead declares the initial pre-collection matrix
+- **THEN** it selects 3–4 materially distinct personas
+- **THEN** it adds a fifth or sixth only after collected evidence demonstrates a distinct uncovered function or life-situation pattern
+
 ### Requirement: Independent research sources
 Research workers SHALL use lived-experience communities and scientific or investigative sources, and MUST NOT receive or use reference books, files under `analysis/`, calibration reference text, judge outputs, Allen Carr/Easyway derivatives, or prose-pattern analyses. Search-result summaries MAY guide discovery but MUST NOT be treated as verbatim evidence unless their exact returned excerpt is saved.
 

@@ -31,6 +31,12 @@ class ResearchContractTests(unittest.TestCase):
             "brief's non-goals as research-scope exclusions",
             "CANDIDATE — VALIDATION REQUIRED",
             "retrieval-capable lead pass validates",
+            "source** means a distinct underlying URL/document",
+            "one primary community row per persona/bank",
+            "3–4 initial provisional personas",
+            "A fifth or sixth persona is an evidence-driven follow-up",
+            "add another community only as a targeted follow-up after measured yield is thin",
+            "Return only the artifact-ready persona list, matrix",
             "reject it and every dependent finding",
         ):
             self.assertIn(required, prompt)

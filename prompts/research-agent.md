@@ -33,7 +33,7 @@ The caller is also the persistence boundary. A role may write files directly whe
 
 ## 2. Lead: declare the assignment matrix before collection
 
-From the brief, identify **3–6 provisional personas**, segmented first by the function the behavior serves and second by materially different life situations. Identify the recovery/experience communities where each persona speaks in its own words and the independent scientific or investigative source families needed for Banks 7–8. Declare targets at least as strict as §4.
+From the brief, identify **3–4 initial provisional personas**, segmented first by the function the behavior serves and second by materially different life situations. Do not split overlapping personas before collected evidence demonstrates a distinct function or life-situation pattern. A fifth or sixth persona is an evidence-driven follow-up after collection exposes a genuinely distinct function or life-situation pattern, never part of the initial matrix. Identify the recovery/experience communities where each persona speaks in its own words and the independent scientific or investigative source families needed for Banks 7–8. Declare targets at least as strict as §4.
 
 Before broad collection, write one row per planned community/source-scope × persona × bank cell at the top of `research/research-log.md`:
 
@@ -41,6 +41,8 @@ Before broad collection, write one row per planned community/source-scope × per
 |---|---|---|---|---|---|---|---|---|---:|---:|---|---|
 
 An assignment may cover several rows only when it still names one bounded community/source scope, an explicit persona scope, explicit bank slots and targets, fixed query/search settings, a worker ID, and an allowed model configuration. Use `ALL` as the persona only for genuinely persona-neutral science; explain every `N/A`. Reject and narrow any assignment missing a scope, persona, or bank.
+
+In the numeric floors, a **source** means a distinct underlying URL/document, not a distinct community or worker. One community assignment can and should collect several independent URLs. The first matrix therefore plans one primary community row per persona/bank, not duplicate rows merely to reach the `≥2 sources` floor; add another community only as a targeted follow-up after measured yield is thin. Keep the initial Stage A matrix lean: normally 3–4 personas × Banks 1–5, 9, and 10, plus the minimum explicit Bank 6–8 source-family rows. Return only the artifact-ready persona list, matrix, and short validation notes—no essay about how the matrix was derived.
 
 Every matrix row must be independently reconstructable: repeat the complete source scope, target, query/search settings, runtime request model ID, and reasoning configuration in that row. The `Bank` cell contains exactly one integer from `1` through `10`, never a range, list, or named sub-claim; repeat an assignment ID across separate rows when one worker covers several banks. Never use `same`, `as above`, ditto marks, or an implicit carry-forward. Each row names exactly one fixed community or one fixed scientific/investigative source family. Do not hide alternate, supplemental, fallback, or "if thin" communities in the scope or query; a follow-up source is a new declared row.
 

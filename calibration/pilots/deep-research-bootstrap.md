@@ -110,6 +110,7 @@ All calls used exactly one user message containing the named research prompt fol
 | RP-003 | same as RP-001 | same | DeepSeek `xhigh`, `max_tokens=30000` |
 | RP-004/RP-005 | RP-003 + H-027 independently repeated fields/non-goal rule | same | DeepSeek `xhigh`, `max_tokens=30000` |
 | RP-006 | blob `fcb1423db96b5929fcc3c2d23ed91e63ab282c9f` (adds H-028 one-bank/one-scope rule) | same | MiniMax reasoning enabled, `max_tokens=30000` |
+| RP-007 | blob `2178b2e06749e5e465178c984eabd8113ae5c72c` (`ccbee2d`) | blob `a272394a8fd32787db145ebcb3327a8ba9094c0c` (`ccbee2d`) | MiniMax reasoning enabled, `max_tokens=30000` |
 
 The exact uncommitted prompt additions are preserved in H-026/H-027/H-028 and the final versioned prompt diff. The API key was supplied only through the secure environment and is absent from all artifacts.
 
@@ -126,3 +127,25 @@ RP-005 included a grouped bank cell and mutable scope:
 > `| A-003 | W03 | Reddit r/loseit | 3. Mindless Grazer | 1–5, 9, 10 | ... | ... If thin, supplement with r/productivity or r/getdisciplined. ... |`
 
 Those excerpts directly support the recorded matrix-gate autopsies; no rejected draft was promoted to the book workshop.
+
+RP-007's visible response states:
+
+> `19 assignments, 91 rows.`
+
+Its plan then enumerates 12 lived-community assignments—two communities for each of six personas, seven banks per assignment—plus seven Bank 6–8 assignments. This is the raw basis for the Cartesian-growth diagnosis below.
+
+## RP-007 — clean MiniMax lead (rejected: output-cap matrix explosion)
+
+- **Call ID:** `gen-1783697696-Q9YjzSVhZnKRHPJSDLfz`
+- **Requested / actual model:** `minimax/minimax-m3` reasoning enabled / `minimax/minimax-m3-20260531`
+- **Provider:** Novita
+- **Exact committed inputs:** `prompts/research-agent.md` and blinded brief at `ccbee2d`
+- **Usage / cost:** 3,309 prompt + 30,000 completion = 33,309 tokens; 28,286 reasoning tokens; $0.03696534
+- **Finish:** `length`
+- **Raw visible yield:** six provisional personas, candidate source list, and a plan for 19 assignments / 91 matrix rows; the matrix itself was truncated
+- **Accepted yield:** zero rows
+- **Disposition:** `REJECTED — INCOMPLETE ARTIFACT / CARTESIAN MATRIX`
+
+### RP-007 failure autopsy and H-029 correction
+
+The prompt's atomic-cell correction worked in the model's plan: it explicitly intended one bank per row and no shorthand. But it interpreted each bank's `≥2 sources` floor as requiring two independent community assignments for every persona/bank. Six personas × two communities × seven lived banks, plus science/analogy rows, became 91 planned rows. The 30k top-reasoning call ended before the matrix was visible, so nothing was dispatchable. This does not refute H-028 because no rows were returned for inspection. H-029 clarifies that sources are URLs/documents, caps the initial persona set at 3–4, and defers second communities until observed gaps.
