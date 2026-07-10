@@ -15,3 +15,9 @@ People already choose what they believe is their happiest option in the moment. 
 - **`production-books/<slug>/`** — the per-book workshop. **`analysis/`** — the reverse-engineered reference-book analyses.
 
 The canonical repo gate is **`bash scripts/check.sh`**. This repository is early; the current focus is the MVP (the quit-porn book).
+
+## License
+
+Software is `AGPL-3.0-or-later`; project-owned books, prompts, documentation,
+research metadata, and synthesis are `CC-BY-SA-4.0`. Third-party material is
+excluded from those grants. See **`LICENSE`** for the exact scope.

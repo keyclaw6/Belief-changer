@@ -20,6 +20,7 @@ DOCS_MAX_FILES = 10
 # Files permitted at the repo root (directories are governed separately).
 ROOT_ALLOWED_FILES = {
     "AGENTS.md",
+    "LICENSE",
     "README.md",
     ".gitignore",
     ".mcp.json",

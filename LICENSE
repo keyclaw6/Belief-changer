@@ -1,0 +1,42 @@
+Belief-Changer licensing
+========================
+
+Software
+--------
+
+Unless a file says otherwise, software authored for this repository is
+licensed under the GNU Affero General Public License, version 3 or any later
+version (`AGPL-3.0-or-later`). This includes executable source code, scripts,
+and software configuration.
+
+Official license text:
+https://www.gnu.org/licenses/agpl-3.0.html
+
+Project-owned content
+---------------------
+
+Unless a file says otherwise, original non-software material authored for this
+repository is licensed under the Creative Commons Attribution-ShareAlike 4.0
+International license (`CC-BY-SA-4.0`). This includes project-owned books,
+prompts, templates, documentation, research metadata, and research synthesis.
+
+Official legal code:
+https://creativecommons.org/licenses/by-sa/4.0/legalcode.en
+
+Third-party material and personal data
+--------------------------------------
+
+These grants apply only to material the project owns or is authorized to
+license. They do not relicense third-party works, quotations, excerpts, source
+captures, trademarks, publicity or privacy rights, or personal data.
+
+In particular, files under `analysis/reference-books/`, third-party source
+files under `production-books/*/research/sources/`, and attributed third-party
+passages retain their original rights and terms unless an adjacent notice says
+otherwise. Their presence in the repository is not a license grant from this
+project. Contributors must record the source, attribution, license or other
+rights basis, and any changes for third-party material they add.
+
+Where a file mixes project-owned and third-party material, the applicable
+project license covers only the project-owned contribution. No rights are
+granted beyond those the project controls.
