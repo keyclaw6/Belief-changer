@@ -17,17 +17,19 @@ The lead may subsequently inspect only worker returns and research artifacts cre
 2. the same filled brief;
 3. one bounded assignment record from the lead's matrix.
 
-Do not provide any role with reference books, files under `analysis/`, calibration reference text, judge output, Allen Carr/Easyway derivatives, prose-pattern analysis, prior book prose, or another worker's context. If forbidden material appears, reject it and every dependent finding; its cells remain unfilled.
+Do not provide any role with reference books, files under `analysis/`, calibration reference text, reference identity or paths, aggregate reference targets, run instructions, judge output, Allen Carr/Easyway derivatives, prose-pattern analysis, prior book prose, or another worker's context. The caller rejects an exact-input brief containing calibration/reference metadata before dispatch. If forbidden material appears, reject it and every dependent finding; its cells remain unfilled.
 
 Research leads, workers, and research synthesis may use only these arms, at the runtime-reported highest reasoning mode:
 
-| Arm | Required top-reasoning configuration |
-|---|---|
-| DeepSeek V4 Pro | `xhigh` |
-| MiniMax M3 | reasoning enabled; no effort ladder |
-| GPT-5.6 Luna | `max` |
+| Arm | Allowed request model ID | Required top-reasoning configuration |
+|---|---|---|
+| DeepSeek V4 Pro | `deepseek/deepseek-v4-pro` | `xhigh` |
+| MiniMax M3 | `minimax/minimax-m3` | reasoning enabled; no effort ladder |
+| GPT-5.6 Luna | `openai/gpt-5.6-luna` | `max` |
 
-Resolve and record the exact runtime model ID and reasoning configuration from endpoint metadata before every call. Stop rather than substitute an unapproved model or call below the highest supported mode. Opus is not a research model.
+The **caller**, not the language model inside the call, resolves endpoint metadata and verifies the exact request model ID and top reasoning configuration before dispatch. Afterward the caller records the API response's actual model ID, request reasoning setting, usage, and cost in the returned artifact metadata. A role MUST NOT try to inspect invisible request metadata or treat lack of direct endpoint-metadata access as a blocker. The caller must not dispatch if it cannot perform this preflight, and must stop rather than substitute an unapproved model or lower mode. Opus is not a research model.
+
+The caller is also the persistence boundary. A role may write files directly when its environment exposes repository tools; otherwise it returns complete artifact-ready Markdown blocks with their destination paths, and the caller persists them verbatim. Lack of direct filesystem access is not a blocker. The lead's first call returns provisional personas and the pre-collection assignment matrix; it does not need web access. Collection workers require source-retrieval capability and return their log events and packets as specified below.
 
 ## 2. Lead: declare the assignment matrix before collection
 
@@ -40,6 +42,12 @@ Before broad collection, write one row per planned community/source-scope × per
 
 An assignment may cover several rows only when it still names one bounded community/source scope, an explicit persona scope, explicit bank slots and targets, fixed query/search settings, a worker ID, and an allowed model configuration. Use `ALL` as the persona only for genuinely persona-neutral science; explain every `N/A`. Reject and narrow any assignment missing a scope, persona, or bank.
 
+Every matrix row must be independently reconstructable: repeat the complete source scope, target, query/search settings, runtime request model ID, and reasoning configuration in that row. The `Bank` cell contains exactly one integer from `1` through `10`, never a range, list, or named sub-claim; repeat an assignment ID across separate rows when one worker covers several banks. Never use `same`, `as above`, ditto marks, or an implicit carry-forward. Each row names exactly one fixed community or one fixed scientific/investigative source family. Do not hide alternate, supplemental, fallback, or "if thin" communities in the scope or query; a follow-up source is a new declared row.
+
+Treat the brief's non-goals as research-scope exclusions; do not mine a community whose defining condition is excluded from the book merely because some symptoms overlap. The no-web first lead call labels each named community `CANDIDATE — VALIDATION REQUIRED`; it does not pretend to verify existence. Before worker dispatch, a retrieval-capable lead pass validates the canonical community URL and topical fit, replaces invalid candidates, and changes only validated rows to `READY`.
+
+Before returning any matrix, reject and replace every shorthand, out-of-scope population, multi-bank cell, vague source family, or assignment that bundles more than one bounded community/source scope. Before collection, reject every named community still unvalidated or nonexistent.
+
 ## 3. Worker: collect provenance-preserving yield
 
 Search the assigned community/source scope only. Community work should reach first-person recovery or experience discussions; Banks 7–8 should use independent primary scientific or investigative sources where available. A search-result summary may guide discovery but is not evidence unless its exact returned excerpt is saved unchanged.
@@ -51,31 +59,46 @@ Create one Markdown packet under `research/sources/` for each distinct accepted 
 ```markdown
 # <Source ID> — <Title>
 
-- URL: <canonical URL>
-- Retrieved: <date>
-- Community / source type: <named community or source family>
-- Query ID: <ID>
-- Assignment ID: <ID>
-- Runtime model ID: <exact ID>
-- Reasoning config: <exact request setting>
+- **Source ID:** <ID>
+- **URL:** <canonical URL>
+- **Title:** <page, thread, paper, transcript, or report title>
+- **Retrieved (UTC):** <timestamp>
+- **Community / source type:** <named community or source family>
+- **Query ID:** <ID>
+- **Assignment ID:** <ID>
+- **Worker ID:** <ID>
+- **Runtime model ID:** <exact ID>
+- **Reasoning config:** <exact request setting>
+- **Search settings:** <engine, filters, date range, limits>
+- **Research-log event IDs:** <IDs>
+- **Disposition:** ACCEPTED
 
-## Captured source text
+## Visit history
+
+| Retrieved UTC | Assignment / worker | Query ID / query | Runtime model ID / reasoning config | Search settings | Capture IDs | Log event ID |
+|---|---|---|---|---|---|---|
+
+## Captured raw source text
 
 ### <Capture ID>
-- Locator: <page, section, paragraph, timestamp, post/comment URL, or equivalent>
+- **Retrieved (UTC):** <timestamp>
+- **Source locator:** <page, section, paragraph, timestamp, post/comment URL, or equivalent>
+- **Capture method:** <page text, transcript, PDF text, or exact search excerpt>
 
 <unchanged retrieved excerpt or text>
 
 ## Evidence items
 
 ### <Evidence ID>
-- Kind: EXACT_QUOTE | INTERPRETATION
-- Text: <evidence>
-- Capture ID: <ID>
-- Locator: <precise locator within the capture/source>
-- Persona tags: <one or more>
-- Bank slots: <one or more bank numbers>
-- Evidence grade: SUPPORTED | MIXED | CONTESTED | N/A
+- **Evidence ID:** <ID>
+- **Kind:** EXACT_QUOTE | INTERPRETATION
+- **Text:** <evidence>
+- **Capture ID:** <ID>
+- **Locator:** <precise locator within the capture/source>
+- **Persona tags:** <one or more>
+- **Bank slots:** <one or more bank numbers>
+- **Evidence grade:** SUPPORTED | MIXED | CONTESTED | N/A
+- **Use / limits:** <what this supports and does not establish>
 ```
 
 `EXACT_QUOTE` text must appear character-for-character in the named captured text and have a locator. If it cannot be verified, recapture it, convert it to an unquoted `INTERPRETATION`, or reject it. Interpretations still require supporting captured text and a locator. Never put quotation marks around an interpretation.

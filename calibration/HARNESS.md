@@ -76,9 +76,12 @@ Shallow research produces generic books. Research must go **deep into the places
 
 **Run-001 implementation:** prompt-structured lead/worker handoffs (H-010), with the repo files as the orchestration boundary. The three H-011 candidates were audited at source before adoption; none currently satisfies the bank/persona task schema, exact-quote provenance, top-reasoning model config, and factory output contract without a core rewrite. Reconsider only after a measured prompt/handoff failure or equal-assignment win; the audit is recorded in `calibration/hypotheses.md` and the active OpenSpec change.
 
+**Bootstrap research pilot:** contract/connectivity calls made while the research handoff is still changing live under `calibration/pilots/`, never under `calibration/runs/run-NNN`. They may diagnose execution failures but do not count as run evidence or arm-quality results. Version the final prompt, blinded brief, and workshop schema in a pushed boundary commit before creating immutable `run-001`.
+
 ## §4 Blindness & anti-overfit rules (absolute)
 
 1. **Pipeline sub-calls are blind to the reference.** No sub-role (researcher, framer, planner, writer, reviewer) may receive: anything in `calibration/reference/`, the reference EPUB, anything in `analysis/`, or judge outputs. The style guide is the ONLY sanctioned carrier of reference-derived (generic) patterns.
+   The exact-input `00-brief.md` must therefore contain only product facts (behavior, reader, forks, belief, scope/non-goals): reference identity, calibration paths, aggregate targets, and run instructions stay in the book README, HARNESS, and run manifest.
 2. **Research source exclusions:** no Allen Carr / Easyway books or derivatives (incl. EasyPeasy-style rewrites) as sources for this book's research. Lived experience comes from real communities; science from studies.
 3. **Amendment scope:** generic assets only (§1). Justify every amendment by a *mechanism* ("echoes land at paragraph ends, weakening hand-over") — never by resemblance to the reference ("GSBS does X here").
 4. **Judge-prompt discipline:** judge prompts + gate thresholds are yours to improve (§1 authority), but changing either invalidates comparability: it requires a new baseline run, a ledger entry, and a stated mechanism. Never tune judges to move numbers on the same candidate.
@@ -132,7 +135,9 @@ Length is planned, not hoped for: (a) the master plan's curve map assigns **ever
 | Summarizer (Stage B) | one allowed planning/judge model at top reasoning | same model and prompt for both books |
 | Judges | ≥2 of the allowed planning/judge models | every panel is non-Anthropic because the writer is fixed to Opus |
 
-**Planner/reviewer/judge arms (H-005):** P1 GPT 5.6 Sol (`max`) · P2 Gemini 3.1 Pro (`high`) · P3 Grok 4.5 (`high`). Use native GPT 5.6 Sol at max when the environment can preserve the exact-input/fresh-context contract; otherwise use the runtime-resolved OpenRouter ID. No lower-effort sweep: top reasoning is fixed.
+**Planner/reviewer/judge arms (H-005):** P1 GPT 5.6 Sol (OpenRouter `max`; native surface's top setting) · P2 Gemini 3.1 Pro (`high`) · P3 Grok 4.5 (`high`). Use native GPT 5.6 Sol when the environment can pin the exact model/top setting and preserve the exact-input/fresh-context contract; otherwise use the runtime-resolved OpenRouter ID. No lower-effort sweep: top reasoning is fixed.
+
+For subscription-backed native Sol in this Codex environment, use a fresh `codex exec --ephemeral --model gpt-5.6-sol` invocation with the per-call top setting `model_reasoning_effort="ultra"`; the current CLI accepted that exact preflight on 2026-07-10. Record the command/config in the manifest. Do not infer the planner model from the mutable global Codex default or from a collaboration spawn that exposes no model selector. OpenRouter Sol continues to use its endpoint-reported `max` setting.
 
 **Researcher arms (H-009):** R1 `deepseek/deepseek-v4-pro` (`xhigh`) · R2 `minimax/minimax-m3` (reasoning enabled; `/models` exposes no effort ladder) · R3 GPT 5.6 Luna (`max`, runtime-resolved ID). Measure: bank slots filled per dollar, verbatim-quote yield with provenance, synthesis quality into the two banks.
 

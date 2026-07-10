@@ -18,11 +18,29 @@ Seeded by the harness builder (2026-07-10) as starting capital — derive priori
 
 # Research stage
 
-## H-009 — researcher-model arms (cost/depth bake-off)   [PROPOSED]
+## H-026 — explicit caller/role capability boundary       [TESTING bootstrap-pilot]
+- Gap: bootstrap call `gen-1783695448-rncCEIxtMXRtDVRaHkwv` spent $0.0170415 then stopped before the assignment matrix because the bare Luna submodel could neither inspect its invisible OpenRouter request metadata nor write the caller's repository, even though both had already been handled externally.
+- Lever: `prompts/research-agent.md` assigns endpoint preflight, response metadata, and artifact persistence to the caller; lead/workers return artifact-ready blocks when direct file tools are absent.
+- Prediction: the identical prompt+brief Luna `max` lead call returns provisional personas and a bounded pre-collection matrix instead of a tool-access refusal.
+- Result: RP-000 blocked with zero sources/cells. The correction removed that refusal mechanism: later Luna traces planned the artifact, and DeepSeek RP-003/RP-005 returned artifact-ready matrices without demanding endpoint/file tools. The mechanism is supported across those calls, but the prediction named a visible Luna artifact and Luna exhausted its output caps; keep TESTING until the clean bounded Luna worker arm either returns an artifact or reproduces the refusal.
+
+## H-027 — self-contained assignment rows                 [REFUTED bootstrap-pilot]
+- Gap: DeepSeek lead call RP-003 returned 42 planned cells, but repeated `same` shorthand made later rows non-reconstructable and it selected an eating-disorder community despite that population being a brief non-goal.
+- Lever: `prompts/research-agent.md` requires every row to repeat its full scope/query/model fields, validates named communities, and treats brief non-goals as research-scope exclusions.
+- Prediction: the exact-input DeepSeek `xhigh` rerun contains no shorthand, no excluded population, and passes the pre-collection matrix gate without operator repair.
+- Result: RP-005 removed `same` shorthand and excluded clinical populations, but still grouped Banks 1–5/9/10 in single cells and hid conditional supplemental communities in queries. Autopsy: the lever named field repetition but did not explicitly define a one-bank/one-scope row, so the model preserved compactness along an unguarded axis. The matrix remained non-dispatchable; see `calibration/pilots/deep-research-bootstrap.md`. Corrected as H-028 rather than silently widening H-027 after its outcome.
+
+## H-028 — one-bank, one-scope matrix cells               [TESTING bootstrap-pilot]
+- Gap: RP-005 is readable but cannot serve as the file boundary: grouped bank cells cannot hold per-bank yield/verdict, and fallback communities make the assignment's source scope mutable after dispatch.
+- Lever: `prompts/research-agent.md` requires exactly one numeric bank and one fixed community/source family per row; every fallback/follow-up is a separately declared row.
+- Prediction: the next allowed lead call returns only single-bank/single-scope rows with no `same`, bank ranges, conditional supplements, vague source families, or excluded populations.
+- Result: The first MiniMax call was aborted when an audit found reference metadata in the brief, so it has no outcome. Pending a clean, versioned MiniMax M3 reasoning-enabled lead call.
+
+## H-009 — researcher-model arms (cost/depth bake-off)   [TESTING bootstrap-pilot]
 - Gap: research is the highest-token stage; unknown which model mines communities and synthesizes banks best per dollar.
 - Lever: manifest only, always top reasoning — R1 `deepseek/deepseek-v4-pro` (`xhigh`) · R2 `minimax/minimax-m3` (reasoning enabled; no effort ladder reported) · R3 GPT 5.6 Luna (`max`).
 - Prediction: measurement; expect the long-context low-cost arms to lead cost-per-slot-filled, with verbatim provenance and synthesis quality the open questions.
-- Result: —
+- Result: Preflight mechanics only: Luna `max` produced zero visible artifact across corrected 6.5k and 20k completion caps; DeepSeek `xhigh` returned matrix drafts that exposed contract gaps. Every call received a brief containing forbidden calibration/reference metadata, so none counts as an arm-quality result and the dollar/yield comparison is excluded. The clean equal-assignment source-yield bake-off remains pending after the bootstrap contract is versioned.
 
 ## H-010 — multi-subagent research vs one long prompt    [PROPOSED]
 - Gap: a single agent with a long prompt searches shallowly, samples few communities, and paraphrases quotes (founder-observed pattern).
@@ -52,7 +70,7 @@ Seeded by the harness builder (2026-07-10) as starting capital — derive priori
 
 ## H-005 — planner-model arms                             [PROPOSED — REVISED 2026-07-10]
 - Gap: unknown which model plans this book architecture best. (Supersedes the writer-arms version: founder fixed the writer to Opus 4.6 reasoning-none.)
-- Lever: manifest only, always top reasoning — P1 GPT 5.6 Sol (`max`) · P2 Gemini 3.1 Pro (`high`) · P3 Grok 4.5 (`high`). Opus is chapter-writer-only. Same inputs, same prompts.
+- Lever: manifest only, always top reasoning — P1 GPT 5.6 Sol (OpenRouter `max` or pinned native Codex `ultra`) · P2 Gemini 3.1 Pro (`high`) · P3 Grok 4.5 (`high`). Opus is chapter-writer-only. Same inputs, same prompts.
 - Prediction: measurement; judged by plan-review cycles to "fit to write from" + downstream chapter judge scores off each plan.
 - Result: —
 

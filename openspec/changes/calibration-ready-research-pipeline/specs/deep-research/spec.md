@@ -11,12 +11,31 @@ Research SHALL be led by a fresh-context research lead that receives only the re
 - **WHEN** a proposed worker assignment omits its community/source scope, persona scope, or bank slots
 - **THEN** the assignment is rejected and narrowed before the worker runs
 
+#### Scenario: A matrix row relies on shorthand or an excluded population
+- **WHEN** a row says `same`/`as above`, names an unverified community, or uses a population excluded by the brief's non-goals
+- **THEN** the lead repeats all required fields or replaces the scope before collection
+
+#### Scenario: A matrix row groups banks or fallback scopes
+- **WHEN** a row contains more than one bank, more than one community/source family, or an implicit fallback scope
+- **THEN** the lead splits it into independently dispatchable one-bank, one-scope rows before collection
+
+#### Scenario: A no-web lead proposes a named community
+- **WHEN** the first lead call cannot retrieve and verify the community
+- **THEN** its rows remain `CANDIDATE — VALIDATION REQUIRED`
+- **THEN** a retrieval-capable lead pass verifies the canonical URL and topical fit before the rows become `READY`
+
 ### Requirement: Independent research sources
 Research workers SHALL use lived-experience communities and scientific or investigative sources, and MUST NOT receive or use reference books, files under `analysis/`, calibration reference text, judge outputs, Allen Carr/Easyway derivatives, or prose-pattern analyses. Search-result summaries MAY guide discovery but MUST NOT be treated as verbatim evidence unless their exact returned excerpt is saved.
+
+The exact-input brief MUST contain only product facts and MUST NOT contain reference identity/paths, aggregate reference targets, or calibration run instructions.
 
 #### Scenario: A forbidden source appears
 - **WHEN** a worker returns an Easyway-derived source or any reference/analysis material
 - **THEN** the source and every dependent finding are rejected and the affected coverage cells remain unfilled
+
+#### Scenario: A brief leaks calibration metadata
+- **WHEN** a role's brief names the reference, a reference/calibration path, a reference-derived aggregate, or run instructions
+- **THEN** the caller rejects the brief and removes that metadata before dispatch
 
 ### Requirement: Provenance-preserving source packets
 Every distinct accepted URL SHALL have one source packet under `research/sources/`, and every search/call/source capture MUST be recorded in `research/research-log.md`. A packet MUST record a stable source ID, URL, title, retrieval date, community/source type, query and assignment ID, model and reasoning configuration, captured raw excerpt or text, and evidence items tagged by persona and bank slot.
@@ -57,6 +76,13 @@ The lead SHALL synthesize accepted source packets into `research/lived-experienc
 
 ### Requirement: Reconstructable research-arm measurement
 Every research arm SHALL record the exact runtime model ID, highest supported reasoning configuration, assignment, search settings, usage and cost when available, accepted sources, verified quotes, filled bank/persona cells, and rejected or unverifiable items. Model or orchestration comparisons MUST reuse the same assignment and search settings.
+
+The caller MUST verify endpoint metadata before dispatch, record request/response metadata after the call, and persist artifact-ready role output when the role has no direct filesystem access. A research role MUST NOT treat its inability to inspect invisible request metadata or write directly to the caller's filesystem as a research blocker.
+
+#### Scenario: A bare model call cannot inspect its request
+- **WHEN** an approved research role runs without direct endpoint-metadata or repository-write tools
+- **THEN** the caller supplies the verified request configuration, records actual response metadata, and persists the role's returned artifact blocks
+- **THEN** the role continues its assigned planning or collection work
 
 #### Scenario: Research models are compared
 - **WHEN** H-009 compares two allowed researcher models

@@ -27,6 +27,10 @@ Three OSS candidates were inspected at current HEAD: LangChain `open_deep_resear
 
 A fresh research lead receives only `prompts/research-agent.md` and the book brief. It first records a coverage matrix in `research/research-log.md`, then dispatches fresh workers by community and a bounded bank/persona assignment. Workers receive only the same two files plus their assignment. The lead commissions missing-slot follow-ups and performs synthesis only after the coverage gate passes.
 
+Each matrix row represents exactly one numeric bank and one fixed community or source family, and repeats its complete scope, target, query settings, model ID, and reasoning configuration. Shorthand, bank ranges, and conditional fallback communities are not reconstructable. Brief non-goals constrain community selection, so an excluded clinical or special population cannot silently become a proxy source for a general reader.
+
+Because the first lead call intentionally has no web access, named communities are candidates rather than facts. A retrieval-capable lead validation pass resolves their canonical URLs and topical fit before any row becomes dispatch-ready. Calibration identity, reference paths, and reference-derived targets remain operator/run metadata and never enter the exact-input brief.
+
 This is H-010's own-build arm. H-011 does not adopt an OSS framework for run-001: the audited candidates require substantial forks and bring unrelated UI, deployment, RAG, export, or cloud stacks. Useful ideas—parallel fan-out, URL ledgers, and context-budget fuses—remain eligible for selective reimplementation after a concrete failure.
 
 ### 2. Make the existing files the orchestration boundary
@@ -34,6 +38,8 @@ This is H-010's own-build arm. H-011 does not adopt an OSS framework for run-001
 No database or new stable artifact is introduced. Each distinct URL becomes one descriptive file under `research/sources/`; repeated visits enrich that file rather than creating duplicates. Each source packet records source ID, URL, title, retrieval date, community/source type, query/assignment ID, model and reasoning config, captured raw excerpt, and evidence items. Each evidence item separates exact quotation from interpretation and carries persona tags, bank slots, and a locator.
 
 The research log starts with the assignment/coverage matrix and appends one row per search/call/source capture, including model config, usage/cost when available, output files, and accept/reject status. This preserves replayability without making orchestration code the source of truth.
+
+The caller performs endpoint-metadata preflight and persists returned artifact blocks. Bare model calls cannot inspect their own request payload or mutate the caller's filesystem, so those are caller responsibilities rather than research-role completion gates. The actual model ID returned by the endpoint, request reasoning setting, usage, and cost are added from the API response; research content is persisted verbatim.
 
 ### 3. Treat quote exactness as a gate
 
@@ -78,4 +84,5 @@ Research, framing, planning, review, and writing never receive reference text, `
 2. Rewrite the research prompt and research templates to encode the lead/worker/source/coverage contract.
 3. Remove forbidden reference inputs and Opus plan-review requirements from planning assets; make the brief an explicit framing input.
 4. Run a bounded H-010/H-009 research pilot, record failures, and correct the prompt before full run-001 research.
-5. Execute run-001 through the unchanged downstream file contract. Rollback is a revert of the pre-run contract commit; no stored data migration is required.
+5. Commit and push the blinded brief, prompt, and workshop schemas; bootstrap calls remain under `calibration/pilots/` and contribute no Stage A evidence.
+6. Create and execute run-001 through the unchanged downstream file contract. Rollback is a revert of the pre-run contract commit; no stored data migration is required.

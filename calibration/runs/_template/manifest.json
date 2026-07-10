@@ -16,16 +16,17 @@
     "research_workers": [
       {"assignment": "<worker/task IDs>", "model": "<allowed R1-R3 exact id>", "reasoning": "xhigh | max | enabled"}
     ],
-    "planner": "<arm P1-P3 — exact id resolved from GET /api/v1/models>",
-    "planner_reasoning": "high | max",
+    "planner": "<arm P1-P3 — exact endpoint id or pinned native Codex model>",
+    "planner_reasoning": "high | max | ultra (native Codex Sol)",
+    "planner_execution": "<openrouter | exact ephemeral codex exec invocation>",
     "plan_reviewer": "<Gemini 3.1 Pro | GPT 5.6 Sol | Grok 4.5>",
-    "plan_reviewer_reasoning": "high | max",
+    "plan_reviewer_reasoning": "high | max | ultra (native Codex Sol)",
     "writer": "Claude Opus 4.6 — FIXED (resolve exact id at runtime)",
     "writer_reasoning": "disabled — reasoning.enabled=false — FIXED",
     "chapter_reviewer": "<Gemini 3.1 Pro | GPT 5.6 Sol | Grok 4.5>",
-    "chapter_reviewer_reasoning": "high | max",
+    "chapter_reviewer_reasoning": "high | max | ultra (native Codex Sol)",
     "summarizer": "<allowed planning/judge model at top reasoning; Stage B only>",
-    "summarizer_reasoning": "high | max | -",
+    "summarizer_reasoning": "high | max | ultra (native Codex Sol) | -",
     "judges": [
       {"model": "<Gemini 3.1 Pro | GPT 5.6 Sol | Grok 4.5>", "reasoning": "high | max"},
       {"model": "<a different allowed model>", "reasoning": "high | max"}

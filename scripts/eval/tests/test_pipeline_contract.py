@@ -23,6 +23,14 @@ class ResearchContractTests(unittest.TestCase):
             "community/source scope",
             "persona scope",
             "bank slots",
+            "caller rejects an exact-input brief containing calibration/reference metadata",
+            "Every matrix row must be independently reconstructable",
+            "exactly one integer from `1` through `10`",
+            "Do not hide alternate, supplemental, fallback",
+            "Never use `same`, `as above`",
+            "brief's non-goals as research-scope exclusions",
+            "CANDIDATE — VALIDATION REQUIRED",
+            "retrieval-capable lead pass validates",
             "reject it and every dependent finding",
         ):
             self.assertIn(required, prompt)
@@ -33,13 +41,30 @@ class ResearchContractTests(unittest.TestCase):
         prompt = read("prompts/research-agent.md")
 
         for required in (
-            "## Captured source text",
+            "## Visit history",
+            "## Captured raw source text",
+            "Worker ID:",
+            "Search settings:",
+            "Research-log event IDs:",
             "Capture ID:",
             "EXACT_QUOTE | INTERPRETATION",
             "character-for-character verification",
             "qualitative verdict is `PASS`",
             "≥5 moments/persona from ≥2 sources",
             "≥8 terms/persona",
+        ):
+            self.assertIn(required, prompt)
+
+    def test_caller_owns_invisible_runtime_metadata_and_persistence(self):
+        """OpenSpec: a bare model call returns artifacts instead of false-blocking."""
+        prompt = read("prompts/research-agent.md")
+
+        for required in (
+            "The **caller**, not the language model inside the call",
+            "MUST NOT try to inspect invisible request metadata",
+            "returns complete artifact-ready Markdown blocks",
+            "Lack of direct filesystem access is not a blocker",
+            "first call returns provisional personas",
         ):
             self.assertIn(required, prompt)
 
@@ -115,6 +140,14 @@ class HarnessBoundaryTests(unittest.TestCase):
         self.assertIn("research_orchestration", manifest)
         self.assertIn("research_lead", manifest["models"])
         self.assertIn("research_workers", manifest["models"])
+
+    def test_subrole_brief_contains_no_calibration_or_reference_metadata(self):
+        """HARNESS §4: the style guide alone carries reference-derived patterns."""
+        brief = read("production-books/quit-sugar/00-brief.md")
+
+        for forbidden in ("Good Sugar Bad Sugar", "calibration/", "analysis/",
+                          "reference metrics", "factory-calibration"):
+            self.assertNotIn(forbidden, brief)
 
 
 if __name__ == "__main__":

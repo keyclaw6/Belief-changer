@@ -1,21 +1,47 @@
 # Lived Experience — <Book Title>
 
-The human material that makes the book *hit home*. Capture verbatim where possible, with source links. Organize by theme. These quotes get assigned to specific chapters in the master plan.
+Synthesize accepted source packets only. Every bullet must name its bank, persona IDs, and source IDs; an exact quote also links its packet evidence item (for example, `S-001#E-003`). Interpretations use no quotation marks.
 
-## Why they do it (perceived benefits / functions)
--
+Standard bullet:
 
-## Why they can't stop (triggers, relapse patterns, the "just once" trap)
--
+`- [Bank N] <finding or quote> — Persona IDs: P-__ — Source IDs: S-__[#E-__]`
 
-## Shame, secrecy, identity — and how shame *perpetuates* the cycle
--
+## Persona map
 
-## Most resonant testimonials ("this is exactly me")
-> "<verbatim quote>" — <source / link>
+| Persona ID | Function served / defining context | Applicable banks | Source IDs |
+|---|---|---|---|
+|  |  |  |  |
 
-## Reported effects (as people describe them, in their words)
--
+## Bank 1 — Justification Inventory
 
-## What helped / what didn't (and how "free" feels to them)
--
+- [Bank 1] <finding> — Persona IDs: P-__ — Source IDs: S-__
+
+## Bank 2 — Belief Map
+
+- [Bank 2] <finding; mark the keystone belief> — Persona IDs: P-__ — Source IDs: S-__
+
+## Bank 3 — Lived-Experience Bank
+
+- [Bank 3] <moment, cost, failed attempt, trigger, or shame cycle> — Persona IDs: P-__ — Source IDs: S-__
+
+## Bank 4 — Special-Moments Inventory
+
+- [Bank 4] <seductive scene and its credited benefit> — Persona IDs: P-__ — Source IDs: S-__
+
+## Bank 5 — Escape-Route Inventory
+
+- [Bank 5] <moderation, delay, substitute, or “just once” rationale> — Persona IDs: P-__ — Source IDs: S-__
+
+## Bank 6 — Analogy Bank
+
+Label each analogy `SOURCED` or `INVENTED`. For an invented candidate, source IDs ground the belief or experience it is meant to expose rather than claiming the analogy came from that source.
+
+- [Bank 6] <candidate analogy> — Origin: SOURCED | INVENTED — Job: <belief-change move> — Persona IDs: P-__ — Source IDs: S-__
+
+## Bank 9 — Community Lexicon
+
+- [Bank 9] <term and meaning> — Frequency / context: <notes> — Persona IDs: P-__ — Source IDs: S-__
+
+## Bank 10 — Freedom Testimonies
+
+- [Bank 10] <freedom experience or moment-of-revelation scene> — Persona IDs: P-__ — Source IDs: S-__

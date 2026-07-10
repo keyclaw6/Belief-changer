@@ -1,7 +1,33 @@
 # Research Log — <Book Title>
 
-Chronological record of research **as it is gathered** (newest at the bottom). This preserves the order things were found in, so the trail is reconstructable.
+Plan coverage before collection, then append every search, model call, and source capture. Use stable IDs (`P-01`, `A-001`, `W-001`, `Q-001`, `S-001`) throughout. Record unavailable usage or cost as `n/a`, never as zero.
 
-| Date | Search / prompt | Tool | Key finding(s) | Filed in |
-|---|---|---|---|---|
-|  |  |  |  |  |
+## Provisional personas
+
+| Persona ID | Function served / defining context | Applicable banks |
+|---|---|---|
+|  |  |  |
+
+## Assignment / coverage matrix
+
+Before collection, fill the first nine fields for each bounded community/source × persona × bank-slot assignment. Update the yield and verdict fields after collection; unsupported interpretations and duplicate URLs do not count.
+
+| Assignment ID | Worker ID | Community / source scope | Persona | Bank | Target | Query / search settings | Runtime model ID | Reasoning config | Accepted items | Distinct sources | Qualitative verdict | Status / follow-up |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|  |  |  |  |  |  |  |  |  |  |  |  |  |
+
+## Activity ledger — append only
+
+Use one row per search, model call, or source capture. Disposition values include `ACCEPTED`, `REJECTED`, `DUPLICATE-MERGED`, `UNVERIFIABLE`, `ERROR`, and `COMPLETE`; give the reason whenever the result is not accepted.
+
+| UTC time | Log event ID / type | Assignment / worker | Query ID, URL, and search settings | Runtime model ID | Reasoning config | Usage (input/output/search) | Cost (USD) | Output / source IDs | Disposition / reason |
+|---|---|---|---|---|---|---|---|---|---|
+|  |  |  |  |  |  |  |  |  |  |
+
+## Research-arm summary
+
+Complete when comparing models or orchestration arms; reuse the same assignments and search settings.
+
+| Arm ID | Assignment IDs / search settings | Model ID / reasoning | Total usage / cost | Accepted source IDs | Verified quotes | Filled persona-bank cells | Rejected / unverifiable | Wall time / errors |
+|---|---|---|---|---|---|---|---|---|
+|  |  |  |  |  |  |  |  |  |
