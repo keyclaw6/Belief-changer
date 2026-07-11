@@ -246,6 +246,18 @@ Seeded by the harness builder (2026-07-10) as starting capital — derive priori
 - Product/factory result: none. No run-009 chapter or prompt amendment is promoted; the amendment remains calibration-only evidence.
 - Next test: wait for the independent direction audit, then preregister one behavior-agnostic context-ownership experiment—preferably a fresh intelligent commissioning agent versus the current full-plan control—without patching Chapter 1 or adding deterministic orchestration.
 
+## H-047 — model-led focused chapter commission          [TESTING run-010]
+- Gap: H-046's priority rule was correctly instantiated but full-plan writers still imported EV-04, C-05, and C-20 material into C-01. The complete 11,712-word plan contains valid but currently unowned evidence and all 21 chapter jobs.
+- Mechanism / one generic lever: semantic competition from unowned context defeats instruction priority. A fresh top-reasoning Sol commissioner reads the canonical plan and one target chapter ID, then authors a focused natural-language semantic commission. Opus sees that commission instead of the full plan. The commission preserves judgment and is neither a deterministic slice nor a prose outline.
+- Controlled Chapter 1 test: same-start full-plan control versus focused-commission treatment; identical writer prompt/style/model/route/reasoning/output/assignment and blind canonical-plan review. Both drafts finish before review. All Chapter 1–3 commissions freeze before prose.
+- Continuation: only a faithful, target-clean, accepted treatment Chapter 1 continues through treatment Chapters 2–3 using their already-frozen commissions and fresh accepted previous chapter.
+- Prediction: all packets faithfully carry owned assignments and omit unrelated later inventory; treatment Chapter 1 has zero ownership blockers while control has at least one; treatment Chapters 1–3 stay target-clean, converge on existing craft/length gates, and pass full Stage-A objective and blind judging.
+- Decision rule: SUPPORTED only if treatment beats control on blind Chapter 1 target semantics and the complete treatment product passes Stage A. REFUTED if a faithful packet excludes the offending content but treatment recreates the ownership failure, or at least two packets are materially unfaithful. INCONCLUSIVE if arms match, one isolated packet defect prevents a fair test, or semantics improve but craft/product quality fails.
+- Claim boundary: reviewer acceptance is not support. A successful treatment still requires zero-amendment stability and holdout generalization. The commissioner prompt and packet format remain calibration-only.
+- Rival explanations / signal risk: treatment may win through stochastic resampling; the commissioner may silently become a second planner; focus may omit cross-cutting safety/agency locks; semantic cleanup may leave the 40% short-sentence failure untouched. The same-run control, packet audit, and full product gates address these.
+- Result: PENDING.
+- Next test: commit the behavior-agnostic commissioner prompt, generate all three packets in fresh contexts, hash, and audit them before prose.
+
 ## H-007 — planner reasoning effort                       [RETIRED — founder-fixed 2026-07-10]
 - Gap: a reasoning-effort sweep was proposed before the founder fixed every allowed non-writer model to its top supported reasoning mode.
 - Lever: none — configuration is now a constant, not a calibration variable.
