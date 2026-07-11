@@ -2,7 +2,7 @@
   "run": "run-003",
   "date": "2026-07-11",
   "stage": "A",
-  "status": "IN_PROGRESS",
+  "status": "FAIL",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "Chapter 2 prose-only compression after semantic certification, then Chapter 3 if accepted",
@@ -38,18 +38,50 @@
   "models": {
     "prose_editor": {
       "requested_model": "anthropic/claude-opus-4.6",
-      "actual_model": "pending",
+      "actual_model": "anthropic/claude-4.6-opus-20260205",
       "provider": "Anthropic through OpenRouter",
       "reasoning": {"effort": "none"},
       "requested_max_tokens": 128000,
-      "calls": []
+      "calls": [
+        {
+          "call_id": "gen-1783762852-3RDTCgMbUgoi5X3FCRpg",
+          "role_and_objective": "Chapter 2 prose-only compression after zero-blocker semantic certification",
+          "finish_reason": "stop",
+          "reasoning": {"effort": "none", "reported_reasoning_tokens": 0},
+          "usage": {"prompt": 53330, "completion": 4491, "total": 57821, "cost_usd": 0.378925},
+          "artifact": "calibration/runs/run-003/chapters/chapter-02-compression-r1.md",
+          "artifact_sha256": "a9da88fbd3a09faf5e9ba1bff660ce6db01350994a2a732a72ddd8db54cb7a8f",
+          "review_verdict": "REVISE"
+        }
+      ]
     },
     "chapter_reviewer": {
       "model": "gpt-5.6-sol",
       "provider": "openai native Codex 0.144.1",
       "reasoning": "ultra",
       "execution": "codex exec --ephemeral --model gpt-5.6-sol -c model_reasoning_effort=ultra",
-      "calls": []
+      "calls": [
+        {
+          "call_id": "019f508f-8177-7e41-ad58-ff251dea31de",
+          "attempt": 1,
+          "verdict": null,
+          "status": "INFRA_ABORT",
+          "fault": "ephemeral multi-agent helper spawn failed, followed by repeated empty waits and no verdict; terminated for nonproductive orchestration, not reasoning duration"
+        },
+        {
+          "call_id": "019f5098-e819-7702-9f76-d3cb5297e548",
+          "attempt": 2,
+          "execution_amendment": "same blind review with Codex multi_agent disabled; no time, token, or reasoning limit",
+          "usage_total_tokens": 695839,
+          "cached_input_tokens": 612864,
+          "reasoning_output_tokens": 8889,
+          "verdict": "REVISE",
+          "blocking_defects": 0,
+          "quality_gate_failures": ["direct-address density", "short-sentence density", "question rate"],
+          "artifact": "calibration/runs/run-003/chapters/chapter-02-compression-r1-review.md",
+          "artifact_sha256": "8c344360617f9d1d66d4c0706632b64b007040418f3d2f66c1f276a4cbd0a5a7"
+        }
+      ]
     },
     "judges": []
   },
@@ -60,5 +92,5 @@
     "production-books/quit-sugar/master-plan.md": "5915b9f"
   },
   "direction_audit": "GO — one generic variable, falsifiable in one call, shortest path back to prose",
-  "notes": "No shared prompt or plan changes. The run starts from run-002 Chapter 2 R3 because its fresh reviewer certified zero blocking semantic defects and rejected only length and short-sentence density."
+  "notes": "H-040 is MIXED and the run fails its ACCEPT prediction. The prose-only edit preserved zero blocking defects and moved length 3761 to 3236, but short-sentence density only moved 36.7% to 33.2%; direct address regressed 23.4 to 19.5 per 1k and questions moved 8.6% to 7.4%. The first reviewer attempt was aborted only for a broken empty-helper loop; the unrestricted plain Sol ultra retry produced the canonical verdict. Run-004 will control full versus minimal editor context on this exact candidate and review."
 }
