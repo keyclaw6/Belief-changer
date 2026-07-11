@@ -2,7 +2,7 @@
   "run": "run-007",
   "date": "2026-07-11",
   "stage": "A",
-  "status": "IN_PROGRESS",
+  "status": "FAIL",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "adversarial feedback coverage followed by one unchanged-loop Chapter 3 repair",
@@ -111,5 +111,13 @@
   "factory_promotion_boundary": "the chapter may advance on convergence; the review-coverage method requires later cross-chapter replication and Stage C",
   "stop_rule": "same explicitly surfaced defect surviving this run makes three consecutive same-dimension failures and triggers HARNESS §11 escalation",
   "prerequisite_status": "UNINSTANTIATED — Grok route returned regional 403 before a completion; Opus has not run",
+  "result": {
+    "run_failure_type": "INFRASTRUCTURE",
+    "h044_causal_verdict": "INCONCLUSIVE — required Grok prerequisite was not instantiated",
+    "writer_calls": 0,
+    "post_review_calls": 0,
+    "product_promoted": null,
+    "billing_verification": "OpenRouter total_usage was unchanged at 79.976734239 before and after the 403"
+  },
   "notes": "The authenticated catalog exposed Grok 4.5, but the actual xAI route denied this region. The exact H-044 prerequisite cannot be treated as corroborated or contradicted. No usage was charged and no writer or post-review call ran."
 }

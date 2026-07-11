@@ -30,4 +30,23 @@ The exact H-044 prerequisite is therefore uninstantiated. This is infrastructure
 
 ## Gate verdict
 
-IN PROGRESS pending an explicitly preregistered allowed-model fallback or clean run close. No silent reviewer substitution and no writer call.
+FAIL — INFRASTRUCTURE. The required Grok prerequisite could not be instantiated in this region. H-044 is **INCONCLUSIVE**, because neither its corroboration condition nor its production lever ran. No product or factory method changed.
+
+This is not a third semantic failure: Opus never ran. HARNESS §8 permits proceeding with the remaining allowed models, so §11 escalation is not triggered.
+
+## Amendment proposed for run-008
+
+Preregister H-045 as a fresh-context same-model feedback-sufficiency test:
+
+1. freeze exact run-006 Arm A and its accurate Sol review;
+2. run a second fresh native Sol-ultra review blind to the first;
+3. give one Opus 4.6 reasoning-none defect-scoped editor both raw Sol reviews, regardless of whether the second fully corroborates;
+4. require two new independent Sol-ultra full reviews of the revision;
+5. run Gemini 3.1 Pro high only as a focused shadow audit tracing causal, prevalence, and mechanism assertions to the evidence ledger and chapter ownership; it does not count words or issue the positive product gate;
+6. use objective code for every count.
+
+The chapter advances only after two fresh Sol accepts, the objective craft prediction passes, and Gemini supplies no directly source-substantiated boundary blocker. Then the full Chapters 1–3 Stage-A objective and blind pairwise gates run immediately. No claim that same-family review or two calls is universal factory law is allowed.
+
+## Escalations
+
+None. The unavailable allowed arm is recorded; remaining allowed models can continue.

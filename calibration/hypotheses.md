@@ -193,7 +193,7 @@ Seeded by the harness builder (2026-07-10) as starting capital — derive priori
 - Factory promotion result: none. No arm, revision mode, shared prompt, plan, style rule, research artifact, or reviewer configuration is promoted.
 - Next test: H-044 uses Arm A only as an unpromoted repair substrate. A fresh Grok review must independently corroborate the Sol defect class before one Opus revision receives the raw Sol and Grok reviews; fresh Sol/Grok convergence then tests whether the unchanged simple loop can comply once feedback coverage is complete. Do not infer review-union superiority or change a shared asset.
 
-## H-044 — adversarial feedback coverage sufficiency     [TESTING run-007]
+## H-044 — adversarial feedback coverage sufficiency     [INCONCLUSIVE run-007 — infrastructure]
 - Gap: run-006's whole-rewrite and defect-scoped arms both repaired the explicitly named R3 defects yet retained broader installation and premature C-10 mechanism claims. The plan already prohibited them; prior feedback coverage was incomplete.
 - Mechanism / one production lever: the unchanged writer can comply once independent adversarial reviews fully surface the evidence and chapter-ownership boundary. Use exact Arm A as an unpromoted control substrate. Fresh Grok must first corroborate the Sol defect class; only then does one fresh Opus defect-scoped editor receive unchanged full context plus the raw Sol and Grok reviews. There is no synthesized checklist or deterministic edit procedure.
 - Held constant: accepted upstream artifacts and prior chapters; shared writer/reviewer/style prompts; exact substrate; Opus route, reasoning none, and output allowance; blindness; fresh contexts; no shared asset change. Objective code supplies counts; Sol/Grok judge meaning and prose.
@@ -203,8 +203,11 @@ Seeded by the harness builder (2026-07-10) as starting capital — derive priori
 - Rival explanations / signal risk: Sol and Grok may share an over-conservative evidence interpretation; Opus may succeed by stochastic resampling; a five-point craft move may not improve persuasion. Conversely, an unrelated new defect can hide successful boundary compliance. Later cross-chapter and Stage-C replication remain mandatory.
 - Product rule: only an exact convergently accepted chapter may be promoted. On acceptance, immediately execute the full Chapters 1–3 Stage-A objective and blind pairwise gates before another optimization.
 - Stop rule: recurrence of the same explicit defect is the third consecutive same-dimension failure and triggers HARNESS §11 escalation before a generic shared-prompt clarification.
-- Result to date: the authenticated Grok route returned HTTP 403 before inference because xAI does not make Grok 4.5 available in this region. No review, usage, writer call, or post-review occurred. The prerequisite was not instantiated, so this is neither corroboration nor contradiction of the hypothesis.
-- Next test: record the infrastructure failure and preregister any allowed-model fallback as a separate hypothesis before another call; never silently substitute a reviewer into H-044.
+- Result: the authenticated Grok route returned HTTP 403 before inference because xAI does not make Grok 4.5 available in this region. No review, writer call, or post-review occurred; OpenRouter total usage was unchanged before and after the request.
+- Causal verdict: INCONCLUSIVE. The prerequisite and production lever were never instantiated, so this is neither corroboration nor contradiction of the mechanism.
+- Rival explanations / signal risk: none about product quality can be inferred from a regional route denial. Treating it as a failed reviewer or writer would be a false negative.
+- Product/factory result: none. No artifact or process rule was promoted.
+- Next test: H-045 starts a clean run with working allowed models and explicitly preregisters fresh-context same-model feedback coverage; it does not masquerade as H-044 or claim cross-family diversity.
 
 ## H-007 — planner reasoning effort                       [RETIRED — founder-fixed 2026-07-10]
 - Gap: a reasoning-effort sweep was proposed before the founder fixed every allowed non-writer model to its top supported reasoning mode.
