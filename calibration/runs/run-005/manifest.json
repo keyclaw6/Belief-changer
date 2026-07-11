@@ -47,6 +47,15 @@
         "artifact": "calibration/runs/run-005/chapters/chapter-03-r1.md",
         "artifact_sha256": "12de06bab049cd33d1c73f94b5b6e008a2840c19b686de33fbe2913852ff2812",
         "review_verdict": "REVISE"
+      }, {
+        "call_id": "gen-1783765663-YrbBkZ13WxfZfs83gp48",
+        "round": 2,
+        "reasoning": {"effort": "none", "reported_reasoning_tokens": 0},
+        "usage": {"prompt": 53078, "completion": 3424, "total": 56502, "cost_usd": 0.35099},
+        "finish_reason": "stop",
+        "artifact": "calibration/runs/run-005/chapters/chapter-03-r2.md",
+        "artifact_sha256": "8e7c88cb3f52a225634b4f1e833744515314dfb3c5cdaed3d2458230e690c792",
+        "review_verdict": "REVISE"
       }]
     },
     "reviewer": {
@@ -64,6 +73,16 @@
         "blocking_groups": ["illicit repetition", "unsupported claims", "shaming guardrail violation"],
         "artifact": "calibration/runs/run-005/chapters/chapter-03-r1-review.md",
         "artifact_sha256": "e248c406471386ff708c7aa952e964e4db8a3c888d6b789b9483b8a20e6466ee"
+      }, {
+        "call_id": "019f50ba-0621-7da1-916b-4cd912b74f16",
+        "round": 2,
+        "usage_total_tokens": 734005,
+        "cached_input_tokens": 653824,
+        "reasoning_output_tokens": 9702,
+        "verdict": "REVISE",
+        "blocking_groups": ["illicit cross-chapter repetition"],
+        "artifact": "calibration/runs/run-005/chapters/chapter-03-r2-review.md",
+        "artifact_sha256": "b02714c19a7a29ca691bd9f0a23cd2f32458ec02055cfbe43ac6a23cad1c336b"
       }]
     },
     "judges": []
@@ -74,5 +93,5 @@
     "prompts/chapter-reviewer.md": "a91af62",
     "production-books/quit-sugar/master-plan.md": "5915b9f"
   },
-  "notes": "Chapter 3 R1 received substantive blockers for repetition, unsupported powerlessness/biomedical claims, and a shaming unhelpable-reader line. H-042 did not trigger because the verdict was not zero-blocker craft-only. R2 remains an ordinary whole-artifact writer revision from the fixed assets and R1 review."
+  "notes": "Chapter 3 R1 received substantive blockers and R2 corrected them. R2 still received one cross-chapter repetition blocker plus premature comfort demolition and craft weaknesses, so H-042 again did not trigger. R3 is the final ordinary whole-artifact writer revision; no shared asset changes."
 }

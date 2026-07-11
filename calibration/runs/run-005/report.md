@@ -28,6 +28,8 @@ M-01, M-03, M-06, I-03, anatomy, AN-13, the justification gallery, length, and c
 
 H-042 did not trigger because the verdict contained substantive blockers. R2 is a normal whole-artifact revision; no prose-only editor or shared-asset amendment is introduced.
 
+Chapter 3 R2 corrected every R1 blocker and retained exact assigned content, but its fresh review still returned `REVISE` for one unlicensed sentence repeated from Chapter 2. Quality notes also identified premature comfort-credit demolition, low direct address (14.9/1,000), and 34.6% short sentences. Because a semantic/job-drift blocker remained, H-042 again did not trigger. R3 is the final ordinary whole-artifact writer cycle.
+
 ## Gate verdict
 
-IN PROGRESS. Chapter 3 is at cycle 1 of 3; Chapters 1–2 remain accepted.
+IN PROGRESS. Chapter 3 is at cycle 2 of 3; Chapters 1–2 remain accepted.
