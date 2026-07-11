@@ -280,14 +280,42 @@
         "finish_reason": "complete",
         "usage": {"total": 47388, "cost_usd": "n/a"},
         "artifacts": ["ACCEPTED FOR FRAMING; review sha256 f5b6ac7b80db50538a09d890d10a030f9800d2156afa54c8abe90b2b4a251690; superseded for promotion after bird audit found an S-012 exact-quote period mismatch"]
+      },
+      {
+        "call_id": "019f4eed-c760-7f53-8334-df1047878843",
+        "role_and_objective": "final model-owned complete quote, mapping, and citation sweep from R3",
+        "requested_model": "gpt-5.6-luna",
+        "actual_model": "gpt-5.6-luna",
+        "provider": "openai native Codex 0.144.1",
+        "reasoning": "max",
+        "endpoint_requested_output": "native session; no caller max_tokens",
+        "authorized_output": "not exposed",
+        "actual_request_output": "not capped by caller",
+        "finish_reason": "complete",
+        "usage": {"total": 46389, "cost_usd": "n/a"},
+        "artifacts": ["accepted R4 lived/science artifacts; sha256 5665b604775a9b50ebaa53038e2289fda0aaac82292e55f79fdb06bc1aac25eb"]
+      },
+      {
+        "call_id": "019f4ef4-3256-7a23-8bf9-a5e2ec9154bf",
+        "role_and_objective": "final exhaustive quote and full-packet acceptance audit of R4",
+        "requested_model": "gpt-5.6-luna",
+        "actual_model": "gpt-5.6-luna",
+        "provider": "openai native Codex 0.144.1",
+        "reasoning": "max",
+        "endpoint_requested_output": "native session; no caller max_tokens",
+        "authorized_output": "not exposed",
+        "actual_request_output": "not capped by caller",
+        "finish_reason": "complete",
+        "usage": {"total": 64062, "cost_usd": "n/a"},
+        "artifacts": ["ACCEPTED FOR FRAMING; review sha256 b69c038632eac55085129ee889432232ce238ccc2e6812bb311112febf818155"]
       }
     ],
     "research_reviewer": {
       "model": "gpt-5.6-luna",
       "provider": "openai native Codex 0.144.1",
       "reasoning": "max",
-      "verdict": "MORE RESEARCH REQUIRED",
-      "commission": "one focused model-owned rights-safe adult lived-evidence pass for durable freedom, feared loss versus realized benefit, failed moderation/private costs/triggers, broader moments, and multi-account native language; preserve science and industry"
+      "verdict": "ACCEPTED FOR FRAMING",
+      "result": "R4 accepted after an exhaustive quote and full-packet audit; independent bird audit matched 24 of 24 displayed quotations and also accepted"
     },
     "focused_packet_reviewer": {
       "model": "gpt-5.6-luna",
@@ -303,8 +331,10 @@
       "r2_full_packet_reviewer": "REGENERATE FROM EXISTING PACKETS",
       "r3_independent_birds_eye_reviewer": "ACCEPTED FOR FRAMING WITH ONE CONCRETE QUOTE DEFECT",
       "r3_full_packet_reviewer": "ACCEPTED FOR FRAMING",
-      "operator_disposition": "REGENERATE FROM EXISTING PACKETS",
-      "reason": "R3 fixed the commissioned defects and both reviews accept its depth; concrete packet comparison shows S-012 quotation still gained a period, so one final model-owned quote and citation sweep is required; no new research"
+      "r4_independent_birds_eye_reviewer": "ACCEPTED FOR FRAMING; 24/24 displayed quotations exact",
+      "r4_full_packet_reviewer": "ACCEPTED FOR FRAMING",
+      "operator_disposition": "ACCEPTED FOR FRAMING",
+      "reason": "all 23 packets represented; quote fidelity, mappings, outcome tiers, analogies, rights, grades, scientific limits, villain claims, and belief-change depth passed both independent reviews"
     },
     "planner": "gpt-5.6-sol",
     "planner_reasoning": "ultra (native Codex Sol)",
@@ -339,5 +369,5 @@
     "prompts/research-agent.md": "5bff930"
   },
   "stages_rerun_because": "",
-  "notes": "RP-000–RP-027 are excluded bootstrap diagnostics. Run-001 is the first real research and prose baseline. Twenty-three packets are accepted and sufficient. R3 fixed R2's commissioned defects and preserves the accepted method design. Although the full-packet reviewer accepted R3, the bird audit identified an added period in the exact S-012 quotation plus two minor coherence/citation issues. One final model-owned complete quote/citation sweep is commissioned from the same evidence. No new retrieval or architecture. Muse Spark 1.1 is deferred until after this Opus baseline and does not block it."
+  "notes": "RP-000–RP-027 are excluded bootstrap diagnostics. Run-001 is the first real research and prose baseline. Research is accepted for framing: 23 rights-audited packets, complete R4 lived/science syntheses, 24/24 displayed quotations verified by the independent bird audit, and final Luna acceptance. The observed loop corrected evidence depth, packet support, synthesis method, persona/outcome structure, analogy safety, and exact traceability without adding a framework or deterministic research architecture. Framing is next. Muse Spark 1.1 is deferred until after this Opus baseline and does not block it."
 }

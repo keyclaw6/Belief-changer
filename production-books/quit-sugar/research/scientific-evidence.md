@@ -1,23 +1,31 @@
-# Scientific Evidence — <Book Title>
+# Scientific Evidence — Quit Sugar
 
-Synthesize accepted source packets only. Every bullet must name its bank, evidence grade, source IDs, and applicable persona IDs (`ALL` when universal). Preserve material disagreement instead of averaging it away; facts make the trap visible and never serve fear.
-
-Standard bullet:
-
-`- [Bank N] [SUPPORTED | MIXED | CONTESTED] <claim> — Persona IDs: P-__ | ALL — Source IDs: S-__, S-__ — Limits / disagreement: <notes>`
-
-- `SUPPORTED`: independent evidence converges for the claim as written.
-- `MIXED`: support is limited, indirect, population-dependent, or method-dependent.
-- `CONTESTED`: credible sources materially disagree; state the disagreement.
+Synthesize accepted source packets only. Grades apply to the claim as written. Human testimony remains lived evidence; commercial testimony is not efficacy evidence. Scientific persona tags are thematic relevance tags wherever they extend beyond the lived-experience persona table; they do not create additional lived-experience personas or alter the seven-persona functional map.
 
 ## Bank 7 — Mechanism & Science Bank
 
-Each candidate claim needs at least two independent source packets or a `CONTESTED` grade.
+- [Bank 7] [CONTESTED] A broad claim that ordinary human sugar consumption constitutes an established addiction remains unsettled: the critical review states, “We find little evidence to support sugar addiction in humans.” Human imaging and intervention findings do not by themselves demonstrate clinical addiction. — Persona IDs: ALL — Source IDs: S-001#E-001, S-005#E-001, S-006#E-001 — Limits / disagreement: S-001 emphasizes sparse human evidence and deprivation-shaped rodent work; S-005 found no whole-cohort sucrose-versus-sucralose BOLD difference; S-006 combined fat and sugar and did not study clinical compulsion.
 
-- [Bank 7] [SUPPORTED | MIXED | CONTESTED] <mechanism, loop, withdrawal, tolerance, inversion, or sensory definition> — Persona IDs: P-__ | ALL — Source IDs: S-__, S-__ — Limits / disagreement: <notes>
+- [Bank 7] [MIXED] Qualitative evidence supports multiple reported maintenance pathways—taste, pleasure, routine, boredom, environment, social access, hunger, and perceived control—but does not quantify their causal importance or establish a single human craving loop. — Persona IDs: P-01, P-03 — Source IDs: S-004#E-001, S-009#E-001 — Limits / disagreement: S-004 involved seven self-selected adults and a small gymnema intervention; S-009 involved nineteen students at one Saudi university and did not test solutions or durable cessation.
+
+- [Bank 7] [MIXED] Repeated exposure can alter food-response or associative-learning measures in some experimental settings, but the packet set cannot assign such effects to sugar alone or equate them with escalating compulsion. — Persona IDs: ALL — Source IDs: S-006#E-001, S-019#E-001 — Limits / disagreement: S-006 changed fat and sugar together, used a small normal-weight sample, and had a comparator differing in protein; S-019 found greater intake and weight gain on an ultra-processed diet but stated that the responsible feature was unknown.
+
+- [Bank 7] [MIXED] A sweet-intake neural circuit has causal evidence in mice, while human translation remains limited; a separate human trial found, “We did not observe significant differences in BOLD signal to any food cue contrasts” in the whole cohort. — Persona IDs: P-01, P-03 — Source IDs: S-003#E-001, S-005#E-001 — Limits / disagreement: S-003’s causal manipulation was in mice and human imaging did not establish the complete causal circuit; S-005 found prespecified BMI/sex interactions despite no whole-cohort effect.
+
+- [Bank 7] [MIXED] Substantial dietary fructose or sugar-sweetened-beverage exposure is reviewed as promoting hepatic insulin resistance through several pathways, but this does not establish that fruit, every carbohydrate, occasional sugar, or ordinary craving has the same effect. — Persona IDs: ALL — Source IDs: S-002#E-001, S-019#E-001 — Limits / disagreement: S-002 includes unusually high or hypercaloric exposures and is not evidence for every sugar source; S-019’s controlled ultra-processed-food trial did not isolate fructose or sugar as the responsible feature.
+
+- [Bank 7] [MIXED] Sweet taste and palatability can affect reported pleasure or food-response measures, but those effects are not equivalent to addiction: blocking sweet taste reduced reported pleasure in a small qualitative intervention, while the sucrose-versus-sucralose trial found no whole-cohort food-cue BOLD difference. — Persona IDs: P-01 — Source IDs: S-004#E-001, S-005#E-001 — Limits / disagreement: S-004 did not establish ordinary craving mechanisms or quitting efficacy; S-005’s subgroup interactions do not create a universal sugar-specific effect.
+
+- [Bank 7] [MIXED] Human reports of battle, daily craving management, or difficulty after restriction establish subjective difficulty in particular accounts, not physiological withdrawal or restlessness. — Persona IDs: P-02, P-06 — Source IDs: S-001#E-001, S-020#E-002, S-021#E-002 — Limits / disagreement: S-001 warns that rodent withdrawal and binge findings arose largely from intermittent access and deprivation; S-020 is a short qualitative process evaluation; S-021 is one commercial wellness testimonial and does not establish withdrawal.
 
 ## Bank 8 — Villain Dossier
 
-Capture independently sourced mechanisms that engineer demand: design, business model, recruitment, or marketing mythology.
+- [Bank 8] [SUPPORTED] Historical records document product-level demand optimization: an RJR report described formulation through taste, smell, appearance, flavour libraries, and ingredient combinations, including “The ideal, Winter says, is "to leave people wanting more."”; a documentary analysis reported that new children’s drink flavours were developed through numerous product tests on children. — Persona IDs: P-01, P-03, P-05 — Source IDs: S-013#E-001, S-018#E-001 — Limits / disagreement: These are documented historical practices and objectives; they do not establish addiction, deception, clinical harm, current universal practice, or actual overeating.
 
-- [Bank 8] [SUPPORTED | MIXED | CONTESTED] <engineered-demand mechanism> — Persona IDs: P-__ | ALL — Source IDs: S-__, S-__ — Limits / disagreement: <notes>
+- [Bank 8] [SUPPORTED] Youth-directed food marketing was documented as integrated across television, packaging, in-store, Internet, event, and cross-promotional channels, while company research reported children’s role in purchase decisions and marketing’s promotion of “pester power.” — Persona IDs: P-05 — Source IDs: S-015#E-001, S-016#E-001 — Limits / disagreement: The FTC reports document expenditures, techniques, and company research; they do not establish a universal causal effect on obesity or adult consumption.
+
+- [Bank 8] [MIXED] Historical tobacco ownership was associated with a higher likelihood that sampled foods were classified as fat-and-sodium hyper-palatable, and related documentary evidence describes tobacco-owned children’s drink development practices. — Persona IDs: P-01, P-05 — Source IDs: S-017#E-001, S-018#E-001 — Limits / disagreement: S-017 reports a historical ownership association among sampled products, not design intent, addiction, absolute risk, sugar-specific effects, or current company practice; S-018 does not establish that product testing caused craving or overeating.
+
+- [Bank 8] [MIXED] Availability and convenience can place sweet or indulgent foods in repeated paths through cafés, supermarkets, workplaces, vending machines, gas stations, and time-constrained travel. — Persona IDs: P-01, P-03 — Source IDs: S-020#E-004, S-022#E-004 — Limits / disagreement: S-020 and S-022 are qualitative context evidence, not causal access studies; these observations do not establish industry intent, powerlessness, or that social celebrations were engineered demand.
+
+- [Bank 8] [SUPPORTED] An archival industry letter documents a publication-payment condition: “the remainder to be delivered when you notify me that the manuscript has been accepted for publication.” This supports only that the remaining payment was tied to manuscript acceptance; it does not establish fabricated results, concealed funding, or altered conclusions. — Persona IDs: P-04 — Source IDs: S-014#E-001 — Limits / disagreement: S-014 is one letter and supports no inference beyond the documented payment condition.
