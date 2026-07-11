@@ -38,6 +38,8 @@ Its fresh Sol-ultra review returned "REVISE" with five blocker groups: later-cha
 
 The strict support path—zero target blockers across all three first drafts—is now closed. The preregistered run continues unchanged: if this sole occurrence is repaired and does not recur, H-046 is inconclusive; a second first-draft occurrence or final-cycle survival refutes it.
 
+Chapter 1 R2 then completed from exact R1 + raw review at 2,258 wc words with zero reasoning tokens. Objective metrics show 37.8 second-person terms per 1,000, 3.9% questions, 37.3% short sentences, and a 14.4-word mean. It is below the review contract's 2,380-word lower bound and remains craft-imbalanced; semantic repair awaits blind review.
+
 ## Gate verdict
 
-IN PROGRESS. Next: normal Chapter 1 R2 from exact R1 + raw review under the frozen shared assets.
+IN PROGRESS. Next: fresh blind review of exact Chapter 1 R2.

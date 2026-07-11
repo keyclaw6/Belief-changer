@@ -95,6 +95,22 @@
           "artifact_words_wc": 2877,
           "review_status": "REVISE",
           "target_h046_blocker": true
+        },
+        {
+          "chapter": 1,
+          "round": 2,
+          "first_draft": false,
+          "request_sha256": "b326de1c1916796ddecc7bebe2bb5c7e849d1c350f8d3f0eaa7e80ea579d74b8",
+          "call_id": "gen-1783772348-LNMR0d8qoJGyL4V6k1Ne",
+          "actual_model": "anthropic/claude-4.6-opus-20260205",
+          "provider": "Anthropic",
+          "reasoning": {"effort": "none", "reported_reasoning_tokens": 0},
+          "usage": {"prompt": 49185, "completion": 2917, "total": 52102, "cost_usd": 0.31885},
+          "finish_reason": "stop",
+          "artifact": "calibration/runs/run-009/chapters/chapter-01-r2.md",
+          "artifact_sha256": "7e2510809b18a04edcf145abc3a8a50a33513f46909dd41971e77e481463a541",
+          "artifact_words_wc": 2258,
+          "review_status": "PENDING"
         }
       ]
     },
@@ -145,5 +161,5 @@
   },
   "direction": "factory restart across Chapters 1–3; no Chapter 3 tuning and no main merge",
   "h046_first_draft_target_blockers": {"chapter_01": true, "chapter_02": null, "chapter_03": null},
-  "notes": "The prompt remains frozen. Chapter 1 R1 review found one H-046 target occurrence plus unrelated guardrail, ownership, anatomy, and craft failures. H-046 can no longer be fully supported, but one repaired occurrence remains inconclusive under the preregistered rule. Normal fixed-context R2 follows with no shared change."
+  "notes": "The prompt remains frozen. Chapter 1 R2 used exact R1 + raw review and zero reasoning tokens. Objective measurement shows over-compression and craft imbalance before its fresh review; no shared or per-chapter commission changed."
 }
