@@ -196,6 +196,34 @@
         "finish_reason": "complete",
         "usage": {"total": "n/a", "cost_usd": "n/a"},
         "artifacts": ["CORRECTION REQUIRED verdict plus complete accepted replacement packets; review sha256 1a2cf2e452d522516e73303a709590f1c00ff596acdcfb83b0303ee14bf23f48"]
+      },
+      {
+        "call_id": "019f4eb9-25d0-7711-b2ab-0c760b3a8488",
+        "role_and_objective": "fresh complete lived/science resynthesis from all 23 accepted packets",
+        "requested_model": "gpt-5.6-luna",
+        "actual_model": "gpt-5.6-luna",
+        "provider": "openai native Codex 0.144.1",
+        "reasoning": "max",
+        "endpoint_requested_output": "native session; no caller max_tokens",
+        "authorized_output": "not exposed",
+        "actual_request_output": "not capped by caller",
+        "finish_reason": "complete",
+        "usage": {"total": 53627, "cost_usd": "n/a"},
+        "artifacts": ["complete local lived/science candidate; sha256 5d3a538c8b572ac1238b9ca30d387f5252df58d6b2ba0c5b5fcd58cae65d3f49"]
+      },
+      {
+        "call_id": "019f4ec3-379b-7442-981d-9dbaa27d73f6",
+        "role_and_objective": "fresh full-packet source-fidelity and scientific-honesty acceptance review",
+        "requested_model": "gpt-5.6-luna",
+        "actual_model": "gpt-5.6-luna",
+        "provider": "openai native Codex 0.144.1",
+        "reasoning": "max",
+        "endpoint_requested_output": "native session; no caller max_tokens",
+        "authorized_output": "not exposed",
+        "actual_request_output": "not capped by caller",
+        "finish_reason": "complete",
+        "usage": {"total": 64783, "cost_usd": "n/a"},
+        "artifacts": ["ACCEPTED FOR FRAMING on source fidelity; review sha256 ab0f0fd1e6c547852b02cad8d4a5d8f4fc7afeff13bfdfcba0983f937bc2955b; superseded by concrete method-usefulness bird audit"]
       }
     ],
     "research_reviewer": {
@@ -211,6 +239,12 @@
       "reasoning": "max",
       "verdict": "CORRECTION REQUIRED AND SUPPLIED",
       "result": "S-020 through S-023 replaced with source-supported excerpts and narrowed scope; ready for fresh full resynthesis"
+    },
+    "resynthesis_review": {
+      "source_fidelity_reviewer": "ACCEPTED FOR FRAMING",
+      "independent_birds_eye_reviewer": "REGENERATE FROM EXISTING PACKETS",
+      "operator_disposition": "REGENERATE FROM EXISTING PACKETS",
+      "reason": "method integrity and belief-change usefulness outrank schema/source correctness; collapse redundant personas, separate true freedom from managed truce and early signals, remove unsafe analogies, and stop pseudo-triangulating unrelated science"
     },
     "planner": "gpt-5.6-sol",
     "planner_reasoning": "ultra (native Codex Sol)",
@@ -245,5 +279,5 @@
     "prompts/research-agent.md": "5bff930"
   },
   "stages_rerun_because": "",
-  "notes": "RP-000–RP-027 are excluded bootstrap diagnostics. Run-001 is the first real research and prose baseline. Twenty-three packets are accepted. The focused retrieval closed the commissioned lived-evidence categories, but its first packet form failed retained-support traceability; a fresh canonical-source audit supplied complete corrected replacements. Fresh resynthesis and review are next. Muse Spark 1.1 is deferred until after this Opus baseline and does not block it."
+  "notes": "RP-000–RP-027 are excluded bootstrap diagnostics. Run-001 is the first real research and prose baseline. Twenty-three packets are accepted and sufficient. The first 23-packet synthesis passed formal source fidelity but failed an independent method/usefulness audit: it scattered the central belief-change engine, blurred freedom with management and early signals, duplicated personas, and retained unsafe analogies. One fresh regeneration from the same packets is commissioned; no new retrieval or architecture. Muse Spark 1.1 is deferred until after this Opus baseline and does not block it."
 }
