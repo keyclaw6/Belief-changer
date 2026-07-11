@@ -2,7 +2,7 @@
   "run": "run-004",
   "date": "2026-07-11",
   "stage": "A",
-  "status": "IN_PROGRESS",
+  "status": "PASS",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "controlled full-versus-minimal context prose edit for Chapter 2",
@@ -49,15 +49,60 @@
   ],
   "models": {
     "editors": {
-      "arm_a": {"model": "anthropic/claude-opus-4.6", "reasoning": {"effort": "none"}, "calls": []},
-      "arm_b": {"model": "anthropic/claude-opus-4.6", "reasoning": {"effort": "none"}, "calls": []}
+      "arm_a": {
+        "model": "anthropic/claude-opus-4.6",
+        "actual_model": "anthropic/claude-4.6-opus-20260205",
+        "reasoning": {"effort": "none", "reported_reasoning_tokens": 0},
+        "calls": [{
+          "call_id": "gen-1783764282-ar3I49I8pinN3UFbJd6f",
+          "usage": {"prompt": 52713, "completion": 4557, "total": 57270, "cost_usd": 0.37749},
+          "finish_reason": "stop",
+          "artifact": "calibration/runs/run-004/chapters/chapter-02-arm-a.md",
+          "artifact_sha256": "421415e0632aef7661ed2afbb497a0b829ea7c4bbced429801b7e5e6a3c9d4a7",
+          "review_verdict": "ACCEPT"
+        }]
+      },
+      "arm_b": {
+        "model": "anthropic/claude-opus-4.6",
+        "actual_model": "anthropic/claude-4.6-opus-20260205",
+        "reasoning": {"effort": "none", "reported_reasoning_tokens": 0},
+        "calls": [{
+          "call_id": "gen-1783764404-CmL583DFF8lCTjZlFWL2",
+          "usage": {"prompt": 26503, "completion": 4520, "total": 31023, "cost_usd": 0.245515},
+          "finish_reason": "stop",
+          "artifact": "calibration/runs/run-004/chapters/chapter-02-arm-b.md",
+          "artifact_sha256": "7dd88b13b797b48f523bf7c45a82e25c5949bd746bfaa2c5b82c7713d75c6c6d",
+          "review_verdict": "ACCEPT"
+        }]
+      }
     },
     "reviewers": {
       "model": "gpt-5.6-sol",
       "provider": "openai native Codex 0.144.1",
       "reasoning": "ultra",
       "execution": "codex exec --ephemeral --disable multi_agent --model gpt-5.6-sol -c model_reasoning_effort=ultra",
-      "calls": []
+      "calls": [
+        {
+          "call_id": "019f50a6-d6c8-7c51-ba19-dc9e1d0e8e45",
+          "arm": "A",
+          "usage_total_tokens": 1055837,
+          "cached_input_tokens": 962816,
+          "reasoning_output_tokens": 7818,
+          "verdict": "ACCEPT",
+          "artifact": "calibration/runs/run-004/chapters/chapter-02-arm-a-review.md",
+          "artifact_sha256": "5d6eedb4214227dedb6289214fb72a3e767d411cee97c0750d029940540e7bed"
+        },
+        {
+          "call_id": "019f50a6-d6c9-7270-9714-2e71bc293acc",
+          "arm": "B",
+          "usage_total_tokens": 557667,
+          "cached_input_tokens": 489472,
+          "reasoning_output_tokens": 7684,
+          "verdict": "ACCEPT",
+          "artifact": "calibration/runs/run-004/chapters/chapter-02-arm-b-review.md",
+          "artifact_sha256": "d166bca13708a512e5f1506792cf2614b492329f30a097c91a7acddfbbb8b961"
+        }
+      ]
     },
     "judges": []
   },
@@ -69,5 +114,13 @@
     "production-books/quit-sugar/chapters/chapter-01.md": "d7132ff"
   },
   "direction_audit": "GO — same-pass control isolates context, both arms are real prose, no process work first",
-  "notes": "Generate both arms before reading either review. Promote only a fresh ACCEPT. Matching verdicts do not establish context causality."
+  "result": {
+    "arm_a": "ACCEPT",
+    "arm_b": "ACCEPT",
+    "h041_causal_verdict": "INCONCLUSIVE — matching verdicts",
+    "promoted": "arm_a control",
+    "selection_reason": "context reduction earned no causal advantage; default to the accepted control rather than adopt an unproven omission",
+    "live_artifact": "production-books/quit-sugar/chapters/chapter-02.md"
+  },
+  "notes": "Both arms were generated before either review was opened. Both unrestricted fresh Sol reviews returned ACCEPT with zero blockers. H-041 cannot rank context. Arm A is promoted by control-default, not post-hoc metric cherry-picking."
 }

@@ -1,6 +1,6 @@
 # Run report — run-004
 
-**Stage:** A **Scope:** Chapter 2 editor-context A/B **Verdict:** IN PROGRESS
+**Stage:** A **Scope:** Chapter 2 editor-context A/B **Verdict:** PASS
 
 ## What will run
 
@@ -18,8 +18,24 @@ The run-boundary bird's-eye audit returned `GO`: context is the only assigned ar
 
 ## Results
 
-Pending both generations and both unrestricted fresh reviews.
+Both Opus calls completed with reasoning disabled and zero reported reasoning tokens. Both artifacts were sealed before either review was opened. Separate unrestricted Sol `ultra` reviewers returned `ACCEPT` with zero blocking defects.
+
+| Measure | Arm A — full context | Arm B — minimal context | Target |
+|---|---:|---:|---:|
+| Verdict | `ACCEPT` | `ACCEPT` | `ACCEPT` |
+| Artifact words (`wc -w`) | 3,299 | 3,275 | 2,550–3,450 |
+| You/your | 28.2/1k | 29.7/1k | 25–33/1k |
+| Questions | 10.7% | 9.8% | 8–10% |
+| Sentences under 8 words | 24.2% | 22.5% | ~20% |
+| Average sentence | 17.2 words | 18.1 words | 15–17 |
+| Blocking defects | 0 | 0 | 0 |
+
+### H-041 causal verdict
+
+`INCONCLUSIVE` by the preregistered rule: matching `ACCEPT` verdicts cannot rank full versus minimal context. The concurrent control does show that context reduction was not necessary for convergence. Both arms improved the H-040 craft failures after receiving the exact measured review, so the strongest remaining mechanism is feedback iteration or stochastic resampling, not demonstrated context interference.
+
+Arm A is promoted. This is a control-default decision: because the treatment earned no causal advantage, the factory does not adopt an unproven context omission. Arm B remains preserved as an accepted experimental artifact. No post-hoc claim that Arm A is intrinsically superior is made.
 
 ## Gate verdict
 
-Pending.
+PASS. Chapter 2 now has a fresh accepted artifact at `production-books/quit-sugar/chapters/chapter-02.md`. Stage A proceeds to Chapter 3.
