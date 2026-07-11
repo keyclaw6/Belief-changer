@@ -239,7 +239,8 @@ Seeded by the harness builder (2026-07-10) as starting capital — derive priori
 - Rival explanations / signal risk: fresh resampling may remove the defect without the amendment; a strict reviewer may still overclassify rhetoric; the priority rule may improve evidence discipline while weakening persuasive force. The three-chapter blind gate and no-amendment stability run distinguish these.
 - Result to date: Chapter 1 R1's fresh review found one target occurrence: unsupported causal content/invented evidence and unowned later-chapter conclusions. It also found managed-truce ridicule, premature C-20 imagery, anatomy defects, and severe craft imbalance. The zero-target support path is closed; one occurrence repaired without recurrence remains INCONCLUSIVE under the preregistered rule.
 - Result to date: Chapter 1 R2's Sol-max review found the target boundary still present: unrouted EV-04 supported a causal/general prediction and the chapter rebuilt C-05's anti-method mechanism. It also failed assigned scene, lexicon, length, and craft requirements. Because R2 is not final, the refutation condition has not yet fired.
-- Next test: run final Chapter 1 R3 from exact R2 + raw review with every asset frozen. Any final target survival refutes H-046.
+- Result to date: final Chapter 1 R3 completed from exact R2 + raw review with the prompt and commission unchanged. It is 2,537 wc words; length and questions pass, while direct address, short sentences, and mean sentence remain materially out of range. Target boundary survival awaits the final review.
+- Next test: run the final blind Chapter 1 R3 review. Any target survival refutes H-046; any rejection closes run-009 before Chapter 2 under the fixed three-cycle rule.
 
 ## H-007 — planner reasoning effort                       [RETIRED — founder-fixed 2026-07-10]
 - Gap: a reasoning-effort sweep was proposed before the founder fixed every allowed non-writer model to its top supported reasoning mode.

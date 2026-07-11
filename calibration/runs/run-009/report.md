@@ -46,6 +46,8 @@ The OpenRouter Sol-max review returned "REVISE". R2 omitted the assigned SC-08 s
 
 The H-046 target boundary therefore persisted into R2, but R2 is not the preregistered final cycle. R3 receives the exact artifact and raw review under the same frozen prompt; target survival in R3 refutes H-046.
 
+Final Chapter 1 R3 completed at 2,537 wc words with zero reasoning tokens. Objective metrics show 44.2 second-person terms per 1,000, 10.0% questions, 40.0% short sentences, and a 13.7-word mean. Length and questions recovered; rhythm and direct-address density remain materially outside the frozen contract.
+
 ## Gate verdict
 
-IN PROGRESS. Next: final Chapter 1 R3 under the frozen assets.
+IN PROGRESS. Next: final blind review of exact Chapter 1 R3.

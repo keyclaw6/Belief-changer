@@ -112,6 +112,22 @@
           "artifact_words_wc": 2258,
           "review_status": "REVISE",
           "target_h046_blocker": true
+        },
+        {
+          "chapter": 1,
+          "round": 3,
+          "first_draft": false,
+          "request_sha256": "1d563f10bb23b5d46e6eb487a5cc29743d2acf765ac2d309513a1d843ab1b227",
+          "call_id": "gen-1783772960-cDFvy3SoaaLCRrluLwQj",
+          "actual_model": "anthropic/claude-4.6-opus-20260205",
+          "provider": "Anthropic",
+          "reasoning": {"effort": "none", "reported_reasoning_tokens": 0},
+          "usage": {"prompt": 48307, "completion": 3232, "total": 51539, "cost_usd": 0.322335},
+          "finish_reason": "stop",
+          "artifact": "calibration/runs/run-009/chapters/chapter-01-r3.md",
+          "artifact_sha256": "28ab34e4e43c12f578881f70ddc58951dd9f815e74a4d1221d5c4a68207b9ce4",
+          "artifact_words_wc": 2537,
+          "review_status": "PENDING"
         }
       ]
     },
@@ -193,5 +209,5 @@
   },
   "direction": "factory restart across Chapters 1–3; no Chapter 3 tuning and no main merge",
   "h046_first_draft_target_blockers": {"chapter_01": true, "chapter_02": null, "chapter_03": null},
-  "notes": "The prompt remains frozen. OpenRouter Sol-max reviewed Chapter 1 R2 after the native pre-inference limit. R2 retained the H-046 target boundary plus length, craft, scene, and lexicon failures. R3 is the final fixed revision cycle; no commission or shared asset changes."
+  "notes": "The prompt and commission remained frozen. Final Chapter 1 R3 completed with zero reasoning tokens. Length and question rate recovered; short-sentence and second-person density remain far outside targets. The final blind review decides the chapter and H-046 final-survival condition."
 }
