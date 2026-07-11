@@ -21,12 +21,12 @@ Use the simplest empirical loop: freeze one generic hypothesis and its inputs; p
 - Last accepted product: `production-books/quit-sugar/chapters/chapter-01.md` from run-002 and `chapter-02.md` from run-004. Runs 005–012 have promoted no later prose.
 - Frozen generic commissioner: commit `23ca037`; SHA-256 `b1eabd112ab9c1c6e67284ab7bae27c512bf7ac3affb3be02877343c829e1c18`.
 - Frozen grounded commissions: commit `4f4eda4`; C-01 `bb11fef...`, C-02 `8eed6fb5...`, C-03 `08c52093...`. The source-fidelity gate accepted all three at commit `bfffe90`.
-- Frozen current candidate: run-012 C-01 R1 at commit `8258f9e`; SHA-256 `8c1cdbe...`; 2,252 `wc` words and below the existing 2,380-word floor. It is not accepted product.
-- Work is paused immediately after run-012 C-01 R1 and its first review attempt. Do not revise C-01 or change an asset before completing the frozen first-draft batch.
+- Frozen first-draft batch so far: C-01 R1 at commit `8258f9e`, SHA-256 `8c1cdbe...`, 2,252 `wc` words; C-02 R1 is the next committed artifact, SHA-256 `f28d4d...`, 4,162 `wc` words. C-01 is below its 2,380-word floor and C-02 is above its 3,600-word upper edge. Neither is accepted product.
+- Work is paused immediately after run-012 C-02 R1. Do not revise C-01 or C-02 or change an asset before completing the frozen first-draft batch.
 - Preserved partially non-authoritative measurement: `calibration/runs/run-012/reviews/chapter-01-r1.md` records a reviewer that saw the canonical plan without the frozen C-01 source-grounded commission. Its evidence-grounding and attribution findings, and therefore its overall `REVISE`, cannot gate continuation or score H-049. Preserve only independently checkable craft, anatomy, chapter-job, length, direct-address, and sentence-pulse observations as diagnostics.
-- Next artifact: `calibration/runs/run-012/chapters/chapter-02-r1.md` under frozen H-049 inputs, using committed C-01 R1 only for continuity. Then produce C-03 R1, freeze the complete readable batch, run a source-grounded evidence-fidelity review for H-049, and run the blind target panel before forming another hypothesis.
+- Next artifact: `calibration/runs/run-012/chapters/chapter-03-r1.md` under frozen H-049 inputs, using committed C-02 R1 only for continuity. Then freeze the complete readable batch, run a source-grounded evidence-fidelity review for H-049, and run the blind target panel before forming another hypothesis.
 - Judge baseline: Stage-A v2 separates efficacy, craft, and integrity roles, collapses both A/B orders into repeated observations, and excludes authorship detection. Its two prompt controls must pass before the run-012 target panel; v2 scores are not compared numerically with legacy scores.
-- External blocker: none recorded. The partial measurement defect does not block the frozen batch.
+- External blocker: none recorded. C-02's transport preserved the completed first response but lost response-only provider metadata in a post-write path-formatting error; the artifact is frozen rather than resampled, and the metadata defect does not block C-03.
 
 ## Invariants
 

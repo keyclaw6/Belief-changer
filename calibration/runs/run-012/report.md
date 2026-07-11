@@ -35,6 +35,10 @@ One fresh Sol-ultra source-fidelity audit compared all three against the canonic
 
 Opus 4.6 reasoning-none then produced C-01 R1 and stopped normally at 2,252 `wc -w` words. The candidate froze unedited at commit `8258f9e`, SHA-256 `8c1cdbe...`; it is below the existing 2,380-word floor and is not accepted product.
 
+The same frozen contract then produced C-02 R1 from the faithful C-02 commission with committed C-01 R1 as its sole previous chapter. The catalog-maximum request received a pre-inference HTTP 402 with an exact 61,775-token authorization ceiling; the authorized request returned one complete 4,162-word chapter, SHA-256 `f28d4d...`. It is frozen unedited and above the existing 3,600-word upper edge for its 3,000-word commission, so it is not accepted product.
+
+The C-02 one-shot transport wrote the complete response before raising a post-write `ValueError`: it had received a relative artifact path but attempted to render that path relative to an absolute repository root. The pre-call hashes, configured Opus route, reasoning effort `none`, 61,775-token allowance, elapsed time, artifact, and artifact hash survived. Response-only metadata—call ID, runtime model, provider, finish reason, token usage, cost, and reported reasoning-token count—did not persist. The first response is preserved rather than resampled, and the defect is explicit in `infrastructure/writer-ch02-r1-authorized.json`.
+
 ## Founder-directed measurement correction
 
 The first Chapter 1 reviewer saw the canonical plan but did not receive the frozen C-01 source-grounded commission. That omission matters because the commission expressly authorizes source attribution and details that the plan-only review called invented, including the names, credentials, publication/date context, weekly decision time, and Month-1 timing. The review is preserved byte-for-byte at `reviews/chapter-01-r1.md` (`91c30f...`), but its overall `REVISE` and its objections to commission-authorized attribution/details are non-authoritative for H-049. They cannot gate the causal sample or authorize a C-01 revision.
@@ -45,7 +49,7 @@ The preserved call is thread `019f51a6-5522-70a2-be45-f04094ec200e`: 108,978 inp
 
 ## Exact continuation
 
-No C-01 revision or shared amendment comes next. The exact next artifact is `chapters/chapter-02-r1.md`, generated under frozen H-049 from the frozen C-02 commission with committed C-01 R1 as its sole previous chapter. C-03 R1 follows from the frozen C-03 commission with committed C-02 R1 as its sole previous chapter. The full C-01-C-03 first-draft batch then freezes before any revision decision.
+No C-01 or C-02 revision or shared amendment comes next. The exact next artifact is `chapters/chapter-03-r1.md`, generated under frozen H-049 from the frozen C-03 commission with committed C-02 R1 as its sole previous chapter. The full C-01-C-03 first-draft batch then freezes before any revision decision.
 
 Before product interpretation, the exact target-panel model and reasoning configuration must pass both Stage-A v2 prompt controls: identical texts tie stably, and the intact reference stably beats its locally degraded copy. A control failure invalidates the judge instrument but does not alter or suppress the frozen batch.
 

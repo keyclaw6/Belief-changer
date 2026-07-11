@@ -1,0 +1,21 @@
+{
+  "run": "run-012",
+  "chapter": 2,
+  "cycle": 1,
+  "label": "writer-ch02-r1-authorized",
+  "requested_model": "anthropic/claude-opus-4.6",
+  "max_tokens": 61775,
+  "reasoning": {
+    "effort": "none"
+  },
+  "input_sha256": "0c0353eec949287d237d2cf5a18cf6ee7c8283cdcaef7cf33ba17171ef7f35b5",
+  "request_sha256": "2357943ee9ea6c06139427fee718d7ae04f2bcf13fe4787f077912eae370b68d",
+  "commission_sha256": "8eed6fb5d52b9375ff1da962e1367690c08bbe7f5092e37b1e8cbcc622901c90",
+  "previous_sha256": "8c1cdbe5b104ba0510a94ee067f0c76e67b5d413098376db53df3d7ec222f2ac",
+  "candidate_sha256": null,
+  "review_sha256": null,
+  "http_status": null,
+  "error_type": "ValueError",
+  "error_message": "'calibration/runs/run-012/chapters/chapter-02-r1.md' is not in the subpath of '/home/kab/Belief-changer'",
+  "elapsed_seconds": 159.007
+}

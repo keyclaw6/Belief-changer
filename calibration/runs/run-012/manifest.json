@@ -208,6 +208,46 @@
         "review_status": "partial diagnostic only — the plan-only reviewer omitted the frozen C-01 source-grounded commission, so its overall REVISE cannot gate H-049 or authorize a revision",
         "length_status": "FAIL — below 2,380 existing floor"
       }
+    },
+    "C-02": {
+      "R1_catalog_attempt": {
+        "requested_max_tokens": 128000,
+        "result": "HTTP 402 before inference; zero content and charge",
+        "exact_authorized_ceiling": 61775,
+        "artifact": "calibration/runs/run-012/infrastructure/writer-ch02-r1-catalog-max.json",
+        "artifact_sha256": "42d6a1a52cfe85295387263e4bcff4a0e6db8f6b1b03b987a9c345afdf9d0eda"
+      },
+      "R1": {
+        "call_id": null,
+        "call_id_status": "not retained — the transport wrote the completed response artifact, then raised while formatting its relative artifact path before response metadata was persisted",
+        "requested_model": "anthropic/claude-opus-4.6",
+        "expected_runtime_model": "anthropic/claude-4.6-opus-20260205",
+        "actual_model": null,
+        "actual_model_status": "not retained by the post-write recorder failure; do not infer it as observed metadata",
+        "provider": null,
+        "reasoning": {
+          "configured_effort": "none",
+          "reported_reasoning_tokens": null,
+          "reported_reasoning_tokens_status": "not retained by the post-write recorder failure"
+        },
+        "max_tokens": 61775,
+        "finish_reason": null,
+        "usage_status": "prompt tokens, completion tokens, cost, provider, runtime model, finish reason, call ID, and reported reasoning tokens were not persisted; the response is not resampled",
+        "elapsed_seconds": 159.007,
+        "input_sha256": "0c0353eec949287d237d2cf5a18cf6ee7c8283cdcaef7cf33ba17171ef7f35b5",
+        "request_sha256": "2357943ee9ea6c06139427fee718d7ae04f2bcf13fe4787f077912eae370b68d",
+        "commission_sha256": "8eed6fb5d52b9375ff1da962e1367690c08bbe7f5092e37b1e8cbcc622901c90",
+        "previous_sha256": "8c1cdbe5b104ba0510a94ee067f0c76e67b5d413098376db53df3d7ec222f2ac",
+        "artifact": "calibration/runs/run-012/chapters/chapter-02-r1.md",
+        "artifact_words_wc": 4162,
+        "artifact_sha256": "f28d4d543189dfdcfa24767e81441562c874a032af5ef4732b45ba7b463095c3",
+        "artifact_status": "complete first response, frozen unedited; begins with Chapter 2 anatomy and ends with SUMMARY",
+        "recorder_artifact": "calibration/runs/run-012/infrastructure/writer-ch02-r1-authorized.json",
+        "recorder_artifact_sha256": "2365335474b6cddd1e1caf10c17fdfa6978b4c41d54c758bddf701b551951028",
+        "recorder_failure": "ValueError after artifact write because a relative output path was passed to Path.relative_to against an absolute repository root",
+        "review_status": "not started — first-draft batch sequencing requires C-03 R1 next",
+        "length_status": "FAIL — above the 3,600-word upper edge of the existing +/-20% gate for the 3,000-word commission"
+      }
     }
   },
   "founder_directed_measurement_correction": {
