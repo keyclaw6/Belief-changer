@@ -2,7 +2,7 @@
   "run": "run-012",
   "date": "2026-07-11",
   "stage": "A",
-  "status": "CONTRACT_FROZEN",
+  "status": "COMMISSIONS_FROZEN",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "source-grounded semantic commissioning followed by a frozen Chapters 1-3 production run",
@@ -98,7 +98,48 @@
       "calibration/runs/run-012/commissions/chapter-02.md",
       "calibration/runs/run-012/commissions/chapter-03.md"
     ],
-    "set_freeze": "all three complete and hashed before the source-fidelity audit; no manual edits"
+    "set_freeze": "all three complete and hashed before the source-fidelity audit; no manual edits",
+    "transport_wrapper_exact": "Use only the embedded commissioner contract, canonical master plan, target chapter ID, and accepted source packets. Do not inspect the filesystem, use outside knowledge, or import material from any source not embedded for this target. Return only the contract output.",
+    "calls": [
+      {
+        "target": "C-01",
+        "thread_id": "019f5194-c750-72c1-8820-e2133bce9258",
+        "status": "success",
+        "input_tokens": 34942,
+        "cached_input_tokens": 8960,
+        "output_tokens": 11053,
+        "reasoning_output_tokens": 9540,
+        "artifact": "calibration/runs/run-012/commissions/chapter-01.md",
+        "artifact_words": 1134,
+        "artifact_sha256": "bb11fefafc0dc012446cfeb7159a6efa9fffd598fcacd1baaf4de8144854f2f4"
+      },
+      {
+        "target": "C-02",
+        "thread_id": "019f5194-c812-7862-aafc-318f5dad81fe",
+        "status": "success",
+        "input_tokens": 34119,
+        "cached_input_tokens": 8960,
+        "output_tokens": 8417,
+        "reasoning_output_tokens": 6101,
+        "artifact": "calibration/runs/run-012/commissions/chapter-02.md",
+        "artifact_words": 1644,
+        "artifact_sha256": "8eed6fb5d52b9375ff1da962e1367690c08bbe7f5092e37b1e8cbcc622901c90"
+      },
+      {
+        "target": "C-03",
+        "thread_id": "019f5194-c6e8-7232-acc2-f6e909348e89",
+        "status": "success",
+        "input_tokens": 37026,
+        "cached_input_tokens": 11008,
+        "output_tokens": 9072,
+        "reasoning_output_tokens": 7064,
+        "artifact": "calibration/runs/run-012/commissions/chapter-03.md",
+        "artifact_words": 1415,
+        "artifact_sha256": "08c52093026052aaceeaa83860472fabfc0e8eceb015f8f61d03090bc755b197"
+      }
+    ],
+    "all_three_completed_before_audit": true,
+    "manual_edits": false
   },
   "commission_audit": {
     "model": "gpt-5.6-sol",
