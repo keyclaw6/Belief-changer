@@ -31,6 +31,7 @@
   "experiment": {
     "unit": "three fresh sequential chapters, not one repaired chapter",
     "first_draft_commission_exact": "Produce the strongest complete final-book chapter assigned by the embedded master plan. This is a fresh first draft: use only the embedded shared inputs, exercise your full judgment, and satisfy the writer contract without narrating your process. Return only the complete chapter, beginning with its Chapter number and title.",
+    "revision_commission_exact": "Produce the strongest complete final-book chapter by revising the exact current candidate against its raw latest review. Reconcile the review with the authoritative plan and style guide using your own judgment; repair every substantiated defect without inventing claims or changing the chapter's one job. Preserve what works, revise as much as quality requires, and return only the complete chapter beginning with its Chapter number and title.",
     "first_draft_inputs": {
       "chapter_01": ["amended chapter-writer prompt", "fixed style guide", "fixed master plan"],
       "chapter_02": ["amended chapter-writer prompt", "fixed style guide", "fixed master plan", "fresh accepted run-009 Chapter 1 only"],
@@ -92,7 +93,8 @@
           "artifact": "calibration/runs/run-009/chapters/chapter-01-r1.md",
           "artifact_sha256": "7becbfeb196a1bf3cb4861e8230b736c752dafa9812f20b77fb3ffc59ab5784a",
           "artifact_words_wc": 2877,
-          "review_status": "PENDING"
+          "review_status": "REVISE",
+          "target_h046_blocker": true
         }
       ]
     },
@@ -101,7 +103,28 @@
       "provider": "openai native Codex",
       "reasoning": "ultra",
       "execution": "codex exec --ephemeral --disable multi_agent --model gpt-5.6-sol -c model_reasoning_effort=ultra",
-      "calls": []
+      "calls": [
+        {
+          "chapter": 1,
+          "round": 1,
+          "first_draft": true,
+          "call_id": "019f5113-dd74-7710-b679-d99e7d7ad3a9",
+          "usage_total_tokens": 1440477,
+          "cached_input_tokens": 1325312,
+          "reasoning_output_tokens": 17248,
+          "verdict": "REVISE",
+          "blocking_groups": [
+            "later-chapter job and curve drift",
+            "unsupported causal content and invented evidence",
+            "managed-truce guardrail failure",
+            "reserved ending metaphor spent early",
+            "anatomy failure"
+          ],
+          "target_h046_blocker": "YES — unsupported causation/evidence plus unowned later-chapter conclusions",
+          "artifact": "calibration/runs/run-009/reviews/chapter-01-r1.md",
+          "artifact_sha256": "7a511fb3bdf1a6298da4a8c0e51c704b1cf55d8caf9bc01a0ac68245d686d039"
+        }
+      ]
     },
     "judges": [
       {"model": "openai/gpt-5.6-sol", "reasoning": "max", "route": "OpenRouter for canonical panel, native fallback recorded if required"},
@@ -121,5 +144,6 @@
     "production-books/quit-sugar/master-plan.md": "5915b9f"
   },
   "direction": "factory restart across Chapters 1–3; no Chapter 3 tuning and no main merge",
-  "notes": "The prompt remains frozen. Fresh Chapter 1 R1 completed with no old prose/review input, Opus reasoning none, and zero reported reasoning tokens. Objective craft is measured but no product or causal verdict precedes the fresh review."
+  "h046_first_draft_target_blockers": {"chapter_01": true, "chapter_02": null, "chapter_03": null},
+  "notes": "The prompt remains frozen. Chapter 1 R1 review found one H-046 target occurrence plus unrelated guardrail, ownership, anatomy, and craft failures. H-046 can no longer be fully supported, but one repaired occurrence remains inconclusive under the preregistered rule. Normal fixed-context R2 follows with no shared change."
 }

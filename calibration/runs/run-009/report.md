@@ -34,6 +34,10 @@ The exact two-sentence generic amendment was committed at "88b6889". No other pr
 
 Fresh Chapter 1 R1 completed at 2,877 wc words with Opus 4.6 and zero reasoning tokens. The first objective measurement found 46.8 second-person terms per 1,000, 7.3% questions, 38.9% short sentences, and a 14.6-word mean. These are raw product facts; no amendment or causal inference is allowed before the frozen three-chapter run is measured.
 
+Its fresh Sol-ultra review returned "REVISE" with five blocker groups: later-chapter job/curve drift, unsupported causal content and invented evidence, ridicule of the managed-truce persona, premature use of C-20's reserved payment metaphor, and incomplete/extra anatomy. The unsupported causation/evidence and unowned later-chapter conclusions count as one H-046 target first-draft occurrence.
+
+The strict support path—zero target blockers across all three first drafts—is now closed. The preregistered run continues unchanged: if this sole occurrence is repaired and does not recur, H-046 is inconclusive; a second first-draft occurrence or final-cycle survival refutes it.
+
 ## Gate verdict
 
-IN PROGRESS. Next: fresh blind Sol review of exact Chapter 1 R1.
+IN PROGRESS. Next: normal Chapter 1 R2 from exact R1 + raw review under the frozen shared assets.
