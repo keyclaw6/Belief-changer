@@ -1,0 +1,64 @@
+{
+  "run": "run-003",
+  "date": "2026-07-11",
+  "stage": "A",
+  "status": "IN_PROGRESS",
+  "operator": "gpt-5.6-sol",
+  "branch": "calibration-lab",
+  "scope": "Chapter 2 prose-only compression after semantic certification, then Chapter 3 if accepted",
+  "hypotheses_tested": ["H-040"],
+  "model_api": "native+openrouter",
+  "baseline_boundary": "c3e5bda — run-002 closed and H-040 preregistered",
+  "inherited_artifacts": {
+    "research": "run-001 accepted R4; unchanged",
+    "framing": "run-001 accepted R2; unchanged",
+    "master_plan": "run-002 accepted R3; sha256 e3fd7cd0ed90e2c6ef29ccabf219f6a10462b31f2ee75a6d9e1b42abbdf913b5",
+    "chapter_01": "run-002 accepted R2; sha256 124124405d2a915f4b67e575e92559f6eb4625e8d883a1aaed76412aa3c49048",
+    "chapter_02_semantic_candidate": "run-002 R3; sha256 420de6c1ae7db7e3266ebff1d8b00955430de0b4dce5ed187029a4ce486d047c",
+    "chapter_02_semantic_certificate": "run-002 R3 review: zero blocking defects; sha256 a9389320d78d668ceacf3eef2cfd4e2114aba53ecfc401cb9dd923d7fd1a6170"
+  },
+  "amendment": {
+    "hypothesis": "H-040",
+    "mechanism": "separate prose compression from already-complete semantic repair so coverage no longer dominates deletion",
+    "single_changed_variable": "fresh prose-only edit objective after a zero-blocker semantic certificate",
+    "allowed_edits": ["cut", "combine", "local reorder", "smooth"],
+    "forbidden_edits": ["new argument", "new evidence", "new device", "new semantic work", "changed frozen wording"],
+    "prediction": "one pass within 2550-3450 words, materially lower short-sentence density, zero blocking defects, fresh ACCEPT"
+  },
+  "held_constant": [
+    "accepted research and framing",
+    "normalized master plan",
+    "accepted Chapter 1 continuity",
+    "Opus 4.6 through OpenRouter",
+    "reasoning effort none",
+    "fresh Sol ultra reviewer",
+    "reference blindness",
+    "shared prompts and style guide"
+  ],
+  "models": {
+    "prose_editor": {
+      "requested_model": "anthropic/claude-opus-4.6",
+      "actual_model": "pending",
+      "provider": "Anthropic through OpenRouter",
+      "reasoning": {"effort": "none"},
+      "requested_max_tokens": 128000,
+      "calls": []
+    },
+    "chapter_reviewer": {
+      "model": "gpt-5.6-sol",
+      "provider": "openai native Codex 0.144.1",
+      "reasoning": "ultra",
+      "execution": "codex exec --ephemeral --model gpt-5.6-sol -c model_reasoning_effort=ultra",
+      "calls": []
+    },
+    "judges": []
+  },
+  "asset_versions": {
+    "prompts/style-guide.md": "e8aa007",
+    "prompts/chapter-writer.md": "e8aa007",
+    "prompts/chapter-reviewer.md": "a91af62",
+    "production-books/quit-sugar/master-plan.md": "5915b9f"
+  },
+  "direction_audit": "GO — one generic variable, falsifiable in one call, shortest path back to prose",
+  "notes": "No shared prompt or plan changes. The run starts from run-002 Chapter 2 R3 because its fresh reviewer certified zero blocking semantic defects and rejected only length and short-sentence density."
+}
