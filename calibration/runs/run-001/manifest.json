@@ -336,6 +336,57 @@
       "operator_disposition": "ACCEPTED FOR FRAMING",
       "reason": "all 23 packets represented; quote fidelity, mappings, outcome tiers, analogies, rights, grades, scientific limits, villain claims, and belief-change depth passed both independent reviews"
     },
+    "framing_calls": [
+      {
+        "call_id": "019f4f03-e960-7731-a8f0-289cc21dae10",
+        "role_and_objective": "fresh complete framing from the accepted research baseline",
+        "requested_model": "gpt-5.6-sol",
+        "actual_model": "gpt-5.6-sol",
+        "provider": "openai native Codex 0.144.1",
+        "reasoning": "ultra",
+        "endpoint_requested_output": "native session; no caller max_tokens",
+        "authorized_output": "not exposed",
+        "actual_request_output": "not capped by caller",
+        "finish_reason": "complete",
+        "usage": {"total": 57130, "cost_usd": "n/a"},
+        "artifacts": ["local R1 framing candidate; sha256 7fdc0c054f1501c0de1dcfe7c0758ef6fc0f0874c76d52d84a32bf43a460b055; rejected after independent bird audit"]
+      },
+      {
+        "call_id": "019f4f0d-5c66-7ab1-85d9-4c1158886188",
+        "role_and_objective": "fresh broad method and evidence review of R1 framing",
+        "requested_model": "gpt-5.6-sol",
+        "actual_model": "gpt-5.6-sol",
+        "provider": "openai native Codex 0.144.1",
+        "reasoning": "ultra",
+        "endpoint_requested_output": "native session; no caller max_tokens",
+        "authorized_output": "not exposed",
+        "actual_request_output": "not capped by caller",
+        "finish_reason": "complete",
+        "usage": {"total": 51239, "cost_usd": "n/a"},
+        "artifacts": ["ACCEPTED FOR MASTER PLAN broad verdict; review sha256 8532aba915e4321b57eadf9d5ad0cfdcd0fc2df6f4c0fe6c71b5454f1b77c0c8; superseded by five concrete bird-audit defects"]
+      },
+      {
+        "call_id": "019f4f11-c071-7c42-9637-d6ed059c0c1a",
+        "role_and_objective": "model-owned complete R2 correction of the five observed framing defects",
+        "requested_model": "gpt-5.6-sol",
+        "actual_model": "gpt-5.6-sol",
+        "provider": "openai native Codex 0.144.1",
+        "reasoning": "ultra",
+        "endpoint_requested_output": "native session; no caller max_tokens",
+        "authorized_output": "not exposed",
+        "actual_request_output": "not capped by caller",
+        "finish_reason": "complete",
+        "usage": {"total": 158963, "cost_usd": "n/a"},
+        "artifacts": ["accepted R2 candidate sha256 bdf35d76668b91776b38e7c905c09fe07f3cbd2664d487c4238c3994acc41257; live framing sha256 2c115313c51fa040474b908e652915f73ebd770c03cd340a94b16efc18145941 differs only by final newline"]
+      }
+    ],
+    "framing_review": {
+      "r1_broad_reviewer": "ACCEPTED FOR MASTER PLAN",
+      "r1_independent_birds_eye_reviewer": "REGENERATE FRAMING — five evidence or internal-consistency defects",
+      "r2_focused_birds_eye_reviewer": "ACCEPTED FOR MASTER PLAN",
+      "operator_disposition": "ACCEPTED FOR MASTER PLAN",
+      "reason": "R2 separates documented intent from observed availability, assigns loop learning to rehearsal rather than a dose, makes the core BAD SUGAR line categorical, bounds the pleasure promise, and makes Compass tools temporary"
+    },
     "planner": "gpt-5.6-sol",
     "planner_reasoning": "ultra (native Codex Sol)",
     "planner_execution": "codex exec --ephemeral --model gpt-5.6-sol -c model_reasoning_effort=ultra",
@@ -368,6 +419,6 @@
     "prompts/chapter-reviewer.md": "a91af62",
     "prompts/research-agent.md": "5bff930"
   },
-  "stages_rerun_because": "",
-  "notes": "RP-000–RP-027 are excluded bootstrap diagnostics. Run-001 is the first real research and prose baseline. Research is accepted for framing: 23 rights-audited packets, complete R4 lived/science syntheses, 24/24 displayed quotations verified by the independent bird audit, and final Luna acceptance. The observed loop corrected evidence depth, packet support, synthesis method, persona/outcome structure, analogy safety, and exact traceability without adding a framework or deterministic research architecture. Framing is next. Muse Spark 1.1 is deferred until after this Opus baseline and does not block it."
+  "stages_rerun_because": "Framing R1 was regenerated once from the same accepted research after an independent bird audit found five concrete evidence or consistency defects that the broad reviewer missed.",
+  "notes": "RP-000–RP-027 are excluded bootstrap diagnostics. Run-001 is the first real research and prose baseline. Research is accepted: 23 rights-audited packets, complete R4 lived/science syntheses, 24/24 displayed quotations verified by the independent bird audit, and final Luna acceptance. Framing R2 is accepted for master planning after one bounded observed-failure correction; no new research, framework, role graph, matrix, deterministic sequence, or hand patch was added. The next artifact is the master plan. Muse Spark 1.1 is deferred until after this Opus baseline and does not block it."
 }
