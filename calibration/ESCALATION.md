@@ -6,7 +6,15 @@
 
 **Stage:** A
 
-**Status:** RESOLVED FOR H-048 DIAGNOSTIC ONLY — no shared amendment or product promotion authorized
+**Status:** ACTIVE CALIBRATION CHECKPOINT — H-048 inconclusive; fresh direction audit required before any production change
+
+## Run-011 result — diagnostic sensitivity failure
+
+The authorized H-048 ablation completed, but NULL stopped at 2,229 `wc -w` words, below its preregistered 2,380-word exposure floor. H-048 is therefore INCONCLUSIVE; the floor is not waived after seeing the output.
+
+Both blind reviews returned REVISE. FULL invented EV-06 outcomes and efficacy plus EV-08 personal-history material. NULL, despite seeing no style guide, still changed a commercial testimonial into “A person I encountered” and asserted “Her system is working,” directly crossing the commission's no-efficacy boundary. This is strong raw evidence that style exposure is not necessary and that Opus prior may be sufficient, but it is not promoted to a formal causal verdict under an under-floor probe.
+
+No identical retry, prompt-length patch, handcrafted style capsule, packet resample, revision, or Chapter 1 promotion is authorized. A fresh bird's-eye auditor must now choose one behavior-agnostic production-level question that moves toward a fixed Chapters 1-3 factory contract rather than another specimen patch.
 
 ## Direction-audit resolution — run-011
 

@@ -1,0 +1,19 @@
+{
+  "run": "run-011",
+  "label": "catalog-max",
+  "launched_concurrently": true,
+  "requested_max_tokens": 128000,
+  "http_status_both_arms": 402,
+  "inference_started": false,
+  "charged": false,
+  "exact_authorized_ceiling_reported_for_both_arms": 80007,
+  "FULL": {
+    "input_sha256": "42222ccfde9ba32787c1da815b7a154e4e98366efd65b29534e6e44b692ea63e",
+    "request_sha256": "2349a95ec7b7afcaa182a50c16e5e7be5323e346f772b588a4ebb9159a09bd13"
+  },
+  "NULL": {
+    "input_sha256": "4eba9f6d01267fc5c969946da76f2900c38529cde3eafde48db4002e33625cdd",
+    "request_sha256": "6af5959671b40ac82fbef3ac5eaa96b93d34076d48f8e7858fdc406f4e8646fc"
+  },
+  "redaction": "Provider error URLs and account identifiers were not retained; they are not causal or reproducibility inputs."
+}

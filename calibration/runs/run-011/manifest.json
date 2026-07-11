@@ -2,7 +2,7 @@
   "run": "run-011",
   "date": "2026-07-11",
   "stage": "A",
-  "status": "PREREGISTERED",
+  "status": "INCONCLUSIVE",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "diagnostic style-exposure ablation on one frozen semantic specimen; no product or factory-asset promotion",
@@ -103,7 +103,7 @@
         "effort": "none"
       },
       "catalog_max_tokens": 128000,
-      "authorized_max_tokens": "resolve immediately before launch"
+      "authorized_max_tokens": 80007
     },
     "chapter_reviewer": {
       "model": "gpt-5.6-sol",
@@ -111,6 +111,122 @@
       "reasoning": "ultra"
     }
   },
+  "writer_execution": {
+    "catalog_attempt": {
+      "requested_max_tokens": 128000,
+      "result": "both arms HTTP 402 before inference; zero charge or content",
+      "exact_shared_authorized_ceiling": 80007,
+      "artifact": "calibration/runs/run-011/infrastructure/writer-catalog-max.json"
+    },
+    "authorized_attempt": {
+      "launched_concurrently": true,
+      "artifact": "calibration/runs/run-011/infrastructure/writer-authorized.json",
+      "FULL": {
+        "call_id": "gen-1783778440-rMPLxNqpNOWfJoPwbYa1",
+        "actual_model": "anthropic/claude-4.6-opus-20260205",
+        "provider": "Anthropic",
+        "finish_reason": "stop",
+        "reported_reasoning_tokens": 0,
+        "prompt_tokens": 22540,
+        "completion_tokens": 2756,
+        "cost_usd": 0.1816,
+        "artifact": "calibration/runs/run-011/chapters/chapter-01-full.md",
+        "artifact_sha256": "a3a9fd734e98e45e81e7635598f8b61560110a70923a9c688c3737e000c0aa03",
+        "wc_words": 2081
+      },
+      "NULL": {
+        "call_id": "gen-1783778440-inDB9MCrdVff5YcqJzLk",
+        "actual_model": "anthropic/claude-4.6-opus-20260205",
+        "provider": "Anthropic",
+        "finish_reason": "stop",
+        "reported_reasoning_tokens": 0,
+        "prompt_tokens": 1374,
+        "completion_tokens": 2827,
+        "cost_usd": 0.077545,
+        "artifact": "calibration/runs/run-011/chapters/chapter-01-null.md",
+        "artifact_sha256": "d788ac09c65d936eeadf419c63a4cd52b8b3c3ee45e59a4bbde11efc0071cbaf",
+        "wc_words": 2229
+      }
+    }
+  },
+  "objective_results": {
+    "FULL": {
+      "mechanical_verdict": "PASS",
+      "hard_fails": 0,
+      "originality_overlap": 0.0,
+      "instrument_words": 2040,
+      "mean_sentence_words": 11.5,
+      "short_sentences_pct": 47.8,
+      "questions_pct": 4.5,
+      "second_person_per_1000": 39.2,
+      "craft_and_length_verdict": "FAIL",
+      "artifact": "calibration/runs/run-011/metrics/full/metrics.json",
+      "artifact_sha256": "d64b1d06b4cdb9cf6b0c4b7c825eaa50aa84e2e856ad7f45b320810ec006cca3"
+    },
+    "NULL": {
+      "mechanical_verdict": "PASS",
+      "hard_fails": 0,
+      "originality_overlap": 0.0,
+      "instrument_words": 2259,
+      "mean_sentence_words": 14.9,
+      "short_sentences_pct": 34.9,
+      "questions_pct": 0.7,
+      "second_person_per_1000": 57.1,
+      "craft_and_length_verdict": "FAIL",
+      "exposure_floor": "FAIL — 2,229 wc words < 2,380 preregistered minimum",
+      "artifact": "calibration/runs/run-011/metrics/null/metrics.json",
+      "artifact_sha256": "c01ff6d919001415315cb9a6727a5ead90592cd7da5c62dbf73bc40d76824f10"
+    }
+  },
+  "blind_reviews": {
+    "neutral_mapping_revealed_after_both_completed": {
+      "neutral-a": "FULL",
+      "neutral-b": "NULL"
+    },
+    "FULL": {
+      "thread_id": "019f517e-1a0f-7ed0-a562-ce04b063e62e",
+      "model": "gpt-5.6-sol",
+      "reasoning": "ultra",
+      "verdict": "REVISE",
+      "input_tokens": 54049,
+      "cached_input_tokens": 8960,
+      "output_tokens": 15774,
+      "reasoning_output_tokens": 15073,
+      "target_blockers": [
+        "EV-06 invented gender, stopped binges, community, protocols, and program efficacy",
+        "EV-08 invented personal relationship and routine details, expanding a later reserved account"
+      ],
+      "artifact": "calibration/runs/run-011/reviews/chapter-01-neutral-a.md",
+      "artifact_sha256": "198ae1edec1410038329adb0ac99f58707f74cf8848af996a2379b1a5a39731e"
+    },
+    "NULL": {
+      "thread_id": "019f517e-1a13-73b2-b3fc-671176620c28",
+      "model": "gpt-5.6-sol",
+      "reasoning": "ultra",
+      "verdict": "REVISE",
+      "input_tokens": 54158,
+      "cached_input_tokens": 8960,
+      "output_tokens": 16230,
+      "reasoning_output_tokens": 15538,
+      "target_blockers": [
+        "turned one commercial EV-06 testimonial into a firsthand author encounter",
+        "asserted Her system is working despite EV-06's explicit no-efficacy boundary"
+      ],
+      "artifact": "calibration/runs/run-011/reviews/chapter-01-neutral-b.md",
+      "artifact_sha256": "410403304cd9021339f653d2e4a46812f647853a28e98960bb071a9b8f6b3700"
+    }
+  },
+  "raw_outcome": "Both arms received REVISE and contained target evidence-ownership blockers. FULL had broader invented outcomes and testimony. NULL independently invented a firsthand source relationship and program efficacy while seeing no style guide. Both were under the existing length floor; NULL was 2,229 wc words.",
+  "causal_outcome": {
+    "hypothesis": "H-048",
+    "verdict": "INCONCLUSIVE",
+    "deciding_condition": "The preregistered NULL sensitivity condition failed: 2,229 wc words is below the 2,380-word exposure floor.",
+    "directional_signal": "NULL's quoted EV-06 inventions are strong raw evidence that full style-guide exposure is not necessary for the ownership defect and that Opus prior may be sufficient, but the preregistration forbids promoting that signal to REFUTED after an under-floor probe.",
+    "implementation_autopsy": "Removing every third semantic source produced a clean ablation but also removed the production writer contract; the approximate 2,800-word target in the commission did not keep either arm within the existing length window. The probe therefore instantiated its lever but not its required exposure sensitivity.",
+    "rivals_remaining": "Opus prior may independently narrativize bounded evidence; the semantic commission itself may invite embellishment around relief and management; full style context may still amplify breadth even if it is not necessary. One under-floor pair cannot rank those effects."
+  },
+  "product_result": "none; no run-011 prose, prompt, context configuration, or factory asset is promoted; accepted live Chapters 1-2 remain unchanged",
+  "next_action": "close run-011, then obtain a fresh factory-level direction audit before preregistering any generic production change; no identical retry, length waiver, chapter patch, or style capsule",
   "asset_versions": {
     "prompts/style-guide.md": {
       "git_commit": "e8aa007",
