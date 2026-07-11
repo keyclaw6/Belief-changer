@@ -57,6 +57,10 @@ C-03 says BAD SUGAR does not include accidents or honest ambiguity. The canonica
 
 The faithful C-01 packet allows the preregistered Chapter 1 control/treatment comparison to proceed. The C-03 defect remains a later full-product validity risk and prevents any unsupported success claim. H-047 is neither supported nor refuted by one isolated packet defect.
 
+### Chapter 1 launch infrastructure
+
+The live model catalog reconfirmed Opus 4.6 with 1,000,000 context, optional reasoning, and a 128,000 completion maximum. The disposable key had $2.3077 remaining. Both simultaneous 128,000-allowance requests returned HTTP 402 before inference because the key could authorize at most 100,308 completion tokens. No model ran and no charge or content resulted. Both arms retry at that exact shared ceiling; this remains far above the chapter budget and changes no content input.
+
 ## Gate verdict
 
 IN PROGRESS. All three packets froze before prose; fidelity audit complete with one isolated C-03 defect; faithful C-01 advances to blinded prose A/B.

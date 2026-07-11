@@ -164,7 +164,20 @@
         }
       ]
     },
-    "writer": {"requested_model": "anthropic/claude-opus-4.6", "expected_runtime_model": "anthropic/claude-4.6-opus-20260205", "reasoning": {"effort": "none"}, "max_tokens": 128000, "calls": []},
+    "writer": {
+      "requested_model": "anthropic/claude-opus-4.6",
+      "expected_runtime_model": "anthropic/claude-4.6-opus-20260205",
+      "reasoning": {"effort": "none"},
+      "catalog_max_tokens": 128000,
+      "authorized_max_tokens": 100308,
+      "infrastructure_attempts": [
+        {
+          "result": "both Chapter 1 arms rejected with HTTP 402 before inference at catalog allowance",
+          "artifact": "calibration/runs/run-010/infrastructure/chapter-01-opus-allowance.json"
+        }
+      ],
+      "calls": []
+    },
     "chapter_reviewer": {"model": "gpt-5.6-sol", "provider": "native Codex with recorded same-model OpenRouter fallback only if unavailable", "reasoning": "ultra native or max OpenRouter", "calls": []},
     "judges": [
       {"model": "openai/gpt-5.6-sol", "reasoning": "max"},

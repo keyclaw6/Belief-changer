@@ -1,0 +1,21 @@
+{
+  "stage": "Chapter 1 control and treatment first-draft launch",
+  "model": "anthropic/claude-opus-4.6",
+  "reasoning": {"effort": "none"},
+  "catalog_max_completion_tokens": 128000,
+  "requested_max_tokens": 128000,
+  "key_authorized_max_tokens": 100308,
+  "arms": [
+    {
+      "arm": "control",
+      "request_sha256": "d3cf2cd074186e282411ab741ea35c7a85a7bfd1a9d2e80ebba13c21b6404ff0"
+    },
+    {
+      "arm": "treatment",
+      "request_sha256": "0a11a18fb766cc23fa2b86c60ffc0e38cc263d02a02d30ffd7190e7040fd196d"
+    }
+  ],
+  "result": "Both requests returned HTTP 402 before provider selection or inference because the requested allowance exceeded the disposable key's current credit-authorized ceiling.",
+  "charge_or_content": "none",
+  "retry": "Use exactly 100308 max_tokens for both arms; all content inputs, model, route, reasoning-none setting, concurrency, and arm parity remain unchanged."
+}
