@@ -15,4 +15,4 @@
 
 - [x] 3.1 Validate `normalize-agentic-master-plan` with strict OpenSpec validation.
 - [x] 3.2 Run the canonical repository gate and confirm all tests pass.
-- [ ] 3.3 Create run-002 with H-039 as its sole amendment and record the new generic-asset versions before regenerating the plan.
+- [x] 3.3 Create run-002 with H-039 as its sole amendment and record the new generic-asset versions before regenerating the plan.

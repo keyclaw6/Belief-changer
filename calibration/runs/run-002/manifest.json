@@ -1,0 +1,75 @@
+{
+  "run": "run-002",
+  "date": "2026-07-11",
+  "stage": "A",
+  "status": "IN_PROGRESS",
+  "operator": "gpt-5.6-sol",
+  "branch": "calibration-lab",
+  "scope": "normalized master plan + chapters 1-3",
+  "hypotheses_tested": ["H-039"],
+  "model_api": "native+openrouter",
+  "model_output_allowance_policy": "greatest allowance actually authorized after input; no caller cap on native calls; continue on length",
+  "baseline_boundary": "e8aa007 — H-039 normalized agentic planning contract; sole run-002 amendment",
+  "inherited_artifacts": {
+    "research": "run-001 accepted R4; 23 packets; unchanged",
+    "framing": "run-001 accepted R2; unchanged",
+    "regeneration_boundary": "master plan and downstream chapters only"
+  },
+  "amendment": {
+    "hypothesis": "H-039",
+    "mechanism": "replace denormalized plan bookkeeping with one authoritative semantic blueprint and outcome-based review",
+    "assets": [
+      "prompts/style-guide.md",
+      "prompts/master-plan-skill-v2.md",
+      "prompts/master-plan-reviewer-v2.md",
+      "prompts/chapter-writer.md",
+      "production-books/_template/master-plan.md",
+      "production-books/_template/master-plan-review.md",
+      "calibration/HARNESS.md"
+    ]
+  },
+  "models": {
+    "planner": {
+      "model": "gpt-5.6-sol",
+      "provider": "openai native Codex 0.144.1",
+      "reasoning": "ultra",
+      "execution": "codex exec --ephemeral --model gpt-5.6-sol -c model_reasoning_effort=ultra",
+      "actual_request_output": "not capped by caller",
+      "calls": []
+    },
+    "plan_reviewer": {
+      "model": "gpt-5.6-sol",
+      "provider": "openai native Codex 0.144.1",
+      "reasoning": "ultra",
+      "calls": []
+    },
+    "writer": {
+      "requested_model": "Claude Opus 4.6",
+      "actual_model": "pending runtime resolution",
+      "reasoning": "disabled",
+      "api": "openrouter",
+      "arm": "fixed baseline"
+    },
+    "later_writer_arm": {
+      "model": "muse-spark-1.1",
+      "reasoning": "highest supported",
+      "status": "deferred until after the Opus baseline and official route availability"
+    },
+    "chapter_reviewer": {
+      "model": "pending allowed non-writer reviewer",
+      "reasoning": "highest supported"
+    },
+    "judges": []
+  },
+  "asset_versions": {
+    "prompts/style-guide.md": "e8aa007",
+    "prompts/master-plan-skill-v2.md": "e8aa007",
+    "prompts/master-plan-reviewer-v2.md": "e8aa007",
+    "prompts/chapter-writer.md": "e8aa007",
+    "prompts/chapter-reviewer.md": "a91af62",
+    "prompts/research-agent.md": "5bff930",
+    "calibration/HARNESS.md": "e8aa007"
+  },
+  "stages_rerun_because": "H-039 changes planning semantics, so plan and chapters are invalidated; accepted research and framing are not.",
+  "notes": "H-039 is falsified if planning again consumes three review cycles without a chapter or if deleted fields cause a chapter-level method/evidence failure. No reviewer blocker may be only a cross-table, occurrence-count, or prewritten-SUMMARY mismatch."
+}
