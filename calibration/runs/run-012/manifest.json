@@ -238,9 +238,30 @@
     ],
     "prohibited_now": "do not revise C-01, amend an asset, alter a commission, change a threshold, or stop on the partial review"
   },
+  "judge_instrument_reset": {
+    "authority": "founder-directed workflow reset before any run-012 target-panel observation",
+    "mechanism": "the legacy prompt mixed efficacy, craft, integrity, and authorship detection in one chapter role and counted reversed orders as independent votes; Stage-A v2 separates specialist roles, evaluates cumulative jobs at block scope, and collapses reversed orders into one instability-audited observation",
+    "protocol": "stage-a-v2",
+    "assets_sha256": {
+      "calibration/judges/belief-change-efficacy.md": "6d29f64553940b52e54df5acebdb4555b80b4a7d97cc55ea676901d1b086fae4",
+      "calibration/judges/literary-craft.md": "925f236ce8136f9fd0323660ac031067e394b2103d34503f60b133c8a22e7fa5",
+      "calibration/judges/method-integrity-epistemic-safety.md": "1da78e468c4dcb769329f112912d84c267a2cbaac28a1c58ef4ce7137d16ad23",
+      "scripts/eval/judge_panel.py": "2d998037b53afe7a134e2b62ca7d38840224944c62e7710015e440e1de56dbaa",
+      "scripts/eval/judge_protocol.py": "dffcf16350ff218e35563ff95756099dce5afc751de4abbc46a359da83d893fb",
+      "scripts/eval/judge_legacy.py": "3f900a3a59f67d90a7a7823151b7ef16205cc7e4aa84d370bbede5fda324284e"
+    },
+    "roles": ["belief-change efficacy — complete three-chapter block", "literary craft — each chapter", "method integrity and epistemic safety — complete three-chapter block"],
+    "matrix": "every configured model × every role target × both A/B orders; two models and three chapters produce 20 raw judgments and 10 collapsed observations",
+    "quality_boundary": "no authorship or real-Carr detection field enters the v2 prompt, schema, aggregate, or gate",
+    "required_controls": ["identical texts must tie stably", "intact reference must stably beat its locally degraded copy"],
+    "comparability": "run-012 is the first v2 product baseline; no v2 score may be compared numerically with a legacy score",
+    "causal_separation": "the measurement reset is not a factory lever and cannot support H-049; H-049 is decided by the separately preregistered source-grounded specialist review",
+    "legacy": "explicit --prompt remains available only for historical reproduction",
+    "status": "PENDING — controls and target panel wait for the complete first-draft batch"
+  },
   "held_constant": [
     "accepted research corpus, framing, canonical plan, evidence assignments, chapter jobs, and source permissions",
-    "complete style guide, chapter-writer prompt, chapter-reviewer prompt, and objective/judge thresholds",
+    "complete style guide, chapter-writer prompt, chapter-reviewer prompt, objective thresholds, and H-049 causal rules; the judge reset is separately recorded as a new non-comparable measurement baseline",
     "Opus 4.6 Anthropic writer with reasoning disabled",
     "fresh Sol-ultra commission, audit, and chapter-review contexts",
     "previous-chapter-only continuity law",
@@ -268,6 +289,7 @@
     "no shared amendment, packet repair, packet resample, reviewer change, threshold change, or chapter-specific instruction after prose begins",
     "do not stop the three-chapter causal sample merely because Chapter 1 fails",
     "freeze the complete first-draft batch before any revision decision",
+    "validate both Stage-A v2 prompt controls under the exact target-panel model and reasoning configuration before interpreting a product judgment; a control failure invalidates the instrument but does not alter the frozen batch",
     "run objective evaluation, a source-grounded evidence-fidelity specialist review, and the blind target panel across the complete first-draft batch even if an internal review or mechanical gate fails; failures remain measurements rather than truncation gates",
     "do not promote semantic improvement without full product passage"
   ],

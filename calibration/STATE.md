@@ -25,6 +25,7 @@ Use the simplest empirical loop: freeze one generic hypothesis and its inputs; p
 - Work is paused immediately after run-012 C-01 R1 and its first review attempt. Do not revise C-01 or change an asset before completing the frozen first-draft batch.
 - Preserved partially non-authoritative measurement: `calibration/runs/run-012/reviews/chapter-01-r1.md` records a reviewer that saw the canonical plan without the frozen C-01 source-grounded commission. Its evidence-grounding and attribution findings, and therefore its overall `REVISE`, cannot gate continuation or score H-049. Preserve only independently checkable craft, anatomy, chapter-job, length, direct-address, and sentence-pulse observations as diagnostics.
 - Next artifact: `calibration/runs/run-012/chapters/chapter-02-r1.md` under frozen H-049 inputs, using committed C-01 R1 only for continuity. Then produce C-03 R1, freeze the complete readable batch, run a source-grounded evidence-fidelity review for H-049, and run the blind target panel before forming another hypothesis.
+- Judge baseline: Stage-A v2 separates efficacy, craft, and integrity roles, collapses both A/B orders into repeated observations, and excludes authorship detection. Its two prompt controls must pass before the run-012 target panel; v2 scores are not compared numerically with legacy scores.
 - External blocker: none recorded. The partial measurement defect does not block the frozen batch.
 
 ## Invariants

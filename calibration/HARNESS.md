@@ -104,7 +104,7 @@ Evidence enters Git only after its access, excerpt, retention, redistribution, a
 
 **Stage A — chapter parity.** Scope: framing + master plan + chapters 1–3.
 - Objective gate: `run_evals.py --chapters 1-3` exit 0 (mantra debut/schedule verbatim; no ≥12-gram non-mantra repeats; cross-overlap < 0.3%).
-- Judge gate (pairwise, §9): overall win-rate (ties = 0.5) ≥ **0.45**; every dimension ≥ **0.35**; real-Carr detection ≤ **0.70**; zero critical failures on ours.
+- Judge gate (Stage-A v2, §9): both prompt controls pass; the role/model/order matrix is complete; equal-role macro preference (ties = 0.5) ≥ **0.45**; every role ≥ **0.35**; zero critical failures on ours. Order-unstable observations never contribute to a pass, and a role with no stable observation fails the gate. V2 has no authorship-detection probe.
 - Plan-length gate: plan chapter budgets sum to 0.9–1.1× reference total; ch 1–3 within ±20% of their budgets.
 - **Exit Stage A:** gates pass on **two consecutive runs with zero amendments between them** (stability, not luck).
 
@@ -125,7 +125,7 @@ Evidence enters Git only after its access, excerpt, retention, redistribution, a
 2. Fill `manifest.json`: stage, models per role, asset versions (`git log -1 --format=%h -- <file>` per method asset), hypotheses under test.
 3. Execute the stage recipe (§3). **run-001 is the post-bootstrap baseline:** zero calibration-driven amendments. Pre-run repairs required to make the documented contracts executable (eval correctness, blindness, role-model isolation, and the founder-mandated deep-research handoff) are recorded by commit in the manifest's `baseline_boundary`; they are not quality-tuning outcomes.
 4. Objective evals: `python3 scripts/eval/run_evals.py --book production-books/quit-sugar --ref-dir calibration/reference/gsbs --run-dir calibration/runs/run-NNN [--chapters 1-3]`.
-5. Judge panel: `python3 scripts/eval/judge_panel.py --ours production-books/quit-sugar/chapters --ref calibration/reference/gsbs --chapters 1-3 --models google/gemini-3.1-pro-preview,openai/gpt-5.6-sol --reasoning-efforts google/gemini-3.1-pro-preview=high,openai/gpt-5.6-sol=max --prompt calibration/judges/pairwise-judge.md --out calibration/runs/run-NNN/judgments` (§9 for family rules; resolve IDs and endpoint completion maxima again at runtime).
+5. Stage-A judge panel: `python3 scripts/eval/judge_panel.py --ours production-books/quit-sugar/chapters --ref calibration/reference/gsbs --chapters 1-3 --models google/gemini-3.1-pro-preview,openai/gpt-5.6-sol --reasoning-efforts google/gemini-3.1-pro-preview=high,openai/gpt-5.6-sol=max --out calibration/runs/run-NNN/judgments` (§9 for roles, controls, and family rules; resolve IDs and endpoint completion maxima again at runtime).
 6. Write `report.md` (template provided): results → gate verdict → ranked diagnosis (each gap mapped to the generic asset that owns it) → hypothesis outcomes → amendments proposed for the next run.
 7. Update `calibration/runs/LEDGER.md` (one row) and `calibration/hypotheses.md` (statuses; new hypotheses from the diagnosis).
 8. Amend method assets for the next run: **≤1 lever per run** (or a small batch ONLY if each item carries its own attribution rationale and touches a different failure).
@@ -165,11 +165,12 @@ Use as many independent allowed arms as quality and adversarial diversity demand
 
 ## §9 Judging protocol
 
-- Pairwise judge prompt: `calibration/judges/pairwise-judge.md`. Blind A/B; per-dimension 1–9 scores; which-is-real-Carr probe; strict JSON.
-- **Cross-family rule:** every panel includes ≥1 judge model from a family different from the configured writer. The allowed Google/OpenAI/xAI panel is cross-family to both the Anthropic baseline and the later Meta arm. A parity verdict counts only if the cross-family judge's win-rate alone also clears the gate (−0.05 tolerance).
-- Both A/B orders per pair (the runner does this); ≥2 models × 2 orders × 3 chapters = 12 judgments minimum per Stage A run.
-- Aggregates come from `judgments/judge-summary.json`; `real_detection_accuracy` ≈ 0.5 means judges can't tell ours from Carr — the convergence signal.
-- Judges judge ONLY the two texts in front of them; never show them run history, hypotheses, or amendments.
+- **Stage-A v2 has three independent blind roles:** belief-change efficacy and method-integrity/epistemic safety each judge the complete three-chapter block; literary craft judges each chapter. Each returns strict role-specific JSON and one behavior-agnostic mechanism. No role guesses authorship or receives run history, hypotheses, amendments, source packets, or review output.
+- **Cross-family rule:** every Stage-A panel uses at least two allowed judge families, and every judge family differs from the configured writer family. The allowed Google/OpenAI/xAI panel is cross-family to both the Anthropic baseline and the later Meta arm; an absent or incomplete family matrix invalidates the panel.
+- Every configured model judges every role and target in both A/B orders. The two orders are repeated measurements of one model-role-target observation, not independent votes; the runner collapses them and reports verdict, score, or critical-failure instability. With three chapters and two models the balanced matrix is 20 raw judgments and 10 collapsed observations.
+- Before the first product use of a prompt/model configuration, run the identical-text and locally degraded-reference controls with the same command plus respectively `--control identical` and `--control degraded-reference`, each to a separate output directory. Either control failure invalidates the instrument and fails closed before product interpretation.
+- Aggregates live in `judgments/judge-summary.json`. Product parity and causal movement are separate: the panel compares finished products but cannot establish why a candidate moved. Stage-A v2, adopted in run-012, is a new measurement baseline and its scores are not numerically comparable to the legacy panel.
+- Historical reproduction remains available only by explicitly passing `--prompt calibration/judges/pairwise-judge.md`; that selects the frozen legacy schema, independent-order aggregation, and detection probe. It is not the canonical Stage-A quality instrument.
 
 ## §10 Observability & records
 

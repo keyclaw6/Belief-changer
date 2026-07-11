@@ -13,7 +13,7 @@ All three fresh Sol-ultra commissions will be created, hashed, independently sou
 - **Observed failure:** plan-only commissions retain limits but omit usable source texture; Opus invents the missing narrative connective tissue.
 - **Rivals:** lossy evidence compression causes narrativization versus Opus prior inventing despite adequate grounding.
 - **One lever:** source-ground the existing commissioner with only accepted packets assigned to the target chapter.
-- **Held constant:** research, plan, chapter jobs, evidence assignments, style guide, writer/reviewer prompts, Opus route and reasoning none, review cycles, objective/judge gates, blindness, and continuity law.
+- **Held constant:** research, plan, chapter jobs, evidence assignments, style guide, writer/reviewer prompts, Opus route and reasoning none, review cycles, objective gates, blindness, continuity law, and H-049 causal rules. The judge instrument reset below is a separate measurement baseline, not a factory lever.
 - **Causal prediction:** all three audited commissions are concrete and faithful, and all three first drafts have zero material evidence invention.
 - **Product prediction:** all three chapters accept and pass the complete Stage-A product gates.
 - **Causal SUPPORTED / REFUTED / INCONCLUSIVE:** respectively, zero inventions across all three grounded first drafts; inventions in at least two first drafts or surviving a final cycle; or an unfaithful/insufficient commission, one isolated repaired invention, or ambiguous grounded specialist evidence.
@@ -47,4 +47,12 @@ The preserved call is thread `019f51a6-5522-70a2-be45-f04094ec200e`: 108,978 inp
 
 No C-01 revision or shared amendment comes next. The exact next artifact is `chapters/chapter-02-r1.md`, generated under frozen H-049 from the frozen C-02 commission with committed C-01 R1 as its sole previous chapter. C-03 R1 follows from the frozen C-03 commission with committed C-02 R1 as its sole previous chapter. The full C-01-C-03 first-draft batch then freezes before any revision decision.
 
-The batch will receive objective evaluation, a source-grounded evidence-fidelity specialist review for H-049, and the separate blind target panel even if an internal review or mechanical gate fails. Internal failures become measured evidence, not one-chapter stop conditions. H-049 remains active until the complete grounded sample can receive a causal evidence-fidelity verdict; the product verdict is recorded separately and still requires full length, craft, objective, and blind Stage-A passage.
+Before product interpretation, the exact target-panel model and reasoning configuration must pass both Stage-A v2 prompt controls: identical texts tie stably, and the intact reference stably beats its locally degraded copy. A control failure invalidates the judge instrument but does not alter or suppress the frozen batch.
+
+The batch will receive objective evaluation, a source-grounded evidence-fidelity specialist review for H-049, and the separate blind v2 target panel even if an internal review or mechanical gate fails. Internal failures become measured evidence, not one-chapter stop conditions. H-049 remains active until the complete grounded sample can receive a causal evidence-fidelity verdict; the product verdict is recorded separately and still requires full length, craft, objective, and blind Stage-A passage.
+
+## Judge-instrument baseline
+
+Before any run-012 target-panel result, Stage-A judging changed from the legacy single chapter role to v2: belief-change efficacy and method integrity/epistemic safety judge the complete three-chapter block, while literary craft judges each chapter. Every model covers every role target in both A/B orders; the orders collapse into one observation and any verdict, score-direction, or critical-failure instability stays visible. Authorship detection is absent from the v2 quality prompt, schema, aggregate, and gate.
+
+This change answers an instrument failure, not H-049: the old panel conflated distinct quality questions and counted presentation swaps as independent votes. Run-012 is therefore the first v2 product baseline, and no resulting score is numerically comparable with a legacy run. H-049 remains governed only by its frozen causal rule and the source-grounded specialist review. Explicit `--prompt` mode preserves the old runner solely for historical reproduction.
