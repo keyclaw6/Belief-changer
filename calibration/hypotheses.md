@@ -225,7 +225,20 @@ Seeded by the harness builder (2026-07-10) as starting capital — derive priori
 - Failure mechanism: feedback incompleteness no longer explains the repeated boundary failure. The shared writer contract's priority hierarchy is the smallest remaining generic owner: evidence permission and current-chapter ownership must outrank assertiveness, analogy, and persuasive completion in one explicit behavior-agnostic rule.
 - Rival explanations / signal risk after result: the two Sol contexts may share a conservative interpretation, but the plan citations and quotation mismatch are objective. The prompt may need only a small priority clarification rather than a different writer or orchestration layer. A Chapter 3-only retest would risk overfitting.
 - Product/factory result: no chapter or feedback method promoted.
-- Next test: STOP under HARNESS §11 and seek founder approval for the one generic writer-prompt priority clarification in calibration/ESCALATION.md. If approved, preregister H-046 and regenerate Chapters 1–3 from fresh contexts under the fixed upstream plan before any chapter-specific edit.
+- Next test: STOP and record the §11 escalation. Under HARNESS §1 calibration-lab authority, preregister H-046 for the one generic writer-prompt priority clarification and regenerate Chapters 1–3 from fresh contexts; any later canon merge remains founder-approved.
+
+## H-046 — evidence ownership outranks assertiveness     [TESTING run-009]
+- Gap: run-005, run-006, and run-008 retained unowned causal or later-chapter mechanisms despite a coherent plan; run-008 showed that even two raw explicit reviews were not sufficient.
+- Mechanism / one generic lever: persuasive firmness is dominating distributed evidence and chapter-ownership limits during generation. Add one behavior-agnostic priority rule and matching self-check to the shared chapter-writer prompt: evidence permission and the current card outrank assertiveness, analogy, and persuasive completion.
+- Scope: regenerate fresh Chapters 1–3 sequentially under the same frozen amendment. No old prose or reviews enter first drafts; fresh Chapter 2 sees only fresh accepted Chapter 1, and fresh Chapter 3 sees only fresh accepted Chapter 2. No shared tuning occurs between chapters.
+- Held constant: research, framing, normalized plan, style guide, reviewer prompt, Opus route/reasoning-none/output allowance, Sol-ultra review gate, reference blindness, objective instruments, judge prompt, and Stage-A thresholds.
+- Prediction: zero first-draft blockers across all three chapters for an unowned or unsupported causal mechanism, prevalence/exposure claim, diagnosis, universal pathway, or promised effect. All chapters accept within three cycles; objective and blind Stage-A gates pass.
+- Decision rule: SUPPORTED only on zero target blockers across all three first drafts plus full Stage-A product passage. REFUTED if target blockers occur in at least two first drafts or survive a final cycle. INCONCLUSIVE if one target blocker is repaired, or the mechanism succeeds but an unrelated dimension prevents blind product passage.
+- Product rule: promote only an accepted three-chapter set, then run objective and blind pairwise gates. A passing run-009 still requires a zero-amendment run-010 before Stage-A exit.
+- Anti-overfit boundary: the rule contains no sugar, Chapter 3, or reference logic. It remains calibration-only until multi-chapter, stability, and holdout evidence justify a founder-approved main merge.
+- Rival explanations / signal risk: fresh resampling may remove the defect without the amendment; a strict reviewer may still overclassify rhetoric; the priority rule may improve evidence discipline while weakening persuasive force. The three-chapter blind gate and no-amendment stability run distinguish these.
+- Result: PENDING.
+- Next test: commit the exact generic prompt amendment, freeze it, then generate fresh Chapter 1 R1.
 
 ## H-007 — planner reasoning effort                       [RETIRED — founder-fixed 2026-07-10]
 - Gap: a reasoning-effort sweep was proposed before the founder fixed every allowed non-writer model to its top supported reasoning mode.

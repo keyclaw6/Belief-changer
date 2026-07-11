@@ -6,7 +6,7 @@
 
 **Stage:** A
 
-**Status:** STOP — founder decision required before another model call
+**Status:** RESOLVED FOR CALIBRATION TEST — H-046 authorized under HARNESS §1; canon merge remains founder-approved
 
 ## Trigger
 
@@ -44,7 +44,7 @@ This does not justify a Chapter 3 instruction, sugar-specific fact, new state ma
 
 ## Proposed one-lever amendment
 
-Founder approval is requested to add the following behavior-agnostic rule to "prompts/chapter-writer.md" immediately after the current assertion rule:
+HARNESS §1 authorizes adding the following behavior-agnostic rule to "prompts/chapter-writer.md" for a calibration-only test immediately after the current assertion rule. Any later merge into canon "main" remains founder-approved:
 
 > **Evidence and chapter ownership outrank assertiveness.** State the assigned belief reframe firmly, but never turn a lived report, analogy, scene, cultural observation, or plausible explanation into a causal mechanism, prevalence or exposure claim, diagnosis, universal pathway, or promised effect unless the current chapter card owns that claim and the evidence ledger's permitted inference supports it. If either condition is absent, stop at the card's observable or belief-level claim—or report the gap; never fill it with persuasive inference.
 
@@ -68,9 +68,11 @@ The amendment is not supported merely because Chapter 3 passes. It must eliminat
 
 This multi-chapter restart is the anti-overfit test: the calibration specimen supplies failure evidence, but the candidate factory rule contains no sugar or Chapter 3 logic.
 
-## Founder decision requested
+## Calibration-only decision recorded
 
-Approve, modify, or decline the exact generic writer-prompt priority amendment and the fresh Chapters 1–3 H-046 validation. No change will be made and no further model call will run until that decision is recorded.
+HARNESS §1 explicitly grants the operator full design authority on "calibration-lab" and says to decide, log, and proceed; HARNESS §11 reserves founder approval for merging prompt changes into canon "main". The exact generic amendment above is therefore authorized for H-046 on the calibration branch only. It is not approved for "main".
+
+H-046 will regenerate Chapters 1–3 from fresh contexts under one frozen prompt version. No old draft or review enters a first-draft call, and no shared change is allowed between chapters. A winning calibration result will be brought back for founder-approved canon merge only after the required product, stability, and holdout evidence.
 
 ---
 

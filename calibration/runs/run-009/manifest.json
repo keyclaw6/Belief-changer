@@ -1,0 +1,100 @@
+{
+  "run": "run-009",
+  "date": "2026-07-11",
+  "stage": "A",
+  "status": "IN_PROGRESS",
+  "operator": "gpt-5.6-sol",
+  "branch": "calibration-lab",
+  "scope": "fresh Chapters 1–3 factory regeneration under one generic writer-priority amendment",
+  "hypotheses_tested": ["H-046"],
+  "model_api": "native+openrouter",
+  "pre_amendment_boundary": "d9340bf — run-008 §11 escalation committed; no Chapter 3 promoted",
+  "operator_authority_resolution": "HARNESS §1 grants full calibration-lab design authority and says decide, log, proceed; main merge remains founder-approved",
+  "inherited_artifacts": {
+    "research": "run-001 accepted R4; unchanged",
+    "framing": "run-001 accepted R2; unchanged",
+    "master_plan": "run-002 accepted R3; sha256 e3fd7cd0ed90e2c6ef29ccabf219f6a10462b31f2ee75a6d9e1b42abbdf913b5",
+    "style_guide": "unchanged",
+    "chapter_reviewer": "unchanged",
+    "old_chapters": "excluded from every first-draft input; existing live Chapters 1–2 remain rollback controls only"
+  },
+  "amendment": {
+    "asset": "prompts/chapter-writer.md",
+    "single_generic_lever": "make evidence permission and current-chapter ownership explicitly outrank assertiveness, analogy, and persuasive completion",
+    "rule_exact": "Evidence and chapter ownership outrank assertiveness. State the assigned belief reframe firmly, but never turn a lived report, analogy, scene, cultural observation, or plausible explanation into a causal mechanism, prevalence or exposure claim, diagnosis, universal pathway, or promised effect unless the current chapter card owns that claim and the evidence ledger's permitted inference supports it. If either condition is absent, stop at the card's observable or belief-level claim—or report the gap; never fill it with persuasive inference.",
+    "self_check_exact": "Trace every causal, mechanism, prevalence, diagnosis, and promised-effect assertion to the current chapter card and a permitted evidence inference; cut it or report a gap if either trace is missing.",
+    "behavior_agnostic": true,
+    "sugar_or_chapter_specific_language": false,
+    "invalidated_stage": "all chapter prose; regenerate Chapters 1–3"
+  },
+  "experiment": {
+    "unit": "three fresh sequential chapters, not one repaired chapter",
+    "first_draft_inputs": {
+      "chapter_01": ["amended chapter-writer prompt", "fixed style guide", "fixed master plan"],
+      "chapter_02": ["amended chapter-writer prompt", "fixed style guide", "fixed master plan", "fresh accepted run-009 Chapter 1 only"],
+      "chapter_03": ["amended chapter-writer prompt", "fixed style guide", "fixed master plan", "fresh accepted run-009 Chapter 2 only"]
+    },
+    "excluded_from_first_drafts": [
+      "all old chapter prose",
+      "all old chapter reviews",
+      "run history, hypotheses, ledgers, reports, and judge outputs",
+      "reference prose and analysis"
+    ],
+    "normal_gate": "fresh Sol ultra review; at most three writer-review cycles per chapter; revision cycles may receive only the current draft and its raw latest review in addition to fixed semantic inputs",
+    "prompt_freeze": "no shared asset, commission, threshold, or reviewer change after Chapter 1 generation begins",
+    "failure_rule": "if any chapter exhausts three cycles, close the run before tuning; diagnose across the whole frozen three-chapter attempt",
+    "promotion": "replace live Chapters 1–3 only as one accepted set; never promote an isolated run-009 chapter as a factory result"
+  },
+  "causal_decision_rule": {
+    "supported": "zero target evidence or chapter-ownership blockers in all three first-draft reviews, all three chapters accepted within the fixed gate, objective gate passes, and blind Stage-A judge gate passes",
+    "refuted": "the target blocker appears in at least two first drafts or survives in any final-cycle artifact",
+    "inconclusive": "the target blocker appears once and is repaired, or target blockers disappear but an unrelated product dimension prevents the blind Stage-A gate",
+    "target_blocker": "unowned or unsupported causal mechanism, prevalence or exposure claim, diagnosis, universal pathway, or promised effect"
+  },
+  "stage_a_product_gates": {
+    "objective": "run_evals.py --chapters 1-3 exits 0; no unlicensed repetition; cross-overlap below 0.3%",
+    "length": "each chapter within 20% of its plan budget",
+    "judge": "overall win-rate at least 0.45; every dimension at least 0.35; real-Carr detection at most 0.70; zero critical failures",
+    "support_boundary": "reviewer acceptance alone is never success",
+    "stability": "a pass requires run-010 with zero amendments before Stage A exit"
+  },
+  "held_constant": [
+    "accepted research, framing, and normalized master plan",
+    "style guide and chapter reviewer",
+    "Opus 4.6 through OpenRouter",
+    "writer reasoning effort none",
+    "128000 writer output allowance",
+    "native Sol ultra chapter reviewers with no time or reasoning cap",
+    "generator and reviewer reference blindness",
+    "judge prompt and Stage-A thresholds",
+    "no deterministic prose construction"
+  ],
+  "models": {
+    "writer": {
+      "requested_model": "anthropic/claude-opus-4.6",
+      "expected_runtime_model": "anthropic/claude-4.6-opus-20260205",
+      "reasoning": {"effort": "none"},
+      "max_tokens": 128000,
+      "calls": []
+    },
+    "chapter_reviewer": {
+      "model": "gpt-5.6-sol",
+      "provider": "openai native Codex",
+      "reasoning": "ultra",
+      "execution": "codex exec --ephemeral --disable multi_agent --model gpt-5.6-sol -c model_reasoning_effort=ultra",
+      "calls": []
+    },
+    "judges": [
+      {"model": "openai/gpt-5.6-sol", "reasoning": "max", "route": "OpenRouter for canonical panel, native fallback recorded if required"},
+      {"model": "google/gemini-3.1-pro-preview", "reasoning": "high", "route": "OpenRouter"}
+    ]
+  },
+  "asset_versions_before": {
+    "prompts/style-guide.md": "e8aa007",
+    "prompts/chapter-writer.md": "e8aa007",
+    "prompts/chapter-reviewer.md": "a91af62",
+    "production-books/quit-sugar/master-plan.md": "5915b9f"
+  },
+  "direction": "factory restart across Chapters 1–3; no Chapter 3 tuning and no main merge",
+  "notes": "No prompt edit or model call has run."
+}
