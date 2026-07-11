@@ -193,6 +193,19 @@ Seeded by the harness builder (2026-07-10) as starting capital — derive priori
 - Factory promotion result: none. No arm, revision mode, shared prompt, plan, style rule, research artifact, or reviewer configuration is promoted.
 - Next test: H-044 uses Arm A only as an unpromoted repair substrate. A fresh Grok review must independently corroborate the Sol defect class before one Opus revision receives the raw Sol and Grok reviews; fresh Sol/Grok convergence then tests whether the unchanged simple loop can comply once feedback coverage is complete. Do not infer review-union superiority or change a shared asset.
 
+## H-044 — adversarial feedback coverage sufficiency     [TESTING run-007]
+- Gap: run-006's whole-rewrite and defect-scoped arms both repaired the explicitly named R3 defects yet retained broader installation and premature C-10 mechanism claims. The plan already prohibited them; prior feedback coverage was incomplete.
+- Mechanism / one production lever: the unchanged writer can comply once independent adversarial reviews fully surface the evidence and chapter-ownership boundary. Use exact Arm A as an unpromoted control substrate. Fresh Grok must first corroborate the Sol defect class; only then does one fresh Opus defect-scoped editor receive unchanged full context plus the raw Sol and Grok reviews. There is no synthesized checklist or deterministic edit procedure.
+- Held constant: accepted upstream artifacts and prior chapters; shared writer/reviewer/style prompts; exact substrate; Opus route, reasoning none, and output allowance; blindness; fresh contexts; no shared asset change. Objective code supplies counts; Sol/Grok judge meaning and prose.
+- Prediction: Grok independently identifies the universalized installation and C-10 ownership defects. The revision removes universal prevalence/exposure claims, causal installation language, cue/anticipation diagnosis, and promised pull dissolution; preserves the duplicate/permanence repairs; stays within 2,210–2,990 wc words; reduces metrics.py short sentences by at least 5.0 points from 30.5%; and receives fresh convergent Sol/Grok ACCEPT.
+- Decision rule: SUPPORTED narrowly on Grok corroboration plus objective craft movement and fresh convergent acceptance without a new blocker. REFUTED if the same explicitly surfaced defect survives or is recreated. INCONCLUSIVE if Grok does not corroborate, post-reviewers disagree, or only an unrelated new defect blocks.
+- Claim boundary: this tests whether the simple unchanged loop can work once feedback is complete. It does not compare union versus single review and cannot promote review union as a factory rule.
+- Rival explanations / signal risk: Sol and Grok may share an over-conservative evidence interpretation; Opus may succeed by stochastic resampling; a five-point craft move may not improve persuasion. Conversely, an unrelated new defect can hide successful boundary compliance. Later cross-chapter and Stage-C replication remain mandatory.
+- Product rule: only an exact convergently accepted chapter may be promoted. On acceptance, immediately execute the full Chapters 1–3 Stage-A objective and blind pairwise gates before another optimization.
+- Stop rule: recurrence of the same explicit defect is the third consecutive same-dimension failure and triggers HARNESS §11 escalation before a generic shared-prompt clarification.
+- Result: PENDING.
+- Next test: dispatch the fresh blind Grok prerequisite review.
+
 ## H-007 — planner reasoning effort                       [RETIRED — founder-fixed 2026-07-10]
 - Gap: a reasoning-effort sweep was proposed before the founder fixed every allowed non-writer model to its top supported reasoning mode.
 - Lever: none — configuration is now a constant, not a calibration variable.

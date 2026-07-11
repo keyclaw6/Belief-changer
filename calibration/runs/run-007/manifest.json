@@ -1,0 +1,103 @@
+{
+  "run": "run-007",
+  "date": "2026-07-11",
+  "stage": "A",
+  "status": "IN_PROGRESS",
+  "operator": "gpt-5.6-sol",
+  "branch": "calibration-lab",
+  "scope": "adversarial feedback coverage followed by one unchanged-loop Chapter 3 repair",
+  "hypotheses_tested": ["H-044"],
+  "model_api": "native+openrouter",
+  "baseline_boundary": "ab6ab1f — run-006 closed with no arm or method promoted",
+  "starting_artifacts": {
+    "repair_substrate": "run-006 Arm A control, unpromoted; sha256 8a17c510230a182b10a1a089c582b1914ef81a3e98f8bf5ce5f2b171afca8860",
+    "sol_review": "run-006 Arm A Sol review; sha256 b35bc87058f1749dba704d6e48372269669c88437cbdcacfb263bbb4ededc34c",
+    "objective_metrics": "run-006 arm-metrics.json Arm A",
+    "accepted_chapter_01": "sha256 124124405d2a915f4b67e575e92559f6eb4625e8d883a1aaed76412aa3c49048",
+    "accepted_chapter_02": "sha256 421415e0632aef7661ed2afbb497a0b829ea7c4bbced429801b7e5e6a3c9d4a7",
+    "master_plan": "sha256 e3fd7cd0ed90e2c6ef29ccabf219f6a10462b31f2ee75a6d9e1b42abbdf913b5"
+  },
+  "substrate_selection": {
+    "reason": "Arm A is the preregistered control, is no worse on the shared semantic blockers, and is objectively closer on short-sentence craft than Arm B",
+    "not_a_promotion": true,
+    "no_quality_win_claim": true
+  },
+  "experiment": {
+    "observation": "the same installation and premature mechanism claims survived both run-006 writing modes while prior reviews incompletely surfaced the generic evidence/job boundary",
+    "mechanism": "the unchanged writer can comply once independent adversarial review fully surfaces the evidence and chapter-ownership boundary",
+    "single_production_lever": "feedback coverage supplied as raw independent reviews to one defect-scoped revision",
+    "prerequisite": "fresh Grok 4.5 independently corroborates the installation and C-10 ownership defect class on exact Arm A",
+    "writer_input_if_triggered": "unchanged full context plus exact Arm A and the raw blocker-bearing Sol and Grok reviews; no synthesized checklist",
+    "post_measurement": "fresh Sol and Grok reviews plus deterministic descriptive metrics",
+    "decision_rule": {
+      "supported": "Grok corroborates and the revision receives fresh convergent Sol/Grok ACCEPT with no new blocker and the objective craft prediction passes",
+      "refuted": "the same explicitly surfaced installation or C-10 mechanism defect survives or is recreated",
+      "inconclusive": "Grok does not corroborate, post-reviewers disagree, or failure is only an unrelated new defect"
+    },
+    "product_promotion": "only a convergently accepted exact chapter may become live Chapter 3; the feedback-coverage method remains unpromoted",
+    "after_product_acceptance": "immediately run full Chapters 1–3 Stage-A objective and blind pairwise gates before another optimization"
+  },
+  "quality_prediction": {
+    "word_range_wc": "2210–2990",
+    "short_sentence_reduction": "at least 5.0 percentage points from Arm A metrics.py baseline 30.5%, toward the approximately 20% target",
+    "semantic": "remove universal prevalence or exposure claims, causal installation language, cue or anticipation diagnosis, and promised pull dissolution; retain duplicate and permanence repairs",
+    "gate": "fresh convergent ACCEPT from Sol and Grok"
+  },
+  "held_constant": [
+    "accepted research, framing, normalized plan, and prior chapters",
+    "shared chapter-writer, chapter-reviewer, and style prompts",
+    "exact Arm A substrate",
+    "Opus 4.6 through OpenRouter with reasoning none",
+    "128000 writer output allowance",
+    "reference blindness",
+    "fresh reviewer contexts and no time or reasoning cap",
+    "no shared prompt, plan, style, research, schema, or live chapter change before convergence"
+  ],
+  "models": {
+    "initial_adversarial_reviewer": {
+      "requested_model": "x-ai/grok-4.5",
+      "expected_runtime_model": "x-ai/grok-4.5-20260708",
+      "provider": "xAI through OpenRouter",
+      "reasoning": "high",
+      "context_length": 500000,
+      "requested_max_tokens": 128000,
+      "endpoint_max_completion_tokens": "unreported by authenticated catalog; max_tokens supported",
+      "calls": []
+    },
+    "writer": {
+      "requested_model": "anthropic/claude-opus-4.6",
+      "expected_runtime_model": "anthropic/claude-4.6-opus-20260205",
+      "reasoning": {"effort": "none"},
+      "max_tokens": 128000,
+      "calls": []
+    },
+    "post_reviewer_panel": [
+      {
+        "model": "gpt-5.6-sol",
+        "provider": "openai native Codex",
+        "reasoning": "ultra",
+        "execution": "codex exec --ephemeral --disable multi_agent --model gpt-5.6-sol -c model_reasoning_effort=ultra",
+        "calls": []
+      },
+      {
+        "model": "x-ai/grok-4.5",
+        "provider": "xAI through OpenRouter",
+        "reasoning": "high",
+        "requested_max_tokens": 128000,
+        "calls": []
+      }
+    ],
+    "judges": []
+  },
+  "measurement_policy": "objective code supplies counts as facts; models judge evidence ownership, method integrity, persuasion, and prose",
+  "asset_versions": {
+    "prompts/style-guide.md": "e8aa007",
+    "prompts/chapter-writer.md": "e8aa007",
+    "prompts/chapter-reviewer.md": "a91af62",
+    "production-books/quit-sugar/master-plan.md": "5915b9f"
+  },
+  "direction_audit": "NO-GO on shared-prompt change, Grok tie-break, or another optimization A/B; conditional GO on this one simple-loop validation",
+  "factory_promotion_boundary": "the chapter may advance on convergence; the review-coverage method requires later cross-chapter replication and Stage C",
+  "stop_rule": "same explicitly surfaced defect surviving this run makes three consecutive same-dimension failures and triggers HARNESS §11 escalation",
+  "notes": "No paid call has run."
+}
