@@ -2,7 +2,7 @@
   "run": "run-012",
   "date": "2026-07-11",
   "stage": "A",
-  "status": "CHAPTER_01_R1_FROZEN",
+  "status": "FIRST_DRAFT_BATCH_IN_PROGRESS",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "source-grounded semantic commissioning followed by a frozen Chapters 1-3 production run",
@@ -11,7 +11,7 @@
   ],
   "model_api": "native+openrouter",
   "baseline_boundary": "b39f364 — run-011 closed INCONCLUSIVE; no run-011 prose or context configuration promoted",
-  "last_accepted_product": "live Chapters 1-2 from runs 002 and 004; unchanged by runs 005-011",
+  "last_accepted_product": "live Chapters 1-2 from runs 002 and 004; unchanged by runs 005-012",
   "observed_failure": "plan-only commissions carry inference limits but omit permitted attribution and source texture; Opus fills the missing narrative connective tissue with invented relationships, identities, circumstances, outcomes, and efficacy",
   "causal_rivals": [
     "lossy evidence compression in the plan-only commissioning boundary causes narrativization",
@@ -180,8 +180,8 @@
     "excluded": "canonical master plan, raw source packets, research syntheses, other commissions, non-adjacent chapters, history, other-chapter reviews, metrics, judges, and reference material",
     "first_draft_dispatch": "same generic run-010 first-draft dispatch",
     "revision_dispatch": "same generic run-010 revision dispatch; current candidate plus raw latest review only",
-    "review_cycles": "maximum three candidates per chapter under unchanged shared inputs",
-    "continuation": "complete all three chapter samples even if an earlier chapter fails; the next writer sees that earlier chapter's frozen final candidate without its verdict or review"
+    "review_cycles": "maximum three candidates per chapter under unchanged shared inputs; no Chapter 1 revision is considered before the complete first-draft batch is frozen and measured",
+    "continuation": "complete all three first drafts even if an earlier chapter fails; C-02 R1 sees committed C-01 R1 without its verdict or review, and C-03 R1 then sees committed C-02 R1 without its verdict or review"
   },
   "chapter_execution": {
     "C-01": {
@@ -205,10 +205,38 @@
         "artifact": "calibration/runs/run-012/chapters/chapter-01-r1.md",
         "artifact_words_wc": 2252,
         "artifact_sha256": "8c1cdbe5b104ba0510a94ee067f0c76e67b5d413098376db53df3d7ec222f2ac",
-        "review_status": "not yet opened",
+        "review_status": "partial diagnostic only — the plan-only reviewer omitted the frozen C-01 source-grounded commission, so its overall REVISE cannot gate H-049 or authorize a revision",
         "length_status": "FAIL — below 2,380 existing floor"
       }
     }
+  },
+  "founder_directed_measurement_correction": {
+    "date": "2026-07-11",
+    "reason": "the first Chapter 1 review saw the canonical plan but not the frozen source-grounded C-01 commission whose handoff H-049 tests",
+    "preserved_review": {
+      "artifact": "calibration/runs/run-012/reviews/chapter-01-r1.md",
+      "artifact_sha256": "91c30f45f02411ec03052aedd04c70f6fff6074eb332f22b7cbeed17d84d73b0",
+      "thread_id": "019f51a6-5522-70a2-be45-f04094ec200e",
+      "configured_model": "gpt-5.6-sol",
+      "reasoning": "ultra",
+      "verdict_returned": "REVISE",
+      "input_tokens": 108978,
+      "cached_input_tokens": 62976,
+      "output_tokens": 20578,
+      "reasoning_output_tokens": 19683
+    },
+    "authority_boundary": {
+      "non_authoritative": "the overall REVISE and objections to attribution or details expressly authorized by the omitted commission cannot gate H-049, score source-grounding fidelity, or trigger a Chapter 1 revision",
+      "diagnostic_only": "independently checkable craft, anatomy, chapter-job, instruction-boundary, and length observations remain recorded as hypotheses for the complete product measurement; no observation is silently discarded",
+      "unscored_until_grounded_review": "any disputed inference or source-use claim requires a specialist given the frozen commission and other context necessary for that claimed judgment"
+    },
+    "frozen_sequence": [
+      "next: calibration/runs/run-012/chapters/chapter-02-r1.md from the frozen C-02 commission, using committed C-01 R1 as the sole previous chapter",
+      "then: calibration/runs/run-012/chapters/chapter-03-r1.md from the frozen C-03 commission, using committed C-02 R1 as the sole previous chapter",
+      "then: freeze the complete C-01-C-03 first-draft batch before any revision decision",
+      "then: run objective evaluation, a source-grounded evidence-fidelity specialist review, and the blind target panel across the batch even if an internal review failed"
+    ],
+    "prohibited_now": "do not revise C-01, amend an asset, alter a commission, change a threshold, or stop on the partial review"
   },
   "held_constant": [
     "accepted research corpus, framing, canonical plan, evidence assignments, chapter jobs, and source permissions",
@@ -221,17 +249,26 @@
     "no shared amendment after any commission generation or prose"
   ],
   "first_draft_target_blocker": "invented or altered source relationship, attribution, identity, demographic, circumstance, quotation, outcome, mechanism, prevalence, efficacy, or inference; or evidence imported outside the chapter's grounded commission",
-  "prediction": "all three commissions are source-faithful and carry enough permitted concrete texture that all three Opus first drafts contain zero material evidence inventions; all chapters then accept and the complete Chapters 1-3 product passes length, craft, objective, and blind Stage-A gates",
+  "prediction": {
+    "causal": "all three commissions are source-faithful and carry enough permitted concrete texture that all three Opus first drafts contain zero material evidence inventions",
+    "product": "all chapters accept and the complete Chapters 1-3 product passes length, craft, objective, and blind Stage-A gates"
+  },
   "causal_decision_rule": {
-    "supported": "all three commissions pass pre-prose source fidelity; all three first drafts have zero material evidence invention; all three chapters ACCEPT within the fixed cycles; and the complete set passes existing length, craft, objective, and blind Stage-A gates",
+    "supported": "all three commissions pass pre-prose source fidelity and all three first drafts have zero material evidence invention under source-grounded specialist review",
     "refuted": "all three commissions are faithful and adequately concrete, yet material evidence invention appears in at least two first drafts or survives any chapter's final cycle",
-    "inconclusive": "any commission is materially unfaithful; accepted evidence cannot support an assigned prose job; one isolated first-draft invention is repaired; or evidence fidelity improves but craft, length, method, or another independent dimension prevents complete product passage"
+    "inconclusive": "any commission is materially unfaithful; accepted evidence cannot support an assigned prose job; one isolated first-draft invention is repaired; or the source-grounded specialist evidence is ambiguous"
+  },
+  "product_decision_rule": {
+    "pass": "all three chapters ACCEPT within the fixed cycles and the complete set passes existing length, craft, objective, and blind Stage-A gates",
+    "fail": "any final chapter remains unaccepted or the complete set fails an existing product gate",
+    "separation": "a product failure does not by itself refute the source-grounding mechanism, and causal support does not promote prose or establish product parity"
   },
   "stop_and_no_tuning_rules": [
     "freeze prompt and all three commissions before Chapter 1 prose",
     "no shared amendment, packet repair, packet resample, reviewer change, threshold change, or chapter-specific instruction after prose begins",
     "do not stop the three-chapter causal sample merely because Chapter 1 fails",
-    "do not run pairwise reference judging unless the complete three-chapter product is accepted and mechanically eligible",
+    "freeze the complete first-draft batch before any revision decision",
+    "run objective evaluation, a source-grounded evidence-fidelity specialist review, and the blind target panel across the complete first-draft batch even if an internal review or mechanical gate fails; failures remain measurements rather than truncation gates",
     "do not promote semantic improvement without full product passage"
   ],
   "anti_overfit": {
