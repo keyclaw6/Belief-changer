@@ -1,6 +1,6 @@
 # Run report — run-012
 
-**Stage:** A **Scope:** source-grounded commissions plus frozen Chapters 1-3 production **Causal verdict:** ACTIVE — grounded specialist measurement pending **Product verdict:** NOT YET MEASURED
+**Stage:** A **Scope:** source-grounded commissions plus frozen Chapters 1-3 production **Causal verdict:** ACTIVE — grounded specialist measurement pending **Product verdict:** UNJUDGED — blind v2 panel pending
 
 ## What will run
 
@@ -41,7 +41,25 @@ The C-02 one-shot transport wrote the complete response before raising a post-wr
 
 C-03 R1 then ran from the faithful frozen C-03 commission with committed C-02 R1 as its sole previous chapter. The catalog-maximum request received a pre-inference HTTP 402 with an exact 50,360-token authorization ceiling. The single authorized response stopped normally as `anthropic/claude-4.6-opus-20260205` through Anthropic, with 30,896 prompt tokens, 4,275 completion tokens, zero reported reasoning tokens, and a $0.261355 OpenRouter cost. Its 3,306-word artifact froze unedited at SHA-256 `835e3273...`; it is above the existing 3,120-word upper edge for its 2,600-word commission and is not accepted product. Absolute artifact paths preserved the full call metadata and avoided the C-02 recorder defect.
 
-The complete C-01-C-03 first-draft batch is now frozen before any revision decision. Its chapter lengths are 2,252, 4,162, and 3,306 words respectively; all three miss their existing individual length bands. This is mechanical status only, not a causal or product verdict. H-049 remains active until the source-grounded specialist evaluates evidence fidelity across the complete sample, and the product remains unmeasured until the complete objective and blind-panel evidence exists.
+The complete C-01-C-03 first-draft batch is now frozen before any revision decision. Its raw `wc -w` chapter lengths are 2,252, 4,162, and 3,306 words respectively. This is mechanical status only, not a causal or blind product verdict. H-049 remains active until the source-grounded specialist evaluates evidence fidelity across the complete sample, and product parity remains unjudged until the controlled blind panel exists.
+
+## Objective batch measurement
+
+`run_evals.py` received an exact temporary book view containing only the canonical `master-plan.md` and the three frozen drafts renamed `chapter-01.md` through `chapter-03.md`. It exited **2**: objective **FAIL**, three hard failures, zero warnings. The complete stdout, exit record, file mapping, hashes, and generated payload are frozen under `metrics/batch/`.
+
+All three hard findings are overlapping 12-word windows of one duplicated non-mantra construction across C-01 and C-03. Both chapters follow scheduled M-01 with “Read that again”; the exact mantra is exempt, but its identical surrounding prose is not. The mantra check itself had zero failures. Cross-book originality passed with 0 overlapping reference n-grams out of 9,326, an overlap ratio of 0.000% against the 0.3% tripwire.
+
+The evaluator's Markdown-stripped chapter diagnostics are:
+
+| chapter | words | plan budget / Stage-A ±20% band | mean sentence | short sentences | questions / 100 sentences | second person / 1k | first person / 1k |
+|---|---:|---|---:|---:|---:|---:|---:|
+| C-01 | 2,199 | 2,800 / 2,240–3,360 — FAIL by 41 below | 12.0 | 51.9% | 8.7 | 47.7 | 10.0 |
+| C-02 | 4,093 | 3,000 / 2,400–3,600 — FAIL by 493 above | 13.4 | 44.1% | 10.1 | 21.5 | 4.9 |
+| C-03 | 3,241 | 2,600 / 2,080–3,120 — FAIL by 121 above | 14.1 | 41.7% | 12.2 | 38.6 | 7.4 |
+| batch mean | — | — | 13.2 | 45.9% | 10.3 | 35.9 | 7.4 |
+| reference C-01–C-03 mean | — | — | 18.4 | 14.7% | 11.3 | 42.4 | 5.1 |
+
+The batch contains 9,533 instrument words against the reference positions' 11,176, a displayed ratio of 0.85; mean sentence length is 0.72×, short-sentence share 3.12×, question rate 0.91×, and direct address 0.85× the reference positions. These comparisons are diagnostics, not hard target-comparison vetoes and not evidence for or against H-049. The actual hard objective failure blocks promotion, but the sequencing law still requires the grounded specialist review and controlled blind v2 panel. Product quality therefore remains unjudged rather than being inferred from mechanical style ratios.
 
 ## Founder-directed measurement correction
 
@@ -53,7 +71,7 @@ The preserved call is thread `019f51a6-5522-70a2-be45-f04094ec200e`: 108,978 inp
 
 ## Exact continuation
 
-No chapter revision or shared amendment comes next. The exact next artifacts are the complete-batch objective evaluation and the source-grounded evidence-fidelity specialist review required to decide H-049 independently of product quality.
+No chapter revision or shared amendment comes next. The objective batch evaluation is complete. The exact next artifacts are the source-grounded evidence-fidelity specialist review required to decide H-049 independently of product quality, followed by both v2 prompt controls and the blind target panel.
 
 Before product interpretation, the exact target-panel model and reasoning configuration must pass both Stage-A v2 prompt controls: identical texts tie stably, and the intact reference stably beats its locally degraded copy. A control failure invalidates the judge instrument but does not alter or suppress the frozen batch.
 

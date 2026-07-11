@@ -1,0 +1,34 @@
+{
+  "command": "python3 scripts/eval/run_evals.py --book <temporary-book-view> --ref-dir calibration/reference/gsbs --run-dir calibration/runs/run-012/metrics/batch --chapters 1-3",
+  "temporary_book_view": {
+    "location": "mktemp directory under /tmp; removed immediately after preserving the evaluator exit code",
+    "files": {
+      "master-plan.md": {
+        "source": "production-books/quit-sugar/master-plan.md",
+        "sha256": "e3fd7cd0ed90e2c6ef29ccabf219f6a10462b31f2ee75a6d9e1b42abbdf913b5"
+      },
+      "chapters/chapter-01.md": {
+        "source": "calibration/runs/run-012/chapters/chapter-01-r1.md",
+        "sha256": "8c1cdbe5b104ba0510a94ee067f0c76e67b5d413098376db53df3d7ec222f2ac"
+      },
+      "chapters/chapter-02.md": {
+        "source": "calibration/runs/run-012/chapters/chapter-02-r1.md",
+        "sha256": "f28d4d543189dfdcfa24767e81441562c874a032af5ef4732b45ba7b463095c3"
+      },
+      "chapters/chapter-03.md": {
+        "source": "calibration/runs/run-012/chapters/chapter-03-r1.md",
+        "sha256": "835e3273d965cb25a09fc9fd2d843c7720f6a1e66c137a3482d39fa038460a9c"
+      }
+    },
+    "other_files": []
+  },
+  "exit_code": 2,
+  "stdout": "calibration/runs/run-012/metrics/batch/run-evals.stdout.txt",
+  "stderr": null,
+  "metrics": {
+    "artifact": "calibration/runs/run-012/metrics/batch/metrics.json",
+    "sha256": "54f3c87505e15e5ca7df9a67f278bf5779f0d4c404c42a9c7698b06a8624a200"
+  },
+  "verdict": "FAIL — three non-mantra 12-gram repetitions across Chapters 1 and 3",
+  "interpretation_boundary": "Per HARNESS Stage-A sequencing, objective and target-comparison diagnostics do not suppress the grounded specialist review or controlled blind v2 panel. H-049 remains active and product quality remains unjudged until those measurements exist."
+}

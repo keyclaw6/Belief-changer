@@ -2,7 +2,7 @@
   "run": "run-012",
   "date": "2026-07-11",
   "stage": "A",
-  "status": "FIRST_DRAFT_BATCH_FROZEN_PENDING_MEASUREMENT",
+  "status": "OBJECTIVE_MEASURED_PENDING_GROUNDED_REVIEW_AND_V2_PANEL",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "source-grounded semantic commissioning followed by a frozen Chapters 1-3 production run",
@@ -285,6 +285,85 @@
       }
     }
   },
+  "objective_measurement": {
+    "status": "FAIL",
+    "exit_code": 2,
+    "scope": "exact temporary book view containing only the canonical master plan and the three frozen R1 drafts renamed chapter-01.md through chapter-03.md; chapters 1-3",
+    "execution_record": "calibration/runs/run-012/metrics/batch/execution.json",
+    "stdout": "calibration/runs/run-012/metrics/batch/run-evals.stdout.txt",
+    "metrics_artifact": "calibration/runs/run-012/metrics/batch/metrics.json",
+    "metrics_sha256": "54f3c87505e15e5ca7df9a67f278bf5779f0d4c404c42a9c7698b06a8624a200",
+    "hard_failures": [
+      "repetition: 12-gram x2 ch[1, 3]: denying pleasant taste or giving up your right to choose read that",
+      "repetition: 12-gram x2 ch[1, 3]: pleasant taste or giving up your right to choose read that again",
+      "repetition: 12-gram x2 ch[1, 3]: without denying pleasant taste or giving up your right to choose read"
+    ],
+    "failure_mechanism_observed": "all three reported 12-grams are overlapping windows of the same M-01-adjacent construction: Chapters 1 and 3 both follow the scheduled exact mantra with 'Read that again'; the exact mantra itself is exempt, but the duplicated surrounding prose is not",
+    "mantra_gate": "PASS — zero mantra failures",
+    "originality_gate": {
+      "status": "PASS",
+      "ours_ngrams": 9326,
+      "reference_overlap_ngrams": 0,
+      "overlap_ratio": 0.0,
+      "tripwire": 0.003
+    },
+    "warnings": [],
+    "target_comparison_diagnostics": {
+      "authority": "diagnostic only; these ratios neither become an H-049 causal verdict nor suppress the required blind panel",
+      "ours_total_instrument_words": 9533,
+      "reference_total_instrument_words": 11176,
+      "total_words_ratio": 0.85,
+      "mean_chapter_words_ratio": 0.85,
+      "mean_sentence_words_ratio": 0.72,
+      "short_sentence_share_ratio": 3.12,
+      "questions_rate_ratio": 0.91,
+      "direct_address_ratio": 0.85,
+      "first_person_rate_ratio": 1.45,
+      "exclamation_rate_ratio": 0.0
+    },
+    "chapter_diagnostics": [
+      {
+        "chapter": "C-01",
+        "instrument_words": 2199,
+        "artifact_wc_words": 2252,
+        "plan_budget": 2800,
+        "stage_a_plus_minus_20_band": [2240, 3360],
+        "length_status": "FAIL — instrument count is 41 words below the Stage-A floor",
+        "mean_sentence_words": 12.0,
+        "short_sentences_pct": 51.9,
+        "questions_per_100_sentences": 8.7,
+        "second_person_per_1000": 47.7,
+        "first_person_per_1000": 10.0
+      },
+      {
+        "chapter": "C-02",
+        "instrument_words": 4093,
+        "artifact_wc_words": 4162,
+        "plan_budget": 3000,
+        "stage_a_plus_minus_20_band": [2400, 3600],
+        "length_status": "FAIL — instrument count is 493 words above the Stage-A ceiling",
+        "mean_sentence_words": 13.4,
+        "short_sentences_pct": 44.1,
+        "questions_per_100_sentences": 10.1,
+        "second_person_per_1000": 21.5,
+        "first_person_per_1000": 4.9
+      },
+      {
+        "chapter": "C-03",
+        "instrument_words": 3241,
+        "artifact_wc_words": 3306,
+        "plan_budget": 2600,
+        "stage_a_plus_minus_20_band": [2080, 3120],
+        "length_status": "FAIL — instrument count is 121 words above the Stage-A ceiling",
+        "mean_sentence_words": 14.1,
+        "short_sentences_pct": 41.7,
+        "questions_per_100_sentences": 12.2,
+        "second_person_per_1000": 38.6,
+        "first_person_per_1000": 7.4
+      }
+    ],
+    "decision_boundary": "objective failure blocks product promotion but does not decide H-049, constitute blind target quality judgment, or veto the required source-grounded specialist review and controlled v2 panel"
+  },
   "founder_directed_measurement_correction": {
     "date": "2026-07-11",
     "reason": "the first Chapter 1 review saw the canonical plan but not the frozen source-grounded C-01 commission whose handoff H-049 tests",
@@ -309,7 +388,8 @@
       "completed: C-02 R1 used committed C-01 R1 as its sole previous chapter",
       "completed: C-03 R1 used committed C-02 R1 as its sole previous chapter",
       "completed: the C-01-C-03 first-draft batch is frozen before any revision decision",
-      "next: run objective evaluation, a source-grounded evidence-fidelity specialist review, and the blind target panel across the batch even if an internal review failed"
+      "completed: objective evaluation failed on three overlapping non-mantra 12-gram windows while mantra and originality checks passed",
+      "next: run the source-grounded evidence-fidelity specialist review and the controlled blind target panel across the batch despite the objective failure"
     ],
     "prohibited_now": "do not revise a chapter, amend an asset, alter a commission, change a threshold, or form a new hypothesis before the required complete-batch measurements"
   },
