@@ -131,6 +131,19 @@
           "artifact": "calibration/runs/run-010/infrastructure/c03-native-collaboration-loop.json",
           "failure": "ephemeral collaboration hook entered a repeated wait loop despite multi_agent disable; operator terminated with no commission output",
           "retry_change": "add --ignore-user-config only; exact model/reasoning/content inputs unchanged"
+        },
+        {
+          "target": "C-03",
+          "thread_id": "019f514b-a607-7420-9762-eb5dc70ebb27",
+          "status": "success",
+          "execution_addition": "--ignore-user-config",
+          "artifact": "calibration/runs/run-010/commissions/chapter-03.md",
+          "sha256": "9973aa598556ae4e088a875d8935a8cd690a56aec20aa0ce32e12a83601015b2",
+          "input_tokens": 130576,
+          "cached_input_tokens": 102912,
+          "output_tokens": 9320,
+          "reasoning_output_tokens": 7338,
+          "host_note": "one collaboration spawn attempt failed before content synthesis; no child result or extra content entered the call"
         }
       ]
     },
@@ -150,5 +163,5 @@
   },
   "prefreeze_contract_audit": "GO — fresh read-only Codex critic found the prompt behavior/topic/chapter-agnostic, model-led, self-sufficient, and faithful to the single-lever experiment; no wording changed",
   "direction_audit": "GO — model-led commissioner is the smallest generic owner; NO-GO on mechanical slicing, prompt repetition, another Chapter 1 rule, or writer-model confound",
-  "notes": "Commissioner prompt frozen at a2f83da. C-01 and C-02 commissions preserved. First C-03 attempt failed in the native collaboration hook with no output; clean same-model retry pending. No prose call has run."
+  "notes": "Commissioner prompt frozen at a2f83da. C-01 through C-03 commissions are preserved and hashed before prose. One failed C-03 host attempt produced no output. Independent packet fidelity audit pending; no prose call has run."
 }

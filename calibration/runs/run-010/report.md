@@ -37,8 +37,18 @@ Even success requires a zero-amendment stability run and the untouched caffeine 
 
 The experiment was preregistered at `3cc8d51`. The behavior-agnostic commissioner prompt froze unchanged at `a2f83da` (SHA-256 `1c07aa5df8ae65a6f4862cad1e76356215f99addb80d0c1edc59cceec593900b`). A fresh read-only contract critic returned GO: it found no specimen or chapter patch, fixed schema, prescribed reasoning procedure, or second-planner behavior.
 
-No commissioner model call or prose call has run yet.
+Three separate fresh native Sol-ultra contexts then produced the pre-prose commission set:
+
+| Target | Words | Frozen SHA-256 |
+|---|---:|---|
+| C-01 | 859 | `5c9237a669eebd805d4035be8463a187be9a75d203e7faf6600716dcf573eb46` |
+| C-02 | 1,367 | `249f52790f4738a4435f6fd6bd11319e4e610cd8bbad29d41e67a1bc451fce5a` |
+| C-03 | 1,135 | `9973aa598556ae4e088a875d8935a8cd690a56aec20aa0ce32e12a83601015b2` |
+
+The first C-03 host attempt entered a broken ephemeral collaboration-wait loop despite `multi_agent` being disabled. It was terminated after producing no output and recorded as infrastructure failure. A fresh same-model/ultra retry added only `--ignore-user-config`; one child-spawn attempt failed, no child result entered, and the primary commissioner completed normally. No content input changed.
+
+No prose call has run. One independent packet-fidelity audit remains before the writer gate.
 
 ## Gate verdict
 
-IN PROGRESS. Preregistration and prompt freeze complete; packets and prose pending.
+IN PROGRESS. All three packets froze before prose; independent fidelity audit and prose pending.
