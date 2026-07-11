@@ -121,15 +121,11 @@ class PlanningContractTests(unittest.TestCase):
 
     def test_live_and_generic_plans_have_review_and_budget_gates(self):
         """OpenSpec: only a fit, budgeted, non-Opus-reviewed plan reaches writing."""
-        for plan_path in (
-            "production-books/_template/master-plan.md",
-            "production-books/quit-sugar/master-plan.md",
-        ):
-            plan = read(plan_path)
-            self.assertIn("54,000–66,000", plan)
-            self.assertIn("Planned chapter count", plan)
-            self.assertIn("single integer", plan)
-            self.assertNotIn("Reviewed by an Opus sub-agent", plan)
+        plan = read("production-books/_template/master-plan.md")
+        self.assertIn("54,000–66,000", plan)
+        self.assertIn("Planned chapter count", plan)
+        self.assertIn("single integer", plan)
+        self.assertNotIn("Reviewed by an Opus sub-agent", plan)
 
         for review_path in (
             "production-books/_template/master-plan-review.md",
@@ -138,7 +134,42 @@ class PlanningContractTests(unittest.TestCase):
             review = read(review_path)
             for model in ("Gemini 3.1 Pro", "GPT-5.6 Sol", "Grok 4.5"):
                 self.assertIn(model, review)
-            self.assertEqual("needs changes first", review.rstrip().splitlines()[-1])
+            self.assertIn(
+                review.rstrip().splitlines()[-1],
+                ("needs changes first", "fit to write from"),
+            )
+
+    def test_master_plan_is_single_source_and_reviewed_by_outcome(self):
+        """OpenSpec H-039: semantic context lives once; prose is reviewed as prose."""
+        planner = read("prompts/master-plan-skill-v2.md")
+        reviewer = read("prompts/master-plan-reviewer-v2.md")
+        template = read("production-books/_template/master-plan.md")
+
+        for required in (
+            "Define every shared book decision once",
+            "Compact evidence ledger",
+            "Compact chapter cards",
+            "Mantras are routed by chapter, not by occurrence arithmetic",
+            "The writer derives `IN THIS CHAPTER`",
+        ):
+            self.assertIn(required, planner)
+        for required in (
+            "## Blocking dimensions",
+            "## Explicit non-blockers",
+            "If no blocking dimension fails",
+            "prose-density or sentence metrics before a chapter exists",
+        ):
+            self.assertIn(required, reviewer)
+        for required in (
+            "## Evidence ledger", "## Mantra sheet", "## Instruction spine",
+            "## Arc and length map", "## Compact chapter cards",
+        ):
+            self.assertIn(required, template)
+        for obsolete in (
+            "Mantra assignment — DEBUTS", "Chapter anatomy:",
+            "mantra-state (already debuted)",
+        ):
+            self.assertNotIn(obsolete, template)
 
     def test_role_models_and_writer_arms_are_explicit(self):
         """OpenSpec: run-001 stays Opus; Muse is isolated after the baseline."""

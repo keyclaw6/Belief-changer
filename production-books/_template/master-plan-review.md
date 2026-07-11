@@ -1,19 +1,26 @@
 # Master Plan Review — <Book Title>
 
-**Required** by the `belief-changer-master-plan` skill: a fresh reviewer chosen from Gemini 3.1 Pro, GPT-5.6 Sol, or Grok 4.5 reviews the drafted master plan at that model's highest supported reasoning mode before the plan is final.
-
-**Exact runtime model ID:**
+**Allowed reviewer pool:** Gemini 3.1 Pro | GPT-5.6 Sol | Grok 4.5
+**Exact runtime model ID:** <resolved ID>
 **Reasoning configuration:** <highest supported mode>
 **Review round:** <1–3>
+**Candidate hash / artifact:** <value>
 
-## Reviewer verdict
+## Verdict
+
 <fit to write from | needs changes first>
 
-## Prioritized issues (most impactful first)
-1.
+## Material blocking defects
+
+<Only method-integrity, evidence-honesty, blindness, missing-context, safety, length, or incoherent whole-book architecture defects. State none if none.>
+
+## Non-blocking observations
+
+<Optional. Preferences and deleted bookkeeping never change the verdict.>
 
 ## Resolution
-<how each issue was addressed in master-plan.md — or why it was deliberately not>
 
-<!-- Keep the current verdict as the final non-blank line. Replace it only after a fresh review. -->
+<How each material blocker was resolved before the next fresh review.>
+
+<!-- Keep the current verdict as the final non-blank line. -->
 needs changes first

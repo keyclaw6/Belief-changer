@@ -1,48 +1,101 @@
-# Master-Plan Reviewer — fresh-context prompt
+# Master-Plan Reviewer — outcome-based fresh-context prompt
 
-Dispatch this prompt to a fresh-context reviewer chosen from **Gemini 3.1 Pro, GPT-5.6 Sol, or Grok 4.5**, using that model's highest supported reasoning mode. Resolve and record the exact runtime model ID and reasoning configuration. Fill the bracketed paths. Running this review and resolving its issues is REQUIRED before any chapter is written.
-
----
-
-You are a demanding editor reviewing a draft **master plan** for a belief-change book. Be rigorous and concrete — vague praise is useless.
+Dispatch this prompt to a fresh reviewer chosen from **Gemini 3.1 Pro, GPT-5.6 Sol, or Grok 4.5**, at that model's highest supported reasoning mode. The reviewer judges whether a strong isolated chapter writer can build an excellent, method-safe, evidence-honest book from the candidate. It does not review a bookkeeping system.
 
 ## Exact review-call inputs
+
 The review call receives exactly this prompt plus these six files:
-- The drafted master plan: `[MASTER_PLAN_PATH]`
-- The canonical style guide: `prompts/style-guide.md` — **Part A (method) AND Part B (prose engine). Part B §B8 defines the sheets the plan MUST carry; §B10 defines the full-length architecture.**
-- The book's brief + framing: `[BRIEF_PATH]`, `[FRAMING_PATH]`
-- The lived-experience synthesis: `[LIVED_EXPERIENCE_PATH]`
-- The scientific-evidence synthesis: `[SCIENTIFIC_EVIDENCE_PATH]`
 
-Do not read a reference book, anything under `analysis/` or `calibration/reference/`, judge output, source packets, chapters, or any other artifact.
+- The candidate master plan — `production-books/<slug>/master-plan.md`
+- The complete style guide — `prompts/style-guide.md`
+- The brief — `production-books/<slug>/00-brief.md`
+- The framing — `production-books/<slug>/framing.md`
+- The lived-experience synthesis — `production-books/<slug>/research/lived-experience.md`
+- The scientific-evidence synthesis — `production-books/<slug>/research/scientific-evidence.md`
 
-## What the master plan is for
-It is the ENTIRE whole-book context each chapter-writer gets (alongside the style guide and the immediately previous chapter). Because the writer sees almost nothing else, the master plan is the sole carrier of all book-specific repetition: if the mantra schedule is not in the plan, it does not exist. Judge the plan as build instructions, not as prose.
+Do not read a reference book, anything under `analysis/` or `calibration/reference/`, calibration history, judge output, source packets, chapters, prior plan candidates, or prior reviews.
 
-## Check, and report issues on, each of these
+## What the plan must accomplish
 
-**The Part B sheets (§B8) — the plan is INVALID without them:**
-1. **Mantra sheet completeness & quality.** Every §B2 archetype instantiated (entry promise, promise triad, trap-namer, illusion-namer, mechanism characters [per Fork 1: trap/lie/industry — never an inner beast to battle], sensory definition, stakes phrase, cost formula, fact-assertion frame, terminal mantra, named anti-method, named conflict model, named positive authority + its operational instruments, claim block, ease-operator). Each mantra must have: frozen exact wording (caps/punctuation included), the belief it installs, debut chapter, repetition schedule, hand-over form. Flag any placeholder wording ("TBD", "something like..."), any mantra that is generic rather than behavior-fitted, and any chapter with no mantra assignment (every chapter must debut or echo at least one).
-2. **Repetition law compliance.** Mantras scheduled verbatim; no chapter re-argues a settled point (it must invoke the token); nothing else scheduled to repeat verbatim except previews/summaries/instruction recaps (licensed zones).
-3. **Instruction spine (§B10).** Numbered instructions assigned one-per-chapter at climaxes; all four types present (behavioral, epistemic, emotional, epistemic-firewall); a mid-book recap point; the final recap chapter with chapter cross-references.
-4. **Chapter anatomy.** Each chapter spec includes its IN THIS CHAPTER preview bullets, the italic thesis line, the ALL-CAPS landing line(s), and the SUMMARY bullets (with assigned mantras restated verbatim).
-5. **Curve map sanity.** Freedom-language suppressed mid-book, crescendo in the final quarter; demolition vocabulary peaks mid-book; concept debuts ordered; one fresh reframe reserved for the ending; promise front-loaded.
-6. **Length budget.** Every chapter has one explicit integer word budget (not a range); each chapter spec matches the curve map; and the arithmetic sum is stated. For a HARNESS calibration plan, the sum must fall within 54,000–66,000 words, the 0.9–1.1× target band.
-7. **Lexicon sheet.** Trap register and freedom register defined for this behavior; banned willpower-register list present; community slang imported for ventriloquism.
-8. **Redefinition decision** (where the behavior can't be quit wholesale): precise Good-X/Bad-X line drawn in ch. 1, CAPS name, totality inside the line, margin-for-error doctrine, conditional-bonus extensions handled per the autonomy stance.
-9. **Structural slots (§B10)** assigned to chapters: fear chapter, anti-method chapter, identity-excuse chapter, pre-endgame knowledge recap, embedded long-form testimonial, myths Q&A battery, meta-inoculation, scare-then-disown placements, perception homework, the vow with expect-the-unexpected, meaningless-days demolition, medical-safety guardrail if relevant.
+The plan is the whole-book semantic context supplied to every chapter writer alongside the style guide and immediately previous chapter. Shared decisions must exist once under stable IDs; chapter cards reference them.
 
-**The method checks (Part A):**
-10. **Engine coverage.** Every chapter advances at least one §3 engine mechanism; all 8 delivered somewhere.
-11. **Arc integrity.** §8/§B10 spine order holds; belief-change precedes any demand to stop; deviations justified.
-12. **Concreteness (no placeholders).** Every chapter names the SPECIFIC belief targeted, the SPECIFIC studies/testimonials (traceable to real lines in the research files, stance flagged supported/contested), and the SPECIFIC original analogy with the job it does. Flag "discuss the benefits", "add a story", "cite research".
-13. **Research actually used.** Findings and testimonials assigned by reference; contested claims flagged; personas each served (ventriloquism lines per persona; justification menu covers every persona's top reasons).
-14. **Guardrails (§9 + B-additions).** Escape-not-sacrifice throughout; non-shaming; immediate freedom; no willpower framing; autonomy stance per Fork 2; no inner-monster battle per Fork 1; facts serve perception not fear (scare-then-disown where facts are hard); no banned-register vocabulary in frozen mantra wording; analogies original, never lifted from reference books.
-15. **Continuity.** Each chapter's "receives from / hands to" lines up, so the previous-chapter-only handoff suffices — including mantra-state (what has been debuted so far must match the schedule).
+Review the candidate as a coherent model-owned blueprint, not as prose and not as a deterministic schema. A preference is not a blocker. A material defect is.
 
-## Return (under ~800 words)
-1. A prioritized, concrete list of fixes — quote the chapter/sheet/line and state the specific change.
-2. Any missing sheet, missing engine-function, missing structural slot, unassigned chapter, or budget error.
-3. A final standalone line containing exactly **fit to write from** or **needs changes first**. This must be the final non-blank line so the review artifact can gate chapter writing mechanically.
+## Blocking dimensions
 
-Do not rewrite the plan; give surgical, actionable notes the author will apply.
+Return `needs changes first` only when at least one concrete defect materially threatens the finished book in one of these dimensions.
+
+### Method integrity
+
+The false belief, inversion, fork positions, redefinition, autonomy stance, safety perimeter, and arc must support non-shaming, willpower-free, fear-free belief change. The plan must not concede an irreplaceable benefit, invent an inner enemy, defer freedom into a streak, or turn clinical care into method failure.
+
+### Evidence honesty and sufficiency
+
+Every empirical or lived assignment must resolve to one authoritative evidence-ledger entry carrying the source ID, grade/outcome tier, scope, permitted inference, prohibited inference, and relevant limit. Exact quotes must match the syntheses. The plan must not invent evidence or omit evidence payload an isolated writer needs.
+
+The ledger may intentionally exclude unused research. A generic structural move may be marked evidence-unavailable rather than filled with invention.
+
+### Writer sufficiency
+
+Every chapter card must resolve to:
+
+- one belief job;
+- target personas or reader objection;
+- evidence IDs and limits;
+- mantra debut/echo IDs;
+- instruction ID when any;
+- at least one concrete scene or original-analogy ID and its argumentative job;
+- chapter-specific guardrails and continuity intent;
+- one integer budget.
+
+Block only when missing semantic context would force a writer to guess, contradict the book, or invent material.
+
+### Whole-book architecture
+
+The chapter sequence must form a persuasive escalating argument, preserve the belief-change spine, avoid re-arguing settled moves, place the strongest scene and ending revelation deliberately, route meaningful structural responsibilities, and leave a coherent handoff into freedom and relapse-proofing.
+
+The planner owns chapter count, ordering, consolidation, and which optional structural slots are evidence-supported. Override that judgment only for a concrete arc or method failure.
+
+### Deliberate repetition and instructions
+
+The plan must contain 6–10 original frozen mantras defined once with belief/job, debut chapter, echo chapter IDs, and hand-over form. Chapter cards reference mantra IDs. The instruction spine must define each instruction once and route it by chapter, with portable clinical exceptions wherever needed.
+
+Block a missing, contradictory, unoriginal, unsafe, or unroutable mantra/instruction. Do not require exact occurrence counts or copied wording in chapter cards.
+
+### Length and coverage
+
+Every chapter needs one integer word budget and the plan needs an exact arithmetic sum. A HARNESS calibration plan must total 54,000–66,000 words. All materially distinct personas, justifications, supported evidence, and necessary method engines must be served; counts are not substitutes for substantive coverage.
+
+### Blindness and originality
+
+The plan must use only permitted inputs and must not carry reference-book prose, analysis artifacts, judge feedback, or reference-specific content. Analogies, mantras, instructions, and scenes must be original.
+
+## Explicit non-blockers
+
+Do not request or block on:
+
+- mantra occurrence arithmetic;
+- a second mantra audit or cumulative state table;
+- repeated full mantra, instruction, evidence, persona, or slot text;
+- prewritten `IN THIS CHAPTER`, thesis, landing, section, or SUMMARY prose;
+- a single-use phrase ledger;
+- duplicate chapter-to-persona or chapter-to-slot matrices;
+- generic style rules copied into every chapter card;
+- prose-density or sentence metrics before a chapter exists;
+- a different ordering or stylistic preference when the candidate's architecture is coherent.
+
+Chapter anatomy, voice metrics, analogy density, natural mantra placement, and line-level repetition are chapter-writer and chapter-review concerns.
+
+## Return (under 800 words)
+
+1. List only material blocking defects, ordered by impact. Quote or name the exact authoritative entry/chapter card, explain the risk to the finished book, and state the smallest semantic correction.
+2. Optionally list non-blocking observations under a clearly labeled heading; they must not change the verdict.
+3. End with one standalone final line containing exactly:
+
+`fit to write from`
+
+or
+
+`needs changes first`
+
+If no blocking dimension fails, the verdict must be `fit to write from` even if you would personally organize or phrase the plan differently. Do not rewrite the plan.

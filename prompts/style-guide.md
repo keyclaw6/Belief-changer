@@ -6,7 +6,7 @@
 
 **The one job of every book we write:** Move the reader to a frame of mind where, whenever they think about the target behavior, they feel *relief and freedom that they no longer do it* — so that stopping feels like **escaping a trap, not sacrificing a pleasure**. We change the belief; the behavior then changes on its own, without willpower and without shame.
 
-**THE REPETITION LAW (governs everything):** *Mantras are repeated VERBATIM, on schedule, exactly as frozen in the master plan's mantra sheet. Everything else is never repeated verbatim.* (Full system: §B1–§B2.)
+**THE REPETITION LAW (governs everything):** *Mantras are repeated VERBATIM, routed by chapter exactly as frozen in the master plan's single mantra sheet. Everything else is never repeated verbatim.* (Full system: §B1–§B2.)
 
 **Structure:** **PART A — THE METHOD** (the worldview, the engine, the forks, the moves, the arc). **PART B — THE PROSE ENGINE** (the binding writing contract: the mantra system, repetition schedule, lexicon, sentence operators, per-chapter contract). Where Part B is more specific, Part B wins.
 
@@ -433,11 +433,12 @@ These are the *shapes* that work — drawn from the three books. **Do not copy t
 
 Easyway prose is built on deliberate, scheduled, *verbatim* repetition of a small set of fixed phrases — and on the near-total absence of accidental repetition everywhere else. Our pipeline's context strategy (chapter writer sees only the master plan + the previous chapter) suppresses accidental repetition by design. That means the deliberate repetition **cannot emerge on its own — it must be specified**. Hence:
 
-**THE LAW: Mantras are repeated VERBATIM, on schedule, exactly as frozen in the master plan's mantra sheet. Everything else is never repeated verbatim.**
+**THE LAW: Mantras are repeated VERBATIM, in the chapters routed by the master plan's single mantra sheet. Everything else is never repeated verbatim.**
 
 - A mantra is an incantation. Its power comes from arriving in *exactly* the same words every time, so it accumulates weight and eventually fires in the reader's head unprompted. **Paraphrasing a mantra kills it.** If the mantra sheet says "you have nothing to lose and everything to gain," you may not write "there's no downside, only upside."
 - Conversely, any striking sentence that is *not* a mantra must appear once and only once in the book. If you find yourself rebuilding an argument the master plan says a previous chapter already made, invoke its mantra token instead of re-arguing it.
 - The chapter writer never invents a new mantra and never alters one. Missing or mangled mantras are reviewer-blocking defects.
+- The master plan defines each mantra once and routes it by debut/echo chapter IDs. It does not count exact occurrences, duplicate the wording in every chapter card, or maintain a second audit/state matrix. Natural placement inside the assigned chapter belongs to the writer; fidelity belongs to the chapter reviewer.
 
 ---
 
@@ -452,9 +453,9 @@ Every core belief in the book runs the same four-stage lifecycle:
 3. **REPEAT** — later chapters re-invoke the mantra verbatim, *without re-arguing it*. Each repetition is brief — a clause, a reminder, a drumbeat — and lands in a new context, which is what generalizes the belief.
 4. **HAND OVER** — in the book's final movement, the mantra is explicitly given to the reader as a thought script: "whenever you think X, replace it with [mantra]." The book ends by transferring its own voice into the reader's inner monologue.
 
-### The mantra archetypes (every book instantiates these)
+### Candidate mantra archetypes (the planner chooses and consolidates)
 
-The master plan must derive a per-book **mantra sheet** instantiating each archetype with frozen wording adapted to the target behavior. Six to ten mantras total; each chapter sets or reinforces at least one (a project decision — see §B7).
+The master plan derives a per-book **mantra sheet** of six to ten model-chosen frozen phrases adapted to the target behavior. The table is a repertoire of jobs, not a demand for one separate phrase per row: consolidate compatible jobs, omit jobs that the evidence or architecture does not need, and keep only phrases strong enough to earn repetition. Each chapter debuts or echoes at least one routed mantra (§B7). Placement rules below are qualitative craft guidance, not occurrence-count arithmetic.
 
 | Archetype | Job | Carr's instance (reference) | Placement rule |
 |---|---|---|---|
@@ -476,7 +477,7 @@ The master plan must derive a per-book **mantra sheet** instantiating each arche
 
 ### Mantra sheet format (lives in the master plan)
 
-For each mantra: **(a)** frozen exact wording — including capitalization and punctuation; **(b)** archetype; **(c)** the belief it installs; **(d)** debut chapter (where it gets its full argument); **(e)** repetition schedule (which chapters re-invoke it, roughly how often); **(f)** hand-over form (how the final movement gives it to the reader). The chapter writer receives the full sheet with every chapter and an explicit list: *mantras this chapter debuts / mantras this chapter must echo*.
+For each mantra, define once: **(a)** frozen exact wording — including capitalization and punctuation; **(b)** the job or consolidated archetypes; **(c)** the belief it installs; **(d)** debut chapter; **(e)** echo chapter IDs; **(f)** hand-over form. Chapter cards reference mantra IDs; they do not repeat the wording or prescribe occurrence counts.
 
 ---
 
@@ -566,21 +567,19 @@ The reviewer rejects a chapter that: mangles or paraphrases a mantra; misses its
 
 ---
 
-## B8. What the master plan must carry (per-book sheets)
+## B8. What the master plan must carry (one source of truth)
 
-Because chapter writers see only the master plan + previous chapter + this guide, the master plan is the carrier of all book-specific repetition. It must include:
+Because chapter writers see only the master plan + previous chapter + this guide, the plan must carry all book-specific meaning without copying the same decision into competing representations. Define each shared item once under a stable ID; chapter cards reference those IDs.
 
-1. **The mantra sheet** (§B2 format) — the frozen phrases, schedules, and per-chapter assignments.
-2. **The lexicon sheet** (§B4) — trap register, freedom register, banned list, community slang.
-3. **The justification menu** — the reader's reasons, verbatim from research, mapped to demolition chapters.
-4. **The analogy assignment** — which analogy does which job in which chapter (from the research analogy bank).
-5. **The curve map** — where each chapter sits on the freedom-crescendo / demolition curves; which concept debuts where; the saved-for-ending reframe.
-6. **The persona notes** — which reader types (from research) each chapter must speak to, and the ventriloquism lines for each.
-7. **The strongest-case scene** and the **moment-of-revelation prediction** for this behavior.
-8. **The fork decisions** (Part A §4) stated explicitly for this book.
-9. **The instruction spine sheet** (§B10): the numbered instructions, their one-per-chapter assignments, the mid-book recap point, and the final recap chapter with chapter cross-references. Include the epistemic-firewall instructions.
-10. **The redefinition decision** (§B10): for behaviors that cannot be quit as a whole category, the precise Good-X/Bad-X line, the CAPS name for the bad subset, and the margin-for-error doctrine.
-11. **Structural-slot assignments** (§B10): which chapters carry the embedded testimonial, the myths Q&A battery, the meta-inoculation, the pre-endgame knowledge recap, and the perception homework.
+1. **Book core** — target, reader/personas, load-bearing false belief, through-line, fork decisions, redefinition and margin, safety perimeter, strongest-case scene, and saved ending reframe.
+2. **Compact evidence ledger** — only material the book may use, each item with source ID, grade or outcome tier, scope/limit, and permitted/prohibited inference.
+3. **Mantra sheet** — 6–10 original frozen phrases defined once, with belief, debut chapter ID, echo chapter IDs, and hand-over form.
+4. **Lexicon** — trap and freedom registers, banned register, and source-grounded reader dialect.
+5. **Instruction spine** — each frozen instruction defined once, its chapter ID, recap points, and any clinical/safety exception inside wording that may travel alone.
+6. **Arc and budget map** — chapter order and one-line jobs, concept debuts, qualitative freedom/demolition curves, structural-slot ownership, saved reframe, one integer budget per chapter, and the exact sum.
+7. **Compact chapter cards** — one belief job; target personas/objections; evidence-ledger IDs; scene or original-analogy ID and its argumentative job; mantra debut/echo IDs; instruction ID if any; structural responsibility; guardrails; continuity intent; integer budget.
+
+Do **not** add occurrence-count arithmetic, a separate mantra audit, cumulative state matrices, repeated full mantra/evidence text, duplicated persona or slot tables, single-use phrase ledgers, prewritten chapter previews/theses/landings/SUMMARY prose, or generic style-guide rules copied into every card. The chapter writer creates the anatomy and prose from §B5, §B7, and §B10; the chapter reviewer judges the actual text.
 
 ---
 
@@ -598,7 +597,7 @@ Because chapter writers see only the master plan + previous chapter + this guide
 
 ## B10. The full-length book architecture (validated on *Good Sugar Bad Sugar*, ~60K words)
 
-The pocket-book format (§B6) compresses these away; at full length Carr runs them explicitly. The master plan decides per book which apply (any book over ~15 chapters should use all of them). Source analysis: `analysis/sugar-prose-patterns.md`.
+The pocket-book format (§B6) compresses these away; at full length Carr often runs them explicitly. The planner decides which slots genuinely serve this behavior, evidence, and arc, and records any material omission with a rationale. Do not create unsupported content merely to fill a slot. Source analysis: `analysis/sugar-prose-patterns.md`.
 
 ### The chapter anatomy (every chapter, no exceptions)
 1. **"IN THIS CHAPTER"** — bullet preview of the chapter's section headings.
@@ -609,7 +608,10 @@ The pocket-book format (§B6) compresses these away; at full length Carr runs th
 
 The reader meets every reframe at least twice per chapter (argued + recapped). **Previews and summaries are licensed recap zones — exempt from the no-verbatim-repetition rule, exactly like mantras.**
 
+This anatomy is a chapter-writing requirement, not prewritten plan prose. The chapter card supplies the semantic work order; the writer creates the headings, thesis, landing, and SUMMARY, and the chapter reviewer judges them in the completed chapter.
+
 ### The instruction spine
+- The plan defines each frozen instruction once and routes it to one chapter card by ID; cards and audit tables do not copy it.
 - Instructions are **doled out one per chapter at the chapter's climax**, numbered cumulatively (the sugar book has 12 across 20 chapters).
 - Include all four types: behavioral ("don't quit yet"), epistemic ("keep an open mind"), emotional ("begin with elation"), and **epistemic firewalls** ("ignore any advice that conflicts with the method", "ignore anyone who quit by willpower", "avoid the influence of other addicts") — explicitly quarantining future belief-threats.
 - **Mid-book recap**: the instructions-so-far re-listed verbatim once (~25% mark).
@@ -635,4 +637,3 @@ When the behavior category is essential or unquittable (eating, screens for work
 - **Perception homework**: 1–3 physical exercises the reader performs (the sensory immersion in the genuine pleasure; the falsification test on the illusory one; the audit exercise). The belief change is enacted, not just read.
 - **The vow with "expect the unexpected"**: the final ritual includes guided sensory disgust-attention, the solemn vow with visualization, instant conferral ("CONGRATULATIONS! YOU'VE WON!") — and pre-loads future danger moments INTO the vow ("fix these thoughts now while they are vivid, so when the memory fades the resolution does not"). Plus the **meaningless-days demolition**: no New Year's, no landmark days — STOP NOW.
 - **Practical-safety guardrail** (when the behavior touches medication/health): a boxed advisory routing medical specifics to a professional, kept outside the belief argument.
-

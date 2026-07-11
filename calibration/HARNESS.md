@@ -56,16 +56,18 @@ Every improvement must land in a **generic method asset** (`prompts/style-guide.
 
 ## §3 The factory under test (stage recipes)
 
-The factory is a file-contract state machine in `production-books/quit-sugar/`. **Every sub-role runs in a FRESH context whose inputs are EXACTLY the files listed — your own operator context must never leak into a sub-call.** How you spawn fresh sub-calls is your environment's affair; the contract is:
+The factory is a file-contract pipeline in `production-books/quit-sugar/`. **Every sub-role runs in a FRESH context whose inputs are EXACTLY the files listed — your own operator context must never leak into a sub-call.** How you spawn fresh sub-calls is your environment's affair; the contract is:
 
 | Stage | Prompt | Inputs (exactly) | Output | Gate |
 |---|---|---|---|---|
 | Research | `prompts/research-agent.md` | lead gets prompt + `00-brief.md`; its subagents get only their lead-chosen commission and needed visible artifacts | `research/sources/*`, `research-log.md`, then the two research syntheses | one fresh reviewer accepts depth, traceability, rights/privacy, and bank/persona coverage |
 | Framing | template in book folder | `00-brief.md` + `framing.md` template + style guide + the two research files | filled `framing.md` | operator decides forks for THIS calibration book; log decisions in the run report |
-| Master plan | `prompts/master-plan-skill-v2.md` | that prompt + style guide + `00-brief.md` + `framing.md` + the two research files | `master-plan.md` (§B8 book sheets FIRST) | fresh-context reviewer (`prompts/master-plan-reviewer-v2.md`, strongest model) iterated to **"fit to write from"**, ≤3 cycles |
+| Master plan | `prompts/master-plan-skill-v2.md` | that prompt + style guide + `00-brief.md` + `framing.md` + the two research files | `master-plan.md`: authoritative book/evidence/mantra/instruction ledgers + arc + compact chapter cards | fresh-context outcome reviewer (`prompts/master-plan-reviewer-v2.md`, strongest model) iterated to **"fit to write from"**, ≤3 cycles |
 | Chapter N | `prompts/chapter-writer.md` | that prompt + style guide + `master-plan.md` + chapter N−1 ONLY | `chapters/chapter-NN.md` | fresh-context reviewer (`prompts/chapter-reviewer.md`) to ACCEPT, ≤3 cycles each |
 
 The anti-repetition context law (writer sees only plan + previous chapter + style guide) is the factory's core design — never widen a writer's inputs.
+
+**Run-002 planning amendment (H-039): one source of truth.** Run-001 exhausted three plan reviews while every candidate already had a coherent arc, all engine/slot coverage, and an exact 62,000-word budget; the repeated blockers were contradictions among duplicated mantra counts, audits, summaries, continuity state, evidence copies, and matrices. The normalized plan therefore defines every shared decision once and references it by ID from compact chapter cards. Plan review blocks only method-integrity, evidence-honesty, blindness, missing-context, safety, invalid-length, or incoherent-architecture failures. It MUST NOT demand occurrence arithmetic, duplicate audits/state tables, repeated full payloads, prewritten chapter anatomy, or prose-density metrics before prose exists. Chapter writers own anatomy from the style guide; chapter reviewers judge the completed text.
 
 ## §3b Research depth doctrine (founder, 2026-07-10; corrected 2026-07-11)
 
@@ -184,5 +186,7 @@ Stage C passes (parity on the caffeine holdout with zero new tuning) → write t
 ## §13 Tooling doctrine: prompts over determinism
 
 **Founder doctrine (corrected 2026-07-10): current LLMs systematically underestimate how intelligent current LLMs are — including themselves.** Left alone, they wrap problems in deterministic scaffolding (state machines, retry matrices, format validators) that a well-briefed intelligent agent simply doesn't need. Research, framing, planning, reviewing, and writing remain agentic: improve prompts, add independent subagents, or add a stronger fresh-context reviewer. Deterministic code is reserved for measuring completed artifacts and reproducibility records; it must not decide research steps, render a model's plan, cap reasoning, or replace an intelligent quality review. Bloat is a failure mode; delete it.
+
+The same doctrine applies inside prompts: a plan is not a manually normalized database. Do not make a model reproduce one decision across counts, audit tables, chapter prose, and cumulative-state matrices, then mistake copy disagreement for book quality. Preserve semantic context once; let the planner architect and the reviewer judge outcomes.
 
 The eval scripts are **measurement instruments** — deterministic, stdlib-only, runnable anywhere. They are not the orchestration layer; YOU and the model subagents are. A runner or adopted agent framework may transport fresh contexts, parallel calls, tools, and file handoffs, but it may not prescribe the research reasoning path or trade quality for throughput. The repo file contract remains the interface and every decision stays reconstructable. Log any adoption as H-008. Your experience here becomes the requirements list for the standalone harness product (VISION Part II, Q1 — decided direction: Agents SDK or PI fork, base chosen from real calibration experience).

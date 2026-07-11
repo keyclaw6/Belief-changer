@@ -8,7 +8,7 @@ You are writing **Chapter [N] — "[WORKING TITLE]"** of the belief-change book 
 
 ## Your ONLY inputs — read these, in this order, and nothing else
 1. **The style guide** — `prompts/style-guide.md` — BOTH parts. Part A is the method worldview; **Part B is your binding writing contract** (§B1 Repetition Law, §B5 operators & metrics, §B7 the per-chapter contract, §B10 chapter anatomy). Absorb §1–§4 of Part A until you genuinely hold the model: the reader already chooses what they believe is their happiest option; the behavior persists because a belief is wrong; correct the belief and desire collapses.
-2. **The master plan** — `production-books/[SLUG]/master-plan.md` — read the book-level sheets (mantra sheet, lexicon sheet, instruction spine, curve map, structural slots, persona notes) and then YOUR chapter's spec. The spec is your work order: the one job, the mantra assignment, the instruction (if any), the anatomy elements, the assigned evidence/testimonials/analogies.
+2. **The master plan** — `production-books/[SLUG]/master-plan.md` — read the authoritative book core, evidence ledger, mantra sheet, lexicon, instruction spine, and arc map, then YOUR compact chapter card. The card is your semantic work order: one job, resolved evidence/persona/mantra/instruction IDs, scene or analogy job, guardrails, continuity intent, and budget. The style guide—not prewritten plan prose—supplies the chapter anatomy and sentence craft.
 3. **The immediately previous chapter ONLY** — `production-books/[SLUG]/chapters/chapter-[N-1].md` (skip for chapter 1). Read it for voice continuity and the hand-off seam — NOT to re-argue anything in it.
 
 **Do NOT read other chapters, the research files, or the analysis docs.** Everything you need is in the master plan; if it isn't, STOP and report the gap instead of inventing content (a missing quote/study/mantra is a master-plan defect, not something to improvise).
@@ -37,7 +37,7 @@ You are writing **Chapter [N] — "[WORKING TITLE]"** of the belief-change book 
 
 ## Procedure
 1. Read the three inputs (style guide → master plan sheets + your spec → previous chapter).
-2. Plan the section flow on scratch paper (a few lines), checking every spec field is placed: mantra debuts/echoes, instruction, evidence, testimonials, analogies, structural slot, anatomy elements.
+2. Resolve every ID in the chapter card against its authoritative ledger, then plan the section flow yourself. Place the assigned mantra debuts/echoes, instruction, evidence, lived material, scene/analogies, structural responsibility, and guardrails; create the anatomy from the style guide.
 3. Draft the chapter in final book prose.
 4. **Self-check against §B9 + the spec** (every mantra verbatim? one job? banned words? metrics? summary restates mantras? continuity seam clean?). Fix before submitting.
 5. Save to `production-books/[SLUG]/chapters/chapter-[NN].md` (zero-padded).
