@@ -6,7 +6,13 @@
 
 **Stage:** A
 
-**Status:** ACTIVE CALIBRATION CHECKPOINT — H-048 inconclusive; fresh direction audit required before any production change
+**Status:** RESOLVED FOR H-049 PRODUCTION TEST — no canon merge or mid-run amendment authorized
+
+## Direction-audit resolution — run-012
+
+A fresh read-only factory auditor returned GO for one three-chapter production experiment. H-049 changes only the universal evidence handoff: the existing model-led commissioner receives the accepted packets behind the target chapter's assigned evidence and carries their minimum usable attribution, factual texture, quotation basis, and inference limits into its natural-language commission.
+
+The generic contract and all three independently audited commissions freeze before Chapter 1 prose and remain unchanged through Chapter 3. No Chapter 1 outcome may tune or truncate the sample. This resolves the checkpoint only for the exact run-012 experiment in `calibration/runs/run-012/manifest.json`; no run-012 asset is approved for canon `main`, and no semantic-only result counts without complete three-chapter product passage.
 
 ## Run-011 result — diagnostic sensitivity failure
 
