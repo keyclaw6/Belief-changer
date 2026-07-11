@@ -147,7 +147,23 @@
         }
       ]
     },
-    "packet_auditor": {"model": "gpt-5.6-sol", "provider": "native Codex", "reasoning": "ultra", "calls": []},
+    "packet_auditor": {
+      "model": "gpt-5.6-sol",
+      "provider": "native Codex",
+      "reasoning": "ultra",
+      "calls": [
+        {
+          "thread_id": "019f5150-abe9-7a63-aed6-6c637e07bb29",
+          "status": "success",
+          "artifact": "calibration/runs/run-010/audits/packet-fidelity.md",
+          "sha256": "e2211f8db53ba9586758c510d4909b61a1ee0beddb428cda19a09ca5164f77f8",
+          "input_tokens": 231724,
+          "cached_input_tokens": 184064,
+          "output_tokens": 10452,
+          "reasoning_output_tokens": 9572
+        }
+      ]
+    },
     "writer": {"requested_model": "anthropic/claude-opus-4.6", "expected_runtime_model": "anthropic/claude-4.6-opus-20260205", "reasoning": {"effort": "none"}, "max_tokens": 128000, "calls": []},
     "chapter_reviewer": {"model": "gpt-5.6-sol", "provider": "native Codex with recorded same-model OpenRouter fallback only if unavailable", "reasoning": "ultra native or max OpenRouter", "calls": []},
     "judges": [
@@ -161,7 +177,14 @@
     "prompts/chapter-reviewer.md": "a91af62",
     "production-books/quit-sugar/master-plan.md": "5915b9f"
   },
+  "packet_fidelity_result": {
+    "C-01": "FAITHFUL",
+    "C-02": "FAITHFUL",
+    "C-03": "ISOLATED DEFECT — incorrectly says accidents and honest ambiguity are outside BAD SUGAR instead of inside the category with non-failure interpretation under DEF-05",
+    "set": "ISOLATED DEFECT",
+    "operator_action": "packets remain frozen and unedited; faithful C-01 permits the preregistered Chapter 1 A/B; the defect remains a full-product validity risk and prevents any unsupported H-047 success claim"
+  },
   "prefreeze_contract_audit": "GO — fresh read-only Codex critic found the prompt behavior/topic/chapter-agnostic, model-led, self-sufficient, and faithful to the single-lever experiment; no wording changed",
   "direction_audit": "GO — model-led commissioner is the smallest generic owner; NO-GO on mechanical slicing, prompt repetition, another Chapter 1 rule, or writer-model confound",
-  "notes": "Commissioner prompt frozen at a2f83da. C-01 through C-03 commissions are preserved and hashed before prose. One failed C-03 host attempt produced no output. Independent packet fidelity audit pending; no prose call has run."
+  "notes": "Commissioner prompt frozen at a2f83da. C-01 through C-03 commissions were preserved and hashed before prose. Fidelity: C-01/C-02 faithful, C-03 isolated defect; no packet edited. Faithful C-01 advances to the preregistered A/B. No prose call has run."
 }
