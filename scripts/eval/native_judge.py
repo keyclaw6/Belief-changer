@@ -27,13 +27,39 @@ def parse_identities(raw):
     return identities
 
 
-def command(workdir):
+def _object(properties):
+    return {"type": "object", "properties": properties,
+            "required": list(properties), "additionalProperties": False}
+
+
+def role_output_schema(spec):
+    """Build the strict native schema from the authoritative role dimensions."""
+    score = lambda: {"type": "number", "minimum": 1, "maximum": 9}
+    pair = lambda value: _object({"A": value(), "B": value()})
+    properties = {
+        "scores": _object({dim: pair(score) for dim in spec["dims"]}),
+        "critical_failures": pair(lambda: {
+            "type": "array", "items": {"type": "string",
+                                      "enum": sorted(spec["failures"])}}),
+        "product_parity_verdict": {"type": "string", "enum": ["A", "B", "tie"]},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "paraphrased_evidence": pair(lambda: {"type": "string"}),
+        "generic_mechanism": {"type": "string"},
+    }
+    return _object(properties)
+
+
+def _schema_bytes(schema):
+    return json.dumps(schema, sort_keys=True, separators=(",", ":")).encode()
+
+
+def command(workdir, schema_path):
     return [
         "codex", "exec", "--ephemeral", "--ignore-user-config", "--ignore-rules",
         "--disable", "multi_agent", "--model", MODEL,
         "-c", f"model_reasoning_effort={REASONING_EFFORT}",
         "--sandbox", "read-only", "--skip-git-repo-check", "--cd", workdir,
-        "--json", "-",
+        "--output-schema", schema_path, "--json", "-",
     ]
 
 
@@ -60,15 +86,17 @@ def _events(stdout):
     return messages[-1], thread_ids[-1], usage
 
 
-def instrument_configuration(prompts, pairing, identities):
+def instrument_configuration(prompts, schemas, pairing, identities):
     root = Path(__file__).parent
     digest = lambda data: hashlib.sha256(data).hexdigest()
     return {
-        "protocol_version": "stage-a-v2.1-native-sol-ultra-1",
+        "protocol_version": "stage-a-v2.2-native-sol-ultra-1",
         "transport": "native-codex-subscription", "model": MODEL,
         "reasoning_effort": REASONING_EFFORT, "replica_identities": list(identities),
         "chapter_pairs": [list(pair) for pair in pairing],
         "role_prompt_sha256": {role: digest(text.encode()) for role, text in prompts.items()},
+        "role_output_schema_sha256": {
+            role: digest(_schema_bytes(schema)) for role, schema in schemas.items()},
         "implementation_sha256": {
             name: digest((root / name).read_bytes()) for name in IMPLEMENTATION_FILES},
     }
@@ -87,11 +115,15 @@ def validate_controls(raw_paths, configuration):
             raise ValueError(f"cannot read control summary {path}: {exc}") from exc
         control = data.get("prompt_control", {})
         mode = control.get("mode")
+        repairs = control.get("repair_predictions", {})
         if mode not in ("identical", "degraded-reference") or mode in evidence:
             raise ValueError("controls must contain one unique summary for each required mode")
         if (not data.get("canonical") or not data.get("panel_complete") or
                 data.get("raw_judgments") != 20 or
-                data.get("collapsed_observations") != 10 or not control.get("passed")):
+                data.get("collapsed_observations") != 10 or not control.get("passed") or
+                set(repairs) != {"structured_output", "critical_taxonomy"} or
+                not all(isinstance(item, dict) and item.get("passed")
+                        for item in repairs.values())):
             raise ValueError(f"{mode} control did not pass canonically")
         if data.get("instrument_configuration") != configuration:
             raise ValueError(f"{mode} control configuration does not match product panel")
@@ -102,12 +134,16 @@ def validate_controls(raw_paths, configuration):
     return evidence
 
 
-def complete(content, judge_identity, run=subprocess.run):
+def complete(content, judge_identity, output_schema, run=subprocess.run):
     """Run one fresh, uncapped-by-harness native judge context."""
     env = {name: os.environ[name] for name in NATIVE_ENV_ALLOWLIST if name in os.environ}
+    schema_data = _schema_bytes(output_schema)
     with tempfile.TemporaryDirectory(prefix="belief-changer-judge-", dir="/tmp") as workdir:
+        schema_path = Path(workdir) / "judge-output-schema.json"
+        schema_path.write_bytes(schema_data)
+        os.chmod(schema_path, 0o444)
         os.chmod(workdir, 0o555)
-        cmd = command(workdir)
+        cmd = command(workdir, str(schema_path))
         launch_error = None
         try:
             try:
@@ -117,7 +153,7 @@ def complete(content, judge_identity, run=subprocess.run):
                 result, launch_error = None, str(exc)
         finally:
             os.chmod(workdir, 0o755)
-    invocation = ["<isolated-tmp>" if item == workdir else item for item in cmd]
+    invocation = [item.replace(workdir, "<isolated-tmp>") for item in cmd]
     transport = {
         "kind": "native-codex-subscription", "judge_identity": judge_identity,
         "model": MODEL, "reasoning_effort": REASONING_EFFORT,
@@ -127,6 +163,7 @@ def complete(content, judge_identity, run=subprocess.run):
         "command": invocation, "returncode": result.returncode if result else None,
         "stderr": result.stderr if result else launch_error,
         "input_sha256": hashlib.sha256(content.encode()).hexdigest(),
+        "output_schema_sha256": hashlib.sha256(schema_data).hexdigest(),
     }
     if launch_error:
         return "", transport, f"native Codex launch failed: {launch_error}"
@@ -138,5 +175,5 @@ def complete(content, judge_identity, run=subprocess.run):
     except ValueError as exc:
         transport["event_stream"] = result.stdout
         return "", transport, str(exc)
-    transport.update({"thread_id": thread_id, "usage": usage})
+    transport.update({"thread_id": thread_id, "usage": usage, "event_stream": result.stdout})
     return raw, transport, None

@@ -163,9 +163,10 @@ class StageAMatrixTests(unittest.TestCase):
         chapters = [(Path(f"chapter-{number}.md"), f"Chapter {number}. More text.")
                     for number in range(1, 4)]
 
-        def answer(content, identity):
+        def answer(content, identity, schema):
             for role, spec in V2.ROLE_SPECS.items():
                 if f'`{spec["dims"][0]}`' in content:
+                    self.assertEqual(schema, J.N.role_output_schema(spec))
                     return json.dumps(role_response(role, 7, 7, "tie")), {
                         "judge_identity": identity}, None
             raise AssertionError("unknown role prompt")
@@ -196,48 +197,51 @@ class StageAMatrixTests(unittest.TestCase):
                              "o0.json").is_file())
             self.assertTrue((out / "efficacy" / "block" / "sol-ultra-r2" /
                              "o1.json").is_file())
-
-
 class PromptControlTests(unittest.TestCase):
     def test_control_materials_use_identical_and_degraded_reference_pairs(self):
         """Infra: prompt controls never require a second orchestration system."""
         chapters = [(Path("chapter.md"), "One. Two. Three. Four. Five. Six.")]
         identical = J.stage_a_materials(chapters, chapters, [(1, 1)], "identical")
         degraded = J.stage_a_materials(chapters, chapters, [(1, 1)], "degraded-reference")
-
         self.assertEqual(identical["craft"][0]["ours"], identical["craft"][0]["ref"])
         self.assertNotEqual(degraded["craft"][0]["ours"], degraded["craft"][0]["ref"])
         self.assertEqual(degraded["craft"][0]["ref"], chapters[0][1])
         formatted = [(Path("chapter.md"), "# Heading\n\n*Emphasis*.")]
         product = J.stage_a_materials(formatted, formatted, [(1, 1)])
         self.assertEqual(product["craft"][0]["ours"], product["craft"][0]["ref"])
-
     def test_control_verdicts_fail_closed(self):
         """Infra: semantic prompt controls have explicit pass conditions."""
-        observation = {"complete": True, "product_parity_verdict": "tie",
+        signatures = [{"ours_only": [], "ref_only": []} for _ in range(2)]
+        observation = {"complete": True, "role": "craft",
+                       "product_parity_verdict": "tie",
                        "critical_ours": [], "critical_ref": [],
                        "order_instability": {"unstable": False,
+                                             "comparative_signatures": signatures,
+                                             "relative_critical_failures_changed": False,
                                              "max_within_order_candidate_gap": 0}}
-        summary = {"panel_complete": True, "observations": [observation]}
+        summary = {"panel_complete": True, "raw_judgments": 20,
+                   "invalid_judgments": 0, "observations": [observation]}
         self.assertTrue(V2.evaluate_control(summary, "identical")["passed"])
-
         observation["product_parity_verdict"] = "ref"
+        for signature in signatures:
+            signature["ours_only"] = ["broken_chapter_flow"]
         self.assertTrue(V2.evaluate_control(summary, "degraded-reference")["passed"])
+        signatures[0]["ours_only"] = []
+        self.assertFalse(V2.evaluate_control(summary, "degraded-reference")["passed"])
+        signatures[0]["ours_only"] = ["broken_chapter_flow"]
         observation["order_instability"]["unstable"] = True
         self.assertFalse(V2.evaluate_control(summary, "degraded-reference")["passed"])
-
     def test_cli_exits_nonzero_when_semantic_control_fails(self):
         """Infra: a written control failure cannot be mistaken for validation."""
         chapters = [(Path(f"chapter-{number}.md"), f"Chapter {number}. More text.")
                     for number in range(1, 4)]
-
-        def tie(content, identity):
+        def tie(content, identity, schema):
             for role, spec in V2.ROLE_SPECS.items():
                 if f'`{spec["dims"][0]}`' in content:
+                    self.assertEqual(schema, J.N.role_output_schema(spec))
                     return json.dumps(role_response(role, 7, 7, "tie")), {
                         "judge_identity": identity}, None
             raise AssertionError("unknown role prompt")
-
         with tempfile.TemporaryDirectory() as tmp:
             out = Path(tmp) / "out"
             argv = ["judge_panel.py", "--ours", "ours", "--ref", "ref",
@@ -249,10 +253,7 @@ class PromptControlTests(unittest.TestCase):
                   contextlib.redirect_stdout(io.StringIO())):
                 with self.assertRaises(SystemExit):
                     J.main()
-
             summary = json.loads((out / "judge-summary.json").read_text(encoding="utf-8"))
             self.assertFalse(summary["prompt_control"]["passed"])
-
-
 if __name__ == "__main__":
     unittest.main()

@@ -1,35 +1,23 @@
 """Response schemas and aggregation for the calibration judge instrument."""
 from collections import defaultdict
-
 ROLE_SPECS = {
-    "efficacy": {
-        "scope": "block",
-        "prompt": "belief-change-efficacy.md",
+    "efficacy": {"scope": "block", "prompt": "belief-change-efficacy.md",
         "dims": ("benefit_dismantling", "belief_movement", "escape_conviction",
                  "cumulative_progression"),
         "failures": {"no_belief_shift", "assertion_without_demonstration",
-                     "sacrifice_or_deprivation", "incoherent_block_arc"},
-    },
-    "craft": {
-        "scope": "chapter",
-        "prompt": "literary-craft.md",
+                     "sacrifice_or_deprivation", "incoherent_block_arc"}},
+    "craft": {"scope": "chapter", "prompt": "literary-craft.md",
         "dims": ("prose_control", "rhythm_and_variety", "specificity",
                  "flow_and_momentum", "ending_handoff"),
         "failures": {"generic_self_help_voice", "mechanical_or_listicle_prose",
-                     "repetitive_sag", "broken_chapter_flow", "weak_ending_handoff"},
-    },
-    "integrity": {
-        "scope": "block",
-        "prompt": "method-integrity-epistemic-safety.md",
+                     "repetitive_sag", "broken_chapter_flow", "weak_ending_handoff"}},
+    "integrity": {"scope": "block", "prompt": "method-integrity-epistemic-safety.md",
         "dims": ("non_shaming_regard", "willpower_free_logic",
                  "epistemic_honesty", "originality", "cross_chapter_consistency"),
         "failures": {"shame_moralizing", "willpower_framing", "fear_as_motivator",
                      "medical_overreach", "unsupported_authority_or_testimony",
-                     "copyright_expression_risk", "broken_continuity"},
-    },
+                     "copyright_expression_risk", "broken_continuity"}},
 }
-
-
 def _score_pairs(response, dims):
     scores = response.get("scores")
     if not isinstance(scores, dict) or set(scores) != set(dims):
@@ -43,8 +31,6 @@ def _score_pairs(response, dims):
             if (isinstance(value, bool) or not isinstance(value, (int, float)) or
                     not 1 <= value <= 9):
                 raise ValueError(f"scores.{dim}.{label} must be a number from 1 to 9")
-
-
 def validate_role_response(response, role):
     spec = ROLE_SPECS[role]
     expected = {"scores", "critical_failures", "product_parity_verdict", "confidence",
@@ -75,8 +61,6 @@ def validate_role_response(response, role):
     if (not isinstance(mechanism, str) or not mechanism.strip() or
             len(mechanism.split()) > 40 or any(mark in mechanism for mark in ('"', "“", "”"))):
         raise ValueError("generic_mechanism must be one non-empty string of at most 40 words")
-
-
 def map_role_response(response, role, ours_key, ref_key):
     validate_role_response(response, role)
     verdict = response["product_parity_verdict"]
@@ -93,8 +77,6 @@ def map_role_response(response, role, ours_key, ref_key):
                                  "ref": response["paraphrased_evidence"][ref_key]},
         "generic_mechanism": response["generic_mechanism"],
     }
-
-
 def _collapse_orders(key, records):
     judge_identity, role, target = key
     models = {record["model"] for record in records}
@@ -151,7 +133,6 @@ def _collapse_orders(key, records):
                            "max_same_text_score_shift": max_gap},
     })
     return base
-
 def _rate(observations):
     stable = [item for item in observations
               if item.get("complete") and not item["order_instability"]["unstable"]]
@@ -160,7 +141,6 @@ def _rate(observations):
     ours = sum(item["product_parity_verdict"] == "ours" for item in stable)
     ties = sum(item["product_parity_verdict"] == "tie" for item in stable)
     return round((ours + 0.5 * ties) / len(stable), 3)
-
 def aggregate_v2(records):
     grouped = defaultdict(list)
     for record in records:
@@ -205,7 +185,7 @@ def aggregate_v2(records):
                                           == identity}) for identity in identities}
     same_model_replicated = len(models) == 1 and len(identities) > 1
     return {
-        "protocol": "stage-a-v2.1", "raw_judgments": len(records),
+        "protocol": "stage-a-v2.2", "raw_judgments": len(records),
         "collapsed_observations": len(observations), "invalid_judgments": invalid,
         "panel_complete": invalid == 0 and all(item.get("complete") for item in observations)
                           and matrix_complete,
@@ -241,9 +221,19 @@ def aggregate_v2(records):
                             "reason": "Requires a preregistered candidate-to-candidate experiment."},
         "observations": observations,
     }
-
 def evaluate_control(summary, mode):
     observations = [item for item in summary["observations"] if item.get("complete")]
+    first_response_valid = summary.get("raw_judgments") == 20 and summary.get("invalid_judgments") == 0
+    label_drift = sum(item["order_instability"]["relative_critical_failures_changed"] for item in observations)
+    taxonomy_scorable = first_response_valid and summary["panel_complete"]
+    core = {"efficacy": "incoherent_block_arc", "craft": "broken_chapter_flow", "integrity": "broken_continuity"}
+    core_retained = None if mode == "identical" else bool(observations) and all(
+        len(item["order_instability"]["comparative_signatures"]) == 2 and all(
+            core[item["role"]] in signature["ours_only"] and
+            core[item["role"]] not in signature["ref_only"]
+            for signature in item["order_instability"]["comparative_signatures"])
+        for item in observations)
+    taxonomy_passed = taxonomy_scorable and label_drift == 0 and core_retained is not False
     if mode == "identical":
         passed = (summary["panel_complete"] and observations and
                   all(item["product_parity_verdict"] == "tie" for item in observations) and
@@ -255,6 +245,16 @@ def evaluate_control(summary, mode):
     else:
         passed = (summary["panel_complete"] and observations and
                   all(item["product_parity_verdict"] == "ref" and
-                      not item["order_instability"]["unstable"] for item in observations))
+                      not item["order_instability"]["unstable"] for item in observations) and
+                  core_retained)
         expectation = "the intact reference beats its locally degraded copy in every observation"
-    return {"mode": mode, "expectation": expectation, "passed": bool(passed)}
+    repairs = {"structured_output": {"passed": first_response_valid,
+        "valid_first_responses": (summary.get("raw_judgments", 0) -
+                                  summary.get("invalid_judgments", 0)),
+        "expected_first_responses": 20},
+        "critical_taxonomy": {"passed": taxonomy_passed,
+                              "scorable": taxonomy_scorable,
+                              "candidate_relative_label_drift_observations": label_drift,
+                              "core_degraded_labels_retained": core_retained}}
+    return {"mode": mode, "expectation": expectation, "repair_predictions": repairs,
+            "passed": bool(passed and all(value["passed"] for value in repairs.values()))}

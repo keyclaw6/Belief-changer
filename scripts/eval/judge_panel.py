@@ -1,4 +1,4 @@
-"""Blind judge panel runner; no --prompt selects native Stage-A v2.1."""
+"""Blind judge panel runner; no --prompt selects native Stage-A v2.2."""
 import argparse, json, os, re, sys, urllib.error
 from pathlib import Path
 
@@ -57,12 +57,12 @@ def judge_role(cfg, judge_identity, role, cell, order):
                       else (cell["ref"], cell["ours"]))
     content = (f'{cfg["prompts"][role]}\n\n=== TEXT A ===\n{a_text}'
                f"\n\n=== TEXT B ===\n{b_text}")
-    raw, transport, transport_error = N.complete(content, judge_identity)
+    raw, transport, transport_error = N.complete(content, judge_identity, cfg["schemas"][role])
     try:
         parsed = json.loads(raw)
     except json.JSONDecodeError:
         parsed = None
-    record = {"protocol": "stage-a-v2.1", "role": role, "scope": ROLE_SPECS[role]["scope"],
+    record = {"protocol": "stage-a-v2.2", "role": role, "scope": ROLE_SPECS[role]["scope"],
               "target": cell["target"], "ours_chapters": cell["ours_chapters"],
               "ref_chapters": cell["ref_chapters"], "model": N.MODEL,
               "judge_identity": judge_identity, "order": order,
@@ -159,14 +159,14 @@ def main():
     parser.add_argument("--validated-controls", default="",
                         help="identical,degraded control summary paths required for product mode")
     parser.add_argument("--control", choices=("identical", "degraded-reference"), default="",
-                        help="Stage-A v2.1 prompt-control run")
+                        help="Stage-A v2.2 prompt-control run")
     parser.add_argument("--out", required=True)
     parser.add_argument("--base-url", default="")
     parser.add_argument("--api-key-env", default="")
     args = parser.parse_args()
     legacy = bool(args.prompt)
     if args.control and legacy:
-        parser.error("--control is available only in the Stage-A v2.1 no--prompt protocol")
+        parser.error("--control is available only in the Stage-A v2.2 no--prompt protocol")
     if legacy and args.validated_controls:
         parser.error("--validated-controls is available only in canonical Stage-A")
     if args.control and args.validated_controls:
@@ -223,9 +223,9 @@ def main():
         summary.update({"protocol": "legacy-noncanonical-api", "canonical": False,
                         "noncanonical_reason": "historical reproduction only"})
     else:
-        cfg["prompts"] = {role: (JUDGE_DIR / spec["prompt"]).read_text(encoding="utf-8")
-                          for role, spec in ROLE_SPECS.items()}
-        configuration = N.instrument_configuration(cfg["prompts"], pairing, identities)
+        cfg["prompts"] = {role: (JUDGE_DIR / spec["prompt"]).read_text(encoding="utf-8") for role, spec in ROLE_SPECS.items()}
+        cfg["schemas"] = {role: N.role_output_schema(spec) for role, spec in ROLE_SPECS.items()}
+        configuration = N.instrument_configuration(cfg["prompts"], cfg["schemas"], pairing, identities)
         control_evidence = None
         if not args.control:
             try:

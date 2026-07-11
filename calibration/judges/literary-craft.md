@@ -24,9 +24,30 @@ Score each chapter from 1–9 on exactly these dimensions:
 - `ending_handoff`: the ending lands the chapter's job and creates clean forward
   pull without recap boilerplate, a false climax, or an abrupt stop.
 
+Critical failures are publication-blocking conditions, not a second inventory
+of every weakness already reflected in scores. Apply a label only when its
+defined mechanism is directly observable and severe enough by itself to make
+the text unsafe or unfit for this role. One intrinsically serious instance may
+qualify. Use multiple labels only for distinct mechanisms, never adjacent
+descriptions of the same defect.
+
 List only these critical failures, or an empty list:
-`generic_self_help_voice`, `mechanical_or_listicle_prose`, `repetitive_sag`,
-`broken_chapter_flow`, `weak_ending_handoff`.
+
+- `generic_self_help_voice`: interchangeable motivational language or stock
+  abstractions dominate enough to erase observed thought and a distinct reading
+  experience; direct address, confidence, or familiarity alone do not qualify.
+- `mechanical_or_listicle_prose`: templated enumeration or assembly-line
+  patterning replaces developed prose; headings, bullets, repetition, or
+  disrupted ordering alone do not qualify.
+- `repetitive_sag`: an otherwise coherent chapter materially stalls by
+  restating already-landed content without new pressure or development; broken
+  sequencing alone does not qualify.
+- `broken_chapter_flow`: causal, chronological, referential, or transitional
+  dependencies are materially severed, making sustained progression unusable;
+  repetition or segmentation alone do not qualify.
+- `weak_ending_handoff`: the actual ending materially fails to land the
+  chapter's job or create forward pull; an imperfect recap or an earlier flow
+  defect alone does not qualify.
 
 `product_parity_verdict` asks which chapter is better crafted, not which source it
 came from. `confidence` is confidence in that comparative judgment. Give one

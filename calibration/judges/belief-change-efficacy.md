@@ -21,9 +21,25 @@ Score each block from 1–9 on exactly these dimensions:
 - `cumulative_progression`: the three chapters build one advancing intervention;
   they do not reset, circle, or spend the opening without changing the reader.
 
+Critical failures are publication-blocking conditions, not a second inventory
+of every weakness already reflected in scores. Apply a label only when its
+defined mechanism is directly observable and severe enough by itself to make
+the text unsafe or unfit for this role. One intrinsically serious instance may
+qualify. Use multiple labels only for distinct mechanisms, never adjacent
+descriptions of the same defect.
+
 List only these critical failures, or an empty list:
-`no_belief_shift`, `assertion_without_demonstration`,
-`sacrifice_or_deprivation`, `incoherent_block_arc`.
+
+- `no_belief_shift`: the block leaves the behavior's perceived benefit
+  materially intact and offers no plausible movement in the reader's belief.
+- `assertion_without_demonstration`: the central belief-changing conclusion is
+  materially asserted without reasoning, experience, or causal demonstration
+  capable of earning it.
+- `sacrifice_or_deprivation`: escape materially depends on accepting loss,
+  resisting desire, or enduring deprivation rather than ceasing to want the
+  behavior.
+- `incoherent_block_arc`: chapter dependencies, progression, or conclusions are
+  materially incompatible or disordered, so the intervention cannot accumulate.
 
 `product_parity_verdict` asks which block is more effective for this role, not
 which source it came from. `confidence` is confidence in that comparative

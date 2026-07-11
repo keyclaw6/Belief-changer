@@ -34,13 +34,16 @@ class RecordedControlRegressionTests(unittest.TestCase):
         frozen = json.loads((IDENTICAL / "judge-summary.json").read_text(encoding="utf-8"))
         prompts = {role: (ROOT / "calibration/judges" / spec["prompt"]).read_text(
             encoding="utf-8") for role, spec in V2.ROLE_SPECS.items()}
+        schemas = {role: N.role_output_schema(spec)
+                   for role, spec in V2.ROLE_SPECS.items()}
         config = N.instrument_configuration(
-            prompts, [(1, 1), (2, 2), (3, 3)], N.DEFAULT_IDENTITIES)
+            prompts, schemas, [(1, 1), (2, 2), (3, 3)], N.DEFAULT_IDENTITIES)
 
         self.assertFalse(frozen["prompt_control"]["passed"])
-        self.assertEqual(config["protocol_version"], "stage-a-v2.1-native-sol-ultra-1")
-        self.assertEqual(config["role_prompt_sha256"],
-                         frozen["instrument_configuration"]["role_prompt_sha256"])
+        self.assertEqual(config["protocol_version"], "stage-a-v2.2-native-sol-ultra-1")
+        self.assertNotEqual(config["role_prompt_sha256"],
+                            frozen["instrument_configuration"]["role_prompt_sha256"])
+        self.assertIn("role_output_schema_sha256", config)
         self.assertNotEqual(config, frozen["instrument_configuration"])
         self.assertNotEqual(config["implementation_sha256"],
                             frozen["instrument_configuration"]["implementation_sha256"])
