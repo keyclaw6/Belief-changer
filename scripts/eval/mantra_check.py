@@ -6,7 +6,8 @@ Checks, per mantra parsed from the plan's mantra sheet:
   - it appears in every scheduled chapter within the checked range;
   - every chapter in range contains at least one mantra (debut or echo).
 
-Parses mantra-sheet lines of the form:
+Parses either the normalized mantra-sheet Markdown table or legacy lines of the
+form:
   - **[archetype] — FROZEN WORDING:** "exact words" | ... debut: ch. N | schedule: ...
 
 Usage:
@@ -25,10 +26,75 @@ import evallib as E
 DEBUT_RE = re.compile(r"debut:?\**\s*ch\.?\s*(\d+)", re.I)
 SCHED_RE = re.compile(r"schedule:?\**\s*([^|]*)", re.I)
 ALL_WORDS = ("every chapter", "all chapters", "each chapter")
+CHAPTER_ID_RE = re.compile(r"\b(?:c|ch(?:apter)?)\.?\s*-?\s*0*(\d+)\b", re.I)
+
+
+def _markdown_cells(line: str) -> list:
+    if "|" not in line:
+        return []
+    cells = re.split(r"(?<!\\)\|", line.strip())
+    if cells and not cells[0]:
+        cells.pop(0)
+    if cells and not cells[-1]:
+        cells.pop()
+    return [cell.strip().replace(r"\|", "|") for cell in cells]
+
+
+def _table_wording(cell: str) -> str:
+    code = re.fullmatch(r"`([^`]+)`", cell.strip())
+    if code:
+        return code.group(1)
+    quoted = E.first_quoted(cell)
+    return quoted if quoted is not None else E.strip_markdown(cell).strip("`")
+
+
+def _chapter_ids(cell: str) -> list:
+    return [int(number) for number in CHAPTER_ID_RE.findall(cell)]
+
+
+def _parse_normalized_tables(plan_text: str) -> list:
+    mantras = []
+    lines = plan_text.splitlines()
+    for index, line in enumerate(lines):
+        header = _markdown_cells(line)
+        labels = [E.collapse_ws(E.strip_markdown(cell)).casefold() for cell in header]
+        if "frozen wording" not in labels or "debut" not in labels:
+            continue
+        echo_index = next((i for i, label in enumerate(labels)
+                           if label.startswith("echo")), None)
+        if echo_index is None:
+            continue
+        wording_index = labels.index("frozen wording")
+        debut_index = labels.index("debut")
+        id_index = labels.index("id") if "id" in labels else None
+        required_index = max(wording_index, debut_index, echo_index,
+                             id_index if id_index is not None else 0)
+        for row_line in lines[index + 1:]:
+            row = _markdown_cells(row_line)
+            if not row:
+                break
+            if all(re.fullmatch(r":?-{3,}:?", cell) for cell in row):
+                continue
+            if len(row) <= required_index:
+                break
+            wording = E.collapse_ws(_table_wording(row[wording_index]))
+            debut = _chapter_ids(row[debut_index])
+            if not wording or "<" in wording or not debut:
+                continue
+            schedule_raw = row[echo_index].strip()
+            schedule = ("all" if any(key in schedule_raw.casefold()
+                                     for key in ALL_WORDS)
+                        else _chapter_ids(schedule_raw))
+            archetype = (E.collapse_ws(E.strip_markdown(row[id_index]))
+                         if id_index is not None else "unnamed")
+            mantras.append({"archetype": archetype or "unnamed",
+                            "wording": wording, "debut": debut[0],
+                            "schedule": schedule, "schedule_raw": schedule_raw})
+    return mantras
 
 
 def parse_mantra_sheet(plan_text: str) -> list:
-    mantras = []
+    mantras = _parse_normalized_tables(plan_text)
     for line in plan_text.splitlines():
         if "frozen wording" not in line.lower():
             continue

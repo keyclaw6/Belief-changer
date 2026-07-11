@@ -63,6 +63,28 @@ class WithinBookTests(unittest.TestCase):
         self.assertEqual(0, result["repeated_ngrams"])
         self.assertEqual([], result["hard_fails"])
 
+    def test_normalized_plan_whitelists_licensed_mantra_wording(self):
+        plan_text = f"""
+| ID | Frozen wording | Job | Debut | Echo chapters | Hand-over form |
+|---|---|---|---|---|---|
+| M-01 | `{PHRASE}` | Portable thought. | C-01 | C-02 | Recall it. |
+"""
+        chapters = [
+            ("chapter-1.md", f"beforeone {PHRASE} afterone"),
+            ("chapter-2.md", f"beforetwo {PHRASE} aftertwo"),
+        ]
+        with tempfile.TemporaryDirectory() as tmp:
+            plan = Path(tmp, "master-plan.md")
+            plan.write_text(plan_text, encoding="utf-8")
+            whitelist = R._mantra_whitelist(plan)
+
+        result = R.within_book(chapters, whitelist)
+
+        self.assertEqual([PHRASE], whitelist)
+        self.assertEqual(1, result["whitelist_size"])
+        self.assertEqual(0, result["repeated_ngrams"])
+        self.assertEqual([], result["hard_fails"])
+
     def test_preview_and_summary_are_excluded_only_from_within_book_check(self):
         chapter = (
             "chapter-1.md",
