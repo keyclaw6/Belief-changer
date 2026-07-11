@@ -24,8 +24,15 @@ This experiment changes no shared factory asset. Sugar and Chapter 3 supply the 
 
 ## Results
 
-Pending.
+Both writer arms completed before any review was opened:
+
+| Arm | Revision mode | Words | Runtime | Reasoning | Finish |
+|---|---|---:|---|---:|---|
+| A | complete rewrite control | 2,853 | Anthropic Claude 4.6 Opus | 0 tokens | stop |
+| B | defect-scoped edit | 2,761 | Anthropic Claude 4.6 Opus | 0 tokens | stop |
+
+Both are inside the 2,210–2,990-word plan range. Length is descriptive only; no prose or causal verdict has been assigned. Exact request and artifact hashes are in the manifest.
 
 ## Gate verdict
 
-IN PROGRESS. Generate both arms before reviewing either one.
+IN PROGRESS. Generation-order control passed; next run the same blind Sol/Gemini panel on each frozen arm.

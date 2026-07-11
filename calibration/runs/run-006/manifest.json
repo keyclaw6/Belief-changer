@@ -26,6 +26,7 @@
     "arm_a_control": "whole-artifact writer may rewrite any passage",
     "arm_b_treatment": "defect-scoped editor preserves unaffected meaning and changes defect-bearing passages plus the measured craft surface",
     "generation_order": "both arms complete before any arm review is opened",
+    "generation_completed_before_reviews": true,
     "measurement": "the same blind model-diverse top-reasoning panel reviews each arm independently; panel composition is symmetric measurement, not the tested lever",
     "arm_acceptance": "convergent ACCEPT from both independent reviewers",
     "causal_decision_rule": {
@@ -55,8 +56,36 @@
       "expected_runtime_model": "anthropic/claude-4.6-opus-20260205",
       "reasoning": {"effort": "none"},
       "max_tokens": 128000,
-      "arm_a_calls": [],
-      "arm_b_calls": []
+      "arm_a_calls": [
+        {
+          "request_sha256": "d900bfc3a664033e292cc5375cb2b11c13d83e5c1668ad2374fd9dd2e29a9be8",
+          "call_id": "gen-1783767682-yaa2rOEdByEwUTZc6GhI",
+          "actual_model": "anthropic/claude-4.6-opus-20260205",
+          "provider": "Anthropic",
+          "reasoning": {"effort": "none", "reported_reasoning_tokens": 0},
+          "usage": {"prompt": 53398, "completion": 3667, "total": 57065, "cost_usd": 0.358665},
+          "finish_reason": "stop",
+          "artifact": "calibration/runs/run-006/chapters/chapter-03-arm-a.md",
+          "artifact_sha256": "8a17c510230a182b10a1a089c582b1914ef81a3e98f8bf5ce5f2b171afca8860",
+          "artifact_words": 2853,
+          "review_status": "PENDING"
+        }
+      ],
+      "arm_b_calls": [
+        {
+          "request_sha256": "f11ac288961ff58385e8e7d98ec717983c06571e5f3d79f76a564743c6855078",
+          "call_id": "gen-1783767682-3Jcr2yEOMeojAygBI5Nx",
+          "actual_model": "anthropic/claude-4.6-opus-20260205",
+          "provider": "Anthropic",
+          "reasoning": {"effort": "none", "reported_reasoning_tokens": 0},
+          "usage": {"prompt": 53417, "completion": 3579, "total": 56996, "cost_usd": 0.35656},
+          "finish_reason": "stop",
+          "artifact": "calibration/runs/run-006/chapters/chapter-03-arm-b.md",
+          "artifact_sha256": "6555f27239262773b27a49217680888f57f6b6bf4683a79248d662ca3984c0d9",
+          "artifact_words": 2761,
+          "review_status": "PENDING"
+        }
+      ]
     },
     "reviewer_panel": [
       {
@@ -85,5 +114,5 @@
   },
   "direction_audit": "GO — isolate revision scope; use diverse reviewers only as blinded measurement; do not add research architecture or a chapter-specific shared prompt",
   "factory_promotion_boundary": "even a supported one-chapter result remains provisional until replicated on another chapter and then survives the zero-amendment Stage C subject holdout",
-  "notes": "No shared prompt, style, plan, research, schema, or live book artifact changes before the preregistered arms and reviews."
+  "notes": "Both Opus arms completed concurrently before either artifact was opened for review. Both used the pinned commissions, the same runtime model/provider, reasoning none with zero reported reasoning tokens, and endpoint-maximum output allowance. No shared prompt, style, plan, research, schema, or live book artifact changed."
 }

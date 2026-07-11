@@ -186,8 +186,8 @@ Seeded by the harness builder (2026-07-10) as starting capital — derive priori
 - Quality prediction: B removes all R3 blockers, stays within 2,210–2,990 words, moves direct address toward 25–33/1k and short sentences materially toward ~20%, and introduces no semantic, evidence, repetition, or method-integrity regression.
 - Rival explanations / signal risk: a single stochastic sample can mimic a scope effect; different models may share blind spots; a scoped edit may preserve an unreported defect; metric improvement may weaken persuasion. The diverse panel mitigates detection risk but does not replace replication.
 - Factory promotion boundary: even a supported result remains provisional until replicated on another chapter and then survives the zero-amendment Stage C subject holdout. No shared prompt, plan, style, research, or orchestration rule changes in run-006.
-- Result: PENDING.
-- Next test: Generate both preregistered arms from the frozen inputs before opening either review.
+- Result to date: both arms completed before any review opened. A is 2,853 words and B is 2,761; both used the same resolved Opus provider/model, reasoning none with zero reasoning tokens, and stopped normally inside the planned length range. No quality or causal inference is made from generation metadata.
+- Next test: Freeze both outputs and run the preregistered blind Sol/Gemini reviewer panel symmetrically.
 
 ## H-007 — planner reasoning effort                       [RETIRED — founder-fixed 2026-07-10]
 - Gap: a reasoning-effort sweep was proposed before the founder fixed every allowed non-writer model to its top supported reasoning mode.
