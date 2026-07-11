@@ -1,6 +1,6 @@
 # Run report — run-012
 
-**Stage:** A **Scope:** source-grounded commissions plus frozen Chapters 1-3 production **Causal verdict:** ACTIVE — first-draft sample incomplete **Product verdict:** NOT YET MEASURED
+**Stage:** A **Scope:** source-grounded commissions plus frozen Chapters 1-3 production **Causal verdict:** ACTIVE — grounded specialist measurement pending **Product verdict:** NOT YET MEASURED
 
 ## What will run
 
@@ -39,6 +39,10 @@ The same frozen contract then produced C-02 R1 from the faithful C-02 commission
 
 The C-02 one-shot transport wrote the complete response before raising a post-write `ValueError`: it had received a relative artifact path but attempted to render that path relative to an absolute repository root. The pre-call hashes, configured Opus route, reasoning effort `none`, 61,775-token allowance, elapsed time, artifact, and artifact hash survived. Response-only metadata—call ID, runtime model, provider, finish reason, token usage, cost, and reported reasoning-token count—did not persist. The first response is preserved rather than resampled, and the defect is explicit in `infrastructure/writer-ch02-r1-authorized.json`.
 
+C-03 R1 then ran from the faithful frozen C-03 commission with committed C-02 R1 as its sole previous chapter. The catalog-maximum request received a pre-inference HTTP 402 with an exact 50,360-token authorization ceiling. The single authorized response stopped normally as `anthropic/claude-4.6-opus-20260205` through Anthropic, with 30,896 prompt tokens, 4,275 completion tokens, zero reported reasoning tokens, and a $0.261355 OpenRouter cost. Its 3,306-word artifact froze unedited at SHA-256 `835e3273...`; it is above the existing 3,120-word upper edge for its 2,600-word commission and is not accepted product. Absolute artifact paths preserved the full call metadata and avoided the C-02 recorder defect.
+
+The complete C-01-C-03 first-draft batch is now frozen before any revision decision. Its chapter lengths are 2,252, 4,162, and 3,306 words respectively; all three miss their existing individual length bands. This is mechanical status only, not a causal or product verdict. H-049 remains active until the source-grounded specialist evaluates evidence fidelity across the complete sample, and the product remains unmeasured until the complete objective and blind-panel evidence exists.
+
 ## Founder-directed measurement correction
 
 The first Chapter 1 reviewer saw the canonical plan but did not receive the frozen C-01 source-grounded commission. That omission matters because the commission expressly authorizes source attribution and details that the plan-only review called invented, including the names, credentials, publication/date context, weekly decision time, and Month-1 timing. The review is preserved byte-for-byte at `reviews/chapter-01-r1.md` (`91c30f...`), but its overall `REVISE` and its objections to commission-authorized attribution/details are non-authoritative for H-049. They cannot gate the causal sample or authorize a C-01 revision.
@@ -49,11 +53,11 @@ The preserved call is thread `019f51a6-5522-70a2-be45-f04094ec200e`: 108,978 inp
 
 ## Exact continuation
 
-No C-01 or C-02 revision or shared amendment comes next. The exact next artifact is `chapters/chapter-03-r1.md`, generated under frozen H-049 from the frozen C-03 commission with committed C-02 R1 as its sole previous chapter. The full C-01-C-03 first-draft batch then freezes before any revision decision.
+No chapter revision or shared amendment comes next. The exact next artifacts are the complete-batch objective evaluation and the source-grounded evidence-fidelity specialist review required to decide H-049 independently of product quality.
 
 Before product interpretation, the exact target-panel model and reasoning configuration must pass both Stage-A v2 prompt controls: identical texts tie stably, and the intact reference stably beats its locally degraded copy. A control failure invalidates the judge instrument but does not alter or suppress the frozen batch.
 
-The batch will receive objective evaluation, a source-grounded evidence-fidelity specialist review for H-049, and the separate blind v2 target panel even if an internal review or mechanical gate fails. Internal failures become measured evidence, not one-chapter stop conditions. H-049 remains active until the complete grounded sample can receive a causal evidence-fidelity verdict; the product verdict is recorded separately and still requires full length, craft, objective, and blind Stage-A passage.
+The frozen batch will then receive the separate blind v2 target panel after its exact model/reasoning configuration passes both controls, even if an internal review or mechanical gate fails. Internal failures become measured evidence, not one-chapter stop conditions. H-049 remains active until the complete grounded sample receives its causal evidence-fidelity verdict; the product verdict is recorded separately and still requires full length, craft, objective, and blind Stage-A passage.
 
 ## Judge-instrument baseline
 

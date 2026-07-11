@@ -1,0 +1,22 @@
+{
+  "run": "run-012",
+  "chapter": 3,
+  "cycle": 1,
+  "label": "writer-ch03-r1-catalog-max",
+  "requested_model": "anthropic/claude-opus-4.6",
+  "max_tokens": 128000,
+  "reasoning": {
+    "effort": "none"
+  },
+  "input_sha256": "253b6acd7a5163b5c1a2e545ff0007067bf8a72a6578e2c3db6d194e21f801aa",
+  "request_sha256": "8dfa8ffb499da016c936fb0c89cb61d70a7695b7dc487721c30671b4f6a7123e",
+  "commission_sha256": "08c52093026052aaceeaa83860472fabfc0e8eceb015f8f61d03090bc755b197",
+  "previous_sha256": "f28d4d543189dfdcfa24767e81441562c874a032af5ef4732b45ba7b463095c3",
+  "candidate_sha256": null,
+  "review_sha256": null,
+  "http_status": 402,
+  "error_code": 402,
+  "authorized_ceiling_reported": 50360,
+  "inference_started": false,
+  "elapsed_seconds": 0.763
+}
