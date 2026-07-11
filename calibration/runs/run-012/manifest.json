@@ -2,7 +2,7 @@
   "run": "run-012",
   "date": "2026-07-11",
   "stage": "A",
-  "status": "CAUSAL_REFUTED_JUDGE_CONTROL_FAILED_PRODUCT_UNJUDGED",
+  "status": "CAUSAL_REFUTED_V2_CONTROL_FAILED_V2_1_PREREGISTERED_PRODUCT_UNJUDGED",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "source-grounded semantic commissioning followed by a frozen Chapters 1-3 production run",
@@ -448,7 +448,7 @@
     },
     "causal_verdict": "REFUTED — all three commissions were pre-audited faithful, yet all three first drafts contain material evidence invention; this exceeds the preregistered at-least-two-drafts condition",
     "failure_autopsy": "Adding exact accepted source packets to the intelligent commissioner corrected commission fidelity but did not constrain Opus's connective persuasive prose. Across three distinct jobs it supplied unsupported identities, circumstances, prevalence, counterfactual outcomes, mechanisms, efficacy or closure claims, converted a plan-authored voice into testimony, and crossed reserved method/safety boundaries despite the relevant limits being present in the faithful commissions. Lossy plan-only evidence compression is therefore not a sufficient cause of the observed inventions; the Opus completion prior remains sufficient under this handoff.",
-    "product_boundary": "The causal refutation neither substitutes for nor suppresses the product panel. Product verdict remains UNJUDGED pending both v2 controls and the blind target panel.",
+    "product_boundary": "The causal refutation neither substitutes for nor suppresses the product panel. Product verdict remains UNJUDGED pending both fresh v2.1 controls and the blind target panel.",
     "infrastructure": {
       "preflight_failure": "the first command placed global -a never after the exec subcommand; all three parsers exited 2 before inference and created no threads",
       "preflight_artifacts": "calibration/runs/run-012/infrastructure/grounded-audit-chapter-*-preflight.stderr.log",
@@ -565,7 +565,7 @@
     },
     "key_allowance_boundary": "The approximately $0.979 OpenRouter key allowance is not a panel dependency and remains untouched for permitted Opus chapter writing.",
     "external_unblock": "RESOLVED — panel execution requires no OpenRouter funding or key-limit change.",
-    "next_action_after_correction": "Completed: the identical control ran natively and failed closed. The degraded-reference control and product panel were not launched. Do not form H-050 or change prose or factory assets; resolve the judge instrument under the new-baseline discipline before any product call."
+    "next_action_after_correction": "Completed: native v2 identical failed closed and the degraded/product calls did not launch. V2.1 is now prospectively preregistered; implement only its comparative-instability lever and rerun both controls from scratch before any product call."
   },
   "judge_control_execution": {
     "date": "2026-07-12",
@@ -597,7 +597,7 @@
         "sol-ultra-r2|craft|chapter-02",
         "sol-ultra-r2|integrity|block"
       ],
-      "failure_mechanism_observed": "Every raw comparison treated A and B symmetrically and returned tie, but fresh reversed-order contexts changed absolute critical-failure labels in four collapsed observations; the integrity contexts also shifted same-text absolute scores by as much as three points. The frozen gate treats that cross-context variation as instability, so the instrument failed despite zero within-call candidate asymmetry.",
+      "failure_mechanism_observed": "Every raw comparison treated A and B symmetrically and returned tie. For each role/target the two repetitions had identical input SHA-256 values, yet fresh contexts changed absolute critical-failure labels in four collapsed observations. The v2 collapse rule misclassified that absolute calibration drift as order instability. Same-text absolute score shifts up to three points were diagnostic and did not cause the frozen failure.",
       "usage": {
         "input_tokens": 584556,
         "cached_input_tokens": 191488,
@@ -612,6 +612,45 @@
     "product_verdict": "UNJUDGED",
     "causal_boundary": "H-049 remains REFUTED by its completed grounded specialist evidence; this judge-control failure neither reopens nor supports it",
     "hypothesis_boundary": "No H-050 was formed and no prose, factory asset, judge prompt, threshold, or implementation was changed after seeing the control"
+  },
+  "judge_instrument_v2_1_preregistration": {
+    "date": "2026-07-12",
+    "status": "PREREGISTERED BEFORE IMPLEMENTATION OR ANY V2.1 MODEL CALL",
+    "independent_audit": "The committed v2 identical control is a true failure under its frozen rule and remains immutable. It passed candidate symmetry in all 20 raw cells; because each repetition used a byte-identical input for its role/target, the four changed shared critical labels are fresh-context absolute calibration drift, not presentation-order bias.",
+    "historical_v2_evidence": {
+      "artifact": "calibration/runs/run-012/judgments/controls/identical/judge-summary.json",
+      "sha256": "0d408215378f40dd9f0bc95e1a2e78dd76423f4b8ace5cfdeea4745f544f4c94",
+      "verdict": "FAIL — never reclassified, overwritten, or reused as a v2.1 pass"
+    },
+    "single_instrument_lever": "Replace the conflated order-instability test with a comparative instability signature; no prompt, rubric, score, threshold, material, route, replication, or matrix change.",
+    "comparative_signature": {
+      "fields": [
+        "mapped product_parity_verdict",
+        "winner sign of ours minus reference for every role score dimension",
+        "critical labels unique to ours and critical labels unique to reference"
+      ],
+      "order_instability": "true only when the two repetitions of one identity-role-target produce different comparative signatures"
+    },
+    "absolute_drift": "Across-context absolute score shifts and labels shared by both candidates are recorded as calibration diagnostics and never called presentation-order instability.",
+    "union_critical_safety": "Collapsed critical_ours and critical_ref remain the union across both repetitions. Any critical label observed on ours still reaches the unchanged conservative zero-critical Stage-A gate even when a shared-label toggle does not invalidate comparative stability.",
+    "control_rules": {
+      "identical": "PASS only under the frozen thresholds: complete matrix, tie in every collapsed observation, equal unioned critical sets, maximum within-call candidate score gap no greater than 1, and no comparative-signature instability.",
+      "degraded_reference": "PASS only if the intact reference wins every collapsed observation and no comparative signature is order-unstable; the unchanged gross-degradation control proves severe-damage sensitivity only."
+    },
+    "held_constant": [
+      "all three role prompts and strict response schemas",
+      "all score, Stage-A, control, and product thresholds",
+      "identical, degraded-reference, and product text materials plus the degradation transform",
+      "native Codex subscription transport pinned to gpt-5.6-sol at ultra with no harness output limit",
+      "exactly two same-model replica identities, one fresh context per raw cell",
+      "the complete 20-cell role-target-identity-order matrix, blindness, and output records"
+    ],
+    "implementation_boundary": "Change only comparative instability classification, add explicit absolute-drift diagnostics, test it, then freeze the implementation hash before any v2.1 call.",
+    "retest": "Run new identical and degraded-reference controls from scratch into new v2.1 directories. Product judging is forbidden unless both new summaries pass and match the frozen v2.1 configuration.",
+    "comparability": "V2.1 begins a new measurement baseline and is not numerically comparable with v2 or legacy results.",
+    "claim_limits": "A passing identical control supports comparative symmetry, not absolute-score or critical-taxonomy reproducibility. A passing degraded control supports gross-damage sensitivity, not fine parity. Same-model replication is not cross-family evidence, blind integrity cannot verify unseen sources, and a panel cannot override failed objective, length, or grounded gates.",
+    "product_verdict": "UNJUDGED",
+    "causal_boundary": "H-049 remains REFUTED; v2.1 is an instrument correction, not H-050 or a factory hypothesis."
   },
   "held_constant": [
     "accepted research corpus, framing, canonical plan, evidence assignments, chapter jobs, and source permissions",
@@ -643,7 +682,7 @@
     "no shared amendment, packet repair, packet resample, reviewer change, threshold change, or chapter-specific instruction after prose begins",
     "do not stop the three-chapter causal sample merely because Chapter 1 fails",
     "freeze the complete first-draft batch before any revision decision",
-    "validate both Stage-A v2 prompt controls under the exact native Sol-ultra identity configuration before interpreting a product judgment; a control failure invalidates the instrument but does not alter the frozen batch",
+    "implement and freeze only the preregistered Stage-A v2.1 comparative-instability lever, then validate both controls from scratch under the exact native Sol-ultra identity configuration before interpreting a product judgment; a control failure invalidates the instrument but does not alter the frozen batch",
     "run objective evaluation, a source-grounded evidence-fidelity specialist review, and the blind target panel across the complete first-draft batch even if an internal review or mechanical gate fails; failures remain measurements rather than truncation gates",
     "do not promote semantic improvement without full product passage"
   ],

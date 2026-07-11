@@ -1,12 +1,12 @@
 # Calibration escalation — repeated evidence and chapter-ownership failure
 
-**Date:** 2026-07-11
+**Date:** 2026-07-12
 
 **Branch:** calibration-lab
 
 **Stage:** A
 
-**Status:** OPEN — repeated evidence escalation remains; run-012 identical-text judge control failed and product quality is still unjudged
+**Status:** OPEN — repeated evidence escalation remains; v2.1 instrument correction preregistered and product quality still unjudged
 
 ## Current stop — run-012 identical-text judge control
 
@@ -16,17 +16,29 @@ The canonical native Stage-A v2 identical-text control completed its full matrix
 
 Every raw verdict was **tie**. Inside every call, identical A and B texts received identical scores and identical critical-failure labels; the maximum within-call candidate gap was zero. The control nevertheless failed its frozen cross-context stability rule. Four of ten collapsed observations changed absolute critical labels between the two separately spawned reversed-order contexts: `mechanical_or_listicle_prose` toggled in two craft observations, and `willpower_framing` toggled in both integrity observations. Integrity scores also moved by as much as three points between fresh contexts.
 
-This result exposes a false-negative risk in the measurement design: presentation order did not create a within-call preference, but stochastic absolute-label variation across independent fresh contexts is currently classified as order instability. The rule was frozen before observation and has not been waived or silently changed. The exact evidence is under `calibration/runs/run-012/judgments/controls/identical/`; summary SHA-256 is `0d408215...`.
+This result exposes a false-negative risk in the measurement design: presentation order did not create a within-call preference, but stochastic absolute-label variation across independent fresh contexts is currently classified as order instability. For every role/target the two repetitions had identical input SHA-256 values, so changed shared labels cannot be attributed to presentation. The rule was frozen before observation and has not been waived or silently changed. The exact evidence is under `calibration/runs/run-012/judgments/controls/identical/`; summary SHA-256 is `0d408215...`.
 
 The degraded-reference control and product panel were **not run**, as required by the fail-closed law. H-049 remains causally **REFUTED**; run-012 product quality remains **UNJUDGED**; no H-050 was formed. The frozen chapters, factory assets, judge prompts, thresholds, and implementation remain unchanged.
 
-There is no external-access or funding blocker. The next decision is an explicit judge-instrument resolution under the new-baseline discipline, followed by both controls from scratch before product inference. Do not treat the 20 symmetric ties as a post-hoc pass, and do not use this instrument result to tune the book.
+There is no external-access or funding blocker. The committed v2 result remains FAIL and is never reclassified or reused. The explicit v2.1 resolution below was preregistered before implementation or any new call. Do not use this instrument result to tune the book.
+
+## Preregistered resolution — Stage-A v2.1
+
+An independent read-only measurement audit found that candidate symmetry passed while absolute fresh-context calibration drift was misclassified as order bias. V2.1 therefore changes exactly one instrument mechanism: each mapped raw judgment receives a comparative signature consisting of its product verdict, per-dimension winner signs, and critical labels unique to ours versus unique to reference. An observation is order-unstable only when its two comparative signatures differ.
+
+Absolute score shifts and labels shared by both candidates remain visible diagnostics. Conservative safety is unchanged: `critical_ours` and `critical_ref` remain the union across both repetitions, so any critical label observed on ours still reaches the existing zero-critical gate. This is not a post-hoc pass for v2.
+
+All three prompts and schemas, every score/control/product/Stage-A threshold, the identical/degraded/product materials and degradation transform, native Sol-ultra transport, exact two identities, fresh-context rule, 20-cell matrix, blindness, and raw records remain frozen. Only the comparative-instability classification may change, and its tests and implementation hash freeze before any v2.1 call.
+
+Both controls then run from scratch into new v2.1 directories. Identical retains its existing complete-matrix, tie, equal-unioned-critical, and ≤1 within-call gap thresholds and adds no new threshold; only instability classification changes. Degraded still requires the intact reference to win every collapsed observation with no comparative-signature instability. Product judgment remains forbidden unless both new summaries pass the exact frozen configuration.
+
+V2.1 is a new non-comparable baseline, not H-050. An identical pass establishes comparative symmetry, not absolute calibration; a degraded pass establishes gross-damage sensitivity, not fine parity. Same-model replication is not cross-family evidence, blind integrity cannot verify unseen sources, and a panel cannot override run-012's objective, length, or grounded failures. H-049 remains REFUTED and product quality remains UNJUDGED.
 
 ## Resolved run-012 judge-route correction
 
 **Resolved route:** 2026-07-12
 
-H-049 is already causally **REFUTED** by the completed grounded specialist review. The separate run-012 product verdict remains **UNJUDGED** because the required Stage-A v2 controls and product panel have not yet run.
+At the time of this route correction, H-049 was already causally **REFUTED** and the separate run-012 product verdict was **UNJUDGED** because no native control had run. The native v2 identical control later ran and failed as recorded above; v2.1 now governs the prospective continuation.
 
 The earlier runtime preflight proposed `google/gemini-3.1-pro-preview` at `high` and OpenRouter `openai/gpt-5.6-sol` at `max`. It calculated 60 calls across both controls and the panel, observed `$0.797648511` remaining, and found that the proposed OpenRouter matrix could not be authorized. That zero-inference preflight is preserved as history, but the route itself was wrong under the founder's clarified law.
 
@@ -34,7 +46,7 @@ No inference was attempted: zero judge calls, neither control run, no product pa
 
 OpenRouter may now be used only for Opus 4.6 chapter-writing calls and DeepSeek research calls. GPT/OpenAI, Gemini, Grok, planners, reviewers, auditors, and judges must never use it. The approximately `$0.979` key allowance is not a panel dependency and remains untouched for permitted Opus use.
 
-The canonical continuation is to spawn fresh native Codex judge subagents pinned to `gpt-5.6-sol` with `model_reasoning_effort="ultra"`. Exactly two same-model replica identities cover every Stage-A v2 role target and both A/B orders, producing 20 raw judgments per invocation. Run the identical and degraded-reference controls under that exact configuration, then run the blind product panel only if both validate. The degraded control proves only gross-damage sensitivity, blind integrity cannot verify unseen sources, and same-model replication is not cross-family evidence. There is no external blocker.
+The canonical continuation is to spawn fresh native Codex judge subagents pinned to `gpt-5.6-sol` with `model_reasoning_effort="ultra"`. Exactly two same-model replica identities cover every Stage-A v2.1 role target and both A/B orders, producing 20 raw judgments per invocation. Run fresh identical and degraded-reference controls under that exact configuration, then run the blind product panel only if both validate. The degraded control proves only gross-damage sensitivity, blind integrity cannot verify unseen sources, and same-model replication is not cross-family evidence. There is no external blocker.
 
 ## Direction-audit resolution — run-012
 
