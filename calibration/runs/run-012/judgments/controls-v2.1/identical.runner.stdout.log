@@ -1,0 +1,28 @@
+{
+ "unit": "collapsed judge-identity-role-target observation",
+ "overall_preference_rate_incl_half_ties": 0.5,
+ "equal_role_macro_preference_rate": 0.5,
+ "stable_observations": 10,
+ "unstable_observations": 0,
+ "roles": {
+  "efficacy": {
+   "scope": "block",
+   "observations": 2,
+   "preference_rate_incl_half_ties": 0.5,
+   "order_unstable": 0
+  },
+  "craft": {
+   "scope": "chapter",
+   "observations": 6,
+   "preference_rate_incl_half_ties": 0.5,
+   "order_unstable": 0
+  },
+  "integrity": {
+   "scope": "block",
+   "observations": 2,
+   "preference_rate_incl_half_ties": 0.5,
+   "order_unstable": 0
+  }
+ },
+ "threshold_verdict": "not applied by instrument"
+}

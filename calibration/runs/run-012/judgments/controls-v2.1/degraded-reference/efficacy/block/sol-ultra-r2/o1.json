@@ -1,0 +1,125 @@
+{
+ "protocol": "stage-a-v2.1",
+ "role": "efficacy",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "564626d92d7d85dd7e1d96e02595ab7eb3e0fcfeababc16b06700f3014671127",
+  "thread_id": "019f536a-a0fd-76f2-9c3b-6b71044c06fb",
+  "usage": {
+   "input_tokens": 30930,
+   "cached_input_tokens": 11008,
+   "output_tokens": 1052,
+   "reasoning_output_tokens": 743
+  }
+ },
+ "raw": "{\n  \"scores\": {\n    \"benefit_dismantling\": {\n      \"A\": 7,\n      \"B\": 3\n    },\n    \"belief_movement\": {\n      \"A\": 6,\n      \"B\": 2\n    },\n    \"escape_conviction\": {\n      \"A\": 7,\n      \"B\": 3\n    },\n    \"cumulative_progression\": {\n      \"A\": 7,\n      \"B\": 1\n    }\n  },\n  \"critical_failures\": {\n    \"A\": [],\n    \"B\": [\n      \"incoherent_block_arc\"\n    ]\n  },\n  \"product_parity_verdict\": \"A\",\n  \"confidence\": 0.99,\n  \"paraphrased_evidence\": {\n    \"A\": \"Compulsive repetition is linked to temporary relief, then reinforced through biological and social-conditioning accounts before abstention is reframed as recovered choice. Overstatement and weak factual support may still alienate a skeptical reader.\",\n    \"B\": \"Ideas arrive in reverse and fragmentary order: conclusions precede setups, summaries precede development, and transitions point backward. Individual arguments remain detectable, but they cannot accumulate into a credible change of mind.\"\n  },\n  \"generic_mechanism\": \"Belief change strengthens when observation, causal explanation, and liberating reframe arrive in dependency order; scrambling that order makes points feel unsupported and prevents earlier insights from preparing acceptance of later ones.\"\n}",
+ "parsed": {
+  "scores": {
+   "benefit_dismantling": {
+    "A": 7,
+    "B": 3
+   },
+   "belief_movement": {
+    "A": 6,
+    "B": 2
+   },
+   "escape_conviction": {
+    "A": 7,
+    "B": 3
+   },
+   "cumulative_progression": {
+    "A": 7,
+    "B": 1
+   }
+  },
+  "critical_failures": {
+   "A": [],
+   "B": [
+    "incoherent_block_arc"
+   ]
+  },
+  "product_parity_verdict": "A",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "A": "Compulsive repetition is linked to temporary relief, then reinforced through biological and social-conditioning accounts before abstention is reframed as recovered choice. Overstatement and weak factual support may still alienate a skeptical reader.",
+   "B": "Ideas arrive in reverse and fragmentary order: conclusions precede setups, summaries precede development, and transitions point backward. Individual arguments remain detectable, but they cannot accumulate into a credible change of mind."
+  },
+  "generic_mechanism": "Belief change strengthens when observation, causal explanation, and liberating reframe arrive in dependency order; scrambling that order makes points feel unsupported and prevents earlier insights from preparing acceptance of later ones."
+ },
+ "mapped": {
+  "dims": {
+   "benefit_dismantling": {
+    "ours": 3,
+    "ref": 7
+   },
+   "belief_movement": {
+    "ours": 2,
+    "ref": 6
+   },
+   "escape_conviction": {
+    "ours": 3,
+    "ref": 7
+   },
+   "cumulative_progression": {
+    "ours": 1,
+    "ref": 7
+   }
+  },
+  "critical_ours": [
+   "incoherent_block_arc"
+  ],
+  "critical_ref": [],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "Ideas arrive in reverse and fragmentary order: conclusions precede setups, summaries precede development, and transitions point backward. Individual arguments remain detectable, but they cannot accumulate into a credible change of mind.",
+   "ref": "Compulsive repetition is linked to temporary relief, then reinforced through biological and social-conditioning accounts before abstention is reframed as recovered choice. Overstatement and weak factual support may still alienate a skeptical reader."
+  },
+  "generic_mechanism": "Belief change strengthens when observation, causal explanation, and liberating reframe arrive in dependency order; scrambling that order makes points feel unsupported and prevents earlier insights from preparing acceptance of later ones."
+ }
+}

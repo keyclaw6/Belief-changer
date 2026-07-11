@@ -1,0 +1,121 @@
+{
+ "protocol": "stage-a-v2.1",
+ "role": "efficacy",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "64da07968bdda710ef4fda69b2aaea8ec3ee097733dc318be7cf848320d2e2c8",
+  "thread_id": "019f5360-a8dc-7c22-8e2e-9de313167924",
+  "usage": {
+   "input_tokens": 39712,
+   "cached_input_tokens": 8960,
+   "output_tokens": 736,
+   "reasoning_output_tokens": 490
+  }
+ },
+ "raw": "{\n  \"scores\": {\n    \"benefit_dismantling\": {\"A\": 6, \"B\": 6},\n    \"belief_movement\": {\"A\": 5, \"B\": 5},\n    \"escape_conviction\": {\"A\": 6, \"B\": 6},\n    \"cumulative_progression\": {\"A\": 6, \"B\": 6}\n  },\n  \"critical_failures\": {\"A\": [], \"B\": []},\n  \"product_parity_verdict\": \"tie\",\n  \"confidence\": 1.0,\n  \"paraphrased_evidence\": {\n    \"A\": \"It recasts pleasure as temporary relief within a conditioned craving cycle, then connects failed satisfaction and restrictive dieting to continued consumption, though sweeping comparisons and repeated promises weaken credibility.\",\n    \"B\": \"It recasts pleasure as temporary relief within a conditioned craving cycle, then connects failed satisfaction and restrictive dieting to continued consumption, though sweeping comparisons and repeated promises weaken credibility.\"\n  },\n  \"generic_mechanism\": \"Identical causal explanations, sequencing, and freedom framing produce equivalent persuasive movement; there is no differential mechanism between the blocks.\"\n}",
+ "parsed": {
+  "scores": {
+   "benefit_dismantling": {
+    "A": 6,
+    "B": 6
+   },
+   "belief_movement": {
+    "A": 5,
+    "B": 5
+   },
+   "escape_conviction": {
+    "A": 6,
+    "B": 6
+   },
+   "cumulative_progression": {
+    "A": 6,
+    "B": 6
+   }
+  },
+  "critical_failures": {
+   "A": [],
+   "B": []
+  },
+  "product_parity_verdict": "tie",
+  "confidence": 1.0,
+  "paraphrased_evidence": {
+   "A": "It recasts pleasure as temporary relief within a conditioned craving cycle, then connects failed satisfaction and restrictive dieting to continued consumption, though sweeping comparisons and repeated promises weaken credibility.",
+   "B": "It recasts pleasure as temporary relief within a conditioned craving cycle, then connects failed satisfaction and restrictive dieting to continued consumption, though sweeping comparisons and repeated promises weaken credibility."
+  },
+  "generic_mechanism": "Identical causal explanations, sequencing, and freedom framing produce equivalent persuasive movement; there is no differential mechanism between the blocks."
+ },
+ "mapped": {
+  "dims": {
+   "benefit_dismantling": {
+    "ours": 6,
+    "ref": 6
+   },
+   "belief_movement": {
+    "ours": 5,
+    "ref": 5
+   },
+   "escape_conviction": {
+    "ours": 6,
+    "ref": 6
+   },
+   "cumulative_progression": {
+    "ours": 6,
+    "ref": 6
+   }
+  },
+  "critical_ours": [],
+  "critical_ref": [],
+  "product_parity_verdict": "tie",
+  "confidence": 1.0,
+  "paraphrased_evidence": {
+   "ours": "It recasts pleasure as temporary relief within a conditioned craving cycle, then connects failed satisfaction and restrictive dieting to continued consumption, though sweeping comparisons and repeated promises weaken credibility.",
+   "ref": "It recasts pleasure as temporary relief within a conditioned craving cycle, then connects failed satisfaction and restrictive dieting to continued consumption, though sweeping comparisons and repeated promises weaken credibility."
+  },
+  "generic_mechanism": "Identical causal explanations, sequencing, and freedom framing produce equivalent persuasive movement; there is no differential mechanism between the blocks."
+ }
+}

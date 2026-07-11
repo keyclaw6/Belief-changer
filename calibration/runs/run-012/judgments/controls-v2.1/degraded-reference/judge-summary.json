@@ -1,0 +1,889 @@
+{
+ "protocol": "stage-a-v2.1",
+ "raw_judgments": 20,
+ "collapsed_observations": 10,
+ "invalid_judgments": 3,
+ "panel_complete": false,
+ "judge_replications": {
+  "design": "independent fresh-context same-model replications",
+  "identities": [
+   "sol-ultra-r1",
+   "sol-ultra-r2"
+  ],
+  "model_by_identity": {
+   "sol-ultra-r1": [
+    "gpt-5.6-sol"
+   ],
+   "sol-ultra-r2": [
+    "gpt-5.6-sol"
+   ]
+  },
+  "cross_family_evidence": false,
+  "interpretation": "independent replications, not cross-family evidence"
+ },
+ "role_judge_identity_matrix": {
+  "efficacy": [
+   "sol-ultra-r1",
+   "sol-ultra-r2"
+  ],
+  "craft": [
+   "sol-ultra-r1",
+   "sol-ultra-r2"
+  ],
+  "integrity": [
+   "sol-ultra-r1",
+   "sol-ultra-r2"
+  ]
+ },
+ "role_target_matrix": {
+  "efficacy": {
+   "sol-ultra-r1": [
+    "block"
+   ],
+   "sol-ultra-r2": [
+    "block"
+   ]
+  },
+  "craft": {
+   "sol-ultra-r1": [
+    "chapter-01",
+    "chapter-02",
+    "chapter-03"
+   ],
+   "sol-ultra-r2": [
+    "chapter-01",
+    "chapter-02",
+    "chapter-03"
+   ]
+  },
+  "integrity": {
+   "sol-ultra-r1": [
+    "block"
+   ],
+   "sol-ultra-r2": [
+    "block"
+   ]
+  }
+ },
+ "role_judge_identity_matrix_complete": true,
+ "order_instability": {
+  "observations": 5,
+  "rate": 0.714,
+  "ids": [
+   "sol-ultra-r1|craft|chapter-01",
+   "sol-ultra-r1|craft|chapter-03",
+   "sol-ultra-r2|craft|chapter-02",
+   "sol-ultra-r2|craft|chapter-03",
+   "sol-ultra-r2|integrity|block"
+  ]
+ },
+ "absolute_drift": {
+  "critical_label_observations": 5,
+  "score_observations": 7,
+  "max_same_text_score_shift": 6
+ },
+ "product_parity": {
+  "unit": "collapsed judge-identity-role-target observation",
+  "overall_preference_rate_incl_half_ties": 0.0,
+  "equal_role_macro_preference_rate": null,
+  "stable_observations": 2,
+  "unstable_observations": 5,
+  "roles": {
+   "efficacy": {
+    "scope": "block",
+    "observations": 2,
+    "preference_rate_incl_half_ties": 0.0,
+    "order_unstable": 0
+   },
+   "craft": {
+    "scope": "chapter",
+    "observations": 6,
+    "preference_rate_incl_half_ties": null,
+    "order_unstable": 4
+   },
+   "integrity": {
+    "scope": "block",
+    "observations": 2,
+    "preference_rate_incl_half_ties": null,
+    "order_unstable": 1
+   }
+  },
+  "threshold_verdict": "not applied by instrument"
+ },
+ "causal_movement": {
+  "status": "not measured",
+  "reason": "Requires a preregistered candidate-to-candidate experiment."
+ },
+ "observations": [
+  {
+   "judge_identity": "sol-ultra-r1",
+   "model": "gpt-5.6-sol",
+   "role": "craft",
+   "target": "chapter-01",
+   "complete": true,
+   "dims": {
+    "prose_control": {
+     "ours_mean": 2.0,
+     "ref_mean": 5.0
+    },
+    "rhythm_and_variety": {
+     "ours_mean": 1.0,
+     "ref_mean": 4.5
+    },
+    "specificity": {
+     "ours_mean": 3.5,
+     "ref_mean": 5.5
+    },
+    "flow_and_momentum": {
+     "ours_mean": 1.0,
+     "ref_mean": 4.5
+    },
+    "ending_handoff": {
+     "ours_mean": 1.0,
+     "ref_mean": 3.0
+    }
+   },
+   "product_parity_verdict": "ref",
+   "confidence_mean": 0.99,
+   "critical_ours": [
+    "broken_chapter_flow",
+    "generic_self_help_voice",
+    "mechanical_or_listicle_prose",
+    "repetitive_sag",
+    "weak_ending_handoff"
+   ],
+   "critical_ref": [
+    "generic_self_help_voice",
+    "repetitive_sag",
+    "weak_ending_handoff"
+   ],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "Sentences and headings arrive in a visibly scrambled order, repeatedly abandoning ideas before their setup appears; concrete examples survive, but no cumulative reading experience or intentional ending remains.",
+     "ref": "A coherent progression links personal unease, public context, explanatory analogy, method, and instructions, though inflated promises, repeated assertions, and a closing recap make the latter half drag."
+    },
+    {
+     "ours": "Individually readable sentences arrive in disrupted order, severing explanations from examples, placing conclusions before premises, and ending by retreating into introductory material.",
+     "ref": "Concrete consumption scenarios, an origin anecdote, and a recurring explanatory model provide coherence, but relentless promises, commands, and restatements prolong the argument before a boilerplate summary."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "Ordered causal progression lets each passage prepare the next, whereas fragment displacement destroys setup, payoff, tonal modulation, and forward expectation even when many individual sentences remain serviceable.",
+    "Preserved causal sequencing lets setup, illustration, and instruction accumulate; scrambled sequencing turns locally intelligible sentences into discontinuous fragments without rhetorical payoff."
+   ],
+   "order_instability": {
+    "unstable": true,
+    "comparative_signatures": [
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "prose_control": -1,
+       "rhythm_and_variety": -1,
+       "specificity": -1,
+       "flow_and_momentum": -1,
+       "ending_handoff": -1
+      },
+      "ours_only": [
+       "broken_chapter_flow",
+       "mechanical_or_listicle_prose"
+      ],
+      "ref_only": [
+       "generic_self_help_voice"
+      ]
+     },
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "prose_control": -1,
+       "rhythm_and_variety": -1,
+       "specificity": -1,
+       "flow_and_momentum": -1,
+       "ending_handoff": -1
+      },
+      "ours_only": [
+       "broken_chapter_flow",
+       "mechanical_or_listicle_prose"
+      ],
+      "ref_only": []
+     }
+    ],
+    "verdicts": [
+     "ref",
+     "ref"
+    ],
+    "score_winner_flips": [],
+    "relative_critical_failures_changed": true,
+    "max_within_order_candidate_gap": 4
+   },
+   "absolute_drift": {
+    "critical_failures_changed": true,
+    "max_same_text_score_shift": 2
+   }
+  },
+  {
+   "judge_identity": "sol-ultra-r1",
+   "model": "gpt-5.6-sol",
+   "role": "craft",
+   "target": "chapter-02",
+   "complete": false,
+   "missing_or_invalid_orders": [
+    1
+   ]
+  },
+  {
+   "judge_identity": "sol-ultra-r1",
+   "model": "gpt-5.6-sol",
+   "role": "craft",
+   "target": "chapter-03",
+   "complete": true,
+   "dims": {
+    "prose_control": {
+     "ours_mean": 3.0,
+     "ref_mean": 6.5
+    },
+    "rhythm_and_variety": {
+     "ours_mean": 2.0,
+     "ref_mean": 5.5
+    },
+    "specificity": {
+     "ours_mean": 5.0,
+     "ref_mean": 6.5
+    },
+    "flow_and_momentum": {
+     "ours_mean": 1.0,
+     "ref_mean": 6.0
+    },
+    "ending_handoff": {
+     "ours_mean": 1.0,
+     "ref_mean": 5.5
+    }
+   },
+   "product_parity_verdict": "ref",
+   "confidence_mean": 0.99,
+   "critical_ours": [
+    "broken_chapter_flow",
+    "mechanical_or_listicle_prose",
+    "weak_ending_handoff"
+   ],
+   "critical_ref": [
+    "repetitive_sag"
+   ],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "Concrete illustrations survive, but summaries, headings, questions, and conclusions arrive in scrambled succession; logical references lose their antecedents, and the chapter finishes by backing into its opening apparatus.",
+     "ref": "A forceful progression moves from shame through conditioning, social influence, compulsion, and failed restriction toward an actionable mindset, supported by vivid everyday examples despite some late repetition and promotional overstatement."
+    },
+    {
+     "ours": "Individual sentences retain local clarity and detail, yet their reversed, fragmentary arrangement breaks references, progression, section logic, and closure.",
+     "ref": "Concrete domestic examples and accessible analogies support a coherent argument, but recurring assertions, promotional assurances, and repeated promises substantially prolong the chapter."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "Coherent causal sequencing lets each example answer the preceding question and prepare the next claim; disrupted ordering turns the same materials into isolated assertions without accumulating narrative or argumentative pressure.",
+    "Ordered accumulation lets examples deepen a central claim and prepare the next step; disrupting that sequence strips sentences of context, prevents escalation, and eliminates a purposeful landing."
+   ],
+   "order_instability": {
+    "unstable": true,
+    "comparative_signatures": [
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "prose_control": -1,
+       "rhythm_and_variety": -1,
+       "specificity": -1,
+       "flow_and_momentum": -1,
+       "ending_handoff": -1
+      },
+      "ours_only": [
+       "broken_chapter_flow",
+       "mechanical_or_listicle_prose",
+       "weak_ending_handoff"
+      ],
+      "ref_only": []
+     },
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "prose_control": -1,
+       "rhythm_and_variety": -1,
+       "specificity": -1,
+       "flow_and_momentum": -1,
+       "ending_handoff": -1
+      },
+      "ours_only": [
+       "broken_chapter_flow",
+       "weak_ending_handoff"
+      ],
+      "ref_only": [
+       "repetitive_sag"
+      ]
+     }
+    ],
+    "verdicts": [
+     "ref",
+     "ref"
+    ],
+    "score_winner_flips": [],
+    "relative_critical_failures_changed": true,
+    "max_within_order_candidate_gap": 6
+   },
+   "absolute_drift": {
+    "critical_failures_changed": true,
+    "max_same_text_score_shift": 2
+   }
+  },
+  {
+   "judge_identity": "sol-ultra-r1",
+   "model": "gpt-5.6-sol",
+   "role": "efficacy",
+   "target": "block",
+   "complete": true,
+   "dims": {
+    "benefit_dismantling": {
+     "ours_mean": 3.5,
+     "ref_mean": 7.5
+    },
+    "belief_movement": {
+     "ours_mean": 3.0,
+     "ref_mean": 7.5
+    },
+    "escape_conviction": {
+     "ours_mean": 3.5,
+     "ref_mean": 8.0
+    },
+    "cumulative_progression": {
+     "ours_mean": 1.0,
+     "ref_mean": 8.0
+    }
+   },
+   "product_parity_verdict": "ref",
+   "confidence_mean": 0.99,
+   "critical_ours": [
+    "incoherent_block_arc"
+   ],
+   "critical_ref": [],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "Potentially useful ideas about conditioned desire, withdrawal relief, and failed restraint are scattered through severely disrupted sequencing, so explanations collide with promises and conclusions instead of accumulating persuasive force.",
+     "ref": "The chapters move from a withdrawal-relief model through engineered appetite and learned preference to the failure of restraint, repeatedly reframing cessation as regained control and relief."
+    },
+    {
+     "ours": "Comparable claims and examples appear, but each chapter runs backward from summaries and promises into their premises, obscuring causal links and making the promised liberation feel asserted before it is earned.",
+     "ref": "The block moves from a self-reinforcing relief loop, through bodily and environmental explanations, to learned preferences and failed restriction, repeatedly reframing abstinence as release from an acquired need."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "Belief change strengthens when causal explanation, experiential tests, and emotional reframing arrive in a deliberate sequence, allowing each insight to support the next; disrupted sequencing leaves even strong claims feeling unearned.",
+    "Belief change strengthens when concrete observations support a causal explanation before the liberating conclusion; reversing that sequence turns conclusions into unsupported directives and prevents cumulative updating."
+   ],
+   "order_instability": {
+    "unstable": false,
+    "comparative_signatures": [
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "benefit_dismantling": -1,
+       "belief_movement": -1,
+       "escape_conviction": -1,
+       "cumulative_progression": -1
+      },
+      "ours_only": [
+       "incoherent_block_arc"
+      ],
+      "ref_only": []
+     },
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "benefit_dismantling": -1,
+       "belief_movement": -1,
+       "escape_conviction": -1,
+       "cumulative_progression": -1
+      },
+      "ours_only": [
+       "incoherent_block_arc"
+      ],
+      "ref_only": []
+     }
+    ],
+    "verdicts": [
+     "ref",
+     "ref"
+    ],
+    "score_winner_flips": [],
+    "relative_critical_failures_changed": false,
+    "max_within_order_candidate_gap": 7
+   },
+   "absolute_drift": {
+    "critical_failures_changed": false,
+    "max_same_text_score_shift": 1
+   }
+  },
+  {
+   "judge_identity": "sol-ultra-r1",
+   "model": "gpt-5.6-sol",
+   "role": "integrity",
+   "target": "block",
+   "complete": false,
+   "missing_or_invalid_orders": [
+    0
+   ]
+  },
+  {
+   "judge_identity": "sol-ultra-r2",
+   "model": "gpt-5.6-sol",
+   "role": "craft",
+   "target": "chapter-01",
+   "complete": false,
+   "missing_or_invalid_orders": [
+    0
+   ]
+  },
+  {
+   "judge_identity": "sol-ultra-r2",
+   "model": "gpt-5.6-sol",
+   "role": "craft",
+   "target": "chapter-02",
+   "complete": true,
+   "dims": {
+    "prose_control": {
+     "ours_mean": 2.5,
+     "ref_mean": 5.0
+    },
+    "rhythm_and_variety": {
+     "ours_mean": 1.5,
+     "ref_mean": 4.5
+    },
+    "specificity": {
+     "ours_mean": 4.0,
+     "ref_mean": 6.0
+    },
+    "flow_and_momentum": {
+     "ours_mean": 1.0,
+     "ref_mean": 5.0
+    },
+    "ending_handoff": {
+     "ours_mean": 1.0,
+     "ref_mean": 3.0
+    }
+   },
+   "product_parity_verdict": "ref",
+   "confidence_mean": 0.99,
+   "critical_ours": [
+    "broken_chapter_flow",
+    "mechanical_or_listicle_prose",
+    "weak_ending_handoff"
+   ],
+   "critical_ref": [
+    "generic_self_help_voice",
+    "mechanical_or_listicle_prose",
+    "repetitive_sag",
+    "weak_ending_handoff"
+   ],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "Concrete examples survive, but sections, arguments, and instructions arrive in a scrambled sequence; abrupt topic reversals prevent cumulative meaning, and the text finishes by returning to what reads like its opening.",
+     "ref": "A sustained observational example develops into a clear argument and practical instruction, though repeated assertions, typographic shouting, escalating polemic, and a boilerplate recap weaken the latter half."
+    },
+    {
+     "ours": "B retains isolated vivid details and readable sentences, but their reversed, discontinuous arrangement strands transitions and references, places conclusions before premises, and stops at what should have been the chapter's opening setup.",
+     "ref": "A develops concrete animal and shopping examples into a coherent argument, but repeated questions, promotional certainty, emphatic typography, a lengthy health detour, and a closing recap blunt its momentum."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "Coherent causal sequencing lets each paragraph reinterpret and advance the previous one; disrupted ordering converts individually intelligible material into fragments without narrative accumulation.",
+    "Ordered escalation lets examples establish claims and transitions carry attention forward; scrambling that sequence converts connective prose into unsupported fragments and removes any possibility of a prepared ending."
+   ],
+   "order_instability": {
+    "unstable": true,
+    "comparative_signatures": [
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "prose_control": -1,
+       "rhythm_and_variety": -1,
+       "specificity": -1,
+       "flow_and_momentum": -1,
+       "ending_handoff": -1
+      },
+      "ours_only": [
+       "broken_chapter_flow",
+       "mechanical_or_listicle_prose"
+      ],
+      "ref_only": [
+       "generic_self_help_voice",
+       "repetitive_sag"
+      ]
+     },
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "prose_control": -1,
+       "rhythm_and_variety": -1,
+       "specificity": -1,
+       "flow_and_momentum": -1,
+       "ending_handoff": -1
+      },
+      "ours_only": [
+       "broken_chapter_flow"
+      ],
+      "ref_only": [
+       "generic_self_help_voice",
+       "repetitive_sag"
+      ]
+     }
+    ],
+    "verdicts": [
+     "ref",
+     "ref"
+    ],
+    "score_winner_flips": [],
+    "relative_critical_failures_changed": true,
+    "max_within_order_candidate_gap": 4
+   },
+   "absolute_drift": {
+    "critical_failures_changed": true,
+    "max_same_text_score_shift": 1
+   }
+  },
+  {
+   "judge_identity": "sol-ultra-r2",
+   "model": "gpt-5.6-sol",
+   "role": "craft",
+   "target": "chapter-03",
+   "complete": true,
+   "dims": {
+    "prose_control": {
+     "ours_mean": 2.5,
+     "ref_mean": 5.5
+    },
+    "rhythm_and_variety": {
+     "ours_mean": 2.0,
+     "ref_mean": 5.0
+    },
+    "specificity": {
+     "ours_mean": 4.5,
+     "ref_mean": 6.5
+    },
+    "flow_and_momentum": {
+     "ours_mean": 1.0,
+     "ref_mean": 5.5
+    },
+    "ending_handoff": {
+     "ours_mean": 1.0,
+     "ref_mean": 3.5
+    }
+   },
+   "product_parity_verdict": "ref",
+   "confidence_mean": 0.99,
+   "critical_ours": [
+    "broken_chapter_flow",
+    "mechanical_or_listicle_prose",
+    "repetitive_sag",
+    "weak_ending_handoff"
+   ],
+   "critical_ref": [
+    "generic_self_help_voice",
+    "mechanical_or_listicle_prose",
+    "repetitive_sag",
+    "weak_ending_handoff"
+   ],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "Vivid examples survive locally, but the chapter jumps backward among conclusions, arguments, headings, and setup before terminating at its opening apparatus, making sustained reading nearly impossible.",
+     "ref": "Concrete social rituals and sensory examples support a coherent progression, though repeated assurances, sweeping promises, and a closing recap prolong points after they have landed."
+    },
+    {
+     "ours": "Recognizable examples and individually competent sentences survive, but their scrambled order destroys causal progression, separates questions from answers, misplaces headings, and leaves the chapter terminating at what should be its opening apparatus.",
+     "ref": "Concrete domestic scenes and accessible analogies support a coherent argument, but repeated assurances, sweeping promises, emphatic headings, and a redundant summary make the chapter feel overextended and commercially programmatic."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "Logical sequencing lets each example revise and deepen the preceding claim; disrupting that sequence converts purposeful recurrence into disconnected assertion and removes both momentum and payoff.",
+    "Logical sequencing lets recurring ideas accumulate into persuasion; disrupted sequencing turns the same material into disconnected assertions without setup, payoff, or forward movement."
+   ],
+   "order_instability": {
+    "unstable": true,
+    "comparative_signatures": [
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "prose_control": -1,
+       "rhythm_and_variety": -1,
+       "specificity": -1,
+       "flow_and_momentum": -1,
+       "ending_handoff": -1
+      },
+      "ours_only": [
+       "broken_chapter_flow"
+      ],
+      "ref_only": [
+       "generic_self_help_voice",
+       "repetitive_sag"
+      ]
+     },
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "prose_control": -1,
+       "rhythm_and_variety": -1,
+       "specificity": -1,
+       "flow_and_momentum": -1,
+       "ending_handoff": -1
+      },
+      "ours_only": [
+       "broken_chapter_flow"
+      ],
+      "ref_only": [
+       "generic_self_help_voice"
+      ]
+     }
+    ],
+    "verdicts": [
+     "ref",
+     "ref"
+    ],
+    "score_winner_flips": [],
+    "relative_critical_failures_changed": true,
+    "max_within_order_candidate_gap": 5
+   },
+   "absolute_drift": {
+    "critical_failures_changed": true,
+    "max_same_text_score_shift": 2
+   }
+  },
+  {
+   "judge_identity": "sol-ultra-r2",
+   "model": "gpt-5.6-sol",
+   "role": "efficacy",
+   "target": "block",
+   "complete": true,
+   "dims": {
+    "benefit_dismantling": {
+     "ours_mean": 3.5,
+     "ref_mean": 7.0
+    },
+    "belief_movement": {
+     "ours_mean": 2.5,
+     "ref_mean": 6.5
+    },
+    "escape_conviction": {
+     "ours_mean": 3.0,
+     "ref_mean": 7.5
+    },
+    "cumulative_progression": {
+     "ours_mean": 1.0,
+     "ref_mean": 7.5
+    }
+   },
+   "product_parity_verdict": "ref",
+   "confidence_mean": 0.99,
+   "critical_ours": [
+    "incoherent_block_arc"
+   ],
+   "critical_ref": [],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "Potentially persuasive mechanisms are present, including conditioned desire and relief-driven repetition, but disordered fragments repeatedly interrupt explanations, reverse transitions, and prevent the chapters from building sustained conviction.",
+     "ref": "The block progressively recasts pleasure as temporary relief, preference as conditioning, and restriction as the source of deprivation, supporting freedom with examples, causal loops, and a coherent alternative interpretation."
+    },
+    {
+     "ours": "Ideas arrive in reverse and fragmentary order: conclusions precede setups, summaries precede development, and transitions point backward. Individual arguments remain detectable, but they cannot accumulate into a credible change of mind.",
+     "ref": "Compulsive repetition is linked to temporary relief, then reinforced through biological and social-conditioning accounts before abstention is reframed as recovered choice. Overstatement and weak factual support may still alienate a skeptical reader."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "A coherent sequence that identifies a trap, demonstrates its causal loop, and then reinterprets deprivation lets each premise validate the next; scrambled evidence cannot accumulate into conviction.",
+    "Belief change strengthens when observation, causal explanation, and liberating reframe arrive in dependency order; scrambling that order makes points feel unsupported and prevents earlier insights from preparing acceptance of later ones."
+   ],
+   "order_instability": {
+    "unstable": false,
+    "comparative_signatures": [
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "benefit_dismantling": -1,
+       "belief_movement": -1,
+       "escape_conviction": -1,
+       "cumulative_progression": -1
+      },
+      "ours_only": [
+       "incoherent_block_arc"
+      ],
+      "ref_only": []
+     },
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "benefit_dismantling": -1,
+       "belief_movement": -1,
+       "escape_conviction": -1,
+       "cumulative_progression": -1
+      },
+      "ours_only": [
+       "incoherent_block_arc"
+      ],
+      "ref_only": []
+     }
+    ],
+    "verdicts": [
+     "ref",
+     "ref"
+    ],
+    "score_winner_flips": [],
+    "relative_critical_failures_changed": false,
+    "max_within_order_candidate_gap": 7
+   },
+   "absolute_drift": {
+    "critical_failures_changed": false,
+    "max_same_text_score_shift": 1
+   }
+  },
+  {
+   "judge_identity": "sol-ultra-r2",
+   "model": "gpt-5.6-sol",
+   "role": "integrity",
+   "target": "block",
+   "complete": true,
+   "dims": {
+    "non_shaming_regard": {
+     "ours_mean": 4.0,
+     "ref_mean": 4.0
+    },
+    "willpower_free_logic": {
+     "ours_mean": 5.5,
+     "ref_mean": 7.5
+    },
+    "epistemic_honesty": {
+     "ours_mean": 1.5,
+     "ref_mean": 1.5
+    },
+    "originality": {
+     "ours_mean": 1.0,
+     "ref_mean": 5.0
+    },
+    "cross_chapter_consistency": {
+     "ours_mean": 1.0,
+     "ref_mean": 6.5
+    }
+   },
+   "product_parity_verdict": "ref",
+   "confidence_mean": 0.975,
+   "critical_ours": [
+    "broken_continuity",
+    "copyright_expression_risk",
+    "fear_as_motivator",
+    "medical_overreach",
+    "shame_moralizing",
+    "unsupported_authority_or_testimony"
+   ],
+   "critical_ref": [
+    "copyright_expression_risk",
+    "fear_as_motivator",
+    "medical_overreach",
+    "shame_moralizing",
+    "unsupported_authority_or_testimony"
+   ],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "The block absolves the reader and promises desire-free change, but shuffled fragments break its instructional sequence while retaining categorical health claims, clinic testimony, and extensive wording shared with B.",
+     "ref": "The block coherently makes changed perception the mechanism and rejects deprivation, yet uses alarming disease scenarios, sweeping food-drug equivalences, universal clinical claims, and guaranteed outcomes without adequate support."
+    },
+    {
+     "ours": "B contains the same distinctive claims and language in mechanically disordered form: summaries precede support, references lose antecedents, and compassionate framing is diluted while the fear, medical overreach, and unsupported testimony remain.",
+     "ref": "A builds a coherent belief-reframing sequence and often absolves the reader, yet uses disgust, catastrophic health imagery, absolute causal claims, unverifiable success claims, and rigid compliance assurances; its extensive expression overlap with B also creates risk."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "A coherent sequence can dismantle a valued belief before behavior changes; scrambling that sequence makes obedience to isolated commands replace understanding.",
+    "The largest gap likely comes from sequence integrity: ordered premises support evaluable belief revision, while mechanically reordered fragments separate conclusions from reasons and reduce the method to assertions and commands."
+   ],
+   "order_instability": {
+    "unstable": true,
+    "comparative_signatures": [
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "non_shaming_regard": 0,
+       "willpower_free_logic": -1,
+       "epistemic_honesty": 0,
+       "originality": -1,
+       "cross_chapter_consistency": -1
+      },
+      "ours_only": [
+       "broken_continuity",
+       "copyright_expression_risk"
+      ],
+      "ref_only": []
+     },
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "non_shaming_regard": 0,
+       "willpower_free_logic": -1,
+       "epistemic_honesty": 0,
+       "originality": -1,
+       "cross_chapter_consistency": -1
+      },
+      "ours_only": [
+       "broken_continuity"
+      ],
+      "ref_only": []
+     }
+    ],
+    "verdicts": [
+     "ref",
+     "ref"
+    ],
+    "score_winner_flips": [],
+    "relative_critical_failures_changed": true,
+    "max_within_order_candidate_gap": 7
+   },
+   "absolute_drift": {
+    "critical_failures_changed": true,
+    "max_same_text_score_shift": 6
+   }
+  }
+ ],
+ "canonical": true,
+ "instrument_configuration": {
+  "protocol_version": "stage-a-v2.1-native-sol-ultra-1",
+  "transport": "native-codex-subscription",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "replica_identities": [
+   "sol-ultra-r1",
+   "sol-ultra-r2"
+  ],
+  "chapter_pairs": [
+   [
+    1,
+    1
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    3,
+    3
+   ]
+  ],
+  "role_prompt_sha256": {
+   "efficacy": "6d29f64553940b52e54df5acebdb4555b80b4a7d97cc55ea676901d1b086fae4",
+   "craft": "925f236ce8136f9fd0323660ac031067e394b2103d34503f60b133c8a22e7fa5",
+   "integrity": "1da78e468c4dcb769329f112912d84c267a2cbaac28a1c58ef4ce7137d16ad23"
+  },
+  "implementation_sha256": {
+   "judge_panel.py": "26937f674970b199d050624a9e0aad590db91be4440dd34e726172f3dac0a442",
+   "judge_protocol.py": "0c7ffbf1fd223042546a4fd98031b0ac683d9779289d9825e70ae76937a0f692",
+   "native_judge.py": "b00b089feaf40eae1213b69ce46b4dee1447b706159a6d064d1a0351204d8518"
+  }
+ },
+ "validated_controls": null,
+ "prompt_control": {
+  "mode": "degraded-reference",
+  "expectation": "the intact reference beats its locally degraded copy in every observation",
+  "passed": false
+ }
+}

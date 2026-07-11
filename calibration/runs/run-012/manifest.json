@@ -2,7 +2,7 @@
   "run": "run-012",
   "date": "2026-07-11",
   "stage": "A",
-  "status": "CAUSAL_REFUTED_V2_CONTROL_FAILED_V2_1_PREREGISTERED_PRODUCT_UNJUDGED",
+  "status": "CAUSAL_REFUTED_V2_1_DEGRADED_CONTROL_FAILED_PRODUCT_UNJUDGED",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "source-grounded semantic commissioning followed by a frozen Chapters 1-3 production run",
@@ -651,6 +651,109 @@
     "claim_limits": "A passing identical control supports comparative symmetry, not absolute-score or critical-taxonomy reproducibility. A passing degraded control supports gross-damage sensitivity, not fine parity. Same-model replication is not cross-family evidence, blind integrity cannot verify unseen sources, and a panel cannot override failed objective, length, or grounded gates.",
     "product_verdict": "UNJUDGED",
     "causal_boundary": "H-049 remains REFUTED; v2.1 is an instrument correction, not H-050 or a factory hypothesis."
+  },
+  "judge_control_v2_1_execution": {
+    "date": "2026-07-12",
+    "implementation_commit": "19fa552c58824ecc523c8566c6125b26a9b23d12",
+    "route": "native Codex subscription only; OPENROUTER_API_KEY, LITELLM_API_KEY, and LITELLM_BASE_URL explicitly unset for both processes",
+    "configuration": {
+      "protocol_version": "stage-a-v2.1-native-sol-ultra-1",
+      "model": "gpt-5.6-sol",
+      "reasoning": "ultra",
+      "identities": ["sol-ultra-r1", "sol-ultra-r2"],
+      "chapter_pairs": [[1, 1], [2, 2], [3, 3]],
+      "fresh_context_per_raw_cell": true,
+      "output_limit": "none set by harness",
+      "role_prompt_sha256": {
+        "efficacy": "6d29f64553940b52e54df5acebdb4555b80b4a7d97cc55ea676901d1b086fae4",
+        "craft": "925f236ce8136f9fd0323660ac031067e394b2103d34503f60b133c8a22e7fa5",
+        "integrity": "1da78e468c4dcb769329f112912d84c267a2cbaac28a1c58ef4ce7137d16ad23"
+      },
+      "implementation_sha256": {
+        "judge_panel.py": "26937f674970b199d050624a9e0aad590db91be4440dd34e726172f3dac0a442",
+        "judge_protocol.py": "0c7ffbf1fd223042546a4fd98031b0ac683d9779289d9825e70ae76937a0f692",
+        "native_judge.py": "b00b089feaf40eae1213b69ce46b4dee1447b706159a6d064d1a0351204d8518"
+      }
+    },
+    "material_sha256": {
+      "intact_chapter_01": "f0d8dd6c5c58f3ff526b57373ae05e612a893af0c9183b8ad9d7fab8d2742b2c",
+      "intact_chapter_02": "2c296c0ee5cdd14a74e393c1ff3cdaa852fd2795f46c16dba8c3bda701317437",
+      "intact_chapter_03": "6418f91ab6978b034d808558ead607314a6632a49183f2893444fa874be2ae14",
+      "intact_block": "e3be196a3cea3642a9a52a50eefe5ce74a5f1a0b48a31b5458df2b4443bc61d7",
+      "degraded_chapter_01": "d21f11c18569c4fc1d2f93c049db9b0473698e486780ad11b3cad26c462f82b9",
+      "degraded_chapter_02": "71f005ab41fc9b8dc31e43fbef7562338033f319c19a0fab12f6763fc915f45f",
+      "degraded_chapter_03": "d1237cb7f00de5e6ba69bee0a0f4aab712e4602ef7a64169f885c55aaeaac9b2",
+      "degraded_block": "23346f4b907fb092cca0e6e62efdf9aeefcce97c07c3f5d38d8d7f2f20794caf"
+    },
+    "identical": {
+      "command": "python3 scripts/eval/judge_panel.py --ours calibration/reference/gsbs --ref calibration/reference/gsbs --chapters 1-3 --judge-identities sol-ultra-r1,sol-ultra-r2 --control identical --out calibration/runs/run-012/judgments/controls-v2.1/identical",
+      "status": "PASS",
+      "process_exit_code": 0,
+      "artifact": "calibration/runs/run-012/judgments/controls-v2.1/identical/judge-summary.json",
+      "artifact_sha256": "7623699f69fe00130e2266f93815262961044bfbc6ac1d60ece092cc73c194f1",
+      "raw_judgments": 20,
+      "unique_native_threads": 20,
+      "collapsed_observations": 10,
+      "invalid_judgments": 0,
+      "panel_complete": true,
+      "raw_parity_verdicts": {"tie": 20, "ours": 0, "ref": 0},
+      "within_order_candidate_score_gap_max": 0,
+      "comparative_instability_observations": 0,
+      "absolute_drift": {"critical_label_observations": 5, "score_observations": 8, "max_same_text_score_shift": 4},
+      "usage": {"input_tokens": 584557, "cached_input_tokens": 197632, "output_tokens": 29036, "reasoning_output_tokens": 22122}
+    },
+    "degraded_reference": {
+      "command": "python3 scripts/eval/judge_panel.py --ours calibration/reference/gsbs --ref calibration/reference/gsbs --chapters 1-3 --judge-identities sol-ultra-r1,sol-ultra-r2 --control degraded-reference --out calibration/runs/run-012/judgments/controls-v2.1/degraded-reference",
+      "status": "FAIL",
+      "process_exit_code": 1,
+      "artifact": "calibration/runs/run-012/judgments/controls-v2.1/degraded-reference/judge-summary.json",
+      "artifact_sha256": "ebfa0e571b5968f3ef30ff453297b964b552cf864719928e8fef35ec515bab8e",
+      "raw_judgments": 20,
+      "unique_native_threads": 20,
+      "collapsed_observations": 10,
+      "invalid_judgments": 3,
+      "panel_complete": false,
+      "valid_raw_parity_verdicts": {"tie": 0, "ours": 0, "ref": 17},
+      "comparative_instability": {
+        "complete_observations": 7,
+        "unstable_observations": 5,
+        "rate": 0.714,
+        "mechanism": "all five unstable pairs retained ref verdicts and identical score-winner signs but changed one or more candidate-unique critical labels across fresh contexts"
+      },
+      "invalid_records": [
+        {
+          "path": "craft/chapter-01/sol-ultra-r2/o0.json",
+          "thread_id": "019f536b-a8af-79a2-9787-2c3ba72f5ce2",
+          "raw_sha256": "8fde959983b12c18b729875eca8b0257209db5ec5305870f2cae43f2ad0c3df3",
+          "failure": "trailing comma made the otherwise complete raw object invalid JSON"
+        },
+        {
+          "path": "craft/chapter-02/sol-ultra-r1/o1.json",
+          "thread_id": "019f536c-bb18-7960-a255-4300b0faed4e",
+          "raw_sha256": "bc489063bca60f1109a75f41ced96d603742d6e915d1db5888852af47e20befa",
+          "failure": "trailing comma made the otherwise complete raw object invalid JSON"
+        },
+        {
+          "path": "integrity/block/sol-ultra-r1/o0.json",
+          "thread_id": "019f536f-0d79-7ea1-b8db-66da69ea1255",
+          "raw_sha256": "a4a073842ad46aa1bb973c479c517bdd44e6f77ff3e78b262c0ce4f87216f199",
+          "failure": "trailing comma made the otherwise complete raw object invalid JSON"
+        }
+      ],
+      "absolute_drift": {"critical_label_observations": 5, "score_observations": 7, "max_same_text_score_shift": 6},
+      "usage": {"input_tokens": 479136, "cached_input_tokens": 203776, "output_tokens": 32783, "reasoning_output_tokens": 26024}
+    },
+    "transport": "all 40 native calls returned zero and produced 40 unique thread IDs; every raw record preserves final response, parsed/mapped result when valid, input hash, command, exact pin and reasoning, thread ID, usage, and stderr",
+    "instrument_verdict": "INVALID FOR PRODUCT USE — v2.1 identical passed, but the frozen degraded-reference gate failed",
+    "product_panel": "NOT RUN — degraded-reference control failed",
+    "product_verdict": "UNJUDGED",
+    "causal_boundary": "H-049 remains REFUTED; the control result is measurement evidence only",
+    "hypothesis_boundary": "No H-050 formed; no prose, factory asset, judge prompt, schema, threshold, material, or implementation changed or retried",
+    "verification": {
+      "json_and_matrix_checks": "PASS",
+      "scripts_check": "PASS — 70 tests; shellcheck unavailable and skipped by the canonical gate",
+      "git_diff_check": "PASS"
+    }
   },
   "held_constant": [
     "accepted research corpus, framing, canonical plan, evidence assignments, chapter jobs, and source permissions",

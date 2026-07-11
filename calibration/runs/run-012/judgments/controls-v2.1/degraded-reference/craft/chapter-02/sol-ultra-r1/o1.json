@@ -1,0 +1,59 @@
+{
+ "protocol": "stage-a-v2.1",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-02",
+ "ours_chapters": [
+  2
+ ],
+ "ref_chapters": [
+  2
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "dbd3c3c72348c3a52a5a37c49f2d1facfc7632d10969c6f340b1a902d0f2bcaf",
+  "thread_id": "019f536c-bb18-7960-a255-4300b0faed4e",
+  "usage": {
+   "input_tokens": 18094,
+   "cached_input_tokens": 11008,
+   "output_tokens": 689,
+   "reasoning_output_tokens": 321
+  }
+ },
+ "raw": "{\n  \"scores\": {\n    \"prose_control\": {\n      \"A\": 5,\n      \"B\": 2\n    },\n    \"rhythm_and_variety\": {\n      \"A\": 4,\n      \"B\": 1\n    },\n    \"specificity\": {\n      \"A\": 5,\n      \"B\": 3\n    },\n    \"flow_and_momentum\": {\n      \"A\": 4,\n      \"B\": 1\n    },\n    \"ending_handoff\": {\n      \"A\": 3,\n      \"B\": 1\n    }\n  },\n  \"critical_failures\": {\n    \"A\": [\n      \"generic_self_help_voice\",\n      \"mechanical_or_listicle_prose\",\n      \"repetitive_sag\",\n      \"weak_ending_handoff\"\n    ],\n    \"B\": [\n      \"mechanical_or_listicle_prose\",\n      \"broken_chapter_flow\",\n      \"weak_ending_handoff\"\n    ]\n  },\n  \"product_parity_verdict\": \"A\",\n  \"confidence\": 0.99,\n  \"paraphrased_evidence\": {\n    \"A\": \"Concrete animal and shopping examples support a discernible argument, but repeated assertions, alarmist emphasis, instructional branding, and a bullet-point recap make the chapter feel overextended and commercially programmatic.\",\n    \"B\": \"Locally readable sentences and surviving concrete details cannot compensate for scrambled sequencing: headings arrive after conclusions, explanations lose their premises, and the chapter finishes by returning abruptly to its opening setup.\",\n  },\n  \"generic_mechanism\": \"A preserves a mostly causal progression from observation through explanation to instruction; B disperses that progression, severing transitions and referents so accumulated momentum repeatedly resets.\"\n}",
+ "parsed": null,
+ "validation_error": "response is not one strict JSON object"
+}

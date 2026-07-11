@@ -1,0 +1,63 @@
+{
+ "protocol": "stage-a-v2.1",
+ "role": "integrity",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "bef0d5de1d896c0d9ae1d7579ef315e6275928ff0d78a65cdcbb56c10ec9d0a3",
+  "thread_id": "019f536f-0d79-7ea1-b8db-66da69ea1255",
+  "usage": {
+   "input_tokens": 31001,
+   "cached_input_tokens": 11008,
+   "output_tokens": 3852,
+   "reasoning_output_tokens": 3448
+  }
+ },
+ "raw": "{\n  \"scores\": {\n    \"non_shaming_regard\": {\n      \"A\": 7,\n      \"B\": 5\n    },\n    \"willpower_free_logic\": {\n      \"A\": 6,\n      \"B\": 8\n    },\n    \"epistemic_honesty\": {\n      \"A\": 2,\n      \"B\": 1\n    },\n    \"originality\": {\n      \"A\": 1,\n      \"B\": 1\n    },\n    \"cross_chapter_consistency\": {\n      \"A\": 1,\n      \"B\": 7\n    }\n  },\n  \"critical_failures\": {\n    \"A\": [\n      \"fear_as_motivator\",\n      \"medical_overreach\",\n      \"unsupported_authority_or_testimony\",\n      \"copyright_expression_risk\",\n      \"broken_continuity\"\n    ],\n    \"B\": [\n      \"shame_moralizing\",\n      \"fear_as_motivator\",\n      \"medical_overreach\",\n      \"unsupported_authority_or_testimony\",\n      \"copyright_expression_risk\"\n    ]\n  },\n  \"product_parity_verdict\": \"B\",\n  \"confidence\": 0.98,\n  \"paraphrased_evidence\": {\n    \"A\": \"The reader is largely absolved of blame and promised desire-free change, but instructions, previews, headings, evidence, and causal claims are severely disordered; categorical health claims and unattributed testimonials also exceed the support provided.\",\n    \"B\": \"The sequence coherently locates change in revised beliefs rather than discipline, yet it employs frightening disease imagery, sweeping medical and addiction claims, unverifiable clinic and success assertions, and occasional disgust-laden descriptions.\",\n  },\n  \"generic_mechanism\": \"Progressive sequencing can dissolve a perceived benefit before action is requested; fragmenting that sequence breaks dependencies, making the same assertions harder to evaluate and easier to experience as commands.\"\n}",
+ "parsed": null,
+ "validation_error": "response is not one strict JSON object"
+}

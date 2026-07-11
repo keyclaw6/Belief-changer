@@ -1,0 +1,125 @@
+{
+ "protocol": "stage-a-v2.1",
+ "role": "efficacy",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "564626d92d7d85dd7e1d96e02595ab7eb3e0fcfeababc16b06700f3014671127",
+  "thread_id": "019f5369-ed93-7d30-a769-1938d9d9b273",
+  "usage": {
+   "input_tokens": 30930,
+   "cached_input_tokens": 8960,
+   "output_tokens": 1298,
+   "reasoning_output_tokens": 1034
+  }
+ },
+ "raw": "{\n  \"scores\": {\n    \"benefit_dismantling\": {\"A\": 7, \"B\": 4},\n    \"belief_movement\": {\"A\": 7, \"B\": 3},\n    \"escape_conviction\": {\"A\": 8, \"B\": 4},\n    \"cumulative_progression\": {\"A\": 8, \"B\": 1}\n  },\n  \"critical_failures\": {\"A\": [], \"B\": [\"incoherent_block_arc\"]},\n  \"product_parity_verdict\": \"A\",\n  \"confidence\": 0.99,\n  \"paraphrased_evidence\": {\n    \"A\": \"The block moves from a self-reinforcing relief loop, through bodily and environmental explanations, to learned preferences and failed restriction, repeatedly reframing abstinence as release from an acquired need.\",\n    \"B\": \"Comparable claims and examples appear, but each chapter runs backward from summaries and promises into their premises, obscuring causal links and making the promised liberation feel asserted before it is earned.\"\n  },\n  \"generic_mechanism\": \"Belief change strengthens when concrete observations support a causal explanation before the liberating conclusion; reversing that sequence turns conclusions into unsupported directives and prevents cumulative updating.\"\n}",
+ "parsed": {
+  "scores": {
+   "benefit_dismantling": {
+    "A": 7,
+    "B": 4
+   },
+   "belief_movement": {
+    "A": 7,
+    "B": 3
+   },
+   "escape_conviction": {
+    "A": 8,
+    "B": 4
+   },
+   "cumulative_progression": {
+    "A": 8,
+    "B": 1
+   }
+  },
+  "critical_failures": {
+   "A": [],
+   "B": [
+    "incoherent_block_arc"
+   ]
+  },
+  "product_parity_verdict": "A",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "A": "The block moves from a self-reinforcing relief loop, through bodily and environmental explanations, to learned preferences and failed restriction, repeatedly reframing abstinence as release from an acquired need.",
+   "B": "Comparable claims and examples appear, but each chapter runs backward from summaries and promises into their premises, obscuring causal links and making the promised liberation feel asserted before it is earned."
+  },
+  "generic_mechanism": "Belief change strengthens when concrete observations support a causal explanation before the liberating conclusion; reversing that sequence turns conclusions into unsupported directives and prevents cumulative updating."
+ },
+ "mapped": {
+  "dims": {
+   "benefit_dismantling": {
+    "ours": 4,
+    "ref": 7
+   },
+   "belief_movement": {
+    "ours": 3,
+    "ref": 7
+   },
+   "escape_conviction": {
+    "ours": 4,
+    "ref": 8
+   },
+   "cumulative_progression": {
+    "ours": 1,
+    "ref": 8
+   }
+  },
+  "critical_ours": [
+   "incoherent_block_arc"
+  ],
+  "critical_ref": [],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "Comparable claims and examples appear, but each chapter runs backward from summaries and promises into their premises, obscuring causal links and making the promised liberation feel asserted before it is earned.",
+   "ref": "The block moves from a self-reinforcing relief loop, through bodily and environmental explanations, to learned preferences and failed restriction, repeatedly reframing abstinence as release from an acquired need."
+  },
+  "generic_mechanism": "Belief change strengthens when concrete observations support a causal explanation before the liberating conclusion; reversing that sequence turns conclusions into unsupported directives and prevents cumulative updating."
+ }
+}

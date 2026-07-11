@@ -1,0 +1,141 @@
+{
+ "protocol": "stage-a-v2.1",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-02",
+ "ours_chapters": [
+  2
+ ],
+ "ref_chapters": [
+  2
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "9836bef9093164b2b2f1673560f07930feb80d54299ec261e0be33fe29fba4fb",
+  "thread_id": "019f536c-fc72-7ad1-9f86-eb4e6f461f75",
+  "usage": {
+   "input_tokens": 18094,
+   "cached_input_tokens": 11008,
+   "output_tokens": 869,
+   "reasoning_output_tokens": 516
+  }
+ },
+ "raw": "{\n  \"scores\": {\n    \"prose_control\": {\n      \"A\": 2,\n      \"B\": 5\n    },\n    \"rhythm_and_variety\": {\n      \"A\": 2,\n      \"B\": 5\n    },\n    \"specificity\": {\n      \"A\": 4,\n      \"B\": 6\n    },\n    \"flow_and_momentum\": {\n      \"A\": 1,\n      \"B\": 5\n    },\n    \"ending_handoff\": {\n      \"A\": 1,\n      \"B\": 3\n    }\n  },\n  \"critical_failures\": {\n    \"A\": [\n      \"mechanical_or_listicle_prose\",\n      \"broken_chapter_flow\",\n      \"weak_ending_handoff\"\n    ],\n    \"B\": [\n      \"generic_self_help_voice\",\n      \"repetitive_sag\",\n      \"weak_ending_handoff\"\n    ]\n  },\n  \"product_parity_verdict\": \"B\",\n  \"confidence\": 0.99,\n  \"paraphrased_evidence\": {\n    \"A\": \"Concrete examples survive, but sections, arguments, and instructions arrive in a scrambled sequence; abrupt topic reversals prevent cumulative meaning, and the text finishes by returning to what reads like its opening.\",\n    \"B\": \"A sustained observational example develops into a clear argument and practical instruction, though repeated assertions, typographic shouting, escalating polemic, and a boilerplate recap weaken the latter half.\"\n  },\n  \"generic_mechanism\": \"Coherent causal sequencing lets each paragraph reinterpret and advance the previous one; disrupted ordering converts individually intelligible material into fragments without narrative accumulation.\"\n}",
+ "parsed": {
+  "scores": {
+   "prose_control": {
+    "A": 2,
+    "B": 5
+   },
+   "rhythm_and_variety": {
+    "A": 2,
+    "B": 5
+   },
+   "specificity": {
+    "A": 4,
+    "B": 6
+   },
+   "flow_and_momentum": {
+    "A": 1,
+    "B": 5
+   },
+   "ending_handoff": {
+    "A": 1,
+    "B": 3
+   }
+  },
+  "critical_failures": {
+   "A": [
+    "mechanical_or_listicle_prose",
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ],
+   "B": [
+    "generic_self_help_voice",
+    "repetitive_sag",
+    "weak_ending_handoff"
+   ]
+  },
+  "product_parity_verdict": "B",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "A": "Concrete examples survive, but sections, arguments, and instructions arrive in a scrambled sequence; abrupt topic reversals prevent cumulative meaning, and the text finishes by returning to what reads like its opening.",
+   "B": "A sustained observational example develops into a clear argument and practical instruction, though repeated assertions, typographic shouting, escalating polemic, and a boilerplate recap weaken the latter half."
+  },
+  "generic_mechanism": "Coherent causal sequencing lets each paragraph reinterpret and advance the previous one; disrupted ordering converts individually intelligible material into fragments without narrative accumulation."
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 2,
+    "ref": 5
+   },
+   "rhythm_and_variety": {
+    "ours": 2,
+    "ref": 5
+   },
+   "specificity": {
+    "ours": 4,
+    "ref": 6
+   },
+   "flow_and_momentum": {
+    "ours": 1,
+    "ref": 5
+   },
+   "ending_handoff": {
+    "ours": 1,
+    "ref": 3
+   }
+  },
+  "critical_ours": [
+   "mechanical_or_listicle_prose",
+   "broken_chapter_flow",
+   "weak_ending_handoff"
+  ],
+  "critical_ref": [
+   "generic_self_help_voice",
+   "repetitive_sag",
+   "weak_ending_handoff"
+  ],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "Concrete examples survive, but sections, arguments, and instructions arrive in a scrambled sequence; abrupt topic reversals prevent cumulative meaning, and the text finishes by returning to what reads like its opening.",
+   "ref": "A sustained observational example develops into a clear argument and practical instruction, though repeated assertions, typographic shouting, escalating polemic, and a boilerplate recap weaken the latter half."
+  },
+  "generic_mechanism": "Coherent causal sequencing lets each paragraph reinterpret and advance the previous one; disrupted ordering converts individually intelligible material into fragments without narrative accumulation."
+ }
+}

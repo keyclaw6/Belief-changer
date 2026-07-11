@@ -1,6 +1,6 @@
 # Run report — run-012
 
-**Stage:** A **Scope:** source-grounded commissions plus frozen Chapters 1-3 production **Causal verdict:** REFUTED — material invention in 3/3 grounded first drafts **Product verdict:** UNJUDGED — identical-text judge control failed closed before product inference
+**Stage:** A **Scope:** source-grounded commissions plus frozen Chapters 1-3 production **Causal verdict:** REFUTED — material invention in 3/3 grounded first drafts **Product verdict:** UNJUDGED — v2.1 degraded-reference control failed closed before product inference
 
 ## What will run
 
@@ -104,6 +104,16 @@ Everything else is held fixed: all three judge prompts and strict schemas; all s
 The v2.1 identical control keeps its frozen thresholds: a complete matrix, tie in every collapsed observation, equal unioned critical sets, maximum within-call candidate score gap no greater than one, and no comparative-signature instability. The unchanged degraded control passes only if the intact reference wins every collapsed observation without comparative-signature instability. After the implementation is tested and frozen, both controls run from scratch into new v2.1 directories; the old v2 evidence is neither overwritten nor reused. Product judging remains forbidden unless both new summaries pass and match the exact frozen v2.1 configuration.
 
 V2.1 begins a non-comparable measurement baseline. An identical pass establishes comparative symmetry, not absolute score or critical-taxonomy reproducibility. A degraded pass establishes sensitivity to gross damage, not fine parity. Same-model replication remains non-cross-family; blind integrity cannot verify unseen source packets; and no favorable panel can override run-012's objective, length, or grounded failures.
+
+## Stage-A v2.1 controls — degraded control failed closed
+
+The preregistered implementation froze at commit `19fa552` before any v2.1 call. Both controls used the same three role prompts, strict schemas, local reference Chapters 1–3, deterministic degradation, native `gpt-5.6-sol` pin at `ultra`, two identities, and exact 20-cell matrix. OpenRouter and LiteLLM endpoint credentials were explicitly unset. The configuration, prompt, implementation, intact-material, and degraded-material hashes are recorded in the manifest and every raw record retains its input hash, command, thread ID, usage, response, parse/mapping status, and stderr.
+
+The fresh identical control **PASSED**: 20 raw judgments, 20 unique threads, 10 complete collapsed observations, zero invalid judgments, 20 ties, maximum within-call candidate gap zero, and zero comparative-signature instability. Absolute drift remained visible rather than suppressed: five observations changed shared critical labels, eight changed absolute scores, and the maximum same-text score shift was four. The summary is `judgments/controls-v2.1/identical/judge-summary.json`, SHA-256 `7623699f...`.
+
+The matching degraded-reference control then completed all 20 fresh contexts but **FAILED** its frozen gate. Three otherwise complete final objects contained a trailing comma and were invalid under the unchanged strict JSON parser, leaving the panel incomplete. Among the seven collapsible observations, five were comparatively unstable: every valid raw verdict still preferred the intact reference and every score-winner sign remained stable, but candidate-unique critical labels changed between fresh repetitions. Thus the raw sensitivity signal was directionally unanimous—17/17 valid verdicts chose the intact reference—while the preregistered complete-matrix and comparative-stability requirements were not met. The summary is `judgments/controls-v2.1/degraded-reference/judge-summary.json`, SHA-256 `ebfa0e57...`.
+
+This is a measurement failure, not book evidence. The strict parser prevented malformed output from becoming a false pass, while the unstable relative labels expose a separate false-negative risk in treating critical-taxonomy identity as part of comparative reproducibility even under gross damage. Neither rule is waived after observation. No retry, parser repair, prompt/schema change, threshold change, or product call occurred. H-049 remains **REFUTED**, run-012 product quality remains **UNJUDGED**, and no H-050 exists.
 
 ## Judge-panel preflight — historical misrouting, now resolved
 

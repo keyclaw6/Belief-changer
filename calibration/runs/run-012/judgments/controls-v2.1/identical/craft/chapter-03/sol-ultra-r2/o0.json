@@ -1,0 +1,145 @@
+{
+ "protocol": "stage-a-v2.1",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-03",
+ "ours_chapters": [
+  3
+ ],
+ "ref_chapters": [
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "d6f588efd46f474dd2382b57f5036cd6d849a65f1c7e898658efaa013240a5a2",
+  "thread_id": "019f5364-37a0-7dd2-9186-bd891b42623b",
+  "usage": {
+   "input_tokens": 21785,
+   "cached_input_tokens": 11008,
+   "output_tokens": 883,
+   "reasoning_output_tokens": 516
+  }
+ },
+ "raw": "{\n  \"scores\": {\n    \"prose_control\": {\n      \"A\": 5,\n      \"B\": 5\n    },\n    \"rhythm_and_variety\": {\n      \"A\": 4,\n      \"B\": 4\n    },\n    \"specificity\": {\n      \"A\": 6,\n      \"B\": 6\n    },\n    \"flow_and_momentum\": {\n      \"A\": 4,\n      \"B\": 4\n    },\n    \"ending_handoff\": {\n      \"A\": 3,\n      \"B\": 3\n    }\n  },\n  \"critical_failures\": {\n    \"A\": [\n      \"generic_self_help_voice\",\n      \"mechanical_or_listicle_prose\",\n      \"repetitive_sag\",\n      \"weak_ending_handoff\"\n    ],\n    \"B\": [\n      \"generic_self_help_voice\",\n      \"mechanical_or_listicle_prose\",\n      \"repetitive_sag\",\n      \"weak_ending_handoff\"\n    ]\n  },\n  \"product_parity_verdict\": \"tie\",\n  \"confidence\": 1.0,\n  \"paraphrased_evidence\": {\n    \"A\": \"Concrete domestic scenes and accessible analogies enliven a clear argument, but repeated assurances, rhetorical questions, emphatic headings, and an unnecessary closing recap make the chapter feel prolonged and heavily programmed.\",\n    \"B\": \"Concrete domestic scenes and accessible analogies enliven a clear argument, but repeated assurances, rhetorical questions, emphatic headings, and an unnecessary closing recap make the chapter feel prolonged and heavily programmed.\"\n  },\n  \"generic_mechanism\": \"Identical sequencing, examples, rhetorical patterns, and endings produce the same pacing and finished reading experience.\"\n}",
+ "parsed": {
+  "scores": {
+   "prose_control": {
+    "A": 5,
+    "B": 5
+   },
+   "rhythm_and_variety": {
+    "A": 4,
+    "B": 4
+   },
+   "specificity": {
+    "A": 6,
+    "B": 6
+   },
+   "flow_and_momentum": {
+    "A": 4,
+    "B": 4
+   },
+   "ending_handoff": {
+    "A": 3,
+    "B": 3
+   }
+  },
+  "critical_failures": {
+   "A": [
+    "generic_self_help_voice",
+    "mechanical_or_listicle_prose",
+    "repetitive_sag",
+    "weak_ending_handoff"
+   ],
+   "B": [
+    "generic_self_help_voice",
+    "mechanical_or_listicle_prose",
+    "repetitive_sag",
+    "weak_ending_handoff"
+   ]
+  },
+  "product_parity_verdict": "tie",
+  "confidence": 1.0,
+  "paraphrased_evidence": {
+   "A": "Concrete domestic scenes and accessible analogies enliven a clear argument, but repeated assurances, rhetorical questions, emphatic headings, and an unnecessary closing recap make the chapter feel prolonged and heavily programmed.",
+   "B": "Concrete domestic scenes and accessible analogies enliven a clear argument, but repeated assurances, rhetorical questions, emphatic headings, and an unnecessary closing recap make the chapter feel prolonged and heavily programmed."
+  },
+  "generic_mechanism": "Identical sequencing, examples, rhetorical patterns, and endings produce the same pacing and finished reading experience."
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 5,
+    "ref": 5
+   },
+   "rhythm_and_variety": {
+    "ours": 4,
+    "ref": 4
+   },
+   "specificity": {
+    "ours": 6,
+    "ref": 6
+   },
+   "flow_and_momentum": {
+    "ours": 4,
+    "ref": 4
+   },
+   "ending_handoff": {
+    "ours": 3,
+    "ref": 3
+   }
+  },
+  "critical_ours": [
+   "generic_self_help_voice",
+   "mechanical_or_listicle_prose",
+   "repetitive_sag",
+   "weak_ending_handoff"
+  ],
+  "critical_ref": [
+   "generic_self_help_voice",
+   "mechanical_or_listicle_prose",
+   "repetitive_sag",
+   "weak_ending_handoff"
+  ],
+  "product_parity_verdict": "tie",
+  "confidence": 1.0,
+  "paraphrased_evidence": {
+   "ours": "Concrete domestic scenes and accessible analogies enliven a clear argument, but repeated assurances, rhetorical questions, emphatic headings, and an unnecessary closing recap make the chapter feel prolonged and heavily programmed.",
+   "ref": "Concrete domestic scenes and accessible analogies enliven a clear argument, but repeated assurances, rhetorical questions, emphatic headings, and an unnecessary closing recap make the chapter feel prolonged and heavily programmed."
+  },
+  "generic_mechanism": "Identical sequencing, examples, rhetorical patterns, and endings produce the same pacing and finished reading experience."
+ }
+}

@@ -1,0 +1,135 @@
+{
+ "protocol": "stage-a-v2.1",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-03",
+ "ours_chapters": [
+  3
+ ],
+ "ref_chapters": [
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "3a4f92f05b7dacd13ad9e1c2d8bbe294046de2ff8fd9ef890e6295a393113436",
+  "thread_id": "019f536d-f23c-7ce1-a9f2-5894dccb91b7",
+  "usage": {
+   "input_tokens": 18970,
+   "cached_input_tokens": 8960,
+   "output_tokens": 1219,
+   "reasoning_output_tokens": 941
+  }
+ },
+ "raw": "{\n  \"scores\": {\n    \"prose_control\": {\"A\": 6, \"B\": 3},\n    \"rhythm_and_variety\": {\"A\": 5, \"B\": 2},\n    \"specificity\": {\"A\": 6, \"B\": 5},\n    \"flow_and_momentum\": {\"A\": 5, \"B\": 1},\n    \"ending_handoff\": {\"A\": 5, \"B\": 1}\n  },\n  \"critical_failures\": {\n    \"A\": [\"repetitive_sag\"],\n    \"B\": [\"broken_chapter_flow\", \"weak_ending_handoff\"]\n  },\n  \"product_parity_verdict\": \"A\",\n  \"confidence\": 0.99,\n  \"paraphrased_evidence\": {\n    \"A\": \"Concrete domestic examples and accessible analogies support a coherent argument, but recurring assertions, promotional assurances, and repeated promises substantially prolong the chapter.\",\n    \"B\": \"Individual sentences retain local clarity and detail, yet their reversed, fragmentary arrangement breaks references, progression, section logic, and closure.\"\n  },\n  \"generic_mechanism\": \"Ordered accumulation lets examples deepen a central claim and prepare the next step; disrupting that sequence strips sentences of context, prevents escalation, and eliminates a purposeful landing.\"\n}",
+ "parsed": {
+  "scores": {
+   "prose_control": {
+    "A": 6,
+    "B": 3
+   },
+   "rhythm_and_variety": {
+    "A": 5,
+    "B": 2
+   },
+   "specificity": {
+    "A": 6,
+    "B": 5
+   },
+   "flow_and_momentum": {
+    "A": 5,
+    "B": 1
+   },
+   "ending_handoff": {
+    "A": 5,
+    "B": 1
+   }
+  },
+  "critical_failures": {
+   "A": [
+    "repetitive_sag"
+   ],
+   "B": [
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ]
+  },
+  "product_parity_verdict": "A",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "A": "Concrete domestic examples and accessible analogies support a coherent argument, but recurring assertions, promotional assurances, and repeated promises substantially prolong the chapter.",
+   "B": "Individual sentences retain local clarity and detail, yet their reversed, fragmentary arrangement breaks references, progression, section logic, and closure."
+  },
+  "generic_mechanism": "Ordered accumulation lets examples deepen a central claim and prepare the next step; disrupting that sequence strips sentences of context, prevents escalation, and eliminates a purposeful landing."
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 3,
+    "ref": 6
+   },
+   "rhythm_and_variety": {
+    "ours": 2,
+    "ref": 5
+   },
+   "specificity": {
+    "ours": 5,
+    "ref": 6
+   },
+   "flow_and_momentum": {
+    "ours": 1,
+    "ref": 5
+   },
+   "ending_handoff": {
+    "ours": 1,
+    "ref": 5
+   }
+  },
+  "critical_ours": [
+   "broken_chapter_flow",
+   "weak_ending_handoff"
+  ],
+  "critical_ref": [
+   "repetitive_sag"
+  ],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "Individual sentences retain local clarity and detail, yet their reversed, fragmentary arrangement breaks references, progression, section logic, and closure.",
+   "ref": "Concrete domestic examples and accessible analogies support a coherent argument, but recurring assertions, promotional assurances, and repeated promises substantially prolong the chapter."
+  },
+  "generic_mechanism": "Ordered accumulation lets examples deepen a central claim and prepare the next step; disrupting that sequence strips sentences of context, prevents escalation, and eliminates a purposeful landing."
+ }
+}

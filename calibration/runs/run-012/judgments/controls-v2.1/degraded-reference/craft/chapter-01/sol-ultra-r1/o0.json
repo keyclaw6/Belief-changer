@@ -1,0 +1,143 @@
+{
+ "protocol": "stage-a-v2.1",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-01",
+ "ours_chapters": [
+  1
+ ],
+ "ref_chapters": [
+  1
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "6907556ef12ff35f97958959381bd7c42bc4f06c1a6b803b66f0d6e18d7c1aa9",
+  "thread_id": "019f536a-ffbd-71c3-b443-2409090b193a",
+  "usage": {
+   "input_tokens": 20789,
+   "cached_input_tokens": 8960,
+   "output_tokens": 841,
+   "reasoning_output_tokens": 516
+  }
+ },
+ "raw": "{\n  \"scores\": {\n    \"prose_control\": {\"A\": 2, \"B\": 6},\n    \"rhythm_and_variety\": {\"A\": 1, \"B\": 5},\n    \"specificity\": {\"A\": 4, \"B\": 6},\n    \"flow_and_momentum\": {\"A\": 1, \"B\": 5},\n    \"ending_handoff\": {\"A\": 1, \"B\": 3}\n  },\n  \"critical_failures\": {\n    \"A\": [\"mechanical_or_listicle_prose\", \"repetitive_sag\", \"broken_chapter_flow\", \"weak_ending_handoff\"],\n    \"B\": [\"generic_self_help_voice\", \"repetitive_sag\", \"weak_ending_handoff\"]\n  },\n  \"product_parity_verdict\": \"B\",\n  \"confidence\": 0.99,\n  \"paraphrased_evidence\": {\n    \"A\": \"Sentences and headings arrive in a visibly scrambled order, repeatedly abandoning ideas before their setup appears; concrete examples survive, but no cumulative reading experience or intentional ending remains.\",\n    \"B\": \"A coherent progression links personal unease, public context, explanatory analogy, method, and instructions, though inflated promises, repeated assertions, and a closing recap make the latter half drag.\"\n  },\n  \"generic_mechanism\": \"Ordered causal progression lets each passage prepare the next, whereas fragment displacement destroys setup, payoff, tonal modulation, and forward expectation even when many individual sentences remain serviceable.\"\n}",
+ "parsed": {
+  "scores": {
+   "prose_control": {
+    "A": 2,
+    "B": 6
+   },
+   "rhythm_and_variety": {
+    "A": 1,
+    "B": 5
+   },
+   "specificity": {
+    "A": 4,
+    "B": 6
+   },
+   "flow_and_momentum": {
+    "A": 1,
+    "B": 5
+   },
+   "ending_handoff": {
+    "A": 1,
+    "B": 3
+   }
+  },
+  "critical_failures": {
+   "A": [
+    "mechanical_or_listicle_prose",
+    "repetitive_sag",
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ],
+   "B": [
+    "generic_self_help_voice",
+    "repetitive_sag",
+    "weak_ending_handoff"
+   ]
+  },
+  "product_parity_verdict": "B",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "A": "Sentences and headings arrive in a visibly scrambled order, repeatedly abandoning ideas before their setup appears; concrete examples survive, but no cumulative reading experience or intentional ending remains.",
+   "B": "A coherent progression links personal unease, public context, explanatory analogy, method, and instructions, though inflated promises, repeated assertions, and a closing recap make the latter half drag."
+  },
+  "generic_mechanism": "Ordered causal progression lets each passage prepare the next, whereas fragment displacement destroys setup, payoff, tonal modulation, and forward expectation even when many individual sentences remain serviceable."
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 2,
+    "ref": 6
+   },
+   "rhythm_and_variety": {
+    "ours": 1,
+    "ref": 5
+   },
+   "specificity": {
+    "ours": 4,
+    "ref": 6
+   },
+   "flow_and_momentum": {
+    "ours": 1,
+    "ref": 5
+   },
+   "ending_handoff": {
+    "ours": 1,
+    "ref": 3
+   }
+  },
+  "critical_ours": [
+   "mechanical_or_listicle_prose",
+   "repetitive_sag",
+   "broken_chapter_flow",
+   "weak_ending_handoff"
+  ],
+  "critical_ref": [
+   "generic_self_help_voice",
+   "repetitive_sag",
+   "weak_ending_handoff"
+  ],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "Sentences and headings arrive in a visibly scrambled order, repeatedly abandoning ideas before their setup appears; concrete examples survive, but no cumulative reading experience or intentional ending remains.",
+   "ref": "A coherent progression links personal unease, public context, explanatory analogy, method, and instructions, though inflated promises, repeated assertions, and a closing recap make the latter half drag."
+  },
+  "generic_mechanism": "Ordered causal progression lets each passage prepare the next, whereas fragment displacement destroys setup, payoff, tonal modulation, and forward expectation even when many individual sentences remain serviceable."
+ }
+}

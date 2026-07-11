@@ -1,0 +1,139 @@
+{
+ "protocol": "stage-a-v2.1",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-03",
+ "ours_chapters": [
+  3
+ ],
+ "ref_chapters": [
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "7017ce51b53da0fb02e0cb25afdbb84678c8d1e9729ab935db69cf448b970387",
+  "thread_id": "019f536e-5e17-76b0-a703-6e450d8b1f83",
+  "usage": {
+   "input_tokens": 18970,
+   "cached_input_tokens": 11008,
+   "output_tokens": 813,
+   "reasoning_output_tokens": 516
+  }
+ },
+ "raw": "{\n  \"scores\": {\n    \"prose_control\": {\"A\": 3, \"B\": 6},\n    \"rhythm_and_variety\": {\"A\": 2, \"B\": 6},\n    \"specificity\": {\"A\": 5, \"B\": 7},\n    \"flow_and_momentum\": {\"A\": 1, \"B\": 6},\n    \"ending_handoff\": {\"A\": 1, \"B\": 4}\n  },\n  \"critical_failures\": {\n    \"A\": [\"broken_chapter_flow\", \"weak_ending_handoff\"],\n    \"B\": [\"generic_self_help_voice\", \"repetitive_sag\", \"weak_ending_handoff\"]\n  },\n  \"product_parity_verdict\": \"B\",\n  \"confidence\": 0.99,\n  \"paraphrased_evidence\": {\n    \"A\": \"Vivid examples survive locally, but the chapter jumps backward among conclusions, arguments, headings, and setup before terminating at its opening apparatus, making sustained reading nearly impossible.\",\n    \"B\": \"Concrete social rituals and sensory examples support a coherent progression, though repeated assurances, sweeping promises, and a closing recap prolong points after they have landed.\"\n  },\n  \"generic_mechanism\": \"Logical sequencing lets each example revise and deepen the preceding claim; disrupting that sequence converts purposeful recurrence into disconnected assertion and removes both momentum and payoff.\"\n}",
+ "parsed": {
+  "scores": {
+   "prose_control": {
+    "A": 3,
+    "B": 6
+   },
+   "rhythm_and_variety": {
+    "A": 2,
+    "B": 6
+   },
+   "specificity": {
+    "A": 5,
+    "B": 7
+   },
+   "flow_and_momentum": {
+    "A": 1,
+    "B": 6
+   },
+   "ending_handoff": {
+    "A": 1,
+    "B": 4
+   }
+  },
+  "critical_failures": {
+   "A": [
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ],
+   "B": [
+    "generic_self_help_voice",
+    "repetitive_sag",
+    "weak_ending_handoff"
+   ]
+  },
+  "product_parity_verdict": "B",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "A": "Vivid examples survive locally, but the chapter jumps backward among conclusions, arguments, headings, and setup before terminating at its opening apparatus, making sustained reading nearly impossible.",
+   "B": "Concrete social rituals and sensory examples support a coherent progression, though repeated assurances, sweeping promises, and a closing recap prolong points after they have landed."
+  },
+  "generic_mechanism": "Logical sequencing lets each example revise and deepen the preceding claim; disrupting that sequence converts purposeful recurrence into disconnected assertion and removes both momentum and payoff."
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 3,
+    "ref": 6
+   },
+   "rhythm_and_variety": {
+    "ours": 2,
+    "ref": 6
+   },
+   "specificity": {
+    "ours": 5,
+    "ref": 7
+   },
+   "flow_and_momentum": {
+    "ours": 1,
+    "ref": 6
+   },
+   "ending_handoff": {
+    "ours": 1,
+    "ref": 4
+   }
+  },
+  "critical_ours": [
+   "broken_chapter_flow",
+   "weak_ending_handoff"
+  ],
+  "critical_ref": [
+   "generic_self_help_voice",
+   "repetitive_sag",
+   "weak_ending_handoff"
+  ],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "Vivid examples survive locally, but the chapter jumps backward among conclusions, arguments, headings, and setup before terminating at its opening apparatus, making sustained reading nearly impossible.",
+   "ref": "Concrete social rituals and sensory examples support a coherent progression, though repeated assurances, sweeping promises, and a closing recap prolong points after they have landed."
+  },
+  "generic_mechanism": "Logical sequencing lets each example revise and deepen the preceding claim; disrupting that sequence converts purposeful recurrence into disconnected assertion and removes both momentum and payoff."
+ }
+}

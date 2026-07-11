@@ -1,0 +1,145 @@
+{
+ "protocol": "stage-a-v2.1",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-01",
+ "ours_chapters": [
+  1
+ ],
+ "ref_chapters": [
+  1
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "30212611cf63d809bc7e1f531854ecc0c3a902554c4436706a8cd6476f94874f",
+  "thread_id": "019f536c-0be4-75e2-94df-cd9835680c38",
+  "usage": {
+   "input_tokens": 20789,
+   "cached_input_tokens": 8960,
+   "output_tokens": 636,
+   "reasoning_output_tokens": 269
+  }
+ },
+ "raw": "{\n  \"scores\": {\n    \"prose_control\": {\n      \"A\": 5,\n      \"B\": 2\n    },\n    \"rhythm_and_variety\": {\n      \"A\": 4,\n      \"B\": 2\n    },\n    \"specificity\": {\n      \"A\": 5,\n      \"B\": 4\n    },\n    \"flow_and_momentum\": {\n      \"A\": 4,\n      \"B\": 1\n    },\n    \"ending_handoff\": {\n      \"A\": 3,\n      \"B\": 1\n    }\n  },\n  \"critical_failures\": {\n    \"A\": [\n      \"generic_self_help_voice\",\n      \"mechanical_or_listicle_prose\",\n      \"repetitive_sag\",\n      \"weak_ending_handoff\"\n    ],\n    \"B\": [\n      \"mechanical_or_listicle_prose\",\n      \"repetitive_sag\",\n      \"broken_chapter_flow\",\n      \"weak_ending_handoff\"\n    ]\n  },\n  \"product_parity_verdict\": \"A\",\n  \"confidence\": 0.99,\n  \"paraphrased_evidence\": {\n    \"A\": \"A coherent persuasive sequence uses concrete scenarios and recurring metaphors, but repeated assurances, commands, comparisons, and recap points greatly outlast their rhetorical value.\",\n    \"B\": \"Locally readable sentences and concrete details are arranged without causal or chronological continuity; topics run backward and collide, while the final return to introductory furniture makes the chapter feel corrupted rather than concluded.\"\n  },\n  \"generic_mechanism\": \"Ordered escalation lets each claim prepare the next, whereas disrupted sequencing removes context, reverses development, and prevents both cumulative persuasion and a purposeful landing.\"\n}",
+ "parsed": {
+  "scores": {
+   "prose_control": {
+    "A": 5,
+    "B": 2
+   },
+   "rhythm_and_variety": {
+    "A": 4,
+    "B": 2
+   },
+   "specificity": {
+    "A": 5,
+    "B": 4
+   },
+   "flow_and_momentum": {
+    "A": 4,
+    "B": 1
+   },
+   "ending_handoff": {
+    "A": 3,
+    "B": 1
+   }
+  },
+  "critical_failures": {
+   "A": [
+    "generic_self_help_voice",
+    "mechanical_or_listicle_prose",
+    "repetitive_sag",
+    "weak_ending_handoff"
+   ],
+   "B": [
+    "mechanical_or_listicle_prose",
+    "repetitive_sag",
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ]
+  },
+  "product_parity_verdict": "A",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "A": "A coherent persuasive sequence uses concrete scenarios and recurring metaphors, but repeated assurances, commands, comparisons, and recap points greatly outlast their rhetorical value.",
+   "B": "Locally readable sentences and concrete details are arranged without causal or chronological continuity; topics run backward and collide, while the final return to introductory furniture makes the chapter feel corrupted rather than concluded."
+  },
+  "generic_mechanism": "Ordered escalation lets each claim prepare the next, whereas disrupted sequencing removes context, reverses development, and prevents both cumulative persuasion and a purposeful landing."
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 2,
+    "ref": 5
+   },
+   "rhythm_and_variety": {
+    "ours": 2,
+    "ref": 4
+   },
+   "specificity": {
+    "ours": 4,
+    "ref": 5
+   },
+   "flow_and_momentum": {
+    "ours": 1,
+    "ref": 4
+   },
+   "ending_handoff": {
+    "ours": 1,
+    "ref": 3
+   }
+  },
+  "critical_ours": [
+   "mechanical_or_listicle_prose",
+   "repetitive_sag",
+   "broken_chapter_flow",
+   "weak_ending_handoff"
+  ],
+  "critical_ref": [
+   "generic_self_help_voice",
+   "mechanical_or_listicle_prose",
+   "repetitive_sag",
+   "weak_ending_handoff"
+  ],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "Locally readable sentences and concrete details are arranged without causal or chronological continuity; topics run backward and collide, while the final return to introductory furniture makes the chapter feel corrupted rather than concluded.",
+   "ref": "A coherent persuasive sequence uses concrete scenarios and recurring metaphors, but repeated assurances, commands, comparisons, and recap points greatly outlast their rhetorical value."
+  },
+  "generic_mechanism": "Ordered escalation lets each claim prepare the next, whereas disrupted sequencing removes context, reverses development, and prevents both cumulative persuasion and a purposeful landing."
+ }
+}

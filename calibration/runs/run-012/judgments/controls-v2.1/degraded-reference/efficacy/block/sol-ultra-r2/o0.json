@@ -1,0 +1,125 @@
+{
+ "protocol": "stage-a-v2.1",
+ "role": "efficacy",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "274b063d64db92c691719aaa1322becc2bf35a142f15c787d7b7b8a75b0c1716",
+  "thread_id": "019f536a-61f1-7432-9102-857034c52caa",
+  "usage": {
+   "input_tokens": 30930,
+   "cached_input_tokens": 11008,
+   "output_tokens": 692,
+   "reasoning_output_tokens": 398
+  }
+ },
+ "raw": "{\n  \"scores\": {\n    \"benefit_dismantling\": {\n      \"A\": 4,\n      \"B\": 7\n    },\n    \"belief_movement\": {\n      \"A\": 3,\n      \"B\": 7\n    },\n    \"escape_conviction\": {\n      \"A\": 3,\n      \"B\": 8\n    },\n    \"cumulative_progression\": {\n      \"A\": 1,\n      \"B\": 8\n    }\n  },\n  \"critical_failures\": {\n    \"A\": [\n      \"incoherent_block_arc\"\n    ],\n    \"B\": []\n  },\n  \"product_parity_verdict\": \"B\",\n  \"confidence\": 0.99,\n  \"paraphrased_evidence\": {\n    \"A\": \"Potentially persuasive mechanisms are present, including conditioned desire and relief-driven repetition, but disordered fragments repeatedly interrupt explanations, reverse transitions, and prevent the chapters from building sustained conviction.\",\n    \"B\": \"The block progressively recasts pleasure as temporary relief, preference as conditioning, and restriction as the source of deprivation, supporting freedom with examples, causal loops, and a coherent alternative interpretation.\"\n  },\n  \"generic_mechanism\": \"A coherent sequence that identifies a trap, demonstrates its causal loop, and then reinterprets deprivation lets each premise validate the next; scrambled evidence cannot accumulate into conviction.\"\n}",
+ "parsed": {
+  "scores": {
+   "benefit_dismantling": {
+    "A": 4,
+    "B": 7
+   },
+   "belief_movement": {
+    "A": 3,
+    "B": 7
+   },
+   "escape_conviction": {
+    "A": 3,
+    "B": 8
+   },
+   "cumulative_progression": {
+    "A": 1,
+    "B": 8
+   }
+  },
+  "critical_failures": {
+   "A": [
+    "incoherent_block_arc"
+   ],
+   "B": []
+  },
+  "product_parity_verdict": "B",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "A": "Potentially persuasive mechanisms are present, including conditioned desire and relief-driven repetition, but disordered fragments repeatedly interrupt explanations, reverse transitions, and prevent the chapters from building sustained conviction.",
+   "B": "The block progressively recasts pleasure as temporary relief, preference as conditioning, and restriction as the source of deprivation, supporting freedom with examples, causal loops, and a coherent alternative interpretation."
+  },
+  "generic_mechanism": "A coherent sequence that identifies a trap, demonstrates its causal loop, and then reinterprets deprivation lets each premise validate the next; scrambled evidence cannot accumulate into conviction."
+ },
+ "mapped": {
+  "dims": {
+   "benefit_dismantling": {
+    "ours": 4,
+    "ref": 7
+   },
+   "belief_movement": {
+    "ours": 3,
+    "ref": 7
+   },
+   "escape_conviction": {
+    "ours": 3,
+    "ref": 8
+   },
+   "cumulative_progression": {
+    "ours": 1,
+    "ref": 8
+   }
+  },
+  "critical_ours": [
+   "incoherent_block_arc"
+  ],
+  "critical_ref": [],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "Potentially persuasive mechanisms are present, including conditioned desire and relief-driven repetition, but disordered fragments repeatedly interrupt explanations, reverse transitions, and prevent the chapters from building sustained conviction.",
+   "ref": "The block progressively recasts pleasure as temporary relief, preference as conditioning, and restriction as the source of deprivation, supporting freedom with examples, causal loops, and a coherent alternative interpretation."
+  },
+  "generic_mechanism": "A coherent sequence that identifies a trap, demonstrates its causal loop, and then reinterprets deprivation lets each premise validate the next; scrambled evidence cannot accumulate into conviction."
+ }
+}

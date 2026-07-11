@@ -1,0 +1,149 @@
+{
+ "protocol": "stage-a-v2.1",
+ "role": "integrity",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "bef0d5de1d896c0d9ae1d7579ef315e6275928ff0d78a65cdcbb56c10ec9d0a3",
+  "thread_id": "019f5371-53f8-7670-84ca-b4143c981463",
+  "usage": {
+   "input_tokens": 31001,
+   "cached_input_tokens": 11008,
+   "output_tokens": 4816,
+   "reasoning_output_tokens": 4489
+  }
+ },
+ "raw": "{\n  \"scores\": {\n    \"non_shaming_regard\": {\"A\": 5, \"B\": 5},\n    \"willpower_free_logic\": {\"A\": 6, \"B\": 8},\n    \"epistemic_honesty\": {\"A\": 2, \"B\": 2},\n    \"originality\": {\"A\": 1, \"B\": 8},\n    \"cross_chapter_consistency\": {\"A\": 1, \"B\": 7}\n  },\n  \"critical_failures\": {\n    \"A\": [\"fear_as_motivator\", \"medical_overreach\", \"unsupported_authority_or_testimony\", \"copyright_expression_risk\", \"broken_continuity\"],\n    \"B\": [\"fear_as_motivator\", \"medical_overreach\", \"unsupported_authority_or_testimony\"]\n  },\n  \"product_parity_verdict\": \"B\",\n  \"confidence\": 0.97,\n  \"paraphrased_evidence\": {\n    \"A\": \"The block absolves the reader and promises desire-free change, but shuffled fragments break its instructional sequence while retaining categorical health claims, clinic testimony, and extensive wording shared with B.\",\n    \"B\": \"The block coherently makes changed perception the mechanism and rejects deprivation, yet uses alarming disease scenarios, sweeping food-drug equivalences, universal clinical claims, and guaranteed outcomes without adequate support.\"\n  },\n  \"generic_mechanism\": \"A coherent sequence can dismantle a valued belief before behavior changes; scrambling that sequence makes obedience to isolated commands replace understanding.\"\n}",
+ "parsed": {
+  "scores": {
+   "non_shaming_regard": {
+    "A": 5,
+    "B": 5
+   },
+   "willpower_free_logic": {
+    "A": 6,
+    "B": 8
+   },
+   "epistemic_honesty": {
+    "A": 2,
+    "B": 2
+   },
+   "originality": {
+    "A": 1,
+    "B": 8
+   },
+   "cross_chapter_consistency": {
+    "A": 1,
+    "B": 7
+   }
+  },
+  "critical_failures": {
+   "A": [
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony",
+    "copyright_expression_risk",
+    "broken_continuity"
+   ],
+   "B": [
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony"
+   ]
+  },
+  "product_parity_verdict": "B",
+  "confidence": 0.97,
+  "paraphrased_evidence": {
+   "A": "The block absolves the reader and promises desire-free change, but shuffled fragments break its instructional sequence while retaining categorical health claims, clinic testimony, and extensive wording shared with B.",
+   "B": "The block coherently makes changed perception the mechanism and rejects deprivation, yet uses alarming disease scenarios, sweeping food-drug equivalences, universal clinical claims, and guaranteed outcomes without adequate support."
+  },
+  "generic_mechanism": "A coherent sequence can dismantle a valued belief before behavior changes; scrambling that sequence makes obedience to isolated commands replace understanding."
+ },
+ "mapped": {
+  "dims": {
+   "non_shaming_regard": {
+    "ours": 5,
+    "ref": 5
+   },
+   "willpower_free_logic": {
+    "ours": 6,
+    "ref": 8
+   },
+   "epistemic_honesty": {
+    "ours": 2,
+    "ref": 2
+   },
+   "originality": {
+    "ours": 1,
+    "ref": 8
+   },
+   "cross_chapter_consistency": {
+    "ours": 1,
+    "ref": 7
+   }
+  },
+  "critical_ours": [
+   "fear_as_motivator",
+   "medical_overreach",
+   "unsupported_authority_or_testimony",
+   "copyright_expression_risk",
+   "broken_continuity"
+  ],
+  "critical_ref": [
+   "fear_as_motivator",
+   "medical_overreach",
+   "unsupported_authority_or_testimony"
+  ],
+  "product_parity_verdict": "ref",
+  "confidence": 0.97,
+  "paraphrased_evidence": {
+   "ours": "The block absolves the reader and promises desire-free change, but shuffled fragments break its instructional sequence while retaining categorical health claims, clinic testimony, and extensive wording shared with B.",
+   "ref": "The block coherently makes changed perception the mechanism and rejects deprivation, yet uses alarming disease scenarios, sweeping food-drug equivalences, universal clinical claims, and guaranteed outcomes without adequate support."
+  },
+  "generic_mechanism": "A coherent sequence can dismantle a valued belief before behavior changes; scrambling that sequence makes obedience to isolated commands replace understanding."
+ }
+}

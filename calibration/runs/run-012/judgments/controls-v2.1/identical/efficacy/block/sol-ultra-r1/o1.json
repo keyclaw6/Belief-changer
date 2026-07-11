@@ -1,0 +1,121 @@
+{
+ "protocol": "stage-a-v2.1",
+ "role": "efficacy",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "64da07968bdda710ef4fda69b2aaea8ec3ee097733dc318be7cf848320d2e2c8",
+  "thread_id": "019f5360-449d-7972-b1fd-c9db73eb8c66",
+  "usage": {
+   "input_tokens": 39716,
+   "cached_input_tokens": 11008,
+   "output_tokens": 1245,
+   "reasoning_output_tokens": 976
+  }
+ },
+ "raw": "{\n  \"scores\": {\n    \"benefit_dismantling\": {\n      \"A\": 6,\n      \"B\": 6\n    },\n    \"belief_movement\": {\n      \"A\": 6,\n      \"B\": 6\n    },\n    \"escape_conviction\": {\n      \"A\": 6,\n      \"B\": 6\n    },\n    \"cumulative_progression\": {\n      \"A\": 6,\n      \"B\": 6\n    }\n  },\n  \"critical_failures\": {\n    \"A\": [],\n    \"B\": []\n  },\n  \"product_parity_verdict\": \"tie\",\n  \"confidence\": 1.0,\n  \"paraphrased_evidence\": {\n    \"A\": \"It recasts pleasure and relief as products of a recurring craving loop, then adds biological and social-conditioning accounts; sweeping causal claims and strained analogies weaken credibility.\",\n    \"B\": \"It makes the same advance from craving-based relief through natural-appetite claims to learned preferences and failed restriction; the argument progresses, but repetition and overstatement limit movement.\"\n  },\n  \"generic_mechanism\": \"Matching causal reframing, experiential prompts, and freedom-oriented contrasts should produce equivalent belief movement when presented in the same sequence.\"\n}",
+ "parsed": {
+  "scores": {
+   "benefit_dismantling": {
+    "A": 6,
+    "B": 6
+   },
+   "belief_movement": {
+    "A": 6,
+    "B": 6
+   },
+   "escape_conviction": {
+    "A": 6,
+    "B": 6
+   },
+   "cumulative_progression": {
+    "A": 6,
+    "B": 6
+   }
+  },
+  "critical_failures": {
+   "A": [],
+   "B": []
+  },
+  "product_parity_verdict": "tie",
+  "confidence": 1.0,
+  "paraphrased_evidence": {
+   "A": "It recasts pleasure and relief as products of a recurring craving loop, then adds biological and social-conditioning accounts; sweeping causal claims and strained analogies weaken credibility.",
+   "B": "It makes the same advance from craving-based relief through natural-appetite claims to learned preferences and failed restriction; the argument progresses, but repetition and overstatement limit movement."
+  },
+  "generic_mechanism": "Matching causal reframing, experiential prompts, and freedom-oriented contrasts should produce equivalent belief movement when presented in the same sequence."
+ },
+ "mapped": {
+  "dims": {
+   "benefit_dismantling": {
+    "ours": 6,
+    "ref": 6
+   },
+   "belief_movement": {
+    "ours": 6,
+    "ref": 6
+   },
+   "escape_conviction": {
+    "ours": 6,
+    "ref": 6
+   },
+   "cumulative_progression": {
+    "ours": 6,
+    "ref": 6
+   }
+  },
+  "critical_ours": [],
+  "critical_ref": [],
+  "product_parity_verdict": "tie",
+  "confidence": 1.0,
+  "paraphrased_evidence": {
+   "ours": "It makes the same advance from craving-based relief through natural-appetite claims to learned preferences and failed restriction; the argument progresses, but repetition and overstatement limit movement.",
+   "ref": "It recasts pleasure and relief as products of a recurring craving loop, then adds biological and social-conditioning accounts; sweeping causal claims and strained analogies weaken credibility."
+  },
+  "generic_mechanism": "Matching causal reframing, experiential prompts, and freedom-oriented contrasts should produce equivalent belief movement when presented in the same sequence."
+ }
+}

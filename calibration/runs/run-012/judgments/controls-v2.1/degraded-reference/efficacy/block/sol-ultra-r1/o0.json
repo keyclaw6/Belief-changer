@@ -1,0 +1,125 @@
+{
+ "protocol": "stage-a-v2.1",
+ "role": "efficacy",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "274b063d64db92c691719aaa1322becc2bf35a142f15c787d7b7b8a75b0c1716",
+  "thread_id": "019f5369-833c-7243-b8fd-012dc67cabfe",
+  "usage": {
+   "input_tokens": 30930,
+   "cached_input_tokens": 8960,
+   "output_tokens": 1328,
+   "reasoning_output_tokens": 1034
+  }
+ },
+ "raw": "{\n  \"scores\": {\n    \"benefit_dismantling\": {\n      \"A\": 3,\n      \"B\": 8\n    },\n    \"belief_movement\": {\n      \"A\": 3,\n      \"B\": 8\n    },\n    \"escape_conviction\": {\n      \"A\": 3,\n      \"B\": 8\n    },\n    \"cumulative_progression\": {\n      \"A\": 1,\n      \"B\": 8\n    }\n  },\n  \"critical_failures\": {\n    \"A\": [\n      \"incoherent_block_arc\"\n    ],\n    \"B\": []\n  },\n  \"product_parity_verdict\": \"B\",\n  \"confidence\": 0.99,\n  \"paraphrased_evidence\": {\n    \"A\": \"Potentially useful ideas about conditioned desire, withdrawal relief, and failed restraint are scattered through severely disrupted sequencing, so explanations collide with promises and conclusions instead of accumulating persuasive force.\",\n    \"B\": \"The chapters move from a withdrawal-relief model through engineered appetite and learned preference to the failure of restraint, repeatedly reframing cessation as regained control and relief.\"\n  },\n  \"generic_mechanism\": \"Belief change strengthens when causal explanation, experiential tests, and emotional reframing arrive in a deliberate sequence, allowing each insight to support the next; disrupted sequencing leaves even strong claims feeling unearned.\"\n}",
+ "parsed": {
+  "scores": {
+   "benefit_dismantling": {
+    "A": 3,
+    "B": 8
+   },
+   "belief_movement": {
+    "A": 3,
+    "B": 8
+   },
+   "escape_conviction": {
+    "A": 3,
+    "B": 8
+   },
+   "cumulative_progression": {
+    "A": 1,
+    "B": 8
+   }
+  },
+  "critical_failures": {
+   "A": [
+    "incoherent_block_arc"
+   ],
+   "B": []
+  },
+  "product_parity_verdict": "B",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "A": "Potentially useful ideas about conditioned desire, withdrawal relief, and failed restraint are scattered through severely disrupted sequencing, so explanations collide with promises and conclusions instead of accumulating persuasive force.",
+   "B": "The chapters move from a withdrawal-relief model through engineered appetite and learned preference to the failure of restraint, repeatedly reframing cessation as regained control and relief."
+  },
+  "generic_mechanism": "Belief change strengthens when causal explanation, experiential tests, and emotional reframing arrive in a deliberate sequence, allowing each insight to support the next; disrupted sequencing leaves even strong claims feeling unearned."
+ },
+ "mapped": {
+  "dims": {
+   "benefit_dismantling": {
+    "ours": 3,
+    "ref": 8
+   },
+   "belief_movement": {
+    "ours": 3,
+    "ref": 8
+   },
+   "escape_conviction": {
+    "ours": 3,
+    "ref": 8
+   },
+   "cumulative_progression": {
+    "ours": 1,
+    "ref": 8
+   }
+  },
+  "critical_ours": [
+   "incoherent_block_arc"
+  ],
+  "critical_ref": [],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "Potentially useful ideas about conditioned desire, withdrawal relief, and failed restraint are scattered through severely disrupted sequencing, so explanations collide with promises and conclusions instead of accumulating persuasive force.",
+   "ref": "The chapters move from a withdrawal-relief model through engineered appetite and learned preference to the failure of restraint, repeatedly reframing cessation as regained control and relief."
+  },
+  "generic_mechanism": "Belief change strengthens when causal explanation, experiential tests, and emotional reframing arrive in a deliberate sequence, allowing each insight to support the next; disrupted sequencing leaves even strong claims feeling unearned."
+ }
+}

@@ -1,0 +1,59 @@
+{
+ "protocol": "stage-a-v2.1",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-01",
+ "ours_chapters": [
+  1
+ ],
+ "ref_chapters": [
+  1
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "6907556ef12ff35f97958959381bd7c42bc4f06c1a6b803b66f0d6e18d7c1aa9",
+  "thread_id": "019f536b-a8af-79a2-9787-2c3ba72f5ce2",
+  "usage": {
+   "input_tokens": 20789,
+   "cached_input_tokens": 11008,
+   "output_tokens": 1160,
+   "reasoning_output_tokens": 785
+  }
+ },
+ "raw": "{\n  \"scores\": {\n    \"prose_control\": {\n      \"A\": 2,\n      \"B\": 6\n    },\n    \"rhythm_and_variety\": {\n      \"A\": 1,\n      \"B\": 5\n    },\n    \"specificity\": {\n      \"A\": 4,\n      \"B\": 6\n    },\n    \"flow_and_momentum\": {\n      \"A\": 1,\n      \"B\": 4\n    },\n    \"ending_handoff\": {\n      \"A\": 1,\n      \"B\": 3\n    }\n  },\n  \"critical_failures\": {\n    \"A\": [\n      \"mechanical_or_listicle_prose\",\n      \"repetitive_sag\",\n      \"broken_chapter_flow\",\n      \"weak_ending_handoff\"\n    ],\n    \"B\": [\n      \"generic_self_help_voice\",\n      \"repetitive_sag\",\n      \"weak_ending_handoff\"\n    ]\n  },\n  \"product_parity_verdict\": \"B\",\n  \"confidence\": 0.99,\n  \"paraphrased_evidence\": {\n    \"A\": \"Clear local sentences and concrete comparisons survive, but passages arrive in severe disorder: conclusions precede setup, headings trail their material, topics jump without bridges, and the chapter terminates at what appears to be its opening.\",\n    \"B\": \"The argument advances through recognizable stages and uses concrete examples, statistics, and personal history, but repeated promises, addiction comparisons, emphatic headings, and direct exhortations considerably outlast their persuasive value.\",\n  },\n  \"generic_mechanism\": \"Deliberate sequencing gives setup, explanation, illustration, and instruction cumulative force; disrupted ordering turns the same material into disconnected assertions and destroys both momentum and closure.\"\n}",
+ "parsed": null,
+ "validation_error": "response is not one strict JSON object"
+}

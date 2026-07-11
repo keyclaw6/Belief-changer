@@ -1,0 +1,145 @@
+{
+ "protocol": "stage-a-v2.1",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-01",
+ "ours_chapters": [
+  1
+ ],
+ "ref_chapters": [
+  1
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "30212611cf63d809bc7e1f531854ecc0c3a902554c4436706a8cd6476f94874f",
+  "thread_id": "019f536b-5af2-7902-b91f-a4a9e03a94a0",
+  "usage": {
+   "input_tokens": 20789,
+   "cached_input_tokens": 8960,
+   "output_tokens": 839,
+   "reasoning_output_tokens": 516
+  }
+ },
+ "raw": "{\n  \"scores\": {\n    \"prose_control\": {\"A\": 4, \"B\": 2},\n    \"rhythm_and_variety\": {\"A\": 4, \"B\": 1},\n    \"specificity\": {\"A\": 5, \"B\": 3},\n    \"flow_and_momentum\": {\"A\": 4, \"B\": 1},\n    \"ending_handoff\": {\"A\": 3, \"B\": 1}\n  },\n  \"critical_failures\": {\n    \"A\": [\"generic_self_help_voice\", \"repetitive_sag\", \"weak_ending_handoff\"],\n    \"B\": [\"generic_self_help_voice\", \"mechanical_or_listicle_prose\", \"repetitive_sag\", \"broken_chapter_flow\", \"weak_ending_handoff\"]\n  },\n  \"product_parity_verdict\": \"A\",\n  \"confidence\": 0.99,\n  \"paraphrased_evidence\": {\n    \"A\": \"Concrete consumption scenarios, an origin anecdote, and a recurring explanatory model provide coherence, but relentless promises, commands, and restatements prolong the argument before a boilerplate summary.\",\n    \"B\": \"Individually readable sentences arrive in disrupted order, severing explanations from examples, placing conclusions before premises, and ending by retreating into introductory material.\"\n  },\n  \"generic_mechanism\": \"Preserved causal sequencing lets setup, illustration, and instruction accumulate; scrambled sequencing turns locally intelligible sentences into discontinuous fragments without rhetorical payoff.\"\n}",
+ "parsed": {
+  "scores": {
+   "prose_control": {
+    "A": 4,
+    "B": 2
+   },
+   "rhythm_and_variety": {
+    "A": 4,
+    "B": 1
+   },
+   "specificity": {
+    "A": 5,
+    "B": 3
+   },
+   "flow_and_momentum": {
+    "A": 4,
+    "B": 1
+   },
+   "ending_handoff": {
+    "A": 3,
+    "B": 1
+   }
+  },
+  "critical_failures": {
+   "A": [
+    "generic_self_help_voice",
+    "repetitive_sag",
+    "weak_ending_handoff"
+   ],
+   "B": [
+    "generic_self_help_voice",
+    "mechanical_or_listicle_prose",
+    "repetitive_sag",
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ]
+  },
+  "product_parity_verdict": "A",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "A": "Concrete consumption scenarios, an origin anecdote, and a recurring explanatory model provide coherence, but relentless promises, commands, and restatements prolong the argument before a boilerplate summary.",
+   "B": "Individually readable sentences arrive in disrupted order, severing explanations from examples, placing conclusions before premises, and ending by retreating into introductory material."
+  },
+  "generic_mechanism": "Preserved causal sequencing lets setup, illustration, and instruction accumulate; scrambled sequencing turns locally intelligible sentences into discontinuous fragments without rhetorical payoff."
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 2,
+    "ref": 4
+   },
+   "rhythm_and_variety": {
+    "ours": 1,
+    "ref": 4
+   },
+   "specificity": {
+    "ours": 3,
+    "ref": 5
+   },
+   "flow_and_momentum": {
+    "ours": 1,
+    "ref": 4
+   },
+   "ending_handoff": {
+    "ours": 1,
+    "ref": 3
+   }
+  },
+  "critical_ours": [
+   "generic_self_help_voice",
+   "mechanical_or_listicle_prose",
+   "repetitive_sag",
+   "broken_chapter_flow",
+   "weak_ending_handoff"
+  ],
+  "critical_ref": [
+   "generic_self_help_voice",
+   "repetitive_sag",
+   "weak_ending_handoff"
+  ],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "Individually readable sentences arrive in disrupted order, severing explanations from examples, placing conclusions before premises, and ending by retreating into introductory material.",
+   "ref": "Concrete consumption scenarios, an origin anecdote, and a recurring explanatory model provide coherence, but relentless promises, commands, and restatements prolong the argument before a boilerplate summary."
+  },
+  "generic_mechanism": "Preserved causal sequencing lets setup, illustration, and instruction accumulate; scrambled sequencing turns locally intelligible sentences into discontinuous fragments without rhetorical payoff."
+ }
+}

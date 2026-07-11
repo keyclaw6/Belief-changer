@@ -6,9 +6,23 @@
 
 **Stage:** A
 
-**Status:** OPEN — repeated evidence escalation remains; v2.1 instrument correction preregistered and product quality still unjudged
+**Status:** OPEN — repeated evidence escalation remains; v2.1 degraded control failed and product quality is still unjudged
 
-## Current stop — run-012 identical-text judge control
+## Current stop — run-012 v2.1 degraded-reference control
+
+**Control date:** 2026-07-12
+
+The prospectively preregistered v2.1 implementation froze at commit `19fa552` before any new call. Its fresh identical control passed the exact frozen gate: 20 raw judgments, 20 unique native Sol-ultra threads, 10 complete observations, zero invalid judgments, 20 ties, zero within-call candidate gap, and zero comparative-signature instability. Shared-label and absolute-score drift remained explicit diagnostics. Summary SHA-256: `7623699f...`.
+
+The matching degraded-reference control then completed its full 20-context matrix and **FAILED**. Three otherwise complete responses contained a trailing comma and were rejected by the unchanged strict JSON parser, leaving only seven collapsible observations. All 17 valid raw verdicts preferred the intact reference and all collapsed score-winner signs were stable, but five of seven complete observations changed one or more candidate-unique critical labels across repetitions. That violates the preregistered comparative signature even though the raw preference direction was unanimous. Summary SHA-256: `ebfa0e57...`.
+
+The strict parser correctly prevented malformed output from becoming a false positive. The relative-label instability exposes a false-negative risk in requiring exact critical-taxonomy reproducibility across fresh contexts, distinct from the absolute-label problem corrected in v2.1. Both are true failures under the frozen rules. No output was retried or repaired, and no parser, prompt, schema, threshold, material, transport, or implementation changed after observation.
+
+The product panel was **NOT RUN**. H-049 remains causally **REFUTED**, run-012 product quality remains **UNJUDGED**, and no H-050 exists. Before any new judge call, a fresh read-only measurement-direction audit must decide whether one separately preregistered instrument lever can address the observed strict-output fragility or relative-taxonomy instability without weakening unioned critical safety. Product prose and factory assets remain frozen.
+
+There is no funding or access blocker. OpenRouter was absent from all 40 v2.1 control contexts and remains restricted to permitted Opus writing and DeepSeek research.
+
+## Previous stop — run-012 v2 identical-text judge control
 
 **Control date:** 2026-07-12
 

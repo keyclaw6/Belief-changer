@@ -1,0 +1,143 @@
+{
+ "protocol": "stage-a-v2.1",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-02",
+ "ours_chapters": [
+  2
+ ],
+ "ref_chapters": [
+  2
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "dbd3c3c72348c3a52a5a37c49f2d1facfc7632d10969c6f340b1a902d0f2bcaf",
+  "thread_id": "019f536d-459f-7eb3-8788-42d7b4ea7360",
+  "usage": {
+   "input_tokens": 18090,
+   "cached_input_tokens": 11008,
+   "output_tokens": 885,
+   "reasoning_output_tokens": 516
+  }
+ },
+ "raw": "{\n  \"scores\": {\n    \"prose_control\": {\n      \"A\": 5,\n      \"B\": 3\n    },\n    \"rhythm_and_variety\": {\n      \"A\": 4,\n      \"B\": 1\n    },\n    \"specificity\": {\n      \"A\": 6,\n      \"B\": 4\n    },\n    \"flow_and_momentum\": {\n      \"A\": 5,\n      \"B\": 1\n    },\n    \"ending_handoff\": {\n      \"A\": 3,\n      \"B\": 1\n    }\n  },\n  \"critical_failures\": {\n    \"A\": [\n      \"generic_self_help_voice\",\n      \"mechanical_or_listicle_prose\",\n      \"repetitive_sag\",\n      \"weak_ending_handoff\"\n    ],\n    \"B\": [\n      \"mechanical_or_listicle_prose\",\n      \"broken_chapter_flow\",\n      \"weak_ending_handoff\"\n    ]\n  },\n  \"product_parity_verdict\": \"A\",\n  \"confidence\": 0.99,\n  \"paraphrased_evidence\": {\n    \"A\": \"A develops concrete animal and shopping examples into a coherent argument, but repeated questions, promotional certainty, emphatic typography, a lengthy health detour, and a closing recap blunt its momentum.\",\n    \"B\": \"B retains isolated vivid details and readable sentences, but their reversed, discontinuous arrangement strands transitions and references, places conclusions before premises, and stops at what should have been the chapter's opening setup.\"\n  },\n  \"generic_mechanism\": \"Ordered escalation lets examples establish claims and transitions carry attention forward; scrambling that sequence converts connective prose into unsupported fragments and removes any possibility of a prepared ending.\"\n}",
+ "parsed": {
+  "scores": {
+   "prose_control": {
+    "A": 5,
+    "B": 3
+   },
+   "rhythm_and_variety": {
+    "A": 4,
+    "B": 1
+   },
+   "specificity": {
+    "A": 6,
+    "B": 4
+   },
+   "flow_and_momentum": {
+    "A": 5,
+    "B": 1
+   },
+   "ending_handoff": {
+    "A": 3,
+    "B": 1
+   }
+  },
+  "critical_failures": {
+   "A": [
+    "generic_self_help_voice",
+    "mechanical_or_listicle_prose",
+    "repetitive_sag",
+    "weak_ending_handoff"
+   ],
+   "B": [
+    "mechanical_or_listicle_prose",
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ]
+  },
+  "product_parity_verdict": "A",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "A": "A develops concrete animal and shopping examples into a coherent argument, but repeated questions, promotional certainty, emphatic typography, a lengthy health detour, and a closing recap blunt its momentum.",
+   "B": "B retains isolated vivid details and readable sentences, but their reversed, discontinuous arrangement strands transitions and references, places conclusions before premises, and stops at what should have been the chapter's opening setup."
+  },
+  "generic_mechanism": "Ordered escalation lets examples establish claims and transitions carry attention forward; scrambling that sequence converts connective prose into unsupported fragments and removes any possibility of a prepared ending."
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 3,
+    "ref": 5
+   },
+   "rhythm_and_variety": {
+    "ours": 1,
+    "ref": 4
+   },
+   "specificity": {
+    "ours": 4,
+    "ref": 6
+   },
+   "flow_and_momentum": {
+    "ours": 1,
+    "ref": 5
+   },
+   "ending_handoff": {
+    "ours": 1,
+    "ref": 3
+   }
+  },
+  "critical_ours": [
+   "mechanical_or_listicle_prose",
+   "broken_chapter_flow",
+   "weak_ending_handoff"
+  ],
+  "critical_ref": [
+   "generic_self_help_voice",
+   "mechanical_or_listicle_prose",
+   "repetitive_sag",
+   "weak_ending_handoff"
+  ],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "B retains isolated vivid details and readable sentences, but their reversed, discontinuous arrangement strands transitions and references, places conclusions before premises, and stops at what should have been the chapter's opening setup.",
+   "ref": "A develops concrete animal and shopping examples into a coherent argument, but repeated questions, promotional certainty, emphatic typography, a lengthy health detour, and a closing recap blunt its momentum."
+  },
+  "generic_mechanism": "Ordered escalation lets examples establish claims and transitions carry attention forward; scrambling that sequence converts connective prose into unsupported fragments and removes any possibility of a prepared ending."
+ }
+}

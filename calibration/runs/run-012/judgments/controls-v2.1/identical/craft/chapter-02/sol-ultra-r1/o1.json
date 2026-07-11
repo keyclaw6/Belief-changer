@@ -1,0 +1,145 @@
+{
+ "protocol": "stage-a-v2.1",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-02",
+ "ours_chapters": [
+  2
+ ],
+ "ref_chapters": [
+  2
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "fa85b6b18fa937bf537ba44ba7b8ddb30a23b0f1ca29ab73d39c781ace7714d8",
+  "thread_id": "019f5362-d0da-7b20-ab4c-13cac5515632",
+  "usage": {
+   "input_tokens": 20403,
+   "cached_input_tokens": 11008,
+   "output_tokens": 742,
+   "reasoning_output_tokens": 409
+  }
+ },
+ "raw": "{\n  \"scores\": {\n    \"prose_control\": {\"A\": 4, \"B\": 4},\n    \"rhythm_and_variety\": {\"A\": 3, \"B\": 3},\n    \"specificity\": {\"A\": 5, \"B\": 5},\n    \"flow_and_momentum\": {\"A\": 3, \"B\": 3},\n    \"ending_handoff\": {\"A\": 2, \"B\": 2}\n  },\n  \"critical_failures\": {\n    \"A\": [\"generic_self_help_voice\", \"repetitive_sag\", \"broken_chapter_flow\", \"weak_ending_handoff\"],\n    \"B\": [\"generic_self_help_voice\", \"repetitive_sag\", \"broken_chapter_flow\", \"weak_ending_handoff\"]\n  },\n  \"product_parity_verdict\": \"tie\",\n  \"confidence\": 1.0,\n  \"paraphrased_evidence\": {\n    \"A\": \"Concrete animal, workplace, and shopping examples provide texture, but repeated rhetorical questions, typographic shouting, sweeping declarations, and loosely connected health warnings create a prolonged sales pitch that ends in boilerplate recap.\",\n    \"B\": \"Concrete animal, workplace, and shopping examples provide texture, but repeated rhetorical questions, typographic shouting, sweeping declarations, and loosely connected health warnings create a prolonged sales pitch that ends in boilerplate recap.\"\n  },\n  \"generic_mechanism\": \"The chapters are textually identical, so the same sequencing, emphasis patterns, examples, repetitions, and summary structure produce no craft difference.\"\n}",
+ "parsed": {
+  "scores": {
+   "prose_control": {
+    "A": 4,
+    "B": 4
+   },
+   "rhythm_and_variety": {
+    "A": 3,
+    "B": 3
+   },
+   "specificity": {
+    "A": 5,
+    "B": 5
+   },
+   "flow_and_momentum": {
+    "A": 3,
+    "B": 3
+   },
+   "ending_handoff": {
+    "A": 2,
+    "B": 2
+   }
+  },
+  "critical_failures": {
+   "A": [
+    "generic_self_help_voice",
+    "repetitive_sag",
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ],
+   "B": [
+    "generic_self_help_voice",
+    "repetitive_sag",
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ]
+  },
+  "product_parity_verdict": "tie",
+  "confidence": 1.0,
+  "paraphrased_evidence": {
+   "A": "Concrete animal, workplace, and shopping examples provide texture, but repeated rhetorical questions, typographic shouting, sweeping declarations, and loosely connected health warnings create a prolonged sales pitch that ends in boilerplate recap.",
+   "B": "Concrete animal, workplace, and shopping examples provide texture, but repeated rhetorical questions, typographic shouting, sweeping declarations, and loosely connected health warnings create a prolonged sales pitch that ends in boilerplate recap."
+  },
+  "generic_mechanism": "The chapters are textually identical, so the same sequencing, emphasis patterns, examples, repetitions, and summary structure produce no craft difference."
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 4,
+    "ref": 4
+   },
+   "rhythm_and_variety": {
+    "ours": 3,
+    "ref": 3
+   },
+   "specificity": {
+    "ours": 5,
+    "ref": 5
+   },
+   "flow_and_momentum": {
+    "ours": 3,
+    "ref": 3
+   },
+   "ending_handoff": {
+    "ours": 2,
+    "ref": 2
+   }
+  },
+  "critical_ours": [
+   "generic_self_help_voice",
+   "repetitive_sag",
+   "broken_chapter_flow",
+   "weak_ending_handoff"
+  ],
+  "critical_ref": [
+   "generic_self_help_voice",
+   "repetitive_sag",
+   "broken_chapter_flow",
+   "weak_ending_handoff"
+  ],
+  "product_parity_verdict": "tie",
+  "confidence": 1.0,
+  "paraphrased_evidence": {
+   "ours": "Concrete animal, workplace, and shopping examples provide texture, but repeated rhetorical questions, typographic shouting, sweeping declarations, and loosely connected health warnings create a prolonged sales pitch that ends in boilerplate recap.",
+   "ref": "Concrete animal, workplace, and shopping examples provide texture, but repeated rhetorical questions, typographic shouting, sweeping declarations, and loosely connected health warnings create a prolonged sales pitch that ends in boilerplate recap."
+  },
+  "generic_mechanism": "The chapters are textually identical, so the same sequencing, emphasis patterns, examples, repetitions, and summary structure produce no craft difference."
+ }
+}

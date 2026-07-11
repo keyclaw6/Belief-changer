@@ -1,0 +1,145 @@
+{
+ "protocol": "stage-a-v2.1",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-03",
+ "ours_chapters": [
+  3
+ ],
+ "ref_chapters": [
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "3a4f92f05b7dacd13ad9e1c2d8bbe294046de2ff8fd9ef890e6295a393113436",
+  "thread_id": "019f536e-b48a-7c32-b333-8769b829e7bc",
+  "usage": {
+   "input_tokens": 18972,
+   "cached_input_tokens": 11008,
+   "output_tokens": 891,
+   "reasoning_output_tokens": 516
+  }
+ },
+ "raw": "{\n  \"scores\": {\n    \"prose_control\": {\n      \"A\": 5,\n      \"B\": 2\n    },\n    \"rhythm_and_variety\": {\n      \"A\": 4,\n      \"B\": 2\n    },\n    \"specificity\": {\n      \"A\": 6,\n      \"B\": 4\n    },\n    \"flow_and_momentum\": {\n      \"A\": 5,\n      \"B\": 1\n    },\n    \"ending_handoff\": {\n      \"A\": 3,\n      \"B\": 1\n    }\n  },\n  \"critical_failures\": {\n    \"A\": [\n      \"generic_self_help_voice\",\n      \"mechanical_or_listicle_prose\",\n      \"repetitive_sag\",\n      \"weak_ending_handoff\"\n    ],\n    \"B\": [\n      \"mechanical_or_listicle_prose\",\n      \"repetitive_sag\",\n      \"broken_chapter_flow\",\n      \"weak_ending_handoff\"\n    ]\n  },\n  \"product_parity_verdict\": \"A\",\n  \"confidence\": 0.99,\n  \"paraphrased_evidence\": {\n    \"A\": \"Concrete domestic scenes and accessible analogies support a coherent argument, but repeated assurances, sweeping promises, emphatic headings, and a redundant summary make the chapter feel overextended and commercially programmatic.\",\n    \"B\": \"Recognizable examples and individually competent sentences survive, but their scrambled order destroys causal progression, separates questions from answers, misplaces headings, and leaves the chapter terminating at what should be its opening apparatus.\"\n  },\n  \"generic_mechanism\": \"Logical sequencing lets recurring ideas accumulate into persuasion; disrupted sequencing turns the same material into disconnected assertions without setup, payoff, or forward movement.\"\n}",
+ "parsed": {
+  "scores": {
+   "prose_control": {
+    "A": 5,
+    "B": 2
+   },
+   "rhythm_and_variety": {
+    "A": 4,
+    "B": 2
+   },
+   "specificity": {
+    "A": 6,
+    "B": 4
+   },
+   "flow_and_momentum": {
+    "A": 5,
+    "B": 1
+   },
+   "ending_handoff": {
+    "A": 3,
+    "B": 1
+   }
+  },
+  "critical_failures": {
+   "A": [
+    "generic_self_help_voice",
+    "mechanical_or_listicle_prose",
+    "repetitive_sag",
+    "weak_ending_handoff"
+   ],
+   "B": [
+    "mechanical_or_listicle_prose",
+    "repetitive_sag",
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ]
+  },
+  "product_parity_verdict": "A",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "A": "Concrete domestic scenes and accessible analogies support a coherent argument, but repeated assurances, sweeping promises, emphatic headings, and a redundant summary make the chapter feel overextended and commercially programmatic.",
+   "B": "Recognizable examples and individually competent sentences survive, but their scrambled order destroys causal progression, separates questions from answers, misplaces headings, and leaves the chapter terminating at what should be its opening apparatus."
+  },
+  "generic_mechanism": "Logical sequencing lets recurring ideas accumulate into persuasion; disrupted sequencing turns the same material into disconnected assertions without setup, payoff, or forward movement."
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 2,
+    "ref": 5
+   },
+   "rhythm_and_variety": {
+    "ours": 2,
+    "ref": 4
+   },
+   "specificity": {
+    "ours": 4,
+    "ref": 6
+   },
+   "flow_and_momentum": {
+    "ours": 1,
+    "ref": 5
+   },
+   "ending_handoff": {
+    "ours": 1,
+    "ref": 3
+   }
+  },
+  "critical_ours": [
+   "mechanical_or_listicle_prose",
+   "repetitive_sag",
+   "broken_chapter_flow",
+   "weak_ending_handoff"
+  ],
+  "critical_ref": [
+   "generic_self_help_voice",
+   "mechanical_or_listicle_prose",
+   "repetitive_sag",
+   "weak_ending_handoff"
+  ],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "Recognizable examples and individually competent sentences survive, but their scrambled order destroys causal progression, separates questions from answers, misplaces headings, and leaves the chapter terminating at what should be its opening apparatus.",
+   "ref": "Concrete domestic scenes and accessible analogies support a coherent argument, but repeated assurances, sweeping promises, emphatic headings, and a redundant summary make the chapter feel overextended and commercially programmatic."
+  },
+  "generic_mechanism": "Logical sequencing lets recurring ideas accumulate into persuasion; disrupted sequencing turns the same material into disconnected assertions without setup, payoff, or forward movement."
+ }
+}
