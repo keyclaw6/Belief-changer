@@ -1,0 +1,153 @@
+{
+ "protocol": "stage-a-v2",
+ "role": "integrity",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "0398546cd8c8dbe0938c8f331aeeafb26322bc661671bc58b845b71805ee3337",
+  "thread_id": "019f5348-dabf-7701-bf4f-17713444a8dc",
+  "usage": {
+   "input_tokens": 39783,
+   "cached_input_tokens": 8960,
+   "output_tokens": 3141,
+   "reasoning_output_tokens": 2756
+  }
+ },
+ "raw": "{\n  \"scores\": {\n    \"non_shaming_regard\": {\n      \"A\": 4,\n      \"B\": 4\n    },\n    \"willpower_free_logic\": {\n      \"A\": 7,\n      \"B\": 7\n    },\n    \"epistemic_honesty\": {\n      \"A\": 1,\n      \"B\": 1\n    },\n    \"originality\": {\n      \"A\": 1,\n      \"B\": 1\n    },\n    \"cross_chapter_consistency\": {\n      \"A\": 7,\n      \"B\": 7\n    }\n  },\n  \"critical_failures\": {\n    \"A\": [\n      \"shame_moralizing\",\n      \"fear_as_motivator\",\n      \"medical_overreach\",\n      \"unsupported_authority_or_testimony\",\n      \"copyright_expression_risk\"\n    ],\n    \"B\": [\n      \"shame_moralizing\",\n      \"fear_as_motivator\",\n      \"medical_overreach\",\n      \"unsupported_authority_or_testimony\",\n      \"copyright_expression_risk\"\n    ]\n  },\n  \"product_parity_verdict\": \"tie\",\n  \"confidence\": 1.0,\n  \"paraphrased_evidence\": {\n    \"A\": \"It absolves the reader and centers belief change, but uses disgust and catastrophic outcomes while making sweeping addiction, disease, and efficacy claims; its wording and structure match B throughout.\",\n    \"B\": \"It absolves the reader and centers belief change, but uses disgust and catastrophic outcomes while making sweeping addiction, disease, and efficacy claims; its wording and structure match A throughout.\"\n  },\n  \"generic_mechanism\": \"No differential mechanism is supported: both combine threat amplification, certainty-based reframing, and exact-compliance demands to recast abstention as relief.\"\n}",
+ "parsed": {
+  "scores": {
+   "non_shaming_regard": {
+    "A": 4,
+    "B": 4
+   },
+   "willpower_free_logic": {
+    "A": 7,
+    "B": 7
+   },
+   "epistemic_honesty": {
+    "A": 1,
+    "B": 1
+   },
+   "originality": {
+    "A": 1,
+    "B": 1
+   },
+   "cross_chapter_consistency": {
+    "A": 7,
+    "B": 7
+   }
+  },
+  "critical_failures": {
+   "A": [
+    "shame_moralizing",
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony",
+    "copyright_expression_risk"
+   ],
+   "B": [
+    "shame_moralizing",
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony",
+    "copyright_expression_risk"
+   ]
+  },
+  "product_parity_verdict": "tie",
+  "confidence": 1.0,
+  "paraphrased_evidence": {
+   "A": "It absolves the reader and centers belief change, but uses disgust and catastrophic outcomes while making sweeping addiction, disease, and efficacy claims; its wording and structure match B throughout.",
+   "B": "It absolves the reader and centers belief change, but uses disgust and catastrophic outcomes while making sweeping addiction, disease, and efficacy claims; its wording and structure match A throughout."
+  },
+  "generic_mechanism": "No differential mechanism is supported: both combine threat amplification, certainty-based reframing, and exact-compliance demands to recast abstention as relief."
+ },
+ "mapped": {
+  "dims": {
+   "non_shaming_regard": {
+    "ours": 4,
+    "ref": 4
+   },
+   "willpower_free_logic": {
+    "ours": 7,
+    "ref": 7
+   },
+   "epistemic_honesty": {
+    "ours": 1,
+    "ref": 1
+   },
+   "originality": {
+    "ours": 1,
+    "ref": 1
+   },
+   "cross_chapter_consistency": {
+    "ours": 7,
+    "ref": 7
+   }
+  },
+  "critical_ours": [
+   "shame_moralizing",
+   "fear_as_motivator",
+   "medical_overreach",
+   "unsupported_authority_or_testimony",
+   "copyright_expression_risk"
+  ],
+  "critical_ref": [
+   "shame_moralizing",
+   "fear_as_motivator",
+   "medical_overreach",
+   "unsupported_authority_or_testimony",
+   "copyright_expression_risk"
+  ],
+  "product_parity_verdict": "tie",
+  "confidence": 1.0,
+  "paraphrased_evidence": {
+   "ours": "It absolves the reader and centers belief change, but uses disgust and catastrophic outcomes while making sweeping addiction, disease, and efficacy claims; its wording and structure match A throughout.",
+   "ref": "It absolves the reader and centers belief change, but uses disgust and catastrophic outcomes while making sweeping addiction, disease, and efficacy claims; its wording and structure match B throughout."
+  },
+  "generic_mechanism": "No differential mechanism is supported: both combine threat amplification, certainty-based reframing, and exact-compliance demands to recast abstention as relief."
+ }
+}

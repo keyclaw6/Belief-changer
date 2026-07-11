@@ -1,0 +1,145 @@
+{
+ "protocol": "stage-a-v2",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-01",
+ "ours_chapters": [
+  1
+ ],
+ "ref_chapters": [
+  1
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "b43a7d88ec8cfe1cf7c1fbf862579c1dbd6e1b8e6aec7d9749922b7a724126c8",
+  "thread_id": "019f5344-3471-78f2-9dff-4fc0dca87ecb",
+  "usage": {
+   "input_tokens": 24449,
+   "cached_input_tokens": 8960,
+   "output_tokens": 882,
+   "reasoning_output_tokens": 516
+  }
+ },
+ "raw": "{\n  \"scores\": {\n    \"prose_control\": {\n      \"A\": 5,\n      \"B\": 5\n    },\n    \"rhythm_and_variety\": {\n      \"A\": 3,\n      \"B\": 3\n    },\n    \"specificity\": {\n      \"A\": 5,\n      \"B\": 5\n    },\n    \"flow_and_momentum\": {\n      \"A\": 3,\n      \"B\": 3\n    },\n    \"ending_handoff\": {\n      \"A\": 3,\n      \"B\": 3\n    }\n  },\n  \"critical_failures\": {\n    \"A\": [\n      \"generic_self_help_voice\",\n      \"mechanical_or_listicle_prose\",\n      \"repetitive_sag\",\n      \"weak_ending_handoff\"\n    ],\n    \"B\": [\n      \"generic_self_help_voice\",\n      \"mechanical_or_listicle_prose\",\n      \"repetitive_sag\",\n      \"weak_ending_handoff\"\n    ]\n  },\n  \"product_parity_verdict\": \"tie\",\n  \"confidence\": 1.0,\n  \"paraphrased_evidence\": {\n    \"A\": \"Concrete consumption scenarios, statistics, and personal history add texture, but relentless slogans, addiction analogies, promises, and repeated instructions make the chapter feel coercive and substantially overextended.\",\n    \"B\": \"Specific examples and autobiographical material briefly enliven the argument, yet the same claims cycle through emphatic headings, rhetorical questions, assurances, and a redundant closing summary.\"\n  },\n  \"generic_mechanism\": \"No comparative mechanism emerges because identical diction, structure, pacing, examples, repetition, and closing material produce the same crafted reading experience.\"\n}",
+ "parsed": {
+  "scores": {
+   "prose_control": {
+    "A": 5,
+    "B": 5
+   },
+   "rhythm_and_variety": {
+    "A": 3,
+    "B": 3
+   },
+   "specificity": {
+    "A": 5,
+    "B": 5
+   },
+   "flow_and_momentum": {
+    "A": 3,
+    "B": 3
+   },
+   "ending_handoff": {
+    "A": 3,
+    "B": 3
+   }
+  },
+  "critical_failures": {
+   "A": [
+    "generic_self_help_voice",
+    "mechanical_or_listicle_prose",
+    "repetitive_sag",
+    "weak_ending_handoff"
+   ],
+   "B": [
+    "generic_self_help_voice",
+    "mechanical_or_listicle_prose",
+    "repetitive_sag",
+    "weak_ending_handoff"
+   ]
+  },
+  "product_parity_verdict": "tie",
+  "confidence": 1.0,
+  "paraphrased_evidence": {
+   "A": "Concrete consumption scenarios, statistics, and personal history add texture, but relentless slogans, addiction analogies, promises, and repeated instructions make the chapter feel coercive and substantially overextended.",
+   "B": "Specific examples and autobiographical material briefly enliven the argument, yet the same claims cycle through emphatic headings, rhetorical questions, assurances, and a redundant closing summary."
+  },
+  "generic_mechanism": "No comparative mechanism emerges because identical diction, structure, pacing, examples, repetition, and closing material produce the same crafted reading experience."
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 5,
+    "ref": 5
+   },
+   "rhythm_and_variety": {
+    "ours": 3,
+    "ref": 3
+   },
+   "specificity": {
+    "ours": 5,
+    "ref": 5
+   },
+   "flow_and_momentum": {
+    "ours": 3,
+    "ref": 3
+   },
+   "ending_handoff": {
+    "ours": 3,
+    "ref": 3
+   }
+  },
+  "critical_ours": [
+   "generic_self_help_voice",
+   "mechanical_or_listicle_prose",
+   "repetitive_sag",
+   "weak_ending_handoff"
+  ],
+  "critical_ref": [
+   "generic_self_help_voice",
+   "mechanical_or_listicle_prose",
+   "repetitive_sag",
+   "weak_ending_handoff"
+  ],
+  "product_parity_verdict": "tie",
+  "confidence": 1.0,
+  "paraphrased_evidence": {
+   "ours": "Specific examples and autobiographical material briefly enliven the argument, yet the same claims cycle through emphatic headings, rhetorical questions, assurances, and a redundant closing summary.",
+   "ref": "Concrete consumption scenarios, statistics, and personal history add texture, but relentless slogans, addiction analogies, promises, and repeated instructions make the chapter feel coercive and substantially overextended."
+  },
+  "generic_mechanism": "No comparative mechanism emerges because identical diction, structure, pacing, examples, repetition, and closing material produce the same crafted reading experience."
+ }
+}

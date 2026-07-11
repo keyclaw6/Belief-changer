@@ -2,7 +2,7 @@
   "run": "run-012",
   "date": "2026-07-11",
   "stage": "A",
-  "status": "CAUSAL_REFUTED_PENDING_CONTROLLED_V2_PANEL",
+  "status": "CAUSAL_REFUTED_JUDGE_CONTROL_FAILED_PRODUCT_UNJUDGED",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "source-grounded semantic commissioning followed by a frozen Chapters 1-3 production run",
@@ -483,7 +483,8 @@
       "completed: the C-01-C-03 first-draft batch is frozen before any revision decision",
       "completed: objective evaluation failed on three overlapping non-mantra 12-gram windows while mantra and originality checks passed",
       "completed: source-grounded specialist review found material defects in all three first drafts and causally refuted H-049",
-      "next: run both v2 prompt controls and, only if valid, the blind target panel despite the objective and grounded failures"
+      "completed: the canonical native identical-text control produced a complete 20-cell matrix but failed its stability gate",
+      "not run: the degraded-reference control and blind target panel, because the first control failed closed"
     ],
     "prohibited_now": "do not revise a chapter, amend an asset, alter a commission, change a threshold, or form a new hypothesis before the required complete-batch measurements"
   },
@@ -513,7 +514,7 @@
       "a favorable panel cannot override run-012's failed objective and length gates or make this run a Stage-A pass"
     ],
     "legacy": "explicit --prompt remains available only for historical reproduction",
-    "status": "READY FOR NATIVE CONTROLS — product remains UNJUDGED until both controls and the panel actually run"
+    "status": "INVALIDATED BY IDENTICAL-TEXT CONTROL — product remains UNJUDGED; no degraded or product call ran"
   },
   "judge_panel_preflight": {
     "date": "2026-07-11",
@@ -564,7 +565,53 @@
     },
     "key_allowance_boundary": "The approximately $0.979 OpenRouter key allowance is not a panel dependency and remains untouched for permitted Opus chapter writing.",
     "external_unblock": "RESOLVED — panel execution requires no OpenRouter funding or key-limit change.",
-    "next_action_after_correction": "Run the identical and degraded-reference controls first with the native Sol-ultra judge identities; run the full blind product panel only if both controls pass. Do not form H-050 or change prose, prompts, commissions, thresholds, or judge assets first."
+    "next_action_after_correction": "Completed: the identical control ran natively and failed closed. The degraded-reference control and product panel were not launched. Do not form H-050 or change prose or factory assets; resolve the judge instrument under the new-baseline discipline before any product call."
+  },
+  "judge_control_execution": {
+    "date": "2026-07-12",
+    "route": "native Codex subscription only; OPENROUTER_API_KEY, LITELLM_API_KEY, and LITELLM_BASE_URL were explicitly unset for the panel process",
+    "command": "python3 scripts/eval/judge_panel.py --ours calibration/reference/gsbs --ref calibration/reference/gsbs --chapters 1-3 --judge-identities sol-ultra-r1,sol-ultra-r2 --control identical --out calibration/runs/run-012/judgments/controls/identical",
+    "model": "gpt-5.6-sol",
+    "reasoning": "ultra",
+    "output_limit": "none set by harness",
+    "identities": ["sol-ultra-r1", "sol-ultra-r2"],
+    "fresh_context_per_raw_cell": true,
+    "identical": {
+      "status": "FAIL",
+      "process_exit_code": 1,
+      "artifact": "calibration/runs/run-012/judgments/controls/identical/judge-summary.json",
+      "artifact_sha256": "0d408215378f40dd9f0bc95e1a2e78dd76423f4b8ace5cfdeea4745f544f4c94",
+      "raw_judgments": 20,
+      "unique_native_threads": 20,
+      "collapsed_observations": 10,
+      "invalid_judgments": 0,
+      "panel_complete": true,
+      "raw_parity_verdicts": {"tie": 20, "ours": 0, "ref": 0},
+      "within_order_candidate_score_gap_max": 0,
+      "stable_observations": 6,
+      "order_unstable_observations": 4,
+      "order_instability_rate": 0.4,
+      "unstable_ids": [
+        "sol-ultra-r1|craft|chapter-03",
+        "sol-ultra-r1|integrity|block",
+        "sol-ultra-r2|craft|chapter-02",
+        "sol-ultra-r2|integrity|block"
+      ],
+      "failure_mechanism_observed": "Every raw comparison treated A and B symmetrically and returned tie, but fresh reversed-order contexts changed absolute critical-failure labels in four collapsed observations; the integrity contexts also shifted same-text absolute scores by as much as three points. The frozen gate treats that cross-context variation as instability, so the instrument failed despite zero within-call candidate asymmetry.",
+      "usage": {
+        "input_tokens": 584556,
+        "cached_input_tokens": 191488,
+        "output_tokens": 28785,
+        "reasoning_output_tokens": 21825
+      },
+      "transport": "all 20 native return codes were zero; every record retains the raw final response, strict parsed response, mapped result, exact input SHA-256, thread ID, usage, invocation configuration, and stderr; all stderr strings were empty"
+    },
+    "degraded_reference": "NOT RUN — identical control failed",
+    "product_panel": "NOT RUN — identical control failed",
+    "instrument_verdict": "INVALID FOR PRODUCT USE UNDER THE FROZEN V2 CONTROL RULE",
+    "product_verdict": "UNJUDGED",
+    "causal_boundary": "H-049 remains REFUTED by its completed grounded specialist evidence; this judge-control failure neither reopens nor supports it",
+    "hypothesis_boundary": "No H-050 was formed and no prose, factory asset, judge prompt, threshold, or implementation was changed after seeing the control"
   },
   "held_constant": [
     "accepted research corpus, framing, canonical plan, evidence assignments, chapter jobs, and source permissions",

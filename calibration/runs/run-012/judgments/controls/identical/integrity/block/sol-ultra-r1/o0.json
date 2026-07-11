@@ -1,0 +1,157 @@
+{
+ "protocol": "stage-a-v2",
+ "role": "integrity",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "0398546cd8c8dbe0938c8f331aeeafb26322bc661671bc58b845b71805ee3337",
+  "thread_id": "019f5347-8bba-7ad2-921f-cd5a7f8187e1",
+  "usage": {
+   "input_tokens": 39785,
+   "cached_input_tokens": 11008,
+   "output_tokens": 4554,
+   "reasoning_output_tokens": 4142
+  }
+ },
+ "raw": "{\n  \"scores\": {\n    \"non_shaming_regard\": {\n      \"A\": 4,\n      \"B\": 4\n    },\n    \"willpower_free_logic\": {\n      \"A\": 4,\n      \"B\": 4\n    },\n    \"epistemic_honesty\": {\n      \"A\": 1,\n      \"B\": 1\n    },\n    \"originality\": {\n      \"A\": 1,\n      \"B\": 1\n    },\n    \"cross_chapter_consistency\": {\n      \"A\": 6,\n      \"B\": 6\n    }\n  },\n  \"critical_failures\": {\n    \"A\": [\n      \"shame_moralizing\",\n      \"willpower_framing\",\n      \"fear_as_motivator\",\n      \"medical_overreach\",\n      \"unsupported_authority_or_testimony\",\n      \"copyright_expression_risk\"\n    ],\n    \"B\": [\n      \"shame_moralizing\",\n      \"willpower_framing\",\n      \"fear_as_motivator\",\n      \"medical_overreach\",\n      \"unsupported_authority_or_testimony\",\n      \"copyright_expression_risk\"\n    ]\n  },\n  \"product_parity_verdict\": \"tie\",\n  \"confidence\": 1.0,\n  \"paraphrased_evidence\": {\n    \"A\": \"It seeks desire removal through reframing and disclaims reader blame, yet uses stigmatizing and frightening imagery, asserts sweeping health and efficacy certainties, and conditions success on rigid sequential compliance. Its wording matches B throughout.\",\n    \"B\": \"It seeks desire removal through reframing and disclaims reader blame, yet uses stigmatizing and frightening imagery, asserts sweeping health and efficacy certainties, and conditions success on rigid sequential compliance. Its wording matches A throughout.\"\n  },\n  \"generic_mechanism\": \"No differential mechanism is supported: identical claims, sequencing, and instructions imply identical belief-change effects and integrity risks.\"\n}",
+ "parsed": {
+  "scores": {
+   "non_shaming_regard": {
+    "A": 4,
+    "B": 4
+   },
+   "willpower_free_logic": {
+    "A": 4,
+    "B": 4
+   },
+   "epistemic_honesty": {
+    "A": 1,
+    "B": 1
+   },
+   "originality": {
+    "A": 1,
+    "B": 1
+   },
+   "cross_chapter_consistency": {
+    "A": 6,
+    "B": 6
+   }
+  },
+  "critical_failures": {
+   "A": [
+    "shame_moralizing",
+    "willpower_framing",
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony",
+    "copyright_expression_risk"
+   ],
+   "B": [
+    "shame_moralizing",
+    "willpower_framing",
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony",
+    "copyright_expression_risk"
+   ]
+  },
+  "product_parity_verdict": "tie",
+  "confidence": 1.0,
+  "paraphrased_evidence": {
+   "A": "It seeks desire removal through reframing and disclaims reader blame, yet uses stigmatizing and frightening imagery, asserts sweeping health and efficacy certainties, and conditions success on rigid sequential compliance. Its wording matches B throughout.",
+   "B": "It seeks desire removal through reframing and disclaims reader blame, yet uses stigmatizing and frightening imagery, asserts sweeping health and efficacy certainties, and conditions success on rigid sequential compliance. Its wording matches A throughout."
+  },
+  "generic_mechanism": "No differential mechanism is supported: identical claims, sequencing, and instructions imply identical belief-change effects and integrity risks."
+ },
+ "mapped": {
+  "dims": {
+   "non_shaming_regard": {
+    "ours": 4,
+    "ref": 4
+   },
+   "willpower_free_logic": {
+    "ours": 4,
+    "ref": 4
+   },
+   "epistemic_honesty": {
+    "ours": 1,
+    "ref": 1
+   },
+   "originality": {
+    "ours": 1,
+    "ref": 1
+   },
+   "cross_chapter_consistency": {
+    "ours": 6,
+    "ref": 6
+   }
+  },
+  "critical_ours": [
+   "shame_moralizing",
+   "willpower_framing",
+   "fear_as_motivator",
+   "medical_overreach",
+   "unsupported_authority_or_testimony",
+   "copyright_expression_risk"
+  ],
+  "critical_ref": [
+   "shame_moralizing",
+   "willpower_framing",
+   "fear_as_motivator",
+   "medical_overreach",
+   "unsupported_authority_or_testimony",
+   "copyright_expression_risk"
+  ],
+  "product_parity_verdict": "tie",
+  "confidence": 1.0,
+  "paraphrased_evidence": {
+   "ours": "It seeks desire removal through reframing and disclaims reader blame, yet uses stigmatizing and frightening imagery, asserts sweeping health and efficacy certainties, and conditions success on rigid sequential compliance. Its wording matches B throughout.",
+   "ref": "It seeks desire removal through reframing and disclaims reader blame, yet uses stigmatizing and frightening imagery, asserts sweeping health and efficacy certainties, and conditions success on rigid sequential compliance. Its wording matches A throughout."
+  },
+  "generic_mechanism": "No differential mechanism is supported: identical claims, sequencing, and instructions imply identical belief-change effects and integrity risks."
+ }
+}

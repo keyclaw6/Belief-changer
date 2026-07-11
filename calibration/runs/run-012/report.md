@@ -1,6 +1,6 @@
 # Run report — run-012
 
-**Stage:** A **Scope:** source-grounded commissions plus frozen Chapters 1-3 production **Causal verdict:** REFUTED — material invention in 3/3 grounded first drafts **Product verdict:** UNJUDGED — controlled blind v2 panel pending
+**Stage:** A **Scope:** source-grounded commissions plus frozen Chapters 1-3 production **Causal verdict:** REFUTED — material invention in 3/3 grounded first drafts **Product verdict:** UNJUDGED — identical-text judge control failed closed before product inference
 
 ## What will run
 
@@ -81,13 +81,17 @@ The review still contains useful diagnostics that can be checked directly agains
 
 The preserved call is thread `019f51a6-5522-70a2-be45-f04094ec200e`: 108,978 input tokens (62,976 cached), 20,578 output tokens, and 19,683 reasoning-output tokens under configured Sol ultra.
 
-## Exact continuation
+## Native identical-text control — failed closed
 
-No chapter revision, shared amendment, or new hypothesis comes next. The objective batch evaluation and grounded specialist review are complete. The exact next artifacts are both v2 prompt controls and, only if they validate the exact instrument configuration, the blind target panel.
+The canonical identical-text control ran with the reference Chapters 1–3 on both sides. The panel process explicitly unset OpenRouter and LiteLLM endpoint credentials; every raw cell used a fresh native Codex context pinned to `gpt-5.6-sol` at `ultra`, with no harness output limit. The exact matrix completed: 20 raw judgments, 20 unique thread IDs, 10 collapsed identity-role-target observations, zero invalid judgments, and zero transport failures. The instrument configuration and input hashes match the frozen v2 assets.
 
-Before product interpretation, the exact native judge configuration must pass both Stage-A v2 prompt controls: identical texts tie stably, and the intact reference stably beats its locally degraded copy. Every judgment uses a fresh spawned Codex subagent pinned to `gpt-5.6-sol` with `model_reasoning_effort="ultra"`; exactly two same-model replica identities cover each role target and both A/B orders, producing 20 raw judgments per invocation. A control failure invalidates the judge instrument but does not alter or suppress the frozen batch.
+All 20 raw product-parity verdicts were **tie**. Inside every individual comparison, A and B received identical dimension scores and identical critical-failure lists; the maximum within-order candidate score gap was zero. This rules out a direct position preference in the completed cells.
 
-The frozen batch will then receive the separate blind v2 target panel after its exact model/reasoning configuration passes both controls, even though the objective and grounded checks failed. Those failures remain measured evidence, not one-chapter stop conditions. H-049 is already causally REFUTED; the separate product verdict remains UNJUDGED and still requires full length, craft, objective, and blind Stage-A passage.
+The frozen control nevertheless **FAILED**. Four of ten collapsed observations changed an absolute critical-failure label between their two separately spawned reversed-order contexts: `sol-ultra-r1|craft|chapter-03`, `sol-ultra-r2|craft|chapter-02`, and both identities' integrity block. The two craft changes toggled `mechanical_or_listicle_prose`; both integrity changes toggled `willpower_framing`. The integrity contexts also moved same-text absolute scores between fresh contexts, with a maximum three-point shift for `sol-ultra-r1`. The aggregate therefore reported 6 stable observations, 4 unstable, instability rate 0.4, and `prompt_control.passed: false`.
+
+This is a measurement false-negative risk, not product evidence: the model treated identical candidates symmetrically within every call, but the current collapse rule also requires absolute labels and scores to remain stable across two independent fresh contexts. The rule was frozen before observation and is not waived after the fact. Exact raw responses, strict parsed responses, mappings, commands, input hashes, thread IDs, usage, stderr, and the summary live under `judgments/controls/identical/`; summary SHA-256 is `0d408215...`. Total observed usage was 584,556 input tokens (191,488 cached), 28,785 output tokens, and 21,825 reasoning-output tokens.
+
+The runner exited 1 as designed. The degraded-reference control and product panel were **NOT RUN**. H-049 remains causally REFUTED; product quality remains **UNJUDGED**; no H-050 was formed. The frozen prose and factory assets remain untouched. The next artifact is an explicit judge-instrument resolution under the new-baseline and §11 disciplines, followed by both controls from scratch before any product judgment.
 
 ## Judge-panel preflight — historical misrouting, now resolved
 
@@ -99,7 +103,7 @@ The operator stopped before inference rather than create a partial or unbalanced
 
 The founder has now made the route explicit: OpenRouter may be used only for Opus 4.6 chapter-writing calls and DeepSeek research calls. It must never carry GPT/OpenAI, Gemini, Grok, planning, reviewing, auditing, or judging traffic. The approximately `$0.979` key allowance is therefore not a panel blocker and remains untouched for permitted Opus use.
 
-The canonical judge route is two same-model replica identities executed as fresh native Codex subagents pinned to `gpt-5.6-sol` at `ultra`. Run the identical and degraded-reference controls first under that exact identity/context configuration, then run the blind product panel only if both pass. There is no external blocker. Do not form H-050 or change prose, prompts, commissions, thresholds, or judge assets before that measurement.
+The canonical judge route is two same-model replica identities executed as fresh native Codex subagents pinned to `gpt-5.6-sol` at `ultra`. That route was subsequently used for the identical-text control recorded above. It failed its frozen stability rule, so the degraded-reference and product invocations did not run. There is no external-access blocker; the current stop is the invalid judge instrument.
 
 ## Judge-instrument baseline
 
@@ -107,4 +111,4 @@ Before any run-012 target-panel result, Stage-A judging changed from the legacy 
 
 This change answers an instrument failure, not H-049: the old panel conflated distinct quality questions and counted presentation swaps as independent votes. Run-012 is therefore the first v2 product baseline, and no resulting score is numerically comparable with a legacy run. H-049 was decided only by its frozen causal rule and the source-grounded specialist review; the panel cannot reverse or support that causal verdict. Explicit `--prompt` mode preserves the old runner solely for historical reproduction.
 
-The controls and panel have explicit limits. The degraded-reference control is a gross incoherence test, so a pass demonstrates sensitivity to severe damage rather than fine parity. The blind integrity role sees no source packets and therefore cannot verify source fidelity; the completed grounded audits remain authoritative for that question. The two Sol identities are same-model replications, not cross-family evidence. Finally, because objective repetition and all three length bands already failed, even a favorable panel cannot turn run-012 into a Stage-A pass; it supplies the required blind product diagnosis only.
+The controls and panel have explicit limits. The degraded-reference control is a gross incoherence test, so a pass would demonstrate sensitivity to severe damage rather than fine parity. It was not reached. The blind integrity role sees no source packets and therefore cannot verify source fidelity; the completed grounded audits remain authoritative for that question. The two Sol identities are same-model replications, not cross-family evidence. Finally, because objective repetition and all three length bands already failed, even a future favorable panel cannot turn run-012 into a Stage-A pass; it can supply only the still-missing blind product diagnosis.

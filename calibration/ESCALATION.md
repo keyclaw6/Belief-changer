@@ -6,7 +6,21 @@
 
 **Stage:** A
 
-**Status:** OPEN — repeated evidence escalation remains; run-012 native controlled panel is ready with no external blocker
+**Status:** OPEN — repeated evidence escalation remains; run-012 identical-text judge control failed and product quality is still unjudged
+
+## Current stop — run-012 identical-text judge control
+
+**Control date:** 2026-07-12
+
+The canonical native Stage-A v2 identical-text control completed its full matrix through 20 fresh `gpt-5.6-sol` contexts at `ultra`: 20 raw judgments, 20 unique thread IDs, 10 collapsed observations, zero invalid judgments, zero transport failures, and a complete role/target/identity/order matrix. OpenRouter and LiteLLM endpoint credentials were explicitly absent from the panel process.
+
+Every raw verdict was **tie**. Inside every call, identical A and B texts received identical scores and identical critical-failure labels; the maximum within-call candidate gap was zero. The control nevertheless failed its frozen cross-context stability rule. Four of ten collapsed observations changed absolute critical labels between the two separately spawned reversed-order contexts: `mechanical_or_listicle_prose` toggled in two craft observations, and `willpower_framing` toggled in both integrity observations. Integrity scores also moved by as much as three points between fresh contexts.
+
+This result exposes a false-negative risk in the measurement design: presentation order did not create a within-call preference, but stochastic absolute-label variation across independent fresh contexts is currently classified as order instability. The rule was frozen before observation and has not been waived or silently changed. The exact evidence is under `calibration/runs/run-012/judgments/controls/identical/`; summary SHA-256 is `0d408215...`.
+
+The degraded-reference control and product panel were **not run**, as required by the fail-closed law. H-049 remains causally **REFUTED**; run-012 product quality remains **UNJUDGED**; no H-050 was formed. The frozen chapters, factory assets, judge prompts, thresholds, and implementation remain unchanged.
+
+There is no external-access or funding blocker. The next decision is an explicit judge-instrument resolution under the new-baseline discipline, followed by both controls from scratch before product inference. Do not treat the 20 symmetric ties as a post-hoc pass, and do not use this instrument result to tune the book.
 
 ## Resolved run-012 judge-route correction
 

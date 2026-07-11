@@ -1,0 +1,145 @@
+{
+ "protocol": "stage-a-v2",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-02",
+ "ours_chapters": [
+  2
+ ],
+ "ref_chapters": [
+  2
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "fa85b6b18fa937bf537ba44ba7b8ddb30a23b0f1ca29ab73d39c781ace7714d8",
+  "thread_id": "019f5344-f8f0-7b31-99f2-7edd962a5248",
+  "usage": {
+   "input_tokens": 20403,
+   "cached_input_tokens": 8960,
+   "output_tokens": 747,
+   "reasoning_output_tokens": 376
+  }
+ },
+ "raw": "{\n  \"scores\": {\n    \"prose_control\": {\n      \"A\": 5,\n      \"B\": 5\n    },\n    \"rhythm_and_variety\": {\n      \"A\": 4,\n      \"B\": 4\n    },\n    \"specificity\": {\n      \"A\": 5,\n      \"B\": 5\n    },\n    \"flow_and_momentum\": {\n      \"A\": 4,\n      \"B\": 4\n    },\n    \"ending_handoff\": {\n      \"A\": 3,\n      \"B\": 3\n    }\n  },\n  \"critical_failures\": {\n    \"A\": [\n      \"generic_self_help_voice\",\n      \"mechanical_or_listicle_prose\",\n      \"repetitive_sag\",\n      \"weak_ending_handoff\"\n    ],\n    \"B\": [\n      \"generic_self_help_voice\",\n      \"mechanical_or_listicle_prose\",\n      \"repetitive_sag\",\n      \"weak_ending_handoff\"\n    ]\n  },\n  \"product_parity_verdict\": \"tie\",\n  \"confidence\": 1.0,\n  \"paraphrased_evidence\": {\n    \"A\": \"Concrete animal and shopping examples give the argument texture, but repeated questions, typographic shouting, promotional assurances, and a long medical detour exhaust the initial momentum before a boilerplate recap.\",\n    \"B\": \"Concrete animal and shopping examples give the argument texture, but repeated questions, typographic shouting, promotional assurances, and a long medical detour exhaust the initial momentum before a boilerplate recap.\"\n  },\n  \"generic_mechanism\": \"There is no craft difference: identical sequencing, examples, rhetorical patterns, and recap structure create the same strengths and the same drag.\"\n}",
+ "parsed": {
+  "scores": {
+   "prose_control": {
+    "A": 5,
+    "B": 5
+   },
+   "rhythm_and_variety": {
+    "A": 4,
+    "B": 4
+   },
+   "specificity": {
+    "A": 5,
+    "B": 5
+   },
+   "flow_and_momentum": {
+    "A": 4,
+    "B": 4
+   },
+   "ending_handoff": {
+    "A": 3,
+    "B": 3
+   }
+  },
+  "critical_failures": {
+   "A": [
+    "generic_self_help_voice",
+    "mechanical_or_listicle_prose",
+    "repetitive_sag",
+    "weak_ending_handoff"
+   ],
+   "B": [
+    "generic_self_help_voice",
+    "mechanical_or_listicle_prose",
+    "repetitive_sag",
+    "weak_ending_handoff"
+   ]
+  },
+  "product_parity_verdict": "tie",
+  "confidence": 1.0,
+  "paraphrased_evidence": {
+   "A": "Concrete animal and shopping examples give the argument texture, but repeated questions, typographic shouting, promotional assurances, and a long medical detour exhaust the initial momentum before a boilerplate recap.",
+   "B": "Concrete animal and shopping examples give the argument texture, but repeated questions, typographic shouting, promotional assurances, and a long medical detour exhaust the initial momentum before a boilerplate recap."
+  },
+  "generic_mechanism": "There is no craft difference: identical sequencing, examples, rhetorical patterns, and recap structure create the same strengths and the same drag."
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 5,
+    "ref": 5
+   },
+   "rhythm_and_variety": {
+    "ours": 4,
+    "ref": 4
+   },
+   "specificity": {
+    "ours": 5,
+    "ref": 5
+   },
+   "flow_and_momentum": {
+    "ours": 4,
+    "ref": 4
+   },
+   "ending_handoff": {
+    "ours": 3,
+    "ref": 3
+   }
+  },
+  "critical_ours": [
+   "generic_self_help_voice",
+   "mechanical_or_listicle_prose",
+   "repetitive_sag",
+   "weak_ending_handoff"
+  ],
+  "critical_ref": [
+   "generic_self_help_voice",
+   "mechanical_or_listicle_prose",
+   "repetitive_sag",
+   "weak_ending_handoff"
+  ],
+  "product_parity_verdict": "tie",
+  "confidence": 1.0,
+  "paraphrased_evidence": {
+   "ours": "Concrete animal and shopping examples give the argument texture, but repeated questions, typographic shouting, promotional assurances, and a long medical detour exhaust the initial momentum before a boilerplate recap.",
+   "ref": "Concrete animal and shopping examples give the argument texture, but repeated questions, typographic shouting, promotional assurances, and a long medical detour exhaust the initial momentum before a boilerplate recap."
+  },
+  "generic_mechanism": "There is no craft difference: identical sequencing, examples, rhetorical patterns, and recap structure create the same strengths and the same drag."
+ }
+}
