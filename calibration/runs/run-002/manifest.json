@@ -87,13 +87,13 @@
     "writer": {
       "requested_model": "Claude Opus 4.6",
       "resolved_model": "anthropic/claude-opus-4.6",
-      "actual_model": "pending generation response",
+      "actual_model": "anthropic/claude-4.6-opus-20260205",
       "reasoning": {"effort": "none"},
       "api": "openrouter",
       "arm": "fixed baseline",
       "catalog_context_tokens": 1000000,
       "catalog_max_completion_tokens": 128000,
-      "connectivity": "HTTP 402 before generation: OpenRouter account total usage 75.181592239 exceeded 75.00 credits; endpoint reported only 147 affordable output tokens",
+      "connectivity": "resolved by a funded replacement key; unchanged Chapter 1 R1 and R2 requests both completed through Anthropic",
       "calls": [
         {
           "role_and_objective": "run-002 Chapter 1 R1 full artifact",
@@ -141,6 +141,20 @@
           "artifact": "calibration/runs/run-002/chapters/chapter-01-r1.md",
           "artifact_sha256": "df89ad0760219abdd4cc19e66f406303148a4e24f1d632ab87da0524e8dd97eb",
           "review_verdict": "REVISE"
+        },
+        {
+          "call_id": "gen-1783759504-9ZCGThfK502HIt8wUKYM",
+          "role_and_objective": "run-002 Chapter 1 R2 whole-artifact revision from the accepted plan and R1 review",
+          "requested_model": "anthropic/claude-opus-4.6",
+          "actual_model": "anthropic/claude-4.6-opus-20260205",
+          "provider": "Anthropic through OpenRouter",
+          "reasoning": {"effort": "none", "reported_reasoning_tokens": 0},
+          "requested_max_tokens": 128000,
+          "finish_reason": "stop",
+          "usage": {"prompt": 48021, "completion": 3178, "total": 51199, "cost_usd": 0.319555},
+          "artifact": "calibration/runs/run-002/chapters/chapter-01-r2.md",
+          "artifact_sha256": "124124405d2a915f4b67e575e92559f6eb4625e8d883a1aaed76412aa3c49048",
+          "review_verdict": "ACCEPT"
         }
       ]
     },
@@ -162,6 +176,17 @@
           "verdict": "REVISE",
           "artifact": "calibration/runs/run-002/chapters/chapter-01-r1-review.md",
           "artifact_sha256": "79818611eaeac82209558eb386ee19f6920aab1fd52b1ab222529e3095684481"
+        },
+        {
+          "call_id": "not captured after CLI streamed-output truncation",
+          "chapter": 1,
+          "round": 2,
+          "usage_total_tokens": 281272,
+          "cached_input_tokens": 226304,
+          "reasoning_output_tokens": 7534,
+          "verdict": "ACCEPT",
+          "artifact": "calibration/runs/run-002/chapters/chapter-01-r2-review.md",
+          "artifact_sha256": "f880b1b658047ad36148599f9254c9b1b72c6c9d5cce229baf7e99c5fffec3fa"
         }
       ]
     },
@@ -177,5 +202,5 @@
     "calibration/HARNESS.md": "e8aa007"
   },
   "stages_rerun_because": "H-039 changes planning semantics, so plan and chapters are invalidated; accepted research and framing are not.",
-  "notes": "The normalized plan reached fit-to-write only on round 3. A funded replacement OpenRouter key resolved the writer endpoint without changing model or inputs. Chapter 1 R1 completed with reasoning tokens 0 and was rejected for six chapter-execution defects plus prose metrics; the reviewer identified no missing or contradictory plan context. H-039 downstream sufficiency remains testing while the unchanged writer-reviewer loop regenerates R2."
+  "notes": "The normalized plan reached fit-to-write only on round 3. A funded replacement OpenRouter key resolved the writer endpoint without changing model or inputs. Chapter 1 R1 completed with reasoning tokens 0 and was rejected for six chapter-execution defects plus prose metrics; the reviewer identified no missing or contradictory plan context. Whole-artifact R2, still at reasoning none and with the same assets, corrected those defects and received a fresh ACCEPT. The first-prose bird's-eye checkpoint returned GO and Chapter 2 as the next artifact. H-039 remains testing through Chapters 2–3 and blind judgments."
 }
