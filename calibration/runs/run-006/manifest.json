@@ -20,6 +20,9 @@
   "experiment": {
     "single_variable": "revision scope after a fresh review identifies local defects in an otherwise substantially correct artifact",
     "shared_objective": "produce the strongest complete Chapter 3; repair every R3 blocker and measured craft weakness without adding unsupported claims, losing assigned content, or changing the chapter job",
+    "common_commission_exact": "Produce the strongest complete final-book Chapter 3 from the frozen materials. Repair every defect and quality note in the latest review. Maintain the chapter's one assigned job, exact mantras and instruction, evidence limits, continuity, and original expression; add no argument, evidence, or promise not licensed by the plan. Use your full judgment and do not narrate your process. Return only the complete chapter, beginning with Chapter 3.",
+    "arm_a_scope_exact": "Treat this as a complete rewrite of the artifact. You may recast any passage as your judgment requires.",
+    "arm_b_scope_exact": "Treat this as an edit of the existing artifact. Preserve what already works and its unaffected meaning; revise as much as your judgment requires to repair the review, including the measured craft surface.",
     "arm_a_control": "whole-artifact writer may rewrite any passage",
     "arm_b_treatment": "defect-scoped editor preserves unaffected meaning and changes defect-bearing passages plus the measured craft surface",
     "generation_order": "both arms complete before any arm review is opened",
