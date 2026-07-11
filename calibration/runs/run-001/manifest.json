@@ -12,7 +12,12 @@
   "research_orchestration": {
     "arm": "H-010 prompt-structured, model-led",
     "lead_chooses_subagents_and_workflow": true,
-    "oss_framework": "none"
+    "oss_framework": "none",
+    "retrieval_subagents": [
+      {"role": "science retrieval", "runtime_model": "not exposed by Codex collaboration runtime", "accepted_packets": ["S-001", "S-002", "S-003", "S-004", "S-005", "S-006"]},
+      {"role": "lived-experience retrieval", "runtime_model": "not exposed by Codex collaboration runtime", "accepted_packets": ["S-007", "S-008", "S-009", "S-010", "S-011", "S-012"]},
+      {"role": "industry retrieval", "runtime_model": "not exposed by Codex collaboration runtime", "accepted_packets": ["S-013", "S-014", "S-015", "S-016", "S-017", "S-018", "S-019"]}
+    ]
   },
   "models": {
     "research_lead": {
@@ -64,9 +69,71 @@
         "finish_reason": "stop",
         "usage": {"prompt": 6335, "completion": 4781, "reasoning": 3322, "total": 11116, "cost_usd": 0.00637818},
         "artifacts": ["local corrected rights audit and three focused retrieval commissions"]
+      },
+      {
+        "call_id": "gen-1783727281-DGWbLOKCwbPyU0li0Mj4",
+        "role_and_objective": "first full lived/science synthesis from all 19 accepted packets",
+        "requested_model": "minimax/minimax-m3",
+        "actual_model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "reasoning": "enabled",
+        "endpoint_requested_output": 131072,
+        "authorized_output": 12569,
+        "actual_request_output": 12569,
+        "finish_reason": "stop",
+        "usage": {"prompt": 11911, "completion": 11239, "reasoning": 4497, "total": 23150, "cost_usd": 0.01703274},
+        "artifacts": ["rejected local synthesis candidate; response sha256 42be9884ed7d5887fe4decd13a6f19d57e63ef72a84168515525d96dabba2e5c"]
+      },
+      {
+        "call_id": "gen-1783727491-VDFMZmKFPggmujWzOQ4j",
+        "role_and_objective": "fresh full-packet audit of first synthesis",
+        "requested_model": "deepseek/deepseek-v4-pro",
+        "actual_model": "deepseek/deepseek-v4-pro-20260423",
+        "provider": "StreamLake",
+        "reasoning": "xhigh",
+        "endpoint_requested_output": 384000,
+        "authorized_output": 11185,
+        "actual_request_output": 11185,
+        "finish_reason": "length",
+        "usage": {"prompt": 18168, "completion": 11185, "reasoning": 11185, "total": 29353, "cost_usd": 0.021160836},
+        "artifacts": ["complete packet audit in local reasoning record; no visible verdict before continuation"]
+      },
+      {
+        "call_id": "gen-1783727852-8KfUpnb3H8osXQuG4bWY",
+        "role_and_objective": "provider reasoning-state continuation probe",
+        "requested_model": "deepseek/deepseek-v4-pro",
+        "actual_model": "deepseek/deepseek-v4-pro-20260423",
+        "provider": "StreamLake",
+        "reasoning": "xhigh",
+        "endpoint_requested_output": 384000,
+        "authorized_output": 7131,
+        "actual_request_output": 7131,
+        "finish_reason": "stop",
+        "usage": {"prompt": 198, "completion": 1485, "reasoning": 1305, "total": 1683, "cost_usd": 0.001653696},
+        "artifacts": ["rejected continuation; provider ignored preserved reasoning and hallucinated packet references"]
+      },
+      {
+        "call_id": "gen-1783727939-aOKiMHSWZ7kN5Ca4yHrO",
+        "role_and_objective": "finish full-packet audit with complete prior reasoning replayed visibly",
+        "requested_model": "deepseek/deepseek-v4-pro",
+        "actual_model": "deepseek/deepseek-v4-pro-20260423",
+        "provider": "StreamLake",
+        "reasoning": "xhigh",
+        "endpoint_requested_output": 384000,
+        "authorized_output": 6814,
+        "actual_request_output": 6814,
+        "finish_reason": "stop",
+        "usage": {"prompt": 11379, "completion": 1901, "reasoning": 1648, "total": 13280, "cost_usd": 0.007924482},
+        "artifacts": ["MORE RESEARCH REQUIRED; regenerate both syntheses from preserved packets and re-audit"]
       }
     ],
-    "research_reviewer": "<fresh allowed R1-R3 exact runtime id after synthesis>",
+    "research_reviewer": {
+      "model": "deepseek/deepseek-v4-pro-20260423",
+      "provider": "StreamLake",
+      "reasoning": "xhigh",
+      "verdict": "MORE RESEARCH REQUIRED",
+      "commission": "regenerate both syntheses model-owned from the same packets, then fresh review exact-quote fidelity and claim grounding"
+    },
     "planner": "gpt-5.6-sol",
     "planner_reasoning": "ultra (native Codex Sol)",
     "planner_execution": "codex exec --ephemeral --model gpt-5.6-sol -c model_reasoning_effort=ultra",
@@ -100,5 +167,5 @@
     "prompts/research-agent.md": "5bff930"
   },
   "stages_rerun_because": "",
-  "notes": "RP-000–RP-027 are excluded bootstrap diagnostics. Run-001 is the first real research and prose baseline. Muse Spark 1.1 is deferred until after this Opus baseline and does not block it."
+  "notes": "RP-000–RP-027 are excluded bootstrap diagnostics. Run-001 is the first real research and prose baseline. Nineteen packets are accepted; the first synthesis candidate was rejected and is being fully regenerated from those packets. Muse Spark 1.1 is deferred until after this Opus baseline and does not block it."
 }
