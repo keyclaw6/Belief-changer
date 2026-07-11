@@ -29,4 +29,6 @@ Even a Stage-A pass remains provisional until a zero-amendment stability run, fu
 
 ## Results
 
-Pending. This manifest is the preregistration boundary.
+The generic commissioner contract passed its corrected independent audit and froze at `23ca037`. Three fresh Sol-ultra contexts then created the complete grounded set before any prose: C-01 1,134 words (`bb11fe...`), C-02 1,644 (`8eed6f...`), and C-03 1,415 (`08c520...`). The set froze at `4f4eda4` without manual edits.
+
+One fresh Sol-ultra source-fidelity audit compared all three against the canonical plan and exact assigned accepted packets. It returned C-01 FAITHFUL, C-02 FAITHFUL, C-03 FAITHFUL, set gate ALL FAITHFUL. Prose is now authorized under the already frozen writer contract; no writer call had run when this gate was recorded.
