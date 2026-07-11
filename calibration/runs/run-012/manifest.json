@@ -506,7 +506,47 @@
     "comparability": "run-012 is the first v2 product baseline; no v2 score may be compared numerically with a legacy score",
     "causal_separation": "the measurement reset is not a factory lever and cannot support H-049; H-049 is decided by the separately preregistered source-grounded specialist review",
     "legacy": "explicit --prompt remains available only for historical reproduction",
-    "status": "PENDING — complete first-draft batch frozen; controls and target panel are next"
+    "status": "BLOCKED BEFORE INFERENCE — exact model configuration resolved, but OpenRouter authorization is insufficient for the two controls and target panel"
+  },
+  "judge_panel_preflight": {
+    "date": "2026-07-11",
+    "status": "EXTERNAL FUNDING BLOCKER — ZERO JUDGE CALLS",
+    "resolved_configuration": [
+      {
+        "model": "google/gemini-3.1-pro-preview",
+        "reasoning_effort": "high",
+        "max_completion_tokens": 65536,
+        "completion_price_usd_per_token": 0.000012,
+        "catalog_maximum_output_reservation_usd": 0.786432
+      },
+      {
+        "model": "openai/gpt-5.6-sol",
+        "reasoning_effort": "max",
+        "max_completion_tokens": 128000,
+        "completion_price_usd_per_token": 0.00003,
+        "catalog_maximum_output_reservation_usd": 3.84
+      }
+    ],
+    "required_matrix": "20 raw judgments per Stage-A v2 invocation; identical control + degraded-reference control + product panel = 60 calls under one unchanged balanced two-family configuration",
+    "authenticated_credit": {
+      "remaining_usd": 0.797648511,
+      "source": "authenticated OpenRouter /api/v1/credits preflight",
+      "secret_handling": "credential bridge deleted immediately after sourcing; key unset and child PTY exited"
+    },
+    "authorization_finding": "The remaining credit cannot authorize the unchanged quality-valid matrix: one OpenRouter Sol catalog-maximum output reservation alone is $3.84, and one Gemini reservation is $0.786432 before its prompt and top-reasoning output. The first identical-control Gemini block contains approximately 22,327 input words including the role prompt.",
+    "execution": {
+      "judge_calls": 0,
+      "identical_control": "NOT RUN",
+      "degraded_reference_control": "NOT RUN",
+      "product_panel": "NOT RUN",
+      "judgment_artifacts": [],
+      "partial_matrix": false
+    },
+    "instrument_boundary": "No control failed and no product judgment exists; the instrument remains unvalidated for first product use rather than invalidated by a semantic result.",
+    "product_verdict": "UNJUDGED",
+    "causal_boundary": "H-049 remains causally REFUTED by the completed grounded specialist review; this access failure neither changes nor re-tests that verdict.",
+    "external_unblock": "Raise this key's per-key limit and account funding, or provide a newly funded OpenRouter key sufficient for the unchanged two-family controls and product panel.",
+    "next_action_after_unblock": "Run the identical and degraded-reference controls first under the exact resolved configuration; run the full blind product panel only if both controls pass. Do not form H-050 or change prose, prompts, commissions, thresholds, or judge assets first."
   },
   "held_constant": [
     "accepted research corpus, framing, canonical plan, evidence assignments, chapter jobs, and source permissions",

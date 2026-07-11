@@ -6,7 +6,17 @@
 
 **Stage:** A
 
-**Status:** RESOLVED FOR H-049 PRODUCTION TEST — no canon merge or mid-run amendment authorized
+**Status:** OPEN — RUN-012 CONTROLLED V2 PANEL FUNDING BLOCKER; no canon merge or mid-run amendment authorized
+
+## Run-012 controlled-panel authorization blocker
+
+H-049 is already causally **REFUTED** by the completed grounded specialist review. The separate run-012 product verdict remains **UNJUDGED** because the required Stage-A v2 instrument could not begin its first semantic control.
+
+Runtime preflight resolved the unchanged balanced configuration as `google/gemini-3.1-pro-preview` at `high` reasoning and `openai/gpt-5.6-sol` at `max`. The identical control, degraded-reference control, and product panel are 20 raw judgments each, or 60 calls total. The authenticated credit endpoint reported `$0.797648511` remaining. One Gemini catalog-maximum output reservation is `$0.786432` before prompt and reasoning; one OpenRouter Sol reservation is `$3.84`. The key therefore cannot authorize the unchanged quality-valid matrix.
+
+No inference was attempted: zero judge calls, neither control run, no product panel, and no judgment artifacts. This is not a semantic control failure and does not authorize a partial panel, lower reasoning, a substitute model, H-050, or any prose, prompt, commission, threshold, or judge-asset change.
+
+The exact external unblock is to raise this key's per-key limit and account funding, or provide a newly funded OpenRouter key sufficient for the unchanged two-family controls and product panel. After that, run both controls first and proceed to the full target panel only if both validate.
 
 ## Direction-audit resolution — run-012
 

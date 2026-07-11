@@ -89,6 +89,16 @@ Before product interpretation, the exact target-panel model and reasoning config
 
 The frozen batch will then receive the separate blind v2 target panel after its exact model/reasoning configuration passes both controls, even though the objective and grounded checks failed. Those failures remain measured evidence, not one-chapter stop conditions. H-049 is already causally REFUTED; the separate product verdict remains UNJUDGED and still requires full length, craft, objective, and blind Stage-A passage.
 
+## Judge-panel preflight — external funding blocker
+
+The authenticated runtime catalog resolved the unchanged two-family configuration as `google/gemini-3.1-pro-preview` at its top `high` reasoning with 65,536 maximum completion tokens, and `openai/gpt-5.6-sol` at its top `max` reasoning with 128,000 maximum completion tokens. One v2 invocation is 20 raw judgments; the identical control, degraded-reference control, and product panel therefore require 60 calls under the same balanced configuration.
+
+The authenticated OpenRouter credit endpoint reported `$0.797648511` remaining. At the catalog prices, a maximum-output reservation is `$0.786432` for one Gemini call before prompt and top-reasoning output, and `$3.84` for one OpenRouter Sol call. The first identical-control Gemini block alone contains approximately 22,327 input words including its role prompt. The unchanged quality-valid matrix therefore cannot be authorized by this key in its current funding state.
+
+The operator stopped before inference rather than create a partial or unbalanced panel. Judge calls: **0**. Identical control: **NOT RUN**. Degraded-reference control: **NOT RUN**. Product panel: **NOT RUN**. No judgment or control artifact exists. This is an external authorization block, not a failed semantic control: the instrument remains unvalidated for first product use, and the run-012 product remains **UNJUDGED**. H-049 remains causally **REFUTED** by the already completed grounded specialist review.
+
+The exact unblock is to raise this key's per-key limit and account funding, or provide a newly funded OpenRouter key sufficient for the unchanged two-family controls and product panel. Once authorized, run both controls first and run the full target panel only if both pass. Do not form H-050 or change prose, prompts, commissions, thresholds, or judge assets before that measurement.
+
 ## Judge-instrument baseline
 
 Before any run-012 target-panel result, Stage-A judging changed from the legacy single chapter role to v2: belief-change efficacy and method integrity/epistemic safety judge the complete three-chapter block, while literary craft judges each chapter. Every model covers every role target in both A/B orders; the orders collapse into one observation and any verdict, score-direction, or critical-failure instability stays visible. Authorship detection is absent from the v2 quality prompt, schema, aggregate, and gate.
