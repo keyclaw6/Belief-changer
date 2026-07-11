@@ -169,6 +169,20 @@
           "artifact": "calibration/runs/run-002/chapters/chapter-02-r1.md",
           "artifact_sha256": "c25675c09fb506f6094a525c16ae39a258b528e02b880877d52a98a5b3667a30",
           "review_verdict": "REVISE"
+        },
+        {
+          "call_id": "gen-1783761119-qnq91uupSznKuPs55h1X",
+          "role_and_objective": "run-002 Chapter 2 R2 whole-artifact revision from fixed assets and the R1 review",
+          "requested_model": "anthropic/claude-opus-4.6",
+          "actual_model": "anthropic/claude-4.6-opus-20260205",
+          "provider": "Anthropic through OpenRouter",
+          "reasoning": {"effort": "none", "reported_reasoning_tokens": 0},
+          "requested_max_tokens": 128000,
+          "finish_reason": "stop",
+          "usage": {"prompt": 52928, "completion": 4964, "total": 57892, "cost_usd": 0.38874},
+          "artifact": "calibration/runs/run-002/chapters/chapter-02-r2.md",
+          "artifact_sha256": "9d9dadf1f131cd5075ec70d8b520b28dc83ce2057f03898d24401f04d83a5191",
+          "review_verdict": "REVISE"
         }
       ]
     },
@@ -212,6 +226,17 @@
           "verdict": "REVISE",
           "artifact": "calibration/runs/run-002/chapters/chapter-02-r1-review.md",
           "artifact_sha256": "f7c24d9788d8ca2b052b74422432f8000fc3da6af397178e5e59c16238f5d109"
+        },
+        {
+          "call_id": "019f5075-0ead-7c62-9c61-8b3fbf2c6122",
+          "chapter": 2,
+          "round": 2,
+          "usage_total_tokens": 657511,
+          "cached_input_tokens": 566784,
+          "reasoning_output_tokens": 12362,
+          "verdict": "REVISE",
+          "artifact": "calibration/runs/run-002/chapters/chapter-02-r2-review.md",
+          "artifact_sha256": "4bbcd66ec309ff4cebc65cb7c1da36c6d2892d6c43a4578a632ee942f1b48b55"
         }
       ]
     },
@@ -227,5 +252,5 @@
     "calibration/HARNESS.md": "e8aa007"
   },
   "stages_rerun_because": "H-039 changes planning semantics, so plan and chapters are invalidated; accepted research and framing are not.",
-  "notes": "The normalized plan reached fit-to-write only on round 3. A funded replacement OpenRouter key resolved the writer endpoint without changing model or inputs. Chapter 1 R1 completed with reasoning tokens 0 and was rejected for six chapter-execution defects plus prose metrics; whole-artifact R2 corrected them and received a fresh ACCEPT without changing assets. The first-prose bird's-eye checkpoint returned GO. Chapter 2 R1 then received REVISE for definition drift, premature and wrong-chapter devices, omitted EV-17/SC-07, unsupported empirical-sounding claims, banned register, and rhythm. Every correction was already explicit in the supplied plan/style inputs, so H-039 remains testing without evidence of context starvation."
+  "notes": "The normalized plan reached fit-to-write only on round 3. A funded replacement OpenRouter key resolved the writer endpoint without changing model or inputs. Chapter 1 R1 completed with reasoning tokens 0 and was rejected for six chapter-execution defects plus prose metrics; whole-artifact R2 corrected them and received a fresh ACCEPT without changing assets. The first-prose bird's-eye checkpoint returned GO. Chapter 2 R1 received REVISE for six supplied-context execution defects. R2 corrected those but received REVISE for unscheduled pre-debut tokens, illicit repetition, omitted DEF-04, internal-ID leakage, unsupported universal language, and length/rhythm. Every boundary remains explicit in the plan/style inputs. R3 is the final Chapter 2 cycle and receives both prior reviews without an asset change."
 }
