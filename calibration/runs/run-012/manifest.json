@@ -2,7 +2,7 @@
   "run": "run-012",
   "date": "2026-07-11",
   "stage": "A",
-  "status": "PREREGISTERED",
+  "status": "CONTRACT_FROZEN",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "source-grounded semantic commissioning followed by a frozen Chapters 1-3 production run",
@@ -26,8 +26,37 @@
     "before_sha256": "1c07aa5df8ae65a6f4862cad1e76356215f99addb80d0c1edc59cceec593900b",
     "required_change": "behavior-agnostic natural-language instruction to read only the target-assigned accepted packets and preserve minimum factual texture, provenance, quotation basis, and inference limits",
     "forbidden": "fixed packet schema, field checklist, source dump, prose outline, section sequence, reasoning procedure, specimen wording, observed-failure wording, or mechanical extraction",
-    "freeze": "commit and independently audit before any commission or prose call"
+    "freeze": "commit and independently audit before any commission or prose call",
+    "frozen_commit": "23ca037",
+    "frozen_sha256": "b1eabd112ab9c1c6e67284ab7bae27c512bf7ac3affb3be02877343c829e1c18"
   },
+  "contract_audits": [
+    {
+      "thread_id": "019f5192-24cd-7a60-9844-52641836d090",
+      "model": "gpt-5.6-sol",
+      "reasoning": "ultra",
+      "verdict": "CORRECT COURSE",
+      "finding": "old blanket quote rule conflicted with packet-authorized source quotations",
+      "action": "narrowed the generic rule before any commission call",
+      "input_tokens": 15887,
+      "cached_input_tokens": 8960,
+      "output_tokens": 618,
+      "reasoning_output_tokens": 516,
+      "artifact": "calibration/runs/run-012/audits/commissioner-contract.md"
+    },
+    {
+      "thread_id": "019f5192-da1d-7491-a452-6b11dc558377",
+      "model": "gpt-5.6-sol",
+      "reasoning": "ultra",
+      "verdict": "GO",
+      "finding": "corrected prompt cleanly instantiates one universal, model-led source-grounding boundary without schema, checklist, prose planning, or reference leakage",
+      "input_tokens": 15931,
+      "cached_input_tokens": 12032,
+      "output_tokens": 674,
+      "reasoning_output_tokens": 516,
+      "artifact": "calibration/runs/run-012/audits/commissioner-contract-r2.md"
+    }
+  ],
   "fixed_research_boundary": {
     "accepted_commit": "8867099",
     "C-01": {
@@ -132,6 +161,14 @@
     "prompts/chapter-writer.md": "88b6889",
     "prompts/chapter-reviewer.md": "a91af62",
     "prompts/chapter-commissioner.md": "a2f83da",
+    "production-books/quit-sugar/master-plan.md": "5915b9f",
+    "production-books/quit-sugar/research": "8867099"
+  },
+  "asset_versions_frozen_for_run": {
+    "prompts/chapter-commissioner.md": "23ca037",
+    "prompts/style-guide.md": "e8aa007",
+    "prompts/chapter-writer.md": "88b6889",
+    "prompts/chapter-reviewer.md": "a91af62",
     "production-books/quit-sugar/master-plan.md": "5915b9f",
     "production-books/quit-sugar/research": "8867099"
   },
