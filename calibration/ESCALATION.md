@@ -76,6 +76,8 @@ H-046 will regenerate Chapters 1–3 from fresh contexts under one frozen prompt
 
 The calibration-only amendment was committed at "88b6889"; this records the experiment version, not approval for canon "main".
 
+**H-046 result:** REFUTED in run-009. Fresh Chapter 1 retained the target evidence/chapter-ownership failure through its final third cycle, and craft regressed. The amendment is not eligible for canon merge. The next experiment must isolate semantic context ownership rather than add another prohibition sentence.
+
 ---
 
 ## Previous resolved escalation — run-002 writer endpoint

@@ -1,0 +1,15 @@
+{
+  "date": "2026-07-11",
+  "role": "Chapter 1 R3 reviewer",
+  "model": "openai/gpt-5.6-sol",
+  "reasoning": "max",
+  "catalog_max_tokens": 128000,
+  "catalog_request_sha256": "9d745dbcd2e27f6cc3a84d10e9b3735f47883087a7ca77ee5802900397efc95a",
+  "catalog_request_http_status": 402,
+  "catalog_request_completion_created": false,
+  "key_authorized_max_tokens": 106030,
+  "authorized_request_sha256": "286e5aec0fb2b4f5f3914cf7413a68385f96b105e90fa3b29b8c369beaacb96d",
+  "authorized_request_http_status": 200,
+  "policy": "HARNESS quality law: use the greatest exact allowance returned by the supplied key; never invent a smaller cap",
+  "sanitization": "OpenRouter account and key identifiers omitted."
+}

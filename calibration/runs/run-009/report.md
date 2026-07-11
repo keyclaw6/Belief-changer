@@ -48,6 +48,49 @@ The H-046 target boundary therefore persisted into R2, but R2 is not the preregi
 
 Final Chapter 1 R3 completed at 2,537 wc words with zero reasoning tokens. Objective metrics show 44.2 second-person terms per 1,000, 10.0% questions, 40.0% short sentences, and a 13.7-word mean. Length and questions recovered; rhythm and direct-address density remain materially outside the frozen contract.
 
+Its final Sol-max review returned "REVISE" with four blocker groups:
+
+- a non-mantra reader-voice sentence repeated twice;
+- banned "resist" language outside the protected exact mantra;
+- unsupported categorical claims plus another premature C-05 anti-method causal argument;
+- denial of the real-choice agency lock.
+
+The target H-046 evidence/ownership failure therefore survived the final cycle. R3 also remained severely over-direct and over-fragmented.
+
 ## Gate verdict
 
-IN PROGRESS. Next: final blind review of exact Chapter 1 R3.
+FAIL. Chapter 1 exhausted 3/3 cycles; Chapters 2–3 did not run; no run-009 prose was promoted and no Stage-A objective or judge gate was opened.
+
+H-046 is **REFUTED**. The exact generic amendment was instantiated and frozen. A target blocker appeared in the fresh first draft and survived the final artifact, meeting the preregistered refutation condition. Reviewer sensitivity was sufficient to identify both the intended boundary and independent objective defects.
+
+## Failure autopsy
+
+### Raw outcome
+
+The new priority rule did not prevent the writer from importing unassigned material:
+
+- R1 used invented temporal composites, an unsupported fear-duration claim, C-04/C-05 arguments, and C-20's reserved payment metaphor.
+- R2 used unrouted EV-04 as a general causal prediction and rebuilt C-05's anti-method logic.
+- R3 removed some named passages but produced new unsupported universals, repeated the C-05 mechanism, contradicted the book's real-choice premise, repeated a non-mantra sentence, and used banned vocabulary.
+
+Craft did not converge either. Across R1→R2→R3, metrics.py short sentences were 38.9%→37.3%→40.0%; second-person density 46.8→37.8→44.2/1k; mean sentence length 14.6→14.4→13.7. R3 length and questions passed, but the overall prose surface regressed.
+
+### Most likely mechanism
+
+The failure is no longer missing instruction wording. The writer sees the entire master plan, including every other chapter card, evidence item, reserved analogy, and later mechanism. Even when told that ownership outranks assertiveness, it repeatedly selects salient material from outside C-01. R2's EV-04 import and repeated C-05/C-20 drift are direct evidence.
+
+The smallest remaining generic owner is the chapter input boundary, not another prohibition sentence. A universal factory should give the writer the shared book core plus the current chapter's model-selected owned material—not the whole book's competing semantic inventory. Whether that focus should be produced by an intelligent commissioning agent or a deterministic slice is the next causal question; the tooling doctrine favors the agentic option unless evidence proves otherwise.
+
+### Causal interpretation and risks
+
+H-046 is refuted as written. This does not prove that the priority rule is harmful or that it should never be part of a later winning configuration; it proves that the rule alone is insufficient under the full-plan input contract.
+
+A false positive would be blaming context length merely because the plan is long; Opus had ample context capacity. The proposed mechanism is semantic competition, not token capacity. A false negative would be retrying the same full plan on another chapter and calling stochastic improvement evidence for the rule. The next test must change only ownership-focused context and validate it across fresh chapters, not repair Chapter 1.
+
+## Amendment proposed for next run
+
+Pending the fresh bird's-eye audit. No prompt, plan, chapter, or context contract changes before one behavior-agnostic experiment is preregistered.
+
+## Escalations
+
+None yet. The targeted amendment produced a clear causal result, and a distinct generic owner remains testable.
