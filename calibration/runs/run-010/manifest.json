@@ -14,6 +14,8 @@
   "canonical_authority": "production-books/quit-sugar/master-plan.md remains sole truth; commissions are hashed derived handoffs and are never manually edited",
   "commissioner_contract": {
     "asset": "prompts/chapter-commissioner.md",
+    "asset_commit": "a2f83da",
+    "sha256": "1c07aa5df8ae65a6f4862cad1e76356215f99addb80d0c1edc59cceec593900b",
     "model": "gpt-5.6-sol",
     "reasoning": "ultra",
     "inputs": "canonical master plan plus one target chapter ID only",
@@ -109,6 +111,7 @@
     "prompts/chapter-reviewer.md": "a91af62",
     "production-books/quit-sugar/master-plan.md": "5915b9f"
   },
+  "prefreeze_contract_audit": "GO — fresh read-only Codex critic found the prompt behavior/topic/chapter-agnostic, model-led, self-sufficient, and faithful to the single-lever experiment; no wording changed",
   "direction_audit": "GO — model-led commissioner is the smallest generic owner; NO-GO on mechanical slicing, prompt repetition, another Chapter 1 rule, or writer-model confound",
-  "notes": "No commissioner prompt or model call has run."
+  "notes": "Commissioner prompt frozen at a2f83da. No commissioner model call has run."
 }

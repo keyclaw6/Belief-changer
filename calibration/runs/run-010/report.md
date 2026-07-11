@@ -35,8 +35,10 @@ Even success requires a zero-amendment stability run and the untouched caffeine 
 
 ## Results
 
-Pending preregistration commit and commissioner-prompt freeze.
+The experiment was preregistered at `3cc8d51`. The behavior-agnostic commissioner prompt froze unchanged at `a2f83da` (SHA-256 `1c07aa5df8ae65a6f4862cad1e76356215f99addb80d0c1edc59cceec593900b`). A fresh read-only contract critic returned GO: it found no specimen or chapter patch, fixed schema, prescribed reasoning procedure, or second-planner behavior.
+
+No commissioner model call or prose call has run yet.
 
 ## Gate verdict
 
-IN PROGRESS. No packet or prose call before preregistration and prompt commit.
+IN PROGRESS. Preregistration and prompt freeze complete; packets and prose pending.
