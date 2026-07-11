@@ -42,6 +42,10 @@ Chapter 1 R2 then completed from exact R1 + raw review at 2,258 wc words with ze
 
 The first native Sol R2 review invocation hit the Codex subscription usage limit before sampling and produced no review or product verdict. The same GPT-5.6 Sol role therefore falls back to OpenRouter at its top "max" reasoning with identical blind inputs, as HARNESS §8 permits. Model family, rubric, candidate, and semantic context remain fixed.
 
+The OpenRouter Sol-max review returned "REVISE". R2 omitted the assigned SC-08 scene, used unrouted EV-04 to make a prohibited causal/general prediction, drifted into C-05's anti-method mechanism, and used banned white-knuckle language. Its length and four principal craft metrics also failed.
+
+The H-046 target boundary therefore persisted into R2, but R2 is not the preregistered final cycle. R3 receives the exact artifact and raw review under the same frozen prompt; target survival in R3 refutes H-046.
+
 ## Gate verdict
 
-IN PROGRESS. Next: fresh blind OpenRouter Sol-max review of exact Chapter 1 R2.
+IN PROGRESS. Next: final Chapter 1 R3 under the frozen assets.

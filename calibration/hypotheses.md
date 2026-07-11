@@ -238,8 +238,8 @@ Seeded by the harness builder (2026-07-10) as starting capital — derive priori
 - Anti-overfit boundary: the rule contains no sugar, Chapter 3, or reference logic. It remains calibration-only until multi-chapter, stability, and holdout evidence justify a founder-approved main merge.
 - Rival explanations / signal risk: fresh resampling may remove the defect without the amendment; a strict reviewer may still overclassify rhetoric; the priority rule may improve evidence discipline while weakening persuasive force. The three-chapter blind gate and no-amendment stability run distinguish these.
 - Result to date: Chapter 1 R1's fresh review found one target occurrence: unsupported causal content/invented evidence and unowned later-chapter conclusions. It also found managed-truce ridicule, premature C-20 imagery, anatomy defects, and severe craft imbalance. The zero-target support path is closed; one occurrence repaired without recurrence remains INCONCLUSIVE under the preregistered rule.
-- Result to date: Chapter 1 R2 completed from exact R1 + raw review with every shared asset frozen. It is 2,258 wc words and objectively under-length, under-questioned, over-staccato, and over-direct; target evidence/job repair remains unmeasured.
-- Next test: run the fresh blind review of exact Chapter 1 R2.
+- Result to date: Chapter 1 R2's Sol-max review found the target boundary still present: unrouted EV-04 supported a causal/general prediction and the chapter rebuilt C-05's anti-method mechanism. It also failed assigned scene, lexicon, length, and craft requirements. Because R2 is not final, the refutation condition has not yet fired.
+- Next test: run final Chapter 1 R3 from exact R2 + raw review with every asset frozen. Any final target survival refutes H-046.
 
 ## H-007 — planner reasoning effort                       [RETIRED — founder-fixed 2026-07-10]
 - Gap: a reasoning-effort sweep was proposed before the founder fixed every allowed non-writer model to its top supported reasoning mode.

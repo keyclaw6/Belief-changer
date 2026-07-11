@@ -110,7 +110,8 @@
           "artifact": "calibration/runs/run-009/chapters/chapter-01-r2.md",
           "artifact_sha256": "7e2510809b18a04edcf145abc3a8a50a33513f46909dd41971e77e481463a541",
           "artifact_words_wc": 2258,
-          "review_status": "PENDING"
+          "review_status": "REVISE",
+          "target_h046_blocker": true
         }
       ]
     },
@@ -148,6 +149,28 @@
           "target_h046_blocker": "YES — unsupported causation/evidence plus unowned later-chapter conclusions",
           "artifact": "calibration/runs/run-009/reviews/chapter-01-r1.md",
           "artifact_sha256": "7a511fb3bdf1a6298da4a8c0e51c704b1cf55d8caf9bc01a0ac68245d686d039"
+        },
+        {
+          "chapter": 1,
+          "round": 2,
+          "first_draft": false,
+          "request_sha256": "938ed204ea447c750a45e41b9c0ec90ce27f91d41a4dcd0106c407a2b7bf5113",
+          "call_id": "gen-1783772630-oxOZmiYD2a03tv5jtxKI",
+          "actual_model": "openai/gpt-5.6-sol-20260709",
+          "provider": "OpenAI through OpenRouter",
+          "reasoning": "max",
+          "usage": {"prompt": 41693, "completion": 12111, "total": 53804, "reasoning_tokens": 11394, "cost_usd": 0.6239075},
+          "finish_reason": "stop",
+          "verdict": "REVISE",
+          "blocking_groups": [
+            "assigned SC-08 scene omitted",
+            "unrouted evidence and prohibited causal prediction",
+            "C-05 job drift",
+            "banned willpower register"
+          ],
+          "target_h046_blocker": "YES — unrouted causal/general prediction and unowned C-05 mechanism",
+          "artifact": "calibration/runs/run-009/reviews/chapter-01-r2.md",
+          "artifact_sha256": "ffc053a6fb774704eff72603eae0bb98fdc0fbca946520dc0aa58b1c5cfb9d0a"
         }
       ]
     },
@@ -170,5 +193,5 @@
   },
   "direction": "factory restart across Chapters 1–3; no Chapter 3 tuning and no main merge",
   "h046_first_draft_target_blockers": {"chapter_01": true, "chapter_02": null, "chapter_03": null},
-  "notes": "The prompt remains frozen. The native Chapter 1 R2 review attempt produced no inference because the Codex subscription limit was reached. Per HARNESS §8, the identical blind review proceeds through the allowed OpenRouter Sol route at top max reasoning; this is an execution fallback, not a product lever."
+  "notes": "The prompt remains frozen. OpenRouter Sol-max reviewed Chapter 1 R2 after the native pre-inference limit. R2 retained the H-046 target boundary plus length, craft, scene, and lexicon failures. R3 is the final fixed revision cycle; no commission or shared asset changes."
 }
