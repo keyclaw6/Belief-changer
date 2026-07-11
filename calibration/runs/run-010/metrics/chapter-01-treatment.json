@@ -1,0 +1,315 @@
+{
+ "chapters_checked": [
+  1
+ ],
+ "metrics": {
+  "ours": {
+   "chapters": [
+    {
+     "words": 2308,
+     "sentences": 185,
+     "paragraphs": 55,
+     "mean_sentence_words": 12.5,
+     "median_sentence_words": 8,
+     "pct_short_sentences": 51.9,
+     "questions_per_100_sents": 5.9,
+     "exclaims_per_100_sents": 0.0,
+     "second_person_per_1000": 49.8,
+     "first_person_per_1000": 9.1,
+     "mean_paragraph_words": 42.0,
+     "n": 1,
+     "file": "chapter-01.md"
+    }
+   ],
+   "aggregate": {
+    "chapter_count": 1,
+    "total_words": 2308,
+    "mean_chapter_words": 2308,
+    "median_chapter_words": 2308,
+    "stdev_chapter_words": 0.0,
+    "min_chapter_words": 2308,
+    "max_chapter_words": 2308,
+    "mean_sentence_words": 12.5,
+    "pct_short_sentences": 51.9,
+    "questions_per_100_sents": 5.9,
+    "exclaims_per_100_sents": 0.0,
+    "second_person_per_1000": 49.8,
+    "first_person_per_1000": 9.1
+   }
+  },
+  "compare": {
+   "rows": [
+    {
+     "metric": "chapter_count",
+     "ours": 1,
+     "ref": 1,
+     "ratio": 1.0
+    },
+    {
+     "metric": "exclaims_per_100_sents",
+     "ours": 0.0,
+     "ref": 2.0,
+     "ratio": 0.0
+    },
+    {
+     "metric": "first_person_per_1000",
+     "ours": 9.1,
+     "ref": 9.8,
+     "ratio": 0.93
+    },
+    {
+     "metric": "mean_chapter_words",
+     "ours": 2308,
+     "ref": 4676,
+     "ratio": 0.49
+    },
+    {
+     "metric": "mean_sentence_words",
+     "ours": 12.5,
+     "ref": 18.3,
+     "ratio": 0.68
+    },
+    {
+     "metric": "median_chapter_words",
+     "ours": 2308,
+     "ref": 4676,
+     "ratio": 0.49
+    },
+    {
+     "metric": "pct_short_sentences",
+     "ours": 51.9,
+     "ref": 17.6,
+     "ratio": 2.95
+    },
+    {
+     "metric": "questions_per_100_sents",
+     "ours": 5.9,
+     "ref": 7.8,
+     "ratio": 0.76
+    },
+    {
+     "metric": "second_person_per_1000",
+     "ours": 49.8,
+     "ref": 43.4,
+     "ratio": 1.15
+    },
+    {
+     "metric": "total_words",
+     "ours": 2308,
+     "ref": 4676,
+     "ratio": 0.49
+    }
+   ],
+   "warnings": [
+    "LENGTH WARN: mean_chapter_words ratio 0.49 outside \u00b115%",
+    "LENGTH WARN: total_words ratio 0.49 outside \u00b115%"
+   ]
+  }
+ },
+ "mantra": {
+  "mantras": [
+   {
+    "archetype": "M-01",
+    "wording": "You can test whether BAD SUGAR owns any special or irreplaceable pleasure, without denying pleasant taste or giving up your right to choose.",
+    "debut": 1,
+    "schedule": [
+     3,
+     4,
+     16,
+     17
+    ],
+    "found_in": [
+     1
+    ],
+    "counts": {
+     "1": 3
+    }
+   },
+   {
+    "archetype": "M-02",
+    "wording": "without deprivation, without battle, and without a lifetime of rules",
+    "debut": 1,
+    "schedule": [
+     5,
+     11,
+     16,
+     17,
+     20,
+     21
+    ],
+    "found_in": [
+     1
+    ],
+    "counts": {
+     "1": 2
+    }
+   },
+   {
+    "archetype": "M-03",
+    "wording": "the sugar trap",
+    "debut": 3,
+    "schedule": [
+     4,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21
+    ],
+    "found_in": [],
+    "counts": {}
+   },
+   {
+    "archetype": "M-04",
+    "wording": "a special pleasure or rescue",
+    "debut": 4,
+    "schedule": [
+     6,
+     7,
+     8,
+     9,
+     10,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17
+    ],
+    "found_in": [],
+    "counts": {}
+   },
+   {
+    "archetype": "M-05",
+    "wording": "a nagging, bargaining, slightly urgent sense that this moment is missing something",
+    "debut": 10,
+    "schedule": [
+     11,
+     12,
+     14,
+     15,
+     16,
+     17,
+     18
+    ],
+    "found_in": [],
+    "counts": {}
+   },
+   {
+    "archetype": "M-06",
+    "wording": "anticipating, bargaining, and starting over",
+    "debut": 1,
+    "schedule": [
+     3,
+     5,
+     10,
+     11,
+     12,
+     16,
+     17,
+     18,
+     20
+    ],
+    "found_in": [
+     1
+    ],
+    "counts": {
+     "1": 1
+    }
+   },
+   {
+    "archetype": "M-07",
+    "wording": "the deprivation method",
+    "debut": 5,
+    "schedule": [
+     6,
+     10,
+     11,
+     12,
+     14,
+     16,
+     17,
+     18,
+     21
+    ],
+    "found_in": [],
+    "counts": {}
+   },
+   {
+    "archetype": "M-08",
+    "wording": "When the benefit loses its credit, the battle loses its job.",
+    "debut": 10,
+    "schedule": [
+     12,
+     14,
+     16,
+     17,
+     18,
+     20,
+     21
+    ],
+    "found_in": [],
+    "counts": {}
+   },
+   {
+    "archetype": "M-09",
+    "wording": "You can close the daily sugar debate without policing every molecule, fighting yourself, or treating one accidental bite as failure.",
+    "debut": 2,
+    "schedule": [
+     5,
+     12,
+     16,
+     17,
+     18,
+     20,
+     21
+    ],
+    "found_in": [],
+    "counts": {}
+   },
+   {
+    "archetype": "M-10",
+    "wording": "WHAT A RELIEF \u2014 THE SUGAR TRAP IS OVER. I'M FREE!",
+    "debut": 18,
+    "schedule": [
+     19,
+     20,
+     21
+    ],
+    "found_in": [],
+    "counts": {}
+   }
+  ],
+  "chapters_checked": [
+   1
+  ],
+  "chapters_without_mantra": [],
+  "failures": []
+ },
+ "repetition_within": {
+  "repeated_ngrams": 0,
+  "spans_top": [],
+  "hard_fails": [],
+  "whitelist_size": 10
+ },
+ "originality_cross": {
+  "ours_ngrams": 2236,
+  "overlap_ngrams": 0,
+  "overlap_ratio": 0.0,
+  "tripwire": 0.003,
+  "tripped": false,
+  "samples": []
+ },
+ "hard_fails": [],
+ "warnings": [
+  "LENGTH WARN: mean_chapter_words ratio 0.49 outside \u00b115%",
+  "LENGTH WARN: total_words ratio 0.49 outside \u00b115%"
+ ]
+}

@@ -6,7 +6,40 @@
 
 **Stage:** A
 
-**Status:** RESOLVED FOR CALIBRATION TEST — H-046 authorized under HARNESS §1; canon merge remains founder-approved
+**Status:** ACTIVE CALIBRATION CHECKPOINT — H-047 refuted; fresh direction audit required before another amendment
+
+## Second trigger — run-010 refutes focused plan context
+
+The §11 same-dimension stop condition is met again across three consecutive semantic production runs:
+
+| Run | Generic lever | Ownership result | Product result |
+|---|---|---|---|
+| run-008 | two independent raw reviews + one unchanged Opus repair | C-10 mechanism and evidence boundary survived | both fresh Sol reviews REVISE |
+| run-009 | explicit evidence/chapter-ownership priority in the shared writer prompt | C-05/unrouted causal content survived three Chapter 1 cycles | Chapter 1 rejected 3/3 |
+| run-010 | faithful model-authored C-01 semantic commission instead of the full plan | treatment recreated C-05 drift, invented evidence/outcomes, C-16-reserved testimony, and unsupported physical comparison | both blind arms REVISE; treatment craft worse and underlength |
+
+The last accepted product artifacts remain the pre-existing Chapters 1–2. No run-010 packet, prompt, or prose is promoted.
+
+### What run-010 establishes
+
+Full-plan semantic competition can amplify leakage: the control imported a broader set of C-05, C-11, and C-16 work. It is not the sufficient cause. An independently faithful C-01 handoff excluded unrelated plan inventory, yet Opus recreated the same ownership class and received REVISE. H-047 is therefore refuted by its preregistered faithful-packet condition.
+
+The focused packet also did not repair prose quality. Treatment measured 51.9% short sentences, 5.9% questions, 49.8 second-person terms per 1,000 words, and 2,362 `wc -w` words against a 2,380 floor.
+
+The next discriminating question is not another chapter rule. Both arms still received the complete 639-line style guide, which contains planner-facing whole-book arc/method inventory and categorical causal language. That shared context is one candidate owner; Opus's persuasive completion prior is the rival. Run-010 does not distinguish them.
+
+### Stop boundary
+
+Before another shared-asset amendment, use a fresh read-only direction auditor to choose one behavior-agnostic experiment that separates residual style-context competition from writer behavior. Do not:
+
+- patch or tune Chapter 1;
+- repair a frozen run-010 packet from outcome knowledge;
+- add another evidence prohibition or checklist;
+- rerun the same commissioner for a better sample;
+- change the writer model while testing context ownership;
+- claim partial semantic narrowing as factory progress without an accepted multi-chapter product.
+
+HARNESS §1 and the founder's explicit instruction to continue permit a new calibration-only experiment after this checkpoint is recorded and independently audited. Any canon merge remains founder-approved. No next lever is authorized merely by this document.
 
 ## Trigger
 

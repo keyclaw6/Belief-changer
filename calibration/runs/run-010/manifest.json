@@ -2,7 +2,7 @@
   "run": "run-010",
   "date": "2026-07-11",
   "stage": "A",
-  "status": "IN_PROGRESS",
+  "status": "FAIL",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "model-led focused semantic commissions with Chapter 1 full-plan control and treatment Chapters 1–3",
@@ -211,7 +211,48 @@
         }
       ]
     },
-    "chapter_reviewer": {"model": "gpt-5.6-sol", "provider": "native Codex with recorded same-model OpenRouter fallback only if unavailable", "reasoning": "ultra native or max OpenRouter", "calls": []},
+    "chapter_reviewer": {
+      "model": "gpt-5.6-sol",
+      "provider": "native Codex",
+      "reasoning": "ultra",
+      "execution": "fresh read-only codex exec contexts with neutral candidate names and no arm, packet, history, metrics, reference, or comparison",
+      "calls": [
+        {
+          "chapter": 1,
+          "arm_revealed_after_review": "control",
+          "thread_id": "019f5160-54fe-7063-bc97-44d8a1b16577",
+          "verdict": "REVISE",
+          "target_context_blocker": true,
+          "blocking_groups": [
+            "C-11 fear-collapse and C-05 anti-method job drift",
+            "unsupported authority and causal inference from EV-06/EV-08",
+            "wrong-routed EV-07 and C-16 testimony material plus missing assigned SC-08",
+            "missing landing and mismatched preview anatomy"
+          ],
+          "usage_total_tokens": 1111396,
+          "cached_input_tokens": 1031936,
+          "reasoning_output_tokens": 11306,
+          "artifact": "calibration/runs/run-010/reviews/chapter-01-control.md",
+          "artifact_sha256": "1fa5765a2ee56d3bb62f6e14c207335107d9b520d8604c52ec29feb414394b97"
+        },
+        {
+          "chapter": 1,
+          "arm_revealed_after_review": "treatment",
+          "thread_id": "not retained — parallel PTY output was truncated; final response artifact completed normally",
+          "verdict": "REVISE",
+          "target_context_blocker": true,
+          "blocking_groups": [
+            "M-06 character-case infidelity",
+            "missing standalone landing anatomy",
+            "invented EV-06 gender/outcomes and overextended C-16-reserved EV-08 account",
+            "C-05 anti-method job drift and unsupported physical-effect comparison",
+            "severe direct-address, question-rate, sentence-pulse, and length failures"
+          ],
+          "artifact": "calibration/runs/run-010/reviews/chapter-01-treatment.md",
+          "artifact_sha256": "eec677900e93f4261ac30057d9485426f0eb69dc15c6ea60f75f854cf6b7c026"
+        }
+      ]
+    },
     "judges": [
       {"model": "openai/gpt-5.6-sol", "reasoning": "max"},
       {"model": "google/gemini-3.1-pro-preview", "reasoning": "high"}
@@ -231,7 +272,70 @@
     "operator_action": "packets remain frozen and unedited; faithful C-01 permits the preregistered Chapter 1 A/B; the defect remains a full-product validity risk and prevents any unsupported H-047 success claim"
   },
   "first_prose_direction_audit": "GO — two complete Chapter 1 candidates now exist for blind evaluation; the focused commission directly tests observed semantic leakage, is behavior-agnostic, and could operate unchanged on an unseen topic; next action is product evaluation",
+  "evaluator_repairs_during_measurement": [
+    {
+      "commit": "2530973",
+      "defect": "legacy-only mantra parser returned zero entries for the accepted normalized Markdown table",
+      "repair": "generic normalized-table parser with legacy compatibility; no thresholds or artifacts changed"
+    },
+    {
+      "commit": "b721e1b",
+      "defect": "licensed preview/SUMMARY zones recognized ATX headings but not standalone strong-emphasis labels permitted by the writer contract",
+      "repair": "generic exact-label recognition with negative tests; no thresholds or artifacts changed"
+    }
+  ],
+  "chapter_01_objective_results": {
+    "control": {
+      "run_evals_exit": 0,
+      "hard_fails": 0,
+      "originality_overlap": 0.0,
+      "instrument_words": 2613,
+      "wc_words": 2676,
+      "mean_sentence_words": 12.1,
+      "short_sentences_pct": 47.2,
+      "questions_pct": 7.4,
+      "second_person_per_1000": 46.3,
+      "craft_gate": "FAIL",
+      "artifact": "calibration/runs/run-010/metrics/chapter-01-control.json",
+      "artifact_sha256": "c19ca02a34bb5cc58f5fcd46ae808acc2eaa9971d1c8704bd3e9251d3575f29c"
+    },
+    "treatment": {
+      "run_evals_exit": 0,
+      "hard_fails": 0,
+      "originality_overlap": 0.0,
+      "instrument_words": 2308,
+      "wc_words": 2362,
+      "mean_sentence_words": 12.5,
+      "short_sentences_pct": 51.9,
+      "questions_pct": 5.9,
+      "second_person_per_1000": 49.8,
+      "length_floor_words": 2380,
+      "craft_gate": "FAIL",
+      "artifact": "calibration/runs/run-010/metrics/chapter-01-treatment.json",
+      "artifact_sha256": "f9f52044535f1375859b5116a47bbdbe4c9330e14c9905a180bd619b67414c97"
+    }
+  },
+  "continuation_result": "STOPPED BY PREREGISTRATION — faithful treatment C-01 first draft contained target ownership blockers, received REVISE, missed length, and failed craft; no revision, Chapter 2, Chapter 3, or judge-panel call is authorized in run-010",
+  "causal_outcome": {
+    "hypothesis": "H-047",
+    "verdict": "REFUTED",
+    "deciding_condition": "The faithful C-01 commission excluded the offending later/unowned material, yet treatment Opus recreated the same evidence and chapter-ownership failure.",
+    "raw_comparison": "Control leaked a broader set of C-05/C-11/C-16 work; treatment removed some full-plan inventory but still imported C-05, invented evidence details and outcomes, overextended C-16-reserved testimony, and made an unsupported physical-effect comparison.",
+    "product_result": "neither arm accepted; no chapter or factory asset promoted; accepted live Chapters 1-2 remain unchanged"
+  },
+  "failure_autopsy": {
+    "established": "Complete-plan semantic competition contributes to breadth of leakage but is not the sufficient cause. Removing it did not make a faithful writer handoff produce owned, evidence-bounded prose, and craft became worse rather than better.",
+    "remaining_generic_owners": "The unchanged full style guide still exposes whole-book method/arc inventory and categorical causal claims, while Opus's own persuasive completion prior is another candidate. Run-010 does not distinguish those two.",
+    "packet_signal": "C-01/C-02 packets were faithful; C-03 had one isolated category/margin alteration, showing commissioner reliability is not yet universal but not causing the C-01 failure.",
+    "craft_signal": "Focused semantic context did not repair chronic staccato cadence or direct-address saturation; treatment measured 51.9% short sentences and 49.8 second-person terms per 1k."
+  },
+  "rival_explanations_and_signal_risks": [
+    "one same-model A/B sample cannot quantify a partial context benefit; the control's broader leakage may be stochastic",
+    "same-family Sol reviews are independent contexts but correlated; objective quotations and plan ownership make the central defects directly checkable",
+    "the full style guide may be the residual semantic contaminant, or Opus may recreate these moves from its own prior even under a clean writer-facing contract",
+    "the treatment's shorter packet may have induced underlength completion, but that does not explain invented evidence or C-05 drift"
+  ],
   "prefreeze_contract_audit": "GO — fresh read-only Codex critic found the prompt behavior/topic/chapter-agnostic, model-led, self-sufficient, and faithful to the single-lever experiment; no wording changed",
   "direction_audit": "GO — model-led commissioner is the smallest generic owner; NO-GO on mechanical slicing, prompt repetition, another Chapter 1 rule, or writer-model confound",
-  "notes": "Commissioner prompt and packets remain frozen. Chapter 1 control and treatment completed concurrently before review; both used Opus 4.6 reasoning-none. First-prose direction audit returned GO. Objective and blind product evaluation pending."
+  "notes": "Run closed FAIL. H-047 refuted by its faithful-packet recreation condition. Both blind Chapter 1 reviews returned REVISE; treatment continuation stopped before revisions or later chapters. No product or shared factory asset promoted."
 }

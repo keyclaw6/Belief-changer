@@ -1,6 +1,6 @@
 # Run report — run-010
 
-**Stage:** A **Scope:** model-led semantic commissions + Chapter 1 A/B + treatment Chapters 1–3 **Verdict:** IN PROGRESS
+**Stage:** A **Scope:** model-led semantic commissions + Chapter 1 A/B + conditional treatment Chapters 1–3 **Verdict:** FAIL — H-047 REFUTED
 
 ## What will run
 
@@ -47,7 +47,7 @@ Three separate fresh native Sol-ultra contexts then produced the pre-prose commi
 
 The first C-03 host attempt entered a broken ephemeral collaboration-wait loop despite `multi_agent` being disabled. It was terminated after producing no output and recorded as infrastructure failure. A fresh same-model/ultra retry added only `--ignore-user-config`; one child-spawn attempt failed, no child result entered, and the primary commissioner completed normally. No content input changed.
 
-No prose call has run.
+At that freeze boundary, no prose call had run.
 
 ### Packet-fidelity verdict
 
@@ -74,6 +74,58 @@ The treatment is 18 words below the existing 2,380-word lower bound. That is rec
 
 The required first-prose direction auditor returned **GO**: real candidates now exist for blind evaluation; the lever answers observed semantic leakage, is behavior-agnostic, and could operate unchanged on an unseen topic. The next action is objective and blind product evaluation.
 
+### Evaluator repairs
+
+The first objective pass exposed two generic instrument defects rather than book defects:
+
+- the mantra parser understood only the retired bullet format, so the accepted normalized table produced an empty whitelist;
+- licensed recap removal understood `## SUMMARY` but not the standalone `**SUMMARY**` form allowed by the writer contract.
+
+Commits `2530973` and `b721e1b` repaired those parsers with legacy and negative tests. No threshold, prompt, packet, or chapter changed. The full gate rose from 36 to 41 passing tests. Rerunning the exact frozen candidates produced zero mechanical hard failures and zero reference-overlap for both.
+
+### Objective and blind-review results
+
+| Measure | Control | Treatment | Frozen target |
+|---|---:|---:|---:|
+| `wc -w` | 2,676 | 2,362 | 2,380–3,220 |
+| Instrument words | 2,613 | 2,308 | — |
+| Mean sentence words | 12.1 | 12.5 | 15–18 |
+| Sentences under 8 words | 47.2% | 51.9% | 15–20% |
+| Questions | 7.4% | 5.9% | 8–10% |
+| Second-person terms / 1k | 46.3 | 49.8 | 25–33 |
+| Mechanical `run_evals` | PASS | PASS | PASS |
+| Blind Sol-ultra review | REVISE | REVISE | ACCEPT |
+
+The mechanical pass means mantra schedules, repetition law after licensed-zone handling, and originality were clean. It does not override the binding craft measurements or semantic review. Both arms failed craft; treatment was worse on short-sentence density, questions, direct address, and length.
+
+The neutral control review found C-11 fear-collapse and C-05 anti-method arguments, unsupported authority and causal inference, EV-07/C-16 testimony imported into C-01, assigned SC-08 omitted, and required anatomy missing.
+
+The neutral treatment review found invented EV-06 gender and outcomes, an overextended C-16-reserved EV-08 account, C-05 anti-method drift, an unsupported comparison with bodily effects, M-06 case infidelity, missing landing anatomy, and severe craft imbalance.
+
+Both reviewers completed before the operator mapped neutral candidates back to the arms. Neither saw the packet, experiment, other candidate, reference, history, or metrics.
+
+## Causal verdict — H-047 REFUTED
+
+The decisive preregistered condition fired: the C-01 commission was independently judged faithful and explicitly excluded unrelated evidence and later-chapter work, yet treatment Opus recreated the same ownership class. It invented evidence details and effects, expanded C-16-reserved testimony, and began C-05's anti-method argument. The treatment therefore had target blockers on its first draft and received `REVISE`.
+
+The continuation gate required a faithful packet, zero first-draft target blockers, and Chapter 1 acceptance. It failed. No treatment revision, Chapter 2, Chapter 3, or judge-panel call ran. Continuing would have converted a clean falsification into post-hoc prompt tuning.
+
+### Failure autopsy
+
+The control's leakage was broader, so full-plan semantic competition may contribute to the failure's size. It is not sufficient as the cause: removing the full plan did not produce owned, evidence-bounded prose and did not improve craft. H-047 is refuted as a factory solution, not interpreted as proof that context never matters.
+
+The next causal question is narrower. Both arms still received the complete 639-line style guide, whose planner-facing method and arc material exposes whole-book arguments and categorical mechanism language. Opus's own persuasive completion prior is the rival owner. Run-010 cannot distinguish style-context competition from model prior, so neither is promoted as the explanation yet.
+
+The commissioner itself was not universally reliable: C-01 and C-02 were faithful, while C-03 converted DEF-05's non-failure margin into category exclusion. That isolated defect did not cause the C-01 result, but it blocks any claim that this handoff is production-ready.
+
+Focused context also failed the chronic prose problem. Treatment reached 51.9% short sentences and 49.8 second-person terms per 1,000 words. Semantic focus cannot count as progress while the resulting chapter remains this far from the prose contract.
+
+### Product and factory result
+
+No run-010 chapter is promoted. The prior accepted Chapters 1–2 remain the last accepted product artifacts. The commissioner prompt and packets remain calibration evidence only; nothing is eligible for `main`.
+
+Runs 008–010 now form three consecutive semantic runs without gate progress on the same ownership dimension. The §11 escalation is active again. The next move must come from a fresh direction audit and distinguish residual style-context competition from writer behavior; another prohibition sentence, Chapter 1 patch, packet repair, or unchanged commissioner retry is a no-go.
+
 ## Gate verdict
 
-IN PROGRESS. All three packets froze before prose; fidelity audit complete with one isolated C-03 defect; faithful C-01 advances to blinded prose A/B.
+FAIL. H-047 is **REFUTED**. Treatment failed the preregistered first-draft ownership and acceptance conditions, so the run stopped before later chapters and Stage-A judging. No product or generic factory asset was promoted.
