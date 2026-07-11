@@ -21,7 +21,7 @@ The authenticated credit endpoint reports:
 
 The key-detail endpoint's `$10` per-key limit and `$1.806546899` key usage are not account credit; its apparent `$8.193453101` remainder did not authorize the request. The 402 response calculated only 147 affordable completion tokens after input, which cannot produce the 2,800-word chapter and is not a quality-valid fallback.
 
-`LITELLM_BASE_URL` and `LITELLM_API_KEY` are absent in the runtime. A separate `ANTHROPIC_API_KEY` is present, but it was not used: direct Anthropic is not one of the two model routes authorized by `AGENTS.md`/HARNESS §2, and the founder specifically supplied the disposable OpenRouter key for calibration.
+`LITELLM_BASE_URL` and `LITELLM_API_KEY` are absent in the runtime. An initial name-only environment check falsely reported `ANTHROPIC_API_KEY` as present; a non-empty check proved that it is defined but empty, and the direct API correctly returned an authentication error. Claude Code 2.1.146 reports an existing Claude Pro login and accepts the exact `--model claude-opus-4-6 --thinking disabled` controls, but a live zero-cost connectivity call returned 401 because the stored OAuth credential is stale. Reauthentication now requires the user's browser approval.
 
 ## Founder action required
 
@@ -29,6 +29,6 @@ Provide one of:
 
 1. usable OpenRouter account credit or a replacement OpenRouter key;
 2. the founder LiteLLM base URL and `belief-changer` virtual key via environment variables; or
-3. explicit authorization to use the existing direct Anthropic environment credential for the fixed Opus 4.6 reasoning-none baseline, with provider provenance recorded in run-002.
+3. refresh the existing Claude Pro login in the browser and authorize its Claude Code route for the fixed Opus 4.6 thinking-disabled baseline, with provider provenance recorded in run-002.
 
 On resolution, resume the unchanged Chapter 1 request. Do not regenerate research, framing, or the accepted plan; do not substitute Muse or another writer for the Opus baseline.

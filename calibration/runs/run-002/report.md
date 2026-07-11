@@ -42,4 +42,4 @@ None until completed chapters and blind judgments expose a concrete failure.
 
 ## Escalations
 
-The exact Opus 4.6 reasoning-none Chapter 1 request was rejected before generation with HTTP 402. OpenRouter reports `$75.181592239` total usage against `$75.00` total credit; only 147 completion tokens were affordable after input. LiteLLM is not configured. See `calibration/ESCALATION.md`. No writer substitution or undersized generation was attempted.
+The exact Opus 4.6 reasoning-none Chapter 1 request was rejected before generation with HTTP 402. OpenRouter reports `$75.181592239` total usage against `$75.00` total credit; only 147 completion tokens were affordable after input. LiteLLM is not configured. A name-only environment check falsely treated an empty `ANTHROPIC_API_KEY` as usable; the direct API rejected it. Claude Code can pin `claude-opus-4-6` and hard-disable thinking, but its stored Pro OAuth credential returned 401 with zero tokens/cost and needs browser refresh. See `calibration/ESCALATION.md`. No writer substitution or undersized generation was attempted.
