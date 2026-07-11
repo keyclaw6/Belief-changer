@@ -224,6 +224,34 @@
         "finish_reason": "complete",
         "usage": {"total": 64783, "cost_usd": "n/a"},
         "artifacts": ["ACCEPTED FOR FRAMING on source fidelity; review sha256 ab0f0fd1e6c547852b02cad8d4a5d8f4fc7afeff13bfdfcba0983f937bc2955b; superseded by concrete method-usefulness bird audit"]
+      },
+      {
+        "call_id": "019f4ece-9bcc-79a0-aa27-f9a78f45c59b",
+        "role_and_objective": "fresh R2 resynthesis correcting method/usefulness audit findings from the same 23 packets",
+        "requested_model": "gpt-5.6-luna",
+        "actual_model": "gpt-5.6-luna",
+        "provider": "openai native Codex 0.144.1",
+        "reasoning": "max",
+        "endpoint_requested_output": "native session; no caller max_tokens",
+        "authorized_output": "not exposed",
+        "actual_request_output": "not capped by caller",
+        "finish_reason": "complete",
+        "usage": {"total": 53877, "cost_usd": "n/a"},
+        "artifacts": ["complete local R2 lived/science candidate; sha256 bb3863560141b1ff6f3203770fe21f312db4616d9cdeb432a04355eac0cf1d2d"]
+      },
+      {
+        "call_id": "019f4ed8-a4d5-7463-ab2c-3b9b64ac2f6a",
+        "role_and_objective": "fresh full-packet evidence and method acceptance review of R2",
+        "requested_model": "gpt-5.6-luna",
+        "actual_model": "gpt-5.6-luna",
+        "provider": "openai native Codex 0.144.1",
+        "reasoning": "max",
+        "endpoint_requested_output": "native session; no caller max_tokens",
+        "authorized_output": "not exposed",
+        "actual_request_output": "not capped by caller",
+        "finish_reason": "complete",
+        "usage": {"total": 90975, "cost_usd": "n/a"},
+        "artifacts": ["REGENERATE FROM EXISTING PACKETS for one punctuation mismatch and one persona-ID mismatch; review sha256 1233206f1a64fb1437d400a18bc61d90fc61a8a82e9bb6c451c6c4d61d6112d"]
       }
     ],
     "research_reviewer": {
@@ -241,10 +269,12 @@
       "result": "S-020 through S-023 replaced with source-supported excerpts and narrowed scope; ready for fresh full resynthesis"
     },
     "resynthesis_review": {
-      "source_fidelity_reviewer": "ACCEPTED FOR FRAMING",
-      "independent_birds_eye_reviewer": "REGENERATE FROM EXISTING PACKETS",
+      "r1_source_fidelity_reviewer": "ACCEPTED FOR FRAMING",
+      "r1_independent_birds_eye_reviewer": "REGENERATE FROM EXISTING PACKETS",
+      "r2_independent_birds_eye_reviewer": "ACCEPTED FOR FRAMING",
+      "r2_full_packet_reviewer": "REGENERATE FROM EXISTING PACKETS",
       "operator_disposition": "REGENERATE FROM EXISTING PACKETS",
-      "reason": "method integrity and belief-change usefulness outrank schema/source correctness; collapse redundant personas, separate true freedom from managed truce and early signals, remove unsafe analogies, and stop pseudo-triangulating unrelated science"
+      "reason": "R2 corrected the method failure and is evidence-sufficient; full-packet veto found one added period in an exact quote and one packet-scope ID used instead of the synthesis persona ID; model-owned R3 correction, no new research"
     },
     "planner": "gpt-5.6-sol",
     "planner_reasoning": "ultra (native Codex Sol)",
@@ -279,5 +309,5 @@
     "prompts/research-agent.md": "5bff930"
   },
   "stages_rerun_because": "",
-  "notes": "RP-000–RP-027 are excluded bootstrap diagnostics. Run-001 is the first real research and prose baseline. Twenty-three packets are accepted and sufficient. The first 23-packet synthesis passed formal source fidelity but failed an independent method/usefulness audit: it scattered the central belief-change engine, blurred freedom with management and early signals, duplicated personas, and retained unsafe analogies. One fresh regeneration from the same packets is commissioned; no new retrieval or architecture. Muse Spark 1.1 is deferred until after this Opus baseline and does not block it."
+  "notes": "RP-000–RP-027 are excluded bootstrap diagnostics. Run-001 is the first real research and prose baseline. Twenty-three packets are accepted and sufficient. R2 corrected the central belief-change engine, outcome tiers, persona duplication, analogies, and science structure; the bird audit accepted it. The full-packet reviewer found only one added period in an exact quote and one persona-ID mismatch, so a complete model-owned R3 correction is commissioned from the same evidence. No new retrieval or architecture. Muse Spark 1.1 is deferred until after this Opus baseline and does not block it."
 }
