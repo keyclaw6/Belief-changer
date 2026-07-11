@@ -33,6 +33,18 @@ It independently measured 2,853 wc words, 26.9 second-person terms per 1,000 lex
 
 The diagnostic premise passed. The exact raw review is committed without synthesis.
 
+The one Opus repair then completed at 2,715 wc words with zero reasoning tokens. Objective measurement before any semantic review found:
+
+| Measure | Arm A baseline | Repair | Preregistered result |
+|---|---:|---:|---|
+| metrics.py short sentences | 30.5% | 31.9% | FAIL — required at most 25.5% |
+| second person / 1,000 | 27.6 | 23.4 | FAIL — target 25–33 |
+| questions | 9.6% | 9.4% | PASS |
+| mean sentence | 16.7 | 16.6 | PASS |
+| wc words | 2,853 | 2,715 | PASS — 2,210–2,990 |
+
+The absolute craft prediction has already failed. Semantic compliance and the causal classification remain unmeasured until the two fresh Sol reviews and Gemini shadow complete; the chapter cannot be promoted under the preregistered product rule regardless of later praise.
+
 ## Gate verdict
 
-IN PROGRESS. Next: one Opus revision from exact Arm A plus both raw Sol reviews. Shared factory assets and the live book remain unchanged.
+IN PROGRESS. Next: two fresh Sol reviews and the targeted Gemini evidence shadow of the frozen repair. Shared factory assets and the live book remain unchanged.

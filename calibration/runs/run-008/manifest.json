@@ -89,7 +89,21 @@
       "expected_runtime_model": "anthropic/claude-4.6-opus-20260205",
       "reasoning": {"effort": "none"},
       "max_tokens": 128000,
-      "calls": []
+      "calls": [
+        {
+          "request_sha256": "380e39997b723639c5bd592544db2c4c9ddcf4b82db912b33561bcf9db6bdaa1",
+          "call_id": "gen-1783770007-IbldPIeqn4GndU2CuFrw",
+          "actual_model": "anthropic/claude-4.6-opus-20260205",
+          "provider": "Anthropic",
+          "reasoning": {"effort": "none", "reported_reasoning_tokens": 0},
+          "usage": {"prompt": 54071, "completion": 3507, "total": 57578, "cost_usd": 0.35803},
+          "finish_reason": "stop",
+          "artifact": "calibration/runs/run-008/chapters/chapter-03-repair.md",
+          "artifact_sha256": "cdc233a7cb8b54517192d72bfb5f698d726ceeb3e070b318e4ef7bfe301918ce",
+          "artifact_words_wc": 2715,
+          "review_status": "PENDING"
+        }
+      ]
     },
     "post_reviewers": {
       "model": "gpt-5.6-sol",
@@ -119,5 +133,6 @@
   "direction_audit": "GO on a clean new run using working models; no silent H-044 substitution, shared-prompt amendment, checklist synthesis, or deterministic prose control",
   "factory_promotion_boundary": "same-family correlation is explicit; only the product may advance, while feedback coverage requires later cross-family, cross-chapter, and Stage-C validation",
   "diagnostic_status": "PASSED — second fresh Sol independently corroborated both preregistered defect classes",
-  "notes": "The second Sol review ran blind to the first and history, took unrestricted ultra reasoning, and corroborated both the installation/C-13 and universal mechanism/C-10 boundaries. No writer call has run yet."
+  "objective_metrics_artifact": "calibration/runs/run-008/repair-metrics.json",
+  "notes": "The single Opus repair completed with zero reasoning tokens and stopped normally. It passed planned length, questions, and mean-sentence ranges but failed the preregistered craft movement before semantic review: short sentences rose from 30.5% to 31.9% and second-person density fell from 27.6 to 23.4 per 1,000. No causal or product verdict is assigned before the fresh reviews."
 }

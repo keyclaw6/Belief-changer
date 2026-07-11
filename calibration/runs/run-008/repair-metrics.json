@@ -1,0 +1,21 @@
+{
+  "instrument": "python3 scripts/eval/metrics.py",
+  "artifact": "calibration/runs/run-008/chapters/chapter-03-repair.md",
+  "artifact_sha256": "cdc233a7cb8b54517192d72bfb5f698d726ceeb3e070b318e4ef7bfe301918ce",
+  "wc_words": 2715,
+  "metrics_py": {
+    "words": 2651,
+    "mean_sentence_words": 16.6,
+    "pct_short_sentences": 31.9,
+    "questions_per_100_sents": 9.4,
+    "second_person_per_1000": 23.4,
+    "first_person_per_1000": 4.5
+  },
+  "preregistered_craft_result": {
+    "word_range_2210_2990": "PASS",
+    "short_sentences_at_most_25_5": "FAIL",
+    "second_person_25_33": "FAIL",
+    "questions_8_10": "PASS",
+    "mean_sentence_15_18": "PASS"
+  }
+}
