@@ -251,7 +251,35 @@
         "actual_request_output": "not capped by caller",
         "finish_reason": "complete",
         "usage": {"total": 90975, "cost_usd": "n/a"},
-        "artifacts": ["REGENERATE FROM EXISTING PACKETS for one punctuation mismatch and one persona-ID mismatch; review sha256 1233206f1a64fb1437d400a18bc61d90fc61a8a82e9bb6c451c6c4d61d6112d"]
+        "artifacts": ["REGENERATE FROM EXISTING PACKETS for one punctuation mismatch and one persona-ID mismatch; review sha256 1233206f1a64fb1437d400a18bc61d90fc61a8a82e9bb6c451c6c4d61d6112d3"]
+      },
+      {
+        "call_id": "019f4ee2-7ffa-74d3-a55b-b7cc8a59115a",
+        "role_and_objective": "model-owned complete R3 correction of R2 traceability defects",
+        "requested_model": "gpt-5.6-luna",
+        "actual_model": "gpt-5.6-luna",
+        "provider": "openai native Codex 0.144.1",
+        "reasoning": "max",
+        "endpoint_requested_output": "native session; no caller max_tokens",
+        "authorized_output": "not exposed",
+        "actual_request_output": "not capped by caller",
+        "finish_reason": "complete",
+        "usage": {"total": 33734, "cost_usd": "n/a"},
+        "artifacts": ["complete local R3 candidate; sha256 73cd4c7496f096e3121574435db78ec4870355db5bc56739425d49a25e333909; exactly three commissioned changes"]
+      },
+      {
+        "call_id": "019f4ee5-5f99-7ba2-b044-768dcc8a8a82",
+        "role_and_objective": "fresh final full-packet acceptance review of R3",
+        "requested_model": "gpt-5.6-luna",
+        "actual_model": "gpt-5.6-luna",
+        "provider": "openai native Codex 0.144.1",
+        "reasoning": "max",
+        "endpoint_requested_output": "native session; no caller max_tokens",
+        "authorized_output": "not exposed",
+        "actual_request_output": "not capped by caller",
+        "finish_reason": "complete",
+        "usage": {"total": 47388, "cost_usd": "n/a"},
+        "artifacts": ["ACCEPTED FOR FRAMING; review sha256 f5b6ac7b80db50538a09d890d10a030f9800d2156afa54c8abe90b2b4a251690; superseded for promotion after bird audit found an S-012 exact-quote period mismatch"]
       }
     ],
     "research_reviewer": {
@@ -273,8 +301,10 @@
       "r1_independent_birds_eye_reviewer": "REGENERATE FROM EXISTING PACKETS",
       "r2_independent_birds_eye_reviewer": "ACCEPTED FOR FRAMING",
       "r2_full_packet_reviewer": "REGENERATE FROM EXISTING PACKETS",
+      "r3_independent_birds_eye_reviewer": "ACCEPTED FOR FRAMING WITH ONE CONCRETE QUOTE DEFECT",
+      "r3_full_packet_reviewer": "ACCEPTED FOR FRAMING",
       "operator_disposition": "REGENERATE FROM EXISTING PACKETS",
-      "reason": "R2 corrected the method failure and is evidence-sufficient; full-packet veto found one added period in an exact quote and one packet-scope ID used instead of the synthesis persona ID; model-owned R3 correction, no new research"
+      "reason": "R3 fixed the commissioned defects and both reviews accept its depth; concrete packet comparison shows S-012 quotation still gained a period, so one final model-owned quote and citation sweep is required; no new research"
     },
     "planner": "gpt-5.6-sol",
     "planner_reasoning": "ultra (native Codex Sol)",
@@ -309,5 +339,5 @@
     "prompts/research-agent.md": "5bff930"
   },
   "stages_rerun_because": "",
-  "notes": "RP-000–RP-027 are excluded bootstrap diagnostics. Run-001 is the first real research and prose baseline. Twenty-three packets are accepted and sufficient. R2 corrected the central belief-change engine, outcome tiers, persona duplication, analogies, and science structure; the bird audit accepted it. The full-packet reviewer found only one added period in an exact quote and one persona-ID mismatch, so a complete model-owned R3 correction is commissioned from the same evidence. No new retrieval or architecture. Muse Spark 1.1 is deferred until after this Opus baseline and does not block it."
+  "notes": "RP-000–RP-027 are excluded bootstrap diagnostics. Run-001 is the first real research and prose baseline. Twenty-three packets are accepted and sufficient. R3 fixed R2's commissioned defects and preserves the accepted method design. Although the full-packet reviewer accepted R3, the bird audit identified an added period in the exact S-012 quotation plus two minor coherence/citation issues. One final model-owned complete quote/citation sweep is commissioned from the same evidence. No new retrieval or architecture. Muse Spark 1.1 is deferred until after this Opus baseline and does not block it."
 }
