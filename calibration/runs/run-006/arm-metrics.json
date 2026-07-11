@@ -1,0 +1,21 @@
+{
+  "instrument": "python3 scripts/eval/metrics.py",
+  "scope": "independent deterministic craft measurement of the two frozen Chapter 3 arms",
+  "word_count_note": "metrics.py strips Markdown before counting; manifest artifact_words preserves the reviewer-contract wc -w count",
+  "arm_a": {
+    "artifact_sha256": "8a17c510230a182b10a1a089c582b1914ef81a3e98f8bf5ce5f2b171afca8860",
+    "words": 2786,
+    "mean_sentence_words": 16.7,
+    "pct_short_sentences": 30.5,
+    "questions_per_100_sents": 9.6,
+    "second_person_per_1000": 27.6
+  },
+  "arm_b": {
+    "artifact_sha256": "6555f27239262773b27a49217680888f57f6b6bf4683a79248d662ca3984c0d9",
+    "words": 2698,
+    "mean_sentence_words": 16.6,
+    "pct_short_sentences": 31.9,
+    "questions_per_100_sents": 9.8,
+    "second_person_per_1000": 27.4
+  }
+}

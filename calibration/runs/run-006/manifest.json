@@ -2,7 +2,7 @@
   "run": "run-006",
   "date": "2026-07-11",
   "stage": "A",
-  "status": "IN_PROGRESS",
+  "status": "FAIL",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "same-start whole-rewrite versus defect-scoped revision A/B for Chapter 3",
@@ -93,7 +93,32 @@
         "provider": "openai native Codex",
         "reasoning": "ultra",
         "execution": "codex exec --ephemeral --disable multi_agent --model gpt-5.6-sol -c model_reasoning_effort=ultra",
-        "calls": []
+        "calls": [
+          {
+            "arm": "A",
+            "blind_label": "copper",
+            "call_id": "019f50da-7bff-7132-9b56-41a19517b40b",
+            "usage_total_tokens": 1226664,
+            "cached_input_tokens": 1129216,
+            "reasoning_output_tokens": 12528,
+            "verdict": "REVISE",
+            "blocking_groups": ["invented or unbounded causal evidence", "premature mechanism diagnosis and job drift"],
+            "artifact": "calibration/runs/run-006/chapters/chapter-03-arm-a-sol-review.md",
+            "artifact_sha256": "b35bc87058f1749dba704d6e48372269669c88437cbdcacfb263bbb4ededc34c"
+          },
+          {
+            "arm": "B",
+            "blind_label": "cedar",
+            "call_id": "019f50da-7bf9-70c1-9bce-c942fb3c9ba4",
+            "usage_total_tokens": 1293615,
+            "cached_input_tokens": 1186304,
+            "reasoning_output_tokens": 13205,
+            "verdict": "REVISE",
+            "blocking_groups": ["premature mechanism diagnosis", "unsupported universalized installation story"],
+            "artifact": "calibration/runs/run-006/chapters/chapter-03-arm-b-sol-review.md",
+            "artifact_sha256": "a7f2e8e3dc071d7b886b60cd9695fd53ce4ec69ae79d16d7796278e9dc5f2a80"
+          }
+        ]
       },
       {
         "model": "google/gemini-3.1-pro-preview",
@@ -101,7 +126,34 @@
         "reasoning": "high",
         "max_tokens": 65536,
         "route_verified": "2026-07-11 against authenticated /api/v1/models",
-        "calls": []
+        "calls": [
+          {
+            "arm": "A",
+            "blind_label": "copper",
+            "request_sha256": "f9881e5371860e8d3b0b9cf2d3398ffd6fdc27bdf26942972f3fc681852a2fd1",
+            "call_id": "gen-1783767930-zVqH1rG4gCuFIhFQ7r6c",
+            "actual_model": "google/gemini-3.1-pro-preview-20260219",
+            "provider": "Google",
+            "usage": {"prompt": 48841, "completion": 4074, "total": 52915, "reasoning_tokens": 3557, "cost_usd": 0.14657},
+            "finish_reason": "stop",
+            "verdict": "ACCEPT",
+            "artifact": "calibration/runs/run-006/chapters/chapter-03-arm-a-gemini-review.md",
+            "artifact_sha256": "779657f73d5e393f3da357f370181fdbdfc3dea17cb0db231cb5ae6ea5400774"
+          },
+          {
+            "arm": "B",
+            "blind_label": "cedar",
+            "request_sha256": "4d5b3dde1f7cced47447438dfba720f41573caa8c7a6ca8361385b7f3de6aa50",
+            "call_id": "gen-1783767930-Z9e0hlZWNXN7dBG7lhL1",
+            "actual_model": "google/gemini-3.1-pro-preview-20260219",
+            "provider": "Google",
+            "usage": {"prompt": 48749, "completion": 3407, "total": 52156, "reasoning_tokens": 2785, "cost_usd": 0.138382},
+            "finish_reason": "stop",
+            "verdict": "ACCEPT",
+            "artifact": "calibration/runs/run-006/chapters/chapter-03-arm-b-gemini-review.md",
+            "artifact_sha256": "8dd2ed686a29be6ac66e652b07e232edd1fe39672cde95c2c8a47d32b98a91fd"
+          }
+        ]
       }
     ],
     "judges": []
@@ -113,6 +165,14 @@
     "production-books/quit-sugar/master-plan.md": "5915b9f"
   },
   "direction_audit": "GO — isolate revision scope; use diverse reviewers only as blinded measurement; do not add research architecture or a chapter-specific shared prompt",
+  "checkpoint_direction_audit": "NO-GO on arm promotion, shared-prompt change, retroactive tie-break, or another A/B; conditional GO on H-044 adversarial review coverage followed by one unchanged-loop repair and fresh Sol/Grok convergence",
   "factory_promotion_boundary": "even a supported one-chapter result remains provisional until replicated on another chapter and then survives the zero-amendment Stage C subject holdout",
-  "notes": "Both Opus arms completed concurrently before either artifact was opened for review. Both used the pinned commissions, the same runtime model/provider, reasoning none with zero reported reasoning tokens, and endpoint-maximum output allowance. No shared prompt, style, plan, research, schema, or live book artifact changed."
+  "result": {
+    "arm_a": {"sol": "REVISE", "gemini": "ACCEPT", "convergent_accept": false},
+    "arm_b": {"sol": "REVISE", "gemini": "ACCEPT", "convergent_accept": false},
+    "h043_causal_verdict": "INCONCLUSIVE — both arms failed convergence and both reviewer pairs materially disagreed",
+    "promoted": null
+  },
+  "objective_metrics_artifact": "calibration/runs/run-006/arm-metrics.json",
+  "notes": "Both Opus arms completed concurrently before either artifact was opened for review. The symmetric panel then split identically on both arms: Sol found unbounded installation and premature mechanism claims; Gemini accepted while materially undercounting each artifact. Neither arm met the preregistered convergence gate, no live chapter changed, and no shared factory rule was promoted."
 }
