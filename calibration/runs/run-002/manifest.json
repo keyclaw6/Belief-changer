@@ -155,6 +155,20 @@
           "artifact": "calibration/runs/run-002/chapters/chapter-01-r2.md",
           "artifact_sha256": "124124405d2a915f4b67e575e92559f6eb4625e8d883a1aaed76412aa3c49048",
           "review_verdict": "ACCEPT"
+        },
+        {
+          "call_id": "gen-1783760357-j1VS5SexQsOkMKHL83q2",
+          "role_and_objective": "run-002 Chapter 2 R1 full artifact from fixed assets and accepted Chapter 1 continuity",
+          "requested_model": "anthropic/claude-opus-4.6",
+          "actual_model": "anthropic/claude-4.6-opus-20260205",
+          "provider": "Anthropic through OpenRouter",
+          "reasoning": {"effort": "none", "reported_reasoning_tokens": 0},
+          "requested_max_tokens": 128000,
+          "finish_reason": "stop",
+          "usage": {"prompt": 47522, "completion": 4598, "total": 52120, "cost_usd": 0.35256},
+          "artifact": "calibration/runs/run-002/chapters/chapter-02-r1.md",
+          "artifact_sha256": "c25675c09fb506f6094a525c16ae39a258b528e02b880877d52a98a5b3667a30",
+          "review_verdict": "REVISE"
         }
       ]
     },
@@ -187,6 +201,17 @@
           "verdict": "ACCEPT",
           "artifact": "calibration/runs/run-002/chapters/chapter-01-r2-review.md",
           "artifact_sha256": "f880b1b658047ad36148599f9254c9b1b72c6c9d5cce229baf7e99c5fffec3fa"
+        },
+        {
+          "call_id": "019f506a-0807-72a1-aa2a-d9ceb60b6c44",
+          "chapter": 2,
+          "round": 1,
+          "usage_total_tokens": 886453,
+          "cached_input_tokens": 797440,
+          "reasoning_output_tokens": 12057,
+          "verdict": "REVISE",
+          "artifact": "calibration/runs/run-002/chapters/chapter-02-r1-review.md",
+          "artifact_sha256": "f7c24d9788d8ca2b052b74422432f8000fc3da6af397178e5e59c16238f5d109"
         }
       ]
     },
@@ -202,5 +227,5 @@
     "calibration/HARNESS.md": "e8aa007"
   },
   "stages_rerun_because": "H-039 changes planning semantics, so plan and chapters are invalidated; accepted research and framing are not.",
-  "notes": "The normalized plan reached fit-to-write only on round 3. A funded replacement OpenRouter key resolved the writer endpoint without changing model or inputs. Chapter 1 R1 completed with reasoning tokens 0 and was rejected for six chapter-execution defects plus prose metrics; the reviewer identified no missing or contradictory plan context. Whole-artifact R2, still at reasoning none and with the same assets, corrected those defects and received a fresh ACCEPT. The first-prose bird's-eye checkpoint returned GO and Chapter 2 as the next artifact. H-039 remains testing through Chapters 2–3 and blind judgments."
+  "notes": "The normalized plan reached fit-to-write only on round 3. A funded replacement OpenRouter key resolved the writer endpoint without changing model or inputs. Chapter 1 R1 completed with reasoning tokens 0 and was rejected for six chapter-execution defects plus prose metrics; whole-artifact R2 corrected them and received a fresh ACCEPT without changing assets. The first-prose bird's-eye checkpoint returned GO. Chapter 2 R1 then received REVISE for definition drift, premature and wrong-chapter devices, omitted EV-17/SC-07, unsupported empirical-sounding claims, banned register, and rhythm. Every correction was already explicit in the supplied plan/style inputs, so H-039 remains testing without evidence of context starvation."
 }

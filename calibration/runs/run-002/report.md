@@ -14,6 +14,8 @@ Opus regenerated the whole chapter as R2 from the same accepted plan and the R1 
 
 The requested first-prose bird's-eye checkpoint returned `GO`: the artifact tests H-039 without a new method change, preserves reference blindness and method integrity, and makes Chapter 2—not more process work—the correct next artifact.
 
+Chapter 2 R1 then ran through the unchanged Opus baseline with accepted Chapter 1 as its sole continuity artifact. The 3,341-word draft received fresh `REVISE` for six blockers: DEF-01/DEF-02 drift; premature LX-P03; wrong-chapter AN-10; omitted EV-17 and SC-07; unsupported comparative, quantified, or universal claims; and the banned phrase “gives up.” M-09, I-02, anatomy, length, direct address, question rate, and cross-chapter repetition passed. Its 39.1% short-sentence rate and 12.9-word mean remained a quality weakness.
+
 ## Objective results (`metrics.json`)
 
 Pending Chapters 1–3.
@@ -24,7 +26,7 @@ Pending Chapters 1–3.
 
 ## Gate verdict
 
-Master-plan gate: PASS on cycle 3 of 3. Chapter 1: PASS on cycle 2 of 3. Stage A remains pending accepted Chapters 2–3, objective evals, and blind judging.
+Master-plan gate: PASS on cycle 3 of 3. Chapter 1: PASS on cycle 2 of 3. Chapter 2: REVISE on cycle 1 of 3. Stage A remains pending accepted Chapters 2–3, objective evals, and blind judging.
 
 ## Diagnosis
 
@@ -32,15 +34,17 @@ Normalization removed run-001's failure mechanism: none of run-002's blockers in
 
 It did not make planning one-shot reliable. Two semantic contradictions, one borrowed analogy, and one whole-artifact rewrite regression still required the full three cycles. Therefore H-039's at-most-one-revision prediction failed even though the plan gate passed. Chapter 1 now provides one positive downstream sufficiency sample: an isolated writer corrected all execution defects from the lean card and a review, without a plan or prompt amendment. Chapters 2–3 and blind product judgments are still required before a causal verdict.
 
+Chapter 2 R1 is a second discriminating context test. Every omitted, premature, drifted, or prohibited element was unambiguous in the permitted plan/style inputs, including the chapter ownership of LX-P03 and AN-10. The observed mechanism is writer selection and boundary execution, not deleted plan information. R2 therefore changes only one input—the fresh R1 review—and predicts correction without any method-asset amendment; acceptance or a new execution defect will measure writer-review convergence, while only a failure traceable to absent/ambiguous plan context counts against H-039.
+
 ## Hypothesis outcomes
 
 ### H-039 — normalized agentic master plan
 
 - **Pre-registered mechanism, lever, controls, prediction:** Duplicated exact representations caused run-001's plan-review failures. Normalize shared decisions once while holding accepted research/framing and Sol `ultra` fixed; predict plan acceptance in at most one substantive revision and Chapter 1 in the same run.
-- **Result / deciding evidence:** Run-002 plan reviews contained zero occurrence-count, audit/state-matrix, repeated-SUMMARY, or cross-table-arithmetic blockers. The 21-chapter, 60,000-word plan passed, but only on cycle 3 after unrelated semantic repairs and one rewrite regression. Chapter 1 R1 then failed on execution defects even though every needed mantra, evidence limit, scene, instruction, and anatomy rule was present in its permitted inputs. Whole-artifact R2 corrected all six blockers and received fresh `ACCEPT` without changing the lean plan, writer prompt, style guide, model, or reasoning mode.
+- **Result / deciding evidence:** Run-002 plan reviews contained zero occurrence-count, audit/state-matrix, repeated-SUMMARY, or cross-table-arithmetic blockers. The 21-chapter, 60,000-word plan passed, but only on cycle 3 after unrelated semantic repairs and one rewrite regression. Chapter 1 R1 failed on supplied-context execution defects; whole-artifact R2 corrected all six and received fresh `ACCEPT` without changing the lean plan, writer prompt, style guide, model, or reasoning mode. Chapter 2 R1 then failed on six new execution defects, all directly contradicted or supplied by its inputs; no blocker required information deleted by normalization.
 - **Causal verdict:** `INCONCLUSIVE` overall, with the bookkeeping submechanism supported and one positive downstream-sufficiency sample. The plan cycle-count prediction is falsified. Chapter 1 acceptance is evidence against context starvation, but Chapters 2–3 and blind judgments are still required.
 - **Rival explanations / signal risk:** False positive—Chapter 1's entry-contract card is sufficient while later cards or continuity seams are starved. False negative—independent writer defects are blamed on normalization despite supplied context. Same-model planning and a single accepted chapter remain sampling confounds; fresh reviews reduce memory contamination.
-- **Next discriminating test:** Keep R3 plan, style guide, writer prompt, model, and reasoning mode fixed; generate Chapters 2–3 with only accepted prior-chapter continuity, then run objective and blind pairwise judgments. Count against H-039 only failures traceable to context deliberately removed by normalization.
+- **Next discriminating test:** Regenerate Chapter 2 whole from its review with every asset, model, and reasoning setting fixed; then generate Chapter 3 with only accepted prior-chapter continuity and run objective and blind pairwise judgments. Count against H-039 only failures traceable to context deliberately removed by normalization.
 
 ## Amendments proposed for next run
 
