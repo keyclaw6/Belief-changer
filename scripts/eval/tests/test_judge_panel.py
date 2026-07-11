@@ -147,6 +147,8 @@ class PanelCompletenessTests(unittest.TestCase):
             summary = json.loads((out / "judge-summary.json").read_text(encoding="utf-8"))
             self.assertEqual(summary["invalid_judgments"], 1)
             self.assertFalse(summary["panel_complete"])
+            self.assertEqual(summary["protocol"], "legacy-noncanonical-api")
+            self.assertFalse(summary["canonical"])
 
 
 class ReasoningEffortTests(unittest.TestCase):

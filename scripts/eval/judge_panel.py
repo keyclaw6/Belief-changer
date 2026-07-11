@@ -1,44 +1,17 @@
-"""Blind judge panel runner; no --prompt selects the Stage-A v2 protocol."""
-import argparse, json, os, re, sys, time, urllib.error, urllib.request
+"""Blind judge panel runner; no --prompt selects the native Stage-A v2 protocol."""
+import argparse, json, os, re, sys, urllib.error
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 import evallib as E
 import model_endpoint as M
+import native_judge as N
 from judge_legacy import DIMS, aggregate, map_verdict, validate_pairwise
 import judge_protocol as V2
-
-
 JUDGE_DIR = Path(__file__).resolve().parents[2] / "calibration" / "judges"
 ROLE_SPECS = V2.ROLE_SPECS
-
-def chat(base_url, api_key, model, content, reasoning_effort, max_tokens,
-         temperature=0.2, retries=3):
-    url = base_url.rstrip("/") + "/chat/completions"
-    body = {"model": model, "messages": [{"role": "user", "content": content}],
-            "reasoning": {"effort": reasoning_effort}, "max_tokens": max_tokens}
-    if temperature is not None:
-        body["temperature"] = temperature
-    for attempt in range(retries):
-        try:
-            request = urllib.request.Request(
-                url, data=json.dumps(body).encode(),
-                headers={"Authorization": f"Bearer {api_key}",
-                         "Content-Type": "application/json"})
-            with urllib.request.urlopen(request, timeout=600) as response:
-                data = json.loads(response.read().decode())
-            return data["choices"][0]["message"]["content"]
-        except urllib.error.HTTPError as exc:
-            if exc.code == 400 and temperature is not None:
-                body.pop("temperature", None)
-                temperature = None
-                continue
-            if exc.code in (429, 500, 502, 503, 504) and attempt < retries - 1:
-                time.sleep(10 * (attempt + 1))
-                continue
-            raise
-    raise RuntimeError(f"chat: exhausted retries for {model}")
-
+chat = M.chat
+parse_reasoning_efforts = M.parse_reasoning_efforts
 def extract_json(text):
     start = text.find("{")
     while start != -1:
@@ -79,15 +52,26 @@ def judge_pair(cfg, model, ch_n, ours_text, ref_text, order):
             record["validation_error"] = str(exc)
     return record
 
-def judge_role(cfg, model, role, cell, order):
-    raw, parsed, allowance = _completion(
-        cfg, model, cfg["prompts"][role], cell["ours"], cell["ref"], order)
+def judge_role(cfg, judge_identity, role, cell, order):
+    a_text, b_text = ((cell["ours"], cell["ref"]) if order == 0
+                      else (cell["ref"], cell["ours"]))
+    content = (f'{cfg["prompts"][role]}\n\n=== TEXT A ===\n{a_text}'
+               f"\n\n=== TEXT B ===\n{b_text}")
+    raw, transport, transport_error = N.complete(content, judge_identity)
+    try:
+        parsed = json.loads(raw)
+    except json.JSONDecodeError:
+        parsed = None
     record = {"protocol": "stage-a-v2", "role": role, "scope": ROLE_SPECS[role]["scope"],
               "target": cell["target"], "ours_chapters": cell["ours_chapters"],
-              "ref_chapters": cell["ref_chapters"], "model": model, "order": order,
-              "max_output_allowance": allowance, "raw": raw, "parsed": parsed}
-    if parsed is None:
-        record["validation_error"] = "no complete JSON object found"
+              "ref_chapters": cell["ref_chapters"], "model": N.MODEL,
+              "judge_identity": judge_identity, "order": order,
+              "max_output_allowance": None, "transport": transport,
+              "raw": raw, "parsed": parsed}
+    if transport_error:
+        record["validation_error"] = transport_error
+    elif parsed is None:
+        record["validation_error"] = "response is not one strict JSON object"
     else:
         ours_key, ref_key = ("A", "B") if order == 0 else ("B", "A")
         try:
@@ -95,19 +79,6 @@ def judge_role(cfg, model, role, cell, order):
         except ValueError as exc:
             record["validation_error"] = str(exc)
     return record
-
-def parse_reasoning_efforts(raw, models):
-    try:
-        efforts = dict(item.rsplit("=", 1) for item in raw.split(","))
-    except ValueError as exc:
-        raise ValueError("reasoning efforts must use model=effort entries") from exc
-    efforts = {model.strip(): effort.strip() for model, effort in efforts.items()}
-    if "" in efforts or any(not effort for effort in efforts.values()):
-        raise ValueError("reasoning effort model and value must be non-empty")
-    missing = [model for model in models if model not in efforts]
-    if missing:
-        raise ValueError("missing reasoning effort for: " + ", ".join(missing))
-    return efforts
 
 def parse_pairs(raw, ours_count, ref_count):
     pairs = []
@@ -120,8 +91,6 @@ def parse_pairs(raw, ours_count, ref_count):
             raise SystemExit(f"judge_panel: out-of-bounds --pairs entry: {item!r}")
         pairs.append(pair)
     return pairs
-
-
 def degrade_text(text):
     """Make a local, deterministic incoherent control while retaining topic vocabulary."""
     sentences = [part.strip() for part in re.split(r"(?<=[.!?])\s+", text) if part.strip()]
@@ -129,14 +98,12 @@ def degrade_text(text):
         return " ".join(reversed(sentences[::3]))
     words = text.split()
     return " ".join(reversed(words[::3]))
-
-
 def stage_a_materials(ours, ref, pairing, control=""):
     craft, ours_block, ref_block = [], [], []
     ours_numbers, ref_numbers = [], []
     for position, (ours_n, ref_n) in enumerate(pairing, 1):
         ours_text = E.strip_markdown(ours[ours_n - 1][1])
-        ref_text = ref[ref_n - 1][1]
+        ref_text = E.strip_markdown(ref[ref_n - 1][1])
         if control == "identical":
             ours_text = ref_text
         elif control == "degraded-reference":
@@ -169,7 +136,8 @@ def _write_record(outdir, record, legacy=False):
     if legacy:
         path = outdir / f'ch{record["chapter"]:02d}-{safe_model}-o{record["order"]}.json'
     else:
-        path = (outdir / record["role"] / record["target"] / safe_model /
+        safe_identity = re.sub(r"[^a-zA-Z0-9.-]+", "_", record["judge_identity"])
+        path = (outdir / record["role"] / record["target"] / safe_identity /
                 f'o{record["order"]}.json')
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(record, indent=1), encoding="utf-8")
@@ -181,45 +149,64 @@ def main():
     parser.add_argument("--ref", required=True)
     parser.add_argument("--chapters", default="1-3")
     parser.add_argument("--pairs", default="", help="override pairing, e.g. 1:2,2:3")
-    parser.add_argument("--models", required=True, help="comma-separated exact model ids")
-    parser.add_argument("--reasoning-efforts", required=True,
-                        help="comma-separated exact model=effort mappings")
+    parser.add_argument("--models", default="", help="legacy API model ids; requires --prompt")
+    parser.add_argument("--reasoning-efforts", default="",
+                        help="legacy API model=effort mappings; requires --prompt")
     parser.add_argument("--max-output-allowances", default="")
     parser.add_argument("--prompt", default="", help="explicit legacy single-role prompt")
+    parser.add_argument("--judge-identities", default=",".join(N.DEFAULT_IDENTITIES),
+                        help="exactly two fresh native replication labels for canonical Stage-A")
+    parser.add_argument("--validated-controls", default="",
+                        help="identical,degraded control summary paths required for product mode")
     parser.add_argument("--control", choices=("identical", "degraded-reference"), default="",
                         help="Stage-A v2 prompt-control run")
     parser.add_argument("--out", required=True)
     parser.add_argument("--base-url", default="")
     parser.add_argument("--api-key-env", default="")
     args = parser.parse_args()
-    models = [model.strip() for model in args.models.split(",") if model.strip()]
-    if not models:
-        parser.error("--models must select at least one model")
     legacy = bool(args.prompt)
     if args.control and legacy:
         parser.error("--control is available only in the Stage-A v2 no--prompt protocol")
-    if not legacy and (len(models) < 2 or len({model.split("/", 1)[0] for model in models}) < 2):
-        parser.error("Stage-A v2 requires at least two configured model families")
-    try:
-        efforts = parse_reasoning_efforts(args.reasoning_efforts, models)
-    except ValueError as exc:
-        parser.error(str(exc))
+    if legacy and args.validated_controls:
+        parser.error("--validated-controls is available only in canonical Stage-A")
+    if args.control and args.validated_controls:
+        parser.error("control runs cannot consume prior controls")
+    models = [model.strip() for model in args.models.split(",") if model.strip()]
+    if legacy:
+        if not models:
+            parser.error("legacy --prompt mode requires --models")
+        try:
+            efforts = parse_reasoning_efforts(args.reasoning_efforts, models)
+        except ValueError as exc:
+            parser.error(str(exc))
+    else:
+        forbidden = (args.models, args.reasoning_efforts, args.max_output_allowances,
+                     args.base_url, args.api_key_env)
+        if any(forbidden):
+            parser.error("canonical Stage-A uses native Codex judges; API/OpenRouter flags are forbidden")
+        try:
+            identities = N.parse_identities(args.judge_identities)
+        except ValueError as exc:
+            parser.error(str(exc))
     ours = E.load_chapters(args.ours)
     ref = E.load_chapters(args.ref, exts=(".txt", ".md"))
     pairing = (parse_pairs(args.pairs, len(ours), len(ref)) if args.pairs else
                [(n, n) for n in E.parse_range(args.chapters, min(len(ours), len(ref)))])
-    base_url, api_key = _endpoint(args)
-    if not base_url or not api_key:
-        raise SystemExit("judge_panel: provide OPENROUTER_API_KEY, or LITELLM_BASE_URL"
-                         " + LITELLM_API_KEY, or --base-url/--api-key-env")
-    try:
-        allowances = (M.parse_output_allowances(args.max_output_allowances, models)
-                      if args.max_output_allowances else
-                      M.resolve_output_allowances(base_url, api_key, models))
-    except (ValueError, urllib.error.URLError, json.JSONDecodeError) as exc:
-        raise SystemExit(f"judge_panel: cannot resolve endpoint output allowance: {exc}")
-    cfg = {"base_url": base_url, "api_key": api_key, "reasoning_efforts": efforts,
-           "max_output_allowances": allowances}
+    if not legacy and (len(pairing) != 3 or len(set(pairing)) != 3):
+        parser.error("canonical Stage-A requires exactly three unique chapter pairings")
+    cfg = {}
+    if legacy:
+        base_url, api_key = _endpoint(args)
+        if not base_url or not api_key:
+            raise SystemExit("judge_panel: legacy mode requires an API endpoint and key")
+        try:
+            allowances = (M.parse_output_allowances(args.max_output_allowances, models)
+                           if args.max_output_allowances else
+                           M.resolve_output_allowances(base_url, api_key, models))
+        except (ValueError, urllib.error.URLError, json.JSONDecodeError) as exc:
+            raise SystemExit(f"judge_panel: cannot resolve endpoint output allowance: {exc}")
+        cfg.update({"base_url": base_url, "api_key": api_key, "reasoning_efforts": efforts,
+                    "max_output_allowances": allowances})
     outdir = Path(args.out)
     outdir.mkdir(parents=True, exist_ok=True)
     records = []
@@ -233,17 +220,31 @@ def main():
                     _write_record(outdir, record, legacy=True)
                     records.append(record)
         summary = aggregate(records)
+        summary.update({"protocol": "legacy-noncanonical-api", "canonical": False,
+                        "noncanonical_reason": "historical reproduction only"})
     else:
         cfg["prompts"] = {role: (JUDGE_DIR / spec["prompt"]).read_text(encoding="utf-8")
                           for role, spec in ROLE_SPECS.items()}
+        configuration = N.instrument_configuration(cfg["prompts"], pairing, identities)
+        control_evidence = None
+        if not args.control:
+            try:
+                control_evidence = N.validate_controls(args.validated_controls, configuration)
+            except ValueError as exc:
+                parser.error(str(exc))
         for role, cells in stage_a_materials(ours, ref, pairing, args.control).items():
             for cell in cells:
-                for model in models:
+                for judge_identity in identities:
                     for order in (0, 1):
-                        record = judge_role(cfg, model, role, cell, order)
+                        record = judge_role(cfg, judge_identity, role, cell, order)
                         _write_record(outdir, record)
                         records.append(record)
         summary = V2.aggregate_v2(records)
+        summary.update({"canonical": True, "instrument_configuration": configuration,
+                        "validated_controls": control_evidence})
+        if summary["raw_judgments"] != 20 or summary["collapsed_observations"] != 10:
+            summary["panel_complete"] = False
+            summary["matrix_error"] = "canonical Stage-A requires 20 raw and 10 collapsed"
         if args.control:
             summary["prompt_control"] = V2.evaluate_control(summary, args.control)
     (outdir / "judge-summary.json").write_text(json.dumps(summary, indent=1), encoding="utf-8")

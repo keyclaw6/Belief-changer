@@ -9,7 +9,7 @@
   "hypotheses_tested": [
     "H-049"
   ],
-  "model_api": "native+openrouter",
+  "model_api": "native Codex subagents for judging and current non-writer work; OpenRouter restricted to Opus chapter writing and DeepSeek research",
   "baseline_boundary": "b39f364 — run-011 closed INCONCLUSIVE; no run-011 prose or context configuration promoted",
   "last_accepted_product": "live Chapters 1-2 from runs 002 and 004; unchanged by runs 005-012",
   "observed_failure": "plan-only commissions carry inference limits but omit permitted attribution and source texture; Opus fills the missing narrative connective tissue with invented relationships, identities, circumstances, outcomes, and efficacy",
@@ -495,22 +495,31 @@
       "calibration/judges/belief-change-efficacy.md": "6d29f64553940b52e54df5acebdb4555b80b4a7d97cc55ea676901d1b086fae4",
       "calibration/judges/literary-craft.md": "925f236ce8136f9fd0323660ac031067e394b2103d34503f60b133c8a22e7fa5",
       "calibration/judges/method-integrity-epistemic-safety.md": "1da78e468c4dcb769329f112912d84c267a2cbaac28a1c58ef4ce7137d16ad23",
-      "scripts/eval/judge_panel.py": "2d998037b53afe7a134e2b62ca7d38840224944c62e7710015e440e1de56dbaa",
-      "scripts/eval/judge_protocol.py": "dffcf16350ff218e35563ff95756099dce5afc751de4abbc46a359da83d893fb",
+      "scripts/eval/judge_panel.py": "c501b6de905bb4430de8e017fd8e0d4e971bcaf51991b29adcc8603daa1c2506",
+      "scripts/eval/judge_protocol.py": "c67d180e7840d72363ae0963b8eccd73975252162f829c0717b50ad7ca3b53b6",
+      "scripts/eval/native_judge.py": "708f5058f2a993319d2c63b7ac401fc3263f135ccb6f2d2eebe2b303ab88caa1",
       "scripts/eval/judge_legacy.py": "3f900a3a59f67d90a7a7823151b7ef16205cc7e4aa84d370bbede5fda324284e"
     },
     "roles": ["belief-change efficacy — complete three-chapter block", "literary craft — each chapter", "method integrity and epistemic safety — complete three-chapter block"],
-    "matrix": "every configured model × every role target × both A/B orders; two models and three chapters produce 20 raw judgments and 10 collapsed observations",
+    "matrix": "exactly two same-model native Sol-ultra replica identities × every role target × both A/B orders; three chapters produce 20 raw judgments and 10 collapsed identity observations",
     "quality_boundary": "no authorship or real-Carr detection field enters the v2 prompt, schema, aggregate, or gate",
     "required_controls": ["identical texts must tie stably", "intact reference must stably beat its locally degraded copy"],
     "comparability": "run-012 is the first v2 product baseline; no v2 score may be compared numerically with a legacy score",
     "causal_separation": "the measurement reset is not a factory lever and cannot support H-049; H-049 is decided by the separately preregistered source-grounded specialist review",
+    "limitations": [
+      "the degraded-reference control applies gross damage and validates severe-incoherence sensitivity, not fine parity discrimination",
+      "the blind integrity role receives no source packets and cannot verify source fidelity; grounded specialist audits remain separate",
+      "the two native Sol identities are same-model replications, not cross-family evidence",
+      "a favorable panel cannot override run-012's failed objective and length gates or make this run a Stage-A pass"
+    ],
     "legacy": "explicit --prompt remains available only for historical reproduction",
-    "status": "BLOCKED BEFORE INFERENCE — exact model configuration resolved, but OpenRouter authorization is insufficient for the two controls and target panel"
+    "status": "READY FOR NATIVE CONTROLS — product remains UNJUDGED until both controls and the panel actually run"
   },
   "judge_panel_preflight": {
     "date": "2026-07-11",
-    "status": "EXTERNAL FUNDING BLOCKER — ZERO JUDGE CALLS",
+    "founder_routing_correction_date": "2026-07-12",
+    "status": "RESOLVED ROUTING ERROR — HISTORICAL ZERO-CALL OPENROUTER PREFLIGHT PRESERVED",
+    "record_scope": "historical preflight only; this configuration was never used for inference and is not the product-judge route",
     "resolved_configuration": [
       {
         "model": "google/gemini-3.1-pro-preview",
@@ -527,13 +536,13 @@
         "catalog_maximum_output_reservation_usd": 3.84
       }
     ],
-    "required_matrix": "20 raw judgments per Stage-A v2 invocation; identical control + degraded-reference control + product panel = 60 calls under one unchanged balanced two-family configuration",
+    "required_matrix": "historical rejected proposal: 20 raw judgments per Stage-A v2 invocation; identical control + degraded-reference control + product panel = 60 OpenRouter calls under one balanced two-family configuration",
     "authenticated_credit": {
       "remaining_usd": 0.797648511,
       "source": "authenticated OpenRouter /api/v1/credits preflight",
       "secret_handling": "credential bridge deleted immediately after sourcing; key unset and child PTY exited"
     },
-    "authorization_finding": "The remaining credit cannot authorize the unchanged quality-valid matrix: one OpenRouter Sol catalog-maximum output reservation alone is $3.84, and one Gemini reservation is $0.786432 before its prompt and top-reasoning output. The first identical-control Gemini block contains approximately 22,327 input words including the role prompt.",
+    "authorization_finding": "The remaining credit could not authorize the historically proposed matrix: one OpenRouter Sol catalog-maximum output reservation alone was $3.84, and one Gemini reservation was $0.786432 before its prompt and top-reasoning output. The first identical-control Gemini block contained approximately 22,327 input words including the role prompt.",
     "execution": {
       "judge_calls": 0,
       "identical_control": "NOT RUN",
@@ -542,11 +551,20 @@
       "judgment_artifacts": [],
       "partial_matrix": false
     },
-    "instrument_boundary": "No control failed and no product judgment exists; the instrument remains unvalidated for first product use rather than invalidated by a semantic result.",
+    "instrument_boundary": "No control failed and no product judgment exists. The zero-call preflight remains historical evidence only; the v2 prompt instrument is still unvalidated for first product use.",
     "product_verdict": "UNJUDGED",
-    "causal_boundary": "H-049 remains causally REFUTED by the completed grounded specialist review; this access failure neither changes nor re-tests that verdict.",
-    "external_unblock": "Raise this key's per-key limit and account funding, or provide a newly funded OpenRouter key sufficient for the unchanged two-family controls and product panel.",
-    "next_action_after_unblock": "Run the identical and degraded-reference controls first under the exact resolved configuration; run the full blind product panel only if both controls pass. Do not form H-050 or change prose, prompts, commissions, thresholds, or judge assets first."
+    "causal_boundary": "H-049 remains causally REFUTED by the completed grounded specialist review; this historical zero-call preflight neither changes nor re-tests that verdict.",
+    "founder_routing_correction": "OpenRouter may be used only for Opus 4.6 chapter-writing calls and DeepSeek research calls. GPT/OpenAI, Gemini, Grok, planners, reviewers, auditors, and judges must never use it.",
+    "current_judge_configuration": {
+      "route": "fresh native spawned Codex subagents",
+      "model": "gpt-5.6-sol",
+      "reasoning": "ultra",
+      "replication": "exactly two same-model replica identities, each raw cell a fresh context, for every role target and A/B order; 20 raw judgments per invocation",
+      "openrouter_usage": false
+    },
+    "key_allowance_boundary": "The approximately $0.979 OpenRouter key allowance is not a panel dependency and remains untouched for permitted Opus chapter writing.",
+    "external_unblock": "RESOLVED — panel execution requires no OpenRouter funding or key-limit change.",
+    "next_action_after_correction": "Run the identical and degraded-reference controls first with the native Sol-ultra judge identities; run the full blind product panel only if both controls pass. Do not form H-050 or change prose, prompts, commissions, thresholds, or judge assets first."
   },
   "held_constant": [
     "accepted research corpus, framing, canonical plan, evidence assignments, chapter jobs, and source permissions",
@@ -578,7 +596,7 @@
     "no shared amendment, packet repair, packet resample, reviewer change, threshold change, or chapter-specific instruction after prose begins",
     "do not stop the three-chapter causal sample merely because Chapter 1 fails",
     "freeze the complete first-draft batch before any revision decision",
-    "validate both Stage-A v2 prompt controls under the exact target-panel model and reasoning configuration before interpreting a product judgment; a control failure invalidates the instrument but does not alter the frozen batch",
+    "validate both Stage-A v2 prompt controls under the exact native Sol-ultra identity configuration before interpreting a product judgment; a control failure invalidates the instrument but does not alter the frozen batch",
     "run objective evaluation, a source-grounded evidence-fidelity specialist review, and the blind target panel across the complete first-draft batch even if an internal review or mechanical gate fails; failures remain measurements rather than truncation gates",
     "do not promote semantic improvement without full product passage"
   ],

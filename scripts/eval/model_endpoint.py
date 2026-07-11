@@ -1,6 +1,51 @@
 """Endpoint-reported model limits for calibration model calls."""
 import json
+import time
+import urllib.error
 import urllib.request
+
+
+def chat(base_url, api_key, model, content, reasoning_effort, max_tokens,
+         temperature=0.2, retries=3):
+    """Historical OpenAI-compatible transport used only by legacy judging."""
+    url = base_url.rstrip("/") + "/chat/completions"
+    body = {"model": model, "messages": [{"role": "user", "content": content}],
+            "reasoning": {"effort": reasoning_effort}, "max_tokens": max_tokens}
+    if temperature is not None:
+        body["temperature"] = temperature
+    for attempt in range(retries):
+        try:
+            request = urllib.request.Request(
+                url, data=json.dumps(body).encode(),
+                headers={"Authorization": f"Bearer {api_key}",
+                         "Content-Type": "application/json"})
+            with urllib.request.urlopen(request, timeout=600) as response:
+                data = json.loads(response.read().decode())
+            return data["choices"][0]["message"]["content"]
+        except urllib.error.HTTPError as exc:
+            if exc.code == 400 and temperature is not None:
+                body.pop("temperature", None)
+                temperature = None
+                continue
+            if exc.code in (429, 500, 502, 503, 504) and attempt < retries - 1:
+                time.sleep(10 * (attempt + 1))
+                continue
+            raise
+    raise RuntimeError(f"chat: exhausted retries for {model}")
+
+
+def parse_reasoning_efforts(raw, models):
+    try:
+        efforts = dict(item.rsplit("=", 1) for item in raw.split(","))
+    except ValueError as exc:
+        raise ValueError("reasoning efforts must use model=effort entries") from exc
+    efforts = {model.strip(): effort.strip() for model, effort in efforts.items()}
+    if "" in efforts or any(not effort for effort in efforts.values()):
+        raise ValueError("reasoning effort model and value must be non-empty")
+    missing = [model for model in models if model not in efforts]
+    if missing:
+        raise ValueError("missing reasoning effort for: " + ", ".join(missing))
+    return efforts
 
 
 def parse_output_allowances(raw, models):

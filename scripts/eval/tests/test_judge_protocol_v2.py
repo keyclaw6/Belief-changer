@@ -28,9 +28,10 @@ def role_response(role, a=7, b=8, verdict="B"):
     }
 
 
-def mapped_record(model, role, target, order, response):
+def mapped_record(model, role, target, order, response, judge_identity=None):
     ours, ref = ("A", "B") if order == 0 else ("B", "A")
     return {"model": model, "role": role, "target": target, "order": order,
+            "judge_identity": judge_identity or model,
             "mapped": V2.map_role_response(response, role, ours, ref)}
 
 
@@ -118,8 +119,8 @@ class RepeatedOrderAggregationTests(unittest.TestCase):
         self.assertEqual(summary["product_parity"]["threshold_verdict"],
                          "not applied by instrument")
 
-    def test_incomplete_role_model_target_matrix_fails_closed(self):
-        """Infra: every model must judge the same targets in every role."""
+    def test_incomplete_role_identity_target_matrix_fails_closed(self):
+        """Infra: every judge identity must judge the same targets in every role."""
         records = []
         for role in V2.ROLE_SPECS:
             for model in ("google/a", "openai/b"):
@@ -134,7 +135,7 @@ class RepeatedOrderAggregationTests(unittest.TestCase):
 
         summary = V2.aggregate_v2(records)
 
-        self.assertFalse(summary["role_model_matrix_complete"])
+        self.assertFalse(summary["role_judge_identity_matrix_complete"])
         self.assertFalse(summary["panel_complete"])
 
     def test_empty_panel_is_incomplete(self):
@@ -143,53 +144,58 @@ class RepeatedOrderAggregationTests(unittest.TestCase):
 
 
 class StageAMatrixTests(unittest.TestCase):
-    def test_v2_rejects_a_single_model_family_before_loading(self):
-        """Infra: the Stage-A panel cannot collapse into one judge family."""
+    def test_canonical_v2_rejects_api_model_flags_before_loading(self):
+        """Infra: canonical judging cannot route GPT through a provider API."""
         argv = ["judge_panel.py", "--ours", "ours", "--ref", "ref",
-                "--models", "google/a,google/b",
-                "--reasoning-efforts", "google/a=high,google/b=high", "--out", "out"]
+                "--models", "openai/gpt-5.6-sol",
+                "--reasoning-efforts", "openai/gpt-5.6-sol=max", "--out", "out"]
         with (mock.patch.object(sys, "argv", argv),
               mock.patch.object(J.E, "load_chapters") as load,
+              mock.patch.object(J.N, "complete") as complete,
               contextlib.redirect_stderr(io.StringIO())):
             with self.assertRaises(SystemExit):
                 J.main()
         load.assert_not_called()
+        complete.assert_not_called()
 
-    def test_default_cli_runs_every_model_in_every_role_and_writes_scoped_paths(self):
-        """Infra: judge family and role cannot be confounded in Stage A."""
+    def test_default_cli_runs_two_fresh_identities_across_balanced_matrix(self):
+        """Infra: two same-model replications cover every role, target, and order."""
         chapters = [(Path(f"chapter-{number}.md"), f"Chapter {number}. More text.")
                     for number in range(1, 4)]
 
-        def answer(*args):
-            content = args[3]
+        def answer(content, identity):
             for role, spec in V2.ROLE_SPECS.items():
                 if f'`{spec["dims"][0]}`' in content:
-                    return json.dumps(role_response(role, 7, 7, "tie"))
+                    return json.dumps(role_response(role, 7, 7, "tie")), {
+                        "judge_identity": identity}, None
             raise AssertionError("unknown role prompt")
 
         with tempfile.TemporaryDirectory() as tmp:
             out = Path(tmp) / "out"
             argv = ["judge_panel.py", "--ours", "ours", "--ref", "ref",
-                    "--chapters", "1-3", "--models", "google/a,openai/b",
-                    "--reasoning-efforts", "google/a=high,openai/b=max",
-                    "--max-output-allowances", "google/a=100,openai/b=100",
-                    "--out", str(out)]
+                    "--chapters", "1-3", "--control", "identical", "--out", str(out)]
             with (mock.patch.object(sys, "argv", argv),
-                  mock.patch.dict(os.environ, {"OPENROUTER_API_KEY": "test"}, clear=True),
                   mock.patch.object(J.E, "load_chapters", side_effect=[chapters, chapters]),
-                  mock.patch.object(J, "chat", side_effect=answer) as chat,
+                  mock.patch.object(J.N, "complete", side_effect=answer) as complete,
                   contextlib.redirect_stdout(io.StringIO())):
                 J.main()
 
             summary = json.loads((out / "judge-summary.json").read_text(encoding="utf-8"))
-            self.assertEqual(chat.call_count, 20)
+            self.assertEqual(complete.call_count, 20)
             self.assertTrue(summary["panel_complete"])
             self.assertEqual(summary["collapsed_observations"], 10)
-            self.assertTrue(summary["role_model_matrix_complete"])
+            self.assertTrue(summary["role_judge_identity_matrix_complete"])
             self.assertEqual(summary["product_parity"]["equal_role_macro_preference_rate"],
                              0.5)
-            self.assertTrue((out / "craft" / "chapter-01" / "google_a" / "o0.json").is_file())
-            self.assertTrue((out / "efficacy" / "block" / "openai_b" / "o1.json").is_file())
+            replications = summary["judge_replications"]
+            self.assertEqual(replications["design"],
+                             "independent fresh-context same-model replications")
+            self.assertFalse(replications["cross_family_evidence"])
+            self.assertEqual(replications["identities"], list(J.N.DEFAULT_IDENTITIES))
+            self.assertTrue((out / "craft" / "chapter-01" / "sol-ultra-r1" /
+                             "o0.json").is_file())
+            self.assertTrue((out / "efficacy" / "block" / "sol-ultra-r2" /
+                             "o1.json").is_file())
 
 
 class PromptControlTests(unittest.TestCase):
@@ -202,6 +208,9 @@ class PromptControlTests(unittest.TestCase):
         self.assertEqual(identical["craft"][0]["ours"], identical["craft"][0]["ref"])
         self.assertNotEqual(degraded["craft"][0]["ours"], degraded["craft"][0]["ref"])
         self.assertEqual(degraded["craft"][0]["ref"], chapters[0][1])
+        formatted = [(Path("chapter.md"), "# Heading\n\n*Emphasis*.")]
+        product = J.stage_a_materials(formatted, formatted, [(1, 1)])
+        self.assertEqual(product["craft"][0]["ours"], product["craft"][0]["ref"])
 
     def test_control_verdicts_fail_closed(self):
         """Infra: semantic prompt controls have explicit pass conditions."""
@@ -222,24 +231,21 @@ class PromptControlTests(unittest.TestCase):
         chapters = [(Path(f"chapter-{number}.md"), f"Chapter {number}. More text.")
                     for number in range(1, 4)]
 
-        def tie(*args):
-            content = args[3]
+        def tie(content, identity):
             for role, spec in V2.ROLE_SPECS.items():
                 if f'`{spec["dims"][0]}`' in content:
-                    return json.dumps(role_response(role, 7, 7, "tie"))
+                    return json.dumps(role_response(role, 7, 7, "tie")), {
+                        "judge_identity": identity}, None
             raise AssertionError("unknown role prompt")
 
         with tempfile.TemporaryDirectory() as tmp:
             out = Path(tmp) / "out"
             argv = ["judge_panel.py", "--ours", "ours", "--ref", "ref",
-                    "--chapters", "1-3", "--models", "google/a,openai/b",
-                    "--reasoning-efforts", "google/a=high,openai/b=max",
-                    "--max-output-allowances", "google/a=100,openai/b=100",
-                    "--control", "degraded-reference", "--out", str(out)]
+                    "--chapters", "1-3", "--control", "degraded-reference",
+                    "--out", str(out)]
             with (mock.patch.object(sys, "argv", argv),
-                  mock.patch.dict(os.environ, {"OPENROUTER_API_KEY": "test"}, clear=True),
                   mock.patch.object(J.E, "load_chapters", side_effect=[chapters, chapters]),
-                  mock.patch.object(J, "chat", side_effect=tie),
+                  mock.patch.object(J.N, "complete", side_effect=tie),
                   contextlib.redirect_stdout(io.StringIO())):
                 with self.assertRaises(SystemExit):
                     J.main()

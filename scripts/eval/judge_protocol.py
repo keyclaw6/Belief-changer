@@ -97,10 +97,16 @@ def map_role_response(response, role, ours_key, ref_key):
 
 
 def _collapse_orders(key, records):
-    model, role, target = key
+    judge_identity, role, target = key
+    models = {record["model"] for record in records}
     valid = sorted((record for record in records if record.get("mapped")),
                    key=lambda record: record["order"])
-    base = {"model": model, "role": role, "target": target, "complete": False}
+    base = {"judge_identity": judge_identity,
+            "model": next(iter(models)) if len(models) == 1 else "inconsistent",
+            "role": role, "target": target, "complete": False}
+    if len(models) != 1:
+        base["validation_error"] = "one judge identity used inconsistent models"
+        return base
     if len(valid) != 2 or [record["order"] for record in valid] != [0, 1]:
         base["missing_or_invalid_orders"] = sorted({0, 1} - {record["order"] for record in valid})
         return base
@@ -151,17 +157,21 @@ def _rate(observations):
 def aggregate_v2(records):
     grouped = defaultdict(list)
     for record in records:
-        grouped[(record["model"], record["role"], record["target"])].append(record)
+        identity = record.get("judge_identity", record["model"])
+        grouped[(identity, record["role"], record["target"])].append(record)
     observations = [_collapse_orders(key, grouped[key]) for key in sorted(grouped)]
+    identities = sorted({item[0] for item in grouped})
     models = sorted({record["model"] for record in records})
-    role_models = {role: sorted({record["model"] for record in records if record["role"] == role})
-                   for role in ROLE_SPECS}
+    role_identities = {
+        role: sorted({record.get("judge_identity", record["model"]) for record in records
+                      if record["role"] == role}) for role in ROLE_SPECS}
     role_targets = {role: sorted({record["target"] for record in records
                                   if record["role"] == role}) for role in ROLE_SPECS}
     role_target_matrix = {
-        role: {model: sorted({record["target"] for record in records
-                             if record["role"] == role and record["model"] == model})
-               for model in models}
+        role: {identity: sorted({record["target"] for record in records
+                                if record["role"] == role and
+                                record.get("judge_identity", record["model"]) == identity})
+               for identity in identities}
         for role in ROLE_SPECS
     }
     roles = {}
@@ -176,22 +186,35 @@ def aggregate_v2(records):
     role_rates = [value["preference_rate_incl_half_ties"] for value in roles.values()
                   if value["preference_rate_incl_half_ties"] is not None]
     invalid = len(records) - sum(bool(record.get("mapped")) for record in records)
-    matrix_complete = bool(models) and all(
-        role_models[role] == models and role_targets[role] and
-        all(role_target_matrix[role][model] == role_targets[role] for model in models)
+    matrix_complete = bool(identities) and all(
+        role_identities[role] == identities and role_targets[role] and
+        all(role_target_matrix[role][identity] == role_targets[role]
+            for identity in identities)
         for role in ROLE_SPECS)
+    model_by_identity = {identity: sorted({record["model"] for record in records
+                                          if record.get("judge_identity", record["model"])
+                                          == identity}) for identity in identities}
+    same_model_replicated = len(models) == 1 and len(identities) > 1
     return {
         "protocol": "stage-a-v2", "raw_judgments": len(records),
         "collapsed_observations": len(observations), "invalid_judgments": invalid,
         "panel_complete": invalid == 0 and all(item.get("complete") for item in observations)
                           and matrix_complete,
-        "role_model_matrix": role_models, "role_target_matrix": role_target_matrix,
-        "role_model_matrix_complete": matrix_complete,
+        "judge_replications": {
+            "design": ("independent fresh-context same-model replications"
+                       if same_model_replicated else "distinct judge identities"),
+            "identities": identities, "model_by_identity": model_by_identity,
+            "cross_family_evidence": False if same_model_replicated else None,
+            "interpretation": ("independent replications, not cross-family evidence"
+                               if same_model_replicated else "no cross-family claim")},
+        "role_judge_identity_matrix": role_identities,
+        "role_target_matrix": role_target_matrix,
+        "role_judge_identity_matrix_complete": matrix_complete,
         "order_instability": {"observations": len(unstable),
                               "rate": round(len(unstable) / len(complete), 3) if complete else None,
-                              "ids": [f'{item["model"]}|{item["role"]}|{item["target"]}'
+                              "ids": [f'{item["judge_identity"]}|{item["role"]}|{item["target"]}'
                                       for item in unstable]},
-        "product_parity": {"unit": "collapsed model-role-target observation",
+        "product_parity": {"unit": "collapsed judge-identity-role-target observation",
                            "overall_preference_rate_incl_half_ties": _rate(complete),
                            "equal_role_macro_preference_rate": (
                                round(sum(role_rates) / len(role_rates), 3)
