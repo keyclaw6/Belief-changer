@@ -24,8 +24,10 @@ No shared factory asset changes. If the exact chapter converges, promote the pro
 
 ## Results
 
-Pending independent Grok review.
+The authenticated OpenRouter catalog exposed Grok 4.5 and accepted the requested high-reasoning/max-token parameters at request construction, but the xAI provider returned HTTP 403 before inference: "The model grok-4.5 is not available in your region." No review content or usage was produced, and account usage did not change.
+
+The exact H-044 prerequisite is therefore uninstantiated. This is infrastructure evidence, not a product verdict. Opus has not run.
 
 ## Gate verdict
 
-IN PROGRESS. No writer call until the prerequisite review corroborates the generic defect class.
+IN PROGRESS pending an explicitly preregistered allowed-model fallback or clean run close. No silent reviewer substitution and no writer call.

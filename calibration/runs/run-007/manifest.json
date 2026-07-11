@@ -62,7 +62,18 @@
       "context_length": 500000,
       "requested_max_tokens": 128000,
       "endpoint_max_completion_tokens": "unreported by authenticated catalog; max_tokens supported",
-      "calls": []
+      "calls": [
+        {
+          "request_sha256": "96aee63f2080f88fbd1287ac50d7e3a8460fb4c3084a713cdb753d68f2180c0e",
+          "http_status": 403,
+          "provider": "xAI",
+          "provider_code": "permission-denied",
+          "error": "The model grok-4.5 is not available in your region.",
+          "completion_created": false,
+          "usage_delta_usd": 0.0,
+          "artifact": "calibration/runs/run-007/infrastructure/grok-prerequisite-route-error.json"
+        }
+      ]
     },
     "writer": {
       "requested_model": "anthropic/claude-opus-4.6",
@@ -99,5 +110,6 @@
   "direction_audit": "NO-GO on shared-prompt change, Grok tie-break, or another optimization A/B; conditional GO on this one simple-loop validation",
   "factory_promotion_boundary": "the chapter may advance on convergence; the review-coverage method requires later cross-chapter replication and Stage C",
   "stop_rule": "same explicitly surfaced defect surviving this run makes three consecutive same-dimension failures and triggers HARNESS §11 escalation",
-  "notes": "No paid call has run."
+  "prerequisite_status": "UNINSTANTIATED — Grok route returned regional 403 before a completion; Opus has not run",
+  "notes": "The authenticated catalog exposed Grok 4.5, but the actual xAI route denied this region. The exact H-044 prerequisite cannot be treated as corroborated or contradicted. No usage was charged and no writer or post-review call ran."
 }

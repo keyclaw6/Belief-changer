@@ -203,8 +203,8 @@ Seeded by the harness builder (2026-07-10) as starting capital — derive priori
 - Rival explanations / signal risk: Sol and Grok may share an over-conservative evidence interpretation; Opus may succeed by stochastic resampling; a five-point craft move may not improve persuasion. Conversely, an unrelated new defect can hide successful boundary compliance. Later cross-chapter and Stage-C replication remain mandatory.
 - Product rule: only an exact convergently accepted chapter may be promoted. On acceptance, immediately execute the full Chapters 1–3 Stage-A objective and blind pairwise gates before another optimization.
 - Stop rule: recurrence of the same explicit defect is the third consecutive same-dimension failure and triggers HARNESS §11 escalation before a generic shared-prompt clarification.
-- Result: PENDING.
-- Next test: dispatch the fresh blind Grok prerequisite review.
+- Result to date: the authenticated Grok route returned HTTP 403 before inference because xAI does not make Grok 4.5 available in this region. No review, usage, writer call, or post-review occurred. The prerequisite was not instantiated, so this is neither corroboration nor contradiction of the hypothesis.
+- Next test: record the infrastructure failure and preregister any allowed-model fallback as a separate hypothesis before another call; never silently substitute a reviewer into H-044.
 
 ## H-007 — planner reasoning effort                       [RETIRED — founder-fixed 2026-07-10]
 - Gap: a reasoning-effort sweep was proposed before the founder fixed every allowed non-writer model to its top supported reasoning mode.

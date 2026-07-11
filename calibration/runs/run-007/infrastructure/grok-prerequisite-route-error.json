@@ -1,0 +1,14 @@
+{
+  "date": "2026-07-11",
+  "request_sha256": "96aee63f2080f88fbd1287ac50d7e3a8460fb4c3084a713cdb753d68f2180c0e",
+  "requested_model": "x-ai/grok-4.5",
+  "requested_reasoning": "high",
+  "requested_max_tokens": 128000,
+  "http_status": 403,
+  "provider": "xAI",
+  "provider_code": "permission-denied",
+  "provider_message": "The model grok-4.5 is not available in your region.",
+  "completion_created": false,
+  "usage_delta_usd": 0.0,
+  "sanitization": "OpenRouter account identifier omitted from the committed record."
+}
