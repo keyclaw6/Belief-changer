@@ -6,7 +6,7 @@
 
 **Stage:** A
 
-**Status:** OPEN — repeated evidence escalation remains; v2.1 degraded control failed and product quality is still unjudged
+**Status:** OPEN — repeated evidence escalation remains; v2.2 instrument repairs preregistered and product quality still unjudged
 
 ## Current stop — run-012 v2.1 degraded-reference control
 
@@ -18,9 +18,25 @@ The matching degraded-reference control then completed its full 20-context matri
 
 The strict parser correctly prevented malformed output from becoming a false positive. The relative-label instability exposes a false-negative risk in requiring exact critical-taxonomy reproducibility across fresh contexts, distinct from the absolute-label problem corrected in v2.1. Both are true failures under the frozen rules. No output was retried or repaired, and no parser, prompt, schema, threshold, material, transport, or implementation changed after observation.
 
-The product panel was **NOT RUN**. H-049 remains causally **REFUTED**, run-012 product quality remains **UNJUDGED**, and no H-050 exists. Before any new judge call, a fresh read-only measurement-direction audit must decide whether one separately preregistered instrument lever can address the observed strict-output fragility or relative-taxonomy instability without weakening unioned critical safety. Product prose and factory assets remain frozen.
+The product panel was **NOT RUN**. H-049 remains causally **REFUTED**, run-012 product quality remains **UNJUDGED**, and no H-050 exists. A fresh read-only measurement-direction audit separated the syntax and taxonomy defects; the prospective v2.2 resolution below is now frozen before implementation or any new call. Product prose and factory assets remain frozen.
 
 There is no funding or access blocker. OpenRouter was absent from all 40 v2.1 control contexts and remains restricted to permitted Opus writing and DeepSeek research.
+
+## Preregistered resolution — Stage-A v2.2
+
+V2.2 contains two independently attributed instrument repairs.
+
+**Native structured output.** Add `--output-schema` to the native Codex invocation with a role-specific JSON Schema enforcing the existing strict response object. Keep the strict parser; forbid extraction fallback, tolerant parsing, response repair, and retry. Prediction and gate: the fresh identical and degraded matrices produce 40/40 first-response strict-valid judgments. Any invalid, repaired, extracted, or retried cell refutes this repair and fails the instrument.
+
+**Operational critical taxonomy.** Keep every current critical label and response field, but add to each role prompt a shared publication-blocking severity boundary plus concise role-specific apply/omit conditions for every label. Labels apply only to directly observable defects severe enough by themselves to make a text unsafe or unfit for that role; lesser weaknesses stay in scores and evidence. Prediction and gate: zero candidate-relative critical-label drift in both fresh controls. The degraded samples must retain `incoherent_block_arc` for efficacy, `broken_chapter_flow` for each craft chapter, and `broken_continuity` for integrity as degraded-only labels in both repetitions. Any relative drift, missing core label, or core label on intact text refutes this repair.
+
+The two outcomes remain separable: first-response syntax scores the transport repair; only a complete valid matrix can score taxonomy reproducibility and core-label retention. A failure in one neither supports nor refutes the other, and both must pass.
+
+V2.1 comparative signatures, collapse, absolute-drift diagnostics, unioned critical safety, label enums, response fields, all scores and thresholds, identical/degraded/product materials and degradation, native Sol-ultra route, no harness output limit, exact two identities, fresh contexts, 20 cells per invocation, blindness, and records stay fixed. Only schema enforcement and operational label definitions may change.
+
+After implementation tests and prompt/schema/implementation hashes freeze, both controls run from scratch into new v2.2 directories. Product judgment is forbidden unless both controls and both repair predictions pass under the same configuration. V2.1 identical PASS and degraded FAIL remain immutable and are never reused.
+
+V2.2 is a non-comparable instrument baseline, not H-050. Syntax passage proves only output validity; taxonomy passage proves only control-sample reproducibility; degraded passage proves only gross-damage sensitivity. Same-model replication is not cross-family evidence, blind integrity cannot verify unseen source packets, and no panel can override run-012's objective, length, or grounded failures.
 
 ## Previous stop — run-012 v2 identical-text judge control
 
@@ -52,7 +68,7 @@ V2.1 is a new non-comparable baseline, not H-050. An identical pass establishes 
 
 **Resolved route:** 2026-07-12
 
-At the time of this route correction, H-049 was already causally **REFUTED** and the separate run-012 product verdict was **UNJUDGED** because no native control had run. The native v2 identical control later ran and failed as recorded above; v2.1 now governs the prospective continuation.
+At the time of this route correction, H-049 was already causally **REFUTED** and the separate run-012 product verdict was **UNJUDGED** because no native control had run. V2 and v2.1 later produced the preserved results above; v2.2 now governs the prospective continuation.
 
 The earlier runtime preflight proposed `google/gemini-3.1-pro-preview` at `high` and OpenRouter `openai/gpt-5.6-sol` at `max`. It calculated 60 calls across both controls and the panel, observed `$0.797648511` remaining, and found that the proposed OpenRouter matrix could not be authorized. That zero-inference preflight is preserved as history, but the route itself was wrong under the founder's clarified law.
 
@@ -60,7 +76,7 @@ No inference was attempted: zero judge calls, neither control run, no product pa
 
 OpenRouter may now be used only for Opus 4.6 chapter-writing calls and DeepSeek research calls. GPT/OpenAI, Gemini, Grok, planners, reviewers, auditors, and judges must never use it. The approximately `$0.979` key allowance is not a panel dependency and remains untouched for permitted Opus use.
 
-The canonical continuation is to spawn fresh native Codex judge subagents pinned to `gpt-5.6-sol` with `model_reasoning_effort="ultra"`. Exactly two same-model replica identities cover every Stage-A v2.1 role target and both A/B orders, producing 20 raw judgments per invocation. Run fresh identical and degraded-reference controls under that exact configuration, then run the blind product panel only if both validate. The degraded control proves only gross-damage sensitivity, blind integrity cannot verify unseen sources, and same-model replication is not cross-family evidence. There is no external blocker.
+The canonical continuation is to spawn fresh native Codex judge subagents pinned to `gpt-5.6-sol` with `model_reasoning_effort="ultra"`. Exactly two same-model replica identities cover every Stage-A v2.2 role target and both A/B orders, producing 20 raw judgments per invocation. Run fresh identical and degraded-reference controls under the preregistered v2.2 configuration, then run the blind product panel only if both validate. The degraded control proves only gross-damage sensitivity, blind integrity cannot verify unseen sources, and same-model replication is not cross-family evidence. There is no external blocker.
 
 ## Direction-audit resolution — run-012
 

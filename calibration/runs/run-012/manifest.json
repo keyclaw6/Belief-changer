@@ -2,7 +2,7 @@
   "run": "run-012",
   "date": "2026-07-11",
   "stage": "A",
-  "status": "CAUSAL_REFUTED_V2_1_DEGRADED_CONTROL_FAILED_PRODUCT_UNJUDGED",
+  "status": "CAUSAL_REFUTED_V2_1_DEGRADED_FAILED_V2_2_PREREGISTERED_PRODUCT_UNJUDGED",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "source-grounded semantic commissioning followed by a frozen Chapters 1-3 production run",
@@ -448,7 +448,7 @@
     },
     "causal_verdict": "REFUTED — all three commissions were pre-audited faithful, yet all three first drafts contain material evidence invention; this exceeds the preregistered at-least-two-drafts condition",
     "failure_autopsy": "Adding exact accepted source packets to the intelligent commissioner corrected commission fidelity but did not constrain Opus's connective persuasive prose. Across three distinct jobs it supplied unsupported identities, circumstances, prevalence, counterfactual outcomes, mechanisms, efficacy or closure claims, converted a plan-authored voice into testimony, and crossed reserved method/safety boundaries despite the relevant limits being present in the faithful commissions. Lossy plan-only evidence compression is therefore not a sufficient cause of the observed inventions; the Opus completion prior remains sufficient under this handoff.",
-    "product_boundary": "The causal refutation neither substitutes for nor suppresses the product panel. Product verdict remains UNJUDGED pending both fresh v2.1 controls and the blind target panel.",
+    "product_boundary": "The causal refutation neither substitutes for nor suppresses the product panel. Product verdict remains UNJUDGED pending both fresh v2.2 controls and the blind target panel.",
     "infrastructure": {
       "preflight_failure": "the first command placed global -a never after the exec subcommand; all three parsers exited 2 before inference and created no threads",
       "preflight_artifacts": "calibration/runs/run-012/infrastructure/grounded-audit-chapter-*-preflight.stderr.log",
@@ -755,6 +755,51 @@
       "git_diff_check": "PASS"
     }
   },
+  "judge_instrument_v2_2_preregistration": {
+    "date": "2026-07-12",
+    "status": "PREREGISTERED BEFORE IMPLEMENTATION OR ANY V2.2 MODEL CALL",
+    "historical_evidence": {
+      "v2_1_identical": {
+        "artifact": "calibration/runs/run-012/judgments/controls-v2.1/identical/judge-summary.json",
+        "sha256": "7623699f69fe00130e2266f93815262961044bfbc6ac1d60ece092cc73c194f1",
+        "verdict": "PASS — preserved, never reused as a v2.2 control"
+      },
+      "v2_1_degraded_reference": {
+        "artifact": "calibration/runs/run-012/judgments/controls-v2.1/degraded-reference/judge-summary.json",
+        "sha256": "ebfa0e571b5968f3ef30ff453297b964b552cf864719928e8fef35ec515bab8e",
+        "verdict": "FAIL — preserved, never repaired, reclassified, overwritten, or reused"
+      }
+    },
+    "observed_independent_defects": [
+      "transport syntax: three otherwise complete responses contained trailing commas and failed the strict JSON parser",
+      "critical taxonomy: all 17 valid degraded verdicts and all score-winner signs were stable, but five of seven collapsible observations changed candidate-relative critical labels"
+    ],
+    "repair_a_structured_output": {
+      "change": "Invoke native Codex with --output-schema using a role-specific JSON Schema that enforces the existing strict response object; retain the strict parser and forbid extraction fallback, tolerant parsing, response repair, and retry.",
+      "prediction": "The two fresh controls produce exactly 40/40 strictly valid judgments, 20/20 per control, with zero retries or repairs.",
+      "supported": "40/40 raw judgments parse and validate against the unchanged role response schema on their first native response.",
+      "refuted": "Any raw judgment is malformed, schema-invalid, repaired, extracted through a fallback, or retried."
+    },
+    "repair_b_operational_critical_taxonomy": {
+      "change": "In each role prompt, add a shared publication-blocking severity boundary plus concise role-specific apply/omit conditions for every existing critical label. A label applies only to a directly observable defect severe enough by itself to make the text unsafe or unfit for that role; lesser weaknesses remain in scores and evidence. Label enums and response fields do not change.",
+      "prediction": "Both fresh controls have zero candidate-relative critical-label drift under the unchanged v2.1 comparative signature. The degraded samples retain the role-aligned core labels: incoherent_block_arc for efficacy, broken_chapter_flow for every craft chapter, and broken_continuity for integrity.",
+      "supported": "All ten collapsed observations in each control have identical candidate-relative critical-label sets across repetitions, and every degraded role target retains its named core degraded-only label in both repetitions.",
+      "refuted": "Any candidate-relative critical label changes across repetitions, any named core degraded-only label is missing from either repetition, or the intact candidate receives that core degradation label."
+    },
+    "independent_attribution": "Repair A is scored only by first-response syntactic validity. Repair B is scored only after a complete valid matrix by critical-label reproducibility and core-label retention. A failure in one does not support or refute the other; both must pass for instrument use.",
+    "held_constant": [
+      "v2.1 comparative signature, collapse, absolute-drift diagnostics, unioned critical safety, and control decision rules",
+      "all existing critical label enums, response fields, score dimensions, score scales, and product/Stage-A thresholds",
+      "identical, degraded-reference, and product materials plus the deterministic degradation transform",
+      "native Codex subscription route pinned to gpt-5.6-sol at ultra with no harness output limit",
+      "exactly two same-model replica identities, one fresh context per raw cell, the 20-cell matrix per invocation, blindness, and raw records"
+    ],
+    "fresh_control_gate": "Implement and test only the two repairs, freeze prompt/schema/implementation hashes, then run identical and degraded-reference from scratch into new v2.2 directories. Product judging is forbidden unless both controls pass and both repair predictions pass under the exact same frozen configuration.",
+    "comparability": "V2.2 begins a new measurement baseline and is not numerically comparable with v2.1, v2, or legacy results.",
+    "claim_limits": "Structured-output passage proves syntax reliability only. Critical-taxonomy passage proves reproducibility only on identical and grossly degraded controls. Degraded passage proves gross-damage sensitivity, not fine parity. Same-model replication is not cross-family evidence; blind integrity cannot verify unseen sources; no panel can override failed objective, length, or grounded gates.",
+    "product_verdict": "UNJUDGED",
+    "causal_boundary": "H-049 remains REFUTED; these are instrument repairs, not H-050 or a factory hypothesis."
+  },
   "held_constant": [
     "accepted research corpus, framing, canonical plan, evidence assignments, chapter jobs, and source permissions",
     "complete style guide, chapter-writer prompt, chapter-reviewer prompt, objective thresholds, and H-049 causal rules; the judge reset is separately recorded as a new non-comparable measurement baseline",
@@ -785,7 +830,7 @@
     "no shared amendment, packet repair, packet resample, reviewer change, threshold change, or chapter-specific instruction after prose begins",
     "do not stop the three-chapter causal sample merely because Chapter 1 fails",
     "freeze the complete first-draft batch before any revision decision",
-    "implement and freeze only the preregistered Stage-A v2.1 comparative-instability lever, then validate both controls from scratch under the exact native Sol-ultra identity configuration before interpreting a product judgment; a control failure invalidates the instrument but does not alter the frozen batch",
+    "implement and freeze only the two preregistered Stage-A v2.2 repairs, then validate both controls from scratch under the exact native Sol-ultra identity configuration before interpreting a product judgment; either repair or control failure invalidates the instrument but does not alter the frozen batch",
     "run objective evaluation, a source-grounded evidence-fidelity specialist review, and the blind target panel across the complete first-draft batch even if an internal review or mechanical gate fails; failures remain measurements rather than truncation gates",
     "do not promote semantic improvement without full product passage"
   ],
