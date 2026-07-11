@@ -21,6 +21,10 @@ The authenticated credit endpoint reports:
 
 The key-detail endpoint's `$10` per-key limit and `$1.806546899` key usage are not account credit; its apparent `$8.193453101` remainder did not authorize the request. The 402 response calculated only 147 affordable completion tokens after input, which cannot produce the 2,800-word chapter and is not a quality-valid fallback.
 
+### Controlled causal check
+
+To test whether requesting the catalog maximum itself caused a false rejection, the operator repeated the complete Chapter 1 request with everything held fixed except `max_tokens`, reduced from 128,000 to 8,000—still well above the 2,800-word chapter target. OpenRouter returned the same HTTP 402 and the same 147-token affordability ceiling. This refutes reservation size as the operative cause. The authenticated key is valid, but account funding is the binding cause; changing the key's separate internal spending limit cannot create account credit.
+
 `LITELLM_BASE_URL` and `LITELLM_API_KEY` are absent in the runtime. An initial name-only environment check falsely reported `ANTHROPIC_API_KEY` as present; a non-empty check proved that it is defined but empty, and the direct API correctly returned an authentication error. Claude Code 2.1.146 reports an existing Claude Pro login and accepts the exact `--model claude-opus-4-6 --thinking disabled` controls, but a live zero-cost connectivity call returned 401 because the stored OAuth credential is stale. Reauthentication now requires the user's browser approval.
 
 ## Founder action required

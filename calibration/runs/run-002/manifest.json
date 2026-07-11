@@ -105,6 +105,18 @@
           "error": "insufficient OpenRouter account credit"
         },
         {
+          "role_and_objective": "controlled retry of the identical Chapter 1 request to test whether the endpoint-maximum reservation caused the 402",
+          "requested_model": "anthropic/claude-opus-4.6",
+          "reasoning": {"effort": "none"},
+          "requested_max_tokens": 8000,
+          "held_constant": ["writer prompt", "style guide", "accepted R3 plan", "model", "reasoning mode", "chapter assignment"],
+          "http_status": 402,
+          "generation_created": false,
+          "endpoint_reported_affordable_tokens": 147,
+          "causal_result": "same status and affordability ceiling as the 128000-token request; reservation size is not the operative blocker",
+          "error": "insufficient OpenRouter account credit"
+        },
+        {
           "role_and_objective": "Claude Pro subscription route connectivity preflight",
           "requested_model": "claude-opus-4-6",
           "provider": "Anthropic first-party through Claude Code 2.1.146",
@@ -140,5 +152,5 @@
     "calibration/HARNESS.md": "e8aa007"
   },
   "stages_rerun_because": "H-039 changes planning semantics, so plan and chapters are invalidated; accepted research and framing are not.",
-  "notes": "The normalized plan reached fit-to-write only on round 3. No blocker concerned occurrence arithmetic, duplicated audit tables, or prewritten SUMMARY prose, supporting the diagnosed run-001 mechanism; the at-most-one-revision prediction failed. Chapter evidence remains pending: OpenRouter rejected the fixed Opus request for exhausted account credit, the direct API key variable is empty, and Claude Code's existing Pro OAuth login returned 401 pending browser refresh. See calibration/ESCALATION.md."
+  "notes": "The normalized plan reached fit-to-write only on round 3. No blocker concerned occurrence arithmetic, duplicated audit tables, or prewritten SUMMARY prose, supporting the diagnosed run-001 mechanism; the at-most-one-revision prediction failed. Chapter evidence remains pending: OpenRouter rejected both the endpoint-maximum and controlled 8000-token versions of the identical fixed Opus request with the same 147-token affordability ceiling, proving reservation size was not the blocker; the account is over total credit. The direct API key variable is empty, and Claude Code's existing Pro OAuth login returned 401 pending browser refresh. See calibration/ESCALATION.md."
 }
