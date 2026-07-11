@@ -2,6 +2,7 @@
   "run": "run-001",
   "date": "2026-07-11",
   "stage": "A",
+  "status": "FAILED_AT_PLAN_GATE",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "research+framing+plan+chapters-1-3",
@@ -390,8 +391,83 @@
     "planner": "gpt-5.6-sol",
     "planner_reasoning": "ultra (native Codex Sol)",
     "planner_execution": "codex exec --ephemeral --model gpt-5.6-sol -c model_reasoning_effort=ultra",
-    "plan_reviewer": "<fresh Gemini 3.1 Pro or Grok 4.5 at top reasoning>",
-    "plan_reviewer_reasoning": "high",
+    "planning_calls": [
+      {
+        "call_id": "019f4f1c-d6ae-7e80-97ef-50a7d6ba21af",
+        "role_and_objective": "R1 master plan from the exact six-input closed context",
+        "actual_model": "gpt-5.6-sol",
+        "provider": "openai native Codex 0.144.1",
+        "reasoning": "ultra",
+        "actual_request_output": "not capped by caller",
+        "finish_reason": "complete",
+        "usage": {"total": 91499, "cost_usd": "n/a"},
+        "artifacts": ["planning/master-plan-r1.md; sha256 16e9cfdecfad9ec82d146794eebdf054b1eb54a035c956bc56004de680a04dd3"]
+      },
+      {
+        "call_id": "019f4f29-e02c-7d01-982e-0e8af47d55e0",
+        "role_and_objective": "fresh R1 master-plan review",
+        "actual_model": "gpt-5.6-sol",
+        "provider": "openai native Codex 0.144.1",
+        "reasoning": "ultra",
+        "actual_request_output": "not capped by caller",
+        "finish_reason": "complete",
+        "usage": {"total": 81397, "cost_usd": "n/a"},
+        "artifacts": ["planning/master-plan-r1-review.md; sha256 85c0761587586e0e5807b88f5dc5b6781b02f0ea8ed23cc71345e70eadfd29bb; needs changes first"]
+      },
+      {
+        "call_id": "019f4f2d-64dc-7d82-a982-1b4136d5d9b9",
+        "role_and_objective": "complete model-owned R2 plan regeneration from R1 review findings",
+        "actual_model": "gpt-5.6-sol",
+        "provider": "openai native Codex 0.144.1",
+        "reasoning": "ultra",
+        "actual_request_output": "not capped by caller",
+        "finish_reason": "complete",
+        "usage": {"total": 132927, "cost_usd": "n/a"},
+        "artifacts": ["planning/master-plan-r2.md; sha256 4cc85b8d97be22052136af8a5352d1cda5b221587f557ac9b1097132c40d601a"]
+      },
+      {
+        "call_id": "019f4f3e-4b58-7bd2-811d-d77963ad1c85",
+        "role_and_objective": "fresh R2 master-plan review",
+        "actual_model": "gpt-5.6-sol",
+        "provider": "openai native Codex 0.144.1",
+        "reasoning": "ultra",
+        "actual_request_output": "not capped by caller",
+        "finish_reason": "complete",
+        "usage": {"total": 28416, "cost_usd": "n/a"},
+        "artifacts": ["planning/master-plan-r2-review.md; sha256 96c261e4c61276e109addb624fd594794a6c16b69a02244c0f86abd411810f49; needs changes first"]
+      },
+      {
+        "call_id": "019f4f48-4e4d-7450-ac8c-767e52b8d835",
+        "role_and_objective": "complete model-owned final-cycle R3 plan regeneration from R2 review findings",
+        "actual_model": "gpt-5.6-sol",
+        "provider": "openai native Codex 0.144.1",
+        "reasoning": "ultra",
+        "actual_request_output": "not capped by caller",
+        "finish_reason": "complete",
+        "usage": {"total": 127817, "cost_usd": "n/a"},
+        "artifacts": ["planning/master-plan-r3.md; sha256 d31587b4ca9e6bcdc3813617f6c15784ed8fb06129a60f52b279fe3579e002c7"]
+      },
+      {
+        "call_id": "019f4f57-199b-72f2-9b01-d594cdf5ab86",
+        "role_and_objective": "fresh final-cycle R3 master-plan review",
+        "actual_model": "gpt-5.6-sol",
+        "provider": "openai native Codex 0.144.1",
+        "reasoning": "ultra",
+        "actual_request_output": "not capped by caller",
+        "finish_reason": "complete",
+        "usage": {"total": 85126, "cost_usd": "n/a"},
+        "artifacts": ["planning/master-plan-r3-review.md; sha256 c35a31249761dd1531283b3231552484dd28dc6ff224ff6d96f7a33fc89aca2f; needs changes first"]
+      }
+    ],
+    "plan_reviewer": "gpt-5.6-sol",
+    "plan_reviewer_reasoning": "ultra (native Codex Sol)",
+    "plan_review": {
+      "cycles_used": 3,
+      "maximum_cycles": 3,
+      "final_verdict": "needs changes first",
+      "gate": "FAILED",
+      "result": "all three plans had coherent 24-chapter arcs, complete engine and structural-slot coverage, and exact 62000-word budgets, but the denormalized bookkeeping contract kept producing contradictions across mantra schedules, chapter cards, summaries, continuity state, evidence copies, and repeated representations"
+    },
     "writer": {
       "model": "Claude Opus 4.6 exact runtime id",
       "reasoning": "disabled",
@@ -419,6 +495,6 @@
     "prompts/chapter-reviewer.md": "a91af62",
     "prompts/research-agent.md": "5bff930"
   },
-  "stages_rerun_because": "Framing R1 was regenerated once from the same accepted research after an independent bird audit found five concrete evidence or consistency defects that the broad reviewer missed.",
-  "notes": "RP-000–RP-027 are excluded bootstrap diagnostics. Run-001 is the first real research and prose baseline. Research is accepted: 23 rights-audited packets, complete R4 lived/science syntheses, 24/24 displayed quotations verified by the independent bird audit, and final Luna acceptance. Framing R2 is accepted for master planning after one bounded observed-failure correction; no new research, framework, role graph, matrix, deterministic sequence, or hand patch was added. The next artifact is the master plan. Muse Spark 1.1 is deferred until after this Opus baseline and does not block it."
+  "stages_rerun_because": "Framing R1 was regenerated once after five concrete defects. Planning used all three allowed review cycles because each complete regeneration exposed new contradictions in the same denormalized bookkeeping contract.",
+  "notes": "Run-001 is closed as a plan-gate failure. Research and framing are accepted; no chapter, objective evaluation, judge panel, Opus writer call, or Muse arm ran. Plan candidates grew from 16405 to 17389 to 19166 words while all three reviewers agreed that the whole-book arc, engines, structural slots, and 62000-word budget were present. The repeated blocker was duplicated exact-state bookkeeping, not missing book architecture. Run-002 will test one behavior-agnostic lever: a normalized single-source, outcome-reviewed planning contract."
 }

@@ -1,0 +1,5 @@
+{
+  "status": "NOT_RUN",
+  "reason": "The master-plan gate failed after the maximum three review cycles, so no chapters existed to evaluate.",
+  "chapters": []
+}

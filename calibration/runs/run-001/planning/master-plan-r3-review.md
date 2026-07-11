@@ -1,18 +1,3 @@
-# Master Plan Review — Quit Sugar
-
-**Allowed reviewer pool:** Gemini 3.1 Pro | GPT-5.6 Sol | Grok 4.5
-**Exact runtime model ID:** gpt-5.6-sol
-**Reasoning configuration:** ultra (native Codex 0.144.1)
-**Review round:** 3 of 3
-**Candidate:** `calibration/runs/run-001/planning/master-plan-r3.md`
-**Run disposition:** run-001 failed at the plan gate; no fourth review cycle is permitted.
-
-## Reviewer verdict
-
-needs changes first
-
-## Final-cycle review
-
 1. Fix the mantra audit’s mechanical contradictions.
 
    - Chapter 24 claims `BAD SUGAR` ×3, but the specified text forces four occurrences: the page-skipper gate, Instructions 4 and 11, and the M4 SUMMARY bullet. Change Chapter 24 to ×4 and R0’s total to 156, or revise Instruction 11 everywhere.
