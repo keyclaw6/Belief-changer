@@ -30,6 +30,7 @@
   },
   "experiment": {
     "unit": "three fresh sequential chapters, not one repaired chapter",
+    "first_draft_commission_exact": "Produce the strongest complete final-book chapter assigned by the embedded master plan. This is a fresh first draft: use only the embedded shared inputs, exercise your full judgment, and satisfy the writer contract without narrating your process. Return only the complete chapter, beginning with its Chapter number and title.",
     "first_draft_inputs": {
       "chapter_01": ["amended chapter-writer prompt", "fixed style guide", "fixed master plan"],
       "chapter_02": ["amended chapter-writer prompt", "fixed style guide", "fixed master plan", "fresh accepted run-009 Chapter 1 only"],
