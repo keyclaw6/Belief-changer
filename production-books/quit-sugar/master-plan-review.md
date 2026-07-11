@@ -4,41 +4,26 @@
 **Exact runtime model ID:** gpt-5.6-sol
 **Reasoning configuration:** ultra (native Codex 0.144.1)
 **Review round:** 3 of 3
-**Candidate:** `calibration/runs/run-001/planning/master-plan-r3.md`
-**Run disposition:** run-001 failed at the plan gate; no fourth review cycle is permitted.
+**Candidate hash / artifact:** e3fd7cd0ed90e2c6ef29ccabf219f6a10462b31f2ee75a6d9e1b42abbdf913b5 · `calibration/runs/run-002/planning/master-plan-r3.md`
 
-## Reviewer verdict
+## Verdict
 
-needs changes first
+fit to write from
 
-## Final-cycle review
+## Material blocking defects
 
-1. Fix the mantra audit’s mechanical contradictions.
+No material blocking defects found.
 
-   - Chapter 24 claims `BAD SUGAR` ×3, but the specified text forces four occurrences: the page-skipper gate, Instructions 4 and 11, and the M4 SUMMARY bullet. Change Chapter 24 to ×4 and R0’s total to 156, or revise Instruction 11 everywhere.
-   - Chapter 19 Q&A item 2 requires “token M4,” while §4.1 prohibits M4 in Chapter 19. Either schedule M4 there—normally body plus SUMMARY, ×2—or use only the Chapter 4/15 cross-reference.
+## Non-blocking observations
 
-2. Supply the required chapter anatomy rather than topic inventories. Except for Chapter 24, entries such as Chapter 1’s `IN THIS CHAPTER: The debate…; the BAD SUGAR line…` and `SUMMARY claims: The category is operational…` are not preview and SUMMARY bullets. For every chapter, provide explicit preview bullets matching titled body sections and explicit SUMMARY bullets containing each assigned mantra verbatim. Also freeze each SUMMARY completion following `The crucial distinction is this:`; merely saying one occurrence will appear leaves essential wording to the chapter writer.
+None.
 
-3. Repair the mantra-sheet architecture.
+## Resolution
 
-   - M6, `anticipating, bargaining, and starting over—every ordinary day`, functions only as a cost. Chapter 23’s retrospective use does not instantiate the required positive/reward valence of the stakes phrase. Freeze and schedule a genuine freedom-valence form.
-   - M3b, M8, and M9a treat whole sentences as the audited mantra while their constituent mechanism names—`the open loop`, `the deprivation method`, `the sugar standoff`, `the Ordinary Eating Compass`, and its instruments—are independently repeated elsewhere. Give every independently reusable frozen token its own schedule, or prohibit separate recurrence. “Ten-family” labeling does not resolve exact-wording control.
+- R1 review found contradictory M-06 routing and no concrete C-21 hand-over device.
+- R2 aligned M-06 and added a device, but review found that I-01 conflicted with the later chosen threshold and that the device borrowed the style guide's key image. Operator diff inspection also found an evidence regression from “sucrose-versus-sucralose” to “sucrose-versus-sucrose.”
+- R3 time-bounded I-01, replaced the borrowed key with the original empty-chair/table hand-over, restored the evidence term, and received the final fresh-context verdict below.
 
-4. Resolve the repetition-law breach in R0. Section 4 schedules a “second and final full definition” in Chapter 13 even though Chapter 1 settled it and only `BAD SUGAR` is frozen as the mantra. Either freeze the complete definition as a separately scheduled block or have Chapter 13 invoke R0 and apply it only to new edge cases without repeating or rebuilding the definition.
+No material blocking defects found.
 
-5. Correct unsupported evidence uses.
-
-   - E-SCI-07 attributes “fatigue” to research lines that mention battle, daily management, and difficulty; Chapter 19 adds “headaches,” which appears in neither research synthesis. Remove both from the sourced finding, or label them only as unsupported myths rather than evidence-backed reports.
-   - Chapter 22 says the `“I have ruined it” interpretation supplied the escalation.` E-LIV-08 records sequence, not that thought or its causal role. Present this as a possible interpretation the book challenges, not a source-established cause.
-   - Section 7 capitalizes Q5 as `“People get addicted…”`, contradicting the exact source-language ledger’s lowercase `“people get addicted…”`.
-
-6. Assign or remove E-LIV-22. It is carried in the lived-evidence ledger but no chapter uses it. If retained, assign it with the **PERCEIVED EARLY SIGNAL** limit; otherwise delete it under YAGNI.
-
-7. Complete the analogy sheet. Section 9 assigns images but generally not the specific argumentative job each performs, despite §B8 requiring “which analogy does which job.” Add a job column for every unit and distinguish scene from analogy.
-
-8. Resolve the structural-slot conflict: §11 says the historical-evidence operator is “Omitted,” while `framing.md` says all §B10 slots apply. Since the permitted research lacks the required comparison, assign Chapter 12 an explicit evidence-unavailable treatment or revise the applicability decision; do not silently omit it.
-
-No complete sheet, engine function, chapter assignment, or required listed safety/endgame slot is otherwise missing. All chapters have mantra assignments, and the 62,000-word arithmetic is correct and within range.
-
-needs changes first
+fit to write from

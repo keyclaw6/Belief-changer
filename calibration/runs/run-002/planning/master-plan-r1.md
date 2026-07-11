@@ -370,7 +370,7 @@ The frozen wording appears only here. Chapter cards route IDs.
 | M-03 | `the sugar trap` | Central escape label. The trap is a learned attribution and decision structure, not an inner creature. | C-03 | C-04, C-10, C-11, C-12, C-13, C-14, C-15, C-16, C-17, C-18, C-19, C-20, C-21 | The compact name for what has ended. |
 | M-04 | `a special pleasure or rescue` | Illusion-namer. It isolates the exact claim under examination without denying taste or emotion. | C-04 | C-06, C-07, C-08, C-09, C-10, C-12, C-13, C-14, C-15, C-16, C-17 | The question to apply whenever nostalgia grants BAD SUGAR unique credit. |
 | M-05 | `a nagging, bargaining, slightly urgent sense that this moment is missing something` | Sensory and cognitive recognition phrase. It names the experience without calling it withdrawal or an attack. | C-10 | C-11, C-12, C-14, C-15, C-16, C-17, C-18 | A recognition cue: notice the open loop without treating it as a command. |
-| M-06 | `anticipating, bargaining, and starting over` | Cost formula. The central burden is recurring decision labor. | C-01 | C-03, C-05, C-10, C-11, C-12, C-16, C-17, C-18, C-20 | The reader’s reminder of what has been left behind when memory isolates a pleasant taste. |
+| M-06 | `anticipating, bargaining, and starting over` | Cost formula. The central burden is recurring decision labor. | C-01 | C-03, C-05, C-10, C-11, C-12, C-16, C-18, C-20 | The reader’s reminder of what has been left behind when memory isolates a pleasant taste. |
 | M-07 | `the deprivation method` | Named anti-method. It describes behavior control that preserves belief in a lost reward; it never names qualified clinical care. | C-05 | C-06, C-10, C-11, C-12, C-14, C-16, C-17, C-18, C-21 | A diagnostic label for renewed fighting, punishment, or compensation. |
 | M-08 | `When the benefit loses its credit, the battle loses its job.` | Ease operator and compressed mechanism. Understanding removes the purpose of resistance. | C-10 | C-12, C-14, C-16, C-17, C-18, C-20, C-21 | The portable explanation of how freedom works. |
 | M-09 | `You can close the daily sugar debate without policing every molecule, fighting yourself, or treating one accidental bite as failure.` | Full claim block. It unites decision quiet, the Molecule Margin, and non-conflict. | C-02 | C-05, C-12, C-16, C-17, C-18, C-20, C-21 | The reader’s compact operating promise. |
@@ -466,7 +466,7 @@ Each instruction is frozen here and copied verbatim only into its owning chapter
 
 | ID | Frozen instruction | Type | Owner | Recap placement |
 |---|---|---|---|---|
-| I-01 | `READ WITH CURIOSITY, NOT DREAD; UNTIL YOU REACH YOUR CHOSEN THRESHOLD, EAT AS YOU NORMALLY DO, BEGIN NO NEW RESTRICTION OR COMPENSATION PLAN FOR THIS METHOD, AND KEEP FOLLOWING ANY QUALIFIED CLINICAL INSTRUCTION.` | Emotional, behavioral, safety | C-01 | C-05, C-21 |
+| I-01 | `READ WITH CURIOSITY, NOT DREAD; WHILE YOU READ, EAT AS YOU NORMALLY DO, BEGIN NO NEW RESTRICTION OR COMPENSATION PLAN FOR THIS METHOD, AND KEEP FOLLOWING ANY QUALIFIED CLINICAL INSTRUCTION.` | Emotional, behavioral, safety | C-01 | C-05, C-21 |
 | I-02 | `USE BAD SUGAR ONLY FOR THE DEFINED TARGET; DO NOT EXPAND IT TO WHOLE FRUIT, ORDINARY MEALS, OR EVERY CARBOHYDRATE, AND LET QUALIFIED CLINICAL ADVICE OVERRIDE THIS BOOK.` | Definitional, safety | C-02 | C-05, C-21 |
 | I-03 | `QUESTION THIS BOOK AND THE OLD SUGAR STORY BY THE SAME STANDARD; KEEP ONLY WHAT SURVIVES HONEST EXAMINATION.` | Epistemic, meta-inoculation | C-03 | C-05, C-21 |
 | I-04 | `ASK WHAT BAD SUGAR UNIQUELY DOES FOR YOU, NOT WHETHER YOU CAN MAKE ITS COSTS LOOK ACCEPTABLE.` | Evaluation rule | C-04 | C-05, C-21 |
@@ -519,7 +519,6 @@ These devices compress arguments. None is biomedical proof, evidence of commerci
 | AN-11 | Removing a billboard from a road | Closing a promoted option does not create a hole; the road, destination, and life were already present. |
 | AN-12 | The royalty bill | END-01. Saved for C-20 only. |
 | AN-13 | The pre-filled order slip | Choice remains real even when inherited payoff assumptions arrive already ticked. Honest examination clears the form. |
-| AN-14 | The guide’s empty chair at your table | After the exact instructions are set down, the guide pushes back the chair and leaves the reader at an ordinary table in an ordinary day. The recap remains available, but no food judge, supervisor, or replacement authority remains; the meal and the choice belong to the reader. |
 
 ### 10.3 Perception homework
 
@@ -569,7 +568,7 @@ These devices compress arguments. None is biomedical proof, evidence of commerci
 | 18 | C-18 — A Thought Is Not a Summons | Reframe thoughts, accidents, and deliberate returns without suppression, shame, or permission creep. | M-10; AN-10 | D1 / F4 | Core relapse-proofing and margin doctrine | I-11 | 3,000 |
 | 19 | C-19 — Old Rooms, No Old Test | Return to ordinary contexts without avoidance, substitutes, envy, evangelism, or superiority. | Natural-baseline living | D0 / F4 | Social and contextual relapse-proofing | — | 2,500 |
 | 20 | C-20 — Nothing Missing | Retire the Compass, deliver END-01, and release the reader into ordinary life. | END-01; AN-11, AN-12 | D0 / F4 | Positive-authority retirement; saved ending reframe | I-12 | 2,300 |
-| 21 | C-21 — Your Table, Your Day | Hand over the exact portable instruction set without adding a new argument. | None | D0 / F4 | Final recap and page-skimmer gate | Recap I-01–I-12 | 1,600 |
+| 21 | C-21 — Keep the Key | Hand over the exact portable instruction set without adding a new argument. | None | D0 / F4 | Final recap and page-skimmer gate | Recap I-01–I-12 | 1,600 |
 
 **Chapter-budget arithmetic:**  
 2,800 + 3,000 + 2,600 + 2,400 + 2,600 + 2,500 + 2,800 + 2,600 + 3,400 + 2,800 + 2,600 + 2,900 + 3,000 + 3,000 + 3,200 + 3,200 + 2,800 + 3,000 + 2,500 + 2,300 + 1,600 = **57,600 words**.
@@ -593,8 +592,8 @@ The demolition register rises from C-03, dominates C-05 through C-14, and drops 
 - **Instruction:** I-01.
 - **Scenes/analogies:** SC-01 makes the decision tax concrete; SC-08 shows that genuine relief may still involve maintenance.
 - **Structural responsibility:** Carry the emotional and participation contract normally supplied by front matter. State plainly that the book offers an investigation, not authority credentials.
-- **Guardrails:** No invented author story, success rate, testimonial composite, clinical pedigree, or promise that the reader will duplicate EV-08. I-01 governs only the period before the reader reaches the chosen threshold.
-- **Continuity:** Receives a skeptical, tired reader; hands C-02 a willing investigator who has begun no new restriction and understands that this reading-period instruction will expire at the chosen threshold.
+- **Guardrails:** No invented author story, success rate, testimonial composite, clinical pedigree, or promise that the reader will duplicate EV-08.
+- **Continuity:** Receives a skeptical, tired reader; hands C-02 a willing investigator who has not begun a new restriction.
 - **Budget:** 2,800.
 
 ### C-02 — Draw the Line, Free the Rest
@@ -653,7 +652,7 @@ The demolition register rises from C-03, dominates C-05 through C-14, and drops 
 - **Instruction:** I-05. Recap I-01 through I-05 at the close.
 - **Scenes/analogies:** SC-03 shows relief after prohibition without assigning it to sugar; SC-08 honours a workable managed truce; AN-07 shows how rationing can increase symbolic value.
 - **Structural responsibility:** Own the anti-method chapter and the sole mid-book instruction recap. Reframe persistence in difficult rules as evidence of effort, not weak character.
-- **Guardrails:** Do not ridicule moderation, claim all restriction backfires, or call qualified dietary treatment deprivation. Preserve I-01’s explicit endpoint at the chosen threshold when recapping it.
+- **Guardrails:** Do not ridicule moderation, claim all restriction backfires, or call qualified dietary treatment deprivation.
 - **Continuity:** Receives the correct evaluation axis; hands C-06 a reader ready to examine benefits without using denial as the test.
 - **Budget:** 2,600.
 
@@ -829,12 +828,12 @@ The demolition register rises from C-03, dominates C-05 through C-14, and drops 
 - **Arc:** Reader-owned threshold; D0 / F4.
 - **Targets:** All personas. Use RV-11 and RV-12.
 - **Evidence:** EV-08 as possibility only; EV-16 to avoid inventing a universal taper requirement.
-- **Mantras:** Echo M-01 through M-09, with M-06 confined to a brief contrast with the old decision cost.
+- **Mantras:** Echo M-01 through M-09 except M-06 only where the old cost is contrasted briefly.
 - **Instruction:** I-10.
 - **Scenes/analogies:** SC-11 stages the decision; AN-03 supplies the act of closing an unnecessary decision window.
-- **Structural responsibility:** Include the vow, immediate identity conferral, meaningless-days demolition, and “expect the unexpected” future-pacing. Preload difficult days, celebrations, accidental exposure, and a sudden old thought into the reader’s chosen understanding. Mark this threshold as the endpoint of I-01’s temporary reading-period direction and the beginning of I-10’s chosen state.
+- **Structural responsibility:** Include the vow, immediate identity conferral, meaningless-days demolition, and “expect the unexpected” future-pacing. Preload difficult days, celebrations, accidental exposure, and a sudden old thought into the reader’s chosen understanding.
 - **Guardrails:** No required final consumption, purchase, binge, forced disposal, fasting, disgust exercise, or violation of care. If the reader naturally has an already-planned final item and it is safe, attention may be directed to actual taste and expectation without dramatization; consuming it is never required.
-- **Continuity:** Receives conceptual readiness; ends I-01’s temporary behavioral direction and hands C-18 a completed decision rather than an attempt.
+- **Continuity:** Receives conceptual readiness; hands C-18 a completed decision rather than an attempt.
 - **Budget:** 2,800.
 
 ### C-18 — A Thought Is Not a Summons
@@ -882,19 +881,19 @@ The demolition register rises from C-03, dominates C-05 through C-14, and drops 
 - **Continuity:** Receives ordinary social confidence; hands C-21 only settled understanding and the portable instructions.
 - **Budget:** 2,300.
 
-### C-21 — Your Table, Your Day
+### C-21 — Keep the Key
 
-- **Belief job:** Transfer the book’s operating voice to the reader in a compact, returnable form, then relinquish authority.
+- **Belief job:** Transfer the book’s operating voice to the reader in a compact, returnable form.
 - **Objection resolved:** “What exactly do I keep?”
 - **Arc:** Final hand-over; D0 / F4.
 - **Targets:** All personas.
 - **Evidence:** None. This chapter introduces no empirical or efficacy claim.
 - **Mantras:** Echo M-02, M-03, M-07, M-08, M-09, M-10.
 - **Instruction:** Reproduce I-01 through I-12 verbatim, numbered and paired with their owning chapter references.
-- **Scenes/analogies:** AN-14 supplies the sole closing frame: after the exact recap is set at the reader’s place, the guide pushes back the chair and leaves the reader at their own ordinary table and day. The recap remains available without becoming a supervisor or replacement authority.
-- **Structural responsibility:** The body contains only a page-skimmer gate, the AN-14 closing frame, and the instruction recap. A reader who skipped ahead is directed back to C-01 because the instructions depend on the preceding understanding.
-- **Guardrails:** No new argument, evidence, rule, promise, or recap invention. I-01 must remain explicitly time-bound to the pre-threshold reading period, so its recap cannot conflict with I-10 or imply resumed consumption after C-17. The final narrative line is M-10.
-- **Continuity:** Receives the completed book and leaves the reader—not the guide—at the center of ordinary life.
+- **Scenes/analogies:** None required beyond a brief return to the key/hand-over frame; no new analogy.
+- **Structural responsibility:** The body contains only a page-skimmer gate and the instruction recap. A reader who skipped ahead is directed back to C-01 because the instructions depend on the preceding understanding.
+- **Guardrails:** No new argument, evidence, rule, promise, or recap invention. The final narrative line is M-10.
+- **Continuity:** Receives the completed book and hands the reader back to ordinary life.
 - **Budget:** 1,600.
 
 ## 13. Back-matter evidence appendix
@@ -911,7 +910,6 @@ The demolition register rises from C-03, dominates C-05 through C-14, and drops 
   - ordinary adults have a settled sugar-withdrawal syndrome;
   - one bite restarts an addiction;
   - mouse circuitry proves human compulsion;
-  - the sucrose-versus-sucralose human trial established a universal food-cue brain effect;
   - the ultra-processed-food trial isolated sugar as the cause;
   - fruit, soda, and all carbohydrates are metabolically or behaviorally interchangeable;
   - stopping guarantees weight loss, metabolic repair, mental clarity, or a taste reset;

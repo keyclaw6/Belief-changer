@@ -35,29 +35,75 @@
       "reasoning": "ultra",
       "execution": "codex exec --ephemeral --model gpt-5.6-sol -c model_reasoning_effort=ultra",
       "actual_request_output": "not capped by caller",
-      "calls": []
+      "calls": [
+        {
+          "call_id": "019f4f6d-ed82-7c90-8e2d-067dfa6da491",
+          "round": 1,
+          "usage_total_tokens": 87919,
+          "artifact_sha256": "6ac8b316462fca8e33389045c0f706e17c632f4cfb1e13f43dbdf6e1fd1cae1a"
+        },
+        {
+          "call_id": "019f4f81-47c4-7673-bf65-d6a35eaf8df6",
+          "round": 2,
+          "usage_total_tokens": 19758,
+          "artifact_sha256": "2b809b96b6024241a9280cfa0b2432b1c1f9941ba718d97ae288dd5643b12ba6"
+        },
+        {
+          "call_id": "019f4f8e-c0a7-7d63-8965-354784598b76",
+          "round": 3,
+          "usage_total_tokens": 83872,
+          "artifact_sha256": "e3fd7cd0ed90e2c6ef29ccabf219f6a10462b31f2ee75a6d9e1b42abbdf913b5"
+        }
+      ]
     },
     "plan_reviewer": {
       "model": "gpt-5.6-sol",
       "provider": "openai native Codex 0.144.1",
       "reasoning": "ultra",
-      "calls": []
+      "calls": [
+        {
+          "call_id": "not captured after CLI output truncation",
+          "round": 1,
+          "usage_total_tokens": 71564,
+          "verdict": "needs changes first",
+          "artifact_sha256": "cd443ad27d4c36a002c0e55eee9422a0dde299fb475bf510a490260360da7bba"
+        },
+        {
+          "call_id": "019f4f88-baee-7063-ac61-d2596ee33bd5",
+          "round": 2,
+          "usage_total_tokens": 79843,
+          "verdict": "needs changes first",
+          "artifact_sha256": "3406c06f93111c3537cf7d597808b2b02366342b18879fbd97337ebde9ca917e"
+        },
+        {
+          "call_id": "019f4f94-c832-7782-b552-68b097e7c943",
+          "round": 3,
+          "usage_total_tokens": 87487,
+          "verdict": "fit to write from",
+          "artifact_sha256": "bb84a9c7bf65bf28e2fdcbf51788f70fd9b8b8a6a068ce6a313e8b0e03fbe755"
+        }
+      ]
     },
     "writer": {
       "requested_model": "Claude Opus 4.6",
-      "actual_model": "pending runtime resolution",
-      "reasoning": "disabled",
+      "resolved_model": "anthropic/claude-opus-4.6",
+      "actual_model": "pending generation response",
+      "reasoning": {"effort": "none"},
       "api": "openrouter",
-      "arm": "fixed baseline"
+      "arm": "fixed baseline",
+      "catalog_context_tokens": 1000000,
+      "catalog_max_completion_tokens": 128000,
+      "connectivity": "pending; authenticated catalog resolved, no safe live key process remained for the tiny call"
     },
     "later_writer_arm": {
       "model": "muse-spark-1.1",
       "reasoning": "highest supported",
-      "status": "deferred until after the Opus baseline and official route availability"
+      "status": "deferred; absent from authenticated OpenRouter catalog, direct Meta route requires separate credential and cannot satisfy reasoning-none baseline"
     },
     "chapter_reviewer": {
-      "model": "pending allowed non-writer reviewer",
-      "reasoning": "highest supported"
+      "model": "gpt-5.6-sol",
+      "provider": "openai native Codex 0.144.1",
+      "reasoning": "ultra"
     },
     "judges": []
   },
@@ -71,5 +117,5 @@
     "calibration/HARNESS.md": "e8aa007"
   },
   "stages_rerun_because": "H-039 changes planning semantics, so plan and chapters are invalidated; accepted research and framing are not.",
-  "notes": "H-039 is falsified if planning again consumes three review cycles without a chapter or if deleted fields cause a chapter-level method/evidence failure. No reviewer blocker may be only a cross-table, occurrence-count, or prewritten-SUMMARY mismatch."
+  "notes": "The normalized plan reached fit-to-write only on round 3. No blocker concerned occurrence arithmetic, duplicated audit tables, or prewritten SUMMARY prose, supporting the diagnosed run-001 mechanism; the at-most-one-revision prediction failed. Chapter evidence now determines whether H-039 remains useful or whether removed fields caused a downstream defect."
 }
