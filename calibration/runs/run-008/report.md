@@ -43,8 +43,38 @@ The one Opus repair then completed at 2,715 wc words with zero reasoning tokens.
 | mean sentence | 16.7 | 16.6 | PASS |
 | wc words | 2,853 | 2,715 | PASS — 2,210–2,990 |
 
-The absolute craft prediction has already failed. Semantic compliance and the causal classification remain unmeasured until the two fresh Sol reviews and Gemini shadow complete; the chapter cannot be promoted under the preregistered product rule regardless of later praise.
+The absolute craft prediction failed before review. Both fresh Sol reviewers then returned "REVISE":
+
+- both independently found the complete sentences "The care is real." and "No." repeated verbatim from Chapter 2 outside a licensed zone;
+- reviewer 1 blocked the still-present C-10 mechanism claim, including "The felt grip rises and falls" and the cue/attention explanation, and caught an altered direct EV-11 quotation;
+- reviewer 2 blocked a new categorical anti-diagnosis beyond C-03 and separately identified the same surviving C-10 mechanism as a quality-level overreach.
+
+Gemini's targeted shadow returned "CLEAR", but its positive result contains a directly verifiable error: it called "People get addicted to drugs — some of us are addicted to soda." the exact EV-11 payload, while the ledger actually records lowercase "people" with a comma rather than the candidate's capitalized wording and em dash. It also missed the mechanism both Sol reviews traced to C-10. Under the preregistered shadow rule, that praise supplies no valid override.
 
 ## Gate verdict
 
-IN PROGRESS. Next: two fresh Sol reviews and the targeted Gemini evidence shadow of the frozen repair. Shared factory assets and the live book remain unchanged.
+FAIL. The chapter missed the objective craft gate and both fresh full reviewers rejected it. No Chapter 3 artifact is promoted.
+
+H-045 is **REFUTED**: two independent reviews explicitly surfaced the installation and C-10 boundaries before writing, yet the revision retained the C-10 mechanism and created new blocking defects. The exact refutation condition was therefore met; reviewer disagreement is not the cause.
+
+## Failure autopsy
+
+### Raw outcome
+
+Raw-review coverage succeeded diagnostically but failed as a production lever. The second prereview replicated the first. Opus saw both complete transcripts, the authoritative plan, style guide, previous chapter, and exact substrate. It removed much of the advertising-installation material but retained cue, attention, fluctuating-grip, and pull-dissolution claims reserved for C-10. It also reintroduced two cross-chapter sentences, altered an evidence quotation, and categoricalized disease/chemical language. Meanwhile rhythm regressed and direct address fell.
+
+### Most likely mechanism
+
+The accepted plan is sufficient and coherent, and additional feedback coverage no longer explains the failure. The shared writer contract contains the necessary general rules, but in practice its firm-assertion instruction and broad Easyway story language continue to dominate the more distributed evidence/job limits during generation. Because the same boundary survived two raw, explicit reviews, another artifact-level edit is not a discriminating test.
+
+The smallest remaining generic owner is the writer prompt's priority hierarchy: evidence permission and current-chapter ownership must explicitly outrank assertiveness, analogy, and persuasive completion. This is a behavior-agnostic clarification, not a sugar claim or a Chapter 3 patch.
+
+### Causal verdict and signal risks
+
+H-045 is refuted narrowly as feedback sufficiency; it does not show that two reviews are worse than one. Same-family review could be conservative, but the blockers quote the plan directly and the altered evidence quotation is objective. A false positive would be declaring the prompt generally broken from one chapter; the required next test must therefore regenerate all Stage-A chapters from fresh contexts and measure the three-chapter product. A false negative would be dismissing Opus entirely when the conflict may be one prompt-priority sentence.
+
+## Escalation
+
+HARNESS §11 now applies: run-005, run-006, and run-008 are three semantic production runs without gate progress on the same evidence/job-ownership dimension. Run-007 is excluded because no writer ran. Further model calls stop here.
+
+The full evidence, proposed one-lever generic amendment, and multi-chapter validation design are in "calibration/ESCALATION.md".
