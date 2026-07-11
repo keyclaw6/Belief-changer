@@ -96,7 +96,25 @@
     "reference blindness"
   ],
   "models": {
-    "commissioners": {"model": "gpt-5.6-sol", "provider": "native Codex", "reasoning": "ultra", "calls": []},
+    "commissioners": {
+      "model": "gpt-5.6-sol",
+      "provider": "native Codex",
+      "reasoning": "ultra",
+      "execution": "codex exec --ephemeral --disable multi_agent --model gpt-5.6-sol -c model_reasoning_effort=ultra --sandbox read-only",
+      "calls": [
+        {
+          "target": "C-01",
+          "thread_id": "019f513d-5946-7b53-90c4-3aac8d78f753",
+          "status": "success",
+          "artifact": "calibration/runs/run-010/commissions/chapter-01.md",
+          "sha256": "5c9237a669eebd805d4035be8463a187be9a75d203e7faf6600716dcf573eb46",
+          "input_tokens": 191729,
+          "cached_input_tokens": 157184,
+          "output_tokens": 8169,
+          "reasoning_output_tokens": 6462
+        }
+      ]
+    },
     "packet_auditor": {"model": "gpt-5.6-sol", "provider": "native Codex", "reasoning": "ultra", "calls": []},
     "writer": {"requested_model": "anthropic/claude-opus-4.6", "expected_runtime_model": "anthropic/claude-4.6-opus-20260205", "reasoning": {"effort": "none"}, "max_tokens": 128000, "calls": []},
     "chapter_reviewer": {"model": "gpt-5.6-sol", "provider": "native Codex with recorded same-model OpenRouter fallback only if unavailable", "reasoning": "ultra native or max OpenRouter", "calls": []},
