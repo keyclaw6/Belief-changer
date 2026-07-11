@@ -32,6 +32,8 @@ This is not another Chapter 3 patch. The candidate rule mentions no behavior, to
 
 The exact two-sentence generic amendment was committed at "88b6889". No other prompt, style, plan, reviewer, threshold, schema, or production-book artifact changed. The asset set is frozen before the first model call.
 
+Fresh Chapter 1 R1 completed at 2,877 wc words with Opus 4.6 and zero reasoning tokens. The first objective measurement found 46.8 second-person terms per 1,000, 7.3% questions, 38.9% short sentences, and a 14.6-word mean. These are raw product facts; no amendment or causal inference is allowed before the frozen three-chapter run is measured.
+
 ## Gate verdict
 
-IN PROGRESS. Next: fresh Chapter 1 R1 with no old chapter or review input.
+IN PROGRESS. Next: fresh blind Sol review of exact Chapter 1 R1.

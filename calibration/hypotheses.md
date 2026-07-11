@@ -237,8 +237,8 @@ Seeded by the harness builder (2026-07-10) as starting capital — derive priori
 - Product rule: promote only an accepted three-chapter set, then run objective and blind pairwise gates. A passing run-009 still requires a zero-amendment run-010 before Stage-A exit.
 - Anti-overfit boundary: the rule contains no sugar, Chapter 3, or reference logic. It remains calibration-only until multi-chapter, stability, and holdout evidence justify a founder-approved main merge.
 - Rival explanations / signal risk: fresh resampling may remove the defect without the amendment; a strict reviewer may still overclassify rhetoric; the priority rule may improve evidence discipline while weakening persuasive force. The three-chapter blind gate and no-amendment stability run distinguish these.
-- Result to date: the exact behavior-agnostic priority rule and matching self-check were committed to the shared writer prompt at 88b6889. No other asset changed and the prompt is frozen for all three chapters.
-- Next test: generate fresh Chapter 1 R1 with no old chapter or review input.
+- Result to date: the generic rule is frozen. Fresh Chapter 1 R1 completed from only the amended prompt, fixed style guide, and fixed plan at 2,877 wc words with zero reasoning tokens. Its raw craft metrics are over-direct and over-staccato; target evidence/job compliance is still unmeasured.
+- Next test: run the fresh blind Sol review of exact Chapter 1 R1 without changing any asset.
 
 ## H-007 — planner reasoning effort                       [RETIRED — founder-fixed 2026-07-10]
 - Gap: a reasoning-effort sweep was proposed before the founder fixed every allowed non-writer model to its top supported reasoning mode.

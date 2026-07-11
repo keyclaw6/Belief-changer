@@ -77,7 +77,24 @@
       "expected_runtime_model": "anthropic/claude-4.6-opus-20260205",
       "reasoning": {"effort": "none"},
       "max_tokens": 128000,
-      "calls": []
+      "calls": [
+        {
+          "chapter": 1,
+          "round": 1,
+          "first_draft": true,
+          "request_sha256": "5d81c4127a0a2f4b5f54fbe535d3bacb47e2cc16f625f5dcbb7f61702413f37e",
+          "call_id": "gen-1783771466-gmBVhhFQJL8ayG0Ixdcm",
+          "actual_model": "anthropic/claude-4.6-opus-20260205",
+          "provider": "Anthropic",
+          "reasoning": {"effort": "none", "reported_reasoning_tokens": 0},
+          "usage": {"prompt": 44506, "completion": 3801, "total": 48307, "cost_usd": 0.317555},
+          "finish_reason": "stop",
+          "artifact": "calibration/runs/run-009/chapters/chapter-01-r1.md",
+          "artifact_sha256": "7becbfeb196a1bf3cb4861e8230b736c752dafa9812f20b77fb3ffc59ab5784a",
+          "artifact_words_wc": 2877,
+          "review_status": "PENDING"
+        }
+      ]
     },
     "chapter_reviewer": {
       "model": "gpt-5.6-sol",
@@ -104,5 +121,5 @@
     "production-books/quit-sugar/master-plan.md": "5915b9f"
   },
   "direction": "factory restart across Chapters 1–3; no Chapter 3 tuning and no main merge",
-  "notes": "The exact two-sentence generic amendment is committed at 88b6889 and now frozen for the complete three-chapter run. No model call has run."
+  "notes": "The prompt remains frozen. Fresh Chapter 1 R1 completed with no old prose/review input, Opus reasoning none, and zero reported reasoning tokens. Objective craft is measured but no product or causal verdict precedes the fresh review."
 }

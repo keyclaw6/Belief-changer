@@ -1,0 +1,14 @@
+{
+  "instrument": "python3 scripts/eval/metrics.py",
+  "artifact": "calibration/runs/run-009/chapters/chapter-01-r1.md",
+  "artifact_sha256": "7becbfeb196a1bf3cb4861e8230b736c752dafa9812f20b77fb3ffc59ab5784a",
+  "wc_words": 2877,
+  "metrics_py": {
+    "words": 2818,
+    "mean_sentence_words": 14.6,
+    "pct_short_sentences": 38.9,
+    "questions_per_100_sents": 7.3,
+    "second_person_per_1000": 46.8,
+    "first_person_per_1000": 6.4
+  }
+}
