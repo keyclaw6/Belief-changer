@@ -16,7 +16,8 @@
     "retrieval_subagents": [
       {"role": "science retrieval", "runtime_model": "not exposed by Codex collaboration runtime", "accepted_packets": ["S-001", "S-002", "S-003", "S-004", "S-005", "S-006"]},
       {"role": "lived-experience retrieval", "runtime_model": "not exposed by Codex collaboration runtime", "accepted_packets": ["S-007", "S-008", "S-009", "S-010", "S-011", "S-012"]},
-      {"role": "industry retrieval", "runtime_model": "not exposed by Codex collaboration runtime", "accepted_packets": ["S-013", "S-014", "S-015", "S-016", "S-017", "S-018", "S-019"]}
+      {"role": "industry retrieval", "runtime_model": "not exposed by Codex collaboration runtime", "accepted_packets": ["S-013", "S-014", "S-015", "S-016", "S-017", "S-018", "S-019"]},
+      {"role": "focused lived-evidence retrieval and source audit", "runtime_model": "gpt-5.6-luna max with model-chosen subagents", "accepted_packets": ["S-020", "S-021", "S-022", "S-023"]}
     ]
   },
   "models": {
@@ -167,6 +168,34 @@
         "finish_reason": "complete",
         "usage": {"total": 25239, "cost_usd": "n/a"},
         "artifacts": ["MORE RESEARCH REQUIRED; focused lived-evidence commission; review sha256 568a956c7a8b35366cb960e691ad2df3dd8f3e2a0c6986fccc7100814807efe2"]
+      },
+      {
+        "call_id": "019f4e90-94a4-7903-9022-a5d7cade1cc6",
+        "role_and_objective": "focused model-owned lived-evidence retrieval for the five reviewer-identified gaps",
+        "requested_model": "gpt-5.6-luna",
+        "actual_model": "gpt-5.6-luna",
+        "provider": "openai native Codex 0.144.1",
+        "reasoning": "max",
+        "endpoint_requested_output": "native session; no caller max_tokens",
+        "authorized_output": "not exposed",
+        "actual_request_output": "not capped by caller",
+        "finish_reason": "complete",
+        "usage": {"total": "n/a", "cost_usd": "n/a"},
+        "artifacts": ["four candidate packets and bank integration; sha256 bc072b0b2a399fda41cda20d11e78f86f9f73b4fc20bfee0f01f1ef7849d0400; rejected because interpretation support was not retained"]
+      },
+      {
+        "call_id": "019f4ea3-2ca2-7de3-aff0-1c111281dd33",
+        "role_and_objective": "fresh canonical-page audit and complete correction of S-020 through S-023",
+        "requested_model": "gpt-5.6-luna",
+        "actual_model": "gpt-5.6-luna",
+        "provider": "openai native Codex 0.144.1",
+        "reasoning": "max",
+        "endpoint_requested_output": "native session; no caller max_tokens",
+        "authorized_output": "not exposed",
+        "actual_request_output": "not capped by caller",
+        "finish_reason": "complete",
+        "usage": {"total": "n/a", "cost_usd": "n/a"},
+        "artifacts": ["CORRECTION REQUIRED verdict plus complete accepted replacement packets; review sha256 1a2cf2e452d522516e73303a709590f1c00ff596acdcfb83b0303ee14bf23f48"]
       }
     ],
     "research_reviewer": {
@@ -175,6 +204,13 @@
       "reasoning": "max",
       "verdict": "MORE RESEARCH REQUIRED",
       "commission": "one focused model-owned rights-safe adult lived-evidence pass for durable freedom, feared loss versus realized benefit, failed moderation/private costs/triggers, broader moments, and multi-account native language; preserve science and industry"
+    },
+    "focused_packet_reviewer": {
+      "model": "gpt-5.6-luna",
+      "provider": "openai native Codex 0.144.1",
+      "reasoning": "max",
+      "verdict": "CORRECTION REQUIRED AND SUPPLIED",
+      "result": "S-020 through S-023 replaced with source-supported excerpts and narrowed scope; ready for fresh full resynthesis"
     },
     "planner": "gpt-5.6-sol",
     "planner_reasoning": "ultra (native Codex Sol)",
@@ -209,5 +245,5 @@
     "prompts/research-agent.md": "5bff930"
   },
   "stages_rerun_because": "",
-  "notes": "RP-000–RP-027 are excluded bootstrap diagnostics. Run-001 is the first real research and prose baseline. Nineteen packets are accepted. Full Luna regeneration corrected fidelity/grounding defects, but fresh review found lived evidence too thin and commissioned one focused retrieval pass before framing. Muse Spark 1.1 is deferred until after this Opus baseline and does not block it."
+  "notes": "RP-000–RP-027 are excluded bootstrap diagnostics. Run-001 is the first real research and prose baseline. Twenty-three packets are accepted. The focused retrieval closed the commissioned lived-evidence categories, but its first packet form failed retained-support traceability; a fresh canonical-source audit supplied complete corrected replacements. Fresh resynthesis and review are next. Muse Spark 1.1 is deferred until after this Opus baseline and does not block it."
 }
