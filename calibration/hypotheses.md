@@ -6,11 +6,17 @@ The science log of the calibration loop. One entry per hypothesis; the operator 
 
 ```
 ## H-NNN — <short name>            [PROPOSED | TESTING run-NNN | SUPPORTED | REFUTED | RETIRED]
-- Gap: <observed/expected failure — mechanism, not resemblance to the reference>
-- Lever: <the ONE generic asset or config + the change>
-- Prediction: <which metric/judge dimension moves, direction>
-- Result: <what happened; run refs; if REFUTED: the autopsy (WHY, with evidence)>
+- Observation: <measured product failure; artifact and run reference>
+- Hypothesis / mechanism: <why the failure occurred>
+- Lever and controls: <the ONE generic change; what remains fixed>
+- Prediction: <pre-run falsifiable metric/judge movement>
+- Result / evidence: <numbers, judgments, and artifact links; separate outcome from explanation>
+- Causal verdict: <SUPPORTED | REFUTED | INCONCLUSIVE; why this evidence identifies—or does not identify—the cause>
+- Rival explanations / signal risk: <confounds; how a false positive or false negative could occur>
+- Next test: <replication, discriminating test, or stop>
 ```
+
+Legacy entries may retain the earlier Gap/Lever/Prediction/Result labels. Every new hypothesis and every result updated after 2026-07-11 uses the full causal form. Never mark a lever REFUTED when it was not actually instantiated, the outcome was not measured sensitively, or another changed variable can explain the result; mark it INCONCLUSIVE and run the discriminating test. Never mark it SUPPORTED from reviewer compliance alone—blind product evidence must match the pre-registered prediction.
 
 Seeded by the harness builder (2026-07-10) as starting capital — derive priorities from run-001's diagnosis; statuses and new entries are yours (operator). Constants: run-001 writer = Opus 4.6 reasoning-none; the anti-repetition context law; the mantra law. A later Muse Spark 1.1 arm is a separate end-to-end writer hypothesis.
 
@@ -137,6 +143,9 @@ Seeded by the harness builder (2026-07-10) as starting capital — derive priori
 - Lever: one behavior-agnostic planner/reviewer change. Each book decision exists once in a normalized plan; compact chapter cards reference it. Keep blindness, method integrity, false belief/forks/redefinition/safety, one compact evidence ledger with grade + limit + source ID, 6–10 model-chosen frozen mantras with debut/echo chapter IDs, the exact instruction list, a coherent arc, one job/persona/evidence/scene assignment per chapter, and integer budgets with an exact sum. Delete occurrence-count arithmetic, audit/state matrices, repeated full mantra text, prewritten previews/theses/landings/SUMMARY prose, duplicated persona/slot tables, and generic style rules restated per chapter. Review blocks only method integrity, evidence honesty, blindness, length, or incoherent whole-book architecture; chapter anatomy and prose density are judged on the actual chapter.
 - Prediction: run-002's plan is accepted with at most one substantive revision and Chapter 1 is produced in the same run. No reviewer blocker is a cross-table, occurrence-count, or prewritten-SUMMARY mismatch. The lever is falsified if removed fields cause a chapter-level method/evidence failure or planning again consumes three cycles without a chapter.
 - Result: Run-002 removed the diagnosed bookkeeping failure: its three reviews contained no occurrence-count, audit/state-matrix, repeated-SUMMARY, or cross-table-arithmetic blocker. Sol `ultra` produced a coherent 21-chapter, exactly 60,000-word plan at 11,512–11,712 words versus run-001's 16,405–19,166. R1 had two semantic defects (M-06 routing and no closing device). R2 fixed those but its whole-plan rewrite introduced a sucrose/sucralose typo; fresh review found an instruction/threshold contradiction and a closing image borrowed from the style guide. R3 resolved all known defects and received `fit to write from`. The plan therefore passed, but only on cycle 3: the at-most-one-substantive-revision prediction is falsified. Keep TESTING until Chapters 1–3 show whether the normalized cards are sufficient; a chapter-level omission caused by deleted fields would refute the lever's downstream claim.
+- Causal verdict: INCONCLUSIVE overall, with the bookkeeping submechanism supported. Removing duplicated representations eliminated every run-001-style bookkeeping blocker, but the cycle-count prediction failed because independent semantic defects and one rewrite regression consumed all three rounds. Plan acceptance alone cannot establish that the normalized cards are sufficient for prose.
+- Rival explanations / signal risk: A false positive would occur if the plan reviewer accepts the lean cards but isolated writers lack evidence, mantra, scene, or continuity context. A false negative would occur if the three-cycle count is blamed on normalization even though none of the blocking defects was caused by a deleted field. Fresh-context reviews reduce reviewer-memory confounding; using the same planner model across rounds remains a sampling/model confound.
+- Next test: Hold the accepted R3 plan, style guide, and writer prompt fixed. Generate and blindly judge Chapters 1–3. Attribute a downstream failure to H-039 only when the missing or ambiguous context traces to information deliberately removed by normalization; otherwise open a separate chapter-writing hypothesis.
 
 ## H-007 — planner reasoning effort                       [RETIRED — founder-fixed 2026-07-10]
 - Gap: a reasoning-effort sweep was proposed before the founder fixed every allowed non-writer model to its top supported reasoning mode.

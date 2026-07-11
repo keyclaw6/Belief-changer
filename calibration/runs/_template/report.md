@@ -19,7 +19,14 @@
 2. …
 
 ## Hypothesis outcomes
-<H-NNN: SUPPORTED/REFUTED + the number that decided it. REFUTED requires the autopsy: the mechanism that produced the failure, with evidence (metric deltas, judge notes, transcript excerpts) — no preemptive burials (HARNESS §10)>
+For each tested hypothesis record:
+- **Pre-registered mechanism, lever, controls, prediction:** <what was expected and what stayed fixed>
+- **Result / deciding evidence:** <raw numbers, judgments, artifact links>
+- **Causal verdict:** <SUPPORTED | REFUTED | INCONCLUSIVE, with why>
+- **Rival explanations / signal risk:** <confounds and false-positive/false-negative paths>
+- **Next discriminating test:** <what would separate the remaining causes>
+
+REFUTED still requires the failure autopsy in HARNESS §10; never convert an uninstantiated lever, insensitive measurement, or confounded run into a false negative. Never convert reviewer compliance without predicted blind product movement into a false positive.
 
 ## Amendments proposed for next run
 <≤1 lever (or attributed batch): asset, change, hypothesis it tests>

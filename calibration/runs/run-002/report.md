@@ -28,7 +28,13 @@ It did not make planning one-shot reliable. Two semantic contradictions, one bor
 
 ## Hypothesis outcomes
 
-H-039: `TESTING`. Mechanism supported for eliminating denormalized-bookkeeping failures; cycle-count prediction falsified; downstream sufficiency pending Chapters 1–3.
+### H-039 — normalized agentic master plan
+
+- **Pre-registered mechanism, lever, controls, prediction:** Duplicated exact representations caused run-001's plan-review failures. Normalize shared decisions once while holding accepted research/framing and Sol `ultra` fixed; predict plan acceptance in at most one substantive revision and Chapter 1 in the same run.
+- **Result / deciding evidence:** Run-002 reviews contained zero occurrence-count, audit/state-matrix, repeated-SUMMARY, or cross-table-arithmetic blockers. The 21-chapter, 60,000-word plan passed, but only on cycle 3 after unrelated semantic repairs and one rewrite regression. Chapter evidence is not yet available.
+- **Causal verdict:** `INCONCLUSIVE` overall; the bookkeeping submechanism is supported, while the cycle-count prediction is falsified. Plan-review success cannot establish downstream card sufficiency.
+- **Rival explanations / signal risk:** False positive—lean cards pass review but starve isolated writers. False negative—three semantic/rewrite defects are incorrectly attributed to normalization despite no deleted-field blocker. Same-model planning remains a confound; fresh reviews reduce memory contamination.
+- **Next discriminating test:** Keep R3 plan, style guide, and writer prompt fixed; generate and blindly judge Chapters 1–3. Count against H-039 only failures traceable to context deliberately removed by normalization.
 
 ## Amendments proposed for next run
 
