@@ -1,6 +1,6 @@
 # Run report — run-012
 
-**Stage:** A **Scope:** source-grounded commissions plus frozen Chapters 1-3 production **Causal verdict:** ACTIVE — grounded specialist measurement pending **Product verdict:** UNJUDGED — blind v2 panel pending
+**Stage:** A **Scope:** source-grounded commissions plus frozen Chapters 1-3 production **Causal verdict:** REFUTED — material invention in 3/3 grounded first drafts **Product verdict:** UNJUDGED — controlled blind v2 panel pending
 
 ## What will run
 
@@ -41,7 +41,7 @@ The C-02 one-shot transport wrote the complete response before raising a post-wr
 
 C-03 R1 then ran from the faithful frozen C-03 commission with committed C-02 R1 as its sole previous chapter. The catalog-maximum request received a pre-inference HTTP 402 with an exact 50,360-token authorization ceiling. The single authorized response stopped normally as `anthropic/claude-4.6-opus-20260205` through Anthropic, with 30,896 prompt tokens, 4,275 completion tokens, zero reported reasoning tokens, and a $0.261355 OpenRouter cost. Its 3,306-word artifact froze unedited at SHA-256 `835e3273...`; it is above the existing 3,120-word upper edge for its 2,600-word commission and is not accepted product. Absolute artifact paths preserved the full call metadata and avoided the C-02 recorder defect.
 
-The complete C-01-C-03 first-draft batch is now frozen before any revision decision. Its raw `wc -w` chapter lengths are 2,252, 4,162, and 3,306 words respectively. This is mechanical status only, not a causal or blind product verdict. H-049 remains active until the source-grounded specialist evaluates evidence fidelity across the complete sample, and product parity remains unjudged until the controlled blind panel exists.
+The complete C-01-C-03 first-draft batch is now frozen before any revision decision. Its raw `wc -w` chapter lengths are 2,252, 4,162, and 3,306 words respectively. The grounded specialist result below decides H-049 independently; product parity remains unjudged until the controlled blind panel exists.
 
 ## Objective batch measurement
 
@@ -59,7 +59,19 @@ The evaluator's Markdown-stripped chapter diagnostics are:
 | batch mean | — | — | 13.2 | 45.9% | 10.3 | 35.9 | 7.4 |
 | reference C-01–C-03 mean | — | — | 18.4 | 14.7% | 11.3 | 42.4 | 5.1 |
 
-The batch contains 9,533 instrument words against the reference positions' 11,176, a displayed ratio of 0.85; mean sentence length is 0.72×, short-sentence share 3.12×, question rate 0.91×, and direct address 0.85× the reference positions. These comparisons are diagnostics, not hard target-comparison vetoes and not evidence for or against H-049. The actual hard objective failure blocks promotion, but the sequencing law still requires the grounded specialist review and controlled blind v2 panel. Product quality therefore remains unjudged rather than being inferred from mechanical style ratios.
+The batch contains 9,533 instrument words against the reference positions' 11,176, a displayed ratio of 0.85; mean sentence length is 0.72×, short-sentence share 3.12×, question rate 0.91×, and direct address 0.85× the reference positions. These comparisons are diagnostics, not hard target-comparison vetoes and not evidence for or against H-049. The hard objective failure blocks promotion, but it did not suppress the required grounded review below and cannot suppress the controlled blind v2 panel. Product quality therefore remains unjudged rather than being inferred from mechanical style ratios.
+
+## Grounded specialist review and H-049 verdict
+
+Three independent fresh native `gpt-5.6-sol` contexts at `ultra` reasoning audited C-01, C-02, and C-03 separately. Each received the complete canonical plan, its frozen faithful commission, only its assigned accepted packets, and its frozen R1 candidate. They saw no reference text, judge material, metrics, other draft or review, run outcome, outside knowledge, web, or filesystem content. The exact audit contract, raw event streams, stderr, final decisions, prompt hashes, thread IDs, and usage are preserved under `audits/`; `audits/grounded-batch-r1.md` is the compact batch index.
+
+All three verdicts were **MATERIAL DEFECT**: 13 findings in C-01, 6 in C-02, and 8 in C-03. The raw decisions quote each candidate passage beside its controlling commission, packet, or plan boundary. Cross-chapter failures include unsupported identity and required-attribution changes; invented participant circumstances; prevalence, counterfactual, mechanism, efficacy, and closure overclaims; one plan-authored reader voice converted into measured participant testimony; unassigned biochemical and causal-origin imports; later-chapter argument performed early; extra instruction ownership; and clinical or household safety crossings.
+
+This result is unambiguous under the preregistration. All three commissions had already passed source fidelity, yet material evidence invention appears in all three first drafts. H-049 is therefore **REFUTED** by its “at least two first drafts” condition. The causal autopsy is that accepted-packet grounding fixed what the commission knew, but did not constrain Opus's persuasive connective tissue: it generated unsupported authority, causal explanation, outcome certainty, and source circumstances despite the necessary limits being present in the faithful commission. Lossy plan-only compression is not a sufficient cause of the prior inventions; the Opus completion prior remains sufficient under this handoff.
+
+That causal verdict says nothing about parity. The objective product gate has separately failed, while literary and belief-change quality remain unjudged until the controlled v2 panel. No chapter, prompt, commission, threshold, or shared asset changes before that panel, and no next hypothesis is formed here.
+
+The three initial CLI preflights placed the global `-a never` flag after `codex exec`; each parser exited 2 before inference and created no thread. Their stderr is preserved in `infrastructure/grounded-audit-chapter-*-preflight.stderr.log`. One corrected call per chapter then ran with the identical frozen prompt hash and completed normally. Successful stderr contains only local rollout-state fallback and file-watcher cleanup warnings; no helper result or filesystem material entered an audit.
 
 ## Founder-directed measurement correction
 
@@ -71,14 +83,14 @@ The preserved call is thread `019f51a6-5522-70a2-be45-f04094ec200e`: 108,978 inp
 
 ## Exact continuation
 
-No chapter revision or shared amendment comes next. The objective batch evaluation is complete. The exact next artifacts are the source-grounded evidence-fidelity specialist review required to decide H-049 independently of product quality, followed by both v2 prompt controls and the blind target panel.
+No chapter revision, shared amendment, or new hypothesis comes next. The objective batch evaluation and grounded specialist review are complete. The exact next artifacts are both v2 prompt controls and, only if they validate the exact instrument configuration, the blind target panel.
 
 Before product interpretation, the exact target-panel model and reasoning configuration must pass both Stage-A v2 prompt controls: identical texts tie stably, and the intact reference stably beats its locally degraded copy. A control failure invalidates the judge instrument but does not alter or suppress the frozen batch.
 
-The frozen batch will then receive the separate blind v2 target panel after its exact model/reasoning configuration passes both controls, even if an internal review or mechanical gate fails. Internal failures become measured evidence, not one-chapter stop conditions. H-049 remains active until the complete grounded sample receives its causal evidence-fidelity verdict; the product verdict is recorded separately and still requires full length, craft, objective, and blind Stage-A passage.
+The frozen batch will then receive the separate blind v2 target panel after its exact model/reasoning configuration passes both controls, even though the objective and grounded checks failed. Those failures remain measured evidence, not one-chapter stop conditions. H-049 is already causally REFUTED; the separate product verdict remains UNJUDGED and still requires full length, craft, objective, and blind Stage-A passage.
 
 ## Judge-instrument baseline
 
 Before any run-012 target-panel result, Stage-A judging changed from the legacy single chapter role to v2: belief-change efficacy and method integrity/epistemic safety judge the complete three-chapter block, while literary craft judges each chapter. Every model covers every role target in both A/B orders; the orders collapse into one observation and any verdict, score-direction, or critical-failure instability stays visible. Authorship detection is absent from the v2 quality prompt, schema, aggregate, and gate.
 
-This change answers an instrument failure, not H-049: the old panel conflated distinct quality questions and counted presentation swaps as independent votes. Run-012 is therefore the first v2 product baseline, and no resulting score is numerically comparable with a legacy run. H-049 remains governed only by its frozen causal rule and the source-grounded specialist review. Explicit `--prompt` mode preserves the old runner solely for historical reproduction.
+This change answers an instrument failure, not H-049: the old panel conflated distinct quality questions and counted presentation swaps as independent votes. Run-012 is therefore the first v2 product baseline, and no resulting score is numerically comparable with a legacy run. H-049 was decided only by its frozen causal rule and the source-grounded specialist review; the panel cannot reverse or support that causal verdict. Explicit `--prompt` mode preserves the old runner solely for historical reproduction.

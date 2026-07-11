@@ -2,7 +2,7 @@
   "run": "run-012",
   "date": "2026-07-11",
   "stage": "A",
-  "status": "OBJECTIVE_MEASURED_PENDING_GROUNDED_REVIEW_AND_V2_PANEL",
+  "status": "CAUSAL_REFUTED_PENDING_CONTROLLED_V2_PANEL",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "source-grounded semantic commissioning followed by a frozen Chapters 1-3 production run",
@@ -364,6 +364,99 @@
     ],
     "decision_boundary": "objective failure blocks product promotion but does not decide H-049, constitute blind target quality judgment, or veto the required source-grounded specialist review and controlled v2 panel"
   },
+  "grounded_specialist_review": {
+    "status": "COMPLETE — BATCH MATERIAL DEFECT",
+    "model": "gpt-5.6-sol",
+    "provider": "native Codex subscription",
+    "reasoning": "ultra",
+    "fresh_context_per_chapter": true,
+    "execution": "codex -a never -s read-only exec --ephemeral --ignore-user-config --ignore-rules --skip-git-repo-check --model gpt-5.6-sol -c model_reasoning_effort=ultra -c features.multi_agent=false --json",
+    "input_contract": {
+      "asset": "calibration/runs/run-012/audits/grounded-audit-contract.md",
+      "asset_sha256": "b6330aed46fbd9ad86f5fa022899221d51999541724ba28a940fe1149bcfd393",
+      "authority_order": "target commission, its exact assigned accepted packets, then canonical plan for chapter ownership and method/safety",
+      "per_call_inputs": "complete canonical plan, one frozen commission, only its manifest-listed accepted packets, and its frozen R1 candidate",
+      "excluded": "reference or analysis material, judge prompts or outputs, metrics, run hypotheses/outcomes beyond the embedded authority contract, competing or other drafts, other reviews, outside knowledge, web, and filesystem inspection",
+      "prompt_assembly": "render C-XX in the frozen contract; append complete files with BEGIN/END path markers in order plan, commission, assigned packets, candidate; append the fixed instruction that the final embedded file is the candidate and only the requested Markdown decision may be returned"
+    },
+    "calls": [
+      {
+        "chapter": "C-01",
+        "thread_id": "019f51eb-7545-75c2-97ae-cb9cd7e7a06c",
+        "prompt_sha256": "913509b8e2baaa29f064c432e9631e1e4e6c71bd4a5d1430cc90655301d637ae",
+        "input_tokens": 39212,
+        "cached_input_tokens": 8960,
+        "output_tokens": 25124,
+        "reasoning_output_tokens": 23308,
+        "verdict": "MATERIAL DEFECT",
+        "material_findings": 13,
+        "artifact": "calibration/runs/run-012/audits/grounded-chapter-01-r1.md",
+        "artifact_sha256": "ba2444273f654982ba9ef1f4e444b8ecb3912635bb4806c217fda6b5ab5237f6",
+        "raw_events": "calibration/runs/run-012/audits/grounded-chapter-01-r1.raw.jsonl",
+        "raw_events_sha256": "1897316ee31a5df783da0742f50a02e9d48d5ed08e7a752ee6d94b3620aaf9b4",
+        "stderr": "calibration/runs/run-012/audits/grounded-chapter-01-r1.stderr.log",
+        "stderr_sha256": "a1138ebdfbe98dbe0badff5e6410cd8e908d1e952781dfe14faefb7800faaf36"
+      },
+      {
+        "chapter": "C-02",
+        "thread_id": "019f51eb-7544-76e1-a35b-51b55cfcf2f7",
+        "prompt_sha256": "4f678109d41bb4b6f484ef3049a0457965066931e3d0fa7f4667243c703a069a",
+        "input_tokens": 41698,
+        "cached_input_tokens": 8960,
+        "output_tokens": 30902,
+        "reasoning_output_tokens": 29675,
+        "verdict": "MATERIAL DEFECT",
+        "material_findings": 6,
+        "artifact": "calibration/runs/run-012/audits/grounded-chapter-02-r1.md",
+        "artifact_sha256": "3bd16f2c975cea1f62c22c22cc6a2c53d5adc2f4db82606d0121da8c0d1b1f4d",
+        "raw_events": "calibration/runs/run-012/audits/grounded-chapter-02-r1.raw.jsonl",
+        "raw_events_sha256": "4977c2a54a18df14748f33a54c28463e55b617c50da558e25cbd038f25fbcaa2",
+        "stderr": "calibration/runs/run-012/audits/grounded-chapter-02-r1.stderr.log",
+        "stderr_sha256": "afc619977bfefe56c27dfcbb35b43af1a86872fc384a3b4e2a8f4f5050ea9a4c"
+      },
+      {
+        "chapter": "C-03",
+        "thread_id": "019f51eb-7554-7203-9fd0-178821a82061",
+        "prompt_sha256": "2ef9c41a3a203f0e0f6aa543af11567daa617e72bef048abb71bea4b1264d34a",
+        "input_tokens": 43082,
+        "cached_input_tokens": 8960,
+        "output_tokens": 23982,
+        "reasoning_output_tokens": 21754,
+        "verdict": "MATERIAL DEFECT",
+        "material_findings": 8,
+        "artifact": "calibration/runs/run-012/audits/grounded-chapter-03-r1.md",
+        "artifact_sha256": "7ca3097212632b243c8dc2661da9dff5c4b499a365c9176ef79325c808dd2863",
+        "raw_events": "calibration/runs/run-012/audits/grounded-chapter-03-r1.raw.jsonl",
+        "raw_events_sha256": "9786541234a718aae4b19a786713e3117957a1677dc3fd8f3905760c7dbd5c2c",
+        "stderr": "calibration/runs/run-012/audits/grounded-chapter-03-r1.stderr.log",
+        "stderr_sha256": "0ecc29e8d6347d641e23e17bff82c5c27afb20432c09cde9a9fac55026af3833"
+      }
+    ],
+    "usage_totals": {
+      "input_tokens": 123992,
+      "cached_input_tokens": 26880,
+      "output_tokens": 80008,
+      "reasoning_output_tokens": 74737
+    },
+    "batch": {
+      "result": "MATERIAL DEFECT — 3/3 chapters",
+      "material_findings": 27,
+      "artifact": "calibration/runs/run-012/audits/grounded-batch-r1.md",
+      "artifact_sha256": "35c2ed3b5dc08c5f2aa133dcd97adcaa3cfe864d2e6538ddd38d9496732905d2",
+      "unambiguous": true,
+      "separate_synthesis_call": "not needed; all three independent verdicts were unambiguous and the batch rule is deterministic"
+    },
+    "causal_verdict": "REFUTED — all three commissions were pre-audited faithful, yet all three first drafts contain material evidence invention; this exceeds the preregistered at-least-two-drafts condition",
+    "failure_autopsy": "Adding exact accepted source packets to the intelligent commissioner corrected commission fidelity but did not constrain Opus's connective persuasive prose. Across three distinct jobs it supplied unsupported identities, circumstances, prevalence, counterfactual outcomes, mechanisms, efficacy or closure claims, converted a plan-authored voice into testimony, and crossed reserved method/safety boundaries despite the relevant limits being present in the faithful commissions. Lossy plan-only evidence compression is therefore not a sufficient cause of the observed inventions; the Opus completion prior remains sufficient under this handoff.",
+    "product_boundary": "The causal refutation neither substitutes for nor suppresses the product panel. Product verdict remains UNJUDGED pending both v2 controls and the blind target panel.",
+    "infrastructure": {
+      "preflight_failure": "the first command placed global -a never after the exec subcommand; all three parsers exited 2 before inference and created no threads",
+      "preflight_artifacts": "calibration/runs/run-012/infrastructure/grounded-audit-chapter-*-preflight.stderr.log",
+      "preflight_sha256": "cf5ba05f93d786dc2e92e164f54df943c49d91281945ef653ac85aafd4b16a43",
+      "successful_retry": "one corrected dispatch per chapter with identical prompt hashes; not a model resample",
+      "successful_stderr": "local rollout state-database fallback and file-watcher cleanup warnings only; all calls emitted turn.completed and no helper result or filesystem content entered"
+    }
+  },
   "founder_directed_measurement_correction": {
     "date": "2026-07-11",
     "reason": "the first Chapter 1 review saw the canonical plan but not the frozen source-grounded C-01 commission whose handoff H-049 tests",
@@ -389,7 +482,8 @@
       "completed: C-03 R1 used committed C-02 R1 as its sole previous chapter",
       "completed: the C-01-C-03 first-draft batch is frozen before any revision decision",
       "completed: objective evaluation failed on three overlapping non-mantra 12-gram windows while mantra and originality checks passed",
-      "next: run the source-grounded evidence-fidelity specialist review and the controlled blind target panel across the batch despite the objective failure"
+      "completed: source-grounded specialist review found material defects in all three first drafts and causally refuted H-049",
+      "next: run both v2 prompt controls and, only if valid, the blind target panel despite the objective and grounded failures"
     ],
     "prohibited_now": "do not revise a chapter, amend an asset, alter a commission, change a threshold, or form a new hypothesis before the required complete-batch measurements"
   },
