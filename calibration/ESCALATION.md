@@ -1,5 +1,7 @@
 # Calibration escalation — run-002 writer endpoint
 
+**Resolved:** 2026-07-11. A funded replacement OpenRouter key authorized the unchanged Opus request. Chapter 1 R1 completed as `gen-1783758658-B2u97iZ82TBKd7A1BXkR`; this file remains as the endpoint failure autopsy.
+
 **Date:** 2026-07-11
 
 **Run:** `calibration/runs/run-002/`
@@ -35,4 +37,4 @@ Provide one of:
 2. the founder LiteLLM base URL and `belief-changer` virtual key via environment variables; or
 3. refresh the existing Claude Pro login in the browser and authorize its Claude Code route for the fixed Opus 4.6 thinking-disabled baseline, with provider provenance recorded in run-002.
 
-On resolution, resume the unchanged Chapter 1 request. Do not regenerate research, framing, or the accepted plan; do not substitute Muse or another writer for the Opus baseline.
+Resolution followed this boundary: the unchanged Chapter 1 request ran without regenerating research, framing, or the accepted plan and without substituting Muse or another writer.

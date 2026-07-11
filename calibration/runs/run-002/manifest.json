@@ -2,7 +2,7 @@
   "run": "run-002",
   "date": "2026-07-11",
   "stage": "A",
-  "status": "BLOCKED_AT_WRITER_ENDPOINT",
+  "status": "IN_PROGRESS",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "normalized master plan + chapters 1-3",
@@ -127,6 +127,20 @@
           "usage_total_tokens": 0,
           "cost_usd": 0,
           "error": "stored Claude Pro OAuth credential is stale; browser reauthentication required"
+        },
+        {
+          "call_id": "gen-1783758658-B2u97iZ82TBKd7A1BXkR",
+          "role_and_objective": "run-002 Chapter 1 R1 full artifact after funded replacement key",
+          "requested_model": "anthropic/claude-opus-4.6",
+          "actual_model": "anthropic/claude-4.6-opus-20260205",
+          "provider": "Anthropic through OpenRouter",
+          "reasoning": {"effort": "none", "reported_reasoning_tokens": 0},
+          "requested_max_tokens": 128000,
+          "finish_reason": "stop",
+          "usage": {"prompt": 44295, "completion": 2925, "total": 47220, "cost_usd": 0.2946},
+          "artifact": "calibration/runs/run-002/chapters/chapter-01-r1.md",
+          "artifact_sha256": "df89ad0760219abdd4cc19e66f406303148a4e24f1d632ab87da0524e8dd97eb",
+          "review_verdict": "REVISE"
         }
       ]
     },
@@ -138,7 +152,18 @@
     "chapter_reviewer": {
       "model": "gpt-5.6-sol",
       "provider": "openai native Codex 0.144.1",
-      "reasoning": "ultra"
+      "reasoning": "ultra",
+      "calls": [
+        {
+          "call_id": "019f5050-866b-7e53-85f6-62dd5d934125",
+          "chapter": 1,
+          "round": 1,
+          "usage_total_tokens": 69442,
+          "verdict": "REVISE",
+          "artifact": "calibration/runs/run-002/chapters/chapter-01-r1-review.md",
+          "artifact_sha256": "79818611eaeac82209558eb386ee19f6920aab1fd52b1ab222529e3095684481"
+        }
+      ]
     },
     "judges": []
   },
@@ -152,5 +177,5 @@
     "calibration/HARNESS.md": "e8aa007"
   },
   "stages_rerun_because": "H-039 changes planning semantics, so plan and chapters are invalidated; accepted research and framing are not.",
-  "notes": "The normalized plan reached fit-to-write only on round 3. No blocker concerned occurrence arithmetic, duplicated audit tables, or prewritten SUMMARY prose, supporting the diagnosed run-001 mechanism; the at-most-one-revision prediction failed. Chapter evidence remains pending: OpenRouter rejected both the endpoint-maximum and controlled 8000-token versions of the identical fixed Opus request with the same 147-token affordability ceiling, proving reservation size was not the blocker; the account is over total credit. The direct API key variable is empty, and Claude Code's existing Pro OAuth login returned 401 pending browser refresh. See calibration/ESCALATION.md."
+  "notes": "The normalized plan reached fit-to-write only on round 3. A funded replacement OpenRouter key resolved the writer endpoint without changing model or inputs. Chapter 1 R1 completed with reasoning tokens 0 and was rejected for six chapter-execution defects plus prose metrics; the reviewer identified no missing or contradictory plan context. H-039 downstream sufficiency remains testing while the unchanged writer-reviewer loop regenerates R2."
 }
