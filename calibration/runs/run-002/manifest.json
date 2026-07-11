@@ -2,7 +2,7 @@
   "run": "run-002",
   "date": "2026-07-11",
   "stage": "A",
-  "status": "IN_PROGRESS",
+  "status": "FAIL",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "normalized master plan + chapters 1-3",
@@ -183,6 +183,20 @@
           "artifact": "calibration/runs/run-002/chapters/chapter-02-r2.md",
           "artifact_sha256": "9d9dadf1f131cd5075ec70d8b520b28dc83ce2057f03898d24401f04d83a5191",
           "review_verdict": "REVISE"
+        },
+        {
+          "call_id": "gen-1783761848-VSteW2ONt8E5c5otL4Tc",
+          "role_and_objective": "run-002 Chapter 2 R3 final whole-artifact revision from fixed assets and both prior reviews",
+          "requested_model": "anthropic/claude-opus-4.6",
+          "actual_model": "anthropic/claude-4.6-opus-20260205",
+          "provider": "Anthropic through OpenRouter",
+          "reasoning": {"effort": "none", "reported_reasoning_tokens": 0},
+          "requested_max_tokens": 128000,
+          "finish_reason": "stop",
+          "usage": {"prompt": 53984, "completion": 5126, "total": 59110, "cost_usd": 0.39807},
+          "artifact": "calibration/runs/run-002/chapters/chapter-02-r3.md",
+          "artifact_sha256": "420de6c1ae7db7e3266ebff1d8b00955430de0b4dce5ed187029a4ce486d047c",
+          "review_verdict": "REVISE"
         }
       ]
     },
@@ -237,6 +251,19 @@
           "verdict": "REVISE",
           "artifact": "calibration/runs/run-002/chapters/chapter-02-r2-review.md",
           "artifact_sha256": "4bbcd66ec309ff4cebc65cb7c1da36c6d2892d6c43a4578a632ee942f1b48b55"
+        },
+        {
+          "call_id": "019f5080-c355-7cc0-bdcd-acda3c8a7f10",
+          "chapter": 2,
+          "round": 3,
+          "usage_total_tokens": 678844,
+          "cached_input_tokens": 594944,
+          "reasoning_output_tokens": 11318,
+          "verdict": "REVISE",
+          "blocking_defects": 0,
+          "quality_gate_failures": ["length", "short-sentence density"],
+          "artifact": "calibration/runs/run-002/chapters/chapter-02-r3-review.md",
+          "artifact_sha256": "a9389320d78d668ceacf3eef2cfd4e2114aba53ecfc401cb9dd923d7fd1a6170"
         }
       ]
     },
@@ -252,5 +279,5 @@
     "calibration/HARNESS.md": "e8aa007"
   },
   "stages_rerun_because": "H-039 changes planning semantics, so plan and chapters are invalidated; accepted research and framing are not.",
-  "notes": "The normalized plan reached fit-to-write only on round 3. A funded replacement OpenRouter key resolved the writer endpoint without changing model or inputs. Chapter 1 R1 completed with reasoning tokens 0 and was rejected for six chapter-execution defects plus prose metrics; whole-artifact R2 corrected them and received a fresh ACCEPT without changing assets. The first-prose bird's-eye checkpoint returned GO. Chapter 2 R1 received REVISE for six supplied-context execution defects. R2 corrected those but received REVISE for unscheduled pre-debut tokens, illicit repetition, omitted DEF-04, internal-ID leakage, unsupported universal language, and length/rhythm. Every boundary remains explicit in the plan/style inputs. R3 is the final Chapter 2 cycle and receives both prior reviews without an asset change."
+  "notes": "Run-002 failed at Chapter 2 after the maximum three revisions. Chapter 1 passed on R2. Chapter 2 R1 exposed supplied-context semantic execution defects; R2 repaired those but created or retained new routing, repetition, completeness, and craft defects. R3's fresh reviewer found zero blocking method, evidence, anatomy, assignment, or continuity defects, but rejected its 3,761-word length and 36.7% short-sentence density. H-039 is MIXED: normalized bookkeeping removed the run-001 failure mechanism and did not starve Chapters 1–2, but the at-most-one-revision prediction was refuted and Stage A was not reached. Run-003 isolates prose-only convergence after semantic acceptance."
 }
