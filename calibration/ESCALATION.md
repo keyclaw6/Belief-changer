@@ -6,7 +6,13 @@
 
 **Stage:** A
 
-**Status:** ACTIVE CALIBRATION CHECKPOINT — H-047 refuted; fresh direction audit required before another amendment
+**Status:** RESOLVED FOR H-048 DIAGNOSTIC ONLY — no shared amendment or product promotion authorized
+
+## Direction-audit resolution — run-011
+
+A fresh read-only bird's-eye auditor returned GO for one diagnostic style-exposure ablation. It does not authorize a Chapter 1 fix or a new writer prompt. Run-011 holds the frozen faithful C-01 commission, Opus 4.6 reasoning-none writer, minimal dispatch, review, instruments, and blindness constant; the sole lever is whether the writer sees the byte-identical complete generic style guide.
+
+This experiment can identify whether residual generic style context or Opus's own completion prior is sufficient to recreate unowned claims. It cannot promote either draft or any factory asset. Any resulting production contract must later remain frozen across Chapters 1-3 and pass the ordinary Stage-A gates, stability, Stage B, and the zero-tuning caffeine holdout. The exact preregistration is in `calibration/runs/run-011/manifest.json`.
 
 ## Second trigger — run-010 refutes focused plan context
 
