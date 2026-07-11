@@ -209,6 +209,19 @@ Seeded by the harness builder (2026-07-10) as starting capital — derive priori
 - Product/factory result: none. No artifact or process rule was promoted.
 - Next test: H-045 starts a clean run with working allowed models and explicitly preregisters fresh-context same-model feedback coverage; it does not masquerade as H-044 or claim cross-family diversity.
 
+## H-045 — fresh-context same-model feedback sufficiency [TESTING run-008]
+- Gap: run-006's two writer modes retained the same generic evidence/job defects after one incomplete blocker-bearing review. Grok could not provide cross-family corroboration because its region denied inference.
+- Mechanism / one production lever: the unchanged writer can comply when two independent fresh Sol contexts surface the boundary before one revision. A second Sol ultra review is blind to the first; one Opus reasoning-none editor receives exact Arm A and both raw reviews with unchanged full context. No checklist is synthesized and no shared asset changes.
+- Post-measurement: two new independent Sol-ultra full reviews; deterministic objective counts; Gemini Pro high only as a targeted shadow trace of causal, prevalence, and mechanism assertions to evidence and chapter ownership. Gemini does not count or supply positive acceptance.
+- Prediction: the second Sol corroborates both universalized installation and premature C-10 mechanism defects. The revision removes them, retains prior duplicate/permanence repairs, stays within 2,210–2,990 wc words, reduces metrics.py short sentences from 30.5% to at most 25.5%, preserves other passing voice ranges, receives two fresh Sol ACCEPTs, and has no directly source-substantiated Gemini blocker.
+- Decision rule: SUPPORTED narrowly if independent corroboration and the complete product prediction both occur. REFUTED if both classes were independently surfaced before writing yet either survives or is recreated. INCONCLUSIVE if the second Sol does not corroborate, post-reviewers disagree, or only an unrelated new defect blocks.
+- Product rule: promote only the exact chapter after two fresh Sol accepts, objective craft passage, and no verifiable Gemini shadow blocker; then immediately run the full Chapters 1–3 Stage-A objective and blind pairwise gates.
+- Claim boundary: this does not compare two reviews against one, and same-family convergence is not universal factory proof. The feedback method remains unpromoted pending reliable cross-family, cross-chapter, and Stage-C evidence.
+- Rival explanations / signal risk: independent Sol contexts may share one conservative interpretation; Opus success may be stochastic; targeted Gemini may miss a different method defect; objective rhythm movement may not improve persuasion. Later blind product gates remain decisive.
+- Stop rule: recurrence of either explicitly surfaced defect is the third semantic same-dimension failure and triggers HARNESS §11 escalation before any generic shared-prompt clarification.
+- Result: PENDING.
+- Next test: dispatch the second fresh blind Sol review of exact Arm A.
+
 ## H-007 — planner reasoning effort                       [RETIRED — founder-fixed 2026-07-10]
 - Gap: a reasoning-effort sweep was proposed before the founder fixed every allowed non-writer model to its top supported reasoning mode.
 - Lever: none — configuration is now a constant, not a calibration variable.

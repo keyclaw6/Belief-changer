@@ -1,0 +1,108 @@
+{
+  "run": "run-008",
+  "date": "2026-07-11",
+  "stage": "A",
+  "status": "IN_PROGRESS",
+  "operator": "gpt-5.6-sol",
+  "branch": "calibration-lab",
+  "scope": "fresh-context same-model feedback followed by one Chapter 3 repair and convergence gate",
+  "hypotheses_tested": ["H-045"],
+  "model_api": "native+openrouter",
+  "baseline_boundary": "7cf8dcf — run-007 closed as infrastructure-only H-044 inconclusive",
+  "starting_artifacts": {
+    "repair_substrate": "run-006 Arm A control, unpromoted; sha256 8a17c510230a182b10a1a089c582b1914ef81a3e98f8bf5ce5f2b171afca8860",
+    "first_raw_sol_review": "run-006 Arm A Sol review; sha256 b35bc87058f1749dba704d6e48372269669c88437cbdcacfb263bbb4ededc34c",
+    "objective_metrics": "run-006 arm-metrics.json Arm A",
+    "accepted_chapter_01": "sha256 124124405d2a915f4b67e575e92559f6eb4625e8d883a1aaed76412aa3c49048",
+    "accepted_chapter_02": "sha256 421415e0632aef7661ed2afbb497a0b829ea7c4bbced429801b7e5e6a3c9d4a7",
+    "master_plan": "sha256 e3fd7cd0ed90e2c6ef29ccabf219f6a10462b31f2ee75a6d9e1b42abbdf913b5"
+  },
+  "substrate_selection": {
+    "reason": "Arm A is the control, is no worse on the shared semantic blockers, and has the better objective short-sentence result",
+    "not_a_promotion": true,
+    "no_quality_win_claim": true
+  },
+  "experiment": {
+    "observation": "the unchanged plan contained the needed boundary, but one raw review incompletely covered it and both run-006 writers retained the same defect class",
+    "mechanism": "the unchanged writer can comply when two independent fresh contexts surface the evidence and chapter-ownership boundary before revision",
+    "single_production_lever": "fresh-context raw feedback coverage",
+    "steps": [
+      "second native Sol ultra reviewer independently reviews exact Arm A, blind to the first review and history",
+      "one Opus 4.6 reasoning-none defect-scoped editor receives unchanged full context, exact Arm A, and both raw Sol reviews",
+      "two new native Sol ultra contexts independently review the exact revision",
+      "Gemini 3.1 Pro high runs a targeted shadow evidence-ownership audit with no word counting or positive gate",
+      "objective code supplies every count"
+    ],
+    "writer_runs_if_second_review_differs": true,
+    "no_synthesized_checklist": true,
+    "decision_rule": {
+      "supported": "second Sol independently corroborates both defect classes and the final chapter passes objective craft, two fresh Sol ACCEPTs, and the Gemini boundary shadow",
+      "refuted": "both defect classes were independently surfaced before writing and either one survives or is recreated",
+      "inconclusive": "second Sol does not corroborate, post-reviewers disagree, or only an unrelated new defect blocks"
+    },
+    "product_promotion": "exact chapter only after two fresh Sol ACCEPTs, objective craft passage, and no directly source-substantiated Gemini shadow blocker",
+    "after_product_acceptance": "immediately run full Chapters 1–3 Stage-A objective and blind pairwise gates before another optimization"
+  },
+  "writer_commission_exact": "Produce the strongest complete final-book Chapter 3 from the unchanged full context and exact repair substrate. Read both raw independent reviews as evidence, reconcile them with the authoritative plan and style guide using your own judgment, and repair every substantiated defect without inventing claims or changing the chapter's one job. Preserve what already works, but revise as much as quality requires. Do not narrate your process. Return only the complete chapter, beginning with Chapter 3.",
+  "quality_prediction": {
+    "word_range_wc": "2210–2990",
+    "metrics_py_short_sentences": "at most 25.5%, a reduction of at least 5.0 points from 30.5%",
+    "preserve_passing_voice_ranges": "second person 25–33 per 1000; questions 8–10%; mean sentence 15–18 words",
+    "semantic": "remove universal prevalence/exposure claims, causal installation language, cue or anticipation diagnosis, and promised pull dissolution; retain duplicate and permanence repairs",
+    "gate": "two fresh Sol ACCEPTs and no directly verifiable Gemini shadow blocker"
+  },
+  "held_constant": [
+    "accepted research, framing, normalized plan, and prior chapters",
+    "shared chapter-writer, chapter-reviewer, and style prompts",
+    "exact Arm A substrate",
+    "Opus 4.6 through OpenRouter with reasoning none",
+    "128000 writer output allowance",
+    "native Sol ultra for blocker-bearing full reviews",
+    "reference blindness",
+    "fresh reviewer contexts and no time or reasoning cap",
+    "no shared prompt, plan, style, research, schema, or live chapter change before convergence"
+  ],
+  "models": {
+    "second_pre_reviewer": {
+      "model": "gpt-5.6-sol",
+      "provider": "openai native Codex",
+      "reasoning": "ultra",
+      "execution": "codex exec --ephemeral --disable multi_agent --model gpt-5.6-sol -c model_reasoning_effort=ultra",
+      "calls": []
+    },
+    "writer": {
+      "requested_model": "anthropic/claude-opus-4.6",
+      "expected_runtime_model": "anthropic/claude-4.6-opus-20260205",
+      "reasoning": {"effort": "none"},
+      "max_tokens": 128000,
+      "calls": []
+    },
+    "post_reviewers": {
+      "model": "gpt-5.6-sol",
+      "provider": "openai native Codex",
+      "reasoning": "ultra",
+      "required_fresh_contexts": 2,
+      "calls": []
+    },
+    "shadow_evidence_auditor": {
+      "requested_model": "google/gemini-3.1-pro-preview",
+      "expected_runtime_model": "google/gemini-3.1-pro-preview-20260219",
+      "provider": "Google through OpenRouter",
+      "reasoning": "high",
+      "max_tokens": 65536,
+      "task": "targeted evidence and chapter-ownership trace only; no counting and no positive product gate",
+      "calls": []
+    },
+    "judges": []
+  },
+  "measurement_policy": "objective code supplies counts; full Sol reviews judge the complete chapter; Gemini shadow reports only directly traceable evidence or ownership blockers",
+  "asset_versions": {
+    "prompts/style-guide.md": "e8aa007",
+    "prompts/chapter-writer.md": "e8aa007",
+    "prompts/chapter-reviewer.md": "a91af62",
+    "production-books/quit-sugar/master-plan.md": "5915b9f"
+  },
+  "direction_audit": "GO on a clean new run using working models; no silent H-044 substitution, shared-prompt amendment, checklist synthesis, or deterministic prose control",
+  "factory_promotion_boundary": "same-family correlation is explicit; only the product may advance, while feedback coverage requires later cross-family, cross-chapter, and Stage-C validation",
+  "notes": "No call has run."
+}
