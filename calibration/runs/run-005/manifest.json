@@ -1,0 +1,59 @@
+{
+  "run": "run-005",
+  "date": "2026-07-11",
+  "stage": "A",
+  "status": "IN_PROGRESS",
+  "operator": "gpt-5.6-sol",
+  "branch": "calibration-lab",
+  "scope": "Chapter 3 ordinary writer-review loop with conditional latest-review craft feedback",
+  "hypotheses_tested": ["H-042"],
+  "model_api": "native+openrouter",
+  "baseline_boundary": "0d10ae6 — Chapters 1–2 accepted and H-042 preregistered",
+  "inherited_artifacts": {
+    "research": "run-001 accepted R4; unchanged",
+    "framing": "run-001 accepted R2; unchanged",
+    "master_plan": "run-002 accepted R3; sha256 e3fd7cd0ed90e2c6ef29ccabf219f6a10462b31f2ee75a6d9e1b42abbdf913b5",
+    "chapter_01": "accepted; sha256 124124405d2a915f4b67e575e92559f6eb4625e8d883a1aaed76412aa3c49048",
+    "chapter_02": "run-004 accepted Arm A; sha256 421415e0632aef7661ed2afbb497a0b829ea7c4bbced429801b7e5e6a3c9d4a7"
+  },
+  "amendment": {
+    "hypothesis": "H-042",
+    "trigger": "fresh Chapter 3 verdict has zero blocking defects and REVISE only for craft",
+    "lever_if_triggered": "fresh full-context Opus prose edit receives the exact current artifact and latest measured review",
+    "not_triggered_by": ["semantic blocker", "evidence blocker", "continuity blocker", "ACCEPT"],
+    "prediction": "if triggered, one latest-review edit reaches fresh ACCEPT without semantic regression"
+  },
+  "held_constant": [
+    "accepted research, framing, and normalized plan",
+    "accepted prior chapters",
+    "Opus 4.6 through OpenRouter",
+    "reasoning effort none",
+    "128000 endpoint maximum output allowance",
+    "fresh Sol ultra reviewers with no time or reasoning cap",
+    "reference blindness",
+    "shared prompts and style guide"
+  ],
+  "models": {
+    "writer": {
+      "requested_model": "anthropic/claude-opus-4.6",
+      "actual_model": "pending",
+      "reasoning": {"effort": "none"},
+      "calls": []
+    },
+    "reviewer": {
+      "model": "gpt-5.6-sol",
+      "provider": "openai native Codex 0.144.1",
+      "reasoning": "ultra",
+      "execution": "codex exec --ephemeral --disable multi_agent --model gpt-5.6-sol -c model_reasoning_effort=ultra",
+      "calls": []
+    },
+    "judges": []
+  },
+  "asset_versions": {
+    "prompts/style-guide.md": "e8aa007",
+    "prompts/chapter-writer.md": "e8aa007",
+    "prompts/chapter-reviewer.md": "a91af62",
+    "production-books/quit-sugar/master-plan.md": "5915b9f"
+  },
+  "notes": "The next artifact is Chapter 3 prose. No research, planning, prompt, or schema work is authorized before it."
+}
