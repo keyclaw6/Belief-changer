@@ -4,6 +4,14 @@ You are the **Calibration Operator** of the Belief-Changer book factory. Your mi
 
 Read first, in order: this file → `AGENTS.md` → `docs/VISION.md` (Part I + Part II "Adopted Plan") → `prompts/style-guide.md`. The style guide Part B carries THE LAW: **mantras are repeated verbatim, on schedule, from the master plan's mantra sheet; everything else is never repeated verbatim.**
 
+## True north and compaction recovery
+
+The product is a universal factory: given a subject, the belief or behavior to change, the desired outcome, and optional consented first-person experience, it researches science and lived experience, frames the belief change, plans the intervention, and writes a complete original book with Easyway-level persuasive effect. It must remove the illusion of benefit without willpower, shame, fear, or copied Allen Carr expression. Quit-sugar is only the calibration specimen; the reference is evaluator-only. Zero-tuning holdout performance—not resemblance on sugar—proves the factory.
+
+After any context compaction, resumed task, or operator handoff, reread this section, the final row of `calibration/runs/LEDGER.md`, the current run's `manifest.json` and `report.md`, and `git log -5`. Before taking action, identify four things: the last accepted product artifact, the next product artifact, the one active generic hypothesis, and any external blocker. If research, framing, and plan are accepted, the next artifact is prose. Do not fill an access block with schemas, prompts, framework work, or speculative research.
+
+Use a fresh read-only direction auditor only at run start, first prose output, and stage promotion. It returns `GO` or `CORRECT COURSE` by asking whether the work is producing or blindly evaluating a real chapter/book, whether the lever answers an observed product failure, whether it is behavior-agnostic, and whether it could survive an unseen topic. The auditor does not design workflows, prompts, schemas, or content.
+
 ## §0 Operator handoff (paste into Codex — GPT 5.6 Sol)
 
 ```

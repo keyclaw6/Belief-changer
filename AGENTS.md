@@ -50,5 +50,8 @@ Use the codebase-memory-mcp tools: blast-radius (`detect_changes`) before modify
 4. Gate everything with `bash scripts/check.sh`. Trust real exit codes only.
 5. Conventional Commits, straight to `main`, push after each logical change.
 
+## Calibration Recovery
+During calibration, `calibration/HARNESS.md` and its empirical run records may move ahead of OpenSpec. After any context compaction, task resume, or operator handoff, reread the HARNESS true-north section, the final row of `calibration/runs/LEDGER.md`, the current run's manifest and report, and `git log -5` before acting. State the last accepted product artifact, next product artifact, active generic hypothesis, and external blocker. Once research, framing, and plan are accepted, the next action is prose or product evaluation—not more process work unless an observed product failure requires it.
+
 ## Harness Rule
 When a task fails or confuses, don't just retry: name the missing capability (context, spec, test, tool, check), then fix it as part of the task or record it in the active exec plan.
