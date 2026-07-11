@@ -125,14 +125,56 @@
         "finish_reason": "stop",
         "usage": {"prompt": 11379, "completion": 1901, "reasoning": 1648, "total": 13280, "cost_usd": 0.007924482},
         "artifacts": ["MORE RESEARCH REQUIRED; regenerate both syntheses from preserved packets and re-audit"]
+      },
+      {
+        "call_id": "gen-1783728253-BxEgK7IC5NVRgM0T8YbV",
+        "role_and_objective": "full synthesis regeneration from original packets plus reviews",
+        "requested_model": "minimax/minimax-m3",
+        "actual_model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "reasoning": "enabled",
+        "endpoint_requested_output": 131072,
+        "authorized_output": 4607,
+        "actual_request_output": 4607,
+        "finish_reason": "length",
+        "usage": {"prompt": 12463, "completion": 4607, "reasoning_reported": 4676, "total": 17070, "cost_usd": 0.00923994},
+        "artifacts": ["no visible content; disposable OpenRouter account exhausted after reasoning-only response"]
+      },
+      {
+        "call_id": "019f4e7f-9ac3-7de1-aa28-40dd448a93bf",
+        "role_and_objective": "native full synthesis regeneration from the 19 packets and both reviews",
+        "requested_model": "gpt-5.6-luna",
+        "actual_model": "gpt-5.6-luna",
+        "provider": "openai native Codex 0.144.1",
+        "reasoning": "max",
+        "endpoint_requested_output": "native session; no caller max_tokens",
+        "authorized_output": "not exposed",
+        "actual_request_output": "not capped by caller",
+        "finish_reason": "complete",
+        "usage": {"total": 54363, "cost_usd": "n/a"},
+        "artifacts": ["local regenerated lived/science candidate; sha256 3cc2b6c43b4ad3414997b7d2078c2f08c69f5727c41d5943d679668e7c07392d"]
+      },
+      {
+        "call_id": "019f4e8b-12b0-71a2-bc2c-61ff02284ee9",
+        "role_and_objective": "fresh acceptance review of regenerated synthesis against every packet",
+        "requested_model": "gpt-5.6-luna",
+        "actual_model": "gpt-5.6-luna",
+        "provider": "openai native Codex 0.144.1",
+        "reasoning": "max",
+        "endpoint_requested_output": "native session; no caller max_tokens",
+        "authorized_output": "not exposed",
+        "actual_request_output": "not capped by caller",
+        "finish_reason": "complete",
+        "usage": {"total": 25239, "cost_usd": "n/a"},
+        "artifacts": ["MORE RESEARCH REQUIRED; focused lived-evidence commission; review sha256 568a956c7a8b35366cb960e691ad2df3dd8f3e2a0c6986fccc7100814807efe2"]
       }
     ],
     "research_reviewer": {
-      "model": "deepseek/deepseek-v4-pro-20260423",
-      "provider": "StreamLake",
-      "reasoning": "xhigh",
+      "model": "gpt-5.6-luna",
+      "provider": "openai native Codex 0.144.1",
+      "reasoning": "max",
       "verdict": "MORE RESEARCH REQUIRED",
-      "commission": "regenerate both syntheses model-owned from the same packets, then fresh review exact-quote fidelity and claim grounding"
+      "commission": "one focused model-owned rights-safe adult lived-evidence pass for durable freedom, feared loss versus realized benefit, failed moderation/private costs/triggers, broader moments, and multi-account native language; preserve science and industry"
     },
     "planner": "gpt-5.6-sol",
     "planner_reasoning": "ultra (native Codex Sol)",
@@ -167,5 +209,5 @@
     "prompts/research-agent.md": "5bff930"
   },
   "stages_rerun_because": "",
-  "notes": "RP-000–RP-027 are excluded bootstrap diagnostics. Run-001 is the first real research and prose baseline. Nineteen packets are accepted; the first synthesis candidate was rejected and is being fully regenerated from those packets. Muse Spark 1.1 is deferred until after this Opus baseline and does not block it."
+  "notes": "RP-000–RP-027 are excluded bootstrap diagnostics. Run-001 is the first real research and prose baseline. Nineteen packets are accepted. Full Luna regeneration corrected fidelity/grounding defects, but fresh review found lived evidence too thin and commissioned one focused retrieval pass before framing. Muse Spark 1.1 is deferred until after this Opus baseline and does not block it."
 }
