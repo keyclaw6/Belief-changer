@@ -116,9 +116,18 @@
     },
     "chapter_reviewer": {
       "model": "gpt-5.6-sol",
-      "provider": "openai native Codex",
-      "reasoning": "ultra",
+      "provider": "openai native Codex; OpenRouter same-model fallback when native usage-limited",
+      "reasoning": "ultra native; max OpenRouter",
       "execution": "codex exec --ephemeral --disable multi_agent --model gpt-5.6-sol -c model_reasoning_effort=ultra",
+      "infrastructure_attempts": [
+        {
+          "chapter": 1,
+          "round": 2,
+          "thread_id": "019f5120-2dfa-7992-a3bd-e0ae9bb1e7f7",
+          "result": "no completion — native subscription usage limit before sampling",
+          "artifact": "calibration/runs/run-009/infrastructure/chapter-01-r2-native-sol-limit.json"
+        }
+      ],
       "calls": [
         {
           "chapter": 1,
@@ -161,5 +170,5 @@
   },
   "direction": "factory restart across Chapters 1–3; no Chapter 3 tuning and no main merge",
   "h046_first_draft_target_blockers": {"chapter_01": true, "chapter_02": null, "chapter_03": null},
-  "notes": "The prompt remains frozen. Chapter 1 R2 used exact R1 + raw review and zero reasoning tokens. Objective measurement shows over-compression and craft imbalance before its fresh review; no shared or per-chapter commission changed."
+  "notes": "The prompt remains frozen. The native Chapter 1 R2 review attempt produced no inference because the Codex subscription limit was reached. Per HARNESS §8, the identical blind review proceeds through the allowed OpenRouter Sol route at top max reasoning; this is an execution fallback, not a product lever."
 }

@@ -40,6 +40,8 @@ The strict support path—zero target blockers across all three first drafts—i
 
 Chapter 1 R2 then completed from exact R1 + raw review at 2,258 wc words with zero reasoning tokens. Objective metrics show 37.8 second-person terms per 1,000, 3.9% questions, 37.3% short sentences, and a 14.4-word mean. It is below the review contract's 2,380-word lower bound and remains craft-imbalanced; semantic repair awaits blind review.
 
+The first native Sol R2 review invocation hit the Codex subscription usage limit before sampling and produced no review or product verdict. The same GPT-5.6 Sol role therefore falls back to OpenRouter at its top "max" reasoning with identical blind inputs, as HARNESS §8 permits. Model family, rubric, candidate, and semantic context remain fixed.
+
 ## Gate verdict
 
-IN PROGRESS. Next: fresh blind review of exact Chapter 1 R2.
+IN PROGRESS. Next: fresh blind OpenRouter Sol-max review of exact Chapter 1 R2.
