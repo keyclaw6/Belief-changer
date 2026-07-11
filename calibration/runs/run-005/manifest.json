@@ -36,16 +36,35 @@
   "models": {
     "writer": {
       "requested_model": "anthropic/claude-opus-4.6",
-      "actual_model": "pending",
+      "actual_model": "anthropic/claude-4.6-opus-20260205",
       "reasoning": {"effort": "none"},
-      "calls": []
+      "calls": [{
+        "call_id": "gen-1783765137-YwzLwaX67mYceIHjHBVm",
+        "round": 1,
+        "reasoning": {"effort": "none", "reported_reasoning_tokens": 0},
+        "usage": {"prompt": 48910, "completion": 3531, "total": 52441, "cost_usd": 0.332825},
+        "finish_reason": "stop",
+        "artifact": "calibration/runs/run-005/chapters/chapter-03-r1.md",
+        "artifact_sha256": "12de06bab049cd33d1c73f94b5b6e008a2840c19b686de33fbe2913852ff2812",
+        "review_verdict": "REVISE"
+      }]
     },
     "reviewer": {
       "model": "gpt-5.6-sol",
       "provider": "openai native Codex 0.144.1",
       "reasoning": "ultra",
       "execution": "codex exec --ephemeral --disable multi_agent --model gpt-5.6-sol -c model_reasoning_effort=ultra",
-      "calls": []
+      "calls": [{
+        "call_id": "019f50b2-7e69-7b03-a2eb-86e61c02088c",
+        "round": 1,
+        "usage_total_tokens": 359031,
+        "cached_input_tokens": 291584,
+        "reasoning_output_tokens": 8905,
+        "verdict": "REVISE",
+        "blocking_groups": ["illicit repetition", "unsupported claims", "shaming guardrail violation"],
+        "artifact": "calibration/runs/run-005/chapters/chapter-03-r1-review.md",
+        "artifact_sha256": "e248c406471386ff708c7aa952e964e4db8a3c888d6b789b9483b8a20e6466ee"
+      }]
     },
     "judges": []
   },
@@ -55,5 +74,5 @@
     "prompts/chapter-reviewer.md": "a91af62",
     "production-books/quit-sugar/master-plan.md": "5915b9f"
   },
-  "notes": "The next artifact is Chapter 3 prose. No research, planning, prompt, or schema work is authorized before it."
+  "notes": "Chapter 3 R1 received substantive blockers for repetition, unsupported powerlessness/biomedical claims, and a shaming unhelpable-reader line. H-042 did not trigger because the verdict was not zero-blocker craft-only. R2 remains an ordinary whole-artifact writer revision from the fixed assets and R1 review."
 }

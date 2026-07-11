@@ -18,8 +18,16 @@ H-042 changes nothing unless the fresh verdict has zero blocking defects and rej
 
 ## Results
 
-Pending Chapter 3 generation and fresh review.
+Chapter 3 R1 completed at 2,684 artifact words with Opus 4.6 and zero reasoning tokens. The fresh Sol review returned `REVISE` with three blocker groups:
+
+- illicit repetition of RV-02 inside the chapter and RV-08 from Chapter 2;
+- an invented diagnostic criterion for powerlessness, a false compulsion dichotomy, and an unassigned biomedical aside;
+- a shaming claim that a less-skeptical reader is the kind the method cannot help.
+
+M-01, M-03, M-06, I-03, anatomy, AN-13, the justification gallery, length, and continuity were correct. Craft also remained too direct/staccato: 37.0 you/your per 1,000, 12.1% questions, 37.4% short sentences, and 13.6-word mean.
+
+H-042 did not trigger because the verdict contained substantive blockers. R2 is a normal whole-artifact revision; no prose-only editor or shared-asset amendment is introduced.
 
 ## Gate verdict
 
-Pending.
+IN PROGRESS. Chapter 3 is at cycle 1 of 3; Chapters 1–2 remain accepted.
