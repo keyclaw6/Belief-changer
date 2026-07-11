@@ -1,0 +1,50 @@
+{
+  "run": "run-012",
+  "chapter": 1,
+  "cycle": 1,
+  "label": "writer-ch01-r1-authorized",
+  "requested_model": "anthropic/claude-opus-4.6",
+  "max_tokens": 69641,
+  "reasoning": {
+    "effort": "none"
+  },
+  "input_sha256": "f2c9a2af3b833ecf96a7a89a82581d58588df9be783fbf7a3dd35751f1807446",
+  "request_sha256": "34457d75db062abe9510922509463e77bfcaf0d4f7dd771af9591f98e5680863",
+  "commission_sha256": "bb11fefafc0dc012446cfeb7159a6efa9fffd598fcacd1baaf4de8144854f2f4",
+  "previous_sha256": null,
+  "candidate_sha256": null,
+  "review_sha256": null,
+  "http_status": 200,
+  "call_id": "gen-1783781147-dGkiVliOHBzKo0zyGYz1",
+  "response_model": "anthropic/claude-4.6-opus-20260205",
+  "provider": "Anthropic",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 24645,
+    "completion_tokens": 2937,
+    "total_tokens": 27582,
+    "cost": 0.19665,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.19665,
+      "upstream_inference_prompt_cost": 0.123225,
+      "upstream_inference_completions_cost": 0.073425
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "reported_reasoning_tokens": 0,
+  "artifact": "calibration/runs/run-012/chapters/chapter-01-r1.md",
+  "artifact_sha256": "8c1cdbe5b104ba0510a94ee067f0c76e67b5d413098376db53df3d7ec222f2ac",
+  "artifact_words_wc": 2252,
+  "elapsed_seconds": 83.427
+}
