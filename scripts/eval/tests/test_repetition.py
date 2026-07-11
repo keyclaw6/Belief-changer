@@ -103,6 +103,31 @@ class WithinBookTests(unittest.TestCase):
         self.assertTrue(cross["tripped"])
         self.assertGreater(cross["overlap_ngrams"], 0)
 
+    def test_bold_preview_and_summary_labels_are_licensed(self):
+        chapter = (
+            "chapter-1.md",
+            f"**IN THIS CHAPTER**\n\n- {PHRASE}\n\n"
+            f"## Body\n\n{PHRASE}\n\n"
+            f"**SUMMARY**\n\n- {PHRASE}\n",
+        )
+
+        result = R.within_book([chapter], [])
+
+        self.assertEqual([], result["hard_fails"])
+
+    def test_other_bold_or_inline_summary_text_does_not_open_a_recap(self):
+        openings = (
+            "**AN ORDINARY BOLD PHRASE**",
+            "Ordinary body text containing **SUMMARY** inline.",
+        )
+        for opening in openings:
+            with self.subTest(opening=opening):
+                chapter = ("chapter-1.md", f"{opening}\n\n{PHRASE}\n\n{PHRASE}\n")
+
+                result = R.within_book([chapter], [])
+
+                self.assertTrue(result["hard_fails"])
+
 
 if __name__ == "__main__":
     unittest.main()

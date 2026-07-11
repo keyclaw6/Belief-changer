@@ -25,6 +25,7 @@ import evallib as E
 N_SOFT, N_HARD = 8, 12
 CROSS_TRIPWIRE = 0.003
 _HEADING_RE = re.compile(r"^\s{0,3}(#{1,6})\s+(.+?)\s*#*\s*$")
+_STRONG_LABEL_RE = re.compile(r"^\s{0,3}(\*\*|__)(.+?)\1\s*$")
 _LICENSED_RECAP_HEADINGS = {"in this chapter", "summary"}
 
 
@@ -51,6 +52,10 @@ def _without_licensed_recaps(text: str) -> str:
         heading = _HEADING_RE.match(line)
         if heading:
             skipping = heading.group(2).strip().casefold() in _LICENSED_RECAP_HEADINGS
+        else:
+            label = _STRONG_LABEL_RE.match(line)
+            if label and label.group(2).strip().casefold() in _LICENSED_RECAP_HEADINGS:
+                skipping = True
         if not skipping:
             kept.append(line)
     return "".join(kept)
