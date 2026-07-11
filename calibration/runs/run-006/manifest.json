@@ -1,0 +1,86 @@
+{
+  "run": "run-006",
+  "date": "2026-07-11",
+  "stage": "A",
+  "status": "IN_PROGRESS",
+  "operator": "gpt-5.6-sol",
+  "branch": "calibration-lab",
+  "scope": "same-start whole-rewrite versus defect-scoped revision A/B for Chapter 3",
+  "hypotheses_tested": ["H-043"],
+  "model_api": "native+openrouter",
+  "model_output_allowance_policy": "request each endpoint maximum; do not cap reasoning, time, or review depth",
+  "baseline_boundary": "dfedb4c — run-005 closed; exact R3 and review frozen; no shared factory asset changed",
+  "starting_artifacts": {
+    "candidate": "run-005 Chapter 3 R3; sha256 a58e3b051236e74f93cd55fd5a600437569271e4399d6a6bea30355249f8bbe1",
+    "review": "run-005 Chapter 3 R3 review; sha256 d1ce46a64171cdb94eb26920a7e05387e9339e75007d688ba0e8a16955689ab4",
+    "accepted_chapter_01": "sha256 124124405d2a915f4b67e575e92559f6eb4625e8d883a1aaed76412aa3c49048",
+    "accepted_chapter_02": "sha256 421415e0632aef7661ed2afbb497a0b829ea7c4bbced429801b7e5e6a3c9d4a7",
+    "master_plan": "sha256 e3fd7cd0ed90e2c6ef29ccabf219f6a10462b31f2ee75a6d9e1b42abbdf913b5"
+  },
+  "experiment": {
+    "single_variable": "revision scope after a fresh review identifies local defects in an otherwise substantially correct artifact",
+    "shared_objective": "produce the strongest complete Chapter 3; repair every R3 blocker and measured craft weakness without adding unsupported claims, losing assigned content, or changing the chapter job",
+    "arm_a_control": "whole-artifact writer may rewrite any passage",
+    "arm_b_treatment": "defect-scoped editor preserves unaffected meaning and changes defect-bearing passages plus the measured craft surface",
+    "generation_order": "both arms complete before any arm review is opened",
+    "measurement": "the same blind model-diverse top-reasoning panel reviews each arm independently; panel composition is symmetric measurement, not the tested lever",
+    "arm_acceptance": "convergent ACCEPT from both independent reviewers",
+    "causal_decision_rule": {
+      "supported": "B convergently ACCEPT and A does not",
+      "refuted": "A convergently ACCEPT and B fails because scope preservation prevented a necessary repair",
+      "inconclusive": "both accept, both fail, or reviewers materially disagree"
+    },
+    "product_selection": "advance any sole convergently accepted arm; if both accept, use a fresh blind pairwise quality preference and make no revision-scope causal claim"
+  },
+  "held_constant": [
+    "exact R3 candidate and exact R3 review",
+    "chapter-writer prompt",
+    "style guide",
+    "accepted normalized master plan",
+    "accepted Chapter 2 continuity",
+    "shared craft objective and all blocking requirements",
+    "Opus 4.6 through OpenRouter",
+    "reasoning effort none",
+    "128000 maximum output allowance",
+    "reference blindness",
+    "review inputs, reviewer panel, rubrics, and acceptance rule",
+    "no time, token, or reasoning cap on reviewers"
+  ],
+  "models": {
+    "writers": {
+      "requested_model": "anthropic/claude-opus-4.6",
+      "expected_runtime_model": "anthropic/claude-4.6-opus-20260205",
+      "reasoning": {"effort": "none"},
+      "max_tokens": 128000,
+      "arm_a_calls": [],
+      "arm_b_calls": []
+    },
+    "reviewer_panel": [
+      {
+        "model": "gpt-5.6-sol",
+        "provider": "openai native Codex",
+        "reasoning": "ultra",
+        "execution": "codex exec --ephemeral --disable multi_agent --model gpt-5.6-sol -c model_reasoning_effort=ultra",
+        "calls": []
+      },
+      {
+        "model": "google/gemini-3.1-pro-preview",
+        "provider": "OpenRouter runtime resolution",
+        "reasoning": "high",
+        "max_tokens": 65536,
+        "route_verified": "2026-07-11 against authenticated /api/v1/models",
+        "calls": []
+      }
+    ],
+    "judges": []
+  },
+  "asset_versions": {
+    "prompts/style-guide.md": "e8aa007",
+    "prompts/chapter-writer.md": "e8aa007",
+    "prompts/chapter-reviewer.md": "a91af62",
+    "production-books/quit-sugar/master-plan.md": "5915b9f"
+  },
+  "direction_audit": "GO — isolate revision scope; use diverse reviewers only as blinded measurement; do not add research architecture or a chapter-specific shared prompt",
+  "factory_promotion_boundary": "even a supported one-chapter result remains provisional until replicated on another chapter and then survives the zero-amendment Stage C subject holdout",
+  "notes": "No shared prompt, style, plan, research, schema, or live book artifact changes before the preregistered arms and reviews."
+}
