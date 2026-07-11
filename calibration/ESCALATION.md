@@ -6,7 +6,7 @@
 
 **Stage:** A
 
-**Status:** OPEN — repeated evidence escalation remains; v2.2 instrument repairs preregistered and product quality still unjudged
+**Status:** OPEN — repeated evidence escalation remains; v2.2 instrument frozen awaiting fresh controls and product quality still unjudged
 
 ## Current stop — run-012 v2.1 degraded-reference control
 
@@ -37,6 +37,8 @@ V2.1 comparative signatures, collapse, absolute-drift diagnostics, unioned criti
 After implementation tests and prompt/schema/implementation hashes freeze, both controls run from scratch into new v2.2 directories. Product judgment is forbidden unless both controls and both repair predictions pass under the same configuration. V2.1 identical PASS and degraded FAIL remain immutable and are never reused.
 
 V2.2 is a non-comparable instrument baseline, not H-050. Syntax passage proves only output validity; taxonomy passage proves only control-sample reproducibility; degraded passage proves only gross-damage sensitivity. Same-model replication is not cross-family evidence, blind integrity cannot verify unseen source packets, and no panel can override run-012's objective, length, or grounded failures.
+
+**Implementation freeze:** commit `ab13de1` implements and tests exactly those two repairs before any v2.2 inference. The run manifest freezes every prompt, output-schema, and implementation hash; focused tests pass 38/38 and the full gate passes 79/79. The runner retains strict parsing/validation and raw event streams, records both repair outcomes separately, and refuses product controls unless both outcomes passed. No prose, factory asset, material, threshold, aggregation, prior judgment, or hypothesis changed. The next artifacts are the two fresh v2.2 controls.
 
 ## Previous stop — run-012 v2 identical-text judge control
 

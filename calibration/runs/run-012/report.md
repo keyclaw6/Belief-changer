@@ -1,6 +1,6 @@
 # Run report — run-012
 
-**Stage:** A **Scope:** source-grounded commissions plus frozen Chapters 1-3 production **Causal verdict:** REFUTED — material invention in 3/3 grounded first drafts **Product verdict:** UNJUDGED — v2.1 degraded-reference control failed closed before product inference
+**Stage:** A **Scope:** source-grounded commissions plus frozen Chapters 1-3 production **Causal verdict:** REFUTED — material invention in 3/3 grounded first drafts **Product verdict:** UNJUDGED — v2.1 degraded-reference control failed closed; v2.2 is frozen and its controls have not run
 
 ## What will run
 
@@ -131,6 +131,12 @@ After implementation tests and prompt/schema/implementation hashes freeze, ident
 
 V2.2 is a non-comparable measurement baseline, not H-050. Structured-output passage proves syntax reliability only; taxonomy passage proves reproducibility only on identical and grossly degraded controls; degraded passage proves gross-damage sensitivity, not fine parity. Same-model replication remains non-cross-family, blind integrity cannot verify unseen sources, and no favorable panel can override run-012's objective, length, or grounded failures.
 
+### V2.2 implementation freeze
+
+Commit `ab13de1` implements exactly the two preregistered repairs before any v2.2 model call. Every native cell receives a deterministic closed role schema through `--output-schema`; the existing strict parser and role validator remain authoritative, and the runner has no extraction fallback, repair path, retry, or harness output limit. Successful and failed calls retain the native event stream. Each control summary scores first-response validity separately from candidate-relative label stability and degraded core-label retention; product validation requires both repair outcomes and both semantic controls to pass under the exact same configuration.
+
+The manifest freezes all three prompt, output-schema, and implementation hashes. Focused tests pass 38/38 and the repository gate passes 79/79; shellcheck remains unavailable and was skipped by the canonical gate. No judge inference, prose edit, factory amendment, threshold change, material change, or prior-artifact rewrite occurred. The next artifacts are fresh v2.2 identical and degraded-reference control directories; product judging remains forbidden until both pass.
+
 ## Judge-panel preflight — historical misrouting, now resolved
 
 Before the founder's routing correction, the operator preflighted a proposed OpenRouter two-family configuration: `google/gemini-3.1-pro-preview` at `high` and `openai/gpt-5.6-sol` at `max`. One v2 invocation would have been 20 raw judgments; both controls and the product panel would have required 60 OpenRouter calls. This configuration is preserved only as historical preflight evidence and was never used for inference.
@@ -141,7 +147,7 @@ The operator stopped before inference rather than create a partial or unbalanced
 
 The founder has now made the route explicit: OpenRouter may be used only for Opus 4.6 chapter-writing calls and DeepSeek research calls. It must never carry GPT/OpenAI, Gemini, Grok, planning, reviewing, auditing, or judging traffic. The approximately `$0.979` key allowance is therefore not a panel blocker and remains untouched for permitted Opus use.
 
-The canonical judge route is two same-model replica identities executed as fresh native Codex subagents pinned to `gpt-5.6-sol` at `ultra`. V2 and v2.1 produced the preserved results above. There is no external-access blocker; v2.2 is preregistered above and must be implemented, tested, and frozen before fresh controls.
+The canonical judge route is two same-model replica identities executed as fresh native Codex subagents pinned to `gpt-5.6-sol` at `ultra`. V2 and v2.1 produced the preserved results above. There is no external-access blocker; v2.2 is preregistered and frozen above, ready for fresh controls.
 
 ## Judge-instrument baseline
 
