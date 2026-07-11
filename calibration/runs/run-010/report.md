@@ -61,6 +61,19 @@ The faithful C-01 packet allows the preregistered Chapter 1 control/treatment co
 
 The live model catalog reconfirmed Opus 4.6 with 1,000,000 context, optional reasoning, and a 128,000 completion maximum. The disposable key had $2.3077 remaining. Both simultaneous 128,000-allowance requests returned HTTP 402 before inference because the key could authorize at most 100,308 completion tokens. No model ran and no charge or content resulted. Both arms retry at that exact shared ceiling; this remains far above the chapter budget and changes no content input.
 
+### Chapter 1 first drafts
+
+Both arms launched concurrently and completed before review. OpenRouter reported the same runtime model (`anthropic/claude-4.6-opus-20260205`), Anthropic provider, normal stop, and zero reasoning tokens for each.
+
+| Arm | Semantic input | Words | Cost | Frozen SHA-256 |
+|---|---|---:|---:|---|
+| Control | complete canonical plan | 2,676 | $0.309670 | `36c477c6c856e2ed9ce3afcd9c2e4318dcc35278650aa9a8de4ea8a04c1b5417` |
+| Treatment | faithful C-01 commission | 2,362 | $0.197855 | `9602cf8c442bddccae12cb89f1848cdc4893605f9409e8dad349fc016843dda5` |
+
+The treatment is 18 words below the existing 2,380-word lower bound. That is recorded as a gate failure unless a pre-existing instrument says otherwise; it is not waived because the miss is small.
+
+The required first-prose direction auditor returned **GO**: real candidates now exist for blind evaluation; the lever answers observed semantic leakage, is behavior-agnostic, and could operate unchanged on an unseen topic. The next action is objective and blind product evaluation.
+
 ## Gate verdict
 
 IN PROGRESS. All three packets froze before prose; fidelity audit complete with one isolated C-03 defect; faithful C-01 advances to blinded prose A/B.

@@ -176,7 +176,40 @@
           "artifact": "calibration/runs/run-010/infrastructure/chapter-01-opus-allowance.json"
         }
       ],
-      "calls": []
+      "calls": [
+        {
+          "chapter": 1,
+          "arm": "control",
+          "semantic_input": "complete canonical master plan",
+          "request_sha256": "7a3ab9de8f3d5708f8701e4bf32b5c105daa0b2b982ae1b9bf47da162929c038",
+          "call_id": "gen-1783776317-IAweBlYGJvmdqNLSXepZ",
+          "actual_model": "anthropic/claude-4.6-opus-20260205",
+          "provider": "Anthropic",
+          "max_tokens": 100308,
+          "reasoning": {"effort": "none", "reported_reasoning_tokens": 0},
+          "usage": {"prompt": 44494, "completion": 3488, "total": 47982, "cost_usd": 0.30967},
+          "finish_reason": "stop",
+          "artifact": "calibration/runs/run-010/chapters/chapter-01-control.md",
+          "artifact_sha256": "36c477c6c856e2ed9ce3afcd9c2e4318dcc35278650aa9a8de4ea8a04c1b5417",
+          "artifact_words_wc": 2676
+        },
+        {
+          "chapter": 1,
+          "arm": "treatment",
+          "semantic_input": "frozen faithful C-01 commission instead of complete plan",
+          "request_sha256": "7edd0354325bb52599dea8bf0dd7fdeb1c2afd3e05ab3990b40a5f24a03186c4",
+          "call_id": "gen-1783776317-gtnvJFagwhat06wo5PHw",
+          "actual_model": "anthropic/claude-4.6-opus-20260205",
+          "provider": "Anthropic",
+          "max_tokens": 100308,
+          "reasoning": {"effort": "none", "reported_reasoning_tokens": 0},
+          "usage": {"prompt": 24356, "completion": 3043, "total": 27399, "cost_usd": 0.197855},
+          "finish_reason": "stop",
+          "artifact": "calibration/runs/run-010/chapters/chapter-01-treatment.md",
+          "artifact_sha256": "9602cf8c442bddccae12cb89f1848cdc4893605f9409e8dad349fc016843dda5",
+          "artifact_words_wc": 2362
+        }
+      ]
     },
     "chapter_reviewer": {"model": "gpt-5.6-sol", "provider": "native Codex with recorded same-model OpenRouter fallback only if unavailable", "reasoning": "ultra native or max OpenRouter", "calls": []},
     "judges": [
@@ -197,7 +230,8 @@
     "set": "ISOLATED DEFECT",
     "operator_action": "packets remain frozen and unedited; faithful C-01 permits the preregistered Chapter 1 A/B; the defect remains a full-product validity risk and prevents any unsupported H-047 success claim"
   },
+  "first_prose_direction_audit": "GO — two complete Chapter 1 candidates now exist for blind evaluation; the focused commission directly tests observed semantic leakage, is behavior-agnostic, and could operate unchanged on an unseen topic; next action is product evaluation",
   "prefreeze_contract_audit": "GO — fresh read-only Codex critic found the prompt behavior/topic/chapter-agnostic, model-led, self-sufficient, and faithful to the single-lever experiment; no wording changed",
   "direction_audit": "GO — model-led commissioner is the smallest generic owner; NO-GO on mechanical slicing, prompt repetition, another Chapter 1 rule, or writer-model confound",
-  "notes": "Commissioner prompt frozen at a2f83da. C-01 through C-03 commissions were preserved and hashed before prose. Fidelity: C-01/C-02 faithful, C-03 isolated defect; no packet edited. Faithful C-01 advances to the preregistered A/B. No prose call has run."
+  "notes": "Commissioner prompt and packets remain frozen. Chapter 1 control and treatment completed concurrently before review; both used Opus 4.6 reasoning-none. First-prose direction audit returned GO. Objective and blind product evaluation pending."
 }
