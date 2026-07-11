@@ -68,7 +68,21 @@
       "provider": "openai native Codex",
       "reasoning": "ultra",
       "execution": "codex exec --ephemeral --disable multi_agent --model gpt-5.6-sol -c model_reasoning_effort=ultra",
-      "calls": []
+      "calls": [
+        {
+          "call_id": "019f50f3-68f8-7e20-b4db-0b0386f779f6",
+          "usage_total_tokens": 1270180,
+          "cached_input_tokens": 1156096,
+          "reasoning_output_tokens": 13260,
+          "verdict": "REVISE",
+          "corroborated_defect_classes": [
+            "unsupported advertising or installation causation and premature C-13 ownership",
+            "universalized repetition or pull mechanism owned by C-10"
+          ],
+          "artifact": "calibration/runs/run-008/reviews/pre-revision-sol-2.md",
+          "artifact_sha256": "f329514801dd437a091c25d7fc0cc48ab3808c9ad1d71aa2df1e0c3e81a8408e"
+        }
+      ]
     },
     "writer": {
       "requested_model": "anthropic/claude-opus-4.6",
@@ -104,5 +118,6 @@
   },
   "direction_audit": "GO on a clean new run using working models; no silent H-044 substitution, shared-prompt amendment, checklist synthesis, or deterministic prose control",
   "factory_promotion_boundary": "same-family correlation is explicit; only the product may advance, while feedback coverage requires later cross-family, cross-chapter, and Stage-C validation",
-  "notes": "No call has run."
+  "diagnostic_status": "PASSED — second fresh Sol independently corroborated both preregistered defect classes",
+  "notes": "The second Sol review ran blind to the first and history, took unrestricted ultra reasoning, and corroborated both the installation/C-13 and universal mechanism/C-10 boundaries. No writer call has run yet."
 }

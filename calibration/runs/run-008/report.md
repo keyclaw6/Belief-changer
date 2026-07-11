@@ -24,8 +24,15 @@ Two same-model contexts do not prove that two reviews outperform one or create a
 
 ## Results
 
-Pending the second fresh Sol review.
+The second fresh Sol-ultra review returned "REVISE" and independently corroborated both preregistered defect classes:
+
+- advertising, checkout placement, and repeated exposure were used as causal installation or depleted-deliberation claims not licensed by C-03 and partly owned by C-13;
+- repetition and felt pull were stated as a universal mechanism that examination dissolves, although C-10 owns the bounded mixed-evidence mechanism.
+
+It independently measured 2,853 wc words, 26.9 second-person terms per 1,000 lexical words, 8.9% questions, 30.6% short sentences, and a 14.7-word mean. It also confirmed exact mantras/instruction, complete anatomy, and no illicit repetition against Chapter 2.
+
+The diagnostic premise passed. The exact raw review is committed without synthesis.
 
 ## Gate verdict
 
-IN PROGRESS. Shared factory assets and the live book remain unchanged.
+IN PROGRESS. Next: one Opus revision from exact Arm A plus both raw Sol reviews. Shared factory assets and the live book remain unchanged.

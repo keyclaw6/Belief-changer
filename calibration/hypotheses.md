@@ -219,8 +219,8 @@ Seeded by the harness builder (2026-07-10) as starting capital — derive priori
 - Claim boundary: this does not compare two reviews against one, and same-family convergence is not universal factory proof. The feedback method remains unpromoted pending reliable cross-family, cross-chapter, and Stage-C evidence.
 - Rival explanations / signal risk: independent Sol contexts may share one conservative interpretation; Opus success may be stochastic; targeted Gemini may miss a different method defect; objective rhythm movement may not improve persuasion. Later blind product gates remain decisive.
 - Stop rule: recurrence of either explicitly surfaced defect is the third semantic same-dimension failure and triggers HARNESS §11 escalation before any generic shared-prompt clarification.
-- Result: PENDING.
-- Next test: dispatch the second fresh blind Sol review of exact Arm A.
+- Result to date: the second fresh Sol reviewer, blind to the first and run history, independently returned REVISE and corroborated both preregistered classes: unsupported advertising/installation causation with C-13 drift, and universalized repetition/pull dissolution owned by C-10. It also independently measured the same excessive short-sentence surface and confirmed the assigned anatomy, tokens, and continuity.
+- Next test: run the single preregistered Opus reasoning-none revision from exact Arm A and both raw Sol reviews; do not synthesize or amend their feedback.
 
 ## H-007 — planner reasoning effort                       [RETIRED — founder-fixed 2026-07-10]
 - Gap: a reasoning-effort sweep was proposed before the founder fixed every allowed non-writer model to its top supported reasoning mode.
