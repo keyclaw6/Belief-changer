@@ -9,7 +9,7 @@
 <key rows: total/mean words vs ref ratio, mantra check, repetition law, originality overlap — table or bullets, numbers not adjectives>
 
 ## Judge results (`judgments/judge-summary.json`)
-<overall win-rate, per-dimension win-rates, detection accuracy, per-model split (cross-family agreement?), critical failures>
+<both control verdicts; equal-role macro preference; per-role rates; same-model replica agreement; A/B-order instability; critical failures; explicit source-verification and cross-family limits>
 
 ## Gate verdict
 <each HARNESS §5 gate for this stage: pass/fail with the number>

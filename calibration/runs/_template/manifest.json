@@ -6,8 +6,8 @@
   "branch": "calibration-lab",
   "scope": "framing+plan+ch1-3 | full-book | holdout-caffeine",
   "hypotheses_tested": [],
-  "model_api": "openrouter | litellm | native+openrouter | meta",
-  "model_output_allowance_policy": "greatest allowance actually authorized after input; request endpoint maximum; continue on length",
+  "model_api": "route-restricted: OpenRouter only for Opus chapter writing and DeepSeek research; native/direct authorized surfaces for every other role",
+  "model_output_allowance_policy": "permitted OpenRouter calls request the greatest authorized allowance and continue on length; native judge calls have no harness output cap",
   "baseline_boundary": "<pre-run executable-contract commit; no calibration-quality amendments>",
   "research_orchestration": {
     "arm": "H-010 prompt-structured, model-led",
@@ -36,7 +36,7 @@
     "research_reviewer": "<allowed R1-R3 exact runtime id>",
     "planner": "<Gemini 3.1 Pro | GPT 5.6 Sol | Grok 4.5 exact runtime id>",
     "planner_reasoning": "high | max | ultra (native Codex Sol)",
-    "planner_execution": "<openrouter | exact ephemeral codex exec invocation>",
+    "planner_execution": "<native/direct authorized route; never OpenRouter>",
     "plan_reviewer": "<Gemini 3.1 Pro | GPT 5.6 Sol | Grok 4.5>",
     "plan_reviewer_reasoning": "high | max | ultra (native Codex Sol)",
     "writer": {
@@ -53,10 +53,14 @@
     },
     "chapter_reviewer": "<Gemini 3.1 Pro | GPT 5.6 Sol | Grok 4.5>",
     "chapter_reviewer_reasoning": "high | max | ultra (native Codex Sol)",
-    "judges": [
-      {"model": "<allowed planning/judge model>", "reasoning": "high | max", "authorized_output": "<value>"},
-      {"model": "<different allowed model>", "reasoning": "high | max", "authorized_output": "<value>"}
-    ]
+    "judges": {
+      "route": "fresh native Codex subagents",
+      "model": "gpt-5.6-sol",
+      "reasoning": "ultra",
+      "replica_identities": ["sol-ultra-r1", "sol-ultra-r2"],
+      "stage_a_raw_judgments": 20,
+      "openrouter_usage": false
+    }
   },
   "asset_versions": {
     "prompts/style-guide.md": "<git short sha>",

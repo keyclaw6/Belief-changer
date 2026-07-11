@@ -6,17 +6,21 @@
 
 **Stage:** A
 
-**Status:** OPEN — RUN-012 CONTROLLED V2 PANEL FUNDING BLOCKER; no canon merge or mid-run amendment authorized
+**Status:** OPEN — repeated evidence escalation remains; run-012 native controlled panel is ready with no external blocker
 
-## Run-012 controlled-panel authorization blocker
+## Resolved run-012 judge-route correction
 
-H-049 is already causally **REFUTED** by the completed grounded specialist review. The separate run-012 product verdict remains **UNJUDGED** because the required Stage-A v2 instrument could not begin its first semantic control.
+**Resolved route:** 2026-07-12
 
-Runtime preflight resolved the unchanged balanced configuration as `google/gemini-3.1-pro-preview` at `high` reasoning and `openai/gpt-5.6-sol` at `max`. The identical control, degraded-reference control, and product panel are 20 raw judgments each, or 60 calls total. The authenticated credit endpoint reported `$0.797648511` remaining. One Gemini catalog-maximum output reservation is `$0.786432` before prompt and reasoning; one OpenRouter Sol reservation is `$3.84`. The key therefore cannot authorize the unchanged quality-valid matrix.
+H-049 is already causally **REFUTED** by the completed grounded specialist review. The separate run-012 product verdict remains **UNJUDGED** because the required Stage-A v2 controls and product panel have not yet run.
 
-No inference was attempted: zero judge calls, neither control run, no product panel, and no judgment artifacts. This is not a semantic control failure and does not authorize a partial panel, lower reasoning, a substitute model, H-050, or any prose, prompt, commission, threshold, or judge-asset change.
+The earlier runtime preflight proposed `google/gemini-3.1-pro-preview` at `high` and OpenRouter `openai/gpt-5.6-sol` at `max`. It calculated 60 calls across both controls and the panel, observed `$0.797648511` remaining, and found that the proposed OpenRouter matrix could not be authorized. That zero-inference preflight is preserved as history, but the route itself was wrong under the founder's clarified law.
 
-The exact external unblock is to raise this key's per-key limit and account funding, or provide a newly funded OpenRouter key sufficient for the unchanged two-family controls and product panel. After that, run both controls first and proceed to the full target panel only if both validate.
+No inference was attempted: zero judge calls, neither control run, no product panel, and no judgment artifacts. This is not a semantic control failure. It does not authorize H-050 or any prose, prompt, commission, threshold, or judge-asset change.
+
+OpenRouter may now be used only for Opus 4.6 chapter-writing calls and DeepSeek research calls. GPT/OpenAI, Gemini, Grok, planners, reviewers, auditors, and judges must never use it. The approximately `$0.979` key allowance is not a panel dependency and remains untouched for permitted Opus use.
+
+The canonical continuation is to spawn fresh native Codex judge subagents pinned to `gpt-5.6-sol` with `model_reasoning_effort="ultra"`. Exactly two same-model replica identities cover every Stage-A v2 role target and both A/B orders, producing 20 raw judgments per invocation. Run the identical and degraded-reference controls under that exact configuration, then run the blind product panel only if both validate. The degraded control proves only gross-damage sensitivity, blind integrity cannot verify unseen sources, and same-model replication is not cross-family evidence. There is no external blocker.
 
 ## Direction-audit resolution — run-012
 

@@ -342,7 +342,7 @@ Seeded by the harness builder (2026-07-10) as starting capital — derive priori
 
 ## H-038 — Muse Spark 1.1 writer arm                    [PROPOSED AFTER run-001]
 - Gap: Opus 4.6 reasoning-none is the fixed baseline, but the newly released Muse Spark 1.1 may produce stronger chapter prose with a much larger context/output envelope.
-- Lever: after the Opus Stage-A baseline, run `muse-spark-1.1` at `xhigh` on the identical plan, prompt, previous-chapter input, reviewers, and judges. Use only an official Meta or runtime-listed OpenRouter route.
+- Lever: after the Opus Stage-A baseline, run `muse-spark-1.1` at `xhigh` on the identical plan, prompt, previous-chapter input, reviewers, and judges. Use only an official Meta direct route; OpenRouter Muse is forbidden by the current routing law.
 - Prediction: measurement; compare objective gates and blind judge dimensions, with no cost/speed preference.
 - Result: official preflight on 2026-07-11 found no OpenRouter route. Meta's direct route requires a separate credential and cannot disable reasoning, so this is an end-to-end writer+reasoning comparison and does not block run-001.
 

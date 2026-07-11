@@ -30,7 +30,8 @@ First actions, in order:
 2. BUILD-AND-TEST the harness before any book run: env per §2
    (OPENROUTER_API_KEY, push access, web access); extract the reference;
    run the eval suite against the reference itself; make one
-   judge_panel call to prove endpoint connectivity; fix anything broken
+   native Sol-ultra judge-control call to prove the spawned-subagent route;
+   fix anything broken
    and commit the fixes.
 3. Design the deep-research subsystem per §3b — structured multi-subagent
    decomposition into recovery/experience communities; evaluate adopting
@@ -53,8 +54,8 @@ Every improvement must land in a **generic method asset** (`prompts/style-guide.
 
 1. `git clone https://github.com/keyclaw6/Belief-changer.git` (if the clone 407s behind a proxy, retry with `git -c http.proxyAuthMethod=basic clone …`). Work on branch **`calibration-lab`**. You need push access; if you lack it, escalate (§11).
 2. `python3` (stdlib only — no pip installs needed).
-3. Model access: env `OPENROUTER_API_KEY` (the founder's key; base `https://openrouter.ai/api/v1`, OpenAI-compatible). Alternate: `LITELLM_BASE_URL` + `LITELLM_API_KEY` (the founder's proxy); `scripts/eval/judge_panel.py` accepts either. **Resolve exact model IDs at runtime from `GET /api/v1/models`** (bearer auth) — never guess an ID. Every non-writer role uses the highest mode reported by that model's `reasoning` object. The run-001 writer is the exception: Opus 4.6 with reasoning disabled via `{"reasoning": {"enabled": false}}`.
-   **Quality-only execution law (founder correction, 2026-07-10; clarified 2026-07-11):** cost, speed, latency, and token use are observations, never optimization targets or stop conditions. Request the endpoint maximum; if the endpoint or supplied key returns a lower exact authorization ceiling, use that greatest available allowance rather than inventing a smaller cap or blocking the run. Continue on `finish_reason=length`; never compress the objective for economy or convenience. Usage and cost remain records only.
+3. Model access is route-restricted by founder law. `OPENROUTER_API_KEY` may be used **only** for Claude Opus 4.6 chapter-writing calls with reasoning disabled and DeepSeek research calls at its top supported mode. Never send GPT/OpenAI, Gemini, Grok, planning, framing, reviewing, auditing, summarization, or judging traffic through OpenRouter. Product judges use fresh native Codex subagents pinned to `gpt-5.6-sol` with `model_reasoning_effort="ultra"`; record each spawned identity, exact pin, setting, inputs, and output. Other allowed non-writer arms require a native or direct authorized surface and are unavailable—not silently rerouted—when no such surface exists. Provider credentials stay in environment variables and never enter repository files.
+   **Quality-only execution law (founder correction, 2026-07-10; clarified 2026-07-11):** cost, speed, latency, and token use are observations, never optimization targets or stop conditions. For an allowed OpenRouter call, request the endpoint maximum; if the endpoint or supplied key returns a lower exact authorization ceiling, use that greatest available allowance rather than inventing a smaller cap or blocking the run. Continue on `finish_reason=length`; never compress the objective for economy or convenience. Usage and cost remain records only.
 4. Extract the reference (LOCAL ONLY — `calibration/reference/` is gitignored; never commit extracted book text):
    ```
    python3 scripts/eval/extract_reference.py \
@@ -104,7 +105,7 @@ Evidence enters Git only after its access, excerpt, retention, redistribution, a
 
 **Stage A — chapter parity.** Scope: framing + master plan + chapters 1–3.
 - Objective gate: `run_evals.py --chapters 1-3` exit 0 (mantra debut/schedule verbatim; no ≥12-gram non-mantra repeats; cross-overlap < 0.3%).
-- Judge gate (Stage-A v2, §9): both prompt controls pass; the role/model/order matrix is complete; equal-role macro preference (ties = 0.5) ≥ **0.45**; every role ≥ **0.35**; zero critical failures on ours. Order-unstable observations never contribute to a pass, and a role with no stable observation fails the gate. V2 has no authorship-detection probe.
+- Judge gate (Stage-A v2, §9): both prompt controls pass; the role/identity/order matrix is complete; equal-role macro preference (ties = 0.5) ≥ **0.45**; every role ≥ **0.35**; zero critical failures on ours. Order-unstable observations never contribute to a pass, and a role with no stable observation fails the gate. V2 has no authorship-detection probe.
 - Plan-length gate: plan chapter budgets sum to 0.9–1.1× reference total; ch 1–3 within ±20% of their budgets.
 - **Exit Stage A:** gates pass on **two consecutive runs with zero amendments between them** (stability, not luck).
 
@@ -125,7 +126,7 @@ Evidence enters Git only after its access, excerpt, retention, redistribution, a
 2. Fill `manifest.json`: stage, models per role, asset versions (`git log -1 --format=%h -- <file>` per method asset), hypotheses under test.
 3. Execute the stage recipe (§3). **run-001 is the post-bootstrap baseline:** zero calibration-driven amendments. Pre-run repairs required to make the documented contracts executable (eval correctness, blindness, role-model isolation, and the founder-mandated deep-research handoff) are recorded by commit in the manifest's `baseline_boundary`; they are not quality-tuning outcomes.
 4. Objective evals: `python3 scripts/eval/run_evals.py --book production-books/quit-sugar --ref-dir calibration/reference/gsbs --run-dir calibration/runs/run-NNN [--chapters 1-3]`.
-5. Stage-A judge panel: `python3 scripts/eval/judge_panel.py --ours production-books/quit-sugar/chapters --ref calibration/reference/gsbs --chapters 1-3 --models google/gemini-3.1-pro-preview,openai/gpt-5.6-sol --reasoning-efforts google/gemini-3.1-pro-preview=high,openai/gpt-5.6-sol=max --out calibration/runs/run-NNN/judgments` (§9 for roles, controls, and family rules; resolve IDs and endpoint completion maxima again at runtime).
+5. Stage-A judge panel: commission fresh native Codex judge subagents pinned to `gpt-5.6-sol` with `model_reasoning_effort="ultra"` for every Stage-A v2 role, target, replicated identity, and A/B order (§9). Run the identical and degraded-reference controls through the exact same native configuration to separate output directories before product judgment; the product invocation must pass both summaries through `--validated-controls`. Preserve every exact prompt/input hash and raw result under `calibration/runs/run-NNN/judgments/`, then aggregate only after the complete matrix exists. Never use OpenRouter for a judge call.
 6. Write `report.md` (template provided): results → gate verdict → ranked diagnosis (each gap mapped to the generic asset that owns it) → hypothesis outcomes → amendments proposed for the next run.
 7. Update `calibration/runs/LEDGER.md` (one row) and `calibration/hypotheses.md` (statuses; new hypotheses from the diagnosis).
 8. Amend method assets for the next run: **≤1 lever per run** (or a small batch ONLY if each item carries its own attribution rationale and touches a different failure).
@@ -147,30 +148,31 @@ Length is planned, not hoped for: (a) the master plan's curve map assigns **ever
 | Research lead + chosen subagents | **ARMS below** (needs web access + long context) | DeepSeek V4 Pro / MiniMax M3 / GPT 5.6 Luna only; the lead chooses the organization |
 | Planner | **ARMS below** | Gemini 3.1 Pro / GPT 5.6 Sol / Grok 4.5 only |
 | Plan reviewer | strongest allowed planning model | "fit to write from" is the highest-leverage gate |
-| Chapter reviewer | strongest allowed planning/judge model | cross-family to the configured writer |
+| Chapter reviewer | strongest allowed planning/judge model | native/direct route only; independent of the writer |
 | Summarizer (Stage B) | one allowed planning/judge model at top reasoning | same model and prompt for both books |
-| Judges | ≥2 of the allowed planning/judge models | every panel remains independent of the writer family |
+| Product judges | **fresh native `gpt-5.6-sol` subagents, `ultra`** | exactly two same-model replica identities in frozen Stage-A v2; never OpenRouter |
 
-**Planner/reviewer/judge arms (H-005):** P1 GPT 5.6 Sol (OpenRouter `max`; native surface's top setting) · P2 Gemini 3.1 Pro (`high`) · P3 Grok 4.5 (`high`). Use native GPT 5.6 Sol when the environment can pin the exact model/top setting and preserve the exact-input/fresh-context contract; otherwise use the runtime-resolved OpenRouter ID. No lower-effort sweep: top reasoning is fixed.
+**Planner/reviewer arms (H-005):** P1 GPT 5.6 Sol (native surface `ultra`) · P2 Gemini 3.1 Pro (`high`) · P3 Grok 4.5 (`high`). Each requires a native or direct authorized surface; absence of one never authorizes an OpenRouter fallback. Product judging is fixed to replicated fresh native GPT 5.6 Sol `ultra` subagents. No lower-effort sweep: top reasoning is fixed.
 
 **Gemini 3.1 Flash Lite is forbidden in every role.** Framers, planners, plan/chapter reviewers, Stage-B summarizers, and judges use only the three planning/judge arms above.
 
-For subscription-backed native Sol in this Codex environment, use a fresh `codex exec --ephemeral --model gpt-5.6-sol` invocation with the per-call top setting `model_reasoning_effort="ultra"`; the current CLI accepted that exact preflight on 2026-07-10. Record the command/config in the manifest. Do not infer the planner model from the mutable global Codex default or from a collaboration spawn that exposes no model selector. OpenRouter Sol continues to use its endpoint-reported `max` setting.
+For subscription-backed native Sol in this Codex environment, spawn a fresh Codex subagent only with an explicit `gpt-5.6-sol` pin and per-call `model_reasoning_effort="ultra"`; the current native surface accepted that configuration on 2026-07-10. Record the spawned identity and configuration in the manifest. Do not infer the model from the mutable global Codex default. OpenRouter Sol is forbidden even when its endpoint is available.
 
 **Researcher arms (H-009):** R1 `deepseek/deepseek-v4-pro` (`xhigh`) · R2 `minimax/minimax-m3` (reasoning enabled; `/models` exposes no effort ladder) · R3 GPT 5.6 Luna (`max`, runtime-resolved ID). Rank only by research quality: community and persona coverage, source depth, verified verbatim evidence, belief-changing insight, scientific rigor, and synthesis quality. Usage, cost, and latency are descriptive metadata and never break a quality tie.
 
-**Muse route status (2026-07-11):** the official OpenRouter catalog has no Muse entry, so do not guess a slug. Meta's direct model ID is `muse-spark-1.1`; it requires a separate Meta Model API credential and rejects reasoning `none`. Route availability is checked again after run-001 and never blocks the Opus baseline.
+**Muse route status (2026-07-11):** the official OpenRouter catalog has no Muse entry, and the founder's route law would forbid OpenRouter Muse even if one appeared. Meta's direct model ID is `muse-spark-1.1`; it requires a separate Meta Model API credential and rejects reasoning `none`. Direct-route availability is checked again after run-001 and never blocks the Opus baseline.
 
-Use as many independent allowed arms as quality and adversarial diversity demand; record every exact resolved ID, reasoning config, and maximum output allowance in the manifest. If an allowed arm or its required top-reasoning config is unavailable at runtime, note it in the ledger and proceed with the remaining allowed arms.
+Use as many independent allowed arms as quality and adversarial diversity demand; record every exact model pin, route, reasoning config, and output allowance in the manifest. If an allowed arm or its required top-reasoning native/direct route is unavailable, note it in the ledger and proceed only where the experiment remains valid; never substitute OpenRouter outside the two permitted uses.
 
 ## §9 Judging protocol
 
 - **Stage-A v2 has three independent blind roles:** belief-change efficacy and method-integrity/epistemic safety each judge the complete three-chapter block; literary craft judges each chapter. Each returns strict role-specific JSON and one behavior-agnostic mechanism. No role guesses authorship or receives run history, hypotheses, amendments, source packets, or review output.
-- **Cross-family rule:** every Stage-A panel uses at least two allowed judge families, and every judge family differs from the configured writer family. The allowed Google/OpenAI/xAI panel is cross-family to both the Anthropic baseline and the later Meta arm; an absent or incomplete family matrix invalidates the panel.
-- Every configured model judges every role and target in both A/B orders. The two orders are repeated measurements of one model-role-target observation, not independent votes; the runner collapses them and reports verdict, score, or critical-failure instability. With three chapters and two models the balanced matrix is 20 raw judgments and 10 collapsed observations.
-- Before the first product use of a prompt/model configuration, run the identical-text and locally degraded-reference controls with the same command plus respectively `--control identical` and `--control degraded-reference`, each to a separate output directory. Either control failure invalidates the instrument and fails closed before product interpretation.
+- **Independent-context replication rule:** the frozen Stage-A v2 baseline uses exactly two native Sol-ultra replica identities for every role target. Each identity/order judgment runs as a separately spawned fresh context and receives no other judge output. Replication comes from independent same-model contexts, not provider-family variation; it is not cross-family evidence. A missing identity, role target, or order invalidates the panel.
+- Every replica identity covers every role target in both A/B orders. The two orders are repeated measurements of one identity-role-target observation, not independent votes; aggregation first collapses them and reports verdict, score, or critical-failure instability, then reconciles the two identities. With three chapters the frozen matrix is exactly 20 raw judgments and 10 collapsed identity observations.
+- Before the first product use of a prompt/model configuration, run the identical-text and locally degraded-reference controls through the same prompts, input builder, native Sol-ultra identity count, and A/B-order treatment, each to a separate output directory. Either control failure invalidates the instrument and fails closed before product interpretation.
+- **Control and scope limits:** the degraded-reference control intentionally applies gross damage, so passing proves only sensitivity to severe incoherence—not fine parity discrimination. The blind integrity role sees finished prose but no source packets; it can flag internally unsupported authority or overreach, but it cannot verify source fidelity. Source-grounded audits remain a separate instrument. Same-model replication makes no cross-family claim, and a product-panel preference cannot override any failed objective, length, or method gate when deciding Stage A.
 - Aggregates live in `judgments/judge-summary.json`. Product parity and causal movement are separate: the panel compares finished products but cannot establish why a candidate moved. Stage-A v2, adopted in run-012, is a new measurement baseline and its scores are not numerically comparable to the legacy panel.
-- Historical reproduction remains available only by explicitly passing `--prompt calibration/judges/pairwise-judge.md`; that selects the frozen legacy schema, independent-order aggregation, and detection probe. It is not the canonical Stage-A quality instrument.
+- Historical reproduction remains available only by explicitly passing `--prompt calibration/judges/pairwise-judge.md`; that selects the frozen legacy schema, independent-order aggregation, and detection probe. It is not the canonical Stage-A quality instrument and does not authorize an API route forbidden by §2.
 
 ## §10 Observability & records
 
@@ -187,9 +189,9 @@ Per run: `manifest.json` (config), `metrics.json` (objective), `judgments/` (raw
 STOP and write `calibration/ESCALATION.md` (committed, with run refs) when:
 - 3 consecutive runs show no gate progress on the same failing dimension;
 - a method-integrity violation (shame/willpower/fear framing) recurs after a targeted amendment;
-- judge families disagree by >2 points on the same dimension across a whole run (judge-prompt defect — do not tune it silently; propose the fix in the escalation);
+- independent judge identities disagree by >2 points on the same dimension across a whole run (judge-prompt defect — do not tune it silently; propose the fix in the escalation);
 - an amendment would need to touch founder-gated canon in a way you can't phrase behavior-agnostically;
-- you lack push access, web access for research, or both supported model endpoints;
+- you lack push access, web access for research, the permitted Opus writer route, or the native Sol-ultra judge-subagent route;
 - anything in this manual is ambiguous in practice (name the gap; the founder/Hyperagent fixes the manual, per the AGENTS.md harness rule).
 
 Founder merges: canon (`main`) style-guide/prompt changes are founder-approved — batch your winning amendments in the escalation/ledger notes; do not merge `calibration-lab` → `main` yourself.
