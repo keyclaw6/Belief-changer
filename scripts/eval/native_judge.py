@@ -64,7 +64,7 @@ def instrument_configuration(prompts, pairing, identities):
     root = Path(__file__).parent
     digest = lambda data: hashlib.sha256(data).hexdigest()
     return {
-        "protocol_version": "stage-a-v2-native-sol-ultra-1",
+        "protocol_version": "stage-a-v2.1-native-sol-ultra-1",
         "transport": "native-codex-subscription", "model": MODEL,
         "reasoning_effort": REASONING_EFFORT, "replica_identities": list(identities),
         "chapter_pairs": [list(pair) for pair in pairing],

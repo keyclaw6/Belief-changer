@@ -1,4 +1,4 @@
-"""Blind judge panel runner; no --prompt selects the native Stage-A v2 protocol."""
+"""Blind judge panel runner; no --prompt selects native Stage-A v2.1."""
 import argparse, json, os, re, sys, urllib.error
 from pathlib import Path
 
@@ -62,7 +62,7 @@ def judge_role(cfg, judge_identity, role, cell, order):
         parsed = json.loads(raw)
     except json.JSONDecodeError:
         parsed = None
-    record = {"protocol": "stage-a-v2", "role": role, "scope": ROLE_SPECS[role]["scope"],
+    record = {"protocol": "stage-a-v2.1", "role": role, "scope": ROLE_SPECS[role]["scope"],
               "target": cell["target"], "ours_chapters": cell["ours_chapters"],
               "ref_chapters": cell["ref_chapters"], "model": N.MODEL,
               "judge_identity": judge_identity, "order": order,
@@ -159,14 +159,14 @@ def main():
     parser.add_argument("--validated-controls", default="",
                         help="identical,degraded control summary paths required for product mode")
     parser.add_argument("--control", choices=("identical", "degraded-reference"), default="",
-                        help="Stage-A v2 prompt-control run")
+                        help="Stage-A v2.1 prompt-control run")
     parser.add_argument("--out", required=True)
     parser.add_argument("--base-url", default="")
     parser.add_argument("--api-key-env", default="")
     args = parser.parse_args()
     legacy = bool(args.prompt)
     if args.control and legacy:
-        parser.error("--control is available only in the Stage-A v2 no--prompt protocol")
+        parser.error("--control is available only in the Stage-A v2.1 no--prompt protocol")
     if legacy and args.validated_controls:
         parser.error("--validated-controls is available only in canonical Stage-A")
     if args.control and args.validated_controls:

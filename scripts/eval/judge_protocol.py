@@ -1,7 +1,6 @@
 """Response schemas and aggregation for the calibration judge instrument."""
 from collections import defaultdict
 
-
 ROLE_SPECS = {
     "efficacy": {
         "scope": "block",
@@ -112,21 +111,28 @@ def _collapse_orders(key, records):
         return base
     mapped = [record["mapped"] for record in valid]
     verdicts = [item["product_parity_verdict"] for item in mapped]
-    dims = {}
-    flips = []
+    dims, flips, score_signs = {}, [], [{}, {}]
     max_gap = max_within = 0
     for dim in ROLE_SPECS[role]["dims"]:
         pairs = [item["dims"][dim] for item in mapped]
         signs = [(pair["ours"] > pair["ref"]) - (pair["ours"] < pair["ref"]) for pair in pairs]
+        for index, sign in enumerate(signs):
+            score_signs[index][dim] = sign
         if signs[0] != signs[1]:
             flips.append(dim)
         max_gap = max(max_gap, *(abs(pairs[0][side] - pairs[1][side]) for side in ("ours", "ref")))
         max_within = max(max_within, *(abs(pair["ours"] - pair["ref"]) for pair in pairs))
         dims[dim] = {"ours_mean": round(sum(pair["ours"] for pair in pairs) / 2, 2),
                      "ref_mean": round(sum(pair["ref"] for pair in pairs) / 2, 2)}
-    critical_changed = any(set(mapped[0][field]) != set(mapped[1][field])
-                           for field in ("critical_ours", "critical_ref"))
-    unstable = verdicts[0] != verdicts[1] or bool(flips) or critical_changed
+    critical_relative = [{
+        "ours_only": sorted(set(item["critical_ours"]) - set(item["critical_ref"])),
+        "ref_only": sorted(set(item["critical_ref"]) - set(item["critical_ours"])),
+    } for item in mapped]
+    signatures = [{"verdict": verdicts[index], "score_signs": score_signs[index],
+                   **critical_relative[index]} for index in range(2)]
+    absolute_critical_changed = any(set(mapped[0][field]) != set(mapped[1][field])
+                                    for field in ("critical_ours", "critical_ref"))
+    unstable = signatures[0] != signatures[1]
     base.update({
         "complete": True, "dims": dims,
         "product_parity_verdict": verdicts[0] if verdicts[0] == verdicts[1] else "unstable",
@@ -135,24 +141,25 @@ def _collapse_orders(key, records):
         "critical_ref": sorted({item for result in mapped for item in result["critical_ref"]}),
         "paraphrased_evidence_by_order": [item["paraphrased_evidence"] for item in mapped],
         "generic_mechanism_by_order": [item["generic_mechanism"] for item in mapped],
-        "order_instability": {"unstable": unstable, "verdicts": verdicts,
+        "order_instability": {"unstable": unstable,
+                              "comparative_signatures": signatures, "verdicts": verdicts,
                               "score_winner_flips": flips,
-                              "critical_failures_changed": critical_changed,
-                              "max_same_text_score_shift": max_gap,
+                              "relative_critical_failures_changed":
+                                  critical_relative[0] != critical_relative[1],
                               "max_within_order_candidate_gap": max_within},
+        "absolute_drift": {"critical_failures_changed": absolute_critical_changed,
+                           "max_same_text_score_shift": max_gap},
     })
     return base
 
-
 def _rate(observations):
     stable = [item for item in observations
-              if item.get("complete") and item["product_parity_verdict"] != "unstable"]
+              if item.get("complete") and not item["order_instability"]["unstable"]]
     if not stable:
         return None
     ours = sum(item["product_parity_verdict"] == "ours" for item in stable)
     ties = sum(item["product_parity_verdict"] == "tie" for item in stable)
     return round((ours + 0.5 * ties) / len(stable), 3)
-
 
 def aggregate_v2(records):
     grouped = defaultdict(list)
@@ -183,6 +190,8 @@ def aggregate_v2(records):
                                              for item in subset)}
     complete = [item for item in observations if item.get("complete")]
     unstable = [item for item in complete if item["order_instability"]["unstable"]]
+    label_drift = [item for item in complete if item["absolute_drift"]["critical_failures_changed"]]
+    score_drift = [item for item in complete if item["absolute_drift"]["max_same_text_score_shift"] > 0]
     role_rates = [value["preference_rate_incl_half_ties"] for value in roles.values()
                   if value["preference_rate_incl_half_ties"] is not None]
     invalid = len(records) - sum(bool(record.get("mapped")) for record in records)
@@ -196,7 +205,7 @@ def aggregate_v2(records):
                                           == identity}) for identity in identities}
     same_model_replicated = len(models) == 1 and len(identities) > 1
     return {
-        "protocol": "stage-a-v2", "raw_judgments": len(records),
+        "protocol": "stage-a-v2.1", "raw_judgments": len(records),
         "collapsed_observations": len(observations), "invalid_judgments": invalid,
         "panel_complete": invalid == 0 and all(item.get("complete") for item in observations)
                           and matrix_complete,
@@ -214,6 +223,12 @@ def aggregate_v2(records):
                               "rate": round(len(unstable) / len(complete), 3) if complete else None,
                               "ids": [f'{item["judge_identity"]}|{item["role"]}|{item["target"]}'
                                       for item in unstable]},
+        "absolute_drift": {
+            "critical_label_observations": len(label_drift),
+            "score_observations": len(score_drift),
+            "max_same_text_score_shift": max((item["absolute_drift"]["max_same_text_score_shift"]
+                                               for item in complete),
+                default=0)},
         "product_parity": {"unit": "collapsed judge-identity-role-target observation",
                            "overall_preference_rate_incl_half_ties": _rate(complete),
                            "equal_role_macro_preference_rate": (
@@ -226,7 +241,6 @@ def aggregate_v2(records):
                             "reason": "Requires a preregistered candidate-to-candidate experiment."},
         "observations": observations,
     }
-
 
 def evaluate_control(summary, mode):
     observations = [item for item in summary["observations"] if item.get("complete")]
