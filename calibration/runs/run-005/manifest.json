@@ -2,13 +2,13 @@
   "run": "run-005",
   "date": "2026-07-11",
   "stage": "A",
-  "status": "IN_PROGRESS",
+  "status": "FAIL",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "Chapter 3 ordinary writer-review loop with conditional latest-review craft feedback",
   "hypotheses_tested": ["H-042"],
   "model_api": "native+openrouter",
-  "baseline_boundary": "0d10ae6 — Chapters 1–2 accepted and H-042 preregistered",
+  "baseline_boundary": "5bf1695 — H-042 preregistered after Chapters 1–2 were accepted",
   "inherited_artifacts": {
     "research": "run-001 accepted R4; unchanged",
     "framing": "run-001 accepted R2; unchanged",
@@ -56,6 +56,15 @@
         "artifact": "calibration/runs/run-005/chapters/chapter-03-r2.md",
         "artifact_sha256": "8e7c88cb3f52a225634b4f1e833744515314dfb3c5cdaed3d2458230e690c792",
         "review_verdict": "REVISE"
+      }, {
+        "call_id": "gen-1783766255-pNMzyyVK382HGQc8ORwu",
+        "round": 3,
+        "reasoning": {"effort": "none", "reported_reasoning_tokens": 0},
+        "usage": {"prompt": 52904, "completion": 3647, "total": 56551, "cost_usd": 0.355695},
+        "finish_reason": "stop",
+        "artifact": "calibration/runs/run-005/chapters/chapter-03-r3.md",
+        "artifact_sha256": "a58e3b051236e74f93cd55fd5a600437569271e4399d6a6bea30355249f8bbe1",
+        "review_verdict": "REVISE"
       }]
     },
     "reviewer": {
@@ -83,6 +92,16 @@
         "blocking_groups": ["illicit cross-chapter repetition"],
         "artifact": "calibration/runs/run-005/chapters/chapter-03-r2-review.md",
         "artifact_sha256": "b02714c19a7a29ca691bd9f0a23cd2f32458ec02055cfbe43ac6a23cad1c336b"
+      }, {
+        "call_id": "019f50c3-9409-7633-bedd-a1c7aebc25dc",
+        "round": 3,
+        "usage_total_tokens": 1457442,
+        "cached_input_tokens": 1347584,
+        "reasoning_output_tokens": 12755,
+        "verdict": "REVISE",
+        "blocking_groups": ["illicit within-chapter repetition", "unsupported causal mechanism", "unsupported permanence guarantee"],
+        "artifact": "calibration/runs/run-005/chapters/chapter-03-r3-review.md",
+        "artifact_sha256": "d1ce46a64171cdb94eb26920a7e05387e9339e75007d688ba0e8a16955689ab4"
       }]
     },
     "judges": []
@@ -93,5 +112,5 @@
     "prompts/chapter-reviewer.md": "a91af62",
     "production-books/quit-sugar/master-plan.md": "5915b9f"
   },
-  "notes": "Chapter 3 R1 received substantive blockers and R2 corrected them. R2 still received one cross-chapter repetition blocker plus premature comfort demolition and craft weaknesses, so H-042 again did not trigger. R3 is the final ordinary whole-artifact writer revision; no shared asset changes."
+  "notes": "Chapter 3 exhausted three ordinary whole-artifact cycles without acceptance. R3 fixed the cited R2 cross-chapter repetition and job-drift concern, but its fresh review found one new within-chapter duplicate plus unsupported developmental-learning and permanence claims. Latent variants of the latter claims were present from R1, survived two reviews, and were amplified before the R3 reviewer blocked them. H-042 is INCONCLUSIVE because its zero-blocker craft-only trigger never occurred. No shared factory asset changed."
 }
