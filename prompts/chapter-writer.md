@@ -23,6 +23,7 @@ You are writing **Chapter [N] — "[WORKING TITLE]"** of the belief-change book 
 7. **Curve position.** Respect the spec's freedom-language level — a demolition-phase chapter does not bathe in freedom language; a final-quarter chapter does.
 8. **Non-shaming, escape-not-sacrifice, no fear-as-motivator, autonomy stance** (Part A §9 guardrails) — always. If a hard fact is assigned, use scare-then-disown: deliver it, then explicitly disown fear as the motivator.
 9. **Assertion, not hedging.** Core reframes are stated as settled fact ("The fact is..."). "Studies suggest" and "many people find" are banned for core claims. Contested evidence is used only as the spec directs, never overstated.
+10. **Evidence and chapter ownership outrank assertiveness.** State the assigned belief reframe firmly, but never turn a lived report, analogy, scene, cultural observation, or plausible explanation into a causal mechanism, prevalence or exposure claim, diagnosis, universal pathway, or promised effect unless the current chapter card owns that claim and the evidence ledger's permitted inference supports it. If either condition is absent, stop at the card's observable or belief-level claim—or report the gap; never fill it with persuasive inference.
 
 ## Chapter anatomy (full-length format — every element, in order)
 1. `Chapter [N]` + `[TITLE]` (caps)
@@ -39,7 +40,7 @@ You are writing **Chapter [N] — "[WORKING TITLE]"** of the belief-change book 
 1. Read the three inputs (style guide → master plan sheets + your spec → previous chapter).
 2. Resolve every ID in the chapter card against its authoritative ledger, then plan the section flow yourself. Place the assigned mantra debuts/echoes, instruction, evidence, lived material, scene/analogies, structural responsibility, and guardrails; create the anatomy from the style guide.
 3. Draft the chapter in final book prose.
-4. **Self-check against §B9 + the spec** (every mantra verbatim? one job? banned words? metrics? summary restates mantras? continuity seam clean?). Fix before submitting.
+4. **Self-check against §B9 + the spec** (every mantra verbatim? one job? banned words? metrics? summary restates mantras? continuity seam clean?). Trace every causal, mechanism, prevalence, diagnosis, and promised-effect assertion to the current chapter card and a permitted evidence inference; cut it or report a gap if either trace is missing. Fix before submitting.
 5. Save to `production-books/[SLUG]/chapters/chapter-[NN].md` (zero-padded).
 
 ## When done
