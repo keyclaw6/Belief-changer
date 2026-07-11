@@ -112,6 +112,17 @@
           "cached_input_tokens": 157184,
           "output_tokens": 8169,
           "reasoning_output_tokens": 6462
+        },
+        {
+          "target": "C-02",
+          "thread_id": "019f5141-c76c-7833-8279-32b98504f82c",
+          "status": "success",
+          "artifact": "calibration/runs/run-010/commissions/chapter-02.md",
+          "sha256": "249f52790f4738a4435f6fd6bd11319e4e610cd8bbad29d41e67a1bc451fce5a",
+          "input_tokens": 234203,
+          "cached_input_tokens": 190720,
+          "output_tokens": 9130,
+          "reasoning_output_tokens": 6709
         }
       ]
     },
@@ -131,5 +142,5 @@
   },
   "prefreeze_contract_audit": "GO — fresh read-only Codex critic found the prompt behavior/topic/chapter-agnostic, model-led, self-sufficient, and faithful to the single-lever experiment; no wording changed",
   "direction_audit": "GO — model-led commissioner is the smallest generic owner; NO-GO on mechanical slicing, prompt repetition, another Chapter 1 rule, or writer-model confound",
-  "notes": "Commissioner prompt frozen at a2f83da. No commissioner model call has run."
+  "notes": "Commissioner prompt frozen at a2f83da. C-01 and C-02 commissions preserved; C-03 and fidelity audit pending. No prose call has run."
 }
