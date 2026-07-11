@@ -9,6 +9,7 @@
   "hypotheses_tested": ["H-046"],
   "model_api": "native+openrouter",
   "pre_amendment_boundary": "d9340bf — run-008 §11 escalation committed; no Chapter 3 promoted",
+  "amendment_commit": "88b6889",
   "operator_authority_resolution": "HARNESS §1 grants full calibration-lab design authority and says decide, log, proceed; main merge remains founder-approved",
   "inherited_artifacts": {
     "research": "run-001 accepted R4; unchanged",
@@ -95,6 +96,12 @@
     "prompts/chapter-reviewer.md": "a91af62",
     "production-books/quit-sugar/master-plan.md": "5915b9f"
   },
+  "asset_versions_frozen_for_run": {
+    "prompts/style-guide.md": "e8aa007",
+    "prompts/chapter-writer.md": "88b6889",
+    "prompts/chapter-reviewer.md": "a91af62",
+    "production-books/quit-sugar/master-plan.md": "5915b9f"
+  },
   "direction": "factory restart across Chapters 1–3; no Chapter 3 tuning and no main merge",
-  "notes": "No prompt edit or model call has run."
+  "notes": "The exact two-sentence generic amendment is committed at 88b6889 and now frozen for the complete three-chapter run. No model call has run."
 }

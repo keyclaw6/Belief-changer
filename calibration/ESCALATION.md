@@ -74,6 +74,8 @@ HARNESS §1 explicitly grants the operator full design authority on "calibration
 
 H-046 will regenerate Chapters 1–3 from fresh contexts under one frozen prompt version. No old draft or review enters a first-draft call, and no shared change is allowed between chapters. A winning calibration result will be brought back for founder-approved canon merge only after the required product, stability, and holdout evidence.
 
+The calibration-only amendment was committed at "88b6889"; this records the experiment version, not approval for canon "main".
+
 ---
 
 ## Previous resolved escalation — run-002 writer endpoint

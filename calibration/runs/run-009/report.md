@@ -30,8 +30,8 @@ This is not another Chapter 3 patch. The candidate rule mentions no behavior, to
 
 ## Results
 
-Pending preregistration commit and prompt amendment.
+The exact two-sentence generic amendment was committed at "88b6889". No other prompt, style, plan, reviewer, threshold, schema, or production-book artifact changed. The asset set is frozen before the first model call.
 
 ## Gate verdict
 
-IN PROGRESS. No model call before the generic amendment is committed and frozen.
+IN PROGRESS. Next: fresh Chapter 1 R1 with no old chapter or review input.
