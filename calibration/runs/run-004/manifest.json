@@ -1,0 +1,73 @@
+{
+  "run": "run-004",
+  "date": "2026-07-11",
+  "stage": "A",
+  "status": "IN_PROGRESS",
+  "operator": "gpt-5.6-sol",
+  "branch": "calibration-lab",
+  "scope": "controlled full-versus-minimal context prose edit for Chapter 2",
+  "hypotheses_tested": ["H-041"],
+  "model_api": "native+openrouter",
+  "baseline_boundary": "32966a6 — run-003 closed and H-041 preregistered",
+  "starting_artifacts": {
+    "candidate": "run-003 Chapter 2 compression R1; sha256 a9da88fbd3a09faf5e9ba1bff660ce6db01350994a2a732a72ddd8db54cb7a8f",
+    "review": "run-003 canonical review; sha256 8c344360617f9d1d66d4c0706632b64b007040418f3d2f66c1f276a4cbd0a5a7",
+    "semantic_state": "zero blocking defects; length 3236; craft metrics rejected"
+  },
+  "experiment": {
+    "single_variable": "editor context after semantic certification",
+    "shared_task": "reader-close craft edit: raise direct address and Socratic participation, combine secondary fragments, preserve locked semantics and exact tokens",
+    "arm_a_full_context": [
+      "chapter-writer prompt",
+      "style guide",
+      "accepted master plan",
+      "accepted Chapter 1",
+      "starting Chapter 2 candidate",
+      "starting review"
+    ],
+    "arm_b_minimal_context": [
+      "style guide",
+      "starting Chapter 2 candidate",
+      "starting review"
+    ],
+    "decision_rule": {
+      "supported": "B ACCEPT and A REVISE, with no B semantic blocker",
+      "refuted": "A ACCEPT and B REVISE, or B blocker attributable to omitted context",
+      "inconclusive": "matching verdicts"
+    }
+  },
+  "held_constant": [
+    "exact starting candidate and review",
+    "exact editor objective and permission boundary",
+    "Opus 4.6 through OpenRouter",
+    "reasoning effort none",
+    "128000 endpoint maximum output allowance",
+    "reference blindness",
+    "separate fresh Sol ultra reviewers",
+    "no time, token, or reasoning cap on reviewers",
+    "reviewer multi-agent orchestration disabled after run-003 infrastructure fault"
+  ],
+  "models": {
+    "editors": {
+      "arm_a": {"model": "anthropic/claude-opus-4.6", "reasoning": {"effort": "none"}, "calls": []},
+      "arm_b": {"model": "anthropic/claude-opus-4.6", "reasoning": {"effort": "none"}, "calls": []}
+    },
+    "reviewers": {
+      "model": "gpt-5.6-sol",
+      "provider": "openai native Codex 0.144.1",
+      "reasoning": "ultra",
+      "execution": "codex exec --ephemeral --disable multi_agent --model gpt-5.6-sol -c model_reasoning_effort=ultra",
+      "calls": []
+    },
+    "judges": []
+  },
+  "asset_versions": {
+    "prompts/style-guide.md": "e8aa007",
+    "prompts/chapter-writer.md": "e8aa007",
+    "prompts/chapter-reviewer.md": "a91af62",
+    "production-books/quit-sugar/master-plan.md": "5915b9f",
+    "production-books/quit-sugar/chapters/chapter-01.md": "d7132ff"
+  },
+  "direction_audit": "GO — same-pass control isolates context, both arms are real prose, no process work first",
+  "notes": "Generate both arms before reading either review. Promote only a fresh ACCEPT. Matching verdicts do not establish context causality."
+}
