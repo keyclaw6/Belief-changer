@@ -1,0 +1,12 @@
+{
+  "target": "C-03",
+  "requested_model": "gpt-5.6-sol",
+  "reasoning": "ultra",
+  "thread_id": "019f5145-bb65-7272-8f10-ec1bfccf3b88",
+  "execution": "codex exec --ephemeral --disable multi_agent --model gpt-5.6-sol -c model_reasoning_effort=ultra --sandbox read-only",
+  "status": "INFRASTRUCTURE_FAILED",
+  "failure": "The ephemeral native Codex host attempted a collaboration spawn despite multi_agent being disabled. The spawn could not attach to the ephemeral parent thread, after which the call repeatedly waited on no visible receiver and emitted parent-transcript hook warnings.",
+  "termination": "Operator interrupted the repeated infrastructure loop after no final response or output artifact was produced.",
+  "content_boundary": "No commission, prose, review, or child-agent result entered the run.",
+  "retry": "Fresh C-03 context with --ignore-user-config in addition to --disable multi_agent; model, ultra reasoning, prompt, plan, target, and read-only sandbox remain unchanged."
+}

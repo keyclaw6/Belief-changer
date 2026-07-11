@@ -123,6 +123,14 @@
           "cached_input_tokens": 190720,
           "output_tokens": 9130,
           "reasoning_output_tokens": 6709
+        },
+        {
+          "target": "C-03",
+          "thread_id": "019f5145-bb65-7272-8f10-ec1bfccf3b88",
+          "status": "infrastructure_failed_no_output",
+          "artifact": "calibration/runs/run-010/infrastructure/c03-native-collaboration-loop.json",
+          "failure": "ephemeral collaboration hook entered a repeated wait loop despite multi_agent disable; operator terminated with no commission output",
+          "retry_change": "add --ignore-user-config only; exact model/reasoning/content inputs unchanged"
         }
       ]
     },
@@ -142,5 +150,5 @@
   },
   "prefreeze_contract_audit": "GO — fresh read-only Codex critic found the prompt behavior/topic/chapter-agnostic, model-led, self-sufficient, and faithful to the single-lever experiment; no wording changed",
   "direction_audit": "GO — model-led commissioner is the smallest generic owner; NO-GO on mechanical slicing, prompt repetition, another Chapter 1 rule, or writer-model confound",
-  "notes": "Commissioner prompt frozen at a2f83da. C-01 and C-02 commissions preserved; C-03 and fidelity audit pending. No prose call has run."
+  "notes": "Commissioner prompt frozen at a2f83da. C-01 and C-02 commissions preserved. First C-03 attempt failed in the native collaboration hook with no output; clean same-model retry pending. No prose call has run."
 }
