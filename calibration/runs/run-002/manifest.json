@@ -2,7 +2,7 @@
   "run": "run-002",
   "date": "2026-07-11",
   "stage": "A",
-  "status": "IN_PROGRESS",
+  "status": "BLOCKED_AT_WRITER_ENDPOINT",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "normalized master plan + chapters 1-3",
@@ -93,7 +93,18 @@
       "arm": "fixed baseline",
       "catalog_context_tokens": 1000000,
       "catalog_max_completion_tokens": 128000,
-      "connectivity": "pending; authenticated catalog resolved, no safe live key process remained for the tiny call"
+      "connectivity": "HTTP 402 before generation: OpenRouter account total usage 75.181592239 exceeded 75.00 credits; endpoint reported only 147 affordable output tokens",
+      "calls": [
+        {
+          "role_and_objective": "run-002 Chapter 1 R1 full artifact",
+          "requested_model": "anthropic/claude-opus-4.6",
+          "reasoning": {"effort": "none"},
+          "requested_max_tokens": 128000,
+          "http_status": 402,
+          "generation_created": false,
+          "error": "insufficient OpenRouter account credit"
+        }
+      ]
     },
     "later_writer_arm": {
       "model": "muse-spark-1.1",
@@ -117,5 +128,5 @@
     "calibration/HARNESS.md": "e8aa007"
   },
   "stages_rerun_because": "H-039 changes planning semantics, so plan and chapters are invalidated; accepted research and framing are not.",
-  "notes": "The normalized plan reached fit-to-write only on round 3. No blocker concerned occurrence arithmetic, duplicated audit tables, or prewritten SUMMARY prose, supporting the diagnosed run-001 mechanism; the at-most-one-revision prediction failed. Chapter evidence now determines whether H-039 remains useful or whether removed fields caused a downstream defect."
+  "notes": "The normalized plan reached fit-to-write only on round 3. No blocker concerned occurrence arithmetic, duplicated audit tables, or prewritten SUMMARY prose, supporting the diagnosed run-001 mechanism; the at-most-one-revision prediction failed. Chapter evidence remains pending because the fixed Opus request was rejected before generation for exhausted account credit; see calibration/ESCALATION.md."
 }

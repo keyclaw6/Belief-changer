@@ -1,6 +1,6 @@
 # Run report — run-002
 
-**Stage:** A **Scope:** normalized plan + chapters 1–3 **Verdict:** IN PROGRESS
+**Stage:** A **Scope:** normalized plan + chapters 1–3 **Verdict:** BLOCKED AT WRITER ENDPOINT
 
 ## What ran
 
@@ -36,4 +36,4 @@ None until completed chapters and blind judgments expose a concrete failure.
 
 ## Escalations
 
-None.
+The exact Opus 4.6 reasoning-none Chapter 1 request was rejected before generation with HTTP 402. OpenRouter reports `$75.181592239` total usage against `$75.00` total credit; only 147 completion tokens were affordable after input. LiteLLM is not configured. See `calibration/ESCALATION.md`. No writer substitution or undersized generation was attempted.
