@@ -1,0 +1,133 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-03",
+ "ours_chapters": [
+  3
+ ],
+ "ref_chapters": [
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "70e35c30cb9892e35927f9d42a86178199ef39523258f0aefa7e31fef80b9299",
+  "output_schema_sha256": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+  "thread_id": "019f542b-97d7-7d02-b3d1-93433ea3a44e",
+  "usage": {
+   "input_tokens": 22039,
+   "cached_input_tokens": 0,
+   "output_tokens": 3356,
+   "reasoning_output_tokens": 3106
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f542b-97d7-7d02-b3d1-93433ea3a44e\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.86,\\\"critical_failures\\\":{\\\"A\\\":[\\\"repetitive_sag\\\"],\\\"B\\\":[]},\\\"generic_mechanism\\\":\\\"The largest difference is compression: one chapter repeatedly re-explains its governing distinction through a fixed validate-question-defer pattern, while the other turns successive concrete examples into fresh argumentative pressure.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"A coherent central metaphor and careful qualifications organize the argument, but the serial examples keep validating experiences, deferring explanations, and returning to the same distinction; the instruction and extended recap then restate an already settled point.\\\",\\\"B\\\":\\\"Concrete scenes of private binges, inherited meal habits, holiday excess, and dieting give the chapter texture; despite promotional certainty and some strained analogies, it moves briskly from shame through conditioning toward a promised reframing.\\\"},\\\"product_parity_verdict\\\":\\\"B\\\",\\\"scores\\\":{\\\"ending_handoff\\\":{\\\"A\\\":5,\\\"B\\\":6},\\\"flow_and_momentum\\\":{\\\"A\\\":5,\\\"B\\\":7},\\\"prose_control\\\":{\\\"A\\\":7,\\\"B\\\":6},\\\"rhythm_and_variety\\\":{\\\"A\\\":5,\\\"B\\\":7},\\\"specificity\\\":{\\\"A\\\":7,\\\"B\\\":8}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":22039,\"cached_input_tokens\":0,\"output_tokens\":3356,\"reasoning_output_tokens\":3106}}\n"
+ },
+ "raw": "{\"confidence\":0.86,\"critical_failures\":{\"A\":[\"repetitive_sag\"],\"B\":[]},\"generic_mechanism\":\"The largest difference is compression: one chapter repeatedly re-explains its governing distinction through a fixed validate-question-defer pattern, while the other turns successive concrete examples into fresh argumentative pressure.\",\"paraphrased_evidence\":{\"A\":\"A coherent central metaphor and careful qualifications organize the argument, but the serial examples keep validating experiences, deferring explanations, and returning to the same distinction; the instruction and extended recap then restate an already settled point.\",\"B\":\"Concrete scenes of private binges, inherited meal habits, holiday excess, and dieting give the chapter texture; despite promotional certainty and some strained analogies, it moves briskly from shame through conditioning toward a promised reframing.\"},\"product_parity_verdict\":\"B\",\"scores\":{\"ending_handoff\":{\"A\":5,\"B\":6},\"flow_and_momentum\":{\"A\":5,\"B\":7},\"prose_control\":{\"A\":7,\"B\":6},\"rhythm_and_variety\":{\"A\":5,\"B\":7},\"specificity\":{\"A\":7,\"B\":8}}}",
+ "parsed": {
+  "confidence": 0.86,
+  "critical_failures": {
+   "A": [
+    "repetitive_sag"
+   ],
+   "B": []
+  },
+  "generic_mechanism": "The largest difference is compression: one chapter repeatedly re-explains its governing distinction through a fixed validate-question-defer pattern, while the other turns successive concrete examples into fresh argumentative pressure.",
+  "paraphrased_evidence": {
+   "A": "A coherent central metaphor and careful qualifications organize the argument, but the serial examples keep validating experiences, deferring explanations, and returning to the same distinction; the instruction and extended recap then restate an already settled point.",
+   "B": "Concrete scenes of private binges, inherited meal habits, holiday excess, and dieting give the chapter texture; despite promotional certainty and some strained analogies, it moves briskly from shame through conditioning toward a promised reframing."
+  },
+  "product_parity_verdict": "B",
+  "scores": {
+   "ending_handoff": {
+    "A": 5,
+    "B": 6
+   },
+   "flow_and_momentum": {
+    "A": 5,
+    "B": 7
+   },
+   "prose_control": {
+    "A": 7,
+    "B": 6
+   },
+   "rhythm_and_variety": {
+    "A": 5,
+    "B": 7
+   },
+   "specificity": {
+    "A": 7,
+    "B": 8
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 7,
+    "ref": 6
+   },
+   "rhythm_and_variety": {
+    "ours": 5,
+    "ref": 7
+   },
+   "specificity": {
+    "ours": 7,
+    "ref": 8
+   },
+   "flow_and_momentum": {
+    "ours": 5,
+    "ref": 7
+   },
+   "ending_handoff": {
+    "ours": 5,
+    "ref": 6
+   }
+  },
+  "critical_ours": [
+   "repetitive_sag"
+  ],
+  "critical_ref": [],
+  "product_parity_verdict": "ref",
+  "confidence": 0.86,
+  "paraphrased_evidence": {
+   "ours": "A coherent central metaphor and careful qualifications organize the argument, but the serial examples keep validating experiences, deferring explanations, and returning to the same distinction; the instruction and extended recap then restate an already settled point.",
+   "ref": "Concrete scenes of private binges, inherited meal habits, holiday excess, and dieting give the chapter texture; despite promotional certainty and some strained analogies, it moves briskly from shame through conditioning toward a promised reframing."
+  },
+  "generic_mechanism": "The largest difference is compression: one chapter repeatedly re-explains its governing distinction through a fixed validate-question-defer pattern, while the other turns successive concrete examples into fresh argumentative pressure."
+ }
+}

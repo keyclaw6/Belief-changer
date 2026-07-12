@@ -1,6 +1,6 @@
 # Run report — run-012
 
-**Stage:** A **Scope:** source-grounded commissions plus frozen Chapters 1-3 production **Causal verdict:** REFUTED — material invention in 3/3 grounded first drafts **Product verdict:** UNJUDGED — both frozen v2.3 controls passed; target panel is next
+**Stage:** A **Scope:** source-grounded commissions plus frozen Chapters 1-3 production **Causal verdict:** REFUTED — material invention in 3/3 grounded first drafts **Product verdict:** FAIL — valid v2.3 panel misses target non-inferiority, efficacy-role, and critical-safety gates
 
 ## What will run
 
@@ -91,7 +91,7 @@ The frozen control nevertheless **FAILED**. Four of ten collapsed observations c
 
 The independent measurement-method autopsy separates two questions. Candidate symmetry passed: within every call the model treated the two positions identically, and both repetitions remained comparatively neutral. Absolute fresh-context calibration drift did not: shared labels changed despite byte-identical inputs. V2 conflated that label drift with order bias. The same-text score movement was diagnostic and did not itself trigger the failure. The frozen v2 rule was correctly enforced and is not waived after the fact. Exact raw responses, strict parsed responses, mappings, commands, input hashes, thread IDs, usage, stderr, and the summary live under `judgments/controls/identical/`; summary SHA-256 is `0d408215...`. Total observed usage was 584,556 input tokens (191,488 cached), 28,785 output tokens, and 21,825 reasoning-output tokens.
 
-The runner exited 1 as designed. The degraded-reference control and product panel were **NOT RUN**. H-049 remains causally REFUTED; product quality remains **UNJUDGED**; no H-050 was formed. The frozen prose and factory assets remain untouched. V2 remains a committed failed measurement and is never reclassified or reused.
+At the v2 boundary, the runner exited 1 as designed. The degraded-reference control and product panel were **NOT RUN**, product quality was **UNJUDGED**, and no H-050 had been formed. The frozen prose and factory assets remained untouched. V2 remains a committed failed measurement and is never reclassified or reused.
 
 ## Stage-A v2.1 — preregistered instrument correction
 
@@ -113,7 +113,7 @@ The fresh identical control **PASSED**: 20 raw judgments, 20 unique threads, 10 
 
 The matching degraded-reference control then completed all 20 fresh contexts but **FAILED** its frozen gate. Three otherwise complete final objects contained a trailing comma and were invalid under the unchanged strict JSON parser, leaving the panel incomplete. Among the seven collapsible observations, five were comparatively unstable: every valid raw verdict still preferred the intact reference and every score-winner sign remained stable, but candidate-unique critical labels changed between fresh repetitions. Thus the raw sensitivity signal was directionally unanimous—17/17 valid verdicts chose the intact reference—while the preregistered complete-matrix and comparative-stability requirements were not met. The summary is `judgments/controls-v2.1/degraded-reference/judge-summary.json`, SHA-256 `ebfa0e57...`.
 
-This is a measurement failure, not book evidence. The strict parser prevented malformed output from becoming a false pass, while the unstable relative labels expose a separate critical-taxonomy calibration defect under the unchanged v2.1 comparative rule. Neither rule is waived after observation. No retry, parser repair, prompt/schema change, threshold change, or product call occurred. H-049 remains **REFUTED**, run-012 product quality remains **UNJUDGED**, and no H-050 exists.
+This is a measurement failure, not book evidence. The strict parser prevented malformed output from becoming a false pass, while the unstable relative labels expose a separate critical-taxonomy calibration defect under the unchanged v2.1 comparative rule. Neither rule is waived after observation. No retry, parser repair, prompt/schema change, threshold change, or product call occurred. At that v2.1 boundary H-049 remained **REFUTED**, run-012 product quality was **UNJUDGED**, and no H-050 existed.
 
 ## Stage-A v2.2 — two repairs preregistered
 
@@ -149,7 +149,7 @@ The degraded control **FAILED** because four of ten collapsed observations chang
 
 The failure autopsy is narrow. Operational definitions made the gross-damage anchors fully reproducible and stabilized most secondary labels, while two non-core craft classifications remained context-sensitive. Independently, an integrity dimension moved across the equality boundary in both identities. Neither unanimous raw preference nor successful core retention can waive a frozen exact-signature rule after observation. This is a genuine instrument failure with a possible false-negative risk, not evidence about the run-012 prose.
 
-The runner exited 1 as designed. The product panel was **NOT RUN**. H-049 remains causally **REFUTED**, product quality remains **UNJUDGED**, and no H-050 exists. No prompt, schema, implementation, aggregation rule, threshold, material, prose, or factory asset was changed or retried. A fresh direction decision is required before any prospective measurement baseline; the v2.2 controls remain immutable evidence.
+At the v2.2 boundary, the runner exited 1 as designed and the product panel was **NOT RUN**. H-049 remained causally **REFUTED**, product quality was **UNJUDGED**, and no H-050 existed. No prompt, schema, implementation, aggregation rule, threshold, material, prose, or factory asset was changed or retried. A fresh direction decision was required before any prospective measurement baseline; the v2.2 controls remain immutable evidence.
 
 ## Stage-A v2.3 — pooled order-stratified aggregation preregistered
 
@@ -167,7 +167,7 @@ Both controls must run from scratch into new v2.3 directories. The hard gate is 
 
 Implementation must preregister symmetric synthetic tests before freeze: strict dominance in both candidate directions; tie and opposite-verdict contradictions; candidate and presentation-order swaps; the higher-score unique-critical exception; polarized/order-reversed target failure; mapping reconstruction; and preservation of failed calls. No model call occurs before these tests and implementation hashes freeze.
 
-The final-stop rule is preregistered: if either fresh control or the permutation invariant fails, there is no v2.4 on this same synthetic specimen. Preserve the evidence and escalate to a different validation family or a human benchmark. If both controls pass, run the frozen product panel immediately under the same configuration; no further prompt, schema, label, material, degradation, control, or aggregation work may intervene. V2.3 is not H-050, product quality remains **UNJUDGED**, and no H-050 may be formed before the product panel.
+The final-stop rule was preregistered: if either fresh control or the permutation invariant failed, there would be no v2.4 on this same synthetic specimen. If both controls passed, the frozen product panel would run immediately under the same configuration with no further prompt, schema, label, material, degradation, control, or aggregation work. V2.3 was not H-050; product quality remained **UNJUDGED** until that panel.
 
 ### V2.3 implementation freeze
 
@@ -175,7 +175,7 @@ Commit `00fce429f06ebe07c4fd5b5241d239e82e18a316` implements only the preregiste
 
 Synthetic validation covers both dominance directions, tie and opposite-verdict contradictions, candidate and order swaps, the unique-critical exception, target polarization, mapping reconstruction, matrix/configuration invariants, and failed-call preservation. A heterogeneous exhaustive test applies all `2^10` possible within-order replica-label permutations across the ten role-target-order strata, reverses record order, and preserves every decision-relevant aggregate and verdict. Independent review passed and confirmed the exact 20-raw/5-target semantics. Focused tests passed 32/32; the full canonical gate passed 77/77, with shellcheck unavailable and skipped. Frozen historical-artifact tests preserve the exact bytes and verdicts of every v2, v2.1, and v2.2 control summary.
 
-No model inference, native judge, OpenRouter, or other provider call occurred during implementation, review, testing, or freeze. H-049 remains **REFUTED**, the product remains **UNJUDGED**, and no H-050 exists. The next artifact is a fresh v2.3 identical control; degraded-reference runs only if identical passes, and the frozen product panel runs immediately only if both controls pass, with no intervening instrument work.
+No model inference, native judge, OpenRouter, or other provider call occurred during implementation, review, testing, or freeze. At that freeze boundary H-049 remained **REFUTED**, the product was **UNJUDGED**, and no H-050 existed. The next artifact was a fresh v2.3 identical control; degraded-reference would run only if identical passed, and the frozen product panel would run immediately only if both controls passed, with no intervening instrument work.
 
 ### V2.3 fresh controls — both passed
 
@@ -189,7 +189,31 @@ One preserved runtime diagnostic did not meet a preregistered falsifier: the fin
 
 Combined descriptive usage was 1,150,616 input tokens, including 279,552 cached, plus 75,633 output tokens and 65,888 reasoning-output tokens. These passes validate exact identical-candidate symmetry, gross-transform sensitivity, strict-output transport, and pooled aggregation invariance on the preregistered synthetic control family only. They do not establish fine parity, source fidelity, cross-family replication, or a Stage-A product pass.
 
-The next artifact is the frozen run-012 target panel under the same configuration, using both control summaries as validated inputs. No prompt, schema, label, material, degradation, aggregation, threshold, factory asset, chapter, or hypothesis may intervene. H-049 remains **REFUTED**, product quality remains **UNJUDGED**, and no H-050 exists.
+At this control boundary the next artifact was the frozen run-012 target panel under the same configuration, using both summaries as validated inputs. It was recorded immediately, with no prompt, schema, label, material, degradation, aggregation, threshold, factory asset, chapter, or hypothesis intervention, and is reported below. H-049 remained **REFUTED** and no H-050 had been formed.
+
+## Stage-A v2.3 product panel — valid diagnostic, judge gate failed
+
+The frozen product panel ran exactly once from execution HEAD `973fb71e8522f40dff3d9e659e2a6f31caeca1f6`. Before any native call the runner validated the committed identical and degraded summaries (`c6a4f5ba...` and `845174c2...`) against the frozen canonical configuration `3131a73a...`. No provider API credential was inherited and OpenRouter was not used.
+
+The invocation completed successfully with runner exit 0. All 20 first responses were strict-valid, all 20 fresh thread IDs were unique, and the exact five-target/twenty-cell matrix contained two replicas in each of ten role-target-order strata with matching input and schema hashes. Raw JSON, cached parses, order remapping, and stored mappings rebuilt exactly; all event streams were complete; there were zero retries, repairs, extraction, tolerant parsing, subprocess failures, or verdict/rubric coherence contradictions. Every decision-relevant result remained unchanged under all `2^10` within-order replica-label permutations. The summary is `judgments/product-v2.3/judge-summary.json`, SHA-256 `529b279c...`.
+
+One successful efficacy call preserved two failed internal `collab spawn` router attempts on stderr. It created no child, returned code 0 with one complete strict-valid response, one top-level thread, and complete usage. This is a preserved runtime diagnostic, not a retry, repair, substitution, process failure, or post-hoc gate.
+
+The raw verdicts split 10 ours / 0 ties / 10 reference, but that total is not the preregistered aggregate. The target and equal-role results were:
+
+| role / target | ours / tie / ref | preference | non-inferiority | critical union on ours |
+|---|---:|---:|---|---|
+| efficacy / block | 1 / 0 / 3 | 0.25 | FAIL | none |
+| craft / Chapter 1 | 4 / 0 / 0 | 1.00 | PASS | none |
+| craft / Chapter 2 | 0 / 0 / 4 | 0.00 | FAIL | `repetitive_sag`, `weak_ending_handoff` |
+| craft / Chapter 3 | 1 / 0 / 3 | 0.25 | FAIL | `repetitive_sag` |
+| integrity / block | 4 / 0 / 0 | 1.00 | PASS | none |
+
+Efficacy scored 0.25, craft 0.4167, and integrity 1.00, producing an equal-role macro of 0.5556. The macro clears 0.45; craft and integrity clear the 0.35 role floor; efficacy does not. Target non-inferiority fails for efficacy and craft Chapters 2-3. Conservative `critical_ours` union is `repetitive_sag` plus `weak_ending_handoff`, so critical safety also fails. The reference-side union is `fear_as_motivator`, `medical_overreach`, `repetitive_sag`, `shame_moralizing`, and `unsupported_authority_or_testimony`. There are zero strict-dominance contradictions.
+
+The frozen Stage-A judge gate therefore **FAILS** despite the favorable macro: validated controls PASS, panel completeness PASS, coherence PASS, macro PASS; target non-inferiority FAIL, critical safety FAIL, and role thresholds FAIL. Product usage was 655,704 input tokens (220,672 cached), 95,192 output, and 89,864 reasoning output; usage is descriptive only.
+
+This result cannot be converted into a run pass by the macro. The objective gate already fails independently on three overlapping non-mantra 12-grams; all three chapters independently fail their plan-budget length bands; and the grounded specialists independently found material evidence defects in all three first drafts. H-049 remains causally **REFUTED** under its own preregistered rule. No run-012 prose is promoted, the live Chapters 1-2 from runs 002 and 004 remain the last accepted product, and the panel executor forms no H-050. The root orchestrator owns the next generic-hypothesis decision from this complete evidence.
 
 ## Judge-panel preflight — historical misrouting, now resolved
 
@@ -197,11 +221,11 @@ Before the founder's routing correction, the operator preflighted a proposed Ope
 
 At that preflight, the authenticated OpenRouter credit endpoint reported `$0.797648511` remaining. The catalog reservations were `$0.786432` for one maximum-output Gemini call before prompt/reasoning and `$3.84` for one maximum-output Sol call; the first identical-control Gemini block contained approximately 22,327 input words. Those facts explain why the rejected route stopped, but they are not a current panel requirement.
 
-The operator stopped before inference rather than create a partial or unbalanced panel. Judge calls: **0**. Identical control: **NOT RUN**. Degraded-reference control: **NOT RUN**. Product panel: **NOT RUN**. No judgment or control artifact exists. No semantic control failed: the instrument remains unvalidated for first product use, the run-012 product remains **UNJUDGED**, and H-049 remains causally **REFUTED** by the completed grounded specialist review.
+The operator stopped before inference rather than create a partial or unbalanced panel. On that rejected route, judge calls were **0**; identical control, degraded-reference control, and product panel were **NOT RUN**; and no judgment artifact existed. No semantic control failed. At that historical preflight boundary the instrument was unvalidated, the run-012 product was **UNJUDGED**, and H-049 remained causally **REFUTED** by the completed grounded specialist review.
 
 The founder has now made the route explicit: OpenRouter may be used only for Opus 4.6 chapter-writing calls and DeepSeek research calls. It must never carry GPT/OpenAI, Gemini, Grok, planning, reviewing, auditing, or judging traffic. The approximately `$0.979` key allowance is therefore not a panel blocker and remains untouched for permitted Opus use.
 
-The canonical judge route is two same-model replica labels executed as fresh native Codex subagents pinned to `gpt-5.6-sol` at `ultra`. The labels are trace metadata under frozen v2.3. V2, v2.1, and v2.2 produced the preserved results above. There is no external-access blocker; both fresh v2.3 controls passed, and the frozen target panel is next.
+The canonical judge route is two same-model replica labels executed as fresh native Codex subagents pinned to `gpt-5.6-sol` at `ultra`. The labels are trace metadata under frozen v2.3. V2, v2.1, and v2.2 produced the preserved results above. There was no external-access blocker; both fresh v2.3 controls passed and the frozen target panel then ran through that native route.
 
 ## Judge-instrument baseline
 
@@ -209,4 +233,4 @@ Before any run-012 target-panel result, Stage-A judging changed from the legacy 
 
 This change answers instrument failures, not H-049. V2.3 begins a prospective non-comparable baseline and no resulting score is numerically comparable with v2.2, v2.1, v2, or legacy runs. H-049 was decided only by its frozen causal rule and source-grounded specialist review; the panel cannot reverse or support that verdict. Explicit `--prompt` mode preserves the old runner solely for historical reproduction.
 
-The controls and panel have explicit limits. The degraded-reference pass demonstrates sensitivity to severe damage rather than fine parity. The blind integrity role sees no source packets and therefore cannot verify source fidelity; the completed grounded audits remain authoritative for that question. The two Sol calls per order are same-model replications, not cross-family evidence. Finally, because objective repetition and all three length bands already failed, even a future favorable panel cannot turn run-012 into a Stage-A pass; it can supply only the still-missing blind product diagnosis.
+The controls and panel have explicit limits. The degraded-reference pass demonstrates sensitivity to severe damage rather than fine parity. The blind integrity role sees no source packets and therefore cannot verify source fidelity; the completed grounded audits remain authoritative for that question. The two Sol calls per order are same-model replications, not cross-family evidence. Finally, the observed favorable macro cannot turn run-012 into a Stage-A pass: the judge panel itself fails target, safety, and efficacy-role gates, while objective repetition, all three length bands, and grounded fidelity also fail independently.

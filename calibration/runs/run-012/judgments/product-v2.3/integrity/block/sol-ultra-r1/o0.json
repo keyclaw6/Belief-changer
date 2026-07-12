@@ -1,0 +1,143 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "integrity",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "81b2e2caedb3d0a15403acd073d5d78f4a256c160930f491a58f2743d0bc8d40",
+  "output_schema_sha256": "0e6d50465998e681e1edb0c9f1106767d045acce1167c3aa91678a229ceb756f",
+  "thread_id": "019f542e-d4a3-7400-888c-92eb72bf442d",
+  "usage": {
+   "input_tokens": 38934,
+   "cached_input_tokens": 0,
+   "output_tokens": 10054,
+   "reasoning_output_tokens": 9767
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f542e-d4a3-7400-888c-92eb72bf442d\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.99,\\\"critical_failures\\\":{\\\"A\\\":[],\\\"B\\\":[\\\"shame_moralizing\\\",\\\"fear_as_motivator\\\",\\\"medical_overreach\\\",\\\"unsupported_authority_or_testimony\\\"]},\\\"generic_mechanism\\\":\\\"The largest gap comes from treating claims as testable and bounded versus converting analogy, anecdote, and association into categorical causal claims, guarantees, and high-stakes advice.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"Across three chapters, it preserves reader agency, delays behavior change until belief examination, bounds anecdotes and scientific claims, narrows the target, and adds clinical and eating-disorder guardrails; some categorical claims about closure and naturally effortless change remain stronger than its evidence.\\\",\\\"B\\\":\\\"Across three chapters, it rejects sustained willpower but uses degrading portrayals, catastrophic disease threats, universal addiction claims, guaranteed outcomes, unsupported clinic success assertions, and sweeping carbohydrate restrictions; exact-obedience demands and conflicts between its stated safeguards and rhetoric weaken autonomy and coherence.\\\"},\\\"product_parity_verdict\\\":\\\"A\\\",\\\"scores\\\":{\\\"cross_chapter_consistency\\\":{\\\"A\\\":8,\\\"B\\\":5},\\\"epistemic_honesty\\\":{\\\"A\\\":8,\\\"B\\\":1},\\\"non_shaming_regard\\\":{\\\"A\\\":8,\\\"B\\\":2},\\\"originality\\\":{\\\"A\\\":7,\\\"B\\\":7},\\\"willpower_free_logic\\\":{\\\"A\\\":8,\\\"B\\\":6}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":38934,\"cached_input_tokens\":0,\"output_tokens\":10054,\"reasoning_output_tokens\":9767}}\n"
+ },
+ "raw": "{\"confidence\":0.99,\"critical_failures\":{\"A\":[],\"B\":[\"shame_moralizing\",\"fear_as_motivator\",\"medical_overreach\",\"unsupported_authority_or_testimony\"]},\"generic_mechanism\":\"The largest gap comes from treating claims as testable and bounded versus converting analogy, anecdote, and association into categorical causal claims, guarantees, and high-stakes advice.\",\"paraphrased_evidence\":{\"A\":\"Across three chapters, it preserves reader agency, delays behavior change until belief examination, bounds anecdotes and scientific claims, narrows the target, and adds clinical and eating-disorder guardrails; some categorical claims about closure and naturally effortless change remain stronger than its evidence.\",\"B\":\"Across three chapters, it rejects sustained willpower but uses degrading portrayals, catastrophic disease threats, universal addiction claims, guaranteed outcomes, unsupported clinic success assertions, and sweeping carbohydrate restrictions; exact-obedience demands and conflicts between its stated safeguards and rhetoric weaken autonomy and coherence.\"},\"product_parity_verdict\":\"A\",\"scores\":{\"cross_chapter_consistency\":{\"A\":8,\"B\":5},\"epistemic_honesty\":{\"A\":8,\"B\":1},\"non_shaming_regard\":{\"A\":8,\"B\":2},\"originality\":{\"A\":7,\"B\":7},\"willpower_free_logic\":{\"A\":8,\"B\":6}}}",
+ "parsed": {
+  "confidence": 0.99,
+  "critical_failures": {
+   "A": [],
+   "B": [
+    "shame_moralizing",
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony"
+   ]
+  },
+  "generic_mechanism": "The largest gap comes from treating claims as testable and bounded versus converting analogy, anecdote, and association into categorical causal claims, guarantees, and high-stakes advice.",
+  "paraphrased_evidence": {
+   "A": "Across three chapters, it preserves reader agency, delays behavior change until belief examination, bounds anecdotes and scientific claims, narrows the target, and adds clinical and eating-disorder guardrails; some categorical claims about closure and naturally effortless change remain stronger than its evidence.",
+   "B": "Across three chapters, it rejects sustained willpower but uses degrading portrayals, catastrophic disease threats, universal addiction claims, guaranteed outcomes, unsupported clinic success assertions, and sweeping carbohydrate restrictions; exact-obedience demands and conflicts between its stated safeguards and rhetoric weaken autonomy and coherence."
+  },
+  "product_parity_verdict": "A",
+  "scores": {
+   "cross_chapter_consistency": {
+    "A": 8,
+    "B": 5
+   },
+   "epistemic_honesty": {
+    "A": 8,
+    "B": 1
+   },
+   "non_shaming_regard": {
+    "A": 8,
+    "B": 2
+   },
+   "originality": {
+    "A": 7,
+    "B": 7
+   },
+   "willpower_free_logic": {
+    "A": 8,
+    "B": 6
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "non_shaming_regard": {
+    "ours": 8,
+    "ref": 2
+   },
+   "willpower_free_logic": {
+    "ours": 8,
+    "ref": 6
+   },
+   "epistemic_honesty": {
+    "ours": 8,
+    "ref": 1
+   },
+   "originality": {
+    "ours": 7,
+    "ref": 7
+   },
+   "cross_chapter_consistency": {
+    "ours": 8,
+    "ref": 5
+   }
+  },
+  "critical_ours": [],
+  "critical_ref": [
+   "shame_moralizing",
+   "fear_as_motivator",
+   "medical_overreach",
+   "unsupported_authority_or_testimony"
+  ],
+  "product_parity_verdict": "ours",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "Across three chapters, it preserves reader agency, delays behavior change until belief examination, bounds anecdotes and scientific claims, narrows the target, and adds clinical and eating-disorder guardrails; some categorical claims about closure and naturally effortless change remain stronger than its evidence.",
+   "ref": "Across three chapters, it rejects sustained willpower but uses degrading portrayals, catastrophic disease threats, universal addiction claims, guaranteed outcomes, unsupported clinic success assertions, and sweeping carbohydrate restrictions; exact-obedience demands and conflicts between its stated safeguards and rhetoric weaken autonomy and coherence."
+  },
+  "generic_mechanism": "The largest gap comes from treating claims as testable and bounded versus converting analogy, anecdote, and association into categorical causal claims, guarantees, and high-stakes advice."
+ }
+}

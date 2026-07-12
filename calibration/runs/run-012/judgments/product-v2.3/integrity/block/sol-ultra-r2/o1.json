@@ -1,0 +1,141 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "integrity",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "829c6c554f48da828f9a0de2b65cd1b447208ab98c243ef34bd0964e98f10390",
+  "output_schema_sha256": "0e6d50465998e681e1edb0c9f1106767d045acce1167c3aa91678a229ceb756f",
+  "thread_id": "019f5437-d1bb-7040-8f52-ab32962acd80",
+  "usage": {
+   "input_tokens": 38932,
+   "cached_input_tokens": 12032,
+   "output_tokens": 8545,
+   "reasoning_output_tokens": 8286
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f5437-d1bb-7040-8f52-ab32962acd80\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.98,\\\"critical_failures\\\":{\\\"A\\\":[\\\"fear_as_motivator\\\",\\\"medical_overreach\\\",\\\"unsupported_authority_or_testimony\\\"],\\\"B\\\":[]},\\\"generic_mechanism\\\":\\\"The largest difference is whether bounded, reversible inquiry tests beliefs under symmetric scrutiny, or analogy, alarm, and anecdote are converted into universal certainty.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"Although it rejects personal blame and aims to remove desire, it repeatedly stigmatizes consumers, equates ordinary staples with addictive drugs, uses catastrophic disease imagery, and asserts universal causal, withdrawal, and efficacy claims without adequate support.\\\",\\\"B\\\":\\\"It preserves autonomy, narrows the target, treats testimony as illustration, applies skepticism to itself, and defers to clinical care; its claim that total planned abstention alone ends deliberation is more asserted than demonstrated.\\\"},\\\"product_parity_verdict\\\":\\\"B\\\",\\\"scores\\\":{\\\"cross_chapter_consistency\\\":{\\\"A\\\":4,\\\"B\\\":8},\\\"epistemic_honesty\\\":{\\\"A\\\":1,\\\"B\\\":8},\\\"non_shaming_regard\\\":{\\\"A\\\":5,\\\"B\\\":9},\\\"originality\\\":{\\\"A\\\":4,\\\"B\\\":7},\\\"willpower_free_logic\\\":{\\\"A\\\":7,\\\"B\\\":8}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":38932,\"cached_input_tokens\":12032,\"output_tokens\":8545,\"reasoning_output_tokens\":8286}}\n"
+ },
+ "raw": "{\"confidence\":0.98,\"critical_failures\":{\"A\":[\"fear_as_motivator\",\"medical_overreach\",\"unsupported_authority_or_testimony\"],\"B\":[]},\"generic_mechanism\":\"The largest difference is whether bounded, reversible inquiry tests beliefs under symmetric scrutiny, or analogy, alarm, and anecdote are converted into universal certainty.\",\"paraphrased_evidence\":{\"A\":\"Although it rejects personal blame and aims to remove desire, it repeatedly stigmatizes consumers, equates ordinary staples with addictive drugs, uses catastrophic disease imagery, and asserts universal causal, withdrawal, and efficacy claims without adequate support.\",\"B\":\"It preserves autonomy, narrows the target, treats testimony as illustration, applies skepticism to itself, and defers to clinical care; its claim that total planned abstention alone ends deliberation is more asserted than demonstrated.\"},\"product_parity_verdict\":\"B\",\"scores\":{\"cross_chapter_consistency\":{\"A\":4,\"B\":8},\"epistemic_honesty\":{\"A\":1,\"B\":8},\"non_shaming_regard\":{\"A\":5,\"B\":9},\"originality\":{\"A\":4,\"B\":7},\"willpower_free_logic\":{\"A\":7,\"B\":8}}}",
+ "parsed": {
+  "confidence": 0.98,
+  "critical_failures": {
+   "A": [
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony"
+   ],
+   "B": []
+  },
+  "generic_mechanism": "The largest difference is whether bounded, reversible inquiry tests beliefs under symmetric scrutiny, or analogy, alarm, and anecdote are converted into universal certainty.",
+  "paraphrased_evidence": {
+   "A": "Although it rejects personal blame and aims to remove desire, it repeatedly stigmatizes consumers, equates ordinary staples with addictive drugs, uses catastrophic disease imagery, and asserts universal causal, withdrawal, and efficacy claims without adequate support.",
+   "B": "It preserves autonomy, narrows the target, treats testimony as illustration, applies skepticism to itself, and defers to clinical care; its claim that total planned abstention alone ends deliberation is more asserted than demonstrated."
+  },
+  "product_parity_verdict": "B",
+  "scores": {
+   "cross_chapter_consistency": {
+    "A": 4,
+    "B": 8
+   },
+   "epistemic_honesty": {
+    "A": 1,
+    "B": 8
+   },
+   "non_shaming_regard": {
+    "A": 5,
+    "B": 9
+   },
+   "originality": {
+    "A": 4,
+    "B": 7
+   },
+   "willpower_free_logic": {
+    "A": 7,
+    "B": 8
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "non_shaming_regard": {
+    "ours": 9,
+    "ref": 5
+   },
+   "willpower_free_logic": {
+    "ours": 8,
+    "ref": 7
+   },
+   "epistemic_honesty": {
+    "ours": 8,
+    "ref": 1
+   },
+   "originality": {
+    "ours": 7,
+    "ref": 4
+   },
+   "cross_chapter_consistency": {
+    "ours": 8,
+    "ref": 4
+   }
+  },
+  "critical_ours": [],
+  "critical_ref": [
+   "fear_as_motivator",
+   "medical_overreach",
+   "unsupported_authority_or_testimony"
+  ],
+  "product_parity_verdict": "ours",
+  "confidence": 0.98,
+  "paraphrased_evidence": {
+   "ours": "It preserves autonomy, narrows the target, treats testimony as illustration, applies skepticism to itself, and defers to clinical care; its claim that total planned abstention alone ends deliberation is more asserted than demonstrated.",
+   "ref": "Although it rejects personal blame and aims to remove desire, it repeatedly stigmatizes consumers, equates ordinary staples with addictive drugs, uses catastrophic disease imagery, and asserts universal causal, withdrawal, and efficacy claims without adequate support."
+  },
+  "generic_mechanism": "The largest difference is whether bounded, reversible inquiry tests beliefs under symmetric scrutiny, or analogy, alarm, and anecdote are converted into universal certainty."
+ }
+}

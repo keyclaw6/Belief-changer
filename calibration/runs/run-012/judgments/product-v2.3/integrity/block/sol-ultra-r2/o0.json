@@ -1,0 +1,143 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "integrity",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "81b2e2caedb3d0a15403acd073d5d78f4a256c160930f491a58f2743d0bc8d40",
+  "output_schema_sha256": "0e6d50465998e681e1edb0c9f1106767d045acce1167c3aa91678a229ceb756f",
+  "thread_id": "019f5434-a974-70d3-adaa-1e07b78948d1",
+  "usage": {
+   "input_tokens": 38932,
+   "cached_input_tokens": 0,
+   "output_tokens": 9958,
+   "reasoning_output_tokens": 9687
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f5434-a974-70d3-adaa-1e07b78948d1\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.99,\\\"critical_failures\\\":{\\\"A\\\":[],\\\"B\\\":[\\\"shame_moralizing\\\",\\\"fear_as_motivator\\\",\\\"medical_overreach\\\",\\\"unsupported_authority_or_testimony\\\"]},\\\"generic_mechanism\\\":\\\"The largest gap comes from one method treating conclusions as revisable hypotheses, while the other turns analogy, alarm, and institutional or testimonial prestige into certainty and obedience.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"A makes the reader the evaluator, delays behavioral change until beliefs shift, limits its scope, and preserves clinical overrides. Its strongest unsupported points are universal claims about agency and the assertion that only complete cessation can end deliberation.\\\",\\\"B\\\":\\\"B absolves weakness in places, but repeatedly uses humiliating depictions, catastrophic disease outcomes, drug analogies, sweeping biological claims, and branded success assertions to demand total compliance; those claims are neither adequately bounded nor supported within the sample.\\\"},\\\"product_parity_verdict\\\":\\\"A\\\",\\\"scores\\\":{\\\"cross_chapter_consistency\\\":{\\\"A\\\":8,\\\"B\\\":5},\\\"epistemic_honesty\\\":{\\\"A\\\":8,\\\"B\\\":1},\\\"non_shaming_regard\\\":{\\\"A\\\":8,\\\"B\\\":3},\\\"originality\\\":{\\\"A\\\":7,\\\"B\\\":5},\\\"willpower_free_logic\\\":{\\\"A\\\":8,\\\"B\\\":6}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":38932,\"cached_input_tokens\":0,\"output_tokens\":9958,\"reasoning_output_tokens\":9687}}\n"
+ },
+ "raw": "{\"confidence\":0.99,\"critical_failures\":{\"A\":[],\"B\":[\"shame_moralizing\",\"fear_as_motivator\",\"medical_overreach\",\"unsupported_authority_or_testimony\"]},\"generic_mechanism\":\"The largest gap comes from one method treating conclusions as revisable hypotheses, while the other turns analogy, alarm, and institutional or testimonial prestige into certainty and obedience.\",\"paraphrased_evidence\":{\"A\":\"A makes the reader the evaluator, delays behavioral change until beliefs shift, limits its scope, and preserves clinical overrides. Its strongest unsupported points are universal claims about agency and the assertion that only complete cessation can end deliberation.\",\"B\":\"B absolves weakness in places, but repeatedly uses humiliating depictions, catastrophic disease outcomes, drug analogies, sweeping biological claims, and branded success assertions to demand total compliance; those claims are neither adequately bounded nor supported within the sample.\"},\"product_parity_verdict\":\"A\",\"scores\":{\"cross_chapter_consistency\":{\"A\":8,\"B\":5},\"epistemic_honesty\":{\"A\":8,\"B\":1},\"non_shaming_regard\":{\"A\":8,\"B\":3},\"originality\":{\"A\":7,\"B\":5},\"willpower_free_logic\":{\"A\":8,\"B\":6}}}",
+ "parsed": {
+  "confidence": 0.99,
+  "critical_failures": {
+   "A": [],
+   "B": [
+    "shame_moralizing",
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony"
+   ]
+  },
+  "generic_mechanism": "The largest gap comes from one method treating conclusions as revisable hypotheses, while the other turns analogy, alarm, and institutional or testimonial prestige into certainty and obedience.",
+  "paraphrased_evidence": {
+   "A": "A makes the reader the evaluator, delays behavioral change until beliefs shift, limits its scope, and preserves clinical overrides. Its strongest unsupported points are universal claims about agency and the assertion that only complete cessation can end deliberation.",
+   "B": "B absolves weakness in places, but repeatedly uses humiliating depictions, catastrophic disease outcomes, drug analogies, sweeping biological claims, and branded success assertions to demand total compliance; those claims are neither adequately bounded nor supported within the sample."
+  },
+  "product_parity_verdict": "A",
+  "scores": {
+   "cross_chapter_consistency": {
+    "A": 8,
+    "B": 5
+   },
+   "epistemic_honesty": {
+    "A": 8,
+    "B": 1
+   },
+   "non_shaming_regard": {
+    "A": 8,
+    "B": 3
+   },
+   "originality": {
+    "A": 7,
+    "B": 5
+   },
+   "willpower_free_logic": {
+    "A": 8,
+    "B": 6
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "non_shaming_regard": {
+    "ours": 8,
+    "ref": 3
+   },
+   "willpower_free_logic": {
+    "ours": 8,
+    "ref": 6
+   },
+   "epistemic_honesty": {
+    "ours": 8,
+    "ref": 1
+   },
+   "originality": {
+    "ours": 7,
+    "ref": 5
+   },
+   "cross_chapter_consistency": {
+    "ours": 8,
+    "ref": 5
+   }
+  },
+  "critical_ours": [],
+  "critical_ref": [
+   "shame_moralizing",
+   "fear_as_motivator",
+   "medical_overreach",
+   "unsupported_authority_or_testimony"
+  ],
+  "product_parity_verdict": "ours",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "A makes the reader the evaluator, delays behavioral change until beliefs shift, limits its scope, and preserves clinical overrides. Its strongest unsupported points are universal claims about agency and the assertion that only complete cessation can end deliberation.",
+   "ref": "B absolves weakness in places, but repeatedly uses humiliating depictions, catastrophic disease outcomes, drug analogies, sweeping biological claims, and branded success assertions to demand total compliance; those claims are neither adequately bounded nor supported within the sample."
+  },
+  "generic_mechanism": "The largest gap comes from one method treating conclusions as revisable hypotheses, while the other turns analogy, alarm, and institutional or testimonial prestige into certainty and obedience."
+ }
+}

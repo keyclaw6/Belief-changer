@@ -1,0 +1,129 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-03",
+ "ours_chapters": [
+  3
+ ],
+ "ref_chapters": [
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "74c1c91c79b9ec5a6573ef5a7c38ac46138913e8396827ef3fa92cf3bb13ede2",
+  "output_schema_sha256": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+  "thread_id": "019f542c-c475-7b30-97e4-abd4b3c19e4f",
+  "usage": {
+   "input_tokens": 22039,
+   "cached_input_tokens": 0,
+   "output_tokens": 6339,
+   "reasoning_output_tokens": 6083
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f542c-c475-7b30-97e4-abd4b3c19e4f\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.84,\\\"critical_failures\\\":{\\\"A\\\":[],\\\"B\\\":[]},\\\"generic_mechanism\\\":\\\"The larger craft gap comes from disciplined conceptual architecture: each section changes the argument\u2019s function, while the weaker chapter accumulates vivid examples without an equally firm hierarchy.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"A supplies memorable domestic, social, and bodily examples, and its analogies often snap the argument into focus. Its certainty turns promotional, however, and the late detour through familiar anti-diet claims repeats earlier assurances while weakening the chapter\u2019s line of movement.\\\",\\\"B\\\":\\\"B establishes a precise distinction between choosing and inheriting expectations, develops it through one coherent metaphor and varied human motives, then subjects its own authority to the same test. The gallery runs long and the recap overexplains, but the conceptual progression remains unusually clean.\\\"},\\\"product_parity_verdict\\\":\\\"B\\\",\\\"scores\\\":{\\\"ending_handoff\\\":{\\\"A\\\":5,\\\"B\\\":6},\\\"flow_and_momentum\\\":{\\\"A\\\":5,\\\"B\\\":7},\\\"prose_control\\\":{\\\"A\\\":6,\\\"B\\\":7},\\\"rhythm_and_variety\\\":{\\\"A\\\":6,\\\"B\\\":6},\\\"specificity\\\":{\\\"A\\\":7,\\\"B\\\":7}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":22039,\"cached_input_tokens\":0,\"output_tokens\":6339,\"reasoning_output_tokens\":6083}}\n"
+ },
+ "raw": "{\"confidence\":0.84,\"critical_failures\":{\"A\":[],\"B\":[]},\"generic_mechanism\":\"The larger craft gap comes from disciplined conceptual architecture: each section changes the argument\u2019s function, while the weaker chapter accumulates vivid examples without an equally firm hierarchy.\",\"paraphrased_evidence\":{\"A\":\"A supplies memorable domestic, social, and bodily examples, and its analogies often snap the argument into focus. Its certainty turns promotional, however, and the late detour through familiar anti-diet claims repeats earlier assurances while weakening the chapter\u2019s line of movement.\",\"B\":\"B establishes a precise distinction between choosing and inheriting expectations, develops it through one coherent metaphor and varied human motives, then subjects its own authority to the same test. The gallery runs long and the recap overexplains, but the conceptual progression remains unusually clean.\"},\"product_parity_verdict\":\"B\",\"scores\":{\"ending_handoff\":{\"A\":5,\"B\":6},\"flow_and_momentum\":{\"A\":5,\"B\":7},\"prose_control\":{\"A\":6,\"B\":7},\"rhythm_and_variety\":{\"A\":6,\"B\":6},\"specificity\":{\"A\":7,\"B\":7}}}",
+ "parsed": {
+  "confidence": 0.84,
+  "critical_failures": {
+   "A": [],
+   "B": []
+  },
+  "generic_mechanism": "The larger craft gap comes from disciplined conceptual architecture: each section changes the argument\u2019s function, while the weaker chapter accumulates vivid examples without an equally firm hierarchy.",
+  "paraphrased_evidence": {
+   "A": "A supplies memorable domestic, social, and bodily examples, and its analogies often snap the argument into focus. Its certainty turns promotional, however, and the late detour through familiar anti-diet claims repeats earlier assurances while weakening the chapter\u2019s line of movement.",
+   "B": "B establishes a precise distinction between choosing and inheriting expectations, develops it through one coherent metaphor and varied human motives, then subjects its own authority to the same test. The gallery runs long and the recap overexplains, but the conceptual progression remains unusually clean."
+  },
+  "product_parity_verdict": "B",
+  "scores": {
+   "ending_handoff": {
+    "A": 5,
+    "B": 6
+   },
+   "flow_and_momentum": {
+    "A": 5,
+    "B": 7
+   },
+   "prose_control": {
+    "A": 6,
+    "B": 7
+   },
+   "rhythm_and_variety": {
+    "A": 6,
+    "B": 6
+   },
+   "specificity": {
+    "A": 7,
+    "B": 7
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 7,
+    "ref": 6
+   },
+   "rhythm_and_variety": {
+    "ours": 6,
+    "ref": 6
+   },
+   "specificity": {
+    "ours": 7,
+    "ref": 7
+   },
+   "flow_and_momentum": {
+    "ours": 7,
+    "ref": 5
+   },
+   "ending_handoff": {
+    "ours": 6,
+    "ref": 5
+   }
+  },
+  "critical_ours": [],
+  "critical_ref": [],
+  "product_parity_verdict": "ours",
+  "confidence": 0.84,
+  "paraphrased_evidence": {
+   "ours": "B establishes a precise distinction between choosing and inheriting expectations, develops it through one coherent metaphor and varied human motives, then subjects its own authority to the same test. The gallery runs long and the recap overexplains, but the conceptual progression remains unusually clean.",
+   "ref": "A supplies memorable domestic, social, and bodily examples, and its analogies often snap the argument into focus. Its certainty turns promotional, however, and the late detour through familiar anti-diet claims repeats earlier assurances while weakening the chapter\u2019s line of movement."
+  },
+  "generic_mechanism": "The larger craft gap comes from disciplined conceptual architecture: each section changes the argument\u2019s function, while the weaker chapter accumulates vivid examples without an equally firm hierarchy."
+ }
+}

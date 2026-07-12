@@ -2,7 +2,7 @@
   "run": "run-012",
   "date": "2026-07-11",
   "stage": "A",
-  "status": "CAUSAL_REFUTED_V2_2_DEGRADED_FAILED_V2_3_IMPLEMENTED_FROZEN_PRODUCT_UNJUDGED",
+  "status": "CAUSAL_REFUTED_V2_3_PRODUCT_JUDGE_GATE_FAILED_STAGE_A_FAILED",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "source-grounded semantic commissioning followed by a frozen Chapters 1-3 production run",
@@ -1122,6 +1122,126 @@
     "next_artifact": "Run the frozen run-012 target panel immediately under the same configuration, consuming both validated control summaries; no prompt, schema, label, material, degradation, aggregation, threshold, prose, factory-asset, or hypothesis work may intervene.",
     "product_verdict": "UNJUDGED",
     "causal_boundary": "H-049 remains REFUTED; the control result neither changes that verdict nor creates H-050."
+  },
+  "judge_instrument_v2_3_product": {
+    "date": "2026-07-12",
+    "status": "VALID COMPLETE PANEL; STAGE-A JUDGE GATE FAIL",
+    "execution_head_before_inference": "973fb71e8522f40dff3d9e659e2a6f31caeca1f6",
+    "directory": "calibration/runs/run-012/judgments/product-v2.3",
+    "summary": "calibration/runs/run-012/judgments/product-v2.3/judge-summary.json",
+    "summary_sha256": "529b279c7dbc98ef2231e4b70deb0961edf1bbb2b7ec9c3f03dbe67ed3d3c7a2",
+    "runner_exit": 0,
+    "configuration_sha256": "3131a73a35c7e1624d46a1b36ffe9317716fc6bf05d34003569ea7afc62a0706",
+    "validated_control_summary_sha256": {
+      "identical": "c6a4f5baac6bc56822297118123924398b22391ffca0d7d3b6fa8f1d82748d03",
+      "degraded_reference": "845174c2b307a13057c20ae16a87aee20de99f975a7236c38115a0c07a06b21d"
+    },
+    "transport_audit": {
+      "raw_judgments": 20,
+      "strict_valid_first_responses": 20,
+      "invalid_judgments": 0,
+      "collapsed_target_observations": 5,
+      "unique_fresh_thread_ids": 20,
+      "role_target_order_strata": 10,
+      "two_replicas_and_matching_input_schema_hashes_per_stratum": true,
+      "strict_raw_parse_cached_parse_and_order_remap_rebuilt": "20/20",
+      "complete_event_streams": "20/20",
+      "retries_repairs_extraction_tolerant_parse_process_failures": "0/0/0/0/0",
+      "replica_label_permutations_checked": 1024,
+      "permutation_invariance": "PASS",
+      "provider_api_credentials_inherited": false
+    },
+    "raw_verdicts": {
+      "ours": 10,
+      "tie": 0,
+      "reference": 10
+    },
+    "targets": {
+      "efficacy_block": {
+        "verdicts": {"ours": 1, "tie": 0, "reference": 3},
+        "preference_rate_incl_half_ties": 0.25,
+        "target_noninferiority": false,
+        "critical_ours": [],
+        "critical_reference": [],
+        "order_mean_gap": 0.5
+      },
+      "craft_chapter_01": {
+        "verdicts": {"ours": 4, "tie": 0, "reference": 0},
+        "preference_rate_incl_half_ties": 1.0,
+        "target_noninferiority": true,
+        "critical_ours": [],
+        "critical_reference": ["repetitive_sag"],
+        "order_mean_gap": 0.0
+      },
+      "craft_chapter_02": {
+        "verdicts": {"ours": 0, "tie": 0, "reference": 4},
+        "preference_rate_incl_half_ties": 0.0,
+        "target_noninferiority": false,
+        "critical_ours": ["repetitive_sag", "weak_ending_handoff"],
+        "critical_reference": [],
+        "order_mean_gap": 0.0
+      },
+      "craft_chapter_03": {
+        "verdicts": {"ours": 1, "tie": 0, "reference": 3},
+        "preference_rate_incl_half_ties": 0.25,
+        "target_noninferiority": false,
+        "critical_ours": ["repetitive_sag"],
+        "critical_reference": [],
+        "order_mean_gap": 0.5
+      },
+      "integrity_block": {
+        "verdicts": {"ours": 4, "tie": 0, "reference": 0},
+        "preference_rate_incl_half_ties": 1.0,
+        "target_noninferiority": true,
+        "critical_ours": [],
+        "critical_reference": ["fear_as_motivator", "medical_overreach", "shame_moralizing", "unsupported_authority_or_testimony"],
+        "order_mean_gap": 0.0
+      }
+    },
+    "roles": {
+      "efficacy": 0.25,
+      "craft": 0.4166666666666667,
+      "integrity": 1.0
+    },
+    "equal_role_macro_preference_rate": 0.5555555555555556,
+    "target_noninferiority": false,
+    "critical_ours_union": ["repetitive_sag", "weak_ending_handoff"],
+    "critical_reference_union": ["fear_as_motivator", "medical_overreach", "repetitive_sag", "shame_moralizing", "unsupported_authority_or_testimony"],
+    "verdict_rubric_coherence_contradictions": 0,
+    "stage_a_judge_gate": {
+      "passed": false,
+      "checks": {
+        "validated_controls": true,
+        "panel_complete": true,
+        "target_noninferiority": false,
+        "verdict_rubric_coherence": true,
+        "critical_safety": false,
+        "role_thresholds": false,
+        "macro_threshold": true
+      },
+      "thresholds": {
+        "equal_role_macro": 0.45,
+        "each_role": 0.35
+      }
+    },
+    "usage": {
+      "input_tokens": 655704,
+      "cached_input_tokens": 220672,
+      "output_tokens": 95192,
+      "reasoning_output_tokens": 89864
+    },
+    "preserved_runtime_diagnostic": "One efficacy call returned code 0 with one complete strict-valid response, one fresh top-level thread, and complete usage while stderr retained two failed internal collab-spawn router attempts. No child thread was created and there was no retry, repair, substitution, or subprocess failure; the frozen matrix and product evaluators passed the call.",
+    "gate_boundaries": {
+      "judge": "FAIL independently: efficacy misses the 0.35 role floor; efficacy, craft Chapter 2, and craft Chapter 3 fail target noninferiority; craft Chapters 2-3 union publication-blocking critical labels on ours. Macro preference passes and there are zero verdict/rubric contradictions.",
+      "objective": "FAIL independently: three overlapping non-mantra 12-gram repetition failures; mantra and reference-overlap checks pass.",
+      "length": "FAIL independently: all three chapters miss their plan-budget plus-or-minus-20-percent bands.",
+      "grounded": "FAIL independently: source-grounded specialists found material evidence defects in all three first drafts.",
+      "causal": "H-049 remains REFUTED under its preregistered source-grounding rule; the blind product panel neither supports nor reverses that causal verdict."
+    },
+    "promotion": "NONE — live Chapters 1-2 from runs 002 and 004 remain the last accepted product; no run-012 prose is promoted.",
+    "next_decision_owner": "root orchestrator",
+    "next_artifact": "Root chooses and preregisters the next generic factory hypothesis from the complete run-012 evidence; the panel executor forms no H-050 and makes no prose or factory change.",
+    "claim_boundary": "This is a replicated native-Sol baseline under passed synthetic controls, not cross-family consensus. Blind integrity cannot verify source packets, the gross-degradation control proves only severe-damage sensitivity, and the favorable macro cannot override failed target, safety, objective, length, or grounded gates."
   },
   "held_constant": [
     "accepted research corpus, framing, canonical plan, evidence assignments, chapter jobs, and source permissions",

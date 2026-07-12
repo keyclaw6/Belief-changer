@@ -1,0 +1,133 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-02",
+ "ours_chapters": [
+  2
+ ],
+ "ref_chapters": [
+  2
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "f14186b72f5bd51699c4ef0d6aa23bc078501995aa3f4f0b250623bf2b092a2a",
+  "output_schema_sha256": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+  "thread_id": "019f5425-0582-7270-949d-49b5a51ab692",
+  "usage": {
+   "input_tokens": 22565,
+   "cached_input_tokens": 12032,
+   "output_tokens": 4220,
+   "reasoning_output_tokens": 3952
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f5425-0582-7270-949d-49b5a51ab692\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.89,\\\"critical_failures\\\":{\\\"A\\\":[],\\\"B\\\":[\\\"repetitive_sag\\\"]},\\\"generic_mechanism\\\":\\\"When a simple distinction is revisited through too many parallel explanatory devices, each locally clear addition lowers global momentum; changing the scale or consequence of examples instead creates cumulative movement.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"A opens on a concrete squirrel observation, then widens its case through animal behavior, industrial history, health stakes, and a visual illusion. The shifts generate momentum, though emphatic typography, sweeping assertions, and the final bullet recap sometimes substitute force for finesse.\\\",\\\"B\\\":\\\"B defines its boundary clearly and supplies vivid sorting, costume, and customs analogies, but repeatedly reclassifies the same foods through rules, edge cases, traces, examples, studies, safety caveats, an instruction, and a long summary. The accumulated explanation overwhelms the advance.\\\"},\\\"product_parity_verdict\\\":\\\"A\\\",\\\"scores\\\":{\\\"ending_handoff\\\":{\\\"A\\\":5,\\\"B\\\":3},\\\"flow_and_momentum\\\":{\\\"A\\\":6,\\\"B\\\":3},\\\"prose_control\\\":{\\\"A\\\":6,\\\"B\\\":5},\\\"rhythm_and_variety\\\":{\\\"A\\\":6,\\\"B\\\":4},\\\"specificity\\\":{\\\"A\\\":7,\\\"B\\\":6}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":22565,\"cached_input_tokens\":12032,\"output_tokens\":4220,\"reasoning_output_tokens\":3952}}\n"
+ },
+ "raw": "{\"confidence\":0.89,\"critical_failures\":{\"A\":[],\"B\":[\"repetitive_sag\"]},\"generic_mechanism\":\"When a simple distinction is revisited through too many parallel explanatory devices, each locally clear addition lowers global momentum; changing the scale or consequence of examples instead creates cumulative movement.\",\"paraphrased_evidence\":{\"A\":\"A opens on a concrete squirrel observation, then widens its case through animal behavior, industrial history, health stakes, and a visual illusion. The shifts generate momentum, though emphatic typography, sweeping assertions, and the final bullet recap sometimes substitute force for finesse.\",\"B\":\"B defines its boundary clearly and supplies vivid sorting, costume, and customs analogies, but repeatedly reclassifies the same foods through rules, edge cases, traces, examples, studies, safety caveats, an instruction, and a long summary. The accumulated explanation overwhelms the advance.\"},\"product_parity_verdict\":\"A\",\"scores\":{\"ending_handoff\":{\"A\":5,\"B\":3},\"flow_and_momentum\":{\"A\":6,\"B\":3},\"prose_control\":{\"A\":6,\"B\":5},\"rhythm_and_variety\":{\"A\":6,\"B\":4},\"specificity\":{\"A\":7,\"B\":6}}}",
+ "parsed": {
+  "confidence": 0.89,
+  "critical_failures": {
+   "A": [],
+   "B": [
+    "repetitive_sag"
+   ]
+  },
+  "generic_mechanism": "When a simple distinction is revisited through too many parallel explanatory devices, each locally clear addition lowers global momentum; changing the scale or consequence of examples instead creates cumulative movement.",
+  "paraphrased_evidence": {
+   "A": "A opens on a concrete squirrel observation, then widens its case through animal behavior, industrial history, health stakes, and a visual illusion. The shifts generate momentum, though emphatic typography, sweeping assertions, and the final bullet recap sometimes substitute force for finesse.",
+   "B": "B defines its boundary clearly and supplies vivid sorting, costume, and customs analogies, but repeatedly reclassifies the same foods through rules, edge cases, traces, examples, studies, safety caveats, an instruction, and a long summary. The accumulated explanation overwhelms the advance."
+  },
+  "product_parity_verdict": "A",
+  "scores": {
+   "ending_handoff": {
+    "A": 5,
+    "B": 3
+   },
+   "flow_and_momentum": {
+    "A": 6,
+    "B": 3
+   },
+   "prose_control": {
+    "A": 6,
+    "B": 5
+   },
+   "rhythm_and_variety": {
+    "A": 6,
+    "B": 4
+   },
+   "specificity": {
+    "A": 7,
+    "B": 6
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 5,
+    "ref": 6
+   },
+   "rhythm_and_variety": {
+    "ours": 4,
+    "ref": 6
+   },
+   "specificity": {
+    "ours": 6,
+    "ref": 7
+   },
+   "flow_and_momentum": {
+    "ours": 3,
+    "ref": 6
+   },
+   "ending_handoff": {
+    "ours": 3,
+    "ref": 5
+   }
+  },
+  "critical_ours": [
+   "repetitive_sag"
+  ],
+  "critical_ref": [],
+  "product_parity_verdict": "ref",
+  "confidence": 0.89,
+  "paraphrased_evidence": {
+   "ours": "B defines its boundary clearly and supplies vivid sorting, costume, and customs analogies, but repeatedly reclassifies the same foods through rules, edge cases, traces, examples, studies, safety caveats, an instruction, and a long summary. The accumulated explanation overwhelms the advance.",
+   "ref": "A opens on a concrete squirrel observation, then widens its case through animal behavior, industrial history, health stakes, and a visual illusion. The shifts generate momentum, though emphatic typography, sweeping assertions, and the final bullet recap sometimes substitute force for finesse."
+  },
+  "generic_mechanism": "When a simple distinction is revisited through too many parallel explanatory devices, each locally clear addition lowers global momentum; changing the scale or consequence of examples instead creates cumulative movement."
+ }
+}

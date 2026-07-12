@@ -1,0 +1,133 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-03",
+ "ours_chapters": [
+  3
+ ],
+ "ref_chapters": [
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "74c1c91c79b9ec5a6573ef5a7c38ac46138913e8396827ef3fa92cf3bb13ede2",
+  "output_schema_sha256": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+  "thread_id": "019f5429-a36f-72d3-b600-691076f9352a",
+  "usage": {
+   "input_tokens": 22039,
+   "cached_input_tokens": 12032,
+   "output_tokens": 5936,
+   "reasoning_output_tokens": 5696
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f5429-a36f-72d3-b600-691076f9352a\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.81,\\\"critical_failures\\\":{\\\"A\\\":[],\\\"B\\\":[\\\"repetitive_sag\\\"]},\\\"generic_mechanism\\\":\\\"Breadth of concrete escalation can sustain a long argument; repeatedly returning every example to an already-established frame turns cohesion into drag.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"Vivid domestic and social scenes keep widening the argument, while abrupt analogies and promotional assurances occasionally strain control. Despite its polemical excess, most sections introduce a new pressure rather than merely restating the premise.\\\",\\\"B\\\":\\\"The governing metaphor clarifies a nuanced distinction, and the everyday vignettes are lucid. However, successive examples follow nearly the same validate-question-defer pattern, after which the test, instruction, and expansive summary repeat conclusions already established.\\\"},\\\"product_parity_verdict\\\":\\\"A\\\",\\\"scores\\\":{\\\"ending_handoff\\\":{\\\"A\\\":5,\\\"B\\\":4},\\\"flow_and_momentum\\\":{\\\"A\\\":6,\\\"B\\\":5},\\\"prose_control\\\":{\\\"A\\\":6,\\\"B\\\":7},\\\"rhythm_and_variety\\\":{\\\"A\\\":6,\\\"B\\\":5},\\\"specificity\\\":{\\\"A\\\":7,\\\"B\\\":7}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":22039,\"cached_input_tokens\":12032,\"output_tokens\":5936,\"reasoning_output_tokens\":5696}}\n"
+ },
+ "raw": "{\"confidence\":0.81,\"critical_failures\":{\"A\":[],\"B\":[\"repetitive_sag\"]},\"generic_mechanism\":\"Breadth of concrete escalation can sustain a long argument; repeatedly returning every example to an already-established frame turns cohesion into drag.\",\"paraphrased_evidence\":{\"A\":\"Vivid domestic and social scenes keep widening the argument, while abrupt analogies and promotional assurances occasionally strain control. Despite its polemical excess, most sections introduce a new pressure rather than merely restating the premise.\",\"B\":\"The governing metaphor clarifies a nuanced distinction, and the everyday vignettes are lucid. However, successive examples follow nearly the same validate-question-defer pattern, after which the test, instruction, and expansive summary repeat conclusions already established.\"},\"product_parity_verdict\":\"A\",\"scores\":{\"ending_handoff\":{\"A\":5,\"B\":4},\"flow_and_momentum\":{\"A\":6,\"B\":5},\"prose_control\":{\"A\":6,\"B\":7},\"rhythm_and_variety\":{\"A\":6,\"B\":5},\"specificity\":{\"A\":7,\"B\":7}}}",
+ "parsed": {
+  "confidence": 0.81,
+  "critical_failures": {
+   "A": [],
+   "B": [
+    "repetitive_sag"
+   ]
+  },
+  "generic_mechanism": "Breadth of concrete escalation can sustain a long argument; repeatedly returning every example to an already-established frame turns cohesion into drag.",
+  "paraphrased_evidence": {
+   "A": "Vivid domestic and social scenes keep widening the argument, while abrupt analogies and promotional assurances occasionally strain control. Despite its polemical excess, most sections introduce a new pressure rather than merely restating the premise.",
+   "B": "The governing metaphor clarifies a nuanced distinction, and the everyday vignettes are lucid. However, successive examples follow nearly the same validate-question-defer pattern, after which the test, instruction, and expansive summary repeat conclusions already established."
+  },
+  "product_parity_verdict": "A",
+  "scores": {
+   "ending_handoff": {
+    "A": 5,
+    "B": 4
+   },
+   "flow_and_momentum": {
+    "A": 6,
+    "B": 5
+   },
+   "prose_control": {
+    "A": 6,
+    "B": 7
+   },
+   "rhythm_and_variety": {
+    "A": 6,
+    "B": 5
+   },
+   "specificity": {
+    "A": 7,
+    "B": 7
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 7,
+    "ref": 6
+   },
+   "rhythm_and_variety": {
+    "ours": 5,
+    "ref": 6
+   },
+   "specificity": {
+    "ours": 7,
+    "ref": 7
+   },
+   "flow_and_momentum": {
+    "ours": 5,
+    "ref": 6
+   },
+   "ending_handoff": {
+    "ours": 4,
+    "ref": 5
+   }
+  },
+  "critical_ours": [
+   "repetitive_sag"
+  ],
+  "critical_ref": [],
+  "product_parity_verdict": "ref",
+  "confidence": 0.81,
+  "paraphrased_evidence": {
+   "ours": "The governing metaphor clarifies a nuanced distinction, and the everyday vignettes are lucid. However, successive examples follow nearly the same validate-question-defer pattern, after which the test, instruction, and expansive summary repeat conclusions already established.",
+   "ref": "Vivid domestic and social scenes keep widening the argument, while abrupt analogies and promotional assurances occasionally strain control. Despite its polemical excess, most sections introduce a new pressure rather than merely restating the premise."
+  },
+  "generic_mechanism": "Breadth of concrete escalation can sustain a long argument; repeatedly returning every example to an already-established frame turns cohesion into drag."
+ }
+}

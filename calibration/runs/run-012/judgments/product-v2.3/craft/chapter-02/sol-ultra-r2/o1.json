@@ -1,0 +1,133 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-02",
+ "ours_chapters": [
+  2
+ ],
+ "ref_chapters": [
+  2
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "f14186b72f5bd51699c4ef0d6aa23bc078501995aa3f4f0b250623bf2b092a2a",
+  "output_schema_sha256": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+  "thread_id": "019f5427-c40f-7042-b2f9-e4c5a94a0291",
+  "usage": {
+   "input_tokens": 22567,
+   "cached_input_tokens": 12032,
+   "output_tokens": 2822,
+   "reasoning_output_tokens": 2588
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f5427-c40f-7042-b2f9-e4c5a94a0291\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.78,\\\"critical_failures\\\":{\\\"A\\\":[],\\\"B\\\":[\\\"repetitive_sag\\\"]},\\\"generic_mechanism\\\":\\\"The largest difference is compression: one chapter keeps changing illustrative pressure, while the other repeatedly revalidates an already clear distinction, turning structural thoroughness into lost momentum.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"The opening animal scene supplies a vivid physical anchor, and later examples sustain energy, though the medical detour and escalating questions loosen the route to the chapter\u2019s central instruction.\\\",\\\"B\\\":\\\"Concrete cases and lucid analogies make the boundary easy to understand, but labels, exceptions, anecdotes, cautions, the formal instruction, and the exhaustive summary keep reteaching it long after the point has landed.\\\"},\\\"product_parity_verdict\\\":\\\"A\\\",\\\"scores\\\":{\\\"ending_handoff\\\":{\\\"A\\\":5,\\\"B\\\":4},\\\"flow_and_momentum\\\":{\\\"A\\\":5,\\\"B\\\":4},\\\"prose_control\\\":{\\\"A\\\":6,\\\"B\\\":7},\\\"rhythm_and_variety\\\":{\\\"A\\\":6,\\\"B\\\":5},\\\"specificity\\\":{\\\"A\\\":7,\\\"B\\\":7}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":22567,\"cached_input_tokens\":12032,\"output_tokens\":2822,\"reasoning_output_tokens\":2588}}\n"
+ },
+ "raw": "{\"confidence\":0.78,\"critical_failures\":{\"A\":[],\"B\":[\"repetitive_sag\"]},\"generic_mechanism\":\"The largest difference is compression: one chapter keeps changing illustrative pressure, while the other repeatedly revalidates an already clear distinction, turning structural thoroughness into lost momentum.\",\"paraphrased_evidence\":{\"A\":\"The opening animal scene supplies a vivid physical anchor, and later examples sustain energy, though the medical detour and escalating questions loosen the route to the chapter\u2019s central instruction.\",\"B\":\"Concrete cases and lucid analogies make the boundary easy to understand, but labels, exceptions, anecdotes, cautions, the formal instruction, and the exhaustive summary keep reteaching it long after the point has landed.\"},\"product_parity_verdict\":\"A\",\"scores\":{\"ending_handoff\":{\"A\":5,\"B\":4},\"flow_and_momentum\":{\"A\":5,\"B\":4},\"prose_control\":{\"A\":6,\"B\":7},\"rhythm_and_variety\":{\"A\":6,\"B\":5},\"specificity\":{\"A\":7,\"B\":7}}}",
+ "parsed": {
+  "confidence": 0.78,
+  "critical_failures": {
+   "A": [],
+   "B": [
+    "repetitive_sag"
+   ]
+  },
+  "generic_mechanism": "The largest difference is compression: one chapter keeps changing illustrative pressure, while the other repeatedly revalidates an already clear distinction, turning structural thoroughness into lost momentum.",
+  "paraphrased_evidence": {
+   "A": "The opening animal scene supplies a vivid physical anchor, and later examples sustain energy, though the medical detour and escalating questions loosen the route to the chapter\u2019s central instruction.",
+   "B": "Concrete cases and lucid analogies make the boundary easy to understand, but labels, exceptions, anecdotes, cautions, the formal instruction, and the exhaustive summary keep reteaching it long after the point has landed."
+  },
+  "product_parity_verdict": "A",
+  "scores": {
+   "ending_handoff": {
+    "A": 5,
+    "B": 4
+   },
+   "flow_and_momentum": {
+    "A": 5,
+    "B": 4
+   },
+   "prose_control": {
+    "A": 6,
+    "B": 7
+   },
+   "rhythm_and_variety": {
+    "A": 6,
+    "B": 5
+   },
+   "specificity": {
+    "A": 7,
+    "B": 7
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 7,
+    "ref": 6
+   },
+   "rhythm_and_variety": {
+    "ours": 5,
+    "ref": 6
+   },
+   "specificity": {
+    "ours": 7,
+    "ref": 7
+   },
+   "flow_and_momentum": {
+    "ours": 4,
+    "ref": 5
+   },
+   "ending_handoff": {
+    "ours": 4,
+    "ref": 5
+   }
+  },
+  "critical_ours": [
+   "repetitive_sag"
+  ],
+  "critical_ref": [],
+  "product_parity_verdict": "ref",
+  "confidence": 0.78,
+  "paraphrased_evidence": {
+   "ours": "Concrete cases and lucid analogies make the boundary easy to understand, but labels, exceptions, anecdotes, cautions, the formal instruction, and the exhaustive summary keep reteaching it long after the point has landed.",
+   "ref": "The opening animal scene supplies a vivid physical anchor, and later examples sustain energy, though the medical detour and escalating questions loosen the route to the chapter\u2019s central instruction."
+  },
+  "generic_mechanism": "The largest difference is compression: one chapter keeps changing illustrative pressure, while the other repeatedly revalidates an already clear distinction, turning structural thoroughness into lost momentum."
+ }
+}

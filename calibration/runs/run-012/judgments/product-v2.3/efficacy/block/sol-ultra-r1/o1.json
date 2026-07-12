@@ -1,0 +1,125 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "efficacy",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "2026-07-12T02:16:00.548400Z ERROR codex_core::tools::router: error=collab spawn failed: no thread with id: 019f541c-0e3c-7073-b034-7a0bac9ca4ec\n2026-07-12T02:16:03.598079Z ERROR codex_core::tools::router: error=collab spawn failed: no thread with id: 019f541c-0e3c-7073-b034-7a0bac9ca4ec\n",
+  "input_sha256": "5acfda3f09c2e04f96896fe0a3e2c4c4bda4ce4807a6ded12783bb0c17ccf75b",
+  "output_schema_sha256": "3fa8c57fe6e46a5b4622d6458489fd104a8e75e8cf903dfd8e3f8dfa616d1238",
+  "thread_id": "019f541c-0e3c-7073-b034-7a0bac9ca4ec",
+  "usage": {
+   "input_tokens": 116819,
+   "cached_input_tokens": 76288,
+   "output_tokens": 6489,
+   "reasoning_output_tokens": 5905
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f541c-0e3c-7073-b034-7a0bac9ca4ec\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.01,\\\"critical_failures\\\":{\\\"A\\\":[],\\\"B\\\":[]},\\\"generic_mechanism\\\":\\\"I\u2019m independently checking each block and the comparative arc, then I\u2019ll return only the required JSON.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"\\\",\\\"B\\\":\\\"\\\"},\\\"product_parity_verdict\\\":\\\"tie\\\",\\\"scores\\\":{\\\"belief_movement\\\":{\\\"A\\\":1,\\\"B\\\":1},\\\"benefit_dismantling\\\":{\\\"A\\\":1,\\\"B\\\":1},\\\"cumulative_progression\\\":{\\\"A\\\":1,\\\"B\\\":1},\\\"escape_conviction\\\":{\\\"A\\\":1,\\\"B\\\":1}}}\"}}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_1\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.82,\\\"critical_failures\\\":{\\\"A\\\":[],\\\"B\\\":[]},\\\"generic_mechanism\\\":\\\"Belief change becomes more credible when the writer bounds the target, preserves autonomy, and converts inherited value claims into testable hypotheses; overbroad scope and absolute assurances can make a freedom message feel like imposed compliance.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"A offers a withdrawal-relief cycle, conditioned taste and reward, poor satiety, and rebound hunger as explanations for repeated use. Those mechanisms can loosen belief, but sweeping analogies, unsupported universals, a very broad target, and compliance-heavy assurances erode trust and make freedom feel promised.\\\",\\\"B\\\":\\\"B makes the ongoing mental workload itself a cost, sharply limits what change would cover, protects normal eating and accidents, and reframes claimed rewards as inherited attributions open to testing. This creates credible curiosity and non-depriving escape, although direct tests of the benefits are postponed.\\\"},\\\"product_parity_verdict\\\":\\\"B\\\",\\\"scores\\\":{\\\"belief_movement\\\":{\\\"A\\\":5,\\\"B\\\":6},\\\"benefit_dismantling\\\":{\\\"A\\\":6,\\\"B\\\":5},\\\"cumulative_progression\\\":{\\\"A\\\":5,\\\"B\\\":7},\\\"escape_conviction\\\":{\\\"A\\\":5,\\\"B\\\":7}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":116819,\"cached_input_tokens\":76288,\"output_tokens\":6489,\"reasoning_output_tokens\":5905}}\n"
+ },
+ "raw": "{\"confidence\":0.82,\"critical_failures\":{\"A\":[],\"B\":[]},\"generic_mechanism\":\"Belief change becomes more credible when the writer bounds the target, preserves autonomy, and converts inherited value claims into testable hypotheses; overbroad scope and absolute assurances can make a freedom message feel like imposed compliance.\",\"paraphrased_evidence\":{\"A\":\"A offers a withdrawal-relief cycle, conditioned taste and reward, poor satiety, and rebound hunger as explanations for repeated use. Those mechanisms can loosen belief, but sweeping analogies, unsupported universals, a very broad target, and compliance-heavy assurances erode trust and make freedom feel promised.\",\"B\":\"B makes the ongoing mental workload itself a cost, sharply limits what change would cover, protects normal eating and accidents, and reframes claimed rewards as inherited attributions open to testing. This creates credible curiosity and non-depriving escape, although direct tests of the benefits are postponed.\"},\"product_parity_verdict\":\"B\",\"scores\":{\"belief_movement\":{\"A\":5,\"B\":6},\"benefit_dismantling\":{\"A\":6,\"B\":5},\"cumulative_progression\":{\"A\":5,\"B\":7},\"escape_conviction\":{\"A\":5,\"B\":7}}}",
+ "parsed": {
+  "confidence": 0.82,
+  "critical_failures": {
+   "A": [],
+   "B": []
+  },
+  "generic_mechanism": "Belief change becomes more credible when the writer bounds the target, preserves autonomy, and converts inherited value claims into testable hypotheses; overbroad scope and absolute assurances can make a freedom message feel like imposed compliance.",
+  "paraphrased_evidence": {
+   "A": "A offers a withdrawal-relief cycle, conditioned taste and reward, poor satiety, and rebound hunger as explanations for repeated use. Those mechanisms can loosen belief, but sweeping analogies, unsupported universals, a very broad target, and compliance-heavy assurances erode trust and make freedom feel promised.",
+   "B": "B makes the ongoing mental workload itself a cost, sharply limits what change would cover, protects normal eating and accidents, and reframes claimed rewards as inherited attributions open to testing. This creates credible curiosity and non-depriving escape, although direct tests of the benefits are postponed."
+  },
+  "product_parity_verdict": "B",
+  "scores": {
+   "belief_movement": {
+    "A": 5,
+    "B": 6
+   },
+   "benefit_dismantling": {
+    "A": 6,
+    "B": 5
+   },
+   "cumulative_progression": {
+    "A": 5,
+    "B": 7
+   },
+   "escape_conviction": {
+    "A": 5,
+    "B": 7
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "benefit_dismantling": {
+    "ours": 5,
+    "ref": 6
+   },
+   "belief_movement": {
+    "ours": 6,
+    "ref": 5
+   },
+   "escape_conviction": {
+    "ours": 7,
+    "ref": 5
+   },
+   "cumulative_progression": {
+    "ours": 7,
+    "ref": 5
+   }
+  },
+  "critical_ours": [],
+  "critical_ref": [],
+  "product_parity_verdict": "ours",
+  "confidence": 0.82,
+  "paraphrased_evidence": {
+   "ours": "B makes the ongoing mental workload itself a cost, sharply limits what change would cover, protects normal eating and accidents, and reframes claimed rewards as inherited attributions open to testing. This creates credible curiosity and non-depriving escape, although direct tests of the benefits are postponed.",
+   "ref": "A offers a withdrawal-relief cycle, conditioned taste and reward, poor satiety, and rebound hunger as explanations for repeated use. Those mechanisms can loosen belief, but sweeping analogies, unsupported universals, a very broad target, and compliance-heavy assurances erode trust and make freedom feel promised."
+  },
+  "generic_mechanism": "Belief change becomes more credible when the writer bounds the target, preserves autonomy, and converts inherited value claims into testable hypotheses; overbroad scope and absolute assurances can make a freedom message feel like imposed compliance."
+ }
+}

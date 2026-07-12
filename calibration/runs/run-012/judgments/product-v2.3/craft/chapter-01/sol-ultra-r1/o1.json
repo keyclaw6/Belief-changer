@@ -1,0 +1,133 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-01",
+ "ours_chapters": [
+  1
+ ],
+ "ref_chapters": [
+  1
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "12ac37f8218b42986d14c8f45d7a5104b295710f0f24d1ecdcc246067f746e8b",
+  "output_schema_sha256": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+  "thread_id": "019f5422-1c2e-7f00-9c73-ea78757e5abd",
+  "usage": {
+   "input_tokens": 22196,
+   "cached_input_tokens": 12032,
+   "output_tokens": 1774,
+   "reasoning_output_tokens": 1525
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f5422-1c2e-7f00-9c73-ea78757e5abd\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.96,\\\"critical_failures\\\":{\\\"A\\\":[\\\"repetitive_sag\\\"],\\\"B\\\":[]},\\\"generic_mechanism\\\":\\\"One chapter organizes its material around a single evolving tension, while the other repeatedly reasserts conclusions after they have landed, turning accumulation into drag rather than development.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"Forceful prose supplies a concrete snack scenario, an addiction model, and a personal origin story, but repeated drug comparisons, promises, and instructions keep restarting the argument; the closing recap extends material that had already landed.\\\",\\\"B\\\":\\\"A lucid inner conflict is tested through two contrasting cases, then narrowed naturally into the book\u2019s invitation and first instruction. Controlled antitheses and domestic details create momentum, though the long cautionary instruction and appended summary slightly blunt the final cadence.\\\"},\\\"product_parity_verdict\\\":\\\"B\\\",\\\"scores\\\":{\\\"ending_handoff\\\":{\\\"A\\\":4,\\\"B\\\":7},\\\"flow_and_momentum\\\":{\\\"A\\\":4,\\\"B\\\":8},\\\"prose_control\\\":{\\\"A\\\":5,\\\"B\\\":8},\\\"rhythm_and_variety\\\":{\\\"A\\\":4,\\\"B\\\":8},\\\"specificity\\\":{\\\"A\\\":6,\\\"B\\\":8}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":22196,\"cached_input_tokens\":12032,\"output_tokens\":1774,\"reasoning_output_tokens\":1525}}\n"
+ },
+ "raw": "{\"confidence\":0.96,\"critical_failures\":{\"A\":[\"repetitive_sag\"],\"B\":[]},\"generic_mechanism\":\"One chapter organizes its material around a single evolving tension, while the other repeatedly reasserts conclusions after they have landed, turning accumulation into drag rather than development.\",\"paraphrased_evidence\":{\"A\":\"Forceful prose supplies a concrete snack scenario, an addiction model, and a personal origin story, but repeated drug comparisons, promises, and instructions keep restarting the argument; the closing recap extends material that had already landed.\",\"B\":\"A lucid inner conflict is tested through two contrasting cases, then narrowed naturally into the book\u2019s invitation and first instruction. Controlled antitheses and domestic details create momentum, though the long cautionary instruction and appended summary slightly blunt the final cadence.\"},\"product_parity_verdict\":\"B\",\"scores\":{\"ending_handoff\":{\"A\":4,\"B\":7},\"flow_and_momentum\":{\"A\":4,\"B\":8},\"prose_control\":{\"A\":5,\"B\":8},\"rhythm_and_variety\":{\"A\":4,\"B\":8},\"specificity\":{\"A\":6,\"B\":8}}}",
+ "parsed": {
+  "confidence": 0.96,
+  "critical_failures": {
+   "A": [
+    "repetitive_sag"
+   ],
+   "B": []
+  },
+  "generic_mechanism": "One chapter organizes its material around a single evolving tension, while the other repeatedly reasserts conclusions after they have landed, turning accumulation into drag rather than development.",
+  "paraphrased_evidence": {
+   "A": "Forceful prose supplies a concrete snack scenario, an addiction model, and a personal origin story, but repeated drug comparisons, promises, and instructions keep restarting the argument; the closing recap extends material that had already landed.",
+   "B": "A lucid inner conflict is tested through two contrasting cases, then narrowed naturally into the book\u2019s invitation and first instruction. Controlled antitheses and domestic details create momentum, though the long cautionary instruction and appended summary slightly blunt the final cadence."
+  },
+  "product_parity_verdict": "B",
+  "scores": {
+   "ending_handoff": {
+    "A": 4,
+    "B": 7
+   },
+   "flow_and_momentum": {
+    "A": 4,
+    "B": 8
+   },
+   "prose_control": {
+    "A": 5,
+    "B": 8
+   },
+   "rhythm_and_variety": {
+    "A": 4,
+    "B": 8
+   },
+   "specificity": {
+    "A": 6,
+    "B": 8
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 8,
+    "ref": 5
+   },
+   "rhythm_and_variety": {
+    "ours": 8,
+    "ref": 4
+   },
+   "specificity": {
+    "ours": 8,
+    "ref": 6
+   },
+   "flow_and_momentum": {
+    "ours": 8,
+    "ref": 4
+   },
+   "ending_handoff": {
+    "ours": 7,
+    "ref": 4
+   }
+  },
+  "critical_ours": [],
+  "critical_ref": [
+   "repetitive_sag"
+  ],
+  "product_parity_verdict": "ours",
+  "confidence": 0.96,
+  "paraphrased_evidence": {
+   "ours": "A lucid inner conflict is tested through two contrasting cases, then narrowed naturally into the book\u2019s invitation and first instruction. Controlled antitheses and domestic details create momentum, though the long cautionary instruction and appended summary slightly blunt the final cadence.",
+   "ref": "Forceful prose supplies a concrete snack scenario, an addiction model, and a personal origin story, but repeated drug comparisons, promises, and instructions keep restarting the argument; the closing recap extends material that had already landed."
+  },
+  "generic_mechanism": "One chapter organizes its material around a single evolving tension, while the other repeatedly reasserts conclusions after they have landed, turning accumulation into drag rather than development."
+ }
+}

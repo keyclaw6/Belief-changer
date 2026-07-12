@@ -1,0 +1,135 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-02",
+ "ours_chapters": [
+  2
+ ],
+ "ref_chapters": [
+  2
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "466cc3ca2dce89fa4f47a01d4f84929879628a4d34c528e02a7e0d7a469ea96d",
+  "output_schema_sha256": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+  "thread_id": "019f5424-2123-7d82-b89f-8b4c70c1edf9",
+  "usage": {
+   "input_tokens": 22567,
+   "cached_input_tokens": 0,
+   "output_tokens": 2839,
+   "reasoning_output_tokens": 2588
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f5424-2123-7d82-b89f-8b4c70c1edf9\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.82,\\\"critical_failures\\\":{\\\"A\\\":[\\\"repetitive_sag\\\",\\\"weak_ending_handoff\\\"],\\\"B\\\":[]},\\\"generic_mechanism\\\":\\\"The largest difference is compression: B converts its central image into forward pressure, while A keeps adding taxonomies, exceptions, safeguards, and recaps after the reader has grasped the governing distinction.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"Concrete kitchen cases and sustained analogies clarify the boundary, but each distinction is re-explained in later sections, then repeated through an instruction and full summary, draining momentum after the argument has landed.\\\",\\\"B\\\":\\\"The squirrel opening supplies a vivid governing image and strong momentum, though an extended disease alarm interrupts the nature-to-instinct thread, while capitals, rhetorical questions, and categorical claims sometimes substitute intensity for modulation.\\\"},\\\"product_parity_verdict\\\":\\\"B\\\",\\\"scores\\\":{\\\"ending_handoff\\\":{\\\"A\\\":3,\\\"B\\\":5},\\\"flow_and_momentum\\\":{\\\"A\\\":4,\\\"B\\\":5},\\\"prose_control\\\":{\\\"A\\\":7,\\\"B\\\":5},\\\"rhythm_and_variety\\\":{\\\"A\\\":5,\\\"B\\\":6},\\\"specificity\\\":{\\\"A\\\":7,\\\"B\\\":7}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":22567,\"cached_input_tokens\":0,\"output_tokens\":2839,\"reasoning_output_tokens\":2588}}\n"
+ },
+ "raw": "{\"confidence\":0.82,\"critical_failures\":{\"A\":[\"repetitive_sag\",\"weak_ending_handoff\"],\"B\":[]},\"generic_mechanism\":\"The largest difference is compression: B converts its central image into forward pressure, while A keeps adding taxonomies, exceptions, safeguards, and recaps after the reader has grasped the governing distinction.\",\"paraphrased_evidence\":{\"A\":\"Concrete kitchen cases and sustained analogies clarify the boundary, but each distinction is re-explained in later sections, then repeated through an instruction and full summary, draining momentum after the argument has landed.\",\"B\":\"The squirrel opening supplies a vivid governing image and strong momentum, though an extended disease alarm interrupts the nature-to-instinct thread, while capitals, rhetorical questions, and categorical claims sometimes substitute intensity for modulation.\"},\"product_parity_verdict\":\"B\",\"scores\":{\"ending_handoff\":{\"A\":3,\"B\":5},\"flow_and_momentum\":{\"A\":4,\"B\":5},\"prose_control\":{\"A\":7,\"B\":5},\"rhythm_and_variety\":{\"A\":5,\"B\":6},\"specificity\":{\"A\":7,\"B\":7}}}",
+ "parsed": {
+  "confidence": 0.82,
+  "critical_failures": {
+   "A": [
+    "repetitive_sag",
+    "weak_ending_handoff"
+   ],
+   "B": []
+  },
+  "generic_mechanism": "The largest difference is compression: B converts its central image into forward pressure, while A keeps adding taxonomies, exceptions, safeguards, and recaps after the reader has grasped the governing distinction.",
+  "paraphrased_evidence": {
+   "A": "Concrete kitchen cases and sustained analogies clarify the boundary, but each distinction is re-explained in later sections, then repeated through an instruction and full summary, draining momentum after the argument has landed.",
+   "B": "The squirrel opening supplies a vivid governing image and strong momentum, though an extended disease alarm interrupts the nature-to-instinct thread, while capitals, rhetorical questions, and categorical claims sometimes substitute intensity for modulation."
+  },
+  "product_parity_verdict": "B",
+  "scores": {
+   "ending_handoff": {
+    "A": 3,
+    "B": 5
+   },
+   "flow_and_momentum": {
+    "A": 4,
+    "B": 5
+   },
+   "prose_control": {
+    "A": 7,
+    "B": 5
+   },
+   "rhythm_and_variety": {
+    "A": 5,
+    "B": 6
+   },
+   "specificity": {
+    "A": 7,
+    "B": 7
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 7,
+    "ref": 5
+   },
+   "rhythm_and_variety": {
+    "ours": 5,
+    "ref": 6
+   },
+   "specificity": {
+    "ours": 7,
+    "ref": 7
+   },
+   "flow_and_momentum": {
+    "ours": 4,
+    "ref": 5
+   },
+   "ending_handoff": {
+    "ours": 3,
+    "ref": 5
+   }
+  },
+  "critical_ours": [
+   "repetitive_sag",
+   "weak_ending_handoff"
+  ],
+  "critical_ref": [],
+  "product_parity_verdict": "ref",
+  "confidence": 0.82,
+  "paraphrased_evidence": {
+   "ours": "Concrete kitchen cases and sustained analogies clarify the boundary, but each distinction is re-explained in later sections, then repeated through an instruction and full summary, draining momentum after the argument has landed.",
+   "ref": "The squirrel opening supplies a vivid governing image and strong momentum, though an extended disease alarm interrupts the nature-to-instinct thread, while capitals, rhetorical questions, and categorical claims sometimes substitute intensity for modulation."
+  },
+  "generic_mechanism": "The largest difference is compression: B converts its central image into forward pressure, while A keeps adding taxonomies, exceptions, safeguards, and recaps after the reader has grasped the governing distinction."
+ }
+}

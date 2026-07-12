@@ -1,0 +1,133 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-01",
+ "ours_chapters": [
+  1
+ ],
+ "ref_chapters": [
+  1
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "4cc60b54e217e8b550e3c2534bd1e54d62013cd4a37b7085b68fd828fc3bfc2e",
+  "output_schema_sha256": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+  "thread_id": "019f5421-8fa0-7041-925d-94787e6b8fd9",
+  "usage": {
+   "input_tokens": 22196,
+   "cached_input_tokens": 12032,
+   "output_tokens": 1712,
+   "reasoning_output_tokens": 1468
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f5421-8fa0-7041-925d-94787e6b8fd9\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.97,\\\"critical_failures\\\":{\\\"A\\\":[],\\\"B\\\":[\\\"repetitive_sag\\\"]},\\\"generic_mechanism\\\":\\\"The largest gap comes from progressive development: one chapter lets each section alter the reader\u2019s understanding, while the other repeatedly restates a settled premise in new emphatic packaging.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"A turns an internal negotiation into a coherent arc through contrasting case reports, recurring metaphors, a clear roadmap, and a low-pressure first instruction; its appended summary unnecessarily repeats points that already landed.\\\",\\\"B\\\":\\\"B offers vivid examples and an intelligible addiction model, but repeatedly reasserts abstinence, effortless success, obedience, and drug analogies; stacked statistics, slogans, and sales assurances greatly outlast each idea\u2019s useful development.\\\"},\\\"product_parity_verdict\\\":\\\"A\\\",\\\"scores\\\":{\\\"ending_handoff\\\":{\\\"A\\\":6,\\\"B\\\":4},\\\"flow_and_momentum\\\":{\\\"A\\\":7,\\\"B\\\":3},\\\"prose_control\\\":{\\\"A\\\":7,\\\"B\\\":5},\\\"rhythm_and_variety\\\":{\\\"A\\\":7,\\\"B\\\":4},\\\"specificity\\\":{\\\"A\\\":7,\\\"B\\\":6}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":22196,\"cached_input_tokens\":12032,\"output_tokens\":1712,\"reasoning_output_tokens\":1468}}\n"
+ },
+ "raw": "{\"confidence\":0.97,\"critical_failures\":{\"A\":[],\"B\":[\"repetitive_sag\"]},\"generic_mechanism\":\"The largest gap comes from progressive development: one chapter lets each section alter the reader\u2019s understanding, while the other repeatedly restates a settled premise in new emphatic packaging.\",\"paraphrased_evidence\":{\"A\":\"A turns an internal negotiation into a coherent arc through contrasting case reports, recurring metaphors, a clear roadmap, and a low-pressure first instruction; its appended summary unnecessarily repeats points that already landed.\",\"B\":\"B offers vivid examples and an intelligible addiction model, but repeatedly reasserts abstinence, effortless success, obedience, and drug analogies; stacked statistics, slogans, and sales assurances greatly outlast each idea\u2019s useful development.\"},\"product_parity_verdict\":\"A\",\"scores\":{\"ending_handoff\":{\"A\":6,\"B\":4},\"flow_and_momentum\":{\"A\":7,\"B\":3},\"prose_control\":{\"A\":7,\"B\":5},\"rhythm_and_variety\":{\"A\":7,\"B\":4},\"specificity\":{\"A\":7,\"B\":6}}}",
+ "parsed": {
+  "confidence": 0.97,
+  "critical_failures": {
+   "A": [],
+   "B": [
+    "repetitive_sag"
+   ]
+  },
+  "generic_mechanism": "The largest gap comes from progressive development: one chapter lets each section alter the reader\u2019s understanding, while the other repeatedly restates a settled premise in new emphatic packaging.",
+  "paraphrased_evidence": {
+   "A": "A turns an internal negotiation into a coherent arc through contrasting case reports, recurring metaphors, a clear roadmap, and a low-pressure first instruction; its appended summary unnecessarily repeats points that already landed.",
+   "B": "B offers vivid examples and an intelligible addiction model, but repeatedly reasserts abstinence, effortless success, obedience, and drug analogies; stacked statistics, slogans, and sales assurances greatly outlast each idea\u2019s useful development."
+  },
+  "product_parity_verdict": "A",
+  "scores": {
+   "ending_handoff": {
+    "A": 6,
+    "B": 4
+   },
+   "flow_and_momentum": {
+    "A": 7,
+    "B": 3
+   },
+   "prose_control": {
+    "A": 7,
+    "B": 5
+   },
+   "rhythm_and_variety": {
+    "A": 7,
+    "B": 4
+   },
+   "specificity": {
+    "A": 7,
+    "B": 6
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 7,
+    "ref": 5
+   },
+   "rhythm_and_variety": {
+    "ours": 7,
+    "ref": 4
+   },
+   "specificity": {
+    "ours": 7,
+    "ref": 6
+   },
+   "flow_and_momentum": {
+    "ours": 7,
+    "ref": 3
+   },
+   "ending_handoff": {
+    "ours": 6,
+    "ref": 4
+   }
+  },
+  "critical_ours": [],
+  "critical_ref": [
+   "repetitive_sag"
+  ],
+  "product_parity_verdict": "ours",
+  "confidence": 0.97,
+  "paraphrased_evidence": {
+   "ours": "A turns an internal negotiation into a coherent arc through contrasting case reports, recurring metaphors, a clear roadmap, and a low-pressure first instruction; its appended summary unnecessarily repeats points that already landed.",
+   "ref": "B offers vivid examples and an intelligible addiction model, but repeatedly reasserts abstinence, effortless success, obedience, and drug analogies; stacked statistics, slogans, and sales assurances greatly outlast each idea\u2019s useful development."
+  },
+  "generic_mechanism": "The largest gap comes from progressive development: one chapter lets each section alter the reader\u2019s understanding, while the other repeatedly restates a settled premise in new emphatic packaging."
+ }
+}

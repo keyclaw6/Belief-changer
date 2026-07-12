@@ -1,0 +1,125 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "efficacy",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "2071c6c95fbb3a048fbddc16e737b2c61ea1ea15f8e5c02457538051c492b2b0",
+  "output_schema_sha256": "3fa8c57fe6e46a5b4622d6458489fd104a8e75e8cf903dfd8e3f8dfa616d1238",
+  "thread_id": "019f541a-a39e-73f3-b445-16679ed56ad8",
+  "usage": {
+   "input_tokens": 38651,
+   "cached_input_tokens": 0,
+   "output_tokens": 4359,
+   "reasoning_output_tokens": 4118
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f541a-a39e-73f3-b445-16679ed56ad8\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.8,\\\"critical_failures\\\":{\\\"A\\\":[],\\\"B\\\":[]},\\\"generic_mechanism\\\":\\\"An opening shifts belief when it causally reassigns each apparent payoff; cataloguing payoffs while postponing their tests can make freedom attractive without yet making the behavior seem valueless.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"The sequence establishes autonomy, limits the target, and exposes learned expectations, but it mostly inventories supposed rewards and defers testing whether the behavior supplies them; the reader is invited to doubt more than shown why to disbelieve.\\\",\\\"B\\\":\\\"The block reattributes pleasure to relief of a self-created urge, conditioning, and failed satisfaction, then explains why restraint preserves desire. These mechanisms attack benefit, though extreme comparisons, sweeping factual claims, and a broad target may repel a skeptical reader.\\\"},\\\"product_parity_verdict\\\":\\\"B\\\",\\\"scores\\\":{\\\"belief_movement\\\":{\\\"A\\\":5,\\\"B\\\":6},\\\"benefit_dismantling\\\":{\\\"A\\\":4,\\\"B\\\":6},\\\"cumulative_progression\\\":{\\\"A\\\":6,\\\"B\\\":7},\\\"escape_conviction\\\":{\\\"A\\\":7,\\\"B\\\":6}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":38651,\"cached_input_tokens\":0,\"output_tokens\":4359,\"reasoning_output_tokens\":4118}}\n"
+ },
+ "raw": "{\"confidence\":0.8,\"critical_failures\":{\"A\":[],\"B\":[]},\"generic_mechanism\":\"An opening shifts belief when it causally reassigns each apparent payoff; cataloguing payoffs while postponing their tests can make freedom attractive without yet making the behavior seem valueless.\",\"paraphrased_evidence\":{\"A\":\"The sequence establishes autonomy, limits the target, and exposes learned expectations, but it mostly inventories supposed rewards and defers testing whether the behavior supplies them; the reader is invited to doubt more than shown why to disbelieve.\",\"B\":\"The block reattributes pleasure to relief of a self-created urge, conditioning, and failed satisfaction, then explains why restraint preserves desire. These mechanisms attack benefit, though extreme comparisons, sweeping factual claims, and a broad target may repel a skeptical reader.\"},\"product_parity_verdict\":\"B\",\"scores\":{\"belief_movement\":{\"A\":5,\"B\":6},\"benefit_dismantling\":{\"A\":4,\"B\":6},\"cumulative_progression\":{\"A\":6,\"B\":7},\"escape_conviction\":{\"A\":7,\"B\":6}}}",
+ "parsed": {
+  "confidence": 0.8,
+  "critical_failures": {
+   "A": [],
+   "B": []
+  },
+  "generic_mechanism": "An opening shifts belief when it causally reassigns each apparent payoff; cataloguing payoffs while postponing their tests can make freedom attractive without yet making the behavior seem valueless.",
+  "paraphrased_evidence": {
+   "A": "The sequence establishes autonomy, limits the target, and exposes learned expectations, but it mostly inventories supposed rewards and defers testing whether the behavior supplies them; the reader is invited to doubt more than shown why to disbelieve.",
+   "B": "The block reattributes pleasure to relief of a self-created urge, conditioning, and failed satisfaction, then explains why restraint preserves desire. These mechanisms attack benefit, though extreme comparisons, sweeping factual claims, and a broad target may repel a skeptical reader."
+  },
+  "product_parity_verdict": "B",
+  "scores": {
+   "belief_movement": {
+    "A": 5,
+    "B": 6
+   },
+   "benefit_dismantling": {
+    "A": 4,
+    "B": 6
+   },
+   "cumulative_progression": {
+    "A": 6,
+    "B": 7
+   },
+   "escape_conviction": {
+    "A": 7,
+    "B": 6
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "benefit_dismantling": {
+    "ours": 4,
+    "ref": 6
+   },
+   "belief_movement": {
+    "ours": 5,
+    "ref": 6
+   },
+   "escape_conviction": {
+    "ours": 7,
+    "ref": 6
+   },
+   "cumulative_progression": {
+    "ours": 6,
+    "ref": 7
+   }
+  },
+  "critical_ours": [],
+  "critical_ref": [],
+  "product_parity_verdict": "ref",
+  "confidence": 0.8,
+  "paraphrased_evidence": {
+   "ours": "The sequence establishes autonomy, limits the target, and exposes learned expectations, but it mostly inventories supposed rewards and defers testing whether the behavior supplies them; the reader is invited to doubt more than shown why to disbelieve.",
+   "ref": "The block reattributes pleasure to relief of a self-created urge, conditioning, and failed satisfaction, then explains why restraint preserves desire. These mechanisms attack benefit, though extreme comparisons, sweeping factual claims, and a broad target may repel a skeptical reader."
+  },
+  "generic_mechanism": "An opening shifts belief when it causally reassigns each apparent payoff; cataloguing payoffs while postponing their tests can make freedom attractive without yet making the behavior seem valueless."
+ }
+}
