@@ -1,10 +1,10 @@
 # Run report — run-013
 
-**Stage:** A **Scope:** composition-feasible argument-bearing chapters and opening movement, regenerated commissions, and Chapters 1–3 **Verdict:** PLAN R2 GENERATED / PENDING REVIEW
+**Stage:** A **Scope:** composition-feasible argument-bearing chapters and opening movement, regenerated commissions, and Chapters 1–3 **Verdict:** PLAN R2 ACCEPTED / PENDING PROMOTION
 
 ## What ran
 
-The unchanged planner loop produced complete R2 from the exact frozen base inputs plus R1 and its independent review. `planning/master-plan-r2.md` is frozen unedited at SHA-256 `2ca95051...`, 71,873 bytes, 9,955 words, and 846 lines. The exact diff is targeted to CH-07's assigned-job versus established-benefit correction; this is a generation fact, not acceptance. No commission, chapter, objective evaluation, grounded audit, or product-panel inference exists.
+The unchanged planner loop produced complete R2 from the exact frozen base inputs plus R1 and its review. R2 is frozen at commit `83d462cb406d8803a8abadb9e03770636bad1205`. One independent native Sol-ultra reviewer found no material blocking defects and returned `fit to write from`. Mechanical promotion is pending; no commission, chapter, objective evaluation, grounded audit, or product-panel inference exists.
 
 ## Objective results (`metrics.json`)
 
@@ -16,25 +16,25 @@ Not run. The frozen v2.3 native Sol-ultra instrument, blindness, controls, aggre
 
 ## Gate verdict
 
-The contract gate remains **PASS**. R2 is complete but **UNREVIEWED**. Raw JSONL SHA-256 is `25dcb7c...`; stderr is empty at SHA-256 `e3b0c442...`; and the 239,152-byte assembled bundle is SHA-256 `1dd7f582...`. Fresh native Sol-ultra thread `019f5481-dd1c-7f93-8a9f-9999e29dfdf2` returned 0 with four events, one complete agent message and turn, no tools/subagents/errors/retry, and usage 67,264 input, 11,008 cached, 19,099 output, and 1,505 reasoning tokens. Product gates remain unassessed.
+The contract and plan gates **PASS**. The R2 review artifact is SHA-256 `346c172c...`, raw JSONL `e4330f87...`, and empty stderr `e3b0c442...`. Fresh native Sol-ultra thread `019f548b-d26a-75f3-baa3-f4a70566a634` returned 0 with four events, no tools/subagents/retry, and usage 66,973 input, 8,960 cached, 8,819 output, and 8,804 reasoning tokens. Acceptance does not promote the plan automatically and does not establish H-050 causally; product gates remain unassessed.
 
 ## Diagnosis (ranked, each gap mapped to its owning generic asset)
 
-1. R1's CH-07 catalog-and-defer blocker received a targeted R2 correction distinguishing assigned jobs from established benefits — owning artifact: the unreviewed R2 plan candidate.
+1. R1's CH-07 catalog-and-defer blocker received a targeted R2 correction, and independent review found no remaining material plan blocker — owning artifact: accepted R2, pending mechanical promotion.
 2. Argument-bearing chapter jobs are not consistently composable from owned evidence and logic within budget; definition, safety, recap, and handoff must support movement without inventing another thesis — owning asset: the same shared contract.
 3. Opus may independently manufacture unsupported force — known rival requiring 3/3 grounded-clean drafts before efficacy can identify planning causally.
 
 ## Hypothesis outcomes
 
 - **Pre-registered mechanism, lever, controls, prediction:** H-050 tests one shared intelligent planning acceptance contract covering every argument-bearing chapter and the opening movement collectively. The primary causal outcome is efficacy, interpretable only after a blinded post-output audit confirms instantiation and all three drafts are materially grounded-clean. Craft, length, objective, and other Stage-A measures are secondary product requirements. Exact thresholds and controls are frozen in `manifest.json` and `calibration/hypotheses.md`.
-- **Result / deciding evidence:** R2 exists with the targeted CH-07 delta. Generation is neither plan acceptance nor H-050 causal evidence; independent review is pending.
+- **Result / deciding evidence:** R2 is independently accepted as fit to write from with no material defects. This satisfies the plan half of the pre-prose feasibility boundary but is not H-050 causal support; commission acceptance and grounded-clean product evidence remain outstanding.
 - **Causal verdict:** TESTING. No support, refutation, or inconclusive outcome may be inferred from preregistration or reviewer compliance alone.
 - **Rival explanations / signal risk:** blind judges can reward invented force; same-model replica deltas are noisy; stochastic planner resampling, Opus's prior, and commission realization can mimic or suppress movement. Any grounded defect makes H-050 inconclusive rather than negative.
-- **Next discriminating test:** independently review exact frozen R2 under the unchanged reviewer contract. Do not edit the candidate or advance to commissions before acceptance.
+- **Next discriminating test:** mechanically promote exact frozen R2 together with its canonical review record, then generate and independently audit the fresh source-grounded commissions before prose.
 
 ## Amendments proposed for next run
 
-None. The contract and inputs remained unchanged; R2 is byte-frozen pending independent review.
+None. The accepted R2 bytes and review record are frozen; promotion must not rewrite either artifact.
 
 ## Escalations
 

@@ -2,7 +2,7 @@
   "run": "run-013",
   "date": "2026-07-12",
   "stage": "A",
-  "status": "PLAN_R2_GENERATED_PENDING_REVIEW",
+  "status": "PLAN_R2_ACCEPTED_PENDING_PROMOTION",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "composition-feasible argument-bearing chapters and opening movement plus regenerated source-grounded commissions and a frozen Chapters 1-3 first-draft batch",
@@ -13,7 +13,7 @@
   "model_output_allowance_policy": "quality only: no economy, speed, cost, reasoning-token, or harness output optimization; permitted calls receive the greatest authorized allowance and continue when required",
   "baseline_boundary": "cf5c825 — run-012 frozen with H-049 REFUTED and a valid v2.3 product-panel FAIL; no run-012 prose promoted",
   "last_accepted_product": "production-books/quit-sugar/chapters/chapter-01.md from run-002 and chapter-02.md from run-004",
-  "preregistration_state": "master-plan R2 is frozen exactly as generated from unchanged inputs plus R1 and its review, and awaits independent review; no run-013 commission, chapter, metric, or product-panel inference exists",
+  "preregistration_state": "master-plan R2 is frozen at 83d462cb406d8803a8abadb9e03770636bad1205 and independently accepted as fit to write from; mechanical promotion is pending and no run-013 commission, chapter, metric, or product-panel inference exists",
   "observed_failure": "setup-only and deferred opening architecture plus overloaded later chapter jobs leaves the writer choosing between safe catalog-and-defer prose and forceful invented connective tissue",
   "single_generic_lever": "one shared intelligent planning acceptance contract requiring every argument-bearing chapter, and the opening movement collectively, to be safely composable from owned evidence and logic into one completed value-bearing belief correction within budget",
   "lever_boundary": {
@@ -207,7 +207,8 @@
     "action": "planner generates a complete R2; do not edit R1 or manually patch CH-07"
   },
   "plan_r2_generation": {
-    "status": "GENERATED_FROZEN_UNEDITED_PENDING_INDEPENDENT_REVIEW",
+    "status": "FROZEN_COMMITTED_UNEDITED_ACCEPTED_BY_INDEPENDENT_REVIEW",
+    "freeze_commit": "83d462cb406d8803a8abadb9e03770636bad1205",
     "execution_head": "cc49ec0997ad960d5c8d8cf9741723e66275b4e0",
     "artifact": "calibration/runs/run-013/planning/master-plan-r2.md",
     "artifact_sha256": "2ca9505152ee0e4d240bebbebb6979672be42bfc7d2e463dfa115a4a1ab1e869",
@@ -251,6 +252,34 @@
     },
     "manual_edit": false,
     "observed_diff_scope": "targeted CH-07 assigned-job versus established-benefit correction; this is descriptive and does not constitute review or acceptance"
+  },
+  "plan_r2_review": {
+    "status": "ACCEPTED",
+    "verdict": "fit to write from",
+    "finding": "No material blocking defects.",
+    "execution_head": "83d462cb406d8803a8abadb9e03770636bad1205",
+    "artifact": "calibration/runs/run-013/planning/master-plan-r2-review.md",
+    "artifact_sha256": "346c172c5b00c6460f6c229fd7d1119364ac5504c7372e4e55ff43e9be8267ed",
+    "raw_jsonl": "calibration/runs/run-013/planning/master-plan-r2-review.raw.jsonl",
+    "raw_jsonl_sha256": "e4330f87762d1a34796ca3a02ddd72804b18f711e435b3253040db0620e75bca",
+    "stderr": "calibration/runs/run-013/planning/master-plan-r2-review.stderr.log",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_empty": true,
+    "route": "one fresh native Codex subscription reviewer context",
+    "model": "gpt-5.6-sol",
+    "reasoning": "ultra",
+    "thread_id": "019f548b-d26a-75f3-baa3-f4a70566a634",
+    "return_code": 0,
+    "events": 4,
+    "tool_calls": 0,
+    "subagent_events": 0,
+    "retries": 0,
+    "usage": {
+      "input_tokens": 66973,
+      "cached_input_tokens": 8960,
+      "output_tokens": 8819,
+      "reasoning_output_tokens": 8804
+    }
   },
   "held_fixed": [
     "accepted quit-sugar brief",
@@ -352,7 +381,7 @@
     "prompts/research-agent.md": "history commit 5bff930; accepted research not rerun"
   },
   "stages_rerun_because": "H-050 changes chapter architecture; causal attribution requires fresh plan, commissions, and complete Chapters 1-3 rather than patching any run-012 artifact",
-  "next_artifact": "independent review of the exact frozen master-plan R2 candidate",
+  "next_artifact": "mechanical promotion of exact frozen R2 plus its canonical review record, then source-grounded commissions",
   "external_blocker": "none",
   "notes": "Run-012 remains immutable evidence. Product roles stay blind to the reference and judge output. OpenRouter remains restricted to Opus chapter writing and DeepSeek research."
 }
