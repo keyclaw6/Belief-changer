@@ -2,7 +2,7 @@
   "run": "run-013",
   "date": "2026-07-12",
   "stage": "A",
-  "status": "PLAN_R1_GENERATED_PENDING_REVIEW",
+  "status": "PLAN_R1_REJECTED_PENDING_R2",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "composition-feasible argument-bearing chapters and opening movement plus regenerated source-grounded commissions and a frozen Chapters 1-3 first-draft batch",
@@ -13,7 +13,7 @@
   "model_output_allowance_policy": "quality only: no economy, speed, cost, reasoning-token, or harness output optimization; permitted calls receive the greatest authorized allowance and continue when required",
   "baseline_boundary": "cf5c825 — run-012 frozen with H-049 REFUTED and a valid v2.3 product-panel FAIL; no run-012 prose promoted",
   "last_accepted_product": "production-books/quit-sugar/chapters/chapter-01.md from run-002 and chapter-02.md from run-004",
-  "preregistration_state": "master-plan R1 is frozen exactly as generated and awaits independent review; no run-013 commission, chapter, metric, or product-panel inference exists",
+  "preregistration_state": "master-plan R1 is frozen at 9ef71f9221dde7650f919be75f1d81799de733d3 and independently rejected for one CH-07 catalog-and-defer blocker; no run-013 commission, chapter, metric, or product-panel inference exists",
   "observed_failure": "setup-only and deferred opening architecture plus overloaded later chapter jobs leaves the writer choosing between safe catalog-and-defer prose and forceful invented connective tissue",
   "single_generic_lever": "one shared intelligent planning acceptance contract requiring every argument-bearing chapter, and the opening movement collectively, to be safely composable from owned evidence and logic into one completed value-bearing belief correction within budget",
   "lever_boundary": {
@@ -88,7 +88,8 @@
     "shellcheck": "unavailable; canonical check skipped it transparently"
   },
   "plan_r1_generation": {
-    "status": "GENERATED_FROZEN_UNEDITED_PENDING_INDEPENDENT_REVIEW",
+    "status": "FROZEN_COMMITTED_UNEDITED_REJECTED_BY_INDEPENDENT_REVIEW",
+    "freeze_commit": "9ef71f9221dde7650f919be75f1d81799de733d3",
     "execution_head": "bb1c6697b12afee49be3dfc2d9dfc85f1134386b",
     "artifact": "calibration/runs/run-013/planning/master-plan-r1.md",
     "artifact_sha256": "2729a0540da8fe3c51b398ca56ab8714a8bf4d87b13decdf6196e383abc96e13",
@@ -158,6 +159,52 @@
       "two response-body reconnect notices"
     ],
     "transport_outcome": "one complete response, one complete turn, and return code 0; diagnostics preserved verbatim and no external retry occurred"
+  },
+  "plan_r1_review": {
+    "status": "REJECTED",
+    "verdict": "needs changes first",
+    "execution_head": "9ef71f9221dde7650f919be75f1d81799de733d3",
+    "artifact": "calibration/runs/run-013/planning/master-plan-r1-review.md",
+    "artifact_sha256": "6fcc1282c3812c2d989ee697efe86c0bc246c4576ac466a656203bb243836f47",
+    "raw_jsonl": "calibration/runs/run-013/planning/master-plan-r1-review.raw.jsonl",
+    "raw_jsonl_sha256": "dad924f57dd27e6ac91c55687c4dff186234b508a05e4ae1d520207d5172d684",
+    "stderr": "calibration/runs/run-013/planning/master-plan-r1-review.stderr.log",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_empty": true,
+    "assembled_prompt_bundle_sha256": "f0fd957d2a0a2705e4895dae4d9f24c06c41e660761c62f7052453a28b9a567f",
+    "input_sha256": {
+      "prompts/master-plan-reviewer-v2.md": "18fa2987ea5e2009df6fbaee3d461dbe82ea4674abc2bb504d08937243039715",
+      "calibration/runs/run-013/planning/master-plan-r1.md": "2729a0540da8fe3c51b398ca56ab8714a8bf4d87b13decdf6196e383abc96e13",
+      "prompts/style-guide.md": "d4f97cf29a64114a0fcea27c86809793c0b14acee9bb6fb7cbe66777b8f92590",
+      "production-books/quit-sugar/00-brief.md": "29105690753c3ac6af4a48585f50fc30e489b4d9f760a8056f4977ff2eba576a",
+      "production-books/quit-sugar/framing.md": "2c115313c51fa040474b908e652915f73ebd770c03cd340a94b16efc18145941",
+      "production-books/quit-sugar/research/lived-experience.md": "38b753ad6fe40e4f07d8be68793d6d16acbe36e713ec0329026e98939fdea36c",
+      "production-books/quit-sugar/research/scientific-evidence.md": "0675ba24325e85b6289403a2c98212603db0c0941f6cb33a95390431e0b3a3fc"
+    },
+    "route": "one fresh native Codex subscription context",
+    "model": "gpt-5.6-sol",
+    "reasoning": "ultra",
+    "thread_id": "019f5478-0f0f-7441-8aa9-3672e7044023",
+    "return_code": 0,
+    "events": 4,
+    "tool_calls": 0,
+    "subagent_events": 0,
+    "retries": 0,
+    "usage": {
+      "input_tokens": 66794,
+      "cached_input_tokens": 8960,
+      "output_tokens": 16436,
+      "reasoning_output_tokens": 16248
+    },
+    "final_artifact_matches_raw_agent_message": true,
+    "blocking_finding": "CH-07 inventories perceived benefits and hands forward an open question, but its owned evidence and logic do not complete a value-bearing belief correction",
+    "required_correction": "CH-07 must establish from its owned lived accounts that jobs people assign to sugar are not evidence that sugar uniquely performs those jobs, then hand off that settled distinction",
+    "blocker_class": "catalog_and_defer"
+  },
+  "plan_r2_contract": {
+    "prompt_change": false,
+    "inputs": "the unchanged exact R1 planning inputs plus frozen master-plan R1 and its raw independent review",
+    "action": "planner generates a complete R2; do not edit R1 or manually patch CH-07"
   },
   "held_fixed": [
     "accepted quit-sugar brief",
@@ -259,7 +306,7 @@
     "prompts/research-agent.md": "history commit 5bff930; accepted research not rerun"
   },
   "stages_rerun_because": "H-050 changes chapter architecture; causal attribution requires fresh plan, commissions, and complete Chapters 1-3 rather than patching any run-012 artifact",
-  "next_artifact": "independent review of the exact frozen master-plan R1 candidate",
+  "next_artifact": "planner R2 from unchanged exact inputs plus frozen R1 and its independent review, with no prompt change",
   "external_blocker": "none",
   "notes": "Run-012 remains immutable evidence. Product roles stay blind to the reference and judge output. OpenRouter remains restricted to Opus chapter writing and DeepSeek research."
 }
