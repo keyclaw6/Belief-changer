@@ -1,10 +1,10 @@
 # Run report — run-013
 
-**Stage:** A **Scope:** composition-feasible argument-bearing chapters and opening movement, regenerated commissions, and Chapters 1–3 **Verdict:** PLAN ACCEPTED / PROMOTION COMMIT PENDING
+**Stage:** A **Scope:** composition-feasible argument-bearing chapters and opening movement, regenerated commissions, and Chapters 1–3 **Verdict:** PLAN ACCEPTED
 
 ## What ran
 
-The accepted R2 bytes were mechanically copied to `production-books/quit-sugar/master-plan.md`; source and destination both hash to `2ca9505152ee0e4d240bebbebb6979672be42bfc7d2e463dfa115a4a1ab1e869`. The canonical review now records the R1 CH-07 rejection and R2 acceptance with its raw review link. The promotion commit is pending. No commission, chapter, objective evaluation, grounded audit, or product-panel inference exists.
+The accepted R2 bytes and canonical review are promoted and pushed at commit `92b2568b515cbee51d948524fae6333bc9f80286`. Source and canonical plan both hash to `2ca9505152ee0e4d240bebbebb6979672be42bfc7d2e463dfa115a4a1ab1e869`. No commission, chapter, objective evaluation, grounded audit, or product-panel inference exists.
 
 ## Objective results (`metrics.json`)
 
@@ -16,7 +16,7 @@ Not run. The frozen v2.3 native Sol-ultra instrument, blindness, controls, aggre
 
 ## Gate verdict
 
-The contract and plan gates **PASS**. R2 is accepted and promoted byte-for-byte, but the working-tree promotion is not frozen until committed. Plan acceptance does not establish H-050 causally; commission feasibility and grounded-clean efficacy evidence remain outstanding, and product gates remain unassessed.
+The contract and plan gates **PASS**. R2 is accepted, promoted byte-for-byte, committed, and pushed. Plan acceptance does not establish H-050 causally; commission feasibility and grounded-clean efficacy evidence remain outstanding, and product gates remain unassessed.
 
 ## Diagnosis (ranked, each gap mapped to its owning generic asset)
 
@@ -30,11 +30,11 @@ The contract and plan gates **PASS**. R2 is accepted and promoted byte-for-byte,
 - **Result / deciding evidence:** R2 is independently accepted as fit to write from with no material defects. This satisfies the plan half of the pre-prose feasibility boundary but is not H-050 causal support; commission acceptance and grounded-clean product evidence remain outstanding.
 - **Causal verdict:** TESTING. No support, refutation, or inconclusive outcome may be inferred from preregistration or reviewer compliance alone.
 - **Rival explanations / signal risk:** blind judges can reward invented force; same-model replica deltas are noisy; stochastic planner resampling, Opus's prior, and commission realization can mimic or suppress movement. Any grounded defect makes H-050 inconclusive rather than negative.
-- **Next discriminating test:** after the promotion commit freezes the canonical plan and review, generate all three source-grounded commissions from that exact plan and independently audit the set before prose.
+- **Next discriminating test:** generate all three source-grounded commissions from the exact accepted plan and independently audit the set before prose.
 
 ## Amendments proposed for next run
 
-None. Promotion is mechanical and introduces no factory lever; commit the exact promoted bytes before commissioning.
+None. Promotion was mechanical and introduced no factory lever.
 
 ## Escalations
 
