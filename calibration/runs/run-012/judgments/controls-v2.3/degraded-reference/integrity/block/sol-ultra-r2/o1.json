@@ -1,0 +1,155 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "integrity",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "2026-07-12T02:04:40.037816Z ERROR codex_core::tools::router: error=collab spawn failed: no thread with id: 019f5411-a898-7d10-88b4-43780d2255a5\n2026-07-12T02:04:44.029061Z ERROR codex_core::tools::router: error=collab spawn failed: no thread with id: 019f5411-a898-7d10-88b4-43780d2255a5\n",
+  "input_sha256": "02e19ebb6f504c4e5d929554c02ecb0fb2cdc81224d4cd3582446172c4b9ec0d",
+  "output_schema_sha256": "0e6d50465998e681e1edb0c9f1106767d045acce1167c3aa91678a229ceb756f",
+  "thread_id": "019f5411-a898-7d10-88b4-43780d2255a5",
+  "usage": {
+   "input_tokens": 95799,
+   "cached_input_tokens": 62976,
+   "output_tokens": 5565,
+   "reasoning_output_tokens": 5139
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f5411-a898-7d10-88b4-43780d2255a5\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.99,\\\"critical_failures\\\":{\\\"A\\\":[\\\"copyright_expression_risk\\\",\\\"fear_as_motivator\\\",\\\"medical_overreach\\\",\\\"unsupported_authority_or_testimony\\\"],\\\"B\\\":[\\\"broken_continuity\\\",\\\"copyright_expression_risk\\\",\\\"fear_as_motivator\\\",\\\"medical_overreach\\\",\\\"unsupported_authority_or_testimony\\\"]},\\\"generic_mechanism\\\":\\\"Preserved dependency order lets premises support later instructions; scrambling those units into backward fragments destroys continuity even when the individual claims and tone remain recognizable.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"The reader is largely absolved and promised desire-free change, but categorical health and efficacy claims, alarm-heavy risk framing, and thin testimonials exceed the sample\u2019s support; its distinctive expression is extensively shared with B.\\\",\\\"B\\\":\\\"The same absolving premise, unsupported certainties, alarming risks, testimonials, and shared expression remain, while extensive sentence reordering makes conclusions, evidence, and instructions precede their dependencies, leaving the method materially discontinuous.\\\"},\\\"product_parity_verdict\\\":\\\"A\\\",\\\"scores\\\":{\\\"cross_chapter_consistency\\\":{\\\"A\\\":8,\\\"B\\\":1},\\\"epistemic_honesty\\\":{\\\"A\\\":1,\\\"B\\\":1},\\\"non_shaming_regard\\\":{\\\"A\\\":6,\\\"B\\\":5},\\\"originality\\\":{\\\"A\\\":1,\\\"B\\\":1},\\\"willpower_free_logic\\\":{\\\"A\\\":8,\\\"B\\\":7}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":95799,\"cached_input_tokens\":62976,\"output_tokens\":5565,\"reasoning_output_tokens\":5139}}\n"
+ },
+ "raw": "{\"confidence\":0.99,\"critical_failures\":{\"A\":[\"copyright_expression_risk\",\"fear_as_motivator\",\"medical_overreach\",\"unsupported_authority_or_testimony\"],\"B\":[\"broken_continuity\",\"copyright_expression_risk\",\"fear_as_motivator\",\"medical_overreach\",\"unsupported_authority_or_testimony\"]},\"generic_mechanism\":\"Preserved dependency order lets premises support later instructions; scrambling those units into backward fragments destroys continuity even when the individual claims and tone remain recognizable.\",\"paraphrased_evidence\":{\"A\":\"The reader is largely absolved and promised desire-free change, but categorical health and efficacy claims, alarm-heavy risk framing, and thin testimonials exceed the sample\u2019s support; its distinctive expression is extensively shared with B.\",\"B\":\"The same absolving premise, unsupported certainties, alarming risks, testimonials, and shared expression remain, while extensive sentence reordering makes conclusions, evidence, and instructions precede their dependencies, leaving the method materially discontinuous.\"},\"product_parity_verdict\":\"A\",\"scores\":{\"cross_chapter_consistency\":{\"A\":8,\"B\":1},\"epistemic_honesty\":{\"A\":1,\"B\":1},\"non_shaming_regard\":{\"A\":6,\"B\":5},\"originality\":{\"A\":1,\"B\":1},\"willpower_free_logic\":{\"A\":8,\"B\":7}}}",
+ "parsed": {
+  "confidence": 0.99,
+  "critical_failures": {
+   "A": [
+    "copyright_expression_risk",
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony"
+   ],
+   "B": [
+    "broken_continuity",
+    "copyright_expression_risk",
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony"
+   ]
+  },
+  "generic_mechanism": "Preserved dependency order lets premises support later instructions; scrambling those units into backward fragments destroys continuity even when the individual claims and tone remain recognizable.",
+  "paraphrased_evidence": {
+   "A": "The reader is largely absolved and promised desire-free change, but categorical health and efficacy claims, alarm-heavy risk framing, and thin testimonials exceed the sample\u2019s support; its distinctive expression is extensively shared with B.",
+   "B": "The same absolving premise, unsupported certainties, alarming risks, testimonials, and shared expression remain, while extensive sentence reordering makes conclusions, evidence, and instructions precede their dependencies, leaving the method materially discontinuous."
+  },
+  "product_parity_verdict": "A",
+  "scores": {
+   "cross_chapter_consistency": {
+    "A": 8,
+    "B": 1
+   },
+   "epistemic_honesty": {
+    "A": 1,
+    "B": 1
+   },
+   "non_shaming_regard": {
+    "A": 6,
+    "B": 5
+   },
+   "originality": {
+    "A": 1,
+    "B": 1
+   },
+   "willpower_free_logic": {
+    "A": 8,
+    "B": 7
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "non_shaming_regard": {
+    "ours": 5,
+    "ref": 6
+   },
+   "willpower_free_logic": {
+    "ours": 7,
+    "ref": 8
+   },
+   "epistemic_honesty": {
+    "ours": 1,
+    "ref": 1
+   },
+   "originality": {
+    "ours": 1,
+    "ref": 1
+   },
+   "cross_chapter_consistency": {
+    "ours": 1,
+    "ref": 8
+   }
+  },
+  "critical_ours": [
+   "broken_continuity",
+   "copyright_expression_risk",
+   "fear_as_motivator",
+   "medical_overreach",
+   "unsupported_authority_or_testimony"
+  ],
+  "critical_ref": [
+   "copyright_expression_risk",
+   "fear_as_motivator",
+   "medical_overreach",
+   "unsupported_authority_or_testimony"
+  ],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "The same absolving premise, unsupported certainties, alarming risks, testimonials, and shared expression remain, while extensive sentence reordering makes conclusions, evidence, and instructions precede their dependencies, leaving the method materially discontinuous.",
+   "ref": "The reader is largely absolved and promised desire-free change, but categorical health and efficacy claims, alarm-heavy risk framing, and thin testimonials exceed the sample\u2019s support; its distinctive expression is extensively shared with B."
+  },
+  "generic_mechanism": "Preserved dependency order lets premises support later instructions; scrambling those units into backward fragments destroys continuity even when the individual claims and tone remain recognizable."
+ }
+}

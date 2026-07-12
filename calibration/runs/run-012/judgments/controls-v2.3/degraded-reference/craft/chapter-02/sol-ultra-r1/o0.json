@@ -1,0 +1,135 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-02",
+ "ours_chapters": [
+  2
+ ],
+ "ref_chapters": [
+  2
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "6d3a279d41a171458c6f2e58c553dd2dbc6b51be5988c8bbb858ff4b5b65e43f",
+  "output_schema_sha256": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+  "thread_id": "019f5408-b832-7f01-bae4-99486775c490",
+  "usage": {
+   "input_tokens": 18660,
+   "cached_input_tokens": 0,
+   "output_tokens": 1269,
+   "reasoning_output_tokens": 1034
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f5408-b832-7f01-bae4-99486775c490\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.99,\\\"critical_failures\\\":{\\\"A\\\":[\\\"broken_chapter_flow\\\",\\\"weak_ending_handoff\\\"],\\\"B\\\":[]},\\\"generic_mechanism\\\":\\\"One version preserves a causal sequence from concrete example through explanation and exercise; the other scatters those units, severing references, transitions, and the intended close.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"Concrete material survives, but summaries precede arguments, headings follow their sections, pronouns lose their referents, and the chapter finishes by restarting its opening premise.\\\",\\\"B\\\":\\\"The chapter develops from an animal observation into a broader claim, then narrows into explanation, consequences, an exercise, and a concluding instruction, though emphatic slogans and repeated claims sometimes strain the pacing.\\\"},\\\"product_parity_verdict\\\":\\\"B\\\",\\\"scores\\\":{\\\"ending_handoff\\\":{\\\"A\\\":1,\\\"B\\\":5},\\\"flow_and_momentum\\\":{\\\"A\\\":1,\\\"B\\\":6},\\\"prose_control\\\":{\\\"A\\\":3,\\\"B\\\":6},\\\"rhythm_and_variety\\\":{\\\"A\\\":2,\\\"B\\\":5},\\\"specificity\\\":{\\\"A\\\":4,\\\"B\\\":6}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":18660,\"cached_input_tokens\":0,\"output_tokens\":1269,\"reasoning_output_tokens\":1034}}\n"
+ },
+ "raw": "{\"confidence\":0.99,\"critical_failures\":{\"A\":[\"broken_chapter_flow\",\"weak_ending_handoff\"],\"B\":[]},\"generic_mechanism\":\"One version preserves a causal sequence from concrete example through explanation and exercise; the other scatters those units, severing references, transitions, and the intended close.\",\"paraphrased_evidence\":{\"A\":\"Concrete material survives, but summaries precede arguments, headings follow their sections, pronouns lose their referents, and the chapter finishes by restarting its opening premise.\",\"B\":\"The chapter develops from an animal observation into a broader claim, then narrows into explanation, consequences, an exercise, and a concluding instruction, though emphatic slogans and repeated claims sometimes strain the pacing.\"},\"product_parity_verdict\":\"B\",\"scores\":{\"ending_handoff\":{\"A\":1,\"B\":5},\"flow_and_momentum\":{\"A\":1,\"B\":6},\"prose_control\":{\"A\":3,\"B\":6},\"rhythm_and_variety\":{\"A\":2,\"B\":5},\"specificity\":{\"A\":4,\"B\":6}}}",
+ "parsed": {
+  "confidence": 0.99,
+  "critical_failures": {
+   "A": [
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ],
+   "B": []
+  },
+  "generic_mechanism": "One version preserves a causal sequence from concrete example through explanation and exercise; the other scatters those units, severing references, transitions, and the intended close.",
+  "paraphrased_evidence": {
+   "A": "Concrete material survives, but summaries precede arguments, headings follow their sections, pronouns lose their referents, and the chapter finishes by restarting its opening premise.",
+   "B": "The chapter develops from an animal observation into a broader claim, then narrows into explanation, consequences, an exercise, and a concluding instruction, though emphatic slogans and repeated claims sometimes strain the pacing."
+  },
+  "product_parity_verdict": "B",
+  "scores": {
+   "ending_handoff": {
+    "A": 1,
+    "B": 5
+   },
+   "flow_and_momentum": {
+    "A": 1,
+    "B": 6
+   },
+   "prose_control": {
+    "A": 3,
+    "B": 6
+   },
+   "rhythm_and_variety": {
+    "A": 2,
+    "B": 5
+   },
+   "specificity": {
+    "A": 4,
+    "B": 6
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 3,
+    "ref": 6
+   },
+   "rhythm_and_variety": {
+    "ours": 2,
+    "ref": 5
+   },
+   "specificity": {
+    "ours": 4,
+    "ref": 6
+   },
+   "flow_and_momentum": {
+    "ours": 1,
+    "ref": 6
+   },
+   "ending_handoff": {
+    "ours": 1,
+    "ref": 5
+   }
+  },
+  "critical_ours": [
+   "broken_chapter_flow",
+   "weak_ending_handoff"
+  ],
+  "critical_ref": [],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "Concrete material survives, but summaries precede arguments, headings follow their sections, pronouns lose their referents, and the chapter finishes by restarting its opening premise.",
+   "ref": "The chapter develops from an animal observation into a broader claim, then narrows into explanation, consequences, an exercise, and a concluding instruction, though emphatic slogans and repeated claims sometimes strain the pacing."
+  },
+  "generic_mechanism": "One version preserves a causal sequence from concrete example through explanation and exercise; the other scatters those units, severing references, transitions, and the intended close."
+ }
+}

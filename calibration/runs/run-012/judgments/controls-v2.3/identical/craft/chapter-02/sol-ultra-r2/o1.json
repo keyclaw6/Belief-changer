@@ -1,0 +1,129 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-02",
+ "ours_chapters": [
+  2
+ ],
+ "ref_chapters": [
+  2
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "93e287dffcfca7faace58cc83959715db386be55c4eab13fd51cdda8b397180c",
+  "output_schema_sha256": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+  "thread_id": "019f53fb-a0d8-7213-93c9-ce24a09fb3e7",
+  "usage": {
+   "input_tokens": 20965,
+   "cached_input_tokens": 0,
+   "output_tokens": 1028,
+   "reasoning_output_tokens": 797
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f53fb-a0d8-7213-93c9-ce24a09fb3e7\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":1,\\\"critical_failures\\\":{\\\"A\\\":[],\\\"B\\\":[]},\\\"generic_mechanism\\\":\\\"Exact duplication eliminates any comparative craft mechanism; every strength and weakness occurs in the same place and to the same degree.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"Concrete animal, office, shopping, and visual-perception examples enliven a forceful argument, but repeated claims, rhetorical questions, emphatic capitals, and a boilerplate summary make the chapter feel prolonged and overdriven.\\\",\\\"B\\\":\\\"Concrete animal, office, shopping, and visual-perception examples enliven a forceful argument, but repeated claims, rhetorical questions, emphatic capitals, and a boilerplate summary make the chapter feel prolonged and overdriven.\\\"},\\\"product_parity_verdict\\\":\\\"tie\\\",\\\"scores\\\":{\\\"ending_handoff\\\":{\\\"A\\\":3,\\\"B\\\":3},\\\"flow_and_momentum\\\":{\\\"A\\\":4,\\\"B\\\":4},\\\"prose_control\\\":{\\\"A\\\":4,\\\"B\\\":4},\\\"rhythm_and_variety\\\":{\\\"A\\\":4,\\\"B\\\":4},\\\"specificity\\\":{\\\"A\\\":6,\\\"B\\\":6}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":20965,\"cached_input_tokens\":0,\"output_tokens\":1028,\"reasoning_output_tokens\":797}}\n"
+ },
+ "raw": "{\"confidence\":1,\"critical_failures\":{\"A\":[],\"B\":[]},\"generic_mechanism\":\"Exact duplication eliminates any comparative craft mechanism; every strength and weakness occurs in the same place and to the same degree.\",\"paraphrased_evidence\":{\"A\":\"Concrete animal, office, shopping, and visual-perception examples enliven a forceful argument, but repeated claims, rhetorical questions, emphatic capitals, and a boilerplate summary make the chapter feel prolonged and overdriven.\",\"B\":\"Concrete animal, office, shopping, and visual-perception examples enliven a forceful argument, but repeated claims, rhetorical questions, emphatic capitals, and a boilerplate summary make the chapter feel prolonged and overdriven.\"},\"product_parity_verdict\":\"tie\",\"scores\":{\"ending_handoff\":{\"A\":3,\"B\":3},\"flow_and_momentum\":{\"A\":4,\"B\":4},\"prose_control\":{\"A\":4,\"B\":4},\"rhythm_and_variety\":{\"A\":4,\"B\":4},\"specificity\":{\"A\":6,\"B\":6}}}",
+ "parsed": {
+  "confidence": 1,
+  "critical_failures": {
+   "A": [],
+   "B": []
+  },
+  "generic_mechanism": "Exact duplication eliminates any comparative craft mechanism; every strength and weakness occurs in the same place and to the same degree.",
+  "paraphrased_evidence": {
+   "A": "Concrete animal, office, shopping, and visual-perception examples enliven a forceful argument, but repeated claims, rhetorical questions, emphatic capitals, and a boilerplate summary make the chapter feel prolonged and overdriven.",
+   "B": "Concrete animal, office, shopping, and visual-perception examples enliven a forceful argument, but repeated claims, rhetorical questions, emphatic capitals, and a boilerplate summary make the chapter feel prolonged and overdriven."
+  },
+  "product_parity_verdict": "tie",
+  "scores": {
+   "ending_handoff": {
+    "A": 3,
+    "B": 3
+   },
+   "flow_and_momentum": {
+    "A": 4,
+    "B": 4
+   },
+   "prose_control": {
+    "A": 4,
+    "B": 4
+   },
+   "rhythm_and_variety": {
+    "A": 4,
+    "B": 4
+   },
+   "specificity": {
+    "A": 6,
+    "B": 6
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 4,
+    "ref": 4
+   },
+   "rhythm_and_variety": {
+    "ours": 4,
+    "ref": 4
+   },
+   "specificity": {
+    "ours": 6,
+    "ref": 6
+   },
+   "flow_and_momentum": {
+    "ours": 4,
+    "ref": 4
+   },
+   "ending_handoff": {
+    "ours": 3,
+    "ref": 3
+   }
+  },
+  "critical_ours": [],
+  "critical_ref": [],
+  "product_parity_verdict": "tie",
+  "confidence": 1,
+  "paraphrased_evidence": {
+   "ours": "Concrete animal, office, shopping, and visual-perception examples enliven a forceful argument, but repeated claims, rhetorical questions, emphatic capitals, and a boilerplate summary make the chapter feel prolonged and overdriven.",
+   "ref": "Concrete animal, office, shopping, and visual-perception examples enliven a forceful argument, but repeated claims, rhetorical questions, emphatic capitals, and a boilerplate summary make the chapter feel prolonged and overdriven."
+  },
+  "generic_mechanism": "Exact duplication eliminates any comparative craft mechanism; every strength and weakness occurs in the same place and to the same degree."
+ }
+}

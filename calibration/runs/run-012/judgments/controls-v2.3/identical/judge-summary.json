@@ -1,0 +1,1662 @@
+{
+ "protocol": "stage-a-v2.3",
+ "instrument_configuration": {
+  "protocol_version": "stage-a-v2.3-native-sol-ultra-1",
+  "transport": "native-codex-subscription",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "replica_identities": [
+   "sol-ultra-r1",
+   "sol-ultra-r2"
+  ],
+  "chapter_pairs": [
+   [
+    1,
+    1
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    3,
+    3
+   ]
+  ],
+  "role_prompt_sha256": {
+   "efficacy": "11fdedde0018ebcf7b2d37ddf08a6080d64c0931eec02cffcb630cde2fa28f4c",
+   "craft": "916cf4c6c2e5748f54b91979c0edd1123e1a29ce2791437c301f9e7459394948",
+   "integrity": "195820f1e4140918333449bc3fda374d42f356637619bbd92f028945e2107b0a"
+  },
+  "role_output_schema_sha256": {
+   "efficacy": "3fa8c57fe6e46a5b4622d6458489fd104a8e75e8cf903dfd8e3f8dfa616d1238",
+   "craft": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+   "integrity": "0e6d50465998e681e1edb0c9f1106767d045acce1167c3aa91678a229ceb756f"
+  },
+  "implementation_sha256": {
+   "judge_panel.py": "26571c0eb90c9ef80edb22024583af4e235bb42d991a8c98aba2c50eb7cb3a34",
+   "judge_protocol.py": "056e5396adbd271ee470555f290114cc4085e5569c80101c36b3aaf144e5c415",
+   "judge_v23.py": "bc5949ad66cd9b3f46b294179769b579b6da6d4ab19bf8ca83cb294832bdcf26",
+   "native_judge.py": "62a4ea47944ca57b5f3385ff078dd6598ef414d513c779abcf957fcd810de9d4"
+  }
+ },
+ "raw_judgments": 20,
+ "invalid_judgments": 0,
+ "strict_valid_first_responses": 20,
+ "collapsed_observations": 5,
+ "panel_complete": true,
+ "matrix": {
+  "passed": true,
+  "violations": [],
+  "expected_raw_cells": 20,
+  "raw_cells": 20,
+  "expected_strata": 10,
+  "strata": 10,
+  "expected_unique_thread_ids": 20,
+  "unique_thread_ids": 20
+ },
+ "observations": [
+  {
+   "role": "efficacy",
+   "target": "block",
+   "raw_judgments": 4,
+   "preference_rate_incl_half_ties": 0.5,
+   "verdict_counts": {
+    "ours": 0,
+    "tie": 4,
+    "ref": 0
+   },
+   "target_noninferiority_passed": true,
+   "critical_ours": [],
+   "critical_ref": [],
+   "order_diagnostics": {
+    "0": {
+     "verdict_counts": {
+      "ours": 0,
+      "tie": 2,
+      "ref": 0
+     },
+     "verdict_mean": 0.5,
+     "scores": {
+      "benefit_dismantling": {
+       "pairs": [
+        [
+         6,
+         6
+        ],
+        [
+         6,
+         6
+        ]
+       ],
+       "ours_values": [
+        6,
+        6
+       ],
+       "ref_values": [
+        6,
+        6
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "belief_movement": {
+       "pairs": [
+        [
+         5,
+         5
+        ],
+        [
+         5,
+         5
+        ]
+       ],
+       "ours_values": [
+        5,
+        5
+       ],
+       "ref_values": [
+        5,
+        5
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "escape_conviction": {
+       "pairs": [
+        [
+         6,
+         6
+        ],
+        [
+         6,
+         6
+        ]
+       ],
+       "ours_values": [
+        6,
+        6
+       ],
+       "ref_values": [
+        6,
+        6
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "cumulative_progression": {
+       "pairs": [
+        [
+         5,
+         5
+        ],
+        [
+         6,
+         6
+        ]
+       ],
+       "ours_values": [
+        5,
+        6
+       ],
+       "ref_values": [
+        5,
+        6
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      }
+     },
+     "critical_pairs": [
+      [
+       [],
+       []
+      ],
+      [
+       [],
+       []
+      ]
+     ]
+    },
+    "1": {
+     "verdict_counts": {
+      "ours": 0,
+      "tie": 2,
+      "ref": 0
+     },
+     "verdict_mean": 0.5,
+     "scores": {
+      "benefit_dismantling": {
+       "pairs": [
+        [
+         6,
+         6
+        ],
+        [
+         6,
+         6
+        ]
+       ],
+       "ours_values": [
+        6,
+        6
+       ],
+       "ref_values": [
+        6,
+        6
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "belief_movement": {
+       "pairs": [
+        [
+         5,
+         5
+        ],
+        [
+         6,
+         6
+        ]
+       ],
+       "ours_values": [
+        5,
+        6
+       ],
+       "ref_values": [
+        5,
+        6
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "escape_conviction": {
+       "pairs": [
+        [
+         6,
+         6
+        ],
+        [
+         6,
+         6
+        ]
+       ],
+       "ours_values": [
+        6,
+        6
+       ],
+       "ref_values": [
+        6,
+        6
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "cumulative_progression": {
+       "pairs": [
+        [
+         6,
+         6
+        ],
+        [
+         6,
+         6
+        ]
+       ],
+       "ours_values": [
+        6,
+        6
+       ],
+       "ref_values": [
+        6,
+        6
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      }
+     },
+     "critical_pairs": [
+      [
+       [],
+       []
+      ],
+      [
+       [],
+       []
+      ]
+     ]
+    }
+   },
+   "order_mean_gap": 0.0,
+   "strict_dominance_contradictions": []
+  },
+  {
+   "role": "craft",
+   "target": "chapter-01",
+   "raw_judgments": 4,
+   "preference_rate_incl_half_ties": 0.5,
+   "verdict_counts": {
+    "ours": 0,
+    "tie": 4,
+    "ref": 0
+   },
+   "target_noninferiority_passed": true,
+   "critical_ours": [
+    "repetitive_sag"
+   ],
+   "critical_ref": [
+    "repetitive_sag"
+   ],
+   "order_diagnostics": {
+    "0": {
+     "verdict_counts": {
+      "ours": 0,
+      "tie": 2,
+      "ref": 0
+     },
+     "verdict_mean": 0.5,
+     "scores": {
+      "prose_control": {
+       "pairs": [
+        [
+         4,
+         4
+        ],
+        [
+         5,
+         5
+        ]
+       ],
+       "ours_values": [
+        4,
+        5
+       ],
+       "ref_values": [
+        4,
+        5
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "rhythm_and_variety": {
+       "pairs": [
+        [
+         3,
+         3
+        ],
+        [
+         4,
+         4
+        ]
+       ],
+       "ours_values": [
+        3,
+        4
+       ],
+       "ref_values": [
+        3,
+        4
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "specificity": {
+       "pairs": [
+        [
+         5,
+         5
+        ],
+        [
+         5,
+         5
+        ]
+       ],
+       "ours_values": [
+        5,
+        5
+       ],
+       "ref_values": [
+        5,
+        5
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "flow_and_momentum": {
+       "pairs": [
+        [
+         3,
+         3
+        ],
+        [
+         4,
+         4
+        ]
+       ],
+       "ours_values": [
+        3,
+        4
+       ],
+       "ref_values": [
+        3,
+        4
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "ending_handoff": {
+       "pairs": [
+        [
+         3,
+         3
+        ],
+        [
+         4,
+         4
+        ]
+       ],
+       "ours_values": [
+        3,
+        4
+       ],
+       "ref_values": [
+        3,
+        4
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      }
+     },
+     "critical_pairs": [
+      [
+       [
+        "repetitive_sag"
+       ],
+       [
+        "repetitive_sag"
+       ]
+      ],
+      [
+       [
+        "repetitive_sag"
+       ],
+       [
+        "repetitive_sag"
+       ]
+      ]
+     ]
+    },
+    "1": {
+     "verdict_counts": {
+      "ours": 0,
+      "tie": 2,
+      "ref": 0
+     },
+     "verdict_mean": 0.5,
+     "scores": {
+      "prose_control": {
+       "pairs": [
+        [
+         4,
+         4
+        ],
+        [
+         4,
+         4
+        ]
+       ],
+       "ours_values": [
+        4,
+        4
+       ],
+       "ref_values": [
+        4,
+        4
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "rhythm_and_variety": {
+       "pairs": [
+        [
+         3,
+         3
+        ],
+        [
+         3,
+         3
+        ]
+       ],
+       "ours_values": [
+        3,
+        3
+       ],
+       "ref_values": [
+        3,
+        3
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "specificity": {
+       "pairs": [
+        [
+         5,
+         5
+        ],
+        [
+         5,
+         5
+        ]
+       ],
+       "ours_values": [
+        5,
+        5
+       ],
+       "ref_values": [
+        5,
+        5
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "flow_and_momentum": {
+       "pairs": [
+        [
+         3,
+         3
+        ],
+        [
+         3,
+         3
+        ]
+       ],
+       "ours_values": [
+        3,
+        3
+       ],
+       "ref_values": [
+        3,
+        3
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "ending_handoff": {
+       "pairs": [
+        [
+         3,
+         3
+        ],
+        [
+         4,
+         4
+        ]
+       ],
+       "ours_values": [
+        3,
+        4
+       ],
+       "ref_values": [
+        3,
+        4
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      }
+     },
+     "critical_pairs": [
+      [
+       [
+        "repetitive_sag"
+       ],
+       [
+        "repetitive_sag"
+       ]
+      ],
+      [
+       [
+        "repetitive_sag"
+       ],
+       [
+        "repetitive_sag"
+       ]
+      ]
+     ]
+    }
+   },
+   "order_mean_gap": 0.0,
+   "strict_dominance_contradictions": []
+  },
+  {
+   "role": "craft",
+   "target": "chapter-02",
+   "raw_judgments": 4,
+   "preference_rate_incl_half_ties": 0.5,
+   "verdict_counts": {
+    "ours": 0,
+    "tie": 4,
+    "ref": 0
+   },
+   "target_noninferiority_passed": true,
+   "critical_ours": [],
+   "critical_ref": [],
+   "order_diagnostics": {
+    "0": {
+     "verdict_counts": {
+      "ours": 0,
+      "tie": 2,
+      "ref": 0
+     },
+     "verdict_mean": 0.5,
+     "scores": {
+      "prose_control": {
+       "pairs": [
+        [
+         5,
+         5
+        ],
+        [
+         5,
+         5
+        ]
+       ],
+       "ours_values": [
+        5,
+        5
+       ],
+       "ref_values": [
+        5,
+        5
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "rhythm_and_variety": {
+       "pairs": [
+        [
+         4,
+         4
+        ],
+        [
+         5,
+         5
+        ]
+       ],
+       "ours_values": [
+        4,
+        5
+       ],
+       "ref_values": [
+        4,
+        5
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "specificity": {
+       "pairs": [
+        [
+         6,
+         6
+        ],
+        [
+         6,
+         6
+        ]
+       ],
+       "ours_values": [
+        6,
+        6
+       ],
+       "ref_values": [
+        6,
+        6
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "flow_and_momentum": {
+       "pairs": [
+        [
+         4,
+         4
+        ],
+        [
+         5,
+         5
+        ]
+       ],
+       "ours_values": [
+        4,
+        5
+       ],
+       "ref_values": [
+        4,
+        5
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "ending_handoff": {
+       "pairs": [
+        [
+         4,
+         4
+        ],
+        [
+         5,
+         5
+        ]
+       ],
+       "ours_values": [
+        4,
+        5
+       ],
+       "ref_values": [
+        4,
+        5
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      }
+     },
+     "critical_pairs": [
+      [
+       [],
+       []
+      ],
+      [
+       [],
+       []
+      ]
+     ]
+    },
+    "1": {
+     "verdict_counts": {
+      "ours": 0,
+      "tie": 2,
+      "ref": 0
+     },
+     "verdict_mean": 0.5,
+     "scores": {
+      "prose_control": {
+       "pairs": [
+        [
+         4,
+         4
+        ],
+        [
+         5,
+         5
+        ]
+       ],
+       "ours_values": [
+        4,
+        5
+       ],
+       "ref_values": [
+        4,
+        5
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "rhythm_and_variety": {
+       "pairs": [
+        [
+         4,
+         4
+        ],
+        [
+         4,
+         4
+        ]
+       ],
+       "ours_values": [
+        4,
+        4
+       ],
+       "ref_values": [
+        4,
+        4
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "specificity": {
+       "pairs": [
+        [
+         6,
+         6
+        ],
+        [
+         6,
+         6
+        ]
+       ],
+       "ours_values": [
+        6,
+        6
+       ],
+       "ref_values": [
+        6,
+        6
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "flow_and_momentum": {
+       "pairs": [
+        [
+         4,
+         4
+        ],
+        [
+         4,
+         4
+        ]
+       ],
+       "ours_values": [
+        4,
+        4
+       ],
+       "ref_values": [
+        4,
+        4
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "ending_handoff": {
+       "pairs": [
+        [
+         3,
+         3
+        ],
+        [
+         4,
+         4
+        ]
+       ],
+       "ours_values": [
+        3,
+        4
+       ],
+       "ref_values": [
+        3,
+        4
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      }
+     },
+     "critical_pairs": [
+      [
+       [],
+       []
+      ],
+      [
+       [],
+       []
+      ]
+     ]
+    }
+   },
+   "order_mean_gap": 0.0,
+   "strict_dominance_contradictions": []
+  },
+  {
+   "role": "craft",
+   "target": "chapter-03",
+   "raw_judgments": 4,
+   "preference_rate_incl_half_ties": 0.5,
+   "verdict_counts": {
+    "ours": 0,
+    "tie": 4,
+    "ref": 0
+   },
+   "target_noninferiority_passed": true,
+   "critical_ours": [
+    "repetitive_sag"
+   ],
+   "critical_ref": [
+    "repetitive_sag"
+   ],
+   "order_diagnostics": {
+    "0": {
+     "verdict_counts": {
+      "ours": 0,
+      "tie": 2,
+      "ref": 0
+     },
+     "verdict_mean": 0.5,
+     "scores": {
+      "prose_control": {
+       "pairs": [
+        [
+         5,
+         5
+        ],
+        [
+         6,
+         6
+        ]
+       ],
+       "ours_values": [
+        5,
+        6
+       ],
+       "ref_values": [
+        5,
+        6
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "rhythm_and_variety": {
+       "pairs": [
+        [
+         4,
+         4
+        ],
+        [
+         5,
+         5
+        ]
+       ],
+       "ours_values": [
+        4,
+        5
+       ],
+       "ref_values": [
+        4,
+        5
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "specificity": {
+       "pairs": [
+        [
+         6,
+         6
+        ],
+        [
+         6,
+         6
+        ]
+       ],
+       "ours_values": [
+        6,
+        6
+       ],
+       "ref_values": [
+        6,
+        6
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "flow_and_momentum": {
+       "pairs": [
+        [
+         4,
+         4
+        ],
+        [
+         4,
+         4
+        ]
+       ],
+       "ours_values": [
+        4,
+        4
+       ],
+       "ref_values": [
+        4,
+        4
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "ending_handoff": {
+       "pairs": [
+        [
+         4,
+         4
+        ],
+        [
+         5,
+         5
+        ]
+       ],
+       "ours_values": [
+        4,
+        5
+       ],
+       "ref_values": [
+        4,
+        5
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      }
+     },
+     "critical_pairs": [
+      [
+       [],
+       []
+      ],
+      [
+       [
+        "repetitive_sag"
+       ],
+       [
+        "repetitive_sag"
+       ]
+      ]
+     ]
+    },
+    "1": {
+     "verdict_counts": {
+      "ours": 0,
+      "tie": 2,
+      "ref": 0
+     },
+     "verdict_mean": 0.5,
+     "scores": {
+      "prose_control": {
+       "pairs": [
+        [
+         6,
+         6
+        ],
+        [
+         6,
+         6
+        ]
+       ],
+       "ours_values": [
+        6,
+        6
+       ],
+       "ref_values": [
+        6,
+        6
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "rhythm_and_variety": {
+       "pairs": [
+        [
+         5,
+         5
+        ],
+        [
+         5,
+         5
+        ]
+       ],
+       "ours_values": [
+        5,
+        5
+       ],
+       "ref_values": [
+        5,
+        5
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "specificity": {
+       "pairs": [
+        [
+         6,
+         6
+        ],
+        [
+         7,
+         7
+        ]
+       ],
+       "ours_values": [
+        6,
+        7
+       ],
+       "ref_values": [
+        6,
+        7
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "flow_and_momentum": {
+       "pairs": [
+        [
+         5,
+         5
+        ],
+        [
+         5,
+         5
+        ]
+       ],
+       "ours_values": [
+        5,
+        5
+       ],
+       "ref_values": [
+        5,
+        5
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "ending_handoff": {
+       "pairs": [
+        [
+         4,
+         4
+        ],
+        [
+         5,
+         5
+        ]
+       ],
+       "ours_values": [
+        4,
+        5
+       ],
+       "ref_values": [
+        4,
+        5
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      }
+     },
+     "critical_pairs": [
+      [
+       [],
+       []
+      ],
+      [
+       [],
+       []
+      ]
+     ]
+    }
+   },
+   "order_mean_gap": 0.0,
+   "strict_dominance_contradictions": []
+  },
+  {
+   "role": "integrity",
+   "target": "block",
+   "raw_judgments": 4,
+   "preference_rate_incl_half_ties": 0.5,
+   "verdict_counts": {
+    "ours": 0,
+    "tie": 4,
+    "ref": 0
+   },
+   "target_noninferiority_passed": true,
+   "critical_ours": [
+    "copyright_expression_risk",
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony"
+   ],
+   "critical_ref": [
+    "copyright_expression_risk",
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony"
+   ],
+   "order_diagnostics": {
+    "0": {
+     "verdict_counts": {
+      "ours": 0,
+      "tie": 2,
+      "ref": 0
+     },
+     "verdict_mean": 0.5,
+     "scores": {
+      "non_shaming_regard": {
+       "pairs": [
+        [
+         5,
+         5
+        ],
+        [
+         6,
+         6
+        ]
+       ],
+       "ours_values": [
+        5,
+        6
+       ],
+       "ref_values": [
+        5,
+        6
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "willpower_free_logic": {
+       "pairs": [
+        [
+         8,
+         8
+        ],
+        [
+         8,
+         8
+        ]
+       ],
+       "ours_values": [
+        8,
+        8
+       ],
+       "ref_values": [
+        8,
+        8
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "epistemic_honesty": {
+       "pairs": [
+        [
+         1,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ],
+       "ours_values": [
+        1,
+        1
+       ],
+       "ref_values": [
+        1,
+        1
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "originality": {
+       "pairs": [
+        [
+         1,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ],
+       "ours_values": [
+        1,
+        1
+       ],
+       "ref_values": [
+        1,
+        1
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "cross_chapter_consistency": {
+       "pairs": [
+        [
+         7,
+         7
+        ],
+        [
+         8,
+         8
+        ]
+       ],
+       "ours_values": [
+        7,
+        8
+       ],
+       "ref_values": [
+        7,
+        8
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      }
+     },
+     "critical_pairs": [
+      [
+       [
+        "copyright_expression_risk",
+        "fear_as_motivator",
+        "medical_overreach",
+        "unsupported_authority_or_testimony"
+       ],
+       [
+        "copyright_expression_risk",
+        "fear_as_motivator",
+        "medical_overreach",
+        "unsupported_authority_or_testimony"
+       ]
+      ],
+      [
+       [
+        "copyright_expression_risk",
+        "fear_as_motivator",
+        "medical_overreach",
+        "unsupported_authority_or_testimony"
+       ],
+       [
+        "copyright_expression_risk",
+        "fear_as_motivator",
+        "medical_overreach",
+        "unsupported_authority_or_testimony"
+       ]
+      ]
+     ]
+    },
+    "1": {
+     "verdict_counts": {
+      "ours": 0,
+      "tie": 2,
+      "ref": 0
+     },
+     "verdict_mean": 0.5,
+     "scores": {
+      "non_shaming_regard": {
+       "pairs": [
+        [
+         5,
+         5
+        ],
+        [
+         6,
+         6
+        ]
+       ],
+       "ours_values": [
+        5,
+        6
+       ],
+       "ref_values": [
+        5,
+        6
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "willpower_free_logic": {
+       "pairs": [
+        [
+         7,
+         7
+        ],
+        [
+         8,
+         8
+        ]
+       ],
+       "ours_values": [
+        7,
+        8
+       ],
+       "ref_values": [
+        7,
+        8
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "epistemic_honesty": {
+       "pairs": [
+        [
+         1,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ],
+       "ours_values": [
+        1,
+        1
+       ],
+       "ref_values": [
+        1,
+        1
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "originality": {
+       "pairs": [
+        [
+         1,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ],
+       "ours_values": [
+        1,
+        1
+       ],
+       "ref_values": [
+        1,
+        1
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      },
+      "cross_chapter_consistency": {
+       "pairs": [
+        [
+         6,
+         6
+        ],
+        [
+         6,
+         6
+        ]
+       ],
+       "ours_values": [
+        6,
+        6
+       ],
+       "ref_values": [
+        6,
+        6
+       ],
+       "winner_signs": [
+        0,
+        0
+       ]
+      }
+     },
+     "critical_pairs": [
+      [
+       [
+        "copyright_expression_risk",
+        "fear_as_motivator",
+        "medical_overreach",
+        "unsupported_authority_or_testimony"
+       ],
+       [
+        "copyright_expression_risk",
+        "fear_as_motivator",
+        "medical_overreach",
+        "unsupported_authority_or_testimony"
+       ]
+      ],
+      [
+       [
+        "copyright_expression_risk",
+        "fear_as_motivator",
+        "medical_overreach",
+        "unsupported_authority_or_testimony"
+       ],
+       [
+        "copyright_expression_risk",
+        "fear_as_motivator",
+        "medical_overreach",
+        "unsupported_authority_or_testimony"
+       ]
+      ]
+     ]
+    }
+   },
+   "order_mean_gap": 0.0,
+   "strict_dominance_contradictions": []
+  }
+ ],
+ "replica_aggregation": "pooled within order; replica labels are trace metadata only",
+ "strict_dominance_contradictions": [],
+ "critical_ours": [
+  "copyright_expression_risk",
+  "fear_as_motivator",
+  "medical_overreach",
+  "repetitive_sag",
+  "unsupported_authority_or_testimony"
+ ],
+ "critical_ref": [
+  "copyright_expression_risk",
+  "fear_as_motivator",
+  "medical_overreach",
+  "repetitive_sag",
+  "unsupported_authority_or_testimony"
+ ],
+ "target_noninferiority_passed": true,
+ "product_parity": {
+  "roles": {
+   "efficacy": {
+    "targets": 1,
+    "preference_rate_incl_half_ties": 0.5
+   },
+   "craft": {
+    "targets": 3,
+    "preference_rate_incl_half_ties": 0.5
+   },
+   "integrity": {
+    "targets": 1,
+    "preference_rate_incl_half_ties": 0.5
+   }
+  },
+  "equal_role_macro_preference_rate": 0.5
+ },
+ "canonical": true,
+ "validated_controls": null,
+ "prompt_control": {
+  "mode": "identical",
+  "passed": true,
+  "matrix_transport_valid": true,
+  "semantic_expectation_met": true,
+  "instrument_configuration": {
+   "protocol_version": "stage-a-v2.3-native-sol-ultra-1",
+   "transport": "native-codex-subscription",
+   "model": "gpt-5.6-sol",
+   "reasoning_effort": "ultra",
+   "replica_identities": [
+    "sol-ultra-r1",
+    "sol-ultra-r2"
+   ],
+   "chapter_pairs": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     3
+    ]
+   ],
+   "role_prompt_sha256": {
+    "efficacy": "11fdedde0018ebcf7b2d37ddf08a6080d64c0931eec02cffcb630cde2fa28f4c",
+    "craft": "916cf4c6c2e5748f54b91979c0edd1123e1a29ce2791437c301f9e7459394948",
+    "integrity": "195820f1e4140918333449bc3fda374d42f356637619bbd92f028945e2107b0a"
+   },
+   "role_output_schema_sha256": {
+    "efficacy": "3fa8c57fe6e46a5b4622d6458489fd104a8e75e8cf903dfd8e3f8dfa616d1238",
+    "craft": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+    "integrity": "0e6d50465998e681e1edb0c9f1106767d045acce1167c3aa91678a229ceb756f"
+   },
+   "implementation_sha256": {
+    "judge_panel.py": "26571c0eb90c9ef80edb22024583af4e235bb42d991a8c98aba2c50eb7cb3a34",
+    "judge_protocol.py": "056e5396adbd271ee470555f290114cc4085e5569c80101c36b3aaf144e5c415",
+    "judge_v23.py": "bc5949ad66cd9b3f46b294179769b579b6da6d4ab19bf8ca83cb294832bdcf26",
+    "native_judge.py": "62a4ea47944ca57b5f3385ff078dd6598ef414d513c779abcf957fcd810de9d4"
+   }
+  }
+ }
+}

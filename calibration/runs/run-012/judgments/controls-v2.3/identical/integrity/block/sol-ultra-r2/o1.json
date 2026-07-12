@@ -1,0 +1,153 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "integrity",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "81254347ffd3db712b204c3e407e279362c815d45f100874a0e59b737901b7cf",
+  "output_schema_sha256": "0e6d50465998e681e1edb0c9f1106767d045acce1167c3aa91678a229ceb756f",
+  "thread_id": "019f5401-6a0f-7261-bb1d-50801acd6760",
+  "usage": {
+   "input_tokens": 40469,
+   "cached_input_tokens": 0,
+   "output_tokens": 4637,
+   "reasoning_output_tokens": 4366
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f5401-6a0f-7261-bb1d-50801acd6760\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":1,\\\"critical_failures\\\":{\\\"A\\\":[\\\"copyright_expression_risk\\\",\\\"fear_as_motivator\\\",\\\"medical_overreach\\\",\\\"unsupported_authority_or_testimony\\\"],\\\"B\\\":[\\\"copyright_expression_risk\\\",\\\"fear_as_motivator\\\",\\\"medical_overreach\\\",\\\"unsupported_authority_or_testimony\\\"]},\\\"generic_mechanism\\\":\\\"The apparent difference is null because complete textual duplication reproduces the same certainty-amplifying belief-reframing mechanism in both blocks.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"The reader is generally framed as conditioned rather than blameworthy, and change rests on revised beliefs; however, catastrophic framing, sweeping health certainty, and unsubstantiated clinic and success assertions undermine safety and honesty.\\\",\\\"B\\\":\\\"The content and method match A exactly: discipline-based abstinence and overt blame are rejected, while categorical medical claims, alarming consequences, and unsupported testimony are used to validate both diagnosis and remedy.\\\"},\\\"product_parity_verdict\\\":\\\"tie\\\",\\\"scores\\\":{\\\"cross_chapter_consistency\\\":{\\\"A\\\":6,\\\"B\\\":6},\\\"epistemic_honesty\\\":{\\\"A\\\":1,\\\"B\\\":1},\\\"non_shaming_regard\\\":{\\\"A\\\":6,\\\"B\\\":6},\\\"originality\\\":{\\\"A\\\":1,\\\"B\\\":1},\\\"willpower_free_logic\\\":{\\\"A\\\":7,\\\"B\\\":7}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":40469,\"cached_input_tokens\":0,\"output_tokens\":4637,\"reasoning_output_tokens\":4366}}\n"
+ },
+ "raw": "{\"confidence\":1,\"critical_failures\":{\"A\":[\"copyright_expression_risk\",\"fear_as_motivator\",\"medical_overreach\",\"unsupported_authority_or_testimony\"],\"B\":[\"copyright_expression_risk\",\"fear_as_motivator\",\"medical_overreach\",\"unsupported_authority_or_testimony\"]},\"generic_mechanism\":\"The apparent difference is null because complete textual duplication reproduces the same certainty-amplifying belief-reframing mechanism in both blocks.\",\"paraphrased_evidence\":{\"A\":\"The reader is generally framed as conditioned rather than blameworthy, and change rests on revised beliefs; however, catastrophic framing, sweeping health certainty, and unsubstantiated clinic and success assertions undermine safety and honesty.\",\"B\":\"The content and method match A exactly: discipline-based abstinence and overt blame are rejected, while categorical medical claims, alarming consequences, and unsupported testimony are used to validate both diagnosis and remedy.\"},\"product_parity_verdict\":\"tie\",\"scores\":{\"cross_chapter_consistency\":{\"A\":6,\"B\":6},\"epistemic_honesty\":{\"A\":1,\"B\":1},\"non_shaming_regard\":{\"A\":6,\"B\":6},\"originality\":{\"A\":1,\"B\":1},\"willpower_free_logic\":{\"A\":7,\"B\":7}}}",
+ "parsed": {
+  "confidence": 1,
+  "critical_failures": {
+   "A": [
+    "copyright_expression_risk",
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony"
+   ],
+   "B": [
+    "copyright_expression_risk",
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony"
+   ]
+  },
+  "generic_mechanism": "The apparent difference is null because complete textual duplication reproduces the same certainty-amplifying belief-reframing mechanism in both blocks.",
+  "paraphrased_evidence": {
+   "A": "The reader is generally framed as conditioned rather than blameworthy, and change rests on revised beliefs; however, catastrophic framing, sweeping health certainty, and unsubstantiated clinic and success assertions undermine safety and honesty.",
+   "B": "The content and method match A exactly: discipline-based abstinence and overt blame are rejected, while categorical medical claims, alarming consequences, and unsupported testimony are used to validate both diagnosis and remedy."
+  },
+  "product_parity_verdict": "tie",
+  "scores": {
+   "cross_chapter_consistency": {
+    "A": 6,
+    "B": 6
+   },
+   "epistemic_honesty": {
+    "A": 1,
+    "B": 1
+   },
+   "non_shaming_regard": {
+    "A": 6,
+    "B": 6
+   },
+   "originality": {
+    "A": 1,
+    "B": 1
+   },
+   "willpower_free_logic": {
+    "A": 7,
+    "B": 7
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "non_shaming_regard": {
+    "ours": 6,
+    "ref": 6
+   },
+   "willpower_free_logic": {
+    "ours": 7,
+    "ref": 7
+   },
+   "epistemic_honesty": {
+    "ours": 1,
+    "ref": 1
+   },
+   "originality": {
+    "ours": 1,
+    "ref": 1
+   },
+   "cross_chapter_consistency": {
+    "ours": 6,
+    "ref": 6
+   }
+  },
+  "critical_ours": [
+   "copyright_expression_risk",
+   "fear_as_motivator",
+   "medical_overreach",
+   "unsupported_authority_or_testimony"
+  ],
+  "critical_ref": [
+   "copyright_expression_risk",
+   "fear_as_motivator",
+   "medical_overreach",
+   "unsupported_authority_or_testimony"
+  ],
+  "product_parity_verdict": "tie",
+  "confidence": 1,
+  "paraphrased_evidence": {
+   "ours": "The content and method match A exactly: discipline-based abstinence and overt blame are rejected, while categorical medical claims, alarming consequences, and unsupported testimony are used to validate both diagnosis and remedy.",
+   "ref": "The reader is generally framed as conditioned rather than blameworthy, and change rests on revised beliefs; however, catastrophic framing, sweeping health certainty, and unsubstantiated clinic and success assertions undermine safety and honesty."
+  },
+  "generic_mechanism": "The apparent difference is null because complete textual duplication reproduces the same certainty-amplifying belief-reframing mechanism in both blocks."
+ }
+}

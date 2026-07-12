@@ -1,0 +1,139 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-01",
+ "ours_chapters": [
+  1
+ ],
+ "ref_chapters": [
+  1
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "9b8b4c866bb86d9d134f5c5f736d35a809094f4b7b79d29568ee7c89b77ee040",
+  "output_schema_sha256": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+  "thread_id": "019f5408-4b68-7440-a4aa-17a8b8625eeb",
+  "usage": {
+   "input_tokens": 21353,
+   "cached_input_tokens": 12032,
+   "output_tokens": 1268,
+   "reasoning_output_tokens": 1034
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f5408-4b68-7440-a4aa-17a8b8625eeb\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.99,\\\"critical_failures\\\":{\\\"A\\\":[\\\"repetitive_sag\\\"],\\\"B\\\":[\\\"broken_chapter_flow\\\",\\\"weak_ending_handoff\\\"]},\\\"generic_mechanism\\\":\\\"Cumulative ordering sustains momentum; scattering units out of sequence severs setup, development, and payoff dependencies.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"A coherent progression from stakes through mechanism to method is enlivened by concrete scenarios and personal history, but repeated claims about addiction, willpower, and compliance substantially prolong points already established.\\\",\\\"B\\\":\\\"Specific details survive at sentence level, but displaced summaries, conclusions, explanations, and headings repeatedly precede their setups; the chapter finally stops on introductory matter, leaving neither resolution nor usable forward motion.\\\"},\\\"product_parity_verdict\\\":\\\"A\\\",\\\"scores\\\":{\\\"ending_handoff\\\":{\\\"A\\\":4,\\\"B\\\":1},\\\"flow_and_momentum\\\":{\\\"A\\\":4,\\\"B\\\":1},\\\"prose_control\\\":{\\\"A\\\":6,\\\"B\\\":3},\\\"rhythm_and_variety\\\":{\\\"A\\\":5,\\\"B\\\":2},\\\"specificity\\\":{\\\"A\\\":6,\\\"B\\\":5}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":21353,\"cached_input_tokens\":12032,\"output_tokens\":1268,\"reasoning_output_tokens\":1034}}\n"
+ },
+ "raw": "{\"confidence\":0.99,\"critical_failures\":{\"A\":[\"repetitive_sag\"],\"B\":[\"broken_chapter_flow\",\"weak_ending_handoff\"]},\"generic_mechanism\":\"Cumulative ordering sustains momentum; scattering units out of sequence severs setup, development, and payoff dependencies.\",\"paraphrased_evidence\":{\"A\":\"A coherent progression from stakes through mechanism to method is enlivened by concrete scenarios and personal history, but repeated claims about addiction, willpower, and compliance substantially prolong points already established.\",\"B\":\"Specific details survive at sentence level, but displaced summaries, conclusions, explanations, and headings repeatedly precede their setups; the chapter finally stops on introductory matter, leaving neither resolution nor usable forward motion.\"},\"product_parity_verdict\":\"A\",\"scores\":{\"ending_handoff\":{\"A\":4,\"B\":1},\"flow_and_momentum\":{\"A\":4,\"B\":1},\"prose_control\":{\"A\":6,\"B\":3},\"rhythm_and_variety\":{\"A\":5,\"B\":2},\"specificity\":{\"A\":6,\"B\":5}}}",
+ "parsed": {
+  "confidence": 0.99,
+  "critical_failures": {
+   "A": [
+    "repetitive_sag"
+   ],
+   "B": [
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ]
+  },
+  "generic_mechanism": "Cumulative ordering sustains momentum; scattering units out of sequence severs setup, development, and payoff dependencies.",
+  "paraphrased_evidence": {
+   "A": "A coherent progression from stakes through mechanism to method is enlivened by concrete scenarios and personal history, but repeated claims about addiction, willpower, and compliance substantially prolong points already established.",
+   "B": "Specific details survive at sentence level, but displaced summaries, conclusions, explanations, and headings repeatedly precede their setups; the chapter finally stops on introductory matter, leaving neither resolution nor usable forward motion."
+  },
+  "product_parity_verdict": "A",
+  "scores": {
+   "ending_handoff": {
+    "A": 4,
+    "B": 1
+   },
+   "flow_and_momentum": {
+    "A": 4,
+    "B": 1
+   },
+   "prose_control": {
+    "A": 6,
+    "B": 3
+   },
+   "rhythm_and_variety": {
+    "A": 5,
+    "B": 2
+   },
+   "specificity": {
+    "A": 6,
+    "B": 5
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 3,
+    "ref": 6
+   },
+   "rhythm_and_variety": {
+    "ours": 2,
+    "ref": 5
+   },
+   "specificity": {
+    "ours": 5,
+    "ref": 6
+   },
+   "flow_and_momentum": {
+    "ours": 1,
+    "ref": 4
+   },
+   "ending_handoff": {
+    "ours": 1,
+    "ref": 4
+   }
+  },
+  "critical_ours": [
+   "broken_chapter_flow",
+   "weak_ending_handoff"
+  ],
+  "critical_ref": [
+   "repetitive_sag"
+  ],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "Specific details survive at sentence level, but displaced summaries, conclusions, explanations, and headings repeatedly precede their setups; the chapter finally stops on introductory matter, leaving neither resolution nor usable forward motion.",
+   "ref": "A coherent progression from stakes through mechanism to method is enlivened by concrete scenarios and personal history, but repeated claims about addiction, willpower, and compliance substantially prolong points already established."
+  },
+  "generic_mechanism": "Cumulative ordering sustains momentum; scattering units out of sequence severs setup, development, and payoff dependencies."
+ }
+}

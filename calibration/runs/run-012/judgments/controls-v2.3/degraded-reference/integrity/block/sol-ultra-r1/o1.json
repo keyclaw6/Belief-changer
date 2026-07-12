@@ -1,0 +1,155 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "integrity",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "02e19ebb6f504c4e5d929554c02ecb0fb2cdc81224d4cd3582446172c4b9ec0d",
+  "output_schema_sha256": "0e6d50465998e681e1edb0c9f1106767d045acce1167c3aa91678a229ceb756f",
+  "thread_id": "019f540e-8684-7723-ac31-40b9dc844439",
+  "usage": {
+   "input_tokens": 31685,
+   "cached_input_tokens": 0,
+   "output_tokens": 4702,
+   "reasoning_output_tokens": 4413
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f540e-8684-7723-ac31-40b9dc844439\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.99,\\\"critical_failures\\\":{\\\"A\\\":[\\\"copyright_expression_risk\\\",\\\"fear_as_motivator\\\",\\\"medical_overreach\\\",\\\"unsupported_authority_or_testimony\\\"],\\\"B\\\":[\\\"broken_continuity\\\",\\\"copyright_expression_risk\\\",\\\"fear_as_motivator\\\",\\\"medical_overreach\\\",\\\"unsupported_authority_or_testimony\\\"]},\\\"generic_mechanism\\\":\\\"When conclusions and instructions follow their premises, a belief-change pathway remains usable; reversing those dependencies turns the same material into unsupported assertions and procedural confusion.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"A consistently locates difficulty in conditioning rather than character and proposes changed beliefs instead of restraint, but makes categorical addiction, nutrition, disease-reversal, and efficacy claims while using severe health outcomes and weakly bounded testimony.\\\",\\\"B\\\":\\\"B retains the same absolving, non-restraint message and the same medical and testimonial overreach, but its reversed sentence order repeatedly places summaries, conclusions, instructions, and examples before\u2014or apart from\u2014the premises they require.\\\"},\\\"product_parity_verdict\\\":\\\"A\\\",\\\"scores\\\":{\\\"cross_chapter_consistency\\\":{\\\"A\\\":7,\\\"B\\\":1},\\\"epistemic_honesty\\\":{\\\"A\\\":1,\\\"B\\\":1},\\\"non_shaming_regard\\\":{\\\"A\\\":6,\\\"B\\\":4},\\\"originality\\\":{\\\"A\\\":1,\\\"B\\\":1},\\\"willpower_free_logic\\\":{\\\"A\\\":8,\\\"B\\\":5}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":31685,\"cached_input_tokens\":0,\"output_tokens\":4702,\"reasoning_output_tokens\":4413}}\n"
+ },
+ "raw": "{\"confidence\":0.99,\"critical_failures\":{\"A\":[\"copyright_expression_risk\",\"fear_as_motivator\",\"medical_overreach\",\"unsupported_authority_or_testimony\"],\"B\":[\"broken_continuity\",\"copyright_expression_risk\",\"fear_as_motivator\",\"medical_overreach\",\"unsupported_authority_or_testimony\"]},\"generic_mechanism\":\"When conclusions and instructions follow their premises, a belief-change pathway remains usable; reversing those dependencies turns the same material into unsupported assertions and procedural confusion.\",\"paraphrased_evidence\":{\"A\":\"A consistently locates difficulty in conditioning rather than character and proposes changed beliefs instead of restraint, but makes categorical addiction, nutrition, disease-reversal, and efficacy claims while using severe health outcomes and weakly bounded testimony.\",\"B\":\"B retains the same absolving, non-restraint message and the same medical and testimonial overreach, but its reversed sentence order repeatedly places summaries, conclusions, instructions, and examples before\u2014or apart from\u2014the premises they require.\"},\"product_parity_verdict\":\"A\",\"scores\":{\"cross_chapter_consistency\":{\"A\":7,\"B\":1},\"epistemic_honesty\":{\"A\":1,\"B\":1},\"non_shaming_regard\":{\"A\":6,\"B\":4},\"originality\":{\"A\":1,\"B\":1},\"willpower_free_logic\":{\"A\":8,\"B\":5}}}",
+ "parsed": {
+  "confidence": 0.99,
+  "critical_failures": {
+   "A": [
+    "copyright_expression_risk",
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony"
+   ],
+   "B": [
+    "broken_continuity",
+    "copyright_expression_risk",
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony"
+   ]
+  },
+  "generic_mechanism": "When conclusions and instructions follow their premises, a belief-change pathway remains usable; reversing those dependencies turns the same material into unsupported assertions and procedural confusion.",
+  "paraphrased_evidence": {
+   "A": "A consistently locates difficulty in conditioning rather than character and proposes changed beliefs instead of restraint, but makes categorical addiction, nutrition, disease-reversal, and efficacy claims while using severe health outcomes and weakly bounded testimony.",
+   "B": "B retains the same absolving, non-restraint message and the same medical and testimonial overreach, but its reversed sentence order repeatedly places summaries, conclusions, instructions, and examples before\u2014or apart from\u2014the premises they require."
+  },
+  "product_parity_verdict": "A",
+  "scores": {
+   "cross_chapter_consistency": {
+    "A": 7,
+    "B": 1
+   },
+   "epistemic_honesty": {
+    "A": 1,
+    "B": 1
+   },
+   "non_shaming_regard": {
+    "A": 6,
+    "B": 4
+   },
+   "originality": {
+    "A": 1,
+    "B": 1
+   },
+   "willpower_free_logic": {
+    "A": 8,
+    "B": 5
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "non_shaming_regard": {
+    "ours": 4,
+    "ref": 6
+   },
+   "willpower_free_logic": {
+    "ours": 5,
+    "ref": 8
+   },
+   "epistemic_honesty": {
+    "ours": 1,
+    "ref": 1
+   },
+   "originality": {
+    "ours": 1,
+    "ref": 1
+   },
+   "cross_chapter_consistency": {
+    "ours": 1,
+    "ref": 7
+   }
+  },
+  "critical_ours": [
+   "broken_continuity",
+   "copyright_expression_risk",
+   "fear_as_motivator",
+   "medical_overreach",
+   "unsupported_authority_or_testimony"
+  ],
+  "critical_ref": [
+   "copyright_expression_risk",
+   "fear_as_motivator",
+   "medical_overreach",
+   "unsupported_authority_or_testimony"
+  ],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "B retains the same absolving, non-restraint message and the same medical and testimonial overreach, but its reversed sentence order repeatedly places summaries, conclusions, instructions, and examples before\u2014or apart from\u2014the premises they require.",
+   "ref": "A consistently locates difficulty in conditioning rather than character and proposes changed beliefs instead of restraint, but makes categorical addiction, nutrition, disease-reversal, and efficacy claims while using severe health outcomes and weakly bounded testimony."
+  },
+  "generic_mechanism": "When conclusions and instructions follow their premises, a belief-change pathway remains usable; reversing those dependencies turns the same material into unsupported assertions and procedural confusion."
+ }
+}

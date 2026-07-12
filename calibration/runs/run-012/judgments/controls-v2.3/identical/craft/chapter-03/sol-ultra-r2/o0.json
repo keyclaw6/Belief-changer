@@ -1,0 +1,129 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-03",
+ "ours_chapters": [
+  3
+ ],
+ "ref_chapters": [
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "a3fb7cff504e9b7db480a18cb6d3e0d3e7aa2da0adbd38c86e0ec053ca4b9ce1",
+  "output_schema_sha256": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+  "thread_id": "019f53fc-d1c3-7be1-a43a-1669fa7a2d3c",
+  "usage": {
+   "input_tokens": 22351,
+   "cached_input_tokens": 12032,
+   "output_tokens": 958,
+   "reasoning_output_tokens": 741
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f53fc-d1c3-7be1-a43a-1669fa7a2d3c\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":1,\\\"critical_failures\\\":{\\\"A\\\":[],\\\"B\\\":[]},\\\"generic_mechanism\\\":\\\"Matching structure, diction, examples, repetition, and closing recap produce the same pacing and reading experience, leaving no craft distinction.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"Concrete domestic and celebratory examples enliven a forceful argument, but repeated assurances, categorical claims, rhetorical questions, and the closing bullet recap make the latter half feel prolonged and promotional.\\\",\\\"B\\\":\\\"Concrete domestic and celebratory examples enliven a forceful argument, but repeated assurances, categorical claims, rhetorical questions, and the closing bullet recap make the latter half feel prolonged and promotional.\\\"},\\\"product_parity_verdict\\\":\\\"tie\\\",\\\"scores\\\":{\\\"ending_handoff\\\":{\\\"A\\\":5,\\\"B\\\":5},\\\"flow_and_momentum\\\":{\\\"A\\\":4,\\\"B\\\":4},\\\"prose_control\\\":{\\\"A\\\":5,\\\"B\\\":5},\\\"rhythm_and_variety\\\":{\\\"A\\\":4,\\\"B\\\":4},\\\"specificity\\\":{\\\"A\\\":6,\\\"B\\\":6}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":22351,\"cached_input_tokens\":12032,\"output_tokens\":958,\"reasoning_output_tokens\":741}}\n"
+ },
+ "raw": "{\"confidence\":1,\"critical_failures\":{\"A\":[],\"B\":[]},\"generic_mechanism\":\"Matching structure, diction, examples, repetition, and closing recap produce the same pacing and reading experience, leaving no craft distinction.\",\"paraphrased_evidence\":{\"A\":\"Concrete domestic and celebratory examples enliven a forceful argument, but repeated assurances, categorical claims, rhetorical questions, and the closing bullet recap make the latter half feel prolonged and promotional.\",\"B\":\"Concrete domestic and celebratory examples enliven a forceful argument, but repeated assurances, categorical claims, rhetorical questions, and the closing bullet recap make the latter half feel prolonged and promotional.\"},\"product_parity_verdict\":\"tie\",\"scores\":{\"ending_handoff\":{\"A\":5,\"B\":5},\"flow_and_momentum\":{\"A\":4,\"B\":4},\"prose_control\":{\"A\":5,\"B\":5},\"rhythm_and_variety\":{\"A\":4,\"B\":4},\"specificity\":{\"A\":6,\"B\":6}}}",
+ "parsed": {
+  "confidence": 1,
+  "critical_failures": {
+   "A": [],
+   "B": []
+  },
+  "generic_mechanism": "Matching structure, diction, examples, repetition, and closing recap produce the same pacing and reading experience, leaving no craft distinction.",
+  "paraphrased_evidence": {
+   "A": "Concrete domestic and celebratory examples enliven a forceful argument, but repeated assurances, categorical claims, rhetorical questions, and the closing bullet recap make the latter half feel prolonged and promotional.",
+   "B": "Concrete domestic and celebratory examples enliven a forceful argument, but repeated assurances, categorical claims, rhetorical questions, and the closing bullet recap make the latter half feel prolonged and promotional."
+  },
+  "product_parity_verdict": "tie",
+  "scores": {
+   "ending_handoff": {
+    "A": 5,
+    "B": 5
+   },
+   "flow_and_momentum": {
+    "A": 4,
+    "B": 4
+   },
+   "prose_control": {
+    "A": 5,
+    "B": 5
+   },
+   "rhythm_and_variety": {
+    "A": 4,
+    "B": 4
+   },
+   "specificity": {
+    "A": 6,
+    "B": 6
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 5,
+    "ref": 5
+   },
+   "rhythm_and_variety": {
+    "ours": 4,
+    "ref": 4
+   },
+   "specificity": {
+    "ours": 6,
+    "ref": 6
+   },
+   "flow_and_momentum": {
+    "ours": 4,
+    "ref": 4
+   },
+   "ending_handoff": {
+    "ours": 5,
+    "ref": 5
+   }
+  },
+  "critical_ours": [],
+  "critical_ref": [],
+  "product_parity_verdict": "tie",
+  "confidence": 1,
+  "paraphrased_evidence": {
+   "ours": "Concrete domestic and celebratory examples enliven a forceful argument, but repeated assurances, categorical claims, rhetorical questions, and the closing bullet recap make the latter half feel prolonged and promotional.",
+   "ref": "Concrete domestic and celebratory examples enliven a forceful argument, but repeated assurances, categorical claims, rhetorical questions, and the closing bullet recap make the latter half feel prolonged and promotional."
+  },
+  "generic_mechanism": "Matching structure, diction, examples, repetition, and closing recap produce the same pacing and reading experience, leaving no craft distinction."
+ }
+}

@@ -1,0 +1,137 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-01",
+ "ours_chapters": [
+  1
+ ],
+ "ref_chapters": [
+  1
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "f37abdc46fb8c3a20cedc82de70599e13955714b989168b203ffd25961fd3d21",
+  "output_schema_sha256": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+  "thread_id": "019f53f9-7980-7d53-ac2f-98973c40546b",
+  "usage": {
+   "input_tokens": 25015,
+   "cached_input_tokens": 0,
+   "output_tokens": 663,
+   "reasoning_output_tokens": 429
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f53f9-7980-7d53-ac2f-98973c40546b\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":1,\\\"critical_failures\\\":{\\\"A\\\":[\\\"repetitive_sag\\\"],\\\"B\\\":[\\\"repetitive_sag\\\"]},\\\"generic_mechanism\\\":\\\"Exact duplication produces parity: both chapters rely on repeated assertions and recurring imperatives long after the central argument has landed.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"Clear and forceful, with concrete statistics, an everyday eating scenario, and a personal recovery anecdote, but repeated comparisons, promises, and instructions substantially stall the chapter before a summary restates them again.\\\",\\\"B\\\":\\\"Clear and forceful, with concrete statistics, an everyday eating scenario, and a personal recovery anecdote, but repeated comparisons, promises, and instructions substantially stall the chapter before a summary restates them again.\\\"},\\\"product_parity_verdict\\\":\\\"tie\\\",\\\"scores\\\":{\\\"ending_handoff\\\":{\\\"A\\\":4,\\\"B\\\":4},\\\"flow_and_momentum\\\":{\\\"A\\\":3,\\\"B\\\":3},\\\"prose_control\\\":{\\\"A\\\":4,\\\"B\\\":4},\\\"rhythm_and_variety\\\":{\\\"A\\\":3,\\\"B\\\":3},\\\"specificity\\\":{\\\"A\\\":5,\\\"B\\\":5}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":25015,\"cached_input_tokens\":0,\"output_tokens\":663,\"reasoning_output_tokens\":429}}\n"
+ },
+ "raw": "{\"confidence\":1,\"critical_failures\":{\"A\":[\"repetitive_sag\"],\"B\":[\"repetitive_sag\"]},\"generic_mechanism\":\"Exact duplication produces parity: both chapters rely on repeated assertions and recurring imperatives long after the central argument has landed.\",\"paraphrased_evidence\":{\"A\":\"Clear and forceful, with concrete statistics, an everyday eating scenario, and a personal recovery anecdote, but repeated comparisons, promises, and instructions substantially stall the chapter before a summary restates them again.\",\"B\":\"Clear and forceful, with concrete statistics, an everyday eating scenario, and a personal recovery anecdote, but repeated comparisons, promises, and instructions substantially stall the chapter before a summary restates them again.\"},\"product_parity_verdict\":\"tie\",\"scores\":{\"ending_handoff\":{\"A\":4,\"B\":4},\"flow_and_momentum\":{\"A\":3,\"B\":3},\"prose_control\":{\"A\":4,\"B\":4},\"rhythm_and_variety\":{\"A\":3,\"B\":3},\"specificity\":{\"A\":5,\"B\":5}}}",
+ "parsed": {
+  "confidence": 1,
+  "critical_failures": {
+   "A": [
+    "repetitive_sag"
+   ],
+   "B": [
+    "repetitive_sag"
+   ]
+  },
+  "generic_mechanism": "Exact duplication produces parity: both chapters rely on repeated assertions and recurring imperatives long after the central argument has landed.",
+  "paraphrased_evidence": {
+   "A": "Clear and forceful, with concrete statistics, an everyday eating scenario, and a personal recovery anecdote, but repeated comparisons, promises, and instructions substantially stall the chapter before a summary restates them again.",
+   "B": "Clear and forceful, with concrete statistics, an everyday eating scenario, and a personal recovery anecdote, but repeated comparisons, promises, and instructions substantially stall the chapter before a summary restates them again."
+  },
+  "product_parity_verdict": "tie",
+  "scores": {
+   "ending_handoff": {
+    "A": 4,
+    "B": 4
+   },
+   "flow_and_momentum": {
+    "A": 3,
+    "B": 3
+   },
+   "prose_control": {
+    "A": 4,
+    "B": 4
+   },
+   "rhythm_and_variety": {
+    "A": 3,
+    "B": 3
+   },
+   "specificity": {
+    "A": 5,
+    "B": 5
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 4,
+    "ref": 4
+   },
+   "rhythm_and_variety": {
+    "ours": 3,
+    "ref": 3
+   },
+   "specificity": {
+    "ours": 5,
+    "ref": 5
+   },
+   "flow_and_momentum": {
+    "ours": 3,
+    "ref": 3
+   },
+   "ending_handoff": {
+    "ours": 4,
+    "ref": 4
+   }
+  },
+  "critical_ours": [
+   "repetitive_sag"
+  ],
+  "critical_ref": [
+   "repetitive_sag"
+  ],
+  "product_parity_verdict": "tie",
+  "confidence": 1,
+  "paraphrased_evidence": {
+   "ours": "Clear and forceful, with concrete statistics, an everyday eating scenario, and a personal recovery anecdote, but repeated comparisons, promises, and instructions substantially stall the chapter before a summary restates them again.",
+   "ref": "Clear and forceful, with concrete statistics, an everyday eating scenario, and a personal recovery anecdote, but repeated comparisons, promises, and instructions substantially stall the chapter before a summary restates them again."
+  },
+  "generic_mechanism": "Exact duplication produces parity: both chapters rely on repeated assertions and recurring imperatives long after the central argument has landed."
+ }
+}

@@ -1,0 +1,135 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-01",
+ "ours_chapters": [
+  1
+ ],
+ "ref_chapters": [
+  1
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "7bdca83c7f026c29c1c62cd6f67a6a99368bd376bdfb02f358f6d5ee3aeb4816",
+  "output_schema_sha256": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+  "thread_id": "019f5406-8b51-76b1-93e5-3d40c2973ad1",
+  "usage": {
+   "input_tokens": 21357,
+   "cached_input_tokens": 0,
+   "output_tokens": 1497,
+   "reasoning_output_tokens": 1261
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f5406-8b51-76b1-93e5-3d40c2973ad1\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.99,\\\"critical_failures\\\":{\\\"A\\\":[\\\"broken_chapter_flow\\\",\\\"weak_ending_handoff\\\"],\\\"B\\\":[]},\\\"generic_mechanism\\\":\\\"Preserved dependency order lets examples, explanations, and directives accumulate; severing that order turns readable units into dangling references and converts the ending into a misplaced opening.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"Locally intelligible claims arrive in reverse-seeming fragments: headings trail their discussions, references lose their antecedents, and the final lines restart the chapter instead of concluding it.\\\",\\\"B\\\":\\\"A coherent progression moves from personal symptoms and public stakes through an addiction model, a concrete eating example, autobiography, and reading instructions, though repeated promises and drug analogies overextend the middle.\\\"},\\\"product_parity_verdict\\\":\\\"B\\\",\\\"scores\\\":{\\\"ending_handoff\\\":{\\\"A\\\":1,\\\"B\\\":6},\\\"flow_and_momentum\\\":{\\\"A\\\":1,\\\"B\\\":6},\\\"prose_control\\\":{\\\"A\\\":3,\\\"B\\\":6},\\\"rhythm_and_variety\\\":{\\\"A\\\":2,\\\"B\\\":5},\\\"specificity\\\":{\\\"A\\\":5,\\\"B\\\":6}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":21357,\"cached_input_tokens\":0,\"output_tokens\":1497,\"reasoning_output_tokens\":1261}}\n"
+ },
+ "raw": "{\"confidence\":0.99,\"critical_failures\":{\"A\":[\"broken_chapter_flow\",\"weak_ending_handoff\"],\"B\":[]},\"generic_mechanism\":\"Preserved dependency order lets examples, explanations, and directives accumulate; severing that order turns readable units into dangling references and converts the ending into a misplaced opening.\",\"paraphrased_evidence\":{\"A\":\"Locally intelligible claims arrive in reverse-seeming fragments: headings trail their discussions, references lose their antecedents, and the final lines restart the chapter instead of concluding it.\",\"B\":\"A coherent progression moves from personal symptoms and public stakes through an addiction model, a concrete eating example, autobiography, and reading instructions, though repeated promises and drug analogies overextend the middle.\"},\"product_parity_verdict\":\"B\",\"scores\":{\"ending_handoff\":{\"A\":1,\"B\":6},\"flow_and_momentum\":{\"A\":1,\"B\":6},\"prose_control\":{\"A\":3,\"B\":6},\"rhythm_and_variety\":{\"A\":2,\"B\":5},\"specificity\":{\"A\":5,\"B\":6}}}",
+ "parsed": {
+  "confidence": 0.99,
+  "critical_failures": {
+   "A": [
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ],
+   "B": []
+  },
+  "generic_mechanism": "Preserved dependency order lets examples, explanations, and directives accumulate; severing that order turns readable units into dangling references and converts the ending into a misplaced opening.",
+  "paraphrased_evidence": {
+   "A": "Locally intelligible claims arrive in reverse-seeming fragments: headings trail their discussions, references lose their antecedents, and the final lines restart the chapter instead of concluding it.",
+   "B": "A coherent progression moves from personal symptoms and public stakes through an addiction model, a concrete eating example, autobiography, and reading instructions, though repeated promises and drug analogies overextend the middle."
+  },
+  "product_parity_verdict": "B",
+  "scores": {
+   "ending_handoff": {
+    "A": 1,
+    "B": 6
+   },
+   "flow_and_momentum": {
+    "A": 1,
+    "B": 6
+   },
+   "prose_control": {
+    "A": 3,
+    "B": 6
+   },
+   "rhythm_and_variety": {
+    "A": 2,
+    "B": 5
+   },
+   "specificity": {
+    "A": 5,
+    "B": 6
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 3,
+    "ref": 6
+   },
+   "rhythm_and_variety": {
+    "ours": 2,
+    "ref": 5
+   },
+   "specificity": {
+    "ours": 5,
+    "ref": 6
+   },
+   "flow_and_momentum": {
+    "ours": 1,
+    "ref": 6
+   },
+   "ending_handoff": {
+    "ours": 1,
+    "ref": 6
+   }
+  },
+  "critical_ours": [
+   "broken_chapter_flow",
+   "weak_ending_handoff"
+  ],
+  "critical_ref": [],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "Locally intelligible claims arrive in reverse-seeming fragments: headings trail their discussions, references lose their antecedents, and the final lines restart the chapter instead of concluding it.",
+   "ref": "A coherent progression moves from personal symptoms and public stakes through an addiction model, a concrete eating example, autobiography, and reading instructions, though repeated promises and drug analogies overextend the middle."
+  },
+  "generic_mechanism": "Preserved dependency order lets examples, explanations, and directives accumulate; severing that order turns readable units into dangling references and converts the ending into a misplaced opening."
+ }
+}

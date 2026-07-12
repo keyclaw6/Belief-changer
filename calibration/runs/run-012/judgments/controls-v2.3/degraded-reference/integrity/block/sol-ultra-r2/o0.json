@@ -1,0 +1,155 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "integrity",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "448e6e978d406faac9e7f7babee7a924d6e0f65373d27ebd0e7244d3f447b12e",
+  "output_schema_sha256": "0e6d50465998e681e1edb0c9f1106767d045acce1167c3aa91678a229ceb756f",
+  "thread_id": "019f5410-46e4-77f0-8b00-0c16c3eed285",
+  "usage": {
+   "input_tokens": 31685,
+   "cached_input_tokens": 0,
+   "output_tokens": 3793,
+   "reasoning_output_tokens": 3512
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f5410-46e4-77f0-8b00-0c16c3eed285\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.98,\\\"critical_failures\\\":{\\\"A\\\":[\\\"fear_as_motivator\\\",\\\"medical_overreach\\\",\\\"unsupported_authority_or_testimony\\\",\\\"copyright_expression_risk\\\",\\\"broken_continuity\\\"],\\\"B\\\":[\\\"fear_as_motivator\\\",\\\"medical_overreach\\\",\\\"unsupported_authority_or_testimony\\\",\\\"copyright_expression_risk\\\"]},\\\"generic_mechanism\\\":\\\"Ordered exposition preserves dependencies between claims and instructions; rearranged fragments sever them, making the stated method difficult to assess or follow safely.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"The block rejects blame and willpower, but fragmentary sequencing breaks explanations and instructions; it also makes categorical addiction, metabolic, disease, and withdrawal claims, using alarming outcomes and thin clinic anecdotes as warrant.\\\",\\\"B\\\":\\\"The block frames readers as trapped rather than weak and uses changed beliefs to remove desire, but presents sweeping medical and causal claims as settled, amplifies catastrophic outcomes, and relies on clinic anecdotes and popularity claims.\\\"},\\\"product_parity_verdict\\\":\\\"B\\\",\\\"scores\\\":{\\\"cross_chapter_consistency\\\":{\\\"A\\\":1,\\\"B\\\":8},\\\"epistemic_honesty\\\":{\\\"A\\\":2,\\\"B\\\":1},\\\"non_shaming_regard\\\":{\\\"A\\\":6,\\\"B\\\":7},\\\"originality\\\":{\\\"A\\\":1,\\\"B\\\":1},\\\"willpower_free_logic\\\":{\\\"A\\\":6,\\\"B\\\":8}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":31685,\"cached_input_tokens\":0,\"output_tokens\":3793,\"reasoning_output_tokens\":3512}}\n"
+ },
+ "raw": "{\"confidence\":0.98,\"critical_failures\":{\"A\":[\"fear_as_motivator\",\"medical_overreach\",\"unsupported_authority_or_testimony\",\"copyright_expression_risk\",\"broken_continuity\"],\"B\":[\"fear_as_motivator\",\"medical_overreach\",\"unsupported_authority_or_testimony\",\"copyright_expression_risk\"]},\"generic_mechanism\":\"Ordered exposition preserves dependencies between claims and instructions; rearranged fragments sever them, making the stated method difficult to assess or follow safely.\",\"paraphrased_evidence\":{\"A\":\"The block rejects blame and willpower, but fragmentary sequencing breaks explanations and instructions; it also makes categorical addiction, metabolic, disease, and withdrawal claims, using alarming outcomes and thin clinic anecdotes as warrant.\",\"B\":\"The block frames readers as trapped rather than weak and uses changed beliefs to remove desire, but presents sweeping medical and causal claims as settled, amplifies catastrophic outcomes, and relies on clinic anecdotes and popularity claims.\"},\"product_parity_verdict\":\"B\",\"scores\":{\"cross_chapter_consistency\":{\"A\":1,\"B\":8},\"epistemic_honesty\":{\"A\":2,\"B\":1},\"non_shaming_regard\":{\"A\":6,\"B\":7},\"originality\":{\"A\":1,\"B\":1},\"willpower_free_logic\":{\"A\":6,\"B\":8}}}",
+ "parsed": {
+  "confidence": 0.98,
+  "critical_failures": {
+   "A": [
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony",
+    "copyright_expression_risk",
+    "broken_continuity"
+   ],
+   "B": [
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony",
+    "copyright_expression_risk"
+   ]
+  },
+  "generic_mechanism": "Ordered exposition preserves dependencies between claims and instructions; rearranged fragments sever them, making the stated method difficult to assess or follow safely.",
+  "paraphrased_evidence": {
+   "A": "The block rejects blame and willpower, but fragmentary sequencing breaks explanations and instructions; it also makes categorical addiction, metabolic, disease, and withdrawal claims, using alarming outcomes and thin clinic anecdotes as warrant.",
+   "B": "The block frames readers as trapped rather than weak and uses changed beliefs to remove desire, but presents sweeping medical and causal claims as settled, amplifies catastrophic outcomes, and relies on clinic anecdotes and popularity claims."
+  },
+  "product_parity_verdict": "B",
+  "scores": {
+   "cross_chapter_consistency": {
+    "A": 1,
+    "B": 8
+   },
+   "epistemic_honesty": {
+    "A": 2,
+    "B": 1
+   },
+   "non_shaming_regard": {
+    "A": 6,
+    "B": 7
+   },
+   "originality": {
+    "A": 1,
+    "B": 1
+   },
+   "willpower_free_logic": {
+    "A": 6,
+    "B": 8
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "non_shaming_regard": {
+    "ours": 6,
+    "ref": 7
+   },
+   "willpower_free_logic": {
+    "ours": 6,
+    "ref": 8
+   },
+   "epistemic_honesty": {
+    "ours": 2,
+    "ref": 1
+   },
+   "originality": {
+    "ours": 1,
+    "ref": 1
+   },
+   "cross_chapter_consistency": {
+    "ours": 1,
+    "ref": 8
+   }
+  },
+  "critical_ours": [
+   "fear_as_motivator",
+   "medical_overreach",
+   "unsupported_authority_or_testimony",
+   "copyright_expression_risk",
+   "broken_continuity"
+  ],
+  "critical_ref": [
+   "fear_as_motivator",
+   "medical_overreach",
+   "unsupported_authority_or_testimony",
+   "copyright_expression_risk"
+  ],
+  "product_parity_verdict": "ref",
+  "confidence": 0.98,
+  "paraphrased_evidence": {
+   "ours": "The block rejects blame and willpower, but fragmentary sequencing breaks explanations and instructions; it also makes categorical addiction, metabolic, disease, and withdrawal claims, using alarming outcomes and thin clinic anecdotes as warrant.",
+   "ref": "The block frames readers as trapped rather than weak and uses changed beliefs to remove desire, but presents sweeping medical and causal claims as settled, amplifies catastrophic outcomes, and relies on clinic anecdotes and popularity claims."
+  },
+  "generic_mechanism": "Ordered exposition preserves dependencies between claims and instructions; rearranged fragments sever them, making the stated method difficult to assess or follow safely."
+ }
+}

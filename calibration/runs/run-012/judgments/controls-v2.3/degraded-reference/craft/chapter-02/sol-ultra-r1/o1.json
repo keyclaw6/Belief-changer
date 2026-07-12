@@ -1,0 +1,135 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-02",
+ "ours_chapters": [
+  2
+ ],
+ "ref_chapters": [
+  2
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "1b04d0118cfa3540ff269e4adfba97d4dc7d12245e94e77e356f16fe0c562e5b",
+  "output_schema_sha256": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+  "thread_id": "019f5409-3129-7a81-801d-6df7c4f48931",
+  "usage": {
+   "input_tokens": 18662,
+   "cached_input_tokens": 0,
+   "output_tokens": 1885,
+   "reasoning_output_tokens": 1643
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f5409-3129-7a81-801d-6df7c4f48931\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.99,\\\"critical_failures\\\":{\\\"A\\\":[],\\\"B\\\":[\\\"broken_chapter_flow\\\",\\\"weak_ending_handoff\\\"]},\\\"generic_mechanism\\\":\\\"Sustained setup-and-payoff sequencing lets details accumulate; reversing those dependencies turns controlled sentences into disconnected fragments and converts the intended opening into an abrupt ending.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"A concrete animal scene opens into a legible argument, while later examples, history, warnings, and an illusion mostly build in sequence; emphatic repetition and the closing bullet recap blunt the middle and final landing.\\\",\\\"B\\\":\\\"Specific images survive at sentence level, but conclusions routinely precede setups, headings arrive after their material, and the chapter runs backward into its own opening, destroying referents, momentum, and closure.\\\"},\\\"product_parity_verdict\\\":\\\"A\\\",\\\"scores\\\":{\\\"ending_handoff\\\":{\\\"A\\\":4,\\\"B\\\":1},\\\"flow_and_momentum\\\":{\\\"A\\\":5,\\\"B\\\":1},\\\"prose_control\\\":{\\\"A\\\":6,\\\"B\\\":2},\\\"rhythm_and_variety\\\":{\\\"A\\\":5,\\\"B\\\":2},\\\"specificity\\\":{\\\"A\\\":6,\\\"B\\\":4}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":18662,\"cached_input_tokens\":0,\"output_tokens\":1885,\"reasoning_output_tokens\":1643}}\n"
+ },
+ "raw": "{\"confidence\":0.99,\"critical_failures\":{\"A\":[],\"B\":[\"broken_chapter_flow\",\"weak_ending_handoff\"]},\"generic_mechanism\":\"Sustained setup-and-payoff sequencing lets details accumulate; reversing those dependencies turns controlled sentences into disconnected fragments and converts the intended opening into an abrupt ending.\",\"paraphrased_evidence\":{\"A\":\"A concrete animal scene opens into a legible argument, while later examples, history, warnings, and an illusion mostly build in sequence; emphatic repetition and the closing bullet recap blunt the middle and final landing.\",\"B\":\"Specific images survive at sentence level, but conclusions routinely precede setups, headings arrive after their material, and the chapter runs backward into its own opening, destroying referents, momentum, and closure.\"},\"product_parity_verdict\":\"A\",\"scores\":{\"ending_handoff\":{\"A\":4,\"B\":1},\"flow_and_momentum\":{\"A\":5,\"B\":1},\"prose_control\":{\"A\":6,\"B\":2},\"rhythm_and_variety\":{\"A\":5,\"B\":2},\"specificity\":{\"A\":6,\"B\":4}}}",
+ "parsed": {
+  "confidence": 0.99,
+  "critical_failures": {
+   "A": [],
+   "B": [
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ]
+  },
+  "generic_mechanism": "Sustained setup-and-payoff sequencing lets details accumulate; reversing those dependencies turns controlled sentences into disconnected fragments and converts the intended opening into an abrupt ending.",
+  "paraphrased_evidence": {
+   "A": "A concrete animal scene opens into a legible argument, while later examples, history, warnings, and an illusion mostly build in sequence; emphatic repetition and the closing bullet recap blunt the middle and final landing.",
+   "B": "Specific images survive at sentence level, but conclusions routinely precede setups, headings arrive after their material, and the chapter runs backward into its own opening, destroying referents, momentum, and closure."
+  },
+  "product_parity_verdict": "A",
+  "scores": {
+   "ending_handoff": {
+    "A": 4,
+    "B": 1
+   },
+   "flow_and_momentum": {
+    "A": 5,
+    "B": 1
+   },
+   "prose_control": {
+    "A": 6,
+    "B": 2
+   },
+   "rhythm_and_variety": {
+    "A": 5,
+    "B": 2
+   },
+   "specificity": {
+    "A": 6,
+    "B": 4
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 2,
+    "ref": 6
+   },
+   "rhythm_and_variety": {
+    "ours": 2,
+    "ref": 5
+   },
+   "specificity": {
+    "ours": 4,
+    "ref": 6
+   },
+   "flow_and_momentum": {
+    "ours": 1,
+    "ref": 5
+   },
+   "ending_handoff": {
+    "ours": 1,
+    "ref": 4
+   }
+  },
+  "critical_ours": [
+   "broken_chapter_flow",
+   "weak_ending_handoff"
+  ],
+  "critical_ref": [],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "Specific images survive at sentence level, but conclusions routinely precede setups, headings arrive after their material, and the chapter runs backward into its own opening, destroying referents, momentum, and closure.",
+   "ref": "A concrete animal scene opens into a legible argument, while later examples, history, warnings, and an illusion mostly build in sequence; emphatic repetition and the closing bullet recap blunt the middle and final landing."
+  },
+  "generic_mechanism": "Sustained setup-and-payoff sequencing lets details accumulate; reversing those dependencies turns controlled sentences into disconnected fragments and converts the intended opening into an abrupt ending."
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-03",
+ "ours_chapters": [
+  3
+ ],
+ "ref_chapters": [
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "a3fb7cff504e9b7db480a18cb6d3e0d3e7aa2da0adbd38c86e0ec053ca4b9ce1",
+  "output_schema_sha256": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+  "thread_id": "019f53fd-32bd-7962-b0b7-bd801b1752cc",
+  "usage": {
+   "input_tokens": 22349,
+   "cached_input_tokens": 0,
+   "output_tokens": 1245,
+   "reasoning_output_tokens": 1034
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f53fd-32bd-7962-b0b7-bd801b1752cc\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":1,\\\"critical_failures\\\":{\\\"A\\\":[],\\\"B\\\":[]},\\\"generic_mechanism\\\":\\\"Exact textual duplication makes every craft mechanism\u2014development, pacing, imagery, repetition, and closure\u2014operate identically.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"Concrete domestic scenes and vivid analogies enliven a clear argument, but recurring assurances, categorical refrains, and an extended late discussion slow momentum before a functional bullet-summary ending.\\\",\\\"B\\\":\\\"Concrete domestic scenes and vivid analogies enliven a clear argument, but recurring assurances, categorical refrains, and an extended late discussion slow momentum before a functional bullet-summary ending.\\\"},\\\"product_parity_verdict\\\":\\\"tie\\\",\\\"scores\\\":{\\\"ending_handoff\\\":{\\\"A\\\":4,\\\"B\\\":4},\\\"flow_and_momentum\\\":{\\\"A\\\":5,\\\"B\\\":5},\\\"prose_control\\\":{\\\"A\\\":6,\\\"B\\\":6},\\\"rhythm_and_variety\\\":{\\\"A\\\":5,\\\"B\\\":5},\\\"specificity\\\":{\\\"A\\\":6,\\\"B\\\":6}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":22349,\"cached_input_tokens\":0,\"output_tokens\":1245,\"reasoning_output_tokens\":1034}}\n"
+ },
+ "raw": "{\"confidence\":1,\"critical_failures\":{\"A\":[],\"B\":[]},\"generic_mechanism\":\"Exact textual duplication makes every craft mechanism\u2014development, pacing, imagery, repetition, and closure\u2014operate identically.\",\"paraphrased_evidence\":{\"A\":\"Concrete domestic scenes and vivid analogies enliven a clear argument, but recurring assurances, categorical refrains, and an extended late discussion slow momentum before a functional bullet-summary ending.\",\"B\":\"Concrete domestic scenes and vivid analogies enliven a clear argument, but recurring assurances, categorical refrains, and an extended late discussion slow momentum before a functional bullet-summary ending.\"},\"product_parity_verdict\":\"tie\",\"scores\":{\"ending_handoff\":{\"A\":4,\"B\":4},\"flow_and_momentum\":{\"A\":5,\"B\":5},\"prose_control\":{\"A\":6,\"B\":6},\"rhythm_and_variety\":{\"A\":5,\"B\":5},\"specificity\":{\"A\":6,\"B\":6}}}",
+ "parsed": {
+  "confidence": 1,
+  "critical_failures": {
+   "A": [],
+   "B": []
+  },
+  "generic_mechanism": "Exact textual duplication makes every craft mechanism\u2014development, pacing, imagery, repetition, and closure\u2014operate identically.",
+  "paraphrased_evidence": {
+   "A": "Concrete domestic scenes and vivid analogies enliven a clear argument, but recurring assurances, categorical refrains, and an extended late discussion slow momentum before a functional bullet-summary ending.",
+   "B": "Concrete domestic scenes and vivid analogies enliven a clear argument, but recurring assurances, categorical refrains, and an extended late discussion slow momentum before a functional bullet-summary ending."
+  },
+  "product_parity_verdict": "tie",
+  "scores": {
+   "ending_handoff": {
+    "A": 4,
+    "B": 4
+   },
+   "flow_and_momentum": {
+    "A": 5,
+    "B": 5
+   },
+   "prose_control": {
+    "A": 6,
+    "B": 6
+   },
+   "rhythm_and_variety": {
+    "A": 5,
+    "B": 5
+   },
+   "specificity": {
+    "A": 6,
+    "B": 6
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 6,
+    "ref": 6
+   },
+   "rhythm_and_variety": {
+    "ours": 5,
+    "ref": 5
+   },
+   "specificity": {
+    "ours": 6,
+    "ref": 6
+   },
+   "flow_and_momentum": {
+    "ours": 5,
+    "ref": 5
+   },
+   "ending_handoff": {
+    "ours": 4,
+    "ref": 4
+   }
+  },
+  "critical_ours": [],
+  "critical_ref": [],
+  "product_parity_verdict": "tie",
+  "confidence": 1,
+  "paraphrased_evidence": {
+   "ours": "Concrete domestic scenes and vivid analogies enliven a clear argument, but recurring assurances, categorical refrains, and an extended late discussion slow momentum before a functional bullet-summary ending.",
+   "ref": "Concrete domestic scenes and vivid analogies enliven a clear argument, but recurring assurances, categorical refrains, and an extended late discussion slow momentum before a functional bullet-summary ending."
+  },
+  "generic_mechanism": "Exact textual duplication makes every craft mechanism\u2014development, pacing, imagery, repetition, and closure\u2014operate identically."
+ }
+}

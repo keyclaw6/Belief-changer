@@ -1,0 +1,135 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-03",
+ "ours_chapters": [
+  3
+ ],
+ "ref_chapters": [
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "1bab214f47a883dacd4668a7d4412acef7cc734a43329fae9ab6d8607e95d7cb",
+  "output_schema_sha256": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+  "thread_id": "019f540b-d1eb-7c21-80b8-5a4914a98f73",
+  "usage": {
+   "input_tokens": 19536,
+   "cached_input_tokens": 0,
+   "output_tokens": 1802,
+   "reasoning_output_tokens": 1552
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f540b-d1eb-7c21-80b8-5a4914a98f73\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.99,\\\"critical_failures\\\":{\\\"A\\\":[\\\"broken_chapter_flow\\\",\\\"weak_ending_handoff\\\"],\\\"B\\\":[]},\\\"generic_mechanism\\\":\\\"Sequence integrity creates the gap: B introduces claims, referents, and examples before developing or recalling them, while A reverses those dependencies and turns serviceable passages into disconnected assertions.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"It opens with end matter, repeatedly presents answers before their questions, strands pronouns and transitions, and finally stops at an incomplete contents preview; concrete examples survive, but they cannot accumulate into an argument.\\\",\\\"B\\\":\\\"The chapter advances from emotional consequences through conditioning, bodily analogies, a recurring cycle, and the limits of restriction; vivid domestic examples and varied rhetorical pacing sustain attention, though the extended late exhortation repeats its promise.\\\"},\\\"product_parity_verdict\\\":\\\"B\\\",\\\"scores\\\":{\\\"ending_handoff\\\":{\\\"A\\\":1,\\\"B\\\":6},\\\"flow_and_momentum\\\":{\\\"A\\\":1,\\\"B\\\":6},\\\"prose_control\\\":{\\\"A\\\":3,\\\"B\\\":6},\\\"rhythm_and_variety\\\":{\\\"A\\\":2,\\\"B\\\":6},\\\"specificity\\\":{\\\"A\\\":4,\\\"B\\\":6}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":19536,\"cached_input_tokens\":0,\"output_tokens\":1802,\"reasoning_output_tokens\":1552}}\n"
+ },
+ "raw": "{\"confidence\":0.99,\"critical_failures\":{\"A\":[\"broken_chapter_flow\",\"weak_ending_handoff\"],\"B\":[]},\"generic_mechanism\":\"Sequence integrity creates the gap: B introduces claims, referents, and examples before developing or recalling them, while A reverses those dependencies and turns serviceable passages into disconnected assertions.\",\"paraphrased_evidence\":{\"A\":\"It opens with end matter, repeatedly presents answers before their questions, strands pronouns and transitions, and finally stops at an incomplete contents preview; concrete examples survive, but they cannot accumulate into an argument.\",\"B\":\"The chapter advances from emotional consequences through conditioning, bodily analogies, a recurring cycle, and the limits of restriction; vivid domestic examples and varied rhetorical pacing sustain attention, though the extended late exhortation repeats its promise.\"},\"product_parity_verdict\":\"B\",\"scores\":{\"ending_handoff\":{\"A\":1,\"B\":6},\"flow_and_momentum\":{\"A\":1,\"B\":6},\"prose_control\":{\"A\":3,\"B\":6},\"rhythm_and_variety\":{\"A\":2,\"B\":6},\"specificity\":{\"A\":4,\"B\":6}}}",
+ "parsed": {
+  "confidence": 0.99,
+  "critical_failures": {
+   "A": [
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ],
+   "B": []
+  },
+  "generic_mechanism": "Sequence integrity creates the gap: B introduces claims, referents, and examples before developing or recalling them, while A reverses those dependencies and turns serviceable passages into disconnected assertions.",
+  "paraphrased_evidence": {
+   "A": "It opens with end matter, repeatedly presents answers before their questions, strands pronouns and transitions, and finally stops at an incomplete contents preview; concrete examples survive, but they cannot accumulate into an argument.",
+   "B": "The chapter advances from emotional consequences through conditioning, bodily analogies, a recurring cycle, and the limits of restriction; vivid domestic examples and varied rhetorical pacing sustain attention, though the extended late exhortation repeats its promise."
+  },
+  "product_parity_verdict": "B",
+  "scores": {
+   "ending_handoff": {
+    "A": 1,
+    "B": 6
+   },
+   "flow_and_momentum": {
+    "A": 1,
+    "B": 6
+   },
+   "prose_control": {
+    "A": 3,
+    "B": 6
+   },
+   "rhythm_and_variety": {
+    "A": 2,
+    "B": 6
+   },
+   "specificity": {
+    "A": 4,
+    "B": 6
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 3,
+    "ref": 6
+   },
+   "rhythm_and_variety": {
+    "ours": 2,
+    "ref": 6
+   },
+   "specificity": {
+    "ours": 4,
+    "ref": 6
+   },
+   "flow_and_momentum": {
+    "ours": 1,
+    "ref": 6
+   },
+   "ending_handoff": {
+    "ours": 1,
+    "ref": 6
+   }
+  },
+  "critical_ours": [
+   "broken_chapter_flow",
+   "weak_ending_handoff"
+  ],
+  "critical_ref": [],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "It opens with end matter, repeatedly presents answers before their questions, strands pronouns and transitions, and finally stops at an incomplete contents preview; concrete examples survive, but they cannot accumulate into an argument.",
+   "ref": "The chapter advances from emotional consequences through conditioning, bodily analogies, a recurring cycle, and the limits of restriction; vivid domestic examples and varied rhetorical pacing sustain attention, though the extended late exhortation repeats its promise."
+  },
+  "generic_mechanism": "Sequence integrity creates the gap: B introduces claims, referents, and examples before developing or recalling them, while A reverses those dependencies and turns serviceable passages into disconnected assertions."
+ }
+}

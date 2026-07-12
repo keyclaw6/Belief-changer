@@ -1,0 +1,135 @@
+{
+ "protocol": "stage-a-v2.3",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-03",
+ "ours_chapters": [
+  3
+ ],
+ "ref_chapters": [
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "c9bd76b9998b4deb41010ebd6c8831d7d559aa54b24281f346f69de6d55d9ad4",
+  "output_schema_sha256": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+  "thread_id": "019f540c-6595-70a1-bda2-fb98abd17b97",
+  "usage": {
+   "input_tokens": 19538,
+   "cached_input_tokens": 12032,
+   "output_tokens": 1418,
+   "reasoning_output_tokens": 1160
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f540c-6595-70a1-bda2-fb98abd17b97\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.99,\\\"critical_failures\\\":{\\\"A\\\":[],\\\"B\\\":[\\\"broken_chapter_flow\\\",\\\"weak_ending_handoff\\\"]},\\\"generic_mechanism\\\":\\\"The largest gap is sequence integrity: one version develops claims through setup, illustration, consequence, and handoff, while the other rearranges those units so local clarity cannot accumulate into chapter-level meaning.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"A builds a coherent argument through domestic scenes, conditioning examples, an addiction cycle, and the failure of restriction, though repeated assurances and an extended late argument flatten the pace; the final bullet recap slightly weakens the transition.\\\",\\\"B\\\":\\\"B preserves concrete details and locally readable sentences, but scrambles premises, examples, headings, and callbacks; questions precede their setups, transitions lose their referents, and the text ends by arriving at its own opening apparatus.\\\"},\\\"product_parity_verdict\\\":\\\"A\\\",\\\"scores\\\":{\\\"ending_handoff\\\":{\\\"A\\\":5,\\\"B\\\":1},\\\"flow_and_momentum\\\":{\\\"A\\\":6,\\\"B\\\":1},\\\"prose_control\\\":{\\\"A\\\":6,\\\"B\\\":3},\\\"rhythm_and_variety\\\":{\\\"A\\\":5,\\\"B\\\":2},\\\"specificity\\\":{\\\"A\\\":6,\\\"B\\\":4}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":19538,\"cached_input_tokens\":12032,\"output_tokens\":1418,\"reasoning_output_tokens\":1160}}\n"
+ },
+ "raw": "{\"confidence\":0.99,\"critical_failures\":{\"A\":[],\"B\":[\"broken_chapter_flow\",\"weak_ending_handoff\"]},\"generic_mechanism\":\"The largest gap is sequence integrity: one version develops claims through setup, illustration, consequence, and handoff, while the other rearranges those units so local clarity cannot accumulate into chapter-level meaning.\",\"paraphrased_evidence\":{\"A\":\"A builds a coherent argument through domestic scenes, conditioning examples, an addiction cycle, and the failure of restriction, though repeated assurances and an extended late argument flatten the pace; the final bullet recap slightly weakens the transition.\",\"B\":\"B preserves concrete details and locally readable sentences, but scrambles premises, examples, headings, and callbacks; questions precede their setups, transitions lose their referents, and the text ends by arriving at its own opening apparatus.\"},\"product_parity_verdict\":\"A\",\"scores\":{\"ending_handoff\":{\"A\":5,\"B\":1},\"flow_and_momentum\":{\"A\":6,\"B\":1},\"prose_control\":{\"A\":6,\"B\":3},\"rhythm_and_variety\":{\"A\":5,\"B\":2},\"specificity\":{\"A\":6,\"B\":4}}}",
+ "parsed": {
+  "confidence": 0.99,
+  "critical_failures": {
+   "A": [],
+   "B": [
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ]
+  },
+  "generic_mechanism": "The largest gap is sequence integrity: one version develops claims through setup, illustration, consequence, and handoff, while the other rearranges those units so local clarity cannot accumulate into chapter-level meaning.",
+  "paraphrased_evidence": {
+   "A": "A builds a coherent argument through domestic scenes, conditioning examples, an addiction cycle, and the failure of restriction, though repeated assurances and an extended late argument flatten the pace; the final bullet recap slightly weakens the transition.",
+   "B": "B preserves concrete details and locally readable sentences, but scrambles premises, examples, headings, and callbacks; questions precede their setups, transitions lose their referents, and the text ends by arriving at its own opening apparatus."
+  },
+  "product_parity_verdict": "A",
+  "scores": {
+   "ending_handoff": {
+    "A": 5,
+    "B": 1
+   },
+   "flow_and_momentum": {
+    "A": 6,
+    "B": 1
+   },
+   "prose_control": {
+    "A": 6,
+    "B": 3
+   },
+   "rhythm_and_variety": {
+    "A": 5,
+    "B": 2
+   },
+   "specificity": {
+    "A": 6,
+    "B": 4
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 3,
+    "ref": 6
+   },
+   "rhythm_and_variety": {
+    "ours": 2,
+    "ref": 5
+   },
+   "specificity": {
+    "ours": 4,
+    "ref": 6
+   },
+   "flow_and_momentum": {
+    "ours": 1,
+    "ref": 6
+   },
+   "ending_handoff": {
+    "ours": 1,
+    "ref": 5
+   }
+  },
+  "critical_ours": [
+   "broken_chapter_flow",
+   "weak_ending_handoff"
+  ],
+  "critical_ref": [],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "B preserves concrete details and locally readable sentences, but scrambles premises, examples, headings, and callbacks; questions precede their setups, transitions lose their referents, and the text ends by arriving at its own opening apparatus.",
+   "ref": "A builds a coherent argument through domestic scenes, conditioning examples, an addiction cycle, and the failure of restriction, though repeated assurances and an extended late argument flatten the pace; the final bullet recap slightly weakens the transition."
+  },
+  "generic_mechanism": "The largest gap is sequence integrity: one version develops claims through setup, illustration, consequence, and handoff, while the other rearranges those units so local clarity cannot accumulate into chapter-level meaning."
+ }
+}

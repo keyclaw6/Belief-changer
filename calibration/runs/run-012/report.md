@@ -1,6 +1,6 @@
 # Run report — run-012
 
-**Stage:** A **Scope:** source-grounded commissions plus frozen Chapters 1-3 production **Causal verdict:** REFUTED — material invention in 3/3 grounded first drafts **Product verdict:** UNJUDGED — v2.2 identical passed but degraded-reference failed closed before product judging
+**Stage:** A **Scope:** source-grounded commissions plus frozen Chapters 1-3 production **Causal verdict:** REFUTED — material invention in 3/3 grounded first drafts **Product verdict:** UNJUDGED — both frozen v2.3 controls passed; target panel is next
 
 ## What will run
 
@@ -177,6 +177,20 @@ Synthetic validation covers both dominance directions, tie and opposite-verdict 
 
 No model inference, native judge, OpenRouter, or other provider call occurred during implementation, review, testing, or freeze. H-049 remains **REFUTED**, the product remains **UNJUDGED**, and no H-050 exists. The next artifact is a fresh v2.3 identical control; degraded-reference runs only if identical passes, and the frozen product panel runs immediately only if both controls pass, with no intervening instrument work.
 
+### V2.3 fresh controls — both passed
+
+Both controls ran exactly once from scratch under execution HEAD `a6e2ae3a0727e6a8a5428cd5bc1b61183013866d` and the frozen canonical configuration SHA-256 `3131a73a35c7e1624d46a1b36ffe9317716fc6bf05d34003569ea7afc62a0706`. Each used the native Codex subscription route pinned to `gpt-5.6-sol` at `ultra`; the environment allowlist inherited no provider API key. Across the two controls there were 40 strict-valid first responses, 40 unique fresh thread IDs, ten role-target-order strata per control with exactly two replicas each, zero retries, zero repairs, zero extraction or tolerant parsing, and zero subprocess failures. Every stored ours/reference mapping was independently rebuilt from strict A/B JSON plus presentation order, all within-stratum input and schema hashes matched, and every decision-relevant aggregate and control verdict remained unchanged across all `2^10` within-order replica-label permutations for each control.
+
+The identical control **PASSED**. All 20 raw verdicts were ties; every raw A/B score pair was equal; every raw A/B critical-label set was equal; all five pooled target observations were complete; and the prompt-control hard checks passed. The summary is `judgments/controls-v2.3/identical/judge-summary.json`, SHA-256 `c6a4f5baac6bc56822297118123924398b22391ffca0d7d3b6fa8f1d82748d03`. Usage was 595,944 input tokens, including 84,224 cached, plus 32,646 output tokens and 27,988 reasoning-output tokens.
+
+The degraded-reference control **PASSED**. All 20 raw verdicts preferred the intact reference. Every raw response put its role core label on the degraded candidate only: `incoherent_block_arc` for efficacy, `broken_chapter_flow` for craft, and `broken_continuity` for integrity. All 32 preregistered raw transform-dimension comparisons favored intact, and there were zero verdict/rubric coherence contradictions. The summary is `judgments/controls-v2.3/degraded-reference/judge-summary.json`, SHA-256 `845174c2b307a13057c20ae16a87aee20de99f975a7236c38115a0c07a06b21d`. Usage was 554,672 input tokens, including 195,328 cached, plus 42,987 output tokens and 37,900 reasoning-output tokens.
+
+One preserved runtime diagnostic did not meet a preregistered falsifier: the final degraded call returned code 0, one complete strict-valid response, one fresh top-level thread, and a complete usage event, while stderr retained two failed `collab spawn` router attempts. No child thread was created, the frozen command still included `--disable multi_agent`, and there was no retry, repair, substitution, or subprocess failure. The frozen matrix and prompt-control evaluators therefore passed it; this anomaly is recorded rather than converted post hoc into a new gate.
+
+Combined descriptive usage was 1,150,616 input tokens, including 279,552 cached, plus 75,633 output tokens and 65,888 reasoning-output tokens. These passes validate exact identical-candidate symmetry, gross-transform sensitivity, strict-output transport, and pooled aggregation invariance on the preregistered synthetic control family only. They do not establish fine parity, source fidelity, cross-family replication, or a Stage-A product pass.
+
+The next artifact is the frozen run-012 target panel under the same configuration, using both control summaries as validated inputs. No prompt, schema, label, material, degradation, aggregation, threshold, factory asset, chapter, or hypothesis may intervene. H-049 remains **REFUTED**, product quality remains **UNJUDGED**, and no H-050 exists.
+
 ## Judge-panel preflight — historical misrouting, now resolved
 
 Before the founder's routing correction, the operator preflighted a proposed OpenRouter two-family configuration: `google/gemini-3.1-pro-preview` at `high` and `openai/gpt-5.6-sol` at `max`. One v2 invocation would have been 20 raw judgments; both controls and the product panel would have required 60 OpenRouter calls. This configuration is preserved only as historical preflight evidence and was never used for inference.
@@ -187,7 +201,7 @@ The operator stopped before inference rather than create a partial or unbalanced
 
 The founder has now made the route explicit: OpenRouter may be used only for Opus 4.6 chapter-writing calls and DeepSeek research calls. It must never carry GPT/OpenAI, Gemini, Grok, planning, reviewing, auditing, or judging traffic. The approximately `$0.979` key allowance is therefore not a panel blocker and remains untouched for permitted Opus use.
 
-The canonical judge route is two same-model replica labels executed as fresh native Codex subagents pinned to `gpt-5.6-sol` at `ultra`. The labels are trace metadata under frozen v2.3. V2, v2.1, and v2.2 produced the preserved results above. There is no external-access blocker; v2.3 is implemented, reviewed, tested, and frozen above, and awaits its fresh identical control.
+The canonical judge route is two same-model replica labels executed as fresh native Codex subagents pinned to `gpt-5.6-sol` at `ultra`. The labels are trace metadata under frozen v2.3. V2, v2.1, and v2.2 produced the preserved results above. There is no external-access blocker; both fresh v2.3 controls passed, and the frozen target panel is next.
 
 ## Judge-instrument baseline
 
@@ -195,4 +209,4 @@ Before any run-012 target-panel result, Stage-A judging changed from the legacy 
 
 This change answers instrument failures, not H-049. V2.3 begins a prospective non-comparable baseline and no resulting score is numerically comparable with v2.2, v2.1, v2, or legacy runs. H-049 was decided only by its frozen causal rule and source-grounded specialist review; the panel cannot reverse or support that verdict. Explicit `--prompt` mode preserves the old runner solely for historical reproduction.
 
-The controls and panel have explicit limits. The degraded-reference control is a gross incoherence test, so a future v2.3 pass would demonstrate sensitivity to severe damage rather than fine parity. The blind integrity role sees no source packets and therefore cannot verify source fidelity; the completed grounded audits remain authoritative for that question. The two Sol calls per order are same-model replications, not cross-family evidence. Finally, because objective repetition and all three length bands already failed, even a future favorable panel cannot turn run-012 into a Stage-A pass; it can supply only the still-missing blind product diagnosis.
+The controls and panel have explicit limits. The degraded-reference pass demonstrates sensitivity to severe damage rather than fine parity. The blind integrity role sees no source packets and therefore cannot verify source fidelity; the completed grounded audits remain authoritative for that question. The two Sol calls per order are same-model replications, not cross-family evidence. Finally, because objective repetition and all three length bands already failed, even a future favorable panel cannot turn run-012 into a Stage-A pass; it can supply only the still-missing blind product diagnosis.

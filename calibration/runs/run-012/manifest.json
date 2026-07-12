@@ -1031,6 +1031,98 @@
     "product_verdict": "UNJUDGED",
     "causal_boundary": "H-049 remains REFUTED; the implementation freeze is measurement infrastructure only and creates no H-050."
   },
+  "judge_instrument_v2_3_controls": {
+    "date": "2026-07-12",
+    "status": "BOTH FRESH CONTROLS PASS UNDER THE FROZEN V2.3 CONFIGURATION",
+    "execution_head_before_inference": "a6e2ae3a0727e6a8a5428cd5bc1b61183013866d",
+    "configuration": {
+      "protocol_version": "stage-a-v2.3-native-sol-ultra-1",
+      "canonical_sha256": "3131a73a35c7e1624d46a1b36ffe9317716fc6bf05d34003569ea7afc62a0706",
+      "transport": "native-codex-subscription",
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "ultra",
+      "replica_identities": [
+        "sol-ultra-r1",
+        "sol-ultra-r2"
+      ],
+      "provider_api_credentials_inherited": false
+    },
+    "identical": {
+      "directory": "calibration/runs/run-012/judgments/controls-v2.3/identical",
+      "summary": "calibration/runs/run-012/judgments/controls-v2.3/identical/judge-summary.json",
+      "summary_sha256": "c6a4f5baac6bc56822297118123924398b22391ffca0d7d3b6fa8f1d82748d03",
+      "runner_exit": 0,
+      "verdict": "PASS",
+      "raw_judgments": 20,
+      "strict_valid_first_responses": 20,
+      "invalid_judgments": 0,
+      "collapsed_target_observations": 5,
+      "unique_fresh_thread_ids": 20,
+      "raw_ties": 20,
+      "raw_a_b_score_equality": "20/20 calls across every role dimension",
+      "raw_a_b_critical_set_equality": "20/20 calls",
+      "matrix_transport_valid": true,
+      "semantic_expectation_met": true,
+      "prompt_control_passed": true,
+      "replica_label_permutations_checked": 1024,
+      "permutation_invariance": "PASS",
+      "retries_repairs_extraction_tolerant_parse_process_failures": "0/0/0/0/0",
+      "usage": {
+        "input_tokens": 595944,
+        "cached_input_tokens": 84224,
+        "output_tokens": 32646,
+        "reasoning_output_tokens": 27988
+      }
+    },
+    "degraded_reference": {
+      "directory": "calibration/runs/run-012/judgments/controls-v2.3/degraded-reference",
+      "summary": "calibration/runs/run-012/judgments/controls-v2.3/degraded-reference/judge-summary.json",
+      "summary_sha256": "845174c2b307a13057c20ae16a87aee20de99f975a7236c38115a0c07a06b21d",
+      "runner_exit": 0,
+      "verdict": "PASS",
+      "raw_judgments": 20,
+      "strict_valid_first_responses": 20,
+      "invalid_judgments": 0,
+      "collapsed_target_observations": 5,
+      "unique_fresh_thread_ids": 20,
+      "raw_intact_reference_preferences": 20,
+      "raw_degraded_only_role_core_labels": "20/20 calls",
+      "raw_transform_dimension_checks_favoring_intact": "32/32",
+      "verdict_rubric_coherence_contradictions": 0,
+      "matrix_transport_valid": true,
+      "semantic_expectation_met": true,
+      "prompt_control_passed": true,
+      "replica_label_permutations_checked": 1024,
+      "permutation_invariance": "PASS",
+      "retries_repairs_extraction_tolerant_parse_process_failures": "0/0/0/0/0",
+      "usage": {
+        "input_tokens": 554672,
+        "cached_input_tokens": 195328,
+        "output_tokens": 42987,
+        "reasoning_output_tokens": 37900
+      },
+      "preserved_runtime_diagnostic": "The final call returned code 0 with one complete strict-valid response, one fresh top-level thread, and a complete usage event; stderr retained two failed collab-spawn router attempts. No child thread was created, the frozen command retained --disable multi_agent, and no retry, repair, substitution, or subprocess failure occurred. This was not a preregistered falsifier and did not alter the frozen PASS."
+    },
+    "combined": {
+      "raw_judgments": 40,
+      "strict_valid_first_responses": 40,
+      "unique_fresh_thread_ids": 40,
+      "process_failures": 0,
+      "retries": 0,
+      "repairs": 0,
+      "extraction_or_tolerant_parse": 0,
+      "usage": {
+        "input_tokens": 1150616,
+        "cached_input_tokens": 279552,
+        "output_tokens": 75633,
+        "reasoning_output_tokens": 65888
+      }
+    },
+    "claim_boundary": "These passes validate strict-output reliability, exact identical-candidate symmetry, gross-transform sensitivity, and pooled aggregation invariance on this synthetic family only; they do not establish fine parity, source fidelity, cross-family replication, or a Stage-A product pass.",
+    "next_artifact": "Run the frozen run-012 target panel immediately under the same configuration, consuming both validated control summaries; no prompt, schema, label, material, degradation, aggregation, threshold, prose, factory-asset, or hypothesis work may intervene.",
+    "product_verdict": "UNJUDGED",
+    "causal_boundary": "H-049 remains REFUTED; the control result neither changes that verdict nor creates H-050."
+  },
   "held_constant": [
     "accepted research corpus, framing, canonical plan, evidence assignments, chapter jobs, and source permissions",
     "complete style guide, chapter-writer prompt, chapter-reviewer prompt, objective thresholds, and H-049 causal rules; the judge reset is separately recorded as a new non-comparable measurement baseline",
