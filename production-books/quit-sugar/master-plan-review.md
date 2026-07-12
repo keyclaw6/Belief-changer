@@ -1,29 +1,22 @@
 # Master Plan Review — Quit Sugar
 
 **Allowed reviewer pool:** Gemini 3.1 Pro | GPT-5.6 Sol | Grok 4.5
-**Exact runtime model ID:** gpt-5.6-sol
-**Reasoning configuration:** ultra (native Codex 0.144.1)
-**Review round:** 3 of 3
-**Candidate hash / artifact:** e3fd7cd0ed90e2c6ef29ccabf219f6a10462b31f2ee75a6d9e1b42abbdf913b5 · `calibration/runs/run-002/planning/master-plan-r3.md`
 
-## Verdict
+**Exact runtime model:** `gpt-5.6-sol` through native Codex, never OpenRouter
 
-fit to write from
+**Reasoning:** `ultra`
 
-## Material blocking defects
+**Accepted candidate:** R2, SHA-256 `2ca9505152ee0e4d240bebbebb6979672be42bfc7d2e463dfa115a4a1ab1e869`
 
-No material blocking defects found.
+**Candidate artifact:** `calibration/runs/run-013/planning/master-plan-r2.md`
 
-## Non-blocking observations
+## Review trail
 
-None.
+- R1 — `needs changes first`: CH-07 catalogued jobs assigned to sugar but did not complete the owned assigned-job versus established-benefit correction.
+- R2 — no material blocking defects.
 
-## Resolution
+Review artifact: `calibration/runs/run-013/planning/master-plan-r2-review.md`
 
-- R1 review found contradictory M-06 routing and no concrete C-21 hand-over device.
-- R2 aligned M-06 and added a device, but review found that I-01 conflicted with the later chosen threshold and that the device borrowed the style guide's key image. Operator diff inspection also found an evidence regression from “sucrose-versus-sucralose” to “sucrose-versus-sucrose.”
-- R3 time-bounded I-01, replaced the borrowed key with the original empty-chair/table hand-over, restored the evidence term, and received the final fresh-context verdict below.
-
-No material blocking defects found.
+[Raw review JSONL](../../calibration/runs/run-013/planning/master-plan-r2-review.raw.jsonl)
 
 fit to write from

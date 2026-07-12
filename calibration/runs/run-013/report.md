@@ -1,10 +1,10 @@
 # Run report — run-013
 
-**Stage:** A **Scope:** composition-feasible argument-bearing chapters and opening movement, regenerated commissions, and Chapters 1–3 **Verdict:** PLAN R2 ACCEPTED / PENDING PROMOTION
+**Stage:** A **Scope:** composition-feasible argument-bearing chapters and opening movement, regenerated commissions, and Chapters 1–3 **Verdict:** PLAN ACCEPTED / PROMOTION COMMIT PENDING
 
 ## What ran
 
-The unchanged planner loop produced complete R2 from the exact frozen base inputs plus R1 and its review. R2 is frozen at commit `83d462cb406d8803a8abadb9e03770636bad1205`. One independent native Sol-ultra reviewer found no material blocking defects and returned `fit to write from`. Mechanical promotion is pending; no commission, chapter, objective evaluation, grounded audit, or product-panel inference exists.
+The accepted R2 bytes were mechanically copied to `production-books/quit-sugar/master-plan.md`; source and destination both hash to `2ca9505152ee0e4d240bebbebb6979672be42bfc7d2e463dfa115a4a1ab1e869`. The canonical review now records the R1 CH-07 rejection and R2 acceptance with its raw review link. The promotion commit is pending. No commission, chapter, objective evaluation, grounded audit, or product-panel inference exists.
 
 ## Objective results (`metrics.json`)
 
@@ -16,11 +16,11 @@ Not run. The frozen v2.3 native Sol-ultra instrument, blindness, controls, aggre
 
 ## Gate verdict
 
-The contract and plan gates **PASS**. The R2 review artifact is SHA-256 `346c172c...`, raw JSONL `e4330f87...`, and empty stderr `e3b0c442...`. Fresh native Sol-ultra thread `019f548b-d26a-75f3-baa3-f4a70566a634` returned 0 with four events, no tools/subagents/retry, and usage 66,973 input, 8,960 cached, 8,819 output, and 8,804 reasoning tokens. Acceptance does not promote the plan automatically and does not establish H-050 causally; product gates remain unassessed.
+The contract and plan gates **PASS**. R2 is accepted and promoted byte-for-byte, but the working-tree promotion is not frozen until committed. Plan acceptance does not establish H-050 causally; commission feasibility and grounded-clean efficacy evidence remain outstanding, and product gates remain unassessed.
 
 ## Diagnosis (ranked, each gap mapped to its owning generic asset)
 
-1. R1's CH-07 catalog-and-defer blocker received a targeted R2 correction, and independent review found no remaining material plan blocker — owning artifact: accepted R2, pending mechanical promotion.
+1. R1's CH-07 catalog-and-defer blocker received a targeted R2 correction, and independent review found no remaining material plan blocker — owning artifact: accepted and byte-exactly promoted R2.
 2. Argument-bearing chapter jobs are not consistently composable from owned evidence and logic within budget; definition, safety, recap, and handoff must support movement without inventing another thesis — owning asset: the same shared contract.
 3. Opus may independently manufacture unsupported force — known rival requiring 3/3 grounded-clean drafts before efficacy can identify planning causally.
 
@@ -30,11 +30,11 @@ The contract and plan gates **PASS**. The R2 review artifact is SHA-256 `346c172
 - **Result / deciding evidence:** R2 is independently accepted as fit to write from with no material defects. This satisfies the plan half of the pre-prose feasibility boundary but is not H-050 causal support; commission acceptance and grounded-clean product evidence remain outstanding.
 - **Causal verdict:** TESTING. No support, refutation, or inconclusive outcome may be inferred from preregistration or reviewer compliance alone.
 - **Rival explanations / signal risk:** blind judges can reward invented force; same-model replica deltas are noisy; stochastic planner resampling, Opus's prior, and commission realization can mimic or suppress movement. Any grounded defect makes H-050 inconclusive rather than negative.
-- **Next discriminating test:** mechanically promote exact frozen R2 together with its canonical review record, then generate and independently audit the fresh source-grounded commissions before prose.
+- **Next discriminating test:** after the promotion commit freezes the canonical plan and review, generate all three source-grounded commissions from that exact plan and independently audit the set before prose.
 
 ## Amendments proposed for next run
 
-None. The accepted R2 bytes and review record are frozen; promotion must not rewrite either artifact.
+None. Promotion is mechanical and introduces no factory lever; commit the exact promoted bytes before commissioning.
 
 ## Escalations
 

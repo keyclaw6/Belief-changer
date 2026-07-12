@@ -2,7 +2,7 @@
   "run": "run-013",
   "date": "2026-07-12",
   "stage": "A",
-  "status": "PLAN_R2_ACCEPTED_PENDING_PROMOTION",
+  "status": "PLAN_ACCEPTED_PENDING_PROMOTION_COMMIT",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "composition-feasible argument-bearing chapters and opening movement plus regenerated source-grounded commissions and a frozen Chapters 1-3 first-draft batch",
@@ -13,7 +13,7 @@
   "model_output_allowance_policy": "quality only: no economy, speed, cost, reasoning-token, or harness output optimization; permitted calls receive the greatest authorized allowance and continue when required",
   "baseline_boundary": "cf5c825 — run-012 frozen with H-049 REFUTED and a valid v2.3 product-panel FAIL; no run-012 prose promoted",
   "last_accepted_product": "production-books/quit-sugar/chapters/chapter-01.md from run-002 and chapter-02.md from run-004",
-  "preregistration_state": "master-plan R2 is frozen at 83d462cb406d8803a8abadb9e03770636bad1205 and independently accepted as fit to write from; mechanical promotion is pending and no run-013 commission, chapter, metric, or product-panel inference exists",
+  "preregistration_state": "accepted master-plan R2 has been promoted byte-for-byte to the canonical production path with its review record; the promotion commit is pending and no run-013 commission, chapter, metric, or product-panel inference exists",
   "observed_failure": "setup-only and deferred opening architecture plus overloaded later chapter jobs leaves the writer choosing between safe catalog-and-defer prose and forceful invented connective tissue",
   "single_generic_lever": "one shared intelligent planning acceptance contract requiring every argument-bearing chapter, and the opening movement collectively, to be safely composable from owned evidence and logic into one completed value-bearing belief correction within budget",
   "lever_boundary": {
@@ -281,6 +281,19 @@
       "reasoning_output_tokens": 8804
     }
   },
+  "plan_promotion": {
+    "status": "BYTE_EXACT_PROMOTION_COMPLETE_COMMIT_PENDING",
+    "source": "calibration/runs/run-013/planning/master-plan-r2.md",
+    "source_sha256": "2ca9505152ee0e4d240bebbebb6979672be42bfc7d2e463dfa115a4a1ab1e869",
+    "destination": "production-books/quit-sugar/master-plan.md",
+    "destination_sha256": "2ca9505152ee0e4d240bebbebb6979672be42bfc7d2e463dfa115a4a1ab1e869",
+    "byte_exact": true,
+    "canonical_review": "production-books/quit-sugar/master-plan-review.md",
+    "accepted_review_artifact": "calibration/runs/run-013/planning/master-plan-r2-review.md",
+    "accepted_raw_review": "calibration/runs/run-013/planning/master-plan-r2-review.raw.jsonl",
+    "verdict": "fit to write from",
+    "material_blocking_defects": 0
+  },
   "held_fixed": [
     "accepted quit-sugar brief",
     "accepted research corpus and syntheses",
@@ -381,7 +394,7 @@
     "prompts/research-agent.md": "history commit 5bff930; accepted research not rerun"
   },
   "stages_rerun_because": "H-050 changes chapter architecture; causal attribution requires fresh plan, commissions, and complete Chapters 1-3 rather than patching any run-012 artifact",
-  "next_artifact": "mechanical promotion of exact frozen R2 plus its canonical review record, then source-grounded commissions",
+  "next_artifact": "generate and freeze all three source-grounded commissions for C-01 through C-03 from the exact accepted plan before prose",
   "external_blocker": "none",
   "notes": "Run-012 remains immutable evidence. Product roles stay blind to the reference and judge output. OpenRouter remains restricted to Opus chapter writing and DeepSeek research."
 }

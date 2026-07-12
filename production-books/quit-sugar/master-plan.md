@@ -2,923 +2,846 @@
 
 ## 1. Book core
 
-### BC-01 — Target behavior
+### Authoritative decisions
 
-The book targets the compulsive decision loop around **BAD SUGAR**: anticipating it, assigning it jobs, negotiating access, consuming it as a reward or rescue, and resetting afterward.
+- **CORE-01 — Target behavior:** Compulsive consumption of refined or added sugar and junk-carb products inside the operational category `BAD SUGAR`: the anticipation, bargaining, consumption, lapse, and reset loop—not eating, carbohydrates, or nutrition generally.
 
-The destination is no planned BAD SUGAR doses and no continuing sugar debate. The target is not molecular purity, universal carbohydrate restriction, weight loss, diabetes treatment, or dietary perfection.
+- **CORE-02 — Reader:** One general adult who has tried diets, moderation rules, and willpower and now wants the sugar decision to become irrelevant. The six personas below are functional states of this reader, not separate audiences.
 
-### BC-02 — One reader, six functional personas
+- **CORE-03 — Load-bearing false belief:** **BAD SUGAR gives me a special pleasure, reward, comfort, or quick lift that ordinary food and ordinary life cannot provide, so removing it would leave me deprived.**
 
-The reader is one adult who is tired of diets, moderation rules, private bargaining, lapses, and repeated restarts. These personas are facets of that reader, not separate audiences.
+- **CORE-04 — Through-line:** Rehearsing the sweet-reward proposition can teach the reader to anticipate BAD SUGAR before effort, distress, meals, or celebrations feel complete. A sugar hit may end that episode of anticipation and receive credit for a special pleasure or rescue it did not uniquely provide. Define the target precisely, expose the deprivation method, distinguish jobs assigned to sugar from benefits sugar has actually established, return taste and every larger pleasure to their actual sources, and the justification for planned doses—and therefore the daily decision—can disappear.
 
-| ID | Functional persona | Load-bearing concern | Reader-voice IDs | Source-persona basis |
-|---|---|---|---|---|
-| R-01 | Sweet-Reward Reader | Sweet taste, dessert, drinks, or a quick lift seem to provide a pleasure life would lose without them. | RV-01, RV-02, RV-07 | P-01 |
-| R-02 | Restriction Veteran | Denial is expected to intensify desire, and one lapse is expected to destroy the attempt. | RV-03, RV-04, RV-10 | P-02 |
-| R-03 | Context Carrier | Stress, sadness, boredom, social expectation, convenience, and access make sugar seem like the only realistic choice. | RV-05, RV-06 | P-03 |
-| R-04 | Informed Household Translator | Labels and product knowledge may help, but can become purity anxiety or household moralizing. | RV-08, RV-13 | P-04 and P-05 |
-| R-05 | Managed-Truce Maintainer | Rules, boundaries, and resets have brought genuine relief, so perpetual management may seem like the best available outcome. | RV-09 | P-06 |
-| R-06 | Decision-Tax Escapee | Previous abstinence preserved fantasy and bargaining; this reader wants irrelevance rather than prohibition. | RV-10, RV-11, RV-12 | P-07 |
+- **CORE-05 — Destination:** Autonomy-led practical total freedom inside the BAD SUGAR line: no planned doses, no molecular-purity project, no perpetual moderation dashboard, no food fear, and no identity built around quitting. Ordinary eating, pleasure, company, celebrations, and clinical care remain intact. Freedom begins with the reader’s chosen threshold, not after a streak.
 
-### BC-03 — Load-bearing false belief
+- **CORE-06 — Format:** Full-length belief-change book using the style guide’s full-length chapter anatomy. Twenty-two numbered chapters plus one evidence appendix. The narrative closes with the final instruction hand-over after the appendix.
 
-**BAD SUGAR gives me a special pleasure, reward, comfort, or quick lift that ordinary food and ordinary life cannot provide, so removing it would leave me deprived.**
+- **CORE-07 — Strongest pro-behavior scene:** `SA-14`, the restaurant meal in which the dessert menu is checked before the main course and the first sweet bite seems to complete the occasion. This is the book’s hardest case and receives its full treatment only in `CH-14`.
 
-The book challenges the claimed uniqueness, ownership, and necessity of the benefit. It does not deny that sweetness can taste pleasant or that sugar contains calories.
+- **END-01 — Saved ending reframe:** **The scaffolding comes down.** The BAD SUGAR definition, the Ordinary Eating Compass, the book, and the identity of “someone managing sugar” are temporary supports. The destination is not lifelong expert management; it is an ordinary life in which the sugar project no longer occupies the foreground. Debut only in `CH-21`; `CH-22` hands it into ordinary life without re-arguing it.
 
-### BC-04 — Through-line
+### Method invariants
 
-The reader has repeatedly assigned BAD SUGAR jobs: reward effort, rescue a mood, complete a meal, mark a celebration, supply quick energy, or make belonging easier. Rehearsal can make the option salient before it is consumed. Consumption may then end the current episode of anticipation and receive credit for far more than its brief taste.
+- **METHOD-01 — Escape:** Stopping is release from decision labour and misassigned credit, never surrender of a genuine pleasure.
+- **METHOD-02 — Dignity:** The reader was neither weak nor foolish. Past struggle indicts an unsuitable method, not character.
+- **METHOD-03 — Understanding:** Belief correction precedes behavior change. Willpower, fear, disgust, streaks, and resistance are not solutions.
+- **METHOD-04 — Autonomy:** The reader retains every legal and moral choice. The argument makes practical total freedom intelligible; it never commands submission.
+- **METHOD-05 — No inner adversary:** Externalize the sugar trap, learned script, deprivation method, and narrowly evidenced Demand Machine. Never create a creature, parasite, or independent voice inside the reader.
+- **METHOD-06 — Immediate freedom:** Once the reader chooses the threshold with the loss belief dissolved, freedom is present now.
+- **METHOD-07 — Evidence honesty:** Pleasant taste, calories, uncertainty, and bounded testimony remain visible. No source limit is traded for rhetorical certainty.
+- **METHOD-08 — Originality:** Do not invent an author escape story, dialogue, participant detail, medical outcome, mechanism, or efficacy claim. All analogies and prose must be original to this book.
 
-The book proceeds by returning every part of the experience to its proper source:
+## 2. Functional personas
 
-- Taste belongs to the reader’s sensory capacity.
-- Nourishment belongs to ordinary food.
-- Accomplishment belongs to the effort and result.
-- Relief belongs to the pause, rest, care, or change of circumstances.
-- Celebration belongs to the people, history, generosity, and occasion.
-- Belonging belongs to attention and participation.
-- The end of sugar-focused anticipation does not prove that sugar supplied a unique rescue.
-
-Once BAD SUGAR loses the credit for an irreplaceable benefit, keeping it in the decision catalog has no compensating purpose. The reader can choose practical total freedom as relief, not sacrifice.
-
-This is a belief, attention, learning, and attribution model. It is not a universal pharmacological account.
-
-### BC-05 — Method locks
-
-The whole book must preserve these decisions:
-
-- Stopping is escape from a loaded decision loop, not surrender of a pleasure.
-- The reader is never shamed, diagnosed, moralized at, or ordered to stop.
-- Past difficulty is attributed to preserved deprivation beliefs and unsuitable methods, not weak character.
-- Willpower is not the solution. A continuing fight indicates that some expected benefit still needs examination.
-- Fear may clarify stakes but may not motivate the choice.
-- Agency remains intact. Choices made under mistaken payoff beliefs are still choices; correcting the beliefs reopens them.
-- Freedom begins with the reader-owned decision, not after a streak or recovery period.
-- Craving is never personified as an inner creature.
-- No single lapse, accident, or ingredient mistake contains a command to continue.
-- Pleasant taste, real emotion, ordinary hunger, and genuine social pleasure are never denied.
-- The reader is not given a replacement diet, trigger-avoidance lifestyle, or purity identity.
-- The prose remains original. Source quotations may appear only where routed through the evidence ledger.
-
-### BC-06 — Format
-
-A 21-chapter full-length belief-change book in five movements, followed by a claim-graded evidence appendix and a final unnumbered leaf carrying M-10.
-
-The book uses the full-length chapter anatomy from the style guide. Chapter cards supply semantic work only; writers create previews, thesis lines, section headings, landings, and summaries.
-
-Unsupported authority material is omitted. There is no evidence for an author-origin story, method success rate, clinical pedigree, or scale-of-success dossier. Chapter 1 builds trust through exact recognition of the reader’s predicament and an evidence-honest contract. The sole long-form desire-level account is reserved for C-16 and retains its limitation beside it.
-
-## 2. Redefinition, totality, and margin
-
-### DEF-01 — GOOD SUGAR
-
-A method label for sugars and starches found in ordinary nourishment, including whole fruit, vegetables, legumes, nuts, plain dairy, and ordinary meal staples such as oats, rice, potatoes, bread, and pasta.
-
-“Good” is not a moral or biochemical verdict. These foods are outside the target category.
-
-### DEF-02 — BAD SUGAR
-
-A method label with a categorical core and one behavior-resolved edge.
-
-**Categorical core:** any product conventionally consumed as a sugar-sweetened drink, confection, dessert, sweet baked good, or added-sugar sweet snack, including products sweetened with sugar, honey, or syrup.
-
-Core examples include soda, sugar-sweetened coffee or tea, sweets, biscuits, cakes, pastries, ice cream, dessert products, and prominently sweetened cereals or bars.
-
-Hunger, homemade status, care, celebration, convenience, or a natural, organic, dark, low-sugar, or healthier label cannot move a core item outside the category.
-
-**Gray savoury edge:** a genuinely ambiguous refined savoury snack enters BAD SUGAR only when it is functioning as a discretionary reward, rescue, graze, or automatic nibble rather than ordinary meal food.
-
-Behavioral-role inquiry applies only at this edge. It may bring an ambiguous savoury item inside the line; it may never exempt a core sweet item.
-
-Small incidental ingredients in an ordinary meal do not turn the meal into BAD SUGAR. The definition does not claim that every item inside it has identical physiology.
-
-### DEF-03 — Definitional decree
-
-Throughout the book, “sugar,” “a sugar hit,” and “quitting sugar” mean BAD SUGAR under DEF-02. They do not mean fruit, ordinary meals, every carbohydrate, or ingredient-level purity.
-
-### DEF-04 — Totality inside the line
-
-The destination is no planned BAD SUGAR doses. Moderation remains a legal, moral, and practical option, but recurring planned exceptions are not presented as desire-level freedom because they preserve the proposition that selected moments need a sugar upgrade.
-
-The reader retains the right to choose at all times. The book’s argument makes closure available; it does not seize authority.
-
-### DEF-05 — The Molecule Margin
-
-A trace ingredient, uncertain restaurant sauce, accidental bite, or genuine classification mistake is not a deliberate return and does not mean the reader has failed. The reader may notice it, learn from it if useful, and continue from the choice already made.
-
-The margin covers accidents and honest ambiguity. It does not rename a planned exception as an accident or require ingredient surveillance.
-
-### DEF-06 — Adjacent items
-
-Whole fruit and ordinary meal carbohydrates are protected from category creep.
-
-One hundred percent juice, dried fruit, non-nutritive sweeteners, alcohol, caffeine, and adjacent indulgences are not required quits and do not define success. A reader may examine them later if desired, but that inquiry may not expand this book’s target or install a consolation regime.
+| ID | Functional persona | Belief or pressure carried |
+|---|---|---|
+| **PER-01** | **Sweet-Reward Reader** | Taste, dessert, sweet drinks, reward, or a quick lift seem to supply a pleasure life would lose. |
+| **PER-02** | **Restriction Veteran** | Denial is expected to amplify wanting; a lapse is expected to invalidate the attempt. |
+| **PER-03** | **Context Carrier** | Stress, sadness, boredom, social expectations, convenience, time pressure, and access make sugar seem like the only realistic option. |
+| **PER-04** | **Informed Household Translator** | Labels and ingredient knowledge offer control but can grow into hidden-sugar anxiety, household moralizing, or false exemptions for “better” sweets. |
+| **PER-05** | **Managed-Truce Maintainer** | Rules, boundaries, and resets have produced real relief, making permanent management appear to be the best available endpoint. |
+| **PER-06** | **Decision-Tax Escapee** | Previous abstinence preserved bargaining, dreams, or deferred rewards; this reader wants the question to close rather than another perfect streak. |
 
 ## 3. Fork decisions
 
-| Fork | Locked position | Consequence for the book |
-|---|---|---|
-| F-01 — Inner state | Externalize the mistaken story, the decision loop, and supported commercial practices. Never create an inner creature. | Bodily sensations and thoughts are experiences to understand, not opponents to defeat. |
-| F-02 — Outcome | Autonomy-led practical total freedom inside DEF-02. | No planned doses is the destination, but no chapter commands abstinence or denies the legitimacy of a chosen managed truce. |
-| F-03 — Science | Light and grade-conscious in narrative prose; details quarantined in APP-A. | Science distinguishes what is known from what is merely familiar. It never supplies fear, diagnosis, or certainty the evidence lacks. |
-| F-04 — Villain | Supported commercial optimization is named precisely; the internalized wrong method is M-07. Treatment and qualified clinicians are not villains. | Historical intent is separated from ordinary availability. No generic shop, workplace, family, or celebration is accused of manipulation. |
-| F-05 — Void | Natural baseline: ordinary eating and direct ownership of real pleasures. | No replacement system, diet identity, trigger-management program, or permanent dashboard survives the book. The temporary Compass retires in C-20. |
+- **FORK-01 — Inner state:** Name the learned sweet-reward script, open loop, sugar trap, deprivation method, and Demand Machine. Craving is not a beast, invader, pharmacological command, or second self.
 
-## 4. Safety perimeter
+- **FORK-02 — Outcome:** Lead with autonomy and retain moderation as the reader’s right. Drive the logic toward no planned BAD SUGAR doses because recurring exceptions preserve the benefit proposition and decision tax. Do not describe molecular purity as freedom.
 
-### SAFE-01 — Clinical priority
+- **FORK-03 — Science:** Use light, explicitly graded science in the main narrative and quarantine claim-and-limit detail in `APP-A`. Science distinguishes what is known from what is not; it does not frighten the reader into stopping.
 
-Medical glucose, prescribed nutrition, diabetes or metabolic treatment, pregnancy-related dietary care, and other qualified clinical instructions sit outside the method and outrank it.
+- **FORK-04 — Villain:** The external villain is the historically documented portion of the Demand Machine. The internalized wrong method is the deprivation method. Ordinary availability is a separate context observation. Treatment, clinicians, retailers, workplaces, families, and people who eat BAD SUGAR are not villains.
 
-The book may help a reader examine the meaning assigned to discretionary sugar. It may not alter a treatment plan, classify prescribed glucose as a lapse, or interpret persistent weakness as a belief problem.
+- **FORK-05 — Baseline:** Return to ordinary eating. The Ordinary Eating Compass is temporary teaching scaffolding, not a replacement program, identity, tracking ritual, or permanent authority.
 
-### SAFE-02 — Eating-disorder perimeter
+## 4. Operational definition and margin
 
-The book is not eating-disorder treatment. If its categories or exercises are increasing food fear, compulsive checking, bingeing, purging, compensatory behavior, medically unsafe restriction, or escalating distress, the reader is directed to pause the method and seek qualified care.
+- **DEF-01 — GOOD SUGAR:** Sugars and starches found in ordinary nourishment, including whole fruit, vegetables, legumes, nuts, plain dairy, oats, rice, potatoes, bread, pasta, and other ordinary meal staples. Their molecular sugar or carbohydrate content does not place them inside the target.
 
-No chapter may:
+- **DEF-02 — BAD SUGAR:** Either:
 
-- turn BAD SUGAR into a moral contamination category;
-- prescribe fasting, compensation, calorie targets, or body checking;
-- use disgust toward food or the body as motivation;
-- require a ceremonial final dose, last supper, or binge;
-- make accidental exposure a purity event;
-- offer the method as a substitute for eating-disorder care.
+  1. A product conventionally consumed as a sugar-sweetened drink, confection, dessert, sweet baked good, or added-sugar sweet snack, including products sweetened with sugar, honey, or syrup.
+  2. A genuinely ambiguous refined savoury snack functioning as a discretionary reward, rescue, graze, or automatic nibble rather than ordinary meal food.
 
-### SAFE-03 — Household perimeter
+  Core examples include soda, sweetened coffee or tea, sweets, biscuits, cakes, pastries, ice cream, dessert products, and prominently sweetened cereals or bars. Hunger, care, celebration, convenience, homemade status, or a natural, organic, dark, low-sugar, or healthier label cannot exempt a core item. Behavioral-role inquiry applies only to the genuinely gray refined-savoury edge. Small incidental ingredients do not turn an ordinary meal into BAD SUGAR.
 
-The primary reader is an adult examining their own decision loop. Caregiver material may model calm definitions and non-moral language but may not prescribe a child’s diet, generate guilt about a child’s body, or override pediatric or other qualified advice.
+- **DEF-03 — Definitional decree:** **Throughout this book, whenever I say sugar, a sugar hit, or quitting sugar, take me to mean BAD SUGAR as defined here—not fruit, ordinary meals, or every carbohydrate.**
 
-### SAFE-04 — Claims perimeter
+- **DEF-04 — Totality inside the line:** The destination is no planned BAD SUGAR doses. It is not loss of autonomy, dietary perfection, or a claim that every in-scope product has identical physiology.
 
-No guaranteed weight loss, metabolic repair, mental clarity, energy improvement, taste reset, craving timeline, or method success rate. Health evidence may clarify distinctions but is immediately detached from fear-based motivation.
+- **DEF-05 — Molecule Margin:** A trace ingredient, uncertain sauce, accidental bite, or honest classification mistake is not a deliberate return and does not constitute failure. Notice it, learn if useful, and continue from the choice already made. The margin covers accidents and genuine ambiguity; it never converts planned exceptions into accidents.
 
-## 5. Destination and decisive scenes
+- **DEF-06 — Adjacent choices:** Whole fruit and ordinary meal carbohydrates are protected. Juice, dried fruit, non-nutritive sweeteners, alcohol, caffeine, and adjacent indulgences are not required quits and do not define success. They may be examined later only as optional, separate questions.
 
-### DEST-01 — Destination state
+## 5. Safety perimeter
 
-BAD SUGAR is no longer an active reward, rescue, or special-occasion proposition. Ordinary food remains food; pleasant occasions remain pleasant. The reader does not need to resist, budget, postpone, compensate, inspect every molecule, or rehearse a reset.
+- **SAFE-01 — Clinical authority:** Prescribed glucose, diabetes or metabolic treatment, pregnancy-related dietary advice, medical nutrition therapy, and other qualified clinical instructions outrank the book.
 
-The ordinary proof is not “I resisted.” It is: there was nothing to settle.
+- **SAFE-02 — Eating-disorder perimeter:** The book is not eating-disorder treatment. Where eating-disorder care is relevant, route the reader to qualified care rather than intensifying restriction, classification, or self-surveillance.
 
-### STRONG-01 — Strongest pro-behavior scene
+- **SAFE-03 — No scope inflation:** Do not prescribe calorie, carbohydrate, weight, fasting, meal-timing, or ingredient targets. Do not promise weight loss, metabolic repair, mental clarity, taste change, or bodily transformation.
 
-A leisurely restaurant meal in which the dessert menu is checked before the main course, followed later by the first sweet bite.
+- **SAFE-04 — No food morality:** GOOD SUGAR and BAD SUGAR are operational method labels, not judgments about bodies, parents, children, virtue, cleanliness, or worth.
 
-The chapter must concede the taste without hesitation. It then returns leisure, appetite, service, companionship, ritual, and occasion to their sources; identifies the pre-meal decision window; and distinguishes the quieting of anticipation from proof that dessert completed the evening.
+- **SAFE-05 — Household care:** Caregiver material may illustrate a need for a workable definition. It must not shame caregivers, moralize a child’s food, or convert one household report into health or efficacy advice.
 
-A restriction-veteran variant places the first sweet item after weeks of denial beside this scene. Its disproportionate relief may belong to the ending of surveillance and prohibition rather than to an irreplaceable quality in the item.
-
-### END-01 — Saved ending reframe
-
-**The royalty bill:** BAD SUGAR has repeatedly collected a symbolic royalty whenever life supplied rest, celebration, accomplishment, care, or comfort. Freedom is not making life poorer; it is ending payment for pleasures the product did not create.
-
-This reframe is conceptually reserved for C-20. Earlier chapters may discuss credit reassignment but may not use the royalty or invoice image.
+- **SAFE-06 — Science firewall:** Do not equate sugar with cocaine or heroin; assert universal dopamine hijacking, crashes, tolerance, withdrawal, or reset timelines; claim one bite restarts addiction; or generalize substantial-exposure findings to fruit, every carbohydrate, or occasional consumption.
 
 ## 6. Compact evidence ledger
 
-### EV-01 — Taste and anticipatory dessert attention
+Only the evidence below may enter the manuscript.
 
-- **Payload:** One participant said, “There’s always room for dessert. If I go out for dinner, I have to look at the dessert menu before I order my mains.” A student said, “I tried to cut down on soft drinks, but I start drinking them again for the taste.”
-- **Sources:** S-004#E-001; S-009#E-001.
-- **Status:** LIVED ACCOUNT — JUSTIFICATION; no outcome tier.
-- **Scope:** Small qualitative samples: seven self-selected adults in S-004 and nineteen students at one Saudi university in S-009.
-- **Permitted inference:** Some people describe taste as a reason for return, and dessert attention can begin before the main meal.
-- **Prohibited inference:** Dessert is universally anticipated; taste is imaginary; anticipatory attention proves addiction, physiological need, or one universal loop.
+### Scientific and documentary evidence
 
-### EV-02 — Jobs assigned to sugar
+- **EV-S01 — Human sugar-addiction claim**
+  - **Grade:** `CONTESTED`
+  - **Sources:** `S-001#E-001`, `S-005#E-001`, `S-006#E-001`
+  - **Finding:** The accepted evidence does not establish ordinary human sugar consumption as a clinical addiction; a critical review found little supporting human evidence, and the imaging and intervention findings do not establish clinical compulsion.
+  - **Scope:** Broad diagnostic or mechanistic claims about ordinary human consumption.
+  - **Permitted:** Say the addiction label is unsettled and unnecessary for examining perceived benefits and choices.
+  - **Prohibited:** Say sugar definitively is or is not addictive for every person; diagnose the reader; equate sugar with hard drugs.
 
-- **Payload:** Participants associated sweets with reward, deserving, weakness, stress, nervousness, sadness, boredom, loneliness, and social occasions. Another participant ate an extra slice after tennis and afternoon tea despite not being hungry and attributed it to taste.
-- **Sources:** S-022#E-001, S-022#E-002, S-022#E-003, S-022#E-005; S-020#E-005.
-- **Status:** LIVED ACCOUNT — JUSTIFICATION AND CONTEXT; no outcome tier.
-- **Scope:** Particular participants and communities; reported beliefs and situations.
-- **Permitted inference:** Sugar is assigned multiple emotional, social, sensory, and ceremonial jobs.
-- **Prohibited inference:** Those jobs share one cause; weakness was sugar deficiency; emotional eating is universal; any reported association proves efficacy or mechanism.
+- **EV-S02 — Sweet taste and reported pleasure**
+  - **Grade:** `MIXED`
+  - **Sources:** `S-004#E-001`, `S-005#E-001`
+  - **Finding:** Sweet taste can affect reported pleasure or food-response measures, but pleasure is not addiction; one human trial found no whole-cohort sucrose-versus-sucralose food-cue BOLD difference.
+  - **Scope:** Sensation and measured response, not unique life value.
+  - **Permitted:** Admit pleasant taste while separating it from ownership of celebration, relief, reward, or necessity.
+  - **Prohibited:** Call taste imaginary or infer a universal sugar-specific brain effect.
 
-### EV-03 — Recurring availability and constraint
+- **EV-S03 — Repeated exposure and learned response**
+  - **Grade:** `MIXED`
+  - **Sources:** `S-006#E-001`, `S-019#E-001`
+  - **Finding:** Repeated exposure altered some food-response or associative measures in particular experiments, but sugar was not consistently isolated and escalating compulsion was not established.
+  - **Scope:** Experimental settings involving combined product differences.
+  - **Permitted:** Say food responses can change with experience in some settings.
+  - **Prohibited:** Claim these studies prove the sweet-reward script, a universal anticipatory loop, tolerance, or sugar compulsion.
 
-- **Payload:** Participants described cafés, supermarkets, workplaces, leftovers, vending machines, gas stations, late driving, lack of time, and travel as recurring contexts.
-- **Sources:** S-020#E-004; S-022#E-004.
-- **Status:** MIXED.
-- **Scope:** Qualitative context evidence, not causal access studies.
-- **Permitted inference:** Recurring visibility and convenience can keep an option salient and shorten deliberation.
-- **Prohibited inference:** A location intended manipulation; availability removes agency; placement proves coordinated design, addiction, or causal consumption.
+- **EV-S04 — Animal circuit and human translation**
+  - **Grade:** `MIXED`
+  - **Sources:** `S-003#E-001`, `S-005#E-001`
+  - **Finding:** A sweet-intake circuit was manipulated causally in mice; human translation remains limited, and the separate human trial found no whole-cohort food-cue BOLD difference.
+  - **Scope:** Species and study-design distinction.
+  - **Permitted:** Use as an example of why mechanism claims must retain their level of evidence.
+  - **Prohibited:** Present the mouse circuit as the proven cause of human wanting.
 
-### EV-04 — Suppression, denial, and lapse interpretation
+- **EV-S05 — Substantial exposure and health pathways**
+  - **Grade:** `MIXED`
+  - **Sources:** `S-002#E-001`, `S-019#E-001`
+  - **Finding:** Reviews of substantial fructose or sugar-sweetened-beverage exposure describe pathways relevant to hepatic insulin resistance; a controlled ultra-processed-food trial found greater intake and weight gain but did not identify the responsible product feature.
+  - **Scope:** Substantial or controlled exposures, not every food or choice.
+  - **Permitted:** Present carefully in the science chapter and appendix, immediately disowning fear as motive.
+  - **Prohibited:** Generalize to fruit, every carbohydrate, occasional consumption, ordinary craving, or guaranteed outcomes.
 
-- **Payload:** One participant said, “If I deny myself something it turns up somewhere else and worse.” Another described doing well for weeks before one lapse became a week of daily indulgence.
-- **Sources:** S-020#E-001; S-020#E-003.
-- **Status:** SUPPRESSION.
-- **Scope:** Individual accounts within a short intervention.
-- **Permitted inference:** Behavior control can coexist with active desire, and a lapse can be interpreted as collapse.
-- **Prohibited inference:** Abstinence universally backfires; one item physiologically forces continuation; the reports establish withdrawal or durable failure.
+- **EV-S06 — Subjective difficulty versus withdrawal**
+  - **Grade:** `MIXED`
+  - **Sources:** `S-001#E-001`, `S-020#E-002`, `S-021#E-002`
+  - **Finding:** Particular people reported battle or daily craving management, but the accepted evidence does not establish sugar-specific physiological withdrawal in ordinary adults.
+  - **Scope:** Subjective experience with uncertain mechanism.
+  - **Permitted:** Validate difficulty without settling its cause.
+  - **Prohibited:** Invent a withdrawal syndrome, call withdrawal trivial, or provide a timeline.
 
-### EV-05 — Short-intervention change
+- **EV-C01 — Historical product optimization**
+  - **Grade:** `SUPPORTED`
+  - **Sources:** `S-013#E-001`, `S-018#E-001`
+  - **Finding:** Historical records document formulation work involving taste, smell, appearance, flavour libraries, ingredient combinations, and an objective of leaving consumers wanting more; documentary evidence describes numerous product tests on children while developing named drink flavours.
+  - **Scope:** Specific historical actors and practices.
+  - **Permitted:** Say particular companies deliberately optimized appeal or demand.
+  - **Prohibited:** Infer addiction, deception, actual overeating, current universal practice, or a single industry formula.
 
-- **Payload:** One participant described six weeks as a battle followed by two weeks of better choices; another perceived a shift in cravings.
-- **Sources:** S-020#E-002; S-020#E-008.
-- **Status:** EARLY SIGNALS.
-- **Scope:** Eight-week endpoint and participant perception.
-- **Permitted inference:** Early subjective or behavioral change is possible.
-- **Prohibited inference:** Durable freedom, program efficacy, a known mechanism, or a predictable progression.
+- **EV-C02 — Integrated youth marketing**
+  - **Grade:** `SUPPORTED`
+  - **Sources:** `S-015#E-001`, `S-016#E-001`
+  - **Finding:** FTC records document integrated youth-directed food marketing across television, packaging, in-store, online, event, and cross-promotional channels, plus company research into children’s influence on purchases.
+  - **Scope:** Recorded marketing practices and company research.
+  - **Permitted:** Show that demand was deliberately cultivated through multiple channels.
+  - **Prohibited:** Claim a universal causal effect on obesity, adult consumption, or any individual reader.
 
-### EV-06 — Managed truce
+### Lived evidence
 
-- **Payload:** One commercial-testimonial account combined “I feel like I've been let out of jail” with more than fifteen years of maintenance, daily actions, boundaries, exceptions, and resets.
-- **Sources:** S-021#E-001, S-021#E-002, S-021#E-004, S-021#E-005, S-021#E-006, S-021#E-007.
-- **Status:** MANAGED TRUCE.
-- **Scope:** One commercial wellness testimonial.
-- **Permitted inference:** Genuine relief can coexist with substantial continuing management.
-- **Prohibited inference:** Commercial-program efficacy, absence of desire, a universal trigger list, or evidence that management is fraudulent or inferior for every reader.
+- **EV-L01 — Taste and dessert anticipation**
+  - **Tier:** `LIVED JUSTIFICATION — NON-OUTCOME`
+  - **Sources:** `S-004#E-001`, `S-009#E-001`, `S-020#E-005`
+  - **Account:** Participants described checking dessert before choosing the main meal, returning to soft drinks for taste, and eating an extra slice despite not being hungry.
+  - **Permitted:** Ground taste, anticipation, and “room for dessert” reader voice.
+  - **Prohibited:** Treat these small qualitative accounts as universal motives, mechanisms, or proof of compulsion.
 
-### EV-07 — Desire-preserving abstinence
+- **EV-L02 — Reward, deserving, and weakness**
+  - **Tier:** `LIVED JUSTIFICATION — NON-OUTCOME`
+  - **Source:** `S-022#E-005`
+  - **Account:** Participants associated sweets with reward after effort, deservingness, and feeling weak.
+  - **Permitted:** Show jobs assigned to sugar.
+  - **Prohibited:** Present these beliefs as evidence of physiological need or prevalence.
 
-- **Payload:** In an earlier four-month dessert-free attempt, one author reported nighttime dreams and keeping a stash for after the diet.
-- **Source:** S-023#E-004.
-- **Status:** SUPPRESSION.
-- **Scope:** One person’s retrospective self-report.
-- **Permitted inference:** Behavioral absence and continuing reward fantasy can coexist.
-- **Prohibited inference:** All abstinence produces dreams, hoarding, or backlash; the account establishes withdrawal.
+- **EV-L03 — Emotion and social context**
+  - **Tier:** `LIVED CONTEXT — NON-OUTCOME`
+  - **Sources:** `S-020#E-006`, `S-022#E-001`, `S-022#E-002`, `S-022#E-003`, `S-022#E-006`
+  - **Account:** Stress, sadness, boredom, loneliness, late work, birthdays, restaurants, and shared meals appeared in participant accounts.
+  - **Permitted:** Validate context and reassign pause, care, belonging, and occasion.
+  - **Prohibited:** Claim one causal emotional-eating mechanism or general trigger prevalence.
 
-### EV-08 — One report of desire-level freedom
+- **EV-L04 — Availability and time pressure**
+  - **Tier:** `LIVED CONTEXT — NON-OUTCOME`
+  - **Sources:** `S-020#E-004`, `S-020#E-007`, `S-022#E-004`
+  - **Account:** Participants described cafés, supermarkets, workplaces, leftovers, vending machines, gas stations, travel, and lack of preparation time.
+  - **Permitted:** Say recurring access can keep an option visible and make it convenient.
+  - **Prohibited:** Infer retailer, employer, café, vending-site, or coordinated industry intent; claim access removes agency.
 
-- **Payload:** The same author later reported twelve months without added sugar across major holidays, reduced weekly dessert-decision time, and removing desserts from his active decision catalog. He wrote, “Instead, I found myself not missing desserts. And really, I felt better physically and mentally.” He also reported that fruit tasted sweeter.
-- **Sources:** S-023#E-001, S-023#E-002, S-023#E-003, S-023#E-005, S-023#E-006.
-- **Status:** DESIRE-LEVEL FREEDOM — ONE SELF-REPORT.
-- **Scope:** One author account, not a trial.
-- **Permitted inference:** The distinction between not eating dessert and no longer missing it is possible; decision burden can diminish in one person’s account.
-- **Prohibited inference:** Probability, general efficacy, causation, universal ease, a moderation result, guaranteed physical or mental improvement, or a general taste reset.
+- **EV-L05 — Desire-preserving restriction**
+  - **Tier:** `SUPPRESSION`
+  - **Sources:** `S-020#E-001`, `S-020#E-002`, `S-023#E-004`
+  - **Account:** One participant described denial as a battle; another short account improved only near an eight-week endpoint; the S-023 author’s earlier four-month attempt retained dreams and a stash for later.
+  - **Permitted:** Contrast behavior control with desire-level freedom.
+  - **Prohibited:** Claim abstinence universally backfires, these reports establish withdrawal, or everyone passes through a common staircase.
 
-### EV-09 — Knowledge and achievable messaging
+- **EV-L06 — Lapse interpreted as collapse**
+  - **Tier:** `SUPPRESSION — LAPSE ACCOUNT`
+  - **Source:** `S-020#E-003`
+  - **Account:** One participant reported doing well for weeks before one lapse became something every day for a week.
+  - **Permitted:** Examine the interpretation that turns one event into continued behavior.
+  - **Prohibited:** Teach that one bite biologically or inevitably causes collapse.
 
-- **Payload:** One participant expected not to return to most former favourites after learning new information; another found a one-less-spoon example achievable.
-- **Sources:** S-007#E-001; S-012#E-001.
-- **Status:** EARLY SIGNALS / CAMPAIGN RECEPTIVITY.
-- **Scope:** Anticipated behavior and receptivity, not observed durable change.
-- **Permitted inference:** Information or a modest message can open curiosity and perceived possibility.
-- **Prohibited inference:** Implementation, long-term behavior, desire-level freedom, or proof that reduction is the book’s destination.
+- **EV-L07 — Relief with continuing management**
+  - **Tier:** `MANAGED TRUCE`
+  - **Sources:** `S-021#E-001`, `S-021#E-002`, `S-021#E-004`, `S-021#E-005`, `S-021#E-006`, `S-021#E-007`, `S-021#E-008`
+  - **Account:** A commercial wellness testimonial reports substantial relief alongside more than fifteen years of daily actions, personal boundaries, special-situation management, and resets.
+  - **Permitted:** Honour genuine relief while distinguishing management from absence of desire and decision tax.
+  - **Prohibited:** Infer program efficacy, universal maintenance needs, or failure.
 
-### EV-10 — Household and label translation
+- **EV-L08 — One account of desire-level freedom**
+  - **Tier:** `DESIRE-LEVEL FREEDOM — ONE SELF-REPORT`
+  - **Sources:** `S-023#E-001`, `S-023#E-002`, `S-023#E-003`, `S-023#E-006`
+  - **Account:** One author reported at least two hours a week debating dessert before the later change, then twelve months without added sugar across major holidays, not missing desserts, and removing dessert from the active decision catalog without describing it as metaphysically forbidden.
+  - **Permitted:** Illustrate a possible distinction between not eating and no longer missing.
+  - **Prohibited:** Infer method efficacy, probability, universal ease, mechanism, or a moderation result.
 
-- **Payload:** One caregiver reported changing a child’s drinks and checking labels. Another shopper distrusted commercial drinks and used a homemade alternative that could not be assumed sugar-free.
-- **Sources:** S-010#E-001; S-011#E-001.
-- **Status:** CAREGIVER BEHAVIOR / LIVED ACCOUNT.
-- **Scope:** Reported household actions, not the caregiver’s own freedom outcome.
-- **Permitted inference:** Knowledge can affect household choices; homemade or better-labelled products may still require the same categorical definition.
-- **Prohibited inference:** Caregiver abstinence, child-health outcomes, moral superiority, or automatic freedom through a homemade substitution.
+- **EV-L09 — Subjective taste change**
+  - **Tier:** `LIVED SENSORY SELF-REPORT`
+  - **Source:** `S-023#E-005`
+  - **Account:** The same author reported fruit tasting sweeter.
+  - **Permitted:** Include only inside the bounded long-form testimony.
+  - **Prohibited:** Promise or explain a universal taste reset.
 
-### EV-11 — Addiction language as felt description
+- **EV-L10 — Short-intervention signals**
+  - **Tier:** `EARLY SIGNALS`
+  - **Sources:** `S-020#E-002`, `S-020#E-008`
+  - **Account:** Particular participants reported better choices late in a short intervention or a perceived craving shift.
+  - **Permitted:** Create curiosity about change.
+  - **Prohibited:** Call the result durable freedom or treatment efficacy.
 
-- **Payload:** One resident said, “people get addicted to drugs, some of us are addicted to soda.”
-- **Source:** S-008#E-001.
-- **Status:** LIVED ANALOGY; no clinical outcome tier.
-- **Scope:** One person’s language for felt compulsion.
-- **Permitted inference:** Some readers understand their experience through addiction language and deserve to have that felt pull acknowledged.
-- **Prohibited inference:** Clinical diagnosis, mechanism, equivalence to drugs, or proof of powerlessness.
+- **EV-L11 — Anticipated behavior**
+  - **Tier:** `ANTICIPATED BEHAVIOR`
+  - **Source:** `S-007#E-001`
+  - **Account:** At week twelve, one participant expected not to return to most former favourites after gaining knowledge.
+  - **Permitted:** Show that information can alter expectation.
+  - **Prohibited:** Present anticipated behavior as observed long-term change.
 
-### EV-12 — Human sugar-addiction claim
+- **EV-L12 — Achievable reduction message**
+  - **Tier:** `CAMPAIGN RECEPTIVITY`
+  - **Source:** `S-012#E-001`
+  - **Account:** One food-bank client found a one-less-spoon example achievable.
+  - **Permitted:** Respect reduction as a potentially approachable step.
+  - **Prohibited:** Claim implementation, durability, or desire-level freedom.
 
-- **Payload:** A critical review states, “We find little evidence to support sugar addiction in humans.” Human imaging and intervention evidence in the bundle does not independently establish clinical addiction.
-- **Sources:** S-001#E-001; S-005#E-001; S-006#E-001.
-- **Status:** CONTESTED.
-- **Scope:** Broad claims about ordinary human sugar consumption as an established addiction.
-- **Permitted inference:** The book must not present ordinary sugar addiction as settled science.
-- **Prohibited inference:** Nobody experiences compulsion; clinical eating problems are unreal; the absence of settled evidence proves sugar harmless.
+- **EV-L13 — Household translation**
+  - **Tier:** `CAREGIVER BEHAVIOR`
+  - **Source:** `S-010#E-001`
+  - **Account:** One caregiver reported changing a child’s drinks, offering more water, and checking labels after nutrition advice.
+  - **Permitted:** Illustrate household translation and the need for a livable line.
+  - **Prohibited:** Infer the caregiver’s own freedom, efficacy, or a universal family prescription.
 
-### EV-13 — Sweet taste and pleasure
+- **EV-L14 — Product distrust and homemade substitution**
+  - **Tier:** `LIVED ACTION/BELIEF — NON-OUTCOME`
+  - **Source:** `S-011#E-001`
+  - **Account:** One shopper avoided commercial sweet drinks because of ingredient distrust and reported a homemade alternative that could still contain unrecognized sugar.
+  - **Permitted:** Show why source, label, or homemade status does not settle the BAD SUGAR definition.
+  - **Prohibited:** Code the account as abstinence, freedom, or evidence that homemade is equivalent in every respect.
 
-- **Payload:** Sweet-taste manipulation affected reported pleasure in a small intervention, while a sucrose-versus-sucralose trial found no whole-cohort food-cue BOLD difference.
-- **Sources:** S-004#E-001; S-005#E-001.
-- **Status:** MIXED.
-- **Scope:** Small qualitative intervention and one human imaging trial with subgroup interactions.
-- **Permitted inference:** Sweet taste can contribute to reported pleasure; pleasure is not equivalent to addiction or irreplaceable life value.
-- **Prohibited inference:** Sweetness has no sensory effect; a pleasant taste proves compulsion; imaging settles the reader’s experience.
-
-### EV-14 — Repeated exposure and learned response
-
-- **Payload:** Repeated exposure altered some food-response or associative-learning measures in experimental settings; an ultra-processed-food trial found greater intake and weight gain but did not identify the responsible product feature.
-- **Sources:** S-006#E-001; S-019#E-001.
-- **Status:** MIXED.
-- **Scope:** Fat and sugar changed together in S-006; S-019 did not isolate sugar.
-- **Permitted inference:** Learning and repeated exposure are plausible lenses for salience and response.
-- **Prohibited inference:** Sugar alone caused the observed effects; exposure inevitably escalates into compulsion; ultra-processing results prove the book’s loop.
-
-### EV-15 — Mouse circuits and human translation
-
-- **Payload:** A sweet-intake circuit has causal evidence in mice. A human trial reported, “We did not observe significant differences in BOLD signal to any food cue contrasts” for the whole cohort, while reporting prespecified subgroup interactions.
-- **Sources:** S-003#E-001; S-005#E-001.
-- **Status:** MIXED.
-- **Scope:** Causal manipulation in mice; limited human translation.
-- **Permitted inference:** Animal findings can generate questions but do not establish the reader’s mechanism.
-- **Prohibited inference:** A universal dopamine hijack, a direct mouse-to-human causal claim, or brain evidence of powerlessness.
-
-### EV-16 — Subjective difficulty versus withdrawal
-
-- **Payload:** Reports of battle and daily craving management establish real subjective difficulty in particular accounts. The accepted evidence does not establish sugar-specific physiological withdrawal in ordinary adults.
-- **Sources:** S-001#E-001; S-020#E-002; S-021#E-002.
-- **Status:** MIXED.
-- **Scope:** Critical review plus bounded lived accounts.
-- **Permitted inference:** Difficulty can be acknowledged without assigning a settled mechanism.
-- **Prohibited inference:** A universal withdrawal syndrome, fixed symptom list, triviality claim, taper requirement, or recovery timeline.
-
-### EV-17 — Metabolic and ultra-processed-food evidence
-
-- **Payload:** Reviews of substantial fructose or sugar-sweetened-beverage exposure describe pathways relevant to hepatic insulin resistance. A controlled ultra-processed-food trial found greater intake and weight gain while leaving the responsible feature unresolved.
-- **Sources:** S-002#E-001; S-019#E-001.
-- **Status:** MIXED.
-- **Scope:** Some exposures were unusually high or hypercaloric; neither source makes whole fruit or every carbohydrate equivalent to BAD SUGAR.
-- **Permitted inference:** Source, dose, and product context matter; broad molecular slogans are unreliable.
-- **Prohibited inference:** Guaranteed metabolic harm or repair, fruit-soda equivalence, sugar as the isolated cause in S-019, or health fear as the quitting motive.
-
-### EV-18 — Documented product optimization
-
-- **Payload:** Historical records document formulation work using taste, smell, appearance, flavour libraries, and ingredient combinations, including an objective of leaving consumers wanting more. Documentary evidence also records numerous product tests on children during development of named drink flavours under historical tobacco-company ownership.
-- **Sources:** S-013#E-001; S-018#E-001.
-- **Status:** SUPPORTED.
-- **Scope:** Specific historical actors, products, practices, and stated objectives.
-- **Permitted inference:** Some manufacturers deliberately optimized appeal, salience, or demand.
-- **Prohibited inference:** Addiction, deception, actual overeating, present universal practice, or a coordinated machine controlling every product.
-
-### EV-19 — Youth-directed marketing
-
-- **Payload:** FTC records document integrated youth-directed food marketing across television, packaging, stores, online media, events, and cross-promotions, alongside company research into children’s influence on purchases.
-- **Sources:** S-015#E-001; S-016#E-001.
-- **Status:** SUPPORTED.
-- **Scope:** Documented expenditures, techniques, and company research.
-- **Permitted inference:** Commercial actors deliberately promoted food products through multiple channels and studied purchase influence.
-- **Prohibited inference:** A universal causal effect on obesity, adult consumption, or any specific reader.
-
-### EV-20 — Historical tobacco ownership association
-
-- **Payload:** Historical tobacco ownership was associated with a higher likelihood that sampled foods were classified as fat-and-sodium hyper-palatable; related records describe children’s drink development practices.
-- **Sources:** S-017#E-001; S-018#E-001.
-- **Status:** MIXED.
-- **Scope:** Historical ownership association among sampled products.
-- **Permitted inference:** Historical ownership is relevant context when accurately bounded.
-- **Prohibited inference:** Sugar-specific design intent, addiction, absolute risk, current practice, or guilt by association. This evidence may appear only as a limited appendix note, not as a narrative centerpiece.
+- **EV-L15 — Powerlessness and character language**
+  - **Tier:** `LIVED IDENTITY LANGUAGE — NON-OUTCOME`
+  - **Sources:** `S-008#E-001`, `S-021#E-003`
+  - **Account:** One resident used addiction language for soda; another account connected dieting failure with willpower shame.
+  - **Permitted:** Validate the felt pull and self-judgment before removing diagnostic and moral conclusions.
+  - **Prohibited:** Diagnose addiction, deny a person’s distress, or claim sugar causes a personality type.
 
 ## 7. Mantra sheet
 
-The frozen wording appears only here. Chapter cards route IDs.
+- **M-01**
+  - **Frozen wording:** `BAD SUGAR`
+  - **Job:** Redefinition token.
+  - **Belief installed:** The target is a bounded behavioral category, not food, fruit, or carbohydrates generally.
+  - **Debut:** `CH-02`
+  - **Echoes:** `CH-03` through `CH-22`
+  - **Hand-over:** The reader applies the exact token to `DEF-02`, never to a person, body, or accidental molecule.
 
-| ID | Frozen wording | Job and installed belief | Debut | Echo chapters | Hand-over form |
-|---|---|---|---|---|---|
-| M-01 | `You can test whether BAD SUGAR owns any special or irreplaceable pleasure, without denying pleasant taste or giving up your right to choose.` | Entry promise and autonomy contract. The inquiry threatens neither honesty nor choice. | C-01 | C-03, C-04, C-16, C-17 | The reader’s permission to examine rather than obey or rebel. |
-| M-02 | `without deprivation, without battle, and without a lifetime of rules` | Promise triad. The intended outcome is distinct from suppression and managed truce. | C-01 | C-05, C-11, C-16, C-17, C-20, C-21 | A three-part test for any future stopping method. |
-| M-03 | `the sugar trap` | Central escape label. The trap is a learned attribution and decision structure, not an inner creature. | C-03 | C-04, C-10, C-11, C-12, C-13, C-14, C-15, C-16, C-17, C-18, C-19, C-20, C-21 | The compact name for what has ended. |
-| M-04 | `a special pleasure or rescue` | Illusion-namer. It isolates the exact claim under examination without denying taste or emotion. | C-04 | C-06, C-07, C-08, C-09, C-10, C-12, C-13, C-14, C-15, C-16, C-17 | The question to apply whenever nostalgia grants BAD SUGAR unique credit. |
-| M-05 | `a nagging, bargaining, slightly urgent sense that this moment is missing something` | Sensory and cognitive recognition phrase. It names the experience without calling it withdrawal or an attack. | C-10 | C-11, C-12, C-14, C-15, C-16, C-17, C-18 | A recognition cue: notice the open loop without treating it as a command. |
-| M-06 | `anticipating, bargaining, and starting over` | Cost formula. The central burden is recurring decision labor. | C-01 | C-03, C-05, C-10, C-11, C-12, C-16, C-17, C-18, C-20 | The reader’s reminder of what has been left behind when memory isolates a pleasant taste. |
-| M-07 | `the deprivation method` | Named anti-method. It describes behavior control that preserves belief in a lost reward; it never names qualified clinical care. | C-05 | C-06, C-10, C-11, C-12, C-14, C-16, C-17, C-18, C-21 | A diagnostic label for renewed fighting, punishment, or compensation. |
-| M-08 | `When the benefit loses its credit, the battle loses its job.` | Ease operator and compressed mechanism. Understanding removes the purpose of resistance. | C-10 | C-12, C-14, C-16, C-17, C-18, C-20, C-21 | The portable explanation of how freedom works. |
-| M-09 | `You can close the daily sugar debate without policing every molecule, fighting yourself, or treating one accidental bite as failure.` | Full claim block. It unites decision quiet, the Molecule Margin, and non-conflict. | C-02 | C-05, C-12, C-16, C-17, C-18, C-20, C-21 | The reader’s compact operating promise. |
-| M-10 | `WHAT A RELIEF — THE SUGAR TRAP IS OVER. I'M FREE!` | Terminal replacement thought. A sugar thought becomes a cue for relief rather than suppression. | C-18 | C-19, C-20, C-21 | The exact thought script on the final unnumbered leaf and whenever the old option crosses the mind. |
+- **M-02**
+  - **Frozen wording:** `You can test whether BAD SUGAR owns any special or irreplaceable pleasure, without denying pleasant taste or giving up your right to choose.`
+  - **Job:** Entry promise and autonomy contract.
+  - **Belief installed:** The inquiry can be honest without demanding denial or obedience.
+  - **Debut:** `CH-01`
+  - **Echoes:** `CH-03`, `CH-06`, `CH-18`, `CH-19`, `CH-22`
+  - **Hand-over:** A permission statement to use whenever the reader fears that examination itself means deprivation.
 
-## 8. Lexicon and reader dialect
+- **M-03**
+  - **Frozen wording:** `without deprivation, without battle, and without a lifetime of rules`
+  - **Job:** Promise triad and outcome test.
+  - **Belief installed:** Freedom differs from suppression and managed truce.
+  - **Debut:** `CH-01`
+  - **Echoes:** `CH-03`, `CH-04`, `CH-18`, `CH-19`, `CH-22`
+  - **Hand-over:** The reader uses the triad to reject future methods that preserve sacrifice or permanent management.
 
-### 8.1 Trap register
+- **M-04**
+  - **Frozen wording:** `the sugar trap`
+  - **Job:** Trap-namer.
+  - **Belief installed:** The problem is an installed valuation and recurring decision loop, not defective character.
+  - **Debut:** `CH-06`
+  - **Echoes:** `CH-07`, `CH-12`–`CH-16`, `CH-18`–`CH-22`
+  - **Hand-over:** The reader applies the name to the external pattern when old bargaining appears.
 
-| ID | Term | Fixed use |
-|---|---|---|
-| LX-T01 | M-03 | The whole learned decision and attribution structure. Never a biological creature. |
-| LX-T02 | the sweet-reward script | The learned proposition that effort, distress, meals, or celebrations require BAD SUGAR. |
-| LX-T03 | the open loop | Anticipatory attention and bargaining after the script becomes active. It is a descriptive model, not a proven neurological entity. |
-| LX-T04 | the sugar standoff | The conflict in which continuing looks costly while stopping appears depriving. Both perceived costs persist only while BAD SUGAR retains benefit credit. |
-| LX-T05 | decision tax | Time and attention spent scanning, postponing, budgeting, negotiating, compensating, or resetting. |
-| LX-T06 | M-07 | The behavior-control approach that keeps the imagined reward intact. Never apply it to medically necessary care. |
-| LX-T07 | the Demand Machine | Supported, actor-specific commercial formulation, testing, packaging, promotion, and marketing intended to improve appeal or demand. It does not include every current company or ordinary access point. |
-| LX-T08 | sugar hit / planned dose | A unit of intentional BAD SUGAR choice. “Dose” is decision language, not a clinical drug-equivalence claim. |
-| LX-T09 | default conveyor | The non-intentional effect of recurring visibility, convenience, and time pressure placing an option in view. |
-| LX-T10 | planned exception | An intentional future BAD SUGAR choice preserved as a reward or rescue. It excludes clinical requirements, accidents, and honest ambiguity. |
+- **M-05**
+  - **Frozen wording:** `a special pleasure or rescue`
+  - **Job:** Illusion-namer.
+  - **Belief installed:** The disputed claim is uniqueness and necessity, not whether sweetness can taste pleasant.
+  - **Debut:** `CH-07`
+  - **Echoes:** `CH-08`–`CH-16`, `CH-18`, `CH-19`, `CH-22`
+  - **Hand-over:** The phrase becomes the exact claim any future sugar offer must justify.
 
-Do not use “addict,” “addiction,” “withdrawal,” “dopamine hijack,” “detox,” or “dependency” as settled descriptions. They may appear only as reader language or as graded questions in C-15 and APP-A.
+- **M-06**
+  - **Frozen wording:** `anticipating, bargaining, and starting over`
+  - **Job:** Cost formula.
+  - **Belief installed:** The primary burden is recurring decision labour.
+  - **Debut:** `CH-01`
+  - **Echoes:** `CH-04`–`CH-06`, `CH-15`, `CH-17`, `CH-18`, `CH-22`
+  - **Hand-over:** A name for the former cost whose absence the reader can recognize without counting days.
 
-### 8.2 Temporary positive authority
+- **M-07**
+  - **Frozen wording:** `the deprivation method`
+  - **Job:** Named anti-method.
+  - **Belief installed:** Struggle arose from controlling behavior while preserving belief in a lost reward.
+  - **Debut:** `CH-04`
+  - **Echoes:** `CH-05`, `CH-06`, `CH-09`, `CH-15`, `CH-17`–`CH-19`, `CH-21`, `CH-22`
+  - **Hand-over:** The reader applies the label to renewed suppression, never to themselves.
 
-**LX-P01 — the Ordinary Eating Compass:** a temporary teaching metaphor that returns authority to ordinary nourishment and actual sources of pleasure. It succeeds by becoming unnecessary.
+- **M-08**
+  - **Frozen wording:** `When the benefit loses its credit, the battle loses its job.`
+  - **Job:** Ease operator and credit-reassignment conclusion.
+  - **Belief installed:** Conflict becomes unnecessary when the supposed benefit no longer owns value.
+  - **Debut:** `CH-09`
+  - **Echoes:** `CH-10`–`CH-16`, `CH-18`, `CH-19`, `CH-22`
+  - **Hand-over:** A diagnostic response whenever an old benefit claim returns.
 
-Its instruments are:
+- **M-09**
+  - **Frozen wording:** `WHAT A RELIEF — THE SUGAR TRAP IS OVER. I'M FREE!`
+  - **Job:** Terminal thought script.
+  - **Belief installed:** A sugar thought signals relief, not suppression or deprivation.
+  - **Debut:** `CH-20`
+  - **Echoes:** `CH-21`, `CH-22`
+  - **Hand-over:** The exact phrase the reader may use whenever BAD SUGAR crosses their mind; it is the final line of `CH-22`.
 
-- **LX-P02 — the meal-or-hit check:** used only for a genuinely gray refined-savoury item. Ask whether it is serving ordinary eating or functioning as a discretionary reward, rescue, graze, or automatic nibble. It may not exempt a core item.
-- **LX-P03 — the pleasure-source audit:** used on selected cherished scenes to separate pleasant taste from people, rest, hunger, ritual, accomplishment, care, or relief. It is not a meal-by-meal worksheet.
-- **LX-P04 — the Molecule Margin:** DEF-05 used as an interpretive principle, not an ingredient-monitoring practice.
+## 8. Lexicon
 
-LX-P02 and LX-P03 retire when the distinctions become ordinary. LX-P04 remains available quietly but never becomes a surveillance routine.
+### Trap register
 
-### 8.3 Freedom register
+- **LEX-T01:** Use `BAD SUGAR`, `sugar hit`, or `planned dose` for intentional in-scope choices. “Dose” is rhetorical shorthand for a decision unit, never a clinical-addiction claim.
+- **LEX-T02:** Use `the sweet-reward script` for the learned proposition assigning sugar a job.
+- **LEX-T03:** Use `the open loop` for anticipatory attention and bargaining after the proposition becomes active.
+- **LEX-T04:** Use `the sugar trap`, `the sugar standoff`, `the deprivation method`, `decision tax`, and `default conveyor` as defined concepts.
+- **LEX-T05:** Use `the Demand Machine` only for the actor-specific commercial practices supported by `EV-C01` and `EV-C02`. Keep ordinary availability outside that name.
+- **LEX-T06:** Describe people warmly as caught, persuaded, managing, bargaining, or still assigning sugar credit. Do not narrate them as addicts, weak people, or clean/unclean eaters.
 
-Preferred language:
+### Freedom register
 
-- escape, relief, free, freedom;
-- close the question, decision quiet, no active debate;
-- ordinary eating, ordinary food, direct pleasure;
-- no planned doses, reader-owned choice;
-- an option becoming irrelevant;
-- return the credit, release the job, let the Compass retire;
-- continue with the day, enjoy the occasion, live normally.
+Use: `close the question`, `quiet`, `relief`, `ordinary eating`, `ordinary pleasure`, `practical total freedom`, `chosen threshold`, `no decision required`, `the debate is over`, `get on with ordinary life`, `free now`.
 
-Freedom is calm and ordinary, not dietary pride, purity, superiority, or promised transformation.
+### Banned willpower and purity register
 
-### 8.4 Banned willpower and moral register
+Do not endorse: `give it up`, `abstain`, `resist`, `stay strong`, `discipline`, `white-knuckle`, `one day at a time`, `recovery journey`, `detox`, `clean eating`, `cheat day`, `poison`, `cold turkey`, `sugar addict`, `withdrawal reset`, `perfect streak`, or `failed again`. These expressions may appear only as reader voice or as labels being dismantled. `Sacrifice`, `relapse`, and `reset` may name an old interpretation but never the destination.
 
-Do not use these as the book’s framing:
+### Source-grounded reader dialect
 
-- giving up, sacrifice, deprivation as the destination;
-- resist, stay strong, discipline, white-knuckle;
-- abstinence journey, recovery journey, one day at a time;
-- cheat, clean eating, dirty food, poison, toxic eater;
-- good or bad person, weak-willed, lack of character;
-- perfect streak, reset the clock, ruined everything;
-- trigger avoidance as the solution;
-- earned food, compensation, burn it off;
-- sugar is cocaine, heroin, or a drug “just like” either;
-- one bite restarts the addiction;
-- cravings reset in a fixed number of days.
+The first nine lines are original ventriloquism grounded in the accepted accounts, not participant quotations.
 
-“Quit” may be used as a plain verb. “Relapse” should be avoided where “deliberate return,” “lapse,” or “one event” is more precise.
-
-### 8.5 Source-grounded reader dialect
-
-These are original ventriloquized lines grounded in the accepted accounts. They are not participant quotations.
-
-| ID | Reader line |
-|---|---|
-| RV-01 | “I check dessert before I have even chosen dinner.” |
-| RV-02 | “I go back for the taste.” |
-| RV-03 | “If I say no, it only gets louder.” |
-| RV-04 | “I did well for weeks; then one thing became something every day.” |
-| RV-05 | “At work, at the till, or on the road, it is simply the next thing in front of me.” |
-| RV-06 | “Everyone else ordered.” |
-| RV-07 | “I earned this.” |
-| RV-08 | “I know how to read the label. I still need a line I can live with.” |
-| RV-09 | “My plan works, but it never clocks off.” |
-| RV-10 | “I am not eating it, but I am saving it for the person I will be when this is over.” |
-| RV-11 | “I don’t want a perfect streak. I want the debate to stop.” |
-| RV-12 | “Nothing was forbidden. It simply did not need a decision.” |
-| RV-13 | “If fruit is sugar too, where could the line possibly end?” |
-| RV-14 | “Maybe I am simply powerless around it.” |
+- **D-01:** “I check dessert before I have even chosen dinner.” — `EV-L01`
+- **D-02:** “If I say no, it only gets louder.” — `EV-L05`
+- **D-03:** “I did well for weeks; then one thing became something every day.” — `EV-L06`
+- **D-04:** “At work, at the till, or on the road, it is simply the next thing in front of me.” — `EV-L04`
+- **D-05:** “I know how to read the label. I still need a line I can live with.” — `EV-L13`, `EV-L14`
+- **D-06:** “My plan works, but it never clocks off.” — `EV-L07`
+- **D-07:** “I am not eating it, but I am saving it for the person I will be when this is over.” — `EV-L05`
+- **D-08:** “I don’t want a perfect streak. I want the debate to stop.” — `EV-L08`
+- **D-09:** “Nothing was forbidden. It simply did not need a decision.” — `EV-L08`
+- **D-10:** `cash wrap food` — one interviewee’s phrase, `S-021#E-006`; not a general category.
+- **D-11:** `carb window` — one participant’s phrase, `S-020#E-007`; not established community terminology.
+- **D-12:** `eat our emotions` and `salt person` — participant language from one community, `S-022#E-006`.
+- **D-13:** `sugar craving` and `addicted to soda` — participant language, `S-022#E-005`, `S-008#E-001`; neither establishes physiology or diagnosis.
 
 ## 9. Instruction spine
 
-Each instruction is frozen here and copied verbatim only into its owning chapter, licensed recap zones, and C-21.
+- **INS-01 — `CH-01`**  
+  `KEEP AN OPEN MIND: TEST EVERY CLAIM AGAINST YOUR OWN EXPERIENCE, AND KEEP QUALIFIED MEDICAL OR EATING-DISORDER CARE IN CHARGE OF EVERY CLINICAL DECISION.`  
+  Recap: `CH-06`, `CH-22`.
 
-| ID | Frozen instruction | Type | Owner | Recap placement |
-|---|---|---|---|---|
-| I-01 | `READ WITH CURIOSITY, NOT DREAD; UNTIL YOU REACH YOUR CHOSEN THRESHOLD, EAT AS YOU NORMALLY DO, BEGIN NO NEW RESTRICTION OR COMPENSATION PLAN FOR THIS METHOD, AND KEEP FOLLOWING ANY QUALIFIED CLINICAL INSTRUCTION.` | Emotional, behavioral, safety | C-01 | C-05, C-21 |
-| I-02 | `USE BAD SUGAR ONLY FOR THE DEFINED TARGET; DO NOT EXPAND IT TO WHOLE FRUIT, ORDINARY MEALS, OR EVERY CARBOHYDRATE, AND LET QUALIFIED CLINICAL ADVICE OVERRIDE THIS BOOK.` | Definitional, safety | C-02 | C-05, C-21 |
-| I-03 | `QUESTION THIS BOOK AND THE OLD SUGAR STORY BY THE SAME STANDARD; KEEP ONLY WHAT SURVIVES HONEST EXAMINATION.` | Epistemic, meta-inoculation | C-03 | C-05, C-21 |
-| I-04 | `ASK WHAT BAD SUGAR UNIQUELY DOES FOR YOU, NOT WHETHER YOU CAN MAKE ITS COSTS LOOK ACCEPTABLE.` | Evaluation rule | C-04 | C-05, C-21 |
-| I-05 | `DO NOT FIGHT, EARN, OR PUNISH YOUR WAY OUT; IF YOU STILL FEEL DEPRIVED, RETURN TO THE BELIEF THAT IS ASKING FOR CREDIT.` | Anti-method, emotional | C-05 | C-05, C-21 |
-| I-06 | `GIVE EACH PLEASURE BACK TO ITS REAL SOURCE; DENY NO GENUINE TASTE, NEED, FEELING, OR OCCASION.` | Attribution rule | C-06 | C-21 |
-| I-07 | `DO NOT PRESERVE A PLANNED EXCEPTION AS A PRIZE; KEEP YOUR RIGHT TO CHOOSE, EXAMINE THE BENEFIT YOU EXPECT IT TO DELIVER, AND TREAT CLINICALLY DIRECTED USE AS OUTSIDE THIS RULE.` | Escape-route firewall, safety | C-12 | C-21 |
-| I-08 | `USE SCIENCE TO CLARIFY DISTINCTIONS, NEVER TO FRIGHTEN YOURSELF, DIAGNOSE YOURSELF, OR OVERRIDE QUALIFIED CARE.` | Evidence firewall, safety | C-15 | C-21 |
-| I-09 | `DO NOT CROSS THE THRESHOLD BY FORCE: IF A REAL BENEFIT STILL SEEMS LOST, REVISIT THAT BENEFIT UNTIL YOUR CHOICE FEELS LIKE GAIN.` | Readiness gate | C-16 | C-21 |
-| I-10 | `WHEN YOU ARE READY, CHOOSE NO PLANNED BAD SUGAR DOSES AND RECOGNIZE THAT THE DECISION IS YOURS NOW, NOT A STREAK YOU MUST EARN; QUALIFIED CLINICAL REQUIREMENTS REMAIN OUTSIDE THE TARGET.` | Chosen threshold, safety | C-17 | C-21 |
-| I-11 | `WHEN BAD SUGAR CROSSES YOUR MIND, LET IT CUE THE FREEDOM RESPONSE; USE THE MOLECULE MARGIN FOR ACCIDENTS AND HONEST AMBIGUITY, AND MEET A DELIBERATE RETURN WITH UNDERSTANDING RATHER THAN SHAME OR PERMISSION TO CONTINUE.` | Thought reframe, lapse doctrine | C-18 | C-21 |
-| I-12 | `LET ORDINARY EATING BE ORDINARY: BUILD NO SUBSTITUTE RITUAL, PURITY IDENTITY, OR LIFELONG MONITORING SYSTEM, AND PAUSE THIS METHOD FOR QUALIFIED HELP IF IT IS FEEDING FOOD FEAR, COMPULSION, BINGEING, PURGING, COMPENSATION, OR MEDICALLY UNSAFE RESTRICTION.` | Ordinary-life and eating-disorder safety | C-20 | C-21 |
+- **INS-02 — `CH-02`**  
+  `USE BAD SUGAR ONLY AS THIS BOOK DEFINES IT; NEVER APPLY THE LABEL TO WHOLE FRUIT, ORDINARY MEALS, EVERY CARBOHYDRATE, PRESCRIBED GLUCOSE, OR CLINICAL NUTRITION.`  
+  Recap: `CH-06`, `CH-22`.
 
-C-05 carries the sole mid-book recap of I-01 through I-05. C-21 recaps I-01 through I-12 with owning-chapter cross-references. No other chapter reproduces an instruction in full.
+- **INS-03 — `CH-03`**  
+  `READ BEFORE YOU STAGE A QUIT: CONTINUE AS YOU NORMALLY WOULD UNLESS YOU FREELY CHOOSE OTHERWISE OR QUALIFIED CLINICAL CARE DIRECTS A CHANGE; DO NOT CUT DOWN OR STOP MERELY TO PROVE WILLPOWER TO THIS BOOK.`  
+  Recap: `CH-06`, `CH-22`.
 
-## 10. Scene, analogy, and exercise bank
+- **INS-04 — `CH-04`**  
+  `BEGIN WITH RELIEF, NOT DREAD: THE WORK IS TO TEST THE BENEFIT, NOT TO PROVE YOUR CHARACTER IN A FIGHT.`  
+  Recap: `CH-06`, `CH-22`.
 
-These devices compress arguments. None is biomedical proof, evidence of commercial intent, or a universal account.
+- **INS-05 — `CH-06`**  
+  `KEEP THE METHOD'S QUESTION CLEAR: DOES BAD SUGAR OWN A SPECIAL OR IRREPLACEABLE BENEFIT? DO NOT LET DIET SLOGANS, OTHER PEOPLE'S BARGAINS, OR A SINGLE TESTIMONIAL ANSWER IT FOR YOU; QUALIFIED CLINICAL CARE STILL OVERRIDES THIS BOOK ON HEALTH.`  
+  Recap: `CH-22`.
 
-### 10.1 Scenes
+- **INS-06 — `CH-08`**  
+  `USE THE ORDINARY EATING COMPASS ONLY WHILE A DISTINCTION IS UNCLEAR; DO NOT TURN ITS CHECKS INTO A MEAL-BY-MEAL AUDIT OR A LIFELONG RULEBOOK.`  
+  Recap: `CH-22`.
 
-| ID | Scene | Evidence basis and job |
-|---|---|---|
-| SC-01 | The weekly dessert debate | EV-08. Make recurring decision labor visible without promising the same outcome to the reader. |
-| SC-02 | The justification gallery | EV-01, EV-02, EV-03, EV-11. Let the reader hear their reasons before any demolition. |
-| SC-03 | The first sweet item after a restrictive stretch | EV-04, EV-07. Separate relief from surveillance from proof of unique product value. |
-| SC-04 | Effort followed by a ceremonial sweet reward | EV-02. Return accomplishment and permission to rest to their sources. |
-| SC-05 | A late, stressful day ending at a workplace table, vending machine, or petrol station | EV-02, EV-03. Separate distress, fatigue, access, and convenience from unique rescue. |
-| SC-06 | A birthday or shared meal where someone else orders dessert | EV-02. Return belonging and occasion to people and participation. |
-| SC-07 | A caregiver comparing a labelled product with a homemade alternative | EV-10. Protect care while preventing label or homemade status from redrawing DEF-02. |
-| SC-08 | Holiday pie followed by a practiced reset | EV-06. Honour managed-truce relief while making its continuing labor legible. |
-| SC-09 | STRONG-01 | EV-01, EV-04, EV-13. Meet the best pro-sugar case after the mechanism and escape routes are understood. |
-| SC-10 | In his own words — when the dessert debate went quiet | EV-07 and EV-08. Contrast one person’s suppression and later self-reported desire-level freedom. |
-| SC-11 | The chosen threshold | Method scene. A reader-owned decision made without a required final dose, special date, or streak. |
-| SC-12 | An ordinary week with no private dessert negotiation | EV-08 as possibility only. Future-pace DEST-01 without prediction or guarantee. |
+- **INS-07 — `CH-09`**  
+  `CREDIT EACH PLEASURE TO ITS REAL SOURCE; DO NOT MAKE BAD SUGAR THE OWNER OF TASTE, REST, REWARD, CARE, OR COMPANY.`  
+  Recap: `CH-22`.
 
-### 10.2 Analogies
+- **INS-08 — `CH-12`**  
+  `USE HEALTH AND MECHANISM EVIDENCE FOR UNDERSTANDING, NOT FEAR; TAKE PERSONAL MEDICAL, METABOLIC, PREGNANCY, OR EATING-DISORDER QUESTIONS TO QUALIFIED CARE.`  
+  Recap: `CH-22`.
 
-| ID | Analogy | Argumentative job |
-|---|---|---|
-| AN-01 | The two-tollbooth road | Continuing appears costly and stopping appears costly; exposing imagined deprivation removes the false toll. |
-| AN-02 | The dessert pager | Rehearsal trains an expectation; a cue makes it buzz; consumption may silence the episode and take credit for the silence. |
-| AN-03 | The menu pop-up | A visible option opens a decision window. Freedom is the window ceasing to demand attention, not clicking “no” forever. |
-| AN-04 | The paper medal | Sugar prints a ceremonial token after effort and claims the accomplishment that already happened. |
-| AN-05 | Borrowed confetti | Dessert stands beneath a celebration and claims sparkle supplied by people and occasion. |
-| AN-06 | The default conveyor | Availability moves an option into view without proving intent, need, or powerlessness. |
-| AN-07 | The velvet display case | Rationing and special-day rules can make a portion symbolically precious. |
-| AN-08 | The label costume rack | Ingredients may change while a core sweet item remains inside DEF-02. |
-| AN-09 | The customs desk for molecules | Ingredient perfection creates endless border checks; DEF-05 restores the operational boundary. |
-| AN-10 | A typo, not a deleted manuscript | An accident or lapse does not erase understanding or dictate the next choice. |
-| AN-11 | Removing a billboard from a road | Closing a promoted option does not create a hole; the road, destination, and life were already present. |
-| AN-12 | The royalty bill | END-01. Saved for C-20 only. |
-| AN-13 | The pre-filled order slip | Choice remains real even when inherited payoff assumptions arrive already ticked. Honest examination clears the form. |
-| AN-14 | The guide’s empty chair at your table | After the exact instructions are set down, the guide pushes back the chair and leaves the reader at an ordinary table in an ordinary day. The recap remains available, but no food judge, supervisor, or replacement authority remains; the meal and the choice belong to the reader. |
+- **INS-09 — `CH-18`**  
+  `CHOOSE A THRESHOLD ONLY WHEN THE LOSS BELIEF HAS GONE QUIET; IF IT HAS NOT, RETURN TO THE ARGUMENT THAT STILL FEELS UNTRUE RATHER THAN SUMMONING WILLPOWER.`  
+  Recap: `CH-22`.
 
-### 10.3 Perception homework
+- **INS-10 — `CH-19`**  
+  `CHOOSE YOUR THRESHOLD YOURSELF—NOT A PERFECT DATE OR A PURITY TEST. FROM THAT CHOICE, PLAN NO BAD SUGAR DOSES AND TREAT THE DECISION AS COMPLETE NOW; PRESCRIBED GLUCOSE AND CLINICAL NUTRITION REMAIN OUTSIDE THE LINE.`  
+  Recap: `CH-22`.
 
-| ID | Exercise | Placement and limit |
-|---|---|---|
-| PX-01 | One-time decision-window observation | Introduced in C-04 and used in C-14. At one ordinary occasion while still following I-01, notice when the dessert question opens and what preceded it. No delay, restriction, scoring, or prescribed consumption. |
-| PX-02 | Selective pleasure-source audit | Introduced in C-06 and used in C-14. On one remembered or naturally occurring cherished scene, separate taste from people, rest, hunger, ritual, accomplishment, and relief. It is not a daily worksheet. |
-| PX-03 | One-time boundary sort | C-02 only. Sort a few representative examples into categorical core, protected ordinary food, genuine gray savoury edge, and Molecule Margin. It teaches DEF-02 and then stops. |
+- **INS-11 — `CH-20`**  
+  `WHEN BAD SUGAR CROSSES YOUR MIND, LET THE THOUGHT SIGNAL RELIEF; DO NOT SUPPRESS IT, BUILD A CONSOLATION SUBSTITUTE, ENVY OTHER PEOPLE, OR TURN YOUR CHOICE INTO THEIR LECTURE.`  
+  Recap: `CH-22`.
 
-## 11. Arc, concept debuts, curves, and budgets
+- **INS-12 — `CH-21`**  
+  `TREAT AN ACCIDENT, HONEST AMBIGUITY, OR LAPSE AS INFORMATION, NEVER AS A VERDICT OR A LICENSE. RETURN TO THE CHOICE YOU WANT; IF EATING FEELS UNSAFE OR OUT OF CONTROL, SEEK QUALIFIED CARE RATHER THAN USING THIS BOOK AS TREATMENT.`  
+  Recap: `CH-22`.
 
-### 11.1 Curve legend
+## 10. Scene and analogy bank
 
-- **D0:** no demolition; orientation or hand-over.
-- **D1:** the trap is named or briefly recalled.
-- **D2:** demolition is active but not yet dominant.
-- **D3:** sustained benefit or escape-route demolition.
-- **D4:** hinge or closure; a whole class of justification loses its footing.
+| ID | Concrete material and argumentative job |
+|---|---|
+| **SA-01** | **Two absences, two inner states:** the S-023 author’s earlier desire-filled restriction beside the later decision quiet. Establishes that not eating and no longer missing are different outcomes; sourced through `EV-L05` and `EV-L08`. |
+| **SA-02** | **The map line, not the microscope:** a usable boundary can guide choices without inspecting every molecule. Establishes `DEF-02` and prepares the Molecule Margin. |
+| **SA-03** | **The unchanged plate during an investigation:** the reader observes the reasons currently operating before staging any behavioral demonstration. Performs the permission paradox without claiming an actual participant scene. |
+| **SA-04** | **The endless turnstile:** each resisted offer buys passage only to the next identical demand. Shows why the deprivation method has no finish line while the reward belief remains. |
+| **SA-05** | **The two-tollbooth road:** continuing appears to charge one cost while stopping appears to charge deprivation. Removing the imaginary second toll resolves the sugar standoff. |
+| **SA-06** | **The mispriced menu:** a person can choose freely from values printed incorrectly. Preserves agency while showing that repeated choice does not prove benefit. |
+| **SA-07** | **The benefit witness stand:** the lived accounts enter as testimony about jobs people assign to sugar—taste, reward, relief, belonging, convenience—not as proof that sugar uniquely performs those jobs. Harms do not decide the case, but neither does repeating the claim under examination. This scene establishes that a reported justification is an attribution awaiting examination, not an established special benefit. |
+| **SA-08** | **The Ordinary Eating Compass:** three temporary folding tools—the meal-or-hit check, pleasure-source audit, and Molecule Margin—clarify the line and then fold away. |
+| **SA-09** | **The taste spotlight:** isolate the brief sweet sensation from the meal, anticipation, permission, service, company, and occasion surrounding it. Admits taste while testing ownership. |
+| **SA-10** | **The paper medal:** sugar prints a ceremonial token after effort and then claims it produced the achievement, rest, or permission to stop. |
+| **SA-11A** | **Borrowed confetti:** dessert stands beneath a celebration and claims sparkle supplied by people, history, surprise, generosity, and shared time. |
+| **SA-11B** | **The default conveyor:** visibility and convenience move an option into reach without proving need, powerlessness, or the access point’s intent. |
+| **SA-11C** | **The borrowed pause:** a stressful-day sugar scene is separated into fatigue, permission to stop, sitting down, sensory interruption, and the underlying distress. |
+| **SA-12** | **The evidence prism:** animal circuits, human measures, substantial-exposure health findings, and lived reports emerge as different colours rather than one flattened “proof.” |
+| **SA-13** | **Two panels of the Demand Machine:** a documented historical workbench and marketing system in one panel; ordinary cafés, workplaces, and roads in another. Prevents commercial intent from leaking into context evidence. |
+| **SA-14** | **The dessert pager:** during a restaurant meal, learned anticipation buzzes before dessert arrives; the first bite may quiet the episode and receive credit for completing the evening. The taste remains real; the summons was rehearsed. |
+| **SA-15** | **Escape-route gallery:** the velvet display case for rationed exceptions, label costume rack for “better” sweets, stash beyond the finish line, customs desk for hidden molecules, and billboard removed from an otherwise intact road. Each exposes preserved specialness or category confusion. |
+| **SA-16** | **A name tag, not handcuffs:** an identity word can describe felt experience without determining what the reader must want next. |
+| **SA-17** | **The two-period S-023 testimony:** original paraphrase of the earlier four-month suppression and later twelve-month self-report, including decision time, holidays, no reported missing, changed decision catalog, and bounded fruit-taste report. No invented dialogue or cause. |
+| **SA-18** | **The bridge load test:** review every installed distinction before crossing; any doubtful beam points back to its owning chapter rather than toward effort. |
+| **SA-19** | **The unmarked Tuesday doorway:** no calendar square is inherently powerful. The threshold is an ordinary, reader-owned crossing that anticipates future situations without requiring a final binge or ceremonial dose. |
+| **SA-20** | **The cancelled renewal notice:** a thought can arrive without creating an obligation. Social exposure and reminders become evidence that nothing needs renewing. |
+| **SA-21A** | **A typo, not a deleted manuscript:** an accident or lapse does not erase understanding or dictate the next sentence. |
+| **SA-21B** | **The scaffolding comes down:** carries `END-01`; the method’s tools leave the foreground once ordinary distinctions hold without management. |
+| **SA-22** | **The portable card:** the final instruction list is handed over as a finite reference, not a new tracking practice. |
 
-- **F0:** freedom language intentionally restrained so the demolition can work.
-- **F1:** promise or glimpse.
-- **F2:** release becomes credible.
-- **F3:** readiness and choice.
-- **F4:** freedom crescendo and ordinary-life hand-over.
+## 11. Structural responsibility key
 
-### 11.2 Architecture and length
+- **STR-01:** Evidence-honest authority and opening contract. No author escape story, pedigree, success scale, or method-efficacy claim is available; trust comes from transparency and the bounded outcome contrast.
+- **STR-02:** Operational redefinition, margin, adjacent exclusions, and boxed clinical/eating-disorder safety perimeter.
+- **STR-03:** Early quoted justification menu that becomes the demolition agenda.
+- **STR-04:** Dedicated anti-method chapter.
+- **STR-05:** Dedicated fear-of-failure/fear-of-success chapter.
+- **STR-06:** Mid-book recap of instructions already issued.
+- **STR-07:** Meta-inoculation against blindly accepting this book or competing slogans.
+- **STR-08:** Temporary positive authority plus selective perception homework.
+- **STR-09:** Scare-then-disown science treatment and practical safety box.
+- **STR-10:** Documented manufacture-of-demand chapter.
+- **STR-11:** Strongest-case scene and second perception exercise.
+- **STR-12:** Myths and escape-routes Q&A battery.
+- **STR-13:** Identity-excuse chapter. The historical population/genetic operator is evidence-unavailable and must be omitted; use only the contested diagnosis evidence and graceful concession.
+- **STR-14:** Embedded long-form testimony with adjacent limitation box and method-conflict arc, never an invented clinician conflict.
+- **STR-15:** Pre-endgame knowledge recap and readiness gate.
+- **STR-16:** Chosen threshold, meaningless-date demolition, vow, future danger preloading, and immediate conferral of freedom.
+- **STR-17:** Post-threshold belief guarding, thought reframe, social stance, Molecule Margin, and lapse treatment.
+- **STR-18:** Final verbatim instruction recap with chapter cross-references, page-skip gate, outward hand-off, and terminal mantra.
+- **STR-19:** Claim-graded evidence appendix using only ledger entries and supplied source IDs.
 
-| Ch. | ID and working title | One-line arc job | Concept debuts | Curve | Structural ownership | Instruction | Words |
-|---:|---|---|---|---|---|---|---:|
-| 1 | C-01 — The Debate Can End | Build trust, define desire-level freedom, and turn reading into a no-risk investigation. | M-01, M-02, M-06; outcome distinctions | D0 / F1 | Entry contract; evidence-unavailable authority treatment | I-01 | 2,800 |
-| 2 | C-02 — Draw the Line, Free the Rest | Make the target precise enough to prevent both loopholes and food-wide purity. | DEF-01–06; LX-P01, LX-P02, LX-P04; M-09 | D1 / F1 | Redefinition, margin, positive authority, safety box, conditional extensions | I-02 | 3,000 |
-| 3 | C-03 — A Choice Made Under a Story | Preserve agency while dissolving shame and exposing inherited payoff assumptions. | M-03; AN-13 | D2 / F1 | Justification gallery; meta-inoculation | I-03 | 2,600 |
-| 4 | C-04 — The Question Sugar Must Answer | Switch from tolerable costs to proof of unique benefit. | M-04; PX-01 | D2 / F0 | Evaluation-axis switch; perception homework | I-04 | 2,400 |
-| 5 | C-05 — Why the Old Fight Never Ends | Show why behavior control with a preserved reward belief creates conflict. | M-07; LX-T04 | D3 / F0 | Anti-method chapter; mid-book instruction recap | I-05 | 2,600 |
-| 6 | C-06 — Taste Is Real; Ownership Is Not | Separate pleasant taste from irreplaceable value. | LX-P03; PX-02 | D3 / F0 | First benefit demolition | I-06 | 2,500 |
-| 7 | C-07 — The Paper Medal | Return reward, deserving, and accomplishment to their true sources. | AN-04 | D3 / F0 | Benefit demolition: reward | — | 2,800 |
-| 8 | C-08 — The Pause Was Yours | Return comfort, rescue, energy, and convenience claims to actual needs and circumstances. | AN-06 | D3 / F0 | Benefit demolition: rescue and context | — | 2,600 |
-| 9 | C-09 — Borrowed Confetti | Return social pleasure, celebration, and care to people and occasion. | AN-05 | D3 / F0 | Benefit demolition: belonging and ritual | — | 3,400 |
-| 10 | C-10 — The Dessert Pager | Expose the learned anticipation–closure inversion without inventing pharmacology. | LX-T02, LX-T03; M-05, M-08; AN-02, AN-03 | D4 / F0 | Mechanism hinge | — | 2,800 |
-| 11 | C-11 — The Sugar Standoff | Collapse fear of failure and fear of freedom into one false deprivation toll. | LX-T04 fully argued; AN-01 | D3 / F1 | Fear chapter | — | 2,600 |
-| 12 | C-12 — Every Exception Keeps a Job Open | Close moderation, special-day, label, taper, stash, and purity escape routes without denying autonomy. | LX-T10; AN-07–09 | D4 / F1 | Escape-route closure; totality logic | I-07 | 2,900 |
-| 13 | C-13 — The Demand Machine, Precisely | Widen blame toward documented optimization while preserving the boundary between intent and availability. | LX-T07 | D3 / F1 | Engineered-villain chapter | — | 3,000 |
-| 14 | C-14 — The Best Dessert in the Best Evening | Meet STRONG-01 and return every part of its pleasure to the right source. | STRONG-01 enacted | D4 / F2 | Strongest-case scene; perception homework | — | 3,000 |
-| 15 | C-15 — What “Addicted” Can and Cannot Mean | Demystify addiction, withdrawal, brain, and identity stories without dismissing felt difficulty. | Evidence firewall; graded identity concession | D2 / F2 | Identity-excuse chapter; scare-then-disown; appendix bridge | I-08 | 3,200 |
-| 16 | C-16 — What You Know Now | Audit installed understanding and use one bounded testimony to distinguish suppression from desire-level freedom. | Readiness audit; SC-10 | D1 / F3 | Pre-endgame knowledge recap; embedded long-form testimonial | I-09 | 3,200 |
-| 17 | C-17 — The Chosen Threshold | Offer an immediate, reader-owned decision with no final-dose requirement or meaningful date. | Threshold rite; SC-11 | D0 / F4 | Vow; “expect the unexpected”; meaningless-days demolition | I-10 | 2,800 |
-| 18 | C-18 — A Thought Is Not a Summons | Reframe thoughts, accidents, and deliberate returns without suppression, shame, or permission creep. | M-10; AN-10 | D1 / F4 | Core relapse-proofing and margin doctrine | I-11 | 3,000 |
-| 19 | C-19 — Old Rooms, No Old Test | Return to ordinary contexts without avoidance, substitutes, envy, evangelism, or superiority. | Natural-baseline living | D0 / F4 | Social and contextual relapse-proofing | — | 2,500 |
-| 20 | C-20 — Nothing Missing | Retire the Compass, deliver END-01, and release the reader into ordinary life. | END-01; AN-11, AN-12 | D0 / F4 | Positive-authority retirement; saved ending reframe | I-12 | 2,300 |
-| 21 | C-21 — Your Table, Your Day | Hand over the exact portable instruction set without adding a new argument. | None | D0 / F4 | Final recap and page-skimmer gate | Recap I-01–I-12 | 1,600 |
+## 12. Arc and length
 
-**Chapter-budget arithmetic:**  
-2,800 + 3,000 + 2,600 + 2,400 + 2,600 + 2,500 + 2,800 + 2,600 + 3,400 + 2,800 + 2,600 + 2,900 + 3,000 + 3,000 + 3,200 + 3,200 + 2,800 + 3,000 + 2,500 + 2,300 + 1,600 = **57,600 words**.
+### Movements
 
-**APP-A budget:** 2,400 words.
+1. **Invitation and line — `CH-01`–`CH-03`:** Change the success metric, define the target, and remove the threat of immediate behavior change.
+2. **Wrong method and reopened choice — `CH-04`–`CH-07`:** Complete the opening correction, dissolve fear and loaded choice, switch the evaluation axis, and establish that reported jobs are assigned attributions rather than proof of a unique benefit.
+3. **Credit reassignment — `CH-08`–`CH-11`:** Supply temporary distinctions and remove taste, reward, emotion, social life, and convenience from sugar’s ownership.
+4. **Evidence, villain, strongest case — `CH-12`–`CH-14`:** Demystify science, widen the indictment within evidence, and meet the best pro-sugar scene.
+5. **Escape routes and identity — `CH-15`–`CH-16`:** Close negotiated exits and remove identity as the last refuge.
+6. **Embodiment and readiness — `CH-17`–`CH-18`:** Show one bounded lived contrast, audit understanding, and gate the threshold on belief rather than pressure.
+7. **Threshold and ordinary life — `CH-19`–`CH-22`:** Confer freedom, guard thoughts and lapses, retire the scaffolding, and hand over the portable manual.
 
-**Planned manuscript total:** **60,000 words**.
+By the end of `CH-04`, the opening movement has completed a value-bearing correction: struggle under restriction no longer supports “sugar must be necessary” or “I lack character”; it supports the conclusion that controlling behavior while preserving the reward belief is the wrong method.
 
-The demolition register rises from C-03, dominates C-05 through C-14, and drops sharply after C-15. Freedom is promised in C-01 and C-02, deliberately restrained through the demolition movement, returns credibly in C-11 through C-15, and crescendos from C-16 through C-21.
+### Curve legend
 
-## 12. Compact chapter cards
+- **Freedom curve:** promise → restrained → rising → high → crescendo → maximum.
+- **Demolition curve:** low → rising → high → peak → taper → closed.
 
-### C-01 — The Debate Can End
+| ID | Working title | Arc job and curve position | Debuts / structural ownership | Instruction | Words |
+|---|---|---|---|---|---:|
+| **CH-01** | The Debate Can End | Invitation; freedom promise, demolition low | Outcome distinctions; `STR-01` | `INS-01` | 2,800 |
+| **CH-02** | Draw the Line, Not the Molecule | Definition/safety; freedom low, demolition neutral | `DEF-01`–`DEF-06`; `STR-02` | `INS-02` | 3,200 |
+| **CH-03** | Read Before You Decide | Participation; freedom restrained, demolition low | Justification menu; `STR-03` | `INS-03` | 2,400 |
+| **CH-04** | The Deprivation Method | Anti-method; freedom restrained, demolition rising | Named anti-method; `STR-04` | `INS-04` | 3,300 |
+| **CH-05** | The Sugar Standoff | Fear; freedom restrained, demolition rising | Conflict model; `STR-05` | — | 2,700 |
+| **CH-06** | Who Gets to Decide? | Choice/mechanism hinge; freedom restrained, demolition high | Sweet-reward script, open loop, sugar trap; `STR-06`, `STR-07` | `INS-05` | 3,000 |
+| **CH-07** | What Is It Doing for You? | Axis switch and assigned-job correction; freedom restrained, demolition high | Benefit-proof distinction | — | 2,500 |
+| **CH-08** | The Ordinary Eating Compass | Temporary authority; freedom restrained, demolition moderate | Compass and checks; `STR-08` | `INS-06` | 3,000 |
+| **CH-09** | Taste Is Real; Ownership Is Not | Taste demolition; freedom restrained, demolition peak | Credit-reassignment operator; `STR-08` | `INS-07` | 3,100 |
+| **CH-10** | The Paper Medal | Reward/lift demolition; freedom restrained, demolition peak | Reward-credit distinction | — | 3,200 |
+| **CH-11** | Sugar in Borrowed Clothes | Context demolition; freedom restrained, demolition peak | Context-credit synthesis | — | 3,500 |
+| **CH-12** | Science Without a Scare Story | Demystification; freedom low, demolition high | Science firewall; `STR-09` | `INS-08` | 3,400 |
+| **CH-13** | The Demand Machine | Widened indictment; freedom begins rising, demolition high | Demand Machine; `STR-10` | — | 3,100 |
+| **CH-14** | The Dessert Pager | Strongest case; freedom rising, demolition final peak | Core inversion image; `STR-11` | — | 3,300 |
+| **CH-15** | Every Door Marked “Just This Once” | Escape routes; freedom moderate, demolition high/closing | `STR-12` | — | 3,800 |
+| **CH-16** | You Are Not a Sugar Identity | Identity demystification; freedom moderate, demolition taper | `STR-13` | — | 2,700 |
+| **CH-17** | In His Own Words—When the Dessert Debate Went Quiet | Lived consolidation; freedom rising, demolition low | `STR-14` | — | 2,300 |
+| **CH-18** | What You Know Now | Knowledge/readiness gate; freedom high, demolition closed | `STR-15` | `INS-09` | 2,700 |
+| **CH-19** | The Threshold Is Yours | Chosen threshold; freedom very high, demolition closed | `STR-16` | `INS-10` | 2,700 |
+| **CH-20** | When Sugar Crosses Your Mind | Belief guarding; freedom crescendo, demolition closed | Terminal thought script; `STR-17` | `INS-11` | 2,600 |
+| **CH-21** | A Typo Is Not the Manuscript | Lapse-proof/ordinary-life handoff; freedom crescendo | `END-01`; `STR-17` | `INS-12` | 2,400 |
+| **APP-A** | Evidence Notes: Claims, Grades, Limits | Reference-only; curves not applicable | `STR-19` | — | 2,500 |
+| **CH-22** | Carry Nothing Out but Freedom | Final hand-over; freedom maximum, demolition closed | `STR-18` | Recap `INS-01`–`INS-12` | 1,800 |
 
-- **Belief job:** Reading this book need not initiate another diet or force an immediate decision. The desired outcome is freedom from the debate, not perfect control.
-- **Objection resolved:** “This will be another plan that asks me to surrender pleasure and prove my discipline.”
-- **Arc:** Trust and participation; D0 / F1.
-- **Targets:** R-05, R-06, then all. Use RV-09 and RV-11.
-- **Evidence:** EV-06 and EV-08. Preserve the contrast between one managed-truce account and one bounded freedom self-report; neither proves efficacy.
-- **Mantras:** Debut M-01, M-02, M-06.
-- **Instruction:** I-01.
-- **Scenes/analogies:** SC-01 makes the decision tax concrete; SC-08 shows that genuine relief may still involve maintenance.
-- **Structural responsibility:** Carry the emotional and participation contract normally supplied by front matter. State plainly that the book offers an investigation, not authority credentials.
-- **Guardrails:** No invented author story, success rate, testimonial composite, clinical pedigree, or promise that the reader will duplicate EV-08. I-01 governs only the period before the reader reaches the chosen threshold.
-- **Continuity:** Receives a skeptical, tired reader; hands C-02 a willing investigator who has begun no new restriction and understands that this reading-period instruction will expire at the chosen threshold.
-- **Budget:** 2,800.
+**Arithmetic:**  
+2,800 + 3,200 + 2,400 + 3,300 + 2,700 + 3,000 + 2,500 + 3,000 + 3,100 + 3,200 + 3,500 + 3,400 + 3,100 + 3,300 + 3,800 + 2,700 + 2,300 + 2,700 + 2,700 + 2,600 + 2,400 + 2,500 + 1,800 = **66,000 words**.
 
-### C-02 — Draw the Line, Free the Rest
+`APP-A` is physically placed before `CH-22`, with the main reading path clearly continuing from `CH-21` to `CH-22`. This preserves evidence quarantine while leaving the portable manual and terminal mantra as the book’s final content.
 
-- **Belief job:** A precise behavioral target makes practical totality compatible with ordinary eating and a non-catastrophic margin.
-- **Objection resolved:** “Fruit is sugar too; hidden ingredients make quitting impossible; this will spread into fear of all food.”
-- **Arc:** Redefinition; D1 / F1.
-- **Targets:** R-04, R-02, R-06. Use RV-08 and RV-13.
-- **Evidence:** EV-10 for household and label context; EV-17 only to reinforce that source and exposure cannot be flattened into “all carbohydrates are the same.”
-- **Mantras:** Debut M-09.
-- **Instruction:** I-02.
-- **Scenes/analogies:** SC-07 protects care while applying the definition; AN-08 prevents label exceptions; AN-09 establishes DEF-05; PX-03 teaches the line once.
-- **Structural responsibility:** Own DEF-01 through DEF-06, LX-P01, LX-P02, LX-P04, SAFE-01 through SAFE-03, and conditional adjacent-item treatment.
-- **Guardrails:** “Good” and “bad” remain method labels, never moral labels. The gray-edge inquiry cannot exempt a core item. Do not create label-scanning homework.
-- **Continuity:** Receives permission to read without restriction; hands C-03 a clear target that cannot expand or contract opportunistically.
-- **Budget:** 3,000.
+## 13. Chapter cards
 
-### C-03 — A Choice Made Under a Story
+### CH-01 — The Debate Can End
 
-- **Belief job:** The reader’s choices were real, but the perceived payoffs arrived loaded with unexamined assumptions; correcting those assumptions restores rather than removes agency.
-- **Objection resolved:** “I choose it because I like it,” “I am powerless,” and “this book is just another form of brainwashing.”
-- **Arc:** Dissolve loaded choice without blame; D2 / F1.
-- **Targets:** R-01, R-02, R-06. Use RV-02, RV-10, RV-14.
-- **Evidence:** EV-01, EV-02, EV-11. Addiction language remains a felt analogy, not diagnosis.
-- **Mantras:** Debut M-03; echo M-01 and M-06.
-- **Instruction:** I-03.
-- **Scenes/analogies:** SC-02 supplies the early quoted justification menu; AN-13 preserves choice while exposing preloaded value judgments.
-- **Structural responsibility:** Meta-inoculate against the method itself: invite equal scrutiny of the book and the old story. The justification gallery becomes the demolition movement’s agenda.
-- **Guardrails:** Do not say choice was stolen, that advertising created every belief, or that holding the book proves incapacity. No inner adversary.
-- **Continuity:** Receives a defined target; hands C-04 a reader willing to test each claimed benefit.
-- **Budget:** 2,600.
+- **Belief job:** Replace “success means controlling sugar for longer” with the more valuable target of no longer missing it or debating it. Resolve the objection that another rule system is the only realistic goal.
+- **Arc/curves:** Movement 1; freedom promise, demolition low.
+- **Readers:** `PER-02`, `PER-05`, `PER-06`; voices `D-06`, `D-08`; scene `SA-01`.
+- **Evidence:** `EV-L05` is suppression, `EV-L07` is managed truce from a commercial testimonial, and `EV-L08` is one self-report only. They illustrate distinctions, not a universal progression or book efficacy.
+- **Mantras:** Debut `M-02`, `M-03`, `M-06`.
+- **Instruction:** `INS-01`.
+- **Scene job:** `SA-01` makes the difference between behavior absence and desire absence concrete.
+- **Structural responsibility:** `STR-01`.
+- **Guardrails:** Do not invent an author origin, success statistics, or a promise that every reader will reproduce `EV-L08`. Honour managed-truce relief and exclude weight as payoff.
+- **Continuity:** Opens with the destination and hands `CH-02` the need for a precise, non-purity target.
+- **Budget:** 2,800 words.
 
-### C-04 — The Question Sugar Must Answer
+### CH-02 — Draw the Line, Not the Molecule
 
-- **Belief job:** Move the evaluation from whether costs are tolerable to whether BAD SUGAR supplies any unique benefit.
-- **Objection resolved:** “It is not harmful enough to justify all this,” and “surely a small pleasure can outweigh the costs.”
-- **Arc:** Evaluation-axis switch; D2 / F0.
-- **Targets:** All personas, led by R-01 and R-05. Use RV-02 and RV-09.
-- **Evidence:** EV-01, EV-02, EV-13. Pleasant taste remains conceded; no evidence item is used to prove the whole value judgment.
-- **Mantras:** Debut M-04; echo M-01 and M-03.
-- **Instruction:** I-04.
-- **Scenes/analogies:** SC-02 supplies the claims to test; PX-01 lets the reader observe option activation without changing behavior.
-- **Structural responsibility:** Establish the single question governing C-06 through C-09. Separate “what happens to me” from “what indispensable good is supplied.”
-- **Guardrails:** Do not turn harms into the motive, imply that taste is irrelevant, or pre-demolish the later benefit chapters.
-- **Continuity:** Receives restored curiosity; hands C-05 a clean axis for explaining why earlier attempts fought the wrong battle.
-- **Budget:** 2,400.
+- **Function:** Define exactly what can be left and what must remain protected. Resolve “fruit is sugar too,” hidden-ingredient panic, and motive-based exemptions before persuasion proceeds.
+- **Arc/curves:** Movement 1; freedom low, demolition neutral.
+- **Readers:** `PER-01`, `PER-02`, `PER-04`; voice `D-05`; scene `SA-02`.
+- **Evidence:** `EV-L13` and `EV-L14` illustrate household and label confusion only; neither is freedom or efficacy evidence.
+- **Mantras:** Debut `M-01`.
+- **Instruction:** `INS-02`.
+- **Scene job:** `SA-02` distinguishes an operational category from molecular inspection.
+- **Structural responsibility:** `STR-02`.
+- **Guardrails:** Preserve every element of `DEF-01`–`DEF-06` and `SAFE-01`–`SAFE-05`. Behavioral role can include a gray savoury item but can never exempt a core sweet item.
+- **Continuity:** Receives the destination and hands `CH-03` a stable target that can be investigated without food-category creep.
+- **Budget:** 3,200 words.
 
-### C-05 — Why the Old Fight Never Ends
+### CH-03 — Read Before You Decide
 
-- **Belief job:** Behavior control remains laborious when the reader still believes a prized reward is being withheld.
-- **Objection resolved:** “My past failures prove I lack discipline,” and “if I were stronger, my rules would finally work.”
-- **Arc:** Anti-method; D3 / F0.
-- **Targets:** R-02, R-05, R-06. Use RV-03, RV-09, RV-10.
-- **Evidence:** EV-04, EV-06, EV-07. These accounts illustrate suppression and management; they do not establish a universal outcome.
-- **Mantras:** Debut M-07; echo M-02, M-06, M-09.
-- **Instruction:** I-05. Recap I-01 through I-05 at the close.
-- **Scenes/analogies:** SC-03 shows relief after prohibition without assigning it to sugar; SC-08 honours a workable managed truce; AN-07 shows how rationing can increase symbolic value.
-- **Structural responsibility:** Own the anti-method chapter and the sole mid-book instruction recap. Reframe persistence in difficult rules as evidence of effort, not weak character.
-- **Guardrails:** Do not ridicule moderation, claim all restriction backfires, or call qualified dietary treatment deprivation. Preserve I-01’s explicit endpoint at the chosen threshold when recapping it.
-- **Continuity:** Receives the correct evaluation axis; hands C-06 a reader ready to examine benefits without using denial as the test.
-- **Budget:** 2,600.
+- **Belief job:** Show that changing behavior immediately is not proof of seriousness; the present work is discovering why the behavior still appears valuable. Resolve “Should I stop now?” without removing autonomy.
+- **Arc/curves:** Movement 1; freedom restrained, demolition low.
+- **Readers:** All personas, led by `PER-02`, `PER-03`, `PER-06`; voices `D-01`–`D-08`; scene `SA-03`.
+- **Evidence:** `EV-L01`–`EV-L04` ground the early justification menu but do not establish one mechanism. `EV-L05` shows desire can persist during restriction in particular accounts only.
+- **Mantras:** Echo `M-01`, `M-02`, `M-03`.
+- **Instruction:** `INS-03`.
+- **Scene job:** `SA-03` removes the demand for a behavioral performance while the reader investigates.
+- **Structural responsibility:** `STR-03`.
+- **Guardrails:** Do not imply continued consumption is medically advisable or required. Present the menu as reader voice to be examined, not as proof or a promise of later conclusions.
+- **Continuity:** Receives a fixed category and hands `CH-04` the distinction between examining value and suppressing behavior.
+- **Budget:** 2,400 words.
 
-### C-06 — Taste Is Real; Ownership Is Not
+### CH-04 — The Deprivation Method
 
-- **Belief job:** A brief pleasant taste does not establish a unique, durable, or irreplaceable contribution to life.
-- **Objection resolved:** “I return for the taste, so the benefit cannot be an illusion.”
-- **Arc:** First direct benefit demolition; D3 / F0.
-- **Targets:** R-01 and R-06. Use RV-01 and RV-02.
-- **Evidence:** EV-01 and EV-13. Preserve the small-sample and mixed-science limits.
-- **Mantras:** Echo M-04 and M-07.
-- **Instruction:** I-06.
-- **Scenes/analogies:** SC-02 supplies the taste claim; PX-02 separates sensation from the scene’s larger value.
-- **Structural responsibility:** Debut LX-P03 as a selective lens, not a tracking exercise.
-- **Guardrails:** Never call sweetness imaginary or unpleasant. Do not predict taste change, palate reset, or reduced pleasure.
-- **Continuity:** Receives a reader no longer trying to overpower desire; hands C-07 the distinction between sensation and credited meaning.
-- **Budget:** 2,500.
+- **Belief job:** Reclassify struggle, obsession, and restarting as consequences of controlling behavior while preserving belief in a lost reward—not proof that the reader is weak or that sugar is necessary.
+- **Arc/curves:** Movement 2; freedom restrained, demolition rising.
+- **Readers:** `PER-02`, `PER-05`, `PER-06`; voices `D-02`, `D-06`, `D-07`; scene `SA-04`.
+- **Evidence:** `EV-L05`, `EV-L06`, and `EV-L07`; preserve suppression, single-lapse, and managed-truce limits.
+- **Mantras:** Debut `M-07`; echo `M-01`, `M-03`, `M-06`.
+- **Instruction:** `INS-04`.
+- **Scene job:** `SA-04` shows why repeated resistance cannot produce a finish line while the reward belief survives.
+- **Structural responsibility:** `STR-04`.
+- **Guardrails:** Do not claim abstinence universally causes obsession, mock useful boundaries, or reinterpret a commercial testimonial as efficacy evidence.
+- **Continuity:** Receives behavior-first failure and hands `CH-05` a named conflict whose fear can now be examined.
+- **Budget:** 3,300 words.
 
-### C-07 — The Paper Medal
+### CH-05 — The Sugar Standoff
 
-- **Belief job:** Effort, accomplishment, permission to rest, and recognition are the reward; BAD SUGAR is a ceremonial token that claims their value.
-- **Objection resolved:** “I earned it,” “I deserve it,” and “without a treat the work has no payoff.”
-- **Arc:** Reward demolition; D3 / F0.
-- **Targets:** R-01 and R-03. Use RV-07.
-- **Evidence:** EV-02. Treat reward and deserving as participant beliefs, not causal findings.
-- **Mantras:** Echo M-04.
+- **Belief job:** Collapse fear of failure and fear of success into one source: the untested belief that stopping forfeits something valuable. Resolve both “I will fail again” and “What if I succeed and life is poorer?”
+- **Arc/curves:** Movement 2; freedom restrained, demolition rising.
+- **Readers:** `PER-02`, `PER-05`, `PER-06`; voices `D-02`, `D-06`; scene `SA-05`.
+- **Evidence:** `EV-L05` and `EV-L07` supply bounded examples of battle and management, not general fear mechanisms.
+- **Mantras:** Echo `M-01`, `M-06`, `M-07`.
 - **Instruction:** None.
-- **Scenes/analogies:** SC-04 provides the effort-to-treat handoff; AN-04 shows the token claiming an achievement it did not produce.
-- **Structural responsibility:** Return both accomplishment and rest to the reader without prescribing productivity or a replacement reward.
-- **Guardrails:** Do not imply that eating must be earned, deny ordinary enjoyment, or replace sugar with another compulsory prize.
-- **Continuity:** Receives the taste distinction; hands C-08 a reader able to separate a symbol from the need it represents.
-- **Budget:** 2,800.
+- **Scene job:** `SA-05` exposes imagined deprivation as the false toll maintaining the conflict.
+- **Structural responsibility:** `STR-05`.
+- **Guardrails:** Fear must be dissolved, never amplified into a motive. Do not guarantee a fearless experience or imply that caution around clinical eating concerns is part of the trap.
+- **Continuity:** Receives the anti-method and hands `CH-06` a reader ready to reconsider how choice operates under a mispriced benefit.
+- **Budget:** 2,700 words.
 
-### C-08 — The Pause Was Yours
+### CH-06 — Who Gets to Decide?
 
-- **Belief job:** Sugar may accompany a pause or sensory interruption, but it does not uniquely solve stress, sadness, boredom, loneliness, weakness, hunger, or time pressure.
-- **Objection resolved:** “It is the only thing that gets me through this moment.”
-- **Arc:** Rescue and context demolition; D3 / F0.
-- **Targets:** R-03 and R-01. Use RV-05.
-- **Evidence:** EV-02 and EV-03. Preserve their qualitative, non-causal scope.
-- **Mantras:** Echo M-04.
+- **Belief job:** Preserve agency while showing that repeated choices made under an installed valuation do not prove the valuation true. Resolve “If I choose it, it must benefit me” and the method-level objection that the book is merely replacing one form of brainwashing with another.
+- **Arc/curves:** Movement 2 mechanism hinge; freedom restrained, demolition high.
+- **Readers:** `PER-01`, `PER-03`, `PER-06`; voices `D-01`, `D-04`, `D-08`; scene `SA-06`.
+- **Evidence:** `EV-L01`–`EV-L04` show varied reported pathways; `EV-L15` validates powerlessness language without diagnosis. None establishes a universal loop or removed choice.
+- **Mantras:** Debut `M-04`; echo `M-01`, `M-02`, `M-06`, `M-07`.
+- **Instruction:** Recap `INS-01`–`INS-04`; debut `INS-05` at the climax.
+- **Scene job:** `SA-06` holds free choice and false valuation together.
+- **Structural responsibility:** `STR-06`, `STR-07`.
+- **Guardrails:** Introduce the sweet-reward script and open loop as the book’s belief-and-attention model, not a proven pharmacological mechanism or independent inner voice.
+- **Continuity:** Receives the fear conflict and hands `CH-07` restored agency plus a named mechanism ready for the distinction between an assigned job and an established benefit.
+- **Budget:** 3,000 words.
+
+### CH-07 — What Is It Doing for You?
+
+- **Belief job:** Replace “the reasons I give for eating sugar prove that it benefits me” with the bounded conclusion that the accepted accounts establish jobs people assign to sugar, not evidence that sugar uniquely performs those jobs. Switch from balancing harms against presumed benefits to requiring the claim of special value to establish its ownership. Resolve “It may be costly, but the pleasure makes it worth it” by demoting that pleasure claim from a settled credit to an attribution still needing support.
+- **Arc/curves:** Movement 2; freedom restrained, demolition high.
+- **Readers:** `PER-01`, `PER-03`, `PER-05`; voices `D-01`, `D-04`, `D-06`; scene `SA-07`.
+- **Evidence:** `EV-L01`–`EV-L03` establish reported taste, anticipation, reward, weakness, emotion, and social context. They support the conclusion that people assign these jobs to sugar; they do not establish that sugar uniquely supplies pleasure, energy, relief, belonging, or necessity.
+- **Mantras:** Debut `M-05`; echo `M-01`, `M-04`.
 - **Instruction:** None.
-- **Scenes/analogies:** SC-05 separates distress, fatigue, access, and convenience; AN-06 distinguishes a default path from a need.
-- **Structural responsibility:** Protect actual hunger, rest, emotion, and care from being dismissed while denying BAD SUGAR exclusive ownership.
-- **Guardrails:** Persistent weakness or medically relevant symptoms route outside the belief argument. Do not prescribe a coping system or claim every emotion is caused by sugar.
-- **Continuity:** Receives the symbol-versus-source distinction; hands C-09 a broader ability to return credit without stripping meaning from life.
-- **Budget:** 2,600.
+- **Scene job:** `SA-07` converts the justification menu from a presumed benefit ledger into testimony about assigned credit. The chapter lands that distinction before later chapters examine the individual claims.
+- **Structural responsibility:** No additional slot.
+- **Guardrails:** Do not treat absence of causal proof as proof that no reader feels pleasure or relief. Do not deny pleasant taste, calories, distress, or context. The completed correction is that a reported job is not proof of unique performance; `CH-09`–`CH-11` retain ownership of the benefit-by-benefit credit reassignment.
+- **Continuity:** Receives restored agency and hands `CH-08` the settled distinction between assigned jobs and established benefits, together with a defined set of claims that can now be examined without presuming sugar already owns their value.
+- **Budget:** 2,500 words.
 
-### C-09 — Borrowed Confetti
+### CH-08 — The Ordinary Eating Compass
 
-- **Belief job:** BAD SUGAR can accompany belonging, hospitality, celebration, and care without creating them.
-- **Objection resolved:** “Birthdays, holidays, restaurants, and family care would lose something essential.”
-- **Arc:** Social and ritual demolition; D3 / F0.
-- **Targets:** R-03, R-04, R-05. Use RV-06 and RV-08.
-- **Evidence:** EV-02, EV-06, EV-08, EV-10. EV-08 shows one person passing holidays, not universal ease.
-- **Mantras:** Echo M-04.
+- **Belief job:** Show that a usable line and a few selective tests can clarify choices without becoming another permanent food-control system. Resolve “Without rules for every item, I will be lost.”
+- **Arc/curves:** Movement 3; freedom restrained, demolition moderate.
+- **Readers:** `PER-02`, `PER-04`, `PER-05`; voice `D-05`; scene `SA-08`.
+- **Evidence:** `EV-L13` and `EV-L14` illustrate household and label complexity only.
+- **Mantras:** Echo `M-01`, `M-05`.
+- **Instruction:** `INS-06`.
+- **Scene job:** `SA-08` introduces the meal-or-hit check, pleasure-source audit, and Molecule Margin as folding tools that retire.
+- **Structural responsibility:** `STR-08`.
+- **Guardrails:** The meal-or-hit check applies only to the gray savoury edge. No meal scoring, ingredient surveillance, nutrition plan, caregiver judgment, or permanent dashboard.
+- **Continuity:** Receives the settled assigned-job/established-benefit distinction and hands `CH-09` a precise, temporary way to test ownership of the most credible claimed benefit: taste.
+- **Budget:** 3,000 words.
+
+### CH-09 — Taste Is Real; Ownership Is Not
+
+- **Belief job:** Admit sweet taste fully while separating a brief pleasant sensation from the larger claim that BAD SUGAR owns the pleasure of a meal, occasion, or life. Resolve “I simply go back for the taste.”
+- **Arc/curves:** Movement 3; freedom restrained, demolition peak.
+- **Readers:** `PER-01`, with `PER-02`; voice `D-01`; scene `SA-09`.
+- **Evidence:** `EV-L01`; `EV-S02` remains `MIXED` and does not establish addiction or a universal brain response.
+- **Mantras:** Debut `M-08`; echo `M-01`, `M-05`, `M-07`.
+- **Instruction:** `INS-07`.
+- **Scene job:** `SA-09` performs the pleasure-source audit without disputing sensation.
+- **Structural responsibility:** `STR-08`.
+- **Guardrails:** No taste denial, sensory disgust claim, taste-reset promise, or implication that pleasure is evidence of disease.
+- **Continuity:** Receives the Compass and hands `CH-10` the established distinction between a sensation and the value surrounding it.
+- **Budget:** 3,100 words.
+
+### CH-10 — The Paper Medal
+
+- **Belief job:** Return reward, deservingness, accomplishment, rest, and usable energy to their real sources. Resolve “I earned it” and “I feel weak, so I need sugar.”
+- **Arc/curves:** Movement 3; freedom restrained, demolition peak.
+- **Readers:** `PER-01`, `PER-03`; voices grounded in `EV-L02`; scene `SA-10`.
+- **Evidence:** `EV-L02` records participant beliefs, not physiological findings; `EV-L01` supplies the extra-slice example.
+- **Mantras:** Echo `M-01`, `M-05`, `M-08`.
 - **Instruction:** None.
-- **Scenes/analogies:** SC-06 returns belonging to participation; SC-07 preserves care without a label loophole; SC-08 distinguishes occasion from management; AN-05 compresses credit reassignment.
-- **Structural responsibility:** Complete the benefit inventory before the mechanism hinge.
-- **Guardrails:** No caregiver shame, social withdrawal, contempt for hosts, or claim that commercial industry invented celebrations.
-- **Continuity:** Receives several corrected benefit categories; hands C-10 the pattern needed to explain why the miscredit feels self-confirming.
-- **Budget:** 3,400.
+- **Scene job:** `SA-10` distinguishes the accomplishment and permission to rest from the ceremonial product.
+- **Structural responsibility:** No additional slot.
+- **Guardrails:** Calories are real and ordinary food supplies energy. Persistent weakness or a clinical dietary need belongs to `SAFE-01`, not the belief argument.
+- **Continuity:** Receives the taste distinction and hands `CH-11` the same credit-reassignment method for emotional, social, and access contexts.
+- **Budget:** 3,200 words.
 
-### C-10 — The Dessert Pager
+### CH-11 — Sugar in Borrowed Clothes
 
-- **Belief job:** The learned sweet-reward script can open anticipatory attention; consuming BAD SUGAR may close the current episode and receive credit for resolving a need the script helped create.
-- **Objection resolved:** “The relief after I eat it proves the need was real.”
-- **Arc:** Mechanism hinge and core inversion; D4 / F0.
-- **Targets:** R-01, R-02, R-06. Use RV-01, RV-03, RV-11.
-- **Evidence:** EV-01, EV-02, EV-13, EV-14, EV-16. The learning evidence remains mixed and does not establish a universal loop.
-- **Mantras:** Debut M-05 and M-08; echo M-03, M-04, M-06, M-07.
+- **Belief job:** Show that stress relief, comfort, belonging, celebration, care, convenience, and habit can explain selection without becoming benefits owned by sugar.
+- **Arc/curves:** Movement 3; freedom restrained, demolition peak.
+- **Readers:** `PER-03`, `PER-04`, with `PER-01`; voices `D-04`, `D-10`–`D-12`; scenes `SA-11A`, `SA-11B`, `SA-11C`.
+- **Evidence:** `EV-L03`, `EV-L04`, `EV-L13`; all are contextual or caregiver accounts, not causal mechanisms or efficacy evidence.
+- **Mantras:** Echo `M-01`, `M-05`, `M-08`.
 - **Instruction:** None.
-- **Scenes/analogies:** AN-02 carries the inversion; AN-03 distinguishes ending a decision episode from receiving a benefit; SC-01 shows the cost of repeated activation.
-- **Structural responsibility:** Debut LX-T02 and LX-T03. This is the only full argument for the mechanism; later chapters invoke its tokens.
-- **Guardrails:** No dopamine narrative, biochemical crash, withdrawal claim, baseline claim, or assertion that every dose universally trains the loop.
-- **Continuity:** Receives all benefit demolitions; hands C-11 a model that explains conflict without an inner enemy.
-- **Budget:** 2,800.
+- **Scene jobs:** `SA-11A` reassigns celebration; `SA-11B` separates convenience from need and intent; `SA-11C` validates distress while returning credit to the pause and actual care.
+- **Structural responsibility:** No additional slot.
+- **Guardrails:** Do not say birthdays were manufactured by industry, availability removes agency, or sugar treats emotion. Keep household material free of blame.
+- **Continuity:** Receives the reassignment method and hands `CH-12` a dismantled benefit menu plus scientific objections that must now be handled honestly.
+- **Budget:** 3,500 words.
 
-### C-11 — The Sugar Standoff
+### CH-12 — Science Without a Scare Story
 
-- **Belief job:** Fear of continuing and fear of stopping are not two independent truths; the second depends on the imagined lost benefit.
-- **Objection resolved:** “What if I fail again?” and “What if freedom makes meals, celebrations, or my identity feel empty?”
-- **Arc:** Fear chapter; D3 / F1.
-- **Targets:** R-02, R-05, R-06. Use RV-03, RV-09, RV-10.
-- **Evidence:** EV-04, EV-06, EV-07. Use them as bounded examples of conflict states.
-- **Mantras:** Echo M-02, M-03, M-05, M-06, M-07.
+- **Belief job:** Remove the idea that freedom requires a settled addiction, dopamine, withdrawal, or danger story. Resolve both “My brain makes me do it” and “If sugar is not proven addictive, my difficulty is not real.”
+- **Arc/curves:** Movement 4; freedom low, demolition high.
+- **Readers:** `PER-01`, `PER-02`, `PER-04`, `PER-05`; voice `D-13`; scene `SA-12`.
+- **Evidence:** `EV-S01`–`EV-S06` with every grade and limit intact; `EV-L15` validates felt compulsion and shame without diagnosis.
+- **Mantras:** Echo `M-01`, `M-04`, `M-05`.
+- **Instruction:** `INS-08`.
+- **Scene job:** `SA-12` prevents animal, human, exposure, and lived evidence from being flattened into one mechanism.
+- **Structural responsibility:** `STR-09`.
+- **Guardrails:** Use health information briefly, then explicitly remove fear as motive. Include the boxed `SAFE-01`/`SAFE-02` advisory. Do not create a literature-review tone in the narrative.
+- **Continuity:** Receives the lived benefit demolitions and hands `CH-13` a disciplined distinction between uncertain mechanism claims and documented commercial intent.
+- **Budget:** 3,400 words.
+
+### CH-13 — The Demand Machine
+
+- **Belief job:** Move blame away from personal weakness by showing that particular historical actors deliberately optimized products and marketing for appeal—without inflating the evidence into a universal conspiracy.
+- **Arc/curves:** Movement 4; freedom begins rising, demolition high.
+- **Readers:** `PER-01`, `PER-03`, `PER-04`; scene `SA-13`.
+- **Evidence:** `EV-C01`, `EV-C02`, and `EV-L04`. Documentary intent and ordinary availability must remain separate.
+- **Mantras:** Echo `M-01`, `M-04`, `M-05`, `M-08`.
 - **Instruction:** None.
-- **Scenes/analogies:** AN-01 collapses both fears into one false toll; SC-03 shows how restriction can manufacture relief; SC-08 shows a truce without belittling it.
-- **Structural responsibility:** Own both fear-of-failure and fear-of-success. Identity concerns are introduced only as objections; their science treatment belongs to C-15.
-- **Guardrails:** No fear-based health argument, prison promise, or prediction that the reader will fail if uncertain.
-- **Continuity:** Receives the mechanism; hands C-12 a reader ready to examine escape routes without panic.
-- **Budget:** 2,600.
+- **Scene job:** `SA-13` lets supported optimization externalize shame while visually quarantining context-only access evidence.
+- **Structural responsibility:** `STR-10`.
+- **Guardrails:** Keep actor, time, and practice scope explicit. No universal addiction design, current-industry generalization, retailer intent, treatment attack, or caregiver blame.
+- **Continuity:** Receives scientific restraint and hands `CH-14` a reader who can distrust manufactured salience without dismissing their own strongest pleasure experience.
+- **Budget:** 3,100 words.
 
-### C-12 — Every Exception Keeps a Job Open
+### CH-14 — The Dessert Pager
 
-- **Belief job:** A planned exception matters because it preserves the assigned job, not because one bite has magical biological power.
-- **Objection resolved:** Weekends, holidays, restaurants, earned treats, stress-only use, better-labelled versions, a post-diet stash, tapering, perfect start dates, hidden-sugar purity, and “I got away with it.”
-- **Arc:** Close escape routes; D4 / F1.
-- **Targets:** All personas, especially R-04, R-05, R-06. Use RV-08, RV-09, RV-10.
-- **Evidence:** EV-04, EV-06, EV-07, EV-08, EV-10, EV-16. Preserve managed-truce legitimacy and the absence of a proven one-bite or withdrawal mechanism.
-- **Mantras:** Echo M-03, M-04, M-05, M-06, M-07, M-08, M-09.
-- **Instruction:** I-07.
-- **Scenes/analogies:** SC-08 makes exception management visible; AN-07 exposes symbolic preciousness; AN-08 blocks label costumes; AN-09 blocks purity; SC-03 distinguishes a planned prize from accidental exposure.
-- **Structural responsibility:** Establish the autonomy-led pincer: recurring exceptions are permitted, but they are not closure while they retain benefit status.
-- **Guardrails:** Do not claim moderation is impossible, one dose causes escalation, tapering is dangerous, or clinical glucose is an exception to resist.
-- **Continuity:** Receives the dissolved standoff; hands C-13 a closed internal logic before blame widens outward.
-- **Budget:** 2,900.
-
-### C-13 — The Demand Machine, Precisely
-
-- **Belief job:** Some commercial actors deliberately optimized appeal and demand; recognizing that history removes self-blame without turning ordinary availability into proof of manipulation.
-- **Objection resolved:** “I am uniquely weak,” alongside the opposite overreach, “every product and every display was engineered to addict me.”
-- **Arc:** Widen the indictment; D3 / F1.
-- **Targets:** R-01, R-03, R-04. Use RV-05 and RV-08.
-- **Evidence:** EV-03, EV-18, EV-19. EV-20 is reserved for APP-A.
-- **Mantras:** Echo M-03 and M-04.
+- **Belief job:** Meet the best restaurant-dessert case and return the evening’s pleasure to appetite, leisure, service, company, anticipation, and taste while exposing the learned demand for closure.
+- **Arc/curves:** Movement 4; freedom rising, demolition final peak.
+- **Readers:** `PER-01`, `PER-02`, `PER-05`, `PER-06`; scene `SA-14`.
+- **Evidence:** `EV-L01` grounds anticipatory menu attention and taste; `EV-S02` permits pleasant taste but not a universal mechanism.
+- **Mantras:** Echo `M-01`, `M-04`, `M-05`, `M-08`.
 - **Instruction:** None.
-- **Scenes/analogies:** AN-06 distinguishes environmental context from documented intent; SC-05 shows recurring access without accusing the location.
-- **Structural responsibility:** Define LX-T07 at its exact evidentiary width. Direct anger toward supported optimization, never toward the reader, household, clinician, retailer, workplace, or host.
-- **Guardrails:** No current universal conspiracy, addiction formula, fabricated-research claim, sensational tobacco centerpiece, or claim that marketing caused a specific person’s behavior.
-- **Continuity:** Receives internally closed escape routes; hands C-14 a reader who can face the strongest scene without shame or powerlessness.
-- **Budget:** 3,000.
+- **Scene job:** `SA-14` compresses the belief-and-attribution inversion into the book’s strongest original image and supplies a selective perception exercise.
+- **Structural responsibility:** `STR-11`.
+- **Guardrails:** The restaurant sequence is a representative construction from sourced patterns, not a fabricated participant story. The pager is learned expectation, not a biomedical device or inner creature.
+- **Continuity:** Receives the benefit demolitions and hands `CH-15` the premise that, if the best scene grants no unique ownership, exceptions must justify themselves without nostalgia.
+- **Budget:** 3,300 words.
 
-### C-14 — The Best Dessert in the Best Evening
+### CH-15 — Every Door Marked “Just This Once”
 
-- **Belief job:** Even the strongest pro-sugar scene contains no irreplaceable contribution once sensation, anticipation, restriction relief, and the occasion are separated.
-- **Objection resolved:** “Analysis is easy in theory, but that first bite in the perfect setting proves dessert adds something essential.”
-- **Arc:** Strongest-case confrontation; D4 / F2.
-- **Targets:** R-01, R-02, R-03. Use RV-01, RV-02, RV-06.
-- **Evidence:** EV-01, EV-04, EV-07, EV-13. Preserve pleasant taste and the bounded nature of restriction accounts.
-- **Mantras:** Echo M-03, M-04, M-05, M-07, M-08.
+- **Belief job:** Show that weekends, special occasions, better labels, tapering, future stashes, substitutions, perfect dates, hidden-sugar panic, and reset systems either preserve sugar’s special status or confuse the target line. Resolve “I can keep the meaningful ones.”
+- **Arc/curves:** Movement 5; freedom moderate, demolition high and closing.
+- **Readers:** All personas; voices `D-03`, `D-05`, `D-06`, `D-07`; scene set `SA-15`.
+- **Evidence:** `EV-L05`, `EV-L06`, `EV-L07`, `EV-L10`, `EV-L11`, `EV-L12`, `EV-L14`. Preserve suppression, single-lapse, managed-truce, early-signal, anticipated-behavior, campaign-receptivity, and non-outcome limits.
+- **Mantras:** Echo `M-01`, `M-04`, `M-05`, `M-06`, `M-07`, `M-08`.
 - **Instruction:** None.
-- **Scenes/analogies:** SC-09 carries the main argument; AN-03 exposes pre-meal activation; AN-05 returns the evening’s sparkle; PX-01 and PX-02 enact perception and credit reassignment.
-- **Structural responsibility:** Meet STRONG-01 only after the reader has the mechanism vocabulary. This chapter closes the benefit-demolition movement.
-- **Guardrails:** Do not make the dessert disgusting, deny the evening’s pleasure, or convert the exercise into a repeated exposure or tracking task.
-- **Continuity:** Receives all installed distinctions; hands C-15 a reader with no surviving benefit claim but possible scientific or identity objections.
-- **Budget:** 3,000.
+- **Scene job:** Each `SA-15` image handles a distinct escape route while serving the single totality question: does keeping the exception preserve special value or merely clarify the line?
+- **Structural responsibility:** `STR-12`.
+- **Guardrails:** Respect reduction and managed truce as available choices. Do not claim moderation always escalates, tapering is medically wrong, one bite restarts anything, or a sugar-free product is automatically in scope. Apply `DEF-05` and `DEF-06`.
+- **Continuity:** Receives the strongest-case demolition and hands `CH-16` closed practical exits, leaving identity as the remaining justification.
+- **Budget:** 3,800 words.
 
-### C-15 — What “Addicted” Can and Cannot Mean
+### CH-16 — You Are Not a Sugar Identity
 
-- **Belief job:** Felt pull and difficulty are real, but the accepted evidence does not require a settled addiction, withdrawal, dopamine, personality, or powerless-brain identity.
-- **Objection resolved:** “My brain, body, or addictive personality makes the rest of this irrelevant.”
-- **Arc:** Demystification; D2 / F2.
-- **Targets:** R-01, R-02, R-05. Use RV-14.
-- **Evidence:** EV-11 through EV-17. All grades and translational limits remain visible.
-- **Mantras:** Echo M-03, M-04, M-05.
-- **Instruction:** I-08.
-- **Scenes/analogies:** SC-03 validates subjective difficulty; AN-13 preserves agency under learned assumptions. Use no brain analogy that implies the science has established a machine or damaged controller.
-- **Structural responsibility:** Own the identity-excuse chapter, the narrative science firewall, and the bridge to APP-A. Apply scare-then-disown immediately to any health fact.
-- **Guardrails:** No diagnosis, universal withdrawal, fixed timeline, dopamine hijack, rodent-to-human proof, guaranteed health gain, or attack on treatment. The full-length template’s population-scale historical-evidence operator is unavailable in the accepted bundle and is omitted rather than invented. The graceful concession remains: whatever label the reader uses, the benefit question can still be examined.
-- **Continuity:** Receives the strongest-scene demolition; hands C-16 a reader who need not wait for scientific certainty or fear to assess readiness.
-- **Budget:** 3,200.
-
-### C-16 — What You Know Now
-
-- **Belief job:** Readiness is the absence of a believed loss, not confidence in one’s endurance.
-- **Objection resolved:** “I understand the argument, but I do not know whether I am ready or whether freedom is even possible.”
-- **Arc:** Knowledge and readiness gate; D1 / F3.
-- **Targets:** All, led by R-02, R-05, R-06. Use RV-09 through RV-12.
-- **Evidence:** EV-04, EV-06, EV-07, EV-08. Maintain every outcome label.
-- **Mantras:** Echo M-01 through M-09.
-- **Instruction:** I-09.
-- **Scenes/analogies:** SC-10 supplies the sole long-form testimony; SC-01 and SC-03 establish the before-state contrast.
-- **Structural responsibility:** Open with the pre-endgame installed-knowledge litany. Render SC-10 in original prose from verified elements only and place this limitation beside it: one self-report, not a trial or method-efficacy claim.
-- **Guardrails:** No invented name, dialogue, authority conflict, medical result, weight change, cause, program detail, or sensory detail. The only supported conflict is desire-preserving restriction versus later changed valuation.
-- **Continuity:** Receives a demystified reader; sends unresolved readers back to the relevant belief chapter and ready readers forward without coercion.
-- **Budget:** 3,200.
-
-### C-17 — The Chosen Threshold
-
-- **Belief job:** Once no real benefit appears lost, practical total freedom is an immediate choice rather than a test of endurance.
-- **Objection resolved:** “I need Monday, New Year, an empty cupboard, a taper, or one ceremonial last indulgence.”
-- **Arc:** Reader-owned threshold; D0 / F4.
-- **Targets:** All personas. Use RV-11 and RV-12.
-- **Evidence:** EV-08 as possibility only; EV-16 to avoid inventing a universal taper requirement.
-- **Mantras:** Echo M-01 through M-09, with M-06 confined to a brief contrast with the old decision cost.
-- **Instruction:** I-10.
-- **Scenes/analogies:** SC-11 stages the decision; AN-03 supplies the act of closing an unnecessary decision window.
-- **Structural responsibility:** Include the vow, immediate identity conferral, meaningless-days demolition, and “expect the unexpected” future-pacing. Preload difficult days, celebrations, accidental exposure, and a sudden old thought into the reader’s chosen understanding. Mark this threshold as the endpoint of I-01’s temporary reading-period direction and the beginning of I-10’s chosen state.
-- **Guardrails:** No required final consumption, purchase, binge, forced disposal, fasting, disgust exercise, or violation of care. If the reader naturally has an already-planned final item and it is safe, attention may be directed to actual taste and expectation without dramatization; consuming it is never required.
-- **Continuity:** Receives conceptual readiness; ends I-01’s temporary behavioral direction and hands C-18 a completed decision rather than an attempt.
-- **Budget:** 2,800.
-
-### C-18 — A Thought Is Not a Summons
-
-- **Belief job:** A thought, accidental exposure, or deliberate lapse has only the meaning the reader gives it; none creates failure or an automatic next event.
-- **Objection resolved:** “Thinking about sugar means I still want it,” “one mistake ruins everything,” and “if nothing bad happened, planned exceptions must be safe.”
-- **Arc:** Core relapse-proofing; D1 / F4.
-- **Targets:** R-02, R-04, R-06. Use RV-04 and RV-12.
-- **Evidence:** EV-04, EV-07, EV-08. The lapse-collapse account is an interpretation example, not a biological rule.
-- **Mantras:** Debut M-10; echo M-03, M-05, M-06, M-07, M-08, M-09.
-- **Instruction:** I-11.
-- **Scenes/analogies:** AN-10 dismantles all-or-nothing interpretation; AN-09 restores DEF-05; AN-02 may be invoked briefly without re-arguing it.
-- **Structural responsibility:** Hand over the freedom response, thought reframe, Molecule Margin, deliberate-return inquiry, and distinction between forgiveness and permission.
-- **Guardrails:** No catastrophizing, streak reset, punishment, compensation, or claim that one event reactivates addiction. A deliberate return is met with honest curiosity about restored benefit credit.
-- **Continuity:** Receives a chosen threshold; hands C-19 a reader who can enter ordinary contexts without monitoring for danger.
-- **Budget:** 3,000.
-
-### C-19 — Old Rooms, No Old Test
-
-- **Belief job:** Workplaces, restaurants, birthdays, travel, households, and other people do not need to become avoidance zones or trials of strength.
-- **Objection resolved:** “I must redesign my life, find substitutes, police other people, or avoid every display.”
-- **Arc:** Social and contextual freedom; D0 / F4.
-- **Targets:** R-03, R-04, R-05. Use RV-05, RV-06, RV-08, RV-09.
-- **Evidence:** EV-03, EV-06, EV-08, EV-10. Do not generalize easy holidays from EV-08.
-- **Mantras:** Echo M-03 and M-10.
+- **Belief job:** Separate felt compulsion and self-description from destiny. Resolve “I am an addict,” “I have no control,” and “This is simply the kind of person I am” without diagnosing or denying experience.
+- **Arc/curves:** Movement 5; freedom moderate, demolition taper.
+- **Readers:** `PER-01`, `PER-05`, `PER-06`; voice `D-13`; scene `SA-16`.
+- **Evidence:** `EV-S01`, `EV-S06`, `EV-L15`, and `EV-L07`; preserve contested diagnosis, uncertain withdrawal, non-outcome identity language, and commercial-testimonial limits.
+- **Mantras:** Echo `M-01`, `M-04`, `M-05`, `M-08`.
 - **Instruction:** None.
-- **Scenes/analogies:** SC-05 and SC-06 revisit old contexts without full reargument; SC-07 protects household care; AN-06 makes visibility ordinary rather than commanding.
-- **Structural responsibility:** Cover substitutes, internal “instead” language, envy, compassionate perception of people still eating BAD SUGAR, non-evangelism, and confident participation.
-- **Guardrails:** No trigger-avoidance program, superiority, pitying contempt, household control, or promise that every context will feel immediately neutral. Ordinary food and pleasant non-sugar choices are not consolation substitutes.
-- **Continuity:** Receives a non-catastrophic thought doctrine; hands C-20 an ordinary life that no longer revolves around the target.
-- **Budget:** 2,500.
+- **Scene job:** `SA-16` allows an identity word to describe experience without granting it authority over future valuation.
+- **Structural responsibility:** `STR-13`.
+- **Guardrails:** Do not claim sugar creates personality traits, invoke unavailable population or genetic history, attack treatment, or announce that clinical addiction is impossible. Use the graceful concession: even if the reader retains an identity label, the benefit can still be examined.
+- **Continuity:** Receives closed escape routes and hands `CH-17` a reader no longer defined by the problem, ready to encounter one bounded lived contrast.
+- **Budget:** 2,700 words.
 
-### C-20 — Nothing Missing
+### CH-17 — In His Own Words—When the Dessert Debate Went Quiet
 
-- **Belief job:** Closing BAD SUGAR’s assigned jobs leaves ordinary eating, appetite, rest, pleasure, care, and celebration intact; the temporary teaching structure can disappear.
-- **Objection resolved:** “What fills the hole, and must I monitor this forever?”
-- **Arc:** Ordinary life and ending revelation; D0 / F4.
-- **Targets:** All, led by R-04, R-05, R-06. Use RV-09 and RV-12.
-- **Evidence:** EV-08 may illustrate possibility but cannot carry a promise.
-- **Mantras:** Echo M-02, M-03, M-06, M-08, M-09, M-10.
-- **Instruction:** I-12.
-- **Scenes/analogies:** AN-11 shows that no replacement structure is needed; SC-12 future-paces decision quiet; AN-12 delivers END-01 and appears nowhere earlier.
-- **Structural responsibility:** Retire LX-P01 through LX-P03 explicitly. Leave LX-P04 only as a quiet margin principle. Push outward into life rather than toward dietary identity.
-- **Guardrails:** No replacement regimen, superpower promise, weight payoff, guaranteed taste change, permanent food audit, or purity pride. SAFE-02 must remain emotionally warm and unmistakable.
-- **Continuity:** Receives ordinary social confidence; hands C-21 only settled understanding and the portable instructions.
-- **Budget:** 2,300.
+- **Function:** Embody the already-installed distinction between suppression and desire-level freedom through one carefully limited account. This chapter consolidates; it does not prove the method.
+- **Arc/curves:** Movement 6; freedom rising, demolition low.
+- **Readers:** `PER-02`, `PER-05`, `PER-06`; voice `D-07`; scene `SA-17`.
+- **Evidence:** `EV-L05`, `EV-L08`, `EV-L09`. The earlier period is suppression; the later period is one self-report; the fruit observation is subjective.
+- **Mantras:** Echo `M-01`, `M-06`, `M-07`.
+- **Instruction:** None.
+- **Scene job:** `SA-17` provides the full method-conflict arc: desire-preserving restriction versus a later change in dessert’s value.
+- **Structural responsibility:** `STR-14`.
+- **Guardrails:** Anonymize the author. Place the limitation box beside the testimony. Add no dialogue, clinician conflict, causes, weight change, medical result, program detail, or sensory fact.
+- **Continuity:** Receives the identity correction and hands `CH-18` possibility rather than certainty: the reader must now inspect their own understanding.
+- **Budget:** 2,300 words.
 
-### C-21 — Your Table, Your Day
+### CH-18 — What You Know Now
 
-- **Belief job:** Transfer the book’s operating voice to the reader in a compact, returnable form, then relinquish authority.
-- **Objection resolved:** “What exactly do I keep?”
-- **Arc:** Final hand-over; D0 / F4.
-- **Targets:** All personas.
-- **Evidence:** None. This chapter introduces no empirical or efficacy claim.
-- **Mantras:** Echo M-02, M-03, M-07, M-08, M-09, M-10.
-- **Instruction:** Reproduce I-01 through I-12 verbatim, numbered and paired with their owning chapter references.
-- **Scenes/analogies:** AN-14 supplies the sole closing frame: after the exact recap is set at the reader’s place, the guide pushes back the chair and leaves the reader at their own ordinary table and day. The recap remains available without becoming a supervisor or replacement authority.
-- **Structural responsibility:** The body contains only a page-skimmer gate, the AN-14 closing frame, and the instruction recap. A reader who skipped ahead is directed back to C-01 because the instructions depend on the preceding understanding.
-- **Guardrails:** No new argument, evidence, rule, promise, or recap invention. I-01 must remain explicitly time-bound to the pre-threshold reading period, so its recap cannot conflict with I-10 or imply resumed consumption after C-17. The final narrative line is M-10.
-- **Continuity:** Receives the completed book and leaves the reader—not the guide—at the center of ordinary life.
-- **Budget:** 1,600.
+- **Function:** Audit the installed beliefs and gate the threshold on genuine readiness. Resolve lingering reluctance by locating the unaccepted argument rather than prescribing effort.
+- **Arc/curves:** Movement 6; freedom high, demolition closed.
+- **Readers:** All personas; voice `D-09`; scene `SA-18`.
+- **Evidence:** `EV-L05`, `EV-L07`, and `EV-L08` may recap the outcome distinctions only; no new efficacy claim.
+- **Mantras:** Echo `M-01`–`M-08`.
+- **Instruction:** `INS-09`.
+- **Scene job:** `SA-18` turns the knowledge recap into a readiness inspection, not a motivational speech.
+- **Structural responsibility:** `STR-15`.
+- **Guardrails:** Do not manufacture certainty, shame hesitation, or suggest that reluctance must be overpowered. Route each unresolved belief to its owning chapter.
+- **Continuity:** Receives the bounded testimony and hands `CH-19` either a ready reader or a precise place to revisit.
+- **Budget:** 2,700 words.
 
-## 13. Back-matter evidence appendix
+### CH-19 — The Threshold Is Yours
 
-### APP-A — Evidence Without Fear
+- **Belief job:** Make the behavioral crossing small, ordinary, immediate, and reader-owned once the loss belief is gone. Resolve “I need a perfect date, cleared house, final binge, or long taper.”
+- **Arc/curves:** Movement 7; freedom very high, demolition closed.
+- **Readers:** All personas; scene `SA-19`.
+- **Evidence:** `EV-L08` may illustrate possibility only; the ritual itself is method and logic, not evidence of efficacy.
+- **Mantras:** Echo `M-01`, `M-02`, `M-03`, `M-04`, `M-05`, `M-07`, `M-08`.
+- **Instruction:** `INS-10`.
+- **Scene job:** `SA-19` provides the chosen threshold, meaningless-date demolition, future-situation visualization, and immediate identity shift.
+- **Structural responsibility:** `STR-16`.
+- **Guardrails:** Offer, never order, a final act. Do not require consuming or discarding food, induce a ceremonial binge, demand disgust at pleasant taste, or conflict with clinical nutrition. “Expect the unexpected” means preloading thoughts and contexts, not predicting symptoms.
+- **Continuity:** Receives readiness and hands `CH-20` a completed decision that now needs interpretation rather than maintenance.
+- **Budget:** 2,700 words.
 
-- **Job:** Provide the claim-graded scientific notes and the myths Q&A battery without interrupting the belief-change prose.
-- **Placement:** After C-21 as reference matter. A final unnumbered leaf after the appendix carries M-10 so the last reader-facing message remains the freedom response.
-- **Evidence:** EV-12 through EV-20, with EV-01, EV-03, and EV-11 where needed to distinguish reported experience from scientific mechanism.
-- **Required myths:**
-  - ordinary sugar consumption is established human addiction;
-  - sugar is equivalent to cocaine or heroin;
-  - a universal dopamine hijack or crash explains craving;
-  - ordinary adults have a settled sugar-withdrawal syndrome;
-  - one bite restarts an addiction;
-  - mouse circuitry proves human compulsion;
-  - the sucrose-versus-sucralose human trial established a universal food-cue brain effect;
-  - the ultra-processed-food trial isolated sugar as the cause;
-  - fruit, soda, and all carbohydrates are metabolically or behaviorally interchangeable;
-  - stopping guarantees weight loss, metabolic repair, mental clarity, or a taste reset;
-  - every current food company uses one addiction formula;
-  - historical tobacco ownership proves present sugar-specific intent;
-  - visible products prove manipulation by the place displaying them.
-- **Form:** Each myth appears as reader voice, followed by a two-to-six-sentence answer giving the grade, the narrow finding, and the decisive limit. Full source IDs accompany the entry.
-- **Scare-then-disown:** Any metabolic or commercial fact is followed immediately by the statement that fear is not the method’s motive and that the fact supplies no diagnosis or treatment instruction.
-- **Guardrails:** EV-20 remains contextual and minor. Do not use S-014 because its narrow payment-condition fact performs no necessary belief-change job in this architecture. No appendix item may outrank SAFE-01 or SAFE-02.
-- **Budget:** 2,400.
+### CH-20 — When Sugar Crosses Your Mind
+
+- **Belief job:** Reclassify later thoughts, social exposure, and other people’s choices as occasions for relief rather than suppression, substitution, envy, or evangelism.
+- **Arc/curves:** Movement 7; freedom crescendo, demolition closed.
+- **Readers:** All personas; scene `SA-20`.
+- **Evidence:** `EV-L08` supports only the possibility of reduced decision burden. The post-threshold doctrine is logical preparation, not an outcome guarantee.
+- **Mantras:** Debut `M-09`; echo `M-01`, `M-04`.
+- **Instruction:** `INS-11`.
+- **Scene job:** `SA-20` makes a thought non-binding and lets ordinary social life remain intact.
+- **Structural responsibility:** `STR-17`.
+- **Guardrails:** Ordinary food is not a consolation substitute. People who still eat BAD SUGAR retain dignity and autonomy. No superiority, disgust, preaching, trigger avoidance, or clean-eater identity.
+- **Continuity:** Receives a completed threshold and hands `CH-21` a free reader prepared for the one event most likely to reactivate the old interpretation: a lapse.
+- **Budget:** 2,600 words.
+
+### CH-21 — A Typo Is Not the Manuscript
+
+- **Belief job:** Strip accidents, ambiguity, and lapses of the power to dictate the next choice, while preventing forgiveness from becoming planned permission. Resolve both “I ruined everything” and “I got away with it.”
+- **Arc/curves:** Movement 7; freedom crescendo, demolition closed.
+- **Readers:** `PER-02`, `PER-04`, `PER-05`, `PER-06`; voice `D-03`; scenes `SA-21A`, `SA-21B`.
+- **Evidence:** `EV-L06` is one lapse account, not an inevitability; `EV-L05` shows desire-preserving restriction in particular accounts; `EV-L07` supplies one managed-reset pattern, not a universal requirement.
+- **Mantras:** Echo `M-01`, `M-04`, `M-07`, `M-09`.
+- **Instruction:** `INS-12`.
+- **Scene jobs:** `SA-21A` separates an event from its interpretation; `SA-21B` debuts `END-01` and retires the management identity.
+- **Structural responsibility:** `STR-17`; saved ending reframe `END-01`.
+- **Guardrails:** Never claim one bite restarts addiction or that a lapse is meaningless. Distinguish accident, honest ambiguity, lapse, and planned return without punishment. Preserve `SAFE-02`.
+- **Continuity:** Receives post-threshold relief and hands `CH-22` an ordinary life needing only a finite portable manual.
+- **Budget:** 2,400 words.
+
+### APP-A — Evidence Notes: Claims, Grades, Limits
+
+- **Function:** Quarantine the full claim-grade-source-limit treatment for `EV-S01`–`EV-S06`, `EV-C01`, and `EV-C02`.
+- **Evidence:** Use only the ledger wording and exact supplied source IDs. Lived accounts retain their adjacent limitations in the chapters that use them.
+- **Structural responsibility:** `STR-19`.
+- **Guardrails:** Do not invent bibliographic metadata, source findings, effect sizes, authorities, or conclusions. Preserve `SUPPORTED`, `MIXED`, and `CONTESTED` exactly.
+- **Continuity:** Reference-only. The narrative path proceeds directly from `CH-21` to `CH-22`.
+- **Budget:** 2,500 words.
+
+### CH-22 — Carry Nothing Out but Freedom
+
+- **Function:** Hand over the complete portable manual and push the reader into ordinary life. No new belief argument.
+- **Arc/curves:** Movement 7; freedom maximum, demolition closed.
+- **Readers:** All personas; scene `SA-22`.
+- **Evidence:** None new. Do not restate testimony as proof.
+- **Mantras:** Echo and hand over `M-01`–`M-09`; `M-09` is the final line.
+- **Instruction:** Re-list `INS-01`–`INS-12` verbatim with owning-chapter cross-references. Include the page-skip gate directing anyone who jumped here back to `CH-01`.
+- **Scene job:** `SA-22` makes the recap a finite object the reader can put down rather than a tracking system.
+- **Structural responsibility:** `STR-18`.
+- **Guardrails:** No new mechanism, health promise, rule, analogy, or qualification. Preserve the clinical exceptions embedded in the frozen instructions. The outward hand-off must express ordinary autonomy, not dietary identity or superiority.
+- **Continuity:** Receives `END-01`, completes every hand-over, and ends with `M-09`.
+- **Budget:** 1,800 words.
