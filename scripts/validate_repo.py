@@ -22,6 +22,7 @@ ROOT_ALLOWED_FILES = {
     "AGENTS.md",
     "LICENSE",
     "README.md",
+    "PROGRAM.md",  # self-improvement loop operator runbook (see PROGRAM.md)
     ".gitignore",
     ".mcp.json",
 }
