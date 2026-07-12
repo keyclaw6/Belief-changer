@@ -1,4 +1,4 @@
-"""Regression tests for the Stage-A v2.2 native structured-output schema."""
+"""Regression tests for the Stage-A v2.3 native structured-output schema."""
 import copy
 import hashlib
 import json
@@ -98,8 +98,11 @@ class NativeOutputSchemaTests(unittest.TestCase):
         baseline = N.instrument_configuration(prompts, schemas, *args)
         mutation = N.instrument_configuration(prompts, changed, *args)
 
+        self.assertEqual(N.IMPLEMENTATION_FILES, (
+            "judge_panel.py", "judge_protocol.py", "judge_v23.py", "native_judge.py"))
+        self.assertEqual(tuple(baseline["implementation_sha256"]), N.IMPLEMENTATION_FILES)
         self.assertEqual(baseline["protocol_version"],
-                         "stage-a-v2.2-native-sol-ultra-1")
+                         "stage-a-v2.3-native-sol-ultra-1")
         self.assertEqual(baseline["role_prompt_sha256"],
                          mutation["role_prompt_sha256"])
         self.assertNotEqual(baseline["role_output_schema_sha256"],
@@ -107,47 +110,5 @@ class NativeOutputSchemaTests(unittest.TestCase):
         expected = hashlib.sha256(N._schema_bytes(schemas["craft"])).hexdigest()
         self.assertEqual(baseline["role_output_schema_sha256"]["craft"], expected)
         self.assertNotEqual(baseline, mutation)
-
-
-class ControlRepairPredictionTests(unittest.TestCase):
-    def test_degraded_control_requires_every_core_label_in_both_orders(self):
-        """Infra: v2.2 cannot pass on verdict direction while losing taxonomy anchors."""
-        core = {"efficacy": "incoherent_block_arc", "craft": "broken_chapter_flow",
-                "integrity": "broken_continuity"}
-        roles = ["efficacy"] * 2 + ["craft"] * 6 + ["integrity"] * 2
-        observations = []
-        for role in roles:
-            signatures = [{"ours_only": [core[role]], "ref_only": []} for _ in range(2)]
-            observations.append({"complete": True, "role": role,
-                "product_parity_verdict": "ref", "order_instability": {
-                    "unstable": False, "comparative_signatures": signatures,
-                    "relative_critical_failures_changed": False}})
-        summary = {"panel_complete": True, "raw_judgments": 20,
-                   "invalid_judgments": 0, "observations": observations}
-        result = V2.evaluate_control(summary, "degraded-reference")
-        self.assertTrue(result["passed"])
-        self.assertTrue(result["repair_predictions"]["structured_output"]["passed"])
-        self.assertTrue(result["repair_predictions"]["critical_taxonomy"]["passed"])
-        observations[0]["order_instability"]["relative_critical_failures_changed"] = True
-        repairs = V2.evaluate_control(summary, "degraded-reference")["repair_predictions"]
-        self.assertTrue(repairs["structured_output"]["passed"])
-        self.assertFalse(repairs["critical_taxonomy"]["passed"])
-        observations[0]["order_instability"]["relative_critical_failures_changed"] = False
-        for observation in observations:
-            with self.subTest(role=observation["role"]):
-                signature = observation["order_instability"]["comparative_signatures"][0]
-                label = signature["ours_only"].pop()
-                self.assertFalse(V2.evaluate_control(
-                    summary, "degraded-reference")["passed"])
-                signature["ours_only"].append(label)
-
-    def test_repair_outcomes_remain_independently_visible(self):
-        summary = {"panel_complete": False, "raw_judgments": 20,
-                   "invalid_judgments": 1, "observations": []}
-        repairs = V2.evaluate_control(summary, "identical")["repair_predictions"]
-        self.assertFalse(repairs["structured_output"]["passed"])
-        self.assertFalse(repairs["critical_taxonomy"]["scorable"])
-
-
 if __name__ == "__main__":
     unittest.main()

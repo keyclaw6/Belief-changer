@@ -1,4 +1,4 @@
-"""Blind judge panel runner; no --prompt selects native Stage-A v2.2."""
+"""Blind judge panel runner; no --prompt selects native Stage-A v2.3."""
 import argparse, json, os, re, sys, urllib.error
 from pathlib import Path
 
@@ -8,6 +8,7 @@ import model_endpoint as M
 import native_judge as N
 from judge_legacy import DIMS, aggregate, map_verdict, validate_pairwise
 import judge_protocol as V2
+import judge_v23 as V23
 JUDGE_DIR = Path(__file__).resolve().parents[2] / "calibration" / "judges"
 ROLE_SPECS = V2.ROLE_SPECS
 chat = M.chat
@@ -62,7 +63,7 @@ def judge_role(cfg, judge_identity, role, cell, order):
         parsed = json.loads(raw)
     except json.JSONDecodeError:
         parsed = None
-    record = {"protocol": "stage-a-v2.2", "role": role, "scope": ROLE_SPECS[role]["scope"],
+    record = {"protocol": "stage-a-v2.3", "role": role, "scope": ROLE_SPECS[role]["scope"],
               "target": cell["target"], "ours_chapters": cell["ours_chapters"],
               "ref_chapters": cell["ref_chapters"], "model": N.MODEL,
               "judge_identity": judge_identity, "order": order,
@@ -121,7 +122,6 @@ def stage_a_materials(ours, ref, pairing, control=""):
              "ref_chapters": ref_numbers}
     return {"efficacy": [block], "craft": craft, "integrity": [block]}
 
-
 def _endpoint(args):
     if args.base_url:
         return (args.base_url, os.environ.get(args.api_key_env or "LITELLM_API_KEY") or
@@ -129,7 +129,6 @@ def _endpoint(args):
     if os.environ.get("LITELLM_BASE_URL"):
         return os.environ["LITELLM_BASE_URL"], os.environ.get("LITELLM_API_KEY")
     return "https://openrouter.ai/api/v1", os.environ.get("OPENROUTER_API_KEY")
-
 
 def _write_record(outdir, record, legacy=False):
     safe_model = re.sub(r"[^a-zA-Z0-9.-]+", "_", record["model"])
@@ -141,7 +140,6 @@ def _write_record(outdir, record, legacy=False):
                 f'o{record["order"]}.json')
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(record, indent=1), encoding="utf-8")
-
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -159,14 +157,14 @@ def main():
     parser.add_argument("--validated-controls", default="",
                         help="identical,degraded control summary paths required for product mode")
     parser.add_argument("--control", choices=("identical", "degraded-reference"), default="",
-                        help="Stage-A v2.2 prompt-control run")
+                        help="Stage-A v2.3 prompt-control run")
     parser.add_argument("--out", required=True)
     parser.add_argument("--base-url", default="")
     parser.add_argument("--api-key-env", default="")
     args = parser.parse_args()
     legacy = bool(args.prompt)
     if args.control and legacy:
-        parser.error("--control is available only in the Stage-A v2.2 no--prompt protocol")
+        parser.error("--control is available only in the Stage-A v2.3 no--prompt protocol")
     if legacy and args.validated_controls:
         parser.error("--validated-controls is available only in canonical Stage-A")
     if args.control and args.validated_controls:
@@ -239,14 +237,17 @@ def main():
                         record = judge_role(cfg, judge_identity, role, cell, order)
                         _write_record(outdir, record)
                         records.append(record)
-        summary = V2.aggregate_v2(records)
+        summary = V23.aggregate(records, configuration, V2.map_role_response)
         summary.update({"canonical": True, "instrument_configuration": configuration,
                         "validated_controls": control_evidence})
-        if summary["raw_judgments"] != 20 or summary["collapsed_observations"] != 10:
+        if summary["raw_judgments"] != 20 or summary["collapsed_observations"] != 5:
             summary["panel_complete"] = False
-            summary["matrix_error"] = "canonical Stage-A requires 20 raw and 10 collapsed"
+            summary["matrix_error"] = "canonical Stage-A requires 20 raw and 5 collapsed"
         if args.control:
-            summary["prompt_control"] = V2.evaluate_control(summary, args.control)
+            summary["prompt_control"] = V23.evaluate_control(summary, args.control)
+        else:
+            summary["product_parity"]["stage_a_judge_gate"] = V23.evaluate_product(
+                summary, control_evidence)
     (outdir / "judge-summary.json").write_text(json.dumps(summary, indent=1), encoding="utf-8")
     print(json.dumps(summary.get("product_parity", summary), indent=1))
     if not summary["panel_complete"]:

@@ -14,12 +14,10 @@ sys.path.insert(0, str(Path(__file__).parents[1]))
 import judge_panel as J
 import native_judge as N
 
-
 TRANSPORT_SCHEMA = {
     "type": "object", "properties": {"answer": {"type": "number"}},
     "required": ["answer"], "additionalProperties": False,
 }
-
 
 def event_stream(message="{}"):
     events = [
@@ -30,7 +28,6 @@ def event_stream(message="{}"):
         {"type": "turn.completed", "usage": {"input_tokens": 10, "output_tokens": 5}},
     ]
     return "\n".join(json.dumps(event) for event in events)
-
 
 class NativeTransportTests(unittest.TestCase):
     def test_command_is_pinned_fresh_read_only_and_has_no_output_cap(self):
@@ -78,7 +75,6 @@ class NativeTransportTests(unittest.TestCase):
                                separators=(",", ":")).encode()
         self.assertEqual(transport["output_schema_sha256"],
                          hashlib.sha256(canonical).hexdigest())
-
     def test_each_completion_gets_a_distinct_ephemeral_context(self):
         """Infra: judge identities are independent calls, not one resumed context."""
         workdirs = []
@@ -91,7 +87,6 @@ class NativeTransportTests(unittest.TestCase):
         N.complete("same", "r2", TRANSPORT_SCHEMA, run=run)
 
         self.assertEqual(len(set(workdirs)), 2)
-
     def test_nonzero_process_and_invalid_event_stream_are_observable(self):
         """Infra: native transport defects become invalid records, never judgments."""
         cases = [
@@ -115,7 +110,6 @@ class NativeTransportTests(unittest.TestCase):
                 self.assertEqual(raw, "")
                 self.assertIn(expected, error)
                 self.assertIn("event_stream", transport)
-
     def test_process_launch_error_is_an_invalid_transport_result(self):
         """Infra: a missing native runner fails closed without losing diagnostics."""
         raw, transport, error = N.complete(
@@ -126,7 +120,6 @@ class NativeTransportTests(unittest.TestCase):
         self.assertEqual(raw, "")
         self.assertIn("launch failed", error)
         self.assertIn("codex missing", transport["stderr"])
-
 class NativeRoleRecordTests(unittest.TestCase):
     def test_role_call_preserves_frozen_prompt_material_and_swapped_order(self):
         """Infra: native transport changes no judge prompt, material, order, or schema."""
@@ -160,6 +153,7 @@ class NativeRoleRecordTests(unittest.TestCase):
         ])
         self.assertTrue(all(output_schema is schema for _, _, output_schema in seen))
         self.assertEqual(first["model"], "gpt-5.6-sol")
+        self.assertEqual(first["protocol"], "stage-a-v2.3")
         self.assertEqual(first["judge_identity"], "r1")
         self.assertEqual(first["mapped"]["product_parity_verdict"], "tie")
         self.assertEqual(second["mapped"]["product_parity_verdict"], "tie")
@@ -211,23 +205,30 @@ class CanonicalPreflightTests(unittest.TestCase):
             for mode in ("identical", "degraded-reference"):
                 path = Path(tmp) / f"{mode}.json"
                 path.write_text(json.dumps({
+                    "protocol": "stage-a-v2.3",
                     "canonical": True, "panel_complete": True,
-                    "raw_judgments": 20, "collapsed_observations": 10,
+                    "raw_judgments": 20, "invalid_judgments": 0,
+                    "collapsed_observations": 5, "matrix": {"passed": True},
                     "instrument_configuration": config,
                     "prompt_control": {"mode": mode, "passed": True,
-                                       "repair_predictions": {
-                                           "structured_output": {"passed": True},
-                                           "critical_taxonomy": {"passed": True}}},
+                                       "matrix_transport_valid": True,
+                                       "semantic_expectation_met": True,
+                                       "instrument_configuration": config},
                 }), encoding="utf-8")
                 paths.append(path)
             evidence = N.validate_controls(",".join(map(str, paths)), config)
             self.assertEqual(set(evidence), {"identical", "degraded-reference"})
+            for mode, item in evidence.items():
+                self.assertEqual(item["mode"], mode)
+                self.assertTrue(item["passed"])
+                self.assertEqual(item["instrument_configuration"], config)
+                self.assertEqual(len(item["sha256"]), 64)
             changed = dict(config)
             changed["reasoning_effort"] = "high"
             with self.assertRaisesRegex(ValueError, "does not match"):
                 N.validate_controls(",".join(map(str, paths)), changed)
             broken = json.loads(paths[0].read_text(encoding="utf-8"))
-            del broken["prompt_control"]["repair_predictions"]
+            broken["protocol"] = "stage-a-v2.2"
             paths[0].write_text(json.dumps(broken), encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "did not pass"):
                 N.validate_controls(",".join(map(str, paths)), config)

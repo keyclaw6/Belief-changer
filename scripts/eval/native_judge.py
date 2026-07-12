@@ -16,7 +16,8 @@ NATIVE_ENV_ALLOWLIST = (
     "TMPDIR", "TMP", "TEMP", "SSL_CERT_FILE", "SSL_CERT_DIR", "HTTP_PROXY",
     "HTTPS_PROXY", "ALL_PROXY", "NO_PROXY",
 )
-IMPLEMENTATION_FILES = ("judge_panel.py", "judge_protocol.py", "native_judge.py")
+IMPLEMENTATION_FILES = (
+    "judge_panel.py", "judge_protocol.py", "judge_v23.py", "native_judge.py")
 
 
 def parse_identities(raw):
@@ -90,7 +91,7 @@ def instrument_configuration(prompts, schemas, pairing, identities):
     root = Path(__file__).parent
     digest = lambda data: hashlib.sha256(data).hexdigest()
     return {
-        "protocol_version": "stage-a-v2.2-native-sol-ultra-1",
+        "protocol_version": "stage-a-v2.3-native-sol-ultra-1",
         "transport": "native-codex-subscription", "model": MODEL,
         "reasoning_effort": REASONING_EFFORT, "replica_identities": list(identities),
         "chapter_pairs": [list(pair) for pair in pairing],
@@ -110,25 +111,33 @@ def validate_controls(raw_paths, configuration):
     for supplied in paths:
         path = supplied / "judge-summary.json" if supplied.is_dir() else supplied
         try:
-            data = json.loads(path.read_text(encoding="utf-8"))
-        except (OSError, json.JSONDecodeError) as exc:
+            payload = path.read_bytes()
+            data = json.loads(payload)
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
             raise ValueError(f"cannot read control summary {path}: {exc}") from exc
-        control = data.get("prompt_control", {})
+        if not isinstance(data, dict) or not isinstance(data.get("prompt_control"), dict):
+            raise ValueError(f"control summary {path} is not a canonical object")
+        control = data["prompt_control"]
         mode = control.get("mode")
-        repairs = control.get("repair_predictions", {})
         if mode not in ("identical", "degraded-reference") or mode in evidence:
             raise ValueError("controls must contain one unique summary for each required mode")
-        if (not data.get("canonical") or not data.get("panel_complete") or
-                data.get("raw_judgments") != 20 or
-                data.get("collapsed_observations") != 10 or not control.get("passed") or
-                set(repairs) != {"structured_output", "critical_taxonomy"} or
-                not all(isinstance(item, dict) and item.get("passed")
-                        for item in repairs.values())):
+        if (data.get("protocol") != "stage-a-v2.3" or data.get("canonical") is not True or
+                data.get("panel_complete") is not True or data.get("raw_judgments") != 20 or
+                data.get("invalid_judgments") != 0 or
+                data.get("collapsed_observations") != 5 or
+                not isinstance(data.get("matrix"), dict) or
+                data["matrix"].get("passed") is not True or
+                control.get("passed") is not True or
+                control.get("matrix_transport_valid") is not True or
+                control.get("semantic_expectation_met") is not True):
             raise ValueError(f"{mode} control did not pass canonically")
-        if data.get("instrument_configuration") != configuration:
+        if (data.get("instrument_configuration") != configuration or
+                control.get("instrument_configuration") != configuration):
             raise ValueError(f"{mode} control configuration does not match product panel")
-        evidence[mode] = {"summary": str(path), "sha256": hashlib.sha256(
-            path.read_bytes()).hexdigest()}
+        evidence[mode] = {"mode": mode, "passed": True,
+                          "instrument_configuration": configuration,
+                          "summary": str(path),
+                          "sha256": hashlib.sha256(payload).hexdigest()}
     if set(evidence) != {"identical", "degraded-reference"}:
         raise ValueError("both identical and degraded-reference controls are required")
     return evidence
