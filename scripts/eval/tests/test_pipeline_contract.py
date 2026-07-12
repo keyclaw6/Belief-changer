@@ -127,13 +127,15 @@ class PlanningContractTests(unittest.TestCase):
         self.assertIn("single integer", plan)
         self.assertNotIn("Reviewed by an Opus sub-agent", plan)
 
+        template_review = read("production-books/_template/master-plan-review.md")
+        for model in ("Gemini 3.1 Pro", "GPT-5.6 Sol", "Grok 4.5"):
+            self.assertIn(model, template_review)
+
         for review_path in (
             "production-books/_template/master-plan-review.md",
             "production-books/quit-sugar/master-plan-review.md",
         ):
             review = read(review_path)
-            for model in ("Gemini 3.1 Pro", "GPT-5.6 Sol", "Grok 4.5"):
-                self.assertIn(model, review)
             self.assertIn(
                 review.rstrip().splitlines()[-1],
                 ("needs changes first", "fit to write from"),
