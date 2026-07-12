@@ -1,0 +1,75 @@
+{
+  "run": "run-014",
+  "date": "2026-07-12",
+  "stage": "A",
+  "status": "PREREGISTERED_INPUT_REPAIR_PENDING",
+  "operator": "gpt-5.6-sol",
+  "branch": "calibration-lab",
+  "scope": "source-grounded input repair followed by a clean H-050 plan, commission, and Chapters 1-3 rerun",
+  "hypotheses_tested": [
+    "H-050 clean continuation"
+  ],
+  "baseline_boundary": "ba91d4c939c4c28f8d244f056057c45a059dc4ea — run-013 closed INCONCLUSIVE_INPUT_AUTHORITY_CONFLICT_NO_PROSE",
+  "last_accepted_product": "production-books/quit-sugar/chapters/chapter-01.md from run-002 and chapter-02.md from run-004",
+  "new_quality_lever": false,
+  "h050_contract": {
+    "status": "unchanged and frozen from run-013",
+    "freeze_commit": "b00115dfb085cc7ea9084ff5e1d1b8218ae8c865",
+    "planner_sha256": "5e459f98f51892745e6c28e5584187770d0c9a0993e70dabce0e57c1996e2747",
+    "reviewer_sha256": "18fa2987ea5e2009df6fbaee3d461dbe82ea4674abc2bb504d08937243039715"
+  },
+  "input_repair_precondition": {
+    "status": "PENDING",
+    "authority_packet": "production-books/quit-sugar/research/sources/s-021-nell-kauls-sugar-cravings.md",
+    "authority_packet_sha256": "6ccee44130be2607b0ce9cf8c04ec78c1f624529ceb05168f85cd0b9ad732555",
+    "target_files": {
+      "production-books/quit-sugar/research/lived-experience.md": "38b753ad6fe40e4f07d8be68793d6d16acbe36e713ec0329026e98939fdea36c",
+      "production-books/quit-sugar/framing.md": "2c115313c51fa040474b908e652915f73ebd770c03cd340a94b16efc18145941"
+    },
+    "observed_conflict": [
+      "lived-experience.md says S-021 combines a strong relief metaphor with 15 plus years of maintenance and daily actions to keep cravings at bay",
+      "framing.md says relief is paired with more than fifteen years of daily management, boundaries, and resets",
+      "S-021 separates a 15-plus-year weight-maintenance report from separately described daily craving-management actions and does not assign that duration to the actions"
+    ],
+    "editor": {
+      "route": "fresh native Codex subscription context; never OpenRouter",
+      "model": "gpt-5.6-luna",
+      "reasoning": "max",
+      "inputs": "the complete two baseline files plus the complete S-021 packet and this repair commission",
+      "output": "complete minimally corrected candidates for both files",
+      "scope": "repair only the packet-to-synthesis authority conflict while preserving all other source mappings, claims, limits, structure, and prose",
+      "web_or_research_expansion": false
+    },
+    "reviewer": {
+      "route": "separate fresh native Codex subscription context; never OpenRouter",
+      "model": "gpt-5.6-luna",
+      "reasoning": "max",
+      "inputs": "both complete corrected candidates, the complete S-021 packet, the repair commission, and the committed baseline needed to verify minimality",
+      "checks": "source fidelity, exact conflict removal, preservation of every unrelated source and claim, and absence of new inference",
+      "action": "accept or reject the complete two-file correction; never repair it"
+    },
+    "acceptance_rule": "commit repaired production inputs only after one editor proposal and one independent fresh full-file review both establish a minimal source-grounded correction with no other source or claim change",
+    "forbidden": "web search, new retrieval, research expansion, manual line edit, partial-file review, plan generation before repair acceptance, or treating repair acceptance as H-050 support"
+  },
+  "clean_rerun_law": {
+    "run_013_reuse": false,
+    "invalidated": "every run-013 plan, review, commission, and candidate handoff",
+    "sequence_after_repair_commit": "fresh complete plan and independent review; fresh complete C-01-C-03 commissions and whole-set audit; fresh complete C-01-C-03 first-draft batch before revision or product inference",
+    "writer": "anthropic/claude-opus-4.6 through OpenRouter with reasoning disabled",
+    "continuity": "previous accepted chapter only",
+    "judges": "frozen native gpt-5.6-sol ultra Stage-A v2.3 instrument",
+    "blindness": "production roles see no reference or judge output"
+  },
+  "h050_causal_decision_rule": {
+    "status": "unchanged from run-013 preregistration",
+    "supported": "blinded post-output audit confirms instantiation, all three first drafts are materially grounded-clean, and efficacy receives at most one reference verdict with role score at least 0.35",
+    "refuted": "the same confirmed and grounded-clean conditions hold, but efficacy has at least three reference verdicts or role score below 0.35",
+    "inconclusive": "any material grounded defect, unaccepted or ambiguous instantiation/handoff, invalid panel, or corpus inability prevents causal attribution",
+    "product_boundary": "craft, length, objective, safety, and every other Stage-A gate remain unchanged promotion requirements"
+  },
+  "route_law": "OpenRouter only for Opus 4.6 chapter writing and DeepSeek research; GPT/OpenAI, Luna, Sol, Gemini, Grok, planning, reviewing, auditing, and judging never use OpenRouter",
+  "quality_policy": "optimize only for method integrity and quality; no speed, cost, token, or reasoning cap",
+  "next_artifact": "one native gpt-5.6-luna max research-editor proposal containing complete minimally corrected lived-experience and framing files",
+  "external_blocker": "none",
+  "notes": "Run-013 remains immutable. No new permanent gate or hypothesis is introduced for this one input conflict."
+}
