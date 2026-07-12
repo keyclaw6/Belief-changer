@@ -2,7 +2,7 @@
   "run": "run-014",
   "date": "2026-07-12",
   "stage": "A",
-  "status": "MASTER_PLAN_R2_FROZEN_REVIEW_PENDING",
+  "status": "MASTER_PLAN_ACCEPTED_COMMISSIONS_PENDING",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "source-grounded input repair followed by a clean H-050 plan, commission, and Chapters 1-3 rerun",
@@ -495,7 +495,7 @@
     "interpretation": "implementation feedback for the next complete-plan revision; not product or H-050 evidence"
   },
   "master_plan_r2": {
-    "status": "FROZEN_MECHANICALLY_COMPLETE_UNREVIEWED_UNPROMOTED",
+    "status": "ACCEPTED_FIT_TO_WRITE_FROM_AND_PROMOTED",
     "review_cycle": 2,
     "maximum_review_cycles": 3,
     "source_head": "c479f247bb0101a2535e401e607ab14275f800dd",
@@ -613,9 +613,107 @@
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "mechanical_validation_sha256": "ae487ce7826532c8fc07566f7a9762b69d16aea4f9e6e5d41e2f545dc39f875c"
     },
-    "semantic_review_performed": false,
-    "production_master_plan_promoted": false,
-    "causal_boundary": "mechanical completeness only; no plan-quality, product, or H-050 inference"
+    "semantic_review_performed": true,
+    "production_master_plan_promoted": true,
+    "causal_boundary": "accepted implementation input for commissioning; no product or H-050 inference"
+  },
+  "master_plan_r2_review": {
+    "status": "fit to write from",
+    "material_blockers": [],
+    "review_cycle": 2,
+    "maximum_review_cycles": 3,
+    "source_head": "c250e4807d3b552e4e04ee747dc4759ac1fe58ea",
+    "route": "fresh native Codex subscription context; never OpenRouter",
+    "model": "gpt-5.6-sol",
+    "reasoning": "ultra",
+    "thread_id": "019f5524-1095-71f0-846f-8e4347434114",
+    "return_code": 0,
+    "exact_final_verdict_valid": true,
+    "output_normalization_performed": false,
+    "usage": {
+      "input_tokens": 65019,
+      "cached_input_tokens": 9984,
+      "output_tokens": 19525,
+      "reasoning_output_tokens": 19510
+    },
+    "finding": "No material blocking defects.",
+    "execution": {
+      "total_events": 4,
+      "agent_messages": 1,
+      "tool_or_command_events": 0,
+      "web_events": 0,
+      "subagent_events": 0,
+      "retry_performed": false,
+      "stderr_empty": true,
+      "provider_or_api_credentials_inherited": false,
+      "reasoning_or_output_cap": "none set",
+      "isolated_cwd_empty_before_and_after": true,
+      "plan_edited_or_promoted_by_reviewer": false
+    },
+    "artifacts": {
+      "review": {
+        "path": "calibration/runs/run-014/planning/master-plan-r2-review.md",
+        "sha256": "346c172c5b00c6460f6c229fd7d1119364ac5504c7372e4e55ff43e9be8267ed",
+        "bytes": 48
+      },
+      "assembled_prompt": {
+        "path": "calibration/runs/run-014/planning/review-r2/assembled-prompt.md",
+        "sha256": "3cfde39b8067434258c1f6358fe557cebf3328159e1706c3abbbd84bfb2091e1",
+        "bytes": 232984,
+        "delivery": "exact file bytes on stdin"
+      },
+      "input_hashes": {
+        "path": "calibration/runs/run-014/planning/review-r2/input-hashes.json",
+        "sha256": "8b46331c5f766b44d24a73a0348a377b13b1368fe2738f1c21c06e129330c3f1",
+        "persisted_and_verified_before_review_call": true
+      },
+      "command_metadata": {
+        "path": "calibration/runs/run-014/planning/review-r2/command-metadata.json",
+        "sha256": "89843e83488a64916c138299d37b604b58ca81f4e9656c7fe2efbf3d0bd31fc3"
+      },
+      "raw_jsonl": {
+        "path": "calibration/runs/run-014/planning/review-r2/raw.jsonl",
+        "sha256": "344718502b24a584ec5ee5fb41d83389f6d6d9cef3bb6eedb8b29ce1ac749498"
+      },
+      "stderr": {
+        "path": "calibration/runs/run-014/planning/review-r2/stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "empty": true
+      },
+      "wrapper_sha256": "803bebe797eafc727bff08b748ca5786163e1516e4956a5fe8f021cbca1ec6cd"
+    },
+    "interpretation": "accepts R2 as implementation-ready for commissioning; not product or H-050 evidence"
+  },
+  "master_plan_promotion": {
+    "status": "PROMOTED_EXACT_BYTES",
+    "commit": "d9279d4c4960b0b1daca5e4fdd2cbcc04835a0e1",
+    "production_files": {
+      "production-books/quit-sugar/master-plan.md": "b1726d736cb543f0b16c24f225136b86ebda336f4a1981f0c1f323cb311530b4",
+      "production-books/quit-sugar/master-plan-review.md": "346c172c5b00c6460f6c229fd7d1119364ac5504c7372e4e55ff43e9be8267ed"
+    },
+    "method": "exact frozen-byte bulk promotion with no normalization or content edit",
+    "canonical_gate": {
+      "initial_result": "FAIL",
+      "initial_return_code": 1,
+      "initial_mechanism": "the generic pipeline-contract test required the literal Gemini 3.1 Pro roster string inside every live outcome-only plan review, while the accepted native Sol-ultra review correctly contained only its finding and terminal outcome",
+      "generic_test_only_fix_commit": "0d2c6f4c54990312a4dd165849a34246b3ccd3a9",
+      "generic_fix": "retain allowed-model roster assertions on the reusable review template while validating live reviews by their terminal outcome",
+      "plan_or_review_bytes_changed_by_fix": false,
+      "quality_lever_changed": false,
+      "focused_rerun": {
+        "tests": 1,
+        "failures": 0,
+        "return_code": 0
+      },
+      "canonical_rerun": {
+        "tests": 77,
+        "failures": 0,
+        "return_code": 0,
+        "shellcheck": "not installed; skipped by canonical gate"
+      }
+    },
+    "last_accepted_product_unchanged": "production-books/quit-sugar/chapters/chapter-01.md from run-002 and chapter-02.md from run-004",
+    "h050_inference": "none; H-050 remains TESTING"
   },
   "start_direction_audit": {
     "status": "ACCEPTED",
@@ -680,7 +778,7 @@
   },
   "route_law": "OpenRouter only for Opus 4.6 chapter writing and DeepSeek research; GPT/OpenAI, Luna, Sol, Gemini, Grok, planning, reviewing, auditing, and judging never use OpenRouter",
   "quality_policy": "optimize only for method integrity and quality; no speed, cost, token, or reasoning cap",
-  "next_artifact": "fresh native Sol-ultra complete master-plan R2 outcome review under the frozen reviewer prompt SHA-256 18fa2987ea5e2009df6fbaee3d461dbe82ea4674abc2bb504d08937243039715 and authoritative inputs",
+  "next_artifact": "fresh complete C1-C3 commissions from accepted master-plan R2 under frozen generic commissioner SHA-256 b1eabd112ab9c1c6e67284ab7bae27c512bf7ac3affb3be02877343c829e1c18, with no run-013 commission reuse",
   "external_blocker": "none",
   "notes": "Run-013 remains immutable. R1's prompt-persistence gap was corrected prospectively in R2. No new permanent gate, quality lever, or hypothesis is introduced for this one input conflict."
 }
