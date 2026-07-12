@@ -1,0 +1,91 @@
+{
+  "command": [
+    "codex",
+    "exec",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--ignore-rules",
+    "--disable",
+    "multi_agent",
+    "--model",
+    "gpt-5.6-sol",
+    "-c",
+    "model_reasoning_effort=ultra",
+    "--sandbox",
+    "read-only",
+    "--skip-git-repo-check",
+    "--cd",
+    "<isolated-empty-read-only-cwd>",
+    "--json",
+    "-"
+  ],
+  "cwd_entries_after": [],
+  "cwd_entries_before": 0,
+  "environment_names": [
+    "CODEX_HOME",
+    "HOME",
+    "LANG",
+    "LC_ALL",
+    "LC_CTYPE",
+    "PATH",
+    "TERM"
+  ],
+  "environment_policy": "strict allowlist; provider/API key, token, secret, password, and credential variables excluded",
+  "event_count": 4,
+  "event_types": {
+    "item.completed": 1,
+    "thread.started": 1,
+    "turn.completed": 1,
+    "turn.started": 1
+  },
+  "exact_final_verdict": "fit to write from",
+  "exact_final_verdict_valid": true,
+  "fresh_ephemeral_context": true,
+  "isolated_cwd": "/tmp empty and read-only",
+  "item_types": {
+    "agent_message": 1
+  },
+  "message_count": 1,
+  "model": "gpt-5.6-sol",
+  "multi_agent_disabled": true,
+  "non_message_item_events": [],
+  "output_limit": "none set by executor",
+  "output_normalization_performed": false,
+  "parse_errors": [],
+  "plan_edited_or_promoted": false,
+  "prospective_input_record": {
+    "assembled_prompt_sha256": "3cfde39b8067434258c1f6358fe557cebf3328159e1706c3abbbd84bfb2091e1",
+    "input_hashes_sha256": "8b46331c5f766b44d24a73a0348a377b13b1368fe2738f1c21c06e129330c3f1",
+    "per_file_sha256": {
+      "calibration/runs/run-014/planning/master-plan-r2.md": "b1726d736cb543f0b16c24f225136b86ebda336f4a1981f0c1f323cb311530b4",
+      "production-books/quit-sugar/00-brief.md": "29105690753c3ac6af4a48585f50fc30e489b4d9f760a8056f4977ff2eba576a",
+      "production-books/quit-sugar/framing.md": "d1fe0a1b2ea1c56dab8f56a10aa2a4ed3a8f86f3552c83db9f5f46ecb62bfece",
+      "production-books/quit-sugar/research/lived-experience.md": "e21506f804920898b3f314cd44bb20954d1524dd0eb70395ae4d95425e7afc5b",
+      "production-books/quit-sugar/research/scientific-evidence.md": "0675ba24325e85b6289403a2c98212603db0c0941f6cb33a95390431e0b3a3fc",
+      "prompts/master-plan-reviewer-v2.md": "18fa2987ea5e2009df6fbaee3d461dbe82ea4674abc2bb504d08937243039715",
+      "prompts/style-guide.md": "d4f97cf29a64114a0fcea27c86809793c0b14acee9bb6fb7cbe66777b8f92590"
+    }
+  },
+  "raw_jsonl_sha256": "344718502b24a584ec5ee5fb41d83389f6d6d9cef3bb6eedb8b29ce1ac749498",
+  "reasoning_effort": "ultra",
+  "reasoning_limit": "none set by executor",
+  "retry_performed": false,
+  "returncode": 0,
+  "review_artifact_bytes": 48,
+  "review_artifact_sha256": "346c172c5b00c6460f6c229fd7d1119364ac5504c7372e4e55ff43e9be8267ed",
+  "source_head": "c250e4807d3b552e4e04ee747dc4759ac1fe58ea",
+  "status": "CALL_COMPLETE_PRESERVED_WITHOUT_RETRY_OR_NORMALIZATION",
+  "stderr_bytes": 0,
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "subagent_attempt_events": [],
+  "thread_ids": [
+    "019f5524-1095-71f0-846f-8e4347434114"
+  ],
+  "transport": "native Codex subscription; never OpenRouter",
+  "usage": {
+    "cached_input_tokens": 9984,
+    "input_tokens": 65019,
+    "output_tokens": 19525,
+    "reasoning_output_tokens": 19510
+  }
+}
