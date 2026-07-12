@@ -1,10 +1,10 @@
 # Run report — run-013
 
-**Stage:** A **Scope:** composition-feasible argument-bearing chapters and opening movement, regenerated commissions, and Chapters 1–3 **Verdict:** CONTRACT FROZEN / NO PLAN
+**Stage:** A **Scope:** composition-feasible argument-bearing chapters and opening movement, regenerated commissions, and Chapters 1–3 **Verdict:** PLAN R1 GENERATED / PENDING REVIEW
 
 ## What ran
 
-The matching planner/reviewer contract passed one fresh native Sol-ultra pre-freeze audit and is frozen at pushed commit `b00115dfb085cc7ea9084ff5e1d1b8218ae8c865`. The audit used no tools, subagents, provider API credential, or retry. The canonical check passed 77/77 with shellcheck unavailable, and the planning unit passed 11/11. No run-013 master plan, commission, chapter, objective evaluation, grounded audit, or product-panel inference exists.
+The frozen contract produced exactly one fresh master-plan candidate through native `gpt-5.6-sol` at configured `ultra`. `planning/master-plan-r1.md` is frozen unedited at SHA-256 `2729a054...`, 70,392 bytes, 9,752 words, and 847 lines. The call returned code 0 with one thread, one final agent message, one complete turn, no tools, no subagents, and no retry. No commission, chapter, objective evaluation, grounded audit, or product-panel inference exists.
 
 ## Objective results (`metrics.json`)
 
@@ -16,7 +16,7 @@ Not run. The frozen v2.3 native Sol-ultra instrument, blindness, controls, aggre
 
 ## Gate verdict
 
-The contract gate **PASSES** and the exact audited bytes are frozen. The audit artifact is `audits/h050-contract-audit.md`, SHA-256 `456633bc...`, from fresh thread `019f5458-4a71-7381-97ba-d823343ea395`; usage was 19,221 input, 8,960 cached, 1,304 output, and 1,034 reasoning tokens, with return code 0. Fifteen state-database fallback warnings and one post-completion file-watcher warning were non-blocking. Product gates remain unassessed; the last accepted product remains Chapters 1–2 from runs 002 and 004.
+The contract gate remains **PASS**. Plan R1 is generated but **UNREVIEWED** and therefore not accepted. Its fresh thread is `019f545e-426d-7bf0-82d5-e92675e21945`; usage was 89,339 input, 88,832 cached, 17,338 output, and 0 reported reasoning-output tokens despite the frozen `ultra` configuration. Raw JSONL SHA-256 is `52ec4bea...`, stderr SHA-256 is `9f450668...`, marked-input SHA-256 is `9385979e...`, and full-prompt SHA-256 is `cf08b9ba...`. Preserved transport diagnostics are WebSocket `UnknownIssuer` reconnects, automatic HTTPS fallback, and two response-body reconnect notices; the same call completed normally without external retry. Product gates remain unassessed.
 
 ## Diagnosis (ranked, each gap mapped to its owning generic asset)
 
@@ -27,14 +27,14 @@ The contract gate **PASSES** and the exact audited bytes are frozen. The audit a
 ## Hypothesis outcomes
 
 - **Pre-registered mechanism, lever, controls, prediction:** H-050 tests one shared intelligent planning acceptance contract covering every argument-bearing chapter and the opening movement collectively. The primary causal outcome is efficacy, interpretable only after a blinded post-output audit confirms instantiation and all three drafts are materially grounded-clean. Craft, length, objective, and other Stage-A measures are secondary product requirements. Exact thresholds and controls are frozen in `manifest.json` and `calibration/hypotheses.md`.
-- **Result / deciding evidence:** The exact-one-lever precondition passes for candidate prompt SHA-256s `5e459f98...` and `18fa2987...`. This is contract acceptance only; no run-013 product artifact exists.
+- **Result / deciding evidence:** The exact-one-lever precondition passes and one complete plan candidate now exists. Generation alone is not plan acceptance or causal evidence; independent review is pending.
 - **Causal verdict:** TESTING. No support, refutation, or inconclusive outcome may be inferred from preregistration or reviewer compliance alone.
 - **Rival explanations / signal risk:** blind judges can reward invented force; same-model replica deltas are noisy; stochastic planner resampling, Opus's prior, and commission realization can mimic or suppress movement. Any grounded defect makes H-050 inconclusive rather than negative.
-- **Next discriminating test:** generate the fresh complete plan under frozen commit `b00115d`, then independently review it. After plan and commission acceptance, freeze all three drafts and run the blinded post-output instantiation audit before applying grounded and efficacy rules.
+- **Next discriminating test:** independently review the exact frozen plan R1 without editing or exposing it to reference, judges, or product outcomes. Only an accepted plan may advance to fresh commissions.
 
 ## Amendments proposed for next run
 
-The one behavior-agnostic composition-feasibility contract is independently accepted and frozen at pushed commit `b00115d`; planner SHA-256 is `5e459f98...` and reviewer SHA-256 is `18fa2987...`. No further contract amendment is authorized before fresh planning.
+None. The contract remains frozen at `b00115d`, and plan R1 remains byte-frozen pending independent review.
 
 ## Escalations
 
