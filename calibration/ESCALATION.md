@@ -6,7 +6,25 @@
 
 **Stage:** A
 
-**Status:** OPEN — repeated evidence escalation remains; v2.2 degraded control failed and product quality is still unjudged
+**Status:** OPEN — repeated evidence escalation remains; v2.3 pooled baseline is preregistered, implementation and fresh controls are pending, and product quality is still unjudged
+
+## Preregistered resolution — Stage-A v2.3
+
+V2.2 remains an immutable **FAIL**. Its exact identity-paired comparative-signature rule failed four of ten degraded observations, so no v2.2 evidence is reclassified, overwritten, repaired, or reused. The prospective correction answers a newly isolated attribution defect: both replica IDs used identical experimental conditions and existed only for traceability, yet the collapse treated same-label calls across opposite presentation orders as a meaningful pair.
+
+The preserved raw evidence identifies that defect without waiving the frozen result. All 20 degraded calls preferred the intact reference; every raw role core label was degraded-only; and every raw transform-aligned dimension favored intact. The four failures were two secondary craft-label toggles and two integrity `non_shaming_regard` signs crossing the tie boundary. For integrity, each order stratum has the identical sign multiset `{-1, 0}`. Pairing by replica label yields two instabilities, while permuting the order-1 labels changes the paired result even though no judgment changes. A decision-relevant aggregate must not depend on an arbitrary trace label.
+
+V2.3 changes aggregation and control attribution only. For each role target, pool four raw calls as two exchangeable calls in each presentation-order stratum. Map verdicts to ours = 1, tie = 0.5, reference = 0; mean within each order, then mean the order means. Role preference means its target preferences, and the equal-role macro remains the mean of the three roles. Replica IDs remain in raw evidence but do not define aggregates. Dimension scores/signs and secondary-label variation remain order-stratified uncertainty diagnostics, not vetoes.
+
+Two eligibility guards prevent pooling from concealing contrary evidence. Every role target in a Stage-A pass needs at least three of four raw verdicts in {ours, tie}; polarized and order-reversed targets fail but remain in all reported means. A raw verdict/rubric check is symmetric: X strictly dominates Y only when X is higher on every dimension and `critical_X` is a subset of `critical_Y` (equality allowed); any other verdict is a contradiction. A unique critical failure defeats dominance, so blockers can legitimately override scores. Product requires zero contradictions, and failed calls are preserved rather than dropped or rewritten; score variation otherwise remains diagnostic rather than an independent veto. Independently, `critical_ours` unions every raw label across all four calls, including labels shared with the reference; zero critical ours has no consensus waiver.
+
+Prompts, schemas, label enums and operational definitions, response fields, score dimensions and scales, native structured transport, `gpt-5.6-sol` at `ultra`, fresh contexts, exact 20-cell matrix, identical/degraded/product materials and degradation, blindness, existing numerical macro/role thresholds, and union safety stay fixed from v2.2. Every decision-relevant aggregate and control pass/fail result must be invariant under arbitrary replica-label permutations within each order after trace-only identity metadata is normalized.
+
+Both controls must run from scratch into new v2.3 directories; no prior raw call or summary can satisfy them. Every control and product invocation must have 20 unique fresh thread IDs, exactly two calls per role-target-order, matching input/schema hashes within each stratum, mappings rebuilt from parsed A/B plus order, and configuration matching the frozen baseline and validated controls. The controls hard-pass only if all 40 first responses are strict-valid with zero retry, repair, extraction, or tolerant parsing; identical has 20/20 ties, raw A=B for every dimension, and equal raw A/B critical sets; degraded has 20/20 intact preferences, the applicable core label degraded-only in every raw call, and every raw transform-aligned dimension favoring intact. The named transform checks are efficacy `cumulative_progression`; craft `flow_and_momentum` and `ending_handoff`; integrity `cross_chapter_consistency`.
+
+Before implementation freeze, symmetric synthetic tests must cover both dominance directions, tie/opposite contradictions, candidate/order swaps, the unique-critical exception, polarized target failure, mapping reconstruction, matrix invariants, and preservation of failed calls.
+
+The falsifier and final stop are prospective. Any control raw-cell, matrix, hash, remapping, configuration, or permutation-invariance miss fails v2.3. If that occurs, do not create v2.4 on this same synthetic specimen; escalate to a different validation family or a human benchmark. If both fresh controls pass, run the frozen product panel immediately, revalidate its configuration and mappings, and apply both eligibility guards without dropping any call; no intervening prompt, schema, label, material, degradation, control, or aggregation work is allowed. V2.3 is not H-050; H-049 remains **REFUTED**, product quality remains **UNJUDGED**, and no H-050 may be formed before product evidence.
 
 ## Current stop — run-012 v2.2 degraded-reference control
 
@@ -88,7 +106,7 @@ V2.1 is a new non-comparable baseline, not H-050. An identical pass establishes 
 
 **Resolved route:** 2026-07-12
 
-At the time of this route correction, H-049 was already causally **REFUTED** and the separate run-012 product verdict was **UNJUDGED** because no native control had run. V2 and v2.1 later produced the preserved results above; v2.2 now governs the prospective continuation.
+At the time of this route correction, H-049 was already causally **REFUTED** and the separate run-012 product verdict was **UNJUDGED** because no native control had run. V2, v2.1, and v2.2 later produced the preserved results above; prospective v2.3 now retains this same native route.
 
 The earlier runtime preflight proposed `google/gemini-3.1-pro-preview` at `high` and OpenRouter `openai/gpt-5.6-sol` at `max`. It calculated 60 calls across both controls and the panel, observed `$0.797648511` remaining, and found that the proposed OpenRouter matrix could not be authorized. That zero-inference preflight is preserved as history, but the route itself was wrong under the founder's clarified law.
 
@@ -96,7 +114,7 @@ No inference was attempted: zero judge calls, neither control run, no product pa
 
 OpenRouter may now be used only for Opus 4.6 chapter-writing calls and DeepSeek research calls. GPT/OpenAI, Gemini, Grok, planners, reviewers, auditors, and judges must never use it. The approximately `$0.979` key allowance is not a panel dependency and remains untouched for permitted Opus use.
 
-The canonical continuation is to spawn fresh native Codex judge subagents pinned to `gpt-5.6-sol` with `model_reasoning_effort="ultra"`. Exactly two same-model replica identities cover every Stage-A v2.2 role target and both A/B orders, producing 20 raw judgments per invocation. Run fresh identical and degraded-reference controls under the preregistered v2.2 configuration, then run the blind product panel only if both validate. The degraded control proves only gross-damage sensitivity, blind integrity cannot verify unseen sources, and same-model replication is not cross-family evidence. There is no external blocker.
+The canonical continuation is still to spawn fresh native Codex judge subagents pinned to `gpt-5.6-sol` with `model_reasoning_effort="ultra"`. Exactly two same-model replica labels cover every Stage-A v2.3 role target and both A/B orders, producing the unchanged 20 raw judgments per invocation; labels are trace metadata. Implement and freeze only the preregistered pooled aggregation, run both controls from scratch, and run product immediately only if both hard-pass. The degraded control proves only gross-damage sensitivity, blind integrity cannot verify unseen sources, and same-model replication is not cross-family evidence. There is no external blocker.
 
 ## Direction-audit resolution — run-012
 

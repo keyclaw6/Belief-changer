@@ -2,7 +2,7 @@
   "run": "run-012",
   "date": "2026-07-11",
   "stage": "A",
-  "status": "CAUSAL_REFUTED_V2_1_DEGRADED_FAILED_V2_2_FROZEN_PRODUCT_UNJUDGED",
+  "status": "CAUSAL_REFUTED_V2_2_DEGRADED_FAILED_V2_3_PREREGISTERED_PRODUCT_UNJUDGED",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "source-grounded semantic commissioning followed by a frozen Chapters 1-3 production run",
@@ -448,7 +448,7 @@
     },
     "causal_verdict": "REFUTED — all three commissions were pre-audited faithful, yet all three first drafts contain material evidence invention; this exceeds the preregistered at-least-two-drafts condition",
     "failure_autopsy": "Adding exact accepted source packets to the intelligent commissioner corrected commission fidelity but did not constrain Opus's connective persuasive prose. Across three distinct jobs it supplied unsupported identities, circumstances, prevalence, counterfactual outcomes, mechanisms, efficacy or closure claims, converted a plan-authored voice into testimony, and crossed reserved method/safety boundaries despite the relevant limits being present in the faithful commissions. Lossy plan-only evidence compression is therefore not a sufficient cause of the observed inventions; the Opus completion prior remains sufficient under this handoff.",
-    "product_boundary": "The causal refutation neither substitutes for nor suppresses the product panel. Product verdict remains UNJUDGED pending both fresh v2.2 controls and the blind target panel.",
+    "product_boundary": "The causal refutation neither substitutes for nor suppresses the product panel. Product verdict remains UNJUDGED pending both fresh v2.3 controls and the blind target panel.",
     "infrastructure": {
       "preflight_failure": "the first command placed global -a never after the exec subcommand; all three parsers exited 2 before inference and created no threads",
       "preflight_artifacts": "calibration/runs/run-012/infrastructure/grounded-audit-chapter-*-preflight.stderr.log",
@@ -902,6 +902,85 @@
     "product_verdict": "UNJUDGED",
     "causal_boundary": "H-049 remains REFUTED; this instrument result neither changes that verdict nor creates H-050."
   },
+  "judge_instrument_v2_3_preregistration": {
+    "date": "2026-07-12",
+    "status": "PREREGISTERED BEFORE IMPLEMENTATION OR ANY V2.3 MODEL CALL",
+    "historical_evidence": {
+      "v2_2_identical": {
+        "artifact": "calibration/runs/run-012/judgments/controls-v2.2/identical/judge-summary.json",
+        "sha256": "f9077e5fb8b26f3125c484bb64c5426f011ecc4f1d68a48f6601dece2c269348",
+        "verdict": "PASS — preserved, never reused as a v2.3 control"
+      },
+      "v2_2_degraded_reference": {
+        "artifact": "calibration/runs/run-012/judgments/controls-v2.2/degraded-reference/judge-summary.json",
+        "sha256": "ca77838c3907a356f13cbcb7304a2dd5852dc2b7bde5233e555c7d2c0dc02d9f",
+        "verdict": "FAIL — preserved, never repaired, reclassified, overwritten, or reused"
+      }
+    },
+    "direction_decision": "CORRECT COURSE — v2.2's identity-paired comparative-signature gate created a false negative because replica labels were trace metadata rather than assigned experimental conditions. Use a pooled, order-balanced, permutation-invariant target aggregate prospectively.",
+    "observed_attribution_defect": [
+      "All 20 degraded raw verdicts preferred the intact reference, every raw role core label was degraded-only, and every raw transform-aligned dimension favored intact.",
+      "The four v2.2 collapsed failures were limited to two secondary craft-label changes and two integrity non_shaming_regard signs crossing between intact advantage and tie.",
+      "For integrity, each order stratum had the same non_shaming_regard sign multiset {-1, 0}; arbitrary same-label pairing created two unstable identity observations, while permuting the order-1 replica labels changes that result.",
+      "Replica labels did not select a different prompt, model, seed, state, or judging protocol, so label-paired stability had no causal attribution basis."
+    ],
+    "single_instrument_lever": "Replace identity-paired comparative-signature collapse and vetoes with pooled, order-balanced target aggregation and control attribution that is invariant to replica-label permutations within each order, plus target and raw-call eligibility guards that prevent averaging unresolved or semantically contradictory evidence into a pass.",
+    "aggregation": {
+      "raw_matrix": "The exact 20-cell matrix remains: for each role target, two fresh raw calls in A/B order and two fresh raw calls in B/A order.",
+      "replica_identity_boundary": "Replica IDs remain in raw records and identity-matrix diagnostics for traceability, but do not define an observation or affect any decision-relevant aggregate or control verdict.",
+      "preference_mapping": {
+        "ours": 1.0,
+        "tie": 0.5,
+        "reference": 0.0
+      },
+      "target_preference": "Mean the two mapped raw verdict values within each order stratum, then mean the two order-stratum means. With two calls per order this equals the mean of all four raw verdict values while keeping presentation order balanced.",
+      "role_preference": "Mean the target preferences within the role: one block target each for efficacy and integrity, and three chapter targets for craft.",
+      "equal_role_macro_preference": "Mean the three role preferences; the conceptual equal-role weighting and existing numerical macro/role thresholds are unchanged, with the two eligibility guards applied in addition.",
+      "target_non_inferiority_guard": "Every role target used in a Stage-A pass must have at least three of four raw verdicts in {ours, tie}, equivalently no more than one raw reference verdict. Polarized or order-reversed targets fail eligibility but remain in every reported target, role, and macro mean.",
+      "verdict_rubric_coherence_guard": "Apply symmetrically to every rebuilt mapped raw call. Candidate X strictly dominates Y only if X scores strictly higher on every role dimension and critical_X is a subset of critical_Y, with equality allowed. If dominance exists, any verdict other than X is a semantic contradiction. Product eligibility requires zero contradictions; preserve and report every contradictory call without dropping, rewriting, or repairing it. A higher-scoring candidate with a unique critical label does not dominate, so the lower-scoring candidate may legitimately win.",
+      "uncertainty_diagnostics": "Raw score values, score-winner signs, and secondary critical-label variation are reported by order stratum as uncertainty diagnostics and do not independently veto preference aggregation; only the explicit coherence rule can turn their joint relationship with a verdict and critical sets into an eligibility failure.",
+      "union_critical_safety": "For each target, critical_ours and critical_ref union every raw critical label across all four calls, including labels shared by both candidates. Product use still requires zero unioned critical failures on ours; consensus or sharing with the reference never waives one.",
+      "permutation_invariant": "After normalizing trace-only identity metadata, every decision-relevant aggregate and control pass/fail result must be unchanged under arbitrary replica-label permutations within each presentation order."
+    },
+    "matrix_and_transport_hard_invariants": {
+      "cells_and_threads": "Every control and product invocation has exactly 20 raw cells and 20 unique fresh native thread IDs.",
+      "strata": "Every role-target-order stratum has exactly two raw replicas.",
+      "within_stratum_hashes": "The two raw calls within each stratum have identical input_sha256 and output_schema_sha256 values.",
+      "mapping_revalidation": "Rebuild and validate each mapped ours/reference result from the parsed A/B object plus recorded order; do not trust the stored mapped object as authority.",
+      "configuration_match": "Each control matches the frozen v2.3 configuration. Product must match that configuration and both validated control summaries before aggregation.",
+      "failure": "Any count, uniqueness, hash, remapping, or configuration mismatch fails closed for controls and product."
+    },
+    "fresh_control_hard_gate": {
+      "common": "Across two fresh v2.3 matrices, exactly 40/40 first responses are strict-valid with zero retry, repair, extraction, tolerant parsing, or process substitution; each invocation has 20 unique fresh thread IDs and satisfies every matrix/transport invariant.",
+      "identical": "All 20 raw verdicts are tie; A equals B on every score dimension in every raw call; and the raw A and B critical-label sets are equal in every call.",
+      "degraded_reference": "All 20 raw verdicts prefer the intact reference. Every applicable raw call assigns its role core label to degraded only: incoherent_block_arc for efficacy, broken_chapter_flow for craft, and broken_continuity for integrity. Every raw transform-aligned dimension favors intact: cumulative_progression for efficacy; flow_and_momentum and ending_handoff for craft; cross_chapter_consistency for integrity.",
+      "aggregation_invariance": "Every decision-relevant aggregate and both control verdicts are unchanged under arbitrary within-order replica-label permutations after trace-only metadata is normalized.",
+      "decision": "Every condition is hard. Any missing, invalid, retried, repaired, extracted, directionally wrong, core-label wrong, transform-dimension wrong, or permutation-sensitive cell fails the instrument."
+    },
+    "held_constant": [
+      "all three v2.2 role prompts, operational critical-label definitions, response schemas, fields, label enums, score dimensions, and score scales",
+      "native structured-output transport with strict parsing and no retry, repair, extraction, tolerant parsing, or harness output limit",
+      "native Codex subscription route pinned to gpt-5.6-sol at ultra",
+      "exactly two same-model replica labels, one fresh context per raw cell, and the exact 20-cell role-target-replica-order matrix",
+      "identical, degraded-reference, and product materials plus the deterministic degradation transform",
+      "blindness, unioned critical safety, all control raw-cell requirements, and all existing numerical macro, role, product, and Stage-A thresholds"
+    ],
+    "implementation_boundary": "Change and test aggregation and control attribution only, including permutation invariance, matrix/transport invariants, target non-inferiority, and symmetric verdict/rubric coherence, then freeze implementation hashes before any v2.3 inference. Synthetic tests must cover strict dominance in both candidate directions, tie and opposite-verdict contradictions, candidate and presentation-order swaps, the unique-critical exception, polarized/order-reversed target failure, and preservation of every failed call. Do not edit prompts, schemas, labels, transport, materials, degradation, model configuration, matrix, existing numerical thresholds, or raw v2.2 evidence.",
+    "fresh_execution": "Run identical and degraded-reference controls from scratch into new v2.3 directories. No v2.2 raw call, summary, or verdict may satisfy any v2.3 gate.",
+    "explicit_falsifiers": [
+      "any of the 40 fresh first responses is invalid, retried, repaired, extracted, tolerantly parsed, or substituted",
+      "any invocation lacks exactly 20 unique fresh thread IDs, any role-target-order stratum lacks exactly two replicas, within-stratum input or schema hashes differ, a stored mapping cannot be reproduced from parsed A/B plus order, or configuration does not match the frozen baseline and validated controls",
+      "any identical raw verdict is not tie, any identical raw dimension differs A versus B, or any identical raw critical set differs A versus B",
+      "any degraded raw verdict does not prefer intact, any raw role core label is absent from degraded or present on intact, or any raw transform-aligned dimension fails to favor intact",
+      "any decision-relevant aggregate or control verdict changes under an arbitrary replica-label permutation within either order stratum"
+    ],
+    "final_stop_rule": "If either fresh hard control or the permutation invariant fails, do not create v2.4 on this same synthetic specimen. Preserve the result and escalate to a different validation family or a human benchmark.",
+    "immediate_product_rule": "If both fresh controls pass, run the frozen run-012 product panel immediately through the identical configuration, require configuration match to both validated summaries, revalidate every mapping, and apply the target non-inferiority and zero-coherence-contradiction guards without dropping any call. No prompt, schema, label, material, degradation, control, or aggregation work may intervene.",
+    "comparability": "V2.3 begins a prospective non-comparable baseline. It does not reclassify v2.2 and is not numerically comparable with v2.2, v2.1, v2, or legacy panels.",
+    "claim_limits": "A control pass would establish strict-output reliability, exact identical-candidate symmetry, gross-transform sensitivity on preregistered raw dimensions and core labels, and aggregation invariance on this control family. It would not establish fine parity discrimination, source fidelity, cross-family replication, or a Stage-A product pass.",
+    "product_verdict": "UNJUDGED",
+    "causal_boundary": "H-049 remains REFUTED; v2.3 is an instrument correction, not H-050 or a factory hypothesis. No H-050 may be formed before the product panel."
+  },
   "held_constant": [
     "accepted research corpus, framing, canonical plan, evidence assignments, chapter jobs, and source permissions",
     "complete style guide, chapter-writer prompt, chapter-reviewer prompt, objective thresholds, and H-049 causal rules; the judge reset is separately recorded as a new non-comparable measurement baseline",
@@ -932,7 +1011,7 @@
     "no shared amendment, packet repair, packet resample, reviewer change, threshold change, or chapter-specific instruction after prose begins",
     "do not stop the three-chapter causal sample merely because Chapter 1 fails",
     "freeze the complete first-draft batch before any revision decision",
-    "implement and freeze only the two preregistered Stage-A v2.2 repairs, then validate both controls from scratch under the exact native Sol-ultra identity configuration before interpreting a product judgment; either repair or control failure invalidates the instrument but does not alter the frozen batch",
+    "implement and freeze only the preregistered Stage-A v2.3 aggregation/control-attribution lever, then validate both controls from scratch under the exact native Sol-ultra configuration before interpreting a product judgment; either control or permutation-invariance failure invalidates the instrument but does not alter the frozen batch",
     "run objective evaluation, a source-grounded evidence-fidelity specialist review, and the blind target panel across the complete first-draft batch even if an internal review or mechanical gate fails; failures remain measurements rather than truncation gates",
     "do not promote semantic improvement without full product passage"
   ],
