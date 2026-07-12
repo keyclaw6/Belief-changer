@@ -2,7 +2,7 @@
   "run": "run-014",
   "date": "2026-07-12",
   "stage": "A",
-  "status": "INPUT_REPAIR_R2_MECHANICALLY_VALID_UNREVIEWED_UNAPPLIED",
+  "status": "INPUT_REPAIR_ACCEPTED_MASTER_PLAN_R1_PENDING",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "source-grounded input repair followed by a clean H-050 plan, commission, and Chapters 1-3 rerun",
@@ -19,7 +19,7 @@
     "reviewer_sha256": "18fa2987ea5e2009df6fbaee3d461dbe82ea4674abc2bb504d08937243039715"
   },
   "input_repair_precondition": {
-    "status": "R2_MECHANICALLY_VALID_UNREVIEWED_UNAPPLIED",
+    "status": "ACCEPTED_AND_APPLIED_AT_F862FD2",
     "authority_packet": "production-books/quit-sugar/research/sources/s-021-nell-kauls-sugar-cravings.md",
     "authority_packet_sha256": "6ccee44130be2607b0ce9cf8c04ec78c1f624529ceb05168f85cd0b9ad732555",
     "target_files": {
@@ -92,7 +92,7 @@
     "assembled_stdin_reconstructability": "reconstructable from the immutable baseline files, S-021 packet, repair commission, raw response, and recorded native invocation"
   },
   "input_repair_r2_commission": {
-    "status": "COMPLETED_MECHANICALLY_VALID_UNREVIEWED_UNAPPLIED",
+    "status": "ACCEPTED_AFTER_INDEPENDENT_FULL_FILE_REVIEW_AND_APPLIED",
     "route": "fresh native Codex gpt-5.6-luna at max; never OpenRouter",
     "inputs": "the same complete baseline lived synthesis, framing, S-021 packet, and repair scope",
     "output": "a fresh complete two-file correction proposal that is mechanically valid without operator normalization",
@@ -102,8 +102,8 @@
     "observability_classification": "recording correction only; not a quality lever, prompt change, or new pipeline gate"
   },
   "input_repair_r2": {
-    "status": "VALID_MECHANICALLY_UNREVIEWED_UNAPPLIED",
-    "causal_classification": "mechanically valid candidate transport only; no semantic, source-quality, product, or H-050 inference",
+    "status": "ACCEPTED_AFTER_INDEPENDENT_FULL_FILE_REVIEW_AND_APPLIED",
+    "causal_classification": "accepted source-input correction only; no product or H-050 inference",
     "source_commit": "d0365af61cff890a66bd7bff7ed41853c9f85dba",
     "route": "fresh native Codex subscription context; never OpenRouter",
     "model": "gpt-5.6-luna",
@@ -199,7 +199,101 @@
       "raw_jsonl_sha256": "d7b6d0df29790da8b20b0e06482266c6c3f5d478393c11b8f1e3c1bbb51fcee1",
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
-    "next_gate": "a separate fresh Luna-max full-file semantic review of both complete R2 candidates against both complete baselines, S-021, the repair commission, and the no-new-inference/minimality scope"
+    "next_gate": "completed by the separate fresh Luna-max full-file ACCEPT recorded in input_repair_r2_review"
+  },
+  "input_repair_r2_review": {
+    "status": "ACCEPT",
+    "source_commit": "f86b390873cfa0e9f9107065096ab20c45585802",
+    "route": "fresh native Codex subscription context; never OpenRouter",
+    "model": "gpt-5.6-luna",
+    "reasoning": "max",
+    "thread_id": "019f54e6-538d-7af3-a742-742cfd9bfa1d",
+    "return_code": 0,
+    "first_line_valid": true,
+    "first_line_verdict": "ACCEPT",
+    "usage": {
+      "input_tokens": 666187,
+      "cached_input_tokens": 595968,
+      "output_tokens": 7530,
+      "reasoning_output_tokens": 5017
+    },
+    "review_scope": "both complete R2 candidates against both complete baselines, the complete S-021 packet, the repair commission and run-013 conflict diagnostics, and the no-new-inference/minimality acceptance scope",
+    "finding": "the full-file diffs contain exactly one targeted replacement per candidate; unrelated claims, mappings, structure, and line counts are preserved; S-021 supports the separate 15-plus-year weight-maintenance report and undated daily actions without assigning the duration to those actions; the CH-01/EV-L07 authority conflict is resolved",
+    "artifacts": {
+      "review_instruction": {
+        "path": "calibration/runs/run-014/input-repair/r2-review/review-instruction.md",
+        "sha256": "74e90024a2fe90f390e22a502b447fab485dc26b770be064c6c9ca04c79f6765",
+        "bytes": 2672,
+        "delivery": "exact file bytes on stdin"
+      },
+      "input_hashes": {
+        "path": "calibration/runs/run-014/input-repair/r2-review/input-hashes.json",
+        "sha256": "ebf13691a58c76d3794090bb28ddae6f0684bb41b7349fc4980c9f959f9f802b",
+        "persisted_before_review_call": true
+      },
+      "acceptance_scope": {
+        "path": "calibration/runs/run-014/input-repair/r2-review/manifest-acceptance-scope.json",
+        "sha256": "15e8f12c0ddd005083c2626c37f72f955380446a5eeac359d11ef9906ccd6e90"
+      },
+      "command_metadata": {
+        "path": "calibration/runs/run-014/input-repair/r2-review/command-metadata.json",
+        "sha256": "3625c4b7f22531cb986d82f629f7b71bd5642fd7096ece82da9857929271252f"
+      },
+      "raw_jsonl": {
+        "path": "calibration/runs/run-014/input-repair/r2-review/raw.jsonl",
+        "sha256": "655b62bd4efc5ebacc3144a1cf756f29a97de9de03c5136b416522b2e85201b8"
+      },
+      "stderr": {
+        "path": "calibration/runs/run-014/input-repair/r2-review/stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "empty": true
+      },
+      "verdict": {
+        "path": "calibration/runs/run-014/input-repair/r2-review/verdict.md",
+        "sha256": "d9bb257ef441d0d9727422fbd31c61c2b4678935099516cc54bfae0566c8f9e9"
+      }
+    },
+    "execution": {
+      "total_events": 84,
+      "command_execution_item_events": 78,
+      "command_executions": 39,
+      "agent_messages": 3,
+      "failed_command_completions": 3,
+      "nonblocking_diagnostics": [
+        "two diff -u commands returned 1 because each complete candidate intentionally differed from its baseline",
+        "one broad rg command returned 2 after an extra separator; a corrected local rg inspection then returned 0"
+      ],
+      "web_events": 0,
+      "subagent_events": 0,
+      "subagent_marker_diagnostic": "the sole raw marker is the word subagents inside the quoted R2 prompt prohibition; no subagent item or child exists",
+      "multi_agent_disabled": true,
+      "retry_performed": false,
+      "parse_errors": 0,
+      "stderr_empty": true,
+      "provider_or_api_credentials_inherited": false,
+      "reasoning_or_output_cap": "none set",
+      "workspace_file_count_before": 11,
+      "workspace_file_count_after": 11,
+      "workspace_membership_unchanged": true,
+      "workspace_hashes_unchanged": true,
+      "production_apply_performed_by_reviewer": false
+    },
+    "causal_boundary": "accepts only the bounded source correction; it is not a chapter, product, or H-050 result"
+  },
+  "input_repair_acceptance": {
+    "status": "ACCEPTED_AND_APPLIED",
+    "commit": "f862fd27eff3aa97822b6561e8e1f1c5db0f6b6e",
+    "application_method": "apply_patch applied exactly the two committed candidate.diff hunks with no wording change or normalization",
+    "candidate_diff_sha256": "dcfb07f656ab6f58687b367060d272ebc32dd6a6519a51294d7c838502db051a",
+    "changed_files": {
+      "production-books/quit-sugar/research/lived-experience.md": "e21506f804920898b3f314cd44bb20954d1524dd0eb70395ae4d95425e7afc5b",
+      "production-books/quit-sugar/framing.md": "d1fe0a1b2ea1c56dab8f56a10aa2a4ed3a8f86f3552c83db9f5f46ecb62bfece"
+    },
+    "diff_scope": "exactly one deleted and one added line in each of the two authorized files",
+    "manual_wording_change_or_normalization": false,
+    "observability_resolution": "R1's exact assembled stdin was not persisted; R2 prospectively persisted its exact prompt and input hashes before invocation, correcting that run-specific observability gap without adding a quality lever or permanent gate",
+    "last_accepted_product_unchanged": "production-books/quit-sugar/chapters/chapter-01.md from run-002 and chapter-02.md from run-004",
+    "h050_inference": "none; H-050 remains TESTING"
   },
   "start_direction_audit": {
     "status": "ACCEPTED",
@@ -264,7 +358,7 @@
   },
   "route_law": "OpenRouter only for Opus 4.6 chapter writing and DeepSeek research; GPT/OpenAI, Luna, Sol, Gemini, Grok, planning, reviewing, auditing, and judging never use OpenRouter",
   "quality_policy": "optimize only for method integrity and quality; no speed, cost, token, or reasoning cap",
-  "next_artifact": "separate fresh Luna-max full-file semantic review of both complete R2 candidates against both complete baselines, S-021, the repair commission, and the no-new-inference/minimality scope",
+  "next_artifact": "fresh complete master-plan R1 under the unchanged H-050 contract and corrected accepted inputs, with no run-013 plan, review, commission, or handoff reuse",
   "external_blocker": "none",
-  "notes": "Run-013 remains immutable. No new permanent gate or hypothesis is introduced for this one input conflict."
+  "notes": "Run-013 remains immutable. R1's prompt-persistence gap was corrected prospectively in R2. No new permanent gate, quality lever, or hypothesis is introduced for this one input conflict."
 }
