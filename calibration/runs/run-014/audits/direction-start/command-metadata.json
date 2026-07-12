@@ -1,0 +1,84 @@
+{
+  "assembled_prompt_bytes": 42510,
+  "assembled_prompt_sha256": "92752455010c7480ef098205431ae2e78af505a5e62ed11a0f965bbeee1b253d",
+  "command": [
+    "codex",
+    "exec",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--ignore-rules",
+    "--disable",
+    "multi_agent",
+    "--model",
+    "gpt-5.6-sol",
+    "-c",
+    "model_reasoning_effort=ultra",
+    "--sandbox",
+    "read-only",
+    "--skip-git-repo-check",
+    "--cd",
+    "<isolated-read-only-tmp>",
+    "--json",
+    "-"
+  ],
+  "environment_names": [
+    "CODEX_HOME",
+    "HOME",
+    "LANG",
+    "LC_ALL",
+    "LC_CTYPE",
+    "PATH",
+    "TERM"
+  ],
+  "environment_policy": "strict allowlist; all provider/API key, token, secret, password, and credential variables excluded",
+  "event_count": 4,
+  "event_types": {
+    "item.completed": 1,
+    "thread.started": 1,
+    "turn.completed": 1,
+    "turn.started": 1
+  },
+  "first_line_valid": true,
+  "first_line_verdict": "GO",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "item_types": {
+    "agent_message": 1
+  },
+  "message_count": 1,
+  "model": "gpt-5.6-sol",
+  "multi_agent_disabled": true,
+  "output_limit": "none set by executor",
+  "parse_errors": [],
+  "raw_jsonl_sha256": "a24891a072df6d5c0adb9254d60ffb8b8d64ddd1360540c95df45d64dbe4c92c",
+  "reasoning_effort": "ultra",
+  "reasoning_limit": "none set by executor",
+  "returncode": 0,
+  "section_sha256": {
+    "audit_instruction": "d05054b8371a5a116ae128b2a5fef96376c01d5afadf51dcbdb3c297050fdf09",
+    "git_log_5": "2a35f1bc1cc25d00b6dc792116da1f8b8b9503d84dc56705a0c8117af1989856",
+    "harness_stage_a_sequencing_law": "a9a3500285e56505c47be5a0de5530130bd6be31778b6934f74d96ae7c2bbaef",
+    "harness_true_north": "7eddf2536185121ea0f2e613316f335955e85294db1a89552dca98aae68ed771",
+    "run_014_ledger_row": "ee0e88a263838519683238c1122f2c9f2e58d913b3ceb849615ebfe468e4bd0e",
+    "run_014_manifest": "fe6f5df636c4f3fe56061161725266d97e1015b9825e0d87783aafd2d7855da6",
+    "run_014_report": "ea7bf7ebdc6af941de6e3586546c2f5051bb8fc1ddf4bee823170c5cc3c0d9d5",
+    "state_current_checkpoint": "c16f0bf1bf000280a126e71bbe8283a31f6d9edcc528b7dc49595e280d0eaec4",
+    "state_invariants": "3ef2ec5cb4472104c57957a32ac4decaf6e5914b3f44456db2e0546b63794a9c"
+  },
+  "source_commit": "16dbc36d247a5428e42ad82280bab778b34cc3f0",
+  "stderr_bytes": 0,
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "subagent_event_count": 0,
+  "thread_ids": [
+    "019f54d2-98c8-7791-b5b9-f75434ba4aad"
+  ],
+  "tool_or_command_event_count": 0,
+  "transport": "native Codex subscription; never OpenRouter",
+  "usage": {
+    "cached_input_tokens": 9984,
+    "input_tokens": 23436,
+    "output_tokens": 647,
+    "reasoning_output_tokens": 516
+  },
+  "verdict_sha256": "0c98f2392dc999a1c80193c52d440c7eaa11d1e5e063edb91ba26f6fb7c0fe2d"
+}

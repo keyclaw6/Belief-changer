@@ -2,7 +2,7 @@
   "run": "run-014",
   "date": "2026-07-12",
   "stage": "A",
-  "status": "INPUT_REPAIR_R1_MECHANICALLY_INVALID_R2_PENDING",
+  "status": "START_DIRECTION_GO_R2_PENDING",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "source-grounded input repair followed by a clean H-050 plan, commission, and Chapters 1-3 rerun",
@@ -87,7 +87,9 @@
       "production-books/quit-sugar/research/lived-experience.md": "38b753ad6fe40e4f07d8be68793d6d16acbe36e713ec0329026e98939fdea36c",
       "production-books/quit-sugar/framing.md": "2c115313c51fa040474b908e652915f73ebd770c03cd340a94b16efc18145941"
     },
-    "interpretation": "the proposed edits appear semantically plausible but cannot be accepted, normalized, reviewed as candidates, or applied because the transport artifact is mechanically invalid"
+    "interpretation": "the proposed edits appear semantically plausible but cannot be accepted, normalized, reviewed as candidates, or applied because the transport artifact is mechanically invalid",
+    "exact_assembled_stdin_persisted": false,
+    "assembled_stdin_reconstructability": "reconstructable from the immutable baseline files, S-021 packet, repair commission, raw response, and recorded native invocation"
   },
   "input_repair_r2_commission": {
     "status": "PROSPECTIVELY_COMMISSIONED",
@@ -95,7 +97,54 @@
     "inputs": "the same complete baseline lived synthesis, framing, S-021 packet, and repair scope",
     "output": "a fresh complete two-file correction proposal that is mechanically valid without operator normalization",
     "forbidden": "reuse or normalization of R1, manual repair, silent newline insertion, partial application, or semantic credit for R1",
-    "next_gate": "separate fresh Luna-max full-file reviewer after mechanical validity is established"
+    "next_gate": "separate fresh Luna-max full-file reviewer after mechanical validity is established",
+    "observability_requirement": "persist the exact assembled input bundle prospectively before launch",
+    "observability_classification": "recording correction only; not a quality lever, prompt change, or new pipeline gate"
+  },
+  "start_direction_audit": {
+    "status": "ACCEPTED",
+    "verdict": "GO",
+    "source_commit": "16dbc36d247a5428e42ad82280bab778b34cc3f0",
+    "route": "native Codex subscription; never OpenRouter",
+    "model": "gpt-5.6-sol",
+    "reasoning": "ultra",
+    "thread_id": "019f54d2-98c8-7791-b5b9-f75434ba4aad",
+    "return_code": 0,
+    "events": 4,
+    "tool_or_command_events": 0,
+    "subagent_events": 0,
+    "retries": 0,
+    "usage": {
+      "input_tokens": 23436,
+      "cached_input_tokens": 9984,
+      "output_tokens": 647,
+      "reasoning_output_tokens": 516
+    },
+    "artifacts": {
+      "assembled_prompt": {
+        "path": "calibration/runs/run-014/audits/direction-start/assembled-prompt.md",
+        "sha256": "92752455010c7480ef098205431ae2e78af505a5e62ed11a0f965bbeee1b253d"
+      },
+      "command_metadata": {
+        "path": "calibration/runs/run-014/audits/direction-start/command-metadata.json",
+        "sha256": "b0cd03af7374e6bd6a56fe7343f3e8ff9472565132af602b0b1552cae2d7b0d4"
+      },
+      "raw_jsonl": {
+        "path": "calibration/runs/run-014/audits/direction-start/raw.jsonl",
+        "sha256": "a24891a072df6d5c0adb9254d60ffb8b8d64ddd1360540c95df45d64dbe4c92c"
+      },
+      "stderr": {
+        "path": "calibration/runs/run-014/audits/direction-start/stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "empty": true
+      },
+      "verdict": {
+        "path": "calibration/runs/run-014/audits/direction-start/verdict.md",
+        "sha256": "0c98f2392dc999a1c80193c52d440c7eaa11d1e5e063edb91ba26f6fb7c0fe2d"
+      }
+    },
+    "interpretation": "course confirmed: preserve invalid R1, obtain a mechanically valid independently reviewed R2, then continue to fresh end-to-end product generation without a new quality lever",
+    "causal_boundary": "no product artifact, H-050 result, source-quality verdict, or downstream acceptance follows from GO"
   },
   "clean_rerun_law": {
     "run_013_reuse": false,

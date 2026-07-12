@@ -1,10 +1,10 @@
 # Run report — run-014
 
-**Stage:** A **Scope:** source-grounded input repair plus clean H-050 rerun **Verdict:** REPAIR R1 MECHANICALLY INVALID / UNAPPLIED
+**Stage:** A **Scope:** source-grounded input repair plus clean H-050 rerun **Verdict:** START DIRECTION GO / R2 PENDING
 
 ## What ran
 
-One fresh native `gpt-5.6-luna` max editor returned a semantically plausible two-file diff, but the saved proposal is mechanically invalid. `git apply --check` returned 128 with `corrupt patch ...:10`, and the artifact lacks a terminal LF. Nothing was applied, normalized, repaired, or retried. No reviewer, plan, commission, chapter, metric, or product-panel call exists.
+R1 remains mechanically invalid and unapplied. A separate fresh native Sol-ultra direction audit at source commit `16dbc36d247a5428e42ad82280bab778b34cc3f0` returned **GO**, confirming the course: obtain a mechanically valid Luna-max R2, independently review both complete files, then continue to fresh end-to-end product generation. No R2, reviewer, plan, commission, chapter, metric, or product-panel call exists.
 
 ## Objective results (`metrics.json`)
 
@@ -16,25 +16,25 @@ Not run. H-050's causal thresholds and the frozen v2.3 native Sol-ultra product 
 
 ## Gate verdict
 
-The input-repair precondition remains **PENDING**. R1 is mechanically invalid and therefore cannot enter semantic review or count as a source-quality result. Proposal SHA-256 is `275a7ef9...`, raw JSONL `4d785d8a...`, and empty stderr `e3b0c442...`. Thread `019f54c4-8ca7-7e81-8ab8-789889c07fca` used native Luna at max with 150,288 input, 124,672 cached, 19,302 output, and 18,533 reasoning tokens. Production inputs remain at their baseline hashes.
+The input-repair precondition remains **PENDING**. Direction GO is process confirmation only, not product or H-050 evidence. Audit thread `019f54d2-98c8-7791-b5b9-f75434ba4aad` used native `gpt-5.6-sol` at `ultra`, never OpenRouter, and returned 0 with four events, zero tools/subagents/retries, empty stderr, and usage 23,436 input, 9,984 cached, 647 output, 516 reasoning. Production inputs remain at baseline hashes.
 
 ## Diagnosis (ranked, each gap mapped to its owning generic asset)
 
-1. R1 proposal transport is corrupt and lacks a final LF — owning artifact: discarded input-repair proposal.
+1. R1 proposal transport is corrupt and lacks a final LF — owning artifact: preserved invalid proposal; direction audit confirms replacement rather than repair.
 2. Packet-to-synthesis authority conflict remains unrepaired — owning inputs: accepted lived synthesis and framing.
 3. H-050 remains causally unmeasured and unchanged.
 
 ## Hypothesis outcomes
 
 - **Pre-registered mechanism, lever, controls, prediction:** H-050 continues without a new quality lever. Its contract, writer, commissioner, judges, blindness, causal rules, and product gates remain frozen.
-- **Result / deciding evidence:** R1 is mechanically invalid and unapplied. This is transport evidence only, not a semantic/source verdict.
+- **Result / deciding evidence:** R1 is mechanically invalid and unapplied; independent direction audit returns GO on the preregistered replacement course. Neither result is product evidence.
 - **Causal verdict:** TESTING. Run-013 was INCONCLUSIVE; run-014 starts only after a valid input repair.
 - **Rival explanations / signal risk:** an editor could silently alter unrelated claims, or a reviewer could accept snippets while missing whole-file drift. Full-file editing, complete-file independent review, packet authority, and commit-before-planning prevent those false signals.
-- **Next discriminating test:** commission one fresh Luna-max R2 from the unchanged repair inputs. Do not normalize R1. Only a mechanically valid R2 may proceed to a separate fresh Luna-max full-file reviewer.
+- **Next discriminating test:** commission one fresh Luna-max R2 from unchanged repair inputs and prospectively save its exact assembled input bundle. Do not normalize R1. Only a mechanically valid R2 may proceed to a separate fresh Luna-max full-file reviewer.
 
 ## Amendments proposed for next run
 
-No factory amendment. Correct only the invalid fixed inputs through the existing agentic research-review path; add no permanent gate or new hypothesis unless the conflict recurs.
+No factory amendment. Persisting R2's exact assembled input is an observability correction, not a quality lever or new gate.
 
 ## Escalations
 
