@@ -6,7 +6,7 @@
 
 **Stage:** A
 
-**Status:** OPEN — repeated evidence escalation remains; v2.3 pooled baseline is preregistered, implementation and fresh controls are pending, and product quality is still unjudged
+**Status:** OPEN — repeated evidence escalation remains; v2.3 pooled baseline is implemented, independently reviewed, tested, and frozen before inference; fresh controls are pending and product quality is still unjudged
 
 ## Preregistered resolution — Stage-A v2.3
 
@@ -22,7 +22,7 @@ Prompts, schemas, label enums and operational definitions, response fields, scor
 
 Both controls must run from scratch into new v2.3 directories; no prior raw call or summary can satisfy them. Every control and product invocation must have 20 unique fresh thread IDs, exactly two calls per role-target-order, matching input/schema hashes within each stratum, mappings rebuilt from parsed A/B plus order, and configuration matching the frozen baseline and validated controls. The controls hard-pass only if all 40 first responses are strict-valid with zero retry, repair, extraction, or tolerant parsing; identical has 20/20 ties, raw A=B for every dimension, and equal raw A/B critical sets; degraded has 20/20 intact preferences, the applicable core label degraded-only in every raw call, and every raw transform-aligned dimension favoring intact. The named transform checks are efficacy `cumulative_progression`; craft `flow_and_momentum` and `ending_handoff`; integrity `cross_chapter_consistency`.
 
-Before implementation freeze, symmetric synthetic tests must cover both dominance directions, tie/opposite contradictions, candidate/order swaps, the unique-critical exception, polarized target failure, mapping reconstruction, matrix invariants, and preservation of failed calls.
+**Implementation freeze:** commit `00fce429f06ebe07c4fd5b5241d239e82e18a316` implements only the preregistered aggregation/control-attribution lever under protocol `stage-a-v2.3-native-sol-ultra-1`; canonical configuration SHA-256 `3131a73a35c7e1624d46a1b36ffe9317716fc6bf05d34003569ea7afc62a0706`. The run-012 manifest freezes all prompt, schema, and implementation hashes; prompts and schemas remain byte-identical to v2.2. Synthetic coverage includes both dominance directions, tie/opposite contradictions, candidate/order swaps, the unique-critical exception, polarized target failure, mapping reconstruction, matrix/configuration invariants, and failed-call preservation. A heterogeneous exhaustive `2^10` test covers every within-order replica-label permutation across the ten role-target-order strata and preserves exact 20-raw/5-target decision semantics. Independent review passed, focused tests passed 32/32, and the canonical gate passed 77/77 with shellcheck unavailable; historical control-byte/verdict tests also passed. No model inference, native judge, OpenRouter, or other provider call occurred.
 
 The falsifier and final stop are prospective. Any control raw-cell, matrix, hash, remapping, configuration, or permutation-invariance miss fails v2.3. If that occurs, do not create v2.4 on this same synthetic specimen; escalate to a different validation family or a human benchmark. If both fresh controls pass, run the frozen product panel immediately, revalidate its configuration and mappings, and apply both eligibility guards without dropping any call; no intervening prompt, schema, label, material, degradation, control, or aggregation work is allowed. V2.3 is not H-050; H-049 remains **REFUTED**, product quality remains **UNJUDGED**, and no H-050 may be formed before product evidence.
 
@@ -106,7 +106,7 @@ V2.1 is a new non-comparable baseline, not H-050. An identical pass establishes 
 
 **Resolved route:** 2026-07-12
 
-At the time of this route correction, H-049 was already causally **REFUTED** and the separate run-012 product verdict was **UNJUDGED** because no native control had run. V2, v2.1, and v2.2 later produced the preserved results above; prospective v2.3 now retains this same native route.
+At the time of this route correction, H-049 was already causally **REFUTED** and the separate run-012 product verdict was **UNJUDGED** because no native control had run. V2, v2.1, and v2.2 later produced the preserved results above; frozen v2.3 retains this same native route.
 
 The earlier runtime preflight proposed `google/gemini-3.1-pro-preview` at `high` and OpenRouter `openai/gpt-5.6-sol` at `max`. It calculated 60 calls across both controls and the panel, observed `$0.797648511` remaining, and found that the proposed OpenRouter matrix could not be authorized. That zero-inference preflight is preserved as history, but the route itself was wrong under the founder's clarified law.
 
@@ -114,7 +114,7 @@ No inference was attempted: zero judge calls, neither control run, no product pa
 
 OpenRouter may now be used only for Opus 4.6 chapter-writing calls and DeepSeek research calls. GPT/OpenAI, Gemini, Grok, planners, reviewers, auditors, and judges must never use it. The approximately `$0.979` key allowance is not a panel dependency and remains untouched for permitted Opus use.
 
-The canonical continuation is still to spawn fresh native Codex judge subagents pinned to `gpt-5.6-sol` with `model_reasoning_effort="ultra"`. Exactly two same-model replica labels cover every Stage-A v2.3 role target and both A/B orders, producing the unchanged 20 raw judgments per invocation; labels are trace metadata. Implement and freeze only the preregistered pooled aggregation, run both controls from scratch, and run product immediately only if both hard-pass. The degraded control proves only gross-damage sensitivity, blind integrity cannot verify unseen sources, and same-model replication is not cross-family evidence. There is no external blocker.
+The canonical continuation is still to spawn fresh native Codex judge subagents pinned to `gpt-5.6-sol` with `model_reasoning_effort="ultra"`. Exactly two same-model replica labels cover every Stage-A v2.3 role target and both A/B orders, producing the unchanged 20 raw judgments per invocation; labels are trace metadata. The implementation is frozen: run the fresh identical control first, degraded-reference only if it passes, and product immediately only if both hard-pass, with no intervening instrument work. The degraded control proves only gross-damage sensitivity, blind integrity cannot verify unseen sources, and same-model replication is not cross-family evidence. There is no external blocker.
 
 ## Direction-audit resolution — run-012
 

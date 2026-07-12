@@ -169,6 +169,14 @@ Implementation must preregister symmetric synthetic tests before freeze: strict 
 
 The final-stop rule is preregistered: if either fresh control or the permutation invariant fails, there is no v2.4 on this same synthetic specimen. Preserve the evidence and escalate to a different validation family or a human benchmark. If both controls pass, run the frozen product panel immediately under the same configuration; no further prompt, schema, label, material, degradation, control, or aggregation work may intervene. V2.3 is not H-050, product quality remains **UNJUDGED**, and no H-050 may be formed before the product panel.
 
+### V2.3 implementation freeze
+
+Commit `00fce429f06ebe07c4fd5b5241d239e82e18a316` implements only the preregistered pooled order-stratified aggregation and control attribution. The frozen protocol is `stage-a-v2.3-native-sol-ultra-1`; its canonical configuration SHA-256 is `3131a73a35c7e1624d46a1b36ffe9317716fc6bf05d34003569ea7afc62a0706`. The manifest records the full implementation hashes. All three prompt hashes (`11fdedde...`, `916cf4c6...`, `195820f1...`) and all three output-schema hashes (`3fa8c57f...`, `846b847b...`, `0e6d5046...`) are unchanged from v2.2.
+
+Synthetic validation covers both dominance directions, tie and opposite-verdict contradictions, candidate and order swaps, the unique-critical exception, target polarization, mapping reconstruction, matrix/configuration invariants, and failed-call preservation. A heterogeneous exhaustive test applies all `2^10` possible within-order replica-label permutations across the ten role-target-order strata, reverses record order, and preserves every decision-relevant aggregate and verdict. Independent review passed and confirmed the exact 20-raw/5-target semantics. Focused tests passed 32/32; the full canonical gate passed 77/77, with shellcheck unavailable and skipped. Frozen historical-artifact tests preserve the exact bytes and verdicts of every v2, v2.1, and v2.2 control summary.
+
+No model inference, native judge, OpenRouter, or other provider call occurred during implementation, review, testing, or freeze. H-049 remains **REFUTED**, the product remains **UNJUDGED**, and no H-050 exists. The next artifact is a fresh v2.3 identical control; degraded-reference runs only if identical passes, and the frozen product panel runs immediately only if both controls pass, with no intervening instrument work.
+
 ## Judge-panel preflight — historical misrouting, now resolved
 
 Before the founder's routing correction, the operator preflighted a proposed OpenRouter two-family configuration: `google/gemini-3.1-pro-preview` at `high` and `openai/gpt-5.6-sol` at `max`. One v2 invocation would have been 20 raw judgments; both controls and the product panel would have required 60 OpenRouter calls. This configuration is preserved only as historical preflight evidence and was never used for inference.
@@ -179,11 +187,11 @@ The operator stopped before inference rather than create a partial or unbalanced
 
 The founder has now made the route explicit: OpenRouter may be used only for Opus 4.6 chapter-writing calls and DeepSeek research calls. It must never carry GPT/OpenAI, Gemini, Grok, planning, reviewing, auditing, or judging traffic. The approximately `$0.979` key allowance is therefore not a panel blocker and remains untouched for permitted Opus use.
 
-The canonical judge route is two same-model replica labels executed as fresh native Codex subagents pinned to `gpt-5.6-sol` at `ultra`. The labels are trace metadata under prospective v2.3. V2, v2.1, and v2.2 produced the preserved results above. There is no external-access blocker; v2.3 is preregistered above and awaits implementation freeze before fresh controls.
+The canonical judge route is two same-model replica labels executed as fresh native Codex subagents pinned to `gpt-5.6-sol` at `ultra`. The labels are trace metadata under frozen v2.3. V2, v2.1, and v2.2 produced the preserved results above. There is no external-access blocker; v2.3 is implemented, reviewed, tested, and frozen above, and awaits its fresh identical control.
 
 ## Judge-instrument baseline
 
-Before any run-012 target-panel result, Stage-A judging changed from the legacy single chapter role through v2, v2.1, and v2.2. V2.1 exposed syntax fragility and relative taxonomy drift; v2.2 fixed transport validity and retained every gross-damage anchor but failed its identity-paired exact-signature gate. Prospective v2.3 changes only aggregation/control attribution to pooled order strata while preserving v2.2 prompts, schemas, labels, transport, model, matrix, materials, thresholds, and safety. Authorship detection remains absent.
+Before any run-012 target-panel result, Stage-A judging changed from the legacy single chapter role through v2, v2.1, and v2.2. V2.1 exposed syntax fragility and relative taxonomy drift; v2.2 fixed transport validity and retained every gross-damage anchor but failed its identity-paired exact-signature gate. Frozen v2.3 changes only aggregation/control attribution to pooled order strata while preserving v2.2 prompts, schemas, labels, transport, model, matrix, materials, thresholds, and safety. Authorship detection remains absent.
 
 This change answers instrument failures, not H-049. V2.3 begins a prospective non-comparable baseline and no resulting score is numerically comparable with v2.2, v2.1, v2, or legacy runs. H-049 was decided only by its frozen causal rule and source-grounded specialist review; the panel cannot reverse or support that verdict. Explicit `--prompt` mode preserves the old runner solely for historical reproduction.
 
