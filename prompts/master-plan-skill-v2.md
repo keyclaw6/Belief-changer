@@ -65,7 +65,11 @@ Define each numbered instruction once with a stable ID, frozen wording, owning c
 
 ### Arc and length
 
-Choose the chapter count and architecture that best deliver the behavior-specific belief change. Preserve the spine: trust and participation → dissolve loaded choice → switch the evaluation axis → demolish benefits → expose the inversion → close escape routes → widen the indictment where supported → meet the strongest scene → demystify → knowledge/readiness gate → chosen threshold → relapse-proof → ordinary life.
+Choose the chapter count and architecture that best deliver the behavior-specific belief change. Treat this spine as whole-book functions whose composition, merging, emphasis, and order belong to your judgment, not as a chapter-per-function template: trust and participation → dissolve loaded choice → switch the evaluation axis → demolish benefits → expose the inversion → close escape routes → widen the indictment where supported → meet the strongest scene → demystify → knowledge/readiness gate → chosen threshold → relapse-proof → ordinary life.
+
+Every argument-bearing chapter must be composition-feasible within its budget as one completed, value-bearing correction to what the reader believes the behavior gives, costs, means, or requires, grounded only in evidence and logic that chapter owns. The opening movement, taken as a whole, must complete a value-bearing correction rather than consist entirely of setup for later persuasion. A completed correction must make the prior valuation less credible now through the chapter's owned evidence or logic; naming the belief, cataloguing its assigned jobs, posing unanswered questions, or promising later examination is setup, not completion. Trust, definition, scope, safety, recap, bridge, and hand-off functions may support or consolidate that movement without becoming a second thesis. A chapter serving a necessary non-argument function need not invent a belief correction, but it must be lean enough for its budget and must advance, protect, or hand over the surrounding persuasive movement rather than replace it or merely defer it.
+
+Use your judgment to merge, reshape, move, or omit material that cannot meet this boundary honestly and compellingly.
 
 Map concept debuts, qualitative demolition and freedom curves, structural responsibilities that genuinely apply, instruction placements, the saved ending reframe, and one integer word budget per chapter.
 
@@ -75,7 +79,7 @@ For a HARNESS calibration plan, chapter budgets must sum exactly to 54,000–66,
 
 Give every chapter a stable ID, number, and working title, then specify only its semantic work order:
 
-- one belief job and the objection/justification it resolves;
+- the chapter's one belief job and the objection or justification it resolves when it is argument-bearing, or its necessary definition, safety, recap, bridge, or hand-off function when it is not;
 - arc position and qualitative curve position;
 - target persona IDs and the reader voice or scene that makes the move land;
 - evidence-ledger IDs, including the limits the chapter must preserve;

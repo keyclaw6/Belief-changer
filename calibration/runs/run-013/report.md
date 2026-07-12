@@ -1,10 +1,10 @@
 # Run report — run-013
 
-**Stage:** A **Scope:** composition-feasible argument-bearing chapters and opening movement, regenerated commissions, and Chapters 1–3 **Verdict:** PREREGISTERED / NO PROSE
+**Stage:** A **Scope:** composition-feasible argument-bearing chapters and opening movement, regenerated commissions, and Chapters 1–3 **Verdict:** CONTRACT AUDIT PASS / PENDING FREEZE COMMIT / NO PROSE
 
 ## What ran
 
-Only the prospective H-050 decision and run boundary have been recorded. No run-013 master plan, commission, chapter, revision, objective evaluation, grounded audit, or product-panel inference exists. Run-012 remains frozen evidence; its plan, commissions, and chapters are invalidated only as run-013 production inputs, not altered or reclassified.
+The matching planner/reviewer contract candidate was authored and passed one fresh native Sol-ultra pre-freeze audit. The audit saw only committed H-050, the committed manifest, and the two candidate prompts; it used no tools, subagents, provider API credential, or retry. The canonical check passed 77/77 with shellcheck unavailable, and the planning unit passed 11/11. The candidate is not yet committed or frozen. No run-013 master plan, commission, chapter, objective evaluation, grounded audit, or product-panel inference exists.
 
 ## Objective results (`metrics.json`)
 
@@ -16,7 +16,7 @@ Not run. The frozen v2.3 native Sol-ultra instrument, blindness, controls, aggre
 
 ## Gate verdict
 
-Not assessed. H-050 is prospectively preregistered, and no Stage-A gate can pass or fail before the complete fresh C-01-C-03 batch exists. The last accepted product remains Chapters 1–2 from runs 002 and 004.
+The pre-freeze contract gate **PASSES**. The audit artifact is `audits/h050-contract-audit.md`, SHA-256 `456633bc...`, from fresh thread `019f5458-4a71-7381-97ba-d823343ea395`; usage was 19,221 input, 8,960 cached, 1,304 output, and 1,034 reasoning tokens, with return code 0. Fifteen state-database fallback warnings and one post-completion file-watcher warning were non-blocking. Product gates remain unassessed; the last accepted product remains Chapters 1–2 from runs 002 and 004.
 
 ## Diagnosis (ranked, each gap mapped to its owning generic asset)
 
@@ -27,14 +27,14 @@ Not assessed. H-050 is prospectively preregistered, and no Stage-A gate can pass
 ## Hypothesis outcomes
 
 - **Pre-registered mechanism, lever, controls, prediction:** H-050 tests one shared intelligent planning acceptance contract covering every argument-bearing chapter and the opening movement collectively. The primary causal outcome is efficacy, interpretable only after a blinded post-output audit confirms instantiation and all three drafts are materially grounded-clean. Craft, length, objective, and other Stage-A measures are secondary product requirements. Exact thresholds and controls are frozen in `manifest.json` and `calibration/hypotheses.md`.
-- **Result / deciding evidence:** No result yet; no run-013 product artifact exists.
+- **Result / deciding evidence:** The exact-one-lever precondition passes for candidate prompt SHA-256s `5e459f98...` and `18fa2987...`. This is contract acceptance only; no run-013 product artifact exists.
 - **Causal verdict:** TESTING. No support, refutation, or inconclusive outcome may be inferred from preregistration or reviewer compliance alone.
 - **Rival explanations / signal risk:** blind judges can reward invented force; same-model replica deltas are noisy; stochastic planner resampling, Opus's prior, and commission realization can mimic or suppress movement. Any grounded defect makes H-050 inconclusive rather than negative.
-- **Next discriminating test:** freeze the shared contract; regenerate and accept the complete plan and commissions; freeze all three drafts; then run a post-output instantiation audit blind to drafts, metrics, judges, and reference before applying the grounded and efficacy rules.
+- **Next discriminating test:** commit and freeze the audited shared contract, then generate the fresh complete plan. After plan and commission acceptance, freeze all three drafts and run the blinded post-output instantiation audit before applying grounded and efficacy rules.
 
 ## Amendments proposed for next run
 
-One lever within this active run: add the same behavior-agnostic composition-feasibility contract to `prompts/master-plan-skill-v2.md` and `prompts/master-plan-reviewer-v2.md`, covering argument-bearing chapters and the opening movement collectively while allowing support functions without a second thesis. This is one contract, not two independent changes or a new stage.
+The one behavior-agnostic composition-feasibility contract is implemented in both planning prompts and independently accepted. Its candidate SHA-256s are planner `5e459f98...` and reviewer `18fa2987...`. Root commit/freeze is still pending; do not generate the plan before that boundary.
 
 ## Escalations
 

@@ -39,7 +39,7 @@ The ledger may intentionally exclude unused research. A generic structural move 
 
 Every chapter card must resolve to:
 
-- one belief job;
+- one belief job when the chapter is argument-bearing, or one necessary definition, safety, recap, bridge, or hand-off function when it is not;
 - target personas or reader objection;
 - evidence IDs and limits;
 - mantra debut/echo IDs;
@@ -55,6 +55,12 @@ Block only when missing semantic context would force a writer to guess, contradi
 The chapter sequence must form a persuasive escalating argument, preserve the belief-change spine, avoid re-arguing settled moves, place the strongest scene and ending revelation deliberately, route meaningful structural responsibilities, and leave a coherent handoff into freedom and relapse-proofing.
 
 The planner owns chapter count, ordering, consolidation, and which optional structural slots are evidence-supported. Override that judgment only for a concrete arc or method failure.
+
+Apply this composition contract:
+
+Every argument-bearing chapter must be composition-feasible within its budget as one completed, value-bearing correction to what the reader believes the behavior gives, costs, means, or requires, grounded only in evidence and logic that chapter owns. The opening movement, taken as a whole, must complete a value-bearing correction rather than consist entirely of setup for later persuasion. A completed correction must make the prior valuation less credible now through the chapter's owned evidence or logic; naming the belief, cataloguing its assigned jobs, posing unanswered questions, or promising later examination is setup, not completion. Trust, definition, scope, safety, recap, bridge, and hand-off functions may support or consolidate that movement without becoming a second thesis. A chapter serving a necessary non-argument function need not invent a belief correction, but it must be lean enough for its budget and must advance, protect, or hand over the surrounding persuasive movement rather than replace it or merely defer it.
+
+Treat a violation as a material composition or architecture defect, not as an ordering preference. Otherwise preserve the planner's autonomy over how functions are merged, ordered, emphasized, or omitted.
 
 ### Deliberate repetition and instructions
 
