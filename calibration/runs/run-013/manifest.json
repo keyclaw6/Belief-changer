@@ -1,0 +1,132 @@
+{
+  "run": "run-013",
+  "date": "2026-07-12",
+  "stage": "A",
+  "status": "PREREGISTERED_NO_PROSE",
+  "operator": "gpt-5.6-sol",
+  "branch": "calibration-lab",
+  "scope": "composition-feasible argument-bearing chapters and opening movement plus regenerated source-grounded commissions and a frozen Chapters 1-3 first-draft batch",
+  "hypotheses_tested": [
+    "H-050"
+  ],
+  "model_api": "route-restricted: OpenRouter only for Opus 4.6 chapter writing and DeepSeek research; fresh native Codex subagents for planning, reviewing, auditing, and judging",
+  "model_output_allowance_policy": "quality only: no economy, speed, cost, reasoning-token, or harness output optimization; permitted calls receive the greatest authorized allowance and continue when required",
+  "baseline_boundary": "cf5c825 — run-012 frozen with H-049 REFUTED and a valid v2.3 product-panel FAIL; no run-012 prose promoted",
+  "last_accepted_product": "production-books/quit-sugar/chapters/chapter-01.md from run-002 and chapter-02.md from run-004",
+  "preregistration_state": "no run-013 plan, commission, chapter, review, metric, or product-panel inference exists",
+  "observed_failure": "setup-only and deferred opening architecture plus overloaded later chapter jobs leaves the writer choosing between safe catalog-and-defer prose and forceful invented connective tissue",
+  "single_generic_lever": "one shared intelligent planning acceptance contract requiring every argument-bearing chapter, and the opening movement collectively, to be safely composable from owned evidence and logic into one completed value-bearing belief correction within budget",
+  "lever_boundary": {
+    "assets": [
+      "prompts/master-plan-skill-v2.md",
+      "prompts/master-plan-reviewer-v2.md"
+    ],
+    "one_mechanism": "planner instruction and reviewer acceptance language are the two sides of the same planning contract, not independent levers",
+    "required": "definition, safety, recap, and handoff functions may support the belief-moving architecture without carrying or inventing a second thesis; the planner may freely rearchitect the whole book",
+    "forbidden": "schema, checklist, deterministic reasoning procedure, prescribed section sequence, new pipeline stage, specimen wording, reference leakage, chapter-specific patch, or post-outcome prompt amendment",
+    "freeze": "independently audit and commit the shared contract before fresh planning"
+  },
+  "held_fixed": [
+    "accepted quit-sugar brief",
+    "accepted research corpus and syntheses",
+    "accepted framing",
+    "prompts/style-guide.md",
+    "prompts/chapter-writer.md",
+    "prompts/chapter-commissioner.md and its source-grounded handoff",
+    "Claude Opus 4.6 reasoning disabled",
+    "previous-chapter-only continuity",
+    "frozen Stage-A v2.3 judge prompts, schemas, aggregation, controls, thresholds, model route, and blindness",
+    "all objective, grounded-fidelity, safety, and promotion gates"
+  ],
+  "invalidated_for_run_013": [
+    "the prior master plan",
+    "all prior chapter commissions",
+    "all prior draft chapters"
+  ],
+  "regeneration_law": "generate a fresh complete master plan, then all C-01-C-03 source-grounded commissions, then all three first drafts; freeze the full batch before any chapter revision or product inference",
+  "prediction": {
+    "pre_prose": "an independent reviewer accepts the fresh plan and resulting commissions as composition-feasible under the shared contract",
+    "blinded_post_output_audit": "after drafts freeze, an auditor blind to drafts, metrics, judges, and reference confirms from the contract, plan, and commissions that the lever was instantiated",
+    "primary_causal": "all three first drafts are materially grounded-clean and efficacy receives at most one reference verdict with role score at least 0.35",
+    "secondary_product": "each craft target receives at most one reference verdict, critical_ours excludes repetitive_sag and weak_ending_handoff, all three length bands pass, and every existing Stage-A gate passes"
+  },
+  "causal_decision_rule": {
+    "supported": "the blinded post-output audit confirms instantiation, all three first drafts are materially grounded-clean, and efficacy receives at most one reference verdict with role score at least 0.35",
+    "refuted": "the blinded post-output audit confirms instantiation, all three first drafts are materially grounded-clean, and efficacy still fails through at least three reference verdicts or role score below 0.35",
+    "inconclusive": "any first draft has a material grounded defect, plan or commission instantiation is unaccepted or ambiguous, writer violation of an accepted handoff makes ownership ambiguous, the panel is invalid, or the accepted corpus cannot support the architecture",
+    "product_boundary": "craft, length, objective, safety, and every other Stage-A gate remain promotion requirements but do not decide H-050 causal status"
+  },
+  "signal_risks": [
+    "blind judges may reward invented force; grounded cleanliness is required for causal interpretation",
+    "same-model native replica deltas are noisy even under frozen order pooling",
+    "a fresh planner sample can improve through stochastic resampling rather than the contract",
+    "plan quality can improve while the Opus persuasive prior remains sufficient",
+    "source-grounded commission realization can weaken an accepted plan",
+    "any grounded defect, unaccepted or ambiguous handoff, or invalid panel makes the causal result inconclusive"
+  ],
+  "research_orchestration": {
+    "arm": "H-010 prompt-structured, model-led",
+    "lead_chooses_subagents_and_workflow": true,
+    "oss_framework": "none",
+    "run_013_action": "not rerun; accepted research is held fixed"
+  },
+  "models": {
+    "research_lead": {
+      "model": "not rerun — accepted research held fixed",
+      "reasoning": "n/a",
+      "requested_output": "n/a",
+      "authorized_output": "n/a"
+    },
+    "research_calls": [],
+    "research_reviewer": "not rerun — accepted research held fixed",
+    "planner": "gpt-5.6-sol",
+    "planner_reasoning": "ultra",
+    "planner_execution": "fresh native Codex subagent; never OpenRouter",
+    "plan_reviewer": "gpt-5.6-sol",
+    "plan_reviewer_reasoning": "ultra",
+    "plan_reviewer_execution": "fresh independent native Codex subagent; never OpenRouter",
+    "commissioner": "gpt-5.6-sol",
+    "commissioner_reasoning": "ultra",
+    "commissioner_execution": "fresh native Codex context per chapter; never OpenRouter",
+    "writer": {
+      "model": "anthropic/claude-opus-4.6",
+      "reasoning": "disabled",
+      "api": "openrouter",
+      "arm": "fixed Opus baseline"
+    },
+    "later_writer_arm": {
+      "model": "muse-spark-1.1",
+      "reasoning": "top supported",
+      "api": "meta",
+      "status": "not part of H-050; requires a separate preregistered end-to-end arm"
+    },
+    "chapter_reviewer": "gpt-5.6-sol",
+    "chapter_reviewer_reasoning": "ultra",
+    "judges": {
+      "route": "fresh native Codex subagents",
+      "model": "gpt-5.6-sol",
+      "reasoning": "ultra",
+      "protocol": "stage-a-v2.3-native-sol-ultra-1",
+      "replica_identities": [
+        "sol-ultra-r1",
+        "sol-ultra-r2"
+      ],
+      "stage_a_raw_judgments": 20,
+      "openrouter_usage": false,
+      "blind_to_reference_during_production": true
+    }
+  },
+  "asset_versions": {
+    "prompts/style-guide.md": "baseline history commit e8aa007; held fixed",
+    "prompts/master-plan-skill-v2.md": "baseline history commit e8aa007; H-050 amendment pending independent freeze",
+    "prompts/master-plan-reviewer-v2.md": "baseline history commit e8aa007; matching H-050 amendment pending independent freeze",
+    "prompts/chapter-writer.md": "history commit 88b6889; held fixed",
+    "prompts/chapter-reviewer.md": "history commit a91af62; held fixed",
+    "prompts/chapter-commissioner.md": "history commit 23ca037; held fixed",
+    "prompts/research-agent.md": "history commit 5bff930; accepted research not rerun"
+  },
+  "stages_rerun_because": "H-050 changes chapter architecture; causal attribution requires fresh plan, commissions, and complete Chapters 1-3 rather than patching any run-012 artifact",
+  "next_artifact": "independently audited and frozen shared planner/reviewer acceptance contract, followed by a fresh complete master plan",
+  "external_blocker": "none",
+  "notes": "Run-012 remains immutable evidence. Product roles stay blind to the reference and judge output. OpenRouter remains restricted to Opus chapter writing and DeepSeek research."
+}
