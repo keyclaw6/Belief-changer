@@ -2,7 +2,7 @@
   "run": "run-013",
   "date": "2026-07-12",
   "stage": "A",
-  "status": "CONTRACT_AUDIT_PASSED_PENDING_FREEZE_COMMIT_NO_PROSE",
+  "status": "CONTRACT_FROZEN_NO_PLAN",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "composition-feasible argument-bearing chapters and opening movement plus regenerated source-grounded commissions and a frozen Chapters 1-3 first-draft batch",
@@ -13,7 +13,7 @@
   "model_output_allowance_policy": "quality only: no economy, speed, cost, reasoning-token, or harness output optimization; permitted calls receive the greatest authorized allowance and continue when required",
   "baseline_boundary": "cf5c825 — run-012 frozen with H-049 REFUTED and a valid v2.3 product-panel FAIL; no run-012 prose promoted",
   "last_accepted_product": "production-books/quit-sugar/chapters/chapter-01.md from run-002 and chapter-02.md from run-004",
-  "preregistration_state": "the H-050 contract candidate passed its independent pre-freeze audit; no run-013 plan, commission, chapter, metric, or product-panel inference exists",
+  "preregistration_state": "the audited H-050 contract is frozen and pushed at b00115dfb085cc7ea9084ff5e1d1b8218ae8c865; no run-013 plan, commission, chapter, metric, or product-panel inference exists",
   "observed_failure": "setup-only and deferred opening architecture plus overloaded later chapter jobs leaves the writer choosing between safe catalog-and-defer prose and forceful invented connective tissue",
   "single_generic_lever": "one shared intelligent planning acceptance contract requiring every argument-bearing chapter, and the opening movement collectively, to be safely composable from owned evidence and logic into one completed value-bearing belief correction within budget",
   "lever_boundary": {
@@ -27,7 +27,9 @@
     "freeze": "independently audit and commit the shared contract before fresh planning"
   },
   "contract_candidate": {
-    "freeze_status": "PRE_FREEZE_AUDIT_PASSED_AWAITING_ROOT_COMMIT",
+    "freeze_status": "FROZEN_COMMITTED_AND_PUSHED",
+    "freeze_commit": "b00115dfb085cc7ea9084ff5e1d1b8218ae8c865",
+    "pushed_to_origin_calibration_lab": true,
     "planner_prompt_sha256": "5e459f98f51892745e6c28e5584187770d0c9a0993e70dabce0e57c1996e2747",
     "reviewer_prompt_sha256": "18fa2987ea5e2009df6fbaee3d461dbe82ea4674abc2bb504d08937243039715"
   },
@@ -177,15 +179,15 @@
   },
   "asset_versions": {
     "prompts/style-guide.md": "baseline history commit e8aa007; held fixed",
-    "prompts/master-plan-skill-v2.md": "candidate SHA-256 5e459f98f51892745e6c28e5584187770d0c9a0993e70dabce0e57c1996e2747; audit PASS; commit pending",
-    "prompts/master-plan-reviewer-v2.md": "candidate SHA-256 18fa2987ea5e2009df6fbaee3d461dbe82ea4674abc2bb504d08937243039715; audit PASS; commit pending",
+    "prompts/master-plan-skill-v2.md": "frozen at b00115dfb085cc7ea9084ff5e1d1b8218ae8c865; SHA-256 5e459f98f51892745e6c28e5584187770d0c9a0993e70dabce0e57c1996e2747",
+    "prompts/master-plan-reviewer-v2.md": "frozen at b00115dfb085cc7ea9084ff5e1d1b8218ae8c865; SHA-256 18fa2987ea5e2009df6fbaee3d461dbe82ea4674abc2bb504d08937243039715",
     "prompts/chapter-writer.md": "history commit 88b6889; held fixed",
     "prompts/chapter-reviewer.md": "history commit a91af62; held fixed",
     "prompts/chapter-commissioner.md": "history commit 23ca037; held fixed",
     "prompts/research-agent.md": "history commit 5bff930; accepted research not rerun"
   },
   "stages_rerun_because": "H-050 changes chapter architecture; causal attribution requires fresh plan, commissions, and complete Chapters 1-3 rather than patching any run-012 artifact",
-  "next_artifact": "root commit freezing the audited planner/reviewer contract candidate, followed by a fresh complete master plan",
+  "next_artifact": "fresh complete master plan generated under the frozen H-050 contract",
   "external_blocker": "none",
   "notes": "Run-012 remains immutable evidence. Product roles stay blind to the reference and judge output. OpenRouter remains restricted to Opus chapter writing and DeepSeek research."
 }
