@@ -1,0 +1,35 @@
+{
+  "input_repair_precondition": {
+    "status": "R2_MECHANICALLY_VALID_UNREVIEWED_UNAPPLIED",
+    "authority_packet": "production-books/quit-sugar/research/sources/s-021-nell-kauls-sugar-cravings.md",
+    "authority_packet_sha256": "6ccee44130be2607b0ce9cf8c04ec78c1f624529ceb05168f85cd0b9ad732555",
+    "target_files": {
+      "production-books/quit-sugar/research/lived-experience.md": "38b753ad6fe40e4f07d8be68793d6d16acbe36e713ec0329026e98939fdea36c",
+      "production-books/quit-sugar/framing.md": "2c115313c51fa040474b908e652915f73ebd770c03cd340a94b16efc18145941"
+    },
+    "observed_conflict": [
+      "lived-experience.md says S-021 combines a strong relief metaphor with 15 plus years of maintenance and daily actions to keep cravings at bay",
+      "framing.md says relief is paired with more than fifteen years of daily management, boundaries, and resets",
+      "S-021 separates a 15-plus-year weight-maintenance report from separately described daily craving-management actions and does not assign that duration to the actions"
+    ],
+    "editor": {
+      "route": "fresh native Codex subscription context; never OpenRouter",
+      "model": "gpt-5.6-luna",
+      "reasoning": "max",
+      "inputs": "the complete two baseline files plus the complete S-021 packet and this repair commission",
+      "output": "complete minimally corrected candidates for both files",
+      "scope": "repair only the packet-to-synthesis authority conflict while preserving all other source mappings, claims, limits, structure, and prose",
+      "web_or_research_expansion": false
+    },
+    "reviewer": {
+      "route": "separate fresh native Codex subscription context; never OpenRouter",
+      "model": "gpt-5.6-luna",
+      "reasoning": "max",
+      "inputs": "both complete corrected candidates, the complete S-021 packet, the repair commission, and the committed baseline needed to verify minimality",
+      "checks": "source fidelity, exact conflict removal, preservation of every unrelated source and claim, and absence of new inference",
+      "action": "accept or reject the complete two-file correction; never repair it"
+    },
+    "acceptance_rule": "commit repaired production inputs only after one editor proposal and one independent fresh full-file review both establish a minimal source-grounded correction with no other source or claim change",
+    "forbidden": "web search, new retrieval, research expansion, manual line edit, partial-file review, plan generation before repair acceptance, or treating repair acceptance as H-050 support"
+  }
+}

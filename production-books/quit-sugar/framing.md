@@ -295,7 +295,7 @@ These labels describe different accounts. They are not a universal staircase, cl
 | **Caregiver changed a child’s drinks and checked labels** (S-010) | Household safety and redefinition material. | Illustrates household translation, not the caregiver’s own abstinence or freedom. |
 | **Product distrust plus a homemade-drink substitution** (S-011) | Label-costume escape route. | Shows why a change in source or label must not be coded automatically as sugar freedom. |
 | **Soda described with addiction language** (S-008) | Identity-excuse and science-firewall material. | Validates felt compulsion while refusing to turn analogy into diagnosis. |
-| **Relief paired with more than fifteen years of daily management, boundaries, and resets** (S-021) | Managed-truce contrast and anti-shame material. | Honours genuine relief while distinguishing it from desire-level freedom and commercial-program efficacy. |
+| **Relief paired with daily management, boundaries, and resets; the same account separately reports keeping weight off, more or less, for 15-plus years** (S-021) | Managed-truce contrast and anti-shame material. | Honours genuine relief while distinguishing it from desire-level freedom and commercial-program efficacy. |
 | **Earlier dessert-free attempt with dreams and a stash for later** (S-023) | Suppression contrast within the embedded testimonial. | Shows behavior absence with desire preserved in one person’s earlier attempt. |
 | **Later year without added sugar, no reported missing of desserts, less decision tax, and ordinary passage through holidays** (S-023) | The sole long-form desire-level-freedom testimony. | Illustrates possibility, not probability or proof of method. |
 

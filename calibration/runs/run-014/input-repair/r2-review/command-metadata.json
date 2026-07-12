@@ -1,0 +1,764 @@
+{
+  "command": [
+    "codex",
+    "exec",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--ignore-rules",
+    "--disable",
+    "multi_agent",
+    "--model",
+    "gpt-5.6-luna",
+    "-c",
+    "model_reasoning_effort=max",
+    "--sandbox",
+    "read-only",
+    "--skip-git-repo-check",
+    "--cd",
+    "<isolated-read-only-workspace>",
+    "--json",
+    "-"
+  ],
+  "environment_names": [
+    "CODEX_HOME",
+    "HOME",
+    "LANG",
+    "LC_ALL",
+    "LC_CTYPE",
+    "PATH",
+    "TERM"
+  ],
+  "environment_policy": "strict allowlist; provider/API key, token, secret, password, and credential variables excluded",
+  "event_count": 84,
+  "event_types": {
+    "item.completed": 42,
+    "item.started": 39,
+    "thread.started": 1,
+    "turn.completed": 1,
+    "turn.started": 1
+  },
+  "first_line_valid": true,
+  "first_line_verdict": "ACCEPT",
+  "fresh_ephemeral_context": true,
+  "isolated_workspace": "/tmp read-only",
+  "item_types": {
+    "agent_message": 3,
+    "command_execution": 78
+  },
+  "message_count": 3,
+  "model": "gpt-5.6-luna",
+  "multi_agent_disabled": true,
+  "non_message_item_events": [
+    {
+      "command": "/usr/bin/bash -lc \"rg --files -g 'candidates/**' -g 'baselines/**' -g 'authority/**' -g 'diagnostics/**' -g 'r2/**' -g 'scope/**'\"",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_1",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg --files -g 'candidates/**' -g 'baselines/**' -g 'authority/**' -g 'diagnostics/**' -g 'r2/**' -g 'scope/**'\"",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_1",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l -c -- baselines/production-books/quit-sugar/research/lived-experience.md'",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_2",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l -c -- baselines/production-books/quit-sugar/research/lived-experience.md'",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_2",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l -c -- candidates/production-books/quit-sugar/research/lived-experience.md'",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_3",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l -c -- candidates/production-books/quit-sugar/research/lived-experience.md'",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_3",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l -c -- candidates/production-books/quit-sugar/framing.md'",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_4",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l -c -- candidates/production-books/quit-sugar/framing.md'",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_4",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l -c -- diagnostics/calibration/runs/run-013/planning/master-plan-r3-review.md'",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_5",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l -c -- r2/calibration/runs/run-014/input-repair/r2/mechanical-validation.json'",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_6",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l -c -- diagnostics/calibration/runs/run-013/planning/master-plan-r3-review.md'",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_5",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l -c -- r2/calibration/runs/run-014/input-repair/r2/mechanical-validation.json'",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_6",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l -c -- baselines/production-books/quit-sugar/framing.md'",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_7",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l -c -- scope/manifest-input-repair-acceptance-scope.json'",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_8",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l -c -- baselines/production-books/quit-sugar/framing.md'",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_7",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l -c -- scope/manifest-input-repair-acceptance-scope.json'",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_8",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l -c -- authority/production-books/quit-sugar/research/sources/s-021-nell-kauls-sugar-cravings.md'",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_9",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l -c -- authority/production-books/quit-sugar/research/sources/s-021-nell-kauls-sugar-cravings.md'",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_9",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l -c -- r2/calibration/runs/run-014/input-repair/r2/candidate.diff'",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_10",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l -c -- r2/calibration/runs/run-014/input-repair/r2/candidate.diff'",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_10",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l -c -- diagnostics/calibration/runs/run-013/audits/commission-set-audit.md'",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_11",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l -c -- diagnostics/calibration/runs/run-013/audits/commission-set-audit.md'",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_11",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l -c -- r2/calibration/runs/run-014/input-repair/r2/prompt.md'",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_12",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'wc -l -c -- r2/calibration/runs/run-014/input-repair/r2/prompt.md'",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_12",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,220p' -- baselines/production-books/quit-sugar/research/lived-experience.md\"",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_13",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,220p' -- candidates/production-books/quit-sugar/research/lived-experience.md\"",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_14",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,220p' -- candidates/production-books/quit-sugar/research/lived-experience.md\"",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_14",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,220p' -- baselines/production-books/quit-sugar/research/lived-experience.md\"",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_13",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,220p' -- candidates/production-books/quit-sugar/research/lived-experience.md\"",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_15",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,220p' -- candidates/production-books/quit-sugar/research/lived-experience.md\"",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_15",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,220p' -- baselines/production-books/quit-sugar/research/lived-experience.md\"",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_16",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,220p' -- baselines/production-books/quit-sugar/research/lived-experience.md\"",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_16",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'diff -u -- baselines/production-books/quit-sugar/research/lived-experience.md candidates/production-books/quit-sugar/research/lived-experience.md'",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_17",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'diff -u -- baselines/production-books/quit-sugar/research/lived-experience.md candidates/production-books/quit-sugar/research/lived-experience.md'",
+      "event_type": "item.completed",
+      "exit_code": 1,
+      "id": "item_17",
+      "item_type": "command_execution",
+      "status": "failed"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'diff -u -- baselines/production-books/quit-sugar/framing.md candidates/production-books/quit-sugar/framing.md'",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_18",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'diff -u -- baselines/production-books/quit-sugar/framing.md candidates/production-books/quit-sugar/framing.md'",
+      "event_type": "item.completed",
+      "exit_code": 1,
+      "id": "item_18",
+      "item_type": "command_execution",
+      "status": "failed"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,180p' -- baselines/production-books/quit-sugar/framing.md\"",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_20",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,180p' -- baselines/production-books/quit-sugar/framing.md\"",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_20",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '181,380p' -- baselines/production-books/quit-sugar/framing.md\"",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_21",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '181,380p' -- baselines/production-books/quit-sugar/framing.md\"",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_21",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,180p' -- candidates/production-books/quit-sugar/framing.md\"",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_22",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,180p' -- candidates/production-books/quit-sugar/framing.md\"",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_22",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '181,380p' -- candidates/production-books/quit-sugar/framing.md\"",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_23",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '181,380p' -- candidates/production-books/quit-sugar/framing.md\"",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_23",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' -- authority/production-books/quit-sugar/research/sources/s-021-nell-kauls-sugar-cravings.md\"",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_24",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' -- authority/production-books/quit-sugar/research/sources/s-021-nell-kauls-sugar-cravings.md\"",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_24",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' -- diagnostics/calibration/runs/run-013/audits/commission-set-audit.md\"",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_25",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' -- diagnostics/calibration/runs/run-013/audits/commission-set-audit.md\"",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_25",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' -- diagnostics/calibration/runs/run-013/planning/master-plan-r3-review.md\"",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_26",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' -- diagnostics/calibration/runs/run-013/planning/master-plan-r3-review.md\"",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_26",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' -- r2/calibration/runs/run-014/input-repair/r2/prompt.md\"",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_27",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' -- r2/calibration/runs/run-014/input-repair/r2/prompt.md\"",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_27",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' -- r2/calibration/runs/run-014/input-repair/r2/mechanical-validation.json\"",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_28",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' -- r2/calibration/runs/run-014/input-repair/r2/mechanical-validation.json\"",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_28",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' -- r2/calibration/runs/run-014/input-repair/r2/candidate.diff\"",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_29",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' -- r2/calibration/runs/run-014/input-repair/r2/candidate.diff\"",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_29",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' -- scope/manifest-input-repair-acceptance-scope.json\"",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_30",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"sed -n '1,240p' -- scope/manifest-input-repair-acceptance-scope.json\"",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_30",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n -i -- '15|fifteen|S-021|weight off|weight-maintenance|daily management|daily actions|boundaries|resets|special.?situation' -- candidates/production-books/quit-sugar/research/lived-experience.md candidates/production-books/quit-sugar/framing.md baselines/production-books/quit-sugar/research/lived-experience.md baselines/production-books/quit-sugar/framing.md authority/production-books/quit-sugar/research/sources/s-021-nell-kauls-sugar-cravings.md\"",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_31",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n -i -- '15|fifteen|S-021|weight off|weight-maintenance|daily management|daily actions|boundaries|resets|special.?situation' -- candidates/production-books/quit-sugar/research/lived-experience.md candidates/production-books/quit-sugar/framing.md baselines/production-books/quit-sugar/research/lived-experience.md baselines/production-books/quit-sugar/framing.md authority/production-books/quit-sugar/research/sources/s-021-nell-kauls-sugar-cravings.md\"",
+      "event_type": "item.completed",
+      "exit_code": 2,
+      "id": "item_31",
+      "item_type": "command_execution",
+      "status": "failed"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n -i '15|fifteen|weight off|daily management|daily actions|boundaries|resets|special.?situation' candidates/production-books/quit-sugar/research/lived-experience.md candidates/production-books/quit-sugar/framing.md\"",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_32",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc \"rg -n -i '15|fifteen|weight off|daily management|daily actions|boundaries|resets|special.?situation' candidates/production-books/quit-sugar/research/lived-experience.md candidates/production-books/quit-sugar/framing.md\"",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_32",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'sha256sum -- baselines/production-books/quit-sugar/framing.md'",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_33",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'sha256sum -- baselines/production-books/quit-sugar/framing.md'",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_33",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'sha256sum -- candidates/production-books/quit-sugar/research/lived-experience.md'",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_34",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'sha256sum -- candidates/production-books/quit-sugar/research/lived-experience.md'",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_34",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'sha256sum -- baselines/production-books/quit-sugar/research/lived-experience.md'",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_35",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'sha256sum -- baselines/production-books/quit-sugar/research/lived-experience.md'",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_35",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'sha256sum -- authority/production-books/quit-sugar/research/sources/s-021-nell-kauls-sugar-cravings.md'",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_36",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'sha256sum -- authority/production-books/quit-sugar/research/sources/s-021-nell-kauls-sugar-cravings.md'",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_36",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'sha256sum -- candidates/production-books/quit-sugar/framing.md'",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_37",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'sha256sum -- candidates/production-books/quit-sugar/framing.md'",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_37",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'sha256sum -- r2/calibration/runs/run-014/input-repair/r2/candidate.diff'",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_38",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'sha256sum -- r2/calibration/runs/run-014/input-repair/r2/mechanical-validation.json'",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_39",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'sha256sum -- r2/calibration/runs/run-014/input-repair/r2/candidate.diff'",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_38",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'sha256sum -- scope/manifest-input-repair-acceptance-scope.json'",
+      "event_type": "item.started",
+      "exit_code": null,
+      "id": "item_40",
+      "item_type": "command_execution",
+      "status": "in_progress"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'sha256sum -- r2/calibration/runs/run-014/input-repair/r2/mechanical-validation.json'",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_39",
+      "item_type": "command_execution",
+      "status": "completed"
+    },
+    {
+      "command": "/usr/bin/bash -lc 'sha256sum -- scope/manifest-input-repair-acceptance-scope.json'",
+      "event_type": "item.completed",
+      "exit_code": 0,
+      "id": "item_40",
+      "item_type": "command_execution",
+      "status": "completed"
+    }
+  ],
+  "output_limit": "none set by executor",
+  "parse_errors": [],
+  "production_apply_performed": false,
+  "prospective_record": {
+    "input_hashes_sha256": "ebf13691a58c76d3794090bb28ddae6f0684bb41b7349fc4980c9f959f9f802b",
+    "manifest_acceptance_scope_sha256": "15e8f12c0ddd005083c2626c37f72f955380446a5eeac359d11ef9906ccd6e90",
+    "review_instruction_sha256": "74e90024a2fe90f390e22a502b447fab485dc26b770be064c6c9ca04c79f6765"
+  },
+  "raw_jsonl_sha256": "655b62bd4efc5ebacc3144a1cf756f29a97de9de03c5136b416522b2e85201b8",
+  "reasoning_effort": "max",
+  "reasoning_limit": "none set by executor",
+  "retry_performed": false,
+  "returncode": 0,
+  "source_head": "f86b390873cfa0e9f9107065096ab20c45585802",
+  "status": "CALL_COMPLETE_PRESERVED_WITHOUT_RETRY",
+  "stderr_bytes": 0,
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "subagent_marker_lines": [
+    56
+  ],
+  "thread_ids": [
+    "019f54e6-538d-7af3-a742-742cfd9bfa1d"
+  ],
+  "transport": "native Codex subscription; never OpenRouter",
+  "usage": {
+    "cached_input_tokens": 595968,
+    "input_tokens": 666187,
+    "output_tokens": 7530,
+    "reasoning_output_tokens": 5017
+  },
+  "verdict_sha256": "d9bb257ef441d0d9727422fbd31c61c2b4678935099516cc54bfae0566c8f9e9",
+  "workspace_file_count_after": 11,
+  "workspace_file_count_before": 11,
+  "workspace_files_after": [
+    "authority/production-books/quit-sugar/research/sources/s-021-nell-kauls-sugar-cravings.md",
+    "baselines/production-books/quit-sugar/framing.md",
+    "baselines/production-books/quit-sugar/research/lived-experience.md",
+    "candidates/production-books/quit-sugar/framing.md",
+    "candidates/production-books/quit-sugar/research/lived-experience.md",
+    "diagnostics/calibration/runs/run-013/audits/commission-set-audit.md",
+    "diagnostics/calibration/runs/run-013/planning/master-plan-r3-review.md",
+    "r2/calibration/runs/run-014/input-repair/r2/candidate.diff",
+    "r2/calibration/runs/run-014/input-repair/r2/mechanical-validation.json",
+    "r2/calibration/runs/run-014/input-repair/r2/prompt.md",
+    "scope/manifest-input-repair-acceptance-scope.json"
+  ],
+  "workspace_files_before": [
+    "authority/production-books/quit-sugar/research/sources/s-021-nell-kauls-sugar-cravings.md",
+    "baselines/production-books/quit-sugar/framing.md",
+    "baselines/production-books/quit-sugar/research/lived-experience.md",
+    "candidates/production-books/quit-sugar/framing.md",
+    "candidates/production-books/quit-sugar/research/lived-experience.md",
+    "diagnostics/calibration/runs/run-013/audits/commission-set-audit.md",
+    "diagnostics/calibration/runs/run-013/planning/master-plan-r3-review.md",
+    "r2/calibration/runs/run-014/input-repair/r2/candidate.diff",
+    "r2/calibration/runs/run-014/input-repair/r2/mechanical-validation.json",
+    "r2/calibration/runs/run-014/input-repair/r2/prompt.md",
+    "scope/manifest-input-repair-acceptance-scope.json"
+  ],
+  "workspace_hashes_after": {
+    "authority/production-books/quit-sugar/research/sources/s-021-nell-kauls-sugar-cravings.md": "6ccee44130be2607b0ce9cf8c04ec78c1f624529ceb05168f85cd0b9ad732555",
+    "baselines/production-books/quit-sugar/framing.md": "2c115313c51fa040474b908e652915f73ebd770c03cd340a94b16efc18145941",
+    "baselines/production-books/quit-sugar/research/lived-experience.md": "38b753ad6fe40e4f07d8be68793d6d16acbe36e713ec0329026e98939fdea36c",
+    "candidates/production-books/quit-sugar/framing.md": "d1fe0a1b2ea1c56dab8f56a10aa2a4ed3a8f86f3552c83db9f5f46ecb62bfece",
+    "candidates/production-books/quit-sugar/research/lived-experience.md": "e21506f804920898b3f314cd44bb20954d1524dd0eb70395ae4d95425e7afc5b",
+    "diagnostics/calibration/runs/run-013/audits/commission-set-audit.md": "a39f9816e6fdebdf9d01aee59be54f8d58443a839215106322c78fb973bd859e",
+    "diagnostics/calibration/runs/run-013/planning/master-plan-r3-review.md": "d0ec3368dc1691a0a5d98dd204df5c3b09c1e3ba283e2e55cfe4fd2a58385e64",
+    "r2/calibration/runs/run-014/input-repair/r2/candidate.diff": "dcfb07f656ab6f58687b367060d272ebc32dd6a6519a51294d7c838502db051a",
+    "r2/calibration/runs/run-014/input-repair/r2/mechanical-validation.json": "8ba9f61d40e7fbdd946c6434e644f2c390abd1c993b60ea7c6ec14133e8d2b71",
+    "r2/calibration/runs/run-014/input-repair/r2/prompt.md": "ef55293ceefbf6f5ad8110e5422d97d2f3966aa675ecf5933e3c48b55b704c1f",
+    "scope/manifest-input-repair-acceptance-scope.json": "15e8f12c0ddd005083c2626c37f72f955380446a5eeac359d11ef9906ccd6e90"
+  },
+  "workspace_hashes_before": {
+    "authority/production-books/quit-sugar/research/sources/s-021-nell-kauls-sugar-cravings.md": "6ccee44130be2607b0ce9cf8c04ec78c1f624529ceb05168f85cd0b9ad732555",
+    "baselines/production-books/quit-sugar/framing.md": "2c115313c51fa040474b908e652915f73ebd770c03cd340a94b16efc18145941",
+    "baselines/production-books/quit-sugar/research/lived-experience.md": "38b753ad6fe40e4f07d8be68793d6d16acbe36e713ec0329026e98939fdea36c",
+    "candidates/production-books/quit-sugar/framing.md": "d1fe0a1b2ea1c56dab8f56a10aa2a4ed3a8f86f3552c83db9f5f46ecb62bfece",
+    "candidates/production-books/quit-sugar/research/lived-experience.md": "e21506f804920898b3f314cd44bb20954d1524dd0eb70395ae4d95425e7afc5b",
+    "diagnostics/calibration/runs/run-013/audits/commission-set-audit.md": "a39f9816e6fdebdf9d01aee59be54f8d58443a839215106322c78fb973bd859e",
+    "diagnostics/calibration/runs/run-013/planning/master-plan-r3-review.md": "d0ec3368dc1691a0a5d98dd204df5c3b09c1e3ba283e2e55cfe4fd2a58385e64",
+    "r2/calibration/runs/run-014/input-repair/r2/candidate.diff": "dcfb07f656ab6f58687b367060d272ebc32dd6a6519a51294d7c838502db051a",
+    "r2/calibration/runs/run-014/input-repair/r2/mechanical-validation.json": "8ba9f61d40e7fbdd946c6434e644f2c390abd1c993b60ea7c6ec14133e8d2b71",
+    "r2/calibration/runs/run-014/input-repair/r2/prompt.md": "ef55293ceefbf6f5ad8110e5422d97d2f3966aa675ecf5933e3c48b55b704c1f",
+    "scope/manifest-input-repair-acceptance-scope.json": "15e8f12c0ddd005083c2626c37f72f955380446a5eeac359d11ef9906ccd6e90"
+  },
+  "workspace_hashes_unchanged": true,
+  "workspace_membership_unchanged": true
+}

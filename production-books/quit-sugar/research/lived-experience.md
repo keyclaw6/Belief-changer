@@ -66,7 +66,7 @@ These are analytic labels for different packet accounts, not a universal stairca
 
 - [Bank 2] **SUPPRESSION:** S-020 records denial as a battle and a lapse that expanded into daily consumption; S-023 records an earlier four-month attempt in which desire remained active. These accounts show behavior control with desire intact, not universal failure or withdrawal. — Persona IDs: P-02, P-07 — Source IDs: S-020#E-001, S-020#E-002, S-020#E-003, S-023#E-004.
 
-- [Bank 2] **MANAGED TRUCE:** S-021 combines a strong relief metaphor with “15 plus years” of maintenance and daily actions to keep cravings at bay. Relief and ongoing management coexist; this is not desire-level freedom. — Persona IDs: P-06 — Source IDs: S-021#E-001, S-021#E-002
+- [Bank 2] **MANAGED TRUCE:** S-021 combines a strong relief metaphor with a report that Nell kept weight off, more or less, for “15 plus years,” and a separate description of daily actions to keep cravings at bay. Relief and ongoing management coexist; this is not desire-level freedom. — Persona IDs: P-06 — Source IDs: S-021#E-001, S-021#E-002
 
 - [Bank 2] **DESIRE-LEVEL FREEDOM:** In the later account, S-023 reports not missing desserts and describes removing them from the decision catalog while leaving future desserts theoretically not forbidden. This is one self-report, not a general moderation result. — Persona IDs: P-07 — Source IDs: S-023#E-001, S-023#E-006
 

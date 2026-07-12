@@ -1,0 +1,118 @@
+{
+  "manifest_acceptance_scope": {
+    "path": "calibration/runs/run-014/input-repair/r2-review/manifest-acceptance-scope.json",
+    "sha256": "15e8f12c0ddd005083c2626c37f72f955380446a5eeac359d11ef9906ccd6e90"
+  },
+  "output_or_reasoning_cap": "none set",
+  "review_instruction": {
+    "bytes": 2672,
+    "delivery": "exact file bytes on stdin",
+    "path": "calibration/runs/run-014/input-repair/r2-review/review-instruction.md",
+    "sha256": "74e90024a2fe90f390e22a502b447fab485dc26b770be064c6c9ca04c79f6765"
+  },
+  "route": "fresh native Codex gpt-5.6-luna reasoning max; never OpenRouter",
+  "source_head": "f86b390873cfa0e9f9107065096ab20c45585802",
+  "status": "PERSISTED_BEFORE_REVIEW_CALL",
+  "workspace_file_count": 11,
+  "workspace_inputs": {
+    "authority/production-books/quit-sugar/research/sources/s-021-nell-kauls-sugar-cravings.md": {
+      "bytes": 6494,
+      "kind": "committed_blob",
+      "lines": 196,
+      "repo_path": "production-books/quit-sugar/research/sources/s-021-nell-kauls-sugar-cravings.md",
+      "sha256": "6ccee44130be2607b0ce9cf8c04ec78c1f624529ceb05168f85cd0b9ad732555",
+      "source_commit": "f86b390873cfa0e9f9107065096ab20c45585802",
+      "terminal_lf": true
+    },
+    "baselines/production-books/quit-sugar/framing.md": {
+      "bytes": 44289,
+      "kind": "committed_blob",
+      "lines": 357,
+      "repo_path": "production-books/quit-sugar/framing.md",
+      "sha256": "2c115313c51fa040474b908e652915f73ebd770c03cd340a94b16efc18145941",
+      "source_commit": "f86b390873cfa0e9f9107065096ab20c45585802",
+      "terminal_lf": true
+    },
+    "baselines/production-books/quit-sugar/research/lived-experience.md": {
+      "bytes": 20144,
+      "kind": "committed_blob",
+      "lines": 167,
+      "repo_path": "production-books/quit-sugar/research/lived-experience.md",
+      "sha256": "38b753ad6fe40e4f07d8be68793d6d16acbe36e713ec0329026e98939fdea36c",
+      "source_commit": "f86b390873cfa0e9f9107065096ab20c45585802",
+      "terminal_lf": true
+    },
+    "candidates/production-books/quit-sugar/framing.md": {
+      "bytes": 44351,
+      "kind": "committed_blob",
+      "lines": 357,
+      "repo_path": "calibration/runs/run-014/input-repair/r2/candidates/production-books/quit-sugar/framing.md",
+      "sha256": "d1fe0a1b2ea1c56dab8f56a10aa2a4ed3a8f86f3552c83db9f5f46ecb62bfece",
+      "source_commit": "f86b390873cfa0e9f9107065096ab20c45585802",
+      "terminal_lf": true
+    },
+    "candidates/production-books/quit-sugar/research/lived-experience.md": {
+      "bytes": 20210,
+      "kind": "committed_blob",
+      "lines": 167,
+      "repo_path": "calibration/runs/run-014/input-repair/r2/candidates/production-books/quit-sugar/research/lived-experience.md",
+      "sha256": "e21506f804920898b3f314cd44bb20954d1524dd0eb70395ae4d95425e7afc5b",
+      "source_commit": "f86b390873cfa0e9f9107065096ab20c45585802",
+      "terminal_lf": true
+    },
+    "diagnostics/calibration/runs/run-013/audits/commission-set-audit.md": {
+      "bytes": 3099,
+      "kind": "committed_blob",
+      "lines": 39,
+      "repo_path": "calibration/runs/run-013/audits/commission-set-audit.md",
+      "sha256": "a39f9816e6fdebdf9d01aee59be54f8d58443a839215106322c78fb973bd859e",
+      "source_commit": "f86b390873cfa0e9f9107065096ab20c45585802",
+      "terminal_lf": true
+    },
+    "diagnostics/calibration/runs/run-013/planning/master-plan-r3-review.md": {
+      "bytes": 921,
+      "kind": "committed_blob",
+      "lines": 3,
+      "repo_path": "calibration/runs/run-013/planning/master-plan-r3-review.md",
+      "sha256": "d0ec3368dc1691a0a5d98dd204df5c3b09c1e3ba283e2e55cfe4fd2a58385e64",
+      "source_commit": "f86b390873cfa0e9f9107065096ab20c45585802",
+      "terminal_lf": false
+    },
+    "r2/calibration/runs/run-014/input-repair/r2/candidate.diff": {
+      "bytes": 3251,
+      "kind": "committed_blob",
+      "lines": 22,
+      "repo_path": "calibration/runs/run-014/input-repair/r2/candidate.diff",
+      "sha256": "dcfb07f656ab6f58687b367060d272ebc32dd6a6519a51294d7c838502db051a",
+      "source_commit": "f86b390873cfa0e9f9107065096ab20c45585802",
+      "terminal_lf": true
+    },
+    "r2/calibration/runs/run-014/input-repair/r2/mechanical-validation.json": {
+      "bytes": 3108,
+      "kind": "committed_blob",
+      "lines": 67,
+      "repo_path": "calibration/runs/run-014/input-repair/r2/mechanical-validation.json",
+      "sha256": "8ba9f61d40e7fbdd946c6434e644f2c390abd1c993b60ea7c6ec14133e8d2b71",
+      "source_commit": "f86b390873cfa0e9f9107065096ab20c45585802",
+      "terminal_lf": true
+    },
+    "r2/calibration/runs/run-014/input-repair/r2/prompt.md": {
+      "bytes": 1712,
+      "kind": "committed_blob",
+      "lines": 16,
+      "repo_path": "calibration/runs/run-014/input-repair/r2/prompt.md",
+      "sha256": "ef55293ceefbf6f5ad8110e5422d97d2f3966aa675ecf5933e3c48b55b704c1f",
+      "source_commit": "f86b390873cfa0e9f9107065096ab20c45585802",
+      "terminal_lf": true
+    },
+    "scope/manifest-input-repair-acceptance-scope.json": {
+      "bytes": 2559,
+      "kind": "exact generated excerpt from committed manifest input_repair_precondition",
+      "lines": 35,
+      "repo_path": "calibration/runs/run-014/manifest.json",
+      "sha256": "15e8f12c0ddd005083c2626c37f72f955380446a5eeac359d11ef9906ccd6e90",
+      "source_commit": "f86b390873cfa0e9f9107065096ab20c45585802",
+      "terminal_lf": true
+    }
+  }
+}
