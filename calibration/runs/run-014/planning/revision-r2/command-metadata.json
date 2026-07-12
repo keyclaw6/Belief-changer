@@ -1,0 +1,89 @@
+{
+  "status": "COMPLETED_OUTPUT_PRESENT_MECHANICALLY_COMPLETE_UNREVIEWED",
+  "source_head": "c479f247bb0101a2535e401e607ab14275f800dd",
+  "preinvocation_record_sha256": "7f0b26b22eb344a8ce55322a5b05dfc82c13f96c1fa80c97213db1fb17871904",
+  "workspace": "/tmp/belief-changer-run014-plan-r2.vuTqj8",
+  "workspace_empty_before_invocation": true,
+  "sandbox": "read-only isolated workspace with no additional task files",
+  "prompt": {
+    "path": "calibration/runs/run-014/planning/revision-r2/assembled-prompt.md",
+    "sha256": "530d49965927512e241924343589c73b962357c002fdaa341641e15731223d2d",
+    "delivery": "exact file bytes on stdin"
+  },
+  "command_argv": [
+    "codex",
+    "exec",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--ignore-rules",
+    "--disable",
+    "multi_agent",
+    "--model",
+    "gpt-5.6-sol",
+    "-c",
+    "model_reasoning_effort=ultra",
+    "--sandbox",
+    "read-only",
+    "--skip-git-repo-check",
+    "-C",
+    "/tmp/belief-changer-run014-plan-r2.vuTqj8",
+    "--json",
+    "--color",
+    "never",
+    "--output-last-message",
+    "/home/kab/Belief-changer/calibration/runs/run-014/planning/master-plan-r2.md",
+    "-"
+  ],
+  "environment": {
+    "inherit": "none",
+    "HOME": "/home/kab",
+    "USER": "kab",
+    "LOGNAME": "kab",
+    "PATH": "/home/kab/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+    "CODEX_HOME": "/home/kab/.codex",
+    "LANG": "C.UTF-8",
+    "LC_ALL": "C.UTF-8",
+    "TMPDIR": "/tmp",
+    "provider_or_api_credentials_inherited": false
+  },
+  "outputs": {
+    "master_plan": "calibration/runs/run-014/planning/master-plan-r2.md",
+    "raw_jsonl": "calibration/runs/run-014/planning/revision-r2/raw.jsonl",
+    "stderr": "calibration/runs/run-014/planning/revision-r2/stderr.log"
+  },
+  "reasoning_or_output_cap": "none set",
+  "return_code": 0,
+  "thread_id": "019f5517-67aa-7fc2-8c2b-b3c6aca4e62e",
+  "usage": {
+    "input_tokens": 65539,
+    "cached_input_tokens": 9984,
+    "output_tokens": 17168,
+    "reasoning_output_tokens": 1670
+  },
+  "event_summary": {
+    "total_events": 4,
+    "thread_started": 1,
+    "turn_started": 1,
+    "agent_messages": 1,
+    "turn_completed": 1,
+    "turn_failed": 0,
+    "tool_or_command_events": 0,
+    "web_events": 0,
+    "subagent_events": 0,
+    "retry_performed": false,
+    "stderr_empty": true
+  },
+  "result_artifacts": {
+    "master_plan_sha256": "b1726d736cb543f0b16c24f225136b86ebda336f4a1981f0c1f323cb311530b4",
+    "master_plan_bytes": 66037,
+    "master_plan_words": 9544,
+    "master_plan_logical_lines": 644,
+    "raw_jsonl_sha256": "74b533ea5f34b02e2e61e66699aa1603f04f50c7064841b6b4c2d40276d5e3d2",
+    "raw_jsonl_bytes": 67002,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "mechanical_validation": {
+    "path": "calibration/runs/run-014/planning/revision-r2/mechanical-validation.json",
+    "status": "OUTPUT_PRESENT_READABLE_MECHANICALLY_COMPLETE_UNREVIEWED"
+  }
+}

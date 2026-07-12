@@ -1,10 +1,10 @@
 # Run report — run-014
 
-**Stage:** A **Scope:** source-grounded input repair plus clean H-050 rerun **Verdict:** MASTER PLAN R1 NEEDS CHANGES FIRST / R2 PENDING
+**Stage:** A **Scope:** source-grounded input repair plus clean H-050 rerun **Verdict:** MASTER PLAN R2 FROZEN / REVIEW PENDING
 
 ## What ran
 
-The accepted input repair remains frozen at `f862fd27eff3aa97822b6561e8e1f1c5db0f6b6e`. Fresh master-plan R1 remains byte-frozen at `f087aea1a6e77a2a64cd5d33cf66da4628ca424e5de2a4882dc2d52f1ebcae81` and unpromoted. Its first independent complete-plan review returned exact verdict **needs changes first** with two blockers. This is review cycle 1 of the maximum 3. No plan edit, prompt amendment, commission, chapter, metric, or product-panel call occurred.
+The accepted input repair and rejected R1 remain frozen. A fresh complete master-plan R2 was generated in review cycle 2 of maximum 3 from all authoritative inputs plus full R1 and its complete review. R2 is mechanically complete and frozen at `b1726d736cb543f0b16c24f225136b86ebda336f4a1981f0c1f323cb311530b4`; it has not been semantically inspected, reviewed, accepted, or promoted. No prompt amendment, manual edit, run-013 reuse, commission, chapter, metric, or product-panel call occurred.
 
 ## Objective results (`metrics.json`)
 
@@ -16,24 +16,23 @@ Not run. H-050's causal thresholds and the frozen v2.3 native Sol-ultra product 
 
 ## Gate verdict
 
-1. **CH-18 — “In his own words — when the dessert debate went quiet.”** The card requires a 1–2 page “original first-person account,” but EV-L07/EV-L08 provide only bounded facts and a few exact quotations. An isolated writer would have to invent the subject’s voice and present paraphrase as his words, violating evidence ownership. Convert the slot to a third-person editorial case narrative using only ledgered facts and exact quotations, and remove the “In his own words” framing.
-2. **M-10 routing is contradictory.** The mantra sheet routes `every ordinary day` to CH-23 and gives it a final hand-over function, while the CH-23 card assigns only M-02, M-03, M-08, and M-09. This leaves the final writer choosing between two authoritative instructions. Add M-10 to the CH-23 card, or remove CH-23 and its final hand-over from M-10’s authoritative routing.
+R2 is 66,037 bytes, 9,544 words, and 644 logical lines. Mechanical inspection finds exactly CH-01 through CH-23, one appendix, 24 budget entries summing to 60,000 words, no truncation/inability marker, and byte equality with the raw final agent message. Its missing terminal LF is preserved without normalization and does not itself imply invalidity. All eight inputs match the prospective manifest before and after the call: planner `5e459f98...`, style guide `d4f97cf2...`, brief `29105690...`, framing `d1fe0a1b...`, lived synthesis `e21506f8...`, scientific evidence `0675ba24...`, R1 `f087aea1...`, and R1 review `6378abb0...`. R1 and its review remain unchanged.
 
-The review ran from source HEAD `806dfbbc576eafb79d267282f44aa536b1292734` in fresh native Sol-ultra thread `019f550a-2cb3-7e22-8ce6-c8ff4653c498`, return 0, with usage 64,912 input, 12,032 cached, 17,958 output, and 17,744 reasoning-output tokens. Its four events contain one agent message and zero tools/commands, web, subagents, retries, normalization, OpenRouter, stderr, or plan edit/promotion. Review SHA-256 `6378abb03a075cbfcd37efbb5b247e5137e8ea3e2d827288f9e98b501e7e875c`; assembled prompt `66e93ac6b40c65dcb1dae5b7c78090ff7e60dd5711fc1220fc33e8664727a557`; input record `b2adaefc7ae6fa6e686de3647f8b2ce782ab51697bb8421b83e3c3cd605b905c`; command metadata `c9cea17a20add2e81300a2ecb4020725841bd59edb3f96d54fbb421ccda23d53`; raw `3d6cb32f6d894d1e930dc07e5c11c94cdda1494eea2fa9a3b05d53a757170076`; empty stderr `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`.
+Native Sol-ultra thread `019f5517-67aa-7fc2-8c2b-b3c6aca4e62e` returned 0 with usage 65,539 input, 9,984 cached, 17,168 output, and 1,670 reasoning-output tokens. Its four events contain one final agent message and zero tools/commands, web, subagents, retries, failed turns, OpenRouter, stderr, or inherited provider credentials. Assembled prompt SHA-256 `530d49965927512e241924343589c73b962357c002fdaa341641e15731223d2d`; input manifest `9078b0c8e4b123911ca394772c07b991c013f3953f89a379557e291e5fd96648`; command metadata `e0d1b9dea825278437d470353f653aa84602e6f83a42feab45c03c95e1b22874`; mechanical validation `ae487ce7826532c8fc07566f7a9762b69d16aea4f9e6e5d41e2f545dc39f875c`; raw `74b533ea5f34b02e2e61e66699aa1603f04f50c7064841b6b4c2d40276d5e3d2`; empty stderr `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`.
 
 ## Diagnosis (ranked, each gap mapped to its owning generic asset)
 
-1. CH-18 demands an evidence-unsupported first-person voice — owning artifact: the complete plan's CH-18 card and bounded EV-L07/EV-L08 evidence.
-2. M-10 and the CH-23 card give contradictory final routing — owning artifact: the complete plan's mantra sheet/card consistency.
+1. Master-plan R2 is mechanically complete but semantically unreviewed — owning next gate: the frozen complete-R2 outcome reviewer.
+2. No run-014 commission or prose exists — downstream work remains blocked on plan acceptance.
 3. H-050 remains causally unmeasured and unchanged.
 
 ## Hypothesis outcomes
 
 - **Pre-registered mechanism, lever, controls, prediction:** H-050 continues without a new quality lever. Its contract, writer, commissioner, judges, blindness, causal rules, and product gates remain frozen.
-- **Result / deciding evidence:** independent complete-plan review rejects R1 with exactly the two implementation blockers above. R1 remains frozen and unpromoted.
+- **Result / deciding evidence:** a fresh complete R2 exists and is mechanically complete, while R1 and its review remain frozen. No semantic outcome or H-050 evidence follows before independent complete-R2 review.
 - **Causal verdict:** TESTING. Run-013 was INCONCLUSIVE; run-014 starts only after a valid input repair.
-- **Rival explanations / signal risk:** treating this plan review as product evidence would falsely credit or refute H-050 before commissions and prose exist. The two findings are bounded implementation feedback only.
-- **Next discriminating test:** one fresh native Sol-ultra complete master-plan R2 revision from full R1, its complete review, and all authoritative inputs. No prompt amendment, manual edit, partial patch, or run-013 reuse; then review the complete R2 under the frozen reviewer.
+- **Rival explanations / signal risk:** mechanical completeness cannot establish whether R2 resolved R1's two blockers or introduced other implementation defects. The missing terminal LF is neither a pass nor a failure.
+- **Next discriminating test:** one fresh native Sol-ultra complete master-plan R2 outcome review under the frozen reviewer prompt and authoritative inputs. The reviewer sees the full R2 and returns the frozen outcome format; no partial repair or run-013 reuse.
 
 ## Amendments proposed for next run
 
