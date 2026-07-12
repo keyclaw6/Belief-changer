@@ -1,10 +1,10 @@
 # Run report — run-013
 
-**Stage:** A **Scope:** composition-feasible argument-bearing chapters and opening movement, regenerated commissions, and Chapters 1–3 **Verdict:** PLAN R1 REJECTED / PENDING R2
+**Stage:** A **Scope:** composition-feasible argument-bearing chapters and opening movement, regenerated commissions, and Chapters 1–3 **Verdict:** PLAN R2 GENERATED / PENDING REVIEW
 
 ## What ran
 
-The frozen contract produced one fresh master-plan candidate, now frozen at commit `9ef71f9221dde7650f919be75f1d81799de733d3`. One independent native Sol-ultra review returned `needs changes first` for a single CH-07 catalog-and-defer blocker. R1 and the review remain unedited. No commission, chapter, objective evaluation, grounded audit, or product-panel inference exists.
+The unchanged planner loop produced complete R2 from the exact frozen base inputs plus R1 and its independent review. `planning/master-plan-r2.md` is frozen unedited at SHA-256 `2ca95051...`, 71,873 bytes, 9,955 words, and 846 lines. The exact diff is targeted to CH-07's assigned-job versus established-benefit correction; this is a generation fact, not acceptance. No commission, chapter, objective evaluation, grounded audit, or product-panel inference exists.
 
 ## Objective results (`metrics.json`)
 
@@ -16,25 +16,25 @@ Not run. The frozen v2.3 native Sol-ultra instrument, blindness, controls, aggre
 
 ## Gate verdict
 
-The contract gate remains **PASS**, but plan R1 **FAILS** plan acceptance. CH-07 inventories the benefits people assign to sugar and hands forward an open question without using its owned evidence to make the prior valuation less credible. The reviewer requires CH-07 to settle that reported jobs are not evidence sugar uniquely performs those jobs, then hand off that settled distinction. Review artifact SHA-256 is `6fcc1282...`, raw SHA-256 `dad924f5...`, empty-stderr SHA-256 `e3b0c442...`, and assembled-prompt SHA-256 `f0fd957d...`. Fresh thread `019f5478-0f0f-7441-8aa9-3672e7044023` returned 0 with four complete events, no tools/subagents/retry, and usage 66,794 input, 8,960 cached, 16,436 output, 16,248 reasoning. The final artifact matches the raw agent message byte-for-byte.
+The contract gate remains **PASS**. R2 is complete but **UNREVIEWED**. Raw JSONL SHA-256 is `25dcb7c...`; stderr is empty at SHA-256 `e3b0c442...`; and the 239,152-byte assembled bundle is SHA-256 `1dd7f582...`. Fresh native Sol-ultra thread `019f5481-dd1c-7f93-8a9f-9999e29dfdf2` returned 0 with four events, one complete agent message and turn, no tools/subagents/errors/retry, and usage 67,264 input, 11,008 cached, 19,099 output, and 1,505 reasoning tokens. Product gates remain unassessed.
 
 ## Diagnosis (ranked, each gap mapped to its owning generic asset)
 
-1. Plan R1 leaves CH-07 as catalog-and-defer: it names assigned benefits but completes no owned belief correction — owning artifact: the plan candidate, to be regenerated through unchanged-loop R2 rather than a prompt patch.
+1. R1's CH-07 catalog-and-defer blocker received a targeted R2 correction distinguishing assigned jobs from established benefits — owning artifact: the unreviewed R2 plan candidate.
 2. Argument-bearing chapter jobs are not consistently composable from owned evidence and logic within budget; definition, safety, recap, and handoff must support movement without inventing another thesis — owning asset: the same shared contract.
 3. Opus may independently manufacture unsupported force — known rival requiring 3/3 grounded-clean drafts before efficacy can identify planning causally.
 
 ## Hypothesis outcomes
 
 - **Pre-registered mechanism, lever, controls, prediction:** H-050 tests one shared intelligent planning acceptance contract covering every argument-bearing chapter and the opening movement collectively. The primary causal outcome is efficacy, interpretable only after a blinded post-output audit confirms instantiation and all three drafts are materially grounded-clean. Craft, length, objective, and other Stage-A measures are secondary product requirements. Exact thresholds and controls are frozen in `manifest.json` and `calibration/hypotheses.md`.
-- **Result / deciding evidence:** R1 is rejected for one exact H-050-sensitive blocker in CH-07. This is plan-loop feedback, not H-050 causal evidence and not authorization to change the frozen contract.
+- **Result / deciding evidence:** R2 exists with the targeted CH-07 delta. Generation is neither plan acceptance nor H-050 causal evidence; independent review is pending.
 - **Causal verdict:** TESTING. No support, refutation, or inconclusive outcome may be inferred from preregistration or reviewer compliance alone.
 - **Rival explanations / signal risk:** blind judges can reward invented force; same-model replica deltas are noisy; stochastic planner resampling, Opus's prior, and commission realization can mimic or suppress movement. Any grounded defect makes H-050 inconclusive rather than negative.
-- **Next discriminating test:** the planner generates complete R2 from unchanged exact planning inputs plus frozen R1 and its review. Do not change the prompt, manually patch CH-07, or advance to commissions before independent R2 acceptance.
+- **Next discriminating test:** independently review exact frozen R2 under the unchanged reviewer contract. Do not edit the candidate or advance to commissions before acceptance.
 
 ## Amendments proposed for next run
 
-None. The contract remains frozen at `b00115d`. R2 uses the existing review through the unchanged plan-revision loop; no prompt amendment or manual plan edit is authorized.
+None. The contract and inputs remained unchanged; R2 is byte-frozen pending independent review.
 
 ## Escalations
 
