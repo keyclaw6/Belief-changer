@@ -2,7 +2,7 @@
   "run": "run-014",
   "date": "2026-07-12",
   "stage": "A",
-  "status": "PREREGISTERED_INPUT_REPAIR_PENDING",
+  "status": "INPUT_REPAIR_R1_MECHANICALLY_INVALID_R2_PENDING",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "source-grounded input repair followed by a clean H-050 plan, commission, and Chapters 1-3 rerun",
@@ -19,7 +19,7 @@
     "reviewer_sha256": "18fa2987ea5e2009df6fbaee3d461dbe82ea4674abc2bb504d08937243039715"
   },
   "input_repair_precondition": {
-    "status": "PENDING",
+    "status": "R1_MECHANICALLY_INVALID_UNAPPLIED_R2_PENDING",
     "authority_packet": "production-books/quit-sugar/research/sources/s-021-nell-kauls-sugar-cravings.md",
     "authority_packet_sha256": "6ccee44130be2607b0ce9cf8c04ec78c1f624529ceb05168f85cd0b9ad732555",
     "target_files": {
@@ -51,6 +51,52 @@
     "acceptance_rule": "commit repaired production inputs only after one editor proposal and one independent fresh full-file review both establish a minimal source-grounded correction with no other source or claim change",
     "forbidden": "web search, new retrieval, research expansion, manual line edit, partial-file review, plan generation before repair acceptance, or treating repair acceptance as H-050 support"
   },
+  "input_repair_r1": {
+    "status": "MECHANICALLY_INVALID_UNAPPLIED",
+    "causal_classification": "transport invalidity, not source-quality failure and not H-050 evidence",
+    "route": "fresh native Codex subscription context; never OpenRouter",
+    "model": "gpt-5.6-luna",
+    "reasoning": "max",
+    "thread_id": "019f54c4-8ca7-7e81-8ab8-789889c07fca",
+    "proposal": "calibration/runs/run-014/input-repair/s021-repair.diff",
+    "proposal_sha256": "275a7ef91492fc7ad368471804df610dd67b3336ce80f0289a46252da5dbc7cb",
+    "proposal_bytes": 1285,
+    "proposal_lines": 9,
+    "raw_jsonl": "calibration/runs/run-014/input-repair/s021-repair.raw.jsonl",
+    "raw_jsonl_sha256": "4d785d8a04e9356e0b268901083e450d35a8de2ce87c9571a559e5f8cd348135",
+    "stderr": "calibration/runs/run-014/input-repair/s021-repair.stderr",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_empty": true,
+    "usage": {
+      "input_tokens": 150288,
+      "cached_input_tokens": 124672,
+      "output_tokens": 19302,
+      "reasoning_output_tokens": 18533
+    },
+    "raw_events": 13,
+    "command_execution_events": 4,
+    "target_files_available_to_commands": false,
+    "git_apply_check": {
+      "return_code": 128,
+      "error": "corrupt patch at calibration/runs/run-014/input-repair/s021-repair.diff:10"
+    },
+    "terminal_lf_present": false,
+    "production_apply_performed": false,
+    "proposal_retry_performed": false,
+    "production_inputs_unchanged": {
+      "production-books/quit-sugar/research/lived-experience.md": "38b753ad6fe40e4f07d8be68793d6d16acbe36e713ec0329026e98939fdea36c",
+      "production-books/quit-sugar/framing.md": "2c115313c51fa040474b908e652915f73ebd770c03cd340a94b16efc18145941"
+    },
+    "interpretation": "the proposed edits appear semantically plausible but cannot be accepted, normalized, reviewed as candidates, or applied because the transport artifact is mechanically invalid"
+  },
+  "input_repair_r2_commission": {
+    "status": "PROSPECTIVELY_COMMISSIONED",
+    "route": "fresh native Codex gpt-5.6-luna at max; never OpenRouter",
+    "inputs": "the same complete baseline lived synthesis, framing, S-021 packet, and repair scope",
+    "output": "a fresh complete two-file correction proposal that is mechanically valid without operator normalization",
+    "forbidden": "reuse or normalization of R1, manual repair, silent newline insertion, partial application, or semantic credit for R1",
+    "next_gate": "separate fresh Luna-max full-file reviewer after mechanical validity is established"
+  },
   "clean_rerun_law": {
     "run_013_reuse": false,
     "invalidated": "every run-013 plan, review, commission, and candidate handoff",
@@ -69,7 +115,7 @@
   },
   "route_law": "OpenRouter only for Opus 4.6 chapter writing and DeepSeek research; GPT/OpenAI, Luna, Sol, Gemini, Grok, planning, reviewing, auditing, and judging never use OpenRouter",
   "quality_policy": "optimize only for method integrity and quality; no speed, cost, token, or reasoning cap",
-  "next_artifact": "one native gpt-5.6-luna max research-editor proposal containing complete minimally corrected lived-experience and framing files",
+  "next_artifact": "fresh Luna-max input-repair proposal R2 from the unchanged repair commission, followed only after mechanical validity by a separate fresh full-file reviewer",
   "external_blocker": "none",
   "notes": "Run-013 remains immutable. No new permanent gate or hypothesis is introduced for this one input conflict."
 }
