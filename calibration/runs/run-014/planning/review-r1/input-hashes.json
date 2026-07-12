@@ -1,0 +1,77 @@
+{
+  "assembled_prompt": {
+    "bytes": 232431,
+    "delivery": "exact file bytes on stdin",
+    "path": "calibration/runs/run-014/planning/review-r1/assembled-prompt.md",
+    "sha256": "66e93ac6b40c65dcb1dae5b7c78090ff7e60dd5711fc1220fc33e8664727a557"
+  },
+  "exact_model_inputs": [
+    "prompts/master-plan-reviewer-v2.md",
+    "calibration/runs/run-014/planning/master-plan-r1.md",
+    "prompts/style-guide.md",
+    "production-books/quit-sugar/00-brief.md",
+    "production-books/quit-sugar/framing.md",
+    "production-books/quit-sugar/research/lived-experience.md",
+    "production-books/quit-sugar/research/scientific-evidence.md"
+  ],
+  "excluded_context": "all inputs not enumerated above",
+  "model_route": "fresh native Codex gpt-5.6-sol reasoning ultra; never OpenRouter",
+  "output_or_reasoning_cap": "none set",
+  "per_file": {
+    "calibration/runs/run-014/planning/master-plan-r1.md": {
+      "bytes": 65484,
+      "lines": 644,
+      "sha256": "f087aea1a6e77a2a64cd5d33cf66da4628ca424e5de2a4882dc2d52f1ebcae81",
+      "source_commit": "806dfbbc576eafb79d267282f44aa536b1292734",
+      "terminal_lf": false
+    },
+    "production-books/quit-sugar/00-brief.md": {
+      "bytes": 1595,
+      "lines": 21,
+      "sha256": "29105690753c3ac6af4a48585f50fc30e489b4d9f760a8056f4977ff2eba576a",
+      "source_commit": "806dfbbc576eafb79d267282f44aa536b1292734",
+      "terminal_lf": true
+    },
+    "production-books/quit-sugar/framing.md": {
+      "bytes": 44351,
+      "lines": 357,
+      "sha256": "d1fe0a1b2ea1c56dab8f56a10aa2a4ed3a8f86f3552c83db9f5f46ecb62bfece",
+      "source_commit": "806dfbbc576eafb79d267282f44aa536b1292734",
+      "terminal_lf": true
+    },
+    "production-books/quit-sugar/research/lived-experience.md": {
+      "bytes": 20210,
+      "lines": 167,
+      "sha256": "e21506f804920898b3f314cd44bb20954d1524dd0eb70395ae4d95425e7afc5b",
+      "source_commit": "806dfbbc576eafb79d267282f44aa536b1292734",
+      "terminal_lf": true
+    },
+    "production-books/quit-sugar/research/scientific-evidence.md": {
+      "bytes": 7338,
+      "lines": 31,
+      "sha256": "0675ba24325e85b6289403a2c98212603db0c0941f6cb33a95390431e0b3a3fc",
+      "source_commit": "806dfbbc576eafb79d267282f44aa536b1292734",
+      "terminal_lf": true
+    },
+    "prompts/master-plan-reviewer-v2.md": {
+      "bytes": 7380,
+      "lines": 107,
+      "sha256": "18fa2987ea5e2009df6fbaee3d461dbe82ea4674abc2bb504d08937243039715",
+      "source_commit": "806dfbbc576eafb79d267282f44aa536b1292734",
+      "terminal_lf": true
+    },
+    "prompts/style-guide.md": {
+      "bytes": 84326,
+      "lines": 639,
+      "sha256": "d4f97cf29a64114a0fcea27c86809793c0b14acee9bb6fb7cbe66777b8f92590",
+      "source_commit": "806dfbbc576eafb79d267282f44aa536b1292734",
+      "terminal_lf": true
+    }
+  },
+  "source_head": "806dfbbc576eafb79d267282f44aa536b1292734",
+  "status": "PERSISTED_AND_VERIFIED_BEFORE_REVIEW_CALL",
+  "wrapper": {
+    "bytes": 610,
+    "sha256": "803bebe797eafc727bff08b748ca5786163e1516e4956a5fe8f021cbca1ec6cd"
+  }
+}

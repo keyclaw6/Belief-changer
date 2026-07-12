@@ -2,7 +2,7 @@
   "run": "run-014",
   "date": "2026-07-12",
   "stage": "A",
-  "status": "MASTER_PLAN_R1_FROZEN_REVIEW_PENDING",
+  "status": "MASTER_PLAN_R1_REJECTED_R2_PENDING",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "source-grounded input repair followed by a clean H-050 plan, commission, and Chapters 1-3 rerun",
@@ -296,7 +296,7 @@
     "h050_inference": "none; H-050 remains TESTING"
   },
   "master_plan_r1": {
-    "status": "FROZEN_MECHANICALLY_COMPLETE_UNREVIEWED_UNPROMOTED",
+    "status": "FROZEN_NEEDS_CHANGES_FIRST_UNPROMOTED",
     "source_head": "b2af4ffe7e028c6a662960819eb1df2f6dbc37a6",
     "route": "fresh native Codex subscription context; never OpenRouter",
     "model": "gpt-5.6-sol",
@@ -405,9 +405,94 @@
       "causal_for_model_output": false,
       "classification": "model-context-excluded noncausal transparency diagnostic"
     },
-    "semantic_review_performed": false,
+    "semantic_review_performed": true,
     "production_master_plan_promoted": false,
-    "causal_boundary": "mechanical completeness only; no plan-quality, product, or H-050 inference"
+    "causal_boundary": "review rejection is implementation feedback only; no product or H-050 inference"
+  },
+  "master_plan_r1_review": {
+    "status": "needs changes first",
+    "review_cycle": 1,
+    "maximum_review_cycles": 3,
+    "source_head": "806dfbbc576eafb79d267282f44aa536b1292734",
+    "route": "fresh native Codex subscription context; never OpenRouter",
+    "model": "gpt-5.6-sol",
+    "reasoning": "ultra",
+    "thread_id": "019f550a-2cb3-7e22-8ce6-c8ff4653c498",
+    "return_code": 0,
+    "exact_final_verdict_valid": true,
+    "output_normalization_performed": false,
+    "usage": {
+      "input_tokens": 64912,
+      "cached_input_tokens": 12032,
+      "output_tokens": 17958,
+      "reasoning_output_tokens": 17744
+    },
+    "exact_blockers": [
+      {
+        "id": "CH-18_FIRST_PERSON_EVIDENCE_OWNERSHIP",
+        "text": "CH-18 — In his own words — when the dessert debate went quiet. The card requires a 1–2 page original first-person account, but EV-L07/EV-L08 provide only bounded facts and a few exact quotations. An isolated writer would have to invent the subject's voice and present paraphrase as his words, violating evidence ownership. Convert the slot to a third-person editorial case narrative using only ledgered facts and exact quotations, and remove the In his own words framing."
+      },
+      {
+        "id": "M-10_CH-23_ROUTING_CONTRADICTION",
+        "text": "M-10 routing is contradictory. The mantra sheet routes every ordinary day to CH-23 and gives it a final hand-over function, while the CH-23 card assigns only M-02, M-03, M-08, and M-09. This leaves the final writer choosing between two authoritative instructions. Add M-10 to the CH-23 card, or remove CH-23 and its final hand-over from M-10's authoritative routing."
+      }
+    ],
+    "exact_inputs": {
+      "reviewer_prompt": "18fa2987ea5e2009df6fbaee3d461dbe82ea4674abc2bb504d08937243039715",
+      "master_plan_r1": "f087aea1a6e77a2a64cd5d33cf66da4628ca424e5de2a4882dc2d52f1ebcae81",
+      "style_guide": "d4f97cf29a64114a0fcea27c86809793c0b14acee9bb6fb7cbe66777b8f92590",
+      "brief": "29105690753c3ac6af4a48585f50fc30e489b4d9f760a8056f4977ff2eba576a",
+      "framing": "d1fe0a1b2ea1c56dab8f56a10aa2a4ed3a8f86f3552c83db9f5f46ecb62bfece",
+      "lived_experience": "e21506f804920898b3f314cd44bb20954d1524dd0eb70395ae4d95425e7afc5b",
+      "scientific_evidence": "0675ba24325e85b6289403a2c98212603db0c0941f6cb33a95390431e0b3a3fc"
+    },
+    "execution": {
+      "total_events": 4,
+      "agent_messages": 1,
+      "tool_or_command_events": 0,
+      "web_events": 0,
+      "subagent_events": 0,
+      "retry_performed": false,
+      "stderr_empty": true,
+      "provider_or_api_credentials_inherited": false,
+      "reasoning_or_output_cap": "none set",
+      "isolated_cwd_empty_before_and_after": true,
+      "plan_edited_or_promoted": false
+    },
+    "artifacts": {
+      "review": {
+        "path": "calibration/runs/run-014/planning/master-plan-r1-review.md",
+        "sha256": "6378abb03a075cbfcd37efbb5b247e5137e8ea3e2d827288f9e98b501e7e875c",
+        "bytes": 904
+      },
+      "assembled_prompt": {
+        "path": "calibration/runs/run-014/planning/review-r1/assembled-prompt.md",
+        "sha256": "66e93ac6b40c65dcb1dae5b7c78090ff7e60dd5711fc1220fc33e8664727a557",
+        "bytes": 232431,
+        "delivery": "exact file bytes on stdin"
+      },
+      "input_hashes": {
+        "path": "calibration/runs/run-014/planning/review-r1/input-hashes.json",
+        "sha256": "b2adaefc7ae6fa6e686de3647f8b2ce782ab51697bb8421b83e3c3cd605b905c",
+        "persisted_and_verified_before_review_call": true
+      },
+      "command_metadata": {
+        "path": "calibration/runs/run-014/planning/review-r1/command-metadata.json",
+        "sha256": "c9cea17a20add2e81300a2ecb4020725841bd59edb3f96d54fbb421ccda23d53"
+      },
+      "raw_jsonl": {
+        "path": "calibration/runs/run-014/planning/review-r1/raw.jsonl",
+        "sha256": "3d6cb32f6d894d1e930dc07e5c11c94cdda1494eea2fa9a3b05d53a757170076"
+      },
+      "stderr": {
+        "path": "calibration/runs/run-014/planning/review-r1/stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "empty": true
+      },
+      "wrapper_sha256": "803bebe797eafc727bff08b748ca5786163e1516e4956a5fe8f021cbca1ec6cd"
+    },
+    "candidate_state": "master-plan R1 remains byte-frozen and unpromoted",
+    "interpretation": "implementation feedback for the next complete-plan revision; not product or H-050 evidence"
   },
   "start_direction_audit": {
     "status": "ACCEPTED",
@@ -472,7 +557,7 @@
   },
   "route_law": "OpenRouter only for Opus 4.6 chapter writing and DeepSeek research; GPT/OpenAI, Luna, Sol, Gemini, Grok, planning, reviewing, auditing, and judging never use OpenRouter",
   "quality_policy": "optimize only for method integrity and quality; no speed, cost, token, or reasoning cap",
-  "next_artifact": "fresh native Sol-ultra complete master-plan R1 outcome review under the frozen reviewer prompt SHA-256 18fa2987ea5e2009df6fbaee3d461dbe82ea4674abc2bb504d08937243039715 and the exact full inputs",
+  "next_artifact": "one fresh native Sol-ultra complete master-plan R2 revision from full R1, its complete review, and all authoritative inputs; no prompt amendment, manual edit, or run-013 reuse",
   "external_blocker": "none",
   "notes": "Run-013 remains immutable. R1's prompt-persistence gap was corrected prospectively in R2. No new permanent gate, quality lever, or hypothesis is introduced for this one input conflict."
 }

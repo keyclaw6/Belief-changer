@@ -1,0 +1,5 @@
+1. **CH-18 — “In his own words — when the dessert debate went quiet.”** The card requires a 1–2 page “original first-person account,” but EV-L07/EV-L08 provide only bounded facts and a few exact quotations. An isolated writer would have to invent the subject’s voice and present paraphrase as his words, violating evidence ownership. Convert the slot to a third-person editorial case narrative using only ledgered facts and exact quotations, and remove the “In his own words” framing.
+
+2. **M-10 routing is contradictory.** The mantra sheet routes `every ordinary day` to CH-23 and gives it a final hand-over function, while the CH-23 card assigns only M-02, M-03, M-08, and M-09. This leaves the final writer choosing between two authoritative instructions. Add M-10 to the CH-23 card, or remove CH-23 and its final hand-over from M-10’s authoritative routing.
+
+needs changes first
