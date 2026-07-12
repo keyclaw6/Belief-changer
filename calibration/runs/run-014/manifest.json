@@ -2,7 +2,7 @@
   "run": "run-014",
   "date": "2026-07-12",
   "stage": "A",
-  "status": "START_DIRECTION_GO_R2_PENDING",
+  "status": "INPUT_REPAIR_R2_MECHANICALLY_VALID_UNREVIEWED_UNAPPLIED",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "source-grounded input repair followed by a clean H-050 plan, commission, and Chapters 1-3 rerun",
@@ -19,7 +19,7 @@
     "reviewer_sha256": "18fa2987ea5e2009df6fbaee3d461dbe82ea4674abc2bb504d08937243039715"
   },
   "input_repair_precondition": {
-    "status": "R1_MECHANICALLY_INVALID_UNAPPLIED_R2_PENDING",
+    "status": "R2_MECHANICALLY_VALID_UNREVIEWED_UNAPPLIED",
     "authority_packet": "production-books/quit-sugar/research/sources/s-021-nell-kauls-sugar-cravings.md",
     "authority_packet_sha256": "6ccee44130be2607b0ce9cf8c04ec78c1f624529ceb05168f85cd0b9ad732555",
     "target_files": {
@@ -92,7 +92,7 @@
     "assembled_stdin_reconstructability": "reconstructable from the immutable baseline files, S-021 packet, repair commission, raw response, and recorded native invocation"
   },
   "input_repair_r2_commission": {
-    "status": "PROSPECTIVELY_COMMISSIONED",
+    "status": "COMPLETED_MECHANICALLY_VALID_UNREVIEWED_UNAPPLIED",
     "route": "fresh native Codex gpt-5.6-luna at max; never OpenRouter",
     "inputs": "the same complete baseline lived synthesis, framing, S-021 packet, and repair scope",
     "output": "a fresh complete two-file correction proposal that is mechanically valid without operator normalization",
@@ -100,6 +100,106 @@
     "next_gate": "separate fresh Luna-max full-file reviewer after mechanical validity is established",
     "observability_requirement": "persist the exact assembled input bundle prospectively before launch",
     "observability_classification": "recording correction only; not a quality lever, prompt change, or new pipeline gate"
+  },
+  "input_repair_r2": {
+    "status": "VALID_MECHANICALLY_UNREVIEWED_UNAPPLIED",
+    "causal_classification": "mechanically valid candidate transport only; no semantic, source-quality, product, or H-050 inference",
+    "source_commit": "d0365af61cff890a66bd7bff7ed41853c9f85dba",
+    "route": "fresh native Codex subscription context; never OpenRouter",
+    "model": "gpt-5.6-luna",
+    "reasoning": "max",
+    "thread_id": "019f54d7-15d2-76d0-a522-f065545f337b",
+    "return_code": 0,
+    "usage": {
+      "input_tokens": 310797,
+      "cached_input_tokens": 262144,
+      "output_tokens": 9832,
+      "reasoning_output_tokens": 6564
+    },
+    "prospective_input_persistence": {
+      "exact_prompt": {
+        "path": "calibration/runs/run-014/input-repair/r2/prompt.md",
+        "sha256": "ef55293ceefbf6f5ad8110e5422d97d2f3966aa675ecf5933e3c48b55b704c1f",
+        "delivery": "exact file bytes on stdin"
+      },
+      "input_hash_manifest": {
+        "path": "calibration/runs/run-014/input-repair/r2/input-hashes.sha256",
+        "sha256": "445a2c4c13f007ef3a35f3368e4aae2573741813d315ff1f79e29ff5105abef5",
+        "verified_in_isolated_workspace_before_invocation": true
+      },
+      "preinvocation_record_sha256": "2bfcac6dde679516683d284cb91a4cb4eceb815f4ce6ad1d420f3942ff7e4778"
+    },
+    "execution": {
+      "total_events": 56,
+      "command_executions": 23,
+      "failed_command_executions": 1,
+      "file_change_operations": 1,
+      "agent_messages": 5,
+      "web_events": 0,
+      "subagent_events": 0,
+      "stderr_empty": true,
+      "retry_performed": false,
+      "provider_or_api_credentials_inherited": false,
+      "reasoning_or_output_cap": "none set",
+      "nonblocking_diagnostic": "the first git-status command returned 128 because the intentionally isolated workspace was not a Git repository; the editor then inspected and edited the five local files directly"
+    },
+    "authorized_changed_files": {
+      "production-books/quit-sugar/research/lived-experience.md": {
+        "baseline_sha256": "38b753ad6fe40e4f07d8be68793d6d16acbe36e713ec0329026e98939fdea36c",
+        "candidate_sha256": "e21506f804920898b3f314cd44bb20954d1524dd0eb70395ae4d95425e7afc5b",
+        "baseline_lines": 167,
+        "candidate_lines": 167,
+        "baseline_bytes": 20144,
+        "candidate_bytes": 20210,
+        "preserved_candidate": "calibration/runs/run-014/input-repair/r2/candidates/production-books/quit-sugar/research/lived-experience.md"
+      },
+      "production-books/quit-sugar/framing.md": {
+        "baseline_sha256": "2c115313c51fa040474b908e652915f73ebd770c03cd340a94b16efc18145941",
+        "candidate_sha256": "d1fe0a1b2ea1c56dab8f56a10aa2a4ed3a8f86f3552c83db9f5f46ecb62bfece",
+        "baseline_lines": 357,
+        "candidate_lines": 357,
+        "baseline_bytes": 44289,
+        "candidate_bytes": 44351,
+        "preserved_candidate": "calibration/runs/run-014/input-repair/r2/candidates/production-books/quit-sugar/framing.md"
+      }
+    },
+    "candidate_substance": "the two candidates separate the packet-supported report of keeping weight off, more or less, for 15-plus years from the separately described and undated daily management actions",
+    "mechanical_validation": {
+      "path": "calibration/runs/run-014/input-repair/r2/mechanical-validation.json",
+      "sha256": "8ba9f61d40e7fbdd946c6434e644f2c390abd1c993b60ea7c6ec14133e8d2b71",
+      "workspace_file_count_before": 5,
+      "workspace_file_count_after": 5,
+      "changed_files_exactly_authorized_two": true,
+      "generated_diff": {
+        "path": "calibration/runs/run-014/input-repair/r2/candidate.diff",
+        "sha256": "dcfb07f656ab6f58687b367060d272ebc32dd6a6519a51294d7c838502db051a",
+        "bytes": 3251,
+        "lines": 22,
+        "hunks": 2,
+        "added_lines": 2,
+        "deleted_lines": 2,
+        "terminal_lf_present": true
+      },
+      "candidate_hash_manifest": {
+        "path": "calibration/runs/run-014/input-repair/r2/candidate-hashes.sha256",
+        "sha256": "598caea5be2cf90545bdda6a8de9a642d6fe4102414cfa29e420cc15d717a332"
+      },
+      "git_apply_check_return_code": 0,
+      "operator_normalization_or_manual_repair": false,
+      "semantic_review_performed": false,
+      "production_apply_performed": false,
+      "production_inputs_unchanged": {
+        "production-books/quit-sugar/research/lived-experience.md": "38b753ad6fe40e4f07d8be68793d6d16acbe36e713ec0329026e98939fdea36c",
+        "production-books/quit-sugar/framing.md": "2c115313c51fa040474b908e652915f73ebd770c03cd340a94b16efc18145941"
+      }
+    },
+    "artifacts": {
+      "command_metadata_sha256": "1e303d7435e228c17c733350a26181573d308da24d1ee9f9d1a00dbb94158938",
+      "final_message_sha256": "c1aa1d027225d32719ec5f2245d6b4fb26b29d8039ee767692ffc7bc1e545592",
+      "raw_jsonl_sha256": "d7b6d0df29790da8b20b0e06482266c6c3f5d478393c11b8f1e3c1bbb51fcee1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "next_gate": "a separate fresh Luna-max full-file semantic review of both complete R2 candidates against both complete baselines, S-021, the repair commission, and the no-new-inference/minimality scope"
   },
   "start_direction_audit": {
     "status": "ACCEPTED",
@@ -164,7 +264,7 @@
   },
   "route_law": "OpenRouter only for Opus 4.6 chapter writing and DeepSeek research; GPT/OpenAI, Luna, Sol, Gemini, Grok, planning, reviewing, auditing, and judging never use OpenRouter",
   "quality_policy": "optimize only for method integrity and quality; no speed, cost, token, or reasoning cap",
-  "next_artifact": "fresh Luna-max input-repair proposal R2 from the unchanged repair commission, followed only after mechanical validity by a separate fresh full-file reviewer",
+  "next_artifact": "separate fresh Luna-max full-file semantic review of both complete R2 candidates against both complete baselines, S-021, the repair commission, and the no-new-inference/minimality scope",
   "external_blocker": "none",
   "notes": "Run-013 remains immutable. No new permanent gate or hypothesis is introduced for this one input conflict."
 }

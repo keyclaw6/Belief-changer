@@ -1,0 +1,67 @@
+{
+  "status": "VALID_MECHANICALLY_UNREVIEWED_UNAPPLIED",
+  "source_head": "d0365af61cff890a66bd7bff7ed41853c9f85dba",
+  "workspace": "/tmp/belief-changer-run014-r2.Jp3ZpG",
+  "workspace_file_count_before": 5,
+  "workspace_file_count_after": 5,
+  "changed_files": [
+    "production-books/quit-sugar/research/lived-experience.md",
+    "production-books/quit-sugar/framing.md"
+  ],
+  "unchanged_files": {
+    "production-books/quit-sugar/research/sources/s-021-nell-kauls-sugar-cravings.md": "6ccee44130be2607b0ce9cf8c04ec78c1f624529ceb05168f85cd0b9ad732555",
+    "calibration/runs/run-013/audits/commission-set-audit.md": "a39f9816e6fdebdf9d01aee59be54f8d58443a839215106322c78fb973bd859e",
+    "calibration/runs/run-013/planning/master-plan-r3-review.md": "d0ec3368dc1691a0a5d98dd204df5c3b09c1e3ba283e2e55cfe4fd2a58385e64"
+  },
+  "complete_candidates": {
+    "production-books/quit-sugar/research/lived-experience.md": {
+      "baseline_sha256": "38b753ad6fe40e4f07d8be68793d6d16acbe36e713ec0329026e98939fdea36c",
+      "candidate_sha256": "e21506f804920898b3f314cd44bb20954d1524dd0eb70395ae4d95425e7afc5b",
+      "baseline_lines": 167,
+      "candidate_lines": 167,
+      "baseline_bytes": 20144,
+      "candidate_bytes": 20210,
+      "preserved_path": "calibration/runs/run-014/input-repair/r2/candidates/production-books/quit-sugar/research/lived-experience.md"
+    },
+    "production-books/quit-sugar/framing.md": {
+      "baseline_sha256": "2c115313c51fa040474b908e652915f73ebd770c03cd340a94b16efc18145941",
+      "candidate_sha256": "d1fe0a1b2ea1c56dab8f56a10aa2a4ed3a8f86f3552c83db9f5f46ecb62bfece",
+      "baseline_lines": 357,
+      "candidate_lines": 357,
+      "baseline_bytes": 44289,
+      "candidate_bytes": 44351,
+      "preserved_path": "calibration/runs/run-014/input-repair/r2/candidates/production-books/quit-sugar/framing.md"
+    }
+  },
+  "generated_diff": {
+    "path": "calibration/runs/run-014/input-repair/r2/candidate.diff",
+    "sha256": "dcfb07f656ab6f58687b367060d272ebc32dd6a6519a51294d7c838502db051a",
+    "bytes": 3251,
+    "lines": 22,
+    "hunks": 2,
+    "added_lines": 2,
+    "deleted_lines": 2,
+    "terminal_lf_present": true,
+    "paths": [
+      "production-books/quit-sugar/research/lived-experience.md",
+      "production-books/quit-sugar/framing.md"
+    ]
+  },
+  "git_apply_check": {
+    "return_code": 0,
+    "stdout_bytes": 0,
+    "stderr_bytes": 0
+  },
+  "production_state": {
+    "head_before_check": "d0365af61cff890a66bd7bff7ed41853c9f85dba",
+    "head_after_check": "d0365af61cff890a66bd7bff7ed41853c9f85dba",
+    "status_hash_before_check": "c02c571b8aedbcec7d2c464bcac73625c91d717dcb99cc5713566850c331cb47",
+    "status_hash_after_check": "c02c571b8aedbcec7d2c464bcac73625c91d717dcb99cc5713566850c331cb47",
+    "lived_experience_sha256": "38b753ad6fe40e4f07d8be68793d6d16acbe36e713ec0329026e98939fdea36c",
+    "framing_sha256": "2c115313c51fa040474b908e652915f73ebd770c03cd340a94b16efc18145941",
+    "production_apply_performed": false
+  },
+  "operator_normalization_or_manual_repair": false,
+  "semantic_review_performed": false,
+  "retry_performed": false
+}

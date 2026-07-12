@@ -1,0 +1,91 @@
+{
+  "status": "COMPLETED_MECHANICALLY_VALID_UNREVIEWED_UNAPPLIED",
+  "source_head": "d0365af61cff890a66bd7bff7ed41853c9f85dba",
+  "preinvocation_record_sha256": "2bfcac6dde679516683d284cb91a4cb4eceb815f4ce6ad1d420f3942ff7e4778",
+  "workspace": "/tmp/belief-changer-run014-r2.Jp3ZpG",
+  "workspace_policy": "isolated tree containing exactly the five hashed input copies; workspace-write with no additional writable directory",
+  "prompt": {
+    "path": "calibration/runs/run-014/input-repair/r2/prompt.md",
+    "sha256": "ef55293ceefbf6f5ad8110e5422d97d2f3966aa675ecf5933e3c48b55b704c1f",
+    "delivery": "exact file bytes on stdin"
+  },
+  "input_hashes": {
+    "path": "calibration/runs/run-014/input-repair/r2/input-hashes.sha256",
+    "sha256": "445a2c4c13f007ef3a35f3368e4aae2573741813d315ff1f79e29ff5105abef5",
+    "verified_in_workspace_before_invocation": true
+  },
+  "command_argv": [
+    "codex",
+    "exec",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--ignore-rules",
+    "--disable",
+    "multi_agent",
+    "--model",
+    "gpt-5.6-luna",
+    "-c",
+    "model_reasoning_effort=max",
+    "--sandbox",
+    "workspace-write",
+    "--skip-git-repo-check",
+    "-C",
+    "/tmp/belief-changer-run014-r2.Jp3ZpG",
+    "--json",
+    "--color",
+    "never",
+    "--output-last-message",
+    "/home/kab/Belief-changer/calibration/runs/run-014/input-repair/r2/final-message.md",
+    "-"
+  ],
+  "environment": {
+    "inherit": "none",
+    "HOME": "/home/kab",
+    "USER": "kab",
+    "LOGNAME": "kab",
+    "PATH": "/home/kab/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+    "CODEX_HOME": "/home/kab/.codex",
+    "LANG": "C.UTF-8",
+    "LC_ALL": "C.UTF-8",
+    "TMPDIR": "/tmp",
+    "provider_or_api_credentials_inherited": false
+  },
+  "outputs": {
+    "raw_jsonl": "calibration/runs/run-014/input-repair/r2/raw.jsonl",
+    "stderr": "calibration/runs/run-014/input-repair/r2/stderr.log",
+    "final_message": "calibration/runs/run-014/input-repair/r2/final-message.md"
+  },
+  "reasoning_or_output_cap": "none set",
+  "return_code": 0,
+  "thread_id": "019f54d7-15d2-76d0-a522-f065545f337b",
+  "usage": {
+    "input_tokens": 310797,
+    "cached_input_tokens": 262144,
+    "output_tokens": 9832,
+    "reasoning_output_tokens": 6564
+  },
+  "event_summary": {
+    "total_events": 56,
+    "command_executions": 23,
+    "failed_command_executions": 1,
+    "file_change_operations": 1,
+    "agent_messages": 5,
+    "web_events": 0,
+    "subagent_events": 0,
+    "stderr_empty": true,
+    "retry_performed": false,
+    "diagnostic": "The first git-status command returned 128 because the intentionally isolated workspace was not a Git repository; the editor then inspected and edited the five local files directly."
+  },
+  "result_artifacts": {
+    "raw_jsonl_sha256": "d7b6d0df29790da8b20b0e06482266c6c3f5d478393c11b8f1e3c1bbb51fcee1",
+    "raw_jsonl_bytes": 254031,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "final_message_sha256": "c1aa1d027225d32719ec5f2245d6b4fb26b29d8039ee767692ffc7bc1e545592",
+    "candidate_hashes": "calibration/runs/run-014/input-repair/r2/candidate-hashes.sha256",
+    "candidate_diff": "calibration/runs/run-014/input-repair/r2/candidate.diff"
+  },
+  "mechanical_validation": {
+    "path": "calibration/runs/run-014/input-repair/r2/mechanical-validation.json",
+    "status": "VALID_MECHANICALLY_UNREVIEWED_UNAPPLIED"
+  }
+}
