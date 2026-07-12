@@ -2,7 +2,7 @@
   "run": "run-013",
   "date": "2026-07-12",
   "stage": "A",
-  "status": "COMMISSIONS_GENERATED_PENDING_AUDIT",
+  "status": "COMMISSION_SET_BLOCKED_PLAN_R3_REQUIRED",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "composition-feasible argument-bearing chapters and opening movement plus regenerated source-grounded commissions and a frozen Chapters 1-3 first-draft batch",
@@ -13,7 +13,7 @@
   "model_output_allowance_policy": "quality only: no economy, speed, cost, reasoning-token, or harness output optimization; permitted calls receive the greatest authorized allowance and continue when required",
   "baseline_boundary": "cf5c825 — run-012 frozen with H-049 REFUTED and a valid v2.3 product-panel FAIL; no run-012 prose promoted",
   "last_accepted_product": "production-books/quit-sugar/chapters/chapter-01.md from run-002 and chapter-02.md from run-004",
-  "preregistration_state": "all three source-grounded commissions are generated and frozen unedited pending an independent whole-set source/composition audit; no run-013 chapter, metric, or product-panel inference exists",
+  "preregistration_state": "the frozen three-commission set is blocked by one CH-01 plan/source temporal fusion; planner R3 is required before every commission is regenerated, and no run-013 chapter, metric, or product-panel inference exists",
   "observed_failure": "setup-only and deferred opening architecture plus overloaded later chapter jobs leaves the writer choosing between safe catalog-and-defer prose and forceful invented connective tissue",
   "single_generic_lever": "one shared intelligent planning acceptance contract requiring every argument-bearing chapter, and the opening movement collectively, to be safely composable from owned evidence and logic into one completed value-bearing belief correction within budget",
   "lever_boundary": {
@@ -297,7 +297,8 @@
     "material_blocking_defects": 0
   },
   "commission_batch_generation": {
-    "status": "ALL_THREE_GENERATED_FROZEN_UNEDITED_PENDING_WHOLE_SET_AUDIT",
+    "status": "FROZEN_COMMITTED_UNEDITED_BLOCKED_BY_WHOLE_SET_AUDIT",
+    "freeze_commit": "39b0009ca73938d74cb39c78cec0fc86a70a3a19",
     "execution_head": "bb85a3eb8cc599476dc3cdd3a1d415eef16abe10",
     "canonical_plan_sha256": "2ca9505152ee0e4d240bebbebb6979672be42bfc7d2e463dfa115a4a1ab1e869",
     "commissioner_sha256": "b1eabd112ab9c1c6e67284ab7bae27c512bf7ac3affb3be02877343c829e1c18",
@@ -376,6 +377,53 @@
     },
     "all_three_complete_before_audit": true,
     "manual_edits": false
+  },
+  "commission_set_audit": {
+    "status": "BLOCK",
+    "artifact": "calibration/runs/run-013/audits/commission-set-audit.md",
+    "artifact_sha256": "a39f9816e6fdebdf9d01aee59be54f8d58443a839215106322c78fb973bd859e",
+    "raw_jsonl": "calibration/runs/run-013/audits/commission-set-audit.raw.jsonl",
+    "raw_jsonl_sha256": "3becf81e59fb8121f8672c346f8a1ebac459581043f19258f2eae15ebc9dc4a3",
+    "stderr": "calibration/runs/run-013/audits/commission-set-audit.stderr.log",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_empty": true,
+    "assembled_bundle_sha256": "a2cf7463a2f2bb0d12d4317bc8fb2e7e003b99b9a9e3cc696933b165dcca3f0b",
+    "audit_instruction_sha256": "1ed9460534a1bd116098eb1857f83ef95915cc3726ecb67ae2f2191e59366fa6",
+    "route": "one fresh native Codex subscription auditor context",
+    "model": "gpt-5.6-sol",
+    "reasoning": "ultra",
+    "thread_id": "019f549e-4be3-7a90-96c7-1fb04dc8fd56",
+    "return_code": 0,
+    "events": 4,
+    "tool_calls": 0,
+    "subagent_events": 0,
+    "retries": 0,
+    "usage": {
+      "input_tokens": 47259,
+      "cached_input_tokens": 8960,
+      "output_tokens": 22962,
+      "reasoning_output_tokens": 22272
+    },
+    "verdicts": {
+      "C-01": "BLOCK",
+      "C-02": "PASS",
+      "C-03": "PASS",
+      "opening_set": "BLOCK",
+      "final_set": "BLOCK"
+    },
+    "sole_blocker": "the plan and CH-01 commission fuse a 15-plus-year weight-maintenance report with separately described daily craving-management actions, unsupportedly turning them into more than fifteen years of daily actions",
+    "composition_result": "otherwise accepted; the opening is not merely a benefits catalogue deferred to later chapters",
+    "non_blocking_observation": "CH-03 unnecessarily names nonadjacent CH-06 and CH-07 ownership, but imports none of that work and explicitly excludes it"
+  },
+  "plan_r3_decision": {
+    "prompt_change": false,
+    "manual_commission_edit": false,
+    "waiver": false,
+    "prose_authorized": false,
+    "planner_inputs": "unchanged exact base planning inputs plus frozen R2 and the exact commission-set audit as review feedback",
+    "scope": "correct the source conflict only and return a complete R3",
+    "next_gate": "fresh standard independent plan review",
+    "downstream_law": "if R3 is accepted, regenerate all three commissions; never patch or reuse only CH-01"
   },
   "held_fixed": [
     "accepted quit-sugar brief",
@@ -477,7 +525,7 @@
     "prompts/research-agent.md": "history commit 5bff930; accepted research not rerun"
   },
   "stages_rerun_because": "H-050 changes chapter architecture; causal attribution requires fresh plan, commissions, and complete Chapters 1-3 rather than patching any run-012 artifact",
-  "next_artifact": "freeze the three-commission batch commit, then run one independent whole-set source-grounding and composition-feasibility audit before prose",
+  "next_artifact": "planner R3 from unchanged base inputs plus frozen R2 and the exact commission-set audit, correcting the source conflict only",
   "external_blocker": "none",
   "notes": "Run-012 remains immutable evidence. Product roles stay blind to the reference and judge output. OpenRouter remains restricted to Opus chapter writing and DeepSeek research."
 }

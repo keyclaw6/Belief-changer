@@ -1,0 +1,39 @@
+# Audit
+
+## CH-01
+
+**Verdict:** BLOCK
+
+The commission materially overstates `S-021#E-002`. The packet says that Kauls reported keeping weight off, more or less, for “15 plus years” and separately described daily actions to keep cravings at bay. It does not establish that those daily actions continued for more than fifteen years.
+
+The commission instead authorizes “more than fifteen years of daily actions,” reproducing the same unsupported temporal fusion found in `EV-L07`. Under the chapter-commissioner contract, the packet owns source facts; this plan-packet conflict required a commission-blocked response rather than repetition. The error materially strengthens one of CH-01’s three central outcome contrasts.
+
+Non-blocking findings: the assigned success-metric correction, `SA-01`, `M-02`, `M-03`, `M-06`, `INS-01`, other source limits, safety perimeter, and 2,800-word composition are otherwise faithful and feasible.
+
+## CH-02
+
+**Verdict:** PASS
+
+The commission preserves `DEF-01`–`DEF-06`, the distinction between core items and the gray savoury edge, the Molecule Margin, adjacent exclusions, and `SAFE-01`–`SAFE-05`. The quotations from `S-010#C-001` and `S-011#C-001` are exact, correctly located, attributed, and bounded as classification-pressure evidence rather than outcome or efficacy evidence. Its necessary definition-and-safety function is executable within 3,200 words without importing later persuasion.
+
+## CH-03
+
+**Verdict:** PASS
+
+The commission supplies enough owned logic through `SA-03` to complete its present-tense correction: immediate behavior change is not evidence of seriousness, and observation need not become a willpower performance. The `STR-03` menu is clearly classified as unadjudicated reader propositions, while `EV-L01`–`EV-L05` retain their source-specific limits. The quotations from `S-004#C-001`, `S-009#C-001`, and `S-020#C-001` are exact. Safety exceptions and `INS-03` are preserved, and the work is feasible within 2,400 words.
+
+Non-blocking observation: the commission unnecessarily names nonadjacent ownership in `CH-06` and `CH-07`, despite the contract’s preference for only minimal adjacent continuity references. Because it imports none of that work for use and expressly excludes it, this does not compromise assignment execution.
+
+## Opening set
+
+**Verdict:** BLOCK
+
+The collective H-050 composition condition is otherwise satisfied: CH-01 supplies a genuine outcome-value correction, CH-03 supplies a genuine participation correction, and CH-02 performs lean protective definition work. The opening therefore is not merely a benefits catalogue deferred to later chapters.
+
+The set nevertheless contains CH-01’s material `S-021#E-002` temporal overclaim, so the three-chapter opening is not source- and inference-faithful as commissioned.
+
+## Final set
+
+**Verdict:** BLOCK
+
+CH-02 and CH-03 are executable, but CH-01’s unsupported conversion of a fifteen-year weight report into fifteen years of daily craving-management actions prevents the supplied commission set from clearing the frozen source-conflict rule.
