@@ -2,7 +2,7 @@
   "run": "run-013",
   "date": "2026-07-12",
   "stage": "A",
-  "status": "COMMISSION_SET_BLOCKED_PLAN_R3_REQUIRED",
+  "status": "PLAN_R3_GENERATED_PENDING_REVIEW",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "composition-feasible argument-bearing chapters and opening movement plus regenerated source-grounded commissions and a frozen Chapters 1-3 first-draft batch",
@@ -13,7 +13,7 @@
   "model_output_allowance_policy": "quality only: no economy, speed, cost, reasoning-token, or harness output optimization; permitted calls receive the greatest authorized allowance and continue when required",
   "baseline_boundary": "cf5c825 — run-012 frozen with H-049 REFUTED and a valid v2.3 product-panel FAIL; no run-012 prose promoted",
   "last_accepted_product": "production-books/quit-sugar/chapters/chapter-01.md from run-002 and chapter-02.md from run-004",
-  "preregistration_state": "the frozen three-commission set is blocked by one CH-01 plan/source temporal fusion; planner R3 is required before every commission is regenerated, and no run-013 chapter, metric, or product-panel inference exists",
+  "preregistration_state": "master-plan R3 is frozen exactly as generated from unchanged base inputs plus frozen R2 and the commission-set audit, and awaits standard independent review; no run-013 chapter, metric, or product-panel inference exists",
   "observed_failure": "setup-only and deferred opening architecture plus overloaded later chapter jobs leaves the writer choosing between safe catalog-and-defer prose and forceful invented connective tissue",
   "single_generic_lever": "one shared intelligent planning acceptance contract requiring every argument-bearing chapter, and the opening movement collectively, to be safely composable from owned evidence and logic into one completed value-bearing belief correction within budget",
   "lever_boundary": {
@@ -425,6 +425,46 @@
     "next_gate": "fresh standard independent plan review",
     "downstream_law": "if R3 is accepted, regenerate all three commissions; never patch or reuse only CH-01"
   },
+  "plan_r3_generation": {
+    "status": "GENERATED_FROZEN_UNEDITED_PENDING_STANDARD_REVIEW",
+    "execution_head": "105c0c2224eb8d7535dfabc3b329bd28c06f3ac2",
+    "artifact": "calibration/runs/run-013/planning/master-plan-r3.md",
+    "artifact_sha256": "13341e397b2ba372da1aff34d8bc681de9b5ec7b383d91dea627dbdf24a52220",
+    "artifact_bytes": 74286,
+    "artifact_words": 10264,
+    "artifact_lines": 847,
+    "raw_jsonl": "calibration/runs/run-013/planning/master-plan-r3.raw.jsonl",
+    "raw_jsonl_sha256": "7ea344b976f56de0fbb2735e5b3b969a25be87aad6d9b642b8a6560f63450c60",
+    "stderr": "calibration/runs/run-013/planning/master-plan-r3.stderr.log",
+    "stderr_sha256": "7b2a73c77e001a4ebcd42c1cccaf0f9dd7c92966e50dd1d3296226b9b51b64a0",
+    "assembled_bundle_sha256": "d7510f36b6935928e7688cd69bcc382b6c34584d4da7ab68cfdc5ef870387daf",
+    "full_prompt_sha256": "00d62e64d24c3a4f2bee2091801103770adb8e29180d4dddef2082ad0775370b",
+    "revision_inputs": {
+      "base_planning_inputs": "unchanged exact inputs from R2",
+      "frozen_master_plan_r2_sha256": "2ca9505152ee0e4d240bebbebb6979672be42bfc7d2e463dfa115a4a1ab1e869",
+      "commission_set_audit_sha256": "a39f9816e6fdebdf9d01aee59be54f8d58443a839215106322c78fb973bd859e"
+    },
+    "route": "one fresh native Codex subscription planner context",
+    "model": "gpt-5.6-sol",
+    "reasoning": "ultra",
+    "thread_id": "019f54aa-b998-7b92-8bc6-ee8a2cd177a1",
+    "return_code": 0,
+    "event_stream_complete": true,
+    "complete_agent_messages": 1,
+    "complete_turns": 1,
+    "tool_calls": 0,
+    "subagent_events": 0,
+    "retries": 0,
+    "usage": {
+      "input_tokens": 68071,
+      "cached_input_tokens": 8960,
+      "output_tokens": 22008,
+      "reasoning_output_tokens": 3969
+    },
+    "transport_diagnostic": "WebSocket UnknownIssuer reconnect failures followed by successful fallback transport within the same call",
+    "manual_edit": false,
+    "review_status": "not started; generation metadata makes no judgment about the candidate"
+  },
   "held_fixed": [
     "accepted quit-sugar brief",
     "accepted research corpus and syntheses",
@@ -525,7 +565,7 @@
     "prompts/research-agent.md": "history commit 5bff930; accepted research not rerun"
   },
   "stages_rerun_because": "H-050 changes chapter architecture; causal attribution requires fresh plan, commissions, and complete Chapters 1-3 rather than patching any run-012 artifact",
-  "next_artifact": "planner R3 from unchanged base inputs plus frozen R2 and the exact commission-set audit, correcting the source conflict only",
+  "next_artifact": "standard independent review of the exact frozen master-plan R3 candidate",
   "external_blocker": "none",
   "notes": "Run-012 remains immutable evidence. Product roles stay blind to the reference and judge output. OpenRouter remains restricted to Opus chapter writing and DeepSeek research."
 }

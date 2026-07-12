@@ -1,0 +1,7 @@
+2026-07-12T04:51:43.237862Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: IO error: invalid peer certificate: UnknownIssuer, url: wss://chatgpt.com/backend-api/codex/responses
+2026-07-12T04:51:43.279655Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: IO error: invalid peer certificate: UnknownIssuer, url: wss://chatgpt.com/backend-api/codex/responses
+2026-07-12T04:51:43.490151Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: IO error: invalid peer certificate: UnknownIssuer, url: wss://chatgpt.com/backend-api/codex/responses
+2026-07-12T04:51:43.876010Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: IO error: invalid peer certificate: UnknownIssuer, url: wss://chatgpt.com/backend-api/codex/responses
+2026-07-12T04:51:44.681296Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: IO error: invalid peer certificate: UnknownIssuer, url: wss://chatgpt.com/backend-api/codex/responses
+2026-07-12T04:51:46.433514Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: IO error: invalid peer certificate: UnknownIssuer, url: wss://chatgpt.com/backend-api/codex/responses
+2026-07-12T04:51:49.794546Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: IO error: invalid peer certificate: UnknownIssuer, url: wss://chatgpt.com/backend-api/codex/responses
