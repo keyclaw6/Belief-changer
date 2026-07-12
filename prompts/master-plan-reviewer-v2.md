@@ -27,7 +27,7 @@ Return `needs changes first` only when at least one concrete defect materially t
 
 ### Method integrity
 
-The false belief, inversion, fork positions, redefinition, autonomy stance, safety perimeter, and arc must support non-shaming, willpower-free, fear-free belief change. The plan must not concede an irreplaceable benefit, invent an inner enemy, defer freedom into a streak, or turn clinical care into method failure.
+The false belief, inversion, fork positions, redefinition, autonomy stance, safety perimeter, and arc must support willpower-free belief change in the reference-corpus register: fear raised then disowned where the arc assigns it, stern pressure aimed at the trap, warmth and zero contempt toward the person (fidelity doctrine, founder 2026-07-12). The plan must not sanitize assigned fear beats into a wellness brochure, concede an irreplaceable benefit, invent an inner enemy (Fork-1: name the trap/lie/industry), defer freedom into a streak, or turn clinical care into method failure.
 
 ### Evidence honesty and sufficiency
 

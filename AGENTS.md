@@ -6,7 +6,7 @@ Generate high-quality, Allen Carr "Easyway"-style belief-change books — free, 
 
 ## Priorities
 When priorities conflict: 1. Method integrity. 2. Quality. 3. Simplicity. 4. Reach. 5. Cost.
-Method integrity means: non-shaming framing, willpower-free logic, original text only (learn the mechanism, never reproduce copyrighted prose), and evidence-graded research. A book that violates these has failed regardless of polish.
+Method integrity means: fidelity to the Easyway method as evidenced by the reference corpus (including its fear deployment, certainty register, and stern moments), willpower-free logic, original text only (learn the mechanism, never reproduce copyrighted prose), and research-traceable claims. A book that softens the method into a wellness brochure has failed regardless of polish. (Founder decision, 2026-07-12: reproduce the authentic Carr register — do not soften it; our own twist comes after the machine can hit the target. See `prompts/style-guide.md` Fidelity Doctrine.)
 
 ## Truth Hierarchy
 1. `openspec/specs/` — behavior and method truth. Read the relevant spec before changing pipeline or content behavior; author changes under `openspec/changes/<slug>/`.
