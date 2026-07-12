@@ -1,0 +1,90 @@
+{
+  "status": "COMPLETED_OUTPUT_PRESENT_MECHANICALLY_COMPLETE_UNREVIEWED",
+  "source_head": "b2af4ffe7e028c6a662960819eb1df2f6dbc37a6",
+  "preinvocation_record_sha256": "26b5268e7235901d35add3d16a5dde8ce7f6df86841dfca74d0ca3bd4473de1d",
+  "workspace": "/tmp/belief-changer-run014-plan-r1.V07fTl",
+  "workspace_empty_before_invocation": true,
+  "sandbox": "read-only isolated workspace with no additional readable task files supplied",
+  "prompt": {
+    "path": "calibration/runs/run-014/planning/assembled-prompt.md",
+    "sha256": "7512fb4cfd00778f7b626cae4e2668660c645172d788bf20fb84c5b285e56fcf",
+    "delivery": "exact file bytes on stdin"
+  },
+  "command_argv": [
+    "codex",
+    "exec",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--ignore-rules",
+    "--disable",
+    "multi_agent",
+    "--model",
+    "gpt-5.6-sol",
+    "-c",
+    "model_reasoning_effort=ultra",
+    "--sandbox",
+    "read-only",
+    "--skip-git-repo-check",
+    "-C",
+    "/tmp/belief-changer-run014-plan-r1.V07fTl",
+    "--json",
+    "--color",
+    "never",
+    "--output-last-message",
+    "/home/kab/Belief-changer/calibration/runs/run-014/planning/master-plan-r1.md",
+    "-"
+  ],
+  "environment": {
+    "inherit": "none",
+    "HOME": "/home/kab",
+    "USER": "kab",
+    "LOGNAME": "kab",
+    "PATH": "/home/kab/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+    "CODEX_HOME": "/home/kab/.codex",
+    "LANG": "C.UTF-8",
+    "LC_ALL": "C.UTF-8",
+    "TMPDIR": "/tmp",
+    "provider_or_api_credentials_inherited": false
+  },
+  "outputs": {
+    "master_plan": "calibration/runs/run-014/planning/master-plan-r1.md",
+    "raw_jsonl": "calibration/runs/run-014/planning/master-plan-r1.raw.jsonl",
+    "stderr": "calibration/runs/run-014/planning/master-plan-r1.stderr"
+  },
+  "reasoning_or_output_cap": "none set",
+  "return_code": 0,
+  "thread_id": "019f54f0-9ecb-79c1-a575-ec8a052bbecc",
+  "usage": {
+    "input_tokens": 79298,
+    "cached_input_tokens": 48896,
+    "output_tokens": 15391,
+    "reasoning_output_tokens": 0
+  },
+  "event_summary": {
+    "total_events": 4,
+    "thread_started": 1,
+    "turn_started": 1,
+    "agent_messages": 1,
+    "turn_completed": 1,
+    "turn_failed": 0,
+    "tool_or_command_events": 0,
+    "web_events": 0,
+    "subagent_events": 0,
+    "retry_performed": false,
+    "stderr_empty": true,
+    "usage_diagnostic": "Native Codex reported zero reasoning_output_tokens despite the explicit ultra setting; this is recorded exactly and no inference was repeated."
+  },
+  "result_artifacts": {
+    "master_plan_sha256": "f087aea1a6e77a2a64cd5d33cf66da4628ca424e5de2a4882dc2d52f1ebcae81",
+    "master_plan_bytes": 65484,
+    "master_plan_words": 9467,
+    "master_plan_logical_lines": 644,
+    "raw_jsonl_sha256": "8c564ccc53f868a1036b8dd7b50253368f299e42e913c9f6ee359cf5040ceefe",
+    "raw_jsonl_bytes": 66447,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "mechanical_validation": {
+    "path": "calibration/runs/run-014/planning/mechanical-validation.json",
+    "status": "OUTPUT_PRESENT_READABLE_MECHANICALLY_COMPLETE_UNREVIEWED"
+  }
+}

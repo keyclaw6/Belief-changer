@@ -1,0 +1,50 @@
+{
+  "status": "OUTPUT_PRESENT_READABLE_MECHANICALLY_COMPLETE_UNREVIEWED",
+  "source_head_before": "b2af4ffe7e028c6a662960819eb1df2f6dbc37a6",
+  "source_head_after": "b2af4ffe7e028c6a662960819eb1df2f6dbc37a6",
+  "output": {
+    "path": "calibration/runs/run-014/planning/master-plan-r1.md",
+    "sha256": "f087aea1a6e77a2a64cd5d33cf66da4628ca424e5de2a4882dc2d52f1ebcae81",
+    "bytes": 65484,
+    "words": 9467,
+    "newline_count": 643,
+    "logical_lines": 644,
+    "terminal_lf_present": false,
+    "nul_bytes": 0,
+    "readable": true,
+    "nonempty": true,
+    "matches_raw_agent_message_sha256": true
+  },
+  "mechanical_structure": {
+    "h1_headings": 1,
+    "h2_headings": 8,
+    "h3_headings": 43,
+    "chapter_headings": 23,
+    "chapter_id_set": "CH-01 through CH-23 inclusive",
+    "appendix_headings": 1,
+    "appendix_id_count": 1,
+    "budget_entries": 24,
+    "parsed_budget_sum_words": 60000,
+    "stated_60000_matches": 2,
+    "markdown_fence_lines": 0,
+    "truncation_or_inability_markers": 0
+  },
+  "completion_transport": {
+    "return_code": 0,
+    "turn_completed_events": 1,
+    "turn_failed_events": 0,
+    "final_agent_messages": 1,
+    "stderr_empty": true,
+    "workspace_entries_before": 0,
+    "workspace_entries_after": 0
+  },
+  "input_integrity": {
+    "all_six_hashes_match_preinvocation_manifest_after_call": true,
+    "production_inputs_changed": false,
+    "head_changed": false
+  },
+  "manual_edit_repair_or_normalization": false,
+  "retry_performed": false,
+  "semantic_review_performed": false,
+  "production_master_plan_promoted": false
+}

@@ -1,0 +1,74 @@
+{
+  "status": "FROZEN_BEFORE_INVOCATION",
+  "source_head": "b2af4ffe7e028c6a662960819eb1df2f6dbc37a6",
+  "wrapper": {
+    "path": "calibration/runs/run-014/planning/wrapper.md",
+    "sha256": "f454ade0bd7dadace5e7b5c8fbcb301a3976677283810bd4e16fdc2768667710",
+    "bytes": 491
+  },
+  "inputs": [
+    {
+      "order": 1,
+      "path": "prompts/master-plan-skill-v2.md",
+      "sha256": "5e459f98f51892745e6c28e5584187770d0c9a0993e70dabce0e57c1996e2747",
+      "lines": 127,
+      "words": 1263,
+      "bytes": 8858
+    },
+    {
+      "order": 2,
+      "path": "prompts/style-guide.md",
+      "sha256": "d4f97cf29a64114a0fcea27c86809793c0b14acee9bb6fb7cbe66777b8f92590",
+      "lines": 639,
+      "words": 13086,
+      "bytes": 84326
+    },
+    {
+      "order": 3,
+      "path": "production-books/quit-sugar/00-brief.md",
+      "sha256": "29105690753c3ac6af4a48585f50fc30e489b4d9f760a8056f4977ff2eba576a",
+      "lines": 21,
+      "words": 233,
+      "bytes": 1595
+    },
+    {
+      "order": 4,
+      "path": "production-books/quit-sugar/framing.md",
+      "sha256": "d1fe0a1b2ea1c56dab8f56a10aa2a4ed3a8f86f3552c83db9f5f46ecb62bfece",
+      "lines": 357,
+      "words": 6551,
+      "bytes": 44351
+    },
+    {
+      "order": 5,
+      "path": "production-books/quit-sugar/research/lived-experience.md",
+      "sha256": "e21506f804920898b3f314cd44bb20954d1524dd0eb70395ae4d95425e7afc5b",
+      "lines": 167,
+      "words": 3033,
+      "bytes": 20210
+    },
+    {
+      "order": 6,
+      "path": "production-books/quit-sugar/research/scientific-evidence.md",
+      "sha256": "0675ba24325e85b6289403a2c98212603db0c0941f6cb33a95390431e0b3a3fc",
+      "lines": 31,
+      "words": 1003,
+      "bytes": 7338
+    }
+  ],
+  "input_hash_manifest": {
+    "path": "calibration/runs/run-014/planning/input-hashes.sha256",
+    "sha256": "e15ebf74f8c2fdaae8cb558326b1800f9ae272a592ff60709e397628deb76e85",
+    "verified_before_invocation": true
+  },
+  "assembled_prompt": {
+    "path": "calibration/runs/run-014/planning/assembled-prompt.md",
+    "sha256": "7512fb4cfd00778f7b626cae4e2668660c645172d788bf20fb84c5b285e56fcf",
+    "lines": 1361,
+    "words": 25325,
+    "bytes": 168133,
+    "delivery": "exact file bytes on stdin"
+  },
+  "permitted_input_count": 6,
+  "additional_model_input_count": 0
+}
