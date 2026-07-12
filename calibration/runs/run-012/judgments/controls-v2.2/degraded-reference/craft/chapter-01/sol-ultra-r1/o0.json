@@ -1,0 +1,135 @@
+{
+ "protocol": "stage-a-v2.2",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-01",
+ "ours_chapters": [
+  1
+ ],
+ "ref_chapters": [
+  1
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "7bdca83c7f026c29c1c62cd6f67a6a99368bd376bdfb02f358f6d5ee3aeb4816",
+  "output_schema_sha256": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+  "thread_id": "019f53a3-de65-76f3-aa6f-e189fc3e892c",
+  "usage": {
+   "input_tokens": 21357,
+   "cached_input_tokens": 12032,
+   "output_tokens": 1281,
+   "reasoning_output_tokens": 1034
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f53a3-de65-76f3-aa6f-e189fc3e892c\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.99,\\\"critical_failures\\\":{\\\"A\\\":[\\\"broken_chapter_flow\\\",\\\"weak_ending_handoff\\\"],\\\"B\\\":[]},\\\"generic_mechanism\\\":\\\"The largest difference is sequence integrity: one chapter preserves an escalating explanatory arc, while the other scrambles dependent passages, destroying transitions, referents, accumulation, and closure.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"Concrete anecdotes and examples survive, but they arrive in a severely disordered chain: conclusions precede premises, headings interrupt unrelated material, references lose their antecedents, and the chapter ends by restarting its opening.\\\",\\\"B\\\":\\\"The chapter moves coherently from promised benefit through stakes, a familiar consumption example, an explanatory model, objections, method credentials, and reading instructions, though emphatic claims and repeated assurances create substantial bloat.\\\"},\\\"product_parity_verdict\\\":\\\"B\\\",\\\"scores\\\":{\\\"ending_handoff\\\":{\\\"A\\\":1,\\\"B\\\":5},\\\"flow_and_momentum\\\":{\\\"A\\\":1,\\\"B\\\":6},\\\"prose_control\\\":{\\\"A\\\":3,\\\"B\\\":5},\\\"rhythm_and_variety\\\":{\\\"A\\\":2,\\\"B\\\":4},\\\"specificity\\\":{\\\"A\\\":4,\\\"B\\\":6}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":21357,\"cached_input_tokens\":12032,\"output_tokens\":1281,\"reasoning_output_tokens\":1034}}\n"
+ },
+ "raw": "{\"confidence\":0.99,\"critical_failures\":{\"A\":[\"broken_chapter_flow\",\"weak_ending_handoff\"],\"B\":[]},\"generic_mechanism\":\"The largest difference is sequence integrity: one chapter preserves an escalating explanatory arc, while the other scrambles dependent passages, destroying transitions, referents, accumulation, and closure.\",\"paraphrased_evidence\":{\"A\":\"Concrete anecdotes and examples survive, but they arrive in a severely disordered chain: conclusions precede premises, headings interrupt unrelated material, references lose their antecedents, and the chapter ends by restarting its opening.\",\"B\":\"The chapter moves coherently from promised benefit through stakes, a familiar consumption example, an explanatory model, objections, method credentials, and reading instructions, though emphatic claims and repeated assurances create substantial bloat.\"},\"product_parity_verdict\":\"B\",\"scores\":{\"ending_handoff\":{\"A\":1,\"B\":5},\"flow_and_momentum\":{\"A\":1,\"B\":6},\"prose_control\":{\"A\":3,\"B\":5},\"rhythm_and_variety\":{\"A\":2,\"B\":4},\"specificity\":{\"A\":4,\"B\":6}}}",
+ "parsed": {
+  "confidence": 0.99,
+  "critical_failures": {
+   "A": [
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ],
+   "B": []
+  },
+  "generic_mechanism": "The largest difference is sequence integrity: one chapter preserves an escalating explanatory arc, while the other scrambles dependent passages, destroying transitions, referents, accumulation, and closure.",
+  "paraphrased_evidence": {
+   "A": "Concrete anecdotes and examples survive, but they arrive in a severely disordered chain: conclusions precede premises, headings interrupt unrelated material, references lose their antecedents, and the chapter ends by restarting its opening.",
+   "B": "The chapter moves coherently from promised benefit through stakes, a familiar consumption example, an explanatory model, objections, method credentials, and reading instructions, though emphatic claims and repeated assurances create substantial bloat."
+  },
+  "product_parity_verdict": "B",
+  "scores": {
+   "ending_handoff": {
+    "A": 1,
+    "B": 5
+   },
+   "flow_and_momentum": {
+    "A": 1,
+    "B": 6
+   },
+   "prose_control": {
+    "A": 3,
+    "B": 5
+   },
+   "rhythm_and_variety": {
+    "A": 2,
+    "B": 4
+   },
+   "specificity": {
+    "A": 4,
+    "B": 6
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 3,
+    "ref": 5
+   },
+   "rhythm_and_variety": {
+    "ours": 2,
+    "ref": 4
+   },
+   "specificity": {
+    "ours": 4,
+    "ref": 6
+   },
+   "flow_and_momentum": {
+    "ours": 1,
+    "ref": 6
+   },
+   "ending_handoff": {
+    "ours": 1,
+    "ref": 5
+   }
+  },
+  "critical_ours": [
+   "broken_chapter_flow",
+   "weak_ending_handoff"
+  ],
+  "critical_ref": [],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "Concrete anecdotes and examples survive, but they arrive in a severely disordered chain: conclusions precede premises, headings interrupt unrelated material, references lose their antecedents, and the chapter ends by restarting its opening.",
+   "ref": "The chapter moves coherently from promised benefit through stakes, a familiar consumption example, an explanatory model, objections, method credentials, and reading instructions, though emphatic claims and repeated assurances create substantial bloat."
+  },
+  "generic_mechanism": "The largest difference is sequence integrity: one chapter preserves an escalating explanatory arc, while the other scrambles dependent passages, destroying transitions, referents, accumulation, and closure."
+ }
+}

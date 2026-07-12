@@ -1,0 +1,135 @@
+{
+ "protocol": "stage-a-v2.2",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-03",
+ "ours_chapters": [
+  3
+ ],
+ "ref_chapters": [
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "c9bd76b9998b4deb41010ebd6c8831d7d559aa54b24281f346f69de6d55d9ad4",
+  "output_schema_sha256": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+  "thread_id": "019f53a9-01de-7ad1-8a7b-8ca7fbe4f67a",
+  "usage": {
+   "input_tokens": 19538,
+   "cached_input_tokens": 0,
+   "output_tokens": 1275,
+   "reasoning_output_tokens": 1034
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f53a9-01de-7ad1-8a7b-8ca7fbe4f67a\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.99,\\\"critical_failures\\\":{\\\"A\\\":[],\\\"B\\\":[\\\"broken_chapter_flow\\\",\\\"weak_ending_handoff\\\"]},\\\"generic_mechanism\\\":\\\"A cumulative argument depends on preserving setup, development, and payoff; reversed or spliced units sever those dependencies, so even individually clear sentences cannot create sustained momentum.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"Concrete domestic, social, and sensory examples build a coherent progression from learned preference through compulsive behavior to the proposed change, though repeated promises and emphatic refrains make the final stretch feel overextended.\\\",\\\"B\\\":\\\"Recognizable examples and intact sentences survive, but conclusions precede premises, questions lose their answers, headings arrive after their material, and the chapter terminates on introductory contents rather than a developed landing.\\\"},\\\"product_parity_verdict\\\":\\\"A\\\",\\\"scores\\\":{\\\"ending_handoff\\\":{\\\"A\\\":6,\\\"B\\\":1},\\\"flow_and_momentum\\\":{\\\"A\\\":6,\\\"B\\\":1},\\\"prose_control\\\":{\\\"A\\\":6,\\\"B\\\":3},\\\"rhythm_and_variety\\\":{\\\"A\\\":5,\\\"B\\\":2},\\\"specificity\\\":{\\\"A\\\":7,\\\"B\\\":4}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":19538,\"cached_input_tokens\":0,\"output_tokens\":1275,\"reasoning_output_tokens\":1034}}\n"
+ },
+ "raw": "{\"confidence\":0.99,\"critical_failures\":{\"A\":[],\"B\":[\"broken_chapter_flow\",\"weak_ending_handoff\"]},\"generic_mechanism\":\"A cumulative argument depends on preserving setup, development, and payoff; reversed or spliced units sever those dependencies, so even individually clear sentences cannot create sustained momentum.\",\"paraphrased_evidence\":{\"A\":\"Concrete domestic, social, and sensory examples build a coherent progression from learned preference through compulsive behavior to the proposed change, though repeated promises and emphatic refrains make the final stretch feel overextended.\",\"B\":\"Recognizable examples and intact sentences survive, but conclusions precede premises, questions lose their answers, headings arrive after their material, and the chapter terminates on introductory contents rather than a developed landing.\"},\"product_parity_verdict\":\"A\",\"scores\":{\"ending_handoff\":{\"A\":6,\"B\":1},\"flow_and_momentum\":{\"A\":6,\"B\":1},\"prose_control\":{\"A\":6,\"B\":3},\"rhythm_and_variety\":{\"A\":5,\"B\":2},\"specificity\":{\"A\":7,\"B\":4}}}",
+ "parsed": {
+  "confidence": 0.99,
+  "critical_failures": {
+   "A": [],
+   "B": [
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ]
+  },
+  "generic_mechanism": "A cumulative argument depends on preserving setup, development, and payoff; reversed or spliced units sever those dependencies, so even individually clear sentences cannot create sustained momentum.",
+  "paraphrased_evidence": {
+   "A": "Concrete domestic, social, and sensory examples build a coherent progression from learned preference through compulsive behavior to the proposed change, though repeated promises and emphatic refrains make the final stretch feel overextended.",
+   "B": "Recognizable examples and intact sentences survive, but conclusions precede premises, questions lose their answers, headings arrive after their material, and the chapter terminates on introductory contents rather than a developed landing."
+  },
+  "product_parity_verdict": "A",
+  "scores": {
+   "ending_handoff": {
+    "A": 6,
+    "B": 1
+   },
+   "flow_and_momentum": {
+    "A": 6,
+    "B": 1
+   },
+   "prose_control": {
+    "A": 6,
+    "B": 3
+   },
+   "rhythm_and_variety": {
+    "A": 5,
+    "B": 2
+   },
+   "specificity": {
+    "A": 7,
+    "B": 4
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 3,
+    "ref": 6
+   },
+   "rhythm_and_variety": {
+    "ours": 2,
+    "ref": 5
+   },
+   "specificity": {
+    "ours": 4,
+    "ref": 7
+   },
+   "flow_and_momentum": {
+    "ours": 1,
+    "ref": 6
+   },
+   "ending_handoff": {
+    "ours": 1,
+    "ref": 6
+   }
+  },
+  "critical_ours": [
+   "broken_chapter_flow",
+   "weak_ending_handoff"
+  ],
+  "critical_ref": [],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "Recognizable examples and intact sentences survive, but conclusions precede premises, questions lose their answers, headings arrive after their material, and the chapter terminates on introductory contents rather than a developed landing.",
+   "ref": "Concrete domestic, social, and sensory examples build a coherent progression from learned preference through compulsive behavior to the proposed change, though repeated promises and emphatic refrains make the final stretch feel overextended."
+  },
+  "generic_mechanism": "A cumulative argument depends on preserving setup, development, and payoff; reversed or spliced units sever those dependencies, so even individually clear sentences cannot create sustained momentum."
+ }
+}

@@ -1,0 +1,1138 @@
+{
+ "protocol": "stage-a-v2.2",
+ "raw_judgments": 20,
+ "collapsed_observations": 10,
+ "invalid_judgments": 0,
+ "panel_complete": true,
+ "judge_replications": {
+  "design": "independent fresh-context same-model replications",
+  "identities": [
+   "sol-ultra-r1",
+   "sol-ultra-r2"
+  ],
+  "model_by_identity": {
+   "sol-ultra-r1": [
+    "gpt-5.6-sol"
+   ],
+   "sol-ultra-r2": [
+    "gpt-5.6-sol"
+   ]
+  },
+  "cross_family_evidence": false,
+  "interpretation": "independent replications, not cross-family evidence"
+ },
+ "role_judge_identity_matrix": {
+  "efficacy": [
+   "sol-ultra-r1",
+   "sol-ultra-r2"
+  ],
+  "craft": [
+   "sol-ultra-r1",
+   "sol-ultra-r2"
+  ],
+  "integrity": [
+   "sol-ultra-r1",
+   "sol-ultra-r2"
+  ]
+ },
+ "role_target_matrix": {
+  "efficacy": {
+   "sol-ultra-r1": [
+    "block"
+   ],
+   "sol-ultra-r2": [
+    "block"
+   ]
+  },
+  "craft": {
+   "sol-ultra-r1": [
+    "chapter-01",
+    "chapter-02",
+    "chapter-03"
+   ],
+   "sol-ultra-r2": [
+    "chapter-01",
+    "chapter-02",
+    "chapter-03"
+   ]
+  },
+  "integrity": {
+   "sol-ultra-r1": [
+    "block"
+   ],
+   "sol-ultra-r2": [
+    "block"
+   ]
+  }
+ },
+ "role_judge_identity_matrix_complete": true,
+ "order_instability": {
+  "observations": 4,
+  "rate": 0.4,
+  "ids": [
+   "sol-ultra-r1|craft|chapter-03",
+   "sol-ultra-r1|integrity|block",
+   "sol-ultra-r2|craft|chapter-01",
+   "sol-ultra-r2|integrity|block"
+  ]
+ },
+ "absolute_drift": {
+  "critical_label_observations": 2,
+  "score_observations": 10,
+  "max_same_text_score_shift": 2
+ },
+ "product_parity": {
+  "unit": "collapsed judge-identity-role-target observation",
+  "overall_preference_rate_incl_half_ties": 0.0,
+  "equal_role_macro_preference_rate": null,
+  "stable_observations": 6,
+  "unstable_observations": 4,
+  "roles": {
+   "efficacy": {
+    "scope": "block",
+    "observations": 2,
+    "preference_rate_incl_half_ties": 0.0,
+    "order_unstable": 0
+   },
+   "craft": {
+    "scope": "chapter",
+    "observations": 6,
+    "preference_rate_incl_half_ties": 0.0,
+    "order_unstable": 2
+   },
+   "integrity": {
+    "scope": "block",
+    "observations": 2,
+    "preference_rate_incl_half_ties": null,
+    "order_unstable": 2
+   }
+  },
+  "threshold_verdict": "not applied by instrument"
+ },
+ "causal_movement": {
+  "status": "not measured",
+  "reason": "Requires a preregistered candidate-to-candidate experiment."
+ },
+ "observations": [
+  {
+   "judge_identity": "sol-ultra-r1",
+   "model": "gpt-5.6-sol",
+   "role": "craft",
+   "target": "chapter-01",
+   "complete": true,
+   "dims": {
+    "prose_control": {
+     "ours_mean": 3.0,
+     "ref_mean": 5.5
+    },
+    "rhythm_and_variety": {
+     "ours_mean": 2.0,
+     "ref_mean": 4.5
+    },
+    "specificity": {
+     "ours_mean": 4.0,
+     "ref_mean": 6.0
+    },
+    "flow_and_momentum": {
+     "ours_mean": 1.0,
+     "ref_mean": 5.5
+    },
+    "ending_handoff": {
+     "ours_mean": 1.0,
+     "ref_mean": 5.0
+    }
+   },
+   "product_parity_verdict": "ref",
+   "confidence_mean": 0.99,
+   "critical_ours": [
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ],
+   "critical_ref": [],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "Concrete anecdotes and examples survive, but they arrive in a severely disordered chain: conclusions precede premises, headings interrupt unrelated material, references lose their antecedents, and the chapter ends by restarting its opening.",
+     "ref": "The chapter moves coherently from promised benefit through stakes, a familiar consumption example, an explanatory model, objections, method credentials, and reading instructions, though emphatic claims and repeated assurances create substantial bloat."
+    },
+    {
+     "ours": "B retains specific details and individually competent sentences, but scatters setups, explanations, headings, and payoffs. References repeatedly precede their grounds, transitions jump without causal support, and the text ends in introductory matter instead of a landing.",
+     "ref": "A advances from reader concerns through a named dependency model, a familiar eating scenario, a personal origin story, and initial instructions. Its clarity and concrete motifs are weakened by repeated promises, comparisons, and overinsistence on ease."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "The largest difference is sequence integrity: one chapter preserves an escalating explanatory arc, while the other scrambles dependent passages, destroying transitions, referents, accumulation, and closure.",
+    "Coherent setup-development-payoff sequencing allows local details to accumulate; scrambled ordering severs antecedents and relocates orientation material to the end, so sentence-level competence cannot produce chapter-level momentum."
+   ],
+   "order_instability": {
+    "unstable": false,
+    "comparative_signatures": [
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "prose_control": -1,
+       "rhythm_and_variety": -1,
+       "specificity": -1,
+       "flow_and_momentum": -1,
+       "ending_handoff": -1
+      },
+      "ours_only": [
+       "broken_chapter_flow",
+       "weak_ending_handoff"
+      ],
+      "ref_only": []
+     },
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "prose_control": -1,
+       "rhythm_and_variety": -1,
+       "specificity": -1,
+       "flow_and_momentum": -1,
+       "ending_handoff": -1
+      },
+      "ours_only": [
+       "broken_chapter_flow",
+       "weak_ending_handoff"
+      ],
+      "ref_only": []
+     }
+    ],
+    "verdicts": [
+     "ref",
+     "ref"
+    ],
+    "score_winner_flips": [],
+    "relative_critical_failures_changed": false,
+    "max_within_order_candidate_gap": 5
+   },
+   "absolute_drift": {
+    "critical_failures_changed": false,
+    "max_same_text_score_shift": 1
+   }
+  },
+  {
+   "judge_identity": "sol-ultra-r1",
+   "model": "gpt-5.6-sol",
+   "role": "craft",
+   "target": "chapter-02",
+   "complete": true,
+   "dims": {
+    "prose_control": {
+     "ours_mean": 2.5,
+     "ref_mean": 6.0
+    },
+    "rhythm_and_variety": {
+     "ours_mean": 1.5,
+     "ref_mean": 5.0
+    },
+    "specificity": {
+     "ours_mean": 4.0,
+     "ref_mean": 6.5
+    },
+    "flow_and_momentum": {
+     "ours_mean": 1.0,
+     "ref_mean": 5.5
+    },
+    "ending_handoff": {
+     "ours_mean": 1.0,
+     "ref_mean": 4.5
+    }
+   },
+   "product_parity_verdict": "ref",
+   "confidence_mean": 0.99,
+   "critical_ours": [
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ],
+   "critical_ref": [],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "Specific images remain, but conclusions, instructions, health warnings, animal examples, and introductory material arrive in a materially scrambled order. Referential and argumentative buildup repeatedly collapses, while the final line functions as an opening premise rather than a conclusion.",
+     "ref": "An observed animal vignette provides a vivid launch, and the history, shopping exercise, health consequences, and visual demonstration form a legible progression. Repeated questions, emphatic typography, sweeping claims, and a recap-heavy close weaken its cadence and restraint."
+    },
+    {
+     "ours": "Sentences and headings arrive largely in reverse dependency order: conclusions precede premises, pronouns lose antecedents, examples precede their setup, and the chapter stops on its opening proposition rather than completing a turn.",
+     "ref": "A concrete animal observation expands into an instinct-versus-industry argument, then narrows to a reader instruction and visual demonstration; emphatic typography and repeated claims sometimes overwork points already established."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "One chapter preserves causal sequencing from concrete observation through expansion, consequence, instruction, and demonstration; the other shuffles those dependencies, so locally readable sentences cannot accumulate into a chapter.",
+    "The largest gap comes from sequence integrity: premises, examples, and conclusions can gather momentum in dependency order, while scrambling that order destroys reference clarity, paragraph rhythm, and the possibility of a viable ending."
+   ],
+   "order_instability": {
+    "unstable": false,
+    "comparative_signatures": [
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "prose_control": -1,
+       "rhythm_and_variety": -1,
+       "specificity": -1,
+       "flow_and_momentum": -1,
+       "ending_handoff": -1
+      },
+      "ours_only": [
+       "broken_chapter_flow",
+       "weak_ending_handoff"
+      ],
+      "ref_only": []
+     },
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "prose_control": -1,
+       "rhythm_and_variety": -1,
+       "specificity": -1,
+       "flow_and_momentum": -1,
+       "ending_handoff": -1
+      },
+      "ours_only": [
+       "broken_chapter_flow",
+       "weak_ending_handoff"
+      ],
+      "ref_only": []
+     }
+    ],
+    "verdicts": [
+     "ref",
+     "ref"
+    ],
+    "score_winner_flips": [],
+    "relative_critical_failures_changed": false,
+    "max_within_order_candidate_gap": 5
+   },
+   "absolute_drift": {
+    "critical_failures_changed": false,
+    "max_same_text_score_shift": 1
+   }
+  },
+  {
+   "judge_identity": "sol-ultra-r1",
+   "model": "gpt-5.6-sol",
+   "role": "craft",
+   "target": "chapter-03",
+   "complete": true,
+   "dims": {
+    "prose_control": {
+     "ours_mean": 3.0,
+     "ref_mean": 6.5
+    },
+    "rhythm_and_variety": {
+     "ours_mean": 2.0,
+     "ref_mean": 6.0
+    },
+    "specificity": {
+     "ours_mean": 4.0,
+     "ref_mean": 7.0
+    },
+    "flow_and_momentum": {
+     "ours_mean": 1.0,
+     "ref_mean": 6.5
+    },
+    "ending_handoff": {
+     "ours_mean": 1.0,
+     "ref_mean": 6.0
+    }
+   },
+   "product_parity_verdict": "ref",
+   "confidence_mean": 0.99,
+   "critical_ours": [
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ],
+   "critical_ref": [],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "Locally grammatical claims, examples, headings, and recap points arrive in reverse-like succession; pronouns lose antecedents, examples precede their setup, and a chapter heading appears where the conclusion should be.",
+     "ref": "Concrete scenes of private excess, social conditioning, altered taste, warning signals, and failed restriction build a legible argument; emphatic refrains add energy, though the benefits passage and closing recap repeat more than necessary."
+    },
+    {
+     "ours": "Recognizable examples and intact sentences survive, but conclusions precede premises, questions lose their answers, headings arrive after their material, and the chapter terminates on introductory contents rather than a developed landing.",
+     "ref": "Concrete domestic, social, and sensory examples build a coherent progression from learned preference through compulsive behavior to the proposed change, though repeated promises and emphatic refrains make the final stretch feel overextended."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "Preserved causal sequencing lets examples accumulate into an argument, whereas shuffled units sever antecedents, reverse setup and payoff, and reduce controlled sentences to disconnected fragments.",
+    "A cumulative argument depends on preserving setup, development, and payoff; reversed or spliced units sever those dependencies, so even individually clear sentences cannot create sustained momentum."
+   ],
+   "order_instability": {
+    "unstable": true,
+    "comparative_signatures": [
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "prose_control": -1,
+       "rhythm_and_variety": -1,
+       "specificity": -1,
+       "flow_and_momentum": -1,
+       "ending_handoff": -1
+      },
+      "ours_only": [
+       "broken_chapter_flow"
+      ],
+      "ref_only": []
+     },
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "prose_control": -1,
+       "rhythm_and_variety": -1,
+       "specificity": -1,
+       "flow_and_momentum": -1,
+       "ending_handoff": -1
+      },
+      "ours_only": [
+       "broken_chapter_flow",
+       "weak_ending_handoff"
+      ],
+      "ref_only": []
+     }
+    ],
+    "verdicts": [
+     "ref",
+     "ref"
+    ],
+    "score_winner_flips": [],
+    "relative_critical_failures_changed": true,
+    "max_within_order_candidate_gap": 6
+   },
+   "absolute_drift": {
+    "critical_failures_changed": true,
+    "max_same_text_score_shift": 2
+   }
+  },
+  {
+   "judge_identity": "sol-ultra-r1",
+   "model": "gpt-5.6-sol",
+   "role": "efficacy",
+   "target": "block",
+   "complete": true,
+   "dims": {
+    "benefit_dismantling": {
+     "ours_mean": 3.5,
+     "ref_mean": 7.5
+    },
+    "belief_movement": {
+     "ours_mean": 3.0,
+     "ref_mean": 7.0
+    },
+    "escape_conviction": {
+     "ours_mean": 3.0,
+     "ref_mean": 7.0
+    },
+    "cumulative_progression": {
+     "ours_mean": 1.0,
+     "ref_mean": 7.0
+    }
+   },
+   "product_parity_verdict": "ref",
+   "confidence_mean": 0.99,
+   "critical_ours": [
+    "incoherent_block_arc"
+   ],
+   "critical_ref": [],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "The block contains fragments of a withdrawal-relief model, learned reward associations, and restriction backfire, but sentences, headings, examples, and conclusions arrive in abrupt or reversed order, preventing those ideas from forming a usable intervention.",
+     "ref": "The chapters successively recast apparent pleasure as relief of a self-created urge, explain how natural preferences are exploited, then connect conditioning and failed restriction to repeated consumption, making freedom and restored choice increasingly plausible."
+    },
+    {
+     "ours": "The same potentially persuasive ideas appear in reverse and fragmented order, so summaries precede development, conclusions precede premises, and freedom claims arrive without a readable path that earns them.",
+     "ref": "The chapters connect conditioned reward, short-lived relief, metabolic rebound, and failed restriction, gradually recasting consumption as a self-renewing trap while presenting abstinence as recovered choice."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "Persuasion strengthens when each chapter turns a claim into a causal model, tests it against familiar experience, and hands a resolved premise to the next chapter; disordered components cannot accumulate even when individually relevant.",
+    "Belief change accumulates when conclusions follow progressively developed causal explanations; reversing that sequence makes evidence feel disconnected and promises unearned."
+   ],
+   "order_instability": {
+    "unstable": false,
+    "comparative_signatures": [
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "benefit_dismantling": -1,
+       "belief_movement": -1,
+       "escape_conviction": -1,
+       "cumulative_progression": -1
+      },
+      "ours_only": [
+       "incoherent_block_arc"
+      ],
+      "ref_only": []
+     },
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "benefit_dismantling": -1,
+       "belief_movement": -1,
+       "escape_conviction": -1,
+       "cumulative_progression": -1
+      },
+      "ours_only": [
+       "incoherent_block_arc"
+      ],
+      "ref_only": []
+     }
+    ],
+    "verdicts": [
+     "ref",
+     "ref"
+    ],
+    "score_winner_flips": [],
+    "relative_critical_failures_changed": false,
+    "max_within_order_candidate_gap": 7
+   },
+   "absolute_drift": {
+    "critical_failures_changed": false,
+    "max_same_text_score_shift": 2
+   }
+  },
+  {
+   "judge_identity": "sol-ultra-r1",
+   "model": "gpt-5.6-sol",
+   "role": "integrity",
+   "target": "block",
+   "complete": true,
+   "dims": {
+    "non_shaming_regard": {
+     "ours_mean": 6.5,
+     "ref_mean": 7.0
+    },
+    "willpower_free_logic": {
+     "ours_mean": 5.0,
+     "ref_mean": 8.0
+    },
+    "epistemic_honesty": {
+     "ours_mean": 1.0,
+     "ref_mean": 1.0
+    },
+    "originality": {
+     "ours_mean": 1.0,
+     "ref_mean": 1.0
+    },
+    "cross_chapter_consistency": {
+     "ours_mean": 1.0,
+     "ref_mean": 7.0
+    }
+   },
+   "product_parity_verdict": "ref",
+   "confidence_mean": 0.985,
+   "critical_ours": [
+    "broken_continuity",
+    "copyright_expression_risk",
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony"
+   ],
+   "critical_ref": [
+    "copyright_expression_risk",
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony"
+   ],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "The block often absolves the reader and invokes belief removal, but its scrambled sequencing breaks causal links and chapter progression; it also presents sweeping addiction and health claims as settled.",
+     "ref": "The method coherently frames change as loss of desire and generally relocates blame to conditioning, but it relies on alarming disease outcomes, categorical medical claims, and unsubstantiated clinic and success assertions."
+    },
+    {
+     "ours": "It retains the same compassionate, desire-removal thesis and the same overclaims, alarms, and testimonial warrant, but reverses the exposition so summaries, instructions, and conclusions routinely precede their foundations.",
+     "ref": "It frames readers as trapped rather than weak and aims to dissolve desire, but relies on categorical health and addiction claims, alarming disease imagery, thinly supported efficacy testimony, and universal promises."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "One block preserves a cumulative explanatory sequence; the other rearranges the same material so premises, instructions, and conclusions lose their dependencies.",
+    "Preserving dependency order lets a multi-stage argument accumulate support; reversing that order detaches instructions and conclusions from their premises, destroying usable continuity."
+   ],
+   "order_instability": {
+    "unstable": true,
+    "comparative_signatures": [
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "non_shaming_regard": -1,
+       "willpower_free_logic": -1,
+       "epistemic_honesty": 0,
+       "originality": 0,
+       "cross_chapter_consistency": -1
+      },
+      "ours_only": [
+       "broken_continuity"
+      ],
+      "ref_only": []
+     },
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "non_shaming_regard": 0,
+       "willpower_free_logic": -1,
+       "epistemic_honesty": 0,
+       "originality": 0,
+       "cross_chapter_consistency": -1
+      },
+      "ours_only": [
+       "broken_continuity"
+      ],
+      "ref_only": []
+     }
+    ],
+    "verdicts": [
+     "ref",
+     "ref"
+    ],
+    "score_winner_flips": [
+     "non_shaming_regard"
+    ],
+    "relative_critical_failures_changed": false,
+    "max_within_order_candidate_gap": 6
+   },
+   "absolute_drift": {
+    "critical_failures_changed": false,
+    "max_same_text_score_shift": 1
+   }
+  },
+  {
+   "judge_identity": "sol-ultra-r2",
+   "model": "gpt-5.6-sol",
+   "role": "craft",
+   "target": "chapter-01",
+   "complete": true,
+   "dims": {
+    "prose_control": {
+     "ours_mean": 2.5,
+     "ref_mean": 5.5
+    },
+    "rhythm_and_variety": {
+     "ours_mean": 2.0,
+     "ref_mean": 4.5
+    },
+    "specificity": {
+     "ours_mean": 3.5,
+     "ref_mean": 5.5
+    },
+    "flow_and_momentum": {
+     "ours_mean": 1.0,
+     "ref_mean": 4.5
+    },
+    "ending_handoff": {
+     "ours_mean": 1.0,
+     "ref_mean": 5.0
+    }
+   },
+   "product_parity_verdict": "ref",
+   "confidence_mean": 0.99,
+   "critical_ours": [
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ],
+   "critical_ref": [
+    "repetitive_sag"
+   ],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "A opens with late-stage instructions and then jumps backward among personal history, analogies, statistics, and the chapter header; causal links and referents arrive after their consequences, and the last line is introductory apparatus rather than a close.",
+     "ref": "B builds from reader symptoms through public stakes, a dependency model, an abstinence rationale, method history, and reading instructions; concrete examples and a personal anecdote help, though repeated comparisons and promises make the latter half drag before a summary."
+    },
+    {
+     "ours": "B presents mostly intact sentences in a radically disordered sequence: conclusions precede premises, headings arrive after their material, anecdotes run backward, and the final fragment reopens the chapter instead of completing it.",
+     "ref": "A proceeds from promised relief through a diagnosis of dependency, an explanatory metaphor, and reading instructions, but repeated assurances, analogies, and emphatic refrains overextend points already established."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "The largest gap comes from sequence integrity: B preserves setup, development, and payoff, while A scrambles its units so premises, examples, headings, and conclusions no longer create cumulative pressure.",
+    "Sustained causal sequencing gives one version momentum, while reversed assembly severs setup, development, and payoff in the other."
+   ],
+   "order_instability": {
+    "unstable": true,
+    "comparative_signatures": [
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "prose_control": -1,
+       "rhythm_and_variety": -1,
+       "specificity": -1,
+       "flow_and_momentum": -1,
+       "ending_handoff": -1
+      },
+      "ours_only": [
+       "broken_chapter_flow",
+       "weak_ending_handoff"
+      ],
+      "ref_only": []
+     },
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "prose_control": -1,
+       "rhythm_and_variety": -1,
+       "specificity": -1,
+       "flow_and_momentum": -1,
+       "ending_handoff": -1
+      },
+      "ours_only": [
+       "broken_chapter_flow",
+       "weak_ending_handoff"
+      ],
+      "ref_only": [
+       "repetitive_sag"
+      ]
+     }
+    ],
+    "verdicts": [
+     "ref",
+     "ref"
+    ],
+    "score_winner_flips": [],
+    "relative_critical_failures_changed": true,
+    "max_within_order_candidate_gap": 4
+   },
+   "absolute_drift": {
+    "critical_failures_changed": true,
+    "max_same_text_score_shift": 1
+   }
+  },
+  {
+   "judge_identity": "sol-ultra-r2",
+   "model": "gpt-5.6-sol",
+   "role": "craft",
+   "target": "chapter-02",
+   "complete": true,
+   "dims": {
+    "prose_control": {
+     "ours_mean": 2.5,
+     "ref_mean": 5.5
+    },
+    "rhythm_and_variety": {
+     "ours_mean": 2.0,
+     "ref_mean": 5.0
+    },
+    "specificity": {
+     "ours_mean": 4.5,
+     "ref_mean": 6.0
+    },
+    "flow_and_momentum": {
+     "ours_mean": 1.0,
+     "ref_mean": 5.5
+    },
+    "ending_handoff": {
+     "ours_mean": 1.0,
+     "ref_mean": 4.5
+    }
+   },
+   "product_parity_verdict": "ref",
+   "confidence_mean": 0.99,
+   "critical_ours": [
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ],
+   "critical_ref": [],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "Summaries and conclusions arrive before supporting passages; subsection headings trail their material, pronouns lose antecedents, and the chapter closes by restarting its opening. Individual images retain force, but the reading sequence is unusable.",
+     "ref": "A concrete animal vignette expands into instinct, industrial processing, health consequences, a shopping exercise, and perceptual bias in a legible arc. Repeated questions, capitalized slogans, and an extended health-warning section sometimes blunt the otherwise steady momentum."
+    },
+    {
+     "ours": "B retains vivid individual details but presents conclusions, instructions, examples, and headings in reverse-fragmented order. Pronouns and transitions point toward displaced setup, topic shifts lack bridges, and the final return to the opening premise leaves the chapter unresolved.",
+     "ref": "A moves from a concrete animal observation through broader claims, historical context, health stakes, and a perceptual exercise. Energetic examples create momentum, though repeated questions, capitalized slogans, promotional assertions, and a bullet recap blunt nuance and overextend the middle."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "The largest gap is sequence integrity: one version preserves setup, development, and payoff, while the other places dependent units out of order, severing antecedents and turning transitions into collisions.",
+    "A sustains a cumulative explanatory sequence; B reverses and fragments that sequence, severing referents and placing setup after conclusions, so competent local sentences remain but chapter-scale momentum and closure collapse."
+   ],
+   "order_instability": {
+    "unstable": false,
+    "comparative_signatures": [
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "prose_control": -1,
+       "rhythm_and_variety": -1,
+       "specificity": -1,
+       "flow_and_momentum": -1,
+       "ending_handoff": -1
+      },
+      "ours_only": [
+       "broken_chapter_flow",
+       "weak_ending_handoff"
+      ],
+      "ref_only": []
+     },
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "prose_control": -1,
+       "rhythm_and_variety": -1,
+       "specificity": -1,
+       "flow_and_momentum": -1,
+       "ending_handoff": -1
+      },
+      "ours_only": [
+       "broken_chapter_flow",
+       "weak_ending_handoff"
+      ],
+      "ref_only": []
+     }
+    ],
+    "verdicts": [
+     "ref",
+     "ref"
+    ],
+    "score_winner_flips": [],
+    "relative_critical_failures_changed": false,
+    "max_within_order_candidate_gap": 5
+   },
+   "absolute_drift": {
+    "critical_failures_changed": false,
+    "max_same_text_score_shift": 1
+   }
+  },
+  {
+   "judge_identity": "sol-ultra-r2",
+   "model": "gpt-5.6-sol",
+   "role": "craft",
+   "target": "chapter-03",
+   "complete": true,
+   "dims": {
+    "prose_control": {
+     "ours_mean": 3.0,
+     "ref_mean": 6.0
+    },
+    "rhythm_and_variety": {
+     "ours_mean": 2.0,
+     "ref_mean": 6.0
+    },
+    "specificity": {
+     "ours_mean": 5.0,
+     "ref_mean": 7.0
+    },
+    "flow_and_momentum": {
+     "ours_mean": 1.0,
+     "ref_mean": 6.5
+    },
+    "ending_handoff": {
+     "ours_mean": 1.0,
+     "ref_mean": 5.5
+    }
+   },
+   "product_parity_verdict": "ref",
+   "confidence_mean": 0.99,
+   "critical_ours": [
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ],
+   "critical_ref": [],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "Concrete examples survive, but sentences and headings arrive in reverse-seeming order; pronouns lose antecedents, conclusions precede setups, and the piece ends on an opening title card.",
+     "ref": "The chapter builds from shame and conditioned choice through sensory examples and an addiction cycle to a dieting argument and forward instruction, though its late promises become repetitive and overstated."
+    },
+    {
+     "ours": "B retains vivid details at sentence level, yet presents them in reversed, severed order: conclusions precede premises, headings trail their material, references lose antecedents, and the chapter terminates in an incomplete contents line.",
+     "ref": "A builds its argument through recognizable domestic scenes, sensory provocations, and linked analogies; the late promotional stretch repeats its assurances, but headings and examples maintain a mostly intelligible progression."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "Ordered escalation lets each example reinterpret the last; severing that sequence turns serviceable sentences into contextless assertions and converts the ending into misplaced setup.",
+    "The largest difference is dependency order: one version lets examples develop claims and transitions, while the other reverses those links, turning controlled sentences into an unusable sequence."
+   ],
+   "order_instability": {
+    "unstable": false,
+    "comparative_signatures": [
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "prose_control": -1,
+       "rhythm_and_variety": -1,
+       "specificity": -1,
+       "flow_and_momentum": -1,
+       "ending_handoff": -1
+      },
+      "ours_only": [
+       "broken_chapter_flow",
+       "weak_ending_handoff"
+      ],
+      "ref_only": []
+     },
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "prose_control": -1,
+       "rhythm_and_variety": -1,
+       "specificity": -1,
+       "flow_and_momentum": -1,
+       "ending_handoff": -1
+      },
+      "ours_only": [
+       "broken_chapter_flow",
+       "weak_ending_handoff"
+      ],
+      "ref_only": []
+     }
+    ],
+    "verdicts": [
+     "ref",
+     "ref"
+    ],
+    "score_winner_flips": [],
+    "relative_critical_failures_changed": false,
+    "max_within_order_candidate_gap": 6
+   },
+   "absolute_drift": {
+    "critical_failures_changed": false,
+    "max_same_text_score_shift": 2
+   }
+  },
+  {
+   "judge_identity": "sol-ultra-r2",
+   "model": "gpt-5.6-sol",
+   "role": "efficacy",
+   "target": "block",
+   "complete": true,
+   "dims": {
+    "benefit_dismantling": {
+     "ours_mean": 3.5,
+     "ref_mean": 6.5
+    },
+    "belief_movement": {
+     "ours_mean": 3.0,
+     "ref_mean": 6.5
+    },
+    "escape_conviction": {
+     "ours_mean": 3.0,
+     "ref_mean": 6.5
+    },
+    "cumulative_progression": {
+     "ours_mean": 1.0,
+     "ref_mean": 7.0
+    }
+   },
+   "product_parity_verdict": "ref",
+   "confidence_mean": 0.99,
+   "critical_ours": [
+    "incoherent_block_arc"
+   ],
+   "critical_ref": [],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "Relevant causal ideas appear\u2014self-created withdrawal, weak satiety, and learned reward associations\u2014but sections arrive in a severely disordered sequence, so claims, examples, instructions, and conclusions cannot build persuasively.",
+     "ref": "The block advances from a withdrawal-relief account through manipulated appetite and conditioned preference to the deprivation loop of dieting, repeatedly reframing abstinence as release, though sweeping claims and analogies somewhat weaken credibility."
+    },
+    {
+     "ours": "Conclusions, summaries, examples, and premises repeatedly appear in reverse dependency order. Potentially persuasive explanations remain present, but their scrambled sequence forces reconstruction and prevents the promised freedom from becoming credible.",
+     "ref": "The chapters connect compulsive use to short-lived relief, poor satiety, learned associations, and the rebound caused by restriction, progressively recasting abstinence as restored choice despite substantial overstatement."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "A coherent sequence that causally explains apparent reward, then reinterprets desire and failed restraint through that model, can turn escape from perceived loss into relief; scrambled dependencies prevent those same ingredients from accumulating.",
+    "Belief change accumulates when experience, causal explanation, and conclusion arrive in a dependency-preserving order; reversing that order turns useful evidence into disconnected claims and prevents each chapter from preparing the next."
+   ],
+   "order_instability": {
+    "unstable": false,
+    "comparative_signatures": [
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "benefit_dismantling": -1,
+       "belief_movement": -1,
+       "escape_conviction": -1,
+       "cumulative_progression": -1
+      },
+      "ours_only": [
+       "incoherent_block_arc"
+      ],
+      "ref_only": []
+     },
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "benefit_dismantling": -1,
+       "belief_movement": -1,
+       "escape_conviction": -1,
+       "cumulative_progression": -1
+      },
+      "ours_only": [
+       "incoherent_block_arc"
+      ],
+      "ref_only": []
+     }
+    ],
+    "verdicts": [
+     "ref",
+     "ref"
+    ],
+    "score_winner_flips": [],
+    "relative_critical_failures_changed": false,
+    "max_within_order_candidate_gap": 7
+   },
+   "absolute_drift": {
+    "critical_failures_changed": false,
+    "max_same_text_score_shift": 2
+   }
+  },
+  {
+   "judge_identity": "sol-ultra-r2",
+   "model": "gpt-5.6-sol",
+   "role": "integrity",
+   "target": "block",
+   "complete": true,
+   "dims": {
+    "non_shaming_regard": {
+     "ours_mean": 6.0,
+     "ref_mean": 6.5
+    },
+    "willpower_free_logic": {
+     "ours_mean": 6.5,
+     "ref_mean": 8.0
+    },
+    "epistemic_honesty": {
+     "ours_mean": 1.0,
+     "ref_mean": 1.0
+    },
+    "originality": {
+     "ours_mean": 1.0,
+     "ref_mean": 1.0
+    },
+    "cross_chapter_consistency": {
+     "ours_mean": 1.0,
+     "ref_mean": 6.5
+    }
+   },
+   "product_parity_verdict": "ref",
+   "confidence_mean": 0.965,
+   "critical_ours": [
+    "broken_continuity",
+    "copyright_expression_risk",
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony"
+   ],
+   "critical_ref": [
+    "copyright_expression_risk",
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony"
+   ],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "The chapters rearrange shared material into abrupt fragments, severing premises from conclusions and instructions from their rationale. Although willpower and reader blame are rejected, categorical addiction, metabolic, and treatment claims rely on alarming outcomes and thin testimony.",
+     "ref": "The method consistently promises desire removal rather than endurance and generally treats the reader as trapped rather than blameworthy. However, categorical health and efficacy conclusions rely on broad analogies, institutional statistics, clinic anecdotes, severe outcome imagery, and extensively shared expression."
+    },
+    {
+     "ours": "The block retains the same non-willpower premise and overclaims, but its sentence order is extensively scrambled: summaries precede explanations, references lose antecedents, and instructions appear apart from their rationale, making the method unusable.",
+     "ref": "The block attributes the habit to conditioning rather than character and aims to remove perceived benefit, but it makes sweeping disease and addiction claims, invokes severe outcomes, relies on weakly bounded testimony, and temporarily directs continued consumption."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "Preserving causal and instructional sequence lets readers evaluate a method; fragmentary rearrangement severs dependencies, leaving conclusions and commands detached from their supporting rationale.",
+    "One block preserves a cumulative belief-change sequence, while the other rearranges the same material into disconnected fragments, destroying dependencies among claims, instructions, and promised outcomes."
+   ],
+   "order_instability": {
+    "unstable": true,
+    "comparative_signatures": [
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "non_shaming_regard": 0,
+       "willpower_free_logic": -1,
+       "epistemic_honesty": 0,
+       "originality": 0,
+       "cross_chapter_consistency": -1
+      },
+      "ours_only": [
+       "broken_continuity"
+      ],
+      "ref_only": []
+     },
+     {
+      "verdict": "ref",
+      "score_signs": {
+       "non_shaming_regard": -1,
+       "willpower_free_logic": -1,
+       "epistemic_honesty": 0,
+       "originality": 0,
+       "cross_chapter_consistency": -1
+      },
+      "ours_only": [
+       "broken_continuity"
+      ],
+      "ref_only": []
+     }
+    ],
+    "verdicts": [
+     "ref",
+     "ref"
+    ],
+    "score_winner_flips": [
+     "non_shaming_regard"
+    ],
+    "relative_critical_failures_changed": false,
+    "max_within_order_candidate_gap": 6
+   },
+   "absolute_drift": {
+    "critical_failures_changed": false,
+    "max_same_text_score_shift": 1
+   }
+  }
+ ],
+ "canonical": true,
+ "instrument_configuration": {
+  "protocol_version": "stage-a-v2.2-native-sol-ultra-1",
+  "transport": "native-codex-subscription",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "replica_identities": [
+   "sol-ultra-r1",
+   "sol-ultra-r2"
+  ],
+  "chapter_pairs": [
+   [
+    1,
+    1
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    3,
+    3
+   ]
+  ],
+  "role_prompt_sha256": {
+   "efficacy": "11fdedde0018ebcf7b2d37ddf08a6080d64c0931eec02cffcb630cde2fa28f4c",
+   "craft": "916cf4c6c2e5748f54b91979c0edd1123e1a29ce2791437c301f9e7459394948",
+   "integrity": "195820f1e4140918333449bc3fda374d42f356637619bbd92f028945e2107b0a"
+  },
+  "role_output_schema_sha256": {
+   "efficacy": "3fa8c57fe6e46a5b4622d6458489fd104a8e75e8cf903dfd8e3f8dfa616d1238",
+   "craft": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+   "integrity": "0e6d50465998e681e1edb0c9f1106767d045acce1167c3aa91678a229ceb756f"
+  },
+  "implementation_sha256": {
+   "judge_panel.py": "7fa185e4907a8567fc7eabba1eb08868bd83ae101160cb7c90f4815dd4c2b67f",
+   "judge_protocol.py": "8f7b172b5043dca736f25b930cbdfb543585c74cb0fcd1740bd51c39b58993fd",
+   "native_judge.py": "bdae8a535b58b545a6364ad24831a7ddbc4f487de5c704cc2592b2ef9cc7bf15"
+  }
+ },
+ "validated_controls": null,
+ "prompt_control": {
+  "mode": "degraded-reference",
+  "expectation": "the intact reference beats its locally degraded copy in every observation",
+  "repair_predictions": {
+   "structured_output": {
+    "passed": true,
+    "valid_first_responses": 20,
+    "expected_first_responses": 20
+   },
+   "critical_taxonomy": {
+    "passed": false,
+    "scorable": true,
+    "candidate_relative_label_drift_observations": 2,
+    "core_degraded_labels_retained": true
+   }
+  },
+  "passed": false
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "protocol": "stage-a-v2.2",
+ "role": "efficacy",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "3e3baf6377f8542574632ca007477b3e1d68f3af1a7537dd9d0942c5c7c91b99",
+  "output_schema_sha256": "3fa8c57fe6e46a5b4622d6458489fd104a8e75e8cf903dfd8e3f8dfa616d1238",
+  "thread_id": "019f53a2-7a9d-78b0-8541-dd10d6c749fa",
+  "usage": {
+   "input_tokens": 31400,
+   "cached_input_tokens": 0,
+   "output_tokens": 1446,
+   "reasoning_output_tokens": 1235
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f53a2-7a9d-78b0-8541-dd10d6c749fa\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.99,\\\"critical_failures\\\":{\\\"A\\\":[],\\\"B\\\":[\\\"incoherent_block_arc\\\"]},\\\"generic_mechanism\\\":\\\"Belief change accumulates when conclusions follow progressively developed causal explanations; reversing that sequence makes evidence feel disconnected and promises unearned.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"The chapters connect conditioned reward, short-lived relief, metabolic rebound, and failed restriction, gradually recasting consumption as a self-renewing trap while presenting abstinence as recovered choice.\\\",\\\"B\\\":\\\"The same potentially persuasive ideas appear in reverse and fragmented order, so summaries precede development, conclusions precede premises, and freedom claims arrive without a readable path that earns them.\\\"},\\\"product_parity_verdict\\\":\\\"A\\\",\\\"scores\\\":{\\\"belief_movement\\\":{\\\"A\\\":6,\\\"B\\\":3},\\\"benefit_dismantling\\\":{\\\"A\\\":7,\\\"B\\\":4},\\\"cumulative_progression\\\":{\\\"A\\\":6,\\\"B\\\":1},\\\"escape_conviction\\\":{\\\"A\\\":7,\\\"B\\\":3}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":31400,\"cached_input_tokens\":0,\"output_tokens\":1446,\"reasoning_output_tokens\":1235}}\n"
+ },
+ "raw": "{\"confidence\":0.99,\"critical_failures\":{\"A\":[],\"B\":[\"incoherent_block_arc\"]},\"generic_mechanism\":\"Belief change accumulates when conclusions follow progressively developed causal explanations; reversing that sequence makes evidence feel disconnected and promises unearned.\",\"paraphrased_evidence\":{\"A\":\"The chapters connect conditioned reward, short-lived relief, metabolic rebound, and failed restriction, gradually recasting consumption as a self-renewing trap while presenting abstinence as recovered choice.\",\"B\":\"The same potentially persuasive ideas appear in reverse and fragmented order, so summaries precede development, conclusions precede premises, and freedom claims arrive without a readable path that earns them.\"},\"product_parity_verdict\":\"A\",\"scores\":{\"belief_movement\":{\"A\":6,\"B\":3},\"benefit_dismantling\":{\"A\":7,\"B\":4},\"cumulative_progression\":{\"A\":6,\"B\":1},\"escape_conviction\":{\"A\":7,\"B\":3}}}",
+ "parsed": {
+  "confidence": 0.99,
+  "critical_failures": {
+   "A": [],
+   "B": [
+    "incoherent_block_arc"
+   ]
+  },
+  "generic_mechanism": "Belief change accumulates when conclusions follow progressively developed causal explanations; reversing that sequence makes evidence feel disconnected and promises unearned.",
+  "paraphrased_evidence": {
+   "A": "The chapters connect conditioned reward, short-lived relief, metabolic rebound, and failed restriction, gradually recasting consumption as a self-renewing trap while presenting abstinence as recovered choice.",
+   "B": "The same potentially persuasive ideas appear in reverse and fragmented order, so summaries precede development, conclusions precede premises, and freedom claims arrive without a readable path that earns them."
+  },
+  "product_parity_verdict": "A",
+  "scores": {
+   "belief_movement": {
+    "A": 6,
+    "B": 3
+   },
+   "benefit_dismantling": {
+    "A": 7,
+    "B": 4
+   },
+   "cumulative_progression": {
+    "A": 6,
+    "B": 1
+   },
+   "escape_conviction": {
+    "A": 7,
+    "B": 3
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "benefit_dismantling": {
+    "ours": 4,
+    "ref": 7
+   },
+   "belief_movement": {
+    "ours": 3,
+    "ref": 6
+   },
+   "escape_conviction": {
+    "ours": 3,
+    "ref": 7
+   },
+   "cumulative_progression": {
+    "ours": 1,
+    "ref": 6
+   }
+  },
+  "critical_ours": [
+   "incoherent_block_arc"
+  ],
+  "critical_ref": [],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "The same potentially persuasive ideas appear in reverse and fragmented order, so summaries precede development, conclusions precede premises, and freedom claims arrive without a readable path that earns them.",
+   "ref": "The chapters connect conditioned reward, short-lived relief, metabolic rebound, and failed restriction, gradually recasting consumption as a self-renewing trap while presenting abstinence as recovered choice."
+  },
+  "generic_mechanism": "Belief change accumulates when conclusions follow progressively developed causal explanations; reversing that sequence makes evidence feel disconnected and promises unearned."
+ }
+}

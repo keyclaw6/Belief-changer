@@ -1,0 +1,155 @@
+{
+ "protocol": "stage-a-v2.2",
+ "role": "integrity",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "448e6e978d406faac9e7f7babee7a924d6e0f65373d27ebd0e7244d3f447b12e",
+  "output_schema_sha256": "0e6d50465998e681e1edb0c9f1106767d045acce1167c3aa91678a229ceb756f",
+  "thread_id": "019f53ac-be4d-7752-b685-fff3ddf181c8",
+  "usage": {
+   "input_tokens": 31683,
+   "cached_input_tokens": 0,
+   "output_tokens": 4958,
+   "reasoning_output_tokens": 4660
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f53ac-be4d-7752-b685-fff3ddf181c8\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.94,\\\"critical_failures\\\":{\\\"A\\\":[\\\"broken_continuity\\\",\\\"copyright_expression_risk\\\",\\\"fear_as_motivator\\\",\\\"medical_overreach\\\",\\\"unsupported_authority_or_testimony\\\"],\\\"B\\\":[\\\"copyright_expression_risk\\\",\\\"fear_as_motivator\\\",\\\"medical_overreach\\\",\\\"unsupported_authority_or_testimony\\\"]},\\\"generic_mechanism\\\":\\\"Preserving causal and instructional sequence lets readers evaluate a method; fragmentary rearrangement severs dependencies, leaving conclusions and commands detached from their supporting rationale.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"The chapters rearrange shared material into abrupt fragments, severing premises from conclusions and instructions from their rationale. Although willpower and reader blame are rejected, categorical addiction, metabolic, and treatment claims rely on alarming outcomes and thin testimony.\\\",\\\"B\\\":\\\"The method consistently promises desire removal rather than endurance and generally treats the reader as trapped rather than blameworthy. However, categorical health and efficacy conclusions rely on broad analogies, institutional statistics, clinic anecdotes, severe outcome imagery, and extensively shared expression.\\\"},\\\"product_parity_verdict\\\":\\\"B\\\",\\\"scores\\\":{\\\"cross_chapter_consistency\\\":{\\\"A\\\":1,\\\"B\\\":7},\\\"epistemic_honesty\\\":{\\\"A\\\":1,\\\"B\\\":1},\\\"non_shaming_regard\\\":{\\\"A\\\":6,\\\"B\\\":6},\\\"originality\\\":{\\\"A\\\":1,\\\"B\\\":1},\\\"willpower_free_logic\\\":{\\\"A\\\":7,\\\"B\\\":8}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":31683,\"cached_input_tokens\":0,\"output_tokens\":4958,\"reasoning_output_tokens\":4660}}\n"
+ },
+ "raw": "{\"confidence\":0.94,\"critical_failures\":{\"A\":[\"broken_continuity\",\"copyright_expression_risk\",\"fear_as_motivator\",\"medical_overreach\",\"unsupported_authority_or_testimony\"],\"B\":[\"copyright_expression_risk\",\"fear_as_motivator\",\"medical_overreach\",\"unsupported_authority_or_testimony\"]},\"generic_mechanism\":\"Preserving causal and instructional sequence lets readers evaluate a method; fragmentary rearrangement severs dependencies, leaving conclusions and commands detached from their supporting rationale.\",\"paraphrased_evidence\":{\"A\":\"The chapters rearrange shared material into abrupt fragments, severing premises from conclusions and instructions from their rationale. Although willpower and reader blame are rejected, categorical addiction, metabolic, and treatment claims rely on alarming outcomes and thin testimony.\",\"B\":\"The method consistently promises desire removal rather than endurance and generally treats the reader as trapped rather than blameworthy. However, categorical health and efficacy conclusions rely on broad analogies, institutional statistics, clinic anecdotes, severe outcome imagery, and extensively shared expression.\"},\"product_parity_verdict\":\"B\",\"scores\":{\"cross_chapter_consistency\":{\"A\":1,\"B\":7},\"epistemic_honesty\":{\"A\":1,\"B\":1},\"non_shaming_regard\":{\"A\":6,\"B\":6},\"originality\":{\"A\":1,\"B\":1},\"willpower_free_logic\":{\"A\":7,\"B\":8}}}",
+ "parsed": {
+  "confidence": 0.94,
+  "critical_failures": {
+   "A": [
+    "broken_continuity",
+    "copyright_expression_risk",
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony"
+   ],
+   "B": [
+    "copyright_expression_risk",
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony"
+   ]
+  },
+  "generic_mechanism": "Preserving causal and instructional sequence lets readers evaluate a method; fragmentary rearrangement severs dependencies, leaving conclusions and commands detached from their supporting rationale.",
+  "paraphrased_evidence": {
+   "A": "The chapters rearrange shared material into abrupt fragments, severing premises from conclusions and instructions from their rationale. Although willpower and reader blame are rejected, categorical addiction, metabolic, and treatment claims rely on alarming outcomes and thin testimony.",
+   "B": "The method consistently promises desire removal rather than endurance and generally treats the reader as trapped rather than blameworthy. However, categorical health and efficacy conclusions rely on broad analogies, institutional statistics, clinic anecdotes, severe outcome imagery, and extensively shared expression."
+  },
+  "product_parity_verdict": "B",
+  "scores": {
+   "cross_chapter_consistency": {
+    "A": 1,
+    "B": 7
+   },
+   "epistemic_honesty": {
+    "A": 1,
+    "B": 1
+   },
+   "non_shaming_regard": {
+    "A": 6,
+    "B": 6
+   },
+   "originality": {
+    "A": 1,
+    "B": 1
+   },
+   "willpower_free_logic": {
+    "A": 7,
+    "B": 8
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "non_shaming_regard": {
+    "ours": 6,
+    "ref": 6
+   },
+   "willpower_free_logic": {
+    "ours": 7,
+    "ref": 8
+   },
+   "epistemic_honesty": {
+    "ours": 1,
+    "ref": 1
+   },
+   "originality": {
+    "ours": 1,
+    "ref": 1
+   },
+   "cross_chapter_consistency": {
+    "ours": 1,
+    "ref": 7
+   }
+  },
+  "critical_ours": [
+   "broken_continuity",
+   "copyright_expression_risk",
+   "fear_as_motivator",
+   "medical_overreach",
+   "unsupported_authority_or_testimony"
+  ],
+  "critical_ref": [
+   "copyright_expression_risk",
+   "fear_as_motivator",
+   "medical_overreach",
+   "unsupported_authority_or_testimony"
+  ],
+  "product_parity_verdict": "ref",
+  "confidence": 0.94,
+  "paraphrased_evidence": {
+   "ours": "The chapters rearrange shared material into abrupt fragments, severing premises from conclusions and instructions from their rationale. Although willpower and reader blame are rejected, categorical addiction, metabolic, and treatment claims rely on alarming outcomes and thin testimony.",
+   "ref": "The method consistently promises desire removal rather than endurance and generally treats the reader as trapped rather than blameworthy. However, categorical health and efficacy conclusions rely on broad analogies, institutional statistics, clinic anecdotes, severe outcome imagery, and extensively shared expression."
+  },
+  "generic_mechanism": "Preserving causal and instructional sequence lets readers evaluate a method; fragmentary rearrangement severs dependencies, leaving conclusions and commands detached from their supporting rationale."
+ }
+}

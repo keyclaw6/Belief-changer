@@ -844,6 +844,64 @@
     },
     "next_artifact": "Fresh v2.2 identical and degraded-reference controls in new directories; product panel only if both pass."
   },
+  "judge_instrument_v2_2_control_result": {
+    "date": "2026-07-12",
+    "status": "FAIL — identical passed; degraded-reference failed comparative stability and Repair B",
+    "route": {
+      "transport": "native-codex-subscription",
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "ultra",
+      "provider_api_environment": "explicitly unset at both control launches; native runtime allowlist inherited no provider API credentials",
+      "calls": "40 fresh ephemeral contexts, 40 unique thread IDs, zero retries, zero repairs, zero process failures"
+    },
+    "identical": {
+      "artifact": "calibration/runs/run-012/judgments/controls-v2.2/identical/judge-summary.json",
+      "sha256": "f9077e5fb8b26f3125c484bb64c5426f011ecc4f1d68a48f6601dece2c269348",
+      "verdict": "PASS",
+      "matrix": "20/20 first responses strict-valid; 20 unique threads; 10/10 complete collapsed observations; 20 raw ties; zero comparative instability; zero candidate-relative critical-label drift",
+      "repair_a_structured_output": "PASS — 20/20 valid first responses",
+      "repair_b_operational_critical_taxonomy": "PASS — zero relative-label drift; degraded core-label retention is not applicable to identical text",
+      "diagnostic_absolute_drift": "one critical-label observation and nine score observations changed across fresh contexts; maximum same-text score shift one; none changed a comparative signature",
+      "usage": {
+        "input_tokens": 636956,
+        "cached_input_tokens": 51712,
+        "output_tokens": 34447,
+        "reasoning_output_tokens": 29683
+      }
+    },
+    "degraded_reference": {
+      "artifact": "calibration/runs/run-012/judgments/controls-v2.2/degraded-reference/judge-summary.json",
+      "sha256": "ca77838c3907a356f13cbcb7304a2dd5852dc2b7bde5233e555c7d2c0dc02d9f",
+      "verdict": "FAIL",
+      "matrix": "20/20 first responses strict-valid; 20 unique threads; 10/10 complete collapsed observations; all 20 raw verdicts preferred the intact reference",
+      "repair_a_structured_output": "PASS — 20/20 valid first responses; combined controls 40/40",
+      "repair_b_operational_critical_taxonomy": "FAIL — two observations changed candidate-relative critical labels across repetitions",
+      "semantic_gate": "FAIL — four of ten observations had unstable comparative signatures; six remained stable",
+      "instability": [
+        "sol-ultra-r1 craft chapter-03 toggled degraded-only weak_ending_handoff",
+        "sol-ultra-r2 craft chapter-01 toggled intact-only repetitive_sag",
+        "sol-ultra-r1 integrity block toggled the non_shaming_regard score-winner sign between degraded-loss and tie",
+        "sol-ultra-r2 integrity block toggled the non_shaming_regard score-winner sign between tie and degraded-loss"
+      ],
+      "core_label_gate": "PASS in isolation — incoherent_block_arc for both efficacy repetitions, broken_chapter_flow for every craft target/repetition, and broken_continuity for both integrity repetitions were degraded-only; no intact candidate received its role-aligned core label",
+      "usage": {
+        "input_tokens": 605563,
+        "cached_input_tokens": 181504,
+        "output_tokens": 41487,
+        "reasoning_output_tokens": 36046
+      }
+    },
+    "independent_repair_outcomes": {
+      "repair_a": "SUPPORTED — exactly 40/40 first responses were strict-valid with no retry, extraction, tolerant parse, or repair",
+      "repair_b": "REFUTED — operational definitions retained every required core label but did not eliminate candidate-relative label drift",
+      "gross_damage_direction": "All 20 raw judgments preferred the intact reference, but unanimous verdict direction cannot waive comparative-signature instability."
+    },
+    "failure_autopsy": "The operational taxonomy stabilized every required gross-damage anchor and most secondary labels, but two secondary craft labels remained context-sensitive across fresh repetitions. Separately, both integrity observations moved non_shaming_regard between a tie and an intact-reference advantage, creating score-sign instability even though verdict direction and all other integrity score signs were stable. The frozen comparative signature correctly treats either change as instability; this result cannot be reinterpreted after observation.",
+    "stop_rule": "The degraded control failed, so no product call ran. Do not retry, repair, reinterpret, or change the prompt, schema, aggregation, thresholds, materials, prose, or factory assets from this result. A fresh direction decision must precede any prospectively preregistered measurement baseline.",
+    "product_panel": "NOT RUN — v2.2 degraded-reference control failed",
+    "product_verdict": "UNJUDGED",
+    "causal_boundary": "H-049 remains REFUTED; this instrument result neither changes that verdict nor creates H-050."
+  },
   "held_constant": [
     "accepted research corpus, framing, canonical plan, evidence assignments, chapter jobs, and source permissions",
     "complete style guide, chapter-writer prompt, chapter-reviewer prompt, objective thresholds, and H-049 causal rules; the judge reset is separately recorded as a new non-comparable measurement baseline",

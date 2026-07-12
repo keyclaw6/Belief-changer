@@ -1,0 +1,129 @@
+{
+ "protocol": "stage-a-v2.2",
+ "role": "efficacy",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "a2c2dab321cd531ed3ad50e758670791113b4f67ac05b858f01c1b4c262340d1",
+  "output_schema_sha256": "3fa8c57fe6e46a5b4622d6458489fd104a8e75e8cf903dfd8e3f8dfa616d1238",
+  "thread_id": "019f53a2-ed98-7562-83f3-804b8f58a8e4",
+  "usage": {
+   "input_tokens": 31398,
+   "cached_input_tokens": 0,
+   "output_tokens": 1180,
+   "reasoning_output_tokens": 942
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f53a2-ed98-7562-83f3-804b8f58a8e4\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.99,\\\"critical_failures\\\":{\\\"A\\\":[\\\"incoherent_block_arc\\\"],\\\"B\\\":[]},\\\"generic_mechanism\\\":\\\"A coherent sequence that causally explains apparent reward, then reinterprets desire and failed restraint through that model, can turn escape from perceived loss into relief; scrambled dependencies prevent those same ingredients from accumulating.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"Relevant causal ideas appear\u2014self-created withdrawal, weak satiety, and learned reward associations\u2014but sections arrive in a severely disordered sequence, so claims, examples, instructions, and conclusions cannot build persuasively.\\\",\\\"B\\\":\\\"The block advances from a withdrawal-relief account through manipulated appetite and conditioned preference to the deprivation loop of dieting, repeatedly reframing abstinence as release, though sweeping claims and analogies somewhat weaken credibility.\\\"},\\\"product_parity_verdict\\\":\\\"B\\\",\\\"scores\\\":{\\\"belief_movement\\\":{\\\"A\\\":3,\\\"B\\\":7},\\\"benefit_dismantling\\\":{\\\"A\\\":4,\\\"B\\\":7},\\\"cumulative_progression\\\":{\\\"A\\\":1,\\\"B\\\":8},\\\"escape_conviction\\\":{\\\"A\\\":3,\\\"B\\\":7}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":31398,\"cached_input_tokens\":0,\"output_tokens\":1180,\"reasoning_output_tokens\":942}}\n"
+ },
+ "raw": "{\"confidence\":0.99,\"critical_failures\":{\"A\":[\"incoherent_block_arc\"],\"B\":[]},\"generic_mechanism\":\"A coherent sequence that causally explains apparent reward, then reinterprets desire and failed restraint through that model, can turn escape from perceived loss into relief; scrambled dependencies prevent those same ingredients from accumulating.\",\"paraphrased_evidence\":{\"A\":\"Relevant causal ideas appear\u2014self-created withdrawal, weak satiety, and learned reward associations\u2014but sections arrive in a severely disordered sequence, so claims, examples, instructions, and conclusions cannot build persuasively.\",\"B\":\"The block advances from a withdrawal-relief account through manipulated appetite and conditioned preference to the deprivation loop of dieting, repeatedly reframing abstinence as release, though sweeping claims and analogies somewhat weaken credibility.\"},\"product_parity_verdict\":\"B\",\"scores\":{\"belief_movement\":{\"A\":3,\"B\":7},\"benefit_dismantling\":{\"A\":4,\"B\":7},\"cumulative_progression\":{\"A\":1,\"B\":8},\"escape_conviction\":{\"A\":3,\"B\":7}}}",
+ "parsed": {
+  "confidence": 0.99,
+  "critical_failures": {
+   "A": [
+    "incoherent_block_arc"
+   ],
+   "B": []
+  },
+  "generic_mechanism": "A coherent sequence that causally explains apparent reward, then reinterprets desire and failed restraint through that model, can turn escape from perceived loss into relief; scrambled dependencies prevent those same ingredients from accumulating.",
+  "paraphrased_evidence": {
+   "A": "Relevant causal ideas appear\u2014self-created withdrawal, weak satiety, and learned reward associations\u2014but sections arrive in a severely disordered sequence, so claims, examples, instructions, and conclusions cannot build persuasively.",
+   "B": "The block advances from a withdrawal-relief account through manipulated appetite and conditioned preference to the deprivation loop of dieting, repeatedly reframing abstinence as release, though sweeping claims and analogies somewhat weaken credibility."
+  },
+  "product_parity_verdict": "B",
+  "scores": {
+   "belief_movement": {
+    "A": 3,
+    "B": 7
+   },
+   "benefit_dismantling": {
+    "A": 4,
+    "B": 7
+   },
+   "cumulative_progression": {
+    "A": 1,
+    "B": 8
+   },
+   "escape_conviction": {
+    "A": 3,
+    "B": 7
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "benefit_dismantling": {
+    "ours": 4,
+    "ref": 7
+   },
+   "belief_movement": {
+    "ours": 3,
+    "ref": 7
+   },
+   "escape_conviction": {
+    "ours": 3,
+    "ref": 7
+   },
+   "cumulative_progression": {
+    "ours": 1,
+    "ref": 8
+   }
+  },
+  "critical_ours": [
+   "incoherent_block_arc"
+  ],
+  "critical_ref": [],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "Relevant causal ideas appear\u2014self-created withdrawal, weak satiety, and learned reward associations\u2014but sections arrive in a severely disordered sequence, so claims, examples, instructions, and conclusions cannot build persuasively.",
+   "ref": "The block advances from a withdrawal-relief account through manipulated appetite and conditioned preference to the deprivation loop of dieting, repeatedly reframing abstinence as release, though sweeping claims and analogies somewhat weaken credibility."
+  },
+  "generic_mechanism": "A coherent sequence that causally explains apparent reward, then reinterprets desire and failed restraint through that model, can turn escape from perceived loss into relief; scrambled dependencies prevent those same ingredients from accumulating."
+ }
+}

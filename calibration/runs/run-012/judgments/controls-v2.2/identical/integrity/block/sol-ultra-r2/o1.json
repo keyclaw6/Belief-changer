@@ -1,0 +1,153 @@
+{
+ "protocol": "stage-a-v2.2",
+ "role": "integrity",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "81254347ffd3db712b204c3e407e279362c815d45f100874a0e59b737901b7cf",
+  "output_schema_sha256": "0e6d50465998e681e1edb0c9f1106767d045acce1167c3aa91678a229ceb756f",
+  "thread_id": "019f53a0-1bad-7b91-967d-02a660a53bf9",
+  "usage": {
+   "input_tokens": 40471,
+   "cached_input_tokens": 0,
+   "output_tokens": 4411,
+   "reasoning_output_tokens": 4133
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f53a0-1bad-7b91-967d-02a660a53bf9\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":1,\\\"critical_failures\\\":{\\\"A\\\":[\\\"fear_as_motivator\\\",\\\"medical_overreach\\\",\\\"unsupported_authority_or_testimony\\\",\\\"copyright_expression_risk\\\"],\\\"B\\\":[\\\"fear_as_motivator\\\",\\\"medical_overreach\\\",\\\"unsupported_authority_or_testimony\\\",\\\"copyright_expression_risk\\\"]},\\\"generic_mechanism\\\":\\\"No substantive difference exists because the inputs are identical; any apparent divergence would arise from evaluator noise rather than from the blocks.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"The block rejects reader blame and presents cognition, not endurance, as the change mechanism, but uses catastrophic health imagery, sweeping addiction and nutrition claims, broad elimination advice, unsupported efficacy testimony, and exact-sequence compliance promises.\\\",\\\"B\\\":\\\"The block rejects reader blame and presents cognition, not endurance, as the change mechanism, but uses catastrophic health imagery, sweeping addiction and nutrition claims, broad elimination advice, unsupported efficacy testimony, and exact-sequence compliance promises.\\\"},\\\"product_parity_verdict\\\":\\\"tie\\\",\\\"scores\\\":{\\\"cross_chapter_consistency\\\":{\\\"A\\\":7,\\\"B\\\":7},\\\"epistemic_honesty\\\":{\\\"A\\\":1,\\\"B\\\":1},\\\"non_shaming_regard\\\":{\\\"A\\\":6,\\\"B\\\":6},\\\"originality\\\":{\\\"A\\\":1,\\\"B\\\":1},\\\"willpower_free_logic\\\":{\\\"A\\\":7,\\\"B\\\":7}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":40471,\"cached_input_tokens\":0,\"output_tokens\":4411,\"reasoning_output_tokens\":4133}}\n"
+ },
+ "raw": "{\"confidence\":1,\"critical_failures\":{\"A\":[\"fear_as_motivator\",\"medical_overreach\",\"unsupported_authority_or_testimony\",\"copyright_expression_risk\"],\"B\":[\"fear_as_motivator\",\"medical_overreach\",\"unsupported_authority_or_testimony\",\"copyright_expression_risk\"]},\"generic_mechanism\":\"No substantive difference exists because the inputs are identical; any apparent divergence would arise from evaluator noise rather than from the blocks.\",\"paraphrased_evidence\":{\"A\":\"The block rejects reader blame and presents cognition, not endurance, as the change mechanism, but uses catastrophic health imagery, sweeping addiction and nutrition claims, broad elimination advice, unsupported efficacy testimony, and exact-sequence compliance promises.\",\"B\":\"The block rejects reader blame and presents cognition, not endurance, as the change mechanism, but uses catastrophic health imagery, sweeping addiction and nutrition claims, broad elimination advice, unsupported efficacy testimony, and exact-sequence compliance promises.\"},\"product_parity_verdict\":\"tie\",\"scores\":{\"cross_chapter_consistency\":{\"A\":7,\"B\":7},\"epistemic_honesty\":{\"A\":1,\"B\":1},\"non_shaming_regard\":{\"A\":6,\"B\":6},\"originality\":{\"A\":1,\"B\":1},\"willpower_free_logic\":{\"A\":7,\"B\":7}}}",
+ "parsed": {
+  "confidence": 1,
+  "critical_failures": {
+   "A": [
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony",
+    "copyright_expression_risk"
+   ],
+   "B": [
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony",
+    "copyright_expression_risk"
+   ]
+  },
+  "generic_mechanism": "No substantive difference exists because the inputs are identical; any apparent divergence would arise from evaluator noise rather than from the blocks.",
+  "paraphrased_evidence": {
+   "A": "The block rejects reader blame and presents cognition, not endurance, as the change mechanism, but uses catastrophic health imagery, sweeping addiction and nutrition claims, broad elimination advice, unsupported efficacy testimony, and exact-sequence compliance promises.",
+   "B": "The block rejects reader blame and presents cognition, not endurance, as the change mechanism, but uses catastrophic health imagery, sweeping addiction and nutrition claims, broad elimination advice, unsupported efficacy testimony, and exact-sequence compliance promises."
+  },
+  "product_parity_verdict": "tie",
+  "scores": {
+   "cross_chapter_consistency": {
+    "A": 7,
+    "B": 7
+   },
+   "epistemic_honesty": {
+    "A": 1,
+    "B": 1
+   },
+   "non_shaming_regard": {
+    "A": 6,
+    "B": 6
+   },
+   "originality": {
+    "A": 1,
+    "B": 1
+   },
+   "willpower_free_logic": {
+    "A": 7,
+    "B": 7
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "non_shaming_regard": {
+    "ours": 6,
+    "ref": 6
+   },
+   "willpower_free_logic": {
+    "ours": 7,
+    "ref": 7
+   },
+   "epistemic_honesty": {
+    "ours": 1,
+    "ref": 1
+   },
+   "originality": {
+    "ours": 1,
+    "ref": 1
+   },
+   "cross_chapter_consistency": {
+    "ours": 7,
+    "ref": 7
+   }
+  },
+  "critical_ours": [
+   "fear_as_motivator",
+   "medical_overreach",
+   "unsupported_authority_or_testimony",
+   "copyright_expression_risk"
+  ],
+  "critical_ref": [
+   "fear_as_motivator",
+   "medical_overreach",
+   "unsupported_authority_or_testimony",
+   "copyright_expression_risk"
+  ],
+  "product_parity_verdict": "tie",
+  "confidence": 1,
+  "paraphrased_evidence": {
+   "ours": "The block rejects reader blame and presents cognition, not endurance, as the change mechanism, but uses catastrophic health imagery, sweeping addiction and nutrition claims, broad elimination advice, unsupported efficacy testimony, and exact-sequence compliance promises.",
+   "ref": "The block rejects reader blame and presents cognition, not endurance, as the change mechanism, but uses catastrophic health imagery, sweeping addiction and nutrition claims, broad elimination advice, unsupported efficacy testimony, and exact-sequence compliance promises."
+  },
+  "generic_mechanism": "No substantive difference exists because the inputs are identical; any apparent divergence would arise from evaluator noise rather than from the blocks."
+ }
+}

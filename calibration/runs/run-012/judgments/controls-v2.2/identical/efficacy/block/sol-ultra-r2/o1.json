@@ -1,0 +1,125 @@
+{
+ "protocol": "stage-a-v2.2",
+ "role": "efficacy",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "68882dc12cacd86f22ff315cbecb42d9e5436185d7478ea6ba6c5721bb9659ae",
+  "output_schema_sha256": "3fa8c57fe6e46a5b4622d6458489fd104a8e75e8cf903dfd8e3f8dfa616d1238",
+  "thread_id": "019f5397-b1fd-7b30-bcbf-959953bbad74",
+  "usage": {
+   "input_tokens": 40184,
+   "cached_input_tokens": 12032,
+   "output_tokens": 2214,
+   "reasoning_output_tokens": 1989
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f5397-b1fd-7b30-bcbf-959953bbad74\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":1,\\\"critical_failures\\\":{\\\"A\\\":[],\\\"B\\\":[]},\\\"generic_mechanism\\\":\\\"A causal reframe gains force when later chapters apply it to multiple perceived benefits; because both blocks use the same sequence and evidence, no efficacy difference emerges.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"The block recasts reward as temporary relief and conditioned expectation, then links repeated consumption to renewed discomfort and explains why restriction intensifies attachment. Familiar examples create some movement, though sweeping claims and strained analogies reduce credibility.\\\",\\\"B\\\":\\\"The block recasts reward as temporary relief and conditioned expectation, then links repeated consumption to renewed discomfort and explains why restriction intensifies attachment. Familiar examples create some movement, though sweeping claims and strained analogies reduce credibility.\\\"},\\\"product_parity_verdict\\\":\\\"tie\\\",\\\"scores\\\":{\\\"belief_movement\\\":{\\\"A\\\":6,\\\"B\\\":6},\\\"benefit_dismantling\\\":{\\\"A\\\":6,\\\"B\\\":6},\\\"cumulative_progression\\\":{\\\"A\\\":6,\\\"B\\\":6},\\\"escape_conviction\\\":{\\\"A\\\":7,\\\"B\\\":7}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":40184,\"cached_input_tokens\":12032,\"output_tokens\":2214,\"reasoning_output_tokens\":1989}}\n"
+ },
+ "raw": "{\"confidence\":1,\"critical_failures\":{\"A\":[],\"B\":[]},\"generic_mechanism\":\"A causal reframe gains force when later chapters apply it to multiple perceived benefits; because both blocks use the same sequence and evidence, no efficacy difference emerges.\",\"paraphrased_evidence\":{\"A\":\"The block recasts reward as temporary relief and conditioned expectation, then links repeated consumption to renewed discomfort and explains why restriction intensifies attachment. Familiar examples create some movement, though sweeping claims and strained analogies reduce credibility.\",\"B\":\"The block recasts reward as temporary relief and conditioned expectation, then links repeated consumption to renewed discomfort and explains why restriction intensifies attachment. Familiar examples create some movement, though sweeping claims and strained analogies reduce credibility.\"},\"product_parity_verdict\":\"tie\",\"scores\":{\"belief_movement\":{\"A\":6,\"B\":6},\"benefit_dismantling\":{\"A\":6,\"B\":6},\"cumulative_progression\":{\"A\":6,\"B\":6},\"escape_conviction\":{\"A\":7,\"B\":7}}}",
+ "parsed": {
+  "confidence": 1,
+  "critical_failures": {
+   "A": [],
+   "B": []
+  },
+  "generic_mechanism": "A causal reframe gains force when later chapters apply it to multiple perceived benefits; because both blocks use the same sequence and evidence, no efficacy difference emerges.",
+  "paraphrased_evidence": {
+   "A": "The block recasts reward as temporary relief and conditioned expectation, then links repeated consumption to renewed discomfort and explains why restriction intensifies attachment. Familiar examples create some movement, though sweeping claims and strained analogies reduce credibility.",
+   "B": "The block recasts reward as temporary relief and conditioned expectation, then links repeated consumption to renewed discomfort and explains why restriction intensifies attachment. Familiar examples create some movement, though sweeping claims and strained analogies reduce credibility."
+  },
+  "product_parity_verdict": "tie",
+  "scores": {
+   "belief_movement": {
+    "A": 6,
+    "B": 6
+   },
+   "benefit_dismantling": {
+    "A": 6,
+    "B": 6
+   },
+   "cumulative_progression": {
+    "A": 6,
+    "B": 6
+   },
+   "escape_conviction": {
+    "A": 7,
+    "B": 7
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "benefit_dismantling": {
+    "ours": 6,
+    "ref": 6
+   },
+   "belief_movement": {
+    "ours": 6,
+    "ref": 6
+   },
+   "escape_conviction": {
+    "ours": 7,
+    "ref": 7
+   },
+   "cumulative_progression": {
+    "ours": 6,
+    "ref": 6
+   }
+  },
+  "critical_ours": [],
+  "critical_ref": [],
+  "product_parity_verdict": "tie",
+  "confidence": 1,
+  "paraphrased_evidence": {
+   "ours": "The block recasts reward as temporary relief and conditioned expectation, then links repeated consumption to renewed discomfort and explains why restriction intensifies attachment. Familiar examples create some movement, though sweeping claims and strained analogies reduce credibility.",
+   "ref": "The block recasts reward as temporary relief and conditioned expectation, then links repeated consumption to renewed discomfort and explains why restriction intensifies attachment. Familiar examples create some movement, though sweeping claims and strained analogies reduce credibility."
+  },
+  "generic_mechanism": "A causal reframe gains force when later chapters apply it to multiple perceived benefits; because both blocks use the same sequence and evidence, no efficacy difference emerges."
+ }
+}

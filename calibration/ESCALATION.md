@@ -6,9 +6,27 @@
 
 **Stage:** A
 
-**Status:** OPEN — repeated evidence escalation remains; v2.2 instrument frozen awaiting fresh controls and product quality still unjudged
+**Status:** OPEN — repeated evidence escalation remains; v2.2 degraded control failed and product quality is still unjudged
 
-## Current stop — run-012 v2.1 degraded-reference control
+## Current stop — run-012 v2.2 degraded-reference control
+
+**Control date:** 2026-07-12
+
+The frozen `ab13de1` v2.2 configuration ran both controls from scratch through 40 fresh native `gpt-5.6-sol` contexts at `ultra`. Provider API credentials were explicitly unset and excluded by the runtime allowlist. All 40 contexts were unique, returned complete event streams, and produced a strict-valid first response without retry, repair, extraction, tolerant parsing, or process failure. Repair A is therefore **SUPPORTED** exactly as preregistered.
+
+The identical control **PASSED**: 20 raw ties, 10 complete collapsed observations, zero comparative instability, and zero candidate-relative critical-label drift. Diagnostic absolute drift remained—one shared-label observation and nine score observations, maximum one point—but changed no comparative signature. Summary SHA-256: `f9077e5f...`.
+
+The degraded-reference control **FAILED** despite strong directional sensitivity. All 20 raw judgments preferred the intact reference. Every required core degradation label was present as degraded-only in both repetitions for every applicable target: `incoherent_block_arc` for efficacy, `broken_chapter_flow` for all three craft chapters, and `broken_continuity` for integrity. The core-label sub-gate therefore passed.
+
+Four of ten collapsed degraded observations nevertheless changed the frozen comparative signature. Two were Repair B failures: `sol-ultra-r1|craft|chapter-03` toggled degraded-only `weak_ending_handoff`, while `sol-ultra-r2|craft|chapter-01` toggled intact-only `repetitive_sag`. The operational taxonomy did not achieve its zero candidate-relative-label-drift prediction, so Repair B is **REFUTED**. Both integrity observations also moved `non_shaming_regard` between a tie and an intact-reference advantage across fresh reversed-order contexts. Verdict direction and every other integrity score sign remained stable, but v2.1 aggregation includes every dimension's winner sign, so those observations also fail. Summary SHA-256: `ca77838c...`.
+
+This is a true failure under the prospectively frozen rule and cannot be waived because verdict direction was unanimous. The failure autopsy is that operational definitions stabilized every gross-damage anchor and most secondary labels but not two marginal secondary craft classifications; independently, a tied integrity score crossed the equality boundary in both identities. That exposes continued false-negative risk in exact fresh-context comparative signatures, while the complete rule remains authoritative for this baseline.
+
+The product panel was **NOT RUN**. H-049 remains causally **REFUTED**, run-012 product quality remains **UNJUDGED**, and no H-050 exists. No prompt, schema, aggregation rule, threshold, material, prose, or factory asset changed; no control was retried or repaired. V2.2 remains immutable evidence and invalid for product use. A fresh root-owned direction decision or read-only measurement audit must precede any prospectively preregistered baseline.
+
+There is no funding or access blocker. OpenRouter was absent from all 40 v2.2 control contexts and remains restricted to permitted Opus writing and DeepSeek research.
+
+## Previous stop — run-012 v2.1 degraded-reference control
 
 **Control date:** 2026-07-12
 

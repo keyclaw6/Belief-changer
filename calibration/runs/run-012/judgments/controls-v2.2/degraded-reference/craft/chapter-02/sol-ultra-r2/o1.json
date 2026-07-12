@@ -1,0 +1,135 @@
+{
+ "protocol": "stage-a-v2.2",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-02",
+ "ours_chapters": [
+  2
+ ],
+ "ref_chapters": [
+  2
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "1b04d0118cfa3540ff269e4adfba97d4dc7d12245e94e77e356f16fe0c562e5b",
+  "output_schema_sha256": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+  "thread_id": "019f53a8-0993-7351-bb14-fdacdc0ac34a",
+  "usage": {
+   "input_tokens": 18658,
+   "cached_input_tokens": 0,
+   "output_tokens": 1151,
+   "reasoning_output_tokens": 880
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f53a8-0993-7351-bb14-fdacdc0ac34a\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.99,\\\"critical_failures\\\":{\\\"A\\\":[],\\\"B\\\":[\\\"broken_chapter_flow\\\",\\\"weak_ending_handoff\\\"]},\\\"generic_mechanism\\\":\\\"A sustains a cumulative explanatory sequence; B reverses and fragments that sequence, severing referents and placing setup after conclusions, so competent local sentences remain but chapter-scale momentum and closure collapse.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"A moves from a concrete animal observation through broader claims, historical context, health stakes, and a perceptual exercise. Energetic examples create momentum, though repeated questions, capitalized slogans, promotional assertions, and a bullet recap blunt nuance and overextend the middle.\\\",\\\"B\\\":\\\"B retains vivid individual details but presents conclusions, instructions, examples, and headings in reverse-fragmented order. Pronouns and transitions point toward displaced setup, topic shifts lack bridges, and the final return to the opening premise leaves the chapter unresolved.\\\"},\\\"product_parity_verdict\\\":\\\"A\\\",\\\"scores\\\":{\\\"ending_handoff\\\":{\\\"A\\\":4,\\\"B\\\":1},\\\"flow_and_momentum\\\":{\\\"A\\\":5,\\\"B\\\":1},\\\"prose_control\\\":{\\\"A\\\":5,\\\"B\\\":2},\\\"rhythm_and_variety\\\":{\\\"A\\\":5,\\\"B\\\":2},\\\"specificity\\\":{\\\"A\\\":6,\\\"B\\\":4}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":18658,\"cached_input_tokens\":0,\"output_tokens\":1151,\"reasoning_output_tokens\":880}}\n"
+ },
+ "raw": "{\"confidence\":0.99,\"critical_failures\":{\"A\":[],\"B\":[\"broken_chapter_flow\",\"weak_ending_handoff\"]},\"generic_mechanism\":\"A sustains a cumulative explanatory sequence; B reverses and fragments that sequence, severing referents and placing setup after conclusions, so competent local sentences remain but chapter-scale momentum and closure collapse.\",\"paraphrased_evidence\":{\"A\":\"A moves from a concrete animal observation through broader claims, historical context, health stakes, and a perceptual exercise. Energetic examples create momentum, though repeated questions, capitalized slogans, promotional assertions, and a bullet recap blunt nuance and overextend the middle.\",\"B\":\"B retains vivid individual details but presents conclusions, instructions, examples, and headings in reverse-fragmented order. Pronouns and transitions point toward displaced setup, topic shifts lack bridges, and the final return to the opening premise leaves the chapter unresolved.\"},\"product_parity_verdict\":\"A\",\"scores\":{\"ending_handoff\":{\"A\":4,\"B\":1},\"flow_and_momentum\":{\"A\":5,\"B\":1},\"prose_control\":{\"A\":5,\"B\":2},\"rhythm_and_variety\":{\"A\":5,\"B\":2},\"specificity\":{\"A\":6,\"B\":4}}}",
+ "parsed": {
+  "confidence": 0.99,
+  "critical_failures": {
+   "A": [],
+   "B": [
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ]
+  },
+  "generic_mechanism": "A sustains a cumulative explanatory sequence; B reverses and fragments that sequence, severing referents and placing setup after conclusions, so competent local sentences remain but chapter-scale momentum and closure collapse.",
+  "paraphrased_evidence": {
+   "A": "A moves from a concrete animal observation through broader claims, historical context, health stakes, and a perceptual exercise. Energetic examples create momentum, though repeated questions, capitalized slogans, promotional assertions, and a bullet recap blunt nuance and overextend the middle.",
+   "B": "B retains vivid individual details but presents conclusions, instructions, examples, and headings in reverse-fragmented order. Pronouns and transitions point toward displaced setup, topic shifts lack bridges, and the final return to the opening premise leaves the chapter unresolved."
+  },
+  "product_parity_verdict": "A",
+  "scores": {
+   "ending_handoff": {
+    "A": 4,
+    "B": 1
+   },
+   "flow_and_momentum": {
+    "A": 5,
+    "B": 1
+   },
+   "prose_control": {
+    "A": 5,
+    "B": 2
+   },
+   "rhythm_and_variety": {
+    "A": 5,
+    "B": 2
+   },
+   "specificity": {
+    "A": 6,
+    "B": 4
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 2,
+    "ref": 5
+   },
+   "rhythm_and_variety": {
+    "ours": 2,
+    "ref": 5
+   },
+   "specificity": {
+    "ours": 4,
+    "ref": 6
+   },
+   "flow_and_momentum": {
+    "ours": 1,
+    "ref": 5
+   },
+   "ending_handoff": {
+    "ours": 1,
+    "ref": 4
+   }
+  },
+  "critical_ours": [
+   "broken_chapter_flow",
+   "weak_ending_handoff"
+  ],
+  "critical_ref": [],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "B retains vivid individual details but presents conclusions, instructions, examples, and headings in reverse-fragmented order. Pronouns and transitions point toward displaced setup, topic shifts lack bridges, and the final return to the opening premise leaves the chapter unresolved.",
+   "ref": "A moves from a concrete animal observation through broader claims, historical context, health stakes, and a perceptual exercise. Energetic examples create momentum, though repeated questions, capitalized slogans, promotional assertions, and a bullet recap blunt nuance and overextend the middle."
+  },
+  "generic_mechanism": "A sustains a cumulative explanatory sequence; B reverses and fragments that sequence, severing referents and placing setup after conclusions, so competent local sentences remain but chapter-scale momentum and closure collapse."
+ }
+}

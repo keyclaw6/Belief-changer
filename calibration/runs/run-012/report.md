@@ -1,6 +1,6 @@
 # Run report — run-012
 
-**Stage:** A **Scope:** source-grounded commissions plus frozen Chapters 1-3 production **Causal verdict:** REFUTED — material invention in 3/3 grounded first drafts **Product verdict:** UNJUDGED — v2.1 degraded-reference control failed closed; v2.2 is frozen and its controls have not run
+**Stage:** A **Scope:** source-grounded commissions plus frozen Chapters 1-3 production **Causal verdict:** REFUTED — material invention in 3/3 grounded first drafts **Product verdict:** UNJUDGED — v2.2 identical passed but degraded-reference failed closed before product judging
 
 ## What will run
 
@@ -136,6 +136,20 @@ V2.2 is a non-comparable measurement baseline, not H-050. Structured-output pass
 Commit `ab13de1` implements exactly the two preregistered repairs before any v2.2 model call. Every native cell receives a deterministic closed role schema through `--output-schema`; the existing strict parser and role validator remain authoritative, and the runner has no extraction fallback, repair path, retry, or harness output limit. Successful and failed calls retain the native event stream. Each control summary scores first-response validity separately from candidate-relative label stability and degraded core-label retention; product validation requires both repair outcomes and both semantic controls to pass under the exact same configuration.
 
 The manifest freezes all three prompt, output-schema, and implementation hashes. Focused tests pass 38/38 and the repository gate passes 79/79; shellcheck remains unavailable and was skipped by the canonical gate. No judge inference, prose edit, factory amendment, threshold change, material change, or prior-artifact rewrite occurred. The next artifacts are fresh v2.2 identical and degraded-reference control directories; product judging remains forbidden until both pass.
+
+## Stage-A v2.2 controls — structured output supported, degraded control failed closed
+
+Both controls ran from scratch under the frozen `ab13de1` configuration. Each raw cell used one fresh ephemeral native Codex context pinned to `gpt-5.6-sol` at `ultra`, with no harness output limit. Provider API credentials were explicitly unset at launch and excluded by the native environment allowlist. Across both controls there were exactly 40 first responses, 40 unique thread IDs, 40 complete event streams, zero process failures, zero retries, zero repairs, and zero extraction or tolerant-parse paths.
+
+The identical control **PASSED**. It produced 20/20 strict-valid responses, 20 raw ties, 10/10 complete collapsed observations, zero comparative-signature instability, and zero candidate-relative critical-label drift. Repair A and the identical portion of Repair B both passed. Absolute fresh-context drift remained diagnostic—one observation changed shared critical labels and nine changed absolute scores, with a maximum one-point same-text shift—but no verdict, score-winner sign, or candidate-relative label changed. Its summary is `judgments/controls-v2.2/identical/judge-summary.json`, SHA-256 `f9077e5f...`.
+
+The degraded-reference control also produced 20/20 strict-valid first responses. All 20 raw verdicts preferred the intact reference, and every preregistered core label was retained as degraded-only in both repetitions for every applicable target: `incoherent_block_arc` for efficacy, `broken_chapter_flow` for each craft chapter, and `broken_continuity` for integrity. These facts support Repair A across the combined 40/40 responses and pass the core-label sub-gate, but they do not satisfy the complete frozen control.
+
+The degraded control **FAILED** because four of ten collapsed observations changed comparative signatures. Two were candidate-relative taxonomy drift: `sol-ultra-r1|craft|chapter-03` toggled degraded-only `weak_ending_handoff`, and `sol-ultra-r2|craft|chapter-01` toggled intact-only `repetitive_sag`. Repair B is therefore **REFUTED** by its independent zero-drift falsifier. The other two failures were both integrity-block observations: `non_shaming_regard` moved between a tie and an intact-reference advantage across the reversed-order fresh contexts. Verdict direction remained intact-reference in both repetitions and all other integrity score signs remained stable, but the unchanged v2.1 comparative signature includes every score-winner sign, so both observations are unstable. The summary records six stable observations, four unstable, two candidate-relative label-drift observations, and core-label retention true. Its SHA-256 is `ca77838c...`.
+
+The failure autopsy is narrow. Operational definitions made the gross-damage anchors fully reproducible and stabilized most secondary labels, while two non-core craft classifications remained context-sensitive. Independently, an integrity dimension moved across the equality boundary in both identities. Neither unanimous raw preference nor successful core retention can waive a frozen exact-signature rule after observation. This is a genuine instrument failure with a possible false-negative risk, not evidence about the run-012 prose.
+
+The runner exited 1 as designed. The product panel was **NOT RUN**. H-049 remains causally **REFUTED**, product quality remains **UNJUDGED**, and no H-050 exists. No prompt, schema, implementation, aggregation rule, threshold, material, prose, or factory asset was changed or retried. A fresh direction decision is required before any prospective measurement baseline; the v2.2 controls remain immutable evidence.
 
 ## Judge-panel preflight — historical misrouting, now resolved
 

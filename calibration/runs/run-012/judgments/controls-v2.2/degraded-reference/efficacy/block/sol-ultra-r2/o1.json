@@ -1,0 +1,129 @@
+{
+ "protocol": "stage-a-v2.2",
+ "role": "efficacy",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "3e3baf6377f8542574632ca007477b3e1d68f3af1a7537dd9d0942c5c7c91b99",
+  "output_schema_sha256": "3fa8c57fe6e46a5b4622d6458489fd104a8e75e8cf903dfd8e3f8dfa616d1238",
+  "thread_id": "019f53a3-641d-7fc2-85c6-3e8ea30a541c",
+  "usage": {
+   "input_tokens": 31398,
+   "cached_input_tokens": 0,
+   "output_tokens": 1371,
+   "reasoning_output_tokens": 1141
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f53a3-641d-7fc2-85c6-3e8ea30a541c\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.99,\\\"critical_failures\\\":{\\\"A\\\":[],\\\"B\\\":[\\\"incoherent_block_arc\\\"]},\\\"generic_mechanism\\\":\\\"Belief change accumulates when experience, causal explanation, and conclusion arrive in a dependency-preserving order; reversing that order turns useful evidence into disconnected claims and prevents each chapter from preparing the next.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"The chapters connect compulsive use to short-lived relief, poor satiety, learned associations, and the rebound caused by restriction, progressively recasting abstinence as restored choice despite substantial overstatement.\\\",\\\"B\\\":\\\"Conclusions, summaries, examples, and premises repeatedly appear in reverse dependency order. Potentially persuasive explanations remain present, but their scrambled sequence forces reconstruction and prevents the promised freedom from becoming credible.\\\"},\\\"product_parity_verdict\\\":\\\"A\\\",\\\"scores\\\":{\\\"belief_movement\\\":{\\\"A\\\":6,\\\"B\\\":3},\\\"benefit_dismantling\\\":{\\\"A\\\":6,\\\"B\\\":3},\\\"cumulative_progression\\\":{\\\"A\\\":6,\\\"B\\\":1},\\\"escape_conviction\\\":{\\\"A\\\":6,\\\"B\\\":3}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":31398,\"cached_input_tokens\":0,\"output_tokens\":1371,\"reasoning_output_tokens\":1141}}\n"
+ },
+ "raw": "{\"confidence\":0.99,\"critical_failures\":{\"A\":[],\"B\":[\"incoherent_block_arc\"]},\"generic_mechanism\":\"Belief change accumulates when experience, causal explanation, and conclusion arrive in a dependency-preserving order; reversing that order turns useful evidence into disconnected claims and prevents each chapter from preparing the next.\",\"paraphrased_evidence\":{\"A\":\"The chapters connect compulsive use to short-lived relief, poor satiety, learned associations, and the rebound caused by restriction, progressively recasting abstinence as restored choice despite substantial overstatement.\",\"B\":\"Conclusions, summaries, examples, and premises repeatedly appear in reverse dependency order. Potentially persuasive explanations remain present, but their scrambled sequence forces reconstruction and prevents the promised freedom from becoming credible.\"},\"product_parity_verdict\":\"A\",\"scores\":{\"belief_movement\":{\"A\":6,\"B\":3},\"benefit_dismantling\":{\"A\":6,\"B\":3},\"cumulative_progression\":{\"A\":6,\"B\":1},\"escape_conviction\":{\"A\":6,\"B\":3}}}",
+ "parsed": {
+  "confidence": 0.99,
+  "critical_failures": {
+   "A": [],
+   "B": [
+    "incoherent_block_arc"
+   ]
+  },
+  "generic_mechanism": "Belief change accumulates when experience, causal explanation, and conclusion arrive in a dependency-preserving order; reversing that order turns useful evidence into disconnected claims and prevents each chapter from preparing the next.",
+  "paraphrased_evidence": {
+   "A": "The chapters connect compulsive use to short-lived relief, poor satiety, learned associations, and the rebound caused by restriction, progressively recasting abstinence as restored choice despite substantial overstatement.",
+   "B": "Conclusions, summaries, examples, and premises repeatedly appear in reverse dependency order. Potentially persuasive explanations remain present, but their scrambled sequence forces reconstruction and prevents the promised freedom from becoming credible."
+  },
+  "product_parity_verdict": "A",
+  "scores": {
+   "belief_movement": {
+    "A": 6,
+    "B": 3
+   },
+   "benefit_dismantling": {
+    "A": 6,
+    "B": 3
+   },
+   "cumulative_progression": {
+    "A": 6,
+    "B": 1
+   },
+   "escape_conviction": {
+    "A": 6,
+    "B": 3
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "benefit_dismantling": {
+    "ours": 3,
+    "ref": 6
+   },
+   "belief_movement": {
+    "ours": 3,
+    "ref": 6
+   },
+   "escape_conviction": {
+    "ours": 3,
+    "ref": 6
+   },
+   "cumulative_progression": {
+    "ours": 1,
+    "ref": 6
+   }
+  },
+  "critical_ours": [
+   "incoherent_block_arc"
+  ],
+  "critical_ref": [],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "Conclusions, summaries, examples, and premises repeatedly appear in reverse dependency order. Potentially persuasive explanations remain present, but their scrambled sequence forces reconstruction and prevents the promised freedom from becoming credible.",
+   "ref": "The chapters connect compulsive use to short-lived relief, poor satiety, learned associations, and the rebound caused by restriction, progressively recasting abstinence as restored choice despite substantial overstatement."
+  },
+  "generic_mechanism": "Belief change accumulates when experience, causal explanation, and conclusion arrive in a dependency-preserving order; reversing that order turns useful evidence into disconnected claims and prevents each chapter from preparing the next."
+ }
+}

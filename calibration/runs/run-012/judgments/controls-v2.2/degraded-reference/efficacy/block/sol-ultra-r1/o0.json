@@ -1,0 +1,129 @@
+{
+ "protocol": "stage-a-v2.2",
+ "role": "efficacy",
+ "scope": "block",
+ "target": "block",
+ "ours_chapters": [
+  1,
+  2,
+  3
+ ],
+ "ref_chapters": [
+  1,
+  2,
+  3
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "a2c2dab321cd531ed3ad50e758670791113b4f67ac05b858f01c1b4c262340d1",
+  "output_schema_sha256": "3fa8c57fe6e46a5b4622d6458489fd104a8e75e8cf903dfd8e3f8dfa616d1238",
+  "thread_id": "019f53a1-c88a-70e2-a288-699ff2066545",
+  "usage": {
+   "input_tokens": 31402,
+   "cached_input_tokens": 0,
+   "output_tokens": 2157,
+   "reasoning_output_tokens": 1914
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f53a1-c88a-70e2-a288-699ff2066545\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.99,\\\"critical_failures\\\":{\\\"A\\\":[\\\"incoherent_block_arc\\\"],\\\"B\\\":[]},\\\"generic_mechanism\\\":\\\"Persuasion strengthens when each chapter turns a claim into a causal model, tests it against familiar experience, and hands a resolved premise to the next chapter; disordered components cannot accumulate even when individually relevant.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"The block contains fragments of a withdrawal-relief model, learned reward associations, and restriction backfire, but sentences, headings, examples, and conclusions arrive in abrupt or reversed order, preventing those ideas from forming a usable intervention.\\\",\\\"B\\\":\\\"The chapters successively recast apparent pleasure as relief of a self-created urge, explain how natural preferences are exploited, then connect conditioning and failed restriction to repeated consumption, making freedom and restored choice increasingly plausible.\\\"},\\\"product_parity_verdict\\\":\\\"B\\\",\\\"scores\\\":{\\\"belief_movement\\\":{\\\"A\\\":3,\\\"B\\\":8},\\\"benefit_dismantling\\\":{\\\"A\\\":3,\\\"B\\\":8},\\\"cumulative_progression\\\":{\\\"A\\\":1,\\\"B\\\":8},\\\"escape_conviction\\\":{\\\"A\\\":3,\\\"B\\\":7}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":31402,\"cached_input_tokens\":0,\"output_tokens\":2157,\"reasoning_output_tokens\":1914}}\n"
+ },
+ "raw": "{\"confidence\":0.99,\"critical_failures\":{\"A\":[\"incoherent_block_arc\"],\"B\":[]},\"generic_mechanism\":\"Persuasion strengthens when each chapter turns a claim into a causal model, tests it against familiar experience, and hands a resolved premise to the next chapter; disordered components cannot accumulate even when individually relevant.\",\"paraphrased_evidence\":{\"A\":\"The block contains fragments of a withdrawal-relief model, learned reward associations, and restriction backfire, but sentences, headings, examples, and conclusions arrive in abrupt or reversed order, preventing those ideas from forming a usable intervention.\",\"B\":\"The chapters successively recast apparent pleasure as relief of a self-created urge, explain how natural preferences are exploited, then connect conditioning and failed restriction to repeated consumption, making freedom and restored choice increasingly plausible.\"},\"product_parity_verdict\":\"B\",\"scores\":{\"belief_movement\":{\"A\":3,\"B\":8},\"benefit_dismantling\":{\"A\":3,\"B\":8},\"cumulative_progression\":{\"A\":1,\"B\":8},\"escape_conviction\":{\"A\":3,\"B\":7}}}",
+ "parsed": {
+  "confidence": 0.99,
+  "critical_failures": {
+   "A": [
+    "incoherent_block_arc"
+   ],
+   "B": []
+  },
+  "generic_mechanism": "Persuasion strengthens when each chapter turns a claim into a causal model, tests it against familiar experience, and hands a resolved premise to the next chapter; disordered components cannot accumulate even when individually relevant.",
+  "paraphrased_evidence": {
+   "A": "The block contains fragments of a withdrawal-relief model, learned reward associations, and restriction backfire, but sentences, headings, examples, and conclusions arrive in abrupt or reversed order, preventing those ideas from forming a usable intervention.",
+   "B": "The chapters successively recast apparent pleasure as relief of a self-created urge, explain how natural preferences are exploited, then connect conditioning and failed restriction to repeated consumption, making freedom and restored choice increasingly plausible."
+  },
+  "product_parity_verdict": "B",
+  "scores": {
+   "belief_movement": {
+    "A": 3,
+    "B": 8
+   },
+   "benefit_dismantling": {
+    "A": 3,
+    "B": 8
+   },
+   "cumulative_progression": {
+    "A": 1,
+    "B": 8
+   },
+   "escape_conviction": {
+    "A": 3,
+    "B": 7
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "benefit_dismantling": {
+    "ours": 3,
+    "ref": 8
+   },
+   "belief_movement": {
+    "ours": 3,
+    "ref": 8
+   },
+   "escape_conviction": {
+    "ours": 3,
+    "ref": 7
+   },
+   "cumulative_progression": {
+    "ours": 1,
+    "ref": 8
+   }
+  },
+  "critical_ours": [
+   "incoherent_block_arc"
+  ],
+  "critical_ref": [],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "The block contains fragments of a withdrawal-relief model, learned reward associations, and restriction backfire, but sentences, headings, examples, and conclusions arrive in abrupt or reversed order, preventing those ideas from forming a usable intervention.",
+   "ref": "The chapters successively recast apparent pleasure as relief of a self-created urge, explain how natural preferences are exploited, then connect conditioning and failed restriction to repeated consumption, making freedom and restored choice increasingly plausible."
+  },
+  "generic_mechanism": "Persuasion strengthens when each chapter turns a claim into a causal model, tests it against familiar experience, and hands a resolved premise to the next chapter; disordered components cannot accumulate even when individually relevant."
+ }
+}

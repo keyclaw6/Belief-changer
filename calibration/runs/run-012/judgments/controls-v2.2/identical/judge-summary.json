@@ -1,0 +1,1062 @@
+{
+ "protocol": "stage-a-v2.2",
+ "raw_judgments": 20,
+ "collapsed_observations": 10,
+ "invalid_judgments": 0,
+ "panel_complete": true,
+ "judge_replications": {
+  "design": "independent fresh-context same-model replications",
+  "identities": [
+   "sol-ultra-r1",
+   "sol-ultra-r2"
+  ],
+  "model_by_identity": {
+   "sol-ultra-r1": [
+    "gpt-5.6-sol"
+   ],
+   "sol-ultra-r2": [
+    "gpt-5.6-sol"
+   ]
+  },
+  "cross_family_evidence": false,
+  "interpretation": "independent replications, not cross-family evidence"
+ },
+ "role_judge_identity_matrix": {
+  "efficacy": [
+   "sol-ultra-r1",
+   "sol-ultra-r2"
+  ],
+  "craft": [
+   "sol-ultra-r1",
+   "sol-ultra-r2"
+  ],
+  "integrity": [
+   "sol-ultra-r1",
+   "sol-ultra-r2"
+  ]
+ },
+ "role_target_matrix": {
+  "efficacy": {
+   "sol-ultra-r1": [
+    "block"
+   ],
+   "sol-ultra-r2": [
+    "block"
+   ]
+  },
+  "craft": {
+   "sol-ultra-r1": [
+    "chapter-01",
+    "chapter-02",
+    "chapter-03"
+   ],
+   "sol-ultra-r2": [
+    "chapter-01",
+    "chapter-02",
+    "chapter-03"
+   ]
+  },
+  "integrity": {
+   "sol-ultra-r1": [
+    "block"
+   ],
+   "sol-ultra-r2": [
+    "block"
+   ]
+  }
+ },
+ "role_judge_identity_matrix_complete": true,
+ "order_instability": {
+  "observations": 0,
+  "rate": 0.0,
+  "ids": []
+ },
+ "absolute_drift": {
+  "critical_label_observations": 1,
+  "score_observations": 9,
+  "max_same_text_score_shift": 1
+ },
+ "product_parity": {
+  "unit": "collapsed judge-identity-role-target observation",
+  "overall_preference_rate_incl_half_ties": 0.5,
+  "equal_role_macro_preference_rate": 0.5,
+  "stable_observations": 10,
+  "unstable_observations": 0,
+  "roles": {
+   "efficacy": {
+    "scope": "block",
+    "observations": 2,
+    "preference_rate_incl_half_ties": 0.5,
+    "order_unstable": 0
+   },
+   "craft": {
+    "scope": "chapter",
+    "observations": 6,
+    "preference_rate_incl_half_ties": 0.5,
+    "order_unstable": 0
+   },
+   "integrity": {
+    "scope": "block",
+    "observations": 2,
+    "preference_rate_incl_half_ties": 0.5,
+    "order_unstable": 0
+   }
+  },
+  "threshold_verdict": "not applied by instrument"
+ },
+ "causal_movement": {
+  "status": "not measured",
+  "reason": "Requires a preregistered candidate-to-candidate experiment."
+ },
+ "observations": [
+  {
+   "judge_identity": "sol-ultra-r1",
+   "model": "gpt-5.6-sol",
+   "role": "craft",
+   "target": "chapter-01",
+   "complete": true,
+   "dims": {
+    "prose_control": {
+     "ours_mean": 4.0,
+     "ref_mean": 4.0
+    },
+    "rhythm_and_variety": {
+     "ours_mean": 3.5,
+     "ref_mean": 3.5
+    },
+    "specificity": {
+     "ours_mean": 5.5,
+     "ref_mean": 5.5
+    },
+    "flow_and_momentum": {
+     "ours_mean": 3.0,
+     "ref_mean": 3.0
+    },
+    "ending_handoff": {
+     "ours_mean": 4.0,
+     "ref_mean": 4.0
+    }
+   },
+   "product_parity_verdict": "tie",
+   "confidence_mean": 1.0,
+   "critical_ours": [
+    "repetitive_sag"
+   ],
+   "critical_ref": [
+    "repetitive_sag"
+   ],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "Concrete examples, statistics, and a personal recovery story give the argument some texture, but repeated addiction comparisons, freedom promises, and instructions make the latter half stall before a serviceable summary.",
+     "ref": "Concrete examples, statistics, and a personal recovery story give the argument some texture, but repeated addiction comparisons, freedom promises, and instructions make the latter half stall before a serviceable summary."
+    },
+    {
+     "ours": "Concrete food, clinic, and lock examples add texture, but repeated assertions about addiction, abstinence, willpower, and compliance create a prolonged stall before a functional yet redundant summary.",
+     "ref": "Concrete food, clinic, and lock examples add texture, but repeated assertions about addiction, abstinence, willpower, and compliance create a prolonged stall before a functional yet redundant summary."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "No craft difference is observable because the chapters are textually identical; both lose momentum by repeatedly reasserting the same promise, analogy, and instruction after each has already landed.",
+    "Identical language and structure necessarily produce equal craft effects, leaving no differentiating mechanism."
+   ],
+   "order_instability": {
+    "unstable": false,
+    "comparative_signatures": [
+     {
+      "verdict": "tie",
+      "score_signs": {
+       "prose_control": 0,
+       "rhythm_and_variety": 0,
+       "specificity": 0,
+       "flow_and_momentum": 0,
+       "ending_handoff": 0
+      },
+      "ours_only": [],
+      "ref_only": []
+     },
+     {
+      "verdict": "tie",
+      "score_signs": {
+       "prose_control": 0,
+       "rhythm_and_variety": 0,
+       "specificity": 0,
+       "flow_and_momentum": 0,
+       "ending_handoff": 0
+      },
+      "ours_only": [],
+      "ref_only": []
+     }
+    ],
+    "verdicts": [
+     "tie",
+     "tie"
+    ],
+    "score_winner_flips": [],
+    "relative_critical_failures_changed": false,
+    "max_within_order_candidate_gap": 0
+   },
+   "absolute_drift": {
+    "critical_failures_changed": false,
+    "max_same_text_score_shift": 1
+   }
+  },
+  {
+   "judge_identity": "sol-ultra-r1",
+   "model": "gpt-5.6-sol",
+   "role": "craft",
+   "target": "chapter-02",
+   "complete": true,
+   "dims": {
+    "prose_control": {
+     "ours_mean": 5.5,
+     "ref_mean": 5.5
+    },
+    "rhythm_and_variety": {
+     "ours_mean": 4.5,
+     "ref_mean": 4.5
+    },
+    "specificity": {
+     "ours_mean": 6.0,
+     "ref_mean": 6.0
+    },
+    "flow_and_momentum": {
+     "ours_mean": 4.5,
+     "ref_mean": 4.5
+    },
+    "ending_handoff": {
+     "ours_mean": 4.0,
+     "ref_mean": 4.0
+    }
+   },
+   "product_parity_verdict": "tie",
+   "confidence_mean": 0.995,
+   "critical_ours": [],
+   "critical_ref": [],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "Concrete animal, office, supermarket, and visual-illusion examples enliven a lucid argument, but repeated rhetorical questions, capitalized declarations, and extended reiteration make the middle increasingly insistent and the summary ending conventional.",
+     "ref": "Concrete animal, office, supermarket, and visual-illusion examples enliven a lucid argument, but repeated rhetorical questions, capitalized declarations, and extended reiteration make the middle increasingly insistent and the summary ending conventional."
+    },
+    {
+     "ours": "Concrete animal behavior, food comparisons, historical context, and a visual illusion give the argument texture, but repeated questions, capitalized declarations, promotional claims, and a bullet recap increasingly blunt its movement.",
+     "ref": "Concrete animal behavior, food comparisons, historical context, and a visual illusion give the argument texture, but repeated questions, capitalized declarations, promotional claims, and a bullet recap increasingly blunt its movement."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "No differentiating mechanism exists: identical sequencing, examples, emphasis patterns, and closing apparatus produce the same reading experience.",
+    "No craft difference exists: identical wording preserves the same strengths, repetitions, transitions, emphatic patterns, and recap ending."
+   ],
+   "order_instability": {
+    "unstable": false,
+    "comparative_signatures": [
+     {
+      "verdict": "tie",
+      "score_signs": {
+       "prose_control": 0,
+       "rhythm_and_variety": 0,
+       "specificity": 0,
+       "flow_and_momentum": 0,
+       "ending_handoff": 0
+      },
+      "ours_only": [],
+      "ref_only": []
+     },
+     {
+      "verdict": "tie",
+      "score_signs": {
+       "prose_control": 0,
+       "rhythm_and_variety": 0,
+       "specificity": 0,
+       "flow_and_momentum": 0,
+       "ending_handoff": 0
+      },
+      "ours_only": [],
+      "ref_only": []
+     }
+    ],
+    "verdicts": [
+     "tie",
+     "tie"
+    ],
+    "score_winner_flips": [],
+    "relative_critical_failures_changed": false,
+    "max_within_order_candidate_gap": 0
+   },
+   "absolute_drift": {
+    "critical_failures_changed": false,
+    "max_same_text_score_shift": 1
+   }
+  },
+  {
+   "judge_identity": "sol-ultra-r1",
+   "model": "gpt-5.6-sol",
+   "role": "craft",
+   "target": "chapter-03",
+   "complete": true,
+   "dims": {
+    "prose_control": {
+     "ours_mean": 5.0,
+     "ref_mean": 5.0
+    },
+    "rhythm_and_variety": {
+     "ours_mean": 5.0,
+     "ref_mean": 5.0
+    },
+    "specificity": {
+     "ours_mean": 6.0,
+     "ref_mean": 6.0
+    },
+    "flow_and_momentum": {
+     "ours_mean": 5.0,
+     "ref_mean": 5.0
+    },
+    "ending_handoff": {
+     "ours_mean": 4.5,
+     "ref_mean": 4.5
+    }
+   },
+   "product_parity_verdict": "tie",
+   "confidence_mean": 1.0,
+   "critical_ours": [],
+   "critical_ref": [],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "Concrete domestic and celebratory examples enliven a forceful argument, but repeated assurances, categorical claims, and recap-heavy passages make it overextended; the final instruction lands, then loses energy in a bullet summary.",
+     "ref": "Concrete domestic and celebratory examples enliven a forceful argument, but repeated assurances, categorical claims, and recap-heavy passages make it overextended; the final instruction lands, then loses energy in a bullet summary."
+    },
+    {
+     "ours": "Concrete domestic examples and accessible analogies enliven a clear argument, but recurring assurances, categorical claims, rhetorical questions, and a long late recap reduce momentum before a functional summary ending.",
+     "ref": "Concrete domestic examples and accessible analogies enliven a clear argument, but recurring assurances, categorical claims, rhetorical questions, and a long late recap reduce momentum before a functional summary ending."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "No craft difference is observable because both samples have identical structure, cadence, examples, repetition, and endings.",
+    "Textual identity eliminates any craft difference: structure, illustration, repetition, pacing, and closure operate through precisely the same mechanisms."
+   ],
+   "order_instability": {
+    "unstable": false,
+    "comparative_signatures": [
+     {
+      "verdict": "tie",
+      "score_signs": {
+       "prose_control": 0,
+       "rhythm_and_variety": 0,
+       "specificity": 0,
+       "flow_and_momentum": 0,
+       "ending_handoff": 0
+      },
+      "ours_only": [],
+      "ref_only": []
+     },
+     {
+      "verdict": "tie",
+      "score_signs": {
+       "prose_control": 0,
+       "rhythm_and_variety": 0,
+       "specificity": 0,
+       "flow_and_momentum": 0,
+       "ending_handoff": 0
+      },
+      "ours_only": [],
+      "ref_only": []
+     }
+    ],
+    "verdicts": [
+     "tie",
+     "tie"
+    ],
+    "score_winner_flips": [],
+    "relative_critical_failures_changed": false,
+    "max_within_order_candidate_gap": 0
+   },
+   "absolute_drift": {
+    "critical_failures_changed": false,
+    "max_same_text_score_shift": 1
+   }
+  },
+  {
+   "judge_identity": "sol-ultra-r1",
+   "model": "gpt-5.6-sol",
+   "role": "efficacy",
+   "target": "block",
+   "complete": true,
+   "dims": {
+    "benefit_dismantling": {
+     "ours_mean": 6.0,
+     "ref_mean": 6.0
+    },
+    "belief_movement": {
+     "ours_mean": 5.5,
+     "ref_mean": 5.5
+    },
+    "escape_conviction": {
+     "ours_mean": 6.0,
+     "ref_mean": 6.0
+    },
+    "cumulative_progression": {
+     "ours_mean": 6.0,
+     "ref_mean": 6.0
+    }
+   },
+   "product_parity_verdict": "tie",
+   "confidence_mean": 0.995,
+   "critical_ours": [],
+   "critical_ref": [],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "The block recasts reward as temporary relief within a self-renewing cycle, then connects appetite to processing and conditioning; this may reduce perceived benefit, though sweeping analogies and deferred proof weaken credibility.",
+     "ref": "The block recasts reward as temporary relief within a self-renewing cycle, then connects appetite to processing and conditioning; this may reduce perceived benefit, though sweeping analogies and deferred proof weaken credibility."
+    },
+    {
+     "ours": "The block reframes consumption as relief of a cycle it creates, then links attraction to conditioning and shows how restriction magnifies perceived value; repeated promises and sweeping analogies limit how fully the case is earned.",
+     "ref": "The block reframes consumption as relief of a cycle it creates, then links attraction to conditioning and shows how restriction magnifies perceived value; repeated promises and sweeping analogies limit how fully the case is earned."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "When two interventions present the same causal reframing, examples, and chapter sequence, their cumulative belief-change effect should be equivalent.",
+    "No mechanism separates the blocks: both use the same progression from self-perpetuating relief, through conditioned attraction, to freedom from deprivation-based control."
+   ],
+   "order_instability": {
+    "unstable": false,
+    "comparative_signatures": [
+     {
+      "verdict": "tie",
+      "score_signs": {
+       "benefit_dismantling": 0,
+       "belief_movement": 0,
+       "escape_conviction": 0,
+       "cumulative_progression": 0
+      },
+      "ours_only": [],
+      "ref_only": []
+     },
+     {
+      "verdict": "tie",
+      "score_signs": {
+       "benefit_dismantling": 0,
+       "belief_movement": 0,
+       "escape_conviction": 0,
+       "cumulative_progression": 0
+      },
+      "ours_only": [],
+      "ref_only": []
+     }
+    ],
+    "verdicts": [
+     "tie",
+     "tie"
+    ],
+    "score_winner_flips": [],
+    "relative_critical_failures_changed": false,
+    "max_within_order_candidate_gap": 0
+   },
+   "absolute_drift": {
+    "critical_failures_changed": false,
+    "max_same_text_score_shift": 1
+   }
+  },
+  {
+   "judge_identity": "sol-ultra-r1",
+   "model": "gpt-5.6-sol",
+   "role": "integrity",
+   "target": "block",
+   "complete": true,
+   "dims": {
+    "non_shaming_regard": {
+     "ours_mean": 5.5,
+     "ref_mean": 5.5
+    },
+    "willpower_free_logic": {
+     "ours_mean": 7.5,
+     "ref_mean": 7.5
+    },
+    "epistemic_honesty": {
+     "ours_mean": 1.0,
+     "ref_mean": 1.0
+    },
+    "originality": {
+     "ours_mean": 1.0,
+     "ref_mean": 1.0
+    },
+    "cross_chapter_consistency": {
+     "ours_mean": 6.5,
+     "ref_mean": 6.5
+    }
+   },
+   "product_parity_verdict": "tie",
+   "confidence_mean": 1.0,
+   "critical_ours": [
+    "copyright_expression_risk",
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony"
+   ],
+   "critical_ref": [
+    "copyright_expression_risk",
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony"
+   ],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "A consistently absolves readers and presents changed beliefs as eliminating desire, yet it uses sweeping claims about dependence, diet, withdrawal, and disease, vivid catastrophic outcomes, and unverified clinic-scale success assertions.",
+     "ref": "B supplies the same method and evidence as A: reader blame is rejected and endurance is disavowed, while medical certainty, catastrophe-led persuasion, and unsupported efficacy testimony remain central."
+    },
+    {
+     "ours": "The chapters exactly duplicate A. They externalize blame and promise desire-free change, but use catastrophic outcomes, categorical health assertions, universalized withdrawal claims, and unverified personal or clinic success reports to compel total abstinence.",
+     "ref": "The chapters exactly duplicate B. They externalize blame and promise desire-free change, but use catastrophic outcomes, categorical health assertions, universalized withdrawal claims, and unverified personal or clinic success reports to compel total abstinence."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "Exact textual duplication produces parity: when candidates use the same claims, emotional leverage, and instructions, textual evidence cannot support a difference in method integrity.",
+    "Exact duplication removes any comparative mechanism; the same framing, evidentiary shortcuts, and sequence produce identical method-integrity outcomes."
+   ],
+   "order_instability": {
+    "unstable": false,
+    "comparative_signatures": [
+     {
+      "verdict": "tie",
+      "score_signs": {
+       "non_shaming_regard": 0,
+       "willpower_free_logic": 0,
+       "epistemic_honesty": 0,
+       "originality": 0,
+       "cross_chapter_consistency": 0
+      },
+      "ours_only": [],
+      "ref_only": []
+     },
+     {
+      "verdict": "tie",
+      "score_signs": {
+       "non_shaming_regard": 0,
+       "willpower_free_logic": 0,
+       "epistemic_honesty": 0,
+       "originality": 0,
+       "cross_chapter_consistency": 0
+      },
+      "ours_only": [],
+      "ref_only": []
+     }
+    ],
+    "verdicts": [
+     "tie",
+     "tie"
+    ],
+    "score_winner_flips": [],
+    "relative_critical_failures_changed": false,
+    "max_within_order_candidate_gap": 0
+   },
+   "absolute_drift": {
+    "critical_failures_changed": false,
+    "max_same_text_score_shift": 1
+   }
+  },
+  {
+   "judge_identity": "sol-ultra-r2",
+   "model": "gpt-5.6-sol",
+   "role": "craft",
+   "target": "chapter-01",
+   "complete": true,
+   "dims": {
+    "prose_control": {
+     "ours_mean": 4.5,
+     "ref_mean": 4.5
+    },
+    "rhythm_and_variety": {
+     "ours_mean": 4.0,
+     "ref_mean": 4.0
+    },
+    "specificity": {
+     "ours_mean": 5.0,
+     "ref_mean": 5.0
+    },
+    "flow_and_momentum": {
+     "ours_mean": 3.5,
+     "ref_mean": 3.5
+    },
+    "ending_handoff": {
+     "ours_mean": 4.0,
+     "ref_mean": 4.0
+    }
+   },
+   "product_parity_verdict": "tie",
+   "confidence_mean": 1.0,
+   "critical_ours": [
+    "repetitive_sag"
+   ],
+   "critical_ref": [
+    "repetitive_sag"
+   ],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "Clear assertions, a familiar food example, a recurring creature metaphor, and a brief personal origin story provide shape, but repeated addiction analogies, promises, and instructions substantially stall the chapter before a boilerplate recap.",
+     "ref": "Clear assertions, a familiar food example, a recurring creature metaphor, and a brief personal origin story provide shape, but repeated addiction analogies, promises, and instructions substantially stall the chapter before a boilerplate recap."
+    },
+    {
+     "ours": "Concrete eating scenarios, a paired-creature metaphor, health figures, and a recovery origin story add texture, but repeated absolutes, addiction comparisons, promises of ease, and obedience instructions make the latter half sag.",
+     "ref": "Concrete eating scenarios, a paired-creature metaphor, health figures, and a recovery origin story add texture, but repeated absolutes, addiction comparisons, promises of ease, and obedience instructions make the latter half sag."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "No comparative mechanism exists: identical sequencing, examples, sentence patterns, repetition, and ending produce complete craft parity.",
+    "Exact textual duplication eliminates any craft differential; the same repetition pattern governs both reading experiences."
+   ],
+   "order_instability": {
+    "unstable": false,
+    "comparative_signatures": [
+     {
+      "verdict": "tie",
+      "score_signs": {
+       "prose_control": 0,
+       "rhythm_and_variety": 0,
+       "specificity": 0,
+       "flow_and_momentum": 0,
+       "ending_handoff": 0
+      },
+      "ours_only": [],
+      "ref_only": []
+     },
+     {
+      "verdict": "tie",
+      "score_signs": {
+       "prose_control": 0,
+       "rhythm_and_variety": 0,
+       "specificity": 0,
+       "flow_and_momentum": 0,
+       "ending_handoff": 0
+      },
+      "ours_only": [],
+      "ref_only": []
+     }
+    ],
+    "verdicts": [
+     "tie",
+     "tie"
+    ],
+    "score_winner_flips": [],
+    "relative_critical_failures_changed": false,
+    "max_within_order_candidate_gap": 0
+   },
+   "absolute_drift": {
+    "critical_failures_changed": false,
+    "max_same_text_score_shift": 1
+   }
+  },
+  {
+   "judge_identity": "sol-ultra-r2",
+   "model": "gpt-5.6-sol",
+   "role": "craft",
+   "target": "chapter-02",
+   "complete": true,
+   "dims": {
+    "prose_control": {
+     "ours_mean": 5.0,
+     "ref_mean": 5.0
+    },
+    "rhythm_and_variety": {
+     "ours_mean": 4.0,
+     "ref_mean": 4.0
+    },
+    "specificity": {
+     "ours_mean": 6.0,
+     "ref_mean": 6.0
+    },
+    "flow_and_momentum": {
+     "ours_mean": 4.0,
+     "ref_mean": 4.0
+    },
+    "ending_handoff": {
+     "ours_mean": 4.0,
+     "ref_mean": 4.0
+    }
+   },
+   "product_parity_verdict": "tie",
+   "confidence_mean": 1.0,
+   "critical_ours": [],
+   "critical_ref": [],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "Concrete animal, office, supermarket, and visual-illusion examples enliven a forceful argument, but repeated rhetorical prompts, typographic shouting, promotional digressions, and a bullet recap weaken momentum and tonal control.",
+     "ref": "Concrete animal, office, supermarket, and visual-illusion examples enliven a forceful argument, but repeated rhetorical prompts, typographic shouting, promotional digressions, and a bullet recap weaken momentum and tonal control."
+    },
+    {
+     "ours": "Concrete animal, workplace, supermarket, and visual examples provide traction, but recurring questions, emphatic declarations, and repeated warnings make the middle insistent; the final bullet recap weakens an otherwise serviceable transition into the book\u2019s method.",
+     "ref": "Concrete animal, workplace, supermarket, and visual examples provide traction, but recurring questions, emphatic declarations, and repeated warnings make the middle insistent; the final bullet recap weakens an otherwise serviceable transition into the book\u2019s method."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "No differentiating mechanism is present: identical sequencing, examples, emphasis, and endings produce the same reading experience.",
+    "Exact textual duplication produces parity: identical sequencing, diction, examples, repetition, and ending architecture necessarily create the same reading experience."
+   ],
+   "order_instability": {
+    "unstable": false,
+    "comparative_signatures": [
+     {
+      "verdict": "tie",
+      "score_signs": {
+       "prose_control": 0,
+       "rhythm_and_variety": 0,
+       "specificity": 0,
+       "flow_and_momentum": 0,
+       "ending_handoff": 0
+      },
+      "ours_only": [],
+      "ref_only": []
+     },
+     {
+      "verdict": "tie",
+      "score_signs": {
+       "prose_control": 0,
+       "rhythm_and_variety": 0,
+       "specificity": 0,
+       "flow_and_momentum": 0,
+       "ending_handoff": 0
+      },
+      "ours_only": [],
+      "ref_only": []
+     }
+    ],
+    "verdicts": [
+     "tie",
+     "tie"
+    ],
+    "score_winner_flips": [],
+    "relative_critical_failures_changed": false,
+    "max_within_order_candidate_gap": 0
+   },
+   "absolute_drift": {
+    "critical_failures_changed": false,
+    "max_same_text_score_shift": 0
+   }
+  },
+  {
+   "judge_identity": "sol-ultra-r2",
+   "model": "gpt-5.6-sol",
+   "role": "craft",
+   "target": "chapter-03",
+   "complete": true,
+   "dims": {
+    "prose_control": {
+     "ours_mean": 5.5,
+     "ref_mean": 5.5
+    },
+    "rhythm_and_variety": {
+     "ours_mean": 5.0,
+     "ref_mean": 5.0
+    },
+    "specificity": {
+     "ours_mean": 6.0,
+     "ref_mean": 6.0
+    },
+    "flow_and_momentum": {
+     "ours_mean": 4.0,
+     "ref_mean": 4.0
+    },
+    "ending_handoff": {
+     "ours_mean": 4.0,
+     "ref_mean": 4.0
+    }
+   },
+   "product_parity_verdict": "tie",
+   "confidence_mean": 1.0,
+   "critical_ours": [
+    "repetitive_sag"
+   ],
+   "critical_ref": [
+    "repetitive_sag"
+   ],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "Concrete domestic, social, and bodily examples add texture, but repeated claims, promises, rhetorical questions, emphatic headings, and a final checklist make the latter half feel overextended and promotional.",
+     "ref": "Specific scenes and analogies enliven a coherent argument, yet its central ideas are repeatedly reasserted; the extended motivational turn and summary consequently weaken momentum and the closing handoff."
+    },
+    {
+     "ours": "Concrete domestic scenes and analogies animate a clear argument, but repeated assertions, emphatic headings, and a recap-heavy close make the chapter feel longer and more programmatic than necessary.",
+     "ref": "Concrete domestic scenes and analogies animate a clear argument, but repeated assertions, emphatic headings, and a recap-heavy close make the chapter feel longer and more programmatic than necessary."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "Textual identity eliminates any craft difference: both use the same sequencing, examples, rhetorical patterns, repetition, and closing recap.",
+    "No comparative mechanism is present: textual identity gives both chapters the same sequencing, examples, rhetorical patterns, repetition, and closing effect."
+   ],
+   "order_instability": {
+    "unstable": false,
+    "comparative_signatures": [
+     {
+      "verdict": "tie",
+      "score_signs": {
+       "prose_control": 0,
+       "rhythm_and_variety": 0,
+       "specificity": 0,
+       "flow_and_momentum": 0,
+       "ending_handoff": 0
+      },
+      "ours_only": [],
+      "ref_only": []
+     },
+     {
+      "verdict": "tie",
+      "score_signs": {
+       "prose_control": 0,
+       "rhythm_and_variety": 0,
+       "specificity": 0,
+       "flow_and_momentum": 0,
+       "ending_handoff": 0
+      },
+      "ours_only": [],
+      "ref_only": []
+     }
+    ],
+    "verdicts": [
+     "tie",
+     "tie"
+    ],
+    "score_winner_flips": [],
+    "relative_critical_failures_changed": false,
+    "max_within_order_candidate_gap": 0
+   },
+   "absolute_drift": {
+    "critical_failures_changed": true,
+    "max_same_text_score_shift": 1
+   }
+  },
+  {
+   "judge_identity": "sol-ultra-r2",
+   "model": "gpt-5.6-sol",
+   "role": "efficacy",
+   "target": "block",
+   "complete": true,
+   "dims": {
+    "benefit_dismantling": {
+     "ours_mean": 6.0,
+     "ref_mean": 6.0
+    },
+    "belief_movement": {
+     "ours_mean": 6.0,
+     "ref_mean": 6.0
+    },
+    "escape_conviction": {
+     "ours_mean": 7.0,
+     "ref_mean": 7.0
+    },
+    "cumulative_progression": {
+     "ours_mean": 6.5,
+     "ref_mean": 6.5
+    }
+   },
+   "product_parity_verdict": "tie",
+   "confidence_mean": 1.0,
+   "critical_ours": [],
+   "critical_ref": [],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "The block recasts reward as relief within a self-renewing cycle, then attributes taste and craving to conditioning and rebound; its freedom framing is energetic, though sweeping claims and weak analogies reduce credibility.",
+     "ref": "The block recasts reward as relief within a self-renewing cycle, then attributes taste and craving to conditioning and rebound; its freedom framing is energetic, though sweeping claims and weak analogies reduce credibility."
+    },
+    {
+     "ours": "The block recasts reward as temporary relief and conditioned expectation, then links repeated consumption to renewed discomfort and explains why restriction intensifies attachment. Familiar examples create some movement, though sweeping claims and strained analogies reduce credibility.",
+     "ref": "The block recasts reward as temporary relief and conditioned expectation, then links repeated consumption to renewed discomfort and explains why restriction intensifies attachment. Familiar examples create some movement, though sweeping claims and strained analogies reduce credibility."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "There is no efficacy difference: both expose an apparent benefit as relief from a problem the behavior recreates, then replace restraint with a freedom-based identity.",
+    "A causal reframe gains force when later chapters apply it to multiple perceived benefits; because both blocks use the same sequence and evidence, no efficacy difference emerges."
+   ],
+   "order_instability": {
+    "unstable": false,
+    "comparative_signatures": [
+     {
+      "verdict": "tie",
+      "score_signs": {
+       "benefit_dismantling": 0,
+       "belief_movement": 0,
+       "escape_conviction": 0,
+       "cumulative_progression": 0
+      },
+      "ours_only": [],
+      "ref_only": []
+     },
+     {
+      "verdict": "tie",
+      "score_signs": {
+       "benefit_dismantling": 0,
+       "belief_movement": 0,
+       "escape_conviction": 0,
+       "cumulative_progression": 0
+      },
+      "ours_only": [],
+      "ref_only": []
+     }
+    ],
+    "verdicts": [
+     "tie",
+     "tie"
+    ],
+    "score_winner_flips": [],
+    "relative_critical_failures_changed": false,
+    "max_within_order_candidate_gap": 0
+   },
+   "absolute_drift": {
+    "critical_failures_changed": false,
+    "max_same_text_score_shift": 1
+   }
+  },
+  {
+   "judge_identity": "sol-ultra-r2",
+   "model": "gpt-5.6-sol",
+   "role": "integrity",
+   "target": "block",
+   "complete": true,
+   "dims": {
+    "non_shaming_regard": {
+     "ours_mean": 5.5,
+     "ref_mean": 5.5
+    },
+    "willpower_free_logic": {
+     "ours_mean": 7.5,
+     "ref_mean": 7.5
+    },
+    "epistemic_honesty": {
+     "ours_mean": 1.0,
+     "ref_mean": 1.0
+    },
+    "originality": {
+     "ours_mean": 1.0,
+     "ref_mean": 1.0
+    },
+    "cross_chapter_consistency": {
+     "ours_mean": 7.0,
+     "ref_mean": 7.0
+    }
+   },
+   "product_parity_verdict": "tie",
+   "confidence_mean": 0.995,
+   "critical_ours": [
+    "copyright_expression_risk",
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony"
+   ],
+   "critical_ref": [
+    "copyright_expression_risk",
+    "fear_as_motivator",
+    "medical_overreach",
+    "unsupported_authority_or_testimony"
+   ],
+   "paraphrased_evidence_by_order": [
+    {
+     "ours": "The reader is largely absolved and desire is meant to dissolve through reframing, yet the block uses categorical addiction and disease claims, alarming outcomes, and unbounded clinic and success assertions; its expression is identical to B.",
+     "ref": "The reader is largely absolved and desire is meant to dissolve through reframing, yet the block uses categorical addiction and disease claims, alarming outcomes, and unbounded clinic and success assertions; its expression is identical to A."
+    },
+    {
+     "ours": "The block rejects reader blame and presents cognition, not endurance, as the change mechanism, but uses catastrophic health imagery, sweeping addiction and nutrition claims, broad elimination advice, unsupported efficacy testimony, and exact-sequence compliance promises.",
+     "ref": "The block rejects reader blame and presents cognition, not endurance, as the change mechanism, but uses catastrophic health imagery, sweeping addiction and nutrition claims, broad elimination advice, unsupported efficacy testimony, and exact-sequence compliance promises."
+    }
+   ],
+   "generic_mechanism_by_order": [
+    "No differential mechanism is observable: identical inputs produce identical strengths and failures.",
+    "No substantive difference exists because the inputs are identical; any apparent divergence would arise from evaluator noise rather than from the blocks."
+   ],
+   "order_instability": {
+    "unstable": false,
+    "comparative_signatures": [
+     {
+      "verdict": "tie",
+      "score_signs": {
+       "non_shaming_regard": 0,
+       "willpower_free_logic": 0,
+       "epistemic_honesty": 0,
+       "originality": 0,
+       "cross_chapter_consistency": 0
+      },
+      "ours_only": [],
+      "ref_only": []
+     },
+     {
+      "verdict": "tie",
+      "score_signs": {
+       "non_shaming_regard": 0,
+       "willpower_free_logic": 0,
+       "epistemic_honesty": 0,
+       "originality": 0,
+       "cross_chapter_consistency": 0
+      },
+      "ours_only": [],
+      "ref_only": []
+     }
+    ],
+    "verdicts": [
+     "tie",
+     "tie"
+    ],
+    "score_winner_flips": [],
+    "relative_critical_failures_changed": false,
+    "max_within_order_candidate_gap": 0
+   },
+   "absolute_drift": {
+    "critical_failures_changed": false,
+    "max_same_text_score_shift": 1
+   }
+  }
+ ],
+ "canonical": true,
+ "instrument_configuration": {
+  "protocol_version": "stage-a-v2.2-native-sol-ultra-1",
+  "transport": "native-codex-subscription",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "replica_identities": [
+   "sol-ultra-r1",
+   "sol-ultra-r2"
+  ],
+  "chapter_pairs": [
+   [
+    1,
+    1
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    3,
+    3
+   ]
+  ],
+  "role_prompt_sha256": {
+   "efficacy": "11fdedde0018ebcf7b2d37ddf08a6080d64c0931eec02cffcb630cde2fa28f4c",
+   "craft": "916cf4c6c2e5748f54b91979c0edd1123e1a29ce2791437c301f9e7459394948",
+   "integrity": "195820f1e4140918333449bc3fda374d42f356637619bbd92f028945e2107b0a"
+  },
+  "role_output_schema_sha256": {
+   "efficacy": "3fa8c57fe6e46a5b4622d6458489fd104a8e75e8cf903dfd8e3f8dfa616d1238",
+   "craft": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+   "integrity": "0e6d50465998e681e1edb0c9f1106767d045acce1167c3aa91678a229ceb756f"
+  },
+  "implementation_sha256": {
+   "judge_panel.py": "7fa185e4907a8567fc7eabba1eb08868bd83ae101160cb7c90f4815dd4c2b67f",
+   "judge_protocol.py": "8f7b172b5043dca736f25b930cbdfb543585c74cb0fcd1740bd51c39b58993fd",
+   "native_judge.py": "bdae8a535b58b545a6364ad24831a7ddbc4f487de5c704cc2592b2ef9cc7bf15"
+  }
+ },
+ "validated_controls": null,
+ "prompt_control": {
+  "mode": "identical",
+  "expectation": "identical texts tie without order or critical-failure asymmetry",
+  "repair_predictions": {
+   "structured_output": {
+    "passed": true,
+    "valid_first_responses": 20,
+    "expected_first_responses": 20
+   },
+   "critical_taxonomy": {
+    "passed": true,
+    "scorable": true,
+    "candidate_relative_label_drift_observations": 0,
+    "core_degraded_labels_retained": null
+   }
+  },
+  "passed": true
+ }
+}

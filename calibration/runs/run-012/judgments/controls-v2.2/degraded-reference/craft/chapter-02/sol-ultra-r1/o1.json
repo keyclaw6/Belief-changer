@@ -1,0 +1,135 @@
+{
+ "protocol": "stage-a-v2.2",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-02",
+ "ours_chapters": [
+  2
+ ],
+ "ref_chapters": [
+  2
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "1b04d0118cfa3540ff269e4adfba97d4dc7d12245e94e77e356f16fe0c562e5b",
+  "output_schema_sha256": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+  "thread_id": "019f53a6-f082-7990-ace2-a04a29b1f8b7",
+  "usage": {
+   "input_tokens": 18664,
+   "cached_input_tokens": 0,
+   "output_tokens": 1225,
+   "reasoning_output_tokens": 975
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f53a6-f082-7990-ace2-a04a29b1f8b7\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.99,\\\"critical_failures\\\":{\\\"A\\\":[],\\\"B\\\":[\\\"broken_chapter_flow\\\",\\\"weak_ending_handoff\\\"]},\\\"generic_mechanism\\\":\\\"The largest gap comes from sequence integrity: premises, examples, and conclusions can gather momentum in dependency order, while scrambling that order destroys reference clarity, paragraph rhythm, and the possibility of a viable ending.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"A concrete animal observation expands into an instinct-versus-industry argument, then narrows to a reader instruction and visual demonstration; emphatic typography and repeated claims sometimes overwork points already established.\\\",\\\"B\\\":\\\"Sentences and headings arrive largely in reverse dependency order: conclusions precede premises, pronouns lose antecedents, examples precede their setup, and the chapter stops on its opening proposition rather than completing a turn.\\\"},\\\"product_parity_verdict\\\":\\\"A\\\",\\\"scores\\\":{\\\"ending_handoff\\\":{\\\"A\\\":4,\\\"B\\\":1},\\\"flow_and_momentum\\\":{\\\"A\\\":5,\\\"B\\\":1},\\\"prose_control\\\":{\\\"A\\\":6,\\\"B\\\":3},\\\"rhythm_and_variety\\\":{\\\"A\\\":5,\\\"B\\\":1},\\\"specificity\\\":{\\\"A\\\":6,\\\"B\\\":4}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":18664,\"cached_input_tokens\":0,\"output_tokens\":1225,\"reasoning_output_tokens\":975}}\n"
+ },
+ "raw": "{\"confidence\":0.99,\"critical_failures\":{\"A\":[],\"B\":[\"broken_chapter_flow\",\"weak_ending_handoff\"]},\"generic_mechanism\":\"The largest gap comes from sequence integrity: premises, examples, and conclusions can gather momentum in dependency order, while scrambling that order destroys reference clarity, paragraph rhythm, and the possibility of a viable ending.\",\"paraphrased_evidence\":{\"A\":\"A concrete animal observation expands into an instinct-versus-industry argument, then narrows to a reader instruction and visual demonstration; emphatic typography and repeated claims sometimes overwork points already established.\",\"B\":\"Sentences and headings arrive largely in reverse dependency order: conclusions precede premises, pronouns lose antecedents, examples precede their setup, and the chapter stops on its opening proposition rather than completing a turn.\"},\"product_parity_verdict\":\"A\",\"scores\":{\"ending_handoff\":{\"A\":4,\"B\":1},\"flow_and_momentum\":{\"A\":5,\"B\":1},\"prose_control\":{\"A\":6,\"B\":3},\"rhythm_and_variety\":{\"A\":5,\"B\":1},\"specificity\":{\"A\":6,\"B\":4}}}",
+ "parsed": {
+  "confidence": 0.99,
+  "critical_failures": {
+   "A": [],
+   "B": [
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ]
+  },
+  "generic_mechanism": "The largest gap comes from sequence integrity: premises, examples, and conclusions can gather momentum in dependency order, while scrambling that order destroys reference clarity, paragraph rhythm, and the possibility of a viable ending.",
+  "paraphrased_evidence": {
+   "A": "A concrete animal observation expands into an instinct-versus-industry argument, then narrows to a reader instruction and visual demonstration; emphatic typography and repeated claims sometimes overwork points already established.",
+   "B": "Sentences and headings arrive largely in reverse dependency order: conclusions precede premises, pronouns lose antecedents, examples precede their setup, and the chapter stops on its opening proposition rather than completing a turn."
+  },
+  "product_parity_verdict": "A",
+  "scores": {
+   "ending_handoff": {
+    "A": 4,
+    "B": 1
+   },
+   "flow_and_momentum": {
+    "A": 5,
+    "B": 1
+   },
+   "prose_control": {
+    "A": 6,
+    "B": 3
+   },
+   "rhythm_and_variety": {
+    "A": 5,
+    "B": 1
+   },
+   "specificity": {
+    "A": 6,
+    "B": 4
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 3,
+    "ref": 6
+   },
+   "rhythm_and_variety": {
+    "ours": 1,
+    "ref": 5
+   },
+   "specificity": {
+    "ours": 4,
+    "ref": 6
+   },
+   "flow_and_momentum": {
+    "ours": 1,
+    "ref": 5
+   },
+   "ending_handoff": {
+    "ours": 1,
+    "ref": 4
+   }
+  },
+  "critical_ours": [
+   "broken_chapter_flow",
+   "weak_ending_handoff"
+  ],
+  "critical_ref": [],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "Sentences and headings arrive largely in reverse dependency order: conclusions precede premises, pronouns lose antecedents, examples precede their setup, and the chapter stops on its opening proposition rather than completing a turn.",
+   "ref": "A concrete animal observation expands into an instinct-versus-industry argument, then narrows to a reader instruction and visual demonstration; emphatic typography and repeated claims sometimes overwork points already established."
+  },
+  "generic_mechanism": "The largest gap comes from sequence integrity: premises, examples, and conclusions can gather momentum in dependency order, while scrambling that order destroys reference clarity, paragraph rhythm, and the possibility of a viable ending."
+ }
+}

@@ -1,0 +1,135 @@
+{
+ "protocol": "stage-a-v2.2",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-01",
+ "ours_chapters": [
+  1
+ ],
+ "ref_chapters": [
+  1
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r1",
+ "order": 1,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "2026-07-12T00:05:15.421547Z ERROR codex_core::tools::router: error=collab spawn failed: no thread with id: 019f53a4-59a4-7460-a437-7aacb87150c7\n2026-07-12T00:05:19.663435Z ERROR codex_core::tools::router: error=collab spawn failed: no thread with id: 019f53a4-59a4-7460-a437-7aacb87150c7\n",
+  "input_sha256": "9b8b4c866bb86d9d134f5c5f736d35a809094f4b7b79d29568ee7c89b77ee040",
+  "output_schema_sha256": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+  "thread_id": "019f53a4-59a4-7460-a437-7aacb87150c7",
+  "usage": {
+   "input_tokens": 64829,
+   "cached_input_tokens": 53504,
+   "output_tokens": 3157,
+   "reasoning_output_tokens": 2758
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f53a4-59a4-7460-a437-7aacb87150c7\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.99,\\\"critical_failures\\\":{\\\"A\\\":[],\\\"B\\\":[\\\"broken_chapter_flow\\\",\\\"weak_ending_handoff\\\"]},\\\"generic_mechanism\\\":\\\"Coherent setup-development-payoff sequencing allows local details to accumulate; scrambled ordering severs antecedents and relocates orientation material to the end, so sentence-level competence cannot produce chapter-level momentum.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"A advances from reader concerns through a named dependency model, a familiar eating scenario, a personal origin story, and initial instructions. Its clarity and concrete motifs are weakened by repeated promises, comparisons, and overinsistence on ease.\\\",\\\"B\\\":\\\"B retains specific details and individually competent sentences, but scatters setups, explanations, headings, and payoffs. References repeatedly precede their grounds, transitions jump without causal support, and the text ends in introductory matter instead of a landing.\\\"},\\\"product_parity_verdict\\\":\\\"A\\\",\\\"scores\\\":{\\\"ending_handoff\\\":{\\\"A\\\":5,\\\"B\\\":1},\\\"flow_and_momentum\\\":{\\\"A\\\":5,\\\"B\\\":1},\\\"prose_control\\\":{\\\"A\\\":6,\\\"B\\\":3},\\\"rhythm_and_variety\\\":{\\\"A\\\":5,\\\"B\\\":2},\\\"specificity\\\":{\\\"A\\\":6,\\\"B\\\":4}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":64829,\"cached_input_tokens\":53504,\"output_tokens\":3157,\"reasoning_output_tokens\":2758}}\n"
+ },
+ "raw": "{\"confidence\":0.99,\"critical_failures\":{\"A\":[],\"B\":[\"broken_chapter_flow\",\"weak_ending_handoff\"]},\"generic_mechanism\":\"Coherent setup-development-payoff sequencing allows local details to accumulate; scrambled ordering severs antecedents and relocates orientation material to the end, so sentence-level competence cannot produce chapter-level momentum.\",\"paraphrased_evidence\":{\"A\":\"A advances from reader concerns through a named dependency model, a familiar eating scenario, a personal origin story, and initial instructions. Its clarity and concrete motifs are weakened by repeated promises, comparisons, and overinsistence on ease.\",\"B\":\"B retains specific details and individually competent sentences, but scatters setups, explanations, headings, and payoffs. References repeatedly precede their grounds, transitions jump without causal support, and the text ends in introductory matter instead of a landing.\"},\"product_parity_verdict\":\"A\",\"scores\":{\"ending_handoff\":{\"A\":5,\"B\":1},\"flow_and_momentum\":{\"A\":5,\"B\":1},\"prose_control\":{\"A\":6,\"B\":3},\"rhythm_and_variety\":{\"A\":5,\"B\":2},\"specificity\":{\"A\":6,\"B\":4}}}",
+ "parsed": {
+  "confidence": 0.99,
+  "critical_failures": {
+   "A": [],
+   "B": [
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ]
+  },
+  "generic_mechanism": "Coherent setup-development-payoff sequencing allows local details to accumulate; scrambled ordering severs antecedents and relocates orientation material to the end, so sentence-level competence cannot produce chapter-level momentum.",
+  "paraphrased_evidence": {
+   "A": "A advances from reader concerns through a named dependency model, a familiar eating scenario, a personal origin story, and initial instructions. Its clarity and concrete motifs are weakened by repeated promises, comparisons, and overinsistence on ease.",
+   "B": "B retains specific details and individually competent sentences, but scatters setups, explanations, headings, and payoffs. References repeatedly precede their grounds, transitions jump without causal support, and the text ends in introductory matter instead of a landing."
+  },
+  "product_parity_verdict": "A",
+  "scores": {
+   "ending_handoff": {
+    "A": 5,
+    "B": 1
+   },
+   "flow_and_momentum": {
+    "A": 5,
+    "B": 1
+   },
+   "prose_control": {
+    "A": 6,
+    "B": 3
+   },
+   "rhythm_and_variety": {
+    "A": 5,
+    "B": 2
+   },
+   "specificity": {
+    "A": 6,
+    "B": 4
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 3,
+    "ref": 6
+   },
+   "rhythm_and_variety": {
+    "ours": 2,
+    "ref": 5
+   },
+   "specificity": {
+    "ours": 4,
+    "ref": 6
+   },
+   "flow_and_momentum": {
+    "ours": 1,
+    "ref": 5
+   },
+   "ending_handoff": {
+    "ours": 1,
+    "ref": 5
+   }
+  },
+  "critical_ours": [
+   "broken_chapter_flow",
+   "weak_ending_handoff"
+  ],
+  "critical_ref": [],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "B retains specific details and individually competent sentences, but scatters setups, explanations, headings, and payoffs. References repeatedly precede their grounds, transitions jump without causal support, and the text ends in introductory matter instead of a landing.",
+   "ref": "A advances from reader concerns through a named dependency model, a familiar eating scenario, a personal origin story, and initial instructions. Its clarity and concrete motifs are weakened by repeated promises, comparisons, and overinsistence on ease."
+  },
+  "generic_mechanism": "Coherent setup-development-payoff sequencing allows local details to accumulate; scrambled ordering severs antecedents and relocates orientation material to the end, so sentence-level competence cannot produce chapter-level momentum."
+ }
+}

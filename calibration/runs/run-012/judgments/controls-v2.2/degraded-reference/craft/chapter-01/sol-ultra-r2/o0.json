@@ -1,0 +1,135 @@
+{
+ "protocol": "stage-a-v2.2",
+ "role": "craft",
+ "scope": "chapter",
+ "target": "chapter-01",
+ "ours_chapters": [
+  1
+ ],
+ "ref_chapters": [
+  1
+ ],
+ "model": "gpt-5.6-sol",
+ "judge_identity": "sol-ultra-r2",
+ "order": 0,
+ "max_output_allowance": null,
+ "transport": {
+  "kind": "native-codex-subscription",
+  "judge_identity": "sol-ultra-r2",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "ultra",
+  "output_limit": "none set by harness",
+  "fresh_ephemeral_context": true,
+  "isolated_workdir": "/tmp read-only",
+  "environment_policy": "native runtime allowlist; no provider API keys inherited",
+  "command": [
+   "codex",
+   "exec",
+   "--ephemeral",
+   "--ignore-user-config",
+   "--ignore-rules",
+   "--disable",
+   "multi_agent",
+   "--model",
+   "gpt-5.6-sol",
+   "-c",
+   "model_reasoning_effort=ultra",
+   "--sandbox",
+   "read-only",
+   "--skip-git-repo-check",
+   "--cd",
+   "<isolated-tmp>",
+   "--output-schema",
+   "<isolated-tmp>/judge-output-schema.json",
+   "--json",
+   "-"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "input_sha256": "7bdca83c7f026c29c1c62cd6f67a6a99368bd376bdfb02f358f6d5ee3aeb4816",
+  "output_schema_sha256": "846b847b9a0c7b30d8a95b2febab3758e243b8e151dfb8aa13099fa4c0f86977",
+  "thread_id": "019f53a5-566f-7a90-b2d3-b8400e6c2744",
+  "usage": {
+   "input_tokens": 21353,
+   "cached_input_tokens": 12032,
+   "output_tokens": 2201,
+   "reasoning_output_tokens": 1938
+  },
+  "event_stream": "{\"type\":\"thread.started\",\"thread_id\":\"019f53a5-566f-7a90-b2d3-b8400e6c2744\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"{\\\"confidence\\\":0.99,\\\"critical_failures\\\":{\\\"A\\\":[\\\"broken_chapter_flow\\\",\\\"weak_ending_handoff\\\"],\\\"B\\\":[]},\\\"generic_mechanism\\\":\\\"The largest gap comes from sequence integrity: B preserves setup, development, and payoff, while A scrambles its units so premises, examples, headings, and conclusions no longer create cumulative pressure.\\\",\\\"paraphrased_evidence\\\":{\\\"A\\\":\\\"A opens with late-stage instructions and then jumps backward among personal history, analogies, statistics, and the chapter header; causal links and referents arrive after their consequences, and the last line is introductory apparatus rather than a close.\\\",\\\"B\\\":\\\"B builds from reader symptoms through public stakes, a dependency model, an abstinence rationale, method history, and reading instructions; concrete examples and a personal anecdote help, though repeated comparisons and promises make the latter half drag before a summary.\\\"},\\\"product_parity_verdict\\\":\\\"B\\\",\\\"scores\\\":{\\\"ending_handoff\\\":{\\\"A\\\":1,\\\"B\\\":5},\\\"flow_and_momentum\\\":{\\\"A\\\":1,\\\"B\\\":5},\\\"prose_control\\\":{\\\"A\\\":2,\\\"B\\\":6},\\\"rhythm_and_variety\\\":{\\\"A\\\":2,\\\"B\\\":5},\\\"specificity\\\":{\\\"A\\\":4,\\\"B\\\":6}}}\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":21353,\"cached_input_tokens\":12032,\"output_tokens\":2201,\"reasoning_output_tokens\":1938}}\n"
+ },
+ "raw": "{\"confidence\":0.99,\"critical_failures\":{\"A\":[\"broken_chapter_flow\",\"weak_ending_handoff\"],\"B\":[]},\"generic_mechanism\":\"The largest gap comes from sequence integrity: B preserves setup, development, and payoff, while A scrambles its units so premises, examples, headings, and conclusions no longer create cumulative pressure.\",\"paraphrased_evidence\":{\"A\":\"A opens with late-stage instructions and then jumps backward among personal history, analogies, statistics, and the chapter header; causal links and referents arrive after their consequences, and the last line is introductory apparatus rather than a close.\",\"B\":\"B builds from reader symptoms through public stakes, a dependency model, an abstinence rationale, method history, and reading instructions; concrete examples and a personal anecdote help, though repeated comparisons and promises make the latter half drag before a summary.\"},\"product_parity_verdict\":\"B\",\"scores\":{\"ending_handoff\":{\"A\":1,\"B\":5},\"flow_and_momentum\":{\"A\":1,\"B\":5},\"prose_control\":{\"A\":2,\"B\":6},\"rhythm_and_variety\":{\"A\":2,\"B\":5},\"specificity\":{\"A\":4,\"B\":6}}}",
+ "parsed": {
+  "confidence": 0.99,
+  "critical_failures": {
+   "A": [
+    "broken_chapter_flow",
+    "weak_ending_handoff"
+   ],
+   "B": []
+  },
+  "generic_mechanism": "The largest gap comes from sequence integrity: B preserves setup, development, and payoff, while A scrambles its units so premises, examples, headings, and conclusions no longer create cumulative pressure.",
+  "paraphrased_evidence": {
+   "A": "A opens with late-stage instructions and then jumps backward among personal history, analogies, statistics, and the chapter header; causal links and referents arrive after their consequences, and the last line is introductory apparatus rather than a close.",
+   "B": "B builds from reader symptoms through public stakes, a dependency model, an abstinence rationale, method history, and reading instructions; concrete examples and a personal anecdote help, though repeated comparisons and promises make the latter half drag before a summary."
+  },
+  "product_parity_verdict": "B",
+  "scores": {
+   "ending_handoff": {
+    "A": 1,
+    "B": 5
+   },
+   "flow_and_momentum": {
+    "A": 1,
+    "B": 5
+   },
+   "prose_control": {
+    "A": 2,
+    "B": 6
+   },
+   "rhythm_and_variety": {
+    "A": 2,
+    "B": 5
+   },
+   "specificity": {
+    "A": 4,
+    "B": 6
+   }
+  }
+ },
+ "mapped": {
+  "dims": {
+   "prose_control": {
+    "ours": 2,
+    "ref": 6
+   },
+   "rhythm_and_variety": {
+    "ours": 2,
+    "ref": 5
+   },
+   "specificity": {
+    "ours": 4,
+    "ref": 6
+   },
+   "flow_and_momentum": {
+    "ours": 1,
+    "ref": 5
+   },
+   "ending_handoff": {
+    "ours": 1,
+    "ref": 5
+   }
+  },
+  "critical_ours": [
+   "broken_chapter_flow",
+   "weak_ending_handoff"
+  ],
+  "critical_ref": [],
+  "product_parity_verdict": "ref",
+  "confidence": 0.99,
+  "paraphrased_evidence": {
+   "ours": "A opens with late-stage instructions and then jumps backward among personal history, analogies, statistics, and the chapter header; causal links and referents arrive after their consequences, and the last line is introductory apparatus rather than a close.",
+   "ref": "B builds from reader symptoms through public stakes, a dependency model, an abstinence rationale, method history, and reading instructions; concrete examples and a personal anecdote help, though repeated comparisons and promises make the latter half drag before a summary."
+  },
+  "generic_mechanism": "The largest gap comes from sequence integrity: B preserves setup, development, and payoff, while A scrambles its units so premises, examples, headings, and conclusions no longer create cumulative pressure."
+ }
+}
