@@ -6,7 +6,17 @@
 
 **Stage:** A
 
-**Status:** OPEN — repeated evidence escalation remains; v2.3 pooled baseline is implemented, independently reviewed, tested, and frozen before inference; fresh controls are pending and product quality is still unjudged
+**Status:** CURRENT STOP — run-013 closed INCONCLUSIVE for an input-authority conflict; no prose, no R4
+
+## Current stop — run-013 packet-to-synthesis authority conflict
+
+Root direction is **CORRECT COURSE — stop before prose**. R2 passed standard plan review, and the whole-set commission audit found the H-050 opening composition condition otherwise satisfied. It nevertheless blocked CH-01 because the accepted lived synthesis/framing fuse a 15-plus-year maintenance fact with separately described daily management actions in `S-021#E-002`.
+
+The standard plan reviewer sees only accepted syntheses/framing; the commission auditor treats source packets as authoritative. R3 used the packet audit to separate the facts, then its third standard review correctly rejected weight/duration material unavailable to its permitted inputs. The three-cycle cap is exhausted, and a post-observation R4 cannot repair the contradictory authority boundary.
+
+Run-013 closes `INCONCLUSIVE_INPUT_AUTHORITY_CONFLICT_NO_PROSE`. H-050 is not refuted because plan-and-commission instantiation never cleared, while composition otherwise passed. Freeze every artifact; no R4, Opus call, waiver, hand-edit, selective commission repair, or run-013 artifact reuse.
+
+Next, correct and independently accept the lived synthesis and framing source-groundedly through the existing model-led research-review path. Then start a fresh run with the same frozen H-050 lever and regenerate the complete plan and all three commissions. Add no permanent gate or new hypothesis unless this conflict recurs.
 
 ## Preregistered resolution — Stage-A v2.3
 

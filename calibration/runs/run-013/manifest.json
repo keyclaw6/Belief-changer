@@ -2,7 +2,7 @@
   "run": "run-013",
   "date": "2026-07-12",
   "stage": "A",
-  "status": "PLAN_R3_GENERATED_PENDING_REVIEW",
+  "status": "INCONCLUSIVE_INPUT_AUTHORITY_CONFLICT_NO_PROSE",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "composition-feasible argument-bearing chapters and opening movement plus regenerated source-grounded commissions and a frozen Chapters 1-3 first-draft batch",
@@ -13,7 +13,7 @@
   "model_output_allowance_policy": "quality only: no economy, speed, cost, reasoning-token, or harness output optimization; permitted calls receive the greatest authorized allowance and continue when required",
   "baseline_boundary": "cf5c825 — run-012 frozen with H-049 REFUTED and a valid v2.3 product-panel FAIL; no run-012 prose promoted",
   "last_accepted_product": "production-books/quit-sugar/chapters/chapter-01.md from run-002 and chapter-02.md from run-004",
-  "preregistration_state": "master-plan R3 is frozen exactly as generated from unchanged base inputs plus frozen R2 and the commission-set audit, and awaits standard independent review; no run-013 chapter, metric, or product-panel inference exists",
+  "preregistration_state": "run-013 is closed before prose as INCONCLUSIVE: conflicting packet versus accepted synthesis/framing authority prevented plan-and-commission instantiation after all three standard reviews",
   "observed_failure": "setup-only and deferred opening architecture plus overloaded later chapter jobs leaves the writer choosing between safe catalog-and-defer prose and forceful invented connective tissue",
   "single_generic_lever": "one shared intelligent planning acceptance contract requiring every argument-bearing chapter, and the opening movement collectively, to be safely composable from owned evidence and logic into one completed value-bearing belief correction within budget",
   "lever_boundary": {
@@ -426,7 +426,8 @@
     "downstream_law": "if R3 is accepted, regenerate all three commissions; never patch or reuse only CH-01"
   },
   "plan_r3_generation": {
-    "status": "GENERATED_FROZEN_UNEDITED_PENDING_STANDARD_REVIEW",
+    "status": "FROZEN_COMMITTED_UNEDITED_REJECTED_BY_STANDARD_REVIEW",
+    "freeze_commit": "74236bca99502505b98794067dfd1a53a42afbfd",
     "execution_head": "105c0c2224eb8d7535dfabc3b329bd28c06f3ac2",
     "artifact": "calibration/runs/run-013/planning/master-plan-r3.md",
     "artifact_sha256": "13341e397b2ba372da1aff34d8bc681de9b5ec7b383d91dea627dbdf24a52220",
@@ -464,6 +465,66 @@
     "transport_diagnostic": "WebSocket UnknownIssuer reconnect failures followed by successful fallback transport within the same call",
     "manual_edit": false,
     "review_status": "not started; generation metadata makes no judgment about the candidate"
+  },
+  "plan_r3_review": {
+    "status": "REJECTED",
+    "verdict": "needs changes first",
+    "execution_head": "74236bca99502505b98794067dfd1a53a42afbfd",
+    "artifact": "calibration/runs/run-013/planning/master-plan-r3-review.md",
+    "artifact_sha256": "d0ec3368dc1691a0a5d98dd204df5c3b09c1e3ba283e2e55cfe4fd2a58385e64",
+    "raw_jsonl": "calibration/runs/run-013/planning/master-plan-r3-review.raw.jsonl",
+    "raw_jsonl_sha256": "b0ef2103725804d9e964a963e1e3d4be81eddb87963f91064e9819ea17e0f8eb",
+    "stderr": "calibration/runs/run-013/planning/master-plan-r3-review.stderr.log",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_empty": true,
+    "assembled_bundle_sha256": "eef588f4d15a70d793b60e53afb93a0f73d43a77d40ba498a802caaa580f05f8",
+    "route": "one fresh native Codex subscription reviewer context",
+    "model": "gpt-5.6-sol",
+    "reasoning": "ultra",
+    "thread_id": "019f54b4-15ab-7742-b6b2-7f5dc8cf04f6",
+    "return_code": 0,
+    "events": 4,
+    "tool_calls": 0,
+    "subagent_events": 0,
+    "retries": 0,
+    "usage": {
+      "input_tokens": 67487,
+      "cached_input_tokens": 9984,
+      "output_tokens": 11588,
+      "reasoning_output_tokens": 11394
+    },
+    "blocking_finding": "R3 authorizes weight-maintenance and duration facts that are unavailable to the permitted syntheses, then propagates them across multiple chapter assignments",
+    "smallest_correction": "remove weight and duration claims throughout; retain only genuine relief alongside daily actions, boundaries, special-situation management, and resets, with no duration or efficacy inference"
+  },
+  "plan_review_cycle_boundary": {
+    "standard_reviews_consumed": 3,
+    "prose_authorized": false,
+    "automatic_r4_authorized": false,
+    "next_decision_owner": "resolved by root bird's-eye direction audit",
+    "decision": "CORRECT COURSE — stop run-013; no R4",
+    "h050_causal_status": "INCONCLUSIVE in run-013; remains open and TESTING for a clean rerun"
+  },
+  "run_close": {
+    "date": "2026-07-12",
+    "status": "INCONCLUSIVE_INPUT_AUTHORITY_CONFLICT_NO_PROSE",
+    "direction_verdict": "CORRECT COURSE — STOP RUN-013 BEFORE PROSE",
+    "direction_artifact": "calibration/runs/run-013/audits/direction-cycle-cap.md",
+    "failure_mechanism": "accepted lived synthesis and framing fuse a 15-plus-year maintenance fact with separately described daily management actions; standard plan review treats syntheses as authoritative while commission audit treats source packets as authoritative",
+    "why_no_artifact_can_pass": "synthesis-faithful R2 fails packet audit, while packet-corrected R3 imports facts unavailable to standard-review inputs",
+    "h050_verdict": "INCONCLUSIVE in run-013, not REFUTED, because pre-prose instantiation never cleared and composition otherwise passed",
+    "standard_plan_reviews_consumed": 3,
+    "r4_authorized": false,
+    "opus_calls": 0,
+    "prose_artifacts": 0,
+    "last_accepted_product": "production-books/quit-sugar/chapters/chapter-01.md from run-002 and chapter-02.md from run-004",
+    "guardrails": [
+      "freeze every run-013 plan, review, commission, and audit as observed",
+      "no R4, Opus call, waiver, hand-edit, selective repair, or run-013 artifact reuse",
+      "keep the frozen H-050 lever unchanged for a clean rerun",
+      "correct accepted lived synthesis and framing source-groundedly through the existing agentic research-review path",
+      "regenerate complete plan and all three commissions in a fresh run before prose",
+      "create no new permanent gate or hypothesis unless the authority conflict recurs"
+    ]
   },
   "held_fixed": [
     "accepted quit-sugar brief",
@@ -565,7 +626,7 @@
     "prompts/research-agent.md": "history commit 5bff930; accepted research not rerun"
   },
   "stages_rerun_because": "H-050 changes chapter architecture; causal attribution requires fresh plan, commissions, and complete Chapters 1-3 rather than patching any run-012 artifact",
-  "next_artifact": "standard independent review of the exact frozen master-plan R3 candidate",
+  "next_artifact": "source-grounded correction and independent acceptance of the lived synthesis and framing through the existing agentic research-review path, then a fresh run with the same frozen H-050 lever",
   "external_blocker": "none",
-  "notes": "Run-012 remains immutable evidence. Product roles stay blind to the reference and judge output. OpenRouter remains restricted to Opus chapter writing and DeepSeek research."
+  "notes": "Run-012 and run-013 remain immutable evidence. Run-013 produced no prose and no H-050 causal result. Product roles stay blind to reference and judge output; OpenRouter remains restricted to Opus chapter writing and DeepSeek research."
 }
