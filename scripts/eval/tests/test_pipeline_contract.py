@@ -19,10 +19,10 @@ class ResearchContractTests(unittest.TestCase):
         for required in (
             "Choose your own research plan",
             "Use multiple fresh subagents",
-            "There is no required role graph, matrix, quota, or sequence",
+            "prescribes a role graph, a sequence, or a stopping number; the lead owns",
             "Do not ask the operator to design the research",
             "Never use reference books",
-            "Never invent a source, quote, or finding",
+            "Never invent a source, quote, persona, or finding",
             "Generic volume is not depth",
         ):
             self.assertIn(required, prompt)
@@ -60,16 +60,18 @@ class ResearchContractTests(unittest.TestCase):
             self.assertIn(required, packets)
 
     def test_execution_is_quality_first_without_theoretical_ceiling_block(self):
-        """OpenSpec: the greatest live allowance is used without shrinking work."""
-        harness = read("calibration/HARNESS.md")
+        """OpenSpec: the greatest live allowance is used without shrinking work.
+
+        The quality-only law's surviving home is the research prompt
+        (calibration/HARNESS.md retired to PROGRAM.md, founder 2026-07-12)."""
+        prompt = read("prompts/research-agent.md")
         spec = read(
             "openspec/changes/calibration-ready-research-pipeline/"
             "specs/deep-research/spec.md"
         )
 
-        self.assertIn("Quality-only execution law", harness)
-        self.assertIn("greatest available allowance", harness)
-        self.assertIn("Continue on `finish_reason=length`", harness)
+        self.assertIn("Quality is the only optimizer", prompt)
+        self.assertIn("quality-only law", prompt)
         self.assertIn("greatest completion allowance actually authorized", spec)
         self.assertIn("no caller, prompt, framework", spec)
         self.assertIn("MUST NOT be stopped, narrowed, ranked, or selected", spec)
