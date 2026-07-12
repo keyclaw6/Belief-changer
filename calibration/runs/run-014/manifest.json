@@ -2,7 +2,7 @@
   "run": "run-014",
   "date": "2026-07-12",
   "stage": "A",
-  "status": "MASTER_PLAN_ACCEPTED_COMMISSIONS_PENDING",
+  "status": "STOPPED_BY_FOUNDER_COMMISSIONS_MECHANICALLY_COMPLETE_UNAUDITED",
   "operator": "gpt-5.6-sol",
   "branch": "calibration-lab",
   "scope": "source-grounded input repair followed by a clean H-050 plan, commission, and Chapters 1-3 rerun",
@@ -715,6 +715,108 @@
     "last_accepted_product_unchanged": "production-books/quit-sugar/chapters/chapter-01.md from run-002 and chapter-02.md from run-004",
     "h050_inference": "none; H-050 remains TESTING"
   },
+  "commission_batch_stop_boundary": {
+    "status": "MECHANICALLY_COMPLETE_UNAUDITED_UNACCEPTED",
+    "source_head": "e9aeca03ecc72707a0de382db70aebfb36477b31",
+    "accepted_master_plan_sha256": "b1726d736cb543f0b16c24f225136b86ebda336f4a1981f0c1f323cb311530b4",
+    "frozen_commissioner_sha256": "b1eabd112ab9c1c6e67284ab7bae27c512bf7ac3affb3be02877343c829e1c18",
+    "artifact_inventory": {
+      "total_files": 24,
+      "chapter_01_files": 9,
+      "chapter_02_files": 6,
+      "chapter_03_files": 9
+    },
+    "commissions": {
+      "CH-01": {
+        "commission_sha256": "f2cd40ab8919cdf7a9a7f1816baeea406d96d00c516085c78e3d98ae0432fce9",
+        "bytes": 8507,
+        "words": 1211,
+        "logical_lines": 50,
+        "terminal_lf_present": false,
+        "packets": [
+          "S-020",
+          "S-021",
+          "S-023"
+        ],
+        "thread_id": "019f5537-88d3-72d1-b4b9-d46fbcd8a605",
+        "usage": {
+          "input_tokens": 34092,
+          "cached_input_tokens": 9984,
+          "output_tokens": 6365,
+          "reasoning_output_tokens": 4660
+        }
+      },
+      "CH-02": {
+        "commission_sha256": "2a5bcca99181be17aaafd2fd7884cd3ed725d8068d00d3e31f5e231e5027678b",
+        "bytes": 9374,
+        "words": 1324,
+        "logical_lines": 57,
+        "terminal_lf_present": false,
+        "packets": [
+          "S-010",
+          "S-011"
+        ],
+        "thread_id": "019f5537-6652-72e3-9e79-8affe2d6a02e",
+        "usage": {
+          "input_tokens": 30329,
+          "cached_input_tokens": 9984,
+          "output_tokens": 8218,
+          "reasoning_output_tokens": 6321
+        }
+      },
+      "CH-03": {
+        "commission_sha256": "744a64e541eb70b4a000648f2eb0eb7f2dd89a2f23b58a51b0ed9850e40f7e39",
+        "bytes": 8568,
+        "words": 1262,
+        "logical_lines": 55,
+        "terminal_lf_present": false,
+        "packets": [
+          "S-004",
+          "S-005",
+          "S-009",
+          "S-020"
+        ],
+        "thread_id": "019f5539-a1bd-73e2-ad09-893cba3be6b6",
+        "usage": {
+          "input_tokens": 32699,
+          "cached_input_tokens": 9984,
+          "output_tokens": 9682,
+          "reasoning_output_tokens": 7956
+        }
+      }
+    },
+    "common_transport": {
+      "route": "three separate fresh native gpt-5.6-sol ultra contexts; never OpenRouter",
+      "one_call_per_commission": true,
+      "return_code_each": 0,
+      "events_each": 4,
+      "tool_or_command_events_each": 0,
+      "web_events_each": 0,
+      "subagent_events_each": 0,
+      "retry_performed": false,
+      "stderr_empty_each": true,
+      "title_valid_each": true,
+      "commission_blocked_marker_present_each": false,
+      "blocked_marker_interpretation": "mechanical observation only; absence does not accept a commission"
+    },
+    "commission_batch_accepted": false,
+    "whole_set_audit_performed": false,
+    "semantic_review_performed": false,
+    "prose_generated": false,
+    "metrics_run": false,
+    "judges_run": false,
+    "h050_status": "TESTING_NO_RUN_014_INFERENCE",
+    "causal_or_product_verdict": "none"
+  },
+  "founder_stop": {
+    "status": "STOPPED",
+    "boundary": "after the complete mechanical C1-C3 commission batch and before any whole-set semantic audit or prose",
+    "requested_by": "founder",
+    "calibration_continuation_authorized": false,
+    "active_next_artifact": null,
+    "resume_requirement": "successor handoff must fork the writer contract, freeze the candidate commission set, and run one whole-set audit before any Opus call",
+    "external_blocker": "none"
+  },
   "start_direction_audit": {
     "status": "ACCEPTED",
     "verdict": "GO",
@@ -778,7 +880,7 @@
   },
   "route_law": "OpenRouter only for Opus 4.6 chapter writing and DeepSeek research; GPT/OpenAI, Luna, Sol, Gemini, Grok, planning, reviewing, auditing, and judging never use OpenRouter",
   "quality_policy": "optimize only for method integrity and quality; no speed, cost, token, or reasoning cap",
-  "next_artifact": "fresh complete C1-C3 commissions from accepted master-plan R2 under frozen generic commissioner SHA-256 b1eabd112ab9c1c6e67284ab7bae27c512bf7ac3affb3be02877343c829e1c18, with no run-013 commission reuse",
+  "next_artifact": null,
   "external_blocker": "none",
   "notes": "Run-013 remains immutable. R1's prompt-persistence gap was corrected prospectively in R2. No new permanent gate, quality lever, or hypothesis is introduced for this one input conflict."
 }

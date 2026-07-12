@@ -33,7 +33,7 @@ Write no documentation by default. A doc must be load-bearing (an agent cannot c
 - Published books are immutable artifacts; corrections produce new versions.
 
 ## Dependencies
-Understand or recreate: prefer dependencies fully reasoned about in-repo; reimplement small subsets over adopting frameworks. Model access goes through the founder's endpoints — the LiteLLM proxy (`belief-changer` virtual key, by alias) or the founder's OpenRouter key (calibration) — always via env vars; no provider keys in this repo.
+Understand or recreate: prefer dependencies fully reasoned about in-repo; reimplement small subsets over adopting frameworks. Model access goes through the founder's endpoints and always via environment variables; no provider keys belong in this repo. During calibration, the HARNESS route law is binding: OpenRouter is only for Opus chapter writing with reasoning disabled and DeepSeek research at top reasoning, never GPT/OpenAI, Sol, Luna, Gemini, Grok, planning, reviewing, auditing, framing, summarization, or judging.
 
 ## Code Intelligence
 Use the codebase-memory-mcp tools: blast-radius (`detect_changes`) before modifying existing code, `search_graph`/`trace_path` when exploring, `manage_adr` for architecture decisions instead of docs.
@@ -48,10 +48,10 @@ Use the codebase-memory-mcp tools: blast-radius (`detect_changes`) before modify
 2. Behavior or method change → openspec change first; validate with `openspec validate <slug> --strict`.
 3. Every new test cites the spec scenario it proves, or is marked infra.
 4. Gate everything with `bash scripts/check.sh`. Trust real exit codes only.
-5. Conventional Commits, straight to `main`, push after each logical change.
+5. Conventional Commits, straight to `main`, push after each logical change. Calibration is the explicit exception: work and push on `calibration-lab`; only the founder merges it to `main`.
 
 ## Calibration Recovery
-During calibration, `calibration/HARNESS.md` and its empirical run records may move ahead of OpenSpec. After any context compaction, task resume, or operator handoff, reread the HARNESS true-north section, the final row of `calibration/runs/LEDGER.md`, the current run's manifest and report, and `git log -5` before acting. State the last accepted product artifact, next product artifact, active generic hypothesis, and external blocker. Once research, framing, and plan are accepted, the next action is prose or product evaluation—not more process work unless an observed product failure requires it.
+During calibration, `calibration/HARNESS.md` and its empirical run records may move ahead of OpenSpec. After any context compaction, task resume, or operator handoff, read `calibration/STATE.md` first, then verify it against the HARNESS true-north section, the final row of `calibration/runs/LEDGER.md`, the current run's manifest and report, and `git log -5`. State the last accepted product artifact, next product artifact, active generic hypothesis, and external blocker before acting. If STATE says `STOPPED`, also read the `FAILURE-ANALYSIS` artifact named there and do not resume any calibration action until the founder explicitly chooses a fork; if that artifact is missing, remain stopped. Outside a stop, once research, framing, and plan are accepted, the next action is a product-path artifact or evaluation—not speculative process work.
 
 ## Harness Rule
 When a task fails or confuses, don't just retry: name the missing capability (context, spec, test, tool, check), then fix it as part of the task or record it in the active exec plan.

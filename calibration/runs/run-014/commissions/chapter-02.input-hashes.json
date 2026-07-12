@@ -1,0 +1,54 @@
+{
+  "assembled_prompt": {
+    "bytes": 75378,
+    "delivery": "exact file bytes on stdin",
+    "path": "calibration/runs/run-014/commissions/chapter-02.prompt.md",
+    "sha256": "044eff0eb2c3fe4426c412c16efa80f4060c94b0f5ed7786e8e10bcecf9d36e6"
+  },
+  "exact_model_inputs": [
+    "prompts/chapter-commissioner.md",
+    "production-books/quit-sugar/master-plan.md",
+    "production-books/quit-sugar/research/sources/s-010-wic-caregiver-drink-changes.md",
+    "production-books/quit-sugar/research/sources/s-011-accra-commercial-drink-avoidance.md"
+  ],
+  "excluded_context": "all inputs not enumerated above",
+  "model_route": "fresh native Codex gpt-5.6-sol reasoning ultra; never OpenRouter",
+  "output_or_reasoning_cap": "none set",
+  "per_file": {
+    "production-books/quit-sugar/master-plan.md": {
+      "bytes": 66037,
+      "lines": 644,
+      "sha256": "b1726d736cb543f0b16c24f225136b86ebda336f4a1981f0c1f323cb311530b4",
+      "source_commit": "e9aeca03ecc72707a0de382db70aebfb36477b31",
+      "terminal_lf": false
+    },
+    "production-books/quit-sugar/research/sources/s-010-wic-caregiver-drink-changes.md": {
+      "bytes": 2135,
+      "lines": 34,
+      "sha256": "c58df036dbc3688f8af3cccfdee4c535c9968a8db78a3281025aac0c5ad40d18",
+      "source_commit": "e9aeca03ecc72707a0de382db70aebfb36477b31",
+      "terminal_lf": true
+    },
+    "production-books/quit-sugar/research/sources/s-011-accra-commercial-drink-avoidance.md": {
+      "bytes": 2061,
+      "lines": 34,
+      "sha256": "4502d5af2696fda5df64187ad7e418d1d493909b1192bf88e3e448092f6a2898",
+      "source_commit": "e9aeca03ecc72707a0de382db70aebfb36477b31",
+      "terminal_lf": true
+    },
+    "prompts/chapter-commissioner.md": {
+      "bytes": 3770,
+      "lines": 19,
+      "sha256": "b1eabd112ab9c1c6e67284ab7bae27c512bf7ac3affb3be02877343c829e1c18",
+      "source_commit": "e9aeca03ecc72707a0de382db70aebfb36477b31",
+      "terminal_lf": true
+    }
+  },
+  "source_head": "e9aeca03ecc72707a0de382db70aebfb36477b31",
+  "status": "PERSISTED_AND_VERIFIED_BEFORE_COMMISSION_CALL",
+  "target_chapter": "CH-02",
+  "wrapper": {
+    "bytes": 557,
+    "sha256": "e39733ec7dbfe727addbdc145558253e332e5cf8027592bf60b62e655ed3b19f"
+  }
+}

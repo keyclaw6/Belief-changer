@@ -1,0 +1,39 @@
+{
+  "status": "OUTPUT_PRESENT_READABLE_UNBLOCKED_UNREVIEWED",
+  "source_head_before": "e9aeca03ecc72707a0de382db70aebfb36477b31",
+  "source_head_after": "e9aeca03ecc72707a0de382db70aebfb36477b31",
+  "target_chapter": "CH-01",
+  "output": {
+    "path": "calibration/runs/run-014/commissions/chapter-01.md",
+    "sha256": "f2cd40ab8919cdf7a9a7f1816baeea406d96d00c516085c78e3d98ae0432fce9",
+    "bytes": 8507,
+    "words": 1211,
+    "newline_count": 49,
+    "logical_lines": 50,
+    "terminal_lf_present": false,
+    "nul_bytes": 0,
+    "readable": true,
+    "nonempty": true,
+    "matches_raw_agent_message_sha256": true,
+    "authoritative_title_exact": true,
+    "commission_blocked_marker_present": false
+  },
+  "completion_transport": {
+    "return_code": 0,
+    "turn_completed_events": 1,
+    "turn_failed_events": 0,
+    "final_agent_messages": 1,
+    "stderr_empty": true,
+    "workspace_entries_before": 0,
+    "workspace_entries_after": 0
+  },
+  "input_integrity": {
+    "all_five_hashes_match_preinvocation_manifest_after_call": true,
+    "input_files_changed": false,
+    "head_changed": false
+  },
+  "manual_edit_repair_or_normalization": false,
+  "retry_performed": false,
+  "semantic_review_performed": false,
+  "commission_promoted_or_committed": false
+}

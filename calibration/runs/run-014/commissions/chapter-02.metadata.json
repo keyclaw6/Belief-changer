@@ -1,0 +1,95 @@
+{
+  "blocked_marker_present": false,
+  "command": [
+    "codex",
+    "exec",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--ignore-rules",
+    "--disable",
+    "multi_agent",
+    "--model",
+    "gpt-5.6-sol",
+    "-c",
+    "model_reasoning_effort=ultra",
+    "--sandbox",
+    "read-only",
+    "--skip-git-repo-check",
+    "--cd",
+    "<isolated-empty-read-only-cwd>",
+    "--json",
+    "-"
+  ],
+  "commission_bytes": 9374,
+  "commission_lines": 57,
+  "commission_sha256": "2a5bcca99181be17aaafd2fd7884cd3ed725d8068d00d3e31f5e231e5027678b",
+  "cwd_entries_after": [],
+  "cwd_entries_before": 0,
+  "environment_names": [
+    "CODEX_HOME",
+    "HOME",
+    "LANG",
+    "LC_ALL",
+    "LC_CTYPE",
+    "PATH",
+    "TERM"
+  ],
+  "environment_policy": "strict allowlist; provider/API key, token, secret, password, and credential variables excluded",
+  "event_count": 4,
+  "event_types": {
+    "item.completed": 1,
+    "thread.started": 1,
+    "turn.completed": 1,
+    "turn.started": 1
+  },
+  "expected_title": "AUTHORITATIVE SEMANTIC COMMISSION \u2014 CH-02",
+  "first_nonempty_line": "AUTHORITATIVE SEMANTIC COMMISSION \u2014 CH-02",
+  "fresh_ephemeral_context": true,
+  "head_after_call": "e9aeca03ecc72707a0de382db70aebfb36477b31",
+  "head_unchanged": true,
+  "isolated_cwd": "/tmp empty and read-only",
+  "item_types": {
+    "agent_message": 1
+  },
+  "message_count": 1,
+  "model": "gpt-5.6-sol",
+  "multi_agent_disabled": true,
+  "non_message_item_events": [],
+  "output_limit": "none set by executor",
+  "output_normalization_performed": false,
+  "parse_errors": [],
+  "prospective_input_record": {
+    "assembled_prompt_sha256": "044eff0eb2c3fe4426c412c16efa80f4060c94b0f5ed7786e8e10bcecf9d36e6",
+    "input_hashes_sha256": "3ef7a1da0a8a403812e1b4b6c556c02b0c99e6191e457d2d6ae7e5a03a482f94",
+    "per_file_sha256": {
+      "production-books/quit-sugar/master-plan.md": "b1726d736cb543f0b16c24f225136b86ebda336f4a1981f0c1f323cb311530b4",
+      "production-books/quit-sugar/research/sources/s-010-wic-caregiver-drink-changes.md": "c58df036dbc3688f8af3cccfdee4c535c9968a8db78a3281025aac0c5ad40d18",
+      "production-books/quit-sugar/research/sources/s-011-accra-commercial-drink-avoidance.md": "4502d5af2696fda5df64187ad7e418d1d493909b1192bf88e3e448092f6a2898",
+      "prompts/chapter-commissioner.md": "b1eabd112ab9c1c6e67284ab7bae27c512bf7ac3affb3be02877343c829e1c18"
+    }
+  },
+  "raw_jsonl_sha256": "c6a1096651c7eb87476fa0bad23b0693f292ba30c9063977d805a7bcad36b179",
+  "reasoning_effort": "ultra",
+  "reasoning_limit": "none set by executor",
+  "retry_performed": false,
+  "returncode": 0,
+  "semantic_review_performed": false,
+  "source_head": "e9aeca03ecc72707a0de382db70aebfb36477b31",
+  "status": "CALL_COMPLETE_MECHANICALLY_CHECKED_WITHOUT_REVIEW_RETRY_OR_NORMALIZATION",
+  "stderr_bytes": 0,
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "subagent_attempt_events": [],
+  "target_chapter": "CH-02",
+  "thread_ids": [
+    "019f5537-6652-72e3-9e79-8affe2d6a02e"
+  ],
+  "title_valid": true,
+  "transport": "native Codex subscription; never OpenRouter",
+  "usage": {
+    "cached_input_tokens": 9984,
+    "input_tokens": 30329,
+    "output_tokens": 8218,
+    "reasoning_output_tokens": 6321
+  },
+  "utf8_readable": true
+}

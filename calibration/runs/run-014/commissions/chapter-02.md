@@ -1,0 +1,57 @@
+AUTHORITATIVE SEMANTIC COMMISSION — CH-02
+
+CH-02 owns one belief move: total freedom inside the book’s target can rest on a clear behavioral category without becoming fear of food, molecular purity, or conflict with clinical care. The reader arrives with permission to investigate without beginning a new restriction campaign and leaves with one stable line against which later benefit claims can be tested.
+
+The target is the anticipation, bargaining, reward, rescue, grazing, and restarting loop around **BAD SUGAR**, not nutrition purity. “Good” and “bad” are operational method labels, never moral judgments about foods, bodies, caregivers, or people who eat differently.
+
+The chapter must establish these controlling meanings:
+
+- **GOOD SUGAR (DEF-02):** sugars and starches in ordinary nourishment, including whole fruit, vegetables, legumes, nuts, plain dairy, oats, rice, potatoes, bread, pasta, and other ordinary meal staples. Their carbohydrate or sugar molecules do not bring them into the target category.
+
+- **BAD SUGAR (DEF-03):** the categorical core comprises products conventionally consumed as sugar-sweetened drinks, confection, desserts, sweet baked goods, or added-sugar sweet snacks, including products sweetened with sugar, honey, or syrup. A categorical core item cannot be exempted because it is homemade, natural, organic, dark, low-sugar, healthier-labelled, convenient, celebratory, caring, or eaten when hungry. The gray savoury edge comprises only genuinely ambiguous refined savoury snacks functioning as discretionary reward, rescue, graze, or automatic nibble rather than ordinary meal food. Behavioral-role inquiry belongs solely at that gray edge; it may never exempt a categorical core item. Small incidental ingredients do not make an ordinary meal BAD SUGAR.
+
+- **Totality inside the line (DEF-05):** the destination is no planned BAD SUGAR doses. A “sugar hit” or “planned dose” means deliberate decision-loop behavior, not a pharmacological or diagnostic event. This is practical total freedom, not molecular purity, a medical rule, or loss of the reader’s right to choose. Moderation remains the reader’s right, although recurring planned exceptions and continuing negotiation are not renamed desire-level freedom.
+
+- **Molecule Margin (DEF-06):** a trace ingredient, uncertain restaurant sauce, accidental bite, or genuine classification mistake is not a deliberate return and does not constitute failure. The reader may notice it, learn from it if useful, and continue from the choice already made. The margin covers accidents and honest ambiguity; it cannot turn a planned exception into an accident.
+
+- **Conditional extensions (DEF-07):** whole fruit and ordinary meal carbohydrates remain protected. Juice, dried fruit, non-nutritive sweeteners, alcohol, caffeine, and adjacent indulgences are not required quits and do not define success. Any later examination of them must be an autonomous, optional question.
+
+DEF-03, DEF-04, DEF-06, and SAFE-01 must be visibly boxed. The definitional decree in DEF-04 is frozen and must appear verbatim:
+
+**Throughout this book, whenever I say sugar, a sugar hit, or quitting sugar, take me to mean BAD SUGAR as defined here—not fruit, ordinary meals, or every carbohydrate.**
+
+Debut the **Ordinary Eating Compass** as temporary teaching scaffolding for applying this operational line and, later, returning credit to the actual sources of ordinary nourishment and experience. It is not a tracking system, ingredient-surveillance practice, permanent rulebook, or dietary identity. Its success will ultimately consist in becoming unnecessary.
+
+The complete SAFE-01 clinical and eating-disorder perimeter governs the chapter and must be preserved:
+
+- Medical glucose, prescribed nutrition, diabetes or metabolic treatment, pregnancy-related dietary instructions, and eating-disorder care are outside the method.
+- Qualified clinical instructions always outrank the book.
+- Persistent weakness, concerning symptoms, or medical uncertainty must not be resolved through a belief argument.
+- The book provides no calorie target, weight-loss program, carbohydrate doctrine, medical nutrition therapy, or eating-disorder treatment.
+- If the framework intensifies food fear, restriction, ingredient surveillance, or an eating-disorder pattern, direct the reader away from self-experimentation and toward qualified care. Immediate danger belongs with local emergency or crisis support.
+- Household material may clarify the operational line but may not diagnose, frighten, shame, or prescribe for children.
+- Nothing in the method may isolate a reader from clinicians or qualified care.
+
+SC-02 may make this perimeter concrete through a hypothetical contrast between prescribed glucose or nutrition and a discretionary sugar hit. Its sole job is to show that clinical necessity lies outside the discretionary target and outranks the method; it must not interpret, modify, or second-guess care.
+
+The household evidence supplies recognition and boundary pressure, not outcomes:
+
+- **EV-L10 / S-010#E-001:** In a peer-reviewed qualitative interview study of WIC-enrolled families in a southeastern US health system, one coded caregiver reported changing a child’s drinks toward water and checking sugar labels after WIC nutritionist advice. Permitted exact source language is: “I started giving her water more. I started changing up her drinks. I started checking the sugars on the back.” This is an **EXACT_QUOTE** from Table 3, Topic 3, “Education about Healthy Drink Choices,” Parent 03. It is exact to the published table, whose quotations the authors lightly edited for conjunctions and colloquialisms, not to the raw transcript. Attribution: Ali S, Gibbs SE, Wiseman K, Zoellner J, Montez K, Taxter A, Suarez M, Hindel L, Lewis KH; *Maternal and Child Health Journal* 29 (2025), 628–638; https://doi.org/10.1007/s10995-025-04075-w. Use the account to respect household care and show why a usable line matters. It establishes neither the caregiver’s own freedom or durability nor any child outcome, and it warrants no household prescription or moralizing. Do not infer caregiver demographics.
+
+- **EV-L11 / S-011#E-001:** In a peer-reviewed qualitative focus-group study of low-income households in four peri-urban Accra communities, one shopper expressed distrust of purchased sweet beverages and reported using homemade sobolo instead. The study warns that traditional drinks may contain unrecognised sugar, so the substitution cannot be coded as abstinence. Permitted exact source language is: “I don’t really buy any (drinks). I believe they are just made of sugar and coloring…” This is an **EXACT_QUOTE** from Results §3.4.2, Person 2, Teiman; the published English is a checked translation from Twi or Ga. Attribution: Amegah C, Odei Obeng-Amoako G, Ng S, Lambon-Quayefio M, Adu-Afarwuah S; *International Journal of Environmental Research and Public Health* 23 (2026), 799; https://doi.org/10.3390/ijerph23060799. The quotation records one person’s belief and product distrust, not an established ingredient analysis. Use the account only to show that changing source, label, or package does not by itself resolve the operational category. It proves no abstinence, freedom, ingredient equivalence, deception, or health outcome. Add no gender, household details, or other inferred demographics.
+
+The reader-recognition token is the plan-frozen RD-05: “I know how to read the label. I still need a line I can live with.” It should speak especially to the informed household translator while also reassuring the restriction veteran that totality does not mean endless checking.
+
+AN-08, the **customs desk for molecules**, should expose the absurd burden of treating every ingredient trace as a border violation. Its argument is that ingredient perfection recruits endless checks, whereas the operational line and Molecule Margin restore proportion. It must not suggest that ingredient differences are unreal or that molecules carry moral status.
+
+Debut M-08 verbatim as the chapter’s compact freedom promise:
+
+`You can close the daily sugar debate without policing every molecule, fighting yourself, or treating one accidental bite as failure.`
+
+Install I-02 verbatim:
+
+**USE THE BAD SUGAR LINE, NOT MOLECULAR PANIC. Whole fruit, ordinary meals, and ordinary carbohydrates are outside this book’s target; qualified medical, pregnancy-related, or eating-disorder care always outranks this method.**
+
+This chapter defines the field; it does not ask the reader to cross the line yet. It must not argue that pleasant taste is imaginary, determine whether BAD SUGAR owns a special benefit, explain the later anticipation mechanism, diagnose addiction, promise health or weight outcomes, prescribe household changes, or turn labels and homemade status into a full benefit argument. No carbohydrate doctrine, ingredient equivalence, caregiver shame, clinician conflict, or behavioral-role exemption for categorical core items is permitted.
+
+The demolition pressure remains low and the freedom promise restrained. The chapter’s 2,800-word responsibility is complete when “no planned doses” has become intelligible as bounded, reader-owned freedom with ordinary food, honest ambiguity, and authoritative clinical care securely protected.

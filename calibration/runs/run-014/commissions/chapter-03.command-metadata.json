@@ -1,0 +1,96 @@
+{
+  "status": "COMPLETED_OUTPUT_PRESENT_MECHANICALLY_VALID_UNREVIEWED",
+  "source_head": "e9aeca03ecc72707a0de382db70aebfb36477b31",
+  "target_chapter": "CH-03",
+  "batch_context": "one member of the simultaneous fresh C1-C3 commission batch",
+  "preinvocation_record_sha256": "76411f6de2a1d43d4a02f6014a2505ef6fa5cd5324c07ebde7b83c7ccb69f792",
+  "workspace": "/tmp/belief-changer-run014-ch03.e9aeca0",
+  "workspace_empty_before_invocation": true,
+  "sandbox": "read-only isolated empty cwd with no additional readable task files supplied",
+  "prompt": {
+    "path": "calibration/runs/run-014/commissions/chapter-03.assembled-prompt.md",
+    "sha256": "3a8ce6ed7bfe0caaca18a418ca75bc3ccc35f0cd0998329d553d5d8e53ecf953",
+    "delivery": "exact file bytes on stdin"
+  },
+  "command_argv": [
+    "codex",
+    "exec",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--ignore-rules",
+    "--disable",
+    "multi_agent",
+    "--model",
+    "gpt-5.6-sol",
+    "-c",
+    "model_reasoning_effort=ultra",
+    "--sandbox",
+    "read-only",
+    "--skip-git-repo-check",
+    "-C",
+    "/tmp/belief-changer-run014-ch03.e9aeca0",
+    "--json",
+    "--color",
+    "never",
+    "--output-last-message",
+    "/home/kab/Belief-changer/calibration/runs/run-014/commissions/chapter-03.md",
+    "-"
+  ],
+  "environment": {
+    "inherit": "none",
+    "HOME": "/home/kab",
+    "USER": "kab",
+    "LOGNAME": "kab",
+    "PATH": "/home/kab/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+    "CODEX_HOME": "/home/kab/.codex",
+    "LANG": "C.UTF-8",
+    "LC_ALL": "C.UTF-8",
+    "TMPDIR": "/tmp",
+    "TERM": "xterm-256color",
+    "provider_or_api_credentials_inherited": false
+  },
+  "outputs": {
+    "commission": "calibration/runs/run-014/commissions/chapter-03.md",
+    "raw_jsonl": "calibration/runs/run-014/commissions/chapter-03.raw.jsonl",
+    "stderr": "calibration/runs/run-014/commissions/chapter-03.stderr"
+  },
+  "reasoning_or_output_cap": "none set",
+  "return_code": 0,
+  "thread_id": "019f5539-a1bd-73e2-ad09-893cba3be6b6",
+  "usage": {
+    "input_tokens": 32699,
+    "cached_input_tokens": 9984,
+    "output_tokens": 9682,
+    "reasoning_output_tokens": 7956
+  },
+  "event_summary": {
+    "total_events": 4,
+    "thread_started": 1,
+    "turn_started": 1,
+    "agent_messages": 1,
+    "turn_completed": 1,
+    "turn_failed": 0,
+    "tool_or_command_events": 0,
+    "web_events": 0,
+    "subagent_events": 0,
+    "retry_performed": false,
+    "stderr_empty": true
+  },
+  "result_artifacts": {
+    "commission_sha256": "744a64e541eb70b4a000648f2eb0eb7f2dd89a2f23b58a51b0ed9850e40f7e39",
+    "commission_bytes": 8568,
+    "commission_words": 1262,
+    "commission_newline_count": 54,
+    "raw_jsonl_sha256": "b036dd05453c2cc239d691c5464dba8c3de3e37d7871ebe16ff08107243f69b9",
+    "raw_jsonl_bytes": 8941,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "invocation_count": 1,
+  "retry_repair_or_normalization_performed": false,
+  "semantic_review_performed": false,
+  "commit_performed": false,
+  "mechanical_validation": {
+    "path": "calibration/runs/run-014/commissions/chapter-03.mechanical-validation.json",
+    "status": "OUTPUT_PRESENT_READABLE_TITLE_VALID_NOT_BLOCKED_UNREVIEWED"
+  }
+}

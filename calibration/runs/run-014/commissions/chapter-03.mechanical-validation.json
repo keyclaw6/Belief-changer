@@ -1,0 +1,43 @@
+{
+  "status": "OUTPUT_PRESENT_READABLE_TITLE_VALID_NOT_BLOCKED_UNREVIEWED",
+  "source_head_before": "e9aeca03ecc72707a0de382db70aebfb36477b31",
+  "source_head_after": "e9aeca03ecc72707a0de382db70aebfb36477b31",
+  "output": {
+    "path": "calibration/runs/run-014/commissions/chapter-03.md",
+    "sha256": "744a64e541eb70b4a000648f2eb0eb7f2dd89a2f23b58a51b0ed9850e40f7e39",
+    "bytes": 8568,
+    "words": 1262,
+    "newline_count": 54,
+    "logical_lines": 55,
+    "terminal_lf_present": false,
+    "utf8_valid": true,
+    "readable": true,
+    "nonempty": true,
+    "matches_raw_agent_message_sha256": true
+  },
+  "mechanical_contract": {
+    "first_line": "# AUTHORITATIVE SEMANTIC COMMISSION — CH-03",
+    "title_valid": true,
+    "commission_blocked_marker_count": 0,
+    "blocked": false
+  },
+  "completion_transport": {
+    "return_code": 0,
+    "turn_completed_events": 1,
+    "turn_failed_events": 0,
+    "final_agent_messages": 1,
+    "stderr_empty": true,
+    "workspace_entries_before": 0,
+    "workspace_entries_after": 0
+  },
+  "input_integrity": {
+    "all_six_hashes_match_preinvocation_manifest_after_call": true,
+    "additional_model_input_count": 0,
+    "production_inputs_changed": false,
+    "head_changed": false
+  },
+  "manual_edit_repair_or_normalization": false,
+  "retry_performed": false,
+  "semantic_review_performed": false,
+  "commit_performed": false
+}

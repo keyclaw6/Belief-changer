@@ -1,0 +1,32 @@
+{
+  "status": "FROZEN_BEFORE_INVOCATION",
+  "source_head": "e9aeca03ecc72707a0de382db70aebfb36477b31",
+  "target_chapter": "CH-01",
+  "wrapper": {
+    "path": "calibration/runs/run-014/commissions/chapter-01.wrapper.md",
+    "sha256": "4ffb177e0b535382f29b2f4334280a138107099f9e2a913ffd77920fe702ab00",
+    "bytes": 408
+  },
+  "inputs": [
+    {"order": 1, "path": "prompts/chapter-commissioner.md", "sha256": "b1eabd112ab9c1c6e67284ab7bae27c512bf7ac3affb3be02877343c829e1c18", "lines": 19, "words": 560, "bytes": 3770},
+    {"order": 2, "path": "production-books/quit-sugar/master-plan.md", "sha256": "b1726d736cb543f0b16c24f225136b86ebda336f4a1981f0c1f323cb311530b4", "newline_count": 643, "logical_lines": 644, "words": 9544, "bytes": 66037},
+    {"order": 3, "path": "production-books/quit-sugar/research/sources/s-020-say-no-qualitative-process-evaluation.md", "sha256": "89c0ad57c642a9b0db50893e80c3a583fcbb1649ced0d867bd791b4b433a3e5a", "lines": 204, "words": 1047, "bytes": 7002},
+    {"order": 4, "path": "production-books/quit-sugar/research/sources/s-021-nell-kauls-sugar-cravings.md", "sha256": "6ccee44130be2607b0ce9cf8c04ec78c1f624529ceb05168f85cd0b9ad732555", "lines": 196, "words": 954, "bytes": 6494},
+    {"order": 5, "path": "production-books/quit-sugar/research/sources/s-023-year-without-desserts.md", "sha256": "ba7597cbda7f692b57414e5177624128c13fd602ea6e458c55ef3b58ff14e360", "lines": 148, "words": 764, "bytes": 5103}
+  ],
+  "input_hash_manifest": {
+    "path": "calibration/runs/run-014/commissions/chapter-01.input-hashes.sha256",
+    "sha256": "989ada7eab81cec6a3eb4e8f2c1f3bc3ca67bcdd25a7b60d701657330f63a989",
+    "verified_before_invocation": true
+  },
+  "assembled_prompt": {
+    "path": "calibration/runs/run-014/commissions/chapter-01.assembled-prompt.md",
+    "sha256": "3b87901e09e2b87a6969fd6604c105faf3683ae5c0bd3d55d498190e521acc9b",
+    "lines": 1231,
+    "words": 12997,
+    "bytes": 89850,
+    "delivery": "exact file bytes on stdin"
+  },
+  "permitted_input_count": 5,
+  "additional_model_input_count": 0
+}

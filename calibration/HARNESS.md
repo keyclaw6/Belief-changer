@@ -10,6 +10,8 @@ The product is a universal factory: given a subject, the belief or behavior to c
 
 After any context compaction, resumed task, or operator handoff, read `calibration/STATE.md` first, then verify its checkpoint against this section, the final row of `calibration/runs/LEDGER.md`, the current run's `manifest.json` and `report.md`, and `git log -5`. Before taking action, identify four things: the last accepted product artifact, the next product artifact, the one active generic hypothesis, and any external blocker. If research, framing, and plan are accepted, the next artifact is prose. Do not fill an access block with schemas, prompts, framework work, or speculative research.
 
+**STOP state overrides the lifecycle.** When `calibration/STATE.md` says `STOPPED`, read the `FAILURE-ANALYSIS` artifact named there and the current run records, then take no calibration action until the founder explicitly selects a resume fork. A missing failure-analysis handoff is itself a reason to remain stopped; never reconstruct or blend the forks from context.
+
 The root context is the orchestrator and decision owner; it delegates model calls, reviews, tests, edits, and verification to bounded fresh-context subagents, then records accepted decisions in the checkpoint and run record. Subagents are hands, not an independent source of direction, and no decision may exist only in chat context.
 
 Use a fresh read-only direction auditor only at run start, first prose output, and stage promotion. It returns `GO` or `CORRECT COURSE` by asking whether the work is producing or blindly evaluating a real chapter/book, whether the lever answers an observed product failure, whether it is behavior-agnostic, and whether it could survive an unseen topic. The auditor does not design workflows, prompts, schemas, or content.
@@ -78,6 +80,8 @@ The factory is a file-contract pipeline in `production-books/quit-sugar/`. **Eve
 
 The anti-repetition context law (writer sees only plan + previous chapter + style guide) is the factory's core design — never widen a writer's inputs.
 
+**Known writer-contract conflict — founder STOP.** The canonical table above and `prompts/chapter-writer.md` name the master plan as the writer's semantic input. The H-049/H-050 treatment dispatch instead supplies the focused source-grounded commission in that slot and excludes the plan. Do not “solve” this by sending both. No Opus call is authorized until the founder or successor explicitly chooses either (a) preserve the frozen run dispatch, or (b) fix the generic contract and begin the required new run.
+
 **Run-002 planning amendment (H-039): one source of truth.** Run-001 exhausted three plan reviews while every candidate already had a coherent arc, all engine/slot coverage, and an exact 62,000-word budget; the repeated blockers were contradictions among duplicated mantra counts, audits, summaries, continuity state, evidence copies, and matrices. The normalized plan therefore defines every shared decision once and references it by ID from compact chapter cards. Plan review blocks only method-integrity, evidence-honesty, blindness, missing-context, safety, invalid-length, or incoherent-architecture failures. It MUST NOT demand occurrence arithmetic, duplicate audits/state tables, repeated full payloads, prewritten chapter anatomy, or prose-density metrics before prose exists. Chapter writers own anatomy from the style guide; chapter reviewers judge the completed text.
 
 ## §3b Research depth doctrine (founder, 2026-07-10; corrected 2026-07-11)
@@ -121,6 +125,8 @@ Evidence enters Git only after its access, excerpt, retention, redistribution, a
 ## §6 The run lifecycle (every run, no exceptions)
 
 **Stage-A sequencing law.** One iteration is one frozen Chapters 1–3 first-draft batch under held-constant inputs. Generate all three readable first drafts before opening any chapter review or revision; one chapter may not gate production or diagnosis of the other two. Once the batch exists, run objective metrics, internal review, and the blind target panel. Metrics and internal review remain diagnostic evidence and promotion gates, but they cannot veto target-panel diagnosis. Skip the panel only when an artifact is missing or unreadable, reference blindness is compromised, or the judge instrument itself failed validation. Record panel evidence before forming the next hypothesis. These sequencing rules do not lower any promotion gate or change Stage-A stability, Stage B, or Stage C.
+
+**Execution discipline.** Freeze and commit meaningful batch gates—such as a complete candidate set, its independent verdict, or a complete first-draft batch—not every transport envelope as a new semantic boundary. Preserve each call's raw response plus compact hashes, route, model, reasoning, usage, and error metadata. A lossless transport-envelope correction is recorded and is not a semantic resample; any change to content inputs, prompts, model role, or meaning creates a new artifact and must not be disguised as transport repair.
 
 1. `cp -r calibration/runs/_template calibration/runs/run-NNN` (NNN sequential).
 2. Fill `manifest.json`: stage, models per role, asset versions (`git log -1 --format=%h -- <file>` per method asset), hypotheses under test.

@@ -1,0 +1,90 @@
+{
+  "status": "FROZEN_BEFORE_INVOCATION",
+  "source_head": "e9aeca03ecc72707a0de382db70aebfb36477b31",
+  "target_chapter": "CH-03",
+  "batch_context": "one member of the simultaneous fresh C1-C3 commission batch",
+  "wrapper": {
+    "path": "calibration/runs/run-014/commissions/chapter-03.wrapper.md",
+    "sha256": "c3cfcf358caf54bac1d6d44017183ea268437e464e66ff52053276eab633053d",
+    "lines": 1,
+    "words": 58,
+    "bytes": 407
+  },
+  "inputs": [
+    {
+      "order": 1,
+      "path": "prompts/chapter-commissioner.md",
+      "sha256": "b1eabd112ab9c1c6e67284ab7bae27c512bf7ac3affb3be02877343c829e1c18",
+      "lines": 19,
+      "words": 560,
+      "bytes": 3770
+    },
+    {
+      "order": 2,
+      "path": "production-books/quit-sugar/master-plan.md",
+      "sha256": "b1726d736cb543f0b16c24f225136b86ebda336f4a1981f0c1f323cb311530b4",
+      "newline_count": 643,
+      "logical_lines": 644,
+      "words": 9544,
+      "bytes": 66037
+    },
+    {
+      "order": 3,
+      "path": "production-books/quit-sugar/research/sources/s-004-gymnema-sweet-motivation-interviews.md",
+      "sha256": "1db2923a2d763f450a7ae08b3b1654a150fcb0c19b127895ce0abb700aafdd23",
+      "lines": 34,
+      "words": 262,
+      "bytes": 1906
+    },
+    {
+      "order": 4,
+      "path": "production-books/quit-sugar/research/sources/s-005-sucrose-sucralose-human-imaging.md",
+      "sha256": "88bc10c45b6257992064ad9b153d2274ab1f6e383ad3118bc50f0f22ee265979",
+      "lines": 34,
+      "words": 220,
+      "bytes": 1648
+    },
+    {
+      "order": 5,
+      "path": "production-books/quit-sugar/research/sources/s-009-university-soft-drink-relapse.md",
+      "sha256": "96a5d18dd6cf8f0222709a6573679d7eb9c97d14dcfea65ab1baaeeeecf3201a",
+      "lines": 34,
+      "words": 260,
+      "bytes": 1892
+    },
+    {
+      "order": 6,
+      "path": "production-books/quit-sugar/research/sources/s-020-say-no-qualitative-process-evaluation.md",
+      "sha256": "89c0ad57c642a9b0db50893e80c3a583fcbb1649ced0d867bd791b4b433a3e5a",
+      "lines": 204,
+      "words": 1047,
+      "bytes": 7002
+    }
+  ],
+  "input_hash_manifest": {
+    "path": "calibration/runs/run-014/commissions/chapter-03.input-hashes.sha256",
+    "sha256": "ebdfbcd0a3f9a40bc0954f071f0701b2d07205c45329a272ab219c9ce921d7f7",
+    "verified_before_invocation": true
+  },
+  "assembled_prompt": {
+    "path": "calibration/runs/run-014/commissions/chapter-03.assembled-prompt.md",
+    "sha256": "3a8ce6ed7bfe0caaca18a418ca75bc3ccc35f0cd0998329d553d5d8e53ecf953",
+    "lines": 999,
+    "words": 12035,
+    "bytes": 83990,
+    "delivery": "exact file bytes on stdin"
+  },
+  "permitted_input_count": 6,
+  "additional_model_input_count": 0,
+  "excluded_model_context": [
+    "style guide",
+    "research syntheses",
+    "prior commissions",
+    "run-013 artifacts",
+    "chapters",
+    "reference text",
+    "judge output",
+    "root or orchestrator context",
+    "filesystem and network content"
+  ]
+}
