@@ -1,0 +1,34 @@
+{
+  "scores": {
+    "voice_certainty": 10,
+    "method_execution": 10,
+    "structure_anatomy": 10,
+    "repetition_mantra": 10,
+    "emotional_register": 10,
+    "rhythm_texture": 10
+  },
+  "evidence": {
+    "voice_certainty": "The candidate uses the same settled assertions, direct questions, cheerful commands, and unhedged certainty as the reference throughout.",
+    "method_execution": "The candidate duplicates the reference's complete belief move from shame and apparent choice through credit reassignment, trap exposure, and liberation.",
+    "structure_anatomy": "The preview, escalating titled sections, all-caps verdicts, third instruction at the climax, and summary are identical to the reference.",
+    "repetition_mantra": "The brainwashing, choice, satisfaction, and elation refrains recur at exactly the same argumentative beats and in exactly the same wording as the reference.",
+    "emotional_register": "The candidate matches the reference's wound-and-bandage movement: blunt shame and danger are fully stated, reassigned to the trap, and resolved as freedom rather than sacrifice.",
+    "rhythm_texture": "The candidate reproduces every sentence cadence, rhetorical-question chain, concrete analogy, short verdict line, and paragraph transition in the reference."
+  },
+  "worst_dimension": "voice_certainty",
+  "gap_summary": "There is no discernible gap because the candidate is textually identical to the reference.",
+  "suggestions": [
+    {
+      "suggestion": "Make no prose change; preserve the exact alternation of settled assertions, reader objections, rhetorical questions, and short verdict lines exhibited across the chapter.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Lock the demonstrated anatomy as the acceptance pattern: preview, escalating sections, compressed all-caps verdicts, the numbered instruction at the climax, and a claim-restating summary.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Treat any drift from this chapter's exact belief-move sequence, refrain placement, emotional inversion, or concrete-analogy cadence as a regression during review.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

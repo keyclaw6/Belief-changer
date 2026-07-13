@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 6,
+    "method_execution": 8,
+    "structure_anatomy": 7,
+    "repetition_mantra": 8,
+    "emotional_register": 4,
+    "rhythm_texture": 6
+  },
+  "evidence": {
+    "voice_certainty": "Settled assertions and direct commands create confidence, but language about intelligence, agency, and qualified clinical care sounds therapeutic and legalistic beside the reference's blunt register.",
+    "method_execution": "The free-choice question forces the central contradiction, then reassigns apparent failure from reader weakness to a confidence trick before naming the trap.",
+    "structure_anatomy": "The preview, escalating headings, assigned second instruction, and summary are present, but the middle rarely converts its escalation into standalone ALL-CAPS verdicts.",
+    "repetition_mantra": "MN-03 gets a proper argue-then-name debut and MN-01 is verbatim, though repeating the long MN-01 wording three times within one chapter makes the machinery conspicuous.",
+    "emotional_register": "The reader is absolved and willpower is attacked, but the chapter explicitly postpones calories and health, so it never delivers full-force danger followed by release from fear.",
+    "rhythm_texture": "Short peaks such as 'Do not stop. Not yet.' work, but the membership-card and deal vocabulary runs through many similarly balanced paragraphs, flattening the reference's shifts from scene to fact to verdict."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate is a careful, metaphor-led therapeutic argument where the reference is a concrete, fact-loaded escalation that hits with blunt verdicts and full-force danger before releasing the reader from fear.",
+  "suggestions": [
+    {
+      "suggestion": "In 'THE COUNTERFEIT MEMBERSHIP CARD' and 'THE CONFIDENCE TRICK,' stop re-explaining the same deal metaphor: move through two or three sharply different concrete observations, force each through a trap question, and end the sequence with a short ALL-CAPS verdict.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Add a nerve beat to the chapter plan whenever its reference slot uses one: assign specific consequence evidence, an unsoftened imagine-this-continues question, and then an explicit instruction to put fear behind and feel relief.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "After categorical commands such as 'Do not stop. Not yet.', permit one causal explanation and the required safety exception, then cut the therapeutic and legal cushioning so the command retains cheerful finality.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "Reject a long frozen-mantra echo used more than once in a chapter unless the plan marks a deliberate multiple beat; here MN-01 appears three times and exposes the template instead of landing as one earned refrain.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

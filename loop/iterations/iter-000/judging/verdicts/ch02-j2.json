@@ -1,0 +1,34 @@
+{
+  "scores": {
+    "voice_certainty": 10,
+    "method_execution": 10,
+    "structure_anatomy": 10,
+    "repetition_mantra": 10,
+    "emotional_register": 10,
+    "rhythm_texture": 10
+  },
+  "evidence": {
+    "voice_certainty": "Flat assertions, warm direct address, I/we/you shifts, and cheerful commands match the reference word for word.",
+    "method_execution": "The central analogy, trap questions, instinct-versus-intellect inversion, objections, and open-mind close reproduce every belief move exactly.",
+    "structure_anatomy": "The preview, escalating titled sections, all-caps verdicts, explicit second instruction, and summary are identical in order and placement.",
+    "repetition_mantra": "The fixed phrases \"Nature's Guide\" and \"BAD SUGAR\" recur at exactly the reference's argumentative beats, with no additional accidental repetition.",
+    "emotional_register": "The medical fear sequence is delivered at full force and then explicitly disowned as motivation before freedom is restored, exactly as in the reference.",
+    "rhythm_texture": "Long explanatory runs, rhetorical questions, concrete analogies, short all-caps peaks, and killer-line transitions are identical to the reference."
+  },
+  "worst_dimension": "voice_certainty",
+  "gap_summary": "There is no detectable craft gap because the candidate is textually identical to the reference.",
+  "suggestions": [
+    {
+      "suggestion": "Replace the normal prose revision pass with a zero-diff preservation check here: the opening observation-to-trap-question sequence already matches the target exactly, so any rewrite would increase distance.",
+      "asset": "chapter-reviewer"
+    },
+    {
+      "suggestion": "Freeze the existing progression from preview through escalating section verdicts, the numbered instruction, and SUMMARY; preserve this sequence as the chapter-shape control for any subject.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Protect the exact argue-then-compress placement of the recurring fixed phrases and all-caps verdict lines; use this chapter as a no-change cadence control rather than adding synonyms or fresh refrains.",
+      "asset": "style-guide"
+    }
+  ]
+}

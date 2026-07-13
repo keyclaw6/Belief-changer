@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 4,
+    "method_execution": 7,
+    "structure_anatomy": 6,
+    "repetition_mantra": 8,
+    "emotional_register": 3,
+    "rhythm_texture": 5
+  },
+  "evidence": {
+    "voice_certainty": "Repeated qualifications such as 'If it does' and promises to follow the evidence keep the narrator in an auditor's register rather than Carr's settled certainty.",
+    "method_execution": "The receipt inversion moves from harm-versus-benefit to 'What does it do FOR you?' and demolishes taste and calories through credit reassignment.",
+    "structure_anatomy": "It has a preview, titled sections, the assigned third instruction, and a summary, but 'THE MENU' catalogs and defers rather than escalating through verdict peaks.",
+    "repetition_mantra": "MN-01 and MN-02 recur verbatim, 'the sugar trap' echoes naturally, and MN-04 is argued into its debut phrase, though several echoes are duplicated again in the summary.",
+    "emotional_register": "The chapter supplies escape and elation but postpones the costs and says it is 'not frightening you,' omitting the reference's full-force wound before the bandage.",
+    "rhythm_texture": "The courtroom and receipt analogies are concrete, but repeated multi-clause restatements of the same ledger logic flatten the peaks and delay short verdict lines."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate turns Carr's blunt, escalating confrontation into a cautious legal audit that postpones the wound, verdict, and emotional reversal.",
+  "suggestions": [
+    {
+      "suggestion": "In 'THE WRONG DEBATE' and 'THE INVESTIGATION AHEAD,' delete conditional audit language such as 'If it does' and 'following the evidence wherever it leads'; replace each qualification with a flat narrator verdict, a direct reader question whose answer concedes the point, and a cheerful command.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Rebuild 'THE MENU' as an escalating sequence: group the inventory into a few representative reader objections, give each one a concrete everyday scene and immediate trap question, then compress the sequence into an ALL-CAPS verdict before moving on; do not spend the chapter merely promising later hearings.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Before 'YOUR THIRD INSTRUCTION,' require a wound-and-bandage passage that states the trap's concrete consequences at full force, lets the reader feel them, explicitly rejects fear as the reason to change, and pivots immediately to relief and control.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "During review, cap each carrying analogy after it has landed once and reject successive restatements of the same ledger logic; require a short standalone verdict or killer-line pair after every dense explanatory run so the prose advances in peaks instead of circling.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

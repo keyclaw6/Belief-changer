@@ -1,0 +1,482 @@
+{
+ "campaign": "factory-v3-rubric-1",
+ "instrument_version": "carr-likeness-rubric-1",
+ "book": "production-books/quit-sugar",
+ "chapters_checked": [
+  1,
+  2,
+  3
+ ],
+ "control_ref": false,
+ "reward": 0.6217,
+ "hard_ok": false,
+ "hard_fails": [
+  "repetition: 12-gram x3 ch[2, 3]: without denying pleasant taste or giving up your right to choose that",
+  "repetition: 12-gram x2 ch[2, 3]: denying pleasant taste or giving up your right to choose that test"
+ ],
+ "checks": {
+  "originality": {
+   "ours_ngrams": 7917,
+   "overlap_ngrams": 0,
+   "overlap_ratio": 0.0,
+   "tripwire": 0.003,
+   "tripped": false,
+   "samples": []
+  },
+  "mantra": {
+   "mantras": [
+    {
+     "archetype": "MN-01",
+     "wording": "You can test whether BAD SUGAR owns any special or irreplaceable pleasure, without denying pleasant taste or giving up your right to choose.",
+     "debut": 1,
+     "schedule": [
+      2,
+      3,
+      15,
+      18
+     ],
+     "found_in": [
+      1,
+      2,
+      3
+     ],
+     "counts": {
+      "1": 3,
+      "2": 3,
+      "3": 2
+     }
+    },
+    {
+     "archetype": "MN-02",
+     "wording": "without deprivation, without battle, and without a lifetime of rules",
+     "debut": 1,
+     "schedule": [
+      3,
+      5,
+      17,
+      18,
+      20
+     ],
+     "found_in": [
+      1,
+      3
+     ],
+     "counts": {
+      "1": 3,
+      "3": 2
+     }
+    },
+    {
+     "archetype": "MN-03",
+     "wording": "the sugar trap",
+     "debut": 2,
+     "schedule": [
+      3,
+      21
+     ],
+     "found_in": [
+      2,
+      3
+     ],
+     "counts": {
+      "2": 4,
+      "3": 1
+     }
+    },
+    {
+     "archetype": "MN-04",
+     "wording": "a special pleasure or rescue",
+     "debut": 3,
+     "schedule": [
+      4,
+      7,
+      18
+     ],
+     "found_in": [
+      3
+     ],
+     "counts": {
+      "3": 5
+     }
+    },
+    {
+     "archetype": "MN-05",
+     "wording": "The Sugar Showman feeds the Sugar Flea.",
+     "debut": 6,
+     "schedule": [
+      7,
+      8,
+      13,
+      15,
+      16,
+      18,
+      19,
+      20
+     ],
+     "found_in": [],
+     "counts": {}
+    },
+    {
+     "archetype": "MN-06",
+     "wording": "a nagging, bargaining, slightly urgent sense that this moment is missing something",
+     "debut": 6,
+     "schedule": [
+      7,
+      9,
+      10,
+      15,
+      19
+     ],
+     "found_in": [],
+     "counts": {}
+    },
+    {
+     "archetype": "MN-07",
+     "wording": "anticipating, bargaining, and starting over",
+     "debut": 4,
+     "schedule": [
+      5,
+      10,
+      16,
+      17,
+      18
+     ],
+     "found_in": [],
+     "counts": {}
+    },
+    {
+     "archetype": "MN-08",
+     "wording": "When the benefit loses its credit, the battle loses its job.",
+     "debut": 5,
+     "schedule": [
+      7,
+      8,
+      9,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+     ],
+     "found_in": [],
+     "counts": {}
+    },
+    {
+     "archetype": "MN-09",
+     "wording": "You can close the daily sugar debate without policing every molecule, fighting yourself, or treating one accidental bite as failure.",
+     "debut": 1,
+     "schedule": [
+      11,
+      17,
+      18,
+      20
+     ],
+     "found_in": [
+      1
+     ],
+     "counts": {
+      "1": 2
+     }
+    },
+    {
+     "archetype": "MN-10",
+     "wording": "WHAT A RELIEF \u2014 THE SUGAR TRAP IS OVER. I'M FREE!",
+     "debut": 19,
+     "schedule": [
+      20,
+      21
+     ],
+     "found_in": [],
+     "counts": {}
+    }
+   ],
+   "chapters_checked": [
+    1,
+    2,
+    3
+   ],
+   "chapters_without_mantra": [],
+   "failures": []
+  },
+  "repetition_within": {
+   "repeated_ngrams": 10,
+   "spans_top": [
+    {
+     "text": "of debating planning around and restarting the same loop",
+     "len": 9,
+     "count": 2,
+     "chapters": [
+      2,
+      3
+     ]
+    },
+    {
+     "text": "or giving up your right to choose that test",
+     "len": 9,
+     "count": 2,
+     "chapters": [
+      2,
+      3
+     ]
+    },
+    {
+     "text": "chosen your main course the soft drink you",
+     "len": 8,
+     "count": 2,
+     "chapters": [
+      1,
+      2
+     ]
+    },
+    {
+     "text": "has been earning its place or stealing it",
+     "len": 8,
+     "count": 2,
+     "chapters": [
+      1
+     ]
+    },
+    {
+     "text": "it without deprivation without battle and without a",
+     "len": 8,
+     "count": 2,
+     "chapters": [
+      1
+     ]
+    },
+    {
+     "text": "keep an open mind and follow every instruction",
+     "len": 8,
+     "count": 2,
+     "chapters": [
+      1,
+      2
+     ]
+    },
+    {
+     "text": "tried to cut down on soft drinks but",
+     "len": 8,
+     "count": 2,
+     "chapters": [
+      2,
+      3
+     ]
+    },
+    {
+     "text": "bad sugar provides a special pleasure or rescue",
+     "len": 8,
+     "count": 2,
+     "chapters": [
+      3
+     ]
+    }
+   ],
+   "hard_fails": [
+    {
+     "text": "without denying pleasant taste or giving up your right to choose that",
+     "len": 12,
+     "count": 3,
+     "chapters": [
+      2,
+      3
+     ]
+    },
+    {
+     "text": "denying pleasant taste or giving up your right to choose that test",
+     "len": 12,
+     "count": 2,
+     "chapters": [
+      2,
+      3
+     ]
+    }
+   ],
+   "whitelist_size": 10
+  },
+  "length": [
+   {
+    "n": 1,
+    "words": 2516,
+    "budget": null,
+    "ok": true
+   },
+   {
+    "n": 2,
+    "words": 2331,
+    "budget": null,
+    "ok": true
+   },
+   {
+    "n": 3,
+    "words": 3336,
+    "budget": null,
+    "ok": true
+   }
+  ],
+  "near_copy": [
+   {
+    "chapter": "ch01",
+    "ratio": 0.015,
+    "tripwire": 0.5
+   },
+   {
+    "chapter": "ch02",
+    "ratio": 0.0246,
+    "tripwire": 0.5
+   },
+   {
+    "chapter": "ch03",
+    "ratio": 0.027,
+    "tripwire": 0.5
+   }
+  ]
+ },
+ "diagnostics": {
+  "stylometrics": [
+   {
+    "metric": "mean_chapter_words",
+    "ours": 2727.7,
+    "ref": 3725.3
+   },
+   {
+    "metric": "mean_sentence_words",
+    "ours": 14.3,
+    "ref": 18.4
+   },
+   {
+    "metric": "pct_short_sentences",
+    "ours": 41.6,
+    "ref": 14.7
+   },
+   {
+    "metric": "questions_per_100_sents",
+    "ours": 8.9,
+    "ref": 11.3
+   },
+   {
+    "metric": "second_person_per_1000",
+    "ours": 39.9,
+    "ref": 42.4
+   },
+   {
+    "metric": "first_person_per_1000",
+    "ours": 9.4,
+    "ref": 5.1
+   }
+  ]
+ },
+ "judges": {
+  "status": "SCORED",
+  "rubric": {
+   "reward": 0.6217,
+   "per_chapter": [
+    {
+     "chapter": "ch01",
+     "composite": 0.5775,
+     "dims": {
+      "voice_certainty": 4.5,
+      "method_execution": 6.0,
+      "structure_anatomy": 6.5,
+      "repetition_mantra": 8.5,
+      "emotional_register": 3.5,
+      "rhythm_texture": 6.0
+     },
+     "gap_summaries": [
+      "The largest distance is the candidate's careful, conditional investigation register, which withholds the reference's blunt nerve, settled certainty, and escalating escape verdicts.",
+      "The candidate replaces Carr\u2019s forceful, escalating certainty and wound-then-relief nerve with a cautious, policy-like investigation full of disclaimers and category management."
+     ]
+    },
+    {
+     "chapter": "ch02",
+     "composite": 0.695,
+     "dims": {
+      "voice_certainty": 6.5,
+      "method_execution": 8.0,
+      "structure_anatomy": 7.0,
+      "repetition_mantra": 8.5,
+      "emotional_register": 5.0,
+      "rhythm_texture": 6.5
+     },
+     "gap_summaries": [
+      "The candidate reproduces the belief logic but replaces the reference's blunt, escalating, fact-driven nerve with a polished, legally qualified extended-metaphor essay.",
+      "The candidate is a careful, metaphor-led therapeutic argument where the reference is a concrete, fact-loaded escalation that hits with blunt verdicts and full-force danger before releasing the reader from fear."
+     ]
+    },
+    {
+     "chapter": "ch03",
+     "composite": 0.5925,
+     "dims": {
+      "voice_certainty": 4.5,
+      "method_execution": 7.5,
+      "structure_anatomy": 6.0,
+      "repetition_mantra": 8.0,
+      "emotional_register": 3.5,
+      "rhythm_texture": 6.0
+     },
+     "gap_summaries": [
+      "The candidate's cautious hearing-of-the-evidence stance omits the reference's full-force wound before relief, so its escape message lacks Carr's characteristic nerve.",
+      "The candidate turns Carr's blunt, escalating confrontation into a cautious legal audit that postpones the wound, verdict, and emotional reversal."
+     ]
+    }
+   ],
+   "suggestions": [
+    {
+     "suggestion": "Rewrite the repeated 'test' and 'investigation' framing, especially the concession 'What you do with that clarity is yours,' so each reader objection is answered by a settled fact, a trap question with only one honest answer, and a cheerful command.",
+     "asset": "chapter-writer",
+     "weight": 5,
+     "count": 1,
+     "chapters": [
+      "ch01"
+     ]
+    },
+    {
+     "suggestion": "Forbid the permission-and-caveat register exemplified by \u201cWhat you do with that clarity is yours\u201d and \u201cthat care outranks every word\u201d; require settled-fact assertions and cheerful commands once a claim is within the book\u2019s evidence boundary.",
+     "asset": "style-guide",
+     "weight": 5,
+     "count": 1,
+     "chapters": [
+      "ch01"
+     ]
+    },
+    {
+     "suggestion": "Make each major section end in a blunt compression of the belief move: after THE CONFIDENCE TRICK and THE SUGAR TRAP, replace one explanatory paragraph with a short verdict line, and make the next section escalate it rather than reopen it.",
+     "asset": "chapter-writer",
+     "weight": 5,
+     "count": 1,
+     "chapters": [
+      "ch02"
+     ]
+    },
+    {
+     "suggestion": "In 'THE COUNTERFEIT MEMBERSHIP CARD' and 'THE CONFIDENCE TRICK,' stop re-explaining the same deal metaphor: move through two or three sharply different concrete observations, force each through a trap question, and end the sequence with a short ALL-CAPS verdict.",
+     "asset": "chapter-writer",
+     "weight": 5,
+     "count": 1,
+     "chapters": [
+      "ch02"
+     ]
+    },
+    {
+     "suggestion": "Replace the repeated reservations around \"If it does\" and \"following the evidence wherever it leads\" with one ventriloquized objection followed by a flat settled-fact answer; keep conditionals in the reader's objection, not the narrator's conclusion.",
+     "asset": "style-guide",
+     "weight": 5,
+     "count": 1,
+     "chapters": [
+      "ch03"
+     ]
+    }
+   ],
+   "worst_dimensions": [
+    {
+     "dimension": "emotional_register",
+     "votes": 6
+    }
+   ],
+   "n_verdicts": 6,
+   "judge_model": "gpt-5.6-sol",
+   "judge_k": 2
+  },
+  "missing": []
+ }
+}

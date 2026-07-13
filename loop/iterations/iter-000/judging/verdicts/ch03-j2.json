@@ -1,0 +1,34 @@
+{
+  "scores": {
+    "voice_certainty": 10,
+    "method_execution": 10,
+    "structure_anatomy": 10,
+    "repetition_mantra": 10,
+    "emotional_register": 10,
+    "rhythm_texture": 10
+  },
+  "evidence": {
+    "voice_certainty": "The candidate reproduces the reference's settled assertions, direct address, first-person testimony, and unhedged commands without deviation.",
+    "method_execution": "The same credit reassignment, objection-answering, trap questions, inversion, and chapter-closing belief move occur in the same order.",
+    "structure_anatomy": "The preview, thesis, escalating headings, all-caps verdicts, third instruction, and summary are identical to the reference.",
+    "repetition_mantra": "The candidate uses the same recurring fixed phrases and argument-to-compression beats, with no additional accidental repetition.",
+    "emotional_register": "The same shame relief, attack on willpower, hard consequences, reassurance, and escape framing are preserved exactly.",
+    "rhythm_texture": "Sentence cadence, analogy placement, short peak verdicts, and paragraph momentum match line for line."
+  },
+  "worst_dimension": "voice_certainty",
+  "gap_summary": "There is no craft gap: the candidate is identical to the reference.",
+  "suggestions": [
+    {
+      "suggestion": "Make no prose change: the direct-address assertions, objection-answer sequences, and peak verdict lines already match the reference line for line; use this chapter as the writer's control baseline.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Freeze the present chapter anatomy—preview, thesis, escalating titled sections, all-caps verdicts, numbered instruction, and SUMMARY—as the plan pattern for this slot.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Have review reject any revision that paraphrases the current refrains, softens the hard assertions, or changes the sentence-to-verdict cadence, because each would increase distance from the reference.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

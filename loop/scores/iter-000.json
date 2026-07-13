@@ -1,0 +1,313 @@
+{
+ "campaign": "factory-v3-rubric-1",
+ "instrument_version": "carr-likeness-rubric-1",
+ "book": "CONTROL:reference-as-ours",
+ "chapters_checked": [
+  1,
+  2,
+  3
+ ],
+ "control_ref": true,
+ "reward": 1.0,
+ "hard_ok": true,
+ "hard_fails": [],
+ "checks": {
+  "originality": {
+   "mode": "N/A (control): reference-vs-self is degenerate, not a plagiarism signal",
+   "overlap_ratio": null,
+   "tripwire": 0.003,
+   "tripped": false
+  },
+  "mantra": null,
+  "repetition_within": {
+   "repeated_ngrams": 22,
+   "spans_top": [
+    {
+     "text": "and be the exact weight you want to be without dieting special exercise using willpower or feeling deprived",
+     "len": 18,
+     "count": 2,
+     "chapters": [
+      1,
+      2
+     ]
+    },
+    {
+     "text": "no doubt you find that hard to believe but read on",
+     "len": 11,
+     "count": 2,
+     "chapters": [
+      1
+     ]
+    },
+    {
+     "text": "eat as much of your favourite food as you want",
+     "len": 10,
+     "count": 2,
+     "chapters": [
+      2,
+      3
+     ]
+    },
+    {
+     "text": "craving by taking the very thing that caused it",
+     "len": 9,
+     "count": 2,
+     "chapters": [
+      1
+     ]
+    },
+    {
+     "text": "very mild empty slightly insecure slightly uptight feeling",
+     "len": 8,
+     "count": 2,
+     "chapters": [
+      1
+     ]
+    },
+    {
+     "text": "as i will explain later in the book",
+     "len": 8,
+     "count": 2,
+     "chapters": [
+      1,
+      2
+     ]
+    }
+   ],
+   "hard_fails": [
+    {
+     "text": "and be the exact weight you want to be without dieting special",
+     "len": 12,
+     "count": 2,
+     "chapters": [
+      1,
+      2
+     ]
+    },
+    {
+     "text": "be the exact weight you want to be without dieting special exercise",
+     "len": 12,
+     "count": 2,
+     "chapters": [
+      1,
+      2
+     ]
+    },
+    {
+     "text": "exact weight you want to be without dieting special exercise using willpower",
+     "len": 12,
+     "count": 2,
+     "chapters": [
+      1,
+      2
+     ]
+    },
+    {
+     "text": "the exact weight you want to be without dieting special exercise using",
+     "len": 12,
+     "count": 2,
+     "chapters": [
+      1,
+      2
+     ]
+    },
+    {
+     "text": "want to be without dieting special exercise using willpower or feeling deprived",
+     "len": 12,
+     "count": 2,
+     "chapters": [
+      1,
+      2
+     ]
+    },
+    {
+     "text": "weight you want to be without dieting special exercise using willpower or",
+     "len": 12,
+     "count": 2,
+     "chapters": [
+      1,
+      2
+     ]
+    },
+    {
+     "text": "you want to be without dieting special exercise using willpower or feeling",
+     "len": 12,
+     "count": 2,
+     "chapters": [
+      1,
+      2
+     ]
+    }
+   ],
+   "whitelist_size": 0
+  },
+  "length": [
+   {
+    "n": 1,
+    "words": 4676,
+    "budget": null,
+    "ok": true
+   },
+   {
+    "n": 2,
+    "words": 2953,
+    "budget": null,
+    "ok": true
+   },
+   {
+    "n": 3,
+    "words": 3547,
+    "budget": null,
+    "ok": true
+   }
+  ],
+  "near_copy": []
+ },
+ "diagnostics": {
+  "stylometrics": [
+   {
+    "metric": "mean_chapter_words",
+    "ours": 3725.3,
+    "ref": 3725.3
+   },
+   {
+    "metric": "mean_sentence_words",
+    "ours": 18.4,
+    "ref": 18.4
+   },
+   {
+    "metric": "pct_short_sentences",
+    "ours": 14.7,
+    "ref": 14.7
+   },
+   {
+    "metric": "questions_per_100_sents",
+    "ours": 11.3,
+    "ref": 11.3
+   },
+   {
+    "metric": "second_person_per_1000",
+    "ours": 42.4,
+    "ref": 42.4
+   },
+   {
+    "metric": "first_person_per_1000",
+    "ours": 5.1,
+    "ref": 5.1
+   }
+  ]
+ },
+ "judges": {
+  "status": "SCORED",
+  "rubric": {
+   "reward": 1.0,
+   "per_chapter": [
+    {
+     "chapter": "ch01",
+     "composite": 1.0,
+     "dims": {
+      "voice_certainty": 10.0,
+      "method_execution": 10.0,
+      "structure_anatomy": 10.0,
+      "repetition_mantra": 10.0,
+      "emotional_register": 10.0,
+      "rhythm_texture": 10.0
+     },
+     "gap_summaries": [
+      "There is no separating gap: the candidate chapter is textually identical to the reference chapter.",
+      "There is no craft gap separating the candidate from the reference because the two texts are byte-for-byte identical."
+     ]
+    },
+    {
+     "chapter": "ch02",
+     "composite": 1.0,
+     "dims": {
+      "voice_certainty": 10.0,
+      "method_execution": 10.0,
+      "structure_anatomy": 10.0,
+      "repetition_mantra": 10.0,
+      "emotional_register": 10.0,
+      "rhythm_texture": 10.0
+     },
+     "gap_summaries": [
+      "There is no craft gap because the candidate reproduces the reference verbatim in every scored dimension.",
+      "There is no detectable craft gap because the candidate is textually identical to the reference."
+     ]
+    },
+    {
+     "chapter": "ch03",
+     "composite": 1.0,
+     "dims": {
+      "voice_certainty": 10.0,
+      "method_execution": 10.0,
+      "structure_anatomy": 10.0,
+      "repetition_mantra": 10.0,
+      "emotional_register": 10.0,
+      "rhythm_texture": 10.0
+     },
+     "gap_summaries": [
+      "There is no discernible gap because the candidate is textually identical to the reference.",
+      "There is no craft gap: the candidate is identical to the reference."
+     ]
+    }
+   ],
+   "suggestions": [
+    {
+     "suggestion": "Make no prose revision: the opening's direct promise, interrogative pressure, flat verdicts, and first-person testimony already reproduce the reference line for line; freeze this voice pattern.",
+     "asset": "chapter-writer",
+     "weight": 5,
+     "count": 1,
+     "chapters": [
+      "ch01"
+     ]
+    },
+    {
+     "suggestion": "Make no prose change to this control: preserve the opening preview, the escalation from 'HOOKED' through 'YOUR WAY OUT', the ALL-CAPS verdicts, the explicit instruction, and the closing 'SUMMARY' as one structural sequence.",
+     "asset": "chapter-writer",
+     "weight": 5,
+     "count": 1,
+     "chapters": [
+      "ch01"
+     ]
+    },
+    {
+     "suggestion": "Make no prose revision to this control chapter; have the reviewer preserve its direct questions, settled assertions, commands, and all-caps verdict peaks as a zero-distance acceptance pattern for any subject.",
+     "asset": "chapter-reviewer",
+     "weight": 5,
+     "count": 1,
+     "chapters": [
+      "ch02"
+     ]
+    },
+    {
+     "suggestion": "Replace the normal prose revision pass with a zero-diff preservation check here: the opening observation-to-trap-question sequence already matches the target exactly, so any rewrite would increase distance.",
+     "asset": "chapter-reviewer",
+     "weight": 5,
+     "count": 1,
+     "chapters": [
+      "ch02"
+     ]
+    },
+    {
+     "suggestion": "Make no prose change; preserve the exact alternation of settled assertions, reader objections, rhetorical questions, and short verdict lines exhibited across the chapter.",
+     "asset": "chapter-writer",
+     "weight": 5,
+     "count": 1,
+     "chapters": [
+      "ch03"
+     ]
+    }
+   ],
+   "worst_dimensions": [
+    {
+     "dimension": "voice_certainty",
+     "votes": 6
+    }
+   ],
+   "n_verdicts": 6,
+   "judge_model": "gpt-5.6-sol",
+   "judge_k": 2
+  },
+  "missing": []
+ }
+}

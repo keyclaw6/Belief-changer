@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 5,
+    "method_execution": 8,
+    "structure_anatomy": 6,
+    "repetition_mantra": 8,
+    "emotional_register": 4,
+    "rhythm_texture": 7
+  },
+  "evidence": {
+    "voice_certainty": "\"If it does ... we should know that honestly\" repeatedly reserves judgment, giving the narrator an investigative rather than settled-fact register.",
+    "method_execution": "\"What benefit?\" cleanly switches the evaluation axis, while \"borrowed credit\" reassigns reward to effort, people, rest, and ordinary hunger.",
+    "structure_anatomy": "The preview, uppercase sections, assigned third instruction, and SUMMARY are present, but there is no italic thesis and almost no standalone all-caps verdict before the climax.",
+    "repetition_mantra": "MN-04 gets an argued verbatim debut and all three assigned echoes appear verbatim, although MN-01 is repeated several times within this one chapter.",
+    "emotional_register": "\"Something concerning\" and \"within their proper limits\" soften the feared case instead of stating hard facts at full force and then disowning fear as the motivator.",
+    "rhythm_texture": "The courtroom and receipt analogies carry the argument and \"What benefit?\" lands sharply, but repeated ledger explanations slow the forward pull."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate's cautious hearing-of-the-evidence stance omits the reference's full-force wound before relief, so its escape message lacks Carr's characteristic nerve.",
+  "suggestions": [
+    {
+      "suggestion": "Replace the repeated reservations around \"If it does\" and \"following the evidence wherever it leads\" with one ventriloquized objection followed by a flat settled-fact answer; keep conditionals in the reader's objection, not the narrator's conclusion.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "After \"THE MENU\", drive one representative item through a concrete scene, a trap question, and a standalone all-caps verdict before compactly printing the remaining items; do not let the longest section remain a catalogue whose answers are deferred.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Flag vague placeholders such as \"something concerning\" and \"facts stated plainly, within their proper limits\"; require one evidence-supported consequence stated at full force and immediately followed by the explicit release that fear is not the reason to change.",
+      "asset": "chapter-reviewer"
+    },
+    {
+      "suggestion": "Cut the repeated explanations of the receipt's right-hand column between \"HARM CANNOT BUY AN EXEMPTION\" and \"THE INVESTIGATION AHEAD\"; keep the analogy's setup, one killer-line compression, and its SUMMARY echo.",
+      "asset": "chapter-writer"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "scores": {
+    "voice_certainty": 10,
+    "method_execution": 10,
+    "structure_anatomy": 10,
+    "repetition_mantra": 10,
+    "emotional_register": 10,
+    "rhythm_texture": 10
+  },
+  "evidence": {
+    "voice_certainty": "Flat assertions, warm direct address, first-person testimony, and cheerful imperatives match the reference line for line.",
+    "method_execution": "The trap questions, credit reassignment, addiction inversion, and ventriloquized objections are identical to the reference.",
+    "structure_anatomy": "The preview, escalating titled sections, all-caps verdicts, climax instruction, and summary are identical to the reference.",
+    "repetition_mantra": "Fixed phrases and intentional refrains recur at exactly the same points and in the same wording as the reference, with no added ordinary-sentence repetition.",
+    "emotional_register": "Full-force threat, subsequent reassurance, escape framing, and the attack on willpower track the reference exactly.",
+    "rhythm_texture": "The explanatory runs, short verdict peaks, killer-line pairs, and concrete analogies match the reference exactly."
+  },
+  "worst_dimension": "voice_certainty",
+  "gap_summary": "There is no separating gap: the candidate chapter is textually identical to the reference chapter.",
+  "suggestions": [
+    {
+      "suggestion": "Make no prose revision: the opening's direct promise, interrogative pressure, flat verdicts, and first-person testimony already reproduce the reference line for line; freeze this voice pattern.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Preserve the chapter mechanics already present—preview, escalating titled sections, all-caps verdict peaks, the instruction at the climax, and the final summary—as the control pattern for this chapter slot.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Use a pass/fail review check that protects this control's refrain discipline: intentional fixed phrases may recur verbatim at assigned beats, while ordinary sentences must not acquire new repetitions.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

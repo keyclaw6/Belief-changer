@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 7,
+    "method_execution": 8,
+    "structure_anatomy": 7,
+    "repetition_mantra": 9,
+    "emotional_register": 6,
+    "rhythm_texture": 7
+  },
+  "evidence": {
+    "voice_certainty": "\"The fact is, the need for this book is itself the evidence\" gives Carr-like certainty, but terms such as \"decision labour\" and \"agency\" sound more clinical and managed than the reference.",
+    "method_execution": "\"You say you choose it. And yet you are here.\" turns the reader's presence into a trap question and reassigns failure from weakness to deception.",
+    "structure_anatomy": "\"That shape has a name\" advances cleanly into THE SUGAR TRAP and the assigned instruction and SUMMARY, but only the instruction becomes an all-caps verdict.",
+    "repetition_mantra": "MN-03 gets a full argue-to-compress debut before \"the sugar trap\" is named, and MN-01 returns verbatim, though the latter is echoed three times in one chapter.",
+    "emotional_register": "The chapter is warm and willpower-free, but \"we will come to that later\" defers the hard health wound entirely, so there is no fear beat to disown.",
+    "rhythm_texture": "Short peaks such as \"That tax is real. You are paying it right now.\" work, but repeated card/deal/terms explanations flatten the later momentum."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate reproduces the belief logic but replaces the reference's blunt, escalating, fact-driven nerve with a polished, legally qualified extended-metaphor essay.",
+  "suggestions": [
+    {
+      "suggestion": "Make each major section end in a blunt compression of the belief move: after THE CONFIDENCE TRICK and THE SUGAR TRAP, replace one explanatory paragraph with a short verdict line, and make the next section escalate it rather than reopen it.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Strip abstract therapeutic and management language from narration: convert \"decision labour,\" \"social reinforcement,\" \"agency,\" and \"genuine sensory experience\" into ordinary concrete speech and flat settled-fact assertions; keep mandated instruction wording untouched.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "Assign a brief evidence-backed wound-and-bandage beat before the instruction: the draft explicitly postpones \"calories or health,\" so it never states one hard consequence at full force and then says fear is not the reason to change.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Cut one complete repetition of the counterfeit-card/deal analogy and use the saved space for a new concrete observation; an analogy should carry the claim forward once, while later paragraphs deliver fresh pressure and shorter peaks.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

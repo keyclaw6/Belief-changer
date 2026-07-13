@@ -1,0 +1,42 @@
+{
+  "scores": {
+    "voice_certainty": 4,
+    "method_execution": 6,
+    "structure_anatomy": 6,
+    "repetition_mantra": 8,
+    "emotional_register": 3,
+    "rhythm_texture": 5
+  },
+  "evidence": {
+    "voice_certainty": "Phrases such as \u201cWhat you do with that clarity is yours\u201d and the long clinical disclaimer replace Carr\u2019s settled certainty with permission and caveat.",
+    "method_execution": "The breakfast-versus-snack scene and accident objection land the bounded-target correction, but the pleasure question is posed for later rather than cornered and answered here.",
+    "structure_anatomy": "It has a preview, thesis, titled sections, assigned numbered instruction, verdict line, and summary, but the middle becomes a taxonomy rather than an escalating case.",
+    "repetition_mantra": "MN-01, MN-02, and MN-09 appear verbatim after supporting argument, but \u201cPleasant taste is real.\u201d is also repeated verbatim outside the frozen mantra system.",
+    "emotional_register": "Freedom and non-deprivation are repeatedly promised, yet the chapter omits the reference\u2019s full-force wound, harsh attack on the trap, and fear-then-disown pivot.",
+    "rhythm_texture": "Short pairs such as \u201cThe sensation is allowed to stand. The valuation is what we test.\u201d work, but long disclaimer and definition blocks repeatedly halt momentum."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate replaces Carr\u2019s forceful, escalating certainty and wound-then-relief nerve with a cautious, policy-like investigation full of disclaimers and category management.",
+  "suggestions": [
+    {
+      "suggestion": "Forbid the permission-and-caveat register exemplified by \u201cWhat you do with that clarity is yours\u201d and \u201cthat care outranks every word\u201d; require settled-fact assertions and cheerful commands once a claim is within the book\u2019s evidence boundary.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "Replace the catalog sequence \u201cWHAT THIS BOOK IS NOT\u201d to \u201cBAD SUGAR: THE LINE\u201d to \u201cWHAT ABOUT ACCIDENTS?\u201d with an escalation map: reader objection, concrete scene, trap question, unavoidable answer, then an ALL-CAPS verdict.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Assign the opening chapter one evidence-backed wound-and-bandage beat: deliver the relevant consequences without softening, explicitly say fear is not the method, then pivot immediately to relief and escape.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Cut the formal-boundary and Molecule Margin policy prose by at least half; turn each abstract distinction into one carrying analogy and end each section with a short verdict or killer-line pair.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Keep the three assigned frozen mantras, but flag any other exact sentence repeated between body and summary, such as \u201cPleasant taste is real.\u201d, and require a paraphrase so only mantras recur verbatim.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

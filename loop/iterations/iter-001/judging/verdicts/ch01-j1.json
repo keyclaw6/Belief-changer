@@ -1,0 +1,42 @@
+{
+  "scores": {
+    "voice_certainty": 5,
+    "method_execution": 6,
+    "structure_anatomy": 7,
+    "repetition_mantra": 9,
+    "emotional_register": 4,
+    "rhythm_texture": 7
+  },
+  "evidence": {
+    "voice_certainty": "The recurring frame of an investigation to test, followed by 'What you do with that clarity is yours,' keeps retreating from Carr's settled verdict and cheerful command.",
+    "method_execution": "The breakfast-versus-snack scene lands the assigned boundary correction and the accidents objection is ventriloquized well, but the central pleasure claim remains a question rather than being inverted and proved.",
+    "structure_anatomy": "The preview, escalating titled sections, correctly placed numbered instruction, all-caps climax, and summary are present, although several middle sections classify and qualify rather than drive toward verdicts.",
+    "repetition_mantra": "All three assigned debut mantras recur in their exact frozen wording and are supported by argument, with no conspicuous accidental repetition of an ordinary sentence.",
+    "emotional_register": "The chapter is warm and repeatedly promises freedom without deprivation, but 'Nothing here is a substitute for it' typifies a safety-first register that omits the reference's full-force scare followed by explicit disavowal of fear.",
+    "rhythm_texture": "The ordinary-breakfast scene gives the abstraction a concrete carrier and lines such as 'No. It does not.' create peaks, but policy-like definition passages and stacked fragments interrupt the reference's flowing argumentative momentum."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The largest distance is the candidate's careful, conditional investigation register, which withholds the reference's blunt nerve, settled certainty, and escalating escape verdicts.",
+  "suggestions": [
+    {
+      "suggestion": "Rewrite the repeated 'test' and 'investigation' framing, especially the concession 'What you do with that clarity is yours,' so each reader objection is answered by a settled fact, a trap question with only one honest answer, and a cheerful command.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Add a planned nerve beat before the invitation: state one concrete consequence at full force, compress it into an all-caps verdict, then explicitly disown fear as the reason for change and pivot to relief.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Compress 'WHAT THIS BOOK IS NOT' and the long formal-boundary taxonomy into direct-address argument; retain necessary guardrails, but reject policy language such as care hierarchies and claim-transparency formulas when a plain exclusion will do.",
+      "asset": "chapter-reviewer"
+    },
+    {
+      "suggestion": "Make the middle sections escalate rather than catalogue: end the ordinary-meal scene, the boundary, and the accident objection with progressively harder verdict lines that hand momentum into the numbered instruction.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Replace clusters of slogan-like fragments and repeated negative triads with longer, confident causal sentences, reserving the shortest lines for killer-line pairs at genuine argumentative peaks.",
+      "asset": "style-guide"
+    }
+  ]
+}

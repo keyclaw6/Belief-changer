@@ -1,0 +1,34 @@
+{
+  "scores": {
+    "voice_certainty": 10,
+    "method_execution": 10,
+    "structure_anatomy": 10,
+    "repetition_mantra": 10,
+    "emotional_register": 10,
+    "rhythm_texture": 10
+  },
+  "evidence": {
+    "voice_certainty": "Flat assertions, cheerful commands, direct questions, and the I/we/you triangle reproduce the reference without deviation.",
+    "method_execution": "The squirrel analogy, trapped objections, instinct-versus-intellect inversion, and open-mind instruction execute the same belief moves as the reference.",
+    "structure_anatomy": "The preview, escalating titled sections, all-caps verdicts, explicit SECOND INSTRUCTION, and SUMMARY are identical to the reference anatomy.",
+    "repetition_mantra": "BAD SUGAR and Nature's Guide recur as disciplined fixed phrases, with no divergence from the reference's repetition pattern.",
+    "emotional_register": "The medical scare is delivered at full force and then explicitly disowned as fear before promising escape to freedom.",
+    "rhythm_texture": "Flowing explanatory paragraphs alternate with trap questions, concrete analogies, and short all-caps peak lines exactly as in the reference."
+  },
+  "worst_dimension": "voice_certainty",
+  "gap_summary": "There is no craft gap because the candidate reproduces the reference verbatim in every scored dimension.",
+  "suggestions": [
+    {
+      "suggestion": "Make no prose revision to this control chapter; have the reviewer preserve its direct questions, settled assertions, commands, and all-caps verdict peaks as a zero-distance acceptance pattern for any subject.",
+      "asset": "chapter-reviewer"
+    },
+    {
+      "suggestion": "Encode the existing preview-to-analogy-to-objection-to-scare-to-disowning-to-instruction-to-summary escalation mechanically in each chapter card, while changing the subject matter.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Require each trap label to recur verbatim as BAD SUGAR does here while rejecting verbatim reuse of ordinary sentences, and preserve the argue-then-compress beat before the label becomes a refrain.",
+      "asset": "style-guide"
+    }
+  ]
+}

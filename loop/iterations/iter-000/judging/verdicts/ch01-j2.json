@@ -1,0 +1,34 @@
+{
+  "scores": {
+    "voice_certainty": 10,
+    "method_execution": 10,
+    "structure_anatomy": 10,
+    "repetition_mantra": 10,
+    "emotional_register": 10,
+    "rhythm_texture": 10
+  },
+  "evidence": {
+    "voice_certainty": "The candidate is byte-for-byte identical to the reference, including its settled-fact assertions, direct address, cheerful commands, and I/we/you register.",
+    "method_execution": "The candidate reproduces every belief move, trap-question chain, objection, credit reassignment, and inversion at exactly the reference's point and wording.",
+    "structure_anatomy": "The preview, escalating titled sections, ALL-CAPS verdicts, explicit instruction climax, and closing SUMMARY are identical to the reference.",
+    "repetition_mantra": "The fixed phrases recur verbatim at the same argumentative beats as the reference, with identical debut, compression, and echo discipline.",
+    "emotional_register": "The candidate matches the reference's hard risk claims, severity toward the trap, reassurance toward the reader, and full escape-not-sacrifice release.",
+    "rhythm_texture": "The sentence flow, short peak verdicts, killer-line pairs, concrete analogies, and paragraph-to-paragraph momentum are identical to the reference."
+  },
+  "worst_dimension": "voice_certainty",
+  "gap_summary": "There is no craft gap separating the candidate from the reference because the two texts are byte-for-byte identical.",
+  "suggestions": [
+    {
+      "suggestion": "Make no prose change to this control: preserve the opening preview, the escalation from 'HOOKED' through 'YOUR WAY OUT', the ALL-CAPS verdicts, the explicit instruction, and the closing 'SUMMARY' as one structural sequence.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Freeze the candidate's repeated verdict phrases and instruction wording as exact plan-card strings, and require exact-match checks at every echo so later runs cannot paraphrase the drumbeat.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Add a control check that rejects revisions which soften this candidate's settled assertions, trap-question chains, fear-then-release movement, or long-to-short cadence.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

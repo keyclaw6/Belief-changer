@@ -168,7 +168,9 @@ Chapter 1 craft BEAT the real GSBS 4–0 blind; efficacy lost 1–3; Chapters 2�
 
 ## Harness debt (operator grievances — founder reads between blocks)
 
-- (none yet)
+- `prompts/master-plan-skill-v2.md` and `prompts/master-plan-reviewer-v2.md` still contain pre-v3 lines that reject the mandatory Carr personification; the iter-001 agents had to follow the newer PROGRAM/style-guide founder law explicitly.
+- The generated mantra table used semantically clear headers (`Frozen exact wording`, `Echo route`) that the hard-check parser does not accept; the planner repaired them mechanically to `Frozen wording` and `Echo chapters` with no semantic change.
+- `gate.py` checks for a non-null reward before honoring hard-check failure, then prints generic tunable/plan checkout and score-deletion commands even for the zero-amendment cold start. Those commands would restore the explicitly deprecated plan and delete a required iteration record, so no nonexistent amendment was reverted.
 
 ## 2026-07-13 — external pre-flight review: 6 critical + 4 high findings, all fixed
 
@@ -185,3 +187,23 @@ An independent static review (full report in the founder's thread) found the loo
 - **Style-guide stragglers (H):** §7 Fork-1 vocabulary line, §10 step 6 default, §11 autonomy-close annotation, §12 ask-vs-assert checklist item — all aligned to the v3 Carr defaults.
 
 Reviewer's noise estimate: pure-noise reward movement plausibly 0.017–0.05; epsilon 0.03 stays a placeholder pending the three-repeat measurement.
+
+## 2026-07-13 — instrument ceiling check
+
+The reference-as-candidate control for Chapters 1–3 scored **1.000** across all six fresh native judge verdicts (every anchored dimension 10/10), with hard checks green. This confirms the frozen rubric ceiling; this first control sample showed zero observed judge spread. No gate was run and no product baseline row was added.
+
+### iter-001 — Carr-fidelity baseline
+
+**Outcome:** `FAIL-HARD` at **0.6217**; all six judges voted `emotional_register` worst. Originality, mantra scheduling, and length passed. The hard failure was one non-mantra sentence fragment repeated across Chapters 2–3. There was no amendment to revert, so the Carr-fidelity cold-start framing, plan, and scored chapters remain as the iteration artifacts.
+
+**Judges' top suggestions (verbatim):**
+
+1. `[chapter-writer]` Rewrite the repeated 'test' and 'investigation' framing, especially the concession 'What you do with that clarity is yours,' so each reader objection is answered by a settled fact, a trap question with only one honest answer, and a cheerful command.
+2. `[style-guide]` Forbid the permission-and-caveat register exemplified by “What you do with that clarity is yours” and “that care outranks every word”; require settled-fact assertions and cheerful commands once a claim is within the book’s evidence boundary.
+3. `[chapter-writer]` Make each major section end in a blunt compression of the belief move: after THE CONFIDENCE TRICK and THE SUGAR TRAP, replace one explanatory paragraph with a short verdict line, and make the next section escalate it rather than reopen it.
+4. `[chapter-writer]` In 'THE COUNTERFEIT MEMBERSHIP CARD' and 'THE CONFIDENCE TRICK,' stop re-explaining the same deal metaphor: move through two or three sharply different concrete observations, force each through a trap question, and end the sequence with a short ALL-CAPS verdict.
+5. `[style-guide]` Replace the repeated reservations around "If it does" and "following the evidence wherever it leads" with one ventriloquized objection followed by a flat settled-fact answer; keep conditionals in the reader's objection, not the narrator's conclusion.
+
+**Reviewer residuals at the two-cycle cap:** Chapter 1 — mantra infidelity, illicit repetition, missing anatomy, evidence overstatement. Chapter 2 — mantra infidelity, re-argument/job drift, missing anatomy, evidence overstatement. Chapter 3 — mantra infidelity, job drift, narrator hedging, missing anatomy, evidence overstatement. No reviewer found a master-plan spec gap. Plan-review residuals: CH-14 evidence/certainty balance; CH-20 hand-off density.
+
+**Next hypothesis (`chapter-writer`):** The writer contract's investigation/permission framing leaves the narrator conditional and autonomy-led. Require conditionals to remain inside ventriloquized reader objections, then answer each with **settled fact → trap question → cheerful command**, and forbid narrator-side outcome permission or caveat language. Prediction: `emotional_register` and `voice_certainty` rise, sections escalate instead of reopening the case, and the recurring test-language sentence disappears.

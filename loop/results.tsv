@@ -1,1 +1,2 @@
 iter	timestamp_utc	campaign	instrument	hypothesis	reward	hard_ok	verdict	worst_dimension	top_suggestion	notes
+1	2026-07-13T20:20:17+00:00	factory-v3-rubric-1	carr-likeness-rubric-1	Carr-fidelity baseline	0.6217	False	FAIL-HARD	emotional_register	Rewrite the repeated 'test' and 'investigation' framing, especially the concession 'What you do with that clar	quit-sugar
