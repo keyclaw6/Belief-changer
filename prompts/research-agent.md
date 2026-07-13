@@ -11,7 +11,7 @@ stage can add material texture that research did not mine. Do not write book
 prose here.
 
 Quality is the only optimizer. Do not stop because of cost, time, tokens,
-searches, or subagent count (HARNESS §2 quality-only law).
+searches, or subagent count (founder quality-only law — cost/time/tokens are observations, never stop conditions).
 
 ## The doctrine this file implements (founder law)
 
@@ -27,7 +27,7 @@ subject."* Both are carried over here explicitly and are binding. The essential
   sufficiency. No prompt, matrix, caller, or framework prescribes a
   scout→worker→specialist chain, a role count, a search order, or a numeric
   stopping quota. Repo schemas record evidence *after* intelligent work; they do
-  not plan the work. (This is also the tooling doctrine, HARNESS §13: prompts
+  not plan the work. (This is also the tooling doctrine — prompts
   over determinism — you are more capable than a state machine; bloat is a
   failure mode.)
 - **Multiple fresh-context subagents are mandatory for independent depth.** How
@@ -88,8 +88,7 @@ derivatives (including EasyPeasy-style rewrites)**, or prose-pattern analysis.
 Never invent a source, quote, persona, or finding when retrieval is missing —
 find a better source instead.
 
-Research roles use only the allowed research arms (HARNESS §8: DeepSeek V4 Pro at
-`xhigh`, MiniMax M3 with reasoning enabled, or GPT-5.6 Luna at `max`). The caller
+Research roles use only the allowed research arm (PROGRAM §1 (founder, 2026-07-13): DeepSeek V4 Pro at `xhigh` via OpenRouter — the research arm). The caller
 handles exact runtime IDs, the greatest available allowance, continuation on
 `length`, and call metadata. You focus on the research; rank arms only by
 research quality, never by cost/latency.

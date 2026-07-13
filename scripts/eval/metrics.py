@@ -6,7 +6,7 @@ Usage:
       [--json OUT.json]
 
 Metrics are the measurable half of style guide Part B voice targets. Length
-comparison against the reference drives the length-control doctrine (HARNESS §7).
+comparison against the reference is a loop diagnostic (PROGRAM.md §4 SCORE).
 """
 import argparse
 import json

@@ -1,33 +1,37 @@
-"""Blind pairwise + detection judging over the existing OpenRouter plumbing.
+"""Reference-anchored rubric judging (PROGRAM §4.2).
 
-Wraps scripts/eval/model_endpoint.chat (the OpenAI-compatible transport the
-founder told us to reuse) and the endpoint/JSON-extraction discipline from
-scripts/eval/judge_panel. NEW instrument, not the retired v2.3 role panel:
-ONE question per prompt, strictly parseable line output.
+Instrument: calibration/judges/carr-likeness-rubric.md — one judge context sees
+the REAL reference chapter (ground truth) beside our candidate and returns six
+0-10 distance-from-reference scores, a worst dimension, and improvement
+suggestions tagged with the owning factory asset.
 
-Two metrics:
-  pairwise authenticity -> reward in [0,1] = mean win-rate of ours vs the matched
-    real chapter, k calls per pair, order-swapped, cross-family judges.
-  detection probe -> secondary accuracy toward 0.5 = indistinguishable.
+Judges are GPT-5.6 Sol (xhigh) run ONLY as fresh native Codex subagents on the
+founder's subscription. There is deliberately NO judge API transport in this
+module and judge traffic NEVER touches OpenRouter. This module only:
 
-If no API key is present, callers get a DRY-RUN result (reward=None) — hard
-checks and diagnostics still run for real; judge output is NEVER fabricated.
+  emit_tasks()       write one self-contained task file per (chapter, judge j)
+  missing_verdicts() which verdict files are still absent
+  aggregate()        strict-parse saved verdict JSONs into one reward
+
+The operator dispatches each task file as a fresh subagent and saves the raw
+JSON reply to the matching verdicts/ path. Judge output is never fabricated.
+
+endpoint()/have_key() remain here for the WRITER transport only
+(run_iteration.py: Opus 4.6 via OpenRouter/LiteLLM).
 """
+import json
 import os
 import re
-import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "eval"))
-import model_endpoint as ME  # noqa: E402  (path set above)
-
-VERDICT_RE = re.compile(r"^\s*VERDICT:\s*([AB])\b", re.I | re.M)
-REAL_RE = re.compile(r"^\s*REAL:\s*([AB])\b", re.I | re.M)
-CONF_RE = re.compile(r"^\s*CONFIDENCE:\s*([01](?:\.\d+)?)\b", re.I | re.M)
+DIMS = ("voice_certainty", "method_execution", "structure_anatomy",
+        "repetition_mantra", "emotional_register", "rhythm_texture")
+_FENCE_RE = re.compile(r"```(?:json)?\s*(\{.*\})\s*```", re.S)
+_BLANKS_RE = re.compile(r"\n{3,}")
 
 
 def endpoint():
-    """(base_url, api_key) reusing judge_panel's precedence: LiteLLM else OpenRouter."""
+    """(base_url, api_key) for the WRITER only: LiteLLM else OpenRouter."""
     if os.environ.get("LITELLM_BASE_URL"):
         return os.environ["LITELLM_BASE_URL"], os.environ.get("LITELLM_API_KEY")
     return "https://openrouter.ai/api/v1", os.environ.get("OPENROUTER_API_KEY")
@@ -37,91 +41,116 @@ def have_key() -> bool:
     return bool(endpoint()[1])
 
 
-def _ask(base_url, key, model, reasoning, prompt, a_text, b_text, max_tokens=1200):
-    content = f"{prompt}\n\n=== TEXT A ===\n{a_text}\n\n=== TEXT B ===\n{b_text}"
-    return ME.chat(base_url, key, model, content, reasoning, max_tokens, temperature=0.2)
+def weights(cfg) -> dict:
+    """Parse config's weights list ('name: 0.20' strings) into {dim: float}."""
+    w = {}
+    for item in cfg.get("weights") or []:
+        if ":" not in str(item):
+            raise SystemExit(f"judges: bad weights item {item!r}")
+        k, _, v = str(item).partition(":")
+        w[k.strip()] = float(v)
+    if set(w) != set(DIMS):
+        raise SystemExit(f"judges: weights keys {sorted(w)} != rubric dimensions {sorted(DIMS)}")
+    if abs(sum(w.values()) - 1.0) > 1e-3:
+        raise SystemExit(f"judges: weights sum {sum(w.values())} != 1.0")
+    return w
 
 
-def _pairwise_score(raw, ours_is):
-    """Map one VERDICT to ours-win=1.0 / ref-win=0.0. None if unparseable."""
-    m = VERDICT_RE.search(raw or "")
-    if not m:
-        return None
-    return 1.0 if m.group(1).upper() == ours_is else 0.0
+def _norm(text: str) -> str:
+    return _BLANKS_RE.sub("\n\n", (text or "").strip())
 
 
-def _detection_correct(raw, ref_is):
-    """1.0 if judge's REAL guess correctly names the reference (real) text, else 0.0."""
-    m = REAL_RE.search(raw or "")
-    if not m:
-        return None
-    return 1.0 if m.group(1).upper() == ref_is else 0.0
+def judging_dir(cfg, iter_name: str) -> Path:
+    return Path(cfg.get("tasks_dir", "loop/iterations")) / f"iter-{iter_name}" / "judging"
 
 
-def _confidence(raw):
-    m = CONF_RE.search(raw or "")
-    return float(m.group(1)) if m else None
+def _stems(labels, k):
+    return [f"{lbl}-j{j}" for lbl in labels for j in range(1, k + 1)]
 
 
-def run_pairwise(cfg, pairs, prompt_text, kind):
-    """pairs: [(label, ours_text, ref_text)]. kind: 'pairwise' | 'detection'.
+def missing_verdicts(cfg, labels, iter_name: str) -> list:
+    vdir = judging_dir(cfg, iter_name) / "verdicts"
+    k = int(cfg.get("judge_k", 2))
+    return [s for s in _stems(labels, k) if not (vdir / f"{s}.json").is_file()]
 
-    Returns a dict with per-call records and the aggregate. On no-key, returns
-    {"dry_run": True, ...} without contacting any endpoint.
-    """
-    base_url, key = endpoint()
-    models = cfg["judge_models"]
-    k = int(cfg["k"])
-    if k % 2 or k < 2:
-        raise SystemExit(f"judges: k must be a positive even number, got {k}")
-    reasoning = cfg.get("judge_reasoning", "high")
-    out = {"kind": kind, "models": models, "k": k, "pairs": len(pairs),
-           "calls": [], "dry_run": not key}
-    if not key:
-        return out
 
-    # k calls per pair, split evenly across the model list and across A/B order.
-    # order 0 => ours is A; order 1 => ours is B.
-    scores, confidences = [], []
-    for label, ours_text, ref_text in pairs:
-        for i in range(k):
-            model = models[i % len(models)]
-            order = i % 2
-            a_text, b_text = (ours_text, ref_text) if order == 0 else (ref_text, ours_text)
-            ours_is = "A" if order == 0 else "B"
-            ref_is = "B" if order == 0 else "A"
-            try:
-                raw = _ask(base_url, key, model, reasoning, prompt_text, a_text, b_text)
-                err = None
-            except Exception as exc:  # transport/HTTP error — record, never fake
-                raw, err = "", f"{type(exc).__name__}: {exc}"
-            rec = {"pair": label, "model": model, "order": order, "raw": raw,
-                   "error": err}
-            if kind == "pairwise":
-                s = _pairwise_score(raw, ours_is)
-                rec["ours_win"] = s
-                if s is not None:
-                    scores.append(s)
-            else:
-                c = _detection_correct(raw, ref_is)
-                rec["real_correct"] = c
-                conf = _confidence(raw)
-                rec["confidence"] = conf
-                if c is not None:
-                    scores.append(c)
-                if conf is not None:
-                    confidences.append(conf)
-            out["calls"].append(rec)
-
-    valid = len(scores)
-    out["valid_calls"] = valid
-    out["invalid_calls"] = len(out["calls"]) - valid
-    if kind == "pairwise":
-        out["reward"] = round(sum(scores) / valid, 4) if valid else None
-    else:
-        out["detection_accuracy"] = round(sum(scores) / valid, 4) if valid else None
-        out["mean_confidence"] = round(sum(confidences) / len(confidences), 3) if confidences else None
-        # |accuracy - 0.5| : distance from indistinguishable (0 = perfect blind)
-        acc = out["detection_accuracy"]
-        out["distinguishability"] = round(abs(acc - 0.5), 4) if acc is not None else None
+def emit_tasks(cfg, pairs, iter_name: str, rubric_text: str) -> list:
+    """pairs: (label, ours_text, ref_text). Writes tasks/, creates verdicts/."""
+    if "{{REFERENCE}}" not in rubric_text or "{{CANDIDATE}}" not in rubric_text:
+        raise SystemExit("judges: rubric missing {{REFERENCE}}/{{CANDIDATE}} placeholders")
+    base = judging_dir(cfg, iter_name)
+    tdir, vdir = base / "tasks", base / "verdicts"
+    tdir.mkdir(parents=True, exist_ok=True)
+    vdir.mkdir(parents=True, exist_ok=True)
+    k = int(cfg.get("judge_k", 2))
+    out = []
+    for lbl, ours, ref in pairs:
+        body = (rubric_text.replace("{{REFERENCE}}", _norm(ref))
+                .replace("{{CANDIDATE}}", _norm(ours)))
+        for j in range(1, k + 1):
+            p = tdir / f"{lbl}-j{j}.md"
+            p.write_text(body, encoding="utf-8")
+            out.append(p)
+    print(f"[judges] wrote {len(out)} task files -> {tdir}")
+    print(f"[judges] DISPATCH each task file as a FRESH native Codex subagent — model "
+          f"{cfg.get('judge_model')}, reasoning={cfg.get('judge_reasoning')} — NEVER via OpenRouter.")
+    print(f"[judges] Save each subagent's raw reply (the JSON object) as {vdir}/<taskname>.json")
+    print("[judges] Then re-run score.py with the same --iter to aggregate.")
     return out
+
+
+def _parse_verdict(path: Path) -> dict:
+    """Strict: bare JSON object or one ```json fenced``` block. No repair."""
+    text = path.read_text(encoding="utf-8").strip()
+    m = _FENCE_RE.search(text)
+    raw = m.group(1) if m else text
+    try:
+        obj = json.loads(raw)
+    except Exception as e:
+        raise SystemExit(f"judges: malformed JSON in {path.name}: {e}")
+    scores = obj.get("scores") or {}
+    for d in DIMS:
+        v = scores.get(d)
+        if not isinstance(v, (int, float)) or not 0 <= v <= 10:
+            raise SystemExit(f"judges: {path.name}: scores.{d} missing/out of range: {v!r}")
+    if not isinstance(obj.get("suggestions", []), list):
+        raise SystemExit(f"judges: {path.name}: suggestions must be a list")
+    return obj
+
+
+def aggregate(cfg, labels, iter_name: str) -> dict:
+    vdir = judging_dir(cfg, iter_name) / "verdicts"
+    k = int(cfg.get("judge_k", 2))
+    missing = missing_verdicts(cfg, labels, iter_name)
+    if missing:
+        raise SystemExit(f"judges: missing verdicts for: {', '.join(missing)}")
+    w = weights(cfg)
+    per_chapter, all_sugg, worst_votes = [], [], {}
+    for lbl in labels:
+        verdicts = [_parse_verdict(vdir / f"{lbl}-j{j}.json") for j in range(1, k + 1)]
+        dims = {d: round(sum(v["scores"][d] for v in verdicts) / k, 3) for d in DIMS}
+        composite = round(sum(w[d] * dims[d] for d in DIMS) / 10.0, 4)
+        per_chapter.append({"chapter": lbl, "composite": composite, "dims": dims,
+                            "gap_summaries": [str(v.get("gap_summary", "")) for v in verdicts]})
+        for v in verdicts:
+            wd = v.get("worst_dimension")
+            if wd in DIMS:
+                worst_votes[wd] = worst_votes.get(wd, 0) + 1
+            for s in v.get("suggestions", []):
+                if isinstance(s, dict) and s.get("suggestion"):
+                    all_sugg.append((str(s.get("asset", "?")),
+                                     " ".join(str(s["suggestion"]).split())))
+    reward = round(sum(c["composite"] for c in per_chapter) / len(per_chapter), 4)
+    counts, order = {}, []
+    for asset, txt in all_sugg:
+        key = txt.lower()
+        if key not in counts:
+            counts[key] = {"suggestion": txt, "asset": asset, "count": 0}
+            order.append(key)
+        counts[key]["count"] += 1
+    top = sorted((counts[k2] for k2 in order), key=lambda x: -x["count"])[:5]
+    worst = sorted(worst_votes.items(), key=lambda kv: -kv[1])
+    return {"reward": reward, "per_chapter": per_chapter, "suggestions": top,
+            "worst_dimensions": [{"dimension": d, "votes": n} for d, n in worst],
+            "n_verdicts": len(labels) * k, "judge_model": cfg.get("judge_model"),
+            "judge_k": k}

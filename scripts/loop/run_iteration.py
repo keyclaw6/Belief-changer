@@ -130,6 +130,11 @@ def main():
     rc_score = run_step([py, str(HERE.parent / "score.py"), "--book", str(book),
                          "--chapters", a.chapters, "--iter", str(a.iter)]
                         + (["--config", a.config] if a.config else []))
+    if rc_score == 3:
+        print("[run] WAITING FOR JUDGE VERDICTS — dispatch the emitted task files as fresh")
+        print("      native Sol subagents (see [judges] lines above), save the JSON verdicts,")
+        print("      then re-run score.py and gate.py with the same --iter.")
+        sys.exit(3)
     if rc_score != 0:
         print(f"[run] score.py exited {rc_score}; not gating.")
         sys.exit(rc_score)

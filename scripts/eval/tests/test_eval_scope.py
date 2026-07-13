@@ -1,4 +1,4 @@
-"""Infra regressions for the HARNESS §5 objective-gate scope."""
+"""Infra regressions for the objective-gate scope (PROGRAM §4 hard checks)."""
 import json
 import subprocess
 import sys

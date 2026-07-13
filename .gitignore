@@ -14,5 +14,5 @@ calibration/reference/
 __pycache__/
 *.pyc
 
-# Optional local MLflow lens (HARNESS §10) — git is the canonical store.
+# Optional local MLflow lens — git is the canonical store.
 calibration/mlruns/

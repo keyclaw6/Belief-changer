@@ -1,98 +1,101 @@
 # PROGRAM — the self-improvement loop (operator runbook)
 
-A boring, fixed loop. Copied in shape from github.com/neosigmaai/auto-harness:
-**run pipeline → score vs reference → gate keep/revert → record → ONE hypothesis
-→ repeat.** Intelligence goes into the chapters and the diagnosis — NEVER into
-redesigning the loop mid-run. The previous "calibration lab" died because ~90% of
-tokens went to process (preregistrations, judge-instrument rebuilds, commission
-audits, direction audits) instead of prose. This loop refuses that.
+A boring, fixed loop, copied in shape from github.com/neosigmaai/auto-harness:
+**RUN the pipeline → SCORE against the real Carr book → GATE keep/revert → RECORD → ONE hypothesis → repeat.** Intelligence goes into the chapters and the diagnosis — never into redesigning the loop mid-run. The 2026-07-11/12 "calibration lab" (branch `calibration-lab`) died because ~90% of tokens went to process (preregistrations, judge-instrument rebuilds, commission audits, direction audits) instead of prose; this loop refuses that. A mechanical failure is fixed mechanically, noted in one line, never treated as a semantic event. Loop grievances go under "Harness debt" in `loop/learnings.md`; the founder addresses them between blocks.
 
-**Goal.** Produce chapters a blind judge cannot tell from authentic Allen Carr.
-**Done when** a blind judge told "one of these two is from a real published
-Easyway book" guesses at ~50%. Fear, shame, and medical overreach are FEATURES of
-authentic Carr to REPRODUCE — not defects.
+**Goal.** A factory that takes ANY subject brief and produces an Allen Carr Easyway book — the same voice, method, structure, and nerve as the real corpus. We are not competing with Carr and not sanitizing him: **the reference IS the target.** Fear, shame-at-the-trap, stern commands, and confident medical-sounding assertions are features of authentic Carr to reproduce.
 
-**Target this campaign:** `production-books/quit-sugar/` (master plan R2, reviewed
-"fit to write from"). Reference: *Good Sugar Bad Sugar*, extracted to
-`calibration/reference/gsbs/` (gitignored — regenerate locally; see step 0).
+**How closeness is measured (founder direction, 2026-07-13).** Not a blind A/B contest — "ours beat Carr's in some judge's opinion" proves nothing, because Easyway is the goal, not the opponent. Instead a **reference-anchored rubric**: the judge reads the real GSBS chapter (ground truth) next to our chapter for the same position, scores **distance from the reference** on six anchored craft dimensions (voice, method, structure, repetition, register, rhythm — 0–10 each), and returns the **3–5 highest-impact improvement suggestions**, each tagged with the factory asset that owns the fix. Those suggestions are the tuning engine. Judge prompt: `calibration/judges/carr-likeness-rubric.md` (frozen per campaign). The pairwise/detection instrument is retired from the loop; a blind detection probe may return at Stage C as a final exam, never as the loop metric.
 
-## Step 0 — once per machine
+**Target this campaign:** `production-books/quit-sugar/` (master plan R2, reviewed "fit to write from"). Reference: *Good Sugar Bad Sugar*, extracted locally (step §2).
+
+## §0 Operator handoff (paste into Codex — fresh session)
 
 ```
-python3 scripts/eval/extract_reference.py \
-  --epub "analysis/reference-books/The easyway Good Sugar Bad Sugar.epub" \
-  --out calibration/reference/gsbs
+Read PROGRAM.md at the root of https://github.com/keyclaw6/Belief-changer
+(branch factory-v2-owner) and execute the loop exactly as written. You are
+the OPERATOR: you execute; you do not redesign the loop, the judge rubric,
+the scoring, or the thresholds.
+
+PROTECT YOUR CONTEXT WINDOW: drive the loop through fresh subagents and
+keep only compact results in your own context. Chapter writing, reviewer
+passes, judge tasks, and ALL whole-chapter or whole-book reading happen
+inside subagents — you handle file paths, score summaries, suggestions,
+and ledger rows, never full prose. Read the style guide once at session
+start, then reference it by path. If your context runs low, finish the
+current step, commit, and start a fresh session — the loop resumes from
+loop/results.tsv + loop/learnings.md by design.
+
+Read, in order: PROGRAM.md, AGENTS.md, prompts/style-guide.md (both parts),
+then the tail of loop/results.tsv and loop/learnings.md for current state.
+Then run the next iteration (§4). Commit after every iteration. Stop for
+founder review each block (§5).
 ```
 
-## The loop (per iteration N)
+## §1 Model matrix & routing (founder, 2026-07-13 — supersedes everything earlier)
 
-**Step 1 — RUN.** Write/rewrite chapters 1–3 of the target book using
-`prompts/chapter-writer.md` with the writer model from `loop/config.yaml`.
-**Fresh context per chapter:** the writer sees ONLY the style guide + master plan
-+ the immediately previous chapter (none for ch1). Research and master plan are
-reused as-is UNLESS the current hypothesis explicitly targets them. Convenience
-wrapper: `python3 scripts/loop/run_iteration.py --book production-books/quit-sugar
---chapters 1-3 --iter N --hypothesis "..."` (degrades to manual dispatch when no
-writer key).
+| Role | Model | Route |
+|---|---|---|
+| Chapter writer | **Claude Opus 4.6, reasoning disabled** | OpenRouter (`OPENROUTER_API_KEY`) |
+| Research agents | **DeepSeek V4 Pro, top reasoning** | OpenRouter |
+| Master-plan writer | **GPT‑5.6 Sol, reasoning `xhigh`** | **fresh native Codex subagent (founder's OpenAI subscription)** |
+| Judges (rubric panel) | **GPT‑5.6 Sol, reasoning `xhigh`** | **fresh native Codex subagents** |
+| Plan/chapter reviewers | strongest available non-writer model | native surface preferred |
 
-**Step 2 — SCORE.** `python3 scripts/loop/score.py --book
-production-books/quit-sugar --chapters 1-3 --iter N` → prints one reward line +
-writes `loop/scores/iter-NNN.json`. It runs, wrapping `scripts/eval/`:
-- HARD CHECKS (gate-blocking): originality tripwire vs the reference corpus;
-  mantra/repetition law (assigned mantras verbatim, no accidental verbatim
-  repeats); loose length sanity (±40% of the plan budget — a sanity check, not a
-  style gate).
-- REWARD: blind pairwise authenticity vs the matched real GSBS chapter, k=4
-  order-swapped, cross-family judges.
-- DETECTION PROBE (reported, not gated): blind "which is the real book?" —
-  accuracy toward 0.5 = indistinguishable.
-- DIAGNOSTICS (never gate): stylometrics vs the reference, for the learnings file.
-- No judge key → `reward=null`, "judges: DRY-RUN (no key)"; hard checks +
-  diagnostics still run for real. Judge output is NEVER fabricated.
+- **GPT models NEVER route through OpenRouter.** Sol runs only as fresh native Codex subagents on the founder's subscription. OpenRouter carries ONLY Opus chapter-writing and DeepSeek research.
+- The 2026-07-12 "MiniMax-M3 writer" note in the old config was a founder mix-up from another project and is **RESCINDED**.
+- One judge model per campaign; `judge_k` fresh contexts per chapter, scores averaged.
 
-**Step 3 — GATE.** `python3 scripts/loop/gate.py --iter N --hypothesis "..."` →
-ACCEPT (keep changes) or REVERT (prints the exact `git checkout` commands to undo
-this iteration's tunable-asset changes; the operator runs them). ACCEPT iff all
-hard checks pass AND (reward ≥ last_accepted + epsilon OR first iteration).
-Epsilon default 0.03 — recalibrate after 3 same-config baseline repeats measure
-judge noise.
+## §2 Setup (once per environment)
 
-**Step 4 — RECORD.** The gate appends the `loop/results.tsv` row automatically.
-YOU append the hypothesis outcome — **pass or fail, always** — to
-`loop/learnings.md`.
+1. Clone the repo, branch `factory-v2-owner`; you need push access.
+2. `python3` (stdlib only). `OPENROUTER_API_KEY` exported — used ONLY for writer + research calls.
+3. Extract the reference (local only — `calibration/reference/` is gitignored; never commit extracted text):
+   ```
+   python3 scripts/eval/extract_reference.py \
+     --epub "analysis/reference-books/The easyway Good Sugar Bad Sugar.epub" \
+     --out calibration/reference/gsbs
+   ```
+   Front-matter pairing is handled by `reference_chapter_offset` in `loop/config.yaml` (verified: list positions 1–2 are front matter; position 3 = Chapter 1).
+4. **Instrument ceiling check (once per campaign):** `python3 scripts/loop/score.py --control-ref --chapters 1-3 --iter 0` → dispatch the 6 emitted judge tasks as fresh native Sol subagents → re-run the same command to aggregate. The real chapters judged as candidate should score ≈1.0 — that number is the rubric's ceiling and your first noise sample. Record it in `loop/learnings.md`. **Do NOT run gate.py on the control** (a control row would poison the baseline); product iterations start at iter-001.
 
-**Step 5 — HYPOTHESIZE.** ONE change to ONE tunable asset for iteration N+1.
-Write it into the learnings ledger as the next FROZEN hypothesis before running.
+## §3 The tunable surface (the ONLY files an amendment may touch)
 
-## The tunable surface (the ONLY files the loop operator edits between iterations)
+`prompts/style-guide.md` · `prompts/chapter-writer.md` · `prompts/chapter-reviewer.md` · `prompts/master-plan-skill-v2.md` · `prompts/master-plan-reviewer-v2.md` · `prompts/research-agent.md` · `production-books/_template/` · the book's `master-plan.md` (only by re-running the plan stage — never hand-edited)
 
-- `prompts/style-guide.md`
-- `prompts/chapter-writer.md`
-- `prompts/chapter-reviewer.md`
-- the book's `master-plan.md`
+- **One amendment per iteration** — one asset, one mechanism, written as a one-paragraph hypothesis in `loop/learnings.md` BEFORE the iteration runs. Source hypotheses from the judges' suggestions and reviewer diagnostics.
+- **Behavior-agnostic only**: the amendment must help a gaming or doom-scrolling book equally ("verdict lines are being diluted", never "GSBS does X on page 40"). Never hand-edit chapters, plans, or research.
+- **FROZEN (not the operator's):** this PROGRAM, `calibration/judges/*`, `scripts/loop/*`, `scripts/eval/*`, `loop/config.yaml`, thresholds, rubric weights. **No preregistrations, no direction audits, no commissions, no instrument rebuilds mid-run.** Changing the rubric, weights, `judge_k`, writer model, or epsilon = a **new campaign** with fresh baselines (new `loop/results.tsv` lineage; never compare rewards across campaigns) — founder decision only.
 
-Everything else is **infrastructure** — never edited by the loop operator:
-`scripts/**`, `loop/config.yaml`, the judge prompts, the eval library, the
-reference. State plainly: **no preregistrations, no direction audits, no
-commissions, no instrument rebuilds mid-run.** The judge instrument version is
-pinned per campaign in `loop/config.yaml`. Changing it — or the writer, judges,
-k, epsilon, length band, or originality threshold — starts a NEW campaign with
-fresh baselines (a new `loop/results.tsv` lineage; do not compare rewards across
-campaigns).
+## §4 One iteration
 
-## Escalation & defects
+Budget ≤40 model calls. Artifacts: `loop/iterations/iter-NNN/` + `loop/scores/`. **Context discipline:** the operator's own window is a resource — every prose-heavy step (writing, reviewing, judging) runs in a fresh subagent; the root reads paths, summaries, and ledger rows, never full chapters. Any interrupted iteration resumes safely: score.py is idempotent (re-emits only missing judge tasks, aggregates when verdicts are complete).
 
-- **3 consecutive non-improvements** (REVERT or no reward gain) → STOP, write a
-  summary of what was tried and the current wall, surface to the founder. Do not
-  invent a fifth clever lever.
-- **Spec gap found by the writer** (a missing quote / study / mantra / ambiguous
-  assignment) → that is a **master-plan defect**. Fix the plan, restart the
-  chapter. Do not let the writer improvise the missing content.
-- A hard-check FAIL always blocks ACCEPT; the reward is not even consulted.
+1. **RUN** — regenerate only what the last amendment invalidated (research-prompt change → research; plan-side change → plan + chapters; prose-side change → chapters only). Research per `prompts/research-agent.md` (10× floors; DeepSeek arms). Plan per `prompts/master-plan-skill-v2.md` (Sol `xhigh`, native), ONE reviewer cycle — note residual objections and proceed; the scoreboard decides. Chapters 1–3 (Stage A): fresh context per chapter — **style guide + master plan + previous chapter ONLY**; ≤2 reviewer cycles each. Convenience wrapper: `python3 scripts/loop/run_iteration.py --book production-books/quit-sugar --chapters 1-3 --iter N --hypothesis "..."` (writer via OpenRouter; degrades to printed manual dispatch when no key).
+2. **SCORE** — `python3 scripts/loop/score.py --book production-books/quit-sugar --chapters 1-3 --iter N`:
+   - **HARD CHECKS (gate-blocking):** originality tripwire vs the reference corpus; mantra/repetition law; loose length sanity (±40% of plan budget — a sanity check, not a style gate).
+   - **REWARD (rubric panel):** for each chapter, `judge_k` fresh **native Sol-`xhigh`** contexts receive the rubric with the REAL chapter as reference and ours as candidate; reward = weighted rubric composite in [0,1], averaged over judges and chapters. Inside Codex, dispatch each generated judge task file as a fresh subagent and save each raw JSON reply where score.py says; outside Codex, score.py writes the task files and prints exact manual-dispatch instructions, then waits. **No Sol API fallback exists and judge output is NEVER fabricated.**
+   - **SUGGESTIONS:** harvested from all verdicts, de-duplicated, ranked by frequency — printed and stored for step 5.
+   - **DIAGNOSTICS (never gate):** stylometrics vs the reference, for the learnings file.
+3. **GATE** — `python3 scripts/loop/gate.py --iter N --hypothesis "..."` → `FAIL-HARD` (hard checks failed; reward not consulted) · `BASELINE` · `NEW-BEST` · `KEEP` (within epsilon of best) · `REVERT` (prints the exact commands to undo this iteration's tunable-asset changes). Epsilon 0.03 is a placeholder until three same-config baseline repeats measure the real judge noise floor; the founder then resets it.
+4. **RECORD** — the gate appends the `loop/results.tsv` row automatically. YOU append one short `loop/learnings.md` entry — **pass or fail, always**: hypothesis → gate → the judges' top suggestions (verbatim) → next hypothesis.
+5. **AMEND** — apply the next hypothesis to its ONE asset. Commit everything: `iter-NNN: <hypothesis> — <gate>`.
 
-## One iteration = one product batch
+**Spec gap found by the writer** (missing quote/study/mantra/ambiguous assignment) = a **master-plan defect**: re-run the plan stage, restart the chapter; the writer never improvises missing content.
 
-Follow one visible path: (edit one tunable asset) → write Ch1–3 → score → gate →
-record → one new hypothesis. If you find yourself building an auditor, a
-commissioner, a preregistration, or a new judge taxonomy, you have left the loop.
-Stop and come back to it.
+## §5 Blocks, stages, done
+
+- **Block = 5 iterations**, then STOP for founder review: `results.tsv` + latest learnings + skim the chapters. Escalate early only for 3 consecutive non-improvements on the same dimension (write the wall summary; do not invent a fifth clever lever) or a missing credential/access.
+- **Stage A** (chapters 1–3) → **Stage B** (full book; same loop, rubric sampled across positions) at composite ≥ **0.85** with hard checks green on two consecutive iterations — provisional threshold; founder recalibrates after the first block. **Stage C** (holdout, untouched by all tuning): one zero-amendment run on quit-caffeine vs its real Easyway book; optionally the retired blind detection probe as a final exam. Passing = the factory generalizes; any-subject production opens.
+- The real done: **the founder reads the chapters and can't tell the factory from the corpus.**
+
+## §6 Records (all of them)
+
+`loop/results.tsv` (one row/iteration) · `loop/learnings.md` (one entry/iteration + harness debt) · `loop/iterations/` + `loop/scores/` (judge tasks, verdicts, score JSONs) · one commit per iteration. Nothing else — no manifests, preregistrations, direction audits, instrument versions, or run reports. If you find yourself building an auditor, a commissioner, a preregistration, or a new judge taxonomy, you have left the loop — stop and come back. Historical `calibration/runs/` + `calibration/FAILURE-ANALYSIS.md` from the retired lab remain as read-only archaeology (`scripts/loop/RETIREMENT.md`).
+
+## §7 Anti-overfit (absolute)
+
+1. **Pipeline sub-calls stay blind**: researcher, planner, writer, reviewer never receive the reference EPUB, `calibration/reference/`, `analysis/`, judge outputs, or scores. The style guide is the only sanctioned carrier of reference-derived generic patterns. **The judge is reference-sighted by design** — that sight flows back only as behavior-agnostic suggestions.
+2. Research never uses Allen Carr / Easyway-derivative sources.
+3. Cross-book n-gram overlap vs the reference is a hard originality gate; rising overlap across iterations = mimicry drift → revert.
+4. Amendments quote mechanisms, never reference passages. The caffeine reference stays untouched until Stage C.

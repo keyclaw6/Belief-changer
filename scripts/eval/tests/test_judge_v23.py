@@ -61,7 +61,7 @@ def observation(summary, role, target):
                 if item["role"] == role and item["target"] == target)
 class PooledAggregationTests(unittest.TestCase):
     def test_replica_permutation_and_record_order_are_decision_invariant(self):
-        """HARNESS §9: replica labels are trace-only within each order stratum."""
+        """Retired v2.3 instrument:replica labels are trace-only within each order stratum."""
         varied = lambda _r, _t, identity, order: {"ours": 7, "ref": 7,
             "verdict": "ours" if (identity == "replica-1") == (order == 0) else "tie"}
         base, original = make_records(varied), aggregate(make_records(varied))
@@ -79,7 +79,7 @@ class PooledAggregationTests(unittest.TestCase):
         self.assertEqual([r["mapped"]["product_parity_verdict"] for r in base[:4]],
                          ["ours", "tie", "tie", "ours"])
     def test_order_reversal_stays_in_means_but_fails_target_guard(self):
-        """HARNESS §9: a polarized target cannot average into apparent parity."""
+        """Retired v2.3 instrument:a polarized target cannot average into apparent parity."""
         def split(role, target, identity, order):
             if role == "craft" and target == "chapter-01":
                 return {"ours": 7, "ref": 7, "verdict": "ours" if order == 0 else "ref"}
@@ -93,7 +93,7 @@ class PooledAggregationTests(unittest.TestCase):
                                ["preference_rate_incl_half_ties"], 5 / 6)
 
     def test_symmetric_dominance_and_unique_critical_exception(self):
-        """HARNESS §9: dominance is symmetric after order remapping."""
+        """Retired v2.3 instrument:dominance is symmetric after order remapping."""
         cases = [
             ({"ours": 8, "ref": 7, "verdict": "tie"}, "ours"),
             ({"ours": 7, "ref": 8, "verdict": "ours"}, "ref"),
@@ -118,7 +118,7 @@ class PooledAggregationTests(unittest.TestCase):
             "strict_dominance_contradictions"], [])
 
     def test_critical_union_includes_single_and_shared_raw_labels(self):
-        """HARNESS §9: every raw critical label survives conservative unioning."""
+        """Retired v2.3 instrument:every raw critical label survives conservative unioning."""
         def critical(role, target, identity, order):
             if role == "craft" and target == "chapter-02" and identity == "replica-1":
                 return ({"ours_critical": ("repetitive_sag",),
@@ -130,7 +130,7 @@ class PooledAggregationTests(unittest.TestCase):
         self.assertEqual(target["critical_ref"], ["repetitive_sag"])
 class ValidationMutationTests(unittest.TestCase):
     def test_matrix_hash_thread_raw_and_remap_mutations_fail_closed(self):
-        """HARNESS §9: every matrix, transport, hash, raw parse, and remap miss is fatal."""
+        """Retired v2.3 instrument:every matrix, transport, hash, raw parse, and remap miss is fatal."""
         mutations = {
             "matrix": lambda rows: rows.pop(),
             "duplicate_coordinate": lambda rows: rows.__setitem__(-1, copy.deepcopy(rows[0])),
@@ -158,7 +158,7 @@ class ValidationMutationTests(unittest.TestCase):
                 self.assertTrue(summary["matrix"]["violations"])
 
     def test_frozen_configuration_mutations_fail_closed(self):
-        """HARNESS §9: records cannot validate under a changed frozen configuration."""
+        """Retired v2.3 instrument:records cannot validate under a changed frozen configuration."""
         mutations = [
             lambda cfg: cfg.__setitem__("protocol_version", "stage-a-v2.2"),
             lambda cfg: cfg.__setitem__("protocol_version", "stage-a-v2.3-other"),
@@ -192,7 +192,7 @@ class ControlAndProductTests(unittest.TestCase):
         return aggregate(make_records(values))
 
     def test_controls_pass_and_raw_semantic_mutations_fail(self):
-        """HARNESS §9: identical and gross-degraded controls enforce every raw anchor."""
+        """Retired v2.3 instrument:identical and gross-degraded controls enforce every raw anchor."""
         self.assertTrue(V23.evaluate_control(self.identical(), "identical")["passed"])
         self.assertTrue(V23.evaluate_control(self.degraded(), "degraded-reference")["passed"])
         mutations = [
@@ -211,7 +211,7 @@ class ControlAndProductTests(unittest.TestCase):
                 self.assertFalse(V23.evaluate_control(builder(mutate), mode)["passed"])
 
     def test_degraded_allows_secondary_label_and_unnamed_dimension_variation(self):
-        """HARNESS §9: non-core labels and non-transform dimensions remain diagnostic."""
+        """Retired v2.3 instrument:non-core labels and non-transform dimensions remain diagnostic."""
         def variation(role, target, identity, order):
             if identity != "replica-1" or order != 0:
                 return {}
@@ -225,7 +225,7 @@ class ControlAndProductTests(unittest.TestCase):
         self.assertTrue(result["passed"])
 
     def test_product_threshold_safety_coherence_guard_and_controls(self):
-        """HARNESS §5/§9: product applies controls, thresholds, safety, and guards."""
+        """Retired v2.3 instrument: product applies controls, thresholds, safety, and guards."""
         controls = {
             "identical": V23.evaluate_control(self.identical(), "identical"),
             "degraded-reference": V23.evaluate_control(

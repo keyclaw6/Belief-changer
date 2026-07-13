@@ -1,9 +1,10 @@
-"""Objective eval orchestrator: one command per calibration run.
+"""Objective eval orchestrator (retired-instrument tool — the live loop uses
+scripts/loop/score.py; this remains for the archived calibration/runs/ records).
 
 Runs metrics comparison, the mantra law check, the within-book repetition law,
 and the cross-book originality tripwire; writes {run-dir}/metrics.json and
 prints a gate summary. Exit 0 = objective gates green (length deltas are
-WARN-level; stage gates are applied by the operator per HARNESS §5).
+WARN-level; the live hard checks + gate now live in PROGRAM.md §4).
 
 Usage:
   python3 scripts/eval/run_evals.py \

@@ -6,7 +6,7 @@ Generate high-quality, Allen Carr "Easyway"-style belief-change books — free, 
 
 ## Priorities
 When priorities conflict: 1. Method integrity. 2. Quality. 3. Simplicity. 4. Reach. 5. Cost.
-Method integrity means: fidelity to the Easyway method as evidenced by the reference corpus (including its fear deployment, certainty register, and stern moments), willpower-free logic, original text only (learn the mechanism, never reproduce copyrighted prose), and research-traceable claims. A book that softens the method into a wellness brochure has failed regardless of polish. (Founder decision, 2026-07-12: reproduce the authentic Carr register — do not soften it; our own twist comes after the machine can hit the target. See `prompts/style-guide.md` Fidelity Doctrine.)
+Method integrity means: **Carr-fidelity** — the Easyway method executed exactly as Allen Carr practices it (his warmth to the reader, his commands, his full-force scares delivered then disowned, his certainty), original text only (learn the mechanism, never reproduce copyrighted prose), and evidence-graded research. The factory matches Carr before any house twist is applied. A book that violates these has failed regardless of polish.
 
 ## Truth Hierarchy
 1. `openspec/specs/` — behavior and method truth. Read the relevant spec before changing pipeline or content behavior; author changes under `openspec/changes/<slug>/`.
@@ -33,7 +33,7 @@ Write no documentation by default. A doc must be load-bearing (an agent cannot c
 - Published books are immutable artifacts; corrections produce new versions.
 
 ## Dependencies
-Understand or recreate: prefer dependencies fully reasoned about in-repo; reimplement small subsets over adopting frameworks. Model access goes through the founder's endpoints and always via environment variables; no provider keys belong in this repo. During calibration, the HARNESS route law is binding: OpenRouter is only for Opus chapter writing with reasoning disabled and DeepSeek research at top reasoning, never GPT/OpenAI, Sol, Luna, Gemini, Grok, planning, reviewing, auditing, framing, summarization, or judging.
+Understand or recreate: prefer dependencies fully reasoned about in-repo; reimplement small subsets over adopting frameworks. Model access goes through the founder's endpoints and always via environment variables; no provider keys belong in this repo. During calibration, the PROGRAM §1 route law is binding: OpenRouter carries ONLY Opus chapter writing (reasoning disabled) and DeepSeek research (top reasoning); GPT-5.6 Sol (planning, reviewing, judging) runs ONLY as fresh native Codex subagents on the founder's subscription, never through OpenRouter.
 
 ## Code Intelligence
 Use the codebase-memory-mcp tools: blast-radius (`detect_changes`) before modifying existing code, `search_graph`/`trace_path` when exploring, `manage_adr` for architecture decisions instead of docs.
@@ -41,6 +41,7 @@ Use the codebase-memory-mcp tools: blast-radius (`detect_changes`) before modify
 ## Repo Map
 - `production-books/<slug>/` — the per-book workshop. Published output targets the future site (see `docs/VISION.md`); the retired root `books/` held reference texts now in `analysis/reference-books/`.
 - `prompts/` — the pipeline's prompt assets. `openspec/` — specs and changes.
+- `PROGRAM.md` (root) — the self-improvement loop runbook; `loop/` — its config, results, learnings, iterations; `calibration/` — judges + reference extraction + retired-lab archaeology.
 - `scripts/` — gates and tooling (`check.sh` is the canonical gate). `docs/` — VISION.md and the minimal load-bearing set.
 
 ## Workflow
@@ -48,10 +49,10 @@ Use the codebase-memory-mcp tools: blast-radius (`detect_changes`) before modify
 2. Behavior or method change → openspec change first; validate with `openspec validate <slug> --strict`.
 3. Every new test cites the spec scenario it proves, or is marked infra.
 4. Gate everything with `bash scripts/check.sh`. Trust real exit codes only.
-5. Conventional Commits, straight to `main`, push after each logical change. Calibration is the explicit exception: work and push on `calibration-lab`; only the founder merges it to `main`.
+5. Conventional Commits, straight to `main`, push after each logical change. The self-improvement loop is the explicit exception: it commits one per iteration on its campaign branch (`PROGRAM.md` §0/§4); only the founder merges winning amendments to `main`.
 
 ## Calibration Recovery
-During calibration, `calibration/HARNESS.md` and its empirical run records may move ahead of OpenSpec. After any context compaction, task resume, or operator handoff, read `calibration/STATE.md` first, then verify it against the HARNESS true-north section, the final row of `calibration/runs/LEDGER.md`, the current run's manifest and report, and `git log -5`. State the last accepted product artifact, next product artifact, active generic hypothesis, and external blocker before acting. If STATE says `STOPPED`, also read the `FAILURE-ANALYSIS` artifact named there and do not resume any calibration action until the founder explicitly chooses a fork; if that artifact is missing, remain stopped. Outside a stop, once research, framing, and plan are accepted, the next action is a product-path artifact or evaluation—not speculative process work.
+The self-improvement loop is `PROGRAM.md` (root). After any context compaction, task resume, or operator handoff, read `PROGRAM.md` first, then the tail of `loop/results.tsv` + `loop/learnings.md` for live state (there are no other records — §6). State the last accepted iteration, the next hypothesis, and any external blocker before acting, then run the next iteration (§4). The retired 2026-07-11/12 lab lives read-only under `calibration/runs/` + `calibration/FAILURE-ANALYSIS.md` (`scripts/loop/RETIREMENT.md`); do not resume it.
 
 ## Harness Rule
 When a task fails or confuses, don't just retry: name the missing capability (context, spec, test, tool, check), then fix it as part of the task or record it in the active exec plan.

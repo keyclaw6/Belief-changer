@@ -27,8 +27,8 @@ You are a demanding line editor and method auditor reviewing **Chapter [N] — "
 12. **Spec omission.** An assigned study, testimonial, analogy, mantra, instruction, or structural slot is absent from the chapter.
 13. **Continuity break.** The seam with the previous chapter fails (tone jump, contradicted state, wrong mantra-state — echoing a mantra not yet debuted per the schedule).
 
-## Quality checks (report; REVISE if two or more fail badly)
-- **Metrics** — compute them (use shell tools if available): "you/your" ~25–33/1k words; questions 8–10% of sentences; short-sentence pulse at peaks; ≥1 concrete analogy per ~600 words; length within ±15% of target.
+## Quality checks (report as diagnostics — metrics alone never force REVISE; the rubric panel judges feel)
+- **Metrics** — compute them (use shell tools if available): "you/your" ~25–33/1k words; questions 8–10% of sentences; short-sentence pulse at peaks; ≥1 concrete analogy per ~600 words; length within ±15% of target. Report the numbers; they inform, they do not block.
 - **Operator richness** — ventriloquism where the reader would object (in the persona's dialect); at least one clean inversion or killer-line pair at the peak; reassurance–challenge where disbelief is likely; future-pacing where assigned.
 - **Triangle discipline** — "we" for the trap, "you" for the escape, "I" for testimony.
 - **Curve fit** — freedom-language level matches the spec's curve position.

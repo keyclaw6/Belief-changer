@@ -1,25 +1,25 @@
 # method-integrity Specification
 
 ## Purpose
-The non-negotiable rules that bind every writing agent: fidelity to the reference-corpus register, willpower-free logic, original content only, evidence grading, source traceability, and the medical-safety advisory. A book that violates any of these — including one that *softens* the method into a wellness brochure — has failed regardless of polish. (Founder decision, 2026-07-12: reproduce the authentic Allen Carr register, do not soften it; see `prompts/style-guide.md` Fidelity Doctrine.)
+The non-negotiable rules that bind every writing agent: Carr-fidelity framing (warm to the reader, harsh to the trap, scares at full force then disowned), willpower-free logic, original content only, evidence grading, source traceability, and the medical-safety advisory. A book that violates any of these has failed regardless of polish.
 ## Requirements
-### Requirement: Reference-corpus fidelity
-The factory reproduces the authentic Easyway register, not a softened derivative. The reference corpus (the caffeine and *Good Sugar Bad Sugar* analyses in `analysis/`) is the target, including its fear deployment, its rhetorical certainty, and its stern moments. The factory SHALL mirror the reference corpus's persuasion techniques — including fear-as-motivator and absolute rhetorical certainty (reframes asserted as flat settled fact) — where the master plan assigns them, and SHALL always resolve a raised fear the Carr way (fear raised, then disowned as the reason to change and collapsed into relief: "the trap scares you, the escape frees you"). Every generated chapter SHALL remain warm to the *person* (the pronoun triangle: "we" for the trap, "you" for the escape) and SHALL NOT hold the reader in contempt or blame the reader's character; but it SHALL NOT be softened into a calm, hedged, both-sides wellness-brochure register that drains the corpus's persuasive force. This fidelity mandate never licenses reproducing copyrighted prose (see Original content only) or inventing/overstating evidence (see Evidence grading and Source traceability).
+### Requirement: Carr-fidelity framing
+The method works because it reframes the behavior as escaping a trap, not being lectured or shamed. Every generated chapter must address the reader exactly as Carr does: warm to the person, harsh to the trap and the willpower method, commanding with cheerful certainty, delivering assigned hard facts at full force and then explicitly disowning fear as the motivator. Every generated chapter SHALL frame the behavior as an external trap the reader is escaping and SHALL NOT shame or moralize the reader; hard or frightening material SHALL be delivered at Carr's full amplitude and then disowned, never softened or omitted.
 
-#### Scenario: A chapter holds the reader in contempt
-WHEN a chapter sneers at the reader, or frames the reader's *character* as a personal failing, weakness, or sin (as distinct from attacking the trap and the behavior, which is required)
+#### Scenario: A chapter moralizes the reader
+WHEN a chapter frames the reader's behavior as a personal failing, weakness, or sin
 THEN the chapter is rejected by the reviewer
-AND the writer must revise to keep the fire on the trap while restoring warmth to the person via the pronoun triangle.
+AND the writer must revise to reframe the behavior as an external trap the reader is escaping.
 
-#### Scenario: A chapter is softened into a wellness brochure
-WHEN a chapter drains the corpus register — hedging core reframes with qualifier creep or both-sides-ism, muting or omitting a fear beat the master plan assigns, or treating the willpower method gently — so it reads like a calm self-help pamphlet rather than an Easyway book
-THEN the chapter is rejected by the reviewer
-AND the writer must revise to hit the reference-corpus register: assert core reframes as fact, and deploy the assigned fear/stern moves at full strength.
-
-#### Scenario: A fear beat is raised but not disowned
-WHEN a chapter raises fear or lands a hard consequence-fact that the master plan assigns, but leaves the reader in open dread with no disown/relief move on the far side
+#### Scenario: A scare is left standing as the motivator
+WHEN a chapter delivers fear, disgust, or hard-fact material and ends the move on that fear as the reason to change
 THEN the chapter is rejected
-BECAUSE the corpus always resolves fear the Carr way — the fact does its perception work, then the loss-frame is removed and collapsed into relief and freedom.
+BECAUSE the method changes belief, not mood — the scare does its perception work and is then explicitly disowned (scare-then-disown).
+
+#### Scenario: An assigned scare is softened or skipped
+WHEN the master plan assigns hard-hitting material and the chapter hedges, softens, or omits it
+THEN the chapter is rejected
+BECAUSE omitting the scare Carr would have delivered is register infidelity — the factory matches Carr's amplitude, not a sanitized version of it.
 
 ### Requirement: Willpower-free logic
 The method holds that behavior follows belief automatically once the perceived benefit is dismantled. No generated content may demand willpower, deprivation, or day-counting as the mechanism of change. Generated content SHALL NOT prescribe willpower, deprivation, or day-counting as the mechanism of change; the change MUST flow from a corrected belief alone.
@@ -74,10 +74,9 @@ THEN the master-plan step must STOP and gather more research first
 AND must never paper over the gap with an invented finding.
 
 ### Requirement: Medical-safety advisory
-The method stays non-medical but must route real physical risk out of scope, exactly as the reference corpus does (e.g. *Good Sugar Bad Sugar*'s boxed note routing diabetes/blood-pressure medication to the reader's doctor). Where a book's behavior touches medication or a health condition whose management could be affected by stopping, the book SHALL carry a boxed practical-safety advisory directing medical specifics to a qualified professional, kept outside the belief argument. The reference-corpus fidelity mandate SHALL NOT be used to override or omit this advisory.
+The method stays non-medical but must route real physical risk out of scope, exactly as the reference corpus does (e.g. *Good Sugar Bad Sugar*'s boxed note routing diabetes/blood-pressure medication to the reader's doctor). Where a book's behavior touches medication or a health condition whose management could be affected by stopping, the book SHALL carry a boxed practical-safety advisory directing medical specifics to a qualified professional, kept outside the belief argument. The Carr-fidelity framing mandate SHALL NOT be used to override or omit this advisory.
 
 #### Scenario: A medication-relevant behavior omits the safety advisory
 WHEN a book addresses a behavior whose cessation could affect medication or a managed health condition, and no boxed practical-safety advisory routing medical specifics to a professional is present
 THEN the master plan (and any affected chapter) is rejected
 AND the advisory must be added, kept outside and separate from the belief-change argument.
-

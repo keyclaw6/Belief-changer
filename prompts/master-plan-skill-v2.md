@@ -73,7 +73,7 @@ Use your judgment to merge, reshape, move, or omit material that cannot meet thi
 
 Map concept debuts, qualitative demolition and freedom curves, structural responsibilities that genuinely apply, instruction placements, the saved ending reframe, and one integer word budget per chapter.
 
-For a HARNESS calibration plan, chapter budgets must sum exactly to 54,000–66,000 words. State the arithmetic sum. Length is planned, not hoped for.
+For a calibration plan, chapter budgets must sum exactly to 54,000–66,000 words. State the arithmetic sum. Length is planned, not hoped for.
 
 ### Compact chapter cards
 

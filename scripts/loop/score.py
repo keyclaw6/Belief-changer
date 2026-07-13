@@ -1,18 +1,14 @@
-"""ONE command -> ONE reward + hard checks + diagnostics for the loop.
+"""ONE command -> ONE reward + hard checks + diagnostics (wraps scripts/eval).
 
-Wraps scripts/eval (evallib, metrics, repetition, mantra_check) — does NOT
-reimplement them. Reads knobs from loop/config.yaml. Writes loop/scores/iter-
-NNN.json and prints one reward line.
+  python3 scripts/loop/score.py --book production-books/quit-sugar --chapters 1-3 --iter 7
+  python3 scripts/loop/score.py --control-ref --iter 0   # real GSBS as "ours"
 
-  python3 scripts/loop/score.py --book production-books/quit-sugar --chapters 1-3
-  python3 scripts/loop/score.py --book <dir> --iter 7   # name the artifact
-  python3 scripts/loop/score.py --control-ref           # score real GSBS as "ours"
-
-HARD CHECKS (gate-blocking): originality tripwire vs reference, mantra/repetition
-law, loose length sanity (+/- band vs plan budget). REWARD (judges): pairwise
-blind authenticity vs the matched real chapter. DETECTION PROBE (reported, not
-gated): blind "which is the real book?" accuracy. DIAGNOSTICS (never gate):
-stylometrics vs reference. No key -> reward=null + "DRY-RUN"; hard/diag stay real.
+HARD CHECKS (gate-blocking): originality tripwire, mantra/repetition law, loose
+length sanity. REWARD: the reference-anchored rubric (PROGRAM §4.2) — fresh
+native Sol subagents score distance from the matched real chapter; emits task
+files and exits 3 (WAITING-FOR-VERDICTS) until every verdict JSON is saved,
+then aggregates. DIAGNOSTICS (never gate): stylometrics. Writes
+loop/scores/iter-NNN.json.
 """
 import argparse
 import json
@@ -140,12 +136,8 @@ def main():
     scoped = [(name, raw if i in selset else "") for i, (name, raw) in enumerate(ours_chapters, 1)]
     hard_fails = []
 
-    # --- HARD CHECK 1: originality vs reference (ALWAYS draft <-> reference) ---
-    # The originality tripwire is a plagiarism detector: does OUR draft lift
-    # n-grams from the reference book? Comparing the reference AGAINST ITSELF is
-    # degenerate (a chapter is not "unoriginal" w.r.t. its own book — Carr repeats
-    # signature refrains across chapters on purpose), so in --control-ref the
-    # tripwire is N/A, never a hard fail. That is the calibration: draft<->ref.
+    # --- HARD CHECK 1: originality vs reference (plagiarism tripwire). In
+    # --control-ref, reference-vs-itself is degenerate -> N/A, never a fail.
     if a.control_ref:
         cross = {"mode": "N/A (control): reference-vs-self is degenerate, not a "
                  "plagiarism signal", "overlap_ratio": None, "tripwire": float(cfg["originality_tripwire"]),
@@ -183,13 +175,18 @@ def main():
     # --- DIAGNOSTICS (never gate) ---
     style_rows = stylometrics(ours, ref_metrics, sel, offset)
 
-    # --- REWARD + DETECTION (judges; DRY-RUN without a key) ---
+    # --- REWARD (reference-anchored rubric; judges = native Sol subagents) ---
     pairs = build_pairs(ours_chapters, ref_chapters, sel, offset)
-    pw = judges.run_pairwise(cfg, pairs, Path(cfg["pairwise_prompt"]).read_text(encoding="utf-8"),
-                             "pairwise")
-    probe = judges.run_pairwise(cfg, pairs, Path(cfg["detection_prompt"]).read_text(encoding="utf-8"),
-                                "detection")
-    reward = None if pw["dry_run"] else pw.get("reward")
+    labels = [lbl for lbl, _, _ in pairs]
+    iter_name = f"{a.iter:03d}" if a.iter is not None else "adhoc"
+    rubric = Path(cfg["judge_rubric"]).read_text(encoding="utf-8")
+    missing = judges.missing_verdicts(cfg, labels, iter_name)
+    if missing:
+        judges.emit_tasks(cfg, pairs, iter_name, rubric)
+        rub, reward, status = None, None, "WAITING-FOR-VERDICTS"
+    else:
+        rub = judges.aggregate(cfg, labels, iter_name)
+        reward, status = rub["reward"], "SCORED"
 
     payload = {
         "campaign": cfg.get("campaign"), "instrument_version": cfg.get("instrument_version"),
@@ -199,7 +196,7 @@ def main():
         "checks": {"originality": cross, "mantra": mantra_res, "repetition_within": within,
                    "length": length_rows},
         "diagnostics": {"stylometrics": style_rows},
-        "judges": {"pairwise": pw, "detection_probe": probe},
+        "judges": {"status": status, "rubric": rub, "missing": missing},
     }
     _report(payload)
 
@@ -208,8 +205,8 @@ def main():
     name = f"iter-{a.iter:03d}.json" if a.iter is not None else "iter-adhoc.json"
     (scores_dir / name).write_text(json.dumps(payload, indent=1), encoding="utf-8")
     print(f"[score] wrote {scores_dir / name}")
-    # Exit 0 always: gate.py owns ACCEPT/REVERT. score.py only measures.
-    sys.exit(0)
+    # Exit 3 = verdicts pending (dispatch judges, re-run). Else 0: gate.py decides.
+    sys.exit(3 if status == "WAITING-FOR-VERDICTS" else 0)
 
 
 def _report(p):
@@ -235,14 +232,22 @@ def _report(p):
     print("[diag] stylometrics (ours vs matched reference positions):")
     for r in p["diagnostics"]["stylometrics"]:
         print(f"        {r['metric']:<26}{str(r['ours']):>10}{str(r['ref']):>10}")
-    pw, probe = p["judges"]["pairwise"], p["judges"]["detection_probe"]
-    if pw["dry_run"]:
-        print("[reward] judges: DRY-RUN (no key) — reward=null; hard checks + diagnostics are real")
+    j = p["judges"]
+    if j["status"] == "WAITING-FOR-VERDICTS":
+        print(f"[reward] WAITING-FOR-VERDICTS — {len(j['missing'])} verdicts missing; "
+              "task files emitted (see [judges] lines above).")
     else:
-        print(f"[reward] pairwise authenticity win-rate = {pw.get('reward')} "
-              f"({pw.get('valid_calls')}/{len(pw['calls'])} valid)")
-        print(f"[probe]  detection accuracy = {probe.get('detection_accuracy')} "
-              f"(|acc-0.5| = {probe.get('distinguishability')}; toward 0.5 = indistinguishable)")
+        r = j["rubric"]
+        print(f"[reward] carr-likeness composite = {r['reward']}  "
+              f"({r['n_verdicts']} verdicts, k={r['judge_k']}, judge={r['judge_model']})")
+        for c in r["per_chapter"]:
+            dims = "  ".join(f"{d.split('_')[0]}={c['dims'][d]}" for d in judges.DIMS)
+            print(f"         {c['chapter']} composite={c['composite']}  {dims}")
+        if r["worst_dimensions"]:
+            print("[gap]    worst-dimension votes: " + ", ".join(
+                f"{x['dimension']} x{x['votes']}" for x in r["worst_dimensions"]))
+        for s in r["suggestions"]:
+            print(f"[sugg]   ({s['asset']}, x{s['count']}) {s['suggestion'][:140]}")
     print(f"[verdict] HARD CHECKS: {'PASS' if p['hard_ok'] else 'FAIL'} "
           f"({len(p['hard_fails'])} failures)")
     for f in p["hard_fails"]:

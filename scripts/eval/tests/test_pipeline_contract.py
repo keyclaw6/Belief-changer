@@ -63,18 +63,12 @@ class ResearchContractTests(unittest.TestCase):
         """OpenSpec: the greatest live allowance is used without shrinking work.
 
         The quality-only law's surviving home is the research prompt
-        (calibration/HARNESS.md retired to PROGRAM.md, founder 2026-07-12)."""
+        (HARNESS retired to PROGRAM.md; stale change specs deleted 2026-07-13)."""
         prompt = read("prompts/research-agent.md")
-        spec = read(
-            "openspec/changes/calibration-ready-research-pipeline/"
-            "specs/deep-research/spec.md"
-        )
 
         self.assertIn("Quality is the only optimizer", prompt)
         self.assertIn("quality-only law", prompt)
-        self.assertIn("greatest completion allowance actually authorized", spec)
-        self.assertIn("no caller, prompt, framework", spec)
-        self.assertIn("MUST NOT be stopped, narrowed, ranked, or selected", spec)
+        self.assertIn("never stop conditions", prompt)
 
     def test_templates_record_results_without_planning_reasoning(self):
         """OpenSpec: files preserve evidence and arm records, not a workflow graph."""
@@ -176,21 +170,21 @@ class PlanningContractTests(unittest.TestCase):
             self.assertNotIn(obsolete, template)
 
     def test_role_models_and_writer_arms_are_explicit(self):
-        """OpenSpec: run-001 stays Opus; Muse is isolated after the baseline."""
-        spec = read(
-            "openspec/changes/calibration-ready-research-pipeline/"
-            "specs/book-pipeline/spec.md"
-        )
+        """PROGRAM §1 (founder 2026-07-13): model matrix + routing law explicit."""
+        program = read("PROGRAM.md")
+        cfg = read("loop/config.yaml")
 
-        for model in (
-            "DeepSeek V4 Pro", "MiniMax M3", "GPT‑5.6 Luna",
-            "Gemini 3.1 Pro", "GPT‑5.6 Sol", "Grok 4.5",
-            "Claude Opus 4.6", "Muse Spark 1.1",
-        ):
-            self.assertIn(model, spec)
-        self.assertIn("Gemini 3.1 Flash Lite is forbidden in every role", spec)
-        self.assertIn("greatest output allowance actually authorized", spec)
-        self.assertIn("MUST NOT replace the run-001 baseline", spec)
+        self.assertIn("Claude Opus 4.6, reasoning disabled", program)
+        self.assertIn("DeepSeek V4 Pro", program)
+        self.assertIn("GPT‑5.6 Sol", program)
+        self.assertIn("NEVER route through OpenRouter", program)
+        self.assertIn("RESCINDED", program)
+        self.assertIn("writer_model: anthropic/claude-4.6-opus", cfg)
+        self.assertIn("writer_reasoning: none", cfg)
+        self.assertIn("researcher_model: deepseek/deepseek-v4-pro", cfg)
+        self.assertIn("judge_model: gpt-5.6-sol", cfg)
+        self.assertIn("judge_route: codex-native", cfg)
+        self.assertIn("planner_route: codex-native", cfg)
 
 
 class HarnessBoundaryTests(unittest.TestCase):
@@ -210,7 +204,7 @@ class HarnessBoundaryTests(unittest.TestCase):
             self.assertNotIn(obsolete, models)
 
     def test_subrole_brief_contains_no_calibration_metadata(self):
-        """HARNESS §4: only the style guide carries reference-derived patterns."""
+        """PROGRAM §7: only the style guide carries reference-derived patterns."""
         brief = read("production-books/quit-sugar/00-brief.md")
 
         for forbidden in (

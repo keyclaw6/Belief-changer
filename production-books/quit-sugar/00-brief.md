@@ -12,7 +12,7 @@ Forks are decided in `framing.md`; expected axes are listed here but not preempt
 - **Void (Fork 5):** natural baseline vs positive replacement — <framing>
 - **Science weight (Fork 3):** <framing>
 - **Villain (Fork 4):** the engineered trap to name (sugar industry / product engineering) — <framing>
-- **Inner state (Fork 1):** externalize the belief/industry; do NOT personify the craving — confirmed (house law).
+- **Inner state (Fork 1):** full Carr personification — the two mechanism characters, original behavior-fitted names frozen in the mantra sheet (style guide v3 default).
 
 ## The load-bearing false belief (style guide §10, step 1)
 <one sentence, fixed in framing: what the reader believes bad sugar GIVES them — expected neighborhood: "sugar is a pleasure/treat/energy-lift that makes life sweeter and I'd be deprived without it">

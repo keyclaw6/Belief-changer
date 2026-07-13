@@ -70,7 +70,7 @@ Block a missing, contradictory, unoriginal, unsafe, or unroutable mantra/instruc
 
 ### Length and coverage
 
-Every chapter needs one integer word budget and the plan needs an exact arithmetic sum. A HARNESS calibration plan must total 54,000–66,000 words. All materially distinct personas, justifications, supported evidence, and necessary method engines must be served; counts are not substitutes for substantive coverage.
+Every chapter needs one integer word budget and the plan needs an exact arithmetic sum. A calibration plan must total 54,000–66,000 words. All materially distinct personas, justifications, supported evidence, and necessary method engines must be served; counts are not substitutes for substantive coverage.
 
 ### Blindness and originality
 

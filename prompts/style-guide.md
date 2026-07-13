@@ -1,14 +1,14 @@
 # The Belief-Changer Style Guide & Writing Prompt (v2)
 
-**Status:** Canonical, reusable craft asset for the whole project — behavior-agnostic by design. v2 adds **Part B: The Prose Engine**, derived from full computational + close-reading analyses of Allen Carr's *The Easy Way to Quit Caffeine* (`analysis/easyway-prose-patterns.md`) and — v2.1 — *Good Sugar Bad Sugar* (`analysis/sugar-prose-patterns.md`), which validated every Part B pattern at 3.5× length and contributed the full-length architecture (§B10). Part A (the method) is distilled from the original three reference books.
+**Status:** Canonical, reusable craft asset for the whole project — behavior-agnostic by design. **v3 (Carr-fidelity):** every §4 fork now defaults to Allen Carr's own position, executed exactly as he practices it in the reference corpus. The factory's job is to write the book Carr would have written for the target behavior; house "twists" are brief-level overrides, applied only after the factory can pass as Carr. v2 adds **Part B: The Prose Engine**, derived from full computational + close-reading analyses of Allen Carr's *The Easy Way to Quit Caffeine* (`analysis/easyway-prose-patterns.md`) and — v2.1 — *Good Sugar Bad Sugar* (`analysis/sugar-prose-patterns.md`), which validated every Part B pattern at 3.5× length and contributed the full-length architecture (§B10). Part A (the method) is distilled from the original three reference books.
+
+> **FIDELITY DOCTRINE (founder, 2026-07-12).** The reference corpus — Allen Carr's actual published practice — is the target register, fear/certainty/sternness included. Every §4 fork below defaults to Carr's own position; softened house positions are retired to brief-level overrides. When any rule elsewhere in this guide seems to pull toward a gentler register than the corpus evidences, the corpus wins. (The retired founder-era bans — "no fear-as-motivator", "never bark commands" — are preserved as history in §9's rewritten entries.)
 
 **Who reads this:** (1) Every chapter-writing agent, before drafting any chapter. (2) The master-plan step, when architecting a new book for a target behavior — the master plan must produce the per-book sheets defined in §B8.
 
 **The one job of every book we write:** Move the reader to a frame of mind where, whenever they think about the target behavior, they feel *relief and freedom that they no longer do it* — so that stopping feels like **escaping a trap, not sacrificing a pleasure**. We change the belief; the behavior then changes on its own, without willpower and without shame.
 
-**THE REPETITION LAW (governs everything):** *Mantras are repeated VERBATIM, routed by chapter exactly as frozen in the master plan's single mantra sheet. Everything else is never repeated verbatim.* (Full system: §B1–§B2.)
-
-**FIDELITY DOCTRINE (founder, 2026-07-12):** Our job is to *reproduce* the authentic Easyway book on any subject — same feel, same techniques, same persuasive effect — not a softened or "improved" derivative. **The reference corpus is the target register**: the caffeine and *Good Sugar Bad Sugar* analyses in `analysis/` (`easyway-prose-patterns.md`, `sugar-prose-patterns.md`) define what we are hitting, *including* their fear deployment, their absolute certainty, and their stern moments. Where an earlier version of this guide softened Carr — hedging his assertions, banning his fear-then-relief cycle, muting his register into wellness-brochure calm — **fidelity now wins**. If Carr raises fear and then disowns it, we do exactly that; if Carr states a reframe as flat fact, we state it as flat fact. This is not a licence to invent evidence or to reproduce his prose (see the anti-copy and traceability rules, which stay at full strength) — it is a mandate to hit his *persuasive force* in original words. Our own twist comes *later*, after the machine can reliably hit the target; until then, deviating from the corpus "for the reader's comfort" is the failure mode, not the safeguard. The founder's words: *"We do not have to try to beat Allen Carr. We need to do the same thing."*
+**THE REPETITION LAW (governs everything):** *Mantras are repeated VERBATIM, on schedule, exactly as frozen in the master plan's mantra sheet. Everything else is never repeated verbatim.* (Full system: §B1–§B2.)
 
 **Structure:** **PART A — THE METHOD** (the worldview, the engine, the forks, the moves, the arc). **PART B — THE PROSE ENGINE** (the binding writing contract: the mantra system, repetition schedule, lexicon, sentence operators, per-chapter contract). Where Part B is more specific, Part B wins.
 
@@ -89,34 +89,34 @@ This is the shared core where all three agree. **This is what we are actually wr
 
 ## 4. Divergences — the spectrum, and OUR chosen position
 
-The three books genuinely disagree on several mechanisms. A writer must know the spectrum to avoid contradicting themselves, and must know where *we* stand. Our positions below are the project's house style; follow them unless a specific book's master plan overrides for a good reason.
+The three books genuinely disagree on several mechanisms. A writer must know the spectrum to avoid contradicting themselves — and must know where the factory stands: **on every fork, the default is Carr's own position, executed exactly the way Carr executes it.** We are building the machine that writes the book Allen Carr would have written for this behavior. The Freedom Model and Burgeon positions stay documented below as *brief-level overrides only* — used when a behavior makes Carr's frame impossible (e.g. a behavior that cannot be quit wholesale takes §B10's redefinition move) or when a book's `00-brief.md` explicitly orders a twist. Never blend positions on your own judgment.
 
 ### Fork 1 — Is there an "inner monster" to personify, or not?
-- **Carr:** Yes — the Little Monster is a vivid, near-living parasite you "starve to death" and whose "death throes" you "revel in." Personification makes the craving *external* and *winnable*. **Corpus behavior (the deciding evidence): Carr personifies heavily and relentlessly** — "the Little Monster" 60× and "the Big Monster" 47× across *Good Sugar Bad Sugar*, culminating in the vow's visualization of knocking the Little Monster "clean out of the ring" (`sugar-prose-patterns.md` §1, §5).
+- **Carr:** Yes — the Little Monster is a vivid, near-living parasite you "starve to death" and whose "death throes" you "revel in." Personification makes the craving *external* and *winnable*.
 - **Burgeon:** Explicitly **rejects** this — a "monster" creates a "Me vs Them" fight with an "imaginary enemy"; "it was me all along." You don't fight, you understand.
-- **OUR POSITION (method mechanics — a genuine divergence, not softening):** **Externalize the *belief/brainwashing/industry*; use the personified-monster device the Carr way where the master plan calls for it, but keep the reader's craving winnable rather than a self they must battle.** This is a real method choice between two reference traditions, decided per book — not a softening of Carr's register. **Where a book runs the Carr line, run it at full corpus strength**: name the two monsters, drum them by name, stage the "death throes" and the knockout in the ritual. Where a book leans Burgeon (typically time/identity behaviors), name the *trap/industry/lie* as the external enemy and dissolve the craving by understanding. The master plan states which line the book takes and why, **citing the corpus behavior above as the baseline it is matching or deliberately departing from.** (Freedom Model note: "craving is an activity you choose" supports the Burgeon line where chosen.)
+- **DEFAULT (Carr):** **Personify, exactly as Carr does.** Every book names its two mechanism characters — the trivial physical creature the reader will starve to death (the Little-Monster equivalent) and the belief-system that feeds it (the Big-Monster equivalent) — with original, behavior-fitted names frozen in the mantra sheet. The personification makes the craving *external, small, and winnable*; its "death throes" become something to revel in. It is never a mighty enemy the reader must battle with willpower — it is a starving parasite already dying. Burgeon's no-monster stance is a brief-level override, never a default.
 
 ### Fork 2 — Total abstinence, or radical autonomy (moderation allowed)?
-- **Carr & Burgeon:** **Total cessation** is the only stable state. One "special" exception means the belief is intact; moderation makes the thing more precious (forbidden-fruit) and guarantees creep. "Unplug every cord." **Corpus behavior (the deciding evidence): Carr states totality as flat, absolute decree** — for the redefined bad subset, "with BAD SUGAR there is no healthy level other than zero" — and handles the gray zone with a named non-catastrophic buffer ("margin for error": "your body can cope with an occasional blip, but your mind will not"), never by conceding moderation (`sugar-prose-patterns.md` §5).
+- **Carr & Burgeon:** **Total cessation** is the only stable state. One "special" exception means the belief is intact; moderation makes the thing more precious (forbidden-fruit) and guarantees creep. "Unplug every cord."
 - **Freedom Model:** **Radical autonomy** — explicitly permits moderation or even continued heavy use; refuses all authority over the reader's goal; success = the reader freely choosing what they see as best.
-- **OUR POSITION (method mechanics):** **Drive to total freedom at full corpus force, using the autonomy frame as the vehicle that makes the reader own the destination — not as a softer landing.** The corpus does not hedge totality and neither do we: dismantle the belief so thoroughly that moderation has no rationale left (Carr's pincer: "if there's no benefit to doing it often, there's no point doing it occasionally either"; the absolute "no healthy level other than zero" for a redefined subset), and let the reader arrive at totality as their own conclusion (Burgeon's self-discovery; the Freedom Model's ownership). The autonomy frame buys trust and ownership; it never dilutes the destination. What is *not* softening and stays: we do not *nag the reader to quit* against a belief we have already dissolved — the drum is on the belief, so the totality follows as obvious. **Hold the autonomy frame and the total-freedom destination in the same hand** — the deciding evidence for how hard to push is corpus behavior above, and it pushes hard.
+- **DEFAULT (Carr):** **Total cessation, commanded with Carr's cheerful certainty.** The book issues numbered instructions and expects them followed — "follow ALL the instructions" IS the method's contract, and the writer never apologizes for it. Moderation is foreclosed with the pincer ("if there's no benefit to doing it often, there's no point doing it occasionally either") and the cliff-jump image. Carr's authority is warm, confident, and absolute: he tells the reader what to do, tells them why it's wonderful news, and never hedges the destination. The Freedom Model's radical-autonomy stance is a brief-level override only.
 
 ### Fork 3 — How much neuroscience / hard fact?
-- **Carr:** Vivid and illustrative (spider webs, the insecticide fact) — but **not de-escalated**: at full length Carr lands hard, frightening consequence-facts at full weight (the diabetes-consequences passage; the fear chapter's 45 fear-mentions) and only *then* disowns fear as the reason to change. Facts are perception-shifters AND fear-raisers; the disown move is what makes them safe, not the muting of them. **Corpus behavior (the deciding evidence):** scare-then-disown — "The Easyway method prides itself on not using scare tactics... I don't want you to use this information to be frightened. I want you to understand it then put it behind you" — the fact does its perception work at full strength, and the loss-frame is *surgically removed afterwards*, not pre-empted by softening the fact (`sugar-prose-patterns.md` §5, §6).
-- **Freedom Model:** Cites named studies as *escape-route closers* (you can look them up; blocks "you're making this up"), but disowns fear as the ongoing motivator.
+- **Carr:** Light, vivid, illustrative (spider webs, the insecticide fact) — facts as *perception-shifters*, never a literature review, and always de-escalated so they don't read as scare-mongering.
+- **Freedom Model:** Cites named studies as *escape-route closers* (you can look them up; blocks "you're making this up"), but disowns fear as a motivator.
 - **Burgeon:** Details dopamine downregulation, the Coolidge Effect, etc. — then **explicitly subordinates it**: "your brain does not care about negatives when it is in a reactionary state." Quarantines raw citations to a back-matter appendix to keep the prose clean.
-- **OUR POSITION (fidelity — the founder-era "facts serve perception, never fear" is RETIRED):** **Land hard facts at full weight to make the trap visible AND to raise real fear where the plan assigns it, then disown fear as the *reason* to change — the corpus's scare-then-disown, run exactly.** *(Retired: the old rule that a fact "must earn its place by exposing the illusion, not by frightening the reader," and that "fear-based quitting relapses" — the corpus frightens the reader routinely and then relieves it; that cycle is the technique, not a violation.)* The order is: raise the fact/fear fully → collapse it into relief and freedom (the trap scares you, the escape frees you) → hand the reader the gain-frame to carry out. Keep the prose uncluttered — quarantine raw citations to an appendix (Burgeon's model) — but "uncluttered" is not "defanged." The one non-negotiable that survives untouched: **every fact traces to graded research and is never invented or overstated** to manufacture fear (see §9 and the traceability spec).
+- **DEFAULT (Carr):** **Deliver the hard facts at full Carr force — vivid, flat, unhedged, frightening where the truth is frightening — then explicitly disown fear as the motivator (§B10's scare-then-disown).** Carr does not tiptoe: the sugar book marches through obesity, diabetes, rotting teeth and early graves stated as settled fact, in the same confident register as everything else, and *then* tells the reader he doesn't want them quitting out of fear. The scare does its perception work; the disown move removes the loss-frame. Never soften, hedge, or omit a scare Carr would have delivered — omission is how the factory drifts off-reference. No literature-review texture: facts arrive as "The fact is...", never as hedged citations (quarantine raw citations in a back-matter appendix if the book needs them).
 
 ### Fork 4 — Is the conventional "cure" an ally or the villain?
-- **Carr:** The villain is the *substance + industry* — but Carr does **not** treat the willpower method gently. **Corpus behavior (the deciding evidence): at full length "the willpower method" is a named enemy character attacked relentlessly** — 38× in *Good Sugar Bad Sugar*, formally defined in ch. 1, given its own chapter (ch. 10), with sub-characters ("the braggers and the whingers"), the "pushing on the hinges" image, and the killer verdict "WITH THE WILLPOWER METHOD, THERE IS NO FINISH LINE." Every past failure is reattributed to it: "it wasn't a weakness in you; it was a weakness in the method" (`sugar-prose-patterns.md` §4).
+- **Carr:** The villain is the *substance + industry*; he doesn't much attack other quit programs except to say willpower is the wrong method.
 - **Freedom Model & Burgeon:** The **recovery/self-help apparatus itself** is a primary villain — it manufactures fragility, fear, and the "need," and tracking-your-own-recovery is disguised pleasure-seeking.
-- **OUR POSITION (method mechanics — a scope choice, not a softening of force):** **Attack the willpower/shame-based *wrong method* at full corpus force — name it, give it a face, reattribute every past failure to it** (the corpus behavior above is the register to match) — **and name the engineered trap (industry, algorithm, product design) as the external villain.** The one restraint is *target scope*, not intensity: we keep the fire on the wrong *method* and the *trap*, and we do not expand it into a culture-war polemic against treatment as an institution (the Freedom Model's fuller anti-recovery crusade) — because that widens the enemy past what the belief-change needs, not because the attack should be gentler. Borrow the Freedom Model's liberating "you were deceived, be angry at the deceiver"; keep the reader's gaze on the trap they're escaping and the bad method they were sold. *(This scope line is a live judgment call — flagged for review: it is defensible as method focus, but a strict reading of the doctrine could ask whether the corpus's ferocity toward the willpower method should extend further.)*
+- **DEFAULT (Carr):** **Two villains, both hit hard: the substance/industry that set the trap, and the named anti-method — "the willpower method" and its per-book equivalents — that kept the reader in it.** The sugar book names "the willpower method" 38 times, gives it its own chapter, and reattributes every past failure to it. Attack both with Carr's full contempt; the reader's gaze stays on the trap and the wrong method, never on themselves. The Freedom Model's broader anti-recovery-culture crusade is a brief-level widening, not a default.
 
 ### Fork 5 — Replace the void, or just walk away?
-- **Carr:** "Change nothing else in your life" — inhabit the old contexts confidently to prove freedom; no elaborate replacement needed (the body's natural baseline returns on its own). **Corpus behavior (the deciding evidence): Carr runs BOTH patterns depending on the behavior** — the caffeine pocket book leans "walk away / change nothing," while *Good Sugar Bad Sugar* installs an alternate positive authority to obey afterwards ("Nature's Guide") complete with operational instruments (the raw-test, the 0–20 hunger gauge, primary/secondary foods) — the reader "leaves with tools, not just beliefs" (`sugar-prose-patterns.md` §4).
+- **Carr:** "Change nothing else in your life" — inhabit the old contexts confidently to prove freedom; no elaborate replacement needed (the body's natural baseline returns on its own).
 - **Burgeon:** You **must** build a positive replacement (environment redesign + transmutation) or the compulsion migrates into the hole left behind.
 - **Freedom Model:** Drop the vigilance entirely; the needed capacities are already inside you.
-- **OUR POSITION (method mechanics):** **Behavior-dependent, matching whichever pattern the corpus uses for a comparable behavior.** For purely chemical/consumptive behaviors with a true natural baseline (caffeine, sugar, nicotine), lean Carr — reassure that the body simply returns to normal and avoidance/over-engineering is unnecessary. For behaviors that occupy *time, identity, or a coping function* (gaming, doom-scrolling, porn), lean Burgeon — name the root craving, and give a concrete positive direction so freedom isn't an empty hole. The master plan must decide this per book and state it. **Default: address the root and offer a positive direction whenever the behavior fills time or soothes an emotion.**
+- **DEFAULT (Carr):** **"Change nothing else in your life."** The body returns to its natural baseline on its own; the reader inhabits every old context confidently to prove freedom; elaborate replacement systems are willpower-era scaffolding. This is the default for every consumptive behavior and for the calibration books. Burgeon's root-craving + positive-direction extension is a brief-level override reserved for behaviors that genuinely occupy time/identity (gaming, scrolling) — and even then `framing.md` must state it explicitly.
 
 ---
 
@@ -131,7 +131,7 @@ These are the method's moves — the actual machinery of changing a mind. Use th
 - **Warm complicity.** Ally with the reader's desire to stop against the behavior: "Of course you want to stop — that's why you're here. I don't blame you."
 
 ### 5.2 Convert the reader from audience to participant
-- **Sequenced commitments ("instructions").** Carr's device: a short list of small agreements the reader accepts up front (keep an open mind; don't quit yet; start happy). Compliance becomes self-enforcing — later resistance reads as breaking one's own agreement. *Adapt for our autonomy stance: frame these as invitations/requests for the experiment, not commands.*
+- **Sequenced commitments ("instructions").** Carr's device: a short list of small agreements the reader accepts up front (keep an open mind; don't quit yet; start happy). Compliance becomes self-enforcing — later resistance reads as breaking one's own agreement. *Deliver them as Carr does: numbered commands issued with warm, total confidence — each with its rationale, none with an apology.*
 - **Defer the behavior change.** Explicitly tell the reader **not to quit or cut down until they've finished the book.** This removes the threat of immediate sacrifice so the belief can change first. This is one of the most powerful moves in the canon — it disarms the reader's whole defensive crouch.
 - **The no-risk frame.** "Nothing to lose and everything to gain," repeated. Lowers the cost of reading on.
 - **Make the reader an investigator.** "Question what you think you know." They are not being converted; they are investigating — so the conclusion feels like *theirs* (Burgeon's self-discovery; the Freedom Model's "no conviction lasts like the one you work out yourself").
@@ -139,7 +139,7 @@ These are the method's moves — the actual machinery of changing a mind. Use th
 ### 5.3 Dissolve "free choice" without assigning blame
 - **The confidence-trick reframe.** You weren't foolish; you were *conned*. You chose the first exposure on false information ("phoney information"), then the trap removed your choice. Strips both shame and the "but I choose this" defense in one move.
 - **The "who's in charge?" logic trap.** "If you wanted to quit a hobby you enjoy, would you need a book on how to stop?" The mere fact the reader holds this book proves they are not freely choosing. Self-evident, unanswerable, non-accusatory.
-- **(Freedom Model counter-balance):** Where Carr says "your choice was taken away," the Freedom Model says "it was always your choice — for the happier option." **Our synthesis:** the *first* exposure and the *continuation* were choices made on false beliefs about the payoff; correct the beliefs and the choice re-opens. This keeps agency (no victimhood) AND removes shame (the beliefs were installed, not invented by the reader).
+- **(Default = Carr's frame, played straight):** the trap removed your choice; you were conned, not foolish. The confidence-trick + "who's in charge?" pair carries the whole move. (The Freedom Model's "it was always your choice" counter-frame is documented for brief-level overrides only; never blend the two frames in one book.)
 
 ### 5.4 Switch the evaluation axis
 - **From "does it do more harm than good?" to "what good is there at all?"** Refuse the harm-vs-benefit debate (which you can lose to a study). Demand the behavior justify a *positive* benefit — a debate it cannot win once the benefit is shown to be illusory.
@@ -179,7 +179,7 @@ This is the engine's mechanism 2 in action, applied benefit by benefit. **The un
 - **A celebratory final act**, not a deprivation. The "final shot" taken with a solemn vow, attention forced onto the behavior's ugliness so the reader exits on *disgust and resolve, not nostalgia*. Cross into freedom on a high of joy.
 - **Gate on readiness, not a schedule.** "Do you feel ready? You should be champing at the bit. If not, re-read." Behavior change follows genuine belief change; lingering reluctance is a signal to re-read the *doctrine*, never to summon willpower.
 - **Confer freedom as an instant identity.** "Don't wait to be free — you already are." A clearly marked "you are free as of now" kills the corrosive doubt of "when am I actually free?"
-- **(Our autonomy synthesis):** stage the threshold as the reader's own decision, and pair Carr's ritual with Burgeon's non-prescriptive close — offer the rite, don't *order* it. The reader steps through the door; we never shove.
+- **(Default = Carr's staging):** the ritual is *instructed* — the reader is told to make the solemn vow, told to perform the final act with attention on the behavior's ugliness, and congratulated in ALL-CAPS the moment they do ("CONGRATULATIONS! YOU'VE WON!"). Readiness is gated ("you should be champing at the bit — if not, re-read"), then the threshold is crossed on command, joyfully.
 
 ### 5.10 Relapse-proof (the entire back half)
 - **Never reopen the decision.** Name decision-doubt as the *only* real remaining danger.
@@ -199,7 +199,7 @@ The argument changes the belief; the *framing* makes the belief feel safe to ado
 
 - **Change the reader's emotional expectation of the process up front.** Recast quitting as "an exciting adventure," the read as "day one" of it. Dread closes the mind you need open. Pre-empt and *forbid* the expected misery: "Cast aside all feelings of doom and gloom — there's no need to be miserable."
 - **Make the goal an emotion, not a behavior.** Not "abstinence" but "happy to be free." A reader who merely abstains while feeling deprived is primed to relapse. Distinguish "free" from "happy to be free" explicitly.
-- **Wound and bandage in the same breath (the framing form of scare-then-disown).** Deliver the hard truth at full weight — "you're addicted," the stark consequence-fact, the fear the plan assigns — and land it hard; the wound must be real, not pre-softened. Then, in the same movement, hand the relief: "the trap is easy to break once you see it," fear collapsed into freedom. The rule is not "never wound"; it is **never leave the reader in dread with no bandage on the far side.** This is exactly the corpus's move (`sugar-prose-patterns.md` §5: land the diabetes facts, then "understand it then put it behind you").
+- **Wound and bandage in the same breath.** When you deliver a hard truth ("you're addicted"), immediately soothe it ("don't panic — the trap is easy to break once you see it"). Never leave the reader in dread.
 - **Validate the feeling before disarming it.** Acknowledge the fear/shame/pain sincerely *first* ("it can be frightening to admit this"), then hand the relief. Emotion acknowledged, never bulldozed. (Freedom Model: "we each seriously contemplated suicide" — earn the word "easy.")
 - **Reflect the reader's suppressed unease back to them.** "We instinctively sense that something has taken hold of us." Accurate emotional diagnosis builds more trust than any argument.
 - **Blame the method, not the reader, for past failures.** "No wonder you failed — you were never shown the trap. This time is different." Past defeats become evidence the old approach was wrong, restoring hope.
@@ -217,7 +217,7 @@ The argument changes the belief; the *framing* makes the belief feel safe to ado
 
 - **Warm, direct, second-person.** Talk *to* one reader, like a trusted friend who has been where they are. Anticipate their objections in real time ("I know this is hard to accept, but…").
 - **Warm to the person, harsh to the trap.** Never an ounce of contempt for the reader. Plenty for the industry, the lie, the behavior itself.
-- **Anti-guru, peer-to-peer.** We are not an authority issuing verdicts from above; we are a fellow escapee handing over a key. (Burgeon's register; the Freedom Model's renounced authority.) This is essential to our autonomy stance.
+- **The escaped expert, speaking with total authority.** Carr's register is a fellow escapee who has since freed millions and *knows he is right*: warm complicity about falling into the trap ("we've all been there"), absolute certainty about the way out. He issues verdicts and instructions without embarrassment. Never water this down into peer-to-peer humility or renounced authority — hedged authority reads as not-Carr instantly.
 - **Short, blunt verdict-sentences after a build-up.** Let the cadence perform the certainty. "It's the other way around." "Don't wait to be free — you already are." Land the point, then stop.
 - **Plain, confident, repetitive refrains.** Repeat key promises verbatim like a chorus ("nothing to lose and everything to gain"; "escape, not sacrifice") to embed them.
 - **Rhetorical questions that close escape routes.** Make the reader keep catching themselves in self-contradiction and concede the point internally.
@@ -240,7 +240,7 @@ The caffeine book's architecture is our proven scaffold. Below is its sequence, 
 - Establish pedigree and an "easy" expectation. Origin myth / lived escape. Voice the reader's skepticism and answer it. Set the emotional expectation: adventure, ease, no doom. (§5.1, §6)
 
 ### CH. 1 — Invitation & the instructions
-- Convert audience → participant. The small sequenced agreements (open mind, don't quit yet, start happy). The no-risk frame. State the goal as an *emotion* ("happy to be free"). Establish the autonomy stance: this is the reader's own investigation. (§5.2)
+- Convert audience → participant. The numbered instructions land as commands with warm rationales (open mind, don't quit yet, start happy). The no-risk frame. State the goal as an *emotion* ("happy to be free"). The reader investigates; the author directs the investigation with total confidence. (§5.2)
 
 ### CH. 2 — "Is this even a problem?" — dissolve choice & complacency
 - The confidence-trick reframe + the "who's in charge?" trap to dissolve the illusion of free choice without blame. Normalize the harm at the societal scale ("when everyone's sick, no one calls it a disease") so the reader stops trusting their sense of "normal." Remove shame; name the trap. (§5.3)
@@ -255,7 +255,7 @@ The caffeine book's architecture is our proven scaffold. Below is its sequence, 
 - The core inversion (the high is relief from a self-created low; you never beat baseline). The rescuer-as-perpetrator image. Separate the trivial physical part from the dominant belief part. Name the brainwashing and who installed it. (§5.6)
 
 ### CH. 6 — Close the escape routes
-- Foreclose cut-down, "keep the special ones," quit-tomorrow, weaning. Pre-script and pre-discredit the reader's future rationalizations. Land on the totality logic (drive toward total freedom via the autonomy-respecting pincer, per Fork 2). (§5.7)
+- Foreclose cut-down, "keep the special ones," quit-tomorrow, weaning. Pre-script and pre-discredit the reader's future rationalizations. Land on the totality logic — total cessation stated as the only stable state, per Fork 2. (§5.7)
 
 ### CH. 7 — Widen the indictment (the manufacture of desire)
 - Expose the engineered trap: the industry/platform/algorithm, the predatory recruitment, the "manufacture of desire." Reframe the behavior's actual mechanism as a misfiring or self-harming process (the body's danger-response; the dopamine flood "cooking the machine"). Re-code the symptoms the behavior claims to fix as the body's protective warning lights. (§5.6 deepened; §6 awe)
@@ -267,7 +267,7 @@ The caffeine book's architecture is our proven scaffold. Below is its sequence, 
 - Reframe "addiction" as a simple, correctable misunderstanding — stripping the disease-for-life dread. For behaviors that fill time/identity/emotion (per Fork 5): name the **root craving** beneath the surface behavior and erect the **positive vision** of what real life/connection looks like, so freedom is a richer life gained, not a void. (Burgeon's "Love"/"Neurology" pivot.)
 
 ### CH. 10 — The quit (the ritual / the chosen threshold)
-- Gate on readiness. Stage the celebratory final act with attention on the behavior's ugliness. Confer freedom as an instant identity. Pair the rite with the non-prescriptive, autonomy-respecting close. Predict the reader's first "moment of revelation" (the situation where the desire simply won't cross their mind). (§5.9)
+- Gate on readiness. Stage the celebratory final act with attention on the behavior's ugliness. Confer freedom as an instant identity, in ALL-CAPS — the vow instructed, the congratulation immediate. Predict the reader's first "moment of revelation" (the situation where the desire simply won't cross their mind). (§5.9)
 
 ### CH. 11 — Relapse-proofing (the back-half doctrine)
 - The full §5.10 set: never reopen the decision; pink-elephant reframe; dead-enemy-not-lost-friend; ban substitutes & police phrasing; pity not envy; don't evangelize; forgive slips. Plus the behavior-appropriate environment/transmutation guidance (Fork 5).
@@ -285,33 +285,33 @@ The caffeine book's architecture is our proven scaffold. Below is its sequence, 
 
 These are the lines that keep the method intact. **Violating a guardrail breaks belief-change even if the prose is good.**
 
-> **FIDELITY NOTE (2026-07-12):** Per the Fidelity Doctrine, the guardrails below are calibrated to *what the reference corpus actually does*, not to a house register softer than Carr's. The corpus deploys fear, stern verdicts, medical facts, and absolute certainty — and always resolves them the Carr way (fear raised → then disowned/relieved: *"the trap scares you, the escape frees you"*). Those moves are **allowed and expected** where the master plan assigns them and the corpus uses them. What the guardrails still forbid, absolutely, is anything that (a) reproduces copyrighted prose, (b) invents or overstates evidence, (c) shames or holds contempt for the *person*, or (d) breaks the gain-frame/immediate-freedom mechanics. Retired founder-era softening rules are marked below.
-
 ### Always (the non-negotiables)
 - **Frame as escape, not sacrifice.** Every chapter. If a passage makes quitting feel like loss, it is wrong.
-- **Warm to the person, harsh to the trap.** The pronoun triangle is the corpus's non-shaming machine: "we" for falling into and living in the trap (the author is inside the folly), "you" for the escape — so the behavior can be attacked viciously, the stakes stated starkly, and fear raised, *without any contempt for the reader*. Warmth to the person and ferocity toward the trap are the same instrument. (This is a fidelity rule, not a softening rule: it licenses stern/fearful pressure on the trap, it does not mute it.)
+- **Non-shaming.** Warm to the person, harsh to the trap. Always.
 - **Immediate freedom.** Freedom is conferred at the moment of belief-change / the final act — never a future milestone, never a sentence to be served.
 - **No willpower.** Never present grit, resistance, or "staying strong" as the solution. Willpower is reframed as a *symptom* of a belief not yet changed.
 - **Attribution-reassignment.** Every claimed benefit gets reassigned to its true source. Never concede the behavior a real benefit.
 - **Counter-brainwashing.** Name the installed belief and its installers; position quitting as de-programming, not deprivation.
 - **The ritual / chosen quit.** Stage the threshold as a positive, deliberate, reader-owned act.
 - **Relapse-proof the belief.** The back half guards the mind; slips are pre-forgiven; the thought is reframed not suppressed.
-- **Make the reader reach the conclusion.** Ask more than you assert. Self-derived conviction is the only durable kind.
+- **Make the reader reach the conclusion — inside a frame of flat assertion.** Carr asserts constantly ("The fact is...") *and* runs the trap questions whose only honest answer concedes the point. Keep both: settled-fact delivery for the reframes, Socratic traps for the reader's own evidence.
 - **Gain-frame the alternative.** Stopping = acquiring a better life.
 
 ### Never (the failure modes)
-- **Never hold the *reader* in contempt.** Zero sneering at the person, zero "you're pathetic," zero blame aimed at the reader's character. This is the one line the pronoun triangle exists to hold — and it is compatible with stern verdicts, hard facts, and fear aimed at the *trap and the stakes*. (What is retired: the founder-era rule that banned all stern/moralizing register outright. Carr freely delivers stark, shame-adjacent pressure about the *behavior* — "the allure of badness," the junkie-at-the-clinic image, the prison-door scene — while never shaming the person. Do the same: harsh on the trap, warm on the reader.)
-- **Deploy fear the Carr way — raised, then disowned — never as free-floating terror and never omitted where the plan assigns it.** *(Founder-era rule "never use fear as the primary motivator" is RETIRED: the reference corpus uses fear as a motivator routinely — the sugar book's fear chapter runs 45 fear-mentions, the diabetes-consequences passage lands hard facts — see `sugar-prose-patterns.md` §5–§6.)* The fidelity rule: where the master plan assigns a fear beat, deliver the hard fact or the fear-of-failure/fear-of-success scene at full strength, then **resolve it the Carr way** — disown fear as the *reason* to change and collapse it into relief: "The trap scares you; the escape frees you" (scare-then-disown, `sugar` §5; the tug-of-war collapse, §4). A fear beat that is never raised is as much a fidelity defect as one that is never disowned. What stays banned: fear built on *invented or overstated* evidence (every fact still traces to graded research), and fear left open as dread with no relief on the far side.
+- **Never shame, lecture, moralize, or express contempt for the reader.** Instant trust death and a relapse driver.
+- **Never *end* on fear — scare, then disown, exactly like Carr.** The hard material is delivered at full force (Carr frightens freely and flatly), and the chapter then explicitly disowns fear as the motivator and re-lands on escape-joy. Two failure modes, equally off-reference: leaving the reader quitting *out of* fear, and omitting or softening a scare Carr would have delivered.
 - **Never demand willpower or "just stop."** That's the wrong method we're replacing.
 - **Never let "instead"/"I can't have X"/"giving up" stand** — they smuggle deprivation back in. Police your own phrasing as strictly as the reader's.
-- **Never personify the craving as a beast the reader must battle** (per Fork 1) — externalize the *belief/industry*, dissolve the craving by understanding.
+- **Never leave the mechanism characters unused** (per Fork 1) — the Little/Big-Monster device is load-bearing Carr machinery. The craving is personified as a small, starving, already-dying parasite (never a mighty enemy demanding willpower), and the belief-system feeding it is the real target.
 - **Never concede a single real, irreplaceable benefit to the behavior** — one surviving "good reason" re-powers the whole trap ("unplug every cord").
 - **Never make freedom contingent on time, streaks, or day-counting** — that keeps the behavior alive as something still missed.
 - **Never catastrophize a slip** — that triggers the all-or-nothing collapse. But never let a slip *license* a deliberate repeat either.
-- **Use the imperative, ALL-CAPS command register where the corpus does — do not mute it into suggestion.** *(Founder-era rule "never bark commands" is RETIRED as a blanket ban: the corpus issues numbered ALL-CAPS commands throughout — FOLLOW ALL THE INSTRUCTIONS, KEEP AN OPEN MIND, GO FOR IT!, STOP NOW — see the instruction spine, `sugar` §3.)* The instruction spine is delivered as commands, at full force, exactly as the plan routes it. The one thing we still never do is *nag the reader to quit against a resolved belief* — the Fork-2 method position (below) governs how the totality destination is reached (belief dismantled so thoroughly that moderation loses its rationale), not whether the prose may command. Command the reading and the ritual; let the *decision to be free* land as the reader's own.
-- **Never bog the prose down in a literature review.** Quarantine citations; keep the argument clean and emotional — but "clean" means uncluttered, not defanged. Hard facts still land at full weight where assigned (then get the disown move, above).
-- **Never overpromise grandiose gains** ("superpowers"). Frame the alternative's "benefits" largely as *the absence of the harm* plus a real, believable positive — so the reader isn't set up for a disillusioned relapse when fireworks don't arrive.
+- **Never apologize for the instructions.** The method commands — numbered, confident, cheerful — and treats following ALL of them as the reader's own smart choice (per Fork 2). What stays banned is nagging *without* the belief-work: a command may only cash in an argument the book has already won.
+- **Never bog the prose down in a literature review.** Quarantine citations; keep the argument clean and emotional.
+- **Promise at Carr's amplitude — "easily, immediately and permanently" — and no further.** Carr states the impossible-sounding contract with total confidence and delivers the gains big (freedom, energy, self-respect, the end of the slavery), but he never promises unrelated "superpowers." Match his amplitude; don't exceed it and don't shrink it.
 - **Never tell the reader to white-knuckle-avoid triggers** as the strategy. Either inhabit old contexts confidently (Carr) or redesign environment as support (Burgeon) — but avoidance-as-resistance silently concedes the behavior still holds power.
+
+*Retired-rule note: the pre-2026-07-12 versions of two "Never" entries above banned fear-as-motivator outright and banned commands. Both bans are retired by the Fidelity Doctrine — the corpus deploys fear at full force (then disowns it) and commands cheerfully. The rewritten entries above are the binding forms.*
 
 ---
 
@@ -415,12 +415,11 @@ These are the *shapes* that work — drawn from the three books. **Do not copy t
 - [ ] Is the tone **warm to the reader, harsh to the trap** — zero shame, zero lecture?
 - [ ] Did I **reassign every benefit** I touched, conceding nothing real to the behavior?
 - [ ] Is **willpower** absent as a solution (and reframed as a symptom where it appears)?
-- [ ] Did I **ask more than I asserted** where the move is Socratic — while **asserting core reframes as flat fact** where the corpus does (never hedging them)?
+- [ ] Did I **ask more than I asserted**, letting the reader reach the conclusion?
 - [ ] Are my **analogies original** to this behavior (not lifted from caffeine/porn)?
-- [ ] Where the plan assigns a **fear beat**, did I raise it at full weight and then **disown fear the Carr way** (scare-then-disown), landing on relief — never leaving dread open, never omitting the beat?
-- [ ] Did I keep **"instead"/"giving up" phrasing** out (deprivation smuggling), and take the correct Fork-1 line on **monster personification** for this book (full-strength where the plan runs the Carr line; trap/industry-only where it runs Burgeon)?
+- [ ] Did every scare **land at full Carr force and then get disowned** (Fork 3)? Are the **mechanism characters** doing their work (Fork 1)? No **"instead"/"giving up"** phrasing?
 - [ ] If this is a back-half chapter, does it **guard the belief** and **pre-forgive slips** without licensing them?
-- [ ] Does it sound like a **fellow escapee handing over a key**, not an authority issuing verdicts?
+- [ ] Does it sound like **Carr — the escaped expert with warm, total authority** — commanding without apology and asserting reframes as settled fact?
 
 
 ---
@@ -438,12 +437,11 @@ These are the *shapes* that work — drawn from the three books. **Do not copy t
 
 Easyway prose is built on deliberate, scheduled, *verbatim* repetition of a small set of fixed phrases — and on the near-total absence of accidental repetition everywhere else. Our pipeline's context strategy (chapter writer sees only the master plan + the previous chapter) suppresses accidental repetition by design. That means the deliberate repetition **cannot emerge on its own — it must be specified**. Hence:
 
-**THE LAW: Mantras are repeated VERBATIM, in the chapters routed by the master plan's single mantra sheet. Everything else is never repeated verbatim.**
+**THE LAW: Mantras are repeated VERBATIM, on schedule, exactly as frozen in the master plan's mantra sheet. Everything else is never repeated verbatim.**
 
 - A mantra is an incantation. Its power comes from arriving in *exactly* the same words every time, so it accumulates weight and eventually fires in the reader's head unprompted. **Paraphrasing a mantra kills it.** If the mantra sheet says "you have nothing to lose and everything to gain," you may not write "there's no downside, only upside."
 - Conversely, any striking sentence that is *not* a mantra must appear once and only once in the book. If you find yourself rebuilding an argument the master plan says a previous chapter already made, invoke its mantra token instead of re-arguing it.
 - The chapter writer never invents a new mantra and never alters one. Missing or mangled mantras are reviewer-blocking defects.
-- The master plan defines each mantra once and routes it by debut/echo chapter IDs. It does not count exact occurrences, duplicate the wording in every chapter card, or maintain a second audit/state matrix. Natural placement inside the assigned chapter belongs to the writer; fidelity belongs to the chapter reviewer.
 
 ---
 
@@ -458,9 +456,9 @@ Every core belief in the book runs the same four-stage lifecycle:
 3. **REPEAT** — later chapters re-invoke the mantra verbatim, *without re-arguing it*. Each repetition is brief — a clause, a reminder, a drumbeat — and lands in a new context, which is what generalizes the belief.
 4. **HAND OVER** — in the book's final movement, the mantra is explicitly given to the reader as a thought script: "whenever you think X, replace it with [mantra]." The book ends by transferring its own voice into the reader's inner monologue.
 
-### Candidate mantra archetypes (the planner chooses and consolidates)
+### The mantra archetypes (every book instantiates these)
 
-The master plan derives a per-book **mantra sheet** of six to ten model-chosen frozen phrases adapted to the target behavior. The table is a repertoire of jobs, not a demand for one separate phrase per row: consolidate compatible jobs, omit jobs that the evidence or architecture does not need, and keep only phrases strong enough to earn repetition. Each chapter debuts or echoes at least one routed mantra (§B7). Placement rules below are qualitative craft guidance, not occurrence-count arithmetic.
+The master plan must derive a per-book **mantra sheet** instantiating each archetype with frozen wording adapted to the target behavior. Six to ten mantras total; each chapter sets or reinforces at least one (a project decision — see §B7).
 
 | Archetype | Job | Carr's instance (reference) | Placement rule |
 |---|---|---|---|
@@ -468,7 +466,7 @@ The master plan derives a per-book **mantra sheet** of six to ten model-chosen f
 | **The promise triad** | The impossible-sounding contract, stated with total confidence | "easily, immediately and permanently" | Front matter + method chapter; heavily front-loaded, then assumed |
 | **The trap-namer** | The central metaphor that makes stopping an *escape*, not a sacrifice | "the caffeine trap" → ours: "the [X] trap" | Debuts early, frequency *rises* toward the exit chapters |
 | **The illusion-namer** | A fixed dyad/phrase that names the perceived benefit so it can be referenced and demolished as a single object | "a genuine pleasure or crutch" | Debuts in the axis-switch chapter; thereafter the perceived benefit is *only ever* called by this token |
-| **The mechanism characters** | Named, proprietary vocabulary for the two-part mechanism (physical loop + belief), so one word re-invokes the whole argument | "the little monster" / "the big monster" — *per Fork 1, ours names the trap/lie/industry, never an inner beast to battle* | Debut in the mechanism chapter (~30% mark); recur to the last page |
+| **The mechanism characters** | Named, proprietary vocabulary for the two-part mechanism (physical loop + belief), so one word re-invokes the whole argument | "the little monster" / "the big monster" — *per Fork 1, every book personifies both, under original behavior-fitted names* | Debut in the mechanism chapter (~30% mark); recur to the last page |
 | **The sensory definition** | A canonical adjective-string describing the behavior's discomfort/withdrawal, repeated identically so the reader re-labels their own body in our words | "a mild, empty, slightly insecure, slightly uptight feeling" | Debuts in mechanism chapter; repeated whenever withdrawal/craving is mentioned, including in the final instructions |
 | **The stakes phrase** | A dual-valence time-horizon phrase used as BOTH threat and reward | "for the rest of your life" (hooked... / free...) | Spread throughout; both valences must appear |
 | **The cost formula** | The fixed word-triple naming the addict's permanent state | "tired, run down and lethargic" | Recurs wherever the behavior's ongoing cost appears |
@@ -482,7 +480,7 @@ The master plan derives a per-book **mantra sheet** of six to ten model-chosen f
 
 ### Mantra sheet format (lives in the master plan)
 
-For each mantra, define once: **(a)** frozen exact wording — including capitalization and punctuation; **(b)** the job or consolidated archetypes; **(c)** the belief it installs; **(d)** debut chapter; **(e)** echo chapter IDs; **(f)** hand-over form. Chapter cards reference mantra IDs; they do not repeat the wording or prescribe occurrence counts.
+For each mantra: **(a)** frozen exact wording — including capitalization and punctuation; **(b)** archetype; **(c)** the belief it installs; **(d)** debut chapter (where it gets its full argument); **(e)** repetition schedule (which chapters re-invoke it, roughly how often); **(f)** hand-over form (how the final movement gives it to the reader). The chapter writer receives the full sheet with every chapter and an explicit list: *mantras this chapter debuts / mantras this chapter must echo*.
 
 ---
 
@@ -572,19 +570,21 @@ The reviewer rejects a chapter that: mangles or paraphrases a mantra; misses its
 
 ---
 
-## B8. What the master plan must carry (one source of truth)
+## B8. What the master plan must carry (per-book sheets)
 
-Because chapter writers see only the master plan + previous chapter + this guide, the plan must carry all book-specific meaning without copying the same decision into competing representations. Define each shared item once under a stable ID; chapter cards reference those IDs.
+Because chapter writers see only the master plan + previous chapter + this guide, the master plan is the carrier of all book-specific repetition. It is the **single source of truth**: every shared decision is defined exactly once under a stable ID and referenced by that ID from the compact chapter cards — never copied into competing representations. Do not duplicate occurrence counts, cumulative-state matrices, or audit tables into the plan; the chapter reviewer judges the actual text, so the plan carries the decision, not its bookkeeping. It must include:
 
-1. **Book core** — target, reader/personas, load-bearing false belief, through-line, fork decisions, redefinition and margin, safety perimeter, strongest-case scene, and saved ending reframe.
-2. **Compact evidence ledger** — only material the book may use, each item with source ID, grade or outcome tier, scope/limit, and permitted/prohibited inference.
-3. **Mantra sheet** — 6–10 original frozen phrases defined once, with belief, debut chapter ID, echo chapter IDs, and hand-over form.
-4. **Lexicon** — trap and freedom registers, banned register, and source-grounded reader dialect.
-5. **Instruction spine** — each frozen instruction defined once, its chapter ID, recap points, and any clinical/safety exception inside wording that may travel alone.
-6. **Arc and budget map** — chapter order and one-line jobs, concept debuts, qualitative freedom/demolition curves, structural-slot ownership, saved reframe, one integer budget per chapter, and the exact sum.
-7. **Compact chapter cards** — one belief job; target personas/objections; evidence-ledger IDs; scene or original-analogy ID and its argumentative job; mantra debut/echo IDs; instruction ID if any; structural responsibility; guardrails; continuity intent; integer budget.
-
-Do **not** add occurrence-count arithmetic, a separate mantra audit, cumulative state matrices, repeated full mantra/evidence text, duplicated persona or slot tables, single-use phrase ledgers, prewritten chapter previews/theses/landings/SUMMARY prose, or generic style-guide rules copied into every card. The chapter writer creates the anatomy and prose from §B5, §B7, and §B10; the chapter reviewer judges the actual text.
+1. **The mantra sheet** (§B2 format) — the frozen phrases, schedules, and per-chapter assignments.
+2. **The lexicon sheet** (§B4) — trap register, freedom register, banned list, community slang.
+3. **The justification menu** — the reader's reasons, verbatim from research, mapped to demolition chapters.
+4. **The analogy assignment** — which analogy does which job in which chapter (from the research analogy bank).
+5. **The curve map** — where each chapter sits on the freedom-crescendo / demolition curves; which concept debuts where; the saved-for-ending reframe.
+6. **The persona notes** — which reader types (from research) each chapter must speak to, and the ventriloquism lines for each.
+7. **The strongest-case scene** and the **moment-of-revelation prediction** for this behavior.
+8. **The fork decisions** (Part A §4) stated explicitly for this book.
+9. **The instruction spine sheet** (§B10): the numbered instructions, their one-per-chapter assignments, the mid-book recap point, and the final recap chapter with chapter cross-references. Include the epistemic-firewall instructions.
+10. **The redefinition decision** (§B10): for behaviors that cannot be quit as a whole category, the precise Good-X/Bad-X line, the CAPS name for the bad subset, and the margin-for-error doctrine.
+11. **Structural-slot assignments** (§B10): which chapters carry the embedded testimonial, the myths Q&A battery, the meta-inoculation, the pre-endgame knowledge recap, and the perception homework.
 
 ---
 
@@ -602,7 +602,7 @@ Do **not** add occurrence-count arithmetic, a separate mantra audit, cumulative 
 
 ## B10. The full-length book architecture (validated on *Good Sugar Bad Sugar*, ~60K words)
 
-The pocket-book format (§B6) compresses these away; at full length Carr often runs them explicitly. The planner decides which slots genuinely serve this behavior, evidence, and arc, and records any material omission with a rationale. Do not create unsupported content merely to fill a slot. Source analysis: `analysis/sugar-prose-patterns.md`.
+The pocket-book format (§B6) compresses these away; at full length Carr runs them explicitly. The master plan decides per book which apply (any book over ~15 chapters should use all of them). Source analysis: `analysis/sugar-prose-patterns.md`.
 
 ### The chapter anatomy (every chapter, no exceptions)
 1. **"IN THIS CHAPTER"** — bullet preview of the chapter's section headings.
@@ -613,10 +613,7 @@ The pocket-book format (§B6) compresses these away; at full length Carr often r
 
 The reader meets every reframe at least twice per chapter (argued + recapped). **Previews and summaries are licensed recap zones — exempt from the no-verbatim-repetition rule, exactly like mantras.**
 
-This anatomy is a chapter-writing requirement, not prewritten plan prose. The chapter card supplies the semantic work order; the writer creates the headings, thesis, landing, and SUMMARY, and the chapter reviewer judges them in the completed chapter.
-
 ### The instruction spine
-- The plan defines each frozen instruction once and routes it to one chapter card by ID; cards and audit tables do not copy it.
 - Instructions are **doled out one per chapter at the chapter's climax**, numbered cumulatively (the sugar book has 12 across 20 chapters).
 - Include all four types: behavioral ("don't quit yet"), epistemic ("keep an open mind"), emotional ("begin with elation"), and **epistemic firewalls** ("ignore any advice that conflicts with the method", "ignore anyone who quit by willpower", "avoid the influence of other addicts") — explicitly quarantining future belief-threats.
 - **Mid-book recap**: the instructions-so-far re-listed verbatim once (~25% mark).
@@ -642,3 +639,4 @@ When the behavior category is essential or unquittable (eating, screens for work
 - **Perception homework**: 1–3 physical exercises the reader performs (the sensory immersion in the genuine pleasure; the falsification test on the illusory one; the audit exercise). The belief change is enacted, not just read.
 - **The vow with "expect the unexpected"**: the final ritual includes guided sensory disgust-attention, the solemn vow with visualization, instant conferral ("CONGRATULATIONS! YOU'VE WON!") — and pre-loads future danger moments INTO the vow ("fix these thoughts now while they are vivid, so when the memory fades the resolution does not"). Plus the **meaningless-days demolition**: no New Year's, no landmark days — STOP NOW.
 - **Practical-safety guardrail** (when the behavior touches medication/health): a boxed advisory routing medical specifics to a professional, kept outside the belief argument.
+

@@ -1,2 +1,1 @@
-iter	timestamp_utc	campaign	instrument	hypothesis	reward	detection_acc	hard_ok	verdict	notes
-000	2026-07-12T00:00:00+00:00	factory-v2-authenticity-1	fac-auth-1	baseline: run-012 drafts (retired 3-role panel, NOT this instrument)		False	BASELINE	run-012 evidence carry-in; new-instrument reward unmeasured — iter-001 sets the first real reward
+iter	timestamp_utc	campaign	instrument	hypothesis	reward	hard_ok	verdict	worst_dimension	top_suggestion	notes

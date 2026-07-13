@@ -149,3 +149,23 @@ gate accepts it as the baseline (first-iteration rule) provided hard checks pass
 
 **Result:** — (pending: requires OPENROUTER_API_KEY for the judges and a MiniMax-M3
 write pass; hard checks + diagnostics already run clean in DRY-RUN.)
+
+## 2026-07-13 — instrument change + campaign reset (founder direction)
+
+- **The pairwise/detection instrument is retired before ever measuring an iteration.** Founder reasoning: this is not an A/B contest — Easyway IS the goal, so "ours beat Carr's in a judge's opinion" proves nothing. Replaced by the **reference-anchored carr-likeness rubric** (`calibration/judges/carr-likeness-rubric.md`): the judge sees the real GSBS chapter as ground truth beside our candidate, scores DISTANCE from the reference on six anchored dimensions, and returns 3–5 concrete improvement suggestions tagged with the owning asset. The suggestions drive each iteration's ONE amendment.
+- Campaign reset: `factory-v3-rubric-1`, instrument `carr-likeness-rubric-1`. results.tsv restarted (new columns incl. worst_dimension + top_suggestion).
+- **MiniMax-M3 writer note RESCINDED** — founder mix-up from another project. Model matrix (PROGRAM §1): writer Opus 4.6 reasoning-none via OpenRouter; research DeepSeek V4 Pro via OpenRouter; planner + judges GPT-5.6 Sol xhigh as fresh NATIVE CODEX subagents (founder subscription) — GPT models never via OpenRouter.
+- Best-of-both merge: deep Carr-fidelity style guide (all five §4 forks flipped to Carr's practice) + fidelity doctrine note; owner-branch writer/reviewer retrofits kept (sanitization + fear-then-relief blockers); owner-branch 10× research engine kept; retired-lab operator docs deleted (HARNESS/STATE/ESCALATION/hypotheses + old judge prompts); runs/ + FAILURE-ANALYSIS kept as archaeology.
+
+## Seed hypotheses (evidence: the retired lab's one valid measurement, run-012)
+
+Chapter 1 craft BEAT the real GSBS 4–0 blind; efficacy lost 1–3; Chapters 2–3 sagged (repetitive_sag, weak_ending_handoff); all chapters missed length budgets; prose ran 3× choppier than Carr (46% short sentences vs his 15%).
+
+1. **iter-001 = Carr-fidelity baseline.** The old style guide's sanitized forks (no personification, autonomy-instead-of-command, softened scares) plausibly caused the efficacy gap. The v3 flip is already applied — iter-001 regenerates chapters 1–3 fresh (research + accepted plan R2 reused) and measures the flipped baseline. Hypothesis text for the ledger: "Carr-fidelity baseline — v3 style guide, rubric instrument".
+2. **Rhythm:** short-sentence pulse overdriven everywhere instead of clustered at 1–3 peaks; Carr's default is flowing certainty (~18-word sentences). Candidate asset: style-guide §B5.
+3. **Later-chapter sag:** sections catalog instead of escalate; every section must advance the one belief-move a notch; end on a hand-off seam. Candidate asset: chapter-writer anatomy or master-plan chapter cards.
+4. **Length control:** writers miss per-chapter budgets; make the budget echo louder in the chapter card or writer contract.
+
+## Harness debt (operator grievances — founder reads between blocks)
+
+- (none yet)

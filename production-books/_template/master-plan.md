@@ -6,7 +6,7 @@
 **Primary reader / functional personas:** <one reader, 3–6 functions>
 **Format:** <pocket | full-length>
 **Planned chapter count:** <single integer>
-**Total planned word budget:** <exact sum; HARNESS calibration requires 54,000–66,000 words>
+**Total planned word budget:** <exact sum; calibration requires 54,000–66,000 words>
 **Load-bearing false belief:** <one sentence>
 **Destination:** <the belief and felt state at the end>
 

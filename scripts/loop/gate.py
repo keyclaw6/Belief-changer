@@ -1,18 +1,18 @@
-"""The keep/revert gate. Reads the last ACCEPTED reward from loop/results.tsv
-and the new loop/scores/iter-NNN.json, then decides:
+"""The keep/revert gate (PROGRAM §4.3). Reads loop/scores/iter-NNN.json and the
+results ledger, then decides:
 
-  ACCEPT iff all hard checks pass AND (reward >= last_accepted + epsilon OR
-         this is the first iteration).
-  REVERT otherwise — prints the EXACT `git checkout` commands to undo this
-         iteration's tunable-asset changes; the operator runs them.
+  FAIL-HARD  hard checks failed — reward not consulted; revert the amendment.
+  NO-DECISION  reward is null (verdicts still missing) — dispatch judges first.
+  BASELINE   first scored iteration — accepted as the starting point.
+  NEW-BEST   reward > best accepted so far.
+  KEEP       reward >= best - epsilon (within judge noise; amendment stays).
+  REVERT     reward < best - epsilon — prints the exact commands to undo the
+             iteration's tunable-asset changes; the operator runs them.
 
-Either way, appends one verdict row to results.tsv so the ledger is complete.
+Every decided verdict appends one row to loop/results.tsv.
 
   python3 scripts/loop/gate.py --iter 7 --hypothesis "H-001 word budgets"
   python3 scripts/loop/gate.py            # newest iter-*.json
-
-DRY-RUN scores (reward=null, no judge key) CANNOT be accepted on reward: the
-gate reports NO-DECISION (exit 2). Hard-check blockers still print.
 """
 import argparse
 import datetime as dt
@@ -24,16 +24,21 @@ HERE = Path(__file__).resolve()
 sys.path.insert(0, str(HERE.parent))
 import loopcfg  # noqa: E402
 
-# Tunable assets the loop may edit between iterations (PROGRAM.md "tunable
-# surface"); on REVERT these are the files the iteration could own.
+# Tunable assets (PROGRAM §3) — the files a REVERT may need to undo.
 TUNABLE = [
     "prompts/style-guide.md",
     "prompts/chapter-writer.md",
     "prompts/chapter-reviewer.md",
+    "prompts/master-plan-skill-v2.md",
+    "prompts/master-plan-reviewer-v2.md",
+    "prompts/research-agent.md",
+    "production-books/_template/",
 ]
 
 COLUMNS = ["iter", "timestamp_utc", "campaign", "instrument", "hypothesis",
-           "reward", "detection_acc", "hard_ok", "verdict", "notes"]
+           "reward", "hard_ok", "verdict", "worst_dimension", "top_suggestion",
+           "notes"]
+ACCEPTED = {"BASELINE", "NEW-BEST", "KEEP"}
 
 
 def read_rows(tsv: Path):
@@ -44,14 +49,22 @@ def read_rows(tsv: Path):
     return [dict(zip(header, ln.split("\t"))) for ln in lines[1:] if ln.strip()]
 
 
-def last_accepted_reward(rows):
-    for row in reversed(rows):
-        if row.get("verdict") == "ACCEPT":
+def best_accepted(rows):
+    best, best_iter = None, None
+    for row in rows:
+        if row.get("verdict") in ACCEPTED:
             try:
-                return float(row["reward"]), row["iter"]
+                r = float(row["reward"])
             except (KeyError, ValueError):
                 continue
-    return None, None
+            if best is None or r > best:
+                best, best_iter = r, row.get("iter")
+    return best, best_iter
+
+
+def _clean(text, limit=110):
+    s = " ".join(("" if text is None else str(text)).split())
+    return s[:limit]
 
 
 def append_row(tsv: Path, row: dict):
@@ -59,7 +72,7 @@ def append_row(tsv: Path, row: dict):
     with tsv.open("a", encoding="utf-8") as fh:
         if not exists:
             fh.write("\t".join(COLUMNS) + "\n")
-        fh.write("\t".join(str(row.get(c, "")) for c in COLUMNS) + "\n")
+        fh.write("\t".join(_clean(row.get(c, ""), 400) for c in COLUMNS) + "\n")
 
 
 def find_latest_score(scores_dir: Path):
@@ -67,6 +80,15 @@ def find_latest_score(scores_dir: Path):
     if not cands:
         raise SystemExit(f"gate: no iter-*.json in {scores_dir}; run score.py first")
     return cands[-1]
+
+
+def _print_revert(iter_no):
+    print("[gate] To undo this iteration's tunable-asset changes, run:")
+    for path in TUNABLE:
+        print(f"        git checkout -- {path}")
+    print("        # if THIS iteration re-ran the plan: git checkout -- "
+          "production-books/<slug>/master-plan.md")
+    print(f"        rm loop/scores/iter-{str(iter_no).zfill(3)}.json")
 
 
 def main():
@@ -81,20 +103,22 @@ def main():
     tsv = Path(cfg["results_tsv"])
     epsilon = float(cfg["epsilon"])
 
-    score_path = (scores_dir / f"iter-{a.iter:03d}.json") if a.iter is not None else find_latest_score(scores_dir)
+    score_path = (scores_dir / f"iter-{a.iter:03d}.json") if a.iter is not None \
+        else find_latest_score(scores_dir)
     if not score_path.is_file():
         raise SystemExit(f"gate: score file not found: {score_path}")
     score = json.loads(score_path.read_text(encoding="utf-8"))
     iter_no = a.iter if a.iter is not None else score_path.stem.split("-")[-1]
 
-    rows = read_rows(tsv)
-    last_reward, last_iter = last_accepted_reward(rows)
-    first_iter = last_reward is None
     hard_ok = bool(score.get("hard_ok"))
     reward = score.get("reward")
-    dry_run = score.get("judges", {}).get("pairwise", {}).get("dry_run", reward is None)
-    probe = score.get("judges", {}).get("detection_probe", {})
-    det = probe.get("detection_accuracy")
+    judges_blk = score.get("judges") or {}
+    rub = judges_blk.get("rubric") or {}
+    worst = (rub.get("worst_dimensions") or [{}])[0].get("dimension", "")
+    top_sugg = (rub.get("suggestions") or [{}])[0].get("suggestion", "")
+
+    rows = read_rows(tsv)
+    best, best_iter = best_accepted(rows)
 
     print(f"[gate] iter={iter_no} campaign={score.get('campaign')} "
           f"instrument={score.get('instrument_version')}")
@@ -102,47 +126,44 @@ def main():
           f"({len(score.get('hard_fails', []))} failures)")
     for f in score.get("hard_fails", []):
         print(f"        - {f}")
-    print(f"[gate] reward={reward}  last_accepted={last_reward}"
-          + (f" (iter {last_iter})" if last_iter else "")
-          + f"  epsilon={epsilon}  first_iteration={first_iter}")
+    print(f"[gate] reward={reward}  best_accepted={best}"
+          + (f" (iter {best_iter})" if best_iter else "") + f"  epsilon={epsilon}")
 
-    # Decide.
-    if dry_run or reward is None:
-        verdict = "NO-DECISION"
-        print("[gate] NO-DECISION — reward is null (judges DRY-RUN / no key). Re-run "
-              "score.py with OPENROUTER_API_KEY set, then re-gate. Hard blockers still apply.")
-    elif not hard_ok:
-        verdict = "REVERT"
-        print("[gate] REVERT — hard checks FAILED; reward is not consulted.")
+    if reward is None:
+        print("[gate] NO-DECISION — reward is null (judge verdicts missing). Dispatch the "
+              "task files as fresh native Sol subagents, save the verdicts, re-run "
+              "score.py, then re-gate. No row appended.")
+        sys.exit(2)
+    if not hard_ok:
+        verdict = "FAIL-HARD"
+        print("[gate] FAIL-HARD — hard checks failed; reward not consulted. Revert the amendment.")
         _print_revert(iter_no)
-    elif first_iter or reward >= last_reward + epsilon:
-        verdict = "ACCEPT"
-        why = "first iteration (baseline)" if first_iter else \
-            f"reward {reward} >= {last_reward} + {epsilon}"
-        print(f"[gate] ACCEPT — {why}. Keep the changes; record the hypothesis outcome.")
+    elif best is None:
+        verdict = "BASELINE"
+        print("[gate] BASELINE — first scored iteration; accepted as the starting point.")
+    elif reward > best:
+        verdict = "NEW-BEST"
+        print(f"[gate] NEW-BEST — reward {reward} > best {best}. Keep the amendment.")
+    elif reward >= best - epsilon:
+        verdict = "KEEP"
+        print(f"[gate] KEEP — reward {reward} within epsilon {epsilon} of best {best}. "
+              "Amendment stays; best unchanged.")
     else:
         verdict = "REVERT"
-        print(f"[gate] REVERT — reward {reward} < {last_reward} + epsilon {epsilon} (no improvement).")
+        print(f"[gate] REVERT — reward {reward} < best {best} - epsilon {epsilon}.")
         _print_revert(iter_no)
 
-    book = score.get("book") or ""
-    notes = Path(book).name if book and not book.startswith("CONTROL") else book
-    row = {"iter": iter_no, "timestamp_utc": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
-           "campaign": score.get("campaign", ""), "instrument": score.get("instrument_version", ""),
-           "hypothesis": a.hypothesis, "reward": "" if reward is None else reward,
-           "detection_acc": "" if det is None else det, "hard_ok": hard_ok,
-           "verdict": verdict, "notes": notes}
+    row = {"iter": iter_no,
+           "timestamp_utc": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+           "campaign": score.get("campaign", ""),
+           "instrument": score.get("instrument_version", ""),
+           "hypothesis": a.hypothesis, "reward": reward, "hard_ok": hard_ok,
+           "verdict": verdict, "worst_dimension": worst,
+           "top_suggestion": _clean(top_sugg),
+           "notes": Path(score.get("book") or "").name or score.get("book", "")}
     append_row(tsv, row)
-    print(f"[gate] appended verdict row to {tsv}")
-    sys.exit({"ACCEPT": 0, "REVERT": 1, "NO-DECISION": 2}[verdict])  # 0/1/2 for wrappers
-
-
-def _print_revert(iter_no):
-    print("[gate] To undo this iteration's tunable-asset changes, run:")
-    for path in TUNABLE:
-        print(f"        git checkout -- {path}")
-    print("        # if THIS iteration edited it: git checkout -- production-books/<slug>/master-plan.md")
-    print(f"        rm loop/scores/iter-{str(iter_no).zfill(3)}.json")
+    print(f"[gate] appended {verdict} row to {tsv}")
+    sys.exit({"BASELINE": 0, "NEW-BEST": 0, "KEEP": 0, "REVERT": 1, "FAIL-HARD": 1}[verdict])
 
 
 if __name__ == "__main__":
