@@ -1,0 +1,42 @@
+{
+  "scores": {
+    "voice_certainty": 4,
+    "method_execution": 8,
+    "structure_anatomy": 8,
+    "repetition_mantra": 7,
+    "emotional_register": 5,
+    "rhythm_texture": 7
+  },
+  "evidence": {
+    "voice_certainty": "The conspicuous caveat sequence beginning \"Let me be very careful here\" replaces settled-fact authority with cautious therapeutic balancing.",
+    "method_execution": "The nightlight question cleanly traps the inference that genuine distress proves the feared thing is real, then reassigns the struggle to an installed belief.",
+    "structure_anatomy": "The tollbooth preview develops through escalating titled sections into the assigned numbered instruction, an all-caps verdict, and a summary, although it has fewer intermediate verdict peaks than the reference.",
+    "repetition_mantra": "\"The sugar standoff\" recurs as a deliberate drumbeat and is compressed into the final all-caps line, but summary capitalization and several paraphrased variants weaken exact echo discipline.",
+    "emotional_register": "\"There is no second cost. There is only escape\" nails escape-not-sacrifice, but the chapter repeatedly softens its nerve with clinical deference and conditional reassurance.",
+    "rhythm_texture": "The tollbooth, nightlight, and investment images carry the logic well, but long roadmap and qualification passages interrupt the short-verdict momentum."
+  },
+  "worst_dimension": "voice_certainty",
+  "gap_summary": "The candidate has the right belief-changing machinery and anatomy, but its careful clinical hedging and conditional future-testing make it sound like contemporary therapeutic guidance rather than Carr's blunt settled certainty.",
+  "suggestions": [
+    {
+      "suggestion": "Compress the multi-paragraph \"Let me be very careful here\" and \"two things are true at once\" disclaimer into one narrow boundary sentence, then answer the reader's objection in flat, categorical language so a necessary safeguard does not take over the chapter's voice.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Replace the roadmap hedge \"We are not going to settle that question today\" and the stacked \"What if\"/\"if every claim\" conditionals with a present-tense inversion stated as fact; let later chapters explain the fact rather than postponing belief change.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "Route each assigned mantra through a full debut beat: argue the belief to exhaustion, place the frozen wording alone as the verdict, and repeat that wording byte-for-byte in the summary; remove the current lowercase and paraphrase drift around \"the sugar standoff\" and \"the sugar trap\".",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Tighten each middle section into concrete image or trap question, unavoidable answer, then a short verdict line; cut explanatory roadmap paragraphs and add intermediate all-caps peaks before the numbered instruction so the sections escalate rather than merely continue.",
+      "asset": "chapter-reviewer"
+    },
+    {
+      "suggestion": "Supply one evidence-graded hard-consequence beat that can be delivered without qualifiers, followed immediately by an explicit instruction not to use fear as motivation; this restores the reference's wound-and-bandage nerve without inventing facts.",
+      "asset": "research"
+    }
+  ]
+}

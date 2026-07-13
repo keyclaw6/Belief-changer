@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 4,
+    "method_execution": 6,
+    "structure_anatomy": 7,
+    "repetition_mantra": 6,
+    "emotional_register": 3,
+    "rhythm_texture": 5
+  },
+  "evidence": {
+    "voice_certainty": "\"Your receipt is not a verdict but a discipline\" typifies the cautious audit register; strong assertions appear, but personal I-testimony is almost absent.",
+    "method_execution": "The harm-versus-benefit inversion and \"What is BAD SUGAR actually doing FOR you?\" reassign credit effectively, but the chapter repeatedly defers the verdict.",
+    "structure_anatomy": "The preview, thesis, titled sections, all-caps verdicts, numbered instruction, and summary are present, though \"FIFTEEN CLAIMS, ONE QUEUE\" stalls the escalation.",
+    "repetition_mantra": "The FOR question and \"unique positive contribution\" recur, while \"a special pleasure or rescue\" receives a reasoned debut but little verbatim echo.",
+    "emotional_register": "\"Clear work, not grim work\" and \"escape, not endure\" supply relief, but the chapter omits the reference's hard wound-and-fear beat and remains emotionally antiseptic.",
+    "rhythm_texture": "Receipt, thread, key, envelopes, orchestra, and lane analogies accumulate, creating explanatory drag despite several short all-caps peaks."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate conducts a careful procedural audit where the reference uses blunt emotional nerve, escalating demolition, and a confidently landed verdict.",
+  "suggestions": [
+    {
+      "suggestion": "In \"TWO HONEST CONCESSIONS\" and \"KEEP EACH SCENE IN ITS LANE,\" stop repeating what the chapter will not decide: drive one concession through credit reassignment to an unavoidable conclusion, then state that conclusion in one short verdict line.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Add a required wound-and-bandage beat: render one concrete consequence at full emotional force, explicitly reject fear or shame as the reason to change, and immediately turn the same fact into relief and escape.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "Recast the \"FIFTEEN CLAIMS, ONE QUEUE\" assignment so the claims occupy one compact recognition beat and the remaining sections escalate through objection, inversion, verdict, and instruction instead of managing future chapter ownership.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Enforce one fixed verdict phrase verbatim at the major turns: after its argue-then-compress debut, reject nearby paraphrases such as \"carry its own proof,\" \"establish its own contribution,\" and \"no automatic credit\" when the scheduled mantra should supply the drumbeat.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "scores": {
+    "voice_certainty": 4,
+    "method_execution": 6,
+    "structure_anatomy": 6,
+    "repetition_mantra": 5,
+    "emotional_register": 3,
+    "rhythm_texture": 4
+  },
+  "evidence": {
+    "voice_certainty": "The direct line \"The fact is simple\" is repeatedly diluted by audit language such as \"remains unestablished,\" \"owned claim,\" and \"boundaries this chapter does not own.\"",
+    "method_execution": "The FOR/TO receipt cleanly reassigns credit and the objection \"Isn't enjoyment enough?\" is answered, but \"Your receipt is not a verdict\" postpones the decisive demolition.",
+    "structure_anatomy": "The preview, thesis, titled sections, all-caps verdict, numbered third instruction, and summary are present, but the fifteen-claim queue makes the middle catalog rather than escalate.",
+    "repetition_mantra": "\"a special pleasure or rescue\" receives a clear argue-then-compress debut, while the central burden-of-proof wording keeps shifting among several longer formulations instead of striking as one fixed refrain.",
+    "emotional_register": "The instruction promises \"escape, not endure,\" but the chapter stays cool and procedural, offers almost no wound-and-bandage passage, and avoids the reference's forceful danger followed by reassurance.",
+    "rhythm_texture": "Receipt, thread, key, envelopes, and orchestra provide concrete images, but stacked qualifications and the fifteen-item list flatten momentum between the short verdict lines."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate reads like a careful evidentiary audit that prepares a later case, whereas the reference drives a blunt, emotionally charged belief demolition to an exhilarating verdict now.",
+  "suggestions": [
+    {
+      "suggestion": "Replace procedural qualifiers such as \"remains unestablished,\" \"owned claim,\" and \"boundaries this chapter does not own\" with flat settled-fact assertions, then restore the warm I/we/you triangle so each command sounds personal rather than institutional.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "Revise the chapter job so the burden-of-proof inversion ends in a present-tense belief verdict; remove deferrals such as \"not a verdict,\" \"the chapters ahead,\" and \"the owning chapter\" that leave the reader waiting for the actual demolition.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Turn \"FIFTEEN CLAIMS, ONE QUEUE\" from an uninterrupted inventory into a rising sequence of representative reader-voice objections, immediate trap questions, and answers, with the remaining claims compressed only after the central concession has been forced.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Choose one exact burden-of-proof refrain, debut it by arguing to a short compression, and repeat that identical wording at section peaks; flag shifting substitutes such as \"unique positive contribution,\" \"its own contribution,\" and \"doing FOR me\" unless they serve distinct planned mantras.",
+      "asset": "chapter-reviewer"
+    },
+    {
+      "suggestion": "Before \"YOUR THIRD INSTRUCTION,\" add one vivid wound-and-bandage movement: state the trap's concrete damage without cushioning, absolve the reader immediately, disown fear as the reason to change, and pivot into relief and elation.",
+      "asset": "chapter-writer"
+    }
+  ]
+}

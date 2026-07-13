@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 6,
+    "method_execution": 8,
+    "structure_anatomy": 8,
+    "repetition_mantra": 7,
+    "emotional_register": 5,
+    "rhythm_texture": 7
+  },
+  "evidence": {
+    "voice_certainty": "Flat assertions such as \"The fact is\" sound close, but \"Let me be very careful here\" and the extended clinical-policy caveats replace Carr's cheerful certainty with cautious therapeutic framing.",
+    "method_execution": "The nightlight trap question, the confidence-trick credit reassignment, and \"One of those tollbooths is a mirage\" steadily invert struggle from proof of benefit into proof of an installed belief.",
+    "structure_anatomy": "The preview, thesis, escalating titled sections, correctly placed 2ND INSTRUCTION, all-caps climax, and SUMMARY closely reproduce the assigned chapter anatomy.",
+    "repetition_mantra": "\"The sugar standoff\", \"There is no second toll\", and the sugar-trap wording recur deliberately, although \"struggle is not evidence\" shifts among several formulations instead of returning as one exact drumbeat.",
+    "emotional_register": "The chapter consistently promises escape rather than sacrifice and blames the trick rather than the reader, but \"Not to scare you\" arrives without the reference's full-force danger passage and subsequent release from fear.",
+    "rhythm_texture": "The two-tollbooth and nightlight analogies carry the reasoning into short verdicts, but the long diagnosis disclaimer and repeated previews of later testing stall the forward pull."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate runs authentic belief-inversion machinery but repeatedly softens its certainty and nerve with clinical-policy qualifications instead of delivering the reference's blunt danger, verdict, and release sequence.",
+  "suggestions": [
+      {
+        "suggestion": "Compress the policy-toned opening of \"BUT I AM POWERLESS\"—especially \"Let me be very careful here\" and the two numbered truths—into one brisk boundary sentence, then return immediately to direct-address assertion and dismantling of the trap; apply this rule whenever necessary safety language interrupts the narrator's settled voice.",
+        "asset": "chapter-writer"
+      },
+      {
+        "suggestion": "Remove the deferrals \"We are not going to settle that question today\" and \"the chapters ahead will test\" from the core belief move: make each chapter conclusively land its one assigned inversion with trap questions and a compressed all-caps verdict, while later chapters merely unpack supporting claims.",
+        "asset": "master-plan"
+      },
+      {
+        "suggestion": "Add an evidence-backed wound-and-bandage slot before the escape climax: state the assigned hard consequence at full force, explicitly reject fear as the reason to change, and pivot at once to relief; \"Not to scare you\" cannot substitute for first supplying the wound.",
+        "asset": "research"
+      },
+      {
+        "suggestion": "Flag the variants \"struggle is not evidence\", \"difficulty ... does not prove\", and \"struggle proves the pleasure is real\" unless they match the frozen MAN-02/MAN-08 schedule: require one full argue-then-compress debut for each exact phrase and verbatim echoes at the climax and SUMMARY.",
+        "asset": "chapter-reviewer"
+      }
+  ]
+}

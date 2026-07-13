@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 6,
+    "method_execution": 7,
+    "structure_anatomy": 6,
+    "repetition_mantra": 5,
+    "emotional_register": 4,
+    "rhythm_texture": 6
+  },
+  "evidence": {
+    "voice_certainty": "The flat 'The fact is' register appears, but lines such as 'That exhaustion is real. It is valid.' and repeated 'testable claim' language sound therapeutic and procedural rather than settled and commanding.",
+    "method_execution": "The cage analogy and the question 'You cage a desire only when you suspect it is doing something to you while pretending to do something for you' execute a real inversion, but 'I am not going to give it to you yet' postpones the final concession.",
+    "structure_anatomy": "The chapter has a preview, titled sections, a numbered instruction, a verdict line, and a summary, but 'WHAT WE ARE ACTUALLY TALKING ABOUT,' 'THE MOLECULE MARGIN,' and the safety note accumulate scope items instead of escalating the belief argument.",
+    "repetition_mantra": "'You can close the sugar debate without deprivation, battle, or a lifetime of rules' receives an argued debut and a summary echo, while the related cage and debate language is mostly varied rather than repeated verbatim as a drumbeat.",
+    "emotional_register": "The chapter promises freedom and says 'Not you. The method.', but the long safety boundary and the absence of a hard wound-then-relief passage remove the reference's fear, attack, and nerve.",
+    "rhythm_texture": "'Not you. The method.' is an effective killer pair and the cage analogy carries the central abstraction, but long definition, exclusion, and contract passages repeatedly stall the forward pull."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate presents a carefully bounded, therapeutic case where the reference drives a blunt, escalating attack on the trap and immediately converts its hardest blows into relief.",
+  "suggestions": [
+    {
+      "suggestion": "At 'That question has only one honest answer. But I am not going to give it to you yet,' stop postponing the chapter's belief move: force the trap question to its answer, reassign the claimed benefit to its real source, and compress that answer into a blunt verdict line.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Rebuild the run from 'WHAT WE ARE ACTUALLY TALKING ABOUT' through 'A SAFETY NOTE' so each necessary boundary takes only the space needed and then raises the same argument another step; the current sequence reads as a catalogue of scope responsibilities rather than an escalation toward the instruction.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Turn the promise represented by 'You can close the sugar debate without deprivation, battle, or a lifetime of rules' into one frozen phrase: argue it at debut, then repeat it verbatim at later peaks and in the summary instead of cycling through 'stronger cage,' 'better cage,' and other near-variants.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "Flag therapeutic and compliance-heavy lines such as 'That exhaustion is real. It is valid.' and the multi-paragraph clinical disclaimer; retain any essential limit compactly, then require a hard wound, a short full-force verdict, and an immediate escape-not-sacrifice bandage.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

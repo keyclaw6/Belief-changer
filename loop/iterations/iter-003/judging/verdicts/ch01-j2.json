@@ -1,0 +1,42 @@
+{
+  "scores": {
+    "voice_certainty": 5,
+    "method_execution": 6,
+    "structure_anatomy": 7,
+    "repetition_mantra": 7,
+    "emotional_register": 4,
+    "rhythm_texture": 6
+  },
+  "evidence": {
+    "voice_certainty": "\"That exhaustion is real. It is valid.\" and repeated \"testable\" framing sound therapeutic and provisional beside the firmer verdicts.",
+    "method_execution": "The cage inversion reassigns failure to the method, but \"I am not going to give it to you yet\" postpones the trap question's concession.",
+    "structure_anatomy": "The preview, titled sections, 1ST INSTRUCTION, verdict line, and SUMMARY are present, but the scope and safety sequence flattens the escalation into a policy catalogue.",
+    "repetition_mantra": "\"You can close the sugar debate without deprivation, battle, or a lifetime of rules\" debuts after an argument and returns verbatim in the SUMMARY.",
+    "emotional_register": "\"The payoff is freedom\" supplies escape and \"Not you. The method.\" supplies wound-and-bandage, but the hard-fact, fear, and disavowal beat is absent.",
+    "rhythm_texture": "\"Not you. The method.\" is a strong killer-line pair, but the cage, wall, map, border-desk, load-bearing-wall, and magic-trick analogies make the cadence feel engineered."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate replaces Carr's blunt, fully landed certainty and nerve with a carefully bounded, testable-policy register that delays the central concession.",
+  "suggestions": [
+    {
+      "suggestion": "Replace lines such as \"That exhaustion is real. It is valid.\" and \"That is not a slogan. It is a testable claim.\" with flat settled-fact assertions, then issue the next command cheerfully; remove therapy and evaluation vocabulary wherever the argument already knows its answer.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "At \"That question has only one honest answer. But I am not going to give it to you yet,\" give the answer immediately: force the trap question to concede, reassign credit away from the object, state the inversion, and compress it into the chapter's fixed phrase.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Reorder or compress \"WHAT WE ARE ACTUALLY TALKING ABOUT,\" \"THE MOLECULE MARGIN,\" and the safety note so each section advances the same belief move and ends in a stronger verdict; keep necessary boundaries from becoming a mid-chapter catalogue.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Add one compact, evidence-graded hard-consequence passage, deliver it without euphemism, then explicitly say fear is not the reason to change and pivot at once to relief; this restores the reference's nerve-and-disavowal beat.",
+      "asset": "research"
+    },
+    {
+      "suggestion": "Choose one carrying analogy instead of cycling through the cage, crack in the wall, map, border desk, load-bearing wall, and magic trick; let longer confident paragraphs build to short killer-line pairs and an ALL-CAPS verdict.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}
