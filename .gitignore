@@ -16,3 +16,6 @@ __pycache__/
 
 # Optional local MLflow lens — git is the canonical store.
 calibration/mlruns/
+
+# Judge task files embed extracted reference text — never commit (PROGRAM §7).
+loop/iterations/*/judging/tasks/

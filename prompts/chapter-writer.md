@@ -45,3 +45,6 @@ You are writing **Chapter [N] — "[WORKING TITLE]"** of the belief-change book 
 
 ## When done
 Reply in under 120 words: the chapter's one job, which mantras you debuted/echoed, which instruction you delivered, your approximate metrics (words, question rate), and any spec gaps you hit (missing quote, ambiguous assignment) — gaps are reported, never papered over.
+
+## API dispatch mode (harness wrapper)
+When this prompt is dispatched over a raw API call (no filesystem — e.g. by `scripts/loop/run_iteration.py`), the save step and the "When done" report do NOT apply: **your entire reply must be the complete chapter text and nothing else** — the harness saves your reply verbatim as the chapter file. The wrapper appends an explicit API OUTPUT CONTRACT; it supersedes the save/report instructions above. Spec gaps are still never papered over: if the plan is missing something essential, state the gap on a single first line beginning `SPEC GAP:` instead of writing around it.

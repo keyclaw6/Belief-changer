@@ -26,6 +26,8 @@ from pathlib import Path
 
 DIMS = ("voice_certainty", "method_execution", "structure_anatomy",
         "repetition_mantra", "emotional_register", "rhythm_texture")
+ASSETS = {"style-guide", "chapter-writer", "chapter-reviewer", "master-plan",
+          "research"}
 _FENCE_RE = re.compile(r"```(?:json)?\s*(\{.*\})\s*```", re.S)
 _BLANKS_RE = re.compile(r"\n{3,}")
 
@@ -75,26 +77,30 @@ def missing_verdicts(cfg, labels, iter_name: str) -> list:
 
 
 def emit_tasks(cfg, pairs, iter_name: str, rubric_text: str) -> list:
-    """pairs: (label, ours_text, ref_text). Writes tasks/, creates verdicts/."""
-    if "{{REFERENCE}}" not in rubric_text or "{{CANDIDATE}}" not in rubric_text:
-        raise SystemExit("judges: rubric missing {{REFERENCE}}/{{CANDIDATE}} placeholders")
+    """pairs: (label, ours_text, ref_text, ctx). Writes tasks/, creates verdicts/."""
+    for ph in ("{{REFERENCE}}", "{{CANDIDATE}}", "{{CONTEXT}}"):
+        if ph not in rubric_text:
+            raise SystemExit(f"judges: rubric missing {ph} placeholder")
     base = judging_dir(cfg, iter_name)
     tdir, vdir = base / "tasks", base / "verdicts"
     tdir.mkdir(parents=True, exist_ok=True)
     vdir.mkdir(parents=True, exist_ok=True)
     k = int(cfg.get("judge_k", 2))
     out = []
-    for lbl, ours, ref in pairs:
+    for lbl, ours, ref, ctx in pairs:
         body = (rubric_text.replace("{{REFERENCE}}", _norm(ref))
-                .replace("{{CANDIDATE}}", _norm(ours)))
+                .replace("{{CANDIDATE}}", _norm(ours))
+                .replace("{{CONTEXT}}", _norm(ctx)))
         for j in range(1, k + 1):
             p = tdir / f"{lbl}-j{j}.md"
             p.write_text(body, encoding="utf-8")
             out.append(p)
-    print(f"[judges] wrote {len(out)} task files -> {tdir}")
-    print(f"[judges] DISPATCH each task file as a FRESH native Codex subagent — model "
-          f"{cfg.get('judge_model')}, reasoning={cfg.get('judge_reasoning')} — NEVER via OpenRouter.")
-    print(f"[judges] Save each subagent's raw reply (the JSON object) as {vdir}/<taskname>.json")
+    print(f"[judges] wrote {len(out)} task files. DISPATCH each as a FRESH native Codex "
+          f"subagent — model {cfg.get('judge_model')}, reasoning={cfg.get('judge_reasoning')} "
+          "— NEVER via OpenRouter. Save each raw JSON reply EXACTLY here:")
+    for p in out:
+        print(f"[judges]   {p}  ->  {vdir / (p.stem + '.json')}")
+    print("[judges] Task files embed reference text and are gitignored — NEVER commit them.")
     print("[judges] Then re-run score.py with the same --iter to aggregate.")
     return out
 
@@ -113,8 +119,17 @@ def _parse_verdict(path: Path) -> dict:
         v = scores.get(d)
         if not isinstance(v, (int, float)) or not 0 <= v <= 10:
             raise SystemExit(f"judges: {path.name}: scores.{d} missing/out of range: {v!r}")
-    if not isinstance(obj.get("suggestions", []), list):
-        raise SystemExit(f"judges: {path.name}: suggestions must be a list")
+    sugg = obj.get("suggestions")
+    if not isinstance(sugg, list) or not 3 <= len(sugg) <= 5:
+        raise SystemExit(f"judges: {path.name}: suggestions must be a list of 3-5 items "
+                         f"(got {len(sugg) if isinstance(sugg, list) else type(sugg).__name__}) "
+                         "— re-dispatch this one judge task")
+    for i, s in enumerate(sugg):
+        if not isinstance(s, dict) or not str(s.get("suggestion", "")).strip():
+            raise SystemExit(f"judges: {path.name}: suggestions[{i}] missing text")
+        if s.get("asset") not in ASSETS:
+            raise SystemExit(f"judges: {path.name}: suggestions[{i}].asset {s.get('asset')!r} "
+                             f"not in {sorted(ASSETS)} — re-dispatch this one judge task")
     return obj
 
 
@@ -136,19 +151,27 @@ def aggregate(cfg, labels, iter_name: str) -> dict:
             wd = v.get("worst_dimension")
             if wd in DIMS:
                 worst_votes[wd] = worst_votes.get(wd, 0) + 1
-            for s in v.get("suggestions", []):
-                if isinstance(s, dict) and s.get("suggestion"):
-                    all_sugg.append((str(s.get("asset", "?")),
-                                     " ".join(str(s["suggestion"]).split())))
+            for i, s in enumerate(v.get("suggestions", [])):
+                all_sugg.append((str(s["asset"]), " ".join(str(s["suggestion"]).split()),
+                                 5 - min(i, 4), lbl))
     reward = round(sum(c["composite"] for c in per_chapter) / len(per_chapter), 4)
+    # Rank-weighted consensus: judge priority (rank 1 -> weight 5 ... rank 5 -> 1),
+    # ties broken by chapter spread, then first-seen (review finding H-C3).
     counts, order = {}, []
-    for asset, txt in all_sugg:
+    for asset, txt, wt, lbl in all_sugg:
         key = txt.lower()
         if key not in counts:
-            counts[key] = {"suggestion": txt, "asset": asset, "count": 0}
+            counts[key] = {"suggestion": txt, "asset": asset, "weight": 0,
+                           "count": 0, "chapters": set(), "_ord": len(order)}
             order.append(key)
+        counts[key]["weight"] += wt
         counts[key]["count"] += 1
-    top = sorted((counts[k2] for k2 in order), key=lambda x: -x["count"])[:5]
+        counts[key]["chapters"].add(lbl)
+    top = sorted(counts.values(),
+                 key=lambda x: (-x["weight"], -len(x["chapters"]), x["_ord"]))[:5]
+    for s in top:
+        s["chapters"] = sorted(s["chapters"])
+        del s["_ord"]
     worst = sorted(worst_votes.items(), key=lambda kv: -kv[1])
     return {"reward": reward, "per_chapter": per_chapter, "suggestions": top,
             "worst_dimensions": [{"dimension": d, "votes": n} for d, n in worst],

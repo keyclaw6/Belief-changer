@@ -20,13 +20,17 @@ Anchors for every dimension: **0–2** = not Easyway at all; **5** = competent i
 5. **emotional_register** — escape-not-sacrifice everywhere; warmth to the reader, harshness to the trap and the willpower method; wound-and-bandage; and **nerve**: hard facts and fear delivered at full force and THEN disowned as the motivator — never softened, never omitted, never left as open dread.
 6. **rhythm_texture** — the cadence: flowing confident sentences punctuated by short verdict lines at the peaks; killer-line pairs; a concrete analogy carrying each abstract point; momentum that pulls paragraph into paragraph.
 
+### Using the CANDIDATE CONTEXT block
+
+Below the two texts you will find a **CANDIDATE CONTEXT** block: the candidate book's frozen mantra sheet and this chapter's plan card (the reference chapter needs none — it IS the target). Use it for dimensions 3–4: score `repetition_mantra` against the frozen wordings and this chapter's assigned debuts/echoes (verbatim fidelity; debuts get the full argue→compress beat), and score the instruction slot inside `structure_anatomy` against the card's assignment. If the context block says "none provided", score `repetition_mantra` on within-chapter refrain discipline and an evident fixed-phrase system, and the instruction slot only if one is evident.
+
 ## Suggestions — the part that drives the factory
 
-After scoring, give the **3–5 highest-impact changes** that would move the candidate closest to the reference's way of writing. Rules:
+After scoring, give **exactly 3–5** highest-impact changes that would move the candidate closest to the reference's way of writing. Rules:
 
 - Concrete and mechanical, quoting or pointing at the candidate's actual text ("the section 'X' lists four points and stops — Carr would drive them into one verdict line").
 - **Behavior-agnostic**: phrase every suggestion so it would improve a book on ANY subject (a mechanism, not a subject-specific patch, and never "copy the reference's sentence").
-- Each tagged with the factory asset that owns the fix: `style-guide` | `chapter-writer` | `chapter-reviewer` | `master-plan` | `research`.
+- Each tagged with the factory asset that owns the fix. **The `asset` value MUST be exactly one of:** `style-guide` | `chapter-writer` | `chapter-reviewer` | `master-plan` | `research`. Any other value is rejected by the parser and your verdict is discarded.
 
 ## Output — EXACTLY one JSON object, nothing before or after it
 
@@ -66,4 +70,9 @@ THE REFERENCE (real Easyway chapter — the ground truth):
 THE CANDIDATE (generated chapter — score its distance from the reference):
 <<<
 {{CANDIDATE}}
+>>>
+
+CANDIDATE CONTEXT (from the candidate book's master plan — for dimensions 3–4):
+<<<
+{{CONTEXT}}
 >>>

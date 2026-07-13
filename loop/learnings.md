@@ -169,3 +169,19 @@ Chapter 1 craft BEAT the real GSBS 4–0 blind; efficacy lost 1–3; Chapters 2�
 ## Harness debt (operator grievances — founder reads between blocks)
 
 - (none yet)
+
+## 2026-07-13 — external pre-flight review: 6 critical + 4 high findings, all fixed
+
+An independent static review (full report in the founder's thread) found the loop NOT READY. Fixes applied the same day, before any iteration ran:
+- **Writer contract (C1):** API wrapper now appends an explicit output contract (reply = the whole chapter, nothing else), strips code fences, and hard-fails on <800-word replies. chapter-writer.md gained an API-dispatch-mode section (SPEC GAP: line convention).
+- **Stale plan register (C3):** framing.md + master plan R2 were written under the retired sanitized register (no-fear/no-command/no-creature, autonomy-led). iter-001 cold start (PROGRAM §4.0) now regenerates framing forks + plan under the v3 Carr defaults before writing. R2 is DEPRECATED as a writing input.
+- **Commit/revert ordering (C2):** iteration order is now AMEND (uncommitted) → RUN → SCORE → GATE → RECORD+COMMIT (amendment committed only if kept). gate's checkout commands now genuinely restore; gate prints the real book's plan path; --asset sharpens the commands.
+- **Verdict filenames (C1):** emit prints an explicit task→verdict path mapping per file; WAITING lists missing stems.
+- **Rubric information gap (C2):** judge tasks now embed the candidate's frozen mantra sheet + chapter plan card ({{CONTEXT}}); rubric instructs dims 3–4 to score against them (control runs get a defined fallback). Instrument amended pre-baseline — no rebaseline needed (zero scored iterations existed).
+- **Near-copy + reference exposure (C4):** new hard check — word-sequence similarity vs the matched reference chapter (near_copy_tripwire 0.5) catches paraphrase-spaced copying that defeats exact 12-grams; judging/tasks/ dirs (which embed reference text) are now gitignored.
+- **Research scope (H):** research amendments are out of scope during unattended blocks — recorded as block-boundary proposals instead (PROGRAM §3).
+- **Suggestion pipeline (H):** verdicts now require exactly 3–5 suggestions with whitelist asset tags (else the single judge task is re-dispatched); aggregation is rank-weighted with chapter-spread tie-breaks.
+- **Wrapper flow + exit codes (H):** run_iteration stops after writing for the ≤2 reviewer cycles (resume --no-write; --score-now for controls); gate exits 0 on every decided verdict incl. REVERT.
+- **Style-guide stragglers (H):** §7 Fork-1 vocabulary line, §10 step 6 default, §11 autonomy-close annotation, §12 ask-vs-assert checklist item — all aligned to the v3 Carr defaults.
+
+Reviewer's noise estimate: pure-noise reward movement plausibly 0.017–0.05; epsilon 0.03 stays a placeholder pending the three-repeat measurement.

@@ -84,3 +84,10 @@ scores_dir: loop/scores
 results_tsv: loop/results.tsv
 learnings: loop/learnings.md
 tasks_dir: loop/iterations
+
+# Near-copy tripwire (review finding C4): word-sequence similarity (difflib
+# ratio, whole chapter vs its matched reference chapter). Catches paraphrase-
+# spaced copying that defeats exact 12-gram shingles — a near-copy with one
+# token edited every ~11 words still scores ~0.9 here; genuinely original
+# same-topic prose sits far below 0.5. Hard gate; do not loosen.
+near_copy_tripwire: 0.5

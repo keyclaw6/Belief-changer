@@ -221,7 +221,7 @@ The argument changes the belief; the *framing* makes the belief feel safe to ado
 - **Short, blunt verdict-sentences after a build-up.** Let the cadence perform the certainty. "It's the other way around." "Don't wait to be free — you already are." Land the point, then stop.
 - **Plain, confident, repetitive refrains.** Repeat key promises verbatim like a chorus ("nothing to lose and everything to gain"; "escape, not sacrifice") to embed them.
 - **Rhetorical questions that close escape routes.** Make the reader keep catching themselves in self-contradiction and concede the point internally.
-- **Coin a small, proprietary vocabulary** — a memorable name or two the reader will think in afterward (Carr's Little/Big Monster; Burgeon's "Pang," "energy vampires"). Once named, a concept can be invoked in a phrase. *Per Fork 1, name the trap/belief, not an inner beast.* Define loaded words on our terms early (redefine "failure," "giving up," "self-love," "success") to install our interpretive lens.
+- **Coin a small, proprietary vocabulary** — a memorable name or two the reader will think in afterward (Carr's Little/Big Monster; Burgeon's "Pang," "energy vampires"). Once named, a concept can be invoked in a phrase. *Per Fork 1, the mechanism characters are personified at full Carr strength (original, behavior-fitted names) — and the trap/industry gets named alongside them.* Define loaded words on our terms early (redefine "failure," "giving up," "self-love," "success") to install our interpretive lens.
 - **Concrete analogy over abstraction, every time.** The tradition runs on vivid, everyday images (see §11). When you must explain a mechanism, reach for a picture, not a definition.
 - **Anecdote as gentle proof, not data.** A lived human story carries an abstract point better than statistics. Use sparingly and warmly.
 - **ALL-CAPS for the few real climaxes and the core commitments** — used sparingly, it gives the prose a scannable spine and makes key beliefs shout off the page. Do not overuse.
@@ -340,7 +340,7 @@ Who profits and how was the hook built? (Game studios and variable-ratio reward 
 Is there a real withdrawal (and how trivial)? What's the neuroscience that makes the trap *visible*? Decide how much, and quarantine citations. Always subordinate fact to belief-change.
 
 ### Step 6 — Decide: natural baseline, or root + replacement? (Fork 5)
-Does this behavior have a clean natural baseline the body returns to (lean Carr: "change nothing else"), or does it fill time/identity/emotion (lean Burgeon: name the **root craving** — love/superiority/pleasure/risk or the behavior's analog — and supply a **positive direction** and environment redesign)? **Default to root + positive direction for any time-filling or emotion-soothing behavior.** State the decision.
+Does this behavior have a clean natural baseline the body returns to (lean Carr: "change nothing else"), or does it fill time/identity/emotion (lean Burgeon: name the **root craving** — love/superiority/pleasure/risk or the behavior's analog — and supply a **positive direction** and environment redesign)? **Default (Carr, per Fork 5): "change nothing else" — the natural baseline returns on its own.** Root + positive direction is a brief-level override reserved for behaviors that genuinely occupy time/identity — and must be stated explicitly in `framing.md`. State the decision.
 
 ### Step 7 — Translate the analogies
 Every signature analogy (§11) should get a behavior-specific re-creation. Don't reuse Carr's caffeine images literally; build the gaming/scrolling/sugar equivalent that lands the same mechanism. **Write original images.**
@@ -386,7 +386,7 @@ These are the *shapes* that work — drawn from the three books. **Do not copy t
 - **The axis-switch:** *"I'm not asking whether it does more harm than good. I'm asking — what good is there at all?"*
 - **The no-sacrifice reveal:** *"There's nothing to give up; on the contrary, you are facing freedom."*
 - **The happiness redefinition:** *"People choose the happier option — the whole argument is in the '-er.'"* → Make "but I'm miserable" into confirmation, not rebuttal.
-- **The autonomy/permission close:** *"You can do whatever you want. But will you?"* → Granting the freedom to relapse proves the desire is gone.
+- **The autonomy/permission close:** *"You can do whatever you want. But will you?"* → Granting the freedom to relapse proves the desire is gone. *(Freedom-Model register — brief-level override only; Carr's default close is the commanded vow and the instant ALL-CAPS congratulation, per Fork 2.)*
 - **The dignity line:** *"It's a fallacy that you're weak. You were outgunned by an engineered trap."*
 - **The self-discovery thesis:** *"Freedom comes from understanding where the desire comes from, not from trying to end it."*
 - **The reframe of the goal:** *"You won't just be free; you'll be happy to be free."*
@@ -415,7 +415,7 @@ These are the *shapes* that work — drawn from the three books. **Do not copy t
 - [ ] Is the tone **warm to the reader, harsh to the trap** — zero shame, zero lecture?
 - [ ] Did I **reassign every benefit** I touched, conceding nothing real to the behavior?
 - [ ] Is **willpower** absent as a solution (and reframed as a symptom where it appears)?
-- [ ] Did I **ask more than I asserted**, letting the reader reach the conclusion?
+- [ ] Did I run the **trap questions inside a frame of flat settled-fact assertion** — Carr's balance (§9): "The fact is..." delivery for reframes, Socratic traps for the reader's own evidence?
 - [ ] Are my **analogies original** to this behavior (not lifted from caffeine/porn)?
 - [ ] Did every scare **land at full Carr force and then get disowned** (Fork 3)? Are the **mechanism characters** doing their work (Fork 1)? No **"instead"/"giving up"** phrasing?
 - [ ] If this is a back-half chapter, does it **guard the belief** and **pre-forgive slips** without licensing them?

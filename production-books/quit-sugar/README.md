@@ -1,7 +1,7 @@
 # Quit Sugar — working title
 
 **Target behavior:** refined/added sugar & junk-carb compulsion ("bad sugar")
-**Status:** CALIBRATION — iteration loop live (`/PROGRAM.md`). Accepted master plan R2 in place.
+**Status:** CALIBRATION — iteration loop live (`/PROGRAM.md`). ⚠️ framing.md + master plan R2 were produced under the RETIRED sanitized register — iter-001 regenerates both under the v3 Carr defaults before writing (PROGRAM §4.0).
 **Created:** 2026-07-10
 Pipeline position: brief → research → framing → **planning** → drafting ch.N → done
 
@@ -13,9 +13,9 @@ The factory-calibration book: written by the normal pipeline, measured against t
 - [x] `research/sources/` — retained rights-audited source packets (NO Carr/Easyway-derivative sources — PROGRAM §7)
 - [x] `research/lived-experience.md` — synthesized bank
 - [x] `research/scientific-evidence.md` — synthesized bank (contested findings tagged)
-- [x] `framing.md` — fork positions, redefinition (the Bad-Sugar line), personas, mantra seeds
-- [x] `master-plan.md` — §B8 book sheets FIRST, then chapter specs with word budgets (PROGRAM §4)
-- [x] `master-plan-review.md` — reviewer critique iterated to "fit to write from" (required)
+- [ ] `framing.md` — STALE (old register): re-decide fork positions to style guide v3 Carr defaults in iter-001
+- [ ] `master-plan.md` — STALE (old register): regenerate in iter-001 under v3 assets (PROGRAM §4.0)
+- [ ] `master-plan-review.md` — one reviewer cycle on the regenerated plan
 - [ ] `chapters/` — `chapter-01.md` … (Stage A: chapters 1–3 only; Stage B: full book)
 
 ## Canonical references (global — read, never copy in)

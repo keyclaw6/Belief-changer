@@ -48,7 +48,26 @@ def build_writer_prompt(writer_tmpl, style_guide, plan_text, prev_chapter, slug,
                   prev_chapter]
     else:
         parts += ["\n\n===== INPUT 3: (none — this is Chapter 1) =====\n"]
+    parts += ["\n\n===== API OUTPUT CONTRACT (supersedes any save/report "
+              "instructions above) =====\n",
+              "You are running over a raw API with no filesystem. Return ONE "
+              "thing: the complete final chapter text in book prose, starting "
+              "with the chapter heading line. No preamble, no completion "
+              "report, no word counts, no code fences. Your entire reply is "
+              "saved verbatim as the chapter file."]
     return "".join(parts)
+
+
+def _clean_chapter(raw: str) -> str:
+    text = (raw or "").strip()
+    if text.startswith("```"):
+        lines = text.splitlines()
+        if lines and lines[0].startswith("```"):
+            lines = lines[1:]
+        if lines and lines[-1].strip().startswith("```"):
+            lines = lines[:-1]
+        text = "\n".join(lines).strip()
+    return text
 
 
 def write_chapters(cfg, book, sel):
@@ -73,9 +92,15 @@ def write_chapters(cfg, book, sel):
         print(f"[run] writing ch{n} ({title!r}) via {model} ...")
         # Generous ceiling: a full chapter is a few thousand words of completion.
         raw = ME.chat(base_url, key, model, content, reasoning, max_tokens=16000, temperature=0.7)
+        text = _clean_chapter(raw)
+        nwords = len(E.words(text))
+        if nwords < 800:
+            raise SystemExit(f"[run] writer returned {nwords} words for ch{n} — that is a "
+                             "report or refusal, not a chapter. NOT saved. Re-dispatch "
+                             "(check the API OUTPUT CONTRACT reached the model).")
         out = ch_dir / f"chapter-{n:02d}.md"
-        out.write_text(raw.strip() + "\n", encoding="utf-8")
-        print(f"[run] wrote {out} ({len(E.words(raw))} words)")
+        out.write_text(text + "\n", encoding="utf-8")
+        print(f"[run] wrote {out} ({nwords} words)")
     return True
 
 
@@ -103,6 +128,8 @@ def main():
     ap.add_argument("--iter", type=int, required=True)
     ap.add_argument("--hypothesis", default="")
     ap.add_argument("--no-write", action="store_true", help="skip RUN; score+gate existing chapters")
+    ap.add_argument("--score-now", action="store_true",
+                    help="skip the stop-for-review pause and score immediately after writing")
     ap.add_argument("--config", default=None)
     a = ap.parse_args()
 
@@ -124,6 +151,16 @@ def main():
             print("[run] stopping before SCORE (no chapters were written). "
                   "Write them manually per the instructions above, then re-run with --no-write.")
             sys.exit(2)
+        if not a.score_now:
+            print("[run] First drafts written. PROGRAM §4.1: run <=2 reviewer cycles per "
+                  "chapter now (fresh subagents on prompts/chapter-reviewer.md; after the "
+                  "2nd REVISE proceed with the latest draft and note residual blockers in "
+                  "loop/learnings.md). Then resume:")
+            print(f"[run]   python3 scripts/loop/run_iteration.py --book {book} --chapters "
+                  f"{a.chapters} --iter {a.iter} --no-write --hypothesis \"{a.hypothesis}\"")
+            print("[run] (Scoring first drafts directly is only for controls/baselines: "
+                  "re-run with --score-now.)")
+            sys.exit(0)
 
     py = sys.executable or "python3"
     # Step 2 SCORE.
@@ -142,8 +179,9 @@ def main():
     rc_gate = run_step([py, str(HERE.parent / "gate.py"), "--iter", str(a.iter),
                         "--hypothesis", a.hypothesis]
                        + (["--config", a.config] if a.config else []))
-    print("[run] Now do Step 4 RECORD by hand: append the results.tsv row is automatic, "
-          "but WRITE the hypothesis outcome (pass or fail) into loop/learnings.md.")
+    print("[run] Gate exit 0 = decision made (verdict is in the row/stdout, incl. REVERT). "
+          "Now RECORD: write the hypothesis outcome into loop/learnings.md, run any "
+          "printed revert commands, then COMMIT per PROGRAM §4.5.")
     sys.exit(rc_gate)
 
 

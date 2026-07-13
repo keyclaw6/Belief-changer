@@ -25,6 +25,7 @@ import repetition as R       # noqa: E402
 import mantra_check as MC     # noqa: E402
 import loopcfg               # noqa: E402
 import judges                # noqa: E402
+import planctx               # noqa: E402
 
 BUDGET_RE = re.compile(r"\*\*CH-(\d+)\*\*.*?\|\s*([\d,]+)\s*\|\s*$")
 
@@ -75,19 +76,6 @@ def load_reference(cfg):
     ref_chapters = E.load_chapters(ref_dir, exts=(".txt", ".md"))
     ref_metrics = json.loads((ref_dir / "reference-metrics.json").read_text(encoding="utf-8"))
     return ref_dir, ref_chapters, ref_metrics
-
-
-def build_pairs(ours_chapters, ref_chapters, sel, offset):
-    """(label, ours_text, ref_text) for each selected chapter -> matched real chapter."""
-    pairs = []
-    for n in sel:
-        ref_pos = n + offset
-        if ref_pos > len(ref_chapters):
-            continue
-        ours_text = E.strip_markdown(ours_chapters[n - 1][1])
-        ref_text = ref_chapters[ref_pos - 1][1]
-        pairs.append((f"ch{n:02d}", ours_text, ref_text))
-    return pairs
 
 
 def stylometrics(ours, ref_metrics, sel, offset):
@@ -170,14 +158,27 @@ def main():
     length_rows, length_fails = length_check(ours, sel, budgets, band)
     hard_fails += length_fails
 
+    # --- HARD CHECK 4: near-copy vs matched reference (paraphrase-spaced
+    # copying defeats exact 12-grams; word-sequence similarity does not) ---
+    pairs = planctx.build_pairs(ours_chapters, ref_chapters, sel, offset,
+                                plan_text, a.control_ref)
+    near_rows = []
+    if not a.control_ref:
+        trip = float(cfg.get("near_copy_tripwire", 0.5))
+        for lbl, ours_text, ref_text, _ in pairs:
+            r = planctx.near_copy_ratio(ours_text, ref_text)
+            near_rows.append({"chapter": lbl, "ratio": r, "tripwire": trip})
+            if r > trip:
+                hard_fails.append(f"near-copy: {lbl} word-sequence similarity "
+                                  f"{r} > {trip}")
+
     hard_ok = not hard_fails
 
     # --- DIAGNOSTICS (never gate) ---
     style_rows = stylometrics(ours, ref_metrics, sel, offset)
 
     # --- REWARD (reference-anchored rubric; judges = native Sol subagents) ---
-    pairs = build_pairs(ours_chapters, ref_chapters, sel, offset)
-    labels = [lbl for lbl, _, _ in pairs]
+    labels = [lbl for lbl, _, _, _ in pairs]
     iter_name = f"{a.iter:03d}" if a.iter is not None else "adhoc"
     rubric = Path(cfg["judge_rubric"]).read_text(encoding="utf-8")
     missing = judges.missing_verdicts(cfg, labels, iter_name)
@@ -194,7 +195,7 @@ def main():
         "chapters_checked": sel, "control_ref": a.control_ref,
         "reward": reward, "hard_ok": hard_ok, "hard_fails": hard_fails,
         "checks": {"originality": cross, "mantra": mantra_res, "repetition_within": within,
-                   "length": length_rows},
+                   "length": length_rows, "near_copy": near_rows},
         "diagnostics": {"stylometrics": style_rows},
         "judges": {"status": status, "rubric": rub, "missing": missing},
     }
@@ -234,8 +235,9 @@ def _report(p):
         print(f"        {r['metric']:<26}{str(r['ours']):>10}{str(r['ref']):>10}")
     j = p["judges"]
     if j["status"] == "WAITING-FOR-VERDICTS":
-        print(f"[reward] WAITING-FOR-VERDICTS — {len(j['missing'])} verdicts missing; "
-              "task files emitted (see [judges] lines above).")
+        print(f"[reward] WAITING-FOR-VERDICTS — {len(j['missing'])} verdicts missing "
+              "(task -> verdict mapping printed above); missing stems: "
+              + ", ".join(j["missing"][:12]))
     else:
         r = j["rubric"]
         print(f"[reward] carr-likeness composite = {r['reward']}  "

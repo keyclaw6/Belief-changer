@@ -9,7 +9,11 @@ results ledger, then decides:
   REVERT     reward < best - epsilon — prints the exact commands to undo the
              iteration's tunable-asset changes; the operator runs them.
 
-Every decided verdict appends one row to loop/results.tsv.
+Every decided verdict appends one row to loop/results.tsv and exits 0 —
+the exit code means "decision made", never pass/fail; the verdict lives in
+the row and stdout. Exit 2 = NO-DECISION (verdicts missing). The amendment
+under test must be UNCOMMITTED (PROGRAM §4: amend -> run -> score -> gate ->
+commit), so the printed `git checkout` genuinely restores the accepted state.
 
   python3 scripts/loop/gate.py --iter 7 --hypothesis "H-001 word budgets"
   python3 scripts/loop/gate.py            # newest iter-*.json
@@ -82,12 +86,13 @@ def find_latest_score(scores_dir: Path):
     return cands[-1]
 
 
-def _print_revert(iter_no):
-    print("[gate] To undo this iteration's tunable-asset changes, run:")
-    for path in TUNABLE:
+def _print_revert(iter_no, assets=None, book=""):
+    print("[gate] The amendment was UNCOMMITTED (PROGRAM §4) — restore the accepted state:")
+    for path in (assets or TUNABLE):
         print(f"        git checkout -- {path}")
-    print("        # if THIS iteration re-ran the plan: git checkout -- "
-          "production-books/<slug>/master-plan.md")
+    if book and not str(book).startswith("CONTROL"):
+        print(f"        git checkout -- {book}/master-plan.md   # only if this "
+              "iteration re-ran the plan")
     print(f"        rm loop/scores/iter-{str(iter_no).zfill(3)}.json")
 
 
@@ -95,6 +100,8 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--iter", type=int, help="iteration number (else newest iter-*.json)")
     ap.add_argument("--hypothesis", default="", help="the ONE hypothesis this iteration tested")
+    ap.add_argument("--asset", default="", help="comma-separated path(s) this iteration amended "
+                    "(sharpens the printed revert commands)")
     ap.add_argument("--config", default=None)
     a = ap.parse_args()
 
@@ -110,6 +117,8 @@ def main():
     score = json.loads(score_path.read_text(encoding="utf-8"))
     iter_no = a.iter if a.iter is not None else score_path.stem.split("-")[-1]
 
+    assets = [s.strip() for s in a.asset.split(",") if s.strip()] or None
+    book = score.get("book") or ""
     hard_ok = bool(score.get("hard_ok"))
     reward = score.get("reward")
     judges_blk = score.get("judges") or {}
@@ -137,7 +146,7 @@ def main():
     if not hard_ok:
         verdict = "FAIL-HARD"
         print("[gate] FAIL-HARD — hard checks failed; reward not consulted. Revert the amendment.")
-        _print_revert(iter_no)
+        _print_revert(iter_no, assets, book)
     elif best is None:
         verdict = "BASELINE"
         print("[gate] BASELINE — first scored iteration; accepted as the starting point.")
@@ -151,7 +160,7 @@ def main():
     else:
         verdict = "REVERT"
         print(f"[gate] REVERT — reward {reward} < best {best} - epsilon {epsilon}.")
-        _print_revert(iter_no)
+        _print_revert(iter_no, assets, book)
 
     row = {"iter": iter_no,
            "timestamp_utc": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
@@ -160,10 +169,10 @@ def main():
            "hypothesis": a.hypothesis, "reward": reward, "hard_ok": hard_ok,
            "verdict": verdict, "worst_dimension": worst,
            "top_suggestion": _clean(top_sugg),
-           "notes": Path(score.get("book") or "").name or score.get("book", "")}
+           "notes": Path(book).name or book}
     append_row(tsv, row)
     print(f"[gate] appended {verdict} row to {tsv}")
-    sys.exit({"BASELINE": 0, "NEW-BEST": 0, "KEEP": 0, "REVERT": 1, "FAIL-HARD": 1}[verdict])
+    sys.exit(0)  # decided = 0, always; the verdict is the row, not the exit code
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 # Chapter Reviewer — sub-agent prompt
 
-Dispatch this (fresh context, strongest available model) after each chapter draft. The writer-reviewer loop repeats until ACCEPT; only then does the next chapter begin. Fill the bracketed values.
+Dispatch this (fresh context, strongest available model) after each chapter draft. The writer-reviewer loop repeats until ACCEPT **or the loop's cycle cap** (PROGRAM §4.1: ≤2 reviewer cycles per chapter — after the second REVISE, the latest draft proceeds to scoring and residual blockers are noted in `loop/learnings.md`). Fill the bracketed values.
 
 ---
 
