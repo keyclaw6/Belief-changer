@@ -16,3 +16,7 @@ __pycache__/
 
 # Optional local MLflow lens (HARNESS §10) — git is the canonical store.
 calibration/mlruns/
+
+# dotenvx private keys stay outside Git; encrypted .env files are tracked.
+.env.keys
+.env.keys.*
