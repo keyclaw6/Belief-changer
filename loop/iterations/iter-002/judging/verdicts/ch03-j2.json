@@ -1,0 +1,42 @@
+{
+  "scores": {
+    "voice_certainty": 5,
+    "method_execution": 8,
+    "structure_anatomy": 7,
+    "repetition_mantra": 7,
+    "emotional_register": 6,
+    "rhythm_texture": 6
+  },
+  "evidence": {
+    "voice_certainty": "\"If it doesn't — and I believe the evidence will show it doesn't\" hedges a conclusion the reference would state as settled fact, while the source-status caveats sound editorial rather than spoken.",
+    "method_execution": "\"What does BAD SUGAR actually do FOR you?\" cleanly shifts the burden of proof and the finish-line analogy reassigns borrowed credit, though most listed objections are deferred rather than sprung and answered.",
+    "structure_anatomy": "The preview, titled progression, ALL-CAPS peak, 3RD INSTRUCTION, and SUMMARY match the anatomy, though \"THE INVESTIGATION MENU\" becomes a long catalogue that stalls the climb.",
+    "repetition_mantra": "MN-04 receives an argue-then-compress debut around taste and irreplaceability, and MN-01, MN-02, and MN-03 echo verbatim, but MN-01 appears three times and the SUMMARY dumps frozen fragments instead of integrating them.",
+    "emotional_register": "\"YOU ARE NOT PREPARING FOR A SACRIFICE\" and the elation instruction sustain escape, but the chapter postpones every hard consequence instead of delivering a wound-and-bandage fear beat.",
+    "rhythm_texture": "\"The harms do not need to win a close vote. They need an empty column to walk into.\" is an effective killer-line pair, but quotation-status parentheticals and four competing analogy systems repeatedly break the flow."
+  },
+  "worst_dimension": "voice_certainty",
+  "gap_summary": "The candidate sounds like a cautious, source-labeled research prospectus for proofs to come, whereas the reference sounds like a guide stating settled truths and forcing each objection into an immediate verdict.",
+  "suggestions": [
+    {
+      "suggestion": "Replace the hedge cluster around \"If it does... If it doesn't — and I believe...\" and \"I am not asking you to believe...\" with one flat assertion, one cheerful command, and one trap question whose only honest answer concedes the chapter's thesis.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Change the reader-facing assignment behind \"THE INVESTIGATION MENU\": keep provenance in research inputs, but let chapter prose ventriloquize objections without \"Exact participant quotation\" and \"Synthesis line\" annotations.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Compress the inventory under \"THE INVESTIGATION MENU\" into a rapid pulse, then immediately drive two representative claims through objection, trap question, credit reassignment, and one repeated verdict instead of announcing that future chapters will examine them.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Keep \"A RECEIPT WITH TWO COLUMNS\" as the carrying analogy and cut the defendant, finish-line, station-board, and con-artist systems unless each advances a new beat; flag metaphor changes that reset rather than deepen momentum.",
+      "asset": "chapter-reviewer"
+    },
+    {
+      "suggestion": "Where the text says hard facts \"will arrive in their own chapter,\" require a brief blunt consequence beat followed immediately by disowning fear as the motivator, so escape relief bandages a real wound instead of a deferred one.",
+      "asset": "style-guide"
+    }
+  ]
+}

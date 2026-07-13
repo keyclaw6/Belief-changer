@@ -1,0 +1,396 @@
+{
+ "campaign": "factory-v3-rubric-1",
+ "instrument_version": "carr-likeness-rubric-1",
+ "book": "production-books/quit-sugar",
+ "chapters_checked": [
+  1,
+  2,
+  3
+ ],
+ "control_ref": false,
+ "reward": 0.6658,
+ "hard_ok": true,
+ "hard_fails": [],
+ "checks": {
+  "originality": {
+   "ours_ngrams": 7699,
+   "overlap_ngrams": 1,
+   "overlap_ratio": 0.00013,
+   "tripwire": 0.003,
+   "tripped": false,
+   "samples": [
+    "the fact that you are reading this book"
+   ]
+  },
+  "mantra": {
+   "mantras": [
+    {
+     "archetype": "MN-01",
+     "wording": "You can test whether BAD SUGAR owns any special or irreplaceable pleasure, without denying pleasant taste or giving up your right to choose.",
+     "debut": 1,
+     "schedule": [
+      2,
+      3,
+      15,
+      18
+     ],
+     "found_in": [
+      1,
+      2,
+      3
+     ],
+     "counts": {
+      "1": 2,
+      "2": 2,
+      "3": 3
+     }
+    },
+    {
+     "archetype": "MN-02",
+     "wording": "without deprivation, without battle, and without a lifetime of rules",
+     "debut": 1,
+     "schedule": [
+      3,
+      5,
+      17,
+      18,
+      20
+     ],
+     "found_in": [
+      1,
+      3
+     ],
+     "counts": {
+      "1": 2,
+      "3": 2
+     }
+    },
+    {
+     "archetype": "MN-03",
+     "wording": "the sugar trap",
+     "debut": 2,
+     "schedule": [
+      3,
+      21
+     ],
+     "found_in": [
+      2,
+      3
+     ],
+     "counts": {
+      "2": 7,
+      "3": 15
+     }
+    },
+    {
+     "archetype": "MN-04",
+     "wording": "a special pleasure or rescue",
+     "debut": 3,
+     "schedule": [
+      4,
+      7,
+      18
+     ],
+     "found_in": [
+      3
+     ],
+     "counts": {
+      "3": 3
+     }
+    },
+    {
+     "archetype": "MN-05",
+     "wording": "The Sugar Showman feeds the Sugar Flea.",
+     "debut": 6,
+     "schedule": [
+      7,
+      8,
+      13,
+      15,
+      16,
+      18,
+      19,
+      20
+     ],
+     "found_in": [],
+     "counts": {}
+    },
+    {
+     "archetype": "MN-06",
+     "wording": "a nagging, bargaining, slightly urgent sense that this moment is missing something",
+     "debut": 6,
+     "schedule": [
+      7,
+      9,
+      10,
+      15,
+      19
+     ],
+     "found_in": [],
+     "counts": {}
+    },
+    {
+     "archetype": "MN-07",
+     "wording": "anticipating, bargaining, and starting over",
+     "debut": 4,
+     "schedule": [
+      5,
+      10,
+      16,
+      17,
+      18
+     ],
+     "found_in": [],
+     "counts": {}
+    },
+    {
+     "archetype": "MN-08",
+     "wording": "When the benefit loses its credit, the battle loses its job.",
+     "debut": 5,
+     "schedule": [
+      7,
+      8,
+      9,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+     ],
+     "found_in": [],
+     "counts": {}
+    },
+    {
+     "archetype": "MN-09",
+     "wording": "You can close the daily sugar debate without policing every molecule, fighting yourself, or treating one accidental bite as failure.",
+     "debut": 1,
+     "schedule": [
+      11,
+      17,
+      18,
+      20
+     ],
+     "found_in": [
+      1
+     ],
+     "counts": {
+      "1": 2
+     }
+    },
+    {
+     "archetype": "MN-10",
+     "wording": "WHAT A RELIEF \u2014 THE SUGAR TRAP IS OVER. I'M FREE!",
+     "debut": 19,
+     "schedule": [
+      20,
+      21
+     ],
+     "found_in": [],
+     "counts": {}
+    }
+   ],
+   "chapters_checked": [
+    1,
+    2,
+    3
+   ],
+   "chapters_without_mantra": [],
+   "failures": []
+  },
+  "repetition_within": {
+   "repeated_ngrams": 0,
+   "spans_top": [],
+   "hard_fails": [],
+   "whitelist_size": 10
+  },
+  "length": [
+   {
+    "n": 1,
+    "words": 2394,
+    "budget": null,
+    "ok": true
+   },
+   {
+    "n": 2,
+    "words": 2529,
+    "budget": null,
+    "ok": true
+   },
+   {
+    "n": 3,
+    "words": 2996,
+    "budget": null,
+    "ok": true
+   }
+  ],
+  "near_copy": [
+   {
+    "chapter": "ch01",
+    "ratio": 0.0136,
+    "tripwire": 0.5
+   },
+   {
+    "chapter": "ch02",
+    "ratio": 0.0219,
+    "tripwire": 0.5
+   },
+   {
+    "chapter": "ch03",
+    "ratio": 0.04,
+    "tripwire": 0.5
+   }
+  ]
+ },
+ "diagnostics": {
+  "stylometrics": [
+   {
+    "metric": "mean_chapter_words",
+    "ours": 2639.7,
+    "ref": 3725.3
+   },
+   {
+    "metric": "mean_sentence_words",
+    "ours": 14.4,
+    "ref": 18.4
+   },
+   {
+    "metric": "pct_short_sentences",
+    "ours": 37.8,
+    "ref": 14.7
+   },
+   {
+    "metric": "questions_per_100_sents",
+    "ours": 8.1,
+    "ref": 11.3
+   },
+   {
+    "metric": "second_person_per_1000",
+    "ours": 31.0,
+    "ref": 42.4
+   },
+   {
+    "metric": "first_person_per_1000",
+    "ours": 9.4,
+    "ref": 5.1
+   }
+  ]
+ },
+ "judges": {
+  "status": "SCORED",
+  "rubric": {
+   "reward": 0.6658,
+   "per_chapter": [
+    {
+     "chapter": "ch01",
+     "composite": 0.615,
+     "dims": {
+      "voice_certainty": 4.0,
+      "method_execution": 6.5,
+      "structure_anatomy": 7.5,
+      "repetition_mantra": 9.0,
+      "emotional_register": 4.0,
+      "rhythm_texture": 6.5
+     },
+     "gap_summaries": [
+      "The candidate treats the reader to a careful, reversible investigation, while the reference drives hard facts and blunt certainty through fear into emphatic relief and escape.",
+      "The biggest gap is the candidate's cautious, contractual insistence that every conclusion remain provisional, where the reference drives the same reader warmth with blunt certainty and escalating verdicts."
+     ]
+    },
+    {
+     "chapter": "ch02",
+     "composite": 0.715,
+     "dims": {
+      "voice_certainty": 6.0,
+      "method_execution": 8.0,
+      "structure_anatomy": 8.0,
+      "repetition_mantra": 9.0,
+      "emotional_register": 5.0,
+      "rhythm_texture": 7.0
+     },
+     "gap_summaries": [
+      "The largest gap is nerve: the reference states alarming facts with total certainty and then releases the reader from fear, while the candidate substitutes caveats, clinical qualifications, and deferred conclusions.",
+      "The candidate keeps stepping out of its confidence-trick argument to qualify evidence and promise later proof, whereas the reference states hard conclusions with full nerve and disowns fear only afterward."
+     ]
+    },
+    {
+     "chapter": "ch03",
+     "composite": 0.6675,
+     "dims": {
+      "voice_certainty": 5.5,
+      "method_execution": 8.0,
+      "structure_anatomy": 7.0,
+      "repetition_mantra": 7.5,
+      "emotional_register": 5.5,
+      "rhythm_texture": 6.5
+     },
+     "gap_summaries": [
+      "The candidate's carefully qualified, provenance-conscious argument lacks the reference's blunt nerve: hard consequences are deferred instead of delivered at full force and immediately disowned as the motive.",
+      "The candidate sounds like a cautious, source-labeled research prospectus for proofs to come, whereas the reference sounds like a guide stating settled truths and forcing each objection into an immediate verdict."
+     ]
+    }
+   ],
+   "suggestions": [
+    {
+     "suggestion": "Replace the hedge cluster around 'That question stays open,' 'Does looking guarantee a result? No,' and 'the possibility \u2014 not the guarantee' with one brief open-mind invitation followed by flat conclusions and direct answers to the reader's objections, so the chapter's belief move actually lands.",
+     "asset": "chapter-writer",
+     "weight": 5,
+     "count": 1,
+     "chapters": [
+      "ch01"
+     ]
+    },
+    {
+     "suggestion": "Replace the repeated hedge-contract sequence \u2014 \"If the investigation finds...\", \"Does looking guarantee a result? No\", and \"the possibility \u2014 not the guarantee\" \u2014 with one ventriloquized objection, a trap question, and a flat settled-fact answer.",
+     "asset": "style-guide",
+     "weight": 5,
+     "count": 1,
+     "chapters": [
+      "ch01"
+     ]
+    },
+    {
+     "suggestion": "Delete the evidence-reporting tails after \"the holding, the lapse, the slide\" and \"reduced decision time and not missing desserts\"\u2014especially \"one person's experience, not everyone's\" and \"not a promise and not a prediction\"\u2014and state the observed pattern once in a settled voice before posing the trap question.",
+     "asset": "chapter-writer",
+     "weight": 5,
+     "count": 1,
+     "chapters": [
+      "ch02"
+     ]
+    },
+    {
+     "suggestion": "Remove the narrator's evidence-lawyer interruptions\u2014\"That is one person's experience, not everyone's,\" \"For many of us,\" and \"not a promise and not a prediction\"\u2014once a claim is within its evidence boundary; either state the bounded observation flatly or cut it, so the chapter never retreats from its own verdict.",
+     "asset": "style-guide",
+     "weight": 5,
+     "count": 1,
+     "chapters": [
+      "ch02"
+     ]
+    },
+    {
+     "suggestion": "Strip the parenthetical source-status labels from THE INVESTIGATION MENU and let each objection speak directly in the reader's voice; keep provenance outside chapter prose so the spell is not broken by research-report language.",
+     "asset": "style-guide",
+     "weight": 5,
+     "count": 1,
+     "chapters": [
+      "ch03"
+     ]
+    }
+   ],
+   "worst_dimensions": [
+    {
+     "dimension": "emotional_register",
+     "votes": 4
+    },
+    {
+     "dimension": "voice_certainty",
+     "votes": 2
+    }
+   ],
+   "n_verdicts": 6,
+   "judge_model": "gpt-5.6-sol",
+   "judge_k": 2
+  },
+  "missing": []
+ }
+}

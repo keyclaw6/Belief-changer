@@ -1,2 +1,3 @@
 iter	timestamp_utc	campaign	instrument	hypothesis	reward	hard_ok	verdict	worst_dimension	top_suggestion	notes
 1	2026-07-13T20:20:17+00:00	factory-v3-rubric-1	carr-likeness-rubric-1	Carr-fidelity baseline	0.6217	False	FAIL-HARD	emotional_register	Rewrite the repeated 'test' and 'investigation' framing, especially the concession 'What you do with that clar	quit-sugar
+2	2026-07-13T22:09:04+00:00	factory-v3-rubric-1	carr-likeness-rubric-1	Keep conditionals in objections; answer with settled fact → trap question → cheerful command	0.6658	True	BASELINE	emotional_register	Replace the hedge cluster around 'That question stays open,' 'Does looking guarantee a result? No,' and 'the p	quit-sugar

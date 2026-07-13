@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 6,
+    "method_execution": 8,
+    "structure_anatomy": 8,
+    "repetition_mantra": 9,
+    "emotional_register": 5,
+    "rhythm_texture": 7
+  },
+  "evidence": {
+    "voice_certainty": "\"That is one person's experience, not everyone's\" and \"not a promise and not a prediction\" repeatedly interrupt otherwise firm assertions with research disclaimers.",
+    "method_execution": "The question \"If eating BAD SUGAR is genuinely your free choice ... then why are you reading this book?\" reassigns the problem from weakness to a confidence trick and lands the inversion.",
+    "structure_anatomy": "Preview, escalating titled sections, the assigned 2ND INSTRUCTION, an all-caps verdict, and SUMMARY all appear in the planned sequence.",
+    "repetition_mantra": "\"the sugar trap\" receives an argue-then-name debut and recurs verbatim, while MN-01 is echoed exactly.",
+    "emotional_register": "\"We were not foolish. We were conned.\" offers escape framing, but no hard consequence-and-fear passage is delivered and then disowned as motivation.",
+    "rhythm_texture": "\"We were not foolish. We were conned.\" has Carr-like snap, but long caveats and repeated roadmap paragraphs stall the analogy-driven momentum."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate keeps stepping out of its confidence-trick argument to qualify evidence and promise later proof, whereas the reference states hard conclusions with full nerve and disowns fear only afterward.",
+  "suggestions": [
+    {
+      "suggestion": "Remove the narrator's evidence-lawyer interruptions—\"That is one person's experience, not everyone's,\" \"For many of us,\" and \"not a promise and not a prediction\"—once a claim is within its evidence boundary; either state the bounded observation flatly or cut it, so the chapter never retreats from its own verdict.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "Add a deliberate wound-and-bandage beat before \"YOUR SECOND INSTRUCTION\": state one concrete high-stakes consequence at full force, then immediately tell the reader not to use fear and turn that force into relief at escape.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Make one analogy carry the whole belief move: \"THE COUNTERFEIT MEMBERSHIP CARD\" and the later fraudulent-investment example prove the same point, so cut the second explanation, escalate the card through trap questions, and compress it into an all-caps verdict.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Flag roadmap prose such as \"that is the work of the chapters ahead\" and \"All of that is coming\"; require each section to end in a present-tense concession or verdict instead of postponing its force to later chapters.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

@@ -163,6 +163,8 @@ Quoted participant wording is exact where marked. Synthesis lines are original r
 | J-21 | “I need a substitute for the treat I've lost.” | Deprivation objection; logic only, no empirical claim. | CH-16 and CH-20 |
 | J-22 | “I got away with it, so a planned exception is safe.” | Relapse rationalization; logic only, bounded by EV-L08. | CH-20 |
 
+**Verbatim license:** CH-03's investigation menu is the sole chapter-prose location for the exact wording of J-01–J-22. Owning demolition chapters keep the same claims, evidence, and limits but render the reader voice in fresh wording; no J entry is a mantra.
+
 ## Mantra sheet
 
 Only these ten phrases may function as frozen mantras. The named lexicon outside this table may recur as tokens but is not subject to a prescribed occurrence count.
@@ -368,7 +370,7 @@ These are original teaching images unless marked sourced. They compress logic; n
 - **Belief job:** dissolve complacent “I simply choose it” without blaming the reader. The need for bargaining, failed reduction, or a book exposes a confidence trick, not stupidity.
 - **Objection resolved:** “I enjoy it and can stop whenever I decide.”
 - **Arc and curves:** loaded-choice dissolution; freedom seeded, demolition rising.
-- **Reader:** PR-01, PR-02, PR-06. Voice J-02 and “I don't want a perfect streak. I want the debate to stop.”
+- **Reader:** PR-01, PR-02, PR-06. Paraphrase J-02's failed-reduction/taste claim without repeating its participant wording; use “I don't want a perfect streak. I want the debate to stop.” as the chapter's exact reader voice.
 - **Evidence:** EV-L01, EV-L08, EV-L13. Do not turn a few accounts into prevalence or compulsion proof.
 - **Mantras:** debut MN-03; echo MN-01.
 - **Instruction:** IN-02.
@@ -380,10 +382,10 @@ These are original teaching images unless marked sourced. They compress logic; n
 
 ### CH-03 — What Does It Do FOR You?
 
-- **Belief job:** complete the axis switch from “does it do more harm than good?” to “what unique good does it do at all?” Print J-01–J-22 as the investigation menu, grouped without demolishing all of them yet.
+- **Belief job:** complete the axis switch from “does it do more harm than good?” to “what unique good does it do at all?” Print J-01–J-22 as the investigation menu, grouped without demolishing all of them yet; this spends each entry's sole verbatim chapter-prose use.
 - **Objection resolved:** “The benefits outweigh the downsides.”
 - **Arc and curves:** evaluation-axis switch; freedom seeded, demolition rising.
-- **Reader:** all personas. Voice must include exact J-01–J-04 with their source status and selected synthesis lines without fake attribution.
+- **Reader:** all personas. Voice must include exact J-01–J-04 with their source status and selected synthesis lines without fake attribution; later chapter owners paraphrase these claims.
 - **Evidence:** EV-L01, EV-L02, EV-L04, EV-L05, EV-L15, EV-S06.
 - **Mantras:** debut MN-04; echo MN-01, MN-02, MN-03.
 - **Instruction:** IN-03.
@@ -443,7 +445,7 @@ These are original teaching images unless marked sourced. They compress logic; n
 - **Belief job:** concede pleasant taste and calories while demolishing the leap to unique pleasure, meal completion, or indispensable quick energy. Anticipation may be rehearsed; quieting it does not prove need.
 - **Objection resolved:** J-01, J-02, J-06, and “dessert completes the meal.”
 - **Arc and curves:** benefit demolition; freedom restrained, demolition peak.
-- **Reader:** PR-01, PR-03. Exact reader voices J-01 and J-02.
+- **Reader:** PR-01, PR-03. Render the claims behind J-01 and J-02 in fresh language; their exact participant wording appears only in CH-03.
 - **Evidence:** EV-L01, EV-L02, EV-L03, EV-S02, EV-S06. Weakness that persists routes to RD-04.
 - **Mantras:** echo MN-04, MN-05, MN-06, MN-08.
 - **Instruction:** none.

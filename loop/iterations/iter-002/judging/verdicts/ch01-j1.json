@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 4,
+    "method_execution": 6,
+    "structure_anatomy": 8,
+    "repetition_mantra": 9,
+    "emotional_register": 3,
+    "rhythm_texture": 7
+  },
+  "evidence": {
+    "voice_certainty": "The repeated posture of 'the possibility — not the guarantee' and 'That question stays open' replaces the reference's settled-fact authority with cautious inquiry.",
+    "method_execution": "The chapter lands its assigned correction in 'You are not quitting food' and reassigns credit through the receipt metaphor, but it repeatedly postpones the verdict on whether the alleged benefit is real.",
+    "structure_anatomy": "The preview, escalating titled sections, correctly numbered first instruction, ALL-CAPS climax, and SUMMARY closely reproduce the assigned chapter anatomy.",
+    "repetition_mantra": "All three assigned debut mantras appear verbatim after supporting argument and return intact in the SUMMARY, with no obvious accidental sentence repetition.",
+    "emotional_register": "'Does looking guarantee a result? No' typifies a safe, low-stakes register; the chapter offers freedom without sacrifice but omits the reference's full-force wound, harsh attack on the trap, and fear-then-relief turn.",
+    "rhythm_texture": "Short peaks such as 'Not resistance. Not management.' punctuate fluent paragraphs, and the receipt, line, door, and breakfast images give the abstractions concrete carriers, though the taxonomic passages slow the pull."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate treats the reader to a careful, reversible investigation, while the reference drives hard facts and blunt certainty through fear into emphatic relief and escape.",
+  "suggestions": [
+    {
+      "suggestion": "Replace the hedge cluster around 'That question stays open,' 'Does looking guarantee a result? No,' and 'the possibility — not the guarantee' with one brief open-mind invitation followed by flat conclusions and direct answers to the reader's objections, so the chapter's belief move actually lands.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Insert a wound-and-bandage beat before 'A TEST YOU CAN TAKE WITHOUT RISK': state the behavior's concrete stakes at full force, then explicitly reject fear as the reason to change and pivot immediately to relief at escaping the trap.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Rewrite report-like phrases such as 'The categorical core,' 'The gray savoury edge,' and 'precision, transparency, and a contract' into plain direct-address assertions, short verdicts, and concrete analogies; reserve formal taxonomy for research material rather than narrator voice.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "Add an intermediate ALL-CAPS compression after the long boundary section and make each later section intensify that verdict, instead of allowing definition, evidence, and contract to read as adjacent catalogue items before the lone final climax.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

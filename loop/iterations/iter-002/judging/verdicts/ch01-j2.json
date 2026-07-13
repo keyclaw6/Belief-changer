@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 4,
+    "method_execution": 7,
+    "structure_anatomy": 7,
+    "repetition_mantra": 9,
+    "emotional_register": 5,
+    "rhythm_texture": 6
+  },
+  "evidence": {
+    "voice_certainty": "\"The possibility — not the guarantee\" turns the promise into a cautious evidence contract rather than a settled fact.",
+    "method_execution": "The breakfast-versus-snack comparison makes the impossible all-food project collapse into a bounded target, landing the chapter's central correction.",
+    "structure_anatomy": "The preview, sequential headings, assigned \"1ST INSTRUCTION,\" climactic all-caps verdict, and SUMMARY are present, but the research section detours instead of escalating.",
+    "repetition_mantra": "MN-01, MN-02, and MN-09 appear verbatim after their arguments and echo again in the SUMMARY.",
+    "emotional_register": "\"Without deprivation, without battle, and without a lifetime of rules\" sustains escape framing, but the chapter avoids the reference's hard-fact wound and attack on the trap.",
+    "rhythm_texture": "The receipt, line, breakfast, and open-door images give concrete texture, but long balanced contract sentences blunt the short verdict peaks."
+  },
+  "worst_dimension": "voice_certainty",
+  "gap_summary": "The biggest gap is the candidate's cautious, contractual insistence that every conclusion remain provisional, where the reference drives the same reader warmth with blunt certainty and escalating verdicts.",
+  "suggestions": [
+    {
+      "suggestion": "Replace the repeated hedge-contract sequence — \"If the investigation finds...\", \"Does looking guarantee a result? No\", and \"the possibility — not the guarantee\" — with one ventriloquized objection, a trap question, and a flat settled-fact answer.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "Rebuild \"WHAT WE ALREADY SENSE AND WHAT OTHERS HAVE FOUND\" as an escalation rather than a research vignette: state the wound, force the reader's concession, compress it into an ALL-CAPS verdict, then hand that verdict into the no-risk test.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Replace the soft \"one less spoon\" and label-checking evidence beat with one concentrated hard-fact passage, deliver its fear at full force, then explicitly disown fear as the reason to change and pivot immediately to relief.",
+      "asset": "research"
+    },
+    {
+      "suggestion": "Break the long fair-test and instruction explanations into Carr-like cadence: a flowing argument, a short killer-line pair, and an ALL-CAPS verdict, while preserving the three assigned mantra wordings verbatim.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

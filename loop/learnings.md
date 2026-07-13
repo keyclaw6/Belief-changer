@@ -171,6 +171,7 @@ Chapter 1 craft BEAT the real GSBS 4–0 blind; efficacy lost 1–3; Chapters 2�
 - `prompts/master-plan-skill-v2.md` and `prompts/master-plan-reviewer-v2.md` still contain pre-v3 lines that reject the mandatory Carr personification; the iter-001 agents had to follow the newer PROGRAM/style-guide founder law explicitly.
 - The generated mantra table used semantically clear headers (`Frozen exact wording`, `Echo route`) that the hard-check parser does not accept; the planner repaired them mechanically to `Frozen wording` and `Echo chapters` with no semantic change.
 - `gate.py` checks for a non-null reward before honoring hard-check failure, then prints generic tunable/plan checkout and score-deletion commands even for the zero-amendment cold start. Those commands would restore the explicitly deprecated plan and delete a required iteration record, so no nonexistent amendment was reverted.
+- There is no canonical Opus chapter-revision transport after a reviewer returns `REVISE`; iter-002 required ad-hoc guarded runners, and tuple/JS handoff errors plus one plan-concurrency mismatch wasted model completions without changing files.
 
 ## 2026-07-13 — external pre-flight review: 6 critical + 4 high findings, all fixed
 
@@ -207,3 +208,19 @@ The reference-as-candidate control for Chapters 1–3 scored **1.000** across al
 **Reviewer residuals at the two-cycle cap:** Chapter 1 — mantra infidelity, illicit repetition, missing anatomy, evidence overstatement. Chapter 2 — mantra infidelity, re-argument/job drift, missing anatomy, evidence overstatement. Chapter 3 — mantra infidelity, job drift, narrator hedging, missing anatomy, evidence overstatement. No reviewer found a master-plan spec gap. Plan-review residuals: CH-14 evidence/certainty balance; CH-20 hand-off density.
 
 **Next hypothesis (`chapter-writer`):** The writer contract's investigation/permission framing leaves the narrator conditional and autonomy-led. Require conditionals to remain inside ventriloquized reader objections, then answer each with **settled fact → trap question → cheerful command**, and forbid narrator-side outcome permission or caveat language. Prediction: `emotional_register` and `voice_certainty` rise, sections escalate instead of reopening the case, and the recurring test-language sentence disappears.
+
+### iter-002 — objection-only conditionals
+
+**Outcome:** `BASELINE` at **0.6658** with every hard check green, a **+0.0441** lift over iter-001's diagnostic score. `emotional_register` remained worst (4 votes), followed by `voice_certainty` (2). The kept amendment is `prompts/chapter-writer.md`. A non-semantic plan scheduling defect was corrected during RUN so CH-03 alone owns the exact justification menu; CH-02/CH-07 paraphrase it.
+
+**Judges' top suggestions (verbatim):**
+
+1. `[chapter-writer]` Replace the hedge cluster around 'That question stays open,' 'Does looking guarantee a result? No,' and 'the possibility — not the guarantee' with one brief open-mind invitation followed by flat conclusions and direct answers to the reader's objections, so the chapter's belief move actually lands.
+2. `[style-guide]` Replace the repeated hedge-contract sequence — "If the investigation finds...", "Does looking guarantee a result? No", and "the possibility — not the guarantee" — with one ventriloquized objection, a trap question, and a flat settled-fact answer.
+3. `[chapter-writer]` Delete the evidence-reporting tails after "the holding, the lapse, the slide" and "reduced decision time and not missing desserts"—especially "one person's experience, not everyone's" and "not a promise and not a prediction"—and state the observed pattern once in a settled voice before posing the trap question.
+4. `[style-guide]` Remove the narrator's evidence-lawyer interruptions—"That is one person's experience, not everyone's," "For many of us," and "not a promise and not a prediction"—once a claim is within its evidence boundary; either state the bounded observation flatly or cut it, so the chapter never retreats from its own verdict.
+5. `[style-guide]` Strip the parenthetical source-status labels from THE INVESTIGATION MENU and let each objection speak directly in the reader's voice; keep provenance outside chapter prose so the spell is not broken by research-report language.
+
+**Reviewer residuals at the two-cycle cap:** Chapter 1 — evidence overstatement and scope-definition contradiction. Chapter 2 — spec omission, evidence overstatement, qualifier creep. Chapter 3 — evidence integrity, job drift/assignment trespass, illicit repetition, qualifier creep. The single plan review left later-card mantra-route and J-05 ownership objections; no remaining blocker targeted Chapters 1–3.
+
+**Next hypothesis (`style-guide`):** Provenance narration and source-status caveats make the escaped expert sound like an evidence lawyer. Keep provenance and grading labels outside chapter prose; once the plan places an observation inside its evidence boundary, the narrator must **state the bounded observation flatly or cut it**, preserving contested scope through precise wording rather than retreating caveats. Prediction: `emotional_register` and `voice_certainty` rise without weakening evidence integrity.

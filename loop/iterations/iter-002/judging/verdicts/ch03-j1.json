@@ -1,0 +1,42 @@
+{
+  "scores": {
+    "voice_certainty": 6,
+    "method_execution": 8,
+    "structure_anatomy": 7,
+    "repetition_mantra": 8,
+    "emotional_register": 5,
+    "rhythm_texture": 7
+  },
+  "evidence": {
+    "voice_certainty": "\"If it doesn't — and I believe the evidence will show it doesn't\" hedges a conclusion the reference would deliver as settled fact, while the sourcing labels add an editorial voice.",
+    "method_execution": "\"What does BAD SUGAR actually do FOR you?\" cleanly shifts the burden of proof and the finish-line sign reassigns borrowed credit, though the long objection menu is queued rather than sprung as traps.",
+    "structure_anatomy": "The preview, thesis, escalating headings, all-caps verdict, assigned third instruction, and summary are present, but THE INVESTIGATION MENU becomes a catalogue and the summary ends in unattached phrase fragments.",
+    "repetition_mantra": "The chapter argues into the debut \"a special pleasure or rescue\" and faithfully echoes the assigned promise, triad, and trap name, but raw mantra fragments in the summary feel pasted in rather than earned beats.",
+    "emotional_register": "\"We are not filling in that column today — those facts will arrive in their own chapter\" explicitly postpones the hard wound; escape and elation are strong, but Carr's full-force fear followed by its dismissal is absent.",
+    "rhythm_texture": "The receipt and finish-line sign carry the abstraction and \"The harms do not need to win a close vote\" supplies a sharp peak, but provenance notes and the exhaustive menu repeatedly brake the momentum."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate's carefully qualified, provenance-conscious argument lacks the reference's blunt nerve: hard consequences are deferred instead of delivered at full force and immediately disowned as the motive.",
+  "suggestions": [
+    {
+      "suggestion": "Strip the parenthetical source-status labels from THE INVESTIGATION MENU and let each objection speak directly in the reader's voice; keep provenance outside chapter prose so the spell is not broken by research-report language.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "Replace hedges such as \"I believe the evidence will show\" and \"I am not asking you to believe\" with settled assertions followed by trap questions whose only honest answer concedes the chapter's belief move.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Turn the long THE INVESTIGATION MENU catalogue into a few escalating objection clusters, each compressed into a verdict line, while preserving every required claim exactly once.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Where the chapter says the TO column is \"not blank\" and postpones it, require one concrete hard consequence at full force, then immediately state that fear is not the reason to change and pivot to escape.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Reject summaries that append frozen phrases as unattached lines; make every scheduled echo a complete syntactic bullet that restates a claim earned in the chapter.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

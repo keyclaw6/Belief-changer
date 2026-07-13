@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 6,
+    "method_execution": 8,
+    "structure_anatomy": 8,
+    "repetition_mantra": 9,
+    "emotional_register": 5,
+    "rhythm_texture": 7
+  },
+  "evidence": {
+    "voice_certainty": "The direct address is firm, but cautions such as \"That is one person's experience, not everyone's\" and \"not a promise and not a prediction\" repeatedly break the settled-fact register.",
+    "method_execution": "The opening trap question forces the choice objection to concede, then \"We were not foolish. We were conned.\" cleanly reassigns credit from character weakness to the trick.",
+    "structure_anatomy": "The preview and escalating headings reach the assigned second instruction and a summary, though only the final thesis gets a true ALL-CAPS verdict beat.",
+    "repetition_mantra": "\"the sugar trap\" debuts after the choice and counterfeit-card argument, then recurs as the compression phrase, while MN-01 is echoed verbatim.",
+    "emotional_register": "\"Not evidence that you are weak or undisciplined\" preserves warmth and escape, but the chapter supplies no hard-fact fear wound before explicitly disowning fear as the motive.",
+    "rhythm_texture": "\"We were not foolish. We were conned.\" and \"It won't be.\" provide Carr-like peaks, but the hobby, membership-card, and investment analogies create long explanatory stretches between them."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The largest gap is nerve: the reference states alarming facts with total certainty and then releases the reader from fear, while the candidate substitutes caveats, clinical qualifications, and deferred conclusions.",
+  "suggestions": [
+    {
+      "suggestion": "Delete the evidence-reporting tails after \"the holding, the lapse, the slide\" and \"reduced decision time and not missing desserts\"—especially \"one person's experience, not everyone's\" and \"not a promise and not a prediction\"—and state the observed pattern once in a settled voice before posing the trap question.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Add a required wound-then-bandage beat before \"YOUR SECOND INSTRUCTION\": deliver one concrete, evidence-backed consequence without euphemism, immediately command the reader not to use fear as the motive, and pivot to an escape verdict.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Make \"the counterfeit membership card\" the single load-bearing analogy: cut the rare-book collector and fraudulent-investment detours, and require each return to the card to advance from false benefit to exposed trap to exit.",
+      "asset": "chapter-reviewer"
+    },
+    {
+      "suggestion": "Require major sections to terminate in compressed verdict beats: \"WHAT THE CONFIDENCE TRICK ACTUALLY LOOKS LIKE\" and \"THE SUGAR TRAP HAS A NAME\" currently trail into future-work qualifications instead of ending with short declaratives or ALL-CAPS conclusions.",
+      "asset": "style-guide"
+    }
+  ]
+}
