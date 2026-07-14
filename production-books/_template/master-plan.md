@@ -60,10 +60,20 @@ Define each instruction once. Put any portable clinical exception inside the fro
 
 ## Compact chapter cards
 
+Cards contain only the permitted semantic fields below. Argument-bearing cards
+include all seven reader-transition fields; declared non-argument cards omit them.
+
 ### C-01 — Chapter 1: <Working Title>
 
-- **One belief job:** <one move only>
+- **Primary persuasive job:** enacted transition — <one value-bearing correction completed now; or non-argument — definition | safety | recap | bridge | hand-off with its necessary function>
 - **Objection / justification resolved:** <specific>
+- **Entering belief:** RS-__ | <reader belief on entry>
+- **Concrete subject-specific encounter:** <one encounter naming the exact target behavior>
+- **Enacted discovery:** <what the encounter lets the reader discover now>
+- **Emotional turn:** <felt movement caused by that discovery>
+- **Leaving belief:** RS-__ | <changed belief>
+- **Assumptions handed forward:** RS-__ | <repeat the leaving belief exactly>
+- **Work reserved elsewhere:** <named later C-IDs and their work; or none — reason>
 - **Arc and curve:** <position>
 - **Target personas / reader voice:** <persona IDs + the scene or thought that must be heard>
 - **Evidence IDs and required limits:** <E-IDs; none by design if none>

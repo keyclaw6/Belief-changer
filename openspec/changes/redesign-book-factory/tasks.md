@@ -302,13 +302,13 @@ the SHA without reopening the implementation verdict.
   repairs pass; 25/25 focused and 145/145 full tests, strict OpenSpec, and diff
   checks are clean with no actionable findings.
 - Commit / push: accepted subject
-  `feat(framing): enforce causal reader journeys`; exact SHA is captured at the
-  next ledger checkpoint to avoid impossible self-reference.
+  `feat(framing): enforce causal reader journeys`;
+  `a73ee7e9f0d6d89a34be7bd8da6cd5b9eaf5b14a`.
 
 ### RF-06 — Make master-plan cards enact reader transitions
 
-- [ ] Replace topic/coverage jobs and catalogue-now-demolish-later jobs.
-- Status: `TODO`
+- [x] Replace topic/coverage jobs and catalogue-now-demolish-later jobs.
+- Status: `DONE`
 - Evidence class / report: primary demonstrated cause; §§3, 5 cause 1, 7 action
   1, 8.
 - Problem / root cause: Chapter 3's J-01–J-22 prospectus is explicitly planned;
@@ -323,9 +323,17 @@ the SHA without reopening the implementation verdict.
   cumulative modes; no duplicated plan-wide inventories; no new style metrics.
 - Verification: planner-contract tests, `bash scripts/check.sh`.
 - Dependencies: RF-05.
-- Implementation attempts: `0`; latest: `—`.
-- Review attempts: `0`; latest verdict / findings: `—`.
-- Commit / push: `—`.
+- Implementation attempts: `2`; latest: 2026-07-14
+  `/root/rf06_plan_cards_owner` — bound total and per-card budgets, card-only
+  semantic content and canonical inventories, and plan transitions to the
+  accepted framing journey.
+- Review attempts: `2`; latest verdict / findings: `PASS` — positive exact-sum
+  budgets, semantic-card exclusivity, accepted-framing binding, 11/11 focused
+  and 156/156 full tests, strict OpenSpec, and diff checks passed with no
+  actionable findings.
+- Commit / push: accepted subject
+  `feat(planning): enforce reader-state chapter cards`; exact SHA is captured at
+  the next ledger checkpoint to avoid impossible self-reference.
 
 ### RF-07 — Make plan review a blocking cumulative reader walk
 

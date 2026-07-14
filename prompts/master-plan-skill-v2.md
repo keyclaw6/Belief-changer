@@ -67,7 +67,9 @@ Define each numbered instruction once with a stable ID, frozen wording, owning c
 
 Choose the chapter count and architecture that best deliver the behavior-specific belief change. Treat this spine as whole-book functions whose composition, merging, emphasis, and order belong to your judgment, not as a chapter-per-function template: trust and participation → dissolve loaded choice → switch the evaluation axis → demolish benefits → expose the inversion → close escape routes → widen the indictment where supported → meet the strongest scene → demystify → knowledge/readiness gate → chosen threshold → relapse-proof → ordinary life.
 
-Every argument-bearing chapter must be composition-feasible within its budget as one completed, value-bearing correction to what the reader believes the behavior gives, costs, means, or requires, grounded only in evidence and logic that chapter owns. The opening movement, taken as a whole, must complete a value-bearing correction rather than consist entirely of setup for later persuasion. A completed correction must make the prior valuation less credible now through the chapter's owned evidence or logic; naming the belief, cataloguing its assigned jobs, posing unanswered questions, or promising later examination is setup, not completion. Trust, definition, scope, safety, recap, bridge, and hand-off functions may support or consolidate that movement without becoming a second thesis. A chapter serving a necessary non-argument function need not invent a belief correction, but it must be lean enough for its budget and must advance, protect, or hand over the surrounding persuasive movement rather than replace it or merely defer it.
+Every argument-bearing chapter must be composition-feasible within its budget as one completed, value-bearing correction to what the reader believes the behavior gives, costs, means, or requires, grounded only in evidence and logic that chapter owns. Declare that primary job as `enacted transition — <the correction completed now>`. Setup, topic coverage, a future-investigation prospectus, a catalogue for later demolition, or leaving the reader only willing to keep reading cannot be that job. A completed correction must make the prior valuation less credible now through the chapter's owned evidence or logic. Trust, definition, scope, safety, recap, bridge, and hand-off functions may support or consolidate the movement without becoming a second thesis. A necessary non-argument card declares `non-argument — <definition | safety | recap | bridge | hand-off> ...`; it must advance, protect, or hand over the surrounding persuasive movement rather than replace or defer it.
+
+For every argument-bearing card, carry the exact accepted reader-state handoff from framing and make these seven semantic decisions explicit: entering belief; concrete subject-specific encounter; enacted discovery; emotional turn; leaving belief; assumptions handed forward (identical to the leaving belief); and work reserved elsewhere, assigned only to named later chapter cards. The next argument-bearing card enters from the prior handed-forward assumptions. Adjacent cards must use distinct enacted-discovery modes and build cumulatively rather than repeat a plan-wide inventory.
 
 Use your judgment to merge, reshape, move, or omit material that cannot meet this boundary honestly and compellingly.
 
@@ -79,7 +81,8 @@ For a calibration plan, chapter budgets must sum exactly to 54,000–66,000 word
 
 Give every chapter a stable ID, number, and working title, then specify only its semantic work order:
 
-- the chapter's one belief job and the objection or justification it resolves when it is argument-bearing, or its necessary definition, safety, recap, bridge, or hand-off function when it is not;
+- the primary persuasive job declaration and the objection or justification it resolves;
+- for every argument-bearing card, its entering belief, concrete subject-specific encounter, enacted discovery, emotional turn, leaving belief, assumptions handed forward, and work reserved elsewhere;
 - arc position and qualitative curve position;
 - target persona IDs and the reader voice or scene that makes the move land;
 - evidence-ledger IDs, including the limits the chapter must preserve;
@@ -91,7 +94,7 @@ Give every chapter a stable ID, number, and working title, then specify only its
 - continuity intent: what understanding it receives and hands forward;
 - one integer word budget matching the arc table.
 
-The writer derives `IN THIS CHAPTER`, the italic thesis, section flow, ALL-CAPS landing, SUMMARY, sentence rhythm, and analogy density from the style guide. Do not prewrite those prose elements in the plan.
+These are semantic authorities, not a prose template or mandatory chapter-section anatomy. Inside a card, output only the permitted semantic fields: no headings, tables, connective prose, copied plan-wide rows, or prewritten chapter anatomy. Each plan-wide inventory remains in its single canonical section. The writer derives `IN THIS CHAPTER`, the italic thesis, section flow, ALL-CAPS landing, SUMMARY, sentence rhythm, and analogy density from the style guide. Do not prewrite those prose elements in the plan.
 
 ## Normalization law
 
@@ -100,11 +103,12 @@ Do not create:
 - exact mantra occurrence counts;
 - a second mantra audit or cumulative state matrix;
 - repeated full mantra, instruction, evidence, persona, or slot text in chapter cards;
+- chapter-local copies of any plan-wide inventory;
 - prewritten previews, theses, landings, or SUMMARY prose;
 - a single-use phrase ledger;
 - duplicated chapter-to-persona or chapter-to-slot matrices;
 - generic style-guide rules copied into every card;
-- a deterministic planning procedure, renderer, or validator.
+- a deterministic planning procedure, renderer, or duplicate validation report inside the plan.
 
 A missing semantic requirement is a plan defect. A missing duplicate representation is not.
 

@@ -6,7 +6,7 @@ import sys
 from pathlib import Path
 
 
-STAGES = ("research-synthesis", "framing", "planning")
+STAGES = ("research-synthesis", "framing", "planning", "commissioning")
 SCALAR_FIELDS = (
     "Target behavior",
     "Intended reader",
@@ -148,18 +148,25 @@ def require_subject_contract(book, stage):
     if not text.strip():
         raise ContractError(f"empty brief: {brief}")
     validate_text(text)
-    if stage in {"framing", "planning"}:
+    framing_path = None
+    if stage in {"framing", "planning", "commissioning"}:
         import validate_research_contract as research
         try:
             research.require_research_contract(book)
         except research.ContractError as exc:
             raise ContractError(f"research synthesis not ready: {exc}") from exc
-    if stage == "planning":
+    if stage in {"planning", "commissioning"}:
         import validate_framing_contract as framing
         try:
-            framing.require_framing_contract(book)
+            framing_path = framing.require_framing_contract(book)
         except framing.ContractError as exc:
             raise ContractError(f"framing not ready: {exc}") from exc
+    if stage == "commissioning":
+        import validate_master_plan_contract as plan
+        try:
+            plan.require_master_plan_contract(book, framing_path)
+        except plan.ContractError as exc:
+            raise ContractError(f"master plan not ready: {exc}") from exc
     return brief
 
 
