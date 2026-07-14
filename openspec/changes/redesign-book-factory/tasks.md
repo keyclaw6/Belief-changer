@@ -360,16 +360,15 @@ the SHA without reopening the implementation verdict.
   and hyphen variants block; exact native reviewer, plan/framing hashes,
   standalone verdict, and commissioning gate verified; 27 focused and 161 full
   tests pass with strict OpenSpec and clean diff checks; no findings.
-- Commit / push: accepted subject
-  `feat(planning): block commissioning on plan review`; exact SHA is captured at
-  the next ledger checkpoint to avoid impossible self-reference.
+- Commit / push: `ccfb895be6bb251aac9273f9a2e45f6aff84b22b`
+  (`feat(planning): block commissioning on plan review`).
 
 ## Phase 2 — repair handoffs, drafting, and review
 
 ### RF-08 — Extend the existing commissioner contract
 
-- [ ] Carry reader state and assigned source texture without creating a mini-plan.
-- Status: `TODO`
+- [x] Carry reader state and assigned source texture without creating a mini-plan.
+- Status: `DONE`
 - Evidence class / report: supported interface candidate, not proven solution;
   §§6 item 9, 7 action 2, 8.
 - Problem / root cause: the existing commissioner is promising but lacks the
@@ -386,9 +385,19 @@ the SHA without reopening the implementation verdict.
   blocks conflicts rather than repairing them silently.
 - Verification: grounded and blocked commission fixtures, `bash scripts/check.sh`.
 - Dependencies: RF-06, RF-07.
-- Implementation attempts: `0`; latest: `—`.
-- Review attempts: `0`; latest verdict / findings: `—`.
-- Commit / push: `—`.
+- Implementation attempts: `3`; latest: 2026-07-14
+  `/root/rf08_commission_contract_owner` — repaired review attempt 2 by treating
+  `P-*` and `AU-*` as canonical assigned IDs, forcing any `GAP-*` to block, and
+  permitting exact quote spans embedded in assigned belief values while
+  preserving whole-value and arbitrary-quote controls; 8 focused and 169 full
+  tests pass with strict OpenSpec and clean diff checks.
+- Review attempts: `3`; latest verdict / findings: `PASS` — independent final
+  rereview confirmed canonical IDs, assigned provenance, valid quote boundaries,
+  exact blocking, and no anatomy/drafting leakage; 8/8 focused and 169/169 full
+  tests, strict OpenSpec, and diff checks pass with no findings.
+- Commit / push: accepted subject
+  `feat(commissions): enforce grounded chapter contracts`; exact SHA is captured
+  at the next ledger checkpoint to avoid impossible self-reference.
 
 ### RF-09 — Add commission storage, generation, and whole-set audit
 
