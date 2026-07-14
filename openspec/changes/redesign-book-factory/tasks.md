@@ -426,13 +426,13 @@ the SHA without reopening the implementation verdict.
   - Review 2: `PASS` — no findings; 44/44 focused and 175/175 full tests, strict
     OpenSpec, diff, and code-size gates pass.
 - Commit / push: accepted subject
-  `feat(commissions): gate complete commission sets`; exact SHA is deferred to
-  the next ledger checkpoint.
+  `feat(commissions): gate complete commission sets`;
+  `b430e4e075c7bf941fe808b1081fdcd93f402e5d`.
 
 ### RF-10 — Shrink the writer contract and runtime context
 
-- [ ] Switch semantic authority from full plan/style to commission.
-- Status: `TODO`
+- [x] Switch semantic authority from full plan/style to commission.
+- Status: `DONE`
 - Evidence class / report: primary supported hypothesis; §§1, 5 causes 2 and 7,
   7 action 2.
 - Problem / root cause: writers search an 87 KB style guide and whole-book plan
@@ -449,9 +449,29 @@ the SHA without reopening the implementation verdict.
   planners and editorial reviewers but never enters the writer call.
 - Verification: exact-input tests, `bash scripts/check.sh`.
 - Dependencies: RF-09.
-- Implementation attempts: `0`; latest: `—`.
-- Review attempts: `0`; latest verdict / findings: `—`.
-- Commit / push: `—`.
+- Implementation attempts: `4`; latest: 2026-07-14
+  `/root/rf10_writer_context_owner` — registering manual authority as declared
+  operation metadata in a durable `WRITER_HANDOFF` transition, binding the full
+  pre-handoff pair inventory with exact selected-draft exemptions, and proving
+  the real seal/verify/promotion path without promoting the receipt; 13/13
+  focused, 54/54 affected, and 188/188 full tests pass with strict OpenSpec,
+  diff, compile, and size gates (shellcheck unavailable).
+- Review attempts: `4`.
+  - Review 1: `NEEDS CHANGES` — mutable authority could be reread after
+    eligibility; the compact contract omitted the one-mantra minimum; descending
+    unique selections reached commission validation.
+  - Review 2: `NEEDS CHANGES` — the final model callback could mutate authority
+    before its output was written; manual handoff authority was not persisted
+    and replay-verified before sealing.
+  - Review 3: `NEEDS CHANGES` — the receipt was undeclared at real seal; handoff
+    provenance could be downgraded by deleting the receipt/token; only contract,
+    commissions, and audit—not the complete pair inventory with
+    selected-draft-only exemptions—were replay-bound.
+  - Review 4: `PASS` — no findings; 49/49 affected and 188/188 full tests,
+    strict OpenSpec, diff, compile, and size gates pass.
+- Commit / push: accepted subject
+  `feat(writing): enforce commission-only writer context`; exact SHA is deferred
+  to the next ledger checkpoint.
 
 ### RF-11 — Freeze complete first-draft batches before review
 

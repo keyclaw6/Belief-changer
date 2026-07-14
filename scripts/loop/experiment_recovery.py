@@ -7,12 +7,12 @@ import path_guard as PG
 
 
 TEMPS = {
-    ".pair.json.rf02-tmp": ("pair.json", "CANDIDATE"),
+    ".pair.json.rf02-tmp": ("pair.json", ("CANDIDATE", "WRITER_HANDOFF")),
     ".gate-decision.json.rf02-tmp": ("gate-decision.json", "SEALED"),
     ".decision.json.rf02-tmp": ("decision.json", "SEALED"),
 }
 STABLE = {"pair.json", "gate-decision.json", "decision.json",
-          "candidate", "evaluation", "evidence"}
+          "candidate", "evaluation", "evidence", "writer-authority.json"}
 
 
 def _bytes(path, root):
@@ -49,7 +49,8 @@ def recover(root, manifest, expected=None):
         if name not in expected:
             raise PG.PathError(f"exact recovery context is unavailable for: {temp}")
         wanted = expected[name]
-        if not isinstance(wanted, bytes) or manifest.get("state") != state \
+        states = state if isinstance(state, tuple) else (state,)
+        if not isinstance(wanted, bytes) or manifest.get("state") not in states \
                 or found != wanted:
             raise PG.PathError(f"atomic-write staging bytes do not belong to this operation: {temp}")
         target = root / target_name

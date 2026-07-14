@@ -36,6 +36,17 @@ class GuardQATests(unittest.TestCase):
         path.write_text("outside sentinel\n", encoding="utf-8")
         return path
 
+    def writer_patches(self):
+        inputs = dict(zip(RUN.WC.INPUT_KEYS, ("contract", "commission", "previous")))
+        authority = {"manifest": {"run": {"book": "book", "chapters": [1]}},
+                     "contract": "contract", "commissions": {1: "commission"}}
+        return (
+            mock.patch.object(RUN.WC, "capture", return_value=authority),
+            mock.patch.object(RUN.WC, "require_fresh"),
+            mock.patch.object(RUN.WC, "inputs", return_value=inputs),
+            mock.patch.object(RUN.WC, "build", return_value="prompt"),
+        )
+
     def test_chapter_leaf_symlink_cannot_escape_candidate(self):
         """OpenSpec scenario: An authorized isolated redesign path is exercised."""
         outside = self.sentinel("outside-chapter.md")
@@ -44,13 +55,15 @@ class GuardQATests(unittest.TestCase):
         patches = (
             mock.patch.object(RUN.judges, "endpoint", return_value=("url", "key")),
             mock.patch.object(RUN.ME, "chat", return_value="# Chapter\n" + "word " * 801),
+            *self.writer_patches(),
         )
-        with patches[0], patches[1], self.assertRaises(SystemExit) as stopped:
+        with patches[0], patches[1], patches[2], patches[3], patches[4], patches[5], \
+                self.assertRaises(SystemExit) as stopped:
             RUN.write_chapters({"writer_model": "writer"}, self.book, [1], self.candidate)
         self.assertIn("target contains a symlink", str(stopped.exception))
         self.assertEqual("outside sentinel\n", outside.read_text(encoding="utf-8"))
         leaf.unlink()
-        with patches[0], patches[1]:
+        with patches[0], patches[1], patches[2], patches[3], patches[4], patches[5]:
             self.assertTrue(RUN.write_chapters(
                 {"writer_model": "writer"}, self.book, [1], self.candidate,
             ))
@@ -64,13 +77,15 @@ class GuardQATests(unittest.TestCase):
         patches = (
             mock.patch.object(RUN.judges, "endpoint", return_value=("url", "key")),
             mock.patch.object(RUN.ME, "chat", return_value="# Chapter\n" + "word " * 801),
+            *self.writer_patches(),
         )
-        with patches[0], patches[1], self.assertRaises(SystemExit) as stopped:
+        with patches[0], patches[1], patches[2], patches[3], patches[4], patches[5], \
+                self.assertRaises(SystemExit) as stopped:
             RUN.write_chapters({"writer_model": "writer"}, self.book, [1], self.candidate)
         self.assertIn("multiply linked file", str(stopped.exception))
         self.assertEqual("outside sentinel\n", outside.read_text(encoding="utf-8"))
         leaf.unlink()
-        with patches[0], patches[1]:
+        with patches[0], patches[1], patches[2], patches[3], patches[4], patches[5]:
             self.assertTrue(RUN.write_chapters(
                 {"writer_model": "writer"}, self.book, [1], self.candidate,
             ))

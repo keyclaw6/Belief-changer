@@ -109,14 +109,19 @@ class RF02StoreCliTests(unittest.TestCase):
         operation = self.root / "loop/experiments/iter-001/candidate"
         book = operation / "production-books/test"
         book.mkdir(parents=True)
+        authority = {"contract": "CAPTURED-CONTRACT\n",
+                     "commissions": {1: "CAPTURED-ONE\n", 2: "CAPTURED-TWO\n"}}
         output = io.StringIO()
         with contextlib.redirect_stdout(output):
             MANUAL.writer({"writer_model": "writer", "writer_reasoning": "none"},
-                          operation, book, [1, 2])
+                          operation, book, [1, 2], authority)
         text = output.getvalue()
         self.assertIn(f"cd -- {operation}", text)
-        self.assertIn("prompts/chapter-writer.md", text)
-        self.assertIn("production-books/test/master-plan.md", text)
+        self.assertIn("CAPTURED-CONTRACT", text)
+        self.assertIn("CAPTURED-ONE", text)
+        self.assertIn("CAPTURED-TWO", text)
+        self.assertNotIn("master-plan.md", text)
+        self.assertNotIn("style-guide.md", text)
         self.assertNotIn(str(ROOT), text)
         review = MANUAL.reviewer(operation)
         self.assertIn(f"cd -- {operation}", review)
@@ -189,9 +194,16 @@ class RF02StoreCliTests(unittest.TestCase):
                 "--decision-timestamp", TIMESTAMP, "--promote-pair",
                 "--redesign-authorized", "--rf-stage", "RF-23",
                 "--candidate-root", str(candidate)]
+        authority = {"manifest": {"run": {"book": "production-books/test",
+                                             "chapters": [1]}},
+                     "contract": "writer\n", "commissions": {1: "commission\n"}}
         output = io.StringIO()
         with mock.patch.object(sys, "argv", argv), \
                 mock.patch.object(GUARD, "LEDGER", self.ledger), \
+                mock.patch.object(RUN.WC, "capture", return_value=authority), \
+                mock.patch.object(RUN.WC, "require_fresh"), \
+                mock.patch.object(RUN.WC, "persist_manual_receipt", return_value="a" * 64), \
+                mock.patch.object(RUN.WC, "manual_receipt_hash", return_value="a" * 64), \
                 mock.patch.object(RUN.judges, "endpoint", return_value=("", "")), \
                 mock.patch.dict(os.environ, {"OPENROUTER_API_KEY": "do-not-render"}), \
                 contextlib.redirect_stdout(output):
@@ -210,6 +222,7 @@ class RF02StoreCliTests(unittest.TestCase):
             self.assertEqual(value, tokens[tokens.index(flag) + 1])
         for flag in ("--promote-pair", "--redesign-authorized", "--no-write"):
             self.assertIn(flag, tokens)
+        self.assertEqual("a" * 64, tokens[tokens.index("--writer-authority-receipt") + 1])
         self.assertEqual(1, tokens.count("--no-write"))
         self.assertNotIn("do-not-render", command)
 

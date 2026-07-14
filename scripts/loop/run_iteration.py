@@ -1,11 +1,9 @@
 """Run, score, and gate one candidate iteration."""
 import argparse
 import os
-import re
 import subprocess
 import sys
 from pathlib import Path
-
 HERE = Path(__file__).resolve()
 sys.path.insert(0, str(HERE.parents[1] / "eval"))
 sys.path.insert(0, str(HERE.parent))
@@ -17,37 +15,8 @@ import legacy_guard as LG     # noqa: E402
 import candidate_pair as CP   # noqa: E402
 import pair_store as PS        # noqa: E402
 import manual_dispatch as MD    # noqa: E402
-CARD_RE = re.compile(r"^###\s+CH-0*(\d+)\b", re.M)
-
-
-def chapter_title(plan_text, n):
-    m = re.search(rf"^###\s+CH-0*{n}\s+—\s+(.+?)\s*$", plan_text, re.M)
-    return m.group(1).strip() if m else f"Chapter {n}"
-
-
-def build_writer_prompt(writer_tmpl, style_guide, plan_text, prev_chapter, slug, n, title):
-    """Assemble the full writer context: filled prompt + its three ONLY inputs."""
-    filled = (writer_tmpl.replace("[N]", str(n)).replace("[SLUG]", slug)
-              .replace("[WORKING TITLE]", title).replace("[TITLE]", title.upper())
-              .replace("[N-1]", str(n - 1)))
-    parts = [filled,
-             "\n\n===== INPUT 1: STYLE GUIDE (prompts/style-guide.md) =====\n", style_guide,
-             "\n\n===== INPUT 2: MASTER PLAN (master-plan.md) =====\n", plan_text]
-    if prev_chapter is not None:
-        parts += [f"\n\n===== INPUT 3: PREVIOUS CHAPTER (chapter-{n-1:02d}.md) =====\n",
-                  prev_chapter]
-    else:
-        parts += ["\n\n===== INPUT 3: (none — this is Chapter 1) =====\n"]
-    parts += ["\n\n===== API OUTPUT CONTRACT (supersedes any save/report "
-              "instructions above) =====\n",
-              "You are running over a raw API with no filesystem. Return ONE "
-              "thing: the complete final chapter text in book prose, starting "
-              "with the chapter heading line. No preamble, no completion "
-              "report, no word counts, no code fences. Your entire reply is "
-              "saved verbatim as the chapter file."]
-    return "".join(parts)
-
-
+import commission_set as CS     # noqa: E402
+import writer_context as WC     # noqa: E402
 def _clean_chapter(raw: str) -> str:
     text = (raw or "").strip()
     if text.startswith("```"):
@@ -58,29 +27,45 @@ def _clean_chapter(raw: str) -> str:
             lines = lines[:-1]
         text = "\n".join(lines).strip()
     return text
-def write_chapters(cfg, book, sel, candidate, source_root=None):
+def write_chapters(cfg, book, sel, candidate):
     """Dispatch the writer for each selected chapter, fresh context each time."""
+    try:
+        authority = WC.capture(candidate, book, sel)
+        WC.require_fresh(candidate, authority)
+    except (CS.CommissionSetError, CP.PairError, PS.StoreError,
+            WC.WriterContextError, OSError) as exc:
+        raise SystemExit(f"[run] writer blocked before dispatch: {exc}") from exc
     base_url, key = judges.endpoint()
+    try:
+        WC.require_fresh(candidate, authority)
+    except WC.WriterContextError as exc:
+        raise SystemExit(f"[run] writer blocked after endpoint resolution: {exc}") from exc
+    tree, manifest = CP.candidate_tree(candidate), authority["manifest"]
     if not key:
-        MD.writer(cfg, source_root or candidate, book, sel)
+        try:
+            WC.persist_manual_receipt(candidate, authority)
+            WC.require_fresh(candidate, authority)
+        except WC.WriterContextError as exc:
+            raise SystemExit(f"[run] manual writer handoff failed closed: {exc}") from exc
+        MD.writer(cfg, tree, book, sel, authority)
         return False
-    source_root = Path(source_root or ".")
-    style_guide = (source_root / "prompts/style-guide.md").read_text(encoding="utf-8")
-    writer_tmpl = (source_root / "prompts/chapter-writer.md").read_text(encoding="utf-8")
-    plan_text = (book / "master-plan.md").read_text(encoding="utf-8")
-    slug = book.name
     ch_dir = book / "chapters"
     LG.require_output(candidate, ch_dir)
     ch_dir.mkdir(parents=True, exist_ok=True)
     model = cfg["writer_model"]
     reasoning = cfg.get("writer_reasoning", "none")
     for n in sel:
-        title = chapter_title(plan_text, n)
-        prev_path = ch_dir / f"chapter-{n-1:02d}.md"
-        prev = prev_path.read_text(encoding="utf-8") if (n > 1 and prev_path.is_file()) else None
-        content = build_writer_prompt(writer_tmpl, style_guide, plan_text, prev, slug, n, title)
-        print(f"[run] writing ch{n} ({title!r}) via {model} ...")
+        try:
+            WC.require_fresh(candidate, authority)
+            content = WC.build(WC.inputs(candidate, book, authority, n))
+        except (CP.PairError, WC.WriterContextError, OSError, UnicodeError) as exc:
+            raise SystemExit(f"[run] writer input failed closed: {exc}") from exc
+        print(f"[run] writing ch{n} via {model} ...")
         raw = ME.chat(base_url, key, model, content, reasoning, max_tokens=16000, temperature=0.7)
+        try:
+            WC.require_fresh(candidate, authority)
+        except WC.WriterContextError as exc:
+            raise SystemExit(f"[run] writer output failed closed: {exc}") from exc
         text = _clean_chapter(raw)
         nwords = len(E.words(text))
         if nwords < 800:
@@ -92,12 +77,9 @@ def write_chapters(cfg, book, sel, candidate, source_root=None):
         out.write_text(text + "\n", encoding="utf-8")
         print(f"[run] wrote {out} ({nwords} words)")
     return True
-
 def run_step(cmd, cwd=None):
     print(f"[run] $ {' '.join(cmd)}")
     return subprocess.run(cmd, check=False, cwd=cwd).returncode
-
-
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--book", required=True)
@@ -105,6 +87,8 @@ def main():
     ap.add_argument("--iter", type=int, required=True)
     ap.add_argument("--hypothesis", default="")
     ap.add_argument("--no-write", action="store_true", help="skip RUN; score+gate existing chapters")
+    ap.add_argument("--writer-authority-receipt",
+                    help="pinned manual writer handoff identity for --no-write replay")
     ap.add_argument("--score-now", action="store_true",
                     help="skip the stop-for-review pause and score immediately after writing")
     ap.add_argument("--config", default=None)
@@ -121,6 +105,8 @@ def main():
     a = ap.parse_args()
     if a.initialize_accepted_store and a.add_book_to_accepted_store:
         ap.error("choose one accepted-store operation")
+    if a.writer_authority_receipt and not a.no_write:
+        ap.error("--writer-authority-receipt requires --no-write")
 
     store_operation = a.initialize_accepted_store or a.add_book_to_accepted_store
     candidate = LG.require_authorized(
@@ -173,19 +159,11 @@ def main():
                tasks_dir=str(evidence / "iterations"))
     LG.require_config_targets(candidate, cfg, "scores_dir", "results_tsv", "tasks_dir")
     ch_dir = book / "chapters"
-    plan = book / "master-plan.md"
     try:
         PS.safe_dir(ch_dir, tree)
-        CP.require_member(candidate, plan, "product", manifest)
-        CP.require_member(candidate, tree / "prompts/style-guide.md", "config", manifest)
-        CP.require_member(candidate, tree / "prompts/chapter-writer.md", "config", manifest)
-        CP.require_member(candidate, tree / "prompts/chapter-reviewer.md", "config", manifest)
-    except (CP.PairError, PS.StoreError) as exc:
+    except PS.StoreError as exc:
         raise SystemExit(f"run: incomplete explicit pair: {exc}") from exc
-    upper = len([p for p in ch_dir.glob("chapter-*.md")]) if ch_dir.is_dir() else 0
-    nums = [int(m) for m in CARD_RE.findall(plan.read_text(encoding="utf-8"))]
-    upper = max(upper, max(nums) if nums else 0)
-    sel = E.parse_range(a.chapters, upper or 99)
+    sel = list(manifest["run"]["chapters"])
     try:
         for n in sel:
             CP.require_member(candidate, ch_dir / f"chapter-{n:02d}.md", "product", manifest)
@@ -195,12 +173,28 @@ def main():
     except CP.PairError as exc:
         raise SystemExit(f"run: incomplete explicit pair: {exc}") from exc
 
+    handoff = manifest["state"] == "WRITER_HANDOFF" or manifest.get("operation") is not None
+    receipt_exists = os.path.lexists(WC.manual_receipt_path(candidate))
+    if not a.no_write and handoff:
+        raise SystemExit("[run] durable manual writer handoff requires --no-write replay")
+    if a.no_write and (handoff or a.writer_authority_receipt or receipt_exists):
+        if not a.writer_authority_receipt:
+            raise SystemExit("[run] manual writer resume lacks its pinned receipt identity")
+        try:
+            WC.require_manual_resume(candidate, book, sel, a.writer_authority_receipt)
+        except WC.WriterContextError as exc:
+            raise SystemExit(f"[run] manual writer resume blocked: {exc}") from exc
+
     if not a.no_write:
-        wrote = write_chapters(cfg, book, sel, candidate, tree)
+        wrote = write_chapters(cfg, book, sel, candidate)
         if not wrote:
             print("[run] stopping before SCORE (no chapters were written). "
                   "Write them manually per the instructions above, then replay:")
-            print(f"[run]   {MD.resume(a, HERE, sys.executable or 'python3')}")
+            try:
+                receipt_hash = WC.manual_receipt_hash(candidate)
+            except WC.WriterContextError as exc:
+                raise SystemExit(f"[run] manual writer handoff failed closed: {exc}") from exc
+            print(f"[run]   {MD.resume(a, HERE, sys.executable or 'python3', receipt_hash)}")
             sys.exit(2)
         if not a.score_now:
             print("[run] First drafts written. PROGRAM §4.1: run <=2 reviewer cycles per "
@@ -213,7 +207,7 @@ def main():
             sys.exit(0)
 
     try:
-        if manifest["state"] == "CANDIDATE":
+        if manifest["state"] in ("CANDIDATE", "WRITER_HANDOFF"):
             tested_hash = CP.seal(candidate)
         elif manifest["state"] == "SEALED" and CP.status(candidate) == "SEALED":
             tested_hash = manifest["tested_hash"]

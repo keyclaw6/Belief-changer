@@ -237,6 +237,9 @@ def exact_layout(root, manifest, expected=None):
             safe_dir(Path(root) / name, root)
     allowed = {"pair.json", "decision.json", "gate-decision.json",
                "candidate", "evaluation", "evidence"}
+    operation = manifest.get("operation")
+    if isinstance(operation, dict) and operation.get("path"):
+        allowed.add(operation["path"])
     extra = {path.name for path in Path(root).iterdir()} - allowed
     if extra:
         raise StoreError(f"experiment contains undeclared entries: {sorted(extra)}")

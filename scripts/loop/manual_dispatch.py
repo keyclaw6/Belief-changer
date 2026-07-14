@@ -7,18 +7,28 @@ def _cwd(root):
     return f"cd -- {shlex.quote(str(Path(root).absolute()))}"
 
 
-def writer(cfg, operation, book, selected):
+def _captured(label, text):
+    print(f"===== CAPTURED {label} =====")
+    print(text, end="" if text.endswith("\n") else "\n")
+
+
+def writer(cfg, operation, book, selected, authority):
     operation, book = Path(operation).absolute(), Path(book).absolute()
     relative = book.relative_to(operation)
     print("[run] NO writer key (OPENROUTER_API_KEY / LITELLM_API_KEY) — MANUAL MODE.")
     print(f"[run] Mandatory pinned operation cwd: {_cwd(operation)}")
-    print("[run] From that cwd, dispatch prompts/chapter-writer.md once PER CHAPTER,")
+    print("[run] Dispatch once PER CHAPTER from the captured authority blocks below,")
     print(f"      fresh context each, for chapters {','.join(map(str, selected))}; model "
           f"{cfg['writer_model']} (reasoning={cfg.get('writer_reasoning', 'none')}).")
-    print(f"      Inputs: prompts/style-guide.md, {relative}/master-plan.md, and only")
-    print(f"      {relative}/chapters/chapter-NN.md for the immediately previous chapter.")
+    print("      never rereading the mutable contract or commission paths after this gate.")
+    print(f"      Third input: only {relative}/chapters/chapter-NN.md for the immediately")
+    print("      previous chapter (canonical absence for ch1).")
     print(f"      Save each output to {relative}/chapters/chapter-NN.md (zero-padded),")
     print("      then re-run the same command with --no-write.")
+    _captured("compact_writer_contract", authority["contract"])
+    for number in selected:
+        _captured(f"authoritative_commission chapter-{number:02d}",
+                  authority["commissions"][number])
 
 
 def reviewer(operation):
@@ -27,7 +37,7 @@ def reviewer(operation):
             "`prompts/chapter-reviewer.md` from that cwd")
 
 
-def resume(args, script, python):
+def resume(args, script, python, writer_receipt=None):
     """Render only the pinned, non-secret invocation plus --no-write."""
     command = [python, str(Path(script).absolute()),
                "--book", args.book, "--chapters", args.chapters,
@@ -40,6 +50,9 @@ def resume(args, script, python):
         command.extend(("--decision-timestamp", args.decision_timestamp))
     if args.promote_pair:
         command.append("--promote-pair")
+    writer_receipt = writer_receipt or getattr(args, "writer_authority_receipt", None)
+    if writer_receipt:
+        command.extend(("--writer-authority-receipt", writer_receipt))
     command.extend(("--redesign-authorized", "--rf-stage", args.rf_stage,
                     "--candidate-root", str(Path(args.candidate_root).absolute()),
                     "--no-write"))

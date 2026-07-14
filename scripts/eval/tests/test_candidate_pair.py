@@ -232,7 +232,14 @@ class CandidatePairTests(unittest.TestCase):
                 "--iter", "1", "--accepted-root", str(accepted), "--redesign-authorized",
                 "--rf-stage", "RF-23", "--candidate-root", str(experiment),
                 "--decision-timestamp", TIMESTAMP]
+        authority = {"manifest": {"run": {"book": "production-books/test",
+                                             "chapters": [1]}},
+                     "contract": "writer\n", "commissions": {1: "commission\n"}}
         with mock.patch.object(sys, "argv", argv), mock.patch.object(GUARD, "LEDGER", ledger), \
+                mock.patch.object(RUN.WC, "capture", return_value=authority), \
+                mock.patch.object(RUN.WC, "require_fresh"), \
+                mock.patch.object(RUN.WC, "persist_manual_receipt", return_value="a" * 64), \
+                mock.patch.object(RUN.WC, "manual_receipt_hash", return_value="a" * 64), \
                 mock.patch.object(RUN.judges, "endpoint", return_value=("", "")):
             with self.assertRaises(SystemExit) as stopped:
                 RUN.main()

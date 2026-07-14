@@ -4,6 +4,7 @@ from pathlib import Path
 import loopcfg
 import pair_contract as PC
 import pair_store as PS
+import writer_operation as WO
 from pair_transition import add_book, assert_run, initialize, promote, reject, status
 SCHEMA = 4
 MANIFEST = "pair.json"
@@ -18,10 +19,8 @@ def candidate_tree(root):
     return Path(root).absolute() / "candidate"
 def evaluation_tree(root):
     return Path(root).absolute() / "evaluation"
-
 def evidence_tree(root):
     return Path(root).absolute() / "evidence"
-
 def _manifest_path(root):
     return Path(root).absolute() / MANIFEST
 def _chapters(value):
@@ -39,7 +38,7 @@ def _chapters(value):
             out.append(int(token))
         else:
             raise PairError(f"invalid chapter selection: {value}")
-    if not out or len(out) != len(set(out)):
+    if not out or len(out) != len(set(out)) or out != sorted(out):
         raise PairError(f"invalid chapter selection: {value}")
     return out
 def _recorded_hash(entries, key):
@@ -49,7 +48,6 @@ def _recorded_hash(entries, key):
     except (KeyError, TypeError) as exc:
         raise PairError("candidate pair metadata is malformed") from exc
     return PS.state_hash(states)
-
 def _validate_entries(entries, groups):
     if not isinstance(entries, list) or not entries:
         return False
@@ -58,7 +56,6 @@ def _validate_entries(entries, groups):
         item.get("group") in groups and isinstance(path, str) and path
         and not Path(path).is_absolute() and ".." not in Path(path).parts
         for path, item in zip(paths, entries))
-
 def load(root):
     path = _manifest_path(root)
     try:
@@ -66,10 +63,13 @@ def load(root):
     except (OSError, json.JSONDecodeError, PS.StoreError) as exc:
         raise PairError(f"invalid candidate pair manifest: {exc}") from exc
     run = value.get("run")
-    if value.get("schema") != SCHEMA or value.get("state") not in ("CANDIDATE", "SEALED") \
+    state = value.get("state")
+    if value.get("schema") != SCHEMA \
+            or state not in ("CANDIDATE", "WRITER_HANDOFF", "SEALED") \
             or not _validate_entries(value.get("entries"), {"config", "product"}) \
             or not _validate_entries(value.get("evaluation"), {"evaluation"}) \
-            or not PC.valid_run(run, Path(root).name):
+            or not PC.valid_run(run, Path(root).name) \
+            or not WO.valid(value.get("operation"), state):
         raise PairError("invalid candidate pair manifest schema")
     outputs = value.get("outputs")
     allowed = {f"{run['book']}/commissions/chapter-{number:02}.md"
@@ -83,18 +83,14 @@ def load(root):
             or _recorded_hash(value["evaluation"], "accepted_sha256") != value.get("accepted_evaluation_hash"):
         raise PairError("accepted pair manifest hash is invalid")
     return value
-
 def _bare(entries):
     return [{"group": item["group"], "path": item["path"]} for item in entries]
-
 def _members(manifest):
     return manifest["entries"] + manifest["outputs"]
-
 def _copy(target, source, entries):
     for item in entries:
         data = PS._safe_file(Path(source) / item["path"], source).read_bytes()
         PS.write(Path(target) / item["path"], data)
-
 def snapshot(root, accepted_root, book, chapters="1-3", config="loop/config.yaml",
              iteration=None):
     """Copy one already-pinned accepted generation into an unused experiment."""
@@ -126,6 +122,7 @@ def snapshot(root, accepted_root, book, chapters="1-3", config="loop/config.yaml
             "accepted_pair_hash": registry["pair_hash"],
             "accepted_evaluation_hash": registry["evaluation_hash"],
             "entries": entries, "outputs": [], "evaluation": evaluation,
+            "operation": None,
             "run": {"experiment_id": experiment.name,
                     "iteration_id": iteration if iteration is not None else experiment.name,
                     "book": contract["book"], "chapters": _chapters(chapters),
@@ -185,9 +182,10 @@ def _identity(manifest):
 
 def seal(root, interrupt=None):
     manifest = load(root)
-    if manifest["state"] != "CANDIDATE":
+    if manifest["state"] not in ("CANDIDATE", "WRITER_HANDOFF"):
         raise PairError("SEALED is terminal")
     try:
+        WO.read(root, manifest.get("operation"))
         cfg = _check_eval_contract(root, manifest)
         pair_hash, eval_hash = _actual(root, manifest)
         config_data = PS._safe_file(candidate_tree(root) / manifest["run"]["config"],
@@ -204,10 +202,11 @@ def seal(root, interrupt=None):
         PS.exact_layout(root, manifest, {".pair.json.rf02-tmp": PS.json_bytes(sealed)})
         PS.freeze_files(candidate_tree(root))
         PS.freeze_files(evaluation_tree(root))
+        WO.freeze(root, manifest.get("operation"))
         PS.write_json(_manifest_path(root), sealed, interrupt)
         _manifest_path(root).chmod(0o444)
         return sealed["tested_hash"]
-    except (PS.StoreError, PC.ContractError) as exc:
+    except (PS.StoreError, PC.ContractError, WO.OperationError) as exc:
         _fail(exc)
 
 def verify_sealed(root, tested_hash, expected=None):
@@ -215,6 +214,7 @@ def verify_sealed(root, tested_hash, expected=None):
     if manifest["state"] != "SEALED" or manifest.get("tested_hash") != tested_hash:
         raise PairError("tested pair hash does not match sealed identity")
     try:
+        WO.read(root, manifest.get("operation"))
         cfg = _check_eval_contract(root, manifest)
         PS.exact_layout(root, manifest, expected)
         pair_hash, eval_hash = _actual(root, manifest)
@@ -229,7 +229,7 @@ def verify_sealed(root, tested_hash, expected=None):
         if expected != actual:
             raise PairError("sealed metadata, configuration, product, or inputs drifted")
         return manifest
-    except (PS.StoreError, PC.ContractError) as exc:
+    except (PS.StoreError, PC.ContractError, WO.OperationError) as exc:
         _fail(exc)
 
 def _view(root, manifest):

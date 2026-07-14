@@ -29,7 +29,7 @@ def valid_run(run, experiment_id):
         and isinstance(run.get("config"), str) and run["config"] \
         and isinstance(chapters, list) and chapters \
         and all(type(number) is int and number > 0 for number in chapters) \
-        and len(chapters) == len(set(chapters))
+        and len(chapters) == len(set(chapters)) and chapters == sorted(chapters)
 
 
 def relative(value, root: Path) -> str:

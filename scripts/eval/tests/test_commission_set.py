@@ -238,7 +238,7 @@ class CommissionSetTests(unittest.TestCase):
         actual, validator, commissioner, auditor = (mock.Mock() for _ in range(4))
         invalid_runs = [
             {**original["run"], "chapters": chapters}
-            for chapters in ([], [1, 1], [0], ["1"])
+            for chapters in ([], [1, 1], [0], ["1"], [2, 1])
         ] + [{**original["run"], "book": book}
              for book in ("../outside", "production-books/Bad", "production-books/a/b")]
         with mock.patch.object(SET.CP, "_actual", actual), \
