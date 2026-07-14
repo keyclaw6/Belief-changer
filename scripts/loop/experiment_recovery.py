@@ -7,7 +7,8 @@ import path_guard as PG
 
 
 TEMPS = {
-    ".pair.json.rf02-tmp": ("pair.json", ("CANDIDATE", "WRITER_HANDOFF")),
+    ".pair.json.rf02-tmp": ("pair.json", ("CANDIDATE", "WRITER_HANDOFF",
+                                           "DRAFTING", "BATCH_FROZEN")),
     ".gate-decision.json.rf02-tmp": ("gate-decision.json", "SEALED"),
     ".decision.json.rf02-tmp": ("decision.json", "SEALED"),
 }

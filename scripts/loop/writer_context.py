@@ -175,7 +175,8 @@ def require_manual_resume(candidate, book, selected, expected_hash):
     """Verify the pinned handoff while deliberately excluding selected chapter bytes."""
     manifest, root, tree = CP.load(candidate), Path(candidate).absolute(), CP.candidate_tree(candidate)
     operation = manifest.get("operation")
-    if manifest["state"] not in ("WRITER_HANDOFF", "SEALED") or not operation:
+    if manifest["state"] not in ("WRITER_HANDOFF", "DRAFTING",
+                                 "BATCH_FROZEN", "SEALED") or not operation:
         raise WriterContextError("operation has no durable manual writer handoff")
     recorded = manual_receipt_hash(candidate)
     if recorded != expected_hash or operation["receipt_hash"] != expected_hash:
@@ -212,6 +213,28 @@ def require_manual_resume(candidate, book, selected, expected_hash):
             or value.get("audit", {}).get("sha256") != PS.sha(audit):
         raise WriterContextError("manual writer authority drifted after handoff")
 
+
+def resume_authority(candidate, book, selected, expected_hash):
+    """Rehydrate captured authority only after the durable RF-10 receipt verifies."""
+    require_manual_resume(candidate, book, selected, expected_hash)
+    manifest, root, tree = CP.load(candidate), Path(candidate).absolute(), CP.candidate_tree(candidate)
+    try:
+        value = json.loads(WO.read(candidate, manifest["operation"]))
+        audit = PS._safe_file(CP.evidence_tree(candidate) / CS.RECEIPT, root).read_bytes()
+        paths = [value["contract"], *value["commissions"]]
+        files = {item["path"]: CP.require_member(
+            candidate, tree / item["path"], manifest=manifest).read_bytes() for item in paths}
+        if any(PS.sha(files[item["path"]]) != item["sha256"] for item in paths):
+            raise WriterContextError("writer receipt file hashes changed")
+        contract = files[value["contract"]["path"]].decode("utf-8")
+        commissions = {item["chapter"]: files[item["path"]].decode("utf-8")
+                       for item in value["commissions"]}
+    except (CP.PairError, PS.StoreError, WO.OperationError, OSError, UnicodeError,
+            json.JSONDecodeError, KeyError, TypeError) as exc:
+        raise WriterContextError(f"writer authority replay failed: {exc}") from exc
+    return {"manifest": manifest, "files": files, "receipt_bytes": audit,
+            "pair_inventory": value["pair_inventory"], "contract": contract,
+            "commissions": commissions}
 
 def inputs(candidate, book, authority, number):
     """Assemble exactly contract, captured commission, and immediate previous chapter."""

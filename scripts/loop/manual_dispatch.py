@@ -1,6 +1,8 @@
 """Emit agent instructions that pin relative paths to one operation root."""
 import shlex
 from pathlib import Path
+import candidate_pair as CP
+import first_draft_batch as FB
 
 
 def _cwd(root):
@@ -31,8 +33,9 @@ def writer(cfg, operation, book, selected, authority):
                   authority["commissions"][number])
 
 
-def reviewer(operation):
-    operation = Path(operation).absolute()
+def reviewer(candidate):
+    FB.require_frozen_batch(candidate)
+    operation = CP.candidate_tree(candidate)
     return (f"mandatory cwd `{_cwd(operation)}`; dispatch "
             "`prompts/chapter-reviewer.md` from that cwd")
 

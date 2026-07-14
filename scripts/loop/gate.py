@@ -16,21 +16,18 @@ import judges  # noqa: E402
 import score_core  # noqa: E402
 import score_receipt  # noqa: E402
 import pair_store as PS  # noqa: E402
+import first_draft_batch as FB  # noqa: E402
 
 COLUMNS = ["iter", "timestamp_utc", "campaign", "instrument", "hypothesis",
            "reward", "hard_ok", "verdict", "worst_dimension", "top_suggestion",
            "notes", "tested_pair_hash"]
 ACCEPTED = {"BASELINE", "NEW-BEST", "KEEP"}
-
-
 def read_rows(tsv: Path):
     lines = tsv.read_text(encoding="utf-8").splitlines() if tsv.is_file() else []
     if not lines:
         return []
     header = lines[0].split("\t")
     return [dict(zip(header, ln.split("\t"))) for ln in lines[1:] if ln.strip()]
-
-
 def best_accepted(rows):
     best, best_iter = None, None
     for row in rows:
@@ -42,8 +39,6 @@ def best_accepted(rows):
             if best is None or r > best:
                 best, best_iter = r, row.get("iter")
     return best, best_iter
-
-
 def _clean(text, limit=110):
     s = " ".join(("" if text is None else str(text)).split())
     return s[:limit]
@@ -56,8 +51,6 @@ def append_row(tsv: Path, row: dict, candidate: Path):
         if not exists:
             fh.write("\t".join(COLUMNS) + "\n")
         fh.write("\t".join(_clean(row.get(c, ""), 400) for c in COLUMNS) + "\n")
-
-
 def find_latest_score(scores_dir: Path):
     cands = sorted(scores_dir.glob("iter-[0-9]*.json"))
     if not cands:
@@ -143,6 +136,10 @@ def main():
                            book_target / "master-plan.md")
     if LG.dry_run(a, "gate.py"):
         return
+    try:
+        FB.require_frozen_batch(candidate)
+    except FB.BatchError as exc:
+        raise SystemExit(f"gate: frozen first-draft batch required: {exc}") from exc
     if a.promote_pair and not a.tested_pair_hash:
         ap.error("--promote-pair requires --tested-pair-hash")
     if a.tested_pair_hash and not a.accepted_root:

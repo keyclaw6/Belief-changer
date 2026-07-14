@@ -7,7 +7,6 @@ from pathlib import Path
 HERE = Path(__file__).resolve()
 sys.path.insert(0, str(HERE.parents[1] / "eval"))
 sys.path.insert(0, str(HERE.parent))
-import evallib as E          # noqa: E402
 import model_endpoint as ME   # noqa: E402
 import loopcfg               # noqa: E402
 import judges                # noqa: E402
@@ -17,66 +16,9 @@ import pair_store as PS        # noqa: E402
 import manual_dispatch as MD    # noqa: E402
 import commission_set as CS     # noqa: E402
 import writer_context as WC     # noqa: E402
-def _clean_chapter(raw: str) -> str:
-    text = (raw or "").strip()
-    if text.startswith("```"):
-        lines = text.splitlines()
-        if lines and lines[0].startswith("```"):
-            lines = lines[1:]
-        if lines and lines[-1].strip().startswith("```"):
-            lines = lines[:-1]
-        text = "\n".join(lines).strip()
-    return text
-def write_chapters(cfg, book, sel, candidate):
-    """Dispatch the writer for each selected chapter, fresh context each time."""
-    try:
-        authority = WC.capture(candidate, book, sel)
-        WC.require_fresh(candidate, authority)
-    except (CS.CommissionSetError, CP.PairError, PS.StoreError,
-            WC.WriterContextError, OSError) as exc:
-        raise SystemExit(f"[run] writer blocked before dispatch: {exc}") from exc
-    base_url, key = judges.endpoint()
-    try:
-        WC.require_fresh(candidate, authority)
-    except WC.WriterContextError as exc:
-        raise SystemExit(f"[run] writer blocked after endpoint resolution: {exc}") from exc
-    tree, manifest = CP.candidate_tree(candidate), authority["manifest"]
-    if not key:
-        try:
-            WC.persist_manual_receipt(candidate, authority)
-            WC.require_fresh(candidate, authority)
-        except WC.WriterContextError as exc:
-            raise SystemExit(f"[run] manual writer handoff failed closed: {exc}") from exc
-        MD.writer(cfg, tree, book, sel, authority)
-        return False
-    ch_dir = book / "chapters"
-    LG.require_output(candidate, ch_dir)
-    ch_dir.mkdir(parents=True, exist_ok=True)
-    model = cfg["writer_model"]
-    reasoning = cfg.get("writer_reasoning", "none")
-    for n in sel:
-        try:
-            WC.require_fresh(candidate, authority)
-            content = WC.build(WC.inputs(candidate, book, authority, n))
-        except (CP.PairError, WC.WriterContextError, OSError, UnicodeError) as exc:
-            raise SystemExit(f"[run] writer input failed closed: {exc}") from exc
-        print(f"[run] writing ch{n} via {model} ...")
-        raw = ME.chat(base_url, key, model, content, reasoning, max_tokens=16000, temperature=0.7)
-        try:
-            WC.require_fresh(candidate, authority)
-        except WC.WriterContextError as exc:
-            raise SystemExit(f"[run] writer output failed closed: {exc}") from exc
-        text = _clean_chapter(raw)
-        nwords = len(E.words(text))
-        if nwords < 800:
-            raise SystemExit(f"[run] writer returned {nwords} words for ch{n} — that is a "
-                             "report or refusal, not a chapter. NOT saved. Re-dispatch "
-                             "(check the API OUTPUT CONTRACT reached the model).")
-        out = ch_dir / f"chapter-{n:02d}.md"
-        LG.require_output(candidate, out)
-        out.write_text(text + "\n", encoding="utf-8")
-        print(f"[run] wrote {out} ({nwords} words)")
-    return True
+import draft_batch_runtime as BR  # noqa: E402
+import first_draft_batch as FB     # noqa: E402
+write_chapters = BR.write_chapters
 def run_step(cmd, cwd=None):
     print(f"[run] $ {' '.join(cmd)}")
     return subprocess.run(cmd, check=False, cwd=cwd).returncode
@@ -175,15 +117,35 @@ def main():
 
     handoff = manifest["state"] == "WRITER_HANDOFF" or manifest.get("operation") is not None
     receipt_exists = os.path.lexists(WC.manual_receipt_path(candidate))
-    if not a.no_write and handoff:
+    batch = manifest.get("draft_batch")
+    if not a.no_write and batch and batch["mode"] == "manual":
         raise SystemExit("[run] durable manual writer handoff requires --no-write replay")
-    if a.no_write and (handoff or a.writer_authority_receipt or receipt_exists):
+    if a.no_write and (batch and batch["mode"] == "manual" or not batch and
+                       (handoff or a.writer_authority_receipt or receipt_exists)):
         if not a.writer_authority_receipt:
             raise SystemExit("[run] manual writer resume lacks its pinned receipt identity")
         try:
             WC.require_manual_resume(candidate, book, sel, a.writer_authority_receipt)
-        except WC.WriterContextError as exc:
+            if batch and batch["state"] == "FROZEN":
+                FB.require_frozen_batch(candidate)
+            else:
+                if batch is None:
+                    FB.begin(candidate, None, "manual")
+                remaining = FB.accept_manual(candidate)
+                if remaining:
+                    print(f"[run] manual batch remains partial; write chapters "
+                          f"{','.join(map(str, remaining))} in order, then replay:")
+                    print(f"[run]   {MD.resume(a, HERE, sys.executable or 'python3',
+                                               a.writer_authority_receipt)}")
+                    sys.exit(2)
+                FB.freeze(candidate)
+        except (WC.WriterContextError, FB.BatchError, PS.StoreError) as exc:
             raise SystemExit(f"[run] manual writer resume blocked: {exc}") from exc
+    elif a.no_write:
+        try:
+            FB.require_frozen_batch(candidate)
+        except FB.BatchError as exc:
+            raise SystemExit(f"[run] review/evaluation blocked: {exc}") from exc
 
     if not a.no_write:
         wrote = write_chapters(cfg, book, sel, candidate)
@@ -196,18 +158,21 @@ def main():
                 raise SystemExit(f"[run] manual writer handoff failed closed: {exc}") from exc
             print(f"[run]   {MD.resume(a, HERE, sys.executable or 'python3', receipt_hash)}")
             sys.exit(2)
+        current_batch = CP.load(candidate).get("draft_batch") or {}
+        if current_batch.get("state") != "FROZEN":
+            try:
+                FB.freeze(candidate)
+            except FB.BatchError as exc:
+                raise SystemExit(f"[run] first-draft freeze failed closed: {exc}") from exc
         if not a.score_now:
-            print("[run] First drafts written. PROGRAM §4.1: run <=2 reviewer cycles per "
-                  f"chapter now ({MD.reviewer(tree)}; after the "
-                  "2nd REVISE proceed with the latest draft and note residual blockers in "
-                  "loop/learnings.md). Then resume:")
+            print("[run] Complete first-draft batch frozen. Review may now start "
+                  f"({MD.reviewer(candidate)}). Then resume:")
             print(f"[run]   {MD.resume(a, HERE, sys.executable or 'python3')}")
-            print("[run] (Scoring first drafts directly is only for controls/baselines: "
-                  "re-run with --score-now.)")
             sys.exit(0)
 
+    manifest = CP.load(candidate)
     try:
-        if manifest["state"] in ("CANDIDATE", "WRITER_HANDOFF"):
+        if manifest["state"] in ("CANDIDATE", "WRITER_HANDOFF", "BATCH_FROZEN"):
             tested_hash = CP.seal(candidate)
         elif manifest["state"] == "SEALED" and CP.status(candidate) == "SEALED":
             tested_hash = manifest["tested_hash"]

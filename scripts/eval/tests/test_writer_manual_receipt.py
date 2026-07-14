@@ -67,7 +67,7 @@ class WriterManualReceiptTests(WriterFixture, unittest.TestCase):
         ], value["selected_draft_paths"])
         for number in (1, 2):
             (self.book(candidate) / f"chapters/chapter-{number:02d}.md").write_text(
-                f"MANUAL CHAPTER {number}\n", encoding="utf-8")
+                f"# MANUAL CHAPTER {number}\n" + "word " * 801 + "\n", encoding="utf-8")
         with mock.patch.object(sys, "argv", self.argv(candidate, token)), \
                 mock.patch.object(RUN.LG, "LEDGER", self.ledger), \
                 mock.patch.object(RUN, "run_step", return_value=3):

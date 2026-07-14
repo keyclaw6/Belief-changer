@@ -13,8 +13,9 @@ class OperationError(RuntimeError):
 
 def valid(value, state):
     if value is None:
-        return state != "WRITER_HANDOFF"
-    return state in ("WRITER_HANDOFF", "SEALED") and isinstance(value, dict) \
+        return state not in ("WRITER_HANDOFF", "DRAFTING", "BATCH_FROZEN")
+    return state in ("WRITER_HANDOFF", "DRAFTING", "BATCH_FROZEN", "SEALED") \
+        and isinstance(value, dict) \
         and set(value) == {"group", "path", "sha256", "receipt_hash"} \
         and value.get("group") == "operation" and value.get("path") == RECEIPT \
         and all(isinstance(value.get(key), str) and len(value[key]) == 64

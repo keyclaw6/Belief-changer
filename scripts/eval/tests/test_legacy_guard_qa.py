@@ -1,4 +1,5 @@
 """Independent QA regressions for the RF-00 legacy-loop guard."""
+import contextlib
 import sys
 import tempfile
 import unittest
@@ -41,11 +42,30 @@ class GuardQATests(unittest.TestCase):
         authority = {"manifest": {"run": {"book": "book", "chapters": [1]}},
                      "contract": "contract", "commissions": {1: "commission"}}
         return (
-            mock.patch.object(RUN.WC, "capture", return_value=authority),
+            mock.patch.object(RUN.BR, "_capture", return_value=(authority, None)),
             mock.patch.object(RUN.WC, "require_fresh"),
             mock.patch.object(RUN.WC, "inputs", return_value=inputs),
             mock.patch.object(RUN.WC, "build", return_value="prompt"),
+            mock.patch.object(RUN.WC, "persist_manual_receipt"),
+            mock.patch.object(RUN.FB, "begin", return_value={
+                "state": "DRAFTING", "mode": "api", "drafts": [], "selection": [1]}),
+            mock.patch.object(RUN.FB, "prepare", return_value=[1]),
+            mock.patch.object(
+                RUN.FB, "durable_call",
+                return_value="# Chapter\n" + "word " * 801),
+            mock.patch.object(
+                RUN.FB, "accept_response",
+                side_effect=lambda _root, number, interrupt=None: (
+                    self.book / f"chapters/chapter-{number:02d}.md").write_text(
+                        "# Chapter\n" + "word " * 801, encoding="utf-8") and 801),
         )
+
+    def run_writer(self, patches):
+        with contextlib.ExitStack() as stack:
+            for patch in patches:
+                stack.enter_context(patch)
+            return RUN.write_chapters(
+                {"writer_model": "writer"}, self.book, [1], self.candidate)
 
     def test_chapter_leaf_symlink_cannot_escape_candidate(self):
         """OpenSpec scenario: An authorized isolated redesign path is exercised."""
@@ -57,16 +77,12 @@ class GuardQATests(unittest.TestCase):
             mock.patch.object(RUN.ME, "chat", return_value="# Chapter\n" + "word " * 801),
             *self.writer_patches(),
         )
-        with patches[0], patches[1], patches[2], patches[3], patches[4], patches[5], \
-                self.assertRaises(SystemExit) as stopped:
-            RUN.write_chapters({"writer_model": "writer"}, self.book, [1], self.candidate)
+        with self.assertRaises(SystemExit) as stopped:
+            self.run_writer(patches)
         self.assertIn("target contains a symlink", str(stopped.exception))
         self.assertEqual("outside sentinel\n", outside.read_text(encoding="utf-8"))
         leaf.unlink()
-        with patches[0], patches[1], patches[2], patches[3], patches[4], patches[5]:
-            self.assertTrue(RUN.write_chapters(
-                {"writer_model": "writer"}, self.book, [1], self.candidate,
-            ))
+        self.assertTrue(self.run_writer(patches))
         self.assertTrue(leaf.read_text(encoding="utf-8").startswith("# Chapter"))
 
     def test_chapter_leaf_hardlink_cannot_escape_candidate(self):
@@ -79,16 +95,12 @@ class GuardQATests(unittest.TestCase):
             mock.patch.object(RUN.ME, "chat", return_value="# Chapter\n" + "word " * 801),
             *self.writer_patches(),
         )
-        with patches[0], patches[1], patches[2], patches[3], patches[4], patches[5], \
-                self.assertRaises(SystemExit) as stopped:
-            RUN.write_chapters({"writer_model": "writer"}, self.book, [1], self.candidate)
+        with self.assertRaises(SystemExit) as stopped:
+            self.run_writer(patches)
         self.assertIn("multiply linked file", str(stopped.exception))
         self.assertEqual("outside sentinel\n", outside.read_text(encoding="utf-8"))
         leaf.unlink()
-        with patches[0], patches[1], patches[2], patches[3], patches[4], patches[5]:
-            self.assertTrue(RUN.write_chapters(
-                {"writer_model": "writer"}, self.book, [1], self.candidate,
-            ))
+        self.assertTrue(self.run_writer(patches))
         self.assertTrue(leaf.read_text(encoding="utf-8").startswith("# Chapter"))
 
     def test_judge_task_leaf_symlink_cannot_escape_candidate(self):
@@ -101,12 +113,14 @@ class GuardQATests(unittest.TestCase):
         leaf.symlink_to(outside)
         args = (cfg, [("ch1", "ours", "reference", "context")], "001",
                 "{{REFERENCE}}{{CANDIDATE}}{{CONTEXT}}", self.candidate)
-        with self.assertRaises(SystemExit) as stopped:
+        with mock.patch.object(judges.FB, "require_frozen_batch"), \
+                self.assertRaises(SystemExit) as stopped:
             judges.emit_tasks(*args)
         self.assertIn("target contains a symlink", str(stopped.exception))
         self.assertEqual("outside sentinel\n", outside.read_text(encoding="utf-8"))
         leaf.unlink()
-        self.assertEqual([leaf], judges.emit_tasks(*args))
+        with mock.patch.object(judges.FB, "require_frozen_batch"):
+            self.assertEqual([leaf], judges.emit_tasks(*args))
         self.assertTrue(leaf.read_text(encoding="utf-8"))
 
     def test_judge_task_leaf_hardlink_cannot_escape_candidate(self):
@@ -119,12 +133,14 @@ class GuardQATests(unittest.TestCase):
         leaf.hardlink_to(outside)
         args = (cfg, [("ch1", "ours", "reference", "context")], "001",
                 "{{REFERENCE}}{{CANDIDATE}}{{CONTEXT}}", self.candidate)
-        with self.assertRaises(SystemExit) as stopped:
+        with mock.patch.object(judges.FB, "require_frozen_batch"), \
+                self.assertRaises(SystemExit) as stopped:
             judges.emit_tasks(*args)
         self.assertIn("multiply linked file", str(stopped.exception))
         self.assertEqual("outside sentinel\n", outside.read_text(encoding="utf-8"))
         leaf.unlink()
-        self.assertEqual([leaf], judges.emit_tasks(*args))
+        with mock.patch.object(judges.FB, "require_frozen_batch"):
+            self.assertEqual([leaf], judges.emit_tasks(*args))
         self.assertTrue(leaf.read_text(encoding="utf-8"))
 
     def _run_score(self, argv):
@@ -137,6 +153,7 @@ class GuardQATests(unittest.TestCase):
                 mock.patch.object(SCORE.judges, "missing_verdicts", return_value=[]), \
                 mock.patch.object(SCORE.judges, "aggregate", return_value={
                     "reward": 1, "worst_dimensions": [], "suggestions": []}), \
+                mock.patch.object(SCORE.FB, "require_frozen_batch"), \
                 mock.patch.object(SCORE, "_report"):
             SCORE.main()
 

@@ -1,12 +1,12 @@
 """RF-02 sealed candidate pairs and atomic accepted-generation promotion."""
 import json
 from pathlib import Path
-import loopcfg
+import loopcfg, draft_batch_contract as DB, draft_batch_lifecycle as DL
 import pair_contract as PC
 import pair_store as PS
 import writer_operation as WO
 from pair_transition import add_book, assert_run, initialize, promote, reject, status
-SCHEMA = 4
+SCHEMA = 6
 MANIFEST = "pair.json"
 DECISION = "decision.json"
 class PairError(RuntimeError):
@@ -15,14 +15,10 @@ def _fail(exc):
     if isinstance(exc, PairError):
         raise exc
     raise PairError(str(exc)) from exc
-def candidate_tree(root):
-    return Path(root).absolute() / "candidate"
-def evaluation_tree(root):
-    return Path(root).absolute() / "evaluation"
-def evidence_tree(root):
-    return Path(root).absolute() / "evidence"
-def _manifest_path(root):
-    return Path(root).absolute() / MANIFEST
+def candidate_tree(root): return Path(root).absolute() / "candidate"
+def evaluation_tree(root): return Path(root).absolute() / "evaluation"
+def evidence_tree(root): return Path(root).absolute() / "evidence"
+def _manifest_path(root): return Path(root).absolute() / MANIFEST
 def _chapters(value):
     out = []
     for token in str(value).split(","):
@@ -60,17 +56,25 @@ def load(root):
     path = _manifest_path(root)
     try:
         value = json.loads(PS._safe_file(path, Path(root).absolute()).read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError, PS.StoreError) as exc:
+        DL.recover(root, value)
+        value = json.loads(PS._safe_file(path, Path(root).absolute()).read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError, PS.StoreError, DL.LifecycleError) as exc:
         raise PairError(f"invalid candidate pair manifest: {exc}") from exc
     run = value.get("run")
     state = value.get("state")
     if value.get("schema") != SCHEMA \
-            or state not in ("CANDIDATE", "WRITER_HANDOFF", "SEALED") \
+            or state not in ("CANDIDATE", "WRITER_HANDOFF", "DRAFTING",
+                             "BATCH_FROZEN", "SEALED") \
             or not _validate_entries(value.get("entries"), {"config", "product"}) \
             or not _validate_entries(value.get("evaluation"), {"evaluation"}) \
             or not PC.valid_run(run, Path(root).name) \
             or not WO.valid(value.get("operation"), state):
         raise PairError("invalid candidate pair manifest schema")
+    try:
+        DL.validate(root, value)
+        DB.validate_pair(value, root)
+    except (DL.LifecycleError, DB.BatchError) as exc:
+        raise PairError(str(exc)) from exc
     outputs = value.get("outputs")
     allowed = {f"{run['book']}/commissions/chapter-{number:02}.md"
                for number in run["chapters"]}
@@ -122,22 +126,21 @@ def snapshot(root, accepted_root, book, chapters="1-3", config="loop/config.yaml
             "accepted_pair_hash": registry["pair_hash"],
             "accepted_evaluation_hash": registry["evaluation_hash"],
             "entries": entries, "outputs": [], "evaluation": evaluation,
-            "operation": None,
+            "operation": None, "draft_batch": None, "draft_batch_start": None,
             "run": {"experiment_id": experiment.name,
                     "iteration_id": iteration if iteration is not None else experiment.name,
                     "book": contract["book"], "chapters": _chapters(chapters),
                     "config": contract["config"]},
         }
+        DL.initialize(experiment, value)
         PS.write_json(_manifest_path(experiment), value)
         return value
-    except (PS.StoreError, PC.ContractError, OSError) as exc:
+    except (PS.StoreError, PC.ContractError, DL.LifecycleError, OSError) as exc:
         _fail(exc)
-
 def candidate_path(root, relative):
     if Path(relative).is_absolute() or ".." in Path(relative).parts:
         raise PairError(f"invalid candidate path: {relative}")
     return candidate_tree(root) / relative
-
 def require_member(root, path, group=None, manifest=None):
     manifest = manifest or load(root)
     tree = candidate_tree(root)
@@ -152,7 +155,6 @@ def require_member(root, path, group=None, manifest=None):
         return PS._safe_file(Path(path).absolute(), tree)
     except PS.StoreError as exc:
         _fail(exc)
-
 def _check_eval_contract(root, manifest):
     tree = candidate_tree(root)
     cfg = loopcfg.load(PS._safe_file(tree / manifest["run"]["config"], tree))
@@ -162,7 +164,6 @@ def _check_eval_contract(root, manifest):
         raise PairError(f"candidate config changed evaluation membership: "
                         f"missing={sorted(expected-declared)}, extra={sorted(declared-expected)}")
     return cfg
-
 def _actual(root, manifest):
     pair = PS.exact_tree(candidate_tree(root), _members(manifest))
     evaluation = PS.exact_tree(evaluation_tree(root), manifest["evaluation"])
@@ -170,21 +171,21 @@ def _actual(root, manifest):
     if eval_hash != manifest["accepted_evaluation_hash"]:
         raise PairError("sealed evaluation inputs drifted from the accepted contract")
     return pair_hash, eval_hash
-
 def _model_identity(cfg):
     keys = ("model", "provider", "reasoning", "route", "judge_k", "campaign",
             "instrument_version", "epsilon", "tripwire", "threshold", "weights")
     return {key: cfg[key] for key in sorted(cfg) if any(part in key for part in keys)}
-
 def _identity(manifest):
     return PS.state_hash({key: value for key, value in manifest.items()
                           if key != "tested_hash"})
-
 def seal(root, interrupt=None):
     manifest = load(root)
-    if manifest["state"] not in ("CANDIDATE", "WRITER_HANDOFF"):
+    if manifest["state"] not in ("CANDIDATE", "WRITER_HANDOFF", "BATCH_FROZEN"):
         raise PairError("SEALED is terminal")
     try:
+        if manifest.get("draft_batch") is not None:
+            import first_draft_batch as FB
+            FB.require_frozen_batch(root)
         WO.read(root, manifest.get("operation"))
         cfg = _check_eval_contract(root, manifest)
         pair_hash, eval_hash = _actual(root, manifest)
@@ -206,14 +207,16 @@ def seal(root, interrupt=None):
         PS.write_json(_manifest_path(root), sealed, interrupt)
         _manifest_path(root).chmod(0o444)
         return sealed["tested_hash"]
-    except (PS.StoreError, PC.ContractError, WO.OperationError) as exc:
+    except (PS.StoreError, PC.ContractError, WO.OperationError, DB.BatchError) as exc:
         _fail(exc)
-
 def verify_sealed(root, tested_hash, expected=None):
     manifest = load(root)
     if manifest["state"] != "SEALED" or manifest.get("tested_hash") != tested_hash:
         raise PairError("tested pair hash does not match sealed identity")
     try:
+        if manifest.get("draft_batch") is not None:
+            import first_draft_batch as FB
+            FB.require_frozen_batch(root)
         WO.read(root, manifest.get("operation"))
         cfg = _check_eval_contract(root, manifest)
         PS.exact_layout(root, manifest, expected)
@@ -229,9 +232,8 @@ def verify_sealed(root, tested_hash, expected=None):
         if expected != actual:
             raise PairError("sealed metadata, configuration, product, or inputs drifted")
         return manifest
-    except (PS.StoreError, PC.ContractError, WO.OperationError) as exc:
+    except (PS.StoreError, PC.ContractError, WO.OperationError, DB.BatchError) as exc:
         _fail(exc)
-
 def _view(root, manifest):
     tree = candidate_tree(root)
     cfg = dict(loopcfg.load(PS._safe_file(tree / manifest["run"]["config"], tree)))
@@ -244,7 +246,6 @@ def _view(root, manifest):
                results_tsv=str(evidence / "results.tsv"))
     return {"manifest": manifest, "pair": tree,
             "evaluation": evaluation, "evidence": evidence, "config": cfg}
-
 def pending_sealed(root, tested_hash):
     """Load guarded paths needed to recompute recovery bytes; not a verified pair."""
     manifest = load(root)
@@ -255,6 +256,5 @@ def pending_sealed(root, tested_hash):
         return _view(root, manifest)
     except PS.StoreError as exc:
         _fail(exc)
-
 def open_sealed(root, tested_hash, expected=None):
     return _view(root, verify_sealed(root, tested_hash, expected))

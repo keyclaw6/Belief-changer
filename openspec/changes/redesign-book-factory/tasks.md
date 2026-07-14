@@ -470,13 +470,13 @@ the SHA without reopening the implementation verdict.
   - Review 4: `PASS` — no findings; 49/49 affected and 188/188 full tests,
     strict OpenSpec, diff, compile, and size gates pass.
 - Commit / push: accepted subject
-  `feat(writing): enforce commission-only writer context`; exact SHA is deferred
-  to the next ledger checkpoint.
+  `feat(writing): enforce commission-only writer context`; exact SHA
+  `eb8e8ece668101763651e497bedd14a50a848e0d`.
 
 ### RF-11 — Freeze complete first-draft batches before review
 
-- [ ] Snapshot all selected drafts before any review or revision.
-- Status: `TODO`
+- [x] Snapshot all selected drafts before any review or revision.
+- Status: `DONE`
 - Evidence class / report: retained operating lesson; §§6 item 8, 7 stages 5–7,
   10.
 - Problem / root cause: chapter-by-chapter review can mutate context and hide the
@@ -491,9 +491,36 @@ the SHA without reopening the implementation verdict.
   configurations.
 - Verification: batch state-machine fixtures, `bash scripts/check.sh`.
 - Dependencies: RF-02, RF-10.
-- Implementation attempts: `0`; latest: `—`.
-- Review attempts: `0`; latest verdict / findings: `—`.
-- Commit / push: `—`.
+- Implementation attempts: `4`; latest: 2026-07-15
+  `/root/rf11_draft_batch_owner` — final accepted-root lifecycle reads now
+  require exact canonical mode `0444`, while atomic staging reads retain their
+  distinct owner/safety handling so pending recovery remains replayable.
+  Regressions reject `0644`, `0400`, and `0440` anchors in both `NEVER_STARTED`
+  and `STARTED/COMMITTED` through load, seal, verify, and recovery paths; all
+  transition-kill recoveries end at `0444`. Dedicated RF-11 tests pass 18/18,
+  the affected RF-02/RF-10/RF-11 suite passes 72/72, and the 206/206 full
+  repository gate, strict OpenSpec, diff, compile, and size gates pass
+  (shellcheck unavailable).
+- Review attempts: `4`.
+  - Review 1: `NEEDS CHANGES` — an accepted model callback could be repeated
+    across crash windows because response bytes were not durably bound before
+    return; batch start could be downgraded into generic RF-02 handling by
+    removing its batch metadata; frozen evidence accepted non-writable modes
+    instead of requiring exact canonical `0444`.
+  - Review 2: `NEEDS CHANGES` — after partial progress, deleting the complete
+    first-draft evidence and clearing batch/start metadata could downgrade a
+    manual operation to `WRITER_HANDOFF` or an API operation to `CANDIDATE`,
+    restoring generic RF-02 seal, verify, and recovery semantics because no
+    durable lifecycle anchor outside candidate-local state remembered start.
+  - Review 3: `NEEDS CHANGES` — final lifecycle anchors were content- and
+    owner-checked but did not require exact canonical mode `0444`, so altered
+    `0644`, `0400`, or `0440` anchors remained readable as valid operation
+    authority.
+  - Review 4: `PASS` — no findings; 18/18 dedicated, 78/78 affected, and
+    206/206 full tests, strict OpenSpec, diff, compile, and size gates pass.
+- Commit / push: accepted subject
+  `feat(writing): freeze complete first-draft batches`; exact SHA is deferred
+  to the next ledger checkpoint.
 
 ### RF-12 — Implement blocking grounded review
 

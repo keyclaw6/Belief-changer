@@ -123,7 +123,8 @@ class RF02StoreCliTests(unittest.TestCase):
         self.assertNotIn("master-plan.md", text)
         self.assertNotIn("style-guide.md", text)
         self.assertNotIn(str(ROOT), text)
-        review = MANUAL.reviewer(operation)
+        with mock.patch.object(MANUAL.FB, "require_frozen_batch"):
+            review = MANUAL.reviewer(operation.parent)
         self.assertIn(f"cd -- {operation}", review)
         self.assertIn("prompts/chapter-reviewer.md", review)
         self.assertNotIn(str(ROOT), review)
@@ -147,6 +148,8 @@ class RF02StoreCliTests(unittest.TestCase):
         with mock.patch.object(sys, "argv", argv), \
                 mock.patch.object(GUARD, "LEDGER", self.ledger), \
                 mock.patch.object(RUN, "write_chapters", return_value=True), \
+                mock.patch.object(RUN.FB, "freeze"), \
+                mock.patch.object(RUN.MD, "reviewer", return_value="review"), \
                 mock.patch.dict(os.environ, {"OPENROUTER_API_KEY": "do-not-render"}), \
                 contextlib.redirect_stdout(output):
             with self.assertRaises(SystemExit) as paused:
@@ -173,6 +176,7 @@ class RF02StoreCliTests(unittest.TestCase):
         with mock.patch.object(sys, "argv", tokens[1:]), \
                 mock.patch.object(GUARD, "LEDGER", self.ledger), \
                 mock.patch.object(RUN, "write_chapters", side_effect=AssertionError), \
+                mock.patch.object(RUN.FB, "require_frozen_batch"), \
                 mock.patch.object(RUN, "run_step", return_value=3) as dispatched:
             with self.assertRaises(SystemExit) as replayed:
                 RUN.main()
@@ -204,6 +208,9 @@ class RF02StoreCliTests(unittest.TestCase):
                 mock.patch.object(RUN.WC, "require_fresh"), \
                 mock.patch.object(RUN.WC, "persist_manual_receipt", return_value="a" * 64), \
                 mock.patch.object(RUN.WC, "manual_receipt_hash", return_value="a" * 64), \
+                mock.patch.object(RUN.FB, "begin", return_value={
+                    "state": "DRAFTING", "mode": "manual",
+                    "drafts": [], "selection": [1]}), \
                 mock.patch.object(RUN.judges, "endpoint", return_value=("", "")), \
                 mock.patch.dict(os.environ, {"OPENROUTER_API_KEY": "do-not-render"}), \
                 contextlib.redirect_stdout(output):

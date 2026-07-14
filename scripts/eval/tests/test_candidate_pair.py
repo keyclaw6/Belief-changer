@@ -213,7 +213,7 @@ class CandidatePairTests(unittest.TestCase):
         value = json.loads(pair_json.read_text(encoding="utf-8"))
         value["run"]["chapters"] = [2]
         pair_json.write_text(json.dumps(value), encoding="utf-8")
-        with self.assertRaisesRegex(PAIR.PairError, "drifted"):
+        with self.assertRaisesRegex(PAIR.PairError, "lifecycle"):
             PAIR.verify_sealed(experiment, tested)
 
         value["run"]["chapters"] = manifest["run"]["chapters"]
@@ -240,6 +240,9 @@ class CandidatePairTests(unittest.TestCase):
                 mock.patch.object(RUN.WC, "require_fresh"), \
                 mock.patch.object(RUN.WC, "persist_manual_receipt", return_value="a" * 64), \
                 mock.patch.object(RUN.WC, "manual_receipt_hash", return_value="a" * 64), \
+                mock.patch.object(RUN.FB, "begin", return_value={
+                    "state": "DRAFTING", "mode": "manual",
+                    "drafts": [], "selection": [1]}), \
                 mock.patch.object(RUN.judges, "endpoint", return_value=("", "")):
             with self.assertRaises(SystemExit) as stopped:
                 RUN.main()

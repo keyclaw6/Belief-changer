@@ -25,6 +25,7 @@ import os
 import re
 from pathlib import Path
 import legacy_guard as LG
+import first_draft_batch as FB
 
 DIMS = ("voice_certainty", "method_execution", "structure_anatomy",
         "repetition_mantra", "emotional_register", "rhythm_texture")
@@ -115,6 +116,10 @@ def missing_verdicts(cfg, labels, iter_name: str, pair_hash=None, candidate=None
 def emit_tasks(cfg, pairs, iter_name: str, rubric_text: str, candidate: Path,
                pair_hash=None) -> list:
     """pairs: (label, ours_text, ref_text, ctx). Writes tasks/, creates verdicts/."""
+    try:
+        FB.require_frozen_batch(candidate)
+    except FB.BatchError as exc:
+        raise SystemExit(f"judges: frozen first-draft batch required: {exc}") from exc
     for ph in ("{{REFERENCE}}", "{{CANDIDATE}}", "{{CONTEXT}}"):
         if ph not in rubric_text:
             raise SystemExit(f"judges: rubric missing {ph} placeholder")

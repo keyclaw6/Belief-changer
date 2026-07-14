@@ -83,8 +83,9 @@ class PairBindingTests(unittest.TestCase):
         tested = PAIR.seal(experiment)
         view = PAIR.open_sealed(experiment, tested)
         cfg, label = view["config"], "ch01"
-        task = judges.emit_tasks(cfg, [(label, "ours", "reference", "context")],
-                                  "001", RUBRIC, experiment, tested)[0]
+        with mock.patch.object(judges.FB, "require_frozen_batch"):
+            task = judges.emit_tasks(cfg, [(label, "ours", "reference", "context")],
+                                      "001", RUBRIC, experiment, tested)[0]
         task_hash = judges._task_binding(task, tested, experiment)
         vpath = task.parents[1] / "verdicts" / f"{label}-j1.json"
         vpath.write_text(json.dumps(verdict(tested, task_hash)), encoding="utf-8")
@@ -115,7 +116,8 @@ class PairBindingTests(unittest.TestCase):
                 "--candidate-root", str(experiment),
                 "--decision-timestamp", TIMESTAMP]
         with mock.patch.object(sys, "argv", argv), mock.patch.object(GUARD, "LEDGER", ledger), \
-                mock.patch.object(GATE.score_core, "evaluate", return_value=dict(core)):
+                mock.patch.object(GATE.score_core, "evaluate", return_value=dict(core)), \
+                mock.patch.object(GATE.FB, "require_frozen_batch"):
             GATE.main()
 
     def test_valid_receipt_promotes_exact_pair(self):
