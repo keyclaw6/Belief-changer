@@ -143,8 +143,7 @@ class ResearchContractTests(unittest.TestCase):
         self.write_fixture("Compulsive smartphone checking", beliefs, ["n/a"] * 4)
         self.assertEqual(4, len(RC.require_research_contract(self.book)))
         self.assertEqual(47, len(RC._packet_index(ROOT / "production-books/quit-sugar/research/sources")))
-        for stage in ("framing", "planning"):
-            self.assertEqual(self.book / "00-brief.md", RC.subject.require_subject_contract(self.book, stage))
+        self.assertEqual(self.book / "00-brief.md", RC.subject.require_subject_contract(self.book, "framing"))
     def test_fear_of_flying_transfers_and_keeps_scientific_grade(self):
         """OpenSpec: Synthesized research — Synthesis cites an unsourced claim."""
         beliefs = (

@@ -269,14 +269,13 @@ the SHA without reopening the implementation verdict.
   134/134 full tests, strict OpenSpec and diff checks, downstream stage gate,
   structured source binding, rights/privacy matrix, and 47/47 legacy locators
   all passed with no actionable findings.
-- Commit / push: accepted subject `feat(research): enforce intervention-ready
-  evidence units`; exact SHA is captured at the next ledger checkpoint to avoid
-  impossible self-reference.
+- Commit / push: `50d3763844c54788828d59b356ed8cd11825129d`
+  (`feat(research): enforce intervention-ready evidence units`).
 
 ### RF-05 — Encode the belief graph, reader journey, and earned authority
 
-- [ ] Make framing decide the cumulative intervention before planning.
-- Status: `TODO`
+- [x] Make framing decide the cumulative intervention before planning.
+- Status: `DONE`
 - Evidence class / report: supported generalization; §§5 causes 1 and 6, 7
   action 1, 8.
 - Problem / root cause: framing inventories beliefs and forks without resolving
@@ -294,9 +293,17 @@ the SHA without reopening the implementation verdict.
   validate genericity.
 - Verification: independent framing-review fixture, `bash scripts/check.sh`.
 - Dependencies: RF-03, RF-04.
-- Implementation attempts: `0`; latest: `—`.
-- Review attempts: `0`; latest verdict / findings: `—`.
-- Commit / push: `—`.
+- Implementation attempts: `2`; latest: 2026-07-14
+  `/root/rf05_framing_owner` — added a hash-bound independent complete-framing
+  semantic review before planning, field-aware unresolved sentinels, normalized
+  state identity, reproduced authority probes, and corrected test traceability.
+- Review attempts: `2`; latest verdict / findings: `PASS` — hash-bound semantic
+  review and bypass probes block unsafe authority; sentinel and state identity
+  repairs pass; 25/25 focused and 145/145 full tests, strict OpenSpec, and diff
+  checks are clean with no actionable findings.
+- Commit / push: accepted subject
+  `feat(framing): enforce causal reader journeys`; exact SHA is captured at the
+  next ledger checkpoint to avoid impossible self-reference.
 
 ### RF-06 — Make master-plan cards enact reader transitions
 

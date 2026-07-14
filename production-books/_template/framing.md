@@ -1,37 +1,138 @@
 # Framing — <Book Title>
 
-Book-specific adaptation of the style guide. **Complete this before writing the master plan** — the master plan draws directly from it. (Style guide refs: Part A §4 forks + §10 playbook; Part B §B2 mantra archetypes, §B10 format & redefinition.)
+Complete after accepted research and before the master plan. Repeat the exact
+target-behavior wording from `00-brief.md` wherever a subject-specific move or
+encounter is requested. This artifact decides the intervention; it does not
+dispatch a model or prescribe chapter prose. Planning remains blocked until a
+fresh independent semantic review is accepted in `framing-review.md`.
 
-## Format & scope decisions (Part B)
-- **Format:** pocket (§B6) | full-length (§B10 — default; mandatory at 15+ chapters) — <choice>
-- **Redefinition decision (§B10)** — only if the behavior can't be quit wholesale: the precise Good-X/Bad-X line; the CAPS name for the bad subset; the definitional decree sentence; the margin-for-error doctrine; conditional-bonus extensions (adjacent indulgences left optional). <if not applicable, say "not applicable — clean total quit" and why>
-- **Persona set (3–6, by the function the behavior serves):** <e.g. escape/numbing; boredom; social belonging; performance; identity> — each with one line on their load-bearing belief and their dialect.
+## Contract metadata
+- **Planner role:** high-reasoning native planner (Sol or equivalent)
+- **Writer role:** distinct downstream writer; not the framing planner
 
-## §10 Adaptation playbook (answer every item with specifics)
-1. **Load-bearing false belief:** <what the reader believes the behavior gives them>
-2. **Illusory benefit → true mechanism (the inversion):** <how the behavior CREATES the discomfort it then "relieves">; **rescuer-as-perpetrator image:** <the one picture that lands it>
-3. **Justifications to demolish (one per):** <list every reason a user gives — verbatim from research where possible>
-4. **Engineered villain (manufacture of desire):** <who profits + how the hook was built>
-5. **Physical/chemical reality + science weight:** <real withdrawal? how trivial? which facts make the trap visible?>
-6. **Fork 5 decision — natural baseline OR root + replacement:** <choice; if root, name the root craving + the positive direction>
-7. **Behavior-specific analogies to invent:** <original images, not lifted from the reference books>
-8. **This behavior's escape routes to foreclose:** <"I'll just do it on weekends", "the soft version is fine", etc.>
-9. **Strongest / most seductive scene to meet head-on:** <the hardest case to argue against — per persona if they differ>
-10. **The "moment of revelation" to predict:** <the ordinary future moment that will prove freedom to this reader — per persona if they differ>
+## Format and scope decisions
+- **Format:** <pocket or full-length, with reason>
+- **Redefinition decision:** <precise line, or "not applicable — clean total quit" with reason>
 
-## Mantra seeds (§B2 — candidate frozen wordings; the master plan finalizes and freezes)
-- **Trap-namer** ("the X trap"): <candidate>
-- **Illusion-namer** (the fixed dyad for the perceived benefit): <candidate>
-- **Mechanism characters** (per Fork 1 — name the trap/lie/industry, never an inner beast to battle): <candidates>
-- **Sensory definition** (the canonical adjective-string for this behavior's low/craving — draw from real community descriptions): <candidate>
-- **Named anti-method:** <"the willpower method" or behavior-fitted variant>
-- **Named conflict model:** <"the tug-of-war of fear" or variant>
-- **Named positive authority + operational instruments:** <the alternate authority the reader obeys after; the 1–3 tools it hands them>
-- **Terminal mantra** (core "...I'M FREE!"): <candidate>
-- **Claim block** (the full-sentence promise repeated as a set-piece): <candidate>
+### P-01
+- **Function:** <function the behavior serves>
+- **Load-bearing belief:** <persona belief>
+- **Dialect:** <recognizable reader wording>
 
-## How to use the personal experiences
-<which testimonials map to which beliefs / chapters; the emotional notes to hit; the "this is exactly me" lines to deploy and where; the long-form embedded testimonial candidate ("In his own words — ...")>
+### P-02
+- **Function:** <function the behavior serves>
+- **Load-bearing belief:** <persona belief>
+- **Dialect:** <recognizable reader wording>
 
-## Fork positions (style guide §4) for this book
-<our chosen position on each of the 5 forks, with one-line rationale where it isn't the default>
+### P-03
+- **Function:** <function the behavior serves>
+- **Load-bearing belief:** <persona belief>
+- **Dialect:** <recognizable reader wording>
+
+## Style-guide Section 10 adaptation playbook
+1. **Load-bearing false belief:** <specific answer>
+2. **Illusory benefit and inversion:** <true mechanism and rescuer-as-perpetrator image>
+3. **Justifications to demolish:** <research-grounded reader reasons>
+4. **Engineered villain:** <who profits and how desire is manufactured>
+5. **Physical or chemical reality and science weight:** <bounded facts and chosen weight>
+6. **Natural baseline or root and replacement:** <chosen Fork 5 position>
+7. **Behavior-specific analogies:** <original images>
+8. **Escape routes to foreclose:** <subject-specific escape routes>
+9. **Strongest seductive scene:** <hardest case to meet head-on>
+10. **Moment of revelation:** <ordinary future proof of freedom>
+
+## Mantra seeds
+- **Trap-namer:** <candidate>
+- **Illusion-namer:** <candidate>
+- **Mechanism characters:** <candidates aligned with Fork 1>
+- **Sensory definition:** <candidate grounded in reader wording>
+- **Named anti-method:** <candidate>
+- **Named conflict model:** <candidate>
+- **Named positive authority:** <candidate and its instruments>
+- **Terminal mantra:** <candidate>
+- **Claim block:** <candidate>
+
+## Personal-experience use
+<Map bounded lived patterns, recognition lines, personas, and belief nodes.>
+
+## Fork positions
+- **Fork 1:** <position and reason>
+- **Fork 2:** <position and reason>
+- **Fork 3:** <position and reason>
+- **Fork 4:** <position and reason>
+- **Fork 5:** <position and reason>
+
+## Belief graph
+
+Use one compact node per exact brief belief. The primary node must reach every
+subordinate node through `Depends on`; use `none` only at a leaf.
+
+### BG-01
+- **Kind:** primary
+- **Belief:** "<exact primary brief belief>"
+- **Depends on:** BG-02
+
+### BG-02
+- **Kind:** subordinate
+- **Belief:** "<exact subordinate brief belief>"
+- **Depends on:** none
+
+## Evidence-honest authority strategy
+
+Use each basis exactly once. Recognition and bounded lived patterns reuse an
+accepted unit's permitted inference and prohibited-inference limit verbatim.
+Logic cites no evidence and makes no danger claim. Supported danger must repeat
+a cited scientific unit's permitted inference. The independent complete-framing
+review blocks invented pedigree, unsupported danger, and evidence overreach
+anywhere in this artifact, including free-text strategy fields.
+
+### AU-01
+- **Basis:** recognition
+- **Subject-specific move:** <move naming the exact target behavior>
+- **Evidence units:** <LEU-___ or SEU-___ IDs>
+- **Claim:** <exact permitted inference>
+- **Danger claim:** none
+- **Limits:** <exact prohibited inference>
+
+### AU-02
+- **Basis:** bounded lived pattern
+- **Subject-specific move:** <move naming the exact target behavior>
+- **Evidence units:** <LEU-___ IDs>
+- **Claim:** <exact permitted inference>
+- **Danger claim:** none
+- **Limits:** <exact prohibited inference>
+
+### AU-03
+- **Basis:** logic
+- **Subject-specific move:** <logical move naming the exact target behavior>
+- **Evidence units:** none
+- **Claim:** <subject-specific logical conclusion, not an empirical claim>
+- **Danger claim:** none
+- **Limits:** <what the logic does not establish>
+
+## Cumulative reader-state journey
+
+Include every argument-bearing chapter. Use `RS-NN | state` values. A chapter's
+handoff repeats its leaving state exactly; the next chapter enters that exact
+state. Assign each belief node once. Reserved work names exactly the belief
+nodes assigned to later stages, and the final stage names no belief-node ID.
+
+### CH-01 — <argument-bearing job>
+- **Belief nodes resolved:** BG-01
+- **Entering belief:** RS-00 | <reader belief on entry>
+- **Subject-specific encounter:** <concrete encounter naming the exact target behavior>
+- **Discovery mechanism:** <what lets the reader discover the correction>
+- **Emotional turn:** <felt movement caused by the discovery>
+- **Leaving belief:** RS-01 | <changed belief>
+- **Handed-forward state:** RS-01 | <changed belief>
+- **Reserved work:** <exact later BG IDs and what is deliberately left to them>
+
+### CH-02 — <next argument-bearing job>
+- **Belief nodes resolved:** BG-02
+- **Entering belief:** RS-01 | <repeat the prior handed-forward state exactly>
+- **Subject-specific encounter:** <different concrete encounter naming the exact target behavior>
+- **Discovery mechanism:** <different discovery mechanism>
+- **Emotional turn:** <felt movement caused by the discovery>
+- **Leaving belief:** RS-02 | <changed belief>
+- **Handed-forward state:** RS-02 | <changed belief>
+- **Reserved work:** none — <why no graph work remains>

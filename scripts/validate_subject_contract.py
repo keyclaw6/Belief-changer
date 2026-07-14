@@ -154,6 +154,12 @@ def require_subject_contract(book, stage):
             research.require_research_contract(book)
         except research.ContractError as exc:
             raise ContractError(f"research synthesis not ready: {exc}") from exc
+    if stage == "planning":
+        import validate_framing_contract as framing
+        try:
+            framing.require_framing_contract(book)
+        except framing.ContractError as exc:
+            raise ContractError(f"framing not ready: {exc}") from exc
     return brief
 
 
