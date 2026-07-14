@@ -1,0 +1,394 @@
+{
+ "campaign": "factory-v3-rubric-1",
+ "instrument_version": "carr-likeness-rubric-1",
+ "book": "production-books/quit-sugar",
+ "chapters_checked": [
+  1,
+  2,
+  3
+ ],
+ "control_ref": false,
+ "reward": 0.6675,
+ "hard_ok": true,
+ "hard_fails": [],
+ "checks": {
+  "originality": {
+   "ours_ngrams": 8738,
+   "overlap_ngrams": 0,
+   "overlap_ratio": 0.0,
+   "tripwire": 0.003,
+   "tripped": false,
+   "samples": []
+  },
+  "mantra": {
+   "mantras": [
+    {
+     "archetype": "MN-01",
+     "wording": "You can test whether BAD SUGAR owns any special or irreplaceable pleasure, without denying pleasant taste or giving up your right to choose.",
+     "debut": 1,
+     "schedule": [
+      2,
+      3,
+      15,
+      18
+     ],
+     "found_in": [
+      1,
+      2,
+      3
+     ],
+     "counts": {
+      "1": 2,
+      "2": 2,
+      "3": 2
+     }
+    },
+    {
+     "archetype": "MN-02",
+     "wording": "without deprivation, without battle, and without a lifetime of rules",
+     "debut": 1,
+     "schedule": [
+      3,
+      5,
+      17,
+      18,
+      20
+     ],
+     "found_in": [
+      1,
+      3
+     ],
+     "counts": {
+      "1": 2,
+      "3": 2
+     }
+    },
+    {
+     "archetype": "MN-03",
+     "wording": "the sugar trap",
+     "debut": 2,
+     "schedule": [
+      3,
+      21
+     ],
+     "found_in": [
+      2,
+      3
+     ],
+     "counts": {
+      "2": 4,
+      "3": 10
+     }
+    },
+    {
+     "archetype": "MN-04",
+     "wording": "a special pleasure or rescue",
+     "debut": 3,
+     "schedule": [
+      4,
+      7,
+      18
+     ],
+     "found_in": [
+      3
+     ],
+     "counts": {
+      "3": 2
+     }
+    },
+    {
+     "archetype": "MN-05",
+     "wording": "The Sugar Showman feeds the Sugar Flea.",
+     "debut": 6,
+     "schedule": [
+      7,
+      8,
+      13,
+      15,
+      16,
+      18,
+      19,
+      20
+     ],
+     "found_in": [],
+     "counts": {}
+    },
+    {
+     "archetype": "MN-06",
+     "wording": "a nagging, bargaining, slightly urgent sense that this moment is missing something",
+     "debut": 6,
+     "schedule": [
+      7,
+      9,
+      10,
+      15,
+      19
+     ],
+     "found_in": [],
+     "counts": {}
+    },
+    {
+     "archetype": "MN-07",
+     "wording": "anticipating, bargaining, and starting over",
+     "debut": 4,
+     "schedule": [
+      5,
+      10,
+      16,
+      17,
+      18
+     ],
+     "found_in": [],
+     "counts": {}
+    },
+    {
+     "archetype": "MN-08",
+     "wording": "When the benefit loses its credit, the battle loses its job.",
+     "debut": 5,
+     "schedule": [
+      7,
+      8,
+      9,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+     ],
+     "found_in": [],
+     "counts": {}
+    },
+    {
+     "archetype": "MN-09",
+     "wording": "You can close the daily sugar debate without policing every molecule, fighting yourself, or treating one accidental bite as failure.",
+     "debut": 1,
+     "schedule": [
+      11,
+      17,
+      18,
+      20
+     ],
+     "found_in": [
+      1
+     ],
+     "counts": {
+      "1": 2
+     }
+    },
+    {
+     "archetype": "MN-10",
+     "wording": "WHAT A RELIEF \u2014 THE SUGAR TRAP IS OVER. I'M FREE!",
+     "debut": 19,
+     "schedule": [
+      20,
+      21
+     ],
+     "found_in": [],
+     "counts": {}
+    }
+   ],
+   "chapters_checked": [
+    1,
+    2,
+    3
+   ],
+   "chapters_without_mantra": [],
+   "failures": []
+  },
+  "repetition_within": {
+   "repeated_ngrams": 0,
+   "spans_top": [],
+   "hard_fails": [],
+   "whitelist_size": 10
+  },
+  "length": [
+   {
+    "n": 1,
+    "words": 3161,
+    "budget": null,
+    "ok": true
+   },
+   {
+    "n": 2,
+    "words": 2622,
+    "budget": null,
+    "ok": true
+   },
+   {
+    "n": 3,
+    "words": 3143,
+    "budget": null,
+    "ok": true
+   }
+  ],
+  "near_copy": [
+   {
+    "chapter": "ch01",
+    "ratio": 0.037,
+    "tripwire": 0.5
+   },
+   {
+    "chapter": "ch02",
+    "ratio": 0.0305,
+    "tripwire": 0.5
+   },
+   {
+    "chapter": "ch03",
+    "ratio": 0.0413,
+    "tripwire": 0.5
+   }
+  ]
+ },
+ "diagnostics": {
+  "stylometrics": [
+   {
+    "metric": "mean_chapter_words",
+    "ours": 2975.3,
+    "ref": 3725.3
+   },
+   {
+    "metric": "mean_sentence_words",
+    "ours": 15.6,
+    "ref": 18.4
+   },
+   {
+    "metric": "pct_short_sentences",
+    "ours": 31.8,
+    "ref": 14.7
+   },
+   {
+    "metric": "questions_per_100_sents",
+    "ours": 9.8,
+    "ref": 11.3
+   },
+   {
+    "metric": "second_person_per_1000",
+    "ours": 32.6,
+    "ref": 42.4
+   },
+   {
+    "metric": "first_person_per_1000",
+    "ours": 8.8,
+    "ref": 5.1
+   }
+  ]
+ },
+ "judges": {
+  "status": "SCORED",
+  "rubric": {
+   "reward": 0.6675,
+   "per_chapter": [
+    {
+     "chapter": "ch01",
+     "composite": 0.6175,
+     "dims": {
+      "voice_certainty": 4.5,
+      "method_execution": 6.5,
+      "structure_anatomy": 7.5,
+      "repetition_mantra": 9.0,
+      "emotional_register": 3.5,
+      "rhythm_texture": 6.5
+     },
+     "gap_summaries": [
+      "The candidate replaces the reference's blunt, escalating, fear-facing certainty with cautious evidence-bound policy prose, so its sound belief correction never acquires Carr's nerve or drumbeat force.",
+      "The candidate replaces the reference's blunt, testimonial certainty and full-force attack on the trap with transparent qualifications and a low-risk invitation to investigate."
+     ]
+    },
+    {
+     "chapter": "ch02",
+     "composite": 0.695,
+     "dims": {
+      "voice_certainty": 5.0,
+      "method_execution": 8.0,
+      "structure_anatomy": 8.0,
+      "repetition_mantra": 9.0,
+      "emotional_register": 5.0,
+      "rhythm_texture": 7.0
+     },
+     "gap_summaries": [
+      "The candidate's conspicuous evidence disclaimers and clinical cushioning replace the reference's blunt, high-nerve certainty with a safer academic register.",
+      "The largest distance is the candidate's evidence-lawyer register, whose repeated methodological and clinical caveats interrupt the flat, fearless certainty of the reference."
+     ]
+    },
+    {
+     "chapter": "ch03",
+     "composite": 0.69,
+     "dims": {
+      "voice_certainty": 5.5,
+      "method_execution": 8.0,
+      "structure_anatomy": 7.0,
+      "repetition_mantra": 8.5,
+      "emotional_register": 5.5,
+      "rhythm_texture": 7.0
+     },
+     "gap_summaries": [
+      "The candidate's research-audit caution and exhaustive taxonomy keep replacing the reference's blunt, escalating certainty and emotional nerve.",
+      "The candidate's research-aware, procedurally qualified exposition keeps interrupting the blunt, momentum-driven certainty that defines the reference."
+     ]
+    }
+   ],
+   "suggestions": [
+    {
+     "suggestion": "Compress the paragraphs beginning \"I should be equally clear about the authority behind it\" and the later \"bounded reports\" asides into one brief honesty boundary, then state the core conclusion as settled fact; repeated audit language mechanically brakes the direct-address authority.",
+     "asset": "chapter-writer",
+     "weight": 5,
+     "count": 1,
+     "chapters": [
+      "ch01"
+     ]
+    },
+    {
+     "suggestion": "Replace the two meta-authority passages beginning \"I am not going to open with a dramatic personal escape\" and \"Every important boundary will stay visible\" with a brief direct-address sequence of assertion, reader objection, answer, and verdict; keep provenance limits outside the narrative voice so the chapter speaks in settled facts.",
+     "asset": "chapter-writer",
+     "weight": 5,
+     "count": 1,
+     "chapters": [
+      "ch01"
+     ]
+    },
+    {
+     "suggestion": "In 'WHAT THE ACCOUNTS ACTUALLY SHOW,' cut the disclaimer cluster beginning 'Neither account proves' and state only the narrow fact the evidence supports in one plain sentence before driving immediately into the trap question and verdict.",
+     "asset": "chapter-writer",
+     "weight": 5,
+     "count": 1,
+     "chapters": [
+      "ch02"
+     ]
+    },
+    {
+     "suggestion": "Ban clusters of research-lawyer diction exemplified by \"bounded accounts\", \"universal mechanism\", \"clinical syndrome\", and \"active catalogue\"; allow one plain boundary sentence, then require a direct claim or trap question.",
+     "asset": "style-guide",
+     "weight": 5,
+     "count": 1,
+     "chapters": [
+      "ch02"
+     ]
+    },
+    {
+     "suggestion": "Rewrite the source-status passages in \"THE INVESTIGATION MENU\" as compact objections spoken in the reader's dialect; keep provenance out of the narrative voice, then drive each group into one short verdict instead of repeatedly classifying quotations, synthesis, and logic.",
+     "asset": "chapter-writer",
+     "weight": 5,
+     "count": 1,
+     "chapters": [
+      "ch03"
+     ]
+    }
+   ],
+   "worst_dimensions": [
+    {
+     "dimension": "emotional_register",
+     "votes": 4
+    },
+    {
+     "dimension": "voice_certainty",
+     "votes": 2
+    }
+   ],
+   "n_verdicts": 6,
+   "judge_model": "gpt-5.6-sol",
+   "judge_k": 2
+  },
+  "missing": []
+ }
+}

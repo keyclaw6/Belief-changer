@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 5,
+    "method_execution": 7,
+    "structure_anatomy": 8,
+    "repetition_mantra": 9,
+    "emotional_register": 4,
+    "rhythm_texture": 7
+  },
+  "evidence": {
+    "voice_certainty": "The direct address is warm and firm, but phrases such as \"bounded reports\", \"what the evidence does and does not support\", and \"honest authority\" make the narrator sound like a cautious auditor rather than a witness stating settled facts.",
+    "method_execution": "The chapter lands its central inversion through \"walking away is not the loss of a pleasure; it is the end of paying for an impostor\" and answers reader objections in dialogue, though repeated invitations merely to test the claim postpone the reference's decisive demolition.",
+    "structure_anatomy": "It supplies the preview, opening thesis, escalating titled sections, an all-caps verdict, the assigned numbered instruction, and a SUMMARY, although the long boundary catalogue and evidence qualifications periodically flatten the climb.",
+    "repetition_mantra": "All three assigned phrases debut verbatim after an argue-then-compress sequence and recur intact in the SUMMARY, with \"the daily sugar debate\" providing an additional disciplined refrain.",
+    "emotional_register": "\"It will feel like relief. That is not willpower. That is escape.\" sustains freedom rather than sacrifice, but the chapter supplies almost none of the reference's hard fear, attack, or wound-and-bandage nerve.",
+    "rhythm_texture": "The tax, ledger, line, minefield, and combination-lock analogies support several short verdict pairs, but taxonomy and passages beginning \"In bounded reports\" interrupt the forward pull with report-like texture."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate replaces the reference's blunt, testimonial certainty and full-force attack on the trap with transparent qualifications and a low-risk invitation to investigate.",
+  "suggestions": [
+    {
+      "suggestion": "Replace the two meta-authority passages beginning \"I am not going to open with a dramatic personal escape\" and \"Every important boundary will stay visible\" with a brief direct-address sequence of assertion, reader objection, answer, and verdict; keep provenance limits outside the narrative voice so the chapter speaks in settled facts.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Turn one of the qualified evidence asides beginning \"There is something worth noticing\" or \"In bounded reports\" into a compact hard-stakes block: state the strongest supportable facts without cushioning, drive them to a frightening verdict, then explicitly reject fear as the reason to change and return to relief.",
+      "asset": "research"
+    },
+    {
+      "suggestion": "Compress the long section \"THE LINE: WHAT BAD SUGAR IS, WHAT IT ISN'T\" so one concrete scene establishes the rule, two ventriloquized objections try to break it, and a single all-caps line closes the argument; move edge-case administration out of the chapter's main escalation.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "During review, flag abstract compliance diction such as \"categorical core\", \"bounded proposition\", \"receptivity\", and \"classification mistakes\" and require each occurrence either to become the reader's own spoken objection or to be replaced by a concrete image and a short killer-line answer.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 5,
+    "method_execution": 8,
+    "structure_anatomy": 7,
+    "repetition_mantra": 9,
+    "emotional_register": 6,
+    "rhythm_texture": 7
+  },
+  "evidence": {
+    "voice_certainty": "Phrases such as \"will receive its own bounded examination later\" and the repeated source taxonomy sound procedural and research-led rather than like settled, conversational fact.",
+    "method_execution": "The receipt reassigns every apparent credit, the painted-river objection completes the inversion, and \"Is there any loss at all?\" forces the chapter's axis switch.",
+    "structure_anatomy": "The preview, escalating argument, assigned third instruction, all-caps instruction line, and summary are present, but the long investigation menu becomes a catalogue and there are few standalone verdict peaks before the climax.",
+    "repetition_mantra": "All four assigned phrases recur verbatim, and \"a special pleasure or rescue\" arrives only after the value-column argument has earned and compressed it.",
+    "emotional_register": "\"The first frame is a diet. The second is an escape.\" nails escape-not-sacrifice, but harm and fear are deferred into a later \"bounded examination\" rather than delivered with the reference's nerve and then disowned.",
+    "rhythm_texture": "The receipt and painted-river analogies carry the abstraction and \"The first frame is a diet. The second is an escape.\" is a strong killer pair, but provenance paragraphs repeatedly stop the momentum."
+  },
+  "worst_dimension": "voice_certainty",
+  "gap_summary": "The candidate's research-aware, procedurally qualified exposition keeps interrupting the blunt, momentum-driven certainty that defines the reference.",
+  "suggestions": [
+    {
+      "suggestion": "In \"THE INVESTIGATION MENU,\" compress the repeated provenance scaffolding to one plain source-status sentence per group, then present each claim immediately in the reader's dialect; phrases such as \"bounded research\" and \"carry no empirical claim\" turn a belief confrontation into a research report.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Require each major section to end in a short standalone verdict, with at least one all-caps belief verdict before the numbered instruction; here the receipt and menu sections dissolve back into explanation instead of striking and escalating.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Replace academic and legal process language such as \"qualitative accounts,\" \"empirical claim,\" and \"bounded examination\" with one direct ordinary-language limit, preserving evidence honesty without hedge stacks or editorial throat-clearing.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "Flag duplicated analogy work: the receipt and the tenant's painted view both prove the same axis switch, so keep the stronger carrier and use the saved space for trap questions, ventriloquized objections, and short answers that force concession.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

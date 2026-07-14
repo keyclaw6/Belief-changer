@@ -15,7 +15,7 @@ You are writing **Chapter [N] — "[WORKING TITLE]"** of the belief-change book 
 
 ## The rules that get chapters rejected (memorize before drafting)
 1. **Mantras are sacred.** Every mantra this chapter DEBUTS gets its full argue→compress beat; every mantra it ECHOES appears VERBATIM — exact wording, capitalization, punctuation from the mantra sheet. Never paraphrase a mantra. Never invent a new one.
-2. **One job.** Make the chapter's single belief-move, land it, stop. No second thesis.
+2. **One job — completed now.** Make the chapter's single belief-move, land it, stop. Every argument-bearing chapter must complete its present-tense value correction before the hand-off: force the decisive trap question to its answer, reassign the claimed benefit, state the inversion as settled fact, and compress it into the scheduled verdict. Later chapters may unpack supporting claims, but never tell the reader that today's conclusion is not being decided here or advertise a later chapter as the place where it will finally land. No second thesis.
 3. **Never re-argue settled points.** Previous chapters' conclusions are invoked by their tokens (mantra/vocabulary), in a clause, not rebuilt.
 4. **No verbatim repetition of anything except mantras** — within the chapter and against the previous chapter. (Previews/summaries/instruction recaps are licensed zones.)
 5. **Lexicon discipline.** Trap register for the behavior, freedom register for stopping, banned willpower-register words never (see the lexicon sheet). The vocabulary reframes in every sentence.

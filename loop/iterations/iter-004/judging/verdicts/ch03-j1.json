@@ -1,0 +1,42 @@
+{
+  "scores": {
+    "voice_certainty": 6,
+    "method_execution": 8,
+    "structure_anatomy": 7,
+    "repetition_mantra": 8,
+    "emotional_register": 5,
+    "rhythm_texture": 7
+  },
+  "evidence": {
+    "voice_certainty": "The confident direct address is repeatedly interrupted by research-audit language such as \"small qualitative studies\" and \"cannot tell us how common those justifications are\".",
+    "method_execution": "The asterisked receipt reassigns every alleged credit, and \"The first frame is a diet. The second is an escape\" lands the chapter's inversion cleanly.",
+    "structure_anatomy": "The preview, escalating titled sections, assigned third instruction, and summary are all present, but the long investigation taxonomy stalls the climb and there is no major all-caps verdict before the instruction.",
+    "repetition_mantra": "The chapter earns the debut of \"a special pleasure or rescue\" through the borrowed-credit argument and reproduces the assigned echoes verbatim, although the final summary stacks some of them as conspicuous fragments.",
+    "emotional_register": "The sacrifice-to-escape turn is strong, but \"Whatever cost the evidence later establishes\" postpones the wound and replaces the reference's full-force danger with bounded caution.",
+    "rhythm_texture": "The receipt and painted-river analogies carry the abstraction, and \"The first frame is a diet. The second is an escape\" has the right killer-line cadence, but source-status cataloguing drains momentum for several pages."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate's research-audit caution and exhaustive taxonomy keep replacing the reference's blunt, escalating certainty and emotional nerve.",
+  "suggestions": [
+    {
+      "suggestion": "Rewrite the source-status passages in \"THE INVESTIGATION MENU\" as compact objections spoken in the reader's dialect; keep provenance out of the narrative voice, then drive each group into one short verdict instead of repeatedly classifying quotations, synthesis, and logic.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Replace qualifiers such as \"bounded examination,\" \"cannot tell us how common,\" and \"if the claim holds\" with flat settled-fact assertions and cheerful commands wherever the evidence already supports the belief move.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "Add a compact wound-and-bandage beat before the escape turn: deliver one concrete consequence at full force, immediately reject fear as the reason to change, and return warmth to the reader while reserving harshness for the trap.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Turn the receipt and painted-river sections into a steeper escalation by ending each with a short verdict line, then place one all-caps axis-switch verdict before \"YOUR THIRD INSTRUCTION\" so the instruction arrives as the climax rather than the first typographic peak.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Rebuild the SUMMARY as concise claim bullets and weave each assigned frozen phrase into a complete sentence; remove the orphaned mantra fragments such as \"without deprivation, without battle, and without a lifetime of rules\" while preserving their exact wording.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

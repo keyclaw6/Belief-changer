@@ -1,0 +1,42 @@
+{
+  "scores": {
+    "voice_certainty": 5,
+    "method_execution": 8,
+    "structure_anatomy": 8,
+    "repetition_mantra": 9,
+    "emotional_register": 4,
+    "rhythm_texture": 7
+  },
+  "evidence": {
+    "voice_certainty": "The direct challenge 'why are you here?' is Carr-like, but 'Neither establishes a universal mechanism or a clinical syndrome' repeatedly retreats into academic qualification.",
+    "method_execution": "The chapter turns the reader's objection into a trap question, reassigns blame from weakness to 'the sugar trap,' and lands the inversion: 'You are facing an escape.'",
+    "structure_anatomy": "The preview and titled sections rise through the hobby and counterfeit-card analogies to an all-caps verdict, the assigned 2ND INSTRUCTION, and a SUMMARY, though the accounts section stalls the climb.",
+    "repetition_mantra": "The debut of 'the sugar trap' follows the opening argument and compresses it cleanly, while the assigned MN-01 echo appears verbatim and the trap phrase recurs as a disciplined refrain.",
+    "emotional_register": "The reader is warmly told 'you were conned, not foolish' and promised escape, but the bounded-evidence disclaimers and extended clinical exception soften the hard-edged nerve of the reference.",
+    "rhythm_texture": "The bath and counterfeit-card analogies carry the abstraction and lines such as 'The question was never... The question was always...' create peaks, but long analytical qualifications break the momentum."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate's conspicuous evidence disclaimers and clinical cushioning replace the reference's blunt, high-nerve certainty with a safer academic register.",
+  "suggestions": [
+    {
+      "suggestion": "In 'WHAT THE ACCOUNTS ACTUALLY SHOW,' cut the disclaimer cluster beginning 'Neither account proves' and state only the narrow fact the evidence supports in one plain sentence before driving immediately into the trap question and verdict.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Replace abstractions such as 'bounded accounts,' 'untested valuation,' 'universal mechanism,' and 'active catalogue' with ordinary spoken words, direct assertions, and questions the reader could hear in their own head.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "Make every titled section tighten the same belief screw: place evidence inside the existing argument instead of giving it a separate detour, then make the all-caps verdict lead directly into the numbered instruction.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Flag repeated explanatory passes after an analogy has already landed: once the bath or membership card proves the point, keep one killer-line pair and the frozen refrain, then delete the extra paraphrases so the cadence accelerates.",
+      "asset": "chapter-reviewer"
+    },
+    {
+      "suggestion": "Where the evidence supports a hard consequence, present one concrete fact at full force and then explicitly disown fear as the reason to change; do not surround the fact with pre-emptive reassurance or methodological throat-clearing.",
+      "asset": "research"
+    }
+  ]
+}

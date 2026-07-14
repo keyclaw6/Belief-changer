@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 4,
+    "method_execution": 6,
+    "structure_anatomy": 7,
+    "repetition_mantra": 9,
+    "emotional_register": 3,
+    "rhythm_texture": 6
+  },
+  "evidence": {
+    "voice_certainty": "The direct address is repeatedly weakened by audit-style caveats such as \"claims that remain available for you to check\" and \"where qualified care outranks anything written here.\"",
+    "method_execution": "The borrowed-credit inversion and the question \"Are they the same project? Plainly not\" land the assigned correction, but much of the chapter classifies edge cases instead of tightening a trap question into an unavoidable concession.",
+    "structure_anatomy": "The preview, escalating titled sections, ALL-CAPS verdict, correctly placed \"1ST INSTRUCTION,\" and SUMMARY reproduce the broad anatomy, though several middle sections expand sideways into taxonomy rather than climbing through successive verdicts.",
+    "repetition_mantra": "All three assigned debuts recur verbatim after supporting argument, especially \"You can close the daily sugar debate without policing every molecule, fighting yourself, or treating one accidental bite as failure.\"",
+    "emotional_register": "The chapter consistently promises escape and relief, but \"bounded reports\" and repeated safety limits replace the reference's wound-and-bandage nerve with reassurance before any hard threat is fully faced.",
+    "rhythm_texture": "The breakfast, ledger, tax, and combination-lock images help, and \"It will feel like relief. That is not willpower. That is escape\" supplies a strong peak, but long analytical qualifications repeatedly drain momentum."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate replaces the reference's blunt, escalating, fear-facing certainty with cautious evidence-bound policy prose, so its sound belief correction never acquires Carr's nerve or drumbeat force.",
+  "suggestions": [
+    {
+      "suggestion": "Compress the paragraphs beginning \"I should be equally clear about the authority behind it\" and the later \"bounded reports\" asides into one brief honesty boundary, then state the core conclusion as settled fact; repeated audit language mechanically brakes the direct-address authority.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Rebuild the long section \"THE LINE: WHAT BAD SUGAR IS, WHAT IT ISN'T\" as a sequence of objection, trap question, concession, and short ALL-CAPS verdict; do not let a chapter's central belief move spread sideways into a policy catalogue.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Insert a wound-and-bandage beat before the reassurance: deliver the concrete stakes at full force, explicitly reject fear as the reason to change, and pivot immediately to freedom; the present chapter offers the bandage without first exposing the wound.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Use \"It will feel like relief. That is not willpower. That is escape\" as the cadence model throughout: cut abstract multi-clause qualifications into a flowing setup followed by one or two short verdict lines, and flag apologetic command-softeners such as \"not because I demand obedience.\"",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

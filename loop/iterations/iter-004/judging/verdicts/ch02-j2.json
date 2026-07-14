@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 5,
+    "method_execution": 8,
+    "structure_anatomy": 8,
+    "repetition_mantra": 9,
+    "emotional_register": 6,
+    "rhythm_texture": 7
+  },
+  "evidence": {
+    "voice_certainty": "The direct questions and settled verdicts repeatedly give way to academic caveats such as \"Neither establishes a universal mechanism or a clinical syndrome.\"",
+    "method_execution": "The bath test and counterfeit-card questions force the free-choice objection to concede, then reassign the need for bargaining from reader weakness to the trap.",
+    "structure_anatomy": "The preview, escalating titled sections, ALL-CAPS verdict, assigned 2ND INSTRUCTION, and SUMMARY are all present, though the accounts section briefly stalls the escalation.",
+    "repetition_mantra": "\"the sugar trap\" receives a full argue-then-compress debut and disciplined echoes, and MN-01 appears in its exact frozen wording.",
+    "emotional_register": "\"You are facing an escape\" sustains freedom over sacrifice and protects the reader from blame, but cautious evidence and clinical disclaimers replace the reference's full-force nerve.",
+    "rhythm_texture": "The bath and membership-card analogies carry the argument and \"The question was never... The question was always...\" supplies a strong killer-line pair, while abstract valuation language and caveats flatten the cadence."
+  },
+  "worst_dimension": "voice_certainty",
+  "gap_summary": "The largest distance is the candidate's evidence-lawyer register, whose repeated methodological and clinical caveats interrupt the flat, fearless certainty of the reference.",
+  "suggestions": [
+    {
+      "suggestion": "Ban clusters of research-lawyer diction exemplified by \"bounded accounts\", \"universal mechanism\", \"clinical syndrome\", and \"active catalogue\"; allow one plain boundary sentence, then require a direct claim or trap question.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "Rebuild \"WHAT THE ACCOUNTS ACTUALLY SHOW\" as concrete account, trap question, then unequivocal credit-reassignment verdict; currently each example is followed by disclaimers that neutralize the point before it lands.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Keep the required exception inside the numbered instruction once, then remove the follow-on explanation beginning \"There is a clinical exception built into that instruction\" so the climax ends on a cheerful command rather than institutional reassurance.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Compress the SUMMARY into terse bullets that repeat settled claims and the instruction verbatim; its long paragraphs currently reopen qualifications and add explanatory texture after the climax.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}
