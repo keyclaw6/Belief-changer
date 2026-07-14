@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 4,
+    "method_execution": 7,
+    "structure_anatomy": 6,
+    "repetition_mantra": 7,
+    "emotional_register": 5,
+    "rhythm_texture": 7
+  },
+  "evidence": {
+    "voice_certainty": "The foregrounded caveat \"a single self-reported account, not a trial, not proof of universal ease\" replaces the reference's settled-fact certainty with a research-review register.",
+    "method_execution": "\"My plan works, but it never clocks off\" ventriloquizes the objection and inverts successful management into an ongoing cost, although \"If the belief holds up\" leaves the conclusion conditional.",
+    "structure_anatomy": "The preview, thesis, titled progression, assigned second instruction, and SUMMARY are present, but FOUR DOORS becomes a taxonomy and there are no standalone ALL-CAPS verdicts before the instruction.",
+    "repetition_mantra": "BAD SUGAR and the exact M-02 promise appear on schedule, but \"the first clock,\" \"managed truce,\" and \"decision quiet\" become stronger competing local refrains.",
+    "emotional_register": "\"Your character was never the problem\" supplies the bandage and the destination is freedom from battle, but the chapter repeatedly cushions its claims and never delivers the reference's full-force wound before releasing the reader from fear.",
+    "rhythm_texture": "The clocks, fire extinguisher, refrigerator, and crime-scene analogies carry the argument, and \"That is not a trick. It is the method.\" has the right killer-line cadence, though repeated qualifications slow the pull."
+  },
+  "worst_dimension": "voice_certainty",
+  "gap_summary": "The candidate turns a strong Carr-like inversion into a cautious, validation-heavy research essay instead of driving it with the reference's blunt certainty, nerve, and escalating verdicts.",
+  "suggestions": [
+    {
+      "suggestion": "Compress the clustered proof-limit language in \"Early signals\" and the fourth-door account into one brief boundary after the evidence; let the surrounding paragraphs state the chapter's belief conclusion as settled fact and end on a short verdict rather than another qualification.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Turn the existing peak lines \"The second clock reads zero\" and \"None of them stops the first clock\" into standalone ALL-CAPS verdicts, then make each following section argue upward from the previous verdict toward the numbered instruction.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "Recast \"FOUR DOORS THAT LOOK THE SAME FROM OUTSIDE\" from four equally weighted profiles into an escalating objection sequence: pose the reader's defense, force its concession with a trap question, and use that concession to open the next stage until only desire-level freedom answers the chapter's question.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Prune the repeated reassurance around \"managed truce\" to one warm acknowledgment, then require a wound-and-bandage pass: attack the method's hidden cost without apology, immediately remove blame from the reader, and finish with the scheduled promise as the release beat in the body rather than only in SUMMARY.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

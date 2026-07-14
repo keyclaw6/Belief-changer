@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 6,
+    "method_execution": 8,
+    "structure_anatomy": 9,
+    "repetition_mantra": 9,
+    "emotional_register": 5,
+    "rhythm_texture": 7
+  },
+  "evidence": {
+    "voice_certainty": "\"If that is your position, I respect it\" and \"I suspect\" soften otherwise assertive direct address into a careful editorial voice.",
+    "method_execution": "\"If BAD SUGAR were a genuinely carefree choice ... would you need rules to manage it?\" forces the concession, then reassigns blame from character to a loaded valuation.",
+    "structure_anatomy": "The preview and escalating titled sections culminate in \"THE CHOICE WAS REAL. THE AUDITION WAS NOT.\", the assigned numbered third instruction, and a full SUMMARY.",
+    "repetition_mantra": "BAD SUGAR and the promise triad recur verbatim, while the extended rigged-audition argument is compressed into the scheduled debut phrase \"the sugar trap\" and then echoed.",
+    "emotional_register": "\"Not sacrifice. Not deprivation ... Relief\" supplies escape framing, but \"not a verdict I am going to rush\" typifies the chapter's avoidance of the reference's hard wound before the bandage.",
+    "rhythm_texture": "\"You did not discover BAD SUGAR. BAD SUGAR discovered you\" is an effective killer-line pair, but extended casting exposition and research-report phrasing slow the blunt Carr momentum."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate is a strong, orderly belief-change argument, but its careful evidentiary qualifications and gentle reassurance avoid the reference's blunt certainty and full-force emotional nerve before relief.",
+  "suggestions": [
+    {
+      "suggestion": "Recast research-report diction such as \"Qualitative reports confirm\" and \"There is no single universal pathway\" as concrete reader-facing examples followed by one flat verdict; preserve evidential limits in the claim itself instead of voicing them as caveats.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "Before the reassurance in \"A PERFECTLY REASONABLE DEFENSE\", add a wound-and-bandage beat: make the reader face one vivid sequence of accumulated cost, land a hard consequence line, then immediately transfer blame from the reader to the trap and turn the feeling into relief.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "During review, cut conciliatory hedges such as \"I respect it\", \"I suspect\", and \"not a verdict I am going to rush\"; replace each with a cheerful direct contradiction or instruction, and require every necessary qualification to resolve into a short settled-fact line.",
+      "asset": "chapter-reviewer"
+    },
+    {
+      "suggestion": "Compress \"THE RIGGED AUDITION\" and \"THE CASTING DIRECTORS\" to the strongest three metaphor beats; alternate the remaining abstract explanation with concrete everyday scenes and close each movement on a short verdict so the analogy drives momentum instead of becoming a conceptual essay.",
+      "asset": "chapter-writer"
+    }
+  ]
+}

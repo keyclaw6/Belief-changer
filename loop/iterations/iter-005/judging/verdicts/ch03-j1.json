@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 5,
+    "method_execution": 8,
+    "structure_anatomy": 8,
+    "repetition_mantra": 7,
+    "emotional_register": 6,
+    "rhythm_texture": 8
+  },
+  "evidence": {
+    "voice_certainty": "The opening says, \"I respect it — and I am not going to argue that you are wrong,\" and later repeatedly uses cautious formulas such as \"does not prove\" and \"I suspect\" instead of the reference's settled-fact bluntness.",
+    "method_execution": "The window-seat trap question forces the concession that a carefree preference would not require rules, budgets, resets, or this book, then reassigns the problem from weak character to a loaded valuation.",
+    "structure_anatomy": "The preview, escalating titled sections, verdict \"THE CHOICE WAS REAL. THE AUDITION WAS NOT.,\" assigned third instruction, and SUMMARY all appear in the right sequence, though THE CASTING DIRECTORS becomes a four-part catalogue.",
+    "repetition_mantra": "BAD SUGAR and the exact M-03 wording echo correctly, while the sugar trap receives an argued debut; however, \"rigged audition\" and \"the choice was real\" recur so often that they compete with the frozen mantra system.",
+    "emotional_register": "\"You are not being asked to surrender a pleasure\" strongly frames escape rather than sacrifice, but the chapter cushions nearly every hard claim and never delivers the reference's frightening consequence before disowning fear as the motive.",
+    "rhythm_texture": "The sustained audition analogy, the fire-extinguisher comparison, and killer pairs such as \"You did not discover BAD SUGAR. BAD SUGAR discovered you\" create strong peaks, despite an overlong explanatory middle."
+  },
+  "worst_dimension": "voice_certainty",
+  "gap_summary": "The candidate has the right belief-change architecture but sounds like a careful evidence-aware essay where the reference sounds like a blunt, colloquial, utterly certain escape manual.",
+  "suggestions": [
+    {
+      "suggestion": "Rewrite the caveat clusters in A PERFECTLY REASONABLE DEFENSE and THE CASTING DIRECTORS—especially \"I respect it,\" \"does not prove,\" and \"not a verdict I am going to rush\"—as one flat assertion followed by one warm reassurance, so each objection ends in certainty rather than negotiated balance.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Turn THE CASTING DIRECTORS from four evenly weighted explanations into an escalation: use two or three concrete reader scenes, interrogate each with short trap questions, and drive them rapidly into one all-caps verdict before the confidence-trick section.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Require a wound-and-bandage beat in chapters of this type: state one concrete consequence at full emotional force, immediately reject fear or shame as the reason to change, and pivot straight to the excitement of escape.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "Treat \"rigged audition\" as a carrying analogy rather than a competing mantra: trim its repeated labels after the analogy is established and let the assigned debut phrase \"the sugar trap\" provide the final drumbeat through the verdict, instruction, and summary.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

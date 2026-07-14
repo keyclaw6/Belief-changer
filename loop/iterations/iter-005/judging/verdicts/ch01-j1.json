@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 4,
+    "method_execution": 5,
+    "structure_anatomy": 5,
+    "repetition_mantra": 8,
+    "emotional_register": 5,
+    "rhythm_texture": 6
+  },
+  "evidence": {
+    "voice_certainty": "The caveat cascade \"It is not a clinical trial. It is not proof... It is not a guarantee\" makes the narrator sound cautious and evidentiary rather than flatly certain.",
+    "method_execution": "The promising credit reassignment in \"the pleasure belongs to the moment... the rescue belongs to the rest\" remains an if-then possibility, while the balanced case-file framing lets the central claim survive instead of trapping and overturning it.",
+    "structure_anatomy": "There is a preview, a numbered instruction, titled sections, and a SUMMARY, but the sections mostly catalogue scope, exclusions, safety, and process instead of escalating toward successive ALL-CAPS verdicts.",
+    "repetition_mantra": "BAD SUGAR is fully defined, and both \"You can close the daily sugar debate without policing every molecule, fighting yourself, or treating one accidental bite as failure\" and \"without deprivation, without battle, and without a lifetime of rules\" receive clear debut beats and exact summary echoes.",
+    "emotional_register": "The chapter consistently promises escape from battle and relocates past exhaustion from character to method, but it supplies virtually no hard wound-and-bandage beat or full-force fear that is then disowned as the motive.",
+    "rhythm_texture": "The Tuesday scene, case-file analogy, and short pairs such as \"Not a slogan. Not a hope. A specific destination\" create momentum, but long classification and clinical-care passages flatten the peaks and leave few killer verdict lines."
+  },
+  "worst_dimension": "voice_certainty",
+  "gap_summary": "The candidate speaks like a careful evidence contract, while the reference drives forward through settled assertions, coercive trap logic, escalating verdicts, and cheerful certainty.",
+  "suggestions": [
+    {
+      "suggestion": "Replace caveat cascades like \"It is not a clinical trial. It is not proof... It is not a guarantee\" with one concise limitation, then pivot immediately to a flat settled claim and a cheerful direct command; preserve evidence honesty without letting qualification become the narrator's dominant register.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "After \"If the credit is real\", stop offering two equally live outcomes: ventriloquize the reader's strongest objection, ask a trap question whose honest answer concedes the point, perform the credit inversion, and compress it into one short verdict line.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Collapse \"WHAT THIS BOOK IS NOT\" and \"WHAT OUTRANKS THIS BOOK\" into one conspicuous perimeter, then make every remaining section escalate the same belief move toward an ALL-CAPS verdict immediately before the numbered instruction; render the SUMMARY as terse claim bullets rather than a second catalog.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Give the opening chapter one evidence-graded wound-and-bandage beat: state a permitted concrete consequence at full force, explicitly reject fear as the reason to change, and pivot at once to the relief of escape.",
+      "asset": "research"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 5,
+    "method_execution": 8,
+    "structure_anatomy": 7,
+    "repetition_mantra": 9,
+    "emotional_register": 4,
+    "rhythm_texture": 8
+  },
+  "evidence": {
+    "voice_certainty": "The aside 'a single self-reported account, not a trial, not proof of universal ease' replaces the reference's settled-fact authority with conspicuous evidentiary hedging.",
+    "method_execution": "'The debate is managed, not closed' cleanly inverts successful rule-keeping into evidence that the underlying conflict remains.",
+    "structure_anatomy": "The preview, escalating titled sections, assigned second instruction, and SUMMARY are all present, but only the instruction becomes a true all-caps verdict climax.",
+    "repetition_mantra": "BAD SUGAR recurs as assigned, and the exact M-02 promise appears only after the distinction is earned in the SUMMARY; the clocks, debate, and 'never clocks off' refrains are disciplined.",
+    "emotional_register": "'I am not here to tell you it has failed' preserves warmth and escape-not-sacrifice, but the chapter defers hard consequences and never performs the reference's full-force fear-then-release beat.",
+    "rhythm_texture": "The two clocks, fire extinguisher, refrigerator, and crime-scene analogies carry the argument, while short peaks such as 'The second clock reads zero' punctuate the flowing prose."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate is a polished, evidence-qualified belief-change essay rather than the reference's blunt, escalating, high-nerve argument delivered as settled fact.",
+  "suggestions": [
+    {
+      "suggestion": "In 'FOUR DOORS THAT LOOK THE SAME FROM OUTSIDE,' replace the stacked caveats—'a single self-reported account, not a trial, not proof of universal ease' and 'None of these is proof'—with one brief evidence boundary, then return immediately to flat, settled-fact narration.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Turn 'FOUR DOORS THAT LOOK THE SAME FROM OUTSIDE' from a four-part explanatory catalogue into an escalating sequence of trap questions: after each option, force a concession about whether the conflict is still active, then compress the final concession into a standalone ALL-CAPS verdict.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Where the candidate says visible costs 'are real' but 'We will look at some of them later,' supply one vivid, evidence-graded high-stakes consequence with a usable mechanism or magnitude, so the writer can deliver it at full force and then explicitly disown fear as the motive.",
+      "asset": "research"
+    },
+    {
+      "suggestion": "Replace the detached middle-section case-report language—'the person,' 'a participant,' and 'one person'—with the Carr I/we/you triangle: ventriloquize the objection in 'you,' admit the shared trap in 'we,' and use 'I' to testify before issuing the instruction.",
+      "asset": "style-guide"
+    }
+  ]
+}

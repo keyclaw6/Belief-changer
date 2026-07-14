@@ -1,166 +1,160 @@
-Chapter 1
+# Chapter 1
 
-A LINE YOU CAN LIVE WITH
+# THE LINE AND THE OFFER
 
+## IN THIS CHAPTER
 
-**IN THIS CHAPTER**
-
-- Why this book exists — and what it will never ask you to do
-- The line: what BAD SUGAR is, what it isn't, and why the difference matters
-- Ordinary food is not the enemy
-- The Molecule Margin — total without tyranny
-- The test you are being invited to take
-- Your first instruction
-
-
-*You are not being asked to stop eating, fear molecules, or begin a diet — you are being invited to test whether the thing you think you would miss actually owns any pleasure worth the price of the daily debate.*
-
+- Why this book exists and what it does not ask you to do
+- The precise target: BAD SUGAR — and everything it leaves alone
+- A destination that is not a diet, a streak, or a fight
+- One bounded possibility that the daily debate can end
+- The safety perimeter: what outranks this book
+- Your first instruction and the contract between us
 
 ---
 
-**WHY THIS BOOK EXISTS — AND WHAT IT WILL NEVER ASK YOU TO DO**
-
-Let me begin with what this book is not. It is not a calorie plan, a list of foods to weigh, a schedule of meals to time, or a colour-coded chart to stick on the fridge. It will never ask you to count ordinary food, shrink an ordinary meal, or stand at a supermarket shelf frightened by an ingredient line.
-
-It is not a willpower programme either. When we try to "be good" around sweet food, we may ration the treat, postpone the dessert, or bargain about weekends. Then comes the quiet arithmetic: what we have had, what we are still allowed, whether today qualifies, and when we must begin again. Something sold as a pleasure has recruited us as its unpaid bookkeepers. This book will not hand you a stricter ledger.
-
-What, then, is it? It is a clear-eyed investigation of one question: does the thing we have protected as the sweet hit, the treat, the reward, or the rescue actually own the pleasure credited to it? Or has it been borrowing that credit from the meal, the rest, the company, the appetite, and the occasion?
-
-If BAD SUGAR genuinely provides something irreplaceable that no ordinary meal or ordinary moment can match, reading these pages cannot take it away. You will have tested the claim and found it sound. If the credit proves borrowed, however, walking away is not the loss of a pleasure; it is the end of paying for an impostor.
-
-That is the test: no diet attached, no surrender demanded in advance, and nothing placed at risk by looking honestly.
-
-I should be equally clear about the authority behind it. I am not going to open with a dramatic personal escape from sugar, because no verified author-origin story is available, and an invented one would insult you. Nor will I pretend that this method already has a measured record of success. What I can offer is a careful argument built on bounded reports of life around sweet food, a plain account of what the evidence does and does not support, and claims that remain available for you to check.
-
-Every important boundary will stay visible: what the book claims, what it does not claim, and where qualified care outranks anything written here. That is not weak authority. It is honest authority. The logic can be firm without counterfeiting the facts, and the only thing an honest investigation asks from you at the start is an open mind.
-
+*The project is not to take something away from you; it is to examine whether the thing you are protecting is worth the cost of the protection.*
 
 ---
 
-**THE LINE: WHAT BAD SUGAR IS, WHAT IT ISN'T, AND WHY THE DIFFERENCE MATTERS**
+## WHY THIS BOOK, AND WHY NOW
 
-The word *sugar* can sound enormous. It can sound like everything — fruit, bread, rice, milk, honey in tea, a banana in a child's lunchbox. If "quitting sugar" meant quitting all of that, the project would feel impossible before it started, because it would mean quitting food. That is not what this book means.
+You picked up this book because something about sugar is not settled.
 
-Throughout these pages, when I say *sugar*, when I say *a sugar hit*, when I say *quitting sugar*, I mean one bounded, recognisable category: **BAD SUGAR**. Here is the line.
+Maybe it is the way your eyes find the dessert cabinet before you have decided on lunch. Maybe it is the private negotiation — *I'll have it now and skip it tomorrow* — that restarts every few days as though the last round never happened. Maybe you have tried a rule, kept it for a while, felt proud, and then watched the whole structure come apart over a single slice of cake on a Tuesday afternoon.
 
-**BAD SUGAR** means:
+Or maybe you have never tried a rule at all. You simply suspect, quietly, that the amount of thought you spend on sweet things is out of proportion to what they actually do for you — and you would like that suspicion examined by someone who is not trying to sell you a meal plan.
 
-- A sugar-sweetened drink, a confection, a dessert, a sweet baked good, or an added-sugar sweet snack — including products sweetened with sugar, honey, or syrup.
-- At the genuinely grey edge: a refined savoury snack when it is functioning as a discretionary reward, rescue, graze, or automatic nibble rather than ordinary meal food.
+This book is that examination.
 
-That is the target. The whole target.
+I am not going to ask you to put down your biscuit. I am not going to ask you to empty your cupboards, cancel a dinner reservation, or swear an oath before you have heard a single argument. If you are eating something sweet right now, carry on. The only thing I will ask you to do in this chapter is to keep reading with an open mind, and I will explain exactly why that request matters more than any dietary instruction ever could.
 
-**GOOD SUGAR** means: whole fruit, vegetables, legumes, nuts, plain dairy, and ordinary meal staples — oats, rice, potatoes, bread, pasta. Their molecules do not place them inside the line. They are ordinary food. They stay.
+But let me be precise about what we are opening, because precision is the thing most sugar books leave out — and its absence is the reason most of them fail.
 
-Picture tomorrow's breakfast table: toast with butter, an egg, an orange, and a cup of tea. Does the line swallow the toast because bread contains carbohydrate, or the orange because it tastes sweet? It does not. These are ordinary foods outside the target. Now place a can of sugar-sweetened drink, a chocolate bar, and an iced pastry beside them. Those are categorical core items, so the plan asks for no ingredient mathematics and no debate about their role. A sweet drink remains inside the line at breakfast; a dessert remains inside it after dinner.
+## THE TARGET: BAD SUGAR
 
-Perhaps an objection has already appeared: "What if it is homemade? What if the packet says natural, dark, organic, or reduced sugar? What if honey supplied the sweetness?" None of those descriptions moves a core item. Branding may change how an item is presented, and a recipe may change what it contains, but the categorical core is defined by what the item is. Homemade cake remains cake. A confection sweetened with syrup remains a confection. The line is designed to end that negotiation, not provide it with better costumes.
+This book is about **BAD SUGAR**.
 
-The genuinely grey savoury edge is different, and it deserves its own honest look. A flavoured crisp, a coated nut, or a savoury bar may sit in a zone where the item name alone does not settle the question. For those ambiguous items, and only those items, ask whether this is serving ordinary eating or functioning as a discretionary reward, rescue, graze, or automatic nibble. A savoury item alongside an ordinary meal may belong outside; the same kind of item repeatedly used as the private prize or automatic handful may belong inside. This is not a loophole for core sweets. A chocolate bar does not become ordinary food because it was eaten at lunchtime, and birthday cake does not cross the line because someone baked it with organic honey.
+Not all sugar. Not fruit. Not rice, bread, potatoes, oats, or the lactose in a glass of milk. Not "carbohydrates" as a biochemical class. Not the ordinary nourishment your body expects and handles without drama.
 
-Notice the direction of the test. At the categorical core, the item settles the question; only at the genuinely grey savoury edge does its role need examination. We are not being asked to psychoanalyse every mouthful or hold a trial over bread. We are drawing one strong boundary and allowing one narrow, practical judgment where the category is honestly ambiguous.
+**BAD SUGAR** means the specific category of products and doses that sit outside ordinary meals and nourishment:
 
-"I know how to read the label," the skeptical reader may say. "I still need a line I can live with."
+- Sugar-sweetened drinks — sodas, sweetened coffees, energy drinks, fruit-flavored sugar water
+- Confectionery — sweets, chocolate bars, candy
+- Desserts — cakes, pastries, ice cream, puddings
+- Sweet baked goods — cookies, doughnuts, muffins sold as a snack or treat
+- Added-sugar sweet snacks — granola bars dipped in yogurt coating, sweetened dried fruit, anything marketed as a sweet bite between meals
 
-That is exactly what this is: a line around the bounded target and well clear of ordinary nourishment. The confusion to test is simple. If "quitting sugar" currently sounds like fear of fruit, bread, family meals, and invisible molecules, compare that picture with the definition above. Are they the same project? Plainly not. Once the false project is removed, the real one can be examined without a purity spectacle.
+It also includes the genuinely gray edge: a refined savoury snack — crisps, crackers, a handful of pretzels — when it functions as a discretionary reward, a rescue, an automatic graze, or a mindless nibble rather than part of an ordinary meal. Whether a particular gray item falls inside the line depends on its role, not its ingredient list.
 
-Perhaps you still distrust the line because food rules have a habit of expanding in your mind. Good: test this one against your own kitchen rather than accepting my confidence. Put your breakfast beside the definition. Your oats, fruit, bread, potato, rice, pasta, vegetables, plain dairy, nuts, and ordinary meal staples remain outside. Put a sweetened drink, confection, dessert, or sweet baked snack beside it, and the categorical core remains inside. You do not have to call your meal virtuous, measure your worth through it, forecast a change in your body, or deny that a sweet item can taste pleasant. You only have to recognise which project this book is describing.
+And it draws a firm boundary around what stays outside. Whole fruit is not **BAD SUGAR**. A bowl of pasta is not **BAD SUGAR**. Honey in a marinade that feeds four people at dinner is not **BAD SUGAR**. A birthday cake is **BAD SUGAR** — and the birthday, the people, the singing, and the celebration are not.
 
-At the genuinely grey savoury edge, use the one role check and then stop checking. Is the ambiguous item serving ordinary eating, or is it acting as the discretionary reward, rescue, graze, or nibble? Your honest answer places it. The line is meant to serve you by ending needless decisions; you are not meant to spend your life serving the line.
+That distinction is the spine of this book. When I write "sugar," "a sugar hit," or "quitting sugar" from this point on, I mean **BAD SUGAR** — the categorical core and the behavioral gray edge — and nothing else.
 
-ORDINARY FOOD IS NOT THE ENEMY. BAD SUGAR IS NOT ALL FOOD. THE LINE IS LIVEABLE.
+Why does the distinction matter so much? Because the fastest way to make a person abandon a sensible change is to let the target inflate until it swallows their breakfast. The reader who hears "quit sugar" and pictures a life without fruit, without a normal plate of food, without the freedom to eat at a friend's table — that reader has already decided the project is mad, and who could blame them? The target must be honest, or the book is just another purity campaign dressed in friendlier language.
 
+**BAD SUGAR** is honest. It names what it means, it protects what it does not mean, and it gives you a line you can hold without inspecting every molecule on your plate.
 
----
+## WHAT THIS BOOK IS NOT
 
-**ORDINARY FOOD IS NOT THE ENEMY**
+Let me be equally precise about what I am not offering, because the gap between this project and the projects it resembles is not a matter of emphasis. It is a matter of kind.
 
-I want to stay with this point for a moment, because it is the correction that makes everything else possible.
+This book is not a diet. It will never count a calorie, prescribe a meal, or promise you a number on a scale.
 
-When we stand in front of a label asking, *Is this one safe? Does this count?*, the unbounded version of "quitting sugar" can turn food into a minefield. It recruits vigilance, makes accidents look like verdicts, and lets a trace ingredient in an ordinary meal loom larger than the meal itself. That project begins in deprivation because it has mistaken molecular inspection for the target.
+It is not a medical intervention. If you have diabetes, a metabolic condition, an eating disorder, or any clinical situation that involves qualified dietary guidance, that guidance outranks every word in this book — without exception, without negotiation, and without guilt. If you are pregnant, nursing, or managing a child's medical nutrition, the same applies. If at any point the ideas here intensify food fear, compulsive checking, binge-and-restrict cycling, or conflict with your care plan, stop applying them and talk to someone qualified. I mean that as plainly as it reads.
 
-This book goes in the opposite direction: ordinary food and ordinary meals stay. The potato on the plate, the rice in the bowl, and the fruit in the hand are outside the target. Category creep — the expansion of a "bad" list until it swallows nourishment — is a failure mode, not a hidden ambition of this method, and the definition above locks the door against it.
+It is not a willpower program. I will never ask you to "stay strong," count days, or white-knuckle your way past a shop window. If you have tried that approach before and found it exhausting, I have good news: the exhaustion was not a verdict on your character. It was a verdict on the method. We will return to that distinction — it matters more than you might expect.
 
-Does BAD SUGAR taste pleasant? It can. This book will never pretend otherwise. Research confirms what your own mouth already knows: sweet taste and palatability can affect reported pleasure, and that is a real sensory experience. But pleasant taste is not the same as unique, irreplaceable value. Plenty of ordinary foods taste wonderful — a ripe peach, a well-seasoned meal, fresh bread from the oven — and none of them sit inside the BAD SUGAR line. So the question this investigation is asking is not *does it taste nice?* The question is *does it own a pleasure that is special, irreplaceable, and unavailable from ordinary food and ordinary life?* That is a different question entirely, and it deserves an honest answer — not a reflexive one.
+And it is not a promise of superpowers. I will not tell you that your skin will glow, your mind will sharpen, your energy will soar, or your taste buds will "reset" on a guaranteed schedule. Some of those things may happen. Some may not. They are not the point.
 
-There is something worth noticing here, and its modest size is part of the lesson. In one report, a message about using one less spoon felt achievable; in another, knowledge changed what participants anticipated doing later. These observations support receptivity to clear information and achievable framing. They do not establish that anyone carried out the anticipated change, sustained it, or became free from the sugar debate, and they establish no success rate for this method. The honest use of them is narrower: a bounded proposition can feel possible enough to examine. That is all you are being asked to do now.
+The point is simpler, stranger, and — if I can earn your trust over the next twenty-one chapters — far more valuable than any of them.
 
-**You can test whether BAD SUGAR owns any special or irreplaceable pleasure, without denying pleasant taste or giving up your right to choose.**
+## THE DESTINATION
 
-Read that again. It is the contract for this entire book. You are not surrendering your palate. You are not handing over your autonomy. You are testing a claim — the claim that BAD SUGAR provides something so valuable that life without it would feel like loss. If the claim holds up, you keep it. If it doesn't, you have found something wonderful: there was nothing to lose.
-
-
----
-
-**THE MOLECULE MARGIN — TOTAL WITHOUT TYRANNY**
-
-Here is the eventual destination, stated plainly: no planned BAD SUGAR. It is not "less," "weekends only," or "only the dark kind," but a cheerful and complete end to planned doses inside this bounded line. The argument for that destination will be earned before you are asked to cross it.
-
-"Isn't that simply another severe rule?" It would be if totality meant inspecting every molecule, panicking over uncertainty, and calling an accident a collapse. It means none of those things. This method has a practical margin called the **Molecule Margin**, which keeps a complete decision from becoming a food-surveillance project.
-
-Imagine an ordinary restaurant meal whose sauce contains a little sugar, a friend's cooking with an uncertain ingredient, an accidental bite of something you did not realise was sweetened, or an honest classification mistake at the grey savoury edge. The Molecule Margin covers those events. You may notice what happened and learn from it if that is useful, but there is no sentence to restart and no moral account to balance; the prior decision remains where it was.
-
-Now compare that with choosing a dessert in advance and naming it an accident afterward, or scheduling a birthday exception while claiming the Margin. Those are planned decisions, so the Margin does not cover them. "I did not realise" describes uncertainty; "I know, but just this once" describes a planned dose. The difference rests in the plan, not in a laboratory analysis of the crumb.
-
-This distinction is humane because it refuses panic, and it is firm because it refuses disguise. It protects ordinary eating from molecular policing without softening the complete destination inside BAD SUGAR.
+Here is what I am proposing:
 
 **You can close the daily sugar debate without policing every molecule, fighting yourself, or treating one accidental bite as failure.**
 
-That is the second promise: total cessation of planned BAD SUGAR — **without deprivation, without battle, and without a lifetime of rules.** It is neither a diet nor a streak to protect, but a quiet way of eating that no longer includes the negotiation.
+Read that again, because it is the contract between us. Not a slogan. Not a hope. A specific destination.
 
-Can you see the shape of what is being offered? It is not less BAD SUGAR managed with effort, and it is not molecular zero enforced with anxiety. It is freedom from the private argument that may appear around meals, shop visits, work breaks, and celebrations. When that argument appears, it charges attention whether we eat the item or refuse it. The investigation asks whether the argument can finish because its supposed prize has lost its value, leaving nothing that requires resistance.
+The daily sugar debate is the anticipating, the bargaining, the internal bookkeeping, the reset after a lapse, the quiet relief when you "get through" an evening, and the quiet defeat when you don't. You know the debate. You may have been running it for years. It takes up more room than the sugar itself.
 
+The destination is not prohibition. It is not a perfect record. It is not the grim satisfaction of having resisted. It is something different in kind:
+
+**BAD SUGAR** leaves the active decision catalog — **without deprivation, without battle, and without a lifetime of rules.**
+
+What does that look like in practice? It looks like an ordinary Tuesday in which no sugar negotiation took place — not because you fought one and won, but because there was nothing to negotiate. The dessert menu exists. The vending machine exists. The office biscuit tin exists. And none of them required a decision, because the question had already been closed.
+
+Is that possible? I want to answer honestly, because honesty is the only currency this book can spend.
+
+One person I can point to — a single, named, self-reported account — described exactly that experience: twelve months without added sugar across major holidays, not missing desserts, feeling better physically and mentally, and finding that the decision had simply left the daily roster. That account is real, it is specific, and it is one person's self-report. It is not a clinical trial. It is not proof that this book will produce the same result for you. It is not a guarantee.
+
+What it is, is a bounded possibility. It tells us that the destination exists — that at least one person arrived there not through willpower or white-knuckled avoidance but through a change in how they valued the thing they had been protecting. The daily debate went quiet not because they won it every day, but because the debate lost its subject.
+
+That is the possibility this book investigates. Not whether you *can* resist **BAD SUGAR** — you already know you can, for a while, at a cost. The question is whether the cost is necessary. Whether the thing you are protecting deserves the protection. Whether the pleasure, reward, comfort, and rescue you believe **BAD SUGAR** provides are genuinely its property — or whether they belong to something else entirely, and sugar has merely been claiming the credit.
+
+If the credit is real, you lose nothing by examining it. The evidence will hold up, and you will put this book down knowing exactly what you are choosing and why.
+
+If the credit is borrowed — if the pleasure belongs to the moment, the comfort belongs to the pause, the reward belongs to the effort, and the rescue belongs to the rest — then you are not giving up a treasure. You are setting down a debt that was never yours.
+
+Either way, you cannot lose by looking.
+
+## THE OPEN CASE FILE
+
+Think of this book as a case file placed on your desk. The cover reads: *Does BAD SUGAR provide a special pleasure or rescue that nothing else can supply?*
+
+You are the investigator. I am not asking you to believe the answer before you have seen the evidence. I am not asking you to stop eating sugar while you read. I am asking you to open the file, examine the claim on both sides, and reach your own honest conclusion.
+
+That is all.
+
+If the claim survives — if, after twenty-one chapters of careful examination, you still believe **BAD SUGAR** gives you something irreplaceable — then nothing has been taken from you. You will eat your next dessert with more self-knowledge than you had before, and that is not a waste of anyone's time.
+
+But if the claim does not survive — if, piece by piece, the evidence shows that the special status was learned, installed, and maintained by a mechanism you can now see clearly — then the daily debate ends on its own. Not because I told you to stop. Because the question answered itself.
+
+That is how belief-level change works. You do not fight the desire. You examine it. And when the examination is complete, the desire has nothing left to stand on.
+
+## WHAT OUTRANKS THIS BOOK
+
+Before we go further, one thing must be settled and never revisited.
+
+Your doctor outranks this book. Your psychiatrist, your dietitian, your eating-disorder specialist, your diabetes nurse, your midwife — every qualified clinician whose guidance touches what you eat — outranks this book. If their advice and mine ever conflict, follow theirs. Do not write to me. Do not try to reconcile the two. Follow theirs.
+
+If you are managing an eating disorder of any kind, read with extra care. Nothing in these pages should be used to tighten restriction, override hunger, classify every meal as safe or dangerous, conceal behavior from your care team, or replace professional treatment with a belief exercise. If you notice the ideas here intensifying food anxiety rather than relieving it, close the book and talk to your clinician. That is not failure. That is intelligence.
+
+This perimeter is not a disclaimer buried in the small print. It is a load-bearing wall of the building. The book works only inside it.
+
+## YOUR FIRST INSTRUCTION
+
+You have heard the target, the destination, and the safety boundary. Now I have one instruction — the first of twelve you will receive across this book. Each one will arrive with its reason, and each one will ask for something small and specific.
+
+**1. KEEP AN OPEN MIND, AND FOLLOW QUALIFIED CLINICAL CARE WITHOUT EXCEPTION.**
+
+Here is why this matters: the ideas ahead will challenge beliefs you may have held your entire life — beliefs about what sugar does for you, why you reach for it, and what would happen if you stopped. Some of those challenges will feel wrong before they feel right. That is not a defect in the argument; it is the nature of examining a belief from the inside.
+
+An open mind does not mean a gullible mind. It means a mind willing to hear the case before ruling. You are not being asked to accept anything on faith. You are being asked to postpone your verdict until you have seen the evidence — all of it, not just the parts that confirm what you already believe.
+
+And the clinical-care clause is not a formality. It is the floor beneath the open mind. You can question every claim in this book. You cannot question your doctor's prescription, your therapist's guidance, or your care team's plan on the basis of anything you read here.
+
+That is the deal. If you can accept it — genuinely, not grudgingly — then you and I have a working agreement, and the investigation can begin.
+
+## WHAT COMES NEXT
+
+Over the chapters ahead, we will look at the daily cost of the sugar debate, at how **BAD SUGAR** acquired its privileged status in the first place, at the precise mechanism that makes a sugar hit feel like rescue, and at every reason you have ever given yourself for keeping it. We will meet the two small characters responsible for the illusion, and we will examine them in enough light that they lose their power. We will look at the industry that engineered the appeal, at the method that made quitting feel impossible, and at the fear that keeps the whole structure standing.
+
+And then — only then, when the case is examined and the conclusion is yours — we will close the file together.
+
+You have nothing to lose by reading on, and you have the possibility — a real, bounded, honest possibility — of something most sugar books never even describe: not a better set of rules, but the end of needing rules at all.
+
+Shall we begin?
 
 ---
 
-**THE TEST YOU ARE BEING INVITED TO TAKE**
+## SUMMARY
 
-Think about the last time you had a conversation with yourself about a sweet food. Not the eating — the conversation. The scan of the dessert menu before you had ordered your main course. The negotiation at the petrol station. The quiet calculation about whether today counted as a special occasion.
-
-How long did that conversation take? A minute? Five? And how many times has it happened this week?
-
-That is the tax. Not the sugar itself — the debate. The anticipating, the bargaining, the starting over. That loop can run whether we eat the thing or not. It can run when we take it and feel the brief silence of a settled question. It can run when we refuse it and feel the low hum of something unfinished. It can sit in the background of a meal, a shop visit, a work break, or a birthday, collecting a toll we barely notice because we have paid it so many times.
-
-What if the tax is the real cost — and the sugar is just the currency?
-
-This book is going to examine every credit BAD SUGAR claims. Taste. Reward. Comfort. Energy. Celebration. Relaxation. Completion. One by one, chapter by chapter, we will test whether the credit belongs to the sugar or to the life around it. And we will do it without asking you to stop eating BAD SUGAR while you read. You continue as normal. You change nothing yet. You simply look, with an open mind, at what is actually happening when you reach for the sweet hit — and what was happening before you reached.
-
-Here is one more thing worth noticing before we begin. In bounded reports from caregivers and shoppers, some people changed a child's drinks after reading labels, or avoided purchased sweet beverages while substituting a homemade version. Those are real household choices, and they show that labels can shift what lands in a shopping basket. But they do not tell us whether the caregiver's own relationship with sugar changed, and they do not tell us that a homemade version is free of sugar just because it was made at home. I mention this because it is the kind of honest, limited observation this book is built on. Where the evidence is bounded, I will say so. Where it is strong, I will say that too. You deserve to know the difference.
-
-If, by the end of this investigation, you can see that BAD SUGAR was borrowing credit it never earned — that the pleasure was always the dinner, the rest, the company, the accomplishment, and the sugar was only collecting the receipt — then stopping will not feel like sacrifice.
-
-It will feel like relief.
-
-That is not willpower. That is escape.
-
-
----
-
-**YOUR FIRST INSTRUCTION**
-
-I have one instruction for you now. It is the first of several, and each one will come with its reason. Here is the reason for this one:
-
-The investigation ahead works only if you let it. If you read with your arms folded, hunting for the flaw that lets you close the book and return to the loop, you will find one — not because the argument is weak, but because a closed mind can dismiss anything. An open mind is not gullibility. It is the willingness to test a claim before deciding. It is the difference between a jury that hears the evidence and one that walks out during the opening statement.
-
-**1ST INSTRUCTION: KEEP AN OPEN MIND AND FOLLOW EVERY INSTRUCTION.**
-
-That is all. Keep an open mind. Follow every instruction as it arrives — not because I demand obedience, but because each instruction is a piece of the combination, and a safe with one digit missing stays locked. You would not leave a digit out and then blame the safe.
-
-You have nothing at risk. You are not being asked to stop. You are not being asked to believe. You are being asked to look — openly, honestly, and without rushing to a verdict.
-
-The daily sugar debate has been running long enough. Let's find out whether it was ever necessary.
-
-
----
-
-**SUMMARY**
-
-- This book is not a diet, a calorie plan, or a willpower programme. It is an investigation into whether BAD SUGAR owns the pleasure you credit to it.
-- **BAD SUGAR** means sugar-sweetened drinks, confections, desserts, sweet baked goods, added-sugar sweet snacks, and — at the genuinely grey savoury edge — refined snacks functioning as a reward, rescue, graze, or nibble. Core items stay inside the line regardless of branding, occasion, or homemade status.
-- **GOOD SUGAR** means whole fruit, vegetables, legumes, nuts, plain dairy, and ordinary meal staples. These are not the target and never become the target.
-- Pleasant taste is real; it does not settle whether BAD SUGAR owns a special or irreplaceable pleasure.
-- The **Molecule Margin** covers trace ingredients, accidents, uncertain sauces, and honest classification mistakes. It never covers a planned exception.
-- **You can test whether BAD SUGAR owns any special or irreplaceable pleasure, without denying pleasant taste or giving up your right to choose.**
-- The destination is freedom from the daily sugar debate — **without deprivation, without battle, and without a lifetime of rules.**
+- **BAD SUGAR** is the book's precise target: sugar-sweetened drinks, confectionery, desserts, sweet baked goods, added-sugar sweet snacks, and the genuinely gray savoury edge when it functions as a discretionary reward or rescue. Fruit, ordinary meals, and ordinary nourishment are permanently outside the line.
+- The destination is not weight loss, dietary purity, or successful resistance. It is the closing of the daily sugar debate — **without deprivation, without battle, and without a lifetime of rules.**
 - **You can close the daily sugar debate without policing every molecule, fighting yourself, or treating one accidental bite as failure.**
-- **1ST INSTRUCTION: KEEP AN OPEN MIND AND FOLLOW EVERY INSTRUCTION.**
+- One bounded self-report shows that decision quiet is possible; it is not proof of universal ease or method efficacy.
+- This book is not a diet, a medical intervention, a willpower program, or a promise of superpowers. Qualified clinical care, eating-disorder treatment, and medical nutrition outrank every word in it.
+- **1. KEEP AN OPEN MIND, AND FOLLOW QUALIFIED CLINICAL CARE WITHOUT EXCEPTION.**
+- The reader is an investigator, not a patient. The only request is to examine the evidence before reaching a verdict.

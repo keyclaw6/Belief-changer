@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 5,
+    "method_execution": 5,
+    "structure_anatomy": 6,
+    "repetition_mantra": 9,
+    "emotional_register": 3,
+    "rhythm_texture": 6
+  },
+  "evidence": {
+    "voice_certainty": "\"One bounded self-report\" and the repeated \"not proof...not a guarantee\" qualifications replace the reference's settled-fact authority.",
+    "method_execution": "The borrowed-credit inversion is present, but \"If the claim survives\" leaves the central belief open instead of forcing and landing a concession.",
+    "structure_anatomy": "The preview, numbered instruction, and SUMMARY are present, but the titled sections mostly catalogue scope and safeguards rather than escalate through verdict peaks.",
+    "repetition_mantra": "BAD SUGAR and both assigned promise phrases debut through argument and recur verbatim in the SUMMARY.",
+    "emotional_register": "\"WHAT OUTRANKS THIS BOOK\" expands caution at length, while no hard consequence is delivered and then explicitly dismissed as the reason to change.",
+    "rhythm_texture": "The case-file and load-bearing-wall analogies help, but inventories and long qualification passages interrupt the short-verdict momentum."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate sounds like a careful evidence-and-safety contract, whereas the reference drives blunt certainty, frightening consequence, and relief through an escalating belief demolition.",
+  "suggestions": [
+    {
+      "suggestion": "Compress the caveat run beginning \"One person I can point to\" to one adjacent limitation, then return immediately to flat assertions and the I/we/you triangle; do not let procedural qualification become the chapter's dominant voice.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Turn the sequence from \"THE TARGET\" through \"WHAT THIS BOOK IS NOT\" from a scope catalogue into escalating objection-and-verdict beats, ending each major turn with a short ALL-CAPS conclusion and reserving the numbered instruction as the climax.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Rewrite the open fork \"If the claim survives...But if the claim does not survive\" as a concrete reader scene, two or three trap questions, a ventriloquized objection, and a credit-reassignment answer that lands the chapter's one belief move instead of suspending judgment.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Assign one concise, evidence-backed wound beat that states the relevant consequence without euphemism, then immediately disown fear as the motive and pivot to escape and good news; preserve the safety perimeter without letting it replace emotional nerve.",
+      "asset": "master-plan"
+    }
+  ]
+}
