@@ -1,5 +1,6 @@
 """Derive one complete stable RF-02 factory view from a validated root."""
 import os
+import re
 from pathlib import Path
 
 import loopcfg
@@ -19,12 +20,16 @@ def _store_error(call, *args):
 
 def valid_run(run, experiment_id):
     keys = {"experiment_id", "iteration_id", "book", "chapters", "config"}
+    chapters = run.get("chapters") if isinstance(run, dict) else None
     return isinstance(run, dict) and set(run) == keys \
         and run.get("experiment_id") == experiment_id \
         and isinstance(run.get("iteration_id"), (int, str)) \
-        and all(isinstance(run.get(key), str) and run[key] for key in ("book", "config")) \
-        and isinstance(run.get("chapters"), list) \
-        and all(isinstance(n, int) and n > 0 for n in run["chapters"])
+        and isinstance(run.get("book"), str) \
+        and re.fullmatch(r"production-books/[a-z0-9]+(?:-[a-z0-9]+)*", run["book"]) \
+        and isinstance(run.get("config"), str) and run["config"] \
+        and isinstance(chapters, list) and chapters \
+        and all(type(number) is int and number > 0 for number in chapters) \
+        and len(chapters) == len(set(chapters))
 
 
 def relative(value, root: Path) -> str:

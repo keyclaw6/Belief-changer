@@ -395,14 +395,13 @@ the SHA without reopening the implementation verdict.
   rereview confirmed canonical IDs, assigned provenance, valid quote boundaries,
   exact blocking, and no anatomy/drafting leakage; 8/8 focused and 169/169 full
   tests, strict OpenSpec, and diff checks pass with no findings.
-- Commit / push: accepted subject
-  `feat(commissions): enforce grounded chapter contracts`; exact SHA is captured
-  at the next ledger checkpoint to avoid impossible self-reference.
+- Commit / push: `d6d2f23e7a18562fa4abfc29cf0a77344bfc2d27`
+  (`feat(commissions): enforce grounded chapter contracts`).
 
 ### RF-09 — Add commission storage, generation, and whole-set audit
 
-- [ ] Activate `production-books/<slug>/commissions/chapter-NN.md` as a gate.
-- Status: `TODO`
+- [x] Activate `production-books/<slug>/commissions/chapter-NN.md` as a gate.
+- Status: `DONE`
 - Evidence class / report: supported remedy with known failure risk; §§6, 7
   action 2, 8.
 - Problem / root cause: commissioner exists only as a prompt; current runtime has
@@ -416,9 +415,19 @@ the SHA without reopening the implementation verdict.
   unassigned packets never enter a call; blocked set preserves previous product.
 - Verification: context-capture and blocked-set tests, `bash scripts/check.sh`.
 - Dependencies: RF-02, RF-08.
-- Implementation attempts: `0`; latest: `—`.
-- Review attempts: `0`; latest verdict / findings: `—`.
-- Commit / push: `—`.
+- Implementation attempts: `2`; latest: 2026-07-14
+  `/root/rf09_commission_runtime_owner` — bound eligibility to the exact
+  post-commission candidate pair and rejected invalid selection/book identity
+  before candidate access or callbacks.
+- Review attempts: `2`.
+  - Review 1: `NEEDS CHANGES` — receipt omitted the exact post-commission pair
+    hash; empty, duplicate, or invalid selected chapters were accepted; selected
+    book identity was not canonicalized before filesystem or validator access.
+  - Review 2: `PASS` — no findings; 44/44 focused and 175/175 full tests, strict
+    OpenSpec, diff, and code-size gates pass.
+- Commit / push: accepted subject
+  `feat(commissions): gate complete commission sets`; exact SHA is deferred to
+  the next ledger checkpoint.
 
 ### RF-10 — Shrink the writer contract and runtime context
 

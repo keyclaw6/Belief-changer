@@ -166,7 +166,7 @@ def promote(root, accepted_root, tested_hash, history_bytes, interrupt=None):
                     or registry["pair_hash"] != manifest["accepted_pair_hash"] \
                     or registry["evaluation_hash"] != manifest["accepted_evaluation_hash"]:
                 raise CP.PairError("accepted generation changed after the candidate snapshot")
-            PS.materialize(accepted, promoted, CP._bare(manifest["entries"]),
+            PS.materialize(accepted, promoted, CP._bare(CP._members(manifest)),
                            CP._bare(manifest["evaluation"]), CP.candidate_tree(root),
                            eval_source)
             boundary("generation-ready")

@@ -1,25 +1,21 @@
 """RF-02 sealed candidate pairs and atomic accepted-generation promotion."""
 import json
 from pathlib import Path
-
 import loopcfg
 import pair_contract as PC
 import pair_store as PS
 from pair_transition import add_book, assert_run, initialize, promote, reject, status
-SCHEMA = 3
+SCHEMA = 4
 MANIFEST = "pair.json"
 DECISION = "decision.json"
 class PairError(RuntimeError):
     pass
-
 def _fail(exc):
     if isinstance(exc, PairError):
         raise exc
     raise PairError(str(exc)) from exc
-
 def candidate_tree(root):
     return Path(root).absolute() / "candidate"
-
 def evaluation_tree(root):
     return Path(root).absolute() / "evaluation"
 
@@ -28,7 +24,6 @@ def evidence_tree(root):
 
 def _manifest_path(root):
     return Path(root).absolute() / MANIFEST
-
 def _chapters(value):
     out = []
     for token in str(value).split(","):
@@ -47,7 +42,6 @@ def _chapters(value):
     if not out or len(out) != len(set(out)):
         raise PairError(f"invalid chapter selection: {value}")
     return out
-
 def _recorded_hash(entries, key):
     try:
         states = [{"group": item["group"], "path": item["path"],
@@ -77,6 +71,14 @@ def load(root):
             or not _validate_entries(value.get("evaluation"), {"evaluation"}) \
             or not PC.valid_run(run, Path(root).name):
         raise PairError("invalid candidate pair manifest schema")
+    outputs = value.get("outputs")
+    allowed = {f"{run['book']}/commissions/chapter-{number:02}.md"
+               for number in run["chapters"]}
+    output_paths = {item.get("path") for item in outputs or () if isinstance(item, dict)}
+    entry_paths = {item["path"] for item in value["entries"]}
+    if not isinstance(outputs, list) or outputs and not _validate_entries(outputs, {"product"}) \
+            or not output_paths <= allowed or output_paths & entry_paths:
+        raise PairError("invalid candidate commission outputs")
     if _recorded_hash(value["entries"], "accepted_sha256") != value.get("accepted_pair_hash") \
             or _recorded_hash(value["evaluation"], "accepted_sha256") != value.get("accepted_evaluation_hash"):
         raise PairError("accepted pair manifest hash is invalid")
@@ -84,6 +86,9 @@ def load(root):
 
 def _bare(entries):
     return [{"group": item["group"], "path": item["path"]} for item in entries]
+
+def _members(manifest):
+    return manifest["entries"] + manifest["outputs"]
 
 def _copy(target, source, entries):
     for item in entries:
@@ -120,7 +125,7 @@ def snapshot(root, accepted_root, book, chapters="1-3", config="loop/config.yaml
             "accepted_generation": generation,
             "accepted_pair_hash": registry["pair_hash"],
             "accepted_evaluation_hash": registry["evaluation_hash"],
-            "entries": entries, "evaluation": evaluation,
+            "entries": entries, "outputs": [], "evaluation": evaluation,
             "run": {"experiment_id": experiment.name,
                     "iteration_id": iteration if iteration is not None else experiment.name,
                     "book": contract["book"], "chapters": _chapters(chapters),
@@ -143,7 +148,7 @@ def require_member(root, path, group=None, manifest=None):
         relative = Path(path).absolute().relative_to(tree).as_posix()
     except ValueError as exc:
         raise PairError(f"path escapes candidate generation: {path}") from exc
-    matches = [item for item in manifest["entries"] if item["path"] == relative]
+    matches = [item for item in _members(manifest) if item["path"] == relative]
     if len(matches) != 1 or group and matches[0]["group"] != group:
         raise PairError(f"path is not a declared {group or 'pair'} member: {path}")
     try:
@@ -162,7 +167,7 @@ def _check_eval_contract(root, manifest):
     return cfg
 
 def _actual(root, manifest):
-    pair = PS.exact_tree(candidate_tree(root), manifest["entries"])
+    pair = PS.exact_tree(candidate_tree(root), _members(manifest))
     evaluation = PS.exact_tree(evaluation_tree(root), manifest["evaluation"])
     pair_hash, eval_hash = PS.state_hash(pair), PS.state_hash(evaluation)
     if eval_hash != manifest["accepted_evaluation_hash"]:
