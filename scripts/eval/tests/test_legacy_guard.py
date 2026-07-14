@@ -160,7 +160,8 @@ class LegacyGuardTests(unittest.TestCase):
             (RUN, ["run_iteration.py", "--book", str(self.product.parent),
                    "--iter", "1", "--config", str(self.config)], RUN.judges, "endpoint"),
             (SCORE, ["score.py", "--book", str(self.product.parent),
-                     "--iter", "1", "--config", str(self.config)], SCORE, "load_reference"),
+                     "--iter", "1", "--config", str(self.config)],
+             SCORE.score_core, "evaluate"),
             (GATE, ["gate.py", "--iter", "1", "--config", str(self.config)],
              GATE, "append_row"),
         )
@@ -183,7 +184,8 @@ class LegacyGuardTests(unittest.TestCase):
                   "--candidate-root", str(candidate), "--rf-dry-run"]
         cases = (
             (RUN, ["run_iteration.py", "--book", str(book), "--iter", "1"], RUN.judges, "endpoint"),
-            (SCORE, ["score.py", "--book", str(book), "--iter", "1"], SCORE, "load_reference"),
+            (SCORE, ["score.py", "--book", str(book), "--iter", "1"],
+             SCORE.score_core, "evaluate"),
             (GATE, ["gate.py", "--iter", "1"], GATE, "append_row"),
         )
         before = digest(self.protected)

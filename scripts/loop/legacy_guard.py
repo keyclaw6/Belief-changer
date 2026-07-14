@@ -2,6 +2,7 @@
 import os
 import re
 from pathlib import Path
+import path_guard as PG
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -77,7 +78,7 @@ def _overlaps(left, right):
     return _inside(left, right) or _inside(right, left)
 
 
-def require_authorized(args, *, entrypoint):
+def require_authorized(args, *, entrypoint, pre_rf23_stage=None):
     """Reject before config, endpoint, network, or write resolution."""
     if not args.redesign_authorized:
         _stop(f"{entrypoint} is paused; explicit redesign authorization is required")
@@ -87,17 +88,33 @@ def require_authorized(args, *, entrypoint):
     statuses = _statuses()
     if statuses.get(stage) not in READY:
         _stop(f"{stage} is {statuses.get(stage, 'MISSING')}, not READY")
-    if statuses.get("RF-23") not in READY:
+    if pre_rf23_stage is not None and stage != pre_rf23_stage:
+        _stop(f"this non-prose operation requires {pre_rf23_stage} authorization")
+    if pre_rf23_stage is None and statuses.get("RF-23") not in READY:
         _stop(f"legacy execution requires RF-23 READY (found {statuses.get('RF-23', 'MISSING')})")
     if not args.candidate_root:
         _stop("--candidate-root is required")
-    candidate = Path(args.candidate_root).resolve()
-    if not candidate.is_dir():
-        _stop(f"candidate root is not an existing directory: {candidate}")
+    candidate = PG.absolute(args.candidate_root)
+    try:
+        PG.safe_dir(candidate)
+    except PG.PathError as exc:
+        _stop(f"candidate root is unsafe: {exc}")
     for accepted in _ACCEPTED:
-        if _overlaps(candidate, accepted.resolve()):
+        if _overlaps(candidate, accepted.absolute()):
             _stop(f"candidate root overlaps accepted production/configuration: {accepted}")
     return candidate
+
+
+def require_store_target(candidate, target):
+    """Pre-RF23 store maintenance may write only to its isolated authorized root."""
+    target = PG.absolute(target)
+    try:
+        PG.safe_dir(target)
+    except PG.PathError as exc:
+        _stop(f"accepted-store target is unsafe: {exc}")
+    if target != candidate:
+        _stop("--accepted-root must equal the isolated --candidate-root for RF-02 setup")
+    return target
 
 
 def require_output(candidate, target):

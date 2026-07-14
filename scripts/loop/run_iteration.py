@@ -1,19 +1,6 @@
-"""Convenience wrapper: RUN (write chapters) -> SCORE -> GATE, one command.
-
-Optional. Everything it does can be done by hand (see PROGRAM.md manual mode).
-Writer calls go through the SAME OpenRouter plumbing as the judges
-(scripts/eval/model_endpoint.chat) with the writer model from loop/config.yaml.
-Fresh context per chapter: the writer sees ONLY the style guide + master plan +
-the immediately previous chapter, exactly as prompts/chapter-writer.md dictates.
-
-  python3 scripts/loop/run_iteration.py --book production-books/quit-sugar \
-      --chapters 1-3 --iter 7 --hypothesis "H-001 word budgets"
-  python3 scripts/loop/run_iteration.py ... --no-write   # skip RUN, just score+gate
-
-No writer key -> prints exact manual-mode dispatch instructions and stops before
-scoring (nothing to score). Never fabricates chapter prose.
-"""
+"""Run, score, and gate one candidate iteration."""
 import argparse
+import os
 import re
 import subprocess
 import sys
@@ -27,7 +14,9 @@ import model_endpoint as ME   # noqa: E402
 import loopcfg               # noqa: E402
 import judges                # noqa: E402
 import legacy_guard as LG     # noqa: E402
-
+import candidate_pair as CP   # noqa: E402
+import pair_store as PS        # noqa: E402
+import manual_dispatch as MD    # noqa: E402
 CARD_RE = re.compile(r"^###\s+CH-0*(\d+)\b", re.M)
 
 
@@ -69,16 +58,15 @@ def _clean_chapter(raw: str) -> str:
             lines = lines[:-1]
         text = "\n".join(lines).strip()
     return text
-
-
-def write_chapters(cfg, book, sel, candidate):
+def write_chapters(cfg, book, sel, candidate, source_root=None):
     """Dispatch the writer for each selected chapter, fresh context each time."""
     base_url, key = judges.endpoint()
     if not key:
-        _manual_instructions(cfg, book, sel)
+        MD.writer(cfg, source_root or candidate, book, sel)
         return False
-    style_guide = Path("prompts/style-guide.md").read_text(encoding="utf-8")
-    writer_tmpl = Path("prompts/chapter-writer.md").read_text(encoding="utf-8")
+    source_root = Path(source_root or ".")
+    style_guide = (source_root / "prompts/style-guide.md").read_text(encoding="utf-8")
+    writer_tmpl = (source_root / "prompts/chapter-writer.md").read_text(encoding="utf-8")
     plan_text = (book / "master-plan.md").read_text(encoding="utf-8")
     slug = book.name
     ch_dir = book / "chapters"
@@ -92,7 +80,6 @@ def write_chapters(cfg, book, sel, candidate):
         prev = prev_path.read_text(encoding="utf-8") if (n > 1 and prev_path.is_file()) else None
         content = build_writer_prompt(writer_tmpl, style_guide, plan_text, prev, slug, n, title)
         print(f"[run] writing ch{n} ({title!r}) via {model} ...")
-        # Generous ceiling: a full chapter is a few thousand words of completion.
         raw = ME.chat(base_url, key, model, content, reasoning, max_tokens=16000, temperature=0.7)
         text = _clean_chapter(raw)
         nwords = len(E.words(text))
@@ -106,22 +93,9 @@ def write_chapters(cfg, book, sel, candidate):
         print(f"[run] wrote {out} ({nwords} words)")
     return True
 
-
-def _manual_instructions(cfg, book, sel):
-    print("[run] NO writer key (OPENROUTER_API_KEY / LITELLM_API_KEY) — MANUAL MODE.")
-    print("[run] Dispatch prompts/chapter-writer.md once PER CHAPTER, fresh context each,")
-    print(f"      with writer model {cfg['writer_model']} (reasoning={cfg.get('writer_reasoning','none')}).")
-    print("      The writer sees ONLY: prompts/style-guide.md + the book master-plan.md +")
-    print("      the immediately previous chapter (none for ch1). Save each to")
-    print(f"      {book}/chapters/chapter-NN.md (zero-padded), then run:")
-    print(f"        python3 scripts/loop/score.py --book {book} --chapters "
-          f"{sel[0]}-{sel[-1]} --iter <N>")
-    print(f"        python3 scripts/loop/gate.py --iter <N> --hypothesis \"...\"")
-
-
-def run_step(cmd):
+def run_step(cmd, cwd=None):
     print(f"[run] $ {' '.join(cmd)}")
-    return subprocess.run(cmd, check=False).returncode
+    return subprocess.run(cmd, check=False, cwd=cwd).returncode
 
 
 def main():
@@ -134,65 +108,147 @@ def main():
     ap.add_argument("--score-now", action="store_true",
                     help="skip the stop-for-review pause and score immediately after writing")
     ap.add_argument("--config", default=None)
+    ap.add_argument("--accepted-root")
+    ap.add_argument("--promote-pair", action="store_true",
+                    help="forward explicit human promotion approval to the gate")
+    ap.add_argument("--decision-timestamp",
+                    help="pinned UTC timestamp forwarded unchanged to the atomic gate")
+    ap.add_argument("--initialize-accepted-store", action="store_true",
+                    help="explicitly freeze repo-root bootstrap inputs behind the atomic pointer")
+    ap.add_argument("--add-book-to-accepted-store", action="store_true",
+                    help="atomically add one complete workshop to the accepted operation view")
     LG.add_arguments(ap)
     a = ap.parse_args()
+    if a.initialize_accepted_store and a.add_book_to_accepted_store:
+        ap.error("choose one accepted-store operation")
 
-    candidate = LG.require_authorized(a, entrypoint="run_iteration.py")
-    config_path = Path(a.config) if a.config else loopcfg.find_config()
-    LG.require_targets(candidate, config_path)
-    cfg = loopcfg.load(config_path)
-    book = Path(a.book)
-    LG.require_targets(candidate, book, book / "chapters")
-    LG.require_config_targets(candidate, cfg, "scores_dir", "results_tsv", "tasks_dir")
-    if LG.dry_run(a, "run_iteration.py"):
+    store_operation = a.initialize_accepted_store or a.add_book_to_accepted_store
+    candidate = LG.require_authorized(
+        a, entrypoint="run_iteration.py",
+        pre_rf23_stage="RF-02" if store_operation else None)
+    target = Path(a.accepted_root or LG.REPO_ROOT).absolute()
+    if store_operation:
+        target = LG.require_store_target(candidate, target)
+        if LG.dry_run(a, "run_iteration.py"):
+            return
+        try:
+            action = CP.initialize if a.initialize_accepted_store else CP.add_book
+            generation = action(target, a.book, a.config or "loop/config.yaml")
+        except CP.PairError as exc:
+            label = "setup" if a.initialize_accepted_store else "workshop addition"
+            raise SystemExit(f"run: accepted-store {label} failed closed: {exc}") from exc
+        print(f"[run] accepted generation {generation}")
         return
+    if a.rf_dry_run:
+        config_path = Path(a.config) if a.config else loopcfg.find_config()
+        book = Path(a.book)
+        LG.require_targets(candidate, config_path, book, book / "chapters")
+        loopcfg.load(config_path)
+        LG.dry_run(a, "run_iteration.py")
+        return
+    if not a.decision_timestamp:
+        ap.error("candidate execution requires --decision-timestamp for resumable gating")
+    if not os.path.lexists(candidate / CP.MANIFEST):
+        try:
+            CP.snapshot(candidate, target, a.book, a.chapters,
+                        a.config or "loop/config.yaml", a.iter)
+        except CP.PairError as exc:
+            raise SystemExit(f"run: candidate snapshot failed closed: {exc}") from exc
+    manifest = CP.load(candidate)
+    try:
+        CP.assert_run(candidate, manifest, a.book, a.chapters, a.iter,
+                      a.config or "loop/config.yaml")
+    except CP.PairError as exc:
+        raise SystemExit(f"run: resume rejected: {exc}") from exc
+    tree = CP.candidate_tree(candidate)
+    config_path = CP.candidate_path(candidate, manifest["run"]["config"])
+    book = tree / manifest["run"]["book"]
+    CP.require_member(candidate, config_path, "config", manifest)
+    LG.require_targets(candidate, config_path, book, book / "chapters")
+    cfg = loopcfg.load(config_path)
+    cfg = dict(cfg)
+    evidence = CP.evidence_tree(candidate)
+    cfg.update(scores_dir=str(evidence / "scores"),
+               results_tsv=str(evidence / "results.tsv"),
+               tasks_dir=str(evidence / "iterations"))
+    LG.require_config_targets(candidate, cfg, "scores_dir", "results_tsv", "tasks_dir")
     ch_dir = book / "chapters"
-    # Parse the range against however many chapters exist (or the plan's CH count).
-    upper = len([p for p in ch_dir.glob("chapter-*.md")]) if ch_dir.is_dir() else 0
     plan = book / "master-plan.md"
-    if plan.is_file():
-        nums = [int(m) for m in CARD_RE.findall(plan.read_text(encoding="utf-8"))]
-        upper = max(upper, max(nums) if nums else 0)
+    try:
+        PS.safe_dir(ch_dir, tree)
+        CP.require_member(candidate, plan, "product", manifest)
+        CP.require_member(candidate, tree / "prompts/style-guide.md", "config", manifest)
+        CP.require_member(candidate, tree / "prompts/chapter-writer.md", "config", manifest)
+        CP.require_member(candidate, tree / "prompts/chapter-reviewer.md", "config", manifest)
+    except (CP.PairError, PS.StoreError) as exc:
+        raise SystemExit(f"run: incomplete explicit pair: {exc}") from exc
+    upper = len([p for p in ch_dir.glob("chapter-*.md")]) if ch_dir.is_dir() else 0
+    nums = [int(m) for m in CARD_RE.findall(plan.read_text(encoding="utf-8"))]
+    upper = max(upper, max(nums) if nums else 0)
     sel = E.parse_range(a.chapters, upper or 99)
+    try:
+        for n in sel:
+            CP.require_member(candidate, ch_dir / f"chapter-{n:02d}.md", "product", manifest)
+            if n > 1:
+                CP.require_member(candidate, ch_dir / f"chapter-{n-1:02d}.md",
+                                  "product", manifest)
+    except CP.PairError as exc:
+        raise SystemExit(f"run: incomplete explicit pair: {exc}") from exc
 
-    # Step 1 RUN.
     if not a.no_write:
-        wrote = write_chapters(cfg, book, sel, candidate)
+        wrote = write_chapters(cfg, book, sel, candidate, tree)
         if not wrote:
             print("[run] stopping before SCORE (no chapters were written). "
-                  "Write them manually per the instructions above, then re-run with --no-write.")
+                  "Write them manually per the instructions above, then replay:")
+            print(f"[run]   {MD.resume(a, HERE, sys.executable or 'python3')}")
             sys.exit(2)
         if not a.score_now:
             print("[run] First drafts written. PROGRAM §4.1: run <=2 reviewer cycles per "
-                  "chapter now (fresh subagents on prompts/chapter-reviewer.md; after the "
+                  f"chapter now ({MD.reviewer(tree)}; after the "
                   "2nd REVISE proceed with the latest draft and note residual blockers in "
                   "loop/learnings.md). Then resume:")
-            print(f"[run]   python3 scripts/loop/run_iteration.py --book {book} --chapters "
-                  f"{a.chapters} --iter {a.iter} --no-write --hypothesis \"{a.hypothesis}\"")
+            print(f"[run]   {MD.resume(a, HERE, sys.executable or 'python3')}")
             print("[run] (Scoring first drafts directly is only for controls/baselines: "
                   "re-run with --score-now.)")
             sys.exit(0)
 
+    try:
+        if manifest["state"] == "CANDIDATE":
+            tested_hash = CP.seal(candidate)
+        elif manifest["state"] == "SEALED" and CP.status(candidate) == "SEALED":
+            tested_hash = manifest["tested_hash"]
+            CP.verify_sealed(candidate, tested_hash)
+        else:
+            raise CP.PairError(f"cannot resume decided pair {CP.status(candidate)}")
+    except CP.PairError as exc:
+        raise SystemExit(f"run: candidate sealing failed closed: {exc}") from exc
+    print(f"[run] sealed exact evaluation pair {tested_hash}")
     py = sys.executable or "python3"
     auth = LG.forward_arguments(a)
-    # Step 2 SCORE.
     rc_score = run_step([py, str(HERE.parent / "score.py"), "--book", str(book),
                          "--chapters", a.chapters, "--iter", str(a.iter),
-                         "--config", str(config_path)] + auth)
+                         "--config", str(config_path),
+                         "--tested-pair-hash", tested_hash] + auth, cwd=tree)
     if rc_score == 3:
         print("[run] WAITING FOR JUDGE VERDICTS — dispatch the emitted task files as fresh")
         print("      native Sol subagents (see [judges] lines above), save the JSON verdicts,")
-        print("      then re-run score.py and gate.py with the same --iter.")
+        print("      then replay the pinned run command:")
+        print(f"[run]   {MD.resume(a, HERE, py)}")
         sys.exit(3)
     if rc_score != 0:
         print(f"[run] score.py exited {rc_score}; not gating.")
         sys.exit(rc_score)
     # Step 3 GATE.
+    pair_args = ["--tested-pair-hash", tested_hash,
+                 "--accepted-root", str(target),
+                 "--decision-timestamp", a.decision_timestamp]
+    if a.promote_pair:
+        pair_args.append("--promote-pair")
     rc_gate = run_step([py, str(HERE.parent / "gate.py"), "--iter", str(a.iter),
-                        "--hypothesis", a.hypothesis, "--config", str(config_path)] + auth)
+                        "--hypothesis", a.hypothesis, "--config", str(config_path)]
+                       + auth + pair_args, cwd=tree)
     print("[run] Gate exit 0 = decision made (verdict is in the row/stdout, incl. REVERT). "
-          "Now RECORD: write the hypothesis outcome into loop/learnings.md, run any "
-          "printed revert commands, then COMMIT per PROGRAM §4.5.")
+          "The pair is already promoted or retained as rejected evidence.")
     sys.exit(rc_gate)
 
 

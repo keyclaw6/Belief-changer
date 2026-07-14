@@ -26,6 +26,25 @@ later validation gates report their outcomes.
   identity; this calibration is isolated and cannot feed generation.
 - Keep the existing production-book folder and core artifact sequence. A
   `commissions/` child is an additive handoff artifact, not a restructure.
+- Preserve the stable external layout inside every complete immutable operation
+  root: canonical configuration assets and whole `production-books/<slug>/`
+  workshops—including their briefs, research sources and syntheses, framing,
+  plans, reviews, commissions, chapters, and future books—keep their exact
+  relative paths. Every factory and agent operation
+  is handed one pinned root rather than choosing files or reopening `current`.
+  Reference-sighted inputs remain in the separate sealed evaluation tree.
+- Build an accepted decision row into the hidden next generation before its one
+  pointer switch. Seal its timestamp, exact row bytes, and exact resulting
+  history once before promotion; retry from that same receipt after any process
+  interruption. Before exact-layout validation, recover only known root temp
+  names whose type, owner, content, and manifest state prove they are replayable;
+  reject every other extra. A rejected run writes only experiment evidence. New
+  complete workshops extend the current view atomically and retain prior history.
+- Keep one deterministic scoring core shared by scoring and gate recomputation;
+  historical reports remain readable, but no retired parallel scorer remains
+  executable. Manual dispatch pins the immutable operation root as its cwd and
+  uses only stable relative paths beneath it. Its resume command is a shell-safe,
+  non-secret replay of the pinned invocation with only `--no-write` added.
 - Generate a selected first-draft batch before reviewing individual chapters;
   repair the nearest owning stage; regenerate only causally invalidated work.
 - The root operator never reads whole chapters or whole books. Dedicated fresh
@@ -36,7 +55,9 @@ later validation gates report their outcomes.
   `main` only after an independent reviewer returns PASS.
 - RF-00 mechanically guards `PROGRAM.md` and every legacy product-generation or
   promotion entrypoint before any other implementation task. Policy text alone
-  is not treated as an executable pause.
+  is not treated as an executable pause. Its narrow pre-RF-23 exception is
+  explicit RF-02-ready setup or extension of an isolated non-prose store; it
+  does not authorize run, score, gate, model, or prose behavior.
 
 ## Target flow
 

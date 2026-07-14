@@ -115,19 +115,10 @@ class GuardQATests(unittest.TestCase):
     def _run_score(self, argv):
         with mock.patch.object(sys, "argv", argv), \
                 mock.patch.object(LG, "LEDGER", self.ledger), \
-                mock.patch.object(SCORE, "load_reference", return_value=(
-                    self.root, [("reference", "reference")], {"chapters": []})), \
-                mock.patch.object(SCORE.E, "load_chapters", return_value=[
-                    ("chapter-01.md", "ours")]), \
-                mock.patch.object(SCORE.M, "book_metrics", return_value={
-                    "chapters": [{"n": 1, "words": 1}]}), \
-                mock.patch.object(SCORE.R, "cross_book", return_value={
-                    "tripped": False, "overlap_ratio": 0, "tripwire": 0.1}), \
-                mock.patch.object(SCORE.MC, "parse_mantra_sheet", return_value=[]), \
-                mock.patch.object(SCORE.R, "within_book", return_value={"hard_fails": []}), \
-                mock.patch.object(SCORE.planctx, "build_pairs", return_value=[
-                    ("ch1", "ours", "reference", "context")]), \
-                mock.patch.object(SCORE, "stylometrics", return_value=[]), \
+                mock.patch.object(SCORE.score_core, "evaluate", return_value={
+                    "chapters_checked": [1], "hard_ok": True, "hard_fails": [],
+                    "checks": {}, "diagnostics": {"stylometrics": []},
+                    "pairs": [("ch1", "ours", "reference", "context")]}), \
                 mock.patch.object(SCORE.judges, "missing_verdicts", return_value=[]), \
                 mock.patch.object(SCORE.judges, "aggregate", return_value={
                     "reward": 1, "worst_dimensions": [], "suggestions": []}), \

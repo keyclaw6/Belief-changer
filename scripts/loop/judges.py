@@ -19,6 +19,7 @@ JSON reply to the matching verdicts/ path. Judge output is never fabricated.
 endpoint()/have_key() remain here for the WRITER transport only
 (run_iteration.py: Opus 4.6 via OpenRouter/LiteLLM).
 """
+import hashlib
 import json
 import os
 import re
@@ -31,6 +32,10 @@ ASSETS = {"style-guide", "chapter-writer", "chapter-reviewer", "master-plan",
           "research"}
 _FENCE_RE = re.compile(r"```(?:json)?\s*(\{.*\})\s*```", re.S)
 _BLANKS_RE = re.compile(r"\n{3,}")
+_BIND_RE = re.compile(
+    r"^RF-02 SEALED BINDING — return top-level JSON fields pair_hash=(\w+) "
+    r"and task_hash=(\w+) unchanged\.\n\n"
+)
 
 
 def endpoint():
@@ -71,13 +76,44 @@ def _stems(labels, k):
     return [f"{lbl}-j{j}" for lbl in labels for j in range(1, k + 1)]
 
 
-def missing_verdicts(cfg, labels, iter_name: str) -> list:
+def _task_binding(path: Path, pair_hash: str, candidate=None):
+    if candidate is not None:
+        LG.require_output(candidate, path)
+    if not path.is_file():
+        raise SystemExit(f"judges: bound task is missing: {path}")
+    text = path.read_text(encoding="utf-8")
+    match = _BIND_RE.match(text)
+    if not match or match.group(1) != pair_hash:
+        raise SystemExit(f"judges: stale or malformed task binding: {path.name}")
+    body = text[match.end():]
+    actual = hashlib.sha256(body.encode()).hexdigest()
+    if match.group(2) != actual:
+        raise SystemExit(f"judges: task body drifted after binding: {path.name}")
+    return actual
+
+
+def missing_verdicts(cfg, labels, iter_name: str, pair_hash=None, candidate=None) -> list:
+    base = judging_dir(cfg, iter_name)
     vdir = judging_dir(cfg, iter_name) / "verdicts"
+    if candidate is not None:
+        LG.require_output(candidate, base / "tasks")
+        LG.require_output(candidate, vdir)
     k = int(cfg.get("judge_k", 2))
-    return [s for s in _stems(labels, k) if not (vdir / f"{s}.json").is_file()]
+    missing = []
+    for stem in _stems(labels, k):
+        verdict = vdir / f"{stem}.json"
+        if candidate is not None and (verdict.exists() or verdict.is_symlink()):
+            LG.require_output(candidate, verdict)
+        if not verdict.is_file():
+            missing.append(stem)
+        elif pair_hash:
+            task_hash = _task_binding(base / "tasks" / f"{stem}.md", pair_hash, candidate)
+            _parse_verdict(verdict, pair_hash, task_hash, candidate)
+    return missing
 
 
-def emit_tasks(cfg, pairs, iter_name: str, rubric_text: str, candidate: Path) -> list:
+def emit_tasks(cfg, pairs, iter_name: str, rubric_text: str, candidate: Path,
+               pair_hash=None) -> list:
     """pairs: (label, ours_text, ref_text, ctx). Writes tasks/, creates verdicts/."""
     for ph in ("{{REFERENCE}}", "{{CANDIDATE}}", "{{CONTEXT}}"):
         if ph not in rubric_text:
@@ -97,7 +133,12 @@ def emit_tasks(cfg, pairs, iter_name: str, rubric_text: str, candidate: Path) ->
         for j in range(1, k + 1):
             p = tdir / f"{lbl}-j{j}.md"
             LG.require_output(candidate, p)
-            p.write_text(body, encoding="utf-8")
+            task = body
+            if pair_hash:
+                task_hash = hashlib.sha256(body.encode()).hexdigest()
+                task = (f"RF-02 SEALED BINDING — return top-level JSON fields "
+                        f"pair_hash={pair_hash} and task_hash={task_hash} unchanged.\n\n{body}")
+            p.write_text(task, encoding="utf-8")
             out.append(p)
     print(f"[judges] wrote {len(out)} task files. DISPATCH each as a FRESH native Codex "
           f"subagent — model {cfg.get('judge_model')}, reasoning={cfg.get('judge_reasoning')} "
@@ -109,8 +150,10 @@ def emit_tasks(cfg, pairs, iter_name: str, rubric_text: str, candidate: Path) ->
     return out
 
 
-def _parse_verdict(path: Path) -> dict:
+def _parse_verdict(path: Path, pair_hash=None, task_hash=None, candidate=None) -> dict:
     """Strict: bare JSON object or one ```json fenced``` block. No repair."""
+    if candidate is not None:
+        LG.require_output(candidate, path)
     text = path.read_text(encoding="utf-8").strip()
     m = _FENCE_RE.search(text)
     raw = m.group(1) if m else text
@@ -118,6 +161,8 @@ def _parse_verdict(path: Path) -> dict:
         obj = json.loads(raw)
     except Exception as e:
         raise SystemExit(f"judges: malformed JSON in {path.name}: {e}")
+    if pair_hash and (obj.get("pair_hash"), obj.get("task_hash")) != (pair_hash, task_hash):
+        raise SystemExit(f"judges: {path.name}: stale sealed-pair/task binding")
     scores = obj.get("scores") or {}
     for d in DIMS:
         v = scores.get(d)
@@ -137,16 +182,22 @@ def _parse_verdict(path: Path) -> dict:
     return obj
 
 
-def aggregate(cfg, labels, iter_name: str) -> dict:
+def aggregate(cfg, labels, iter_name: str, pair_hash=None, candidate=None) -> dict:
     vdir = judging_dir(cfg, iter_name) / "verdicts"
     k = int(cfg.get("judge_k", 2))
-    missing = missing_verdicts(cfg, labels, iter_name)
+    missing = missing_verdicts(cfg, labels, iter_name, pair_hash, candidate)
     if missing:
         raise SystemExit(f"judges: missing verdicts for: {', '.join(missing)}")
     w = weights(cfg)
     per_chapter, all_sugg, worst_votes = [], [], {}
     for lbl in labels:
-        verdicts = [_parse_verdict(vdir / f"{lbl}-j{j}.json") for j in range(1, k + 1)]
+        verdicts = []
+        for j in range(1, k + 1):
+            stem = f"{lbl}-j{j}"
+            task_hash = (_task_binding(judging_dir(cfg, iter_name) / "tasks" /
+                                      f"{stem}.md", pair_hash, candidate) if pair_hash else None)
+            verdicts.append(_parse_verdict(vdir / f"{stem}.json", pair_hash,
+                                           task_hash, candidate))
         dims = {d: round(sum(v["scores"][d] for v in verdicts) / k, 3) for d in DIMS}
         composite = round(sum(w[d] * dims[d] for d in DIMS) / 10.0, 4)
         per_chapter.append({"chapter": lbl, "composite": composite, "dims": dims,

@@ -177,8 +177,8 @@ the SHA without reopening the implementation verdict.
 
 ### RF-02 — Isolate candidate configuration and product atomically
 
-- [ ] Make rejection incapable of changing current production or accepted config.
-- Status: `TODO`
+- [x] Make rejection incapable of changing current production or accepted config.
+- Status: `DONE`
 - Evidence class / report: demonstrated; §§1, 5 cause 3, 7 action 3, 10.
 - Problem / root cause: current gate reverts selected assets but leaves generated
   chapters, producing a configuration/product mismatch.
@@ -193,9 +193,18 @@ the SHA without reopening the implementation verdict.
   closed; old iteration evidence remains readable.
 - Verification: targeted atomic-promotion tests, `bash scripts/check.sh`.
 - Dependencies: RF-00. MUST finish before RF-23 treatment generation.
-- Implementation attempts: `0`; latest: `—`.
-- Review attempts: `0`; latest verdict / findings: `—`.
-- Commit / push: `—`.
+- Implementation attempts: `8`; latest: 2026-07-14
+  `/root/rf02_completion_owner` — the real no-endpoint writer branch now prints
+  the complete shell-safe pinned resume command with no secrets, and every new
+  RF-02 code file is at most 260 lines. The exact fallback path has regression
+  coverage.
+- Review attempts: `8`; latest verdict / findings: `PASS` — prior manual-fallback
+  and file-size findings are resolved; 30/30 focused and 120/120 full tests,
+  strict OpenSpec, and diff checks passed, with core recovery, promotion, and
+  binding scenarios accepted.
+- Commit / push: accepted subject `feat(loop): isolate candidate product
+  atomically`; exact SHA is captured at the next ledger checkpoint to avoid
+  impossible self-reference.
 
 ## Phase 1 — repair the upstream intervention contract
 
