@@ -140,8 +140,11 @@ class PlanningContractTests(unittest.TestCase):
         self.assertNotIn("Reviewed by an Opus sub-agent", plan)
 
         template_review = read("production-books/_template/master-plan-review.md")
-        for model in ("Gemini 3.1 Pro", "GPT-5.6 Sol", "Grok 4.5"):
-            self.assertIn(model, template_review)
+        self.assertIn("GPT-5.6 Sol", template_review)
+        self.assertIn("gpt-5.6-sol", template_review)
+        self.assertIn("fresh native Codex subagent", template_review)
+        self.assertNotIn("Gemini", template_review)
+        self.assertNotIn("Grok", template_review)
 
         for review_path in (
             "production-books/_template/master-plan-review.md",

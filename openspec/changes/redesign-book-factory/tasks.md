@@ -332,13 +332,13 @@ the SHA without reopening the implementation verdict.
   and 156/156 full tests, strict OpenSpec, and diff checks passed with no
   actionable findings.
 - Commit / push: accepted subject
-  `feat(planning): enforce reader-state chapter cards`; exact SHA is captured at
-  the next ledger checkpoint to avoid impossible self-reference.
+  `feat(planning): enforce reader-state chapter cards`;
+  `960f84d8d150b416344cd54562b12248a8d23cca`.
 
 ### RF-07 — Make plan review a blocking cumulative reader walk
 
-- [ ] Enforce `fit to write from` without a one-cycle waiver.
-- Status: `TODO`
+- [x] Enforce `fit to write from` without a one-cycle waiver.
+- Status: `DONE`
 - Evidence class / report: demonstrated governance failure; §§1, 5 causes 1 and
   4, 7 action 1.
 - Problem / root cause: writing proceeded from a plan whose own review said
@@ -352,9 +352,17 @@ the SHA without reopening the implementation verdict.
   cumulative plan ends `fit to write from`; runtime refuses all other verdicts.
 - Verification: plan-review fixtures, `bash scripts/check.sh`.
 - Dependencies: RF-06.
-- Implementation attempts: `0`; latest: `—`.
-- Review attempts: `0`; latest verdict / findings: `—`.
-- Commit / push: `—`.
+- Implementation attempts: `3`; latest: 2026-07-14
+  `/root/rf07_plan_review_owner` — repaired review attempt 2's remaining P1 by
+  recognizing whitespace- or hyphen-separated `not[-yet]-reviewed` markers while
+  preserving resolved-negation controls; exact regressions and all gates pass.
+- Review attempts: `3`; latest verdict / findings: `PASS` — unfinished whitespace
+  and hyphen variants block; exact native reviewer, plan/framing hashes,
+  standalone verdict, and commissioning gate verified; 27 focused and 161 full
+  tests pass with strict OpenSpec and clean diff checks; no findings.
+- Commit / push: accepted subject
+  `feat(planning): block commissioning on plan review`; exact SHA is captured at
+  the next ledger checkpoint to avoid impossible self-reference.
 
 ## Phase 2 — repair handoffs, drafting, and review
 

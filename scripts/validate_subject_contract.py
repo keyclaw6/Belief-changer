@@ -164,9 +164,14 @@ def require_subject_contract(book, stage):
     if stage == "commissioning":
         import validate_master_plan_contract as plan
         try:
-            plan.require_master_plan_contract(book, framing_path)
+            plan_path = plan.require_master_plan_contract(book, framing_path)
         except plan.ContractError as exc:
             raise ContractError(f"master plan not ready: {exc}") from exc
+        import validate_master_plan_review as review
+        try:
+            review.require_master_plan_review(book, plan_path, framing_path)
+        except review.ContractError as exc:
+            raise ContractError(f"master plan review not ready: {exc}") from exc
     return brief
 
 

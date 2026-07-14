@@ -120,7 +120,9 @@ The plan may assign an evidence-unavailable treatment when a familiar structural
 
 ## Fresh review gate
 
-The plan is not final until a fresh reviewer from Gemini 3.1 Pro, GPT-5.6 Sol, or Grok 4.5 at its highest supported reasoning mode reviews the exact permitted inputs plus the candidate and records `master-plan-review.md` ending with the standalone line:
+The plan is not final until a fresh native Codex subagent using GPT-5.6 Sol
+(`gpt-5.6-sol`) at `xhigh` reasoning reviews the exact permitted inputs plus the
+candidate and records `master-plan-review.md` ending with the standalone line:
 
 `fit to write from`
 

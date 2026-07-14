@@ -214,15 +214,13 @@ class MasterPlanContractTests(unittest.TestCase):
         duplicate = "\n| E-01 | copied finding | S-001 | lived tier | scope | allowed | forbidden |\n"
         self.assert_invalid(plan().replace("- **Word budget:** 1000\n", "- **Word budget:** 1000\n" + duplicate, 1), "plan-wide inventory")
 
-    def test_commissioning_stage_enforces_cards_without_rf07_verdict(self):
-        """Infra: RF-06 commissioning boundary leaves independent verdict to RF-07."""
+    def test_commissioning_stage_enforces_cards_and_rf07_verdict(self):
+        """Infra: RF-06 card gate remains before the RF-07 independent verdict."""
         with patch.object(RC, "require_research_contract", return_value=()), patch.object(
             FC, "require_framing_contract", return_value=self.book / "framing.md"
         ):
-            self.assertEqual(
-                self.book / "00-brief.md",
-                SC.require_subject_contract(self.book, "commissioning"),
-            )
+            with self.assertRaisesRegex(SC.ContractError, "master plan review not ready"):
+                SC.require_subject_contract(self.book, "commissioning")
             self.write(plan().replace(TRANSITIONS[1][1], TRANSITIONS[0][1], 1))
             with self.assertRaisesRegex(SC.ContractError, "master plan not ready"):
                 SC.require_subject_contract(self.book, "commissioning")
