@@ -38,6 +38,9 @@ Write no documentation by default. A doc must be load-bearing (an agent cannot c
 ## Dependencies
 Understand or recreate: prefer dependencies fully reasoned about in-repo; reimplement small subsets over adopting frameworks. Model access goes through the founder's endpoints and always via environment variables; no provider keys belong in this repo. During calibration, the PROGRAM §1 route law is binding: OpenRouter carries ONLY Opus chapter writing (reasoning disabled) and DeepSeek research (top reasoning); GPT-5.6 Sol (planning, reviewing, judging) runs ONLY as fresh native Codex subagents on the founder's subscription, never through OpenRouter.
 
+## Environment Files
+Real `.env*` files (not placeholder examples) are dotenvx-encrypted source of truth and are committed. Never commit `.env.keys` or `DOTENV_PRIVATE_KEY`; Kristian's machine keeps the one shared private key at `~/.config/dotenvx/.env.keys` and its public key at `~/.config/dotenvx/public.env`. Reuse that keypair for every env file and use `dotenvx run -- <command>` or `dotenvx set KEY value` instead of plaintext secrets.
+
 ## Code Intelligence
 Use the codebase-memory-mcp tools: blast-radius (`detect_changes`) before modifying existing code, `search_graph`/`trace_path` when exploring, `manage_adr` for architecture decisions instead of docs.
 

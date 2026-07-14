@@ -19,3 +19,7 @@ calibration/mlruns/
 
 # Judge task files embed extracted reference text — never commit (PROGRAM §7).
 loop/iterations/*/judging/tasks/
+
+# dotenvx private keys stay outside Git; encrypted .env files are tracked.
+.env.keys
+.env.keys.*
