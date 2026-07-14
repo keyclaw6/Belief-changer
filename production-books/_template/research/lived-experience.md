@@ -12,6 +12,37 @@ Standard bullet:
 |---|---|---|---|
 |  |  |  |  |
 
+## Intervention-ready evidence units
+
+Create a unit only when accepted packets support every field. `Implicated belief`
+must reproduce one primary or subordinate belief from `00-brief.md` exactly.
+Reader wording must exactly match an `EXACT_QUOTE` evidence-item `Text` value;
+situation and emotion must occur in cited `Text` or `Use / limits`; permitted and
+prohibited inference wording must occur in cited `Use / limits`. Inferences stay
+unquoted. When support is missing, omit the unit and record a research-owned gap.
+
+### LEU-001
+
+- **Situation:** <concrete situation supported by the source>
+- **Reader wording:** "<exact supported reader wording>"
+- **Implicated belief:** "<exact primary or subordinate brief belief>"
+- **Emotion:** <emotion supported by the source>
+- **Permitted inference:** <bounded inference the source permits>
+- **Prohibited inference:** <claim the source does not permit>
+- **Source locator:** S-001#E-001
+- **Evidence grade:** n/a
+
+## Brief-belief evidence gaps
+
+Record each unsupported brief belief once across the two syntheses. A gap blocks
+framing and planning until research supplies a complete, traceable unit.
+
+### GAP-001
+
+- **Implicated belief:** "<exact primary or subordinate brief belief>"
+- **Missing support:** <situation, wording, emotion, or inference still missing>
+- **Owner:** research
+
 ## Bank 1 — Justification Inventory
 
 - [Bank 1] <finding> — Persona IDs: P-__ — Source IDs: S-__

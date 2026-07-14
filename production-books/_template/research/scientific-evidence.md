@@ -10,6 +10,38 @@ Standard bullet:
 - `MIXED`: support is limited, indirect, population-dependent, or method-dependent.
 - `CONTESTED`: credible sources materially disagree; state the disagreement.
 
+## Intervention-ready evidence units
+
+Create a unit only when accepted packets support every field. `Implicated belief`
+must reproduce one primary or subordinate belief from `00-brief.md` exactly.
+Reader wording must exactly match cited `EXACT_QUOTE` evidence-item text;
+situation and emotion must occur in cited `Text` or `Use / limits`; permitted and
+prohibited inference wording must occur in cited `Use / limits` and stay
+unquoted. A scientific grade must match graded cited evidence—`n/a` cannot back
+a scientific unit. Otherwise omit the unit and record a research-owned gap.
+
+### SEU-001
+
+- **Situation:** <concrete situation supported by the source>
+- **Reader wording:** "<exact supported reader wording>"
+- **Implicated belief:** "<exact primary or subordinate brief belief>"
+- **Emotion:** <emotion supported by the source>
+- **Permitted inference:** <bounded inference the evidence permits>
+- **Prohibited inference:** <claim the evidence does not permit>
+- **Source locator:** S-001#E-001
+- **Evidence grade:** SUPPORTED | MIXED | CONTESTED
+
+## Brief-belief evidence gaps
+
+Record each unsupported brief belief once across the two syntheses. A gap blocks
+framing and planning until research supplies a complete, traceable unit.
+
+### GAP-002
+
+- **Implicated belief:** "<exact primary or subordinate brief belief>"
+- **Missing support:** <situation, wording, emotion, or inference still missing>
+- **Owner:** research
+
 ## Bank 7 — Mechanism & Science Bank
 
 Each candidate claim needs at least two independent source packets or a `CONTESTED` grade.

@@ -72,13 +72,13 @@ class SubjectContractTests(unittest.TestCase):
     def write(self, text=VALID):
         (self.book / "00-brief.md").write_text(text, encoding="utf-8")
 
-    def test_complete_non_sugar_contract_passes_every_gate(self):
+    def test_complete_non_sugar_contract_passes_synthesis_gate(self):
         """OpenSpec scenario: Downstream work starts from an incomplete subject contract."""
         self.write()
-        for stage in SC.STAGES:
-            with self.subTest(stage=stage):
-                self.assertEqual(self.book / "00-brief.md",
-                                 SC.require_subject_contract(self.book, stage))
+        self.assertEqual(
+            self.book / "00-brief.md",
+            SC.require_subject_contract(self.book, "research-synthesis"),
+        )
 
     def test_missing_or_empty_brief_fails_closed(self):
         """OpenSpec scenario: Planning begins without a brief."""
@@ -166,7 +166,7 @@ class SubjectContractTests(unittest.TestCase):
             beliefs = "\n".join(f'- "Reader belief {n}."' for n in range(count))
             with self.subTest(count=count):
                 self.write(replace_section(VALID, "Subordinate beliefs", beliefs))
-                SC.require_subject_contract(self.book, "planning")
+                SC.require_subject_contract(self.book, "research-synthesis")
 
     def test_template_remains_generic_and_fails_until_completed(self):
         """OpenSpec scenario: Downstream work starts from an incomplete subject contract."""

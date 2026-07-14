@@ -16,8 +16,9 @@ strategy plainly; link visible output artifacts.
 ## Source decisions
 
 Record accepted URLs and meaningful source-family or policy rejections. The
-packet carries source detail; this table records why the lead used or rejected
-it.
+packet carries accepted-source detail. For rejected material, record only the
+source family or policy and reason—never its URL, source ID, excerpt, or personal
+data. A rejection never counts as evidence coverage.
 
 | UTC | Source ID / family | URL or scope | Rights / privacy basis | Decision and reason |
 |---|---|---|---|---|

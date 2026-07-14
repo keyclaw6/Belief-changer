@@ -116,6 +116,19 @@ def _validate_beliefs(sections, name, minimum, maximum):
             raise ContractError(f"unresolved belief in: {name}")
 
 
+def belief_set(text):
+    """Return the completed brief's primary and subordinate reader beliefs."""
+    sections = _sections(text)
+    _validate_beliefs(sections, "Primary false belief", 1, 1)
+    _validate_beliefs(sections, "Subordinate beliefs", 3, 5)
+    beliefs = []
+    for name in BELIEF_FIELDS:
+        for line in sections[name].splitlines():
+            quoted = line.strip()[2:].strip()
+            beliefs.append(quoted[1:-1].strip())
+    return tuple(beliefs)
+
+
 def validate_text(text):
     sections = _sections(text)
     for name in SCALAR_FIELDS:
@@ -135,6 +148,12 @@ def require_subject_contract(book, stage):
     if not text.strip():
         raise ContractError(f"empty brief: {brief}")
     validate_text(text)
+    if stage in {"framing", "planning"}:
+        import validate_research_contract as research
+        try:
+            research.require_research_contract(book)
+        except research.ContractError as exc:
+            raise ContractError(f"research synthesis not ready: {exc}") from exc
     return brief
 
 

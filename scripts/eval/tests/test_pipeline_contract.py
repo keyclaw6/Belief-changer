@@ -24,6 +24,10 @@ class ResearchContractTests(unittest.TestCase):
             "Never use reference books",
             "Never invent a source, quote, persona, or finding",
             "Generic volume is not depth",
+            "DeepSeek V4 Pro",
+            "independent high-reasoning evidence editor from another model",
+            "never through OpenRouter",
+            "This prompt defines role contracts; it does not dispatch models",
         ):
             self.assertIn(required, prompt)
         for obsolete in (
@@ -48,10 +52,11 @@ class ResearchContractTests(unittest.TestCase):
         ):
             self.assertIn(required, prompt)
         for required in (
-            "License / quotation basis:",
+            "Access / license basis:",
+            "Excerpt / redistribution basis:",
             "Required attribution:",
-            "Retention / deletion status:",
-            "Privacy judgment:",
+            "Retention / deletion sensitivity:",
+            "Privacy / personal-data basis:",
             "## Minimum retained excerpt",
             "EXACT_QUOTE | INTERPRETATION",
             "Persona tags:",
@@ -92,6 +97,17 @@ class ResearchContractTests(unittest.TestCase):
         for bank in (7, 8):
             self.assertIn(f"## Bank {bank}", science)
         self.assertIn("SUPPORTED | MIXED | CONTESTED", science)
+        for required in (
+            "Intervention-ready evidence units", "Situation:", "Reader wording:",
+            "Implicated belief:", "Emotion:", "Permitted inference:",
+            "Prohibited inference:", "Source locator:", "Evidence grade:",
+            "Brief-belief evidence gaps", "Missing support:", "Owner:",
+        ):
+            self.assertIn(required, lived)
+            self.assertIn(required, science)
+        prompt = read("prompts/research-agent.md")
+        self.assertIn("source count never establishes", prompt)
+        self.assertIn("primary and subordinate brief belief", prompt)
 
 
 class PlanningContractTests(unittest.TestCase):

@@ -233,14 +233,13 @@ the SHA without reopening the implementation verdict.
   fields, non-sugar passing control, unresolved-sentinel and false-positive
   controls, 8/8 focused and 128/128 full tests, strict OpenSpec, and diff checks
   all passed with no actionable findings.
-- Commit / push: accepted subject
-  `feat(pipeline): enforce completed subject contracts`; exact SHA is captured
-  at the next ledger checkpoint to avoid impossible self-reference.
+- Commit / push: `3c61c3908d211c498f7b61683f5246f1cb07e19a`
+  (`feat(pipeline): enforce completed subject contracts`).
 
 ### RF-04 — Add intervention-ready evidence units and belief coverage
 
-- [ ] Preserve source discipline while making synthesis usable by interventions.
-- Status: `TODO`
+- [x] Preserve source discipline while making synthesis usable by interventions.
+- Status: `DONE`
 - Evidence class / report: demonstrated transport loss; §§2–3, 5 cause 2,
   7 target stage 1.
 - Problem / root cause: rich situations and reader language are compressed into
@@ -262,9 +261,17 @@ the SHA without reopening the implementation verdict.
   as evidence coverage.
 - Verification: traceability/coverage fixtures, `bash scripts/check.sh`.
 - Dependencies: RF-03.
-- Implementation attempts: `0`; latest: `—`.
-- Review attempts: `0`; latest verdict / findings: `—`.
-- Commit / push: `—`.
+- Implementation attempts: `3`; latest: 2026-07-14
+  `/root/rf04_evidence_units_owner` — rejected exact whole-value rights/privacy
+  sentinels by field while preserving attribution-only `n/a`, substantive
+  explanations, and all 47 legacy locators.
+- Review attempts: `3`; latest verdict / findings: `PASS` — 25/25 focused and
+  134/134 full tests, strict OpenSpec and diff checks, downstream stage gate,
+  structured source binding, rights/privacy matrix, and 47/47 legacy locators
+  all passed with no actionable findings.
+- Commit / push: accepted subject `feat(research): enforce intervention-ready
+  evidence units`; exact SHA is captured at the next ledger checkpoint to avoid
+  impossible self-reference.
 
 ### RF-05 — Encode the belief graph, reader journey, and earned authority
 

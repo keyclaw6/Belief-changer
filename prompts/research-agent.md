@@ -41,10 +41,11 @@ subject."* Both are carried over here explicitly and are binding. The essential
 - **Provenance is character-for-character.** Every retained claim traces to an
   accepted packet. Exact quotes are exact; interpretations are unquoted;
   scientific disagreement stays `CONTESTED`.
-- **One fresh top-reasoning reviewer** audits the complete packets and syntheses
-  for depth, usefulness, provenance, rights/privacy, persona coverage, and
-  scientific rigor, then returns `ACCEPTED FOR FRAMING` or commissions more work.
-  **The operator never patches evidence by hand.**
+- **One fresh independent high-reasoning evidence editor from another model
+  family** audits the complete packets and syntheses for depth, intervention
+  usefulness, belief coverage, provenance, rights/privacy, persona coverage,
+  and scientific rigor, then returns `ACCEPTED FOR FRAMING` or commissions more
+  work. **The operator never patches evidence by hand.**
 - **Rights gate before Git.** Evidence enters Git only after its access, excerpt,
   retention, redistribution, attribution, and privacy basis passes. Store the
   minimum permitted excerpt necessary — never full posts, bulk user dumps,
@@ -88,10 +89,14 @@ derivatives (including EasyPeasy-style rewrites)**, or prose-pattern analysis.
 Never invent a source, quote, persona, or finding when retrieval is missing —
 find a better source instead.
 
-Research roles use only the allowed research arm (PROGRAM §1 (founder, 2026-07-13): DeepSeek V4 Pro at `xhigh` via OpenRouter — the research arm). The caller
-handles exact runtime IDs, the greatest available allowance, continuation on
-`length`, and call metadata. You focus on the research; rank arms only by
-research quality, never by cost/latency.
+Breadth research uses only the allowed research arm (PROGRAM §1 (founder,
+2026-07-13): DeepSeek V4 Pro at `xhigh` via OpenRouter). The caller handles exact
+runtime IDs, the greatest available allowance, continuation on `length`, and
+call metadata. The independent synthesis auditor is an evidence-editor role,
+not another breadth-research call: use a high-reasoning model from another
+family through an authorized native or direct route, never through OpenRouter.
+This prompt defines role contracts; it does not dispatch models. Rank arms only
+by research quality, never by cost/latency.
 
 ---
 
@@ -394,12 +399,14 @@ Preserve verbatim quotes and provenance inline.
 
 **`research/sources/<S-NNN>-<slug>.md`** — one packet per accepted URL, following
 `research/sources/README.md` exactly: header (Source ID, URL, title, type,
-retrieved UTC, license/quotation basis, required attribution, retention/deletion
-status, privacy judgment, disposition), `## Minimum retained excerpt` with `C-NNN`
-blocks (locator + capture method + the unchanged passage), and `## Evidence items`
-with `E-NNN` blocks (Kind EXACT_QUOTE|INTERPRETATION, Text, Excerpt ID, Locator,
-Persona tags, Bank slots, Evidence grade, Use/limits). Rejected sources stay in
-the log, not as packets.
+retrieved UTC, access/license basis, excerpt/redistribution basis, required
+attribution, retention/deletion sensitivity, privacy/personal-data basis,
+disposition), `## Minimum retained excerpt` with `C-NNN` blocks (locator +
+capture method + the unchanged passage), and `## Evidence items` with
+`E-NNN` blocks (Kind EXACT_QUOTE|INTERPRETATION, Text, Excerpt ID, Locator,
+Persona tags, Bank slots, Evidence grade, Use/limits). Rejected material gets no
+packet, source ID, URL, excerpt, or personal data in Git; the log may retain only
+its policy-level source-family rejection reason.
 
 **`research/research-log.md`** — the parameter block (§1) at the top, then the
 template tables: model/subagent calls; source decisions (accept/reject + rights
@@ -425,6 +432,21 @@ Bank 7 claims need ≥2 independent packets or a CONTESTED grade. Include a
 `## CONTESTED — do NOT overstate` section collecting the claims the book must not
 inflate (credibility armor for the framing stage).
 
+**Intervention-ready units (in either synthesis).** Add a unit only when accepted
+packets support all of: concrete situation, exact reader wording, one implicated
+primary or subordinate belief copied from the completed brief, emotion,
+permitted inference, prohibited inference, exact `S-NNN#E-NNN` source locator,
+and evidence grade (`n/a` only for lived experience). Use IDs `LEU-NNN` or
+`SEU-NNN` and the field schema in the templates. Reader wording must equal cited
+`EXACT_QUOTE` evidence text; situation/emotion must be present in cited text or
+limits; both inference fields must be explicitly present in cited `Use / limits`
+and remain unquoted; a scientific grade must match graded cited evidence. A
+source count never establishes coverage. Audit the brief belief by belief: each
+belief needs at least one complete unit. If any field lacks support, do not guess;
+omit the unit, add a `GAP-NNN` naming the exact brief belief, missing support, and
+owner `research`, and stop downstream work until the gap is filled. Rights- or
+privacy-rejected material gets no packet or unit and contributes no coverage.
+
 **Slot-tag index (append to the end of BOTH synthesized files).** A short index
 mapping each style-guide slot (§6 table) → the bank bullets that fill it, so the
 framing/master-plan stages can pull "everything for the justification menu" or
@@ -433,14 +455,17 @@ face of the completion criterion and the bridge into §B8.
 
 ## §10 — Acceptance review (the gate)
 
-Give the complete evidence set — packets + log + both syntheses — to **one fresh
-allowed top-reasoning reviewer** (a research arm, fresh context, no operator
-leakage). It asks only: *is this deep, traceable, rights-safe, scientifically
-honest, persona-covering, and useful enough to frame a belief-changing book, with
-every slot filled across ≥3 distinct personas?* It returns **`ACCEPTED FOR
-FRAMING`** or **commissions the missing research** (naming the thin banks/slots/
-personas). The operator never patches evidence by hand; a shortfall is answered by
-re-dispatching research, not by editing the files. Loop until accepted.
+Give the complete evidence set — completed brief + packets + log + both
+syntheses — to **one fresh independent high-reasoning evidence editor from
+another model family** (authorized native/direct route, never OpenRouter; fresh
+context, no operator leakage). It asks only: *is this deep, traceable,
+rights-safe, scientifically honest, persona-covering, and useful enough to frame
+a belief-changing book; does every primary and subordinate brief belief have a
+complete intervention-ready unit; and is every slot filled across ≥3 distinct
+personas?* It returns **`ACCEPTED FOR FRAMING`** or **commissions the missing
+research** (naming exact belief gaps and thin banks/slots/personas). The operator
+never patches evidence by hand; a shortfall is answered by re-dispatching
+research, not by editing the files. Loop until accepted.
 
 ---
 
@@ -459,12 +484,14 @@ inner ` ```text ` block survives, exactly as `sources/README.md` does):
 
 - **Source ID:** S-014
 - **URL:** https://apps.apple.com/us/app/one-sec/id<id>?see-all=reviews
+- **Title:** App-store review, "OneSec" screen-time app
 - **Source type:** community  (public app-store review)
 - **Retrieved (UTC):** 2026-07-12T00:00:00Z
-- **License / quotation basis:** public store review; short excerpt, attributed to public handle
+- **Access / license basis:** public app-store review accessed normally; short quotation basis
+- **Excerpt / redistribution basis:** minimal quotation retained for evidence verification
 - **Required attribution:** reviewer handle "nightscroller_"
-- **Retention / deletion status:** public store listing; minimal excerpt; no deletion duty identified
-- **Privacy judgment:** public pseudonymous handle; no indirect identifier retained
+- **Retention / deletion sensitivity:** public listing; no deletion sensitivity identified
+- **Privacy / personal-data basis:** public handle retained only for required attribution
 - **Disposition:** ACCEPTED
 
 ## Minimum retained excerpt

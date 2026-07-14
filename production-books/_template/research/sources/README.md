@@ -2,13 +2,15 @@
 
 Store one Markdown packet per distinct accepted URL, named
 `<source-id>-<descriptive-slug>.md`. Repeated use enriches the same packet.
-Rejected sources stay in `../research-log.md` rather than becoming packets.
+Rejected material never becomes a packet. The log may retain only a policy-level
+source-family rejection reason, never its URL, excerpt, source ID, or personal data.
 
 Before retaining content, establish access, excerpt, retention, redistribution,
-attribution, and privacy rights. Packets contain only the minimum passage needed
+attribution, and privacy rights. Packets contain only the minimum permitted excerpt
 for evidence—not full community posts, bulk user dumps, profiles, or unrelated
 personal data. Deletion-sensitive or nonredistributable user content stays out
-of Git and does not count as run evidence.
+of Git and does not count as evidence coverage. Do not create a packet for
+rejected material.
 
 A search summary may guide discovery but is not evidence. An exact quote is
 usable only when it appears character-for-character in the retained excerpt.
@@ -23,10 +25,11 @@ usable only when it appears character-for-character in the retained excerpt.
 - **Title:** <page, paper, report, thread, or transcript title>
 - **Source type:** <community | study | report | transcript | investigative>
 - **Retrieved (UTC):** <YYYY-MM-DDTHH:MM:SSZ>
-- **License / quotation basis:** <source license or documented legal basis>
+- **Access / license basis:** <why access is permitted and the governing license or basis>
+- **Excerpt / redistribution basis:** <why this minimum excerpt may be committed publicly>
 - **Required attribution:** <author/organization/handle if required; otherwise n/a>
-- **Retention / deletion status:** <why this excerpt can remain in public Git>
-- **Privacy judgment:** <why retained text/identifiers are necessary and appropriate>
+- **Retention / deletion sensitivity:** <why retention is permitted and whether deletion sensitivity exists>
+- **Privacy / personal-data basis:** <why the minimum retained text and identifiers are appropriate>
 - **Disposition:** ACCEPTED
 
 ## Minimum retained excerpt
@@ -56,4 +59,6 @@ usable only when it appears character-for-character in the retained excerpt.
 
 Add only the excerpts and evidence items genuinely needed. If exact wording
 cannot be verified, recapture it, convert it to an unquoted interpretation, or
-reject it.
+reject it. State the exact bounded permitted and prohibited inference wording in
+`Use / limits` before an intervention unit may reuse it; an inference is not a
+quotation.
