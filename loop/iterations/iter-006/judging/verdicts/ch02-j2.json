@@ -1,0 +1,42 @@
+{
+  "scores": {
+    "voice_certainty": 6,
+    "method_execution": 8,
+    "structure_anatomy": 8,
+    "repetition_mantra": 9,
+    "emotional_register": 5,
+    "rhythm_texture": 7
+  },
+  "evidence": {
+    "voice_certainty": "\"The fact is, the membership was never real\" is flat and direct, but \"That single account does not prove everyone's experience\" reintroduces conspicuous editorial hedging.",
+    "method_execution": "\"If BAD SUGAR is something you freely choose ... why are you reading this book?\" becomes the trap question, followed by credit reassignment and the inversion of loss into escape.",
+    "structure_anatomy": "The chapter previews and escalates through named sections to an all-caps belief verdict, the assigned second instruction, and a SUMMARY, though its opening thesis is not italicized and intermediate verdict peaks are sparse.",
+    "repetition_mantra": "MN-03, \"the sugar trap,\" receives an argue-then-name debut and recurs verbatim; MN-01 is echoed exactly in both the body and SUMMARY.",
+    "emotional_register": "\"You are not losing a membership. You are dropping a forgery\" sustains escape, but the chapter never supplies the reference's full-force danger beat before disowning fear.",
+    "rhythm_texture": "The turnip questions and \"No. Something that durable must be well hidden\" create Carr-like snap, while the club, con, and investment explanations run too symmetrically and too long."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate reproduces the belief-trap machinery but replaces the reference's blunt, escalating factual nerve with polished, qualified reassurance and extended abstraction.",
+  "suggestions": [
+    {
+      "suggestion": "At \"That single account does not prove everyone's experience\" and \"though it may,\" stop narrating evidentiary caution inside the persuasion: retain only a genuinely required qualification, then follow the example with a flat settled-fact verdict.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Before \"A NAMED TRAP — AND A REASON TO BE CHEERFUL,\" assign one compact, evidence-backed high-stakes consequence beat, then explicitly tell the reader to put fear behind them; this restores the reference's wound-then-bandage nerve instead of moving straight from analogy to reassurance.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "The club, confidence-trick, and fraudulent-investment passages all prove the same point; cut the second full hypothetical, keep one concrete scene and one trap question, and compress the proof into a two-line verdict so the rhythm peaks instead of circling.",
+      "asset": "chapter-reviewer"
+    },
+    {
+      "suggestion": "Turn the long opening sentence into the italic thesis and add a short all-caps compression after the first proof beat, so the preview-to-argument-to-verdict ladder is visible well before the final third.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "The \"2ND INSTRUCTION\" headline packs the action, threshold, clinical exception, and stopped-reader branch into one long block; make the numbered headline one cheerful imperative and move its conditions into the prose immediately below.",
+      "asset": "master-plan"
+    }
+  ]
+}

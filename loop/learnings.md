@@ -280,3 +280,21 @@ The reference-as-candidate control for Chapters 1–3 scored **1.000** across al
 **Next hypothesis (`chapter-writer`):** The writer leaves two outcomes equally live after stating an evidence boundary, so the chapter ends in suspended judgment. After the single necessary limit, require the strongest reader objection in their dialect, two or three trap questions whose answers force concession, the credit inversion, and one short settled verdict; forbid open forks such as “if the claim survives / if it does not” at the chapter's belief landing. Prediction: `voice_certainty`, `method_execution`, and `emotional_register` rise without weakening evidence honesty.
 
 **Harness debt:** Exact-input plan reruns can consume most of the 40-call budget while introducing new routing gaps unrelated to the tested prose amendment. Revision transport also discarded two completed Opus outputs after fail-closed validation; this protected the chapters but left no canonical raw-output recovery path. Fresh subagents must receive the absolute nested repo path because the outer clone is also a valid Git worktree.
+
+### iter-006 — close the open fork
+
+**Outcome:** `KEEP` at **0.6542** with every hard check green, **-0.0133** below the 0.6675 best and inside epsilon. Chapter 2 rose to **0.7325**, while Chapter 1 remained the drag at **0.5525**. All 6 judges selected `emotional_register` as the worst dimension. The amendment to `prompts/chapter-writer.md` stays; the best remains iter-004.
+
+**Judges' top suggestions (verbatim):**
+
+1. `[chapter-writer]` Rewrite the caveat stack in 'A BOUNDED POSSIBILITY' ('not proof, not a promise', 'what it can and cannot show', 'If a finding is contested') as one brief qualification followed by flat settled-fact assertions and cheerful direct commands.
+2. `[research]` Rewrite the caveat stack in "A BOUNDED POSSIBILITY" so one concrete, high-stakes fact lands at full force first, then explicitly disown fear as the reason to change; do not let "not proof, not a promise" and repeated study limitations consume the emotional peak.
+3. `[style-guide]` Confine mandatory qualifications to the assigned instruction block; in the main argument, replace retreats such as 'That single account does not prove everyone's experience,' 'though it may,' and 'I am confident you will see' with flat settled-fact assertions followed by trap questions.
+4. `[chapter-writer]` At "That single account does not prove everyone's experience" and "though it may," stop narrating evidentiary caution inside the persuasion: retain only a genuinely required qualification, then follow the example with a flat settled-fact verdict.
+5. `[chapter-writer]` In "THE INVESTIGATION MENU", compress provenance phrases such as "small qualitative study" and "not a clinical diagnosis and not a prevalence claim" into unobtrusive clauses, then state each reader objection in plain spoken language and answer it with settled-fact certainty.
+
+**Reviewer residuals at the cap:** Chapter 1 — invented testimony/evidence overreach, premature paraphrased IN-02, early/reused analogies, CH-05 anti-method job drift, and a “no quitting yet”/IN-02 ownership ambiguity. Chapter 2 — evidence overreach, hedged core reframe, job/evidence-owner drift, assigned-evidence omission, and one corrupted character; no planner gap. Chapter 3 — MN-04/MN-02 casing, altered IN-03 and J-04 exact text, unsupported “emotional lift” attribution, plus an instruction-numbering presentation tension.
+
+**Research proposal deferred:** The rank-2 suggestion asks for new research-backed hard-stakes material. PROGRAM §3 forbids unattended research regeneration, so it is recorded for the next founder-approved research boundary and the next eligible prompt/style suggestion is used instead.
+
+**Next hypothesis (`style-guide`):** Academic and legal-process diction is suppressing the escaped expert's emotional authority even when the logic lands. Ban institutional abstractions in reader-facing prose—terms such as “categorical core,” “transparent evidence,” “qualitative study,” and “prevalence claim”—and require any necessary evidence status to be translated into ordinary I/we/you language as concrete observation → reader objection → trap question → short verdict. Prediction: `emotional_register`, `voice_certainty`, and rhythm rise without weakening evidence honesty.

@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 6,
+    "method_execution": 8,
+    "structure_anatomy": 7,
+    "repetition_mantra": 9,
+    "emotional_register": 5,
+    "rhythm_texture": 6
+  },
+  "evidence": {
+    "voice_certainty": "The crisp line \"It is also the wrong question\" has Carr's certainty, but phrases such as \"small qualitative study\" and \"not a clinical diagnosis and not a prevalence claim\" repeatedly restore an editorial, qualified register.",
+    "method_execution": "The TO/FOR receipt and the contractor who \"painted his name on the bricks\" execute a clear credit-reassignment move, while the voiced defences all feed the chapter's trap question.",
+    "structure_anatomy": "The sections progress from question to receipt to menu to axis switch and land the assigned \"3RD INSTRUCTION\" before a summary, but the very long menu becomes a catalogue and there are few standalone ALL-CAPS verdict peaks.",
+    "repetition_mantra": "The chapter fully argues and then compresses its debut into \"A SPECIAL PLEASURE OR RESCUE\", while the assigned entry promise, escape triad, and \"the sugar trap\" recur verbatim and deliberately.",
+    "emotional_register": "\"You are at the beginning of an escape\" and the elation instruction preserve escape-not-sacrifice, but the TO column is deliberately kept vague, so no hard consequence is delivered at full force and then disowned as the motive.",
+    "rhythm_texture": "The receipt and contractor analogy produces short peaks such as \"If it does not, the conversation is over\", but the sixteen similarly shaped menu entries drain momentum into research-summary cadence."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate turns a forceful belief demolition into a polished, research-qualified investigation, losing the reference's blunt concrete nerve and accelerating verdict rhythm.",
+  "suggestions": [
+    {
+      "suggestion": "In \"THE INVESTIGATION MENU\", compress provenance phrases such as \"small qualitative study\" and \"not a clinical diagnosis and not a prevalence claim\" into unobtrusive clauses, then state each reader objection in plain spoken language and answer it with settled-fact certainty.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Reshape the long sequence introduced by \"Here is the menu\" into a few escalating objection clusters; make each cluster end in one trap question and a short verdict, so the required catalogue drives toward the axis switch instead of pausing the chapter.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Replace the coy placeholder \"you already suspect it is not short\" with one vivid, evidence-supported consequence scene, deliver it without softening, and immediately make clear that fear is not the reason to escape.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Choose one carrier analogy in the passage that moves from a \"rigged courtroom\" to a receipt and then a contractor; sustain that image through a short killer-line pair and delete the competing metaphors so each abstract point lands once and hard.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

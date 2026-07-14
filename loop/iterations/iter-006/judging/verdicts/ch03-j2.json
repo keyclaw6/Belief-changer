@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 6,
+    "method_execution": 8,
+    "structure_anatomy": 7,
+    "repetition_mantra": 8,
+    "emotional_register": 5,
+    "rhythm_texture": 6
+  },
+  "evidence": {
+    "voice_certainty": "The firm line \"It is also the wrong question\" is Carr-like, but repeated source-status caveats such as \"not a clinical diagnosis and not a prevalence claim\" make the voice sound evidence-managed rather than settled.",
+    "method_execution": "The credit reassignment lands cleanly in \"You keep everything that was real. You lose only the bystander who was claiming credit.\"",
+    "structure_anatomy": "The preview, receipt analogy, axis verdict, numbered third instruction, and summary are present, but \"THE INVESTIGATION MENU\" becomes a long catalogue instead of escalating through successive defeats toward the climax.",
+    "repetition_mantra": "The debut of \"a special pleasure or rescue\" is argued and then compressed into an all-caps line, while the assigned escape promise and \"the sugar trap\" recur verbatim; a few echoes are repeated more often than needed within the chapter.",
+    "emotional_register": "\"You are not here to be lectured about your health, shamed about your choices, or frightened\" supplies warmth and escape framing, but it refuses fear before delivering the reference's hard wound and therefore lacks its nerve.",
+    "rhythm_texture": "The receipt and contractor-who-painted-his-name-on-the-wall form a strong carrying analogy, but the many identically shaped \"The question waiting is whether\" entries flatten the cadence and stall momentum."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate is a polished, evidence-conscious framework launch, while the reference drives the same belief change through blunter certainty, vivid lived wounds, and a steadily escalating vernacular attack on the trap.",
+  "suggestions": [
+    {
+      "suggestion": "Turn \"THE INVESTIGATION MENU\" from a sequence of uniformly shaped entries into escalating clusters: preserve every assigned objection, but punctuate each cluster with a short trap question and a harder verdict so the catalogue builds pressure instead of pausing the chapter.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Where the chapter says it will not fill the TO column today and later promises not to frighten the reader, insert one vivid, concrete consequence, deliver it without softening, and then explicitly disown fear as the motive by returning at once to escape and elation.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Move provenance qualifications such as \"drawn from a small qualitative study\" and \"not a clinical diagnosis and not a prevalence claim\" out of the spoken argument or compress them to the minimum required status marker; the narrative voice should state, challenge, and conclude without sounding like a research memo.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "At review, flag long runs of parallel explanatory sentences and repeated setup formulas such as \"The question waiting is whether\"; keep a few as a deliberate drumbeat, then vary the rest with direct reader challenges, concrete scenes, and short killer-line pairs.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

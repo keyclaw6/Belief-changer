@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 4,
+    "method_execution": 6,
+    "structure_anatomy": 6,
+    "repetition_mantra": 9,
+    "emotional_register": 3,
+    "rhythm_texture": 6
+  },
+  "evidence": {
+    "voice_certainty": "\"Not proof, not a promise, just a window\" and repeated evidence caveats make the narrator a careful auditor rather than Carr's settled authority.",
+    "method_execution": "\"Either the target expands... or ... every dose slips through\" successfully inverts the fear of a clear line, but the inquiry postpones rather than lands the benefit demolition.",
+    "structure_anatomy": "The preview, titled climb, assigned 1ST INSTRUCTION, and SUMMARY are present, but only the instruction becomes an all-caps verdict and the evidence section stalls the escalation.",
+    "repetition_mantra": "MN-01, MN-02, and MN-09 all appear verbatim after supporting argument and recur, with no stray sentence-level repetition.",
+    "emotional_register": "\"We are not building a prosecution\" typifies the missing nerve: there is escape language and reassurance, but no full-force wound before the bandage.",
+    "rhythm_texture": "\"You have one now\" and the customs-desk and combination-lock analogies create Carr-like peaks, though long taxonomic caveats repeatedly brake momentum."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate reads as an epistemically careful research briefing where the reference delivers a blunt, escalating escape argument with full-force nerve.",
+  "suggestions": [
+    {
+      "suggestion": "Rewrite the caveat stack in 'A BOUNDED POSSIBILITY' ('not proof, not a promise', 'what it can and cannot show', 'If a finding is contested') as one brief qualification followed by flat settled-fact assertions and cheerful direct commands.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Replace the retreat 'we are not building a prosecution' with a wound-and-bandage beat: state the strongest supported consequence at full force, then immediately disown fear as the reason to change and pivot to relief.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "After the classification questions in 'THE BREAKFAST TEST', add a trap question whose only honest answer concedes the chapter's belief move, then reassign the apparent benefit and compress the inversion into a short verdict.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Turn research-briefing phrases such as 'categorical core', 'genuinely gray edge', and 'transparent set of evidence' into concrete reader language, then alternate the flowing explanation with short killer-line pairs and all-caps verdict peaks.",
+      "asset": "style-guide"
+    }
+  ]
+}

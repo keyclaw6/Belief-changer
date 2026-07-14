@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 7,
+    "method_execution": 8,
+    "structure_anatomy": 8,
+    "repetition_mantra": 9,
+    "emotional_register": 6,
+    "rhythm_texture": 7
+  },
+  "evidence": {
+    "voice_certainty": "The direct questions and flat line 'BAD SUGAR operates the same way' are strong, but 'That single account does not prove everyone's experience' retreats into a guarded register absent from the reference.",
+    "method_execution": "The opening trap question, the exact reader voice 'I want the debate to stop,' and the inversion from free choice to 'a surrender dressed as a preference' land one coherent belief move.",
+    "structure_anatomy": "The preview, escalating titled sections, all-caps verdict, assigned 2ND INSTRUCTION, and SUMMARY are all present, though the thesis and recap lack the reference's italic-and-bullet compression.",
+    "repetition_mantra": "The debut of 'the sugar trap' is argued through the club and confidence-trick sequence before being compressed and repeated, and the MN-01 echo is verbatim.",
+    "emotional_register": "The investment-fraud ending makes departure feel like escape rather than sacrifice, but the chapter never delivers hard consequences at full force and then explicitly disowns fear as the motive as the reference does.",
+    "rhythm_texture": "Lines such as 'Not weakened. Not reduced. Finished.' create peaks, but the club, con artist, turnip, and investment analogies accumulate into a polished metaphor chain rather than the reference's plainer fact-driven momentum."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate reproduces the belief-change logic and mantra discipline but replaces the reference's blunt factual nerve and plain authority with guarded caveats and a succession of polished analogies.",
+  "suggestions": [
+    {
+      "suggestion": "Confine mandatory qualifications to the assigned instruction block; in the main argument, replace retreats such as 'That single account does not prove everyone's experience,' 'though it may,' and 'I am confident you will see' with flat settled-fact assertions followed by trap questions.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "In 'WHAT THE CONFIDENCE TRICK LOOKS LIKE FROM INSIDE,' choose one concrete analogy and drive it through observation, objection, and verdict; cut the later turnip and investment-fund analogies so each chapter has one load-bearing image rather than a chain of clever comparisons.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Add a planned evidence escalation before the main all-caps verdict: state concrete consequences without softening them, ask the reader to face them, then explicitly reject fear as the reason to change and pivot to relief.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Make the structural compression mechanically match the reference: italicize the opening thesis, render the preview and SUMMARY as terse bullets, and remove explanatory recap wording that does not sharpen the single belief move or the numbered instruction.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 4,
+    "method_execution": 6,
+    "structure_anatomy": 6,
+    "repetition_mantra": 9,
+    "emotional_register": 3,
+    "rhythm_texture": 5
+  },
+  "evidence": {
+    "voice_certainty": "The institutional phrasing in \"a precise target, a transparent set of evidence, and an honest contract\" is much more guarded than Carr's settled-fact testimony.",
+    "method_execution": "The breakfast questions force a clear concession, and \"You have one now\" lands the assigned correction that the target need not engulf ordinary life.",
+    "structure_anatomy": "The preview, progressive headings, assigned numbered instruction, and SUMMARY are present, but the sections produce almost no ALL-CAPS verdict peaks before the instruction.",
+    "repetition_mantra": "All three assigned debut phrases recur verbatim after argument and again in the SUMMARY, with no obvious accidental sentence-level refrain.",
+    "emotional_register": "The chapter promises escape and absolves the reader, but \"we are not building a prosecution\" and the heavily bounded evidence remove the reference's hard-fact wound before the bandage.",
+    "rhythm_texture": "The courtroom, customs-desk, and combination-lock analogies help, but long qualification chains repeatedly interrupt momentum instead of resolving into killer-line pairs."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate sounds like a careful evidence contract, while the reference sounds like a warm but fearless advocate driving alarming claims into blunt verdicts and then converting fear into relief.",
+  "suggestions": [
+    {
+      "suggestion": "Rewrite the caveat stack in \"A BOUNDED POSSIBILITY\" so one concrete, high-stakes fact lands at full force first, then explicitly disown fear as the reason to change; do not let \"not proof, not a promise\" and repeated study limitations consume the emotional peak.",
+      "asset": "research"
+    },
+    {
+      "suggestion": "Replace institutional phrases such as \"transparent set of evidence,\" \"honest contract,\" and \"categorical core\" with everyday I/we/you language and flat settled-fact assertions; reserve qualifications for claims whose accuracy truly requires them.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "Turn the middle sequence from a taxonomy-and-evidence catalog into an escalating objection ladder: each section should corner one reader objection, answer it in the reader's own dialect, and compress the answer into a short ALL-CAPS verdict before advancing.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "In \"A TEST YOU CAN TAKE WITHOUT RISK,\" keep the useful escape framing but cut the explanatory aftercare around each claim and build two killer-line pairs like \"You are not being asked to fight\" into sharper peaks that propel the reader toward the numbered instruction.",
+      "asset": "chapter-writer"
+    }
+  ]
+}

@@ -1,0 +1,390 @@
+{
+ "campaign": "factory-v3-rubric-1",
+ "instrument_version": "carr-likeness-rubric-1",
+ "book": "production-books/quit-sugar",
+ "chapters_checked": [
+  1,
+  2,
+  3
+ ],
+ "control_ref": false,
+ "reward": 0.6542,
+ "hard_ok": true,
+ "hard_fails": [],
+ "checks": {
+  "originality": {
+   "ours_ngrams": 7680,
+   "overlap_ngrams": 0,
+   "overlap_ratio": 0.0,
+   "tripwire": 0.003,
+   "tripped": false,
+   "samples": []
+  },
+  "mantra": {
+   "mantras": [
+    {
+     "archetype": "MN-01",
+     "wording": "You can test whether BAD SUGAR owns any special or irreplaceable pleasure, without denying pleasant taste or giving up your right to choose.",
+     "debut": 1,
+     "schedule": [
+      2,
+      3,
+      15,
+      18
+     ],
+     "found_in": [
+      1,
+      2,
+      3
+     ],
+     "counts": {
+      "1": 3,
+      "2": 2,
+      "3": 2
+     }
+    },
+    {
+     "archetype": "MN-02",
+     "wording": "without deprivation, without battle, and without a lifetime of rules",
+     "debut": 1,
+     "schedule": [
+      3,
+      5,
+      17,
+      18,
+      20
+     ],
+     "found_in": [
+      1,
+      3
+     ],
+     "counts": {
+      "1": 2,
+      "3": 1
+     }
+    },
+    {
+     "archetype": "MN-03",
+     "wording": "the sugar trap",
+     "debut": 2,
+     "schedule": [
+      3,
+      21
+     ],
+     "found_in": [
+      2,
+      3
+     ],
+     "counts": {
+      "2": 5,
+      "3": 6
+     }
+    },
+    {
+     "archetype": "MN-04",
+     "wording": "a special pleasure or rescue",
+     "debut": 3,
+     "schedule": [
+      4,
+      7,
+      18
+     ],
+     "found_in": [
+      3
+     ],
+     "counts": {
+      "3": 3
+     }
+    },
+    {
+     "archetype": "MN-05",
+     "wording": "The Sugar Showman feeds the Sugar Flea.",
+     "debut": 6,
+     "schedule": [
+      7,
+      8,
+      13,
+      15,
+      16,
+      18,
+      19,
+      20
+     ],
+     "found_in": [],
+     "counts": {}
+    },
+    {
+     "archetype": "MN-06",
+     "wording": "a nagging, bargaining, slightly urgent sense that this moment is missing something",
+     "debut": 6,
+     "schedule": [
+      7,
+      9,
+      10,
+      15,
+      19
+     ],
+     "found_in": [],
+     "counts": {}
+    },
+    {
+     "archetype": "MN-07",
+     "wording": "anticipating, bargaining, and starting over",
+     "debut": 4,
+     "schedule": [
+      5,
+      10,
+      16,
+      17,
+      18
+     ],
+     "found_in": [],
+     "counts": {}
+    },
+    {
+     "archetype": "MN-08",
+     "wording": "When the benefit loses its credit, the battle loses its job.",
+     "debut": 5,
+     "schedule": [
+      7,
+      8,
+      9,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+     ],
+     "found_in": [],
+     "counts": {}
+    },
+    {
+     "archetype": "MN-09",
+     "wording": "You can close the daily sugar debate without policing every molecule, fighting yourself, or treating one accidental bite as failure.",
+     "debut": 1,
+     "schedule": [
+      11,
+      17,
+      18,
+      20
+     ],
+     "found_in": [
+      1
+     ],
+     "counts": {
+      "1": 2
+     }
+    },
+    {
+     "archetype": "MN-10",
+     "wording": "WHAT A RELIEF \u2014 THE SUGAR TRAP IS OVER. I'M FREE!",
+     "debut": 19,
+     "schedule": [
+      20,
+      21
+     ],
+     "found_in": [],
+     "counts": {}
+    }
+   ],
+   "chapters_checked": [
+    1,
+    2,
+    3
+   ],
+   "chapters_without_mantra": [],
+   "failures": []
+  },
+  "repetition_within": {
+   "repeated_ngrams": 0,
+   "spans_top": [],
+   "hard_fails": [],
+   "whitelist_size": 10
+  },
+  "length": [
+   {
+    "n": 1,
+    "words": 2466,
+    "budget": null,
+    "ok": true
+   },
+   {
+    "n": 2,
+    "words": 2468,
+    "budget": null,
+    "ok": true
+   },
+   {
+    "n": 3,
+    "words": 2985,
+    "budget": null,
+    "ok": true
+   }
+  ],
+  "near_copy": [
+   {
+    "chapter": "ch01",
+    "ratio": 0.0568,
+    "tripwire": 0.5
+   },
+   {
+    "chapter": "ch02",
+    "ratio": 0.0487,
+    "tripwire": 0.5
+   },
+   {
+    "chapter": "ch03",
+    "ratio": 0.0612,
+    "tripwire": 0.5
+   }
+  ]
+ },
+ "diagnostics": {
+  "stylometrics": [
+   {
+    "metric": "mean_chapter_words",
+    "ours": 2639.7,
+    "ref": 3725.3
+   },
+   {
+    "metric": "mean_sentence_words",
+    "ours": 14.2,
+    "ref": 18.4
+   },
+   {
+    "metric": "pct_short_sentences",
+    "ours": 39.2,
+    "ref": 14.7
+   },
+   {
+    "metric": "questions_per_100_sents",
+    "ours": 6.9,
+    "ref": 11.3
+   },
+   {
+    "metric": "second_person_per_1000",
+    "ours": 42.4,
+    "ref": 42.4
+   },
+   {
+    "metric": "first_person_per_1000",
+    "ours": 8.3,
+    "ref": 5.1
+   }
+  ]
+ },
+ "judges": {
+  "status": "SCORED",
+  "rubric": {
+   "reward": 0.6542,
+   "per_chapter": [
+    {
+     "chapter": "ch01",
+     "composite": 0.5525,
+     "dims": {
+      "voice_certainty": 4.0,
+      "method_execution": 6.0,
+      "structure_anatomy": 6.0,
+      "repetition_mantra": 9.0,
+      "emotional_register": 3.0,
+      "rhythm_texture": 5.5
+     },
+     "gap_summaries": [
+      "The candidate reads as an epistemically careful research briefing where the reference delivers a blunt, escalating escape argument with full-force nerve.",
+      "The candidate sounds like a careful evidence contract, while the reference sounds like a warm but fearless advocate driving alarming claims into blunt verdicts and then converting fear into relief."
+     ]
+    },
+    {
+     "chapter": "ch02",
+     "composite": 0.7325,
+     "dims": {
+      "voice_certainty": 6.5,
+      "method_execution": 8.0,
+      "structure_anatomy": 8.0,
+      "repetition_mantra": 9.0,
+      "emotional_register": 5.5,
+      "rhythm_texture": 7.0
+     },
+     "gap_summaries": [
+      "The candidate reproduces the belief-change logic and mantra discipline but replaces the reference's blunt factual nerve and plain authority with guarded caveats and a succession of polished analogies.",
+      "The candidate reproduces the belief-trap machinery but replaces the reference's blunt, escalating factual nerve with polished, qualified reassurance and extended abstraction."
+     ]
+    },
+    {
+     "chapter": "ch03",
+     "composite": 0.6775,
+     "dims": {
+      "voice_certainty": 6.0,
+      "method_execution": 8.0,
+      "structure_anatomy": 7.0,
+      "repetition_mantra": 8.5,
+      "emotional_register": 5.0,
+      "rhythm_texture": 6.0
+     },
+     "gap_summaries": [
+      "The candidate turns a forceful belief demolition into a polished, research-qualified investigation, losing the reference's blunt concrete nerve and accelerating verdict rhythm.",
+      "The candidate is a polished, evidence-conscious framework launch, while the reference drives the same belief change through blunter certainty, vivid lived wounds, and a steadily escalating vernacular attack on the trap."
+     ]
+    }
+   ],
+   "suggestions": [
+    {
+     "suggestion": "Rewrite the caveat stack in 'A BOUNDED POSSIBILITY' ('not proof, not a promise', 'what it can and cannot show', 'If a finding is contested') as one brief qualification followed by flat settled-fact assertions and cheerful direct commands.",
+     "asset": "chapter-writer",
+     "weight": 5,
+     "count": 1,
+     "chapters": [
+      "ch01"
+     ]
+    },
+    {
+     "suggestion": "Rewrite the caveat stack in \"A BOUNDED POSSIBILITY\" so one concrete, high-stakes fact lands at full force first, then explicitly disown fear as the reason to change; do not let \"not proof, not a promise\" and repeated study limitations consume the emotional peak.",
+     "asset": "research",
+     "weight": 5,
+     "count": 1,
+     "chapters": [
+      "ch01"
+     ]
+    },
+    {
+     "suggestion": "Confine mandatory qualifications to the assigned instruction block; in the main argument, replace retreats such as 'That single account does not prove everyone's experience,' 'though it may,' and 'I am confident you will see' with flat settled-fact assertions followed by trap questions.",
+     "asset": "style-guide",
+     "weight": 5,
+     "count": 1,
+     "chapters": [
+      "ch02"
+     ]
+    },
+    {
+     "suggestion": "At \"That single account does not prove everyone's experience\" and \"though it may,\" stop narrating evidentiary caution inside the persuasion: retain only a genuinely required qualification, then follow the example with a flat settled-fact verdict.",
+     "asset": "chapter-writer",
+     "weight": 5,
+     "count": 1,
+     "chapters": [
+      "ch02"
+     ]
+    },
+    {
+     "suggestion": "In \"THE INVESTIGATION MENU\", compress provenance phrases such as \"small qualitative study\" and \"not a clinical diagnosis and not a prevalence claim\" into unobtrusive clauses, then state each reader objection in plain spoken language and answer it with settled-fact certainty.",
+     "asset": "chapter-writer",
+     "weight": 5,
+     "count": 1,
+     "chapters": [
+      "ch03"
+     ]
+    }
+   ],
+   "worst_dimensions": [
+    {
+     "dimension": "emotional_register",
+     "votes": 6
+    }
+   ],
+   "n_verdicts": 6,
+   "judge_model": "gpt-5.6-sol",
+   "judge_k": 2
+  },
+  "missing": []
+ }
+}
