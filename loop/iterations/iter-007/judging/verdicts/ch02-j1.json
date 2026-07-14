@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 7,
+    "method_execution": 9,
+    "structure_anatomy": 6,
+    "repetition_mantra": 9,
+    "emotional_register": 5,
+    "rhythm_texture": 8
+  },
+  "evidence": {
+    "voice_certainty": "\"Fine. Then choose to stop. Right now. For good.\" has the blunt command, but \"sit with a question\" and \"Let it land\" slip into modern coaching language.",
+    "method_execution": "\"Then choose to stop. Right now. For good. How does that feel?\" traps the free-choice objection, then reassigns the resistance from reader weakness to a confidence trick.",
+    "structure_anatomy": "The preview, escalating titled sections, assigned 2ND INSTRUCTION, and SUMMARY are present, but the opening thesis is not italicized and no argument culminates in an ALL-CAPS verdict before the instruction.",
+    "repetition_mantra": "MN-03 receives a full argue-then-name debut in \"THE SUGAR TRAP GETS ITS NAME,\" while MN-01 returns verbatim in the body and summary.",
+    "emotional_register": "\"You were not stupid. You were not reckless. You were conned.\" gives wound-and-bandage warmth, but the chapter supplies no hard consequence or fear beat to deliver fully and then disown.",
+    "rhythm_texture": "\"Not forcing you out. Showing you the forgery.\" is a strong killer-line pair, and the membership-card analogy carries the abstraction, though polished fragment sequences occur too routinely to mark true peaks."
+  },
+    "worst_dimension": "emotional_register",
+    "gap_summary": "The candidate replaces the reference's blunt factual escalation, full-force fear, and emphatic verdicts with a polished, reassuring chain of metaphors and coaching-style qualifications.",
+    "suggestions": [
+      {
+        "suggestion": "The hobby, membership-card, and confidence-trick sections keep restating the same free-choice premise; make the plan escalate from one observable scene to a hard consequence, then explicitly disown fear as the motive before releasing the reader.",
+        "asset": "master-plan"
+      },
+      {
+        "suggestion": "After \"You were not stupid. You were not reckless. You were conned,\" drive the accumulated proof into one short ALL-CAPS verdict; the current chapter reserves its only typographic climax for the instruction.",
+        "asset": "chapter-writer"
+      },
+      {
+        "suggestion": "Replace coaching phrases such as \"sit with a question,\" \"Let it land,\" and \"with those boundaries clear\" with plain settled-fact assertions or cheerful commands, and reserve polished fragment triads for genuine climaxes.",
+        "asset": "style-guide"
+      },
+      {
+        "suggestion": "Reject a SUMMARY rendered as unbulleted mini-paragraphs: require terse bullet claims, retain assigned mantras and the instruction verbatim, and remove any other sentence-level replay.",
+        "asset": "chapter-reviewer"
+      }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "voice_certainty": 5,
+    "method_execution": 7,
+    "structure_anatomy": 6,
+    "repetition_mantra": 7,
+    "emotional_register": 4,
+    "rhythm_texture": 6
+  },
+  "evidence": {
+    "voice_certainty": "The flat assertion \"You were not stupid. You were not reckless. You were conned.\" is Carr-like, but phrases such as \"sit with a question\" and \"Let it land\" sound like contemporary coaching.",
+    "method_execution": "The challenge \"Then choose to stop. Right now. For good. How does that feel?\" corners the stated objection, and the confidence-trick section reassigns blame from the reader to the false premise.",
+    "structure_anatomy": "The preview, thesis, escalating titled sections, assigned second instruction, and SUMMARY are all present, but the argument produces no ALL-CAPS verdict peaks before the instruction.",
+    "repetition_mantra": "The chapter fully argues and names \"the sugar trap\" and reproduces MN-01 verbatim, although repeated non-frozen motifs such as \"counterfeit membership card\" and \"dues payment\" compete with the frozen system.",
+    "emotional_register": "\"Here is the wonderful news\" supplies the bandage after calling the reader conned, but the chapter avoids the reference's hard factual wound and ends in the safety-conscious register \"This book never overrides medical advice. Not now, not later, not ever.\"",
+    "rhythm_texture": "\"Not forcing you out. Showing you the forgery.\" is an effective killer-line pair, yet the extended club metaphor and repeated symmetrical fragments make the cadence feel engineered rather than naturally fact-driven."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate is a polished, analogy-led coaching argument where the reference is a blunt, fact-loaded escalation that risks fear, converts it into release, and hammers its conclusions into audacious verdict lines.",
+  "suggestions": [
+    {
+      "suggestion": "Replace coaching cues such as \"sit with a question\" and \"Let it land\" with cheerful commands or settled assertions, and compress mandatory safety qualifications into the assigned instruction instead of letting legalistic reassurance become the closing voice.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "Do not let one invented analogy carry several consecutive sections: after the \"counterfeit membership card\" makes its single inversion, return to concrete observed behavior and evidence, escalate the consequences without softening them, then explicitly tell the reader to put the fear behind them.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Specify a reference-shaped escalation on every chapter card: concrete scene, widening factual claim, hard consequence, ALL-CAPS compressed verdict, release, instruction where assigned, and a short bullet SUMMARY; the current \"none beyond the choice move\" leaves too much of that anatomy optional.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Reject drafts that satisfy the headings mechanically but lack verdict peaks or overuse polished parallel fragments such as \"The bargaining collapses. The shame collapses\"; require more long, confident explanatory sentences between a smaller number of short hammer blows.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

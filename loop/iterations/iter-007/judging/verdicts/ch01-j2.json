@@ -1,0 +1,42 @@
+{
+  "scores": {
+    "voice_certainty": 5,
+    "method_execution": 6,
+    "structure_anatomy": 6,
+    "repetition_mantra": 8,
+    "emotional_register": 4,
+    "rhythm_texture": 7
+  },
+  "evidence": {
+    "voice_certainty": "\"Every factual claim in this book comes with its source and its limits\" announces a careful evidence-auditor voice rather than Carr's settled authority, although the direct I/we/you address is strong.",
+    "method_execution": "The breakfast-versus-chocolate-bar scene lands the narrow-target correction and the fruit objection is answered, but \"you are going to decide for yourself\" defers the central credit reassignment instead of proving it here.",
+    "structure_anatomy": "The preview, uppercase headings, numbered instruction, and SUMMARY are present, but THE LINE and WHAT YOU KEEP largely recatalogue the same boundary and the climb lacks standalone all-caps verdicts before the instruction.",
+    "repetition_mantra": "MN-01, MN-02, and MN-09 recur verbatim as assigned; MN-01 and MN-02 follow supporting argument, while MN-09 first appears before the Molecule Margin argument rather than compressing it afterward.",
+    "emotional_register": "The chapter consistently promises escape \"without deprivation, without battle\", but it supplies reassurance without the reference's full-force wound, harsh attack on the trap, or fear-then-release turn.",
+    "rhythm_texture": "\"The destination is a quiet mind, not a clean lab\" is a strong killer line, and the breakfast and combination-lock analogies carry ideas well, but research caveats and boundary qualifications repeatedly slow the charge."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate sounds like a careful, evidence-bounded participation contract, while the reference is a blunt, high-nerve certainty engine that frightens, demolishes, and then releases the reader.",
+  "suggestions": [
+    {
+      "suggestion": "Replace the paragraph beginning \"Every factual claim in this book\" and the later study-limit caveats with a settled-voice sequence: assert the relevant fact, ventriloquize the reader's objection, answer it, and issue the next instruction; keep evidential limits in the research apparatus rather than foregrounding them in the narrator's register.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "Between WHAT YOU KEEP and THE MOLECULE MARGIN, add a wound-and-bandage beat that states the behavior's stakes at full force, lets the danger land, then explicitly rejects fear, shame, and willpower as the motive and pivots to relief; this mechanism should be assigned in any opening chapter modeled on this reference.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "In THE TEST YOU ARE INVITED TO RUN, do not leave the benefit claim at \"you are going to decide for yourself\"; drive two or three trap questions to the only concedable answer, reassign the claimed credit to its real source, and compress that deduction into a standalone verdict so the chapter lands a belief move now.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Collapse THE LINE and WHAT YOU KEEP into one boundary step, then make each remaining section raise pressure and end on a short verdict line, culminating in 1ST INSTRUCTION; the current sequence explains clearly but catalogs instead of escalating.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Move MN-09's first exact occurrence from before the Molecule Margin explanation to after the accident-versus-plan and fortress reasoning, so every assigned debut follows the full argue-then-compress beat; retain later exact echoes only at genuine structural peaks such as the summary.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "scores": {
+    "voice_certainty": 6,
+    "method_execution": 8,
+    "structure_anatomy": 7,
+    "repetition_mantra": 7,
+    "emotional_register": 5,
+    "rhythm_texture": 6
+  },
+  "evidence": {
+    "voice_certainty": "The direct address is confident, but conditional permissions such as \"If it can, then by all means keep it\" and \"what I believe it will reveal\" sound more cautious and lawyerly than Carr's settled-fact register.",
+    "method_execution": "The chapter genuinely switches the axis from \"does more harm than good\" to \"does any unique good at all,\" answers the stated objection, and begins reassigning credit from the behavior to occasion, effort, rest, and company.",
+    "structure_anatomy": "It has a preview, thesis, escalating titled sections, the assigned third instruction, and a summary, but \"THE INVESTIGATION MENU\" becomes a long catalog and there are few standalone ALL-CAPS verdict beats before the instruction.",
+    "repetition_mantra": "MN-04 receives an argue-then-compress debut and MN-01, MN-02, and MN-03 appear verbatim, but the summary also copies ordinary body verdicts such as \"The sugar trap has survived not because its case is strong, but because its case was never tried.\"",
+    "emotional_register": "The escape frame is strong, yet \"We will get to that\" postpones the hard consequence material, so the chapter never delivers the reference's full-force wound before disowning fear and applying the elation bandage.",
+    "rhythm_texture": "The receipt, seesaw, and witness-box analogies provide momentum and lines such as \"Not a benefit. Not a pleasure. Not a reward\" create peaks, but extended abstract explanation and polished triads make the cadence feel engineered rather than Carr's rougher concrete drive."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate argues the Easyway inversion capably but sounds like a careful courtroom essay rather than Carr's blunt, concrete, emotionally forceful certainty.",
+  "suggestions": [
+    {
+      "suggestion": "Replace permission and epistemic caveats such as \"If it can, then by all means keep it,\" \"not because I have decided it is false,\" and \"what I believe it will reveal\" with settled assertions and trap questions whose only honest answer completes the inversion.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "Convert long justification inventories like \"THE INVESTIGATION MENU\" into an escalating sequence of a few ventriloquized objections, each attached to a concrete scene and driven toward one standalone ALL-CAPS verdict, while preserving any required inventory coverage compactly.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "Replace stretches of abstract legal and analytical language such as \"diplomatic immunity,\" \"architecture of the debate,\" and \"the axis has shifted\" with ordinary lived scenes, one homely carrying analogy, and blunt short conclusions.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Require a wound-and-bandage beat in the chapter itself: state one vivid consequence at full force, explicitly reject fear and willpower as the route out, then pivot immediately to relief and elation instead of promising that a later chapter will supply the hard material.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Reject summaries that copy non-mantra body sentences verbatim; preserve the frozen phrases exactly, but paraphrase lines such as \"The sugar trap has survived not because its case is strong...\" and the axis-switch pair so ordinary prose does not masquerade as a mantra.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

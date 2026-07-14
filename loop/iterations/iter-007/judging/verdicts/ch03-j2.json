@@ -1,0 +1,42 @@
+{
+  "scores": {
+    "voice_certainty": 6,
+    "method_execution": 7,
+    "structure_anatomy": 6,
+    "repetition_mantra": 7,
+    "emotional_register": 6,
+    "rhythm_texture": 5
+  },
+  "evidence": {
+    "voice_certainty": "The flat declaration \"That is the wrong question\" is Carr-like, but safeguards such as \"I am not asking you to concede anything\" and \"If it can, then by all means keep it\" make the voice more lawyerly and conditional than the reference.",
+    "method_execution": "The chapter clearly replaces harm-versus-benefit arithmetic with \"what unique good does it do at all?\" and begins credit reassignment, but it names \"a special pleasure or rescue\" for later trial instead of forcing the reader's claimed benefit through a trap question to a present concession.",
+    "structure_anatomy": "It has a preview, thesis, titled sequence, assigned numbered instruction, and summary, yet the long \"THE INVESTIGATION MENU\" pauses the escalation and there are no interim ALL-CAPS verdict lines comparable to the reference's argument-compressing peaks.",
+    "repetition_mantra": "MN-04 receives a full argue-then-compress debut and MN-01, MN-02, and MN-03 recur faithfully, but the non-mantra sentence \"The sugar trap has survived not because its case is strong, but because its case was never tried\" is repeated verbatim, as is one ordinary menu entry.",
+    "emotional_register": "The instruction strongly frames change as escape and elation, but \"We will get to that\" postpones the hard consequences; the chapter lists harms without delivering the reference's full-force wound followed by an explicit disavowal of fear as motive.",
+    "rhythm_texture": "The receipt provides a useful concrete anchor, but it proliferates into scales, subtraction, a gate, diplomatic immunity, a barrister, a witness box, and a seesaw while long symmetrical paragraphs crowd out the reference's short verdict beats and lived-scene momentum."
+  },
+  "worst_dimension": "rhythm_texture",
+  "gap_summary": "The candidate turns the belief move into a polished conditional legal investigation, while the reference drives it through concrete experience, blunt certainty, escalating verdicts, and full-force emotional nerve.",
+  "suggestions": [
+    {
+      "suggestion": "Replace procedural safeguards such as \"I am not asking you to concede anything\" and \"If it can, then by all means keep it\" with the settled-fact sequence: voice the strongest objection once, answer it immediately in the reader's dialect, and state the resulting verdict without conditional permission.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "After the required catalogue in \"THE INVESTIGATION MENU\", force the entries through one trap question and one immediate credit-reassignment demonstration; do not let a chapter's central illusion remain merely named and scheduled for later examination.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Assign two interim ALL-CAPS verdict lines between the menu, the axis switch, and the numbered instruction; each must compress the preceding argument and become the premise that launches the next section, so headings do not carry the escalation alone.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "In \"WHY HARM CANNOT PURCHASE AN EXEMPTION\" and \"THE AXIS HAS SHIFTED\", keep one concrete analogy instead of moving through gate, immunity, barrister, witness box, and seesaw, then puncture each dense explanatory run with a short killer-line pair.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "Add a review check that permits exact recurrence only for frozen mantras: flag the repeated \"The sugar trap has survived...\" sentence and duplicated ordinary menu entry, and require summary claims outside the mantra sheet to be freshly phrased.",
+      "asset": "chapter-reviewer"
+    }
+  ]
+}

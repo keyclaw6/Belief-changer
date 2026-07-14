@@ -1,0 +1,42 @@
+{
+  "scores": {
+    "voice_certainty": 5,
+    "method_execution": 7,
+    "structure_anatomy": 7,
+    "repetition_mantra": 8,
+    "emotional_register": 4,
+    "rhythm_texture": 6
+  },
+  "evidence": {
+    "voice_certainty": "The narrator repeatedly promises \"transparent boundaries\" and says \"When the science is genuinely contested, I will say that too,\" giving the chapter an evidence-auditor register rather than the reference's settled-fact authority.",
+    "method_execution": "The chapter lands its assigned correction through the breakfast-versus-chocolate comparison and the Molecule Margin, but \"If the answer is yes ... wonderful\" lets the central objection remain open instead of trapping and overturning it.",
+    "structure_anatomy": "It has a preview, thesis, escalating titled sections, the assigned numbered instruction, and a summary, but most peaks remain explanatory rather than resolving into emphatic ALL-CAPS verdict lines.",
+    "repetition_mantra": "All three assigned debut phrases recur verbatim, including \"You can close the daily sugar debate without policing every molecule, fighting yourself, or treating one accidental bite as failure,\" though the long formulations sound more contractual than drumbeat-like.",
+    "emotional_register": "The chapter consistently promises freedom \"without deprivation, without battle\" and warmly removes purity fear, but \"Not by the harm it may do\" bypasses the reference's hard wound-and-bandage fear beat almost entirely.",
+    "rhythm_texture": "Short turns such as \"Not here\" and \"No. Not even close\" punctuate flowing prose, and the breakfast, bag, debt, and combination-lock analogies help, but extended qualifications blunt the killer-line momentum."
+  },
+  "worst_dimension": "emotional_register",
+  "gap_summary": "The candidate sounds like a careful, transparent investigation where the reference attacks the trap with blunt certainty, escalating nerve, forced concessions, and hammer-blow verdicts before converting fear into relief.",
+  "suggestions": [
+    {
+      "suggestion": "The passage \"Every factual claim in this book comes with its source and its limits\" turns the narrator into an evidence auditor; move such process qualification out of the speaking voice and replace repeated conditional invitations with flat claims, cheerful commands, and the I/we/you triangle.",
+      "asset": "style-guide"
+    },
+    {
+      "suggestion": "At \"Not by the harm it may do,\" the chapter skips the reference's wound-and-bandage beat; assign one compact, unsoftened consequence escalation, cap it with an ALL-CAPS verdict, then explicitly disown fear as the reason to change and pivot to escape.",
+      "asset": "master-plan"
+    },
+    {
+      "suggestion": "\"If the answer is yes ... wonderful\" releases the trap question instead of springing it; after voicing the objection, ask two forced-choice questions grounded in the reader's own bargaining or restriction, then close with a settled inversion that reassigns the claimed benefit.",
+      "asset": "chapter-writer"
+    },
+    {
+      "suggestion": "\"THE LINE,\" \"WHAT YOU KEEP,\" and \"THE MOLECULE MARGIN\" explain boundaries at nearly the same intensity; cut repeated taxonomy and make each section advance through definition, objection, concrete analogy, and verdict toward the numbered instruction.",
+      "asset": "chapter-reviewer"
+    },
+    {
+      "suggestion": "The long debut \"You can test whether BAD SUGAR owns any special or irreplaceable pleasure...\" reads like a contract clause; shorten frozen mantras into speakable verdicts and place each argue-then-compress debut on a standalone peak before exact echoes.",
+      "asset": "master-plan"
+    }
+  ]
+}

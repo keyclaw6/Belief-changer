@@ -298,3 +298,21 @@ The reference-as-candidate control for Chapters 1–3 scored **1.000** across al
 **Research proposal deferred:** The rank-2 suggestion asks for new research-backed hard-stakes material. PROGRAM §3 forbids unattended research regeneration, so it is recorded for the next founder-approved research boundary and the next eligible prompt/style suggestion is used instead.
 
 **Next hypothesis (`style-guide`):** Academic and legal-process diction is suppressing the escaped expert's emotional authority even when the logic lands. Ban institutional abstractions in reader-facing prose—terms such as “categorical core,” “transparent evidence,” “qualitative study,” and “prevalence claim”—and require any necessary evidence status to be translated into ordinary I/we/you language as concrete observation → reader objection → trap question → short verdict. Prediction: `emotional_register`, `voice_certainty`, and rhythm rise without weakening evidence honesty.
+
+### iter-007 — ordinary-language evidence status
+
+**Outcome:** `REVERT` at **0.6350** with every hard check green, **-0.0325** below the 0.6675 best and **0.0025** outside epsilon. Chapter composites were 0.6050, 0.6625, and 0.6375. `emotional_register` was worst in 5 votes and `rhythm_texture` in 1. The `prompts/style-guide.md` amendment was reverted; iter-004 remains the best accepted iteration.
+
+**Judges' top suggestions (verbatim):**
+
+1. `[style-guide]` The passage "Every factual claim in this book comes with its source and its limits" turns the narrator into an evidence auditor; move such process qualification out of the speaking voice and replace repeated conditional invitations with flat claims, cheerful commands, and the I/we/you triangle.
+2. `[style-guide]` Replace the paragraph beginning "Every factual claim in this book" and the later study-limit caveats with a settled-voice sequence: assert the relevant fact, ventriloquize the reader's objection, answer it, and issue the next instruction; keep evidential limits in the research apparatus rather than foregrounding them in the narrator's register.
+3. `[master-plan]` The hobby, membership-card, and confidence-trick sections keep restating the same free-choice premise; make the plan escalate from one observable scene to a hard consequence, then explicitly disown fear as the motive before releasing the reader.
+4. `[style-guide]` Replace coaching cues such as "sit with a question" and "Let it land" with cheerful commands or settled assertions, and compress mandatory safety qualifications into the assigned instruction instead of letting legalistic reassurance become the closing voice.
+5. `[style-guide]` Replace permission and epistemic caveats such as "If it can, then by all means keep it," "not because I have decided it is false," and "what I believe it will reveal" with settled assertions and trap questions whose only honest answer completes the inversion.
+
+**Reviewer residuals at the two-cycle cap:** Chapter 1 — B12 spec contradiction, B13 premature post-threshold staging, institutional register, fragmented cadence, and low question rate. Chapter 2 — evidence overreach, job drift, qualifier creep, and missing ALL-CAPS landing. Chapter 3 — evidence/source-status overreach, job drift, mantra infidelity/premature debut, and illicit repetition. The writer did not emit the explicit `SPEC GAP:` trigger in any chapter, so no plan rerun was authorized.
+
+**Harness debt:** The single Chapter 2 and Chapter 3 revision transports failed after the three initial Opus generations had succeeded. Both preserved the current drafts as required, but their handlers retained only a generic HTTP failure (`HTTPError` / curl exit 22), with no sanitized status or provider message. The second reviewer cycles therefore assessed the unchanged drafts; no silent retry or manual prose patch was made.
+
+**Next hypothesis (`style-guide`):** Coaching stage directions and permission language make the escaped expert sound tentative at the exact moment the belief correction should land. Replace cues such as “sit with this,” “let it land,” and “if you wish” with either a cheerful direct command or a settled assertion, and require the following trap question to admit only the credit inversion. Prediction: `emotional_register`, `voice_certainty`, and `rhythm_texture` rise without changing evidence scope.
