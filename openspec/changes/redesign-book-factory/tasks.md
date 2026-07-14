@@ -202,16 +202,15 @@ the SHA without reopening the implementation verdict.
   and file-size findings are resolved; 30/30 focused and 120/120 full tests,
   strict OpenSpec, and diff checks passed, with core recovery, promotion, and
   binding scenarios accepted.
-- Commit / push: accepted subject `feat(loop): isolate candidate product
-  atomically`; exact SHA is captured at the next ledger checkpoint to avoid
-  impossible self-reference.
+- Commit / push: `c2b1935b62d71ef504b874ee9f9e4ed9cf638c06`
+  (`feat(loop): isolate candidate product atomically`).
 
 ## Phase 1 — repair the upstream intervention contract
 
 ### RF-03 — Enforce a completed subject contract
 
-- [ ] Require the primary and subordinate beliefs before downstream work.
-- Status: `TODO`
+- [x] Require the primary and subordinate beliefs before downstream work.
+- Status: `DONE`
 - Evidence class / report: demonstrated gap; §§1, 5 cause 1, 7 action 1.
 - Problem / root cause: the brief leaves the load-bearing false belief unresolved
   and does not provide a small belief set against which research and planning
@@ -226,9 +225,17 @@ the SHA without reopening the implementation verdict.
 - Verification: scenario tests for “incomplete subject contract”,
   `bash scripts/check.sh`.
 - Dependencies: RF-00.
-- Implementation attempts: `0`; latest: `—`.
-- Review attempts: `0`; latest verdict / findings: `—`.
-- Commit / push: `—`.
+- Implementation attempts: `3`; latest: 2026-07-14
+  `/root/rf03_subject_contract_owner` — normalized terminal `.?!` only for
+  whole-value sentinel matching and rejected values composed solely of that
+  punctuation while preserving substantive punctuated reader language.
+- Review attempts: `3`; latest verdict / findings: `PASS` — generic required
+  fields, non-sugar passing control, unresolved-sentinel and false-positive
+  controls, 8/8 focused and 128/128 full tests, strict OpenSpec, and diff checks
+  all passed with no actionable findings.
+- Commit / push: accepted subject
+  `feat(pipeline): enforce completed subject contracts`; exact SHA is captured
+  at the next ledger checkpoint to avoid impossible self-reference.
 
 ### RF-04 — Add intervention-ready evidence units and belief coverage
 

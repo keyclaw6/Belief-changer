@@ -1,20 +1,31 @@
-# Brief — <Book Title>
+# Brief — <Book title>
 
 ## Target behavior
-<the behavior the book helps the reader leave behind>
+<one behavior the book helps the reader leave behind>
 
-## Reader / audience
-<who this edition is for — e.g. adult men; parents; teens; general. One edition = one clear reader.>
+## Intended reader
+<one clear reader for this edition>
 
-## Goal & stance — decide explicitly (style guide §4 forks)
-- **Outcome (Fork 2):** autonomy-led total freedom  |  explicit moderation allowed — <choice + one-line why>
-- **Void (Fork 5):** natural baseline ("change nothing else")  |  root + positive replacement — <choice + why>
-- **Science weight (Fork 3):** light & illustrative  |  moderate, citations quarantined — <choice>
-- **Villain (Fork 4):** which engineered trap (industry / platform / algorithm) is named — <choice>
-- **Inner state (Fork 1):** externalize the belief/industry; do NOT personify the craving — <confirm>
+## Fork decisions
+- **Outcome (Fork 2):** <chosen outcome and why>
+- **Void (Fork 5):** <chosen baseline or replacement position and why>
+- **Science weight (Fork 3):** <chosen evidence weight>
+- **Villain (Fork 4):** <chosen trap or system to name>
+- **Inner state (Fork 1):** <chosen treatment of the reader's inner state>
 
-## The load-bearing false belief (style guide §10, step 1)
-<one sentence: what the reader believes this behavior GIVES them>
+## Destination
+<the concrete state the reader should reach>
 
-## Scope / non-goals
-<what this book covers; what it deliberately does not>
+## Exclusions
+<what this edition deliberately does not address>
+
+## Safety perimeter
+<medical, psychological, legal, or practical boundaries and escalation points>
+
+## Primary false belief
+- "<the one load-bearing belief, in the reader's own words>"
+
+## Subordinate beliefs
+- "<supporting belief in the reader's own words>"
+- "<supporting belief in the reader's own words>"
+- "<supporting belief in the reader's own words>"
