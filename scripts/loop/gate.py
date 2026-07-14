@@ -27,17 +27,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve()
 sys.path.insert(0, str(HERE.parent))
 import loopcfg  # noqa: E402
-
-# Tunable assets (PROGRAM §3) — the files a REVERT may need to undo.
-TUNABLE = [
-    "prompts/style-guide.md",
-    "prompts/chapter-writer.md",
-    "prompts/chapter-reviewer.md",
-    "prompts/master-plan-skill-v2.md",
-    "prompts/master-plan-reviewer-v2.md",
-    "prompts/research-agent.md",
-    "production-books/_template/",
-]
+import legacy_guard as LG  # noqa: E402
 
 COLUMNS = ["iter", "timestamp_utc", "campaign", "instrument", "hypothesis",
            "reward", "hard_ok", "verdict", "worst_dimension", "top_suggestion",
@@ -71,8 +61,9 @@ def _clean(text, limit=110):
     return s[:limit]
 
 
-def append_row(tsv: Path, row: dict):
+def append_row(tsv: Path, row: dict, candidate: Path):
     exists = tsv.is_file() and tsv.read_text(encoding="utf-8").strip()
+    LG.require_output(candidate, tsv)
     with tsv.open("a", encoding="utf-8") as fh:
         if not exists:
             fh.write("\t".join(COLUMNS) + "\n")
@@ -86,14 +77,14 @@ def find_latest_score(scores_dir: Path):
     return cands[-1]
 
 
-def _print_revert(iter_no, assets=None, book=""):
+def _print_revert(iter_no, score_path, assets=None, book=""):
     print("[gate] The amendment was UNCOMMITTED (PROGRAM §4) — restore the accepted state:")
-    for path in (assets or TUNABLE):
+    for path in (assets or []):
         print(f"        git checkout -- {path}")
     if book and not str(book).startswith("CONTROL"):
         print(f"        git checkout -- {book}/master-plan.md   # only if this "
               "iteration re-ran the plan")
-    print(f"        rm loop/scores/iter-{str(iter_no).zfill(3)}.json")
+    print(f"        rm {score_path}")
 
 
 def main():
@@ -103,9 +94,14 @@ def main():
     ap.add_argument("--asset", default="", help="comma-separated path(s) this iteration amended "
                     "(sharpens the printed revert commands)")
     ap.add_argument("--config", default=None)
+    LG.add_arguments(ap)
     a = ap.parse_args()
 
-    cfg = loopcfg.load(a.config) if a.config else loopcfg.load(loopcfg.find_config())
+    candidate = LG.require_authorized(a, entrypoint="gate.py")
+    config_path = Path(a.config) if a.config else loopcfg.find_config()
+    LG.require_targets(candidate, config_path)
+    cfg = loopcfg.load(config_path)
+    LG.require_config_targets(candidate, cfg, "scores_dir", "results_tsv")
     scores_dir = Path(cfg["scores_dir"])
     tsv = Path(cfg["results_tsv"])
     epsilon = float(cfg["epsilon"])
@@ -119,6 +115,14 @@ def main():
 
     assets = [s.strip() for s in a.asset.split(",") if s.strip()] or None
     book = score.get("book") or ""
+    if assets:
+        LG.require_targets(candidate, *assets)
+    if book and not str(book).startswith("CONTROL"):
+        book_target = Path(book)
+        LG.require_targets(candidate, book_target, book_target / "chapters",
+                           book_target / "master-plan.md")
+    if LG.dry_run(a, "gate.py"):
+        return
     hard_ok = bool(score.get("hard_ok"))
     reward = score.get("reward")
     judges_blk = score.get("judges") or {}
@@ -146,7 +150,7 @@ def main():
     if not hard_ok:
         verdict = "FAIL-HARD"
         print("[gate] FAIL-HARD — hard checks failed; reward not consulted. Revert the amendment.")
-        _print_revert(iter_no, assets, book)
+        _print_revert(iter_no, score_path, assets, book)
     elif best is None:
         verdict = "BASELINE"
         print("[gate] BASELINE — first scored iteration; accepted as the starting point.")
@@ -160,7 +164,7 @@ def main():
     else:
         verdict = "REVERT"
         print(f"[gate] REVERT — reward {reward} < best {best} - epsilon {epsilon}.")
-        _print_revert(iter_no, assets, book)
+        _print_revert(iter_no, score_path, assets, book)
 
     row = {"iter": iter_no,
            "timestamp_utc": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
@@ -170,7 +174,7 @@ def main():
            "verdict": verdict, "worst_dimension": worst,
            "top_suggestion": _clean(top_sugg),
            "notes": Path(book).name or book}
-    append_row(tsv, row)
+    append_row(tsv, row, candidate)
     print(f"[gate] appended {verdict} row to {tsv}")
     sys.exit(0)  # decided = 0, always; the verdict is the row, not the exit code
 

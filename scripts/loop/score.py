@@ -1,8 +1,4 @@
 """ONE command -> ONE reward + hard checks + diagnostics (wraps scripts/eval).
-
-  python3 scripts/loop/score.py --book production-books/quit-sugar --chapters 1-3 --iter 7
-  python3 scripts/loop/score.py --control-ref --iter 0   # real GSBS as "ours"
-
 HARD CHECKS (gate-blocking): originality tripwire, mantra/repetition law, loose
 length sanity. REWARD: the reference-anchored rubric (PROGRAM §4.2) — fresh
 native Sol subagents score distance from the matched real chapter; emits task
@@ -26,23 +22,18 @@ import mantra_check as MC     # noqa: E402
 import loopcfg               # noqa: E402
 import judges                # noqa: E402
 import planctx               # noqa: E402
-
+import legacy_guard as LG     # noqa: E402
 BUDGET_RE = re.compile(r"\*\*CH-(\d+)\*\*.*?\|\s*([\d,]+)\s*\|\s*$")
 
 
 def parse_budgets(plan_text: str) -> dict:
-    """Map chapter number -> planned word budget from the arc/budget table.
-
-    Rows look like `| **CH-01** | ... | 2,400 |`. The budget is the last numeric
-    cell on a CH row. Returns {} if none parse (caller degrades length to WARN).
-    """
+    """Map chapter number to the last numeric cell on its arc/budget row."""
     budgets = {}
     for line in plan_text.splitlines():
         m = BUDGET_RE.search(line.strip())
         if m:
             budgets[int(m.group(1))] = int(m.group(2).replace(",", ""))
     return budgets
-
 
 def length_check(ours, sel, budgets, band):
     """Loose sanity: each selected chapter within +/- band of its plan budget."""
@@ -77,7 +68,6 @@ def load_reference(cfg):
     ref_metrics = json.loads((ref_dir / "reference-metrics.json").read_text(encoding="utf-8"))
     return ref_dir, ref_chapters, ref_metrics
 
-
 def stylometrics(ours, ref_metrics, sel, offset):
     """Our stylometric aggregate beside the matched reference positions (diagnostic)."""
     ref_positions = {n + offset for n in sel}
@@ -86,7 +76,6 @@ def stylometrics(ours, ref_metrics, sel, offset):
     keys = ("mean_chapter_words", "mean_sentence_words", "pct_short_sentences",
             "questions_per_100_sents", "second_person_per_1000", "first_person_per_1000")
     return [{"metric": k, "ours": o.get(k), "ref": r.get(k)} for k in keys]
-
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
@@ -97,9 +86,20 @@ def main():
     ap.add_argument("--control-ref", action="store_true",
                     help="score real GSBS chapters AS ours (originality excludes the "
                          "matched reference chapter; sanity control, expect PASS)")
+    LG.add_arguments(ap)
     a = ap.parse_args()
 
-    cfg = loopcfg.load(a.config) if a.config else loopcfg.load(loopcfg.find_config())
+    candidate = LG.require_authorized(a, entrypoint="score.py")
+    config_path = Path(a.config) if a.config else loopcfg.find_config()
+    LG.require_targets(candidate, config_path)
+    cfg = loopcfg.load(config_path)
+    LG.require_config_targets(candidate, cfg, "scores_dir", "tasks_dir")
+    if not a.control_ref:
+        book_target = Path(a.book)
+        LG.require_targets(candidate, book_target, book_target / "chapters",
+                           book_target / "master-plan.md")
+    if LG.dry_run(a, "score.py"):
+        return
     band = float(cfg["length_band"])
     offset = int(cfg["reference_chapter_offset"])
     ref_dir, ref_chapters, ref_metrics = load_reference(cfg)
@@ -183,7 +183,7 @@ def main():
     rubric = Path(cfg["judge_rubric"]).read_text(encoding="utf-8")
     missing = judges.missing_verdicts(cfg, labels, iter_name)
     if missing:
-        judges.emit_tasks(cfg, pairs, iter_name, rubric)
+        judges.emit_tasks(cfg, pairs, iter_name, rubric, candidate)
         rub, reward, status = None, None, "WAITING-FOR-VERDICTS"
     else:
         rub = judges.aggregate(cfg, labels, iter_name)
@@ -200,16 +200,15 @@ def main():
         "judges": {"status": status, "rubric": rub, "missing": missing},
     }
     _report(payload)
-
     scores_dir = Path(cfg["scores_dir"])
+    LG.require_output(candidate, scores_dir)
     scores_dir.mkdir(parents=True, exist_ok=True)
     name = f"iter-{a.iter:03d}.json" if a.iter is not None else "iter-adhoc.json"
-    (scores_dir / name).write_text(json.dumps(payload, indent=1), encoding="utf-8")
-    print(f"[score] wrote {scores_dir / name}")
+    output = LG.require_output(candidate, scores_dir / name)
+    output.write_text(json.dumps(payload, indent=1), encoding="utf-8")
+    print(f"[score] wrote {output}")
     # Exit 3 = verdicts pending (dispatch judges, re-run). Else 0: gate.py decides.
     sys.exit(3 if status == "WAITING-FOR-VERDICTS" else 0)
-
-
 def _report(p):
     print(f"[score] campaign={p['campaign']} instrument={p['instrument_version']} "
           f"chapters={p['chapters_checked']}")

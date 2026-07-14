@@ -23,6 +23,7 @@ import json
 import os
 import re
 from pathlib import Path
+import legacy_guard as LG
 
 DIMS = ("voice_certainty", "method_execution", "structure_anatomy",
         "repetition_mantra", "emotional_register", "rhythm_texture")
@@ -76,14 +77,16 @@ def missing_verdicts(cfg, labels, iter_name: str) -> list:
     return [s for s in _stems(labels, k) if not (vdir / f"{s}.json").is_file()]
 
 
-def emit_tasks(cfg, pairs, iter_name: str, rubric_text: str) -> list:
+def emit_tasks(cfg, pairs, iter_name: str, rubric_text: str, candidate: Path) -> list:
     """pairs: (label, ours_text, ref_text, ctx). Writes tasks/, creates verdicts/."""
     for ph in ("{{REFERENCE}}", "{{CANDIDATE}}", "{{CONTEXT}}"):
         if ph not in rubric_text:
             raise SystemExit(f"judges: rubric missing {ph} placeholder")
     base = judging_dir(cfg, iter_name)
     tdir, vdir = base / "tasks", base / "verdicts"
+    LG.require_output(candidate, tdir)
     tdir.mkdir(parents=True, exist_ok=True)
+    LG.require_output(candidate, vdir)
     vdir.mkdir(parents=True, exist_ok=True)
     k = int(cfg.get("judge_k", 2))
     out = []
@@ -93,6 +96,7 @@ def emit_tasks(cfg, pairs, iter_name: str, rubric_text: str) -> list:
                 .replace("{{CONTEXT}}", _norm(ctx)))
         for j in range(1, k + 1):
             p = tdir / f"{lbl}-j{j}.md"
+            LG.require_output(candidate, p)
             p.write_text(body, encoding="utf-8")
             out.append(p)
     print(f"[judges] wrote {len(out)} task files. DISPATCH each as a FRESH native Codex "

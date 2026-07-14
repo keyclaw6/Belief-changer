@@ -1,5 +1,15 @@
 # PROGRAM — the self-improvement loop (operator runbook)
 
+> **PAUSED BY RF-00.** This legacy product loop is historical until the redesign
+> ledger explicitly makes the requested stage ready. Do not resume from
+> `loop/results.tsv` or `loop/learnings.md`; recover only from
+> `openspec/changes/redesign-book-factory/tasks.md`. Every write-capable command
+> below executes `scripts/loop/legacy_guard.py` before resolving configuration,
+> endpoints, models, networks, or writes. It requires explicit redesign-stage
+> authorization plus an isolated candidate root, always rejects accepted
+> production/configuration targets, and rejects every legacy command until
+> RF-23 is `READY` (or completed).
+
 A boring, fixed loop, copied in shape from github.com/neosigmaai/auto-harness:
 **RUN the pipeline → SCORE against the real Carr book → GATE keep/revert → RECORD → ONE hypothesis → repeat.** Intelligence goes into the chapters and the diagnosis — never into redesigning the loop mid-run. The 2026-07-11/12 "calibration lab" (branch `calibration-lab`) died because ~90% of tokens went to process (preregistrations, judge-instrument rebuilds, commission audits, direction audits) instead of prose; this loop refuses that. A mechanical failure is fixed mechanically, noted in one line, never treated as a semantic event. Loop grievances go under "Harness debt" in `loop/learnings.md`; the founder addresses them between blocks.
 

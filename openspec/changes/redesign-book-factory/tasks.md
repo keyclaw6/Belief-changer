@@ -100,8 +100,8 @@ the SHA without reopening the implementation verdict.
 
 ### RF-00 — Install the fail-closed legacy product-generation guard
 
-- [ ] Mechanically block every legacy generation/promotion path before RF-23 readiness.
-- Status: `TODO`
+- [x] Mechanically block every legacy generation/promotion path before RF-23 readiness.
+- Status: `DONE`
 - Evidence class / report: demonstrated exposed harness path; §§5 cause 3 and 7
   action 3; independent verifier P0.
 - Problem / root cause: the OpenSpec pause is currently declarative while
@@ -134,9 +134,20 @@ the SHA without reopening the implementation verdict.
 - Dependencies: independent `PASS` on this OpenSpec change package. RF-00 MUST
   be the first implementation commit; RF-01 and every later task depend on it
   directly or transitively.
-- Implementation attempts: `0`; latest: `—`.
-- Review attempts: `0`; latest verdict / findings: `—`.
-- Commit / push: `—`.
+- Implementation attempts: `4`; latest: 2026-07-14
+  `/root/rf00_recovery_executor` — repaired review attempt 2's remaining P0:
+  every concrete chapter, score, judge-task, and gate-ledger output now rejects
+  an existing multiply linked file immediately before mutation; focused hard-
+  link escape and valid-write controls pass, with full review still pending.
+- Review attempts: `3`; history: 2026-07-14 `REVISE` — concrete symlink leaves,
+  ambiguous ledger parsing, and helper-hidden writes escaped verification;
+  2026-07-14 `REVISE` — an existing multiply linked output could mutate an
+  outside inode; 2026-07-14 `PASS` — manual and focused replay confirmed all
+  findings fixed, 14/14 focused and 91/91 full tests, strict OpenSpec, diff and
+  size gates, three guarded mains, and four output-checked mutators.
+- Commit / push: accepted subject `feat(loop): fail closed during factory
+  redesign`; exact SHA is captured at the next ledger checkpoint to avoid
+  impossible self-reference.
 
 ### RF-01 — Resolve the paused iteration-8 style baseline with the founder
 

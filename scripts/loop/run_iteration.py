@@ -26,6 +26,7 @@ import evallib as E          # noqa: E402
 import model_endpoint as ME   # noqa: E402
 import loopcfg               # noqa: E402
 import judges                # noqa: E402
+import legacy_guard as LG     # noqa: E402
 
 CARD_RE = re.compile(r"^###\s+CH-0*(\d+)\b", re.M)
 
@@ -70,7 +71,7 @@ def _clean_chapter(raw: str) -> str:
     return text
 
 
-def write_chapters(cfg, book, sel):
+def write_chapters(cfg, book, sel, candidate):
     """Dispatch the writer for each selected chapter, fresh context each time."""
     base_url, key = judges.endpoint()
     if not key:
@@ -81,6 +82,7 @@ def write_chapters(cfg, book, sel):
     plan_text = (book / "master-plan.md").read_text(encoding="utf-8")
     slug = book.name
     ch_dir = book / "chapters"
+    LG.require_output(candidate, ch_dir)
     ch_dir.mkdir(parents=True, exist_ok=True)
     model = cfg["writer_model"]
     reasoning = cfg.get("writer_reasoning", "none")
@@ -99,6 +101,7 @@ def write_chapters(cfg, book, sel):
                              "report or refusal, not a chapter. NOT saved. Re-dispatch "
                              "(check the API OUTPUT CONTRACT reached the model).")
         out = ch_dir / f"chapter-{n:02d}.md"
+        LG.require_output(candidate, out)
         out.write_text(text + "\n", encoding="utf-8")
         print(f"[run] wrote {out} ({nwords} words)")
     return True
@@ -131,10 +134,18 @@ def main():
     ap.add_argument("--score-now", action="store_true",
                     help="skip the stop-for-review pause and score immediately after writing")
     ap.add_argument("--config", default=None)
+    LG.add_arguments(ap)
     a = ap.parse_args()
 
-    cfg = loopcfg.load(a.config) if a.config else loopcfg.load(loopcfg.find_config())
+    candidate = LG.require_authorized(a, entrypoint="run_iteration.py")
+    config_path = Path(a.config) if a.config else loopcfg.find_config()
+    LG.require_targets(candidate, config_path)
+    cfg = loopcfg.load(config_path)
     book = Path(a.book)
+    LG.require_targets(candidate, book, book / "chapters")
+    LG.require_config_targets(candidate, cfg, "scores_dir", "results_tsv", "tasks_dir")
+    if LG.dry_run(a, "run_iteration.py"):
+        return
     ch_dir = book / "chapters"
     # Parse the range against however many chapters exist (or the plan's CH count).
     upper = len([p for p in ch_dir.glob("chapter-*.md")]) if ch_dir.is_dir() else 0
@@ -146,7 +157,7 @@ def main():
 
     # Step 1 RUN.
     if not a.no_write:
-        wrote = write_chapters(cfg, book, sel)
+        wrote = write_chapters(cfg, book, sel, candidate)
         if not wrote:
             print("[run] stopping before SCORE (no chapters were written). "
                   "Write them manually per the instructions above, then re-run with --no-write.")
@@ -163,10 +174,11 @@ def main():
             sys.exit(0)
 
     py = sys.executable or "python3"
+    auth = LG.forward_arguments(a)
     # Step 2 SCORE.
     rc_score = run_step([py, str(HERE.parent / "score.py"), "--book", str(book),
-                         "--chapters", a.chapters, "--iter", str(a.iter)]
-                        + (["--config", a.config] if a.config else []))
+                         "--chapters", a.chapters, "--iter", str(a.iter),
+                         "--config", str(config_path)] + auth)
     if rc_score == 3:
         print("[run] WAITING FOR JUDGE VERDICTS — dispatch the emitted task files as fresh")
         print("      native Sol subagents (see [judges] lines above), save the JSON verdicts,")
@@ -177,8 +189,7 @@ def main():
         sys.exit(rc_score)
     # Step 3 GATE.
     rc_gate = run_step([py, str(HERE.parent / "gate.py"), "--iter", str(a.iter),
-                        "--hypothesis", a.hypothesis]
-                       + (["--config", a.config] if a.config else []))
+                        "--hypothesis", a.hypothesis, "--config", str(config_path)] + auth)
     print("[run] Gate exit 0 = decision made (verdict is in the row/stdout, incl. REVERT). "
           "Now RECORD: write the hypothesis outcome into loop/learnings.md, run any "
           "printed revert commands, then COMMIT per PROGRAM §4.5.")
