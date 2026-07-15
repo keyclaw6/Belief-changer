@@ -119,7 +119,7 @@ class WriterFreshnessTests(WriterFixture, unittest.TestCase):
         self.assertEqual({1, 2}, set(seen[0]["commissions"]))
         self.assertNotIn("TAMPERED-MANUAL-CALLBACK", repr(seen[0]))
 
-    def test_valid_tokenless_commission_requires_exact_spec_gap_response(self):
+    def test_valid_tokenless_commission_routes_to_commission_owner(self):
         """OpenSpec requirement: one commission-assigned mantra per chapter."""
         candidate = self.candidate("tokenless")
         (PAIR.candidate_tree(candidate) / "prompts/chapter-writer.md").write_text(
@@ -140,16 +140,22 @@ class WriterFreshnessTests(WriterFixture, unittest.TestCase):
 
         def chat(*args, **kwargs):
             prompts.append(args[3])
-            return "SPEC GAP: no commission-assigned mantra or frozen token"
+            return ('ROUTE REFUSAL: {"action_code":'
+                    '"repair_owner_and_regenerate_downstream","finding":'
+                    '"No commission-assigned mantra or frozen token.",'
+                    '"owner":"commission/context"}')
 
         with mock.patch.object(SET.SC, "require_subject_contract"), \
                 mock.patch.object(RUN.judges, "endpoint", return_value=("api", "key")), \
                 mock.patch.object(RUN.ME, "chat", side_effect=chat):
-            with self.assertRaisesRegex(SystemExit, "report or refusal, not a chapter"):
+            with self.assertRaisesRegex(SystemExit,
+                                        "writer routed refusal to commission/context"):
                 RUN.write_chapters({"writer_model": "writer"},
                                    self.book(candidate), [1, 2], candidate)
         self.assertIn("Every chapter debuts or reinforces at least one", prompts[0])
-        self.assertIn("return exactly one line beginning `SPEC GAP:`", prompts[0])
+        self.assertIn("ROUTE REFUSAL:", prompts[0])
+        route = PAIR.load(candidate)["draft_batch"]["refusal"]
+        self.assertEqual(1, route["chapter"])
         self.assertEqual(before, chapter.read_bytes())
 
 

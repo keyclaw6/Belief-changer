@@ -198,10 +198,10 @@ def finding(task, category="mode_scene_argument_variation",
     chapters = chapters or list(chapter_map)
     route = {
         "journey_definition_conflict": ("framing", "repair_reader_journey"),
-        "card_sequence_defect": ("planning", "repair_sequence_cards"),
-        "commission_transport_defect": ("commissioning", "repair_sequence_transport"),
-        "draft_execution_defect": ("writing", "repair_sequence_execution"),
-        "new_truth_safety_need": ("grounded-review", "escalate_new_truth_safety_need"),
+        "card_sequence_defect": ("plan", "repair_sequence_cards"),
+        "commission_transport_defect": ("commission/context", "repair_sequence_transport"),
+        "draft_execution_defect": ("prose", "repair_sequence_execution"),
+        "new_truth_safety_need": ("evaluation", "escalate_new_truth_safety_need"),
     }[basis]
     expected = [{key: chapter_map[chapter][key] for key in
                  ("chapter_id", "transition_id", "entering_state", "leaving_state")}

@@ -212,7 +212,7 @@ def finding(task):
             "symptom_code": "catalogue_replaces_discovery",
             "chapters": [item["chapter_id"] for item in chapters],
             "expected_transitions": expected, "evidence": evidence,
-            "ownership_basis": "card_sequence_defect", "owner": "planning",
+            "ownership_basis": "card_sequence_defect", "owner": "plan",
             "action_code": "repair_sequence_cards"}
 
 

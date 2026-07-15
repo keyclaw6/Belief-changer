@@ -172,8 +172,8 @@ def _entries(paths, beliefs, packet_items):
             fields = _fields(body, entry_id)
             if entry_id.startswith("GAP-"):
                 _require_fields(fields, GAP_FIELDS, entry_id)
-                if fields["Owner"] != "research":
-                    raise ContractError(f"{entry_id}: gap owner must be research")
+                if fields["Owner"] != "research/synthesis":
+                    raise ContractError(f"{entry_id}: gap owner must be research/synthesis")
                 gaps[entry_id] = fields
             else:
                 _require_fields(fields, UNIT_FIELDS, entry_id)

@@ -73,10 +73,10 @@ class GroundedReviewTests(GroundedFixture, unittest.TestCase):
         task = GR.prepare(candidate)[1]
         invalid = []
         packet = finding(task, "packet conflict")
-        packet.update(owner="writing", action_code="remove_unsupported_span")
+        packet.update(owner="prose", action_code="remove_unsupported_span")
         invalid.append(verdict(task, "BLOCK", [packet]))
         originality = finding(task, "originality/near-copy")
-        originality.update(owner="research", action_code="repair_assigned_evidence")
+        originality.update(owner="research/synthesis", action_code="repair_assigned_evidence")
         invalid.append(verdict(task, "BLOCK", [originality]))
         invented_action = finding(task, "ownership leakage")
         invented_action["required_action"] = "Create a testimonial"

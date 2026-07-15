@@ -9,6 +9,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve()
 sys.path.insert(0, str(HERE.parents[1] / "eval"))
 import candidate_pair as CP  # noqa: E402
+import defect_routing as ROUTING  # noqa: E402
 import developmental_review_authority as A  # noqa: E402
 import developmental_review_call as DC  # noqa: E402
 import developmental_review_contract as C  # noqa: E402
@@ -95,7 +96,8 @@ def _receipt(root, task, common):
                 "mode": "0444"}}
     body = {"schema": C.SCHEMA, "state": verdict["verdict"], **common,
             "task_sha256": task["task_sha256"], "evidence": evidence,
-            "verdict": verdict}
+            "verdict": verdict,
+            "routing": ROUTING.plan("developmental-review", verdict["findings"])}
     return {**body, "receipt_hash": PS.state_hash(body)}
 
 

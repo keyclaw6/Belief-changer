@@ -69,7 +69,7 @@ class DevelopmentalReviewAcceptanceTests(DeferredSequenceFixture, unittest.TestC
         self.assertEqual("deferred_transformation_repetition", failure["category"])
         self.assertEqual("catalogue_replaces_discovery", failure["symptom_code"])
         self.assertEqual("card_sequence_defect", failure["ownership_basis"])
-        self.assertEqual("planning", failure["owner"])
+        self.assertEqual("plan", failure["owner"])
         self.assertEqual("repair_sequence_cards", failure["action_code"])
         self.assertEqual(["C-01", "C-02", "C-03"], failure["chapters"])
         CONTRACT.verdict(verdict(task, "NEEDS_CHANGES", [failure]), task)

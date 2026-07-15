@@ -20,36 +20,37 @@ RULES = (
 CLASS_RULES = {
     "invention": {
         "conditions": {"unsupported_by_assigned_authority"},
-        "routes": {"research": "repair_assigned_evidence",
-                   "commissioning": "repair_commission_authority",
-                   "writing": "remove_unsupported_span"}},
+        "routes": {"research/synthesis": "repair_assigned_evidence",
+                   "commission/context": "repair_commission_authority",
+                   "prose": "remove_unsupported_span"}},
     "inference broadening": {
         "conditions": {"exceeds_permitted_inference"},
-        "routes": {"research": "repair_assigned_evidence",
-                   "commissioning": "repair_commission_authority",
-                   "writing": "narrow_claim_to_assigned_authority"}},
+        "routes": {"research/synthesis": "repair_assigned_evidence",
+                   "commission/context": "repair_commission_authority",
+                   "prose": "narrow_claim_to_assigned_authority"}},
     "packet conflict": {
         "conditions": {"assigned_authority_conflict"},
-        "routes": {"research": "resolve_assigned_conflict",
-                   "commissioning": "repair_commission_authority"}},
+        "routes": {"research/synthesis": "resolve_assigned_conflict",
+                   "commission/context": "repair_commission_authority"}},
     "safety breach": {
         "conditions": {"omits_required_safety_limit",
                        "violates_required_safety_limit"},
-        "routes": {"research": "repair_assigned_evidence",
+        "routes": {"brief": "repair_safety_perimeter",
+                   "research/synthesis": "repair_assigned_evidence",
                    "framing": "repair_framing_authority",
-                   "planning": "repair_plan_authority",
-                   "commissioning": "repair_commission_authority",
-                   "writing": "restore_required_safeguard"}},
+                   "plan": "repair_plan_authority",
+                   "commission/context": "repair_commission_authority",
+                   "prose": "restore_required_safeguard"}},
     "originality/near-copy": {
         "conditions": {"near_copy_of_assigned_excerpt"},
-        "routes": {"writing": "replace_near_copy_span"}},
+        "routes": {"prose": "replace_near_copy_span"}},
     "ownership leakage": {
         "conditions": {"uses_unassigned_authority", "performs_reserved_work",
                        "omits_required_commission_condition"},
         "routes": {"framing": "repair_framing_authority",
-                   "planning": "repair_plan_authority",
-                   "commissioning": "repair_commission_authority",
-                   "writing": "remove_reserved_or_unassigned_work"}},
+                   "plan": "repair_plan_authority",
+                   "commission/context": "repair_commission_authority",
+                   "prose": "remove_reserved_or_unassigned_work"}},
 }
 
 

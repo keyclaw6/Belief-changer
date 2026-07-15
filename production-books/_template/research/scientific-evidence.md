@@ -40,7 +40,7 @@ framing and planning until research supplies a complete, traceable unit.
 
 - **Implicated belief:** "<exact primary or subordinate brief belief>"
 - **Missing support:** <situation, wording, emotion, or inference still missing>
-- **Owner:** research
+- **Owner:** research/synthesis
 
 ## Bank 7 — Mechanism & Science Bank
 

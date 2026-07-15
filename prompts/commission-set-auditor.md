@@ -19,3 +19,6 @@ COMMISSION SET BLOCKED
 Owner: <earliest owning stage>
 Gap: <one exact blocking defect>
 ```
+
+The owner must be exactly one of `brief`, `research/synthesis`, `framing`,
+`plan`, `commission/context`, `prose`, `revision`, or `evaluation`.

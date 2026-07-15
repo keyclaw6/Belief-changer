@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 """Validate a free-form semantic commission against its assigned authority."""
 import re
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent / "loop"))
+import defect_routing as ROUTING  # noqa: E402
 
 
 REQUIRED = {
@@ -34,6 +39,9 @@ class ContractError(ValueError):
 
 
 def _blocked(text, blocker):
+    if not isinstance(blocker, dict) or set(blocker) != {"owner", "gap"} \
+            or blocker.get("owner") not in ROUTING.OWNERS:
+        raise ContractError("COMMISSION BLOCKED owner is outside the canonical vocabulary")
     expected = (
         f"COMMISSION BLOCKED\nOwner: {blocker['owner']}\n"
         f"Gap: {blocker['gap']}"

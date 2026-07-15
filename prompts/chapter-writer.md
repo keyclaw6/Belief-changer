@@ -11,8 +11,16 @@ chapter exists only for voice continuity and the handoff seam. Do not read or
 request a complete master plan, complete style guide, source packet, other
 chapter, reference prose, analysis, review, score, or judge feedback. Do not
 resolve plan IDs. If the commission is blocked, contradictory, or lacks
-essential authority, return one first line beginning `SPEC GAP:` instead of
+essential authority, refuse through the canonical owner route below instead of
 inventing or importing material.
+
+The only valid refusal is exactly one line:
+`ROUTE REFUSAL: {"action_code":"repair_owner_and_regenerate_downstream","finding":"<one concise defect>","owner":"<canonical owner>"}`.
+Preserve that exact field order and punctuation: no outer whitespace, newline,
+extra spaces, duplicate keys, omitted keys, additional keys, or non-string values.
+The owner must be exactly one of `brief`, `research/synthesis`, `framing`,
+`plan`, `commission/context`, `prose`, `revision`, or `evaluation`, and must be
+the earliest stage that can repair the defect. Never emit another refusal form.
 
 ## Method and voice
 
@@ -49,8 +57,8 @@ inventing or importing material.
    or frozen token, exact in wording, capitalization, and punctuation. A debut
    gets its full argue-to-compress beat; an echo is brief and is never
    re-argued. Invent and paraphrase none. If the commission assigns no mantra
-   or frozen token, return exactly one line beginning `SPEC GAP:` and nothing
-   else.
+   or frozen token, return the exact one-line canonical refusal above with owner
+   `commission/context` and nothing else.
 3. Repeat mantras verbatim on assignment; repeat no other striking prose
    verbatim. Previews, summaries, and assigned instruction recaps are licensed
    recap zones. Invoke settled prior work by its assigned token, not by rebuilding it.
@@ -97,9 +105,11 @@ Draft final book prose from the commission, using only the previous chapter for
 continuity. Before submitting, check the one job, exact tokens, evidence and
 safety limits, reserved work, banned register, metrics, anatomy, recap, and
 handoff. In filesystem/manual mode save the result to
-`production-books/[SLUG]/chapters/chapter-[NN].md` and report any `SPEC GAP:`
-instead of papering it over.
+`production-books/[SLUG]/chapters/chapter-[NN].md`. If refusing, never write the
+chapter path: save the exact refusal line to the sidecar path supplied by the
+manual wrapper, stop the batch, and replay the pinned command.
 
 In raw API mode the wrapper's API OUTPUT CONTRACT supersedes the save/report
 instruction: the entire reply is either the complete chapter text and nothing
-else or the single `SPEC GAP:` line. The wrapper saves the reply verbatim.
+else or the exact canonical refusal line. The wrapper durably records and routes
+the refusal; it never accepts that response as chapter prose.

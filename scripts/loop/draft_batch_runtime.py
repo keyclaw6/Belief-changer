@@ -8,6 +8,7 @@ import manual_dispatch as MD
 import model_endpoint as ME
 import pair_store as PS
 import writer_context as WC
+import writer_refusal as WR
 import judges
 import legacy_guard as LG
 
@@ -15,6 +16,8 @@ import legacy_guard as LG
 def _capture(candidate, book, selected):
     manifest = CP.load(candidate)
     batch = manifest.get("draft_batch")
+    if batch is not None:
+        WR.require_clear(candidate, batch)
     if batch is None:
         authority = WC.capture(candidate, book, selected)
     else:
@@ -29,7 +32,7 @@ def write_chapters(cfg, book, selected, candidate, interrupt=None):
     try:
         authority, batch = _capture(candidate, book, selected)
     except (CS.CommissionSetError, CP.PairError, PS.StoreError,
-            WC.WriterContextError, OSError) as exc:
+            WC.WriterContextError, WR.RefusalError, OSError) as exc:
         raise SystemExit(f"[run] writer blocked before dispatch: {exc}") from exc
     base_url, key = judges.endpoint()
     try:
@@ -50,6 +53,7 @@ def write_chapters(cfg, book, selected, candidate, interrupt=None):
     if not key:
         if batch is not None and batch["mode"] != "manual":
             raise SystemExit("[run] API batch cannot resume without its writer endpoint")
+        WR.prepare_manual(candidate)
         MD.writer(cfg, CP.candidate_tree(candidate), book, selected, authority)
         return False
     if batch["mode"] != "api":
@@ -73,11 +77,16 @@ def write_chapters(cfg, book, selected, candidate, interrupt=None):
                    "content_sha256": PS.sha(content.encode("utf-8")),
                    "max_tokens": 16000, "temperature": 0.7}
         try:
-            FB.durable_call(candidate, number, request, lambda: ME.chat(
+            reply = FB.durable_call(candidate, number, request, lambda: ME.chat(
                 base_url, key, model, content, reasoning, max_tokens=16000,
                 temperature=0.7, retries=1), interrupt)
+            WR.capture_api(candidate, number, reply, interrupt)
             WC.require_fresh(candidate, authority)
             words = FB.accept_response(candidate, number, interrupt)
+        except WR.RoutedRefusal as exc:
+            raise SystemExit(f"[run] {exc}") from exc
+        except WR.RefusalError as exc:
+            raise SystemExit(f"[run] invalid writer route refusal: {exc}") from exc
         except WC.WriterContextError as exc:
             raise SystemExit(f"[run] writer output failed closed: {exc}") from exc
         except FB.BatchError as exc:

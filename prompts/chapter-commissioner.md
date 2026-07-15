@@ -25,3 +25,6 @@ COMMISSION BLOCKED
 Owner: <earliest owning stage>
 Gap: <one exact conflict or missing authority>
 ```
+
+The owner must be exactly one of `brief`, `research/synthesis`, `framing`,
+`plan`, `commission/context`, `prose`, `revision`, or `evaluation`.

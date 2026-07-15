@@ -9,8 +9,13 @@ FOLDER = "first-draft-batch"
 RECEIPT = "receipt.json"
 KEYS = {"schema", "state", "mode", "operation", "selection", "config",
         "baseline", "drafts", "pending", "receipt", "pair_sha256",
-        "start_sha256", "responses", "call"}
+        "start_sha256", "responses", "call", "refusal"}
 CALL_KEYS = {"chapter", "path", "authority_sha256", "request_sha256"}
+REFUSAL_KEYS = {"chapter", "path", "sha256", "receipt_hash",
+                "routing_sha256", "source"}
+SOURCE_KEYS = {"path", "file_sha256", "response_sha256"}
+ROUTE_RECEIPT = "evidence/writer-refusal/receipt.json"
+ROUTE_ANCHOR = "writer-refusal-anchor.json"
 
 
 class BatchError(RuntimeError):
@@ -34,12 +39,19 @@ def start_marker(batch):
 def validate_pair(manifest, root):
     batch, start, state = (manifest.get("draft_batch"),
                            manifest.get("draft_batch_start"), manifest.get("state"))
+    root = Path(root).absolute()
     evidence = os.path.lexists(folder(root))
+    anchor = os.path.lexists(root / ROUTE_ANCHOR)
     if batch is None:
-        if start is not None or state in ("DRAFTING", "BATCH_FROZEN") or evidence:
+        if start is not None or state in ("DRAFTING", "BATCH_FROZEN") \
+                or evidence or anchor:
             raise BatchError("started draft batch metadata was removed or downgraded")
         return
     validate_shape(batch, manifest)
+    routed = os.path.lexists(root / ROUTE_RECEIPT) \
+        or anchor
+    if batch.get("refusal") is None and routed:
+        raise BatchError("durable writer route was removed or downgraded")
     expected = start_marker(batch)
     if start != expected or batch["start_sha256"] != expected["start_sha256"]:
         raise BatchError("draft batch start identity is missing or drifted")
@@ -106,6 +118,10 @@ def _validate_state(batch, drafts, selection, pending):
         raise BatchError("in-flight model call identity is malformed")
     if batch["mode"] == "api" and pending is not None and call is None:
         raise BatchError("accepted API response lost its durable call identity")
+    refusal = batch.get("refusal")
+    if refusal is not None and not _valid_refusal(refusal, batch, drafts, call) \
+            or refusal is not None and (frozen or pending is not None):
+        raise BatchError("writer route refusal identity is malformed")
     if not _valid_hash(batch.get("start_sha256")):
         raise BatchError("draft batch start hash is malformed")
 
@@ -128,3 +144,24 @@ def _valid_call(item, completed):
             or item.get("path") != f"response-{item.get('chapter', 0):02d}.json":
         return False
     return all(_valid_hash(item.get(key)) for key in keys - {"chapter", "path"})
+
+
+def _valid_refusal(item, batch, drafts, call):
+    source = item.get("source") if isinstance(item, dict) else None
+    remaining = batch["selection"][len(drafts):]
+    if not isinstance(item, dict) or not isinstance(source, dict) \
+            or set(item) != REFUSAL_KEYS or set(source) != SOURCE_KEYS \
+            or not remaining or item.get("chapter") != remaining[0] \
+            or item.get("path") != ROUTE_RECEIPT \
+            or not all(_valid_hash(item.get(key)) for key in
+                       ("sha256", "receipt_hash", "routing_sha256")) \
+            or not all(_valid_hash(source.get(key)) for key in
+                       ("file_sha256", "response_sha256")):
+        return False
+    number = item["chapter"]
+    api_path = f"evidence/{FOLDER}/response-{number:02d}.json"
+    manual_path = f"evidence/writer-refusal/manual-chapter-{number:02d}.txt"
+    if batch["mode"] == "api":
+        return isinstance(call, dict) and call.get("chapter") == number \
+            and source.get("path") == api_path
+    return call is None and source.get("path") == manual_path

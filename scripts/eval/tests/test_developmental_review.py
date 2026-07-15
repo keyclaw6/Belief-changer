@@ -112,7 +112,7 @@ class DevelopmentalReviewTests(DevelopmentalFixture, unittest.TestCase):
         self.assertEqual(task, captured["task"])
         self.assertEqual("mode_scene_argument_variation", failure["category"])
         self.assertEqual("draft_execution_defect", failure["ownership_basis"])
-        self.assertEqual("writing", failure["owner"])
+        self.assertEqual("prose", failure["owner"])
         self.assertEqual(["C-01", "C-02", "C-03"], failure["chapters"])
         self.assertEqual(failure["chapters"],
                          [item["chapter_id"] for item in failure["evidence"]])
@@ -125,7 +125,7 @@ class DevelopmentalReviewTests(DevelopmentalFixture, unittest.TestCase):
         self.assertEqual("PASS", pass_developmental(candidate)["state"])
         grounded = finding(task, "newly_detected_grounded_need",
                            "new_truth_safety_need", chapters=["C-01"])
-        self.assertEqual("grounded-review", grounded["owner"])
+        self.assertEqual("evaluation", grounded["owner"])
         self.assertNotIn("source", json.dumps(grounded).casefold())
         invented = deepcopy(grounded)
         invented["source_locators"] = ["S-101#E-001"]
@@ -136,14 +136,14 @@ class DevelopmentalReviewTests(DevelopmentalFixture, unittest.TestCase):
         """OpenSpec requirement: Owner-routed repair."""
         task = DEV.prepare(self.ready("owners"))
         for basis, owner in (("journey_definition_conflict", "framing"),
-                             ("card_sequence_defect", "planning"),
-                             ("commission_transport_defect", "commissioning"),
-                             ("draft_execution_defect", "writing")):
+                             ("card_sequence_defect", "plan"),
+                             ("commission_transport_defect", "commission/context"),
+                             ("draft_execution_defect", "prose")):
             row = finding(task, basis=basis)
             self.assertEqual(owner, row["owner"])
             CONTRACT.verdict(verdict(task, "NEEDS_CHANGES", [row]), task)
             wrong = deepcopy(row)
-            wrong.update(owner="writing", action_code="repair_sequence_execution")
+            wrong.update(owner="prose", action_code="repair_sequence_execution")
             if basis != "draft_execution_defect":
                 with self.assertRaises(CONTRACT.ContractError):
                     CONTRACT.verdict(verdict(task, "NEEDS_CHANGES", [wrong]), task)

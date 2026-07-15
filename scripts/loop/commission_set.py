@@ -9,7 +9,7 @@ import candidate_pair as CP  # noqa: E402
 import pair_store as PS  # noqa: E402
 RECEIPT = "commission-set-audit.json"
 AUDIT_PASS = "COMMISSION SET PASS"
-AUDIT_BLOCKED = re.compile(r"COMMISSION SET BLOCKED\nOwner: .+\nGap: .+", re.S)
+AUDIT_BLOCKED = re.compile(r"COMMISSION SET BLOCKED\nOwner: (?:brief|research/synthesis|framing|plan|commission/context|prose|revision|evaluation)\nGap: .+", re.S)
 CARD = r"^###\s+{prefix}-0*{number}\b[^\n]*$"
 NEXT_CARD = re.compile(r"^###\s+(?:C|CH)-\d+\b", re.M)
 LOCATOR = re.compile(r"^(S-\d{3})#(E-\d{3})$")

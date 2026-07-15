@@ -15,16 +15,15 @@ API_OUTPUT_CONTRACT = (
     "\n\n===== API OUTPUT CONTRACT (supersedes any save/report instructions above) =====\n"
     "You are running over a raw API with no filesystem. Return ONE thing: the complete final "
     "chapter text in book prose, starting with the chapter heading line. No preamble, no "
-    "completion report, no word counts, no code fences. Your entire reply is saved verbatim "
-    "as the chapter file."
+    "completion report, no word counts, no code fences. If and only if authority is missing, "
+    "return the contract's exact one-line ROUTE REFUSAL instead; it is durably routed and is "
+    "never saved as a chapter."
 )
 MANUAL_RECEIPT = WO.RECEIPT
 
 
 class WriterContextError(RuntimeError):
     pass
-
-
 def _commission_paths(manifest):
     book = manifest["run"]["book"]
     return {number: f"{book}/commissions/chapter-{number:02d}.md"

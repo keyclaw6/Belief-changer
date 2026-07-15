@@ -42,7 +42,7 @@ def report(p):
             print("[gap]    worst-dimension votes: " + ", ".join(
                 f"{x['dimension']} x{x['votes']}" for x in rubric["worst_dimensions"]))
         for suggestion in rubric["suggestions"]:
-            print(f"[sugg]   ({suggestion['asset']}, x{suggestion['count']}) "
+            print(f"[sugg]   ({suggestion['owner']}, x{suggestion['count']}) "
                   f"{suggestion['suggestion'][:140]}")
     print(f"[verdict] HARD CHECKS: {'PASS' if p['hard_ok'] else 'FAIL'} "
           f"({len(p['hard_fails'])} failures)")

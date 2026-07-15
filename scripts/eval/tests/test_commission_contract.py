@@ -133,6 +133,9 @@ class CommissionContractTests(unittest.TestCase):
                 self.assertEqual("blocked", CC.validate_text(text, auth))
                 with self.assertRaisesRegex(CC.ContractError, "COMMISSION BLOCKED"):
                     CC.validate_text(commission(authority()), auth)
+        auth, text = blocked(authority(), "writing", "Obsolete owner label.")
+        with self.assertRaisesRegex(CC.ContractError, "canonical vocabulary"):
+            CC.validate_text(text, auth)
 
     def test_only_assigned_ids_inferences_work_and_quotes_pass(self):
         """OpenSpec scenario: A commission cannot ground its assignment."""

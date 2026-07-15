@@ -98,7 +98,7 @@ def unit(unit_id, belief, locator, grade="n/a", omit=None):
         f"- **{name}:** {value}" for name, value in fields if name != omit
     )
     return f"### {unit_id}\n\n{body}\n"
-def gap(belief, owner="research"):
+def gap(belief, owner="research/synthesis"):
     return f"""### GAP-001
 
 - **Implicated belief:** "{belief}"

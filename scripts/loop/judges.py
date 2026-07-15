@@ -3,7 +3,7 @@
 Instrument: calibration/judges/carr-likeness-rubric.md — one judge context sees
 the REAL reference chapter (ground truth) beside our candidate and returns six
 0-10 distance-from-reference scores, a worst dimension, and improvement
-suggestions tagged with the owning factory asset.
+suggestions tagged with the earliest owning factory stage.
 
 Judges are GPT-5.6 Sol (xhigh) run ONLY as fresh native Codex subagents on the
 founder's subscription. There is deliberately NO judge API transport in this
@@ -28,11 +28,11 @@ import legacy_guard as LG
 import first_draft_batch as FB
 import grounded_review as GR
 import developmental_review as DR
+import defect_routing as ROUTING
 
 DIMS = ("voice_certainty", "method_execution", "structure_anatomy",
         "repetition_mantra", "emotional_register", "rhythm_texture")
-ASSETS = {"style-guide", "chapter-writer", "chapter-reviewer", "master-plan",
-          "research"}
+OWNERS = set(ROUTING.OWNERS)
 _FENCE_RE = re.compile(r"```(?:json)?\s*(\{.*\})\s*```", re.S)
 _BLANKS_RE = re.compile(r"\n{3,}")
 _BIND_RE = re.compile(
@@ -184,11 +184,12 @@ def _parse_verdict(path: Path, pair_hash=None, task_hash=None, candidate=None) -
                          f"(got {len(sugg) if isinstance(sugg, list) else type(sugg).__name__}) "
                          "— re-dispatch this one judge task")
     for i, s in enumerate(sugg):
-        if not isinstance(s, dict) or not str(s.get("suggestion", "")).strip():
-            raise SystemExit(f"judges: {path.name}: suggestions[{i}] missing text")
-        if s.get("asset") not in ASSETS:
-            raise SystemExit(f"judges: {path.name}: suggestions[{i}].asset {s.get('asset')!r} "
-                             f"not in {sorted(ASSETS)} — re-dispatch this one judge task")
+        if not isinstance(s, dict) or set(s) != {"suggestion", "owner"} \
+                or not str(s.get("suggestion", "")).strip():
+            raise SystemExit(f"judges: {path.name}: suggestions[{i}] fields are not exact")
+        if s.get("owner") not in OWNERS:
+            raise SystemExit(f"judges: {path.name}: suggestions[{i}].owner {s.get('owner')!r} "
+                             f"not in {sorted(OWNERS)} — re-dispatch this one judge task")
     return obj
 
 
@@ -217,16 +218,16 @@ def aggregate(cfg, labels, iter_name: str, pair_hash=None, candidate=None) -> di
             if wd in DIMS:
                 worst_votes[wd] = worst_votes.get(wd, 0) + 1
             for i, s in enumerate(v.get("suggestions", [])):
-                all_sugg.append((str(s["asset"]), " ".join(str(s["suggestion"]).split()),
+                all_sugg.append((str(s["owner"]), " ".join(str(s["suggestion"]).split()),
                                  5 - min(i, 4), lbl))
     reward = round(sum(c["composite"] for c in per_chapter) / len(per_chapter), 4)
     # Rank-weighted consensus: judge priority (rank 1 -> weight 5 ... rank 5 -> 1),
     # ties broken by chapter spread, then first-seen (review finding H-C3).
     counts, order = {}, []
-    for asset, txt, wt, lbl in all_sugg:
-        key = txt.lower()
+    for owner, txt, wt, lbl in all_sugg:
+        key = (owner, txt.lower())
         if key not in counts:
-            counts[key] = {"suggestion": txt, "asset": asset, "weight": 0,
+            counts[key] = {"suggestion": txt, "owner": owner, "weight": 0,
                            "count": 0, "chapters": set(), "_ord": len(order)}
             order.append(key)
         counts[key]["weight"] += wt
@@ -238,7 +239,10 @@ def aggregate(cfg, labels, iter_name: str, pair_hash=None, candidate=None) -> di
         s["chapters"] = sorted(s["chapters"])
         del s["_ord"]
     worst = sorted(worst_votes.items(), key=lambda kv: -kv[1])
+    routed = [{"owner": owner, "suggestion": text}
+              for owner, text, _weight, _chapter in all_sugg]
     return {"reward": reward, "per_chapter": per_chapter, "suggestions": top,
+            "routing": ROUTING.plan("judge", routed, "apply_judge_suggestion"),
             "worst_dimensions": [{"dimension": d, "votes": n} for d, n in worst],
             "n_verdicts": len(labels) * k, "judge_model": cfg.get("judge_model"),
             "judge_k": k}

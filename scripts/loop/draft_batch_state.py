@@ -26,6 +26,8 @@ def validate_draft(data, number):
         text = data.decode("utf-8").strip()
     except UnicodeError as exc:
         raise BatchError(f"chapter {number} is not UTF-8") from exc
+    if text.startswith("ROUTE REFUSAL:"):
+        raise BatchError(f"chapter {number} is a routed refusal, not a draft")
     count = len(WORD_RE.findall(text.lower()))
     if count < 800:
         raise BatchError(f"chapter {number} has {count} words; expected a complete draft")
@@ -131,7 +133,8 @@ def begin(root, mode, interrupt=None):
              "operation": operation(manifest, receipt_hash, inventory),
              "selection": manifest["run"]["chapters"], "config": config(root, manifest),
              "baseline": baseline, "drafts": [], "pending": None,
-             "receipt": None, "pair_sha256": None, "responses": [], "call": None}
+             "receipt": None, "pair_sha256": None, "responses": [], "call": None,
+             "refusal": None}
     start = start_marker(batch)
     batch["start_sha256"] = start["start_sha256"]
     try:

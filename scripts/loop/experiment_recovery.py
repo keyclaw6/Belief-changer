@@ -13,7 +13,8 @@ TEMPS = {
     ".decision.json.rf02-tmp": ("decision.json", "SEALED"),
 }
 STABLE = {"pair.json", "gate-decision.json", "decision.json",
-          "candidate", "evaluation", "evidence", "writer-authority.json"}
+          "candidate", "evaluation", "evidence", "writer-authority.json",
+          "writer-refusal-anchor.json"}
 
 
 def _bytes(path, root):

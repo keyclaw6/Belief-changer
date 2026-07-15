@@ -30,7 +30,7 @@ After scoring, give **exactly 3–5** highest-impact changes that would move the
 
 - Concrete and mechanical, quoting or pointing at the candidate's actual text ("the section 'X' lists four points and stops — Carr would drive them into one verdict line").
 - **Behavior-agnostic**: phrase every suggestion so it would improve a book on ANY subject (a mechanism, not a subject-specific patch, and never "copy the reference's sentence").
-- Each tagged with the factory asset that owns the fix. **The `asset` value MUST be exactly one of:** `style-guide` | `chapter-writer` | `chapter-reviewer` | `master-plan` | `research`. Any other value is rejected by the parser and your verdict is discarded.
+- Each tagged with the earliest factory stage that owns the fix. **The `owner` value MUST be exactly one of:** `brief` | `research/synthesis` | `framing` | `plan` | `commission/context` | `prose` | `revision` | `evaluation`. Route an authority defect upstream; use `prose` only when accepted authority is adequate and the draft executes it badly. Any other value is rejected by the parser and your verdict is discarded.
 
 ## Output — EXACTLY one JSON object, nothing before or after it
 
@@ -55,9 +55,9 @@ After scoring, give **exactly 3–5** highest-impact changes that would move the
   "worst_dimension": "name of the lowest-scoring dimension",
   "gap_summary": "one sentence: the single biggest thing separating the candidate from the reference",
   "suggestions": [
-    {"suggestion": "...", "asset": "style-guide"},
-    {"suggestion": "...", "asset": "chapter-writer"},
-    {"suggestion": "...", "asset": "master-plan"}
+    {"suggestion": "...", "owner": "prose"},
+    {"suggestion": "...", "owner": "plan"},
+    {"suggestion": "...", "owner": "commission/context"}
   ]
 }
 ```

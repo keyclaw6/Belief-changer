@@ -7,6 +7,7 @@ import grounded_review as GR
 import grounded_review_call as GC
 import developmental_review as DR
 import developmental_review_call as DC
+import writer_refusal as WR
 
 
 def _cwd(root):
@@ -23,14 +24,16 @@ def writer(cfg, operation, book, selected, authority):
     relative = book.relative_to(operation)
     print("[run] NO writer key (OPENROUTER_API_KEY / LITELLM_API_KEY) — MANUAL MODE.")
     print(f"[run] Mandatory pinned operation cwd: {_cwd(operation)}")
-    print("[run] Dispatch once PER CHAPTER from the captured authority blocks below,")
+    print("[run] Dispatch once PER CHAPTER, in order, from the captured authority blocks below,")
     print(f"      fresh context each, for chapters {','.join(map(str, selected))}; model "
           f"{cfg['writer_model']} (reasoning={cfg.get('writer_reasoning', 'none')}).")
     print("      never rereading the mutable contract or commission paths after this gate.")
     print(f"      Third input: only {relative}/chapters/chapter-NN.md for the immediately")
     print("      previous chapter (canonical absence for ch1).")
     print(f"      Save each output to {relative}/chapters/chapter-NN.md (zero-padded),")
-    print("      then re-run the same command with --no-write.")
+    print("      then re-run the same command with --no-write. If a writer returns the")
+    print(f"      canonical `{WR.PREFIX.strip()}` line, do NOT save it as a chapter: save it")
+    print(f"      to ../evidence/{WR.FOLDER}/manual-chapter-NN.txt, stop dispatching, and replay.")
     _captured("compact_writer_contract", authority["contract"])
     for number in selected:
         _captured(f"authoritative_commission chapter-{number:02d}",

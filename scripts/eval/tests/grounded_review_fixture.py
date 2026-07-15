@@ -6,6 +6,7 @@ from unittest import mock
 import commission_set as SET
 import first_draft_batch as BATCH
 import grounded_review as GR
+import grounded_review_contract as CONTRACT
 import grounded_review_call as CALL
 import developmental_review as DEV
 import native_developmental_review as DEV_NATIVE
@@ -24,22 +25,23 @@ def verdict(task, status="PASS", findings=None):
 
 def finding(task, classification, owner=None):
     routes = {
-        "invention": ("unsupported_by_assigned_authority", "writing",
+        "invention": ("unsupported_by_assigned_authority", "prose",
                        "remove_unsupported_span"),
-        "inference broadening": ("exceeds_permitted_inference", "writing",
+        "inference broadening": ("exceeds_permitted_inference", "prose",
                                   "narrow_claim_to_assigned_authority"),
-        "packet conflict": ("assigned_authority_conflict", "research",
+        "packet conflict": ("assigned_authority_conflict", "research/synthesis",
                             "resolve_assigned_conflict"),
-        "safety breach": ("violates_required_safety_limit", "writing",
+        "safety breach": ("violates_required_safety_limit", "prose",
                           "restore_required_safeguard"),
-        "originality/near-copy": ("near_copy_of_assigned_excerpt", "writing",
+        "originality/near-copy": ("near_copy_of_assigned_excerpt", "prose",
                                   "replace_near_copy_span"),
-        "ownership leakage": ("uses_unassigned_authority", "writing",
+        "ownership leakage": ("uses_unassigned_authority", "prose",
                               "remove_reserved_or_unassigned_work"),
     }
     condition, default_owner, action = routes[classification]
     if owner is not None:
         default_owner = owner
+        action = CONTRACT.CLASS_RULES[classification]["routes"][owner]
     locator = task["context"]["assigned_evidence"][0]["locator"]
     return {"classification": classification, "draft_span": "FROZEN-ONE",
             "source_locators": [locator], "condition_code": condition,

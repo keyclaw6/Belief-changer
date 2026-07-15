@@ -11,6 +11,7 @@ sys.path.insert(0, str(HERE.parents[1] / "eval"))
 import grounded_review_authority as A  # noqa: E402
 import grounded_review_call as GC  # noqa: E402
 import grounded_review_contract as C  # noqa: E402
+import defect_routing as ROUTING  # noqa: E402
 import legacy_guard as LG  # noqa: E402
 import pair_store as PS  # noqa: E402
 
@@ -124,7 +125,9 @@ def _receipt(root, tasks, common):
     chapters = [_chapter(root, task) for task in tasks.values()]
     state = "PASSED" if all(item["verdict"]["verdict"] == "PASS"
                             for item in chapters) else "BLOCKED"
-    body = {"schema": C.SCHEMA, "state": state, **common, "chapters": chapters}
+    findings = [finding for item in chapters for finding in item["verdict"]["findings"]]
+    body = {"schema": C.SCHEMA, "state": state, **common, "chapters": chapters,
+            "routing": ROUTING.plan("grounded-review", findings)}
     return {**body, "receipt_hash": PS.state_hash(body)}
 
 

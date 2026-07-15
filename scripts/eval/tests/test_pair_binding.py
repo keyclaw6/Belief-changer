@@ -23,9 +23,9 @@ def verdict(pair_hash, task_hash):
             "scores": {dimension: 5 for dimension in judges.DIMS},
             "worst_dimension": judges.DIMS[0], "gap_summary": "fixture",
             "suggestions": [
-                {"asset": "style-guide", "suggestion": "first"},
-                {"asset": "chapter-writer", "suggestion": "second"},
-                {"asset": "master-plan", "suggestion": "third"}]}
+                {"owner": "framing", "suggestion": "first"},
+                {"owner": "prose", "suggestion": "second"},
+                {"owner": "plan", "suggestion": "third"}]}
 
 
 class PairBindingTests(unittest.TestCase):

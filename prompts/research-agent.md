@@ -444,7 +444,7 @@ and remain unquoted; a scientific grade must match graded cited evidence. A
 source count never establishes coverage. Audit the brief belief by belief: each
 belief needs at least one complete unit. If any field lacks support, do not guess;
 omit the unit, add a `GAP-NNN` naming the exact brief belief, missing support, and
-owner `research`, and stop downstream work until the gap is filled. Rights- or
+owner `research/synthesis`, and stop downstream work until the gap is filled. Rights- or
 privacy-rejected material gets no packet or unit and contributes no coverage.
 
 **Slot-tag index (append to the end of BOTH synthesized files).** A short index

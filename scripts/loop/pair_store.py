@@ -236,7 +236,7 @@ def exact_layout(root, manifest, expected=None):
         if os.path.lexists(Path(root) / name):
             safe_dir(Path(root) / name, root)
     allowed = {"pair.json", "decision.json", "gate-decision.json",
-               "candidate", "evaluation", "evidence"}
+               "candidate", "evaluation", "evidence", "writer-refusal-anchor.json"}
     operation = manifest.get("operation")
     if isinstance(operation, dict) and operation.get("path"):
         allowed.add(operation["path"])

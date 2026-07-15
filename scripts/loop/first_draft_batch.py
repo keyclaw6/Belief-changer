@@ -7,11 +7,10 @@ import candidate_pair as CP
 import draft_call as DC
 import draft_batch_state as S
 import pair_store as PS
+import writer_refusal as WR
 
 BatchError = S.BatchError
 validate_draft = S.validate_draft
-
-
 def begin(root, authority, mode, interrupt=None):
     del authority
     return S.begin(root, mode, interrupt)
@@ -73,6 +72,7 @@ def _verify_drafting(root, allow_unrecorded=False, allow_receipt=False):
     batch = manifest.get("draft_batch")
     if not batch or batch.get("state") != "DRAFTING":
         raise BatchError("operation has no in-progress first-draft batch")
+    WR.require_clear(root, batch)
     S.identity(root, manifest, batch)
     manifest, batch = _recover_pending(root, manifest, batch)
     expected = [{"group": "evidence", "path": S.START}]
@@ -129,8 +129,6 @@ def accept(root, number, data, allow_unrecorded=False, interrupt=None):
     _, batch = _recover_pending(root, CP.load(root), manifest["draft_batch"], interrupt)
     (interrupt or (lambda _step: None))("progress-recorded")
     return batch["drafts"][-1]
-
-
 def durable_call(root, number, request, callback, interrupt=None):
     manifest, batch = _verify_drafting(root)
     remaining = batch["selection"][len(batch["drafts"]):]
@@ -149,6 +147,7 @@ def accept_response(root, number, interrupt=None):
 
 
 def accept_manual(root):
+    WR.capture_manual(root)
     _, batch = _verify_drafting(root, True)
     if batch["mode"] != "manual":
         raise BatchError("manual completion cannot enter an API batch")
@@ -214,6 +213,7 @@ def freeze(root, interrupt=None):
 def _require_frozen_batch(root):
     manifest = CP.load(root)
     batch = manifest.get("draft_batch")
+    WR.require_clear(root, batch)
     if not batch or batch.get("state") != "FROZEN" or batch.get("pending") is not None:
         raise BatchError("complete first-draft batch is not frozen")
     S.identity(root, manifest, batch)

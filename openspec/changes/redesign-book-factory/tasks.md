@@ -645,8 +645,8 @@ the SHA without reopening the implementation verdict.
 
 ### RF-14 — Route defects to the earliest owning stage
 
-- [ ] Replace `SPEC GAP:`-only routing and broaden all owner labels.
-- Status: `TODO`
+- [x] Replace `SPEC GAP:`-only routing and broaden all owner labels.
+- Status: `DONE`
 - Evidence class / report: demonstrated intelligence loss; §§4 chains 1–4,
   5 cause 4, 7 actions 2–3.
 - Problem / root cause: detected plan/research/context defects are translated
@@ -662,9 +662,25 @@ the SHA without reopening the implementation verdict.
   advances and no unrelated artifact regenerates.
 - Verification: routing/invalidation tests, `bash scripts/check.sh`.
 - Dependencies: RF-12, RF-13.
-- Implementation attempts: `0`; latest: `—`.
-- Review attempts: `0`; latest verdict / findings: `—`.
-- Commit / push: `—`.
+- Implementation attempts: `3`; final verification: focused 20/20, affected
+  110/110, full 257/257; strict OpenSpec, diff, compile, and size gates pass.
+  - Attempt 1: established the canonical eight-owner vocabulary, receipt-bound
+    reviewer/judge routes, and exact owner-plus-downstream regeneration scope.
+  - Attempt 2: made API/manual writer refusals durable and routed judges from all
+    parsed findings before the top-five presentation cutoff.
+  - Attempt 3: enforced one canonical refusal serialization and added the
+    hash-bound monotonic operation-level refusal anchor.
+- Review attempts: `3`.
+  - Review 1: `NEEDS_CHANGES` — the live writer refusal was not a durable
+    resumable route, and judge routing ignored upstream findings below the
+    top-five display cutoff.
+  - Review 2: `NEEDS_CHANGES` — refusal JSON accepted noncanonical
+    serializations, and coordinated descriptor/evidence deletion could remove
+    the terminal writer route.
+  - Review 3: `PASS` — independent normal review returned no findings.
+- Commit / push: accepted subject
+  `feat(routing): route defects to earliest owner`; exact SHA deferred until the
+  root agent creates the commit.
 
 ### RF-15 — Add defect-scoped repair and editorial escalation
 

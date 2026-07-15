@@ -120,27 +120,14 @@ class WriterContextTests(WriterFixture, unittest.TestCase):
             api.assert_not_called()
             manual.assert_not_called()
 
-    def test_spec_gap_response_keeps_existing_rejection_and_no_write_boundary(self):
-        """Infra: preserve the API response parsing/error boundary."""
-        candidate = self.candidate("spec-gap")
-        self.generate(candidate)
-        chapter = self.book(candidate) / "chapters/chapter-01.md"
-        before = chapter.read_bytes()
-        with mock.patch.object(SET.SC, "require_subject_contract"), \
-                mock.patch.object(RUN.judges, "endpoint", return_value=("api", "key")), \
-                mock.patch.object(RUN.ME, "chat", return_value="SPEC GAP: missing authority") as api:
-            with self.assertRaisesRegex(SystemExit, "report or refusal, not a chapter"):
-                RUN.write_chapters({"writer_model": "writer"},
-                                   self.book(candidate), [1, 2], candidate)
-        api.assert_called_once()
-        self.assertEqual(before, chapter.read_bytes())
-
     def test_contract_and_manual_route_name_no_legacy_writer_context(self):
         """Infra: the authorized writer has one API/manual context contract."""
         prompt = (ROOT / "prompts/chapter-writer.md").read_text()
         compact = " ".join(prompt.split())
         for required in ("authoritative semantic commission", "Do not resolve plan IDs",
-                         "Scare", "SPEC GAP:", "25–33", "8–10%", "15–17"):
+                         "Scare", "ROUTE REFUSAL:",
+                         "repair_owner_and_regenerate_downstream",
+                         "25–33", "8–10%", "15–17"):
             self.assertIn(required.casefold(), compact.casefold())
         output = io.StringIO()
         authority = {"contract": "CAPTURED-CONTRACT\n",
@@ -152,6 +139,7 @@ class WriterContextTests(WriterFixture, unittest.TestCase):
         self.assertIn("CAPTURED-CONTRACT", instructions)
         self.assertIn("CAPTURED-COMMISSION", instructions)
         self.assertIn("never rereading", instructions)
+        self.assertIn("manual-chapter-NN.txt", instructions)
         self.assertNotIn("style-guide.md", instructions)
         self.assertNotIn("master-plan.md", instructions)
 

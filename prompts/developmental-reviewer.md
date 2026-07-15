@@ -26,10 +26,10 @@ claim, or prescribe a source repair.
 
 For every finding, use only the supplied closed category, symptom, ownership
 basis, owner, and structural action codes. Route to the earliest owner:
-framing for a journey-definition conflict, planning for a defective card
-sequence, commissioning for authority lost between cards and commissions, and
-writing only when accepted cards and commissions are adequate but the frozen
-drafts fail to enact them. Never route upstream authority gaps to the writer.
+framing for a journey-definition conflict, plan for a defective card
+sequence, commission/context for authority lost between cards and commissions,
+and prose only when accepted cards and commissions are adequate but the frozen
+drafts fail to enact them. Never route upstream authority gaps to the prose owner.
 
 Return one bare JSON object matching the supplied schema and echo the exact
 `task_sha256`. `PASS` has no findings. `NEEDS_CHANGES` has one to six compact
