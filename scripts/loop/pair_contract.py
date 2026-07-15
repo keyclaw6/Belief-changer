@@ -65,17 +65,24 @@ def evaluation_paths(cfg, root: Path) -> list[str]:
     ref_dir = relative(cfg.get("reference_dir", ""), root)
     ref_root = root / ref_dir
     paths = [rubric]
+    product_rubric = cfg.get("product_effect_rubric")
+    if product_rubric:
+        product_rubric = relative(product_rubric, root)
+        _file(root / product_rubric, root, "product-effect rubric")
+        paths.append(product_rubric)
     for path in _files(ref_root, root, "reference directory"):
         if path.name == "reference-metrics.json" or path.suffix.lower() in (".md", ".txt"):
             paths.append(path.relative_to(root).as_posix())
     metrics = f"{ref_dir}/reference-metrics.json"
     if metrics not in paths:
         raise ContractError(f"reference metrics are missing: {root / metrics}")
-    results = cfg.get("results_tsv")
-    if results:
+    for key in ("results_tsv", "causal_results_jsonl"):
+        results = cfg.get(key)
+        if not results:
+            continue
         result_rel = relative(results, root)
         if os.path.lexists(root / result_rel):
-            _file(root / result_rel, root, "results history")
+            _file(root / result_rel, root, "decision history")
             paths.append(result_rel)
     return sorted(set(paths))
 

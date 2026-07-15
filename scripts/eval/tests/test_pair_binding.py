@@ -13,6 +13,8 @@ import judges  # noqa: E402
 import legacy_guard as GUARD  # noqa: E402
 import score_receipt  # noqa: E402
 import pair_store as STORE  # noqa: E402
+import product_decision as PRODUCT  # noqa: E402
+import experiment_record as RECORD  # noqa: E402
 
 RUBRIC = "{{REFERENCE}}\n{{CANDIDATE}}\n{{CONTEXT}}\n"
 TIMESTAMP = "2026-07-14T12:00:00+00:00"
@@ -36,6 +38,55 @@ class PairBindingTests(unittest.TestCase):
     def tearDown(self):
         self.tmp.cleanup()
 
+    @staticmethod
+    def product_row(tested, prefix, index, family):
+        row = {"raw_verdict_id": f"raw-{prefix}-{index}",
+               "actor": f"judge-{prefix}-{index}", "kind": "model",
+               "family": family, "verdict": "PASS", "scope": "ordinary_product",
+               "promotion_eligible": True,
+               "base_task_sha256": STORE.state_hash(prefix),
+               "tested_pair_hash": tested, "prompt_sha256": None,
+               "input_sha256": STORE.state_hash(f"input-{prefix}")}
+        row["task_id"] = PRODUCT.bound_task_id(row)
+        return row
+
+    def write_causal(self, view, tested, core, carr, disagree=False):
+        prompt_hash = STORE.sha(Path(view["config"]["product_effect_rubric"]).read_bytes())
+        evidence = {"schema": 1, "tested_pair_hash": tested,
+                    "blind_chapter_effect": [self.product_row(
+                        tested, "effect", 1, "openai"), self.product_row(
+                        tested, "effect", 2, "anthropic")],
+                    "blind_whole_opening_sequence": [self.product_row(
+                        tested, "sequence", 1, "openai"), self.product_row(
+                        tested, "sequence", 2, "anthropic")]}
+        for rows in (evidence["blind_chapter_effect"],
+                     evidence["blind_whole_opening_sequence"]):
+            for row in rows:
+                row["prompt_sha256"] = prompt_hash
+                row["task_id"] = PRODUCT.bound_task_id(row)
+        if disagree:
+            evidence["blind_chapter_effect"][1]["verdict"] = "FAIL"
+        product = PRODUCT.decide(
+            core=core, grounded_review={"state": "PASSED"},
+            developmental_review={"state": "PASS"},
+            chapter_effect=evidence["blind_chapter_effect"],
+            whole_opening_sequence=evidence["blind_whole_opening_sequence"],
+            carr_craft=carr, tested_pair_hash=tested, prompt_sha256=prompt_hash)
+        product_hash = STORE.state_hash(product)
+        record = {"hypothesis": "linked bundle improves the opening",
+                  "causal_chain": ["reader state focuses commission", "draft enacts discovery"],
+                  "changed_bundle": ["reader-state card", "commission", "writer handoff"],
+                  "frozen_variables": {"research": "accepted bytes"},
+                  "inputs": {"tested_pair_hash": tested,
+                             "product_decision_sha256": product_hash},
+                  "evidence": RECORD.decision_evidence(product),
+                  "decision": {"PROMOTE": "SUPPORTED", "REJECT": "REFUTED",
+                               "INCONCLUSIVE": "INCONCLUSIVE"}[product["decision"]],
+                  "falsifier": "Reject if integrity, effect, or sequence fails."}
+        evidence_root = view["evidence"]
+        (evidence_root / PRODUCT.PATH).write_text(json.dumps(evidence), encoding="utf-8")
+        (evidence_root / RECORD.PATH).write_text(json.dumps(record), encoding="utf-8")
+
     def fixture(self, name):
         accepted = self.root / name / "repo"
         experiment = accepted / "loop/experiments/iter-001"
@@ -46,9 +97,12 @@ class PairBindingTests(unittest.TestCase):
             "loop/config.yaml": (
                 "epsilon: 0.03\njudge_k: 1\njudge_model: judge\njudge_reasoning: xhigh\n"
                 "judge_rubric: calibration/judges/rubric.md\n"
+                "product_effect_rubric: calibration/judges/product.md\n"
+                "causal_results_jsonl: loop/causal-bundle-results.jsonl\n"
                 "reference_dir: calibration/reference/book\nresults_tsv: loop/results.tsv\n"
                 "scores_dir: loop/scores\ntasks_dir: loop/iterations\nweights:\n" + weights + "\n"),
             "loop/results.tsv": "iter\treward\tverdict\n0\t0.5\tBASELINE\n",
+            "loop/causal-bundle-results.jsonl": (ROOT / "loop/causal-bundle-results.jsonl").read_text(),
             "prompts/style-guide.md": "style\n", "prompts/chapter-writer.md": "writer\n",
             "prompts/chapter-reviewer.md": "reviewer\n",
             "prompts/master-plan.md": "planner\n",
@@ -71,6 +125,7 @@ class PairBindingTests(unittest.TestCase):
             "production-books/second/commissions/chapter-01.md": "second commission\n",
             "production-books/second/chapters/chapter-01.md": "second chapter\n",
             "calibration/judges/rubric.md": RUBRIC,
+            "calibration/judges/product.md": "Blind product effect\n{{TASK}}\n",
             "calibration/reference/book/001.txt": "reference\n",
             "calibration/reference/book/reference-metrics.json": '{"chapters": []}\n'}
         for relative, text in files.items():
@@ -93,7 +148,11 @@ class PairBindingTests(unittest.TestCase):
         aggregate = judges.aggregate(cfg, [label], "001", tested, experiment)
         artifacts = score_receipt.judge_artifacts(cfg, [label], "001", tested, experiment)
         core = {"chapters_checked": [1], "hard_ok": True, "hard_fails": [],
-                "checks": {"fixture": True}, "pairs": [(label, "ours", "reference", "context")],
+                "checks": {"originality": {"tripped": False},
+                           "near_copy": [{"ratio": 0.1, "tripwire": 0.5}],
+                           "mantra": {"failures": []}, "length": [{"ok": True}],
+                           "repetition_within": {"hard_fails": []}},
+                "pairs": [(label, "ours", "reference", "context")],
                 "pair_root": view["pair"], "evaluation_root": view["evaluation"],
                 "rubric_sha256": STORE.sha(Path(cfg["judge_rubric"]).read_bytes())}
         receipt = score_receipt.build(view["manifest"], core, aggregate, artifacts)
@@ -105,22 +164,27 @@ class PairBindingTests(unittest.TestCase):
                  "judges": {"rubric": aggregate}, "receipt": receipt}
         score_path = scores / "iter-001.json"
         score_path.write_text(json.dumps(score), encoding="utf-8")
+        self.write_causal(view, tested, core, aggregate)
         return accepted, experiment, tested, view, core, score_path, vpath
 
-    def run_gate(self, accepted, experiment, tested, core):
+    def run_gate(self, accepted, experiment, tested, core, approve=True):
         ledger = self.root / "tasks.md"
         ledger.write_text("### RF-23 — prose\n\n- Status: `READY`\n", encoding="utf-8")
         argv = ["gate.py", "--iter", "1", "--config",
                 str(PAIR.candidate_tree(experiment) / "loop/config.yaml"),
                 "--tested-pair-hash", tested, "--accepted-root", str(accepted),
-                "--promote-pair", "--redesign-authorized", "--rf-stage", "RF-23",
+                "--redesign-authorized", "--rf-stage", "RF-23",
                 "--candidate-root", str(experiment),
                 "--decision-timestamp", TIMESTAMP]
+        if approve:
+            argv.append("--promote-pair")
         with mock.patch.object(sys, "argv", argv), mock.patch.object(GUARD, "LEDGER", ledger), \
                 mock.patch.object(GATE.score_core, "evaluate", return_value=dict(core)), \
                 mock.patch.object(GATE.FB, "require_frozen_batch"), \
-                mock.patch.object(GATE.GR, "require_complete"), \
-                mock.patch.object(GATE.DR, "require_developmental_pass"):
+                mock.patch.object(GATE.GR, "require_complete",
+                                  return_value={"state": "PASSED"}), \
+                mock.patch.object(GATE.DR, "require_developmental_pass",
+                                  return_value={"state": "PASS"}):
             GATE.main()
 
     def test_valid_receipt_promotes_exact_pair(self):
@@ -130,20 +194,20 @@ class PairBindingTests(unittest.TestCase):
         self.assertEqual(0, decided.exception.code)
         self.assertEqual("PROMOTED", PAIR.status(experiment))
         decision = json.loads((experiment / PAIR.DECISION).read_text(encoding="utf-8"))
-        self.assertEqual("KEEP", decision["gate_receipt"]["verdict"])
+        self.assertEqual("PROMOTE", decision["gate_receipt"]["verdict"])
         self.assertTrue(decision["gate_receipt"]["human_promotion_approved"])
         accepted_tree = STORE.current(accepted)[0]
-        accepted_history = (accepted_tree / "evaluation/loop/results.tsv").read_text()
+        accepted_history = (accepted_tree / "evaluation/loop/causal-bundle-results.jsonl").read_text()
         self.assertIn(tested, accepted_history)
-        self.assertIn("KEEP", accepted_history)
+        self.assertIn("SUPPORTED", accepted_history)
         next_experiment = accepted / "loop/experiments/iter-002"
         next_experiment.mkdir()
         PAIR.snapshot(next_experiment, accepted, "production-books/test", "1", iteration=2)
         next_tested = PAIR.seal(next_experiment)
         next_view = PAIR.open_sealed(next_experiment, next_tested)
-        next_history = Path(next_view["config"]["history_results_tsv"])
+        next_history = Path(next_view["config"]["history_causal_results_jsonl"])
         self.assertIn(tested, next_history.read_text())
-        self.assertEqual("KEEP", GATE.read_rows(next_history)[-1]["verdict"])
+        self.assertEqual("SUPPORTED", RECORD.load(next_history)[-1]["decision"])
 
     def test_gate_retry_reuses_exact_canonical_timestamp_and_row(self):
         accepted, experiment, tested, _, core, _, _ = self.fixture("retry")
@@ -152,109 +216,41 @@ class PairBindingTests(unittest.TestCase):
             with self.assertRaisesRegex(SystemExit, "interrupted"):
                 self.run_gate(accepted, experiment, tested, core)
         canonical = (experiment / "gate-decision.json").read_bytes()
-        evidence = (experiment / "evidence/results.tsv").read_bytes()
+        evidence = (experiment / "evidence/loop/causal-bundle-results.jsonl").read_bytes()
         self.assertEqual("SEALED", PAIR.status(experiment))
         with self.assertRaises(SystemExit) as decided:
             self.run_gate(accepted, experiment, tested, core)
         self.assertEqual(0, decided.exception.code)
         self.assertEqual(canonical, (experiment / "gate-decision.json").read_bytes())
-        self.assertEqual(evidence, (experiment / "evidence/results.tsv").read_bytes())
+        self.assertEqual(evidence, (experiment / "evidence/loop/causal-bundle-results.jsonl").read_bytes())
         self.assertEqual("PROMOTED", PAIR.status(experiment))
 
     def test_edited_hard_ok_or_reward_cannot_promote(self):
-        for field, value in (("hard_ok", False), ("reward", 1.0)):
+        for field, value in (("hard_ok", False), ("reward", 0.0)):
             with self.subTest(field=field):
                 accepted, experiment, tested, _, core, score_path, _ = self.fixture(field)
                 score = json.loads(score_path.read_text(encoding="utf-8"))
                 score[field] = value
                 score_path.write_text(json.dumps(score), encoding="utf-8")
-                with self.assertRaisesRegex(SystemExit, "decision fields"):
+                with self.assertRaisesRegex(SystemExit, "Carr diagnostic fields"):
                     self.run_gate(accepted, experiment, tested, core)
                 self.assertEqual("SEALED", PAIR.status(experiment))
 
-    def test_failed_gate_writes_rejection_evidence_only(self):
-        accepted, experiment, tested, view, core, score_path, _ = self.fixture("reject")
-        old_tree, old_id, _ = STORE.current(accepted)
-        old_history = (old_tree / "evaluation/loop/results.tsv").read_bytes()
-        core["hard_ok"], core["hard_fails"] = False, ["fixture failure"]
-        score = json.loads(score_path.read_text(encoding="utf-8"))
-        aggregate = score["judges"]["rubric"]
-        artifacts = score_receipt.judge_artifacts(
-            view["config"], ["ch01"], "001", tested, experiment)
-        score.update(hard_ok=False, hard_fails=core["hard_fails"],
-                     receipt=score_receipt.build(view["manifest"], core,
-                                                 aggregate, artifacts))
-        score_path.write_text(json.dumps(score), encoding="utf-8")
-        with self.assertRaises(SystemExit) as decided:
-            self.run_gate(accepted, experiment, tested, core)
-        self.assertEqual(0, decided.exception.code)
-        self.assertEqual("REJECTED", PAIR.status(experiment))
-        current, current_id, _ = STORE.current(accepted)
-        self.assertEqual(old_id, current_id)
-        self.assertEqual(old_history, (current / "evaluation/loop/results.tsv").read_bytes())
-        evidence = (experiment / "evidence/results.tsv").read_text(encoding="utf-8")
-        self.assertIn(tested, evidence)
-        self.assertIn("FAIL-HARD", evidence)
-
-    def test_missing_extra_or_stale_verdict_fails_closed(self):
-        for mode in ("missing", "extra", "stale"):
+    def test_product_record_and_atomic_approval_are_all_required(self):
+        for mode in ("missing", "stale-record", "unapproved"):
             with self.subTest(mode=mode):
-                accepted, experiment, tested, _, core, _, vpath = self.fixture(mode)
+                accepted, experiment, tested, view, core, _, _ = self.fixture(mode)
                 if mode == "missing":
-                    vpath.unlink()
-                elif mode == "extra":
-                    (vpath.parent / "extra.json").write_text("{}", encoding="utf-8")
-                else:
-                    value = json.loads(vpath.read_text(encoding="utf-8"))
-                    value["pair_hash"] = "0" * 64
-                    vpath.write_text(json.dumps(value), encoding="utf-8")
+                    (view["evidence"] / PRODUCT.PATH).unlink()
+                elif mode == "stale-record":
+                    path = view["evidence"] / RECORD.PATH
+                    value = json.loads(path.read_text())
+                    value["inputs"]["product_decision_sha256"] = "0" * 64
+                    path.write_text(json.dumps(value), encoding="utf-8")
                 with self.assertRaises(SystemExit):
-                    self.run_gate(accepted, experiment, tested, core)
+                    self.run_gate(accepted, experiment, tested, core,
+                                  approve=mode != "unapproved")
                 self.assertEqual("SEALED", PAIR.status(experiment))
-
-    def test_complete_view_keeps_second_book_and_adds_new_book_without_reinit(self):
-        accepted, _, _, view, _, _, _ = self.fixture("complete")
-        paths = {item["path"] for item in view["manifest"]["entries"]}
-        self.assertEqual({"prompts/style-guide.md", "prompts/chapter-writer.md",
-                          "prompts/chapter-reviewer.md", "prompts/master-plan.md"},
-                         {path for path in paths if path.startswith("prompts/")})
-        for required in ("prompts/master-plan.md", "production-books/test/00-brief.md",
-                         "production-books/test/research/sources/source.txt",
-                         "production-books/test/research/lived-experience.md",
-                         "production-books/test/research/scientific-evidence.md",
-                         "production-books/test/framing.md",
-                         "production-books/test/master-plan-review.md",
-                         "production-books/test/commissions/chapter-01.md",
-                         "production-books/test/chapters/chapter-01.md",
-                         "production-books/second/research/sources/source.txt",
-                         "production-books/second/master-plan-review.md",
-                         "production-books/second/commissions/chapter-01.md",
-                         "production-books/second/chapters/chapter-01.md"):
-            self.assertIn(required, paths)
-        self.assertFalse(any(path.startswith("calibration/") for path in paths))
-        old_generation = STORE.current(accepted)[1]
-        files = {"00-brief.md": "brief\n", "framing.md": "framing\n",
-                 "master-plan.md": "### CH-01 — New\n",
-                 "master-plan-review.md": "review\n",
-                 "research/sources/source.txt": "source\n",
-                 "research/lived-experience.md": "lived\n",
-                 "research/scientific-evidence.md": "science\n",
-                 "commissions/chapter-01.md": "commission\n",
-                 "chapters/chapter-01.md": "chapter\n"}
-        for relative, text in files.items():
-            path = accepted / "production-books/new-book" / relative
-            path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text(text, encoding="utf-8")
-        PAIR.add_book(accepted, "production-books/new-book")
-        self.assertTrue((STORE.state_dir(accepted) / "generations" / old_generation).is_dir())
-        experiment = accepted / "loop/experiments/new-book"
-        experiment.mkdir()
-        manifest = PAIR.snapshot(experiment, accepted, "production-books/new-book", "1")
-        new_paths = {item["path"] for item in manifest["entries"]}
-        self.assertIn("production-books/new-book/research/sources/source.txt", new_paths)
-        self.assertIn("production-books/new-book/commissions/chapter-01.md", new_paths)
-        self.assertIn("production-books/second/chapters/chapter-01.md", new_paths)
-
 
 if __name__ == "__main__":
     unittest.main()

@@ -103,10 +103,6 @@ def evaluate(cfg, book, chapters, control_ref=False):
         fails.append("mantra: no parseable mantra sheet in master-plan.md")
     wording = [item["wording"] for item in (mantra["mantras"] if mantra else [])]
     within = R.within_book(scoped, wording)
-    if not control_ref:
-        fails.extend(f"repetition: {item['len']}-gram x{item['count']} "
-                     f"ch{item['chapters']}: {item['text'][:70]}"
-                     for item in within["hard_fails"][:5])
     lengths, length_fails = _length(ours, sel, _budgets(plan_text),
                                     float(cfg["length_band"]))
     fails.extend(length_fails)

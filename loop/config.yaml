@@ -17,6 +17,11 @@
 campaign: factory-v3-rubric-1
 instrument_version: carr-likeness-rubric-1
 
+# RF-16/RF-19 product lineage. Legacy campaign fields below remain readable.
+product_effect_rubric: calibration/judges/product-effect-rubric.md
+causal_results_jsonl: loop/causal-bundle-results.jsonl
+history_results_tsv: loop/results.tsv
+
 # --- Writer: Claude Opus 4.6, reasoning disabled, via OpenRouter ---
 writer_model: anthropic/claude-4.6-opus
 writer_provider: openrouter

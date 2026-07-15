@@ -5,7 +5,6 @@ import json
 import os
 import sys
 from pathlib import Path
-
 HERE = Path(__file__).resolve()
 sys.path.insert(0, str(HERE.parent))
 import loopcfg  # noqa: E402
@@ -19,7 +18,8 @@ import pair_store as PS  # noqa: E402
 import first_draft_batch as FB  # noqa: E402
 import grounded_review as GR  # noqa: E402
 import developmental_review as DR  # noqa: E402
-
+import product_decision as PD  # noqa: E402
+import experiment_record as ER  # noqa: E402
 COLUMNS = ["iter", "timestamp_utc", "campaign", "instrument", "hypothesis",
            "reward", "hard_ok", "verdict", "worst_dimension", "top_suggestion",
            "notes", "tested_pair_hash"]
@@ -67,8 +67,6 @@ def _print_revert(iter_no, score_path, assets=None, book="", isolated=False):
         print(f"        git checkout -- {book}/master-plan.md   # only if this "
               "iteration re-ran the plan")
     print(f"        rm {score_path}")
-
-
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--iter", type=int, help="iteration number (else newest iter-*.json)")
@@ -85,7 +83,6 @@ def main():
                     help="pinned UTC timestamp; required for resumable sealed-pair gating")
     LG.add_arguments(ap)
     a = ap.parse_args()
-
     candidate = LG.require_authorized(a, entrypoint="gate.py")
     pair_mode = os.path.lexists(candidate / CP.MANIFEST)
     if pair_mode:
@@ -112,7 +109,6 @@ def main():
     scores_dir = Path(cfg["scores_dir"])
     tsv = Path(cfg["results_tsv"])
     epsilon = float(cfg["epsilon"])
-
     score_path = (scores_dir / f"iter-{a.iter:03d}.json") if a.iter is not None \
         else find_latest_score(scores_dir)
     LG.require_targets(candidate, score_path)
@@ -122,7 +118,6 @@ def main():
     if pair_mode and score.get("tested_pair_hash") != a.tested_pair_hash:
         raise SystemExit("gate: score artifact belongs to a different sealed pair")
     iter_no = a.iter if a.iter is not None else score_path.stem.split("-")[-1]
-
     assets = [s.strip() for s in a.asset.split(",") if s.strip()] or None
     book = str(view["pair"] / manifest["run"]["book"]) if pair_mode \
         else score.get("book") or ""
@@ -136,8 +131,8 @@ def main():
         return
     try:
         FB.require_frozen_batch(candidate)
-        GR.require_complete(candidate)
-        DR.require_developmental_pass(candidate)
+        grounded = GR.require_complete(candidate)
+        developmental = DR.require_developmental_pass(candidate)
     except (FB.BatchError, GR.GroundedReviewError, DR.DevelopmentalReviewError) as exc:
         raise SystemExit(f"gate: grounded PASS and developmental PASS over frozen first-draft batch required: "
                          f"{exc}") from exc
@@ -162,22 +157,59 @@ def main():
         score_receipt.verify(score.get("receipt"), expected)
         if (score.get("hard_ok"), score.get("hard_fails"), score.get("reward")) != (
                 core["hard_ok"], core["hard_fails"], aggregate["reward"]):
-            raise SystemExit("gate: score decision fields do not match recomputed inputs")
-        hard_ok, reward = core["hard_ok"], aggregate["reward"]
-        hard_fails, rub = core["hard_fails"], aggregate
-    else:
-        hard_ok, reward = bool(score.get("hard_ok")), score.get("reward")
-        hard_fails = score.get("hard_fails", [])
-        rub = ((score.get("judges") or {}).get("rubric") or {})
+            raise SystemExit("gate: Carr diagnostic fields do not match recomputed inputs")
+        product_path, record_path = (view["evidence"] / PD.PATH,
+                                     view["evidence"] / ER.PATH)
+        history = Path(cfg["history_causal_results_jsonl"])
+        output = Path(cfg["causal_results_jsonl"])
+        LG.require_targets(candidate, product_path, record_path, history, output)
+        try:
+            evidence = PD.load_evidence(product_path, a.tested_pair_hash)
+            product = PD.decide(
+                core=core, grounded_review=grounded,
+                developmental_review=developmental,
+                chapter_effect=evidence["blind_chapter_effect"],
+                whole_opening_sequence=evidence["blind_whole_opening_sequence"],
+                carr_craft=aggregate, tested_pair_hash=a.tested_pair_hash,
+                prompt_sha256=PS.sha(Path(cfg["product_effect_rubric"]).read_bytes()))
+            product_hash = PS.state_hash(product)
+            record = ER.bind(ER.load_one(record_path), product,
+                             a.tested_pair_hash, product_hash)
+            if product["decision"] == "PROMOTE" and not a.promote_pair:
+                raise SystemExit(
+                    "gate: PROMOTE lacks explicit human/founder promotion approval")
+            _receipt, history_bytes = GD.ensure_causal(
+                candidate, manifest, expected, history, record, product_hash,
+                product["decision"], a.promote_pair, a.decision_timestamp)
+            CP.verify_sealed(candidate, a.tested_pair_hash)
+        except (PD.ProductDecisionError, ER.RecordError, GD.DecisionError,
+                CP.PairError) as exc:
+            raise SystemExit(f"gate: causal product decision rejected: {exc}") from exc
+        LG.require_output(candidate, output)
+        if output.exists() and output.read_bytes() != history_bytes:
+            raise SystemExit("gate: existing causal lineage differs from recomputed bytes")
+        if not output.exists():
+            PS.write(output, history_bytes)
+        try:
+            if product["decision"] == "PROMOTE":
+                CP.promote(candidate, Path(a.accepted_root), a.tested_pair_hash,
+                           history_bytes)
+                print(f"[gate] promoted exact tested pair {a.tested_pair_hash}")
+            else:
+                CP.reject(candidate, a.tested_pair_hash)
+        except CP.PairError as exc:
+            raise SystemExit(f"gate: pair decision failed closed: {exc}") from exc
+        print(f"[gate] {product['decision']} recorded in {output}")
+        sys.exit(0)
+    hard_ok, reward = bool(score.get("hard_ok")), score.get("reward")
+    hard_fails = score.get("hard_fails", [])
+    rub = ((score.get("judges") or {}).get("rubric") or {})
     worst = (rub.get("worst_dimensions") or [{}])[0].get("dimension", "")
     top_sugg = (rub.get("suggestions") or [{}])[0].get("suggestion", "")
-
     history = Path(cfg.get("history_results_tsv", tsv))
     rows = read_rows(history)
     best, best_iter = best_accepted(rows)
-
-    campaign = cfg.get("campaign") if pair_mode else score.get("campaign")
-    instrument = cfg.get("instrument_version") if pair_mode else score.get("instrument_version")
+    campaign, instrument = score.get("campaign"), score.get("instrument_version")
     print(f"[gate] iter={iter_no} campaign={campaign} instrument={instrument}")
     print(f"[gate] hard_checks={'PASS' if hard_ok else 'FAIL'} "
           f"({len(hard_fails)} failures)")
@@ -185,7 +217,6 @@ def main():
         print(f"        - {f}")
     print(f"[gate] reward={reward}  best_accepted={best}"
           + (f" (iter {best_iter})" if best_iter else "") + f"  epsilon={epsilon}")
-
     if reward is None:
         print("[gate] NO-DECISION — reward is null (judge verdicts missing). Dispatch the "
               "task files as fresh native Sol subagents, save the verdicts, re-run "
@@ -193,9 +224,8 @@ def main():
         sys.exit(2)
     if not hard_ok:
         verdict = "FAIL-HARD"
-        action = "Reject the candidate." if a.tested_pair_hash else "Revert the amendment."
-        print(f"[gate] FAIL-HARD — hard checks failed; reward not consulted. {action}")
-        _print_revert(iter_no, score_path, assets, book, bool(a.tested_pair_hash))
+        print("[gate] FAIL-HARD — hard checks failed; reward not consulted. Revert the amendment.")
+        _print_revert(iter_no, score_path, assets, book)
     elif best is None:
         verdict = "BASELINE"
         print("[gate] BASELINE — first scored iteration; accepted as the starting point.")
@@ -210,7 +240,6 @@ def main():
         verdict = "REVERT"
         print(f"[gate] REVERT — reward {reward} < best {best} - epsilon {epsilon}.")
         _print_revert(iter_no, score_path, assets, book, bool(a.tested_pair_hash))
-
     row = {"iter": iter_no,
            "campaign": campaign or "",
            "instrument": instrument or "",
@@ -218,41 +247,10 @@ def main():
            "verdict": verdict, "worst_dimension": worst,
            "top_suggestion": _clean(top_sugg),
            "notes": Path(book).name or book,
-           "tested_pair_hash": a.tested_pair_hash or ""}
-    if pair_mode:
-        if verdict in ACCEPTED and not a.promote_pair:
-            raise SystemExit("gate: accepted pair lacks explicit human promotion approval")
-        try:
-            gate_receipt, history_bytes = GD.ensure(
-                candidate, manifest, expected, history, row, COLUMNS, epsilon,
-                best, best_iter, verdict, a.promote_pair, a.decision_timestamp)
-            CP.verify_sealed(candidate, a.tested_pair_hash)
-        except (GD.DecisionError, CP.PairError) as exc:
-            raise SystemExit(f"gate: canonical decision rejected: {exc}") from exc
-        row = gate_receipt["row"]
-        LG.require_output(candidate, tsv)
-        if tsv.exists() and tsv.read_bytes() != history_bytes:
-            raise SystemExit("gate: existing experiment history differs from recomputed row")
-        if not tsv.exists():
-            PS.write(tsv, history_bytes)
-    else:
-        row["timestamp_utc"] = dt.datetime.now(dt.timezone.utc).isoformat(
-            timespec="seconds")
-    if a.tested_pair_hash:
-        try:
-            if verdict in ACCEPTED:
-                CP.promote(candidate, Path(a.accepted_root), a.tested_pair_hash,
-                           history_bytes)
-                print(f"[gate] promoted exact tested pair {a.tested_pair_hash}")
-            else:
-                CP.reject(candidate, a.tested_pair_hash)
-        except CP.PairError as exc:
-            raise SystemExit(f"gate: pair decision failed closed: {exc}") from exc
-    if not pair_mode:
-        append_row(tsv, row, candidate)
+           "tested_pair_hash": ""}
+    row["timestamp_utc"] = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
+    append_row(tsv, row, candidate)
     print(f"[gate] appended {verdict} row to {tsv}")
     sys.exit(0)  # decided = 0, always; the verdict is the row, not the exit code
-
-
 if __name__ == "__main__":
     main()

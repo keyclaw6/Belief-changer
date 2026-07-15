@@ -135,9 +135,10 @@ def _promotion_evaluation(root, accepted, manifest, history_bytes):
     source = CP.evaluation_tree(root)
     pair = CP.candidate_tree(root)
     cfg = loopcfg.load(PS._safe_file(pair / manifest["run"]["config"], pair))
-    history_rel = PC.relative(cfg.get("results_tsv", ""), source)
+    history_rel = PC.relative(
+        cfg.get("causal_results_jsonl") or cfg.get("results_tsv", ""), source)
     if history_rel not in {item["path"] for item in manifest["evaluation"]}:
-        raise CP.PairError("accepted decision history is not a sealed evaluation member")
+        raise CP.PairError("accepted decision lineage is not a sealed evaluation member")
     stage = PS.state_dir(accepted) / ".promotion-evaluation-tmp"
     PS.discard_stage(stage, PS.state_dir(accepted))
     PS._copy_tree(stage, source, CP._bare(manifest["evaluation"]))

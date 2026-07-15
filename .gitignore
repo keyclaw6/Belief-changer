@@ -19,6 +19,8 @@ calibration/mlruns/
 
 # Judge task files embed extracted reference text — never commit (PROGRAM §7).
 loop/iterations/*/judging/tasks/
+# H-F04 contains anonymous reference prose and raw calibration verdicts.
+loop/iterations/*/judging/h-f04/
 
 # dotenvx private keys stay outside Git; encrypted .env files are tracked.
 .env.keys

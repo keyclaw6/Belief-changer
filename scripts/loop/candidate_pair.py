@@ -238,12 +238,12 @@ def _view(root, manifest):
     tree = candidate_tree(root)
     cfg = dict(loopcfg.load(PS._safe_file(tree / manifest["run"]["config"], tree)))
     evaluation, evidence = evaluation_tree(root), evidence_tree(root)
-    cfg.update(judge_rubric=str(evaluation / cfg["judge_rubric"]),
+    cfg.update(judge_rubric=str(evaluation / cfg["judge_rubric"]), product_effect_rubric=str(evaluation / cfg["product_effect_rubric"]) if cfg.get("product_effect_rubric") else "",
                reference_dir=str(evaluation / cfg["reference_dir"]),
                reference_epub="SEALED-EVALUATION-DOES-NOT-READ-EPUB",
-               history_results_tsv=str(evaluation / cfg.get("results_tsv", "loop/results.tsv")),
+               history_results_tsv=str(evaluation / cfg.get("results_tsv", "loop/results.tsv")), history_causal_results_jsonl=str(evaluation / cfg["causal_results_jsonl"]) if cfg.get("causal_results_jsonl") else "",
                scores_dir=str(evidence / "scores"), tasks_dir=str(evidence / "iterations"),
-               results_tsv=str(evidence / "results.tsv"))
+               results_tsv=str(evidence / "results.tsv"), causal_results_jsonl=str(evidence / cfg["causal_results_jsonl"]) if cfg.get("causal_results_jsonl") else "")
     return {"manifest": manifest, "pair": tree,
             "evaluation": evaluation, "evidence": evidence, "config": cfg}
 def pending_sealed(root, tested_hash):

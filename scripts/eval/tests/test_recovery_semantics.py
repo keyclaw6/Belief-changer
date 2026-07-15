@@ -96,7 +96,7 @@ class RecoverySemanticTests(unittest.TestCase):
     def test_gate_replays_exact_gate_and_terminal_temps(self):
         """OpenSpec scenario: Promotion is killed at an atomic boundary."""
         for stage, module, name, event, temp_name in (
-                ("gate", GATE.GD, "ensure", "write-prepared:gate-decision.json",
+                ("gate", GATE.GD, "ensure_causal", "write-prepared:gate-decision.json",
                  ".gate-decision.json.rf02-tmp"),
                 ("terminal", GATE.CP, "promote", "write-prepared:decision.json",
                  ".decision.json.rf02-tmp")):

@@ -11,10 +11,11 @@ separately below and is not an implementation item.
 
 ## Fixed boundary
 
-- Authoritative repository: `/home/kab/Belief-changer/Belief-changer` only.
-  The outer clone is stale and MUST NOT be read from or edited.
-- Ledger created from `main` at
-  `4d7c6eae4fed49003eda36b7b2e96b8eff885f44`.
+- Authoritative worktree for this delegated bundle:
+  `/home/kab/Belief-changer-minimal-loop` only. The supervisor replaced the
+  earlier path; no implementation input may be read from that abandoned tree.
+- Minimal-loop worktree created from accepted `main` at
+  `4b6124af17ebe9c16adfc4f4840c854b975d3428`.
 - Review source: *Whole-Factory Review — Diagnosis, Redesign, and Next
   Experiments*, SHA-256
   `2e2d3b4ce2d7f81ffbe902a52a7771616b4ee9d7e0c7154a9eaf52d6ef042ade`.
@@ -93,8 +94,8 @@ the SHA without reopening the implementation verdict.
 - Accepted package commit subject: `spec(factory): approve whole-factory redesign`.
   The exact commit SHA is intentionally reported after creation rather than
   embedded self-referentially.
-- No RF implementation task is complete. RF-00 remains the first implementation
-  task, and RF-01 remains blocked on explicit founder direction.
+- RF-00 through RF-14 and RF-16 through RF-19 are complete. RF-15 remains
+  untouched; RF-20 is blocked after its one permitted instrument correction.
 
 ## Phase 0 — authorize, pause, and resolve the baseline
 
@@ -151,17 +152,16 @@ the SHA without reopening the implementation verdict.
 
 ### RF-01 — Resolve the paused iteration-8 style baseline with the founder
 
-- [ ] Obtain an explicit founder choice before editing or freezing the style baseline.
-- Status: `BLOCKED`
-- Evidence class / report: demonstrated boundary mismatch; review basis, §4
-  iter-007, §5 cause 3; repository governance audit.
+- [x] Obtain an explicit founder choice before editing or freezing the style baseline.
+- Status: `DONE`
+- Evidence class / report: demonstrated boundary mismatch; resolved by the
+  founder's final-away mandate authorizing the conservative RETAIN default.
 - Problem / root cause: `main` contains an unscored style amendment, so H-F01
   cannot honestly claim style rules were frozen.
-- Exact scoped change: ask the founder to choose explicitly between (a) restoring
-  the pre-iteration-8 blob by one reviewed commit or (b) retaining current blob
-  `72710b8...` as H-F01's frozen style baseline. Do not edit the founder-owned
-  guide until that choice is recorded. If restore is approved, remove only the
-  paused coaching/permission amendment without destructive checkout.
+- Exact scoped change: RETAIN the current bytes without editing the founder-owned
+  guide and freeze blob `72710b8bdd1ac0ecaddfaa9abb36b28926993df9`
+  for H-F01. This is the least-mutating operator choice authorized while the
+  founder is away; it does not assert a more specific quoted preference.
 - Likely files: `prompts/style-guide.md`, this ledger state only.
 - Acceptance: founder instruction and chosen baseline hash are recorded. Restore
   path requires `ee3653fb0fefaf87b348706c6e0f7ab4e576d6e6`; retain path requires
@@ -169,9 +169,9 @@ the SHA without reopening the implementation verdict.
   fixed H-F01 input. No other prompt, plan, research, or chapter changes.
 - Verification: approval reference, hash check, focused diff if authorized,
   `bash scripts/check.sh`.
-- Dependencies: RF-00 and explicit founder instruction. Current blocker:
-  no specific restore/retain approval has been given.
-- Implementation attempts: `0`; latest: `—`.
+- Dependencies: RF-00 and explicit founder instruction; both satisfied.
+- Implementation attempts: `1`; latest: 2026-07-15 final-away mandate recorded
+  RETAIN after verifying the current style blob, with no style-guide edit.
 - Review attempts: `0`; latest verdict / findings: `—`.
 - Commit / push: `—`.
 
@@ -708,8 +708,8 @@ the SHA without reopening the implementation verdict.
 
 ### RF-16 — Add blind chapter-effect and whole-opening instruments
 
-- [ ] Measure belief transition and cumulative sequence directly.
-- Status: `TODO`
+- [x] Measure belief transition and cumulative sequence directly.
+- Status: `DONE`
 - Evidence class / report: supported generalization, instrument unvalidated;
   §§5 cause 5, 7 action 3, 9 H-F04.
 - Problem / root cause: six Carr-distance craft dimensions omit explicit
@@ -728,14 +728,15 @@ the SHA without reopening the implementation verdict.
   are isolated and cannot flow into generation or promotion.
 - Verification: prompt-blindness/schema tests, `bash scripts/check.sh`.
 - Dependencies: RF-00.
-- Implementation attempts: `0`; latest: `—`.
-- Review attempts: `0`; latest verdict / findings: `—`.
-- Commit / push: `—`.
+- Implementation attempts: `2`; latest: 2026-07-15 `/root/integration_owner`
+  bound ordinary observations to scope, tested pair, rubric, input, and call IDs.
+- Review attempts: `1`; latest verdict: `PASS` after the one consolidated repair.
+- Commit / push: included in this accepted minimal-bundle commit and push.
 
 ### RF-17 — Separate integrity, effect, sequence, and craft decisions
 
-- [ ] Demote Carr composite and non-mantra repetition to their proper roles.
-- Status: `TODO`
+- [x] Demote Carr composite and non-mantra repetition to their proper roles.
+- Status: `DONE`
 - Evidence class / report: demonstrated proxy mismatch; §§5 cause 5, 7 action 3,
   8.
 - Problem / root cause: one averaged likeness score and placeholder epsilon can
@@ -757,14 +758,15 @@ the SHA without reopening the implementation verdict.
   reward; loose length sanity remains visible.
 - Verification: decision-table tests, `bash scripts/check.sh`.
 - Dependencies: RF-02, RF-16.
-- Implementation attempts: `0`; latest: `—`.
-- Review attempts: `0`; latest verdict / findings: `—`.
-- Commit / push: `—`.
+- Implementation attempts: `2`; latest: 2026-07-15 `/root/integration_owner`
+  wired four-layer recomputation into the sealed gate and removed repetition hard fail.
+- Review attempts: `1`; latest verdict: `PASS` after the one consolidated repair.
+- Commit / push: included in this accepted minimal-bundle commit and push.
 
 ### RF-18 — Establish judge independence, owner routing, and variance bounds
 
-- [ ] Make decisive evaluation independent enough to support promotion.
-- Status: `TODO`
+- [x] Make decisive evaluation independent enough to support promotion.
+- Status: `DONE`
 - Evidence class / report: demonstrated uncertainty; §§4 alternative
   explanations, 5 cause 5, 7 action 3.
 - Problem / root cause: same-family `k=2`, unmeasured repeats, narrow asset tags,
@@ -780,14 +782,15 @@ the SHA without reopening the implementation verdict.
   not promotion.
 - Verification: aggregation/disagreement fixtures, `bash scripts/check.sh`.
 - Dependencies: RF-14, RF-16, RF-17.
-- Implementation attempts: `0`; latest: `—`.
-- Review attempts: `0`; latest verdict / findings: `—`.
-- Commit / push: `—`.
+- Implementation attempts: `2`; latest: 2026-07-15 `/root/integration_owner`
+  added strict second-family/named-human ingestion and pair/task agreement checks.
+- Review attempts: `1`; latest verdict: `PASS` after the one consolidated repair.
+- Commit / push: included in this accepted minimal-bundle commit and push.
 
 ### RF-19 — Replace the one-asset PROGRAM with a causal-bundle run contract
 
-- [ ] Start a new minimal results lineage governed by one hypothesis, not one file.
-- Status: `TODO`
+- [x] Start a new minimal results lineage governed by one hypothesis, not one file.
+- Status: `DONE`
 - Evidence class / report: critical demonstrated governance cause; §§1, 5 cause
   3, 7 action 3.
 - Problem / root cause: the frozen one-asset loop prevents changes at the causal
@@ -804,16 +807,18 @@ the SHA without reopening the implementation verdict.
   comparison; no loop bureaucracy added.
 - Verification: record-schema/dry-run tests, `bash scripts/check.sh`.
 - Dependencies: RF-02, RF-11, RF-14, RF-17, RF-18.
-- Implementation attempts: `0`; latest: `—`.
-- Review attempts: `0`; latest verdict / findings: `—`.
-- Commit / push: `—`.
+- Implementation attempts: `2`; latest: 2026-07-15 `/root/integration_owner`
+  bound the validated causal record/history to the existing atomic promotion receipt.
+- Review attempts: `1`; latest verdict: `PASS` after the one consolidated repair;
+  affected focused tests and strict OpenSpec validation pass without old reward comparison.
+- Commit / push: included in this accepted minimal-bundle commit and push.
 
 ## Phase 4 — validate instruments before billable generation
 
 ### RF-20 — Run H-F04 on frozen prose
 
 - [ ] Calibrate the new product instrument without generating chapters.
-- Status: `TODO`
+- Status: `BLOCKED`
 - Evidence class / report: untested hypothesis H-F04; §§9 H-F04, 10.
 - Problem / root cause: the new rubric cannot govern H-F01 merely because its
   fields look aligned with the vision.
@@ -831,16 +836,20 @@ the SHA without reopening the implementation verdict.
 - Verification: raw verdict completeness, independent calibration review,
   `bash scripts/check.sh`.
 - Dependencies: RF-16, RF-17, RF-18, RF-19.
-- Implementation attempts: `0`; latest: `—`.
-- Review attempts: `0`; latest verdict / findings: `—`.
-- Commit / push: `—`.
+- Implementation attempts: `2`; latest: 2026-07-15 exactly one compact rubric
+  correction/retest, result hash `ec9c631244db05c383abe5639fb679b2d58fa0d8a59520df4370b06cb8ed45a4`.
+- Review attempts: `1`; latest verdict: `BLOCKED` — corrected repeat agreement
+  was 7/8, but anonymous-reference opening votes were 0/4, so the strong ceiling
+  failed. Initial and corrected isolated evidence paths remain preserved; no
+  second correction, chapter generation, RF-21, or H-F01 run is permitted.
+- Commit / push: blocked result included in this accepted minimal-bundle commit and push.
 
 ## Phase 5 — H-F01 bounded control/treatment experiment
 
 ### RF-21 — Build and accept the quit-sugar treatment reader journey
 
 - [ ] Complete the brief, framing, first-three cards, and blocking plan review.
-- Status: `TODO`
+- Status: `BLOCKED`
 - Evidence class / report: H-F01 treatment, not a proven improvement; §§7
   action 1, 9 H-F01, 10.
 - Problem / root cause: current opening is scope → trap label → benefit catalogue.
@@ -859,14 +868,14 @@ the SHA without reopening the implementation verdict.
 - Verification: independent plan review and reader-state matrix; no root prose
   reading; `bash scripts/check.sh`.
 - Dependencies: RF-01, RF-02, RF-03, RF-05, RF-06, RF-07, RF-19, RF-20.
-- Implementation attempts: `0`; latest: `—`.
+- Implementation attempts: `0`; unstarted and transitively blocked by RF-20.
 - Review attempts: `0`; latest verdict / findings: `—`.
 - Commit / push: `—`.
 
 ### RF-22 — Generate and audit the three H-F01 treatment commissions
 
 - [ ] Produce a clean, self-sufficient commission set before writing.
-- Status: `TODO`
+- Status: `BLOCKED`
 - Evidence class / report: H-F01 treatment; §§7 action 2, 8, 10.
 - Problem / root cause: treatment cannot test context transport without an
   audited assigned-packet handoff; commissions alone previously invented.
@@ -882,14 +891,14 @@ the SHA without reopening the implementation verdict.
 - Verification: packet-to-commission trace matrix by fresh agents,
   `bash scripts/check.sh`.
 - Dependencies: RF-08, RF-09, RF-21.
-- Implementation attempts: `0`; latest: `—`.
+- Implementation attempts: `0`; unstarted and transitively blocked by RF-20.
 - Review attempts: `0`; latest verdict / findings: `—`.
 - Commit / push: `—`.
 
 ### RF-23 — Generate fresh frozen control and treatment batches
 
 - [ ] Produce all six first drafts under fixed model and research conditions.
-- Status: `TODO`
+- Status: `BLOCKED`
 - Evidence class / report: H-F01 experiment execution; §10.
 - Problem / root cause: historical-vs-fresh comparison would confound the handoff
   treatment with generation variance.
@@ -906,14 +915,14 @@ the SHA without reopening the implementation verdict.
   `bash scripts/check.sh`.
 - Dependencies: RF-02, RF-10, RF-11, RF-22. External dependency:
   working `OPENROUTER_API_KEY` with sufficient credit.
-- Implementation attempts: `0`; latest: `—`.
+- Implementation attempts: `0`; unstarted and transitively blocked by RF-20.
 - Review attempts: `0`; latest verdict / findings: `—`.
 - Commit / push: `—`.
 
 ### RF-24 — Ground-audit all six H-F01 drafts
 
 - [ ] Enforce integrity before any preference or craft evaluation.
-- Status: `TODO`
+- Status: `BLOCKED`
 - Evidence class / report: H-F01 hard gate; §§7 action 2, 10.
 - Problem / root cause: exciting but invented treatment prose would produce a
   false success, as retired commission runs demonstrated.
@@ -930,14 +939,14 @@ the SHA without reopening the implementation verdict.
 - Verification: six complete grounded verdicts, cross-agent audit review,
   `bash scripts/check.sh`.
 - Dependencies: RF-12, RF-23.
-- Implementation attempts: `0`; latest: `—`.
+- Implementation attempts: `0`; unstarted and transitively blocked by RF-20.
 - Review attempts: `0`; latest verdict / findings: `—`.
 - Commit / push: `—`.
 
 ### RF-25 — Decide H-F01 blindly, diagnose craft, and promote atomically
 
 - [ ] Run the decisive comparison and record support/refutation/inconclusive.
-- Status: `TODO`
+- Status: `BLOCKED`
 - Evidence class / report: H-F01 decisive test; §§9–10.
 - Problem / root cause: the planning/context hypothesis needs a same-run product
   decision, not another prompt-quality judgment.
@@ -959,7 +968,7 @@ the SHA without reopening the implementation verdict.
 - Verification: independent result auditor recomputes decision from raw verdicts
   and hashes; reference never leaked upstream; `bash scripts/check.sh`.
 - Dependencies: RF-13, RF-16, RF-17, RF-18, RF-19, RF-24.
-- Implementation attempts: `0`; latest: `—`.
+- Implementation attempts: `0`; unstarted and transitively blocked by RF-20.
 - Review attempts: `0`; latest verdict / findings: `—`.
 - Commit / push: `—`.
 

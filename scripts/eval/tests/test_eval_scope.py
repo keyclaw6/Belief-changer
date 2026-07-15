@@ -38,6 +38,7 @@ class EvalScopeTest(unittest.TestCase):
 
             full = SCORE.evaluate(cfg, book, None)
             self.assertTrue(full["checks"]["repetition_within"]["hard_fails"])
+            self.assertFalse(any(item.startswith("repetition:") for item in full["hard_fails"]))
             self.assertTrue(full["checks"]["originality"]["tripped"])
 
     def test_core_fails_closed_on_unavailable_chapter_or_plan(self):
