@@ -6,8 +6,6 @@ import unittest
 from pathlib import Path
 from types import SimpleNamespace
 from unittest import mock
-
-
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "scripts/eval"))
 sys.path.insert(0, str(ROOT / "scripts/loop"))
@@ -16,8 +14,6 @@ import gate as GATE  # noqa: E402
 import legacy_guard as LG  # noqa: E402
 import run_iteration as RUN  # noqa: E402
 import score as SCORE  # noqa: E402
-
-
 class GuardQATests(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
@@ -31,12 +27,10 @@ class GuardQATests(unittest.TestCase):
 
     def tearDown(self):
         self.tmp.cleanup()
-
     def sentinel(self, name):
         path = self.root / name
         path.write_text("outside sentinel\n", encoding="utf-8")
         return path
-
     def writer_patches(self):
         inputs = dict(zip(RUN.WC.INPUT_KEYS, ("contract", "commission", "previous")))
         authority = {"manifest": {"run": {"book": "book", "chapters": [1]}},
@@ -114,13 +108,15 @@ class GuardQATests(unittest.TestCase):
                 "{{REFERENCE}}{{CANDIDATE}}{{CONTEXT}}", self.candidate)
         with mock.patch.object(judges.FB, "require_frozen_batch"), \
                 mock.patch.object(judges.GR, "require_complete"), \
+                mock.patch.object(judges.DR, "require_developmental_pass"), \
                 self.assertRaises(SystemExit) as stopped:
             judges.emit_tasks(*args)
         self.assertIn("target contains a symlink", str(stopped.exception))
         self.assertEqual("outside sentinel\n", outside.read_text(encoding="utf-8"))
         leaf.unlink()
         with mock.patch.object(judges.FB, "require_frozen_batch"), \
-                mock.patch.object(judges.GR, "require_complete"):
+                mock.patch.object(judges.GR, "require_complete"), \
+                mock.patch.object(judges.DR, "require_developmental_pass"):
             self.assertEqual([leaf], judges.emit_tasks(*args))
         self.assertTrue(leaf.read_text(encoding="utf-8"))
     def test_judge_task_leaf_hardlink_cannot_escape_candidate(self):
@@ -135,13 +131,15 @@ class GuardQATests(unittest.TestCase):
                 "{{REFERENCE}}{{CANDIDATE}}{{CONTEXT}}", self.candidate)
         with mock.patch.object(judges.FB, "require_frozen_batch"), \
                 mock.patch.object(judges.GR, "require_complete"), \
+                mock.patch.object(judges.DR, "require_developmental_pass"), \
                 self.assertRaises(SystemExit) as stopped:
             judges.emit_tasks(*args)
         self.assertIn("multiply linked file", str(stopped.exception))
         self.assertEqual("outside sentinel\n", outside.read_text(encoding="utf-8"))
         leaf.unlink()
         with mock.patch.object(judges.FB, "require_frozen_batch"), \
-                mock.patch.object(judges.GR, "require_complete"):
+                mock.patch.object(judges.GR, "require_complete"), \
+                mock.patch.object(judges.DR, "require_developmental_pass"):
             self.assertEqual([leaf], judges.emit_tasks(*args))
         self.assertTrue(leaf.read_text(encoding="utf-8"))
     def _run_score(self, argv):
@@ -156,6 +154,7 @@ class GuardQATests(unittest.TestCase):
                     "reward": 1, "worst_dimensions": [], "suggestions": []}), \
                 mock.patch.object(SCORE.FB, "require_frozen_batch"), \
                 mock.patch.object(SCORE.GR, "require_complete"), \
+                mock.patch.object(SCORE.DR, "require_developmental_pass"), \
                 mock.patch.object(SCORE, "_report"):
             SCORE.main()
 

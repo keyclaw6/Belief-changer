@@ -5,7 +5,6 @@ import tempfile
 import unittest
 from pathlib import Path
 from unittest import mock
-
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "scripts/loop"))
 import candidate_pair as PAIR  # noqa: E402
@@ -84,7 +83,8 @@ class PairBindingTests(unittest.TestCase):
         view = PAIR.open_sealed(experiment, tested)
         cfg, label = view["config"], "ch01"
         with mock.patch.object(judges.FB, "require_frozen_batch"), \
-                mock.patch.object(judges.GR, "require_complete"):
+                mock.patch.object(judges.GR, "require_complete"), \
+                mock.patch.object(judges.DR, "require_developmental_pass"):
             task = judges.emit_tasks(cfg, [(label, "ours", "reference", "context")],
                                       "001", RUBRIC, experiment, tested)[0]
         task_hash = judges._task_binding(task, tested, experiment)
@@ -119,7 +119,8 @@ class PairBindingTests(unittest.TestCase):
         with mock.patch.object(sys, "argv", argv), mock.patch.object(GUARD, "LEDGER", ledger), \
                 mock.patch.object(GATE.score_core, "evaluate", return_value=dict(core)), \
                 mock.patch.object(GATE.FB, "require_frozen_batch"), \
-                mock.patch.object(GATE.GR, "require_complete"):
+                mock.patch.object(GATE.GR, "require_complete"), \
+                mock.patch.object(GATE.DR, "require_developmental_pass"):
             GATE.main()
 
     def test_valid_receipt_promotes_exact_pair(self):

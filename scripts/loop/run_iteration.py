@@ -19,6 +19,7 @@ import writer_context as WC     # noqa: E402
 import draft_batch_runtime as BR  # noqa: E402
 import first_draft_batch as FB     # noqa: E402
 import grounded_review as GR       # noqa: E402
+import developmental_review as DR  # noqa: E402
 write_chapters = BR.write_chapters
 def run_step(cmd, cwd=None):
     print(f"[run] $ {' '.join(cmd)}")
@@ -174,9 +175,22 @@ def main():
         sys.exit(4)
     except GR.GroundedReviewError as exc:
         raise SystemExit(f"[run] grounded review blocked: {exc}") from exc
+    try:
+        try:
+            developmental = DR.require_developmental_pass(candidate, cfg)
+        except DR.DevelopmentalReviewError:
+            developmental = DR.advance(candidate, cfg)
+    except DR.DevelopmentalReviewPending:
+        print("[run] Grounded review PASS. Whole-opening developmental review is mandatory.")
+        print(f"[run] {MD.developmental(candidate)}")
+        print(f"[run] Then replay: {MD.resume(a, HERE, sys.executable or 'python3')}")
+        sys.exit(4)
+    except DR.DevelopmentalReviewError as exc:
+        raise SystemExit(f"[run] developmental review blocked: {exc}") from exc
     if not a.no_write and not a.score_now:
-        print(f"[run] Grounded review PASS {grounded['receipt_hash']}. "
-              f"Literary/developmental review may now start ({MD.reviewer(candidate)}).")
+        print(f"[run] Grounded review PASS {grounded['receipt_hash']}; developmental "
+              f"PASS {developmental['receipt_hash']}. Legacy literary review may now "
+              f"start ({MD.reviewer(candidate)}).")
         print("[run] Then resume:")
         print(f"[run]   {MD.resume(a, HERE, sys.executable or 'python3')}")
         sys.exit(0)

@@ -124,7 +124,8 @@ class RF02StoreCliTests(unittest.TestCase):
         self.assertNotIn("style-guide.md", text)
         self.assertNotIn(str(ROOT), text)
         with mock.patch.object(MANUAL.FB, "require_frozen_batch"), \
-                mock.patch.object(MANUAL.GR, "require_complete"):
+                mock.patch.object(MANUAL.GR, "require_complete"), \
+                mock.patch.object(MANUAL.DR, "require_developmental_pass"):
             review = MANUAL.reviewer(operation.parent)
         self.assertIn(f"cd -- {operation}", review)
         self.assertIn("prompts/chapter-reviewer.md", review)
@@ -152,6 +153,8 @@ class RF02StoreCliTests(unittest.TestCase):
                 mock.patch.object(RUN.FB, "freeze"), \
                 mock.patch.object(RUN.GR, "advance", return_value={
                     "receipt_hash": "a" * 64}), \
+                mock.patch.object(RUN.DR, "advance", return_value={
+                    "receipt_hash": "b" * 64}), \
                 mock.patch.object(RUN.MD, "reviewer", return_value="review"), \
                 mock.patch.dict(os.environ, {"OPENROUTER_API_KEY": "do-not-render"}), \
                 contextlib.redirect_stdout(output):
@@ -182,6 +185,8 @@ class RF02StoreCliTests(unittest.TestCase):
                 mock.patch.object(RUN.FB, "require_frozen_batch"), \
                 mock.patch.object(RUN.GR, "advance", return_value={
                     "receipt_hash": "a" * 64}), \
+                mock.patch.object(RUN.DR, "advance", return_value={
+                    "receipt_hash": "b" * 64}), \
                 mock.patch.object(RUN.GR, "require_complete"), \
                 mock.patch.object(RUN, "run_step", return_value=3) as dispatched:
             with self.assertRaises(SystemExit) as replayed:

@@ -5,6 +5,8 @@ import candidate_pair as CP
 import first_draft_batch as FB
 import grounded_review as GR
 import grounded_review_call as GC
+import developmental_review as DR
+import developmental_review_call as DC
 
 
 def _cwd(root):
@@ -44,9 +46,18 @@ def grounded(candidate, missing):
     return " ".join(lines)
 
 
+def developmental(candidate):
+    FB.require_frozen_batch(candidate)
+    GR.require_complete(candidate)
+    task = DR.prepare(candidate)
+    return ("dispatch the exact native wrapper command once from its readonly "
+            f"task-only runtime: `{shlex.join(DC.wrapper_command(task))}`")
+
+
 def reviewer(candidate):
     FB.require_frozen_batch(candidate)
     GR.require_complete(candidate)
+    DR.require_developmental_pass(candidate)
     operation = CP.candidate_tree(candidate)
     return (f"mandatory cwd `{_cwd(operation)}`; dispatch "
             "`prompts/chapter-reviewer.md` from that cwd")

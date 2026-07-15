@@ -1,22 +1,19 @@
 """RF-02 sealed candidate pairs and atomic accepted-generation promotion."""
 import json
 from pathlib import Path
-import loopcfg, draft_batch_contract as DB, draft_batch_lifecycle as DL
-import pair_contract as PC, pair_store as PS, writer_operation as WO
+import loopcfg, draft_batch_contract as DB, draft_batch_lifecycle as DL, developmental_review_lifecycle as DRL, pair_contract as PC, pair_store as PS, writer_operation as WO
 from pair_transition import add_book, assert_run, initialize, promote, reject, status
-SCHEMA = 6
-MANIFEST = "pair.json"
-DECISION = "decision.json"
+SCHEMA, MANIFEST, DECISION = 7, "pair.json", "decision.json"
 class PairError(RuntimeError):
     pass
 def _fail(exc):
     if isinstance(exc, PairError):
         raise exc
     raise PairError(str(exc)) from exc
-def _grounded(root):
-    import first_draft_batch as FB, grounded_review as GR
-    try: FB.require_frozen_batch(root); GR.require_complete(root)
-    except (FB.BatchError, GR.GroundedReviewError) as exc: raise PairError(str(exc)) from exc
+def _reviewed(root):
+    import first_draft_batch as FB, grounded_review as GR, developmental_review as DR
+    try: FB.require_frozen_batch(root); GR.require_complete(root); return DR.seal_identity(root)
+    except (FB.BatchError, GR.GroundedReviewError, DR.DevelopmentalReviewError) as exc: _fail(exc)
 def candidate_tree(root): return Path(root).absolute() / "candidate"
 def evaluation_tree(root): return Path(root).absolute() / "evaluation"
 def evidence_tree(root): return Path(root).absolute() / "evidence"
@@ -58,13 +55,14 @@ def load(root):
     path = _manifest_path(root)
     try:
         value = json.loads(PS._safe_file(path, Path(root).absolute()).read_text(encoding="utf-8"))
-        DL.recover(root, value)
+        DL.recover(root, value); DRL.recover(root, value)
         value = json.loads(PS._safe_file(path, Path(root).absolute()).read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError, PS.StoreError, DL.LifecycleError) as exc:
+    except (OSError, json.JSONDecodeError, PS.StoreError, DL.LifecycleError,
+            DRL.LifecycleError) as exc:
         raise PairError(f"invalid candidate pair manifest: {exc}") from exc
     run = value.get("run")
     state = value.get("state")
-    if value.get("schema") != SCHEMA \
+    if value.get("schema") != SCHEMA or "developmental_review" not in value \
             or state not in ("CANDIDATE", "WRITER_HANDOFF", "DRAFTING",
                              "BATCH_FROZEN", "SEALED") \
             or not _validate_entries(value.get("entries"), {"config", "product"}) \
@@ -73,9 +71,9 @@ def load(root):
             or not WO.valid(value.get("operation"), state):
         raise PairError("invalid candidate pair manifest schema")
     try:
-        DL.validate(root, value)
+        DL.validate(root, value); DRL.validate(root, value)
         DB.validate_pair(value, root)
-    except (DL.LifecycleError, DB.BatchError) as exc:
+    except (DL.LifecycleError, DRL.LifecycleError, DB.BatchError) as exc:
         raise PairError(str(exc)) from exc
     outputs = value.get("outputs")
     allowed = {f"{run['book']}/commissions/chapter-{number:02}.md"
@@ -129,15 +127,17 @@ def snapshot(root, accepted_root, book, chapters="1-3", config="loop/config.yaml
             "accepted_evaluation_hash": registry["evaluation_hash"],
             "entries": entries, "outputs": [], "evaluation": evaluation,
             "operation": None, "draft_batch": None, "draft_batch_start": None,
+            "developmental_review": None,
             "run": {"experiment_id": experiment.name,
                     "iteration_id": iteration if iteration is not None else experiment.name,
                     "book": contract["book"], "chapters": _chapters(chapters),
                     "config": contract["config"]},
         }
-        DL.initialize(experiment, value)
+        DL.initialize(experiment, value); DRL.initialize(experiment, value)
         PS.write_json(_manifest_path(experiment), value)
         return value
-    except (PS.StoreError, PC.ContractError, DL.LifecycleError, OSError) as exc:
+    except (PS.StoreError, PC.ContractError, DL.LifecycleError,
+            DRL.LifecycleError, OSError) as exc:
         _fail(exc)
 def candidate_path(root, relative):
     if Path(relative).is_absolute() or ".." in Path(relative).parts:
@@ -185,8 +185,7 @@ def seal(root, interrupt=None):
     if manifest["state"] not in ("CANDIDATE", "WRITER_HANDOFF", "BATCH_FROZEN"):
         raise PairError("SEALED is terminal")
     try:
-        if manifest.get("draft_batch") is not None:
-            _grounded(root)
+        review = _reviewed(root) if manifest.get("draft_batch") is not None else None
         WO.read(root, manifest.get("operation"))
         cfg = _check_eval_contract(root, manifest)
         pair_hash, eval_hash = _actual(root, manifest)
@@ -199,6 +198,7 @@ def seal(root, interrupt=None):
             "config_sha256": PS.sha(config_data),
             "config_values_sha256": PS.state_hash(cfg),
             "model_identity": _model_identity(cfg),
+            "developmental_review": review,
         }
         sealed["tested_hash"] = _identity(sealed)
         PS.exact_layout(root, manifest, {".pair.json.rf02-tmp": PS.json_bytes(sealed)})
@@ -215,8 +215,7 @@ def verify_sealed(root, tested_hash, expected=None):
     if manifest["state"] != "SEALED" or manifest.get("tested_hash") != tested_hash:
         raise PairError("tested pair hash does not match sealed identity")
     try:
-        if manifest.get("draft_batch") is not None:
-            _grounded(root)
+        review = _reviewed(root) if manifest.get("draft_batch") is not None else None
         WO.read(root, manifest.get("operation"))
         cfg = _check_eval_contract(root, manifest)
         PS.exact_layout(root, manifest, expected)
@@ -225,10 +224,11 @@ def verify_sealed(root, tested_hash, expected=None):
         config_data = PS._safe_file(candidate_tree(root) / manifest["run"]["config"],
                                     candidate_tree(root)).read_bytes()
         expected = (pair_hash, eval_hash, PS.sha(config_data), PS.state_hash(cfg),
-                    _model_identity(cfg), _identity(manifest))
+                    _model_identity(cfg), review, _identity(manifest))
         actual = (sealed.get("pair_hash"), sealed.get("evaluation_hash"),
                   sealed.get("config_sha256"), sealed.get("config_values_sha256"),
-                  sealed.get("model_identity"), tested_hash)
+                  sealed.get("model_identity"), sealed.get("developmental_review"),
+                  tested_hash)
         if expected != actual:
             raise PairError("sealed metadata, configuration, product, or inputs drifted")
         return manifest

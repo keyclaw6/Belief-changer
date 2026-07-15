@@ -129,7 +129,8 @@ class LegacyGuardTests(unittest.TestCase):
             if executable and path.name != "loopcfg.py":  # sole read-only CLI
                 inventory[path.name] = guarded
         self.assertEqual(
-            {"gate.py": True, "grounded_review.py": True,
+            {"developmental_review.py": True, "gate.py": True,
+             "grounded_review.py": True,
              "run_iteration.py": True, "score.py": True},
             inventory,
         )

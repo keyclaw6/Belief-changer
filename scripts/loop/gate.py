@@ -18,6 +18,7 @@ import score_receipt  # noqa: E402
 import pair_store as PS  # noqa: E402
 import first_draft_batch as FB  # noqa: E402
 import grounded_review as GR  # noqa: E402
+import developmental_review as DR  # noqa: E402
 
 COLUMNS = ["iter", "timestamp_utc", "campaign", "instrument", "hypothesis",
            "reward", "hard_ok", "verdict", "worst_dimension", "top_suggestion",
@@ -43,8 +44,6 @@ def best_accepted(rows):
 def _clean(text, limit=110):
     s = " ".join(("" if text is None else str(text)).split())
     return s[:limit]
-
-
 def append_row(tsv: Path, row: dict, candidate: Path):
     exists = tsv.is_file() and tsv.read_text(encoding="utf-8").strip()
     LG.require_output(candidate, tsv)
@@ -57,8 +56,6 @@ def find_latest_score(scores_dir: Path):
     if not cands:
         raise SystemExit(f"gate: no iter-*.json in {scores_dir}; run score.py first")
     return cands[-1]
-
-
 def _print_revert(iter_no, score_path, assets=None, book="", isolated=False):
     if isolated:
         print("[gate] Candidate rejected; its isolated snapshot remains as evidence.")
@@ -140,8 +137,10 @@ def main():
     try:
         FB.require_frozen_batch(candidate)
         GR.require_complete(candidate)
-    except (FB.BatchError, GR.GroundedReviewError) as exc:
-        raise SystemExit(f"gate: grounded PASS over frozen batch required: {exc}") from exc
+        DR.require_developmental_pass(candidate)
+    except (FB.BatchError, GR.GroundedReviewError, DR.DevelopmentalReviewError) as exc:
+        raise SystemExit(f"gate: grounded PASS and developmental PASS over frozen first-draft batch required: "
+                         f"{exc}") from exc
     if a.promote_pair and not a.tested_pair_hash:
         ap.error("--promote-pair requires --tested-pair-hash")
     if a.tested_pair_hash and not a.accepted_root:

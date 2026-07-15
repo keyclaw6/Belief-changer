@@ -7,6 +7,8 @@ import commission_set as SET
 import first_draft_batch as BATCH
 import grounded_review as GR
 import grounded_review_call as CALL
+import developmental_review as DEV
+import native_developmental_review as DEV_NATIVE
 import run_iteration as RUN
 from writer_context_fixture import WriterFixture
 
@@ -58,20 +60,41 @@ def proven_runner(response=None, calls=None, interrupt=None):
 
 
 def pass_review(candidate):
-    return GR.advance(candidate, runner=proven_runner())
+    grounded = GR.advance(candidate, runner=proven_runner())
+
+    def developmental_runner(dispatch):
+        task = dispatch["task"]
+        raw = json.dumps({"schema": 1, "task_sha256": task["task_sha256"],
+                          "verdict": "PASS", "findings": []}, sort_keys=True)
+        def run(_command, **_kwargs):
+            events = (json.dumps({"type": "thread.started", "thread_id": "dev-thread"}),
+                      json.dumps({"type": "turn.started"}),
+                      json.dumps({"type": "item.completed", "item": {
+                          "type": "agent_message", "text": raw}}),
+                      json.dumps({"type": "turn.completed",
+                                  "usage": {"input_tokens": 1}}))
+            return mock.Mock(returncode=0, stdout="\n".join(events), stderr="")
+        return DEV_NATIVE.complete(task["task_sha256"], run=run)
+
+    DEV.advance(candidate, runner=developmental_runner)
+    return grounded
 
 
 class GroundedFixture(WriterFixture):
+    def frozen_draft(self, number, name):
+        del name
+        return draft(number, f"FROZEN-{['ZERO', 'ONE', 'TWO', 'THREE'][number]}")
+
     def frozen(self, name, before_generate=None):
         candidate = self.candidate(name)
         if before_generate:
             before_generate(candidate)
         self.generate(candidate)
-        outputs = [draft(1, "FROZEN-ONE"), draft(2, "FROZEN-TWO")]
+        outputs = [self.frozen_draft(number, name) for number in self.selection]
         with mock.patch.object(SET.SC, "require_subject_contract"), \
                 mock.patch.object(RUN.judges, "endpoint", return_value=("api", "key")), \
                 mock.patch.object(RUN.ME, "chat", side_effect=outputs):
             RUN.write_chapters({"writer_model": "writer/model", "writer_reasoning": "none"},
-                               self.book(candidate), [1, 2], candidate)
+                               self.book(candidate), list(self.selection), candidate)
         BATCH.freeze(candidate)
         return candidate

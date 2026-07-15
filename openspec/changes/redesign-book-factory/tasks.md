@@ -567,12 +567,13 @@ the SHA without reopening the implementation verdict.
   - Review 4: `PASS` — no findings; 12/12 focused, 62/62 affected, and 229/229
     full tests, strict OpenSpec, diff, compile, and size gates pass.
 - Commit / push: accepted subject
-  `feat(review): enforce blocking grounded review`; exact SHA deferred.
+  `feat(review): enforce blocking grounded review`; exact SHA
+  `36dd57b2d4ab5c244b1e82a4147f4a566254223a`.
 
 ### RF-13 — Implement reference-blind whole-opening developmental review
 
-- [ ] Judge the frozen sequence against planned reader states.
-- Status: `TODO`
+- [x] Judge the frozen sequence against planned reader states.
+- Status: `DONE`
 - Evidence class / report: supported remedy; §§3, 5 cause 4, 7 action 2.
 - Problem / root cause: current review is chapter-local and checklist-heavy, so
   repeated modes, weak cumulative movement, and deferred transformation survive.
@@ -587,9 +588,60 @@ the SHA without reopening the implementation verdict.
   output is owner-routable and compact.
 - Verification: developmental-review fixtures, `bash scripts/check.sh`.
 - Dependencies: RF-11.
-- Implementation attempts: `0`; latest: `—`.
-- Review attempts: `0`; latest verdict / findings: `—`.
-- Commit / push: `—`.
+- Implementation attempts: `6`; latest: 2026-07-15
+  `/root/rf13_developmental_review_owner` — retained the valid writing-owned
+  repeated-cadence case and added a separate exact scope→trap→inventory
+  acceptance fixture. Its three distinct commissions and 805–809-word drafts
+  are token-valid and locally enact their own authoritative transitions, while
+  their cards explicitly move only from mapping scope, to naming a trap, to a
+  catalogue reserved for later demolition. The complete opening therefore
+  fails truthfully as a planning-owned deferred-transformation sequence through
+  the captured native wrapper; exact spans, task inputs, forbidden-content
+  isolation, and route are asserted. Verification: 17/17 dedicated, 65/65
+  affected, and 246/246 full tests pass; strict OpenSpec, compile, diff,
+  whitespace, and file-size gates pass (shellcheck unavailable).
+- Review attempts: `6`.
+  - Review 1: `NEEDS CHANGES` — (1) the native reviewer ran from candidate-local
+    state, exposed experiment paths, and did not prove rejection of every tool
+    event or a sanitized transport; (2) RF-13 lacked a non-downgradable
+    accepted-root lifecycle binding operation/generation/task/call/transport/raw/
+    receipt authority into recovery, sealing, and deletion/tamper checks; (3)
+    synthetic token fixtures did not prove the real three-chapter
+    scope→trap→inventory failure or a cumulative clean sequence through the native
+    wrapper; (4) findings did not require one exact meaningful span per affected
+    chapter or reject duplicate semantic findings, chapters, and transitions.
+    Attempt 2 closes all four findings.
+  - Review 2: `NEEDS CHANGES` — (1) runtime inventory covered files but not every
+    directory entry, so undeclared empty or nested directories and their exact
+    structure were not validated; (2) the semantic chapters repeated one common
+    padding paragraph and therefore did not demonstrate genuinely distinct,
+    locally adequate scope→trap→inventory and cumulative-control prose. Attempt
+    3 closes both findings; independent rereview remains pending.
+  - Review 3: `NEEDS CHANGES` — C-01, C-02, and C-03 changed only target/source
+    identity while inheriting the same C-01 no-prior premise, entering/leaving
+    belief, and handoff. That made the purported clean cumulative PASS and stalled
+    sequence failure internally non-authoritative. Attempt 4 supplies and checks
+    a distinct cumulative commission set; independent rereview remains pending.
+  - Review 4: `NEEDS CHANGES` — (1) all six semantic drafts omitted their own
+    assigned frozen token, so the writer contract and mocked grounded/developmental
+    passes were internally invalid; (2) the stalled chapters did not enact their
+    own commissions, making the failure chapter-local and falsely planning-owned
+    rather than a genuine whole-sequence defect. Attempt 5 enforces exact token
+    fidelity and locally complete chapters whose repeated execution is a
+    writing-owned cumulative failure; independent rereview remains pending.
+  - Review 5: `NEEDS CHANGES` — the repeated-cadence case was valid but replaced,
+    rather than proved, RF-13's recorded scope→trap→inventory acceptance case.
+    Attempt 6 retains that regression and adds the exact separate executable
+    scenario: locally adequate chapters faithfully execute defective cards whose
+    complete opening defers transformation, so the earliest truthful owner is
+    planning; independent rereview remains pending.
+  - Review 6: `PASS` — independent normal review returned no findings; the exact
+    scope→trap→inventory acceptance case, retained repeated-cadence regression,
+    native task isolation, lifecycle/runtime durability, and truthful owner
+    routing were accepted.
+- Commit / push: accepted subject
+  `feat(review): enforce whole-opening developmental review`; exact SHA deferred
+  until the root agent creates the commit.
 
 ### RF-14 — Route defects to the earliest owning stage
 

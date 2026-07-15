@@ -17,6 +17,7 @@ import pair_store as STORE  # noqa: E402
 import run_iteration as RUN  # noqa: E402
 import writer_context as WC  # noqa: E402
 from writer_context_fixture import WriterFixture  # noqa: E402
+from developmental_review_fixture import pass_developmental  # noqa: E402
 from grounded_review_fixture import verdict  # noqa: E402
 
 
@@ -82,6 +83,7 @@ class WriterManualReceiptTests(WriterFixture, unittest.TestCase):
                 "exit_code": 0, "thread_id": f"manual-{task['chapter']}",
                 "usage": {"input_tokens": 1}, "command": marker["command"]})
         GR.advance(candidate)
+        pass_developmental(candidate)
         with mock.patch.object(sys, "argv", self.argv(candidate, token)), \
                 mock.patch.object(RUN.LG, "LEDGER", self.ledger), \
                 mock.patch.object(RUN, "run_step", return_value=3):

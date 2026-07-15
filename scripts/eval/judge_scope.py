@@ -9,6 +9,7 @@ sys.path.insert(0, str(LOOP))
 import candidate_pair as CP  # noqa: E402
 import pair_store as PS  # noqa: E402
 import h_f04_controls as HF  # noqa: E402
+import developmental_review as DR  # noqa: E402
 
 
 class ScopeError(RuntimeError):
@@ -48,6 +49,7 @@ def _product(args):
         raise ScopeError("product judgment requires a pinned sealed candidate identity")
     try:
         view = CP.open_sealed(args.candidate_root, args.tested_pair_hash)
+        DR.require_developmental_pass(args.candidate_root)
         manifest, cfg = view["manifest"], view["config"]
         ours = view["pair"] / manifest["run"]["book"] / "chapters"
         ref = Path(cfg["reference_dir"])
@@ -66,7 +68,8 @@ def _product(args):
                 "selection": manifest["run"]["chapters"]}
     except ScopeError:
         raise
-    except (CP.PairError, PS.StoreError, OSError, KeyError, TypeError) as exc:
+    except (CP.PairError, DR.DevelopmentalReviewError, PS.StoreError, OSError,
+            KeyError, TypeError) as exc:
         raise ScopeError(f"product judgment scope is invalid: {exc}") from exc
 
 

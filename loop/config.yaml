@@ -40,6 +40,14 @@ grounded_reviewer_family: openai
 grounded_reviewer_route: codex-native
 grounded_reviewer_reasoning: xhigh
 
+# --- Developmental reviewer: fresh GPT-5.6 Luna, max — NATIVE CODEX ONLY ---
+# One reference-blind whole-opening context after grounded PASS. Luna is a
+# distinct model family from both the Anthropic writer and Sol grounded audit.
+developmental_reviewer_model: gpt-5.6-luna
+developmental_reviewer_family: luna
+developmental_reviewer_route: codex-native
+developmental_reviewer_reasoning: max
+
 # --- Judges: GPT-5.6 Sol, xhigh — NATIVE CODEX ONLY, never OpenRouter ---
 # There is deliberately NO judge API endpoint config: score.py emits judge task
 # files; the operator (or codex-native transport, when available) runs each as
