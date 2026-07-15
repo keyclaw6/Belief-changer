@@ -193,8 +193,8 @@ class CanonicalPreflightTests(unittest.TestCase):
             with self.subTest(raw=raw), self.assertRaises(ValueError):
                 N.parse_identities(raw)
 
-    def test_product_requires_two_matching_passed_controls(self):
-        """Infra: product inference is impossible before both exact controls pass."""
+    def test_product_rejects_caller_supplied_synthetic_controls(self):
+        """Infra: self-described summaries outside H-F04 never become authority."""
         prompts = {role: "prompt " + role for role in J.ROLE_SPECS}
         schemas = {role: N.role_output_schema(spec)
                    for role, spec in J.ROLE_SPECS.items()}
@@ -216,21 +216,7 @@ class CanonicalPreflightTests(unittest.TestCase):
                                        "instrument_configuration": config},
                 }), encoding="utf-8")
                 paths.append(path)
-            evidence = N.validate_controls(",".join(map(str, paths)), config)
-            self.assertEqual(set(evidence), {"identical", "degraded-reference"})
-            for mode, item in evidence.items():
-                self.assertEqual(item["mode"], mode)
-                self.assertTrue(item["passed"])
-                self.assertEqual(item["instrument_configuration"], config)
-                self.assertEqual(len(item["sha256"]), 64)
-            changed = dict(config)
-            changed["reasoning_effort"] = "high"
-            with self.assertRaisesRegex(ValueError, "does not match"):
-                N.validate_controls(",".join(map(str, paths)), changed)
-            broken = json.loads(paths[0].read_text(encoding="utf-8"))
-            broken["protocol"] = "stage-a-v2.2"
-            paths[0].write_text(json.dumps(broken), encoding="utf-8")
-            with self.assertRaisesRegex(ValueError, "did not pass"):
+            with self.assertRaisesRegex(ValueError, "exact canonical ordered"):
                 N.validate_controls(",".join(map(str, paths)), config)
     def test_product_cli_without_controls_fails_before_native_call(self):
         """Infra: missing control evidence fails before any product judgment."""

@@ -4,9 +4,13 @@ import json
 import os
 import re
 import subprocess
+import sys
 import tempfile
 from pathlib import Path
 
+LOOP = Path(__file__).resolve().parents[1] / "loop"
+sys.path.insert(0, str(LOOP))
+import pair_store as PS  # noqa: E402
 
 MODEL = "gpt-5.6-sol"
 REASONING_EFFORT = "ultra"
@@ -17,7 +21,8 @@ NATIVE_ENV_ALLOWLIST = (
     "HTTPS_PROXY", "ALL_PROXY", "NO_PROXY",
 )
 IMPLEMENTATION_FILES = (
-    "judge_panel.py", "judge_protocol.py", "judge_v23.py", "native_judge.py")
+    "h_f04_controls.py", "judge_panel.py", "judge_protocol.py", "judge_scope.py",
+    "judge_v23.py", "native_judge.py")
 
 
 def parse_identities(raw):
@@ -104,43 +109,19 @@ def instrument_configuration(prompts, schemas, pairing, identities):
 
 
 def validate_controls(raw_paths, configuration):
-    paths = [Path(value.strip()) for value in raw_paths.split(",") if value.strip()]
-    if len(paths) != 2:
-        raise ValueError("product judging requires exactly two control summary paths")
-    evidence = {}
-    for supplied in paths:
-        path = supplied / "judge-summary.json" if supplied.is_dir() else supplied
-        try:
-            payload = path.read_bytes()
-            data = json.loads(payload)
-        except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
-            raise ValueError(f"cannot read control summary {path}: {exc}") from exc
-        if not isinstance(data, dict) or not isinstance(data.get("prompt_control"), dict):
-            raise ValueError(f"control summary {path} is not a canonical object")
-        control = data["prompt_control"]
-        mode = control.get("mode")
-        if mode not in ("identical", "degraded-reference") or mode in evidence:
-            raise ValueError("controls must contain one unique summary for each required mode")
-        if (data.get("protocol") != "stage-a-v2.3" or data.get("canonical") is not True or
-                data.get("panel_complete") is not True or data.get("raw_judgments") != 20 or
-                data.get("invalid_judgments") != 0 or
-                data.get("collapsed_observations") != 5 or
-                not isinstance(data.get("matrix"), dict) or
-                data["matrix"].get("passed") is not True or
-                control.get("passed") is not True or
-                control.get("matrix_transport_valid") is not True or
-                control.get("semantic_expectation_met") is not True):
-            raise ValueError(f"{mode} control did not pass canonically")
-        if (data.get("instrument_configuration") != configuration or
-                control.get("instrument_configuration") != configuration):
-            raise ValueError(f"{mode} control configuration does not match product panel")
-        evidence[mode] = {"mode": mode, "passed": True,
-                          "instrument_configuration": configuration,
-                          "summary": str(path),
-                          "sha256": hashlib.sha256(payload).hexdigest()}
-    if set(evidence) != {"identical", "degraded-reference"}:
-        raise ValueError("both identical and degraded-reference controls are required")
-    return evidence
+    import h_f04_controls as controls
+    return controls.require(configuration, raw_paths)
+
+
+def write_summary(path, value):
+    path = Path(path)
+    PS.write(path, PS.json_bytes(value))
+    path.chmod(0o444)
+
+
+def finalize_controls(configuration):
+    import h_f04_controls as controls
+    return controls.finalize(configuration)
 
 
 def complete(content, judge_identity, output_schema, run=subprocess.run):

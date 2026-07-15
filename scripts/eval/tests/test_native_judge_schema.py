@@ -99,7 +99,8 @@ class NativeOutputSchemaTests(unittest.TestCase):
         mutation = N.instrument_configuration(prompts, changed, *args)
 
         self.assertEqual(N.IMPLEMENTATION_FILES, (
-            "judge_panel.py", "judge_protocol.py", "judge_v23.py", "native_judge.py"))
+            "h_f04_controls.py", "judge_panel.py", "judge_protocol.py", "judge_scope.py",
+            "judge_v23.py", "native_judge.py"))
         self.assertEqual(tuple(baseline["implementation_sha256"]), N.IMPLEMENTATION_FILES)
         self.assertEqual(baseline["protocol_version"],
                          "stage-a-v2.3-native-sol-ultra-1")

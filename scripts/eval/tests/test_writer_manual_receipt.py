@@ -12,10 +12,12 @@ import candidate_pair as PAIR  # noqa: E402
 import commission_set as SET  # noqa: E402
 import gate as GATE  # noqa: E402
 import gate_decision as DECISION  # noqa: E402
+import grounded_review as GR  # noqa: E402
 import pair_store as STORE  # noqa: E402
 import run_iteration as RUN  # noqa: E402
 import writer_context as WC  # noqa: E402
 from writer_context_fixture import WriterFixture  # noqa: E402
+from grounded_review_fixture import verdict  # noqa: E402
 
 
 class WriterManualReceiptTests(WriterFixture, unittest.TestCase):
@@ -68,6 +70,18 @@ class WriterManualReceiptTests(WriterFixture, unittest.TestCase):
         for number in (1, 2):
             (self.book(candidate) / f"chapters/chapter-{number:02d}.md").write_text(
                 f"# MANUAL CHAPTER {number}\n" + "word " * 801 + "\n", encoding="utf-8")
+        with mock.patch.object(sys, "argv", self.argv(candidate, token)), \
+                mock.patch.object(RUN.LG, "LEDGER", self.ledger), \
+                mock.patch.object(RUN, "run_step", return_value=3):
+            with self.assertRaises(SystemExit) as stopped:
+                RUN.main()
+        self.assertEqual(4, stopped.exception.code)
+        for task in GR.prepare(candidate).values():
+            marker = GR.GC.expected_marker(candidate, task)
+            GR.GC.persist(candidate, task, marker, verdict(task), {
+                "exit_code": 0, "thread_id": f"manual-{task['chapter']}",
+                "usage": {"input_tokens": 1}, "command": marker["command"]})
+        GR.advance(candidate)
         with mock.patch.object(sys, "argv", self.argv(candidate, token)), \
                 mock.patch.object(RUN.LG, "LEDGER", self.ledger), \
                 mock.patch.object(RUN, "run_step", return_value=3):

@@ -519,13 +519,13 @@ the SHA without reopening the implementation verdict.
   - Review 4: `PASS` — no findings; 18/18 dedicated, 78/78 affected, and
     206/206 full tests, strict OpenSpec, diff, compile, and size gates pass.
 - Commit / push: accepted subject
-  `feat(writing): freeze complete first-draft batches`; exact SHA is deferred
-  to the next ledger checkpoint.
+  `feat(writing): freeze complete first-draft batches`; exact SHA
+  `405bc7b33f4e3da1e16f130bb23e388625a9fa84`.
 
 ### RF-12 — Implement blocking grounded review
 
-- [ ] Separate truth/safety/ownership audit from literary development.
-- Status: `TODO`
+- [x] Separate truth/safety/ownership audit from literary development.
+- Status: `DONE`
 - Evidence class / report: demonstrated reviewer sight gap; §§5 cause 4, 7
   action 2, 8.
 - Problem / root cause: the current source-blind reviewer is asked to verify
@@ -541,9 +541,33 @@ the SHA without reopening the implementation verdict.
   blocker stops product evaluation.
 - Verification: grounded-review contract fixtures, `bash scripts/check.sh`.
 - Dependencies: RF-08, RF-09, RF-11.
-- Implementation attempts: `0`; latest: `—`.
-- Review attempts: `0`; latest verdict / findings: `—`.
-- Commit / push: `—`.
+- Implementation attempts: `4`; latest: 2026-07-15
+  `/root/rf12_grounded_review_owner` — preserved every prior closure and upgraded
+  the H-F04 receipt to schema 2, binding each canonical summary's local device,
+  inode, and single-link identity alongside its path, bytes, mode, control role,
+  replica identities, and complete instrument configuration. Product preflight
+  validates the receipt-bound identity before reading either control summary, so
+  a byte-identical atomic replacement has zero downstream side effects and cannot
+  regenerate authority outside constrained H-F04 finalization. Verification:
+  12/12 focused, 62/62 affected, and 229/229 full tests; canonical gate, strict
+  OpenSpec, compile, structural, diff, and file-size checks pass.
+- Review attempts: `4`.
+  - Review 1: `NEEDS CHANGES` — whole-packet leakage, incomplete replay identity,
+    non-durable callback dispatch, free-text finding routes, and an unguarded
+    `judge_panel.py` product route. All five were closed in attempt 2.
+  - Review 2: `NEEDS CHANGES` — product mode accepted arbitrary self-described
+    control summaries, including external and synthetic files, and validated them
+    only after product reads and output creation. Attempt 3 derives only the
+    receipt-bound canonical H-F04 authority and rejects unsafe or stale evidence
+    with zero product side effects.
+  - Review 3: `NEEDS CHANGES` — the receipt bound summary paths, bytes, hashes,
+    modes, roles, and configuration but not stable local file identity, allowing a
+    byte-identical single-link `0444` inode replacement after finalization.
+    Attempt 4 binds and prechecks device/inode/link identity.
+  - Review 4: `PASS` — no findings; 12/12 focused, 62/62 affected, and 229/229
+    full tests, strict OpenSpec, diff, compile, and size gates pass.
+- Commit / push: accepted subject
+  `feat(review): enforce blocking grounded review`; exact SHA deferred.
 
 ### RF-13 — Implement reference-blind whole-opening developmental review
 

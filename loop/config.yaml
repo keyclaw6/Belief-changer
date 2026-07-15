@@ -32,6 +32,14 @@ planner_model: gpt-5.6-sol
 planner_route: codex-native
 planner_reasoning: xhigh
 
+# --- Grounded reviewer: fresh GPT-5.6 Sol, xhigh — NATIVE CODEX ONLY ---
+# This truth/safety/ownership audit is separate from literary development and
+# must be a different family from the Anthropic writer.
+grounded_reviewer_model: gpt-5.6-sol
+grounded_reviewer_family: openai
+grounded_reviewer_route: codex-native
+grounded_reviewer_reasoning: xhigh
+
 # --- Judges: GPT-5.6 Sol, xhigh — NATIVE CODEX ONLY, never OpenRouter ---
 # There is deliberately NO judge API endpoint config: score.py emits judge task
 # files; the operator (or codex-native transport, when available) runs each as

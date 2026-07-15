@@ -2,9 +2,7 @@
 import json
 from pathlib import Path
 import loopcfg, draft_batch_contract as DB, draft_batch_lifecycle as DL
-import pair_contract as PC
-import pair_store as PS
-import writer_operation as WO
+import pair_contract as PC, pair_store as PS, writer_operation as WO
 from pair_transition import add_book, assert_run, initialize, promote, reject, status
 SCHEMA = 6
 MANIFEST = "pair.json"
@@ -15,6 +13,10 @@ def _fail(exc):
     if isinstance(exc, PairError):
         raise exc
     raise PairError(str(exc)) from exc
+def _grounded(root):
+    import first_draft_batch as FB, grounded_review as GR
+    try: FB.require_frozen_batch(root); GR.require_complete(root)
+    except (FB.BatchError, GR.GroundedReviewError) as exc: raise PairError(str(exc)) from exc
 def candidate_tree(root): return Path(root).absolute() / "candidate"
 def evaluation_tree(root): return Path(root).absolute() / "evaluation"
 def evidence_tree(root): return Path(root).absolute() / "evidence"
@@ -184,8 +186,7 @@ def seal(root, interrupt=None):
         raise PairError("SEALED is terminal")
     try:
         if manifest.get("draft_batch") is not None:
-            import first_draft_batch as FB
-            FB.require_frozen_batch(root)
+            _grounded(root)
         WO.read(root, manifest.get("operation"))
         cfg = _check_eval_contract(root, manifest)
         pair_hash, eval_hash = _actual(root, manifest)
@@ -215,8 +216,7 @@ def verify_sealed(root, tested_hash, expected=None):
         raise PairError("tested pair hash does not match sealed identity")
     try:
         if manifest.get("draft_batch") is not None:
-            import first_draft_batch as FB
-            FB.require_frozen_batch(root)
+            _grounded(root)
         WO.read(root, manifest.get("operation"))
         cfg = _check_eval_contract(root, manifest)
         PS.exact_layout(root, manifest, expected)

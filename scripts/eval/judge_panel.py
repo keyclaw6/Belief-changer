@@ -6,6 +6,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 import evallib as E
 import model_endpoint as M
 import native_judge as N
+import judge_scope as SCOPE
 from judge_legacy import DIMS, aggregate, map_verdict, validate_pairwise
 import judge_protocol as V2
 import judge_v23 as V23
@@ -29,7 +30,6 @@ def extract_json(text):
                         break
         start = text.find("{", start + 1)
     return None
-
 def _completion(cfg, model, prompt, ours_text, ref_text, order):
     a_text, b_text = (ours_text, ref_text) if order == 0 else (ref_text, ours_text)
     content = f"{prompt}\n\n=== TEXT A ===\n{a_text}\n\n=== TEXT B ===\n{b_text}"
@@ -37,7 +37,6 @@ def _completion(cfg, model, prompt, ours_text, ref_text, order):
     raw = chat(cfg["base_url"], cfg["api_key"], model, content,
                cfg["reasoning_efforts"][model], allowance)
     return raw, extract_json(raw), allowance
-
 def judge_pair(cfg, model, ch_n, ours_text, ref_text, order):
     raw, parsed, allowance = _completion(
         cfg, model, cfg["prompt"], ours_text, ref_text, order)
@@ -52,7 +51,6 @@ def judge_pair(cfg, model, ch_n, ours_text, ref_text, order):
         except ValueError as exc:
             record["validation_error"] = str(exc)
     return record
-
 def judge_role(cfg, judge_identity, role, cell, order):
     a_text, b_text = ((cell["ours"], cell["ref"]) if order == 0
                       else (cell["ref"], cell["ours"]))
@@ -80,7 +78,6 @@ def judge_role(cfg, judge_identity, role, cell, order):
         except ValueError as exc:
             record["validation_error"] = str(exc)
     return record
-
 def parse_pairs(raw, ours_count, ref_count):
     pairs = []
     for item in raw.split(","):
@@ -121,7 +118,6 @@ def stage_a_materials(ours, ref, pairing, control=""):
              "ref": "\n\n".join(ref_block), "ours_chapters": ours_numbers,
              "ref_chapters": ref_numbers}
     return {"efficacy": [block], "craft": craft, "integrity": [block]}
-
 def _endpoint(args):
     if args.base_url:
         return (args.base_url, os.environ.get(args.api_key_env or "LITELLM_API_KEY") or
@@ -129,7 +125,6 @@ def _endpoint(args):
     if os.environ.get("LITELLM_BASE_URL"):
         return os.environ["LITELLM_BASE_URL"], os.environ.get("LITELLM_API_KEY")
     return "https://openrouter.ai/api/v1", os.environ.get("OPENROUTER_API_KEY")
-
 def _write_record(outdir, record, legacy=False):
     safe_model = re.sub(r"[^a-zA-Z0-9.-]+", "_", record["model"])
     if legacy:
@@ -140,7 +135,6 @@ def _write_record(outdir, record, legacy=False):
                 f'o{record["order"]}.json')
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(record, indent=1), encoding="utf-8")
-
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--ours", required=True)
@@ -155,12 +149,14 @@ def main():
     parser.add_argument("--judge-identities", default=",".join(N.DEFAULT_IDENTITIES),
                         help="exactly two fresh native replication labels for canonical Stage-A")
     parser.add_argument("--validated-controls", default="",
-                        help="identical,degraded control summary paths required for product mode")
+                        help="optional exact canonical H-F04 summary pair assertion")
     parser.add_argument("--control", choices=("identical", "degraded-reference"), default="",
                         help="Stage-A v2.3 prompt-control run")
     parser.add_argument("--out", required=True)
     parser.add_argument("--base-url", default="")
     parser.add_argument("--api-key-env", default="")
+    for flag in ("candidate-root", "tested-pair-hash", "h-f04-root"):
+        parser.add_argument(f"--{flag}", default="")
     args = parser.parse_args()
     legacy = bool(args.prompt)
     if args.control and legacy:
@@ -186,13 +182,19 @@ def main():
             identities = N.parse_identities(args.judge_identities)
         except ValueError as exc:
             parser.error(str(exc))
+    try:
+        canonical = None if legacy else SCOPE.canonical(args, identities, ROLE_SPECS, JUDGE_DIR)
+        SCOPE.guard(args, legacy, canonical["configuration"] if canonical else None)
+    except SCOPE.ScopeError as exc:
+        parser.error(str(exc))
     ours = E.load_chapters(args.ours)
     ref = E.load_chapters(args.ref, exts=(".txt", ".md"))
-    pairing = (parse_pairs(args.pairs, len(ours), len(ref)) if args.pairs else
-               [(n, n) for n in E.parse_range(args.chapters, min(len(ours), len(ref)))])
-    if not legacy and (len(pairing) != 3 or len(set(pairing)) != 3):
-        parser.error("canonical Stage-A requires exactly three unique chapter pairings")
-    cfg = {}
+    pairing = (parse_pairs(args.pairs, len(ours), len(ref)) if legacy and args.pairs else
+               [(n, n) for n in E.parse_range(args.chapters, min(len(ours), len(ref)))]
+               if legacy else canonical["pairing"])
+    if not legacy and any(a > len(ours) or b > len(ref) for a, b in pairing):
+        parser.error("canonical Stage-A chapter selection is unavailable")
+    cfg = {} if legacy else canonical["cfg"]
     if legacy:
         base_url, api_key = _endpoint(args)
         if not base_url or not api_key:
@@ -221,15 +223,8 @@ def main():
         summary.update({"protocol": "legacy-noncanonical-api", "canonical": False,
                         "noncanonical_reason": "historical reproduction only"})
     else:
-        cfg["prompts"] = {role: (JUDGE_DIR / spec["prompt"]).read_text(encoding="utf-8") for role, spec in ROLE_SPECS.items()}
-        cfg["schemas"] = {role: N.role_output_schema(spec) for role, spec in ROLE_SPECS.items()}
-        configuration = N.instrument_configuration(cfg["prompts"], cfg["schemas"], pairing, identities)
-        control_evidence = None
-        if not args.control:
-            try:
-                control_evidence = N.validate_controls(args.validated_controls, configuration)
-            except ValueError as exc:
-                parser.error(str(exc))
+        configuration = canonical["configuration"]
+        control_evidence = canonical["controls"]
         for role, cells in stage_a_materials(ours, ref, pairing, args.control).items():
             for cell in cells:
                 for judge_identity in identities:
@@ -248,12 +243,17 @@ def main():
         else:
             summary["product_parity"]["stage_a_judge_gate"] = V23.evaluate_product(
                 summary, control_evidence)
-    (outdir / "judge-summary.json").write_text(json.dumps(summary, indent=1), encoding="utf-8")
+    N.write_summary(outdir / "judge-summary.json", summary)
     print(json.dumps(summary.get("product_parity", summary), indent=1))
     if not summary["panel_complete"]:
         raise SystemExit("judge_panel: incomplete panel; inspect judge-summary.json")
     if args.control and not summary["prompt_control"]["passed"]:
         raise SystemExit("judge_panel: prompt control failed; inspect judge-summary.json")
+    if args.control:
+        try:
+            N.finalize_controls(configuration)
+        except ValueError as exc:
+            raise SystemExit(f"judge_panel: cannot finalize H-F04 controls: {exc}") from exc
 
 
 if __name__ == "__main__":

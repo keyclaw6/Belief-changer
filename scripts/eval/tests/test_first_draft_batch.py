@@ -14,12 +14,14 @@ import commission_set as SET  # noqa: E402
 import first_draft_batch as BATCH  # noqa: E402
 import gate as GATE  # noqa: E402
 import gate_decision as DECISION  # noqa: E402
+import grounded_review as GR  # noqa: E402
 import judges  # noqa: E402
 import manual_dispatch as MANUAL  # noqa: E402
 import pair_store as STORE  # noqa: E402
 import run_iteration as RUN  # noqa: E402
 import writer_context as WC  # noqa: E402
 from writer_context_fixture import WriterFixture  # noqa: E402
+from grounded_review_fixture import pass_review  # noqa: E402
 
 TIMESTAMP = "2026-07-14T12:00:00+00:00"
 
@@ -77,6 +79,12 @@ class FirstDraftBatchTests(WriterFixture, unittest.TestCase):
         batch = receipt["batch"]
         self.assertEqual([1, 2], [item["chapter"] for item in batch["drafts"]])
         self.assertEqual("FROZEN", batch["state"])
+        with self.assertRaisesRegex(GR.GroundedReviewError, "receipt"):
+            MANUAL.reviewer(candidate)
+        GR.prepare(candidate)
+        self.assertIn("evidence/grounded-review/work/chapter-01",
+                      MANUAL.grounded(candidate, [1]))
+        pass_review(candidate)
         self.assertIn("prompts/chapter-reviewer.md", MANUAL.reviewer(candidate))
         for item in batch["drafts"]:
             frozen = BATCH.S.folder(candidate) / f"chapter-{item['chapter']:02d}.md"
@@ -170,6 +178,7 @@ class FirstDraftBatchTests(WriterFixture, unittest.TestCase):
         working.write_text(draft(1, "REPAIRED"))
         self.assertEqual(before, frozen.read_bytes())
         BATCH.require_frozen_batch(candidate)
+        pass_review(candidate)
         tested = PAIR.seal(candidate)
         PAIR.verify_sealed(candidate, tested)
         row = {key: "" for key in GATE.COLUMNS if key != "timestamp_utc"}

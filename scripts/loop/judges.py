@@ -26,6 +26,7 @@ import re
 from pathlib import Path
 import legacy_guard as LG
 import first_draft_batch as FB
+import grounded_review as GR
 
 DIMS = ("voice_certainty", "method_execution", "structure_anatomy",
         "repetition_mantra", "emotional_register", "rhythm_texture")
@@ -118,8 +119,10 @@ def emit_tasks(cfg, pairs, iter_name: str, rubric_text: str, candidate: Path,
     """pairs: (label, ours_text, ref_text, ctx). Writes tasks/, creates verdicts/."""
     try:
         FB.require_frozen_batch(candidate)
-    except FB.BatchError as exc:
-        raise SystemExit(f"judges: frozen first-draft batch required: {exc}") from exc
+        GR.require_complete(candidate)
+    except (FB.BatchError, GR.GroundedReviewError) as exc:
+        raise SystemExit(f"judges: grounded PASS over frozen first-draft batch required: "
+                         f"{exc}") from exc
     for ph in ("{{REFERENCE}}", "{{CANDIDATE}}", "{{CONTEXT}}"):
         if ph not in rubric_text:
             raise SystemExit(f"judges: rubric missing {ph} placeholder")

@@ -137,6 +137,7 @@ class PanelCompletenessTests(unittest.TestCase):
                     "--prompt", str(prompt), "--out", str(out)]
             chapters = [(Path("chapter.md"), "chapter text")]
             with (mock.patch.object(sys, "argv", argv),
+                  mock.patch.object(J.SCOPE, "guard"),
                   mock.patch.dict(os.environ, {"OPENROUTER_API_KEY": "test"}, clear=True),
                   mock.patch.object(J.E, "load_chapters", return_value=chapters),
                   mock.patch.object(J, "chat", side_effect=[good, '{"scores":']),

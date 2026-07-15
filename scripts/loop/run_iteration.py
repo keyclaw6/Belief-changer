@@ -18,6 +18,7 @@ import commission_set as CS     # noqa: E402
 import writer_context as WC     # noqa: E402
 import draft_batch_runtime as BR  # noqa: E402
 import first_draft_batch as FB     # noqa: E402
+import grounded_review as GR       # noqa: E402
 write_chapters = BR.write_chapters
 def run_step(cmd, cwd=None):
     print(f"[run] $ {' '.join(cmd)}")
@@ -164,11 +165,21 @@ def main():
                 FB.freeze(candidate)
             except FB.BatchError as exc:
                 raise SystemExit(f"[run] first-draft freeze failed closed: {exc}") from exc
-        if not a.score_now:
-            print("[run] Complete first-draft batch frozen. Review may now start "
-                  f"({MD.reviewer(candidate)}). Then resume:")
-            print(f"[run]   {MD.resume(a, HERE, sys.executable or 'python3')}")
-            sys.exit(0)
+    try:
+        grounded = GR.advance(candidate, cfg)
+    except GR.GroundedReviewPending as exc:
+        print("[run] Complete first-draft batch frozen. Grounded review is mandatory.")
+        print(f"[run] {MD.grounded(candidate, exc.missing)}")
+        print(f"[run] Then replay: {MD.resume(a, HERE, sys.executable or 'python3')}")
+        sys.exit(4)
+    except GR.GroundedReviewError as exc:
+        raise SystemExit(f"[run] grounded review blocked: {exc}") from exc
+    if not a.no_write and not a.score_now:
+        print(f"[run] Grounded review PASS {grounded['receipt_hash']}. "
+              f"Literary/developmental review may now start ({MD.reviewer(candidate)}).")
+        print("[run] Then resume:")
+        print(f"[run]   {MD.resume(a, HERE, sys.executable or 'python3')}")
+        sys.exit(0)
 
     manifest = CP.load(candidate)
     try:

@@ -17,6 +17,7 @@ import score_receipt  # noqa: E402
 import pair_store as PS  # noqa: E402
 import score_report  # noqa: E402
 import first_draft_batch as FB  # noqa: E402
+import grounded_review as GR  # noqa: E402
 
 _report = score_report.report
 
@@ -78,8 +79,9 @@ def main():
         return
     try:
         FB.require_frozen_batch(candidate)
-    except FB.BatchError as exc:
-        raise SystemExit(f"score: frozen first-draft batch required: {exc}") from exc
+        GR.require_complete(candidate)
+    except (FB.BatchError, GR.GroundedReviewError) as exc:
+        raise SystemExit(f"score: grounded PASS over frozen batch required: {exc}") from exc
     core = score_core.evaluate(cfg, a.book, a.chapters, a.control_ref)
     labels = [pair[0] for pair in core["pairs"]]
     iter_name = f"{a.iter:03d}" if a.iter is not None else "adhoc"

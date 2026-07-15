@@ -17,6 +17,7 @@ import score_core  # noqa: E402
 import score_receipt  # noqa: E402
 import pair_store as PS  # noqa: E402
 import first_draft_batch as FB  # noqa: E402
+import grounded_review as GR  # noqa: E402
 
 COLUMNS = ["iter", "timestamp_utc", "campaign", "instrument", "hypothesis",
            "reward", "hard_ok", "verdict", "worst_dimension", "top_suggestion",
@@ -138,8 +139,9 @@ def main():
         return
     try:
         FB.require_frozen_batch(candidate)
-    except FB.BatchError as exc:
-        raise SystemExit(f"gate: frozen first-draft batch required: {exc}") from exc
+        GR.require_complete(candidate)
+    except (FB.BatchError, GR.GroundedReviewError) as exc:
+        raise SystemExit(f"gate: grounded PASS over frozen batch required: {exc}") from exc
     if a.promote_pair and not a.tested_pair_hash:
         ap.error("--promote-pair requires --tested-pair-hash")
     if a.tested_pair_hash and not a.accepted_root:

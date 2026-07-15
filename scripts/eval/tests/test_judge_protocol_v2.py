@@ -103,8 +103,10 @@ class CanonicalRunnerTests(unittest.TestCase):
             argv = ["judge_panel.py", "--ours", "ours", "--ref", "ref",
                     "--control", "identical", "--out", str(out)]
             with (mock.patch.object(sys, "argv", argv),
+                  mock.patch.object(J.SCOPE, "guard"),
                   mock.patch.object(J.E, "load_chapters", side_effect=[chapters(), chapters()]),
                   mock.patch.object(J.N, "complete", side_effect=answer),
+                  mock.patch.object(J.N, "finalize_controls"),
                   contextlib.redirect_stdout(io.StringIO())):
                 J.main()
             summary = json.loads((out / "judge-summary.json").read_text(encoding="utf-8"))
@@ -144,9 +146,11 @@ class CanonicalRunnerTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             out = Path(tmp) / "out"
             argv = ["judge_panel.py", "--ours", "ours", "--ref", "ref",
-                    "--validated-controls", "one,two", "--out", str(out)]
+                    "--validated-controls", J.SCOPE.HF.canonical_argument(),
+                    "--out", str(out)]
             stdout = io.StringIO()
             with (mock.patch.object(sys, "argv", argv),
+                  mock.patch.object(J.SCOPE, "guard"),
                   mock.patch.object(J.E, "load_chapters", side_effect=[chapters(), chapters()]),
                   mock.patch.object(J.N, "validate_controls", side_effect=validate),
                   mock.patch.object(J.N, "complete", side_effect=answer),
@@ -167,6 +171,7 @@ class CanonicalRunnerTests(unittest.TestCase):
             argv = ["judge_panel.py", "--ours", "ours", "--ref", "ref",
                     "--control", "degraded-reference", "--out", str(out)]
             with (mock.patch.object(sys, "argv", argv),
+                  mock.patch.object(J.SCOPE, "guard"),
                   mock.patch.object(J.E, "load_chapters", side_effect=[chapters(), chapters()]),
                   mock.patch.object(J.N, "complete", side_effect=answer),
                   contextlib.redirect_stdout(io.StringIO())):

@@ -3,6 +3,8 @@ import shlex
 from pathlib import Path
 import candidate_pair as CP
 import first_draft_batch as FB
+import grounded_review as GR
+import grounded_review_call as GC
 
 
 def _cwd(root):
@@ -33,8 +35,18 @@ def writer(cfg, operation, book, selected, authority):
                   authority["commissions"][number])
 
 
+def grounded(candidate, missing):
+    FB.require_frozen_batch(candidate)
+    lines = ["dispatch each exact native wrapper command once; each reviewer cwd is its "
+             "readonly task-only workdir, never the experiment root:"]
+    for number in missing:
+        lines.append(f"`{shlex.join(GC.wrapper_command(candidate, number))}`")
+    return " ".join(lines)
+
+
 def reviewer(candidate):
     FB.require_frozen_batch(candidate)
+    GR.require_complete(candidate)
     operation = CP.candidate_tree(candidate)
     return (f"mandatory cwd `{_cwd(operation)}`; dispatch "
             "`prompts/chapter-reviewer.md` from that cwd")

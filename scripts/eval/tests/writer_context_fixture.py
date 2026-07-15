@@ -6,7 +6,8 @@ from unittest import mock
 import candidate_pair as PAIR
 import commission_set as SET
 from test_commission_contract import commission
-from test_commission_set import assigned, packet
+from test_commission_set import assigned
+from commission_packet_fixture import packet
 
 
 class WriterFixture:
@@ -16,6 +17,10 @@ class WriterFixture:
         files = {
             "loop/config.yaml": (
                 "writer_model: writer/model\nwriter_reasoning: none\n"
+                "grounded_reviewer_model: reviewer/model\n"
+                "grounded_reviewer_family: reviewer\n"
+                "grounded_reviewer_route: codex-native\n"
+                "grounded_reviewer_reasoning: xhigh\n"
                 "judge_rubric: calibration/judges/rubric.md\n"
                 "reference_dir: calibration/reference/book\nresults_tsv: loop/results.tsv\n"),
             "loop/results.tsv": "iter\treward\tverdict\n",
@@ -24,11 +29,18 @@ class WriterFixture:
             "prompts/chapter-commissioner.md": "commissioner\n",
             "prompts/commission-set-auditor.md": "auditor\n",
             "prompts/chapter-reviewer.md": "reviewer\n",
+            "prompts/grounded-reviewer.md": "grounded reviewer contract\n",
             "production-books/test/00-brief.md": "brief\n",
             "production-books/test/research/lived-experience.md": "lived\n",
             "production-books/test/research/scientific-evidence.md": "science\n",
             "production-books/test/research/sources/s-101-fixture.md":
-                packet("S-101", "E-001", "FORBIDDEN-RAW-ASSIGNED"),
+                packet("S-101", "E-001", "FORBIDDEN-RAW-ASSIGNED") +
+                "\n### E-002\n- **Kind:** INTERPRETATION\n"
+                "- **Text:** FORBIDDEN-RAW-UNASSIGNED-SAME-PACKET\n"
+                "- **Excerpt ID:** C-001\n- **Locator:** fixture paragraph\n"
+                "- **Persona tags:** ALL\n- **Bank slots:** Bank 2\n"
+                "- **Evidence grade:** SUPPORTED\n"
+                "- **Use / limits:** unassigned mixed-file fixture\n",
             "production-books/test/research/sources/s-102-fixture.md":
                 packet("S-102", "E-001", "FORBIDDEN-RAW-SECOND"),
             "production-books/test/research/sources/s-999-unassigned.md":

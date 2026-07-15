@@ -15,15 +15,7 @@ import candidate_pair as PAIR  # noqa: E402
 import commission_set as SET  # noqa: E402
 import pair_store as STORE  # noqa: E402
 from test_commission_contract import authority, commission  # noqa: E402
-
-def packet(source, item, marker):
-    return f"""# {source} — Fixture
-- **Source ID:** {source}
-## Evidence items
-### {item}
-- **Kind:** INTERPRETATION
-- **Text:** {marker}
-"""
+from commission_packet_fixture import packet  # noqa: E402
 
 def assigned(chapter, source):
     auth = deepcopy(authority())
