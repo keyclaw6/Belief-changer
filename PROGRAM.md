@@ -77,8 +77,13 @@ existing isolated evidence paths; the result line stores only compact outcomes.
 
 ## 4. H-F04 calibration exception
 
-RF-20 may submit frozen iter-004, iter-007, and matched reference openings to the
-blind instrument as anonymous candidates. It performs no generation, revision,
-or promotion. Verify repeat agreement, a strong anonymous-reference ceiling,
-and separation of integrity from effect. On failure, correct the instrument once
-and repeat calibration; do not build more infrastructure or start H-F01.
+RF-20 calibration uses two disjoint blind contracts: an absolute observer sees
+one content and reports belief-change sufficiency; an anonymous A/B comparator
+reports only relative preference. Neither verdict schema accepts the other, and
+absolute output never enters a comparator prompt. A matched reference may appear
+only as an anonymous, non-promotable calibration candidate outside generation.
+
+RF-20 is `BLOCKED` by a terminal failed lineage; the canonical outcome and hashes
+live only in the `rf20-attempt-5` row of `calibration/runs/LEDGER.md`. Do not retry
+or reinterpret that lineage. RF-21 remains blocked until a newly founder/root-
+approved calibration lineage passes.

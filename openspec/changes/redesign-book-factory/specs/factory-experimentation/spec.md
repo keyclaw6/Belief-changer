@@ -135,28 +135,84 @@ AND no preference, reader-effect, or craft score may override that failure.
 ### Requirement: Blind and independent judgment
 Reader-effect and sequence evaluators SHALL remain blind to condition identity,
 text provenance, reference-as-ground-truth context, historical scores, and judge
-verdicts. In product experiments they SHALL NOT receive reference prose. The
-H-F04 instrument calibration MAY submit a matched reference chapter or opening
-as an anonymous candidate solely to measure the instrument ceiling; the
-evaluator MUST NOT be told its identity or provenance, and the calibration MUST
-not pair it with labeled reference ground truth. Each decisive pair SHALL use at
-least two fresh independent contexts and, where available, two model families or
-one model family plus a founder/human judgment. Reference-sighted diagnosis
-SHALL run only after blind evidence is frozen.
+verdicts. In product experiments they SHALL NOT receive reference prose.
+
+The paired instrument SHALL receive exactly one task containing anonymous A/B
+content with exact fields `schema`, `instrument: blind-product-effect`, `mode`,
+`subject`, `fresh_context: true`, `candidates`, and `task_sha256`. Its task hash
+SHALL bind that exact content, and its verdict SHALL emit exactly `schema`,
+`task_sha256`, `mode`, `preferred`, `confidence`, and `decisive_reason`. It SHALL
+make no independent absolute, sufficiency, sequence, or link observation. It
+SHALL select a side only for a material relative difference in enacted causal
+effect and SHALL return `TIE` when neither side has a clearly stronger enacted
+path, including when both are similarly strong or similarly weak.
+
+The absolute instrument SHALL receive exactly one content task with exact fields
+`schema`, `instrument: blind-product-effect-absolute`, `mode`, `subject`,
+`fresh_context: true`, `chapters`, and `task_sha256`; chapter mode SHALL contain
+exactly one chapter and whole-opening mode at least two. Its verdict SHALL contain
+only `schema`, `task_sha256`, `mode`, `observation`, and `confidence`. Chapter
+sequence links SHALL all be `NOT_APPLICABLE`. Neither a chapter nor a whole
+opening SHALL `MEET` with unresolved belief work. Whole-opening links SHALL use
+only `ABSENT`, `PARTIAL`, or `CLEAR`; a downstream `CLEAR` SHALL be enacted after
+and from a non-`ABSENT` prerequisite; and the opening SHALL `MEET` if and only if
+all three links are `CLEAR`.
+
+Each task and envelope SHALL reject missing, extra, contradictory, or stale
+fields and hashes. An absolute envelope SHALL keep scope, stable content ID,
+content hash, and tested-pair binding outside the judge payload. Calibration
+envelopes SHALL be non-promotable with a null tested-pair hash; ordinary
+envelopes SHALL require a sealed tested-pair hash. The two task and verdict
+schemas SHALL never cross-validate. Both rubric files SHALL be sealed among the
+candidate's evaluation inputs.
+
+H-F04 MAY submit a matched reference chapter or opening only as an anonymous,
+unlabeled, non-promotable diagnostic. The evaluator MUST NOT receive its identity
+or provenance, and neither reference text nor any calibration verdict may flow
+into generation. Correcting either instrument starts a new calibration lineage.
 
 #### Scenario: H-F04 calibrates on a reference-as-candidate
 WHEN a matched reference chapter or opening is submitted to the blind instrument
-THEN it MUST be anonymized as an ordinary candidate, isolated from all generation
-contexts and promotion decisions, and recorded only as calibration evidence
-AND neither its text nor the resulting verdict may flow into research, framing,
-planning, commissioning, writing, review, or revision.
+THEN it MUST be anonymized, isolated from generation and promotion, and recorded
+only as calibration evidence
+AND neither its text nor verdict may flow into research, framing, planning,
+commissioning, writing, review, or revision.
+
+#### Scenario: One-content absolute assessment is strict
+WHEN a chapter or whole opening is submitted to the absolute instrument
+THEN its task, envelope, and verdict MUST have exact fields and current hash
+bindings
+AND chapter sequence links MUST be `NOT_APPLICABLE`
+AND whole-opening sufficiency MUST be `MEETS` if and only if all links are
+`CLEAR`, with downstream `CLEAR` enacted after and from its prerequisite
+AND missing, extra, overlong, mode-inapplicable, stale, or contradictory fields
+MUST fail closed.
+
+#### Scenario: Paired comparison stays comparison-only
+WHEN two anonymous contents are submitted to the paired instrument
+THEN its verdict MUST contain preference, confidence, and one decisive relative
+reason but no absolute observation, sufficiency, or link fields
+AND no material enacted-effect difference MUST produce `TIE`
+AND an absolute verdict MUST be rejected by the paired contract.
+
+#### Scenario: Split verdicts do not cross-validate
+WHEN a paired verdict is submitted to the absolute contract or an absolute
+verdict is submitted to the paired contract
+THEN exact schema validation MUST reject it.
+
+#### Scenario: A failed calibration lineage remains terminal
+WHEN frozen calibration evidence fails a preregistered terminal control gate
+THEN that lineage MUST remain a terminal `FAIL` without retry, relaxation,
+reinterpretation, or continuation
+AND no product run may start from that lineage
+AND further calibration MUST use a newly founder/root-approved hypothesis and
+control lineage.
 
 #### Scenario: Evaluator disagreement is too large
 WHEN repeat variance or evaluator disagreement is comparable to the intended
 treatment effect
 THEN the instrument MUST be recalibrated
-AND it MUST NOT make a promotion decision until its decision reliability is
-established.
+AND it MUST NOT make a promotion decision until its reliability is established.
 
 ### Requirement: Minimal experiment record
 Each run SHALL record only its hypothesis and causal chain, linked change set,

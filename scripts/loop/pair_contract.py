@@ -65,11 +65,13 @@ def evaluation_paths(cfg, root: Path) -> list[str]:
     ref_dir = relative(cfg.get("reference_dir", ""), root)
     ref_root = root / ref_dir
     paths = [rubric]
-    product_rubric = cfg.get("product_effect_rubric")
-    if product_rubric:
-        product_rubric = relative(product_rubric, root)
-        _file(root / product_rubric, root, "product-effect rubric")
-        paths.append(product_rubric)
+    for key, label in (("product_effect_rubric", "product-effect rubric"),
+                       ("product_effect_absolute_rubric", "absolute product-effect rubric")):
+        product_rubric = cfg.get(key)
+        if product_rubric:
+            product_rubric = relative(product_rubric, root)
+            _file(root / product_rubric, root, label)
+            paths.append(product_rubric)
     for path in _files(ref_root, root, "reference directory"):
         if path.name == "reference-metrics.json" or path.suffix.lower() in (".md", ".txt"):
             paths.append(path.relative_to(root).as_posix())

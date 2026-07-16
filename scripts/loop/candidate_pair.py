@@ -4,11 +4,9 @@ from pathlib import Path
 import loopcfg, draft_batch_contract as DB, draft_batch_lifecycle as DL, developmental_review_lifecycle as DRL, pair_contract as PC, pair_store as PS, writer_operation as WO
 from pair_transition import add_book, assert_run, initialize, promote, reject, status
 SCHEMA, MANIFEST, DECISION = 7, "pair.json", "decision.json"
-class PairError(RuntimeError):
-    pass
+class PairError(RuntimeError): pass
 def _fail(exc):
-    if isinstance(exc, PairError):
-        raise exc
+    if isinstance(exc, PairError): raise exc
     raise PairError(str(exc)) from exc
 def _reviewed(root):
     import first_draft_batch as FB, grounded_review as GR, developmental_review as DR
@@ -44,24 +42,19 @@ def _recorded_hash(entries, key):
         raise PairError("candidate pair metadata is malformed") from exc
     return PS.state_hash(states)
 def _validate_entries(entries, groups):
-    if not isinstance(entries, list) or not entries:
-        return False
+    if not isinstance(entries, list) or not entries: return False
     paths = [item.get("path") for item in entries if isinstance(item, dict)]
     return len(paths) == len(entries) == len(set(paths)) and all(
         item.get("group") in groups and isinstance(path, str) and path
         and not Path(path).is_absolute() and ".." not in Path(path).parts
         for path, item in zip(paths, entries))
-def load(root):
-    path = _manifest_path(root)
+def _read_manifest(root):
     try:
-        value = json.loads(PS._safe_file(path, Path(root).absolute()).read_text(encoding="utf-8"))
-        DL.recover(root, value); DRL.recover(root, value)
-        value = json.loads(PS._safe_file(path, Path(root).absolute()).read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError, PS.StoreError, DL.LifecycleError,
-            DRL.LifecycleError) as exc:
+        return json.loads(PS._safe_file(_manifest_path(root), Path(root).absolute()).read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError, PS.StoreError) as exc:
         raise PairError(f"invalid candidate pair manifest: {exc}") from exc
-    run = value.get("run")
-    state = value.get("state")
+def _validated(root, value):
+    run, state = value.get("run"), value.get("state")
     if value.get("schema") != SCHEMA or "developmental_review" not in value \
             or state not in ("CANDIDATE", "WRITER_HANDOFF", "DRAFTING",
                              "BATCH_FROZEN", "SEALED") \
@@ -87,10 +80,17 @@ def load(root):
             or _recorded_hash(value["evaluation"], "accepted_sha256") != value.get("accepted_evaluation_hash"):
         raise PairError("accepted pair manifest hash is invalid")
     return value
+def inspect(root):
+    return _validated(root, _read_manifest(root))
+def load(root):
+    value = _read_manifest(root)
+    try: DL.recover(root, value); DRL.recover(root, value)
+    except (DL.LifecycleError, DRL.LifecycleError) as exc:
+        raise PairError(f"invalid candidate pair manifest: {exc}") from exc
+    return inspect(root)
 def _bare(entries):
     return [{"group": item["group"], "path": item["path"]} for item in entries]
-def _members(manifest):
-    return manifest["entries"] + manifest["outputs"]
+def _members(manifest): return manifest["entries"] + manifest["outputs"]
 def _copy(target, source, entries):
     for item in entries:
         data = PS._safe_file(Path(source) / item["path"], source).read_bytes()
@@ -238,7 +238,7 @@ def _view(root, manifest):
     tree = candidate_tree(root)
     cfg = dict(loopcfg.load(PS._safe_file(tree / manifest["run"]["config"], tree)))
     evaluation, evidence = evaluation_tree(root), evidence_tree(root)
-    cfg.update(judge_rubric=str(evaluation / cfg["judge_rubric"]), product_effect_rubric=str(evaluation / cfg["product_effect_rubric"]) if cfg.get("product_effect_rubric") else "",
+    cfg.update(judge_rubric=str(evaluation / cfg["judge_rubric"]), product_effect_rubric=str(evaluation / cfg["product_effect_rubric"]) if cfg.get("product_effect_rubric") else "", product_effect_absolute_rubric=str(evaluation / cfg["product_effect_absolute_rubric"]) if cfg.get("product_effect_absolute_rubric") else "",
                reference_dir=str(evaluation / cfg["reference_dir"]),
                reference_epub="SEALED-EVALUATION-DOES-NOT-READ-EPUB",
                history_results_tsv=str(evaluation / cfg.get("results_tsv", "loop/results.tsv")), history_causal_results_jsonl=str(evaluation / cfg["causal_results_jsonl"]) if cfg.get("causal_results_jsonl") else "",

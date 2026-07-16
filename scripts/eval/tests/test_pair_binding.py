@@ -1,8 +1,5 @@
 """RF-02 gate receipt binds every decision input and judge artifact."""
-import json
-import sys
-import tempfile
-import unittest
+import json, sys, tempfile, unittest
 from pathlib import Path
 from unittest import mock
 ROOT = Path(__file__).resolve().parents[3]
@@ -98,6 +95,7 @@ class PairBindingTests(unittest.TestCase):
                 "epsilon: 0.03\njudge_k: 1\njudge_model: judge\njudge_reasoning: xhigh\n"
                 "judge_rubric: calibration/judges/rubric.md\n"
                 "product_effect_rubric: calibration/judges/product.md\n"
+                "product_effect_absolute_rubric: calibration/judges/absolute.md\n"
                 "causal_results_jsonl: loop/causal-bundle-results.jsonl\n"
                 "reference_dir: calibration/reference/book\nresults_tsv: loop/results.tsv\n"
                 "scores_dir: loop/scores\ntasks_dir: loop/iterations\nweights:\n" + weights + "\n"),
@@ -126,6 +124,7 @@ class PairBindingTests(unittest.TestCase):
             "production-books/second/chapters/chapter-01.md": "second chapter\n",
             "calibration/judges/rubric.md": RUBRIC,
             "calibration/judges/product.md": "Blind product effect\n{{TASK}}\n",
+            "calibration/judges/absolute.md": "Blind absolute effect\n{{TASK}}\n",
             "calibration/reference/book/001.txt": "reference\n",
             "calibration/reference/book/reference-metrics.json": '{"chapters": []}\n'}
         for relative, text in files.items():
@@ -136,6 +135,11 @@ class PairBindingTests(unittest.TestCase):
         PAIR.snapshot(experiment, accepted, "production-books/test", "1", iteration=1)
         tested = PAIR.seal(experiment)
         view = PAIR.open_sealed(experiment, tested)
+        # Infra: both product-effect contracts are sealed evaluation inputs.
+        self.assertEqual("Blind product effect\n{{TASK}}\n", Path(
+            view["config"]["product_effect_rubric"]).read_text())
+        self.assertEqual("Blind absolute effect\n{{TASK}}\n", Path(
+            view["config"]["product_effect_absolute_rubric"]).read_text())
         cfg, label = view["config"], "ch01"
         with mock.patch.object(judges.FB, "require_frozen_batch"), \
                 mock.patch.object(judges.GR, "require_complete"), \

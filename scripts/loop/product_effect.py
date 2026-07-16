@@ -1,4 +1,4 @@
-"""Pure RF-16 blind product-effect task and verdict contract."""
+"""Pure RF-16 blind paired product-effect comparison contract."""
 import hashlib
 import json
 
@@ -6,10 +6,6 @@ SCHEMA = 1
 INSTRUMENT = "blind-product-effect"
 MODES = ("chapter", "whole_opening")
 LABELS = ("A", "B")
-TEXT_FIELDS = ("entering_belief", "leaving_belief", "enacted_discovery")
-RATING_FIELDS = ("subject_specificity", "mechanism_credibility", "emotion_relief",
-                 "escalation", "continuity_handoff")
-RATINGS = ("ABSENT", "PARTIAL", "CLEAR")
 
 
 class ContractError(RuntimeError):
@@ -127,24 +123,12 @@ def h_f04_judge_task(envelope):
 def verdict(raw, expected_task):
     task = validate_task(expected_task)
     value = _loads(raw)
-    keys = {"schema", "task_sha256", "mode", "observations", "preferred",
-            "confidence", "decisive_reason"}
+    keys = {"schema", "task_sha256", "mode", "preferred", "confidence",
+            "decisive_reason"}
     if not isinstance(value, dict) or set(value) != keys or value.get("schema") != SCHEMA \
             or value.get("task_sha256") != task["task_sha256"] \
             or value.get("mode") != task["mode"]:
         raise ContractError("product-effect verdict identity is missing or stale")
-    observations = value["observations"]
-    if not isinstance(observations, dict) or tuple(observations) != LABELS:
-        raise ContractError("verdict observations must cover anonymous A and B")
-    fields = set(TEXT_FIELDS + RATING_FIELDS)
-    for label in LABELS:
-        item = observations[label]
-        if not isinstance(item, dict) or set(item) != fields:
-            raise ContractError(f"candidate {label} observation fields are not exact")
-        for field in TEXT_FIELDS:
-            _text(item[field], f"{label}.{field}", 200)
-        if any(item[field] not in RATINGS for field in RATING_FIELDS):
-            raise ContractError(f"candidate {label} categorical rating is invalid")
     if value["preferred"] not in ("A", "B", "TIE") \
             or value["confidence"] not in ("LOW", "MEDIUM", "HIGH"):
         raise ContractError("preference or confidence is invalid")
@@ -154,16 +138,8 @@ def verdict(raw, expected_task):
 
 def output_schema():
     string = {"type": "string"}
-    properties = {field: string for field in TEXT_FIELDS}
-    properties.update({field: {"type": "string", "enum": list(RATINGS)}
-                       for field in RATING_FIELDS})
-    observation = {"type": "object", "additionalProperties": False,
-                   "properties": properties, "required": list(properties)}
     root = {"schema": {"type": "integer", "enum": [SCHEMA]},
             "task_sha256": string, "mode": {"type": "string", "enum": list(MODES)},
-            "observations": {"type": "object", "additionalProperties": False,
-                             "properties": {label: observation for label in LABELS},
-                             "required": list(LABELS)},
             "preferred": {"type": "string", "enum": ["A", "B", "TIE"]},
             "confidence": {"type": "string", "enum": ["LOW", "MEDIUM", "HIGH"]},
             "decisive_reason": string}

@@ -19,13 +19,18 @@ instrument_version: carr-likeness-rubric-1
 
 # RF-16/RF-19 product lineage. Legacy campaign fields below remain readable.
 product_effect_rubric: calibration/judges/product-effect-rubric.md
+product_effect_absolute_rubric: calibration/judges/product-effect-absolute-rubric.md
 causal_results_jsonl: loop/causal-bundle-results.jsonl
 history_results_tsv: loop/results.tsv
 
 # --- Writer: Claude Opus 4.6, reasoning disabled, via OpenRouter ---
-writer_model: anthropic/claude-4.6-opus
+writer_model: anthropic/claude-opus-4.6
 writer_provider: openrouter
 writer_reasoning: none
+writer_endpoint: https://openrouter.ai/api/v1/chat/completions
+writer_temperature: 0.7
+writer_max_tokens: 16000
+writer_attempts: 1
 
 # --- Research: DeepSeek V4 Pro, top reasoning, via OpenRouter ---
 researcher_model: deepseek/deepseek-v4-pro

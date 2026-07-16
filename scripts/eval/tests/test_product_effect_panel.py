@@ -3,7 +3,6 @@ import json
 import sys
 import tempfile
 import unittest
-from copy import deepcopy
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -17,18 +16,8 @@ TESTED = "a" * 64
 
 
 def verdict(task, preferred="A"):
-    observation = {
-        "entering_belief": "The behavior promises relief.",
-        "leaving_belief": "The behavior creates the discomfort.",
-        "enacted_discovery": "A concrete comparison exposes the loop.",
-        "subject_specificity": "CLEAR", "mechanism_credibility": "CLEAR",
-        "emotion_relief": "PARTIAL", "escalation": "CLEAR",
-        "continuity_handoff": "PARTIAL",
-    }
     return {"schema": 1, "task_sha256": task["task_sha256"],
-            "mode": task["mode"],
-            "observations": {"A": observation, "B": deepcopy(observation)},
-            "preferred": preferred, "confidence": "MEDIUM",
+            "mode": task["mode"], "preferred": preferred, "confidence": "MEDIUM",
             "decisive_reason": "The preferred candidate enacts the discovery."}
 
 
@@ -94,7 +83,7 @@ class ProductEffectPanelTests(unittest.TestCase):
         self.assertEqual("two_fresh_native_same_family_repeats", summary["panel"])
 
     def test_ordinary_task_has_no_reference_envelope_and_maps_one_blind_vote(self):
-        """OpenSpec requirement: Blind and independent judgment."""
+        """Infra: ordinary paired dispatch remains blind and non-calibration."""
         def complete(_content, identity, _schema):
             return (json.dumps(verdict(self.task)),
                     {"thread_id": f"thread-{identity}"}, None)
@@ -111,7 +100,7 @@ class ProductEffectPanelTests(unittest.TestCase):
         self.assertEqual(records[0]["raw_verdict_id"], mapped["raw_verdict_id"])
 
     def test_prompt_correction_changes_call_id_and_rejects_stale_record(self):
-        """OpenSpec requirement: Blind task identity binds the current instrument."""
+        """Infra: paired records bind the current rubric and rendered input."""
         def complete(_content, identity, _schema):
             return (json.dumps(verdict(self.task)),
                     {"thread_id": f"thread-{identity}"}, None)
@@ -126,7 +115,7 @@ class ProductEffectPanelTests(unittest.TestCase):
             PANEL.records(self.cfg, "stale", self.task, tested_pair_hash=TESTED)
 
     def test_named_human_and_second_family_use_the_same_validated_flow(self):
-        """OpenSpec requirement: Two families or one model plus a named human."""
+        """Infra: paired evidence preserves independent evaluator identities."""
         def complete(_content, identity, _schema):
             return (json.dumps(verdict(self.task)),
                     {"thread_id": f"thread-{identity}"}, None)

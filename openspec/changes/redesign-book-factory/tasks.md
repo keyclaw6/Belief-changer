@@ -95,7 +95,8 @@ the SHA without reopening the implementation verdict.
   The exact commit SHA is intentionally reported after creation rather than
   embedded self-referentially.
 - RF-00 through RF-14 and RF-16 through RF-19 are complete. RF-15 remains
-  untouched; RF-20 is blocked after its one permitted instrument correction.
+  untouched. The founder explicitly reopened RF-20 on 2026-07-15 as a new
+  calibration lineage after the prior one-correction stop; no pass is claimed.
 
 ## Phase 0 — authorize, pause, and resolve the baseline
 
@@ -819,30 +820,25 @@ the SHA without reopening the implementation verdict.
 
 - [ ] Calibrate the new product instrument without generating chapters.
 - Status: `BLOCKED`
-- Evidence class / report: untested hypothesis H-F04; §§9 H-F04, 10.
-- Problem / root cause: the new rubric cannot govern H-F01 merely because its
-  fields look aligned with the vision.
-- Exact scoped change: recover frozen complete iter-004 and iter-007 Chapters
-  1–3 plus matched references inside fresh prose-reading agents; submit each
-  matched reference only as an anonymous candidate with provenance hidden; score
-  blind chapter effect and whole-opening sequence, then assess agreement, high
-  reference ceiling, and whether safety strengths remain separate from effect.
-- Likely files: isolated experiment outputs under the new lineage; no production
-  prose, prompts, or references committed.
-- Acceptance: repeat agreement is adequate for the predeclared decision rule;
-  reference establishes a strong sequence ceiling; high disagreement produces
-  an instrument revision task rather than a product run; calibration artifacts
-  cannot promote or enter any generation context.
-- Verification: raw verdict completeness, independent calibration review,
-  `bash scripts/check.sh`.
+- Evidence class / report: terminal H-F04 failure; canonical outcome and hashes
+  live only in the `rf20-attempt-5` row of `calibration/runs/LEDGER.md`.
+- Problem / root cause: the current calibration lineage did not establish
+  product authority.
+- Implemented reusable change: one exact, hash-bound, one-content absolute
+  contract owns belief-change sufficiency; one exact anonymous A/B contract owns
+  only relative preference. Neither schema accepts the other, absolute output
+  never enters the comparator, reference identity stays outside judge payloads,
+  and both rubrics are sealed evaluation inputs.
+- Blocker / next action: the failed lineage is terminal. No retry, relaxation,
+  or reinterpretation is permitted. A newly founder/root-approved hypothesis and
+  control lineage must pass before RF-21 can start.
+- Acceptance: unmet. RF-20 MUST NOT be marked complete from this result.
+- Verification: focused split-contract, pair-binding, and terminal-state tests;
+  strict OpenSpec validation. Frozen evidence remains ignored and unchanged.
 - Dependencies: RF-16, RF-17, RF-18, RF-19.
-- Implementation attempts: `2`; latest: 2026-07-15 exactly one compact rubric
-  correction/retest, result hash `ec9c631244db05c383abe5639fb679b2d58fa0d8a59520df4370b06cb8ed45a4`.
-- Review attempts: `1`; latest verdict: `BLOCKED` — corrected repeat agreement
-  was 7/8, but anonymous-reference opening votes were 0/4, so the strong ceiling
-  failed. Initial and corrected isolated evidence paths remain preserved; no
-  second correction, chapter generation, RF-21, or H-F01 run is permitted.
-- Commit / push: blocked result included in this accepted minimal-bundle commit and push.
+- Implementation attempts: `5`; latest terminal state is recorded in the run ledger.
+- Review attempts: `2`; latest independently validated the terminal failure.
+- Commit / push: `—` (current attempt uncommitted).
 
 ## Phase 5 — H-F01 bounded control/treatment experiment
 
