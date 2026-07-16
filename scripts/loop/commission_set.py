@@ -13,8 +13,7 @@ AUDIT_BLOCKED = re.compile(r"COMMISSION SET BLOCKED\nOwner: (?:brief|research/sy
 CARD = r"^###\s+{prefix}-0*{number}\b[^\n]*$"
 NEXT_CARD = re.compile(r"^###\s+(?:C|CH)-\d+\b", re.M)
 LOCATOR = re.compile(r"^(S-\d{3})#(E-\d{3})$")
-class CommissionSetError(RuntimeError):
-    pass
+class CommissionSetError(RuntimeError): pass
 def _canonical(value):
     try:
         return json.loads(json.dumps(value, sort_keys=True))
@@ -22,9 +21,9 @@ def _canonical(value):
         raise CommissionSetError("assignment record is not canonical JSON") from exc
 def _sha_text(text):
     return PS.sha(text.encode("utf-8"))
-def _ready_manifest(root):
+def _ready_manifest(root, recover=True):
     try:
-        manifest = CP.load(root)
+        manifest = (CP.load if recover else CP.inspect)(root)
         return manifest, CP._actual(root, manifest)[0]
     except (CP.PairError, PS.StoreError) as exc:
         raise CommissionSetError(str(exc)) from exc
@@ -187,9 +186,9 @@ def _validated_commissions(root, manifest, inputs):
             raise CommissionSetError(f"{chapter}: COMMISSION BLOCKED")
         commissions[chapter] = text
     return commissions
-def require_writer_eligible(root):
+def require_writer_eligible(root, recover=True):
     """Fail closed unless the current complete set matches its fresh audit receipt."""
-    manifest, _ = _ready_manifest(root)
+    manifest, _ = _ready_manifest(root, recover)
     try:
         raw = PS._safe_file(_receipt_path(root), Path(root).absolute()).read_text(encoding="utf-8")
         receipt = json.loads(raw)
@@ -206,11 +205,12 @@ def require_writer_eligible(root):
         raise CommissionSetError("commission audit receipt hash mismatch")
     inputs = _inputs(root, manifest, receipt.get("assignments"))
     commissions = _validated_commissions(root, manifest, inputs)
-    _, inputs["pair_hash"] = _ready_manifest(root)
+    _, inputs["pair_hash"] = _ready_manifest(root, recover)
     if receipt.get("operation") != _operation(manifest) \
             or receipt.get("bindings") != _bindings(manifest, inputs, commissions):
             raise CommissionSetError("commission audit receipt is stale or hash-mismatched")
     return receipt_hash
+def inspect_writer_eligible(root): return require_writer_eligible(root, False)
 def generate(root, assignments, commissioner_runner, audit_runner):
     """Generate all selected commissions, then run exactly one whole-set audit."""
     manifest, _ = _ready_manifest(root)

@@ -1,12 +1,5 @@
 """RF-00 regressions for the factory-experimentation Legacy loop pause."""
-import ast
-import contextlib
-import hashlib
-import importlib.util
-import io
-import sys
-import tempfile
-import unittest
+import ast, contextlib, hashlib, importlib.util, io, sys, tempfile, unittest
 from pathlib import Path
 from unittest import mock
 ROOT = Path(__file__).resolve().parents[3]
@@ -22,6 +15,7 @@ def load_entrypoint(name):
 RUN = load_entrypoint("run_iteration")
 SCORE = load_entrypoint("score")
 GATE = load_entrypoint("gate")
+HF_RUN = load_entrypoint("hf01_run")
 WRITE_METHODS = {
     "Popen", "call", "check_call", "chmod", "copy", "copy2", "copyfile", "dump",
     "hardlink_to", "makedirs", "mkdir", "move", "open", "remove", "removedirs",
@@ -69,10 +63,7 @@ def entrypoint_state(source):
 
 
 def digest(paths):
-    return {
-        path: hashlib.sha256(path.read_bytes()).hexdigest()
-        for path in paths
-    }
+    return {path: hashlib.sha256(path.read_bytes()).hexdigest() for path in paths}
 class LegacyGuardTests(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
@@ -92,8 +83,7 @@ class LegacyGuardTests(unittest.TestCase):
             path.write_text(body, encoding="utf-8")
         self.protected = (self.product, self.config, self.score, self.results)
 
-    def tearDown(self):
-        self.tmp.cleanup()
+    def tearDown(self): self.tmp.cleanup()
 
     def candidate_fixture(self):
         candidate = self.root / "candidate"
@@ -126,11 +116,11 @@ class LegacyGuardTests(unittest.TestCase):
         inventory = {}
         for path in LOOP.glob("*.py"):
             executable, _, guarded = entrypoint_state(path.read_text(encoding="utf-8"))
-            if executable and path.name != "loopcfg.py":  # sole read-only CLI
+            if executable and path.name not in ("loopcfg.py", "hf01_preflight.py"):
                 inventory[path.name] = guarded
         self.assertEqual(
             {"developmental_review.py": True, "gate.py": True,
-             "grounded_review.py": True,
+             "grounded_review.py": True, "hf01_run.py": True,
              "run_iteration.py": True, "score.py": True},
             inventory,
         )
@@ -143,7 +133,17 @@ class LegacyGuardTests(unittest.TestCase):
             "if __name__ == '__main__': main()\n"
         )
         self.assertEqual((True, True, False), entrypoint_state(future))
-
+        snapshot = self.root / "snapshot"
+        (snapshot / "loop/experiments").mkdir(parents=True)
+        resume = HF_RUN._resume(snapshot)
+        for token in ("--redesign-authorized", "--rf-stage", "RF-23", str(snapshot / "loop/experiments")): self.assertIn(token, resume)
+        wrong = self.root / "wrong"; wrong.mkdir()
+        argv = ["hf01_run.py", "--snapshot-root", str(snapshot), "--redesign-authorized",
+                "--rf-stage", "RF-23", "--candidate-root", str(wrong)]
+        with mock.patch.object(LG, "LEDGER", self.ledger()), \
+                mock.patch.object(sys, "argv", argv), mock.patch.object(HF_RUN, "run") as dispatch:
+            with self.assertRaisesRegex(SystemExit, "candidate-root must equal"): HF_RUN.main()
+        dispatch.assert_not_called()
     def test_program_redirects_legacy_recovery_to_the_ledger(self):
         """OpenSpec scenario: The legacy loop is invoked before redesign readiness."""
         program = (ROOT / "PROGRAM.md").read_text(encoding="utf-8")
