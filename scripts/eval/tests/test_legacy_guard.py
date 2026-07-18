@@ -60,8 +60,6 @@ def entrypoint_state(source):
         not risky or min(node.lineno for node in guards) < min(node.lineno for node in risky)
     )
     return executable, bool(capable), guarded
-
-
 def digest(paths):
     return {path: hashlib.sha256(path.read_bytes()).hexdigest() for path in paths}
 class LegacyGuardTests(unittest.TestCase):
@@ -82,9 +80,7 @@ class LegacyGuardTests(unittest.TestCase):
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(body, encoding="utf-8")
         self.protected = (self.product, self.config, self.score, self.results)
-
     def tearDown(self): self.tmp.cleanup()
-
     def candidate_fixture(self):
         candidate = self.root / "candidate"
         book = candidate / "product"
@@ -100,7 +96,6 @@ class LegacyGuardTests(unittest.TestCase):
             encoding="utf-8",
         )
         return candidate, book, config
-
     def ledger(self, rf20="READY", rf23="READY"):
         path = self.root / "tasks.md"
         path.write_text(
@@ -110,7 +105,6 @@ class LegacyGuardTests(unittest.TestCase):
             encoding="utf-8",
         )
         return path
-
     def test_inventory_is_complete_and_guards_future_entrypoints(self):
         """Infrastructure: static inventory fails for an unguarded future writer."""
         inventory = {}
@@ -153,7 +147,17 @@ class LegacyGuardTests(unittest.TestCase):
             "scripts/loop/legacy_guard.py",
         ):
             self.assertIn(required, program)
-
+    def test_failed_calibration_lineage_remains_terminal_and_product_blocking(self):
+        """OpenSpec scenario: A failed calibration lineage remains terminal."""
+        ledger = (ROOT / "calibration/runs/LEDGER.md").read_text()
+        rows = [line for line in ledger.splitlines() if line.startswith("| rf20-attempt-5 |")]
+        self.assertEqual(1, len(rows)); self.assertIn("newly founder/root-approved hypothesis and control lineage required", rows[0])
+        program = (ROOT / "PROGRAM.md").read_text()
+        for required in ("RF-20 is `BLOCKED` by a terminal failed lineage", "`rf20-attempt-5` row"): self.assertIn(required, program)
+        tasks = (ROOT / "openspec/changes/redesign-book-factory/tasks.md").read_text()
+        rf20 = tasks.split("### RF-20", 1)[1].split("### RF-21", 1)[0]; rf21 = tasks.split("### RF-21", 1)[1].split("### RF-22", 1)[0]
+        for required in ("- Status: `BLOCKED`", "- Acceptance: unmet.", "`rf20-attempt-5` row"): self.assertIn(required, rf20)
+        self.assertIn("- Status: `BLOCKED`", rf21)
     def test_pre_ready_entrypoints_stop_before_resolution_and_writes(self):
         """OpenSpec scenario: The legacy loop is invoked before redesign readiness."""
         before = digest(self.protected)
@@ -174,7 +178,6 @@ class LegacyGuardTests(unittest.TestCase):
                     module.main()
                 self.assertIn("explicit redesign authorization", str(stopped.exception))
         self.assertEqual(before, digest(self.protected))
-
     def test_authorized_rf23_isolated_dry_run_reaches_boundary(self):
         """OpenSpec scenario: An authorized isolated redesign path is exercised."""
         candidate, book, config = self.candidate_fixture()
@@ -206,7 +209,6 @@ class LegacyGuardTests(unittest.TestCase):
         LG.require_targets(candidate, candidate / "allowed-output")
         with self.assertRaises(SystemExit):
             LG.require_targets(candidate, self.product)
-
     def test_ready_stage_still_rejects_accepted_product_and_config(self):
         """OpenSpec scenario: An authorized isolated redesign path is exercised."""
         candidate, _, config = self.candidate_fixture()
@@ -231,7 +233,6 @@ class LegacyGuardTests(unittest.TestCase):
                     with self.assertRaises(SystemExit) as stopped:
                         RUN.main()
                     self.assertIn("target ", str(stopped.exception))
-
     def test_stage_and_rf23_readiness_are_both_required(self):
         """OpenSpec scenario: An authorized isolated redesign path is exercised."""
         candidate, book, config = self.candidate_fixture()
@@ -253,7 +254,5 @@ class LegacyGuardTests(unittest.TestCase):
                     with self.assertRaises(SystemExit) as stopped:
                         module.main()
                     self.assertIn("legacy execution requires RF-23 READY", str(stopped.exception))
-
-
 if __name__ == "__main__":
     unittest.main()

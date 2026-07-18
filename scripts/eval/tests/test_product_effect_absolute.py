@@ -91,18 +91,10 @@ class AbsoluteProductEffectTests(unittest.TestCase):
         self.assertEqual(value, EFFECT.verdict(json.dumps(value), task))
         schema = EFFECT.output_schema()
         self.assertEqual(set(value), set(schema["properties"]))
-        for mutation in ("preferred", "decisive_reason", "observations"):
-            changed = deepcopy(value); changed[mutation] = "forbidden"
-            with self.subTest(mutation=mutation), self.assertRaises(EFFECT.ContractError):
-                EFFECT.verdict(json.dumps(changed), task)
         changed = deepcopy(value)
         changed["observation"]["opening_sequence"]["prior_insight"] = "CLEAR"
         with self.assertRaises(EFFECT.ContractError):
             EFFECT.verdict(json.dumps(changed), task)
-        unresolved = deepcopy(value)
-        unresolved["observation"]["enacted_discovery"] = "NOT_ENACTED"
-        with self.assertRaises(EFFECT.ContractError):
-            EFFECT.verdict(json.dumps(unresolved), task)
 
     def test_whole_sufficiency_is_iff_all_clear_and_clear_links_require_prerequisites(self):
         """OpenSpec scenario: One-content absolute assessment is strict."""

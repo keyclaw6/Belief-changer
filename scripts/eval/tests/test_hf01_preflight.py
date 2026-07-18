@@ -97,9 +97,6 @@ class Hf01Tests(unittest.TestCase):
                          lambda request: commission(
                              self.assignments[request["target"]]["authority"]),
                          lambda _request: SET.AUDIT_PASS)
-        self.baseline = {f"{arm}-{n}": (paths["book"] /
-            f"chapters/chapter-{n:02d}.md").read_bytes()
-            for arm, paths in self.arms.items() for n in HF.CHAPTERS}
 
     def tearDown(self): self.tmp.cleanup()
 
@@ -123,9 +120,6 @@ class Hf01Tests(unittest.TestCase):
                           "reasoning": {"effort": "none"}, "temperature": 0.7,
                           "max_tokens": 16000, "attempts": 1, "fallbacks": []},
                          manifest["route"])
-        self.assertEqual(("DONE", "READY"),
-                         (manifest["authority"]["rf20_status"],
-                          manifest["authority"]["rf23_status"]))
         self.assertTrue(any("research/sources/" in path
                             for path in manifest["shared_research_and_safety"]))
 

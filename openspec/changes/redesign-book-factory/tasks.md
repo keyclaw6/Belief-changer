@@ -820,31 +820,25 @@ the SHA without reopening the implementation verdict.
 
 - [ ] Calibrate the new product instrument without generating chapters.
 - Status: `BLOCKED`
-- Evidence class / report: terminal H-F04 failure; canonical outcome and hashes
-  live only in the `rf20-attempt-5` row of `calibration/runs/LEDGER.md`.
-- Problem / root cause: the current calibration lineage did not establish
-  product authority.
-- Implemented reusable change: one exact, hash-bound, one-content absolute
-  contract owns belief-change sufficiency; one exact anonymous A/B contract owns
-  only relative preference. Neither schema accepts the other, absolute output
-  never enters the comparator, reference identity stays outside judge payloads,
-  and both rubrics are sealed evaluation inputs.
-- Blocker / next action: the failed lineage is terminal. No retry, relaxation,
-  or reinterpretation is permitted. A newly founder/root-approved hypothesis and
-  control lineage must pass before RF-21 can start.
-- Exact founder/root decision (no default): either remain stopped, or explicitly
-  authorize a new lineage by naming a new generic hypothesis and the exact frozen
-  control identities and terminal gates. That authorization MUST NOT reuse,
-  retry, reverse, relax, or reinterpret `rf20-attempt-5`.
 - Acceptance: unmet. RF-20 MUST NOT be marked complete from this result.
-- Verification: focused split-contract, pair-binding, and terminal-state tests;
-  strict OpenSpec validation. Frozen evidence remains ignored and unchanged.
-- Dependencies: RF-16, RF-17, RF-18, RF-19.
-- Implementation attempts: `5`; latest terminal state is recorded in the run ledger.
-- Review attempts: `2`; latest independently validated the terminal failure.
-- Commit / push: `1f22c9a0119be3f89e9667062bdecc2184ee616e`
-  (`feat(eval): split product-effect instruments`); RF-20 remains terminally
-  blocked and incomplete.
+- Terminal lineage: `rf20-attempt-5` remains terminal and unchanged; its canonical outcome and hashes live only in the `rf20-attempt-5` row of `calibration/runs/LEDGER.md`. No retry, reversal, relaxation, reuse, reinterpretation, continuation, empirical call, evidence edit, approval claim, or RF-21 start is permitted.
+- Implemented reusable change: the exact hash-bound one-content absolute contract owns belief-change sufficiency; the exact anonymous A/B contract owns only relative preference. The schemas reject each other, absolute output never enters the comparator, identity stays outside judge payloads, and both rubrics are sealed inputs.
+- Proposed-but-unapproved successor: `rf20-successor-reader-state-1`. It is not approved; a later approved/result lineage belongs in a new LEDGER row, not now.
+- Generic hypothesis (exactly one): the unchanged split product-effect instruments can distinguish an enacted cumulative reader-state journey from a complete, locally adequate opening that only maps scope, names the trap, and inventories benefits for later, because unresolved belief work must fail absolute sufficiency and lose relative enacted-effect comparisons.
+- Canonical bytes: for each `n=1..3`, UTF-8 `# Chapter {n}\n\n{DRAFTS[n]}\n`; opening bytes are the three chapter byte strings joined by one `\n` byte.
+- Clean control: `scripts/eval/tests/developmental_review_fixture.py` blob `04b9b5648cd423a562c49f0af181d2eca0b25324`, `CLEAN_DRAFTS`; chapter SHA-256, in order: `5079a297460c987bf1ac9b091addd53f5e3a639276cccfead633ba17b8281412`, `6cfeef7a9691b0c11300972b79134f960b389278557c243b9c166bd6182117c6`, `3b1623c81aa5b1acb1a635a2d6e96532e52c7547315159381b4a533ae474d117`; opening: `3e2a4af350017b188148664cec4ce87e7e9280353c16eda4dcab05c0f21b2b9f`.
+- Deferred control: `scripts/eval/tests/developmental_deferred_fixture.py` blob `c5f91805392df04397dbb6549ee4ed23cfc3f41f`, `DRAFTS`; chapter SHA-256, in order: `d2aa8dee0683570ca3d4687eee7ac2ad485e19038cc0e3e69c4185758dc4e051`, `db59596ca0328bfb98d647123bb80846d16a61b3513bd90d5c8e8d0256008694`, `3f18bcd2d08e74de9edeb0131cead6cc170d20d92371920c12fe246155f03e05`; opening: `03e0961c95dd5bbb8f18203908a330f02ee1830324f3fc10c57a0524bdb225bc`.
+- Frozen current instrument/rubric SHA-256: paired rubric `0e635232c61dc1fbf080336a8d142303818dd28c687c3ffb07498a085dacb784`; absolute rubric `493d81fabd2e769ffc5c49d74c4273dd36f12379f4c40f2a239d669a86a004dd`; paired code `6d0a8b03be21b6839aff755f74e42b563e25b755aea1358e33a0416f659f4be2`; absolute code `5ef100a8b6edc9af4009b466d271edeb83976f2079931bbc96342a5cc6a22b63`. Use the current Sol ultra native route and fresh contexts.
+- Terminal budget/order: 24 calls maximum; after a failed gate there is no next phase.
+- Phase A — absolute whole-opening, four fresh observations per control (8): clean must be 4/4 `MEETS` with all three links `CLEAR`; deferred must be 4/4 `DOES_NOT_MEET`, with `felt_benefit` and `reduced_sacrifice` each `ABSENT` or `PARTIAL`.
+- Phase B — paired chapters, two fresh identities x both A/B orders x three matched chapters (12): require 12/12 prefer clean, no `TIE`, confidence `MEDIUM` or `HIGH`.
+- Phase C — paired openings, two fresh identities x both orders (4): require 4/4 prefer clean, no `TIE`, confidence `MEDIUM` or `HIGH`.
+- Any mismatch stops terminally: no retry, additional contexts, threshold change, or next phase.
+- Why new: source blobs and content hashes are disjoint from attempt 5; both controls are full same-subject locally adequate openings; no attempt-5 complete/prefix/reversed, iter-004/007, or reference bytes are used; nothing is truncated or reordered; the construct is actual enacted reader-state movement/whole-opening effect.
+- A pass authorizes RF-21 only, not generation/proof/promotion; RF-23 still requires an OpenRouter key; named-human reading remains RF-25.
+- Founder choice: `Choose one: AUTHORIZE rf20-successor-reader-state-1 EXACTLY AS PROPOSED, or REMAIN STOPPED.`
+- Verification: focused split-contract, pair-binding, and terminal-state tests; strict OpenSpec validation. Dependencies: RF-16, RF-17, RF-18, RF-19.
+- Attempts/review: `5` implementation attempts; `2` reviews, latest independently validating the terminal failure. Commit: `1f22c9a0119be3f89e9667062bdecc2184ee616e` (`feat(eval): split product-effect instruments`); RF-20 remains blocked and incomplete.
 
 ## Phase 5 — H-F01 bounded control/treatment experiment
 
