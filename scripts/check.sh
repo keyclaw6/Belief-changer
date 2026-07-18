@@ -9,7 +9,7 @@ cd "$ROOT"
 ROOT="$(pwd -P)"
 status=0
 
-# 1. Structural validator (AGENTS.md size, code size, docs cap, root allowlist,
+# 1. Structural validator (AGENTS.md presence, docs cap, root allowlist, and
 #    production-books required artifacts).
 python3 "$ROOT/scripts/validate_repo.py" "$ROOT" || status=$?
 

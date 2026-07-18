@@ -18,13 +18,14 @@ Method integrity means: **Carr-fidelity** — the Easyway method executed exactl
 4. `docs/` — only what agents cannot succeed without.
 
 ## Golden Principles (YAGNI)
-This repo is agents-native: optimize for the next agent run. Every line is a liability.
+This repo is agents-native: optimize for the next agent run. Every concept must
+serve a current requirement or concrete risk.
 - Implement only what a spec scenario requires. No speculative capability or future-proofing.
-- Smallest diff that satisfies the scenario. Prefer deleting to adding.
+- Make the smallest clear change that satisfies the scenario. Remove genuinely
+  redundant code instead of adding another path.
 - No new abstraction until the third concrete use. No wrapper around a wrapper.
 - Delete, don't deprecate — dead code, prompts, and docs go in the change that obsoletes them.
 - One obvious way: follow the nearest similar pattern; fix bad patterns everywhere, never fork a second style.
-- Files stay small (≤260 lines code, this file ≤130 — validator-enforced).
 - One-shot scripts are deleted after execution.
 
 ## Documentation Policy

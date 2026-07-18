@@ -120,6 +120,9 @@ class Hf01Tests(unittest.TestCase):
                           "reasoning": {"effort": "none"}, "temperature": 0.7,
                           "max_tokens": 16000, "attempts": 1, "fallbacks": []},
                          manifest["route"])
+        self.assertEqual(("DONE", "READY"),
+                         (manifest["authority"]["rf20_status"],
+                          manifest["authority"]["rf23_status"]))
         self.assertTrue(any("research/sources/" in path
                             for path in manifest["shared_research_and_safety"]))
 

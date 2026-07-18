@@ -79,6 +79,8 @@ class ProductEffectTests(unittest.TestCase):
             changed = deepcopy(value); changed["preferred"] = preferred; mutations.append(changed)
         stale = deepcopy(value); stale["task_sha256"] = "stale"; mutations.append(stale)
         verbose = deepcopy(value); verbose["decisive_reason"] = "x" * 401; mutations.append(verbose)
+        absolute = deepcopy(value); absolute["observations"] = {"A": {}, "B": {}}
+        mutations.append(absolute)
         for changed in mutations:
             with self.subTest(changed=changed), self.assertRaises(EFFECT.ContractError):
                 EFFECT.verdict(json.dumps(changed), task)

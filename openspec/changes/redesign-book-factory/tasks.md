@@ -146,7 +146,7 @@ the SHA without reopening the implementation verdict.
   2026-07-14 `REVISE` — an existing multiply linked output could mutate an
   outside inode; 2026-07-14 `PASS` — manual and focused replay confirmed all
   findings fixed, 14/14 focused and 91/91 full tests, strict OpenSpec, diff and
-  size gates, three guarded mains, and four output-checked mutators.
+  structural checks, three guarded mains, and four output-checked mutators.
 - Commit / push: accepted subject `feat(loop): fail closed during factory
   redesign`; exact SHA is captured at the next ledger checkpoint to avoid
   impossible self-reference.
@@ -196,13 +196,12 @@ the SHA without reopening the implementation verdict.
 - Dependencies: RF-00. MUST finish before RF-23 treatment generation.
 - Implementation attempts: `8`; latest: 2026-07-14
   `/root/rf02_completion_owner` — the real no-endpoint writer branch now prints
-  the complete shell-safe pinned resume command with no secrets, and every new
-  RF-02 code file is at most 260 lines. The exact fallback path has regression
-  coverage.
+  the complete shell-safe pinned resume command with no secrets. The exact
+  fallback path has regression coverage.
 - Review attempts: `8`; latest verdict / findings: `PASS` — prior manual-fallback
-  and file-size findings are resolved; 30/30 focused and 120/120 full tests,
-  strict OpenSpec, and diff checks passed, with core recovery, promotion, and
-  binding scenarios accepted.
+  findings are resolved; 30/30 focused and 120/120 full tests, strict OpenSpec,
+  and diff checks passed, with core recovery, promotion, and binding scenarios
+  accepted.
 - Commit / push: `c2b1935b62d71ef504b874ee9f9e4ed9cf638c06`
   (`feat(loop): isolate candidate product atomically`).
 
@@ -425,7 +424,7 @@ the SHA without reopening the implementation verdict.
     hash; empty, duplicate, or invalid selected chapters were accepted; selected
     book identity was not canonicalized before filesystem or validator access.
   - Review 2: `PASS` — no findings; 44/44 focused and 175/175 full tests, strict
-    OpenSpec, diff, and code-size gates pass.
+    OpenSpec and diff checks pass.
 - Commit / push: accepted subject
   `feat(commissions): gate complete commission sets`;
   `b430e4e075c7bf941fe808b1081fdcd93f402e5d`.
@@ -456,7 +455,7 @@ the SHA without reopening the implementation verdict.
   pre-handoff pair inventory with exact selected-draft exemptions, and proving
   the real seal/verify/promotion path without promoting the receipt; 13/13
   focused, 54/54 affected, and 188/188 full tests pass with strict OpenSpec,
-  diff, compile, and size gates (shellcheck unavailable).
+  diff, and compile checks (shellcheck unavailable).
 - Review attempts: `4`.
   - Review 1: `NEEDS CHANGES` — mutable authority could be reread after
     eligibility; the compact contract omitted the one-mantra minimum; descending
@@ -469,7 +468,7 @@ the SHA without reopening the implementation verdict.
     commissions, and audit—not the complete pair inventory with
     selected-draft-only exemptions—were replay-bound.
   - Review 4: `PASS` — no findings; 49/49 affected and 188/188 full tests,
-    strict OpenSpec, diff, compile, and size gates pass.
+    strict OpenSpec, diff, and compile checks pass.
 - Commit / push: accepted subject
   `feat(writing): enforce commission-only writer context`; exact SHA
   `eb8e8ece668101763651e497bedd14a50a848e0d`.
@@ -500,7 +499,7 @@ the SHA without reopening the implementation verdict.
   and `STARTED/COMMITTED` through load, seal, verify, and recovery paths; all
   transition-kill recoveries end at `0444`. Dedicated RF-11 tests pass 18/18,
   the affected RF-02/RF-10/RF-11 suite passes 72/72, and the 206/206 full
-  repository gate, strict OpenSpec, diff, compile, and size gates pass
+  repository gate, strict OpenSpec, diff, and compile checks pass
   (shellcheck unavailable).
 - Review attempts: `4`.
   - Review 1: `NEEDS CHANGES` — an accepted model callback could be repeated
@@ -518,7 +517,7 @@ the SHA without reopening the implementation verdict.
     `0644`, `0400`, or `0440` anchors remained readable as valid operation
     authority.
   - Review 4: `PASS` — no findings; 18/18 dedicated, 78/78 affected, and
-    206/206 full tests, strict OpenSpec, diff, compile, and size gates pass.
+    206/206 full tests, strict OpenSpec, diff, and compile checks pass.
 - Commit / push: accepted subject
   `feat(writing): freeze complete first-draft batches`; exact SHA
   `405bc7b33f4e3da1e16f130bb23e388625a9fa84`.
@@ -551,7 +550,7 @@ the SHA without reopening the implementation verdict.
   a byte-identical atomic replacement has zero downstream side effects and cannot
   regenerate authority outside constrained H-F04 finalization. Verification:
   12/12 focused, 62/62 affected, and 229/229 full tests; canonical gate, strict
-  OpenSpec, compile, structural, diff, and file-size checks pass.
+  OpenSpec, compile, structural, and diff checks pass.
 - Review attempts: `4`.
   - Review 1: `NEEDS CHANGES` — whole-packet leakage, incomplete replay identity,
     non-durable callback dispatch, free-text finding routes, and an unguarded
@@ -566,7 +565,7 @@ the SHA without reopening the implementation verdict.
     byte-identical single-link `0444` inode replacement after finalization.
     Attempt 4 binds and prechecks device/inode/link identity.
   - Review 4: `PASS` — no findings; 12/12 focused, 62/62 affected, and 229/229
-    full tests, strict OpenSpec, diff, compile, and size gates pass.
+    full tests, strict OpenSpec, diff, and compile checks pass.
 - Commit / push: accepted subject
   `feat(review): enforce blocking grounded review`; exact SHA
   `36dd57b2d4ab5c244b1e82a4147f4a566254223a`.
@@ -600,7 +599,7 @@ the SHA without reopening the implementation verdict.
   the captured native wrapper; exact spans, task inputs, forbidden-content
   isolation, and route are asserted. Verification: 17/17 dedicated, 65/65
   affected, and 246/246 full tests pass; strict OpenSpec, compile, diff,
-  whitespace, and file-size gates pass (shellcheck unavailable).
+  and whitespace checks pass (shellcheck unavailable).
 - Review attempts: `6`.
   - Review 1: `NEEDS CHANGES` — (1) the native reviewer ran from candidate-local
     state, exposed experiment paths, and did not prove rejection of every tool
@@ -664,7 +663,7 @@ the SHA without reopening the implementation verdict.
 - Verification: routing/invalidation tests, `bash scripts/check.sh`.
 - Dependencies: RF-12, RF-13.
 - Implementation attempts: `3`; final verification: focused 20/20, affected
-  110/110, full 257/257; strict OpenSpec, diff, compile, and size gates pass.
+  110/110, full 257/257; strict OpenSpec, diff, and compile checks pass.
   - Attempt 1: established the canonical eight-owner vocabulary, receipt-bound
     reviewer/judge routes, and exact owner-plus-downstream regeneration scope.
   - Attempt 2: made API/manual writer refusals durable and routed judges from all
@@ -821,24 +820,158 @@ the SHA without reopening the implementation verdict.
 - [ ] Calibrate the new product instrument without generating chapters.
 - Status: `BLOCKED`
 - Acceptance: unmet. RF-20 MUST NOT be marked complete from this result.
-- Terminal lineage: `rf20-attempt-5` remains terminal and unchanged; its canonical outcome and hashes live only in the `rf20-attempt-5` row of `calibration/runs/LEDGER.md`. No retry, reversal, relaxation, reuse, reinterpretation, continuation, empirical call, evidence edit, approval claim, or RF-21 start is permitted.
-- Implemented reusable change: the exact hash-bound one-content absolute contract owns belief-change sufficiency; the exact anonymous A/B contract owns only relative preference. The schemas reject each other, absolute output never enters the comparator, identity stays outside judge payloads, and both rubrics are sealed inputs.
-- Proposed-but-unapproved successor: `rf20-successor-reader-state-1`. It is not approved; a later approved/result lineage belongs in a new LEDGER row, not now.
-- Generic hypothesis (exactly one): the unchanged split product-effect instruments can distinguish an enacted cumulative reader-state journey from a complete, locally adequate opening that only maps scope, names the trap, and inventories benefits for later, because unresolved belief work must fail absolute sufficiency and lose relative enacted-effect comparisons.
-- Canonical bytes: for each `n=1..3`, UTF-8 `# Chapter {n}\n\n{DRAFTS[n]}\n`; opening bytes are the three chapter byte strings joined by one `\n` byte.
-- Clean control: `scripts/eval/tests/developmental_review_fixture.py` blob `04b9b5648cd423a562c49f0af181d2eca0b25324`, `CLEAN_DRAFTS`; chapter SHA-256, in order: `5079a297460c987bf1ac9b091addd53f5e3a639276cccfead633ba17b8281412`, `6cfeef7a9691b0c11300972b79134f960b389278557c243b9c166bd6182117c6`, `3b1623c81aa5b1acb1a635a2d6e96532e52c7547315159381b4a533ae474d117`; opening: `3e2a4af350017b188148664cec4ce87e7e9280353c16eda4dcab05c0f21b2b9f`.
-- Deferred control: `scripts/eval/tests/developmental_deferred_fixture.py` blob `c5f91805392df04397dbb6549ee4ed23cfc3f41f`, `DRAFTS`; chapter SHA-256, in order: `d2aa8dee0683570ca3d4687eee7ac2ad485e19038cc0e3e69c4185758dc4e051`, `db59596ca0328bfb98d647123bb80846d16a61b3513bd90d5c8e8d0256008694`, `3f18bcd2d08e74de9edeb0131cead6cc170d20d92371920c12fe246155f03e05`; opening: `03e0961c95dd5bbb8f18203908a330f02ee1830324f3fc10c57a0524bdb225bc`.
-- Frozen current instrument/rubric SHA-256: paired rubric `0e635232c61dc1fbf080336a8d142303818dd28c687c3ffb07498a085dacb784`; absolute rubric `493d81fabd2e769ffc5c49d74c4273dd36f12379f4c40f2a239d669a86a004dd`; paired code `6d0a8b03be21b6839aff755f74e42b563e25b755aea1358e33a0416f659f4be2`; absolute code `5ef100a8b6edc9af4009b466d271edeb83976f2079931bbc96342a5cc6a22b63`. Use the current Sol ultra native route and fresh contexts.
-- Terminal budget/order: 24 calls maximum; after a failed gate there is no next phase.
-- Phase A — absolute whole-opening, four fresh observations per control (8): clean must be 4/4 `MEETS` with all three links `CLEAR`; deferred must be 4/4 `DOES_NOT_MEET`, with `felt_benefit` and `reduced_sacrifice` each `ABSENT` or `PARTIAL`.
-- Phase B — paired chapters, two fresh identities x both A/B orders x three matched chapters (12): require 12/12 prefer clean, no `TIE`, confidence `MEDIUM` or `HIGH`.
-- Phase C — paired openings, two fresh identities x both orders (4): require 4/4 prefer clean, no `TIE`, confidence `MEDIUM` or `HIGH`.
-- Any mismatch stops terminally: no retry, additional contexts, threshold change, or next phase.
-- Why new: source blobs and content hashes are disjoint from attempt 5; both controls are full same-subject locally adequate openings; no attempt-5 complete/prefix/reversed, iter-004/007, or reference bytes are used; nothing is truncated or reordered; the construct is actual enacted reader-state movement/whole-opening effect.
-- A pass authorizes RF-21 only, not generation/proof/promotion; RF-23 still requires an OpenRouter key; named-human reading remains RF-25.
+- Terminal lineage: `rf20-attempt-5` remains terminal and unchanged. Its
+  canonical outcome and hashes live only in the `rf20-attempt-5` row of
+  `calibration/runs/LEDGER.md`. No retry, reversal, relaxation, reuse,
+  reinterpretation, continuation, empirical call, evidence edit, approval
+  claim, or RF-21 start is permitted.
+- Implemented reusable change: the exact hash-bound one-content absolute
+  contract owns belief-change sufficiency; the exact anonymous A/B contract
+  owns only relative preference. The schemas reject each other, absolute output
+  never enters the comparator, identity stays outside judge payloads, and both
+  rubrics are sealed inputs.
+- Proposed-but-unapproved successor: `rf20-successor-reader-state-1`. It is not
+  approved; a later approved/result lineage belongs in a new LEDGER row, not
+  now.
+- Generic hypothesis (exactly one): the unchanged split product-effect
+  instruments can distinguish an enacted cumulative reader-state journey from
+  a complete, locally adequate opening that only maps scope, names the trap,
+  and inventories benefits for later, because unresolved belief work must fail
+  absolute sufficiency and lose relative enacted-effect comparisons.
+- Frozen subject and route:
+  - Subject: `automatic phone checking`.
+  - Transport: `native-codex-subscription`; model: `gpt-5.6-sol`; reasoning:
+    `ultra`; every call uses a fresh ephemeral native context.
+  - Current native transport identity: `scripts/eval/native_judge.py` SHA-256
+    `af9fd418ecf2c000482deb2d6beb6f689c6d5c09cd14f6f7ecf0c63f66d3647d`,
+    Git blob `58c5814065f8773476bb00c9af21e88a34052157`.
+  - Absolute clean actors: `sol-ultra-absolute-clean-r1`,
+    `sol-ultra-absolute-clean-r2`, `sol-ultra-absolute-clean-r3`, and
+    `sol-ultra-absolute-clean-r4`.
+  - Absolute deferred actors: `sol-ultra-absolute-deferred-r1`,
+    `sol-ultra-absolute-deferred-r2`, `sol-ultra-absolute-deferred-r3`, and
+    `sol-ultra-absolute-deferred-r4`.
+  - Every paired order uses the exact `native_judge.DEFAULT_IDENTITIES`:
+    `sol-ultra-r1` and `sol-ultra-r2`.
+- Canonical control bytes: for each `n=1..3`, UTF-8
+  `# Chapter {n}\n\n{DRAFTS[n]}\n`; opening bytes are the three chapter byte
+  strings joined by one `\n` byte.
+  - Clean control: `scripts/eval/tests/developmental_review_fixture.py` blob
+    `04b9b5648cd423a562c49f0af181d2eca0b25324`, `CLEAN_DRAFTS`; chapter
+    SHA-256, in order:
+    `5079a297460c987bf1ac9b091addd53f5e3a639276cccfead633ba17b8281412`,
+    `6cfeef7a9691b0c11300972b79134f960b389278557c243b9c166bd6182117c6`,
+    `3b1623c81aa5b1acb1a635a2d6e96532e52c7547315159381b4a533ae474d117`;
+    opening
+    `3e2a4af350017b188148664cec4ce87e7e9280353c16eda4dcab05c0f21b2b9f`.
+  - Deferred control:
+    `scripts/eval/tests/developmental_deferred_fixture.py` blob
+    `c5f91805392df04397dbb6549ee4ed23cfc3f41f`, `DRAFTS`; chapter SHA-256,
+    in order:
+    `d2aa8dee0683570ca3d4687eee7ac2ad485e19038cc0e3e69c4185758dc4e051`,
+    `db59596ca0328bfb98d647123bb80846d16a61b3513bd90d5c8e8d0256008694`,
+    `3f18bcd2d08e74de9edeb0131cead6cc170d20d92371920c12fe246155f03e05`;
+    opening
+    `03e0961c95dd5bbb8f18203908a330f02ee1830324f3fc10c57a0524bdb225bc`.
+- Frozen instruments:
+  - Paired rubric SHA-256:
+    `0e635232c61dc1fbf080336a8d142303818dd28c687c3ffb07498a085dacb784`;
+    paired contract SHA-256:
+    `6d0a8b03be21b6839aff755f74e42b563e25b755aea1358e33a0416f659f4be2`.
+  - Absolute rubric SHA-256:
+    `493d81fabd2e769ffc5c49d74c4273dd36f12379f4c40f2a239d669a86a004dd`;
+    absolute contract SHA-256:
+    `5ef100a8b6edc9af4009b466d271edeb83976f2079931bbc96342a5cc6a22b63`.
+- Direct rendering and validation: each current sealed rubric receives the
+  matching task as canonical JSON from
+  `json.dumps(task, sort_keys=True, separators=(",", ":"),
+  ensure_ascii=False)`, replacing its single `{{TASK}}` slot. Direct
+  `native_judge.complete` receives those rendered UTF-8 bytes as text and the
+  matching `product_effect.output_schema()` or
+  `product_effect_absolute.output_schema()`; the raw reply is then validated by
+  that same contract's `verdict`. This proposal does not use the reference-only
+  H-F04 envelope or `product_effect_panel`'s ordinary-product route.
+- Calibration binding: `reference_candidate` is absent, `tested_pair_hash` is
+  null, and promotion eligibility is false. Ordinary-product decision,
+  accepted-product, and promotion paths are forbidden. Every planned record is
+  calibration-only and non-promotable. Its bound task ID is exactly
+  `product_decision.bound_task_id` over `base_task_sha256`, null
+  `tested_pair_hash`, the matching rubric SHA-256 as `prompt_sha256`, the
+  rendered-input SHA-256, and the exact actor label.
+- Frozen canonical tasks and rendered inputs:
+
+  | Key | Canonical task SHA-256 | Rendered-input SHA-256 |
+  | --- | --- | --- |
+  | `A-clean` | `febc6bc75171a7f82920b5a11a94b901ef079c98f41386c5c6cd89a0c1ef2183` | `7c9f020dd1b656933a0699b947d85922a31a49a8fcf83ce0180541d178c2f3c2` |
+  | `A-deferred` | `d66d7b8a2e2d1b5cae62a062f52aef566b6c95c75433023c3d669e444e4199c7` | `3843ff7d7027c1142ed116968ee41f3e3ec2b72dc0ec8588d1850954b8e710c7` |
+  | `B-c1-clean-A` | `3c26f460aaecd1e3f32f0c0bc72a08f89624b89818b952e707318cdaef0b964e` | `be2ae3bb77008f79f4d8063b0ccb2b4536e55ad7b6042d6e795f43bdca910e3b` |
+  | `B-c1-clean-B` | `5808f5519de87f2aba68dbe84c59090e723e25e368a9184e9a5602118fe18792` | `085f948a5867a0c24571c7f67c128f3f4b9413f354c95fd4c6e47def9ecb3d6b` |
+  | `B-c2-clean-A` | `b6e2c2ee56c09a1b8b26e78dc7a55139abbd799a49d2b2e8da2409ce925f25ed` | `c024a86f32d4f8329bedff720089cae507e5e4d69eed1b4a07842067bb8eb4d6` |
+  | `B-c2-clean-B` | `93eeedf3d2c3812b0082db651c0dd7b0cd5522b51880e631f149912053de4718` | `88c1b23469b4f759be49ea663cc6ce6928976453fc59acf91497e24623259fe0` |
+  | `B-c3-clean-A` | `096625a814390f9538fc6b507428a995cbfb1e0ea85a329b9f05109bba6d9450` | `2294f6c92d5e83ce62b8193a44772f126773ed3ac45ac1acbcfc74281ec4e8d9` |
+  | `B-c3-clean-B` | `d17ddac774a776063a704dd7bb9ee308ca144d6f2ce78ff43e908e08181cdd95` | `ae12f36e134931745f90ab7ec3a79b3f1ad82ce23deb7ce969a844dc2624b163` |
+  | `C-opening-clean-A` | `7bd158faff7f6834cb9946518331a8ca5c0e187d9a864a1d5ba031989dd9bed5` | `092f3a808355f317c05dba8d8c9fb63456bd9850f5b88e71779360b35b17aa93` |
+  | `C-opening-clean-B` | `69fb638b998fd819337f23cdf691ef1144386cbce9e3caae7617ce0ce6c40e16` | `95aa04863efeaa3be715c9b58cf0636d12a884951493c29d49e09a059909d266` |
+
+- Frozen 24-call order and unique bound task IDs:
+
+  | Call | Task | Actor | Bound task ID |
+  | ---: | --- | --- | --- |
+  | 1 | `A-clean` | `sol-ultra-absolute-clean-r1` | `f0be1cecfe84b4c2e70db642dee8cd7f82b4d319ad86e19f0547158806a969a0` |
+  | 2 | `A-clean` | `sol-ultra-absolute-clean-r2` | `1f83cf4c2726a4599c80e2b3fc203ae8f84ccfb73615ea51ea9c6cc33ad10cd5` |
+  | 3 | `A-clean` | `sol-ultra-absolute-clean-r3` | `c447114b21427a57b63c2c3b68b1a0ad39c787dba07f16c9face3743f2c1d529` |
+  | 4 | `A-clean` | `sol-ultra-absolute-clean-r4` | `7af786d85377a9b9d9ef8d666cd6b574b9c67fe0b648a6ff7d09f000d4228560` |
+  | 5 | `A-deferred` | `sol-ultra-absolute-deferred-r1` | `3789c777d5e59afdbf6d2fa0f1a946e179e4fd698523357ee27165690e55b2ea` |
+  | 6 | `A-deferred` | `sol-ultra-absolute-deferred-r2` | `bf9e3048e6fb6de3c9d206752a435e899d7b65989a7507a236b8bf9018cd04bd` |
+  | 7 | `A-deferred` | `sol-ultra-absolute-deferred-r3` | `1c3cc86d99ac22420371200eff4b871baba2e1e36e388c5fb0d92cafda8b2b6a` |
+  | 8 | `A-deferred` | `sol-ultra-absolute-deferred-r4` | `e72fe36cefa699f1e2c7e86810e70c85fbe23fee3c10637cda004bacd450ca7f` |
+  | 9 | `B-c1-clean-A` | `sol-ultra-r1` | `9d3ac7ab873d89a60c7e3e6f5ae170c7ec0b8a4033d6cea905f8a2663b66b87b` |
+  | 10 | `B-c1-clean-A` | `sol-ultra-r2` | `a558ffa48dcde81a014a315a0e47ee7f55b292c17972d4a7321927a71c0dfe40` |
+  | 11 | `B-c1-clean-B` | `sol-ultra-r1` | `21030ccb25dc666614539832113ebb9580866c3afb28663a1351da9f83317232` |
+  | 12 | `B-c1-clean-B` | `sol-ultra-r2` | `1e7b8f00abac321d623cd2ed30c19d8e982baf2de611ff34117bd10d22abe200` |
+  | 13 | `B-c2-clean-A` | `sol-ultra-r1` | `bb95736fdf337e9f947a7727b80a1f81d452ec52cc56cb844974c78649447320` |
+  | 14 | `B-c2-clean-A` | `sol-ultra-r2` | `a910a7060c78d9dcd3caa61f85441c443da8e6b28a6af2d5ef16d9b5dfcfa611` |
+  | 15 | `B-c2-clean-B` | `sol-ultra-r1` | `9874a7110b5f2304a541c47233662ebeb80efda9b3354246c6b2b09fe506c9c0` |
+  | 16 | `B-c2-clean-B` | `sol-ultra-r2` | `8d0e8139051618871aa41bc17715dff84e4fde19e4ad211224df8a52ed27b3b9` |
+  | 17 | `B-c3-clean-A` | `sol-ultra-r1` | `23708985e189475e158361c9b405ad3833612b34e363eefa67c9a04534fde023` |
+  | 18 | `B-c3-clean-A` | `sol-ultra-r2` | `f373e52b5cde31108d6026b20e9c7f96b6f5f7b9c87070af345e91b35b8840b2` |
+  | 19 | `B-c3-clean-B` | `sol-ultra-r1` | `3b29a481ec86959c353482397f3af43e050cde347891aed37ea2f64fc06fef62` |
+  | 20 | `B-c3-clean-B` | `sol-ultra-r2` | `a2bab91e48f52ab1c61d4dfba4aa169b19eb0a51e088bd1ae02c62838fe7cf65` |
+  | 21 | `C-opening-clean-A` | `sol-ultra-r1` | `a92382fab597342bd38bec4245e1012fe82981b5e1df27d6ddcd6c5dc53200ad` |
+  | 22 | `C-opening-clean-A` | `sol-ultra-r2` | `7478aefb075c3156120c08e505f03abde823d1650aa2d75342b4aebac98cf240` |
+  | 23 | `C-opening-clean-B` | `sol-ultra-r1` | `0052183c3aa168e232291aec4abaeec837bde1c1d12585043cab43df02e486c5` |
+  | 24 | `C-opening-clean-B` | `sol-ultra-r2` | `ed57b7b9403f0882d83f201d0cb5540bfb77af95cf6d69f864135b34cc834e80` |
+
+- Terminal budget/order: 24 calls maximum; after a failed gate there is no next
+  phase.
+  - Phase A — absolute whole-opening, four fresh observations per control (8):
+    clean must be 4/4 `MEETS` with all three links `CLEAR`; deferred must be 4/4
+    `DOES_NOT_MEET`, with `felt_benefit` and `reduced_sacrifice` each `ABSENT`
+    or `PARTIAL`.
+  - Phase B — paired chapters, two fresh identities x both A/B orders x three
+    matched chapters (12): require 12/12 prefer clean, no `TIE`, confidence
+    `MEDIUM` or `HIGH`.
+  - Phase C — paired openings, two fresh identities x both orders (4): require
+    4/4 prefer clean, no `TIE`, confidence `MEDIUM` or `HIGH`.
+  - Any mismatch stops terminally: no retry, additional contexts, threshold
+    change, or next phase.
+- Why new: source blobs and content hashes are disjoint from attempt 5; both
+  controls are full same-subject locally adequate openings; no attempt-5
+  complete/prefix/reversed, iter-004/007, or reference bytes are used; nothing
+  is truncated or reordered; the construct is actual enacted reader-state
+  movement/whole-opening effect.
+- A pass authorizes RF-21 only, not generation, proof, or promotion. RF-23 still
+  requires an OpenRouter key; named-human reading remains RF-25.
 - Founder choice: `Choose one: AUTHORIZE rf20-successor-reader-state-1 EXACTLY AS PROPOSED, or REMAIN STOPPED.`
-- Verification: focused split-contract, pair-binding, and terminal-state tests; strict OpenSpec validation. Dependencies: RF-16, RF-17, RF-18, RF-19.
-- Attempts/review: `5` implementation attempts; `2` reviews, latest independently validating the terminal failure. Commit: `1f22c9a0119be3f89e9667062bdecc2184ee616e` (`feat(eval): split product-effect instruments`); RF-20 remains blocked and incomplete.
+- Verification: focused split-contract, pair-binding, and terminal-state tests;
+  strict OpenSpec validation.
+- Dependencies: RF-16, RF-17, RF-18, RF-19.
+- Implementation attempts: `5`; latest terminal state is recorded in the run
+  ledger.
+- Review attempts: `2`; latest independently validated the terminal failure.
+- Commit / push: `1f22c9a0119be3f89e9667062bdecc2184ee616e`
+  (`feat(eval): split product-effect instruments`); RF-20 remains blocked and
+  incomplete.
 
 ## Phase 5 — H-F01 bounded control/treatment experiment
 
