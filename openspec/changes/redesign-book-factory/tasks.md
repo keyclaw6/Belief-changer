@@ -832,13 +832,19 @@ the SHA without reopening the implementation verdict.
 - Blocker / next action: the failed lineage is terminal. No retry, relaxation,
   or reinterpretation is permitted. A newly founder/root-approved hypothesis and
   control lineage must pass before RF-21 can start.
+- Exact founder/root decision (no default): either remain stopped, or explicitly
+  authorize a new lineage by naming a new generic hypothesis and the exact frozen
+  control identities and terminal gates. That authorization MUST NOT reuse,
+  retry, reverse, relax, or reinterpret `rf20-attempt-5`.
 - Acceptance: unmet. RF-20 MUST NOT be marked complete from this result.
 - Verification: focused split-contract, pair-binding, and terminal-state tests;
   strict OpenSpec validation. Frozen evidence remains ignored and unchanged.
 - Dependencies: RF-16, RF-17, RF-18, RF-19.
 - Implementation attempts: `5`; latest terminal state is recorded in the run ledger.
 - Review attempts: `2`; latest independently validated the terminal failure.
-- Commit / push: `—` (current attempt uncommitted).
+- Commit / push: `1f22c9a0119be3f89e9667062bdecc2184ee616e`
+  (`feat(eval): split product-effect instruments`); RF-20 remains terminally
+  blocked and incomplete.
 
 ## Phase 5 — H-F01 bounded control/treatment experiment
 
@@ -911,9 +917,21 @@ the SHA without reopening the implementation verdict.
   `bash scripts/check.sh`.
 - Dependencies: RF-02, RF-10, RF-11, RF-22. External dependency:
   working `OPENROUTER_API_KEY` with sufficient credit.
-- Implementation attempts: `0`; unstarted and transitively blocked by RF-20.
-- Review attempts: `0`; latest verdict / findings: `—`.
-- Commit / push: `—`.
+- Execution attempts: `0`; no provider call or chapter generation was attempted.
+- Offline implementation attempts: `2`; `204f2df6f26fb715a7c5162ef328ab2a6ab763fc`
+  added the pure preflight and stopped runner, and
+  `fd85c670995efbae7a6bc25e6fd0082472862be2` bound both arms to the canonical
+  RF-11 freeze, RF-12 grounded review, RF-13 developmental review, and seal
+  lifecycle without creating a control-side treatment commission.
+- Review attempts: `3`; latest fresh verdict: `PASS`. The reviewer reproduced
+  the connected H-F01 path (`7/7`) and ordinary RF-11/RF-12/RF-13 paths
+  (`20/20`). The canonical gate passed `298` tests in `274.125s`; shellcheck was
+  unavailable and skipped. Strict OpenSpec validation also passed.
+- Remaining blockers: RF-20 is terminally blocked; RF-21/RF-22 artifacts and
+  isolated snapshots do not exist; `OPENROUTER_API_KEY` is absent and provider
+  credit is unverified. The real RF-23 entrypoint exits before any write.
+- Commit / push: offline implementation commits `204f2df6f26fb715a7c5162ef328ab2a6ab763fc`
+  and `fd85c670995efbae7a6bc25e6fd0082472862be2`.
 
 ### RF-24 — Ground-audit all six H-F01 drafts
 
