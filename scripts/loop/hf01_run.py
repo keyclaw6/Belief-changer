@@ -1,28 +1,24 @@
 #!/usr/bin/env python3
-"""Run H-F01 once its ledger and sealed-input preflight is ready."""
-import argparse, json, os, shlex, sys, urllib.request
+"""Run H-F01 through the accepted RF-11 first-draft batch lifecycle."""
+import argparse, json, os, sys, urllib.request
 from pathlib import Path
 
 HERE = Path(__file__).resolve()
 sys.path.insert(0, str(HERE.parent))
 import candidate_pair as CP  # noqa: E402
-import draft_batch_state as DRAFT  # noqa: E402
+import first_draft_batch as FB  # noqa: E402
+import hf01_control_authority as HCA  # noqa: E402
 import hf01_preflight as HF  # noqa: E402
 import legacy_guard as LG  # noqa: E402
 import pair_store as PS  # noqa: E402
 import path_guard as PG  # noqa: E402
+import writer_context as WC  # noqa: E402
 
 FOLDER = "loop/experiments/h-f01-execution"
 NO_PREVIOUS = "ABSENT — Chapter 1 has no previous chapter."
 
 
 class RunError(RuntimeError): pass
-
-
-def _resume(root):
-    return shlex.join([sys.executable, str(HERE), "--snapshot-root", str(root),
-                       "--redesign-authorized", "--rf-stage", "RF-23",
-                       "--candidate-root", str(Path(root) / "loop/experiments")])
 
 
 def _read(path, boundary):
@@ -108,115 +104,93 @@ def _post(payload):
         return response.read()
 
 
-def _content(raw, number):
+def _reply(payload, number):
     try:
-        value = json.loads(raw)
+        value = json.loads(_post(payload))
         text = value["choices"][0]["message"]["content"]
         if not isinstance(text, str): raise TypeError("content is not text")
-        clean = DRAFT.clean_response(text.encode("utf-8"))
-        DRAFT.validate_draft(clean, number)
-        return clean
-    except (UnicodeError, json.JSONDecodeError, KeyError, IndexError, TypeError,
-            DRAFT.BatchError) as exc:
+        return text
+    except (UnicodeError, json.JSONDecodeError, KeyError, IndexError, TypeError) as exc:
         raise RunError(f"H-F01 response for chapter {number} is invalid: {exc}") from exc
 
 
-def _response(folder, root, authority, authority_sha, arm, number, prompt):
-    call_id = f"write-{arm}-{number:02d}"
-    marker, response = folder / f"{call_id}.call.json", folder / f"{call_id}.response.json"
-    payload = _payload(prompt)
-    expected = {"schema": 1, "call_id": call_id, "authority_sha256": authority_sha,
-                "request_sha256": PS.state_hash(payload), "method": "POST", "url": HF.URL}
-    if os.path.lexists(response):
-        if not os.path.lexists(marker): raise RunError(f"{call_id}: response has no call marker")
-        try: actual = json.loads(_read(marker, folder))
-        except (UnicodeError, json.JSONDecodeError) as exc:
-            raise RunError(f"{call_id}: call marker is malformed: {exc}") from exc
-        if actual != expected: raise RunError(f"{call_id}: resumed request identity differs")
-        return _content(_read(response, folder), number)
-    if os.path.lexists(marker):
-        raise RunError(f"{call_id}: orphan call marker blocks duplicate dispatch; resume: "
-                       f"{_resume(root)}")
-    _write_once(marker, PS.json_bytes(expected), root, authority)
-    raw = _post(payload)
-    _write_once(response, raw, root, authority)
-    return _content(raw, number)
+def _require_arm_authority(root, arm, manifest):
+    experiment, book = HF.arm_paths(root)[arm]["experiment"], HF.arm_paths(root)[arm]["book"]
+    expected = manifest["operation"]["receipt_hash"]
+    if arm == "control":
+        HCA.require_resume(experiment, book, HF.CHAPTERS, expected)
+    else:
+        WC.require_manual_resume(experiment, book, HF.CHAPTERS, expected)
 
 
-def _write_chapters(root, authority, drafts):
-    arms = HF.arm_paths(root)
-    for arm in ("control", "treatment"):
-        experiment = arms[arm]["experiment"]
-        for number in HF.CHAPTERS:
+def _prepare_arm(root, arm):
+    experiment, book = HF.arm_paths(root)[arm]["experiment"], HF.arm_paths(root)[arm]["book"]
+    manifest = CP.load(experiment)
+    try:
+        if manifest.get("operation") is None:
+            if arm == "control":
+                captured = HCA.capture(experiment, book, HF.CHAPTERS)
+                HCA.persist(experiment, captured)
+            else:
+                captured = WC.capture(experiment, book, HF.CHAPTERS)
+                WC.persist_manual_receipt(experiment, captured)
+            manifest = CP.load(experiment)
+        _require_arm_authority(root, arm, manifest)
+        return FB.begin(experiment, None, "api")
+    except (HCA.ControlAuthorityError, WC.WriterContextError, FB.BatchError,
+            CP.PairError, PS.StoreError, OSError) as exc:
+        raise RunError(f"H-F01 {arm} writer authority failed: {exc}") from exc
+
+
+def _generate_arm(root, authority, arm):
+    experiment, book = HF.arm_paths(root)[arm]["experiment"], HF.arm_paths(root)[arm]["book"]
+    if CP.load(experiment)["state"] == "BATCH_FROZEN":
+        FB.require_frozen_batch(experiment); return
+    _prepare_arm(root, arm)
+    try: remaining = FB.prepare(experiment)
+    except FB.BatchError as exc: raise RunError(f"H-F01 {arm} draft resume failed: {exc}") from exc
+    for number in remaining:
+        HF.validate_execution_authority(root, authority)
+        previous = NO_PREVIOUS if number == 1 else _text(
+            book / f"chapters/chapter-{number-1:02d}.md", root)
+        payload = _payload(_prompt(root, arm, number, previous))
+        request = {"method": "POST", "url": HF.URL, "payload": payload}
+        try:
+            FB.durable_call(experiment, number, request,
+                            lambda p=payload, n=number: _reply(p, n))
             HF.validate_execution_authority(root, authority)
-            manifest = CP.inspect(experiment)
-            path = arms[arm]["book"] / f"chapters/chapter-{number:02d}.md"
-            try: current = CP.require_member(experiment, path, "product", manifest).read_bytes()
-            except (CP.PairError, OSError) as exc: raise RunError(str(exc)) from exc
-            wanted = drafts[(arm, number)]
-            if current == wanted: continue
-            baseline = authority["arms"][arm]["chapter_baseline_sha256"][str(number)]
-            if PS.sha(current) != baseline:
-                raise RunError(f"write-{arm}-{number:02d}: chapter differs from baseline and response")
-            PS.write(path, wanted)
-
-
-def _freeze(folder, root, authority, authority_sha, drafts):
-    outputs, responses = [], []
-    for arm in ("control", "treatment"):
-        for number in HF.CHAPTERS:
-            call_id = f"write-{arm}-{number:02d}"
-            output = HF.arm_paths(root)[arm]["book"] / f"chapters/chapter-{number:02d}.md"
-            response = folder / f"{call_id}.response.json"
-            data = _read(output, root)
-            if data != drafts[(arm, number)]:
-                raise RunError(f"{call_id}: candidate output differs from durable response")
-            outputs.append({"id": call_id, "path": str(output), "sha256": PS.sha(data)})
-            responses.append({"id": call_id, "path": response.name,
-                              "sha256": PS.sha(_read(response, folder))})
-    receipt = {"schema": 1, "state": "FROZEN", "authority_sha256": authority_sha,
-               "outputs": outputs, "raw_responses": responses,
-               "automatic_stop": "freeze_all_six",
-               "ordered_review_boundaries": list(HF.BOUNDARIES[1:])}
-    receipt["receipt_sha256"] = PS.state_hash(receipt)
-    path = folder / "frozen.json"
-    if not os.path.lexists(path): _write_once(path, PS.json_bytes(receipt), root, authority)
-    return verify_frozen(root, authority)
+            FB.accept_response(experiment, number)
+        except FB.BatchError as exc:
+            raise RunError(f"H-F01 {arm} chapter {number} failed closed: {exc}") from exc
 
 
 def verify_frozen(root, authority=None):
     root, folder = Path(root).absolute(), Path(root).absolute() / FOLDER
-    if authority is None:
-        authority = json.loads(_read(folder / "authority.json", folder))
+    if authority is None: authority = json.loads(_read(folder / "authority.json", folder))
     HF.validate_execution_authority(root, authority, key_present=True)
-    try: receipt = json.loads(_read(folder / "frozen.json", folder))
-    except (UnicodeError, json.JSONDecodeError) as exc:
-        raise RunError(f"H-F01 freeze receipt is malformed: {exc}") from exc
-    recorded = dict(receipt); receipt_hash = recorded.pop("receipt_sha256", None)
-    if receipt_hash != PS.state_hash(recorded) or receipt.get("state") != "FROZEN":
-        raise RunError("H-F01 freeze receipt identity is invalid")
-    for item in receipt["outputs"]:
-        if PS.sha(_read(item["path"], root)) != item["sha256"]:
-            raise RunError(f"frozen H-F01 output changed: {item['id']}")
-    for item in receipt["raw_responses"]:
-        if PS.sha(_read(folder / item["path"], folder)) != item["sha256"]:
-            raise RunError(f"frozen H-F01 response changed: {item['id']}")
-    return receipt
+    arms = {}
+    for arm, paths in HF.arm_paths(root).items():
+        try: receipt = FB.require_frozen_batch(paths["experiment"])
+        except FB.BatchError as exc: raise RunError(f"H-F01 {arm} batch is not frozen: {exc}") from exc
+        responses = receipt["batch"]["responses"]
+        arms[arm] = {"manifest_state": CP.load(paths["experiment"])["state"],
+                     "receipt_hash": receipt["receipt_hash"],
+                     "request_sha256": [item["request_sha256"] for item in responses]}
+    return {"schema": 1, "experiment": "H-F01", "state": "BATCH_FROZEN",
+            "authority_sha256": PS.sha(_read(folder / "authority.json", folder)),
+            "arms": arms, "automatic_stop": "freeze_all_six",
+            "ordered_review_boundaries": list(HF.BOUNDARIES[1:])}
 
 
 def run(snapshot_root):
     root = Path(snapshot_root).absolute()
-    folder, authority, authority_sha = _authority(root)
-    if os.path.lexists(folder / "frozen.json"): return verify_frozen(root, authority)
-    drafts = {}
-    for arm in ("control", "treatment"):
-        previous = NO_PREVIOUS
-        for number in HF.CHAPTERS:
-            draft = _response(folder, root, authority, authority_sha, arm, number,
-                              _prompt(root, arm, number, previous))
-            drafts[(arm, number)], previous = draft, draft.decode("utf-8")
-    _write_chapters(root, authority, drafts)
-    return _freeze(folder, root, authority, authority_sha, drafts)
+    _, authority, _ = _authority(root)
+    for arm in ("control", "treatment"): _generate_arm(root, authority, arm)
+    for paths in HF.arm_paths(root).values():
+        if CP.load(paths["experiment"])["state"] != "BATCH_FROZEN":
+            try: FB.freeze(paths["experiment"])
+            except FB.BatchError as exc: raise RunError(f"H-F01 batch freeze failed: {exc}") from exc
+    return verify_frozen(root, authority)
 
 
 def main():

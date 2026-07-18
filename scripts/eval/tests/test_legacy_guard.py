@@ -135,8 +135,7 @@ class LegacyGuardTests(unittest.TestCase):
         self.assertEqual((True, True, False), entrypoint_state(future))
         snapshot = self.root / "snapshot"
         (snapshot / "loop/experiments").mkdir(parents=True)
-        resume = HF_RUN._resume(snapshot)
-        for token in ("--redesign-authorized", "--rf-stage", "RF-23", str(snapshot / "loop/experiments")): self.assertIn(token, resume)
+        self.assertFalse(hasattr(HF_RUN, "_resume"))
         wrong = self.root / "wrong"; wrong.mkdir()
         argv = ["hf01_run.py", "--snapshot-root", str(snapshot), "--redesign-authorized",
                 "--rf-stage", "RF-23", "--candidate-root", str(wrong)]

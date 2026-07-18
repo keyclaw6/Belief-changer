@@ -8,12 +8,15 @@ ROOT = Path(__file__).resolve().parents[3]
 sys.path[:0] = [str(ROOT / "scripts/loop"), str(ROOT / "scripts/eval/tests")]
 import candidate_pair as PAIR  # noqa: E402
 import commission_set as SET  # noqa: E402
+import developmental_review as DEV  # noqa: E402
+import first_draft_batch as BATCH  # noqa: E402
+import grounded_review as GR  # noqa: E402
 import hf01_preflight as HF  # noqa: E402
 import hf01_run as RUN  # noqa: E402
 from commission_packet_fixture import packet  # noqa: E402
+from developmental_review_fixture import proven_runner as developmental_runner  # noqa: E402
+from grounded_review_fixture import proven_runner as grounded_runner  # noqa: E402
 from test_commission_contract import authority, commission  # noqa: E402
-
-
 def assignment(chapter, source):
     auth = deepcopy(authority())
     old = next(iter(auth["assigned_evidence"]))
@@ -26,7 +29,6 @@ def assignment(chapter, source):
     return {"packets": [f"production-books/quit-sugar/research/sources/"
                         f"{source.lower()}-fixture.md"], "authority": auth}
 
-
 class Hf01Tests(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
@@ -35,7 +37,8 @@ class Hf01Tests(unittest.TestCase):
         self.ledger.write_text("### RF-20 — calibration\n- Status: `DONE`\n"
                                "### RF-21 — generation\n- Status: `BLOCKED`\n"
                                "### RF-23 — readiness\n- Status: `READY`\n")
-        for relative in ("prompts/style-guide.md", "prompts/chapter-writer.md"):
+        for relative in ("prompts/style-guide.md", "prompts/chapter-writer.md",
+                         "prompts/grounded-reviewer.md", "prompts/developmental-reviewer.md"):
             target = self.root / relative; target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(ROOT / relative, target)
         for relative, text in {
@@ -53,9 +56,18 @@ class Hf01Tests(unittest.TestCase):
             "production-books/quit-sugar/framing.md": "# Framing\n" + "".join(
                 f"### CH-{n:02d} — State {n}\n- **Entering belief:** RS-{n-1:02d} | state\n"
                 for n in (1, 2, 3)),
-            "production-books/quit-sugar/master-plan.md": "# Plan\n" + "".join(
-                f"### C-{n:02d} — Chapter {n}\n- **Entering belief:** RS-{n-1:02d} | state\n"
-                for n in (1, 2, 3)),
+            "production-books/quit-sugar/master-plan.md": "# Plan\n\n" + "\n".join(
+                f"| EV-L{n:02d} | bounded finding {n} | S-{100+n}#E-001. | "
+                f"bounded use {n} | forbidden broadening {n} |" for n in (1, 2, 3)) +
+                "\n\n" + "\n\n".join(
+                f"### C-{n:02d} — Chapter {n}\n"
+                f"- **Belief job:** correct belief {n}.\n"
+                f"- **Entering belief:** RS-{n-1:02d} | received state {n}.\n"
+                f"- **Leaving belief:** RS-{n:02d} | handed state {n}.\n"
+                f"- **Evidence:** EV-L{n:02d}.\n"
+                f"- **Guardrails:** safety limit {n}; no diagnosis or willpower.\n"
+                f"- **Continuity:** receives received state {n}; hands C-{n+1:02d} "
+                f"handed state {n}." for n in (1, 2, 3)),
             "production-books/quit-sugar/master-plan-review.md": "fit to write from\n",
             "production-books/quit-sugar/chapters/chapter-01.md": "baseline one\n",
             "production-books/quit-sugar/chapters/chapter-02.md": "baseline two\n",
@@ -76,6 +88,8 @@ class Hf01Tests(unittest.TestCase):
         for paths in self.arms.values():
             paths["experiment"].mkdir(parents=True)
             PAIR.snapshot(paths["experiment"], self.root, HF.BOOK, "1-3")
+        (self.arms["treatment"]["book"] / "00-brief.md").write_text(
+            "Safety perimeter is fixed. Treatment reader journey is accepted.\n")
         self.assignments = {f"C-{n:02d}": assignment(f"C-{n:02d}", f"S-{100+n}")
                             for n in (1, 2, 3)}
         with mock.patch.object(SET.SC, "require_subject_contract"):
@@ -115,6 +129,29 @@ class Hf01Tests(unittest.TestCase):
         self.assertTrue(any("research/sources/" in path
                             for path in manifest["shared_research_and_safety"]))
 
+    def test_treatment_brief_may_differ_but_both_briefs_remain_hash_bound(self):
+        control = self.arms["control"]["book"] / "00-brief.md"
+        treatment = self.arms["treatment"]["book"] / "00-brief.md"
+        self.assertNotEqual(control.read_bytes(), treatment.read_bytes())
+        manifest = self.manifest()
+        self.assertTrue(manifest["ready_to_send"])
+        keys = set(manifest["static_input_sha256"])
+        self.assertTrue(any(key.endswith("h-f01-control/candidate/" + HF.BOOK +
+                                         "/00-brief.md") for key in keys))
+        self.assertTrue(any(key.endswith("h-f01-treatment/candidate/" + HF.BOOK +
+                                         "/00-brief.md") for key in keys))
+        self.assertNotIn(HF.BOOK + "/00-brief.md",
+                         manifest["shared_research_and_safety"])
+
+    def test_mutable_manifest_state_is_excluded_but_assignment_is_bound(self):
+        authority_manifest = self.manifest()
+        pair = self.arms["treatment"]["experiment"] / "pair.json"
+        value = json.loads(pair.read_text())
+        value["outputs"].reverse()
+        pair.write_bytes(PAIR.PS.json_bytes(value))
+        with self.assertRaisesRegex(HF.PreflightError, "manifest assignment changed"):
+            HF.validate_execution_authority(self.root, authority_manifest, key_present=True)
+
     def test_fake_manifest_audit_and_high_risk_drift_never_become_ready(self):
         control_pair = self.arms["control"]["experiment"] / "pair.json"
         audit = self.arms["treatment"]["experiment"] / "evidence" / SET.RECEIPT
@@ -152,50 +189,72 @@ class Hf01Tests(unittest.TestCase):
         codes = {item["code"] for item in manifest["blockers"]}
         self.assertTrue({"RF23_NOT_READY", "OPENROUTER_API_KEY_MISSING"} <= codes)
 
-    def test_run_persists_all_raw_responses_then_writes_freezes_and_resumes(self):
+    def test_run_uses_rf11_freezes_both_arms_and_stops_before_review(self):
         calls = []
         def post(payload):
             calls.append(payload)
-            for arm, paths in self.arms.items():
-                for number in HF.CHAPTERS:
-                    self.assertEqual(self.baseline[f"{arm}-{number}"],
-                                     (paths["book"] / f"chapters/chapter-{number:02d}.md").read_bytes())
+            self.assertFalse(any(self.root.rglob("grounded-review/receipt.json")))
+            self.assertFalse(any(self.root.rglob("developmental-review/receipt.json")))
+            if len(calls) == 1:
+                receipt = json.loads((self.arms["control"]["experiment"] /
+                                      "writer-authority.json").read_text())
+                self.assertEqual([1, 2, 3],
+                                 [item["chapter"] for item in receipt["control_review"]])
+                self.assertNotIn("AUTHORITATIVE SEMANTIC COMMISSION", json.dumps(receipt))
             text = f"# Chapter {len(calls)}\n" + "earned discovery relief " * 280
             return json.dumps({"choices": [{"message": {"content": text}}]}).encode()
         with mock.patch.dict(os.environ, {"OPENROUTER_API_KEY": "test-key"}), \
                 mock.patch.object(HF, "LEDGER", self.ledger), \
                 mock.patch.object(SET.SC, "require_subject_contract"):
-            with mock.patch.object(RUN, "_post", side_effect=post), \
-                    mock.patch.object(RUN, "_write_chapters",
-                                      side_effect=RUN.RunError("stop after responses")):
-                with self.assertRaisesRegex(RUN.RunError, "stop after responses"):
-                    RUN.run(self.root)
-            with mock.patch.object(RUN, "_post",
-                                   side_effect=AssertionError("duplicate dispatch")):
+            with mock.patch.object(RUN, "_post", side_effect=post):
+                frozen = RUN.run(self.root)
+            with mock.patch.object(RUN, "_post", side_effect=AssertionError("duplicate dispatch")):
                 frozen = RUN.run(self.root)
                 again = RUN.run(self.root)
-        self.assertEqual(6, len(calls))
-        self.assertEqual(frozen, again)
-        self.assertEqual("FROZEN", frozen["state"])
+        self.assertEqual((6, frozen), (len(calls), again))
+        self.assertEqual("BATCH_FROZEN", frozen["state"])
         self.assertEqual(list(HF.BOUNDARIES[1:]), frozen["ordered_review_boundaries"])
-        folder = self.root / RUN.FOLDER
-        self.assertEqual(6, len(list(folder.glob("*.response.json"))))
-        control, treatment = (calls[index]["messages"][0]["content"] for index in (1, 4))
+        self.assertEqual(["authority.json"], sorted(
+            path.name for path in (self.root / RUN.FOLDER).iterdir()))
+        control, treatment = (calls[index]["messages"][0]["content"] for index in (0, 3))
         self.assertIn("frozen_full_style_guide", control)
         self.assertNotIn("audited_chapter_commission", control)
+        self.assertNotIn("AUTHORITATIVE SEMANTIC COMMISSION", control)
         self.assertIn("compact_writer_contract", treatment)
         self.assertNotIn("[N]", treatment)
         self.assertNotIn("[SLUG]", treatment)
-        self.assertFalse(any(folder.glob("*review*")))
+        for arm, paths in self.arms.items():
+            receipt = BATCH.require_frozen_batch(paths["experiment"])
+            self.assertEqual("BATCH_FROZEN", PAIR.load(paths["experiment"])["state"])
+            self.assertEqual(3, len(receipt["batch"]["responses"]))
+            self.assertEqual(3, len(frozen["arms"][arm]["request_sha256"]))
+            with self.assertRaisesRegex(
+                PAIR.PairError, "grounded authority|grounded receipt|commission-set-audit"):
+                PAIR.seal(paths["experiment"])
+        control_root = self.arms["control"]["experiment"]
+        treatment_root = self.arms["treatment"]["experiment"]
+        control_ground, treatment_ground = GR.prepare(control_root), GR.prepare(treatment_root)
+        control_authority = json.dumps(control_ground)
+        self.assertNotIn("AUTHORITATIVE SEMANTIC COMMISSION", control_authority)
+        self.assertNotIn("/commissions/", control_authority)
+        self.assertIn("AUTHORITATIVE SEMANTIC COMMISSION", json.dumps(treatment_ground))
+        GR.advance(control_root, runner=grounded_runner())
+        GR.advance(treatment_root, runner=grounded_runner())
+        control_dev, treatment_dev = DEV.prepare(control_root), DEV.prepare(treatment_root)
+        self.assertNotIn("AUTHORITATIVE SEMANTIC COMMISSION", json.dumps(control_dev))
+        self.assertNotIn("/commissions/", json.dumps(control_dev))
+        self.assertIn("AUTHORITATIVE SEMANTIC COMMISSION", json.dumps(treatment_dev))
+        DEV.advance(control_root, runner=developmental_runner())
+        DEV.advance(treatment_root, runner=developmental_runner())
+        for root in (control_root, treatment_root):
+            tested_hash = PAIR.seal(root)
+            self.assertEqual(tested_hash, PAIR.verify_sealed(root, tested_hash)["tested_hash"])
 
-    def test_orphan_marker_blocks_duplicate_dispatch_with_resume_command(self):
+    def test_ambiguous_inflight_call_stops_without_fake_resume(self):
         with mock.patch.dict(os.environ, {"OPENROUTER_API_KEY": "test-key"}), \
                 mock.patch.object(HF, "LEDGER", self.ledger), \
                 mock.patch.object(SET.SC, "require_subject_contract"), \
                 mock.patch.object(RUN, "_post", side_effect=RuntimeError("network lost")):
             with self.assertRaisesRegex(RuntimeError, "network lost"): RUN.run(self.root)
-            with self.assertRaisesRegex(RUN.RunError, r"orphan call marker.*--snapshot-root"):
+            with self.assertRaisesRegex(RUN.RunError, "replay is ambiguous"):
                 RUN.run(self.root)
-
-
-if __name__ == "__main__": unittest.main()

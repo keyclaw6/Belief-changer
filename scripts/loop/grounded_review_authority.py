@@ -8,6 +8,7 @@ import draft_batch_state as DS
 import first_draft_batch as FB
 import grounded_evidence as GE
 import grounded_review_contract as C
+import hf01_control_authority as HCA
 import loopcfg
 import pair_store as PS
 import writer_operation as WO
@@ -105,9 +106,63 @@ def _task(root, number, base, assignment):
     return C.task(task)
 
 
+def _control_load(root, supplied_cfg, frozen, manifest, tree, writer):
+    authority = HCA.load(root)
+    prompt_file = CP.require_member(root, tree / C.PROMPT, "config", manifest)
+    prompt = prompt_file.read_text(encoding="utf-8")
+    cfg_path = CP.require_member(root, tree / manifest["run"]["config"], "config", manifest)
+    cfg, reviewer = loopcfg.load(cfg_path), None
+    reviewer = C.model(cfg)
+    if supplied_cfg is not None and C.model(supplied_cfg) != reviewer:
+        raise AuthorityError("grounded reviewer runtime metadata differs from pinned config")
+    config = {"path": manifest["run"]["config"], "sha256": PS.sha(cfg_path.read_bytes()),
+              "values_sha256": PS.state_hash(cfg)}
+    selection = manifest["run"]["chapters"]
+    if selection != frozen["batch"]["selection"]:
+        raise AuthorityError("RF-11 selection differs from the control operation selection")
+    records = {item["chapter"]: item for item in authority.get("control_review", [])}
+    if set(records) != set(selection):
+        raise AuthorityError("H-F01 control review authority is partial or ambiguous")
+    operation = {"id": PS.state_hash({"root": str(root), "run": manifest["run"],
+        "batch": frozen["batch"]["operation"], "control": writer["receipt_hash"]}),
+        "batch_sha256": PS.state_hash(frozen["batch"]["operation"]),
+        "rf11_receipt_hash": frozen["receipt_hash"],
+        "control_authority_receipt_hash": writer["receipt_hash"]}
+    tasks = {}
+    for number in selection:
+        record, assignment = records[number], records[number]["assignment"]
+        packets = {path: CP.require_member(root, tree / path, "product", manifest
+            ).read_text(encoding="utf-8") for path in assignment["packets"]}
+        try:
+            evidence = GE.assigned_records(
+                packets, assignment["authority"]["assigned_evidence"])
+        except GE.EvidenceError as exc:
+            raise AuthorityError(str(exc)) from exc
+        draft = _draft(root, number, frozen)
+        identity = {"operation": operation, "generation": manifest["accepted_generation"],
+                    "config": config, "selection": selection, "chapter": number}
+        context = record["plan_context"]
+        tasks[number] = C.task(C.make_task(
+            identity, reviewer, prompt, draft.decode("utf-8"), context["text"],
+            assignment, evidence))
+    common = {"operation": operation, "generation": manifest["accepted_generation"],
+              "run_sha256": PS.state_hash(manifest["run"]), "config": config,
+              "selection": selection, "reviewer": reviewer,
+              "rf11_receipt_hash": frozen["receipt_hash"],
+              "control_authority_receipt_hash": writer["receipt_hash"],
+              "prompt_sha256": PS.sha(prompt.encode("utf-8")),
+              "rules_sha256": PS.state_hash(C.RULES)}
+    return tasks, common
+
+
 def load(root, supplied_cfg=None):
     root = Path(root).absolute()
     try:
+        frozen = FB.require_frozen_batch(root)
+        manifest, tree = CP.load(root), CP.candidate_tree(root)
+        writer = json.loads(WO.read(root, manifest["operation"]))
+        if writer.get("authority") == HCA.AUTHORITY:
+            return _control_load(root, supplied_cfg, frozen, manifest, tree, writer)
         base = _base(root, supplied_cfg)
         frozen, manifest, _, _, audit, prompt, reviewer, config, operation = base
         selection, assignments = manifest["run"]["chapters"], audit.get("assignments")
@@ -128,6 +183,7 @@ def load(root, supplied_cfg=None):
         return tasks, common
     except AuthorityError:
         raise
-    except (FB.BatchError, CP.PairError, PS.StoreError, WO.OperationError, OSError,
+    except (FB.BatchError, CP.PairError, HCA.ControlAuthorityError, PS.StoreError,
+            WO.OperationError, OSError,
             UnicodeError, json.JSONDecodeError, KeyError, TypeError, C.ContractError) as exc:
         raise AuthorityError(f"cannot resolve grounded authority: {exc}") from exc

@@ -101,10 +101,15 @@ def identity(root, manifest, batch):
     validate_shape(batch, manifest)
     value, receipt_hash, inventory = receipt_value(root, manifest)
     try:
-        import writer_context as WC
-        WC.require_manual_resume(root, CP.candidate_tree(root) / manifest["run"]["book"],
-                                 batch["selection"], receipt_hash)
-    except (WC.WriterContextError, CP.PairError, PS.StoreError, OSError) as exc:
+        if value.get("authority") == "hf01-control":
+            import hf01_control_authority as HCA
+            HCA.require_resume(root, CP.candidate_tree(root) / manifest["run"]["book"],
+                               batch["selection"], receipt_hash)
+        else:
+            import writer_context as WC
+            WC.require_manual_resume(root, CP.candidate_tree(root) / manifest["run"]["book"],
+                                     batch["selection"], receipt_hash)
+    except (RuntimeError, CP.PairError, PS.StoreError, OSError) as exc:
         raise BatchError(f"writer authority drifted during draft batch: {exc}") from exc
     selected = {relative(manifest, number) for number in batch["selection"]}
     expected = {item["path"]: item["sha256"] for item in inventory

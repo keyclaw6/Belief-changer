@@ -7,6 +7,7 @@ import developmental_review_contract as C
 import draft_batch_state as DS
 import first_draft_batch as FB
 import grounded_review as GR
+import hf01_control_authority as HCA
 import loopcfg
 import pair_store as PS
 import writer_operation as WO
@@ -85,12 +86,68 @@ def _draft(root, frozen, number):
     return data.decode("utf-8"), dict(matches[0])
 
 
+def _grounded_binding(root, grounded):
+    path = GR.receipt_path(root)
+    data = PS._safe_file(path, GR.folder(root)).read_bytes()
+    return {"path": f"evidence/{GR.C.FOLDER}/{GR.C.RECEIPT}",
+            "sha256": PS.sha(data), "receipt_hash": grounded["receipt_hash"]}
+
+
+def _control_load(root, supplied_cfg, frozen, grounded, manifest, tree, writer):
+    authority = HCA.load(root)
+    _, reviewer, config = _config(root, manifest, tree, supplied_cfg)
+    prompt_path = CP.require_member(root, tree / C.PROMPT, "config", manifest)
+    prompt = prompt_path.read_text(encoding="utf-8")
+    selection = manifest["run"]["chapters"]
+    if selection != frozen["batch"]["selection"]:
+        raise AuthorityError("RF-11 selection differs from the control operation selection")
+    records = {item["chapter"]: item for item in authority.get("control_review", [])}
+    if set(records) != set(selection):
+        raise AuthorityError("H-F01 control review authority is partial or ambiguous")
+    chapters, cards, plans, drafts = [], [], [], []
+    for number in selection:
+        record = records[number]
+        card, context = record["reader_state_card"], record["plan_context"]
+        try:
+            transition = C.card_transition(f"C-{number:02d}", card)
+        except C.ContractError as exc:
+            raise AuthorityError(f"chapter {number}: control reader-state is invalid: {exc}") from exc
+        draft, draft_binding = _draft(root, frozen, number)
+        chapters.append({"number": number, **transition, "reader_state_card": card,
+                         "commission": context["text"], "frozen_draft": draft})
+        cards.append({**transition, "path": context["path"],
+                      "sha256": PS.sha(card.encode("utf-8"))})
+        plans.append({"chapter_id": f"C-{number:02d}", "path": context["path"],
+                      "sha256": context["sha256"]})
+        drafts.append(draft_binding)
+    identity = {"operation": {"id": PS.state_hash({"root": str(root),
+        "batch": frozen["batch"]["operation"], "grounded": grounded["receipt_hash"],
+        "control": writer["receipt_hash"]}),
+        "batch_sha256": PS.state_hash(frozen["batch"]["operation"])},
+        "generation": manifest["accepted_generation"], "config": config,
+        "selection": selection}
+    task = C.task(C.make_task(identity, reviewer, prompt, chapters))
+    common = {**identity, "run_sha256": PS.state_hash(manifest["run"]),
+              "reviewer": reviewer, "rf11_receipt_hash": frozen["receipt_hash"],
+              "control_authority_receipt_hash": writer["receipt_hash"],
+              "rf12_receipt": _grounded_binding(root, grounded), "cards": cards,
+              "plan_authorities": plans, "drafts": drafts,
+              "prompt_sha256": PS.sha(prompt.encode("utf-8")),
+              "schema_sha256": PS.sha(PS.json_bytes(C.output_schema())),
+              "rules_sha256": PS.state_hash(C.RULES)}
+    return task, common
+
+
 def load(root, supplied_cfg=None):
     root = Path(root).absolute()
     try:
         frozen = FB.require_frozen_batch(root)
         grounded = GR.require_complete(root)
         manifest, tree = CP.load(root), CP.candidate_tree(root)
+        writer = C.loads(WO.read(root, manifest["operation"]), "writer operation receipt")
+        if writer.get("authority") == HCA.AUTHORITY:
+            return _control_load(
+                root, supplied_cfg, frozen, grounded, manifest, tree, writer)
         audit, writer = _audit(root, manifest)
         _, reviewer, config = _config(root, manifest, tree, supplied_cfg)
         prompt_path = CP.require_member(root, tree / C.PROMPT, "config", manifest)
@@ -136,7 +193,8 @@ def load(root, supplied_cfg=None):
         return task, common
     except AuthorityError:
         raise
-    except (CP.PairError, FB.BatchError, GR.GroundedReviewError, PS.StoreError,
+    except (CP.PairError, FB.BatchError, GR.GroundedReviewError, HCA.ControlAuthorityError,
+            PS.StoreError,
             WO.OperationError, OSError, UnicodeError, KeyError, TypeError,
             C.ContractError, SystemExit) as exc:
         raise AuthorityError(f"cannot resolve developmental authority: {exc}") from exc

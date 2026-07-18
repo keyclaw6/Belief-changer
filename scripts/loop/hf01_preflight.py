@@ -7,6 +7,7 @@ HERE = Path(__file__).resolve()
 sys.path.insert(0, str(HERE.parent))
 import candidate_pair as CP  # noqa: E402
 import commission_set as CS  # noqa: E402
+import hf01_control_authority as HCA  # noqa: E402
 import loopcfg  # noqa: E402
 import pair_store as PS  # noqa: E402
 import path_guard as PG  # noqa: E402
@@ -94,8 +95,7 @@ def _shared_paths(manifest):
     paths = {item["path"] for item in manifest["entries"]
              if item["path"].startswith(prefix) and item["path"].endswith(".md")}
     paths |= {f"{BOOK}/{name}" for name in
-              ("00-brief.md", "research/lived-experience.md",
-               "research/scientific-evidence.md")}
+              ("research/lived-experience.md", "research/scientific-evidence.md")}
     return sorted(paths)
 
 
@@ -110,8 +110,6 @@ def _stable_hashes(root, arms, manifests, ledger, blockers):
         for arm, manifest in manifests.items():
             if manifest is None: continue
             paths, candidate = arms[arm], arms[arm]["candidate"]
-            _record(hashes, f"snapshot:{(paths['experiment'] / 'pair.json').relative_to(root)}",
-                    paths["experiment"] / "pair.json", root)
             for item in manifest["entries"] + manifest["outputs"]:
                 if item["path"] not in targets:
                     _record(hashes, f"snapshot:{(candidate / item['path']).relative_to(root)}",
@@ -171,6 +169,8 @@ def build_manifest(snapshot_root, key_present=None, ledger=None, config=CONFIG):
         manifests[arm] = manifest
         arm_state[arm] = {"pair_sha256": pair_hash, "evaluation_sha256": evaluation_hash}
         if manifest:
+            arm_state[arm]["manifest_assignment_sha256"] = \
+                PS.state_hash(HCA.assignment(manifest))
             arm_state[arm]["chapter_baseline_sha256"] = {
                 str(number): _sha(_safe_bytes(paths["book"] /
                     f"chapters/chapter-{number:02d}.md", root)) for number in CHAPTERS}
@@ -229,6 +229,13 @@ def validate_execution_authority(root, manifest, key_present=None):
     present = bool(os.environ.get("OPENROUTER_API_KEY", "").strip()) \
         if key_present is None else bool(key_present)
     if not present: raise PreflightError("OPENROUTER_API_KEY is missing")
+    for arm, paths in arm_paths(root).items():
+        try: current = CP.load(paths["experiment"])
+        except (CP.PairError, PS.StoreError, OSError) as exc:
+            raise PreflightError(f"H-F01 {arm} manifest is invalid: {exc}") from exc
+        if PS.state_hash(HCA.assignment(current)) != \
+                manifest["arms"][arm]["manifest_assignment_sha256"]:
+            raise PreflightError(f"H-F01 {arm} manifest assignment changed")
     for key, expected in manifest["static_input_sha256"].items():
         namespace, relative = key.split(":", 1)
         base = Path(root).absolute() if namespace == "snapshot" else REPO
