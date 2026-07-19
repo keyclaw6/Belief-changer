@@ -70,7 +70,7 @@ def _validated(root, value):
         raise PairError(str(exc)) from exc
     outputs = value.get("outputs")
     allowed = {f"{run['book']}/commissions/chapter-{number:02}.md"
-               for number in run["chapters"]}
+               for number in run["chapters"]} | {f"{run['book']}/framing-review.md"}
     output_paths = {item.get("path") for item in outputs or () if isinstance(item, dict)}
     entry_paths = {item["path"] for item in value["entries"]}
     if not isinstance(outputs, list) or outputs and not _validate_entries(outputs, {"product"}) \

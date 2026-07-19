@@ -2,7 +2,6 @@
 import json
 import os
 import stat
-
 import candidate_pair as CP
 import draft_call as DC
 import draft_batch_state as S
@@ -12,10 +11,17 @@ import writer_refusal as WR
 BatchError = S.BatchError
 validate_draft = S.validate_draft
 def begin(root, authority, mode, interrupt=None):
-    del authority
-    return S.begin(root, mode, interrupt)
-
-
+    manifest = CP.load(root)
+    if authority is None:
+        authority_sha256 = manifest["operation"]["receipt_hash"]
+    elif isinstance(authority, str) and len(authority) == 64 \
+            and not set(authority) - set("0123456789abcdef"):
+        authority_sha256 = authority
+    else:
+        try: authority_sha256 = PS.state_hash(authority)
+        except TypeError:
+            authority_sha256 = manifest["operation"]["receipt_hash"]
+    return S.begin(root, mode, authority_sha256, interrupt)
 def _recover_pending(root, manifest, batch, interrupt=None):
     pending = batch["pending"]
     if pending is None:
@@ -65,8 +71,6 @@ def _recover_pending(root, manifest, batch, interrupt=None):
     boundary("progress-committing")
     manifest = S.save(root, manifest, committed, boundary)
     return manifest, manifest["draft_batch"]
-
-
 def _verify_drafting(root, allow_unrecorded=False, allow_receipt=False):
     manifest = CP.load(root)
     batch = manifest.get("draft_batch")
@@ -106,8 +110,6 @@ def _verify_drafting(root, allow_unrecorded=False, allow_receipt=False):
                     != baseline[number]["sha256"]:
                 raise BatchError("unrecorded or mixed draft bytes are present")
     return manifest, batch
-
-
 def accept(root, number, data, allow_unrecorded=False, interrupt=None):
     manifest, batch = _verify_drafting(root, allow_unrecorded)
     remaining = batch["selection"][len(batch["drafts"]):]
@@ -135,8 +137,6 @@ def durable_call(root, number, request, callback, interrupt=None):
     if batch["mode"] != "api" or not remaining or number != remaining[0]:
         raise BatchError("model call is outside the next API draft assignment")
     return DC.invoke(root, manifest, batch, number, request, callback, interrupt)
-
-
 def accept_response(root, number, interrupt=None):
     batch = CP.load(root)["draft_batch"]
     raw, _ = DC.read(root, batch["call"])

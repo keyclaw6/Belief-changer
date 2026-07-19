@@ -30,9 +30,14 @@ facts merely because they appear in the report.
 - Replace the one-edit/one-score campaign with bounded causal-bundle
   experiments, isolated candidate products, atomic promotion, and separate
   integrity, reader-effect, sequence, and reference-sighted craft evidence.
-- Validate the redesign first through the bounded H-F01 sugar control/treatment
-  experiment, then through conditional ablations, contrasting subjects, and a
-  full-book gate.
+- Freeze H-F01's immutable causal authority before RF-21, then validate the
+  treatment opening through three position-swapped chapter comparisons and one
+  position-swapped whole-opening comparison against exact offset-matched GSBS.
+  Keep fresh control/treatment observations as a separate causal diagnostic.
+  Preserve failed RF-20 as terminal; neither it nor its unapproved successor is
+  a prerequisite.
+- Preserve the founder ladder after Stage A: complete quit-sugar parity is Stage
+  B, then untouched caffeine with zero tuning is Stage C.
 
 ## Capabilities
 

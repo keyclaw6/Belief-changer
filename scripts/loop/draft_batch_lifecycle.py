@@ -13,7 +13,7 @@ KEYS = {"schema", "operation", "operation_sha256", "state", "local_state",
         "start", "batch", "before_sha256", "after_sha256", "evidence",
         "record_hash"}
 IMMUTABLE_BATCH = ("schema", "mode", "operation", "selection", "config",
-                   "baseline", "start_sha256")
+                   "baseline", "authority_sha256", "start_sha256")
 
 
 class LifecycleError(RuntimeError):

@@ -28,6 +28,8 @@ class ProductEffectPanelTests(unittest.TestCase):
         self.cfg = {
             "tasks_dir": str(Path(self.tmp.name) / "iterations"),
             "product_effect_rubric": str(Path(self.tmp.name) / "rubric.md"),
+            "judge_model": "gpt-5.6-sol", "judge_route": "codex-native",
+            "judge_reasoning": "xhigh",
         }
         Path(self.cfg["product_effect_rubric"]).write_bytes(
             (ROOT / "calibration/judges/product-effect-rubric.md").read_bytes())
@@ -98,6 +100,32 @@ class ProductEffectPanelTests(unittest.TestCase):
         self.assertEqual("PASS", mapped["verdict"])
         self.assertEqual(records[0]["task_id"], mapped["task_id"])
         self.assertEqual(records[0]["raw_verdict_id"], mapped["raw_verdict_id"])
+
+    def test_hf01_single_reader_dispatch_binds_position_and_gsbs_receipt(self):
+        """OpenSpec scenario: Stage A uses position-swapped direct GSBS panels."""
+        files = {"calibration/reference/gsbs/chapter-3.txt": "c" * 64}
+        cases = (("sol-xhigh-r1", "B", "GSBS", "treatment"),
+                 ("sol-xhigh-r2", "A", "treatment", "GSBS"))
+        rows = []
+        for identity, support, first, second in cases:
+            task = EFFECT.chapter_pair("sugar", first, second)
+            envelope = EFFECT.h_f01_envelope(task, "b" * 64, files, support, identity)
+            def complete(_content, actor, _schema, model, reasoning, preferred=support):
+                return (json.dumps(verdict(task, preferred)),
+                        {"thread_id": f"thread-{actor}", "model": model,
+                         "reasoning_effort": reasoning, "command": PANEL.N.command(
+                             "<isolated-tmp>", "<isolated-tmp>/judge-output-schema.json",
+                             model, reasoning)}, None)
+            PANEL.dispatch(self.cfg, identity, task, identities=(identity,),
+                tested_pair_hash=TESTED, complete=complete, single=True)
+            record = PANEL.records(self.cfg, identity, task, identities=(identity,),
+                                   tested_pair_hash=TESTED, single=True)[0]
+            rows.append(PANEL.h_f01_decision_row(self.cfg, record, envelope, TESTED))
+        self.assertEqual(("B", "A"), tuple(row["treatment_candidate"] for row in rows))
+        self.assertTrue(all(row["verdict"] == "PASS" for row in rows))
+        self.assertEqual(2, len({row["raw_record_sha256"] for row in rows}))
+        self.assertEqual(EFFECT._hash(files), rows[0]["gsbs_sha256"])
+        self.assertEqual({"gpt-5.6-sol"}, {row["model"] for row in rows})
 
     def test_prompt_correction_changes_call_id_and_rejects_stale_record(self):
         """Infra: paired records bind the current rubric and rendered input."""

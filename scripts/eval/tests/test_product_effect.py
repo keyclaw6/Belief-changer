@@ -66,6 +66,29 @@ class ProductEffectTests(unittest.TestCase):
         for leak in ("reference_candidate", "promotion_eligible", "h_f04"):
             self.assertNotIn(leak, payload)
 
+    def test_h_f01_binds_position_swap_treatment_support_and_gsbs_hash(self):
+        files, treatment = {"calibration/reference/gsbs/chapter-3.txt": "c" * 64}, "b" * 64
+        first = EFFECT.h_f01_envelope(EFFECT.chapter_pair(
+            "sugar", "Anonymous first.", "Anonymous second."), treatment, files,
+            "B", "sol-xhigh-r1")
+        second = EFFECT.h_f01_envelope(EFFECT.chapter_pair(
+            "sugar", "Anonymous second.", "Anonymous first."), treatment, files,
+            "A", "sol-xhigh-r2")
+        self.assertEqual(({"PASS": "B", "FAIL": "A", "INCONCLUSIVE": "TIE"},
+                          {"PASS": "A", "FAIL": "B", "INCONCLUSIVE": "TIE"}),
+                         (first["treatment_support"], second["treatment_support"]))
+        self.assertEqual(files, first["gsbs_files"])
+        self.assertNotEqual(first["judge_task"]["task_sha256"],
+                            second["judge_task"]["task_sha256"])
+        for envelope in (first, second):
+            payload = json.dumps(EFFECT.h_f01_judge_task(envelope))
+            for leak in ("treatment_pair_hash", "treatment_support", "reader_identity",
+                         "gsbs_files", "gsbs_sha256"):
+                self.assertNotIn(leak, payload)
+        stale = deepcopy(first); stale["gsbs_files"][next(iter(files))] = "d" * 64
+        with self.assertRaisesRegex(EFFECT.ContractError, "GSBS"):
+            EFFECT.validate_h_f01(stale)
+
     def test_verdict_and_schema_are_exactly_comparison_only(self):
         """OpenSpec scenario: Paired comparison stays comparison-only."""
         task = EFFECT.chapter_pair("checking", "One.", "Two.")

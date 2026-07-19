@@ -16,6 +16,36 @@ THEN those linked changes MAY form one declared treatment
 AND model, research, safety, reference blindness, and unrelated style rules MUST
 remain frozen unless the hypothesis explicitly owns them.
 
+#### Scenario: Direct GSBS Stage A is authorized separately
+WHEN the founder starts the direct H-F01 quit-sugar product-calibration lineage
+THEN RF-20's failed `rf20-attempt-5` lineage MUST remain terminal and unchanged
+AND `rf20-successor-reader-state-1` MUST NOT run, be reinterpreted as passing, or
+become a prerequisite
+AND the H-F01 authority MUST identify this as a distinct lineage before any call.
+
+#### Scenario: H-F01 authority is frozen before RF-21
+WHEN H-F01 reaches RF-21's first call boundary
+THEN an immutable authority MUST already bind the hypothesis, causal chain,
+changed bundle, frozen variables, exact inputs, falsifier, pinned clean source worktree and commit,
+executable hashes, both arm identities, exact allowed treatment diff, full route
+law, fixed 40-call ceiling, and exactly six writer calls
+AND both pre-RF21 pairs MUST equal the same accepted pair
+AND every non-treatment research, configuration, style, safety, and evaluation
+byte MUST match across arms
+AND the exact offset-matched GSBS file paths and hashes MUST be evaluation-only
+AND every RF-21 through RF-25 call counted under H-F01 MUST bind this authority.
+
+#### Scenario: RF-21 and RF-22 dispatch is durable and authority-bound
+WHEN the resumable coordinator is explicitly started with native dispatch
+THEN it MUST run exactly two RF-21 and four RF-22 calls in fresh reference-blind
+native contexts after the authority freezes and before chapter generation
+AND every immutable task and result MUST bind the authority, exact inputs,
+output identity, route, reasoning, command, thread identity, and artifact hashes
+AND an interrupted call with no durable result MUST stop as ambiguous rather
+than replay
+AND resume MUST recompute the same six calls, commission-set receipt, and exact
+treatment artifact hashes before accepting the RF-21/RF-22 receipt.
+
 ### Requirement: Candidate isolation and atomic promotion
 Every candidate run SHALL write configuration and product outputs to an isolated,
 reproducible snapshot before promotion. A rejected candidate MUST NOT alter the
@@ -82,6 +112,15 @@ one atomic action
 AND the accepted decision/results row SHALL already be inside that complete
 generation before the single visibility switch.
 
+#### Scenario: H-F01 reaches the atomic gate boundary
+WHEN the coordinator has frozen the product decision and causal record
+THEN it MUST emit the existing RF-02 gate continuation with the unified integer
+Carr/gate iteration, exact sealed treatment hash, exact accepted root, and a
+pinned UTC decision timestamp
+AND a `PROMOTE` decision MUST additionally require explicit promotion authority
+AND the coordinator MUST describe the candidate only as awaiting or having an
+emitted gate command until that atomic gate actually succeeds.
+
 #### Scenario: Promotion is killed at an atomic boundary
 WHEN the process is forcibly killed after history preparation, generation
 materialization, pointer preparation, pointer replacement, or immediately before
@@ -127,6 +166,36 @@ WHEN reference-sighted craft scores improve but blind judges do not find the
 assigned belief transition or cumulative sequence
 THEN the treatment MUST NOT be promoted on the likeness score alone.
 
+#### Scenario: H-F01 blind decision is recomputed
+WHEN both H-F01 arms have passed all-six grounded, near-copy, and whole-opening
+review and are sealed
+THEN frozen evidence MUST bind both sealed arm hashes, exact GSBS file hashes,
+ordinary control/treatment absolute diagnostic tasks, three anonymous
+treatment-versus-offset-matched-GSBS chapter panels, and one anonymous
+treatment-versus-GSBS whole-opening panel
+AND each panel MUST use the same two fresh reader identities with opposite A/B
+order and an envelope-bound mapping from anonymous choice to treatment support
+AND the six absolute plus eight GSBS native task/result records MUST bind the
+pre-RF21 authority, task/input/output, route, reasoning, command, and thread
+AND a pre-call marker without a durable result MUST stop as ambiguous rather
+than replay
+AND support MUST require at least five of six treatment-over-GSBS chapter votes
+plus both treatment-over-GSBS whole-opening votes
+AND material disagreement MUST be `INCONCLUSIVE`
+AND control/treatment observations MUST remain a separately named causal
+diagnostic rather than a parity result
+AND a named-human approval bound to both arms, GSBS, blind evidence, and Carr
+evidence MUST be present after those receipts and before promotion.
+
+#### Scenario: Reference diagnostic follows blind freeze
+WHEN H-F01 requires the reference-sighted Carr craft diagnostic
+THEN an immutable receipt for the complete blind task and verdict set MUST exist
+first
+AND the six fresh native Carr task/result records MUST bind that authority and
+blind receipt plus exact model, route, reasoning, command, and thread identity
+AND an interrupted Carr call without a durable result MUST stop as ambiguous
+AND the diagnostic MUST NOT alter or decide the blind evidence.
+
 #### Scenario: A candidate is too close to the matched reference
 WHEN isolated word-sequence comparison crosses the near-copy tripwire
 THEN the candidate MUST fail integrity
@@ -135,7 +204,10 @@ AND no preference, reader-effect, or craft score may override that failure.
 ### Requirement: Blind and independent judgment
 Reader-effect and sequence evaluators SHALL remain blind to condition identity,
 text provenance, reference-as-ground-truth context, historical scores, and judge
-verdicts. In product experiments they SHALL NOT receive reference prose.
+verdicts. Reference prose SHALL NOT enter ordinary product experiments. Direct
+GSBS Stage A is the sole declared exception: an evaluator receives the exact
+offset-matched GSBS text only as one anonymous A/B candidate, with its identity,
+hashes, and treatment-support mapping kept outside the judge payload.
 
 The paired instrument SHALL receive exactly one task containing anonymous A/B
 content with exact fields `schema`, `instrument: blind-product-effect`, `mode`,
@@ -222,6 +294,10 @@ falsification outcome. A materially changed instrument, model, threshold, or
 campaign contract SHALL begin a new results lineage; rewards from different
 lineages MUST NOT be compared numerically.
 
+The final H-F01 record MUST reproduce the preregistered hypothesis, causal chain,
+changed bundle, frozen variables, exact inputs, and falsifier byte-for-byte apart
+from decision-derived input and evidence bindings added by the frozen decision.
+
 #### Scenario: The experiment record grows beyond decision evidence
 WHEN a proposed record is a dashboard, direction audit, per-call micro-ledger,
 or intermediate-artifact score
@@ -268,13 +344,19 @@ WHEN a decision requires reading a complete product artifact
 THEN a fresh product-reading subagent or named human MUST perform that reading
 AND return a compact evidence matrix or verdict to the root.
 
-### Requirement: Reliability claim
-The factory MUST NOT claim any-subject or founder-free whole-book reliability
-from three sugar chapters. After a successful sugar opening, it SHALL pass
-contrasting-subject opening tests and at least one complete-book coherence and
-integrity gate before the vision is declared achieved.
+### Requirement: Founder validation ladder
+The factory MUST NOT claim complete-book or zero-tuning reliability from three
+sugar chapters. Stage A SHALL test the quit-sugar opening directly against GSBS;
+Stage B SHALL test the complete quit-sugar book at parity; only after Stage B
+passes SHALL Stage C test untouched caffeine with zero tuning.
 
-#### Scenario: Opening success is generalized
+#### Scenario: Opening success is described narrowly
 WHEN the sugar H-F01 opening passes
 THEN the result SHALL be described as support for the tested handoff hypothesis
-AND NOT as proof of cross-subject or whole-book reliability.
+AND NOT as proof of complete-book or zero-tuning reliability.
+
+#### Scenario: The founder validation ladder advances
+WHEN direct GSBS Stage A passes every product and human gate
+THEN Stage B SHALL test complete quit-sugar book parity
+AND only after Stage B passes SHALL Stage C test untouched caffeine with zero
+tuning.

@@ -17,18 +17,20 @@ class CommissionSetError(RuntimeError): pass
 def _canonical(value):
     try:
         return json.loads(json.dumps(value, sort_keys=True))
-    except (TypeError, ValueError) as exc:
-        raise CommissionSetError("assignment record is not canonical JSON") from exc
-def _sha_text(text):
-    return PS.sha(text.encode("utf-8"))
+    except (TypeError, ValueError) as exc: raise CommissionSetError("assignment record is not canonical JSON") from exc
+def _sha_text(text): return PS.sha(text.encode("utf-8"))
 def _ready_manifest(root, recover=True):
     try:
-        manifest = (CP.load if recover else CP.inspect)(root)
-        return manifest, CP._actual(root, manifest)[0]
-    except (CP.PairError, PS.StoreError) as exc:
-        raise CommissionSetError(str(exc)) from exc
-def _selection(manifest):
-    return [f"C-{number:02}" for number in manifest["run"]["chapters"]]
+        manifest = (CP.load if recover else CP.inspect)(root); return manifest, CP._actual(root, manifest)[0]
+    except (CP.PairError, PS.StoreError) as exc: raise CommissionSetError(str(exc)) from exc
+def _generation_manifest(root):
+    tree = CP.candidate_tree(root)
+    try: manifest = CP.load(root); actual = {path.relative_to(tree).as_posix() for path in PS.tree_files(tree)}
+    except (CP.PairError, PS.StoreError, OSError) as exc: raise CommissionSetError(str(exc)) from exc
+    declared = {item["path"] for item in CP._members(manifest)}; missing = declared - actual
+    if actual | missing != declared or not missing <= set(_commission_paths(manifest).values()): raise CommissionSetError("candidate partial commission layout is invalid")
+    return manifest if missing else _ready_manifest(root)[0]
+def _selection(manifest): return [f"C-{number:02}" for number in manifest["run"]["chapters"]]
 def _commission_paths(manifest):
     book = manifest["run"]["book"]
     return {chapter: f"{book}/commissions/chapter-{int(chapter[2:]):02}.md"
@@ -110,15 +112,13 @@ def _declare_outputs(root, manifest):
     if manifest["state"] != "CANDIDATE":
         raise CommissionSetError("commissions require a mutable CANDIDATE operation")
     expected = set(_commission_paths(manifest).values())
-    existing = {item["path"] for item in manifest["entries"]}
-    additions = expected - existing
+    existing = {item["path"] for item in manifest["entries"] + manifest["outputs"]}; additions = expected - existing
     tree = CP.candidate_tree(root)
     for relative in additions:
         if os.path.lexists(tree / relative):
             raise CommissionSetError(f"undeclared commission output already exists: {relative}")
     updated = dict(manifest)
-    updated["outputs"] = [{"group": "product", "path": path}
-                          for path in sorted(additions)]
+    updated["outputs"] = [*manifest["outputs"], *({"group": "product", "path": path} for path in sorted(additions))]
     try:
         PS.exact_layout(root, manifest, {".pair.json.rf02-tmp": PS.json_bytes(updated)})
         PS.write_json(CP._manifest_path(root), updated)
@@ -126,7 +126,7 @@ def _declare_outputs(root, manifest):
     except (PS.StoreError, CP.PairError, OSError) as exc:
         raise CommissionSetError(str(exc)) from exc
 def _write_commission(root, manifest, relative, text):
-    tree, path = CP.candidate_tree(root), CP.candidate_tree(root) / relative
+    tree, path, data = CP.candidate_tree(root), CP.candidate_tree(root) / relative, (text.rstrip() + "\n").encode("utf-8")
     parent = path.parent
     try:
         if os.path.lexists(parent):
@@ -135,8 +135,9 @@ def _write_commission(root, manifest, relative, text):
             PS.safe_dir(parent.parent, tree)
             parent.mkdir()
         if os.path.lexists(path):
-            PS._safe_file(path, tree)
-        PS.write(path, (text.rstrip() + "\n").encode("utf-8"))
+            if PS._safe_file(path, tree).read_bytes() != data: raise CommissionSetError(f"durable commission output differs: {relative}")
+            return
+        PS.write(path, data)
     except (PS.StoreError, OSError) as exc:
         raise CommissionSetError(str(exc)) from exc
 def _operation(manifest):
@@ -212,8 +213,7 @@ def require_writer_eligible(root, recover=True):
     return receipt_hash
 def inspect_writer_eligible(root): return require_writer_eligible(root, False)
 def generate(root, assignments, commissioner_runner, audit_runner):
-    """Generate all selected commissions, then run exactly one whole-set audit."""
-    manifest, _ = _ready_manifest(root)
+    manifest = _generation_manifest(root)
     if os.path.lexists(_receipt_path(root)):
         raise CommissionSetError("commission audit receipt already exists")
     inputs = _inputs(root, manifest, assignments)

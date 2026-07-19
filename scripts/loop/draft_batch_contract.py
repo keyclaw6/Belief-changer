@@ -9,7 +9,7 @@ FOLDER = "first-draft-batch"
 RECEIPT = "receipt.json"
 KEYS = {"schema", "state", "mode", "operation", "selection", "config",
         "baseline", "drafts", "pending", "receipt", "pair_sha256",
-        "start_sha256", "responses", "call", "refusal"}
+        "authority_sha256", "start_sha256", "responses", "call", "refusal"}
 CALL_KEYS = {"chapter", "path", "authority_sha256", "request_sha256"}
 REFUSAL_KEYS = {"chapter", "path", "sha256", "receipt_hash",
                 "routing_sha256", "source"}
@@ -32,7 +32,7 @@ def folder(root):
 
 def start_marker(batch):
     body = {key: batch[key] for key in
-            ("schema", "mode", "operation", "selection", "config")}
+            ("schema", "mode", "operation", "selection", "config", "authority_sha256")}
     return {**body, "start_sha256": PS.state_hash(body)}
 
 
@@ -122,7 +122,8 @@ def _validate_state(batch, drafts, selection, pending):
     if refusal is not None and not _valid_refusal(refusal, batch, drafts, call) \
             or refusal is not None and (frozen or pending is not None):
         raise BatchError("writer route refusal identity is malformed")
-    if not _valid_hash(batch.get("start_sha256")):
+    if not _valid_hash(batch.get("authority_sha256")) \
+            or not _valid_hash(batch.get("start_sha256")):
         raise BatchError("draft batch start hash is malformed")
 
 

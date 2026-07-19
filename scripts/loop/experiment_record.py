@@ -15,6 +15,10 @@ EVIDENCE = {
 }
 DECISIONS = {"DRY_RUN", "SUPPORTED", "REFUTED", "INCONCLUSIVE", "BLOCKED"}
 PATH = "causal-record.json"
+PREREG_FIELDS = {
+    "hypothesis", "causal_chain", "changed_bundle", "frozen_variables",
+    "inputs", "falsifier",
+}
 
 
 class RecordError(ValueError):
@@ -63,6 +67,19 @@ def validate(record):
     return record
 
 
+def validate_preregistration(value):
+    """Validate the immutable pre-call subset of the existing record schema."""
+    if not isinstance(value, dict) or set(value) != PREREG_FIELDS:
+        raise RecordError("preregistration fields must match the causal record subset")
+    _text("hypothesis", value["hypothesis"])
+    _text_list("causal_chain", value["causal_chain"])
+    _text_list("changed_bundle", value["changed_bundle"])
+    _text_map("frozen_variables", value["frozen_variables"])
+    _text_map("inputs", value["inputs"])
+    _text("falsifier", value["falsifier"])
+    return value
+
+
 def load(path):
     """Read and validate every non-blank JSONL record without mutating it."""
     records = []
@@ -104,7 +121,8 @@ def decision_evidence(product_decision):
         raise RecordError("product decision does not contain four evidence layers") from exc
 
 
-def bind(record, product_decision, tested_pair_hash, product_decision_sha256):
+def bind(record, product_decision, tested_pair_hash, product_decision_sha256,
+         preregistration=None):
     """Fail closed unless one record exactly represents the gate's product decision."""
     validate(record)
     inputs = record["inputs"]
@@ -117,6 +135,13 @@ def bind(record, product_decision, tested_pair_hash, product_decision_sha256):
     if record["decision"] != expected or record["evidence"] != decision_evidence(
             product_decision):
         raise RecordError("causal outcome or four evidence layers differ from the decision")
+    if preregistration is not None:
+        frozen = validate_preregistration(preregistration)
+        for field in PREREG_FIELDS - {"inputs"}:
+            if record[field] != frozen[field]:
+                raise RecordError(f"causal record post-authored preregistered {field}")
+        if any(inputs.get(key) != value for key, value in frozen["inputs"].items()):
+            raise RecordError("causal record post-authored preregistered inputs")
     return record
 
 

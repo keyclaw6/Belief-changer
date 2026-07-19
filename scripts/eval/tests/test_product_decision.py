@@ -145,6 +145,66 @@ class ProductDecisionTests(unittest.TestCase):
                           "commission/context", "prose", "revision", "evaluation"),
                          DECISION.OWNERS)
 
+    def test_hf01_recomputes_position_swapped_gsbs_five_of_six_and_two_of_two(self):
+        control, treatment, gsbs = "c" * 64, "d" * 64, "e" * 64
+        experiment = DECISION.PS.state_hash({"control_pair_hash": control,
+            "treatment_pair_hash": treatment, "gsbs_sha256": gsbs})
+        panel_hashes = [DECISION.PS.state_hash(f"gsbs-{n}") for n in range(4)]
+        def panel(name, votes, gsbs_hash):
+            rows = []
+            for index, (actor, candidate, vote) in enumerate(zip(
+                    DECISION.HF01_READERS, ("B", "A"), votes), 1):
+                row = verdict(name, index, vote, actor=actor,
+                    base=DECISION.PS.state_hash(f"{name}-task-{index}"),
+                    input_hash=DECISION.PS.state_hash(f"{name}-input-{index}"))
+                row.update(tested_pair_hash=experiment, reader_identity=actor,
+                    treatment_candidate=candidate, gsbs_sha256=gsbs_hash,
+                    envelope_sha256=DECISION.PS.state_hash(f"{name}-env-{index}"),
+                    raw_record_sha256=DECISION.PS.state_hash(f"{name}-raw-{index}"),
+                    authority_sha256="4" * 64,
+                    native_call_sha256=DECISION.PS.state_hash(f"{name}-call-{index}"),
+                    model="gpt-5.6-sol", route="codex-native", reasoning="xhigh",
+                    command=DECISION.HF01_COMMAND)
+                row["task_id"] = DECISION.bound_task_id(row); rows.append(row)
+            return rows
+        human = {"schema": 2, "reviewer": "Founder Kristian", "verdict": "APPROVE",
+            "reviewed_at_utc": "2026-07-19T12:00:00+00:00", "control_pair_hash": control,
+            "treatment_pair_hash": treatment, "gsbs_sha256": gsbs,
+            "blind_receipt_sha256": "f" * 64, "reference_sighted_diagnostic_sha256": "1" * 64,
+            "decision_context_sha256": "2" * 64}
+        human["receipt_sha256"] = DECISION.PS.sha(DECISION.PS.json_bytes(human))
+        common = {"integrity": {"status": "PASS",
+                "unsupported_claim_comparison": {"increased": False}},
+            "causal_diagnostic": {"role": "DIAGNOSTIC_ONLY", "status": "PASS",
+                "task_ids": [DECISION.PS.state_hash(f"absolute-{n}") for n in range(6)]},
+            "chapter_panels": [panel("chapter-1", ("PASS", "PASS"), panel_hashes[0]),
+                panel("chapter-2", ("PASS", "PASS"), panel_hashes[1]),
+                panel("chapter-3", ("PASS", "FAIL"), panel_hashes[2])],
+            "whole_opening_panel": panel("opening", ("PASS", "PASS"), panel_hashes[3]),
+            "carr_craft": {"role": "diagnostic"},
+            "human_approval": human,
+            "control_pair_hash": control, "treatment_pair_hash": treatment,
+            "gsbs_sha256": gsbs, "gsbs_panel_sha256": panel_hashes,
+            "prompt_sha256": PROMPT, "blind_receipt_sha256": "f" * 64,
+            "reference_sighted_diagnostic_sha256": "1" * 64,
+            "decision_context_sha256": "2" * 64}
+        result = DECISION.decide_hf01(**common)
+        self.assertEqual(("PROMOTE", 5, 2), (result["decision"],
+            result["layers"]["blind_chapter_effect"]["pass_votes"],
+            result["layers"]["blind_whole_opening_sequence"]["pass_votes"]))
+        self.assertEqual((control, treatment),
+                         (result["control_pair_hash"], result["tested_pair_hash"]))
+        split = {**common, "whole_opening_panel": panel(
+            "split", ("PASS", "FAIL"), panel_hashes[3])}
+        self.assertEqual("INCONCLUSIVE", DECISION.decide_hf01(**split)["decision"])
+        rejected = {**common, "chapter_panels": [
+            panel("low-1", ("PASS", "FAIL"), panel_hashes[0]),
+            panel("low-2", ("PASS", "FAIL"), panel_hashes[1]),
+            panel("low-3", ("PASS", "FAIL"), panel_hashes[2])]}
+        self.assertEqual("REJECT", DECISION.decide_hf01(**rejected)["decision"])
+        with self.assertRaisesRegex(DECISION.ProductDecisionError, "treatment/GSBS"):
+            DECISION.decide_hf01(**{**common, "control_pair_hash": "0" * 64})
+
 
 if __name__ == "__main__":
     unittest.main()

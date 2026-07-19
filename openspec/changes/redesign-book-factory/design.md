@@ -89,14 +89,34 @@ later validation gates report their outcomes.
 
 ## First decisive test
 
-H-F01 compares fresh control and treatment Chapters 1–3 under the same research,
-Opus 4.6 settings, budgets, safety rules, and reference blindness. Treatment
+H-F01 generates fresh control and treatment Chapters 1–3 under the same research,
+Opus 4.6 settings, budgets, safety rules, and generation-time reference blindness. Treatment
 changes only the linked planning-to-writing handoff: completed reader states,
 accepted first-three plan cards, source-grounded commissions, compact writer
 context, and grounded-audit inputs. All six drafts freeze before review or
-revision. Promotion requires integrity, at least five of six blind chapter
-votes, both whole-opening votes, distinguishable entering/leaving beliefs, no
-new unsupported claims, and founder/human confirmation.
+revision. Its decisive Stage-A test compares treatment with exact offset-matched
+GSBS: three chapters twice and the whole opening twice, using two fresh readers
+with opposite A/B order. The control/treatment observations remain a separate
+causal diagnostic and are not called parity. Promotion requires integrity, at
+least five of six treatment-over-GSBS chapter votes, both treatment-over-GSBS
+whole-opening votes, distinguishable entering/leaving beliefs, no increased
+unsupported claims, and founder/human confirmation.
+
+This is a direct GSBS product-calibration lineage, not a continuation of RF-20.
+The terminal `rf20-attempt-5` failure remains unchanged and its unapproved phone
+successor is neither run nor required. Before RF-21's first call, while both
+isolated arms are identical, one immutable authority binds the causal
+declaration, treatment allowlist, both arm identities, route, call ceiling,
+clean source commit/worktree, executable hashes, and exact offset-matched GSBS file hashes. That authority is
+carried through RF-25. The same H-F01 command durably dispatches and resumes from
+six authority-bound RF-21/RF-22 records, the commission-set receipt, and the
+fourteen authority-bound absolute/GSBS blind task/result records. Blind evidence freezes before Carr;
+the coordinator emits the exact existing RF-02 gate command only after the
+sealed hash, accepted root, UTC timestamp, and explicit promotion authority are
+present. The candidate remains isolated until that command succeeds.
+
+The next product gates are fixed: Stage B is the complete quit-sugar book at
+parity; Stage C is untouched caffeine with zero tuning.
 
 ## Migration order
 
@@ -108,10 +128,11 @@ new unsupported claims, and founder/human confirmation.
    promotion before generating any treatment.
 4. Implement upstream contracts, handoffs, reviews, instruments, and the new
    run record in dependency order.
-5. Calibrate the new instruments on frozen prose without generation.
-6. Execute H-F01 without stylistic amendments or revisions.
-7. Run only causally justified ablations, then contrasting-subject and full-book
-   validation before declaring the vision achieved.
+5. Preserve RF-20's terminal failed calibration without retry or successor.
+6. Execute the separately authorized direct H-F01 without stylistic amendments
+   or revisions.
+7. Run only causally justified ablations, then Stage B complete quit-sugar parity
+   and dependent Stage C untouched-caffeine zero-tuning.
 
 ## Current-spec replacement audit
 
@@ -139,6 +160,9 @@ No other current `book-pipeline` guarantee is removed by implication.
   inside the isolated redesign snapshot after their dependencies pass.
 - No new research is gathered for H-F01.
 - No writer-model comparison occurs before the handoff hypothesis is tested.
-- No dashboards, direction-audit bureaucracy, per-call records, or intermediate
-  artifact wins are introduced.
+- No dashboards, direction-audit bureaucracy, reusable call ledger, or
+  intermediate artifact wins are introduced. Only the idempotency-critical
+  native task/result receipts required to resume this fixed run are retained.
 - Sugar-only constructs do not enter generic contracts.
+- No synthetic phone calibration or later topic-specific tail can become a
+  prerequisite for the direct GSBS Stage-A product test.

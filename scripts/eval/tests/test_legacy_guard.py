@@ -101,11 +101,12 @@ class LegacyGuardTests(unittest.TestCase):
         )
         return candidate, book, config
 
-    def ledger(self, rf20="READY", rf23="READY"):
+    def ledger(self, rf20="READY", rf21="READY", rf23="READY"):
         path = self.root / "tasks.md"
         path.write_text(
             "# fixture\n\n"
             f"### RF-20 — calibration\n\n- Status: `{rf20}`\n\n"
+            f"### RF-21 — upstream\n\n- Status: `{rf21}`\n\n"
             f"### RF-23 — prose\n\n- Status: `{rf23}`\n",
             encoding="utf-8",
         )
@@ -138,7 +139,7 @@ class LegacyGuardTests(unittest.TestCase):
         self.assertFalse(hasattr(HF_RUN, "_resume"))
         wrong = self.root / "wrong"; wrong.mkdir()
         argv = ["hf01_run.py", "--snapshot-root", str(snapshot), "--redesign-authorized",
-                "--rf-stage", "RF-23", "--candidate-root", str(wrong)]
+                "--rf-stage", "RF-21", "--candidate-root", str(wrong)]
         with mock.patch.object(LG, "LEDGER", self.ledger()), \
                 mock.patch.object(sys, "argv", argv), mock.patch.object(HF_RUN, "run") as dispatch:
             with self.assertRaisesRegex(SystemExit, "candidate-root must equal"): HF_RUN.main()
@@ -182,7 +183,11 @@ class LegacyGuardTests(unittest.TestCase):
             "`rf20-attempt-5` row",
         ):
             self.assertIn(required, rf20)
-        self.assertIn("- Status: `BLOCKED`", rf21)
+        self.assertIn("- Status: `READY`", rf21)
+        self.assertNotIn("RF-20.", rf21.split("- Dependencies:", 1)[1].splitlines()[0])
+        for rung in ("Stage A", "Stage B", "Stage C", "complete quit-sugar book parity",
+                     "untouched caffeine with zero tuning"):
+            self.assertIn(rung, program)
 
     def test_pre_ready_entrypoints_stop_before_resolution_and_writes(self):
         """OpenSpec scenario: The legacy loop is invoked before redesign readiness."""

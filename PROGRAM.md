@@ -85,5 +85,23 @@ only as an anonymous, non-promotable calibration candidate outside generation.
 
 RF-20 is `BLOCKED` by a terminal failed lineage; the canonical outcome and hashes
 live only in the `rf20-attempt-5` row of `calibration/runs/LEDGER.md`. Do not retry
-or reinterpret that lineage. RF-21 remains blocked until a newly founder/root-
-approved calibration lineage passes.
+or reinterpret that lineage. `rf20-successor-reader-state-1` remains unapproved
+and is not a prerequisite for product calibration.
+
+## 5. Direct GSBS product-calibration lineage
+
+The founder-authorized H-F01 lineage starts directly with a fresh quit-sugar
+treatment opening compared blindly with exact offset-matched GSBS chapters.
+The fresh control/treatment pair is separate causal-diagnostic evidence, never a
+GSBS parity claim. One immutable causal authority must exist while both isolated
+arms are still identical, before RF-21's first call, and remain bound through
+RF-25. It does not inherit, continue, or claim a pass from RF-20. RF-21 is ready
+only for an explicit founder start; RF-22 artifacts, RF-23 readiness, credited
+chapter-writer credentials, and every later hard and human gate remain blocking.
+The coordinator preserves authority-bound native task/result records; a call with
+only its pre-call marker is ambiguous and must never be replayed.
+
+The validation ladder is exact: **Stage A** blindly calibrates the quit-sugar
+opening against GSBS; **Stage B** establishes complete quit-sugar book parity;
+**Stage C** tests untouched caffeine with zero tuning. No synthetic calibration
+control or topic-specific tail may replace a rung.

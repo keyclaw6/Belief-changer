@@ -121,13 +121,15 @@ def identity(root, manifest, batch):
     return value
 
 
-def begin(root, mode, interrupt=None):
+def begin(root, mode, authority_sha256, interrupt=None):
     manifest = CP.load(root)
     if manifest.get("draft_batch") is not None:
         batch = manifest["draft_batch"]
         identity(root, manifest, batch)
         if batch["mode"] != mode:
             raise BatchError("draft generation mode changed mid-batch")
+        if batch["authority_sha256"] != authority_sha256:
+            raise BatchError("draft generation authority changed mid-batch")
         return batch
     _, receipt_hash, inventory = receipt_value(root, manifest)
     hashes = {item["path"]: item["sha256"] for item in inventory}
@@ -139,7 +141,7 @@ def begin(root, mode, interrupt=None):
              "selection": manifest["run"]["chapters"], "config": config(root, manifest),
              "baseline": baseline, "drafts": [], "pending": None,
              "receipt": None, "pair_sha256": None, "responses": [], "call": None,
-             "refusal": None}
+             "refusal": None, "authority_sha256": authority_sha256}
     start = start_marker(batch)
     batch["start_sha256"] = start["start_sha256"]
     try:

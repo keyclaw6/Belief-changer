@@ -59,11 +59,11 @@ def _schema_bytes(schema):
     return json.dumps(schema, sort_keys=True, separators=(",", ":")).encode()
 
 
-def command(workdir, schema_path):
+def command(workdir, schema_path, model=MODEL, reasoning=REASONING_EFFORT):
     return [
         "codex", "exec", "--ephemeral", "--ignore-user-config", "--ignore-rules",
-        "--disable", "multi_agent", "--model", MODEL,
-        "-c", f"model_reasoning_effort={REASONING_EFFORT}",
+        "--disable", "multi_agent", "--model", model,
+        "-c", f"model_reasoning_effort={reasoning}",
         "--sandbox", "read-only", "--skip-git-repo-check", "--cd", workdir,
         "--output-schema", schema_path, "--json", "-",
     ]
@@ -124,7 +124,8 @@ def finalize_controls(configuration):
     return controls.finalize(configuration)
 
 
-def complete(content, judge_identity, output_schema, run=subprocess.run):
+def complete(content, judge_identity, output_schema, run=subprocess.run,
+             model=MODEL, reasoning=REASONING_EFFORT):
     """Run one fresh, uncapped-by-harness native judge context."""
     env = {name: os.environ[name] for name in NATIVE_ENV_ALLOWLIST if name in os.environ}
     schema_data = _schema_bytes(output_schema)
@@ -133,7 +134,7 @@ def complete(content, judge_identity, output_schema, run=subprocess.run):
         schema_path.write_bytes(schema_data)
         os.chmod(schema_path, 0o444)
         os.chmod(workdir, 0o555)
-        cmd = command(workdir, str(schema_path))
+        cmd = command(workdir, str(schema_path), model, reasoning)
         launch_error = None
         try:
             try:
@@ -146,7 +147,7 @@ def complete(content, judge_identity, output_schema, run=subprocess.run):
     invocation = [item.replace(workdir, "<isolated-tmp>") for item in cmd]
     transport = {
         "kind": "native-codex-subscription", "judge_identity": judge_identity,
-        "model": MODEL, "reasoning_effort": REASONING_EFFORT,
+        "model": model, "reasoning_effort": reasoning,
         "output_limit": "none set by harness", "fresh_ephemeral_context": True,
         "isolated_workdir": "/tmp read-only",
         "environment_policy": "native runtime allowlist; no provider API keys inherited",

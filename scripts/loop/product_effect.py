@@ -1,11 +1,13 @@
 """Pure RF-16 blind paired product-effect comparison contract."""
 import hashlib
 import json
+import re
 
 SCHEMA = 1
 INSTRUMENT = "blind-product-effect"
 MODES = ("chapter", "whole_opening")
 LABELS = ("A", "B")
+HEX = re.compile(r"^[0-9a-f]{64}$")
 
 
 class ContractError(RuntimeError):
@@ -118,6 +120,63 @@ def validate_h_f04(value):
 def h_f04_judge_task(envelope):
     """Return only the anonymous payload that a calibration evaluator may see."""
     return validate_h_f04(envelope)["judge_task"]
+
+
+def h_f01_envelope(task, treatment_pair_hash, gsbs_files, treatment_candidate,
+                    reader_identity):
+    """Bind one position-swapped treatment/GSBS task outside its anonymous payload."""
+    if treatment_candidate not in LABELS or not isinstance(reader_identity, str) \
+            or not reader_identity.strip() or not isinstance(treatment_pair_hash, str) \
+            or not HEX.fullmatch(treatment_pair_hash) or not isinstance(gsbs_files, dict) \
+            or not gsbs_files or any(not isinstance(path, str) or not path \
+            or not isinstance(digest, str) or not HEX.fullmatch(digest)
+            for path, digest in gsbs_files.items()):
+        raise ContractError("H-F01 treatment/GSBS binding is invalid")
+    other = "B" if treatment_candidate == "A" else "A"
+    body = {"schema": SCHEMA, "purpose": "h_f01_direct_gsbs_stage_a",
+            "promotion_eligible": True, "reader_identity": reader_identity,
+            "treatment_pair_hash": treatment_pair_hash,
+            "gsbs_files": dict(sorted(gsbs_files.items())),
+            "gsbs_sha256": _hash(dict(sorted(gsbs_files.items()))),
+            "treatment_support": {"PASS": treatment_candidate, "FAIL": other,
+                                  "INCONCLUSIVE": "TIE"},
+            "judge_task": validate_task(task)}
+    return validate_h_f01({**body, "envelope_sha256": _hash(body)})
+
+
+def validate_h_f01(value):
+    keys = {"schema", "purpose", "promotion_eligible", "reader_identity",
+            "treatment_pair_hash", "gsbs_files", "gsbs_sha256",
+            "treatment_support", "judge_task", "envelope_sha256"}
+    if not isinstance(value, dict) or set(value) != keys or value.get("schema") != SCHEMA \
+            or value.get("purpose") != "h_f01_direct_gsbs_stage_a" \
+            or value.get("promotion_eligible") is not True \
+            or not isinstance(value.get("reader_identity"), str) \
+            or not value["reader_identity"].strip() \
+            or not isinstance(value.get("treatment_pair_hash"), str) \
+            or not HEX.fullmatch(value["treatment_pair_hash"]):
+        raise ContractError("H-F01 envelope is malformed or unbound")
+    files = value.get("gsbs_files")
+    if not isinstance(files, dict) or not files or list(files) != sorted(files) \
+            or any(not isinstance(path, str) or not path or not isinstance(digest, str)
+                   or not HEX.fullmatch(digest) for path, digest in files.items()) \
+            or value.get("gsbs_sha256") != _hash(files):
+        raise ContractError("H-F01 GSBS file binding is stale")
+    support = value.get("treatment_support")
+    if not isinstance(support, dict) or set(support) != {"PASS", "FAIL", "INCONCLUSIVE"} \
+            or support.get("PASS") not in LABELS \
+            or support.get("FAIL") == support.get("PASS") \
+            or support.get("FAIL") not in LABELS or support.get("INCONCLUSIVE") != "TIE":
+        raise ContractError("H-F01 treatment support mapping is invalid")
+    validate_task(value["judge_task"])
+    body = {key: item for key, item in value.items() if key != "envelope_sha256"}
+    if value["envelope_sha256"] != _hash(body):
+        raise ContractError("H-F01 envelope identity is stale")
+    return value
+
+
+def h_f01_judge_task(envelope):
+    return validate_h_f01(envelope)["judge_task"]
 
 
 def verdict(raw, expected_task):

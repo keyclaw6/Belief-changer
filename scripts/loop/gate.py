@@ -20,6 +20,7 @@ import grounded_review as GR  # noqa: E402
 import developmental_review as DR  # noqa: E402
 import product_decision as PD  # noqa: E402
 import experiment_record as ER  # noqa: E402
+import hf01_stage_a as HFS  # noqa: E402
 COLUMNS = ["iter", "timestamp_utc", "campaign", "instrument", "hypothesis",
            "reward", "hard_ok", "verdict", "worst_dimension", "top_suggestion",
            "notes", "tested_pair_hash"]
@@ -146,7 +147,7 @@ def main():
         chapters = ",".join(str(n) for n in manifest["run"]["chapters"])
         core = score_core.evaluate(cfg, book, chapters, False)
         labels = [pair[0] for pair in core["pairs"]]
-        iter_name = f"{a.iter:03d}" if a.iter is not None else "adhoc"
+        iter_name = HFS.carr_iteration(manifest) if (view["evidence"] / "hf01" / HFS.RECEIPT).is_file() else f"{a.iter:03d}" if a.iter is not None else "adhoc"
         aggregate = judges.aggregate(cfg, labels, iter_name, a.tested_pair_hash, candidate)
         artifacts = score_receipt.judge_artifacts(
             cfg, labels, iter_name, a.tested_pair_hash, candidate)
@@ -164,17 +165,20 @@ def main():
         output = Path(cfg["causal_results_jsonl"])
         LG.require_targets(candidate, product_path, record_path, history, output)
         try:
-            evidence = PD.load_evidence(product_path, a.tested_pair_hash)
-            product = PD.decide(
-                core=core, grounded_review=grounded,
-                developmental_review=developmental,
-                chapter_effect=evidence["blind_chapter_effect"],
-                whole_opening_sequence=evidence["blind_whole_opening_sequence"],
-                carr_craft=aggregate, tested_pair_hash=a.tested_pair_hash,
-                prompt_sha256=PS.sha(Path(cfg["product_effect_rubric"]).read_bytes()))
+            if (view["evidence"] / "hf01" / HFS.RECEIPT).is_file():
+                product, record = HFS.gate_product(candidate.parents[2], aggregate,
+                                                   product_path, record_path)
+            else:
+                evidence = PD.load_evidence(product_path, a.tested_pair_hash)
+                product = PD.decide(core=core, grounded_review=grounded,
+                    developmental_review=developmental,
+                    chapter_effect=evidence["blind_chapter_effect"],
+                    whole_opening_sequence=evidence["blind_whole_opening_sequence"],
+                    carr_craft=aggregate, tested_pair_hash=a.tested_pair_hash,
+                    prompt_sha256=PS.sha(Path(cfg["product_effect_rubric"]).read_bytes()))
+                record = ER.bind(ER.load_one(record_path), product,
+                                 a.tested_pair_hash, PS.state_hash(product))
             product_hash = PS.state_hash(product)
-            record = ER.bind(ER.load_one(record_path), product,
-                             a.tested_pair_hash, product_hash)
             if product["decision"] == "PROMOTE" and not a.promote_pair:
                 raise SystemExit(
                     "gate: PROMOTE lacks explicit human/founder promotion approval")
@@ -182,7 +186,7 @@ def main():
                 candidate, manifest, expected, history, record, product_hash,
                 product["decision"], a.promote_pair, a.decision_timestamp)
             CP.verify_sealed(candidate, a.tested_pair_hash)
-        except (PD.ProductDecisionError, ER.RecordError, GD.DecisionError,
+        except (PD.ProductDecisionError, ER.RecordError, GD.DecisionError, HFS.StageError,
                 CP.PairError) as exc:
             raise SystemExit(f"gate: causal product decision rejected: {exc}") from exc
         LG.require_output(candidate, output)

@@ -833,6 +833,9 @@ the SHA without reopening the implementation verdict.
 - Proposed-but-unapproved successor: `rf20-successor-reader-state-1`. It is not
   approved; a later approved/result lineage belongs in a new LEDGER row, not
   now.
+- Distinct product lineage: the founder-authorized direct GSBS H-F01 Stage A
+  does not continue this calibration, claim this task passed, or depend on the
+  unapproved successor. RF-20 remains `BLOCKED` and unchanged.
 - Generic hypothesis (exactly one): the unchanged split product-effect
   instruments can distinguish an enacted cumulative reader-state journey from
   a complete, locally adequate opening that only maps scope, names the trap,
@@ -978,7 +981,7 @@ the SHA without reopening the implementation verdict.
 ### RF-21 — Build and accept the quit-sugar treatment reader journey
 
 - [ ] Complete the brief, framing, first-three cards, and blocking plan review.
-- Status: `BLOCKED`
+- Status: `READY`
 - Evidence class / report: H-F01 treatment, not a proven improvement; §§7
   action 1, 9 H-F01, 10.
 - Problem / root cause: current opening is scope → trap label → benefit catalogue.
@@ -987,6 +990,8 @@ the SHA without reopening the implementation verdict.
   only causally required first-three plan material; remove J-01–J-22 prospectus;
   preserve fixed background unless invalidated; use a native high-reasoning plan
   writer and independent cross-family plan reviewer; obtain `fit to write from`.
+  Before either call or artifact write, freeze H-F01 authority while both RF-02
+  arms still equal the accepted pair. Both calls must bind that authority.
 - Likely files: candidate copies of
   `production-books/quit-sugar/{00-brief.md,framing.md,master-plan.md,master-plan-review.md}`
   inside the isolated treatment snapshot established by RF-02.
@@ -996,8 +1001,12 @@ the SHA without reopening the implementation verdict.
   production plan and chapters remain byte-identical before promotion.
 - Verification: independent plan review and reader-state matrix; no root prose
   reading; `bash scripts/check.sh`.
-- Dependencies: RF-01, RF-02, RF-03, RF-05, RF-06, RF-07, RF-19, RF-20.
-- Implementation attempts: `0`; unstarted and transitively blocked by RF-20.
+- Dependencies: RF-01, RF-02, RF-03, RF-05, RF-06, RF-07, RF-19. The direct
+  GSBS product lineage is distinct from RF-20 and requires an explicit founder
+  start plus the immutable pre-RF21 authority before any planning call or
+  candidate write.
+- Implementation attempts: `0`; ready but unstarted. No RF-21 model call or
+  artifact write has been made.
 - Review attempts: `0`; latest verdict / findings: `—`.
 - Commit / push: `—`.
 
@@ -1011,7 +1020,8 @@ the SHA without reopening the implementation verdict.
 - Exact scoped change: generate Chapter 1–3 commissions from accepted treatment
   plan and only assigned existing packets; independently audit them together for
   source grounding, no unresolved IDs, ownership, state handoffs, limits, and no
-  mini-plan/prose.
+  mini-plan/prose. The three commissioner calls and audit call must bind the same
+  pre-RF21 authority and preserve fresh native receipts.
 - Likely files: isolated
   `production-books/quit-sugar/commissions/chapter-{01,02,03}.md` treatment
   artifacts and audit output.
@@ -1020,7 +1030,7 @@ the SHA without reopening the implementation verdict.
 - Verification: packet-to-commission trace matrix by fresh agents,
   `bash scripts/check.sh`.
 - Dependencies: RF-08, RF-09, RF-21.
-- Implementation attempts: `0`; unstarted and transitively blocked by RF-20.
+- Implementation attempts: `0`; unstarted and blocked by unfinished RF-21.
 - Review attempts: `0`; latest verdict / findings: `—`.
 - Commit / push: `—`.
 
@@ -1054,9 +1064,10 @@ the SHA without reopening the implementation verdict.
   the connected H-F01 path (`7/7`) and ordinary RF-11/RF-12/RF-13 paths
   (`20/20`). The canonical gate passed `298` tests in `274.125s`; shellcheck was
   unavailable and skipped. Strict OpenSpec validation also passed.
-- Remaining blockers: RF-20 is terminally blocked; RF-21/RF-22 artifacts and
-  isolated snapshots do not exist; `OPENROUTER_API_KEY` is absent and provider
-  credit is unverified. The real RF-23 entrypoint exits before any write.
+- Remaining blockers: RF-21/RF-22 artifacts and isolated snapshots do not
+  exist; `OPENROUTER_API_KEY` is absent and provider credit is unverified. RF-20
+  remains terminal but is not a prerequisite. The real RF-23 entrypoint exits
+  before any write.
 - Commit / push: offline implementation commits `204f2df6f26fb715a7c5162ef328ab2a6ab763fc`
   and `fd85c670995efbae7a6bc25e6fd0082472862be2`.
 
@@ -1080,7 +1091,7 @@ the SHA without reopening the implementation verdict.
 - Verification: six complete grounded verdicts, cross-agent audit review,
   `bash scripts/check.sh`.
 - Dependencies: RF-12, RF-23.
-- Implementation attempts: `0`; unstarted and transitively blocked by RF-20.
+- Implementation attempts: `0`; unstarted and blocked by unfinished RF-23.
 - Review attempts: `0`; latest verdict / findings: `—`.
 - Commit / push: `—`.
 
@@ -1091,25 +1102,36 @@ the SHA without reopening the implementation verdict.
 - Evidence class / report: H-F01 decisive test; §§9–10.
 - Problem / root cause: the planning/context hypothesis needs a same-run product
   decision, not another prompt-quality judgment.
-- Exact scoped change: two blind votes per matched chapter; two blind
-  whole-opening comparisons; freeze results; then run reference-sighted Carr
+- Exact scoped change: compare treatment with exact offset-matched GSBS using two
+  fresh readers per matched chapter and two per whole opening, with opposite A/B
+  order for the same identities; freeze results; then run reference-sighted Carr
   craft diagnosis; founder/named human directly reads winning and losing
   openings; root receives compact verdict only; promote config+product together
   only on full success.
 - Likely files: isolated verdicts, new-lineage result/learnings row, atomic gate
   snapshot; current production only changes on accepted promotion.
-- Acceptance: treatment integrity passes, wins at least 5/6 chapter votes and
-  both sequence votes, readers identify three distinct state changes/discoveries,
-  no setup/catalogue primary job, no increased unsupported claims, and founder/
-  human confirms. Three-or-fewer votes, no sequence win, or integrity failure is
+- Acceptance: treatment integrity passes, wins at least 5/6 GSBS chapter votes
+  and both GSBS sequence votes, readers identify three distinct state changes/
+  discoveries, no setup/catalogue primary job, no increased unsupported claims,
+  and founder/human confirms. Three-or-fewer votes, no sequence win, or integrity failure is
   failure; large disagreement is inconclusive. Interpret mixed outcomes by
   owner: specificity without belief effect weakens transport; effect with
   evidence regression indicts commission/audit; faithful no-difference triggers
   RF-29 rather than another wording amendment.
+- Execution contract: one pre-RF21 authority and resumable H-F01 command bind
+  both sealed arm hashes, exact matched GSBS file hashes, separate control/
+  treatment causal diagnostics, three position-swapped two-reader GSBS chapter
+  panels, and one position-swapped GSBS opening panel. Blind evidence freezes
+  only after fourteen authority-bound blind task/result records; an ambiguous
+  pre-call marker is never replayed. It then precedes the same integer-named Carr/gate iteration. The coordinator emits the
+  exact RF-02 gate continuation only with sealed hash, accepted root, UTC
+  timestamp, and explicit promotion authority; it does not claim atomic
+  continuity before that gate succeeds.
 - Verification: independent result auditor recomputes decision from raw verdicts
   and hashes; reference never leaked upstream; `bash scripts/check.sh`.
 - Dependencies: RF-13, RF-16, RF-17, RF-18, RF-19, RF-24.
-- Implementation attempts: `0`; unstarted and transitively blocked by RF-20.
+- Implementation attempts: `0`; unstarted and blocked by unfinished RF-24 and
+  absent real blind/human evidence.
 - Review attempts: `0`; latest verdict / findings: `—`.
 - Commit / push: `—`.
 
@@ -1202,53 +1224,49 @@ the SHA without reopening the implementation verdict.
 - Review attempts: `0`; latest verdict / findings: `—`.
 - Commit / push: `—`.
 
-### RF-30 — Validate transfer on two contrasting subjects
+### RF-30 — Pass Stage B complete quit-sugar parity
 
-- [ ] Test compulsive smartphone checking and fear of flying openings.
+- [ ] Validate one complete quit-sugar book against the reference-quality bar.
 - Status: `TODO`
-- Evidence class / report: unresolved cross-subject assumption; §§7–9.
-- Problem / root cause: sugar consumption cannot establish reliability for
-  continuous digital cues and episodic non-consumption fear.
-- Exact scoped change: after sugar success, run three-chapter openings through
-  the accepted factory for smartphone checking and fear of flying, with new
-  subject-specific research and no sugar/addiction category transplant.
-- Likely files: new `production-books/<slug>/` workshops and isolated experiment
-  records under existing stable paths.
-- Acceptance: both pass subject contract, grounding, distinct reader transitions,
-  whole-opening sequence, originality/safety, and founder/human reading; generic
-  prompts contain no sugar-only constructs.
-- Verification: cross-subject evidence matrices by fresh agents, standard gates,
-  `bash scripts/check.sh`.
+- Evidence class / report: Stage B complete-book product validation.
+- Problem / root cause: Stage A's three-chapter opening cannot establish
+  complete-book sequence, integrity, craft, or parity.
+- Exact scoped change: after Stage A passes, produce the complete quit-sugar book
+  through the accepted factory, audit every chapter and the whole reader journey,
+  compare the complete product against the reference-quality bar, and require the
+  same named-human publication gate without tuning the measurement mid-run.
+- Likely files: the isolated complete quit-sugar candidate and its existing
+  review/evaluation records; accepted production changes only through RF-02.
+- Acceptance: complete-book integrity, cumulative reader-state coherence,
+  reference-quality parity, and named-human publication reading all pass.
+- Verification: complete-book grounded/developmental matrices, blind product
+  evidence, named-human verdict, standard gates, `bash scripts/check.sh`.
 - Dependencies: RF-25 success and any causally required RF-26–RF-29 result.
 - Implementation attempts: `0`; latest: `—`.
 - Review attempts: `0`; latest verdict / findings: `—`.
 - Commit / push: `—`.
 
-### RF-31 — Pass the complete-book readiness gate and close the change
+### RF-31 — Pass Stage C untouched-caffeine zero-tuning
 
-- [ ] Demonstrate whole-book coherence before claiming the factory vision.
+- [ ] Transfer the accepted complete-book factory to caffeine without tuning it.
 - Status: `TODO`
-- Evidence class / report: unresolved whole-book assumption; §§2, 7 unresolved
-  assumptions, 9–10.
-- Problem / root cause: three openings cannot prove 60,000-word coherence,
-  mantra/repetition value, final editorial quality, or founder-free publishability.
-- Exact scoped change: generate at least one complete book through the accepted
-  flow; grounded-audit all chapters, developmental-review whole-book state and
-  emotional sequence, validate mantra/repetition complexity, run blind sampled
-  effect plus reference-sighted diagnostic, keep traceability machine-facing and
-  produce source notes/end matter without evidence-process narration in the
-  voice, and require founder publication review. Archive this OpenSpec change
-  only after implemented scenarios pass.
-- Likely files: accepted production book, reviews/evaluation records, OpenSpec
-  specs on archive; no published artifact mutates in place.
-- Acceptance: coherent complete book, all integrity gates green, no unresolved
-  owner defects, founder says it is publishable without manual chapter rescue,
-  contrasting-subject evidence remains valid, and `openspec verify/archive`
-  workflow passes.
+- Evidence class / report: Stage C zero-tuning transfer validation.
+- Problem / root cause: complete quit-sugar parity cannot establish that the
+  accepted generic factory transfers without topic-specific adjustment.
+- Exact scoped change: only after Stage B passes, run the accepted factory on
+  untouched caffeine using subject-specific evidence but zero changes to generic
+  prompts, contracts, routes, thresholds, or evaluation instruments. Require the
+  same complete-book integrity, product, and named-human gates.
+- Likely files: a new isolated `production-books/quit-caffeine/` workshop and
+  standard review/evaluation records; no generic factory tuning or in-place
+  published-artifact mutation.
+- Acceptance: the caffeine product passes with zero generic tuning and no
+  sugar-only construct leakage; otherwise record the failure without repair in
+  this Stage-C run. Archive only after implemented scenarios pass.
 - Verification: independent whole-book agents return compact matrices; founder
   direct-reading verdict; `openspec validate redesign-book-factory --strict`;
   `bash scripts/check.sh`.
-- Dependencies: RF-27 as applicable, RF-28 as applicable, RF-30.
+- Dependencies: RF-30 pass.
 - Implementation attempts: `0`; latest: `—`.
 - Review attempts: `0`; latest verdict / findings: `—`.
 - Commit / push: `—`.
