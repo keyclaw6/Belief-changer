@@ -9,7 +9,9 @@ from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "scripts"))
+sys.path.insert(0, str(ROOT / "scripts/loop"))
 sys.path.insert(0, str(Path(__file__).parent))
+import hf01_upstream as UP  # noqa: E402
 import validate_framing_contract as FC  # noqa: E402
 import validate_master_plan_review as MPR  # noqa: E402
 import validate_research_contract as RC  # noqa: E402
@@ -51,7 +53,8 @@ BLOCKING_FINDINGS = {
 }
 
 
-def review_text(plan_path, framing_path, findings=None, verdict="fit to write from", role=MPR.ROLE):
+def review_text(plan_path, framing_path, findings=None, verdict="fit to write from", role=MPR.ROLE,
+                model="gpt-5.6-sol", reasoning="xhigh"):
     findings = findings or PASS_FINDINGS
     rows = "\n".join(f"- **{name}:** {findings[name]}" for name in MPR.CHECKS)
     return f"""# Master Plan Review — Phone Freedom
@@ -59,8 +62,8 @@ def review_text(plan_path, framing_path, findings=None, verdict="fit to write fr
 ## Review identity and binding
 - **Reviewer role:** {role}
 - **Fresh-context independence:** {MPR.INDEPENDENCE}
-- **Exact runtime model ID:** gpt-5.6-sol
-- **Reasoning configuration:** xhigh
+- **Exact runtime model ID:** {model}
+- **Reasoning configuration:** {reasoning}
 - **Reference blindness:** {MPR.BLINDNESS}
 - **Reviewed plan:** complete master-plan.md
 - **Master-plan SHA-256:** {hashlib.sha256(plan_path.read_bytes()).hexdigest()}
@@ -98,6 +101,18 @@ class MasterPlanReviewTests(unittest.TestCase):
         text = self.write_review()
         self.assertEqual("fit to write from", MPR.validate_review(text, self.plan, self.framing))
         self.assertNotIn("sugar", text.casefold())
+
+    def test_rf21_review_route_satisfies_the_unmocked_blocking_contract(self):
+        """OpenSpec scenario: RF-21 and RF-22 dispatch is durable and authority-bound."""
+        spec = UP._spec(1)
+        self.assertEqual(("gpt-5.6-sol", "xhigh"), (spec["model"], spec["reasoning"]))
+        self.assertEqual(
+            ["framing-review-template", "master-plan-reviewer-prompt", "style-guide", "brief",
+             "framing", "master-plan", "lived-synthesis", "scientific-synthesis"],
+            spec["input_contract"]["members"],
+        )
+        text = review_text(self.plan, self.framing, model=spec["model"], reasoning=spec["reasoning"])
+        self.assertEqual("fit to write from", MPR.validate_review(text, self.plan, self.framing))
 
     def test_every_cumulative_blocker_requires_changes(self):
         """OpenSpec scenarios: opening defers work; cumulative reader walk unresolved."""

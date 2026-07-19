@@ -141,7 +141,7 @@ class Hf01Tests(unittest.TestCase):
         self.assertEqual(["RF-25", "RF-30", "RF-31"], manifest["validation_ladder"]["order"])
         self.assertEqual(("evaluation-only", False), (manifest["subject_reference_isolation"]["reference_mode"], manifest["subject_reference_isolation"]["reference_in_rf21_rf22_inputs"]))
         self.assertEqual(list(UP.IDS), [row["id"] for row in manifest["rf21_rf22_native_calls"]])
-        self.assertEqual(("gpt-5.6-sol", "gpt-5.6-luna"), tuple(row["model"] for row in manifest["rf21_rf22_native_calls"][:2]))
+        self.assertEqual(("gpt-5.6-luna", "gpt-5.6-sol"), tuple(row["model"] for row in manifest["rf21_rf22_native_calls"][:2]))
         self.assertNotIn("null", json.dumps(manifest["rf21_rf22_native_calls"]))
         self.assertTrue(all(row["reference_blind"] and "read-only" in row["command"]
                             for row in manifest["rf21_rf22_native_calls"]))

@@ -36,7 +36,7 @@ REVIEW_SCHEMA = _object({"framing_review": TEXT, "master_plan_review": TEXT})
 COMMISSION_SCHEMA, AUDIT_SCHEMA = _object({"commission": TEXT}), _object({"verdict": TEXT})
 
 def spec(index, route, command, book):
-    actors = ("hf01-rf21-sol-planner", "hf01-rf21-luna-reviewer",
+    actors = ("hf01-rf21-luna-planner", "hf01-rf21-sol-reviewer",
         "hf01-rf22-sol-commissioner-01", "hf01-rf22-sol-commissioner-02",
         "hf01-rf22-sol-commissioner-03", "hf01-rf22-sol-auditor")
     outputs = ((f"{book}/00-brief.md", f"{book}/framing.md", f"{book}/master-plan.md"),
@@ -44,10 +44,11 @@ def spec(index, route, command, book):
         *((f"{book}/commissions/chapter-{number:02d}.md",) for number in (1, 2, 3)),
         ("commission-set-audit.json",))
     inputs = (("style-guide", "brief", "framing", "lived-synthesis", "scientific-synthesis"),
-        ("rf21-plan-output", "brief", "framing", "lived-synthesis", "scientific-synthesis"),
+        ("framing-review-template", "master-plan-reviewer-prompt", "style-guide", "brief",
+         "framing", "master-plan", "lived-synthesis", "scientific-synthesis"),
         *(("accepted-plan", "chapter-card", "reader-state", "assigned-packets") for _ in range(3)),
         ("three-commissions", "three-cards", "three-assignments", "assigned-packet-union"))
-    prefix = "developmental_reviewer" if index == 1 else "planner"
+    prefix = "developmental_reviewer" if index == 0 else "planner"
     model, reasoning = route[f"{prefix}_model"], route[f"{prefix}_reasoning"]
     return {"id": IDS[index], "actor": actors[index], "role": ROLES[index], "model": model,
         "route": route[f"{prefix}_route"], "reasoning": reasoning, "fresh_context": True,
