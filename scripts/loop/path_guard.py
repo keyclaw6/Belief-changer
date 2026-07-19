@@ -40,6 +40,25 @@ def safe_dir(path, boundary=None):
     return path
 
 
+def ensure_dir(path, boundary=None):
+    """Create missing directories only below a validated, non-aliased ancestor."""
+    path = absolute(path)
+    boundary = absolute(boundary) if boundary is not None else Path(path.anchor)
+    if not _inside(path, boundary):
+        raise PathError(f"path escapes boundary: {path}")
+    missing, current = [], path
+    while not os.path.lexists(current):
+        if current == boundary:
+            raise PathError(f"boundary is missing: {boundary}")
+        missing.append(current)
+        current = current.parent
+    safe_dir(current, boundary)
+    for folder in reversed(missing):
+        folder.mkdir()
+        safe_dir(folder, boundary)
+    return safe_dir(path, boundary)
+
+
 def safe_file(path, boundary):
     path, boundary = absolute(path), absolute(boundary)
     if not _inside(path, boundary) or path == boundary:

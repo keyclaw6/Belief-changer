@@ -45,12 +45,12 @@ def _write(path, data):
     if os.path.lexists(path):
         if _read(path) != data: raise CarrError(f"immutable Carr evidence differs: {path}")
         return
-    path.parent.mkdir(parents=True, exist_ok=True)
     try:
+        PG.ensure_dir(path.parent)
         with path.open("xb") as handle:
             handle.write(data); handle.flush(); os.fchmod(handle.fileno(), 0o444); os.fsync(handle.fileno())
         PS._sync(path.parent)
-    except OSError as exc: raise CarrError(f"Carr evidence write failed: {exc}") from exc
+    except (PG.PathError, OSError) as exc: raise CarrError(f"Carr evidence write failed: {exc}") from exc
 def _raw(raw, pair_hash, task_hash):
     try: value = json.loads(raw)
     except (TypeError, json.JSONDecodeError) as exc: raise CarrError("Carr output is not strict JSON") from exc

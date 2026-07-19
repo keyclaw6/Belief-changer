@@ -40,10 +40,13 @@ def _write(path, data):
     if os.path.lexists(path):
         if _read(path) != data: raise UpstreamError(f"immutable H-F01 evidence differs: {path}")
         return
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("xb") as handle:
-        handle.write(data); handle.flush(); os.fchmod(handle.fileno(), 0o444); os.fsync(handle.fileno())
-    PS._sync(path.parent)
+    try:
+        PG.ensure_dir(path.parent)
+        with path.open("xb") as handle:
+            handle.write(data); handle.flush(); os.fchmod(handle.fileno(), 0o444); os.fsync(handle.fileno())
+        PS._sync(path.parent)
+    except (PG.PathError, OSError) as exc:
+        raise UpstreamError(f"H-F01 evidence write failed: {exc}") from exc
 def _json(raw, call_id):
     try: value = json.loads(raw)
     except (TypeError, json.JSONDecodeError) as exc: raise UpstreamError(f"{call_id}: invalid JSON output") from exc

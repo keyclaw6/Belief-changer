@@ -7,6 +7,7 @@ import hf01_preflight as HF  # noqa: E402
 import judges  # noqa: E402
 import native_judge as NATIVE  # noqa: E402
 import pair_store as PS  # noqa: E402
+import path_guard as PG  # noqa: E402
 import product_effect as PE  # noqa: E402
 import product_effect_absolute as ABS  # noqa: E402
 import product_effect_panel as PANEL  # noqa: E402
@@ -23,29 +24,35 @@ class BlindPending(BlindError):
     def __init__(self, commands): self.commands = commands; super().__init__("blind native evidence pending")
 def folder(root): return Path(root).absolute() / FOLDER
 def now(): return dt.datetime.now(dt.timezone.utc).isoformat(timespec="microseconds")
+def _read(path):
+    try: return PG.safe_file(path, Path(path).parent).read_bytes()
+    except (PG.PathError, OSError) as exc: raise BlindError(f"invalid {path}: {exc}") from exc
 def read(path):
-    try: return json.loads(Path(path).read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError) as exc: raise BlindError(f"invalid {path}: {exc}") from exc
+    try: return json.loads(_read(path))
+    except json.JSONDecodeError as exc: raise BlindError(f"invalid {path}: {exc}") from exc
 def write(path, value):
     path, data = Path(path), PS.json_bytes(value)
     if os.path.lexists(path):
-        if path.read_bytes() != data: raise BlindError(f"immutable H-F01 evidence differs: {path}")
+        if _read(path) != data: raise BlindError(f"immutable H-F01 evidence differs: {path}")
         return value
     try:
-        path.parent.mkdir(parents=True, exist_ok=True)
+        PG.ensure_dir(path.parent)
         with path.open("xb") as handle:
-            handle.write(data); handle.flush(); os.fsync(handle.fileno())
-        path.chmod(0o444); PS._sync(path.parent)
-    except OSError as exc: raise BlindError(f"H-F01 evidence write failed: {exc}") from exc
+            handle.write(data); handle.flush(); os.fchmod(handle.fileno(), 0o444); os.fsync(handle.fileno())
+        PS._sync(path.parent)
+    except (PG.PathError, OSError) as exc: raise BlindError(f"H-F01 evidence write failed: {exc}") from exc
     return value
 def _write_bytes(path, data):
     path = Path(path)
     if os.path.lexists(path):
-        if path.read_bytes() != data: raise BlindError(f"immutable H-F01 task differs: {path}")
+        if _read(path) != data: raise BlindError(f"immutable H-F01 task differs: {path}")
         return
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("xb") as handle: handle.write(data)
-    path.chmod(0o444); PS._sync(path.parent)
+    try:
+        PG.ensure_dir(path.parent)
+        with path.open("xb") as handle:
+            handle.write(data); handle.flush(); os.fchmod(handle.fileno(), 0o444); os.fsync(handle.fileno())
+        PS._sync(path.parent)
+    except (PG.PathError, OSError) as exc: raise BlindError(f"H-F01 task write failed: {exc}") from exc
 def _native_call(base, identity, authority_sha, task_sha, prompt, route, schema,
                  materialized, native, complete, actor=None):
     expected = {"id": identity, "authority_sha256": authority_sha, "task_sha256": task_sha,
