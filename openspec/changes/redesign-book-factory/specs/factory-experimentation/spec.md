@@ -35,6 +35,65 @@ byte MUST match across arms
 AND the exact offset-matched GSBS file paths and hashes MUST be evaluation-only
 AND every RF-21 through RF-25 call counted under H-F01 MUST bind this authority.
 
+#### Scenario: H-F01 is rebound to the authorized Windows root
+WHEN the founder-authorized RF-21 start is prepared
+THEN the authority MUST bind the execution root exactly as
+`C:\Users\Kristian Bilstrup\Documents\Belief-changer`
+AND every repository-owned, authority-bearing, or persistent H-F01 input,
+output, receipt, command, and resume target, plus every pinned RF-02-isolated
+operation root, MUST be inside that pinned Windows root
+AND only the already-required fresh native transport MAY use a bounded
+OS-managed ephemeral scratch cwd outside it and copy transport schemas there
+AND that cwd and those schema copies MUST remain non-authoritative and
+non-persistent and MUST NOT replace or relocate any authority-bound artifact
+AND `/home/kab/Belief-changer-minimal-loop` MUST be rejected before any input is
+read, hashed, written, or sent to a model
+AND the rebind MUST NOT itself mark RF-21 complete, authorize chapter prose, or
+authorize product promotion.
+
+#### Scenario: H-F01 writer settings are identical and route-verifiable
+WHEN any of the three fresh control or three fresh treatment drafts is generated
+THEN its writer request MUST use `model: meta/muse-spark-1.1`,
+`reasoning: {effort: high}`, `temperature: 0.7`, `max_tokens: 16000`, and
+`provider: {allow_fallbacks: false}`
+AND the request body MUST omit both `models` and `fallbacks`
+AND those five settings and omissions MUST be byte-identical across exactly all
+six writer calls while the arm-specific context remains authority-bound
+AND every request MUST send `X-OpenRouter-Metadata: enabled`
+AND each response MUST capture its response model plus OpenRouter router metadata
+AND that evidence MUST show requested model `meta/muse-spark-1.1`, direct routing,
+first-and-only attempt, provider `Meta`, and actual model
+`meta/muse-spark-1.1-20260709`
+AND any missing routing metadata, fallback, retry to another endpoint, provider
+or model mismatch, or seventh writer call MUST reject the batch
+AND the full RF-21–RF-25 lineage MUST remain within the 40-call ceiling.
+
+#### Scenario: Muse account and capability preflight fails closed
+GIVEN no H-F01 chapter prose has been requested
+WHEN the authority-bound OpenRouter preflight runs for the authenticated account
+THEN official and account-visible metadata MUST resolve `meta/muse-spark-1.1` to
+canonical slug `meta/muse-spark-1.1-20260709` with context `1048576`,
+`max_completion_tokens: null`, prompt price `$1.25/M`, completion price
+`$4.25/M`, exactly one Meta provider, mandatory reasoning, supported efforts
+`xhigh`, `high`, `medium`, `low`, and `minimal`, and support for `reasoning`,
+`temperature`, and `max_tokens`
+AND the key MUST be valid, enabled, unexpired, authorized for the model, and have
+enough account credit and key spend allowance for the declared six-call bound
+AND the account and current request location MUST be affirmatively eligible for
+the model's US-only availability without proxying, region spoofing, or another
+geographic bypass
+AND any absent, stale, contradictory, ineligible, or underfunded result MUST stop
+before prose without buying credit or invoking another free or paid model,
+provider, account, or route.
+
+#### Scenario: H-F01 evidence makes no model-comparative claim
+WHEN H-F01 is recorded, judged, or reported
+THEN Muse MUST remain a frozen variable shared by control and treatment
+AND any support or refutation MUST apply only to the declared
+planning-to-writing handoff hypothesis
+AND the result MUST NOT claim Muse is better or worse than Opus, claim any model
+superiority, or promote a product because of the writer-route change.
+
 #### Scenario: RF-21 and RF-22 dispatch is durable and authority-bound
 WHEN the resumable coordinator is explicitly started with native dispatch
 THEN it MUST run exactly two RF-21 and four RF-22 calls in fresh reference-blind

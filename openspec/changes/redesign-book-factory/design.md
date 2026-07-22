@@ -26,6 +26,14 @@ later validation gates report their outcomes.
   identity; this calibration is isolated and cannot feed generation.
 - Keep the existing production-book folder and core artifact sequence. A
   `commissions/` child is an additive handoff artifact, not a restructure.
+- H-F01's authoritative execution root is exactly
+  `C:\Users\Kristian Bilstrup\Documents\Belief-changer`. Every repository-owned,
+  authority-bearing, or persistent H-F01 input, output, receipt, resume target,
+  and pinned RF-02 operation root stays beneath it. The already-required fresh
+  native transport may use only a bounded, non-authoritative OS-managed
+  ephemeral scratch cwd and disposable schema copies outside it. After the
+  authority is rebound, `/home/kab/Belief-changer-minimal-loop` remains forbidden
+  before any read, hash, write, or model send.
 - Preserve the stable external layout inside every complete immutable operation
   root: canonical configuration assets and whole `production-books/<slug>/`
   workshops—including their briefs, research sources and syntheses, framing,
@@ -90,8 +98,11 @@ later validation gates report their outcomes.
 ## First decisive test
 
 H-F01 generates fresh control and treatment Chapters 1–3 under the same research,
-Opus 4.6 settings, budgets, safety rules, and generation-time reference blindness. Treatment
-changes only the linked planning-to-writing handoff: completed reader states,
+Muse Spark 1.1 Thinking settings, budgets, safety rules, and generation-time
+reference blindness. Every writer request uses `model: meta/muse-spark-1.1`,
+`reasoning: {effort: high}`, `temperature: 0.7`, `max_tokens: 16000`, and
+`provider: {allow_fallbacks: false}`, with `models` and `fallbacks` omitted.
+Treatment changes only the linked planning-to-writing handoff: completed reader states,
 accepted first-three plan cards, source-grounded commissions, compact writer
 context, and grounded-audit inputs. All six drafts freeze before review or
 revision. Its decisive Stage-A test compares treatment with exact offset-matched
@@ -118,6 +129,26 @@ present. The candidate remains isolated until that command succeeds.
 The next product gates are fixed: Stage B is the complete quit-sugar book at
 parity; Stage C is untouched caffeine with zero tuning.
 
+Before the first writer request, the preflight freezes current official
+OpenRouter metadata for the request ID and authenticated account. The authorized
+metadata is canonical slug `meta/muse-spark-1.1-20260709`, context `1048576`, no
+separately advertised completion cap (`max_completion_tokens: null`), prompt
+price `$1.25/M`, completion price `$4.25/M`, mandatory reasoning with supported
+efforts `xhigh`, `high`, `medium`, `low`, and `minimal`, support for the
+`reasoning` request object, US-only availability, and one Meta provider. A
+metadata, account-eligibility, credit, region, or required-parameter mismatch
+stops before prose; it does not select another model, provider, paid route, or
+geographic workaround. Every request omits `models` and `fallbacks`, disables
+provider fallback with `provider: {allow_fallbacks: false}`, and enables route
+evidence with `X-OpenRouter-Metadata: enabled`; each successful response retains
+that metadata and must prove the requested alias resolved directly, on the first
+and only attempt, to that canonical Meta model. Missing or contradictory routing
+evidence rejects the draft.
+
+Muse is fixed identically across both arms, so H-F01 continues to test only the
+planning-to-writing handoff. Its result cannot support any Muse-versus-Opus or
+model-superiority claim and does not itself authorize promotion.
+
 ## Migration order
 
 1. Obtain independent approval of the delta specifications.
@@ -129,8 +160,8 @@ parity; Stage C is untouched caffeine with zero tuning.
 4. Implement upstream contracts, handoffs, reviews, instruments, and the new
    run record in dependency order.
 5. Preserve RF-20's terminal failed calibration without retry or successor.
-6. Execute the separately authorized direct H-F01 without stylistic amendments
-   or revisions.
+6. Execute the separately authorized direct H-F01 from its bound Windows root
+   and fixed Muse route without stylistic amendments or revisions.
 7. Run only causally justified ablations, then Stage B complete quit-sugar parity
    and dependent Stage C untouched-caffeine zero-tuning.
 
@@ -159,7 +190,8 @@ No other current `book-pipeline` guarantee is removed by implication.
   anonymous H-F04 calibration, and RF-21/RF-22 treatment planning/commissions
   inside the isolated redesign snapshot after their dependencies pass.
 - No new research is gathered for H-F01.
-- No writer-model comparison occurs before the handoff hypothesis is tested.
+- H-F01 makes no writer-model comparison; its fixed Muse route is not a treatment
+  variable or evidence of superiority over Opus.
 - No dashboards, direction-audit bureaucracy, reusable call ledger, or
   intermediate artifact wins are introduced. Only the idempotency-critical
   native task/result receipts required to resume this fixed run are retained.

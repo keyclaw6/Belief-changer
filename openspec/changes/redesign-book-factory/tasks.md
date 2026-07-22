@@ -11,11 +11,14 @@ separately below and is not an implementation item.
 
 ## Fixed boundary
 
-- Authoritative worktree for this delegated bundle:
-  `/home/kab/Belief-changer-minimal-loop` only. The supervisor replaced the
-  earlier path; no implementation input may be read from that abandoned tree.
-- Minimal-loop worktree created from accepted `main` at
-  `4b6124af17ebe9c16adfc4f4840c854b975d3428`.
+- Founder authorization recorded 2026-07-22: RF-21 starts from the authoritative
+  Windows checkout `C:\Users\Kristian Bilstrup\Documents\Belief-changer`.
+  `/home/kab/Belief-changer-minimal-loop` is superseded and MUST NOT be read,
+  mutated, used as a cwd, or named by an H-F01 receipt/resume command after this
+  rebind.
+- The Windows checkout is on accepted `main`; the exact clean commit is frozen
+  into the immutable pre-RF21 authority only after this authorized route/root
+  implementation passes independent review and is pushed.
 - Review source: *Whole-Factory Review — Diagnosis, Redesign, and Next
   Experiments*, SHA-256
   `2e2d3b4ce2d7f81ffbe902a52a7771616b4ee9d7e0c7154a9eaf52d6ef042ade`.
@@ -27,8 +30,18 @@ separately below and is not an implementation item.
   current style blob `72710b8bdd1ac0ecaddfaa9abb36b28926993df9`,
   pre-iteration-8 blob `ee3653fb0fefaf87b348706c6e0f7ab4e576d6e6`.
 - Retired `calibration/runs/` is read-only archaeology. Do not resume it.
-- Missing OpenRouter credit/key is not a blocker for RF-00 through RF-22. It
-  becomes a real external dependency only when RF-23 generates Opus prose.
+- Missing OpenRouter credit/key or Muse account eligibility is not a blocker for
+  RF-00 through RF-22. It becomes a real external dependency only when RF-23
+  generates Muse prose.
+- Founder authorization recorded 2026-07-22: every H-F01 control and treatment
+  writer call uses request model `meta/muse-spark-1.1`, reasoning
+  `{effort: high}`, temperature `0.7`, and `max_tokens: 16000`, with no fallback
+  and verified direct Meta routing. Current official OpenRouter metadata resolves
+  that request ID to canonical slug `meta/muse-spark-1.1-20260709`, context
+  `1048576`, no separately advertised completion cap, prices `$1.25/M` input and
+  `$4.25/M` output, mandatory reasoning, and US-only availability. This changes
+  one frozen H-F01 variable identically across both arms; it does not compare
+  Muse with Opus, claim model superiority, or authorize promotion.
 - **Operator stop law effective now; RF-00 mechanizes it:** the current
   `PROGRAM.md` loop MUST NOT run
   or generate/mutate any plan, commission, chapter, or production product before
@@ -981,7 +994,7 @@ the SHA without reopening the implementation verdict.
 ### RF-21 — Build and accept the quit-sugar treatment reader journey
 
 - [ ] Complete the brief, framing, first-three cards, and blocking plan review.
-- Status: `READY`
+- Status: `IN_PROGRESS`
 - Evidence class / report: H-F01 treatment, not a proven improvement; §§7
   action 1, 9 H-F01, 10.
 - Problem / root cause: current opening is scope → trap label → benefit catalogue.
@@ -1005,8 +1018,10 @@ the SHA without reopening the implementation verdict.
   GSBS product lineage is distinct from RF-20 and requires an explicit founder
   start plus the immutable pre-RF21 authority before any planning call or
   candidate write.
-- Implementation attempts: `0`; ready but unstarted. No RF-21 model call or
-  artifact write has been made.
+- Implementation attempts: `1`; 2026-07-22 founder start, Windows-root rebind,
+  and identical Muse route were recorded OpenSpec-first. Strict validation
+  passed. Machine/runtime implementation and independent review are in progress;
+  no RF-21 native call or treatment artifact write has been made.
 - Review attempts: `0`; latest verdict / findings: `—`.
 - Commit / push: `—`.
 
@@ -1043,8 +1058,10 @@ the SHA without reopening the implementation verdict.
   treatment with generation variance.
 - Exact scoped change: generate fresh control Chapters 1–3 using current plan +
   full-plan runtime and fresh treatment Chapters 1–3 using accepted commissions;
-  same Opus 4.6, reasoning disabled, temperature 0.7, output budget, source
-  corpus, safety rules, approximate word budgets; freeze all six before review.
+  same `meta/muse-spark-1.1`, reasoning `{effort: high}`, temperature `0.7`,
+  `max_tokens: 16000`, source corpus, safety rules, and approximate word budgets;
+  verify the actual canonical Meta route with no fallback and freeze all six
+  before review.
 - Likely files: isolated experiment snapshots under `loop/`; production chapters
   remain unchanged.
 - Acceptance: exact input/config hashes; no reference/revision/judge feedback;
@@ -1052,8 +1069,9 @@ the SHA without reopening the implementation verdict.
   declared 40-call ceiling.
 - Verification: snapshot hashes and context-capture audit by fresh agents,
   `bash scripts/check.sh`.
-- Dependencies: RF-02, RF-10, RF-11, RF-22. External dependency:
-  working `OPENROUTER_API_KEY` with sufficient credit.
+- Dependencies: RF-02, RF-10, RF-11, RF-22. External dependency: working
+  `OPENROUTER_API_KEY` with sufficient credit and an authenticated account and
+  request location eligible for Muse's US-only availability.
 - Execution attempts: `0`; no provider call or chapter generation was attempted.
 - Offline implementation attempts: `2`; `204f2df6f26fb715a7c5162ef328ab2a6ab763fc`
   added the pure preflight and stopped runner, and
@@ -1065,9 +1083,12 @@ the SHA without reopening the implementation verdict.
   (`20/20`). The canonical gate passed `298` tests in `274.125s`; shellcheck was
   unavailable and skipped. Strict OpenSpec validation also passed.
 - Remaining blockers: RF-21/RF-22 artifacts and isolated snapshots do not
-  exist; `OPENROUTER_API_KEY` is absent and provider credit is unverified. RF-20
-  remains terminal but is not a prerequisite. The real RF-23 entrypoint exits
-  before any write.
+  exist; an injected `OPENROUTER_API_KEY` is present but the official
+  authenticated key endpoint rejected it with HTTP 401 on 2026-07-22. No
+  inference call or spend occurred. RF-23 therefore requires a valid,
+  US-eligible credited key before account credit, location eligibility, and
+  actual routing can be verified. RF-20 remains terminal but is not a
+  prerequisite. The real RF-23 entrypoint exits before any write.
 - Commit / push: offline implementation commits `204f2df6f26fb715a7c5162ef328ab2a6ab763fc`
   and `fd85c670995efbae7a6bc25e6fd0082472862be2`.
 

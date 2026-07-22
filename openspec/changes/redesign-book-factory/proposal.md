@@ -36,6 +36,14 @@ facts merely because they appear in the report.
   Keep fresh control/treatment observations as a separate causal diagnostic.
   Preserve failed RF-20 as terminal; neither it nor its unapproved successor is
   a prerequisite.
+- Record the founder-authorized RF-21 start and bind H-F01 to the exact Windows
+  execution root `C:\Users\Kristian Bilstrup\Documents\Belief-changer`. The
+  superseded `/home/kab/Belief-changer-minimal-loop` root is forbidden after
+  that rebind.
+- Use OpenRouter Muse Spark 1.1 Thinking as H-F01's fixed writer route for all
+  six control/treatment drafts, with identical settings and verified actual
+  routing. This changes a frozen experimental variable; it does not create a
+  Muse-versus-Opus comparison or model-superiority claim.
 - Preserve the founder ladder after Stage A: complete quit-sugar parity is Stage
   B, then untouched caffeine with zero tuning is Stage C.
 
@@ -63,5 +71,7 @@ facts merely because they appear in the report.
   reference blindness during generation, source traceability, medical safety,
   originality gates, and the stable production-book paths.
 - The retired calibration lab remains read-only archaeology.
+- The RF-21 start and H-F01 writer-route authorization do not authorize chapter
+  prose before readiness, relax any gate, or authorize product promotion.
 - No factory behavior or product prose changes merely because this proposal
   exists; implementation follows the reviewed ledger in `tasks.md`.

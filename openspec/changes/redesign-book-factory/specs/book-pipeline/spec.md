@@ -3,7 +3,7 @@
 ## MODIFIED Requirements
 
 ### Requirement: Brief artifact
-The brief is the first artifact filled and is a completed subject contract. It
+The brief SHALL be the first artifact filled and a completed subject contract. It
 SHALL live at `production-books/<slug>/00-brief.md`, SHALL be completed before
 downstream work, and SHALL name the target behavior, reader, fork decisions,
 destination, exclusions, safety perimeter, one primary false belief, and three
@@ -79,7 +79,7 @@ THEN framing is incomplete
 AND master planning MUST NOT begin.
 
 ### Requirement: Master plan artifact
-The master plan is the chapter-by-chapter blueprint and the sole carrier of the
+The master plan SHALL be the chapter-by-chapter blueprint and the sole carrier of the
 book's deliberate repetition schedule, instruction spine, and curves. It SHALL
 live at `production-books/<slug>/master-plan.md`, SHALL be produced by the
 master-plan skill from the style guide, accepted research, and framing, and
