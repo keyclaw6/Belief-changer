@@ -1041,8 +1041,10 @@ the SHA without reopening the implementation verdict.
   direct boundary/resume repairs and the 24/24 H-F01/guard suite, found both
   prior findings closed, and found no new material or simplification finding.
   This permits the administrative `READY`/unstarted state, not dispatch.
-- Commit / push: pending the reviewed readiness commit and following ledger
-  checkpoint.
+- Commit / push: readiness implementation
+  `9cd77e0458f48b23d942c11578cc9f14c290914f`
+  (`feat(factory): ready Muse H-F01 on Windows`) pushed to `origin/main`;
+  this following ledger checkpoint records that accepted immutable identity.
 
 ### RF-22 — Generate and audit the three H-F01 treatment commissions
 
