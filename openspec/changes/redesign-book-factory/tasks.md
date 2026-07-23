@@ -1049,7 +1049,9 @@ the SHA without reopening the implementation verdict.
 - Commit / push: readiness implementation
   `9cd77e017077b4533115ad36a0fc4821494d937c`
   (`feat(factory): ready Muse H-F01 on Windows`) pushed to `origin/main`;
-  approved comment-consistency repair awaits its commit identity.
+  approved comment-consistency repair
+  `ed5c53ea1d7548564670a06c5f49ec33f9a6c582`
+  (`fix(factory): align Muse reviewer comments`) also pushed to `origin/main`.
 
 ### RF-22 — Generate and audit the three H-F01 treatment commissions
 
