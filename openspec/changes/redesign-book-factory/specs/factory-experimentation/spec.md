@@ -68,10 +68,10 @@ authorize product promotion.
 #### Scenario: H-F01 writer settings are identical and route-verifiable
 WHEN any of the three fresh control or three fresh treatment drafts is generated
 THEN its writer request MUST use `model: meta/muse-spark-1.1`,
-`reasoning: {effort: high}`, `temperature: 0.7`, `max_tokens: 16000`, and
+`reasoning: {effort: high}`, `temperature: 0.7`, and
 `provider: {allow_fallbacks: false}`
-AND the request body MUST omit both `models` and `fallbacks`
-AND those five settings and omissions MUST be byte-identical across exactly all
+AND the request body MUST omit `max_tokens`, `models`, and `fallbacks`
+AND those four settings and omissions MUST be byte-identical across exactly all
 six writer calls while the arm-specific context remains authority-bound
 AND every request MUST send `X-OpenRouter-Metadata: enabled`
 AND each response MUST capture its response model plus OpenRouter router metadata

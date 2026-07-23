@@ -75,10 +75,10 @@ def write_chapters(cfg, book, selected, candidate, interrupt=None):
         request = {"chapter": number, "endpoint": base_url.rstrip("/"),
                    "model": model, "reasoning": reasoning,
                    "content_sha256": PS.sha(content.encode("utf-8")),
-                   "max_tokens": 16000, "temperature": 0.7}
+                   "temperature": 0.7}
         try:
             reply = FB.durable_call(candidate, number, request, lambda: ME.chat(
-                base_url, key, model, content, reasoning, max_tokens=16000,
+                base_url, key, model, content, reasoning, max_tokens=None,
                 temperature=0.7, retries=1), interrupt)
             WR.capture_api(candidate, number, reply, interrupt)
             WC.require_fresh(candidate, authority)

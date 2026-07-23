@@ -41,8 +41,9 @@ separately below and is not an implementation item.
   generates Muse prose.
 - Founder authorization recorded 2026-07-22: every H-F01 control and treatment
   writer call uses request model `meta/muse-spark-1.1`, reasoning
-  `{effort: high}`, temperature `0.7`, and `max_tokens: 16000`, with no fallback
-  and verified direct Meta routing. Current official OpenRouter metadata resolves
+  `{effort: high}`, temperature `0.7`, no repository-imposed completion cap,
+  no fallback, and verified direct Meta routing. Writer requests omit
+  `max_tokens`. Current official OpenRouter metadata resolves
   that request ID to canonical slug `meta/muse-spark-1.1-20260709`, context
   `1048576`, no separately advertised completion cap, prices `$1.25/M` input and
   `$4.25/M` output, mandatory reasoning, and US-only availability. This changes
@@ -1087,7 +1088,7 @@ the SHA without reopening the implementation verdict.
 - Exact scoped change: generate fresh control Chapters 1–3 using current plan +
   full-plan runtime and fresh treatment Chapters 1–3 using accepted commissions;
   same `meta/muse-spark-1.1`, reasoning `{effort: high}`, temperature `0.7`,
-  `max_tokens: 16000`, source corpus, safety rules, and approximate word budgets;
+  no `max_tokens`, source corpus, safety rules, and approximate word budgets;
   verify the actual canonical Meta route with no fallback and freeze all six
   before review.
 - Likely files: isolated experiment snapshots under `loop/`; production chapters

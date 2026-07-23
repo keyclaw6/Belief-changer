@@ -25,8 +25,8 @@ calibration material stays outside generation and promotion contexts.
 
 - All six H-F01 control/treatment chapter calls use `meta/muse-spark-1.1`
   through OpenRouter with reasoning `{effort: high}`, temperature `0.7`,
-  `max_tokens: 16000`, and `provider: {allow_fallbacks: false}`. The request
-  omits `models` and `fallbacks` and fails closed on any retry or route change.
+  and `provider: {allow_fallbacks: false}`. The request omits `max_tokens`,
+  `models`, and `fallbacks` and fails closed on any retry or route change.
 - DeepSeek V4 Pro performs research through OpenRouter at top reasoning.
 - Framing, planning, commissioning, review, evaluation, and audit use fresh native
   agents. GPT‑5.6 Sol and all GPT models NEVER route through OpenRouter; the

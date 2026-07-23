@@ -111,8 +111,9 @@ later validation gates report their outcomes.
 H-F01 generates fresh control and treatment Chapters 1–3 under the same research,
 Muse Spark 1.1 Thinking settings, budgets, safety rules, and generation-time
 reference blindness. Every writer request uses `model: meta/muse-spark-1.1`,
-`reasoning: {effort: high}`, `temperature: 0.7`, `max_tokens: 16000`, and
-`provider: {allow_fallbacks: false}`, with `models` and `fallbacks` omitted.
+`reasoning: {effort: high}`, `temperature: 0.7`, and
+`provider: {allow_fallbacks: false}`, with `max_tokens`, `models`, and
+`fallbacks` omitted so the repository imposes no completion cap.
 Treatment changes only the linked planning-to-writing handoff: completed reader states,
 accepted first-three plan cards, source-grounded commissions, compact writer
 context, and grounded-audit inputs. All six drafts freeze before review or

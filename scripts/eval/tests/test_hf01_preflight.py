@@ -539,7 +539,8 @@ class Hf01Tests(unittest.TestCase):
         for payload in calls:
             self.assertEqual(RUN.WRITER_SETTINGS,
                 {key: payload[key] for key in RUN.WRITER_SETTINGS})
-            self.assertNotIn("models", payload); self.assertNotIn("fallbacks", payload)
+            for forbidden in ("max_tokens", "models", "fallbacks"):
+                self.assertNotIn(forbidden, payload)
         proofs = sorted((self.root / RUN.FOLDER / "writer-route").glob("*.json"))
         self.assertEqual(6, len(proofs))
         self.assertNotIn("attempts", json.loads(proofs[0].read_text())

@@ -75,12 +75,12 @@ def _prompt(root, arm, number, previous):
                  ("immediately_previous_arm_chapter", previous))
     return "".join(f"===== {name} =====\n{value.rstrip()}\n\n" for name, value in sections)
 WRITER_SETTINGS = {"model": HF.MODEL, "reasoning": {"effort": "high"},
-                   "temperature": 0.7, "max_tokens": 16000,
+                   "temperature": 0.7,
                    "provider": {"allow_fallbacks": False}}
 def _payload(prompt):
     return {"model": HF.MODEL, "messages": [{"role": "user", "content": prompt}],
             "reasoning": {"effort": "high"}, "temperature": 0.7,
-            "max_tokens": 16000, "provider": {"allow_fallbacks": False}}
+            "provider": {"allow_fallbacks": False}}
 def _post(payload):
     key = os.environ.get("OPENROUTER_API_KEY", "").strip()
     if not key: raise RunError("OPENROUTER_API_KEY is missing")
@@ -151,7 +151,8 @@ def _route_proof(root, authority, authority_sha, arm, number, payload, response,
             or not attempts_valid \
             or response_model != HF.CANONICAL_MODEL:
         raise RunError("H-F01 response proves fallback, retry, or noncanonical routing")
-    if "models" in payload or "fallbacks" in payload or any(payload.get(key) != value for key, value in WRITER_SETTINGS.items()):
+    if any(key in payload for key in ("max_tokens", "models", "fallbacks")) \
+            or any(payload.get(key) != value for key, value in WRITER_SETTINGS.items()):
         raise RunError("H-F01 writer request settings are not exact")
     folder = _proof_folder(root)
     if os.path.lexists(folder):

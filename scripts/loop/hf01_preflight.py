@@ -22,10 +22,10 @@ MODEL, CANONICAL_MODEL = "meta/muse-spark-1.1", "meta/muse-spark-1.1-20260709"
 SUPPORTED_EFFORTS = ("xhigh", "high", "medium", "low", "minimal")
 PRICING = {"prompt": "0.00000125", "completion": "0.00000425",
            "input_cache_read": "0.00000015"}
-MINIMUM_CREDIT_USD = 6 * (1048576 * 1.25 / 1_000_000 + 16000 * 4.25 / 1_000_000)
+MINIMUM_CREDIT_USD = 6 * 1048576 * float(PRICING["completion"])
 ROUTE_LAW = {
     "writer_model": MODEL, "writer_provider": "openrouter", "writer_reasoning": "high",
-    "writer_endpoint": URL, "writer_temperature": .7, "writer_max_tokens": 16000,
+    "writer_endpoint": URL, "writer_temperature": .7,
     "writer_attempts": 1, "writer_allow_fallbacks": False,
     "researcher_model": "deepseek/deepseek-v4-pro",
     "researcher_provider": "openrouter", "researcher_reasoning": "xhigh",
@@ -38,7 +38,7 @@ ROUTE_LAW = {
     "judge_route": "codex-native", "judge_reasoning": "xhigh", "judge_k": 2,
     "reference_dir": "calibration/reference/gsbs", "reference_chapter_offset": 2}
 ROUTE_CONFIG_KEYS = ("writer_model", "writer_provider", "writer_reasoning",
-    "writer_endpoint", "writer_temperature", "writer_max_tokens", "writer_attempts",
+    "writer_endpoint", "writer_temperature", "writer_attempts",
     "writer_allow_fallbacks")
 ROUTE_CONFIG = {key: ROUTE_LAW[key] for key in ROUTE_CONFIG_KEYS}; RUBRICS = ("calibration/judges/product-effect-rubric.md", "calibration/judges/product-effect-absolute-rubric.md")
 EXECUTABLES = ("scripts/loop/product_effect.py", "scripts/loop/product_effect_absolute.py", "scripts/loop/hf01_preflight.py", "scripts/loop/hf01_prepare.py", "scripts/loop/immutable_file.py", "scripts/loop/hf01_run.py",

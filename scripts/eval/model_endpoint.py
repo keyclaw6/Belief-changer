@@ -10,7 +10,9 @@ def chat(base_url, api_key, model, content, reasoning_effort, max_tokens,
     """Historical OpenAI-compatible transport used only by legacy judging."""
     url = base_url.rstrip("/") + "/chat/completions"
     body = {"model": model, "messages": [{"role": "user", "content": content}],
-            "reasoning": {"effort": reasoning_effort}, "max_tokens": max_tokens}
+            "reasoning": {"effort": reasoning_effort}}
+    if max_tokens is not None:
+        body["max_tokens"] = max_tokens
     if temperature is not None:
         body["temperature"] = temperature
     for attempt in range(retries):

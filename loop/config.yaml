@@ -29,7 +29,6 @@ writer_provider: openrouter
 writer_reasoning: high
 writer_endpoint: https://openrouter.ai/api/v1/chat/completions
 writer_temperature: 0.7
-writer_max_tokens: 16000
 writer_attempts: 1
 writer_allow_fallbacks: false
 

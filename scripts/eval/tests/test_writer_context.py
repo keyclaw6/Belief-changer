@@ -74,7 +74,7 @@ class WriterContextTests(WriterFixture, unittest.TestCase):
             self.assertEqual(("api", "key", "writer/model"), args[:3])
             self.assertEqual(original_build(contexts[index]), args[3])
             self.assertEqual("none", args[4])
-            self.assertEqual({"max_tokens": 16000, "temperature": 0.7,
+            self.assertEqual({"max_tokens": None, "temperature": 0.7,
                               "retries": 1}, kwargs)
         self.assertEqual(accepted_before, (self.accepted /
                          "production-books/test/chapters/chapter-01.md").read_bytes())

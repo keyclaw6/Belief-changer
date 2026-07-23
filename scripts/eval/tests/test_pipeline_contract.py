@@ -204,7 +204,7 @@ class PlanningContractTests(unittest.TestCase):
         self.assertIn("writer_provider: openrouter", cfg)
         self.assertIn("writer_reasoning: high", cfg)
         self.assertIn("writer_temperature: 0.7", cfg)
-        self.assertIn("writer_max_tokens: 16000", cfg)
+        self.assertNotIn("writer_max_tokens:", cfg)
         self.assertIn("writer_attempts: 1", cfg)
         self.assertIn("writer_allow_fallbacks: false", cfg)
         self.assertIn("researcher_model: deepseek/deepseek-v4-pro", cfg)
