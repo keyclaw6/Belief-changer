@@ -9,6 +9,12 @@ class PathError(RuntimeError):
     pass
 
 
+def aliased(info):
+    return stat.S_ISLNK(info.st_mode) or bool(
+        getattr(info, "st_file_attributes", 0)
+        & getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0))
+
+
 def absolute(path):
     return Path(os.path.abspath(path))
 
@@ -33,7 +39,7 @@ def safe_dir(path, boundary=None):
             info = os.lstat(current)
         except OSError as exc:
             raise PathError(f"directory is missing: {current}") from exc
-        if stat.S_ISLNK(info.st_mode):
+        if aliased(info):
             raise PathError(f"directory component is aliased: {current}")
         if not stat.S_ISDIR(info.st_mode):
             raise PathError(f"path component is not a directory: {current}")
@@ -68,7 +74,7 @@ def safe_file(path, boundary):
         info = os.lstat(path)
     except OSError as exc:
         raise PathError(f"declared file is missing: {path}") from exc
-    if stat.S_ISLNK(info.st_mode) or not stat.S_ISREG(info.st_mode):
+    if aliased(info) or not stat.S_ISREG(info.st_mode):
         raise PathError(f"declared file is aliased or special: {path}")
     if info.st_nlink != 1:
         raise PathError(f"declared file is multiply linked: {path}")
@@ -83,9 +89,9 @@ def files(root, boundary=None):
         with os.scandir(folder) as entries:
             items = sorted(entries, key=lambda item: item.name)
         for item in items:
-            info = item.stat(follow_symlinks=False)
             path = Path(item.path)
-            if stat.S_ISLNK(info.st_mode):
+            info = os.lstat(path)
+            if aliased(info):
                 raise PathError(f"tree entry is aliased: {path}")
             if stat.S_ISDIR(info.st_mode):
                 visit(path)
@@ -105,7 +111,7 @@ def discard_tree(path, boundary):
     path = absolute(path)
     if not os.path.lexists(path):
         return
-    if path.is_symlink():
+    if aliased(os.lstat(path)):
         raise PathError(f"staging path is aliased: {path}")
     safe_dir(path, boundary)
     files(path, boundary)

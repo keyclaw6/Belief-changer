@@ -16,12 +16,26 @@ THEN those linked changes MAY form one declared treatment
 AND model, research, safety, reference blindness, and unrelated style rules MUST
 remain frozen unless the hypothesis explicitly owns them.
 
-#### Scenario: Direct GSBS Stage A is authorized separately
-WHEN the founder starts the direct H-F01 quit-sugar product-calibration lineage
+#### Scenario: Direct GSBS Stage A readiness is authorized separately
+WHEN the founder authorizes readiness for the direct H-F01 quit-sugar
+product-calibration lineage while postponing its execution
 THEN RF-20's failed `rf20-attempt-5` lineage MUST remain terminal and unchanged
 AND `rf20-successor-reader-state-1` MUST NOT run, be reinterpreted as passing, or
 become a prerequisite
 AND the H-F01 authority MUST identify this as a distinct lineage before any call.
+
+#### Scenario: Offline readiness does not start H-F01
+WHEN the Windows runtime and Muse route reach reviewed offline readiness but the
+founder postpones experiment execution
+THEN RF-21 MUST remain `READY` and unstarted
+AND no H-F01 arm snapshot, causal authority, treatment artifact, planning call,
+review call, commission call, provider call, or model call may be created
+AND `READY` MUST fail closed at snapshot preparation, authority freeze, and
+RF-21 dispatch
+AND only a later explicit founder start recorded by moving RF-21 to
+`IN_PROGRESS` may prepare the arms, enter execution, and freeze the immutable
+pre-call authority
+AND RF-21 and RF-22 dispatch MUST require the named stage to be `IN_PROGRESS`.
 
 #### Scenario: H-F01 authority is frozen before RF-21
 WHEN H-F01 reaches RF-21's first call boundary
@@ -36,7 +50,7 @@ AND the exact offset-matched GSBS file paths and hashes MUST be evaluation-only
 AND every RF-21 through RF-25 call counted under H-F01 MUST bind this authority.
 
 #### Scenario: H-F01 is rebound to the authorized Windows root
-WHEN the founder-authorized RF-21 start is prepared
+WHEN the founder-authorized RF-21 readiness state is prepared
 THEN the authority MUST bind the execution root exactly as
 `C:\Users\Kristian Bilstrup\Documents\Belief-changer`
 AND every repository-owned, authority-bearing, or persistent H-F01 input,
@@ -156,6 +170,17 @@ WHEN any root, intermediate directory, or file is outside its boundary, aliased,
 symlinked, special, or multiply linked
 THEN the operation MUST fail before parsing configuration, hashing file content,
 globbing, traversing the path, or opening any outside file.
+
+#### Scenario: Windows immutable authority uses native durable identity
+WHEN a final immutable authority file is validated on Windows
+THEN it MUST be a regular, single-link, non-reparse file with the native
+read-only attribute set
+AND validation MUST NOT depend on distinctions among POSIX read-only submodes
+that Windows does not preserve
+AND stable handle/path identity MUST compare device, file identity, mode, link
+count, size, and modification time plus the bound bytes and hashes
+AND MUST NOT reject an unchanged file because NTFS reports different change
+times through path and open-handle metadata.
 
 #### Scenario: A treatment is rejected
 WHEN any decisive gate rejects a treatment

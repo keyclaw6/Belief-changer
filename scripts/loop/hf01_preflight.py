@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Pure pre-RF21 H-F01 authority preflight; never writes, dispatches, or connects."""
-import argparse, datetime as dt, hashlib, json, os, re, shlex, subprocess, sys
+import argparse, datetime as dt, hashlib, json, os, re, shlex, subprocess, sys, urllib.request
 from pathlib import Path
 HERE = Path(__file__).resolve(); sys.path.insert(0, str(HERE.parent))
 import candidate_pair as CP  # noqa: E402
@@ -8,12 +8,26 @@ import loopcfg  # noqa: E402
 import pair_store as PS  # noqa: E402
 import path_guard as PG  # noqa: E402
 REPO, CONFIG = HERE.parents[2], HERE.parents[2] / "loop/config.yaml"; LEDGER = REPO / "openspec/changes/redesign-book-factory/tasks.md"
+AUTHORIZED_ROOT_TEXT = r"C:\Users\Kristian Bilstrup\Documents\Belief-changer"
+AUTHORIZED_ROOT = Path(AUTHORIZED_ROOT_TEXT)
+FORBIDDEN_ROOT = "/home/kab/Belief-changer-minimal-loop"
 BOOK, SUBJECT, CHAPTERS = "production-books/quit-sugar", "sugar", (1, 2, 3)
-URL, KEY_URL = "https://openrouter.ai/api/v1/chat/completions", "https://openrouter.ai/api/v1/key"; MODEL = "anthropic/claude-opus-4.6"
+URL, KEY_URL = "https://openrouter.ai/api/v1/chat/completions", "https://openrouter.ai/api/v1/key"
+CREDITS_URL = "https://openrouter.ai/api/v1/credits"
+LOCATION_URL = "https://openrouter.ai/cdn-cgi/trace"
+MODEL_URL = "https://openrouter.ai/api/v1/model/meta/muse-spark-1.1"
+USER_MODELS_URL = "https://openrouter.ai/api/v1/models/user"
+ENDPOINTS_URL = "https://openrouter.ai/api/v1/models/meta/muse-spark-1.1/endpoints"
+MODEL, CANONICAL_MODEL = "meta/muse-spark-1.1", "meta/muse-spark-1.1-20260709"
+SUPPORTED_EFFORTS = ("xhigh", "high", "medium", "low", "minimal")
+PRICING = {"prompt": "0.00000125", "completion": "0.00000425",
+           "input_cache_read": "0.00000015"}
+MINIMUM_CREDIT_USD = 6 * (1048576 * 1.25 / 1_000_000 + 16000 * 4.25 / 1_000_000)
 ROUTE_LAW = {
-    "writer_model": MODEL, "writer_provider": "openrouter", "writer_reasoning": "none",
+    "writer_model": MODEL, "writer_provider": "openrouter", "writer_reasoning": "high",
     "writer_endpoint": URL, "writer_temperature": .7, "writer_max_tokens": 16000,
-    "writer_attempts": 1, "researcher_model": "deepseek/deepseek-v4-pro",
+    "writer_attempts": 1, "writer_allow_fallbacks": False,
+    "researcher_model": "deepseek/deepseek-v4-pro",
     "researcher_provider": "openrouter", "researcher_reasoning": "xhigh",
     "planner_model": "gpt-5.6-sol", "planner_route": "codex-native", "planner_reasoning": "xhigh",
     "grounded_reviewer_model": "gpt-5.6-sol", "grounded_reviewer_family": "openai",
@@ -23,8 +37,11 @@ ROUTE_LAW = {
     "developmental_reviewer_reasoning": "max", "judge_model": "gpt-5.6-sol",
     "judge_route": "codex-native", "judge_reasoning": "xhigh", "judge_k": 2,
     "reference_dir": "calibration/reference/gsbs", "reference_chapter_offset": 2}
-ROUTE_CONFIG = {key: ROUTE_LAW[key] for key in tuple(ROUTE_LAW)[:7]}; RUBRICS = ("calibration/judges/product-effect-rubric.md", "calibration/judges/product-effect-absolute-rubric.md")
-EXECUTABLES = ("scripts/loop/product_effect.py", "scripts/loop/product_effect_absolute.py", "scripts/loop/hf01_preflight.py", "scripts/loop/hf01_run.py",
+ROUTE_CONFIG_KEYS = ("writer_model", "writer_provider", "writer_reasoning",
+    "writer_endpoint", "writer_temperature", "writer_max_tokens", "writer_attempts",
+    "writer_allow_fallbacks")
+ROUTE_CONFIG = {key: ROUTE_LAW[key] for key in ROUTE_CONFIG_KEYS}; RUBRICS = ("calibration/judges/product-effect-rubric.md", "calibration/judges/product-effect-absolute-rubric.md")
+EXECUTABLES = ("scripts/loop/product_effect.py", "scripts/loop/product_effect_absolute.py", "scripts/loop/hf01_preflight.py", "scripts/loop/hf01_prepare.py", "scripts/loop/immutable_file.py", "scripts/loop/hf01_run.py",
     "scripts/loop/hf01_stage_a.py", "scripts/loop/hf01_blind.py", "scripts/loop/hf01_carr.py", "scripts/loop/hf01_upstream.py", "scripts/loop/hf01_upstream_contract.py",
     "scripts/loop/candidate_pair.py", "scripts/loop/commission_set.py", "scripts/loop/first_draft_batch.py", "scripts/loop/draft_call.py", "scripts/loop/draft_batch_state.py",
     "scripts/loop/grounded_review.py", "scripts/loop/developmental_review.py", "scripts/eval/native_grounded_review.py", "scripts/eval/native_developmental_review.py",
@@ -45,6 +62,142 @@ AUTHORITY_FIELDS = ("schema", "experiment", "lineage", "mode", "frozen_at_utc", 
     "subject_reference_isolation", "validation_ladder", "rf21_rf22_native_calls",
     "static_input_sha256", "output_isolation", "next_command", "post_authority_boundaries")
 class PreflightError(RuntimeError): pass
+def _path_text(path): return os.path.normcase(os.path.abspath(os.fspath(path)))
+def require_authorized_root(root):
+    """Reject every non-authoritative persistent root before touching its contents."""
+    raw = os.fspath(root)
+    if raw.replace("\\", "/").rstrip("/") == FORBIDDEN_ROOT \
+            or _path_text(raw) != _path_text(AUTHORIZED_ROOT):
+        raise PreflightError(f"H-F01 persistent root must be exactly {AUTHORIZED_ROOT_TEXT}")
+    return Path(os.path.abspath(raw))
+
+def _http_json(url, key, open_url):
+    request = urllib.request.Request(url, method="GET", headers={"Authorization": f"Bearer {key}"})
+    try:
+        with open_url(request, timeout=30) as response:
+            status = getattr(response, "status", 200)
+            if status != 200: raise PreflightError(f"authenticated OpenRouter preflight returned HTTP {status}")
+            value = json.loads(response.read())
+    except PreflightError:
+        raise
+    except Exception as exc:
+        code = getattr(exc, "code", None)
+        detail = f"HTTP {code}" if code is not None else type(exc).__name__
+        raise PreflightError(f"authenticated OpenRouter preflight failed: {detail}") from exc
+    if not isinstance(value, dict): raise PreflightError("authenticated OpenRouter response is not an object")
+    return value
+
+def current_location(open_url=urllib.request.urlopen):
+    """Return only the current country proof from OpenRouter's own edge."""
+    request = urllib.request.Request(LOCATION_URL, method="GET")
+    try:
+        with open_url(request, timeout=30) as response:
+            status = getattr(response, "status", 200)
+            if status != 200:
+                raise PreflightError(f"OpenRouter edge location check returned HTTP {status}")
+            text = response.read().decode("utf-8")
+    except PreflightError:
+        raise
+    except Exception as exc:
+        code = getattr(exc, "code", None)
+        detail = f"HTTP {code}" if code is not None else type(exc).__name__
+        raise PreflightError(f"OpenRouter edge location check failed: {detail}") from exc
+    loc_lines = [line for line in text.splitlines() if line.startswith("loc")]
+    if not loc_lines:
+        raise PreflightError("OpenRouter edge location trace is missing loc")
+    if len(loc_lines) != 1:
+        raise PreflightError("OpenRouter edge location trace has duplicate loc")
+    match = re.fullmatch(r"loc=([A-Z]{2})", loc_lines[0])
+    if match is None:
+        raise PreflightError("OpenRouter edge location trace has malformed loc")
+    country = match.group(1)
+    if country != "US":
+        raise PreflightError(f"OpenRouter edge location is not eligible: {country}")
+    return {"source": LOCATION_URL, "country_code": country}
+
+def authenticated_preflight(open_url=urllib.request.urlopen, now=None):
+    """Perform only authenticated metadata/account GETs; never sends model input."""
+    key = os.environ.get("OPENROUTER_API_KEY", "").strip()
+    if not key: raise PreflightError("OPENROUTER_API_KEY is missing")
+    location = current_location(open_url)
+    key_data = _http_json(KEY_URL, key, open_url).get("data")
+    model = _http_json(MODEL_URL, key, open_url).get("data")
+    user_models = _http_json(USER_MODELS_URL, key, open_url).get("data")
+    endpoints_value = _http_json(ENDPOINTS_URL, key, open_url)
+    if not all(isinstance(item, dict) for item in (model, key_data)):
+        raise PreflightError("OpenRouter preflight metadata is incomplete")
+    top = model.get("top_provider")
+    pricing = model.get("pricing")
+    reasoning = model.get("reasoning")
+    supported = model.get("supported_parameters")
+    endpoints_data = endpoints_value.get("data")
+    endpoints = endpoints_data.get("endpoints") if isinstance(endpoints_data, dict) else None
+    expected_params = {"reasoning", "temperature", "max_tokens"}
+    if model.get("id") != MODEL or model.get("canonical_slug") != CANONICAL_MODEL \
+            or not isinstance(top, dict) \
+            or top.get("context_length") != 1048576 or top.get("max_completion_tokens") is not None \
+            or not isinstance(pricing, dict) \
+            or any(pricing.get(name) != value for name, value in PRICING.items()) \
+            or not isinstance(supported, list) or not expected_params <= set(supported) \
+            or not isinstance(reasoning, dict) or reasoning.get("mandatory") is not True \
+            or tuple(reasoning.get("supported_efforts", ())) != SUPPORTED_EFFORTS:
+        raise PreflightError("Muse capability metadata does not match frozen H-F01 authority")
+    visible = [item for item in user_models or () if isinstance(item, dict)
+               and item.get("id") == MODEL and item.get("canonical_slug") == CANONICAL_MODEL]
+    if not isinstance(user_models, list) or len(visible) != 1:
+        raise PreflightError("Muse is not exactly once in the account-visible model list")
+    if not isinstance(endpoints, list) or len(endpoints) != 1:
+        raise PreflightError("Muse must expose exactly one account-visible endpoint")
+    endpoint = endpoints[0]
+    if not isinstance(endpoint, dict) or endpoint.get("provider_name") != "Meta" \
+            or endpoint.get("model_id") != MODEL or endpoint.get("status") != 0 \
+            or endpoint.get("name") != f"Meta | {CANONICAL_MODEL}":
+        raise PreflightError("Muse endpoint does not bind the exact Meta canonical route")
+    stamp = now or dt.datetime.now(dt.timezone.utc)
+    expires = key_data.get("expires_at")
+    if expires is not None:
+        try: expiry = dt.datetime.fromisoformat(expires.replace("Z", "+00:00"))
+        except (AttributeError, ValueError) as exc: raise PreflightError("OpenRouter key expiry is invalid") from exc
+        if expiry <= stamp: raise PreflightError("OPENROUTER_API_KEY is expired")
+    remaining = key_data.get("limit_remaining")
+    if remaining is not None and (isinstance(remaining, bool) or not isinstance(remaining, (int, float)) or remaining < MINIMUM_CREDIT_USD):
+        raise PreflightError("OPENROUTER_API_KEY spend allowance is under the six-call bound")
+    management_key = os.environ.get("OPENROUTER_MANAGEMENT_KEY", "").strip()
+    if not management_key:
+        raise PreflightError("OPENROUTER_MANAGEMENT_KEY is required for the authenticated credit check")
+    credits = _http_json(CREDITS_URL, management_key, open_url).get("data")
+    if not isinstance(credits, dict):
+        raise PreflightError("OpenRouter preflight credit metadata is incomplete")
+    total, usage = credits.get("total_credits"), credits.get("total_usage")
+    if any(isinstance(item, bool) or not isinstance(item, (int, float)) for item in (total, usage)) \
+            or total - usage < MINIMUM_CREDIT_USD:
+        raise PreflightError("OpenRouter account credit is under the six-call bound")
+    return {"model": MODEL, "canonical_model": CANONICAL_MODEL,
+        "provider": "Meta", "calls": 6,
+        "context_length": 1048576, "max_completion_tokens": None,
+        "prompt_price_per_token": PRICING["prompt"],
+        "completion_price_per_token": PRICING["completion"],
+        "cache_read_price_per_token": PRICING["input_cache_read"],
+        "reasoning_mandatory": True,
+        "reasoning_supported_efforts": list(SUPPORTED_EFFORTS),
+        "current_request_location": location,
+        "current_request_account_visible_model": {
+            "source": USER_MODELS_URL, "authenticated": True, "exact_matches": 1,
+            "id": visible[0]["id"], "canonical_slug": visible[0]["canonical_slug"]},
+        "supported_parameters": sorted(expected_params),
+        "minimum_credit_usd": MINIMUM_CREDIT_USD,
+        "account_credit_remaining": total - usage,
+        "key_spend_allowance_remaining": remaining}
+def resume_command(authority, stage=None, native=False):
+    """Render a stable receipt template with this process's actual interpreter."""
+    args = shlex.split(authority["next_command"])
+    if not args or args[0] != "{python}":
+        return shlex.join([*args, *( ["--native"] if native and "--native" not in args else [])])
+    args[0] = sys.executable
+    if stage is not None:
+        args[args.index("--rf-stage") + 1] = stage
+    if native and "--native" not in args: args.append("--native")
+    return shlex.join(args)
 def _sha(data): return hashlib.sha256(data).hexdigest()
 def _safe(path, boundary):
     try: return PG.safe_file(path, boundary).read_bytes()
@@ -56,7 +209,7 @@ def _task_text(path, task):
     except (PreflightError, UnicodeError): return ""
     match = re.search(rf"^### {task}\b(?P<body>.*?)(?=^### RF-|\Z)", text, re.M | re.S)
     return match.group(0) if match else ""
-def _status(path, task): return match.group(1) if (match := re.search(r"^- Status: `([A-Z_]+)`$", _task_text(path, task), re.M)) else "MISSING"
+def _status(path, task): return match.group(1) if (match := re.search(r"^- Status: `([A-Z_]+)`\r?$", _task_text(path, task), re.M)) else "MISSING"
 def _utc(value):
     try: parsed = dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
     except (AttributeError, ValueError): return None
@@ -67,7 +220,7 @@ def _git(*args):
 def _commit(): return _git("rev-parse", "HEAD").strip()
 def _clean(): return not _git("status", "--porcelain", "--untracked-files=all").strip()
 def arm_paths(root):
-    root = Path(root).absolute()
+    root = require_authorized_root(root)
     return {arm: {"experiment": root / f"loop/experiments/h-f01-{arm}", "candidate": root / f"loop/experiments/h-f01-{arm}/candidate",
                   "book": root / f"loop/experiments/h-f01-{arm}/candidate/{BOOK}"}
             for arm in ("control", "treatment")}
@@ -77,27 +230,43 @@ def _route(path, blockers, code):
         _block(blockers, code, str(exc), path); return
     if any(cfg.get(key) != value for key, value in ROUTE_LAW.items()):
         _block(blockers, code, "full fixed route law differs", path)
-def _pair_map(root, paths, manifest):
+def _pair_map(root, paths, manifest, allow_missing=frozenset()):
     drafts = {f"{BOOK}/chapters/chapter-{n:02d}.md" for n in CHAPTERS}
-    return {item["path"]: _sha(_safe(paths["candidate"] / item["path"], root))
-            for item in manifest["entries"] + manifest["outputs"] if item["path"] not in drafts}
+    result = {}
+    for item in manifest["entries"] + manifest["outputs"]:
+        relative = item["path"]
+        if relative in drafts:
+            continue
+        path = paths["candidate"] / relative
+        if relative in allow_missing and not os.path.lexists(path):
+            continue
+        result[relative] = _sha(_safe(path, root))
+    return result
 def _execution_contract(paths, maps): import hf01_upstream as upstream; return upstream.authority_contract(paths, maps)
-def _arms(root, paths, blockers):
+def _arms(root, paths, blockers, execution_states=None):
     manifests, states, maps = {}, {}, {}
     for arm, item in paths.items():
         try:
-            manifest = CP.inspect(item["experiment"]); pair, evaluation = CP._actual(item["experiment"], manifest)
-            if manifest["state"] != "CANDIDATE" or manifest.get("operation") is not None \
-                    or manifest.get("outputs") or pair != manifest["accepted_pair_hash"]:
-                _block(blockers, f"{arm.upper()}_NOT_PRERF21_SNAPSHOT")
+            manifest = CP.inspect(item["experiment"])
+            if execution_states is None:
+                pair, evaluation = CP._actual(item["experiment"], manifest)
+                if manifest["state"] != "CANDIDATE" or manifest.get("operation") is not None \
+                        or manifest.get("outputs") or pair != manifest["accepted_pair_hash"]:
+                    _block(blockers, f"{arm.upper()}_NOT_PRERF21_SNAPSHOT")
             if manifest["run"]["book"] != BOOK or tuple(manifest["run"]["chapters"]) != CHAPTERS:
                 _block(blockers, f"{arm.upper()}_RUN_MISMATCH")
-            manifests[arm], maps[arm] = manifest, _pair_map(root, item, manifest)
-            states[arm] = {"accepted_generation": manifest["accepted_generation"],
-                "accepted_pair_hash": manifest["accepted_pair_hash"],
-                "accepted_evaluation_hash": manifest["accepted_evaluation_hash"],
-                "pre_rf21_pair_sha256": pair, "evaluation_sha256": evaluation,
-                "run": manifest["run"]}
+            manifests[arm] = manifest
+            maps[arm] = _pair_map(
+                root, item, manifest,
+                TREATMENT_PATHS if arm == "treatment" else frozenset())
+            if execution_states is None:
+                states[arm] = {"accepted_generation": manifest["accepted_generation"],
+                    "accepted_pair_hash": manifest["accepted_pair_hash"],
+                    "accepted_evaluation_hash": manifest["accepted_evaluation_hash"],
+                    "pre_rf21_pair_sha256": pair, "evaluation_sha256": evaluation,
+                    "run": manifest["run"]}
+            else:
+                states[arm] = dict(execution_states[arm])
         except (CP.PairError, PS.StoreError, OSError, PreflightError) as exc:
             _block(blockers, f"RF02_{arm.upper()}_INVALID", str(exc), item["experiment"])
         _route(item["candidate"] / "loop/config.yaml", blockers,
@@ -162,12 +331,15 @@ def _prereg(state, matched, commit):
             "subject": SUBJECT, "book": BOOK, "config": "loop/config.yaml"},
         "falsifier": "Refuted by integrity failure, at most three of six GSBS chapter votes, "
                      "zero of two GSBS opening votes, or named-human rejection."}
-def build_manifest(snapshot_root, key_present=None, ledger=None, config=CONFIG,
-                   authority_timestamp=None):
-    root, ledger = Path(snapshot_root).absolute(), Path(ledger or LEDGER).absolute()
+def build_manifest(snapshot_root, key_present=None, ledger=None, config=None,
+                   authority_timestamp=None, execution_states=None):
+    root, ledger = require_authorized_root(snapshot_root), Path(ledger or LEDGER).absolute()
+    config = Path(config or CONFIG).absolute()
+    if root not in ledger.parents or root not in config.parents:
+        raise PreflightError("H-F01 ledger and configuration must stay inside the authorized root")
     paths, blockers, downstream = arm_paths(root), [], []
-    _route(Path(config).absolute(), blockers, "WRITER_ROUTE_CONFIG_MISMATCH")
-    manifests, states, maps = _arms(root, paths, blockers)
+    _route(config, blockers, "WRITER_ROUTE_CONFIG_MISMATCH")
+    manifests, states, maps = _arms(root, paths, blockers, execution_states)
     if len(maps) == 2:
         changed = sorted(path for path in set(maps["control"]) | set(maps["treatment"])
                          if maps["control"].get(path) != maps["treatment"].get(path))
@@ -179,14 +351,16 @@ def build_manifest(snapshot_root, key_present=None, ledger=None, config=CONFIG,
     if not clean: _block(blockers, "GIT_WORKTREE_DIRTY", kind="source_authority")
     rf20, rf21, rf22, rf23 = (_status(ledger, task) for task in ("RF-20", "RF-21", "RF-22", "RF-23"))
     if rf20 != "BLOCKED": _block(blockers, "RF20_TERMINAL_STATE_CHANGED", rf20, kind="product_authority")
-    if rf21 not in ("READY", "DONE"): _block(blockers, "RF21_NOT_AUTHORIZED", rf21, kind="product_authority")
-    if rf22 not in ("READY", "DONE"): _block(downstream, "RF22_NOT_READY", rf22, kind="product_authority")
+    if rf21 == "READY": _block(blockers, "RF21_NOT_STARTED", rf21, kind="product_authority")
+    elif rf21 not in ("IN_PROGRESS", "DONE"): _block(blockers, "RF21_NOT_AUTHORIZED", rf21, kind="product_authority")
+    if rf22 == "READY": _block(downstream, "RF22_NOT_STARTED", rf22, kind="product_authority")
+    elif rf22 not in ("IN_PROGRESS", "DONE"): _block(downstream, "RF22_NOT_READY", rf22, kind="product_authority")
     if rf23 not in ("READY", "DONE"): _block(downstream, "RF23_NOT_READY", rf23, kind="product_authority")
     present = bool(os.environ.get("OPENROUTER_API_KEY", "").strip()) if key_present is None else bool(key_present)
     if not present: _block(downstream, "OPENROUTER_API_KEY_MISSING", kind="credential_machine")
     if not _utc(authority_timestamp): _block(blockers, "AUTHORITY_TIMESTAMP_REQUIRED", kind="product_authority")
     stamp = authority_timestamp or "REQUIRED_UTC_ISO_8601"
-    command = shlex.join(["python3", "scripts/loop/hf01_run.py", "--snapshot-root", str(root),
+    command = shlex.join(["{python}", "scripts/loop/hf01_run.py", "--snapshot-root", str(root),
         "--authority-timestamp", stamp, "--redesign-authorized", "--rf-stage", "RF-21",
         "--candidate-root", str(root / "loop/experiments")])
     blockers.sort(key=lambda row: (row["class"], row["code"])); downstream.sort(key=lambda row: (row["class"], row["code"]))
@@ -217,7 +391,7 @@ def require_ready(root, **kwargs):
         raise PreflightError("H-F01 blocked: " + ", ".join(row["code"] for row in value["blockers"]))
     return value
 def validate_execution_authority(root, value, key_present=None):
-    root, authority = Path(root).absolute(), value.get("authority", {})
+    root, authority = require_authorized_root(root), value.get("authority", {})
     if value.get("schema") != 5 or value.get("lineage") != "direct-gsbs-stage-a" \
             or not _utc(value.get("frozen_at_utc")):
         raise PreflightError("H-F01 pre-RF21 authority is invalid")
@@ -226,17 +400,23 @@ def validate_execution_authority(root, value, key_present=None):
     ledger = Path(authority["ledger_path"])
     if _status(ledger, "RF-20") != "BLOCKED" or _sha(_task_text(ledger, "RF-20").encode()) != authority.get("rf20_sha256"):
         raise PreflightError("RF-20 terminal authority changed")
-    paths = arm_paths(root); maps = {arm: _pair_map(root, item, CP.inspect(item["experiment"])) for arm, item in paths.items()}
+    paths = arm_paths(root)
+    maps = {arm: _pair_map(
+        root, item, CP.inspect(item["experiment"]),
+        TREATMENT_PATHS if arm == "treatment" else frozenset())
+        for arm, item in paths.items()}
     changed = {path for path in set(maps["control"]) | set(maps["treatment"]) if maps["control"].get(path) != maps["treatment"].get(path)}
     if not changed <= TREATMENT_PATHS: raise PreflightError("H-F01 treatment escaped its allowlist")
-    expected = build_manifest(root, key_present=key_present, ledger=ledger, authority_timestamp=value["frozen_at_utc"])
-    if any(value.get(key) != expected.get(key) for key in AUTHORITY_FIELDS):
-        raise PreflightError("H-F01 stable authority core changed")
     arms = value.get("arms", {})
     identities = {(item.get("accepted_generation"), item.get("accepted_pair_hash"), item.get("accepted_evaluation_hash"),
                    item.get("pre_rf21_pair_sha256")) for item in arms.values() if isinstance(item, dict)}
     if set(arms) != {"control", "treatment"} or len(identities) != 1 or any(item.get("pre_rf21_pair_sha256") != item.get("accepted_pair_hash") for item in arms.values()):
         raise PreflightError("H-F01 pre-RF21 arm authority changed")
+    expected = build_manifest(
+        root, key_present=key_present, ledger=ledger,
+        authority_timestamp=value["frozen_at_utc"], execution_states=arms)
+    if any(value.get(key) != expected.get(key) for key in AUTHORITY_FIELDS):
+        raise PreflightError("H-F01 stable authority core changed")
     for arm, frozen in arms.items():
         current = CP.inspect(paths[arm]["experiment"])
         if any(current.get(key) != frozen.get(key) for key in ("accepted_generation", "accepted_pair_hash", "accepted_evaluation_hash", "run")):
@@ -246,7 +426,10 @@ def validate_execution_authority(root, value, key_present=None):
     return value
 def require_stage(value, task):
     status = _status(value["authority"]["ledger_path"], task)
-    if status not in ("READY", "DONE"): raise PreflightError(f"{task} is {status}, not READY")
+    if task in ("RF-21", "RF-22"):
+        if status != "IN_PROGRESS": raise PreflightError(f"{task} is {status}, not IN_PROGRESS")
+    elif status not in ("READY", "DONE"):
+        raise PreflightError(f"{task} is {status}, not READY")
     return status
 def treatment_artifacts(root):
     paths = arm_paths(root); manifests = {arm: CP.inspect(item["experiment"]) for arm, item in paths.items()}

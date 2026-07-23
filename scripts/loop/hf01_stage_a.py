@@ -52,7 +52,7 @@ def _review(root, authority, native=False):
             except GR.GroundedReviewPending as exc:
                 commands.extend(shlex.join(GR.GC.wrapper_command(paths["experiment"], n)) for n in exc.missing)
             except GR.GroundedReviewError as exc: raise StageError(f"{arm} grounded: {exc}") from exc
-    if commands: raise StagePending("all-six-grounded-review", commands, authority["next_command"])
+    if commands: raise StagePending("all-six-grounded-review", commands, HF.resume_command(authority, stage="RF-23"))
     for arm, paths in HF.arm_paths(root).items():
         runner = None
         if native:
@@ -64,7 +64,7 @@ def _review(root, authority, native=False):
             except DR.DevelopmentalReviewPending:
                 task, _ = DR._authority(paths["experiment"]); commands.append(shlex.join(DR.DC.wrapper_command(task)))
             except DR.DevelopmentalReviewError as exc: raise StageError(f"{arm} developmental: {exc}") from exc
-    if commands: raise StagePending("both-whole-opening-reviews", commands, authority["next_command"])
+    if commands: raise StagePending("both-whole-opening-reviews", commands, HF.resume_command(authority, stage="RF-23"))
 def _unsupported(receipt):
     return sum(finding.get("classification") in UNSUPPORTED for chapter in receipt["chapters"]
                for finding in chapter["verdict"]["findings"])
@@ -101,7 +101,8 @@ def _carr(root, task_bundle, blind, view, authority, native):
             labels, name, task_bundle["treatment_pair_hash"], blind)
     except CARR_NATIVE.CarrPending as exc:
         raise StagePending("post-blind-carr-diagnostic",
-            [authority["next_command"] + " --native"], authority["next_command"]) from exc
+            [HF.resume_command(authority, stage="RF-23", native=True)],
+            HF.resume_command(authority, stage="RF-23")) from exc
     except CARR_NATIVE.CarrError as exc: raise StageError(str(exc)) from exc
     aggregate = judges.aggregate(view["config"], labels, name, task_bundle["treatment_pair_hash"], treatment)
     artifacts = score_receipt.judge_artifacts(view["config"], labels, name,
@@ -204,7 +205,7 @@ def gate_product(root, carr, product_path, record_path):
 def gate_command(root, task_bundle, timestamp, promote):
     treatment = HF.arm_paths(root)["treatment"]["experiment"]
     manifest = CP.open_sealed(treatment, task_bundle["treatment_pair_hash"])["manifest"]
-    command = ["python3", "scripts/loop/gate.py", "--iter", str(manifest["run"]["iteration_id"]),
+    command = [sys.executable, "scripts/loop/gate.py", "--iter", str(manifest["run"]["iteration_id"]),
         "--config", str(HF.arm_paths(root)["treatment"]["candidate"] / "loop/config.yaml"),
         "--tested-pair-hash", task_bundle["treatment_pair_hash"], "--accepted-root", str(Path(root).absolute()),
         "--decision-timestamp", timestamp, "--redesign-authorized", "--rf-stage", "RF-25",
@@ -218,11 +219,11 @@ def advance(root, authority, upstream_sha, native=False, decision_timestamp=None
         view = BLIND.emit(root, task_bundle, authority, native)
         blind = _read(folder(root) / RECEIPT) if (folder(root) / RECEIPT).is_file() \
             else BLIND.freeze(root, task_bundle, view, carr_iteration(view["manifest"]))
-    except BLIND.BlindPending as exc: raise StagePending("blind-native-dispatch", exc.commands, authority["next_command"]) from exc
+    except BLIND.BlindPending as exc: raise StagePending("blind-native-dispatch", exc.commands, HF.resume_command(authority, stage="RF-23")) from exc
     except BLIND.BlindError as exc: raise StageError(str(exc)) from exc
     carr = _carr(root, task_bundle, blind, view, authority, native)
     if not (folder(root) / HUMAN).is_file():
-        raise StagePending("named-human-reading", [str(folder(root) / HUMAN)], authority["next_command"])
+        raise StagePending("named-human-reading", [str(folder(root) / HUMAN)], HF.resume_command(authority, stage="RF-23"))
     product = recompute(root, carr["aggregate"]); treatment = HF.arm_paths(root)["treatment"]["experiment"]
     _write(treatment / "evidence" / PD.PATH, product); prereg = authority["preregistration"]
     inputs = {**prereg["inputs"], "control_tested_pair_hash": hashes["control"],
@@ -236,7 +237,7 @@ def advance(root, authority, upstream_sha, native=False, decision_timestamp=None
     required = product["decision"] == "PROMOTE"
     if not decision_timestamp or required and not promote_pair:
         template = gate_command(root, task_bundle, decision_timestamp or "<UTC_ISO_8601>", required)
-        raise StagePending("explicit-atomic-gate-authority", [template], authority["next_command"])
+        raise StagePending("explicit-atomic-gate-authority", [template], HF.resume_command(authority, stage="RF-23"))
     human = _read(folder(root) / HUMAN)
     if _time(decision_timestamp, "gate timestamp") <= _time(human["reviewed_at_utc"], "human review"):
         raise StageError("gate timestamp must follow named-human approval")

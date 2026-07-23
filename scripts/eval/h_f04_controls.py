@@ -63,8 +63,9 @@ def control_layout(mode, configuration=None):
 
 
 def _identity(info):
-    return (info.st_dev, info.st_ino, info.st_mode, info.st_nlink, info.st_size,
-            info.st_mtime_ns, info.st_ctime_ns)
+    stable = (info.st_dev, info.st_ino, info.st_mode, info.st_nlink,
+              info.st_size, info.st_mtime_ns)
+    return stable if os.name == "nt" else (*stable, info.st_ctime_ns)
 
 
 def _inspect(path, boundary):

@@ -107,7 +107,7 @@ class CanonicalControlAuthorityTests(unittest.TestCase):
     def test_missing_extra_wrong_mode_alias_stale_and_tamper_fail_closed(self):
         """Infra: only the immutable receipt-bound pair is product authority."""
         mutations = {
-            "missing": lambda: (self.base / H.RECEIPT).unlink(),
+            "missing": lambda: self._unlink(self.base / H.RECEIPT),
             "extra": lambda: (self.base / "outputs" / "extra").mkdir(),
             "wrong-mode": lambda: (self.base / H.RECEIPT).chmod(0o644),
             "symlink": self._symlink_summary,
@@ -135,6 +135,7 @@ class CanonicalControlAuthorityTests(unittest.TestCase):
         replacement = self.base / "replacement.json"
         replacement.write_bytes(path.read_bytes())
         replacement.chmod(0o444)
+        path.chmod(0o644)
         os.replace(replacement, path)
         with self.assertRaisesRegex(ValueError, "changed during read"):
             H._read_stable(path, expected)
@@ -147,6 +148,7 @@ class CanonicalControlAuthorityTests(unittest.TestCase):
         replacement = path.with_name("replacement.json")
         replacement.write_bytes(path.read_bytes())
         replacement.chmod(0o444)
+        path.chmod(0o644)
         os.replace(replacement, path)
         self.assertNotEqual(old_identity, (path.stat().st_dev, path.stat().st_ino))
         with self.assertRaisesRegex(ValueError, "identity does not match"):
@@ -168,23 +170,35 @@ class CanonicalControlAuthorityTests(unittest.TestCase):
         base_layout(self.base)
         self.complete()
 
+    @staticmethod
+    def _unlink(path):
+        path.chmod(0o644)
+        path.unlink()
+
     def _symlink_summary(self):
         path = H.summaries()[0]
         outside = self.repo / "outside.json"
         outside.write_bytes(path.read_bytes())
-        path.unlink()
-        path.symlink_to(outside)
+        self._unlink(path)
+        try:
+            path.symlink_to(outside)
+        except OSError as exc:
+            if os.name == "nt" and getattr(exc, "winerror", None) in {50, 1314}:
+                self.skipTest("Windows symlink creation is unavailable")
+            raise
 
     def _hardlink_summary(self):
         path = H.summaries()[0]
         outside = self.repo / "outside.json"
         outside.write_bytes(path.read_bytes())
-        path.unlink()
+        self._unlink(path)
         os.link(outside, path)
 
     def _swap_summaries(self):
         first, second = H.summaries()
         temporary = self.base / "swap.json"
+        first.chmod(0o644)
+        second.chmod(0o644)
         os.replace(first, temporary)
         os.replace(second, first)
         os.replace(temporary, second)

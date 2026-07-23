@@ -56,7 +56,8 @@ class ProductEffectPanelTests(unittest.TestCase):
         records = PANEL.records(self.cfg, "h-f04", self.envelope, h_f04=True)
 
         self.assertEqual(2, len(rows))
-        self.assertTrue(all("/judging/h-f04/tasks/" in str(row[2]) for row in rows))
+        self.assertTrue(all(row[2].parts[-4:-1] == ("judging", "h-f04", "tasks")
+                            for row in rows))
         self.assertEqual(2, len({row[1] for row in rows}))
         self.assertEqual("A", summary["status"])
         self.assertFalse(summary["promotion_eligible"])
@@ -95,7 +96,8 @@ class ProductEffectPanelTests(unittest.TestCase):
         records = PANEL.records(self.cfg, "product", self.task,
                                 tested_pair_hash=TESTED)
         mapped = PANEL.decision_row(self.cfg, records[0], self.task, "A", TESTED)
-        self.assertTrue(all("/judging/tasks/" in str(row[2]) for row in rows))
+        self.assertTrue(all(row[2].parts[-3:-1] == ("judging", "tasks")
+                            for row in rows))
         self.assertNotIn("reference_candidate", json.dumps(self.task))
         self.assertEqual("PASS", mapped["verdict"])
         self.assertEqual(records[0]["task_id"], mapped["task_id"])

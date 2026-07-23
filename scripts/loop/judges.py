@@ -17,7 +17,7 @@ The operator dispatches each task file as a fresh subagent and saves the raw
 JSON reply to the matching verdicts/ path. Judge output is never fabricated.
 
 endpoint()/have_key() remain here for the WRITER transport only
-(run_iteration.py: Opus 4.6 via OpenRouter/LiteLLM).
+(H-F01: Muse Spark 1.1 Thinking via OpenRouter, with no fallback).
 """
 import hashlib
 import json

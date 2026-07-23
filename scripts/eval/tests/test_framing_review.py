@@ -28,7 +28,8 @@ class FramingReviewTests(unittest.TestCase):
         fixture.FramingContractTests.assert_invalid(self, text, message)
 
     def write_review(self, text, **findings):
-        (self.book / "framing-review.md").write_text(fixture.review(text, **findings), encoding="utf-8")
+        (self.book / "framing-review.md").write_bytes(
+            fixture.review(text, **findings).encode("utf-8"))
 
     def test_semantic_review_blocks_free_text_authority_probes(self):
         """Infra: RF-05 evidence-honest semantic authority boundary."""
@@ -57,10 +58,10 @@ class FramingReviewTests(unittest.TestCase):
         with self.assertRaisesRegex(SC.ContractError, "missing or empty semantic review"):
             SC.require_subject_contract(self.book, "planning")
         self.write_review(text)
-        (self.book / "framing.md").write_text(text + "\n", encoding="utf-8")
+        (self.book / "framing.md").write_bytes((text + "\n").encode("utf-8"))
         with self.assertRaisesRegex(SC.ContractError, "not bound to the current complete framing"):
             SC.require_subject_contract(self.book, "planning")
-        (self.book / "framing.md").write_text(text, encoding="utf-8")
+        (self.book / "framing.md").write_bytes(text.encode("utf-8"))
         review = (self.book / "framing-review.md").read_text(encoding="utf-8")
         (self.book / "framing-review.md").write_text(review.replace(
             "independent high-reasoning native planning-family reviewer (Sol or equivalent)",

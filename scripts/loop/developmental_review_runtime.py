@@ -2,13 +2,16 @@
 import json
 import os
 import stat
+import tempfile
 from pathlib import Path
 
 import developmental_review_contract as C
 import pair_store as PS
 
 SCHEMA = 1
-BASE = Path("/tmp") / f"belief-changer-rf13-{os.getuid()}"
+TEMP_ROOT = Path(tempfile.gettempdir()).absolute()
+BASE = TEMP_ROOT / "belief-changer-rf13"
+POSIX_OWNER = getattr(os, "getuid", lambda: None)()
 TASK = "task.json"
 OUTPUT_SCHEMA = "schema.json"
 RESULT = "result.json"
@@ -45,8 +48,34 @@ def result_path(task_sha256):
 
 
 def _mode(value, wanted, label):
-    if stat.S_IMODE(os.lstat(value).st_mode) != wanted:
+    info = os.lstat(value)
+    if os.name == "nt":
+        if stat.S_ISREG(info.st_mode) and wanted == 0o444 and not (
+                getattr(info, "st_file_attributes", 0)
+                & getattr(stat, "FILE_ATTRIBUTE_READONLY", 0)):
+            raise RuntimeError(f"{label} is writable")
+        return
+    if stat.S_IMODE(info.st_mode) != wanted:
         raise RuntimeError(f"{label} mode is not canonical {wanted:04o}")
+
+
+def _owner(value, info=None):
+    return None if os.name == "nt" else (info or os.lstat(value)).st_uid
+
+
+def _stored_mode(info):
+    if os.name != "nt":
+        return stat.S_IMODE(info.st_mode)
+    if stat.S_ISREG(info.st_mode):
+        return (0o444 if getattr(info, "st_file_attributes", 0)
+                & getattr(stat, "FILE_ATTRIBUTE_READONLY", 0) else 0o666)
+    return 0o555
+
+
+def _aliased(info):
+    return stat.S_ISLNK(info.st_mode) or bool(
+        getattr(info, "st_file_attributes", 0)
+        & getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0))
 
 
 def _ancestry(root):
@@ -64,9 +93,9 @@ def _base():
     try:
         if not os.path.lexists(BASE):
             BASE.mkdir(mode=0o700)
-        PS.safe_dir(BASE, "/tmp")
+        PS.safe_dir(BASE, TEMP_ROOT)
         info = os.lstat(BASE)
-        if info.st_uid != os.getuid():
+        if os.name != "nt" and _owner(BASE, info) != POSIX_OWNER:
             raise RuntimeError("developmental runtime base has the wrong owner")
         _mode(BASE, 0o700, "developmental runtime base")
         _ancestry(BASE)
@@ -86,15 +115,18 @@ def _inventory(root):
         with os.scandir(folder) as entries:
             items = sorted(entries, key=lambda item: item.name)
         for item in items:
-            target, info = Path(item.path), item.stat(follow_symlinks=False)
+            target = Path(item.path)
+            info = os.lstat(target)
             relative = target.relative_to(root).as_posix()
-            if stat.S_ISLNK(info.st_mode):
+            if _aliased(info):
                 raise RuntimeError(f"developmental runtime entry is aliased: {relative}")
             if stat.S_ISDIR(info.st_mode):
-                found[relative] = ("directory", stat.S_IMODE(info.st_mode), info.st_uid)
+                found[relative] = ("directory", _stored_mode(info),
+                                   _owner(target, info))
                 visit(target)
             elif stat.S_ISREG(info.st_mode) and info.st_nlink == 1:
-                found[relative] = ("file", stat.S_IMODE(info.st_mode), info.st_uid)
+                found[relative] = ("file", _stored_mode(info),
+                                   _owner(target, info))
             elif stat.S_ISREG(info.st_mode):
                 raise RuntimeError(f"developmental runtime entry is multiply linked: {relative}")
             else:
@@ -110,7 +142,8 @@ def _inventory(root):
 
 def _structure(root, allowed, required=None):
     found = _inventory(root)
-    expected = {name: ("file", 0o444, os.getuid()) for name in allowed}
+    expected_owner = None if os.name == "nt" else POSIX_OWNER
+    expected = {name: ("file", 0o444, expected_owner) for name in allowed}
     required = set(allowed) if required is None else set(required)
     if not required <= set(found) <= set(expected) \
             or any(found[name] != expected[name] for name in found):
@@ -140,9 +173,9 @@ def prepare(task):
             root.mkdir(mode=0o700)
         PS.safe_dir(root, base)
         info = os.lstat(root)
-        if info.st_uid != os.getuid():
+        if os.name != "nt" and _owner(root, info) != POSIX_OWNER:
             raise RuntimeError("developmental task runtime has the wrong owner")
-        if stat.S_IMODE(info.st_mode) not in (0o700, 0o555):
+        if os.name != "nt" and stat.S_IMODE(info.st_mode) not in (0o700, 0o555):
             raise RuntimeError("developmental task runtime mode is invalid")
         root.chmod(0o700)
         _structure(root, {TASK, OUTPUT_SCHEMA, RESULT}, set())
@@ -160,7 +193,8 @@ def validate(task, allow_result=False):
     task_sha, root = task["task_sha256"], path(task["task_sha256"])
     _base()
     try:
-        if root.absolute() != path(task_sha) or root.resolve() != root:
+        if root.absolute() != path(task_sha) \
+                or os.name != "nt" and root.resolve() != root:
             raise RuntimeError("developmental runtime path is aliased")
         PS.safe_dir(root, BASE)
         _mode(root, 0o555, "developmental task runtime")
@@ -182,7 +216,8 @@ def validate(task, allow_result=False):
 def _command(task, root, schema):
     reviewer = task["reviewer"]
     disabled = [item for feature in DISABLED for item in ("--disable", feature)]
-    return ["codex", "exec", "--ephemeral", "--ignore-user-config", "--ignore-rules",
+    return ["codex.cmd" if os.name == "nt" else "codex", "exec", "--ephemeral",
+            "--ignore-user-config", "--ignore-rules",
             *disabled, "--model", reviewer["model"], "-c",
             f"model_reasoning_effort={reviewer['reasoning']}", "--sandbox", "read-only",
             "--skip-git-repo-check", "--cd", str(root), "--output-schema", str(schema),

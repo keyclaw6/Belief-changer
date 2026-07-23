@@ -209,7 +209,12 @@ class CommissionSetTests(unittest.TestCase):
         PAIR.snapshot(aliased, self.accepted, "production-books/test", "1-2")
         target = PAIR.candidate_tree(aliased) / "production-books/test/commissions/chapter-01.md"
         target.parent.mkdir()
-        target.symlink_to(self.accepted / "production-books/test/00-brief.md")
+        try:
+            target.symlink_to(self.accepted / "production-books/test/00-brief.md")
+        except OSError as exc:
+            if os.name == "nt" and getattr(exc, "winerror", None) in {50, 1314}:
+                self.skipTest("Windows symlink creation is unavailable")
+            raise
         with self.assertRaisesRegex(SET.CommissionSetError, "aliased"):
             SET.generate(aliased, self.assignments, mock.Mock(), mock.Mock())
 

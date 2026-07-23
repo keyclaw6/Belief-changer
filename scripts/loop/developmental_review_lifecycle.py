@@ -41,8 +41,17 @@ def _read(path, boundary, final=True):
         info = os.lstat(path)
         if info.st_uid != os.lstat(boundary).st_uid:
             raise LifecycleError("developmental lifecycle record has the wrong owner")
-        if final and stat.S_IMODE(info.st_mode) != 0o444:
-            raise LifecycleError("developmental lifecycle anchor mode is not canonical 0444")
+        if final:
+            if os.name == "nt":
+                attributes = getattr(info, "st_file_attributes", 0)
+                if not stat.S_ISREG(info.st_mode) or info.st_nlink != 1 \
+                        or attributes & getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0) \
+                        or not attributes & getattr(stat, "FILE_ATTRIBUTE_READONLY", 0):
+                    raise LifecycleError(
+                        "developmental lifecycle anchor is not a canonical read-only file")
+            elif stat.S_IMODE(info.st_mode) != 0o444:
+                raise LifecycleError(
+                    "developmental lifecycle anchor mode is not canonical 0444")
         return data
     except (PS.StoreError, OSError) as exc:
         raise LifecycleError(f"developmental lifecycle record is unsafe: {exc}") from exc

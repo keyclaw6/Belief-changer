@@ -81,7 +81,7 @@ class WriterFixture:
         for relative, text in files.items():
             path = self.accepted / relative
             path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text(text, encoding="utf-8")
+            path.write_bytes(text.encode("utf-8"))
         PAIR.initialize(self.accepted, "production-books/test")
         self.assignments = {f"C-{number:02d}": assigned(
             f"C-{number:02d}", f"S-{100 + number}") for number in self.selection}

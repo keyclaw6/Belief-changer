@@ -34,6 +34,17 @@ later validation gates report their outcomes.
   ephemeral scratch cwd and disposable schema copies outside it. After the
   authority is rebound, `/home/kab/Belief-changer-minimal-loop` remains forbidden
   before any read, hash, write, or model send.
+- The reviewed Windows/Muse implementation leaves RF-21 `READY` and unstarted.
+  Readiness creates no H-F01 arm snapshot, frozen causal authority, treatment
+  artifact, or model/native call. Only a later explicit founder start, recorded
+  by moving RF-21 to `IN_PROGRESS`, may prepare the isolated arms, enter RF-21
+  execution, and freeze the pre-call authority. RF-21/RF-22 dispatch requires
+  the named stage to be `IN_PROGRESS`; `READY` is deliberately non-executable.
+- Immutable evidence keeps exact `0444` validation on POSIX. On Windows it uses
+  the equivalent native regular/single-link/non-reparse/read-only contract and
+  omits NTFS change time from path-versus-handle identity because that field is
+  not stable across those two views; bytes, hashes, file ID, size, mode, links,
+  and modification time remain bound.
 - Preserve the stable external layout inside every complete immutable operation
   root: canonical configuration assets and whole `production-books/<slug>/`
   workshops—including their briefs, research sources and syntheses, framing,

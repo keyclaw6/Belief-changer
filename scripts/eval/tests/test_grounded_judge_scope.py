@@ -84,7 +84,7 @@ class GroundedJudgeScopeTests(GroundedFixture, unittest.TestCase):
 
     def test_external_and_synthetic_control_paths_have_zero_product_side_effects(self):
         """OpenSpec scenario: A grounded blocker remains."""
-        with tempfile.TemporaryDirectory(dir="/tmp") as tmp:
+        with tempfile.TemporaryDirectory() as tmp:
             paths = [Path(tmp) / f"{mode}.json" for mode in ("identical", "degraded")]
             for path in paths:
                 path.write_text('{"passed": true}', encoding="utf-8")
@@ -131,6 +131,7 @@ class GroundedJudgeScopeTests(GroundedFixture, unittest.TestCase):
             replacement = summary.with_name("replacement.json")
             replacement.write_bytes(summary.read_bytes())
             replacement.chmod(0o444)
+            summary.chmod(0o644)
             replacement.replace(summary)
 
             reads, stable = [], SCOPE.HF._read_stable

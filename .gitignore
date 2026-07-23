@@ -1,6 +1,11 @@
 # Code intelligence graph cache (codebase-memory-mcp) — never commit.
 .codebase-memory-mcp/
 *.cbm-graph/
+.codex/
+
+# RF-02/H-F01 generated local state; canonical inputs remain tracked elsewhere.
+loop/accepted/
+loop/experiments/
 
 # OS / editor cruft.
 .DS_Store

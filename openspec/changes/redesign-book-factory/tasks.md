@@ -11,11 +11,17 @@ separately below and is not an implementation item.
 
 ## Fixed boundary
 
-- Founder authorization recorded 2026-07-22: RF-21 starts from the authoritative
-  Windows checkout `C:\Users\Kristian Bilstrup\Documents\Belief-changer`.
+- Founder authorization recorded 2026-07-22: RF-21 readiness is bound to the
+  authoritative Windows checkout
+  `C:\Users\Kristian Bilstrup\Documents\Belief-changer`.
   `/home/kab/Belief-changer-minimal-loop` is superseded and MUST NOT be read,
   mutated, used as a cwd, or named by an H-F01 receipt/resume command after this
   rebind.
+- Founder re-brief recorded 2026-07-22: execution is postponed after readiness.
+  RF-21 is `READY` and unstarted; no H-F01 arm snapshot, causal authority,
+  treatment artifact, native/model/provider call, or paid call was created.
+  A later explicit founder start, recorded by moving RF-21 to `IN_PROGRESS`, is
+  required before snapshot preparation, authority freeze, or RF-21 execution.
 - The Windows checkout is on accepted `main`; the exact clean commit is frozen
   into the immutable pre-RF21 authority only after this authorized route/root
   implementation passes independent review and is pushed.
@@ -994,7 +1000,7 @@ the SHA without reopening the implementation verdict.
 ### RF-21 — Build and accept the quit-sugar treatment reader journey
 
 - [ ] Complete the brief, framing, first-three cards, and blocking plan review.
-- Status: `IN_PROGRESS`
+- Status: `READY`
 - Evidence class / report: H-F01 treatment, not a proven improvement; §§7
   action 1, 9 H-F01, 10.
 - Problem / root cause: current opening is scope → trap label → benefit catalogue.
@@ -1015,15 +1021,28 @@ the SHA without reopening the implementation verdict.
 - Verification: independent plan review and reader-state matrix; no root prose
   reading; `bash scripts/check.sh`.
 - Dependencies: RF-01, RF-02, RF-03, RF-05, RF-06, RF-07, RF-19. The direct
-  GSBS product lineage is distinct from RF-20 and requires an explicit founder
-  start plus the immutable pre-RF21 authority before any planning call or
-  candidate write.
-- Implementation attempts: `1`; 2026-07-22 founder start, Windows-root rebind,
-  and identical Muse route were recorded OpenSpec-first. Strict validation
-  passed. Machine/runtime implementation and independent review are in progress;
-  no RF-21 native call or treatment artifact write has been made.
-- Review attempts: `0`; latest verdict / findings: `—`.
-- Commit / push: `—`.
+  GSBS product lineage is distinct from RF-20 and requires a later explicit
+  founder start recorded as RF-21 `IN_PROGRESS`, followed by the immutable
+  pre-RF21 authority, before any planning call or candidate write. Runtime MUST
+  reject RF-21 `READY` at snapshot, authority, and dispatch boundaries.
+- Implementation attempts: `7`; latest 2026-07-22 result: Windows-safe runtime,
+  exact Muse route, fail-closed account/location preflight, RF-02 durability,
+  and future dotenvx injection path are ready. The final repair makes `READY`
+  reject snapshot, authority, and dispatch boundaries while a later founder
+  start recorded as `IN_PROGRESS` is executable. Founder then postponed execution.
+  It also repaired the canonical gate's Windows path, newline, immutable-file,
+  and test-capability failures. The repaired H-F01/guard suite passes 24 tests
+  with three explicit Windows-symlink capability skips; strict OpenSpec passes;
+  and the canonical Git Bash gate passes 330 tests with 23 platform-capability
+  skips and exit `0` (3674.295 seconds).
+  No RF-21 call, arm snapshot, frozen authority, or treatment artifact exists.
+- Review attempts: `7`; latest independent `$review-elegance` verdict:
+  `APPROVE — offline readiness only`; it independently reproduced the 5/5
+  direct boundary/resume repairs and the 24/24 H-F01/guard suite, found both
+  prior findings closed, and found no new material or simplification finding.
+  This permits the administrative `READY`/unstarted state, not dispatch.
+- Commit / push: pending the reviewed readiness commit and following ledger
+  checkpoint.
 
 ### RF-22 — Generate and audit the three H-F01 treatment commissions
 

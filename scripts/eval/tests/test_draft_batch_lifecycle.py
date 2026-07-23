@@ -58,18 +58,25 @@ class DraftBatchLifecycleTests(WriterFixture, unittest.TestCase):
                       lambda: LIFE.recover(candidate, manifest))
         for operation in operations:
             with self.assertRaisesRegex(
-                    (PAIR.PairError, LIFE.LifecycleError), "mode is not canonical 0444"):
+                    (PAIR.PairError, LIFE.LifecycleError),
+                    "not a canonical read-only file|mode is not canonical 0444"):
                 operation()
 
     def erase_local_batch(self, candidate, state, remove_operation=False):
-        shutil.rmtree(BATCH.S.folder(candidate))
+        folder = BATCH.S.folder(candidate)
+        for member in folder.rglob("*"):
+            member.chmod(0o755 if member.is_dir() else 0o644)
+        folder.chmod(0o755)
+        shutil.rmtree(folder)
         path = candidate / PAIR.MANIFEST
         value = json.loads(path.read_text(encoding="utf-8"))
         value.update(state=state, draft_batch=None, draft_batch_start=None)
         if remove_operation:
             operation = value.pop("operation", None)
             if operation:
-                (candidate / operation["path"]).unlink()
+                operation_path = candidate / operation["path"]
+                operation_path.chmod(0o644)
+                operation_path.unlink()
             value["operation"] = None
         path.write_text(json.dumps(value), encoding="utf-8")
 
@@ -108,7 +115,9 @@ class DraftBatchLifecycleTests(WriterFixture, unittest.TestCase):
     def test_missing_or_tampered_external_lifecycle_fails_closed(self):
         """OpenSpec requirement: Candidate isolation and atomic promotion."""
         missing = self.candidate("missing-lifecycle")
-        self.lifecycle_path(missing).unlink()
+        missing_anchor = self.lifecycle_path(missing)
+        missing_anchor.chmod(0o644)
+        missing_anchor.unlink()
         with self.assertRaisesRegex(PAIR.PairError, "lifecycle anchor is missing"):
             PAIR.load(missing)
 
@@ -126,9 +135,10 @@ class DraftBatchLifecycleTests(WriterFixture, unittest.TestCase):
         with self.assertRaisesRegex(PAIR.PairError, "tampered"):
             PAIR.load(tampered)
 
-    def test_final_lifecycle_anchor_requires_exact_0444_mode(self):
+    def test_final_lifecycle_anchor_requires_canonical_read_only_mode(self):
         """OpenSpec scenario: Promotion is killed at an atomic boundary."""
-        for mode in (0o644, 0o400, 0o440):
+        modes = (0o666,) if os.name == "nt" else (0o644, 0o400, 0o440)
+        for mode in modes:
             with self.subTest(state="NEVER_STARTED", mode=oct(mode)):
                 never = self.candidate(f"never-mode-{mode:o}")
                 anchor = self.lifecycle_path(never)

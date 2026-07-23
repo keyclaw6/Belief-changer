@@ -109,12 +109,17 @@ class PairRecoveryTests(unittest.TestCase):
         STORE.write(target, b"complete")
         self.assertEqual(b"complete", target.read_bytes())
         target.unlink()
-        stale.symlink_to(experiment / "pair.json")
+        if os.name == "nt":
+            stale.hardlink_to(experiment / "pair.json")
+        else:
+            stale.symlink_to(experiment / "pair.json")
         with self.assertRaisesRegex(STORE.StoreError, "unsafe"):
             STORE.write(target, b"must not follow")
 
     def test_layout_recovery_rejects_unknown_or_unowned_temps(self):
-        cases = ("unknown", "malformed", "self-hashed-malformed", "symlink", "hardlink")
+        cases = ["unknown", "malformed", "self-hashed-malformed", "hardlink"]
+        if os.name != "nt":
+            cases.append("symlink")
         for case in cases:
             with self.subTest(case=case):
                 _, experiment, _, tested, _ = self.fixture(case, False)

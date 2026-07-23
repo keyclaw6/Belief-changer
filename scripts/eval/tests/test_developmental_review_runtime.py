@@ -39,7 +39,10 @@ class DevelopmentalRuntimeTests(DevelopmentalFixture, unittest.TestCase):
         def add_extra():
             extra.write_text("{}", encoding="utf-8")
             extra.chmod(0o444)
-        reject("unexpected file", add_extra, extra.unlink)
+        def remove_extra():
+            extra.chmod(0o666)
+            extra.unlink()
+        reject("unexpected file", add_extra, remove_extra)
 
         empty = root / "empty"
         reject("empty directory", lambda: empty.mkdir(mode=0o555), empty.rmdir)
@@ -54,21 +57,28 @@ class DevelopmentalRuntimeTests(DevelopmentalFixture, unittest.TestCase):
             shutil.rmtree(nested)
         reject("nested directories", add_nested, remove_nested)
 
-        alias = root / "task-alias"
-        reject("file alias", lambda: alias.symlink_to(RUNTIME.task_path(
-            task["task_sha256"])), alias.unlink)
+        if os.name != "nt":
+            alias = root / "task-alias"
+            reject("file alias", lambda: alias.symlink_to(RUNTIME.task_path(
+                task["task_sha256"])), alias.unlink)
 
-        directory_alias = root / "directory-alias"
-        reject("directory alias", lambda: directory_alias.symlink_to(root,
-            target_is_directory=True), directory_alias.unlink)
+            directory_alias = root / "directory-alias"
+            reject("directory alias", lambda: directory_alias.symlink_to(root,
+                target_is_directory=True), directory_alias.unlink)
 
         linked = root / "task-hardlink"
+        def remove_linked():
+            linked.chmod(0o666)
+            linked.unlink()
+            RUNTIME.task_path(task["task_sha256"]).chmod(0o444)
         reject("hard link", lambda: os.link(RUNTIME.task_path(
-            task["task_sha256"]), linked), linked.unlink)
+            task["task_sha256"]), linked), remove_linked)
 
-        for target, mode, canonical in ((root, 0o755, 0o555),
-                (RUNTIME.task_path(task["task_sha256"]), 0o644, 0o444),
-                (RUNTIME.schema_path(task["task_sha256"]), 0o400, 0o444)):
+        cases = [(RUNTIME.task_path(task["task_sha256"]), 0o644, 0o444)]
+        if os.name != "nt":
+            cases.insert(0, (root, 0o755, 0o555))
+            cases.append((RUNTIME.schema_path(task["task_sha256"]), 0o400, 0o444))
+        for target, mode, canonical in cases:
             with self.subTest(target=target.name, mode=oct(mode)):
                 target.chmod(mode)
                 try:

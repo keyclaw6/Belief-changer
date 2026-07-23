@@ -168,11 +168,11 @@ class FramingContractTests(unittest.TestCase):
         (self.book / "research/lived-experience.md").write_text("# Lived\n\n" + units, encoding="utf-8")
         (self.book / "research/scientific-evidence.md").write_text("# Science\n", encoding="utf-8")
         text = framing(title, beliefs)
-        (self.book / "framing.md").write_text(text, encoding="utf-8")
-        (self.book / "framing-review.md").write_text(review(text), encoding="utf-8")
+        (self.book / "framing.md").write_bytes(text.encode("utf-8"))
+        (self.book / "framing-review.md").write_bytes(review(text).encode("utf-8"))
         return text
     def assert_invalid(self, text, message):
-        (self.book / "framing.md").write_text(text, encoding="utf-8")
+        (self.book / "framing.md").write_bytes(text.encode("utf-8"))
         with self.assertRaisesRegex(FC.ContractError, message):
             FC.require_framing_contract(self.book)
     def test_contrasting_subjects_pass_one_generic_contract(self):
@@ -242,10 +242,10 @@ class FramingContractTests(unittest.TestCase):
         self.assertEqual(self.book / "00-brief.md", SC.require_subject_contract(self.book, "framing"))
         with self.assertRaisesRegex(SC.ContractError, "framing not ready"):
             SC.require_subject_contract(self.book, "planning")
-        (self.book / "framing.md").write_text(text.replace(
+        (self.book / "framing.md").write_bytes(text.replace(
             "Entering belief:** RS-01 | The cue can be examined instead of obeyed.",
             "Entering belief:** RS-09 | An unrelated state.", 1,
-        ), encoding="utf-8")
+        ).encode("utf-8"))
         sentinel = self.tmp / "planning-ran"
         result = subprocess.run([
             sys.executable, str(ROOT / "scripts/validate_subject_contract.py"),

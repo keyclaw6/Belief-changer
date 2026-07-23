@@ -21,7 +21,8 @@ class HistoricalControlRecordTests(unittest.TestCase):
         base = ROOT / "calibration/runs/run-012/judgments"
         for relative, expected_hash, expected_passed in CASES:
             with self.subTest(summary=relative):
-                payload = (base / relative / "judge-summary.json").read_bytes()
+                payload = (base / relative / "judge-summary.json").read_text(
+                    encoding="utf-8").encode("utf-8")
                 self.assertEqual(hashlib.sha256(payload).hexdigest(), expected_hash)
                 self.assertIs(json.loads(payload)["prompt_control"]["passed"], expected_passed)
 

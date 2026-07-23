@@ -38,7 +38,8 @@ FORBIDDEN = (
 
 def prompt(role):
     path = JUDGES / V2.ROLE_SPECS[role]["prompt"]
-    return path.read_text(encoding="utf-8"), path.read_bytes()
+    text = path.read_text(encoding="utf-8")
+    return text, text.encode("utf-8")
 
 
 class CriticalTaxonomyPromptTests(unittest.TestCase):

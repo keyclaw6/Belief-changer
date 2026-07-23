@@ -77,9 +77,10 @@ def _evidence(root, assignment, base):
     packets = {}
     for relative in assignment.get("packets", []):
         data = CP.require_member(root, tree / relative, "product", manifest).read_bytes()
-        if audit["bindings"]["evidence"].get(relative) != PS.sha(data):
+        text = data.decode("utf-8").replace("\r\n", "\n")
+        if audit["bindings"]["evidence"].get(relative) != PS.sha(text.encode("utf-8")):
             raise AuthorityError(f"assigned packet hash is stale: {relative}")
-        packets[relative] = data.decode("utf-8")
+        packets[relative] = text
     assigned = assignment.get("authority", {}).get("assigned_evidence", {})
     if not isinstance(assigned, dict) or not assigned:
         raise AuthorityError("chapter assignment has no assigned evidence")

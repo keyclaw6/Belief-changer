@@ -1,5 +1,6 @@
 """Independent QA regressions for the RF-00 legacy-loop guard."""
 import contextlib
+import os
 import sys
 import tempfile
 import unittest
@@ -31,6 +32,13 @@ class GuardQATests(unittest.TestCase):
         path = self.root / name
         path.write_text("outside sentinel\n", encoding="utf-8")
         return path
+    def symlink_or_skip(self, link, target):
+        try:
+            link.symlink_to(target)
+        except OSError as exc:
+            if os.name == "nt" and getattr(exc, "winerror", None) in {50, 1314}:
+                self.skipTest("Windows symlink creation is unavailable")
+            raise
     def writer_patches(self):
         inputs = dict(zip(RUN.WC.INPUT_KEYS, ("contract", "commission", "previous")))
         authority = {"manifest": {"run": {"book": "book", "chapters": [1]}},
@@ -65,7 +73,7 @@ class GuardQATests(unittest.TestCase):
         """OpenSpec scenario: An authorized isolated redesign path is exercised."""
         outside = self.sentinel("outside-chapter.md")
         leaf = self.book / "chapters/chapter-01.md"
-        leaf.symlink_to(outside)
+        self.symlink_or_skip(leaf, outside)
         patches = (
             mock.patch.object(RUN.judges, "endpoint", return_value=("url", "key")),
             mock.patch.object(RUN.ME, "chat", return_value="# Chapter\n" + "word " * 801),
@@ -103,7 +111,7 @@ class GuardQATests(unittest.TestCase):
                "judge_model": "judge", "judge_reasoning": "xhigh"}
         leaf = self.candidate / "tasks/iter-001/judging/tasks/ch1-j1.md"
         leaf.parent.mkdir(parents=True)
-        leaf.symlink_to(outside)
+        self.symlink_or_skip(leaf, outside)
         args = (cfg, [("ch1", "ours", "reference", "context")], "001",
                 "{{REFERENCE}}{{CANDIDATE}}{{CONTEXT}}", self.candidate)
         with mock.patch.object(judges.FB, "require_frozen_batch"), \
@@ -164,7 +172,7 @@ class GuardQATests(unittest.TestCase):
         scores.mkdir()
         outside = self.sentinel("outside-score.json")
         leaf = scores / "iter-001.json"
-        leaf.symlink_to(outside)
+        self.symlink_or_skip(leaf, outside)
         rubric = self.candidate / "rubric.md"
         rubric.write_text("{{REFERENCE}}{{CANDIDATE}}{{CONTEXT}}", encoding="utf-8")
         config = self.candidate / "config.yaml"

@@ -82,7 +82,7 @@ class FirstDraftBatchTests(WriterFixture, unittest.TestCase):
         with self.assertRaisesRegex(GR.GroundedReviewError, "receipt"):
             MANUAL.reviewer(candidate)
         GR.prepare(candidate)
-        self.assertIn("evidence/grounded-review/work/chapter-01",
+        self.assertIn(str(candidate / "evidence/grounded-review/work/chapter-01"),
                       MANUAL.grounded(candidate, [1]))
         pass_review(candidate)
         self.assertIn("prompts/chapter-reviewer.md", MANUAL.reviewer(candidate))

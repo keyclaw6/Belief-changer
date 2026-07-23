@@ -1,5 +1,5 @@
 """RF-00 regressions for the factory-experimentation Legacy loop pause."""
-import ast, contextlib, hashlib, importlib.util, io, sys, tempfile, unittest
+import ast, contextlib, hashlib, importlib.util, io, json, sys, tempfile, unittest
 from pathlib import Path
 from unittest import mock
 ROOT = Path(__file__).resolve().parents[3]
@@ -121,7 +121,7 @@ class LegacyGuardTests(unittest.TestCase):
                 inventory[path.name] = guarded
         self.assertEqual(
             {"developmental_review.py": True, "gate.py": True,
-             "grounded_review.py": True, "hf01_run.py": True,
+             "grounded_review.py": True, "hf01_prepare.py": True, "hf01_run.py": True,
              "run_iteration.py": True, "score.py": True},
             inventory,
         )
@@ -142,7 +142,7 @@ class LegacyGuardTests(unittest.TestCase):
                 "--rf-stage", "RF-21", "--candidate-root", str(wrong)]
         with mock.patch.object(LG, "LEDGER", self.ledger()), \
                 mock.patch.object(sys, "argv", argv), mock.patch.object(HF_RUN, "run") as dispatch:
-            with self.assertRaisesRegex(SystemExit, "candidate-root must equal"): HF_RUN.main()
+            with self.assertRaisesRegex(SystemExit, "candidate root must be exactly"): HF_RUN.main()
         dispatch.assert_not_called()
 
     def test_program_redirects_legacy_recovery_to_the_ledger(self):
@@ -158,7 +158,7 @@ class LegacyGuardTests(unittest.TestCase):
 
     def test_failed_calibration_lineage_remains_terminal_and_product_blocking(self):
         """OpenSpec scenario: A failed calibration lineage remains terminal."""
-        ledger = (ROOT / "calibration/runs/LEDGER.md").read_text()
+        ledger = (ROOT / "calibration/runs/LEDGER.md").read_text(encoding="utf-8")
         rows = [
             line for line in ledger.splitlines()
             if line.startswith("| rf20-attempt-5 |")
@@ -168,13 +168,13 @@ class LegacyGuardTests(unittest.TestCase):
             "newly founder/root-approved hypothesis and control lineage required",
             rows[0],
         )
-        program = (ROOT / "PROGRAM.md").read_text()
+        program = (ROOT / "PROGRAM.md").read_text(encoding="utf-8")
         for required in (
             "RF-20 is `BLOCKED` by a terminal failed lineage",
             "`rf20-attempt-5` row",
         ):
             self.assertIn(required, program)
-        tasks = (ROOT / "openspec/changes/redesign-book-factory/tasks.md").read_text()
+        tasks = (ROOT / "openspec/changes/redesign-book-factory/tasks.md").read_text(encoding="utf-8")
         rf20 = tasks.split("### RF-20", 1)[1].split("### RF-21", 1)[0]
         rf21 = tasks.split("### RF-21", 1)[1].split("### RF-22", 1)[0]
         for required in (
@@ -184,6 +184,8 @@ class LegacyGuardTests(unittest.TestCase):
         ):
             self.assertIn(required, rf20)
         self.assertIn("- Status: `READY`", rf21)
+        self.assertIn("Founder then postponed execution", rf21)
+        self.assertIn("No RF-21 call, arm snapshot, frozen authority, or treatment artifact exists", rf21)
         self.assertNotIn("RF-20.", rf21.split("- Dependencies:", 1)[1].splitlines()[0])
         for rung in ("Stage A", "Stage B", "Stage C", "complete quit-sugar book parity",
                      "untouched caffeine with zero tuning"):
@@ -215,7 +217,7 @@ class LegacyGuardTests(unittest.TestCase):
         candidate, book, config = self.candidate_fixture()
         score = candidate / "scores/iter-001.json"
         score.parent.mkdir()
-        score.write_text(f'{{"book": "{book}"}}', encoding="utf-8")
+        score.write_text(json.dumps({"book": str(book)}), encoding="utf-8")
         common = ["--config", str(config), "--redesign-authorized", "--rf-stage", "RF-23",
                   "--candidate-root", str(candidate), "--rf-dry-run"]
         cases = (
@@ -245,11 +247,6 @@ class LegacyGuardTests(unittest.TestCase):
     def test_ready_stage_still_rejects_accepted_product_and_config(self):
         """OpenSpec scenario: An authorized isolated redesign path is exercised."""
         candidate, _, config = self.candidate_fixture()
-        linked_book = candidate / "linked-product"
-        linked_book.mkdir()
-        (linked_book / "chapters").symlink_to(
-            ROOT / "production-books/quit-sugar/chapters", target_is_directory=True,
-        )
         base = [
             "--iter", "1", "--redesign-authorized", "--rf-stage", "RF-23",
             "--candidate-root", str(candidate), "--rf-dry-run",
@@ -258,7 +255,6 @@ class LegacyGuardTests(unittest.TestCase):
             for target_config, target_book in (
                 (ROOT / "loop/config.yaml", candidate / "product"),
                 (config, ROOT / "production-books/quit-sugar"),
-                (config, linked_book),
             ):
                 argv = ["run_iteration.py", "--book", str(target_book),
                         "--config", str(target_config), *base]
@@ -266,6 +262,24 @@ class LegacyGuardTests(unittest.TestCase):
                     with self.assertRaises(SystemExit) as stopped:
                         RUN.main()
                     self.assertIn("target ", str(stopped.exception))
+            linked_book = candidate / "linked-product"
+            linked_book.mkdir()
+            try:
+                (linked_book / "chapters").symlink_to(
+                    ROOT / "production-books/quit-sugar/chapters", target_is_directory=True,
+                )
+            except OSError as exc:
+                if getattr(exc, "winerror", None) == 1314:
+                    with self.subTest(target=linked_book):
+                        self.skipTest("Windows symlink privilege is unavailable")
+                    return
+                raise
+            argv = ["run_iteration.py", "--book", str(linked_book),
+                    "--config", str(config), *base]
+            with self.subTest(target=linked_book), mock.patch.object(sys, "argv", argv):
+                with self.assertRaises(SystemExit) as stopped:
+                    RUN.main()
+                self.assertIn("target ", str(stopped.exception))
 
     def test_stage_and_rf23_readiness_are_both_required(self):
         """OpenSpec scenario: An authorized isolated redesign path is exercised."""

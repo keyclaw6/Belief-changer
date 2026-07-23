@@ -1,5 +1,5 @@
 """Offline H-F01 blind, chronology, and coordinator-to-gate regressions."""
-import json, shlex, sys, tempfile, unittest
+import json, os, shlex, sys, tempfile, unittest
 from copy import deepcopy
 from pathlib import Path
 from unittest import mock
@@ -90,6 +90,19 @@ def evidence_fixture(root):
 
 
 class Hf01StageTests(unittest.TestCase):
+    @staticmethod
+    def _replace(source, target):
+        target = Path(target)
+        if target.exists() and not target.is_symlink(): target.chmod(0o644)
+        os.replace(source, target)
+    def setUp(self):
+        self.root_guard = mock.patch.object(HF, "require_authorized_root",
+            side_effect=lambda root: Path(root).absolute())
+        self.root_guard.start(); self.addCleanup(self.root_guard.stop)
+        self.sync_patch = mock.patch.object(PS, "_sync", return_value=None)
+        self.sync_patch.start(); self.addCleanup(self.sync_patch.stop)
+        self.replace_patch = mock.patch.object(PS, "_replace_file", side_effect=self._replace)
+        self.replace_patch.start(); self.addCleanup(self.replace_patch.stop)
     def test_final_record_cannot_post_author_preregistered_fields(self):
         frozen = preregistration(); decision = {"decision": "REJECT", "layers": {
             "integrity_hard_gate": {"status": "PASS"}, "blind_chapter_effect": {"status": "FAIL"},
@@ -240,12 +253,13 @@ class Hf01StageTests(unittest.TestCase):
                          (result["state"], product["decision"]))
         self.assertEqual("SUPPORTED", record["decision"])
         command = shlex.split(result["gate_command"])
-        self.assertEqual(("python3", "scripts/loop/gate.py", "7"),
+        self.assertEqual((sys.executable, "scripts/loop/gate.py", "7"),
                          (command[0], command[1], command[command.index("--iter") + 1]))
-        self.assertEqual((TREATMENT, str(root.resolve()), "2026-07-19T13:00:00+00:00"),
+        self.assertEqual((TREATMENT, "2026-07-19T13:00:00+00:00"),
             (command[command.index("--tested-pair-hash") + 1],
-             command[command.index("--accepted-root") + 1],
              command[command.index("--decision-timestamp") + 1]))
+        self.assertTrue(os.path.samefile(
+            command[command.index("--accepted-root") + 1], root))
         self.assertIn("--promote-pair", command); self.assertEqual("007", STAGE.carr_iteration(view["manifest"]))
 
     def test_offline_contract_checks_leave_repo_fixtures_unchanged(self):

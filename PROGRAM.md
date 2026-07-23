@@ -5,8 +5,10 @@
 > reward loop from `loop/results.tsv` or `loop/learnings.md`. Every legacy
 > write-capable entrypoint runs `scripts/loop/legacy_guard.py` before resolving
 > models, networks, configuration, or outputs. Pre-RF-23 work is limited to
-> implementation checks, isolated H-F04 calibration, and authorized RF-21/RF-22
-> planning or commissions inside an RF-02 candidate snapshot.
+> implementation checks and isolated non-prose validation. The reviewed H-F01
+> runtime is `READY` but unstarted: RF-21/RF-22 planning, commissions, snapshots,
+> authority freezes, artifacts, and calls remain prohibited until a later
+> explicit founder start is recorded by moving the named stage to `IN_PROGRESS`.
 
 The loop tests one causal hypothesis through the linked artifacts required to
 instantiate it. It does not optimize one file or one averaged reward.
@@ -21,13 +23,17 @@ calibration material stays outside generation and promotion contexts.
 
 ## 1. Route law
 
-- Claude Opus 4.6, reasoning disabled, writes chapters through OpenRouter.
+- All six H-F01 control/treatment chapter calls use `meta/muse-spark-1.1`
+  through OpenRouter with reasoning `{effort: high}`, temperature `0.7`,
+  `max_tokens: 16000`, and `provider: {allow_fallbacks: false}`. The request
+  omits `models` and `fallbacks` and fails closed on any retry or route change.
 - DeepSeek V4 Pro performs research through OpenRouter at top reasoning.
 - Framing, planning, commissioning, review, evaluation, and audit use fresh native
   agents. GPT‑5.6 Sol and all GPT models NEVER route through OpenRouter; the
   earlier MiniMax writer note is RESCINDED.
-- Missing credited `OPENROUTER_API_KEY` blocks chapter generation, not setup,
-  calibration, planning, commissioning, or record validation.
+- Missing credited `OPENROUTER_API_KEY` blocks chapter generation, not offline
+  setup or record validation. Readiness itself authorizes no provider or native
+  call.
 
 ## 2. One run
 
@@ -68,6 +74,9 @@ variables, input IDs/hashes, the four evidence layers, decision, and falsifier.
 Validate the schema and committed dry run with:
 
 ```
+# Windows
+py -3 -m unittest scripts.eval.tests.test_experiment_record
+# POSIX
 python3 -m unittest scripts.eval.tests.test_experiment_record
 ```
 
@@ -90,13 +99,17 @@ and is not a prerequisite for product calibration.
 
 ## 5. Direct GSBS product-calibration lineage
 
-The founder-authorized H-F01 lineage starts directly with a fresh quit-sugar
-treatment opening compared blindly with exact offset-matched GSBS chapters.
+When later explicitly started by the founder, the H-F01 lineage begins directly
+with a fresh quit-sugar treatment opening compared blindly with exact
+offset-matched GSBS chapters. The reviewed Windows/Muse runtime is currently
+`READY` and unstarted; readiness created no arm snapshot, causal authority,
+treatment artifact, or native/model/provider call.
 The fresh control/treatment pair is separate causal-diagnostic evidence, never a
 GSBS parity claim. One immutable causal authority must exist while both isolated
 arms are still identical, before RF-21's first call, and remain bound through
-RF-25. It does not inherit, continue, or claim a pass from RF-20. RF-21 is ready
-only for an explicit founder start; RF-22 artifacts, RF-23 readiness, credited
+RF-25. It does not inherit, continue, or claim a pass from RF-20. RF-21 requires
+a later explicit founder start recorded as `IN_PROGRESS`; RF-21/RF-22 snapshot
+or dispatch entrypoints reject `READY`. RF-22 artifacts, RF-23 readiness, credited
 chapter-writer credentials, and every later hard and human gate remain blocking.
 The coordinator preserves authority-bound native task/result records; a call with
 only its pre-call marker is ambiguous and must never be replayed.

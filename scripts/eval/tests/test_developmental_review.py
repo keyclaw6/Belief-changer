@@ -1,6 +1,7 @@
 """RF-13 whole-sequence contract, scope, routing, and gate regressions."""
 import json
 import sys
+import tempfile
 import unittest
 from copy import deepcopy
 from pathlib import Path
@@ -88,7 +89,8 @@ class DevelopmentalReviewTests(DevelopmentalFixture, unittest.TestCase):
         self.assertEqual(task, captured["task"])
         self.assertEqual(json.loads(captured["kwargs"]["input"]), task)
         self.assertNotIn(str(candidate), captured["kwargs"]["input"])
-        self.assertTrue(str(captured["kwargs"]["cwd"]).startswith("/tmp/"))
+        self.assertEqual(Path(tempfile.gettempdir()).resolve(),
+                         Path(captured["kwargs"]["cwd"]).resolve().parents[1])
         for feature in ("shell_tool", "unified_exec", "browser_use", "plugins"):
             self.assertIn(feature, captured["command"])
 

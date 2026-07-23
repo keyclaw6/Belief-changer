@@ -52,13 +52,16 @@ class WriterContextTests(WriterFixture, unittest.TestCase):
         eligible.assert_called_once_with(candidate)
         self.assertEqual(2, len(contexts))
         self.assertTrue(all(tuple(value) == WC.INPUT_KEYS for value in contexts))
-        contract = (PAIR.candidate_tree(candidate) / "prompts/chapter-writer.md").read_text()
+        contract = (PAIR.candidate_tree(candidate) /
+                    "prompts/chapter-writer.md").read_text(encoding="utf-8")
         self.assertEqual(contract.replace("[N]", "1").replace("[SLUG]", "test") +
                          WC.API_OUTPUT_CONTRACT, contexts[0]["compact_writer_contract"])
         commission_path = self.book(candidate) / "commissions/chapter-01.md"
-        self.assertEqual(commission_path.read_text(), contexts[0]["authoritative_commission"])
+        self.assertEqual(commission_path.read_text(encoding="utf-8"),
+                         contexts[0]["authoritative_commission"])
         self.assertEqual(WC.NO_PREVIOUS_CHAPTER, contexts[0]["previous_chapter"])
-        first_saved = (self.book(candidate) / "chapters/chapter-01.md").read_text()
+        first_saved = (self.book(candidate) /
+                       "chapters/chapter-01.md").read_text(encoding="utf-8")
         self.assertEqual(first_saved, contexts[1]["previous_chapter"])
         self.assertNotIn("```", first_saved)
         captured = json.dumps(contexts)
@@ -122,7 +125,7 @@ class WriterContextTests(WriterFixture, unittest.TestCase):
 
     def test_contract_and_manual_route_name_no_legacy_writer_context(self):
         """Infra: the authorized writer has one API/manual context contract."""
-        prompt = (ROOT / "prompts/chapter-writer.md").read_text()
+        prompt = (ROOT / "prompts/chapter-writer.md").read_text(encoding="utf-8")
         compact = " ".join(prompt.split())
         for required in ("authoritative semantic commission", "Do not resolve plan IDs",
                          "Scare", "ROUTE REFUSAL:",

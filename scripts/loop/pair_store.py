@@ -18,12 +18,84 @@ def json_bytes(value):
     return (json.dumps(value, indent=2, sort_keys=True) + "\n").encode()
 def state_dir(root):
     return Path(root).absolute() / "loop/accepted"
+
+
 def _sync(path):
-    fd = os.open(path, os.O_RDONLY | getattr(os, "O_DIRECTORY", 0))
+    if os.name != "nt":
+        fd = os.open(path, os.O_RDONLY | getattr(os, "O_DIRECTORY", 0))
+        try:
+            os.fsync(fd)
+        finally:
+            os.close(fd)
+        return
+
+    import ctypes
+    from ctypes import wintypes
+
+    target = safe_dir(path)
+    kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+    kernel.CreateFileW.argtypes = (wintypes.LPCWSTR, wintypes.DWORD,
+                                    wintypes.DWORD, ctypes.c_void_p,
+                                    wintypes.DWORD, wintypes.DWORD,
+                                    wintypes.HANDLE)
+    kernel.CreateFileW.restype = wintypes.HANDLE
+    kernel.FlushFileBuffers.argtypes = (wintypes.HANDLE,)
+    kernel.FlushFileBuffers.restype = wintypes.BOOL
+    kernel.CloseHandle.argtypes = (wintypes.HANDLE,)
+    handle = kernel.CreateFileW(str(target), 0x40000000, 0x00000007, None,
+                                3, 0x02000000 | 0x00200000, None)
+    if handle == wintypes.HANDLE(-1).value:
+        raise OSError(ctypes.get_last_error(), f"cannot open directory for flush: {path}")
     try:
-        os.fsync(fd)
+        if not kernel.FlushFileBuffers(handle):
+            raise OSError(ctypes.get_last_error(), f"cannot flush directory: {path}")
     finally:
-        os.close(fd)
+        kernel.CloseHandle(handle)
+
+
+def _replace_file(source, target):
+    if os.name != "nt" or not os.path.lexists(target):
+        os.replace(source, target)
+        return
+
+    import ctypes
+    from ctypes import wintypes
+
+    class FILE_RENAME_INFO_EX(ctypes.Structure):
+        _fields_ = (("Flags", wintypes.DWORD), ("RootDirectory", wintypes.HANDLE),
+                    ("FileNameLength", wintypes.DWORD), ("FileName", wintypes.WCHAR * 1))
+
+    _safe_file(source, Path(source).parent)
+    _safe_file(target, Path(target).parent)
+    kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+    kernel.CreateFileW.argtypes = (wintypes.LPCWSTR, wintypes.DWORD,
+                                    wintypes.DWORD, ctypes.c_void_p,
+                                    wintypes.DWORD, wintypes.DWORD,
+                                    wintypes.HANDLE)
+    kernel.CreateFileW.restype = wintypes.HANDLE
+    kernel.SetFileInformationByHandle.argtypes = (
+        wintypes.HANDLE, ctypes.c_int, ctypes.c_void_p, wintypes.DWORD)
+    kernel.SetFileInformationByHandle.restype = wintypes.BOOL
+    kernel.CloseHandle.argtypes = (wintypes.HANDLE,)
+    handle = kernel.CreateFileW(str(Path(source)), 0x00010000, 0x00000007,
+                                None, 3, 0, None)
+    if handle == wintypes.HANDLE(-1).value:
+        raise OSError(ctypes.get_last_error(), f"cannot open replacement: {source}")
+    try:
+        name = str(Path(target)).encode("utf-16-le")
+        size = FILE_RENAME_INFO_EX.FileName.offset + len(name) + 2
+        buffer = ctypes.create_string_buffer(size)
+        info = FILE_RENAME_INFO_EX.from_buffer(buffer)
+        info.Flags = 0x00000001 | 0x00000002 | 0x00000040
+        info.RootDirectory = None
+        info.FileNameLength = len(name)
+        ctypes.memmove(ctypes.addressof(buffer) + FILE_RENAME_INFO_EX.FileName.offset,
+                       name, len(name))
+        if not kernel.SetFileInformationByHandle(handle, 22, buffer, size):
+            raise OSError(ctypes.get_last_error(),
+                          f"cannot atomically replace read-only file: {target}")
+    finally:
+        kernel.CloseHandle(handle)
 
 def write(path, data, interrupt=None):
     path = Path(path)
@@ -39,7 +111,7 @@ def write(path, data, interrupt=None):
             handle.flush()
             os.fsync(handle.fileno())
         (interrupt or (lambda _step: None))(f"write-prepared:{path.name}")
-        os.replace(tmp, path)
+        _replace_file(tmp, path)
         _sync(path.parent)
     finally:
         if tmp.exists() or tmp.is_symlink():
@@ -54,6 +126,11 @@ def _safe_file(path, root):
 def safe_dir(path, boundary=None):
     try:
         return PG.safe_dir(path, boundary)
+    except PG.PathError as exc:
+        raise StoreError(str(exc)) from exc
+def ensure_dir(path, boundary=None):
+    try:
+        return PG.ensure_dir(path, boundary)
     except PG.PathError as exc:
         raise StoreError(str(exc)) from exc
 def tree_files(root, boundary=None):
@@ -134,15 +211,29 @@ def current(root, required=True):
         return None, None, None
     safe_dir(store, root)
     pointer = store / "current"
-    if not pointer.is_symlink():
-        if required or os.path.lexists(pointer):
+    if os.name == "nt":
+        if not os.path.lexists(pointer):
+            if required:
+                raise StoreError(f"accepted generation pointer missing or malformed: {pointer}")
+            return None, None, None
+        try:
+            data = _safe_file(pointer, store).read_bytes()
+            generation = data.decode("ascii").removesuffix("\n")
+        except (OSError, UnicodeError, StoreError) as exc:
+            raise StoreError(f"accepted generation pointer missing or malformed: {pointer}") from exc
+        if data != (generation + "\n").encode("ascii"):
             raise StoreError(f"accepted generation pointer missing or malformed: {pointer}")
-        return None, None, None
-    raw = Path(os.readlink(pointer))
-    if raw.is_absolute() or len(raw.parts) != 2 or raw.parts[0] != "generations":
-        raise StoreError(f"accepted generation pointer escapes its store: {raw}")
-    tree, registry = load_registry(root, raw.parts[1])
-    return tree, raw.parts[1], registry
+    else:
+        if not pointer.is_symlink():
+            if required or os.path.lexists(pointer):
+                raise StoreError(f"accepted generation pointer missing or malformed: {pointer}")
+            return None, None, None
+        raw = Path(os.readlink(pointer))
+        if raw.is_absolute() or len(raw.parts) != 2 or raw.parts[0] != "generations":
+            raise StoreError(f"accepted generation pointer escapes its store: {raw}")
+        generation = raw.parts[1]
+    tree, registry = load_registry(root, generation)
+    return tree, generation, registry
 
 def _copy_tree(target, source, entries):
     for item in entries:
@@ -157,14 +248,16 @@ def _write_registry(root, generation, pair_hash, eval_hash, entries, evaluation)
 
 def materialize(root, generation, entries, evaluation, pair_source, eval_source):
     """Create a complete hidden generation; never changes current visibility."""
-    store = state_dir(root)
+    root, store = Path(root).absolute(), state_dir(root)
     safe_dir(root)
-    safe_dir(Path(root) / "loop", root)
-    if os.path.lexists(store):
-        safe_dir(store, root)
-    (store / "generations").mkdir(parents=True, exist_ok=True)
-    (store / "manifests").mkdir(exist_ok=True)
-    target = store / "generations" / generation
+    safe_dir(root / "loop", root)
+    store = ensure_dir(store, root)
+    children = (store / "generations", store / "manifests")
+    for child in children:
+        if os.path.lexists(child):
+            safe_dir(child, store)
+    generations, _manifests = (ensure_dir(child, store) for child in children)
+    target = generations / generation
     if target.exists():
         if target.is_symlink():
             raise StoreError(f"accepted generation is aliased: {target}")
@@ -203,11 +296,26 @@ def switch(root, generation, interrupt=None):
     pointer, tmp = store / "current", store / ".current.rf02-tmp"
     expected = Path("generations") / generation
     if os.path.lexists(tmp):
-        if not tmp.is_symlink() or Path(os.readlink(tmp)) != expected:
+        if os.name == "nt":
+            try:
+                valid = (_safe_file(tmp, store).read_bytes()
+                         == (generation + "\n").encode("ascii"))
+            except (OSError, StoreError):
+                valid = False
+        else:
+            valid = tmp.is_symlink() and Path(os.readlink(tmp)) == expected
+        if not valid:
             raise StoreError(f"stale pointer staging path is invalid: {tmp}")
         tmp.unlink()
     boundary = interrupt or (lambda _step: None)
-    tmp.symlink_to(expected)
+    if os.name == "nt":
+        with tmp.open("xb") as handle:
+            handle.write((generation + "\n").encode("ascii"))
+            handle.flush()
+            os.fsync(handle.fileno())
+        _safe_file(tmp, store)
+    else:
+        tmp.symlink_to(expected)
     try:
         _sync(store)
         boundary("pointer-prepared")

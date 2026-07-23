@@ -9,6 +9,7 @@ from unittest import mock
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "scripts/loop"))
 import candidate_pair as PAIR  # noqa: E402
+import pair_store as STORE  # noqa: E402
 
 
 class PairPreflightTests(unittest.TestCase):
@@ -48,7 +49,12 @@ class PairPreflightTests(unittest.TestCase):
         for path in research.iterdir():
             path.unlink()
         research.rmdir()
-        research.symlink_to(outside, target_is_directory=True)
+        try:
+            research.symlink_to(outside, target_is_directory=True)
+        except OSError as exc:
+            if os.name == "nt" and getattr(exc, "winerror", None) in (50, 1314):
+                self.skipTest(f"directory symlinks unavailable: {exc}")
+            raise
         original, outside_reads = Path.open, []
 
         def spy(path, *args, **kwargs):
@@ -74,6 +80,7 @@ class PairPreflightTests(unittest.TestCase):
             with self.assertRaisesRegex(PAIR.PairError, "multiply linked"):
                 PAIR.initialize(accepted, "production-books/test")
 
+    @unittest.skipUnless(hasattr(os, "mkfifo"), "os.mkfifo unavailable on this platform")
     def test_special_prompt_fails_before_parser(self):
         accepted = self.fixture("special")
         special = accepted / "prompts/device"
@@ -81,6 +88,30 @@ class PairPreflightTests(unittest.TestCase):
         with mock.patch.object(PAIR.PC.loopcfg, "load", side_effect=AssertionError("parsed")):
             with self.assertRaisesRegex(PAIR.PairError, "special"):
                 PAIR.initialize(accepted, "production-books/test")
+
+    def test_store_child_directories_fail_closed_before_sibling_creation(self):
+        accepted = self.fixture("store-child")
+        store = STORE.state_dir(accepted)
+        store.mkdir()
+        manifests = store / "manifests"
+        manifests.write_text("not a directory\n", encoding="utf-8")
+        with self.assertRaisesRegex(STORE.StoreError, "not a directory"):
+            STORE.materialize(accepted, "0" * 64, [], [], self.root, self.root)
+        self.assertFalse((store / "generations").exists())
+
+    def test_aliased_store_child_fails_before_other_child_creation(self):
+        accepted = self.fixture("store-child-alias")
+        store = STORE.state_dir(accepted)
+        store.mkdir()
+        outside = self.root / "outside-generations"
+        outside.mkdir()
+        try:
+            (store / "generations").symlink_to(outside, target_is_directory=True)
+        except OSError as exc:
+            self.skipTest(f"directory symlinks unavailable: {exc}")
+        with self.assertRaisesRegex(STORE.StoreError, "aliased"):
+            STORE.materialize(accepted, "0" * 64, [], [], self.root, self.root)
+        self.assertFalse((store / "manifests").exists())
 
 
 if __name__ == "__main__":

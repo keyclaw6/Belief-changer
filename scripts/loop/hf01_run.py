@@ -14,6 +14,7 @@ import legacy_guard as LG  # noqa: E402
 import pair_store as PS  # noqa: E402
 import path_guard as PG  # noqa: E402
 import writer_context as WC  # noqa: E402
+import immutable_file as IF  # noqa: E402
 FOLDER = STAGE.FOLDER
 NO_PREVIOUS = "ABSENT — Chapter 1 has no previous chapter."
 class RunError(RuntimeError): pass
@@ -22,13 +23,9 @@ def _read(path, boundary):
     except (PG.PathError, OSError) as exc: raise RunError(str(exc)) from exc
 def _write_once(path, data, root, authority):
     HF.validate_execution_authority(root, authority)
-    if os.path.lexists(path): raise RunError(f"immutable H-F01 evidence already exists: {path}")
     try:
-        with path.open("xb") as handle:
-            handle.write(data); handle.flush(); os.fchmod(handle.fileno(), 0o444)
-            os.fsync(handle.fileno())
-        PS._sync(path.parent)
-    except OSError as exc: raise RunError(f"H-F01 evidence write failed: {exc}") from exc
+        IF.write_once(path, data, lambda item: _read(item, item.parent), "H-F01 evidence")
+    except IF.ImmutableFileError as exc: raise RunError(str(exc)) from exc
 def _authority(root, timestamp):
     folder, path = root / FOLDER, root / FOLDER / "authority.json"
     if os.path.lexists(folder):
@@ -77,51 +74,110 @@ def _prompt(root, arm, number, previous):
     sections += (("target_and_output_instruction", _target(number)),
                  ("immediately_previous_arm_chapter", previous))
     return "".join(f"===== {name} =====\n{value.rstrip()}\n\n" for name, value in sections)
+WRITER_SETTINGS = {"model": HF.MODEL, "reasoning": {"effort": "high"},
+                   "temperature": 0.7, "max_tokens": 16000,
+                   "provider": {"allow_fallbacks": False}}
 def _payload(prompt):
     return {"model": HF.MODEL, "messages": [{"role": "user", "content": prompt}],
-            "reasoning": {"effort": "none"}, "temperature": 0.7,
-            "max_tokens": 16000}
+            "reasoning": {"effort": "high"}, "temperature": 0.7,
+            "max_tokens": 16000, "provider": {"allow_fallbacks": False}}
 def _post(payload):
     key = os.environ.get("OPENROUTER_API_KEY", "").strip()
     if not key: raise RunError("OPENROUTER_API_KEY is missing")
     request = urllib.request.Request(
         HF.URL, data=json.dumps(payload, separators=(",", ":")).encode(), method="POST",
-        headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"})
+        headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json",
+                 "X-OpenRouter-Metadata": "enabled"})
     with urllib.request.urlopen(request, timeout=600) as response: return response.read()
 def _credit_check(open_url=urllib.request.urlopen):
-    """Validate the named key and positive remaining credit without sending content."""
-    key = os.environ.get("OPENROUTER_API_KEY", "").strip()
-    if not key: raise RunError("OPENROUTER_API_KEY is missing")
-    request = urllib.request.Request(
-        HF.KEY_URL, method="GET", headers={"Authorization": f"Bearer {key}"})
     try:
-        with open_url(request, timeout=30) as response: value = json.loads(response.read())
-        data = value["data"]
-        remaining = data.get("limit_remaining")
-        if remaining is None:
-            return {"method": "GET", "url": HF.KEY_URL,
-                    "remaining_credit": "unlimited"}
-        if isinstance(remaining, bool) or not isinstance(remaining, (int, float)) \
-                or remaining <= 0:
-            raise RunError("OPENROUTER_API_KEY has no verified remaining credit")
-        return {"method": "GET", "url": HF.KEY_URL, "remaining_credit": remaining}
-    except RunError:
-        raise
-    except Exception as exc:
-        raise RunError(f"OPENROUTER_API_KEY credit check failed: {exc}") from exc
-def _upstream(root, authority, authority_sha, native):
+        return HF.authenticated_preflight(open_url=open_url)
+    except HF.PreflightError as exc: raise RunError(str(exc)) from exc
+def _authenticated_preflight(root, authority, authority_sha, check, location_check=None):
+    path = Path(root) / FOLDER / "openrouter-preflight.json"
+    expected_location = {"source": HF.LOCATION_URL, "country_code": "US"}
+    if os.path.lexists(path):
+        try: value = json.loads(_read(path, path.parent))
+        except (UnicodeError, json.JSONDecodeError) as exc: raise RunError(f"invalid frozen OpenRouter preflight: {exc}") from exc
+        if value.get("schema") != 1 or value.get("authority_sha256") != authority_sha \
+                or value.get("model") != HF.MODEL or value.get("canonical_model") != HF.CANONICAL_MODEL \
+                or value.get("current_request_location") != expected_location:
+            raise RunError("frozen OpenRouter preflight binding is stale")
+        try: current = (location_check or HF.current_location)()
+        except HF.PreflightError as exc: raise RunError(str(exc)) from exc
+        if current != value["current_request_location"]:
+            raise RunError("current OpenRouter edge location differs from frozen US proof")
+        return value
+    result = check()
+    if not isinstance(result, dict) or result.get("model") != HF.MODEL \
+            or result.get("canonical_model") != HF.CANONICAL_MODEL \
+            or result.get("current_request_location") != expected_location:
+        raise RunError("authenticated OpenRouter preflight returned no valid route proof")
+    value = {"schema": 1, "authority_sha256": authority_sha, **result}
+    _write_once(path, PS.json_bytes(value), root, authority)
+    return value
+def _upstream(root, authority, authority_sha, native, dispatch_stage=None):
     try:
-        return (UP.dispatch if native else UP.verify)(root, authority, authority_sha)
+        if dispatch_stage in ("RF-21", "RF-22"):
+            HF.require_stage(authority, dispatch_stage)
+            return UP.dispatch_stage(root, authority, authority_sha, dispatch_stage), dispatch_stage
+        return UP.verify(root, authority, authority_sha), None
     except UP.UpstreamPending as exc:
-        raise STAGE.StagePending("rf21-rf22-authority-bound-native-tasks",
-            [authority["next_command"] + " --native"], authority["next_command"]) from exc
+        missing = "RF-21" if exc.path.name == UP.RF21_PATH else "RF-22"
+        command = HF.resume_command(authority, stage=missing, native=True)
+        raise STAGE.StagePending(f"{missing.lower()}-authority-bound-native-tasks",
+            [command], HF.resume_command(authority, stage=missing)) from exc
     except UP.UpstreamError as exc: raise RunError(str(exc)) from exc
-def _reply(payload, number):
+def _proof_folder(root):
+    return HF.arm_paths(root)["treatment"]["experiment"] / "evidence/hf01/writer-route"
+def _route_proof(root, authority, authority_sha, arm, number, payload, response, text):
+    metadata, response_model = response.get("openrouter_metadata"), response.get("model")
+    if not isinstance(metadata, dict): raise RunError("H-F01 response lacks OpenRouter route metadata")
+    endpoints, attempts = metadata.get("endpoints"), metadata.get("attempts")
+    attempts_present = "attempts" in metadata
+    available = endpoints.get("available") if isinstance(endpoints, dict) else None
+    selected = [item for item in available or () if isinstance(item, dict) and item.get("selected") is True]
+    attempts_valid = not attempts_present or (
+        isinstance(attempts, list) and len(attempts) == 1
+        and isinstance(attempts[0], dict)
+        and attempts[0].get("provider") == "Meta"
+        and attempts[0].get("model") == HF.CANONICAL_MODEL
+        and attempts[0].get("status") == 200)
+    if metadata.get("requested") != HF.MODEL or metadata.get("strategy") != "direct" \
+            or metadata.get("attempt") != 1 or not isinstance(endpoints, dict) \
+            or endpoints.get("total") != 1 or not isinstance(available, list) or len(available) != 1 \
+            or len(selected) != 1 or selected[0].get("provider") != "Meta" \
+            or selected[0].get("model") != HF.CANONICAL_MODEL \
+            or not attempts_valid \
+            or response_model != HF.CANONICAL_MODEL:
+        raise RunError("H-F01 response proves fallback, retry, or noncanonical routing")
+    if "models" in payload or "fallbacks" in payload or any(payload.get(key) != value for key, value in WRITER_SETTINGS.items()):
+        raise RunError("H-F01 writer request settings are not exact")
+    folder = _proof_folder(root)
+    if os.path.lexists(folder):
+        try: existing = list(PG.files(folder, HF.arm_paths(root)["treatment"]["experiment"]))
+        except PG.PathError as exc: raise RunError(str(exc)) from exc
+        if len(existing) >= 6: raise RunError("H-F01 seventh writer call is forbidden")
+    else:
+        PG.ensure_dir(folder)
+    chapter = FB.S.clean_response(text.encode("utf-8"))
+    route_metadata = {key: metadata[key] for key in
+        ("requested", "strategy", "attempt", "endpoints")}
+    if attempts_present: route_metadata["attempts"] = attempts
+    body = {"schema": 1, "authority_sha256": authority_sha, "arm": arm,
+        "chapter": number, "request_sha256": PS.state_hash(payload),
+        "requested_model": HF.MODEL, "response_model": response_model,
+        "provider": selected[0]["provider"], "chapter_sha256": PS.sha(chapter),
+        "openrouter_metadata": route_metadata}
+    path = folder / f"{arm}-chapter-{number:02d}.json"
+    _write_once(path, PS.json_bytes(body), root, authority)
+    return text
+def _reply(payload, arm, number, root, authority, authority_sha):
     try:
         value = json.loads(_post(payload))
         text = value["choices"][0]["message"]["content"]
         if not isinstance(text, str): raise TypeError("content is not text")
-        return text
+        return _route_proof(root, authority, authority_sha, arm, number, payload, value, text)
     except (UnicodeError, json.JSONDecodeError, KeyError, IndexError, TypeError) as exc:
         raise RunError(f"H-F01 response for chapter {number} is invalid: {exc}") from exc
 def _require_arm_authority(root, arm, manifest):
@@ -167,7 +223,8 @@ def _generate_arm(root, authority, authority_sha, arm, ensure_credit):
             "draft_batch_start_sha256": batch["start_sha256"], "payload": payload}
         try:
             FB.durable_call(experiment, number, request,
-                            lambda p=payload, n=number: _reply(p, n))
+                            lambda p=payload, a=arm, n=number: _reply(
+                                p, a, n, root, authority, authority_sha))
             HF.validate_execution_authority(root, authority)
             FB.accept_response(experiment, number)
         except FB.BatchError as exc:
@@ -175,11 +232,15 @@ def _generate_arm(root, authority, authority_sha, arm, ensure_credit):
 
 
 def verify_frozen(root, authority=None):
-    root, folder = Path(root).absolute(), Path(root).absolute() / FOLDER
+    root = HF.require_authorized_root(root); folder = root / FOLDER
     if authority is None: authority = json.loads(_read(folder / "authority.json", folder))
     HF.validate_execution_authority(root, authority, key_present=True)
     authority_sha = PS.sha(_read(folder / "authority.json", folder))
     arms = {}
+    proof_folder = _proof_folder(root)
+    try: proof_paths = list(PG.files(proof_folder, HF.arm_paths(root)["treatment"]["experiment"]))
+    except PG.PathError as exc: raise RunError(str(exc)) from exc
+    if len(proof_paths) != 6: raise RunError("H-F01 requires exactly six writer route proofs")
     for arm, paths in HF.arm_paths(root).items():
         try: receipt = FB.require_frozen_batch(paths["experiment"])
         except FB.BatchError as exc: raise RunError(f"H-F01 {arm} batch is not frozen: {exc}") from exc
@@ -193,6 +254,17 @@ def verify_frozen(root, authority=None):
                 "draft_batch_start_sha256": batch["start_sha256"],
                 "payload": _payload(_prompt(root, arm, number, previous))}
             expected.append(PS.state_hash(request))
+            proof_path = proof_folder / f"{arm}-chapter-{number:02d}.json"
+            try: proof = json.loads(_read(proof_path, proof_folder))
+            except (UnicodeError, json.JSONDecodeError) as exc: raise RunError(f"invalid writer route proof: {exc}") from exc
+            chapter = _read(paths["book"] / f"chapters/chapter-{number:02d}.md", root)
+            if proof.get("authority_sha256") != authority_sha or proof.get("arm") != arm \
+                    or proof.get("chapter") != number \
+                    or proof.get("request_sha256") != PS.state_hash(request["payload"]) \
+                    or proof.get("requested_model") != HF.MODEL \
+                    or proof.get("response_model") != HF.CANONICAL_MODEL \
+                    or proof.get("provider") != "Meta" or proof.get("chapter_sha256") != PS.sha(chapter):
+                raise RunError(f"H-F01 {arm} chapter {number} route proof is stale")
         if batch.get("authority_sha256") != authority_sha \
                 or any(item["authority_sha256"] != batch["start_sha256"] for item in responses) \
                 or [item["request_sha256"] for item in responses] != expected:
@@ -207,12 +279,27 @@ def verify_frozen(root, authority=None):
 
 
 def run(snapshot_root, credit_check=_credit_check, native=False,
-        authority_timestamp=None, decision_timestamp=None, promote_pair=False):
-    root = Path(snapshot_root).absolute()
+        authority_timestamp=None, decision_timestamp=None, promote_pair=False,
+        upstream_stage=None, location_check=None):
+    root = HF.require_authorized_root(snapshot_root)
     _, authority, authority_sha = _authority(root, authority_timestamp)
-    upstream_sha = _upstream(root, authority, authority_sha, native)
+    upstream_sha, completed_stage = _upstream(
+        root, authority, authority_sha, native, upstream_stage)
+    if completed_stage is not None:
+        return {"schema": 1, "experiment": "H-F01",
+            "state": f"{completed_stage.replace('-', '')}_COMPLETE_PAUSED",
+            "authority_sha256": authority_sha, "upstream_receipt_sha256": upstream_sha,
+            "automatic_stop": completed_stage,
+            "next_command": HF.resume_command(authority,
+                stage="RF-22" if completed_stage == "RF-21" else "RF-23")}
     HF.require_stage(authority, "RF-23")
-    checked = False
+    checked = all(CP.load(paths["experiment"])["state"] in ("BATCH_FROZEN", "SEALED")
+                  for paths in HF.arm_paths(root).values())
+    preflight_path = root / FOLDER / "openrouter-preflight.json"
+    if os.path.lexists(preflight_path) or not checked:
+        _authenticated_preflight(root, authority, authority_sha, credit_check,
+                                 location_check)
+        checked = True
     def ensure_credit():
         nonlocal checked
         if not checked: credit_check(); checked = True
@@ -237,14 +324,18 @@ def main():
                         help="dispatch pending native RF21/RF22 and review calls")
     LG.add_arguments(parser)
     args = parser.parse_args()
-    candidate = LG.require_authorized(args, entrypoint="hf01_run", pre_rf23_stage="RF-21")
+    pre_stage = args.rf_stage if args.rf_stage in ("RF-21", "RF-22") else None
+    candidate = LG.require_authorized(args, entrypoint="hf01_run", pre_rf23_stage=pre_stage,
+        exact_candidate=HF.AUTHORIZED_ROOT / "loop/experiments",
+        require_in_progress=pre_stage is not None)
     if candidate != Path(args.snapshot_root).absolute() / "loop/experiments":
         raise SystemExit("RF-00 legacy guard: --candidate-root must equal "
                          "<snapshot-root>/loop/experiments")
     if LG.dry_run(args, "hf01_run"): return
     try: result = run(args.snapshot_root, native=args.native,
         authority_timestamp=args.authority_timestamp,
-        decision_timestamp=args.decision_timestamp, promote_pair=args.promote_pair)
+        decision_timestamp=args.decision_timestamp, promote_pair=args.promote_pair,
+        upstream_stage=args.rf_stage if args.native and args.rf_stage in ("RF-21", "RF-22") else None)
     except STAGE.StagePending as exc:
         for command in exc.commands: print(f"[H-F01] dispatch: {command}")
         print(f"[H-F01] resume: {exc.resume}")

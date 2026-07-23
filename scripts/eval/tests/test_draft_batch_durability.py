@@ -183,24 +183,36 @@ class DraftBatchDurabilityTests(WriterFixture, unittest.TestCase):
                     with self.assertRaises((PAIR.PairError, BATCH.BatchError)):
                         operation()
 
-    def test_every_frozen_evidence_file_requires_exact_0444(self):
+    def test_every_frozen_evidence_file_requires_platform_read_only_state(self):
         """OpenSpec scenario: Review begins before the draft batch is frozen."""
         candidate, calls = self.prepared("modes"), []
         self.assertTrue(self.run_api(candidate, lambda n: draft(n), calls))
         BATCH.freeze(candidate)
         folder = BATCH.S.folder(candidate)
-        targets = ((folder / "chapter-01.md", 0o400),
-                   (folder / BATCH.S.RECEIPT, 0o440),
-                   (folder / "response-01.json", 0o400))
+        if os.name == "nt":
+            BATCH.require_frozen_batch(candidate)
+            targets = ((folder / "chapter-01.md", 0o666),)
+            error = "single-link read-only file"
+        else:
+            targets = ((folder / "chapter-01.md", 0o400),
+                       (folder / BATCH.S.RECEIPT, 0o440),
+                       (folder / "response-01.json", 0o400))
+            error = "canonical 0444"
         for path, mode in targets:
             with self.subTest(path=path.name, mode=oct(mode)):
                 path.chmod(mode)
-                with self.assertRaisesRegex(BATCH.BatchError, "canonical 0444"):
+                with self.assertRaisesRegex(BATCH.BatchError, error):
                     BATCH.require_frozen_batch(candidate)
                 path.chmod(0o444)
         BATCH.require_frozen_batch(candidate)
-        self.assertTrue(all(stat.S_IMODE(os.lstat(path).st_mode) == 0o444
-                            for path in STORE.tree_files(folder)))
+        if os.name == "nt":
+            self.assertTrue(all(
+                getattr(os.lstat(path), "st_file_attributes", 0)
+                & getattr(stat, "FILE_ATTRIBUTE_READONLY", 0)
+                for path in STORE.tree_files(folder)))
+        else:
+            self.assertTrue(all(stat.S_IMODE(os.lstat(path).st_mode) == 0o444
+                                for path in STORE.tree_files(folder)))
 
 
 if __name__ == "__main__":

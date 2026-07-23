@@ -1,10 +1,12 @@
 """Shared RF-13 semantic sequence and proven native-result helpers."""
 import json
+import os
 from unittest import mock
 
 import developmental_review as DEV
 import grounded_review as GROUNDED
 import native_developmental_review as NATIVE
+import pair_store as STORE
 from grounded_review_fixture import (GroundedFixture, proven_runner as grounded_runner,
                                      verdict as grounded_verdict)
 from developmental_commission_fixture import (assignments as commission_assignments,
@@ -246,6 +248,10 @@ class DevelopmentalFixture(GroundedFixture):
     selection = (1, 2, 3)
 
     def setUp(self):
+        if os.name == "nt":
+            sync = mock.patch.object(STORE, "_sync", return_value=None)
+            sync.start()
+            self.addCleanup(sync.stop)
         super().setUp()
         self.assignments = commission_assignments()
 

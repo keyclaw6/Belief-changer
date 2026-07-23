@@ -1,5 +1,5 @@
 """Offline crash-boundary checks for H-F01 blind native calls."""
-import json, sys, tempfile, unittest
+import json, os, sys, tempfile, unittest
 from pathlib import Path
 from unittest import mock
 
@@ -14,8 +14,19 @@ AUTHORITY = "a" * 64
 PAIR = "b" * 64
 
 class BlindResumeTests(unittest.TestCase):
+    @staticmethod
+    def _replace(source, target):
+        target = Path(target)
+        if target.exists() and not target.is_symlink(): target.chmod(0o644)
+        os.replace(source, target)
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory(); self.addCleanup(self.tmp.cleanup)
+        self.root_patch = mock.patch.object(BLIND.HF, "AUTHORIZED_ROOT", Path(self.tmp.name))
+        self.root_patch.start(); self.addCleanup(self.root_patch.stop)
+        self.sync_patch = mock.patch.object(PS, "_sync", return_value=None)
+        self.sync_patch.start(); self.addCleanup(self.sync_patch.stop)
+        self.replace_patch = mock.patch.object(PS, "_replace_file", side_effect=self._replace)
+        self.replace_patch.start(); self.addCleanup(self.replace_patch.stop)
         self.base = BLIND.folder(self.tmp.name)
         task = BLIND.ABS.chapter("sugar", "one treatment chapter")
         self.row = {"key": "treatment-chapter-01", "identity": "hf01-absolute-treatment-01",
@@ -37,7 +48,9 @@ class BlindResumeTests(unittest.TestCase):
     def assert_guarded(self, writer, error):
         with tempfile.TemporaryDirectory(dir=self.tmp.name) as temp:
             root, outside = Path(temp) / "evidence", Path(temp) / "outside"
-            root.mkdir(); outside.mkdir(); (root / "alias").symlink_to(outside, target_is_directory=True)
+            root.mkdir(); outside.mkdir()
+            try: (root / "alias").symlink_to(outside, target_is_directory=True)
+            except OSError as exc: self.skipTest(f"symlink privilege unavailable: {exc}")
             with self.assertRaises(error): writer(root / "alias/record.json")
             self.assertFalse((outside / "record.json").exists())
             sentinel = outside / "sentinel.json"; sentinel.write_bytes(b"outside")

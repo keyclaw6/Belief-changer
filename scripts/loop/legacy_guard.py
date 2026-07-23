@@ -78,29 +78,39 @@ def _overlaps(left, right):
     return _inside(left, right) or _inside(right, left)
 
 
-def require_authorized(args, *, entrypoint, pre_rf23_stage=None):
+def require_authorized(args, *, entrypoint, pre_rf23_stage=None,
+                       exact_candidate=None, allow_accepted_overlap=False,
+                       require_in_progress=False):
     """Reject before config, endpoint, network, or write resolution."""
     if not args.redesign_authorized:
         _stop(f"{entrypoint} is paused; explicit redesign authorization is required")
     stage = (args.rf_stage or "").upper()
     if not re.fullmatch(r"RF-\d{2}", stage):
         _stop("--rf-stage must name one RF-NN ledger item")
+    if not args.candidate_root:
+        _stop("--candidate-root is required")
+    candidate = PG.absolute(args.candidate_root)
+    if exact_candidate is not None and candidate != PG.absolute(exact_candidate):
+        _stop(f"candidate root must be exactly {PG.absolute(exact_candidate)}")
     statuses = _statuses()
-    if statuses.get(stage) not in READY:
-        _stop(f"{stage} is {statuses.get(stage, 'MISSING')}, not READY")
+    status = statuses.get(stage, "MISSING")
+    allowed = {"IN_PROGRESS"} if require_in_progress else READY
+    expected = "IN_PROGRESS" if require_in_progress else "READY"
+    if status not in allowed:
+        _stop(f"{stage} is {status}, not {expected}")
     if pre_rf23_stage is not None and stage != pre_rf23_stage:
         _stop(f"this non-prose operation requires {pre_rf23_stage} authorization")
     if pre_rf23_stage is None and statuses.get("RF-23") not in READY:
         _stop(f"legacy execution requires RF-23 READY (found {statuses.get('RF-23', 'MISSING')})")
-    if not args.candidate_root:
-        _stop("--candidate-root is required")
-    candidate = PG.absolute(args.candidate_root)
     try:
         PG.safe_dir(candidate)
     except PG.PathError as exc:
         _stop(f"candidate root is unsafe: {exc}")
     for accepted in _ACCEPTED:
         if _overlaps(candidate, accepted.absolute()):
+            if allow_accepted_overlap and exact_candidate is not None \
+                    and candidate == PG.absolute(exact_candidate):
+                continue
             _stop(f"candidate root overlaps accepted production/configuration: {accepted}")
     return candidate
 
@@ -127,9 +137,9 @@ def require_output(candidate, target):
     current = candidate
     for part in path.relative_to(candidate).parts:
         current /= part
-        if current.is_symlink():
-            _stop(f"target contains a symlink: {current}")
-    if not _inside(path.resolve(), candidate):
+        if os.path.lexists(current) and PG.aliased(os.lstat(current)):
+            _stop(f"target contains a symlink or reparse alias: {current}")
+    if not _inside(path.resolve(), candidate.resolve()):
         _stop(f"target escapes candidate root: {path.resolve()}")
     if path.is_file() and path.stat().st_nlink > 1:
         _stop(f"target is a multiply linked file: {path}")

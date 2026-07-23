@@ -166,10 +166,28 @@ class CandidatePairTests(unittest.TestCase):
                 else:
                     self.assertEqual((None, None, None), STORE.current(accepted, required=False))
                     if stop == "generation-ready":
-                        next((STORE.state_dir(accepted) / "manifests").iterdir()).unlink()
+                        registry = next((STORE.state_dir(accepted) / "manifests").iterdir())
+                        registry.chmod(0o666)
+                        registry.unlink()
                     PAIR.initialize(accepted, "production-books/test")
                     self.assertIsNotNone(STORE.current(accepted)[0])
                     self.assertEqual(before, self.bootstrap_state(accepted))
+
+    def test_current_pointer_is_native_atomic_and_directory_flush_succeeds(self):
+        """OpenSpec scenario: The accepted-generation store is initialized."""
+        accepted, _, _, _ = self.fixture("native-pointer", True, False)
+        store = STORE.state_dir(accepted)
+        generation = STORE.current(accepted)[1]
+        pointer = store / "current"
+        STORE._sync(store)
+        if os.name == "nt":
+            self.assertTrue(pointer.is_file())
+            self.assertFalse(pointer.is_symlink())
+            self.assertEqual((generation + "\n").encode("ascii"), pointer.read_bytes())
+        else:
+            self.assertTrue(pointer.is_symlink())
+            self.assertEqual(Path("generations") / generation,
+                             Path(os.readlink(pointer)))
 
     def test_snapshot_pins_one_generation_and_corrupt_metadata_fails(self):
         accepted, first, manifest, _ = self.fixture("pin")

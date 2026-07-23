@@ -51,7 +51,8 @@ class NativeTransportTests(unittest.TestCase):
 
         cmd, kwargs, mode, schema_mode, written_schema = calls[0]
         self.assertEqual(cmd[:11], [
-            "codex", "exec", "--ephemeral", "--ignore-user-config", "--ignore-rules",
+            "codex.cmd" if os.name == "nt" else "codex", "exec", "--ephemeral",
+            "--ignore-user-config", "--ignore-rules",
             "--disable", "multi_agent", "--model", "gpt-5.6-sol",
             "-c", "model_reasoning_effort=ultra"])
         self.assertIn(["--sandbox", "read-only"], [cmd[i:i + 2] for i in range(len(cmd) - 1)])
@@ -59,17 +60,24 @@ class NativeTransportTests(unittest.TestCase):
         self.assertIn("--output-schema", cmd)
         self.assertNotIn("max_output_tokens", " ".join(cmd))
         self.assertEqual(kwargs["input"], "frozen input")
-        self.assertTrue(kwargs["cwd"].startswith("/tmp/belief-changer-judge-"))
+        self.assertEqual(Path(tempfile.gettempdir()).resolve(),
+                         Path(kwargs["cwd"]).resolve().parent)
+        self.assertTrue(Path(kwargs["cwd"]).name.startswith("belief-changer-judge-"))
         self.assertEqual(mode & 0o222, 0)
         self.assertEqual(schema_mode & 0o222, 0)
         self.assertEqual(written_schema, TRANSPORT_SCHEMA)
         self.assertTrue(all(name not in kwargs["env"] for name in secrets))
         self.assertTrue(set(kwargs["env"]).issubset(N.NATIVE_ENV_ALLOWLIST))
+        if os.name == "nt":
+            self.assertTrue({"SYSTEMROOT", "WINDIR", "COMSPEC", "PATHEXT",
+                             "SYSTEMDRIVE", "USERPROFILE", "APPDATA", "LOCALAPPDATA",
+                             "PROGRAMDATA"} <= set(N.NATIVE_ENV_ALLOWLIST))
         self.assertEqual(raw, '{"answer": 1}')
         self.assertIsNone(error)
         self.assertEqual(transport["output_limit"], "none set by harness")
         self.assertIn("no provider API keys", transport["environment_policy"])
-        self.assertIn("<isolated-tmp>/judge-output-schema.json", transport["command"])
+        self.assertIn(str(Path("<isolated-tmp>") / "judge-output-schema.json"),
+                      transport["command"])
         self.assertEqual(transport["event_stream"], event_stream('{"answer": 1}'))
         canonical = json.dumps(TRANSPORT_SCHEMA, sort_keys=True,
                                separators=(",", ":")).encode()

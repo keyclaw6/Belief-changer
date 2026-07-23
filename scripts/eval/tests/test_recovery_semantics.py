@@ -32,6 +32,7 @@ class RecoverySemanticTests(unittest.TestCase):
                    notes="test", tested_pair_hash=tested)
         return row
 
+    @unittest.skipUnless(hasattr(os, "fork"), "requires POSIX process crash semantics")
     def test_semantically_wrong_pair_temp_survives(self):
         """OpenSpec scenario: Promotion is killed at an atomic boundary."""
         _, experiment, _, _, _ = self.helper.fixture("wrong-pair", False)
@@ -88,11 +89,18 @@ class RecoverySemanticTests(unittest.TestCase):
         PAIR.promote(experiment, accepted, tested, decision[1])
         new = STORE.current(accepted)[1]
         temp = STORE.state_dir(accepted) / ".current.rf02-tmp"
-        temp.symlink_to(Path("generations") / old)
+        if os.name == "nt":
+            temp.write_bytes((old + "\n").encode("ascii"))
+        else:
+            temp.symlink_to(Path("generations") / old)
         with self.assertRaisesRegex(STORE.StoreError, "invalid"):
             STORE.switch(accepted, new)
-        self.assertEqual(Path("generations") / old, Path(os.readlink(temp)))
+        if os.name == "nt":
+            self.assertEqual((old + "\n").encode("ascii"), temp.read_bytes())
+        else:
+            self.assertEqual(Path("generations") / old, Path(os.readlink(temp)))
 
+    @unittest.skipUnless(hasattr(os, "fork"), "requires POSIX process crash semantics")
     def test_gate_replays_exact_gate_and_terminal_temps(self):
         """OpenSpec scenario: Promotion is killed at an atomic boundary."""
         for stage, module, name, event, temp_name in (

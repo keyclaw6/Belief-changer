@@ -12,7 +12,7 @@
 # 2026-07-12 "MiniMax-M3 writer" note was a founder mix-up from another project
 # and is RESCINDED. GPT models NEVER route through OpenRouter: Sol runs only as
 # fresh native Codex subagents on the founder's OpenAI subscription. OpenRouter
-# carries ONLY Opus chapter-writing and DeepSeek research.
+# carries ONLY H-F01 Muse chapter-writing and DeepSeek research.
 
 campaign: factory-v3-rubric-1
 instrument_version: carr-likeness-rubric-1
@@ -23,14 +23,15 @@ product_effect_absolute_rubric: calibration/judges/product-effect-absolute-rubri
 causal_results_jsonl: loop/causal-bundle-results.jsonl
 history_results_tsv: loop/results.tsv
 
-# --- Writer: Claude Opus 4.6, reasoning disabled, via OpenRouter ---
-writer_model: anthropic/claude-opus-4.6
+# --- H-F01 writer: Muse Spark 1.1, high reasoning, via OpenRouter ---
+writer_model: meta/muse-spark-1.1
 writer_provider: openrouter
-writer_reasoning: none
+writer_reasoning: high
 writer_endpoint: https://openrouter.ai/api/v1/chat/completions
 writer_temperature: 0.7
 writer_max_tokens: 16000
 writer_attempts: 1
+writer_allow_fallbacks: false
 
 # --- Research: DeepSeek V4 Pro, top reasoning, via OpenRouter ---
 researcher_model: deepseek/deepseek-v4-pro

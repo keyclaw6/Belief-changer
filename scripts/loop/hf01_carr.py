@@ -8,6 +8,8 @@ import judges  # noqa: E402
 import native_judge as NATIVE  # noqa: E402
 import pair_store as PS  # noqa: E402
 import path_guard as PG  # noqa: E402
+import hf01_preflight as HF  # noqa: E402
+import immutable_file as IF  # noqa: E402
 
 FOLDER = "loop/experiments/h-f01-treatment/evidence/hf01/carr-native"
 OWNERS = sorted(judges.OWNERS)
@@ -42,15 +44,10 @@ def _read(path):
     except (PG.PathError, OSError) as exc: raise CarrError(str(exc)) from exc
 def _write(path, data):
     path = Path(path)
-    if os.path.lexists(path):
-        if _read(path) != data: raise CarrError(f"immutable Carr evidence differs: {path}")
-        return
     try:
         PG.ensure_dir(path.parent)
-        with path.open("xb") as handle:
-            handle.write(data); handle.flush(); os.fchmod(handle.fileno(), 0o444); os.fsync(handle.fileno())
-        PS._sync(path.parent)
-    except (PG.PathError, OSError) as exc: raise CarrError(f"Carr evidence write failed: {exc}") from exc
+        IF.write_once(path, data, _read, "Carr evidence")
+    except (PG.PathError, IF.ImmutableFileError) as exc: raise CarrError(f"Carr evidence write failed: {exc}") from exc
 def _raw(raw, pair_hash, task_hash):
     try: value = json.loads(raw)
     except (TypeError, json.JSONDecodeError) as exc: raise CarrError("Carr output is not strict JSON") from exc
@@ -138,6 +135,8 @@ def _pipeline(root, cfg, labels, iteration, pair_hash, blind, complete, repair):
             "tested_pair_hash": pair_hash, "calls": calls}
     return {**body, "receipt_hash": PS.state_hash(body)}
 def dispatch(root, cfg, labels, iteration, pair_hash, blind, complete=NATIVE.complete):
+    HF.require_authorized_root(root)
     return _pipeline(root, cfg, labels, iteration, pair_hash, blind, complete, True)
 def verify(root, cfg, labels, iteration, pair_hash, blind):
+    HF.require_authorized_root(root)
     return _pipeline(root, cfg, labels, iteration, pair_hash, blind, None, False)

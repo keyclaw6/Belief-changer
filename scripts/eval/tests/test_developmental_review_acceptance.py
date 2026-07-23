@@ -1,6 +1,7 @@
 """RF-13 exact scope -> trap -> inventory acceptance regression."""
 import json
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -85,7 +86,8 @@ class DevelopmentalReviewAcceptanceTests(DeferredSequenceFixture, unittest.TestC
         self.assertEqual(task, json.loads(body))
         self.assertEqual(3, body.count("frozen_draft"))
         self.assertNotIn(str(candidate), body)
-        self.assertTrue(str(captured["kwargs"]["cwd"]).startswith("/tmp/"))
+        self.assertEqual(Path(tempfile.gettempdir()).resolve(),
+                         Path(captured["kwargs"]["cwd"]).resolve().parents[1])
         decoded = json.dumps(task, ensure_ascii=False)
         for allowed in ("RS-11", "RS-14", "scope", "checking trap",
                         "claimed benefits", "AUTHORITATIVE SEMANTIC COMMISSION — C-03"):

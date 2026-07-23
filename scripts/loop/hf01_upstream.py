@@ -10,14 +10,17 @@ import hf01_upstream_contract as CONTRACT  # noqa: E402
 import native_judge as NATIVE  # noqa: E402
 import pair_store as PS  # noqa: E402
 import path_guard as PG  # noqa: E402
+import immutable_file as IF  # noqa: E402
 
-PATH = "rf21-rf22-receipt.json"
+PATH, RF21_PATH = "rf21-rf22-receipt.json", "rf21-receipt.json"
 FOLDER = "loop/experiments/h-f01-treatment/evidence/hf01"
 IDS, LADDER = CONTRACT.IDS, CONTRACT.LADDER
 PLAN_SCHEMA, REVIEW_SCHEMA = CONTRACT.PLAN_SCHEMA, CONTRACT.REVIEW_SCHEMA
 COMMISSION_SCHEMA, AUDIT_SCHEMA = CONTRACT.COMMISSION_SCHEMA, CONTRACT.AUDIT_SCHEMA
 RECEIPT_FIELDS = {"schema", "authority_sha256", "completed_at_utc", "calls",
                   "artifacts", "commission_receipt_sha256", "receipt_hash"}
+RF21_FIELDS = {"schema", "authority_sha256", "completed_at_utc", "calls",
+               "artifacts", "assignments_sha256", "receipt_hash"}
 RECORD_FIELDS = {"schema", "id", "authority_sha256", "task_sha256", "input_sha256",
     "output_sha256", "actor", "model", "route", "reasoning", "command", "thread_id",
     "started_at_utc", "completed_at_utc", "raw"}
@@ -37,15 +40,10 @@ def _read(path):
     except (PG.PathError, OSError) as exc: raise UpstreamError(str(exc)) from exc
 def _write(path, data):
     path = Path(path)
-    if os.path.lexists(path):
-        if _read(path) != data: raise UpstreamError(f"immutable H-F01 evidence differs: {path}")
-        return
     try:
         PG.ensure_dir(path.parent)
-        with path.open("xb") as handle:
-            handle.write(data); handle.flush(); os.fchmod(handle.fileno(), 0o444); os.fsync(handle.fileno())
-        PS._sync(path.parent)
-    except (PG.PathError, OSError) as exc:
+        IF.write_once(path, data, _read, "H-F01 evidence")
+    except (PG.PathError, IF.ImmutableFileError) as exc:
         raise UpstreamError(f"H-F01 evidence write failed: {exc}") from exc
 def _json(raw, call_id):
     try: value = json.loads(raw)
@@ -195,7 +193,18 @@ def _commission_calls(root, authority_sha, assignments, complete, records):
     spec = _spec(5); records.append(_record(base, spec, authority_sha, _task(spec, authority_sha, audit), AUDIT_SCHEMA, None))
     return receipt["receipt_hash"]
 
-def _pipeline(root, authority, authority_sha, complete, apply):
+def _rf21_artifacts(root):
+    book = HF.arm_paths(root)["treatment"]["book"]
+    names = ("00-brief.md", "framing.md", "framing-review.md", "master-plan.md",
+             "master-plan-review.md")
+    return {f"{HF.BOOK}/{name}": PS.sha(_read(book / name)) for name in names}
+def _rf21_value(authority_sha, records, artifacts, assignments):
+    calls = [{key: row[key] for key in RECORD_FIELDS - {"schema", "raw"}} for row in records]
+    body = {"schema": 1, "authority_sha256": authority_sha,
+        "completed_at_utc": _time(), "calls": calls, "artifacts": artifacts,
+        "assignments_sha256": PS.state_hash(assignments)}
+    return {**body, "receipt_hash": PS.state_hash(body)}
+def _pipeline(root, authority, authority_sha, complete, apply, stop_after=None):
     root, base, records = Path(root).absolute(), Path(root).absolute() / FOLDER, []
     plan_spec = _spec(0); plan = _record(base, plan_spec, authority_sha,
         _task(plan_spec, authority_sha, _baseline_inputs(root)), PLAN_SCHEMA, complete)
@@ -203,6 +212,10 @@ def _pipeline(root, authority, authority_sha, complete, apply):
     review_spec = _spec(1); review = _record(base, review_spec, authority_sha,
         _task(review_spec, authority_sha, _review_inputs(root)), REVIEW_SCHEMA, complete)
     records.append(review); _review_outputs(root, _json(review["raw"], review_spec["id"]), apply)
+    if stop_after == "RF-21":
+        if len(records) != 2 or len({row["thread_id"] for row in records}) != 2:
+            raise UpstreamError("RF21 requires exactly two fresh native call identities")
+        return _rf21_value(authority_sha, records, _rf21_artifacts(root), assignments)
     CS.SC.require_subject_contract(HF.arm_paths(root)["treatment"]["book"], "commissioning")
     commission = _commission_calls(root, authority_sha, assignments, complete, records)
     unique = {row["id"]: row for row in records}
@@ -218,11 +231,36 @@ def _pipeline(root, authority, authority_sha, complete, apply):
     body = {"schema": 2, "authority_sha256": authority_sha, "completed_at_utc": _time(),
         "calls": calls, "artifacts": artifacts, "commission_receipt_sha256": commission}
     return {**body, "receipt_hash": PS.state_hash(body)}
-def dispatch(root, authority, authority_sha, complete=NATIVE.complete):
-    value = _pipeline(root, authority, authority_sha, complete, True)
-    path = Path(root).absolute() / FOLDER / PATH; _write(path, PS.json_bytes(value)); return PS.sha(_read(path))
+def _verify_rf21(root, authority, authority_sha):
+    path = HF.require_authorized_root(root) / FOLDER / RF21_PATH
+    if not path.is_file(): raise UpstreamPending(path)
+    value = json.loads(_read(path)); body = {key: item for key, item in value.items() if key != "receipt_hash"}
+    if set(value) != RF21_FIELDS or value.get("schema") != 1 \
+            or value.get("authority_sha256") != authority_sha \
+            or value.get("receipt_hash") != PS.state_hash(body):
+        raise UpstreamError("RF21 receipt binding is invalid")
+    expected = _pipeline(root, authority, authority_sha, None, False, "RF-21")
+    for key in ("schema", "authority_sha256", "calls", "artifacts", "assignments_sha256"):
+        if value[key] != expected[key]: raise UpstreamError(f"RF21 receipt {key} is stale")
+    return PS.sha(_read(path))
+def dispatch_stage(root, authority, authority_sha, stage, complete=NATIVE.complete):
+    root = HF.require_authorized_root(root)
+    HF.validate_execution_authority(root, authority)
+    HF.require_stage(authority, stage)
+    if stage == "RF-21":
+        value = _pipeline(root, authority, authority_sha, complete, True, "RF-21")
+        path = root / FOLDER / RF21_PATH
+    elif stage == "RF-22":
+        _verify_rf21(root, authority, authority_sha)
+        value = _pipeline(root, authority, authority_sha, complete, True)
+        path = root / FOLDER / PATH
+    else:
+        raise UpstreamError("upstream dispatch must name exactly RF-21 or RF-22")
+    _write(path, PS.json_bytes(value)); return PS.sha(_read(path))
 def verify(root, authority, authority_sha):
-    path = Path(root).absolute() / FOLDER / PATH
+    root = HF.require_authorized_root(root)
+    _verify_rf21(root, authority, authority_sha)
+    path = root / FOLDER / PATH
     if not path.is_file(): raise UpstreamPending(path)
     value = json.loads(_read(path)); body = {key: item for key, item in value.items() if key != "receipt_hash"}
     if set(value) != RECEIPT_FIELDS or value.get("schema") != 2 or value.get("authority_sha256") != authority_sha \

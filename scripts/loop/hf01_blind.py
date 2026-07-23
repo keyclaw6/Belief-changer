@@ -11,6 +11,7 @@ import path_guard as PG  # noqa: E402
 import product_effect as PE  # noqa: E402
 import product_effect_absolute as ABS  # noqa: E402
 import product_effect_panel as PANEL  # noqa: E402
+import immutable_file as IF  # noqa: E402
 FOLDER = "loop/experiments/h-f01-treatment/evidence/hf01"
 TASKS, RECEIPT = "blind-tasks.json", "blind-receipt.json"
 READERS = ("sol-xhigh-r1", "sol-xhigh-r2")
@@ -22,7 +23,7 @@ CALL_FIELDS = {"schema", "id", "authority_sha256", "task_sha256", "input_sha256"
 class BlindError(RuntimeError): pass
 class BlindPending(BlindError):
     def __init__(self, commands): self.commands = commands; super().__init__("blind native evidence pending")
-def folder(root): return Path(root).absolute() / FOLDER
+def folder(root): return HF.require_authorized_root(root) / FOLDER
 def now(): return dt.datetime.now(dt.timezone.utc).isoformat(timespec="microseconds")
 def _read(path):
     try: return PG.safe_file(path, Path(path).parent).read_bytes()
@@ -32,27 +33,17 @@ def read(path):
     except json.JSONDecodeError as exc: raise BlindError(f"invalid {path}: {exc}") from exc
 def write(path, value):
     path, data = Path(path), PS.json_bytes(value)
-    if os.path.lexists(path):
-        if _read(path) != data: raise BlindError(f"immutable H-F01 evidence differs: {path}")
-        return value
     try:
         PG.ensure_dir(path.parent)
-        with path.open("xb") as handle:
-            handle.write(data); handle.flush(); os.fchmod(handle.fileno(), 0o444); os.fsync(handle.fileno())
-        PS._sync(path.parent)
-    except (PG.PathError, OSError) as exc: raise BlindError(f"H-F01 evidence write failed: {exc}") from exc
+        IF.write_once(path, data, _read, "H-F01 evidence")
+    except (PG.PathError, IF.ImmutableFileError) as exc: raise BlindError(f"H-F01 evidence write failed: {exc}") from exc
     return value
 def _write_bytes(path, data):
     path = Path(path)
-    if os.path.lexists(path):
-        if _read(path) != data: raise BlindError(f"immutable H-F01 task differs: {path}")
-        return
     try:
         PG.ensure_dir(path.parent)
-        with path.open("xb") as handle:
-            handle.write(data); handle.flush(); os.fchmod(handle.fileno(), 0o444); os.fsync(handle.fileno())
-        PS._sync(path.parent)
-    except (PG.PathError, OSError) as exc: raise BlindError(f"H-F01 task write failed: {exc}") from exc
+        IF.write_once(path, data, _read, "H-F01 task")
+    except (PG.PathError, IF.ImmutableFileError) as exc: raise BlindError(f"H-F01 task write failed: {exc}") from exc
 def _native_call(base, identity, authority_sha, task_sha, prompt, route, schema,
                  materialized, native, complete, actor=None):
     expected = {"id": identity, "authority_sha256": authority_sha, "task_sha256": task_sha,
@@ -177,7 +168,7 @@ def emit(root, task_bundle, authority, native=False, complete=NATIVE.complete):
         _write_bytes(base / "absolute/tasks" / f"{row['key']}.md", prompt)
         if _absolute_record(base, row, prompt, task_bundle["authority_sha256"], native, complete) is None:
             missing_absolute = True
-    if missing_absolute: commands.append(shlex.join(shlex.split(authority["next_command"]) + ["--native"]))
+    if missing_absolute: commands.append(HF.resume_command(authority, stage="RF-23", native=True))
     for panel in task_bundle["gsbs_panels"]:
         for item in panel["readers"]:
             envelope, identity = item["envelope"], item["identity"]
@@ -190,7 +181,7 @@ def emit(root, task_bundle, authority, native=False, complete=NATIVE.complete):
                 task["task_sha256"], prompt, {"model": view["config"]["judge_model"],
                 "route": view["config"]["judge_route"], "reasoning": view["config"]["judge_reasoning"]},
                 PE.output_schema(), verdict_path, native, complete, identity)
-            if call is None: commands.append(shlex.join(shlex.split(authority["next_command"]) + ["--native"])); continue
+            if call is None: commands.append(HF.resume_command(authority, stage="RF-23", native=True)); continue
             if not verdict_path.is_file():
                 PANEL.dispatch(view["config"], name, task, identities=(identity,),
                     tested_pair_hash=task_bundle["experiment_sha256"], single=True,

@@ -42,7 +42,13 @@ def raw_path(root):
 
 
 def _mode(path, wanted, label):
-    if stat.S_IMODE(os.lstat(path).st_mode) != wanted:
+    info = os.lstat(path)
+    if os.name == "nt":
+        if wanted == 0o444 and not (getattr(info, "st_file_attributes", 0)
+                                    & getattr(stat, "FILE_ATTRIBUTE_READONLY", 0)):
+            raise CallError(f"{label} is writable")
+        return
+    if stat.S_IMODE(info.st_mode) != wanted:
         raise CallError(f"{label} mode is not canonical {wanted:04o}")
 
 
@@ -66,7 +72,7 @@ def _ensure_folder(root):
         if not os.path.lexists(target):
             target.mkdir(mode=0o700)
         PS.safe_dir(target, evidence)
-        if stat.S_IMODE(os.lstat(target).st_mode) not in (0o700, 0o555):
+        if os.name != "nt" and stat.S_IMODE(os.lstat(target).st_mode) not in (0o700, 0o555):
             raise CallError("developmental operation folder mode is invalid")
         return target
     except (PS.StoreError, OSError) as exc:
@@ -98,7 +104,7 @@ def binding(task):
 
 def prepare_local(root, task):
     target = _ensure_folder(root)
-    if stat.S_IMODE(os.lstat(target).st_mode) == 0o555:
+    if os.name != "nt" and stat.S_IMODE(os.lstat(target).st_mode) == 0o555:
         raise CallError("committed developmental operation cannot be rewritten")
     _write_once(task_path(root), PS.json_bytes(task), "developmental task")
     _write_once(schema_path(root), PS.json_bytes(C.output_schema()),

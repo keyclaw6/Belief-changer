@@ -18,7 +18,9 @@ DEFAULT_IDENTITIES = ("sol-ultra-r1", "sol-ultra-r2")
 NATIVE_ENV_ALLOWLIST = (
     "PATH", "HOME", "CODEX_HOME", "LANG", "LC_ALL", "LC_CTYPE", "TERM",
     "TMPDIR", "TMP", "TEMP", "SSL_CERT_FILE", "SSL_CERT_DIR", "HTTP_PROXY",
-    "HTTPS_PROXY", "ALL_PROXY", "NO_PROXY",
+    "HTTPS_PROXY", "ALL_PROXY", "NO_PROXY", "SYSTEMROOT", "WINDIR", "COMSPEC",
+    "PATHEXT", "SYSTEMDRIVE", "USERPROFILE", "APPDATA", "LOCALAPPDATA",
+    "PROGRAMDATA",
 )
 IMPLEMENTATION_FILES = (
     "h_f04_controls.py", "judge_panel.py", "judge_protocol.py", "judge_scope.py",
@@ -61,7 +63,8 @@ def _schema_bytes(schema):
 
 def command(workdir, schema_path, model=MODEL, reasoning=REASONING_EFFORT):
     return [
-        "codex", "exec", "--ephemeral", "--ignore-user-config", "--ignore-rules",
+        "codex.cmd" if os.name == "nt" else "codex", "exec", "--ephemeral",
+        "--ignore-user-config", "--ignore-rules",
         "--disable", "multi_agent", "--model", model,
         "-c", f"model_reasoning_effort={reasoning}",
         "--sandbox", "read-only", "--skip-git-repo-check", "--cd", workdir,
@@ -129,11 +132,13 @@ def complete(content, judge_identity, output_schema, run=subprocess.run,
     """Run one fresh, uncapped-by-harness native judge context."""
     env = {name: os.environ[name] for name in NATIVE_ENV_ALLOWLIST if name in os.environ}
     schema_data = _schema_bytes(output_schema)
-    with tempfile.TemporaryDirectory(prefix="belief-changer-judge-", dir="/tmp") as workdir:
+    with tempfile.TemporaryDirectory(prefix="belief-changer-judge-") as workdir:
         schema_path = Path(workdir) / "judge-output-schema.json"
         schema_path.write_bytes(schema_data)
         os.chmod(schema_path, 0o444)
         os.chmod(workdir, 0o555)
+        PS.safe_dir(workdir, tempfile.gettempdir())
+        PS._safe_file(schema_path, workdir)
         cmd = command(workdir, str(schema_path), model, reasoning)
         launch_error = None
         try:
@@ -149,7 +154,7 @@ def complete(content, judge_identity, output_schema, run=subprocess.run,
         "kind": "native-codex-subscription", "judge_identity": judge_identity,
         "model": model, "reasoning_effort": reasoning,
         "output_limit": "none set by harness", "fresh_ephemeral_context": True,
-        "isolated_workdir": "/tmp read-only",
+        "isolated_workdir": "OS temp read-only",
         "environment_policy": "native runtime allowlist; no provider API keys inherited",
         "command": invocation, "returncode": result.returncode if result else None,
         "stderr": result.stderr if result else launch_error,

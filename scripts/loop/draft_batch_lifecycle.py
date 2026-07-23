@@ -74,8 +74,16 @@ def _read_bytes(value, boundary, final_anchor=False):
         info = os.lstat(value)
         if info.st_uid != os.lstat(boundary).st_uid:
             raise LifecycleError("candidate lifecycle record has the wrong owner")
-        if final_anchor and stat.S_IMODE(info.st_mode) != 0o444:
-            raise LifecycleError("candidate lifecycle anchor mode is not canonical 0444")
+        if final_anchor:
+            if os.name == "nt":
+                attributes = getattr(info, "st_file_attributes", 0)
+                if not stat.S_ISREG(info.st_mode) or info.st_nlink != 1 \
+                        or attributes & getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0) \
+                        or not attributes & getattr(stat, "FILE_ATTRIBUTE_READONLY", 0):
+                    raise LifecycleError(
+                        "candidate lifecycle anchor is not a canonical read-only file")
+            elif stat.S_IMODE(info.st_mode) != 0o444:
+                raise LifecycleError("candidate lifecycle anchor mode is not canonical 0444")
         return data
     except (PS.StoreError, OSError) as exc:
         raise LifecycleError(f"candidate lifecycle record is unsafe: {exc}") from exc

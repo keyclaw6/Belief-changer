@@ -210,6 +210,18 @@ def freeze(root, interrupt=None):
     return require_frozen_batch(root)
 
 
+def _require_frozen_mode(path):
+    info = os.lstat(path)
+    if os.name == "nt":
+        attributes = getattr(info, "st_file_attributes", 0)
+        if not stat.S_ISREG(info.st_mode) or info.st_nlink != 1 \
+                or attributes & getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0) \
+                or not attributes & getattr(stat, "FILE_ATTRIBUTE_READONLY", 0):
+            raise BatchError("frozen first-draft evidence is not a single-link read-only file")
+    elif stat.S_IMODE(info.st_mode) != 0o444:
+        raise BatchError("frozen first-draft evidence mode is not canonical 0444")
+
+
 def _require_frozen_batch(root):
     manifest = CP.load(root)
     batch = manifest.get("draft_batch")
@@ -250,8 +262,7 @@ def _require_frozen_batch(root):
             raise BatchError("frozen first-draft bytes changed")
         validate_draft(draft.read_bytes(), item["chapter"])
     for path in PS.tree_files(S.folder(root)):
-        if stat.S_IMODE(os.lstat(path).st_mode) != 0o444:
-            raise BatchError("frozen first-draft evidence mode is not canonical 0444")
+        _require_frozen_mode(path)
     return {**body, "receipt_hash": recorded}
 def require_frozen_batch(root):
     try:

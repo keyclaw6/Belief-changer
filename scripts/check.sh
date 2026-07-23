@@ -9,9 +9,23 @@ cd "$ROOT"
 ROOT="$(pwd -P)"
 status=0
 
+PYTHON=()
+if command -v python3 >/dev/null 2>&1 \
+    && python3 -c 'import sys; raise SystemExit(sys.version_info.major != 3)' \
+        >/dev/null 2>&1; then
+  PYTHON=(python3)
+elif command -v py >/dev/null 2>&1 \
+    && py -3 -c 'import sys; raise SystemExit(sys.version_info.major != 3)' \
+        >/dev/null 2>&1; then
+  PYTHON=(py -3)
+else
+  echo "check.sh: no working Python 3 interpreter found" >&2
+  exit 127
+fi
+
 # 1. Structural validator (AGENTS.md presence, docs cap, root allowlist, and
 #    production-books required artifacts).
-python3 "$ROOT/scripts/validate_repo.py" "$ROOT" || status=$?
+"${PYTHON[@]}" "$ROOT/scripts/validate_repo.py" "$ROOT" || status=$?
 
 # 2. shellcheck on scripts/ if available (non-fatal if the tool is absent).
 if command -v shellcheck >/dev/null 2>&1; then
@@ -40,7 +54,7 @@ fi
 
 # 4. Stdlib regression tests for the deterministic evaluation instruments.
 if [ -d "$ROOT/scripts/eval/tests" ]; then
-  python3 -m unittest discover -s "$ROOT/scripts/eval/tests" -p 'test_*.py' || status=$?
+  "${PYTHON[@]}" -m unittest discover -s "$ROOT/scripts/eval/tests" -p 'test_*.py' || status=$?
 fi
 
 exit "$status"

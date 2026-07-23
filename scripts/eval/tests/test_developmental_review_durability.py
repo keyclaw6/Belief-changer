@@ -4,6 +4,7 @@ import os
 import shutil
 import stat
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
@@ -32,6 +33,8 @@ class DevelopmentalDurabilityTests(DevelopmentalFixture, unittest.TestCase):
 
     def erase_local(self, candidate):
         target = CALL.folder(candidate)
+        for member in target.rglob("*"):
+            member.chmod(0o755 if member.is_dir() else 0o644)
         target.chmod(0o700)
         shutil.rmtree(target)
 
@@ -99,13 +102,16 @@ class DevelopmentalDurabilityTests(DevelopmentalFixture, unittest.TestCase):
         NATIVE.complete(task["task_sha256"], run=clean_run)
         runtime = RUNTIME.path(task["task_sha256"])
         self.assertEqual(runtime, Path(captured["cwd"]))
-        self.assertTrue(str(runtime).startswith("/tmp/belief-changer-rf13-"))
+        self.assertEqual(Path(tempfile.gettempdir()).resolve(),
+                         runtime.resolve().parents[1])
+        self.assertEqual("belief-changer-rf13", runtime.parent.name)
         self.assertNotIn(str(candidate), json.dumps(marker))
         self.assertNotIn(str(candidate), captured["input"])
         self.assertEqual(task, json.loads(captured["input"]))
         self.assertEqual({"task.json", "schema.json", "result.json"},
                          {item.name for item in runtime.iterdir()})
-        self.assertEqual(0o555, stat.S_IMODE(os.lstat(runtime).st_mode))
+        if os.name != "nt":
+            self.assertEqual(0o555, stat.S_IMODE(os.lstat(runtime).st_mode))
         for feature in RUNTIME.DISABLED:
             self.assertIn(feature, captured["command"])
 
@@ -184,7 +190,9 @@ class DevelopmentalDurabilityTests(DevelopmentalFixture, unittest.TestCase):
         with self.assertRaises(PAIR.PairError):
             PAIR.verify_sealed(candidate, tested)
         callback.assert_not_called()
-        self.lifecycle(candidate).unlink()
+        lifecycle = self.lifecycle(candidate)
+        lifecycle.chmod(0o644)
+        lifecycle.unlink()
         with self.assertRaisesRegex(PAIR.PairError, "anchor is missing"):
             PAIR.load(candidate)
 

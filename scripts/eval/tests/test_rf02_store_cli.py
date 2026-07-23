@@ -74,7 +74,7 @@ class RF02StoreCliTests(unittest.TestCase):
         self.assertNotEqual(first, second)
         self.assertIn("production-books/new/chapters/chapter-01.md",
                       {item["path"] for item in registry["entries"]})
-        self.assertEqual(b"chapter\n",
+        self.assertEqual((self.root / "production-books/new/chapters/chapter-01.md").read_bytes(),
                          (current / "pair/production-books/new/chapters/chapter-01.md").read_bytes())
 
     def test_rf02_does_not_authorize_run_score_or_gate(self):
@@ -116,7 +116,7 @@ class RF02StoreCliTests(unittest.TestCase):
             MANUAL.writer({"writer_model": "writer", "writer_reasoning": "none"},
                           operation, book, [1, 2], authority)
         text = output.getvalue()
-        self.assertIn(f"cd -- {operation}", text)
+        self.assertIn(f"cd -- {shlex.quote(str(operation))}", text)
         self.assertIn("CAPTURED-CONTRACT", text)
         self.assertIn("CAPTURED-ONE", text)
         self.assertIn("CAPTURED-TWO", text)
@@ -127,7 +127,7 @@ class RF02StoreCliTests(unittest.TestCase):
                 mock.patch.object(MANUAL.GR, "require_complete"), \
                 mock.patch.object(MANUAL.DR, "require_developmental_pass"):
             review = MANUAL.reviewer(operation.parent)
-        self.assertIn(f"cd -- {operation}", review)
+        self.assertIn(f"cd -- {shlex.quote(str(operation))}", review)
         self.assertIn("prompts/chapter-reviewer.md", review)
         self.assertNotIn(str(ROOT), review)
 
