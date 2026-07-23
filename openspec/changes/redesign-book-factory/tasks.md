@@ -1025,26 +1025,31 @@ the SHA without reopening the implementation verdict.
   founder start recorded as RF-21 `IN_PROGRESS`, followed by the immutable
   pre-RF21 authority, before any planning call or candidate write. Runtime MUST
   reject RF-21 `READY` at snapshot, authority, and dispatch boundaries.
-- Implementation attempts: `7`; latest 2026-07-22 result: Windows-safe runtime,
-  exact Muse route, fail-closed account/location preflight, RF-02 durability,
-  and future dotenvx injection path are ready. The final repair makes `READY`
-  reject snapshot, authority, and dispatch boundaries while a later founder
+- Implementation attempts: `8`; latest 2026-07-23 result: repaired review
+  attempt 8's sole finding by replacing two stale `Anthropic writer` comments
+  in active config with `Meta writer`; executable route values are unchanged.
+  Windows-safe runtime, exact Muse route, fail-closed account/location preflight,
+  RF-02 durability, and the future dotenvx injection path are ready. `READY`
+  rejects snapshot, authority, and dispatch boundaries while a later founder
   start recorded as `IN_PROGRESS` is executable. Founder then postponed execution.
-  It also repaired the canonical gate's Windows path, newline, immutable-file,
-  and test-capability failures. The repaired H-F01/guard suite passes 24 tests
-  with three explicit Windows-symlink capability skips; strict OpenSpec passes;
-  and the canonical Git Bash gate passes 330 tests with 23 platform-capability
-  skips and exit `0` (3674.295 seconds).
+  The repaired H-F01/guard suite passes 25 tests with three explicit Windows-
+  symlink capability skips; strict OpenSpec passes; and the canonical Git Bash
+  gate passes 330 tests with 23 platform-capability skips and exit `0`
+  (7002.372 seconds).
   No RF-21 call, arm snapshot, frozen authority, or treatment artifact exists.
-- Review attempts: `7`; latest independent `$review-elegance` verdict:
-  `APPROVE — offline readiness only`; it independently reproduced the 5/5
-  direct boundary/resume repairs and the 24/24 H-F01/guard suite, found both
-  prior findings closed, and found no new material or simplification finding.
-  This permits the administrative `READY`/unstarted state, not dispatch.
+- Review attempts: `9`; history: attempt 7 independently approved the repaired
+  execution boundaries; attempt 8 returned `FIX — REQUEST_CHANGES` because two
+  active route comments still called the Muse/Meta writer Anthropic. Attempt 8
+  otherwise passed 25 focused tests, route/boundary tracing, zero-execution,
+  protected-diff, and secret-safety checks. Attempt 9 independently returned
+  `APPROVE — offline readiness only`: 25 focused tests with three Windows-
+  capability skips, strict OpenSpec, diff, canonical-log, protected-surface,
+  artifact, and secret-safety checks all pass with no findings. This never
+  permits dispatch.
 - Commit / push: readiness implementation
   `9cd77e017077b4533115ad36a0fc4821494d937c`
   (`feat(factory): ready Muse H-F01 on Windows`) pushed to `origin/main`;
-  this following ledger checkpoint records that accepted immutable identity.
+  approved comment-consistency repair awaits its commit identity.
 
 ### RF-22 — Generate and audit the three H-F01 treatment commissions
 

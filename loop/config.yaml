@@ -45,7 +45,7 @@ planner_reasoning: xhigh
 
 # --- Grounded reviewer: fresh GPT-5.6 Sol, xhigh — NATIVE CODEX ONLY ---
 # This truth/safety/ownership audit is separate from literary development and
-# must be a different family from the Anthropic writer.
+# must be a different family from the Meta writer.
 grounded_reviewer_model: gpt-5.6-sol
 grounded_reviewer_family: openai
 grounded_reviewer_route: codex-native
@@ -53,7 +53,7 @@ grounded_reviewer_reasoning: xhigh
 
 # --- Developmental reviewer: fresh GPT-5.6 Luna, max — NATIVE CODEX ONLY ---
 # One reference-blind whole-opening context after grounded PASS. Luna is a
-# distinct model family from both the Anthropic writer and Sol grounded audit.
+# distinct model family from both the Meta writer and Sol grounded audit.
 developmental_reviewer_model: gpt-5.6-luna
 developmental_reviewer_family: luna
 developmental_reviewer_route: codex-native
