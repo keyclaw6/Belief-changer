@@ -48,7 +48,10 @@ independent implementation and final acceptance review, canonical
 ## Repository and reviewed plan
 
 - Workspace: `C:\Users\Kristian Bilstrup\Documents\Belief-changer`; branch
-  `main`; current base `4ef83c6`, synchronized with `origin/main` before RF-32.
+  `main`; RF-32 implementation commit
+  `906feb0b4cf72e3fe0d8136246994274a32a14a4`; its follow-on closure commit
+  changes only this mission record and the authoritative RF-32 ledger. Both are
+  pushed to `origin/main`; the worktree is clean and synchronized.
   Final reviewed pre-metadata diff SHA is
   `da79c0eafab907b06914af3b4f79fd1f0d33006b`; pre-metadata status SHA is
   `38db1d8c5dbdc342a3965a9d31890f59c1a3d305`.
@@ -158,15 +161,15 @@ independent implementation and final acceptance review, canonical
   `C:\Users\KRISTI~1\AppData\Local\Temp\belief-changer-rf32-canonical-20260724031716209.log`;
   SHA-256 `7155b2d01895d9030dab19b1f6fdc7e1db2f067075927f53a83c7b004a738854`.
   Final independent checks also pass strict OpenSpec, Python compilation, diff
-  checks, protected paths, and causal-ledger immutability. Formal approval now
-  requires only inspection of this metadata-only reconciliation.
+  checks, protected paths, and causal-ledger immutability. It then inspected
+  metadata-only diff `e172d30ad039ed12d24b117bf94e4f88a7cac125` and issued
+  formal `APPROVE` with no findings.
 - Protected paths remain unchanged: `docs/BOOK-FACTORY-VISION.md`,
   `prompts/style-guide.md`, and `production-books/quit-sugar`.
 
-## Blocker and next action
+## Residual boundary
 
-No offline-readiness blocker. Obtain the final metadata-diff approval, commit and
-push the reviewed RF-32 logical change to `main`, record its exact commit in the
-ledger, prove clean synchronized state, and notify Sentinel. Only credential
-validity/account/tool-cost preflight and a real run remain for a later explicit
-founder start.
+No offline-readiness blocker remains. Credential validity/account/tool-cost
+preflight and any real run remain deferred until the founder supplies a valid
+OpenRouter key and explicitly starts the named stage. No campaign, production
+research, chapter generation, causal decision, result, or promotion was run.

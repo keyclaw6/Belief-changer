@@ -1415,5 +1415,9 @@ the SHA without reopening the implementation verdict.
   weakening, independently reran all ten recovered canonical identities, and
   verified strict OpenSpec, Python compilation, diff checks, protected paths,
   causal-ledger immutability, and the final canonical log. Reviewed base
-  `4ef83c6`; reviewed diff SHA `da79c0eafab907b06914af3b4f79fd1f0d33006b`.
-- Commit / push: `—`.
+  `4ef83c6`; reviewed implementation diff SHA
+  `da79c0eafab907b06914af3b4f79fd1f0d33006b`; approved metadata-only diff SHA
+  `e172d30ad039ed12d24b117bf94e4f88a7cac125` with no findings.
+- Commit / push: implementation `906feb0b4cf72e3fe0d8136246994274a32a14a4`
+  (`feat(research): make research factory executable`), followed only by this
+  completion-record update; both pushed directly to `origin/main`.
