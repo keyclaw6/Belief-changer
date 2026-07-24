@@ -1318,12 +1318,7 @@ the SHA without reopening the implementation verdict.
   `bash scripts/check.sh`.
 - Dependencies: RF-30 pass.
 - Implementation attempts: `0`; latest: `—`.
-- Review attempts: `2`; latest: 2026-07-23 final acceptance reinspection has no
-  remaining code finding after fixes for durable result validation, aggregate
-  targeted recursion, scientific/story dedupe, current plan/audit gap authority,
-  accepted control-baseline drift, post-judgment blind mapping, exact paired
-  downstream effect, named-human binding, and sealed-arm read-only inspection;
-  final verdict awaits the fresh unchanged-state canonical gate.
+- Review attempts: `0`; latest verdict / findings: `—`.
 - Commit / push: `—`.
 
 ## Phase 7 — make research execution-ready without starting a campaign
@@ -1397,27 +1392,24 @@ the SHA without reopening the implementation verdict.
 - Dependencies: RF-02, RF-03, RF-04, RF-09, RF-10, RF-11, RF-14, RF-19. It is
   independent of RF-20's terminal lineage and RF-21 execution, and MUST NOT
   satisfy, start, or mutate either.
-- Implementation attempts: `3`; latest: 2026-07-24 final integration repairs
-  registered the research CLI behind RF-21 `IN_PROGRESS`, reused exact captured
-  writer-audit bytes across sequential normal/H-F01 chapters, and migrated stale
-  Windows/legacy fixtures to the current sealed research contract. Earlier
-  canonical gates truthfully failed (421 tests: first 4 failures/56 errors,
-  second 2 failures/8 errors); every identity was recovered, fixed, and rerun.
-  The final frozen-tree canonical gate passed 431 tests with 23 platform skips,
-  exit `0`, in 9699.650s. Full log SHA-256:
-  `7155b2d01895d9030dab19b1f6fdc7e1db2f067075927f53a83c7b004a738854`.
-  The isolated native-Codex receipt remains
-  `cea79be86e2a5ac91f0fb042f7f63dfbab006fb5dbd839cb750bf5f7bf6b2de6`.
-  No provider, campaign, production research, chapter generation, causal
-  decision/result, promotion, or H-F01/RF-21+ execution occurred.
-- Review attempts: `3`; latest verdict / findings: `PASS` — final independent
-  review traced the production entrypoint and research gates, found no gate
-  weakening, independently reran all ten recovered canonical identities, and
-  verified strict OpenSpec, Python compilation, diff checks, protected paths,
-  causal-ledger immutability, and the final canonical log. Reviewed base
-  `4ef83c6`; reviewed implementation diff SHA
-  `da79c0eafab907b06914af3b4f79fd1f0d33006b`; approved metadata-only diff SHA
-  `e172d30ad039ed12d24b117bf94e4f88a7cac125` with no findings.
-- Commit / push: implementation `906feb08456d7b03caaf56aa4e28665f9a18adbe`
-  (`feat(research): make research factory executable`), followed only by
-  metadata closure/correction commits; all pushed directly to `origin/main`.
+- Implementation attempts: `4`; latest: 2026-07-24 minimal correction after
+  Sentinel rejected candidate `6cfdc1a`. Generic-gap reuse now binds the exact
+  marker request, reservation, full completed-result receipt, coordinator-owned
+  request identity, and original result identity; retained capacity and source
+  diversity count accepted evidence entries; terminal post-preflight exhaustion
+  durably records `BLOCKED`; `memory.md` is external operator state; and RF-31
+  history is restored. The broadened research factory/contract/pipeline suite
+  passes 96/96 in 348.652s with exit `0`; strict OpenSpec, repository validation,
+  compilation, and diff checks pass. Prior canonical and simulation evidence
+  bound to rejected states remains historical only.
+- Review attempts: `7`; latest verdict / findings: `PASS` — fresh release-readiness
+  review found no remaining issue after earlier correction reviews exposed and
+  drove fixes for editor output-overage lifecycle state, independently durable
+  generic-gap request identity, and accepted-evidence retained-capacity replay.
+  It independently passed 10/10 correction and 3/3 initial/chapter-resume tests,
+  traced every generic-gap/attempt-receipt reuse path, and verified protected
+  paths, external memory policy, research-centered YAGNI, and the no-run boundary.
+- Commit / push: prior implementation `906feb08456d7b03caaf56aa4e28665f9a18adbe`;
+  the reviewed correction is this ledger-bearing commit and its exact hash/push,
+  isolated receipt, final acceptance review, and frozen-tree canonical evidence
+  are captured externally so no tracked edit follows the final gate.

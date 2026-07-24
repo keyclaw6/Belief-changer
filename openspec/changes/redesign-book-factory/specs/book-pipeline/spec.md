@@ -230,10 +230,14 @@ AND every reused provider and editor result MUST be revalidated against its
 exact durable request/task, reservation, route/model, usage, fetch proof,
 canonical eligible payload, and verdict invariants rather than trusting a
 recomputed outer hash
+AND a provider marker MUST retain the exact canonical request plus the original
+completed-result binding, while coordinator state MUST retain and compare the
+original result identity rather than re-anchoring changed result bytes
 AND a pre-call marker without one complete, validated, durable result MUST stop
 as ambiguous rather than replay
 AND call, server-tool, output-token, retained-result, cost, and gap-round ceilings
-MUST be reserved before parallel work and end `BLOCKED` when exhausted
+MUST be reserved before parallel work and durably set lifecycle stage `BLOCKED`
+with a content-safe reason before exhaustion is reported
 AND usage, quota, activity, a cleared floor, or a stopped budget MUST NOT create
 a PASS or seal.
 

@@ -74,6 +74,10 @@ class ResearchBlocked(ResearchFactoryError):
     pass
 
 
+class ResearchLifecycleBlocked(ResearchBlocked):
+    """A terminal post-preflight integrity or exhaustion condition."""
+
+
 def _canonical(value):
     return json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
 
@@ -160,6 +164,81 @@ def _write_json(path, value, root):
 def _publish_marker(path, value, root):
     """Marker publication seam used only to prove pre-dispatch crash recovery."""
     _write_json(path, value, root)
+
+
+def _provider_marker_request(call_id, marker, request=None):
+    fields = {"schema", "call_id", "request_sha256", "request", "reservation",
+              "status", "result_receipt_sha256"}
+    if not isinstance(marker, dict) or set(marker) != fields \
+            or marker.get("schema") != 1 or marker.get("call_id") != call_id \
+            or not isinstance(marker.get("request"), dict) \
+            or marker.get("request_sha256") != _sha(marker["request"]) \
+            or not isinstance(marker.get("reservation"), dict) \
+            or marker.get("status") not in {"DISPATCH_INTENT", "COMPLETE"} \
+            or marker.get("status") == "DISPATCH_INTENT" \
+            and marker.get("result_receipt_sha256") is not None \
+            or marker.get("status") == "COMPLETE" \
+            and HEX.fullmatch(str(marker.get("result_receipt_sha256", ""))) is None:
+        raise ResearchLifecycleBlocked(f"{call_id}: durable provider marker is stale")
+    if request is not None and marker["request"] != request:
+        raise ResearchLifecycleBlocked(f"{call_id}: resume request differs from its marker")
+    return marker["request"]
+
+
+def _state_provider_request(state, call_id, marker, request=None):
+    """Bind a marker to the independently durable reservation-group identity."""
+    marker_request = _provider_marker_request(call_id, marker, request)
+    reservations = state.get("reservations")
+    expected_reservation = reservations.get(call_id) if isinstance(reservations, dict) else None
+    if not isinstance(expected_reservation, dict) \
+            or marker.get("reservation") != expected_reservation:
+        raise ResearchLifecycleBlocked(f"{call_id}: durable reservation identity changed")
+    matches = []
+    groups = state.get("reservation_groups")
+    if not isinstance(groups, dict):
+        raise ResearchLifecycleBlocked(f"{call_id}: durable request identity is missing")
+    for group_id, group in groups.items():
+        members = group.get("members") if isinstance(group, dict) else None
+        if not isinstance(members, list) or group_id != _sha(members):
+            raise ResearchLifecycleBlocked("durable reservation-group identity changed")
+        matches.extend(member for member in members
+                       if isinstance(member, dict) and member.get("call_id") == call_id)
+    if len(matches) != 1 or set(matches[0]) != {"call_id", "request_sha256", "tools"} \
+            or HEX.fullmatch(str(matches[0].get("request_sha256", ""))) is None \
+            or type(matches[0].get("tools")) is not bool \
+            or matches[0]["request_sha256"] != marker.get("request_sha256"):
+        raise ResearchLifecycleBlocked(f"{call_id}: durable request identity changed")
+    return marker_request
+
+
+def _record_result_identity(state, call_id, result):
+    identity = result.get("result_sha256") if isinstance(result, dict) else None
+    prior = state.setdefault("results", {}).get(call_id)
+    if HEX.fullmatch(str(identity or "")) is None:
+        raise ResearchLifecycleBlocked(f"{call_id}: durable result identity is invalid")
+    if prior is not None and prior != identity:
+        raise ResearchLifecycleBlocked(f"{call_id}: durable result identity changed")
+    state["results"][call_id] = identity
+
+
+def _require_result_identity(state, call_id, result):
+    identity = result.get("result_sha256") if isinstance(result, dict) else None
+    if state.get("results", {}).get(call_id) != identity:
+        raise ResearchLifecycleBlocked(f"{call_id}: durable result identity is unbound or changed")
+
+
+def _persist_lifecycle_block(root, reason):
+    """Record only terminal post-preflight failure; missing-key preflight has no state."""
+    path = _state_path(root)
+    if not os.path.lexists(path):
+        return
+    state = _read_json(path, Path(root).absolute(), "research state")
+    if state.get("stage") in {"PURGING_ELIGIBILITY", "BLOCKED_ELIGIBILITY"}:
+        return
+    safe_reason = _single_line(str(reason), "research lifecycle block", placeholder=False)
+    state["stage"] = "BLOCKED"
+    state["blocked_reason"] = safe_reason[:500]
+    _write_json(path, state, Path(root).absolute())
 
 
 def _publish_file(path, data):
@@ -806,7 +885,8 @@ def _validate_payload_reservation(payload, policy):
     # tool result context is not in this request and is reserved by pricing().
     if len(_canonical(payload).encode("utf-8")) > policy["serialized_input_bytes"] \
             or policy["serialized_input_bytes"] > policy["input_tokens_per_call"]:
-        raise ResearchBlocked("serialized research input exceeds its pre-dispatch reservation")
+        raise ResearchLifecycleBlocked(
+            "serialized research input exceeds its pre-dispatch reservation")
 
 
 def _response_contract(kind):
@@ -918,7 +998,7 @@ def _usage(value, reservation, needs_tools):
             or usage["completion_tokens"] > reservation["output_tokens"] \
             or cost > reservation["cost_usd"] \
             or search > reservation["search_requests"] or fetch > reservation["fetch_uses"]:
-        raise ResearchBlocked("provider exceeded its reserved ceiling")
+        raise ResearchLifecycleBlocked("provider exceeded its reserved ceiling")
     return {"input_tokens": usage["input_tokens"],
             "completion_tokens": usage["completion_tokens"],
             "total_tokens": usage["total_tokens"], "cost": cost,
@@ -1140,7 +1220,8 @@ def _sanitize_discovery(body, response, lane, safety_boundary, coverage_plan,
     returned = sum(len(row.get("evidence", ())) for row in body.get("accepted", ())
                    if isinstance(row, dict))
     if returned > retained_limit:
-        raise ResearchBlocked("provider returned more evidence than its retained-result reservation")
+        raise ResearchLifecycleBlocked(
+            "provider returned more evidence than its retained-result reservation")
     for row in body.get("accepted", ()):
         clean, disposition = _sanitize_candidate(
             row, annotations, lane, safety_boundary, persona_plan, received_utc,
@@ -1179,10 +1260,12 @@ def _reserve_group(root, state, requests, policy, price):
             raise ResearchBlocked(f"{call_id}: result has no durable marker")
         if os.path.lexists(marker_path):
             marker = _read_json(marker_path, root, f"{call_id} marker")
-            if marker.get("request_sha256") != _sha(request):
-                raise ResearchBlocked(f"{call_id}: resume request differs from its marker")
+            _state_provider_request(state, call_id, marker, request)
             if not os.path.lexists(result_path):
                 raise ResearchBlocked(f"{call_id}: ambiguous orphan call marker; replay forbidden")
+            if marker["status"] != "COMPLETE":
+                raise ResearchBlocked(
+                    f"{call_id}: incomplete completion marker; replay forbidden")
             prepared.append((call_id, request, tools, marker, result_path, True))
             continue
         reserve = _reservation(state, policy, price, tools)
@@ -1191,7 +1274,9 @@ def _reserve_group(root, state, requests, policy, price):
             raise ResearchBlocked(f"{call_id}: durable reservation differs from policy")
         reserve = stored or reserve
         prepared.append((call_id, request, tools, {"schema": 1, "call_id": call_id,
-            "request_sha256": _sha(request), "reservation": reserve}, result_path, False))
+            "request_sha256": _sha(request), "request": request,
+            "reservation": reserve, "status": "DISPATCH_INTENT",
+            "result_receipt_sha256": None}, result_path, False))
     additions = [item[3]["reservation"] for item in prepared
                  if not item[5] and item[0] not in state.get("reservations", {})]
     budget = dict(state["budget"])
@@ -1205,7 +1290,8 @@ def _reserve_group(root, state, requests, policy, price):
               "retained_results": policy["retained_result_ceiling"]}
     over = [name for name, limit in limits.items() if budget[name] > limit]
     if over:
-        raise ResearchBlocked("research ceiling exhausted before reservation: " + ", ".join(over))
+        raise ResearchLifecycleBlocked(
+            "research ceiling exhausted before reservation: " + ", ".join(over))
     if additions:
         if prior_group is not None:
             raise ResearchBlocked("durable reservation group lost its reserved budget")
@@ -1233,16 +1319,18 @@ def _reserve_group(root, state, requests, policy, price):
     return prepared
 
 
-def _validate_provider_result(call_id, marker, result, request=None,
-                              expected_kind=None):
+def _validate_provider_result(call_id, marker, result, request=None):
     """Revalidate one sanitized durable provider result on every read."""
+    request = _provider_marker_request(call_id, marker, request)
     fields = {"schema", "call_id", "request_sha256", "model", "usage",
               "result", "result_sha256"}
     if not isinstance(result, dict) or set(result) != fields \
             or result.get("schema") != 1 or result.get("call_id") != call_id \
             or result.get("request_sha256") != marker.get("request_sha256") \
-            or result.get("result_sha256") != _sha(result.get("result")):
-        raise ResearchBlocked(f"{call_id}: durable result envelope is stale")
+            or result.get("result_sha256") != _sha(result.get("result")) \
+            or marker.get("status") != "COMPLETE" \
+            or marker.get("result_receipt_sha256") != _sha(result):
+        raise ResearchLifecycleBlocked(f"{call_id}: durable result envelope is stale")
     reservation = marker.get("reservation")
     if not isinstance(reservation, dict):
         raise ResearchBlocked(f"{call_id}: durable result lacks its reservation")
@@ -1252,7 +1340,7 @@ def _validate_provider_result(call_id, marker, result, request=None,
     if result["usage"] != normalized_usage:
         raise ResearchBlocked(f"{call_id}: durable result usage is not canonical")
     clean = result["result"]
-    kind = request.get("kind") if isinstance(request, dict) else expected_kind
+    kind = request.get("kind")
     if kind == "gap-fill":
         kind = "discovery"
     if not isinstance(clean, dict) or clean.get("kind") != kind:
@@ -1313,10 +1401,19 @@ def _validate_provider_result(call_id, marker, result, request=None,
             raise ResearchBlocked(f"{call_id}: durable synthesis invented evidence")
     elif kind == "discovery":
         if set(clean) != {"kind", "accepted", "rejections"} \
-                or not isinstance(clean.get("accepted"), list) \
-                or len(clean["accepted"]) > reservation.get("retained_results", -1) \
-                or clean.get("rejections") != _aggregate_rejections(
-                    clean.get("rejections", [])):
+                or not isinstance(clean.get("accepted"), list):
+            raise ResearchBlocked(f"{call_id}: durable discovery is malformed")
+        retained_limit = reservation.get("retained_results")
+        if type(retained_limit) is not int or retained_limit < 0:
+            raise ResearchLifecycleBlocked(
+                f"{call_id}: durable retained-result reservation is invalid")
+        returned = sum(len(source.get("evidence", ())) for source in clean["accepted"]
+                       if isinstance(source, dict)
+                       and isinstance(source.get("evidence"), list))
+        if returned > retained_limit:
+            raise ResearchLifecycleBlocked(
+                f"{call_id}: durable evidence exceeds its retained-result reservation")
+        if clean.get("rejections") != _aggregate_rejections(clean.get("rejections", [])):
             raise ResearchBlocked(f"{call_id}: durable discovery is malformed")
         source_fields = {"url", "title", "source_type", "source_family",
             "discovery_lane", "author_organization", "story_identity",
@@ -1476,8 +1573,11 @@ def _provider_call(root, item, prompt, transport, policy):
     result = {"schema": 1, "call_id": call_id, "request_sha256": marker["request_sha256"],
               "model": MODEL, "usage": usage, "result": clean}
     result["result_sha256"] = _sha(clean)
-    _validate_provider_result(call_id, marker, result, request)
+    completed_marker = {**marker, "status": "COMPLETE",
+                        "result_receipt_sha256": _sha(result)}
+    _validate_provider_result(call_id, completed_marker, result, request)
     _write_json(result_path, result, root)
+    _write_json(_call_paths(root, call_id)[0], completed_marker, root)
     return result
 
 
@@ -1486,16 +1586,23 @@ def _call_group(root, state, requests, prompt, transport, policy, price, paralle
         _validate_payload_reservation(_payload(prompt, request, policy, tools), policy)
     prepared = _reserve_group(root, state, requests, policy, price)
     if not parallel:
-        return [_provider_call(root, item, prompt, transport, policy) for item in prepared]
-    with concurrent.futures.ThreadPoolExecutor(max_workers=len(prepared)) as pool:
-        futures = [pool.submit(_provider_call, root, item, prompt, transport, policy)
+        results = [_provider_call(root, item, prompt, transport, policy)
                    for item in prepared]
-        return [future.result() for future in futures]
+    else:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=len(prepared)) as pool:
+            futures = [pool.submit(_provider_call, root, item, prompt, transport, policy)
+                       for item in prepared]
+            results = [future.result() for future in futures]
+    for result in results:
+        _record_result_identity(state, result["call_id"], result)
+    _write_json(_state_path(root), state, root)
+    return results
 
 
 def _attempt_receipts(root):
     """Return privacy-safe, content-free evidence of completed discovery effort."""
     receipts = []
+    state = _read_json(_state_path(root), root, "research state")
     for path in sorted(_calls_root(root).glob("*.result.json")):
         call_id = path.name.removesuffix(".result.json")
         lane = re.fullmatch(r"lane-\d+-(.+)", call_id)
@@ -1505,8 +1612,9 @@ def _attempt_receipts(root):
         result = _read_json(path, root, f"{call_id} result")
         marker = _read_json(_call_paths(root, call_id)[0], root,
                             f"{call_id} marker")
-        _validate_provider_result(
-            call_id, marker, result, expected_kind="discovery")
+        request = _state_provider_request(state, call_id, marker)
+        _validate_provider_result(call_id, marker, result, request)
+        _require_result_identity(state, call_id, result)
         clean = result.get("result", {})
         accepted = clean.get("accepted") if isinstance(clean, dict) else None
         rejections = clean.get("rejections") if isinstance(clean, dict) else None
@@ -1686,7 +1794,8 @@ def _dedupe(rows, ceiling, existing=(set(), set(), 0, set(), set(), set()),
             retained[owner]["corroboration_count"] += 1
     count = sum(len(source["evidence"]) for source in retained)
     if count > ceiling:
-        raise ResearchBlocked("retained-result ceiling exhausted; corpus remains unaccepted")
+        raise ResearchLifecycleBlocked(
+            "retained-result ceiling exhausted; corpus remains unaccepted")
     for source_number, source in enumerate(retained, maximum + 1):
         source["source_id"] = f"S-{source_number:03d}"
         for evidence_number, item in enumerate(source["evidence"], 1):
@@ -2144,6 +2253,16 @@ def _validate_editor_result(marker, result, task, editor):
     usage = provenance.get("usage") if isinstance(provenance, dict) else None
     output_tokens = usage.get("output_tokens") if isinstance(usage, dict) else None
     reserve = marker.get("reservation", {})
+    reserved_output = reserve.get("output_tokens") if isinstance(reserve, dict) else None
+    if type(output_tokens) is not int or output_tokens < 0:
+        raise ResearchLifecycleBlocked(
+            "independent editor durable output-token usage is missing or invalid")
+    if type(reserved_output) is not int or reserved_output < 0:
+        raise ResearchLifecycleBlocked(
+            "independent editor durable output-token reservation is missing or invalid")
+    if output_tokens > reserved_output:
+        raise ResearchLifecycleBlocked(
+            "independent editor exceeded its reserved output-token ceiling")
     if not isinstance(provenance, dict) or set(provenance) != required \
             or provenance.get("kind") != expected_kind \
             or provenance.get("judge_identity") != "research-evidence-editor" \
@@ -2152,8 +2271,6 @@ def _validate_editor_result(marker, result, task, editor):
                 "model", "reasoning_effort", "thread_id")) \
             or provenance.get("input_sha256") != _sha(_editor_input(task)) \
             or provenance.get("output_schema_sha256") != _sha(_editor_schema_bytes()) \
-            or type(output_tokens) is not int or output_tokens < 0 \
-            or output_tokens > reserve.get("output_tokens", -1) \
             or expected_kind == "native-codex-subscription" and (
                 provenance.get("model") != "gpt-5.6-sol"
                 or provenance.get("reasoning_effort") != "xhigh"):
@@ -2178,7 +2295,8 @@ def _editor_result(root, state, task, editor, policy, price):
         raise ResearchBlocked("numeric scarcity is not bound to the editor's attempt evidence")
     editor_input = _editor_input(task)
     if len(editor_input) > policy["editor_input_bytes"]:
-        raise ResearchBlocked("exact evidence-editor input exceeds its byte ceiling")
+        raise ResearchLifecycleBlocked(
+            "exact evidence-editor input exceeds its byte ceiling")
     call_id = f"editor-r{state['gap_round']}"
     marker_path, result_path = _call_paths(root, call_id)
     if os.path.lexists(marker_path):
@@ -2197,7 +2315,8 @@ def _editor_result(root, state, task, editor, policy, price):
         if state["budget"]["calls"] + 1 > policy["call_ceiling"] \
                 or state["budget"]["output_tokens"] + reserve["output_tokens"] \
                 > policy["total_output_tokens"]:
-            raise ResearchBlocked("call/output ceiling exhausted before independent review")
+            raise ResearchLifecycleBlocked(
+                "call/output ceiling exhausted before independent review")
         state["budget"]["calls"] += 1
         state["budget"]["output_tokens"] += reserve["output_tokens"]
         state["reservations"][call_id] = reserve
@@ -2213,7 +2332,8 @@ def _editor_result(root, state, task, editor, policy, price):
     output_tokens = usage.get("output_tokens") if isinstance(usage, dict) else None
     if type(output_tokens) is not int or output_tokens < 0 \
             or output_tokens > reserve["output_tokens"]:
-        raise ResearchBlocked("independent editor output usage is missing or exceeds its reservation")
+        raise ResearchLifecycleBlocked(
+            "independent editor output usage is missing or exceeds its reservation")
     verdict = response.get("verdict") if isinstance(response, dict) else None
     if not isinstance(verdict, dict) or verdict.get("status") not in ("PASS", "BLOCKED") \
             or not isinstance(verdict.get("gaps"), list) or set(verdict.get("checks", {})) != set(HARD_REVIEW_CHECKS):
@@ -2376,6 +2496,9 @@ def _load_or_initialize(ctx, policy, price):
         raise ResearchBlocked("research resume identity, policy, or pricing changed")
     if state.get("late_eligibility_rejection"):
         raise ResearchBlocked("research remains blocked after independent rights/privacy rejection")
+    if state.get("stage") == "BLOCKED":
+        raise ResearchBlocked("research lifecycle remains BLOCKED: " + str(
+            state.get("blocked_reason") or "terminal research failure"))
     if state.get("stage") == "SEALED":
         if RC.research_seal_identity(ctx["book"]) != state.get("seal_identity"):
             raise ResearchBlocked("sealed research changed after completion")
@@ -2386,7 +2509,8 @@ def _next_chapter_round(ctx, state, gaps, policy):
     start = state["chapter_gap_start_round"]
     current = state["chapter_gap_round"]
     if current - start + 1 >= policy["gap_round_ceiling"]:
-        raise ResearchBlocked("targeted chapter gaps remain at the gap-round ceiling")
+        raise ResearchLifecycleBlocked(
+            "targeted chapter gaps remain at the gap-round ceiling")
     safe = []
     for gap in gaps:
         if not isinstance(gap, dict):
@@ -2462,7 +2586,8 @@ def _advance_chapter_gap(ctx, gap, transport, editor, policy, price):
         raise ResearchBlocked("targeted continuation lost its demonstrated round gap")
     remaining = policy["retained_result_ceiling"] - prior["counts"]["evidence_items"]
     if remaining <= 0:
-        raise ResearchBlocked("targeted continuation has no retained-result capacity")
+        raise ResearchLifecycleBlocked(
+            "targeted continuation has no retained-result capacity")
     packet_bindings = {}
     for packet in prior["inventory"]["packets"].values():
         relative = packet["path"]
@@ -2500,7 +2625,8 @@ def _advance_chapter_gap(ctx, gap, transport, editor, policy, price):
         state.setdefault("corroboration", {})[kind] = \
             state.setdefault("corroboration", {}).get(kind, 0) + count
     if not retained:
-        raise ResearchBlocked("targeted chapter gap produced no new eligible evidence")
+        raise ResearchLifecycleBlocked(
+            "targeted chapter gap produced no new eligible evidence")
     keys = [item["locator"] for source in retained for item in source["evidence"]]
     synthesis_request = {"kind": "synthesis", "fresh_context": True,
         "brief": request["brief"], "chapter_gap_request": gap,
@@ -2515,7 +2641,8 @@ def _advance_chapter_gap(ctx, gap, transport, editor, policy, price):
     state["results"][synthesis_id] = synthesis["result_sha256"]
     selected = synthesis["result"]["selected_evidence_keys"]
     if not selected or set(selected) - set(keys):
-        raise ResearchBlocked("targeted synthesis did not select eligible gap evidence")
+        raise ResearchLifecycleBlocked(
+            "targeted synthesis did not select eligible gap evidence")
     stage = _render_extension_stage(ctx, plan, state, retained, selected, prior)
     report = _inspect(stage)
     coverage = RC.build_coverage(stage, plan["preset"])
@@ -2566,8 +2693,8 @@ def _advance_chapter_gap(ctx, gap, transport, editor, policy, price):
     return _seal_candidate(ctx, stage, state, plan, coverage, review, authority)
 
 
-def advance(candidate_root, transport, editor, policy=None, chapter_gap_request=None,
-            force_discovery=False):
+def _advance(candidate_root, transport, editor, policy=None, chapter_gap_request=None,
+             force_discovery=False):
     """Import-only deterministic seam for offline tests; production calls start()."""
     ctx = _context(candidate_root)
     if os.path.lexists(_state_path(ctx["root"])):
@@ -2579,6 +2706,9 @@ def advance(candidate_root, transport, editor, policy=None, chapter_gap_request=
         if publication_state.get("stage") == "BLOCKED_ELIGIBILITY" \
                 or publication_state.get("late_eligibility_rejection"):
             raise ResearchBlocked("research remains blocked after independent rights/privacy rejection")
+        if publication_state.get("stage") == "BLOCKED":
+            raise ResearchBlocked("research lifecycle remains BLOCKED: " + str(
+                publication_state.get("blocked_reason") or "terminal research failure"))
         if publication_state.get("chapter_gap_rotation") is not None:
             _finish_chapter_gap_rotation(ctx, publication_state)
             publication_state = _read_json(
@@ -2653,10 +2783,10 @@ def advance(candidate_root, transport, editor, policy=None, chapter_gap_request=
             raise ResearchBlocked(f"{gap_id}: durable gap-round evidence is incomplete")
         marker = _read_json(marker_path, ctx["root"], f"{gap_id} marker")
         result = _read_json(result_path, ctx["root"], f"{gap_id} result")
-        _validate_provider_result(
-            gap_id, marker, result, expected_kind="discovery")
+        request = _state_provider_request(state, gap_id, marker)
+        _validate_provider_result(gap_id, marker, result, request)
+        _record_result_identity(state, gap_id, result)
         rows.extend(result["result"]["accepted"])
-        state["results"][gap_id] = result["result_sha256"]
         state["rejections"] = _aggregate_rejections(
             [*state["rejections"], *result["result"]["rejections"]])
     existing = _existing_source_keys(ctx)
@@ -2677,7 +2807,8 @@ def advance(candidate_root, transport, editor, policy=None, chapter_gap_request=
         _write_json(_state_path(ctx["root"]), state, ctx["root"])
         if not report.get("ok") and coverage["status"] != "PASS":
             if state["gap_round"] >= policy["gap_round_ceiling"]:
-                raise ResearchBlocked("derived research gaps remain at the gap-round ceiling")
+                raise ResearchLifecycleBlocked(
+                    "derived research gaps remain at the gap-round ceiling")
             state["gap_round"] += 1
             gap_request = _gap_request(ctx, plan, report, retained, state["gap_round"],
                                        policy["retained_results_per_call"],
@@ -2719,7 +2850,7 @@ def advance(candidate_root, transport, editor, policy=None, chapter_gap_request=
             _write_json(_state_path(ctx["root"]), state, ctx["root"])
             continue
         if coverage["status"] != "PASS":
-            raise ResearchBlocked("shared derived coverage did not PASS")
+            raise ResearchLifecycleBlocked("shared derived coverage did not PASS")
         PS.write_json(stage / "research/research-coverage.json", coverage)
         attempts = _attempt_receipts(ctx["root"])
         receipts = sorted({PS.sha(path.read_bytes()) for path in
@@ -2747,7 +2878,8 @@ def advance(candidate_root, transport, editor, policy=None, chapter_gap_request=
         verdict = editor_result["verdict"]
         if verdict["status"] != "PASS":
             if state["gap_round"] >= policy["gap_round_ceiling"]:
-                raise ResearchBlocked("independent review gaps remain at the gap-round ceiling")
+                raise ResearchLifecycleBlocked(
+                    "independent review gaps remain at the gap-round ceiling")
             report = {**report, "ok": False, "gaps": verdict["gaps"],
                       "blockers": ["independent evidence review rejected"]}
             state["gap_round"] += 1
@@ -2779,6 +2911,17 @@ def advance(candidate_root, transport, editor, policy=None, chapter_gap_request=
         state["stage"] = "INDEPENDENT_REVIEW"
         _write_json(_state_path(ctx["root"]), state, ctx["root"])
         return _seal_candidate(ctx, stage, state, plan, coverage, review, authority)
+
+
+def advance(candidate_root, transport, editor, policy=None, chapter_gap_request=None,
+            force_discovery=False):
+    """Import-only deterministic seam for offline tests; production calls start()."""
+    try:
+        return _advance(candidate_root, transport, editor, policy,
+                        chapter_gap_request, force_discovery)
+    except ResearchLifecycleBlocked as exc:
+        _persist_lifecycle_block(candidate_root, exc)
+        raise
 
 
 def start(candidate_root, chapter_gap_request=None):

@@ -1,5 +1,6 @@
 """Regressions for the calibration-ready research and planning contracts."""
 import json
+import subprocess
 import unittest
 from pathlib import Path
 
@@ -214,6 +215,16 @@ class PlanningContractTests(unittest.TestCase):
 
 
 class HarnessBoundaryTests(unittest.TestCase):
+    def test_mission_memory_is_external_operator_state(self):
+        """Infra: Sentinel recovery state stays local and outside repository truth."""
+        ignored = read(".gitignore").splitlines()
+        self.assertIn("/memory.md", ignored)
+        tracked = subprocess.run(
+            ["git", "-C", str(ROOT), "ls-files", "--error-unmatch", "memory.md"],
+            capture_output=True, check=False,
+        )
+        self.assertNotEqual(0, tracked.returncode)
+
     def test_manifest_records_simple_model_led_research(self):
         """OpenSpec: the run records calls without prescribing an org chart."""
         manifest = json.loads(read("calibration/runs/_template/manifest.json"))

@@ -1,5 +1,8 @@
 # Code intelligence graph cache (codebase-memory-mcp) — never commit.
 .codebase-memory-mcp/
+
+# Local Sentinel/orchestrator recovery state; never repository truth.
+/memory.md
 *.cbm-graph/
 .codex/
 

@@ -753,10 +753,11 @@ def _coverage(book, preset=None):
     if not boundary or not any(unit["safety"] == boundary for unit in units.values()):
         blockers.append("coverage: brief safety perimeter is not bound to accepted units")
     lane_evidence = defaultdict(list)
-    for packet_id, packet in packets.items():
+    for packet in packets.values():
         if packet.get("lane"):
-            lane_evidence[packet["lane"]].append(
-                (packet.get("domain", ""), packet.get("author", ""), packet_id))
+            lane_evidence[packet["lane"]].extend(
+                (packet.get("domain", ""), packet.get("author", ""), locator)
+                for locator in packet["evidence"])
     diversity = {}
     for lane in sorted(LANES):
         rows = lane_evidence.get(lane, [])

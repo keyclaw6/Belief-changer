@@ -262,6 +262,43 @@ class ResearchContractTests(unittest.TestCase):
         blockers = "\n".join(RC.inspect_research(self.book, require_seal=False)["blockers"])
         self.assertIn("reaches 2/3 distinct personas", blockers)
 
+    def test_lane_diversity_is_weighted_by_accepted_evidence_entries(self):
+        """OpenSpec RF-32: lane diversity counts entries, not source packets."""
+        self.seal()
+        sources = self.book / "research/sources"
+        dominant = sources / "S-001-sealed-fixture.md"
+        text = dominant.read_text(encoding="utf-8")
+        base = re.search(r"(?ms)^### E-001\s*$.*?\Z", text).group(0)
+        additions = []
+        for number in range(2, 101):
+            block = base.replace("### E-001", f"### E-{number:03d}", 1)
+            block = block.replace("- **Kind:** EXACT_QUOTE",
+                                  "- **Kind:** INTERPRETATION", 1)
+            block = re.sub(r"(?m)^- \*\*Text:\*\* .+$",
+                           f"- **Text:** Distinct accepted interpretation {number}.",
+                           block, count=1)
+            block = re.sub(r"(?m)^- \*\*Permitted inference:\*\* .+$",
+                           f"- **Permitted inference:** Only bounded interpretation {number} is permitted.",
+                           block, count=1)
+            block = re.sub(r"(?m)^- \*\*Prohibited inference:\*\* .+$",
+                           f"- **Prohibited inference:** Broader conclusion {number} is prohibited.",
+                           block, count=1)
+            additions.append(block)
+        dominant.write_text(text + "\n\n" + "\n\n".join(additions) + "\n",
+                            encoding="utf-8")
+        third = sources / "S-003-sealed-fixture.md"
+        third.write_text(third.read_text(encoding="utf-8").replace(
+            "- **Discovery lane:** LIVED_EXPERIENCE",
+            "- **Discovery lane:** COUNTER_CORPUS", 1), encoding="utf-8")
+
+        report = RC.inspect_research(self.book, require_seal=False)
+        row = report["coverage"]["diversity"]["COUNTER_CORPUS"]
+        self.assertEqual(102, row["entries"])
+        self.assertAlmostEqual(100 / 102, row["top_domain_share"])
+        self.assertAlmostEqual(100 / 102, row["top_author_share"])
+        self.assertIn("coverage: discovery lane COUNTER_CORPUS exceeds the 50% source-diversity limit",
+                      report["blockers"])
+
     def test_deselected_packet_cannot_supply_style_slot_coverage(self):
         """RF-32: Only accepted synthesis/unit citations count toward style slots."""
         self.seal()

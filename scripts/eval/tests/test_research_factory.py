@@ -936,6 +936,157 @@ results_tsv: loop/results.tsv
             RF._editor_result(self.candidate, state, marker["task"], editor,
                               policy(), transport.pricing(policy()))
 
+    def test_generic_gap_crash_tamper_rehash_resume_blocks_without_forged_seal(self):
+        """OpenSpec RF-32: generic gap replay binds exact request and original result."""
+        transport, editor = FakeTransport(), FakeEditor(("BLOCKED", "PASS"))
+        original_write = RF._write_json
+        interrupted = False
+
+        def interrupt_after_gap_state(path, value, root):
+            nonlocal interrupted
+            original_write(path, value, root)
+            if Path(path) == RF._state_path(self.candidate) \
+                    and value.get("stage") == "TARGETED_GAP_FILL" and not interrupted:
+                interrupted = True
+                raise OSError("captured crash after durable generic gap")
+
+        seams = self.seams()
+        with seams[0], seams[1], seams[2], seams[3], seams[4], \
+                mock.patch.object(RF, "_write_json", side_effect=interrupt_after_gap_state), \
+                self.assertRaisesRegex(OSError, "captured crash"):
+            RF.advance(self.candidate, transport, editor, policy())
+
+        marker_path, result_path = RF._call_paths(self.candidate, "gap-r1")
+        marker = json.loads(marker_path.read_text(encoding="utf-8"))
+        original_result = json.loads(result_path.read_text(encoding="utf-8"))
+        state = json.loads(RF._state_path(self.candidate).read_text(encoding="utf-8"))
+        self.assertEqual("COMPLETE", marker["status"])
+        self.assertEqual(marker["request_sha256"], RF._sha(marker["request"]))
+        self.assertEqual(marker["result_receipt_sha256"], RF._sha(original_result))
+        self.assertEqual(original_result["result_sha256"], state["results"]["gap-r1"])
+
+        forged = json.loads(json.dumps(original_result))
+        sentinel = "FORGED-GENERIC-GAP-EVIDENCE"
+        source = forged["result"]["accepted"][0]
+        source["fetch"]["excerpt"] += " " + sentinel
+        source["fetch"]["content_sha256"] = RF.PS.sha(
+            source["fetch"]["excerpt"].encode("utf-8"))
+        evidence = json.loads(json.dumps(source["evidence"][0]))
+        evidence.update({"kind": "INTERPRETATION", "text": sentinel,
+                         "semantic_key": "forged-semantic-key",
+                         "claim_key": "forged-claim-key",
+                         "story_key": "forged-story-key"})
+        source["evidence"].append(evidence)
+        forged["result_sha256"] = RF._sha(forged["result"])
+        result_path.write_text(json.dumps(forged), encoding="utf-8")
+
+        with self.assertRaisesRegex(RF.ResearchLifecycleBlocked, "envelope is stale"):
+            RF._attempt_receipts(self.candidate)
+        calls_before = len(transport.calls)
+        seams = self.seams()
+        with seams[0], seams[1], seams[2], seams[3], seams[4], \
+                self.assertRaises(RF.ResearchLifecycleBlocked):
+            RF.advance(self.candidate, transport, editor, policy())
+        self.assertEqual(calls_before, len(transport.calls))
+        state = json.loads(RF._state_path(self.candidate).read_text(encoding="utf-8"))
+        self.assertEqual("BLOCKED", state["stage"])
+        self.assertIn("durable result envelope is stale", state["blocked_reason"])
+        product_bytes = b"".join(
+            path.read_bytes() for path in CP.candidate_tree(self.candidate).rglob("*")
+            if path.is_file())
+        stage = RF._stage_book(RF._context(self.candidate))
+        stage_bytes = b"".join(path.read_bytes() for path in stage.rglob("*") if path.is_file())
+        self.assertNotIn(sentinel.encode(), product_bytes + stage_bytes)
+        self.assertFalse(list(self.book.glob("research/research-seal.json")))
+
+    def test_generic_gap_request_rehash_resume_blocks_without_seal(self):
+        """OpenSpec RF-32: generic gap replay checks the original request identity."""
+        transport, editor = FakeTransport(), FakeEditor(("BLOCKED", "PASS"))
+        original_write = RF._write_json
+        interrupted = False
+
+        def interrupt_after_gap_state(path, value, root):
+            nonlocal interrupted
+            original_write(path, value, root)
+            if Path(path) == RF._state_path(self.candidate) \
+                    and value.get("stage") == "TARGETED_GAP_FILL" and not interrupted:
+                interrupted = True
+                raise OSError("captured crash after durable generic gap")
+
+        seams = self.seams()
+        with seams[0], seams[1], seams[2], seams[3], seams[4], \
+                mock.patch.object(RF, "_write_json", side_effect=interrupt_after_gap_state), \
+                self.assertRaisesRegex(OSError, "captured crash"):
+            RF.advance(self.candidate, transport, editor, policy())
+
+        marker_path, result_path = RF._call_paths(self.candidate, "gap-r1")
+        marker = json.loads(marker_path.read_text(encoding="utf-8"))
+        result = json.loads(result_path.read_text(encoding="utf-8"))
+        marker["request"]["instruction"] = \
+            "Changed request that must not become the durable original."
+        marker["request_sha256"] = RF._sha(marker["request"])
+        result["request_sha256"] = marker["request_sha256"]
+        marker["result_receipt_sha256"] = RF._sha(result)
+        marker_path.write_text(json.dumps(marker), encoding="utf-8")
+        result_path.write_text(json.dumps(result), encoding="utf-8")
+
+        with self.assertRaisesRegex(RF.ResearchLifecycleBlocked,
+                                    "durable request identity changed"):
+            RF._attempt_receipts(self.candidate)
+        calls_before = len(transport.calls)
+        seams = self.seams()
+        with seams[0], seams[1], seams[2], seams[3], seams[4], \
+                self.assertRaisesRegex(RF.ResearchLifecycleBlocked,
+                                        "durable request identity changed"):
+            RF.advance(self.candidate, transport, editor, policy())
+        self.assertEqual(calls_before, len(transport.calls))
+        state = json.loads(RF._state_path(self.candidate).read_text(encoding="utf-8"))
+        self.assertEqual("BLOCKED", state["stage"])
+        self.assertIn("durable request identity changed", state["blocked_reason"])
+        self.assertFalse(list(self.book.glob("research/research-seal.json")))
+
+    def test_durable_retained_result_overage_persists_blocked(self):
+        """OpenSpec RF-32: replayed evidence overage ends in durable BLOCKED."""
+        transport, editor = FakeTransport(), FakeEditor()
+        original_record = RF._record_result_identity
+        interrupted = False
+
+        def interrupt_before_lane_identity(state, call_id, result):
+            nonlocal interrupted
+            if call_id.startswith("lane-") and not interrupted:
+                interrupted = True
+                raise OSError("captured crash before lane result identity")
+            return original_record(state, call_id, result)
+
+        with mock.patch.object(RF, "_record_result_identity",
+                               side_effect=interrupt_before_lane_identity), \
+                self.assertRaisesRegex(OSError, "captured crash before lane"):
+            RF.advance(self.candidate, transport, editor, policy())
+
+        call_id = "lane-1-lived-experience"
+        marker_path, result_path = RF._call_paths(self.candidate, call_id)
+        marker = json.loads(marker_path.read_text(encoding="utf-8"))
+        result = json.loads(result_path.read_text(encoding="utf-8"))
+        evidence = result["result"]["accepted"][0]["evidence"][0]
+        result["result"]["accepted"][0]["evidence"] = [
+            json.loads(json.dumps(evidence))
+            for _ in range(marker["reservation"]["retained_results"] + 1)
+        ]
+        result["result_sha256"] = RF._sha(result["result"])
+        marker["result_receipt_sha256"] = RF._sha(result)
+        marker_path.write_text(json.dumps(marker), encoding="utf-8")
+        result_path.write_text(json.dumps(result), encoding="utf-8")
+
+        calls_before = len(transport.calls)
+        with self.assertRaisesRegex(RF.ResearchLifecycleBlocked,
+                                    "retained-result reservation"):
+            RF.advance(self.candidate, transport, editor, policy())
+        self.assertEqual(calls_before, len(transport.calls))
+        state = json.loads(RF._state_path(self.candidate).read_text(encoding="utf-8"))
+        self.assertEqual("BLOCKED", state["stage"])
+        self.assertIn("retained-result reservation", state["blocked_reason"])
+        self.assertFalse(list(self.book.glob("research/research-seal.json")))
+
     def test_current_seal_reuses_without_pricing_or_provider(self):
         """OpenSpec RF-32: accepted whole-book research is not rerun ceremonially."""
         identity = RF.advance(self.candidate, FakeTransport(), FakeEditor(), policy())
@@ -1059,6 +1210,13 @@ results_tsv: loop/results.tsv
         with self.assertRaisesRegex(RF.ResearchBlocked, "gap-round ceiling"):
             RF.advance(self.candidate, transport, editor, policy(), self.chapter_gap(old_seal))
         self.assertEqual(old_seal, RF.RC.research_seal_identity(self.book))
+        state = json.loads(RF._state_path(self.candidate).read_text(encoding="utf-8"))
+        self.assertEqual("BLOCKED", state["stage"])
+        self.assertIn("gap-round ceiling", state["blocked_reason"])
+        calls = len(transport.calls)
+        with self.assertRaisesRegex(RF.ResearchBlocked, "remains BLOCKED"):
+            RF.advance(self.candidate, transport, editor, policy())
+        self.assertEqual(calls, len(transport.calls))
 
     def test_targeted_partial_publication_resumes_exact_stage_without_new_calls(self):
         """OpenSpec RF-32: targeted publication resumes after prior seal becomes partial."""
@@ -1398,6 +1556,76 @@ results_tsv: loop/results.tsv
             RF.advance(self.candidate, transport, FakeEditor(), limited)
         self.assertEqual(["plan"], [request["kind"] for request, _payload in transport.calls])
         self.assertFalse(list((self.candidate / "evidence/research-factory/calls").glob("lane-*.marker.json")))
+        state = json.loads(RF._state_path(self.candidate).read_text(encoding="utf-8"))
+        self.assertEqual("BLOCKED", state["stage"])
+        self.assertIn("ceiling exhausted before reservation", state["blocked_reason"])
+        with self.assertRaisesRegex(RF.ResearchBlocked, "remains BLOCKED"):
+            RF.advance(self.candidate, transport, FakeEditor(), limited)
+        self.assertEqual(["plan"], [request["kind"] for request, _payload in transport.calls])
+        self.assertFalse(list(self.book.glob("research/research-seal.json")))
+
+    def test_generic_coverage_round_exhaustion_persists_blocked(self):
+        """OpenSpec RF-32: unresolved coverage gaps end in durable BLOCKED."""
+        limited = policy(); limited["gap_round_ceiling"] = 1
+        gap = {"kind": "belief_persona", "target": "belief / P-03",
+               "message": "accepted intervention evidence remains missing"}
+        blocked_report = {**report(self.book), "ok": False,
+                          "status": "BLOCKED", "blockers": ["coverage remains thin"],
+                          "gaps": [gap]}
+        blocked_coverage = {"schema": 1, "status": "BLOCKED", "preset": "POCKET",
+            "corpus_sha256": "a" * 64, "counts": blocked_report["counts"],
+            "banks": {}, "floors": {}, "personas": {}, "belief_persona": {},
+            "slots": {}, "safety": {}, "diversity": {}, "science_lineages": {},
+            "gaps": [gap], "scarcity_requests": []}
+        with mock.patch.object(RF, "_inspect", return_value=blocked_report), \
+                mock.patch.object(RF.RC, "build_coverage", return_value=blocked_coverage), \
+                self.assertRaisesRegex(RF.ResearchLifecycleBlocked, "derived research gaps"):
+            RF.advance(self.candidate, FakeTransport(), FakeEditor(), limited)
+        state = json.loads(RF._state_path(self.candidate).read_text(encoding="utf-8"))
+        self.assertEqual("BLOCKED", state["stage"])
+        self.assertIn("derived research gaps", state["blocked_reason"])
+
+    def test_generic_review_round_exhaustion_persists_blocked(self):
+        """OpenSpec RF-32: unresolved evidence review ends in durable BLOCKED."""
+        limited = policy(); limited["gap_round_ceiling"] = 1
+        transport, editor = FakeTransport(), FakeEditor(("BLOCKED", "BLOCKED"))
+        seams = self.seams()
+        with seams[0], seams[1], seams[2], seams[3], seams[4], \
+                self.assertRaisesRegex(RF.ResearchLifecycleBlocked,
+                                            "independent review gaps"):
+            RF.advance(self.candidate, transport, editor, limited)
+        state = json.loads(RF._state_path(self.candidate).read_text(encoding="utf-8"))
+        self.assertEqual("BLOCKED", state["stage"])
+        self.assertIn("independent review gaps", state["blocked_reason"])
+
+    def test_durable_editor_output_ceiling_exhaustion_persists_blocked(self):
+        """OpenSpec RF-32: replayed editor output overage ends in durable BLOCKED."""
+        transport, editor = FakeTransport(), FakeEditor()
+        with mock.patch.object(RF, "_seal_candidate",
+                               side_effect=OSError("captured crash after editor")), \
+                self.assertRaisesRegex(OSError, "captured crash after editor"):
+            RF.advance(self.candidate, transport, editor, policy())
+        result_path = next(RF._calls_root(self.candidate).glob("editor-*.result.json"))
+        call_id = result_path.name.removesuffix(".result.json")
+        marker_path, _ = RF._call_paths(self.candidate, call_id)
+        marker = json.loads(marker_path.read_text(encoding="utf-8"))
+        result = json.loads(result_path.read_text(encoding="utf-8"))
+        result["editor_provenance"]["usage"]["output_tokens"] = \
+            marker["reservation"]["output_tokens"] + 1
+        result["editor_receipt_sha256"] = RF._sha({
+            "task_sha256": result["task_sha256"],
+            "verdict_sha256": result["verdict_sha256"],
+            "provenance": result["editor_provenance"],
+        })
+        result_path.write_text(json.dumps(result), encoding="utf-8")
+
+        with self.assertRaisesRegex(RF.ResearchLifecycleBlocked,
+                                    "output-token ceiling"):
+            RF.advance(self.candidate, transport, editor, policy())
+        state = json.loads(RF._state_path(self.candidate).read_text(encoding="utf-8"))
+        self.assertEqual("BLOCKED", state["stage"])
+        self.assertIn("output-token ceiling", state["blocked_reason"])
+        self.assertFalse((self.book / "research/research-seal.json").exists())
 
     def test_candidate_manifest_rejects_noncanonical_research_outputs(self):
         """OpenSpec RF-32 infra: output declarations cannot escape the research contract."""
