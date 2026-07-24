@@ -1419,5 +1419,5 @@ the SHA without reopening the implementation verdict.
   `da79c0eafab907b06914af3b4f79fd1f0d33006b`; approved metadata-only diff SHA
   `e172d30ad039ed12d24b117bf94e4f88a7cac125` with no findings.
 - Commit / push: implementation `906feb08456d7b03caaf56aa4e28665f9a18adbe`
-  (`feat(research): make research factory executable`), followed only by this
-  completion-record update; both pushed directly to `origin/main`.
+  (`feat(research): make research factory executable`), followed only by
+  metadata closure/correction commits; all pushed directly to `origin/main`.

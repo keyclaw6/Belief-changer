@@ -49,9 +49,9 @@ independent implementation and final acceptance review, canonical
 
 - Workspace: `C:\Users\Kristian Bilstrup\Documents\Belief-changer`; branch
   `main`; RF-32 implementation commit
-  `906feb08456d7b03caaf56aa4e28665f9a18adbe`; its follow-on closure commit
-  changes only this mission record and the authoritative RF-32 ledger. Both are
-  pushed to `origin/main`; the worktree is clean and synchronized.
+  `906feb08456d7b03caaf56aa4e28665f9a18adbe`; all following RF-32 commits are
+  metadata-only closure/correction records. All are pushed to `origin/main`;
+  the worktree is clean and synchronized.
   Final reviewed pre-metadata diff SHA is
   `da79c0eafab907b06914af3b4f79fd1f0d33006b`; pre-metadata status SHA is
   `38db1d8c5dbdc342a3965a9d31890f59c1a3d305`.
