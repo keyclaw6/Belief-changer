@@ -83,6 +83,11 @@ def _require_content(sections, name):
     return sections[name]
 
 
+def scalar_value(sections, name):
+    """Return one canonical scalar while preserving the brief bytes as authority."""
+    return " ".join(_require_content(sections, name).split())
+
+
 def _validate_forks(sections):
     body = _require_content(sections, "Fork decisions")
     found = {}

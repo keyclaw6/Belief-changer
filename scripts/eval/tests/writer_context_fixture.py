@@ -9,6 +9,8 @@ from test_commission_contract import commission
 from test_commission_set import assigned
 from commission_packet_fixture import packet
 from developmental_commission_fixture import STATES
+from research_contract_fixture import (chapter_binding, evidence_row,
+                                       write_sealed_research)
 
 
 class WriterFixture:
@@ -82,9 +84,28 @@ class WriterFixture:
             path = self.accepted / relative
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_bytes(text.encode("utf-8"))
+        report = write_sealed_research(self.accepted / "production-books/test")
+        self.research_report = report
+        units = report["inventory"]["units"]
+        rows = "\n".join(evidence_row(report, f"E-{number:02d}", f"LEU-{number:03d}")
+                         for number in (1, 2, 3))
+        cards = "".join(
+            f"### C-{number:02d} â€” Chapter {number}\n"
+            f"- **Entering belief:** {STATES[number][0]}\n"
+            f"- **Leaving belief:** {STATES[number][1]}\n"
+            f"- **Evidence IDs and required limits:** E-{number:02d}\n"
+            f"- **Guardrails:** {units[f'LEU-{number:03d}']['safety']}\n"
+            for number in (1, 2, 3))
+        (self.accepted / "production-books/test/master-plan.md").write_text(
+            "# FORBIDDEN-FULL-PLAN\n\n## Evidence ledger\n\n"
+            "| ID | Finding / lived material | Research unit IDs | Source ID | Grade or outcome tier | Scope and limit | Permitted inference | Prohibited inference |\n"
+            "|---|---|---|---|---|---|---|---|\n" + rows + "\n\n" + cards,
+            encoding="utf-8")
         PAIR.initialize(self.accepted, "production-books/test")
         self.assignments = {f"C-{number:02d}": assigned(
-            f"C-{number:02d}", f"S-{100 + number}") for number in self.selection}
+            f"C-{number:02d}", f"S-{number:03d}",
+            chapter_binding(report, f"E-{number:02d}", f"LEU-{number:03d}"))
+            for number in self.selection}
 
     def tearDown(self):
         self.tmp.cleanup()

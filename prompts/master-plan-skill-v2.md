@@ -37,11 +37,16 @@ Preserve the method: escape not sacrifice, warm to the person / vicious to the t
 Carry only evidence the book may actually use. Give each entry a stable ID and enough payload for an isolated writer:
 
 - the finding, lived account, reader line, or justification;
+- exact accepted `LEU-NNN` or `SEU-NNN` research-unit IDs;
 - exact source ID;
 - `SUPPORTED`, `MIXED`, or `CONTESTED` for science, or the correct lived-outcome tier;
 - scope and context;
 - permitted inference;
 - prohibited inference.
+
+For a row that binds multiple research units, each inference cell is the exact
+canonical union of the units' sealed values: unique exact values sorted and
+joined with `; `. Never paraphrase, omit, or add permission or prohibition text.
 
 Exact quotations must match the synthesis. Interpretations stay unquoted. Do not copy a full synthesis or duplicate evidence inside chapter cards.
 

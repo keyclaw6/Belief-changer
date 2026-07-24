@@ -31,7 +31,7 @@ class DevelopmentalReviewTests(DevelopmentalFixture, unittest.TestCase):
                 self.assertEqual(STATES[number][1], chapter["leaving_state"])
                 self.assertIn(chapter["entering_state"], chapter["commission"])
                 self.assertIn(chapter["leaving_state"], chapter["commission"])
-                self.assertIn(f"S-{100 + number}#E-001", chapter["commission"])
+                self.assertIn(f"S-{number:03d}#E-001", chapter["commission"])
                 self.assertIn(REQUIRED[number]["situation"], chapter["commission"])
                 self.assertIn(REQUIRED[number]["handoff"], chapter["commission"])
                 self.assertEqual(1, chapter["commission"].count(TOKENS[number]))

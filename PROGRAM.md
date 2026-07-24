@@ -41,7 +41,26 @@ Before any model call, declare one hypothesis, its causal chain, the linked
 changed bundle, frozen variables, decisive falsifier, and exact input IDs or
 hashes. Unrelated changes start another run.
 
-Execute this order without adding another lifecycle:
+Declare exactly one treatment surface. A **research** treatment changes only an
+exact research bundle: prepare control and treatment from one RF-02 accepted
+generation, derive and match the actual subject/input/model/planning/commission/
+writing/safety/evaluation hashes before either arm starts, run both arms through
+the production research facade, hard-gate both current seals, and compare their
+accepted corpora only through an anonymous task-hash-bound independent judgment.
+The control research prompt, editor prompt, and research configuration must
+still match their accepted snapshot before dispatch and at the decision gate.
+The blind judge returns only `A`, `B`, or `TIE` and a reason; deterministic code
+maps that preference to refuted, supported, or inconclusive after judgment.
+If the hypothesis preregisters a downstream chapter or book effect, that bound
+effect must compare exact anonymous downstream outputs from both sealed arms
+under the same frozen downstream process and pass both arms' integrity gates;
+one arm's product status cannot substitute. It must be revalidated at the
+decision gate before support. A **writing** treatment follows the lifecycle
+below and freezes one identical accepted research seal across both arms. A bundle
+that mixes research with planning, commission, writing, revision, model, input,
+safety, or evaluation fails before dispatch.
+
+For a writing treatment, execute this order without adding another lifecycle:
 
 1. **Candidate isolation** — use RF-02 to snapshot accepted configuration and
    product; pin that operation root for every later read and write.
@@ -69,8 +88,15 @@ Execute this order without adding another lifecycle:
 ## 3. Minimal record
 
 Append one JSON line to `loop/causal-bundle-results.jsonl` only when the decision
-is known. Its exact fields are: hypothesis, causal chain, changed bundle, frozen
-variables, input IDs/hashes, the four evidence layers, decision, and falsifier.
+is known. Existing schema-v1 history remains valid unchanged. Its exact fields
+are hypothesis, causal chain, changed bundle, frozen variables, input IDs/hashes,
+the four evidence layers, decision, and falsifier. A schema-v2 row adds only
+`schema`, `surface`, and `research`: writing rows bind the one accepted research
+seal; research rows bind both seals plus the validator-derived hard-gate,
+anonymous comparison, and preregistered downstream-effect receipt hashes.
+Research promotion additionally requires an explicit named-human receipt bound
+to the tested pair, causal record, research evidence, and both research seals;
+resumed decisions revalidate and reuse that exact authority.
 Validate the schema and committed dry run with:
 
 ```

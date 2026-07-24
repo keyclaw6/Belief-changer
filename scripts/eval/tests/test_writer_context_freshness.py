@@ -62,7 +62,7 @@ class WriterFreshnessTests(WriterFixture, unittest.TestCase):
         self.assertEqual(before, chapter.read_bytes())
 
     def test_final_callback_audit_mutation_writes_no_affected_chapter_or_seal(self):
-        """Infra: the final model callback is freshness-gated before output handling."""
+        """OpenSpec scenario: A later chapter follows an earlier chapter in one audited batch."""
         candidate = self.candidate("final-callback")
         self.generate(candidate)
         chapter = self.book(candidate) / "chapters/chapter-02.md"

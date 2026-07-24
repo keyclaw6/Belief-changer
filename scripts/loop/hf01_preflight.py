@@ -2,11 +2,12 @@
 """Pure pre-RF21 H-F01 authority preflight; never writes, dispatches, or connects."""
 import argparse, datetime as dt, hashlib, json, os, re, shlex, subprocess, sys, urllib.request
 from pathlib import Path
-HERE = Path(__file__).resolve(); sys.path.insert(0, str(HERE.parent))
+HERE = Path(__file__).resolve(); sys.path.insert(0, str(HERE.parent)); sys.path.insert(0, str(HERE.parent.parent))
 import candidate_pair as CP  # noqa: E402
 import loopcfg  # noqa: E402
 import pair_store as PS  # noqa: E402
 import path_guard as PG  # noqa: E402
+import validate_research_contract as RC  # noqa: E402
 REPO, CONFIG = HERE.parents[2], HERE.parents[2] / "loop/config.yaml"; LEDGER = REPO / "openspec/changes/redesign-book-factory/tasks.md"
 AUTHORIZED_ROOT_TEXT = r"C:\Users\Kristian Bilstrup\Documents\Belief-changer"
 AUTHORIZED_ROOT = Path(AUTHORIZED_ROOT_TEXT)
@@ -47,7 +48,7 @@ EXECUTABLES = ("scripts/loop/product_effect.py", "scripts/loop/product_effect_ab
     "scripts/loop/grounded_review.py", "scripts/loop/developmental_review.py", "scripts/eval/native_grounded_review.py", "scripts/eval/native_developmental_review.py",
     "scripts/loop/hf01_control_authority.py", "scripts/loop/writer_context.py", "scripts/loop/score_core.py", "scripts/loop/score_receipt.py", "scripts/loop/judges.py",
     "scripts/loop/product_decision.py", "scripts/loop/experiment_record.py", "scripts/loop/gate.py", "scripts/eval/product_effect_panel.py", "scripts/eval/native_judge.py")
-TREATMENT_PATHS = frozenset((f"{BOOK}/00-brief.md", f"{BOOK}/framing.md",
+TREATMENT_PATHS = frozenset((f"{BOOK}/framing.md",
     f"{BOOK}/framing-review.md", f"{BOOK}/master-plan.md", f"{BOOK}/master-plan-review.md",
     *(f"{BOOK}/commissions/chapter-{n:02d}.md" for n in CHAPTERS)))
 CALLS = {"rf21_plan_and_review": 2, "rf22_commissions_and_audit": 4, "writers": 6,
@@ -317,18 +318,40 @@ def _static(root, paths, manifests, maps, blockers):
             hashes[f"repo:{rel}"] = _sha(_safe(REPO / rel, REPO))
     except (PreflightError, ValueError) as exc: _block(blockers, "STATIC_AUTHORITY_INVALID", str(exc))
     return hashes
-def _prereg(state, matched, commit):
-    return {"hypothesis": "The linked reader-state and source-grounded handoff makes the "
+def _research_identity(root, blockers):
+    identities = {}
+    for arm, paths in arm_paths(root).items():
+        try:
+            identities[arm] = RC.research_seal_identity(paths["book"])
+        except (RC.ContractError, OSError) as exc:
+            _block(blockers, f"{arm.upper()}_RESEARCH_SEAL_INVALID", str(exc),
+                   paths["book"] / "research/research-seal.json")
+    if len(identities) != 2:
+        return "missing"
+    if len(set(identities.values())) != 1:
+        _block(blockers, "RESEARCH_SEALS_DIFFER")
+        return "missing"
+    return identities["control"]
+
+
+def _prereg(state, matched, commit, research_seal):
+    changed = [("commission:" if "/commissions/" in path else "planning:") + path
+               for path in sorted(TREATMENT_PATHS)]
+    return {"schema": 2, "surface": "writing",
+        "hypothesis": "The linked reader-state and source-grounded handoff makes the "
             "quit-sugar opening achieve stronger belief change against offset-matched GSBS.",
         "causal_chain": ["reader-state plan fixes each chapter's belief job", "assigned evidence becomes a source-grounded commission",
                          "compact handoff lets the writer enact the planned discovery"],
-        "changed_bundle": sorted(TREATMENT_PATHS),
+        "changed_bundle": changed,
         "frozen_variables": {"route_sha256": PS.state_hash(ROUTE_LAW),
-            "gsbs_sha256": PS.state_hash(matched), "call_ceiling": "40", "writer_calls": "6"},
+            "gsbs_sha256": PS.state_hash(matched), "call_ceiling": "40", "writer_calls": "6",
+            "accepted_research_seal_sha256": research_seal},
         "inputs": {"git_commit": commit,
             "control_pre_generation_pair_sha256": state.get("control", {}).get("pre_rf21_pair_sha256", "missing"),
             "treatment_pre_generation_pair_sha256": state.get("treatment", {}).get("pre_rf21_pair_sha256", "missing"),
             "subject": SUBJECT, "book": BOOK, "config": "loop/config.yaml"},
+        "research": {"control_seal_sha256": research_seal,
+                     "treatment_seal_sha256": research_seal},
         "falsifier": "Refuted by integrity failure, at most three of six GSBS chapter votes, "
                      "zero of two GSBS opening votes, or named-human rejection."}
 def build_manifest(snapshot_root, key_present=None, ledger=None, config=None,
@@ -345,6 +368,7 @@ def build_manifest(snapshot_root, key_present=None, ledger=None, config=None,
                          if maps["control"].get(path) != maps["treatment"].get(path))
         if changed: _block(blockers, "RF21_ALREADY_STARTED_BEFORE_AUTHORITY", ", ".join(changed))
     references, matched = _reference(root, paths["control"], manifests.get("control"), blockers)
+    research_seal = _research_identity(root, blockers)
     hashes = _static(root, paths, manifests, maps, blockers)
     try: commit, clean = _commit(), _clean()
     except PreflightError as exc: _block(blockers, "PINNED_COMMIT_UNAVAILABLE", str(exc)); commit, clean = "missing", False
@@ -376,7 +400,8 @@ def build_manifest(snapshot_root, key_present=None, ledger=None, config=None,
             "credit_check": {"method": "GET", "url": KEY_URL, "runtime_before_write": True}},
         "authority": {"rf20_status": rf20, "rf21_status": rf21,
             "ledger_path": str(ledger), "rf20_sha256": _sha(_task_text(ledger, "RF-20").encode()),
-            "git_commit": commit}, "preregistration": _prereg(states, matched, commit),
+            "git_commit": commit}, "preregistration": _prereg(
+                states, matched, commit, research_seal),
         "arms": states, "allowed_treatment_paths": sorted(TREATMENT_PATHS),
         **_execution_contract(paths, maps),
         "static_input_sha256": hashes, "output_isolation": {"root": str(root / "loop/experiments"),
@@ -421,7 +446,7 @@ def validate_execution_authority(root, value, key_present=None):
         current = CP.inspect(paths[arm]["experiment"])
         if any(current.get(key) != frozen.get(key) for key in ("accepted_generation", "accepted_pair_hash", "accepted_evaluation_hash", "run")):
             raise PreflightError(f"H-F01 {arm} accepted/run identity changed")
-    if value.get("preregistration") != _prereg(value.get("arms", {}), expected["identity"]["gsbs_matches"], authority["git_commit"]):
+    if value.get("preregistration") != expected.get("preregistration"):
         raise PreflightError("H-F01 preregistration authority changed")
     return value
 def require_stage(value, task):

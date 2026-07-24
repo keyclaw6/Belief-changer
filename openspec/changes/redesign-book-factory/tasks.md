@@ -5,7 +5,7 @@ It is not a product-iteration ledger. `loop/results.tsv` and
 `loop/learnings.md` remain historical evidence from the retired campaign until
 RF-19 starts a new lineage.
 
-Task count: **32**, with stable IDs `RF-00` through `RF-31`. RF-00 is the first
+Task count: **33**, with stable IDs `RF-00` through `RF-32`. RF-00 is the first
 executable implementation task; the change-package approval state is tracked
 separately below and is not an implementation item.
 
@@ -1318,5 +1318,102 @@ the SHA without reopening the implementation verdict.
   `bash scripts/check.sh`.
 - Dependencies: RF-30 pass.
 - Implementation attempts: `0`; latest: `—`.
-- Review attempts: `0`; latest verdict / findings: `—`.
+- Review attempts: `2`; latest: 2026-07-23 final acceptance reinspection has no
+  remaining code finding after fixes for durable result validation, aggregate
+  targeted recursion, scientific/story dedupe, current plan/audit gap authority,
+  accepted control-baseline drift, post-judgment blind mapping, exact paired
+  downstream effect, named-human binding, and sealed-arm read-only inspection;
+  final verdict awaits the fresh unchanged-state canonical gate.
+- Commit / push: `—`.
+
+## Phase 7 — make research execution-ready without starting a campaign
+
+### RF-32 — Implement the sealed research-factory coordinator and gates
+
+- [x] Make the research stage executable, resumable, evidence-grade, and
+  mandatory without running production research or changing H-F01.
+- Status: `DONE`
+- Evidence class / report: demonstrated executable gap and current-corpus
+  contract failure. The research prompt explicitly does not dispatch; no
+  invoker exists; the preserved quit-sugar corpus has 23 packets/47 evidence
+  items, 57 lived and 12 scientific bank bullets, zero LEU/SEU/GAP units, no
+  current independent review or seal, and an incomplete subject contract while
+  an older log labels all banks PASS.
+- Problem / root cause: RF-04 validates packet/unit structure but leaves the
+  prompt-only research process without durable orchestration, fetch proof,
+  derived adequacy, independent sealed acceptance, or immediate chapter-specific
+  consumption gates. The causal loop has no isolated research-treatment surface.
+- Exact scoped change: implement one Windows-safe state machine inside one
+  pinned RF-02 candidate root: completed-subject/no-key preflight; lead-authored
+  query and coverage plan; five parallel lived/science/industry/counter-corpus/
+  dialect lanes; fetch-bound provenance; pre-retention rights/privacy filtering;
+  eligible-only dedupe and scientific lineage; derived ten-bank/floor/persona/
+  belief/slot/safety coverage; bounded targeted gap rounds; LEU/SEU synthesis;
+  independent hash-bound evidence review; and one current seal. Reuse that seal
+  verifier for whole-book gates and add one immediate plan-need-to-assigned-unit
+  check before each writer call. Extend the existing causal-bundle path only
+  enough to isolate research treatments and freeze accepted research for writing
+  treatments. Reject unrelated downstream refactors or a second lifecycle.
+  Permit the sole targeted shortcut only for an explicit current-seal/plan/card-
+  bound `unit_missing` request while the operation remains `CANDIDATE`; preserve
+  old packet/unit bytes, reseal, stale the former commission audit, and require
+  fresh commission binding plus whole-set audit before writer capture. Reject
+  targeted starts from `WRITER_HANDOFF` or later, and keep the immediate writer
+  gate block-only.
+- Production route: expose one real `start`/preflight facade using only the
+  environment-injected `OPENROUTER_API_KEY`, fixed
+  `deepseek/deepseek-v4-pro`, xhigh reasoning, and bounded current OpenRouter
+  search/fetch server tools. Missing key or later explicit founder start MUST
+  stop before writes, network, account/provider checks, or native dispatch. No
+  fake transport, backend/model/editor override, or test-native route may be
+  reachable from the CLI or causal command.
+- Acceptance: deterministic fixtures prove five-lane fan-out, retained fetch
+  provenance, aggregate rights/privacy rejection, URL/excerpt/evidence/story/
+  study-lineage dedupe, grades and inference bounds, derived banks/floors/
+  personas/beliefs/slots/safety, coverage- and review-driven targeted recursion,
+  ceiling reservation/exhaustion, ambiguous-call and completed-call resume,
+  independent rejection/PASS, seal/tamper/staleness, truthful aggregate
+  quit-sugar failure, whole-book blocking, immediate chapter block/unblock, and
+  downstream invalidation. Missing key proves zero writes, sockets, provider or
+  native calls; captured transport proves the exact production payload with no
+  network and no secret in prompts/state/receipts. The research causal branch
+  rejects mixed bundles, hard-gates research integrity, freezes research for
+  writing, and remains unexecuted.
+- Readiness proof boundary: native-Codex simulations MAY import fake seams only
+  inside temporary non-production fixtures to exercise fan-out through seal,
+  chapter gates, ceilings, and resume. They MUST NOT invoke the production or
+  campaign entrypoint, touch `production-books/quit-sugar`, call OpenRouter,
+  DeepSeek, Muse, account/credit/eligibility endpoints, generate chapter prose,
+  append a causal result, decide or promote a treatment/product, create H-F01
+  authority/artifacts, or move RF-21 or any later stage from its current state.
+- Verification: tests cite the RF-32 OpenSpec scenarios; run strict
+  `openspec validate redesign-book-factory --strict`, focused contract/runtime/
+  causal suites, isolated simulation receipts/hashes, fresh implementation and
+  acceptance reviews tracing the real production entrypoint, and
+  `bash scripts/check.sh` with real exit codes. Preserve
+  `docs/BOOK-FACTORY-VISION.md`, `prompts/style-guide.md`, production research
+  and prose, the stable workshop layout, named-human atomic promotion, route
+  law, and all exact H-F01 Muse request fields and no-cap omissions.
+- Dependencies: RF-02, RF-03, RF-04, RF-09, RF-10, RF-11, RF-14, RF-19. It is
+  independent of RF-20's terminal lineage and RF-21 execution, and MUST NOT
+  satisfy, start, or mutate either.
+- Implementation attempts: `3`; latest: 2026-07-24 final integration repairs
+  registered the research CLI behind RF-21 `IN_PROGRESS`, reused exact captured
+  writer-audit bytes across sequential normal/H-F01 chapters, and migrated stale
+  Windows/legacy fixtures to the current sealed research contract. Earlier
+  canonical gates truthfully failed (421 tests: first 4 failures/56 errors,
+  second 2 failures/8 errors); every identity was recovered, fixed, and rerun.
+  The final frozen-tree canonical gate passed 431 tests with 23 platform skips,
+  exit `0`, in 9699.650s. Full log SHA-256:
+  `7155b2d01895d9030dab19b1f6fdc7e1db2f067075927f53a83c7b004a738854`.
+  The isolated native-Codex receipt remains
+  `cea79be86e2a5ac91f0fb042f7f63dfbab006fb5dbd839cb750bf5f7bf6b2de6`.
+  No provider, campaign, production research, chapter generation, causal
+  decision/result, promotion, or H-F01/RF-21+ execution occurred.
+- Review attempts: `3`; latest verdict / findings: `PASS` — final independent
+  review traced the production entrypoint and research gates, found no gate
+  weakening, independently reran all ten recovered canonical identities, and
+  verified strict OpenSpec, Python compilation, diff checks, protected paths,
+  causal-ledger immutability, and the final canonical log. Reviewed base
+  `4ef83c6`; reviewed diff SHA `da79c0eafab907b06914af3b4f79fd1f0d33006b`.
 - Commit / push: `—`.

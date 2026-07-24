@@ -14,11 +14,16 @@ import product_decision as PD  # noqa: E402
 import product_effect as PE  # noqa: E402
 CONTROL, TREATMENT, GSBS, PROMPT = "c" * 64, "d" * 64, "e" * 64, "f" * 64
 def preregistration():
-    return {"hypothesis": "linked handoff improves enacted belief change",
+    seal = "9" * 64
+    return {"schema": 2, "surface": "writing",
+            "hypothesis": "linked handoff improves enacted belief change",
             "causal_chain": ["plan fixes belief job", "commission carries evidence"],
-            "changed_bundle": ["plan", "commission"],
-            "frozen_variables": {"route": "fixed"},
+            "changed_bundle": ["planning:plan", "commission:commission"],
+            "frozen_variables": {"route": "fixed",
+                                 "accepted_research_seal_sha256": seal},
             "inputs": {"git_commit": "a" * 64},
+            "research": {"control_seal_sha256": seal,
+                         "treatment_seal_sha256": seal},
             "falsifier": "blind effect or integrity fails"}
 def panel(name, votes, panel_hash, prompt_hash=PROMPT):
     experiment = PS.state_hash({"control_pair_hash": CONTROL,
@@ -109,7 +114,7 @@ class Hf01StageTests(unittest.TestCase):
             "blind_whole_opening_sequence": {"status": "FAIL"},
             "carr_craft_diagnostic": {"role": "DIAGNOSTIC_ONLY"}}}
         digest, tested = PS.state_hash(decision), "b" * 64
-        record = {**{key: frozen[key] for key in ER.PREREG_FIELDS - {"inputs"}},
+        record = {**{key: frozen[key] for key in ER.PREREG_FIELDS_V2 - {"inputs"}},
             "inputs": {**frozen["inputs"], "tested_pair_hash": tested,
                        "product_decision_sha256": digest},
             "evidence": ER.decision_evidence(decision), "decision": "REFUTED"}

@@ -115,13 +115,16 @@ class WriterManualReceiptTests(WriterFixture, unittest.TestCase):
                 candidate, token = self.handoff(f"blocked-{case}")
                 if case == "contract":
                     path = PAIR.candidate_tree(candidate) / "prompts/chapter-writer.md"
-                    path.write_text(path.read_text() + "drift\n", encoding="utf-8")
+                    path.write_text(path.read_text(encoding="utf-8") + "drift\n",
+                                    encoding="utf-8")
                 elif case == "commission":
                     path = self.book(candidate) / "commissions/chapter-02.md"
-                    path.write_text(path.read_text() + "drift\n", encoding="utf-8")
+                    path.write_text(path.read_text(encoding="utf-8") + "drift\n",
+                                    encoding="utf-8")
                 elif case == "audit":
                     path = PAIR.evidence_tree(candidate) / SET.RECEIPT
-                    path.write_text(path.read_text() + "drift\n", encoding="utf-8")
+                    path.write_text(path.read_text(encoding="utf-8") + "drift\n",
+                                    encoding="utf-8")
                 elif case == "missing":
                     WC.manual_receipt_path(candidate).unlink()
                 elif case == "tampered":
@@ -139,13 +142,16 @@ class WriterManualReceiptTests(WriterFixture, unittest.TestCase):
                         token = None
                     elif case == "unselected":
                         path = self.book(candidate) / "chapters/chapter-03.md"
-                        path.write_text(path.read_text() + "drift\n", encoding="utf-8")
+                        path.write_text(path.read_text(encoding="utf-8") + "drift\n",
+                                        encoding="utf-8")
                     elif case == "config":
                         path = PAIR.candidate_tree(candidate) / "loop/config.yaml"
-                        path.write_text(path.read_text() + "drift: true\n", encoding="utf-8")
+                        path.write_text(path.read_text(encoding="utf-8") +
+                                        "drift: true\n", encoding="utf-8")
                     elif case == "product":
                         path = self.book(candidate) / "00-brief.md"
-                        path.write_text(path.read_text() + "drift\n", encoding="utf-8")
+                        path.write_text(path.read_text(encoding="utf-8") + "drift\n",
+                                        encoding="utf-8")
                     elif case == "manifest-assignment":
                         path = candidate / PAIR.MANIFEST
                         value = json.loads(path.read_text(encoding="utf-8"))

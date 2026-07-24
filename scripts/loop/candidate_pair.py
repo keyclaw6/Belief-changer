@@ -1,5 +1,6 @@
 """RF-02 sealed candidate pairs and atomic accepted-generation promotion."""
 import json
+import re
 from pathlib import Path
 import loopcfg, draft_batch_contract as DB, draft_batch_lifecycle as DL, developmental_review_lifecycle as DRL, pair_contract as PC, pair_store as PS, writer_operation as WO
 from pair_transition import add_book, assert_run, initialize, promote, reject, status
@@ -69,9 +70,20 @@ def _validated(root, value):
     except (DL.LifecycleError, DRL.LifecycleError, DB.BatchError) as exc:
         raise PairError(str(exc)) from exc
     outputs = value.get("outputs")
+    output_paths = {item.get("path") for item in outputs or () if isinstance(item, dict)}
     allowed = {f"{run['book']}/commissions/chapter-{number:02}.md"
                for number in run["chapters"]} | {f"{run['book']}/framing-review.md"}
-    output_paths = {item.get("path") for item in outputs or () if isinstance(item, dict)}
+    research = f"{run['book']}/research/"
+    allowed.update(path for path in output_paths if isinstance(path, str) and (
+        path in {
+            research + "research-coverage.json",
+            research + "research-review.json",
+            research + "research-seal.json",
+            research + "research-log.md",
+            research + "lived-experience.md",
+            research + "scientific-evidence.md",
+        } or re.fullmatch(re.escape(research) + r"sources/S-\d{3}-[a-z0-9-]+\.md", path)
+    ))
     entry_paths = {item["path"] for item in value["entries"]}
     if not isinstance(outputs, list) or outputs and not _validate_entries(outputs, {"product"}) \
             or not output_paths <= allowed or output_paths & entry_paths:

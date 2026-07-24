@@ -27,7 +27,9 @@ class ResearchContractTests(unittest.TestCase):
             "DeepSeek V4 Pro",
             "independent high-reasoning evidence editor from another model",
             "never through OpenRouter",
-            "This prompt defines role contracts; it does not dispatch models",
+            "The RF-32 `research_factory`",
+            "coordinator dispatches them",
+            "prompt prose alone is not an executable research run",
         ):
             self.assertIn(required, prompt)
         for obsolete in (
@@ -64,16 +66,14 @@ class ResearchContractTests(unittest.TestCase):
         ):
             self.assertIn(required, packets)
 
-    def test_execution_is_quality_first_without_theoretical_ceiling_block(self):
-        """OpenSpec: the greatest live allowance is used without shrinking work.
-
-        The quality-only law's surviving home is the research prompt
-        (HARNESS retired to PROGRAM.md; stale change specs deleted 2026-07-13)."""
+    def test_execution_is_quality_first_and_safety_ceilings_fail_closed(self):
+        """OpenSpec: cost never proves adequacy; reserved ceilings stop safely."""
         prompt = read("prompts/research-agent.md")
 
         self.assertIn("Quality is the only optimizer", prompt)
-        self.assertIn("quality-only law", prompt)
-        self.assertIn("never stop conditions", prompt)
+        self.assertIn("hard\ncall, tool, output, result, cost, and gap-round safety ceilings", prompt)
+        self.assertIn("Exhausting one stops the candidate truthfully as `BLOCKED`", prompt)
+        self.assertIn("it never creates a\nPASS", prompt)
 
     def test_templates_record_results_without_planning_reasoning(self):
         """OpenSpec: files preserve evidence and arm records, not a workflow graph."""

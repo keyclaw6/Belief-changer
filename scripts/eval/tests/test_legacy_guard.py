@@ -16,6 +16,7 @@ RUN = load_entrypoint("run_iteration")
 SCORE = load_entrypoint("score")
 GATE = load_entrypoint("gate")
 HF_RUN = load_entrypoint("hf01_run")
+RESEARCH = load_entrypoint("research_factory")
 WRITE_METHODS = {
     "Popen", "call", "check_call", "chmod", "copy", "copy2", "copyfile", "dump",
     "hardlink_to", "makedirs", "mkdir", "move", "open", "remove", "removedirs",
@@ -122,7 +123,7 @@ class LegacyGuardTests(unittest.TestCase):
         self.assertEqual(
             {"developmental_review.py": True, "gate.py": True,
              "grounded_review.py": True, "hf01_prepare.py": True, "hf01_run.py": True,
-             "run_iteration.py": True, "score.py": True},
+             "research_factory.py": True, "run_iteration.py": True, "score.py": True},
             inventory,
         )
         future = (
@@ -143,6 +144,18 @@ class LegacyGuardTests(unittest.TestCase):
         with mock.patch.object(LG, "LEDGER", self.ledger()), \
                 mock.patch.object(sys, "argv", argv), mock.patch.object(HF_RUN, "run") as dispatch:
             with self.assertRaisesRegex(SystemExit, "candidate root must be exactly"): HF_RUN.main()
+        dispatch.assert_not_called()
+
+    def test_research_entrypoint_requires_later_founder_start(self):
+        """OpenSpec scenario: Research causal readiness is verified without starting a run."""
+        candidate = self.root / "research-candidate"
+        candidate.mkdir()
+        argv = ["start", "--candidate-root", str(candidate),
+                "--redesign-authorized", "--rf-stage", "RF-21"]
+        with mock.patch.object(LG, "LEDGER", self.ledger(rf21="READY")), \
+                mock.patch.object(RESEARCH, "start") as dispatch:
+            with self.assertRaisesRegex(SystemExit, "RF-21 is READY, not IN_PROGRESS"):
+                RESEARCH.main(argv)
         dispatch.assert_not_called()
 
     def test_program_redirects_legacy_recovery_to_the_ledger(self):

@@ -36,6 +36,37 @@ writer_allow_fallbacks: false
 researcher_model: deepseek/deepseek-v4-pro
 researcher_provider: openrouter
 researcher_reasoning: xhigh
+researcher_endpoint: https://openrouter.ai/api/v1/responses
+# RF-32 safety ceilings reserve worst-case work before dispatch. Exhaustion is
+# BLOCKED, never evidence of sufficiency; research quality remains model-led.
+research_call_ceiling: 24
+research_gap_round_ceiling: 4
+# UTF-8 bytes are used as a deliberately conservative (one byte/token) request
+# estimate. This bound covers the frozen research prompt plus the largest
+# retained-inventory request; fetched tool context is reserved separately.
+research_input_tokens_per_call: 262144
+research_serialized_input_bytes: 262144
+research_output_tokens_per_call: 32768
+research_total_output_tokens: 786432
+research_retained_results_per_call: 100
+research_retained_result_ceiling: 1200
+research_retained_excerpt_characters: 12000
+# The independent editor receives exact artifacts. One million UTF-8 bytes is
+# the smallest practical bound for the canonical floors and a conservative
+# one-byte-per-token ceiling for the native context; larger corpora must retain
+# smaller minimum excerpts or stop BLOCKED before native launch.
+research_editor_input_bytes: 1000000
+research_cost_ceiling_usd: 100
+research_search_results_per_call: 12
+research_search_characters_per_call: 40000
+research_search_requests_per_call: 12
+research_search_requests_total: 240
+research_fetch_uses_per_call: 12
+research_fetch_uses_total: 240
+research_fetch_content_tokens_per_call: 20000
+research_blocked_domains:
+  - reddit.com
+  - www.reddit.com
 
 # --- Planner: GPT-5.6 Sol, xhigh — NATIVE CODEX ONLY, never OpenRouter ---
 planner_model: gpt-5.6-sol

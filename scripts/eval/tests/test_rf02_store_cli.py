@@ -18,6 +18,12 @@ import manual_dispatch as MANUAL  # noqa: E402
 import run_iteration as RUN  # noqa: E402
 import score as SCORE  # noqa: E402
 import pair_store as STORE  # noqa: E402
+import commission_set as SET  # noqa: E402
+sys.path.insert(0, str(ROOT / "scripts/eval/tests"))
+from research_contract_fixture import (chapter_binding, evidence_row,
+                                       write_sealed_research)  # noqa: E402
+from test_commission_contract import commission  # noqa: E402
+from test_commission_set import assigned  # noqa: E402
 
 TIMESTAMP = "2026-07-14T12:00:00+00:00"
 
@@ -196,9 +202,32 @@ class RF02StoreCliTests(unittest.TestCase):
 
     def test_no_endpoint_prints_exact_safe_resume(self):
         """OpenSpec scenario: A manual agent is dispatched."""
+        report = write_sealed_research(self.root / "production-books/test")
+        unit = report["inventory"]["units"]["LEU-001"]
+        self._write("prompts/chapter-commissioner.md", "commissioner\n")
+        self._write("prompts/commission-set-auditor.md", "auditor\n")
+        self._write("production-books/test/framing.md",
+                    "## Journey\n### CH-01 — One\n- accepted reader state\n")
+        self._write("production-books/test/master-plan-review.md", "accepted plan review\n")
+        self._write("production-books/test/master-plan.md",
+            "# Plan\n\n## Evidence ledger\n\n"
+            "| ID | Finding / lived material | Research unit IDs | Source ID | Grade or outcome tier | Scope and limit | Permitted inference | Prohibited inference |\n"
+            "|---|---|---|---|---|---|---|---|\n" +
+            evidence_row(report, "E-01", "LEU-001") + "\n\n"
+            "### C-01 — One\n"
+            "- **Entering belief:** Checking now keeps me safe.\n"
+            "- **Evidence IDs and required limits:** E-01\n"
+            f"- **Guardrails:** {unit['safety']}\n")
         PAIR.initialize(self.root, "production-books/test")
         candidate = self.root / "loop/experiments/no key; $quoted'"
         candidate.mkdir(parents=True)
+        PAIR.snapshot(candidate, self.root, "production-books/test", "1", iteration=7)
+        assignment = {"C-01": assigned(
+            "C-01", "S-001", chapter_binding(report, "E-01", "LEU-001"))}
+        with mock.patch.object(SET.SC, "require_subject_contract"):
+            SET.generate(candidate, assignment,
+                lambda request: commission(assignment[request["target"]]["authority"]),
+                lambda _request: SET.AUDIT_PASS)
         self.ledger.write_text(
             "### RF-02 — store\n\n- Status: `READY`\n\n"
             "### RF-23 — prose\n\n- Status: `READY`\n", encoding="utf-8")
@@ -211,7 +240,8 @@ class RF02StoreCliTests(unittest.TestCase):
                 "--candidate-root", str(candidate)]
         authority = {"manifest": {"run": {"book": "production-books/test",
                                              "chapters": [1]}},
-                     "contract": "writer\n", "commissions": {1: "commission\n"}}
+                     "contract": "writer\n", "commissions": {1: "commission\n"},
+                     "receipt_bytes": (candidate / "evidence" / SET.RECEIPT).read_bytes()}
         output = io.StringIO()
         with mock.patch.object(sys, "argv", argv), \
                 mock.patch.object(GUARD, "LEDGER", self.ledger), \

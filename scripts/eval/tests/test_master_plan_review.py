@@ -16,7 +16,7 @@ import validate_framing_contract as FC  # noqa: E402
 import validate_master_plan_review as MPR  # noqa: E402
 import validate_research_contract as RC  # noqa: E402
 import validate_subject_contract as SC  # noqa: E402
-from test_master_plan_contract import framing, plan  # noqa: E402
+from test_master_plan_contract import framing, plan, research_report  # noqa: E402
 from test_subject_contract import VALID as VALID_BRIEF  # noqa: E402
 
 PASS_FINDINGS = {
@@ -168,6 +168,7 @@ class MasterPlanReviewTests(unittest.TestCase):
     def test_commissioning_refuses_everything_except_exact_fit(self):
         """OpenSpec scenario: A chapter is commissioned before the plan is fit."""
         with patch.object(RC, "require_research_contract", return_value=()), patch.object(
+            RC, "inspect_research", return_value=research_report(), create=True), patch.object(
             FC, "require_framing_contract", return_value=self.framing
         ):
             with self.assertRaisesRegex(SC.ContractError, "missing or empty master plan review"):

@@ -72,7 +72,7 @@ def _card(index, states=TRANSITIONS):
 
 def plan(states=TRANSITIONS):
     evidence = "\n".join(
-        f"| E-{index:02d} | finding {index} | S-001#E-{index:03d} | lived tier | scope | allowed | forbidden |"
+        f"| E-{index:02d} | finding {index} | LEU-{index:03d} | S-001#E-{index:03d} | lived tier | scope | allowed | forbidden |"
         for index in range(1, 4)
     )
     arc = "\n".join(
@@ -90,8 +90,8 @@ def plan(states=TRANSITIONS):
 **Destination:** Deliberate phone use without an automatic pull.
 
 ## Evidence ledger
-| ID | Finding | Source ID | Grade | Scope | Permitted | Prohibited |
-|---|---|---|---|---|---|---|
+| ID | Finding / lived material | Research unit IDs | Source ID | Grade or outcome tier | Scope and limit | Permitted inference | Prohibited inference |
+|---|---|---|---|---|---|---|---|
 {evidence}
 
 ## Mantra sheet
@@ -113,6 +113,15 @@ def plan(states=TRANSITIONS):
 ## Compact chapter cards
 
 {''.join(_card(index, states) for index in range(1, 4))}"""
+
+
+def research_report():
+    return {"ok": True, "status": "PASS", "seal_identity": "a" * 64,
+            "blockers": [], "inventory": {"units": {
+        f"LEU-{index:03d}": {"locators": [f"S-001#E-{index:03d}"],
+                              "permitted_inference": "allowed",
+                              "prohibited_inference": "forbidden"}
+        for index in range(1, 4)}}}
 
 
 def framing(states=TRANSITIONS):
@@ -216,7 +225,9 @@ class MasterPlanContractTests(unittest.TestCase):
 
     def test_commissioning_stage_enforces_cards_and_rf07_verdict(self):
         """Infra: RF-06 card gate remains before the RF-07 independent verdict."""
+        report = research_report()
         with patch.object(RC, "require_research_contract", return_value=()), patch.object(
+            RC, "inspect_research", return_value=report, create=True), patch.object(
             FC, "require_framing_contract", return_value=self.book / "framing.md"
         ):
             with self.assertRaisesRegex(SC.ContractError, "master plan review not ready"):
@@ -224,6 +235,34 @@ class MasterPlanContractTests(unittest.TestCase):
             self.write(plan().replace(TRANSITIONS[1][1], TRANSITIONS[0][1], 1))
             with self.assertRaisesRegex(SC.ContractError, "master plan not ready"):
                 SC.require_subject_contract(self.book, "commissioning")
+
+    def test_plan_evidence_rows_bind_current_sealed_units(self):
+        """OpenSpec requirement: Accepted research and immediate chapter adequacy."""
+        report = research_report()
+        with patch.object(RC, "inspect_research", return_value=report, create=True):
+            self.assertEqual(self.book / "master-plan.md",
+                             MPC.require_master_plan_contract(self.book))
+            for old, new, error in (
+                ("LEU-001", "LEU-999", "absent from current seal"),
+                ("S-001#E-001", "S-999#E-999", "locators differ"),
+                ("| allowed | forbidden |", "| widened | forbidden |",
+                 "inference limits differ"),
+                ("| allowed | forbidden |", "| allowed plus invented permission | forbidden |",
+                 "inference limits differ"),
+            ):
+                with self.subTest(error=error):
+                    self.write(plan().replace(old, new, 1))
+                    with self.assertRaisesRegex(MPC.ContractError, error):
+                        MPC.require_master_plan_contract(self.book)
+
+    def test_blocked_research_report_cannot_authorize_master_plan(self):
+        """OpenSpec RF-32: planning requires a current accepted research seal."""
+        report = research_report()
+        report.update(ok=False, status="BLOCKED", seal_identity=None,
+                      blockers=["seal missing"])
+        with patch.object(RC, "inspect_research", return_value=report, create=True), \
+                self.assertRaisesRegex(MPC.ContractError, "seal missing"):
+            MPC.require_master_plan_contract(self.book)
 
 
 if __name__ == "__main__":

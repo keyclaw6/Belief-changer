@@ -13,6 +13,8 @@ import hf01_prepare as PREP  # noqa: E402
 import hf01_run as RUN  # noqa: E402
 import hf01_upstream as UP  # noqa: E402
 from commission_packet_fixture import packet  # noqa: E402
+from research_contract_fixture import (SAFETY, evidence_row,
+                                        write_sealed_research)  # noqa: E402
 from test_commission_contract import authority, commission  # noqa: E402
 AUTH = "2026-07-19T10:00:00+00:00"
 def assignment(chapter, source):
@@ -22,7 +24,7 @@ def assignment(chapter, source):
     binding = auth["assigned_evidence"].pop(old)
     binding["provenance"] = binding["provenance"].replace(old, locator)
     auth["assigned_evidence"][locator] = binding
-    return {"packets": [f"production-books/quit-sugar/research/sources/{source.lower()}-fixture.md"], "authority": auth}
+    return {"packets": [f"production-books/quit-sugar/research/sources/{source}-sealed-fixture.md"], "authority": auth}
 class Hf01Tests(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory(); self.root = Path(self.tmp.name).resolve()
@@ -71,6 +73,28 @@ class Hf01Tests(unittest.TestCase):
             path = self.root / relative; path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(text, encoding="utf-8")
         shutil.copy2(ROOT / "loop/config.yaml", self.root / "loop/config.yaml")
+        report = write_sealed_research(
+            self.root / "production-books/quit-sugar")
+        header = ("| ID | Finding / lived material | Research unit IDs | Source ID | "
+                  "Grade or outcome tier | Scope and limit | Permitted inference | "
+                  "Prohibited inference |\n"
+                  "|---|---|---|---|---|---|---|---|\n")
+        rows = [evidence_row(report, f"E-{number}", f"LEU-{number:03d}")
+                for number in (1, 2, 3)]
+        cards = []
+        for number in (1, 2, 3):
+            cards.append(
+                f"### C-{number:02d} â€” Chapter {number}\n"
+                f"- **Belief job:** correct belief {number}.\n"
+                f"- **Entering belief:** RS-{number-1:02d} | received state {number}.\n"
+                f"- **Leaving belief:** RS-{number:02d} | handed state {number}.\n"
+                f"- **Evidence IDs and required limits:** E-{number}.\n"
+                f"- **Guardrails:** {SAFETY}; no diagnosis.\n"
+                f"- **Continuity:** receives received state {number}; hands C-{number+1:02d} handed state {number}."
+            )
+        (self.root / "production-books/quit-sugar/master-plan.md").write_text(
+            "# Plan\n\n## Evidence ledger\n\n" + header + "\n".join(rows) +
+            "\n\n" + "\n\n".join(cards) + "\n", encoding="utf-8")
         self.config_patch = mock.patch.object(HF, "CONFIG", self.root / "loop/config.yaml")
         self.config_patch.start(); self.addCleanup(self.config_patch.stop)
         for relative in ("calibration/judges/carr-likeness-rubric.md", *HF.RUBRICS):
@@ -78,7 +102,11 @@ class Hf01Tests(unittest.TestCase):
             shutil.copy2(ROOT / relative, target)
         PAIR.initialize(self.root, HF.BOOK); self.arms = HF.arm_paths(self.root)
         for paths in self.arms.values(): paths["experiment"].mkdir(parents=True); PAIR.snapshot(paths["experiment"], self.root, HF.BOOK, "1-3", iteration=1)
-        self.assignments = {f"C-{n:02d}": assignment(f"C-{n:02d}", f"S-{100+n}") for n in (1, 2, 3)}
+        self.assignments = SET.bind_research_authority(
+            self.arms["treatment"]["experiment"],
+            {f"C-{n:02d}": assignment(f"C-{n:02d}", f"S-{n:03d}")
+             for n in (1, 2, 3)},
+        )
         self.location_proof = {"source": HF.LOCATION_URL, "country_code": "US"}
         self.preflight_proof = {"model": HF.MODEL, "canonical_model": HF.CANONICAL_MODEL,
             "provider": "Meta", "calls": 6,
@@ -104,18 +132,23 @@ class Hf01Tests(unittest.TestCase):
         return HF.build_manifest(self.root, key_present=True, ledger=self.ledger, authority_timestamp=AUTH, **changes)
     def snapshot(self):
         return {path.relative_to(self.root).as_posix(): PAIR.PS.sha(path.read_bytes()) for path in self.root.rglob("*") if path.is_file()}
+    def seal_research(self):
+        return {arm: SET.RC.inspect_research(paths["book"], require_seal=True)
+                for arm, paths in self.arms.items()}
     def freeze(self):
         with mock.patch.dict(os.environ, {"OPENROUTER_API_KEY": "test-key"}), mock.patch.object(HF, "LEDGER", self.ledger):
             return RUN._authority(self.root, AUTH)
     def prepare_treatment(self):
         book = self.arms["treatment"]["book"]
-        for relative, suffix in (("00-brief.md", "Treatment reader journey.\n"),
-                ("framing.md", "\nTreatment linked reader state.\n"),
+        for relative, suffix in (("framing.md", "\nTreatment linked reader state.\n"),
                 ("master-plan.md", "\nTreatment source-grounded handoff.\n"),
                 ("master-plan-review.md", "Treatment plan review.\n")):
-            path = book / relative; path.write_text(path.read_text() + suffix)
+            path = book / relative
+            path.write_text(path.read_text(encoding="utf-8") + suffix,
+                            encoding="utf-8")
         UP._declare_review(self.arms["treatment"]["experiment"])
-        (book / "framing-review.md").write_text("Treatment framing review.\n")
+        (book / "framing-review.md").write_text("Treatment framing review.\n",
+                                                  encoding="utf-8")
         with mock.patch.object(SET.SC, "require_subject_contract"):
             SET.generate(self.arms["treatment"]["experiment"], self.assignments, lambda request: commission(self.assignments[request["target"]]["authority"]), lambda _request: SET.AUDIT_PASS)
     def assignment_rows(self):
@@ -134,9 +167,9 @@ class Hf01Tests(unittest.TestCase):
         task = json.loads(content); call_id = task["id"]
         book = self.arms["control"]["book"]
         if call_id == "rf21-plan":
-            value = {"brief": (book / "00-brief.md").read_text() + "Treatment reader journey.\n",
-                "framing": (book / "framing.md").read_text() + "\nTreatment linked reader state.\n",
-                "master_plan": (book / "master-plan.md").read_text() + "\nTreatment source-grounded handoff.\n",
+            value = {"brief": (book / "00-brief.md").read_text(encoding="utf-8"),
+                "framing": (book / "framing.md").read_text(encoding="utf-8") + "\nTreatment linked reader state.\n",
+                "master_plan": (book / "master-plan.md").read_text(encoding="utf-8") + "\nTreatment source-grounded handoff.\n",
                 "assignments": self.assignment_rows()}
         elif call_id == "rf21-plan-review":
             value = {"framing_review": "Treatment framing review.",
@@ -430,6 +463,51 @@ class Hf01Tests(unittest.TestCase):
         native.assert_not_called()
         self.assertEqual(before, self.snapshot())
 
+    def test_rf21_missing_research_seal_blocks_before_native_task_or_callback(self):
+        """OpenSpec RF-32: downstream dispatch has no current accepted research seal."""
+        for paths in self.arms.values():
+            (paths["book"] / "research/research-seal.json").unlink()
+        native = mock.Mock()
+        before = self.snapshot()
+        with self.assertRaisesRegex(UP.UpstreamError, "research seal is not current"):
+            UP._pipeline(self.root, {}, "a" * 64, native, True, "RF-21")
+        native.assert_not_called()
+        self.assertEqual(before, self.snapshot())
+        self.assertFalse((self.root / UP.FOLDER).exists())
+
+    def test_rf21_changed_sealed_brief_blocks_before_apply_or_review(self):
+        """OpenSpec RF-32: accepted research remains mandatory before planning."""
+        self.seal_research()
+        calls = []
+        def changed_brief(content, actor, schema, model, reasoning):
+            calls.append(json.loads(content)["id"])
+            raw, transport, error = self.native(content, actor, schema, model, reasoning)
+            value = json.loads(raw)
+            value["brief"] = value["brief"] + "Changed after research was sealed.\n"
+            return json.dumps(value), transport, error
+        with mock.patch.object(UP, "_apply") as apply, \
+                self.assertRaisesRegex(UP.UpstreamError,
+                                       "sealed brief must remain unchanged"):
+            UP._pipeline(self.root, {}, "a" * 64, changed_brief, True, "RF-21")
+        apply.assert_not_called()
+        self.assertEqual(["rf21-plan"], calls)
+        self.assertFalse((self.root / UP.FOLDER / "upstream/tasks/rf21-plan-review.json").exists())
+
+    def test_rf21_unchanged_brief_preserves_valid_research_seal(self):
+        """OpenSpec RF-32: current sealed research may authorize downstream planning."""
+        self.seal_research()
+        control = self.arms["control"]["book"]
+        value = {"brief": (control / "00-brief.md").read_text(encoding="utf-8"),
+            "framing": (control / "framing.md").read_text(encoding="utf-8") +
+                       "\nTreatment linked reader state.\n",
+            "master_plan": (control / "master-plan.md").read_text(encoding="utf-8") +
+                           "\nTreatment source-grounded handoff.\n",
+            "assignments": []}
+        identity = UP._accepted_research(self.root)
+        with mock.patch.object(UP, "_assignments", return_value={}):
+            self.assertEqual({}, UP._plan_outputs(self.root, value, True))
+        self.assertEqual(identity, UP._accepted_research(self.root))
+
     def test_preflight_is_pure_and_freezes_offset_gsbs_before_rf21(self):
         before, secret = self.snapshot(), "do-not-serialize"
         with mock.patch.dict(os.environ, {"OPENROUTER_API_KEY": secret}): manifest = self.manifest()
@@ -458,15 +536,18 @@ class Hf01Tests(unittest.TestCase):
             HF.build_manifest(self.root / "alternative", ledger=self.ledger,
                               authority_timestamp=AUTH)
     def test_authority_precedes_treatment_and_rejects_drift_outside_allowlist(self):
-        brief = self.arms["treatment"]["book"] / "00-brief.md"; original = brief.read_text()
-        brief.write_text(original + "premature treatment\n")
+        brief = self.arms["treatment"]["book"] / "00-brief.md"
+        original = brief.read_text(encoding="utf-8")
+        brief.write_text(original + "premature treatment\n", encoding="utf-8")
         self.assertIn("RF21_ALREADY_STARTED_BEFORE_AUTHORITY",
                       {row["code"] for row in self.manifest()["blockers"]})
-        brief.write_text(original); _folder, authority, _sha = self.freeze(); self.prepare_treatment()
+        brief.write_text(original, encoding="utf-8")
+        _folder, authority, _sha = self.freeze(); self.prepare_treatment()
         self.assertEqual(set(HF.TREATMENT_PATHS), set(HF.treatment_artifacts(self.root)))
         HF.validate_execution_authority(self.root, authority, key_present=True)
         source = self.arms["treatment"]["book"] / "research/lived-experience.md"
-        source.write_text(source.read_text() + "escaped change\n")
+        source.write_text(source.read_text(encoding="utf-8") + "escaped change\n",
+                          encoding="utf-8")
         with self.assertRaisesRegex(HF.PreflightError, "allowlist"):
             HF.validate_execution_authority(self.root, authority, key_present=True)
     def test_missing_writer_key_does_not_block_pre_rf21_authority(self):
@@ -516,6 +597,10 @@ class Hf01Tests(unittest.TestCase):
         with mock.patch.dict(os.environ, {}, clear=True), \
                 mock.patch.object(HF, "LEDGER", self.ledger), \
                 mock.patch.object(SET.SC, "require_subject_contract"), \
+                mock.patch.object(RUN.HCA, "require_chapter_research",
+                                  wraps=RUN.HCA.require_chapter_research) as control_gate, \
+                mock.patch.object(RUN.WC, "require_chapter_research",
+                                  wraps=RUN.WC.require_chapter_research) as treatment_gate, \
                 mock.patch.object(RUN.STAGE, "advance",
                     side_effect=lambda root, auth, upstream, **_kw: RUN.verify_frozen(root, auth)), \
                 mock.patch.object(RUN, "_post", side_effect=post):
@@ -530,6 +615,13 @@ class Hf01Tests(unittest.TestCase):
             again = RUN.run(self.root, credit_check=credit, authority_timestamp=AUTH,
                             location_check=lambda: self.location_proof)
         credit.assert_not_called(); self.assertEqual((6, "BATCH_FROZEN", frozen), (len(calls), again["state"], again))
+        self.assertEqual([mock.call(self.arms["control"]["experiment"], number)
+                          for number in (1, 2, 3)], control_gate.call_args_list)
+        self.assertEqual([1, 2, 3], [call.args[1]
+                                     for call in treatment_gate.call_args_list])
+        captured = [call.args[2] for call in treatment_gate.call_args_list]
+        self.assertTrue(all(item is captured[0] for item in captured))
+        self.assertIsInstance(captured[0]["receipt_bytes"], bytes)
         self.assertEqual(authority["frozen_at_utc"], AUTH)
         self.assertEqual({"authority.json", "openrouter-preflight.json", UP.RF21_PATH, UP.PATH, "upstream", "writer-route"}, {
             path.name for path in (self.root / RUN.FOLDER).iterdir()})
@@ -564,6 +656,23 @@ class Hf01Tests(unittest.TestCase):
         for arm, paths in self.arms.items():
             self.assertEqual("BATCH_FROZEN", PAIR.load(paths["experiment"])["state"])
             batch = BATCH.require_frozen_batch(paths["experiment"])["batch"]; self.assertEqual((3, authority_sha), (len(batch["responses"]), batch["authority_sha256"]))
+
+    def test_writer_rechecks_research_before_each_durable_call(self):
+        """OpenSpec RF-32: stale chapter research blocks before the next writer call."""
+        authority, authority_sha, _path = self.authorize_run()
+        self._ledger("DONE", "DONE", rf21="DONE")
+        calls = []
+        def post(payload):
+            calls.append(payload)
+            return json.dumps(self.writer_response(
+                "# Chapter 1\n" + "earned discovery relief " * 280)).encode()
+        with mock.patch.object(RUN.HCA, "require_chapter_research",
+                               side_effect=({}, RUN.HCA.ControlAuthorityError(
+                                   "chapter 2: captured research seal is missing or stale"))), \
+                mock.patch.object(RUN, "_post", side_effect=post), \
+                self.assertRaisesRegex(RUN.RunError, "research seal is missing or stale"):
+            RUN._generate_arm(self.root, authority, authority_sha, "control", lambda: None)
+        self.assertEqual(1, len(calls))
     def test_writer_request_enables_router_metadata_header(self):
         """Scenario: H-F01 writer settings are identical and route-verifiable."""
         response = mock.MagicMock(); response.__enter__.return_value = response

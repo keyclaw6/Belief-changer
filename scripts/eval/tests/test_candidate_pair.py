@@ -16,6 +16,12 @@ import gate_decision as DECISION  # noqa: E402
 import pair_store as STORE  # noqa: E402
 import legacy_guard as GUARD  # noqa: E402
 import run_iteration as RUN  # noqa: E402
+import commission_set as SET  # noqa: E402
+sys.path.insert(0, str(ROOT / "scripts/eval/tests"))
+from research_contract_fixture import (chapter_binding, evidence_row,
+                                       write_sealed_research)  # noqa: E402
+from test_commission_contract import commission  # noqa: E402
+from test_commission_set import assigned  # noqa: E402
 TIMESTAMP = "2026-07-14T12:00:00+00:00"
 class Interrupted(RuntimeError):
     pass
@@ -243,7 +249,39 @@ class CandidatePairTests(unittest.TestCase):
             PAIR.verify_sealed(experiment, tested)
 
     def test_run_requires_explicit_setup_then_derives_canonical_identity(self):
-        accepted, experiment, _, _ = self.fixture("run", True, False)
+        accepted, experiment, _, _ = self.fixture("run", False, False)
+        report = write_sealed_research(accepted / "production-books/test")
+        unit = report["inventory"]["units"]["LEU-001"]
+        assignment = {"C-01": assigned(
+            "C-01", "S-001", chapter_binding(report, "E-01", "LEU-001"))}
+        additions = {
+            "prompts/chapter-commissioner.md": "commissioner\n",
+            "prompts/commission-set-auditor.md": "auditor\n",
+            "production-books/test/framing.md":
+                "## Journey\n### CH-01 — One\n- accepted reader state\n",
+            "production-books/test/master-plan-review.md": "accepted plan review\n",
+            "production-books/test/master-plan.md":
+                "# Plan\n\n## Evidence ledger\n\n"
+                "| ID | Finding / lived material | Research unit IDs | Source ID | Grade or outcome tier | Scope and limit | Permitted inference | Prohibited inference |\n"
+                "|---|---|---|---|---|---|---|---|\n" +
+                evidence_row(report, "E-01", "LEU-001") + "\n\n"
+                "### C-01 — One\n"
+                "- **Entering belief:** Checking now keeps me safe.\n"
+                "- **Evidence IDs and required limits:** E-01\n"
+                f"- **Guardrails:** {unit['safety']}\n",
+            "production-books/test/commissions/chapter-01.md":
+                commission(assignment["C-01"]["authority"]) + "\n",
+        }
+        for relative, text in additions.items():
+            path = accepted / relative
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(text, encoding="utf-8", newline="\n")
+        PAIR.initialize(accepted, "production-books/test")
+        PAIR.snapshot(experiment, accepted, "production-books/test", "1", iteration=1)
+        with mock.patch.object(SET.SC, "require_subject_contract"):
+            SET.generate(experiment, assignment,
+                lambda request: commission(assignment[request["target"]]["authority"]),
+                lambda _request: SET.AUDIT_PASS)
         ledger = self.base / "run-ledger.md"
         ledger.write_text("### RF-23 — prose\n\n- Status: `READY`\n", encoding="utf-8")
         argv = ["run_iteration.py", "--book", "production-books/test", "--chapters", "1",
@@ -252,7 +290,9 @@ class CandidatePairTests(unittest.TestCase):
                 "--decision-timestamp", TIMESTAMP]
         authority = {"manifest": {"run": {"book": "production-books/test",
                                              "chapters": [1]}},
-                     "contract": "writer\n", "commissions": {1: "commission\n"}}
+                     "contract": "writer\n",
+                     "commissions": {1: commission(assignment["C-01"]["authority"])},
+                     "receipt_bytes": (experiment / "evidence" / SET.RECEIPT).read_bytes()}
         with mock.patch.object(sys, "argv", argv), mock.patch.object(GUARD, "LEDGER", ledger), \
                 mock.patch.object(RUN.WC, "capture", return_value=authority), \
                 mock.patch.object(RUN.WC, "require_fresh"), \

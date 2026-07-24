@@ -119,6 +119,83 @@ than replay
 AND resume MUST recompute the same six calls, commission-set receipt, and exact
 treatment artifact hashes before accepting the RF-21/RF-22 receipt.
 
+### Requirement: Research-isolated causal treatment
+The existing causal-bundle lifecycle SHALL expose an executable research
+treatment surface by importing the same research coordinator used by the book
+pipeline, not by creating a second research runner or campaign. A research
+experiment SHALL declare its research hypothesis and exact changed research
+bundle, freeze subject/input, model, planning, commission, writing, safety, and
+evaluation variables, and prepare isolated control and treatment RF-02 candidate
+roots. Both arms SHALL pass the production research preflight and produce
+current research seals before comparative judgment. Fake transports or native
+test editors MUST remain import-only test seams and MUST NOT be selectable by
+the production or causal command surface. The control's research prompt,
+evidence-editor prompt, and research configuration bytes SHALL still equal
+their accepted RF-02 snapshot before either arm dispatches and when the final
+gate revalidates the decision. Preflight, accepted-baseline verification, and
+completed-run lookup MAY inspect `CANDIDATE` or `SEALED` arms read-only; every
+research execution or mutation route MUST remain `CANDIDATE`-only.
+
+Research-source eligibility, privacy, safety, originality, traceability,
+scientific lineage, inference bounds, deduplication, belief/persona/slot
+coverage, and independent evidence judgment SHALL be hard gates rather than
+reward dimensions. Comparison, when used, SHALL be anonymous, independent, and
+task-hash-bound. A downstream chapter or book effect SHALL be bound only when
+the research hypothesis preregisters it as necessary, and SHALL compare exact
+anonymous downstream outputs from both current sealed arms under identical
+frozen planning, commissioning, writing, model, input, safety, and evaluation
+processes. A one-arm product PASS or status snippet MUST NOT count as a paired
+effect. Promotion remains one atomic named-human decision under the existing
+RF-02 gate, with an explicit named-human receipt bound to the tested pair,
+causal record, evidence, and both research seals.
+
+#### Scenario: A research treatment is prepared for isolated comparison
+WHEN the existing causal command receives a declared research hypothesis and
+one exact research-only changed bundle
+THEN it MUST create isolated control and treatment RF-02 roots from identical
+subject/input/model/planning/commission/writing/safety/evaluation and independent
+evidence-editor hashes
+AND it MUST call the same non-injectable production preflight and research
+facade as the standalone `start` route
+AND only the declared research-agent prompt may differ
+AND neither arm may change the independent evidence-editor contract that hard-gates it
+AND both arms MUST carry valid research seals and pass every research hard gate
+before a blind independent research-quality or reader/belief-coverage comparison
+can be accepted
+AND the blind judge SHALL return only anonymous side preference or tie plus its
+reason; deterministic code SHALL map `B`, `A`, or `TIE` to supported, refuted,
+or inconclusive only after judgment
+AND a preregistered downstream effect MUST be evaluated before accepting the
+research change when the hypothesis depends on that effect
+AND the decision gate MUST recompute current control-baseline identity, both
+sealed research candidates, hard gates, blind comparison, and any paired
+downstream comparison before recording or promoting the result.
+
+#### Scenario: A writing treatment is prepared
+WHEN the declared changed bundle owns planning, commission, writing, or revision
+rather than research
+THEN both arms MUST bind the same exact accepted research seal
+AND any research byte, seal, assignment, or coverage difference MUST reject the
+purported writing experiment as confounded.
+
+#### Scenario: A purported causal decision mixes research and writing changes
+WHEN one changed bundle alters research and any planning, commission, writing,
+revision, model, input, safety, or evaluation variable
+THEN the run MUST fail schema/preflight validation before dispatch
+AND research and writing changes MAY be optimized only in separate causal runs.
+
+#### Scenario: Research causal readiness is verified without starting a run
+WHEN RF-32 proves the research treatment surface offline
+THEN it MUST use captured no-network transports and isolated temporary fixtures
+without invoking the real campaign entrypoint
+AND it MUST NOT append a causal result, make a control/treatment decision,
+promote research or product, mutate accepted production, create an H-F01
+authority or artifact, move RF-21 or a later READY stage to `IN_PROGRESS`, or
+perform a provider, account, credit, eligibility, Muse, DeepSeek, or OpenRouter
+call
+AND the real production and causal routes without the environment key and later
+explicit founder start MUST stop before writes, network, or native dispatch.
+
 ### Requirement: Candidate isolation and atomic promotion
 Every candidate run SHALL write configuration and product outputs to an isolated,
 reproducible snapshot before promotion. A rejected candidate MUST NOT alter the

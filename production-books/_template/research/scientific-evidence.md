@@ -25,9 +25,12 @@ a scientific unit. Otherwise omit the unit and record a research-owned gap.
 - **Situation:** <concrete situation supported by the source>
 - **Reader wording:** "<exact supported reader wording>"
 - **Implicated belief:** "<exact primary or subordinate brief belief>"
+- **Persona IDs:** <P-01 | P-02>
 - **Emotion:** <emotion supported by the source>
 - **Permitted inference:** <bounded inference the evidence permits>
 - **Prohibited inference:** <claim the evidence does not permit>
+- **Style slots:** <canonical slot ID | another canonical slot ID>
+- **Safety boundary:** <exact Safety perimeter from 00-brief.md>
 - **Source locator:** S-001#E-001
 - **Evidence grade:** SUPPORTED | MIXED | CONTESTED
 

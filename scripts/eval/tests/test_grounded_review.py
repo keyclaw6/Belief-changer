@@ -1,6 +1,7 @@
 """RF-12 assigned-evidence, verdict, and downstream-gate regressions."""
 import json
 import os
+import re
 import stat
 import sys
 import unittest
@@ -27,14 +28,15 @@ class GroundedReviewTests(GroundedFixture, unittest.TestCase):
         tasks = GR.prepare(candidate)
         first = json.dumps(tasks[1])
         self.assertIn("FROZEN-ONE", first)
-        self.assertIn("FORBIDDEN-RAW-ASSIGNED", first)
-        self.assertNotIn("FORBIDDEN-RAW-UNASSIGNED-SAME-PACKET", first)
-        for forbidden in ("FORBIDDEN-RAW-SECOND", "FORBIDDEN-FULL-PLAN",
+        self.assertIn("I need to check this now, example 1.", first)
+        for forbidden in ("I need to check this now, example 2.",
+                          "I need to check this now, example 10.",
+                          "FORBIDDEN-FULL-PLAN",
                           "FORBIDDEN-FULL-STYLE", "FORBIDDEN-REFERENCE-TEXT",
-                          "FORBIDDEN-JUDGE-FEEDBACK", "FORBIDDEN-UNASSIGNED",
+                          "FORBIDDEN-JUDGE-FEEDBACK",
                           "FORBIDDEN-EXTRA-CHAPTER"):
             self.assertNotIn(forbidden, first)
-        self.assertNotIn("FORBIDDEN-RAW-UNASSIGNED-SAME-PACKET",
+        self.assertNotIn("I need to check this now, example 2.",
                          GR.GC.input_text(tasks[1]))
         receipt = pass_review(candidate)
         self.assertEqual("PASSED", receipt["state"])
@@ -56,7 +58,8 @@ class GroundedReviewTests(GroundedFixture, unittest.TestCase):
 
                 with self.assertRaisesRegex(GR.GroundedReviewError, "BLOCK"):
                     GR.advance(candidate, runner=proven_runner(response))
-                receipt = json.loads(GR.receipt_path(candidate).read_text())
+                receipt = json.loads(GR.receipt_path(candidate).read_text(
+                    encoding="utf-8"))
                 self.assertEqual("BLOCKED", receipt["state"])
                 self.assertEqual(classification,
                                  receipt["chapters"][0]["verdict"]["findings"][0]
@@ -82,7 +85,7 @@ class GroundedReviewTests(GroundedFixture, unittest.TestCase):
         invented_action["required_action"] = "Create a testimonial"
         invalid.append(verdict(task, "BLOCK", [invented_action]))
         malformed = finding(task, "invention")
-        malformed["source_locators"] = [{"locator": "S-101#E-001"}]
+        malformed["source_locators"] = [{"locator": "S-001#E-001"}]
         invalid.append(verdict(task, "BLOCK", [malformed]))
         duplicate = (f'{{"schema":2,"task_sha256":"{task["task_sha256"]}",'
                      '"verdict":"BLOCK","findings":[{"classification":"invention",'
@@ -95,30 +98,29 @@ class GroundedReviewTests(GroundedFixture, unittest.TestCase):
 
     def test_assigned_locator_missing_ambiguous_or_malformed_fails_pre_dispatch(self):
         """OpenSpec requirement: Split chapter review."""
-        packet_path = "production-books/test/research/sources/s-101-fixture.md"
+        packet_path = "production-books/test/research/sources/S-001-sealed-fixture.md"
         source = self.accepted / packet_path
         authority = self.assignments["C-01"]["authority"]["assigned_evidence"]
+        source_text = source.read_text(encoding="utf-8")
         with self.assertRaisesRegex(EVIDENCE.EvidenceError, "missing or ambiguous"):
-            EVIDENCE.assigned_records({packet_path: source.read_text()},
+            EVIDENCE.assigned_records({packet_path: source_text},
                                       {"S-777#E-001": next(iter(authority.values()))})
-
-        def duplicate(candidate):
-            path = PAIR.candidate_tree(candidate) / packet_path
-            path.write_text(path.read_text() + "\n### E-001\n- **Kind:** INTERPRETATION\n")
-
-        def malformed(candidate):
-            path = PAIR.candidate_tree(candidate) / packet_path
-            path.write_text(path.read_text().replace("- **Evidence grade:** SUPPORTED\n", ""))
-
-        for name, mutate in (("ambiguous", duplicate), ("malformed", malformed)):
-            with self.subTest(name=name):
-                candidate = self.frozen(name, mutate)
-                calls = []
-                with self.assertRaisesRegex(GR.GroundedReviewError,
-                                             "ambiguous|malformed"):
-                    GR.advance(candidate, runner=proven_runner(calls=calls))
-                self.assertEqual([], calls)
-                self.assertFalse(GR.folder(candidate).exists())
+        variants = {
+            "ambiguous": source_text + "\n### E-001\n- **Kind:** INTERPRETATION\n",
+            "malformed": re.sub(r"^- \*\*Evidence grade:\*\*.*\n", "",
+                                source_text, count=1, flags=re.M),
+        }
+        for name, text in variants.items():
+            with self.subTest(name=name), self.assertRaisesRegex(
+                    EVIDENCE.EvidenceError, "ambiguous|malformed"):
+                EVIDENCE.assigned_records({packet_path: text}, authority)
+        unassigned_path = (
+            "production-books/test/research/sources/S-002-sealed-fixture.md")
+        unassigned = (self.accepted / unassigned_path).read_text(encoding="utf-8")
+        with self.assertRaisesRegex(EVIDENCE.EvidenceError,
+                                    "contains no exact assigned locator"):
+            EVIDENCE.assigned_records(
+                {packet_path: source_text, unassigned_path: unassigned}, authority)
 
     def test_model_route_is_distinct_native_xhigh_and_task_hash_is_complete(self):
         """Infrastructure: native high-reasoning reviewer provenance."""

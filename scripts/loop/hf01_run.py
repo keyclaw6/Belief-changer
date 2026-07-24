@@ -185,8 +185,8 @@ def _require_arm_authority(root, arm, manifest):
     experiment, book = HF.arm_paths(root)[arm]["experiment"], HF.arm_paths(root)[arm]["book"]
     expected = manifest["operation"]["receipt_hash"]
     if arm == "control":
-        HCA.require_resume(experiment, book, HF.CHAPTERS, expected)
-    else: WC.require_manual_resume(experiment, book, HF.CHAPTERS, expected)
+        return HCA.require_resume(experiment, book, HF.CHAPTERS, expected)
+    return WC.resume_authority(experiment, book, HF.CHAPTERS, expected)
 def _prepare_arm(root, authority_sha, arm):
     experiment, book = HF.arm_paths(root)[arm]["experiment"], HF.arm_paths(root)[arm]["book"]
     manifest = CP.load(experiment)
@@ -199,8 +199,8 @@ def _prepare_arm(root, authority_sha, arm):
                 captured = WC.capture(experiment, book, HF.CHAPTERS)
                 WC.persist_manual_receipt(experiment, captured)
             manifest = CP.load(experiment)
-        _require_arm_authority(root, arm, manifest)
-        return FB.begin(experiment, authority_sha, "api")
+        writer_authority = _require_arm_authority(root, arm, manifest)
+        return FB.begin(experiment, authority_sha, "api"), writer_authority
     except (HCA.ControlAuthorityError, WC.WriterContextError, FB.BatchError,
             CP.PairError, PS.StoreError, OSError) as exc:
         raise RunError(f"H-F01 {arm} writer authority failed: {exc}") from exc
@@ -210,7 +210,7 @@ def _generate_arm(root, authority, authority_sha, arm, ensure_credit):
     if manifest["state"] in ("BATCH_FROZEN", "SEALED"):
         _prepare_arm(root, authority_sha, arm); FB.require_frozen_batch(experiment); return
     if manifest.get("draft_batch") is None: ensure_credit()
-    batch = _prepare_arm(root, authority_sha, arm)
+    batch, writer_authority = _prepare_arm(root, authority_sha, arm)
     try: remaining = FB.prepare(experiment)
     except FB.BatchError as exc: raise RunError(f"H-F01 {arm} draft resume failed: {exc}") from exc
     if remaining: ensure_credit()
@@ -223,12 +223,16 @@ def _generate_arm(root, authority, authority_sha, arm, ensure_credit):
             "h_f01_authority_sha256": authority_sha,
             "draft_batch_start_sha256": batch["start_sha256"], "payload": payload}
         try:
+            if arm == "control":
+                HCA.require_chapter_research(experiment, number)
+            else:
+                WC.require_chapter_research(experiment, number, writer_authority)
             FB.durable_call(experiment, number, request,
                             lambda p=payload, a=arm, n=number: _reply(
                                 p, a, n, root, authority, authority_sha))
             HF.validate_execution_authority(root, authority)
             FB.accept_response(experiment, number)
-        except FB.BatchError as exc:
+        except (FB.BatchError, HCA.ControlAuthorityError, WC.WriterContextError) as exc:
             raise RunError(f"H-F01 {arm} chapter {number} failed closed: {exc}") from exc
 
 

@@ -103,7 +103,8 @@ class WriterContextTests(WriterFixture, unittest.TestCase):
         stale = self.candidate("stale")
         self.generate(stale)
         plan = self.book(stale) / "master-plan.md"
-        plan.write_text(plan.read_text() + "changed after audit\n")
+        plan.write_text(plan.read_text(encoding="utf-8") + "changed after audit\n",
+                        encoding="utf-8")
         cases.append((stale, "stale or hash-mismatched"))
         tampered = self.candidate("tampered")
         self.generate(tampered)

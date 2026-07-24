@@ -77,6 +77,11 @@ later validation gates report their outcomes.
   is not treated as an executable pause. Its narrow pre-RF-23 exception is
   explicit RF-02-ready setup or extension of an isolated non-prose store; it
   does not authorize run, score, gate, model, or prose behavior.
+- RF-32 adds one research coordinator inside an RF-02 candidate root. Its real
+  `start` and causal routes are non-injectable facades: missing environment key
+  or later founder start stops before writes, network, or native dispatch.
+  Captured transports and native verification editors exist only as imported
+  test seams in temporary non-production roots.
 
 ## Target flow
 
@@ -105,6 +110,62 @@ later validation gates report their outcomes.
 9. Acceptance separates integrity, blind chapter effect, blind whole-opening
    sequence, and downstream reference-sighted craft diagnosis. Configuration
    and product promote or reject atomically.
+
+## Research-factory readiness (RF-32)
+
+RF-04 made research units structurally enforceable but did not dispatch or
+coordinate research. RF-32 fills that executable gap without reopening RF-04 or
+rewriting downstream factory stages. One `research_factory` state machine owns
+preflight, a model-authored query/coverage plan, five fresh parallel lanes,
+eligibility and dedupe, derived coverage, targeted gap rounds, synthesis,
+independent evidence review, and the final seal. Planning, commission, writing,
+and causal code receive only seal and adequacy adapters.
+
+The coordinator writes only inside one pinned RF-02 candidate root. Before any
+write it validates the completed subject contract and the environment-only
+OpenRouter key. After that boundary the fixed breadth facade uses DeepSeek V4
+Pro at xhigh reasoning with current server-side search/fetch tools; search
+summaries are leads, while accepted evidence requires a matching fetched URL,
+locator, content hash, and minimum excerpt. Rights/privacy failure leaves only
+aggregate policy evidence. Eligible URL, excerpt, evidence, story, and study
+lineage duplicates collapse before IDs and coverage are assigned.
+
+Each parallel call reserves its worst-case call, tool, output, result, and cost
+budget before dispatch. A canonical request-hash marker precedes dispatch and a
+sanitized result follows it; a marker without a complete durable result is an
+ambiguous stop, never permission to replay. Resume preserves completed results
+and unchanged packet hashes. Exhaustion is `BLOCKED`, never evidence of quality.
+
+Coverage is recomputed from retained packets, evidence, syntheses, and units. It
+does not trust a log's PASS rows. The ten banks, prompt floors, materially
+distinct personas, brief beliefs, style slots, counter-corpus, safety, diversity,
+grades, inference bounds, and LEU/SEU/GAP traceability all feed one aggregate
+report. Coverage or independent-review findings commission only demonstrated
+gaps. A cross-family editor binds the exact candidate digest; a passing review
+and unchanged bytes permit one seal binding the complete research authority.
+
+That same seal verifier becomes the existing downstream choke point. Whole-book
+freshness blocks framing through writing, while each writer call gets an
+immediate plan-need-to-assigned-unit check. A new seal stales prior bindings;
+unchanged downstream bytes may be rebound only by full semantic revalidation.
+The only research continuation shortcut is an explicit, current-seal/plan/card-
+hash-bound `unit_missing` request while the audited RF-02 operation is still a
+mutable `CANDIDATE`. It skips the initial fan-out, preserves accepted packet and
+unit bytes, appends only eligible distinct-source evidence, then repeats derived
+coverage, independent review, and sealing. That reseal invalidates the old
+commission audit; writer-authority capture requires fresh commission binding and
+whole-set audit. `WRITER_HANDOFF` and later states reject targeted research, and
+the immediate writer gate remains block-only.
+The existing causal-bundle path imports this coordinator for isolated
+research-only treatments and freezes research for writing treatments. It does
+not gain a second runner, mixed research/writing decision, or alternate test
+backend.
+
+RF-32 is offline readiness only. Its proof uses deterministic captured
+transports and isolated native-Codex simulations in temporary roots. It performs
+no production research, campaign iteration, provider/account check, causal
+decision, research or product promotion, H-F01/RF-21 execution, or chapter
+generation, and it does not mutate the preserved quit-sugar workshop.
 
 ## First decisive test
 
@@ -202,6 +263,8 @@ No other current `book-pipeline` guarantee is removed by implication.
   anonymous H-F04 calibration, and RF-21/RF-22 treatment planning/commissions
   inside the isolated redesign snapshot after their dependencies pass.
 - No new research is gathered for H-F01.
+- RF-32 does not change H-F01's fixed research, route, authority, task state, or
+  exact no-cap Muse writer semantics and does not execute H-F01.
 - H-F01 makes no writer-model comparison; its fixed Muse route is not a treatment
   variable or evidence of superiority over Opus.
 - No dashboards, direction-audit bureaucracy, reusable call ledger, or

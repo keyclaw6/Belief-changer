@@ -15,8 +15,8 @@ BELIEFS = ("Primary.", "Second.", "Third.", "Fourth.")
 class FramingReviewTests(unittest.TestCase):
     def setUp(self):
         self.tmp = Path(tempfile.mkdtemp())
-        self.book = self.tmp / "book"
-        (self.book / "research/sources").mkdir(parents=True)
+        self.book = self.tmp / "production-books/test"
+        self.book.mkdir(parents=True)
 
     def tearDown(self):
         shutil.rmtree(self.tmp)
@@ -108,7 +108,7 @@ class FramingReviewTests(unittest.TestCase):
         """Infra: RF-05 deterministic evidence boundary inside authority moves."""
         text = self.write_subject()
         changed = text.replace(
-            "Claim:** This source supports this cue and expectation.",
+            "Claim:** Distinct cue 1 and unease 1 support only this reported expectation.",
             "Claim:** This pattern proves everyone is unsafe.", 1,
         )
         self.write_review(changed)

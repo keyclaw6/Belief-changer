@@ -108,11 +108,16 @@ def _baseline_inputs(root):
         ("production-books/_template/00-brief.md", "production-books/_template/framing.md",
          "prompts/master-plan-skill-v2.md"))
     return {"contract": contract,
-        "rf21_scope": "Revise only the brief, framing, and master plan for the first three cumulative sugar transitions; also return exact RF22 assignment authority derived only from the two syntheses.",
+        "rf21_scope": "Return the sealed brief exactly unchanged. Revise only framing and the master plan for the first three cumulative sugar transitions; also return exact RF22 assignment authority derived only from the two syntheses.",
         "files": {name: (base / name).read_text(encoding="utf-8") for name in names}}
 def _assignments(root, rows):
-    try: return CONTRACT.assignments(root, rows, HF.arm_paths)
-    except (KeyError, TypeError, ValueError) as exc: raise UpstreamError(f"rf21-plan: {exc}") from exc
+    try:
+        assignments = CONTRACT.assignments(root, rows, HF.arm_paths)
+        return CS.bind_research_authority(
+            HF.arm_paths(root)["treatment"]["experiment"], assignments)
+    except (KeyError, TypeError, ValueError, CS.CommissionSetError,
+            CS.RC.ContractError) as exc:
+        raise UpstreamError(f"rf21-plan: {exc}") from exc
 def _declare_review(experiment):
     manifest = CS.CP.load(experiment); relative = f"{HF.BOOK}/framing-review.md"
     if relative in {item["path"] for item in manifest["outputs"]}: return
@@ -129,9 +134,15 @@ def _apply(path, text, baseline=None):
     PS.write(path, data)
 def _plan_outputs(root, value, apply):
     paths = HF.arm_paths(root); treatment, control = paths["treatment"]["candidate"], paths["control"]["candidate"]
-    mapping = {f"{HF.BOOK}/00-brief.md": "brief", f"{HF.BOOK}/framing.md": "framing",
+    mapping = {f"{HF.BOOK}/framing.md": "framing",
                f"{HF.BOOK}/master-plan.md": "master_plan"}
     if set(value) != {"brief", "framing", "master_plan", "assignments"}: raise UpstreamError("rf21-plan: output fields are not exact")
+    brief_relative = f"{HF.BOOK}/00-brief.md"
+    sealed_brief = (control / brief_relative).read_text(encoding="utf-8")
+    if value["brief"].rstrip() + "\n" != sealed_brief.rstrip() + "\n":
+        raise UpstreamError("rf21-plan: sealed brief must remain unchanged")
+    if (treatment / brief_relative).read_bytes() != (control / brief_relative).read_bytes():
+        raise UpstreamError("rf21-plan: sealed brief bytes are stale")
     for relative, key in mapping.items():
         target, expected = treatment / relative, (value[key].rstrip() + "\n").encode()
         if apply: _apply(target, value[key], (control / relative).read_bytes())
@@ -204,11 +215,24 @@ def _rf21_value(authority_sha, records, artifacts, assignments):
         "completed_at_utc": _time(), "calls": calls, "artifacts": artifacts,
         "assignments_sha256": PS.state_hash(assignments)}
     return {**body, "receipt_hash": PS.state_hash(body)}
+def _accepted_research(root):
+    """Bind both arms to one current research seal before any native dispatch."""
+    identities = {}
+    for arm in ("control", "treatment"):
+        try:
+            identities[arm] = CS.RC.research_seal_identity(HF.arm_paths(root)[arm]["book"])
+        except (CS.RC.ContractError, OSError) as exc:
+            raise UpstreamError(f"RF21 {arm} research seal is not current: {exc}") from exc
+    if len(set(identities.values())) != 1:
+        raise UpstreamError("RF21 control and treatment research seals differ")
+    return identities["control"]
 def _pipeline(root, authority, authority_sha, complete, apply, stop_after=None):
     root, base, records = Path(root).absolute(), Path(root).absolute() / FOLDER, []
+    _accepted_research(root)
     plan_spec = _spec(0); plan = _record(base, plan_spec, authority_sha,
         _task(plan_spec, authority_sha, _baseline_inputs(root)), PLAN_SCHEMA, complete)
     records.append(plan); assignments = _plan_outputs(root, _json(plan["raw"], plan_spec["id"]), apply)
+    _accepted_research(root)
     review_spec = _spec(1); review = _record(base, review_spec, authority_sha,
         _task(review_spec, authority_sha, _review_inputs(root)), REVIEW_SCHEMA, complete)
     records.append(review); _review_outputs(root, _json(review["raw"], review_spec["id"]), apply)

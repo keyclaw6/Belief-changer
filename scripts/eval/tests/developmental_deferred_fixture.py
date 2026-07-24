@@ -5,6 +5,7 @@ import grounded_review as GROUNDED
 import writer_context_fixture as WRITER_CONTEXT
 from developmental_review_fixture import DevelopmentalFixture
 from grounded_review_fixture import proven_runner as grounded_runner, verdict as grounded_verdict
+from research_contract_fixture import chapter_binding
 from test_commission_set import assigned
 
 
@@ -221,6 +222,19 @@ class DeferredSequenceFixture(DevelopmentalFixture):
         with mock.patch.object(WRITER_CONTEXT, "STATES", STATES):
             super().setUp()
         self.assignments = assignments()
+        for number in self.selection:
+            chapter, source = f"C-{number:02d}", f"S-{number:03d}"
+            record = self.assignments[chapter]
+            authority = record["authority"]
+            old_locator = next(iter(authority["assigned_evidence"]))
+            locator = f"{source}#E-001"
+            binding = authority["assigned_evidence"].pop(old_locator)
+            binding["provenance"] = binding["provenance"].replace(old_locator, locator)
+            authority["assigned_evidence"][locator] = binding
+            authority["research"] = chapter_binding(
+                self.research_report, f"E-{number:02d}", f"LEU-{number:03d}")
+            record["packets"] = [
+                f"production-books/test/research/sources/{source}-sealed-fixture.md"]
 
     def frozen_draft(self, number, name):
         del name

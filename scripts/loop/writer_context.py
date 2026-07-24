@@ -81,6 +81,19 @@ def require_fresh(candidate, authority):
         raise WriterContextError(f"writer authority freshness failed: {exc}") from exc
 
 
+def require_chapter_research(candidate, number, authority=None):
+    """Return current compact research authority or preserve its structured gap."""
+    try:
+        if authority is not None:
+            require_fresh(candidate, authority)
+        binding, _packets = CS.require_chapter_research(
+            candidate, number,
+            authority.get("receipt_bytes") if authority is not None else None)
+        return binding
+    except (CS.ResearchDispatchGap, WriterContextError) as exc:
+        raise WriterContextError(str(exc)) from exc
+
+
 def manual_receipt_path(candidate):
     return Path(candidate).absolute() / MANUAL_RECEIPT
 

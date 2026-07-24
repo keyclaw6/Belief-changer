@@ -5,6 +5,7 @@ import re
 import sys
 from pathlib import Path
 import master_plan_contract_context as context
+import validate_research_contract as research
 
 
 CARD = re.compile(r"^###\s+(C-\d{2})\s+—[^\n]+$", re.M)
@@ -45,6 +46,11 @@ ALLOW_NONE = {
 }
 CANONICAL = ("Evidence ledger", "Mantra sheet", "Instruction spine",
              "Arc and length map", "Compact chapter cards")
+EVIDENCE_COLUMNS = (
+    "ID", "Finding / lived material", "Research unit IDs", "Source ID",
+    "Grade or outcome tier", "Scope and limit", "Permitted inference",
+    "Prohibited inference",
+)
 
 
 ContractError = context.ContractError
@@ -107,6 +113,58 @@ def _check_refs(fields, definitions, owner):
         refs = set(re.findall(rf"\b{prefix}-\d+\b", value))
         if not refs or not refs <= definitions[prefix]:
             raise ContractError(f"{owner}.{name}: unresolved plan-wide ID")
+
+
+def _research_ledger(text, report):
+    """Bind every accepted plan evidence row to the sealed unit inventory."""
+    body = context.sections(text, CANONICAL)["Evidence ledger"]
+    table = [line for line in body.splitlines() if line.lstrip().startswith("|")]
+    if len(table) < 3:
+        raise ContractError("evidence ledger is missing its canonical table")
+    headings = tuple(cell.strip() for cell in table[0].strip().strip("|").split("|"))
+    if headings != EVIDENCE_COLUMNS:
+        raise ContractError("evidence ledger header must bind Research unit IDs")
+    units = report.get("inventory", {}).get("units", {}) if isinstance(report, dict) else {}
+    if not isinstance(units, dict):
+        raise ContractError("sealed research unit inventory is malformed")
+    seen = set()
+    for line in table[2:]:
+        values = tuple(cell.strip() for cell in line.strip().strip("|").split("|"))
+        if len(values) != len(headings):
+            raise ContractError("evidence ledger row shape is invalid")
+        row = dict(zip(headings, values))
+        evidence_id = row["ID"]
+        if re.fullmatch(r"E-\d+", evidence_id) is None or evidence_id in seen:
+            raise ContractError("evidence ledger ID is invalid or duplicated")
+        seen.add(evidence_id)
+        unit_ids = sorted(set(re.findall(r"\b(?:LEU|SEU)-\d{3}\b",
+                                         row["Research unit IDs"])))
+        if not unit_ids or any(unit_id not in units for unit_id in unit_ids):
+            raise ContractError(f"{evidence_id}: research unit is absent from current seal")
+        locators, permitted_values, prohibited_values = set(), set(), set()
+        for unit_id in unit_ids:
+            unit = units[unit_id]
+            try:
+                unit_locators = unit["locators"]
+                permitted = unit["permitted_inference"]
+                prohibited = unit["prohibited_inference"]
+            except (KeyError, TypeError) as exc:
+                raise ContractError(f"{evidence_id}: sealed unit authority is malformed") from exc
+            if not isinstance(unit_locators, list) or not unit_locators \
+                    or not isinstance(permitted, str) or not permitted \
+                    or not isinstance(prohibited, str) or not prohibited:
+                raise ContractError(f"{evidence_id}: inference limits differ from sealed units")
+            locators.update(unit_locators)
+            permitted_values.add(permitted)
+            prohibited_values.add(prohibited)
+        if row["Permitted inference"] != "; ".join(sorted(permitted_values)) \
+                or row["Prohibited inference"] != "; ".join(sorted(prohibited_values)):
+            raise ContractError(f"{evidence_id}: inference limits differ from sealed units")
+        row_locators = set(re.findall(r"S-\d{3}#E-\d{3}", row["Source ID"]))
+        if row_locators != locators:
+            raise ContractError(f"{evidence_id}: locators differ from sealed units")
+    if not seen:
+        raise ContractError("evidence ledger has no evidence rows")
 
 
 def validate_text(text, framing_text=None):
@@ -208,7 +266,19 @@ def require_master_plan_contract(book, framing=None):
     framing = Path(framing) if framing else Path(book) / "framing.md"
     if not framing.is_file() or not framing.read_text(encoding="utf-8").strip():
         raise ContractError(f"missing or empty accepted framing: {framing}")
-    validate_text(path.read_text(encoding="utf-8"), framing.read_text(encoding="utf-8"))
+    text = path.read_text(encoding="utf-8")
+    validate_text(text, framing.read_text(encoding="utf-8"))
+    try:
+        report = research.inspect_research(book, require_seal=True)
+    except (research.ContractError, OSError) as exc:
+        raise ContractError(f"accepted research is not current: {exc}") from exc
+    if not isinstance(report, dict) or not report.get("ok") \
+            or not isinstance(report.get("seal_identity"), str) \
+            or not report["seal_identity"]:
+        blockers = report.get("blockers", ()) if isinstance(report, dict) else ()
+        detail = "; ".join(str(item) for item in blockers) or "missing accepted seal"
+        raise ContractError(f"accepted research is not current: {detail}")
+    _research_ledger(text, report)
     return path
 
 

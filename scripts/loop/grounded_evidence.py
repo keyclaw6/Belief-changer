@@ -7,6 +7,11 @@ LOCATOR = re.compile(r"^(S-\d{3})#(E-\d{3})$")
 FIELD = re.compile(r"^- \*\*(.+?):\*\*\s*(.*)$")
 REQUIRED_EVIDENCE = {"Kind", "Text", "Excerpt ID", "Locator", "Persona tags",
                      "Bank slots", "Evidence grade", "Use / limits"}
+MACHINE_EVIDENCE = {
+    "Brief beliefs", "Style slots", "Safety relevance", "Grade rationale", "Scope",
+    "Counterevidence", "Permitted inference", "Prohibited inference",
+    "Testimonial qualification", "Situation", "Emotion",
+}
 
 
 class EvidenceError(RuntimeError):
@@ -76,7 +81,9 @@ def extract(text, locator, path, authority):
         return None
     evidence_section = _section(text, evidence_id)
     evidence = _fields(evidence_section)
-    if set(evidence) != REQUIRED_EVIDENCE or evidence["Excerpt ID"] == "" \
+    if not REQUIRED_EVIDENCE <= set(evidence) \
+            or set(evidence) - REQUIRED_EVIDENCE - MACHINE_EVIDENCE \
+            or evidence["Excerpt ID"] == "" \
             or evidence["Kind"] not in ("EXACT_QUOTE", "INTERPRETATION"):
         raise EvidenceError(f"assigned evidence {locator} metadata is malformed")
     excerpt_id = evidence["Excerpt ID"]
@@ -84,7 +91,8 @@ def extract(text, locator, path, authority):
         raise EvidenceError(f"assigned evidence {locator} excerpt is malformed")
     excerpt_section = _section(text, excerpt_id)
     excerpt_fields = _fields(excerpt_section)
-    if set(excerpt_fields) != {"Locator", "Capture method"}:
+    if not {"Locator", "Capture method"} <= set(excerpt_fields) \
+            or set(excerpt_fields) - {"Locator", "Capture method", "Content SHA-256"}:
         raise EvidenceError(f"assigned excerpt {excerpt_id} metadata is malformed")
     body = {"locator": locator, "path": path, "source": source,
             "excerpt": {"id": excerpt_id, **excerpt_fields,

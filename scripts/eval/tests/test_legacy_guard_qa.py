@@ -10,11 +10,13 @@ from unittest import mock
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "scripts/eval"))
 sys.path.insert(0, str(ROOT / "scripts/loop"))
+sys.path.insert(0, str(ROOT / "scripts/eval/tests"))
 import judges  # noqa: E402
 import gate as GATE  # noqa: E402
 import legacy_guard as LG  # noqa: E402
 import run_iteration as RUN  # noqa: E402
 import score as SCORE  # noqa: E402
+from writer_context_fixture import WriterFixture  # noqa: E402
 class GuardQATests(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
@@ -39,10 +41,11 @@ class GuardQATests(unittest.TestCase):
             if os.name == "nt" and getattr(exc, "winerror", None) in {50, 1314}:
                 self.skipTest("Windows symlink creation is unavailable")
             raise
-    def writer_patches(self):
+    def writer_patches(self, captured=None):
         inputs = dict(zip(RUN.WC.INPUT_KEYS, ("contract", "commission", "previous")))
-        authority = {"manifest": {"run": {"book": "book", "chapters": [1]}},
-                     "contract": "contract", "commissions": {1: "commission"}}
+        authority = captured or {
+            "manifest": {"run": {"book": "book", "chapters": [1]}},
+            "contract": "contract", "commissions": {1: "commission"}}
         return (
             mock.patch.object(RUN.BR, "_capture", return_value=(authority, None)),
             mock.patch.object(RUN.WC, "require_fresh"),
@@ -61,6 +64,19 @@ class GuardQATests(unittest.TestCase):
                     self.book / f"chapters/chapter-{number:02d}.md").write_text(
                         "# Chapter\n" + "word " * 801, encoding="utf-8") and 801),
         )
+
+    def seeded_writer_authority(self):
+        fixture = WriterFixture()
+        fixture.selection = (1,)
+        fixture.setUp()
+        self.addCleanup(fixture.tearDown)
+        candidate = fixture.candidate("legacy-guard-hardlink")
+        fixture.generate(candidate)
+        book = fixture.book(candidate)
+        with mock.patch.object(RUN.CS.SC, "require_subject_contract"):
+            authority = RUN.WC.capture(candidate, book, [1])
+        self.candidate, self.book = candidate, book
+        return authority
 
     def run_writer(self, patches):
         with contextlib.ExitStack() as stack:
@@ -88,19 +104,23 @@ class GuardQATests(unittest.TestCase):
         self.assertTrue(leaf.read_text(encoding="utf-8").startswith("# Chapter"))
     def test_chapter_leaf_hardlink_cannot_escape_candidate(self):
         """OpenSpec scenario: An authorized isolated redesign path is exercised."""
+        authority = self.seeded_writer_authority()
         outside = self.sentinel("outside-hardlinked-chapter.md")
         leaf = self.book / "chapters/chapter-01.md"
+        accepted_chapter = leaf.read_bytes()
+        leaf.unlink()
         leaf.hardlink_to(outside)
         patches = (
             mock.patch.object(RUN.judges, "endpoint", return_value=("url", "key")),
             mock.patch.object(RUN.ME, "chat", return_value="# Chapter\n" + "word " * 801),
-            *self.writer_patches(),
+            *self.writer_patches(authority),
         )
         with self.assertRaises(SystemExit) as stopped:
             self.run_writer(patches)
         self.assertIn("multiply linked file", str(stopped.exception))
         self.assertEqual("outside sentinel\n", outside.read_text(encoding="utf-8"))
         leaf.unlink()
+        leaf.write_bytes(accepted_chapter)
         self.assertTrue(self.run_writer(patches))
         self.assertTrue(leaf.read_text(encoding="utf-8").startswith("# Chapter"))
 

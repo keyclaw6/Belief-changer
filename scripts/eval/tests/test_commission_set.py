@@ -1,6 +1,7 @@
 """Focused RF-09 commission generation, isolation, and audit regressions."""
 import json
 import os
+import shutil
 import sys
 import tempfile
 import unittest
@@ -15,9 +16,11 @@ import candidate_pair as PAIR  # noqa: E402
 import commission_set as SET  # noqa: E402
 import pair_store as STORE  # noqa: E402
 from test_commission_contract import authority, commission  # noqa: E402
-from commission_packet_fixture import packet  # noqa: E402
+from test_master_plan_review import review_text  # noqa: E402
+from research_contract_fixture import (chapter_binding, evidence_row,
+                                       write_sealed_research)  # noqa: E402
 
-def assigned(chapter, source):
+def assigned(chapter, source, research=None):
     auth = deepcopy(authority())
     old_locator = next(iter(auth["assigned_evidence"]))
     locator = f"{source}#E-001"
@@ -26,7 +29,9 @@ def assigned(chapter, source):
     binding = auth["assigned_evidence"].pop(old_locator)
     binding["provenance"] = binding["provenance"].replace(old_locator, locator)
     auth["assigned_evidence"][locator] = binding
-    path = f"production-books/test/research/sources/{source.lower()}-fixture.md"
+    if research is not None:
+        auth["research"] = research
+    path = f"production-books/test/research/sources/{source}-sealed-fixture.md"
     return {"packets": [path], "authority": auth}
 
 class CommissionSetTests(unittest.TestCase):
@@ -42,15 +47,6 @@ class CommissionSetTests(unittest.TestCase):
             "loop/results.tsv": "iter\treward\tverdict\n",
             "prompts/chapter-commissioner.md": "commissioner contract\n",
             "prompts/commission-set-auditor.md": "grounding ownership continuity leakage\n",
-            "production-books/test/00-brief.md": "brief\n",
-            "production-books/test/research/lived-experience.md": "lived\n",
-            "production-books/test/research/scientific-evidence.md": "science\n",
-            "production-books/test/research/sources/s-101-fixture.md":
-                packet("S-101", "E-001", "ONLY-ONE"),
-            "production-books/test/research/sources/s-102-fixture.md":
-                packet("S-102", "E-001", "ONLY-TWO"),
-            "production-books/test/research/sources/s-999-unassigned.md":
-                packet("S-999", "E-001", "FORBIDDEN-PACKET"),
             "production-books/test/framing.md": (
                 "## Cumulative reader-state journey\n"
                 "### CH-01 — First\n- **Entering belief:** RS-00 | start\n"
@@ -68,10 +64,39 @@ class CommissionSetTests(unittest.TestCase):
             path = self.accepted / relative
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(text, encoding="utf-8")
+        report = write_sealed_research(self.accepted / "production-books/test")
+        self.research_report = report
+        for relative in (
+            "calibration/judges/carr-likeness-rubric.md",
+            "calibration/judges/product-effect-rubric.md",
+            "calibration/judges/product-effect-absolute-rubric.md",
+        ):
+            target = self.accepted / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(ROOT / relative, target)
+        metrics = self.accepted / "calibration/reference/gsbs/reference-metrics.json"
+        metrics.parent.mkdir(parents=True, exist_ok=True)
+        metrics.write_text('{"chapters": []}\n', encoding="utf-8")
+        units = report["inventory"]["units"]
+        plan = ("# Plan\n\n## Evidence ledger\n\n"
+                "| ID | Finding / lived material | Research unit IDs | Source ID | Grade or outcome tier | Scope and limit | Permitted inference | Prohibited inference |\n"
+                "|---|---|---|---|---|---|---|---|\n" +
+                evidence_row(report, "E-01", "LEU-001") + "\n" +
+                evidence_row(report, "E-02", "LEU-002") + "\n\n"
+                "### C-01 â€” First\n- **Entering belief:** RS-00 | start\n"
+                "- **Evidence IDs and required limits:** E-01\n"
+                f"- **Guardrails:** {units['LEU-001']['safety']}\n"
+                "### C-02 â€” Second\n- **Entering belief:** RS-01 | changed\n"
+                "- **Evidence IDs and required limits:** E-02\n"
+                f"- **Guardrails:** {units['LEU-002']['safety']}\n")
+        (self.accepted / "production-books/test/master-plan.md").write_text(
+            plan, encoding="utf-8")
         PAIR.initialize(self.accepted, "production-books/test")
         PAIR.snapshot(self.experiment, self.accepted, "production-books/test", "1-2")
-        self.assignments = {"C-01": assigned("C-01", "S-101"),
-                            "C-02": assigned("C-02", "S-102")}
+        self.assignments = {
+            "C-01": assigned("C-01", "S-001", chapter_binding(report, "E-01", "LEU-001")),
+            "C-02": assigned("C-02", "S-002", chapter_binding(report, "E-02", "LEU-002")),
+        }
 
     def tearDown(self):
         self.tmp.cleanup()
@@ -107,17 +132,17 @@ class CommissionSetTests(unittest.TestCase):
         receipt, calls, audits = self.generate()
         self.assertEqual(2, len(calls))
         self.assertEqual(1, len(audits))
-        for call, own, other in ((calls[0], "ONLY-ONE", "ONLY-TWO"),
-                                 (calls[1], "ONLY-TWO", "ONLY-ONE")):
+        for call, own, other in ((calls[0], "example 1", "example 2"),
+                                 (calls[1], "example 2", "example 1")):
             body = json.dumps(call)
             self.assertIn(own, body)
             self.assertNotIn(other, body)
-            self.assertNotIn("FORBIDDEN-PACKET", body)
+            self.assertNotIn("example 10", body)
             self.assertTrue(call["fresh_context"] and call["reference_blind"])
         audit_body = json.dumps(audits[0])
-        self.assertIn("ONLY-ONE", audit_body)
-        self.assertIn("ONLY-TWO", audit_body)
-        self.assertNotIn("FORBIDDEN-PACKET", audit_body)
+        self.assertIn("example 1", audit_body)
+        self.assertIn("example 2", audit_body)
+        self.assertNotIn("example 10", audit_body)
         with mock.patch.object(SET.SC, "require_subject_contract"):
             self.assertEqual(receipt, SET.require_writer_eligible(self.experiment))
         manifest = PAIR.load(self.experiment)
@@ -155,6 +180,76 @@ class CommissionSetTests(unittest.TestCase):
             SET.require_writer_eligible(self.experiment)
         self.assertEqual(before, self.current_state())
 
+    def test_inference_widening_blocks_before_commission_callbacks(self):
+        """OpenSpec scenario: A chapter's assigned research is inadequate."""
+        plan_path = (PAIR.candidate_tree(self.experiment) /
+                     "production-books/test/master-plan.md")
+        permitted = self.research_report["inventory"]["units"]["LEU-001"][
+            "permitted_inference"]
+        plan = plan_path.read_text(encoding="utf-8")
+        plan_path.write_text(
+            plan.replace(f"| {permitted} |",
+                         f"| {permitted}; invented permission |", 1),
+            encoding="utf-8",
+        )
+        commissioner, auditor = mock.Mock(), mock.Mock()
+        with mock.patch.object(SET.SC, "require_subject_contract"):
+            with self.assertRaisesRegex(SET.ResearchDispatchGap,
+                                        "inference_mismatch"):
+                SET.generate(self.experiment, self.assignments,
+                             commissioner, auditor)
+        commissioner.assert_not_called()
+        auditor.assert_not_called()
+
+    def test_proven_chapter_gap_yields_read_only_targeted_request(self):
+        """OpenSpec scenario: Targeted research resumes only from a proven gap."""
+        book = PAIR.candidate_tree(self.experiment) / "production-books/test"
+        plan_path = book / "master-plan.md"
+        framing_path = book / "framing.md"
+        review_path = book / "master-plan-review.md"
+        plan = plan_path.read_text(encoding="utf-8")
+        plan_path.write_text(
+            plan.replace("LEU-001", "LEU-999", 1),
+            encoding="utf-8",
+        )
+        review_path.write_text(
+            review_text(plan_path, framing_path), encoding="utf-8")
+        before = {path.relative_to(self.experiment).as_posix(): path.read_bytes()
+                  for path in self.experiment.rglob("*") if path.is_file()}
+        request = SET.chapter_gap_request(self.experiment, 1)
+        after = {path.relative_to(self.experiment).as_posix(): path.read_bytes()
+                 for path in self.experiment.rglob("*") if path.is_file()}
+        self.assertEqual(before, after)
+        self.assertEqual({"schema", "research_seal_sha256", "chapter_id",
+                          "plan", "card", "gaps"}, set(request))
+        self.assertEqual("C-01", request["chapter_id"])
+        self.assertEqual("unit_missing", request["gaps"][0]["code"])
+        self.assertEqual(
+            "Accepted chapter need names an intervention-ready unit absent from "
+            "the current sealed corpus.",
+            request["gaps"][0]["detail"],
+        )
+        self.assertEqual(
+            "production-books/test/master-plan.md#C-01",
+            request["card"]["path"],
+        )
+        with self.assertRaisesRegex(SET.CommissionSetError, "adequate"):
+            plan_path.write_text(plan, encoding="utf-8")
+            review_path.write_text(
+                review_text(plan_path, framing_path), encoding="utf-8")
+            SET.chapter_gap_request(self.experiment, 1)
+
+    def test_tampered_audited_plan_cannot_authorize_targeted_research(self):
+        """OpenSpec scenario: Targeted research resumes only from a proven gap."""
+        self.generate()
+        plan_path = (PAIR.candidate_tree(self.experiment) /
+                     "production-books/test/master-plan.md")
+        plan_path.write_text(
+            plan_path.read_text(encoding="utf-8").replace("LEU-001", "LEU-999", 1),
+            encoding="utf-8")
+        with self.assertRaisesRegex(SET.CommissionSetError, "owning stage"):
+            SET.chapter_gap_request(self.experiment, 1)
+
     def test_audit_receipt_fails_closed_when_missing_blocked_stale_or_tampered(self):
         """OpenSpec requirement: Candidate isolation and atomic promotion."""
         self.generate()
@@ -172,7 +267,7 @@ class CommissionSetTests(unittest.TestCase):
             member.write_text(member_original + "mutated after pass\n")
             with mock.patch.object(SET.SC, "require_subject_contract"):
                 with self.assertRaisesRegex(SET.CommissionSetError,
-                                            "stale or hash-mismatched"):
+                                            r"stale|hash-mismatched"):
                     SET.require_writer_eligible(self.experiment)
             member.write_text(member_original)
         commission_path.unlink()

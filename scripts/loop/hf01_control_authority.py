@@ -7,6 +7,7 @@ from pathlib import Path
 import candidate_pair as CP
 import grounded_evidence as GE
 import pair_store as PS
+import validate_research_contract as RC
 import writer_operation as WO
 
 AUTHORITY = "hf01-control"
@@ -14,7 +15,7 @@ STYLE = "prompts/style-guide.md"
 FIELD = re.compile(r"^- \*\*(.+?):\*\*\s*(.*)$", re.M)
 CHAPTER = re.compile(r"^###\s+(?:C|CH)-0*(\d+)\b[^\n]*$", re.M)
 LOCATOR = re.compile(r"S-\d{3}#E-\d{3}")
-EVIDENCE_ID = re.compile(r"EV-[A-Z]\d{2}")
+EVIDENCE_ID = re.compile(r"(?:EV-[A-Z]\d{2}|E-\d+)")
 
 
 class ControlAuthorityError(RuntimeError):
@@ -42,15 +43,29 @@ def _field(section, name):
     if len(matches) != 1 or not matches[0]:
         raise ControlAuthorityError(f"current plan field is missing or ambiguous: {name}")
     return matches[0]
+
+
+def _field_alias(section, label, *names):
+    matches = [value.strip() for field, value in FIELD.findall(section)
+               if field in names]
+    if len(matches) != 1 or not matches[0]:
+        raise ControlAuthorityError(
+            f"current plan field is missing or ambiguous: {label}")
+    return matches[0]
+
+
 def _row(plan, evidence_id):
     matches = []
     for line in plan.splitlines():
         cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
-        if len(cells) == 5 and cells[0] == evidence_id:
-            matches.append(cells)
+        if cells and cells[0] == evidence_id:
+            if len(cells) == 5:
+                matches.append((cells[1], cells[2], cells[3], cells[4]))
+            elif len(cells) == 8:
+                matches.append((cells[1], cells[3], cells[6], cells[7]))
     if len(matches) != 1:
         raise ControlAuthorityError(f"plan evidence row is missing or ambiguous: {evidence_id}")
-    _, finding, sources, permitted, prohibited = matches[0]
+    finding, sources, permitted, prohibited = matches[0]
     locators = LOCATOR.findall(sources)
     if not locators or len(locators) != len(set(locators)):
         raise ControlAuthorityError(f"plan evidence locators are invalid: {evidence_id}")
@@ -63,7 +78,7 @@ def _packet(manifest, locator):
     folder = Path(manifest["run"]["book"]) / "research/sources"
     matches = [item["path"] for item in CP._members(manifest)
                if item.get("group") == "product" and Path(item["path"]).parent == folder
-               and Path(item["path"]).name.startswith(source + "-")]
+               and Path(item["path"]).name.casefold().startswith(source + "-")]
     if len(matches) != 1:
         raise ControlAuthorityError(f"candidate source packet is missing or ambiguous: {source}")
     return matches[0]
@@ -85,9 +100,23 @@ def _control_review(candidate, manifest, files):
     records = []
     for number in selected:
         section = _section(plan, number)
-        fields = {name: _field(section, name)
-                  for name in ("Belief job", "Evidence", "Guardrails", "Continuity")}
-        transition = _continuity(fields["Continuity"], number)
+        fields = {
+            "Belief job": _field_alias(
+                section, "Belief job", "Belief job", "Primary persuasive job"),
+            "Evidence": _field_alias(
+                section, "Evidence", "Evidence", "Evidence IDs and required limits"),
+            "Guardrails": _field(section, "Guardrails"),
+            "Continuity": _field_alias(
+                section, "Continuity", "Continuity", "Continuity intent"),
+        }
+        if any(field == "Continuity" for field, _value in FIELD.findall(section)):
+            transition = _continuity(fields["Continuity"], number)
+        else:
+            transition = {
+                "entering_state": _field(section, "Entering belief"),
+                "leaving_state": _field(section, "Leaving belief"),
+                "continuity": fields["Continuity"],
+            }
         rows = [_row(plan, item) for item in EVIDENCE_ID.findall(fields["Evidence"])]
         assigned, packets = {}, set()
         for row in rows:
@@ -141,6 +170,12 @@ def _body(candidate, captured):
     root, manifest = Path(candidate).absolute(), captured["manifest"]
     run, files = manifest["run"], captured["files"]
     plan = f"{run['book']}/master-plan.md"
+    try:
+        report = RC.inspect_research(
+            CP.candidate_tree(candidate) / run["book"], require_seal=True)
+        research_seal = report.get("seal_identity") if report.get("ok") else None
+    except (RC.ContractError, OSError, TypeError, KeyError):
+        research_seal = None
     return {
         "schema": 1, "authority": AUTHORITY,
         "operation": {"root": str(root), "experiment_id": run["experiment_id"],
@@ -154,6 +189,7 @@ def _body(candidate, captured):
         "full_master_plan": {"path": plan, "sha256": PS.sha(files[plan])},
         "subject_contract": {"path": f"{run['book']}/00-brief.md",
                              "sha256": PS.sha(files[f"{run['book']}/00-brief.md"])},
+        "research_seal_sha256": research_seal,
         "control_review": captured["control_review"],
         "source_packets": {path: PS.sha(files[path]) for path in sorted(files)
                            if "/research/sources/" in path},
@@ -255,3 +291,62 @@ def load(candidate):
         raise ControlAuthorityError(f"H-F01 control authority is invalid: {exc}") from exc
     return require_resume(candidate, CP.candidate_tree(candidate) / manifest["run"]["book"],
                           manifest["run"]["chapters"], expected)
+
+
+def require_chapter_research(candidate, number):
+    """Bind legacy control-plan evidence to the captured, current accepted seal."""
+    receipt = load(candidate)
+    manifest = CP.load(candidate)
+    chapter = next((row for row in receipt.get("control_review", ())
+                    if row.get("chapter") == number), None)
+    if not isinstance(chapter, dict):
+        raise ControlAuthorityError(f"chapter {number}: control research assignment is missing")
+    try:
+        report = RC.inspect_research(
+            CP.candidate_tree(candidate) / manifest["run"]["book"], require_seal=True)
+    except (RC.ContractError, OSError, TypeError, KeyError) as exc:
+        raise ControlAuthorityError(
+            f"chapter {number}: current accepted research is invalid: {exc}") from exc
+    seal = report.get("seal_identity") if isinstance(report, dict) and report.get("ok") else None
+    if not isinstance(seal, str) or receipt.get("research_seal_sha256") != seal:
+        raise ControlAuthorityError(
+            f"chapter {number}: captured research seal is missing or stale")
+    units = report.get("inventory", {}).get("units", {})
+    assignment = chapter.get("assignment", {}).get("authority", {})
+    assigned = assignment.get("assigned_evidence")
+    if not isinstance(units, dict) or not units or not isinstance(assigned, dict) or not assigned:
+        raise ControlAuthorityError(
+            f"chapter {number}: accepted research-unit authority is missing")
+    needs = {}
+    for locator, binding in assigned.items():
+        entries = binding.get("plan_entries") if isinstance(binding, dict) else None
+        guardrails = binding.get("chapter_guardrails") if isinstance(binding, dict) else None
+        if not LOCATOR.fullmatch(locator) or not isinstance(entries, list) or not entries \
+                or not isinstance(guardrails, str):
+            raise ControlAuthorityError(
+                f"chapter {number}: control research assignment is malformed")
+        for entry in entries:
+            if not isinstance(entry, dict):
+                raise ControlAuthorityError(
+                    f"chapter {number}: control plan evidence is malformed")
+            evidence_id = entry.get("id")
+            matches = []
+            for unit_id, unit in units.items():
+                if not isinstance(unit, dict) or locator not in unit.get("locators", ()):
+                    continue
+                safety = unit.get("safety")
+                if unit.get("permitted_inference") == entry.get("permitted_inference") \
+                        and unit.get("prohibited_inference") == entry.get("prohibited_inference") \
+                        and isinstance(safety, str) \
+                        and (safety.strip().casefold() in {"n/a", "none"}
+                             or safety in guardrails):
+                    matches.append(unit_id)
+            if not matches:
+                raise ControlAuthorityError(
+                    f"chapter {number}: {evidence_id} is not bound to a current accepted unit")
+            need = needs.setdefault(evidence_id, {"unit_ids": set(), "locators": set()})
+            need["unit_ids"].update(matches)
+            need["locators"].add(locator)
+    return {"seal_sha256": seal, "needs": {key: {
+        "unit_ids": sorted(value["unit_ids"]), "locators": sorted(value["locators"])}
+        for key, value in sorted(needs.items())}}

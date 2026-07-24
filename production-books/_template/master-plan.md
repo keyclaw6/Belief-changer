@@ -22,10 +22,12 @@
 ## Evidence ledger
 
 Define only material the book may use. Chapter cards reference these IDs.
+For multi-unit rows, `Permitted inference` and `Prohibited inference` are each
+the exact sorted, unique sealed unit values joined with `; `; add no other text.
 
-| ID | Finding / lived material | Source ID | Grade or outcome tier | Scope and limit | Permitted inference | Prohibited inference |
-|---|---|---|---|---|---|---|
-| E-01 | <payload sufficient for an isolated writer> | <S-NNN#E-NNN> | <SUPPORTED / MIXED / CONTESTED / lived tier> | <context> | <allowed> | <not allowed> |
+| ID | Finding / lived material | Research unit IDs | Source ID | Grade or outcome tier | Scope and limit | Permitted inference | Prohibited inference |
+|---|---|---|---|---|---|---|---|
+| E-01 | <payload sufficient for an isolated writer> | <LEU-NNN and/or SEU-NNN> | <S-NNN#E-NNN> | <SUPPORTED / MIXED / CONTESTED / lived tier> | <context> | <allowed> | <not allowed> |
 
 ## Mantra sheet
 

@@ -138,7 +138,7 @@ def _unit_details(book, accepted):
         text = (book / "research" / name).read_text(encoding="utf-8")
         for item_id, body in research._blocks(text, research.ENTRY_HEADING):
             if item_id in accepted:
-                details[item_id] = research._fields(body, item_id)
+                details[item_id] = research._fields(body)[0]
     return details
 def _authority(body, target, units):
     moves = {}

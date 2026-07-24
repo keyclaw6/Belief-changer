@@ -53,6 +53,12 @@ def write_chapters(cfg, book, selected, candidate, interrupt=None):
     if not key:
         if batch is not None and batch["mode"] != "manual":
             raise SystemExit("[run] API batch cannot resume without its writer endpoint")
+        try:
+            for number in selected:
+                WC.require_fresh(candidate, authority)
+                WC.require_chapter_research(candidate, number, authority)
+        except WC.WriterContextError as exc:
+            raise SystemExit(f"[run] manual writer research blocked: {exc}") from exc
         WR.prepare_manual(candidate)
         MD.writer(cfg, CP.candidate_tree(candidate), book, selected, authority)
         return False
@@ -68,6 +74,7 @@ def write_chapters(cfg, book, selected, candidate, interrupt=None):
         LG.require_output(candidate, out)
         try:
             WC.require_fresh(candidate, authority)
+            research = WC.require_chapter_research(candidate, number, authority)
             content = WC.build(WC.inputs(candidate, book, authority, number))
         except (CP.PairError, WC.WriterContextError, OSError, UnicodeError) as exc:
             raise SystemExit(f"[run] writer input failed closed: {exc}") from exc
@@ -75,6 +82,8 @@ def write_chapters(cfg, book, selected, candidate, interrupt=None):
         request = {"chapter": number, "endpoint": base_url.rstrip("/"),
                    "model": model, "reasoning": reasoning,
                    "content_sha256": PS.sha(content.encode("utf-8")),
+                   "research_seal_sha256": research["seal_sha256"],
+                   "research_needs_sha256": PS.state_hash(research["needs"]),
                    "temperature": 0.7}
         try:
             reply = FB.durable_call(candidate, number, request, lambda: ME.chat(

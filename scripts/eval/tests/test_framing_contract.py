@@ -6,7 +6,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(Path(__file__).parent))
 import validate_framing_contract as FC  # noqa: E402
 import validate_subject_contract as SC  # noqa: E402
-from test_research_contract import brief, packet, unit  # noqa: E402
+from research_contract_fixture import write_sealed_research  # noqa: E402
 PLAYBOOK = (
     "Load-bearing false belief", "Illusory benefit and inversion",
     "Justifications to demolish", "Engineered villain",
@@ -26,7 +26,11 @@ def review(text, pedigree="PASS — no invented pedigree", danger="PASS — no u
 - **Evidence overreach:** {overreach}
 - **Verdict:** {verdict}
 """
-def framing(title, beliefs):
+def framing(title, beliefs, units):
+    permitted_1 = units["LEU-001"]["permitted_inference"]
+    prohibited_1 = units["LEU-001"]["prohibited_inference"]
+    permitted_2 = units["LEU-002"]["permitted_inference"]
+    prohibited_2 = units["LEU-002"]["prohibited_inference"]
     graph = []
     for index, belief in enumerate(beliefs, 1):
         kind = "primary" if index == 1 else "subordinate"
@@ -97,17 +101,17 @@ Use accepted recognition language without turning individual reports into preval
 - **Basis:** recognition
 - **Subject-specific move:** Name the exact {title} cue in the reader's own language.
 - **Evidence units:** LEU-001
-- **Claim:** This source supports this cue and expectation.
+- **Claim:** {permitted_1}
 - **Danger claim:** none
-- **Limits:** It does not establish prevalence or diagnosis.
+- **Limits:** {prohibited_1}
 
 ### AU-02
 - **Basis:** bounded lived pattern
 - **Subject-specific move:** Compare the before-and-after pattern reported around {title}.
 - **Evidence units:** LEU-002
-- **Claim:** This source supports this cue and expectation.
+- **Claim:** {permitted_2}
 - **Danger claim:** none
-- **Limits:** It does not establish prevalence or diagnosis.
+- **Limits:** {prohibited_2}
 
 ### AU-03
 - **Basis:** logic
@@ -152,22 +156,14 @@ Use accepted recognition language without turning individual reports into preval
 class FramingContractTests(unittest.TestCase):
     def setUp(self):
         self.tmp = Path(tempfile.mkdtemp())
-        self.book = self.tmp / "book"
-        (self.book / "research/sources").mkdir(parents=True)
+        self.book = self.tmp / "production-books/test"
+        self.book.mkdir(parents=True)
     def tearDown(self):
         shutil.rmtree(self.tmp)
     def write_subject(self, title, beliefs):
-        (self.book / "00-brief.md").write_text(brief(title, beliefs), encoding="utf-8")
-        (self.book / "research/sources/s-001-fixture.md").write_text(
-            packet("S-001", ["n/a"] * len(beliefs)), encoding="utf-8",
-        )
-        units = "\n".join(
-            unit(f"LEU-{index:03d}", belief, f"S-001#E-{index:03d}")
-            for index, belief in enumerate(beliefs, 1)
-        )
-        (self.book / "research/lived-experience.md").write_text("# Lived\n\n" + units, encoding="utf-8")
-        (self.book / "research/scientific-evidence.md").write_text("# Science\n", encoding="utf-8")
-        text = framing(title, beliefs)
+        report = write_sealed_research(
+            self.book, beliefs=beliefs, target_behavior=title)
+        text = framing(title, beliefs, report["inventory"]["units"])
         (self.book / "framing.md").write_bytes(text.encode("utf-8"))
         (self.book / "framing-review.md").write_bytes(review(text).encode("utf-8"))
         return text
@@ -184,11 +180,13 @@ class FramingContractTests(unittest.TestCase):
             )),
             ("Fear of flying", (
                 "My fear is the warning that keeps me safe.", "Turbulence means the aircraft is in danger.",
-                "If I relax, I will lose control.", "Avoiding flights protects me from panic.",
+                "Relaxing means I will lose control.", "Avoiding flights protects me from panic.",
             )),
         )
-        for title, beliefs in cases:
+        for index, (title, beliefs) in enumerate(cases, 1):
             with self.subTest(title=title):
+                self.book = self.tmp / f"production-books/test-{index}"
+                self.book.mkdir(parents=True)
                 text = self.write_subject(title, beliefs)
                 self.assertEqual(self.book / "framing.md", FC.require_framing_contract(self.book))
                 self.assertEqual(self.book / "00-brief.md", SC.require_subject_contract(self.book, "planning"))

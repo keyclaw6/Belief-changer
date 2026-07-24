@@ -11,6 +11,7 @@ from grounded_review_fixture import (GroundedFixture, proven_runner as grounded_
                                      verdict as grounded_verdict)
 from developmental_commission_fixture import (assignments as commission_assignments,
     validate_developmental_task, validate_grounded_task)
+from research_contract_fixture import chapter_binding
 
 DEFAULT_SYMPTOMS = {
     "failed_planned_transition": "transition_not_enacted",
@@ -254,6 +255,19 @@ class DevelopmentalFixture(GroundedFixture):
             self.addCleanup(sync.stop)
         super().setUp()
         self.assignments = commission_assignments()
+        for number in self.selection:
+            chapter, source = f"C-{number:02d}", f"S-{number:03d}"
+            record = self.assignments[chapter]
+            authority = record["authority"]
+            old_locator = next(iter(authority["assigned_evidence"]))
+            locator = f"{source}#E-001"
+            binding = authority["assigned_evidence"].pop(old_locator)
+            binding["provenance"] = binding["provenance"].replace(old_locator, locator)
+            authority["assigned_evidence"][locator] = binding
+            authority["research"] = chapter_binding(
+                self.research_report, f"E-{number:02d}", f"LEU-{number:03d}")
+            record["packets"] = [
+                f"production-books/test/research/sources/{source}-sealed-fixture.md"]
 
     def frozen_draft(self, number, name):
         profile = CLEAN_DRAFTS if name.startswith("clean") else STALL_DRAFTS

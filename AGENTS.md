@@ -34,6 +34,7 @@ Write no documentation by default. A doc must be load-bearing (an agent cannot c
 ## Content Rules
 - The global style guide and the method principles in `openspec/specs/method-integrity/` bind every writing agent. Style-guide changes are founder-approved only.
 - `production-books/<slug>/` layout (brief, research/sources/, lived-experience.md, scientific-evidence.md, framing, master plan, chapters) is a stable external contract — agent skills depend on these paths. Do not restructure it.
+- Research runs only through the fail-closed `scripts/loop/research_factory.py start` route. Framing, planning, and commissioning require one current accepted research seal; immediately before each chapter dispatch, the runtime rechecks that chapter's plan-owned needs against only its assigned sealed units and packets. Test transports/editors are import-only and never selectable from production.
 - Published books are immutable artifacts; corrections produce new versions.
 
 ## Dependencies

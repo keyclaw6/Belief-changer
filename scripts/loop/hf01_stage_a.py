@@ -229,7 +229,7 @@ def advance(root, authority, upstream_sha, native=False, decision_timestamp=None
     inputs = {**prereg["inputs"], "control_tested_pair_hash": hashes["control"],
         "tested_pair_hash": hashes["treatment"], "blind_receipt_sha256": product["blind_receipt_sha256"],
         "product_decision_sha256": PS.state_hash(product)}
-    record = {**{key: prereg[key] for key in ER.PREREG_FIELDS - {"inputs"}}, "inputs": inputs,
+    record = {**{key: prereg[key] for key in prereg if key != "inputs"}, "inputs": inputs,
         "evidence": ER.decision_evidence(product), "decision": {"PROMOTE": "SUPPORTED",
         "REJECT": "REFUTED", "INCONCLUSIVE": "INCONCLUSIVE"}[product["decision"]]}
     ER.bind(record, product, hashes["treatment"], PS.state_hash(product), prereg)

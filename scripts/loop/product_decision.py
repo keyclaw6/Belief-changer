@@ -2,7 +2,8 @@
 import json, re; from collections.abc import Mapping; from pathlib import Path
 import defect_routing as ROUTING
 import pair_store as PS
-PATH, OWNERS = "product-decision.json", ROUTING.OWNERS
+PATH, EVIDENCE_PATH, OWNERS = (
+    "product-decision.json", "product-effect-evidence.json", ROUTING.OWNERS)
 VERDICT_FIELDS = {"task_id", "raw_verdict_id", "actor", "kind", "family", "verdict",
     "scope", "promotion_eligible", "base_task_sha256", "tested_pair_hash", "prompt_sha256", "input_sha256"}
 VERDICTS, HF01_READERS = {"PASS", "FAIL", "INCONCLUSIVE"}, ("sol-xhigh-r1", "sol-xhigh-r2")
