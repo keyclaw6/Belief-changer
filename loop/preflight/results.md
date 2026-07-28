@@ -123,3 +123,24 @@ C. Both A and B together (most robust; makes the repeatability criterion
 D. Also rule on judge_reasoning: high produced no repeatability gain at
    ~2× latency; recommend reverting to medium unless kept for other
    reasons.
+
+---
+
+# FINAL RESULT — PREFLIGHT PASS (runs8, 2026-07-28)
+
+After founder ruling C+D (fcbe481), verdict-block extension to
+belief-mechanic (0e082a9), and the instruction-register boundary test
+(c070e4c):
+
+| Check | Result |
+|---|---|
+| 1. PASS test | **PASS** — 6/6 (all three judges × 2, real GSBS ch-02) |
+| 2. Repeatability | **PASS** — belief-mechanic PASS/PASS with identical verdict blocks; reader-journey PASS/PASS; voice-emotion FAIL/FAIL with IDENTICAL per-moment verdict vectors (instruction: MATERIAL both runs — the previously flipping line now resolves deterministically) |
+| 3. Voice honesty probe | **PASS** — p1/p2 hedges flagged (FAIL), p3/p4 bounded empirical claims preserved (PASS), p5v2/p6v2 doubt acknowledgments preserved (PASS) |
+
+Battery traces: runs8/ (pass-test + repeatability), probes completed under
+the firewall-patient runner after two egress-block windows (35+ min block
+16:00–16:49Z documented in queue logs; operator infrastructure, not judge
+behavior).
+
+**Preflight green → proceeding to PROGRAM §3 Baseline 000.**

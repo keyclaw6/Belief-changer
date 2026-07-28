@@ -1,0 +1,20 @@
+{
+  "model": "gpt-5.6-sol",
+  "reasoning": "medium",
+  "http": 200,
+  "latency_s": 19.5,
+  "usage": {
+    "input_tokens": 1803,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 503,
+    "output_tokens_details": {
+      "reasoning_tokens": 65
+    },
+    "total_tokens": 2306
+  },
+  "attempt": 1,
+  "completed": true
+}

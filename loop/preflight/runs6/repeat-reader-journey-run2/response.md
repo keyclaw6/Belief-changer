@@ -1,0 +1,13 @@
+PASS
+
+### Reader journey comparison
+
+**The real chapter's movement:** The reader begins with anxiety about health, weight, sugar, and another difficult attempt to change. The chapter quickly amplifies the stakes, then creates recognition through familiar loss-of-control episodes: “I’ll just have the one biscuit,” followed by more, guilt, and self-reproach. It reframes the problem as addiction and brainwashing rather than weak discipline, contrasts lifelong willpower with complete freedom, and repeatedly reassures the reader that the process will be easy and non-depriving. It ends by converting dread into expectancy: keep an open mind, follow the method, and do not change your eating yet.
+
+**Our chapter's movement:** The reader begins inside the recurring internal argument: “this has to change” versus “not yet, not today, not like that.” Recognition deepens through plans, resets, holiday exceptions, dessert negotiations, and the cycle of “anticipating, bargaining, and starting over.” The chapter then distinguishes a managed truce from an ended debate, allowing the reader to value previous progress without mistaking continued supervision for freedom. It presents the book as an investigation rather than another diet and makes the testable offer that the reader can examine BAD SUGAR’s supposed special value without denying pleasant taste or surrendering choice. The instruction arrives as the culmination of that contract: read curiously, eat normally until the chosen threshold, begin no new restriction or compensation plan, and retain qualified clinical guidance. The reader leaves curious rather than cornered, with the promised destination clearly framed as the end of negotiation “without deprivation, without battle, and without a lifetime of rules.”
+
+## Final verdict
+
+**Assigned transition verdict:** The chapter successfully moves the reader from expecting another regime of discipline and permanent management to accepting a low-pressure investigation conducted while eating normally. Exact recognition establishes trust; the contrast between a “well-managed truce” and a debate that is over clarifies the destination without prematurely carrying out the later benefit-demolition argument. The commissioned instruction lands at the chapter’s climax and converts the promise into an immediate, safe reading posture. The ending preserves choice while making clear that eventual freedom means BAD SUGAR is “no longer an active proposition,” not a substance accommodated through planned exceptions and recurring negotiation.
+
+**Largest momentum loss:** NONE

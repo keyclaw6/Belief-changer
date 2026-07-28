@@ -1,0 +1,13 @@
+PASS
+
+### Reader journey comparison
+
+**The real chapter's movement:** The reader begins worried about sugar’s effects and doubtful that stopping could be easy. The chapter heightens concern through health consequences, then creates personal recognition with the “just one biscuit” negotiation, loss of control, and guilt. It confronts the belief that sugar provides pleasure, reframes continued consumption as addiction rather than choice, and distinguishes complete freedom from permanent reduction and willpower. It then turns fear of quitting into anticipation: the method promises complete escape without deprivation. The closing instruction—continue eating normally while reading—removes immediate pressure and leaves the reader hopeful, curious, and willing to proceed.
+
+**Our chapter's movement:** The reader is recognized immediately through the recurring internal argument, previous plans, exceptions, resets, and the fatigue of “anticipating, bargaining, and starting over.” The two reports then sharpen the distinction between a successfully managed truce and the debate actually ending. From there, the chapter reframes the book as an investigation into wanting rather than another behavior-control program. The reader is offered a testable destination—BAD SUGAR removed from the “active decision catalog”—while autonomy, pleasant taste, skepticism, and clinical obligations are preserved. The commissioned instruction lands at the chapter’s climax, removing any demand for immediate restriction and converting dread into observation. The reader ends in the assigned state: able to continue eating normally while investigating whether freedom without ongoing negotiation is possible.
+
+## Final verdict
+
+**Assigned transition verdict:** The chapter successfully moves the reader from expecting another regime of discipline and deprivation to understanding that no immediate diet decision is required and that the proposed destination is the end of the recurring debate, not improved lifelong management. Recognition is specific and nonjudgmental, the managed-truce comparison makes the alternative experientially meaningful, and the chapter does not prematurely conduct the benefit-demolition reserved for later. The instruction arrives after the offer has been framed and turns curiosity into a concrete reading posture. The chapter hands the reader forward with skepticism intact but dread reduced.
+
+**Largest momentum loss:** NONE
