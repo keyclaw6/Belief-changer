@@ -72,6 +72,16 @@ land for the reader. `OK` means the effect lands even if wording could be
 polished; polish opportunities are not MATERIAL. Decide each moment
 independently; never omit a line.
 
+**Instruction-register boundary (decide by this test, not by feel).**
+Scope or safety qualifiers at an assigned instruction are not
+automatically failures. They are MATERIAL exactly when the instruction
+sentence itself reads as procedural or contractual compliance rather than
+one person speaking to another — test: if the instruction sentence could
+plausibly appear in a terms-of-service or clinical consent form, mark
+MATERIAL; if it reads as a person's plain-spoken direction that happens to
+carry an honest limit, mark OK. Carr's instructions land as relief from a
+trusted voice, never as paperwork.
+
 Report one gap for EVERY line marked MATERIAL, in the block's order —
 Gap 1 is the first MATERIAL line, and the Final verdict names Gap 1's
 failure class, never a different one. Only after these may remaining gap
