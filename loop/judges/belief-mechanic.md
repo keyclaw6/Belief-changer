@@ -49,6 +49,30 @@ its assigned transition completes with force comparable to the real chapter.
 On `FAIL`, report up to 5 material gaps. Never invent a gap to fill the
 format. A chapter can be excellent; say so when it is.
 
+**Assigned-transition verdicts (mandatory block).** Immediately after the
+PASS/FAIL line, emit one verdict per component of the assigned transition,
+in this fixed order and exact format:
+
+```
+ASSIGNED-TRANSITION VERDICTS
+false belief named: MATERIAL or OK
+credit removed or reassigned: MATERIAL or OK
+sacrifice removed: MATERIAL or OK
+assigned reframe settled: MATERIAL or OK
+reader does the work: MATERIAL or OK
+scare-then-disown: MATERIAL or OK or NONE ASSIGNED
+```
+
+`MATERIAL` means this component of the ASSIGNED transition does not
+complete for the reader with force comparable to the real chapter. `OK`
+means it completes even if wording could be sharpened; a sharpening
+opportunity is not MATERIAL, and work the plan reserves for later chapters
+is never MATERIAL here. Decide each line independently; never omit a line.
+Report one gap for EVERY line marked MATERIAL, in the block's order —
+Gap 1 is the first MATERIAL line, and the final verdict names Gap 1's
+failure class, never a different one. `PASS` requires every line to be OK
+or NONE ASSIGNED.
+
 ## What you evaluate
 
 Prioritize gaps where the reader's assigned belief transition would NOT

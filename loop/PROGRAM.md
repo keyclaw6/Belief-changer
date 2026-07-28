@@ -78,9 +78,9 @@ judge repair is founder-guided, not a loop iteration.
    judge cannot recognize success and must be recalibrated first.
 2. **Repeatability.** Run each judge twice on one identical generated chapter
    with identical context. Same PASS/FAIL both times; for a judge that emits
-   per-assigned-moment verdicts (voice-emotion), the verdict lines must be
-   identical both times, otherwise the same highest-impact failure class both
-   times. If not, tighten that judge's materiality rule — do not add scoring
+   a per-moment/per-component verdict block (voice-emotion, belief-mechanic),
+   the verdict lines must be identical both times, otherwise the same
+   highest-impact failure class both times. If not, tighten that judge's materiality rule — do not add scoring
    machinery. [Founder amendment 2026-07-28: option C — consistency is
    measured on per-moment verdicts, matching how decisions use judge output
    (failure classes, never instances).]
