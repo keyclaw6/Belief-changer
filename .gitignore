@@ -15,8 +15,8 @@ loop/experiments/
 *.swp
 *~
 
-# Calibration reference texts — regenerated locally from the reference EPUB (scripts/eval/extract_reference.py); extracted book text is never committed.
-calibration/reference/
+# Calibration reference text (calibration/reference/gsbs/) is committed: the
+# source EPUB is already in-repo and the loop must run from a fresh clone.
 
 # Python bytecode from running the eval suite.
 __pycache__/

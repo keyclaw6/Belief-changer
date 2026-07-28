@@ -1,0 +1,118 @@
+# Chapter 10
+
+# WILLPOWER
+
+## IN THIS CHAPTER
+
+*•TAKING THE DIFFICULT OPTION
+•WHO ARE YOU CALLING WEAK-WILLED?
+•A NEVER-ENDING STRUGGLE •CROSSING THE LINE THE EASY WAY
+•BRAGGERS AND WHINGERSAddiction makes us feel helpless. We assume that our inability to quit is due to a weakness in our character. More often than not, the opposite is true.*
+
+How many times have you said, “Oh, I just can’t resist,” or something of that nature, when presented with a cake, chocolates or biscuits? Just at that moment when you told yourself you’d be strong and not give in to temptation, your resolve deserts you and you find yourself reaching for the sugar. If only you had more willpower.
+
+The assumption that quitting any addiction requires willpower comes from the widespread belief that the process is hard. This belief is put about not only by the industries that peddle their poison, but also by the medical professionals who spend their time trying to remedy it. Would you say, “I just can’t resist,” if it was widely accepted that resistance is easy? Of course not.
+
+The only reason people find it hard to quit is because they use the wrong method. And they use the wrong method because they believe it’s hard to quit.
+
+Say you were in a prison cell and someone told you you could open the door by pushing in a certain place, but added that it was an extremely heavy door and it would take all your strength to open it.
+
+You push where they tell you to and find that it is indeed very hard. You really put your back into it and push as hard as you can. The door budges a little, but eventually your strength gives out and the door slams shut again.
+
+You conclude two things:
+
+1.You failed to escape because you are not strong enough.
+
+2.You will never be able to escape.
+
+This is exactly what happens when you try to quit using the willpower method.
+
+Now imagine you’re sitting there in that cell, desperate to escape, but thinking you lack the strength to do so.
+
+Another visitor comes along and tells you you’ve been pushing on the wrong part of the door, where the hinges are. They tell you that if you push on the other side the door will open easily. Would you give it a try, or would you continue to believe the only way to escape is the impossible way?
+
+That’s the difference between Easyway and the willpower method: one works, the other doesn’t; one is easy, the other is so hard as to be impossible.
+
+## THE WILLPOWER METHOD ALWAYS FAILS
+
+People who try to quit with the willpower method endure a constant conflict of will, a mental tug-of-war. On one side your rational brain knows you should stop eating sugar because it’s making you unhealthy, affecting your happiness and self-esteem. On the other side, your addicted brain makes you panic at the thought of being deprived of your pleasure or crutch.
+
+With the willpower method you try to focus on all the reasons for stopping and hope you can stay strong for long enough without BAD SUGAR for the desire to eventually go. The problem with this is that you still see BAD SUGAR as a pleasure or a crutch and so you feel that you’ve made a sacrifice.
+
+At the beginning, you might feel good about this sacrifice. After all, everything has its price, right? And if you want it badly enough the price is always worth paying.
+
+But how long can you keep paying for? The trouble with sacrifice is that eventually you begin to resent it. You effectively force yourself into a self-imposed tantrum, like a child being deprived of its toys.
+
+It’s not a wholesome, cleansing feeling any more, it’s a miserable feeling, which makes you want to try to cheer yourself up. And how do you do that? With the one thing you’ve vowed not to do – YOU EAT BAD SUGAR.
+
+Now you feel doubly miserable. You see yourself as a failure because you have not been able to resist the temptation and, at the same time, the sugar hasn’t made you happy, it’s only made you want more sugar again and your belief that you can’t live without it has been reinforced. As a result of trying to quit with the willpower method, you’re more addicted than you were before.
+
+## *YOU ONLY NEED WILLPOWER IF YOU HAVE A CONFLICT OF WILL*
+
+Addicts want to quit because they’re afraid of the consequences, but they are scared to quit because they are afraid of life without their little crutch. One fear is rational, the other is irrational, yet when you’re in the trap they are both very real.
+
+We have already begun to unravel the illusion that you will be making a sacrifice by cutting BAD SUGAR out of your diet. We will continue to unravel it, not by focusing on all the negatives you will suffer if you don’t stop but by recognizing all the positives you will enjoy when you do. As you come to see that there is absolutely nothing to fear and so much to look forward to in a life without sugar, you will remove the conflict and find it easy to win the tug-of-war.
+
+## EXCEPTIONS
+
+As with every rule, there are always exceptions. Some people do manage to quit smoking, drinking, overeating and other addictions through sheer force of will, but they never actually break free of their addiction, so they never achieve the true, relaxed state of happiness that you will achieve. They live the rest of their lives believing they have made a sacrifice.
+
+## HOW WEAK-WILLED ARE YOU?
+
+So you assume that you are weak-willed because you have failed to control your eating in the past. That is generally how society regards people with an eating problem; they lack the willpower to control themselves. Indeed, that is generally how people with eating problems regard themselves. They assume it’s they who have failed, not the method. No one questions the willpower method except Easyway.
+
+If you still think that it’s a lack of willpower that has kept you hooked on BAD SUGAR, then you haven’t yet understood the nature of the trap you’re in. Remember, the trap works in reverse: it makes the addict desire the very thing that’s tormenting him.
+
+Maybe there are other ways in which you think you’re weak-willed. Perhaps you’re a smoker, or you gamble, or drink too much and you regard these conditions as further evidence of a weak will. There is a connection between all addictions, but the connection is not that they are signs of a lack of willpower. On the contrary, they are more likely evidence of a strong will. What they all share is that they are traps created by misleading information and untruths. And one of the most misleading untruths is that quitting requires willpower.
+
+## *IT TAKES A STRONG WILL TO PERSIST IN DOING SOMETHING THAT GOES AGAINST ALL YOUR INSTINCTS*
+
+When you organize your life so you can sneak to the shops to buy sweets or cakes without arousing suspicion; when you get up early in the morning or stay up late at night so you can eat without anyone looking over your shoulder; when you give up the pastimes you used to enjoy… all these actions take a strong will.
+
+Anyone who saw you trying to open a door by pushing on the hinges, despite being told you’d find it easier if you pushed on the handle, would call you wilful, not weak-willed.
+
+Think of people you know who have eating problems. Are they all weak-willed types? Think of all the famous people who are overweight; did they reach their high-profile position by giving up easily? Prime ministers, film directors, captains of industry, movie stars, singers, even some sports stars – the evidence of eating problems is clear to see. Yet the common ground between them all is that they reached their positions through sheer determination and nothing less.
+
+In other words, they had immense willpower. So why would their willpower fail them in this one area?
+
+Now think how you react when people tell you that you have to change your ways and sort out your diet? Doesn’t it make you want to do the opposite? Wouldn’t you describe that as wilful? In fact, it tends to be the most strong-willed people who find it hardest to quit by using the willpower method, because when the door fails to open, they won’t give up and look for an easier method, they’ll force themselves to keep pushing on the hinges until they can push no more. Most of the people who are reading this book will have failed to control their eating again, and again, and again. Yet here they are, reading this book, they never gave up. That’s grit, determination and terrific willpower. Don’t sell yourself short. It’s not lack of willpower that has trapped you: it’s simply BAD SUGAR addiction.
+
+Imagine running a marathon in tight shoes. It’s painful, but you’re determined to complete the course, so you struggle on. The further you go, the more it hurts, but at the same time you know you’re getting closer to the finish, so the fear of failure increases. When you try to quit by the willpower method, the struggle never ends. As long as you believe that you’re giving something up, you will always be running in pain. The stronger your will, the longer you will withstand the agony and the more powerful your craving will be. When you finally give in, you will be convinced you must have been within touching distance of success and you will despise yourself all the more for falling so close to the line. But what you don’t realize is that
+
+## *WITH THE WILLPOWER METHOD, THERE IS NO FINISH LINE*
+
+## CROSSING THE LINE THE EASY WAY
+
+With Easyway, you cross the finish line as soon as you remove the fear and illusions and stop consuming BAD SUGAR. That’s when you are free of the addiction. It’s that easy. Conversely, you will not get to that line if you use willpower and force yourself to suffer.
+
+Addicts will go to great lengths to get their fix, be it nicotine, gambling, junk-spending, heroin, BAD SUGAR, whatever. Try stopping them and see how strong-willed they are. The hard-line approach will not work; it will only make them more entrenched in their addiction because:
+
+1.It makes them feel foolish and scared of what they’re doing to themselves. The fear the addict feels reinforces the myth that quitting is hard.
+
+2.It creates a panic feeling: How will I cope? What will life be like when I quit? How will I survive? Which in turn creates a feeling of fear and deprivation, which the addict will seek to alleviate in their usual way: they will fall back into the trap.
+
+It’s fear that keeps them hooked. Fear of what will happen if they carry on versus fear of what will happen if they stop.
+
+When you fail on the willpower method, it’s even harder to try again because you will have reinforced the belief that it is impossible to cure your problem. If you’ve tried the willpower method and failed you may recall an enormous sense of relief when you gave in and had that first binge on chocolate or blowout meal. It’s important to understand that this relief was nothing more than a temporary end to the self-inflicted pain. You didn’t think, “Thank goodness for that! I’ve fallen back into the sugar trap.” It is not a pleasure. In fact, it is accompanied by feelings of failure and foreboding, guilt and disappointment.
+
+That first fix after you’ve tried to quit is not pleasurable at all, despite what others might tell you. They’re confusing pleasure with the relief of ending a period of intense dissatisfaction. It’s nothing more than the feeling of relief you get when you take off a pair of tight shoes. Would you wear tight shoes just for the relief of taking them off?
+
+## BRAGGERS AND WHINGERS
+
+Other people who try to quit by the willpower method can have a harmful effect on your own desire to quit. They fall into two camps: “the braggers”, who spend their time boasting about the sacrifices they’re making; and “the whingers”, who can’t help moaning about the sacrifices they make. Both camps reinforce the misconception that quitting is hard and demands endless willpower and sacrifice.
+
+## *NINTH INSTRUCTION: IGNORE THE ADVICE OF ANYONE WHO CLAIMS TO HAVE QUIT BY THE WILLPOWER METHOD*
+
+The beautiful truth is there is absolutely no sacrifice. You are not “giving up” anything. You only need willpower if you are caught up in a conflict of wills. Take away the fear of being deprived and there is nothing to tug against. It’s easy.
+
+People who quit with the willpower method are always waiting: waiting for the moment when they no longer feel deprived and, therefore, no longer need to apply their willpower. It’s a moment that never comes for them. They can push the door open far enough to see the light and feel the fresh air of freedom but they never actually escape, regardless of what they might tell you. Let’s face it, if you went to all that trouble, would you admit that you had failed?
+
+There is nothing to wait for. Your happiness begins the moment you unravel all the illusions that have led you into the sugar trap, free yourself from fear and stop eating BAD SUGAR. It will happen with a feeling of excitement and elation.
+
+I deliberately refer to BAD SUGAR throughout this book. I make no apology for doing so. Part of the brainwashing you’ve suffered all your life has been misdirection. When you think about sugar, you think of sweets, chocolate, cakes, pastries, puddings, desserts and donuts and the like. Did it ever occur to you that something as simple as bread was causing you a major problem? Perhaps. What about pasta, rice and potato? Did it ever occur to you that by continuing to eat those “foods” you were actually maintaining an addiction to BAD SUGAR that made it virtually impossible for you to abstain from the more obviously sugary foods that you traditionally considered your only enemy?
+
+If you’ve followed all the instructions and understood that the beliefs that kept you in the sugar trap are fake, phony and illusory, that you are not required to summon any willpower to resist the temptation from BAD SUGAR because there is no temptation and that there is nothing to fear because life without BAD SUGAR will be unimaginably better than it is now, then you should already be feeling a sense of elation and anticipation. You have taken a major step in solving your eating problem. You can start living your life again, knowing that you are no longer a slave to sugar. You are in control and soon you will be free.
+
+There is only one more obstacle that might be preventing you from feeling this sense of elation. Not everyone who tries and fails to stop by using the willpower method concludes that they are weak-willed, but rather than look for the true reasons why they remain hooked, they decide it must be down to another aspect of their personality over which they have no control. When all other explanations fail them, there is one theory that conveniently provides the excuse they need to stay in the trap: the so-called “addictive personality”.
+
+## SUMMARY•Quitting is only hard if you use the wrong method.•Addiction is not a symptom of being weak-willed. It is often the opposite.•With the willpower method, you never reach the finish line.•People who brag or whinge about quitting by willpower still believe they are making a sacrifice.•With Easyway, you cross the line the moment you reverse the brainwashing and cut out the sugar.

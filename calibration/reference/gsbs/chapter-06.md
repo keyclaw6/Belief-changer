@@ -1,0 +1,102 @@
+# Chapter 6
+
+# THE INCREDIBLE MACHINE
+
+## IN THIS CHAPTER
+
+*•SECOND-HAND ADVICE •YOUR PRIDE AND JOY
+•YOUR PERSONAL HANDBOOK •THE FLAW IN THE MACHINE
+•THE FOURTH INSTRUCTIONMankind has achieved many great things, but these pale into insignificance next to the achievements of Nature.*
+
+Perhaps we should be proud of the advertising industry. After all, it is a testimony to our intellectual capacity to spread information. The imagination, creativity, design and execution of advertising campaigns are all evidence of the incredible intellect that sets us apart from the rest of the animal kingdom.
+
+However, advertising is also a prime example of mankind’s fundamental weakness: the capacity to spread and believe MISINFORMATION.
+
+The advertising industry has been spreading misinformation about sugar for years, using every trick it could concoct to brainwash us into believing that sugar can enhance our life. But advertising isn’t the only culprit. Our parents play an unwitting part in the brainwashing too, telling us we can have sweets as a treat if we’re good, rather than warning us off them altogether, as they would with a drug like heroin. Even the medical profession adds to the confusion, putting out information that seems to contradict itself every few years and, until recently, using huge amounts of BAD SUGAR in many medicines. Until very recently (and in some cases even today) large parts of the medical profession still recommend that sufferers of Type 2 diabetes eat starchy carbs with every meal; this is like pouring petrol on to a house fire instead of water. The pharmaceutical industry makes money out of their “medicines” which are taken by the sufferer for the duration of their entire lives, and the BAD SUGAR industry keeps selling its poison – supported by the medical profession!!
+
+Extraordinary as it may seem, the current global Type 2 diabetes epidemic could not just be halted in its tracks, but also be reversed, purely by having most sufferers cut out BAD SUGAR: cost to the sufferer – nil; cost to the health service – nil; cost to the pharmaceutical and BAD SUGAR industry – HUGE!
+
+The advertising industry has a vested interest in keeping us hooked on BAD SUGAR, but even those with good intentions cannot be relied upon to give us the information we need. They take their knowledge from other people, who have in turn taken it from equally unreliable sources. It’s a case of the blind leading the blind.
+
+## YOUR PRIDE AND JOY
+
+If you had a problem with your car, who would you turn to for advice: a man in the pub or the car manufacturer? The car is one of the most complex and impressive machines mankind has ever devised. It fulfils numerous functions all at once and is powered by a carefully co-ordinated sequence of compressions and explosions, all going on beneath the bonnet while you glide along in serene comfort inside.
+
+Most of us know very little about how our car actually functions; all we care about is that it does. In order to ensure that it continues to do so, we play our part by filling it with the right fuel and making sure it gets regularly cared for by an expert. Listening to second-hand advice about what may or may not be a problem with the engine is only going to lead to one thing:
+
+## *BREAKDOWN!*
+
+To some people, the car is the pinnacle of human invention, their pride and joy; yet we all possess a far more complex and ingenious machine: the human body.
+
+There are several similarities between your body and a car: they both have mechanical parts; they both need fuel and air to keep them functioning; they both need to be maintained. But compared to your body, the car is about as sophisticated as an old-fashioned typewriter is in comparison with a modern laptop.
+
+Your body is capable of performing a multitude of functions all at once, in perfect co-ordination, without you even being aware of it. Your heart pumps vital supplies to every corner of your body; your lungs extract oxygen from the air you breathe; your digestive system sorts all the nutrients from the food you eat and sends them to where they’re needed and your immune system fights off infection and repairs injuries.
+
+All this happens simultaneously and, for the most part, without a hitch. And because it happens without any conscious effort on your part, you take it for granted. You don’t have to know how it functions to keep it working for year upon year, all you have to do is keep it fuelled and cared for.
+
+But there is one important difference between your body and your car: man invented the car and is, therefore, the leading authority on how it works. There is no more reliable source of information on how to maintain it than the manufacturer that made it, so it makes good sense to consult the manufacturer’s guide.
+
+Your body was neither invented nor constructed by man. It is infinitely more complex and ingenious than any man-made machine and it is infinitely more precious. So why do we listen to second-hand advice about how to keep it in good working order?
+
+The usual answer to this question is, “Because we don’t get born with a handbook.” But the fact is we do: Nature’s Guide.
+
+The same ingenious force that created the human body, whatever you may believe that to be, also gave us instincts, which enabled us to survive and become the dominant species on the planet long before the arrival of modern medicine, the microwave and the nutritionist. Our ancestors didn’t need to be told about calories and vitamins, any more than you need to know about the internal workings of your car’s engine to enjoy a ride in the country. Nature’s Guide told them what fuel to put in and what to avoid.
+
+## WHERE OUR INTELLIGENCE HAS GOT US
+
+The second instruction was to keep an open mind. It’s important that you follow this instruction because, as intelligent beings, we tend to be closed to the idea of following instinct in preference to intellect.
+
+Say you had to gamble all your possessions on the outcome of a football match. You can seek the advice of two people: one of them is the most intelligent person on the planet, who has predicted the result of a hundred matches and achieved a 75 per cent success rate; the other is an illiterate yokel who has made a million predictions and got them all correct. Who would you trust?
+
+Because we don’t understand our instincts, we regard them as hit or miss – nothing more than guesswork. But instinct is not hit or miss, it is the result of three million years of trial and error. It is what enables wild animals to breed and to feed without eating anything harmful to them.
+
+The power of intellect over instinct is what has given us dominion over the rest of the animal kingdom, so you might conclude that intellect should be our guiding light. But there are enough stark examples of intellect backfiring on us to make you think again, i.e. war, pollution and genocide, to name but three. Clearly intellect is not always a force for good.
+
+Medical science has made some spectacular discoveries and found ingenious ways to alleviate illnesses and even reconstruct parts of the human body, yet at the same time it has made us susceptible to conditions that didn’t exist before. It brings to mind John Steinbeck’s classic novel *Of Mice and Men* and the simple character Lennie, who was so grateful to his companion George for saving him from drowning that he forgot it was George who had pushed him in in the first place!
+
+Modern medicine, for all its cures, can often make us weaker, not stronger.
+
+## THE BUCKET
+
+We go through life accepting all manner of ailments as normal. Headache, indigestion, constipation, diarrhoea… we take our medicine and, if we’re lucky, the symptoms disappear. But we’re not surprised when they return. We resign ourselves to suffering on a regular basis.
+
+With any other problem in life, we try to establish the cause and fix it once and for all. If you have a leak in your roof you can do one of two things: you can put a bucket underneath to catch the drips, or you can mend the roof and stop the water coming in. The bucket may be the quick and easy option, but who wants a bucket as a permanent feature in their house, and what happens when you want to go on holiday?
+
+When you go to the doctor with a pain of some kind and he gives you a prescription for a drug to take the pain away, you are effectively trying to solve the problem of a leaky roof by putting a bucket under it. Are you going to keep taking those drugs for life? In America, the frontier of modern medicine, half the population take prescription drugs every month! Clearly modern medicine is not enabling us to stand on our own two feet.
+
+Take a condition like indigestion. Perhaps you suffer from it. It can be very uncomfortable and will make you want something to take the pain away fast. But the pain is serving a purpose: it is a warning sign that something is wrong. There are three things you can do: 1. Take a painkiller; 2. Take something to quell the indigestion; 3. Find the cause of the indigestion and fix it.
+
+Let’s go back to the oil warning light in your car. That light is designed to make you react. Like pain, it is there to nag you until you do something about it. If you want to stop the nagging you have three choices: 1. Remove the bulb; 2. Top the engine up with oil; 3. Find out why the oil is low and fix it.
+
+Option 1 will stop the warning light nagging you, but pretty soon your engine will seize. Option 2 will stop the light from nagging you temporarily until the oil runs low again. Option 3 will solve the whole problem and give you peace of mind.
+
+Now apply that thinking to your indigestion. A doctor will offer you options 1 and 2. The focus of modern medicine is on the symptoms not the cause. Drug companies make a fortune selling us pain relief and remedies for ailments that are actually caused by poor diet. As a result, more and more people are rattling around on medication, reducing their body’s ability to put up its own defences and perpetuating the damage being caused by an unhealthy diet.
+
+If you keep using indigestion remedies, guess what? You’re eating the wrong kind of foods. The solution isn’t to keep taking the remedies, it’s to find out what foods are causing the problem and to eliminate them from your diet.
+
+The fabulous news is that normally the foods that cause this kind of issue are addictive BAD SUGAR foods. Once you’ve got rid of them from your diet, you cease to be addicted and it becomes easy and enjoyable to avoid them.
+
+## NATURE’S WARNING SIGNS
+
+Indigestion, constipation, diarrhoea, headaches etc are all warning signs in Nature’s Guide. Treat them with a “magic pill” that stops your brain from registering the symptom and you are merely removing the bulb. Some symptoms, such as vomiting or coughing, are also part of the cure: Nature’s method of ejecting alien matter from the stomach or lungs. Take a pill to prevent those symptoms and you are actively hindering the cure.
+
+Many of the medicines that doctors prescribe actually make the problem worse. Drugs like Valium and Librium have been found to cause problems rather than alleviate them. Drugs are poisons administered in controlled doses. The body will react against the poison, building immunity to it. As a result, stronger and stronger doses of the drug will be required in order to overcome the body’s natural reaction, until it no longer has any effect at all. The original problem has not been eradicated, and now the patient finds that they are also addicted to the painkillers.
+
+Nature has provided us with our own protection from disease, the immune system. Drugs destroy the immune system. Wild animals rarely die from disease. When they do, it is usually due to pollution caused by humans. It is also very rare for them to be killed by their own kind. It is only intelligent man that dies mainly from disease or violence from our own species. By allowing our intelligence to act against Nature, we have put evolution into reverse.
+
+## THE FLAW IN THE MACHINE
+
+The human being is an incredible machine, yet there is a flaw that has caused us untold misery.
+
+Animals avoid many of the problems that afflict mankind because they lead their lives by instinct. We also have the ability to live by instinct, but our intellect gets in the way. That is the flaw in the incredible machine. Our unique asset is also our unique undoing.
+
+Nature has given us a tool to gain power over the rest of the animals, but we misuse it. We think we can outsmart Nature itself. When our instinct and intellect are in conflict, we find it easier to make a reasoned argument in support of the intelligent course of action, even when there is overwhelming evidence to the contrary. We talk about the miracle of childbirth. The reason it appears to be a miracle is because the reproduction of life is way beyond the capacity of our intelligence.
+
+It is not our fault that we are flawed in this way and it needn’t be a problem, provided we can open our minds and recognize that we are. If you can see that, you will also see that Nature, not man, is the leading authority on how your body works and if you want to know how best to maintain it, the best source to turn to is Nature’s Guide – instinct.
+
+## *FOURTH INSTRUCTION: IGNORE ANY ADVICE THAT
+GOES AGAINST NATURE’S GUIDE*
+
+Now that we have established the authority of Nature’s Guide, we can begin to look more closely at the advice it offers. Like the rest of the animal kingdom, you will be able to eat as much of your favourite foods as you want, when you want and be able to maintain excellent health naturally and effortlessly.
+
+## SUMMARY•Your body is infinitely more complex than your car.•Man designed the car; he didn’t design man.•The leading authority on how your body works is Nature’s Guide.•Trusting intelligence over instinct has brought us untold misery.•Ignore any advice that goes against your instinct.

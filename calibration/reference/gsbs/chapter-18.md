@@ -1,0 +1,127 @@
+# Chapter 18
+
+# YOUR FINAL BAD SUGAR MEAL
+
+## IN THIS CHAPTER
+
+*•PICKING YOUR MOMENT
+•LAST-MINUTE NERVES •THE RITUAL
+•NEVER MIND THE OUTCOMEThe ritual of the final BAD SUGAR meal is where you break the cycle of addiction and get free. Unless you’ve already stopped consuming BAD SUGAR, it’s important that you observe the ritual and then get on with enjoying life.*
+
+You’ve reached the point that every addict dreams of: the moment when you escape the trap and begin life as a non-addict. Your slavery to BAD SUGAR is about to become a thing of the past. All through the book I’ve assured you that escape would be easy, but that shouldn’t lessen your sense of achievement in any way. To go through the method as instructed, in order to understand your own nature and the nature of the trap, requires discipline and perseverance. It also takes courage to open your mind. So be proud of your achievement. You’ve reached a position that more and more BAD SUGAR addicts are wishing they could achieve. You may be wondering when to pick your moment.
+
+## MEANINGLESS DAYS
+
+When addicts make an attempt to quit with the willpower method, they tend to pick a time that feels significant, thinking that the occasion will help to strengthen their resolve. These occasions fall into two categories: traumatic events, such as a health scare, and landmark days, such as the old favourite, New Year’s Day. These days are meaningless. They have no bearing on your addiction; in fact, they cause more harm than good. New Year is a time for resolutions. We make a decision to apply our willpower to make a change in our lives for the better. This is usually because we have overindulged so horribly on junk over the Christmas period that we feel genuinely sick with ourselves. What better time to change our ways?
+
+In fact, there couldn’t be a worse time. A few days into January your self-loathing has disappeared and you’ve forgotten how grim your old way of eating made you feel. You only tried to change through force of will and now that your resolve has weakened you see no reason for depriving yourself any more. The illusion that BAD SUGAR foods give you some sort of pleasure or a crutch remains steadfastly intact and you remain just as hooked as ever.
+
+New Year’s Day is the worst example, but all meaningless days are harmful in the same way. All they do is provide an excuse for avoiding the most obvious solution for every addict:
+
+## *STOP NOW!*
+
+If you’ve had a health scare, please don’t attempt to make that your motivation; just use your improved health as a wonderful bonus to enjoy when you are free. There is no better time to stop than right now. You have read and understood all the instructions and, like a boxer about to go into the ring, you are in peak condition. You have nothing to fear and only marvellous gains to make, so why wait? Today is the most significant day of your life: it is the day you break free.
+
+## FEELING NERVOUS?
+
+It’s normal to feel some nerves at this stage. Don’t worry about that. Nerves are a sign of your excitement at the power you now hold in your hands and they are no threat whatsoever to your chances of success. Every great sportsperson has butterflies in their stomach before their big event, but as they warm up and prepare themselves mentally they cast their minds back to their training and quickly see the benefits, their confidence grows and they begin to enjoy the anticipation of the contest ahead. They survey their competitors who by comparison look weak and ill-prepared.
+
+Words cannot do justice to the utter joy you feel when you finally accept you don’t need to consume BAD SUGAR any more. The elation is unbelievable. It’s like a huge, dark shadow lifting from your mind. You no longer need to despise yourself, or have to worry about what it’s been doing to your health, or all the money you’ve wasted. You no longer have to worry about junk food anymore. You no longer feel weak, miserable, sordid, incomplete or guilty.
+
+You have all the knowledge and understanding you need to make this the best experience of your life. Soon you will be beating your mortal enemy. Rejoice in that prospect. Be merciless.
+
+You have nothing to fear. Remind yourself that you are not “giving up” anything. All those empty carbs give you nothing but ill health, guilt and misery. If you’ve followed and understood everything up to this point, you’ll have come to the obvious conclusion: THERE IS NO REASON TO CONSUME BAD SUGAR.
+
+Very soon I’ll ask you to eat your final BAD SUGAR meal and make a solemn vow that you will never consume BAD SUGAR again. It’s essential that you are completely reconciled with that notion. You must be absolutely clear that BAD SUGAR gives you no pleasure or crutch whatsoever and that you are not making any sort of sacrifice.
+
+If you find the thought of never having another plate of pasta or chips, or another cake, biscuit, chocolate, or sweet difficult to fully accept, try taking on board the only alternative: spending the rest of your life never being free. Never being allowed to stop. It’s a simple choice: freedom or slavery. It’s incredibly easy to stop consuming BAD SUGAR provided you follow all the instructions. Your main reason for stopping is because you hate feeling like a slave, so instead of thinking, “I must never eat *BAD SUGAR* again,” start thinking, “This is great! I don’t ever need to have that again. I don’t ever need to feel stuffed and unhealthy and guilty and miserable after I’ve eaten again. I’M FREE!”
+
+## THE INSTRUCTIONS
+
+If you have any doubts in your mind about what you are about to do, please go back and re-read the relevant chapters, keeping an open mind and questioning everything that you have been told about BAD SUGAR in your life.
+
+## THE RITUAL
+
+If you are absolutely clear and happy about everything you’ve learned, you will no doubt be champing at the bit to get on with your escape. The only doubt you may have is whether you actually want to bother with the ritual of the final BAD SUGAR meal.
+
+Some people have what they hope will be their last BAD SUGAR before they begin this book and by the time they reach this stage they are adamant that they have no desire ever to eat BAD SUGAR again. If this applies to you, that’s great news because it means you have completely removed the desire for BAD SUGAR. There is no need to go back on that, but it is still important that you go through the ritual of making your vow.
+
+While smokers, drinkers and other drug addicts can usually remember a time in their life before they became hooked, this is not true of BAD SUGAR addicts. The slavery begins at a young age. So this is a momentous occasion in your life and one of the most important decisions you will ever make. You are freeing yourself from slavery and achieving something amazing, something all BAD SUGAR addicts would love to achieve and something that everybody, addicts and non-addicts alike, will admire you for.
+
+Most importantly, you will soar in the estimations of one person in particular: yourself.
+
+That’s an achievement that deserves to be marked with some ceremony. The ritual of the final BAD SUGAR meal will give you something positive to look back on should the memory of how good you feel now begin to fade.
+
+The most important purpose of the ritual, though, is this: it marks a moment in time, the end point of your addiction. With the willpower method, the thing that makes it difficult to quit is the waiting and the doubt that creeps in as you wait for time to cure your problem. With this method, you become a non-addict the moment you finish your BAD SUGAR meal and make your vow to become free from addiction to BAD SUGAR. It’s important to know when that moment is, to be able to make that vow with a feeling of triumph, to visualize your victory over the Little Monster and be able to say, “Yes! I’m no longer an addict. I’m FREE!”
+
+Your mind should be absolutely made up. It is not enough to *hope* that you will never eat BAD SUGAR again, you need to be 100 per cent certain. So let’s strike one final blow against the ideas that may cause you to doubt your decision to quit:
+
+1.Remove the belief that you are making a sacrifice.
+
+Get it clearly into your mind that there is absolutely nothing to give up. BAD SUGAR gives no genuine pleasure or crutch whatsoever. The fact that it appears to is just a subtle illusion caused by the cycle of addiction and brainwashing.
+
+2.Remove the belief that it’s possible to have the occasional splurge on BAD SUGAR without getting hooked again.
+
+Remember there is only one way to stay free from BAD SUGAR and that is *not* to consume BAD SUGAR.
+
+The one essential in order to be a “non-BAD SUGAR addict” for life is *never* to consume BAD SUGAR. In order to be *happy* to be free, you must never *desire* BAD SUGAR.
+
+Over the next few days, weeks and months you’re going to feel like a million dollars. You’ll begin to notice dramatic changes in how you look and how you feel. If one night you make a mistake and find you’ve eaten or drunk something containing BAD SUGAR, don’t panic!
+
+Put it behind you. Your body can cope with an occasional blip, but your mind will not. Another dose of BAD SUGAR will revive the Big Monster. So just reconfirm to yourself how happy you are to be free and remain happily free of BAD SUGAR from that moment on.
+
+Now make sure you are clear on these three additional ideas:
+
+1.Remove the belief that you are a confirmed BAD SUGAR addict, or have an addictive personality, or are in some way different from all other people.
+
+The characteristics that are common to addicts are caused by the addiction, they do not cause it. Anyone can fall for the BAD SUGAR trap, and most people do.
+
+2.Avoid the influence of other BAD SUGAR addicts.
+
+They’re the ones who are losing out, not you. You now have much more expertise on the subject than they have. Pity them for their ignorance and feel compassion for them. In time, as they see how you change, they will envy your freedom and show interest in how you achieved it.
+
+3.Avoid believing bad advice.
+
+Some people will fail for this reason and, like the others who have, they will feel miserable. Please don’t let it be you. It’s hard to imagine how a nutritionist could possibly recommend that processed or starchy carbs should be the cornerstone of a healthy nutritious diet. Times are changing. As more nutritionists and doctors see the evidence of how BAD SUGAR addicts have turned their lives around; how Type 2 diabetes has been completely reversed in hundreds of thousands of cases, merely by cutting out BAD SUGAR and how its victims have become free from a lifetime of medication and health worries, the truth about BAD SUGAR and the havoc it has unleashed on the world will be fully exposed.
+
+Before you read this book, you had some favourite foods that you thought you could never live without. It may have been pasta, bread, potato, chips, cake, biscuits, chocolate bars, puddings or sweets… or all of the above. Whatever it was, this is what you are going to eat as your final BAD SUGAR meal.
+
+If you stopped eating sugar before you started the book, you can skip to the vow. If not, prepare your final BAD SUGAR meal as you used to do and start eating it. Whether it’s just a small token sweet, or a three-course meal, prepare for it as you always have (bearing in mind the guidance you receive from your doctor if you are on medication). Before you take a bite of each item, focus on how it looks, how it smells and how it feels to the touch. See how unnatural it is.
+
+Now take a bite. Pay attention to how it feels in your mouth. Don’t swallow it immediately, but keep it in your mouth and think about the ingredients that make it up. What does it taste like? Is there any flavour? Is that perhaps the flavour of fruit? Is that the flavour of the accompanying sauce made of fruit or vegetables? What is making it edible? Is the flavour from secondary foods? Sense how it makes you feel as you swallow it. Sense how it feels as it makes its way through your body. You may even find it repulsive. Remember you’re not giving up anything. You wouldn’t eat a bowl of pasta without adding fat, cheese, meat, fish or vegetables. Remember, it’s only BAD SUGAR that you’re getting rid of. All the other flavours and tastes, the REAL flavours and REAL tastes will remain part of your life. It’s only the junk, the starchy carbs and the refined sugar that you’re escaping from.
+
+As you eat, remind yourself of all you know about BAD SUGAR.
+
+•It gives you no genuine pleasure or crutch.
+
+•It doesn’t relieve stress and anxiety; it causes it.
+
+•The only reason you ever thought you needed it was because you ate BAD SUGAR in the first place.
+
+## THE VOW
+
+Think about the misery and suffering that BAD SUGAR has caused you. Visualize the Little Monster and how it has wound you round its little finger for all these years. Imagine it laughing at you. This is the time for your revenge. You are going to knock that Little Monster clean out of the ring. As you swallow your last mouthful, make a vow never to eat BAD SUGAR again. Ever! No more slavery. No more misery. You are cutting off the Little Monster’s lifeline and destroying that evil tyrant once and for all.
+
+## *CONGRATULATIONS! YOU’VE WON!*
+
+Take delight in your victory. This is one of the greatest achievements of your life, if not the greatest. It’s important that this moment sticks in your mind.
+
+## EXPECT THE UNEXPECTED
+
+It’s a wonderful facet of the human mind that if you’re prepared for a challenge, it doesn’t faze you as it would if it took you by surprise. You can easily guard against any moments of doubt in future simply by knowing that they will arise.
+
+Right now, you are fired up with powerful reasons to stop consuming BAD SUGAR, but after a few weeks of freedom your memory of how miserable BAD SUGAR made you feel will dim. Fix those thoughts in your mind now while they are still vivid, so that even if your memory of the details should diminish, your resolution never to eat BAD SUGAR does not.
+
+In a few months’ time, you’ll find it difficult to believe that you once found it necessary to eat BAD SUGAR, let alone how much it controlled your life, and consequently your fear of getting hooked again may dwindle. Be aware now, in advance, that this will be a danger period.
+
+You might have moments when you’re on a high, surrounded by other people eating cakes or biscuits, say, or you might suffer a trauma and your guard will be down. Anticipate these situations now and make it part of your vow so that, if and when they come, you will be prepared and not fooled into eating BAD SUGAR.
+
+## DON’T WAIT FOR THE OUTCOME
+
+In the cycle of addiction, each fix creates the need or desire for the next. The moment you finish your last mouthful and make your vow, you break the cycle. You have put down a marker. This is the moment when you walk free.
+
+You have nothing to wait for. You’re ready to move on. Embrace this moment with a feeling of excitement and elation and start enjoying life free from BAD SUGAR. The nightmare is over.
+
+## *FREEDOM STARTS HERE!*
+
+## SUMMARY•Don’t worry about last-minute nerves; they’re completely normal.•The vow marks the moment when you become free. Make it and rejoice in it.•You’re free as soon as you make your vow. There is nothing to wait for.•Anticipate dangerous situations and prepare your mindset in advance.

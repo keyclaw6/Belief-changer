@@ -1,0 +1,130 @@
+# Chapter 8
+
+# FUELLING UP AND BURNING OFF
+
+## IN THIS CHAPTER
+
+*•SELF-IMAGE •WHY YOU PUT ON WEIGHT
+•EXERCISING TO LOSE WEIGHT •WHY WE EAT
+•HOW TO SATISFY HUNGERThe balance between intake and disposal is fundamental to your physical condition. Put BAD SUGAR into your system and you will always struggle to get the balance right.*
+
+Another trait that is uniquely human is the tendency to judge our fitness by our weight. If we’re feeling out of shape, we look in the mirror and say, “I must do something about my weight.” As a result, weight becomes the chief motivator behind our attempts to get fit. We decide that we need to lose X number of pounds or kilograms and then embark on a regime of diet, exercise, or both, in the hope of achieving that.
+
+You may argue that weight is the only visible proof that you are getting fitter, but is that really the case? Is it the figure on the scales that makes you miserable when you feel you’ve overeaten, or is it the way you look and feel? And how do you know what your ideal weight should be? Everybody is different.
+
+There’s an exercise we like to do at the Easyway clinics, which always prompts an interesting response. Take the fastest man on Earth – for the last few years it’s been Usain Bolt, the phenomenal Jamaican sprinter. What do you think Usain Bolt weighs? The estimates we get vary by as much as fifty pounds.
+
+When we’re asked to reveal the answer, we have to shrug and say we have no idea. Why do we need to know? You only have to look at Usain Bolt to see he’s in superb physical condition. If you were in similar condition, would you care how much you weighed?
+
+It is not your scales that will tell you when you are the exact weight you want to be; it is your eyes and your lungs. When you like what you see in the mirror and can carry out your day-today activities without getting out of breath, you will know that you have achieved your ideal weight. You won’t need scales to confirm the fact; you will just feel it. And it is a very good feeling.
+
+If you set yourself a target weight you are letting the tail wag the dog and putting obstacles in your way. Don’t rely on your scales to tell you when you’re happy. Who knows what your target weight is? Estimates for Usain Bolt’s vary by fifty pounds! You might find you reach a condition you’re happy with before you get down to your target weight. What then? Do you have to keep losing weight before you allow yourself to be happy?
+
+Anyway, the objective of this book is to free you from your addiction to BAD SUGAR. That’s all that counts. As a wonderful bonus of achieving that, you’ll be healthier, fitter and find it easy to lose weight and to look exactly the way you want to look.
+
+## *SIXTH INSTRUCTION: DISREGARD ANY PRECONCEIVED TARGET WEIGHT*
+
+## WHY DO WE PUT ON WEIGHT?
+
+It seems a simple question, but it’s one we often ask ourselves in exasperation. You’ve tried the diets, you’ve put yourself through exercise regimes, yet the pounds keep piling on. Why?
+
+Let’s begin with the simple answer.
+
+## *YOU GAIN WEIGHT IF YOU ADD MORE
+THAN YOU TAKE AWAY*
+
+In other words, if your intake exceeds your output, you will put on weight. Some people try to muddy the waters by citing glandular problems or a slow metabolism. These may have a bearing on intake and disposal, but the basic fact remains: if you consume more than you burn off or pass out as waste, you will gain weight.
+
+So there are two sides to the equation: intake and output. In order to balance the equation you simply have to adjust one or the other, or both.
+
+This is not news: everybody knows there are two ways to lose weight: diet and exercise. No doubt you have tried one or the other and probably both. So why are you reading this book? Clearly neither worked for you. The fact is both of them are missing the point.
+
+## BURNING OFF
+
+Lack of exercise is frequently cited as the main reason people become overweight. Obese people are generally regarded as lazy, while sportspeople, dancers and others who make a career out of vigorous exercise certainly give the impression that weight is not a problem for them. But just because they manage to control their weight, doesn’t mean they don’t crave junk food just as much, if not more, than you do.
+
+The developed world has become obsessed with exercise, most of which takes place without actually going anywhere, on rowing machines, treadmills, exercise bikes, cross-trainers and other such devices, yet we are witnessing an obesity epidemic. The claim that special exercise is essential to weight loss is a smokescreen that gives us an excuse to carry on eating junk.
+
+What happens when you exercise? Yes, you burn off more calories, but you also become more hungry, so you eat more. And because you feel you’ve worked hard, you allow yourself a reward – you blow out on junk.
+
+The only “reward” is a persistent weight problem.
+
+If good physical condition was dependent on vigorous exercise, wouldn’t cats be tremendously fat? OK, some are when overfed by their owners, but the average cat will leap up on to a six-foot fence and walk along it without any loss of balance, despite the fact that it spends most of its life asleep! Consider the big cats in the wild; have you ever seen one that looks out of shape? Yet they don’t spend hours every day charging about in order to maintain their figure, they expend energy when they need to, to hunt or to flee, and spend the rest of the time lying down.
+
+How do they do it? By making sure their intake is balanced with their output.
+
+Please be clear, this is not to say that an active lifestyle is not a good thing. Exercise is wonderful when pursued for pleasure. A round of golf, a game of tennis, a walk in beautiful scenery, taking a refreshing stroll rather than taking the bus for the whole journey… If you get genuine pleasure from a treadmill, then do it for that reason. But exercising in order to lose weight is as futile as taking your car for a drive just to reduce the weight in the petrol tank.
+
+## REDUCING THE INTAKE
+
+So we turn our attention to the other side of the equation: intake. If exercise isn’t the answer then it has to come down to reducing the amount you eat. But wait, we’ve said all along that diets don’t work. That’s right, because diets require you to make a sacrifice, which in turn requires willpower. You can will yourself to follow the diet for a certain amount of time, maybe even until you reach your target weight, but the feeling of deprivation will be nagging away at you the whole time, and as soon as you achieve your goal, as dictated by the scales, you will allow your willpower to give in. Diets always end with a return to the way you ate before and it’s heartbreaking how quickly the weight goes back on.
+
+So if diets don’t work and neither does exercise, what is the answer? Well, we’re two-thirds of the way there. Controlling your intake is the only way to achieve and maintain your ideal weight, but dieting is not the way to do it. What’s the point of going through misery and deprivation? The good things in life don’t have to come through hardship. You can eat as much as you want; you just need to make sure that it’s the right type of food! It’s not so much about avoiding calories; it’s about avoiding the empty ones.
+
+## WHY WE EAT
+
+Let’s try another apparently simple question: why do we eat?
+
+The simple answer would be, “To avoid dying”. But is that really why you eat? Every time you sit down to a meal, are you thinking, “I need to do this otherwise I’ll starve to death”?
+
+We use expressions like “I’m starving” or “I’m famished”, but we don’t know what starvation feels like. It’s more likely that we don’t even think about our reasons for eating when we sit down to a meal. If asked we’d say, “It’s what I do at this time of day.”
+
+Routine is a big factor in when and how we eat. There are other factors too, such as reward or comfort. The snacks you eat between meals could be part of your daily routine, or they could be a little treat for yourself.
+
+Sometimes we eat to take our mind off more mundane issues. You’re sitting at your desk trying to finish a piece of work that is becoming a drag. It’s taking longer than you expected and you’re losing confidence in your ability to finish it satisfactorily. You want some relief. So you reach for the biscuits or sweets or a chocolate bar.
+
+Smokers reach for a cigarette in the same circumstances, for the same reason. They believe the cigarette will give them some relief from the stress they’re feeling. But soon you have to return to your work and the problem is still there. The food or the cigarette hasn’t relieved it at all. Let’s face it; it’s ridiculous to think it would.
+
+Boredom, comfort, reward, routine may be the reasons we give for eating, but are they the real reasons Nature gave us to make sure we maintain a proper intake of nutrition?
+
+When we eat as Nature intended, it doesn’t just prevent us from dying, it enables us to thrive. It gives us the fuel to be active and creative, just as putting fuel in your car doesn’t just prevent it from becoming derelict; it gives it the power to take you around. When it comes to the car there is no ambiguity about why we put fuel in: the fuel gauge tells us to. This is easy for us to grasp because man invented the car and there is no confusion about how it works.
+
+Nature also provided us with a fuel gauge that is so sophisticated it doesn’t only tell us when to fill up, it physically compels us to do so. That fuel gauge is the real reason why we eat and it is called HUNGER.
+
+Eating isn’t just a function of existence; it is a pleasure that we can all enjoy. Nature ensures we fulfil that pleasure by making us hungry.
+
+Do you know what true hunger feels like? I’m sure you’ll say you do, but many people go through life without ever experiencing true hunger. We’re lucky enough to live in a part of the world where food is so readily available and such a major part of our lives that we never have to worry about where our next meal or snack is coming from.
+
+We regard hunger as an affliction of the famine-stricken unfortunates who we watch with pity on television and give thanks that we are not them. It is a word that we associate with disaster. But there is a difference between hunger and starvation. Hunger is an incredible asset, a natural faculty of the human body that not only ensures we keep ourselves fuelled up, but actually enhances the pleasure of eating.
+
+Hunger is triggered by a fall in the level of nutrients in the body. It is not a painful feeling, nor even an uncomfortable one. It only becomes unpleasant when you know you cannot satisfy it. There are two reasons why this might be the case: 1. You have no access to food and are in genuine danger of starvation; 2. You are denying yourself in accordance with some diet.
+
+When you know that you are going to satisfy your hunger with delicious, nutritious food then it’s easy to relax and enjoy the feeling for several hours without it ever becoming uncomfortable.
+
+Hunger is also directly related to taste: the more hungry you are, the better the food seems to taste. This is how Nature enabled us to adapt to second- and third-rate foods when our favourite foods were not available. If you find the sight of celebrities eating witchetty grubs in the Australian jungle repulsive, try going several days in the outback without food. You’ll soon begin to regard witchetty grubs as a delicacy.
+
+By the same token, if you eat when you are not hungry, the food will taste bland and unsatisfying. If you are only eating because you’ve been conditioned to expect a certain taste, you will keep eating in the hope of getting that taste, just like a gambler pumping coins into a one-armed bandit in the hope of a payout that never comes.
+
+The more you eat, the less satisfaction you get from the food you’re eating. And if that food has nothing to offer in the way of nutritional satisfaction in the first place, then you are constantly chasing a hopeless cause.
+
+## WHAT’S ON THE MENU?
+
+The human body is an incredible machine, both sophisticated and resilient, with the capacity to adapt and heal. But despite all the abuse we subject it too, its basic functions continue to work as they were designed to do. No matter how much rubbish we consume, hunger still works in the same way, trying to get us to eat the foods that we are designed to eat.
+
+Hunger is the signal that your nutrient levels are running low and it is only switched off when you restore your nutrients to a satisfactory level. If the food you eat does not contain those vital nutrients, your hunger will not be satisfied. That’s why you can go on eating crisps for hours without feeling full up. As far as your nutrient tank goes, you’re still empty!
+
+By the way, if you think crisps aren’t part of your sugar problem because they’re salty rather than sweet, think again. They are packed with sugar in the starch of the potatoes and you’ll find added sugar in the flavourings too.
+
+Let’s clear away any more such confusion by going back to the foods we were designed to eat. Long before our ancestors learned how to preserve food, Nature’s Guide enabled them to get the nutrients they needed by providing foods that were edible and tasted good in their natural state, i.e. without any need for cooking or other interventions.
+
+These foods still taste good to us today. They are:
+
+•Fruit
+
+•Vegetables
+
+•Nuts and seeds
+
+These foods contain all the nutrients we need to survive. They are the foods we find easiest to digest and they leave very little waste once the nutrients have been extracted, so they neither use up much energy in the digestion process, nor leave behind deposits of excess fat. What’s more, they will satisfy your hunger quickly and thoroughly so you won’t feel compelled to overeat.
+
+Fruit, vegetables and nuts and seeds are the foods Nature’s Guide has designed for us to eat. They are the pinnacle of our favourite foods, but they are not the only things on the menu. Further down are the secondary foods to which Nature has enabled us to adapt. These foods will also give us the nutrients we require but they will do so less efficiently. Meat, for example, will give us protein, but it takes a lot more digesting and leaves a lot more waste. The energy required to process meat leaves us feeling sluggish. That’s why cats and other carnivores spend so much time asleep.
+
+So where does BAD SUGAR fit in to this menu? Quite simply, it doesn’t fit in at all. Empty carbs give us none of the nutrients we need and so they never satisfy our hunger. The fuel gauge continues to signal empty so we never know when to stop eating. To compound the problem, the spike and crash effect on your blood sugar level creates an empty feeling that resembles hunger, a false hunger, which makes you eat when you don’t need to.
+
+We will look more closely at hunger in a later chapter. For now, follow the next instruction.
+
+## *SEVENTH INSTRUCTION: AVOID EATING WHEN YOU’RE NOT HUNGRY*
+
+As long as you eat a diet consisting of BAD SUGAR, the balance between intake and output will always be out and you will never achieve the level of health and the kind of physique that you yearn for. It’s easy to see the solution: cut out the BAD SUGAR. Now we need to show you how easy that can be in practice.
+
+## SUMMARY•Disregard any preconceived target weight.•We put on weight because our intake is greater than our output.•Exercising to lose weight is like driving to burn off fuel.•Diets are not the way to reduce intake.•The more efficiently we satisfy hunger, the less we need to consume.•Get the intake right and weight and disposal will take care of themselves.•Refined sugar, processed and starchy carbs have no place on our menu.•Avoid eating when you’re not hungry.
