@@ -68,7 +68,7 @@ Use the codebase-memory-mcp tools: blast-radius (`detect_changes`) before modify
 5. Conventional Commits, straight to `main`, push after each logical change. The auto-tuning loop is the explicit exception: it commits one per iteration on its campaign branch (`loop/PROGRAM.md` §1); only the founder merges winning amendments to `main`.
 
 ## Calibration Recovery
-The auto-tuning loop is `loop/PROGRAM.md`. After any context compaction, task resume, or operator handoff, follow its §0 Recovery: read the runbook, the North Star, the tail of `loop/learnings.md`, and the last data row of `loop/results.tsv`; state the last iteration, its verdict, and the next hypothesis before acting. The 2026-07-28 fresh slate applies: carry no conclusions from the retired lab into the campaign; `loop/learnings.md` starts empty and is the only learnings record.
+The auto-tuning loop is `loop/PROGRAM.md`. After any context compaction, task resume, or operator handoff, follow its §0 Recovery: read the runbook, the North Star, the tail of `loop/learnings.md`, and the last data row of `loop/results.tsv`; state the last iteration, its verdict, and the next hypothesis before acting.
 
 ## Harness Rule
 When a task fails or confuses, don't just retry: name the missing capability (context, spec, test, tool, check), then fix it as part of the task or record it in the active exec plan.
