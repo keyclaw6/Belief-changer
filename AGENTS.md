@@ -37,13 +37,16 @@ serve a current requirement or concrete risk.
 Write no documentation by default. A doc must be load-bearing (an agent cannot complete a real task from code + specs alone), generated, or curated reference material. Never write docs that restate code, specs, or prompts. `docs/VISION.md` is the product-intent exception. Update or delete stale docs in the same change that invalidates them.
 
 ## Content Rules
-- The global style guide and the method principles in `openspec/specs/method-integrity/` bind every writing agent. Style-guide changes are founder-approved only.
+- The global style guide and the method principles in `openspec/specs/method-integrity/` bind every writing agent. Style-guide changes on `main` are founder-approved only; the auto-tuning loop may amend the style guide on its campaign branch, and winning amendments merge in founder-reviewed batches.
 - `production-books/<slug>/` layout (brief, research/sources/, lived-experience.md, scientific-evidence.md, framing, master plan, chapters) is a stable external contract — agent skills depend on these paths. Do not restructure it.
-- Research runs only through the fail-closed `scripts/loop/research_factory.py start` route. Framing, planning, and commissioning require one current accepted research seal; immediately before each chapter dispatch, the runtime rechecks that chapter's plan-owned needs against only its assigned sealed units and packets. Test transports/editors are import-only and never selectable from production.
+- Calibration research runs through the auto-tuning loop (`loop/PROGRAM.md`) on the routes in `loop/config.yaml`, gated by the independent evidence editor. Framing, planning, and commissioning consume only accepted research artifacts.
 - Published books are immutable artifacts; corrections produce new versions.
 
+## Auto-tuning campaign
+An explicit founder request to run the loop authorizes iterations. `loop/PROGRAM.md` is the sole operational runbook. `loop/config.yaml` is the sole model-route and parameter source. During a campaign, only files the runbook marks editable may change, on the campaign branch. Judges, trace analysis, hypothesizing, framing, planning, and commissioning run as fresh native Codex sub-agents; writer and research calls go through OpenRouter per config. Calibration candidates produced by the loop use the runbook's judge gate and are not published or advanced as accepted book chapters.
+
 ## Dependencies
-Understand or recreate: prefer dependencies fully reasoned about in-repo; reimplement small subsets over adopting frameworks. Model access goes through the founder's endpoints and always via environment variables; no provider keys belong in this repo. H-F01 is currently `READY` and unstarted; readiness authorizes no arm snapshot, authority freeze, artifact, native call, provider call, or model call. A later explicit founder start is recorded by moving the named RF-21/RF-22 stage to `IN_PROGRESS`; execution entrypoints reject `READY`. During H-F01, the PROGRAM §1 route law is binding: OpenRouter carries ONLY the six Muse Spark 1.1 writer calls and DeepSeek research. Every H-F01 writer uses exact model `meta/muse-spark-1.1`, reasoning `{effort: high}`, temperature `0.7`, and `provider: {allow_fallbacks: false}`, with `max_tokens`, `models`, and `fallbacks` absent. GPT-5.6 Sol and every other planning, commissioning, reviewing, auditing, or judging model runs ONLY as a fresh native Codex subagent on the founder's subscription, never through OpenRouter.
+Understand or recreate: prefer dependencies fully reasoned about in-repo; reimplement small subsets over adopting frameworks. Model access goes through the founder's endpoints and always via environment variables; no provider keys belong in this repo. Route law: OpenRouter carries ONLY the Muse Spark 1.1 writer calls and DeepSeek research, exactly as configured in `loop/config.yaml` (writer: `meta/muse-spark-1.1`, reasoning `{effort: high}`, temperature `0.7`, no `max_tokens`, no fallbacks). Planning, commissioning, reviewing, judging, trace analysis, and hypothesizing run ONLY as fresh native Codex sub-agents on the founder's subscription, never through OpenRouter.
 
 ## Environment Files
 Real `.env*` files (not placeholder examples) are dotenvx-encrypted source of truth and are committed. Never commit `.env.keys` or `DOTENV_PRIVATE_KEY`; Kristian's machine keeps the one shared private key at `~/.config/dotenvx/.env.keys` and its public key at `~/.config/dotenvx/public.env`. Reuse that keypair for every env file and use `dotenvx run -- <command>` or `dotenvx set KEY value` instead of plaintext secrets.
@@ -54,7 +57,7 @@ Use the codebase-memory-mcp tools: blast-radius (`detect_changes`) before modify
 ## Repo Map
 - `production-books/<slug>/` — the per-book workshop. Published output targets the future site (see `docs/VISION.md`); the retired root `books/` held reference texts now in `analysis/reference-books/`.
 - `prompts/` — the pipeline's prompt assets. `openspec/` — specs and changes.
-- `PROGRAM.md` (root) — the self-improvement loop runbook; `loop/` — its config, results, learnings, iterations; `calibration/` — judges + reference extraction + retired-lab archaeology.
+- `loop/` — the auto-tuning loop: `loop/PROGRAM.md` (runbook), judges, loop prompts, config, results, learnings, iterations; `calibration/reference/gsbs/` — the extracted real book; `calibration/` also holds retired-lab archaeology.
 - `scripts/` — gates and tooling (`check.sh` is the canonical gate). `docs/` — VISION.md and the minimal load-bearing set.
 
 ## Workflow
@@ -62,10 +65,10 @@ Use the codebase-memory-mcp tools: blast-radius (`detect_changes`) before modify
 2. Behavior or method change → openspec change first; validate with `openspec validate <slug> --strict`.
 3. Every new test cites the spec scenario it proves, or is marked infra.
 4. Gate everything with `bash scripts/check.sh`. Trust real exit codes only.
-5. Conventional Commits, straight to `main`, push after each logical change. The self-improvement loop is the explicit exception: it commits one per iteration on its campaign branch (`PROGRAM.md` §0/§4); only the founder merges winning amendments to `main`.
+5. Conventional Commits, straight to `main`, push after each logical change. The auto-tuning loop is the explicit exception: it commits one per iteration on its campaign branch (`loop/PROGRAM.md` §1); only the founder merges winning amendments to `main`.
 
 ## Calibration Recovery
-The self-improvement loop is `PROGRAM.md` (root). After any context compaction, task resume, or operator handoff, read `PROGRAM.md` first, then the tail of `loop/results.tsv` + `loop/learnings.md` for live state (there are no other records — §6). State the last accepted iteration, the next hypothesis, and any external blocker before acting, then run the next iteration (§4). The retired 2026-07-11/12 lab lives read-only under `calibration/runs/` + `calibration/FAILURE-ANALYSIS.md` (`scripts/loop/RETIREMENT.md`); do not resume it.
+The auto-tuning loop is `loop/PROGRAM.md`. After any context compaction, task resume, or operator handoff, follow its §0 Recovery: read the runbook, the North Star, the tail of `loop/learnings.md`, and the last data row of `loop/results.tsv`; state the last iteration, its verdict, and the next hypothesis before acting. The retired 2026-07-11/12 lab lives read-only under `calibration/runs/` + `calibration/FAILURE-ANALYSIS.md`; do not resume it.
 
 ## Harness Rule
 When a task fails or confuses, don't just retry: name the missing capability (context, spec, test, tool, check), then fix it as part of the task or record it in the active exec plan.

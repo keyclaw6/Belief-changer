@@ -1,8 +1,9 @@
 # Auto-Tuning Loop — North Star
 
-> Founder-locked vision for the auto-research loop that tunes the book factory.
-> This document is the operational North Star. `BOOK-FACTORY-VISION.md` remains
-> the product vision; this is how we get there.
+> Founder-locked mission and invariants for the auto-research loop that tunes
+> the book factory. `BOOK-FACTORY-VISION.md` remains the product vision; this
+> is how we get there. Operational procedure lives only in `loop/PROGRAM.md`;
+> model routes and parameters live only in `loop/config.yaml`.
 
 ## Mission
 
@@ -33,9 +34,12 @@ matter only insofar as they serve belief change.
 ## The Loop
 
 ```
-1. RUN FACTORY   — research → framing → plan → write chapters
+1. RUN FACTORY   — research → framing → plan → write ALL chapters
+                   (the whole book, every iteration — chapters change what
+                   they optimize across the arc, so partial runs mislead)
 2. COMPARE       — Judge panel reads our chapters + real GSBS chapters
-                   "What's working? What's not? Where are we not Carr?"
+                   "Which belief-change function, reader effect, or chapter
+                   transition is weaker than in the matched reference?"
 3. TRACE ANALYSIS — Read the generation traces. What happened during writing?
                    Where did the writer diverge from intent? What did the
                    research provide or fail to provide?
@@ -49,7 +53,9 @@ matter only insofar as they serve belief change.
 9. KEEP/REVERT   — Did the gap close? Keep. Did it not? Revert.
 10. RECORD       — What we tried, what happened, what we learned
 11. REPEAT       — Next gap. 3-strike rule (same failure 3× → abandon approach).
-                   Stop when the judge panel says "this reads like Carr."
+                   Stop when the panel finds no material gap in belief-change
+                   work, reader-state transition, or voice effect against
+                   the matched reference.
 ```
 
 ## The Judge Panel
@@ -72,11 +78,16 @@ get the wrong results. The panel must be tuned carefully.
 
 **Panel composition:** Multiple judges with slightly different lenses:
 - One focused on belief-change mechanics (does the argument land?)
-- One focused on voice and emotional register (does it feel like Carr?)
-- One focused on the reader journey (would a real reader be moved?)
+- One focused on voice and emotional register (does the prose create Carr's
+  reader-facing effects?)
+- One focused on the reader journey (does the assigned reader-state
+  transition complete?)
+- One reading the whole book (the cumulative arc, the mantra system in
+  execution, escalation across chapters, the ending)
 
-The panel's calibration is itself part of what the loop tunes. If the judges
-are wrong, we fix the judges.
+If the judges are wrong, we fix the judges — as a separate founder-guided
+calibration activity, never inside a factory iteration. A judge change
+stops the campaign and requires a fresh baseline.
 
 ## Trace Analysis
 
@@ -99,12 +110,12 @@ Nothing inside the factory is fixed. The loop can change:
 - Writer prompt (contract, context, instructions)
 - Planner prompt and planning process
 - Research prompts and research process (search strategy, lanes, depth)
-- Reviewer/judge prompts
-- Models (writer, planner, researcher, judge)
+- Factory models and routes (writer, planner, researcher)
 - Chapter structure and anatomy decisions
 - Framing decisions
 - Commission structure
-- Any other factory component
+- Any other factory component — except the judges: judge calibration
+  remains a separate founder-guided activity
 
 ## Deep Research
 
@@ -120,12 +131,6 @@ The lived-experience lane must go into forums, Reddit, support communities,
 and niche spaces where people confess, describe, and narrate their
 experience honestly. This is the material that makes the book feel like it
 was written by someone who truly understands the reader's situation.
-
-The existing research factory provides:
-- 5 lanes: lived experience, scientific-mechanistic, industry-cultural,
-  pro-behavior-counter-corpus, dialect-sensory
-- Web search and content fetching via OpenRouter tools
-- Configurable ceilings (to be raised or removed for production use)
 
 The loop optimizes the research stage too: are we finding the right user
 experiences? The right websites? The right scientific evidence? The right
@@ -151,8 +156,8 @@ creation machine.
 - **One hypothesis per iteration.** Small, reversible changes. We can
   attribute effect because we changed one thing.
 - **Prediction-based attribution.** Every hypothesis predicts what will
-  improve. If the prediction doesn't hold, the hypothesis is wrong regardless
-  of score movement.
+  improve. Prediction guides attribution; observed material improvement
+  decides KEEP. An inaccurate prediction is recorded as a learning.
 - **3-strike rule.** Same failure class persists 3 iterations → abandon that
   approach and try a different level (prompt → structure → model → research).
 - **Convergence rule.** Stop after 5 consecutive iterations with no
@@ -162,13 +167,9 @@ creation machine.
 
 ## Models (Starting Point, Not Fixed)
 
-- Writer: Muse Spark 1.1 via OpenRouter
-- Research: DeepSeek V4 Pro via OpenRouter
-- Planning: Kimi K3 (or alternative — the loop can change this)
-- Judges: Codex sub-agents (GPT-5.6 Sol)
-
-These are starting points. If a model can't produce Carr-quality output after
-prompt tuning, the loop hypothesizes a model change and tests it.
+Starting model routes and parameters live in `loop/config.yaml` — the sole
+authority. If a model can't produce Carr-quality output after prompt tuning,
+the loop hypothesizes a model change and tests it.
 
 ## Success Criteria
 

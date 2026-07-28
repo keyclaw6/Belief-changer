@@ -14,6 +14,6 @@ People already choose what they believe is their happiest option in the moment. 
 - **`prompts/style-guide.md`** — the writing bible fed to every chapter-writer.
 - **`production-books/<slug>/`** — the per-book workshop. **`analysis/`** — the reverse-engineered reference-book analyses.
 
-- **`PROGRAM.md`** — the factory improvement loop: generate → blind-judge against the real Carr book → one amendment → repeat.
+- **`loop/PROGRAM.md`** — the auto-tuning loop: generate the whole book → reference-sighted judge panel against the real Carr book → one causal change → keep/revert → repeat. North Star: `docs/AUTO-TUNING-LOOP.md`.
 
-The canonical repo gate is **`bash scripts/check.sh`**. Current focus: **factory calibration** — tuning the pipeline on the quit-sugar book until blind judges cannot tell its chapters from *Good Sugar Bad Sugar* (quit-porn resumes after Stage C).
+The canonical repo gate is **`bash scripts/check.sh`**. Current focus: **factory calibration** — tuning the factory on the quit-sugar book until the judge panel finds no material gap against *Good Sugar Bad Sugar* (quit-porn resumes after the generalization check passes).
