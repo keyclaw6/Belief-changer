@@ -1,0 +1,31 @@
+# Auto-Tuning Loop Configuration
+# These are STARTING POINTS. The loop can change any of these.
+
+# Writer
+writer_model: meta/muse-spark-1.1
+writer_endpoint: https://openrouter.ai/api/v1/chat/completions
+writer_reasoning: high
+writer_temperature: 0.7
+
+# Research
+researcher_model: deepseek/deepseek-v4-pro
+researcher_endpoint: https://openrouter.ai/api/v1/responses
+researcher_reasoning: xhigh
+# No search/fetch limits. Go as wide as still brings results.
+research_search_limit: unlimited
+research_fetch_limit: unlimited
+
+# Planner
+planner_model: kimi-k3
+planner_endpoint: TBD
+
+# Judges
+judge_route: codex-native
+
+# Reference
+reference_dir: calibration/reference/gsbs
+reference_chapter_offset: 2
+
+# Loop rules
+max_consecutive_no_improvement: 5
+strike_limit: 3
