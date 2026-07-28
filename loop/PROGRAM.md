@@ -40,7 +40,7 @@ A hypothesis changes the factory that produces them, never the artifact itself.
 model, reasoning, temperature, and provider policy from `loop/config.yaml`.
 No value elsewhere in this file overrides config.
 
-**Role calls (two transports, both plain API calls):**
+**Role calls (three transports, all plain API calls):**
 - **GPT roles** — framing, commissioner, judges, trace analyzer,
   hypothesizer, evidence editor, plan reviewer: one fresh OpenAI Responses
   API call per role (shared endpoint, per-role model and reasoning in
