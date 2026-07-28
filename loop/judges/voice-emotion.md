@@ -54,15 +54,17 @@ Start your report with `PASS` or `FAIL`.
 On `FAIL`, report up to 5 material failures. Never invent a gap to fill
 the format.
 
-**Materiality ranking.** Order the failures you report by damage to this
-chapter's ASSIGNED moments in CHAPTER CONTEXT: a failure whose exact
-wording weakens an assigned moment outranks register drift in passages
-that carry no assigned moment. When failures damage MORE THAN ONE
-assigned moment, use this fixed precedence: (1) the primary-job promise,
-(2) the assigned instruction, (3) mantra debuts in card order, (4) mantra
-echoes, (5) everything else. Gap 1 is always the highest-impact failure
-under this order, and the Final verdict names Gap 1's failure class —
-never a different one.
+**Materiality sweep and ranking.** Before writing any gap, check every
+ASSIGNED moment in CHAPTER CONTEXT one by one, in this fixed order:
+(1) the primary-job promise, (2) the assigned instruction, (3) mantra
+debuts in card order, (4) mantra echoes. For each assigned moment, decide:
+does exact wording at this moment materially weaken its reader-facing
+effect compared to the real chapter? Report a gap for EVERY assigned
+moment that fails this test — an assigned-moment failure is never omitted
+in favor of a failure elsewhere. Only after the sweep may remaining gap
+slots go to register drift in unassigned passages. Report gaps in the
+fixed order above: Gap 1 is the first assigned moment that fails, and the
+Final verdict names Gap 1's failure class — never a different one.
 
 ## What you evaluate
 
