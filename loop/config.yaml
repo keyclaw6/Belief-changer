@@ -22,12 +22,13 @@ research_fetch_limit: unlimited
 # hypothesis changes the research stage or the brief (PROGRAM Step 3).
 
 # Planner — the master-plan skill call runs on Kimi K3 through the
-# founder's opencode go subscription (OpenAI-compatible gateway; base URL
-# and key live in the operator environment, never in the repo).
+# founder's opencode go subscription (Zen gateway, OpenAI-compatible).
+# On first authenticated run, verify the exact model id against
+# GET https://opencode.ai/zen/v1/models and correct it here if K3's
+# published id differs.
 # (Its review gate is a GPT role: plan_reviewer_* below, per the skill.)
 planner_model: kimi-k3
-planner_route: opencode-go
-planner_endpoint_env: OPENCODE_GO_BASE_URL
+planner_endpoint: https://opencode.ai/zen/v1/chat/completions
 planner_auth_env: OPENCODE_GO_API_KEY
 planner_reasoning: high
 
