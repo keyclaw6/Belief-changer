@@ -24,7 +24,8 @@ judge_route: codex-native
 
 # Reference
 reference_dir: calibration/reference/gsbs
-reference_chapter_offset: 2
+# Chapter mapping: use loop/reference-alignment.md (content-based).
+# Do NOT use a mechanical offset — our chapters may not align 1:1 with GSBS.
 
 # Loop rules
 max_consecutive_no_improvement: 5

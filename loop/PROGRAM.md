@@ -70,7 +70,21 @@ Edit exactly one file from the editable list. Record the diff in
 
 ### Step 3: Run the factory
 
-Generate chapters 1-3 of quit-sugar using the current prompts and config.
+Generate chapters 1-3 of quit-sugar from scratch (overwrite any existing
+chapters). Use the current prompts and config.
+
+**Commission assembly (CRITICAL — do this before every writer call):**
+
+The master plan uses cross-reference IDs (MN-01, IN-01, EV-L09, etc.).
+The writer prompt says "do not resolve plan IDs." Therefore YOU must
+resolve them into a self-contained commission before sending:
+
+1. Open `production-books/quit-sugar/master-plan.md`
+2. Find the chapter card for chapter N
+3. Resolve EVERY ID into its full text (mantras, instructions, evidence,
+   redefinition, anatomy — all expanded inline)
+4. Fill placeholders: `[N]` → chapter number, `[SLUG]` → `quit-sugar`
+5. Result: a fully self-contained commission. No IDs. All text inline.
 
 **How to make API calls:**
 
@@ -115,8 +129,7 @@ The `OPENROUTER_API_KEY` env var must be set. Judges use Codex sub-agents
 **Writing** (always, unless only research/plan is being tested):
 - Model: Muse Spark 1.1 via OpenRouter (reasoning: high, temp: 0.7)
 - Input assembly (the writer receives exactly 3 things):
-  1. The commission: the chapter's semantic authority from the master plan
-     (the chapter card from `production-books/quit-sugar/master-plan.md`)
+  1. The RESOLVED commission (all IDs expanded, placeholders filled)
   2. The style guide: `prompts/style-guide.md`
   3. The previous chapter: `production-books/quit-sugar/chapters/chapter-(N-1).md`
      (for chapter 1, use the master plan's book-core section instead)
@@ -141,7 +154,9 @@ loop/iterations/NNN/traces/
 **Error handling:**
 - API 429/rate limit: retry 3x with 30s/60s/120s backoff.
 - Model refusal: log in traces/chapter-NN/refusal.md, skip chapter.
-- Garbage output: re-run once. If still garbage, log and skip.
+- Garbage output: re-run once. Garbage = truncated mid-sentence, not a
+  chapter (refusal, notes, meta-commentary), or missing required anatomy
+  (no IN THIS CHAPTER, no body, no SUMMARY). If still garbage, log and skip.
 - Judge timeout: re-run once. If still failing, proceed with 2 judges.
 - Never silently continue. Every error is logged in traces.
 
@@ -157,9 +172,20 @@ chapter text (from `calibration/reference/gsbs/`), and CHAPTER CONTEXT:
 "This is chapter N. Its role: [from master plan]. Previous chapter landed:
 [one-line summary]." For chapters 2+, also pass the previous chapter.
 
+**CHAPTER CONTEXT template (extract from master plan, do not improvise):**
+```
+Chapter [N] of [total]. Belief-move: [what belief this chapter changes].
+Previous chapter landed: [what verdict the reader now holds].
+Register target: [warm / confrontational / liberating].
+```
+
 **Reference alignment:** Use `loop/reference-alignment.md` to map our
 chapters to GSBS chapters by CONTENT, not just offset. Create this
 alignment table before the baseline run.
+
+**How to run judges, trace analyzer, and hypothesizer:**
+All are Codex sub-agents (spawn_agent). Send the prompt file content as
+the task message, followed by the inputs (chapters, traces, learnings).
 
 Save verdicts in `loop/iterations/NNN/judgments/`.
 
