@@ -170,6 +170,8 @@ Read all judge verdicts. Answer one question: **Did the predicted gap close?**
 - **KEEP** — the targeted gap improved materially AND no regression
   appeared. The improvement may manifest differently than predicted —
   that's fine. What matters: is the book better?
+  Regression check: compare this iteration's verdicts to the previous
+  iteration's. Any gap ABSENT before but PRESENT now = regression.
 - **REVERT** — the targeted gap did NOT improve, OR a material regression
   appeared. Undo the change.
 - **INCONCLUSIVE** — no improvement, no regression. Revert and sharpen
@@ -201,7 +203,9 @@ Append to `loop/learnings.md`:
 - **One hypothesis per iteration.** One change to one file. No bundles.
 - **3-strike rule.** Failure class = same judge + same criterion + same
   root component. If 3 iterations targeting one class produce no KEEP,
-  abandon it. Try a different level: prompt → structure → model → research.
+  ROLLBACK and PIVOT to a different component level. The level is wrong.
+  Example: 3 failed writer-prompt fixes for hedging → try style guide
+  or model instead. Don't keep hammering the same level.
 - **Convergence rule.** After 5 consecutive iterations with no KEEP,
   stop. Write a summary in `loop/iterations/NNN/convergence-report.md`
   and surface to the founder.

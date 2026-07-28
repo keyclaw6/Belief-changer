@@ -47,7 +47,17 @@ For each gap identified by ANY judge, trace it back through the factory:
 
 ## Your output
 
-For each gap, produce:
+Start with a brief **failure cluster summary**:
+
+| Component | Gap count | Priority |
+|-----------|-----------|----------|
+| research  | N         | 1st/2nd/3rd |
+| plan      | N         | ... |
+| writer-prompt | N     | ... |
+| style-guide | N       | ... |
+| model     | N         | ... |
+
+Then for each gap, produce:
 
 ### [Gap title from judge]
 
@@ -65,6 +75,10 @@ For each gap, produce:
   before model). But do not blame research by default — if the research
   is adequate and the writer prompt doesn't tell the writer what to do
   with it, the writer prompt is the root cause.
+- If the same component appears 3+ times across iterations (check
+  learnings.md), flag it: "PERSISTENT — this component has been the
+  root cause N times. Consider whether the approach at this level is
+  wrong and a different level is needed."
 - Quote trace evidence. Don't speculate without evidence.
 - If the trace doesn't contain enough information to diagnose, say so
   explicitly: "INSUFFICIENT TRACE — need [specific missing data]."

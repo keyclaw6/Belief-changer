@@ -28,7 +28,11 @@ which file and which section is responsible.]
 ## Targeted fix
 [The exact change. Which file. Which section. What to add/change/remove.
 Write the actual diff or the actual new text. One change only. No bundles.
-No "and also..." — one surgical change.]
+No "and also..." — one surgical change.
+
+**Why this component:** [One sentence: why fix THIS component rather than
+a different one? If the trace analysis shows research is adequate but the
+writer prompt doesn't instruct the move, fix the prompt, not the research.]
 
 ## Predicted impact
 [What will improve: "Gap N will close because..."]
