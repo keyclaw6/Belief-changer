@@ -54,6 +54,13 @@ Start your report with `PASS` or `FAIL`.
 On `FAIL`, report up to 5 material failures. Never invent a gap to fill
 the format.
 
+**Materiality ranking.** Order the failures you report by damage to this
+chapter's ASSIGNED moments in CHAPTER CONTEXT: a failure whose exact
+wording weakens an assigned instruction, an assigned mantra debut, or the
+chapter's primary-job promise outranks register drift in passages that
+carry no assigned moment. Gap 1 is always the highest-impact failure, and
+the Final verdict names Gap 1's failure class — never a different one.
+
 ## What you evaluate
 
 For each material failure:
