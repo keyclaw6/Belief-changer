@@ -1,0 +1,15 @@
+PASS
+
+### Reader journey comparison
+
+**The real chapter's movement:** The reader enters already worried about sugar and is first met with heightened urgency: personal symptoms, obesity, diabetes, tooth decay, and loss of control. Recognition becomes especially intimate in the biscuit sequence—“I’ll just have the one biscuit”—which evokes the limit, the extra helpings, the guilt, and the self-reproach. The chapter then confronts the reader with the claim that this is addiction rather than pleasure or weak character. Its central turn is that complete freedom is easier than controlled use because the perceived sacrifice, not abstinence itself, creates the battle. It lands by replacing dread with confidence: no willpower, no deprivation, an “exciting adventure,” and no need to change eating yet.
+
+**Our chapter's movement:** The reader enters through a more precisely assigned opening concern: fear of being enrolled in another diet. The chapter immediately creates recognition through the two internal voices—“*this has to change*” and “*not yet, not today, not like that*”—then deepens it with dessert menus, birthdays, holiday exceptions, Monday resets, and “anticipating, bargaining, and starting over.” The two reports consolidate the distinction between a well-managed truce and an ended debate, moving the reader from admiration for control toward curiosity about not wanting BAD SUGAR at all. The chapter then makes a bounded, testable offer rather than demanding assent: pleasant taste need not be denied, autonomy remains intact, and skepticism is permitted. It ends at the correct entry-contract state with the full instruction to eat normally, begin no new restriction or compensation plan, preserve clinical guidance, and merely notice while continuing to read. The movement is calmer and less confrontational than the real chapter, but that difference serves this chapter card’s reserved scope rather than weakening it.
+
+No material reader-journey gaps observed.
+
+## Final verdict
+
+**Assigned transition verdict:** The chapter successfully moves the reader from expecting another discipline-and-deprivation program to accepting a low-pressure investigation whose destination is the end of recurring negotiation. Recognition is concrete and nonjudgmental; the contrast between “a well-managed truce” and “the debate being over” makes the promised destination legible without prematurely performing the later benefit-demolition argument. The assigned mantras arrive cumulatively: “anticipating, bargaining, and starting over” names the reader’s present cycle; the special-or-irreplaceable-pleasure statement defines the test without demanding denial; and “without deprivation, without battle, and without a lifetime of rules” names the destination. The full instruction is held until the chapter’s climax, where it produces immediate relief and a clear handoff into Chapter 2.
+
+**Largest momentum loss:** NONE

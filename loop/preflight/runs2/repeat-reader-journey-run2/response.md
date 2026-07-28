@@ -1,0 +1,13 @@
+PASS
+
+### Reader journey comparison
+
+**The real chapter's movement:** The reader enters expecting another difficult attempt to control sugar. The chapter first raises the stakes through health fears and familiar loss-of-control moments—“I’ll just have the one biscuit,” followed by more, guilt, and self-reproach. It then reframes the problem as addiction and brainwashing rather than weak discipline. From there it contrasts willpower-based restriction with complete freedom, promising that quitting can be easy because the perceived sacrifice can disappear. It ends by replacing immediate action with an entry contract: keep an open mind, follow the process, and “DON’T CHANGE ANYTHING YET.” The reader leaves with dread reduced and the possibility that complete freedom, rather than permanent management, is available.
+
+**Our chapter's movement:** The reader is recognized immediately through the internal argument—“this has to change” versus “not yet, not today, not like that”—and through the lived cycle of dessert decisions, holiday exceptions, Monday resets, and “anticipating, bargaining, and starting over.” The chapter then validates prior systems rather than dismissing them, while confronting the reader with the distinction between a “well-managed truce” and the debate actually ending. The two reports make the destination experiential: not merely resisting or managing dessert, but “not missing” it. That distinction becomes the turn into an investigation of whether BAD SUGAR possesses any special, irreplaceable benefit. The chapter carefully avoids demanding agreement or immediate abstinence, offers freedom “without deprivation, without battle, and without a lifetime of rules,” and lands the commissioned instruction at the climax. The reader leaves able to continue eating normally while testing the book’s proposition, with curiosity replacing the expectation of another disciplinary program.
+
+## Final verdict
+
+**Assigned transition verdict:** The chapter successfully moves the reader from expecting another regime of discipline, deprivation, and endless negotiation to accepting a low-risk investigation conducted while eating normally. Recognition is specific and nonjudgmental; the managed-truce comparison creates meaningful confrontation without prematurely completing the later benefit-demolition work; and the destination is clearly the disappearance of the recurring proposition rather than increasingly skillful control. The instruction arrives after the offer and limits have been established, so “READ WITH CURIOSITY, NOT DREAD” feels like permission rather than compliance pressure. All three assigned mantras contribute to the same transition and are consolidated in the summary.
+
+**Largest momentum loss:** NONE

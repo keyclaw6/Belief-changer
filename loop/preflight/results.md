@@ -80,3 +80,46 @@ passes on the corrected instrument.
   id confirmed in the Zen Go /models list — config.yaml unchanged.
 - Next action: founder-guided repair of `loop/judges/voice-emotion.md`
   materiality rule → re-run preflight → §3 baseline.
+
+---
+
+# Repair ladder addendum (2026-07-28, founder instruction: "find root cause, fix, run again")
+
+Four repairs applied and tested; full traces in runs2/–runs5/.
+
+| Attempt | Change (commit) | Result on check 2 (voice-emotion) |
+|---|---|---|
+| 1 | Materiality ranking rule: assigned moments outrank unassigned drift (6c4f717) | FAIL — Gap 1 flipped between two assigned moments (mantra debut vs promise) |
+| 2 | Fixed precedence among assigned moments: promise > instruction > debuts > echoes (5212c42) | FAIL — ranking held, but one run failed to DETECT the promise gap at all |
+| 3 | Mandatory sweep: every assigned moment checked in fixed order, all failures reported (043153c) | FAIL — sweep held, but the materiality call flipped (instruction judged material in one run, immaterial in the other) |
+| 4 | config: judge_reasoning medium → high, prompts unchanged (0c2401d) | FAIL — run1 top: promise-hedging; run2 top: M-06 coaching-speak; run2 judged the promise moment immaterial |
+
+Constant across all five batteries: check 1 PASS test 6/6, check 3 probes
+6/6 (with v2 doubt probes), belief-mechanic and reader-journey repeatability
+consistent. The voice judge discriminates correctly; it is unstable only in
+the boundary materiality call among co-present borderline flaws in the
+repeatability article (run-012 generated chapter), which carries 2–3 real
+voice flaws of similar size (promise-hedging, M-06 coaching-speak,
+case-report distance — the same classes recur across every run).
+
+## Root cause (final)
+
+A single-sample judge cannot deterministically pick one top class among
+several co-present failures of comparable materiality. Prompt tightening
+moved the flip (ranking → detection → materiality) without removing it;
+reasoning effort did not remove it either.
+
+## Founder options (not applied)
+
+A. Restructure the voice judge's output: one explicit MATERIAL/OK verdict
+   per assigned moment (sweep becomes the format, top class becomes
+   derived, not sampled). Judge edit — founder-guided; then re-run battery.
+B. Rule that check 2 consistency for the voice lane means: same PASS/FAIL
+   and same per-assigned-moment verdicts, rather than one top class.
+   Requires a founder edit to PROGRAM §2.2.
+C. Both A and B together (most robust; makes the repeatability criterion
+   match how decisions actually use judge output — failure classes, not
+   instances).
+D. Also rule on judge_reasoning: high produced no repeatability gain at
+   ~2× latency; recommend reverting to medium unless kept for other
+   reasons.

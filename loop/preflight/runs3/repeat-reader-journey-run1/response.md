@@ -1,0 +1,15 @@
+PASS
+
+### Reader journey comparison
+
+**The real chapter's movement:** The reader begins with health concerns, dissatisfaction, or prior failed attempts and is quickly given both alarm and hope: sugar is presented as a serious global danger, but freedom will supposedly be easy and require no willpower. Recognition peaks in the “one biscuit” sequence, where attempted restraint becomes more eating, guilt, and self-reproach. The chapter then confronts the reader with the claim that consumption is driven by addiction rather than genuine pleasure. It repeatedly contrasts lifelong willpower and managed reduction with complete freedom, ending by turning dread into anticipation: do not change anything yet, keep an open mind, read in order, and expect release rather than deprivation.
+
+**Our chapter's movement:** The reader begins closer to the assigned entering belief: another sugar book appears to mean another round of plans, boundaries, resets, and discipline. The opening recognizes the recurring internal negotiation through dessert menus, birthday parties, holiday exceptions, Mondays, and “anticipating, bargaining, and starting over.” It then distinguishes a well-managed truce from the debate actually ending. That distinction creates the chapter’s central turn: the offer is not better control but an investigation into whether BAD SUGAR deserves its assumed place in the reader’s life. Skepticism is explicitly permitted, autonomy is preserved, and the destination is framed as freedom “without deprivation, without battle, and without a lifetime of rules.” The commissioned instruction arrives as the climax and releases the reader from immediate action: eat normally, begin no new restriction or compensation plan, preserve clinical instructions, and read with curiosity. The reader leaves able to investigate without feeling enrolled in another diet.
+
+The shape is calmer and less fear-driven than the real chapter, but that serves the assigned entry contract. The external reports briefly make the movement more observational, yet they consolidate the essential distinction between maintained control and an ended debate rather than stalling it.
+
+## Final verdict
+
+**Assigned transition verdict:** The chapter successfully moves the reader from expecting discipline, deprivation, and permanent negotiation to understanding that no immediate dietary change is required and that the offered destination is the disappearance of the recurring debate itself. Recognition is specific and nonjudgmental, the promise is bounded by honest limits, and the chapter does not prematurely undertake the later benefit-demolition argument. The final instruction lands after the alternative has been established, so “eat as you normally do” feels like relief and permission to investigate rather than procrastination or a loophole.
+
+**Largest momentum loss:** NONE
