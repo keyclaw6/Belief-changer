@@ -33,11 +33,22 @@ planner_auth_env: OPENCODE_GO_API_KEY
 planner_reasoning: high
 
 # GPT roles (framing, commissioning, judging, trace analysis, hypothesizing,
-# evidence editing, plan review): fresh clean calls through the OpenAI
-# subscription OAuth — one Responses API call per role, carrying ONLY the
-# role prompt and its listed inputs. No hosted agent, no host system
-# prompt, no tools, no filesystem. Never OpenRouter.
-openai_endpoint: https://api.openai.com/v1/responses
+# evidence editing, plan review): fresh clean calls on the founder's OpenAI
+# subscription (OAuth). The subscription token is scoped for the Codex
+# backend, NOT the public platform API (verified 2026-07-28: public
+# /v1/responses returns 401 missing-scope; the backend endpoint works).
+# Request contract per call:
+#   POST https://chatgpt.com/backend-api/codex/responses
+#   Authorization: Bearer $OPENAI_OAUTH_TOKEN
+#   chatgpt-account-id: <chatgpt_account_id claim, decoded locally from the
+#                        token's JWT payload — never logged>
+#   OpenAI-Beta: responses=experimental
+#   originator: codex_cli_rs
+#   body: role prompt as `instructions`; `input` as an item LIST;
+#         `stream: true`; `store: false`; per-role model + reasoning below.
+# One call per role, carrying ONLY the role prompt and its listed inputs.
+# No hosted agent, no host system prompt, no tools, no filesystem.
+openai_endpoint: https://chatgpt.com/backend-api/codex/responses
 openai_auth_env: OPENAI_OAUTH_TOKEN   # operator's subscription OAuth token; never committed
 judge_model: gpt-5.6-sol
 judge_reasoning: medium
