@@ -11,11 +11,9 @@ stage can add material texture that research did not mine. Do not write book
 prose here.
 
 Quality is the only optimizer. Cost, latency, token use, and activity never rank
-sources or establish adequacy. The executable caller nevertheless reserves hard
-call, tool, output, result, cost, and gap-round safety ceilings before dispatch.
-Exhausting one stops the candidate truthfully as `BLOCKED`; it never creates a
-PASS, waives a gap, or authorizes downstream work. Only a later explicitly
-authorized candidate may continue under newly reviewed ceilings.
+sources or establish adequacy. Depth is sacred and unlimited (AGENTS.md): no
+search or fetch ceilings — go as wide and deep as still brings results, and
+filter afterwards, never upfront.
 
 ## The doctrine this file implements (founder law)
 
@@ -96,16 +94,15 @@ bind to the caller-visible fetch.
 Never invent a source, quote, persona, or finding when retrieval is missing —
 find a better source instead.
 
-Breadth research uses only the allowed research arm (PROGRAM §1 (founder,
-2026-07-13): DeepSeek V4 Pro at `xhigh` via OpenRouter). The caller handles exact
-runtime IDs, the greatest available allowance, continuation on `length`, and
-call metadata. The independent synthesis auditor is an evidence-editor role,
-not another breadth-research call: use a high-reasoning model from another
-family through an authorized native or direct route, never through OpenRouter.
-This prompt defines the model role contracts. The RF-32 `research_factory`
-coordinator dispatches them, persists their provenance, and enforces fail-closed
-state and ceilings; prompt prose alone is not an executable research run. Rank
-research material only by quality, never by cost or latency.
+Breadth research uses only the allowed research arm (`loop/config.yaml`:
+DeepSeek V4 Pro at `xhigh` via OpenRouter, web_search + web_fetch). The caller
+— the auto-tuning loop orchestrator (`loop/PROGRAM.md`) — handles exact runtime
+IDs, continuation on `length`, and call metadata, and persists every research
+artifact into the iteration traces. The independent synthesis auditor is an
+evidence-editor role (`prompts/research-evidence-editor.md`), not another
+breadth-research call: a fresh high-reasoning native sub-agent from another
+model family, never through OpenRouter. Rank research material only by
+quality, never by cost or latency.
 
 ---
 

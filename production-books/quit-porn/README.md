@@ -1,11 +1,11 @@
 # Quit Porn — working title
 
 **Target behavior:** Porn & compulsive masturbation (PMO)
-**Status:** PAUSED at framing — factory calibration comes first (see `docs/VISION.md` Part II → "Adopted Plan", DECIDED 2026-07-10). Research is complete and stays valid; this becomes the first novel-topic book once calibration Stage C (universality) passes.
+**Status:** PAUSED at framing — factory calibration comes first (see `docs/VISION.md` Part II → "Adopted Plan", DECIDED 2026-07-10). Research is complete and stays valid; this becomes the first novel-topic book once the calibration loop converges and the Stage C universality gate passes. It will then be produced by the proven factory end to end (`loop/PROGRAM.md` describes the stage flow) — the old hand-run handoff recipe is retired.
 Pipeline position: brief → researching → **framing (paused)** → planning → drafting ch.N → done
 **Created:** 2026-06-07
 
-A self-contained working folder for the quit-porn Belief-Changer book. It fills up **in order**: brief → research → framing → master plan (+ Opus review) → chapters.
+A self-contained working folder for the quit-porn Belief-Changer book. It fills up **in order**: brief → research → framing → master plan (+ fresh independent review) → chapters.
 
 ## Artifacts (check off as created)
 - [x] `00-brief.md` — topic, reader, goal, fork decisions (partially filled; forks TBD in framing)

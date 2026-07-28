@@ -21,7 +21,7 @@ production-books/<book-slug>/
 │   └── scientific-evidence.md   # synthesized from sources/: studies & mechanisms (supported vs contested)
 ├── framing.md                   # book-specific adaptation (style guide §4 forks + §10 playbook)
 ├── master-plan.md               # chapter-by-chapter blueprint (the master-plan skill's output)
-├── master-plan-review.md        # Opus reviewer critique + resolution (REQUIRED)
+├── master-plan-review.md        # fresh independent reviewer critique + resolution (REQUIRED)
 └── chapters/
     └── chapter-01.md, chapter-02.md, …   # built one/two at a time, in order
 ```
@@ -30,7 +30,7 @@ production-books/<book-slug>/
 1. **Brief** — define the behavior, reader, and the fork decisions (`00-brief.md`).
 2. **Research** — dump raw sources (scrapes, threads, studies, transcripts — any format) into `research/sources/`, logging each in `research-log.md`; then synthesize them into `lived-experience.md` and `scientific-evidence.md`.
 3. **Framing** — adapt the style guide to this behavior (`framing.md`).
-4. **Master plan** — run the `belief-changer-master-plan` skill → `master-plan.md`. It pulls in `/prompts/style-guide.md` + this folder's research & framing, and is **refined via a required Opus sub-agent review** (`master-plan-review.md`).
+4. **Master plan** — run the master-plan skill (`/prompts/master-plan-skill-v2.md`) → `master-plan.md`. It pulls in `/prompts/style-guide.md` + this folder's research & framing, and is **refined via its required fresh independent review gate** (`master-plan-review.md`, ending "fit to write from").
 5. **Chapters** — write one (or two) at a time. Each chapter-writer sees only the master plan + the previous chapter + the style guide; a reviewer loop critiques each before moving on.
 
 > Canonical references used throughout (global, never copied per book): the **style guide** `/prompts/style-guide.md` and the **reference-book analyses** `/analysis/`.

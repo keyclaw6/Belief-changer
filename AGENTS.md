@@ -5,7 +5,7 @@ Generate high-quality, Allen Carr "Easyway"-style belief-change books — free, 
 **Required reading: `docs/VISION.md` Part I** — the canonical founder vision every change in this repo serves. Read it before your first task here.
 
 ## Book Factory Vision Lock
-`docs/BOOK-FACTORY-VISION.md` is the founder-owned expected result for the book factory. Every agent working on the factory, calibration, harness, research, planning, writing, reviewing, or judging MUST read it before acting and hold its work against it. No agent may edit, delete, rename, supersede, reinterpret away, or weaken that file without an explicit founder instruction. The factory redesign review and its reviewer prompt must not begin until the founder says **go**.
+`docs/BOOK-FACTORY-VISION.md` is the founder-owned expected result for the book factory. Every agent working on the factory, calibration, harness, research, planning, writing, reviewing, or judging MUST read it before acting and hold its work against it. No agent may edit, delete, rename, supersede, reinterpret away, or weaken that file without an explicit founder instruction.
 
 ## Auto-Tuning Loop Lock
 `docs/AUTO-TUNING-LOOP.md` is the founder-locked North Star for the auto-research loop that tunes the book factory. Every agent working on the loop, judges, research, or factory tuning MUST read it before acting. No agent may weaken or reinterpret away that file without an explicit founder instruction.
