@@ -30,7 +30,18 @@ next hypothesis before acting.
 - `loop/PROGRAM.md` (this file)
 - `loop/judges/` (judge prompts — tuned separately by founder)
 
-## 2. One iteration
+## 2. Baseline (iteration 000)
+
+Before the first hypothesis, establish where we are:
+
+1. Run the factory on quit-sugar chapters 1-3 (Step 3 below)
+2. Run the judge panel (Step 4 below)
+3. Record the baseline verdicts in `loop/iterations/000/`
+4. Append to learnings: "Baseline established. Top gaps: [list]."
+
+No hypothesis, no change. Just: where are we starting from?
+
+## 3. One iteration (001+)
 
 ### Step 1: Declare hypothesis
 
@@ -61,11 +72,39 @@ Edit exactly one file from the editable list. Record the diff in
 
 Generate chapters 1-3 of quit-sugar using the current prompts and config.
 
+**How to make API calls:**
+
+All model calls go through OpenRouter. Use curl or a simple script:
+
+```bash
+# Chat completions (writer, planner)
+curl https://openrouter.ai/api/v1/chat/completions \
+  -H "Authorization: Bearer $OPENROUTER_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model": "meta/muse-spark-1.1", "messages": [...],
+       "reasoning": {"effort": "high"}, "temperature": 0.7}'
+
+# Responses API with tools (research — enables web search + fetch)
+curl https://openrouter.ai/api/v1/responses \
+  -H "Authorization: Bearer $OPENROUTER_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model": "deepseek/deepseek-v4-pro", "input": "...",
+       "reasoning": {"effort": "xhigh"},
+       "tools": [{"type": "web_search"}, {"type": "web_fetch"}]}'
+```
+
+The `OPENROUTER_API_KEY` env var must be set. Judges use Codex sub-agents
+(spawn_agent), not OpenRouter.
+
 **Research** (if research stage is targeted):
 - Model: DeepSeek V4 Pro via OpenRouter
+- API: Responses API with web_search + web_fetch tools enabled
 - Search depth: unlimited (1,000+ searches, 1,000+ fetches)
 - Lanes: lived-experience, scientific-mechanistic, industry-cultural,
   pro-behavior-counter-corpus, dialect-sensory
+- The research prompt (`prompts/research-agent.md`) is the system prompt.
+  The model uses web_search and web_fetch tools autonomously to find
+  lived experiences, forums, Reddit, scientific papers, industry analysis.
 - Output: `production-books/quit-sugar/research/`
 
 **Planning** (if planning stage is targeted):
@@ -75,10 +114,18 @@ Generate chapters 1-3 of quit-sugar using the current prompts and config.
 
 **Writing** (always, unless only research/plan is being tested):
 - Model: Muse Spark 1.1 via OpenRouter (reasoning: high, temp: 0.7)
-- Input: commission + style guide + previous chapter
+- Input assembly (the writer receives exactly 3 things):
+  1. The commission: the chapter's semantic authority from the master plan
+     (the chapter card from `production-books/quit-sugar/master-plan.md`)
+  2. The style guide: `prompts/style-guide.md`
+  3. The previous chapter: `production-books/quit-sugar/chapters/chapter-(N-1).md`
+     (for chapter 1, use the master plan's book-core section instead)
+- The writer prompt (`prompts/chapter-writer.md`) is the system prompt.
 - Output: `production-books/quit-sugar/chapters/chapter-NN.md`
 
 Save generation traces in `loop/iterations/NNN/traces/`.
+Traces = the exact prompts sent, the exact responses received, and any
+intermediate state. This is what the trace analyzer reads.
 
 ### Step 4: Judge
 
@@ -121,7 +168,7 @@ Append to `loop/learnings.md`:
 **Next direction:** [what to try next based on this]
 ```
 
-## 3. Rules
+## 4. Rules
 
 - **One hypothesis per iteration.** One change to one file. No bundles.
 - **3-strike rule.** If the same failure class persists 3 iterations,
@@ -137,7 +184,7 @@ Append to `loop/learnings.md`:
   improve" and voice didn't improve but something else did, that's
   INCONCLUSIVE, not KEEP. Revert and form a better hypothesis.
 
-## 4. Models (starting config)
+## 5. Models (starting config)
 
 Recorded in `loop/config.yaml`:
 ```yaml
@@ -158,7 +205,7 @@ judge_route: codex-native
 
 These are starting points. The loop can hypothesize model changes.
 
-## 5. Generalization check
+## 6. Generalization check
 
 After the judge panel says "this reads like Carr" for GSBS chapters 1-3,
 run a generalization test:
@@ -170,7 +217,7 @@ run a generalization test:
 4. If it passes: the factory works. If not: continue tuning with both
    subjects as signal.
 
-## 6. What success looks like
+## 7. What success looks like
 
 The loop succeeds when:
 1. The judge panel reads our GSBS chapters and says they do belief change
