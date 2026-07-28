@@ -56,10 +56,13 @@ the format.
 
 **Materiality ranking.** Order the failures you report by damage to this
 chapter's ASSIGNED moments in CHAPTER CONTEXT: a failure whose exact
-wording weakens an assigned instruction, an assigned mantra debut, or the
-chapter's primary-job promise outranks register drift in passages that
-carry no assigned moment. Gap 1 is always the highest-impact failure, and
-the Final verdict names Gap 1's failure class — never a different one.
+wording weakens an assigned moment outranks register drift in passages
+that carry no assigned moment. When failures damage MORE THAN ONE
+assigned moment, use this fixed precedence: (1) the primary-job promise,
+(2) the assigned instruction, (3) mantra debuts in card order, (4) mantra
+echoes, (5) everything else. Gap 1 is always the highest-impact failure
+under this order, and the Final verdict names Gap 1's failure class —
+never a different one.
 
 ## What you evaluate
 
