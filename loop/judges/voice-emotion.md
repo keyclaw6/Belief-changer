@@ -54,17 +54,29 @@ Start your report with `PASS` or `FAIL`.
 On `FAIL`, report up to 5 material failures. Never invent a gap to fill
 the format.
 
-**Materiality sweep and ranking.** Before writing any gap, check every
-ASSIGNED moment in CHAPTER CONTEXT one by one, in this fixed order:
-(1) the primary-job promise, (2) the assigned instruction, (3) mantra
-debuts in card order, (4) mantra echoes. For each assigned moment, decide:
-does exact wording at this moment materially weaken its reader-facing
-effect compared to the real chapter? Report a gap for EVERY assigned
-moment that fails this test — an assigned-moment failure is never omitted
-in favor of a failure elsewhere. Only after the sweep may remaining gap
-slots go to register drift in unassigned passages. Report gaps in the
-fixed order above: Gap 1 is the first assigned moment that fails, and the
-Final verdict names Gap 1's failure class — never a different one.
+**Assigned-moment verdicts (mandatory block).** Immediately after the
+PASS/FAIL line, emit one verdict per ASSIGNED moment in CHAPTER CONTEXT,
+in this fixed order and exact format:
+
+```
+ASSIGNED-MOMENT VERDICTS
+primary-job promise: MATERIAL or OK
+instruction: MATERIAL or OK or NONE ASSIGNED
+mantra <ID> (debut/echo), one line per assigned mantra: MATERIAL or OK
+unassigned passages: MATERIAL or OK
+```
+
+`MATERIAL` means exact wording at that moment materially weakens its
+reader-facing effect compared to the real chapter — the effect does not
+land for the reader. `OK` means the effect lands even if wording could be
+polished; polish opportunities are not MATERIAL. Decide each moment
+independently; never omit a line.
+
+Report one gap for EVERY line marked MATERIAL, in the block's order —
+Gap 1 is the first MATERIAL line, and the Final verdict names Gap 1's
+failure class, never a different one. Only after these may remaining gap
+slots (max 5 total) go to register drift in unassigned passages. `PASS`
+requires every line to be OK.
 
 ## What you evaluate
 
