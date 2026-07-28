@@ -21,13 +21,20 @@ research_fetch_limit: unlimited
 # Reuse: research artifacts are reused across iterations unless the
 # hypothesis changes the research stage or the brief (PROGRAM Step 3).
 
-# Native sub-agent routes (founder's Codex subscription, spawn_agent —
-# never OpenRouter): planning, framing, commissioning, judging, trace
-# analysis, hypothesizing, evidence editing.
-planner_route: codex-native
-commissioner_route: codex-native
-judge_route: codex-native
-analyzer_route: codex-native
+# GPT roles (planning, framing, commissioning, judging, trace analysis,
+# hypothesizing, evidence editing): fresh clean calls through the OpenAI
+# subscription OAuth — one Responses API call per role, carrying ONLY the
+# role prompt and its listed inputs. No hosted agent, no host system
+# prompt, no tools, no filesystem. Never OpenRouter.
+openai_endpoint: https://api.openai.com/v1/responses
+openai_model: gpt-5.6-sol
+openai_reasoning: xhigh
+openai_auth_env: OPENAI_OAUTH_TOKEN   # operator's subscription OAuth token; never committed
+planner_route: openai
+commissioner_route: openai
+judge_route: openai
+analyzer_route: openai
+evidence_editor_route: openai
 
 # Reference
 reference_dir: calibration/reference/gsbs

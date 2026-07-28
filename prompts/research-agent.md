@@ -100,8 +100,9 @@ DeepSeek V4 Pro at `xhigh` via OpenRouter, web_search + web_fetch). The caller
 IDs, continuation on `length`, and call metadata, and persists every research
 artifact into the iteration traces. The independent synthesis auditor is an
 evidence-editor role (`prompts/research-evidence-editor.md`), not another
-breadth-research call: a fresh high-reasoning native sub-agent from another
-model family, never through OpenRouter. Rank research material only by
+breadth-research call: a fresh high-reasoning GPT-5.6 call from another model
+family, through the OpenAI subscription OAuth route (`loop/config.yaml`),
+never through OpenRouter. Rank research material only by
 quality, never by cost or latency.
 
 ---
@@ -465,8 +466,8 @@ face of the completion criterion and the bridge into §B8.
 
 Give the complete evidence set — completed brief + packets + log + both
 syntheses — to **one fresh independent high-reasoning evidence editor from
-another model family** (authorized native/direct route, never OpenRouter; fresh
-context, no operator leakage). It asks only: *is this deep, traceable,
+another model family** (GPT-5.6 through the OpenAI subscription OAuth route per
+`loop/config.yaml`, never OpenRouter; fresh clean context, no operator leakage). It asks only: *is this deep, traceable,
 rights-safe, scientifically honest, persona-covering, and useful enough to frame
 a belief-changing book; does every primary and subordinate brief belief have a
 complete intervention-ready unit; and is every slot filled across ≥3 distinct

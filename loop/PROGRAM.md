@@ -40,6 +40,21 @@ A hypothesis changes the factory that produces them, never the artifact itself.
 model, reasoning, temperature, and provider policy from `loop/config.yaml`.
 No value elsewhere in this file overrides config.
 
+**Role calls (two transports, both plain API calls):**
+- **GPT roles** — planner, framing, commissioner, judges, trace analyzer,
+  hypothesizer, evidence editor: one fresh OpenAI Responses API call per
+  role (`openai_*` in config; `Authorization: Bearer $OPENAI_OAUTH_TOKEN`,
+  the operator's subscription OAuth token). The request carries ONLY the
+  role prompt plus the inputs this file lists for that role — the
+  orchestrator supplies every input inline; the role model has no host
+  system prompt, no tools, and no filesystem. Save the exact request and
+  response in the iteration traces.
+- **OpenRouter roles** — writer (chat completions) and research (Responses
+  API with web_search + web_fetch), per config. Nothing else ever uses
+  OpenRouter.
+The orchestrator itself is plumbing: it assembles inputs, makes calls,
+saves traces, and follows this file — no measured role runs inside it.
+
 **State discipline:** the campaign runs on a campaign branch. Every iteration
 ends with exactly one commit (`loop(iter-NNN): DECISION — short hypothesis`).
 Only the founder merges winning amendments to `main`.
@@ -86,7 +101,7 @@ Where is the factory now? Fresh full run, no hypothesis, no change.
 
 ### Step 1: Declare hypothesis
 
-Run `loop/prompts/hypothesizer.md` as a fresh native sub-agent with:
+Run `loop/prompts/hypothesizer.md` as a fresh GPT role call with:
 - the previous iteration's `trace-analysis.md`
 - `loop/learnings.md`
 - the current editable factory files
@@ -118,13 +133,13 @@ research artifacts and copy them into this iteration's traces.
   must return PASS on the research digest before framing may consume it.
 - Output: `production-books/quit-sugar/research/`
 
-**Stage: Framing** — a fresh planner-route sub-agent completes
+**Stage: Framing** — a fresh planner-route GPT call completes
 `production-books/quit-sugar/framing.md` per the framing contract
 (`production-books/_template/framing.md`) from the style guide, brief, and
 accepted research syntheses; then a fresh independent semantic review is
 accepted in `framing-review.md`. Planning is blocked until accepted.
 
-**Stage: Planning** — a fresh planner-route sub-agent follows
+**Stage: Planning** — a fresh planner-route GPT call follows
 `prompts/master-plan-skill-v2.md` (exact five inputs, no reference
 contamination) INCLUDING its fresh review gate: `master-plan-review.md` must
 end `fit to write from`. When the accepted plan changed, rebuild
@@ -217,8 +232,9 @@ Assigned compliance:
 (all chapters in order) with the plan's mantra sheet, instruction spine,
 and curve map, plus the reference-alignment table as the GSBS skeleton.
 
-All judges, the trace analyzer, and the hypothesizer run as fresh native
-sub-agents (spawn_agent). Judge calls are independent — run them in parallel.
+All judges, the trace analyzer, and the hypothesizer run as fresh GPT
+role calls (see Role calls, §1). Judge calls are independent — run them
+in parallel.
 A judge that fails is rerun once; a still-missing report blocks any KEEP
 (the iteration is INCONCLUSIVE) but its diagnostic value is still recorded.
 
@@ -226,7 +242,7 @@ Save verdicts in `loop/iterations/NNN/judgments/`.
 
 ### Step 5: Trace analysis
 
-Run `loop/prompts/trace-analyzer.md` as a fresh native sub-agent on the
+Run `loop/prompts/trace-analyzer.md` as a fresh GPT role call on the
 judgments and the exact generation traces. Save its response as
 `loop/iterations/NNN/trace-analysis.md`. It merges corroborating reports
 into causal clusters and maps each cluster to the factory component that
