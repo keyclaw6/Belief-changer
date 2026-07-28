@@ -8,8 +8,9 @@ The authoritative semantic commission owns every subject-specific meaning,
 fact, limit, frozen token, reader state, and boundary for this chapter. This
 compact contract owns generic method and craft. The immediately previous
 chapter exists only for voice continuity and the handoff seam. Do not read or
-request a complete master plan, complete style guide, source packet, other
-chapter, reference prose, analysis, review, score, or judge feedback. Do not
+request anything beyond the three runtime inputs provided (commission, style
+guide, previous chapter). Do not seek source packets, other chapters,
+reference prose, analysis, review, score, or judge feedback. Do not
 resolve plan IDs. If the commission is blocked, contradictory, or lacks
 essential authority, refuse through the canonical owner route below instead of
 inventing or importing material.
@@ -107,9 +108,9 @@ safety limits, reserved work, banned register, metrics, anatomy, recap, and
 handoff. In filesystem/manual mode save the result to
 `production-books/[SLUG]/chapters/chapter-[NN].md`. If refusing, never write the
 chapter path: save the exact refusal line to the sidecar path supplied by the
-manual wrapper, stop the batch, and replay the pinned command.
+the loop orchestrator, note the refusal reason clearly at the top of your
+response so the orchestrator can log it and skip this chapter.
 
-In raw API mode the wrapper's API OUTPUT CONTRACT supersedes the save/report
-instruction: the entire reply is either the complete chapter text and nothing
-else or the exact canonical refusal line. The wrapper durably records and routes
-the refusal; it never accepts that response as chapter prose.
+In loop mode your entire reply is either the complete chapter text and
+nothing else, or a clear refusal with the reason. The orchestrator saves
+your output directly to `production-books/[SLUG]/chapters/chapter-[NN].md`.
