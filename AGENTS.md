@@ -7,6 +7,11 @@ Generate high-quality, Allen Carr "Easyway"-style belief-change books — free, 
 ## Book Factory Vision Lock
 `docs/BOOK-FACTORY-VISION.md` is the founder-owned expected result for the book factory. Every agent working on the factory, calibration, harness, research, planning, writing, reviewing, or judging MUST read it before acting and hold its work against it. No agent may edit, delete, rename, supersede, reinterpret away, or weaken that file without an explicit founder instruction. The factory redesign review and its reviewer prompt must not begin until the founder says **go**.
 
+## Auto-Tuning Loop Lock
+`docs/AUTO-TUNING-LOOP.md` is the founder-locked North Star for the auto-research loop that tunes the book factory. Every agent working on the loop, judges, research, or factory tuning MUST read it before acting. No agent may weaken or reinterpret away that file without an explicit founder instruction.
+
+**Sacred: Research depth is unlimited.** The deep search must be as wide and deep as still brings results. No artificial limits on search count or fetch count. Allow 1,000+ searches and 1,000+ fetched resources. Filter afterwards, never limit upfront. DeepSeek V4 Pro is essentially free; the constraint is quality, not cost. The research must reach forums, Reddit, support communities, and niche spaces where people with shame confess and narrate their experience honestly. This lived-experience material is what makes the book feel like it was written by someone who truly understands the reader. No agent may impose search or fetch ceilings that prevent reaching this material.
+
 ## Priorities
 When priorities conflict: 1. Method integrity. 2. Quality. 3. Simplicity. 4. Reach. 5. Cost.
 Method integrity means: **Carr-fidelity** — the Easyway method executed exactly as Allen Carr practices it (his warmth to the reader, his commands, his full-force scares delivered then disowned, his certainty), original text only (learn the mechanism, never reproduce copyrighted prose), and evidence-graded research. The factory matches Carr before any house twist is applied. A book that violates these has failed regardless of polish.
