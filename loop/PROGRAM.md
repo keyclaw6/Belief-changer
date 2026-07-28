@@ -55,9 +55,10 @@ No value elsewhere in this file overrides config.
 - **OpenRouter roles** (`$OPENROUTER_API_KEY`) — writer (Muse Spark 1.1,
   chat completions) and research (DeepSeek, Responses API with web_search +
   web_fetch), per config. Nothing else ever uses OpenRouter.
-- **Planner** — Kimi K3 through the opencode go subscription's Zen
-  gateway (endpoint in config; `Authorization: Bearer
-  $OPENCODE_GO_API_KEY`), chat completions, per config.
+- **Planner** — Kimi K3 through the opencode Go subscription's gateway
+  (endpoint in config — the /go/ path, not the pay-per-credit /zen/v1/
+  path; `Authorization: Bearer $OPENCODE_GO_API_KEY`), chat completions,
+  per config.
 The orchestrator itself is plumbing: it assembles inputs, makes calls,
 saves traces, and follows this file — no measured role runs inside it.
 
