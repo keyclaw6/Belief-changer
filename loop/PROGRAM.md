@@ -50,9 +50,11 @@ No value elsewhere in this file overrides config.
   every input inline; the role model has no host system prompt, no tools,
   and no filesystem. Save the exact request and response in the traces.
 - **OpenRouter roles** (`$OPENROUTER_API_KEY`) — writer (Muse Spark 1.1,
-  chat completions), research (DeepSeek, Responses API with web_search +
-  web_fetch), and planning (Kimi K3, chat completions), per config.
-  Nothing else ever uses OpenRouter.
+  chat completions) and research (DeepSeek, Responses API with web_search +
+  web_fetch), per config. Nothing else ever uses OpenRouter.
+- **Planner** — Kimi K3 through the opencode go subscription's
+  OpenAI-compatible gateway (`$OPENCODE_GO_BASE_URL`,
+  `$OPENCODE_GO_API_KEY`), chat completions, per config.
 The orchestrator itself is plumbing: it assembles inputs, makes calls,
 saves traces, and follows this file — no measured role runs inside it.
 
@@ -140,8 +142,8 @@ research artifacts and copy them into this iteration's traces.
 accepted research syntheses; then a fresh independent semantic review is
 accepted in `framing-review.md`. Planning is blocked until accepted.
 
-**Stage: Planning** — a fresh planner call (Kimi K3 via OpenRouter, per
-config) follows `prompts/master-plan-skill-v2.md` (exact five inputs, no
+**Stage: Planning** — a fresh planner call (Kimi K3 through the opencode
+go subscription, per config) follows `prompts/master-plan-skill-v2.md` (exact five inputs, no
 reference contamination), then its fresh review gate — a GPT plan-reviewer
 call per config — iterates until `master-plan-review.md` ends
 `fit to write from`. When the accepted plan changed, rebuild
