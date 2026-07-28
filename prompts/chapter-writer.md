@@ -105,12 +105,9 @@ true peak moments assigned across the book. Hit the commissioned length budget.
 Draft final book prose from the commission, using only the previous chapter for
 continuity. Before submitting, check the one job, exact tokens, evidence and
 safety limits, reserved work, banned register, metrics, anatomy, recap, and
-handoff. In filesystem/manual mode save the result to
-`production-books/[SLUG]/chapters/chapter-[NN].md`. If refusing, never write the
-chapter path: save the exact refusal line to the sidecar path supplied by the
-the loop orchestrator, note the refusal reason clearly at the top of your
-response so the orchestrator can log it and skip this chapter.
+handoff.
 
-In loop mode your entire reply is either the complete chapter text and
-nothing else, or a clear refusal with the reason. The orchestrator saves
-your output directly to `production-books/[SLUG]/chapters/chapter-[NN].md`.
+Your entire reply is either the complete chapter text and nothing else, or
+the exact canonical refusal line and nothing else. The caller saves a chapter
+to `production-books/[SLUG]/chapters/chapter-[NN].md`; it writes a refusal to
+`traces/chapter-[NN]/refusal.md` and never writes a chapter file for a refusal.

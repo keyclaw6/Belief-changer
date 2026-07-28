@@ -1,31 +1,38 @@
 # Auto-Tuning Loop Configuration
-# These are STARTING POINTS. The loop can change any of these.
+# SOLE authority for routes, models, and parameters. Before every model
+# call, read the values here; nothing in PROGRAM.md overrides this file.
+# These are STARTING POINTS. The loop can hypothesize changes to any value.
 
-# Writer
+# Writer — the six-input contract lives in PROGRAM.md Step 3
 writer_model: meta/muse-spark-1.1
 writer_endpoint: https://openrouter.ai/api/v1/chat/completions
 writer_reasoning: high
 writer_temperature: 0.7
+# No completion cap: requests omit max_tokens; no model fallbacks.
 
 # Research
 researcher_model: deepseek/deepseek-v4-pro
 researcher_endpoint: https://openrouter.ai/api/v1/responses
 researcher_reasoning: xhigh
-# No search/fetch limits. Go as wide as still brings results.
+researcher_tools: [web_search, web_fetch]
+# Depth is sacred: no search/fetch limits. Go as wide as still brings results.
 research_search_limit: unlimited
 research_fetch_limit: unlimited
+# Reuse: research artifacts are reused across iterations unless the
+# hypothesis changes the research stage or the brief (PROGRAM Step 3).
 
-# Planner
-planner_model: kimi-k3
-planner_endpoint: TBD
-
-# Judges
+# Native sub-agent routes (founder's Codex subscription, spawn_agent —
+# never OpenRouter): planning, framing, commissioning, judging, trace
+# analysis, hypothesizing, evidence editing.
+planner_route: codex-native
+commissioner_route: codex-native
 judge_route: codex-native
+analyzer_route: codex-native
 
 # Reference
 reference_dir: calibration/reference/gsbs
-# Chapter mapping: use loop/reference-alignment.md (content-based).
-# Do NOT use a mechanical offset — our chapters may not align 1:1 with GSBS.
+# Chapter mapping: loop/reference-alignment.md (content-based).
+# NEVER a mechanical offset.
 
 # Loop rules
 max_consecutive_no_improvement: 5

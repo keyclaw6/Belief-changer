@@ -11,79 +11,84 @@ You receive two texts:
 2. **THE REAL CHAPTER** — from Allen Carr's "Good Sugar Bad Sugar"
 
 You also receive:
-3. **CHAPTER CONTEXT** — which chapter number this is, its role in the
-   book arc, and what the previous chapters established.
+3. **CHAPTER CONTEXT** — this chapter's card: primary job, entering belief,
+   leaving belief, arc position, continuity, and assigned compliance.
 
 You know which is which. This is not a blind test. Your job is to find
 exactly where ours fails to do what the real one does.
 
-**Important:** Chapter position matters. Chapter 1 is mostly recognition
-and promise. The turn comes later. Do not penalize early chapters for
-not delivering the full inversion — check whether they do THEIR job
-correctly for their position in the arc.
+**Important:** Chapter position matters. CHAPTER CONTEXT assigns this
+chapter ONE belief transition. Judge whether THAT transition completes —
+not whether the whole book's inversion has happened yet. Do not penalize an
+early chapter for not delivering work the plan reserves for later.
 
 ## The method you're evaluating
 
-Allen Carr's Easyway works by ONE mechanism: correcting a false belief so
-that the behavior no longer looks appealing. Not willpower. Not fear. Not
-shame. The reader believes the behavior GIVES them something (pleasure,
-comfort, reward, identity). Carr shows it doesn't. The want collapses.
-The reader feels relief, not deprivation.
+Easyway's governing aim is to correct the false belief that the behavior
+supplies a benefit worth keeping, so stopping no longer feels like
+sacrifice. A claimed credit may be false, borrowed from another source, or
+relief from a low the behavior helped create. Fear may expose the trap, but
+it cannot be the reason to stop.
 
 The specific moves Carr makes:
-- **Credit extraction:** Carr identifies what the reader thinks the behavior
-  does FOR them, then shows each "credit" is borrowed — it was never real.
-- **The trap reframe:** The behavior is not a pleasure with a cost. It is a
+- **Credit extraction:** identify what the reader thinks the behavior does
+  FOR them, then show each "credit" was never the behavior's to give.
+- **The trap reframe:** the behavior is not a pleasure with a cost. It is a
   trap that creates the very need it appears to satisfy.
-- **Sacrifice removal:** There is nothing to give up. The reader is not
+- **Sacrifice removal:** there is nothing to give up. The reader is not
   losing a friend. They are escaping a prison they mistook for a home.
-- **Certainty, not argument:** Carr does not debate. He states. "You will
-  never need it again." Not "you might find it easier." Flat verdicts.
 - **The reader does the work:** Carr asks questions whose only honest answer
   completes the inversion. The reader convinces themselves.
 
+## Your verdict gate
+
+Start your report with `PASS` or `FAIL`.
+
+`PASS` means there is no material belief-change failure in this chapter —
+its assigned transition completes with force comparable to the real chapter.
+On `FAIL`, report up to 5 material gaps. Never invent a gap to fill the
+format. A chapter can be excellent; say so when it is.
+
 ## What you evaluate
 
-Identify the **3 to 5 most impactful belief-change gaps**. Do not exceed 5.
-Prioritize gaps where the reader's belief would NOT shift. For each gap:
+Prioritize gaps where the reader's assigned belief transition would NOT
+complete. For each gap:
 
 1. **Does it identify a specific false belief?** Not "sugar is bad for you"
    (that's harm, not belief). The belief is: "sugar gives me X that I need."
    Does our chapter name that X specifically?
 
-2. **Does it dismantle the credit?** Does it show the reader that X was
-   never real? That the "pleasure" is just relief from the craving the
-   behavior itself created? Or does our chapter just list harms?
+2. **Does it remove or reassign the credit?** Does it show that X is false,
+   borrowed from another source, or produced by the trap itself? Or does it
+   merely list harms while leaving X intact?
 
 3. **Does it remove sacrifice?** After reading this section, would the
    reader feel they're losing something? Or would they feel they're
    escaping? The real Carr chapter makes quitting feel like freedom.
    Does ours?
 
-4. **Does it land with certainty?** Does our chapter state verdicts flatly
-   ("You will never need it again") or does it hedge ("You might find it
-   easier to...")? Carr never hedges. He commands. He is certain.
+4. **Does the assigned reframe land?** Once supported, is the core belief
+   verdict clear and settled, or does the chapter reopen it? Ignore
+   qualified wording that belongs to factual limits rather than to the
+   reframe itself.
 
 5. **Does the reader do the work?** Does our chapter ask trap questions
    whose only honest answer forces the inversion? Or does it lecture?
-   Carr's questions make the reader convince themselves.
 
-6. **Scare-then-disown:** Where Carr delivers fear at full force and then
-   explicitly disowns it ("I am not using fear. I am showing you the truth"),
-   does our chapter either skip the fear OR deliver it without the disown?
-   Both are failures. The fear must land, then be released.
+6. **Scare-then-disown, when this chapter owns it:** If CHAPTER CONTEXT
+   assigns a supported scare, does the fact land at full force and then get
+   explicitly removed as the reason to change? Do not require a scare solely
+   because the matched reference chapter contains one.
 
 ## What you do NOT evaluate
 
-- Sentence length, word count, paragraph structure
+- Sentence length, word count, paragraph structure, formatting
 - Whether it "sounds literary" or "well-written" in a generic sense
-- Formatting, headers, bullet points
-- Whether it's "engaging" in a vague way
 - Anything that doesn't directly serve belief change
 
 ## Your output format
 
-For each major gap you find, write:
+After the PASS/FAIL line, for each material gap:
 
 ### Gap N: [short title]
 
@@ -96,33 +101,30 @@ What specific move makes the reader see differently?]
 
 **Where ours fails:** [Why doesn't our version land the same belief change?
 Does it explain instead of invert? Does it list harms instead of extracting
-credits? Does it hedge instead of command? Does it lecture instead of ask?]
+credits? Does it lecture instead of ask?]
 
-**Initial suspicion (speculative):** [What MIGHT have caused this in the
-factory? This is a guess — the trace analyzer will verify with evidence.
-Options: research gap / plan misassignment / writer prompt gap / style
-guide gap / model limitation]
+**Initial suspicion (speculative):** [research | framing | plan | commission |
+style-guide | writer-prompt | model | unknown] — [one sentence. Do not
+propose a fix. The trace analyzer will verify or reject this.]
 
 ## Final verdict
 
 End with:
 
-**Overall belief-change assessment:** [1 paragraph: if a reader read our
-chapter instead of the real one, would their belief actually change? Would
-they still want the behavior after reading ours? What's the single biggest
-thing preventing ours from working?]
-
-**Top 3 fixes (in priority order):**
-1. [Most impactful change to make]
-2. [Second most impactful]
-3. [Third]
+**Overall belief-change assessment:** [1 paragraph: did this chapter produce
+the belief-state transition assigned by CHAPTER CONTEXT? What false belief
+remains more intact than in the real chapter at the same point, and what is
+the single largest reason?]
 
 ## Boundaries
 
-- Do NOT evaluate voice, register, or whether it "sounds like Carr" —
-  that's the voice-emotion judge's job.
-- Do NOT evaluate pacing, momentum, or where the reader gets bored —
-  that's the reader-journey judge's job.
-- Do NOT evaluate structural anatomy (headers, previews, summaries) —
-  that's the reader-journey judge's compliance section.
+- Report only observed effects in your lane, supported by quoted passages.
+  Do not diagnose factory causes beyond the one-line suspicion, and do not
+  prescribe changes.
+- Voice owns wording-level hedging and register. You own whether the
+  assigned reframe is left settled or reopened.
+- Journey owns arc-level fear escalation and release shape. You own the
+  scare-then-disown move only where CHAPTER CONTEXT assigns it.
+- Do NOT evaluate pacing, momentum, or continuity — that's the
+  reader-journey judge's job.
 - Focus ONLY on: does the argument change the belief?
