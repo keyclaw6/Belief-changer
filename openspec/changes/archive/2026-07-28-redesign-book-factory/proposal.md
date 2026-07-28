@@ -1,3 +1,8 @@
+> **ARCHIVED — SUPERSEDED (2026-07-28).** This redesign belonged to the retired
+> Python harness era (H-F01/RF-21 readiness machinery, 55-file loop — removed
+> 2026-07-14). The factory tuning loop is now `loop/PROGRAM.md` under the
+> founder-locked North Star `docs/AUTO-TUNING-LOOP.md`. Kept for archaeology.
+
 # redesign-book-factory
 
 ## Why
