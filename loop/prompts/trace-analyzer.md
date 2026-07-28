@@ -59,8 +59,12 @@ For each gap, produce:
 
 ## Rules
 
-- One root component per gap. If multiple contribute, name the EARLIEST
-  one (research before plan before writer before model).
+- One root component per gap. Name the component whose fix would have
+  the LARGEST EFFECT on closing the gap. If two components contribute
+  equally, prefer the earlier one (research before plan before writer
+  before model). But do not blame research by default — if the research
+  is adequate and the writer prompt doesn't tell the writer what to do
+  with it, the writer prompt is the root cause.
 - Quote trace evidence. Don't speculate without evidence.
 - If the trace doesn't contain enough information to diagnose, say so
   explicitly: "INSUFFICIENT TRACE — need [specific missing data]."

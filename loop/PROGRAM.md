@@ -124,8 +124,26 @@ The `OPENROUTER_API_KEY` env var must be set. Judges use Codex sub-agents
 - Output: `production-books/quit-sugar/chapters/chapter-NN.md`
 
 Save generation traces in `loop/iterations/NNN/traces/`.
-Traces = the exact prompts sent, the exact responses received, and any
-intermediate state. This is what the trace analyzer reads.
+
+**Trace format (mandatory):**
+```
+loop/iterations/NNN/traces/
+  research/              # research outputs (if research was run)
+  plan.md                # master plan used (copy)
+  chapter-01/
+    prompt.md            # exact system + user message sent to writer
+    response.md          # exact model response (the chapter)
+    metadata.json        # model, tokens, latency, errors
+  chapter-02/ ...
+  chapter-03/ ...
+```
+
+**Error handling:**
+- API 429/rate limit: retry 3x with 30s/60s/120s backoff.
+- Model refusal: log in traces/chapter-NN/refusal.md, skip chapter.
+- Garbage output: re-run once. If still garbage, log and skip.
+- Judge timeout: re-run once. If still failing, proceed with 2 judges.
+- Never silently continue. Every error is logged in traces.
 
 ### Step 4: Judge
 
@@ -135,8 +153,13 @@ Run all three judges on each generated chapter vs its matched reference:
 - `loop/judges/reader-journey.md`
 
 Each judge receives: the judge prompt, our chapter text, the real GSBS
-chapter text (from `calibration/reference/gsbs/`). Chapter N maps to
-reference file `N+2` (offset 2 for front matter).
+chapter text (from `calibration/reference/gsbs/`), and CHAPTER CONTEXT:
+"This is chapter N. Its role: [from master plan]. Previous chapter landed:
+[one-line summary]." For chapters 2+, also pass the previous chapter.
+
+**Reference alignment:** Use `loop/reference-alignment.md` to map our
+chapters to GSBS chapters by CONTENT, not just offset. Create this
+alignment table before the baseline run.
 
 Save verdicts in `loop/iterations/NNN/judgments/`.
 
@@ -144,10 +167,15 @@ Save verdicts in `loop/iterations/NNN/judgments/`.
 
 Read all judge verdicts. Answer one question: **Did the predicted gap close?**
 
-- **KEEP** — the gap closed or materially improved. No regression on other
-  dimensions. The change stays.
-- **REVERT** — the gap did not close, or a worse regression appeared.
-  Undo the change (restore from `change.diff`).
+- **KEEP** — the targeted gap improved materially AND no regression
+  appeared. The improvement may manifest differently than predicted —
+  that's fine. What matters: is the book better?
+- **REVERT** — the targeted gap did NOT improve, OR a material regression
+  appeared. Undo the change.
+- **INCONCLUSIVE** — no improvement, no regression. Revert and sharpen
+  the hypothesis.
+
+Record prediction accuracy: "Predicted X. Observed Y. [accurate/partial/wrong]."
 
 Write `loop/iterations/NNN/decision.md` with the verdict and reasoning.
 
@@ -171,18 +199,18 @@ Append to `loop/learnings.md`:
 ## 4. Rules
 
 - **One hypothesis per iteration.** One change to one file. No bundles.
-- **3-strike rule.** If the same failure class persists 3 iterations,
-  abandon that approach entirely. Try a different level:
-  prompt → structure → model → research.
+- **3-strike rule.** Failure class = same judge + same criterion + same
+  root component. If 3 iterations targeting one class produce no KEEP,
+  abandon it. Try a different level: prompt → structure → model → research.
 - **Convergence rule.** After 5 consecutive iterations with no KEEP,
   stop. Write a summary in `loop/iterations/NNN/convergence-report.md`
   and surface to the founder.
 - **Never edit judges during an iteration.** Judge calibration is a
   separate founder-guided activity.
 - **Never edit this PROGRAM.md.** The loop follows it; it does not change it.
-- **Prediction binds the decision.** If the prediction said "voice will
-  improve" and voice didn't improve but something else did, that's
-  INCONCLUSIVE, not KEEP. Revert and form a better hypothesis.
+- **Prediction informs, evidence decides.** A wrong prediction with a
+  real improvement is KEEP (note the prediction was wrong). A right
+  prediction with no improvement is REVERT.
 
 ## 5. Models (starting config)
 
