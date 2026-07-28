@@ -1,0 +1,14 @@
+CHAPTER CONTEXT
+Voice honesty probe — OUR CHAPTER below is a single ISOLATED PASSAGE, not a full chapter. Judge only the register of this passage at its assigned moment; do not flag missing chapter anatomy, missing arc, or brevity.
+Assigned moment: mid-book — naming the reader's present doubt that a meal can feel complete without something sweet, before the chapter dismantles that belief.
+Assigned compliance: Instruction: NONE. Mantras: NONE.
+
+OUR CHAPTER
+<<<
+Perhaps you doubt that a meal can ever feel complete without something sweet at the end. At this moment it may well seem impossible to you. By the end of this book you will see that belief for what it is.
+>>>
+
+THE REAL CHAPTER
+<<<
+Perhaps you don't think you're a sugar addict. Next time you are shopping check the labels on every item of food and drink before you put them in your shopping trolley.
+>>>
