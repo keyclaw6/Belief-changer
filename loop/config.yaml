@@ -6,7 +6,7 @@
 # Writer — the six-input contract lives in PROGRAM.md Step 3
 writer_model: meta/muse-spark-1.1
 writer_endpoint: https://openrouter.ai/api/v1/chat/completions
-writer_reasoning: high
+writer_reasoning: high   # the highest reasoning Muse Spark 1.1 offers
 writer_temperature: 0.7
 # No completion cap: requests omit max_tokens; no model fallbacks.
 
@@ -21,20 +21,33 @@ research_fetch_limit: unlimited
 # Reuse: research artifacts are reused across iterations unless the
 # hypothesis changes the research stage or the brief (PROGRAM Step 3).
 
-# GPT roles (planning, framing, commissioning, judging, trace analysis,
-# hypothesizing, evidence editing): fresh clean calls through the OpenAI
+# Planner — the master-plan skill call runs on Kimi K3 via OpenRouter.
+# (Its review gate is a GPT role: plan_reviewer_* below, per the skill.)
+planner_model: moonshotai/kimi-k3
+planner_endpoint: https://openrouter.ai/api/v1/chat/completions
+planner_reasoning: high
+
+# GPT roles (framing, commissioning, judging, trace analysis, hypothesizing,
+# evidence editing, plan review): fresh clean calls through the OpenAI
 # subscription OAuth — one Responses API call per role, carrying ONLY the
 # role prompt and its listed inputs. No hosted agent, no host system
 # prompt, no tools, no filesystem. Never OpenRouter.
 openai_endpoint: https://api.openai.com/v1/responses
-openai_model: gpt-5.6-sol
-openai_reasoning: xhigh
 openai_auth_env: OPENAI_OAUTH_TOKEN   # operator's subscription OAuth token; never committed
-planner_route: openai
-commissioner_route: openai
-judge_route: openai
-analyzer_route: openai
-evidence_editor_route: openai
+judge_model: gpt-5.6-sol
+judge_reasoning: medium
+analyzer_model: gpt-5.6-luna
+analyzer_reasoning: high
+hypothesizer_model: gpt-5.6-sol
+hypothesizer_reasoning: xhigh
+framing_model: gpt-5.6-sol
+framing_reasoning: xhigh
+commissioner_model: gpt-5.6-sol
+commissioner_reasoning: xhigh
+evidence_editor_model: gpt-5.6-sol
+evidence_editor_reasoning: xhigh
+plan_reviewer_model: gpt-5.6-sol
+plan_reviewer_reasoning: xhigh
 
 # Reference
 reference_dir: calibration/reference/gsbs

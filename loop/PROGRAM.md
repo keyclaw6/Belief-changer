@@ -41,17 +41,18 @@ model, reasoning, temperature, and provider policy from `loop/config.yaml`.
 No value elsewhere in this file overrides config.
 
 **Role calls (two transports, both plain API calls):**
-- **GPT roles** — planner, framing, commissioner, judges, trace analyzer,
-  hypothesizer, evidence editor: one fresh OpenAI Responses API call per
-  role (`openai_*` in config; `Authorization: Bearer $OPENAI_OAUTH_TOKEN`,
-  the operator's subscription OAuth token). The request carries ONLY the
-  role prompt plus the inputs this file lists for that role — the
-  orchestrator supplies every input inline; the role model has no host
-  system prompt, no tools, and no filesystem. Save the exact request and
-  response in the iteration traces.
-- **OpenRouter roles** — writer (chat completions) and research (Responses
-  API with web_search + web_fetch), per config. Nothing else ever uses
-  OpenRouter.
+- **GPT roles** — framing, commissioner, judges, trace analyzer,
+  hypothesizer, evidence editor, plan reviewer: one fresh OpenAI Responses
+  API call per role (shared endpoint, per-role model and reasoning in
+  config; `Authorization: Bearer $OPENAI_OAUTH_TOKEN`, the operator's
+  subscription OAuth token). The request carries ONLY the role prompt plus
+  the inputs this file lists for that role — the orchestrator supplies
+  every input inline; the role model has no host system prompt, no tools,
+  and no filesystem. Save the exact request and response in the traces.
+- **OpenRouter roles** (`$OPENROUTER_API_KEY`) — writer (Muse Spark 1.1,
+  chat completions), research (DeepSeek, Responses API with web_search +
+  web_fetch), and planning (Kimi K3, chat completions), per config.
+  Nothing else ever uses OpenRouter.
 The orchestrator itself is plumbing: it assembles inputs, makes calls,
 saves traces, and follows this file — no measured role runs inside it.
 
@@ -133,16 +134,17 @@ research artifacts and copy them into this iteration's traces.
   must return PASS on the research digest before framing may consume it.
 - Output: `production-books/quit-sugar/research/`
 
-**Stage: Framing** — a fresh planner-route GPT call completes
+**Stage: Framing** — a fresh framing GPT call (per config) completes
 `production-books/quit-sugar/framing.md` per the framing contract
 (`production-books/_template/framing.md`) from the style guide, brief, and
 accepted research syntheses; then a fresh independent semantic review is
 accepted in `framing-review.md`. Planning is blocked until accepted.
 
-**Stage: Planning** — a fresh planner-route GPT call follows
-`prompts/master-plan-skill-v2.md` (exact five inputs, no reference
-contamination) INCLUDING its fresh review gate: `master-plan-review.md` must
-end `fit to write from`. When the accepted plan changed, rebuild
+**Stage: Planning** — a fresh planner call (Kimi K3 via OpenRouter, per
+config) follows `prompts/master-plan-skill-v2.md` (exact five inputs, no
+reference contamination), then its fresh review gate — a GPT plan-reviewer
+call per config — iterates until `master-plan-review.md` ends
+`fit to write from`. When the accepted plan changed, rebuild
 `loop/reference-alignment.md` before judging.
 
 **Stage: Commission (per chapter)** — a fresh commissioning editor per
