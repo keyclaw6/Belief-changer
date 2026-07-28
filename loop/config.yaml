@@ -51,7 +51,7 @@ planner_reasoning: high
 openai_endpoint: https://chatgpt.com/backend-api/codex/responses
 openai_auth_env: OPENAI_OAUTH_TOKEN   # operator's subscription OAuth token; never committed
 judge_model: gpt-5.6-sol
-judge_reasoning: medium
+judge_reasoning: high   # raised from medium 2026-07-28: repeatability at the materiality boundary
 analyzer_model: gpt-5.6-luna
 analyzer_reasoning: high
 hypothesizer_model: gpt-5.6-sol
