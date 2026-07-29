@@ -1,0 +1,89 @@
+SEARCH 1: "everything in moderation" sugar defense blog
+SEARCH 2: "life is too short" not eat sugar blog
+SEARCH 3: "tried to quit sugar" failed story reddit
+SEARCH 4: "sugar is not addictive" defense
+SEARCH 5: why I quit sugar failed relapse
+SEARCH 6: sugar addiction moderation does not work
+SEARCH 7: defending sugar eating in moderation blog
+SEARCH 8: comments defending sugar article anti sugar
+SEARCH 9: sugar addiction
+SEARCH 10: quit sugar relapse
+FETCH 1: https://www.reddit.com/r/sugarfree/
+FETCH 2: https://www.reddit.com/r/QuittingSugar/
+SEARCH 11: sugar addiction stories blog
+SEARCH 12: moderation sugar failed
+SEARCH 13: sugar
+FETCH 3: https://www.healthline.com/nutrition/too-much-sugar
+FETCH 4: https://www.huffpost.com/entry/sugar-addiction-quit_n_5b8c8e1de4b0511db3e1a8b3
+FETCH 5: https://www.marksdailyapple.com/why-i-still-eat-sugar/
+FETCH 6: https://www.ruled.me/sugar-moderation/
+FETCH 7: https://www.health.harvard.edu/blog/what-the-science-says-about-sugar-and-addiction-202311223028
+FETCH 8: https://www.verywellfit.com/sugar-addiction-stories-5217709
+FETCH 9: https://www.theguardian.com/lifeandstyle/2016/sep/26/sugar-addiction-is-it-a-real-thing
+FETCH 10: https://www.nytimes.com/2020/01/21/well/eat/sugar-addiction.html
+FETCH 11: https://www.webmd.com/diet/features/sugar-addiction
+FETCH 12: https://www.prevention.com/food-nutrition/a20461099/sugar-addiction-stories/
+FETCH 13: https://www.healthline.com/nutrition/how-to-quit-sugar
+FETCH 14: https://www.healthline.com/nutrition/sugar-addiction
+FETCH 15: https://www.psychologytoday.com/us/blog/food-junkie/201901/sugar-addiction-real-thing
+FETCH 16: https://www.healthline.com/nutrition/sugar-withdrawal-symptoms
+FETCH 17: https://www.healthline.com/nutrition/cravings-and-how-to-handle-them
+FETCH 18: https://www.medicalnewstoday.com/articles/326337
+FETCH 19: https://www.healthline.com/nutrition/sugar-cravings
+FETCH 20: https://blog.myfitnesspal.com/why-i-cant-stop-eating-sugar/
+FETCH 21: https://www.mindbodygreen.com/articles/why-i-still-eat-sugar
+FETCH 22: https://www.shape.com/healthy-eating/diet-tips/quit-sugar-tips
+FETCH 23: https://www.womenshealthmag.com/weight-loss/a19994086/why-i-gave-up-sugar/
+FETCH 24: https://www.theatlantic.com/health/archive/2020/03/sugar-addiction/608002/
+FETCH 25: https://www.bbcgoodfood.com/howto/guide/sugar-withdrawal
+FETCH 26: https://www.medicalnewstoday.com/articles/326267
+FETCH 27: https://www.healthline.com/nutrition/how-to-overcome-sugar-cravings
+FETCH 28: https://www.healthline.com/nutrition/best-way-to-stop-sugar-cravings
+FETCH 29: https://www.healthline.com/nutrition/18-foods-that-help-reduce-sugar-cravings
+FETCH 30: https://www.healthline.com/nutrition/why-am-i-craving-sugar
+FETCH 31: https://www.healthline.com/nutrition/16-ways-to-cut-sugar
+FETCH 32: https://www.healthline.com/nutrition/sugar-and-the-brain
+FETCH 33: https://www.psycom.net/sugar-addiction/
+FETCH 34: https://www.addictioncenter.com/drugs/sugar-addiction/
+FETCH 35: https://www.everydayhealth.com/diet-nutrition/sugar-addiction/
+FETCH 36: https://www.cnn.com/2016/06/29/health/sugar-addiction-brain/index.html
+FETCH 37: https://www.npr.org/sections/thesalt/2017/05/15/528349170/sugar-shock-how-our-cravings-are-fueled-by-hidden-sugar-in-our-food
+FETCH 38: https://www.cnn.com/2022/04/13/health/sugar-cravings-food-addiction-wellness/index.html
+FETCH 39: https://www.cbsnews.com/news/sugar-addiction-how-to-stop/
+FETCH 40: https://www.healthline.com/nutrition/added-sugar-guide
+FETCH 41: https://www.washingtonpost.com/lifestyle/wellness/sugar-cravings-quit/2021/03/23/
+FETCH 42: https://www.theguardian.com/society/2016/apr/07/sugar-is-the-new-tobacco-should-we-treat-it-that-way
+FETCH 43: https://www.scientificamerican.com/article/how-sugar-affects-the-brain/
+FETCH 44: https://www.scientificamerican.com/article/how-sugar-affects-the-brain-nicar/
+FETCH 45: https://www.bbc.com/future/article/20160513-the-hidden-ways-sugar-is-shoved-into-our-food
+FETCH 46: https://time.com/4087775/sugar-addiction-real/
+FETCH 47: https://www.scientificamerican.com/article/the-toxins-that-affect-your-weight/
+FETCH 48: https://en.wikipedia.org/wiki/Sugar_addiction
+FETCH 49: https://en.wikipedia.org/wiki/Sugar
+FETCH 50: https://www.eatingdisorderhope.com/treatment-for-eating-disorders/eating-disorders-and-sugar-addiction
+FETCH 51: https://www.eatingwell.com/article/291871/how-to-quit-sugar/
+FETCH 52: https://www.health.com/condition/type-2-diabetes/sugar-addiction-symptoms
+FETCH 53: https://www.harpersbazaar.com/beauty/diet-fitness/a22754730/quit-sugar/
+FETCH 54: https://www.healthline.com/health/food-nutrition/sugar-withdrawal
+FETCH 55: https://www.healthline.com/nutrition/sugar-detox-side-effects
+FETCH 56: https://www.healthline.com/nutrition/11-ways-to-stop-sugar-cravings
+FETCH 57: https://www.medicalnewstoday.com/articles/sugar-withdrawal
+FETCH 58: https://www.medicalnewstoday.com/articles/326271
+FETCH 59: https://www.medicalnewstoday.com/articles/323373
+FETCH 60: https://www.dietdoctor.com/low-carb/sugar
+FETCH 61: https://www.dietdoctor.com/sugar-withdrawal-symptoms
+FETCH 62: https://www.everydayhealth.com/type-2-diabetes/symptoms/sugar-addiction/
+FETCH 63: https://www.healthline.com/nutrition/how-to-stop-sugar-cravings
+FETCH 64: https://www.bbcgoodfood.com/howto/guide/why-am-i-craving-sugar
+FETCH 65: https://www.theguardian.com/lifeandstyle/2016/feb/22/how-to-give-up-sugar-life-less-sweet
+FETCH 66: https://www.theguardian.com/lifeandstyle/wordofmouth/2014/mar/10/sugar-free-diet-30-days
+FETCH 67: https://www.bbc.com/news/health-35357401
+FETCH 68: https://www.webmd.com/diet/ss/slideshow-sugar-addiction
+FETCH 69: https://www.webmd.com/diet/features/sugar-shock-quit-sugar
+FETCH 70: https://www.healthline.com/health/sugar-detox-is-it-a-good-idea
+FETCH 71: https://www.prevention.com/food-nutrition/a20461099/sugar-addiction-stories/
+FETCH 72: https://www.cosmopolitan.com/uk/body/a22807391/quit-sugar-30-days/
+FETCH 73: https://www.mindbodygreen.com/articles/signs-sugar-addict
+FETCH 74: https://www.everydayhealth.com/diet-nutrition/diet/sugar/what-happens-when-you-quit-sugar/
+FETCH 75: https://www.verywellmind.com/sugar-and-mental-health-5092067
+FETCH 76: https://www.healthline.com/nutrition/how-to-break-a-sugar-addiction
