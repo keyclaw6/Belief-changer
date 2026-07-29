@@ -1,6 +1,19 @@
 {
-  "http": 402,
-  "latency_s": 2.3,
-  "attempt": 4,
-  "failed": true
+  "model": "minimax-m3",
+  "http": 200,
+  "rounds": 27,
+  "searches": 16,
+  "fetches": 39,
+  "latency_s": 455.3,
+  "usage": {
+    "prompt_tokens": 126507,
+    "completion_tokens": 19605,
+    "total_tokens": 146112,
+    "total_characters": 0,
+    "prompt_tokens_details": {
+      "cached_tokens": 120434
+    }
+  },
+  "finish": "stop",
+  "completed": true
 }
