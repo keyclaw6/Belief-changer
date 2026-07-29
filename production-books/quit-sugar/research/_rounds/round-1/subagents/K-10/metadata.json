@@ -1,6 +1,6 @@
 {
   "http": 402,
-  "latency_s": 3.6,
+  "latency_s": 2.8,
   "attempt": 4,
   "failed": true
 }

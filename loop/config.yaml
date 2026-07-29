@@ -10,10 +10,16 @@ writer_reasoning: high   # the highest reasoning Muse Spark 1.1 offers
 writer_temperature: 0.7
 # No completion cap: requests omit max_tokens; no model fallbacks.
 
-# Research
-researcher_model: deepseek/deepseek-v4-pro
-researcher_endpoint: https://openrouter.ai/api/v1/responses
-researcher_reasoning: xhigh
+# Research — founder instruction 2026-07-29: MiniMax M3 through the
+# opencode Go subscription (chat completions + function calling; the Go
+# gateway has no native web tools, so the orchestrator executes
+# web_search/web_fetch for the model — depth stays unlimited).
+# Verified live 2026-07-29: minimax-m3 exact id, 200, function calling OK.
+researcher_model: minimax-m3
+researcher_endpoint: https://opencode.ai/zen/go/v1/chat/completions
+researcher_auth_env: OPENCODE_GO_API_KEY
+researcher_transport: chat-tools   # orchestrator-executed web tools
+researcher_reasoning: high
 researcher_tools: [web_search, web_fetch]
 # Depth is sacred: no search/fetch limits. Go as wide as still brings results.
 research_search_limit: unlimited
