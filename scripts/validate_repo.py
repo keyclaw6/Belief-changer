@@ -19,6 +19,7 @@ ROOT_ALLOWED_FILES = {
     "AGENTS.md",
     "LICENSE",
     "README.md",
+    ".env",
     ".gitignore",
     ".mcp.json",
 }
