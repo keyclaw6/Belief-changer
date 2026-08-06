@@ -191,7 +191,11 @@ Cross-book finding: all three run the same core Easyway engine — dismantle the
 
 ---
 
-## Platform (website) — architecture (DECIDED 2026-07)
+## Platform (website) — architecture (AMENDED 2026-08-06)
+
+**Founder amendment (2026-08-06):** the website front end is being built **now, on Lovable** (TanStack Start SSR, in Lovable's own repo), driven autonomously by a Codex agent through the Lovable MCP server. The **Next.js requirement is rejected** and the **`/site` monorepo location is deferred**. The complete build package — design contract (`DESIGN.md`, Quiet Editorial direction), the 15-step Lovable prompt score with acceptance checklists, seed schema + trilingual sample content (en/da/ar), and the Codex handoff with heartbeat protocol — lives in [`keyclaw6/belief-changer-site-buildkit`](https://github.com/keyclaw6/belief-changer-site-buildkit). Book text stays markdown-in-this-repo as the source of truth; the site database is populated from founder-approved factory exports (buildkit `seed/content-model.md`). Publishing and deployment remain founder-gated per `openspec/specs/publishing/`. The 2026-07 architecture below stands as history and as a candidate future port target.
+
+*Original decision (2026-07) — stack and location superseded above; the data/media/build-step principles still inform the design:*
 
 The delivery arm of the vision (Part I): every book as EPUB, in-browser reading, and audiobook, in every language, with the three community loops (feedback, request, splitting) making the library self-evolving. Architecture decisions:
 
