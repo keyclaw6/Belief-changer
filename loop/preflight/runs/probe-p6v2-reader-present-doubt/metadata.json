@@ -1,20 +1,17 @@
 {
-  "model": "gpt-5.6-sol",
-  "reasoning": "medium",
+  "model": "gpt-5.6-luna",
+  "reasoning": "high",
   "http": 200,
-  "latency_s": 6.2,
+  "latency_s": 11.3,
   "usage": {
-    "input_tokens": 1391,
-    "input_tokens_details": {
-      "cache_write_tokens": 0,
-      "cached_tokens": 0
-    },
-    "output_tokens": 219,
-    "output_tokens_details": {
-      "reasoning_tokens": 122
-    },
-    "total_tokens": 1610
+    "prompt_tokens": 1757,
+    "completion_tokens": 1294,
+    "total_tokens": 3051,
+    "prompt_tokens_details": {
+      "cached_tokens": 1561
+    }
   },
   "attempt": 1,
+  "finish_reason": "stop",
   "completed": true
 }

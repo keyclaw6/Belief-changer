@@ -1,3 +1,11 @@
 PASS
 
-**Overall belief-change assessment:** The chapter completes its assigned opening transition. It accurately identifies the reader’s feared contract—another cycle of discipline, restriction, exceptions, and “anticipating, bargaining, and starting over”—then replaces it with a clear investigative contract: “eat as you normally do,” begin no new restriction or compensation plan, preserve clinical guidance, and test the beliefs about BAD SUGAR before changing behavior. It also makes the destination distinct from improved control through the contrast between “a well-managed truce” and “the debate being over,” culminating in freedom “without deprivation, without battle, and without a lifetime of rules.” Like the real chapter’s “DON’T CHANGE ANYTHING YET” and open-mind instructions, ours removes the demand for immediate quitting while presenting complete freedom rather than lifelong moderation as the eventual aim. It appropriately postpones full credit extraction and benefit demolition, as required by the chapter context, without leaving the reader believing that this is merely another diet.
+ASSIGNED-TRANSITION VERDICTS
+false belief named: OK
+credit removed or reassigned: OK
+sacrifice removed: OK
+assigned reframe settled: OK
+reader does the work: OK
+scare-then-disown: NONE ASSIGNED
+
+**Overall belief-change assessment:** This chapter completes its assigned opening transition. It explicitly names the reader’s expectation that stopping means “another diet,” “discipline,” deprivation, and permanent management, then replaces that frame with an investigation conducted while eating normally. The promised destination is clearly the end of “anticipating, bargaining, and starting over,” rather than more perfect control. It also removes the sense of immediate sacrifice through “without deprivation, without battle, and without a lifetime of rules,” while preserving the reader’s autonomy and clinical obligations. The belief that BAD SUGAR itself supplies special pleasure or comfort remains deliberately unresolved, but the context reserves that benefit-demolition work for later chapters; here, that unresolved question functions as the testable premise rather than a material failure.

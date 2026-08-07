@@ -1,5 +1,11 @@
 PASS
 
+ASSIGNED-MOMENT VERDICTS  
+primary-job promise: OK  
+instruction: NONE ASSIGNED  
+mantra: NONE ASSIGNED  
+unassigned passages: OK  
+
 ## Final verdict
 
-**Overall voice-effect assessment:** The passage preserves earned authority while honestly bounding the statistics. “Estimates…vary” and “every measurement method has its flaws” qualify only the measurement, not the conclusion; “What no survey disputes” restores certainty, and “Whichever figure you take, the trap is the same” delivers the trap verdict cleanly and without shaming the reader. The register is appropriately calmer than Carr’s all-caps supermarket statistic because this assigned moment calls for a supported factual setup, not peak confrontation.
+**Overall voice-effect assessment:** No material voice-effect failure. The passage acknowledges factual uncertainty without weakening the settled trap verdict, and “Whichever figure you take, the trap is the same” preserves Carr’s direct, reassuring authority without shaming the reader.

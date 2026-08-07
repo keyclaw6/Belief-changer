@@ -1,3 +1,11 @@
 PASS
 
-**Overall belief-change assessment:** The chapter completes its assigned opening transition. It identifies the reader’s feared model—“another diet” built on discipline, restriction, monitoring, and repeated negotiation—and replaces it with a clearly different contract: investigate first, continue eating normally, begin no compensatory plan, preserve clinical guidance, and make no immediate quitting decision. The questions “So why are you here?”, “Does any of that sound like freedom? Or does it sound like a well-managed truce?”, and “What if the want itself is worth examining?” let the reader recognize that successful control can still preserve the exhausting cycle of “anticipating, bargaining, and starting over.” The distinction between “not eating BAD SUGAR and not wanting it” makes the destination sufficiently concrete: not better management, but the disappearance of BAD SUGAR as an active proposition, “without deprivation, without battle, and without a lifetime of rules.” Unlike the real chapter, ours appropriately postpones full benefit demolition because the chapter context reserves that work for later; it nevertheless establishes curiosity, non-deprivation, and freedom from continuing negotiation with comparable force for this specific arc position.
+ASSIGNED-TRANSITION VERDICTS
+false belief named: OK
+credit removed or reassigned: OK
+sacrifice removed: OK
+assigned reframe settled: OK
+reader does the work: OK
+scare-then-disown: NONE ASSIGNED
+
+**Overall belief-change assessment:** This chapter completes its assigned opening transition. It explicitly names the reader’s existing belief that stopping sugar means another diet, discipline, deprivation, and permanent negotiation, then replaces it with a testable investigation that can be conducted while eating normally. The repeated assurances—“this book is not a plan,” “you do not have to take my word for anything,” and “freedom without deprivation, without battle, and without a lifetime of rules”—remove the anticipated sacrifice and establish the end of the debate as the destination. The chapter does not yet prove that BAD SUGAR supplies no genuine pleasure, but the context reserves that benefit-demolition work for later; here, it gives the reader a concrete question to investigate and directs them to observe their own experience rather than demand belief.

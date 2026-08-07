@@ -1,5 +1,10 @@
 PASS
 
+ASSIGNED-MOMENT VERDICTS
+primary-job promise: OK
+instruction: OK
+unassigned passages: OK
+
 ## Final verdict
 
-**Overall voice-effect assessment:** OUR CHAPTER is identical to THE REAL CHAPTER, so there is no material loss of warmth, authority, confrontation, shame removal, instructional force, or relief. The calm observational opening, the transfer of blame from the reader to BAD SUGAR, and the firm “SECOND INSTRUCTION: KEEP AN OPEN MIND” all create the same reader-facing effects as Carr’s chapter.
+**Overall voice-effect assessment:** No material voice-effect failure observed. Our chapter matches the real chapter’s reader-facing register and wording, including its calm observational opening, non-shaming treatment of the reader’s sweet tooth, confrontation of BAD SUGAR as the deception, and plain-spoken delivery of the second instruction.

@@ -1,5 +1,10 @@
 PASS
 
+ASSIGNED-MOMENT VERDICTS  
+primary-job promise: OK  
+instruction: OK  
+unassigned passages: OK  
+
 ## Final verdict
 
-**Overall voice-effect assessment:** OUR CHAPTER is identical to THE REAL CHAPTER. It therefore preserves Carr’s calm observational warmth, removal of personal blame, earned confrontation with refined sugar and commercial deception, firm instruction to keep an open mind, and promised relief without any material voice-effect gap.
+**Overall voice-effect assessment:** No material voice-effect gap is present. Our chapter matches the real chapter’s local effects: it removes shame from the reader’s sweet tooth, builds trust through calm observation, confronts BAD SUGAR as the deception, and delivers the open-mind instruction in a direct, authoritative voice.

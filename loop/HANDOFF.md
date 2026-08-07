@@ -4,6 +4,10 @@ The auto-tuning loop's operator role moves from the Hyperagent sandbox to a
 founder-controlled VPS. Git is the state machine; this file plus §0 Recovery
 of `loop/PROGRAM.md` is everything a fresh operator needs.
 
+**Update 2026-08-07:** the founder runs the loop from their main machine;
+every provider call routes through the Command Code proxy loopback (see
+Routes below). No OpenRouter or OpenAI OAuth credential is needed anymore.
+
 ## Why the transfer
 
 The previous environment's egress proxy had per-session network entitlement
@@ -13,8 +17,11 @@ but a stable machine removes the whole failure class.
 
 ## Exact position
 
-- **Preflight: PASS** (`loop/preflight/results.md`, runs8 + battery traces).
-  Judges are calibrated and repeatable; do not edit them (founder-guided only).
+- **Preflight: recalibration REQUIRED (2026-08-07).** The judge role moved to
+  `gpt-5.6-luna` (reasoning high) through the Command Code proxy. The
+  Sol-era battery is archived at `loop/preflight/runs-2026-07-sol-era/`.
+  Run `scripts/loop-runner/run_preflight.sh` fresh and confirm PASS before
+  trusting any campaign verdict. (The old `results.md` records the Sol era.)
 - **Baseline 000, Stage: Research, round 1: 7/12 commissions complete.**
   - Lead plan + parameter block: `production-books/quit-sugar/research/_rounds/round-1/lead/response.md`
   - Commissions: `_rounds/round-1/commissions/K-01..K-12.md`
@@ -22,16 +29,20 @@ but a stable machine removes the whole failure class.
     `_rounds/round-1/subagents/K-NN/response.md`
   - MISSING: K-08..K-12 (K-08/K-09 died to a network-entitlement loss;
     no checkpoints — they restart from their commissions)
+- Framing and master-plan artifacts exist on disk, but their reviews are not
+  clean — a fresh operator re-runs those stages' gates per PROGRAM §3.
 - **Next actions, in order:**
-  1. `python3 scripts/loop-runner/research_round.py --round 1`
+  1. `bash scripts/loop-runner/run_preflight.sh` (judge recalibration on
+     Luna high — 18 calls through the Command Code proxy)
+  2. `python3 scripts/loop-runner/research_round.py --round 1`
      (skips done commissions, runs the 5 missing ones, batches of 4)
-  2. `python3 scripts/loop-runner/research_round.py --round 2`
+  3. `python3 scripts/loop-runner/research_round.py --round 2`
      (lead integrates all 12 results → gap-fill commissions or
      `SYNTHESIZE READY`; iterate rounds until ready)
-  3. Synthesis into `production-books/quit-sugar/research/` per
+  4. Synthesis into `production-books/quit-sugar/research/` per
      `prompts/research-agent.md` §9, then the independent evidence editor
      gate (§10) — a fresh GPT role call, `ACCEPTED FOR FRAMING` required.
-  4. Then PROGRAM §3 continues: framing → plan → reference-alignment →
+  5. Then PROGRAM §3 continues: framing → plan → reference-alignment →
      commissions → chapters → validity gates → judges → trace analysis →
      A/A check → BASELINE row. Commit after every stage on campaign-001.
 
