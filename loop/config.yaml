@@ -44,37 +44,32 @@ planner_auth_env: COMMANDCODE_API_KEY
 planner_reasoning: high
 
 # GPT roles (framing, commissioning, judging, trace analysis, hypothesizing,
-# evidence editing, plan review): fresh clean calls on the founder's OpenAI
-# subscription (OAuth). The subscription token is scoped for the Codex
-# backend, NOT the public platform API (verified 2026-07-28: public
-# /v1/responses returns 401 missing-scope; the backend endpoint works).
-# Request contract per call:
-#   POST https://chatgpt.com/backend-api/codex/responses
-#   Authorization: Bearer $OPENAI_OAUTH_TOKEN
-#   chatgpt-account-id: <chatgpt_account_id claim, decoded locally from the
-#                        token's JWT payload — never logged>
-#   OpenAI-Beta: responses=experimental
-#   originator: codex_cli_rs
-#   body: role prompt as `instructions`; `input` as an item LIST;
-#         `stream: true`; `store: false`; per-role model + reasoning below.
-# One call per role, carrying ONLY the role prompt and its listed inputs.
-# No hosted agent, no host system prompt, no tools, no filesystem.
-openai_endpoint: https://chatgpt.com/backend-api/codex/responses
-openai_auth_env: OPENAI_OAUTH_TOKEN   # operator's subscription OAuth token; never committed
-judge_model: gpt-5.6-sol
+# evidence editing, plan review): fresh clean chat-completions calls through
+# the Command Code proxy (route change 2026-08-07). Request contract per
+# call: role prompt as the system message, the listed inputs as the user
+# message, stream true. One call per role, carrying ONLY the role prompt and
+# its listed inputs. No hosted agent, no host system prompt, no tools, no
+# filesystem.
+# Model must be in the founder's Command Code plan: gpt-5.6-sol/terra and
+# every other GPT id return MODEL_NOT_IN_PLAN (verified 2026-08-07), so all
+# roles start on gpt-5.6-luna; the loop may hypothesize other in-plan ids.
+# Reasoning values the proxy accepts: low/medium/high/max.
+gpt_endpoint: http://127.0.0.1:3050/v1/chat/completions
+gpt_auth_env: COMMANDCODE_API_KEY
+judge_model: gpt-5.6-luna
 judge_reasoning: medium
 analyzer_model: gpt-5.6-luna
 analyzer_reasoning: high
-hypothesizer_model: gpt-5.6-sol
-hypothesizer_reasoning: xhigh
-framing_model: gpt-5.6-sol
-framing_reasoning: xhigh
-commissioner_model: gpt-5.6-sol
-commissioner_reasoning: xhigh
-evidence_editor_model: gpt-5.6-sol
-evidence_editor_reasoning: xhigh
-plan_reviewer_model: gpt-5.6-sol
-plan_reviewer_reasoning: xhigh
+hypothesizer_model: gpt-5.6-luna
+hypothesizer_reasoning: max
+framing_model: gpt-5.6-luna
+framing_reasoning: max
+commissioner_model: gpt-5.6-luna
+commissioner_reasoning: max
+evidence_editor_model: gpt-5.6-luna
+evidence_editor_reasoning: max
+plan_reviewer_model: gpt-5.6-luna
+plan_reviewer_reasoning: max
 
 # Reference
 reference_dir: calibration/reference/gsbs

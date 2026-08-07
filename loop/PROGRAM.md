@@ -40,18 +40,18 @@ A hypothesis changes the factory that produces them, never the artifact itself.
 model, reasoning, temperature, and provider policy from `loop/config.yaml`.
 No value elsewhere in this file overrides config.
 
-**Role calls (three transports, all plain API calls):**
+**Role calls (all plain API calls through the Command Code proxy):**
 - **GPT roles** — framing, commissioner, judges, trace analyzer,
-  hypothesizer, evidence editor, plan reviewer: one fresh call per role to
-  the subscription Responses endpoint in config (`Authorization: Bearer
-  $OPENAI_OAUTH_TOKEN`; `chatgpt-account-id` header decoded locally from
-  the token's JWT payload; `OpenAI-Beta: responses=experimental`; body:
-  role prompt as `instructions`, `input` as an item list, `stream: true`,
-  `store: false`; per-role model and reasoning in config). The request
-  carries ONLY the role prompt plus the inputs this file lists for that
-  role — the orchestrator supplies every input inline; the role model has
-  no host system prompt, no tools, and no filesystem. Save the exact
-  request and response in the traces.
+  hypothesizer, evidence editor, plan reviewer: one fresh chat-completions
+  call per role through the Command Code proxy (endpoint in config;
+  `Authorization: Bearer $COMMANDCODE_API_KEY`, or the founder's Command
+  Code CLI login when the env var is absent; body: role prompt as the
+  system message, the listed inputs as the user message, `stream: true`;
+  per-role model and reasoning in config). The request carries ONLY the
+  role prompt plus the inputs this file lists for that role — the
+  orchestrator supplies every input inline; the role model has no host
+  system prompt, no tools, and no filesystem. Save the exact request and
+  response in the traces.
 - **Command Code proxy roles** — writer, research, and planner, per config,
   all chat completions through the founder's Command Code proxy loopback
   (`Authorization: Bearer $COMMANDCODE_API_KEY`, or the founder's Command

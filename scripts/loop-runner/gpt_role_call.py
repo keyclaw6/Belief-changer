@@ -1,26 +1,41 @@
 #!/usr/bin/env python3
-"""Fresh clean GPT role call via the Codex backend Responses endpoint.
+"""Fresh clean role call — chat completions through the founder's Command
+Code proxy loopback (sole provider route; no fallbacks — on failure the
+operator escalates to the founder).
 
-Reads endpoint from loop/config.yaml (sole authority). Saves exact request
+Reads endpoint from loop/config.yaml (sole authority). Key: the env var
+named by `gpt_auth_env`, or the founder's Command Code CLI login
+(~/.commandcode/auth.json) when that env var is absent. Saves exact request
 (Authorization REDACTED), raw SSE response, extracted text, and metadata.
-Retries 3x (30/60/120s) on transient failures. Exits 2 on 401 (STOP signal).
+Retries 3x (30/60/120s) on transient failures. Exits 2 on 401 (STOP signal:
+credential rejected or model not in the founder's plan).
 """
-import argparse, base64, json, os, re, sys, time
+import argparse, json, os, re, sys, time
 import urllib.request
 
-def getcfg(cfg_path, key):
+def getcfg(cfg_path, key, default=None):
     with open(cfg_path) as f:
         for line in f:
             m = re.match(rf'^{re.escape(key)}:\s*([^#]+)', line)
             if m:
                 return m.group(1).strip()
+    if default is not None:
+        return default
     raise SystemExit(f"config key missing: {key}")
 
-def account_id(tok):
-    p = tok.split('.')[1]
-    p += '=' * (-len(p) % 4)
-    d = json.loads(base64.urlsafe_b64decode(p))
-    return d.get("https://api.openai.com/auth", {}).get("chatgpt_account_id", "")
+def resolve_key(cfg_path):
+    env_name = getcfg(cfg_path, "gpt_auth_env", "COMMANDCODE_API_KEY")
+    key = os.environ.get(env_name, "").strip()
+    if not key:  # founder's Command Code CLI login (auto-refreshed OAuth)
+        try:
+            key = json.load(open(os.path.expanduser(
+                "~/.commandcode/auth.json")))["apiKey"].strip()
+        except (OSError, ValueError, KeyError):
+            key = ""
+    if not key:
+        sys.exit(f"{env_name} missing and no ~/.commandcode/auth.json — "
+                 "escalate to the founder; there is no fallback route")
+    return key
 
 def main():
     ap = argparse.ArgumentParser()
@@ -32,32 +47,27 @@ def main():
     ap.add_argument("--out-dir", required=True)
     a = ap.parse_args()
 
-    ep = getcfg(a.config, "openai_endpoint")
-    tok = os.environ["OPENAI_OAUTH_TOKEN"]
-    acct = account_id(tok)
+    ep = getcfg(a.config, "gpt_endpoint")
+    key = resolve_key(a.config)
     instructions = open(a.instructions_file).read()
     user_text = open(a.input_file).read()
 
     body = {
         "model": a.model,
-        "instructions": instructions,
-        "input": [{"role": "user", "content": [{"type": "input_text", "text": user_text}]}],
-        "reasoning": {"effort": a.reasoning},
+        "messages": [{"role": "system", "content": instructions},
+                     {"role": "user", "content": user_text}],
+        "reasoning_effort": a.reasoning,
         "stream": True,
-        "store": False,
     }
     headers = {
-        "Authorization": f"Bearer {tok}",
-        "chatgpt-account-id": acct,
-        "OpenAI-Beta": "responses=experimental",
-        "originator": "codex_cli_rs",
+        "Authorization": f"Bearer {key}",
         "Content-Type": "application/json",
         "Accept": "text/event-stream",
+        "User-Agent": "loop-runner/1.0",
     }
     os.makedirs(a.out_dir, exist_ok=True)
     red = dict(headers)
     red["Authorization"] = "Bearer [REDACTED]"
-    red["chatgpt-account-id"] = "[REDACTED]"
     with open(os.path.join(a.out_dir, "request.json"), "w") as f:
         json.dump({"endpoint": ep, "headers": red, "body": body}, f, indent=2)
 
@@ -94,10 +104,11 @@ def main():
         if code == 401:
             with open(os.path.join(a.out_dir, "response.sse"), "w") as f:
                 f.write(raw[:5000])
-            print("HTTP 401 — OAuth token rejected. STOP: founder must refresh token.", file=sys.stderr)
+            print("HTTP 401 — Command Code credential rejected or model not in "
+                  "plan. STOP: escalate to the founder.", file=sys.stderr)
             sys.exit(2)
 
-        text_parts, usage, completed = [], None, False
+        text_parts, usage, finish = [], None, None
         if code == 200:
             for line in raw.splitlines():
                 if not line.startswith("data:"):
@@ -109,20 +120,16 @@ def main():
                     ev = json.loads(data)
                 except Exception:
                     continue
-                et = ev.get("type", "")
-                if et == "response.output_text.delta":
-                    text_parts.append(ev.get("delta", ""))
-                elif et == "response.completed":
-                    completed = True
-                    usage = ev.get("response", {}).get("usage")
-                    if not text_parts:
-                        for item in ev.get("response", {}).get("output", []):
-                            for c in item.get("content", []) or []:
-                                if c.get("type") in ("output_text", "text"):
-                                    text_parts.append(c.get("text", ""))
+                for ch in ev.get("choices", []) or []:
+                    delta = ch.get("delta") or {}
+                    if delta.get("content"):
+                        text_parts.append(delta["content"])
+                    if ch.get("finish_reason"):
+                        finish = ch["finish_reason"]
+                usage = ev.get("usage") or usage
         text = "".join(text_parts)
 
-        if code == 200 and completed and text.strip():
+        if code == 200 and finish is not None and text.strip():
             with open(os.path.join(a.out_dir, "response.sse"), "w") as f:
                 f.write(raw)
             with open(os.path.join(a.out_dir, "response.md"), "w") as f:
@@ -130,13 +137,13 @@ def main():
             with open(os.path.join(a.out_dir, "metadata.json"), "w") as f:
                 json.dump({"model": a.model, "reasoning": a.reasoning, "http": code,
                            "latency_s": latency, "usage": usage, "attempt": attempt + 1,
-                           "completed": True}, f, indent=2)
+                           "finish_reason": finish, "completed": True}, f, indent=2)
             print(f"OK {a.out_dir} ({latency}s)")
             return
 
         if attempt < 3:
             wait = backoffs[attempt]
-            print(f"attempt {attempt+1} failed (http={code}, completed={completed}, "
+            print(f"attempt {attempt+1} failed (http={code}, finish={finish}, "
                   f"text={len(text)} chars) — retrying in {wait}s", file=sys.stderr)
             time.sleep(wait)
             attempt += 1

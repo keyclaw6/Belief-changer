@@ -38,9 +38,8 @@ but a stable machine removes the whole failure class.
 ## Routes (loop/config.yaml is the SOLE authority)
 
 - GPT roles (framing/commissioner/judges/analyzer/hypothesizer/evidence
-  editor/plan reviewer): Codex backend Responses endpoint, streaming,
-  `OPENAI_OAUTH_TOKEN` (+ chatgpt-account-id decoded from its JWT —
-  `scripts/loop-runner/gpt_role_call.py` does everything).
+  editor/plan reviewer): Command Code proxy chat completions, streaming —
+  `scripts/loop-runner/gpt_role_call.py` does everything.
 - Research: `MiniMaxAI/MiniMax-M3` via the Command Code proxy (chat
   completions) with ORCHESTRATOR-EXECUTED web tools —
   `scripts/loop-runner/research_toolloop_call.py`.
@@ -50,14 +49,13 @@ but a stable machine removes the whole failure class.
   `scripts/loop-runner/writer_call.py`.
 
 Route change 2026-08-07 (founder): writer, research, and planner all run
-through the founder's Command Code proxy loopback; no fallback route is
-coded. Required env vars: `OPENAI_OAUTH_TOKEN` (GPT roles). Proxy auth is
-`COMMANDCODE_API_KEY`, or the Command Code CLI login
-(`~/.commandcode/auth.json`) when the env var is absent. Use dotenvx per
-AGENTS.md; never commit values.
-On any OpenAI 401: STOP and ask the founder to refresh the token.
+through the founder's Command Code proxy loopback, and so do all GPT roles;
+no fallback route is coded. Auth for every role is `COMMANDCODE_API_KEY`,
+or the Command Code CLI login (`~/.commandcode/auth.json`) when the env var
+is absent. Use dotenvx per AGENTS.md; never commit values.
 On any Command Code route failure (missing credential, proxy down, model
-not listed): STOP and escalate to the founder — there is no fallback route.
+not listed or not in plan — HTTP 401): STOP and escalate to the founder —
+there is no fallback route.
 
 ## The harness (scripts/loop-runner/)
 

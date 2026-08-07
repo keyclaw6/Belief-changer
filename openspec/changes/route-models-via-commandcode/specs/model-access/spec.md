@@ -3,12 +3,13 @@
 ## ADDED Requirements
 
 ### Requirement: Single founder-approved model route
-Factory provider model calls (writer, research, planner) SHALL route only
-through the founder-approved Command Code proxy loopback, authenticated with
-the founder's Command Code credential supplied via `COMMANDCODE_API_KEY` or
-the Command Code CLI login. GPT roles run as fresh clean calls on the OpenAI
-subscription OAuth route and NEVER through the proxy. No fallback provider
-route SHALL exist in code.
+Every factory provider model call — writer, research, planner, and all GPT
+roles (judging, trace analysis, hypothesizing, framing, commissioning,
+evidence editing, plan review) — SHALL route only through the founder-
+approved Command Code proxy loopback, authenticated with the founder's
+Command Code credential supplied via `COMMANDCODE_API_KEY` or the Command
+Code CLI login. Role calls carry only the role prompt and listed inputs.
+No fallback provider route SHALL exist in code.
 
 #### Scenario: Credential or proxy unavailable
 WHEN the Command Code credential is missing, the proxy is unreachable, or the
