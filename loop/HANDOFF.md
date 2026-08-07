@@ -41,19 +41,23 @@ but a stable machine removes the whole failure class.
   editor/plan reviewer): Codex backend Responses endpoint, streaming,
   `OPENAI_OAUTH_TOKEN` (+ chatgpt-account-id decoded from its JWT —
   `scripts/loop-runner/gpt_role_call.py` does everything).
-- Research: `minimax-m3` via opencode Go chat completions
-  (`OPENCODE_GO_API_KEY`) with ORCHESTRATOR-EXECUTED web tools —
-  `scripts/loop-runner/research_toolloop_call.py` (founder route switch
-  2026-07-29; the Go gateway has no native web tools).
-- Planner: `kimi-k3` via opencode Go — `scripts/loop-runner/opencode_call.py`.
-- Writer: Muse Spark 1.1 via OpenRouter (`OPENROUTER_API_KEY`) —
-  `scripts/loop-runner/openrouter_call.py --role writer`. NOTE: the
-  OpenRouter key sits at $8.73 of a $10 limit — raise it before the
-  writing stage (20 chapters) or writer calls will be refused.
+- Research: `MiniMaxAI/MiniMax-M3` via the Command Code proxy (chat
+  completions) with ORCHESTRATOR-EXECUTED web tools —
+  `scripts/loop-runner/research_toolloop_call.py`.
+- Planner: `moonshotai/Kimi-K3` via the Command Code proxy —
+  `scripts/loop-runner/planner_call.py`.
+- Writer: `deepseek/deepseek-v4-pro` via the Command Code proxy —
+  `scripts/loop-runner/writer_call.py`.
 
-Required env vars: `OPENAI_OAUTH_TOKEN`, `OPENROUTER_API_KEY`,
-`OPENCODE_GO_API_KEY`. Use dotenvx per AGENTS.md; never commit values.
+Route change 2026-08-07 (founder): writer, research, and planner all run
+through the founder's Command Code proxy loopback; no fallback route is
+coded. Required env vars: `OPENAI_OAUTH_TOKEN` (GPT roles). Proxy auth is
+`COMMANDCODE_API_KEY`, or the Command Code CLI login
+(`~/.commandcode/auth.json`) when the env var is absent. Use dotenvx per
+AGENTS.md; never commit values.
 On any OpenAI 401: STOP and ask the founder to refresh the token.
+On any Command Code route failure (missing credential, proxy down, model
+not listed): STOP and escalate to the founder — there is no fallback route.
 
 ## The harness (scripts/loop-runner/)
 
@@ -68,7 +72,8 @@ location; scratch state under `.loop-work/`, gitignored):
 - `research_round.py` — one research round: lead → parse `=== COMMISSION
   K-NN ===` fences → run each as a fresh subagent call (skip-done,
   RESEARCH_MAX_PARALLEL=4, 15s stagger).
-- `opencode_call.py`, `openrouter_call.py` — planner / writer transports.
+- `planner_call.py`, `writer_call.py` — planner / writer transports
+  (Command Code proxy).
 - `run_preflight.sh` — the §2 judge battery (re-run only after judge edits).
 - `queue_runner.sh` + `daemon.sh` — file-queue job runner (jobs in
   `.loop-work/queue/pending/*.job`); useful on the VPS for detached
@@ -81,13 +86,12 @@ location; scratch state under `.loop-work/`, gitignored):
    is on everywhere; keep it.
 2. **Custom User-Agent required** — Cloudflare bans default Python UA
    (error 1010) on opencode.ai. `loop-runner/1.0` is set everywhere.
-3. **OpenRouter Responses API requires `store: false`.**
-4. **Checkpoint everything long.** research_toolloop persists transcript
+3. **Checkpoint everything long.** research_toolloop persists transcript
    per round; resume is automatic from `checkpoint.json`.
-5. **Retries must never re-bill doomed work**: distinguish operator-side
+4. **Retries must never re-bill doomed work**: distinguish operator-side
    network failures (patient waits, no retry budget) from API failures
    (3x 30/60/120s per PROGRAM).
-6. **Judges are calibrated; leave them alone.** Any suspected judge defect
+5. **Judges are calibrated; leave them alone.** Any suspected judge defect
    stops the campaign for the founder (PROGRAM §5), full stop.
 
 ## Constitution reminders (read before acting)

@@ -1,16 +1,36 @@
 #!/usr/bin/env python3
-"""Planner call — Kimi K3 through the opencode Go gateway (chat completions),
-per loop/config.yaml. Saves request (Authorization REDACTED), raw response,
-text, metadata. Retries 3x. No time limits (founder rule)."""
+"""Planner call — chat completions through the founder's Command Code proxy
+loopback (sole provider route; no fallbacks — on failure the operator
+escalates to the founder), per loop/config.yaml. Key: the env var named by
+`planner_auth_env`, or the founder's Command Code CLI login
+(~/.commandcode/auth.json) when that env var is absent.
+Saves request (Authorization REDACTED), raw response, text, metadata.
+Retries 3x. No time limits (founder rule)."""
 import argparse, json, os, re, sys, time
 import urllib.request
 
-def getcfg(cfg, key):
+def getcfg(cfg, key, default=None):
     for line in open(cfg):
         m = re.match(rf'^{re.escape(key)}:\s*([^#]+)', line)
         if m:
             return m.group(1).strip()
+    if default is not None:
+        return default
     raise SystemExit(f"config key missing: {key}")
+
+def resolve_key(cfg):
+    env_name = getcfg(cfg, "planner_auth_env", "COMMANDCODE_API_KEY")
+    key = os.environ.get(env_name, "").strip()
+    if not key:  # founder's Command Code CLI login (auto-refreshed OAuth)
+        try:
+            key = json.load(open(os.path.expanduser(
+                "~/.commandcode/auth.json")))["apiKey"].strip()
+        except (OSError, ValueError, KeyError):
+            key = ""
+    if not key:
+        sys.exit(f"{env_name} missing and no ~/.commandcode/auth.json — "
+                 "escalate to the founder; there is no fallback route")
+    return key
 
 def main():
     ap = argparse.ArgumentParser()
@@ -22,7 +42,7 @@ def main():
 
     url = getcfg(a.config, "planner_endpoint")
     model = getcfg(a.config, "planner_model")
-    key = os.environ[getcfg(a.config, "planner_auth_env")]
+    key = resolve_key(a.config)
     headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json",
                "User-Agent": "loop-runner/1.0"}
     body = {"model": model,

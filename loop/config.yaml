@@ -4,20 +4,27 @@
 # These are STARTING POINTS. The loop can hypothesize changes to any value.
 
 # Writer — the six-input contract lives in PROGRAM.md Step 3
-writer_model: google/gemini-3-flash-preview
-writer_endpoint: https://openrouter.ai/api/v1/chat/completions
-writer_reasoning: high   # supported by Gemini 3 Flash Preview
+# Route change 2026-08-07 (founder): all provider calls go through the
+# Command Code proxy loopback; no fallbacks — failure escalates to founder.
+# Model must be in the founder's Command Code plan (verified live 2026-08-07:
+# deepseek v4 pro/flash, MiniMax-M3, Kimi-K3, Qwen3.7-Max, free Laguna OK;
+# Claude/Gemini/GPT ids return MODEL_NOT_IN_PLAN). Starting point: DeepSeek
+# V4 Pro with reasoning high.
+writer_model: deepseek/deepseek-v4-pro
+writer_endpoint: http://127.0.0.1:3050/v1/chat/completions
+writer_auth_env: COMMANDCODE_API_KEY
+writer_reasoning: high
 writer_temperature: 0.7
 # No completion cap: requests omit max_tokens; no model fallbacks.
 
-# Research — founder instruction 2026-07-29: MiniMax M3 through the
-# opencode Go subscription (chat completions + function calling; the Go
-# gateway has no native web tools, so the orchestrator executes
-# web_search/web_fetch for the model — depth stays unlimited).
-# Verified live 2026-07-29: minimax-m3 exact id, 200, function calling OK.
-researcher_model: minimax-m3
-researcher_endpoint: https://opencode.ai/zen/go/v1/chat/completions
-researcher_auth_env: OPENCODE_GO_API_KEY
+# Research — MiniMax M3 (chat completions + function calling; the proxy has
+# no native web tools, so the orchestrator executes web_search/web_fetch for
+# the model — depth stays unlimited). Founder instruction 2026-07-29 moved
+# research to MiniMax M3; the 2026-08-07 route change moves the transport to
+# the Command Code proxy (exact listed model id: MiniMaxAI/MiniMax-M3).
+researcher_model: MiniMaxAI/MiniMax-M3
+researcher_endpoint: http://127.0.0.1:3050/v1/chat/completions
+researcher_auth_env: COMMANDCODE_API_KEY
 researcher_transport: chat-tools   # orchestrator-executed web tools
 researcher_reasoning: high
 researcher_tools: [web_search, web_fetch]
@@ -27,15 +34,13 @@ research_fetch_limit: unlimited
 # Reuse: research artifacts are reused across iterations unless the
 # hypothesis changes the research stage or the brief (PROGRAM Step 3).
 
-# Planner — the master-plan skill call runs on Kimi K3 through the
-# founder's opencode Go subscription (OpenAI-compatible; note the /go/
-# path — the plain /zen/v1/ path is the separate pay-per-credit product).
-# Verified live 2026-07-28: kimi-k3 exact id, 200 on the Go plan.
-# Models list: GET https://opencode.ai/zen/go/v1/models
+# Planner — the master-plan skill call runs on Kimi K3 through the Command
+# Code proxy (OpenAI-compatible; exact listed model id: moonshotai/Kimi-K3).
+# Models list: GET http://127.0.0.1:3050/v1/models
 # (Its review gate is a GPT role: plan_reviewer_* below, per the skill.)
-planner_model: kimi-k3
-planner_endpoint: https://opencode.ai/zen/go/v1/chat/completions
-planner_auth_env: OPENCODE_GO_API_KEY
+planner_model: moonshotai/Kimi-K3
+planner_endpoint: http://127.0.0.1:3050/v1/chat/completions
+planner_auth_env: COMMANDCODE_API_KEY
 planner_reasoning: high
 
 # GPT roles (framing, commissioning, judging, trace analysis, hypothesizing,

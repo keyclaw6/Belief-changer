@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
-"""Research role call via the opencode Go gateway (chat completions,
-function calling) with ORCHESTRATOR-EXECUTED web tools.
+"""Research role call via the founder's Command Code proxy loopback (chat
+completions, function calling) with ORCHESTRATOR-EXECUTED web tools.
+Sole provider route; no fallbacks — on failure the operator escalates to
+the founder. Key: the env var named by `researcher_auth_env`, or the
+founder's Command Code CLI login (~/.commandcode/auth.json) when that env
+var is absent.
 
 The gateway has no native web tools, so this runner supplies them:
   web_search(query)  -> DuckDuckGo HTML results (title, url, snippet)
@@ -144,9 +148,18 @@ def main():
     cfg = a.config
     endpoint = getcfg(cfg, "researcher_endpoint")
     model = getcfg(cfg, "researcher_model")
-    auth_env = getcfg(cfg, "researcher_auth_env", "OPENCODE_GO_API_KEY")
+    auth_env = getcfg(cfg, "researcher_auth_env", "COMMANDCODE_API_KEY")
     effort = getcfg(cfg, "researcher_reasoning")
-    key = os.environ[auth_env]
+    key = os.environ.get(auth_env, "").strip()
+    if not key:  # founder's Command Code CLI login (auto-refreshed OAuth)
+        try:
+            key = json.load(open(os.path.expanduser(
+                "~/.commandcode/auth.json")))["apiKey"].strip()
+        except (OSError, ValueError, KeyError):
+            key = ""
+    if not key:
+        sys.exit(f"{auth_env} missing and no ~/.commandcode/auth.json — "
+                 "escalate to the founder; there is no fallback route")
     headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json",
                "Accept": "text/event-stream", "User-Agent": "loop-runner/1.0"}
     os.makedirs(a.out_dir, exist_ok=True)

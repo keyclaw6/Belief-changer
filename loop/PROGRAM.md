@@ -52,13 +52,13 @@ No value elsewhere in this file overrides config.
   role — the orchestrator supplies every input inline; the role model has
   no host system prompt, no tools, and no filesystem. Save the exact
   request and response in the traces.
-- **OpenRouter roles** (`$OPENROUTER_API_KEY`) — writer (Muse Spark 1.1,
-  chat completions) and research (DeepSeek, Responses API with web_search +
-  web_fetch), per config. Nothing else ever uses OpenRouter.
-- **Planner** — Kimi K3 through the opencode Go subscription's gateway
-  (endpoint in config — the /go/ path, not the pay-per-credit /zen/v1/
-  path; `Authorization: Bearer $OPENCODE_GO_API_KEY`), chat completions,
-  per config.
+- **Command Code proxy roles** — writer, research, and planner, per config,
+  all chat completions through the founder's Command Code proxy loopback
+  (`Authorization: Bearer $COMMANDCODE_API_KEY`, or the founder's Command
+  Code CLI login when the env var is absent). Research web tools are
+  executed by the orchestrator. Nothing else ever uses the proxy. No
+  fallback route is coded: a missing credential or unreachable proxy stops
+  the run and escalates to the founder.
 The orchestrator itself is plumbing: it assembles inputs, makes calls,
 saves traces, and follows this file — no measured role runs inside it.
 
@@ -150,8 +150,8 @@ research artifacts and copy them into this iteration's traces.
 accepted research syntheses; then a fresh independent semantic review is
 accepted in `framing-review.md`. Planning is blocked until accepted.
 
-**Stage: Planning** — a fresh planner call (Kimi K3 through the opencode
-go subscription, per config) follows `prompts/master-plan-skill-v2.md` (exact five inputs, no
+**Stage: Planning** — a fresh planner call (Kimi K3 through the Command
+Code proxy, per config) follows `prompts/master-plan-skill-v2.md` (exact five inputs, no
 reference contamination), then its fresh review gate — a GPT plan-reviewer
 call per config — iterates until `master-plan-review.md` ends
 `fit to write from`. When the accepted plan changed, rebuild

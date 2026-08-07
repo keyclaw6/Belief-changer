@@ -21,14 +21,15 @@ CFG = f"{REPO}/loop/config.yaml"
 BOOK = f"{REPO}/production-books/quit-sugar"
 ROUNDS = f"{BOOK}/research/_rounds"
 # Transport per loop/config.yaml: chat-tools -> tool-loop runner on the
-# opencode Go gateway (founder instruction 2026-07-29); else OpenRouter.
+# Command Code proxy. There is no fallback route — any other value is a hard
+# stop the operator escalates to the founder.
 def _research_call():
     cfg = open(CFG).read()
     if "researcher_transport: chat-tools" in cfg:
         return ["python3", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "research_toolloop_call.py"),
                 "--config", CFG]
-    return ["python3", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "openrouter_call.py"),
-            "--config", CFG, "--role", "research"]
+    raise SystemExit("researcher_transport must be chat-tools — no fallback "
+                     "route; escalate to the founder")
 CALL = _research_call()
 RESEARCH_PROMPT = f"{REPO}/prompts/research-agent.md"
 

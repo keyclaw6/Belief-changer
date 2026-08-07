@@ -1,20 +1,37 @@
 #!/usr/bin/env python3
-"""OpenRouter role call — writer (chat completions) or research (Responses API
-with web_search + web_fetch). Routes/models/params read from loop/config.yaml.
+"""Writer role call — chat completions through the founder's Command Code
+proxy loopback (sole provider route; no fallbacks — on failure the operator
+escalates to the founder). Routes/models/params read from loop/config.yaml.
+Key: the env var named by `writer_auth_env`, or the founder's Command Code
+CLI login (~/.commandcode/auth.json) when that env var is absent.
 Saves exact request (Authorization REDACTED), raw response, extracted text,
 metadata. Retries 3x (30/60/120s). Founder rule: no time limits on role calls.
-Research continuation on finish_reason/status "length"/"incomplete" is handled
-by the caller re-invoking with --continue-from.
 """
 import argparse, json, os, re, sys, time
 import urllib.request
 
-def getcfg(cfg, key):
+def getcfg(cfg, key, default=None):
     for line in open(cfg):
         m = re.match(rf'^{re.escape(key)}:\s*([^#]+)', line)
         if m:
             return m.group(1).strip()
+    if default is not None:
+        return default
     raise SystemExit(f"config key missing: {key}")
+
+def resolve_key(cfg):
+    env_name = getcfg(cfg, "writer_auth_env", "COMMANDCODE_API_KEY")
+    key = os.environ.get(env_name, "").strip()
+    if not key:  # founder's Command Code CLI login (auto-refreshed OAuth)
+        try:
+            key = json.load(open(os.path.expanduser(
+                "~/.commandcode/auth.json")))["apiKey"].strip()
+        except (OSError, ValueError, KeyError):
+            key = ""
+    if not key:
+        sys.exit(f"{env_name} missing and no ~/.commandcode/auth.json — "
+                 "escalate to the founder; there is no fallback route")
+    return key
 
 def post_stream(url, body, headers):
     """Stream SSE; returns (status, full_raw_text). Heartbeats arrive as events,
@@ -48,42 +65,26 @@ def parse_sse(raw):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", required=True)
-    ap.add_argument("--role", required=True, choices=["writer", "research"])
-    ap.add_argument("--system-file")          # writer: system prompt file
+    ap.add_argument("--system-file")          # optional system prompt file
     ap.add_argument("--user-file", required=True)
     ap.add_argument("--out-dir", required=True)
-    ap.add_argument("--previous-response-id") # research continuation
     a = ap.parse_args()
 
-    key = os.environ["OPENROUTER_API_KEY"]
+    key = resolve_key(a.config)
     headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json",
                "User-Agent": "loop-runner/1.0"}
     user_text = open(a.user_file).read()
 
-    if a.role == "writer":
-        url = getcfg(a.config, "writer_endpoint")
-        model = getcfg(a.config, "writer_model")
-        msgs = []
-        if a.system_file:
-            msgs.append({"role": "system", "content": open(a.system_file).read()})
-        msgs.append({"role": "user", "content": user_text})
-        body = {"model": model, "messages": msgs, "stream": True,
-                "temperature": float(getcfg(a.config, "writer_temperature")),
-                "reasoning": {"effort": getcfg(a.config, "writer_reasoning")}}
-        # no max_tokens, no fallbacks — per config comments
-    else:
-        url = getcfg(a.config, "researcher_endpoint")
-        model = getcfg(a.config, "researcher_model")
-        body = {"model": model,
-                "input": user_text if not a.system_file else None,
-                "reasoning": {"effort": getcfg(a.config, "researcher_reasoning")},
-                "tools": [{"type": "web_search"}, {"type": "web_fetch"}],
-                "stream": True, "store": False}
-        if a.system_file:
-            body["instructions"] = open(a.system_file).read()
-            body["input"] = user_text
-        if a.previous_response_id:
-            body["previous_response_id"] = a.previous_response_id
+    url = getcfg(a.config, "writer_endpoint")
+    model = getcfg(a.config, "writer_model")
+    msgs = []
+    if a.system_file:
+        msgs.append({"role": "system", "content": open(a.system_file).read()})
+    msgs.append({"role": "user", "content": user_text})
+    body = {"model": model, "messages": msgs, "stream": True,
+            "temperature": float(getcfg(a.config, "writer_temperature")),
+            "reasoning": {"effort": getcfg(a.config, "writer_reasoning")}}
+    # no max_tokens, no fallbacks — per config comments
 
     os.makedirs(a.out_dir, exist_ok=True)
     red = dict(headers); red["Authorization"] = "Bearer [REDACTED]"
@@ -107,41 +108,19 @@ def main():
                 continue
         ok, text, meta = False, "", {}
         if code == 200:
-            if a.role == "writer":
-                parts, finish, usage, mdl = [], None, None, None
-                for ev in parse_sse(raw):
-                    for ch in ev.get("choices", []) or []:
-                        delta = ch.get("delta") or {}
-                        if delta.get("content"):
-                            parts.append(delta["content"])
-                        if ch.get("finish_reason"):
-                            finish = ch["finish_reason"]
-                    usage = ev.get("usage") or usage
-                    mdl = ev.get("model") or mdl
-                text = "".join(parts)
-                meta = {"finish_reason": finish, "usage": usage, "model": mdl}
-                ok = bool(text.strip()) and finish is not None
-            else:
-                parts, status, rid, usage, incomplete = [], None, None, None, None
-                for ev in parse_sse(raw):
-                    et = ev.get("type", "")
-                    if et == "response.output_text.delta":
-                        parts.append(ev.get("delta", ""))
-                    elif et in ("response.completed", "response.incomplete"):
-                        resp = ev.get("response", {})
-                        status = resp.get("status")
-                        rid = resp.get("id")
-                        usage = resp.get("usage")
-                        incomplete = resp.get("incomplete_details")
-                        if not parts:
-                            for item in resp.get("output", []):
-                                for c in item.get("content", []) or []:
-                                    if c.get("type") in ("output_text", "text"):
-                                        parts.append(c.get("text", ""))
-                text = "".join(parts)
-                meta = {"status": status, "response_id": rid,
-                        "incomplete": incomplete, "usage": usage}
-                ok = status in ("completed", "incomplete") and bool(text.strip())
+            parts, finish, usage, mdl = [], None, None, None
+            for ev in parse_sse(raw):
+                for ch in ev.get("choices", []) or []:
+                    delta = ch.get("delta") or {}
+                    if delta.get("content"):
+                        parts.append(delta["content"])
+                    if ch.get("finish_reason"):
+                        finish = ch["finish_reason"]
+                usage = ev.get("usage") or usage
+                mdl = ev.get("model") or mdl
+            text = "".join(parts)
+            meta = {"finish_reason": finish, "usage": usage, "model": mdl}
+            ok = bool(text.strip()) and finish is not None
         if ok:
             open(os.path.join(a.out_dir, "response.raw.json"), "w").write(raw)
             open(os.path.join(a.out_dir, "response.md"), "w").write(text)
