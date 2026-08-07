@@ -45,7 +45,7 @@ but a stable machine removes the whole failure class.
   `scripts/loop-runner/research_toolloop_call.py`.
 - Planner: `moonshotai/Kimi-K3` via the Command Code proxy —
   `scripts/loop-runner/planner_call.py`.
-- Writer: `deepseek/deepseek-v4-pro` via the Command Code proxy —
+- Writer: `meta/muse-spark-1.2-contributor` via the Command Code proxy —
   `scripts/loop-runner/writer_call.py`.
 
 Route change 2026-08-07 (founder): writer, research, and planner all run

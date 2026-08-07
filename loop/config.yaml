@@ -6,11 +6,9 @@
 # Writer — the six-input contract lives in PROGRAM.md Step 3
 # Route change 2026-08-07 (founder): all provider calls go through the
 # Command Code proxy loopback; no fallbacks — failure escalates to founder.
-# Model must be in the founder's Command Code plan (verified live 2026-08-07:
-# deepseek v4 pro/flash, MiniMax-M3, Kimi-K3, Qwen3.7-Max, free Laguna OK;
-# Claude/Gemini/GPT ids return MODEL_NOT_IN_PLAN). Starting point: DeepSeek
-# V4 Pro with reasoning high.
-writer_model: deepseek/deepseek-v4-pro
+# Founder model choice 2026-08-07: Muse Spark 1.2 contributor (Meta). The id
+# must stay one the Command Code proxy lists and the founder's plan covers.
+writer_model: meta/muse-spark-1.2-contributor
 writer_endpoint: http://127.0.0.1:3050/v1/chat/completions
 writer_auth_env: COMMANDCODE_API_KEY
 writer_reasoning: high
@@ -57,7 +55,7 @@ planner_reasoning: high
 gpt_endpoint: http://127.0.0.1:3050/v1/chat/completions
 gpt_auth_env: COMMANDCODE_API_KEY
 judge_model: gpt-5.6-luna
-judge_reasoning: medium
+judge_reasoning: high   # founder choice 2026-08-07
 analyzer_model: gpt-5.6-luna
 analyzer_reasoning: high
 hypothesizer_model: gpt-5.6-luna

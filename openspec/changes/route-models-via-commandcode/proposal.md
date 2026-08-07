@@ -10,8 +10,8 @@ failure the executor stops and calls the founder.
 ## What Changes
 - `loop/config.yaml` (sole route authority): writer, research, and planner
   endpoints move to the Command Code proxy; model ids move to the proxy's
-  listed ids that the founder's plan covers (`deepseek/deepseek-v4-pro`,
-  `MiniMaxAI/MiniMax-M3`, `moonshotai/Kimi-K3`); auth env is
+  listed ids that the founder's plan covers (`meta/muse-spark-1.2-contributor`
+  per founder choice, `MiniMaxAI/MiniMax-M3`, `moonshotai/Kimi-K3`); auth env is
   `COMMANDCODE_API_KEY` with the Command
   Code CLI login (`~/.commandcode/auth.json`) when the env var is absent.
 - The GPT roles (judges, analyzer, hypothesizer, framing, commissioner,
