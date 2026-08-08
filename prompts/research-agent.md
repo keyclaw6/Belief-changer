@@ -46,9 +46,9 @@ prose here.
   stopping thin because the search got tiring.
 - **Multiple fresh sub-agents are mandatory for independent depth** — never one
   context for everything. Spawn them with the `subagent` tool (parallel mode,
-  one targeted commission per sub-agent), give each only this prompt, the
-  brief, its specific commission, and the artifacts it needs — never sibling
-  sub-agents' raw context.
+  up to ten at a time, one targeted commission per sub-agent), give each only
+  this prompt, the brief, its specific commission, and the artifacts it needs —
+  never sibling sub-agents' raw context.
 - **The lead owns the method.** No prompt, matrix, or framework prescribes a
   role count, a search order, or a stopping quota. Do not ask the operator to
   design the research.
@@ -76,8 +76,9 @@ You ARE the research orchestrator. You have the web primitives
 2. **Discover** the communities and source families for the subject (§2) —
    relentlessly, until the map is real.
 3. **Dispatch** fresh research sub-agents per lane, persona, and community, in
-   parallel (§3). Each sub-agent mines, fetches, and returns its packets into
-   the ten banks on disk (§5) with full provenance (§6).
+   parallel — up to ten concurrent (§3). Each sub-agent mines, fetches, and
+   returns its packets into the ten banks on disk (§5) with full provenance
+   (§6).
 4. **Integrate.** Read what came back. Name what is still missing — thin
    persona, unfilled slot, unreached community — and dispatch again.
 5. **Synthesize** when the completion criterion clears (§7): write

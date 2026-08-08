@@ -81,11 +81,13 @@ location; scratch state under `.loop-work/`, gitignored):
 - `planner_call.py`, `writer_call.py` — planner / writer transports
   (Command Code proxy).
 
-**One-time pi setup (research sub-agents):** symlink the subagent extension
-from the installed pi package into `~/.pi/agent/extensions/subagent/`
-(`examples/extensions/subagent/index.ts` + `agents.ts`). The project-local
-research agent lives in this repo at `.pi/agents/researcher.md` and is
-discovered automatically when pi runs from the repo root.
+**One-time pi setup (research sub-agents):** copy the subagent extension from
+the installed pi package into `~/.pi/agent/extensions/subagent/`
+(`examples/extensions/subagent/index.ts` + `agents.ts`) and raise the caps to
+`MAX_PARALLEL_TASKS = 10` and `MAX_CONCURRENCY = 10` (founder decision
+2026-08-08 — the orchestrator may spawn ten sub-agents at a time). The
+project-local research agent lives in this repo at `.pi/agents/researcher.md`
+and is discovered automatically when pi runs from the repo root.
 - `run_preflight.sh` — the §2 judge battery (re-run only after judge edits).
 - `queue_runner.sh` + `daemon.sh` — file-queue job runner (jobs in
   `.loop-work/queue/pending/*.job`); useful on the VPS for detached
