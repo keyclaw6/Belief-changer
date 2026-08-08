@@ -1,6 +1,6 @@
 # Master Plan Review — <Book Title>
 
-<!-- Required reviewer: GPT-5.6 Sol | gpt-5.6-sol | fresh native Codex subagent -->
+<!-- Required reviewer: GPT-5.6 Luna | gpt-5.6-luna | fresh independent planning reviewer -->
 
 ## Review identity and binding
 

@@ -11,8 +11,6 @@
 writer_model: meta/muse-spark-1.2-contributor
 writer_endpoint: http://127.0.0.1:3050/v1/chat/completions
 writer_auth_env: COMMANDCODE_API_KEY
-writer_reasoning: high
-writer_temperature: 0.7
 # No completion cap: requests omit max_tokens; no model fallbacks.
 
 # Research — the orchestrator/lead runs on MiniMax M3 through the Command
