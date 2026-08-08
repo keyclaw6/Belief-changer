@@ -39,13 +39,11 @@ planner_endpoint: http://127.0.0.1:3050/v1/chat/completions
 planner_auth_env: COMMANDCODE_API_KEY
 planner_reasoning: high
 
-# GPT roles (framing, judging, trace analysis, hypothesizing,
-# evidence editing, plan review): fresh clean chat-completions calls through
-# the Command Code proxy (route change 2026-08-07). Request contract per
-# call: role prompt as the system message, the listed inputs as the user
-# message, stream true. One call per role, carrying ONLY the role prompt and
-# its listed inputs. No hosted agent, no host system prompt, no tools, no
-# filesystem.
+# GPT roles (framing, framing-reviewer, judging, trace analysis,
+# hypothesizing, evidence editing, plan review): spawned pi sub-agents
+# (`.pi/agents/*.md`) through the Command Code proxy (route change
+# 2026-08-07). Request contract per role: only the role prompt and the
+# listed inputs — no hosted agent, no host system prompt.
 # Model must be in the founder's Command Code plan: gpt-5.6-sol/terra and
 # every other GPT id return MODEL_NOT_IN_PLAN (verified 2026-08-07), so all
 # roles start on gpt-5.6-luna; the loop may hypothesize other in-plan ids.

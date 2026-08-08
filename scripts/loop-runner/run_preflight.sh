@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # PROGRAM §2 preflight battery: 18 judge calls (6 PASS-test, 6 repeatability,
-# 6 voice-probe). Judge model/reasoning from loop/config.yaml.
+# 6 voice-probe). Each judge call is a spawned `judge` sub-agent (pi
+# subagent tool, `.pi/agents/judge.md`); model/reasoning from
+# loop/config.yaml.
 set -u
 HERE="$(cd "$(dirname "$0")" && pwd)"
 REPO=${BC_REPO:-"$(cd "$HERE/../.." && pwd)"}
@@ -8,17 +10,17 @@ CFG=$REPO/loop/config.yaml
 IN=$REPO/loop/preflight/inputs
 RUNS=${PREFLIGHT_RUNS_DIR:-$REPO/loop/preflight/runs}
 JUDGES=$REPO/loop/judges
-CALL="python3 $HERE/gpt_role_call.py"
-MODEL=$(grep -E '^judge_model:' "$CFG" | sed 's/^[^:]*: *//; s/ *#.*//')
 EFFORT=$(grep -E '^judge_reasoning:' "$CFG" | sed 's/^[^:]*: *//; s/ *#.*//')
+MODEL=$(grep -E '^judge_model:' "$CFG" | sed 's/^[^:]*: *//; s/ *#.*//')
 mkdir -p "$RUNS"
 
 run_one() {  # judge input-file out-tag
   local judge=$1 input=$2 tag=$3
   [ -f "$RUNS/$tag/response.md" ] && { echo "skip $tag (done)"; return 0; }
-  $CALL --config "$CFG" --model "$MODEL" --reasoning "$EFFORT" \
-    --instructions-file "$JUDGES/$judge.md" --input-file "$input" \
-    --out-dir "$RUNS/$tag"
+  mkdir -p "$RUNS/$tag"
+  pi --provider commandcode --model "$MODEL" --thinking "$EFFORT" -p \
+    "Use the subagent tool once with agent 'judge' and this task: rubric file $JUDGES/$judge.md, input file $input. Return your verdict exactly as the rubric requires, nothing else." \
+    --no-session > "$RUNS/$tag/response.md" 2>/dev/null
 }
 
 pids=(); fail=0

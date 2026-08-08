@@ -41,24 +41,23 @@ but a stable machine removes the whole failure class.
      `prompts/research-agent.md` clears across at least three personas.
   3. Synthesis into `production-books/quit-sugar/research/` per
      `prompts/research-agent.md` §9, then the independent evidence editor
-     gate (§10) — a fresh GPT role call, `ACCEPTED FOR FRAMING` required.
+     gate (§10) — the `evidence-editor` sub-agent, `ACCEPTED FOR FRAMING`
+     required.
   4. Then PROGRAM §3 continues: framing → plan → reference-alignment →
      plan cards → chapters → validity gates → judges → trace analysis →
      A/A check → BASELINE row. Commit after every stage on campaign-001.
 
 ## Routes (loop/config.yaml is the SOLE authority)
 
-- GPT roles (framing/judges/analyzer/hypothesizer/evidence
-  editor/plan reviewer): Command Code proxy chat completions, streaming —
-  `scripts/loop-runner/gpt_role_call.py` does everything.
-- Research: `MiniMaxAI/MiniMax-M3` via the Command Code proxy (chat
-  completions) — the orchestrator is the research lead and spawns fresh
-  `researcher` sub-agents (`.pi/agents/researcher.md`, `subagent` tool) that
-  search/fetch via `scripts/loop-runner/web_tools.py`.
-- Planner: `moonshotai/Kimi-K3` via the Command Code proxy —
-  `scripts/loop-runner/planner_call.py`.
-- Writer: `meta/muse-spark-1.2-contributor` via the Command Code proxy —
-  `scripts/loop-runner/writer_call.py`.
+- Every role is a spawned pi sub-agent (`.pi/agents/*.md`, `subagent` tool),
+  a thin wrapper over its contract prompt in `prompts/` or `loop/prompts/`,
+  with the model pinned per `loop/config.yaml`:
+  - `researcher` — `MiniMaxAI/MiniMax-M3`; search/fetch via
+    `scripts/loop-runner/web_tools.py`.
+  - `framing`, `framing-reviewer`, `evidence-editor`, `judge`,
+    `trace-analyzer`, `hypothesizer`, `plan-reviewer` — `gpt-5.6-luna`.
+  - `plan-writer` — `moonshotai/Kimi-K3`.
+  - `chapter-writer` — `meta/muse-spark-1.2-contributor`.
 
 Route change 2026-08-07 (founder): writer, research, and planner all run
 through the founder's Command Code proxy loopback, and so do all GPT roles;
@@ -74,20 +73,20 @@ there is no fallback route.
 All machine-independent (BC_REPO env var or auto-detected from script
 location; scratch state under `.loop-work/`, gitignored):
 
-- `gpt_role_call.py` — one fresh clean GPT role call; saves request
-  (auth REDACTED), SSE, response.md, metadata.
 - `web_tools.py` — search/fetch primitives for the research orchestrator and
   sub-agents (`python3 scripts/loop-runner/web_tools.py search|fetch`).
-- `planner_call.py`, `writer_call.py` — planner / writer transports
-  (Command Code proxy).
 
-**One-time pi setup (research sub-agents):** copy the subagent extension from
-the installed pi package into `~/.pi/agent/extensions/subagent/`
-(`examples/extensions/subagent/index.ts` + `agents.ts`) and raise the caps to
-`MAX_PARALLEL_TASKS = 10` and `MAX_CONCURRENCY = 10` (founder decision
-2026-08-08 — the orchestrator may spawn ten sub-agents at a time). The
-project-local research agent lives in this repo at `.pi/agents/researcher.md`
-and is discovered automatically when pi runs from the repo root.
+**One-time pi setup (sub-agents):**
+1. Copy the subagent extension from the installed pi package into
+   `~/.pi/agent/extensions/subagent/` (`examples/extensions/subagent/index.ts`
+   + `agents.ts`) and raise the caps to `MAX_PARALLEL_TASKS = 10` and
+   `MAX_CONCURRENCY = 10` (founder decision 2026-08-08 — the orchestrator may
+   spawn ten sub-agents at a time).
+2. Symlink every repo agent into the user agent scope (the extension's
+   default agent scope is `user`, so project-local discovery alone is not
+   enough):
+   `for f in .pi/agents/*.md; do ln -sf "$PWD/$f" ~/.pi/agent/agents/$(basename "$f"); done`
+The repo's `.pi/agents/*.md` files stay canonical; the symlinks follow them.
 - `run_preflight.sh` — the §2 judge battery (re-run only after judge edits).
 - `queue_runner.sh` + `daemon.sh` — file-queue job runner (jobs in
   `.loop-work/queue/pending/*.job`); useful on the VPS for detached

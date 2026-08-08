@@ -35,34 +35,43 @@ A hypothesis changes the factory that produces them, never the artifact itself.
 - `loop/judges/` (judge calibration is a separate founder-guided activity)
 - `loop/reference-alignment.md` (rebuilt only when the accepted plan changes)
 
-**Config authority:** before every model call, read the route, endpoint,
-model, reasoning, temperature, and provider policy from `loop/config.yaml`.
-No value elsewhere in this file overrides config.
+**Config authority:** `loop/config.yaml` is the single record of routes,
+models, reasoning, and parameters for every role; the pi agent definitions in
+`.pi/agents/` pin the same models. No value elsewhere overrides config.
 
-**Role calls (all plain API calls through the Command Code proxy):**
-- **GPT roles** — framing, judges, trace analyzer,
-  hypothesizer, evidence editor, plan reviewer: one fresh chat-completions
-  call per role through the Command Code proxy (endpoint in config;
-  `Authorization: Bearer $COMMANDCODE_API_KEY`, or the founder's Command
-  Code CLI login when the env var is absent; body: role prompt as the
-  system message, the listed inputs as the user message, `stream: true`;
-  per-role model and reasoning in config). The request carries ONLY the
-  role prompt plus the inputs this file lists for that role — the
-  orchestrator supplies every input inline; the role model has no host
-  system prompt, no tools, and no filesystem. Save the exact request and
-  response in the traces.
-- **Command Code proxy roles** — writer and planner are chat completions per
-  config through the founder's Command Code proxy loopback
-  (`Authorization: Bearer $COMMANDCODE_API_KEY`, or the founder's Command
-  Code CLI login when the env var is absent). Research runs as the
-  orchestrator plus fresh `subagent`-tool sub-agents (project agent
-  `.pi/agents/researcher.md`), all on the same proxy route; sub-agents
-  execute their own search and fetch via
-  `scripts/loop-runner/web_tools.py`. Nothing else ever uses the proxy. No
-  fallback route is coded: a missing credential or unreachable proxy stops
-  the run and escalates to the founder.
-The orchestrator itself is plumbing: it assembles inputs, makes calls,
-saves traces, and follows this file — no measured role runs inside it.
+**Role calls — every role is a spawned pi sub-agent.** The orchestrator (the
+pi coding agent) runs the loop by spawning one fresh sub-agent per role with
+the `subagent` tool. Each agent definition lives in `.pi/agents/` (project
+scope) and is a thin wrapper: it points at its contract prompt under
+`prompts/` or `loop/prompts/` — the prompts are the real tuning surface — and
+pins its model per `loop/config.yaml`. All roles route their model calls
+through the founder's Command Code proxy loopback (credential via
+`COMMANDCODE_API_KEY` or the founder's Command Code CLI login). A role call
+carries ONLY its role prompt and the listed inputs: no host system prompt, no
+shared context with sibling roles. Nothing else ever uses the proxy. No
+fallback route is coded: a missing credential or unreachable proxy stops the
+run and escalates to the founder.
+
+Spawned roles (agent → contract prompt):
+- `researcher` — `.pi/agents/researcher.md` → `prompts/research-agent.md`
+- `evidence-editor` — `.pi/agents/evidence-editor.md` →
+  `prompts/research-evidence-editor.md`
+- `framing`, `framing-reviewer` — `.pi/agents/framing*.md` →
+  `production-books/_template/framing.md`
+- `plan-writer`, `plan-reviewer` — `.pi/agents/plan-*.md` →
+  `prompts/master-plan-skill-v2.md` / `prompts/master-plan-reviewer-v2.md`
+- `chapter-writer` — `.pi/agents/chapter-writer.md` →
+  `prompts/chapter-writer.md`
+- `judge` — `.pi/agents/judge.md` → `loop/judges/*.md`
+- `trace-analyzer`, `hypothesizer` — `.pi/agents/*.md` → `loop/prompts/*.md`
+
+**The orchestrator manages the loop** (per this file): it spawns roles, hands
+them their exact inputs, runs the deterministic gates, saves traces, and
+makes the intelligent decisions on failure — retry a failed role once, then
+INCONCLUSIVE or escalate to the founder. Mechanical checks stay deterministic
+tools the orchestrator runs: the validity gate
+(`scripts/validate_chapter_anatomy.py`), web primitives
+(`scripts/loop-runner/web_tools.py`), and the canonical gate.
 
 **State discipline:** the campaign runs on a campaign branch. Every iteration
 ends with exactly one commit (`loop(iter-NNN): DECISION — short hypothesis`).
@@ -115,7 +124,8 @@ Where is the factory now? Fresh full run, no hypothesis, no change.
 
 ### Step 1: Declare hypothesis
 
-Run `loop/prompts/hypothesizer.md` as a fresh GPT role call with:
+Spawn the `hypothesizer` sub-agent (contract: `loop/prompts/hypothesizer.md`)
+with:
 - the previous iteration's `trace-analysis.md`
 - `loop/learnings.md`
 - the current editable factory files
@@ -156,18 +166,20 @@ research artifacts and copy them into this iteration's traces.
   must return PASS on the research digest before framing may consume it.
 - Output: `production-books/quit-sugar/research/`
 
-**Stage: Framing** — a fresh framing GPT call (per config) completes
-`production-books/quit-sugar/framing.md` per the framing contract
+**Stage: Framing** — the orchestrator spawns the `framing` sub-agent, which
+completes `production-books/quit-sugar/framing.md` per the framing contract
 (`production-books/_template/framing.md`) from the style guide, brief, and
-accepted research syntheses; then a fresh independent semantic review is
-accepted in `framing-review.md`. Planning is blocked until accepted.
+accepted research syntheses; then the orchestrator spawns the
+`framing-reviewer` sub-agent and hands the result back to the framing agent,
+iterating until the review is accepted in `framing-review.md`. Planning is
+blocked until accepted.
 
-**Stage: Planning** — a fresh planner call (Kimi K3 through the Command
-Code proxy, per config) follows `prompts/master-plan-skill-v2.md` (exact five inputs, no
-reference contamination), then its fresh review gate — a GPT plan-reviewer
-call per config — iterates until `master-plan-review.md` ends
-`fit to write from`. When the accepted plan changed, rebuild
-`loop/reference-alignment.md` before judging.
+**Stage: Planning** — the orchestrator spawns the `plan-writer` sub-agent
+(follows `prompts/master-plan-skill-v2.md`; exact five inputs, no reference
+contamination), then the `plan-reviewer` sub-agent
+(`prompts/master-plan-reviewer-v2.md`), handing the plan back to the
+plan-writer until `master-plan-review.md` ends `fit to write from`. When the
+accepted plan changed, rebuild `loop/reference-alignment.md` before judging.
 
 **Gate before dispatching the writer (per chapter):** extract the target
 chapter card from the accepted plan and verify it resolves directly against
@@ -181,11 +193,10 @@ the plan-wide inventories:
   review gate already guarantees cards are writable directly; this check is
   the mechanical backstop.
 
-**Stage: Writing (sequential, chapter 01 → last)** — writer route per config
-(currently Muse Spark 1.2 contributor via the Command Code proxy, reasoning
-high, temp 0.7, no completion cap).
-The writer receives exactly four inputs, with `prompts/chapter-writer.md` as
-the system prompt:
+**Stage: Writing (sequential, chapter 01 → last)** — the orchestrator spawns
+the `chapter-writer` sub-agent one chapter at a time, in order, until the
+book is complete. Each spawn receives exactly four inputs, with
+`prompts/chapter-writer.md` as the contract:
   1. The accepted master plan (its card for chapter N is the semantic
      authority; the plan-wide inventories resolve every ID the card cites)
   2. The target chapter card for chapter N (from the plan)
@@ -221,8 +232,10 @@ loop/iterations/NNN/traces/
 ```
 
 **Error handling:**
-- Transient API failure (429, 5xx, network, invalid/truncated response):
-  retry 3x with 30s/60s/120s backoff. Still failing → iteration INCONCLUSIVE.
+- Sub-agent failure (transport error, invalid/truncated response, refused
+  spawn): the orchestrator retries the role once with the same inputs. Still
+  failing → iteration INCONCLUSIVE, or escalate to the founder when the
+  failure is a route/credential problem.
 - Writer refusal: the exact refusal line is saved to
   `traces/chapter-NN/refusal.md`; no chapter file is written; the refusal's
   named owner is the iteration's finding; iteration INCONCLUSIVE.
@@ -258,9 +271,9 @@ Assigned compliance:
 (all chapters in order) with the plan's mantra sheet, instruction spine,
 and curve map, plus the reference-alignment table as the GSBS skeleton.
 
-All judges, the trace analyzer, and the hypothesizer run as fresh GPT
-role calls (see Role calls, §1). Judge calls are independent — run them
-in parallel.
+All judges, the trace analyzer, and the hypothesizer are spawned sub-agents
+(see Role calls, §1). Judge calls are independent — the orchestrator spawns
+them in parallel.
 A judge that fails is rerun once; a still-missing report blocks any KEEP
 (the iteration is INCONCLUSIVE) but its diagnostic value is still recorded.
 
@@ -268,11 +281,11 @@ Save verdicts in `loop/iterations/NNN/judgments/`.
 
 ### Step 5: Trace analysis
 
-Run `loop/prompts/trace-analyzer.md` as a fresh GPT role call on the
-judgments and the exact generation traces. Save its response as
-`loop/iterations/NNN/trace-analysis.md`. It merges corroborating reports
-into causal clusters and maps each cluster to the factory component that
-caused it. Diagnosis lives there, not in judge reports.
+Spawn the `trace-analyzer` sub-agent on the judgments and the exact
+generation traces. Save its response as `loop/iterations/NNN/trace-analysis.md`.
+It merges corroborating reports into causal clusters and maps each cluster to
+the factory component that caused it. Diagnosis lives there, not in judge
+reports.
 
 ### Step 6: Decide
 

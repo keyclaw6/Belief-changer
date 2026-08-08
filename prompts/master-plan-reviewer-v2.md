@@ -1,10 +1,9 @@
 # Master-Plan Reviewer — blocking cumulative reader walk
 
-Dispatch this prompt as a fresh clean GPT-5.6 call through the OpenAI
-subscription OAuth route (model and reasoning per `loop/config.yaml`; only
-this prompt and the listed inputs in context). It is an independent
-planning-family reviewer, not a chapter writer. Never route this review
-through OpenRouter.
+The plan-reviewer pi sub-agent (`.pi/agents/plan-reviewer.md`) runs this
+prompt with the plan, the framing, the style guide, and the brief (model per
+`loop/config.yaml`; only this prompt and the listed inputs in context). It is
+an independent planning-family reviewer, not a chapter writer.
 
 ## Exact review-call inputs
 
