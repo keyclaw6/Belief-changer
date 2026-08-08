@@ -16,7 +16,7 @@ prescribe.
    - `research/` — the exact accepted research inputs this run used
    - `plan.md` — the accepted master plan used
    - per chapter: the chapter card, the exact writer prompt, the response,
-     the validity-gate result, metadata
+     metadata
 
 ## Step 1: Merge into causal clusters
 

@@ -48,7 +48,7 @@ but a stable machine removes the whole failure class.
      `prompts/research-agent.md` §8 — research is complete when the
      completion criterion clears.
   4. Then PROGRAM §3 continues: plan → reference-alignment →
-     plan cards → chapters → validity gates → judges → trace analysis →
+     plan cards → chapters → judges → trace analysis →
      A/A check → BASELINE row. Commit after every stage on campaign-001.
 
 ## Routes (loop/config.yaml is the SOLE authority)

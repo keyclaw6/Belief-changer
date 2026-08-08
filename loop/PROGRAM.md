@@ -69,12 +69,13 @@ Spawned roles (agent → contract prompt):
   hypothesizer.md`; GPT-5.6 Sol high via openai-sub
 
 **The orchestrator manages the loop** (per this file): it spawns roles, hands
-them their exact inputs, runs the deterministic gates, saves traces, and
-makes the intelligent decisions on failure — retry a failed role once, then
-INCONCLUSIVE or escalate to the founder. Mechanical checks stay deterministic
-tools the orchestrator runs: the validity gate
-(`scripts/validate_chapter_anatomy.py`), web primitives
-(`scripts/loop-runner/web_tools.py`), and the canonical gate.
+them their exact inputs, saves traces, and makes the intelligent decisions on
+failure — retry a failed role once, then INCONCLUSIVE or escalate to the
+founder. There is NO deterministic validation in the pipeline: every check of
+the writer's work, the plan's resolvability, and the handovers is done by the
+role agents per their prompts. The only tools the orchestrator runs are web
+primitives (`scripts/loop-runner/web_tools.py`) and the canonical repo gate
+(`scripts/check.sh`).
 
 **State discipline:** the campaign runs on a campaign branch. Every iteration
 ends with exactly one commit (`loop(iter-NNN): DECISION — short hypothesis`).
@@ -112,7 +113,7 @@ Where is the factory now? Fresh full run, no hypothesis, no change.
    must own every artifact and trace it produces.
 2. Build `loop/reference-alignment.md` from the freshly accepted plan (its
    procedure lives in that file).
-3. Validity-gate and judge every chapter, plus the book-arc judge (Step 4).
+3. Judge every chapter, plus the book-arc judge (Step 4).
 4. Run the trace analyzer (Step 5). Save `loop/iterations/000/trace-analysis.md`.
 5. **A/A noise check (once):** regenerate chapter 01 a second time from the
    identical inputs (master plan, chapter card, style guide, previous
@@ -175,18 +176,6 @@ contamination), then the `plan-reviewer` sub-agent
 plan-writer until `master-plan-review.md` ends `fit to write from`. When the
 accepted plan changed, rebuild `loop/reference-alignment.md` before judging.
 
-**Gate before dispatching the writer (per chapter):** extract the target
-chapter card from the accepted plan and verify it resolves directly against
-the plan-wide inventories:
-  `grep -En '(MN|IN|EV-[LS]|RD|AN|ST|PR|CH|BG|RS|AU|LEU|SEU)-?[0-9]+' <card>`
-  A card legitimately cites plan-wide IDs (the normalization law forbids
-  copying inventory rows into cards), so an ID itself is not a defect: every
-  cited ID must have a matching plan-wide inventory entry with a non-empty
-  payload. An ID with no matching entry — or an entry with an empty payload —
-  blocks dispatch as an orchestration failure, not a plan failure. The plan
-  review gate already guarantees cards are writable directly; this check is
-  the mechanical backstop.
-
 **Stage: Writing (sequential, chapter 01 → last)** — the orchestrator spawns
 the `chapter-writer` sub-agent one chapter at a time, in order, until the
 book is complete. Each spawn receives exactly four inputs, with
@@ -198,17 +187,6 @@ book is complete. Each spawn receives exactly four inputs, with
   4. The previous chapter (for chapter 01: the plan's book-core section)
 Output: `production-books/quit-sugar/chapters/chapter-NN.md`
 
-**Validity gate (per chapter, before judging):** run
-`scripts/validate_chapter_anatomy.py` with the chapter and its assignment
-manifest (instruction wording, mantra wordings, banned register — extracted
-from the accepted plan). It checks the writer-contract anatomy facts:
-preview, thesis line, SUMMARY, assigned instruction present verbatim,
-assigned mantras present verbatim, banned-register hits, non-mantra verbatim
-repetition (within chapter and against all prior chapters). Judges never
-check presence; they judge effect. A chapter that fails the gate is rerun
-once; if still invalid, the iteration is INCONCLUSIVE and the validity
-failure becomes the next hypothesis's failure evidence.
-
 **Trace format (mandatory):**
 ```
 loop/iterations/NNN/traces/
@@ -219,7 +197,6 @@ loop/iterations/NNN/traces/
     chapter-card.md      # the target chapter card used (copy)
     prompt.md            # exact system + user message sent to writer
     response.md          # exact model response
-    anatomy.json         # validity gate result
     metadata.json        # model, tokens, latency, errors
   chapter-02/ ...
 ```
@@ -282,8 +259,8 @@ reports.
 
 ### Step 6: Decide
 
-A decision is valid only when every written chapter passed the validity
-gate and every judge report completed (after retries). Otherwise the
+A decision is valid only when every judge report completed (after retries).
+Otherwise the
 iteration is INCONCLUSIVE — never decide on partial evidence.
 
 Answer one question: **did the predicted causal cluster close?**

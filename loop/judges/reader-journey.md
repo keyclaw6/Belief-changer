@@ -82,16 +82,17 @@ For each material gap:
 7. **Assigned placement:** Where CHAPTER CONTEXT assigns an instruction or
    a mantra debut, does it land at the right moment of the transition (the
    instruction at its assigned climax; the debut argued before it is
-   compressed)? Presence is verified mechanically before judging — you
-   judge placement and effect only.
+   compressed)? Verify presence yourself (the assigned instruction and
+   mantras verbatim) and judge placement and effect.
 
 ## What you do NOT evaluate
 
 - Whether the belief-change logic is correct (belief-mechanic judge)
 - Register at specific moments (voice-emotion judge) — you own the overall
   movement and momentum
-- Anatomy presence, banned-register wording, verbatim-repetition facts —
-  the validity gate checks these before you run
+- Anatomy presence, banned-register wording, and verbatim-repetition facts
+  are your checks too — there is no mechanical validator; verify them as part
+  of judging
 - Sentence length, word count, formatting
 
 ## Your output format

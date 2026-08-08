@@ -35,13 +35,15 @@ invent a gap to fill the format.
    the chapters that own it, or does the book keep re-arguing early ground?
    Is there a mid-book sag where chapters restate instead of advance?
 
-2. **Semantic repetition across chapters.** Verbatim repetition is checked
-   mechanically. You check the semantic version: does a later chapter
-   re-argue a settled verdict from scratch instead of invoking its token
-   and escalating? Does the same analogy or scene do the same job twice?
+2. **Semantic repetition across chapters.** You check the semantic version:
+   does a later chapter re-argue a settled verdict from scratch instead of
+   invoking its token and escalating? Does the same analogy or scene do the
+   same job twice? (Verbatim repetition is also yours to verify — there is no
+   mechanical validator.)
 
-3. **Mantra system in execution.** Presence is checked mechanically. You
-   judge execution: does each debut get its full argue-then-compress beat?
+3. **Mantra system in execution.** Verify presence yourself (each assigned
+   mantra verbatim at its scheduled chapter) and judge execution: does each
+   debut get its full argue-then-compress beat?
    Are echoes brief, un-re-argued, and placed where they reinforce? Does
    the hand-over in the final movement land?
 
@@ -64,8 +66,8 @@ invent a gap to fill the format.
 
 - Within-chapter quality of any single chapter (the three chapter judges
   own that; do not repeat their findings)
-- Anatomy presence, verbatim repetition facts, mantra/instruction presence
-  (the validity gate checks these mechanically)
+- Anatomy presence, verbatim repetition facts, and mantra/instruction
+  presence are your checks too — there is no mechanical validator
 - Prose register at specific moments (voice-emotion judge)
 
 ## Your output format

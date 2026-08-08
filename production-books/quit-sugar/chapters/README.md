@@ -8,4 +8,4 @@ Each chapter-writer receives exactly four things (the anti-repetition context st
 3. The **immediately previous chapter only** — local continuity.
 4. The **style guide** (`/prompts/style-guide.md`) — voice & method.
 
-Each chapter then passes the mechanical validity gate (`scripts/validate_chapter_anatomy.py`) and the judge sub-agents before the next chapter begins.
+Each chapter is then judged by the judge sub-agents (which verify presence and effect themselves) before the next chapter begins.
