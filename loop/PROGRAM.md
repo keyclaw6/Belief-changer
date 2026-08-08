@@ -169,12 +169,14 @@ research artifacts and copy them into this iteration's traces.
 - Output: `production-books/quit-sugar/research/`
 
 **Stage: Planning** — the orchestrator spawns the `plan-writer` sub-agent
-(follows `prompts/master-plan-skill-v2.md`; exact four file inputs — style
-guide, brief, lived-experience, scientific-evidence — no reference
-contamination), then the `plan-reviewer` sub-agent
-(`prompts/master-plan-reviewer-v2.md`), handing the plan back to the
-plan-writer until `master-plan-review.md` ends `fit to write from`. When the
-accepted plan changed, rebuild `loop/reference-alignment.md` before judging.
+(follows `prompts/master-plan-skill-v2.md`; the initial call carries exactly
+four file inputs — style guide, brief, lived-experience, scientific-evidence
+— no reference contamination), then the `plan-reviewer` sub-agent
+(`prompts/master-plan-reviewer-v2.md`). On `needs changes first`, the
+orchestrator passes the current candidate plan and the reviewer's findings
+to a fresh `plan-writer` call, then dispatches a fresh reviewer; repeat until
+`master-plan-review.md` ends `fit to write from`. When the accepted plan
+changed, rebuild `loop/reference-alignment.md` before judging.
 
 **Stage: Writing (sequential, chapter 01 → last)** — the orchestrator spawns
 the `chapter-writer` sub-agent one chapter at a time, in order, until the

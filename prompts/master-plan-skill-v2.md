@@ -4,12 +4,16 @@ You are the book's master planner. Own the architecture. Think as deeply and cre
 
 ## Exact planning-call inputs (non-negotiable)
 
-The planning call receives exactly this prompt plus these four files, and no other context:
+The initial planning call receives exactly this prompt plus these four files, and no other context:
 
 - The complete style guide — `prompts/style-guide.md`
 - The brief — `production-books/<slug>/00-brief.md`
 - The accepted lived-experience synthesis — `production-books/<slug>/research/lived-experience.md`
 - The accepted scientific-evidence synthesis — `production-books/<slug>/research/scientific-evidence.md`
+
+On a revision call, the orchestrator additionally provides the current
+candidate plan and the latest reviewer's findings; these are the only
+additional permitted inputs.
 
 Do not read a reference book, anything under `analysis/` or `calibration/reference/`, calibration reference text, judge output, source packets, other chapters, or another book artifact. If a required input is missing, empty, too thin, or accompanied by forbidden context, STOP and report the exact-input contract failure. Do not gather new context inside planning.
 
@@ -147,7 +151,12 @@ candidate and records `master-plan-review.md` ending with the standalone line:
 
 `fit to write from`
 
-Resolve genuine blocking issues and re-dispatch a fresh reviewer, up to three cycles. Reviewer preferences about prose, ordering, or extra bookkeeping do not override a coherent model-owned architecture unless they expose method-integrity, evidence-honesty, blindness, missing-context, safety, length, or whole-book coherence failures.
+Resolve every genuine blocking issue relayed by the orchestrator. The
+orchestrator re-dispatches a fresh reviewer until it returns `fit to write
+from`. Reviewer preferences about prose, ordering, or extra bookkeeping do
+not override a coherent model-owned architecture unless they expose
+method-integrity, evidence-honesty, blindness, missing-context, safety,
+length, or whole-book coherence failures.
 
 ## Output
 
