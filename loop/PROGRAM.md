@@ -51,11 +51,14 @@ No value elsewhere in this file overrides config.
   orchestrator supplies every input inline; the role model has no host
   system prompt, no tools, and no filesystem. Save the exact request and
   response in the traces.
-- **Command Code proxy roles** — writer, research, and planner, per config,
-  all chat completions through the founder's Command Code proxy loopback
+- **Command Code proxy roles** — writer and planner are chat completions per
+  config through the founder's Command Code proxy loopback
   (`Authorization: Bearer $COMMANDCODE_API_KEY`, or the founder's Command
-  Code CLI login when the env var is absent). Research web tools are
-  executed by the orchestrator. Nothing else ever uses the proxy. No
+  Code CLI login when the env var is absent). Research runs as the
+  orchestrator plus fresh `subagent`-tool sub-agents (project agent
+  `.pi/agents/researcher.md`), all on the same proxy route; sub-agents
+  execute their own search and fetch via
+  `scripts/loop-runner/web_tools.py`. Nothing else ever uses the proxy. No
   fallback route is coded: a missing credential or unreachable proxy stops
   the run and escalates to the founder.
 The orchestrator itself is plumbing: it assembles inputs, makes calls,
@@ -135,11 +138,20 @@ framing, or planning hypothesis is never judged without regenerated chapters.
 stage (research prompt, evidence editor, researcher model/params) or the
 brief. Deep research is slow; when unchanged, reuse the last accepted
 research artifacts and copy them into this iteration's traces.
-- Route/model per config (DeepSeek, Responses API, web_search + web_fetch).
-- Depth is sacred and unlimited: 1,000+ searches, 1,000+ fetches if that is
-  what it takes; go as wide and deep as still brings results; filter
-  afterwards, never limit upfront. `prompts/research-agent.md` is the system
-  prompt; its lanes and floors govern.
+- The orchestrator (the pi coding agent) IS the research lead. It reads
+  `prompts/research-agent.md`, fills the parameter block, and runs one
+  relentless search for depth: it searches and fetches itself via
+  `scripts/loop-runner/web_tools.py`, and spawns fresh research sub-agents
+  with the `subagent` tool (project agent `.pi/agents/researcher.md`,
+  parallel mode) per lane, persona, and community. Each sub-agent mines and
+  writes source-traceable packets into the ten research banks. The
+  orchestrator integrates, names the gaps, and dispatches again — until the
+  completion criterion in the research prompt clears across at least three
+  personas. Lived experience from recovery communities is the primary
+  target; scientific studies are secondary.
+- Route/model per config (researcher model via the Command Code proxy).
+- Depth is sacred and unlimited: go as wide and deep as still brings
+  results; filter afterwards, never limit upfront.
 - Gate: a fresh independent editor per `prompts/research-evidence-editor.md`
   must return PASS on the research digest before framing may consume it.
 - Output: `production-books/quit-sugar/research/`

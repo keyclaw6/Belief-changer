@@ -34,15 +34,15 @@ but a stable machine removes the whole failure class.
 - **Next actions, in order:**
   1. `bash scripts/loop-runner/run_preflight.sh` (judge recalibration on
      Luna high — 18 calls through the Command Code proxy)
-  2. `python3 scripts/loop-runner/research_round.py --round 1`
-     (skips done commissions, runs the 5 missing ones, batches of 4)
-  3. `python3 scripts/loop-runner/research_round.py --round 2`
-     (lead integrates all 12 results → gap-fill commissions or
-     `SYNTHESIZE READY`; iterate rounds until ready)
-  4. Synthesis into `production-books/quit-sugar/research/` per
+  2. Run the research stage per PROGRAM §3: the orchestrator (pi) resumes
+     from the round-1 packets already on disk (the K-01..K-12 commissions
+     and subagent results are seed material), then relentlessly searches
+     and spawns `researcher` sub-agents until the completion criterion in
+     `prompts/research-agent.md` clears across at least three personas.
+  3. Synthesis into `production-books/quit-sugar/research/` per
      `prompts/research-agent.md` §9, then the independent evidence editor
      gate (§10) — a fresh GPT role call, `ACCEPTED FOR FRAMING` required.
-  5. Then PROGRAM §3 continues: framing → plan → reference-alignment →
+  4. Then PROGRAM §3 continues: framing → plan → reference-alignment →
      plan cards → chapters → validity gates → judges → trace analysis →
      A/A check → BASELINE row. Commit after every stage on campaign-001.
 
@@ -52,8 +52,9 @@ but a stable machine removes the whole failure class.
   editor/plan reviewer): Command Code proxy chat completions, streaming —
   `scripts/loop-runner/gpt_role_call.py` does everything.
 - Research: `MiniMaxAI/MiniMax-M3` via the Command Code proxy (chat
-  completions) with ORCHESTRATOR-EXECUTED web tools —
-  `scripts/loop-runner/research_toolloop_call.py`.
+  completions) — the orchestrator is the research lead and spawns fresh
+  `researcher` sub-agents (`.pi/agents/researcher.md`, `subagent` tool) that
+  search/fetch via `scripts/loop-runner/web_tools.py`.
 - Planner: `moonshotai/Kimi-K3` via the Command Code proxy —
   `scripts/loop-runner/planner_call.py`.
 - Writer: `meta/muse-spark-1.2-contributor` via the Command Code proxy —
@@ -75,14 +76,16 @@ location; scratch state under `.loop-work/`, gitignored):
 
 - `gpt_role_call.py` — one fresh clean GPT role call; saves request
   (auth REDACTED), SSE, response.md, metadata.
-- `research_toolloop_call.py` — MiniMax research with local
-  web_search/web_fetch (DuckDuckGo + GET), **checkpoint.json after every
-  tool round** — kill/restart loses at most one round. Unlimited depth.
-- `research_round.py` — one research round: lead → parse `=== COMMISSION
-  K-NN ===` fences → run each as a fresh subagent call (skip-done,
-  RESEARCH_MAX_PARALLEL=4, 15s stagger).
+- `web_tools.py` — search/fetch primitives for the research orchestrator and
+  sub-agents (`python3 scripts/loop-runner/web_tools.py search|fetch`).
 - `planner_call.py`, `writer_call.py` — planner / writer transports
   (Command Code proxy).
+
+**One-time pi setup (research sub-agents):** symlink the subagent extension
+from the installed pi package into `~/.pi/agent/extensions/subagent/`
+(`examples/extensions/subagent/index.ts` + `agents.ts`). The project-local
+research agent lives in this repo at `.pi/agents/researcher.md` and is
+discovered automatically when pi runs from the repo root.
 - `run_preflight.sh` — the §2 judge battery (re-run only after judge edits).
 - `queue_runner.sh` + `daemon.sh` — file-queue job runner (jobs in
   `.loop-work/queue/pending/*.job`); useful on the VPS for detached
@@ -95,8 +98,9 @@ location; scratch state under `.loop-work/`, gitignored):
    is on everywhere; keep it.
 2. **Custom User-Agent required** — Cloudflare bans default Python UA
    (error 1010) on opencode.ai. `loop-runner/1.0` is set everywhere.
-3. **Checkpoint everything long.** research_toolloop persists transcript
-   per round; resume is automatic from `checkpoint.json`.
+3. **Checkpoint everything long.** Research sub-agents write every packet to
+   the bank files as they go; a lost sub-agent loses at most its current
+   task, never the accumulated research.
 4. **Retries must never re-bill doomed work**: distinguish operator-side
    network failures (patient waits, no retry budget) from API failures
    (3x 30/60/120s per PROGRAM).
