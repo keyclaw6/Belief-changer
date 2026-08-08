@@ -113,7 +113,7 @@ Nothing inside the factory is fixed. The loop can change:
 - Factory models and routes (writer, planner, researcher)
 - Chapter structure and anatomy decisions
 - Framing decisions
-- Commission structure
+- Plan card contract
 - Any other factory component — except the judges: judge calibration
   remains a separate founder-guided activity
 

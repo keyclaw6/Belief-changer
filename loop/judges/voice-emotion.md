@@ -34,7 +34,7 @@ they serve the arc. Check whether the register is RIGHT FOR THIS MOMENT.
   once supported. Bounded factual uncertainty, source limits, and
   acknowledgment of the reader's present doubt are not voice failures.
 
-- **Instructional force where assigned.** Commands belong at commissioned
+- **Instructional force where assigned.** Commands belong at assigned
   instruction points. Questions and invitations are valid when they lower
   resistance or let the reader complete the reframe.
 
@@ -144,7 +144,7 @@ trust, safety, confrontation, relief? How?]
 **Where our voice fails:** [What effect does ours create instead — distance,
 doubt about the method, being coached, being audited?]
 
-**Initial suspicion (speculative):** [research | framing | plan | commission |
+**Initial suspicion (speculative):** [research | framing | plan | plan-card |
 style-guide | writer-prompt | model | unknown] — [one sentence. Do not
 propose a fix. The trace analyzer will verify or reject this.]
 

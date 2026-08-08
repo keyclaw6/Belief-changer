@@ -18,7 +18,7 @@ Do not read a reference book, anything under `analysis/` or `calibration/referen
 
 Produce the single authoritative `production-books/<slug>/master-plan.md` from which a fresh writer can create every chapter while seeing only the style guide, this plan, and the immediately previous chapter.
 
-The plan must be specific enough to write from and lean enough to remain coherent. Define every shared book decision once under a stable ID. Chapter cards reference those IDs. Never maintain two sources of truth.
+The plan must be specific enough to write from and lean enough to remain coherent. Define every shared book decision once under a stable ID. Chapter cards reference those IDs. Never maintain two sources of truth. A chapter card resolved against the plan-wide inventories IS the chapter's semantic authority for writing: the accepted plan must be writable directly from cards + inventories, with no separate commissioning step. The reviewer blocks any card that cannot be written from directly.
 
 Do not include your scratch work, a review checklist, or claims that you checked yourself.
 
@@ -34,7 +34,7 @@ Preserve the method: escape not sacrifice, warm to the person / vicious to the t
 
 ### Compact evidence ledger
 
-Carry only evidence the book may actually use. Give each entry a stable ID and enough payload for an isolated writer:
+Carry only evidence the book may actually use. Give each entry a stable ID and enough payload for a chapter writer who resolves cards against this ledger:
 
 - the finding, lived account, reader line, or justification;
 - exact accepted `LEU-NNN` or `SEU-NNN` research-unit IDs;
@@ -42,7 +42,9 @@ Carry only evidence the book may actually use. Give each entry a stable ID and e
 - `SUPPORTED`, `MIXED`, or `CONTESTED` for science, or the correct lived-outcome tier;
 - scope and context;
 - permitted inference;
-- prohibited inference.
+- prohibited inference;
+- empirical limit;
+- safety limit.
 
 For a row that binds multiple research units, each inference cell is the exact
 canonical union of the units' sealed values: unique exact values sorted and
@@ -50,9 +52,9 @@ joined with `; `. Never paraphrase, omit, or add permission or prohibition text.
 
 Exact quotations must match the synthesis. Interpretations stay unquoted. Do not copy a full synthesis or duplicate evidence inside chapter cards.
 
-### Mantra sheet
+### Mantra and frozen-token sheet
 
-Choose and consolidate 6–10 original frozen mantras that deserve repetition. Define each once with:
+Choose and consolidate 6–10 original frozen mantras that deserve repetition, plus any chapter-anchored frozen tokens (settled-claim phrases the book invokes verbatim across chapters, such as a recurring one-line verdict). Define each once with:
 
 - stable ID and exact wording;
 - the belief or emotional job it installs;
@@ -60,7 +62,17 @@ Choose and consolidate 6–10 original frozen mantras that deserve repetition. D
 - echo chapter IDs;
 - hand-over form in the final movement.
 
-Mantras are routed by chapter, not by occurrence arithmetic. Chapter cards reference mantra IDs and never repeat the frozen wording.
+Every chapter assigns at least one mantra or frozen token — a debut or an echo — so the writer is never left without an exact token to land. Mantras are routed by chapter, not by occurrence arithmetic. Chapter cards reference mantra IDs and frozen-token IDs and never repeat the frozen wording.
+
+### Scene and analogy bank
+
+Define each concrete scene or analogy once with:
+
+- stable ID and a concrete, writable description of the scene or analogy;
+- the argumentative job or jobs it performs;
+- any safety, originality, or subject-specific constraint on its use.
+
+Chapter cards reference scene/analogy IDs and the job each performs; they never copy the full scene or analogy into the card.
 
 ### Lexicon and instruction spine
 
@@ -91,15 +103,19 @@ Give every chapter a stable ID, number, and working title, then specify only its
 - arc position and qualitative curve position;
 - target persona IDs and the reader voice or scene that makes the move land;
 - evidence-ledger IDs, including the limits the chapter must preserve;
-- mantra IDs debuted and echoed;
+- mantra and frozen-token IDs debuted and echoed — every card assigns at
+  least one mantra or frozen token (debut or echo);
 - instruction ID, if any;
 - one or more concrete scene/analogy IDs and the argumentative job each performs;
+- assigned rhetorical devices, ALL-CAPS peak moments, and recap licensing;
+- `scare-then-disown` marker when this move assigns hard or frightening
+  material (the writer must land it fully and then disown fear);
 - structural responsibility, if any;
 - method, safety, and originality guardrails specific to this move;
 - continuity intent: what understanding it receives and hands forward;
 - one integer word budget matching the arc table.
 
-These are semantic authorities, not a prose template or mandatory chapter-section anatomy. Inside a card, output only the permitted semantic fields: no headings, tables, connective prose, copied plan-wide rows, or prewritten chapter anatomy. Each plan-wide inventory remains in its single canonical section. The writer derives `IN THIS CHAPTER`, the italic thesis, section flow, ALL-CAPS landing, SUMMARY, sentence rhythm, and analogy density from the style guide. Do not prewrite those prose elements in the plan.
+These are semantic authorities, not a prose template or mandatory chapter-section anatomy. A card must be directly writable: every field it names must resolve against a plan-wide inventory with no ambiguity and no gap the writer would have to invent around. Inside a card, output only the permitted semantic fields: no headings, tables, connective prose, copied plan-wide rows, or prewritten chapter anatomy. Each plan-wide inventory remains in its single canonical section. The writer derives `IN THIS CHAPTER`, the italic thesis, section flow, ALL-CAPS landing, SUMMARY, sentence rhythm, and analogy density from the style guide. Do not prewrite those prose elements in the plan.
 
 ## Normalization law
 

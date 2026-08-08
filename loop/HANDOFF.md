@@ -43,12 +43,12 @@ but a stable machine removes the whole failure class.
      `prompts/research-agent.md` §9, then the independent evidence editor
      gate (§10) — a fresh GPT role call, `ACCEPTED FOR FRAMING` required.
   5. Then PROGRAM §3 continues: framing → plan → reference-alignment →
-     commissions → chapters → validity gates → judges → trace analysis →
+     plan cards → chapters → validity gates → judges → trace analysis →
      A/A check → BASELINE row. Commit after every stage on campaign-001.
 
 ## Routes (loop/config.yaml is the SOLE authority)
 
-- GPT roles (framing/commissioner/judges/analyzer/hypothesizer/evidence
+- GPT roles (framing/judges/analyzer/hypothesizer/evidence
   editor/plan reviewer): Command Code proxy chat completions, streaming —
   `scripts/loop-runner/gpt_role_call.py` does everything.
 - Research: `MiniMaxAI/MiniMax-M3` via the Command Code proxy (chat

@@ -14,8 +14,8 @@ failure the executor stops and calls the founder.
   per founder choice, `MiniMaxAI/MiniMax-M3`, `moonshotai/Kimi-K3`); auth env is
   `COMMANDCODE_API_KEY` with the Command
   Code CLI login (`~/.commandcode/auth.json`) when the env var is absent.
-- The GPT roles (judges, analyzer, hypothesizer, framing, commissioner,
-  evidence editor, plan reviewer) move from the OpenAI subscription OAuth
+- The GPT roles (judges, analyzer, hypothesizer, framing, evidence editor,
+  plan reviewer) move from the OpenAI subscription OAuth
   Responses endpoint to the same proxy as chat completions. Only
   `gpt-5.6-luna` is in the founder's plan (verified 2026-08-07; Sol/Terra
   and all other GPT ids return MODEL_NOT_IN_PLAN), so every role starts on

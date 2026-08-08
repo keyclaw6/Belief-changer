@@ -20,11 +20,10 @@ completed iteration, its verdict, and the next hypothesis before acting.
 - `prompts/research-evidence-editor.md`
 - `prompts/master-plan-skill-v2.md`
 - `prompts/master-plan-reviewer-v2.md`
-- `prompts/chapter-commissioner.md`
 - `prompts/chapter-writer.md`
 - `loop/config.yaml` (routes, models, parameters)
 
-Generated research, framing, plans, commissions, and chapters under
+Generated research, framing, plans, and chapters under
 `production-books/quit-sugar/` are **evidence, not editable hypotheses**.
 A hypothesis changes the factory that produces them, never the artifact itself.
 
@@ -41,7 +40,7 @@ model, reasoning, temperature, and provider policy from `loop/config.yaml`.
 No value elsewhere in this file overrides config.
 
 **Role calls (all plain API calls through the Command Code proxy):**
-- **GPT roles** — framing, commissioner, judges, trace analyzer,
+- **GPT roles** — framing, judges, trace analyzer,
   hypothesizer, evidence editor, plan reviewer: one fresh chat-completions
   call per role through the Command Code proxy (endpoint in config;
   `Authorization: Bearer $COMMANDCODE_API_KEY`, or the founder's Command
@@ -101,7 +100,8 @@ Where is the factory now? Fresh full run, no hypothesis, no change.
 3. Validity-gate and judge every chapter, plus the book-arc judge (Step 4).
 4. Run the trace analyzer (Step 5). Save `loop/iterations/000/trace-analysis.md`.
 5. **A/A noise check (once):** regenerate chapter 01 a second time from the
-   identical commission and inputs; judge it. If the material failure-class
+   identical inputs (master plan, chapter card, style guide, previous
+   chapter); judge it. If the material failure-class
    set differs between the two runs, record the observed noise level in
    `loop/learnings.md` — decisions compare failure classes, never instances,
    and this calibrates what "material" means.
@@ -157,26 +157,28 @@ call per config — iterates until `master-plan-review.md` ends
 `fit to write from`. When the accepted plan changed, rebuild
 `loop/reference-alignment.md` before judging.
 
-**Stage: Commission (per chapter)** — a fresh commissioning editor per
-`prompts/chapter-commissioner.md` receives the accepted plan, the target
-chapter card, and only that card's assigned source material, and returns the
-authoritative semantic commission.
-- Gate before dispatching the writer:
-  `grep -En '(MN|IN|EV-[LS]|RD|AN|ST|PR|CH|BG|RS|AU|LEU|SEU)-?[0-9]+' <commission>`
-  Any hit must be a traceability locator sitting NEXT TO its fully resolved
-  meaning; a bare unresolved ID blocks dispatch and is an orchestration
-  failure, not a writer failure.
-- A `COMMISSION BLOCKED` response is logged to
-  `traces/chapter-NN/commission-blocked.md`; the named owner stage is the
-  iteration's finding.
+**Gate before dispatching the writer (per chapter):** extract the target
+chapter card from the accepted plan and verify it resolves directly against
+the plan-wide inventories:
+  `grep -En '(MN|IN|EV-[LS]|RD|AN|ST|PR|CH|BG|RS|AU|LEU|SEU)-?[0-9]+' <card>`
+  A card legitimately cites plan-wide IDs (the normalization law forbids
+  copying inventory rows into cards), so an ID itself is not a defect: every
+  cited ID must have a matching plan-wide inventory entry with a non-empty
+  payload. An ID with no matching entry — or an entry with an empty payload —
+  blocks dispatch as an orchestration failure, not a plan failure. The plan
+  review gate already guarantees cards are writable directly; this check is
+  the mechanical backstop.
 
 **Stage: Writing (sequential, chapter 01 → last)** — writer route per config
-(Muse Spark 1.1 via OpenRouter, reasoning high, temp 0.7, no completion cap).
-The writer receives exactly three inputs, with `prompts/chapter-writer.md` as
+(currently Muse Spark 1.2 contributor via the Command Code proxy, reasoning
+high, temp 0.7, no completion cap).
+The writer receives exactly four inputs, with `prompts/chapter-writer.md` as
 the system prompt:
-  1. The authoritative semantic commission for chapter N
-  2. The style guide: `prompts/style-guide.md`
-  3. The previous chapter (for chapter 01: the plan's book-core section)
+  1. The accepted master plan (its card for chapter N is the semantic
+     authority; the plan-wide inventories resolve every ID the card cites)
+  2. The target chapter card for chapter N (from the plan)
+  3. The style guide: `prompts/style-guide.md`
+  4. The previous chapter (for chapter 01: the plan's book-core section)
 Output: `production-books/quit-sugar/chapters/chapter-NN.md`
 
 **Validity gate (per chapter, before judging):** run
@@ -198,7 +200,7 @@ loop/iterations/NNN/traces/
   framing.md             # framing used (copy)
   plan.md                # accepted master plan used (copy)
   chapter-01/
-    commission.md        # the commission sent
+    chapter-card.md      # the target chapter card used (copy)
     prompt.md            # exact system + user message sent to writer
     response.md          # exact model response
     anatomy.json         # validity gate result
@@ -262,7 +264,7 @@ caused it. Diagnosis lives there, not in judge reports.
 
 ### Step 6: Decide
 
-A decision is valid only when every commissioned chapter passed the validity
+A decision is valid only when every written chapter passed the validity
 gate and every judge report completed (after retries). Otherwise the
 iteration is INCONCLUSIVE — never decide on partial evidence.
 

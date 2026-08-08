@@ -41,7 +41,7 @@ planner_endpoint: http://127.0.0.1:3050/v1/chat/completions
 planner_auth_env: COMMANDCODE_API_KEY
 planner_reasoning: high
 
-# GPT roles (framing, commissioning, judging, trace analysis, hypothesizing,
+# GPT roles (framing, judging, trace analysis, hypothesizing,
 # evidence editing, plan review): fresh clean chat-completions calls through
 # the Command Code proxy (route change 2026-08-07). Request contract per
 # call: role prompt as the system message, the listed inputs as the user
@@ -62,8 +62,6 @@ hypothesizer_model: gpt-5.6-luna
 hypothesizer_reasoning: max
 framing_model: gpt-5.6-luna
 framing_reasoning: max
-commissioner_model: gpt-5.6-luna
-commissioner_reasoning: max
 evidence_editor_model: gpt-5.6-luna
 evidence_editor_reasoning: max
 plan_reviewer_model: gpt-5.6-luna

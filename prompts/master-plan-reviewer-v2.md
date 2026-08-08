@@ -54,11 +54,18 @@ must reach the declared destination rather than merely exhaust topics.
 
 ### Writer-facing authority
 
-Block any unresolved authority that would force a writer to guess or invent:
-missing or contradictory evidence IDs and limits, scene or analogy jobs,
-instructions, mantra routing, continuity, budgets, safety boundaries, or work
-ownership. Evidence-unavailable work must remain unavailable rather than be
-filled speculatively.
+The chapter writer receives only the plan, its chapter card, the style guide,
+and the previous chapter — there is NO separate commissioning step. Block any
+card that cannot be written from directly, i.e. any unresolved authority that
+would force a writer to guess or invent: missing or contradictory evidence IDs
+and limits (including the empirical limit and safety limit per ledger entry),
+scene or analogy jobs, instructions, mantra and frozen-token routing,
+rhetorical-device and ALL-CAPS peak assignments, missing scare-then-disown
+markers on hard material, continuity, budgets, safety boundaries, or work
+ownership. Every chapter card must assign at least one mantra or frozen token
+(debut or echo), and every ID a card cites must resolve against a plan-wide
+inventory with its exact payload. Evidence-unavailable work must remain
+unavailable rather than be filled speculatively.
 
 ### Method, evidence, safety, and originality
 

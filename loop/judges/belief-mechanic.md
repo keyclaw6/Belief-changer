@@ -127,7 +127,7 @@ What specific move makes the reader see differently?]
 Does it explain instead of invert? Does it list harms instead of extracting
 credits? Does it lecture instead of ask?]
 
-**Initial suspicion (speculative):** [research | framing | plan | commission |
+**Initial suspicion (speculative):** [research | framing | plan | plan-card |
 style-guide | writer-prompt | model | unknown] — [one sentence. Do not
 propose a fix. The trace analyzer will verify or reject this.]
 

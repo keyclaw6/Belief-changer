@@ -4,8 +4,8 @@
 
 ### Requirement: Single founder-approved model route
 Every factory provider model call — writer, research, planner, and all GPT
-roles (judging, trace analysis, hypothesizing, framing, commissioning,
-evidence editing, plan review) — SHALL route only through the founder-
+roles (judging, trace analysis, hypothesizing, framing, evidence editing,
+plan review) — SHALL route only through the founder-
 approved Command Code proxy loopback, authenticated with the founder's
 Command Code credential supplied via `COMMANDCODE_API_KEY` or the Command
 Code CLI login. Role calls carry only the role prompt and listed inputs.

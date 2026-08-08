@@ -81,7 +81,7 @@ For each material gap:
 
 7. **Assigned placement:** Where CHAPTER CONTEXT assigns an instruction or
    a mantra debut, does it land at the right moment of the transition (the
-   instruction at its commissioned climax; the debut argued before it is
+   instruction at its assigned climax; the debut argued before it is
    compressed)? Presence is verified mechanically before judging — you
    judge placement and effect only.
 
@@ -119,7 +119,7 @@ real chapter's function at this point]
 explanation? Not enough recognition? Missing consolidation? Premature
 resolution?]
 
-**Initial suspicion (speculative):** [research | framing | plan | commission |
+**Initial suspicion (speculative):** [research | framing | plan | plan-card |
 style-guide | writer-prompt | model | unknown] — [one sentence. Do not
 propose a fix. The trace analyzer will verify or reject this.]
 
