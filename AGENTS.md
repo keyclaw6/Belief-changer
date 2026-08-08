@@ -17,10 +17,9 @@ When priorities conflict: 1. Method integrity. 2. Quality. 3. Simplicity. 4. Rea
 Method integrity means: **Carr-fidelity** — the Easyway method executed exactly as Allen Carr practices it (his warmth to the reader, his commands, his full-force scares delivered then disowned, his certainty), original text only (learn the mechanism, never reproduce copyrighted prose), and evidence-graded research. The factory matches Carr before any house twist is applied. A book that violates these has failed regardless of polish.
 
 ## Truth Hierarchy
-1. `openspec/specs/` — behavior and method truth. Read the relevant spec before changing pipeline or content behavior; author changes under `openspec/changes/<slug>/`.
-2. Code and prompts — implementation truth. Keep them legible instead of describing them in prose.
-3. Books under `production-books/` — product artifacts, not truth about the system.
-4. `docs/` — only what agents cannot succeed without.
+1. Code and prompts — implementation truth. Keep them legible instead of describing them in prose.
+2. Books under `production-books/` — product artifacts, not truth about the system.
+3. `docs/` — only what agents cannot succeed without.
 
 ## Golden Principles (YAGNI)
 This repo is agents-native: optimize for the next agent run. Every concept must
@@ -37,7 +36,7 @@ serve a current requirement or concrete risk.
 Write no documentation by default. A doc must be load-bearing (an agent cannot complete a real task from code + specs alone), generated, or curated reference material. Never write docs that restate code, specs, or prompts. `docs/VISION.md` is the product-intent exception. Update or delete stale docs in the same change that invalidates them.
 
 ## Content Rules
-- The global style guide and the method principles in `openspec/specs/method-integrity/` bind every writing agent. Style-guide changes on `main` are founder-approved only; the auto-tuning loop may amend the style guide on its campaign branch, and winning amendments merge in founder-reviewed batches.
+- The global style guide and the method principles bind every writing agent. Style-guide changes on `main` are founder-approved only; the auto-tuning loop may amend the style guide on its campaign branch, and winning amendments merge in founder-reviewed batches.
 - `production-books/<slug>/` layout (brief, research/sources/, lived-experience.md, scientific-evidence.md, framing, master plan, chapters) is a stable external contract — agent skills depend on these paths. Do not restructure it.
 - Calibration research runs through the auto-tuning loop (`loop/PROGRAM.md`) on the routes in `loop/config.yaml`, gated by the independent evidence editor. Framing and planning consume only accepted research artifacts.
 - Published books are immutable artifacts; corrections produce new versions.
@@ -56,16 +55,13 @@ Use the codebase-memory-mcp tools: blast-radius (`detect_changes`) before modify
 
 ## Repo Map
 - `production-books/<slug>/` — the per-book workshop. Published output targets the future site (see `docs/VISION.md`); the retired root `books/` held reference texts now in `analysis/reference-books/`.
-- `prompts/` — the pipeline's prompt assets. `openspec/` — specs and changes.
+- `prompts/` — the pipeline's prompt assets.
 - `loop/` — the auto-tuning loop: `loop/PROGRAM.md` (runbook), judges, loop prompts, config, results, learnings, iterations; `calibration/reference/gsbs/` — the extracted real book; `calibration/` also holds retired-lab archaeology.
 - `scripts/` — gates and tooling (`check.sh` is the canonical gate). `docs/` — VISION.md and the minimal load-bearing set.
 
 ## Workflow
-1. Read the relevant spec domain first; check `openspec/changes/` for collisions.
-2. Behavior or method change → openspec change first; validate with `openspec validate <slug> --strict`.
-3. Every new test cites the spec scenario it proves, or is marked infra.
-4. Gate everything with `bash scripts/check.sh`. Trust real exit codes only.
-5. Conventional Commits, straight to `main`, push after each logical change. The auto-tuning loop is the explicit exception: it commits one per iteration on its campaign branch (`loop/PROGRAM.md` §1); only the founder merges winning amendments to `main`.
+1. Gate everything with `bash scripts/check.sh`. Trust real exit codes only.
+2. Conventional Commits, straight to `main`, push after each logical change. The auto-tuning loop is the explicit exception: it commits one per iteration on its campaign branch (`loop/PROGRAM.md` §1); only the founder merges winning amendments to `main`.
 
 ## Calibration Recovery
 The auto-tuning loop is `loop/PROGRAM.md`. After any context compaction, task resume, or operator handoff, follow its §0 Recovery: read the runbook, the North Star, the tail of `loop/learnings.md`, and the last data row of `loop/results.tsv`; state the last iteration, its verdict, and the next hypothesis before acting.

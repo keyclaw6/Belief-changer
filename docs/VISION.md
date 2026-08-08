@@ -52,7 +52,7 @@ Once book generation is up and running: **guided courses connected to each book*
 
 This tool is for the benefit of all humans on the planet. The measure of success is people freed from traps — never revenue, never engagement for its own sake. Warm to the person, harsh to the trap; escape, not sacrifice; free, for everyone, always.
 
-*The operating rules that protect this vision live in `AGENTS.md`, `prompts/style-guide.md`, and `openspec/specs/method-integrity/`.*
+*The operating rules that protect this vision live in `AGENTS.md` and `prompts/style-guide.md`.*
 
 ---
 
@@ -60,7 +60,7 @@ This tool is for the benefit of all humans on the planet. The measure of success
 
 ## Adopted Plan — Build & Launch (DECIDED 2026-07-10)
 
-The Build & Launch Proposal (five-layer architecture: factory → library → platform → evolution engine → quality; sequenced launch L0–L3) is **adopted with founder amendments** and recorded here. Deliberately **not** openspec changes yet: *prove the factory first; spec changes land stage-by-stage as each part is actually built.*
+The Build & Launch Proposal (five-layer architecture: factory → library → platform → evolution engine → quality; sequenced launch L0–L3) is **adopted with founder amendments** and recorded here. Deliberately **not** formal spec changes yet: *prove the factory first; spec changes land stage-by-stage as each part is actually built.*
 
 **The five layers (adopted):**
 1. **Factory** — the book pipeline (research → framing → master plan → chapters), a file-contract state machine in this repo; any competent agent environment can run it from files alone.
@@ -193,7 +193,7 @@ Cross-book finding: all three run the same core Easyway engine — dismantle the
 
 ## Platform (website) — architecture (AMENDED 2026-08-06)
 
-**Founder amendment (2026-08-06):** the website front end is being built **now, on Lovable** (TanStack Start SSR, in Lovable's own repo), driven autonomously by a Codex agent through the Lovable MCP server. The **Next.js requirement is rejected** and the **`/site` monorepo location is deferred**. The complete build package — design contract (`DESIGN.md`, Quiet Editorial direction), the 15-step Lovable prompt score with acceptance checklists, seed schema + trilingual sample content (en/da/ar), and the Codex handoff with heartbeat protocol — lives in [`keyclaw6/belief-changer-site-buildkit`](https://github.com/keyclaw6/belief-changer-site-buildkit). Book text stays markdown-in-this-repo as the source of truth; the site database is populated from founder-approved factory exports (buildkit `seed/content-model.md`). Publishing and deployment remain founder-gated per `openspec/specs/publishing/`. The 2026-07 architecture below stands as history and as a candidate future port target.
+**Founder amendment (2026-08-06):** the website front end is being built **now, on Lovable** (TanStack Start SSR, in Lovable's own repo), driven autonomously by a Codex agent through the Lovable MCP server. The **Next.js requirement is rejected** and the **`/site` monorepo location is deferred**. The complete build package — design contract (`DESIGN.md`, Quiet Editorial direction), the 15-step Lovable prompt score with acceptance checklists, seed schema + trilingual sample content (en/da/ar), and the Codex handoff with heartbeat protocol — lives in [`keyclaw6/belief-changer-site-buildkit`](https://github.com/keyclaw6/belief-changer-site-buildkit). Book text stays markdown-in-this-repo as the source of truth; the site database is populated from founder-approved factory exports (buildkit `seed/content-model.md`). Publishing and deployment remain founder-gated. The 2026-07 architecture below stands as history and as a candidate future port target.
 
 *Original decision (2026-07) — stack and location superseded above; the data/media/build-step principles still inform the design:*
 

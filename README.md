@@ -10,7 +10,6 @@ People already choose what they believe is their happiest option in the moment. 
 
 - **`AGENTS.md`** — the constitution for agents working in this repo (mission, priorities, truth hierarchy, YAGNI, workflow, the canonical gate). **Agents start here.**
 - **`docs/VISION.md`** — the living vision & working tracker (philosophy, pipeline, orchestration, north star). The product intent.
-- **`openspec/specs/`** — behavior and method truth; read the relevant spec before changing pipeline or content behavior.
 - **`prompts/style-guide.md`** — the writing bible fed to every chapter-writer.
 - **`production-books/<slug>/`** — the per-book workshop. **`analysis/`** — the reverse-engineered reference-book analyses.
 
