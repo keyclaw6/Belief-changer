@@ -4,9 +4,13 @@ The auto-tuning loop's operator role moves from the Hyperagent sandbox to a
 founder-controlled VPS. Git is the state machine; this file plus §0 Recovery
 of `loop/PROGRAM.md` is everything a fresh operator needs.
 
-**Update 2026-08-07:** the founder runs the loop from their main machine;
-every provider call routes through the Command Code proxy loopback (see
-Routes below). No OpenRouter or OpenAI OAuth credential is needed anymore.
+**Updates 2026-08-07/08:** the founder runs the loop from their main machine.
+Provider routes split (see Routes below): the Command Code proxy loopback
+carries the writer, research orchestrator (MiniMax), plan-writer, and
+plan-reviewer; the OpenAI subscription route (openai-sub, via the local
+OpenCodex service) carries the judges, trace analyzer, hypothesizer, and
+research sub-agents. No OpenRouter route exists; the old committed .env keys
+are retired.
 
 ## Why the transfer
 
@@ -18,27 +22,28 @@ but a stable machine removes the whole failure class.
 ## Exact position
 
 - **Preflight: recalibration REQUIRED (2026-08-07).** The judge role moved to
-  `gpt-5.6-luna` (reasoning high) through the Command Code proxy. The
-  Sol-era battery is archived at `loop/preflight/runs-2026-07-sol-era/`.
+  `gpt-5.6-luna` (reasoning high) via the OpenAI subscription (openai-sub).
+  The Sol-era battery is archived at `loop/preflight/runs-2026-07-sol-era/`.
   Run `scripts/loop-runner/run_preflight.sh` fresh and confirm PASS before
   trusting any campaign verdict. (The old `results.md` records the Sol era.)
-- **Baseline 000, Stage: Research, round 1: 7/12 commissions complete.**
+- **Baseline 000, Stage: Research, seed material from round 1: 7/12 work
+  orders complete.**
   - Lead plan + parameter block: `production-books/quit-sugar/research/_rounds/round-1/lead/response.md`
-  - Commissions: `_rounds/round-1/commissions/K-01..K-12.md`
+  - Work orders: `_rounds/round-1/commissions/K-01..K-12.md`
   - DONE: K-01..K-05 (DeepSeek era), K-06, K-07 (MiniMax era) —
     `_rounds/round-1/subagents/K-NN/response.md`
   - MISSING: K-08..K-12 (K-08/K-09 died to a network-entitlement loss;
-    no checkpoints — they restart from their commissions)
+    no checkpoints — they restart from their work orders)
 - Master-plan artifacts exist on disk, but the plan review is not clean — a
   fresh operator re-runs that stage's gate per PROGRAM §3.
 - **Next actions, in order:**
   1. `bash scripts/loop-runner/run_preflight.sh` (judge recalibration on
-     Luna high — 18 calls through the Command Code proxy)
+     Luna high — 18 judge sub-agent calls through the OpenAI subscription)
   2. Run the research stage per PROGRAM §3: the orchestrator (pi) resumes
-     from the round-1 packets already on disk (the K-01..K-12 commissions
-     and subagent results are seed material), then relentlessly searches
-     and spawns `researcher` sub-agents until the completion criterion in
-     `prompts/research-agent.md` clears across at least three personas.
+     from the round-1 seed packets already on disk, then relentlessly
+     searches and spawns `researcher` sub-agents until the completion
+     criterion in `prompts/research-agent.md` clears across at least three
+     personas.
   3. Synthesis into `production-books/quit-sugar/research/` per
      `prompts/research-agent.md` §8 — research is complete when the
      completion criterion clears.
@@ -62,11 +67,13 @@ but a stable machine removes the whole failure class.
   - `chapter-writer` — `meta/muse-spark-1.2-contributor` via the commandcode
     proxy.
 
-Route change 2026-08-07 (founder): writer, research, and planner all run
-through the founder's Command Code proxy loopback, and so do all GPT roles;
-no fallback route is coded. Auth for every role is `COMMANDCODE_API_KEY`,
-or the Command Code CLI login (`~/.commandcode/auth.json`) when the env var
-is absent. Use dotenvx per AGENTS.md; never commit values.
+Route split (founder, 2026-08-07/08): the Command Code proxy carries the
+writer, research orchestrator (MiniMax), plan-writer, and plan-reviewer;
+judges, the trace analyzer, the hypothesizer, and the research sub-agents
+route through the OpenAI subscription (openai-sub). No fallback route is
+coded. Auth: `COMMANDCODE_API_KEY` (or the Command Code CLI login) for the
+Command Code roles; the openai-sub route authenticates via the local
+OpenCodex service (see the one-time setup note below).
 On any Command Code route failure (missing credential, proxy down, model
 not listed or not in plan — HTTP 401): STOP and escalate to the founder —
 there is no fallback route.

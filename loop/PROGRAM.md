@@ -43,13 +43,15 @@ pi coding agent) runs the loop by spawning one fresh sub-agent per role with
 the `subagent` tool. Each agent definition lives in `.pi/agents/` (project
 scope) and is a thin wrapper: it points at its contract prompt under
 `prompts/` or `loop/prompts/` — the prompts are the real tuning surface — and
-pins its model per `loop/config.yaml`. All roles route their model calls
-through the founder's Command Code proxy loopback (credential via
-`COMMANDCODE_API_KEY` or the founder's Command Code CLI login). A role call
-carries ONLY its role prompt and the listed inputs: no host system prompt, no
-shared context with sibling roles. Nothing else ever uses the proxy. No
-fallback route is coded: a missing credential or unreachable proxy stops the
-run and escalates to the founder.
+pins its model per `loop/config.yaml`. Roles route through the founder's
+Command Code proxy loopback (credential via `COMMANDCODE_API_KEY` or the
+founder's Command Code CLI login), except judges, the trace analyzer, the
+hypothesizer, and the research sub-agents, which route through the OpenAI
+subscription (openai-sub provider). A role call carries ONLY its role prompt
+and the listed inputs: no host system prompt, no shared context with sibling
+roles. Nothing else ever uses either route. No fallback route is coded: a
+missing credential or unreachable route stops the run and escalates to the
+founder.
 
 Spawned roles (agent → contract prompt):
 - `researcher` — `.pi/agents/researcher.md` → `prompts/research-agent.md`;

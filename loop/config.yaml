@@ -3,9 +3,9 @@
 # call, read the values here; nothing in PROGRAM.md overrides this file.
 # These are STARTING POINTS. The loop can hypothesize changes to any value.
 
-# Writer — the six-input contract lives in PROGRAM.md Step 3
-# Route change 2026-08-07 (founder): all provider calls go through the
-# Command Code proxy loopback; no fallbacks — failure escalates to founder.
+# Writer — the chapter-writer sub-agent contract lives in PROGRAM.md §3
+# Route change 2026-08-07 (founder): the writer runs through the Command Code
+# proxy loopback; no fallbacks — failure escalates to founder.
 # Founder model choice 2026-08-07: Muse Spark 1.2 contributor (Meta). The id
 # must stay one the Command Code proxy lists and the founder's plan covers.
 writer_model: meta/muse-spark-1.2-contributor
@@ -49,9 +49,9 @@ planner_reasoning: high
 # (openai-sub provider); plan review stays on the Command Code proxy.
 # Request contract per role: only the role prompt and the listed inputs — no
 # hosted agent, no host system prompt.
-# Model must be in the founder's Command Code plan: gpt-5.6-sol/terra and
-# every other GPT id return MODEL_NOT_IN_PLAN (verified 2026-08-07), so all
-# roles start on gpt-5.6-luna; the loop may hypothesize other in-plan ids.
+# Model availability (verified 2026-08-07): gpt-5.6-sol/terra are NOT in the
+# Command Code plan (MODEL_NOT_IN_PLAN via CC), which is why the hypothesizer
+# runs Sol via openai-sub while CC-routed GPT roles (plan review) use Luna.
 # Reasoning values the proxy accepts: low/medium/high/max.
 gpt_endpoint: http://127.0.0.1:3050/v1/chat/completions
 gpt_auth_env: COMMANDCODE_API_KEY

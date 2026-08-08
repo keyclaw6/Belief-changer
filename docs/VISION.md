@@ -94,17 +94,17 @@ The Build & Launch Proposal (five-layer architecture: factory → library → pl
 
 ## Content Generation Pipeline
 
-**Four phases:**
+**Three phases:**
 
 1. **Research** — two distinct streams:
    - *(a) Lived experience:* a research agent mines forums/communities for how real people actually feel about the behavior and its downsides — so the book contains experiences that "hit home."
    - *(b) Scientific evidence:* gather studies on what the behavior actually does.
-2. **Template / Structure** — a reusable understanding of how Easyway-style books are structured.
-3. **Master Plan** — a long, detailed blueprint: what each chapter contains, which analogies to use where, the argument arc, etc.
-4. **Generation** — chapter by chapter (see key insight below).
+2. **Master Plan** — a long, detailed blueprint: what each chapter contains (entering/leaving beliefs, assigned mantras and instructions, evidence, analogies), the argument arc, etc.
+3. **Generation** — chapter by chapter (see key insight below).
 
-**★ Key design insight — anti-repetition context strategy.** Each chapter-writing call receives *exactly three things*:
+**★ Key design insight — anti-repetition context strategy.** Each chapter-writing call receives *exactly four things*:
 - **The master plan** (always) → global oversight of the whole book.
+- **The target chapter card** → the semantic authority for this chapter.
 - **The immediately previous chapter only** (not all prior chapters) → local continuity without drift.
 - **A style guide** → consistent voice.
 

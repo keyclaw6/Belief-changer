@@ -47,9 +47,9 @@ prose here.
   stopping thin because the search got tiring.
 - **Multiple fresh sub-agents are mandatory for independent depth** — never one
   context for everything. Spawn them with the `subagent` tool (parallel mode,
-  up to ten at a time, one targeted commission per sub-agent), give each only
-  this prompt, the brief, its specific commission, and the artifacts it needs —
-  never sibling sub-agents' raw context.
+  up to ten at a time, one targeted work order per sub-agent), give each only
+  this prompt, the brief, its specific work order, and the artifacts it needs
+  — never sibling sub-agents' raw context.
 - **The lead owns the method.** No prompt, matrix, or framework prescribes a
   role count, a search order, or a stopping quota. Do not ask the operator to
   design the research.
@@ -163,8 +163,8 @@ For a FULL-LENGTH book (~60k words, ~20 chapters): **≥ 300 lived-experience
 entries** (banks 1–5, 9, 10) across ≥ 3 personas; **≥ 100 verbatim
 justifications**; **≥ 50 analogy/metaphor candidates**; **≥ 100 dialect/sensory
 items**; **5–10 long-form testimonials**; and **≥ 40 graded scientific claims**
-(secondary — honesty over volume). POCKET preset ≈ 40% of each. A floor that is
-short commissions more work; clearing every floor does not end the run — §7
+(secondary — honesty over volume). POCKET preset ≈ 40% of each. A floor that
+is short triggers more work; clearing every floor does not end the run — §7
 does.
 
 ## §6 — Provenance and quality (LAW)
