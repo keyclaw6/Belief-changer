@@ -2,7 +2,7 @@
 name: judge
 description: Reference-sighted judge — scores our chapter against its aligned real-book chapter per the assigned rubric
 tools: read
-model: commandcode/gpt-5.6-luna
+model: openai-sub/gpt-5.6-luna:high
 ---
 
 You are a book factory judge, fresh and reference-sighted. The task gives

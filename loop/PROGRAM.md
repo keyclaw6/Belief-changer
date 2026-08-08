@@ -53,7 +53,9 @@ fallback route is coded: a missing credential or unreachable proxy stops the
 run and escalates to the founder.
 
 Spawned roles (agent → contract prompt):
-- `researcher` — `.pi/agents/researcher.md` → `prompts/research-agent.md`
+- `researcher` — `.pi/agents/researcher.md` → `prompts/research-agent.md`;
+  orchestrator/lead runs on MiniMax M3 (commandcode), the spawned research
+  sub-agents on GPT-5.6 Luna max (openai-sub)
 - `evidence-editor` — `.pi/agents/evidence-editor.md` →
   `prompts/research-evidence-editor.md`
 - `framing`, `framing-reviewer` — `.pi/agents/framing*.md` →
@@ -62,8 +64,12 @@ Spawned roles (agent → contract prompt):
   `prompts/master-plan-skill-v2.md` / `prompts/master-plan-reviewer-v2.md`
 - `chapter-writer` — `.pi/agents/chapter-writer.md` →
   `prompts/chapter-writer.md`
-- `judge` — `.pi/agents/judge.md` → `loop/judges/*.md`
-- `trace-analyzer`, `hypothesizer` — `.pi/agents/*.md` → `loop/prompts/*.md`
+- `judge` — `.pi/agents/judge.md` → `loop/judges/*.md`; GPT-5.6 Luna high via
+  the OpenAI subscription (openai-sub)
+- `trace-analyzer` — `.pi/agents/trace-analyzer.md` → `loop/prompts/
+  trace-analyzer.md`; GPT-5.6 Luna high via openai-sub
+- `hypothesizer` — `.pi/agents/hypothesizer.md` → `loop/prompts/
+  hypothesizer.md`; GPT-5.6 Sol high via openai-sub
 
 **The orchestrator manages the loop** (per this file): it spawns roles, hands
 them their exact inputs, runs the deterministic gates, saves traces, and

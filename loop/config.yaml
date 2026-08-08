@@ -15,15 +15,18 @@ writer_reasoning: high
 writer_temperature: 0.7
 # No completion cap: requests omit max_tokens; no model fallbacks.
 
-# Research — MiniMax M3 (chat completions + function calling; the proxy has
-# no native web tools, so the orchestrator executes web_search/web_fetch for
-# the model — depth stays unlimited). Founder instruction 2026-07-29 moved
-# research to MiniMax M3; the 2026-08-07 route change moves the transport to
-# the Command Code proxy (exact listed model id: MiniMaxAI/MiniMax-M3).
+# Research — the orchestrator/lead runs on MiniMax M3 through the Command
+# Code proxy (founder 2026-07-29; exact id MiniMaxAI/MiniMax-M3); the
+# research sub-agents it spawns run on GPT-5.6 Luna at MAX reasoning via the
+# OpenAI subscription route (openai-sub provider, 2026-08-08). Sub-agents
+# search/fetch via scripts/loop-runner/web_tools.py — depth stays unlimited.
 researcher_model: MiniMaxAI/MiniMax-M3
 researcher_endpoint: http://127.0.0.1:3050/v1/chat/completions
 researcher_auth_env: COMMANDCODE_API_KEY
 researcher_reasoning: high
+research_subagent_model: gpt-5.6-luna
+research_subagent_reasoning: max
+research_subagent_route: openai-sub
 # Depth is sacred: no search/fetch limits. Go as wide as still brings results.
 research_search_limit: unlimited
 research_fetch_limit: unlimited
@@ -41,22 +44,25 @@ planner_reasoning: high
 
 # GPT roles (framing, framing-reviewer, judging, trace analysis,
 # hypothesizing, evidence editing, plan review): spawned pi sub-agents
-# (`.pi/agents/*.md`) through the Command Code proxy (route change
-# 2026-08-07). Request contract per role: only the role prompt and the
-# listed inputs — no hosted agent, no host system prompt.
+# (`.pi/agents/*.md`). Route change 2026-08-08 (founder): judges, the trace
+# analyzer, and the hypothesizer run through the OpenAI subscription route
+# (openai-sub provider); framing, framing-reviewer, evidence editor, and
+# plan reviewer stay on the Command Code proxy. Request contract per role:
+# only the role prompt and the listed inputs — no hosted agent, no host
+# system prompt.
 # Model must be in the founder's Command Code plan: gpt-5.6-sol/terra and
 # every other GPT id return MODEL_NOT_IN_PLAN (verified 2026-08-07), so all
 # roles start on gpt-5.6-luna; the loop may hypothesize other in-plan ids.
 # Reasoning values the proxy accepts: low/medium/high/max.
 gpt_endpoint: http://127.0.0.1:3050/v1/chat/completions
 gpt_auth_env: COMMANDCODE_API_KEY
-judge_model: gpt-5.6-luna
+judge_model: gpt-5.6-luna   # route: openai-sub (subscription)
 judge_reasoning: high   # founder choice 2026-08-07
-analyzer_model: gpt-5.6-luna
+analyzer_model: gpt-5.6-luna   # route: openai-sub (subscription)
 analyzer_reasoning: high
-hypothesizer_model: gpt-5.6-luna
-hypothesizer_reasoning: max
-framing_model: gpt-5.6-luna
+hypothesizer_model: gpt-5.6-sol   # route: openai-sub (subscription)
+hypothesizer_reasoning: high   # founder choice 2026-08-08 (Sol high)
+framing_model: gpt-5.6-luna   # route: commandcode proxy
 framing_reasoning: max
 evidence_editor_model: gpt-5.6-luna
 evidence_editor_reasoning: max

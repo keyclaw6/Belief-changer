@@ -52,12 +52,17 @@ but a stable machine removes the whole failure class.
 - Every role is a spawned pi sub-agent (`.pi/agents/*.md`, `subagent` tool),
   a thin wrapper over its contract prompt in `prompts/` or `loop/prompts/`,
   with the model pinned per `loop/config.yaml`:
-  - `researcher` — `MiniMaxAI/MiniMax-M3`; search/fetch via
+  - `researcher` (orchestrator/lead) — `MiniMaxAI/MiniMax-M3` via the
+    commandcode proxy; the research sub-agents it spawns — `gpt-5.6-luna`
+    max via the OpenAI subscription (openai-sub). Search/fetch via
     `scripts/loop-runner/web_tools.py`.
-  - `framing`, `framing-reviewer`, `evidence-editor`, `judge`,
-    `trace-analyzer`, `hypothesizer`, `plan-reviewer` — `gpt-5.6-luna`.
-  - `plan-writer` — `moonshotai/Kimi-K3`.
-  - `chapter-writer` — `meta/muse-spark-1.2-contributor`.
+  - `judge`, `trace-analyzer` — `gpt-5.6-luna` high via openai-sub.
+  - `hypothesizer` — `gpt-5.6-sol` high via openai-sub.
+  - `framing`, `framing-reviewer`, `evidence-editor`, `plan-reviewer` —
+    `gpt-5.6-luna` via the commandcode proxy.
+  - `plan-writer` — `moonshotai/Kimi-K3` via the commandcode proxy.
+  - `chapter-writer` — `meta/muse-spark-1.2-contributor` via the commandcode
+    proxy.
 
 Route change 2026-08-07 (founder): writer, research, and planner all run
 through the founder's Command Code proxy loopback, and so do all GPT roles;
@@ -86,6 +91,11 @@ location; scratch state under `.loop-work/`, gitignored):
    default agent scope is `user`, so project-local discovery alone is not
    enough):
    `for f in .pi/agents/*.md; do ln -sf "$PWD/$f" ~/.pi/agent/agents/$(basename "$f"); done`
+3. Register the OpenAI subscription route in `~/.pi/agent/models.json` as an
+   `openai-sub` provider: `baseUrl http://127.0.0.1:10100/v1`, `api
+   openai-completions`, apiKey read live from `~/.opencodex/admin-api-token`
+   (the local OpenCodex service proxies the Codex backend with the founder's
+   OAuth). Models: `gpt-5.6-sol`, `gpt-5.6-luna`, `gpt-5.6-terra`, ...
 The repo's `.pi/agents/*.md` files stay canonical; the symlinks follow them.
 - `run_preflight.sh` — the §2 judge battery (re-run only after judge edits).
 - `queue_runner.sh` + `daemon.sh` — file-queue job runner (jobs in

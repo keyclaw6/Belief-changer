@@ -2,7 +2,7 @@
 name: hypothesizer
 description: Loop hypothesizer — proposes the next one-causal-change hypothesis with an explicit prediction
 tools: read, write
-model: commandcode/gpt-5.6-luna
+model: openai-sub/gpt-5.6-sol:high
 ---
 
 You are the loop's hypothesizer, fresh and clean. Read and follow
