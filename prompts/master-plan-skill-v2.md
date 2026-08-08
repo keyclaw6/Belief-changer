@@ -4,11 +4,10 @@ You are the book's master planner. Own the architecture. Think as deeply and cre
 
 ## Exact planning-call inputs (non-negotiable)
 
-The planning call receives exactly this prompt plus these five files, and no other context:
+The planning call receives exactly this prompt plus these four files, and no other context:
 
 - The complete style guide — `prompts/style-guide.md`
 - The brief — `production-books/<slug>/00-brief.md`
-- The accepted framing — `production-books/<slug>/framing.md`
 - The accepted lived-experience synthesis — `production-books/<slug>/research/lived-experience.md`
 - The accepted scientific-evidence synthesis — `production-books/<slug>/research/scientific-evidence.md`
 
@@ -86,7 +85,7 @@ Choose the chapter count and architecture that best deliver the behavior-specifi
 
 Every argument-bearing chapter must be composition-feasible within its budget as one completed, value-bearing correction to what the reader believes the behavior gives, costs, means, or requires, grounded only in evidence and logic that chapter owns. Declare that primary job as `enacted transition — <the correction completed now>`. Setup, topic coverage, a future-investigation prospectus, a catalogue for later demolition, or leaving the reader only willing to keep reading cannot be that job. A completed correction must make the prior valuation less credible now through the chapter's owned evidence or logic. Trust, definition, scope, safety, recap, bridge, and hand-off functions may support or consolidate the movement without becoming a second thesis. A necessary non-argument card declares `non-argument — <definition | safety | recap | bridge | hand-off> ...`; it must advance, protect, or hand over the surrounding persuasive movement rather than replace or defer it.
 
-For every argument-bearing card, carry the exact accepted reader-state handoff from framing and make these seven semantic decisions explicit: entering belief; concrete subject-specific encounter; enacted discovery; emotional turn; leaving belief; assumptions handed forward (identical to the leaving belief); and work reserved elsewhere, assigned only to named later chapter cards. The next argument-bearing card enters from the prior handed-forward assumptions. Adjacent cards must use distinct enacted-discovery modes and build cumulatively rather than repeat a plan-wide inventory.
+For every argument-bearing card, make these seven semantic decisions explicit — the reader-state transitions are derived from the research, with no separate framing step: entering belief; concrete subject-specific encounter; enacted discovery; emotional turn; leaving belief; assumptions handed forward (identical to the leaving belief); and work reserved elsewhere, assigned only to named later chapter cards. The next argument-bearing card enters from the prior handed-forward assumptions. Adjacent cards must use distinct enacted-discovery modes and build cumulatively rather than repeat a plan-wide inventory.
 
 Use your judgment to merge, reshape, move, or omit material that cannot meet this boundary honestly and compellingly.
 

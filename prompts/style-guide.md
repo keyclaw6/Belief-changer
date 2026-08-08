@@ -116,7 +116,7 @@ The three books genuinely disagree on several mechanisms. A writer must know the
 - **Carr:** "Change nothing else in your life" — inhabit the old contexts confidently to prove freedom; no elaborate replacement needed (the body's natural baseline returns on its own).
 - **Burgeon:** You **must** build a positive replacement (environment redesign + transmutation) or the compulsion migrates into the hole left behind.
 - **Freedom Model:** Drop the vigilance entirely; the needed capacities are already inside you.
-- **DEFAULT (Carr):** **"Change nothing else in your life."** The body returns to its natural baseline on its own; the reader inhabits every old context confidently to prove freedom; elaborate replacement systems are willpower-era scaffolding. This is the default for every consumptive behavior and for the calibration books. Burgeon's root-craving + positive-direction extension is a brief-level override reserved for behaviors that genuinely occupy time/identity (gaming, scrolling) — and even then `framing.md` must state it explicitly.
+- **DEFAULT (Carr):** **"Change nothing else in your life."** The body returns to its natural baseline on its own; the reader inhabits every old context confidently to prove freedom; elaborate replacement systems are willpower-era scaffolding. This is the default for every consumptive behavior and for the calibration books. Burgeon's root-craving + positive-direction extension is a brief-level override reserved for behaviors that genuinely occupy time/identity (gaming, scrolling) — and even then the master plan must state it explicitly.
 
 ---
 
@@ -341,7 +341,7 @@ Who profits and how was the hook built? (Game studios and variable-ratio reward 
 Is there a real withdrawal (and how trivial)? What's the neuroscience that makes the trap *visible*? Decide how much, and quarantine citations. Always subordinate fact to belief-change.
 
 ### Step 6 — Decide: natural baseline, or root + replacement? (Fork 5)
-Does this behavior have a clean natural baseline the body returns to (lean Carr: "change nothing else"), or does it fill time/identity/emotion (lean Burgeon: name the **root craving** — love/superiority/pleasure/risk or the behavior's analog — and supply a **positive direction** and environment redesign)? **Default (Carr, per Fork 5): "change nothing else" — the natural baseline returns on its own.** Root + positive direction is a brief-level override reserved for behaviors that genuinely occupy time/identity — and must be stated explicitly in `framing.md`. State the decision.
+Does this behavior have a clean natural baseline the body returns to (lean Carr: "change nothing else"), or does it fill time/identity/emotion (lean Burgeon: name the **root craving** — love/superiority/pleasure/risk or the behavior's analog — and supply a **positive direction** and environment redesign)? **Default (Carr, per Fork 5): "change nothing else" — the natural baseline returns on its own.** Root + positive direction is a brief-level override reserved for behaviors that genuinely occupy time/identity — and must be stated explicitly in the master plan. State the decision.
 
 ### Step 7 — Translate the analogies
 Every signature analogy (§11) should get a behavior-specific re-creation. Don't reuse Carr's caffeine images literally; build the gaming/scrolling/sugar equivalent that lands the same mechanism. **Write original images.**

@@ -12,7 +12,7 @@ For any subject, the factory produces a book that:
 - Delivers the Allen Carr reading experience: warm to the reader, harsh to the trap, direct, confident, emotionally alive, cumulative, repetitive with purpose, and structured as a sequence of discoveries that change how the reader sees the subject.
 - Is specific to the input subject. Its research, lived situations, mechanisms, objections, imagery, and belief reversals belong to that subject rather than feeling like a generic template with substituted nouns.
 - Makes the reader feel accurately understood and leads them from recognition through belief change to relief, freedom, and excitement.
-- Works as a coherent whole book. The research, framing, plan, chapters, handoffs, revisions, and final editorial pass combine into one intentional reading journey rather than a collection of individually adequate chapters.
+- Works as a coherent whole book. The research, plan, chapters, handoffs, revisions, and final editorial pass combine into one intentional reading journey rather than a collection of individually adequate chapters.
 - Is original, evidence-honest, source-traceable, non-shaming, willpower-free, and medically safe without losing Allen Carr's narrative force.
 - Is complete and publishable without the founder having to rescue the book through manual chapter-by-chapter rewriting.
 

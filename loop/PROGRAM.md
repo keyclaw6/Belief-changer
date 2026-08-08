@@ -17,13 +17,12 @@ completed iteration, its verdict, and the next hypothesis before acting.
 **Editable (the tuning surface):**
 - `prompts/style-guide.md`
 - `prompts/research-agent.md`
-- `prompts/research-evidence-editor.md`
 - `prompts/master-plan-skill-v2.md`
 - `prompts/master-plan-reviewer-v2.md`
 - `prompts/chapter-writer.md`
 - `loop/config.yaml` (routes, models, parameters)
 
-Generated research, framing, plans, and chapters under
+Generated research, plans, and chapters under
 `production-books/quit-sugar/` are **evidence, not editable hypotheses**.
 A hypothesis changes the factory that produces them, never the artifact itself.
 
@@ -56,10 +55,6 @@ Spawned roles (agent → contract prompt):
 - `researcher` — `.pi/agents/researcher.md` → `prompts/research-agent.md`;
   orchestrator/lead runs on MiniMax M3 (commandcode), the spawned research
   sub-agents on GPT-5.6 Luna max (openai-sub)
-- `evidence-editor` — `.pi/agents/evidence-editor.md` →
-  `prompts/research-evidence-editor.md`
-- `framing`, `framing-reviewer` — `.pi/agents/framing*.md` →
-  `production-books/_template/framing.md`
 - `plan-writer`, `plan-reviewer` — `.pi/agents/plan-*.md` →
   `prompts/master-plan-skill-v2.md` / `prompts/master-plan-reviewer-v2.md`
 - `chapter-writer` — `.pi/agents/chapter-writer.md` →
@@ -110,7 +105,7 @@ judge repair is founder-guided, not a loop iteration.
 
 Where is the factory now? Fresh full run, no hypothesis, no change.
 
-1. Run the factory END TO END per Step 3 below: research → framing → plan →
+1. Run the factory END TO END per Step 3 below: research → plan →
    full book. Nothing is reused from before the campaign; the current factory
    must own every artifact and trace it produces.
 2. Build `loop/reference-alignment.md` from the freshly accepted plan (its
@@ -147,11 +142,11 @@ file). Record the diff in `loop/iterations/NNN/change.diff`.
 ### Step 3: Run the factory
 
 Rerun the changed stage and every downstream stage **through full chapter
-generation**. Reuse only artifacts upstream of the change. A research,
-framing, or planning hypothesis is never judged without regenerated chapters.
+generation**. Reuse only artifacts upstream of the change. A research or
+planning hypothesis is never judged without regenerated chapters.
 
 **Stage: Research** — rerun ONLY when the hypothesis changed the research
-stage (research prompt, evidence editor, researcher model/params) or the
+stage (research prompt, researcher model/params) or the
 brief. Deep research is slow; when unchanged, reuse the last accepted
 research artifacts and copy them into this iteration's traces.
 - The orchestrator (the pi coding agent) IS the research lead. It reads
@@ -168,20 +163,11 @@ research artifacts and copy them into this iteration's traces.
 - Route/model per config (researcher model via the Command Code proxy).
 - Depth is sacred and unlimited: go as wide and deep as still brings
   results; filter afterwards, never limit upfront.
-- Gate: a fresh independent editor per `prompts/research-evidence-editor.md`
-  must return PASS on the research digest before framing may consume it.
 - Output: `production-books/quit-sugar/research/`
 
-**Stage: Framing** — the orchestrator spawns the `framing` sub-agent, which
-completes `production-books/quit-sugar/framing.md` per the framing contract
-(`production-books/_template/framing.md`) from the style guide, brief, and
-accepted research syntheses; then the orchestrator spawns the
-`framing-reviewer` sub-agent and hands the result back to the framing agent,
-iterating until the review is accepted in `framing-review.md`. Planning is
-blocked until accepted.
-
 **Stage: Planning** — the orchestrator spawns the `plan-writer` sub-agent
-(follows `prompts/master-plan-skill-v2.md`; exact five inputs, no reference
+(follows `prompts/master-plan-skill-v2.md`; exact four file inputs — style
+guide, brief, lived-experience, scientific-evidence — no reference
 contamination), then the `plan-reviewer` sub-agent
 (`prompts/master-plan-reviewer-v2.md`), handing the plan back to the
 plan-writer until `master-plan-review.md` ends `fit to write from`. When the
@@ -226,7 +212,6 @@ failure becomes the next hypothesis's failure evidence.
 loop/iterations/NNN/traces/
   research/              # exact accepted research inputs used by this run —
                          # copied every iteration; call traces added when rerun
-  framing.md             # framing used (copy)
   plan.md                # accepted master plan used (copy)
   chapter-01/
     chapter-card.md      # the target chapter card used (copy)

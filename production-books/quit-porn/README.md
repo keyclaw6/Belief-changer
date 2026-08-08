@@ -1,19 +1,18 @@
 # Quit Porn — working title
 
 **Target behavior:** Porn & compulsive masturbation (PMO)
-**Status:** PAUSED at framing — factory calibration comes first (see `docs/VISION.md` Part II → "Adopted Plan", DECIDED 2026-07-10). Research is complete and stays valid; this becomes the first novel-topic book once the calibration loop converges and the Stage C universality gate passes. It will then be produced by the proven factory end to end (`loop/PROGRAM.md` describes the stage flow) — the old hand-run handoff recipe is retired.
-Pipeline position: brief → researching → **framing (paused)** → planning → drafting ch.N → done
+**Status:** PAUSED before planning — factory calibration comes first (see `docs/VISION.md` Part II → "Adopted Plan", DECIDED 2026-07-10). Research is complete and stays valid; this becomes the first novel-topic book once the calibration loop converges and the Stage C universality gate passes. It will then be produced by the proven factory end to end (`loop/PROGRAM.md` describes the stage flow) — the old hand-run handoff recipe is retired.
+Pipeline position: brief → researching → **planning (paused)** → drafting ch.N → done
 **Created:** 2026-06-07
 
-A self-contained working folder for the quit-porn Belief-Changer book. It fills up **in order**: brief → research → framing → master plan (+ fresh independent review) → chapters.
+A self-contained working folder for the quit-porn Belief-Changer book. It fills up **in order**: brief → research → master plan (+ fresh independent review) → chapters.
 
 ## Artifacts (check off as created)
-- [x] `00-brief.md` — topic, reader, goal, fork decisions (partially filled; forks TBD in framing)
+- [x] `00-brief.md` — topic, reader, goal, fork decisions (partially filled; forks decided by the plan-writer)
 - [x] `research/research-log.md` — 8 sub-questions decomposed; Exa gap-fill logged
 - [x] `research/sources/` — 9 source files: Grok deep-dump + EasyPeasy + Burgeon + 6 Exa gap-fills
 - [x] `research/lived-experience.md` — synthesized: 66 bullets + 7 block quotes across 6 themes
 - [x] `research/scientific-evidence.md` — synthesized: 63 bullets; 32 CONTESTED tags; Grubbs MI model faithfully represented
-- [ ] `framing.md` — book-specific adaptation (style guide §4 forks + §10 playbook)
 - [ ] `master-plan.md` — chapter-by-chapter blueprint
 - [ ] `master-plan-review.md` — Opus reviewer critique + resolution (required)
 - [ ] `chapters/` — `chapter-01.md`, `chapter-02.md`, …

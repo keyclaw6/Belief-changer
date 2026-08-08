@@ -42,14 +42,13 @@ planner_endpoint: http://127.0.0.1:3050/v1/chat/completions
 planner_auth_env: COMMANDCODE_API_KEY
 planner_reasoning: high
 
-# GPT roles (framing, framing-reviewer, judging, trace analysis,
-# hypothesizing, evidence editing, plan review): spawned pi sub-agents
+# GPT roles (judging, trace analysis, hypothesizing, plan review): spawned pi
+# sub-agents
 # (`.pi/agents/*.md`). Route change 2026-08-08 (founder): judges, the trace
 # analyzer, and the hypothesizer run through the OpenAI subscription route
-# (openai-sub provider); framing, framing-reviewer, evidence editor, and
-# plan reviewer stay on the Command Code proxy. Request contract per role:
-# only the role prompt and the listed inputs — no hosted agent, no host
-# system prompt.
+# (openai-sub provider); plan review stays on the Command Code proxy.
+# Request contract per role: only the role prompt and the listed inputs — no
+# hosted agent, no host system prompt.
 # Model must be in the founder's Command Code plan: gpt-5.6-sol/terra and
 # every other GPT id return MODEL_NOT_IN_PLAN (verified 2026-08-07), so all
 # roles start on gpt-5.6-luna; the loop may hypothesize other in-plan ids.
@@ -62,10 +61,6 @@ analyzer_model: gpt-5.6-luna   # route: openai-sub (subscription)
 analyzer_reasoning: high
 hypothesizer_model: gpt-5.6-sol   # route: openai-sub (subscription)
 hypothesizer_reasoning: high   # founder choice 2026-08-08 (Sol high)
-framing_model: gpt-5.6-luna   # route: commandcode proxy
-framing_reasoning: max
-evidence_editor_model: gpt-5.6-luna
-evidence_editor_reasoning: max
 plan_reviewer_model: gpt-5.6-luna
 plan_reviewer_reasoning: max
 

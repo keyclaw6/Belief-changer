@@ -29,8 +29,8 @@ but a stable machine removes the whole failure class.
     `_rounds/round-1/subagents/K-NN/response.md`
   - MISSING: K-08..K-12 (K-08/K-09 died to a network-entitlement loss;
     no checkpoints — they restart from their commissions)
-- Framing and master-plan artifacts exist on disk, but their reviews are not
-  clean — a fresh operator re-runs those stages' gates per PROGRAM §3.
+- Master-plan artifacts exist on disk, but the plan review is not clean — a
+  fresh operator re-runs that stage's gate per PROGRAM §3.
 - **Next actions, in order:**
   1. `bash scripts/loop-runner/run_preflight.sh` (judge recalibration on
      Luna high — 18 calls through the Command Code proxy)
@@ -40,10 +40,9 @@ but a stable machine removes the whole failure class.
      and spawns `researcher` sub-agents until the completion criterion in
      `prompts/research-agent.md` clears across at least three personas.
   3. Synthesis into `production-books/quit-sugar/research/` per
-     `prompts/research-agent.md` §9, then the independent evidence editor
-     gate (§10) — the `evidence-editor` sub-agent, `ACCEPTED FOR FRAMING`
-     required.
-  4. Then PROGRAM §3 continues: framing → plan → reference-alignment →
+     `prompts/research-agent.md` §8 — research is complete when the
+     completion criterion clears.
+  4. Then PROGRAM §3 continues: plan → reference-alignment →
      plan cards → chapters → validity gates → judges → trace analysis →
      A/A check → BASELINE row. Commit after every stage on campaign-001.
 
@@ -58,8 +57,7 @@ but a stable machine removes the whole failure class.
     `scripts/loop-runner/web_tools.py`.
   - `judge`, `trace-analyzer` — `gpt-5.6-luna` high via openai-sub.
   - `hypothesizer` — `gpt-5.6-sol` high via openai-sub.
-  - `framing`, `framing-reviewer`, `evidence-editor`, `plan-reviewer` —
-    `gpt-5.6-luna` via the commandcode proxy.
+  - `plan-reviewer` — `gpt-5.6-luna` via the commandcode proxy.
   - `plan-writer` — `moonshotai/Kimi-K3` via the commandcode proxy.
   - `chapter-writer` — `meta/muse-spark-1.2-contributor` via the commandcode
     proxy.

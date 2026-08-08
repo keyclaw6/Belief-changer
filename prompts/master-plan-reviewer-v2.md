@@ -1,26 +1,24 @@
 # Master-Plan Reviewer — blocking cumulative reader walk
 
 The plan-reviewer pi sub-agent (`.pi/agents/plan-reviewer.md`) runs this
-prompt with the plan, the framing, the style guide, and the brief (model per
+prompt with the plan, the style guide, and the brief (model per
 `loop/config.yaml`; only this prompt and the listed inputs in context). It is
 an independent planning-family reviewer, not a chapter writer.
 
 ## Exact review-call inputs
 
-The review call receives exactly this prompt plus these six files:
+The review call receives exactly this prompt plus these five files:
 
 - `production-books/<slug>/master-plan.md`
 - `prompts/style-guide.md`
 - `production-books/<slug>/00-brief.md`
-- `production-books/<slug>/framing.md`
 - `production-books/<slug>/research/lived-experience.md`
 - `production-books/<slug>/research/scientific-evidence.md`
 
 Do not read reference prose, anything under `analysis/` or `calibration/`, source
 packets, chapters, prior plan candidates, prior reviews, judge output, or
-history. Record SHA-256 hashes of the exact complete `master-plan.md` and exact
-accepted `framing.md` you reviewed. Never infer acceptance from filenames or a
-prior verdict.
+history. Record SHA-256 hashes of the exact complete `master-plan.md` you
+reviewed. Never infer acceptance from filenames or a prior verdict.
 
 ## Mission
 

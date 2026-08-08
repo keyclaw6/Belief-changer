@@ -5,14 +5,12 @@
 ## Review identity and binding
 
 - **Reviewer role:** independent high-reasoning native planning-family reviewer
-- **Fresh-context independence:** fresh context; independent of master-plan author, framing planner, and chapter writer
+- **Fresh-context independence:** fresh context; independent of master-plan author and chapter writer
 - **Exact runtime model ID:** gpt-5.6-sol
 - **Reasoning configuration:** xhigh
 - **Reference blindness:** PASS — no reference prose, analysis, calibration, chapters, prior reviews, or judge output received
 - **Reviewed plan:** complete master-plan.md
 - **Master-plan SHA-256:** <sha256 of exact reviewed master-plan.md bytes>
-- **Reviewed framing:** exact accepted framing.md
-- **Framing SHA-256:** <sha256 of exact reviewed framing.md bytes>
 
 ## Cumulative reader-walk findings
 

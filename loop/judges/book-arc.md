@@ -88,7 +88,7 @@ cumulative method]
 **What it does instead:** [the observed cross-chapter failure, with brief
 quoted evidence from the chapters involved]
 
-**Initial suspicion (speculative):** [research | framing | plan | plan-card |
+**Initial suspicion (speculative):** [research | plan | plan-card |
 style-guide | writer-prompt | model | unknown] — [one sentence. Do not
 propose a fix. The trace analyzer will verify or reject this.]
 

@@ -14,7 +14,7 @@ prescribe.
    inherit them.
 2. **Generation traces** — what actually happened:
    - `research/` — the exact accepted research inputs this run used
-   - `framing.md`, `plan.md` — the framing and plan used
+   - `plan.md` — the accepted master plan used
    - per chapter: the chapter card, the exact writer prompt, the response,
      the validity-gate result, metadata
 
@@ -38,18 +38,16 @@ required move becomes absent, wrong, or contradicted:
 
 1. **Research** — the necessary subject material, reader language, or
    factual support is absent from the accepted research inputs.
-2. **Framing** — research is adequate, but the framing (personas, forks,
-   authority strategy, reader-state journey) misdirects the book.
-3. **Plan** — framing is adequate, but the plan omits, misplaces, weakens,
+2. **Plan** — the plan omits, misplaces, weakens,
    or overrides the move (wrong card assignment, wrong sequence, wrong
    emphasis, missing evidence routing).
-4. **Plan card** — the card or its plan-wide inventories dropped, diluted,
+3. **Plan card** — the card or its plan-wide inventories dropped, diluted,
    or distorted what the move required.
-5. **Style guide** — the reusable craft rule is absent, wrong, or conflicts
+4. **Style guide** — the reusable craft rule is absent, wrong, or conflicts
    with the chapter-specific assignment.
-6. **Writer prompt** — the runtime execution contract fails to carry,
+5. **Writer prompt** — the runtime execution contract fails to carry,
    prioritize, or resolve an otherwise adequate card and style guide.
-7. **Model** — the supplied inputs are adequate, sufficiently clear, and
+6. **Model** — the supplied inputs are adequate, sufficiently clear, and
    mutually consistent, but the response still fails to execute them.
 
 Choose the component that FIRST makes the move absent, wrong, or
@@ -74,7 +72,7 @@ Then for each cluster:
 **Judge sources:** [every judge and gap included]
 **Shared symptom:** [the common output failure, with quoted evidence]
 **Distinct effects:** [what each judge uniquely observed, if material]
-**Root component:** [research | framing | plan | plan-card | style-guide |
+**Root component:** [research | plan | plan-card | style-guide |
 writer-prompt | model]
 **Evidence:** [the decisive trace evidence — quote the upstream artifact
 where the move first goes wrong, and the downstream point where it lands

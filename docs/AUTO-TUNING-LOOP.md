@@ -34,7 +34,7 @@ matter only insofar as they serve belief change.
 ## The Loop
 
 ```
-1. RUN FACTORY   — research → framing → plan → write ALL chapters
+1. RUN FACTORY   — research → plan → write ALL chapters
                    (the whole book, every iteration — chapters change what
                    they optimize across the arc, so partial runs mislead)
 2. COMPARE       — Judge panel reads our chapters + real GSBS chapters
@@ -44,7 +44,7 @@ matter only insofar as they serve belief change.
                    Where did the writer diverge from intent? What did the
                    research provide or fail to provide?
 4. DIAGNOSE      — Map each gap to a factory component:
-                   research? framing? plan? writer prompt? style guide? model?
+                   research? plan? writer prompt? style guide? model?
 5. HYPOTHESIZE   — One change to one factory component, with prediction:
                    "If we change X, then gap Y will close because Z"
 6. APPLY         — Make the change
@@ -112,7 +112,6 @@ Nothing inside the factory is fixed. The loop can change:
 - Research prompts and research process (search strategy, lanes, depth)
 - Factory models and routes (writer, planner, researcher)
 - Chapter structure and anatomy decisions
-- Framing decisions
 - Plan card contract
 - Any other factory component — except the judges: judge calibration
   remains a separate founder-guided activity

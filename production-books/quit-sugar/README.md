@@ -6,7 +6,7 @@ North Star `docs/AUTO-TUNING-LOOP.md`)
 **Created:** 2026-07-10 · reset for the fresh whole-book baseline 2026-07-28
 
 The factory-calibration book: the loop generates the WHOLE book fresh —
-research → framing → plan → all chapters — and a reference-sighted judge
+research → plan → all chapters — and a reference-sighted judge
 panel compares it against the real *Good Sugar Bad Sugar*
 (`calibration/reference/gsbs/`). The factory itself never reads the
 reference or `/analysis/` (the planner and writer contracts forbid it);
@@ -20,7 +20,6 @@ in `loop/PROGRAM.md` §1).
 ## Artifacts
 - `00-brief.md` — the subject input (founder-owned)
 - `research/` — sources, log, and the two synthesized banks (generated)
-- `framing.md` + `framing-review.md` — the adaptation decisions (generated)
 - `master-plan.md` + `master-plan-review.md` — the blueprint, reviewed to
   "fit to write from" (generated)
 - `chapters/` — the full book, regenerated every iteration (generated)

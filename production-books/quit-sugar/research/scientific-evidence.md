@@ -37,7 +37,7 @@ a scientific unit. Otherwise omit the unit and record a research-owned gap.
 ## Brief-belief evidence gaps
 
 Record each unsupported brief belief once across the two syntheses. A gap blocks
-framing and planning until research supplies a complete, traceable unit.
+planning until research supplies a complete, traceable unit.
 
 ### GAP-002
 

@@ -144,7 +144,7 @@ trust, safety, confrontation, relief? How?]
 **Where our voice fails:** [What effect does ours create instead — distance,
 doubt about the method, being coached, being audited?]
 
-**Initial suspicion (speculative):** [research | framing | plan | plan-card |
+**Initial suspicion (speculative):** [research | plan | plan-card |
 style-guide | writer-prompt | model | unknown] — [one sentence. Do not
 propose a fix. The trace analyzer will verify or reject this.]
 

@@ -40,8 +40,9 @@ prose here.
   integration, name what is still missing — the thin persona, the unfilled slot,
   the community you have not reached — and dispatch again. The run ends only
   when the slot-filling completion criterion (§7) clears across at least three
-  materially distinct personas, or an independent reviewer accepts a documented
-  scarcity. Generic volume is not depth; counts never manufacture completion.
+  materially distinct personas, or the shortfall is documented as genuine
+  scarcity in the research log. Generic volume is not depth; counts never
+  manufacture completion.
   Both failures are equal: stopping early because a number was hit, and
   stopping thin because the search got tiring.
 - **Multiple fresh sub-agents are mandatory for independent depth** — never one
@@ -86,9 +87,8 @@ spawn runs on GPT-5.6 Luna at MAX reasoning through the OpenAI subscription
    persona, unfilled slot, unreached community — and dispatch again.
 5. **Synthesize** when the completion criterion clears (§7): write
    `research-log.md`, `lived-experience.md`, `scientific-evidence.md`, and the
-   `sources/` ledger. Then the independent evidence editor
-   (`prompts/research-evidence-editor.md`) gates the digest; framing consumes
-   only what it accepts.
+   `sources/` ledger. Research is complete when the completion criterion
+   clears — there is no separate evidence-editor gate.
 
 ## §1 — Parameter block (fill from the brief, first thing)
 
@@ -190,8 +190,8 @@ Research is NOT done when N pages are gathered. It is done when **every
 style-guide slot below clears its minimum across ≥ 3 materially distinct
 personas**. Whenever a slot is unfilled, thin, or single-persona, dispatch a
 targeted gap-fill sub-agent for exactly that slot, and repeat. Do not synthesize
-until this clears (or the reviewer rules a shortfall as genuine documented
-scarcity).
+until this clears (or the shortfall is documented as genuine scarcity in the
+research log).
 
 | Slot | Bank(s) | Minimum to clear |
 |---|---|---|
@@ -214,10 +214,5 @@ When every row clears across ≥3 personas, synthesize (§8).
 - `research-log.md` — parameter block, the dispatch history, and the gap-fill
   loop record (what was dispatched, what came back, what stayed thin).
 - `lived-experience.md` and `scientific-evidence.md` — the ten banks, written
-  for the framing and master-plan stages to consume directly.
+  for the master-plan stage to consume directly.
 - `sources/` — the source ledger with locators.
-
-Then the independent evidence editor (`prompts/research-evidence-editor.md`), a
-fresh reference-blind call from a different model family, must return PASS on
-the digest before framing consumes it. The operator never patches evidence by
-hand.

@@ -5,7 +5,7 @@
 **Target behavior:**
 **Reader / personas:**
 **Format:** pocket (§B6) | full-length (§B10)
-**Outcome stance / forks:** <from framing.md>
+**Outcome stance / forks:** <decided by the plan-writer from research and the brief>
 **The load-bearing false belief this book dismantles:** <one sentence>
 
 ## Through-line (the argument arc, 5–8 sentences)

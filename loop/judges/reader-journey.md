@@ -119,7 +119,7 @@ real chapter's function at this point]
 explanation? Not enough recognition? Missing consolidation? Premature
 resolution?]
 
-**Initial suspicion (speculative):** [research | framing | plan | plan-card |
+**Initial suspicion (speculative):** [research | plan | plan-card |
 style-guide | writer-prompt | model | unknown] — [one sentence. Do not
 propose a fix. The trace analyzer will verify or reject this.]
 

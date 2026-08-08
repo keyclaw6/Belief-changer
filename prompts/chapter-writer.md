@@ -22,8 +22,8 @@ The only valid refusal is exactly one line:
 `ROUTE REFUSAL: {"action_code":"repair_owner_and_regenerate_downstream","finding":"<one concise defect>","owner":"<canonical owner>"}`.
 Preserve that exact field order and punctuation: no outer whitespace, newline,
 extra spaces, duplicate keys, omitted keys, additional keys, or non-string values.
-The owner must be exactly one of `brief`, `research/synthesis`, `framing`,
-`plan`, `prose`, `revision`, or `evaluation`, and must be the earliest stage
+The owner must be exactly one of `brief`, `research/synthesis`, `plan`,
+`prose`, `revision`, or `evaluation`, and must be the earliest stage
 that can repair the defect. Never emit another refusal form.
 
 ## Method and voice
