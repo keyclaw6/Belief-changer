@@ -16,11 +16,15 @@ acting.
 **`loop/state.md` is the live checkpoint.** Its `Status` field is exactly
 `IDLE` or `IN PROGRESS` (verbatim — no other token). It governs resumption:
 
-- **`IN PROGRESS`** — the run was interrupted in that iteration/stage: continue
-  from the last completed unit, do not restart the iteration, do not redo
-  completed units. *Exception:* if `results.tsv` already holds a row for that
-  same iteration, the iteration completed (Step 7 ran) and only the final commit
-  may be missing — treat it as done; never re-run it.
+- **`IN PROGRESS`** — the run was interrupted in that iteration/stage. Before
+  continuing, check the `Owner` token in `loop/state.md`: if another live
+  orchestrator still holds it (its process is running), STOP — do not drive a
+  run someone else owns; report and wait. If the owner is dead (no live
+  process) or the token is stale, claim the run by writing your own fresh
+  token, then continue from the last completed unit — do not restart the
+  iteration, do not redo completed units. *Exception:* if `results.tsv` already
+  holds a row for that same iteration, the iteration completed (Step 7 ran) and
+  only the final commit may be missing — treat it as done; never re-run it.
 - **`IDLE`** — no run in flight; the `results.tsv` rule above governs.
 
 **Cross-check before resuming.** `state.md` can lag the stage it names (it is
@@ -166,9 +170,13 @@ reuse, so `research_reuse.sh` is not consulted; research always runs at 000.
 
 **Founder inbox first.** If `loop/inbox/` holds any `.md` file other than
 `README.md`, the founder has proposed a hypothesis — test it before any
-machine-generated one, oldest file first.
+machine-generated one. **Oldest = the lexicographically-first filename** (name
+files with a date prefix, e.g. `2026-08-12-shorten-instructions.md`, so sort
+order is arrival order). One inbox note per iteration — extra notes wait for
+the next iteration; they are never drained in a batch.
 
-1. **Validate** the oldest file against `loop/inbox/README.md`. If it is vague
+1. **Validate** the oldest (lexicographically-first) file against
+   `loop/inbox/README.md`. If it is vague
    or multi-change, do NOT guess: move it to `loop/inbox/used/REJECTED-NNN-<name>.md`,
    note the defect to the founder, and fall through to the hypothesizer below.
 2. Otherwise **feed it to the hypothesizer** (not the orchestrator) as the
@@ -206,14 +214,18 @@ NOT poll it continuously. It updates `loop/state.md`, then waits — a long
 `sleep`, a scheduled wake, or a single wait — and on waking checks the stage's
 on-disk markers: the `.exit` files `daemon.sh`/`queue_runner.sh` write on
 completion (under `.loop-work/`), corroborated by content progress (research
-bank files, `chapters/`, `judgments/`). Markers moved and not looping = still
-working = wait again. There is no fixed per-stage timeout: deep research is
-sacred and unlimited, so a stage is never declared stuck on elapsed time. Only
-when markers have stopped moving AND a fresh read of the traces shows no
-progress does the orchestrator spawn a sub-agent to judge whether the run is
-stuck; a stuck run is retried once per §1, then INCONCLUSIVE or escalate. Doing
-nothing while a healthy run proceeds is correct behavior, not a wasted wake.
-Update `loop/state.md` before every wait.
+bank files, `chapters/`, `judgments/`). **Every long-running unit writes a
+marker**: each chapter-writer spawn for chapter NN writes
+`.loop-work/writer/chapter-NN.exit` (its exit code) on completion, so a wedged
+writer is detectable as a missing marker plus a frozen chapter file. Markers
+moved and not looping = still working = wait again. There is no fixed per-stage
+timeout: deep research is sacred and unlimited, so the *research* stage is
+never declared stuck on elapsed time. For every other unit, stuck = the
+expected marker absent AND no new content in the traces across two consecutive
+wakes; only then does the orchestrator spawn a sub-agent to read the traces and
+confirm the wedge. A confirmed stuck run is retried once per §1, then
+INCONCLUSIVE or escalate. Doing nothing while a healthy run proceeds is correct
+behavior, not a wasted wake. Update `loop/state.md` before every wait.
 
 **Research reuse is the one deterministic handover.** Whether the research
 stage reruns is decided by `scripts/loop-runner/research_reuse.sh`
@@ -389,12 +401,20 @@ reads; `ledger.md` is the explanation a reader uses to decide the next move).
 entry.
 
 Mark the iteration done in `loop/state.md` (status `IDLE`, last completed unit
-= iteration NNN decision). On **KEEP**, promote the iteration's change to the
-campaign branch as one commit (`loop(iter-NNN): KEEP — short hypothesis`) and
-merge the `loop/iterations/NNN/` records with it. On **REVERT / INCONCLUSIVE**,
-commit only the records (`iterations/NNN/`, results row, ledger entry) to the
-campaign branch — never the factory change. Remove the iteration worktree once
-its records are committed.
+= iteration NNN decision). Commit on the campaign branch with a **pinned file
+set** — never `git add -A`:
+
+- **KEEP** — one commit (`loop(iter-NNN): KEEP — short hypothesis`) containing
+  exactly: the one edited tuning file, and the iteration records
+  (`loop/iterations/NNN/`, the `results.tsv` row, the `learnings.md` and
+  `ledger.md` entries, `loop/state.md`). Nothing else.
+- **REVERT / INCONCLUSIVE** — one commit containing only the records
+  (`loop/iterations/NNN/`, `results.tsv`, `learnings.md`, `ledger.md`,
+  `state.md`) — never the factory change.
+
+After committing, verify with `git show --stat` that the file set matches and
+holds no stray worktree artifact. Remove the iteration worktree once its
+records are committed.
 
 ## 5. Rules
 

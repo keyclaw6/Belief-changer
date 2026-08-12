@@ -18,9 +18,13 @@ Name it anything, e.g. `2026-08-12-shorten-instructions.md`. Inside:
 
 ## Rules
 
-- The orchestrator tests inbox hypotheses **before** machine-generated ones,
-  in the order they arrived (oldest file first).
+- The orchestrator tests inbox hypotheses **before** machine-generated ones.
+  **Oldest = the lexicographically-first filename**, so name files with a date
+  prefix (`2026-08-12-shorten-instructions.md`) and arrival order = sort order.
+- **One note per iteration.** If several are waiting, only the oldest is tested
+  each iteration; the rest wait their turn.
 - When a file is picked up it is moved to `loop/inbox/used/` and recorded in
   the iteration, so the inbox only ever holds untested ideas.
-- A vague or multi-change note is not a hypothesis — the orchestrator will
-  hand it back with what to sharpen rather than guess.
+- A vague or multi-change note is not a hypothesis — the orchestrator moves it
+  to `loop/inbox/used/REJECTED-NNN-<name>.md` and tells you what to sharpen,
+  rather than guess.
