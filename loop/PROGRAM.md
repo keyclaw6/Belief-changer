@@ -367,12 +367,14 @@ Append to `loop/learnings.md`:
 **Next direction:** [what to try next based on this]
 ```
 
-Append one row to `loop/ledger.md` — the human-readable experiment ledger:
-iteration, date, hypothesis, the file changed, the verdict, and what we
-learned. Copy the verdict and lesson from the `results.tsv` row verbatim —
-`results.tsv` is canonical; `ledger.md` is its readable view; `learnings.md`'s
-Lesson is the load-bearing one the hypothesizer reads. `ledger.md` is
-append-only: never edit a past row, corrections become a new row.
+Append one entry to `loop/ledger.md` — the explanatory experiment ledger —
+using the entry format in that file: Hypothesis, Change, What happened (the
+evidence, quoted), Verdict & why, What we learned, and **What this opens
+next**. The verdict and lesson are copied verbatim from the `results.tsv` row
+(`results.tsv` is canonical; `learnings.md`'s Lesson is what the hypothesizer
+reads; `ledger.md` is the explanation a reader uses to decide the next move).
+`ledger.md` is append-only: never edit a past entry, corrections become a new
+entry.
 
 Mark the iteration done in `loop/state.md` (status `IDLE`, last completed unit
 = iteration NNN decision) and commit the iteration on the campaign branch.
