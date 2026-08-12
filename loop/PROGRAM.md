@@ -16,15 +16,13 @@ acting.
 **`loop/state.md` is the live checkpoint.** Its `Status` field is exactly
 `IDLE` or `IN PROGRESS` (verbatim — no other token). It governs resumption:
 
-- **`IN PROGRESS`** — the run was interrupted in that iteration/stage. Before
-  continuing, check the `Owner` token in `loop/state.md`: if another live
-  orchestrator still holds it (its process is running), STOP — do not drive a
-  run someone else owns; report and wait. If the owner is dead (no live
-  process) or the token is stale, claim the run by writing your own fresh
-  token, then continue from the last completed unit — do not restart the
-  iteration, do not redo completed units. *Exception:* if `results.tsv` already
-  holds a row for that same iteration, the iteration completed (Step 7 ran) and
-  only the final commit may be missing — treat it as done; never re-run it.
+- **`IN PROGRESS`** — the run was interrupted in that iteration/stage. The loop
+  is **single-operator**: exactly one orchestrator drives it at a time, and a
+  resuming agent is by definition the only one — there is no ownership token to
+  check. Continue from the last completed unit; do not restart the iteration,
+  do not redo completed units. *Exception:* if `results.tsv` already holds a row
+  for that same iteration, the iteration completed (Step 7 ran) and only the
+  final commit may be missing — treat it as done; never re-run it.
 - **`IDLE`** — no run in flight; the `results.tsv` rule above governs.
 
 **Cross-check before resuming.** `state.md` can lag the stage it names (it is
@@ -32,8 +30,11 @@ written at boundaries, work lands between them). Before acting, confirm each
 claimed completed unit against the on-disk markers — research bank files,
 `production-books/quit-sugar/chapters/`, `loop/iterations/NNN/judgments/` — and
 resume from the *furthest* point the markers support, not the stale marker.
-The orchestrator updates `loop/state.md` at every stage boundary and before
-every long wait (see §4 Step 3, "Patience").
+Also confirm you are on the right branch: iteration work happens on the
+campaign branch (or the iteration branch inside its worktree), never on `main`;
+`state.md` names the active campaign branch. The orchestrator updates
+`loop/state.md` at every stage boundary and before every long wait (see §4
+Step 3, "Patience").
 
 ## 1. File ownership
 
@@ -114,6 +115,19 @@ and ledger entry) but their factory change is not promoted. `main` carries only
 founder-merged winners; the campaign branch is created fresh from `main` when a
 campaign starts.
 
+**Branch + worktree mechanics.** The campaign branch is `campaign-NNN`
+(`campaign-001` for the first), created from `main` at campaign start:
+`git branch campaign-001 main`. Each iteration's worktree is created from the
+campaign branch tip: `git worktree add ../quit-sugar-iter-NNN -b iter-NNN campaign-001`.
+Inside its worktree the iteration's work (change + generated book + records) is
+committed on the `iter-NNN` branch as it lands, so Step 7 can promote it with a
+merge. The baseline (§3) runs directly on the campaign branch — no worktree —
+and is committed there (§3 step 7). Before any Step 7 commit, confirm the
+branch: `git rev-parse --abbrev-ref HEAD` must be the campaign branch (or the
+iteration branch inside its worktree) — never commit iteration output on
+`main`. `loop/state.md` records the active campaign branch so a resuming agent
+can verify it.
+
 ## 2. Preflight — judge calibration battery
 
 Run once before the baseline, and again after any founder edit to a judge.
@@ -163,6 +177,11 @@ reuse, so `research_reuse.sh` is not consulted; research always runs at 000.
    and this calibrates what "material" means.
 6. Append a `BASELINE` row to `loop/results.tsv` and a learnings entry:
    "Baseline established. Top causal clusters: [list]."
+7. **Commit the baseline onto the campaign branch** — the accepted book
+   (`production-books/quit-sugar/`: research, plan, chapters) plus the
+   `loop/iterations/000/` records and the `results.tsv` row
+   (`loop(000): BASELINE`). The campaign-branch tip now owns the accepted
+   state that every later iteration's worktree is cut from.
 
 ## 4. One iteration (001+)
 
@@ -212,20 +231,21 @@ planning hypothesis is never judged without regenerated chapters.
 takes hours. When a stage or a spawned role is running, the orchestrator does
 NOT poll it continuously. It updates `loop/state.md`, then waits — a long
 `sleep`, a scheduled wake, or a single wait — and on waking checks the stage's
-on-disk markers: the `.exit` files `daemon.sh`/`queue_runner.sh` write on
-completion (under `.loop-work/`), corroborated by content progress (research
-bank files, `chapters/`, `judgments/`). **Every long-running unit writes a
-marker**: each chapter-writer spawn for chapter NN writes
-`.loop-work/writer/chapter-NN.exit` (its exit code) on completion, so a wedged
-writer is detectable as a missing marker plus a frozen chapter file. Markers
-moved and not looping = still working = wait again. There is no fixed per-stage
+on-disk progress. **The progress markers are the real artifacts the stage
+produces**: research bank files under `production-books/<slug>/research/`,
+chapter files under `production-books/<slug>/chapters/`, judgment files under
+`loop/iterations/NNN/judgments/`. (When a stage runs through
+`daemon.sh`/`queue_runner.sh`, their `.exit` files under `.loop-work/` are an
+extra completion signal — but those runners are optional and the spawned writer
+produces no separate marker; the chapter file IS the marker.) New content since
+the last wake = still working = wait again. There is no fixed per-stage
 timeout: deep research is sacred and unlimited, so the *research* stage is
-never declared stuck on elapsed time. For every other unit, stuck = the
-expected marker absent AND no new content in the traces across two consecutive
-wakes; only then does the orchestrator spawn a sub-agent to read the traces and
-confirm the wedge. A confirmed stuck run is retried once per §1, then
-INCONCLUSIVE or escalate. Doing nothing while a healthy run proceeds is correct
-behavior, not a wasted wake. Update `loop/state.md` before every wait.
+never declared stuck on elapsed time. For every other unit, stuck = no new
+output artifact and no trace progress across two consecutive wakes; only then
+does the orchestrator spawn a sub-agent to read the traces and confirm the
+wedge. A confirmed stuck run is retried once per §1, then INCONCLUSIVE or
+escalate. Doing nothing while a healthy run proceeds is correct behavior, not
+a wasted wake. Update `loop/state.md` before every wait.
 
 **Research reuse is the one deterministic handover.** Whether the research
 stage reruns is decided by `scripts/loop-runner/research_reuse.sh`
@@ -367,7 +387,8 @@ Verdicts:
 - **INCONCLUSIVE** — invalid evidence, or no improvement and no regression.
 
 KEEP: the iteration's change is the new accepted state — promote it to the
-campaign branch (Step 7) and keep the generated artifacts. REVERT /
+campaign branch (Step 7) **and commit the accepted book (chapters + research)
+with it**, so the winning book survives worktree removal. REVERT /
 INCONCLUSIVE: the change is not promoted — the iteration's worktree and its
 factory change are discarded, but the iteration directory
 (`loop/iterations/NNN/`) and the ledger entry are always kept on the campaign
@@ -377,9 +398,6 @@ Record prediction accuracy: "Predicted X. Observed Y. [accurate/partial/wrong]."
 Write `loop/iterations/NNN/decision.md` with the verdict and reasoning.
 
 ### Step 7: Record
-
-Append one tab-separated data row to `loop/results.tsv` matching the existing
-header. Do not append the header again.
 
 Append to `loop/learnings.md`:
 ```
@@ -394,27 +412,39 @@ Append to `loop/learnings.md`:
 Append one entry to `loop/ledger.md` — the explanatory experiment ledger —
 using the entry format in that file: Hypothesis, Change, What happened (the
 evidence, quoted), Verdict & why, What we learned, and **What this opens
-next**. The verdict and lesson are copied verbatim from the `results.tsv` row
-(`results.tsv` is canonical; `learnings.md`'s Lesson is what the hypothesizer
-reads; `ledger.md` is the explanation a reader uses to decide the next move).
-`ledger.md` is append-only: never edit a past entry, corrections become a new
-entry.
+next**. `results.tsv` is canonical; `learnings.md`'s Lesson is what the
+hypothesizer reads; `ledger.md` is the explanation a reader uses to decide the
+next move. `ledger.md` is append-only: never edit a past entry, corrections
+become a new entry.
+
+**Write the `results.tsv` row LAST.** The learnings and ledger entries land
+first; the `results.tsv` row is the completion marker §0 checks, so append it
+only after every other record is written — that way a mid-Step-7 crash can
+never leave an iteration looking done while its learnings are missing. Append
+one tab-separated data row matching the existing header. Do not append the
+header again.
 
 Mark the iteration done in `loop/state.md` (status `IDLE`, last completed unit
-= iteration NNN decision). Commit on the campaign branch with a **pinned file
-set** — never `git add -A`:
+= iteration NNN decision). The commit lands on the campaign branch; how it gets
+there depends on the verdict — never `git add -A`:
 
-- **KEEP** — one commit (`loop(iter-NNN): KEEP — short hypothesis`) containing
-  exactly: the one edited tuning file, and the iteration records
+- **KEEP** — promote from the iteration worktree onto the campaign branch:
+  `git checkout campaign-001` in the main checkout, then
+  `git merge --no-ff iter-NNN` (or `git checkout iter-NNN -- <paths>` for the
+  pinned set below). One commit (`loop(iter-NNN): KEEP — short hypothesis`)
+  carrying: the one edited tuning file, the iteration records
   (`loop/iterations/NNN/`, the `results.tsv` row, the `learnings.md` and
-  `ledger.md` entries, `loop/state.md`). Nothing else.
-- **REVERT / INCONCLUSIVE** — one commit containing only the records
-  (`loop/iterations/NNN/`, `results.tsv`, `learnings.md`, `ledger.md`,
-  `state.md`) — never the factory change.
+  `ledger.md` entries, `loop/state.md`), and the accepted book —
+  `production-books/<slug>/chapters/` and `research/` — so the winning book
+  survives removal of the worktree. Nothing else.
+- **REVERT / INCONCLUSIVE** — do NOT merge the iteration branch. On the
+  campaign branch, commit only the records (`loop/iterations/NNN/`,
+  `results.tsv`, `learnings.md`, `ledger.md`, `state.md`) — never the factory
+  change or the rejected book.
 
 After committing, verify with `git show --stat` that the file set matches and
-holds no stray worktree artifact. Remove the iteration worktree once its
-records are committed.
+holds no stray artifact. Remove the iteration worktree and its branch once the
+campaign branch carries what it should.
 
 ## 5. Rules
 
@@ -435,6 +465,9 @@ records are committed.
   improvement = KEEP (note it). Right prediction + no improvement = REVERT.
 - **Iterations are slow on purpose.** A full-book run takes hours. Prefer
   one well-evidenced hypothesis over three shallow ones.
+- **Single operator.** One orchestrator drives the loop at a time; resume
+  always continues from the on-disk markers. Deferred founder decisions (e.g.
+  stop-guard authority, unbounded sub-loops) live in `loop/open-questions.md`.
 
 ## 6. Generalization check
 

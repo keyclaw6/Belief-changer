@@ -11,17 +11,18 @@
 >   are the ground truth. If they disagree with what's written here, trust the
 >   markers and resume from the furthest point they support (PROGRAM §0).
 >   Write the *next* unit before starting it, so a crash mid-unit never loses it.
+>
+> **Single operator.** One orchestrator drives the loop at a time. There is no
+> locking or ownership token: if you can edit this file, you are the driver. On
+> resume, the previous run is by definition no longer running — just continue
+> from the markers.
 
 ## Position
 
 - **Iteration:** 000 (baseline)
 - **Stage:** not started
 - **Status:** IDLE — no run in flight
-- **Owner:** none — when a run starts, the orchestrator writes a unique run
-  token here (e.g. `run-<timestamp>-<rand>`) BEFORE setting `IN PROGRESS`, and
-  clears it back to `none` when the run ends or parks. A resuming agent that
-  finds `IN PROGRESS` must verify no *other* live orchestrator holds this token
-  before continuing (PROGRAM §0) — this prevents two actors driving one run.
+- **Campaign branch:** `campaign-001` (created from `main` when the campaign starts)
 - **Last completed unit:** preflight (§2) — PASS 2026-08-07 (`loop/preflight/results.md`)
 - **Next unit:** baseline research (PROGRAM §3, Stage: Research)
 

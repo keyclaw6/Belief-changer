@@ -40,10 +40,11 @@ is_research_trigger() {
       # or unreadable (fail safe).
       local diff_file="${2:-}"
       if [ -n "$diff_file" ] && [ -f "$diff_file" ]; then
-        # A content line naming a research key forces a rerun. Content lines
-        # start with a single +/- (file headers are +++/--- and are excluded
-        # because their 2nd char differs).
-        if grep -qE '^[+-].*(researcher_|research_)' "$diff_file"; then
+        # A changed research KEY forces a rerun. Match only key-assignment
+        # lines (`+researcher_model: ...`), not comments or prose mentions, so
+        # a comment near the research section doesn't trigger a spurious rerun.
+        # The key starts right after the +/- (optionally indented).
+        if grep -qE '^[+-][[:space:]]*(researcher_|research_)[A-Za-z0-9_]*[[:space:]]*:' "$diff_file"; then
           return 0
         fi
         return 1   # config changed, but no research key — reuse
