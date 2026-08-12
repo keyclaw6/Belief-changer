@@ -7,10 +7,29 @@
 
 ## 0. Recovery
 
-Read this file, `docs/AUTO-TUNING-LOOP.md`, `loop/learnings.md` (tail), and the
-last DATA row of `loop/results.tsv`, ignoring the header. If no data row
-exists, state `baseline pending` and run Section 3. Otherwise state the last
-completed iteration, its verdict, and the next hypothesis before acting.
+Read this file, `docs/AUTO-TUNING-LOOP.md`, `loop/state.md`, `loop/learnings.md`
+(tail), and the last DATA row of `loop/results.tsv`, ignoring the header. If no
+data row exists, state `baseline pending` and run Section 3. Otherwise state
+the last completed iteration, its verdict, and the next hypothesis before
+acting.
+
+**`loop/state.md` is the live checkpoint.** Its `Status` field is exactly
+`IDLE` or `IN PROGRESS` (verbatim — no other token). It governs resumption:
+
+- **`IN PROGRESS`** — the run was interrupted in that iteration/stage: continue
+  from the last completed unit, do not restart the iteration, do not redo
+  completed units. *Exception:* if `results.tsv` already holds a row for that
+  same iteration, the iteration completed (Step 7 ran) and only the final commit
+  may be missing — treat it as done; never re-run it.
+- **`IDLE`** — no run in flight; the `results.tsv` rule above governs.
+
+**Cross-check before resuming.** `state.md` can lag the stage it names (it is
+written at boundaries, work lands between them). Before acting, confirm each
+claimed completed unit against the on-disk markers — research bank files,
+`production-books/quit-sugar/chapters/`, `loop/iterations/NNN/judgments/` — and
+resume from the *furthest* point the markers support, not the stale marker.
+The orchestrator updates `loop/state.md` at every stage boundary and before
+every long wait (see §4 Step 3, "Patience").
 
 ## 1. File ownership
 
@@ -74,8 +93,10 @@ failure — retry a failed role once, then INCONCLUSIVE or escalate to the
 founder. There is NO deterministic validation in the pipeline: every check of
 the writer's work, the plan's resolvability, and the handovers is done by the
 role agents per their prompts. The only tools the orchestrator runs are web
-primitives (`scripts/loop-runner/web_tools.py`) and the canonical repo gate
-(`scripts/check.sh`).
+primitives (`scripts/loop-runner/web_tools.py`), the canonical repo gate
+(`scripts/check.sh`), and the research-reuse handover
+(`scripts/loop-runner/research_reuse.sh`) — the one deterministic decision in
+the loop (whether research reruns), which validates nothing about the work.
 
 **State discipline:** the campaign runs on a campaign branch. Every iteration
 ends with exactly one commit (`loop(iter-NNN): DECISION — short hypothesis`).
@@ -108,6 +129,10 @@ judge repair is founder-guided, not a loop iteration.
 
 Where is the factory now? Fresh full run, no hypothesis, no change.
 
+**First action:** begin the research stage (§4 Step 3, "Stage: Research") —
+this is the opening move of the end-to-end run. At baseline nothing exists to
+reuse, so `research_reuse.sh` is not consulted; research always runs at 000.
+
 1. Run the factory END TO END per Step 3 below: research → plan →
    full book. Nothing is reused from before the campaign; the current factory
    must own every artifact and trace it produces.
@@ -128,8 +153,24 @@ Where is the factory now? Fresh full run, no hypothesis, no change.
 
 ### Step 1: Declare hypothesis
 
-Spawn the `hypothesizer` sub-agent (contract: `loop/prompts/hypothesizer.md`)
-with:
+**Founder inbox first.** If `loop/inbox/` holds any `.md` file other than
+`README.md`, the founder has proposed a hypothesis — test it before any
+machine-generated one, oldest file first.
+
+1. **Validate** the oldest file against `loop/inbox/README.md`. If it is vague
+   or multi-change, do NOT guess: move it to `loop/inbox/used/REJECTED-NNN-<name>.md`,
+   note the defect to the founder, and fall through to the hypothesizer below.
+2. Otherwise **feed it to the hypothesizer** (not the orchestrator) as the
+   hypothesis source, alongside the normal inputs — so its never-repeat and
+   one-causal-change guards still apply. The founder note supplies the change
+   and rationale; the trace analysis supplies the failure evidence.
+3. Save the hypothesizer's 4-field response as `loop/iterations/NNN/hypothesis.md`
+   with `source: founder inbox`, and only then move the inbox file to
+   `loop/inbox/used/NNN-<name>.md` (write the hypothesis first — never move
+   before it is recorded).
+
+If the inbox is empty, spawn the `hypothesizer` sub-agent (contract:
+`loop/prompts/hypothesizer.md`) with:
 - the previous iteration's `trace-analysis.md`
 - `loop/learnings.md`
 - the current editable factory files
@@ -147,6 +188,25 @@ file). Record the diff in `loop/iterations/NNN/change.diff`.
 Rerun the changed stage and every downstream stage **through full chapter
 generation**. Reuse only artifacts upstream of the change. A research or
 planning hypothesis is never judged without regenerated chapters.
+
+**Patience (the runner never busy-loops).** Stages are slow — a full-book run
+takes hours. When a stage or a spawned role is running, the orchestrator does
+NOT poll it continuously. It updates `loop/state.md`, then waits — a long
+`sleep`, a scheduled wake, or a single wait — and on waking checks the stage's
+on-disk markers: the `.exit` files `daemon.sh`/`queue_runner.sh` write on
+completion (under `.loop-work/`), corroborated by content progress (research
+bank files, `chapters/`, `judgments/`). Markers moved and not looping = still
+working = wait again. There is no fixed per-stage timeout: deep research is
+sacred and unlimited, so a stage is never declared stuck on elapsed time. Only
+when markers have stopped moving AND a fresh read of the traces shows no
+progress does the orchestrator spawn a sub-agent to judge whether the run is
+stuck; a stuck run is retried once per §1, then INCONCLUSIVE or escalate. Doing
+nothing while a healthy run proceeds is correct behavior, not a wasted wake.
+Update `loop/state.md` before every wait.
+
+**Research reuse is the one deterministic handover.** Whether the research
+stage reruns is decided by `scripts/loop-runner/research_reuse.sh`
+(unchanged hypothesis+brief ⇒ reuse), the only deterministic code in the loop.
 
 **Stage: Research** — rerun ONLY when the hypothesis changed the research
 stage (research prompt, researcher model/params) or the
@@ -307,7 +367,15 @@ Append to `loop/learnings.md`:
 **Next direction:** [what to try next based on this]
 ```
 
-Commit the iteration on the campaign branch.
+Append one row to `loop/ledger.md` — the human-readable experiment ledger:
+iteration, date, hypothesis, the file changed, the verdict, and what we
+learned. Copy the verdict and lesson from the `results.tsv` row verbatim —
+`results.tsv` is canonical; `ledger.md` is its readable view; `learnings.md`'s
+Lesson is the load-bearing one the hypothesizer reads. `ledger.md` is
+append-only: never edit a past row, corrections become a new row.
+
+Mark the iteration done in `loop/state.md` (status `IDLE`, last completed unit
+= iteration NNN decision) and commit the iteration on the campaign branch.
 
 ## 5. Rules
 
