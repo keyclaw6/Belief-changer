@@ -70,7 +70,6 @@ prose here.
 ## How you operate
 
 You ARE the research orchestrator. You have the web primitives
-You have the web primitives
 (`python3 scripts/loop-runner/web_tools.py search "<query>"` and
 `... fetch "<url>"`; a harness may substitute its own search/fetch) and a
 spawn-sub-agent capability.
