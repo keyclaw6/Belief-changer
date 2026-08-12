@@ -11,6 +11,9 @@
 >   are the ground truth. If they disagree with what's written here, trust the
 >   markers and resume from the furthest point they support (PROGRAM §0).
 >   Write the *next* unit before starting it, so a crash mid-unit never loses it.
+> - **Only final-named files are markers.** The orchestrator writes to
+>   `<name>.partial` and renames when complete; a `.partial` file is unfinished
+>   work to discard and redo, never a completed unit (PROGRAM §4 Step 3).
 >
 > **Single operator.** One orchestrator drives the loop at a time. There is no
 > locking or ownership token: if you can edit this file, you are the driver. On

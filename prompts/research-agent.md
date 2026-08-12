@@ -144,6 +144,13 @@ Fill these for every materially distinct reader persona. Counts are diagnostics;
 a bank is ready when its material is specific, nonredundant, source-traceable,
 and strong enough to support belief change across every applicable persona.
 
+**Where the banks live.** Each bank is one file: `research/banks/bank-NN-<slug>.md`
+(e.g. `bank-03-lived-experience.md`). A sub-agent appends only its own packets
+to its assigned bank file *as it works* — never holds them in context to write
+at the end. The banks are the live checkpoint: on any resume, the lead reads
+what is already there and re-dispatches only the slots still thin — completed
+work is never re-mined. Synthesis (§8) reads these bank files.
+
 | Bank | Name | Fed by lane(s) |
 |---|---|---|
 | 1 | Justification Inventory (verbatim demolition targets) | A, B |
@@ -186,6 +193,15 @@ does.
 
 ## §7 — Completion criterion (the relentless loop's "done" test)
 
+**Persona, defined.** A persona is a *relationship to the behavior* — a distinct
+way of being trapped — not a demographic. One reader moves through several
+situations; a persona is the enduring stance that changes what they need to
+hear. Derive the set from the brief and the communities you find. For quit-sugar
+they look like: the loss-of-control binger; the in-denial "I don't have a
+problem" moderate; the comfort/identity eater for whom sugar is love or reward.
+Three is the floor, not the target — name yours explicitly in the research log
+before dispatching, so "≥3 personas" is countable, not a vibe.
+
 Research is NOT done when N pages are gathered. It is done when **every
 style-guide slot below clears its minimum across ≥ 3 materially distinct
 personas**. Whenever a slot is unfilled, thin, or single-persona, dispatch a
@@ -211,8 +227,18 @@ When every row clears across ≥3 personas, synthesize (§8).
 
 ## §8 — Output
 
-- `research-log.md` — parameter block, the dispatch history, and the gap-fill
-  loop record (what was dispatched, what came back, what stayed thin).
+- `research-log.md` — parameter block, the named persona set, the dispatch
+  history, and the gap-fill loop record (what was dispatched, what came back,
+  what stayed thin).
 - `lived-experience.md` and `scientific-evidence.md` — the ten banks, written
   for the master-plan stage to consume directly.
 - `sources/` — the source ledger with locators.
+
+**Belief wording during research.** The brief fixes the keystone *neighborhood*,
+not the exact frozen sentence (that is set by the plan). So a synthesis unit's
+`Implicated belief` does NOT reproduce frozen brief wording — it quotes the
+brief's belief *clause* (from Target behavior / Reader / forks) verbatim, or
+states the belief in the reader's own mined words with its persona + slot tags,
+marked `neighborhood, not frozen`. If a brief belief clause cannot be supported
+by any accepted packet, record it as a research-owned gap — do not fabricate
+support. Freezing the keystone sentence is the plan's job, downstream.

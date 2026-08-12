@@ -15,7 +15,10 @@ Standard bullet:
 ## Intervention-ready evidence units
 
 Create a unit only when accepted packets support every field. `Implicated belief`
-must reproduce one primary or subordinate belief from `00-brief.md` exactly.
+must quote one primary or subordinate belief clause from `00-brief.md` verbatim,
+or — because the keystone sentence is frozen later by the plan — state the belief
+in the reader's own mined words (persona + slot tagged), marked `neighborhood,
+not frozen` (see `prompts/research-agent.md` §8).
 Reader wording must exactly match an `EXACT_QUOTE` evidence-item `Text` value;
 situation and emotion must occur in cited `Text` or `Use / limits`; permitted and
 prohibited inference wording must occur in cited `Use / limits`. Inferences stay
@@ -25,7 +28,7 @@ unquoted. When support is missing, omit the unit and record a research-owned gap
 
 - **Situation:** <concrete situation supported by the source>
 - **Reader wording:** "<exact supported reader wording>"
-- **Implicated belief:** "<exact primary or subordinate brief belief>"
+- **Implicated belief:** "<verbatim brief belief clause | mined reader words — persona+slot tagged, marked `neighborhood, not frozen`>"
 - **Persona IDs:** <P-01 | P-02>
 - **Emotion:** <emotion supported by the source>
 - **Permitted inference:** <bounded inference the source permits>
@@ -42,7 +45,7 @@ planning until research supplies a complete, traceable unit.
 
 ### GAP-001
 
-- **Implicated belief:** "<exact primary or subordinate brief belief>"
+- **Implicated belief:** "<verbatim brief belief clause | mined reader words — persona+slot tagged, marked `neighborhood, not frozen`>"
 - **Missing support:** <situation, wording, emotion, or inference still missing>
 - **Owner:** research/synthesis
 

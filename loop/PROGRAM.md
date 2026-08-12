@@ -27,14 +27,20 @@ acting.
 
 **Cross-check before resuming.** `state.md` can lag the stage it names (it is
 written at boundaries, work lands between them). Before acting, confirm each
-claimed completed unit against the on-disk markers — research bank files,
-`production-books/quit-sugar/chapters/`, `loop/iterations/NNN/judgments/` — and
+claimed completed unit against the on-disk markers — research bank files
+(`research/banks/`), the accepted plan (`master-plan.md`) and its review
+(`master-plan-review.md`), `production-books/quit-sugar/chapters/`,
+`loop/iterations/NNN/judgments/`, `trace-analysis.md`, and `decision.md` — and
 resume from the *furthest* point the markers support, not the stale marker.
-Also confirm you are on the right branch: iteration work happens on the
-campaign branch (or the iteration branch inside its worktree), never on `main`;
-`state.md` names the active campaign branch. The orchestrator updates
-`loop/state.md` at every stage boundary and before every long wait (see §4
-Step 3, "Patience").
+Only final-named files count; a `.partial` file is unfinished work to redo
+(§4 Step 3). **A baseline (000) has no `results.tsv` row until it completes, so
+an interrupted baseline reads as "no data row" — in that case trust
+`state.md`'s IN PROGRESS + the markers and continue the baseline in place; do
+not restart it.** Also confirm you are on the right branch: iteration work
+happens on the campaign branch (or the iteration branch inside its worktree),
+never on `main`; `state.md` names the active campaign branch. The orchestrator
+updates `loop/state.md` at every stage boundary and before every long wait (see
+§4 Step 3, "Patience").
 
 ## 1. File ownership
 
@@ -247,6 +253,16 @@ wedge. A confirmed stuck run is retried once per §1, then INCONCLUSIVE or
 escalate. Doing nothing while a healthy run proceeds is correct behavior, not
 a wasted wake. Update `loop/state.md` before every wait.
 
+**A file only counts as a marker once it is complete.** The orchestrator never
+writes a finished artifact straight to its final name: it writes to a temp name
+(`<name>.partial`) and renames to the final name (`chapter-NN.md`,
+`lived-experience.md`, a judgment report) only when the content is fully
+written. When a spawned role returns content (e.g. a chapter), the orchestrator
+holds it and writes the final file itself — so the convention covers
+sub-agents too. On resume, a `.partial` file is unfinished work — discard it
+and redo that unit; only the final-named file marks a completed unit. This is
+how a crash mid-write can never leave a truncated file reading as done.
+
 **Research reuse is the one deterministic handover.** Whether the research
 stage reruns is decided by `scripts/loop-runner/research_reuse.sh`
 (unchanged hypothesis+brief ⇒ reuse), the only deterministic code in the loop.
@@ -256,20 +272,24 @@ stage (research prompt, researcher model/params) or the
 brief. Deep research is slow; when unchanged, reuse the last accepted
 research artifacts and copy them into this iteration's traces.
 - The orchestrator (the pi coding agent) IS the research lead. It reads
-  `prompts/research-agent.md`, fills the parameter block, and runs one
+  `prompts/research-agent.md`, fills the parameter block, **names the persona
+  set** (§7 of the research prompt), and runs one
   relentless search for depth: it searches and fetches itself via
   `scripts/loop-runner/web_tools.py`, and spawns fresh research sub-agents
   with the `subagent` tool (project agent `.pi/agents/researcher.md`,
   parallel mode) per lane, persona, and community. Each sub-agent mines and
-  writes source-traceable packets into the ten research banks. The
-  orchestrator integrates, names the gaps, and dispatches again — until the
+  appends source-traceable packets into its bank file under
+  `research/banks/` *as it works* — so a crash loses nothing already mined.
+  The orchestrator integrates, names the gaps, and dispatches again — until the
   completion criterion in the research prompt clears across at least three
   personas. Lived experience from recovery communities is the primary
   target; scientific studies are secondary.
 - Route/model per config (researcher model via the Command Code proxy).
 - Depth is sacred and unlimited: go as wide and deep as still brings
   results; filter afterwards, never limit upfront.
-- Output: `production-books/quit-sugar/research/`
+- Output: `production-books/quit-sugar/research/` (banks under
+  `research/banks/`; the synthesis writes `lived-experience.md`,
+  `scientific-evidence.md`, `research-log.md`, `sources/`).
 
 **Stage: Planning** — the orchestrator spawns the `plan-writer` sub-agent
 (follows `prompts/master-plan-skill-v2.md`; the initial call carries exactly
