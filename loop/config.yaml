@@ -2,65 +2,87 @@
 # SOLE authority for routes, models, and parameters. Before every model
 # call, read the values here; nothing in PROGRAM.md overrides this file.
 # These are STARTING POINTS. The loop can hypothesize changes to any value.
+#
+# ROUTES (founder, 2026-08-12):
+#   commandcode  — the founder's Command Code proxy loopback
+#                  (http://127.0.0.1:3050/v1/chat/completions), authenticated by
+#                  COMMANDCODE_API_KEY. Carries ONLY the Muse Spark roles
+#                  (writer, plan-writer, hypothesizer) + their fallbacks.
+#   opencode     — the OpenCode Zen subscription (OpenAI-compatible,
+#                  https://opencode.ai/zen/v1), authenticated by OPENCODE_API_KEY.
+#                  Carries every other role (research, plan-reviewer, judges,
+#                  trace-analyzer) on DeepSeek V4 Flash.
+# There is no OpenAI subscription (openai-sub) route anymore.
+#
+# Model/provider ids are the exact ids each route lists. Reasoning values the
+# routes accept: low/medium/high/max.
 
-# Writer — the chapter-writer sub-agent contract lives in PROGRAM.md §3
-# Route change 2026-08-07 (founder): the writer runs through the Command Code
-# proxy loopback; no fallbacks — failure escalates to founder.
-# Founder model choice 2026-08-07: Muse Spark 1.2 contributor (Meta). The id
-# must stay one the Command Code proxy lists and the founder's plan covers.
+# ── Writer — chapter-writer sub-agent (contract: prompts/chapter-writer.md) ──
+# Muse Spark 1.2 contributor via Command Code; the contributor variant is
+# heavily rate-limited, so the non-contributor variant is the fallback.
 writer_model: meta/muse-spark-1.2-contributor
+writer_fallback_model: meta/muse-spark-1.2
 writer_endpoint: http://127.0.0.1:3050/v1/chat/completions
 writer_auth_env: COMMANDCODE_API_KEY
-# No completion cap: requests omit max_tokens; no model fallbacks.
+writer_route: commandcode
+# No completion cap: requests omit max_tokens.
 
-# Research — the orchestrator/lead runs on MiniMax M3 through the Command
-# Code proxy (founder 2026-07-29; exact id MiniMaxAI/MiniMax-M3); the
-# research sub-agents it spawns run on GPT-5.6 Luna at MAX reasoning via the
-# OpenAI subscription route (openai-sub provider, 2026-08-08). Sub-agents
-# search/fetch via scripts/loop-runner/web_tools.py — depth stays unlimited.
-researcher_model: MiniMaxAI/MiniMax-M3
-researcher_endpoint: http://127.0.0.1:3050/v1/chat/completions
-researcher_auth_env: COMMANDCODE_API_KEY
+# ── Plan-writer — master-plan skill (contract: prompts/master-plan-skill-v2.md)
+# Muse Spark 1.2 contributor via Command Code, same fallback as the writer.
+planner_model: meta/muse-spark-1.2-contributor
+planner_fallback_model: meta/muse-spark-1.2
+planner_endpoint: http://127.0.0.1:3050/v1/chat/completions
+planner_auth_env: COMMANDCODE_API_KEY
+planner_route: commandcode
+planner_reasoning: high
+
+# ── Hypothesizer — loop/prompts/hypothesizer.md ──
+# Muse Spark 1.2 contributor via Command Code, non-contributor fallback.
+hypothesizer_model: meta/muse-spark-1.2-contributor
+hypothesizer_fallback_model: meta/muse-spark-1.2
+hypothesizer_endpoint: http://127.0.0.1:3050/v1/chat/completions
+hypothesizer_auth_env: COMMANDCODE_API_KEY
+hypothesizer_route: commandcode
+hypothesizer_reasoning: high
+
+# ── Everything else runs on DeepSeek V4 Flash via the OpenCode Zen ──
+# ── subscription (opencode route). ──
+
+# Research — the orchestrator/lead AND the sub-agents it spawns.
+# DeepSeek V4 Flash via OpenCode Zen. Depth stays sacred and unlimited;
+# sub-agents search/fetch via scripts/loop-runner/web_tools.py.
+researcher_model: deepseek-v4-flash
+researcher_endpoint: https://opencode.ai/zen/v1
+researcher_auth_env: OPENCODE_API_KEY
+researcher_route: opencode
 researcher_reasoning: high
-research_subagent_model: gpt-5.6-luna
-research_subagent_reasoning: max
-research_subagent_route: openai-sub
+research_subagent_model: deepseek-v4-flash
+research_subagent_reasoning: high
+research_subagent_route: opencode
 # Depth is sacred: no search/fetch limits. Go as wide as still brings results.
 research_search_limit: unlimited
 research_fetch_limit: unlimited
 # Reuse: research artifacts are reused across iterations unless the
 # hypothesis changes the research stage or the brief (PROGRAM Step 3).
 
-# Planner — the master-plan skill call runs on Kimi K3 through the Command
-# Code proxy (OpenAI-compatible; exact listed model id: moonshotai/Kimi-K3).
-# Models list: GET http://127.0.0.1:3050/v1/models
-# (Its review gate is a GPT role: plan_reviewer_* below, per the skill.)
-planner_model: moonshotai/Kimi-K3
-planner_endpoint: http://127.0.0.1:3050/v1/chat/completions
-planner_auth_env: COMMANDCODE_API_KEY
-planner_reasoning: high
+# Plan-reviewer — the plan-review gate (contract: prompts/master-plan-reviewer-v2.md)
+plan_reviewer_model: deepseek-v4-flash
+plan_reviewer_reasoning: high
+plan_reviewer_route: opencode
 
-# GPT roles (judging, trace analysis, hypothesizing, plan review): spawned pi
-# sub-agents
-# (`.pi/agents/*.md`). Route change 2026-08-08 (founder): judges, the trace
-# analyzer, and the hypothesizer run through the OpenAI subscription route
-# (openai-sub provider); plan review stays on the Command Code proxy.
-# Request contract per role: only the role prompt and the listed inputs — no
-# hosted agent, no host system prompt.
-# Model availability (verified 2026-08-07): gpt-5.6-sol/terra are NOT in the
-# Command Code plan (MODEL_NOT_IN_PLAN via CC), which is why the hypothesizer
-# runs Sol via openai-sub while CC-routed GPT roles (plan review) use Luna.
-# Reasoning values the proxy accepts: low/medium/high/max.
-gpt_endpoint: http://127.0.0.1:3050/v1/chat/completions
-gpt_auth_env: COMMANDCODE_API_KEY
-judge_model: gpt-5.6-luna   # route: openai-sub (subscription)
-judge_reasoning: high   # founder choice 2026-08-07
-analyzer_model: gpt-5.6-luna   # route: openai-sub (subscription)
+# Judges — the three chapter judges + book-arc (loop/judges/*.md)
+judge_model: deepseek-v4-flash
+judge_reasoning: high
+judge_route: opencode
+
+# Trace-analyzer — loop/prompts/trace-analyzer.md
+analyzer_model: deepseek-v4-flash
 analyzer_reasoning: high
-hypothesizer_model: gpt-5.6-sol   # route: openai-sub (subscription)
-hypothesizer_reasoning: high   # founder choice 2026-08-08 (Sol high)
-plan_reviewer_model: gpt-5.6-luna
-plan_reviewer_reasoning: max
+analyzer_route: opencode
+
+# Shared OpenCode Zen endpoint/auth for every opencode-routed role above.
+opencode_endpoint: https://opencode.ai/zen/v1
+opencode_auth_env: OPENCODE_API_KEY
 
 # Reference
 reference_dir: calibration/reference/gsbs

@@ -73,30 +73,34 @@ pi coding agent) runs the loop by spawning one fresh sub-agent per role with
 the `subagent` tool. Each agent definition lives in `.pi/agents/` (project
 scope) and is a thin wrapper: it points at its contract prompt under
 `prompts/` or `loop/prompts/` — the prompts are the real tuning surface — and
-pins its model per `loop/config.yaml`. Roles route through the founder's
-Command Code proxy loopback (credential via `COMMANDCODE_API_KEY` or the
-founder's Command Code CLI login), except judges, the trace analyzer, the
-hypothesizer, and the research sub-agents, which route through the OpenAI
-subscription (openai-sub provider). A role call carries ONLY its role prompt
-and the listed inputs: no host system prompt, no shared context with sibling
-roles. Nothing else ever uses either route. No fallback route is coded: a
-missing credential or unreachable route stops the run and escalates to the
-founder.
+pins its model per `loop/config.yaml`. Two routes (all per config): the
+founder's **Command Code** proxy loopback (`COMMANDCODE_API_KEY` or the
+founder's Command Code CLI login) carries ONLY the Muse Spark roles — writer,
+plan-writer, hypothesizer (Muse Spark 1.2 contributor, non-contributor
+fallback); the **OpenCode Zen** subscription (`OPENCODE_API_KEY`, `opencode`
+route) carries every other role — research lead + sub-agents, plan-reviewer,
+judges, trace-analyzer — on DeepSeek V4 Flash. A role call carries ONLY its
+role prompt and the listed inputs: no host system prompt, no shared context
+with sibling roles. Nothing else ever uses either route. On a route/credential
+failure the run stops and escalates to the founder (the only coded fallback is
+the Muse Spark contributor→non-contributor model).
 
 Spawned roles (agent → contract prompt):
 - `researcher` — `.pi/agents/researcher.md` → `prompts/research-agent.md`;
-  orchestrator/lead runs on MiniMax M3 (commandcode), the spawned research
-  sub-agents on GPT-5.6 Luna max (openai-sub)
+  lead and spawned research sub-agents both on DeepSeek V4 Flash (opencode)
 - `plan-writer`, `plan-reviewer` — `.pi/agents/plan-*.md` →
-  `prompts/master-plan-skill-v2.md` / `prompts/master-plan-reviewer-v2.md`
+  `prompts/master-plan-skill-v2.md` / `prompts/master-plan-reviewer-v2.md`;
+  plan-writer on Muse Spark 1.2 contributor (commandcode), plan-reviewer on
+  DeepSeek V4 Flash (opencode)
 - `chapter-writer` — `.pi/agents/chapter-writer.md` →
-  `prompts/chapter-writer.md`
-- `judge` — `.pi/agents/judge.md` → `loop/judges/*.md`; GPT-5.6 Luna high via
-  the OpenAI subscription (openai-sub)
+  `prompts/chapter-writer.md`; Muse Spark 1.2 contributor (commandcode)
+- `judge` — `.pi/agents/judge.md` → `loop/judges/*.md`; DeepSeek V4 Flash high
+  via the OpenCode Zen subscription (opencode)
 - `trace-analyzer` — `.pi/agents/trace-analyzer.md` → `loop/prompts/
-  trace-analyzer.md`; GPT-5.6 Luna high via openai-sub
+  trace-analyzer.md`; DeepSeek V4 Flash high via opencode
 - `hypothesizer` — `.pi/agents/hypothesizer.md` → `loop/prompts/
-  hypothesizer.md`; GPT-5.6 Sol high via openai-sub
+  hypothesizer.md`; Muse Spark 1.2 contributor (commandcode),
+  non-contributor fallback
 
 **The orchestrator manages the loop** (per this file): it spawns roles, hands
 them their exact inputs, saves traces, and makes the intelligent decisions on

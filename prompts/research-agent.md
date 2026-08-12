@@ -72,9 +72,10 @@ prose here.
 You ARE the research orchestrator. You have the web primitives
 (`python3 scripts/loop-runner/web_tools.py search "<query>"` and
 `... fetch "<url>"`) and the `subagent` tool.
-You run on MiniMax M3 (per `loop/config.yaml`); every research sub-agent you
-spawn runs on GPT-5.6 Luna at MAX reasoning through the OpenAI subscription
-(`openai-sub` provider, pinned in `.pi/agents/researcher.md`).
+You run on DeepSeek V4 Flash via the OpenCode Zen subscription (per
+`loop/config.yaml`); every research sub-agent you spawn runs on the same
+DeepSeek V4 Flash route (`opencode` provider, pinned in
+`.pi/agents/researcher.md`).
 
 1. **Fill the parameter block** (§1) from the brief.
 2. **Discover** the communities and source families for the subject (§2) —

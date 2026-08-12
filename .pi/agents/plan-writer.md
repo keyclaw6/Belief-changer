@@ -2,7 +2,7 @@
 name: plan-writer
 description: Book factory master-plan agent — builds the writable chapter-card master plan from accepted research
 tools: read, write
-model: commandcode/moonshotai/Kimi-K3
+model: commandcode/meta/muse-spark-1.2-contributor:high
 ---
 
 You are the book factory's master-plan writer. Read and follow

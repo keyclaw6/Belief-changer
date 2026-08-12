@@ -144,7 +144,7 @@ The plan may assign an evidence-unavailable treatment when a familiar structural
 
 ## Fresh review gate
 
-The plan is not final until a fresh GPT-5.6 reviewer call (route and model
+The plan is not final until a fresh plan-reviewer call (route and model
 per `loop/config.yaml`; clean context — only the reviewer prompt and the
 permitted inputs) reviews the exact permitted inputs plus the candidate and
 records `master-plan-review.md` ending with the standalone line:
