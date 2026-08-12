@@ -98,9 +98,17 @@ primitives (`scripts/loop-runner/web_tools.py`), the canonical repo gate
 (`scripts/loop-runner/research_reuse.sh`) — the one deterministic decision in
 the loop (whether research reruns), which validates nothing about the work.
 
-**State discipline:** the campaign runs on a campaign branch. Every iteration
-ends with exactly one commit (`loop(iter-NNN): DECISION — short hypothesis`).
-Only the founder merges winning amendments to `main`.
+**State discipline — iterations run in git worktrees.** Each iteration runs in
+its own isolated worktree (a sibling directory beside the main checkout, e.g.
+`../quit-sugar-iter-NNN/`), so an experimental run never touches the main
+checkout and a crash leaves the tree intact for inspection. The iteration's
+change and generated artifacts live in that worktree on its iteration branch.
+On a **KEEP** the change is promoted to the campaign branch — one commit per
+KEPT iteration (`loop(iter-NNN): KEEP — short hypothesis`). REVERT /
+INCONCLUSIVE iterations are recorded (their `loop/iterations/NNN/` directory
+and ledger entry) but their factory change is not promoted. `main` carries only
+founder-merged winners; the campaign branch is created fresh from `main` when a
+campaign starts.
 
 ## 2. Preflight — judge calibration battery
 
@@ -127,7 +135,10 @@ judge repair is founder-guided, not a loop iteration.
 
 ## 3. Baseline (iteration 000)
 
-Where is the factory now? Fresh full run, no hypothesis, no change.
+Where is the factory now? Fresh full run, no hypothesis, no change. The
+baseline establishes the accepted state — it runs directly on the campaign
+branch (no worktree; there is nothing to accept or reject yet, only to
+measure). Iteration worktrees begin at 001.
 
 **First action:** begin the research stage (§4 Step 3, "Stage: Research") —
 this is the opening move of the end-to-end run. At baseline nothing exists to
@@ -343,11 +354,12 @@ Verdicts:
   regression appeared.
 - **INCONCLUSIVE** — invalid evidence, or no improvement and no regression.
 
-KEEP: retain the source change and the generated artifacts (they are the new
-accepted state). REVERT / INCONCLUSIVE: restore the edited file AND all
-generated artifacts to the last accepted commit (`git checkout <last-KEEP>
--- <tuning-file> production-books/quit-sugar/`); the iteration directory
-itself is always kept.
+KEEP: the iteration's change is the new accepted state — promote it to the
+campaign branch (Step 7) and keep the generated artifacts. REVERT /
+INCONCLUSIVE: the change is not promoted — the iteration's worktree and its
+factory change are discarded, but the iteration directory
+(`loop/iterations/NNN/`) and the ledger entry are always kept on the campaign
+branch so the campaign never re-tries a failed hypothesis blindly.
 
 Record prediction accuracy: "Predicted X. Observed Y. [accurate/partial/wrong]."
 Write `loop/iterations/NNN/decision.md` with the verdict and reasoning.
@@ -377,7 +389,12 @@ reads; `ledger.md` is the explanation a reader uses to decide the next move).
 entry.
 
 Mark the iteration done in `loop/state.md` (status `IDLE`, last completed unit
-= iteration NNN decision) and commit the iteration on the campaign branch.
+= iteration NNN decision). On **KEEP**, promote the iteration's change to the
+campaign branch as one commit (`loop(iter-NNN): KEEP — short hypothesis`) and
+merge the `loop/iterations/NNN/` records with it. On **REVERT / INCONCLUSIVE**,
+commit only the records (`iterations/NNN/`, results row, ledger entry) to the
+campaign branch — never the factory change. Remove the iteration worktree once
+its records are committed.
 
 ## 5. Rules
 
