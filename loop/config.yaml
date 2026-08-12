@@ -1,21 +1,21 @@
 # Auto-Tuning Loop Configuration
-# SOLE authority for routes, models, and parameters. Before every model
-# call, read the values here; nothing in PROGRAM.md overrides this file.
-# These are STARTING POINTS. The loop can hypothesize changes to any value.
+# Preferred role defaults + the loop's tuning surface. Before every model call,
+# read the values here. A harness maps each role to the model it can reach (see
+# loop/HARNESS.md); the loop hypothesizes changes to these values, and the
+# trace metadata.json records what actually ran.
 #
-# ROUTES (founder, 2026-08-12):
-#   commandcode  — the founder's Command Code proxy loopback
-#                  (http://127.0.0.1:3050/v1/chat/completions), authenticated by
-#                  COMMANDCODE_API_KEY. Carries ONLY the Muse Spark roles
-#                  (writer, plan-writer, hypothesizer) + their fallbacks.
-#   opencode     — the OpenCode Zen subscription (OpenAI-compatible,
-#                  https://opencode.ai/zen/v1), authenticated by OPENCODE_API_KEY.
-#                  Carries every other role (research, plan-reviewer, judges,
-#                  trace-analyzer) on DeepSeek V4 Flash.
+# ROUTES (preferred defaults, founder 2026-08-12). The endpoint/auth/route-name
+# fields marked [PI BINDING] are the pi-harness realization only — another
+# harness substitutes its own connection and ignores those fields.
+#   commandcode  — [PI BINDING] the founder's Command Code proxy loopback.
+#                  Carries the Muse Spark roles (writer, plan-writer,
+#                  hypothesizer) + their non-contributor fallbacks.
+#   opencode     — [PI BINDING] the OpenCode Zen subscription. Carries every
+#                  other role (research, plan-reviewer, judges, trace-analyzer)
+#                  on DeepSeek V4 Flash.
 # There is no OpenAI subscription (openai-sub) route anymore.
 #
-# Model/provider ids are the exact ids each route lists. Reasoning values the
-# routes accept: low/medium/high/max.
+# Reasoning values the routes accept: low/medium/high/max.
 
 # ── Writer — chapter-writer sub-agent (contract: prompts/chapter-writer.md) ──
 # Muse Spark 1.2 contributor via Command Code; the contributor variant is

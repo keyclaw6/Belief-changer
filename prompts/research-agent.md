@@ -70,12 +70,12 @@ prose here.
 ## How you operate
 
 You ARE the research orchestrator. You have the web primitives
+You have the web primitives
 (`python3 scripts/loop-runner/web_tools.py search "<query>"` and
-`... fetch "<url>"`) and the `subagent` tool.
-You run on DeepSeek V4 Flash via the OpenCode Zen subscription (per
-`loop/config.yaml`); every research sub-agent you spawn runs on the same
-DeepSeek V4 Flash route (`opencode` provider, pinned in
-`.pi/agents/researcher.md`).
+`... fetch "<url>"`; a harness may substitute its own search/fetch) and a
+spawn-sub-agent capability.
+Preferred model: see `loop/HARNESS.md` (the role→capability map); a harness
+maps this role to the model it can reach.
 
 1. **Fill the parameter block** (§1) from the brief.
 2. **Discover** the communities and source families for the subject (§2) —

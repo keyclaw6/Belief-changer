@@ -12,13 +12,17 @@ RUNS=${PREFLIGHT_RUNS_DIR:-$REPO/loop/preflight/runs}
 JUDGES=$REPO/loop/judges
 EFFORT=$(grep -E '^judge_reasoning:' "$CFG" | sed 's/^[^:]*: *//; s/ *#.*//')
 MODEL=$(grep -E '^judge_model:' "$CFG" | sed 's/^[^:]*: *//; s/ *#.*//')
+# Provider comes from config too (judges may route via commandcode or opencode);
+# never hardcode it — the judge route is config's to declare.
+PROVIDER=$(grep -E '^judge_route:' "$CFG" | sed 's/^[^:]*: *//; s/ *#.*//')
+PROVIDER=${PROVIDER:-commandcode}
 mkdir -p "$RUNS"
 
 run_one() {  # judge input-file out-tag
   local judge=$1 input=$2 tag=$3
   [ -f "$RUNS/$tag/response.md" ] && { echo "skip $tag (done)"; return 0; }
   mkdir -p "$RUNS/$tag"
-  pi --provider commandcode --model "$MODEL" --thinking "$EFFORT" -p \
+  pi --provider "$PROVIDER" --model "$MODEL" --thinking "$EFFORT" -p \
     "Use the subagent tool once with agent 'judge' and this task: rubric file $JUDGES/$judge.md, input file $input. Return your verdict exactly as the rubric requires, nothing else." \
     --no-session > "$RUNS/$tag/response.md" 2>/dev/null
 }

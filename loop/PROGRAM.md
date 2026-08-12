@@ -64,43 +64,32 @@ A hypothesis changes the factory that produces them, never the artifact itself.
 - `loop/judges/` (judge calibration is a separate founder-guided activity)
 - `loop/reference-alignment.md` (rebuilt only when the accepted plan changes)
 
-**Config authority:** `loop/config.yaml` is the single record of routes,
-models, reasoning, and parameters for every role; the pi agent definitions in
-`.pi/agents/` pin the same models. No value elsewhere overrides config.
+**Config authority:** `loop/config.yaml` holds the preferred role defaults
+(models, routes, parameters) and is the loop's tuning surface. A harness maps
+each role to the model it can reach (see `loop/HARNESS.md`); the pi adapter
+(`.pi/agents/`) pins the same defaults. Config guides; the harness's trace
+`metadata.json` records what actually ran.
 
-**Role calls — every role is a spawned pi sub-agent.** The orchestrator (the
-pi coding agent) runs the loop by spawning one fresh sub-agent per role with
-the `subagent` tool. Each agent definition lives in `.pi/agents/` (project
-scope) and is a thin wrapper: it points at its contract prompt under
-`prompts/` or `loop/prompts/` — the prompts are the real tuning surface — and
-pins its model per `loop/config.yaml`. Two routes (all per config): the
-founder's **Command Code** proxy loopback (`COMMANDCODE_API_KEY` or the
-founder's Command Code CLI login) carries ONLY the Muse Spark roles — writer,
-plan-writer, hypothesizer (Muse Spark 1.2 contributor, non-contributor
-fallback); the **OpenCode Zen** subscription (`OPENCODE_API_KEY`, `opencode`
-route) carries every other role — research lead + sub-agents, plan-reviewer,
-judges, trace-analyzer — on DeepSeek V4 Flash. A role call carries ONLY its
-role prompt and the listed inputs: no host system prompt, no shared context
-with sibling roles. Nothing else ever uses either route. On a route/credential
-failure the run stops and escalates to the founder (the only coded fallback is
-the Muse Spark contributor→non-contributor model).
+**Role calls — every role is a spawned sub-agent, in any harness.** The
+orchestrator (whatever agent is running the loop) spawns one fresh sub-agent
+per role using the harness's spawn capability. The role contract prompts under
+`prompts/` and `loop/prompts/` and `loop/judges/` are the portable,
+harness-neutral artifact. (In the pi harness, a role is realized via the
+`subagent` tool and the thin `.pi/agents/*.md` adapter; another harness spawns
+the same contract prompts directly.) The role→capability map, the spawn
+contract, and per-harness bindings live in `loop/HARNESS.md`. On a
+route/credential failure the run stops and escalates to the founder (the only
+coded fallback is the writer/plan-writer/hypothesizer contributor→
+non-contributor model, resolved per-harness).
 
-Spawned roles (agent → contract prompt):
-- `researcher` — `.pi/agents/researcher.md` → `prompts/research-agent.md`;
-  lead and spawned research sub-agents both on DeepSeek V4 Flash (opencode)
-- `plan-writer`, `plan-reviewer` — `.pi/agents/plan-*.md` →
-  `prompts/master-plan-skill-v2.md` / `prompts/master-plan-reviewer-v2.md`;
-  plan-writer on Muse Spark 1.2 contributor (commandcode), plan-reviewer on
-  DeepSeek V4 Flash (opencode)
-- `chapter-writer` — `.pi/agents/chapter-writer.md` →
-  `prompts/chapter-writer.md`; Muse Spark 1.2 contributor (commandcode)
-- `judge` — `.pi/agents/judge.md` → `loop/judges/*.md`; DeepSeek V4 Flash high
-  via the OpenCode Zen subscription (opencode)
-- `trace-analyzer` — `.pi/agents/trace-analyzer.md` → `loop/prompts/
-  trace-analyzer.md`; DeepSeek V4 Flash high via opencode
-- `hypothesizer` — `.pi/agents/hypothesizer.md` → `loop/prompts/
-  hypothesizer.md`; Muse Spark 1.2 contributor (commandcode),
-  non-contributor fallback
+Spawned roles (role → contract prompt):
+- `researcher` — `prompts/research-agent.md` (lead) + research sub-agents
+- `plan-writer`, `plan-reviewer` — `prompts/master-plan-skill-v2.md` /
+  `prompts/master-plan-reviewer-v2.md`
+- `chapter-writer` — `prompts/chapter-writer.md`
+- `judge` — `loop/judges/*.md`
+- `trace-analyzer` — `loop/prompts/trace-analyzer.md`
+- `hypothesizer` — `loop/prompts/hypothesizer.md`
 
 **The orchestrator manages the loop** (per this file): it spawns roles, hands
 them their exact inputs, saves traces, and makes the intelligent decisions on
@@ -140,9 +129,12 @@ can verify it.
 
 ## 2. Preflight — judge calibration battery
 
-Run once before the baseline, and again after any founder edit to a judge.
-Save results in `loop/preflight/`. Do not proceed while any check fails;
-judge repair is founder-guided, not a loop iteration.
+Run once before the baseline, and again after any founder edit to a judge **or
+any change of harness or judge model** (repeatability is sampling-sensitive).
+Spawn the judge role for each check below per the harness's spawn capability
+(in pi: `scripts/loop-runner/run_preflight.sh`). Save results in
+`loop/preflight/`. Do not proceed while any check fails; judge repair is
+founder-guided, not a loop iteration.
 
 1. **PASS test.** Give each chapter judge one real GSBS chapter as BOTH
    "our chapter" and "the real chapter", with honest context. Run twice per
@@ -275,25 +267,31 @@ stage reruns is decided by `scripts/loop-runner/research_reuse.sh`
 stage (research prompt, researcher model/params) or the
 brief. Deep research is slow; when unchanged, reuse the last accepted
 research artifacts and copy them into this iteration's traces.
-- The orchestrator (the pi coding agent) IS the research lead. It reads
+- The orchestrator IS the research lead. It reads
   `prompts/research-agent.md`, fills the parameter block, **names the persona
   set** (§7 of the research prompt), and runs one
   relentless search for depth: it searches and fetches itself via
-  `scripts/loop-runner/web_tools.py`, and spawns fresh research sub-agents
-  with the `subagent` tool (project agent `.pi/agents/researcher.md`,
-  parallel mode) per lane, persona, and community. Each sub-agent mines and
+  `scripts/loop-runner/web_tools.py` (or the harness's native search/fetch),
+  and spawns fresh research sub-agents via the harness's spawn capability (pi
+  example: the `subagent` tool with `.pi/agents/researcher.md`, parallel mode)
+  per lane, persona, and community. Each sub-agent mines and
   appends source-traceable packets into its bank file under
   `research/banks/` *as it works* — so a crash loses nothing already mined.
   The orchestrator integrates, names the gaps, and dispatches again — until the
   completion criterion in the research prompt clears across at least three
   personas. Lived experience from recovery communities is the primary
   target; scientific studies are secondary.
-- Route/model per config (researcher model via the Command Code proxy).
+- Route/model per config (preferred default; resolved per-harness, HARNESS.md).
 - Depth is sacred and unlimited: go as wide and deep as still brings
   results; filter afterwards, never limit upfront.
 - Output: `production-books/quit-sugar/research/` (banks under
   `research/banks/`; the synthesis writes `lived-experience.md`,
   `scientific-evidence.md`, `research-log.md`, `sources/`).
+- **Pre-existing research:** research produced before the `research/banks/`
+  layout may sit at `research/` root or under `research/_rounds/` with no
+  `banks/` dir. Treat any real content there as already-mined evidence —
+  integrate it and re-dispatch only what's still thin; never re-mine from zero
+  just because the layout predates `banks/`.
 
 **Stage: Planning** — the orchestrator spawns the `plan-writer` sub-agent
 (follows `prompts/master-plan-skill-v2.md`; the initial call carries exactly

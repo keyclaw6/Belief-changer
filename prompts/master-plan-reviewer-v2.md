@@ -1,9 +1,9 @@
 # Master-Plan Reviewer — blocking cumulative reader walk
 
-The plan-reviewer pi sub-agent (`.pi/agents/plan-reviewer.md`) runs this
-prompt with the plan, the style guide, and the brief (model per
-`loop/config.yaml`; only this prompt and the listed inputs in context). It is
-an independent planning-family reviewer, not a chapter writer.
+The plan-reviewer role runs this prompt with the plan, the style guide, and
+the brief (model per the harness — see `loop/HARNESS.md`; only this prompt and
+the listed inputs in context). It is an independent planning-family reviewer,
+not a chapter writer.
 
 ## Exact review-call inputs
 

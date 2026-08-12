@@ -26,13 +26,15 @@
 - **Stage:** not started
 - **Status:** IDLE — no run in flight
 - **Campaign branch:** `campaign-001` (created from `main` when the campaign starts)
-- **Last completed unit:** preflight (§2) — PASS 2026-08-07 (`loop/preflight/results.md`)
-- **Next unit:** baseline research (PROGRAM §3, Stage: Research)
+- **Last completed unit:** none — preflight must be RE-RUN (the judge model
+  changed to DeepSeek V4 Flash on 2026-08-12; the 2026-08-07 PASS was on
+  gpt-5.6-luna, now void per `loop/HARNESS.md`).
+- **Next unit:** preflight (PROGRAM §2), then baseline research (§3)
 
 ## If you died / were stopped
 
-Nothing was in flight. Preflight already passed; start the baseline at
-PROGRAM §3, Stage: Research.
+Nothing was in flight. Run preflight first (PROGRAM §2 — re-required after the
+model change), then start the baseline at PROGRAM §3, Stage: Research.
 
 ## Journal
 
