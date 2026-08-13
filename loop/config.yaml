@@ -52,7 +52,7 @@ hypothesizer_reasoning: high
 # DeepSeek V4 Flash via OpenCode Zen. Depth stays sacred and unlimited;
 # sub-agents search/fetch via scripts/loop-runner/web_tools.py.
 researcher_model: deepseek-v4-flash
-researcher_endpoint: https://opencode.ai/zen/v1
+researcher_endpoint: https://opencode.ai/zen/go/v1
 researcher_auth_env: OPENCODE_API_KEY
 researcher_route: opencode-go
 researcher_reasoning: high
