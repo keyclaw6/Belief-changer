@@ -1,5 +1,10 @@
 # Lived Experience — <Book Title>
 
+> Raw evidence packets accumulate under `research/banks/` (see
+> `prompts/research-agent.md` §4); this file is the lead's curated synthesis of
+> them for the master-plan stage. The inline Bank sections below are curated
+> content, not the live checkpoint.
+
 Synthesize accepted source packets only. Every bullet must name its bank, persona IDs, and source IDs; an exact quote also links its packet evidence item (for example, `S-001#E-003`). Interpretations use no quotation marks.
 
 Standard bullet:

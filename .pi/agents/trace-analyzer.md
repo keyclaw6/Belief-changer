@@ -2,7 +2,7 @@
 name: trace-analyzer
 description: Trace analyzer — maps judge verdicts and generation traces into causal clusters owned by factory components
 tools: read, write
-model: opencode/deepseek-v4-flash:high
+model: opencode-go/deepseek-v4-flash:high
 ---
 
 You are the loop's trace analyzer, fresh and clean. Read and follow

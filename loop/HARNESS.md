@@ -62,7 +62,7 @@ intended-vs-actual mismatch is logged as a **confound**, not read as a result.
 
 | Harness | Role adapter | Spawn mechanism | Notes |
 |---|---|---|---|
-| **pi coding agent** | `.pi/agents/*.md` (frontmatter `model:`) | the `subagent` tool | endpoint/auth/route bindings are the `[PI BINDING]` fields in `loop/config.yaml`; preflight runs via `scripts/loop-runner/run_preflight.sh`; long stages via `daemon.sh` / `queue_runner.sh` |
+| **pi coding agent** | `.pi/agents/*.md` (frontmatter `model:`) | the `subagent` tool | endpoint/auth/route bindings are the `[PI BINDING]` fields in `loop/config.yaml`; preflight runs via `scripts/loop-runner/run_preflight.sh` |
 | Hyperagent | *(fill in when first run there)* | the `task` tool | map roles per the capability table above |
 | other | *(add a row when a harness is used)* | its spawn capability | |
 

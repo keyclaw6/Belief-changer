@@ -27,8 +27,8 @@ production-books/<book-slug>/
 
 ## The flow (artifacts accumulate in this order)
 1. **Brief** — define the behavior, reader, and the fork decisions (`00-brief.md`).
-2. **Research** — dump raw sources (scrapes, threads, studies, transcripts — any format) into `research/sources/`, logging each in `research-log.md`; then synthesize them into `lived-experience.md` and `scientific-evidence.md`.
+2. **Research** — sub-agents mine raw source packets into `research/banks/` (with verbatim sources in `research/sources/`), logged in `research-log.md`; the lead then synthesizes them into `lived-experience.md` and `scientific-evidence.md`.
 3. **Master plan** — run the master-plan skill (`/prompts/master-plan-skill-v2.md`) → `master-plan.md`. The plan-writer pulls in `/prompts/style-guide.md` + this folder's research and derives the book-specific adaptation (style guide §4 forks + §10 playbook) directly; it is **refined via its required fresh independent review gate** (`master-plan-review.md`, ending "fit to write from").
-5. **Chapters** — write one (or two) at a time. Each chapter-writer sees only the master plan + the previous chapter + the style guide; a reviewer loop critiques each before moving on.
+4. **Chapters** — write one at a time, in order. Each chapter-writer sees only the master plan + the target chapter card + the previous chapter + the style guide.
 
 > Canonical references used throughout (global, never copied per book): the **style guide** `/prompts/style-guide.md` and the **reference-book analyses** `/analysis/`.

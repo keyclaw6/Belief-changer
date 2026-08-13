@@ -1,8 +1,9 @@
 # Open Questions — loop hardening backlog
 
 > Deferred design decisions from the 2026-08-12 orchestration audit (second
-> pass). Both items below were **REJECTED by the founder on 2026-08-12** — the
-> current behavior is accepted as-is. Kept here as a record of the decision.
+> pass). Items 1 and 2 were **REJECTED by the founder on 2026-08-12** — the
+> current behavior is accepted as-is. Item 3 records an accepted design choice.
+> Kept here as a record of the decisions.
 
 ## 1. Stop-guards are technically in the loop's editable surface — REJECTED
 

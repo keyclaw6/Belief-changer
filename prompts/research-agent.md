@@ -149,7 +149,10 @@ and strong enough to support belief change across every applicable persona.
 to its assigned bank file *as it works* — never holds them in context to write
 at the end. The banks are the live checkpoint: on any resume, the lead reads
 what is already there and re-dispatches only the slots still thin — completed
-work is never re-mined. Synthesis (§8) reads these bank files.
+work is never re-mined. Synthesis (§8) reads these bank files. Legacy pre-`banks/`
+evidence may sit under `research/_rounds/` or at `research/` root; treat it as
+already-mined — integrate it into the bank files and re-dispatch only thin
+slots, never re-mine.
 
 | Bank | Name | Fed by lane(s) |
 |---|---|---|
@@ -230,8 +233,10 @@ When every row clears across ≥3 personas, synthesize (§8).
 - `research-log.md` — parameter block, the named persona set, the dispatch
   history, and the gap-fill loop record (what was dispatched, what came back,
   what stayed thin).
-- `lived-experience.md` and `scientific-evidence.md` — the ten banks, written
-  for the master-plan stage to consume directly.
+- `lived-experience.md` and `scientific-evidence.md` — the curated synthesis of
+  the ten banks, written for the master-plan stage to consume directly. The raw,
+  append-only packets live under `research/banks/` (§4); these two files, not
+  `research/banks/`, are the planning contract the master-plan stage reads.
 - `sources/` — the source ledger with locators.
 
 **Belief wording during research.** The brief fixes the keystone *neighborhood*,

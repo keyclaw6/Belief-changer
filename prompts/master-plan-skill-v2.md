@@ -33,7 +33,7 @@ Use whatever organization best expresses the book, while making the following se
 
 Lock the target behavior, one reader expressed through 3–6 functional personas, the load-bearing false belief, through-line, format, all five fork decisions, the redefinition and margin-for-error doctrine if needed, the clinical/eating-disorder safety perimeter, the strongest pro-behavior scene, the destination state, and one fresh ending reframe.
 
-Preserve the method: escape not sacrifice, warm to the person / vicious to the trap (never contempt for the reader), no willpower, fear deployed the corpus way — raised at full force, then disowned by the escape — wherever the plan assigns it, immediate freedom after belief change, autonomy, original prose, and the Fork-1 line per the style guide (name the trap/lie/industry, not an inner creature to battle). (Fidelity doctrine, founder 2026-07-12.)
+Preserve the method: escape not sacrifice, warm to the person / vicious to the trap (never contempt for the reader), no willpower, fear deployed the corpus way — raised at full force, then disowned by the escape — wherever the plan assigns it, immediate freedom after belief change, autonomy, original prose, and the Fork-1 line per the style guide (default: full Carr personification — name the two mechanism characters, the trivial physical creature to starve and the belief-system that feeds it; the Burgeon no-monster stance is a brief-level override only). (Fidelity doctrine, founder 2026-07-12.)
 
 ### Compact evidence ledger
 

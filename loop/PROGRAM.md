@@ -132,7 +132,11 @@ can verify it.
 Run once before the baseline, and again after any founder edit to a judge **or
 any change of harness or judge model** (repeatability is sampling-sensitive).
 Spawn the judge role for each check below per the harness's spawn capability
-(in pi: `scripts/loop-runner/run_preflight.sh`). Save results in
+(in pi: `scripts/loop-runner/run_preflight.sh`). **A non-pi harness must NOT run
+`run_preflight.sh`** (it is pi-CLI-bound) — instead it spawns the `judge` role
+directly against the inputs in `loop/preflight/inputs/` per the checks below
+(18 judge calls: 6 PASS-test, 6 repeatability, 6 voice-probe) and writes the
+results to `loop/preflight/`. Save results in
 `loop/preflight/`. Do not proceed while any check fails; judge repair is
 founder-guided, not a loop iteration.
 
@@ -160,15 +164,20 @@ baseline establishes the accepted state — it runs directly on the campaign
 branch (no worktree; there is nothing to accept or reject yet, only to
 measure). Iteration worktrees begin at 001.
 
-**First action:** begin the research stage (§4 Step 3, "Stage: Research") —
-this is the opening move of the end-to-end run. At baseline nothing exists to
-reuse, so `research_reuse.sh` is not consulted; research always runs at 000.
+**First action:** create the campaign branch from `main` and move onto it
+(`git branch campaign-001 main && git checkout campaign-001`) — all baseline
+work lands here, never on `main`. Then begin the research stage (§4 Step 3,
+"Stage: Research") — this is the opening move of the end-to-end run. At
+baseline nothing exists to reuse, so `research_reuse.sh` is not consulted;
+research always runs at 000.
 
 1. Run the factory END TO END per Step 3 below: research → plan →
    full book. Nothing is reused from before the campaign; the current factory
    must own every artifact and trace it produces.
 2. Build `loop/reference-alignment.md` from the freshly accepted plan (its
-   procedure lives in that file).
+   procedure lives in that file). **The orchestrator builds this table itself** —
+   it is not a spawned role: read each plan card's belief-work and the GSBS
+   chapters, map by belief-move, fill the table before any judging.
 3. Judge every chapter, plus the book-arc judge (Step 4).
 4. Run the trace analyzer (Step 5). Save `loop/iterations/000/trace-analysis.md`.
 5. **A/A noise check (once):** regenerate chapter 01 a second time from the
@@ -234,12 +243,10 @@ takes hours. When a stage or a spawned role is running, the orchestrator does
 NOT poll it continuously. It updates `loop/state.md`, then waits — a long
 `sleep`, a scheduled wake, or a single wait — and on waking checks the stage's
 on-disk progress. **The progress markers are the real artifacts the stage
-produces**: research bank files under `production-books/<slug>/research/`,
+produces**: research bank files under `production-books/<slug>/research/banks/`,
 chapter files under `production-books/<slug>/chapters/`, judgment files under
-`loop/iterations/NNN/judgments/`. (When a stage runs through
-`daemon.sh`/`queue_runner.sh`, their `.exit` files under `.loop-work/` are an
-extra completion signal — but those runners are optional and the spawned writer
-produces no separate marker; the chapter file IS the marker.) New content since
+`loop/iterations/NNN/judgments/`. (The spawned writer produces no separate
+marker; the chapter file IS the marker.) New content since
 the last wake = still working = wait again. There is no fixed per-stage
 timeout: deep research is sacred and unlimited, so the *research* stage is
 never declared stuck on elapsed time. For every other unit, stuck = no new

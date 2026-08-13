@@ -1,5 +1,10 @@
 # Scientific Evidence — <Book Title>
 
+> Raw evidence packets accumulate under `research/banks/` (see
+> `prompts/research-agent.md` §4); this file is the lead's curated synthesis of
+> them for the master-plan stage. The inline Bank sections below are curated
+> content, not the live checkpoint.
+
 Synthesize accepted source packets only. Every bullet must name its bank, evidence grade, source IDs, and applicable persona IDs (`ALL` when universal). Preserve material disagreement instead of averaging it away; facts make the trap visible and never serve fear.
 
 Standard bullet:

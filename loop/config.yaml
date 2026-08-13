@@ -54,11 +54,11 @@ hypothesizer_reasoning: high
 researcher_model: deepseek-v4-flash
 researcher_endpoint: https://opencode.ai/zen/v1
 researcher_auth_env: OPENCODE_API_KEY
-researcher_route: opencode
+researcher_route: opencode-go
 researcher_reasoning: high
 research_subagent_model: deepseek-v4-flash
 research_subagent_reasoning: high
-research_subagent_route: opencode
+research_subagent_route: opencode-go
 # Depth is sacred: no search/fetch limits. Go as wide as still brings results.
 research_search_limit: unlimited
 research_fetch_limit: unlimited
@@ -68,20 +68,20 @@ research_fetch_limit: unlimited
 # Plan-reviewer — the plan-review gate (contract: prompts/master-plan-reviewer-v2.md)
 plan_reviewer_model: deepseek-v4-flash
 plan_reviewer_reasoning: high
-plan_reviewer_route: opencode
+plan_reviewer_route: opencode-go
 
 # Judges — the three chapter judges + book-arc (loop/judges/*.md)
 judge_model: deepseek-v4-flash
 judge_reasoning: high
-judge_route: opencode
+judge_route: opencode-go
 
 # Trace-analyzer — loop/prompts/trace-analyzer.md
 analyzer_model: deepseek-v4-flash
 analyzer_reasoning: high
-analyzer_route: opencode
+analyzer_route: opencode-go
 
 # Shared OpenCode Zen endpoint/auth for every opencode-routed role above.
-opencode_endpoint: https://opencode.ai/zen/v1
+opencode_endpoint: https://opencode.ai/zen/go/v1
 opencode_auth_env: OPENCODE_API_KEY
 
 # Reference

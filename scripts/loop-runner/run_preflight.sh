@@ -12,7 +12,7 @@ RUNS=${PREFLIGHT_RUNS_DIR:-$REPO/loop/preflight/runs}
 JUDGES=$REPO/loop/judges
 EFFORT=$(grep -E '^judge_reasoning:' "$CFG" | sed 's/^[^:]*: *//; s/ *#.*//')
 MODEL=$(grep -E '^judge_model:' "$CFG" | sed 's/^[^:]*: *//; s/ *#.*//')
-# Provider comes from config too (judges may route via commandcode or opencode);
+# Provider comes from config too (judges may route via commandcode or opencode-go);
 # never hardcode it — the judge route is config's to declare.
 PROVIDER=$(grep -E '^judge_route:' "$CFG" | sed 's/^[^:]*: *//; s/ *#.*//')
 PROVIDER=${PROVIDER:-commandcode}
