@@ -136,7 +136,11 @@ Spawn the judge role for each check below per the harness's spawn capability
 `run_preflight.sh`** (it is pi-CLI-bound) — instead it spawns the `judge` role
 directly against the inputs in `loop/preflight/inputs/` per the checks below
 (18 judge calls: 6 PASS-test, 6 repeatability, 6 voice-probe) and writes the
-results to `loop/preflight/`. Save results in
+results to `loop/preflight/`. **Re-running after a model/harness change:** the
+runner skips any check whose `response.md` already exists, so a stale battery
+would be silently reused — run preflight into a FRESH directory instead
+(`PREFLIGHT_RUNS_DIR=loop/preflight/runs-<date>-<model>`), never into one with
+old results. Save results in
 `loop/preflight/`. Do not proceed while any check fails; judge repair is
 founder-guided, not a loop iteration.
 

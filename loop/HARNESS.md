@@ -63,7 +63,7 @@ intended-vs-actual mismatch is logged as a **confound**, not read as a result.
 | Harness | Role adapter | Spawn mechanism | Notes |
 |---|---|---|---|
 | **pi coding agent** | `.pi/agents/*.md` (frontmatter `model:`) | the `subagent` tool | endpoint/auth/route bindings are the `[PI BINDING]` fields in `loop/config.yaml`; preflight runs via `scripts/loop-runner/run_preflight.sh` |
-| Hyperagent | *(fill in when first run there)* | the `task` tool | map roles per the capability table above |
+| Hyperagent | spawn roles per the capability table above | the `task` tool | map each role to a model the workspace can reach; no `.pi/` files used; run preflight by spawning the judge role directly against `loop/preflight/inputs/` per PROGRAM §2 |
 | other | *(add a row when a harness is used)* | its spawn capability | |
 
 **Preflight is harness-coupled:** judge repeatability depends on the model and
