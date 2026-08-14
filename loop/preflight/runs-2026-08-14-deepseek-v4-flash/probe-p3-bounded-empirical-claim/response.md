@@ -1,0 +1,8 @@
+PASS
+
+ASSIGNED-MOMENT VERDICTS
+primary-job promise: OK
+instruction: NONE ASSIGNED
+unassigned passages: OK
+
+**Overall voice-effect assessment:** No material voice-effect failure. At its assigned moment — a supported factual setup whose genuine empirical uncertainty is bounded while the trap verdict stays settled — the passage lands in exactly that register. The bounds live only on the measurement claim and are spoken as plain honesty, not paperwork: "Estimates of exactly how much added sugar the average adult now eats vary from survey to survey, and every measurement method has its flaws." Authority is then recovered flatly on the verdict the moment actually assigns: "What no survey disputes is the direction: consumption has multiplied within two generations." The confrontation is not sanitized — it is pointed at the reader and closed with settled force: "Whichever figure you take, the trap is the same." That last sentence is one person talking directly to this reader, carrying Carr's function (a fact that flips how the reader sees the shelves) without rehearsing his exact statistic; the register is calm confidence appropriate to a factual setup, with the trap's force reserved precisely where it belongs. No willpower/shame vocabulary, no coaching-speak, no hedging of the belief verdict itself. The one softening — source-caveated numbers instead of an exact figure — is the honest limit the assigned moment calls for and is not a voice failure.

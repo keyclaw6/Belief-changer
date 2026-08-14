@@ -1,0 +1,25 @@
+PASS
+
+ASSIGNED-TRANSITION VERDICTS
+- false belief named: OK
+- credit removed or reassigned: OK
+- sacrifice removed: OK
+- assigned reframe settled: OK
+- reader does the work: OK
+- scare-then-disown: NONE ASSIGNED
+
+**Evidence per verdict line:**
+
+**false belief named — OK.** The entering belief — "Stopping sugar means another diet — discipline, deprivation, and a debate I will manage forever" — is named directly and recognizably: "You have tried something... Plans, boundaries, resets, streaks" and "the quiet, grinding labor of managing a substance that seems to require permanent supervision." It confronts the diet expectation head-on before the reader can object: "this book is not a plan. It does not contain a meal schedule, a points system, a list of approved snacks, a detox calendar, or a phase" and "Will there be a meal plan by Chapter 4? A pantry purge by Chapter 6? A weigh-in? No." It even names the perpetual negotiation: "You're tired of anticipating, bargaining, and starting over."
+
+**credit removed or reassigned — OK.** Within this assigned transition, the credit in play is the one the reader lends to the willpower approach — that a manageable debate is the best available outcome. That credit is extracted, honored, and reassigned: "The boundaries are real. The relief is real." then "because the thing you're managing against hasn't actually changed. It's still there, behind the fence you built, and the fence still needs mending." The credit for relief is shown to be borrowed against an untouched want, and the chapter distinguishes the achievement: "There is a difference between not eating BAD SUGAR and not wanting it." Sugar's own benefit is explicitly reserved, not prematurely demolished — consistent with "benefit-demolition argument reserved for later chapters."
+
+**sacrifice removed — OK.** The reader is shown they lose nothing: "If it does, you'll know. And you'll put this book down and carry on exactly as before, having lost nothing." and "an argument — one you can test for yourself, at your own pace, in your own kitchen, with nothing to lose." The offer is escape rather than giving up: "Not a tighter cage. Not a better set of rules. Something closer to the door swinging open." and "freedom without deprivation, without battle, and without a lifetime of rules."
+
+**assigned reframe settled — OK.** The reframe assigned here is about the offer — investigation, not another diet — and it lands and stays settled: "A well-managed truce is vastly better than chaos... But notice what she also described: a long maintenance history." The core verdict is stated flatly and not reopened: "There is a difference between the debate being managed and the debate being over." The chapter's own deferrals ("But we aren't there yet") reserve delivery, not the reframe itself, matching the leaving belief "what is on offer is the end of the debate."
+
+**reader does the work — OK.** The chapter asks questions whose only honest answers start the inversion, rather than lecturing: "So why are you here? That's not a trick question. It deserves a real answer, and only you can give it." The truce/freedom inversion is forced by the reader's own verdict: "Does any of that sound like freedom to you? Or does it sound like a well-managed truce?" And the investigation is framed as self-inquiry: "is this actually true? Does BAD SUGAR deliver a special, irreplaceable pleasure? Does it rescue a bad day? Does it make a celebration complete? Or have I simply believed those things for so long that I've never tested them?"
+
+**scare-then-disown — NONE ASSIGNED.** CHAPTER CONTEXT assigns curiosity over dread and reserves the benefit-demolition scare for later chapters; no supported scare is assigned to C-01, so none is owed and none is counted against the chapter.
+
+**Overall belief-change assessment:** This chapter produces the belief-state transition its card assigns. The entering belief that stopping sugar means another diet — disciplined, depriving, and a debate to be managed forever — is named with exact recognition and then dissolved by the offer, not by force of harm: the reader is granted permission to keep eating normally, promised nothing lost, and given a testable distinction between a managed truce and a finished debate. Every component of the assigned transition completes with force comparable to the real chapter's "You'll find it easy... no need to change the way you eat" opening, and the chapter does what its position demands — build the entry contract — without stealing the benefit-demolition work the plan reserves for later. The one slight shade is that the reader's reason for beginning (tired of the debate) is inferred more than it is asked, so the identification rests slightly on the author's guess rather than the reader's own confession; this is a sharpening opportunity, not a material failure. No false belief survives this chapter more intact than in the real chapter at the same point.
