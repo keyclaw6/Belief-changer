@@ -1,0 +1,4 @@
+# Chapter card C01 (from master plan, section 7)
+
+**C01 — The Promise — How to Read This Book**
+primary job: non-argument — bridge | trust & participation; objection resolved: "this is too good to be true and will demand willpower" — pre-empted by origin myth + entry promise | arc position: trust & participation; curve: promise high | personas: P-01..P-04, voice: skeptical reader quoted then reassured | evidence: E-11 (not uniquely weak) limits preserved | mantra: debut M-01, M-02, M-09, FT-01, FT-04 | instruction: I-01, I-02, I-03, I-04 | scene: S-04 confidence-trick (job: dissolve shame before argument) | devices: self-answered question, reassurance–challenge cycle, permission paradox; peak: ALL-CAPS promise triad; recap licensed | guardrails: warm to person, no willpower register, gain-framed | continuity: receives brief only; hands forward open-minded stance + permission to continue using while reading + instruction contract | budget: 3,200

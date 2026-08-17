@@ -1,0 +1,18 @@
+{
+  "model_configured": "meta/muse-spark-1.2-contributor",
+  "fallback_used": false,
+  "fallback_reason": null,
+  "errors": [],
+  "latency_s": 70.3,
+  "http_reported_status": 200,
+  "model_used": "meta/muse-spark-1.2-contributor",
+  "usage": {
+    "prompt_tokens": 38458,
+    "completion_tokens": 7466,
+    "total_tokens": 45924,
+    "prompt_tokens_details": {
+      "cached_tokens": 1585
+    }
+  },
+  "finish_reason": "stop"
+}

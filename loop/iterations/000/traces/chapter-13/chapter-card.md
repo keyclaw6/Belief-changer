@@ -1,0 +1,4 @@
+# Chapter card C13 (from master plan, section 7)
+
+**C13 — What Sugar Really Means — Nature's Guide**
+primary job: non-argument — definition | safety — installing redefinition box and positive authority so BAD SUGAR line is operable without nutrition pedantry or medical risk | objection resolved: "what exactly must I avoid and what can I eat?" | arc: redefinition; curve: authority debut | personas: ALL | evidence: E-14, E-18, E-16 (WHO guidance, glucose not essential import) | mantra: debut FT-01 boxed + FT-06 Nature's Guide; echo M-05 | instruction: none (definition chapter) | scene: S-11 seatbelt (margin doctrine) + Nature's Guide instruments: raw-test, 0–20 hunger gauge, primary/secondary foods | devices: definitional decree ("when I say sugar, take it to mean BAD SUGAR"), fact-assertion | safety: boxed clinical advisory verbatim; instruments as tools not prescriptions | budget: 3,300
