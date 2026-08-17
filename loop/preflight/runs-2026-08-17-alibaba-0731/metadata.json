@@ -1,0 +1,20 @@
+{
+  "run_dir": "loop/preflight/runs-2026-08-17-alibaba-0731",
+  "model": "alibaba-token-plan/deepseek-v4-flash-0731",
+  "harness": "opencode",
+  "spawn": "harness-native `task` sub-agent per call, clean context, pinned to model",
+  "date": "2026-08-17",
+  "calls": 18,
+  "verdict": "BLOCKED",
+  "pass_summary": "PASS test 6/6 OK; repeatability 1/3 OK (belief-mechanic & voice-emotion inconsistent); voice probes 6/6 fired correctly (p1,p2 flagged hedges; p3-p6 not flagged), with a p2 header/verdict-block conformance contradiction",
+  "failures": [
+    "Repeatability belief-mechanic: run1 PASS (false belief named OK) vs run2 FAIL (false belief named MATERIAL) — PASS/FAIL and verdict lines diverge",
+    "Repeatability voice-emotion: run1 first-token FAIL vs run2 first-token PASS, though both mark instruction MATERIAL (verdict block identical, PASS/FAIL token inconsistent)"
+  ],
+  "inputs_source": "all 18 calls used the existing inputs in loop/preflight/inputs/ (mirror of 2026-08-14 battery). No substitutions required.",
+  "notes": [
+    "probe-p1: header 'PASS/FAIL\\nFAIL' (the second line is the operative FAIL); hedged core verdict correctly flagged MATERIAL.",
+    "probe-p2: header PASS but ASSIGNED-MOMENT VERDICTS primary-job promise MATERIAL with a Voice Gap — the hedge WAS flagged (check functional intent met) but header/block are contradictory (a rubric violation: PASS requires every line OK).",
+    "probe-p3..p6: correctly NOT flagged (bounded empirical claims, bounded source limit, and two reader-present-doubt acknowledgments all PASS)."
+  ]
+}

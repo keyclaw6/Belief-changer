@@ -64,6 +64,7 @@ intended-vs-actual mismatch is logged as a **confound**, not read as a result.
 |---|---|---|---|
 | **pi coding agent** | `.pi/agents/*.md` (frontmatter `model:`) | the `subagent` tool | endpoint/auth/route bindings are the `[PI BINDING]` fields in `loop/config.yaml`; preflight runs via `scripts/loop-runner/run_preflight.sh` |
 | Hyperagent | spawn roles per the capability table above | the `task` tool | map each role to a model the workspace can reach; no `.pi/` files used; run preflight by spawning the judge role directly against `loop/preflight/inputs/` per PROGRAM §2 |
+| opencode | judges, trace-analyzer, research sub-agents, and (via the opencode harness's own reach) the `task` tool | the `task` sub-agent tool, pinned to `alibaba-token-plan/deepseek-v4-flash-0731` | clean-context sub-agent per role call holding only its role prompt + the exact named inputs; no `.pi/` files used; run preflight by spawning the judge role directly against `loop/preflight/inputs/` per PROGRAM §2. Writer/plan-writer/hypothesizer route via the Command Code proxy `http://127.0.0.1:3050/v1/chat/completions`. |
 | other | *(add a row when a harness is used)* | its spawn capability | |
 
 **Preflight is harness-coupled:** judge repeatability depends on the model and
