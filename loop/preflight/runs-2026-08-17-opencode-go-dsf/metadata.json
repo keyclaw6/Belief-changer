@@ -1,0 +1,17 @@
+{
+  "run_dir": "loop/preflight/runs-2026-08-17-opencode-go-dsf",
+  "model": "opencode-go/deepseek-v4-flash",
+  "harness": "opencode",
+  "spawn": "harness-native `task` sub-agent per call, clean context",
+  "date": "2026-08-17",
+  "calls": 18,
+  "verdict": "18/18 PASS",
+  "pass_summary": "PASS test 6/6 (all three judges PASS on the real chapter fixture, twice each); repeatability 3/3 on identical generated chapter (belief-mechanic PASS/PASS identical blocks; voice-emotion FAIL/FAIL same highest-impact class instruction MATERIAL, one run adds unassigned-passages MATERIAL; reader-journey PASS/PASS); voice probes 6/6 functional (p1,p2 hedges flagged; p3-p6 not flagged)",
+  "failures": [],
+  "inputs_source": "all 18 calls used the existing inputs in loop/preflight/inputs/ (mirror of 2026-08-14 battery; reader-journey PASS test carries its PREVIOUS CHAPTER block). No substitutions required.",
+  "notes": [
+    "probe-p2 header line is 'PASS/FAIL: FAIL' (non-standard spelling of the gate); operative verdict FAIL with primary-job promise MATERIAL — hedge flagged, no PASS/flag contradiction.",
+    "repeat-voice-emotion-run2 adds 'unassigned passages: MATERIAL' (Two Reports citation register) absent from run1; not decision-relevant, same highest-impact failure class both runs.",
+    "No judge prompt, input, config.yaml, or PROGRAM.md edited; fresh runs dir only."
+  ]
+}
