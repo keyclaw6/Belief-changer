@@ -1,0 +1,27 @@
+PASS
+
+### Reader journey comparison
+
+**The real chapter's movement:** The reader enters weighing their body against a target and feeling the defeat of failed diet-and-exercise regimes (recognition of the treadmill). Carr confronts the scales-habit: "Is it the figure on the scales that makes you miserable... or is it the way you look and feel?" and dismantles the exercise myth ("exercising in order to lose weight is as futile as taking your car for a drive just to reduce the weight in the petrol tank"). The turn is subtle: the reader stops managing intake/output and sees the real driver. The chapter lands on a genuine-vs-false motive inversion — true hunger vs the false "I need relief/comfort" — and closes on a directive ("Avoid eating when you're not hungry"), the reader re-armed with a clean rule rather than a resolve to white-knuckle.
+
+**Our chapter's movement:** The reader enters carrying the memory of three defenses already gone (C06 handed forward taste reassigned: "you save cope and connection for the next chapter" — ours picks up exactly there). Wandering through the barrier voice ("I need something sweet to cope," "It's how we connect — birthdays, the break-room") gives strong recognition. The evening-calm scene and the isolate-the-variable pause test (identical scene, change one variable) drive confrontation ("Did you just experience the ending of a storm you yourself started earlier?"). The tight-shoe S-01 image ("It does not calm you. It farms you") is the felt peak, then the party "glue" section extends it into belonging. The "rescuer is the perpetrator" inversion ("Not cause. Consequence. Not cure. Creator.") converts the peak into explicit belief-turn, and the chapter lands fully in the leaving state: "BAD SUGAR creates the aggravation it pretends to relieve; connection is people, ritual and pause... the for-column is empty. Confirmed." The reader arrives relieved and curious, not bracing — and is handed into the next chapter ("We will name it fully in the next chapter").
+
+The two chapters move in parallel shape (recognition → confrontation → felt image → inversion → landing), and in the leaving state ours is even more fully landed than the real (which ends on a directive), all consistent with the PARTIAL alignment.
+
+### Journey Gap 1: evidence-triage interlude dismounts the reader from the relief crest
+
+**Where it happens:** "WHAT THE LAB ACTUALLY SHOWS — AND WHAT IT DOES NOT" (E-05 / E-06 / E-09 triage), placed immediately after the inversion peak and its relief crest ("Do you feel the anxious dependency soften? ... There is nothing to white-knuckle through.").
+
+**What the reader should feel:** sustained relief — the calm clarity of "there is nothing to white-knuckle through" — continuing through to the landing.
+
+**What they actually feel:** a brief analytical withdrawal. The relief crests, then the reader is set down into animal microdialysis, naloxone-precipitation scope, and "prohibited vs permitted inference" triage ("Scope: animal microdialysis... Limits: opiate-like... rodent"). For several paragraphs the reader is a student grading evidence, not a freed person basking in the turn; the calm clarity is momentarily re-dammed, then returns at "the physical piece is trivial next to the story" and the final landing.
+
+**Why the divergence:** the evidence section tries to consolidate the inversion ("so this inversion is not faith but fact") but is placed after the emotional peak rather than as the engine of it. It asks the reader to re-enter a technical register right after they reached bodily relief, so the peak-to-release arc is interrupted and must be re-established before the close.
+
+**Initial suspicion (speculative):** style-guide / writer-prompt — the factory's standard lab section template is injected at its default under-the-inversion position, not repositioned to sit before the emotional peak or compressed to a single consolidating reassurance; model may also have over-tended the scope-fidelity detail.
+
+*Note: this is a temporary valley, not a reversal — the chapter re-places the relief at "Do you feel the foothold give? Good. Let it go." and the final line, and the interlude does genuinely service the inversion and hand the next chapter in. It recovers, so it does not rise to a material journey failure.*
+
+### Final verdict
+
+**Assigned transition verdict:** Yes. The reader is moved from entering belief ("without BAD SUGAR I'd be tense / unsocial / deprived at gatherings") through recognition (barrier voice, comfort eaters, evening scene, break-room), confrontation (isolate-the-variable on calm and on belonging, tight-shoe felt image), and a real turn (the "rescuer is the perpetrator" inversion), and lands in the assigned leaving state with the fourth benefit collapsed and the for-column empty, relieved rather than resolved to suffer. Continuity is strong: it opens on C06's handed-forward state, invokes settled work by token ("the axis switch we installed in Chapter Three," "as we did with taste and with calm," "the warm cinema we named earlier") without re-arguing, and closes by naming the coming chapter. All assigned echoes are present verbatim and well-placed — "a genuine pleasure or treat" at each credit-reassignment beat, "sneaking a ride" centred on the pause and the warmth, and "doing TO you vs doing FOR you" delivered at the axis-switch climax and re-read clean at the close. The transition is not broken and the leaving state is correctly reached.

@@ -1,0 +1,11 @@
+PASS
+
+ASSIGNED-TRANSITION VERDICTS
+false belief named: OK
+credit removed or reassigned: OK
+sacrifice removed: OK
+assigned reframe settled: OK
+reader does the work: OK
+scare-then-disown: NONE ASSIGNED
+
+**Overall belief-change assessment:** This chapter completes its assigned transition — demolishing the last foothold that "sugar relaxes me / helps stress / is social glue" — with force fully comparable to (and arguably stronger than) the real chapter at the same point. The false belief is named with specificity (not bare "sugar is bad"): the reader is taken through concrete admissions — "I need something sweet to cope," "It's how we connect" — and each claimed credit is then removed rather than countered. The evening-calm beat exposes the calm as relief from a self-made dip; the tight-shoes image (S-01) is the strongest move in the chapter, showing relief-from-self-created-discomfort is not pleasure; and the "isolate the variable" tests reassign the credit to pause, people and ritual so the reader experiences, not just understands, that BAD SUGAR was "sneaking a ride." Sacrifice is actively removed ("You do not lose connection when you lose BAD SUGAR. You lose a passenger you were feeding," "there is nothing to white-knuckle through"), and the inversion "the rescuer is the perpetrator" is landed and kept settled through the final flat verdict ("BAD SUGAR creates the aggravation it pretends to relieve; connection is people, ritual and pause, not a dose"). The reader does the work throughout — trap questions ("If BAD SUGAR genuinely calms you, why are you calmer only for minutes, and more edgy for hours after?"/"Why does the same quiet arrive when you take the pause without it?") force the inversion rather than lecturing. Since this chapter's assigned transition is calm/cope-connect rather than a harm scare, no scare-then-disown is required (NONE ASSIGNED); the supported lab section is kept smaller than the reader fears and explicitly disowned as a reason to change ("Do not use this to frighten yourself"). No step of the assigned transition remains more intact than in the real chapter; the assigned false belief convincingly collapses, and the single largest contributor is the concrete, self-applied tight-shoes reframe that converts the abstract credit-error into a felt inversion.

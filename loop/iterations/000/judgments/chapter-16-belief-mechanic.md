@@ -1,0 +1,13 @@
+PASS
+
+ASSIGNED-TRANSITION VERDICTS
+false belief named: OK
+credit removed or reassigned: OK
+sacrifice removed: OK
+assigned reframe settled: OK
+reader does the work: OK
+scare-then-disown: NONE ASSIGNED
+
+No material gaps.
+
+**Overall belief-change assessment:** This chapter produces the belief-state transition assigned by CHAPTER CONTEXT with force comparable to the real chapter, and on some beats exceeds it. The assigned refusal-to-haunt transition — turning the entering belief ("thoughts/cravings mean I've failed or am deprived") into the leaving belief ("thought = prompt to rejoice; whine = M-07 faint empty feeling, dying") — completes cleanly and stays settled. The false belief is named specifically and immediately inverted: the chapter dismantles the "If I think it, I must want it. If I want it, I must be deprived" script, and answers it with the reader's own logic ("If you think of last year's holiday, are you on holiday?"), so the reader performs the inversion rather than receiving a lecture. Credit extraction is thorough: the "benefit" of the sweet fix is reassigned to the trap itself via the caged lion and tight-shoe reversals ("unwrapping the chocolate was taking the shoe off that BAD SUGAR tied on in the first place"), and the present-day benefit of the thought is reassigned from "threat" to "opportunity to celebrate." Sacrifice is actively removed across multiple moves — the two-funeral frame, "rejoice at a dead enemy, don't mourn a lost friend," "Freedom does not need a substitute. Freedom is the substitute," and the pity-not-envy stance — so nothing feels lost and the reader feels escape rather than deprivation. The M-07 re-label is drilled repeatedly and functionally ("Your smile is its funeral"), directly matched to Carr's "slight empty insecure feeling" being reframed as the Little Monster's death throes; the chapter even reproduces Carr's "rejoice at its death" and his elephants-in-the-mind proof, then operationalizes it with the joyful replacement thought. Evidence beats (E-07, E-09, E-19) are used to normalize and disarm rather than to frighten, keeping the refusal-of-fear logic aligned with the method. The reframe is never reopened: every escalation (blip, bakery, birthday) is pre-emptively relabelled and settled, and the four assigned instructions are each installed with a warm rationale and a trap question. There is no belief left materially more intact than at the same point in the real chapter; any phrasing that could be sharpened is a wording-level opportunity, not a belief-change failure. The single largest reason for strength is that the reader does the work: trap questions and future-pacing, not exposition, carry the inversion.
