@@ -1,0 +1,28 @@
+{
+  "call": "plan-writer-01",
+  "role": "plan-writer",
+  "model_used": "meta/muse-spark-1.2",
+  "model_configured": "meta/muse-spark-1.2-contributor",
+  "fallback_used": true,
+  "fallback_reason": "primary model returned http 429 rate_limit_error (empty response from upstream, zero output tokens, retry_after=10); after retry_after elapsed, primarity not retried per contract (rate-limit -> fallback), switched to non-contributor meta/muse-spark-1.2",
+  "inputs": [
+    "prompts/master-plan-skill-v2.md (contract)",
+    "prompts/style-guide.md",
+    "production-books/quit-sugar/00-brief.md",
+    "production-books/quit-sugar/research/lived-experience.md",
+    "production-books/quit-sugar/research/scientific-evidence.md"
+  ],
+  "usage": {
+    "prompt_tokens": 26457,
+    "completion_tokens": 17181,
+    "total_tokens": 43638
+  },
+  "completion_tokens_after_168_s": null,
+  "latency_s": 127.0,
+  "http_reported_status": 200,
+  "errors": [
+    "primary model 429 rate limit"
+  ],
+  "finish_reason": "stop",
+  "output_path": "loop/iterations/000/traces/plan-writer-01/response.md"
+}

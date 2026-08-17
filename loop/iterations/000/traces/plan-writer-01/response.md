@@ -261,3 +261,9 @@ primary job: enacted transition — projecting ordinary life as richer without B
 **C18 — You Are Free — The Checklist to Keep**
 primary job: non-argument — recap | hand-off — consolidating portable manual and pushing reader into life with fresh reframe | objection resolved: "will I remember this when memory fades?" | arc: close — push into life; curve: crescendo + hand-over | personas: ALL | evidence: none new | mantra: echo M-01, M-02, M-03, M-08, M-09, M-10 plus FT-01–FT-06 invoked as tokens; terminal hand-over: "whenever BAD SUGAR crosses your mind, think: FANTASTIC! I'M FREE FROM SUGAR!" | instruction: final verbatim recap I-01–I-12 with chapter cross-references; gate for page-skippers | scene: S-13 growth reframe — fresh reveal: you didn't give up sweetness, you recovered your taste for it; Burgeon = to grow | devices: scannable checklist, ALL-CAPS final landing, outward imperative "Get on with enjoying your life" | guardrails: money/health gains as bonus, never motive; no willpower register | budget: 3,000
 
+---
+
+**Normalization compliance:** Every shared decision defined once under stable ID in inventories above; chapter cards reference IDs only, never copy full wording. No second mantra audit, no occurrence counts, no prewritten prose anatomy, no single-use phrase ledger. Writer derives preview/thesis/SUMMARY rhythm from style guide §B10 anatomy.
+
+**Fresh review gate:** This plan is candidate until a fresh reviewer (clean context, only reviewer prompt + permitted inputs) records `master-plan-review.md` ending with standalone line `fit to write from`.
+

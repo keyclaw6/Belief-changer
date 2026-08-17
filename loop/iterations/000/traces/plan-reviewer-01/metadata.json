@@ -1,0 +1,19 @@
+{
+  "call": "plan-reviewer-01",
+  "round": 1,
+  "role": "plan-reviewer",
+  "spawn": "opencode harness `task` sub-agent, fresh clean context",
+  "model": "opencode-go/deepseek-v4-flash (pinned per HARNESS.md; model binding recorded by harness)",
+  "inputs": [
+    "master-plan.md",
+    "style-guide.md",
+    "00-brief.md",
+    "lived-experience.md",
+    "scientific-evidence.md"
+  ],
+  "verdict_final_line": "fit to write from",
+  "usage": null,
+  "latency_s": null,
+  "errors": [],
+  "note": "reviewer architecture finding cited '20 chapters'; plan has 18 cards. Non-blocking numeral slip inside a PASS; verdict unchanged."
+}

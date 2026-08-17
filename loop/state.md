@@ -23,18 +23,11 @@
 ## Position
 
 - **Iteration:** 000 (baseline)
-- **Stage:** research COMPLETE — banks gap-filled + synthesis written; P-04 lane ≥3 personas clear. Preflight re-run on `opencode-go/deepseek-v4-flash` = **18/18 PASS** (2026-08-17). Next unit: planning (research complete; preflight green).
+- **Stage:** planning COMPLETE — master plan accepted round 1 (`fit to write from`); reference-alignment rebuilt (18 rows). Next unit: writing chapter 01.
 - **Status:** IN PROGRESS — baseline end-to-end run
 - **Campaign branch:** `campaign-001` (created from `main` 2026-08-14)
-- **Last completed unit:** preflight (PROGRAM §2) re-run on `opencode-go/deepseek-v4-flash`
-  = **18/18 PASS** (opencode harness, `loop/preflight/runs-2026-08-17-opencode-go-dsf/`).
-  PASS test 6/6; repeatability 3/3 (belief-mechanic PASS/PASS identical blocks,
-  voice-emotion FAIL/FAIL same highest-impact class instruction MATERIAL, reader-journey
-  PASS/PASS); voice probes 6/6 functional (p1,p2 hedges flagged; p3-p6 not flagged).
-  This supersedes the preceding BLOCKED battery on `alibaba-token-plan/deepseek-v4-flash-0731`
-  (`runs-2026-08-17-alibaba-0731/`) as the active judge-binding evidence.
-- **Next unit:** planning on campaign-001 (Program Stage: Planning). Preflight green;
-  no founder decision is gating planning.
+- **Last completed unit:** planning (Program Stage: Planning) — plan-writer-01 via Command Code proxy (fallback meta/muse-spark-1.2 after 429 on contributor), 18-chapter master plan accepted (SUM 60,000 words); plan-reviewer-01 sub-agent (opencode-go) returned `fit to write from` round 1; reference-alignment.md rebuilt (18 rows). Traces in `loop/iterations/000/traces/`.
+- **Next unit:** writing chapter 01 — spawn chapter-writer (Muse Spark contributor/fallback) with master plan card C01, style guide, and the plan's book-core section as previous-chapter input.
 
 ## If you died / were stopped
 
@@ -65,3 +58,4 @@ leaked agent-monologue tail (post-packet lines) was truncated 2026-08-17; its 16
 | 2026-08-17 | EXEC-A research COMPLETE. Miner-1: bank-02 P-04 0→14 packets, 4 domains (bloodsugardiet/vanadia/deanebarker/johnfawkes.substack). Miner-2: bank-07 43→75 packets, PMC 86%→49.33% (37/75), 8 domains; +32 non-PMC (WHO/HSPH/Harvard/NHS/MedlinePlus/NIDA/Hopkins). Synthesis written: lived-experience.md (106L), scientific-evidence.md (34L), research-log.md tables + dispatch filled, sources/ 26 packet files. Total 1040 packets across 10 banks. | preflight re-run on 0731 → planning |
 | 2026-08-17 | EXEC-B: preflight re-run on `alibaba-token-plan/deepseek-v4-flash-0731` via opencode `task` sub-agents (18 calls, runs-2026-08-17-alibaba-0731) = **BLOCKED**: PASS test 6/6 OK; repeatability 1/3 OK — belief-mechanic PASS/FAIL, voice-emotion FAIL-token/PASS-token (both mark instruction MATERIAL); voice probes 6/6 functional (p2 header/block contradiction). 0731 does not satisfy PROGRAM §2 repeatability in this harness. No judge/input/config edited. 2026-08-14 DeepSeek V4 Flash remains the last PASSING (18/18) battery. | founder: pick judge model for campaign-001 → planning |
 | 2026-08-17 | EXEC-B2: preflight re-run on `opencode-go/deepseek-v4-flash` via opencode `task` sub-agents (18 calls, runs-2026-08-17-opencode-go-dsf) = **18/18 PASS**: PASS test 6/6; repeatability 3/3 — belief-mechanic PASS/PASS identical blocks, voice-emotion FAIL/FAIL same highest-impact failure class (instruction MATERIAL; run2 adds unassigned-passages MATERIAL), reader-journey PASS/PASS — satisfies founder amendment 2026-07-28 option C; voice probes 6/6 functional (p1,p2 hedges flagged; p3-p6 not flagged; probe-p2 gate line reads "PASS/FAIL: FAIL", operative FAIL). No judge/input/config/PROGRAM.md edited. HARNESS.md opencode row updated: judges/trace-analyzer/plan-reviewer on opencode-go/deepseek-v4-flash, research sub-agents stay on 0731, writer/plan-writer/hypothesizer via Command Code proxy. | planning on campaign-001 |
+| 2026-08-17 | EXEC-C: planning COMPLETE. plan-writer-01 via Command Code proxy — contributor model `meta/muse-spark-1.2-contributor` hit 429 rate_limit (empty upstream); used coded fallback `meta/muse-spark-1.2`; 18-chapter master plan accepted (SUM 60,000 in band); plan-reviewer-01 (opencode-go, fresh clean context) returned `fit to write from` round 1; reference-alignment.md rebuilt (18 rows, content-based). Traces to `loop/iterations/000/traces/`. | writing chapter 01 (spawn chapter-writer) |
