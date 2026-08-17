@@ -1,8 +1,38 @@
-# Research Log — <Book Title>
+# Research Log — Quit Sugar
 
 Record what happened without prescribing how the lead must think or delegate.
 Use stable source IDs (`S-001`) throughout. Unavailable usage or cost is `n/a`,
 never zero.
+
+## Personas named before dispatch (research prompt §7 — "≥3 personas" must be countable)
+
+| Persona ID | Function served / defining context |
+|---|---|
+| P-01 | The loss-of-control binger — night/weekend binges, secret or hiding eating, one-bite-becomes-the-box, shame cycle, failed diets & restriction diets; needs the genie-in-the-bottle inversion. |
+| P-02 | The in-denial moderate — "just a treat", "I'm fine", daily grazing and snacking that never reads as a problem; moderation rules that quietly fail; needs the discover-the-trap reframe. |
+| P-03 | The comfort/identity eater — sugar as reward, love, coping, or nostalgia; stress/emotion eating and the "I deserve it" moment; the believed benefit is emotional, not just taste. |
+| P-04 | The energy-crash yo-yoer — sugar as an energy lift and concentration fix; mid-afternoon slumps, productivity dips, and the lift–crash cycle dressed as fuel. |
+
+## Parameter block (filled from the brief, first thing)
+
+```
+TARGET BEHAVIOR:        Compulsive consumption of refined/added sugar and junk carbs ("bad sugar") —
+                        the craving–snacking loop and its grip, not nutrition pedantry.
+READER EDITION:         General adult who feels trapped in the sugar loop; has tried diets, moderation
+                        rules, and willpower and watched them all fail; suspects something is wrong
+                        with the whole approach. One clear reader.
+BEHAVIOR CLASS:         CONSUMPTIVE/CHEMICAL (clean baseline) — an ingested substance with a
+                        dependence/reward loop; the target is elimination of "bad sugar", not
+                        substitution or positive replacement.
+COMMUNITY NAME-MAP:     sugar-free / quit-sugar support forums; sugar-addiction and food-addiction
+                        recovery communities; Whole30 / low-carb / keto sugar-elimination groups;
+                        Overeaters-style sugar shares; food-tracking & sugar-detox app reviews;
+                        sugar-withdrawal and quit-story blogs; sugar-industry whistleblower/insider
+                        material. (Reddit excluded without explicit authorization — rights gate.)
+FORMAT PRESET:          FULL-LENGTH  (~60k words, ~20 chapters → §5 volume floors)
+KEYSTONE-BELIEF HINT:   "sugar is a pleasure/treat/energy-lift that makes life sweeter and I'd be
+                        deprived without it" (neighborhood, not frozen — the plan freezes the sentence).
+```
 
 ## Model and subagent calls
 
@@ -23,12 +53,6 @@ data. A rejection never counts as evidence coverage.
 | UTC | Source ID / family | URL or scope | Rights / privacy basis | Decision and reason |
 |---|---|---|---|---|
 |  |  |  |  |  |
-
-## Personas discovered
-
-| Persona ID | Function served / defining context | Evidence source IDs | Thin spots |
-|---|---|---|---|
-|  |  |  |  |
 
 ## Final bank audit
 
