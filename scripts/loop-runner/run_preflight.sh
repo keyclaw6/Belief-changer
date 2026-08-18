@@ -12,10 +12,10 @@ RUNS=${PREFLIGHT_RUNS_DIR:-$REPO/loop/preflight/runs}
 JUDGES=$REPO/loop/judges
 EFFORT=$(grep -E '^judge_reasoning:' "$CFG" | sed 's/^[^:]*: *//; s/ *#.*//')
 MODEL=$(grep -E '^judge_model:' "$CFG" | sed 's/^[^:]*: *//; s/ *#.*//')
-# Provider comes from config too (judges may route via commandcode or opencode-go);
-# never hardcode it — the judge route is config's to declare.
+# Provider comes from config (commandcode powers Muse Spark roles only —
+# never the judges); if config fails to declare it, stop rather than guess.
 PROVIDER=$(grep -E '^judge_route:' "$CFG" | sed 's/^[^:]*: *//; s/ *#.*//')
-PROVIDER=${PROVIDER:-commandcode}
+[ -n "$PROVIDER" ] || { echo "run_preflight: judge_route missing from $CFG — refusing to guess a provider" >&2; exit 1; }
 mkdir -p "$RUNS"
 
 run_one() {  # judge input-file out-tag
