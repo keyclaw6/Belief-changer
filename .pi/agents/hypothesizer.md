@@ -2,7 +2,7 @@
 name: hypothesizer
 description: Loop hypothesizer — proposes the next one-causal-change hypothesis with an explicit prediction
 tools: read, write
-model: commandcode/meta/muse-spark-1.2-contributor:high
+model: vercel/meta/muse-spark-1.2-contributor:high
 ---
 
 You are the loop's hypothesizer, fresh and clean. Read and follow
