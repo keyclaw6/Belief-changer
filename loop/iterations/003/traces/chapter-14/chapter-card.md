@@ -1,0 +1,17 @@
+**C14 — No More Bargains Part 1**
+- Primary job: enacted transition — cut-down, special ones, tomorrow and weaning closed as intensifiers
+- Entering belief: "I'll just have less / keep birthdays / start Monday / wean off."
+- Encounter: Bargaining voice listing R-01..R-06 verbatim.
+- Enacted discovery: foreclose each R-01..R-06 with pincer logic + cliff-jump + practice evidence from L-02 / S-05
+- Emotional turn: bargaining cleverness → sober finality, relief at no negotiation
+- Leaving belief: "There is no healthy level of BAD SUGAR other than zero; any kept cord leaves the appliance running."
+- Assumptions handed forward: bargaining closed.
+- Work reserved: substitutes/myths/meta → C15; readiness gate → C16
+- Evidence: S-05 (S-05) + L-02 (L-02) + S-12 token (≤1 sentence) — limits preserved
+- Mantras/tokens: echo M03, M06, T03; echo M09
+- Scenes: A02 cliff-jump full + A10 100 cords full (jobs: safe-limit absurdity, totality)
+- Devices: pre-scripted rationalizations pre-discredited, trap questions
+- ALL-CAPS: YOU CANNOT TAPER A TRAP — YOU STEP OUT OF IT.
+- Guardrails: never allow special ones; margin doctrine included
+- Continuity: receives identity freed; hands forward: first escapes sealed
+- Budget: 3,100

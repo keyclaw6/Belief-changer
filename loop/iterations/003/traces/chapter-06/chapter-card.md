@@ -1,0 +1,17 @@
+**C06 — "One Bite Won't Hurt"**
+- Primary job: enacted transition — moderation/one-bite illusion collapsed as forbidden-fruit intensifier (demolishes J-03)
+- Entering belief: "I can keep the special ones; moderation will fix this."
+- Encounter: Evening "tiny sliver" rule, biscuit tin, "I don't keep it in the house" carve-out.
+- Enacted discovery: isolate variable (diet vs non-diet behaviour); forbid-fruit demonstration; house-party gatecrasher logic for why one triggers more
+- Emotional turn: clever negotiation → exposed trap logic, amusement at own bargaining
+- Leaving belief: "One is never one; moderation makes BAD SUGAR more precious and guarantees escalation."
+- Assumptions handed forward: moderation is escape route, not solution.
+- Work reserved: mechanism naming → C07; totality logic fortified → C14
+- Evidence: L-02 (L-02) + S-05 schedule is trap (S-05) + S-01 binge model (S-01) — limits: rat model, translates cautiously; ad-lib vs intermittent distinction kept
+- Mantras/tokens: echo M03, M07
+- Scenes: A02 cliff-jump (job: absurdity of safe limit), A05 gatecrasher (job: why lonely carbs invite company)
+- Devices: trap question "If you can moderate, why need the rule?", isolate variable
+- ALL-CAPS: ONE IS NOT ONE — IT IS THE TRAP RE-ARMED.
+- Guardrails: never pathologize; keep blame on trap
+- Continuity: receives treat demolished; hands forward: moderation closed
+- Budget: 3,100

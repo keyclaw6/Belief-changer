@@ -1,0 +1,17 @@
+**C08 — The Willpower Method**
+- Primary job: enacted transition — relapse-cause reattributed from weak will to wrong method
+- Entering belief: "I failed because I'm weak-willed; strong people quit by willpower."
+- Encounter: Reader's memory of diets, white-knuckling, pushing on hinges.
+- Enacted discovery: define named anti-method; reframe strong will as wilful (not weak-willed); braggers/whingers portrait; "no finish line" logic
+- Emotional turn: self-blame → exonerated resolve ("no wonder you failed")
+- Leaving belief: "Willpower is the wrong method — pushing on the hinges; my will was strong enough to persist against instinct; the method, not I, failed."
+- Assumptions handed forward: willpower never the solution; following instructions replaces resistance.
+- Work reserved: fear chapter → C09; industry → C10
+- Evidence: no new SEU demolition; token echo S-04 mild to defang dread, S-07 contested to preserve honesty — no rebuilt demo
+- Mantras/tokens: debut named anti-method as token echo (willpower method per M-list via T-fam); echo M09, T05
+- Scenes: A03 prison door on hinges (job: anti-method image), A10 100 cords (job: why willpower leaves cords plugged)
+- Devices: reframe will as evidence FOR reader, sub-characters, reassurance–challenge
+- ALL-CAPS: IT TAKES A STRONG WILL TO STAY TRAPPED — NOT TO ESCAPE.
+- Guardrails: never shame; no willpower as solution
+- Continuity: receives mechanism; hands forward: anti-method named
+- Budget: 3,200

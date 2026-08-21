@@ -1,0 +1,17 @@
+**C05 — "It's My Treat — I Deserve It"**
+- Primary job: enacted transition — reward/love claim re-assigned to moment/person, not dose (demolishes J-02)
+- Entering belief: "Sugar is my reward, my comfort, love I've earned; without it I'm deprived."
+- Encounter: Cinema row / celebration table where chocolate feels like affection.
+- Enacted discovery: collect justification verbatim; retrofitted rationalization test (was love the original motive at first bite?); credit reassignment to occasion/person
+- Emotional turn: tender attachment → griefless clarity (still have the occasion, minus con)
+- Leaving belief: "The reward was the rest, the company, the pride; sugar was only ever sneaking a ride."
+- Assumptions handed forward: treat is not genuine treat; reward frame keeps loop.
+- Work reserved: loss-of-control/moderation → C06 (J-03); Big Story naming → C07
+- Evidence: L-03 (L-03) + S-10 sweets predict later mood (S-10, men only) + S-18 tolerance/blunting token (S-18) — limits: S-10 observational men only, S-18 interpretation not proof
+- Mantras/tokens: echo M07, T01
+- Scenes: A08 strongest-case feast teaser (job: credit reassignment rehearsal), A10 limbic cords preview (job: why one treat keeps all)
+- Devices: ventriloquism of "I deserve it," Socratic origin questioning, future-pacing
+- ALL-CAPS: IT WAS YOU THAT WAS THE TREAT, NOT THE SUGAR.
+- Guardrails: validate comfort need first; never moralize sweetness
+- Continuity: receives fuel demolished; hands forward: treat demolished
+- Budget: 3,100

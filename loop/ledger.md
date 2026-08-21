@@ -97,3 +97,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Debut-once on S-xx/E-xx closed the named 001 instances (ledger re-walk, 100-cord restage, scare loop; reader 19/19 PASS) but book-arc still FAIL on the same class mutated (wanting/liking rebuilt at Sunlit Table; Willpower Method re-installed; M-09/M-10 before debut). Voice 0/19 PASS with a NEW class: echo-law placeholders (`by name in one sentence here`) copied from card parentheticals into prose. Do not repeat this plan-skill sentence swap. Next plan change must bind chapter jobs and evidence re-lists without writing speakable echo templates onto cards; writer-prompt factory speech still dominates voice.
 
 **What this opens next.** Do not retry the 002 sentence. Remaining arc failures are chapter jobs that re-dissect settled verdicts and evidence rows re-listed for full use (trace Cluster 5), plus model-level mantra debut misses (Cluster 6). Voice still has writer-prompt Binding craft (3-iteration persistence, only 001 targeted it). Hypothesizer picks one file, one causal change. Inbox empty.
+
+### iter-003 — card job/evidence re-own ban  ·  2026-08-21  ·  REVERT
+
+**Hypothesis.** If Compact chapter cards forbid re-owning settled jobs/evidence for a second full demolition and ban speakable echo parentheticals, 002 Cluster 5 closes because later cards can no longer legally assign wanting/liking rebuild or Willpower re-definition.
+
+**Change.** Job + evidence bullets and superseding paragraph in `prompts/master-plan-skill-v2.md` (`### Compact chapter cards`). Worktree `../quit-sugar-iter-003`. Research reused. New master plan (20 chapters) to `fit to write from` in 2 review rounds. 20 chapters on Vercel Muse Spark. Panel: composer-2.5, 60 chapter + book-arc.
+
+**What happened.** Targeted 002 Cluster 5 **symptoms closed** (no wanting/liking second section; no Willpower full re-definition; no `by name in one sentence here`). Belief 20/20 PASS; reader 19/20 PASS (C20 FAIL); voice 6/20 PASS; **book-arc FAIL** on mutated class: A01 tight-shoes full re-perform C03→C07; T04 instant-freedom in C09 before C18 debut; M01 missing C10 echo; C16→C17 readiness duplication; C19 I-11 forward-reference. Trace: plan-skill bound evidence/jobs but not scene IDs or seam ownership; writer-prompt factory speech persists (clusters 7–8).
+
+**Verdict & why.** REVERT. Owning book-arc still FAIL. Same re-argument class persists via scene/seam channels. Prediction: partial. Factory change and 003 book not promoted.
+
+**What we learned.** Binding job/evidence re-lists closed the named 002 symptoms (wanting/liking rebuild, Willpower re-definition; echo placeholders gone; belief 20/20; reader 19/20; voice 6/20). Book-arc still FAIL on the same class mutated via scene IDs (A01 tight-shoes re-performed C03→C07), token pre-debut (T04 in C09), readiness seam duplication (C16→C17), and hand-off rebuild (C20). Plan-skill edits that only constrain evidence/job fields leave scene-bank re-assignment and adjacent-card seam ownership free. Do not repeat this Compact-cards job/evidence wording. Writer-prompt factory speech still dominates voice (14/20 FAIL).
+
+**What this opens next.** Founder stop for reconsideration. Stream disconnects (0x8) keep killing long orchestrator turns. Substantive: either extend debut-once to scene/analogy IDs + seam ownership, or pivot to writer-prompt Binding craft silence (voice still 14/20 FAIL after four iterations of plan/writer partials). Do not start 004 until founder decides.

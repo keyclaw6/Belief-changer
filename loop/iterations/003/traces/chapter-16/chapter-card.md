@@ -1,0 +1,18 @@
+**C16 — You Know That...**
+- Primary job: non-argument — recap — audit installation before firing ritual
+- Entering belief: consolidated trap literacy from C02–C15.
+- Encounter: Reader pauses, inventorying "what do I now know?"
+- Enacted discovery: "You know that..." litany restating every installed belief verbatim via tokens; mid-book instruction recap I-01..I-08 verbatim list
+- Emotional turn: effort → confident readiness (champing at the bit)
+- Leaving belief: same as entering + readiness.
+- Assumptions handed forward: knowledge gate passed.
+- Work reserved: threshold → C17
+- Evidence: token echo only — S-04, S-16 significance restated via tokens; no new demos
+- Mantras/tokens: echo M01..M07, T01..T03, T06 via litany
+- Scenes: none new; litany itself is scene
+- Devices: checklist litany, reassurance–challenge "if not ready, re-read"
+- ALL-CAPS: YOU KNOW THAT IT NEVER DID ANYTHING FOR YOU.
+- Recap licensing: licensed verbatim recap zone
+- Guardrails: gate on readiness not schedule; never summon willpower
+- Continuity: receives all routes sealed; hands forward: audited readiness
+- Budget: 2,800

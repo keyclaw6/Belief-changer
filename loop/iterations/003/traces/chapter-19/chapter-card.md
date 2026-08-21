@@ -1,0 +1,17 @@
+**C19 — Never Reopen the Decision**
+- Primary job: non-argument — safety — relapse-proof belief, not behaviour
+- Entering belief: free identity but vulnerable to thought, bad day, envy, preaching, slip.
+- Encounter: Pre-played scenarios: bad day rescue offer; "just one can't hurt"; social envy; urge to evangelize; lapse.
+- Enacted discovery: never reopen decision; pink-elephant reframe (attach joy to thought); dead-enemy-not-lost-friend; ban substitutes & police phrasing; pity not envy; don't evangelize; forgive slips as rumble strip
+- Emotional turn: vigilance → relaxed confidence with scripts
+- Leaving belief: "The thought is a prompt to rejoice; a slip is feedback, not failure — and never license."
+- Assumptions handed forward: belief guarded for life.
+- Work reserved: outward push → C20
+- Evidence: token echo S-06 cue reactivity (S-06) + S-18 hyper-reactivity token; no rebuilt demo
+- Mantras/tokens: echo M03 M04 M05 M08; echo T04; I-11 debut
+- Scenes: A01 tight-shoes echo (job: rejoice at dead enemy), A04 pity script
+- Devices: thought scripts, ventriloquism of future temptations pre-refuted
+- ALL-CAPS: WHEN YOU THINK OF IT, REJOICE — FANTASTIC! I'M FREE!
+- Guardrails: never catastrophize slip and never license repeat; keep phrasing freedom-register
+- Continuity: receives freedom identity; hands forward: relapse-proof doctrine
+- Budget: 3,150

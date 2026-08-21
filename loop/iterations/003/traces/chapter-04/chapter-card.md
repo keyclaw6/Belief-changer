@@ -1,0 +1,18 @@
+**C04 — "It Gives Me Energy"**
+- Primary job: enacted transition — energy lift re-assigned as self-created low briefly relieved (demolishes J-01)
+- Entering belief: "I need sugar to function; it's my fuel to get through the afternoon."
+- Encounter: 3pm desk slump, hand moving to drawer, P-04 internal line "sugary somethings to get me through."
+- Enacted discovery: isolate variable (energy exists in sugar-free days/children/drug-free moment); credit reassignment to body/moment; inversion "boost comes from low"
+- Emotional turn: exhausted need → clear-eyed recognition of roller coaster
+- Leaving belief: "The lift is the ending of a dip the last dose created; sugar does not give energy, it steals then briefly returns it."
+- Assumptions handed forward: energy claim demolished; fuel story false.
+- Work reserved: reward/love → C05 (J-02); loss-of-control → C06 (J-03); brainwashing name → C07
+- Evidence: L-01 (L-01) + S-14 reactive hypoglycemia (S-14) + S-15 glucose not essential (S-15) + S-12 deferred load token (≤1 sentence) — limits: not clinical hypo, not ketogenic prescription, scare-then-disown after S-12
+- Mantras/tokens: echo M07, T01, T02
+- Scenes: A01 tight shoes (job: flagship inversion), A04 caged lion taste (job: roller coaster)
+- Devices: isolate variable, self-incriminating reader evidence, killer pair "It's the other way around."
+- ALL-CAPS: THE LIFT IS THE CRASH ENDING, NOT ENERGY BEGINNING.
+- Scare-then-disown: S-12 delivered then explicitly disowned; re-land on escape joy
+- Guardrails: acknowledge exhaustion before disarming; no medical diagnosis
+- Continuity: receives axis switch + J-menu; hands forward: fuel demolished
+- Budget: 3,000

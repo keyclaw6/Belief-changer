@@ -1,0 +1,17 @@
+**C11 — Nature's Guide**
+- Primary job: enacted transition — positive authority installed so freedom has tools, not just beliefs
+- Entering belief: "If I cut BAD SUGAR, I'll be hungry, deprived, constantly measuring."
+- Encounter: Reader's kitchen, hunger signals mistrusted after years of Nibbler noise.
+- Enacted discovery: define Nature's Guide + operational instruments: raw test, 0–20 hunger gauge, primary/secondary foods; glucose not essential → clean baseline demonstration
+- Emotional turn: anxious restriction → confident abundance
+- Leaving belief: "My body already knows hunger and satisfaction; I can eat as much good food as I want, whenever I want, and trust its guide."
+- Assumptions handed forward: freedom operationalized; deprivation refuted.
+- Work reserved: strongest case → C12; identity excuse → C13
+- Evidence: S-15 glucose manufactured (S-15) + S-11 WHO additional benefit token (S-11) — limits: not ketogenic prescription, population guidance only
+- Mantras/tokens: echo M02; debut positive authority via I-08; echo M09
+- Scenes: FT-01 embedded testimonial (job: lived proof with numbers/sensory detail) + perception homework 1: raw test & gauge exercise (job: enact belief)
+- Devices: awe, permission paradox (eat plentifully), future-pacing of satisfied days
+- ALL-CAPS: EAT AS MUCH OF YOUR FAVOURITE GOOD FOODS AS YOU WANT, WHENEVER YOU WANT.
+- Guardrails: no diet prescription; autonomy preserved; safety pointer via I-05 echo
+- Continuity: receives manufacture indicted; hands forward: Nature's Guide operating
+- Budget: 3,000

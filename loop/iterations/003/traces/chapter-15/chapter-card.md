@@ -1,0 +1,17 @@
+**C15 — No More Bargains Part 2**
+- Primary job: enacted transition — substitutes, myths and method-doubt inoculated
+- Entering belief: "I'll replace with substitutes / maybe your method won't work for me / this myth says I need sugar for X."
+- Encounter: Rapid-fire myths Q&A Y-01..Y-06 and meta-doubt "how do I know it's not you brainwashing me?"
+- Enacted discovery: ban substitutes & police phrasing; myths battery Y-01..Y-06 demolished 2–6 sentences each; meta-inoculation answer: counter-brainwashing, question both sides, don't accept blindly
+- Emotional turn: lingering loophole-hunting → sealed, slightly amused closure
+- Leaving belief: "Substitutes keep the illusion fed; myths are the Sweet Story speaking; counter-brainwashing is de-programming, not new brainwashing."
+- Assumptions handed forward: every escape route named and sealed.
+- Work reserved: knowledge recap → C16
+- Evidence: S-15 (S-15) for substitute logic + token S-07 honesty — no new demolition beyond myths
+- Mantras/tokens: echo T03; debut ban-phrasing token via I-10
+- Scenes: A03 hinge echo (job: substitutes as pushing hinges) + myth ventriloquism Y-01..Y-06
+- Devices: ventriloquism, Q&A battery, meta-inoculation
+- ALL-CAPS: NO SUBSTITUTE — NO "INSTEAD" — ONLY FREEDOM.
+- Guardrails: never license deliberate blip; keep autonomy inside good foods
+- Continuity: receives first escapes sealed; hands forward: all routes sealed
+- Budget: 3,000

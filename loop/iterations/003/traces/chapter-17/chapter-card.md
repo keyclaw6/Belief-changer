@@ -1,0 +1,17 @@
+**C17 — The Final Dose**
+- Primary job: non-argument — bridge — stage celebratory final act and vow
+- Entering belief: audited, champing readiness.
+- Encounter: Ceremonial final BAD SUGAR hit — attention forced onto ugliness (over-sweet, cloying, needy).
+- Enacted discovery: readiness gate → guided sensory disgust-attention + solemn vow with visualization + "expect the unexpected" pre-load of future danger moments into vow
+- Emotional turn: solemn focus → joyful anticipation
+- Leaving belief: vow made; freedom chosen.
+- Assumptions handed forward: threshold crossed intentionally.
+- Work reserved: instant freedom conferral → C18
+- Evidence: sensory definition M06 invoked; no new SEU
+- Mantras/tokens: debut M08 (vow line), echo M01, T03
+- Scenes: A12 seatbelt woven into vow (job: fix vivid resolution now so faded memory doesn't reopen); A06 disgust attention
+- Devices: instruction voice, future-pacing of danger moments, meaningful-days demolition "don't wait for New Year's"
+- ALL-CAPS: TAKE YOUR FINAL DOSE WITH YOUR EYES OPEN — AND MEAN IT.
+- Guardrails: "do not quit until vow" discharged here; medical safety note not contravened
+- Continuity: receives audited readiness; hands forward: vow complete
+- Budget: 3,000

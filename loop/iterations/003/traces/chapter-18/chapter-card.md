@@ -1,0 +1,16 @@
+**C18 — Congratulations! You've Won!**
+- Primary job: non-argument — bridge — confer freedom as instant identity and predict first revelation
+- Entering belief: vow complete, awaiting when free.
+- Encounter: First ordinary moment (next morning coffee, supermarket aisle, 3pm) where desire simply doesn't cross mind.
+- Enacted discovery: immediate freedom conferral; 2–5 day hump reframed as Nibbler's death throes to revel in; moment-of-revelation prediction
+- Emotional turn: suspense → elation, pride
+- Leaving belief: "Don't wait to be free — I already am; the hump is the Nibbler dying and proves I'm healing."
+- Assumptions handed forward: identity = free, day 1.
+- Evidence: S-16 hump (S-16) + S-04 mild + M06 sensory — limits: days-long, small-scale, not medical
+- Mantras/tokens: echo M02, M04, M06, M08; echo T04
+- Scenes: A04 open cage hovering (job: early wobble as habit)
+- Devices: ALL-CAPS congratulation, future-pacing, reassurance–challenge
+- ALL-CAPS: CONGRATULATIONS! YOU'VE WON! DON'T WAIT TO BE FREE — YOU ALREADY ARE.
+- Guardrails: reject day-counting/one-day-at-a-time; change-nothing-else to prove freedom
+- Continuity: receives vow; hands forward: freedom identity
+- Budget: 2,850

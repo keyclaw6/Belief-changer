@@ -1,0 +1,28 @@
+{
+  "model": "meta/muse-spark-1.2-contributor",
+  "usage": {
+    "prompt_tokens": 44428,
+    "completion_tokens": 7194,
+    "total_tokens": 51622,
+    "cost": 0.0058816,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0,
+      "upstream_inference_completions_cost": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 2902,
+      "image_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "market_cost": 0.0058816,
+    "gateway_cost": 0.0058816
+  },
+  "latency_s": 55.473087787628174
+}

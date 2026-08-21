@@ -1,0 +1,26 @@
+{
+  "status": "completed",
+  "response_id": "gen-1785263398-WrhKLSWFJbhxV8t97Laq",
+  "incomplete": null,
+  "usage": {
+    "input_tokens": 9491,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 15637,
+    "output_tokens_details": {
+      "reasoning_tokens": 2665
+    },
+    "total_tokens": 25128,
+    "cost": 0.0273084735,
+    "cost_details": {
+      "upstream_inference_cost": 0.0273084735,
+      "upstream_inference_input_cost": 0.0063580209,
+      "upstream_inference_output_cost": 0.0209504526
+    }
+  },
+  "model": "deepseek/deepseek-v4-pro",
+  "http": 200,
+  "latency_s": 374.6,
+  "attempt": 1
+}

@@ -22,16 +22,17 @@
 
 ## Position
 
-- **Iteration:** 003 (hypothesizer next; 002 REVERT recorded)
-- **Stage:** HYPOTHESIZER — 002 REVERT complete. Do not pause. Spawn hypothesizer then cut `../quit-sugar-iter-003`.
-- **Status:** IN PROGRESS
+- **Iteration:** 003 (COMPLETE — REVERT)
+- **Stage:** IDLE — iter-003 REVERT recorded. Founder asked to stop after this iteration for reconsideration. Do **not** start 004.
+- **Status:** IDLE
 - **Campaign branch:** `campaign-001`
-- **Last completed unit:** iter-002 REVERT (records on campaign; factory change and book not promoted).
-- **Next unit:** hypothesizer → iter-003 worktree.
+- **Last completed unit:** iter-003 REVERT (records on campaign; factory change and book not promoted).
+- **Next unit:** founder reconsideration (stream reliability + whether to keep hammering plan-skill vs pivot to writer-prompt).
 
 ## If you died / were stopped
 
-002 REVERT is recorded (`loop/iterations/002/`, learnings, ledger; results.tsv last). Factory stays campaign tip (no debut-once skill sentence). Inbox empty. Resume at hypothesizer for 003 — do not re-run 001 or 002. Writer: Vercel Muse Spark. Judges: composer-2.5. Do not restore the project stop hook.
+003 REVERT is recorded (`loop/iterations/003/`, learnings, ledger, results.tsv). Factory stays campaign tip (no Compact-cards job/evidence ban). Writing/judging artifacts live only in the discarded worktree until cleanup. **Do not start 004** until the founder says so. Writer: Vercel Muse Spark. Judges: composer-2.5. Do not restore the project stop hook.
+
 
 ## Journal
 
@@ -57,3 +58,4 @@
 | 2026-08-21 | EXEC-001 COMPLETE. Panel 55/55 on composer-2.5: belief 17/18, reader 16/18, voice 4/18, book-arc FAIL. Targeted clusters 1+2 partially closed (labels mostly gone; factory speech remains). **Verdict REVERT.** Records written; 001 book not promoted. Starting 002 hypothesizer (Binding chapter craft, not the evidence-honesty clause). | hypothesizer 002 |
 | 2026-08-21 | iter-002 declared: hypothesizer targeted Cluster 4 (arc re-argument) at `prompts/master-plan-skill-v2.md` — debut-once/echo-by-token for scenes and evidence rows, not the writer-prompt. First hypothesizer draft named `plan.md` (illegal); retry retargeted the plan skill. Worktree `../quit-sugar-iter-002`. Plan-writer spawning. | plan-writer → reviewer |
 | 2026-08-21 | EXEC-002 COMPLETE. Panel 58/58 on composer-2.5: belief 18/19, reader 19/19, voice 0/19, book-arc FAIL. Cluster 4 partially closed (001 instances gone; class mutated). NEW voice class: `by name in one sentence here`. **Verdict REVERT.** Plan-skill change and 002 book not promoted. | hypothesizer 003 |
+| 2026-08-21 | EXEC-003 COMPLETE. Panel 61/61 on composer-2.5: belief 20/20, reader 19/20, voice 6/20, book-arc FAIL. 002 Cluster 5 symptoms closed; class mutated (A01/T04/readiness). **Verdict REVERT.** Factory change and 003 book not promoted. Founder stop — no 004. | IDLE / founder reconsider |

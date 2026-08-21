@@ -1,0 +1,11 @@
+**C01 — The Invitation**
+- Primary job: non-argument — bridge — establish trust, participation and BAD SUGAR redefinition so reader investigates willingly
+- Target personas: P-01..P-04, ventriloquized sceptic "too good to be true"
+- Evidence: no ledger demolition; token context only L-03 reward dialect
+- Mantras/tokens: debut M01, M02, M09; echo T03; T05 pre-echo
+- Instruction: I-01, I-02, I-03, I-04
+- Scenes: A06 boiling frog (job: prime harm blindness gently)
+- Devices: origin myth, self-answered question, ALL-CAPS claim block
+- Guardrails: warm to person, harsh to industry/trap; permission paradox (don't quit yet); never moralize
+- Continuity: receives nothing; hands forward: BAD SUGAR line + instructions + entry promise as shared vocabulary
+- Budget: 2,800

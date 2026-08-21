@@ -1,0 +1,17 @@
+**C13 — Are You an Addict?**
+- Primary job: enacted transition — identity / "born this way" excuse inverted as result not cause
+- Entering belief: "Maybe I'm just an addictive personality — it's in me."
+- Encounter: Reader's self-label from yo-yo dieting identity.
+- Enacted discovery: cause-effect inversion (traits are result of trap, not cause); historical evidence operator (population statistics vs genetic claim); graceful concession "even if you were, method still frees you"
+- Emotional turn: fixed identity → liberated agency
+- Leaving belief: "The restlessness and 'addictiveness' was the Trap's artefact; my nature is free, not defective."
+- Assumptions handed forward: identity excuse dissolved.
+- Work reserved: escape routes → C14 C15
+- Evidence: S-08 prevalence (S-08) for historical operator + S-18 blunting/hyper-reactivity (S-18) as mechanism visibility + S-07 contested preserved — limits: not DSM-5, interpretation not proof
+- Mantras/tokens: echo M05 (Sweet Story), T05
+- Scenes: A13 eagle raised as chicken (job: captivity as misunderstanding of nature)
+- Devices: historical evidence, inversion "It's the other way around," concession
+- ALL-CAPS: THE TRAP MADE THE TRAIT — THE TRAIT DID NOT MAKE THE TRAP.
+- Guardrails: dignity line; never deterministic brain-disease framing
+- Continuity: receives strongest case reclaimed; hands forward: identity freed
+- Budget: 3,000

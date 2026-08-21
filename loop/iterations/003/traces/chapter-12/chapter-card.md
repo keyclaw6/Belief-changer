@@ -1,0 +1,17 @@
+**C12 — The Celebration That Was Never About Sugar**
+- Primary job: enacted transition — strongest seductive scene reassigned; pleasure proved to belong to moment
+- Entering belief: "But the birthday/cinema/chocolate moment really is sweeter because of sugar — that one is genuine."
+- Encounter: The specific seductive scene: birthday cake + laughter + film + company, sugar centre-stage.
+- Enacted discovery: strip BAD SUGAR variable; hands-on perception demo (optical-illusion tables) proving felt certainty can be false; credit reassignment to sun/leisure/company
+- Emotional turn: nostalgic defense → delighted disillusionment
+- Leaving belief: "Every drop of pleasure was the occasion, the people, the moment — sugar was only ever sneaking a ride."
+- Assumptions handed forward: no foothold remains; strongest case fallen.
+- Work reserved: identity excuse → C13; escape routes → C14 C15
+- Evidence: token echo S-07 contested honesty + S-14 not hypo + S-10 mood misattribution (token ≤1 sentence) — no rebuilt demo
+- Mantras/tokens: echo M07, T01
+- Scenes: A08 strongest-case feast full (job: head-on credit reassignment) + A07 optical-illusion tables (job: perception proof)
+- Devices: credit reassignment scene, factual perception exercise, killer pair "It was you, not the sugar."
+- ALL-CAPS: IT WAS ONLY EVER SNEAKING A RIDE.
+- Guardrails: never concede single real benefit; keep warm to cherished memories
+- Continuity: receives Nature's Guide; hands forward: strongest scene reclaimed
+- Budget: 2,900

@@ -1,0 +1,17 @@
+**C09 — The Tug-of-War**
+- Primary job: enacted transition — fear of failure and fear of success both collapsed as Trap's rope
+- Entering belief: "What if I fail again? And what if I succeed and lose my coping/identity?"
+- Encounter: Reader hovering by open cage, anticipating deprivation/judgment/void.
+- Enacted discovery: name geometry Tug-of-War; prison-door scene; released-convict analogy; collapse both fears ("every rope belongs to Trap")
+- Emotional turn: anxious tug → amusement/relief at trap's trick
+- Leaving belief: "Both fears are the Trap's invention; succumbing guarantees the feared loss; escaping resolves both."
+- Assumptions handed forward: fear disowned; decision can be made without dread.
+- Work reserved: industry widening → C10; Nature's Guide → C11
+- Evidence: token echo S-08 (not weak) + S-04 mild hump contextualized — no new demolition
+- Mantras/tokens: debut T06; echo M03, M07
+- Scenes: A09 tug-of-war (job: collapse), A04 caged lion + A11 released convict (jobs: habit vs identity)
+- Devices: future-pacing, permission paradox, killer pair
+- ALL-CAPS: EVERY ROPE OF THE TUG-OF-WAR IS HELD BY THE SUGAR TRAP.
+- Guardrails: validate fear before disarming; wound-bandage in same breath
+- Continuity: receives anti-method; hands forward: fear disowned
+- Budget: 3,200

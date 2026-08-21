@@ -1,0 +1,18 @@
+**C10 — Who Made You Want It?**
+- Primary job: enacted transition — desire reattributed from personal weakness to engineered manufacture
+- Entering belief: "I want sugar because I like sweetness naturally; it's normal."
+- Encounter: Supermarket aisle / advertising / engineered bliss-point products, free samples targeting children.
+- Enacted discovery: expose industry/product engineering as manufacture of desire; re-code symptoms as warning lights; awe at body's sophistication vandalized by crude fix
+- Emotional turn: self-doubt → righteous clarity and pity for trapped others
+- Leaving belief: "My want was manufactured by an army of engineers weaponizing abundance; the body was not lacking sweetness — it was overridden."
+- Assumptions handed forward: external villain installed; awe replaces craving credibility.
+- Work reserved: positive authority → C11; strongest case reassignment → C12
+- Evidence: S-12 heart/stroke (S-12) + S-13 dental (S-13) + S-09 fat+sugar combo (S-09) + S-05 schedule (token echo) — limits preserved; scare-then-disown explicit; no willpower framing
+- Mantras/tokens: echo M03, M04, M05, M06; echo T01; echo T06
+- Scenes: A05 gatecrasher full (job: manufacture), A06 boiling frog (job: gradual harm), awe catalogue of body
+- Devices: fact-assertion at full force, then disown; name beneficiary (corporation)
+- ALL-CAPS: THE TRAP WAS BUILT FOR YOU — YOU DID NOT BUILD IT.
+- Scare-then-disown: yes — hard facts landed then explicitly disowned; re-land on escape joy
+- Guardrails: harsh to industry, warm to person; quarantine stats to vivid facts not review
+- Continuity: receives fear disowned; hands forward: manufacture indicted
+- Budget: 3,200

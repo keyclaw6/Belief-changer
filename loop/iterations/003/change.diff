@@ -1,0 +1,27 @@
+diff --git i/prompts/master-plan-skill-v2.md w/prompts/master-plan-skill-v2.md
+index 6c4a71e..19b492d 100644
+--- i/prompts/master-plan-skill-v2.md
++++ w/prompts/master-plan-skill-v2.md
+@@ -101,11 +101,11 @@ For a calibration plan, chapter budgets must sum exactly to 54,000–66,000 word
+ 
+ Give every chapter a stable ID, number, and working title, then specify only its semantic work order:
+ 
+-- the primary persuasive job declaration and the objection or justification it resolves;
++- the primary persuasive job declaration and the objection or justification it resolves — if the verdict was already landed in an earlier card (e.g., wanting/liking mechanism E-05/E-06, Willpower Method definition), this job MUST be declared as token-only echo by ID, never as enacted transition — dissected / installed / re-defined / rebuilt;
+ - for every argument-bearing card, its entering belief, concrete subject-specific encounter, enacted discovery, emotional turn, leaving belief, assumptions handed forward, and work reserved elsewhere;
+ - arc position and qualitative curve position;
+ - target persona IDs and the reader voice or scene that makes the move land;
+-- evidence-ledger IDs, including the limits the chapter must preserve;
++- evidence-ledger IDs, including the limits the chapter must preserve — any ID already used to land a full demolition may appear later only as ID-only token echo (≤1 sentence reference by ID, no rebuilt demo, no speakable parenthetical template such as 'recalled by name' or 'by name in one sentence here'), never as owned evidence for a new demolition;
+ - mantra and frozen-token IDs debuted and echoed — every card assigns at
+   least one mantra or frozen token (debut or echo);
+ - instruction ID, if any;
+@@ -118,6 +118,8 @@ Give every chapter a stable ID, number, and working title, then specify only its
+ - continuity intent: what understanding it receives and hands forward;
+ - one integer word budget matching the arc table.
+ 
++A card may never re-own a settled verdict for a second full demolition. Settled evidence rows and settled jobs are invoked by ID token only. Cards must not write human-readable echo instructions onto the card; the ID annotation itself is the instruction. This rule supersedes the prior unrestricted evidence-list and job-declaration bullets.
++
+ These are semantic authorities, not a prose template or mandatory chapter-section anatomy. A card must be directly writable: every field it names must resolve against a plan-wide inventory with no ambiguity and no gap the writer would have to invent around. Inside a card, output only the permitted semantic fields: no headings, tables, connective prose, copied plan-wide rows, or prewritten chapter anatomy. Each plan-wide inventory remains in its single canonical section. The writer derives `IN THIS CHAPTER`, the italic thesis, section flow, ALL-CAPS landing, SUMMARY, sentence rhythm, and analogy density from the style guide. Do not prewrite those prose elements in the plan.
+ 
+ ## Normalization law

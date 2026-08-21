@@ -1,0 +1,17 @@
+**C03 — What Good Is There At All?**
+- Primary job: enacted transition — evaluation axis switched from harm-vs-benefit to "what benefit at all?" and justification menu printed verbatim
+- Entering belief: "Even if it harms me a bit, it's worth it for what it gives me."
+- Encounter: Reader's internal harm-benefit scales, weighing pleasure against health.
+- Enacted discovery: refuse harm debate; demand positive benefit; introduce TO vs FOR ledger; print justification menu J-01 J-02 J-03 verbatim as demolition TOC
+- Emotional turn: defensive justification → curious investigation
+- Leaving belief: "The question is not how harmful, but whether it does anything FOR me at all — and that is unproven."
+- Assumptions handed forward: benefit must be proved as genuine treat/crutch.
+- Work reserved: each benefit isolated → C04 (J-01) C05 (J-02) C06 (J-03); inversion → C07; industry → C10
+- Evidence: S-11 WHO ceilings (S-11) to set "additional benefit" target without toxicity claim; S-12/S-13 reserved token only later
+- Mantras/tokens: debut M07; debut T01
+- Scenes: A01 tight shoes preview (job: frame benefit as suspect)
+- Devices: axis-switch question, TO/FOR ledger, killer pair
+- ALL-CAPS: IT IS DOING PLENTY TO YOU. IT IS DOING NOTHING FOR YOU.
+- Guardrails: concede no real benefit; keep neutral harm debate closed
+- Continuity: receives Trap-namer; hands forward: Illusion-namer + ledger + J-menu
+- Budget: 2,900

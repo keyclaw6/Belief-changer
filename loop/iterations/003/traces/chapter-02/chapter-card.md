@@ -1,0 +1,18 @@
+**C02 — Are You Really Choosing This?**
+- Primary job: enacted transition — the "free choice" is dissolved; continuing is not preference but con
+- Entering belief: "I choose sugar; it's my treat and I could stop if I wanted."
+- Encounter: Reader holds book in hand while telling themselves they are freely choosing.
+- Enacted discovery: confidence-trick + "who's in charge?" logic trap
+- Emotional turn: shame → relief (blame shifts to trap)
+- Leaving belief: "I was conned on phoney information; the Trap removed choice, I wasn't weak."
+- Assumptions handed forward: choice is not proof of benefit.
+- Work reserved elsewhere: specific benefits demolition → C04 C05 C06; mechanism → C07; manufacture → C10
+- Evidence: S-08 prevalence (S-08) to normalize "not uniquely weak"; S-06 cue reactivity for lingering thought — limits preserved per ledger
+- Mantras/tokens: debut M03; echo M01 token; echo T05
+- Scenes: A06 echo + A11 released convict preview (job: who is in charge?)
+- Devices: trap question, ventriloquism, "we" for trap
+- ALL-CAPS: YOU WERE NEVER WEAK — YOU WERE CONNED.
+- Recap licensing: none (preview zone)
+- Guardrails: never contempt for reader; never assign blame to self
+- Continuity: receives BAD SUGAR line; hands forward: Trap-namer installed
+- Budget: 2,700

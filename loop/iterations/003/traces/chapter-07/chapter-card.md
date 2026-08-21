@@ -1,0 +1,17 @@
+**C07 — The Nibbler and the Sweet Story**
+- Primary job: enacted transition — inversion installed and trivial physical vs dominant belief split
+- Entering belief: "The craving proves I need it; withdrawal must be terrible."
+- Encounter: Reader's own gnawing between meals, misread as need for sugar.
+- Enacted discovery: name mechanism characters; state core inversion ("high is relief from self-created low"); separate trivial Nibbler from dominant Sweet Story
+- Emotional turn: fear of craving → delight that enemy is small and starving
+- Leaving belief: "The Nibbler is an empty, restless, faintly edgy gnawing already dying; the Sweet Story that feeds it is the real enemy, and it dies when I see through it."
+- Assumptions handed forward: craving correctly labelled; inversion owned.
+- Work reserved: willpower attack → C08; fear collapse → C09; industry → C10; sensory proof → C11/C12
+- Evidence: S-02 dopamine (S-02) + S-03 withdrawal dip (S-03) + S-04 mild but well-defined (S-04) + S-16 hump 2-5 days (S-16) + S-06 cue reactivity (S-06) — limits: all small magnitude / animal-preliminary; defuse fear; not clinical diagnosis; S-17 contested reserved for C12 context
+- Mantras/tokens: debut M04, M05, M06; echo M02; echo T02
+- Scenes: A01 tight shoes full (job: rescuer-as-perpetrator), A09 tug preview (job: two-part mechanism)
+- Devices: fact-assertion "The fact is...", rescuer-as-perpetrator image, killer pair
+- ALL-CAPS: THE HIGH IS RELIEF FROM A LOW THE SUGAR ITSELF CREATED.
+- Guardrails: do not intimidate by withdrawal; subordinate fact to belief-change; keep Nibbler small
+- Continuity: receives moderation closed; hands forward: mechanism vocabulary installed
+- Budget: 3,100
