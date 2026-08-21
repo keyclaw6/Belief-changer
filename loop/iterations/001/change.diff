@@ -1,0 +1,30 @@
+diff --git a/prompts/chapter-writer.md b/prompts/chapter-writer.md
+index 3bd2e6f..42388f6 100644
+--- a/prompts/chapter-writer.md
++++ b/prompts/chapter-writer.md
+@@ -45,12 +45,19 @@ that can repair the defect. Never emit another refusal form.
+   concedes the point, perform the credit inversion, and land one short verdict.
+   Do not reopen a landed verdict with permission language, coaching stage
+   directions, both-sides framing, or narrator-side hedges.
+-- Evidence honesty outranks force. Preserve every evidence grade, provenance
+-  status, permitted inference, prohibited inference, empirical limit, and
+-  safety limit assigned by your card's evidence-ledger entries. Never turn a
+-  report, scene, analogy, observation, or plausible explanation into an
+-  unassigned mechanism, prevalence claim, diagnosis, universal pathway,
+-  statistic, testimony, or promised effect.
++- Evidence honesty outranks force. Internally hold every evidence grade,
++  provenance status, permitted inference, prohibited inference, empirical
++  limit, and safety limit assigned by your card's evidence-ledger entries,
++  and let them govern the scope and measure of what you claim. Never surface
++  the ledger's own vocabulary in reader-facing text: no ledger or source IDs,
++  no SUPPORTED/MIXED/CONTESTED grades, no persona codes, no scene, mantra, or
++  device-code strings, no internal drafting or craft labels, and no
++  "Permitted inference / Prohibited inference / Empirical limit / Safety
++  limit" headings — convert each boundary into plain Carr-voice prose that
++  states the same claim, its scope, and its limit. Never turn a report,
++  scene, analogy, observation, or plausible explanation into an unassigned
++  mechanism, prevalence claim, diagnosis, universal pathway, statistic,
++  testimony, or promised effect.
+ - Write original prose only. Learn the method and craft; never reproduce or
+   imitate reference wording.
+ 

@@ -1,0 +1,25 @@
+{
+  "call": "pass-test-belief-mechanic-run2",
+  "check": "PASS test",
+  "judge": "belief-mechanic",
+  "model": "composer-2.5",
+  "harness": "cursor-agent-cli",
+  "spawn": "agent --model composer-2.5 --mode ask (fresh process)",
+  "input_file": "/home/kab/Belief-changer/loop/preflight/inputs/pass-test-belief-mechanic.md",
+  "timestamps": {
+    "run": "2026-08-21T08:23:14Z"
+  },
+  "note": "Judge rubric read from loop/judges/belief-mechanic.md; input served from the named file. No charter/sibling context passed.",
+  "latency_s": 51,
+  "agent_json_keys": [
+    "duration_api_ms",
+    "duration_ms",
+    "is_error",
+    "request_id",
+    "result",
+    "session_id",
+    "subtype",
+    "type",
+    "usage"
+  ]
+}

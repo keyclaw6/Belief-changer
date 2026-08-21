@@ -1,0 +1,15 @@
+{
+  "role": "chapter-writer",
+  "model": "meta/muse-spark-1.2-contributor",
+  "fallback_used": false,
+  "usage": {
+    "prompt_tokens": 39680,
+    "completion_tokens": 7058,
+    "total_tokens": 46738,
+    "prompt_tokens_details": {
+      "cached_tokens": 1713
+    }
+  },
+  "latency_s": 86.59177875518799,
+  "errors": []
+}

@@ -1,0 +1,15 @@
+{
+  "role": "hypothesizer",
+  "model": "meta/muse-spark-1.2-contributor",
+  "fallback_used": null,
+  "usage": {
+    "prompt_tokens": 6501,
+    "completion_tokens": 3381,
+    "total_tokens": 9882,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "latency_s": 22.78731942176819,
+  "errors": []
+}

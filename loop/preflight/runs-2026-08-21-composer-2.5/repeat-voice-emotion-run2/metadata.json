@@ -1,0 +1,25 @@
+{
+  "call": "repeat-voice-emotion-run2",
+  "check": "Repeatability",
+  "judge": "voice-emotion",
+  "model": "composer-2.5",
+  "harness": "cursor-agent-cli",
+  "spawn": "agent --model composer-2.5 --mode ask (fresh process)",
+  "input_file": "/home/kab/Belief-changer/loop/preflight/inputs/repeat-voice-emotion.md",
+  "timestamps": {
+    "run": "2026-08-21T08:25:06Z"
+  },
+  "note": "Judge rubric read from loop/judges/voice-emotion.md; input served from the named file. No charter/sibling context passed.",
+  "latency_s": 33,
+  "agent_json_keys": [
+    "duration_api_ms",
+    "duration_ms",
+    "is_error",
+    "request_id",
+    "result",
+    "session_id",
+    "subtype",
+    "type",
+    "usage"
+  ]
+}

@@ -1,0 +1,37 @@
+source: founder inbox
+change_status: already applied in be106a5
+
+## Failure evidence
+Clusters 1 + 2 — systemic voice-emotion failure, the book's dominant defect.
+
+**Cluster 1 (evidence-grading scaffold leaked verbatim):** systemic, nearly every evidence-bearing chapter; both standard + A/A ch01. Judge sources: voice C01(note), C02-G2, C04-G1, C05-G2, C07-G3, C10-G3, C11-G1/2/3, C12-G1/2/3, C13-G1/3/4, C14-G1, C15-G2, C16-G1/G4, C17-G1, C01-AA-G1; reader C03-G1, C04-G1/2, C07-G1, C08-G1, C09-G1/2, C10-G1, C11-G1, C13-G1, C14-G1/2, C15-G1, C17-G1; belief C13/C04 notes. Worst chapters 08, 09, 10, 14 — full ledger dumps (e.g. chapter-08.md:283, chapter-14.md:280-298). Verbatim audit register at emotional climax: voice C04-G1: *"this is the grade, the scope, the safety limit you must keep with you … So the mechanism is SUPPORTED/MIXED, not a diagnosis for you. The permitted inference is this … The prohibited inference is that every slump is medical hypoglycemia requiring sugar."* voice C16-G1: *"That is E-07, SUPPORTED, rat model, author characterization. Permitted inference … Prohibited inference …"* voice C14-G1: *"That is CONTESTED, perspective review … That is SUPPORTED, animal microdialysis … `Seems to' stays."* voice C01-AA-G1 (identical inputs, regenerated): *"On validated self-report scales for highly palatable foods — not a medical diagnosis, just people's own answers …"* — proves sampling-sensitive but class-persistent.
+
+**Cluster 2 (factory taxonomy leaked verbatim):** systemic, spans voice C02/C04/C05/C07/C08/C10/C11/C16/C17/C18; reader C06. Same peak placement, internal codes surface as prose: `S-01/S-02/S-09/S-12/S-13`, `P-02/P-03/P-04`, `I-05/I-09`, `M-07/M-10`, `E-13`, plus craft directives: *“Killer-line pair. Build, then verdict.”* *“Short sentences for the peak. Land and stop.”* *“Future-pace with me.”* *“as Carr does” / “Carr used it” / “argue-to-compress beat made visible” / “That is M-07, your canonical sensory definition. It debuts”* — reader C06-G1: *"handed the playwright's margin note ... mid-trance."* voice C13: *"at the peak … the prose stops being one person talking and becomes an audit against a research rubric."* reader C14-G2 hedge-reversal note: certainty stated then walked back (*"It is not yet proven … we claim only … not settled fact"*), so ready-gate chapter re-negotiates conviction.
+
+Learnings check: loop/learnings.md is baseline (iter-000 only); no prior hypothesis tried or failed — never-repeat guard clear.
+
+## Root cause
+**Writer-prompt (`prompts/chapter-writer.md`, evidence-honesty clause ~line 48-53) — not plan, not style-guide, not model.**
+
+Trace analyzer verified: system contract `chapter-01/system.txt` / `prompts/chapter-writer.md` § Method and voice states: *"Evidence honesty outranks force. **Preserve every evidence grade, provenance status, permitted inference, prohibited inference, empirical limit, and safety limit** assigned by your card's evidence-ledger entries."* There is no translate-or-quarantine rule. Plan legitimately carries IDs/grades (`E-0x`, `S-0x`, `P-0x`, `I-0x`, `M-0x` in §7 cards and ledger) for traceability; Style-Guide §9 already demands the opposite (*“Never bog the prose down in a literature review. Quarantine citations; keep the argument clean and emotional”* / Fork 3: facts arrive as *“The fact is…”* never hedged citations) — but writer-prompt's mandatory “Preserve every …” overrides it without rendering instruction. Writer calls forensically pure — no harness contamination. Dual-subagent RCA verified (reports: /tmp/opencode/rca-report.md, /tmp/opencode/rca-verify.md): model obeys literally, seasoning every factual beat with the proof-roster at the climax. Result: both Cluster 1 (grades/IDs) and Cluster 2 (S/P/I/M + craft directives handed via system.txt line 87 *“one killer-line pair per major argument”* and device list) leak because no *“never surface internal identifiers; execute device invisibly”* rule exists in writer-prompt.
+
+## Targeted fix
+**One file, one causal instruction replaced: `prompts/chapter-writer.md` — evidence-honesty clause (~line 48).**
+
+Replace the quoted causal instruction and delete any exact duplicate of it in the same file:
+
+```diff
+- Evidence honesty outranks force. Preserve every evidence grade, provenance status, permitted inference, prohibited inference, empirical limit, and safety limit assigned by your card's evidence-ledger entries.
++ Evidence honesty outranks force. Internally hold every evidence grade, provenance status, permitted inference, prohibited inference, empirical limit, and safety limit assigned by your card's evidence-ledger entries to govern claim scope, and never surface ledger vocabulary in reader-facing text — no ledger/source IDs (E-0x etc.), no SUPPORTED/MIXED/CONTESTED grades, no persona/scene/mantra/instruction codes (P-0x/S-0x/M-0x/FT-0x/I-0x), no device-code or drafting labels, no internal craft directives ("Killer-line pair," "Short sentences for the peak," "Future-pace," "ventriloquism" as label), no "Permitted/Prohibited inference" / "Empirical limit" / "Safety limit" headings. Convert each boundary into plain Carr-voice prose (e.g., plain "The fact is…" confidence per Style-Guide §9/Fork 3, quarantined plain-language caveat only if needed for honesty). Execute devices invisibly; do not name them.
+```
+
+Research and plan reused unchanged — change touches only writing stage. Applied 2026-08-17.
+
+**Why this component:** The plan must carry grades/codes for traceability and the style-guide already forbids literature-review register; the failure first goes wrong where the writer-prompt commands literal preservation without translation, so fixing upstream (research/plan) would hide traceability and fixing downstream (style-guide alone) would still be overridden — the writer-prompt is the sole overriding instruction.
+
+## Predicted impact
+**What will improve:** Clusters 1 & 2 close systemically — voice-emotion lane's "evidence-grading register" and "factory taxonomy" failure classes disappear. Carr earned-authority register holds at emotional climaxes because grades/limits are still honored internally but rendered as confident plain prose rather than audit labels/IDs.
+
+**What might regress:** Nothing material — belief-mechanic stays PASS (evidence honesty preserved internally, only register changes); minor risk of over-quarantining a needed safety caveat, mitigated by “internally hold … to govern claim scope” and plain-language caveat allowance.
+
+**How we'll know it worked:** Regenerated chapters contain zero ledger IDs, grades, persona/scene/mantra codes, or drafting labels in prose (grep for E-0x, SUPPORTED/MIXED/CONTESTED, P-0x/S-0x/M-0x/I-0x, “Permitted inference” = 0 hits); voice-emotion judges no longer find “audit against a research rubric” / “playwright's margin note” at peaks, reader-journey no longer notes hedge-reversal or post-peak ledger drop, and A/A C01 run variance for this class collapses to PASS/PASS; book-arc and belief-mechanic remain PASS.

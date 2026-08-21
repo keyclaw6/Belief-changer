@@ -1,0 +1,14 @@
+Reading the rubric and chapter input to produce the judge verdict.
+PASS
+
+### Reader journey comparison
+
+**The real chapter's movement:** The reader enters still inside the tug-of-war — knowing sugar harms them but believing it offers pleasure, comfort, or a crutch. Carr names that war, promises desire can be removed (not fought with willpower), and widens the lens: heroin-trap parity, “BAD SUGAR does not relieve misery, it causes it,” then a factual strip of empty carbs, insulin spikes, sugar crashes, and taste/convenience myths. Recognition comes through contradiction (“I know it’s killing me, but…”) and outsider vision; confrontation through trap parity and myth audit; the turn toward relief is framed as *you will no longer want it* rather than white-knuckle quitting. The chapter ends with myths wobbling and desire-removal established as the path — not yet a single-benefit demolition, but a mindset shift toward seeing sugar as myth on one side of the rope.
+
+**Our chapter's movement:** The reader enters from C03 still holding the fuel exception — “BAD SUGAR gives me energy.” Recognition lands immediately in the 3pm desk scene (eyes sting, “I need something right now,” biscuit-as-fuel). Confrontation builds through lived cycle observation (short lift, fast drop, need again), the isolate-the-variable test (sweet break vs water/stretch/walk break), and trap questions. The turn arrives in rescuer-as-perpetrator (“who pushed you in?”), the shoe-relief analogy, and “It’s the other way around.” Consolidation covers insulin/rollercoaster physiology (without clinical fear), body-made fuel, and brief off-days reframed as exit noise not proof of need. Landing is enactment: future-pace the next slump, run the break-without-sugar test, and end on seeing-at-3pm rather than resisting-at-3pm. Movement matches the assigned transition with strong cumulative force; momentum dips only briefly in the hypoglycaemia qualification block, which consolidates permission rather than stalling the arc.
+
+### Final verdict
+
+**Assigned transition verdict:** The chapter successfully moves the reader from “sugar picks me up and gets me through the slump” to “the lift was insulin working and dipping, not fuel; genuine energy is what returns when BAD SUGAR stops.” It enters cleanly from the open ledger and fuel witness seeded in C03, does not re-litigate the empty FOR column, and demolishes the energy excuse through recognition (3pm yo-yo), confrontation (side-by-side break test, rollercoaster), inversion (rescuer/perpetrator, loan-not-gift), and relief (steady-better vs spike-better, future-paced proof). Assigned mantras echo verbatim (“a genuine pleasure or treat,” “sneaking a ride”) at moments that reinforce credit reassignment. The ending hands the reader a testable seeing — not willpower — ready for the next benefit demolition.
+
+**Largest momentum loss:** NONE
