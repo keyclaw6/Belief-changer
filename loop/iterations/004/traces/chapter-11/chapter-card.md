@@ -1,0 +1,14 @@
+**C10 — The Willpower Method — Pushing on the Hinges**
+- enacted transition — your strong will kept you trapped; past failures prove method wrong not you weak
+- Entering: I am weak-willed; diets failed so I will fail
+- Encounter: braggers (I cut down) vs whingers (I crave) exhibits
+- Discovery: reframe strong will as evidence FOR reader + hinges image (sole full analogy staging)
+- Turn: self-contempt → pride and anger at wrong method
+- Leaving: willpower method has no finish line; instruction-following replaces resistance
+- Assumptions forward: anti-method disowned; blame on method/industry
+- Work reserved: manufacture indictment (C11)
+- Persona: ALL, especially P-01 failed dieter
+- Evidence: E-11 not uniquely weak prevalence (self-report, not DSM), E-08 moderation trap reinforces (schedule matters)
+- Mantra/token: T-07 debut willpower method, T-08 token, T-06 token, A-12/A-13 hinges — A-12 Prison Door sole full staging, A-13 Pushing on the Hinges image token debut (one clause)
+- Instructions debut: I-06 firewall+safety, I-07 avoid influence; mid-book recap I-01..I-07 verbatim
+- Word budget: 3000

@@ -1,0 +1,15 @@
+**C07 — The Inversion — The Sugar Imp and the Treat Spell**
+- enacted transition — the "high" is merely ending a low BAD SUGAR itself created; you never beat a non-user's baseline
+- Entering: maybe benefits gone but craving still feels like need
+- Encounter: empty, insecure twinge 30 mins after last dose described in body
+- Discovery: mechanism split demonstration — trivial physical vs dominant belief (analogy + physiology)
+- Turn: intimidated by craving → contempt for tiny parasite + pity for spell
+- Leaving: craving is a mild, empty, slightly insecure, slightly restless feeling from starving Sugar Imp fed by Treat Spell; boost comes from low.
+- Assumptions forward: mechanism vocabulary installed
+- Work reserved: escape-route closure (C08), fear (C09)
+- Persona: ALL
+- Evidence: E-04 binge model (rat, intermittent schedule critical), E-05 dopamine re-trigger (animal, smaller than drugs), E-06 dip (naloxone-precipitated, rodent), E-07 mild but well-defined (rat, small magnitude — defuses fear), E-19 hump 2–5 days (SUPPORTED, preliminary human), E-18 clean baseline (sugar not essential)
+- Mantra/token: M-05 debut, M-06 debut, M-07 sensory debut, M-02 echo, T-02 debut, T-06 token
+- Scenes: A-01 Tight Shoes full, A-03 Lennie & George full, A-11 token
+- Device: killer-line pair at peak; fact-assertion
+- Word budget: 3400

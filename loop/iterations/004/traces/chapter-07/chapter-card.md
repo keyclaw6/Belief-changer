@@ -1,0 +1,16 @@
+**C06 — "I Love the Taste / It's Sociable / It's Harmless" — The Leftover Excuses (taste + sociability + harmless/moderation + stress/concentration)**
+- enacted transition — taste was masked, sociability was company, harmless was invisible, and stress/concentration "help" was the Treat Spell mislabeling the insecure twinge
+- Entering: I like taste; it's how I socialize; it's not that bad; moderation would suffice; and it helps me concentrate/cope with stress
+- Encounter: masking test (sugar hides bitter taste), party without BAD SUGAR equally warm, teeth/heart facts that felt abstract, plus high-pressure work moment where reader insists "It helps me concentrate / cope with stress / comforts me / cheers me up" quoted verbatim — this card owns only the concentrate/cope-with-stress facet (comfort/cheer already dead in C04)
+- Discovery: self-incriminating evidence + isolate variable (non-users don't crave smell; social setting works with any food; stress without BAD SUGAR still resolves — and E-13 shows daily sweet predicts later low mood, not relief). Distinct mode: rapid Socratic origin-questioning + masking falsification exercise brief staging + mood-cost ledger. Ventriloquize full verbatim stress line and demolish only stress/concentration facet; token-reference C04's comfort/cheer verdict without re-arguing.
+- Turn: defensive justifications → emptied ledger (FOR column now zero for all B8-listed benefits)
+- Leaving: no remaining genuine pleasure/treat/fuel survives; taste, sociability, harmless/moderation, and stress/concentration credit all reassigned; benefits ledger zeroed — ready for mechanism
+- Assumptions forward: benefits ledger zeroed including stress/concentrate; ready for mechanism
+- Work reserved: mechanism (C07)
+- Persona: P-02, P-01; plus stressed worker for stress facet
+- Evidence: E-08 schedule trap (intermittent vs ad-lib — schedule not chemistry), E-16 dental stakes (SUPPORTED), E-13 mood stakes (SUPPORTED, men only observational — used for stress facet), E-11 prevalence token
+- Mantra/token: M-04 echo, T-01 token
+- Scene: taste-masking falsification exercise brief staging; justifies B8 reasons "I love the taste / It's sociable / It's harmless..." plus "It helps me..." concentrate/stress facet
+- Device: rapid Socratic origin-questioning ("Did you fear Alzheimer's at first bite?"), retrofitted rationalization expose
+- Scare-then-disown: yes (dental/WHO facts at force, then disown — keep stakes not fear)
+- Word budget: 2900

@@ -1,0 +1,15 @@
+**C05 — "I Need It for Energy" — The Fuel That Burns You**
+- enacted transition — the lift is insulin working to clear the last dose; the crash is the dose's after-effect, not a need for more
+- Entering: sugar is fuel that gets me through slump
+- Encounter: 3pm desk slump + quick sweet fix, then inevitable drop; reader quotes "I need it for energy / to get me through / I need something RIGHT NOW / the 3pm slump"
+- Discovery: inversion via physiology narrative (lift IS crash's cause) using distinct mode: factual inversion with rollercoaster analogy
+- Turn: anxious dependence → aha that fuel is arson
+- Leaving: I mistook relief from self-created dip for genuine energy
+- Assumptions forward: energy belief dead; fatigue source reassigned to trap
+- Work reserved: leftover excuses including stress/concentrate facet (C06)
+- Persona: P-04 primary
+- Evidence: E-01 lived rollercoaster, E-17 reactive hypo mechanism (SUPPORTED/MIXED — everyday slumps NOT clinical hypo), E-15 lift-as-deferred-load, E-18 sugar not essential
+- Mantra/token: T-01 token, M-04 echo
+- Scene: A-11 Rollercoaster full staging; perception demo: genuine food energy vs BAD SUGAR spike; justifies B8 reason "I need it for energy..."
+- Scare-then-disown: no (light physiology only)
+- Word budget: 3000

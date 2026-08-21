@@ -1,0 +1,15 @@
+**C16 — What You Now Know — Recap and Perception Homework**
+- enacted transition — you already hold every belief needed; now prove it with your senses
+- Entering: do I really know enough to stop?
+- Encounter: "You know that..." litany auditing all installed beliefs
+- Discovery: pre-quit audit + three perception exercises (sensory immersion in genuine food pleasure; falsification test on illusory BAD SUGAR hit; day-in-life audit without BAD SUGAR)
+- Turn: tentative → champing at bit
+- Leaving: readiness gated; homework proves illusion in body not just mind
+- Assumptions forward: readiness true; threshold imminent
+- Work reserved: ritual (C17)
+- Persona: ALL
+- Evidence: consolidate E-01..E-19 litany; preserve limits verbally in audit
+- Mantra/token: T-06 ease-operator, M-01..M-07 brief token roll-call (each one clause)
+- Scene: homework exercises fulfillment of A-10/A-11 tokens
+- Device: future-pacing + reassurance-challenge cycle
+- Word budget: 2700

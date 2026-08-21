@@ -1,0 +1,16 @@
+**C15 — Myths, Questions and "Is It You Brainwashing Me?"**
+- enacted transition — every lingering peripheral objection, including objection to this book, collapses on inspection
+- Entering: but what about fruit? brown sugar? honey? energy for exercise? Is this just counter-brainwashing?
+- Encounter: rapid-fire Q&A battery in Myth Courtroom — reader states each MY line verbatim; writer cross-examines against BAD SUGAR definition box and TO/FOR ledger
+- Discovery: Q&A demolition + meta-inoculation answer (counter-brainwashing + question both sides) — distinct appendix-theatre mode
+- Turn: suspiciousness → trust through transparency
+- Leaving: no peripheral myth survives; method is honest investigation not blind belief; B8 verdicts remain settled
+- Assumptions forward: inoculated against future "helpful" advice
+- Work reserved: knowledge audit (C16)
+- Persona: ALL
+- Evidence: E-18 good vs bad sugar distinction, E-10 overall grades summarized CONTESTED; contested note E-10/E-17 hedges preserved
+- Mantra/token: T-07 token, T-05 Fact-assertion, M-03 token
+- Scene: A-21 Myth Courtroom Antechamber full staging — quotes MY-01..MY-05 verbatim, demolishes each in one exchange per inventory lens; B8 verdicts referenced only as settled tokens (e.g., "that reward verdict from C04") never re-demolished at length
+- Myth inventory: MY-01, MY-02, MY-03, MY-04, MY-05 — quote frozen wording verbatim, demolish only per one-line lens + evidence pointer; do not invent additional myths
+- Device: ventriloquism + trap question + fact-assertion; appendix-style density
+- Word budget: 2800

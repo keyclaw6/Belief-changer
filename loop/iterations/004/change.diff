@@ -1,0 +1,17 @@
+diff --git i/prompts/master-plan-skill-v2.md w/prompts/master-plan-skill-v2.md
+index 6c4a71e..362f2ac 100644
+--- i/prompts/master-plan-skill-v2.md
++++ w/prompts/master-plan-skill-v2.md
+@@ -72,10 +72,10 @@ Every chapter assigns at least one mantra or frozen token — a debut or an echo
+ Define each concrete scene or analogy once with:
+ 
+ - stable ID and a concrete, writable description of the scene or analogy;
+-- the argumentative job or jobs it performs;
++- the single argumentative job it performs and the debut chapter ID where it is staged at full argue-then-compress length;
+ - any safety, originality, or subject-specific constraint on its use.
+ 
+-Chapter cards reference scene/analogy IDs and the job each performs; they never copy the full scene or analogy into the card.
++A scene/analogy staged at full length once may never be staged again at full length with a new job — after debut it may appear only as a compressed token (its frozen name in one clause, e.g., `that tight-shoes relief`), never re-argued. Chapter cards after the debut chapter may reference the ID only in token form; they never copy the full scene into the card and never assign a second full staging of the same ID.
+ 
+ ### Lexicon and instruction spine
+ 

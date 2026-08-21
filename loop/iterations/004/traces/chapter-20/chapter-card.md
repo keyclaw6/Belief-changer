@@ -1,0 +1,15 @@
+**C19 — Life Around Sugar — Pity, Slips and Other People's Fixes**
+- enacted transition — social exposure reinforces freedom; slip is feedback not collapse
+- Entering: parties, family, colleagues still eating BAD SUGAR; what if I slip?
+- Encounter: restaurant dessert trolley, office biscuits, family pushing "just one"
+- Discovery: pity script demonstration + lapse-as-rumble-strip reframe (distinct social-simulation mode)
+- Turn: envy/vigilance → pity/compassion + calm
+- Leaving: never envy, don't evangelize, never reopen decision; slip teaches, doesn't erase
+- Assumptions forward: belief guarded for life
+- Work reserved: final push into life (C20)
+- Persona: P-02, P-03
+- Evidence: E-09 cue reactivity token SUPPORTED (rodent-limited), E-20 contested split CONTESTED (teens, SSB only, 3-day — no claim either direction)
+- Mantra/token: T-11 token, T-12 token, M-08 echo, T-08 token
+- Scenes: pity script scene (seeing fix not treat); slip rumble-strip image
+- Instructions debut: I-11, I-12
+- Word budget: 3000

@@ -1,0 +1,11 @@
+**C01 — The Invitation and How to Read This Book**
+- non-argument — participation + instruction gate + redefinition
+- Primary job: convert audience to participant; issue numbered instructions as cheerful commands; **stage BAD SUGAR boxed CAPS definition** (refined/added sugars + ultra-processed carbs + starchy junk that behaves like sugar; GOOD sugar exempt) — the only place full definition is staged at length, thereafter used as settled token
+- Targets P-02 moderate; voice: "carry on exactly as normal until you finish"
+- Mantra debut/echo: M-01 echo, M-02 echo, T-10 claim block debut, T-06 ease-operator debut
+- Evidence: E-11 you-are-not-uniquely-weak
+- Instructions debut: I-02, I-03, I-05 (+ firewall preview)
+- Scenes: A-07 token Safe
+- Recap licensed in SUMMARY bullets; rhetorical operator permission paradox + future-pacing + instruction voice
+- Word budget: 2800
+- Hands forward: participant bound by instructions, not yet quitting, in happy frame; BAD SUGAR definition installed as settled

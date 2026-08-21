@@ -111,3 +111,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Binding job/evidence re-lists closed the named 002 symptoms (wanting/liking rebuild, Willpower re-definition; echo placeholders gone; belief 20/20; reader 19/20; voice 6/20). Book-arc still FAIL on the same class mutated via scene IDs (A01 tight-shoes re-performed C03→C07), token pre-debut (T04 in C09), readiness seam duplication (C16→C17), and hand-off rebuild (C20). Plan-skill edits that only constrain evidence/job fields leave scene-bank re-assignment and adjacent-card seam ownership free. Do not repeat this Compact-cards job/evidence wording. Writer-prompt factory speech still dominates voice (14/20 FAIL).
 
 **What this opens next.** Founder stop for reconsideration. Stream disconnects (0x8) keep killing long orchestrator turns. Substantive: either extend debut-once to scene/analogy IDs + seam ownership, or pivot to writer-prompt Binding craft silence (voice still 14/20 FAIL after four iterations of plan/writer partials). Do not start 004 until founder decides.
+
+### iter-004 — scene-bank debut-once  ·  2026-08-21  ·  REVERT
+
+**Hypothesis.** If the Scene and analogy bank requires one debut chapter for full staging and later cards may only token-echo, 003 Cluster 1 closes because C07 can no longer legally re-stage A01 at full length.
+
+**Change.** Scene and analogy bank bullets + token-echo rule in `prompts/master-plan-skill-v2.md`. Worktree `../quit-sugar-iter-004`. Research reused. New plan (FM+20) to `fit to write from` in 5 review rounds. 21 chapters on Vercel Muse Spark. Panel: composer-2.5, 63 chapter + book-arc.
+
+**What happened.** Targeted A01 symptom **closed** (one full stage in C07; later token echoes). Belief 21/21 PASS; reader 16/21 PASS; voice 3/21 PASS; **book-arc FAIL** on mutated re-argument (FM inversion early; A-07 safe doubled; token pre-debut; C16 re-litigation). Trace: plan-skill scene debut-once works for the bound ID but FM scope and other scene IDs remain free; writer-prompt factory speech persists.
+
+**Verdict & why.** REVERT. Owning book-arc still FAIL. Same class mutated. Prediction: partial. Factory change and 004 book not promoted. **3-strike on plan-skill for re-argument class — pivot.**
+
+**What we learned.** Scene debut-once closed the named A01 C03→C07 double full stage, but book-arc still FAIL on the same re-argument class mutated (FM completes inversion early; A-07 vault-safe doubled FM→C01; mantra/token pre-debut; C16 encyclopaedic re-litigation). Third consecutive plan-skill REVERT on this class (002, 003, 004) — **PIVOT** off plan-skill for re-argument. Voice still 3/21 PASS; writer-prompt Binding craft remains the unpaid voice target.
+
+**What this opens next.** Pivot to writer-prompt Binding craft silence for iter-005 (voice unpaid across 000–004). Do not start another plan-skill re-argument patch. Continue through 008 then stop.

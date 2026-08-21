@@ -1,0 +1,14 @@
+**C13 — You Are Not Weak — The Myth of the Sweet Tooth**
+- enacted transition — sweet-tooth/identity traits are RESULT of trap not cause; even if personality made you vulnerable, escape still identical
+- Entering: maybe I was born this way / have sweet tooth / addictive personality
+- Encounter: historical-evidence operator (population scale, industry rollout vs genes)
+- Discovery: cause-effect inversion + graceful concession (even-if)
+- Turn: fatalism → liberation
+- Leaving: past is irrelevant; I am eagle not chicken
+- Assumptions forward: identity excuse collapsed; ready for guide
+- Work reserved: operational instruments (C14)
+- Persona: P-01
+- Evidence: E-11 prevalence not uniqueness (not DSM diagnosis), E-10 contested addiction nature CONTESTED (acknowledge both camps — no consensus), E-08 schedule trap, E-22 composite escape pattern (lived, not efficacy — for TB-01 payload only)
+- Mantra/token: M-03 echo, T-09 debut Nature's Guide, T-04 token, M-06 token
+- Scene: TB-01 embedded testimonial full staging — use frozen payload verbatim (F-bank composite, synthesis-anchored ranges ~12–20 years trapped, family-size nightly, 3–5 failed moderations, authority-conflict, ~12–18 months free, no medical claim); A-14 Eagle token preview; justifies B8 reason "I have a sweet tooth / it's just how I am"
+- Word budget: 2900

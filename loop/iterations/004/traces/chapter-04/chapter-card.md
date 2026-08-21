@@ -1,0 +1,15 @@
+**C03 — Doing TO You or Doing FOR You?**
+- enacted transition — the question is not harm vs benefit but whether any benefit exists at all
+- Entering: maybe harms but benefits outweigh (or balance)
+- Encounter: reader's own harm-benefit ledger vs two-column TO/FOR test
+- Discovery: axis-switch via pre-conceded principle: we credit moment not dose (harmless examples first)
+- Turn: defensive accounting → curiosity to audit benefits
+- Leaving: I will now demand proof of any genuine FOR; doing TO is obvious.
+- Assumptions forward: evaluation axis switched to FOR-only
+- Work reserved: benefit demolitions (C04-06), inversion (C07)
+- Persona: P-02, P-04
+- Evidence: E-16 TO (dental), E-15 TO (heart/stroke deferred load) light scare-then-disown intro
+- Mantra/token: M-04 illusion-namer debut, T-01 TO/FOR debut, T-05 Fact-assertion
+- Scene: A-19 TO/FOR Two-Column Ledger full staging; A-20 Clock That Strikes Thirteen token
+- Scare-then-disown: yes (light TO facts, then disown fear)
+- Word budget: 2700

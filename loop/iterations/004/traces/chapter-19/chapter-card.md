@@ -1,0 +1,15 @@
+**C18 — Staying Free — Rejoice, Don't Mourn**
+- enacted transition — thoughts of BAD SUGAR become triggers for joy, not risk
+- Entering: what if I think about it? Isn't that craving?
+- Encounter: pink elephant proof + caged lion hovering moment
+- Discovery: thought-reframe instruction (rejoice at dead enemy)
+- Turn: fear of thought → delight at proof of freedom
+- Leaving: any thought → FANTASTIC! I'M FREE!; substitutes banned; language policed
+- Assumptions forward: thought = joy script
+- Work reserved: social/slip guards (C19)
+- Persona: P-01, P-03
+- Evidence: E-09 cue circuit token only SUPPORTED (rodent, no proven human physiologic withdrawal), E-19 hump passed (SUPPORTED, preliminary)
+- Mantra/token: M-08 echo, M-05 token, M-07 token, T-12 debut Rejoice..., T-08 token
+- Scenes: A-05 Pink Elephant full, A-06 Caged Lion full
+- Instructions debut: I-09, I-10
+- Word budget: 3000

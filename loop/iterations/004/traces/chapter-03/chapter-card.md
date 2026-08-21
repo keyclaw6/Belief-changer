@@ -1,0 +1,15 @@
+**C02 — Is This Even a Problem? The Great Confidence Trick**
+- enacted transition — being trapped is not evidence of choice; feeling "fine" is not evidence of harmlessness
+- Entering belief: I choose sugar freely; everyone eats it; if serious I'd know.
+- Encounter: reader holding book while insisting they choose — "If you wanted to quit a hobby you enjoy, would you need a book on how to stop?"
+- Discovery: confidence-trick logic trap + boiling-frog societal normalization
+- Emotional turn: shame → relief (conned not weak)
+- Leaving belief: I was conned on phoney information; the trap removed my choice; normal is sick.
+- Assumptions forward: (= leaving belief)
+- Work reserved: TO/FOR evaluation (C03); benefit demolition (C04-06)
+- Persona: P-02, P-01; reader voice: "it's just a treat"
+- Evidence: E-14 WHO ceilings (excess is normal), E-11 prevalence
+- Mantra/token: M-03 debut trap-namer, T-03 stakes debut
+- Scene: A-02 confidence trick full staging; A-09 boiling frog full
+- Device: trap question + ventriloquism; rhetorical questions 10%; killer-pair at peak
+- Word budget: 3000

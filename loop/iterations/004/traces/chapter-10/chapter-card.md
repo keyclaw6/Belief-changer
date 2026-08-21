@@ -1,0 +1,16 @@
+**C09 — The Tug-of-War of Fear — Failure and Success**
+- enacted transition — both fears are ropes held by same trap; fear of failure guarantees failure, fear of success is identity spell
+- Entering: what if I fail again / what if I succeed and lose my identity/comfort?
+- Encounter: private dread scenarios — replaying past diet failures (fear of failure) and imagining a life without "treats" or identity as sweet-tooth (fear of success)
+- Discovery: fear dismantling via experiential vivification + success-fear narrative (distinct from C08 absurdity and C10 reframe)
+- Turn: dread → excitement (fear named as trap-owned)
+- Leaving: both fears are Sugar Trap artifacts; no rope to hold
+- Assumptions forward: fear disowned; ready to see method failure
+- Work reserved: willpower demolition (C10)
+- Persona: P-01 shame cycle, P-03 identity
+- Evidence: E-19 hump days-limited and passes (SUPPORTED, preliminary), E-07 mild but well-defined (small magnitude)
+- Mantra/token: T-08 debut tug-of-war, T-03 token, M-05 token
+- Scenes: A-18 Released Convict full staging (fear-of-success demolition); A-12 token only — one clause "that pushing-on-the-hinges trap" for failure-fear, not staged at length
+- Instruction debut: I-04 NEVER DOUBT...
+- Scare-then-disown: no
+- Word budget: 3000

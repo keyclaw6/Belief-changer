@@ -1,0 +1,15 @@
+**C08 — No Special Ones, No Safe Limits — Closing Every Escape Route**
+- enacted transition — moderation makes the trap more precious; one exception keeps 99 cords live
+- Entering: I'll keep special ones / cut down / quit tomorrow / wean off
+- Encounter: future rationalizations ventriloquized ("just birthdays," "just dark chocolate")
+- Discovery: absurdity demonstration via cliff-jump + switchboard (distinct mode from C07 analogy)
+- Turn: bargaining hope → seeing totality as relief
+- Leaving: only zero BAD SUGAR is stable; special = Spell alive; schedule matters
+- Assumptions forward: totality logic accepted; margin doctrine held
+- Work reserved: fear (C09), willpower attack (C10)
+- Persona: P-01, P-02
+- Evidence: E-08 intermittent escalation (MUST preserve schedule-not-chemistry limit), E-02 one-bite lived, E-07 mild grip (not severe withdrawal), E-19 hump days-limited (not lifelong)
+- Mantra/token: M-05 echo, M-06 echo, M-07 echo, T-03 token, T-05
+- Scenes: A-04 Cliff Jump full, A-15 Switchboard full, A-16 Seatbelt full (margin doctrine — buffer for accidents not licence)
+- Instruction debut: I-08 totality+margin
+- Word budget: 3200

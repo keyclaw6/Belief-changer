@@ -1,0 +1,14 @@
+**C12 — The Sunny Dessert Table — The Strongest Case, Dismantled**
+- enacted transition — even the most seductive sugar scene's joy was the sun, leisure, company — sugar only snuck a ride
+- Entering: but THAT dessert with friends/dates — that WAS joy
+- Encounter: live stripping exercise: same scene minus BAD SUGAR, pleasure remains
+- Discovery: hands-on perception demo (optical-illusion tables) proves felt certainty can be flatly wrong, then credit-reassignment scene (distinct demo mode)
+- Turn: nostalgia → clarity and slightly disgusted amusement
+- Leaving: no drop of genuine pleasure came from BAD SUGAR even there
+- Assumptions forward: strongest foothold removed; illusion dead everywhere
+- Work reserved: identity demystify (C13)
+- Persona: P-03 primary, P-04
+- Evidence: E-03 reward, E-01 rollercoaster re-evaluated; no new medical claim
+- Mantra/token: M-04 echo, T-02 token It's the other way around., T-01 token
+- Scenes: A-17 Sunny Dessert Table full; A-10 Optical Illusion Tables full staging with homework
+- Word budget: 3200

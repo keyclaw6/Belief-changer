@@ -1,0 +1,17 @@
+**C17 — The Final Dose — The Ritual and the Vow**
+- enacted transition — freedom conferred now as instant identity via celebratory final act
+- Entering: am I ready? Will I miss it at sunset tomorrow?
+- Encounter: readiness gate ("by now you should be champing at bit — if not, re-read"), guided sensory disgust-attention on last BAD SUGAR, solemn vow with visualization
+- Discovery: ritual enactment distinct mode (ceremonial performance)
+- Turn: anticipation → elation and pride
+- Leaving: I am free the moment I finish; day 1 is free, not trial
+- Assumptions forward: identity = non-BAD SUGAR user; no waiting
+- Work reserved: relapse-proof belief guard (C18-19)
+- Persona: ALL
+- Evidence: E-19 hump 2-5 days (reframe death throes as rejoice — SUPPORTED, preliminary human + small-scale), E-07 mild (not severe)
+- Mantra/token: M-08 terminal debut FANTASTIC! I'M FREE!, M-01 echo, M-02 echo, T-11 debut Don't wait..., T-10 claim block ALL-CAPS, T-06 token
+- Scene: ritual scene full staging; meaningless-days demolition (no New Year); pre-load future danger moments INTO vow ("fix these thoughts now...")
+- Instructions: readiness gate + vow instruction (I-08 cross-ref)
+- ALL-CAPS: CONGRATULATIONS! YOU'VE WON! + FANTASTIC! I'M FREE!
+- Scare-then-disown: no
+- Word budget: 3400

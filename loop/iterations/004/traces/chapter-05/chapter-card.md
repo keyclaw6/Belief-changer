@@ -1,0 +1,15 @@
+**C04 — "I Deserve a Treat" — The Reward That Wasn't (reward + comfort/cheer)**
+- enacted transition — reward and comfort/cheer are the moment/affection/rest you gave yourself, not the BAD SUGAR that sneaked a ride
+- Entering: sugar is love/reward/deserved pay-off; and sugar comforts/cheers me when I'm low
+- Encounter: cinema/chocolate and post-win self-payment ritual ("I deserve a treat / I deserve one / I've been good this week so I deserve it" quoted verbatim) + low-mood comfort ritual same evening ("It helps me concentrate / cope with stress / comforts me / cheers me up" quoted verbatim — this card owns only the comforts/cheers facet)
+- Discovery: credit reassignment by isolating variable (same reward ritual without BAD SUGAR still rewards; with BAD SUGAR after bad day still flat; same comfort ritual stripped of dose — occasion, pause, praise still comforts, dose adds nothing). Distinct discovery mode: vivified vignette + variable-isolation. Ventriloquize both verbatim lines, demolish only reward + comfort/cheer facet here; explicitly reserve concentrate/cope-with-stress facet to C06.
+- Turn: affectionate entitlement / tender self-soothing → seeing con
+- Leaving: reward was the pause/praise/company, and comfort/cheer was relief from self-created insecurity plus the occasion's kindness — not the dose; Treat Spell weakened for love-trigger and comfort-trigger
+- Assumptions forward: reward + comfort/cheer demolished; energy and taste/social/harmless and stress/concentrate reserved
+- Work reserved: energy (C05), taste/social/harmless + stress/concentrate facet (C06), inversion (C07)
+- Persona: P-03 primary
+- Evidence: E-03 lived reward frame; E-13 mood link SUPPORTED (men only, observational — treat predicts later low, not relief); E-09 cue token limited (rodent, no proven human physiologic withdrawal) for trigger cue note
+- Mantra/token: M-04 echo, T-01 token
+- Scene: reward + comfort vignettes reassigned (cinema/chocolate and low-evening comfort stripped of dose) — vivified vignettes, no separate scene ID; justifies B8 reasons "I deserve a treat..." and "It helps me..." comforts/cheers facet
+- Device: ventriloquism quoted verbatim both lines + inversion
+- Word budget: 3000

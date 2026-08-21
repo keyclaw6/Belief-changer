@@ -1,0 +1,14 @@
+Reading the rubric and chapter input to produce the judge report.
+PASS
+
+### Reader journey comparison
+
+**The real chapter's movement:** The reader arrives already congratulated and declared free. Carr quickly normalizes the Little Monster’s “death throes” as something to rejoice in, not fight — *DO NOTHING* — then steadies them through down days when sugar thoughts still visit, insisting they must never doubt the quit. The emotional arc widens into life reclamation: genuine pleasures return, cynicism falls away, and the reader feels permission to be selfishly well. The back half is practical uplift — fruit breakfasts, salads, exercise for pleasure, favourite foods without sacrifice — landing on control, ease, and “YOU’RE IN CONTROL AND YOU’RE FREE!” The journey is post-escape reassurance plus lifestyle embodiment: fear of early discomfort → calm confidence → excited ordinary living.
+
+**Our chapter's movement:** The reader enters still free from the prior chapter’s thought-reframe work, but now facing the noisy world: trolleys, tins, loved ones pushing “just one,” and the lurking slip question. Recognition lands fast in lived scenes. Envy is named, confronted, and inverted through the pity script — social exposure reframed from danger to proof. The family-push section turns confrontation into a warm, non-evangelical boundary (“quiet ease recruits”). The slip section defuses collapse panic with the rumble-strip image, contested-evidence honesty, and calm self-talk. The close seals the lifelong guard: never reopen the decision, with I-11 and I-12 argued and compressed at climax. The reader ends light — pity intact, joy intact, slip demoted to feedback, decision closed — ready for the final life push reserved for the next chapter. Movement matches the assigned card even where the reference chapter’s shape diverges (PARTIAL alignment): ours owns social simulation and slip-guard, not GSBS Ch 19’s healthy-eating lifestyle tour.
+
+## Final verdict
+
+**Assigned transition verdict:** The chapter performs its enacted transition. The reader enters with social exposure anxiety and slip fear, and leaves with envy replaced by pity, social scenes reframed as confirmation of freedom, evangelizing rejected as self-reopening, slips reframed as rumble-strip feedback rather than collapse, and the decision closed for life via I-11 and I-12. Continuity from the previous chapter is clean: it opens from landed freedom and rejoicing, invokes prior tokens (Treat Spell, tug-of-war, FANTASTIC! I'M FREE!, rejoice-not-mourn) without re-arguing the pink-elephant or caged-lion beats, and expands the brief pity mention from the prior chapter into this chapter’s primary social-simulation work. Instructions I-11 and I-12 are present verbatim and land at the assigned climax after the pity and slip arguments have been demonstrated in scene.
+
+**Largest momentum loss:** NONE

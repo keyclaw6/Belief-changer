@@ -1,0 +1,15 @@
+**C11 — Who Made You Crave It? The Manufacture of Desire**
+- enacted transition — craving was engineered for profit; your tongue's "want" is their formulation
+- Entering: craving feels personal and natural
+- Encounter: supermarket aisle, bliss-point, fat+sugar combo, wrapper cues
+- Discovery: awe + indictment — natural body's sophistication vs crude override
+- Turn: personal shame → dignified anger (outgunned by armies of food scientists)
+- Leaving: BAD SUGAR is engineered trap; I pity the trapped, don't envy
+- Assumptions forward: external villain pity script installed
+- Work reserved: strongest case scene (C12)
+- Persona: P-02, P-03
+- Evidence: E-12 combo dopamine MIXED ("seems to have" supra-additive — interpretation not proof), E-09 cue hyper-reactivity SUPPORTED (rodent, no proven human physiologic withdrawal), E-13 affective cost SUPPORTED (men only observational), E-14 WHO excess (population-level)
+- Mantra/token: M-03 echo, T-04 debut tired,crashy,foggy, T-01 token, T-05
+- Scene: A-08 House-Party Gatecrasher full, A-09 token
+- Scare-then-disown: yes (heart/BP/inflammation E-15 at force, then explicitly: I don't want you to quit from fear)
+- Word budget: 3200

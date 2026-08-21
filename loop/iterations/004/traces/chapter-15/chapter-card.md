@@ -1,0 +1,15 @@
+**C14 — Nature's Guide — The Hunger Gauge and the Raw Test**
+- enacted transition — body already knows true hunger; tools let you hear it again without willpower
+- Entering: how will I know what to eat / will I be hungry forever?
+- Encounter: hunger-gauge 0-20, raw test, primary/secondary foods distinction
+- Discovery: instrumental practice — classification exercise distinct mode (operational tool demo)
+- Turn: confusion → trust in body's guide
+- Leaving: Nature's Guide + instruments replace brainwashing; no diet mechanics needed
+- Assumptions forward: operating manual installed
+- Work reserved: myths Q&A (C15)
+- Persona: P-04 yo-yoer, P-02 grazer
+- Evidence: E-18 sugar not essential (clean baseline, not diet prescription), E-17 dip not hypo (MIXED — no diabetes diagnosis), E-11/14-15 as positive frame
+- Mantra/token: T-09 Nature's Guide echo, T-10 claim block echo, M-06 token
+- Scenes: Gauge + Raw Test as perception homework previews (operational scenes, not analogy bank)
+- Boxed safety: practical-safety guardrail echo
+- Word budget: 3000
