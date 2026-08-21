@@ -1,0 +1,14 @@
+Reading the rubric and chapter input to produce the judge report.
+PASS
+
+### Reader journey comparison
+
+**The real chapter's movement:** Carr opens with bold relief — quitting is easy, and fear is why it has felt hard — then names the tug-of-war (health fear vs. brainwashing fear). He frames fear as the engine of the trap (“fear is the basis of all addiction”), stages fear of failure as the prison-door/wrong-method illusion (“succumb to fear of failure and you guarantee it”), then fear of success as the released convict who mistakes outside life for loss of identity and comfort. The collapse is simple logic: both fears come from the same source (BAD SUGAR). The chapter then surges into expansive landing — nothing to fear, everything to gain, Jack’s testimonial, heroin parallel, eighth instruction — so the reader exits elated and undoubting, with process-fear deferred to the next chapter.
+
+**Our chapter's movement:** We enter cleanly from Chapter 12’s tools — Nature’s Guide, the Raw Test, the Hunger Gauge — into torn fear voiced as P-01 (“what if I fail again?”) and P-03 (“who will I be without it?”). Recognition lands fast; the tug-of-war is named and both ropes attributed to the Sugar Story. S-19 (Prison Door) delivers full-force fear of failure, inverts willpower-as-hinge, then disowns fear as motive. S-20 (Released Convict) delivers fear of success as habit/identity wobble, then disowns fear again. S-07 (Caged Lion) normalizes post-quit pacing as freedom, not need. “Every Rope Belongs to the Same Hands” performs the assigned collapse; meta-inoculation consolidates trust; the leaving verdict lands (“succumb to fear… see fear is the trap and it vanishes”) and hands fear-disarmed to the identity chapter preview. Movement matches the assigned arc: torn → seen → collapsed → disarmed. Shape differs from Carr (no “IT IS EASY” opener, no Jack testimonial, meta-inoculation where Carr runs gain/elation), but under PARTIAL alignment that difference does not materially weaken the owned transition.
+
+## Final verdict
+
+**Assigned transition verdict:** The reader enters torn between fear of failure and fear of success/identity loss and exits with both fears traced to a single source — the Sugar Story holding both ends of the tug-of-war — and with fear explicitly disowned as a reason to quit. Every assigned scene debuts or echoes as specified (S-19, S-20, S-07, Mourning preview, Confidence Trick recall), scare-then-disown lands on both fear scenes, continuity from Nature’s Guide is honored without re-opening settled void work, and the chapter closes on the assigned leaving belief ready for anti-method/identity in Chapter 14. The journey performs its card with comparable force on recognition, confrontation, inversion, and relief for this beat — even where Carr’s real chapter spends longer on forward-looking elation.
+
+**Largest momentum loss:** NONE

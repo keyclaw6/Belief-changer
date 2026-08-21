@@ -1,0 +1,16 @@
+Reading the rubric and chapter input to produce the judge report.
+
+
+PASS
+
+### Reader journey comparison
+
+**The real chapter's movement:** GSBS Ch.6 opens with a wry, widening indictment — advertising, medicine, and pharma spread sugar misinformation — so the reader feels the world has been lying to them, not that they are stupid for listening. The car metaphor creates recognition (“I’d go to the manufacturer, not the pub”) and then awe: the body is infinitely more sophisticated than any machine we admire. Intellect-vs-instinct confrontation follows (“the flaw in the machine”), with bucket and warning-sign passages that make symptom-chasing feel absurd. Relief lands as structural absolution: the flaw is human, not personal moral failure; Nature’s Guide is the authority; the Fourth Instruction closes the chapter with forward momentum and settled trust in instinct over second-hand advice. Fear is not the closing note — authority and relief are.
+
+**Our chapter's movement:** The reader enters from Ch.9’s zero resolve straight into residual self-blame (“everyone does it… maybe I am just greedy”) and feels seen, not accused — the normalcy voice is ventriloquized from their own mouth. The aisle walk and Bliss-Point Laboratory create strong recognition and confrontation: desire was manufactured, the hand moved “without permission,” willpower was always the wrong tool. Big House vs Apartment inverts the “I pay so I must want it” belief. Eagle Raised as Chicken and the awe catalogue pivot shame into dignity before the scare block — matching the card’s “complacency → awe at body sophistication vandalized.” Hard facts arrive flat, then the assigned disown lands verbatim (“I don't want you frightened — understand it, then put it behind you”); fear is explicitly placed behind the reader, not left standing. Tomas’s testimonial consolidates recognition with concrete numbers, schedule, and a lived turn from insult to pity. The closing section performs the assigned inversion — outgunned, not defective; one named corporate beneficiary — restates the ALL-CAPS TO/FOR ledger at peak force, and hands forward pity-at-the-till readiness for the sunlit-table chapter. Continuity from Ch.9 is clean: zero is invoked by token, bargaining is not re-argued, and the widening indictment promised at Ch.9’s close is delivered. Momentum matches the real chapter’s cumulative absolution pattern where the shapes overlap (awe, institutional con, absolution), while the assigned industry-villain turn is enacted with comparable or greater confrontational force.
+
+## Final verdict
+
+**Assigned transition verdict:** The reader moves cleanly from residual self-blame and “everyone does it” normalcy to righteous clarity and industry-directed anger, landing in “I was outgunned, not defective; the only beneficiary is the corporation.” Recognition is lived (aisle, lab, Tomas), confrontation lands (engineered desire, cost≠joy, population facts), the turn inverts shame outward, and relief closes the chapter — not on fear but on pride, pity, and a fixed external villain ready for Ch.11. The chapter performs its card’s enacted transition with no material journey failure.
+
+**Largest momentum loss:** NONE

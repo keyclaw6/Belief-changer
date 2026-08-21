@@ -1,0 +1,13 @@
+diff --git i/prompts/master-plan-skill-v2.md w/prompts/master-plan-skill-v2.md
+index 6c4a71e..351dcf2 100644
+--- i/prompts/master-plan-skill-v2.md
++++ w/prompts/master-plan-skill-v2.md
+@@ -65,7 +65,7 @@ Choose and consolidate 6–10 original frozen mantras that deserve repetition, p
+ - echo chapter IDs;
+ - hand-over form in the final movement.
+ 
+-Every chapter assigns at least one mantra or frozen token — a debut or an echo — so the writer is never left without an exact token to land. Mantras are routed by chapter, not by occurrence arithmetic. Chapter cards reference mantra IDs and frozen-token IDs and never repeat the frozen wording.
++Every chapter assigns at least one mantra or frozen token — a debut or an echo — so the writer is never left without an exact token to land. Mantras are routed by chapter, not by occurrence arithmetic. Chapter cards reference mantra IDs and frozen-token IDs and never repeat the frozen wording. Repetition law (debut-once, echo-by-token): mantras, frozen tokens, scenes/analogies (S-xx), and evidence-ledger rows (E-xx/LEU/SEU) are debut-once, echo-by-token thereafter. After a scene or evidence row's debut chapter, every later chapter card may invoke it only by its short token/name in ≤1 sentence (no rebuilt scene, no re-presented prevalence/stat block, no re-staged appliance/metaphor, no re-argued benefit ledger). Licensed recap zones remain only IN THIS CHAPTER previews, SUMMARY bullets, and the instruction assigned to that chapter. No later card may re-assign the same S-xx or E-xx for full re-argument — echo only.
+ 
+ ### Scene and analogy bank
+ 

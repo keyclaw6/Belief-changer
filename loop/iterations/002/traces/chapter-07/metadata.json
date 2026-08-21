@@ -1,0 +1,33 @@
+{
+  "role": "chapter-writer",
+  "file": "chapter-07.md",
+  "model": "meta/muse-spark-1.2-contributor",
+  "fallback_used": false,
+  "usage": {
+    "prompt_tokens": 42434,
+    "completion_tokens": 6962,
+    "total_tokens": 49396,
+    "cost": 0.0056358,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0,
+      "upstream_inference_completions_cost": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 2784,
+      "image_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "market_cost": 0.0056358,
+    "gateway_cost": 0.0056358
+  },
+  "latency_s": 72.53898739814758,
+  "errors": [],
+  "route": "vercel"
+}
