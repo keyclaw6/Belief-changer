@@ -1,0 +1,16 @@
+I'll read the rubric and chapter input, then judge against it.
+PASS
+
+### Reader journey comparison
+
+**The real chapter's movement:** The reader enters still carrying some confusion about who misled them and begins by recognizing a web of external deceit — advertising, parents, medicine, pharma — so self-blame loosens before the chapter has even named the body. Carr then pivots into wonder: the car comparison makes the reader feel the body's sophistication in their bones, and Nature's Guide arrives as the true authority against second-hand advice. Confrontation deepens through intellect-versus-instinct and the bucket metaphor — symptoms are warnings, medicine treats the drip not the roof — which re-codes everyday suffering as misread signals, not personal failure. The chapter lands on empowerment: a clear instruction to ignore advice that contradicts Nature's Guide, with the reader feeling they have been handed a handbook they always possessed.
+
+**Our chapter's movement:** The reader enters from closed loopholes still holding shame — "why did I fall so hard, why does leaving feel personal?" — and is met immediately with recognition: the first sweetness came from a trusted hand, not a free choice. Confrontation widens through the Bliss-Point Lab walk: supermarket engineering, child-targeted advertising, and "armies of scientists weaponizing abundance" relocate blame from character to system. The ALL-CAPS peak lands anger. Awe follows — the body as sophisticated instrument vandalized, not flawed — and the cost tally makes continuing feel like an active, quantified burden (money, hours, "every single day forever"). The scare block delivers heart, decay, and mood stakes as flat fact, then disowns fear in the assigned line; joy, pity-not-envy, and underdog pride close the chapter. The reader leaves dignified, angry at the deceiver, clear that staying is the sacrifice, and handed forward with engineered intent on the ledger.
+
+The assigned transition completes. Recognition is lived-in (bargaining at 3pm, hiding, regretting), not clinical. Continuity from Chapter 9 is clean — loopholes acknowledged as settled, not re-argued. The scare-then-disown beat lands and releases. The leaving state matches the card: manufactured desire, continuing as cost, industry as sole beneficiary, reader as awake underdog.
+
+## Final verdict
+
+**Assigned transition verdict:** The reader moves from "If it's this empty, why did I fall so hard and why does it feel so hard to leave?" to "Desire was installed by armies of scientists weaponizing abundance; staying is the painful ongoing sacrifice; the sugar industry is the only true beneficiary." Shame is confronted in the opening, blame shifts to engineered manufacture through the lab and aisle scenes, awe at the body's resilience makes vandalism feel morally wrong, the cost tally reframes continuing as the burden, and the scare-then-disown sequence delivers E-10/E-11/E-12 at weight before explicitly putting fear behind the reader. The chapter ends in anger at the deceiver plus underdog pride, ready for the handoff named in the card. No material stall, reversal, or premature resolution of work reserved for Chapter 11.
+
+**Largest momentum loss:** NONE

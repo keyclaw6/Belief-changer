@@ -1,0 +1,21 @@
+**CH-12 — Fear — The Tug-of-War That Holds You**
+- Job: **enacted transition — reader collapses both fear-of-failure and fear-of-success into one trap-held rope and sees fear itself as the trap's last grip**
+- Entering: What if I fail again? What if I succeed and life is flat without my treat? Who am I without it?
+- Encounter: Prison-door scene (fail-fear), released-convict analogy (success-fear/identity), then reveal both ropes held by same hand — the Sugar Trap.
+- Discovery: show both fears belong to the trap — failure fear proves you were taught to expect failure by the wrong method; success fear proves you still believe in a genuine treat.
+- Emotional: Anxious double-bind → calm clarity; "cut the rope."
+- Leaving: Both fears are the trap talking; succumbing guarantees what you fear; the move is to cut, not win, the Tug-of-War.
+- Handed forward: Fear disarmed; reader ready to hear why willpower was the problem.
+- Reserved: anti-method (Ch13), identity (Ch14).
+- Arc: fear chapter (structural slot).
+- Focus: those fearing failure after past attempts and those fearing who they are without sweetness.
+- Evidence: E-22 (hope concretely — most get past on own), E-15 (hump is days, not life — fear of endless suffering false).
+- Mantras/Tokens: Echo FT-06 heavily, M-03, FT-02, FT-03; Debut none.
+- Instruction: **Mid-book recap — Instructions 1–6 verbatim scannable list** (structural responsibility).
+- Scenes: SA-05 Caged Lion (job: post-change anxiety as cage-habit), SA-12 Friend vs Enemy fragment (job: reframe success fear).
+- Devices: alternate warm reassurance and clear challenge; first honor the fear as understandable then show it belongs to the trap; picture cutting the rope. **ALL-CAPS peak:** "CUT THE ROPE — THERE IS NOTHING TO WIN."
+- Scare-then-disown: **YES — name fear fully then disown: fear is not fuel.**
+- Structural: fear chapter + mid-book instruction recap; perception homework teased.
+- Guardrails: warm, non-shaming; validate fear sincerely before disarming (Freedom Model earning of "easy").
+- Continuity: Receives — demolition sealed. Hands — fear collapsed; instruction recap anchors.
+- Budget: 3,000

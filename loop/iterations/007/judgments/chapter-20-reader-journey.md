@@ -1,0 +1,16 @@
+I'll read the rubric and the chapter 20 input, then judge against the rubric exactly as specified.
+PASS
+
+### Reader journey comparison
+
+**The real chapter's movement:** The reader arrives already freed and looking for a pocket reference. The page-skipper gate lands immediately — wrong entry is corrected before any method content. Movement is utilitarian: a single scannable block of twelve instructions with chapter cross-refs, then an outward push in one italic line (*ENJOY LIFE FREE FROM BAD SUGAR!*). No new argument, no re-teaching, no emotional re-run. Start state: “I’m free; remind me what to keep.” End state: “I have the list; go live.” Momentum is short, flat, and functional — hand-off completed in one breath.
+
+**Our chapter's movement:** The reader enters from Chapter 19’s relapse-proof, standing-instruction state. Opening (“Do you feel it? That lightness?”) pivots to growth reframe (*Burgeon*) — recognition and relief that freedom is enlargement, not loss. Friend-or-enemy funeral intensifies: same factual loss, opposite emotion; celebration vs mourning; relapse-proof lock-in through SA-12. “What You Know Now” shifts to declarative recap — consolidation valley, less enacted recognition. Portable manual delivers the promised twelve instructions, page-skipper gate, safety box, Raw Test, and Hunger Gauge — method voice transferred to a carryable form. “Get On With Enjoying Your Life” is the outward push: close the book, inhabit old contexts, quiet awe, terminal **FANTASTIC! I'M FREE!** End state matches the card: tokens in hand, pushed outward, book ends in freedom not vigilance.
+
+Movement aligns with the real chapter’s hand-off function and strengthens it per the card (growth reframe, enemy funeral, freedom crescendo). The real chapter is appendix-thin; ours is a full finale. Shape differs, but recognition, relief, portable manual, and terminal push all land. Middle recap is the only stretch where momentum softens without a section-end punch — it consolidates rather than stalls the assigned transition. Chapter enters from relapse-proof implicitly (never-reopen, rumble strip, pity-not-envy in recap) without explicitly bridging Chapter 19’s “installed before you need it” moment; growth opener is card-assigned and does not contradict the handed-forward state.
+
+### Final verdict
+
+**Assigned transition verdict:** The chapter performs its assigned non-argument hand-off. The reader moves from relapse-proof (Chapter 19) to carrying tokens forever with the book ended. Growth reframe (“you didn’t quit — you burgeoned”), enemy-vs-friend funeral (celebration kills the con), whole-truth recap, verbatim I-01–I-12 portable manual with cross-refs, restated page-skipper gate and safety box, FT-02 both valences (“hooked for the rest of your life” / “free for the rest of your life”), ALL-CAPS peak **GET ON WITH ENJOYING YOUR LIFE — FANTASTIC! YOU'RE FREE!**, and terminal M-08 **FANTASTIC! I'M FREE!** all land. Guardrails hold: gain-frame, no new scare, no deprivation prescription. The closing outward push (“Go and burgeon… close this book… with a smile”) leaves the reader in excitement and quiet awe, not white-knuckle determination — comparable force to the real chapter’s enjoy-life hand-off, with fuller emotional crescendo the card assigns.
+
+**Largest momentum loss:** NONE

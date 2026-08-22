@@ -1,0 +1,19 @@
+**CH-19 — Staying Free — Without Willpower, Forever**
+- Job: **enacted transition — reader converts any future sugar thought/cue/slip/social pressure from relapse trigger into freedom reinforcement**
+- Entering: What if I think about it, feel deprived, see others eating it, or slip?
+- Encounter: Pre-play each danger: bad-day rescue offer; "just one can't hurt"; envy glance; slip.
+- Discovery: show how to reframe rather than suppress — rejoice at a dead enemy, pity don't envy, never reopen the decision.
+- Emotional: Vigilant fear → joyful vigilance (thought arrives pre-labelled, converts to relief hit).
+- Leaving: Thought = cue to rejoice (M-08); others = pitiable trapped; slip = rumble strip, never proof of failure, never license to repeat.
+- Handed forward: Belief guarded for life.
+- Reserved: final growth push (Ch20).
+- Arc: relapse-proof doctrine (full back-half).
+- Focus: everyone, especially those who fear a slip or social pressure when others are eating it.
+- Evidence: E-06 (cue reactivity — neural analogue for lingering craving), E-15 (hump), E-19 (one-bite), E-06/E-17.
+- Mantras/Tokens: Echo **M-08 3–5× verbatim, M-05, M-06, M-07, FT-01, FT-05, FT-06**; Debut none.
+- Instruction: **I-12**
+- Scenes: SA-11 Pink Elephant (job: reframe not suppress), SA-12 Enemy Funeral (job: rejoice at dead enemy), SA-05 Caged Lion (job: phantom urge as cage habit).
+- Devices: quote the future tempting thought in the reader's words and answer it before it lands; picture moments when old cues appear and convert; balance reassurance with clear rule; give the exact thought to use instead. **ALL-CAPS peaks:** "FANTASTIC! I'M FREE!" (each reframe) + "NEVER REOPEN THE DECISION."
+- Guardrails: forgive slip in advance without licensing repeat; ban substitutes; pity don't envy; don't evangelize; ban phrasing "I can't have"; change nothing else / inhabit old contexts confidently.
+- Continuity: Receives — free identity conferred. Hands — belief armour installed.
+- Budget: 3,500

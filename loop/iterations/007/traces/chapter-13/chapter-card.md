@@ -1,0 +1,19 @@
+**CH-13 — Why Willpower Never Worked — And Why That's Wonderful News**
+- Job: **enacted transition — reader reattributes every past failure to the Willpower Method, not to self, and sees strong will as evidence for them**
+- Entering: I've failed so many diets/rules — that proves I'm weak-willed about sugar.
+- Encounter: Anatomy of Willpower Method: resolve → deprivation → white-knuckle → "forbidden fruit" more precious → lapse → shame → collapse; plus braggers vs whingers sub-characters.
+- Discovery: show the method has no finish line; staying strong keeps the trap alive; pushing on hinges image.
+- Emotional: Shame → exonerated pride + contempt for method.
+- Leaving: You were wilful, not weak-willed; method was wrong, never you; no wonder you failed — this time is different.
+- Handed forward: Self-blame gone; epistemic firewall ready.
+- Reserved: identity excuse (Ch14), Nature's Guide (Ch15).
+- Arc: anti-method chapter (structural slot).
+- Focus: the secret binger and daily grazer who say "I have no willpower."
+- Evidence: E-05 (restriction intensifies), E-22 (self-change normal — method not person determines outcome).
+- Mantras/Tokens: **Echo FT-05 heavily, FT-03**; Echo M-06.
+- Instruction: **I-07, I-08** (epistemic firewalls).
+- Scenes: SA-03 Cliff Jump reprise (job: moderation = willpower hinge-pushing), SA-01 Conman reprise (job: willpower is second con).
+- Devices: retell past failures as proof the method was wrong; quote the bragger and the whinger in their own words; ask questions that reveal the missing finish line; close with stark contrast. **ALL-CAPS peak:** "IT WAS THE METHOD THAT FAILED — NOT YOU."
+- Guardrails: never apologize for instructing; blame method/trap; keep warmth.
+- Continuity: Receives — fear collapsed. Hands — willpower discredited; firewalls installed.
+- Budget: 3,000

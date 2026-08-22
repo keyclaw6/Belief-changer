@@ -153,3 +153,15 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Upstream card sanitization helps persona leaks but not trap-question factory speech or arc curve.
 
 **What this opens next.** style-guide or config route for 007. Finish 008 then stop.
+
+### iter-007 — style-guide craft ban  ·  2026-08-22  ·  REVERT
+
+**Hypothesis.** Style-guide speakable craft ban closes Cluster 1 and raises voice PASS.
+
+**Change.** style-guide.md toolkit + §9 ban. Reused iter-006 plan; full 20-chapter rewrite.
+
+**What happened.** trap question 3/20 (was 17); voice 1/20 PASS; belief 20/20; book-arc FAIL.
+
+**Verdict & why.** REVERT. Owning voice regressed. Partial literal improvement insufficient.
+
+**What this opens next.** Config/model surface for final iter-008.

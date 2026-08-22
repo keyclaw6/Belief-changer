@@ -1,0 +1,16 @@
+Reading the rubric and chapter input to produce the judge report.
+PASS
+
+### Reader journey comparison
+
+**The real chapter's movement:** The reader enters still expecting a “magical cure” formula and is steadied into patience — the whole book is the combination lock. Carr names ever-present danger (the trap remains after escape), then the permanent-solution frame: willpower and shock tactics fail because desire must be removed, not fought. The tug-of-war section creates recognition of contradictory self-talk (“I know it’s bad but I couldn’t live without it”) and offers the first clean fact-vs-myth split. The heroin parallel forces confrontation from outside — same trap, milder symptoms — then the headline inversion: BAD SUGAR does not relieve misery, it causes it, with relief framed as “you no longer want them.” The sugar-truth passage briefly touches energy (empty carbs, insulin spike, sugar crash, pasta myth) but spends most of its force on taste isolation and convenience myths. By the end the reader feels oriented to permanent desire-removal and sees sugar’s “benefits” as myth, with only a light sketch of the afternoon crash mechanism.
+
+**Our chapter's movement:** The reader enters exactly where Ch4 left them — taste crossed off, energy still load-bearing — with strong recognition of “I need it to get through” and the 3pm crash story. Carr maps their own day beat by beat (dose → brief lift → heavier fog → next dose → evening regret), which creates cumulative confrontation without clinical distance. The inversion lands hard: the lift IS the surge, the same surge drives the dip — “IT’S THE OTHER WAY AROUND” — with E-13 guardrails (real sag, not clinical hypoglycemia, no diagnosis). The awe section consolidates a non-deprivation baseline (body makes steady glucose; river vs flood). The rollercoaster reframe shifts the reader from fear of losing energy to relief at escaping nausea, with deferred load stated then disowned. The closing valley addresses “will I be flat?” and offers a gentle watch experiment without demanding quit-yet willpower. The reader leaves with energy removed from the FOR column and a clear handoff to reward/love — matching the card’s leaving belief and continuity contract.
+
+Movement aligns with the assigned transition where the real chapter only sketches it; with PARTIAL alignment, the test is whether our chapter performs the energy inversion with comparable or greater force on its own terms — it does. No stall reverses the inversion; repetition serves consolidation (loan metaphor, rollercoaster, child/fresh-food tests). Continuity from Ch4 is clean: taste invoked as settled, not re-argued.
+
+## Final verdict
+
+**Assigned transition verdict:** The reader moves from “I need sugar to function through the afternoon” to clear-eyed relief that energy was a loan at high interest — sugar creates the tired, foggy, drained state it briefly relieves and never beats the calm baseline. Recognition is lived (desk drawer, school run, mapped afternoon), confrontation is enacted through the reader’s own day and comparison tests, the turn lands with force at the ALL-CAPS inversion, and the ending consolidates steady baseline relief without premature full-mechanism naming or reward demolition (both reserved). Handoff to Ch6 on love/reward is positioned correctly.
+
+**Largest momentum loss:** NONE

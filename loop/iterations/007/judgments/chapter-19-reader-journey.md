@@ -1,0 +1,14 @@
+Reading the rubric and chapter input to produce the judge verdict.
+PASS
+
+### Reader journey comparison
+
+**The real chapter's movement:** The reader enters post-vow — congratulated, told freedom is already real if they never doubt the decision. Early movement reassures about Little Monster “death throes”: don’t fear the whisper, rejoice that it’s dying; pink-elephant logic disarms suppression. Down-day thoughts get pre-labelled as old habit, answered with “Great! I’m free!” rather than willpower dread. A firm line on never craving “just one.” Then the chapter widens: life’s genuine pleasures return, social occasions improve, stress copes better. Long middle sections expand into practical joy — fruit breakfasts, salads, exercise for pleasure, eating favorite foods without sacrifice — landing the reader in excited, embodied freedom: in control, energetic, happy with how they eat. End state: relieved confidence plus forward-looking enthusiasm for living, not guarding.
+
+**Our chapter's movement:** The reader enters already free (continuity from Ch 18) but carrying the assigned worry: “What if I think about it, feel deprived, see others eating it, or slip?” Pink Elephant creates strong recognition of suppression failure and pivots fast to reframe: thought → **FANTASTIC! I'M FREE!** Bad-day rescue, “just one,” envy glance, and slip each pre-play the reader’s future voice in their own words, confront trap logic, then convert the cue to the same joyful reframe. Slip section lands rumble-strip (not crash), shame disowned, forgiveness without license. Caged Lion disarms phantom urge as habit echo, not failure. I-12 at climax seals **NEVER REOPEN THE DECISION** with standing instruction. Movement matches the card’s enacted transition: vigilant fear → joyful vigilance, thought pre-labelled, relief on arrival. Compared to the real chapter, ours stays in relapse-proof doctrine and does not widen into life-expansion / healthy-eating joy; under the assigned card that widening is Ch 20’s reserved work, not this chapter’s job. Same end-state on doctrine: thought = cue to rejoice; others pitiable; slip = rumble strip; belief guarded.
+
+## Final verdict
+
+**Assigned transition verdict:** The reader moves from “what if future thoughts, deprivation, social scenes, or a slip threaten my freedom?” to enacted joyful vigilance: each named danger arrives pre-played, pre-labelled, and answered with **FANTASTIC! I'M FREE!** plus pity-not-envy and rumble-strip slip doctrine. I-12 lands at the assigned climax. Continuity holds — free identity received, solemn vow invoked by token, no re-litigation of the threshold ritual. M-08 echoes far beyond the 3–5× requirement; assigned guardrails (ban “I can’t have,” no evangelizing, no substitutes, change nothing else / inhabit old contexts) are present. The chapter performs its assigned reader-state transition with no material journey failure.
+
+**Largest momentum loss:** NONE

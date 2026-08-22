@@ -1,0 +1,67 @@
+diff --git i/prompts/style-guide.md w/prompts/style-guide.md
+index 452a7b6..068bdd5 100644
+--- i/prompts/style-guide.md
++++ w/prompts/style-guide.md
+@@ -294,7 +294,7 @@ These are the lines that keep the method intact. **Violating a guardrail breaks
+ - **Counter-brainwashing.** Name the installed belief and its installers; position quitting as de-programming, not deprivation.
+ - **The ritual / chosen quit.** Stage the threshold as a positive, deliberate, reader-owned act.
+ - **Relapse-proof the belief.** The back half guards the mind; slips are pre-forgiven; the thought is reframed not suppressed.
+-- **Make the reader reach the conclusion — inside a frame of flat assertion.** Carr asserts constantly ("The fact is...") *and* runs the trap questions whose only honest answer concedes the point. Keep both: settled-fact delivery for the reframes, Socratic traps for the reader's own evidence.
++- **Make the reader reach the conclusion — inside a frame of flat assertion.** Carr asserts constantly ("The fact is...") *and* runs the disarming one-answer questions whose only honest answer concedes the point. Keep both: settled-fact delivery for the reframes, Socratic traps for the reader's own evidence. Execute silently — never write the label "trap question" in reader prose.
+ - **Gain-frame the alternative.** Stopping = acquiring a better life.
+ 
+ ### Never (the failure modes)
+@@ -307,7 +307,8 @@ These are the lines that keep the method intact. **Violating a guardrail breaks
+ - **Never make freedom contingent on time, streaks, or day-counting** — that keeps the behavior alive as something still missed.
+ - **Never catastrophize a slip** — that triggers the all-or-nothing collapse. But never let a slip *license* a deliberate repeat either.
+ - **Never apologize for the instructions.** The method commands — numbered, confident, cheerful — and treats following ALL of them as the reader's own smart choice (per Fork 2). What stays banned is nagging *without* the belief-work: a command may only cash in an argument the book has already won.
+-- **Never cushion a belief landing with coaching stage directions or permission language.** Cut cues such as “sit with this,” “let that land,” and “if you wish”: once the argument has earned its conclusion, issue a cheerful direct command or state the conclusion as settled fact, then ask the trap question whose only honest answer completes the credit inversion.
++- **Never cushion a belief landing with coaching stage directions or permission language.** Cut cues such as “sit with this,” “let that land,” and “if you wish”: once the argument has earned its conclusion, issue a cheerful direct command or state the conclusion as settled fact, then ask the disarming one-answer question whose only honest answer completes the credit inversion. Never write the craft label "trap question" in reader prose.
++- **Never surface factory method vocabulary in reader prose.** Do not write `trap question`, `ease-operator`, `killer-line`, `future-pacing`, `fact-assertion`, `argue-to-compress`, or persona handles. Execute the behavior described; do not name the device.
+ - **Never bog the prose down in a literature review.** Quarantine citations; keep the argument clean and emotional.
+ - **Promise at Carr's amplitude — "easily, immediately and permanently" — and no further.** Carr states the impossible-sounding contract with total confidence and delivers the gains big (freedom, energy, self-respect, the end of the slavery), but he never promises unrelated "superpowers." Match his amplitude; don't exceed it and don't shrink it.
+ - **Never tell the reader to white-knuckle-avoid triggers** as the strategy. Either inhabit old contexts confidently (Carr) or redesign environment as support (Burgeon) — but avoidance-as-resistance silently concedes the behavior still holds power.
+@@ -416,7 +417,7 @@ These are the *shapes* that work — drawn from the three books. **Do not copy t
+ - [ ] Is the tone **warm to the reader, harsh to the trap** — zero shame, zero lecture?
+ - [ ] Did I **reassign every benefit** I touched, conceding nothing real to the behavior?
+ - [ ] Is **willpower** absent as a solution (and reframed as a symptom where it appears)?
+-- [ ] Did I run the **trap questions inside a frame of flat settled-fact assertion** — Carr's balance (§9): "The fact is..." delivery for reframes, Socratic traps for the reader's own evidence?
++- [ ] Did I run the **disarming one-answer questions inside a frame of flat settled-fact assertion** — Carr's balance (§9): "The fact is..." delivery for reframes, Socratic traps for the reader's own evidence? (Never write the label "trap question" in reader prose.)
+ - [ ] Are my **analogies original** to this behavior (not lifted from caffeine/porn)?
+ - [ ] Did every scare **land at full Carr force and then get disowned** (Fork 3)? Are the **mechanism characters** doing their work (Fork 1)? No **"instead"/"giving up"** phrasing?
+ - [ ] If this is a back-half chapter, does it **guard the belief** and **pre-forgive slips** without licensing them?
+@@ -471,13 +472,13 @@ The master plan must derive a per-book **mantra sheet** instantiating each arche
+ | **The sensory definition** | A canonical adjective-string describing the behavior's discomfort/withdrawal, repeated identically so the reader re-labels their own body in our words | "a mild, empty, slightly insecure, slightly uptight feeling" | Debuts in mechanism chapter; repeated whenever withdrawal/craving is mentioned, including in the final instructions |
+ | **The stakes phrase** | A dual-valence time-horizon phrase used as BOTH threat and reward | "for the rest of your life" (hooked... / free...) | Spread throughout; both valences must appear |
+ | **The cost formula** | The fixed word-triple naming the addict's permanent state | "tired, run down and lethargic" | Recurs wherever the behavior's ongoing cost appears |
+-| **The fact-assertion frame** | Not a phrase about the behavior but a repeated *operator* that trains the reader to receive reframes as settled fact | "The fact is..." | Evenly spread; ~1 per 1,000 words |
++| **The flat settled-fact frame** | Not a phrase about the behavior but a repeated operator that trains the reader to receive reframes as settled fact | "The fact is..." | Evenly spread; ~1 per 1,000 words. Never write the factory label "fact-assertion" in reader prose. |
+ | **The replacement thought (terminal mantra)** | The thought script the reader keeps forever; what to think whenever the behavior crosses their mind. ALL-CAPS, exclamatory, joyful | "FANTASTIC! I'M FREE!" | Debuts in the instructions (final 15%) and repeats there 3–5×; it is the book's final word on the subject |
+ | **The named anti-method** | The enemy METHOD (not just the enemy substance): every past failure is reattributed to it, never to the reader | "the willpower method" (38× in the sugar book; defined formally in ch. 1, owns its own chapter) | Defined early; recurs wherever failure, sacrifice, or "hard to quit" appears; signature image: pushing on the door's hinges |
+ | **The named conflict model** | Names the addict's torn state and gives it a geometry whose resolution is built in: both ropes belong to the trap | "the tug-of-war (of fear)" (23×) | Debuts with the trap chapters; owns the fear chapter; echoed until the quit |
+ | **The named positive authority** | The alternate authority the reader obeys AFTER the brainwashing is gone — paired with 1–3 operational instruments (tests, gauges, rules-of-thumb) so freedom comes with tools, not just beliefs | "Nature's Guide" + the raw-test, the 0–20 hunger gauge, primary/secondary foods | Own chapter(s) early-mid; instruments delivered mid-book; becomes the post-quit operating manual |
+ | **The claim block** | The full-sentence promise repeated verbatim as a set-piece (a mantra at paragraph scale) | "Eat as much of your favourite foods as you want, whenever you want... without willpower or feeling deprived" | Planted in ch. 1; re-quoted 2–3× mid-book; returns in ALL-CAPS at the pre-quit pivot |
+-| **The ease-operator** | The recurring clause that closes every loop by restating the contract's ease | "All you have to do is follow (all) the instructions." (13×) | Sprinkled throughout; especially at chapter ends and after hard arguments |
++| **The ease restatement** | The recurring clause that closes every loop by restating the contract's ease | "All you have to do is follow (all) the instructions." (13×) | Sprinkled throughout; especially at chapter ends and after hard arguments. Never write the factory term "ease-operator" in reader prose. |
+ 
+ ### Mantra sheet format (lives in the master plan)
+ 
+@@ -523,14 +524,14 @@ Voice metrics first — the reviewer checks these (per ~1,000 words unless noted
+ 
+ The operators:
+ 
+-1. **Fact-assertion** — deliver reframes as flat settled fact: "The fact is..." / "The reality is..." Never hedge ("studies suggest," "many people find" are banned for core claims).
++1. **Flat settled-fact delivery** — deliver reframes as flat settled fact: "The fact is..." / "The reality is..." Never hedge ("studies suggest," "many people find" are banned for core claims). Execute silently — never write the label "fact-assertion" in reader prose.
+ 2. **Self-answered question** — ask, then answer immediately with total confidence: "Do you want to stop? Of course you do – that's why you're reading this book."
+-3. **Trap question** — a question whose only honest answer concedes the argument: "If you genuinely choose it, why would you need this book?"
++3. **Disarming one-answer question** — a question whose only honest answer concedes the argument: "If you genuinely choose it, why would you need this book?" Execute silently — never write the label "trap question" in reader prose.
+ 4. **Ventriloquism** — quote the reader's inner voice in quotation marks (their justifications, their future temptations) and answer it. Early: print the full justification menu as quotes, then demolish one per chapter. Late: pre-play the future tempting thought so it arrives pre-refuted.
+ 5. **The inversion** — "It's not X, it's Y": "It causes the aggravation; it doesn't relieve it." "It's you that's [the benefit], not the [behavior]." Often capped with: "It's the other way around."
+-6. **Killer-line pair** — two short mirrored sentences at the peak: build-up, then verdict. One per major argument, no more.
++6. **Compressed verdict pair** — two short mirrored sentences at the peak: build-up, then verdict. One per major argument, no more. Execute silently — never write "killer-line" or "killer pair" in reader prose.
+ 7. **Reassurance–challenge cycle** — *schedule* the reader's disbelief: name it ("I know this is hard to accept"), welcome it, re-invite the open mind. Doubt is never ignored; it is pre-empted on a cadence.
+-8. **Future-pacing** — predict the reader's specific upcoming thoughts, situations, and the named **moment of revelation**. Every prediction that lands transfers authority to the claims that can't be verified.
++8. **Lived future moment** — predict the reader's specific upcoming thoughts, situations, and the named **moment of revelation**. Every prediction that lands transfers authority to the claims that can't be verified. Execute silently — never write "future-pacing" in reader prose.
+ 9. **Permission paradox** — explicitly permit the behavior while reading ("carry on exactly as normal until you finish"). Disarms resistance and proves this isn't willpower.
+ 10. **Credit reassignment scene** — take a cherished scene, strip the behavior out of it, show the pleasure was the scene all along ("it was only ever sneaking a ride").
+ 11. **Instruction voice** — numbered, imperative, ALL-CAPS headline, each instruction followed by its warm rationale. Instructions are thought-substitution rules: "rather than think [old thought], think [mantra]."

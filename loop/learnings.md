@@ -58,3 +58,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** REVERT
 **Lesson:** Persona P-xx codes eliminated from prose; voice rose 0/18→5/20 but still 14 FAIL; trap-question phrasing persists in 17 chapters; book-arc FAIL on arc-timing/re-litigation. Reviewer gate improved cards but did not close owning voice class.
 **Next direction:** style-guide, writer route in config, or combined surface — not another Gate 4 repeat. Continue 007–008.
+
+### iter-007 — style-guide speakable craft ban
+**Hypothesis:** Remove craft-label vocabulary from style-guide so trap question etc. stop surfacing; voice Cluster 1 closes.
+**Change:** `prompts/style-guide.md` — disarming one-answer question, speakable craft ban in §9, toolkit renames.
+**Verdict:** REVERT
+**Lesson:** trap question 17→3 but voice **1/20** (worse than 006). Belief 20/20; book-arc FAIL. Style-guide surface alone cannot close voice while writer-prompt still names devices and model ignores bans.
+**Next:** 008 final — try `loop/config.yaml` writer model/route (non-contributor fallback or alternate).

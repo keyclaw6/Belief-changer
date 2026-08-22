@@ -1,0 +1,19 @@
+**CH-06 — Is It Your Reward — Your Little Love?**
+- Job: **enacted transition — reader stops believing BAD SUGAR is love/reward/comfort and sees it is the trap's payola**
+- Entering: I deserve it; it's my treat, my comfort after hard day, how I celebrate.
+- Encounter: Recall last "treat" moment after stress/victory — what actually comforted you vs what the sugar did (10 minutes later: regret, need more).
+- Discovery: move credit for joy to occasion/company/rest — show the substance was only along for the ride; test whether love was the original motive at first sweet.
+- Emotional: Warm nostalgia → tender clarity; self-compassion replaces self-payment.
+- Leaving: Reward/love/comfort came from occasion/self/company, not BAD SUGAR; calling it love keeps loop alive.
+- Handed forward: Reward removed from FOR; only social/normal remains.
+- Reserved: social (Ch7), mechanism (Ch8).
+- Arc: core demolition for the comfort eater.
+- Focus: the comfort and reward eater who says "I deserve it" and "celebrating with chocolate," with the secret binger alongside.
+- Evidence: E-20 (LEU-003 reward frame), E-09 (sweets predict later mood cost in men — treat predicts low, not relief).
+- Mantras/Tokens: Echo M-04, M-03, FT-10; Debut none.
+- Instruction: none.
+- Scenes: SA-04 Lifeguard (job: rescuer-as-perpetrator for comfort), SA-12 Friend vs Enemy Funeral preview fragment (job: set up celebration vs mourning choice).
+- Devices: echo "I deserve it" in their words; end with a sharp contrast; balance kindness with clear challenge. **ALL-CAPS peak:** "YOU WERE NOT LOVING YOURSELF — YOU WERE FEEDING THE TRAP."
+- Guardrails: validate love-need sincerely before disarming; never shame comfort-seeking.
+- Continuity: Receives — energy gone. Hands — reward reassigned; reader sees dessert as self-payment for virtue.
+- Budget: 3,000

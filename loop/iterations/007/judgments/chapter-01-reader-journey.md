@@ -1,0 +1,14 @@
+Reading the rubric and chapter input to produce the judge report.
+PASS
+
+### Reader journey comparison
+
+**The real chapter's movement:** The reader arrives already uneasy about sugar (weight, health, control) and is met with an expansive freedom promise, then pulled through recognition of normalized misery (“sugar addicts eat themselves miserable”), medical/epidemic stakes, and the biscuit-hook confession. Certainty wavers as addiction is named and the Little Monster / Big Monster loop is previewed — relief that the struggle isn’t moral failure, but a trap. The “too good to be true” objection is confronted directly in *Enjoy What You Eat* and *Why It Has To Be Easy*, reframed through the Willpower Method. Fear of sacrifice is disowned; excitement replaces doom. The chapter lands on participation: keep eating as now, keep an open mind, follow all the instructions — reader ends as a enrolled participant, not a convert who has quit yet.
+
+**Our chapter's movement:** The reader arrives skeptical (“too good to be true,” “I’ve tried everything”) and is immediately seen — kitchen at 10.13pm, hidden wrappers, shame — without clinical distance. Recognition deepens through the narrator’s own con-story and the conman pitch (trap, not fool). The justification menu prints their mind back to them; sameness lands as brainwashing, not weakness. Skepticism is answered through Jon’s long-form convert testimony (deliberate sweets-on-desk, wobble, rollercoaster stopped). The rollercoaster section lets the reader self-diagnose the loop. BAD SUGAR is defined; three instructions arrive at the assigned climax; **FOLLOW ALL THE INSTRUCTIONS** peaks in capitals. The reader ends warm, elated, contracted to participate — open mind, no quitting yet, menu installed — ready to turn the page. Movement parallels the real chapter’s trust-and-participation arc with less epidemic scare and no mechanism preview; that shape difference matches the card’s suppressed-demonstration brief and does not weaken the assigned handoff.
+
+## Final verdict
+
+**Assigned transition verdict:** The chapter performs CH-01’s assigned transition. A skeptical, shame-carrying reader is converted to participant: they feel pre-answered resistance (“too good to be true” welcomed, not dismissed), see themselves in the justification menu, accept the no-risk frame, receive all three instructions at the climax, and leave elated and willing to keep eating while reading. The leaving-belief state — open mind, don’t quit yet, begin elated, menu installed — is explicitly contracted and recapped. Compared to the real chapter, ours trades epidemic authority and addiction-mechanism preview for warmer recognition and embedded convert proof; with STRONG alignment that trade is intentional and the end-state matches.
+
+**Largest momentum loss:** NONE

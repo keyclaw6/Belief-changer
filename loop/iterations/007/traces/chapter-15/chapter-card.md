@@ -1,0 +1,13 @@
+**CH-15 — Nature's Guide — How Your Body Wants to Eat**
+- Job: **non-argument — definition | safety | positive authority** — operationalises BAD/GOOD line, installs compass and instruments so freedom is not void; protects clinical boundary
+- Arc: relief valley; positive authority debut.
+- Focus: everyone, especially those confused about fuel and "what do I eat now?"
+- Evidence: E-10 (WHO guidance backdrop), E-14 (body makes glucose — BAD SUGAR not deprivation), E-12 (caries vs healthy diet contrast), E-22 safety frame.
+- Mantras/Tokens: **Debut FT-07, FT-08**; Echo M-05, M-06, FT-03.
+- Instruction: **I-09** (boxed practical-safety advisory here: "If you have diabetes, an eating disorder, or a prescribed therapeutic diet, follow your clinician's plan — this compass never overrides medical guidance.") — delivers RT-01 and HG-01 per §5C.
+- Scenes/Analogies: SA-14 Awe Catalogue (job: install reverence for Nature's Guide), SA-08 Gatecrasher resolved (job: show fresh foods need no company).
+- Devices: evoke awe at how the body handles sweetness naturally; show eating freely without counting is allowed; picture the first fresh-food meal with appetite as guide. **ALL-CAPS peak:** "TRUST NATURE — SHE ALREADY KNOWS."
+- Structural: redefinition operationalised; Raw Test (RT-01) + Hunger Gauge (HG-01) instruments delivered per §5C; margin-for-error seatbelt doctrine delivered; conditional-bonus extensions pointer.
+- Guardrails: define line clearly early (boxed decree repeated), no diet prescription, no calorie counting, no moralizing GOOD foods as "allowed"; keep gain-frame ("eat as much…").
+- Continuity: Receives — all benefit demolitions sealed, identity cleared. Hands — reader has compass + instruments; sweet taste intact via GOOD foods.
+- Budget: 3,000
