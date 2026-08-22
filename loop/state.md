@@ -2,19 +2,15 @@
 
 ## Position
 
-- **Iteration:** 007
-- **Stage:** HYPOTHESIZER — 006 REVERT recorded. Continue through 008.
-- **Status:** IN PROGRESS
+- **Iteration:** 008 (FINAL — recorded)
+- **Stage:** IDLE — campaign 004–008 complete per founder mandate. No iteration 009.
+- **Status:** IDLE
 - **Campaign branch:** `campaign-001`
-- **Last completed unit:** iter-006 REVERT.
-- **Next unit:** hypothesizer 007.
-
-## If you died / were stopped
-
-Resume hypothesizer 007. Stop after 008 recorded.
+- **Last completed unit:** iter-008 REVERT recorded.
+- **Next unit:** none (founder review).
 
 ## Journal
 
-| Time (UTC) | What happened | Next |
+| Time | What | Next |
 |---|---|---|
-| 2026-08-22 | iter-006 REVERT: voice 5/20, persona closed, book-arc FAIL. | hypothesizer 007 |
+| 2026-08-22 | iter-008 REVERT. Campaign 004–008 all REVERT. **STOP.** | IDLE |

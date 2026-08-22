@@ -1,0 +1,13 @@
+**CH-16 — Myths, Half-Truths and Honest Questions**
+- Job: **non-argument — recap | demystify** — quarantines remaining factual disputes and meta-doubt so they don't leak into quit
+- Arc: clean-up; demolition hands off to freedom.
+- Focus: everyone — especially the inner skeptic with lingering what-ifs; voice: "but what about…"
+- Evidence: **E-07 (contested split — present both camps grant binge under intermittent), E-13 (RH contested — keep both truths), E-16 (teen SSB split — honest split), E-04 (mild but well-defined).**
+- Mantras/Tokens: Echo M-06, FT-04, FT-05; Debut none.
+- Instruction: none ( firewall already).
+- Scenes: None new; analogy assignment: none (rapid-fire Q&A is device).
+- Devices: answer each quoted what-if directly in a few sentences; address the meta-doubt "how do I know you're not just replacing one brainwashing with another?" by inviting them to question both sides and test against their own experience. **ALL-CAPS peak:** "QUESTION EVERYTHING — INCLUDING ME."
+- Structural: myths Q&A battery annex + meta-inoculation; quarantine appendix pointer for raw citations.
+- Guardrails: preserve SUPPORTED/MIXED/CONTESTED grades verbatim; never hedge core reframes but hedge contested science honestly; scare disowned.
+- Continuity: Receives — compass installed. Hands — disputes contained; method inoculated.
+- Budget: 2,800

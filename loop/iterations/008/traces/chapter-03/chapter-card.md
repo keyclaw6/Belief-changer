@@ -1,0 +1,19 @@
+**CH-03 — What Is Sugar Actually Doing TO You — Or FOR You?**
+- Job: **enacted transition — reader switches evaluation axis from "does harm outweigh benefit?" to "what benefit at all?"; sees TO ledger dwarf FOR**
+- Entering: Maybe it does harm but it must give me something — treat, comfort, energy.
+- Encounter: Two-column ledger exercise: list what BAD SUGAR does TO body/mood/freedom vs what it genuinely does FOR you.
+- Discovery: refuse harm-vs-benefit debate; demand proof of a genuine benefit using the two-column list.
+- Emotional: Defensive justification → curious audit.
+- Leaving: There is no demonstrated FOR; the TO list is the whole story; next chapters will test each imagined FOR and find it empty.
+- Handed forward: Evaluation criterion is now "prove a genuine benefit" — burden on sugar.
+- Reserved: Each benefit's variable-isolation demolition (Ch4–7).
+- Arc: switch axis.
+- Focus: the daily grazer, the comfort eater, and the afternoon-crash rider who say "but it helps me…"
+- Evidence: E-07 (contested — neither side needed to pass this test), E-10 (WHO ceiling as TO evidence, not scare), E-12 (caries mechanism as TO).
+- Mantras/Tokens: **Debut M-04, FT-04**; Echo M-03, FT-02.
+- Instruction: **I-04**
+- Scenes: SA-14 Awe Catalogue (job: make override feel like vandalism — establishes body's sophistication before industry indictment).
+- Devices: use the two-column list; raise a doubt then answer it directly; state findings as settled truths; close with a stark contrast in one line. **ALL-CAPS peak:** "IT DOES PLENTY TO YOU. IT DOES NOTHING FOR YOU."
+- Guardrails: never concede a single real benefit; no willpower; gain-frame.
+- Continuity: Receives — trap named. Hands — illusion-namer installed; demolition table set.
+- Budget: 2,800

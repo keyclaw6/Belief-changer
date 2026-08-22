@@ -1,0 +1,19 @@
+**CH-14 — "But I'm Just a Sweet-Toothed Person"**
+- Job: **enacted transition — reader stops believing they have an addictive/sweet-tooth identity that dooms them and sees traits as result of trap**
+- Entering: Maybe I'm just a sugar person — sweet tooth, addictive personality, born this way.
+- Encounter: Cause-effect inversion audit + population-scale history (sugar intake curves vs genes unchanged).
+- Discovery: reverse cause and effect — traits shared by heavy users are RESULT of the Sweet Con, not cause; grant even if a sweet tooth were real the method still frees you.
+- Emotional: Resigned identity → liberated recognition (eagle remembers sky).
+- Leaving: Identity excuses collapsed; freedom does not require personality transplant.
+- Handed forward: Last internal excuse removed.
+- Reserved: positive authority (Ch15).
+- Arc: identity-excuse chapter (structural slot).
+- Focus: those who say "I'm just like my mum" and believe they were born this way, including comfort eaters.
+- Evidence: E-07 (contested genetics/personality claim), E-08 (prevalence common — not special defect), E-17.
+- Mantras/Tokens: Echo M-03, M-06, FT-04; Debut none.
+- Instruction: none.
+- Scenes: SA-15 Eagle Raised as Chicken (job: captivity was misinstruction not nature — wings were always intact).
+- Devices: reverse cause and effect; place personal history against population history where intake rose while genes did not; keep the tone neutral — if a sweet tooth truly helped, keeping it would be smart, so look honestly. **ALL-CAPS peak:** "IT'S NOT WHO YOU ARE — IT'S WHAT TRAPPED YOU."
+- Guardrails: do not argue medical genetics as settled; present split honestly; concede gracefully.
+- Continuity: Receives — willpower gone. Hands — identity cleared; ready for compass.
+- Budget: 2,800

@@ -1,0 +1,19 @@
+**CH-09 — The Escape Routes That Keep You Trapped**
+- Job: **enacted transition — reader sees every moderation/delay/substitution rule as trap maintenance, not solution**
+- Entering: Maybe I can just cut down, keep the special ones, quit tomorrow, wean off, swap to "healthier" sugar.
+- Encounter: Running each rule through totality logic + own history: cutting down made each hit more precious; "special" kept belief alive; tomorrow never came.
+- Discovery: show why trying to have a little keeps the desire alive; the cliff image makes moderation look absurd; show forbidden-fruit effect.
+- Emotional: Cunning hope in loophole → clear dismissal; decisiveness.
+- Leaving: Moderation makes BAD SUGAR precious, intensifies illusory relief, guarantees creep; weaning stokes fantasy; quit-tomorrow and special-ones keep Sweet Con alive.
+- Handed forward: Total cessation accepted as only stable state.
+- Reserved: industry indictment (Ch10), strongest scene (Ch11).
+- Arc: close escape routes.
+- Focus: the secret binger and daily grazer who say "I'll just have it on weekends" and "I'll keep birthdays."
+- Evidence: E-05 (intermittent intensifies; cut-down worsens), E-19 (LEU-002 one-bite), E-01/E-15.
+- Mantras/Tokens: Echo M-05, M-06, M-07, FT-02; Debut none.
+- Instruction: **I-06**
+- Scenes: SA-03 Cliff Jump (job: moderate = jump a little), SA-11 Pink Elephant preview (job: suppression vs reframe).
+- Devices: ask questions that shut loopholes as you answer them; quote the future excuse in the reader's own words before it's thought; raise doubt then settle it. **ALL-CAPS peak:** "THERE IS NO MODERATE WAY TO BE TRAPPED."
+- Guardrails: do not moralize slip; do not present willpower taper as alternative; preserve margin-for-error distinction (accidental blip ≠ deliberate special).
+- Continuity: Receives — monsters named. Hands — loopholes closed; ready for widened indictment.
+- Budget: 3,000

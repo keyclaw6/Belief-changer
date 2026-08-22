@@ -1,0 +1,19 @@
+**CH-07 — But Everyone Does It — Isn't It Normal?**
+- Job: **enacted transition — reader stops believing "normal/sociable/everyone does it" justifies BAD SUGAR**
+- Entering: It's sociable, it's normal, dessert is the point of the meal, everyone eats it.
+- Encounter: Audit of "normal" — supermarket aisles, kids' parties, office biscuits — vs historical population sugar curves + non-user's view of same scene.
+- Discovery: show sociability works with any food or none; show "normal" is recently engineered, not natural.
+- Emotional: Conformity comfort → dignified apartness; heroic underdog.
+- Leaving: Social/normal was brainwashing + availability, not benefit; doing it because everyone does is proof of trap scale, not safety.
+- Handed forward: All four classic FORs demolished; reader holds no surviving genuine benefit.
+- Reserved: mechanism formal naming (Ch8), escape routes (Ch9).
+- Arc: final demolition.
+- Focus: the daily grazer who says "everyone does it" and "it's the sociable thing," but touches everyone.
+- Evidence: E-08 (prevalence normalization), E-10 (population exceeds guidance — normal ≠ healthy), E-21.
+- Mantras/Tokens: Echo M-04, M-03; Debut none.
+- Instruction: none.
+- Scenes: SA-06 Boiling Frog (job: "when everyone's sick, no one calls it sick"), SA-09 Bliss-Point Lab teaser (bridge to Ch10).
+- Devices: grant that sociability itself is real elsewhere, then show it doesn't require this substance; ask the plain question that reveals normalized is not natural. **ALL-CAPS peak:** "NORMALISED IS NOT NATURAL."
+- Guardrails: do not attack friends/family; channel anger to system.
+- Continuity: Receives — three FORs gone. Hands — empty FOR column; ready for mechanism.
+- Budget: 2,800

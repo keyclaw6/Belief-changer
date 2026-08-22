@@ -1,0 +1,13 @@
+diff --git i/loop/config.yaml w/loop/config.yaml
+index 4cd42f0..e3c422d 100644
+--- i/loop/config.yaml
++++ w/loop/config.yaml
+@@ -19,7 +19,7 @@
+ # ── Writer — chapter-writer sub-agent (contract: prompts/chapter-writer.md) ──
+ # Muse Spark 1.2 contributor via Vercel AI Gateway; the non-contributor
+ # variant is the coded fallback (PROGRAM §1).
+-writer_model: meta/muse-spark-1.2-contributor
++writer_model: meta/muse-spark-1.2
+ writer_fallback_model: meta/muse-spark-1.2
+ writer_endpoint: https://ai-gateway.vercel.sh/v1/chat/completions
+ writer_auth_env: AI_GATEWAY_API_KEY

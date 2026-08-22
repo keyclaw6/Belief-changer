@@ -65,3 +65,9 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** REVERT
 **Lesson:** trap question 17→3 but voice **1/20** (worse than 006). Belief 20/20; book-arc FAIL. Style-guide surface alone cannot close voice while writer-prompt still names devices and model ignores bans.
 **Next:** 008 final — try `loop/config.yaml` writer model/route (non-contributor fallback or alternate).
+
+### iter-008 — writer non-contributor model (FINAL)
+**Hypothesis:** meta/muse-spark-1.2 primary improves craft-ban adherence vs contributor.
+**Change:** `loop/config.yaml` writer_model → meta/muse-spark-1.2.
+**Verdict:** REVERT
+**Lesson:** Voice 5/20; trap question 17/20. Campaign 004–008 all REVERT on targeted factory gaps. Loop IDLE.

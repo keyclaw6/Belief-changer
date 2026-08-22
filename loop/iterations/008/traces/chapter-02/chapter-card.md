@@ -1,0 +1,21 @@
+**CH-02 — Are You Free?**
+- Job: **enacted transition — the reader stops believing they freely choose sugar and sees they were conned into a trap**
+- Entering belief: I choose sugar because I like it; I could stop if I wanted to; my intake is normal.
+- Encounter: Counting the hidden doses in a "normal" day (drinks, bread, snacks) — then asking plainly why a book would be needed if this were truly free choice.
+- Enacted discovery: see the confidence trick — both sides of the inner tug belong to the same trap.
+- Emotional turn: Unease → exonerated anger (not weak — outgunned).
+- Leaving belief: I was conned on phoney information; the trap removed my choice; being trapped is not shameful and is common.
+- Assumptions handed forward: Choice was engineered; normal = normalized.
+- Work reserved: TO/FOR evaluation (Ch3), benefit demolitions (Ch4–7), mechanism detail (Ch8).
+- Arc: dissolve choice & complacency.
+- Focus: the daily grazer who insists "I don't keep it in the house" and "everyone eats it," with the secret binger alongside.
+- Evidence: E-08 (prevalence ~14% — not uniquely weak), E-05 (schedule echo), E-21.
+- Mantras/Tokens: **Debut M-03, FT-01, FT-02, FT-06** (FT-04 1×); Echo M-01.
+- Instruction: none — I-01 through I-03 remain anchored in Ch1 per §5B.
+- Scenes: SA-01 Conman's Pitch (job: dissolve choice without blame), SA-06 Boiling Frog (job: normalize harm at scale — "when everyone's foggy, no one calls it fog").
+- Devices: ask the disarming question about needing help if choice were free; echo the reader's own everyday phrases back to them; hint that the relief they feel may be relief from discomfort the habit created. **ALL-CAPS peak:** "YOU WERE CONNED — YOU DID NOT CHOOSE THIS."
+- Scare-then-disown: No (validation only).
+- Structural: Tug-of-War naming; societal normalisation.
+- Guardrails: wound+bandage same breath; blame method/trap never reader; no scare-close.
+- Continuity: Receives — open-minded, deferred-quit agreement. Hands — trap named; reader sees choice as confidence trick.
+- Budget: 3,000
