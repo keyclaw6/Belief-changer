@@ -44,3 +44,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** REVERT
 **Lesson:** Scene debut-once closed the named A01 C03→C07 double full stage, but book-arc still FAIL on the same re-argument class mutated (FM completes inversion early; A-07 vault-safe doubled FM→C01; mantra/token pre-debut; C16 encyclopaedic re-litigation). Third consecutive plan-skill REVERT on this class (002, 003, 004) — **PIVOT** off plan-skill for re-argument. Voice still 3/21 PASS; writer-prompt Binding craft remains the unpaid voice target.
 **Next direction:** Pivot to `prompts/chapter-writer.md` Binding chapter craft (execute-silently / ban speakable craft diction) OR a non-plan-skill approach. Do not repeat 002–004 plan-skill re-argument wording.
+
+### iter-005 — Binding craft silent-execution
+**Hypothesis:** Make craft execute silently in `prompts/chapter-writer.md` — delete speakable craft diction (trap question, killer-line, argue-to-compress, future-pacing, persona codes) to close voice Cluster 6 after plan-skill 3-strike pivot.
+**Change:** Three hunks in `prompts/chapter-writer.md` (Method and voice + Binding bullets 2 and 7). Research+plan reused; 18 chapters rewritten on Muse Spark. Judges: composer-2.5.
+**Verdict:** REVERT
+**Lesson:** Voice **0/18 PASS** — regression from 004 (3/21). Some literal craft-label leaks reduced but factory scaffolding, research-register, persona codes, and meta-commentary persist or worsen. Silent-execution ban did not change model behavior enough; voice Cluster 6 unpaid. Book-arc still FAIL (mantra echoes, repeated scenes).
+**Next direction:** Do not repeat 005 wording. Try style-guide voice constraints, plan-reviewer gate, loop/config model route, or a non-writer surface. Continue 006–008.

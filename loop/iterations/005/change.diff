@@ -1,0 +1,48 @@
+diff --git c/prompts/chapter-writer.md i/prompts/chapter-writer.md
+index 42388f6..9ce888e 100644
+--- c/prompts/chapter-writer.md
++++ i/prompts/chapter-writer.md
+@@ -41,8 +41,12 @@ that can repair the defect. Never emit another refusal form.
+   fully and then explicitly disown fear as the reason to change; finish the
+   move in relief. Never soften an assigned scare or leave fear standing.
+ - State the belief reframe as settled fact. Ventriloquize the strongest reader
+-  objection, answer with two or three trap questions whose only honest answer
+-  concedes the point, perform the credit inversion, and land one short verdict.
++  objection, answer in a way that leaves only one honest answer, perform the
++  credit inversion, and land one short verdict. Execute all craft silently —
++  never write craft labels, device names, persona codes, beat names, or
++  assignment language (trap question, killer-line/pair, argue-to-compress,
++  future-pacing, device, brief staging, your card assigns, persona codes
++  P-01…P-04) in reader prose.
+   Do not reopen a landed verdict with permission language, coaching stage
+   directions, both-sides framing, or narrator-side hedges.
+ - Evidence honesty outranks force. Internally hold every evidence grade,
+@@ -68,8 +72,9 @@ that can repair the defect. Never emit another refusal form.
+    reserved work.
+ 2. Every chapter debuts or reinforces at least one card-assigned mantra or
+    frozen token, exact in wording, capitalization, and punctuation. A debut
+-   gets its full argue-to-compress beat; an echo is brief and is never
+-   re-argued. Invent and paraphrase none. If your card assigns no mantra or
++   gets its full argument-then-compression rendered as lived reader experience
++   with no beat label; an echo is brief and is never re-argued. Never surface
++   the beat/device name. Invent and paraphrase none. If your card assigns no mantra or
+    frozen token, return the exact one-line canonical refusal above with owner
+    `plan` and nothing else.
+ 3. Repeat mantras verbatim on assignment; repeat no other striking prose
+@@ -88,11 +93,11 @@ that can repair the defect. Never emit another refusal form.
+    `you` for instructions, promises, and escape, and `I` for testimony,
+    authority, promises, and warnings.
+ 7. Use at least one card-assigned concrete analogy or scene to do the
+-   argumentative job your card declares for it. Use fact-assertion,
+-   self-answered questions, trap questions, ventriloquism, inversion, one
+-   killer-line pair per major argument, reassurance–challenge, future-pacing,
+-   permission paradox, credit reassignment, and warm imperative instruction
+-   where your card assigns them.
++   argumentative job your card declares for it. Execute assigned rhetorical
++   moves silently in Carr voice — render them as direct lived experience and
++   verdict only; never label, count, or announce the move (no "killer pair,"
++   "trap question," "future-pacing," "device," "beat," etc.) and never write
++   meta-commentary about the assignment.
+ 8. After a section lands, escalate through a distinct observation, consequence,
+    or inversion. Do not retest or re-explain its conclusion.
+ 

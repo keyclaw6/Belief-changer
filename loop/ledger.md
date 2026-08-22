@@ -125,3 +125,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Scene debut-once closed the named A01 C03→C07 double full stage, but book-arc still FAIL on the same re-argument class mutated (FM completes inversion early; A-07 vault-safe doubled FM→C01; mantra/token pre-debut; C16 encyclopaedic re-litigation). Third consecutive plan-skill REVERT on this class (002, 003, 004) — **PIVOT** off plan-skill for re-argument. Voice still 3/21 PASS; writer-prompt Binding craft remains the unpaid voice target.
 
 **What this opens next.** Pivot to writer-prompt Binding craft silence for iter-005 (voice unpaid across 000–004). Do not start another plan-skill re-argument patch. Continue through 008 then stop.
+
+### iter-005 — Binding craft silent-execution  ·  2026-08-22  ·  REVERT
+
+**Hypothesis.** If chapter-writer Binding craft forbids speakable craft labels and requires silent execution, voice Cluster 6 closes and voice-emotion PASS rises.
+
+**Change.** Three hunks in `prompts/chapter-writer.md`. Writer-only; campaign plan+research reused. 18 chapters Muse Spark. Panel composer-2.5.
+
+**What happened.** Voice 0/18 FAIL (worse than 004). Belief 17/18; reader 13/18; book-arc FAIL. Some literal label leaks down; trap-question/persona-code scaffolding persists. Trace: Cluster 6 regressed, not closed.
+
+**Verdict & why.** REVERT. Owning voice-emotion still FAIL. Factory change not promoted.
+
+**What we learned.** Silent-execution writer patch insufficient for Muse Spark voice lane; factory speech class persists across 5 iterations.
+
+**What this opens next.** Style-guide, plan-reviewer, config/model, or arc mechanism — not another 005 repeat. Continue through 008.

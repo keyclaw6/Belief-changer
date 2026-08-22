@@ -1,0 +1,14 @@
+I'll read the rubric and the chapter 17 input, then judge against it.
+PASS
+
+### Reader journey comparison
+
+**The real chapter's movement:** The reader enters already free and is congratulated — relief and pride land immediately (“Congratulations! You’ve done it!”). Death throes are reframed as comedy and proof (DO NOTHING), not threat. Down days are normalized without reopening doubt. Then the chapter widens: genuine pleasures return (social life, work, walks, assertiveness), and practical eating guidance makes freedom feel livable and abundant — fruit breakfast, shopping joy, primary/secondary foods, no sacrifice. The reader ends buzzing: in control, free, life genuinely richer, not hollow.
+
+**Our chapter's movement:** The reader enters from C16’s landed freedom but still hears the flat-future voice and social-hardness prediction — strong recognition. The opening confronts that prediction against lived days since the vow and turns spike-crash “noise” into baseline quiet; pride and **FANTASTIC! I'M FREE FROM SUGAR!** land early. Party, aisle, and stress scenes enact “change nothing else” and deliver pity-don’t-envy and glide-past ease. Energy and Nature’s Guide sections shift into instruction and evidence (steadiness, mood study, raw test, gauge, primary/secondary foods) — trust consolidates but excitement thins. Pet rocks meets identity void (P-03) and future-paces ordinary revelation. “Live it, don’t preach it” resolves the evangelize urge and closes on sweeter taste, steadier energy, quieter mind, freedom as ordinary — the assigned leaving state. Movement matches the card’s arc; the real chapter’s immediate celebration and pleasure-catalog breadth are thinner, but under PARTIAL alignment that is not a journey failure when the enacted proof and landing still land.
+
+## Final verdict
+
+**Assigned transition verdict:** The chapter moves the reader from C16’s handed-forward states — flat future, hard social contexts, urge to warn others — into the card’s leaving belief. Flatness is confronted and inverted (quiet ≠ empty; baseline ≠ loss). Party, aisle, and stress are inhabited without avoidance; pity-don’t-envy and visible ease are enacted, not merely named. Taste recovery, energy steadiness, pet-rock identity lightness, don’t-evangelize, and the ordinary Thursday revelation stack proof that life is sweeter and freedom is ordinary. The reader is ready for C18’s checklist without that work being prematurely resolved.
+
+**Largest momentum loss:** NONE — repetition with C16 in the party/aisle passages and instructional density in the energy/Nature’s Guide middle briefly slow the emotional climb from deprivation anticipation to quiet excitement, but the chapter does not stall, reverse, or fail to land the assigned leaving state; the closing sections recover and complete the transition.
