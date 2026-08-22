@@ -1,0 +1,13 @@
+**CH-17 — Seeing Is Believing — Homework + Are You Ready?**
+- Job: **non-argument — bridge | knowledge/readiness gate** — enacts belief in body and tests readiness before ritual
+- Arc: anticipation; readiness gate.
+- Focus: everyone at the readiness threshold; voice: "am I ready?"
+- Evidence: E-15 (hump timeline for homework expectation), E-17 (cue test).
+- Mantras/Tokens: Echo M-05, M-07, FT-03, FT-07; Debut none.
+- Instruction: **no new instruction; readiness gate** — "By now you should be champing at the bit — if not, re-read Ch8, Ch10, Ch11."
+- Scenes/Analogies: SA-02/07/10 as **perception homework** — (1) sensory immersion in genuine pleasure (fresh food), (2) falsification test on illusory one (isolate BAD SUGAR hit), (3) audit exercise; 1–3 physical exercises enacted.
+- Devices: picture proving this to themselves through direct test; close the permission to continue as they are; set tasks they do themselves; end the gate with a stark choice. **ALL-CAPS peak:** "PROVE IT TO YOURSELF — THEN COME FREE."
+- Structural: perception homework; pre-endgame knowledge recap teased (full litany in Ch18 opener).
+- Guardrails: homework is enactment, not willpower test; no avoidance framing ("change nothing else").
+- Continuity: Receives — myths quarantined. Hands — reader has enacted proof; gate decides ritual entry.
+- Budget: 3,000

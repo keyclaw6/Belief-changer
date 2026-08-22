@@ -1,0 +1,21 @@
+**CH-10 — Who Built This Trap — And Why You Were Never Meant to Escape It**
+- Job: **enacted transition — reader reassigns blame from self to engineered manufacture of desire and sees continuing as ongoing cost**
+- Entering: If it's this empty, why did I fall for it so hard and why does it feel so hard to leave?
+- Encounter: Walk through bliss-point lab, supermarket aisle engineering, advertising to children, budget math: lifetime money + hours + "every single day forever for something you don't even need."
+- Discovery: show desire was manufactured and quantify the ongoing cost of staying — the painful sacrifice is to continue.
+- Emotional: Shame → anger at deceiver + awe at body's resilience + pride as underdog.
+- Leaving: Desire was installed by "armies of scientists weaponizing abundance"; staying is the painful ongoing sacrifice; sugar industry is only true beneficiary.
+- Handed forward: External villain installed; reader dignified; TO ledger now includes engineered intent.
+- Reserved: strongest scene (Ch11).
+- Arc: widen indictment.
+- Focus: everyone — framed as the underdog facing an engineered system.
+- Evidence: **E-10, E-11, E-12 — deliver at full Carr force then disown**; E-09.
+- Mantras/Tokens: Echo M-03, FT-01; Debut none.
+- Instruction: none (but echo FT-03).
+- Scenes: SA-09 Bliss-Point Lab (job: name villain + mechanism), SA-14 Awe Catalogue (job: reverence makes vandalism feel wrong), SA-10 Rollercoaster cost tally (job: make continuing feel burden).
+- Devices: evoke awe at the body's sophistication; add up lifetime money and hours spent; invite pity not envy for those still caught; state the hard facts plainly at full weight before putting fear aside. **ALL-CAPS peak:** "THEY PROFIT. YOU PAY — FOR THE REST OF YOUR LIFE."
+- Scare-then-disown: **YES — deliver heart/stroke, decay, mood stakes flat as settled fact, then explicitly: "I don't want you to quit out of fear — see it, then put it behind you; joy is the mover."**
+- Structural: manufacture-of-desire deepening; re-codes symptoms as protection warnings.
+- Guardrails: wound+bandage same breath; cite as "The fact is…" not literature review; quarantine raw citations to appendix; never moralize reader.
+- Continuity: Receives — loopholes closed. Hands — anger relocated to trap; reader ready to meet best case without defensiveness.
+- Budget: 3,200

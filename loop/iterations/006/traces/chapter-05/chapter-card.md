@@ -1,0 +1,20 @@
+**CH-05 — Does It Give You Energy?**
+- Job: **enacted transition — reader stops believing BAD SUGAR gives real energy/focus and sees it creates the tiredness it relieves**
+- Entering: I need sugar to function, to get through the afternoon, to concentrate.
+- Encounter: Mapping own afternoon: dose → brief lift → heavier fog/drain → next dose → evening regret.
+- Discovery: show cause and effect reversed — the lift is the surge itself and the same surge drives the dip; compare with children's or fresh-food days as baseline.
+- Emotional: Tired dependence → clear-eyed relief ("it's the other way around").
+- Leaving: Energy was loan at high interest; sugar creates tiredness/fog it then briefly relieves; never beats non-user baseline.
+- Handed forward: Energy removed from FOR; inversion thesis installed.
+- Reserved: reward (Ch6), social (Ch7), full mechanism naming (Ch8).
+- Arc: core demolition for the afternoon-crash rider.
+- Focus: the afternoon-crash rider who says "I need it to get through" and "3pm crash," with the daily grazer alongside.
+- Evidence: **E-13 (reactive hypoglycemia — lift IS insulin; after-dip real but clinical low rare), E-11 (deferred load), E-14 (glucose not essential — body makes it), E-18 (LEU-001 lift-crash loop).**
+- Mantras/Tokens: Echo M-04, FT-01, FT-09; Debut none.
+- Instruction: none.
+- Scenes: SA-10 Rollercoaster (job: embody lift-crash queue), SA-14 Awe Catalogue fragment (job: body's own steady glucose vs crude flood).
+- Devices: show cause and effect reversed; state the body's workings as settled fact; ask whether they needed this for energy as a child. **ALL-CAPS peak:** "IT'S THE OTHER WAY AROUND."
+- Scare-then-disown: No.
+- Guardrails: preserve E-13 limits — everyday slumps not clinical hypoglycemia; no diagnosis; do not promise instant super-energy.
+- Continuity: Receives — taste gone. Hands — energy inversion proven.
+- Budget: 3,000

@@ -51,3 +51,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** REVERT
 **Lesson:** Voice **0/18 PASS** — regression from 004 (3/21). Some literal craft-label leaks reduced but factory scaffolding, research-register, persona codes, and meta-commentary persist or worsen. Silent-execution ban did not change model behavior enough; voice Cluster 6 unpaid. Book-arc still FAIL (mantra echoes, repeated scenes).
 **Next direction:** Do not repeat 005 wording. Try style-guide voice constraints, plan-reviewer gate, loop/config model route, or a non-writer surface. Continue 006–008.
+
+### iter-006 — Speakable Card Sanitization gate
+**Hypothesis:** plan-reviewer Gate 4 strips speakable craft/persona literals from compact cards before generation, closing voice Cluster 6 + persona Cluster 3.
+**Change:** `prompts/master-plan-reviewer-v2.md` Gate 4. New 20-chapter plan (3 review rounds); full rewrite Muse Spark. Judges composer-2.5.
+**Verdict:** REVERT
+**Lesson:** Persona P-xx codes eliminated from prose; voice rose 0/18→5/20 but still 14 FAIL; trap-question phrasing persists in 17 chapters; book-arc FAIL on arc-timing/re-litigation. Reviewer gate improved cards but did not close owning voice class.
+**Next direction:** style-guide, writer route in config, or combined surface — not another Gate 4 repeat. Continue 007–008.

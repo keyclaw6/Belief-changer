@@ -1,0 +1,13 @@
+**CH-01 — So Sweet, So Stuck — An Invitation**
+- Job: **non-argument — bridge | trust + participation** — converts audience to participant; establishes easy expectation and no-risk frame; resolves objection "this sounds too good to be true / another diet."
+- Arc: Front matter trust; freedom promise front-loaded; demonstration suppressed.
+- Focus: everyone, especially the daily grazer who is skeptical and the secret binger who feels shame; reader voice: "I've tried everything" + "too good to be true."
+- Evidence: E-22 (freedom testimonies — embedded long-form testimonial "In his own words — [name]" with numbers/sensory detail + authority-conflict arc; honest wobble), E-21 (justification menu printed verbatim as quoted list).
+- Mantras/Tokens: **Debut M-01, M-02, FT-03, FT-05, FT-08**; Echo none (debut chapter).
+- Instruction: **I-01, I-02, I-03** (three at entry per B6/B10 front-matter contract; all later recapped).
+- Scenes/Analogies: SA-01 Conman's Pitch (trust, voice skepticism first — job: make resistance feel pre-answered), SA-10 Rollercoaster (name loop — job: let reader self-diagnose).
+- Devices: speak in settled plain statements; raise the reader's own skeptical question then answer it straight away; print their own quoted reasons back to them; invite them to keep eating exactly as now while reading; picture the coming moment when this clicks; alternate warm reassurance and clear challenge. **ALL-CAPS peak:** "FOLLOW ALL THE INSTRUCTIONS." Recap licensing: IN THIS CHAPTER + SUMMARY bullets licensed.
+- Structural: authority dossier + scale of method + skeptical-convert narrator + justification menu + instructions 1–3 + BAD SUGAR boxed decree preview.
+- Guardrails: warm to person/harsh to trap; no willpower language; no moralising; original prose; do not pre-demolish benefits (table-of-contents only); medical safety pointer in front matter.
+- Continuity: Receives — style guide only. Hands forward — reader has agreed to keep open mind, not quit yet, begin elated; justification menu installed. Reserved — all demolitions (Ch4–Ch7), mechanism (Ch8).
+- Budget: 3,000

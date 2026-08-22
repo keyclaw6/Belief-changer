@@ -1,0 +1,18 @@
+diff --git i/prompts/master-plan-reviewer-v2.md w/prompts/master-plan-reviewer-v2.md
+index d434e5b..ebd1d71 100644
+--- i/prompts/master-plan-reviewer-v2.md
++++ w/prompts/master-plan-reviewer-v2.md
+@@ -77,6 +77,13 @@ The plan must preserve one coherent belief-change spine, deliberate repetition,
+ instructions, qualitative curves, and exact positive chapter budgets whose sum
+ matches the plan total. Ordering preference alone is not a blocker.
+ 
++### Gate 4 — Speakable Card Sanitization (BINDING — REJECT & REWRITE)
++
++No Compact chapter card may contain reader-facing factory vocabulary. REJECT the plan if any card field (`devices`, `enacted discovery`, `encounter`, `personas`, `mantra`, `budget`, `scene` label) contains speakable craft/persona/template literals. Forbidden literals (case-insensitive, any hyphen/spacing/verb form): `trap question`, `killer-line`, `killer pair`, `killer-line pair`, `future-pac`, `fact-assertion`, `pronoun triangle`, `P-01` / `P-02` / `P-03` / `P-04`, `Warm rationale:`, `2–6 sentence`, `delivery budget`, `argue-to-compress`, `chapter verdict`.
++- Replace with behavioral, experiential instruction that executes invisibly. Examples: instead of `devices: trap question` write `open with a present-tense lived moment where the reader catches themselves hiding/managing sugar and feels the trap without naming it`; instead of `personas: P-02` write `personas: the member who says "I don't keep it in the house" (never use P-xx ID)`.
++- Persona/encounter fields may use only anonymous human handles (`the 3pm-desk parent`, `the evening grazer`), never `P-xx` IDs. If an `encounter:` line contains an ID, rewrite to handle and remove ID.
++- Do not copy this gate's forbidden list into reader prose. Do not surface the gate name. After rewrite, re-validate card still delivers job with Carr register.
++
+ ## Finding format
+ 
+ For every field in the return contract, write exactly one of:

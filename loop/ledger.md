@@ -139,3 +139,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Silent-execution writer patch insufficient for Muse Spark voice lane; factory speech class persists across 5 iterations.
 
 **What this opens next.** Style-guide, plan-reviewer, config/model, or arc mechanism — not another 005 repeat. Continue through 008.
+
+### iter-006 — Speakable Card Sanitization  ·  2026-08-22  ·  REVERT
+
+**Hypothesis.** If plan-reviewer Gate 4 forbids speakable craft/persona literals on cards, voice Cluster 6 and persona Cluster 3 close before generation.
+
+**Change.** Gate 4 in `master-plan-reviewer-v2.md`. New 20-chapter plan; full book. Panel composer-2.5.
+
+**What happened.** Persona codes gone; voice 5/20 PASS (up from 0/18); belief 20/20; reader 18/20; book-arc FAIL; trap question in 17 chapters.
+
+**Verdict & why.** REVERT. Owning voice still majority FAIL; book-arc FAIL. Partial win on persona only.
+
+**What we learned.** Upstream card sanitization helps persona leaks but not trap-question factory speech or arc curve.
+
+**What this opens next.** style-guide or config route for 007. Finish 008 then stop.

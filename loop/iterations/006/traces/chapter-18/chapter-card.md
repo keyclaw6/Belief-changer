@@ -1,0 +1,13 @@
+**CH-18 — The Final Dose — Your Escape Ritual**
+- Job: **non-argument — bridge | chosen threshold** — stages celebratory final act, confers instant identity, predicts moment of revelation
+- Arc: freedom detonation; staged ritual.
+- Focus: everyone.
+- Evidence: E-15 (hump will pass), E-22 (self-change), FT-08 claim block requoted in ALL-CAPS.
+- Mantras/Tokens: **Debut M-08, echo M-01, M-02, FT-02, FT-08** (claim block in CAPS at pre-quit pivot); Echo M-05.
+- Instruction: **I-10, I-11** — solemn vow with visualisation + instant conferral ("CONGRATULATIONS! YOU'VE WON!").
+- Scenes/Analogies: SA-12 Friend vs Enemy Funeral (job: choose celebration emotion now) + "expect the unexpected" pre-load (fix vivid disgust now while memory holds, so later faded memory doesn't reopen decision) + **meaningless-days demolition** ("no New Year's — STOP NOW").
+- Devices: deliver the vow in clear commanding voice; picture the quiet afternoon that passes without a thought of the substance; focus attention on cloy, stick and letdown; make hope concrete with real testimony detail. **ALL-CAPS peaks:** "CONGRATULATIONS! YOU'VE WON!" + "YOU ARE FREE — NOW."
+- Structural: quit ritual; pre-endgame knowledge recap litany ("You know that…") as opening of this chapter; gate re-checked.
+- Guardrails: gain-frame throughout; no mourning; ban substitutes/ "instead"; police phrasing ("Great, I'll have…").
+- Continuity: Receives — readiness affirmed. Hands — free identity conferred at finish of dose; moves to relapse-proof.
+- Budget: 3,200

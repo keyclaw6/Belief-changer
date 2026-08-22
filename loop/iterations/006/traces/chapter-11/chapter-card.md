@@ -1,0 +1,19 @@
+**CH-11 — The Sweetest Scene — Met Head-On**
+- Job: **enacted transition — reader experiences the most seductive sugar memory (cinema sofa / shared cake) stripped of BAD SUGAR and finds it sweeter without it**
+- Entering: Yes but THAT moment — the film + chocolate, the birthday cake with people I love — surely that is genuine?
+- Encounter: Guided credit-reassignment through the scene beat by beat: light, warmth, laughter, rest, company — then remove BAD SUGAR and replay; plus hands-on Table exercise measuring identical sweetness illusions.
+- Discovery: move every drop of pleasure to people/place/rest and show felt certainty can be wrong through a hands-on illusion.
+- Emotional: Tender nostalgia → delighted disillusionment.
+- Leaving: Even the strongest case collapses; no FOR remains; perception itself is untrustworthy on this topic.
+- Handed forward: Demolition complete; no benefit survives.
+- Reserved: fear collapse (Ch12), willpower attack (Ch13).
+- Arc: strongest case, late per B6.
+- Focus: the comfort eater most, but everyone who holds a cherished sweet scene; voice: "but the cinema chocolate / birthday cake…"
+- Evidence: E-20 (reward scene), E-17 (cue fires before bite — explains why scene feels sweet before taste), E-21.
+- Mantras/Tokens: Echo M-04, FT-10, FT-09; Debut none.
+- Instruction: none.
+- Scenes: SA-07 Two Tables (job: hands-on proof perception lies — taste strip + raw vs junk demo), SA-04/10 reprise as credit strip (job: reassign every drop of pleasure).
+- Devices: walk through the cherished scene and move every drop of pleasure to people, place and rest; picture that same scene without the substance and sweeter; close with a sharp contrast; echo the tender memory in their own phrasing. **ALL-CAPS peak:** "IT WAS ONLY EVER SNEAKING A RIDE."
+- Guardrails: meet strongest case head-on, fully; do not concede "one real pleasure"; keep tone warm not cold.
+- Continuity: Receives — indictment widened. Hands — total demolition sealed with hands-on proof.
+- Budget: 3,000

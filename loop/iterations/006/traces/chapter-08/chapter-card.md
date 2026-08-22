@@ -1,0 +1,21 @@
+**CH-08 — The Truth: How the Trap Really Works**
+- Job: **enacted transition — reader acquires complete inversion model: the lift IS relief from the low BAD SUGAR created; trivial physical whisper vs dominant belief; re-labels body**
+- Entering: I see benefits are illusory but why do I still crave? Something must be wrong with me.
+- Encounter: Timeline of addiction: first exposure on false info → faint whisper → belief interprets whisper as "need treat/lift" → next dose → guaranteed low → loop.
+- Discovery: deliver the inversion — the rescuer is the perpetrator — and split the mechanism into a trivial physical whisper and the belief that feeds it, with a canonical sensory label.
+- Emotional: Self-blame → awe + contempt for trap + relief that physical part is tiny.
+- Leaving: Craving = mild empty restless whisper (Nibbler dying) + brainwashed belief (Sweet Con); kill Sweet Con, Nibbler starves; never beats baseline.
+- Handed forward: Vocabulary for all later chapters; totality logic ready.
+- Reserved: escape routes (Ch9), industry widening (Ch10).
+- Arc: hinge.
+- Focus: everyone, especially the secret binger and afternoon-crash rider who wonder "why do I crave then?"
+- Evidence: **E-01, E-02, E-03, E-04 (mild but well-defined), E-05 (schedule), E-06 (cue circuits), E-15 (2–5 day hump — starvation timeline), E-17 (blunting/cue).**
+- Mantras/Tokens: **Debut M-05, M-06, M-07, FT-04 heavy, FT-03**; Echo M-03, M-04, FT-09.
+- Instruction: **I-05**
+- Scenes: SA-02 Tight Shoes (job: inversion flagship), SA-04 Lifeguard (job: rescuer-as-perpetrator compression), SA-13 100 Power Cords (job: why partial unplugging fails — sets up totality).
+- Devices: state findings as settled truths; show the lift is the low leaving; close with stark contrast; alternate reassurance and challenge; picture life shortly after freedom beds in. **ALL-CAPS peak:** "THE LIFT IS THE LOW LEAVING."
+- Scare-then-disown: No (mechanism, not scare).
+- Structural: mechanism hinge; sensory definition; splits trivial physical vs dominant belief.
+- Guardrails: keep physical component small/trivial; deliver E-04 "mild but well-defined" to de-escalate fear; never call reader diseased; ALL-CAPS verdict only after build.
+- Continuity: Receives — empty FOR column. Hands — named monsters, sensory label, inversion installed.
+- Budget: 3,500

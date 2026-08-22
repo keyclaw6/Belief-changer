@@ -1,0 +1,16 @@
+Reading the rubric and chapter input to produce the judge report.
+PASS
+
+### Reader journey comparison
+
+**The real chapter's movement:** The reader arrives still hoping substitutes (artificial sweeteners, nicotine-replacement-style workarounds) might ease quitting without real loss. Carr names the substitute theory, walks the NRT parallel, and the reader recognizes their own rationales in the “habit plus physical withdrawal” story. Confrontation lands in two blows: it is addiction, not habit; the physical piece is tiny and the mental monster is what keeps them reaching. The turn inverts substitutes from help to deeper trap — maintenance, not escape — and the sacrifice illusion is named directly. Relief builds through the tight-shoes analogy and the closing question — why intensify sweetness at all? — answered with one reason: addiction. The chapter ends fired up and simplified: quit is the only alternative; substitutes consign you to slavery.
+
+**Our chapter's movement:** The reader enters with the compass already installed (line, instruments, Nature’s Guide) but still carrying side-door “but what about…” doubts that could postpone freedom. Recognition opens immediately — “We were that reader too” who wanted every loose end tied — and the frame is set: quarantine, not win science. Each quoted what-if gets a short, direct answer. The reader moves through contested addiction science (both camps, behaviour-level trap), crash/hypoglycemia (both truths held), teen soda split (honest inconclusive), and cravings-not-mild (whisper small, amplifier huge). Trust consolidates rather than intensifies — appropriate for a recap/demystify beat. The meta-doubt section is the chapter’s turn: “QUESTION EVERYTHING — INCLUDING ME” invites testing both brainwashings against lived experience (Raw Test, moderation history, gatecrasher logic). Relief lands as clarity, not fear. The closing section bottles disputes into appendix quarantine and forbids using unsettled questions as permission slips. The reader ends lighter: disputes contained, method inoculated, “You know enough” — ready for freedom without needing lab verdicts first.
+
+Movement aligns with the assigned card more than with the reference chapter’s substitute-demolition shape — expected under PARTIAL alignment. Function matches: lingering objections are drained of veto power over quitting. No material stall, reversal, or failure to hand off the leaving belief.
+
+## Final verdict
+
+**Assigned transition verdict:** The reader moves from “compass installed but what-ifs might still leak” to “disputes contained; method inoculated.” The opening receives Ch 15’s handed-forward state cleanly — compass, line, two instruments — without re-arguing identity or trap mechanics. The Q&A battery performs the quarantine job: each doubt is answered plainly, hedged honestly on contested science, and returned to the reader’s own history as the decisive evidence. Meta-inoculation lands at the right climax with the assigned ALL-CAPS peak verbatim, followed by bilateral testing that deepens trust instead of demanding faith. The chapter ends in the correct leaving state: myths boxed, appendix pointed, belief guarded, no permission-slip postponement — freedom can proceed.
+
+**Largest momentum loss:** NONE

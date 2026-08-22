@@ -1,0 +1,19 @@
+**CH-04 — Does It Even Taste That Good?**
+- Job: **enacted transition — reader stops believing BAD SUGAR is a genuine taste pleasure**
+- Entering: I love the taste; sweet things are delicious pleasures.
+- Encounter: Audit of actual taste: masking bad coffee with sugar, lonely carbs needing spread, cloy/stick/oversweet that needs water.
+- Discovery: isolate the sugar taste itself; show the lonely carb needs company to be enjoyed.
+- Emotional: Mouth-watering memory → faint disgust / amusement at gatecrasher.
+- Leaving: Taste pleasure was mostly sensation/texture/occasion; BAD SUGAR masked or borrowed flavour; the "pleasure" is not an irreplaceable taste benefit.
+- Handed forward: Taste removed from FOR column; proves isolate-the-variable method.
+- Reserved: energy (Ch5), reward (Ch6), social (Ch7) demolitions.
+- Arc: first demolition (easiest win).
+- Focus: the secret binger and the daily grazer who say "but I love the taste."
+- Evidence: E-21 (carbs are lonely dialect), E-17 (cue hyper-reactivity — wrappers make mouth water before taste).
+- Mantras/Tokens: Echo M-04, FT-10; Debut none.
+- Instruction: none.
+- Scenes: SA-08 Gatecrasher (job: isolate variable — lonely carb needs jam/cheese), SA-02 Tight Shoes (brief foreshadow — job: preview inversion).
+- Devices: echo "I love the taste" in their words then answer; use a scene that moves credit for pleasure away from the substance; end with a sharp either/or. **ALL-CAPS peak:** "IT WAS NEVER THE TASTE."
+- Guardrails: acknowledge sweet taste exists but reassign; do not claim all food tasteless without sugar.
+- Continuity: Receives — TO/FOR ledger. Hands — one FOR crossed off; method proven.
+- Budget: 2,800
