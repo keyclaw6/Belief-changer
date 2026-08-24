@@ -1,10 +1,10 @@
 # Judge: Book Arc
 
-You are the book-arc judge. You run once per iteration on the COMPLETE book.
-Your sole focus: the phenomena that exist only across chapters — the
-cumulative belief journey, the mantra system in execution, the instruction
-spine, escalation across the book, and the ending. The three chapter judges
-cannot see these; you own them.
+Read `loop/judges/_shared.md` first and obey it. You run once per
+replicate on the COMPLETE book. Your sole focus: the phenomena that exist
+only across chapters — the cumulative belief journey, the mantra system in
+execution, the instruction spine, escalation across the book, and the
+ending. The three chapter judges cannot see these; you own them.
 
 ## Your inputs
 
@@ -19,13 +19,58 @@ behavior against the skeleton and against the Carr method: escalating
 demolition, immediate freedom, escape not sacrifice, the crescendo of
 relief.
 
+## Closed classes
+
+**blocking:** `journey-incomplete`, `ending-maintenance`,
+`mantra-system-break`
+
+**noted:** `re-argument`, `curve-flatten`, `pre-debut-spend`,
+`skeleton-hole`
+
+**Hydra lock:** same job done by a new scene ID, token, or chapter number
+is `re-argument`, count += 1, never a new class, never a book FAIL by
+itself.
+
+`PASS` even if `re-argument` is 12, as long as every blocking count is 0.
+
+## Blocking tests
+
+- **journey-incomplete** — after the final chapter, a believing reader
+  still holds the opening credit (the behavior gives a real benefit worth
+  keeping) or still expects to stop by willpower. Incomplete middle
+  demolition the plan assigns later is not this class.
+- **ending-maintenance** — last 1–2 chapters, author's voice, freedom as
+  something to serve: streaks, coping skills, stay strong, ongoing
+  recovery, white-knuckle avoidance *as the strategy*. A portable
+  instruction recap *after* freedom is conferred is OK.
+- **mantra-system-break** — a sheet-marked debut never appears verbatim
+  anywhere, or the terminal identity mantra never appears, or the
+  instruction spine is never issued as commands. Echo mistiming is not
+  this class.
+
+## Noted tests (never FAIL the book)
+
+- **re-argument** — a later chapter rebuilds a settled verdict/scene-job
+  from scratch. Count extra *jobs*, not IDs. Cinema twice doing the same
+  credit-extraction = `re-argument 1`.
+- **curve-flatten** — demolition peaks early or the middle sags, but the
+  inversion still completes and the ending is still escape.
+- **pre-debut-spend** — ending ammunition appears in full before its
+  scheduled chapter.
+- **skeleton-hole** — GSBS belief-move our book never performs, plan did
+  not omit it, but the inversion still completes. If the omitted move *is*
+  the inversion, that is `journey-incomplete`.
+
 ## Your verdict gate
 
 Start your report with `PASS` or `FAIL`.
 
-`PASS` means the book works as one cumulative journey with no material
-cross-chapter failure. On `FAIL`, report up to 5 material gaps. Never
-invent a gap to fill the format.
+`PASS` means zero BLOCKING counts — the book works as one cumulative
+journey to escape. On `FAIL`, report up to 5 BLOCKING gaps. Never invent
+a gap to fill the format.
+
+Then emit CLUSTER CENSUS per `_shared.md` with every closed class listed,
+including zeros. Gap 1 is the first BLOCKING class.
 
 ## What you evaluate
 
@@ -72,7 +117,7 @@ invent a gap to fill the format.
 
 ## Your output format
 
-After the PASS/FAIL line:
+After PASS/FAIL and CLUSTER CENSUS:
 
 **The book's journey in five sentences:** [Where does the reader start,
 what happens through the middle, where do they land?]

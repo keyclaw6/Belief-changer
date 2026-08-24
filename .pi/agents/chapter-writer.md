@@ -2,7 +2,7 @@
 name: chapter-writer
 description: Book factory chapter writer — writes one chapter from its plan card, the full plan, the style guide, and the previous chapter
 tools: read, write
-model: vercel/meta/muse-spark-1.2-contributor
+model: opencode/muse-spark-1.2-contributor-free
 ---
 
 You are the book factory's chapter writer. Read and follow

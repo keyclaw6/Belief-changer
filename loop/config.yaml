@@ -1,47 +1,59 @@
 # Auto-Tuning Loop Configuration
-# Preferred role defaults + the loop's tuning surface. Before every model call,
-# read the values here. A harness maps each role to the model it can reach (see
-# loop/HARNESS.md); the loop hypothesizes changes to these values, and the
-# trace metadata.json records what actually ran.
+# Preferred role defaults. Before every model call, read the values here.
+# A harness maps each role to the model it can reach (see loop/HARNESS.md).
+# Models, fallback models, routes, and endpoints are FOUNDER-ONLY — the
+# hypothesizer and orchestrator must not change them. Remaining parameters
+# (reasoning, research depth) are the loop's tuning surface. Trace
+# metadata.json records what actually ran.
 #
-# ROUTES (preferred defaults, founder 2026-08-21). The endpoint/auth/route-name
+# ROUTES (preferred defaults, founder 2026-08-23). The endpoint/auth/route-name
 # fields marked [PI BINDING] are the pi-harness realization only — another
 # harness substitutes its own connection and ignores those fields.
-#   vercel       — Vercel AI Gateway. Carries the Muse Spark roles (writer,
-#                  plan-writer, hypothesizer) + their non-contributor fallbacks.
-#   opencode     — [PI BINDING] the OpenCode Zen subscription. Carries every
-#                  other role (research, plan-reviewer, judges, trace-analyzer)
-#                  on DeepSeek V4 Flash.
+#   opencode     — [PI BINDING] OpenCode Zen. Primary for Muse Spark roles
+#                  (writer, plan-writer, hypothesizer) on the free contributor
+#                  model, and for every other role on DeepSeek V4 Flash (Go).
+#   vercel       — Vercel AI Gateway. Coded fallback only for Muse Spark roles
+#                  (same contributor weights, paid). Never the non-contributor
+#                  alias (same weights, ~20× cost).
 # Command Code is retired. There is no OpenAI subscription (openai-sub) route.
 #
 # Reasoning values the routes accept: low/medium/high/max.
 
 # ── Writer — chapter-writer sub-agent (contract: prompts/chapter-writer.md) ──
-# Muse Spark 1.2 contributor via Vercel AI Gateway; the non-contributor
-# variant is the coded fallback (PROGRAM §1).
-writer_model: meta/muse-spark-1.2-contributor
-writer_fallback_model: meta/muse-spark-1.2
-writer_endpoint: https://ai-gateway.vercel.sh/v1/chat/completions
-writer_auth_env: AI_GATEWAY_API_KEY
-writer_route: vercel
+# Muse Spark 1.2 contributor-free via OpenCode Zen; Vercel contributor is the
+# per-call coded fallback (PROGRAM §1). Next unit always starts on primary.
+writer_model: muse-spark-1.2-contributor-free
+writer_fallback_model: meta/muse-spark-1.2-contributor
+writer_endpoint: https://opencode.ai/zen/v1/responses
+writer_auth_env: OPENCODE_API_KEY
+writer_route: opencode
+writer_fallback_endpoint: https://ai-gateway.vercel.sh/v1/chat/completions
+writer_fallback_auth_env: AI_GATEWAY_API_KEY
+writer_fallback_route: vercel
 # No completion cap: requests omit max_tokens.
 
 # ── Plan-writer — master-plan skill (contract: prompts/master-plan-skill-v2.md)
-# Muse Spark 1.2 contributor via Vercel AI Gateway, same fallback as the writer.
-planner_model: meta/muse-spark-1.2-contributor
-planner_fallback_model: meta/muse-spark-1.2
-planner_endpoint: https://ai-gateway.vercel.sh/v1/chat/completions
-planner_auth_env: AI_GATEWAY_API_KEY
-planner_route: vercel
+# Same Muse Spark routing as the writer.
+planner_model: muse-spark-1.2-contributor-free
+planner_fallback_model: meta/muse-spark-1.2-contributor
+planner_endpoint: https://opencode.ai/zen/v1/responses
+planner_auth_env: OPENCODE_API_KEY
+planner_route: opencode
+planner_fallback_endpoint: https://ai-gateway.vercel.sh/v1/chat/completions
+planner_fallback_auth_env: AI_GATEWAY_API_KEY
+planner_fallback_route: vercel
 planner_reasoning: high
 
 # ── Hypothesizer — loop/prompts/hypothesizer.md ──
-# Muse Spark 1.2 contributor via Vercel AI Gateway, non-contributor fallback.
-hypothesizer_model: meta/muse-spark-1.2-contributor
-hypothesizer_fallback_model: meta/muse-spark-1.2
-hypothesizer_endpoint: https://ai-gateway.vercel.sh/v1/chat/completions
-hypothesizer_auth_env: AI_GATEWAY_API_KEY
-hypothesizer_route: vercel
+# Same Muse Spark routing as the writer.
+hypothesizer_model: muse-spark-1.2-contributor-free
+hypothesizer_fallback_model: meta/muse-spark-1.2-contributor
+hypothesizer_endpoint: https://opencode.ai/zen/v1/responses
+hypothesizer_auth_env: OPENCODE_API_KEY
+hypothesizer_route: opencode
+hypothesizer_fallback_endpoint: https://ai-gateway.vercel.sh/v1/chat/completions
+hypothesizer_fallback_auth_env: AI_GATEWAY_API_KEY
+hypothesizer_fallback_route: vercel
 hypothesizer_reasoning: high
 
 # ── Everything else runs on DeepSeek V4 Flash via the OpenCode Zen ──

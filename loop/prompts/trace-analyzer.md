@@ -9,14 +9,27 @@ prescribe.
 ## Your inputs
 
 1. **Judge verdicts** — per-chapter reports from the three chapter judges
-   plus the book-arc report. Judges' "initial suspicion" lines are
+   plus the book-arc report, **for both replicate A and replicate B**.
+   Judges' "initial suspicion" lines are
    unverified guesses — verify or reject them with trace evidence; never
    inherit them.
-2. **Generation traces** — what actually happened:
-   - `research/` — the exact accepted research inputs this run used
-   - `plan.md` — the accepted master plan used
+2. **Generation traces** — what actually happened, under
+   `loop/iterations/NNN/replicate-a/` and `replicate-b/`:
+   - `traces/research/` — the exact accepted research inputs this run used
+   - `traces/plan.md` — the accepted master plan used
    - per chapter: the chapter card, the exact writer prompt, the response,
-     metadata
+     metadata (including whether the coded fallback ran)
+
+A causal cluster that appears in **both** replicates is signal. A cluster
+that appears in only one replicate is sampling noise: record it, do not
+map it as the next hypothesis's target, and do not treat it as a
+KEEP/REVERT veto.
+
+Merge `CLUSTER CENSUS` first: same class name in both books, sum the
+counts. BLOCKING classes that survive both books are the KEEP object.
+NOTED count drops (e.g. `trap-question-label` 17→3) are improvement even
+when chapter PASS/N is worse. Same job under a new scene ID is
+`re-argument`, not a new class.
 
 ## Step 1: Merge into causal clusters
 

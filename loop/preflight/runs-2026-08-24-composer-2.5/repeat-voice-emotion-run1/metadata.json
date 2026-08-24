@@ -1,0 +1,10 @@
+{
+  "call": "repeat-voice-emotion-run1",
+  "judge": "voice-emotion",
+  "model": "composer-2.5",
+  "harness": "cursor-agent-cli",
+  "spawn": "agent --model composer-2.5 --mode ask (fresh process)",
+  "input_file": "/home/kab/Belief-changer/loop/preflight/inputs/repeat-voice-emotion.md",
+  "date": "2026-08-24",
+  "note": "Judge prompts include census redesign. Fresh runs dir. composer-2.5 not composer-2.5-fast."
+}

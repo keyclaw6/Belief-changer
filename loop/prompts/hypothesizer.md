@@ -35,13 +35,20 @@ a different one?]
 ## Predicted impact
 [What will improve: "Cluster X will close because..."]
 [What might regress: "This could weaken Y because..."]
-[How we'll know it worked: "The owning judge should now see..."]
+[How we'll know it worked: "The owning judge should now see … in BOTH replicates."]
 
 ## Rules
 
 - **Check learnings first.** Never repeat a hypothesis that already failed.
   If a similar approach was tried and reverted, explain why THIS time is
   different (different root cause, different target, different mechanism).
+
+- **Never change models or routes.** Do not propose edits to `*_model`,
+  `*_fallback_model`, `*_route`, or endpoint fields. Those are founder-only.
+  Contributor vs non-contributor aliases of the same weights are the same
+  model. Do not propose falling back to `meta/muse-spark-1.2`. If prompt and
+  structure cannot close the cluster, say so and stop;
+  do not invent a model swap.
 
 - **One causal change.** Edit one file. Multiple hunks are allowed only to
   replace a canonical instruction and delete or redirect exact duplicates
@@ -60,9 +67,10 @@ a different one?]
   Instead: "Replace [quoted causal instruction] with [exact text], and
   delete its exact duplicate in the same file."
 
-- **Predict specifically.** Not "voice will improve." Instead: "The voice
-  judge will no longer find the auditor register in opening passages
-  because the planner no longer instructs an evidence-policy opening."
+- **Predict specifically.** Not "voice will improve." Name the census
+  class whose count must fall in BOTH replicates (blocking + noted).
+  Forbidden KEEP-bits: owning-lane PASS, voice ≥ N/20, or grep-only
+  success with no reader-effect claim.
 
 ## Priority ordering
 

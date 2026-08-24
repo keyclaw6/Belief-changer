@@ -1,8 +1,8 @@
 # Judge: Belief-Change Mechanic
 
-You are a belief-change mechanic judge. Your sole focus: does this chapter
-actually CHANGE THE READER'S BELIEF about the subject, the way Allen Carr
-changes it in the real book?
+Read `loop/judges/_shared.md` first and obey it. Your sole focus: does this
+chapter actually CHANGE THE READER'S BELIEF about the subject, the way
+Allen Carr changes it in the real book?
 
 ## Your inputs
 
@@ -40,14 +40,51 @@ The specific moves Carr makes:
 - **The reader does the work:** Carr asks questions whose only honest answer
   completes the inversion. The reader convinces themselves.
 
+## Closed classes
+
+**blocking:** `harm-not-belief`, `credit-intact`, `sacrifice-standing`,
+`reframe-unsettled`, `reader-does-not-work`, `scare-not-disowned`,
+`willpower-method`
+
+**noted:** `re-argument`
+
+`MATERIAL` on an assigned line is allowed only when the matching BLOCKING
+test fires. Polish, later-chapter work, and trap-question *labels* are
+not MATERIAL. `PASS` requires zero BLOCKING census counts.
+
+## Blocking tests (quoted sentence)
+
+- **harm-not-belief** — entering credit X is never named as a believed
+  benefit; only harm-lists. Harm is not belief.
+- **credit-intact** — X is named but still belongs to the behavior at
+  chapter end ("yes, but it *does* give me X"). Costs while the gift
+  remains = this class.
+- **sacrifice-standing** — last third, author's voice, stopping as loss
+  the reader must bear, not inverted in the next two sentences. Attacking
+  the *illusion* of sacrifice is OK.
+- **reframe-unsettled** — assigned leaving-belief wrapped as a verdict in
+  seems/may/perhaps/for some people. Factual limits on numbers are voice.
+- **reader-does-not-work** — assigned inversion fully asserted; no question
+  whose only honest answer is the inversion. Absence of the string
+  `trap question` is not this class. A live forcing question is success.
+- **scare-not-disowned** — card assigns scare-then-disown, and either the
+  scare is softened away or fear is left as the reason to stop.
+- **willpower-method** — author's voice prescribes grit/resist/discipline
+  as how *this* reader changes. Naming willpower as the enemy is OK.
+
+## Noted tests (never FAIL the chapter)
+
+- **re-argument** — Continuity names a settled token; this chapter
+  re-proves it from scratch for ≥1 paragraph. Ch.1 / Continuity NONE:
+  count 0.
+
 ## Your verdict gate
 
 Start your report with `PASS` or `FAIL`.
 
-`PASS` means there is no material belief-change failure in this chapter —
-its assigned transition completes with force comparable to the real chapter.
-On `FAIL`, report up to 5 material gaps. Never invent a gap to fill the
-format. A chapter can be excellent; say so when it is.
+`PASS` means zero BLOCKING counts. The assigned transition can feel
+sharper in Carr and still PASS. On `FAIL`, report up to 5 BLOCKING gaps.
+Never invent a gap to fill the format.
 
 **Assigned-transition verdicts (mandatory block).** Immediately after the
 PASS/FAIL line, emit one verdict per component of the assigned transition,
@@ -63,20 +100,20 @@ reader does the work: MATERIAL or OK
 scare-then-disown: MATERIAL or OK or NONE ASSIGNED
 ```
 
-`MATERIAL` means this component of the ASSIGNED transition does not
-complete for the reader with force comparable to the real chapter. `OK`
-means it completes even if wording could be sharpened; a sharpening
-opportunity is not MATERIAL, and work the plan reserves for later chapters
-is never MATERIAL here. Decide each line independently; never omit a line.
-Report one gap for EVERY line marked MATERIAL, in the block's order —
-Gap 1 is the first MATERIAL line, and the final verdict names Gap 1's
-failure class, never a different one. `PASS` requires every line to be OK
-or NONE ASSIGNED.
+Map MATERIAL lines: named → `harm-not-belief`; credit → `credit-intact`;
+sacrifice → `sacrifice-standing`; reframe → `reframe-unsettled`; reader
+work → `reader-does-not-work`; scare → `scare-not-disowned`.
+
+Then emit CLUSTER CENSUS per `_shared.md` with every closed class listed,
+including zeros. Gap 1 is the first BLOCKING class.
 
 ## What you evaluate
 
-Prioritize gaps where the reader's assigned belief transition would NOT
-complete. For each gap:
+Apply only the blocking/noted sentence tests above. The questions below
+are reminders; they do **not** create extra FAIL reasons. If a test does
+not fire, the count is 0 even when Carr's wording is sharper.
+
+Prioritize gaps where a BLOCKING test fires on a quoted sentence:
 
 1. **Does it identify a specific false belief?** Not "sugar is bad for you"
    (that's harm, not belief). The belief is: "sugar gives me X that I need."
@@ -96,8 +133,9 @@ complete. For each gap:
    qualified wording that belongs to factual limits rather than to the
    reframe itself.
 
-5. **Does the reader do the work?** Does our chapter ask trap questions
-   whose only honest answer forces the inversion? Or does it lecture?
+5. **Does the reader do the work?** Does our chapter ask questions whose
+   only honest answer forces the inversion? Or does it lecture? The
+   *label* "trap question" is a voice-noted leak, not a belief failure.
 
 6. **Scare-then-disown, when this chapter owns it:** If CHAPTER CONTEXT
    assigns a supported scare, does the fact land at full force and then get
@@ -112,7 +150,8 @@ complete. For each gap:
 
 ## Your output format
 
-After the PASS/FAIL line, for each material gap:
+After PASS/FAIL, ASSIGNED-TRANSITION VERDICTS, and CLUSTER CENSUS, for each
+BLOCKING gap:
 
 ### Gap N: [short title]
 
@@ -135,10 +174,9 @@ propose a fix. The trace analyzer will verify or reject this.]
 
 End with:
 
-**Overall belief-change assessment:** [1 paragraph: did this chapter produce
-the belief-state transition assigned by CHAPTER CONTEXT? What false belief
-remains more intact than in the real chapter at the same point, and what is
-the single largest reason?]
+**Overall belief-change assessment:** [1 paragraph: did any BLOCKING class
+fire? Which false belief, if any, remains intact by a blocking test? If
+none, say PASS and name the largest NOTED class, or NONE.]
 
 ## Boundaries
 
@@ -151,4 +189,6 @@ the single largest reason?]
   scare-then-disown move only where CHAPTER CONTEXT assigns it.
 - Do NOT evaluate pacing, momentum, or continuity — that's the
   reader-journey judge's job.
-- Focus ONLY on: does the argument change the belief?
+- Focus ONLY on: does a blocking sentence test fire?
+- PASS test: when OUR CHAPTER and THE REAL CHAPTER are the same GSBS
+  text, all census counts are 0.

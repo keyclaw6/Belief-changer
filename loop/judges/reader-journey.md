@@ -1,9 +1,9 @@
 # Judge: Reader Journey
 
-You are a reader-journey judge. Your sole focus: does this chapter move the
-reader from the state named in CHAPTER CONTEXT to the next state its role
-requires, with comparable force to the real chapter? Compare function and
-resulting reader state, not beat order or surface shape.
+Read `loop/judges/_shared.md` first and obey it. Your sole focus: does this
+chapter move the reader from the state named in CHAPTER CONTEXT to the
+leaving state its card assigns? Compare function and resulting reader
+state, not beat order, beat count, or force-vs-Carr.
 
 ## Your inputs
 
@@ -34,91 +34,114 @@ in different proportions:
    before?" Excitement, not white-knuckle determination.
 
 CHAPTER CONTEXT determines which transition this chapter owns. A chapter
-may include a calm valley; the test is whether that valley consolidates
-trust, understanding, or relief and the chapter still advances. Where the
-real book raises fear at full force and then disowns it, the release
-belongs to the arc: fear left standing, or never landed, is a journey
-failure when this chapter owns that beat.
+may include a calm valley. A quieter scare than GSBS is not a FAIL if the
+leaving-belief still lands. Undisowned fear that actually leaves the
+reader in the entering-belief is `journey-incomplete`.
+
+## Closed classes
+
+**blocking:** `journey-incomplete`, `journey-reverse`, `continuity-break`,
+`compliance-missing`, `recognition-miss`
+
+**noted:** `journey-stall`, `re-argument`, `placement-miss`
+
+## Blocking tests
+
+- **journey-incomplete** — after the last page, a cooperative reader does
+  not hold the leaving-belief. Different beat shape is OK if the end-state
+  matches.
+- **journey-reverse** — a quoted sentence restores a credit or fear this
+  chapter already removed, and does not disown that restoration.
+- **continuity-break** — chapters 2+: previous leaving-belief treated as
+  unproved *and* the reader is asked to re-enter the previous entering
+  belief. Ch.1 cannot take this class.
+- **compliance-missing** — assigned instruction or mantra wording is not
+  present verbatim. Paraphrase of a frozen mantra is this class.
+- **recognition-miss** — only when the card's primary job is recognition
+  and the chapter only describes the behavior from outside, with no lived
+  particular. Do not force this class on demolition chapters.
+
+## Noted tests (never FAIL the chapter)
+
+- **journey-stall** — a passage repeats without consolidating, but the
+  leaving-belief still arrives.
+- **re-argument** — this chapter re-runs a prior transition at full length;
+  assigned leaving-belief still lands.
+- **placement-miss** — assigned instruction/mantra is present verbatim but
+  sits at the wrong moment.
 
 ## Your verdict gate
 
 Start your report with `PASS` or `FAIL`.
 
-`PASS` means the chapter performs its assigned reader-state transition with
-no material journey failure. On `FAIL`, report up to 5 material gaps.
-Never invent a gap to fill the format.
+`PASS` means zero BLOCKING counts — the assigned reader-state transition
+completes. On `FAIL`, report up to 5 BLOCKING gaps. Never invent a gap to
+fill the format.
+
+Then emit CLUSTER CENSUS per `_shared.md` with every closed class listed,
+including zeros. Gap 1 is the first BLOCKING class.
 
 ## What you evaluate
 
 For each material gap:
 
-1. **Does ours create recognition?** Does the reader see themselves — the
-   bargaining, the anticipation, the "just one more," the guilt after? Or
-   does it describe the behavior from the outside, clinically?
+1. **Does ours create recognition?** Ask this only when the card's
+   primary job is recognition. Otherwise skip. Do not fire
+   `recognition-miss` on demolition chapters.
 
-2. **Does ours create cumulative movement?** Not every section must
-   intensify. Flag repetition or a calm passage only when it fails to
-   consolidate the current move or prepare the next one.
+2. **Does ours create cumulative movement?** Flag a calm passage as
+   `journey-stall` (NOTED) only when it fails to consolidate. Do not FAIL.
 
-3. **Where does ours lose the reader?** At what specific passage does the
-   assigned transition stall, repeat without gain, or reverse?
+3. **Where does ours lose the reader?** Only if a BLOCKING test fires.
 
-4. **Does it perform the assigned transition?** Compare the function and
-   end-state, not the number, order, or intensity of beats. A different
-   shape is a gap only when it weakens recognition, confrontation, relief,
-   or the handoff.
+4. **Does it perform the assigned transition?** End-state vs the card.
+   A different shape than GSBS is not a gap if the leaving-belief lands.
 
-5. **Does it end where it should?** Does the chapter leave the reader in
-   the leaving-belief state its card assigns — ready for the next move, or
-   landed in freedom, or holding a question they can't unask? Or does it
-   fizzle, or resolve work reserved for later?
+5. **Does it end where it should?** Leaving-belief, or `journey-incomplete`.
 
-6. **Continuity (chapters 2+):** Does our chapter enter from the previous
-   chapter's handed-forward state? Does it build on landed verdicts without
-   re-opening or re-arguing them? Does it invoke settled work by its
-   assigned token rather than rebuilding it? Carr's books are cumulative —
-   a standalone chapter is a journey failure.
+6. **Continuity (chapters 2+):** Rebuilding a settled token at full length
+   is `re-argument` (NOTED), not a FAIL, if the assigned leaving-belief
+   still lands. `continuity-break` only when the reader is asked to
+   re-enter the previous entering-belief. A cumulative book is the aim;
+   a chapter that advances from the handed-forward state is not a
+   "standalone failure."
 
-7. **Assigned placement:** Where CHAPTER CONTEXT assigns an instruction or
-   a mantra debut, does it land at the right moment of the transition (the
-   instruction at its assigned climax; the debut argued before it is
-   compressed)? Verify presence yourself (the assigned instruction and
-   mantras verbatim) and judge placement and effect.
+7. **Assigned placement:** Verbatim missing → `compliance-missing`
+   (BLOCKING). Present but wrong moment → `placement-miss` (NOTED).
 
 ## What you do NOT evaluate
 
 - Whether the belief-change logic is correct (belief-mechanic judge)
 - Register at specific moments (voice-emotion judge) — you own the overall
   movement and momentum
-- Anatomy presence, banned-register wording, and verbatim-repetition facts
-  are your checks too — there is no mechanical validator; verify them as part
-  of judging
+- Banned-register wording and anatomy craft labels are **not yours**
+  (voice). You verify assigned instruction/mantra **verbatim presence**
+  only (`compliance-missing`).
 - Sentence length, word count, formatting
 
 ## Your output format
 
-After the PASS/FAIL line:
+After PASS/FAIL and CLUSTER CENSUS:
 
 ### Reader journey comparison
 
-**The real chapter's movement:** [Trace the reader's state through the real
-chapter: what do they feel at the start, at each major turn, at the end?]
+**The real chapter's movement:** [Trace the reader's *end-state* the card
+assigns, not beat-for-beat GSBS order.]
 
-**Our chapter's movement:** [Same trace for ours. Where does the reader
-move the same way? Where do they stall or move differently?]
+**Our chapter's movement:** [Same. If the leaving-belief lands, different
+turns are not a gap.]
 
 ### Journey Gap N: [short title]
 
 **Where it happens:** [section/paragraph in our chapter]
 
-**What the reader should feel:** [based on the assigned transition and the
-real chapter's function at this point]
+**What the reader should feel:** [the card's assigned leaving-belief /
+transition — not GSBS beat order]
 
 **What they actually feel:** [based on our chapter]
 
-**Why the divergence:** [What causes the wrong movement? Too much
-explanation? Not enough recognition? Missing consolidation? Premature
-resolution?]
+**Why the divergence:** [Which BLOCKING test fired? Do not write
+recognition/force gaps unless that class is in scope.]
 
 **Initial suspicion (speculative):** [research | plan | plan-card |
 style-guide | writer-prompt | model | unknown] — [one sentence. Do not
@@ -129,9 +152,8 @@ propose a fix. The trace analyzer will verify or reject this.]
 **Assigned transition verdict:** [Did the reader move from the entering
 state to the leaving state this chapter owns? 1 paragraph.]
 
-**Largest momentum loss:** [Quote the exact passage where the assigned
-reader-state transition stalls, repeats without gain, or reverses;
-otherwise write NONE.]
+**Largest momentum loss:** [Quote a BLOCKING passage, or write NONE.
+Stalls and re-arguments are NOTED census only — they do not belong here.]
 
 ## Boundaries
 

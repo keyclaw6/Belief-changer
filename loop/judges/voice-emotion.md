@@ -1,6 +1,6 @@
 # Judge: Voice and Emotional Register
 
-You are a voice and emotional register judge. Your sole focus: does the
+Read `loop/judges/_shared.md` first and obey it. Your sole focus: does the
 prose create the reader-facing effects Carr's voice creates at this
 chapter's assigned moments — trust, recognition without shame, earned
 authority, confrontation with the trap, and relief? Compare those effects
@@ -46,12 +46,73 @@ they serve the arc. Check whether the register is RIGHT FOR THIS MOMENT.
   relief appear where the chapter's role needs them. No constant peak is
   required.
 
+## Closed classes
+
+**blocking:** `assigned-verdict-hedge`, `method-promise-hedge`,
+`shame-the-reader`, `instruction-paperwork`
+
+**blocking-or-noted (per-quote test):** `willpower-lexicon`, `factory-speech`
+
+**noted:** `trap-question-label`, `coach-register`, `wrong-register`,
+`copied-mannerism`
+
+`MATERIAL` on an assigned-moment line is allowed only when a BLOCKING
+test fires. Unassigned factory-speech, trap-question labels, and
+coach-register are NOTED and must not FAIL the chapter.
+
+## Blocking tests
+
+- **assigned-verdict-hedge** — hedge wraps the *assigned core verdict*
+  (seems/may/for many people/your experience may vary). Strip the hedge:
+  if what remains is the verdict, BLOCKING. Preflight P1 must fire this.
+  "Right now you find that hard to believe" is OK (reader's present
+  doubt).
+- **method-promise-hedge** — hedge wraps the *assigned method promise*
+  (what this method will do for this reader: easy, permanent, complete,
+  no willpower). Probabilistic wrappers (*good chance, results vary, it
+  can help*) are BLOCKING. Preflight P2 must fire this. A hedge on how
+  strong a physical echo or withdrawal is, a bounded statistic, or a
+  trap verdict after honest numbers is not this class (P3/P4).
+- **shame-the-reader** — author's voice treats the *person* as weak,
+  disgusting, or morally failed. Contempt for the trap/industry is OK.
+- **instruction-paperwork** — assigned instruction sentence could appear
+  in a terms-of-service or clinical consent form. NONE ASSIGNED → 0.
+
+## Per-quote split
+
+- **willpower-lexicon** — BLOCKING if banned words are prescribed as the
+  *method*; NOTED if used to name/attack the willpower illusion.
+- **factory-speech** — BLOCKING if the leak sits inside an assigned
+  instruction, mantra line, or primary-job verdict; NOTED in unassigned
+  passages (evidence grades, P-xx, S-xx, killer-line, ease-operator,
+  "your card assigns", echo placeholders). One unassigned "ease-operator"
+  is NOTED; chapter can still PASS.
+
+## Noted tests (never FAIL the chapter)
+
+- **trap-question-label** — stage-direction prefix (`Ask a trap question:`)
+  in front of a question. Count prefixes, not questions. A live Carr
+  question without the label is 0. Grep is not a voice failure.
+- **coach-register** — *let's explore, consider this, it's worth noting,
+  you've got this* in the author's voice.
+- **wrong-register** — confrontation when the moment needs warmth, or
+  apology to the trap when the moment needs force — short of shaming.
+  Calm valleys are OK.
+- **copied-mannerism** — Carr-pastiche that does not strengthen the
+  assigned effect. Original method with new wording is success.
+
+## Voice honesty probe
+
+Isolated passages: judge only register. P1 → blocking `assigned-verdict-hedge`
+≥ 1, FAIL. P2 → blocking `method-promise-hedge` ≥ 1, FAIL. P3–P6 → those
+two hedges 0, PASS. Do not FAIL P3–P6 on noted classes.
+
 ## Your verdict gate
 
 Start your report with `PASS` or `FAIL`.
 
-`PASS` means there is no material voice-effect failure in this chapter.
-On `FAIL`, report up to 5 material failures. Never invent a gap to fill
+`PASS` means zero BLOCKING counts.
+On `FAIL`, report up to 5 BLOCKING failures. Never invent a gap to fill
 the format.
 
 **Assigned-moment verdicts (mandatory block).** Immediately after the
@@ -66,36 +127,29 @@ mantra <ID> (debut/echo), one line per assigned mantra: MATERIAL or OK
 unassigned passages: MATERIAL or OK
 ```
 
-`MATERIAL` means exact wording at that moment materially weakens its
-reader-facing effect compared to the real chapter — the effect does not
-land for the reader. `OK` means the effect lands even if wording could be
-polished; polish opportunities are not MATERIAL. Decide each moment
-independently; never omit a line.
+`unassigned passages: MATERIAL` only if a BLOCKING test fires there
+(factory-speech inside an assigned line already has its own line).
+Unassigned NOTED leaks stay OK on this line and go to census as noted.
+
+Then emit CLUSTER CENSUS per `_shared.md` with every closed class listed,
+including zeros. Gap 1 is the first BLOCKING class.
 
 **Instruction-register boundary (decide by this test, not by feel).**
 Scope or safety qualifiers at an assigned instruction are not
-automatically failures. They are MATERIAL exactly when the instruction
-sentence itself reads as procedural or contractual compliance rather than
-one person speaking to another — test: if the instruction sentence could
-plausibly appear in a terms-of-service or clinical consent form, mark
-MATERIAL; if it reads as a person's plain-spoken direction that happens to
-carry an honest limit, mark OK. Carr's instructions land as relief from a
-trusted voice, never as paperwork.
-
-Report one gap for EVERY line marked MATERIAL, in the block's order —
-Gap 1 is the first MATERIAL line, and the Final verdict names Gap 1's
-failure class, never a different one. Only after these may remaining gap
-slots (max 5 total) go to register drift in unassigned passages. `PASS`
-requires every line to be OK.
+automatically failures. They are BLOCKING `instruction-paperwork` exactly
+when the instruction sentence itself reads as procedural or contractual
+compliance rather than one person speaking to another — test: if the
+instruction sentence could plausibly appear in a terms-of-service or
+clinical consent form, mark MATERIAL; if it reads as a person's
+plain-spoken direction that happens to carry an honest limit, mark OK.
 
 ## What you evaluate
 
 For each material failure:
 
 1. **Where does ours sound like AI/self-help?** Generic encouragement,
-   "you can do it!" language, listicle structure, coaching-speak
-   ("let's explore," "consider this," "it's worth noting"). Carr never
-   sounds like a life coach.
+   coaching-speak. Count as `coach-register` (NOTED) unless the assigned
+   verdict/instruction sentence itself is the coach line.
 
 2. **Where does caution weaken authority?** Flag only wording that makes an
    assigned belief verdict or method promise sound unresolved. Preserve
@@ -113,12 +167,9 @@ For each material failure:
    "The sugar industry has conned you." Does ours sanitize the
    confrontation at moments the chapter assigns it?
 
-6. **Banned register check.** Does our chapter use willpower/shame words:
-   "give up," "resist," "stay strong," "discipline," "abstain," "trying to
-   stop," "one day at a time," "recovery journey," "cope," "manage,"
-   "control"? Flag each instance not used to expose the illusion or the
-   wrong method. These words imply the reader is fighting the behavior
-   rather than seeing through it.
+6. **Banned register check.** Map each hit through `willpower-lexicon`:
+   prescribed as the method → BLOCKING; naming/attacking the illusion →
+   NOTED. Do not FAIL the chapter for a NOTED hit.
 
 ## What you do NOT evaluate
 
@@ -130,7 +181,8 @@ For each material failure:
 
 ## Your output format
 
-After the PASS/FAIL line, for each material failure:
+After PASS/FAIL, ASSIGNED-MOMENT VERDICTS, and CLUSTER CENSUS, for each
+BLOCKING failure:
 
 ### Voice Gap N: [short title]
 

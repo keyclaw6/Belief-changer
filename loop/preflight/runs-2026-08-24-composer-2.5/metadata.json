@@ -1,0 +1,15 @@
+{
+  "run_dir": "loop/preflight/runs-2026-08-24-composer-2.5",
+  "model": "composer-2.5",
+  "harness": "cursor-agent-cli",
+  "spawn": "fresh `agent --model composer-2.5 --mode ask` process per call (no host loop context)",
+  "date": "2026-08-24",
+  "calls": 18,
+  "verdict": "18/18 PASS",
+  "pass_summary": "PASS test 6/6 all census counts 0; repeatability 3/3 same PASS/FAIL and identical BLOCKING class sets (belief PASS/PASS empty blocking; voice PASS/PASS empty blocking, noted ±1; journey PASS/PASS empty blocking); voice probes 6/6 (P1 FAIL assigned-verdict-hedge 1; P2 FAIL method-promise-hedge 1; P3–P6 PASS those hedges 0)",
+  "inputs_source": "all 18 calls use existing inputs in loop/preflight/inputs/",
+  "notes": [
+    "Judge prompts include census redesign (_shared.md + four lane files). Fresh runs dir. composer-2.5 not composer-2.5-fast.",
+    "Voice repeat fixture now PASS (instruction-paperwork 0): clinician carve-out judged as honest-limit personal speech per new instruction-register boundary. Old 2026-08-21 battery FAILed the same fixture on instruction MATERIAL."
+  ]
+}

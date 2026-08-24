@@ -9,9 +9,12 @@
 
 Build an auto-research loop around the book factory that tunes it through
 experimentation until it reliably produces Allen Carr Easyway-style books for
-any input subject. The loop changes anything inside the factory — prompts,
-models, research process, planning process, structure — based on evidence from
-direct comparison with a known Carr book.
+any input subject. The loop changes factory prompts, research process, planning
+process, and structure based on evidence from direct comparison with a known
+Carr book. **Models and routes are founder-only.** The loop must never
+hypothesize or apply a model, fallback-model, route, or endpoint change. If
+prompt and structure tuning cannot hit the target, the founder changes models
+by hand.
 
 ## Calibration Target
 
@@ -37,20 +40,28 @@ matter only insofar as they serve belief change.
 1. RUN FACTORY   — research → plan → write ALL chapters
                    (the whole book, every iteration — chapters change what
                    they optimize across the arc, so partial runs mislead)
-2. COMPARE       — Judge panel reads our chapters + real GSBS chapters
+                   TWO independent books per iteration from the same plan
+                   (replicate A and B) so writer/judge sampling is not
+                   mistaken for a real effect
+2. COMPARE       — Judge panel reads each replicate + real GSBS chapters
                    "Which belief-change function, reader effect, or chapter
                    transition is weaker than in the matched reference?"
-3. TRACE ANALYSIS — Read the generation traces. What happened during writing?
+3. TRACE ANALYSIS — Read both replicates' traces. What happened during writing?
                    Where did the writer diverge from intent? What did the
-                   research provide or fail to provide?
+                   research provide or fail to provide? Clusters in both
+                   replicates are signal; a cluster in only one is noise.
 4. DIAGNOSE      — Map each gap to a factory component:
                    research? plan? writer prompt? style guide? model?
 5. HYPOTHESIZE   — One change to one factory component, with prediction:
                    "If we change X, then gap Y will close because Z"
 6. APPLY         — Make the change
-7. RE-RUN        — Re-run affected stage(s)
-8. COMPARE AGAIN — Same judge panel, same comparison
-9. KEEP/REVERT   — Did the gap close? Keep. Did it not? Revert.
+7. RE-RUN        — Re-run affected stage(s); write and judge two books
+8. COMPARE AGAIN — Same judge panel, same comparison, both replicates
+9. KEEP/REVERT   — KEEP only when BOTH replicates show the targeted cluster
+                   improved materially. REVERT when NEITHER improved, or
+                   BOTH show the same new failure class. Disagreement
+                   between A and B is INCONCLUSIVE (noise). Owning-lane
+                   FAIL is not itself a veto.
 10. RECORD       — What we tried, what happened, what we learned
 11. REPEAT       — Next gap. 3-strike rule (same failure 3× → abandon approach).
                    Stop when the panel finds no material gap in belief-change
@@ -65,16 +76,18 @@ get the wrong results. The panel must be tuned carefully.
 
 **What judges do:**
 - Read our chapter and the corresponding real GSBS chapter side by side
-- Say what's working and what's not, in terms of belief change effect
+- Emit `CLUSTER CENSUS`: stable class names, BLOCKING vs NOTED counts
+- FAIL a chapter/book only on BLOCKING sentence tests. NOTED leaks stay
+  visible so KEEP can see 17→3 without a PASS-rate collapse
 - Identify where ours feels like a generic AI book instead of Carr
-- Assess whether the reader's belief would actually shift reading our version
-- Compare emotional movement: does ours build, escalate, and land like Carr?
+- Assess whether the reader's belief would actually shift
 
 **What judges do NOT do:**
 - Score sentence length, word count, or surface formatting metrics
-- Blind comparison (we know which is ours — that's the point)
-- A/B preference testing
-- Optimize for "sounding literary" divorced from belief-change effect
+- Fail a chapter on one greppable craft label (`trap question`)
+- Fail a book because the same job used a new scene ID
+- Blind comparison, A/B preference, "sounding literary" divorced from
+  belief-change effect
 
 **Panel composition:** Multiple judges with slightly different lenses:
 - One focused on belief-change mechanics (does the argument land?)
@@ -110,7 +123,6 @@ Nothing inside the factory is fixed. The loop can change:
 - Writer prompt (contract, context, instructions)
 - Planner prompt and planning process
 - Research prompts and research process (search strategy, lanes, depth)
-- Factory models and routes (writer, planner, researcher)
 - Chapter structure and anatomy decisions
 - Plan card contract
 - Any other factory component — except the judges: judge calibration
@@ -154,21 +166,31 @@ creation machine.
   the prompts and the judges, not in Python machinery.
 - **One hypothesis per iteration.** Small, reversible changes. We can
   attribute effect because we changed one thing.
+- **Two books per iteration.** The same change is written and judged twice
+  (same research, same plan, two independent full books). KEEP requires
+  the improvement in both books; a one-book swing is noise, not a result.
 - **Prediction-based attribution.** Every hypothesis predicts what will
   improve. Prediction guides attribution; observed material improvement
-  decides KEEP. An inaccurate prediction is recorded as a learning.
+  in both replicates decides KEEP. An inaccurate prediction is recorded as a learning.
 - **3-strike rule.** Same failure class persists 3 iterations → abandon that
-  approach and try a different level (prompt → structure → model → research).
+  approach and try a different level (prompt → structure → research). Never
+  pivot to a model change; stop and surface to the founder.
 - **Convergence rule.** Stop after 5 consecutive iterations with no
   improvement. Surface findings to the founder.
 - **Learnings accumulate.** Every iteration (pass or fail) appends to a
   learnings file. The loop never repeats a failed hypothesis.
 
-## Models (Starting Point, Not Fixed)
+## Models (Founder-only)
 
-Starting model routes and parameters live in `loop/config.yaml` — the sole
-authority. If a model can't produce Carr-quality output after prompt tuning,
-the loop hypothesizes a model change and tests it.
+Model routes live in `loop/config.yaml` as the founder's preferred defaults.
+The hypothesizer, orchestrator, and any spawned role must not edit `*_model`,
+`*_fallback_model`, `*_route`, or endpoint fields. Contributor vs
+non-contributor aliases of the same weights are not different models; swapping
+them is not a hypothesis. Muse Spark roles use OpenCode Zen
+`muse-spark-1.2-contributor-free` as primary and Vercel
+`meta/muse-spark-1.2-contributor` as the per-call fallback; the next unit
+always starts on the primary. If prompt and structure tuning cannot produce
+Carr-quality output, the founder changes models manually.
 
 ## Success Criteria
 

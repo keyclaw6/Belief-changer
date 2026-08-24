@@ -1,0 +1,18 @@
+{
+  "enabled": true,
+  "providers": {
+    "opencode": {
+      "enabled": true,
+      "fallbacks": []
+    },
+    "vercel": {
+      "enabled": true,
+      "fallbacks": [
+        {
+          "model": "meta/muse-spark-1.2-contributor",
+          "priority": 1
+        }
+      ]
+    }
+  }
+}
