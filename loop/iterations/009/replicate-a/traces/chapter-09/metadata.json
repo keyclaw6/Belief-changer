@@ -1,0 +1,33 @@
+{
+  "chapter": 9,
+  "replicate": "a",
+  "iteration": "009",
+  "model": "meta/muse-spark-1.2-contributor",
+  "route": "vercel",
+  "latency_s": 129.324,
+  "chars": 19455,
+  "usage": {
+    "prompt_tokens": 40472,
+    "completion_tokens": 8387,
+    "total_tokens": 48859,
+    "cost": 0.0057246,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0,
+      "upstream_inference_completions_cost": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 3933,
+      "image_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "market_cost": 0.0057246,
+    "gateway_cost": 0.0057246
+  }
+}

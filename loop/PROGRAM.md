@@ -233,9 +233,9 @@ the next iteration; they are never drained in a batch.
    or multi-change, do NOT guess: move it to `loop/inbox/used/REJECTED-NNN-<name>.md`,
    note the defect to the founder, and fall through to the hypothesizer below.
 2. Otherwise **feed it to the hypothesizer** (not the orchestrator) as the
-   hypothesis source, alongside the normal inputs — so its never-repeat and
-   one-causal-change guards still apply. The founder note supplies the change
-   and rationale; the trace analysis supplies the failure evidence.
+   hypothesis source, alongside the normal inputs — so its one-causal-change
+   and founder-only-model guards still apply. The founder note supplies the
+   change and rationale; the trace analysis supplies the failure evidence.
 3. Save the hypothesizer's 4-field response as `loop/iterations/NNN/hypothesis.md`
    with `source: founder inbox`, and only then move the inbox file to
    `loop/inbox/used/NNN-<name>.md` (write the hypothesis first — never move
@@ -498,7 +498,12 @@ campaign branch (Step 7). REVERT /
 INCONCLUSIVE: the change is not promoted — the iteration's worktree and its
 factory change are discarded, but the iteration directory
 (`loop/iterations/NNN/`) and the ledger entry are always kept on the campaign
-branch so the campaign never re-tries a failed hypothesis blindly.
+branch so later iterations know what was tried and under which instrument.
+REVERT is not a ban: a reverted factory change remains eligible, including
+exact prior wording, especially after a judge change. Do not blindly re-run
+the identical hypothesis against the same census class on the same
+instrument without a new mechanism. Founder-only model/route swaps stay
+forbidden.
 
 Record prediction accuracy: "Predicted X. Observed Y (A: …; B: …). [accurate/partial/wrong]."
 Write `loop/iterations/NNN/decision.md` with the verdict, both replicates'
@@ -558,10 +563,12 @@ campaign branch carries what it should.
 - **One causal change per iteration.** One file. Duplicate representations of
   the same instruction may be normalized together. Never a second behavior.
 - **3-strike rule.** Failure class = same causal cluster + same root
-  component. If 3 iterations targeting one class produce no KEEP, PIVOT to a
-  different component level (prompt → structure → research). Never pivot to
-  a model change; stop and surface to the founder. The level is wrong; stop
-  hammering it.
+  component, counted only under one judge instrument. If 3 iterations
+  targeting one class produce no KEEP, PIVOT to a different component
+  level (prompt → structure → research). Never pivot to a model change;
+  stop and surface to the founder. The level is wrong; stop hammering
+  it. A judge change resets the clock — 001–008 3-strike/PIVOT notes do
+  not bind 009 onward. REVERT never deletes an idea.
 - **Never change models.** Hypothesizer and orchestrator must not edit
   `*_model`, `*_fallback_model`, `*_route`, or endpoint fields in
   `loop/config.yaml`. Models are founder-only.

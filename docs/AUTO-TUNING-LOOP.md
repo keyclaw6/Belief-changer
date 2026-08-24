@@ -63,7 +63,9 @@ matter only insofar as they serve belief change.
                    between A and B is INCONCLUSIVE (noise). Owning-lane
                    FAIL is not itself a veto.
 10. RECORD       — What we tried, what happened, what we learned
-11. REPEAT       — Next gap. 3-strike rule (same failure 3× → abandon approach).
+11. REPEAT       — Next gap. 3-strike rule (same failure 3× under the same
+                   judge instrument → abandon that approach). REVERT is not
+                   a ban on retrying the factory change.
                    Stop when the panel finds no material gap in belief-change
                    work, reader-state transition, or voice effect against
                    the matched reference.
@@ -172,13 +174,19 @@ creation machine.
 - **Prediction-based attribution.** Every hypothesis predicts what will
   improve. Prediction guides attribution; observed material improvement
   in both replicates decides KEEP. An inaccurate prediction is recorded as a learning.
-- **3-strike rule.** Same failure class persists 3 iterations → abandon that
-  approach and try a different level (prompt → structure → research). Never
-  pivot to a model change; stop and surface to the founder.
+- **3-strike rule.** Same failure class persists 3 iterations *under the
+  same judge instrument* → abandon that approach and try a different
+  level (prompt → structure → research). Never pivot to a model change;
+  stop and surface to the founder. A judge change resets the clock.
 - **Convergence rule.** Stop after 5 consecutive iterations with no
   improvement. Surface findings to the founder.
 - **Learnings accumulate.** Every iteration (pass or fail) appends to a
-  learnings file. The loop never repeats a failed hypothesis.
+  learnings file. REVERT means the change was not promoted under the
+  instrument then in force — it is evidence, not a ban. The hypothesizer
+  may retry a reverted factory change, including exact prior wording,
+  especially after a judge change. Do not blindly re-run the identical
+  hypothesis against the same census class on the same instrument
+  without a new mechanism. Founder-only model/route swaps stay forbidden.
 
 ## Models (Founder-only)
 

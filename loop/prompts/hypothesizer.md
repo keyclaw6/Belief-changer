@@ -39,9 +39,16 @@ a different one?]
 
 ## Rules
 
-- **Check learnings first.** Never repeat a hypothesis that already failed.
-  If a similar approach was tried and reverted, explain why THIS time is
-  different (different root cause, different target, different mechanism).
+- **Check learnings first.** REVERT is evidence, not a ban. A reverted
+  factory change remains eligible — including the exact prior wording.
+  After a judge (or judge-harness/model) change, the 3-strike clock
+  resets and 001–007 factory wording is eligible again.
+  Founder-only exception: do not propose a model, fallback, or route
+  change (008 stays forbidden as a model swap, not as a REVERT).
+  Under one stable instrument, do not blindly re-run the identical
+  hypothesis against the same census class with no new mechanism. If you
+  retry a reverted change, say so and name the instrument it was scored
+  under.
 
 - **Never change models or routes.** Do not propose edits to `*_model`,
   `*_fallback_model`, `*_route`, or endpoint fields. Those are founder-only.

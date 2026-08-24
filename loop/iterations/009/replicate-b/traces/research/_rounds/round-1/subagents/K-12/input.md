@@ -1,0 +1,137 @@
+You are a fresh research SUBAGENT. Your system prompt is the research doctrine. You receive ONLY: the brief and your specific commission. Execute the commission exactly — search and fetch as wide and deep as still brings results (no ceilings), and deliver in the exact output format the commission and doctrine require, with full provenance.
+
+# THE BRIEF
+
+# Brief — Quit Sugar (working title)
+
+## Target behavior
+Compulsive consumption of refined/added sugar and junk carbs ("bad sugar") — the craving–snacking loop and its grip, not nutrition pedantry.
+
+## Reader / audience
+An adult who feels trapped in the sugar loop; has tried diets, moderation rules, and willpower and watched them all fail; suspects something is wrong with the whole approach. General adult edition (one clear reader).
+
+## Goal & stance — decide explicitly (style guide §4 forks)
+Forks are decided in `framing.md`; expected axes are listed here but not preempted:
+- **Outcome (Fork 2):** autonomy-led total freedom vs explicit moderation — where the Bad-Sugar line sits IS the redefinition decision.
+- **Void (Fork 5):** natural baseline vs positive replacement — <framing>
+- **Science weight (Fork 3):** <framing>
+- **Villain (Fork 4):** the engineered trap to name (sugar industry / product engineering) — <framing>
+- **Inner state (Fork 1):** full Carr personification — the two mechanism characters, original behavior-fitted names frozen in the mantra sheet (style guide v3 default).
+
+## The load-bearing false belief (style guide §10, step 1)
+<one sentence, fixed in framing: what the reader believes bad sugar GIVES them — expected neighborhood: "sugar is a pleasure/treat/energy-lift that makes life sweeter and I'd be deprived without it">
+
+## Scope / non-goals
+Covers the everyday sugar/junk-carb trap for a general adult reader. Non-goals: medical nutrition therapy, diabetes management advice, eating-disorder treatment (crisis-pointer territory, not method territory), weight-loss-program mechanics.
+
+
+# YOUR COMMISSION
+
+You are a Lane A, D, and E combined sub-agent: GAP-FILLING SWEEP — Specific moments, special scenes, escape routes, and sensory textures the other commissions may miss.
+
+**TARGET BEHAVIOR:** Compulsive consumption of refined/added sugar and junk carbs ("bad sugar").
+
+**YOUR JOB:** This is the SWEEP commission. Its purpose is to catch what the targeted commissions might miss — the edge cases, the specific situations, the subtle justifications, the moments that are less commonly discussed but are powerfully resonant.
+
+**HUNT FOR THESE SPECIFIC SCENES AND MOMENTS:**
+
+**Special/Seductive Moments (Bank 4) — the HARDEST scenes to argue against:**
+- The grandmother's cookie recipe — the nostalgia trap
+- The birthday cake at your child's party — the celebration trap
+- The first date dessert — the romance trap
+- The holiday baking tradition — the family/heritage trap
+- The "reward after a hard day" — the earned-it trap
+- The travel/destination food experience — the "it's cultural" trap
+- The "made with love" trap — rejecting sugar feels like rejecting love
+- The coffee shop pastry — the small daily ritual that feels sacred
+
+**Escape Routes (Bank 5) — the loopholes people keep open:**
+- "I'll just have sugar on special occasions"
+- "Dark chocolate is healthy"
+- "Natural sugars (honey, maple syrup, agave) are fine"
+- "I'll just have fruit when I crave sugar"
+- "Homemade desserts are okay because I know what's in them"
+- "I'll just have one bite"
+- "It's gluten-free / vegan / organic so it's healthy"
+- "I only eat sugar on weekends"
+- "I'll start tomorrow / Monday / January 1st"
+- "I've been good all week, I've earned this"
+- "It's someone's birthday — it would be rude to refuse"
+- "Sugar-free alternatives taste terrible so I'll just have the real thing"
+- "I'll exercise it off"
+
+**Specific Daily Cost Moments (Bank 3):**
+- The 3pm office slump and the vending machine visit
+- The gas station candy bar on a road trip
+- Eating sugar in the car alone
+- Hiding wrappers at the bottom of the trash
+- The pre-grocery-store sugar fix
+- The post-dinner sugar hunt through the kitchen
+- The "I'll just have one piece" that becomes ten
+- The shame after a binge
+- The promise to yourself broken by 10am
+- The breakfast pastry that's really dessert
+- The coffee that's really a sugar delivery vehicle
+- The "healthy" smoothie that's really a sugar bomb
+
+**Relapse Moments (Bank 3/5):**
+- The "I was sugar-free for X weeks and then my [trigger] happened"
+- Vacation relapse stories
+- Holiday relapse stories
+- The "just one won't hurt" that became months of bingeing
+- The "I thought I was cured" relapse
+- Stress/trauma relapse
+
+**SEARCH PATTERNS (run creative searches for each category):**
+
+Special moments:
+- `grandma cookies sugar nostalgia story`
+- `birthday cake sugar tradition story`
+- `"I can't give up" holiday baking sugar`
+- `sugar and love connection food`
+- `"it's not just sugar it's" memories tradition`
+- `heritage food sugar giving up`
+- `cultural food sugar "can't quit"`
+
+Escape routes:
+- `"only on special occasions" sugar failed`
+- `"dark chocolate is healthy" sugar`
+- `honey maple syrup "better than sugar" debate`
+- `"homemade desserts are fine" sugar`
+- `"I'll just have one" sugar lie`
+- `"I'll start tomorrow" sugar cycle`
+- `sugar "earned it" justification`
+
+Daily cost:
+- `3pm sugar craving office story`
+- `gas station candy bar shame story`
+- `hiding food wrappers sugar shame`
+- `eating sugar in car alone story`
+- `post dinner sugar binge story`
+- `couldn't stop at one sugar story`
+- `breakfast pastry sugar dessert comparison`
+- `coffee drink sugar content "milkshake"`
+- `smoothie "sugar bomb" healthy marketing`
+
+Relapse:
+- `sugar free relapse story "happened to me"`
+- `holiday sugar relapse story`
+- `"I thought I was over sugar" relapse`
+- `"one bite led to" sugar relapse`
+
+**OUTPUT FORMAT:**
+1. Complete `research/sources/S-NNN-slug.md` packets.
+2. Raw-bank lines:
+```
+- [Bank 4] <special moment quote/description> — Persona IDs: P-XX — Source IDs: S-NNN#E-NNN [slot: special-moment | strongest-scene]
+- [Bank 5] "<escape route>" — Persona IDs: P-XX — Source IDs: S-NNN#E-NNN [slot: escape-route]
+- [Bank 3] <daily cost moment> — Persona IDs: P-XX — Source IDs: S-NNN#E-NNN [slot: daily-cost | trigger | shame-cycle]
+```
+
+**VOLUME TARGET:** ≥80 entries total across all categories. The value here is in the SPECIFICITY of the moments — one perfectly captured "hiding the candy wrapper" story is worth five generic "I ate too much sugar" mentions.
+
+**FOR EACH ENTRY, INCLUDE:**
+- The exact situation (time, place, social context)
+- The reader's own words (what they told themselves)
+- The emotion (shame, secret pleasure, defiance, defeat)
+- The sensory detail (what it looked like, tasted like, felt like)

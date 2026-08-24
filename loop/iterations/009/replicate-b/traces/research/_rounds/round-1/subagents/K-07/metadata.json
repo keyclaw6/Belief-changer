@@ -1,0 +1,19 @@
+{
+  "model": "minimax-m3",
+  "http": 200,
+  "rounds": 28,
+  "searches": 8,
+  "fetches": 74,
+  "latency_s": 336.3,
+  "usage": {
+    "prompt_tokens": 141229,
+    "completion_tokens": 15744,
+    "total_tokens": 156973,
+    "total_characters": 0,
+    "prompt_tokens_details": {
+      "cached_tokens": 134939
+    }
+  },
+  "finish": "stop",
+  "completed": true
+}

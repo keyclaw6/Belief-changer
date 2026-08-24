@@ -8,7 +8,8 @@
 > **How it relates to the other records:**
 > - `loop/results.tsv` — the canonical machine row (one line per iteration).
 >   The verdict and lesson here are copied from it, never re-worded.
-> - `loop/learnings.md` — the terse non-repeat log the *hypothesizer* reads.
+> - `loop/learnings.md` — the terse evidence log the *hypothesizer* reads
+  (REVERT is not a ban; see founder 2026-08-24).
 > - **This file** — the explanation. Where you come to actually understand an
 >   experiment and decide the next move.
 >
@@ -165,3 +166,31 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **Verdict & why.** REVERT. Owning voice regressed. Partial literal improvement insufficient.
 
 **What this opens next.** Config/model surface for final iter-008.
+
+### founder-2026-08-24 — REVERT is not a ban  ·  2026-08-24  ·  AMENDMENT
+
+**Hypothesis.** None — founder process amendment after the judge census redesign.
+
+**Change.** North Star, PROGRAM, hypothesizer, and learnings: a REVERT verdict does not forbid retrying that factory change. Exact prior wording from 001–007 stays eligible under the new census judges. The 001–008 3-strike/PIVOT notes do not bind 009 onward. 008's non-contributor model swap stays forbidden because models are founder-only.
+
+**What happened.** 001–008 were scored on the retired PASS/FAIL-by-label instrument. Several of those prompt changes closed named symptoms and may still be the right factory move; the old KEEP/REVERT gate could not see NOTED-class improvement.
+
+**Verdict & why.** Amendment, not an experiment. Records stay; eligibility reopens.
+
+**What we learned.** Learnings are evidence of what happened under a given instrument, not a ban list.
+
+**What this opens next.** After 009's instrument baseline, 010+ may retry writer-prompt, plan-skill, plan-reviewer Gate 4, and style-guide changes from 001–007 when the new traces point there.
+
+### iter-009 — instrument baseline  ·  2026-08-24  ·  BASELINE
+
+**Hypothesis.** None. Judge census redesign requires a fresh two-book baseline.
+
+**Change.** No factory edit. Reused accepted research and the 000 18-chapter plan. Wrote replicate A then B on Muse Spark Zen contributor-free (A ch09 one Vercel contributor fallback). Judged with composer-2.5 census panel.
+
+**What happened.** Belief 18/18 PASS both books, journey 18/18 PASS both, book-arc PASS both. Voice 11/18 PASS both. Blocking in both books: `factory-speech` 18+19, `instruction-paperwork` 2+5. Noted in both: willpower-lexicon ~70 each, factory-speech noted 60 each, trap-question-label 23/11, coach-register 16/25, journey re-argument 11/14, book-arc re-argument 7/8. Voice FAIL chapters overlap only at ch01.
+
+**Verdict & why.** BASELINE. Measurement, not KEEP/REVERT. Accepted snapshot is replicate A.
+
+**What we learned.** Under census judges the factory's belief and arc work hold. The unpaid KEEP object is writer-prompt factory-speech at assigned peaks (BOXED DEFINITION, killer-line, FOR column, trap-question labels). Plan frozen instructions carry clinical/cross-ref tails that fire instruction-paperwork. 001–007 prompt changes remain eligible.
+
+**What this opens next.** One causal writer-prompt change targeting factory-speech blocking counts in both books — 005 silent-execution wording is eligible to retry, or a tighter Binding-craft subtraction. Do not swap models.
