@@ -2,21 +2,18 @@
 
 ## Position
 
-- **Iteration:** 009 (instrument baseline after judge redesign)
+- **Iteration:** 010
 - **Stage:** Recorded
 - **Status:** IDLE
 - **Campaign branch:** `campaign-001`
-- **Last completed unit:** 009 BASELINE committed-pending. KEEP objects: factory-speech (writer-prompt), instruction-paperwork (plan).
-- **Next unit:** 010 — hypothesizer from 009 traces; one causal factory change; two books.
+- **Last completed unit:** 010 KEEP — factory-speech blocking 18→6 / 19→8. Writer-prompt promoted. Accepted snapshot = replicate A.
+- **Next unit:** 011 hypothesizer from 010 traces (residual factory-speech or instruction-paperwork).
 
 ## Journal
 
 | Time | What | Next |
 |---|---|---|
-| 2026-08-22 | iter-008 REVERT. Campaign 004–008 all REVERT. **STOP.** | IDLE |
-| 2026-08-24 | Founder: run 009–018. Judge change requires fresh baseline. | 009 write A |
-| 2026-08-24 17:57 | 009 write A launched (Muse Spark Zen → Vercel contributor). | wake on chapter artifacts |
-| 2026-08-24 18:16 | Replicate A complete. Snapshot + live chapters deleted. Start B. | write B + judge A |
-| 2026-08-24 18:38 | Replicate B complete (all Zen). Both panels running. | wake on judgment artifacts |
-| 2026-08-24 19:17 | Replicate A panel complete (55/55). B still running. | finish B |
-| 2026-08-24 19:50 | 009 BASELINE. Belief/journey/arc hold. Voice factory-speech is KEEP object. | 010 hypothesizer |
+| 2026-08-24 19:50 | 009 BASELINE. | 010 |
+| 2026-08-24 20:21 | 010 A written. | write B, judge A |
+| 2026-08-24 22:49 | 010 B written. Both panels running. | judgments |
+| 2026-08-25 06:40 | 010 KEEP. factory-speech 18→6 / 19→8. | 011 |

@@ -94,3 +94,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** BASELINE
 **Lesson:** Belief 18/18 PASS both; journey 18/18 PASS both; book-arc PASS both. Voice 11/18 PASS both. KEEP objects: blocking `factory-speech` (merged 37) at writer-prompt Binding craft / speakable device names — PERSISTENT; blocking `instruction-paperwork` (merged 7) at plan frozen instruction+safety strings. Noted floor: willpower-lexicon 142, factory-speech 120, coach-register 41, trap-question-label 34, journey/arc re-argument 40. Voice FAIL chapter overlap is ch01 only (sampling). Noise floor: classes in both books; chapter PASS/FAIL is not the KEEP object.
 **Next direction:** Close factory-speech in both books (writer-prompt silent craft, or 005-style Binding rewrite now eligible). Secondary: plan instruction-paperwork. Re-argument remains noted-only.
+
+### iter-010 — writer-prompt silent craft + workshop-token translation
+**Hypothesis:** Silent craft execution plus workshop-token translation supremacy in `prompts/chapter-writer.md` drops voice blocking `factory-speech` in both books.
+**Change:** `prompts/chapter-writer.md` (Method and voice trap-question line; never-surface/workshop ban; Binding bullets 2 and 7). Research+plan reused; 18×2 rewrite on Muse Spark Zen. Judges: composer-2.5.
+**Verdict:** KEEP
+**Lesson:** factory-speech blocking 18→6 (A) and 19→8 (B). Trap-question labels and boxed-definition/killer-line meta mostly gone. Residual factory-speech is plan workshop tokens (`FOR column`, BOXED residual), anatomy/style-guide checklist leaks, and verbatim mantra slugs. instruction-paperwork 2→3 / 5→6 on unchanged plan strings. method-promise-hedge B-only. Belief/journey/arc still hold.
+**Next direction:** Residual factory-speech at plan-card/style-guide bundle and frozen-token paste — or plan instruction-paperwork. Do not repeat the exact 010 hunks blindly; 005/010 writer-prompt surface still eligible with a new mechanism.

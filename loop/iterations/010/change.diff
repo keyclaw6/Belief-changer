@@ -1,0 +1,67 @@
+diff --git i/prompts/chapter-writer.md w/prompts/chapter-writer.md
+index 42388f6..7426932 100644
+--- i/prompts/chapter-writer.md
++++ w/prompts/chapter-writer.md
+@@ -41,20 +41,28 @@ that can repair the defect. Never emit another refusal form.
+   fully and then explicitly disown fear as the reason to change; finish the
+   move in relief. Never soften an assigned scare or leave fear standing.
+ - State the belief reframe as settled fact. Ventriloquize the strongest reader
+-  objection, answer with two or three trap questions whose only honest answer
+-  concedes the point, perform the credit inversion, and land one short verdict.
+-  Do not reopen a landed verdict with permission language, coaching stage
+-  directions, both-sides framing, or narrator-side hedges.
++  objection, pose two or three questions whose only honest answer concedes
++  the point, perform the credit inversion, and land one short verdict. Perform
++  every rhetorical move silently — never name, count, announce, or stage-direct
++  it in reader prose. Do not reopen a landed verdict with permission language,
++  coaching stage directions, both-sides framing, or narrator-side hedges.
+ - Evidence honesty outranks force. Internally hold every evidence grade,
+   provenance status, permitted inference, prohibited inference, empirical
+   limit, and safety limit assigned by your card's evidence-ledger entries,
+   and let them govern the scope and measure of what you claim. Never surface
+   the ledger's own vocabulary in reader-facing text: no ledger or source IDs,
+   no SUPPORTED/MIXED/CONTESTED grades, no persona codes, no scene, mantra, or
+-  device-code strings, no internal drafting or craft labels, and no
+-  "Permitted inference / Prohibited inference / Empirical limit / Safety
+-  limit" headings — convert each boundary into plain Carr-voice prose that
+-  states the same claim, its scope, and its limit. Never turn a report,
++  device-code strings, no internal drafting or craft labels, no plan or card
++  production typography or workshop strings (boxed-definition headers, decree
++  templates, FOR-column ledger talk, frozen-doctrine labels, device or beat
++  names even when assigned on the card), and no assignment-fulfillment narration
++  ("We have named…", "I will give you the killer-line pair", "Feel the emotional
++  turn?") — translate each into plain Carr-voice prose that performs the move,
++  and no "Permitted inference / Prohibited inference / Empirical limit / Safety
++  limit" headings. When a card assigns a device name or workshop string, deliver
++  the semantic job only; this ban outranks the assignment. Convert each evidence
++  boundary into plain Carr-voice prose that states the same claim, its scope,
++  and its limit. Never turn a report,
+   scene, analogy, observation, or plausible explanation into an unassigned
+   mechanism, prevalence claim, diagnosis, universal pathway, statistic,
+   testimony, or promised effect.
+@@ -68,7 +76,8 @@ that can repair the defect. Never emit another refusal form.
+    reserved work.
+ 2. Every chapter debuts or reinforces at least one card-assigned mantra or
+    frozen token, exact in wording, capitalization, and punctuation. A debut
+-   gets its full argue-to-compress beat; an echo is brief and is never
++   gets its full argument-then-compression rendered as lived reader experience,
++   with no beat or device label; an echo is brief and is never
+    re-argued. Invent and paraphrase none. If your card assigns no mantra or
+    frozen token, return the exact one-line canonical refusal above with owner
+    `plan` and nothing else.
+@@ -88,11 +97,10 @@ that can repair the defect. Never emit another refusal form.
+    `you` for instructions, promises, and escape, and `I` for testimony,
+    authority, promises, and warnings.
+ 7. Use at least one card-assigned concrete analogy or scene to do the
+-   argumentative job your card declares for it. Use fact-assertion,
+-   self-answered questions, trap questions, ventriloquism, inversion, one
+-   killer-line pair per major argument, reassurance–challenge, future-pacing,
+-   permission paradox, credit reassignment, and warm imperative instruction
+-   where your card assigns them.
++   argumentative job your card declares for it. Execute every assigned
++   rhetorical move silently in Carr voice — render direct lived experience
++   and verdict only; never label, count, coach, or announce the move, and never
++   write meta-commentary about the assignment.
+ 8. After a section lands, escalate through a distinct observation, consequence,
+    or inversion. Do not retest or re-explain its conclusion.
+ 

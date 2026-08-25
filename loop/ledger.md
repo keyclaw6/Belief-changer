@@ -194,3 +194,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Under census judges the factory's belief and arc work hold. The unpaid KEEP object is writer-prompt factory-speech at assigned peaks (BOXED DEFINITION, killer-line, FOR column, trap-question labels). Plan frozen instructions carry clinical/cross-ref tails that fire instruction-paperwork. 001–007 prompt changes remain eligible.
 
 **What this opens next.** One causal writer-prompt change targeting factory-speech blocking counts in both books — 005 silent-execution wording is eligible to retry, or a tighter Binding-craft subtraction. Do not swap models.
+
+### iter-010 — silent craft + workshop-token translation  ·  2026-08-25  ·  KEEP
+
+**Hypothesis.** If the writer contract forbids naming craft and outranks card workshop strings, voice blocking `factory-speech` falls in both books.
+
+**Change.** Four hunks in `prompts/chapter-writer.md` (silent trap-questions; expanded never-surface + translation supremacy; Binding 2 and 7). Plan and research reused. Two 18-chapter books on Muse Spark Zen.
+
+**What happened.** factory-speech blocking 18→6 (A) and 19→8 (B). trap-question-label noted 23→7 / 11→0. Voice PASS 11→13 (A), 11→11 (B). Belief 18/18, journey 18/18, book-arc PASS both. Residual factory-speech: FOR-column / BOXED residual, anatomy checklist, mantra slugs. instruction-paperwork 2→3 / 5→6. method-promise-hedge 1 in B only.
+
+**Verdict & why.** KEEP. Targeted class improved in both books; no shared new blocking class. Prediction was near-zero; result is material drop, not close (partial).
+
+**What we learned.** Speakable Binding diction was a real cause of boxed-definition / killer-line / trap-question leaks. Plan workshop tokens and the bundled style-guide anatomy checklist still leak after that ban.
+
+**What this opens next.** Residual factory-speech (plan-card tokens or style-guide bundle) or plan instruction-paperwork. New mechanism — do not re-apply 010 hunks unchanged.
