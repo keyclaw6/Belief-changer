@@ -509,7 +509,7 @@ The vocabulary does the reframing in every sentence, whether or not that sentenc
 
 ---
 
-## B5. The sentence-operator toolkit (reach for these by name)
+## B5. The sentence-operator toolkit (execute silently — never surface operator names in reader prose)
 
 Voice metrics first — the reviewer checks these (per ~1,000 words unless noted):
 
@@ -525,15 +525,15 @@ The operators:
 
 1. **Fact-assertion** — deliver reframes as flat settled fact: "The fact is..." / "The reality is..." Never hedge ("studies suggest," "many people find" are banned for core claims).
 2. **Self-answered question** — ask, then answer immediately with total confidence: "Do you want to stop? Of course you do – that's why you're reading this book."
-3. **Trap question** — a question whose only honest answer concedes the argument: "If you genuinely choose it, why would you need this book?"
+3. **Concession question** — pose one question whose only honest answer concedes the point; perform it in flat Carr voice without naming, announcing, or labeling the question type.
 4. **Ventriloquism** — quote the reader's inner voice in quotation marks (their justifications, their future temptations) and answer it. Early: print the full justification menu as quotes, then demolish one per chapter. Late: pre-play the future tempting thought so it arrives pre-refuted.
 5. **The inversion** — "It's not X, it's Y": "It causes the aggravation; it doesn't relieve it." "It's you that's [the benefit], not the [behavior]." Often capped with: "It's the other way around."
-6. **Killer-line pair** — two short mirrored sentences at the peak: build-up, then verdict. One per major argument, no more.
+6. **Peak verdict pair** — land two short mirrored sentences at the argument peak (build-up, then verdict); one major argument only; never name, count, promise, or announce the pair in reader prose.
 7. **Reassurance–challenge cycle** — *schedule* the reader's disbelief: name it ("I know this is hard to accept"), welcome it, re-invite the open mind. Doubt is never ignored; it is pre-empted on a cadence.
-8. **Future-pacing** — predict the reader's specific upcoming thoughts, situations, and the named **moment of revelation**. Every prediction that lands transfers authority to the claims that can't be verified.
+8. **Upcoming-moment prediction** — predict the reader's specific upcoming thought, situation, and moment of revelation as lived experience; never coach-stage the prediction ("let me future-pace you", "future-pace this with me") or use factory labels as verbs.
 9. **Permission paradox** — explicitly permit the behavior while reading ("carry on exactly as normal until you finish"). Disarms resistance and proves this isn't willpower.
 10. **Credit reassignment scene** — take a cherished scene, strip the behavior out of it, show the pleasure was the scene all along ("it was only ever sneaking a ride").
-11. **Instruction voice** — numbered, imperative, ALL-CAPS headline, each instruction followed by its warm rationale. Instructions are thought-substitution rules: "rather than think [old thought], think [mantra]."
+11. **Instruction voice** — numbered, imperative, ALL-CAPS headline followed immediately by one short spoken rationale line; no "Warm rationale" header, craft label, or assignment-fulfillment narration around either line. Instructions are thought-substitution rules: "rather than think [old thought], think [mantra]."
 
 ---
 
@@ -562,7 +562,7 @@ Every chapter delivered by a chapter writer must satisfy ALL of:
 2. **One mantra set or reinforced.** The chapter either *debuts* a mantra (full argue→compress lifecycle) or *echoes* assigned mantras verbatim at natural moments — per the chapter's mantra assignment in the master plan. Echoes are brief; never re-argue a debuted mantra.
 3. **Curve-aware vocabulary.** Use the lexicon registers; respect where the chapter sits on the freedom-crescendo and demolition curves (a mid-book chapter doesn't bathe in freedom language; a final-quarter chapter does).
 4. **At least one concrete analogy or scene** doing the chapter's argumentative work (from the master plan's analogy assignment or the analogy bank).
-5. **Operator-rich, metric-true prose** per §B5 (questions ~10%, killer-pair at the peak, ventriloquism where the reader would object, no hedging).
+5. **Operator-rich, metric-true prose** per §B5 (questions ~10%, a silent peak verdict pair at the argument peak, ventriloquism where the reader would object, no hedging) — checklist metrics are silent-execution checks only; never surface craft labels in reader prose.
 6. **Triangle discipline**: "we" for the trap, "you" for the escape, "I" for testimony and instruction.
 7. **Non-shaming and gain-framed throughout** (Part A guardrails all apply).
 8. **No verbatim repetition of anything except mantras** and no re-argument of previous chapters' settled points — invoke their tokens instead.
@@ -594,7 +594,7 @@ Because chapter writers see only the master plan + previous chapter + this guide
 - Every mantra in this chapter's assignment present, **verbatim**, correctly cased and punctuated?
 - Did I debut anything the master plan says was already debuted? (If so, compress to its token.)
 - Any banned-register words? Any hedged core claims?
-- Question rate ~10%? A killer-pair at the peak? Sentences under 8 words present?
+- Question rate ~10%? A silent peak verdict pair at the argument peak? Sentences under 8 words present?
 - "We" for the trap, "you" for the escape — checked?
 - Does the chapter's freedom-language level match its position on the crescendo?
 - Would this chapter still make stopping feel like *escape* if read in isolation?

@@ -101,3 +101,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** KEEP
 **Lesson:** factory-speech blocking 18→6 (A) and 19→8 (B). Trap-question labels and boxed-definition/killer-line meta mostly gone. Residual factory-speech is plan workshop tokens (`FOR column`, BOXED residual), anatomy/style-guide checklist leaks, and verbatim mantra slugs. instruction-paperwork 2→3 / 5→6 on unchanged plan strings. method-promise-hedge B-only. Belief/journey/arc still hold.
 **Next direction:** Residual factory-speech at plan-card/style-guide bundle and frozen-token paste — or plan instruction-paperwork. Do not repeat the exact 010 hunks blindly; 005/010 writer-prompt surface still eligible with a new mechanism.
+
+### iter-011 — style-guide silent operators
+**Hypothesis:** Silent-execution rewrite of `prompts/style-guide.md` §B5/B7/B9 drops voice blocking `factory-speech` in both books.
+**Change:** `prompts/style-guide.md` (B5 header + operators 3/6/8/11; B7 §5; B9 checklist). Research+plan reused; 18×2 rewrite on Muse Spark Zen. Judges: composer-2.5.
+**Verdict:** KEEP
+**Lesson:** factory-speech blocking 6→4 (A) and 8→2 (B). §B5 operator labels (`killer pair`, `Future-pace`, `Warm rationale:`) no longer block. Residual factory-speech is plan I-06 ID cross-ref (`as in I-05`) plus A-only FT-06 inventory. instruction-paperwork 3→5 / 6→5 on unchanged plan safety tails (PERSISTENT, 3rd time). Belief/journey/arc still hold. Voice PASS 13→15 / 11→16.
+**Next direction:** Plan instruction spine (paperwork + I-06 factory ID). Founder halt after 011 — do not start 012 until asked.

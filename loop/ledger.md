@@ -208,3 +208,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Speakable Binding diction was a real cause of boxed-definition / killer-line / trap-question leaks. Plan workshop tokens and the bundled style-guide anatomy checklist still leak after that ban.
 
 **What this opens next.** Residual factory-speech (plan-card tokens or style-guide bundle) or plan instruction-paperwork. New mechanism — do not re-apply 010 hunks unchanged.
+
+### iter-011 — style-guide silent operators  ·  2026-08-25  ·  KEEP
+
+**Hypothesis.** If the bundled style-guide stops naming craft operators, voice blocking `factory-speech` falls in both books.
+
+**Change.** Four hunks in `prompts/style-guide.md` (§B5 header + operators 3/6/8/11; §B7 item 5; §B9 checklist). Plan and research reused. Two 18-chapter books on Muse Spark Zen.
+
+**What happened.** factory-speech blocking 6→4 (A) and 8→2 (B). Operator-vocabulary peaks closed as blocking. Residual factory-speech is plan I-06 `as in I-05` plus A-only FT-06 (noise). instruction-paperwork 3→5 / 6→5. Voice PASS 13→15 / 11→16. Belief 18/18, journey 18/18, book-arc PASS both.
+
+**Verdict & why.** KEEP. Targeted class improved in both books; no shared new blocking class. Prediction accurate on the drop and on paperwork persistence.
+
+**What we learned.** Speakable style-guide operator names were a real remaining cause after 010's writer-prompt ban. Frozen instruction-spine safety tails and ID cross-refs are now the unpaid KEEP object (plan, PERSISTENT 3×).
+
+**What this opens next.** Plan instruction spine. Founder halt — do not start 012 until asked.
