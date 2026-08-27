@@ -236,3 +236,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** The 011 frozen-spine rule was the real cause of paperwork. Regenerating the plan was required. Residual factory-speech after the split is style-guide beat labels and ledger-token callbacks, not liability tails.
 
 **What this opens next.** Style-guide toolkit names / writer-prompt ledger framing, or plan I-08 vs M-08 numbering. Founder halt — do not start 013.
+
+### iter-013 — founder-batch spine and packet hygiene  ·  2026-08-27  ·  KEEP
+
+**Hypothesis.** If writer, plan-skill, plan-reviewer, and style-guide are rewritten together for Carr spine, packet hygiene, and lettered mantra IDs, voice blocking `factory-speech` falls in both books and journey `compliance-missing` from M-08/I-08 closes.
+
+**Change.** Four prompt files (see `loop/iterations/013/change.diff`). Plan regenerated (14 chapters). Two books on Muse Spark Zen. Panel composer-2.5, 43+43.
+
+**What happened.** factory-speech blocking 3→2 (A) and 9→2 (B). Named 012 surfaces gone. compliance-missing 2→0 / 1→0. Voice 13/14 both (FAIL ch08 only). Belief 14/14, journey 14/14, book-arc PASS both. Residual: CH-08 announces register/job from card Voice/guardrail lines; A also grafts T-A (noise). Noted factory-speech floor still ~29/28.
+
+**Verdict & why.** KEEP. Both targeted clusters improved in both books. No shared new blocking class. Attribution weak (founder batch).
+
+**What we learned.** Lettered mantra IDs closed the I-08/M-08 instrument collision. Packet hygiene closed the named 012 craft-label leaks. The factory-speech class mutated to plan-card Voice operators at the fear hinge — PERSISTENT after 010–012 prompt-level attempts.
+
+**What this opens next.** CH-08 plan-card speakable Voice/guardrail lines, or a different level than more silent-execution bans. Founder halt — do not start 014 unless asked.

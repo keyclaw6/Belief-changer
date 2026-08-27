@@ -2,22 +2,20 @@
 
 ## Position
 
-- **Iteration:** 012
+- **Iteration:** 013
 - **Stage:** Recorded
 - **Status:** IDLE
 - **Campaign branch:** `campaign-001`
-- **Last completed unit:** 012 KEEP — instruction-paperwork blocking 5→0 / 5→0. Plan-skill promoted. Accepted snapshot = replicate A (17 chapters).
-- **Next unit:** STOP. Founder asked to halt after 012. Do not start 013.
+- **Last completed unit:** 013 KEEP — factory-speech blocking 3→2 / 9→2; compliance-missing 2→0 / 1→0. Founder batch. Accepted snapshot = replicate A (14 chapters).
+- **Next unit:** STOP. Do not start 014 unless the founder asks.
 
 ## Journal
 
 | Time | What | Next |
 |---|---|---|
-| 2026-08-25 11:25 | 011 KEEP. Halt. | IDLE |
-| 2026-08-26 22:10 | 012 started. Durable runners in scripts/loop-runner/. Plan-skill applied in worktree. Planning. | plan-writer |
-| 2026-08-26 22:10 | 012 plan fit to write from (17 ch). Writing replicate A. | write A |
-| 2026-08-26 22:47 | 012 A written (17 ch). Snapshot A; writing B; judging A. | write B / judge A |
-| 2026-08-26 23:04 | 012 B written (17 ch). Snapshot B. Judging A continues. | judge A then B |
-| 2026-08-27 08:12 | 012 A panel 52/52. Paperwork blocking 0. Starting B panel. | judge B |
-| 2026-08-27 09:44 | 012 B panel 52/52. Paperwork 0/0. Trace analysis. | decide |
-| 2026-08-27 09:52 | 012 KEEP. Paperwork 5→0 both. Halt. | IDLE |
+| 2026-08-27 18:30 | 013 founder-batch prompts applied; critic GO | plan-writer |
+| 2026-08-27 19:20 | Plan fit to write from (14 ch, 4 review rounds) | write A |
+| 2026-08-27 19:00 | Replicate A written 14/14 | write B / judge A |
+| 2026-08-27 19:49 | Replicate A panel 43/43. B written. | judge B |
+| 2026-08-27 22:36 | Replicate B panel 43/43. Census KEEP. | record |
+| 2026-08-27 22:40 | 013 KEEP. Halt. | IDLE |

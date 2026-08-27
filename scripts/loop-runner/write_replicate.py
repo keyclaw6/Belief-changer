@@ -23,12 +23,12 @@ def parse_cards(plan: str) -> dict[int, str]:
         raise SystemExit("no compact chapter cards")
     block = m.group(1)
     cards: dict[int, str] = {}
-    parts = re.split(r"\n(?=\*\*C\d{2} —)", "\n" + block)
+    parts = re.split(r"\n(?=\*\*C(?:H-)?\d{2} —)", "\n" + block)
     for part in parts:
         part = part.strip()
         if not part.startswith("**C"):
             continue
-        nm = re.match(r"\*\*C(\d{2}) —", part)
+        nm = re.match(r"\*\*C(?:H-)?(\d{2}) —", part)
         if not nm:
             continue
         cards[int(nm.group(1))] = part.strip() + "\n"
@@ -45,7 +45,7 @@ def book_core(plan: str) -> str:
 
 
 def assemble(writer: str, plan: str, style: str, card: str, prev: str, n: int) -> str:
-    title = re.match(r"\*\*(C\d{2} — .+?)\*\*", card)
+    title = re.match(r"\*\*(C(?:H-)?\d{2} — .+?)\*\*", card)
     title_s = title.group(1) if title else f"C{n:02d}"
     assignment = (
         f"Write {title_s} of `production-books/{SLUG}` as the complete chapter file. "

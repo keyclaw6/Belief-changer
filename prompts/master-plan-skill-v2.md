@@ -31,7 +31,7 @@ Use whatever organization best expresses the book, while making the following se
 
 ### Book core
 
-Lock the target behavior, one reader expressed through 3–6 functional personas, the load-bearing false belief, through-line, format, all five fork decisions, the redefinition and margin-for-error doctrine if needed, the clinical/eating-disorder safety perimeter, the strongest pro-behavior scene, the destination state, and one fresh ending reframe.
+Lock the target behavior, one reader named by a human handle (not P-xx persona codes), the load-bearing false belief, through-line, format, all five fork decisions, the redefinition and margin-for-error doctrine if needed, the clinical/eating-disorder safety perimeter, the strongest pro-behavior scene, the destination state, and one fresh ending reframe.
 
 Preserve the method: escape not sacrifice, warm to the person / vicious to the trap (never contempt for the reader), no willpower, fear deployed the corpus way — raised at full force, then disowned by the escape — wherever the plan assigns it, immediate freedom after belief change, autonomy, original prose, and the Fork-1 line per the style guide (default: full Carr personification — name the two mechanism characters, the trivial physical creature to starve and the belief-system that feeds it; the Burgeon no-monster stance is a brief-level override only). (Fidelity doctrine, founder 2026-07-12.)
 
@@ -59,13 +59,13 @@ Exact quotations must match the synthesis. Interpretations stay unquoted. Do not
 
 Choose and consolidate 6–10 original frozen mantras that deserve repetition, plus any chapter-anchored frozen tokens (settled-claim phrases the book invokes verbatim across chapters, such as a recurring one-line verdict). Define each once with:
 
-- stable ID and exact wording;
+- lettered ID (M-A, M-B, … — never M-08 or any numeric form that collides with instruction I-08) and exact wording;
 - the belief or emotional job it installs;
 - debut chapter ID;
-- echo chapter IDs;
+- echo chapter IDs (where the frozen line is the natural next sentence — not a quota);
 - hand-over form in the final movement.
 
-Every chapter assigns at least one mantra or frozen token — a debut or an echo — so the writer is never left without an exact token to land. Mantras are routed by chapter, not by occurrence arithmetic. Chapter cards reference mantra IDs and frozen-token IDs and never repeat the frozen wording.
+A mantra debuts once, then echoes when natural. There is no per-chapter must-assign quota. Chapter cards that debut or echo a mantra pin the frozen quote on the card and cite the lettered ID.
 
 ### Scene and analogy bank
 
@@ -87,11 +87,11 @@ Clinical and eating-disorder limits that could conflict with method advice belon
 
 ### Arc and length
 
-Choose the chapter count and architecture that best deliver the behavior-specific belief change. Treat this spine as whole-book functions whose composition, merging, emphasis, and order belong to your judgment, not as a chapter-per-function template: trust and participation → dissolve loaded choice → switch the evaluation axis → demolish benefits → expose the inversion → close escape routes → widen the indictment where supported → meet the strongest scene → demystify → knowledge/readiness gate → chosen threshold → relapse-proof → ordinary life.
+Choose the chapter count and architecture that best deliver the behavior-specific belief change. Not a chapter-per-function course. First third: easy contract, already hooked, two creatures named in passing when the trap is first seen, body/instinct/real food underfoot. Middle: demolitions on that ground, and at least one chapter that inhabits the ordinary doing (eating, for an eating book) rather than another justification kill. After the vow: the last ordinary instance (not a laboratory dose), one ordinary-life chapter (mornings, shops, food; thoughts the reader already owns, once), then a short recap — not three teaching manuals. Merge, reshape, or omit freely inside that spine. A prevalence claim appears once. Long testimony lives in the main flow, in its own room — not a labelled appendix.
 
 Every argument-bearing chapter must be composition-feasible within its budget as one completed, value-bearing correction to what the reader believes the behavior gives, costs, means, or requires, grounded only in evidence and logic that chapter owns. Declare that primary job as `enacted transition — <the correction completed now>`. Setup, topic coverage, a future-investigation prospectus, a catalogue for later demolition, or leaving the reader only willing to keep reading cannot be that job. A completed correction must make the prior valuation less credible now through the chapter's owned evidence or logic. Trust, definition, scope, safety, recap, bridge, and hand-off functions may support or consolidate the movement without becoming a second thesis. A necessary non-argument card declares `non-argument — <definition | safety | recap | bridge | hand-off> ...`; it must advance, protect, or hand over the surrounding persuasive movement rather than replace or defer it.
 
-For every argument-bearing card, make these seven semantic decisions explicit — the reader-state transitions are derived from the research, with no separate framing step: entering belief; concrete subject-specific encounter; enacted discovery; emotional turn; leaving belief; assumptions handed forward (identical to the leaving belief); and work reserved elsewhere, assigned only to named later chapter cards. The next argument-bearing card enters from the prior handed-forward assumptions. Adjacent cards must use distinct enacted-discovery modes and build cumulatively rather than repeat a plan-wide inventory.
+For every argument-bearing card, make explicit: the belief now (what is true for the reader at entry, and what this chapter makes true); the concrete subject-specific encounter; evidence IDs plus the limits the writer must not overclaim; any NEW instruction (spoken imperative only); and the reserved-later fence (work assigned only to named later chapter cards). The next argument-bearing card enters from the belief now just installed. Adjacent cards must use distinct encounters and build cumulatively rather than repeat a plan-wide inventory.
 
 Use your judgment to merge, reshape, move, or omit material that cannot meet this boundary honestly and compellingly.
 
@@ -104,23 +104,17 @@ For a calibration plan, chapter budgets must sum exactly to 54,000–66,000 word
 Give every chapter a stable ID, number, and working title, then specify only its semantic work order:
 
 - the primary persuasive job declaration and the objection or justification it resolves;
-- for every argument-bearing card, its entering belief, concrete subject-specific encounter, enacted discovery, emotional turn, leaving belief, assumptions handed forward, and work reserved elsewhere;
+- for every argument-bearing card: belief now, concrete subject-specific encounter, evidence-ledger IDs plus the limits the writer must not overclaim, any NEW instruction (spoken imperative only — CA-01), and the reserved-later fence;
 - arc position and qualitative curve position;
-- target persona IDs and the reader voice or scene that makes the move land;
-- evidence-ledger IDs, including the limits the chapter must preserve;
-- mantra and frozen-token IDs debuted and echoed — every card assigns at
-  least one mantra or frozen token (debut or echo);
-- instruction ID, if any;
+- a human reader-handle (not P-xx) and the voice or scene that makes the move land;
+- mantra and frozen-token IDs only when this chapter debuts or naturally echoes one, with the frozen quote pinned on the card;
 - one or more concrete scene/analogy IDs and the argumentative job each performs;
-- assigned rhetorical devices, ALL-CAPS peak moments, and recap licensing;
-- `scare-then-disown` marker when this move assigns hard or frightening
-  material (the writer must land it fully and then disown fear);
 - structural responsibility, if any;
 - method, safety, and originality guardrails specific to this move;
 - continuity intent: what understanding it receives and hands forward;
-- one integer word budget matching the arc table.
+- one integer word budget matching the arc table (planner length arithmetic — not a writer padding target).
 
-These are semantic authorities, not a prose template or mandatory chapter-section anatomy. A card must be directly writable: every field it names must resolve against a plan-wide inventory with no ambiguity and no gap the writer would have to invent around. Inside a card, output only the permitted semantic fields: no headings, tables, connective prose, copied plan-wide rows, or prewritten chapter anatomy. Each plan-wide inventory remains in its single canonical section. The writer derives `IN THIS CHAPTER`, the italic thesis, section flow, ALL-CAPS landing, SUMMARY, sentence rhythm, and analogy density from the style guide. Do not prewrite those prose elements in the plan.
+These are semantic authorities, not a prose template or mandatory chapter-section anatomy. Do not put device lists, persona codes, ALL-CAPS-peak inventories, or a `scare-then-disown` field name on cards. A card must be directly writable: every field it names must resolve against a plan-wide inventory with no ambiguity and no gap the writer would have to invent around. Inside a card, output only the permitted semantic fields: no headings, tables, connective prose, copied plan-wide rows, or prewritten chapter anatomy. Each plan-wide inventory remains in its single canonical section. The writer derives `IN THIS CHAPTER` (a preview of what you will see, not a syllabus), the italic thesis as spoken Carr, section flow, ALL-CAPS landing, and SUMMARY (ordinary sentences of the belief that changed) from the style guide. Do not prewrite those prose elements in the plan.
 
 ## Normalization law
 
@@ -128,7 +122,11 @@ Do not create:
 
 - exact mantra occurrence counts;
 - a second mantra audit or cumulative state matrix;
-- repeated full mantra, instruction, evidence, persona, or slot text in chapter cards;
+- P-xx persona codes;
+- mantra IDs that share a number with an instruction (M-08 / I-08); use M-A, M-B, …;
+- a `scare-then-disown` field, spoken-fear-disown line, device list, or ALL-CAPS-peak inventory on cards;
+- device lists or ALL-CAPS-peak inventories on cards;
+- repeated full instruction, evidence, or slot text in chapter cards (pinned frozen quotes are the exception);
 - chapter-local copies of any plan-wide inventory;
 - prewritten previews, theses, landings, or SUMMARY prose;
 - a single-use phrase ledger;

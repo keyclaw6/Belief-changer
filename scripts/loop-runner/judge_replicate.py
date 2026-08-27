@@ -27,10 +27,10 @@ def parse_alignment(text: str) -> dict[int, int]:
 
 
 def extract_cards(plan: str) -> dict[int, str]:
-    parts = re.split(r"\n(?=\*\*C\d+ — )", plan)
+    parts = re.split(r"\n(?=\*\*C(?:H-)?\d+ — )", plan)
     cards: dict[int, str] = {}
     for p in parts:
-        m = re.match(r"\*\*C(\d+) —", p)
+        m = re.match(r"\*\*C(?:H-)?(\d+) —", p)
         if m:
             cards[int(m.group(1))] = p.strip()
     return cards
@@ -52,24 +52,26 @@ def parse_inventory_table(plan: str, header: str) -> dict[str, str]:
             continue
         iid = cols[0].strip("* ")
         wording = cols[1]
-        if re.match(r"^(M|FT|I)-\d+$", iid):
+        if re.match(r"^(M|FT|I|T)-[A-Z0-9]+$", iid):
             out[iid] = wording
     return out
 
 
 def field(card: str, name: str) -> str:
-    key = name.lower() + ":"
+    needle = name.lower()
     for line in card.splitlines():
-        if line.lower().startswith(key):
+        stripped = line.lstrip("* ").lower()
+        if stripped.startswith(needle) and ":" in line:
             return line.split(":", 1)[1].strip()
     for part in card.split(" | "):
-        if part.lower().startswith(key):
+        cleaned = part.lstrip("* ").lower()
+        if cleaned.startswith(needle) and ":" in part:
             return part.split(":", 1)[1].strip()
     return "NONE"
 
 
 def ids_in(blob: str) -> list[str]:
-    return re.findall(r"\b(?:M|FT|I)-\d+\b", blob)
+    return re.findall(r"\b(?:M-[A-Z]|M-\d+|FT-\d+|I-\d+|T-[A-Z])\b", blob)
 
 
 def chapter_context(n: int, n_total: int, card: str, mantras: dict[str, str], instructions: dict[str, str], tokens: dict[str, str]) -> str:
@@ -77,15 +79,31 @@ def chapter_context(n: int, n_total: int, card: str, mantras: dict[str, str], in
     job = field(card, "primary job")
     entering = field(card, "entering belief")
     leaving = field(card, "leaving belief")
+    if entering == "NONE" and leaving == "NONE":
+        belief_now = field(card, "belief now")
+        if belief_now != "NONE":
+            if "→" in belief_now:
+                left, right = belief_now.split("→", 1)
+                entering = left.replace("entry believes", "").replace("was", "", 1).strip(" \"'")
+                leaving = right.replace("makes true", "").strip(" \"'")
+            else:
+                entering = belief_now
+                leaving = belief_now
     arc = field(card, "arc")
     curve = field(card, "curve")
     if curve == "NONE":
         curve = field(card, "arc position")
     cont = field(card, "continuity")
     instr_blob = field(card, "instruction")
+    if instr_blob == "NONE":
+        instr_blob = field(card, "new instruction")
+    if instr_blob == "NONE":
+        instr_blob = field(card, "new instructions")
     mantra_blob = field(card, "mantra")
     if mantra_blob == "NONE":
         mantra_blob = field(card, "mantras/tokens")
+    if mantra_blob == "NONE":
+        mantra_blob = field(card, "mantras")
     instr_lines = []
     if instr_blob.lower() in ("none", "none required", ""):
         instr_lines.append("NONE")
@@ -212,10 +230,16 @@ def main() -> None:
     mantras = parse_inventory_table(plan, "**Mantras (repetition law")
     if not mantras:
         mantras = parse_inventory_table(plan, "Mantras (repetition law")
+    if not mantras:
+        mantras = parse_inventory_table(plan, "**Mantras —")
+    if not mantras:
+        mantras = parse_inventory_table(plan, "MANTRA AND FROZEN-TOKEN")
     tokens = parse_inventory_table(plan, "**Frozen tokens")
     if not tokens:
         tokens = parse_inventory_table(plan, "Frozen tokens")
     instructions = parse_inventory_table(plan, "Instruction spine")
+    if not instructions:
+        instructions = parse_inventory_table(plan, "**Instruction spine")
     sheets = judgments / "plan-sheets.md"
     m = re.search(r"(## 3\. MANTRA AND FROZEN-TOKEN SHEET\n.*?)(?=\n## 7\. )", plan, re.S)
     sheets.write_text((m.group(1) if m else plan[plan.find("## 3."):plan.find("## 7.")]) + "\n")

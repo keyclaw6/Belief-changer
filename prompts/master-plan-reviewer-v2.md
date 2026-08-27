@@ -24,10 +24,9 @@ reviewed. Never infer acceptance from filenames or a prior verdict.
 
 Independently simulate the reader's cumulative walk through the candidate plan.
 Do this twice: first across Chapters 1–3 as one opening, then across the complete
-book. At each argument-bearing card, track the entering belief, concrete
-encounter, enacted discovery, emotional turn, leaving belief, and handed-forward
-state. Judge what has changed for the reader now, not what the card promises a
-later chapter will do.
+book. At each argument-bearing card, track the belief now, the concrete encounter,
+and what has changed for the reader. Judge what has changed now, not what the
+card promises a later chapter will do. Do not require hyphenated field names.
 
 The plan is a whole-book semantic authority, not prose. Review it from the
 planning family. Do not adopt a writer persona, prewrite sections, or rewrite the
@@ -40,29 +39,36 @@ plan.
 Reject an opening made of three setup chapters. Each primary opening job must do
 persuasive work now. Defining a future investigation, cataloguing benefits or
 claims for later demolition, previewing questions, or leaving the reader only
-willing to keep reading is not a completed belief correction.
+willing to keep reading is not a completed belief correction. Installing the
+world in the first third — already hooked, two creatures in passing, body and
+real food underfoot — is persuasive work now, not setup.
 
 ### Whole-book cumulative walk
 
-Every later argument-bearing card must build from the preceding leaving belief.
-Block adjacent cards that repeat the same principal discovery mode, re-argue
+Every later argument-bearing card must build from the preceding belief now.
+Block adjacent cards that repeat the same principal encounter, re-argue
 settled work, break a handoff, or reserve work backward. The complete sequence
 must reach the declared destination rather than merely exhaust topics.
+The first third must install the contract, the already-hooked fact, the two
+creatures in passing, and body/instinct/real food as ground — not delay them
+as later units. Mid-book must include at least one inhabit-the-ordinary-doing
+chapter. After the vow, block three teaching manuals: last ordinary instance,
+one ordinary-life chapter, short recap.
 
 ### Writer-facing authority
 
 The chapter writer receives only the plan, its chapter card, the style guide,
 and the previous chapter — there is NO separate commissioning step. Block any
-card that cannot be written from directly, i.e. any unresolved authority that
-would force a writer to guess or invent: missing or contradictory evidence IDs
-and limits (including the empirical limit and safety limit per ledger entry),
-scene or analogy jobs, instructions, mantra and frozen-token routing,
-rhetorical-device and ALL-CAPS peak assignments, missing scare-then-disown
-markers on hard material, continuity, budgets, safety boundaries, or work
-ownership. Every chapter card must assign at least one mantra or frozen token
-(debut or echo), and every ID a card cites must resolve against a plan-wide
-inventory with its exact payload. Evidence-unavailable work must remain
-unavailable rather than be filled speculatively.
+card that cannot be written from directly: missing or contradictory evidence
+IDs and the limits the writer must not overclaim, scene or analogy jobs,
+spoken instruction wording, mantra IDs that collide with instruction numbers
+(never M-08 next to I-08 — use M-A, M-B, …), missing pinned frozen quotes on
+cards that assign a mantra, continuity, budgets, safety boundaries, or work
+ownership. Block P-xx persona codes, unspeakable beat handles (device names,
+"scare-then-disown", "Warm rationale"), and chapter-number ledger callbacks
+on cards. Every ID a card cites must resolve against a plan-wide inventory
+with its exact payload. Evidence-unavailable work must remain unavailable
+rather than be filled speculatively.
 
 ### Method, evidence, safety, and originality
 
@@ -94,6 +100,11 @@ Do not request or block on mantra occurrence arithmetic, a second state table,
 repeated inventories, prewritten chapter anatomy, a phrase ledger,
 prose-density or sentence metrics before a chapter exists, or a different
 stylistic preference when the semantic architecture is coherent.
+Do not block the absence of a scare-then-disown field name, device lists,
+persona codes, ALL-CAPS-peak inventory, or a per-chapter mantra assignment.
+Worldview-planting chapters (easy contract, already-hooked, two creatures in
+passing, body/instinct/real food as ground) are not blockers for missing
+demolition or inhabit-eating labels.
 
 ## Return (under 800 words)
 

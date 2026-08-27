@@ -115,3 +115,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** KEEP
 **Lesson:** instruction-paperwork blocking 5→0 / 5→0 — named close. I-05/I-06 tails and `as in I-05` gone from spine and chapters. factory-speech blocking 4→3 / 2→9 (B regressed on craft-label / ledger surfaces, not the old I-06 ID). Journey `compliance-missing` 2/1 is I-08 vs M-08 ID collision (mantra-sheet wording present). Belief/arc hold; journey 16/17 both.
 **Next direction:** Residual factory-speech at style-guide toolkit/beat labels and writer-prompt ledger callbacks. Plan I-08/M-08 numbering. Founder halt: do not start 013.
+
+### iter-013 — founder-batch spine and packet hygiene
+**Hypothesis:** Simultaneous rewrite of writer, plan-skill, plan-reviewer, and style-guide (Carr spine + packet hygiene + lettered mantra IDs) drops factory-speech blocking and closes I-08/M-08 compliance-missing in both books.
+**Change:** `prompts/chapter-writer.md`, `prompts/master-plan-skill-v2.md`, `prompts/master-plan-reviewer-v2.md`, `prompts/style-guide.md`. Plan regenerated (14 chapters). Two books on Muse Spark Zen. Judges: composer-2.5.
+**Verdict:** KEEP
+**Lesson:** factory-speech blocking 3→2 / 9→2; named 012 craft-label/ledger/P-xx surfaces gone. compliance-missing 2→0 / 1→0 (lettered M-A…M-I). Belief/journey 14/14, book-arc PASS both. Residual blocking is CH-08 register/job announcement from plan-card Voice/guardrail lines (PERSISTENT factory-speech at prompt/card level). Attribution is a founder batch, not one cause.
+**Next direction:** Residual factory-speech at CH-08 plan-card Voice operators (speakable "hard truth flat"). PERSISTENT — prompt-level bans are mutating the class, not closing it. Founder halt: do not start 014 unless asked.
