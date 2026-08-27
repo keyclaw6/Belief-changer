@@ -108,3 +108,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** KEEP
 **Lesson:** factory-speech blocking 6→4 (A) and 8→2 (B). §B5 operator labels (`killer pair`, `Future-pace`, `Warm rationale:`) no longer block. Residual factory-speech is plan I-06 ID cross-ref (`as in I-05`) plus A-only FT-06 inventory. instruction-paperwork 3→5 / 6→5 on unchanged plan safety tails (PERSISTENT, 3rd time). Belief/journey/arc still hold. Voice PASS 13→15 / 11→16.
 **Next direction:** Plan instruction spine (paperwork + I-06 factory ID). Founder halt after 011 — do not start 012 until asked.
+
+### iter-012 — plan-skill instruction-spine split
+**Hypothesis:** Frozen instruction wording as spoken Carr imperative only, clinical limits in boxed CA-01, no `as in I-05` cross-refs, drops voice blocking `instruction-paperwork` in both books.
+**Change:** `prompts/master-plan-skill-v2.md` (Lexicon / instruction spine). Plan regenerated (17 chapters). Two books on Muse Spark Zen. Judges: composer-2.5.
+**Verdict:** KEEP
+**Lesson:** instruction-paperwork blocking 5→0 / 5→0 — named close. I-05/I-06 tails and `as in I-05` gone from spine and chapters. factory-speech blocking 4→3 / 2→9 (B regressed on craft-label / ledger surfaces, not the old I-06 ID). Journey `compliance-missing` 2/1 is I-08 vs M-08 ID collision (mantra-sheet wording present). Belief/arc hold; journey 16/17 both.
+**Next direction:** Residual factory-speech at style-guide toolkit/beat labels and writer-prompt ledger callbacks. Plan I-08/M-08 numbering. Founder halt: do not start 013.

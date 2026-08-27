@@ -222,3 +222,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Speakable style-guide operator names were a real remaining cause after 010's writer-prompt ban. Frozen instruction-spine safety tails and ID cross-refs are now the unpaid KEEP object (plan, PERSISTENT 3×).
 
 **What this opens next.** Plan instruction spine. Founder halt — do not start 012 until asked.
+
+### iter-012 — plan-skill instruction-spine split  ·  2026-08-27  ·  KEEP
+
+**Hypothesis.** If the plan skill forbids fusing clinical tails and ID cross-refs into frozen instruction rows, voice blocking `instruction-paperwork` falls in both books.
+
+**Change.** Instruction-spine paragraph in `prompts/master-plan-skill-v2.md` (spoken Carr imperative only; CA-01 boxed advisory; no `as in I-05`). Plan regenerated (17 chapters). Two books on Muse Spark Zen.
+
+**What happened.** instruction-paperwork blocking 5→0 (A) and 5→0 (B). `as in I-05` factory-speech at old C15/C18 gone. factory-speech blocking 4→3 / 2→9. Voice PASS 15/17 and 13/17. Belief 17/17, journey 16/17, book-arc PASS both. Journey `compliance-missing` 2/1 traces as I-08/M-08 ID collision, not missing mantra-sheet wording.
+
+**Verdict & why.** KEEP. Targeted class closed in both books. New `compliance-missing` class name is not a material book regression (wrong frozen target). factory-speech B regression is not a both-books new class.
+
+**What we learned.** The 011 frozen-spine rule was the real cause of paperwork. Regenerating the plan was required. Residual factory-speech after the split is style-guide beat labels and ledger-token callbacks, not liability tails.
+
+**What this opens next.** Style-guide toolkit names / writer-prompt ledger framing, or plan I-08 vs M-08 numbering. Founder halt — do not start 013.

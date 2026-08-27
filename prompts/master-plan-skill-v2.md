@@ -81,7 +81,9 @@ Chapter cards reference scene/analogy IDs and the job each performs; they never 
 
 Define the book-specific trap register, freedom register, banned willpower register, and source-grounded reader dialect once.
 
-Define each numbered instruction once with a stable ID, frozen wording, owning chapter, and recap placement. Any instruction that could conflict with qualified clinical care must contain its safety exception in the frozen wording.
+Define each numbered instruction once with a stable ID, frozen wording, owning chapter, and recap placement. Frozen instruction wording is the spoken Carr imperative only — one numbered ALL-CAPS headline plus at most one short spoken rationale line (per style-guide §B5 operator 11). Never fuse clinical disclaimers, liability tails, semicolon-chained compliance clauses, or instruction-ID cross-references (e.g. "as in I-05") into instruction spine rows.
+
+Clinical and eating-disorder limits that could conflict with method advice belong in a separate plan-wide clinical advisory defined once (stable ID, boxed advisory text per style-guide §B10 practical-safety guardrail). Route it on non-argument safety cards and in evidence-ledger safety limits — not inside instruction frozen wording. When an instruction's belief job needs a qualified limit, state it once in plain spoken prose on that advisory; cards that assign epistemic-firewall instructions cite the advisory ID in their safety guardrails field only. Instruction peaks and verbatim recaps carry the bare imperative.
 
 ### Arc and length
 
