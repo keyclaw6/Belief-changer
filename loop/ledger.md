@@ -250,3 +250,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Lettered mantra IDs closed the I-08/M-08 instrument collision. Packet hygiene closed the named 012 craft-label leaks. The factory-speech class mutated to plan-card Voice operators at the fear hinge — PERSISTENT after 010–012 prompt-level attempts.
 
 **What this opens next.** CH-08 plan-card speakable Voice/guardrail lines, or a different level than more silent-execution bans. Founder halt — do not start 014 unless asked.
+
+### iter-014 — founder-batch card operators and rooms  ·  2026-08-28  ·  KEEP
+
+**Hypothesis.** If writer, plan-skill, plan-reviewer, and style-guide strip speakable Voice/guardrail operators from cards, ban Maya as pupil, and stop CA-SAFE title paste, voice blocking `factory-speech` falls in both books.
+
+**Change.** Four prompt files (see `loop/iterations/014/change.diff`). Plan regenerated (15 chapters). Two books on Muse Spark Zen. Panel composer-2.5, 46+46.
+
+**What happened.** factory-speech blocking 2→0 (A) and 2→0 (B). Named 013 CH-08 announcement strings gone. Voice 15/15 both. Belief 15/15, journey 15/15, book-arc PASS both. Noted factory-speech 29→17 / 28→38. B CH-09 one job-recap line is A-absent noise.
+
+**Verdict & why.** KEEP. Targeted blocking class closed in both books. No shared new blocking class. Attribution weak (founder batch). Noted B rise is hydra, not a veto.
+
+**What we learned.** Removing speakable operators from the card (not another writer never-announce) closed the CH-08 announcement class. The noted factory-speech floor mutated to evidence-limit register and frozen-token echo paste.
+
+**What this opens next.** Plan-card evidence-limit vocabulary / verbatim echo paste, or a different level than more silent-execution bans. Founder halt — do not start 015 unless asked.

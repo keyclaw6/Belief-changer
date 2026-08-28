@@ -105,7 +105,7 @@ The three books genuinely disagree on several mechanisms. A writer must know the
 - **Carr:** Light, vivid, illustrative (spider webs, the insecticide fact) — facts as *perception-shifters*, never a literature review, and always de-escalated so they don't read as scare-mongering.
 - **Freedom Model:** Cites named studies as *escape-route closers* (you can look them up; blocks "you're making this up"), but disowns fear as a motivator.
 - **Burgeon:** Details dopamine downregulation, the Coolidge Effect, etc. — then **explicitly subordinates it**: "your brain does not care about negatives when it is in a reactionary state." Quarantines raw citations to a back-matter appendix to keep the prose clean.
-- **DEFAULT (Carr):** **Deliver the hard facts at full Carr force — vivid, flat, unhedged, frightening where the truth is frightening — then tell the reader not to change from fear (§B10 Hard facts, then relief).** Carr does not tiptoe: the sugar book marches through obesity, diabetes, rotting teeth and early graves stated as settled fact, in the same confident register as everything else, and *then* tells the reader he doesn't want them quitting out of fear. The fact does its perception work; the relief removes the loss-frame. Never announce the move. Never soften, hedge, or omit a scare Carr would have delivered — omission is how the factory drifts off-reference. Honour evidence limits by not overclaiming; no literature-review texture: facts arrive as "The fact is...", never as hedged citations (quarantine raw citations in a back-matter appendix if the book needs them).
+- **DEFAULT (Carr):** **Deliver the hard facts at full Carr force — vivid, flat, unhedged, frightening where the truth is frightening — then tell the reader not to change from fear (§B10 Hard facts, then relief).** Carr does not tiptoe: the sugar book marches through obesity, diabetes, rotting teeth and early graves stated as settled fact, in the same confident register as everything else, and *then* tells the reader he doesn't want them quitting out of fear. The fact does its perception work; the relief removes the loss-frame. Never announce the move. Do not copy this operator onto chapter-card Voice or Guardrails fields. Never soften, hedge, or omit a scare Carr would have delivered — omission is how the factory drifts off-reference. Honour evidence limits by not overclaiming; no literature-review texture: facts arrive as "The fact is...", never as hedged citations (quarantine raw citations in a back-matter appendix if the book needs them).
 
 ### Fork 4 — Is the conventional "cure" an ally or the villain?
 - **Carr:** The villain is the *substance + industry*; he doesn't much attack other quit programs except to say willpower is the wrong method.
@@ -199,7 +199,7 @@ The argument changes the belief; the *framing* makes the belief feel safe to ado
 
 - **Change the reader's emotional expectation of the process up front.** Recast quitting as "an exciting adventure," the read as "day one" of it. Dread closes the mind you need open. Pre-empt and *forbid* the expected misery: "Cast aside all feelings of doom and gloom — there's no need to be miserable."
 - **Make the goal an emotion, not a behavior.** Not "abstinence" but "happy to be free." A reader who merely abstains while feeling deprived is primed to relapse. Distinguish "free" from "happy to be free" explicitly.
-- **Hard truth, then relief.** When you deliver a hard truth ("you're addicted"), immediately soothe it ("don't panic — the trap is easy to break once you see it"). Never leave the reader in dread. Never announce the move.
+- **Hard truth, then relief.** Deliver the hard fact, then in the same breath the relief. Never leave the reader in dread. Never announce the move. This is writer execution, not a card Voice/guardrail string.
 - **Validate the feeling before disarming it.** Acknowledge the fear/shame/pain sincerely *first* ("it can be frightening to admit this"), then hand the relief. Emotion acknowledged, never bulldozed. (Freedom Model: "we each seriously contemplated suicide" — earn the word "easy.")
 - **Reflect the reader's suppressed unease back to them.** "We instinctively sense that something has taken hold of us." Accurate emotional diagnosis builds more trust than any argument.
 - **Blame the method, not the reader, for past failures.** "No wonder you failed — you were never shown the trap. This time is different." Past defeats become evidence the old approach was wrong, restoring hope.
@@ -235,9 +235,9 @@ The argument changes the belief; the *framing* makes the belief feel safe to ado
 The caffeine book's architecture is our proven scaffold, generalized to **any** behavior. The numbered headings below are rooms on the three-part spine, not a chapter-per-function layout. Merge or omit freely. Do not emit one chapter per heading. Behavior change is deferred until the belief is changed. This is a spine of rooms, not a chapter-per-function course.
 
 > Adapt freely. Preserve this *spine*:
-> **First third — install the world.** Easy contract and instructions; the reader is already hooked (not a later unit); name the two creatures in passing when the trap is first seen (then they are vocabulary, not a lesson); put body, instinct, and real food underfoot so later demolitions have ground to stand on.
-> **Middle — demolish on that ground.** Kill justifications and the inversion on the world already installed. At least one chapter *inhabits* the ordinary doing (eating, for an eating book) rather than another justification kill. Distinct rooms: long testimony lives in the main flow; a prevalence claim appears once.
-> **After the vow — life, not manuals.** The ritual is the last ordinary meal (or last ordinary instance), not a laboratory dose. Then one ordinary-life chapter (mornings, shops, food — thoughts the reader already owns, once). Then a short recap — a photographable list, not three teaching chapters.
+> **First third — install the world.** Easy contract and instructions; the reader is already hooked (not a later unit); name the two creatures in passing when the trap is first seen (then they are vocabulary, not a lesson); body, instinct, and real food as concrete encounters so later demolitions have ground — not a three-word refrain.
+> **Middle — demolish on that ground.** Kill justifications and the inversion on the world already installed. One chapter's primary job *inhabits* the ordinary doing (eating, for an eating book) — not a kill with inhabit as flavor. Distinct rooms: long testimony lives in the main flow; a prevalence claim appears once.
+> **After the vow — life, not manuals.** The ritual is the last ordinary meal (or last ordinary instance), not a laboratory dose. Then one ordinary-life chapter (mornings, shops, food — thoughts the reader already owns, once; live those days, do not restage settled scenes or teach a thought-curriculum). Then a short recap — a photographable list, not three teaching chapters.
 
 ### FRONT MATTER — Trust & expectation (before any argument)
 - Establish pedigree and an "easy" expectation. Origin myth / lived escape. Voice the reader's skepticism and answer it. Set the emotional expectation: adventure, ease, no doom. (§5.1, §6)
@@ -246,13 +246,13 @@ The caffeine book's architecture is our proven scaffold, generalized to **any** 
 - Convert audience → participant. The numbered instructions land as spoken commands (open mind, don't quit yet, start happy). The no-risk frame. State the goal as an *emotion* ("happy to be free"). The reader investigates; the author directs with total confidence. (§5.2)
 
 ### CH. 2 — "Is this even a problem?" — dissolve choice & complacency
-- The confidence-trick reframe + the "who's in charge?" trap to dissolve the illusion of free choice without blame. Normalize the harm so the reader stops trusting their sense of "normal." Remove shame; name the trap. Name the two creatures in passing here — then they are vocabulary, not a later unit. Body, instinct, and real food go underfoot in this third. (§5.3)
+- The confidence-trick reframe + the "who's in charge?" trap to dissolve the illusion of free choice without blame. Normalize the harm so the reader stops trusting their sense of "normal." Remove shame; name the trap. Name the two creatures in passing here — then they are vocabulary, not a later unit. Body, instinct, and real food arrive here as concrete encounters (watch eating; the body as authority), not a three-word refrain. (§5.3)
 
 ### CH. 3 — Switch the evaluation axis
 - Refuse "harm vs. benefit"; demand "what benefit at all?" Introduce "doing TO vs FOR you." Speak it; never as a ledger or worksheet. Demolition follows on ground already laid. (§5.4)
 
 ### CH. 4 — Demolish the benefits one by one
-- Collect the reader's justifications; demolish each by isolating the variable and reassigning credit. This may span multiple chapters. Leave no foothold. Among these chapters, at least one *inhabits* the ordinary doing rather than another kill. (§5.5)
+- Collect the reader's justifications; demolish each by isolating the variable and reassigning credit. This may span multiple chapters. Leave no foothold. One of these chapters has inhabit-the-ordinary-doing as its primary job, not a kill with inhabit flavor. (§5.5)
 
 ### CH. 5 — The mechanism: the inversion
 - The core inversion (the high is relief from a self-created low; you never beat baseline). The rescuer-as-perpetrator image. Split the trivial physical part from the dominant belief part, using creatures already named. Name the brainwashing and who installed it. This is a deepening, not a debut unit. (§5.6)
@@ -267,7 +267,7 @@ The caffeine book's architecture is our proven scaffold, generalized to **any** 
 - Take the single most seductive pro-behavior scene and reassign every drop of its pleasure to its true source ("sneaking a ride"). A hands-on demonstration that the mind accepts falsehood as true primes the reader to distrust the felt "benefit." (§5.5)
 
 ### CH. 9 — Demystify
-- Reframe "addiction" as a simple, correctable misunderstanding — stripping the disease-for-life dread. The positive authority (body, instinct, real food) is already underfoot from the first third; do not delay it here as a teaching chapter.
+- Reframe "addiction" as a simple, correctable misunderstanding — stripping the disease-for-life dread. The positive authority (body, instinct, real food) is already encountered in the first third; do not delay it here as a teaching chapter or plant it as a slogan.
 
 ### CH. 10 — The quit (the last ordinary instance)
 - Gate on readiness. The ritual is the last ordinary meal (or last ordinary instance), not a laboratory dose. Confer freedom as an instant identity — the vow instructed, the congratulation immediate. (§5.9)
@@ -302,7 +302,7 @@ These are the lines that keep the method intact. **Violating a guardrail breaks 
 
 ### Never (the failure modes)
 - **Never shame, lecture, moralize, or express contempt for the reader.** Instant trust death and a relapse driver.
-- **Never *end* on fear — scare, then disown, exactly like Carr.** The hard material is delivered at full force (Carr frightens freely and flatly), and the chapter then explicitly disowns fear as the motivator and re-lands on escape-joy. Two failure modes, equally off-reference: leaving the reader quitting *out of* fear, and omitting or softening a scare Carr would have delivered.
+- **Never *end* on fear — scare, then disown, exactly like Carr.** The hard material is delivered at full force (Carr frightens freely and flatly), then fear is not left as the reason to change: the chapter re-lands on escape-joy. Writer execution — do not paste this as a card Guardrails line. Two failure modes, equally off-reference: leaving the reader quitting *out of* fear, and omitting or softening a scare Carr would have delivered.
 - **Never demand willpower or "just stop."** That's the wrong method we're replacing.
 - **Never let "instead"/"I can't have X"/"giving up" stand** — they smuggle deprivation back in. Police your own phrasing as strictly as the reader's.
 - **Never leave the mechanism characters unused** (per Fork 1) — the Little/Big-Monster device is load-bearing Carr machinery. The craving is personified as a small, starving, already-dying parasite (never a mighty enemy demanding willpower), and the belief-system feeding it is the real target.
@@ -335,7 +335,7 @@ How does the behavior *create* the very discomfort it then relieves? Build the b
 Find the **rescuer-as-perpetrator image** for this behavior.
 
 ### Step 3 — Inventory the reader's justifications (to demolish)
-List every reason a user of *this* behavior gives ("it relaxes me," "it's how I socialize," "it's the only thing that's mine," "everyone does it," "it's harmless," "I've earned it"). Each gets a §5.5 demolition: isolate the variable, reassign the credit. Plan one demolition per justification.
+List every reason a user of *this* behavior gives ("it relaxes me," "it's how I socialize," "it's the only thing that's mine," "everyone does it," "it's harmless," "I've earned it"). Each gets a §5.5 demolition: isolate the variable, reassign the credit. Merge freely; do not emit one chapter per justification. One mid chapter’s primary job is inhabit-the-ordinary-doing, not a kill.
 
 ### Step 4 — Identify the engineered villain (the manufacture of desire)
 Who profits and how was the hook built? (Game studios and variable-ratio reward loops and "engagement"; social platforms and infinite-scroll + notification design; food engineers and bliss-point formulation; the porn industry and the Coolidge-effect novelty machine.) This is the external villain the reader can be angry at — channeling anger away from self-shame.
@@ -478,7 +478,7 @@ The master plan must derive a per-book **mantra sheet** instantiating each arche
 | **The replacement thought (terminal mantra)** | The thought script the reader keeps forever; what to think whenever the behavior crosses their mind. ALL-CAPS, exclamatory, joyful | "FANTASTIC! I'M FREE!" | Debuts near the vow and repeats there; it is the book's final word on the subject |
 | **Anti-method name** | The enemy METHOD (not just the enemy substance): every past failure is reattributed to it, never to the reader. Keep **the Willpower Method** as this book's named anti-method. | "the Willpower Method" | Defined early; recurs wherever failure, sacrifice, or "hard to quit" appears |
 | **Conflict image** | Names the addict's torn state and gives it a geometry whose resolution is built in: both ropes belong to the trap | "the tug-of-war (of fear)" (23×) | Debuts with the trap chapters; owns the fear chapter; echoed until the quit |
-| **Positive authority** | The alternate authority the reader obeys AFTER the brainwashing is gone — paired with 1–3 operational instruments so freedom comes with tools, not just beliefs | body, instinct, real food (and any book-fitted name) | First third as ground; not a late teaching chapter |
+| **Positive authority** | The alternate authority the reader obeys AFTER the brainwashing is gone — paired with 1–3 operational instruments so freedom comes with tools, not just beliefs | body, instinct, real food (and any book-fitted name) | First third as concrete encounters, not a three-word refrain; not a late teaching chapter |
 | **The claim block** | The full-sentence promise repeated verbatim as a set-piece (a mantra at paragraph scale) | the book's own eat-what-you-want contract, frozen on the sheet | Planted in ch. 1; re-quoted mid-book; returns at the pre-quit pivot |
 | **Ease clause** | The recurring clause that closes every loop by restating the contract's ease | "All you have to do is follow (all) the instructions." | Sprinkled throughout; especially at chapter ends and after hard arguments |
 
@@ -577,7 +577,7 @@ Because chapter writers see only the master plan + previous chapter + this guide
 3. **The justification menu** — the reader's reasons, verbatim from research, mapped to demolition chapters.
 4. **The analogy assignment** — which analogy does which job in which chapter (from the research analogy bank).
 5. **The curve map** — where each chapter sits on the freedom-crescendo / demolition curves; which concept debuts where; the saved-for-ending reframe.
-6. **The reader handle** — a human description of who this chapter speaks to (not P-xx codes), and the ventriloquism lines that make the move land.
+6. **The reader state** — a planner-facing description of who this chapter speaks to (not a proper-name handle, not a pupil-persona, not P-xx codes). Compact cards carry reader-state and encounter, not a named pupil, not a `Voice:` register/job operator (`hard truth flat`, `deliver at full Carr force`, `explicitly disown`, workshop don't-panic quotes) and not a paste of the boxed CA-SAFE/CA-01 title.
 7. **The strongest-case scene** and the **moment-of-revelation prediction** for this behavior.
 8. **The fork decisions** (Part A §4) stated explicitly for this book.
 9. **The instruction spine sheet** (§B10): the numbered instructions as spoken Carr imperatives only (CA-01: no clinical tails, no "as in I-05"), their owning chapters, and a final photographable recap list without chapter-number callbacks. No mid-book instruction recap. Include the epistemic-firewall instructions.
@@ -603,7 +603,7 @@ Because chapter writers see only the master plan + previous chapter + this guide
 The pocket-book format (§B6) compresses these away; at full length Carr runs them explicitly. The master plan decides per book which rooms apply. Do not emit a chapter per slot. Source analysis: `analysis/sugar-prose-patterns.md`.
 
 ### The chapter anatomy (every chapter, no exceptions)
-1. **"IN THIS CHAPTER"** — a short preview of what you will see, in the language of the coming sections, not a syllabus of devices.
+1. **"IN THIS CHAPTER"** — names of the rooms/pictures in this chapter, not a syllabus of what we will do, not "we will / you will," not a named pupil.
 2. **Italic thesis line** — a spoken Carr sentence of the reframe, not a paste of the card's leaving-belief field.
 3. **Body** — ONE belief-move, built through titled sections, landing on ALL-CAPS verdict lines.
 4. **The chapter's instruction** (when assigned) — the numbered spoken ALL-CAPS imperative at the climax, plus at most one short spoken rationale line. Never a "Warm rationale" header or backticks.
@@ -636,4 +636,4 @@ When the behavior category is essential or unquittable (eating, screens for work
 - **Hard facts, then relief**: where hard facts must appear, deliver them, then tell the reader not to change from fear. One short spoken clause only if the scare would otherwise be taken as a personal sentence. Honour evidence limits by not overclaiming; never narrate study design. Never announce the move.
 - **Perception enacted**: 1–3 physical exercises the reader performs. The belief change is enacted, not just read. Never announce it as homework.
 - **The vow**: the ritual is the last ordinary meal (or last ordinary instance), not a laboratory dose — attention on the ugliness, the solemn vow, instant conferral. Few new post-quit lines; the thoughts are ones the reader already owns. Then one ordinary-life chapter (mornings, shops, food) and a short recap, not three teaching manuals.
-- **Practical-safety guardrail** (when the behavior touches medication/health): a boxed advisory routing medical specifics to a professional, kept outside the belief argument.
+- **Practical-safety guardrail** (when the behavior touches medication/health): a plan-wide boxed advisory (CA-01 split: clinical limits live here, never fused into instruction rows) routing medical specifics to a professional, kept outside the belief argument. Chapter prose honours it silently or as one spoken clause; never paste the boxed workshop title mid-chapter.

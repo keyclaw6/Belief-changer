@@ -122,3 +122,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** KEEP
 **Lesson:** factory-speech blocking 3→2 / 9→2; named 012 craft-label/ledger/P-xx surfaces gone. compliance-missing 2→0 / 1→0 (lettered M-A…M-I). Belief/journey 14/14, book-arc PASS both. Residual blocking is CH-08 register/job announcement from plan-card Voice/guardrail lines (PERSISTENT factory-speech at prompt/card level). Attribution is a founder batch, not one cause.
 **Next direction:** Residual factory-speech at CH-08 plan-card Voice operators (speakable "hard truth flat"). PERSISTENT — prompt-level bans are mutating the class, not closing it. Founder halt: do not start 014 unless asked.
+
+### iter-014 — founder-batch card operators and rooms
+**Hypothesis:** Simultaneous rewrite of writer, plan-skill, plan-reviewer, and style-guide (strip speakable Voice/guardrail operators; no Maya; CA-SAFE title not pasted; inhabit as primary job; IN THIS CHAPTER as rooms) drops factory-speech blocking in both books.
+**Change:** `prompts/chapter-writer.md`, `prompts/master-plan-skill-v2.md`, `prompts/master-plan-reviewer-v2.md`, `prompts/style-guide.md`. Plan regenerated (15 chapters). Two books on Muse Spark Zen. Judges: composer-2.5.
+**Verdict:** KEEP
+**Lesson:** factory-speech blocking 2→0 / 2→0; CH-08 register/job announcement gone from both traces. Voice 15/15 both. Belief/journey 15/15, book-arc PASS both. Noted factory-speech A 29→17 / B 28→38 — hydra (evidence-limit register, frozen-echo paste, trap-question prefixes). Attribution is a founder batch, not one cause.
+**Next direction:** Residual noted factory-speech at plan-card evidence-limit vocabulary and verbatim mantra-echo paste. PERSISTENT (5th time). Founder halt: do not start 015 unless asked.

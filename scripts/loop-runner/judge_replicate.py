@@ -241,7 +241,7 @@ def main() -> None:
     if not instructions:
         instructions = parse_inventory_table(plan, "**Instruction spine")
     sheets = judgments / "plan-sheets.md"
-    m = re.search(r"(## 3\. MANTRA AND FROZEN-TOKEN SHEET\n.*?)(?=\n## 7\. )", plan, re.S)
+    m = re.search(r"(## 3\. MANTRA AND FROZEN-TOKEN SHEET\n.*?)(?=\n## 7\. )", plan, re.S | re.I)
     sheets.write_text((m.group(1) if m else plan[plan.find("## 3."):plan.find("## 7.")]) + "\n")
 
     jobs: list[tuple[str, Path, str]] = []

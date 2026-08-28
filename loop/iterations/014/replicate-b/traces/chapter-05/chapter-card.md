@@ -1,0 +1,13 @@
+**CH-05 — The Lift That Steals**
+- Primary job: enacted transition — *from "sugar gives me energy and helps me function" to "sugar creates the dip it then briefly relieves — you never rise above the steady baseline of someone free of BAD SUGAR"*.
+- Belief now: Still believes in functional fuel; carries the belief that crash means need more. Exit knows crash is the trap's after-effect.
+- Reader-state: Proud of powering through; afraid of flatness without sugar. Needs inversion lived in their own body.
+- Encounter: The 3pm Drawer itself.
+- Mantra: echo M-G `that empty, edgy, slightly needy feeling`, echo M-E `the Sugar Worm`, echo M-N `tired, wired and crashing` (debut M-N pinned here).
+- Scene/Analogy: SC-01 The 3pm Drawer — debut full staging; SC-03 Tight Shoes for Sugar — debut full staging (flagship inversion); SC-09 Lennie & George Push — token echo.
+- Evidence: E-01 lift-then-drop lived (LEU-001) — permitted/prohibited/limits as ledger; E-16 reactive-hypoglycemia MIXED (S-21,S-43) — must state both halves: real after-dip mechanism exists but everyday slumps are NOT clinical hypoglycemia, rare ≤55, contested; E-17 glucose not essential import (S-22) — permitted: body makes glucose; prohibited: ketogenic prescription. Honour MIXED limits by not equating slump with disease.
+- New instruction: none.
+- Reserved-later fence: Do not run full physical/belief split; do not introduce industry villain fully; do not deliver hard cardiovascular/dental facts; assigned to CH-07, CH-08, CH-09.
+- Guardrails: Inversion first, then relief; flat fact assertion, Socratic trap question to let reader concede; CA-SAFE one-clause spoken if needed ("this is not low blood sugar as doctors define it").
+- Continuity intent: Receives reader who has surrendered "treat"; hands forward a reader who has surrendered "fuel" and feels the rescuer-as-perpetrator inversion in their own afternoon body.
+- Word budget: 4,400

@@ -1,0 +1,13 @@
+**CH-10 — The Willpower Trap**
+- Primary job: enacted transition — *from "I failed because I am weak — quitting is hard and needs grit" to "I failed because the method was the Willpower Method, which guarantees failure; my persistence proves strength, not weakness"*.
+- Belief now: Still carries shame about past diets/failures; believes effort equals virtue. Exit reattributes all past failures to anti-method and sees why willpower has no finish line.
+- Reader-state: Tender about shame; needs absolution and contempt for the method, not self.
+- Encounter: The Monday restart, the app streak, the kitchen showdown — white-knuckling past the drawer.
+- Mantra: debut M-K `the Willpower Method` (pinned).
+- Scene/Analogy: SC-04 Cliff Jump — debut full staging here for cut-down/special ones; SC-12 Two Ropes — foreshadow but not resolved.
+- Evidence: E-02 one-bite-becomes-box lived (LEU-002) — moderation makes precious; E-08 schedule trap (S-5,S-9) — cutting down intensifies each hit; E-19 contested teen abstinence (CONTESTED) honesty marker that short-term willpower windows disagree. Enforce CONTESTED limits.
+- New instructions: I-06 **IGNORE ADVICE THAT CONFLICTS WITH THIS BOOK WHILE YOU READ** — Close the noise until you are free. ; I-07 **IGNORE ANYONE WHO QUIT BY THE WILLPOWER METHOD** — Their strain is not your method. ; I-08 **AVOID THE INFLUENCE OF OTHER BAD-SUGAR USERS WHILE YOU READ** — Their chatter is the brainwashing talking. (Fire-wall trio; each owns this chapter.)
+- Structural responsibility: **Anti-method chapter** and **fear-of-failure** half of fear chapter; sub-characters (braggers/whingers); "with the willpower method, there is no finish line."
+- Guardrails: Reframe strong will as virtue for persistence, not defect; pity don't envy willpower quitters; CA-SAFE silent.
+- Continuity intent: Receives stakes-aware reader; hands forward a reader who has forgiven themselves, despises the Willpower Method, and no longer fears they are broken.
+- Word budget: 4,200

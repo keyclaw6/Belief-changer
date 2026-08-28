@@ -1,0 +1,14 @@
+**CH-08 — Who Built This Cage?**
+- Primary job: enacted transition — *from "the trap is my appetite" to "the trap was engineered and sold to me by an industry that profits when I feel I need what harms me"*.
+- Belief now: Blames self or "my sweet tooth." Exit feels clear, outward anger at the con, dignity restored.
+- Reader-state: Newly able to see mechanism; needs villain and re-coding of symptoms as warning lights, not character flaws.
+- Encounter: Walking the supermarket canyon — bright packets at child-eye height, bliss-point formulations, "treat yourself" slogans.
+- Mantra: echo M-C `the Sugar Trap`, echo M-F `the Big Sweet Lie`.
+- Scene/Analogy: SC-06 Boiling Frog — token echo only; plus new industry-specific image (armies of scientists weaponizing abundance).
+- Evidence: E-08 schedule trap (S-5,S-9) — intermittent access escalation; E-20 cue hyper-reactivity (MIXED) echo; plus E-13 WHO ceilings to show societal overshoot as engineered norm. Keep within population-level limits.
+- New instruction: none.
+- Reserved-later fence: Do not deliver scare catalog; assigned to CH-09.
+- Structural responsibility: Widen indictment; recode symptoms (crash, craving) as body's protective warning lights; channel anger away from self toward trap and industry.
+- Guardrails: Warm to person / harsh to industry; never conspiracy beyond evidence; CA-SAFE silent.
+- Continuity intent: Receives mechanism-literate reader; hands forward a reader who is indignantly on their own side and ready to hear hard facts without collapsing into shame.
+- Word budget: 4,200

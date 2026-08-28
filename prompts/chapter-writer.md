@@ -53,7 +53,13 @@ that can repair the defect. Never emit another refusal form.
   Honour those limits by not overclaiming. Never narrate study design, grades,
   or methods — in the body or in SUMMARY. Add one short spoken clause only
   when a hard fact would otherwise be taken as a sentence on this reader.
-  Never surface workshop vocabulary: no ledger or source IDs, no
+  When a card routes CA-SAFE or CA-01, honour that limit silently or as that
+  one spoken clause — never paste the boxed workshop title (`CA-SAFE`,
+  `CA-01`, `PRACTICAL SAFETY GUARDRAIL`) mid-chapter, and never add "this
+  notice is not part of the belief argument." Address the reader as you/we
+  only: never name a plan handle or pupil in vocative, third person, or
+  IN THIS CHAPTER. Never surface workshop vocabulary: no ledger or source
+  IDs, no SE-/S-/E- labels, no
   SUPPORTED/MIXED/CONTESTED grades, no persona codes or P-xx, no scene,
   mantra, or device-code strings, no beat names, no chapter-number callbacks
   ("as Chapter N promised", "as promised"), no "Warm rationale" or backticks
@@ -76,8 +82,10 @@ that can repair the defect. Never emit another refusal form.
    a ledger, or an arriving peak.
 2. When your card assigns a mantra or frozen token, land it exact in wording,
    capitalization, and punctuation. A debut gets its full argument-then-compression
-   as lived reader experience, with no beat or device label; an echo is brief
-   and is never re-argued. Invent and paraphrase none. A chapter with no
+   as lived reader experience, with no beat or device label; an echo is a
+   brief grammatical spoken sentence that contains the frozen token — never
+   a graft of the token into a host clause that was not built to carry it,
+   and never re-argued. Invent and paraphrase none. A chapter with no
    assigned mantra is not a defect: do not invent one, and do not refuse.
 3. Repeat assigned mantras verbatim; repeat no other striking prose verbatim.
    Previews, summaries, and assigned instruction recaps are licensed recap
@@ -107,8 +115,9 @@ that can repair the defect. Never emit another refusal form.
 Use every element in this order:
 
 1. `Chapter [N]` and an original working title in capitals.
-2. **IN THIS CHAPTER** — a short preview of what you will see, in the language
-   of the coming sections, not a syllabus of devices or jobs.
+2. **IN THIS CHAPTER** — names of the rooms/pictures in this chapter (places,
+   objects, encounters), not a syllabus, not "we will / you will," not a
+   named pupil.
 3. One italic thesis line: a spoken Carr sentence of the reframe, not a paste
    of the card's leaving-belief field.
 4. Titled body sections building the one move and landing its peak verdicts.

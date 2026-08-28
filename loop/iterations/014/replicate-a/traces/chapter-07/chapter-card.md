@@ -1,0 +1,13 @@
+**CH-07 — The Worm and The Lie**
+- Primary job: enacted transition — *from "my cravings prove I need and love sugar" to "a mild physical whine (the Worm) is mistaken for need by a big belief (the Lie) — kill the Lie and the Worm starves"*.
+- Belief now: Still attributes craving to personal desire. Exit splits trivial physical from dominant belief and locates blame in brainwashing.
+- Reader-state: Ready for mechanism made simple and winnable after inhabiting real eating.
+- Encounter: Evening at home, packet rustle triggers saliva before the bite — cue fires, Worm whines, Lie translates whine as "you want it."
+- Mantra: echo M-E `the Sugar Worm`, echo M-F `the Big Sweet Lie`, echo M-G `that empty, edgy, slightly needy feeling`, echo M-J `The fact is…`
+- Scene/Analogy: SC-11 Pink Elephant's Feast — debut full staging (why suppression fails, reframing succeeds); SC-09 Lennie & George Push — debut full staging.
+- Evidence: E-05 dopamine per binge (S-2,S-8) SUPPORTED — permitted/prohibited as ledger; E-06 withdrawal dip (S-3) SUPPORTED — mild dip analogue; E-07 mild but well-defined (S-4) — mild descriptor; E-09 opioid/cue circuit (S-6,S-7) — cue reactivity; E-18 hump 2–5 days (S-23,S-25) SUPPORTED — time-limited. Enforce small-magnitude and animal-model limits; honesty about contest in E-10 not needed here.
+- New instruction: I-05 **NEVER REOPEN THE DECISION** — Once the Lie is dead, never bargain with it.
+- Reserved-later fence: Do not name industry yet in full; do not deliver hard cardiovascular/dental facts; assigned to CH-08, CH-09.
+- Guardrails: Personify as small/starving, not mighty; never demand willpower; use "we" for trap, "you" for escape.
+- Continuity intent: Receives reader who has felt real eating; hands forward a reader who can name every future craving as Worm + Lie and knows the Lie is the true target.
+- Word budget: 4,400

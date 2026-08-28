@@ -1,0 +1,13 @@
+**CH-01 — The Promise — How to Read This Book**
+- Primary job: non-argument — bridge — establish easy contract, authority, and safe reading frame so belief-change can occur without threat.
+- Reader-state: Arrives skeptical, defensive, expecting another diet lecture and another failure they will be blamed for. Needs to feel this is different and safe to keep reading.
+- Encounter: The reader holding this book at the kitchen counter after a hidden binge or a negotiated "treat" — not a clinic.
+- Mantra: debut M-A `you have nothing to lose and everything to gain` (pinned), debut M-B `easily, immediately and permanently` (pinned), debut M-L `BAD SUGAR` (pinned).
+- Scene/Analogy: SC-10 Combination Lock — debut full staging; argues why following all instructions in order matters.
+- New instructions: I-01 **KEEP AN OPEN MIND** — Question everything you think you know about BAD SUGAR. ; I-02 **DON'T STOP OR CUT DOWN UNTIL THE VOW** — Carry on exactly as normal while you read. (Both entry-contract; remaining instructions one per chapter thereafter.)
+- Evidence: none argued; prevalence and mechanism reserved-later.
+- Reserved-later fence: Do not argue health consequences, mechanism split, or treat/energy demolitions; assigned to CH-02, CH-04, CH-05, CH-07, CH-09.
+- Structural responsibility: Authority dossier (origin-escape story expectation), full entry contract, BAD SUGAR boxed definition and decreed CAPS name, redefinition doctrine stated.
+- Guardrails: Warm to person / vicious to trap; no willpower language; no clinical tail in instructions; original prose; CA-SAFE defined here for later citation, not pasted mid-chapter.
+- Continuity intent: Receives skeptical reader; hands forward a compliant investigator who has agreed to keep an open mind and not quit yet, and who now knows what BAD SUGAR means.
+- Word budget: 3,200

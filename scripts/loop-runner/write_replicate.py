@@ -18,7 +18,7 @@ SLUG = "quit-sugar"
 
 
 def parse_cards(plan: str) -> dict[int, str]:
-    m = re.search(r"## 7\. COMPACT CHAPTER CARDS\n(.*?)(?:\n## |\Z)", plan, re.S)
+    m = re.search(r"## 7\. COMPACT CHAPTER CARDS\n(.*?)(?:\n## |\Z)", plan, re.S | re.I)
     if not m:
         raise SystemExit("no compact chapter cards")
     block = m.group(1)
@@ -38,7 +38,7 @@ def parse_cards(plan: str) -> dict[int, str]:
 
 
 def book_core(plan: str) -> str:
-    m = re.search(r"(## 1\. BOOK CORE\n.*?)(?=\n## 2\. )", plan, re.S)
+    m = re.search(r"(## 1\. BOOK CORE\n.*?)(?=\n## 2\. )", plan, re.S | re.I)
     if not m:
         raise SystemExit("no book core")
     return m.group(1).rstrip() + "\n"

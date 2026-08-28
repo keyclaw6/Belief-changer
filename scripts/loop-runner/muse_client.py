@@ -34,7 +34,7 @@ def http_json(url: str, payload: dict, headers: dict) -> tuple[int, dict | str]:
             return e.code, json.loads(body)
         except json.JSONDecodeError:
             return e.code, body
-    except (TimeoutError, urllib.error.URLError) as e:
+    except (TimeoutError, urllib.error.URLError, ConnectionError) as e:
         return 599, str(e)
 
 

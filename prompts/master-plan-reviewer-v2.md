@@ -41,18 +41,21 @@ persuasive work now. Defining a future investigation, cataloguing benefits or
 claims for later demolition, previewing questions, or leaving the reader only
 willing to keep reading is not a completed belief correction. Installing the
 world in the first third — already hooked, two creatures in passing, body and
-real food underfoot — is persuasive work now, not setup.
+real food as concrete encounters — is persuasive work now, not setup.
 
 ### Whole-book cumulative walk
 
 Every later argument-bearing card must build from the preceding belief now.
 Block adjacent cards that repeat the same principal encounter, re-argue
-settled work, break a handoff, or reserve work backward. The complete sequence
+settled work, restage a debuted scene's full job (later cards token-echo
+only), break a handoff, or reserve work backward. After the vow, block a
+second manual: no restaged settled scenes, no new thought-curriculum. The complete sequence
 must reach the declared destination rather than merely exhaust topics.
 The first third must install the contract, the already-hooked fact, the two
-creatures in passing, and body/instinct/real food as ground — not delay them
-as later units. Mid-book must include at least one inhabit-the-ordinary-doing
-chapter. After the vow, block three teaching manuals: last ordinary instance,
+creatures in passing, and body/instinct/real food as ground via concrete
+encounters — not delay them as later units, not a triad slogan with no scene.
+Mid-book must include at least one inhabit-the-ordinary-doing chapter whose
+primary job is that inhabit, not a kill with inhabit flavor. After the vow, block three teaching manuals: last ordinary instance,
 one ordinary-life chapter, short recap.
 
 ### Writer-facing authority
@@ -65,8 +68,11 @@ spoken instruction wording, mantra IDs that collide with instruction numbers
 (never M-08 next to I-08 — use M-A, M-B, …), missing pinned frozen quotes on
 cards that assign a mantra, continuity, budgets, safety boundaries, or work
 ownership. Block P-xx persona codes, unspeakable beat handles (device names,
-"scare-then-disown", "Warm rationale"), and chapter-number ledger callbacks
-on cards. Every ID a card cites must resolve against a plan-wide inventory
+"scare-then-disown", "Warm rationale"), Voice: register/job operators
+("hard truth flat", "deliver at full Carr force", "explicitly disown",
+workshop don't-panic quotes), boxed CA-SAFE/CA-01 titles as card paste
+instructions, a named pupil-persona (Maya or any proper-name handle) as
+the card reader, and chapter-number ledger callbacks on cards. Every ID a card cites must resolve against a plan-wide inventory
 with its exact payload. Evidence-unavailable work must remain unavailable
 rather than be filled speculatively.
 
@@ -100,8 +106,8 @@ Do not request or block on mantra occurrence arithmetic, a second state table,
 repeated inventories, prewritten chapter anatomy, a phrase ledger,
 prose-density or sentence metrics before a chapter exists, or a different
 stylistic preference when the semantic architecture is coherent.
-Do not block the absence of a scare-then-disown field name, device lists,
-persona codes, ALL-CAPS-peak inventory, or a per-chapter mantra assignment.
+Do not block the absence of a scare-then-disown field name, a Voice: field,
+device lists, persona codes, ALL-CAPS-peak inventory, or a per-chapter mantra assignment.
 Worldview-planting chapters (easy contract, already-hooked, two creatures in
 passing, body/instinct/real food as ground) are not blockers for missing
 demolition or inhabit-eating labels.
