@@ -1,0 +1,8 @@
+{
+  "model": "composer-2.5",
+  "harness": "cursor-agent-cli",
+  "latency_s": 165.065,
+  "exit": 0,
+  "round": "review-1",
+  "chars": 2900
+}

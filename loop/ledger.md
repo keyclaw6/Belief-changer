@@ -264,3 +264,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Removing speakable operators from the card (not another writer never-announce) closed the CH-08 announcement class. The noted factory-speech floor mutated to evidence-limit register and frozen-token echo paste.
 
 **What this opens next.** Plan-card evidence-limit vocabulary / verbatim echo paste, or a different level than more silent-execution bans. Founder halt — do not start 015 unless asked.
+
+### iter-015 — founder-batch seed subtraction and job-ownership  ·  2026-08-29  ·  REVERT
+
+**Hypothesis.** If writer, plan-skill, plan-reviewer, and style-guide subtract remaining pasteable seeds (evidence IDs only, echo ID-only, headline-only instructions, no trap-question formula) and bind semantic job-ownership so later cards cannot re-own a demolition under a new SC-ID, voice noted `factory-speech` and book-arc noted `re-argument` drop in both books.
+
+**Change.** Four prompt files (see `loop/iterations/015/change.diff`). Plan regenerated (16 chapters). Research reused. Two books on Muse Spark Zen. Panel composer-2.5, 49+49.
+
+**What happened.** Noted factory-speech 17→20 (A) and 38→13 (B). Book-arc re-argument 5→6 / 4→5. Blocking factory-speech 0→1 / 0→3. Voice 15/16 and 14/16. Belief 16/16, journey 16/16, book-arc PASS both. Named close: `trap-question-label` 3/1→0/0. A FAIL is ch05 "Let me land it as one short verdict, because this is the belief that changes in this chapter". B FAIL is ch14–15 numbered instruction headlines on assigned I-lines.
+
+**Verdict & why.** REVERT. Targeted conjunction did not improve in both books. Blocking `factory-speech` returned in both (class that was 0 blocking last iter). Prediction wrong on the KEEP bar.
+
+**What we learned.** Seed subtraction closed the trap-question formula and did not close the noted factory-speech floor or re-argument. The blocking class mutated to writer-prompt landing-meta (A) and numbered instruction anatomy (B). Prompt-level hydra continues.
+
+**What this opens next.** A different level than another seed-subtraction batch on the same classes. Founder halt — do not start 016 unless asked.

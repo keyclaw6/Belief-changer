@@ -129,3 +129,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** KEEP
 **Lesson:** factory-speech blocking 2→0 / 2→0; CH-08 register/job announcement gone from both traces. Voice 15/15 both. Belief/journey 15/15, book-arc PASS both. Noted factory-speech A 29→17 / B 28→38 — hydra (evidence-limit register, frozen-echo paste, trap-question prefixes). Attribution is a founder batch, not one cause.
 **Next direction:** Residual noted factory-speech at plan-card evidence-limit vocabulary and verbatim mantra-echo paste. PERSISTENT (5th time). Founder halt: do not start 015 unless asked.
+
+### iter-015 — founder-batch seed subtraction and job-ownership
+**Hypothesis:** Cards cite evidence/echo IDs only, instruction freeze is headline-only, trap-question formula deleted, and later cards must not re-own a demolition under a new scene ID — so voice noted `factory-speech` and book-arc noted `re-argument` drop in both books.
+**Change:** `prompts/chapter-writer.md`, `prompts/master-plan-skill-v2.md`, `prompts/master-plan-reviewer-v2.md`, `prompts/style-guide.md`. Plan regenerated (16 chapters). Research reused. Two books on Muse Spark Zen. Judges: composer-2.5.
+**Verdict:** REVERT
+**Lesson:** KEEP conjunction failed. Noted factory-speech 17→20 / 38→13 (A rose; B dropped — not both). Book-arc re-argument 5→6 / 4→5 (neither dropped). Blocking factory-speech reopened 0→1 / 0→3 (A chapter-job landing meta; B numbered I-line prefixes). `trap-question-label` closed 3/1→0/0. Belief/journey/book-arc PASS both. PERSISTENT factory-speech hydra at writer-prompt/plan (6th). Attribution would have been weak (batch).
+**Next direction:** Do not re-run this seed-subtraction batch against the same census objects. Blocking reopened as instruction-serial and verdict-landing meta — different local forms, same class. Founder halt: do not start 016 unless asked.

@@ -2,19 +2,21 @@
 
 ## Position
 
-- **Iteration:** 014
-- **Stage:** Recorded
+- **Iteration:** 015
+- **Stage:** Decision
 - **Status:** IDLE
 - **Campaign branch:** `campaign-001`
-- **Last completed unit:** 014 KEEP — factory-speech blocking 2→0 / 2→0. Founder batch. Accepted snapshot = replicate A (15 chapters).
-- **Next unit:** STOP. Do not start 015 unless the founder asks.
+- **Worktree:** `/home/kab/quit-sugar-iter-015`
+- **Last completed unit:** 015 REVERT.
+- **Next unit:** founder halt. Do not start 016 unless asked.
 
 ## Journal
 
 | Time | What | Next |
 |---|---|---|
-| 2026-08-28 07:35 | Replicate A 15/15. | write B |
-| 2026-08-28 08:54 | Replicate B 15/15. | judge A |
-| 2026-08-28 09:51 | Replicate A panel 46/46. | judge B |
-| 2026-08-28 12:01 | Replicate B panel 46/46. Census KEEP. | record |
 | 2026-08-28 12:10 | 014 KEEP. Halt. | IDLE |
+| 2026-08-28 15:20 | 015 started. Founder-batch. | analysis |
+| 2026-08-29 09:29 | Judge A done (49/49). Starting judge B. | judge B |
+| 2026-08-29 12:45 | Judge B stalled ~22/49. Resumed. | judge B |
+| 2026-08-29 13:06 | Judge B done (49/49). Census + traces. | decision |
+| 2026-08-29 13:20 | 015 REVERT. Halt. | IDLE |

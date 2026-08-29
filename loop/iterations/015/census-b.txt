@@ -1,0 +1,10 @@
+reports 49
+  belief: PASS 16 FAIL 0
+    noted    {'re-argument': 4}
+  book-arc: PASS 1 FAIL 0
+    noted    {'re-argument': 5, 'curve-flatten': 1, 'pre-debut-spend': 1}
+  journey: PASS 16 FAIL 0
+    noted    {'journey-stall': 2, 're-argument': 7, 'placement-miss': 1}
+  voice: PASS 14 FAIL 2
+    blocking {'factory-speech': 3}
+    noted    {'coach-register': 7, 'wrong-register': 6, 'copied-mannerism': 3, 'willpower-lexicon': 44, 'factory-speech': 13}

@@ -1,0 +1,19 @@
+{
+  "model": "muse-spark-1.2-contributor-free",
+  "route": "opencode",
+  "latency_s": 37.091,
+  "usage": {
+    "input_tokens": 42467,
+    "output_tokens": 16742,
+    "total_tokens": 59209,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens_details": {
+      "reasoning_tokens": 2288
+    }
+  },
+  "role": "plan-writer",
+  "round": "revision-2",
+  "chars": 60230
+}
