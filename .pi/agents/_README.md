@@ -22,3 +22,9 @@ roles. They are harness-specific plumbing, not the loop's definition.
 
 See `loop/HARNESS.md` for the role→capability map, the spawn contract, and how
 model precedence (config vs this adapter) is resolved.
+
+Conversation robustness for the **orchestrator** (factory lead and research
+lead) is `npm:pi-goal-x` in `.pi/settings.json`, not these role wrappers.
+`/sisyphus-direct` for one PROGRAM iteration; `/goal-direct` for a research
+lead. Continuation is on `agent_settled`. Do not put a continue-loop into
+`prompts/` or these role files.

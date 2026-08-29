@@ -1,5 +1,6 @@
 {
   "packages": [
-    "npm:pi-provider-fallback"
+    "npm:pi-provider-fallback",
+    "npm:pi-goal-x"
   ]
 }

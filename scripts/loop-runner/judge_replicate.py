@@ -27,10 +27,10 @@ def parse_alignment(text: str) -> dict[int, int]:
 
 
 def extract_cards(plan: str) -> dict[int, str]:
-    parts = re.split(r"\n(?=\*\*C(?:H-)?\d+ — )", plan)
+    parts = re.split(r"\n(?=(?:#{1,3}\s+|\*\*)(?:CH-|C-)\d{1,2}\s+—)", plan)
     cards: dict[int, str] = {}
     for p in parts:
-        m = re.match(r"\*\*C(?:H-)?(\d+) —", p)
+        m = re.match(r"(?:#{1,3}\s+|\*\*)(?:CH-|C-)(\d{1,2})\s+—", p)
         if m:
             cards[int(m.group(1))] = p.strip()
     return cards
@@ -40,7 +40,7 @@ def parse_inventory_table(plan: str, header: str) -> dict[str, str]:
     out: dict[str, str] = {}
     in_table = False
     for line in plan.splitlines():
-        if header in line:
+        if header.lower() in line.lower():
             in_table = True
             continue
         if in_table and line.startswith("## "):
@@ -54,13 +54,25 @@ def parse_inventory_table(plan: str, header: str) -> dict[str, str]:
         wording = cols[1]
         if re.match(r"^(M|FT|I|T)-[A-Z0-9]+$", iid):
             out[iid] = wording
+    if not out:
+        current = None
+        for line in plan.splitlines():
+            hm = re.match(r"\*\*((?:M|FT|I|T)-[A-Z0-9]+) —", line)
+            if hm:
+                current = hm.group(1)
+                continue
+            if current:
+                wm = re.match(r"- Wording:\s*(.+)", line)
+                if wm:
+                    out[current] = wm.group(1).strip()
+                    current = None
     return out
 
 
 def field(card: str, name: str) -> str:
     needle = name.lower()
     for line in card.splitlines():
-        stripped = line.lstrip("* ").lower()
+        stripped = line.lstrip("*-# \t").lower()
         if stripped.startswith(needle) and ":" in line:
             return line.split(":", 1)[1].strip()
     for part in card.split(" | "):

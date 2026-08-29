@@ -16,22 +16,20 @@ ITER = os.environ["ITER"]
 REPLICATE = os.environ["REPLICATE"]  # a | b
 SLUG = "quit-sugar"
 
+CARD_SPLIT = re.compile(r"\n(?=(?:#{1,3}\s+|\*\*)(?:CH-|C-)\d{1,2}\s+—)")
+CARD_HEAD = re.compile(r"(?:#{1,3}\s+|\*\*)(?:CH-|C-)(\d{1,2})\s+—")
+
 
 def parse_cards(plan: str) -> dict[int, str]:
     m = re.search(r"## 7\. COMPACT CHAPTER CARDS\n(.*?)(?:\n## |\Z)", plan, re.S | re.I)
-    if not m:
-        raise SystemExit("no compact chapter cards")
-    block = m.group(1)
+    block = m.group(1) if m else plan
     cards: dict[int, str] = {}
-    parts = re.split(r"\n(?=\*\*C(?:H-)?\d{2} —)", "\n" + block)
-    for part in parts:
+    for part in CARD_SPLIT.split("\n" + block):
         part = part.strip()
-        if not part.startswith("**C"):
-            continue
-        nm = re.match(r"\*\*C(?:H-)?(\d{2}) —", part)
+        nm = CARD_HEAD.match(part)
         if not nm:
             continue
-        cards[int(nm.group(1))] = part.strip() + "\n"
+        cards[int(nm.group(1))] = part + "\n"
     if not cards:
         raise SystemExit("no chapter cards parsed")
     return cards
@@ -45,8 +43,8 @@ def book_core(plan: str) -> str:
 
 
 def assemble(writer: str, plan: str, style: str, card: str, prev: str, n: int) -> str:
-    title = re.match(r"\*\*(C(?:H-)?\d{2} — .+?)\*\*", card)
-    title_s = title.group(1) if title else f"C{n:02d}"
+    title = re.search(r"(?:CH-|C-)\d{1,2}\s+—\s+.+", card.splitlines()[0] if card else "")
+    title_s = title.group(0).strip(" *#") if title else f"C{n:02d}"
     assignment = (
         f"Write {title_s} of `production-books/{SLUG}` as the complete chapter file. "
         "Your chapter's card is the authoritative semantic authority. Resolve every ID it cites "

@@ -25,3 +25,6 @@ __pycache__/
 .env.keys
 .env.keys.*
 .loop-work/
+
+# pi-goal-x runtime objectives (session-local; never repository truth).
+.pi/goals/

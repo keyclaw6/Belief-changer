@@ -64,8 +64,9 @@ else
   # A fresh checkout, a clean, or a baseline (nothing produced yet) has none —
   # fail SAFE to RERUN rather than silently hand the planner empty inputs.
   # Scoped to the active book (never a sibling book's research).
-  if [ -d "$research_dir" ] && \
-     find "$research_dir" -type f 2>/dev/null | grep -q .; then
+  # find|grep under `set -o pipefail` exits 141 on SIGPIPE when grep -q
+  # closes early — that used to print RERUN for a full research bank.
+  if [ -d "$research_dir" ] && [ -n "$(find "$research_dir" -type f -print -quit 2>/dev/null)" ]; then
     echo "REUSE"
   else
     echo "RERUN"

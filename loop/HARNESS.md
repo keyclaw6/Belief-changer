@@ -65,10 +65,44 @@ intended-vs-actual mismatch is logged as a **confound**, not read as a result.
 
 | Harness | Role adapter | Spawn mechanism | Notes |
 |---|---|---|---|
-| **pi coding agent** | `.pi/agents/*.md` (frontmatter `model:`) | the `subagent` tool | endpoint/auth/route bindings are the `[PI BINDING]` fields in `loop/config.yaml`. Muse Spark roles pin `opencode/muse-spark-1.2-contributor-free` (OpenCode Zen Responses API, `OPENCODE_API_KEY`). Per-call fallback is Vercel `vercel/meta/muse-spark-1.2-contributor` (`AI_GATEWAY_API_KEY`). Official pi has no native fallback chain; this repo installs `pi-provider-fallback` project-locally (`.pi/settings.json`). Export `PI_PROVIDER_FALLBACK_CONFIG` to `.pi/provider-fallback.json` so the extension reads the repo chain (Vercel contributor enabled as the other-provider fallback; OpenCode same-provider fallbacks stay empty). The plugin is session-sticky; each chapter is a fresh spawn, so the next unit still starts on Zen. PROGRAM §1 is the harness-neutral retry if the extension does not fire. Preflight runs via `scripts/loop-runner/run_preflight.sh` |
+| **pi coding agent** | `.pi/agents/*.md` (frontmatter `model:`) | the `subagent` tool | endpoint/auth/route bindings are the `[PI BINDING]` fields in `loop/config.yaml`. Muse Spark roles pin `opencode/muse-spark-1.2-contributor-free` (OpenCode Zen Responses API, `OPENCODE_API_KEY`). Per-call fallback is Vercel `vercel/meta/muse-spark-1.2-contributor` (`AI_GATEWAY_API_KEY`). Official pi has no native fallback chain; this repo installs `pi-provider-fallback` and `pi-goal-x` project-locally (`.pi/settings.json`). Export `PI_PROVIDER_FALLBACK_CONFIG` to `.pi/provider-fallback.json` so the extension reads the repo chain (Vercel contributor enabled as the other-provider fallback; OpenCode same-provider fallbacks stay empty). The plugin is session-sticky; each chapter is a fresh spawn, so the next unit still starts on Zen. PROGRAM §1 is the harness-neutral retry if the extension does not fire. Preflight runs via `scripts/loop-runner/run_preflight.sh`. Factory and research stay one pi conversation — see **Conversation robustness** below. |
 | Hyperagent | spawn roles per the capability table above | the `task` tool | map each role to a model the workspace can reach; no `.pi/` files used; run preflight by spawning the judge role directly against `loop/preflight/inputs/` per PROGRAM §2 |
 | opencode | judges, trace-analyzer, plan-reviewer, research sub-agents, and (via the opencode harness's own reach) the `task` tool | the `task` sub-agent tool, pinned to `opencode-go/deepseek-v4-flash` for judges/trace-analyzer/plan-reviewer (`alibaba-token-plan/deepseek-v4-flash-0731` failed judge repeatability 2026-08-17 — keep that note); research sub-agents stay on `alibaba-token-plan/deepseek-v4-flash-0731` | clean-context sub-agent per role call holding only its role prompt + the exact named inputs; no `.pi/` files used; run preflight by spawning the judge role directly against `loop/preflight/inputs/` per PROGRAM §2 (18/18 PASS on 2026-08-17 with judges pinned to `opencode-go/deepseek-v4-flash`). Writer/plan-writer/hypothesizer: primary `opencode/muse-spark-1.2-contributor-free` at `https://opencode.ai/zen/v1/responses`; fallback Vercel `meta/muse-spark-1.2-contributor`. |
-| Cursor | judges spawned as fresh `agent --model composer-2.5` processes; Muse Spark roles via OpenCode Zen then Vercel HTTP | Cursor `agent` CLI / Task spawn | PROGRAM §2 preflight is spawned directly against `loop/preflight/inputs/` (do not run `run_preflight.sh`). Durable runners: `scripts/loop-runner/write_replicate.py`, `judge_replicate.py`, `census_judgments.py` (not `/tmp`). Writer/plan-writer/hypothesizer: primary `muse-spark-1.2-contributor-free` at `https://opencode.ai/zen/v1/responses`, auth `OPENCODE_API_KEY`; on route/quota/unavailable, one retry at Vercel `meta/muse-spark-1.2-contributor` (`AI_GATEWAY_API_KEY`). Never the non-contributor alias. |
+| Cursor | judges spawned as fresh `agent --model composer-2.5` processes; Muse Spark roles via OpenCode Zen then Vercel HTTP | Cursor `agent` CLI / Task spawn | PROGRAM §2 preflight is spawned directly against `loop/preflight/inputs/` (do not run `run_preflight.sh`). Durable runners: `scripts/loop-runner/write_replicate.py`, `judge_replicate.py`, `census_judgments.py` (not `/tmp`). Writer/plan-writer/hypothesizer: primary `muse-spark-1.2-contributor-free` at `https://opencode.ai/zen/v1/responses`, auth `OPENCODE_API_KEY`; on route/quota/unavailable, one retry at Vercel `meta/muse-spark-1.2-contributor` (`AI_GATEWAY_API_KEY`). Never the non-contributor alias. **Conversation robustness:** the orchestrator Task/session must not end between units. After a runner exits, start the next unit in the same conversation (`needs changes first` → next plan-write; chapter written → next chapter or snapshot). Do not nohup a review and return. Do not add a process driver. |
+
+## Conversation robustness (factory and research)
+
+The orchestrator is an **agent conversation**. Role runners are tools that
+conversation starts; they do not replace it. Do not add a process driver.
+
+**pi (this repo's 0.84.x binding):** `npm:pi-goal-x` (peers `>=0.83 <0.85`).
+`/goal-direct` and `/sisyphus-direct` create a focused goal with autoContinue
+on; continuation queues on `agent_settled` (after retries and compaction), not
+`agent_end`. Goals persist under `.pi/goals/`. Resume a killed process with
+`pi --resume <session.jsonl>`.
+
+```bash
+export PI_PROVIDER_FALLBACK_CONFIG="$(pwd)/.pi/provider-fallback.json"
+pi
+```
+
+- Factory (ordered PROGRAM units): `/sisyphus-direct` — run one iteration of
+  `loop/PROGRAM.md` to KEEP or REVERT. Spawn each role as a fresh sub-agent;
+  wait for that unit's on-disk marker; then the next unit. Do not exit while
+  `loop/state.md` is `IN PROGRESS`.
+- Research (open-ended until artifacts exist): `/goal-direct` — execute
+  `prompts/research-agent.md` as research lead. Spawn `.pi/agents/researcher.md`
+  miners in parallel; no search/fetch ceilings; stop only when the accepted
+  research artifacts the runbook names are on disk.
+
+Do not use `@latent-variable/pi-auto-continue` (`agent_end`, naive "continue").
+Do not use timer `/loop` extensions. `npm:pi-agent-goal` is the same
+conversation-goal design but peer-blocked on pi ≥0.81 (`<0.81` ceiling).
+Fallback if `pi-goal-x` cannot load: `npm:@narumitw/pi-goal` (also
+`agent_settled`).
+
+**Cursor:** the orchestrator Task/session must not end between units. After a
+runner exits, start the next unit in the same conversation.
 
 **Preflight is harness-coupled:** judge repeatability depends on the model and
 sampling, so re-run preflight when the *harness or model* changes, not only
