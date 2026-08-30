@@ -1,0 +1,13 @@
+diff --git i/prompts/chapter-writer.md w/prompts/chapter-writer.md
+index a6ff081..99151a5 100644
+--- i/prompts/chapter-writer.md
++++ w/prompts/chapter-writer.md
+@@ -61,7 +61,7 @@ that can repair the defect. Never emit another refusal form.
+   IN THIS CHAPTER. Never surface workshop vocabulary: no ledger or source
+   IDs, no SE-/S-/E- labels, no
+   SUPPORTED/MIXED/CONTESTED grades, no persona codes or P-xx, no scene,
+-  mantra, or device-code strings, no beat names, no chapter-number callbacks
++  mantra, or device-code strings, no beat names, no trap-question or Socratic-trap prefixes, no chapter-number callbacks
+   ("as Chapter N promised", "as promised"), no "Warm rationale" or backticks
+   around craft, no boxed-definition headers, decree templates, FOR-column
+   ledger talk, frozen-doctrine labels, and no assignment-fulfillment narration

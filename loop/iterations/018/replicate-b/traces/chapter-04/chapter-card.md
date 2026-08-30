@@ -1,0 +1,13 @@
+**CH-04 — The Treat That Takes**
+- Primary job: enacted transition — *from "sugar rewards me with love/comfort — I deserve it" to "sugar sells itself as love but delivers craving and shame — the moment was love, sugar sneaked a ride"*.
+- Belief now: Believes dessert is affection/self-care. Exit sees reward-frame as Big Sweet Lie; credit reassigned to situation/body/moment.
+- Reader-state: Tender, identity-bound to sugar as kindness; will defend "but it *is* a treat." Needs warmth plus surgical credit reassignment.
+- Encounter: After-school nostalgia — childhood sweets as love, and the adult's 8pm sofa reward after a hard day; same evening with real rest/company, no BAD SUGAR.
+- Mantra: echo M-D `a genuine pleasure, treat or lift`, echo M-C `the Sugar Trap`.
+- Scene/Analogy: SC-08 House-Party Gatecrasher — debut full staging (real food is the house, BAD SUGAR gatecrashes).
+- Evidence: E-03 lived reward frame (LX-158) — permitted: reward-frame keeps loop alive; prohibited: no one may ever enjoy sweet food; plus E-20 reward crowding/blunting (MIXED) — permitted: explains escalation/family-size; prohibited: imaging proves compulsion. Enforce MIXED limits explicitly.
+- New instruction: none.
+- Reserved-later fence: Do not demolish energy/lift claim; do not deliver hard health facts; assigned to CH-05, CH-09.
+- Guardrails: Warm to person; never moralize sweetness as forbidden (GOOD SUGAR remains); reassign credit to situation/body/moment; CA-SAFE silent.
+- Continuity intent: Receives axis-switched reader; hands forward a reader who has lost the "reward/love" justification forever and awaits the energy illusion.
+- Word budget: 4,400

@@ -1,0 +1,14 @@
+**CH-06 — Eating Like We Were Built To**
+- Primary job: enacted transition — *inhabit the ordinary doing: from "eating is control and sugar is the fun part" to "hunger, satisfaction, and real food as favourite — my body already knows how to eat and enjoy without BAD SUGAR"*.
+- Belief now: Intellectually knows sugar gives nothing, but has not felt eating itself as pleasure without BAD SUGAR. Exit has lived hunger and satisfaction in the body and tasted real food as favourite.
+- Reader-state: Worried freedom will be bland, disciplined eating forever. Needs awe and lived encounter, not kill.
+- Encounter: A full, slow ordinary meal — noticing true hunger arrive, chewing real food (fruit, roast vegetables, bread that is food not confection), feeling clean satisfaction finish, not crash.
+- Mantra: echo M-B `easily, immediately and permanently` (as assumed ease).
+- Scene/Analogy: No demolition analogy; the meal itself is the analogy. Brief token echo of SC-08 (house is real food) permitted, not restaged.
+- Evidence: E-17 glucose not essential import (reuse within limit) — permitted: not deprivation; plus implicit body-as-authority (no new SEU). Must not overclaim nutrition prescription.
+- New instruction: none.
+- Reserved-later fence: Do not re-argue treat/energy justifications; do not deliver mechanism deepening; assigned to CH-07; do not teach portion rules.
+- Structural responsibility: **Inhabit-the-ordinary-doing chapter** — primary job is inhabit, not kill with inhabit as flavor. Positive authority (body, instinct, real food) is lived here as concrete encounter, not three-word refrain, and not a late teaching chapter.
+- Guardrails: Awe, not lecture; no diet mechanics; no "instead"; gain-frame real eating; CA-SAFE silent.
+- Continuity intent: Receives a reader who has demolished justifications; hands forward a reader who has felt the alternative — steady, delicious, enough — so mechanism and industry revelations land on solid ground.
+- Word budget: 4,600

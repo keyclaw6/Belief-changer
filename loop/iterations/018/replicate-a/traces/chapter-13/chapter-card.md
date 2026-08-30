@@ -1,0 +1,13 @@
+**CH-13 — The Last Sweet**
+- Primary job: non-argument — hand-off — gate readiness, stage the last ordinary instance as celebratory ritual, confer freedom as instant identity, and script thought-substitution.
+- Reader-state: Convinced, excited, slightly nervous about "when am I actually free?" Needs gate, solemn vow, instant congratulation.
+- Encounter: The kitchen table — the last ordinary sweet or starchy BAD SUGAR, eaten with attention on the ugliness (sickly stick, wired crash) while making a solemn vow never to feed the Worm again.
+- Mantra: debut M-H `FANTASTIC! I'M FREE!` (pinned) — ALL-CAPS joyful script; echo M-B `easily, immediately and permanently`, echo M-E `the Sugar Worm`, echo M-F `the Big Sweet Lie`, echo M-M `There is nothing to give up`.
+- Scene/Analogy: SC-10 Combination Lock — token echo (safe now open); SC-11 Pink Elephant — token echo paired with M-H.
+- Evidence: E-18 hump 2–5 days (S-23,S-25) — time-limited; E-07 mild but well-defined — de-escalate physical fear; E-16 not clinical hypoglycemia — one clause.
+- New instructions: I-09 **NEVER THINK "I CAN'T HAVE IT" — THINK "FANTASTIC! I'M FREE!"** — Swap deprivation for celebration whenever sugar crosses your mind. ; I-10 **NEVER USE A SUBSTITUTE THAT FEEDS THE SAME LIE** — Don't swap one BAD SUGAR for another. ; I-11 **REJOICE AT THE WORM'S WHINE** — When you feel that empty, edgy, slightly needy feeling, be glad — it is dying.
+- Reserved-later fence: No new teaching manuals; ordinary life details assigned to CH-14; recap assigned to CH-15.
+- Structural responsibility: **The vow** — readiness gate ("Do you feel ready? If not, re-read"), last ordinary instance (not lab dose), solemn vow, instant conferral ("Don't wait to be free — you already are. You are free as of now."), warning against two relapse doors (bad-day rescue; "just one can't hurt"), no substitutes, pity-don't-envy others, forgive slips (rumble strip not crash).
+- Guardrails: Joyful, ceremonial, commanding without apology; no willpower framing; CA-SAFE honoured silently; method demands ALL instructions followed.
+- Continuity intent: Receives a reader who has demolished every justification and felt the illusion break; hands forward a free person, already free, with scripts in hand.
+- Word budget: 3,200

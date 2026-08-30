@@ -150,3 +150,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** REVERT
 **Lesson:** Isolation did not KEEP. Trap-question 3→0 / 1→1 (B `Ask the simplest Socratic trap`). Blocking factory-speech reopened 0→1 / 0→1 (A chapter-job landing meta; B style-guide posture spoken). Named 015 serials stayed closed; verdict-landing mutated. Noted factory-speech 17→18 / 38→10. Do not promote. PERSISTENT factory-speech hydra (7th).
 **Next direction:** Do not replay trap-formula deletion as the KEEP object. Blocking class still mutates at writer/style-guide. Founder halt: do not start 018 unless asked.
+
+### iter-018 — trap-question prefix ban vs 014
+**Hypothesis:** One never-surface line (`no trap-question or Socratic-trap prefixes`) in `prompts/chapter-writer.md` closes voice noted `trap-question-label` 3/1 → 0/0 both vs 014, with plan reuse.
+**Change:** `prompts/chapter-writer.md` (never-surface list, one clause). Plan reused (014, 15 chapters). Research reused. Two books on Muse Spark Zen. Judges: composer-2.5.
+**Verdict:** INCONCLUSIVE
+**Lesson:** Prefix ban closed trap-question 3→0 / 1→0 both. Founder veto missed: blocking factory-speech 0→2 A-only (evidence-register at ch09 climax, not 015/017 named kills). method-promise-hedge A-only (`almost automatically` Burgeon paste). Named 015/017 kills stayed closed. Do not promote. PERSISTENT factory-speech hydra (8th).
+**Next direction:** Do not KEEP this line. The targeted prefix class closed; blocking factory-speech still mutates at evidence-register in one book. Founder halt: do not start 019 unless asked.

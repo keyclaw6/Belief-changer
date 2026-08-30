@@ -1,0 +1,14 @@
+**CH-11 — "But I Love Food"**
+- Primary job: enacted transition — *from "maybe I am just a sugar person / it's genetic / my personality needs it" to "those traits are the result of the trap, not its cause — and even if they were, this method still frees you"*.
+- Belief now: Identity excuse remains last refuge. Exit sees cause-effect inversion and population evidence.
+- Reader-state: Searching for exempt identity. Needs graceful collapse plus long-form proof that ordinary people escape.
+- Encounter: Family table — "we've always had a sweet tooth" — and the reader testing real hunger vs Worm whine.
+- Mantra: echo M-C `the Sugar Trap`, echo M-K `the Willpower Method`.
+- Scene/Analogy: No new full analogy; table of shared traits as RESULT image; historical-evidence operator delivered via settled token from CH-02.
+- Evidence: E-11 prevalence — token echo only, settled from CH-02; do not re-present 14% figure as new claim; invoke only as "as you saw, many report this pattern" within self-report not DSM limits; plus E-20 tolerance/cue MIXED (limits honoured) to explain "need family size now"; plus E-10 contested honesty (S-11,S-29) to protect credibility while not reviving "born this way" excuse; plus E-21 freedom testimony lived (F-01..F-34) — early wobble then stability. Enforce CONTESTED/MIXED limits.
+- New instruction: none.
+- Reserved-later fence: Do not restage strongest celebration scene; assigned to CH-12.
+- Structural responsibility: **Identity-excuse chapter** (cause-effect inversion + graceful concession) + **Myths Q&A battery** as distinct room (rapid-fire quoted myths: "Fruit will spike me too?" "I need sugar for my brain." "Dark chocolate is healthy, so…?" each demolished 2–6 sentences) + **Embedded long-form testimonial** (1–2 pages first-person escape arc with concrete numbers/sensory detail, in main flow, not appendix, drawn from E-21, written original).
+- Guardrails: Non-shaming; inversion stated flat; do not moralize GOOD SUGAR; CA-SAFE silent.
+- Continuity intent: Receives self-forgiven reader; hands forward a reader stripped of last identity excuse, armed with myth answers, and warmed by a lived escape proof.
+- Word budget: 4,400

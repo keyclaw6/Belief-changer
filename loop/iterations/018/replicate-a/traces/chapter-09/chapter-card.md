@@ -1,0 +1,14 @@
+**CH-09 — The Body Keeps The Score**
+- Primary job: enacted transition — *from vague "sugar is probably bad" to "BAD SUGAR is doing plenty TO me and nothing FOR me — and freedom is relief, not fear"*.
+- Belief now: Knows trap and mechanism; still fuzzy on stakes. Exit holds the settled bodily stakes and chooses escape-joy over fear.
+- Reader-state: Exposed to villain; ready for truth but vulnerable to dread.
+- Encounter: The dentist's mirror, the afternoon slump's blood-pressure cuff, the bathroom scale — concrete bodily stakes, not abstract stats.
+- Mantra: echo M-I `for the rest of your life` (both valences), echo M-N `tired, wired and crashing`, echo M-J `The fact is…`
+- Scene/Analogy: SC-06 Boiling Frog — token echo only; SC-04 Cliff Jump — token.
+- Evidence: E-12 mood link men (S-15) SUPPORTED — permitted/prohibited/limits, men only observational; E-14 heart/inflammation (S-17,S-63) SUPPORTED — deferred load; E-15 dental caries (S-20) SUPPORTED — plaque acid; plus E-13 WHO ceilings as anchor. All at SUPPORTED grade but with observational/population limits honoured; must state "high intake linked" not "one hit causes."
+- New instruction: none.
+- Reserved-later fence: Do not turn into teaching manual on diet rules; do not re-open treat/energy debates; assigned elsewhere.
+- Structural responsibility: Hard facts then relief; CA-SAFE honoured silently.
+- Guardrails: CA-SAFE; E-12/E-14/E-15 observational/population limits; original prose.
+- Continuity intent: Receives indignant reader; hands forward a reader who feels stakes without dread and is primed to understand why willpower never worked.
+- Word budget: 4,600

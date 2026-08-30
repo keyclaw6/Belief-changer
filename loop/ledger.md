@@ -306,3 +306,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Isolating the 015 trap-formula hunk does not hold a both-books close when the 014 plan still names `Socratic trap` on a card, and stripping `land one short verdict` does not close the landing-meta family. Blocking mutates.
 
 **What this opens next.** Do not replay this isolation against the same census object. Founder halt — do not start 018 unless asked.
+
+### iter-018 — trap-question prefix ban vs 014  ·  2026-08-30  ·  INCONCLUSIVE
+
+**Hypothesis.** If the writer never-surface list adds `no trap-question or Socratic-trap prefixes` and the rest of the factory stays at 014 KEEP, voice noted `trap-question-label` closes 3/1 → 0/0 both vs 014.
+
+**Change.** One line in `prompts/chapter-writer.md` (see `loop/iterations/018/change.diff`). Plan reused (014, 15 chapters). Research reused. Two books on Muse Spark Zen. Panel composer-2.5, 46+46.
+
+**What happened.** Trap-question 3→0 (A) and 1→0 (B). Blocking factory-speech 0→2 / 0. method-promise-hedge blocking 1 / 0. Voice 13/15 and 15/15. A FAIL ch07 Burgeon `almost automatically`; A FAIL ch09 population-level / follow-up audit at the TO/FOR climax. Named 015/017 kills absent. Belief 15/15, journey 15/15, book-arc PASS both. Noted factory-speech 17→17 / 38→12.
+
+**Verdict & why.** INCONCLUSIVE. KEEP object closed in both books. Founder veto (blocking factory-speech 0/0) failed in A only — PROGRAM one-book class, not REVERT, not KEEP. Prediction partial.
+
+**What we learned.** A prefix ban can close trap-question labels without deleting the 014 ask-teaching. It does not hold the blocking factory-speech floor at 0/0 when A samples evidence-register at a climax. Plan-card still names `Socratic trap question`; neither book spoke it.
+
+**What this opens next.** Do not promote this line. Founder halt — do not start 019 unless asked.
