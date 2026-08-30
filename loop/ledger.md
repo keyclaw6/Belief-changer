@@ -278,3 +278,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Seed subtraction closed the trap-question formula and did not close the noted factory-speech floor or re-argument. The blocking class mutated to writer-prompt landing-meta (A) and numbered instruction anatomy (B). Prompt-level hydra continues.
 
 **What this opens next.** A different level than another seed-subtraction batch on the same classes. Founder halt — do not start 016 unless asked.
+
+### iter-016 — founder-batch trap-question keep + echo density  ·  2026-08-30  ·  INCONCLUSIVE
+
+**Hypothesis.** If writer, plan-skill, plan-reviewer, and style-guide keep 015’s trap-question formula deletion, keep echo-ID-only with a mantra-density cap, and strip speakable verdict-landing / historical-evidence operators, trap-question closes 0/0 and noted factory-speech drops in both books vs 014.
+
+**Change.** Four prompt files (see `loop/iterations/016/change.diff`). Plan regenerated (15 chapters). Research reused. Two books on Muse Spark Zen. Panel composer-2.5, 46+46.
+
+**What happened.** Trap-question 3→0 (A) and 1→1 (B). Noted factory-speech 17→23 (A) and 38→13 (B). Blocking factory-speech 0 / 1. Voice 15/15 and 14/15. Belief 15/15, journey 15/15, book-arc PASS both. Named 015 kills absent. A ch14 noted factory-speech 7→2 under the density cap. B FAIL is ch04 assigned M-F echo as L-01 pipeline placeholder.
+
+**Verdict & why.** INCONCLUSIVE. Each KEEP object improved in only one book. Blocking 0/1 is one-book noise, not a both-books veto and not REVERT.
+
+**What we learned.** Echo-density closed the 015 vow-card inventory path and did not close the noted factory-speech floor in both books. Style-guide fact-assertion / evidence-framing still counts as noted factory-speech when the writer leans on it (A). Trap-question formula deletion mostly held; one `Ask:` prefix remains B-only.
+
+**What this opens next.** Do not promote this batch. Next iteration needs a new mechanism on the both-books noted factory-speech hydra, not a replay of 015/016 seed subtraction. Founder halt — do not start 017 unless asked.

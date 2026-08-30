@@ -1,0 +1,166 @@
+diff --git i/prompts/chapter-writer.md w/prompts/chapter-writer.md
+index a6ff081..5291f90 100644
+--- i/prompts/chapter-writer.md
++++ w/prompts/chapter-writer.md
+@@ -42,8 +42,7 @@ that can repair the defect. Never emit another refusal form.
+   finish in relief. Never announce the move. Never soften an assigned scare
+   or leave fear standing.
+ - State the belief reframe as settled fact. Ventriloquize the strongest reader
+-  objection, pose two or three questions whose only honest answer concedes
+-  the point, perform the credit inversion, and land one short verdict. Perform
++  objection, ask, perform the credit inversion. Perform
+   every rhetorical move silently — never name, count, announce, or stage-direct
+   it in reader prose. Do not reopen a landed verdict with permission language,
+   coaching stage directions, both-sides framing, or narrator-side hedges.
+diff --git i/prompts/master-plan-reviewer-v2.md w/prompts/master-plan-reviewer-v2.md
+index f599db3..9535550 100644
+--- i/prompts/master-plan-reviewer-v2.md
++++ w/prompts/master-plan-reviewer-v2.md
+@@ -65,14 +65,14 @@ and the previous chapter — there is NO separate commissioning step. Block any
+ card that cannot be written from directly: missing or contradictory evidence
+ IDs and the limits the writer must not overclaim, scene or analogy jobs,
+ spoken instruction wording, mantra IDs that collide with instruction numbers
+-(never M-08 next to I-08 — use M-A, M-B, …), missing pinned frozen quotes on
+-cards that assign a mantra, continuity, budgets, safety boundaries, or work
++(never M-08 next to I-08 — use M-A, M-B, …), missing plain-text pinned wording on
++a debut card, continuity, budgets, safety boundaries, or work
+ ownership. Block P-xx persona codes, unspeakable beat handles (device names,
+ "scare-then-disown", "Warm rationale"), Voice: register/job operators
+ ("hard truth flat", "deliver at full Carr force", "explicitly disown",
+ workshop don't-panic quotes), boxed CA-SAFE/CA-01 titles as card paste
+ instructions, a named pupil-persona (Maya or any proper-name handle) as
+-the card reader, and chapter-number ledger callbacks on cards. Every ID a card cites must resolve against a plan-wide inventory
++the card reader, chapter-number ledger callbacks on cards, echo cards that pin quotes, three or more mantra IDs on one card (except the final recap’s photographable instruction/mantra hand-off), and vow/gate/ritual cards that assign two or more creature-name or trap-metaphor echo IDs (mechanism characters, trap labels, sensory slugs — settled vocabulary belongs in one breath or prior chapters, not a vow-card inventory). Every ID a card cites must resolve against a plan-wide inventory
+ with its exact payload. Evidence-unavailable work must remain unavailable
+ rather than be filled speculatively.
+ 
+@@ -107,7 +107,8 @@ repeated inventories, prewritten chapter anatomy, a phrase ledger,
+ prose-density or sentence metrics before a chapter exists, or a different
+ stylistic preference when the semantic architecture is coherent.
+ Do not block the absence of a scare-then-disown field name, a Voice: field,
+-device lists, persona codes, ALL-CAPS-peak inventory, or a per-chapter mantra assignment.
++device lists, persona codes, ALL-CAPS-peak inventory, a per-chapter mantra assignment,
++or a pinned quote on an echo card.
+ Worldview-planting chapters (easy contract, already-hooked, two creatures in
+ passing, body/instinct/real food as ground) are not blockers for missing
+ demolition or inhabit-eating labels.
+diff --git i/prompts/master-plan-skill-v2.md w/prompts/master-plan-skill-v2.md
+index 471b1fe..f5e05b9 100644
+--- i/prompts/master-plan-skill-v2.md
++++ w/prompts/master-plan-skill-v2.md
+@@ -65,7 +65,11 @@ Choose and consolidate 6–10 original frozen mantras that deserve repetition, p
+ - echo chapter IDs (where the frozen line is the natural next sentence — not a quota);
+ - hand-over form in the final movement.
+ 
+-A mantra debuts once, then echoes when natural. There is no per-chapter must-assign quota. Chapter cards that debut or echo a mantra pin the frozen quote on the card and cite the lettered ID.
++A mantra debuts once, then echoes when natural. There is no per-chapter must-assign quota. Debut cards pin the exact wording once in plain text (no markdown backticks) and cite the lettered ID. Echo cards cite the lettered ID only — no pinned quote, no backticks, no multi-token paste inventory.
++
++**Echo density on cards:** At most two mantra IDs on any chapter card — any mix of debut and echo. The final recap card that photographably lists the instruction set is the only exception (it may cite the terminal mantra and hand-over echoes already owned). Never assign three or more echo IDs on one card. On a vow, gate, or ritual-detonation card (structural responsibility includes readiness gate, last ordinary instance, solemn vow, or instant freedom conferral): at most one echo ID plus any debut for that card; do not stack creature-name or trap-metaphor echoes (mechanism characters, trap labels, sensory slugs) — those are already settled; the vow card owns the terminal thought and instructions, not a creature roll-call.
++
++**Echo schedule on the sheet:** Spread echo chapter IDs across the arc so no single late chapter inherits every unsettled creature token. Echo chapters are where one frozen line is the natural next sentence — not a chapter quota and not a bundle to clear at the vow.
+ 
+ ### Scene and analogy bank
+ 
+@@ -97,7 +101,7 @@ Use your judgment to merge, reshape, move, or omit material that cannot meet thi
+ 
+ Map concept debuts, qualitative demolition and freedom curves, structural responsibilities that genuinely apply, instruction placements, the saved ending reframe, and one integer word budget per chapter.
+ 
+-For a calibration plan, chapter budgets must sum exactly to 54,000–66,000 words. State the arithmetic sum. Length is planned, not hoped for.
++For a calibration plan, use 15 chapters. Chapter budgets must sum exactly to 54,000–66,000 words. State the arithmetic sum. Length is planned, not hoped for.
+ 
+ ### Compact chapter cards
+ 
+@@ -107,7 +111,7 @@ Give every chapter a stable ID, number, and working title, then specify only its
+ - for every argument-bearing card: belief now, concrete subject-specific encounter, evidence-ledger IDs plus the limits the writer must not overclaim, any NEW instruction (spoken imperative only — CA-01), and the reserved-later fence;
+ - arc position and qualitative curve position;
+ - a planner-facing reader-state (who they are at this beat — not a proper-name handle, not a pupil-persona) and the concrete encounter that makes the move land; never a `Voice:` register/job operator;
+-- mantra and frozen-token IDs only when this chapter debuts or naturally echoes one, with the frozen quote pinned on the card;
++- mantra and frozen-token IDs only when this chapter debuts or naturally echoes one: debut pins exact wording once in plain text; echo cites the lettered ID only — never markdown backticks, never three or more mantra IDs on one card, never multiple creature/trap-token echoes on a vow/gate/ritual card (at most one echo plus any debut there);
+ - one or more concrete scene/analogy IDs: debut card carries the staging job; later cards that cite the ID mark it as token-echo only;
+ - structural responsibility, if any;
+ - method, safety, and originality guardrails specific to this move (safety-limit IDs and originality only — never speakable register/job operators, never a boxed CA-SAFE/CA-01 title);
+@@ -126,7 +130,7 @@ Do not create:
+ - mantra IDs that share a number with an instruction (M-08 / I-08); use M-A, M-B, …;
+ - a `scare-then-disown` field, spoken-fear-disown line, `Voice:` register/job operator (`hard truth flat`, `deliver at full Carr force`, `explicitly disown`, workshop don't-panic quotes), device list, or ALL-CAPS-peak inventory on cards;
+ - device lists or ALL-CAPS-peak inventories on cards;
+-- repeated full instruction, evidence, or slot text in chapter cards (pinned frozen quotes are the exception);
++- repeated full instruction, evidence, or slot text in chapter cards (debut pinned quotes in plain text are the exception; echo cards cite ID only; never three or more mantra IDs on one card outside the final recap);
+ - chapter-local copies of any plan-wide inventory;
+ - prewritten previews, theses, landings, or SUMMARY prose;
+ - a single-use phrase ledger;
+diff --git i/prompts/style-guide.md w/prompts/style-guide.md
+index 7f61fdb..756c2c7 100644
+--- i/prompts/style-guide.md
++++ w/prompts/style-guide.md
+@@ -170,7 +170,7 @@ This is the engine's mechanism 2 in action, applied benefit by benefit. **The un
+ - **Pre-script the reader's own future rationalizations and pre-discredit them** ("I'll just have one," "she's already happy," "the soft stuff is fine"). When the thought later surfaces, it arrives **pre-labeled as the trap's script**, not the reader's reasoning. (Burgeon's "false incentives"; Carr's two named relapse traps.)
+ 
+ ### 5.8 Engineer the reader's own conclusion (Socratic + self-discovery)
+-- **Ask, don't assert.** Pose the question whose only honest answer dismantles the belief; let the reader supply the evidence and feel discovered, not lectured.
++- **Ask.** The question is the next sentence. Let the reader supply the evidence and feel discovered, not lectured.
+ - **Socratic origin-questioning** (Burgeon): "At what stage did you *decide* you needed this?" Ending on "the fact is, we never thought it over when we found it." Exposes the dependency as an arbitrary, unexamined assumption — therefore reversible.
+ - **Outcome-neutral framing** (Burgeon): "If this turned out to be genuinely beneficial, it would be intelligent to keep doing it." This false-fairness makes the anti-behavior conclusion feel like the reader's own honest deduction, not the author's agenda.
+ - **Pre-concede the principle on safe ground** (Freedom Model): get the reader to agree the principle (e.g., all behavior is happiness-seeking; or "we credit the moment, not the drink") via a dozen harmless examples *before* aiming it at their behavior, so refusing would mean contradicting themselves.
+@@ -297,7 +297,7 @@ These are the lines that keep the method intact. **Violating a guardrail breaks
+ - **Counter-brainwashing.** Name the installed belief and its installers; position quitting as de-programming, not deprivation.
+ - **The ritual / chosen quit.** Stage the threshold as a positive, deliberate, reader-owned act.
+ - **Relapse-proof the belief.** The back half guards the mind; slips are pre-forgiven; the thought is reframed not suppressed.
+-- **Make the reader reach the conclusion — inside a frame of flat assertion.** Carr asserts constantly ("The fact is...") *and* runs the trap questions whose only honest answer concedes the point. Keep both: settled-fact delivery for the reframes, Socratic traps for the reader's own evidence.
++- **Make the reader reach the conclusion — inside a frame of flat assertion.** Carr asserts constantly ("The fact is...") and asks. Keep both: settled-fact delivery for the reframes, questions for the reader's own evidence.
+ - **Gain-frame the alternative.** Stopping = acquiring a better life.
+ 
+ ### Never (the failure modes)
+@@ -310,7 +310,7 @@ These are the lines that keep the method intact. **Violating a guardrail breaks
+ - **Never make freedom contingent on time, streaks, or day-counting** — that keeps the behavior alive as something still missed.
+ - **Never catastrophize a slip** — that triggers the all-or-nothing collapse. But never let a slip *license* a deliberate repeat either.
+ - **Never apologize for the instructions.** The method commands — numbered, confident, cheerful — and treats following ALL of them as the reader's own smart choice (per Fork 2). What stays banned is nagging *without* the belief-work: a command may only cash in an argument the book has already won.
+-- **Never cushion a belief landing with coaching stage directions or permission language.** Cut cues such as “sit with this,” “let that land,” and “if you wish”: once the argument has earned its conclusion, issue a cheerful direct command or state the conclusion as settled fact, then ask the trap question whose only honest answer completes the credit inversion.
++- **Never cushion a belief landing with coaching stage directions or permission language.** Cut cues such as “sit with this,” “let that land,” “if you wish,” “Let me show you,” “plainly and kindly,” “I want you to feel,” “Stay with me,” “Now I want you to feel”: once the argument has earned its conclusion, issue a cheerful direct command or state the conclusion as settled fact, then ask. The question is the next sentence.
+ - **Never bog the prose down in a literature review.** Quarantine citations; keep the argument clean and emotional.
+ - **Promise at Carr's amplitude — "easily, immediately and permanently" — and no further.** Carr states the impossible-sounding contract with total confidence and delivers the gains big (freedom, energy, self-respect, the end of the slavery), but he never promises unrelated "superpowers." Match his amplitude; don't exceed it and don't shrink it.
+ - **Never tell the reader to white-knuckle-avoid triggers** as the strategy. Either inhabit old contexts confidently (Carr) or redesign environment as support (Burgeon) — but avoidance-as-resistance silently concedes the behavior still holds power.
+@@ -365,7 +365,7 @@ What ordinary future moment will prove freedom to *this* reader? (A boring commu
+ These are the *shapes* that work — drawn from the three books. **Do not copy them.** Study what makes each land, then build the original equivalent for your behavior. (The signature analogies are listed so you can re-create their *function*, not their words.)
+ 
+ ### The master analogies — re-create their function
+-- **The safe/combination lock** (Carr): quitting is a knowledge problem with an exact solution; miss one piece and you stay trapped — justifies "follow the whole argument."
++- **The safe/combination lock** (Carr): quitting is a knowledge problem with an exact solution; miss one piece and you stay trapped — **planner-facing only**. Spoken instruction list lives on the front-matter instruction block and the final photographable recap, not as a mid-arc coda on demolition cards.
+ - **The confidence-trick / fraudulent investment** (Carr): you were defrauded on phoney information, not foolish — dissolves choice without blame.
+ - **Lennie & George / rescuer-as-perpetrator** (Carr): grateful to the one who secretly pushed you in — the inversion in one image.
+ - **Tight shoes** (Burgeon): the "pleasure" is only relief from a self-inflicted pain — the flagship illusion-exposer. (The single most reusable inversion image in the canon.)
+@@ -419,7 +419,7 @@ These are the *shapes* that work — drawn from the three books. **Do not copy t
+ - [ ] Is the tone **warm to the reader, harsh to the trap** — zero shame, zero lecture?
+ - [ ] Did I **reassign every benefit** I touched, conceding nothing real to the behavior?
+ - [ ] Is **willpower** absent as a solution (and reframed as a symptom where it appears)?
+-- [ ] Did I run the **trap questions inside a frame of flat settled-fact assertion** — Carr's balance (§9): "The fact is..." delivery for reframes, Socratic traps for the reader's own evidence?
++- [ ] Did I assert the reframe as settled fact, then ask — Carr's balance (§9): "The fact is..." delivery for reframes, questions for the reader's own evidence?
+ - [ ] Are my **analogies original** to this behavior (not lifted from caffeine/porn)?
+ - [ ] Did every scare **land at full Carr force and then get disowned** (Fork 3)? Are the **mechanism characters** doing their work (Fork 1)? No **"instead"/"giving up"** phrasing?
+ - [ ] If this is a back-half chapter, does it **guard the belief** and **pre-forgive slips** without licensing them?
+@@ -484,7 +484,7 @@ The master plan must derive a per-book **mantra sheet** instantiating each arche
+ 
+ ### Mantra sheet format (lives in the master plan)
+ 
+-For each mantra: **(a)** frozen exact wording — including capitalization and punctuation; **(b)** archetype; **(c)** the belief it installs; **(d)** debut chapter (where it gets its full argument); **(e)** echo chapters (where the frozen line is the natural next sentence — not a quota); **(f)** hand-over form (how the final movement gives it to the reader). Cards that debut or echo a mantra pin the frozen quote on the card and cite the lettered ID.
++For each mantra: **(a)** frozen exact wording in plain text — including capitalization and punctuation, never markdown backticks; **(b)** archetype; **(c)** the belief it installs; **(d)** debut chapter (where it gets its full argument); **(e)** echo chapters (where the frozen line is the natural next sentence — spread across the arc, not a per-chapter quota and never a bundle cleared on the vow card); **(f)** hand-over form (how the final movement gives it to the reader). Debut cards pin that wording once in plain text and cite the lettered ID. Echo cards cite the lettered ID only. No chapter card carries three or more mantra IDs; vow/gate/ritual cards carry at most one echo plus any debut.
+ 
+ ---
+ 
+@@ -522,7 +522,7 @@ The operators:
+ 
+ 1. **Fact-assertion** — deliver reframes as flat settled fact: "The fact is..." / "The reality is..." Never hedge ("studies suggest," "many people find" are banned for core claims).
+ 2. **Self-answered question** — ask, then answer immediately with total confidence: "Do you want to stop? Of course you do – that's why you're reading this book."
+-3. **Concession question** — pose one question whose only honest answer concedes the point; perform it in flat Carr voice without naming, announcing, or labeling the question type.
++3. **Concession question** — ask; the question is the next sentence. Perform it in flat Carr voice without naming, announcing, or labeling the question type.
+ 4. **Ventriloquism** — quote the reader's inner voice in quotation marks (their justifications, their future temptations) and answer it. Early: print the full justification menu as quotes, then demolish one per chapter. Late: pre-play the future tempting thought so it arrives pre-refuted.
+ 5. **The inversion** — "It's not X, it's Y": "It causes the aggravation; it doesn't relieve it." "It's you that's [the benefit], not the [behavior]." Often capped with: "It's the other way around."
+ 6. **Peak verdict pair** — land two short mirrored sentences at the argument peak (build-up, then verdict); one major argument only; never name, count, promise, or announce the pair in reader prose.
+@@ -628,7 +628,7 @@ When the behavior category is essential or unquittable (eating, screens for work
+ ### Structural slots (assign each to a chapter in the master plan)
+ - **The fear chapter**: dismantle fear-of-failure (the prison-door scene; "succumb to the fear of failure and you guarantee the very thing you fear") and fear-of-success (the released-convict analogy; the identity excuse), then collapse both: every rope of the tug-of-war is held by the trap.
+ - **The anti-method chapter**: the named anti-method gets its own chapter; the reader's strong will is REframed as evidence FOR them ("it takes a strong will to persist in something that goes against all your instincts"; "wilful, not weak-willed"); sub-characters (the braggers and the whingers); "with the willpower method, there is no finish line."
+-- **The identity-excuse chapter**: cause-effect inversion ("the traits shared by addicts are the RESULT of the addiction, not the cause") + the **historical-evidence operator** (population-scale statistics vs the genetic/personality claim) + the graceful concession ("even if you DID have an addictive personality, the method still frees you").
++- **The identity-excuse chapter**: cause-effect inversion ("the traits shared by addicts are the RESULT of the addiction, not the cause") + the graceful concession ("even if you DID have an addictive personality, the method still frees you"). Shame-removal is one person in the room, not population-scale statistics or survey-method narration.
+ - **No pre-endgame teaching manual.** Do not audit installed beliefs as a "You know that..." course recap. If anything, a brief reminder in passing.
+ - **The embedded long-form testimonial**: 1–2 pages of first-person escape story with concrete numbers and sensory details, in the main flow, in its own room — not a labelled appendix. Drawn from the research banks' freedom testimonies; written original.
+ - **The myths Q&A battery**: a rapid-fire distinct room — each myth as a quoted reader-voice line, each demolished in 2–6 sentences.

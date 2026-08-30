@@ -136,3 +136,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** REVERT
 **Lesson:** KEEP conjunction failed. Noted factory-speech 17→20 / 38→13 (A rose; B dropped — not both). Book-arc re-argument 5→6 / 4→5 (neither dropped). Blocking factory-speech reopened 0→1 / 0→3 (A chapter-job landing meta; B numbered I-line prefixes). `trap-question-label` closed 3/1→0/0. Belief/journey/book-arc PASS both. PERSISTENT factory-speech hydra at writer-prompt/plan (6th). Attribution would have been weak (batch).
 **Next direction:** Do not re-run this seed-subtraction batch against the same census objects. Blocking reopened as instruction-serial and verdict-landing meta — different local forms, same class. Founder halt: do not start 016 unless asked.
+
+### iter-016 — founder-batch trap-question keep + echo density
+**Hypothesis:** Keep 015 trap-question formula deletion, keep+alter echo-ID-only with mantra density ≤2 IDs/card, and strip Carr extras (no “land one short verdict”, no historical-evidence operator) so trap-question closes 0/0 and noted factory-speech drops in both books vs 014.
+**Change:** `prompts/chapter-writer.md`, `prompts/master-plan-skill-v2.md`, `prompts/master-plan-reviewer-v2.md`, `prompts/style-guide.md`. Plan regenerated (15 chapters). Research reused. Two books on Muse Spark Zen. Judges: composer-2.5.
+**Verdict:** INCONCLUSIVE
+**Lesson:** KEEP conjunction split. Trap-question 3→0 / 1→1 (not 0/0 both). Noted factory-speech 17→23 / 38→13 (A rose; B dropped). Blocking 0 / 1 (B-only M-F echo assembly — not 015 verdict-landing or instruction serials). Echo-density cap cut A ch14 noted 7→2 and closed B’s 015 vow-inventory hotspot; A’s aggregate rise is style-guide `The fact is` / research-pooling / chapter-job meta. Belief/journey/book-arc PASS both. Do not promote. Attribution would have been weak (batch).
+**Next direction:** Do not KEEP this batch. Echo-density is a real one-book/local win, not a both-books KEEP. Residual noted factory-speech still hydra at style-guide operators. Founder halt: do not start 017 unless asked.
