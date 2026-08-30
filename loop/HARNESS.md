@@ -68,12 +68,14 @@ intended-vs-actual mismatch is logged as a **confound**, not read as a result.
 | **pi coding agent** | `.pi/agents/*.md` (frontmatter `model:`) | the `subagent` tool | endpoint/auth/route bindings are the `[PI BINDING]` fields in `loop/config.yaml`. Muse Spark roles pin `opencode/muse-spark-1.2-contributor-free` (OpenCode Zen Responses API, `OPENCODE_API_KEY`). Per-call fallback is Vercel `vercel/meta/muse-spark-1.2-contributor` (`AI_GATEWAY_API_KEY`). Official pi has no native fallback chain; this repo installs `pi-provider-fallback` and `pi-goal-x` project-locally (`.pi/settings.json`). Export `PI_PROVIDER_FALLBACK_CONFIG` to `.pi/provider-fallback.json` so the extension reads the repo chain (Vercel contributor enabled as the other-provider fallback; OpenCode same-provider fallbacks stay empty). The plugin is session-sticky; each chapter is a fresh spawn, so the next unit still starts on Zen. PROGRAM §1 is the harness-neutral retry if the extension does not fire. Preflight runs via `scripts/loop-runner/run_preflight.sh`. Factory and research stay one pi conversation — see **Conversation robustness** below. |
 | Hyperagent | spawn roles per the capability table above | the `task` tool | map each role to a model the workspace can reach; no `.pi/` files used; run preflight by spawning the judge role directly against `loop/preflight/inputs/` per PROGRAM §2 |
 | opencode | judges, trace-analyzer, plan-reviewer, research sub-agents, and (via the opencode harness's own reach) the `task` tool | the `task` sub-agent tool, pinned to `opencode-go/deepseek-v4-flash` for judges/trace-analyzer/plan-reviewer (`alibaba-token-plan/deepseek-v4-flash-0731` failed judge repeatability 2026-08-17 — keep that note); research sub-agents stay on `alibaba-token-plan/deepseek-v4-flash-0731` | clean-context sub-agent per role call holding only its role prompt + the exact named inputs; no `.pi/` files used; run preflight by spawning the judge role directly against `loop/preflight/inputs/` per PROGRAM §2 (18/18 PASS on 2026-08-17 with judges pinned to `opencode-go/deepseek-v4-flash`). Writer/plan-writer/hypothesizer: primary `opencode/muse-spark-1.2-contributor-free` at `https://opencode.ai/zen/v1/responses`; fallback Vercel `meta/muse-spark-1.2-contributor`. |
-| Cursor | judges spawned as fresh `agent --model composer-2.5` processes; Muse Spark roles via OpenCode Zen then Vercel HTTP | Cursor `agent` CLI / Task spawn | PROGRAM §2 preflight is spawned directly against `loop/preflight/inputs/` (do not run `run_preflight.sh`). Durable runners: `scripts/loop-runner/write_replicate.py`, `judge_replicate.py`, `census_judgments.py` (not `/tmp`). Writer/plan-writer/hypothesizer: primary `muse-spark-1.2-contributor-free` at `https://opencode.ai/zen/v1/responses`, auth `OPENCODE_API_KEY`; on route/quota/unavailable, one retry at Vercel `meta/muse-spark-1.2-contributor` (`AI_GATEWAY_API_KEY`). Never the non-contributor alias. **Conversation robustness:** the orchestrator Task/session must not end between units. After a runner exits, start the next unit in the same conversation (`needs changes first` → next plan-write; chapter written → next chapter or snapshot). Do not nohup a review and return. Do not add a process driver. |
+| Cursor | judges spawned as fresh `agent --model composer-2.5` processes; Muse Spark roles via OpenCode Zen then Vercel HTTP | Cursor `agent` CLI / Task spawn | PROGRAM §2 preflight is spawned directly against `loop/preflight/inputs/` (do not run `run_preflight.sh`). Durable runners: `scripts/loop-runner/write_replicate.py`, `judge_replicate.py`, `census_judgments.py` (not `/tmp`). Writer/plan-writer/hypothesizer: primary `muse-spark-1.2-contributor-free` at `https://opencode.ai/zen/v1/responses`, auth `OPENCODE_API_KEY`; on route/quota/unavailable, one retry at Vercel `meta/muse-spark-1.2-contributor` (`AI_GATEWAY_API_KEY`). Never the non-contributor alias. **Conversation robustness:** this live conversation is the orchestrator. Durability is `.cursor/hooks.json` `stop` / `subagentStop` (`.cursor/hooks/loop-continue.py`) — Cursor's `agent_settled`: while `loop/state.md` is `IN PROGRESS` and the turn `completed`, inject PROGRAM §0 resume. User `aborted` is a halt. After a runner **exits**, start the next unit here (`needs changes first` → next plan-write; last chapter written → snapshot). Do not spawn a background Task and end the parent turn. Do not `block_until_ms: 0` a multi-chapter runner and AwaitShell the first OK line — that unit is the process exit. Do not add a process driver. |
 
 ## Conversation robustness (factory and research)
 
 The orchestrator is an **agent conversation**. Role runners are tools that
-conversation starts; they do not replace it. Do not add a process driver.
+conversation starts; they do not replace it. Do not add a hidden process
+driver. Temporal (or similar) is allowed only as thin durability that
+resumes this same conversation; `loop/PROGRAM.md` remains the sequencer.
 
 **pi (this repo's 0.84.x binding):** `npm:pi-goal-x` (peers `>=0.83 <0.85`).
 `/goal-direct` and `/sisyphus-direct` create a focused goal with autoContinue
@@ -101,8 +103,14 @@ conversation-goal design but peer-blocked on pi ≥0.81 (`<0.81` ceiling).
 Fallback if `pi-goal-x` cannot load: `npm:@narumitw/pi-goal` (also
 `agent_settled`).
 
-**Cursor:** the orchestrator Task/session must not end between units. After a
-runner exits, start the next unit in the same conversation.
+**Cursor:** this conversation is the orchestrator. Do not detach the factory
+into a background Task and stop. `write_replicate.py` / `judge_replicate.py`
+are one unit each — wait for the process to exit (last chapter / 46
+judgments), not the first OK line. Thin durability: `.cursor/hooks/loop-continue.py`
+on `stop` and `subagentStop` re-enters this conversation while
+`loop/state.md` is `IN PROGRESS` (skip `aborted`). That is the Cursor
+binding of pi's `agent_settled`. The founder can walk away; a user abort
+still halts.
 
 **Preflight is harness-coupled:** judge repeatability depends on the model and
 sampling, so re-run preflight when the *harness or model* changes, not only
