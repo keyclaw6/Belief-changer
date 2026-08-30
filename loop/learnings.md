@@ -143,3 +143,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** INCONCLUSIVE
 **Lesson:** KEEP conjunction split. Trap-question 3→0 / 1→1 (not 0/0 both). Noted factory-speech 17→23 / 38→13 (A rose; B dropped). Blocking 0 / 1 (B-only M-F echo assembly — not 015 verdict-landing or instruction serials). Echo-density cap cut A ch14 noted 7→2 and closed B’s 015 vow-inventory hotspot; A’s aggregate rise is style-guide `The fact is` / research-pooling / chapter-job meta. Belief/journey/book-arc PASS both. Do not promote. Attribution would have been weak (batch).
 **Next direction:** Do not KEEP this batch. Echo-density is a real one-book/local win, not a both-books KEEP. Residual noted factory-speech still hydra at style-guide operators. Founder halt: do not start 017 unless asked.
+
+### iter-017 — trap-question isolation vs 014
+**Hypothesis:** Delete only the pasteable trap-question formula (015 S1–S5 EXACT; W1 ask + strip `land one short verdict`) so `trap-question-label` closes 3/1 → 0/0 both vs 014, with plan reuse.
+**Change:** `prompts/chapter-writer.md`, `prompts/style-guide.md`. Plan reused (014, 15 chapters). Research reused. Two books on Muse Spark Zen. Judges: composer-2.5.
+**Verdict:** REVERT
+**Lesson:** Isolation did not KEEP. Trap-question 3→0 / 1→1 (B `Ask the simplest Socratic trap`). Blocking factory-speech reopened 0→1 / 0→1 (A chapter-job landing meta; B style-guide posture spoken). Named 015 serials stayed closed; verdict-landing mutated. Noted factory-speech 17→18 / 38→10. Do not promote. PERSISTENT factory-speech hydra (7th).
+**Next direction:** Do not replay trap-formula deletion as the KEEP object. Blocking class still mutates at writer/style-guide. Founder halt: do not start 018 unless asked.

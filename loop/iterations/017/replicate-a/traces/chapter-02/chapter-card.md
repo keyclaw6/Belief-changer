@@ -1,0 +1,14 @@
+**CH-02 — The Trap You Didn't See**
+- Primary job: enacted transition — *from "I freely choose sugar and could stop if I wanted" to "I was conned into a trap that removed my choice without my consent"*.
+- Belief now: Entry believes sugar is personal choice/weakness. Exit knows the confidence trick: phoney information removed choice; they are deceived, not defective.
+- Reader-state: Now willing to investigate; still normalizes daily grazing and doubts they are "addicted." Needs confidence-trick logic and permission to stop blaming self.
+- Encounter: Kitchen at 10am and 3pm — the drawer that opens by itself; counting "just a treat" while exceeding WHO ceilings.
+- Mantra: debut M-C `the Sugar Trap` (pinned), debut M-E `the Sugar Worm` (pinned), debut M-F `the Big Sweet Lie` (pinned), debut M-G `that empty, edgy, slightly needy feeling` (pinned), debut M-I `for the rest of your life` (pinned). Creatures named in passing as vocabulary, not a lesson.
+- Scene/Analogy: SC-05 Caged Lion — token introduction (full staging reserved later); SC-12 Two Ropes — foreshadow.
+- Evidence: E-11 prevalence (S-12,S-14) — permitted: you are not uniquely weak; prohibited: no diagnosis; limits: self-report not DSM. Also E-13 WHO ceilings as prevalence context — permitted: intake far beyond recommended; prohibited: any dose toxic.
+- New instruction: I-03 **BEGIN WITH ELATION, NOT DREAD** — Cast aside doom and gloom; you are escaping.
+- Reserved-later fence: Do not demolish treat/love or energy claims; do not split physical/belief mechanism fully; do not deliver hard health facts; assigned to CH-04, CH-05, CH-07, CH-09.
+- Structural responsibility: Installs world — trap named, creatures named, body/instinct/real food appear as concrete encounters (watch a child eat real food; the body's natural appetite/steady energy as authority). Prevalence claim appears **once** here only.
+- Guardrails: Vicious to trap not reader; no pathologizing; use SUPPORTED limits; CA-SAFE not pasted but honoured in tone.
+- Continuity intent: Receives compliant investigator; hands forward a reader who knows they are in the Sugar Trap, knows the two creatures by name and the sensory phrase, and feels warm complicity ("we were all conned") with elation not dread.
+- Word budget: 4,800

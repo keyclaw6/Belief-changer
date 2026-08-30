@@ -1,0 +1,30 @@
+{
+  "status": "completed",
+  "response_id": "gen-1785277017-17iv03jhV8t8tWS7vC2S",
+  "incomplete": null,
+  "usage": {
+    "input_tokens": 584460,
+    "input_tokens_details": {
+      "cached_tokens": 396288
+    },
+    "output_tokens": 5221,
+    "output_tokens_details": {
+      "reasoning_tokens": 1413
+    },
+    "total_tokens": 589681,
+    "cost": 0.20718954679999999,
+    "cost_details": {
+      "upstream_inference_cost": 0.15718954680000002,
+      "upstream_inference_input_cost": 0.15010360560000002,
+      "upstream_inference_output_cost": 0.0070859412
+    },
+    "server_tool_use_details": {
+      "web_search_requests": 17,
+      "tool_calls_requested": 38,
+      "tool_calls_executed": 38
+    }
+  },
+  "http": 200,
+  "latency_s": 121.3,
+  "attempt": 2
+}

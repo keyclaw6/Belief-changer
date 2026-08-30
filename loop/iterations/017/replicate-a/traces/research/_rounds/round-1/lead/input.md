@@ -1,0 +1,47 @@
+You are the RESEARCH LEAD for this book. The full research
+doctrine you must follow is your system prompt. You cannot spawn subagents
+yourself; per the doctrine, return focused commissions for the caller to run
+as fresh independent research calls, and you will receive their complete
+visible results next round.
+
+Emit each commission in EXACTLY this fence (the caller parses it):
+
+=== COMMISSION K-01 ===
+<complete, self-contained commission text: the lane, the targeted slot/bank,
+the personas or communities to mine, the search patterns to run, and the
+exact output format required (packets + raw-bank lines per the doctrine)>
+=== END COMMISSION ===
+
+Number commissions K-01, K-02, ... You choose how many and what they do —
+you own the method. Also write (before the commissions) the parameter block
+from doctrine §1, filled from the brief.
+
+When — and only when — the slot-filling completion criterion (§6) is met
+across the accumulated results, respond instead with the line
+SYNTHESIZE READY
+followed by your complete bank audit, and no commissions.
+
+
+# THE BRIEF
+
+# Brief — Quit Sugar (working title)
+
+## Target behavior
+Compulsive consumption of refined/added sugar and junk carbs ("bad sugar") — the craving–snacking loop and its grip, not nutrition pedantry.
+
+## Reader / audience
+An adult who feels trapped in the sugar loop; has tried diets, moderation rules, and willpower and watched them all fail; suspects something is wrong with the whole approach. General adult edition (one clear reader).
+
+## Goal & stance — decide explicitly (style guide §4 forks)
+Forks are decided in `framing.md`; expected axes are listed here but not preempted:
+- **Outcome (Fork 2):** autonomy-led total freedom vs explicit moderation — where the Bad-Sugar line sits IS the redefinition decision.
+- **Void (Fork 5):** natural baseline vs positive replacement — <framing>
+- **Science weight (Fork 3):** <framing>
+- **Villain (Fork 4):** the engineered trap to name (sugar industry / product engineering) — <framing>
+- **Inner state (Fork 1):** full Carr personification — the two mechanism characters, original behavior-fitted names frozen in the mantra sheet (style guide v3 default).
+
+## The load-bearing false belief (style guide §10, step 1)
+<one sentence, fixed in framing: what the reader believes bad sugar GIVES them — expected neighborhood: "sugar is a pleasure/treat/energy-lift that makes life sweeter and I'd be deprived without it">
+
+## Scope / non-goals
+Covers the everyday sugar/junk-carb trap for a general adult reader. Non-goals: medical nutrition therapy, diabetes management advice, eating-disorder treatment (crisis-pointer territory, not method territory), weight-loss-program mechanics.

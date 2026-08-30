@@ -1,0 +1,13 @@
+**CH-12 — The Most Beautiful Lie**
+- Primary job: enacted transition — *from "the celebration/cinema dessert is the best part — life would be grey without it" to "the celebration was beautiful despite BAD SUGAR, not because of it — every drop of pleasure was the moment, company, and real taste sneaking a ride"*.
+- Belief now: One seductive exception still glimmers — the beautiful lie. Exit has seen that lie dismantled with their own eyes and hands.
+- Reader-state: Down to one cherished exception; needs hands-on perception proof, not lecture.
+- Encounter: The cinema/choreographed celebration scene itself — replayed beat-for-beat with and without BAD SUGAR.
+- Mantra: echo M-D `a genuine pleasure, treat or lift`, echo M-A `you have nothing to lose and everything to gain`.
+- Scene/Analogy: SC-02 The Cinema Reward — **debut full staging** (credit reassignment scene); SC-07 Optical Illusion — **debut enacted exercise** (reader performs measurement, feels false certainty collapse). Dual perception proof.
+- Evidence: E-03 reward frame (LEU-003) as lived bridge; E-20 cue hyper-reactivity to show why wrappers glow before bite but add nothing after. Honour MIXED limits.
+- New instruction: none (meta-inoculation lives here: ventriloquize "This book is brainwashing / placebo" and answer: "Blind belief does not help — understanding does; your primitive mind ignores a belief but cannot ignore a solved truth").
+- Structural responsibility: **Strongest-case head-on** + **perception enacted** + **meta-inoculation** of the method objection.
+- Guardrails: Meet strongest case at full strength before demolishing; never concede a real irreplaceable benefit; original scenes.
+- Continuity intent: Receives identity-freed reader; hands forward a reader who has felt the illusion break in their own senses and now finds the idea of "one special one" absurd — champing at the bit for the vow.
+- Word budget: 4,200

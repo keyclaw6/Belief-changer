@@ -292,3 +292,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Echo-density closed the 015 vow-card inventory path and did not close the noted factory-speech floor in both books. Style-guide fact-assertion / evidence-framing still counts as noted factory-speech when the writer leans on it (A). Trap-question formula deletion mostly held; one `Ask:` prefix remains B-only.
 
 **What this opens next.** Do not promote this batch. Next iteration needs a new mechanism on the both-books noted factory-speech hydra, not a replay of 015/016 seed subtraction. Founder halt — do not start 017 unless asked.
+
+### iter-017 — trap-question isolation vs 014  ·  2026-08-30  ·  REVERT
+
+**Hypothesis.** If writer and style-guide delete only the pasteable trap-question formula (015 S1–S5 EXACT; W1 ask without `land one short verdict`), `trap-question-label` closes 3/1 → 0/0 both vs 014.
+
+**Change.** Two prompt files (see `loop/iterations/017/change.diff`). Plan reused (014, 15 chapters). Research reused. Two books on Muse Spark Zen. Panel composer-2.5, 46+46.
+
+**What happened.** Trap-question 3→0 (A) and 1→1 (B). Blocking factory-speech 0→1 / 0→1. Voice 14/15 both. A FAIL ch09 chapter-job landing meta; B FAIL ch01 warmth-policy quote. B leftover trap-question is `Ask the simplest Socratic trap`. Journey A ch12 `compliance-missing` (one-book paraphrase). Belief 15/15, book-arc PASS both. Noted factory-speech 17→18 / 38→10.
+
+**Verdict & why.** REVERT. KEEP object not 0/0 both. Blocking `factory-speech` returned in both (class that was 0 blocking last KEEP). Prediction wrong.
+
+**What we learned.** Isolating the 015 trap-formula hunk does not hold a both-books close when the 014 plan still names `Socratic trap` on a card, and stripping `land one short verdict` does not close the landing-meta family. Blocking mutates.
+
+**What this opens next.** Do not replay this isolation against the same census object. Founder halt — do not start 018 unless asked.

@@ -1,0 +1,12 @@
+**CH-14 — Ordinary Days**
+- Primary job: non-argument — bridge — inhabit mornings, shops, and meals as a free person using thoughts the reader already owns, once — not a new curriculum.
+- Reader-state: Newly free, hyper-aware of triggers. Needs to live a normal day and feel thoughts re-labeled as celebration.
+- Encounter: Morning kettle without biscuits, supermarket aisle passing bright packets, evening sofa without grazing — same locations, new feeling.
+- Mantra: echo M-H `FANTASTIC! I'M FREE!` (pinned), echo M-C `the Sugar Trap`, echo M-F `the Big Sweet Lie`, echo M-G `that empty, edgy, slightly needy feeling`, echo M-K `the Willpower Method`.
+- Scene/Analogy: SC-05 Caged Lion — **debut full staging** (freedom feels habitual at first, not need); SC-01 The 3pm Drawer — token echo as proof ("You walked past the drawer and felt relief").
+- Evidence: E-18 hump window echo only; no new evidence argued.
+- New instruction: none (I-09..I-11 already scripts this life).
+- Structural responsibility: **Ordinary life** — one chapter of mornings, shops, food; thoughts reader already owns, once; live those days, do not restage settled scenes or teach a thought-curriculum. Relapse-proof moves live here as speech: never reopen decision, reframe thought not suppression, rejoice at dead enemy, pity don't envy, don't evangelize, forgive slips.
+- Guardrails: No avoidance-as-strategy; inhabit old contexts confidently; banned register absent; CA-SAFE silent.
+- Continuity intent: Receives a freshly vowed free person; hands forward a person who has lived one ordinary day free and knows the Worm's flickers are cage-habit converting to hits of freedom.
+- Word budget: 4,000

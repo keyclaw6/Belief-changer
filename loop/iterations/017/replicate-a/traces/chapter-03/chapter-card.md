@@ -1,0 +1,14 @@
+**CH-03 — What Good Does It Actually Do?**
+- Primary job: enacted transition — *from "sugar may be harmful but it gives me something good" to "the only question that matters is what good it does FOR me — and I am hungry to test each claimed benefit one by one"*.
+- Belief now: Entry trades harm vs benefit. Exit has switched the axis to TO vs FOR and is hungry to test each justification in turn, not yet stripped of individual justifications.
+- Reader-state: Intellectualizing harm; ready for axis switch but not yet feeling it. Needs crisp verdict, not ledger.
+- Encounter: The supermarket aisle — reading a label of a "normal" snack, asking not "is it bad?" but "what is it actually doing FOR me?"
+- Mantra: debut M-D `a genuine pleasure, treat or lift` (pinned), debut M-J `The fact is…` (pinned), debut M-M `There is nothing to give up` (pinned). Thereafter the perceived benefit is only ever called by M-D token.
+- Scene/Analogy: SC-06 Boiling Frog — debut full staging (explains why "I feel fine" while trap deepens).
+- Evidence: E-04 intermittent-binge model (S-1) — permitted: schedule can generate binge pattern; prohibited: human diagnosis. Use to introduce schedule as trap form without overclaim.
+- New instruction: I-04 **FOLLOW ALL THE INSTRUCTIONS IN ORDER** — Miss one number and the safe stays locked.
+- Reserved-later fence: Do not demolish individual justifications (J-01 treat/love, J-02 energy) yet; do not do full mechanism split; assigned to CH-04, CH-05, CH-07. Justification menu printed here, demolished later per Menu mapping.
+- Structural responsibility: Prints justification menu verbatim as quoted reader lines per Menu block (J-01..J-05), which becomes demolition material; never a worksheet.
+- Guardrails: Speak TO vs FOR, never as ledger; fact-assertion cadence without hedge; no literature review texture.
+- Continuity intent: Receives a reader who knows they are trapped; hands forward a reader who has switched the question and is hungry to test each justification one by one.
+- Word budget: 3,800
