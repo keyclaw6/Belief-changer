@@ -217,7 +217,9 @@ def run_agent(prompt: str, out: Path, tag: str) -> bool:
         try:
             r = subprocess.run(cmd, cwd=str(REPO), capture_output=True, text=True, timeout=TIMEOUT)
         except subprocess.TimeoutExpired:
-            print(f"TIMEOUT {tag} attempt {attempt} {TIMEOUT}s", flush=True)
+            # ponytail: kills the agent child only; process-group if grandchildren hang
+            partial.write_text(f"TIMEOUT after {TIMEOUT}s attempt {attempt} — no verdict. Re-run this job.\n")
+            print(f"FAIL {tag} timeout {TIMEOUT}s attempt {attempt}", flush=True)
             continue
         text = r.stdout
         if r.returncode != 0 and not text.strip():
