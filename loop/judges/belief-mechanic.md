@@ -75,8 +75,9 @@ not MATERIAL. `PASS` requires zero BLOCKING census counts.
 ## Noted tests (never FAIL the chapter)
 
 - **re-argument** — Continuity names a settled token; this chapter
-  re-proves it from scratch for ≥1 paragraph. Ch.1 / Continuity NONE:
-  count 0.
+  rebuilds that proof as its own section (argument + evidence + turn).
+  A one-paragraph reprise or token echo is the method: count 0.
+  Ch.1 / Continuity NONE: count 0.
 
 ## Your verdict gate
 

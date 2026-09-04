@@ -47,10 +47,22 @@ both buckets except `willpower-lexicon` and `factory-speech` (voice): those
 split per-quote by the lane's sentence test.
 
 Repeatability: same PASS/FAIL and the same BLOCKING class set. NOTED
-counts may differ by ±1 per class. Gap titles need not match.
+counts may differ by ±1 per class **per chapter report**. Gap titles
+need not match.
 
-PASS test (real GSBS as both texts): all counts 0, verdict PASS. A
-sharpening opportunity in Carr is not a finding.
+**Book-level noted band (KEEP):** compare **rates**, not raw sums, when
+chapter counts differ. Rate = class count / chapter count (chapter
+lanes) or the single book-arc count (book-arc). A same-n drop of 1 is
+inside the band (not material). Material improvement is a drop of **2
+or more** at the same chapter count, or a rate drop **greater than
+1 / n_old** when n differs. A noted class whose baseline in either
+book is below 8 sits inside this band for PRIMARY selection — do not
+use it as the KEEP object.
+
+PASS test (real GSBS as both texts, including a late chapter with its
+real previous chapter): all counts 0, verdict PASS. Carr-method
+recurrence (Little Monster, brainwashing, freedom refrain) is not a
+finding. A sharpening opportunity in Carr is not a finding.
 
 Cap BLOCKING gap write-ups at 5. NOTED classes do not consume gap slots
 and do not flip assigned-line MATERIAL. Assigned-line MATERIAL is allowed

@@ -65,8 +65,10 @@ reader in the entering-belief is `journey-incomplete`.
 
 - **journey-stall** — a passage repeats without consolidating, but the
   leaving-belief still arrives.
-- **re-argument** — this chapter re-runs a prior transition at full length;
-  assigned leaving-belief still lands.
+- **re-argument** — this chapter rebuilds a prior transition as its own
+  section (argument + evidence + turn). Token echoes, mantra reprises,
+  one-paragraph callbacks, and Carr-method recurrence of a settled
+  image are the method: count 0. Assigned leaving-belief still lands.
 - **placement-miss** — assigned instruction/mantra is present verbatim but
   sits at the wrong moment.
 
@@ -99,12 +101,14 @@ For each material gap:
 
 5. **Does it end where it should?** Leaving-belief, or `journey-incomplete`.
 
-6. **Continuity (chapters 2+):** Rebuilding a settled token at full length
-   is `re-argument` (NOTED), not a FAIL, if the assigned leaving-belief
-   still lands. `continuity-break` only when the reader is asked to
-   re-enter the previous entering-belief. A cumulative book is the aim;
-   a chapter that advances from the handed-forward state is not a
-   "standalone failure."
+6. **Continuity (chapters 2+):** Rebuilding a settled transition as its
+   own section (argument + evidence + turn) is `re-argument` (NOTED),
+   not a FAIL, if the assigned leaving-belief still lands. A token,
+   mantra, or one-paragraph echo of Little Monster / brainwashing /
+   "I'm free" is Carr's method — count 0. `continuity-break` only when
+   the reader is asked to re-enter the previous entering-belief. A
+   cumulative book is the aim; a chapter that advances from the
+   handed-forward state is not a "standalone failure."
 
 7. **Assigned placement:** Verbatim missing → `compliance-missing`
    (BLOCKING). Present but wrong moment → `placement-miss` (NOTED).

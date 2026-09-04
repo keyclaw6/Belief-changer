@@ -59,10 +59,12 @@ matter only insofar as they serve belief change.
 7. RE-RUN        — Re-run affected stage(s); write and judge two books
 8. COMPARE AGAIN — Same judge panel, same comparison, both replicates
 9. KEEP/REVERT   — KEEP only when BOTH replicates show the targeted cluster
-                   improved materially. REVERT when NEITHER improved, or
-                   BOTH show the same new failure class. Disagreement
-                   between A and B is INCONCLUSIVE (noise). Owning-lane
-                   FAIL is not itself a veto.
+                   improved materially (beyond the `_shared.md` book-level
+                   noted band, rate-normalized when chapter counts differ).
+                   REVERT when NEITHER improved, or BOTH show the same new
+                   failure class. Disagreement between A and B is
+                   INCONCLUSIVE (noise). A same-n drop of 1 is not material.
+                   Owning-lane FAIL is not itself a veto.
 10. RECORD       — What we tried, what happened, what we learned
 11. REPEAT       — Next gap. 3-strike rule (same failure 3× under the same
                    judge instrument → abandon that approach). REVERT is not

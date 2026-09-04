@@ -70,8 +70,13 @@ replicates."]
   may be normalized with it) and binds to ONE census class and ONE root
   component from the trace analysis. Mark exactly one change PRIMARY.
   PRIMARY must be the highest-priority class present in both books
-  (Priority ordering below). A voice noted-only class may be PRIMARY only
-  when belief, journey, and book-arc lanes are all zero in both books.
+  (Priority ordering below) that is KEEP-eligible: a BLOCKING class in
+  both books, or a NOTED class whose baseline count is ≥ 8 in both
+  books (above the `_shared.md` book-level noted band). A voice
+  noted-only class may be PRIMARY when belief, journey, and book-arc
+  have **no blocking** in both books — noted journey/arc classes do
+  not lock voice out. Do not make PRIMARY a 5–7-count noted class;
+  020–024 showed that object cannot KEEP.
 
 - **Follow the diagnosis.** Target the root component named by the trace
   analyzer unless you can quote trace evidence that contradicts it. Do not

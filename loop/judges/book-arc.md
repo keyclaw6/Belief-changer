@@ -51,8 +51,10 @@ itself.
 ## Noted tests (never FAIL the book)
 
 - **re-argument** — a later chapter rebuilds a settled verdict/scene-job
-  from scratch. Count extra *jobs*, not IDs. Cinema twice doing the same
-  credit-extraction = `re-argument 1`.
+  as its own section (argument + evidence + turn). Count extra *jobs*,
+  not IDs. Token/mantra/one-paragraph echoes are the method: count 0.
+  Cinema twice doing the same credit-extraction as a full restaging =
+  `re-argument 1`.
 - **curve-flatten** — demolition peaks early or the middle sags, but the
   inversion still completes and the ending is still escape.
 - **pre-debut-spend** — ending ammunition appears in full before its

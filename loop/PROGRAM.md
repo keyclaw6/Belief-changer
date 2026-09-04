@@ -488,9 +488,15 @@ the owning lane's FAIL set.
   summed across chapters) in both books — not from that lane's chapter
   PASS rate. Named-symptom close counts. A drop in a NOTED class in both
   books is improvement even if PASS/N is unchanged or worse.
-  - **both improved** → candidate KEEP
-  - **neither improved** → candidate REVERT
-  - **one improved, one did not** → INCONCLUSIVE (sampling noise)
+  [Founder amendment 2026-09-04 — instrument halt after 020–024:]
+  **Materially** means beyond the `_shared.md` book-level noted band,
+  rate-normalized: a same-n drop of 1 is not improvement; a drop of 2+
+  at the same chapter count is; when chapter counts differ, compare
+  rates (count / n) and require a rate drop greater than `1 / n_old`.
+  7→6 / 5→5 / 5→7 are REVERT, not INCONCLUSIVE.
+  - **both improved (beyond the band)** → candidate KEEP
+  - **neither improved (both inside the band or flat/up)** → candidate REVERT
+  - **one improved beyond the band, one did not** → INCONCLUSIVE (sampling noise)
 - Other lanes may veto only a material REGRESSION that appears in **both**
   replicates: a NEW **BLOCKING** class *name* that was 0 last iteration and
   is >0 in both new books. A new scene ID under `re-argument` is not a new
@@ -605,6 +611,8 @@ campaign branch carries what it should.
 - **Prediction informs, evidence decides.** Wrong prediction + real
   improvement in both books = KEEP (note it). Right prediction + no
   improvement in both books = REVERT. The two books disagree = INCONCLUSIVE.
+  "Improvement" uses the Step 6 band (founder 2026-09-04): ±1 at the same
+  chapter count is not disagreement — it is REVERT.
 - **Iterations are slow on purpose.** A two-book run takes longer than a
   one-book run. Prefer one well-evidenced hypothesis over three shallow ones.
 - **Single operator.** One orchestrator drives the loop at a time; resume

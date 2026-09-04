@@ -4,11 +4,11 @@
 
 - **Iteration:** 024
 - **Stage:** Done
-- **Status:** IDLE
+- **Status:** HALTED
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (024 REVERT; factory change and regenerated 16-chapter plan not promoted)
 - **Last completed unit:** Iteration 024 decision (REVERT). Journey re-argument 7→7 / 5→5. 019 snapshot remains accepted. Consecutive no-KEEP: 5. `loop/iterations/024/convergence-report.md` written.
-- **Next unit:** 025 — worktree `../quit-sugar-iter-025`, Fable hypothesizer. Inbox empty. PIVOT off plan-skill card-field binds. Do not replay 020–024 named wording.
+- **Next unit:** Do **not** start 025. Founder halt 2026-09-04: five no-KEEP (020–024) on a noted KEEP object. Instrument repair landed (`re-argument` section-only; KEEP band / rate-normalize; hypothesizer PRIMARY ≥ 8 or blocking). Late-Carr PASS tests pending. Sentinel timer `loop-belief-changer-factory-019-040` unsubscribed. No second orchestrator.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -26,3 +26,4 @@
 | 2026-09-04 20:09 | 022 INCONCLUSIVE. Journey re-argument 6/7 vs 7/5. | 023 |
 | 2026-09-04 21:03 | 023 INCONCLUSIVE. Journey re-argument 6/5 vs 7/5. Consecutive no-KEEP: 4. | 024 |
 | 2026-09-04 22:12 | 024 REVERT. Journey re-argument 7/5 vs 7/5. Consecutive no-KEEP: 5. convergence-report.md. | 025 |
+| 2026-09-04 22:55 | Founder halt: stop after 5 no-KEEP. Do not start 025. Instrument reconsideration (Fable). Sentinel timer unsubscribed. | HALTED |
