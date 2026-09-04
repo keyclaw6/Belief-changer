@@ -1,0 +1,11 @@
+**C-01 — 1 — Sweet Invitation
+- job: non-argument — bridge handing contract and definition forward, resolves reluctance to trust another diet book
+- arc: first third entry; curves: freedom promise high, demolition low
+- reader-state: tired trier braced for lecture, encounter of past diet drawer full of rules
+- mantra: debut M-A pin "You have nothing sweet to lose and everything to gain." debut M-B pin "easily, at once and for good" token T-E pin "All you have to do is follow all the instructions." token T-F pin "Eat as much real food as you love and never count sugar again." token T-A pin "the Willpower Method"
+- scene: SA-07 token mention only as industry hint, full staging reserved C08
+- responsibility: redefinition decree BAD SUGAR boxed, authority dossier, contract
+- guardrails: CA-A routed; original prose, no borrowed diet language
+- continuity: receives none, hands open-minded contracted investigator to C02
+- budget: 3500
+- new instruction: I-01 KEEP AN OPEN MIND

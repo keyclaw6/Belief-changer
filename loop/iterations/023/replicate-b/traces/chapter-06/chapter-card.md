@@ -1,0 +1,15 @@
+**C-06 — 6 — Hunger You Can Trust
+- job: enacted transition — inhabiting true hunger clean satisfaction and real food eaten as favourite
+- resolves: without sweets eating will be flat and willpower-hungry
+- belief now: reward-disillusioned with early market-lunch memory yet doubting everyday eating can be favourite without sweets; encounter: slow home table lunch of real food eaten slowly to clean satisfaction noticed as favourite
+- evidence: EV-18 clean baseline plus no keto prescription; writer must not prescribe meal plan
+- reserved-later: loop detail to C07, engineering to C08, best scene to C09, totality to C10
+- arc: middle inhabit deepening; curves: demolition pause, freedom warmth low
+- reader-state: cautious taster willing to watch body again, encounter deepens authority already felt into favourite
+- mantra: echo T-F pin "Eat as much real food as you love and never count sugar again."
+- scene: SA-10 token echo market-lunch memory only
+- responsibility: inhabit-the-ordinary-doing chapter, perception enacted home-table watch
+- guardrails: CA-A; no calorie / plan language; original sensory prose
+- continuity: receives reward-disillusioned with body memory, hands deeply body-grounded to C07
+- budget: 4800
+- new instruction: I-06 TRUST HUNGER AND EAT REAL FOOD WITH JOY

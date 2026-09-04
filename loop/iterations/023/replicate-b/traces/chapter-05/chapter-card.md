@@ -1,0 +1,14 @@
+**C-05 — 5 — Not Love In A Wrapper
+- job: enacted transition — sweets exposed as no love reward celebration or comfort
+- resolves: I deserve chocolate as reward and coping
+- belief now: fuel-disillusioned with body memory but still feels celebration needs sweet payment; encounter: small victory takeaway dessert eaten alone as self-payment
+- evidence: EV-03 reward-frame plus not forbidding sweet food, EV-13 mood link plus men-only limit; writer must not moralise sweetness
+- reserved-later: inhabit deepening to C06, loop to C07, engineering to C08, best scene to C09, totality to C10
+- arc: first third demolition close; curves: demolition high, freedom low
+- reader-state: comfort earner seeking kindness, encounter separates kindness from wrapper
+- mantra: echo M-D pin "a genuine treat or lift"
+- scene: SA-09 token hint only, full reserved C09
+- guardrails: EV-03 safety limit; original tenderness without lecture
+- continuity: receives fuel-disillusioned with body memory, hands reward-disillusioned with body memory to C06
+- budget: 4500
+- new instruction: I-05 LET CELEBRATION PROVE ITSELF WITHOUT SUGAR

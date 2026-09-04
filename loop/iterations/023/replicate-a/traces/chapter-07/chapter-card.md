@@ -1,0 +1,14 @@
+**C-07 — 7 — How The Low Is Made
+- job: enacted transition — craving low seen as created by last dose misread as need
+- resolves: craving proves need and one bite mystery
+- belief now: deeply body-grounded but still puzzled why one bite becomes box; encounter: evening single biscuit followed ninety minutes later by gnaw
+- evidence: EV-04 binge model plus animal limit, EV-06 dip plus no human withdrawal diagnosis, EV-07 mild but well-defined exact phrase plus small magnitude, EV-09 cue analogue plus rodent limit, EV-19 hump 2–5 days plus preliminary limit; writer must not claim human withdrawal diagnosis
+- reserved-later: engineering to C08, best scene to C09, totality to C10, fear/method to C11
+- arc: middle mechanism deepening; curves: demolition peak, freedom suppressed
+- reader-state: puzzled observer tracking trigger to gnaw, encounter links dose to dip
+- mantra: echo M-C pin "the sugar trap" echo M-E pin "the Nibbler" echo M-F pin "the Sweet-Talker" echo M-G pin "an empty, gnawing, slightly restless craving" echo T-E pin "All you have to do is follow all the instructions." token T-C pin "The fact is,"
+- scene: SA-01 token echo tight shoes only; SA-05 hint reserved C10
+- guardrails: EV-06 EV-07 EV-09 limits; CA-A; original mechanism picture
+- continuity: receives deeply body-grounded, hands loop-seer to C08
+- budget: 4200
+- new instruction: I-07 SEE THE NIBBLER AS SMALL AND DYING

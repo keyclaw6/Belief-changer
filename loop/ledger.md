@@ -376,3 +376,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Licensed one-sentence invoke did not close N←N−1 in both books. Plan-card double-ownership (CH-10/11, late-arc) still assigns rebuilds. B mid-arc seams rebuilt despite one-sentence openers.
 
 **What this opens next.** Do not replay Binding craft 3. Strike 2 on re-argument + writer-prompt under Spark 1.3 census. Prefer plan-card next if PRIMARY stays this class.
+
+### iter-023 — one-correction-one-card plan law  ·  2026-09-04  ·  INCONCLUSIVE
+
+**Hypothesis.** If the planner may name a correction on exactly one card and the reviewer blocks any later card that re-opens it, journey `re-argument` falls in both books versus 019 (A 7, B 5).
+
+**Change.** `prompts/master-plan-skill-v2.md` (one-correction-one-card). `prompts/master-plan-reviewer-v2.md` (pair-named reopen gate). Plan regenerated (15 chapters, r2 `fit to write from`). Research reused. Two Spark 1.3 Go books. Panel 46+46.
+
+**What happened.** Journey re-argument 7→6 (A) and 5→5 (B). Named tomorrow pair closed both. Belief 15/15 both; voice 14/15 A (blocking factory-speech 1) and 15/15 B; journey 15/15 A and 12/15 B (`journey-incomplete` 3 B-only). Book-arc PASS both.
+
+**Verdict & why.** INCONCLUSIVE. PRIMARY improved in one book only. One-book blocking is not a veto. Do not promote.
+
+**What we learned.** Folding delay into totality closed the 019 named pair. The class survived via other card overlaps (EV double-routing, T-H triple-ownership per trace). B incomplete landings are one-book.
+
+**What this opens next.** Do not replay this exact one-correction paragraph. Consecutive no-KEEP: 4. New plan-card mechanism if PRIMARY stays `re-argument`.

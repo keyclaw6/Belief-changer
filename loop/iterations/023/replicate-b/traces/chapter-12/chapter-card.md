@@ -1,0 +1,15 @@
+**C-12 — 12 — Small Doubts Answered
+- job: enacted transition — residual small doubts and method suspicion collapse together once main trap gone
+- resolves: body needs sugar import fruit same as candy dark chocolate healthy withdrawal unbearable method too good
+- belief now: wilful reader trusts main trap but small what-abouts linger; encounter: health-shop honey jar and fruit bowl questioned side by side
+- evidence: EV-18 manufacture plus no prescription, EV-17 not clinical low plus rare limit, EV-06 no human diagnosis, EV-07 mild exact phrase; writer must not prescribe or diagnose
+- reserved-later: vow to C13, ordinary life to C14
+- arc: late consolidation; curves: demolition close, freedom high
+- reader-state: careful questioner wanting clean answers, encounter settles edge cases
+- mantra: echo T-A pin "the Willpower Method"
+- scene: SA-07 token echo lab only
+- responsibility: myths Q&A distinct room, meta-inoculation ventriloquising method objection, long testimony in main flow own room drawn from freedom honesty and restart honesty
+- guardrails: EV-17 EV-18 limits; CA-A; original Q&A voice
+- continuity: receives wilful, hands doubt-free ready to C13
+- budget: 4800
+- new instruction: I-12 AVOID BORROWING DOUBT FROM SWEET-EATERS

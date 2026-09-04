@@ -1,0 +1,15 @@
+**C-08 — 8 — Made To Crave
+- job: enacted transition — engineered ubiquity and real bodily load seen yet choice framed as gain not fear
+- resolves: industry neutral and health warnings exaggerated distant
+- belief now: loop-seer still thinks abundance accidental and stakes abstract; encounter: supermarket aisle walls of bright packs plus dentist chair memory
+- evidence: EV-11 prevalence once-only plus not DSM, EV-12 combo plus seems hedge, EV-14 WHO ceiling plus not toxic-any-dose, EV-15 heart load plus approximate, EV-16 teeth plus mediators, EV-10 contested split plus uncertainty; writer must not overclaim consensus or personal outcome
+- reserved-later: best scene to C09, totality to C10, fear/method to C11
+- arc: middle indictment; curves: demolition peak, freedom low
+- reader-state: everyday shopper sensing design, encounter makes manufacture tangible
+- mantra: debut M-H pin "tired, flat and foggy" echo M-C pin "the sugar trap" echo M-F pin "the Sweet-Talker" token T-D pin "for the rest of your life" token T-G pin "It is doing plenty TO you. It is doing nothing FOR you." token T-C pin "The fact is,"
+- scene: SA-07 debut full staging
+- responsibility: hard facts then relief; prevalence once-only
+- guardrails: EV-10 EV-11 EV-14 EV-15 limits; CA-A; original industry image no brand libel
+- continuity: receives loop-seer, hands design-seer choosing gain to C09
+- budget: 5000
+- new instruction: I-08 IGNORE ANY ADVICE THAT ASKS YOU TO QUIT FROM FEAR

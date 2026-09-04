@@ -1,0 +1,14 @@
+**C-03 — 3 — What Good At All
+- job: enacted transition — evaluation switches from harm-balance to demanding any genuine benefit
+- resolves: harms balanced by pleasures so moderation sensible
+- belief now: conned investigator with first body-authority memory still weighs harm versus pleasure; encounter: office birthday cake weighed bite by bite
+- evidence: EV-18 body manufactures glucose plus no keto prescription; writer must not prescribe diet
+- reserved-later: fuel to C04, reward to C05, loop detail to C07, engineering to C08, best scene to C09, totality to C10
+- arc: first third axis; curves: demolition rising, freedom low
+- reader-state: bargainer seeking balanced view, encounter exposes empty benefit side
+- mantra: debut M-D pin "a genuine treat or lift" token T-C pin "The fact is," token T-D pin "for the rest of your life" token T-G pin "It is doing plenty TO you. It is doing nothing FOR you."
+- scene: SA-01 debut full staging
+- guardrails: EV-18 limit; original axis phrasing
+- continuity: receives conned investigator with body memory, hands benefit-demander with body memory to C04
+- budget: 3200
+- new instruction: I-03 BEGIN WITH ELATION

@@ -191,3 +191,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** INCONCLUSIVE
 **Lesson:** Journey `re-argument` 7→6 (A) and 5→7 (B) — one book only; B rose. Blocking 0/0. Plan-card CH-10/11 and late-arc overlaps survived. Do not promote. Writer-prompt + re-argument strike 2 under Spark 1.3 census.
 **Next direction:** Do not replay Binding craft 3 or the 021 previous-chapter clause. If PRIMARY stays journey re-argument, prefer plan-card (different component) — one more writer-prompt miss is a 3-strike PIVOT. Anti-slop still only if PRIMARY is factory-speech or hedge.
+
+### iter-023 — one-correction-one-card plan law
+**Hypothesis:** PRIMARY: plan-skill one-correction-one-card so later cards cannot re-open a demolished door, so journey `re-argument` falls in both vs 019. Secondary: reviewer gate.
+**Change:** `prompts/master-plan-skill-v2.md` (Arc/belief-now); `prompts/master-plan-reviewer-v2.md` (cumulative walk). Plan regenerated (15 chapters). Research reused. Two books Spark 1.3 Go. Judges composer-2.5.
+**Verdict:** INCONCLUSIVE
+**Lesson:** Journey `re-argument` 7→6 (A) and 5→5 (B) — one book only. Named CH-10/11 tomorrow pair closed both. Blocking factory-speech A-only; journey-incomplete B-only. Do not promote. Plan-card + re-argument still open.
+**Next direction:** Do not replay this one-correction wording. If PRIMARY stays journey re-argument, new plan-card mechanism (evidence double-routing / token triple-ownership per 023 trace). Consecutive no-KEEP: 4. Anti-slop still only if PRIMARY is factory-speech or hedge.

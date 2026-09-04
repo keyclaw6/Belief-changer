@@ -1,0 +1,14 @@
+**C-10 — 10 — No Special Dose
+- job: enacted transition — any kept special cut-down delayed substituted or just-once dose seen as keeping whole trap alive so only zero BAD SUGAR stable
+- resolves: I can keep tiny specials cut down delay substitute or allow just one
+- belief now: best-case-free still imagines small kept pleasure stable; encounter: office birthday sliver negotiated as exception then evening return
+- evidence: EV-02 trigger-carry plus not helplessness, EV-08 schedule escalation plus animal limit, EV-19 hump plus preliminary limit; writer must not promise exact timeline
+- reserved-later: fear/method/identity to C11, small myths and method doubt to C12
+- arc: middle totality; curves: demolition total, freedom rise
+- reader-state: negotiator seeking safe exception, encounter shows exception reopens gnaw
+- mantra: echo M-C pin "the sugar trap" echo M-E pin "the Nibbler" echo M-G pin "an empty, gnawing, slightly restless craving" echo M-A pin "You have nothing sweet to lose and everything to gain." token T-D pin "for the rest of your life" debut T-H pin "Your body can cope with a blip, but your mind must never reopen the door."
+- scene: SA-05 debut full staging; SA-08 debut full staging; SA-02 token echo pusher only
+- guardrails: EV-08 EV-19 limits; CA-A margin prose; original cliff image
+- continuity: receives best-case-free, hands totality-knower predicting revelation moment to C11
+- budget: 4300
+- new instruction: I-10 TAKE NO SPECIAL DOSE IN ANY FORM

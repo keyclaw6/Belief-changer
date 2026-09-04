@@ -1,0 +1,14 @@
+**C-02 — 2 — Caught Without Choosing
+- job: enacted transition — being unable to stop proves a con not a character flaw
+- resolves: I freely choose this so I am weak
+- belief now: ashamed trier accepts contract but still believes choice explains persistence; encounter: kitchen late-night empty box stared at in disbelief plus next-morning belly growl watched to market stall lunch eaten slowly to clean fullness
+- evidence: EV-02 plus limits not permanence, EV-08 schedule form plus animal limit; writer must not diagnose or promise human addiction proof
+- reserved-later: benefit search to C03, fuel to C04, reward to C05, moderation doors to C10, fear/method/identity to C11, small myths to C12
+- arc: first third trap seen; curves: demolition debut, freedom promise
+- reader-state: secret eater caught in act then touching body authority next morning, encounter makes con visible without shame and installs first felt ground
+- mantra: debut M-C pin "the sugar trap" debut M-E pin "the Nibbler" debut M-F pin "the Sweet-Talker" debut M-G pin "an empty, gnawing, slightly restless craving" token T-B pin "the tug-of-war of fear"
+- scene: SA-02 debut full staging; SA-10 debut full staging as body-authority ground
+- guardrails: EV-02 no pathology limit; CA-A; original con image
+- continuity: receives contracted investigator, hands conned not flawed investigator with first body-authority memory to C03
+- budget: 4200
+- new instruction: I-02 CARRY ON EXACTLY AS NORMAL FOR NOW

@@ -1,0 +1,15 @@
+**C-09 — 9 — Even The Best Night
+- job: enacted transition — most seductive sweet scene reassigned wholly to moment company and relief
+- resolves: certain pleasures prove sugar gives real taste joy
+- belief now: design-seer choosing gain but still believes celebration night proves taste pleasure; encounter: Friday late show shared chocolate box with friend
+- evidence: EV-21 tolerance plus cue hyper-reactivity plus consistent-with limit; EV-05 dopamine release plus animal magnitude limit; writer must not claim imaging proof of compulsion
+- reserved-later: totality to C10, fear/method to C11, small myths to C12
+- arc: middle strongest case; curves: demolition high, freedom stir
+- reader-state: lover of ritual fearing flat celebrations, encounter strips sweet leaving joy intact
+- mantra: echo M-D pin "a genuine treat or lift" token T-C pin "The fact is," token T-G pin "It is doing plenty TO you. It is doing nothing FOR you."
+- scene: SA-09 debut full staging; SA-06 debut enacted measure
+- responsibility: strongest case head-on, perception enacted
+- guardrails: EV-21 limit; original scene, no borrowed caffeine garden
+- continuity: receives design-seer, hands best-case-free to C10
+- budget: 4200
+- new instruction: I-09 GIVE NO SCENE CREDIT TO SUGAR

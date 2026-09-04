@@ -1,0 +1,11 @@
+**C-13 — 13 — The Last Sweet Meal
+- job: non-argument — hand-off crossing threshold on readiness, resolves lingering when-am-I-free doubt
+- arc: after vow ritual; curves: freedom detonation, demolition done
+- reader-state: champing reader ready to mark freedom, encounter of ordinary dessert eaten with full attention on cloying ugliness then vow
+- mantra: debut M-I pin "BRILLIANT! I'M FREE FROM BAD SUGAR!" echo M-A pin "You have nothing sweet to lose and everything to gain." echo M-B pin "easily, at once and for good" echo T-E pin "All you have to do is follow all the instructions." echo T-F pin "Eat as much real food as you love and never count sugar again."
+- scene: SA-09 token echo cinema only
+- responsibility: readiness gate, last ordinary sweet meal not lab dose, solemn vow, instant conferral, two relapse doors guarded as owned thoughts
+- guardrails: CA-A; original ritual prose
+- continuity: receives doubt-free ready, hands newly free identity to C14
+- budget: 2800
+- new instruction: I-13 TAKE YOUR LAST ORDINARY SWEET MEAL AND DECIDE YOU ARE FREE

@@ -1,0 +1,14 @@
+**C-04 — 4 — The Afternoon Lie
+- job: enacted transition — afternoon lift exposed as loan plus crash never fuel
+- resolves: I need sugar to function through slump
+- belief now: benefit-demander with body memory still feels 3pm drawer proves fuel; encounter: 3pm office drawer sweet plus 4pm fog at desk
+- evidence: EV-01 fuel misread plus no clinical low claim, EV-17 lift-is-insulin plus not clinical hypoglycaemia, EV-13 treat predicts mood in men plus observational men-only limit; writer must not diagnose blood sugar
+- reserved-later: reward to C05, loop to C07, engineering to C08, best scene to C09, totality to C10
+- arc: first third demolition; curves: demolition climb, freedom suppressed
+- reader-state: daytime yo-yoer dreading slump, encounter links lift to crash same day against body memory
+- mantra: echo M-D pin "a genuine treat or lift"
+- scene: SA-10 token echo market-lunch memory only
+- guardrails: EV-01 EV-17 safety limits; CA-A; original energy image
+- continuity: receives benefit-demander with body memory, hands fuel-disillusioned with body memory to C05
+- budget: 4500
+- new instruction: I-04 NEVER JUDGE THE AFTERNOON BY THE LIFT

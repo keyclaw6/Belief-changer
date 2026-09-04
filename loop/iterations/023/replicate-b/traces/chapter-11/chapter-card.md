@@ -1,0 +1,15 @@
+**C-11 — 11 — Strong Willed Not Weak
+- job: enacted transition — past failures and torn fear seen as Willpower Method and trap-held ropes with addict traits as result not cause
+- resolves: I fail because weak born this way and fear failure success
+- belief now: totality-knower accepts zero stable but still fears self cannot hold; encounter: recalled diet diary week of white-knuckling then collapse
+- evidence: EV-10 uncertainty preserved plus both camps grant binge, EV-20 teen split plus narrow limit used to refuse adult generalisation; writer must not generalise teens or diagnose personality
+- reserved-later: small myths and method doubt to C12, vow to C13
+- arc: late demolition; curves: demolition hand-off, freedom rise
+- reader-state: self-blamer bracing for test, encounter reattributes struggle to method
+- mantra: echo M-B pin "easily, at once and for good" echo M-F pin "the Sweet-Talker" echo T-A pin "the Willpower Method" echo T-B pin "the tug-of-war of fear"
+- scene: SA-03 debut full staging; SA-04 debut full staging
+- responsibility: merged anti-method room, fear room, identity-excuse room with historical-scale logic and graceful concession
+- guardrails: EV-10 EV-20 limits; CA-A; original dignity line
+- continuity: receives totality-knower, hands wilful not weak-willed to C12
+- budget: 4200
+- new instruction: I-11 IGNORE ANYONE WHO QUIT BY THE WILLPOWER METHOD

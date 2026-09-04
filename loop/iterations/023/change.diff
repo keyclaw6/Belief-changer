@@ -1,0 +1,36 @@
+diff --git i/prompts/master-plan-reviewer-v2.md w/prompts/master-plan-reviewer-v2.md
+index f599db3..38d6d42 100644
+--- i/prompts/master-plan-reviewer-v2.md
++++ w/prompts/master-plan-reviewer-v2.md
+@@ -46,9 +46,15 @@ real food as concrete encounters — is persuasive work now, not setup.
+ ### Whole-book cumulative walk
+ 
+ Every later argument-bearing card must build from the preceding belief now.
+-Block adjacent cards that repeat the same principal encounter, re-argue
+-settled work, restage a debuted scene's full job (later cards token-echo
+-only), break a handoff, or reserve work backward. After the vow, block a
++Block adjacent cards that repeat the same principal encounter, break a
++handoff, or reserve work backward. Block any card, adjacent or not, whose
++job, resolved objection, belief now, encounter, or structure names a
++justification, relapse door, or valuation that an earlier card's enacted
++transition already corrected — including one door out of an earlier
++card's totality — or that restages a debuted scene's full job (later
++cards token-echo only). Name the pair (C-NN corrects it; C-MM re-opens
++it) and the smallest correction: strike it from one card or move the
++ownership. After the vow, block a
+ second manual: no restaged settled scenes, no new thought-curriculum. The complete sequence
+ must reach the declared destination rather than merely exhaust topics.
+ The first third must install the contract, the already-hooked fact, the two
+diff --git i/prompts/master-plan-skill-v2.md w/prompts/master-plan-skill-v2.md
+index 471b1fe..808a4a3 100644
+--- i/prompts/master-plan-skill-v2.md
++++ w/prompts/master-plan-skill-v2.md
+@@ -91,7 +91,7 @@ Choose the chapter count and architecture that best deliver the behavior-specifi
+ 
+ Every argument-bearing chapter must be composition-feasible within its budget as one completed, value-bearing correction to what the reader believes the behavior gives, costs, means, or requires, grounded only in evidence and logic that chapter owns. Declare that primary job as `enacted transition — <the correction completed now>`. The clause names the belief correction, never a delivery register or workshop job (`deliver at full Carr force`, `explicitly disown`, `hard truth flat`). On the inhabit-the-ordinary-doing chapter, that clause names the inhabit (hunger, satisfaction, real food as favourite), not a justification kill. Setup, topic coverage, a future-investigation prospectus, a catalogue for later demolition, or leaving the reader only willing to keep reading cannot be that job. A completed correction must make the prior valuation less credible now through the chapter's owned evidence or logic. Trust, definition, scope, safety, recap, bridge, and hand-off functions may support or consolidate the movement without becoming a second thesis. A necessary non-argument card declares `non-argument — <definition | safety | recap | bridge | hand-off> ...`; it must advance, protect, or hand over the surrounding persuasive movement rather than replace or defer it.
+ 
+-For every argument-bearing card, make explicit: the belief now (what is true for the reader at entry, and what this chapter makes true); the concrete subject-specific encounter; evidence IDs plus the limits the writer must not overclaim; any NEW instruction (spoken imperative only); and the reserved-later fence (work assigned only to named later chapter cards). The next argument-bearing card enters from the belief now just installed. Adjacent cards must use distinct encounters and build cumulatively rather than repeat a plan-wide inventory.
++For every argument-bearing card, make explicit: the belief now (what is true for the reader at entry, and what this chapter makes true); the concrete subject-specific encounter; evidence IDs plus the limits the writer must not overclaim; any NEW instruction (spoken imperative only); and the reserved-later fence (work assigned only to named later chapter cards). The next argument-bearing card enters from the belief now just installed, and only from it: a card's entry belief is never a justification, relapse door, or valuation that an earlier card's enacted transition has already corrected. One correction, one card: every justification, relapse door, and false valuation the book demolishes is named in exactly one card's enacted transition, and no other card — adjacent or not — may name it in its job, the objection it resolves, its belief now, its encounter, or its structure as still open. An enacted transition that gathers several doors into one totality forecloses every door it names; a door that deserves its own chapter is left out of the totality and given to that chapter. Later cards receive a corrected belief only as one spoken sentence or its frozen token. Adjacent cards must use distinct encounters and build cumulatively rather than repeat a plan-wide inventory.
+ 
+ Use your judgment to merge, reshape, move, or omit material that cannot meet this boundary honestly and compellingly.
+ 
