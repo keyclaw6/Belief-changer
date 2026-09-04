@@ -90,8 +90,8 @@ before the first Muse Spark spawn, export
 (so `pi-provider-fallback` loads the Zen→Vercel chain; without the export
 the plugin looks in `~/.pi/agent/extensions/` and stays disabled). On a route, quota, or unavailable failure the orchestrator
 retries that same unit once on the role's `*_fallback_model` (Muse Spark:
-OpenCode Zen `muse-spark-1.2-contributor-free` → Vercel
-`meta/muse-spark-1.2-contributor`). The next unit always starts on the
+OpenCode Zen `muse-spark-1.3-contributor-free` → Vercel
+`meta/muse-spark-1.3-contributor`). The next unit always starts on the
 primary — fallback is per-call, never sticky. Both routes failing → stop
 and escalate to the founder. Never swap contributor → non-contributor
 (same weights, ~20× cost). The hypothesizer never proposes a model,
@@ -175,6 +175,16 @@ founder-guided, not a loop iteration.
    properly bounded empirical claims (must not FAIL), two acknowledgments of
    the reader's present doubt (must not FAIL). Noted classes on P3–P6 must
    not flip the probe to FAIL.
+4. **Belief/journey honesty probe.** Six calls on isolated passage pairs
+   (do not flag missing chapter anatomy). Belief-mechanic: `probe-b1-credit-intact.md`
+   (must BLOCKING `credit-intact`), `probe-b2-harm-not-belief.md` (must
+   BLOCKING `harm-not-belief`), `probe-b3-bounded-pass.md` (must PASS).
+   Reader-journey: `probe-j1-transition-incomplete.md` (must BLOCKING
+   `journey-incomplete`), `probe-j2-pass.md` (must PASS). Repeat b1 once
+   for repeatability. This is a battery addition, not a judge-prompt edit,
+   and does not by itself require replaying the 18-call calibration. If a
+   must-FAIL probe PASSes, the lane is at ceiling — founder-guided repair,
+   then the full 18+6 battery in a fresh runs dir.
 
 ## 3. Baseline (iteration 000)
 
@@ -229,15 +239,17 @@ order is arrival order). One inbox note per iteration — extra notes wait for
 the next iteration; they are never drained in a batch.
 
 1. **Validate** the oldest (lexicographically-first) file against
-   `loop/inbox/README.md`. If it is vague
-   or multi-change, do NOT guess: move it to `loop/inbox/used/REJECTED-NNN-<name>.md`,
+   `loop/inbox/README.md`. If it is vague, or multi-change without one
+   change marked PRIMARY and each change bound to a census class, do NOT
+   guess: move it to `loop/inbox/used/REJECTED-NNN-<name>.md`,
    note the defect to the founder, and fall through to the hypothesizer below.
 2. Otherwise **feed it to the hypothesizer** (not the orchestrator) as the
-   hypothesis source, alongside the normal inputs — so its one-causal-change
+   hypothesis source, alongside the normal inputs — so its convergence-budget
    and founder-only-model guards still apply. The founder note supplies the
    change and rationale; the trace analysis supplies the failure evidence.
 3. Save the hypothesizer's 4-field response as `loop/iterations/NNN/hypothesis.md`
-   with `source: founder inbox`, and only then move the inbox file to
+   with `source: founder inbox` (and `hypothesis-metadata.json` `{model, harness,
+   spawn}`), and only then move the inbox file to
    `loop/inbox/used/NNN-<name>.md` (write the hypothesis first — never move
    before it is recorded).
 
@@ -247,13 +259,15 @@ If the inbox is empty, spawn the `hypothesizer` sub-agent (contract:
 - `loop/learnings.md`
 - the current editable factory files
 
-Save its response unchanged as `loop/iterations/NNN/hypothesis.md`.
+The orchestrator writes `loop/iterations/NNN/hypothesis.md` unchanged and
+`loop/iterations/NNN/hypothesis-metadata.json` `{model, harness, spawn}`.
 
 ### Step 2: Apply the change
 
-Apply the hypothesis: one causal change in one editable file (duplicate
-representations of the same instruction may be replaced/deleted in the same
-file). Record the diff in `loop/iterations/NNN/change.diff`.
+Apply the hypothesis's 1–3 bound changes, each one instruction in one
+editable file (≤ 3 files), per the convergence budget in
+`loop/prompts/hypothesizer.md`. Record the diff in
+`loop/iterations/NNN/change.diff`.
 
 ### Step 3: Run the factory
 
@@ -395,8 +409,8 @@ Shared (once per iteration, not per replicate): `hypothesis.md`,
   once on the fallback. Record the model that actually ran in that unit's
   `metadata.json`. The next unit always starts on the primary. Still
   failing on both → iteration INCONCLUSIVE, or escalate to the founder when
-  both routes are credential/route failures. Never fall back to
-  `meta/muse-spark-1.2` (non-contributor).
+  both routes are credential/route failures. Never fall back to a
+  non-contributor `meta/muse-spark-*` alias.
 - Writer refusal: the exact refusal line is saved to
   `traces/chapter-NN/refusal.md` under the current replicate; no chapter file
   is written; the refusal's named owner is the iteration's finding;
@@ -544,7 +558,7 @@ there depends on the verdict — never `git add -A`:
   `git checkout campaign-001` in the main checkout, then
   `git merge --no-ff iter-NNN` (or `git checkout iter-NNN -- <paths>` for the
   pinned set below). One commit (`loop(iter-NNN): KEEP — short hypothesis`)
-  carrying: the one edited tuning file, the iteration records
+  carrying: the edited tuning files (≤ 3), the iteration records
   (`loop/iterations/NNN/`, the `results.tsv` row, the `learnings.md` and
   `ledger.md` entries, `loop/state.md`), and — unless Step 6 recorded that
   an untargeted systemic class still dominates the new book — the accepted
@@ -560,15 +574,19 @@ campaign branch carries what it should.
 
 ## 5. Rules
 
-- **One causal change per iteration.** One file. Duplicate representations of
-  the same instruction may be normalized together. Never a second behavior.
-- **3-strike rule.** Failure class = same causal cluster + same root
+- **Convergence budget.** Up to 1–3 bound changes per the budget in
+  `loop/prompts/hypothesizer.md`. KEEP/REVERT read the PRIMARY class only.
+  One-book blocking on a non-primary class is logged, never a veto. A new
+  blocking class in BOTH books is REVERT.
+- **3-strike rule.** Failure class = same PRIMARY class + same root
   component, counted only under one judge instrument. If 3 iterations
-  targeting one class produce no KEEP, PIVOT to a different component
-  level (prompt → structure → research). Never pivot to a model change;
-  stop and surface to the founder. The level is wrong; stop hammering
-  it. A judge change resets the clock — 001–008 3-strike/PIVOT notes do
-  not bind 009 onward. REVERT never deletes an idea.
+  with the same PRIMARY class + root component produce no KEEP, PIVOT
+  to a different component level (prompt → structure → research). Never
+  pivot to a model change; stop and surface to the founder. The level is
+  wrong; stop hammering it. A judge change resets the clock — 001–008
+  3-strike/PIVOT notes do not bind 009 onward. A re-baseline after a
+  founder model change resets the clock (as 009). REVERT never deletes
+  an idea.
 - **Never change models.** Hypothesizer and orchestrator must not edit
   `*_model`, `*_fallback_model`, `*_route`, or endpoint fields in
   `loop/config.yaml`. Models are founder-only.

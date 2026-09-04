@@ -10,7 +10,7 @@
 # fields marked [PI BINDING] are the pi-harness realization only — another
 # harness substitutes its own connection and ignores those fields.
 #   opencode     — [PI BINDING] OpenCode Zen. Primary for Muse Spark roles
-#                  (writer, plan-writer, hypothesizer) on the free contributor
+#                  (writer, plan-writer) on the free contributor
 #                  model, and for every other role on DeepSeek V4 Flash (Go).
 #   vercel       — Vercel AI Gateway. Coded fallback only for Muse Spark roles
 #                  (same contributor weights, paid). Never the non-contributor
@@ -20,10 +20,10 @@
 # Reasoning values the routes accept: low/medium/high/max.
 
 # ── Writer — chapter-writer sub-agent (contract: prompts/chapter-writer.md) ──
-# Muse Spark 1.2 contributor-free via OpenCode Zen; Vercel contributor is the
+# Muse Spark 1.3 contributor-free via OpenCode Zen; Vercel contributor is the
 # per-call coded fallback (PROGRAM §1). Next unit always starts on primary.
-writer_model: muse-spark-1.2-contributor-free
-writer_fallback_model: meta/muse-spark-1.2-contributor
+writer_model: muse-spark-1.3-contributor-free
+writer_fallback_model: meta/muse-spark-1.3-contributor
 writer_endpoint: https://opencode.ai/zen/v1/responses
 writer_auth_env: OPENCODE_API_KEY
 writer_route: opencode
@@ -34,8 +34,8 @@ writer_fallback_route: vercel
 
 # ── Plan-writer — master-plan skill (contract: prompts/master-plan-skill-v2.md)
 # Same Muse Spark routing as the writer.
-planner_model: muse-spark-1.2-contributor-free
-planner_fallback_model: meta/muse-spark-1.2-contributor
+planner_model: muse-spark-1.3-contributor-free
+planner_fallback_model: meta/muse-spark-1.3-contributor
 planner_endpoint: https://opencode.ai/zen/v1/responses
 planner_auth_env: OPENCODE_API_KEY
 planner_route: opencode
@@ -45,15 +45,11 @@ planner_fallback_route: vercel
 planner_reasoning: high
 
 # ── Hypothesizer — loop/prompts/hypothesizer.md ──
-# Same Muse Spark routing as the writer.
-hypothesizer_model: muse-spark-1.2-contributor-free
-hypothesizer_fallback_model: meta/muse-spark-1.2-contributor
-hypothesizer_endpoint: https://opencode.ai/zen/v1/responses
-hypothesizer_auth_env: OPENCODE_API_KEY
-hypothesizer_route: opencode
-hypothesizer_fallback_endpoint: https://ai-gateway.vercel.sh/v1/chat/completions
-hypothesizer_fallback_auth_env: AI_GATEWAY_API_KEY
-hypothesizer_fallback_route: vercel
+# Claude Fable 5.1 as a fresh harness sub-agent (Cursor: Task spawn). The
+# harness spawn is the route; no HTTP endpoint, no Muse fallback. One call
+# per iteration: retry once on the same model, then escalate to the founder.
+hypothesizer_model: claude-fable-5-1
+hypothesizer_route: harness-subagent
 hypothesizer_reasoning: high
 
 # ── Everything else runs on DeepSeek V4 Flash via the OpenCode Zen ──

@@ -52,8 +52,9 @@ matter only insofar as they serve belief change.
                    replicates are signal; a cluster in only one is noise.
 4. DIAGNOSE      — Map each gap to a factory component:
                    research? plan? writer prompt? style guide? model?
-5. HYPOTHESIZE   — One change to one factory component, with prediction:
-                   "If we change X, then gap Y will close because Z"
+5. HYPOTHESIZE   — 1–3 bound changes under the convergence budget (fewer
+                   and smaller as the census approaches zero), one PRIMARY
+                   with a prediction
 6. APPLY         — Make the change
 7. RE-RUN        — Re-run affected stage(s); write and judge two books
 8. COMPARE AGAIN — Same judge panel, same comparison, both replicates
@@ -166,8 +167,9 @@ creation machine.
 - **Simple orchestration, clever prompts.** The loop is agent orchestration
   with well-crafted prompts, not a large codebase. The intelligence lives in
   the prompts and the judges, not in Python machinery.
-- **One hypothesis per iteration.** Small, reversible changes. We can
-  attribute effect because we changed one thing.
+- **One PRIMARY KEEP object per iteration.** Secondary changes are
+  recorded predictions. Attribution is by prediction against the census,
+  not by isolation.
 - **Two books per iteration.** The same change is written and judged twice
   (same research, same plan, two independent full books). KEEP requires
   the improvement in both books; a one-book swing is noise, not a result.
@@ -195,8 +197,8 @@ The hypothesizer, orchestrator, and any spawned role must not edit `*_model`,
 `*_fallback_model`, `*_route`, or endpoint fields. Contributor vs
 non-contributor aliases of the same weights are not different models; swapping
 them is not a hypothesis. Muse Spark roles use OpenCode Zen
-`muse-spark-1.2-contributor-free` as primary and Vercel
-`meta/muse-spark-1.2-contributor` as the per-call fallback; the next unit
+`muse-spark-1.3-contributor-free` as primary and Vercel
+`meta/muse-spark-1.3-contributor` as the per-call fallback; the next unit
 always starts on the primary. If prompt and structure tuning cannot produce
 Carr-quality output, the founder changes models manually.
 

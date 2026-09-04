@@ -157,3 +157,9 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** INCONCLUSIVE
 **Lesson:** Prefix ban closed trap-question 3→0 / 1→0 both. Founder veto missed: blocking factory-speech 0→2 A-only (evidence-register at ch09 climax, not 015/017 named kills). method-promise-hedge A-only (`almost automatically` Burgeon paste). Named 015/017 kills stayed closed. Do not promote. PERSISTENT factory-speech hydra (8th).
 **Next direction:** Do not KEEP this line. The targeted prefix class closed; blocking factory-speech still mutates at evidence-register in one book. Founder halt: do not start 019 unless asked.
+
+### founder-prep 2026-09-04 — Spark 1.3 live pins + judge probes
+**Note:** Writer/planner live pins moved to Muse Spark 1.3 contributor (`muse-spark-1.3-contributor-free` / `meta/muse-spark-1.3-contributor`). Hypothesizer is Claude Fable 5.1 as a Cursor Task (`harness-subagent`); no Muse fallback.
+**Smoke:** OpenCode Zen `muse-spark-1.3-contributor-free` POST `/zen/v1/responses` → HTTP 200, model echo `muse-spark-1.3-contributor-free`, text `SPARK13_OK` (3.2s). Vercel `meta/muse-spark-1.3-contributor` → HTTP 402 `insufficient_funds` (id accepted, gateway has no credits). Primary route is live; fallback needs Vercel top-up before a Zen outage.
+**Probes:** `loop/preflight/runs-2026-09-04-composer-2.5-belief-journey-probe/` — b1/b2/j1 must-FAIL classes fired; b3/j2 PASS. b1 run1 vs run2: both FAIL with `credit-intact`, but run1 also blocked `sacrifice-standing` and `reader-does-not-work` (BLOCKING set not identical). 18-call 2026-08-24 battery not replayed.
+**Next direction:** Founder halt still in force for 019. First authorized run after this prep is a Spark 1.3 BASELINE (research reuse, plan regenerate, two books), not a hypothesis. Founder yes/no on bundling the chapter-writer word-budget sentence into that baseline.

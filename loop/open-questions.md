@@ -1,9 +1,10 @@
 # Open Questions — loop hardening backlog
 
-> Deferred design decisions from the 2026-08-12 orchestration audit (second
-> pass). Items 1 and 2 were **REJECTED by the founder on 2026-08-12** — the
-> current behavior is accepted as-is. Item 3 records an accepted design choice.
-> Kept here as a record of the decisions.
+> Deferred design decisions and parked founder ideas. Items 1 and 2 were
+> **REJECTED by the founder on 2026-08-12** — the current behavior is accepted
+> as-is. Item 3 records an accepted design choice. Items 4–7 are parked
+> (2026-09-04). Kept here as a record of the decisions. Nothing in the loop
+> reads this file as a hypothesis source.
 
 ## 1. Stop-guards are technically in the loop's editable surface — REJECTED
 
@@ -34,3 +35,126 @@ always continues from markers, no locking. Accepted risk: if two drivers are
 ever started against the same campaign, nothing prevents conflicting writes.
 If parallel orchestrators ever become a real need, a lease/heartbeat guard
 would be added then.
+
+## 4. Chapter reviewer after each written chapter — PARKED (founder, 2026-09-04)
+
+Idea: after the writer returns chapter N, a fresh `chapter-reviewer` sub-agent
+reads the accepted master plan, chapter N's card, and the written chapter, and
+returns feedback on plan fidelity — including "lengthen"/"shorten" against the
+card's word budget — before the orchestrator writes the final `chapter-NN.md`
+(mirrors the plan-writer → plan-reviewer loop that already exists).
+
+Status: not built, not a hypothesis. It is a factory-architecture change (new
+role contract under `prompts/`, PROGRAM §4 Step 3 Writing stage today is
+"writer only, chapter 01 → last", a `.pi/agents/` adapter, a HARNESS capability
+row, a founder-chosen model in `loop/config.yaml`, and on Cursor a change to
+`scripts/loop-runner/write_replicate.py`). It therefore needs a founder-
+authorized PROGRAM edit and its own baseline; the hypothesizer may not propose
+it and it must never sit in `loop/inbox/`.
+
+Try condition: after the 019 Spark 1.3 baseline census AND after the one-
+sentence writer word-budget line has had its chance. Earn it with evidence: a
+plan-fidelity class (`compliance-missing`, `journey-incomplete`, or delivered
+length still > 20 % under plan) persisting at prompt level — i.e. when
+PROGRAM §5's 3-strike PIVOT from prompt → structure fires for that class.
+Try once, as a baseline (research + plan reused, writing stage changed, two
+books, full panel). Reviewer sees plan + card + chapter only — never GSBS,
+never a judge prompt (judges measure; the reviewer is a factory component).
+Cap: one review, one rewrite per chapter, no open loop.
+
+Also: `prompts/style-guide.md` already says "the chapter reviewer judges the
+actual text" — a reviewer that does not exist. Fix that sentence when the
+writer-budget line lands, or when this item is built, whichever is first.
+
+## 5. Factory robustness (resume-after-stop) — harness work, not a loop iteration
+
+Robustness is a harness property: the conversation must resume from the
+furthest on-disk marker after any stop. Improvements are made only in the
+harness bindings — pi: `pi-goal-x` goal settings (`/sisyphus-direct`,
+`/goal-direct`, `agent_settled`), `pi-provider-fallback`; Cursor:
+`.cursor/hooks/loop-continue.py` and its `loop_limit`s — or as a thin
+durability layer (Temporal-style) that re-enters the same conversation.
+Never a Makefile / `run_factory.py` / cron driver, never a continue-loop
+encoded in prompts or skills, never a change to the KEEP object. Evidence
+for a fix is a stall in `loop/state.md`'s journal or a hook log; the fix is
+made outside campaign iterations (like judge calibration) and needs no
+baseline because it changes no factory prompt.
+
+## 6. Anti-slop skills (stop-slop, avoid-ai-writing) — PARKED (founder, 2026-09-04)
+
+Two public skills that strip generic LLM tells from prose:
+<https://github.com/hardikpandya/stop-slop> (bans throat-clearing, adverbs,
+binary contrasts, rhetorical "What if", lazy extremes, em dashes; 1–10
+scoring) and <https://github.com/conorbronsdon/avoid-ai-writing>
+(rewrite/detect/edit modes; chatbot openers, promotional inflation,
+"leverage/delve/tapestry", 72 pattern categories). Neither repo is cloned
+here; both are referenced by URL only.
+
+Status: not a hypothesis now, never in `loop/inbox/`. When tried, the form
+is a **selective import** of a short filtered list into
+`prompts/style-guide.md` Part B as one bound change within the
+hypothesizer's budget. Not a new skill file, not a fifth writer input
+(that is a PROGRAM Step 3 edit and is not authorized here). Never imported
+into a judge.
+
+**Do not paste wholesale, do not fight the Carr reframe.** Several core
+rules in both skills attack the method itself and must not be imported:
+the ban on "Not X. It's Y." and its split-sentence form (the
+rescuer-as-perpetrator inversion, style-guide §4 and §5.4 "doing TO
+you vs. doing FOR you"); the ban on every/always/never and flat verdicts
+(fidelity doctrine; hedging the assigned verdict is already BLOCKING);
+the ban on questions (Carr's live question is 0 in the voice judge; only
+the stage-direction label is noted); the ban on short fragments and on
+all adverbs (surface metrics the panel is forbidden to score); any 1–10
+"authenticity" scoring. What plausibly survives: chatbot openers and
+throat-clearing, the coach/hollow-intensifier phrases the voice judge
+already lists under `coach-register`, promotional vocabulary, summary
+closers, stacked-triplet padding, and hedges on the method promise.
+
+**Judge-blindness risk, accepted:** the panel has no "slop" class and must
+not get one (North Star: judges do not score "sounding literary" divorced
+from belief-change effect). KEEP reads the PRIMARY class only. The import
+can register only through `factory-speech` (blocking variant), the two
+hedge classes, or noted `coach-register` counts; only the first three can
+carry a KEEP. Both books may read better and the iteration still be
+REVERT. That is the KEEP object working, not a judge defect. REVERT never
+deletes the idea; record the result here.
+
+Try condition: after the 019 Spark 1.3 baseline census, and only when the
+census PRIMARY is `factory-speech`, `assigned-verdict-hedge`, or
+`method-promise-hedge`. Rides as a secondary bound change beside the
+primary hypothesis, never as a standalone iteration. A belief-mechanic or
+journey PRIMARY is never a trigger.
+
+## 7. Write replicate A and B in parallel — PARKED (founder, 2026-09-04)
+
+Why serial today: PROGRAM §4 Step 3 writes A into the live
+`production-books/quit-sugar/chapters/`, snapshots, deletes the live
+chapters, and writes B into the same directory; `write_replicate.py` reads
+the previous chapter from that live dir and writes its `.partial` → rename
+marker there. Two replicates at once would collide on `chapter-NN.md`.
+That is the only reason. Within one book chapters stay sequential (each
+spawn receives the previous chapter); that does not change.
+
+Decision: yes in principle. Not a measurement risk: A and B start from
+identical inputs and judges already read from the replicate tree (018 ran
+"Write B + judge A in parallel"). One operational caveat: two Muse Spark
+streams double the instantaneous load on Zen; a quota fallback to Vercel
+on one replicate is the existing intended-vs-actual confound in
+`metadata.json`, read as a confound as today, and made more likely by
+parallel runs.
+
+Shape when built: each replicate writes directly into its own
+`loop/iterations/NNN/replicate-{a,b}/chapters/` and reads the previous
+chapter from there; the live dir is filled once at Step 6 from the
+accepted snapshot (A on KEEP, as PROGRAM already says). No worktrees. The
+`.partial` convention is unchanged. Two `REPLICATE` processes run at once;
+the orchestrator waits on both exits; judge A starts when write A exits.
+
+Status: orchestration, not a hypothesis, never in `loop/inbox/`. Needs a
+founder-authorized PROGRAM §4 Step 3 edit plus a runner change
+(`scripts/loop-runner/write_replicate.py`; the pi adapter is unaffected).
+No baseline: it changes no prompt, judge, model, or input. Try after 019
+has completed once serially, so a runner bug is not debugged inside a
+model re-baseline. Cost: two Muse books against one quota at once.
+Benefit: write-stage wall-clock roughly halves.

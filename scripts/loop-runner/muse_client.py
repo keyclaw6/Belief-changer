@@ -10,9 +10,9 @@ import urllib.error
 import urllib.request
 
 ZEN_URL = "https://opencode.ai/zen/v1/responses"
-ZEN_MODEL = "muse-spark-1.2-contributor-free"
+ZEN_MODEL = "muse-spark-1.3-contributor-free"
 VERCEL_URL = "https://ai-gateway.vercel.sh/v1/chat/completions"
-VERCEL_MODEL = "meta/muse-spark-1.2-contributor"
+VERCEL_MODEL = "meta/muse-spark-1.3-contributor"
 UA = (
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
