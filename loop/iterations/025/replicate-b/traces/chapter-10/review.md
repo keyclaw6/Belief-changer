@@ -1,0 +1,2 @@
+REVISE
+LENGTHEN to B±15% — Delivered 3234 words vs Budget 4400 (0.85×B = 3740, 1.15×B = 5060). Delivered is below range; lengthen to 3740–5060 words while keeping job, mantras, instruction and IDs intact.
