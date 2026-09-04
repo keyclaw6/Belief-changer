@@ -7,8 +7,8 @@
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 019 plan reused)
-- **Last completed unit:** 025 ch03 both books. A 4168+4653+3333; B 3596+4213+3745. All REVISE→rewrite, in band. Writers live on ch04.
-- **Next unit:** Finish 025 writes 04–13, then judge A when write A exits.
+- **Last completed unit:** 025 ch04 both books (A 4070/4800, B 4466/4800). Writers live on ch05.
+- **Next unit:** Finish 025 writes 05–13, then judge A when write A exits.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -29,3 +29,4 @@
 | 2026-09-04 22:55 | Founder halt: stop after 5 no-KEEP. Do not start 025. Instrument reconsideration (Fable). Sentinel timer unsubscribed. | HALTED |
 | 2026-09-04 23:30 | Founder resume: Fable Carr plan. Reviewer + comparison + length floor. Goal + heartbeat on. | 025 BASELINE |
 | 2026-09-05 00:03 | 025 writing. Ch01–03 both books in band after reviewer. w025a/w025b on ch04. | 025 writes |
+| 2026-09-05 00:06 | 025 ch04 done both (A 4070/4800, B 4466/4800). Writers on ch05. | 025 writes |
