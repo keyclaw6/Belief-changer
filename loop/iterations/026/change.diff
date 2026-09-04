@@ -1,0 +1,20 @@
+diff --git i/prompts/style-guide.md w/prompts/style-guide.md
+index d0a10a07..39e1ff9f 100644
+--- i/prompts/style-guide.md
++++ w/prompts/style-guide.md
+@@ -531,6 +531,7 @@ The operators:
+ 9. **Permission paradox** — explicitly permit the behavior while reading ("carry on exactly as normal until you finish"). Disarms resistance and proves this isn't willpower.
+ 10. **Credit reassignment scene** — take a cherished scene, strip the behavior out of it, show the pleasure was the scene all along ("it was only ever sneaking a ride").
+ 11. **Instruction voice** — numbered, imperative, ALL-CAPS headline followed immediately by one short spoken rationale line; no "Warm rationale" header, craft label, or assignment-fulfillment narration around either line. Instructions are thought-substitution rules: "rather than think [old thought], think [mantra]."
++12. **Chatbot residue** — never open a beat with throat-clearing or chatbot framing ("Here's the thing", "Let's dive in", "Great question", "What if I told you"). Never close a beat with a summary stamp ("In conclusion", "Ultimately", "At the end of the day", "Let's recap"). Never pad a landed point with a third stacked synonym that adds no new picture. Start the argument; stop when it lands. Do not name this rule in reader prose. Do not import a ban on Not-X-It's-Y, every/always/never, live questions, fragments, or adverbs.
+ 
+ ---
+ 
+@@ -595,6 +596,7 @@ Because chapter writers see only the master plan + previous chapter + this guide
+ - "We" for the trap, "you" for the escape — checked?
+ - Does the chapter's freedom-language level match its position on the crescendo?
+ - Would this chapter still make stopping feel like *escape* if read in isolation?
++- Any chatbot opener, throat-clearing, summary closer, or stacked-triplet padding? Cut it. Start the argument; stop when it lands.
+ 
+ ---
+ 
