@@ -404,3 +404,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Binding one card field does not remove the second manual from guardrails, continuity, scene debut, or adjacent-job overlap. Plan-card remains PERSISTENT for this class after 020/023/024.
 
 **What this opens next.** PIVOT off plan-skill card-field binds (3-strike). Do not replay 020–024 named wording. `convergence-report.md` written. Continue 025 under founder override.
+
+### iter-025 — Carr-convergence architecture BASELINE  ·  2026-09-05  ·  BASELINE
+
+**Hypothesis.** None — measure the founder-authorized architecture (chapter reviewer, GSBS comparison lane, 80% length KEEP floor) on the reused 019 13-chapter plan.
+
+**Change.** No writer/planner/style-guide wording. Writer now draft → review → ≤1 rewrite. Panel adds `chapter-comparison`. Research and 019 plan reused. Two Spark 1.3 Go books.
+
+**What happened.** Words A 52182 / B 51144 (019 A was 26984). Belief 13/13, journey 13/13, voice 13/13, comparison 13/13, book-arc PASS both; blocking 0/0. Comparison `missing` 3/3, same three moves in both: G06-M2 (incredible machine), G15-M1 (be selfish), G20-M2 (page-skipper). Journey `re-argument` 12/10 under the repaired section-rebuild definition. Voice floors: willpower-lexicon 29/33, factory-speech 18/16 (ease-operators and card leaks, not chatbot openers). Reviewer REVISE→rewrite 24/26; ACCEPT A ch11, B ch12.
+
+**Verdict & why.** BASELINE. Measurement, not a KEEP test. Length floor met. 3-strike clock resets. Accepted snapshot is replicate A.
+
+**What we learned.** Reviewer made length KEEP-visible: A 52182 / B 51144 vs 019 A 26984 (floor 48000 met both). All-PASS / zero blocking both books. New floors in both: comparison `missing` 3/3 (G06-M2, G15-M1, G20-M2), journey `re-argument` 12/10 (repaired class, still ≥8), willpower-lexicon 29/33, factory-speech 18/16. `coach-register` 3/8 (not ≥8 both). `method-promise-hedge` 0/0. 3-strike resets.
+
+**What this opens next.** 026 anti-slop PRIMARY `factory-speech`. Skip 027/028 (coach-register not ≥8 both; hedges absent). Then attack comparison `missing` in both. Do not replay 020–024 wording.

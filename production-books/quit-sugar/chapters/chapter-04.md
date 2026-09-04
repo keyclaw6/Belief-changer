@@ -2,112 +2,186 @@ Chapter 4
 THE WILLPOWER METHOD KEPT YOU TRAPPED
 
 **IN THIS CHAPTER**
-The Monday diary on the fridge door — The office drawer humming at half past four — The biscuit box at half past nine — The bragger at the party and the whinger by the kettle
+The Monday kitchen with the fresh list on the fridge — The office drawer with the key turned till Friday — The sofa at half past nine with one permitted biscuit on a saucer — The empty box on the lap before the programme ends — The bragger at the party with his tight grin — The whinger on the sofa with her long sigh
 
-*You did not fail the diets. The diets failed you, and the empty box proves it.*
+*You never failed because you are weak — you failed because the method you were given could never work.*
 
-**The Week You White-Knuckled**
+### THE DIARY YOU HAVE WRITTEN A DOZEN TIMES
 
-You laid an ordinary Tuesday on the table and the right column stayed bare. Good. You saw what BAD SUGAR never gave you.
+Bring the page you know by heart.
 
-Now we look at the other weight you carry. Not the Tuesday doses. The years of Mondays.
+Monday morning. Cupboard cleared in a burst of virtue. Packets carried to the bin while the kettle boils. List on the fridge in bright pen. No sweets this week. Fruit only. Be good. You feel clean and stern and faintly heroic before breakfast is over.
 
-We all wrote that diary. I wrote it. You wrote it.
+Monday afternoon. The first tug. Met with a clenched jaw and a glass of water and a walk round the block and a long stare out of the window. You win. You write it down with pride. I have managed to be good this week — already, on day one, already counting goodness in hours held out.
 
-Monday: determined. Fridge door, fresh page. No sweets this week. Black tea. Fruit. A firm nod in the mirror. This time will be different.
+Tuesday. Louder tugging. Harder bargaining. Thought circling the drawer while you try to work. You snap at nothing and call it hunger and call it proof you are doing something hard and worthy. By evening the whole day has been about sweets, though not a crumb has passed your lips. You tell yourself the obsession proves the prize is great.
 
-Tuesday: holding the line. Headache of effort by afternoon. Eyes sliding to the office drawer at half past four and pulling away. Proud and tired at bedtime. “I’ve managed to be good this week.”
+Wednesday breaks. Not with a feast. With a tired hand at half past three taking what you swore you would not take, then taking more because the first bite tasted of relief and of failure all at once. Evening, the solemn promise remade through a full mouth. Start again properly tomorrow. No one sees. We have all lived this.
 
-Wednesday: louder. The drawer hums. The meeting drags. A small voice starts its barter: just one square to get through, just a taste, you have been so good. You argue with it through the whole afternoon and win by the skin of your teeth and call that winning.
+Thursday and Friday blur into holding out and leaking, rules bent and re-tied, small doses stolen and half-enjoyed and fully regretted. You eat quickly, standing, half-hidden, then tidy the evidence before anyone comes in. You tell yourself you have been good really, apart from the slips, and tomorrow will be stricter.
 
-Thursday: the rebound. Forbidden has turned must-have. You allow the single square you have earned and the square turns on you. Evening, kitchen, standing up, fast. Friday: the blow-out, then the vow. Monday: restart.
+Saturday, the lock bursts. You eat as if to make up for lost days, fast and joyless and driven, then sit in the warm mess of it saying the line we all know by heart in our own dialect. I feel like i cant stop. I want to get off the roller coaster.
 
-Tell me honestly. Does that diary read like weakness to you?
+Sunday night. Shame-wash. The list comes down. A new list goes up. Monday will be stricter. Monday will work.
 
-We sweet eaters call it failure and carry it like a stain. I know that stain. I carried it for years. Of course you want to be free of the loop — that is why you are here. And of course you fear you lack what it takes, because the diary seems to prove it.
+I know that diary because it was mine for years. I lived the Monday restart, the bright pen, the grim arithmetic of good days and bad days. I believed what you believe now. That failure meant something broken in me.
 
-It proves nothing of the kind.
+The fact is, that diary proves the opposite of what you fear.
 
-Look again with clear eyes. Who white-knuckled for three days against gnawing want? You did. Who held out through headaches of effort, through humming drawers, through bartering voices, and still turned up for work and family and life? You did. Who kept restarting after every collapse, Monday after Monday, year after year?
+Look at it as an investigator, not as a defendant. You brought yesterday's empty column with you — plenty done TO you, nothing true done FOR you — and still the hand reached. Now look at this locked-drawer week and the same reaching, only louder. If BAD SUGAR gave a true gift, a locked drawer would dim its glow. Forbidden sweetness would fade when forbidden. Here the opposite happens. Forbid it and the glow brightens. Lock it and the mind circles it all day. That brightening under lock is not proof of value. It is proof of trap.
 
-You call that no willpower. I call it astonishing persistence against instinct.
+We were all taught to read that brightening as desire. We were taught to read collapse as weakness. We had it backwards.
 
-If lack of will was the problem, why did the wanting roar loudest on the days you were strongest? If you were weak, how did you go Tuesday and Wednesday with nothing sweet passing your lips while the whole office ate cake? And if effort was the answer, why did every hard-fought week end with more eaten, not less?
+Ask with me, plainly, from your own lived weeks.
 
-There is only one honest answer that fits all three. You were wilful, not weak.
+If weak will were the problem, why did your hardest-gripped weeks end in your biggest evenings? If free choice were at work, why did one small permitted taste need rules and locks and solemn numbers beforehand? If you lack backbone, how did you endure days of gnawing thought and scolding and hunger for a joy that never stayed past the swallow — an endurance no free eater ever has to show?
 
-You never failed. The method failed.
+Only one set of answers fits the diary we all share.
 
-**The Box That Proved It**
+You did not fail the method. The method failed you. And your persistence inside it, week after week, year after year, against all instinct and comfort, took a will of iron.
 
-Come into the kitchen with me at half past nine.
+You were brainwashed to call that iron weakness. Kind hands taught us young. Bright shelves taught us. Songs and parties taught us that sweet means love and reward. Then each bright dose left its own small echo an hour or two later and we read the echo as our own emptiness. Then the Willpower Method arrived with its locks and lists and bright pens and taught you to wind the wheel tighter and call the louder burst your shame. No wonder you failed. Anyone would fail on that method.
 
-The house is quiet. Television murmurs. You are tired in the way only a white-knuckle day makes you tired. On the side sits the box. You told yourself at lunch you would allow one. Just one biscuit. A sensible adult in control. One permitted dose to prove the week can work.
+### THE BOX THAT PROVED IT WAS NEVER ABOUT WILL
 
-You open it carefully. You take one. You close the flap as if closing the flap closes the matter.
+Let me walk with you through one evening, slowly, because this one evening ends the argument about will for good.
 
-The wrapper rustles. The first bite is fast, barely tasted. Salt-sweet floods and fades in seconds and leaves the mouth louder than before. The hand is back in the box before decision has finished speaking. One becomes three. Three becomes the rustle that will not stop. The box that was half full at nine is empty at quarter to ten and there is crumb on your jumper and regret before the last swallow ends.
+Half past nine on the sofa. Programme on. A packet on the arm of the chair, placed there with great ceremony after supper. Tonight will be different. Tonight there will be one. One biscuit, eaten slowly, enjoyed properly, proof that you can take it or leave it. You have told yourself this with complete sincerity. I have told myself this with complete sincerity. We all have.
 
-“I feel like i cant stop.” You said it because you lived it in that kitchen.
+You take the one. You taste the first bright second. Sweet salt fat bloom on the tongue. The second bite barely registers. The hand is already moving toward the packet while the mouth is still full. A small cool thought says, put it away now, and the hand does not obey the thought. It rustles. It finds another. The packet lightens. The programme chatters on unwatched.
 
-Now tell me. Was that a character flaw that arrived at half past nine? Were you strong at lunch and weak at night? Did your morals dissolve with the wrapper?
+Halfway down you are no longer tasting. Jaw moving, eyes on the screen, thought half elsewhere, half counting with rising panic. You tell yourself to stop after this one, then after this one. The packet grows loud, then light, then empty. The last square is eaten with regret already arriving before the swallow ends — regret and crumbs and a faint nausea and the old line rising unbidden about the roller coaster and how you long to be off it.
 
-Of course not. The permitted sliver carried the binge. Once triggered, the craving ran the evening. That loss of control is the signature of the trap, not of you.
+You stare at the empty box on your lap. You, who held out all day Monday. You, who can work long hours and pay bills and keep promises that matter and show up for people you love. Undone by a box.
 
-We all lived that box. We stood in that same kitchen and blamed the person in the mirror. We said, I have no control, I am hopeless. We were conned into reading method-failure as self-failure.
+Was that weak will?
 
-The fact is, willpower plus restriction cannot hold a loop that feeds on restriction. The harder you grip, the more precious the dose becomes, the louder the evening calls, the emptier the box. Your collapse does not expose you. It exposes the method.
+You had will enough to lock the drawer, to write the list, to refuse at lunch, to drink water at three, to walk round the block in the rain. No weakling does that. Will carried you to half past nine. Will placed the single biscuit on the saucer like a ceremony. And will counted for nothing once the first bright bite landed and the wheel turned.
 
-**The Bragger And The Whinger**
+The wheel turns like this. Each dose leaves its own small echo an hour or two later — flat, foggy, hunting — and we read the echo as our own emptiness and answer with another dose. Forbid the dose and the echo grows louder in imagination all day. Permit one small dose and the echo wakes in the body within the hour and calls for its fellow. Either way the hand moves. The method that told you to forbid and to fight guaranteed the very movement it told you to blame yourself for.
 
-At every party there is a bragger. At every kettle there is a whinger. Both keep you trapped, and both speak for the Willpower Method.
+I am warm toward you without limit here. I am harsh toward the fraud that taught you to call that evening a character test. Shame says, I am the problem. Truth says, I was given a false map. Shame keeps you on the sofa with the empty box, eating and accusing yourself in the same breath. Truth lets you stand up, look at the box, and see the whole narrowing for what it is.
 
-The bragger leans in with his wine and says, “I quit sweets by sheer willpower. Three miserable months. Nearly broke me. You just have to want it enough.” He wears his suffering like a medal. He wants you to envy his scars.
+Who was in charge at ten o'clock? Not you, the careful list-maker. Not the box, which is only paper and bright taste. The wheel was in charge — the lift that guarantees its own low, the low that begs its own lift. You were caught in a wheel that removes choice while calling it choice. Caught, not weak.
 
-Do not envy him. Pity his misunderstanding.
+Once seen, Monday's diary reads differently. White-knuckle days were not training. They were winding. Forbidden-must-have rebound was not collapse. It was the wheel answering the winding. The Monday restart was not hope. It was the wheel resetting its own spring.
 
-He fought for months because he still believed he was losing something precious. He white-knuckled through evenings, counted days on a calendar, avoided aisles like minefields, and calls that freedom. Ask him if he is happy to be free or merely proud to be holding out. Watch his eyes slide to the dessert trolley. He quit the doses. He kept the belief. He lives one tired evening away from the box.
+It is the other way around from what we were taught. We thought will would break the wheel. The fact is, the wheel feeds on will.
 
-The whinger does the opposite job with the same lie. She holds her mug and says, “I’ve tried everything. Diets, rules, bans, apps. Nothing works for me. I must be wired wrong.” She mourns herself in advance so the next Monday hurts less.
+### MORNINGS WOUND, EVENINGS BURST
 
-Do not join her mourning. She tried everything except the one thing that works: seeing the trap clearly.
+Watch the week again, hour by hour, and you will see the winding clearly.
 
-She used the same wrong tool every time — effort against want — and blamed her own hands when the tool broke. No wonder she feels hopeless. Anyone would, handed a hammer to cut bread and told the crumbs prove she cannot cook.
+Monday you wake brave. By ten the thought of the forbidden drawer has visited six times. By noon twelve times. By three the thought is not a visit but a lodger. You have thought about BAD SUGAR more in one good day than any free eater thinks about food in a month. Is that freedom growing? Is that desire fading? Or is that a mind filling with the very thing the lock was meant to empty?
 
-I have been both characters. I bragged about a grim fortnight with no chocolate and felt virtuous and deprived in equal measure. I whinged to friends that I would be hooked forever. Both voices belonged to the method, never to me.
+Tuesday the glow grows. The Friday treat you allowed yourself shines in imagination like a holiday. A plain biscuit takes on a glamour no peach ever needed. You picture the bite, the bloom, the relief. The picture plays on a loop while you answer emails, while you cook, while you try to listen to your child. The lock has not made the prize smaller. It has made the prize enormous.
 
-Here is the truth that ends both performances. The bragger proves willpower makes quitting miserable. The whinger proves willpower makes quitting fail. Both prove the same flat fact from opposite ends.
+Wednesday the bargain starts. Just a taste to take the edge off, then back to good. Just one to prove you are in charge. The taste wakes the echo within the hour. The echo calls for its fellow. Evening becomes rustle-to-empty. Morning-you stares at the light packet and calls night-you weak.
 
-The Willpower Method is the guard at the gate, not the way out.
+Thursday you try to tighten. Stricter rules. Smaller allowances. Dark only. Small packs only. Only when you feel you deserve one. Each new rule feels like control. Each new rule puts sweets at the centre of the day again. You shop with rules ringing in your ears. You open the cupboard with rules on your lips. You close it with rules broken in your hands.
 
-**Why Forbidding Feeds Wanting**
+Friday you tell yourself the week was mostly good. You count the good hours and discount the bursts. You promise the weekend will balance it. Saturday the burst comes louder, as bursts do after winding. Sunday the list comes down.
 
-Watch what forbidding does to wanting.
+Do you see the shape?
 
-Monday you ban the drawer. By Wednesday the drawer glows. Food you barely noticed last month becomes magnetic. Portions you once left now haunt you. The rule creates the glare. The glare creates the reach. The reach creates the shame. The shame creates the next rule.
+Forbid by day and you flood by night. Starve by week and you flood at weekend. Shrink the dose and you raise its glow. Break eating into forbidden stretches and permitted bursts and the bursts grow bigger, faster, more driven. Steady, un-remarked nibbling never gripped like that. Broken into lock-then-release, the binge learns speed.
 
-It is a yo-yo with your name written on it in your own hand, and you did not invent the string.
+That is not a flaw in you. That is the form of the trap.
 
-When eating is fenced into allowed days and banned days, the banned days breed fantasy and the allowed days breed hurry. You eat fast on Friday because Monday looms. You dream sweet on Monday because Friday glows. Restriction drives the binge and the binge drives the next restriction, round and round, tighter each turn.
+Think of the child with the peach, the picture we met when we first saw we were caught. Hungry, she eats, juice down her chin, stops mid-bite when satisfaction comes, runs off without counting, without guilt, without a backward glance. Body leads. Hunger opens. Satisfaction closes. No rules needed because no wheel is turning.
 
-That is why diet weeks end with more eaten, not less. Not because you are greedy. Not because you are broken. Because the schedule itself is the trap form. Forbid a dose and you make it precious. Make it precious and you guarantee the evening box.
+Now watch us, grown and clever, with rules for breakfast and rules for treats and rules for treats-about-treats. We eat without hunger, stop without satisfaction, start without choosing, continue without tasting. Rules have replaced signals. Strain has replaced hunger. And still the box empties. Would you call the child weak for lacking rules? Would you call us strong for needing them? Rules do not prove freedom. Rules prove capture.
 
-I offer no eating plan here and no medical advice, so if changing what you eat could carry risk for you, talk to your clinician and follow their advice first.
+This is why every diet-week ends where it ends, whatever the bright cover promises. The cover changes — low fat, low carb, no sweets till weekend, only dark, only small packs, only earned squares. The wheel stays. The yo-yo is not your personality. It is what happens when a natural signal is replaced by a lock.
 
-Understand only this belief point, and let it lift years off your shoulders: your Monday restart was never proof you cannot change. It was proof you were using a tool that manufactures the very collapse it punishes.
+Hear me clearly, because I do not want you swapping one lock for another on my account. I am giving you no eating plan, no good-food list, no bad-food list, no numbers to hit. Eat when you are hungry. Stop when you are satisfied. Enjoy real meals. That is body, not plan. If you live with diabetes, take anything that affects blood sugar or appetite, are pregnant, or carry any history where changing food could carry risk, talk to your clinician first and follow their advice.
 
-Strong will persisted against instinct for years. That strength is yours. It was simply aimed at the wrong enemy.
+Feel how different that sentence feels from Monday's list. Monday's list braced your chest. This loosens it. Braced chests cannot see. Loosened chests can.
 
-Once the blame lands where it belongs, walking free stops looking like a fight and starts looking like what it is — something you do easily, immediately and permanently.
+Do you want to keep living the yo-yo, winding tighter each Monday for a louder burst each Saturday, for the rest of a life spent thinking about sweets far more than any free eater ever thinks about food? Or do you want to step off the yo-yo entire, with hunger and satisfaction back in charge where they belong?
+
+Both futures last the same length. Only one is free.
+
+The yo-yo never measured your worth. It measured the wheel. Strong people ride it hard. Free people leave it alone.
+
+### THE BRAGGER AND THE WHINGER
+
+On every diet-week there perch two familiar voices. You will know them at once. I knew them for years before I saw what they were.
+
+The bragger leans at parties with a tight grin and says, I just stopped eating sweets, no problem, pure will, you have to want it enough. He tells it as triumph. Look closer and you see the clench. He still thinks about the dessert trolley all through dinner. He still bargains on birthdays. He still counts days in his head and calls the count freedom. He talks loudly about his clean weeks and goes quiet on Saturday nights. His smile is tight because his chest is tight. He has not escaped the wheel. He is riding it with his jaw set, calling endurance freedom, calling strain success.
+
+Pity him. Do not envy him. Do not let his grin set your standard. He proves only that a strong jaw can ache for years. Freedom does not clench. Freedom does not count. Freedom does not watch other people eat with hungry eyes while claiming to feel superior. If his way were freedom, why would he need to announce it? If his way were easy, why would his eyes follow the cake?
+
+The whinger sighs on the sofa and says, I have tried everything, nothing works for me, I must be wired wrong, I will always be like this. She tells it as confession. Listen closer and you hear the same wheel talking through her. She tried everything except seeing. She wound the yo-yo tighter each time — stricter Mondays, louder Saturdays — and read the louder burst as proof about herself. Her sigh is heavy because shame is heavy. She has not proved she is hopeless. She has proved the method is hopeless, over and over, with a diligence a scientist would admire.
+
+Comfort her, but do not join her. Her despair is not truth. Despair is what a good person feels after years of being told to break a wheel by gripping it harder. She says, I feel like i cant stop, and I honour the honesty of the feeling. The feeling is real. The verdict about herself is false. The wheel removes choice while calling it choice, then sells you the removal as your nature.
+
+Both voices belong to the same master. One says will can beat the wheel. The other says the wheel has beaten you. Both keep your eyes on will. Both keep the wheel out of sight.
+
+I say to both, with love for the person and contempt for the wheel, you had it backwards.
+
+The bragger's strain is not freedom. The whinger's despair is not truth. Have you heard those voices in your own head? Of course you have. We all have. One hour the grin, the next hour the sigh. Morning the vow, night the surrender. I hear you, I tell them now, and I am not listening any longer. There is a way that asks nothing of the jaw and everything of the eyes. Look, and the grip loosens by itself.
+
+Will was never the way out because will was the guard at the gate keeping you in. With the Willpower Method there is no finish line, only a longer ache. The bragger proves the ache can be endured. The whinger proves the ache cannot be outlasted. Neither proves you need more ache.
+
+### WILFUL, NOT WEAK-WILLED
+
+Let me say this flat, as one who lived your diary and your sofa evenings and your Monday lists, and who walks free now.
+
+You are not weak-willed. You are wilful.
+
+It takes a strong will to persist for years in something that goes against all your instincts — to keep paying money for flat afternoons, to keep hiding wrappers like a secret, to keep waking foggy and promising morning-you will be good this week while night-you already knows the outcome. A weak will would have walked away at the first flat hum, the first filmed teeth, the first empty box stared at in disbelief. You stayed. You gripped. You restarted. That staying power is will, misdirected by a false map, guarding a wheel that gave nothing back.
+
+Feel the inversion land. The very evidence you used to convict yourself acquits you.
+
+You say, I have no control around sweets. I say, you controlled breakfast and lunch and work and bills and kindnesses all day, then met a wheel that removes control by design and called the removal your fault. Control was never missing. The wheel was present.
+
+You say, sugary somethings to get me through prove I need it. I say, the short term lift then fast drop proves the wheel, not the need. Need does not leave you dimmer an hour after filling. Need does not call you back with empty hunting toward the cupboard. Gifts do not behave like that.
+
+You say, but I like it. I say, where is the liking past the first bright second? The second bite barely registers. The hand keeps moving without tasting. Morning-you does not thank night-you. Liking that ends in scolding is a strange liking. It is relief misread, choosing misnamed.
+
+Stay with those questions, because only honest answers fit your own evenings. Did endurance fail you, or did the map fail you? Did the box empty because you are broken, or because one bright bite wakes the echo that calls for its fellow? Did Monday lists ever quiet the mind, or did they fill the mind with sweets from dawn till night?
+
+There is only one honest seeing here, and it arrives with relief, not with dread.
+
+Past failures prove the wrong method, never a broken self. Strong will persisted against instinct. The guard at the gate was never you.
+
+Let that settle as settled fact. You were conned as children are conned, by kind hands and bright shelves and songs that called a packet love. Then each dose left its echo and you read the echo as emptiness and answered with another dose. Then the Willpower Method arrived with its locks and lists and bright pens and taught you to wind the wheel tighter and call the louder burst your shame. No wonder you failed. Anyone would fail. Everyone does fail on that method, braggers clenching included, because with the Willpower Method there is no finish line.
+
+This time is different because this time we remove the wheel rather than grip it.
+
+When the con is seen, what felt like a life sentence loosens in the seeing itself. Stopping is not a strain to be endured. It is an escape to be enjoyed, and you walk free easily, immediately and permanently, because there is nothing real to fight and nothing true to miss.
+
+Read that line again and feel your chest. Easily — no clench, no vigil, no counting. Immediately — not after holidays, not after birthdays, not next Monday. Permanently — no reopening, no bargaining, no special drawer kept for emergencies. Ease is not a boast here. It is logic. It takes no effort to walk away from a gift that never arrived.
+
+### THE FEW EDGY DAYS ARE A RUMBLE, NOT A CLIFF
+
+I know the fear that rises next, because it rose in me.
+
+But will it be dreadful to leave? Will the evenings gape? Will the tug turn into torment?
+
+Hear me with the same plainness. The wheel leaves a small echo for a little while after you step off. For many there are a few edgy days — restless, hunting, reaching toward the cupboard from habit — then it passes. Small and brief, not vast and lifelong. A rumble strip, not a cliff. Days-long, not life-long.
+
+That rumble frightens only while the old map says it means need. Under the old map, every flat hum meant take a dose. Under the true map, every flat hum means the wheel is losing its spin. Same feeling, opposite meaning. One meaning feeds the wheel. The other starves it.
+
+You do not have to brace for those days. You do not have to fight them, count them, or mark them on a calendar. You only have to read them rightly when they come, as echoes, not orders. Notice the reach. Smile at its smallness. Eat a real meal hungry when hunger calls. Stop when satisfaction tells you enough is enough. Get on with enjoying your life while the noise dies down behind you.
+
+Do not mistake this for a warning. It is a welcome. A few passing grumbles prove nothing is broken and nothing dreadful waits. They prove the wheel is slowing because you no longer wind it.
+
+And if a loud thought comes — just one to prove you are free, just one because the day was hard, just one celebrating with chocolate because everyone is having some — hear it for what it is. It is not your wisdom speaking. It is the old wheel speaking through your voice, wearing your accent, borrowing your memories. Free eaters do not need proof doses. Free evenings do not need bright paper to be warm.
+
+You are not to change from fear of the rumble. Fear never freed anyone for long. You are to change from seeing that there is nothing to fear and nothing to miss. Fear says, I must escape because I am doomed. Seeing says, I can walk away because there is nothing to keep me. One braces the chest. The other lightens it. I want your chest light.
+
+Hold your head high as you read on. Bring your doubts. Bring your Mondays. Bring your empty boxes. Lay each beside your own lived evidence and judge calmly. You will find, page by page, that liking was relief misread, that failure was method misnamed, and that the person who endured all those white-knuckle weeks is more than strong enough to walk free the moment the wheel is seen.
 
 **4. NEVER BLAME YOURSELF AGAIN**
-Every failure was the method, never you.
+Every failure was the method, never you
 
 **SUMMARY**
-
-* The Monday diary shows days of holding out followed by rebound, and the rebound was built by the rule, not by weak character.
-* The evening box empties after a single permitted dose because the triggered want runs the night, and that pattern convicts the method.
-* The bragger who suffered for months and the whinger who calls herself hopeless both speak for effort against want, and both prove effort keeps the loop alive.
-* Banning makes the banned dose glow, the glow drives hurry and fantasy, and the yo-yo turns without any fault in you.
-* Any grumble when the loop is unfed is a small days-long hump that passes, not a life sentence to fight.
-* Past collapses belong to the wrong tool, and the strength that kept restarting belongs to you.
+- Monday lists and locked drawers always collapsed into louder evenings because winding tighter makes the rebound bigger.
+- One permitted biscuit regularly becomes an empty box with regret arriving before the last swallow, which shows a wheel turning rather than a character failing.
+- Forbidding by day and flooding by night is the shape of the wheel, not proof about personality or backbone.
+- Years of restarting against instinct and discomfort show persistence and strength misled by a false map.
+- The bragger clenches and counts while calling strain freedom, and the whinger sighs and calls the method collapse personal doom, and both voices serve the same wheel.
+- The few edgy days after stepping off are a brief rumble that passes, not a lifelong fight to be braced for.
+- Freedom comes from seeing the method clearly, which loosens the grip without strain or vigil.

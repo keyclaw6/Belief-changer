@@ -219,3 +219,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** RESUME (architecture). 025 is BASELINE with reviewer on, 019 13-chapter plan reused, two books, full panel + comparison.
 **Lesson:** 019 A is 26,984 words vs 60,000 planned. Length was invisible to KEEP. Census KEEP on `re-argument` 5–7 could not converge toward a Carr-length book.
 **Next direction:** Smoke CH-06 reviewer + comparison PASS tests, then 025 BASELINE. Do not replay 020–024 wording. Anti-slop only after 025 floors exist.
+
+### iter-025 — Carr-convergence architecture BASELINE
+**Hypothesis:** none — baseline after chapter-reviewer + comparison lane + length KEEP floor. No factory wording change.
+**Change:** none in writer/planner/style-guide. Research reused. Plan reused (019, 13 chapters). Two books Spark 1.3 Go with write→review→≤1 rewrite. Judges: composer-2.5, four chapter lanes + book-arc (53+53).
+**Verdict:** BASELINE
+**Lesson:** Reviewer made length KEEP-visible: A 52182 / B 51144 vs 019 A 26984 (floor 48000 met both). All-PASS / zero blocking both books. New floors in both: comparison `missing` 3/3 (G06-M2, G15-M1, G20-M2), journey `re-argument` 12/10 (repaired class, still ≥8), willpower-lexicon 29/33, factory-speech 18/16. `coach-register` 3/8 (not ≥8 both). `method-promise-hedge` 0/0. 3-strike resets.
+**Next direction:** 026 anti-slop (chatbot openers / throat-clearing / summary closers / stacked-triplet padding) with PRIMARY `factory-speech` 18/16. Skip 027 (`coach-register` not ≥8 both). Skip 028 (hedge classes absent). Then comparison `missing` in both. Do not replay 020–024 wording.

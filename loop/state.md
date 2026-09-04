@@ -2,13 +2,13 @@
 
 ## Position
 
-- **Iteration:** 025
-- **Stage:** Judging
+- **Iteration:** 026
+- **Stage:** Writing
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 019 plan reused)
-- **Last completed unit:** 025 writes complete both books (A 52182 / B 51144; KEEP length floor 48000 met). Reviewer ACCEPTs: A ch11, B ch12; all other chapters REVISE→one rewrite.
-- **Next unit:** Judge A (j025a, 10-wide), then judge B, then census + decision.
+- **Last completed unit:** 025 BASELINE. A 52182 / B 51144. All-PASS, blocking 0/0. comparison missing 3/3 both. factory-speech 18/16.
+- **Next unit:** 026 anti-slop writes (PRIMARY factory-speech), then judge A when write A exits.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -17,7 +17,7 @@
 - Founder override of PROGRAM §5 five-no-KEEP stop: write `convergence-report.md` if it fires, then **continue** toward 040.
 - North Star (census D=0 both books) is a success halt — record it and stop. Do not invent a hypothesis.
 - Chapter reviewer and anti-slop (`open-questions` items 4, 6) are **AUTHORIZED** (founder, 2026-09-04 night). Fable plan: comparison KEEP object + length floor + reviewer write/review/rewrite; then 025 BASELINE; 026–028 anti-slop. Parallel A/B and 10-wide judges already built.
-- This parent thread is the **sentinel**. A Cursor Task (`cursor-grok-4.6-high`) is the factory orchestrator. The sentinel does not write chapters, plans, or judgments.
+- This parent thread owns the factory after the old orchestrator died. Heartbeat `loop-belief-changer-factory-resume`. Do not start a second orchestrator.
 
 ## Journal
 
@@ -33,3 +33,4 @@
 | 2026-09-05 00:20 | 025 ch05–07 done both. Reviewer REVISE→rewrite every chapter so far. Totals A 29127 / B 29187. Writers on ch08. | 025 writes |
 | 2026-09-05 00:35 | 025 ch08–12 done both. First ACCEPTs (A ch11, B ch12). Totals A 49495 / B 48021. Writers on ch13. | 025 ch13 then judge A |
 | 2026-09-05 00:42 | 025 writes done. A 52182 / B 51144. Starting judge A. | j025a then j025b |
+| 2026-09-05 00:55 | 025 BASELINE. All-PASS, blocking 0, words 52182/51144, missing 3/3. | 026 anti-slop |

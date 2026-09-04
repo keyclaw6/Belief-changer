@@ -2,144 +2,167 @@ Chapter 12
 ORDINARY DAYS
 
 **IN THIS CHAPTER**
-The kettle and the morning kitchen — Breakfast eaten hungry — The bright aisle and the checkout queue — The trolley ahead — The evening sofa and the clean mouth
+Morning kitchen with kettle steam and waking hunger — High street shop with bright shelves and checkout lights — Plain supper at a familiar table — Evening sofa in soft lamplight — A sweet thought passing like weather
 
-*You do not stay free by watching yourself; you live free by seeing clearly and getting on with enjoying your life.*
+*There is nothing to watch and nothing to miss now, only ordinary days to live free.*
 
-**THE FIRST MORNING**
+### The First Morning
 
-Congratulations. You have closed the door that was never a door to anything good.
+Wake up.
 
-This morning you will wake as yourself, only lighter. Keep everything as it is. Drink your tea or coffee as you always drink it. Eat when you are hungry. Go where you go. See who you see. Change nothing else in your life.
+That is all. Wake up hungry, or wake up not yet hungry, and let the day start as it starts for a free eater.
 
-That is the whole secret of ordinary days. Freedom does not ask for a new routine, a new shop, a new personality. It asks for the old life with clear eyes.
+You will notice the morning first because mornings were once the proof of the night before. We woke foggy-mouthed and thin-headed and told ourselves we needed brightening. We reached for sugary somethings to get me through before the day had even asked anything of us. We called it breakfast and felt virtuous for calling it fuel.
 
-You will feel hunger this morning, clean and simple. Answer it with real food, eaten with pleasure, left when you are satisfied. Toast, eggs, fruit, bread, a proper breakfast you enjoy — whatever is ordinary and good for you. Notice how good hunger feels when no low is gnawing underneath it. Notice how taste is louder when the mouth is not coated.
+Now listen to the body you were born with. If hunger is there, meet it. If hunger is not there yet, drink water, wash, dress, breathe air, and let hunger come when it comes. No clock tells a free eater when to eat. Hunger tells.
 
-We spent years eating through fog. We called grazing enjoyment. We topped a dip with a dose, felt a brief buzz, then sank flat, foggy, hungry again within the hour, and blamed ourselves for weak character. It was never character. It was the Sugar Trap doing its ordinary work.
+I woke on my first free morning and waited for the old argument to start. It did not start. The kettle sang. Light came through the blind. My belly gave a clear hollow signal around eight, and I ate plain bread and butter and an apple, slowly, tasting everything. I stopped when the hollow filled and pleasure quieted, like the small child with the peach who stops mid-bite and runs off to play. I stood up light. I did not think of paper for an hour, and when I did think of it, I laughed.
 
-Now the low is not being topped. The echo may grumble once or twice, faint and far off. Smile at it. That empty, twitchy stir is the Nibbler dying, not calling. It has no wisdom. It has no power to compel you. It only had power when belief fed it.
+That is how your mornings will go. Not perfect. Not shining every minute. Ordinary. Some mornings you will be busy and eat standing. Some mornings you will be slow and eat sitting. Some mornings hunger will be sharp, some mornings dull. That variation is not a problem to fix. That variation is the body speaking clearly at last, without fog over it.
 
-I stood where you stand on my first free morning, half expecting a battle, listening for a roar that never came. The kettle boiled. The toast browned. I ate, I stopped, I got on with my day. And I understood with my body what my mind had already seen: there was nothing to miss.
+Let the second morning come, and the third. You will find the same kettle, the same street, the same bus pulling up with its brakes sighing, the same desk with yesterday's crumbs wiped away. Nothing has been rearranged to keep you safe. Nothing needs to be. You walk the old path with clear eyes and light feet. You drink tea because you love tea. You eat because hunger called. You leave because satisfaction answered. There is a quiet thrill in that sameness. The day did not need rebuilding. Only the fraud left it.
 
-You are not missing. You are meeting. Like the child who leaves half a peach to run off and play, the body knows when it has had enough and turns to life. That is your natural authority, returned.
+Do you feel a faint flatness around ten? Smile. It is weather passing. Drink water. Have your lunch when hunger calls. Do not turn a passing cloud into a verdict on freedom. A free eater does not feel bright every hour. A free eater feels clear underneath every hour, bright or dull, because no debt is running.
 
-Is the morning greyer without a sweet hit? Or is it brighter without the fog that always followed the hit?
+Ask, with your own mouth as witness.
 
-You know the answer because you are living it.
+When you ate that bright bar at ten in the old days, did you feel true morning energy return, or did you feel a loud ten minutes followed by a longer thin hour and a second reach? When you eat now and stop at satisfied, do you feel scolded and heavy, or light and ready to get on with enjoying your life?
 
-**THE SHOP HAS LOST ITS VOICE**
+Only one honest answer fits. The old ten o'clock dose borrowed. The plain morning restores.
 
-Go to the shop today. Walk the same aisle at the same hour. Buy your food with your head high and your eyes open.
+If you live with diabetes, take medicine that affects blood sugar, are pregnant, or carry medical risk around food, talk to your clinician first and follow their advice while this book does its belief work.
 
-Yesterday the packs shouted. Bliss-point colours, cartoon promises, family-size bargains, sweetness stacked at eye-level and at the till to catch a tired hand. We believed that noise was our own desire. It was manufactured want, installed from outside, then mistaken for hunger inside.
+Change nothing else in your life to stay free. Same kettle. Same walk to work. Same bus. Same desk. You do not need a new routine, a new breakfast system, a new set of rules taped to the fridge. Freedom lives inside the old routine with one fraud removed. That is why it is easy. That is why it holds.
 
-Today look with kind, clear eyes. See the con for what it is and feel the difference.
+You walked out of the Sugar Trap in an ordinary evening. You will prove it in ordinary mornings. Each clear waking, each honest hunger met, each plate left at satisfied teaches the body what it always knew and lets the mind rest. No watchfulness. No score. Morning after morning, lived free.
 
-You will see BAD SUGAR everywhere, dressed as love and fun. You will hear a wrapper rustle two trolleys away. You will see a tired mother hand a bar to a whining child to buy five minutes peace. You will see a young man buy a giant bottle and a doughnut for lunch and call it fuel.
+### The Shop With Clear Eyes
 
-Do not envy them. Pity them, warmly, privately, without a word spoken aloud.
+Go to the shop today. Go as you always went. Do not cross the street to avoid it. Do not clutch a list like armour. Walk in free.
 
-Ask yourself as you pass:
+We once walked those aisles hunted. We knew where the bright paper lived. Our eyes went there first though our feet pretended to shop for supper. Our hands remembered the weight of the family bar before our minds had chosen. We told ourselves everyone buys it, so it must be fine, and we felt both excited and ashamed at the till.
 
-Does that really look like enjoyment — the hurried bite, the eyes elsewhere, the hand back in the bag before the swallow ends?
+Walk it now and watch what has changed. The lights are the same. The music is the same. The paper still shouts. But the shout is not addressed to you.
 
-Would a free person need that fixed stare at the shelf?
+You will see the checkout ambush stacked high to catch tired hands. You will see cartoon mascots grinning from boxes that promise love and fun. You will see grown adults pausing, glazed, doing sums about treats earned and weeks been good. You will feel something rise in your chest. Make sure you name it rightly.
 
-Would a genuine treat leave the eater flatter and hungrier after?
+It is not envy. It is pity.
 
-You know it would not. They are not indulging. They are feeding a low the last dose created. They are still inside the Sugar Trap, paying daily for something that does nothing for them.
+Does that really look like enjoyment? Look closely. The hunched shoulders. The quick eyes. The hand hovering, pulling back, hovering again. The sigh at the till. The rustle opened before the front door closes. Is that a person receiving a gift, or a person paying a toll? You know the toll because we all paid it. The roller coaster we rode did not run on pleasure. It ran on relief that faded before the street ended.
 
-And you — you walk past with ease. Not because you are being good. Not because you are holding yourself back. Because you see. The glow has gone. The packs are bright paper around a shabby trick. You feel relief and quiet gladness that you no longer feed it.
+When you see them, do not preach. Do not warn. Do not pity aloud. Let your ease do the talking. If someone asks, say lightly that you used to live on that paper and now you do not miss it, and leave it there. People who are still inside cannot be argued out from outside. They can only see someone walking past light and wonder how.
 
-That gladness is freedom. Marvellous, wonderful relief. It grows each time you pass and do not pause. Rejoice in it.
+I stood in a queue last spring behind a man with three bars balanced on his milk. He kept glancing at them, touching them straight, as if to reassure himself they were still there. I felt no pull to join him. I felt the warm rush I now feel whenever paper crosses my mind, the joyful shout that has become my natural reply. I thought of my supper waiting at home, real food I would meet hungry and leave satisfied, and I pitied his evening: the first bright bite, the fast fade, the second bar opened to chase the first, the box empty before the film ended.
 
-If you live with diabetes, take medication that affects blood sugar or appetite, are pregnant, live with an eating disorder past or present, or carry medical risk, follow your clinician first and use this book for belief change only.
+You will have that moment in the aisle. A wrapper will brighten. A smell will warm from the bakery corner. A memory will flicker — that dim cinema glow with chocolate passing hand to hand — and for half a second the old bell rings.
 
-**WHEN THE THOUGHT KNOCKS**
+Do not fight the flicker. Do not mourn it. Meet it with joy. Let the thought trigger celebration. Think, with a smile lifting before the sentence finishes:
 
-It will knock. Let it.
+BRILLIANT! I'M FREE!
 
-Tomorrow, next week, on a tired evening, a light sweet thought will cross your mind, quick as a passing van. An image of chocolate. A smell from a bakery. The old time-of-day tug at three o'clock or ten at night.
+Feel how it lands. Not lack. Relief. The picture that once meant pleasure now means escape. Each time you fire that thought, the next firing comes faster, till paper becomes background noise and your feet stay easy.
 
-Newly free eaters sometimes fear that thought means they are slipping or that vigilance will be life now. It means nothing of the sort.
+That is guarding without vigilance. You are not standing watch over yourself. You are answering a dead echo with a living truth. Thoughts cannot move your hand. Only belief moves the hand. While belief stays dead, thoughts pass like clouds and leave the sky clear.
 
-You cannot not think about sweetness in a world plastered with it, and you must not try. Trying not to think keeps the thought alive by wrestling it. We do not wrestle. We reframe.
+Buy what hunger asked for. Bread that smells of bread. Fruit that bursts. Cheese. Eggs. Vegetables with colour still in them. Meat or beans or rice, whatever your table loves. Carry them home glad. Linger a moment by the fruit and breathe it in. Feel the weight of a real bag in your hand, solid and honest, with nothing hidden inside it. The shop has not become dangerous. The shop has become simple. You came for supper and you leave with supper, with eyes clear and mind quiet, happy to be free among shelves that once hunted you.
 
-A passing thought is not an order. It is a dead enemy walking past the window. It is the old script, not your reasoning. When it comes, do not push it away with a frown. Meet it with joy and let joy answer it.
+### Supper Eaten Hungry
 
-Think, at once, brightly, laughingly, from the heart: BRILLIANT! I'M FREE!
+Come home and eat.
 
-Say it under your breath in the shop. Sing it in the kitchen. Whisper it on the sofa when the old hour tugs. Feel the lift that follows — the clean lift of escape, not the sickly buzz of a dose.
+This is the heart of ordinary freedom, and I want you to inhabit it fully. Not as a rule. As a pleasure.
 
-That is your thought for life, whenever sweetness crosses your mind. Each time you think it, the next thought is freer. The wire thins. Soon weeks pass without a flicker. Then when a flicker comes, you smile because it lets you feel your freedom again.
+Cook what you like. Serve it plain and warm. Sit down. Notice hunger before you lift the fork. That hollow, open feeling that welcomes many foods, not one bright paper. That is the signal the trap drowned for years. Hear it again.
 
-Ask, kindly, when the voice whispers:
+Eat slowly enough to taste. Notice salt. Notice butter. Notice the chew of bread, the juice of tomato, the deep satisfaction of potato, the clean burst of fruit after. Notice how pleasure stays, deepens, spreads through the belly, rather than shouting and vanishing. Notice the moment pleasure quiets and fullness arrives. Stop there. Leave food on the plate if fullness came first. Take more if hunger still calls. No counting. No penance. No praise.
 
-If that thought were wisdom, why does answering it always leave me flatter, foggier, wanting more?
+We feared eating would turn grey without bright paper at the end. The fact is, eating turns bright again once fog lifts. BAD SUGAR never added joy to meals. It stole appetite, coated the tongue, borrowed hunger and repaid flatness. Meals eaten under its shadow were never fully tasted because the mouth waited for the shout after. Now the mouth belongs to the meal.
 
-If that thought were mine, why does my whole body feel glad when I answer with freedom?
+Do you remember telling yourself you had been good all week and therefore a treat when you feel you deserve one was owed? Hear how strange that sounds now. Who was keeping score? Who owed whom? The body does not deal in good and bad. The body deals in hungry and satisfied. When you meet hunger with real food and leave it at satisfied, there is no scoreboard left to settle with paper.
 
-You know. The thought is an echo. The gladness is you.
+Ask, with your own belly as witness.
 
-You do not guard freedom with effort. You guard clear seeing, and clear seeing guards you.
+When dessert closed the meal in the old days, did you rise light and content, or heavy and already hunting? When you close the meal at satisfied now, do you rise scolded, or calm and ready for the evening?
 
-The warmth you remember from the best sweet moment — the laughter in the dimmed lights, held close — was the company, the story, the rest, the evening itself. The dose rode along and sent the bill. You keep the evening. You keep the laughter. You keep it all, brighter, because no fog settles over it now.
+Only one honest answer fits. Paper closed nothing. Satisfaction closes.
 
-**IF YOU CATCH A CRUMB**
+I eat suppers now I would once have called too plain to love: soup and bread, chicken and greens, rice and beans, apples and cheese. I love them more than I ever loved the bright boxes because I taste them. Taste sharpens when fog leaves. Hunger sharpens. Joy sharpens. Marvellous how little the body asks when the con stops shouting over it — food, water, rest, warmth — and how fully it thanks you.
 
-Let me forgive you in advance, so no shame can ever rebuild the trap.
+Sit a little after. Feel the belly calm and warm. Feel the mouth clean. Feel the head clear. There is no second hunger hammering underneath the first fullness. There is no rustle calling from the cupboard. There is supper, done, and evening ahead, open. That is nature returning, with nothing else changed.
 
-If one day, half-asleep with tiredness or kindness, you take a bite of BAD SUGAR — a cake pressed on you at work, a spoonful without thinking, a tired reach at night — do not panic, do not mourn, do not call it proof.
+Eat what your hunger welcomes. Leave what satisfaction declines. Sleep will come softer without rustle. Mornings will come brighter without debt. That is not a system. That is nature returning, with nothing else changed.
 
-It is a rumble strip, not a crash. A lesson to slow down and see, not evidence you have failed.
+### The Evening Without Rustle
 
-The body absorbs an accidental crumb without drama. Nothing revives unless belief is let back in. What matters is the very next thought.
+Evenings were our hardest hour. Say so plainly, so no soft evening can surprise you.
 
-Do not say, “I have blown it, so I may as well carry on.” That sentence is the Con talking, turning a stumble to slavery by shame.
+We came home tired. The day had taken. The sofa called. The cupboard called louder. We told ourselves one small sweet to soften the edge, then watched the edge sharpen as the box emptied. We felt the short term lift then fast drop in our own nerves and called it comfort. We went to bed sticky-mouthed and vowed tomorrow would be different, and tomorrow kept today safe for the hunt.
 
-Say, clearly: “That was fog, not pleasure. I see it. I am free.” Notice the cloy, the dull second bite, the quick slide to want again. Let the ugliness teach you. Then leave it behind with relief and get on with enjoying your life.
+Live this evening differently, not by effort, but by sight.
 
-Ask:
+Make tea. Run a bath. Talk. Read. Watch the film. Sit in lamplight with people you love or with quiet you love. Let tiredness be tiredness. Tiredness asks for rest, not rescue. Hunger asks for supper, not dosing. Boredom asks for interest or sleep, not paper. Let the lamp glow. Let the street go quiet outside. Let the house settle around you without paper in the middle of it.
 
-Did that bite give me energy or take it?
+When the old hand-twitch comes — that narrow pull toward one bright thing though the belly is full — welcome it for what it is. It is not need. Hunger opens wide toward many foods. This echo narrows toward one paper and fades in minutes when unfed. That narrowness proves its source. It is the tiny physical loop settling. It is the Nibbler dying, not demanding.
 
-Did it comfort me or add fog to tiredness?
+Rejoice at it. A dying grumble is good news. In days, not months, the mouth forgets paper, the belly rediscovers its signal, the afternoons lift without coaxing. The hump, where it sounds at all, sounds faint and brief. It never needed battle. It needs only to stay unfed while belief stays dead.
 
-Do I want a life of that, for the rest of my evenings?
+Do not measure the evening by perfect mood. Some evenings will be warm and bright. Some will be flat and dull, as life always is. Paper never smoothed life; it borrowed bright and repaid flat. Now a flat hour is only life, not debt. Meet it with living — supper, bath, bed, talk, walk, work, laughter — never with dosing. By morning the flat will have passed and you will be gladder still to be free.
 
-You know. One accidental taste proves nothing except that the trap is still sitting there for the trapped. It does not prove you are trapped. You prove freedom with the next clear hour, and the next, lived with ease.
+And if a loud thought comes on a beast of a day — "celebrating with chocolate will soften this, just this once" — hear whose voice that is. It is not your wisdom speaking. It is the old brainwashing translating tiredness as need. Paper never softened a day. Paper added scold to tiredness. The comfort you remember was warmth, rest, people — paper only riding along.
 
-But hear me with love, because brave people have been fooled by gentleness: never test freedom with a deliberate dose. A deliberate one is not an accident. It is reopening a decision that is closed, feeding the Nibbler while whispering to the mind that relief lives in the wrapper. The craving, once triggered, carries past stop — not because you are weak, but because that is the trap’s ordinary work when fed.
+Answer with joy, never with debate. See the rescuer as the perpetrator. Pity the thought. Let the bad day be met with kindness that truly soothes. By morning the lying door will have vanished and the sofa will hold no memory of rustle, only rest.
 
-You do not need to prove you are free. You are free. Live as if you know it, and knowing grows.
+And if a clever thought comes on a good day — "one to prove I am free, I have got away with seeing" — laugh aloud. A free eater does not prove freedom by feeding the hunt. A free eater proves freedom by having no wish to feed it. One deliberate dose does not test belief; it re-teaches that paper matters, polishes the bell, wakes the hunt till one bite carries the box. You do not need to prove an open door by walking back inside. You prove it by walking past with relief.
 
-**LET THEM EAT, LET THEM SEE**
+Both thoughts share one root. They ask you to reopen a closed decision. Smile at the root and leave it unfed. You have supper to enjoy, sleep to sink into, morning to meet clear. The evening needs nothing added.
 
-You will want to tell everyone. Your skin is brighter. Your afternoons are cleaner. Your evenings are yours. You want to shake the tired eater in the queue and say, “Look! There is nothing to lose!”
+### If A Crumb Slips
 
-Don’t.
+Hear this now so no accident can frighten you later.
 
-I say this as one who preached on day two and watched eyes glaze and my own doubt stir. Preaching breeds argument, and argument reopens the very question you have closed. It drags you back into defending freedom with words when freedom is proved by living.
+If ever a crumb comes by accident — a sauce thickened unaware, a biscuit taken in kind ignorance at a friend's table, a sip of something sweet wrongly poured — do not panic and do not scold. The body absorbs a jolt. Freedom stands on seeing, not on panic.
 
-Live visibly and quietly. Eat with pleasure. Leave food half-finished when satisfied without comment. Pass the sweets at the till without a sigh or a speech. Laugh fully at the table. When someone asks why you look brighter, tell them simply, if they truly want to know. If they scoff, smile and let it go. The Sweet Con defends itself loudly in others for a while. Your ease is louder in the end.
+We were taught by the old method that one slip erases everything and proves we are broken. That lie turned rumbles into crashes. A rumble strip on a bright road does not mean you have crashed. It means steer true again. Feel the rumble, thank it for the warning, drive on clear to supper eaten hungry and left at satisfied.
 
-Pity, never envy. Help only when asked. Guard your own clear mind from other voices that rebuild the Con — the diet talk, the moderation talk, the “just one won’t hurt” talk, the willpower bragging about white-knuckle weeks. You know those voices now for what they are: the old method talking, the trap guarding itself.
+Ask at once what is true. Did that accidental crumb taste like heaven regained, or like cloy and coating and faint nausea underneath? Did it leave you lifted, or flat and thirsty and already hearing the narrow pull? Let the lesson deepen sight. Tell yourself the truth promptly: that was the trap showing its face, not love returning. Then forget it. Wash your mouth with water. Eat your next meal hungry. Sleep soft. The incident shrinks behind you with every clear hour.
 
-You follow clear seeing, not noise.
+Never let an accident become a deliberate repeat. The mind cannot afford what the body can absorb. The body copes with a blip. The mind must not steer toward the blip. A slip revives nothing unless the old belief is let back in with it. Guard the belief and behaviour follows.
 
-You eat what you want when hungry, stop at satisfied, enjoy real meals as favourite, sleep, walk, laugh, work through the afternoon without the lift-crash-repeat. No counting. No fear. No vigilance as a way of life. Just life, lived sweetly in its true sense — full, warm, present.
+I know a free eater who bit into a cake at work believing it plain, tasted the flood, spat half into a napkin, laughed, and ate her apple. She did not count days from zero. She did not mourn. She thought her bright thought and walked on lighter, glad the taste confirmed what sight already knew. Weeks later she could barely recall the incident. That is forgiveness rightly used — a lesson, not a license.
 
-That is what escape looks like from the outside: utterly ordinary. And utterly marvellous from the inside.
+So do not count. Do not weigh. Do not confess to yourself nightly as if freedom were probation. Inhabit days. When memory crosses, celebrate. When a crumb crosses by mistake, learn and release. Shame never freed anyone. Sight frees. The road stays bright because you keep your eyes on where you are going, not on the rumble behind you.
 
-**12. NEVER REOPEN THE DECISION**
+### Pity, Never Envy, And Quiet Feet
+
+You will meet trapped users everywhere now — at birthdays, at cinemas, at office tables, at family suppers where love is served with paper around it. Go everywhere. Meet everyone. Change nothing else in life to stay free.
+
+Do not envy the birthday table groaning with glossy cakes. Pity the groan underneath the gloss. Watch the children loud on frosting then weeping an hour later, the adults bright for ten minutes then foggy and short. Is that celebration, or taxation? You know because we paid. The joy in the room was people, music, laughter, candles, belonging — paper only sneaking a ride and charging for it. Sit among them easy. Take fruit gladly. Laugh fully. Leave the gloss untouched without a speech.
+
+Do not envy the pair sharing glossy chocolate in the dark while the film plays. Pity the hunt inside the sharing. The film gives the laughter and the closeness. The chocolate gives the coating and the second reach before the plot turns. You can love films more now, not less, because your mouth is not busy chasing fade. Sit back and let the story carry you, mouth clean, belly calm, mind present.
+
+Do not envy the colleague who says she has been good and unwraps her reward. Pity the scoreboard. Goodness needs no edible wage. Hunger needs food. Tiredness needs rest. Virtue needs no payment in fog. Smile at her warmly. Talk of work, of weekend, of anything real. Leave her paper to her evening. Your ease says more than any warning.
+
+And do not preach to any of them. The fastest way to reopen your own doubt is to argue someone else out of theirs. They will defend what you attack, and their defence will echo in your ears on a tired evening. Let visible ease recruit. Eat gladly. Laugh fully. Leave sweets untouched without comment, or take fruit gladly when offered, with a clear "Lovely, I will have the peach." No speech about traps. No warning about health. No contempt. Warm to the person always. Harsh to the fraud only in your own heart.
+
+If someone presses — "Go on, one won't hurt, don't be boring" — answer light and closed. "I used to live on those and I feel brilliant free of them. I am happy as I am." Smile. Change the subject. You owe no debate. Freedom needs no defence. The moment you debate, you imply there is something to debate. There is not.
+
+Walk with quiet feet. Sleep soft. Wake clear. Let mornings prove it. Let hunger prove it. Let shops prove it. Let evenings prove it. Each ordinary day returns what was stolen — taste bright, belly calm, mind quiet, joy unborrowed. No vigilance. No armour. Life lived, with hunger as guide and satisfaction as close.
+
+Whenever BAD SUGAR crosses your mind — wrapper bright in a shop, smell warm from a doorway, memory of old sweets, twitch in the evening — you will not fight it, you will not mourn it, you will not debate it. You will do the one bright thing you own.
+
+You will think, with relief flooding warm:
+
+BRILLIANT! I'M FREE!
+
+That shout turns memory into celebration and guards freedom without vigilance. You do not suppress thoughts. You reframe them with joy. You do not count days. You inhabit days. You do not avoid life. You walk through it free.
+
+**13. NEVER REOPEN THE DECISION**
 A passing thought is a dead enemy, not an order.
 
-**SUMMARY**
-
-* Mornings, shops and meals are lived the same, only clearer and brighter without the fog after the dose.
-* Hunger met with real food and left at satisfied is pleasure enough; the body leads again.
-* Other eaters are to be pitied warmly in private, never envied and never preached at.
-* A sweet thought is met with joy, not wrestling — gladness answers it and makes the next thought freer.
-* An accidental bite is a lesson to see, not a failure; it changes nothing unless belief is let back in.
-* Freedom is not vigilance; it is clear seeing lived as ordinary ease.
+### SUMMARY
+- Mornings run on hunger met and left at satisfied, and prove freedom inside the same kettle, walk and desk with nothing else changed.
+- Shops are walked with clear eyes, and trapped buyers are met with quiet pity and no preaching while paper becomes background noise.
+- Plain suppers taste brighter once fog lifts, and satisfaction closes the meal that paper always left open and hunting.
+- Evenings without rustle meet tiredness with rest and hunger with food, and narrow evening pulls are welcomed as a dying echo rather than need.
+- An accidental crumb is a rumble to learn from and release, and never a crash or a reason to steer back deliberately.
+- A passing sweet thought is answered with joyful celebration, and the closed decision stays closed while ordinary days are lived free.
