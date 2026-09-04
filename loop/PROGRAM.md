@@ -31,7 +31,7 @@ acting.
 written at boundaries, work lands between them). Before acting, confirm each
 claimed completed unit against the on-disk markers — research bank files
 (`research/banks/`), the accepted plan (`master-plan.md`) and its review
-(`master-plan-review.md`), `production-books/quit-sugar/chapters/`,
+(`master-plan-review.md`), `loop/iterations/NNN/replicate-{a,b}/chapters/`,
 `loop/iterations/NNN/replicate-a/judgments/` and `replicate-b/judgments/`,
 `trace-analysis.md`, and `decision.md` — and
 resume from the *furthest* point the markers support, not the stale marker.
@@ -87,12 +87,13 @@ the same contract prompts directly.) The role→capability map, the spawn
 contract, and per-harness bindings live in `loop/HARNESS.md`. **Pi harness:**
 before the first Muse Spark spawn, export
 `PI_PROVIDER_FALLBACK_CONFIG` to this repo's `.pi/provider-fallback.json`
-(so `pi-provider-fallback` loads the Zen→Vercel chain; without the export
+(so `pi-provider-fallback` loads the Go→Zen→Vercel chain; without the export
 the plugin looks in `~/.pi/agent/extensions/` and stays disabled). On a route, quota, or unavailable failure the orchestrator
 retries that same unit once on the role's `*_fallback_model` (Muse Spark:
-OpenCode Zen `muse-spark-1.3-contributor-free` → Vercel
+OpenCode Go `muse-spark-1.3-contributor` → Zen
+`muse-spark-1.3-contributor-free` → Vercel
 `meta/muse-spark-1.3-contributor`). The next unit always starts on the
-primary — fallback is per-call, never sticky. Both routes failing → stop
+primary — fallback is per-call, never sticky. All routes failing → stop
 and escalate to the founder. Never swap contributor → non-contributor
 (same weights, ~20× cost). The hypothesizer never proposes a model,
 fallback, or route change.
@@ -201,7 +202,7 @@ baseline nothing exists to reuse, so `research_reuse.sh` is not consulted;
 research always runs at 000.
 
 1. Run the factory END TO END per Step 3 below: research → plan →
-   two independent full books (replicate A then replicate B) from that
+   two independent full books (replicate A and B concurrently) from that
    one plan. Nothing is reused from before the campaign; the current factory
    must own every artifact and trace it produces.
 2. Build `loop/reference-alignment.md` from the freshly accepted plan (its
@@ -282,13 +283,13 @@ Planning still runs once — two plans would produce two different books and
 make cluster comparison unmeasurable. The two writes are replicate A and
 replicate B in parallel (founder authorized, 2026-09-04):
 
-1. Write A into `loop/iterations/NNN/replicate-a/chapters/` (chapters 01 → last).
-2. Write B into `loop/iterations/NNN/replicate-b/chapters/` (chapters 01 → last).
-3. Run `REPLICATE=a` and `REPLICATE=b` writer processes at once. No extra
-   git worktrees.
-4. Do not fill `production-books/quit-sugar/chapters/` during this step.
-5. Live dir is filled at Step 6 from the KEEP snapshot (replicate A), or
-   left as today until then.
+1. Write A and B concurrently, each into its own
+   `loop/iterations/NNN/replicate-{a,b}/chapters/` (chapters 01 → last).
+   No extra git worktrees.
+2. Judge A when write A's runner exits; judge B when write B's exits.
+   Do not wait for both writes before starting the first judge.
+3. Live `production-books/quit-sugar/chapters/` stays untouched until
+   Step 6 (KEEP copies replicate A).
 
 Within one book, chapters stay sequential (01 → last).
 
@@ -407,11 +408,13 @@ Shared (once per iteration, not per replicate): `hypothesis.md`,
   spawn): the orchestrator retries the role once with the same inputs on the
   primary model. If that retry fails with a route, quota, or unavailable
   error AND the role has a `*_fallback_model` in config, retry the same unit
-  once on the fallback. Record the model that actually ran in that unit's
-  `metadata.json`. The next unit always starts on the primary. Still
-  failing on both → iteration INCONCLUSIVE, or escalate to the founder when
-  both routes are credential/route failures. Never fall back to a
-  non-contributor `meta/muse-spark-*` alias.
+  once on the fallback. Muse Spark 429s retry on that route (up to 4 × 90s)
+  then fall to the next in the Go → Zen → Vercel chain; 403/401/402 fall
+  through immediately. Record the model and `failed_routes` that actually
+  ran in that unit's `metadata.json`. The next unit always starts on the
+  primary. Still failing on all routes → iteration INCONCLUSIVE, or
+  escalate to the founder when all routes are credential/route failures.
+  Never fall back to a non-contributor `meta/muse-spark-*` alias.
 - Judge timeout: retryable unit failure (`.partial` only, no `response.md`); re-run that judge job.
 - Writer refusal: the exact refusal line is saved to
   `traces/chapter-NN/refusal.md` under the current replicate; no chapter file

@@ -13,9 +13,10 @@
 #                  (writer, plan-writer) on paid contributor, and for every
 #                  other role on DeepSeek V4 Flash. Workspace must opt in.
 #   opencode     — [PI BINDING] OpenCode Zen. Muse mid-chain: contributor-free
-#                  with the Go key, then OPENCODE_API_KEY.
+#                  with OPENCODE_API_KEY (do not put the Go key on Zen).
 #   vercel       — Vercel AI Gateway. Last coded fallback for Muse Spark roles
-#                  (same contributor weights, paid). Never the non-contributor
+#                  (same contributor weights, paid). 402 insufficient_funds
+#                  2026-09-04; a top-up restores it. Never the non-contributor
 #                  alias (same weights, ~20× cost).
 # Command Code is retired. There is no OpenAI subscription (openai-sub) route.
 #
@@ -24,31 +25,30 @@
 # ── Writer — chapter-writer sub-agent (contract: prompts/chapter-writer.md) ──
 # Muse Spark 1.3 chain (founder-authorized; all writes go through muse_client.py):
 #   1. opencode-go  muse-spark-1.3-contributor      OPENCODE_GO_API_KEY  /zen/go/v1/responses
-#   2. opencode     muse-spark-1.3-contributor-free OPENCODE_GO_API_KEY  /zen/v1/responses
-#   3. opencode     muse-spark-1.3-contributor-free OPENCODE_API_KEY     /zen/v1/responses
-#   4. vercel       meta/muse-spark-1.3-contributor AI_GATEWAY_API_KEY
-# 429 retries 15s then 30s on the same route before falling through.
-# 403 DataPolicyError / 401 / 404 fall through immediately. Never non-contributor.
+#   2. opencode     muse-spark-1.3-contributor-free OPENCODE_API_KEY     /zen/v1/responses
+#   3. vercel       meta/muse-spark-1.3-contributor AI_GATEWAY_API_KEY   (last resort)
+# 429: up to 4 tries × 90s on that route, then next. 403/401/402 fall through
+# immediately. Never non-contributor. Never rotate the Go key onto Zen.
 writer_model: muse-spark-1.3-contributor
-writer_fallback_model: meta/muse-spark-1.3-contributor
+writer_fallback_model: muse-spark-1.3-contributor-free
 writer_endpoint: https://opencode.ai/zen/go/v1/responses
 writer_auth_env: OPENCODE_GO_API_KEY
 writer_route: opencode-go
-writer_fallback_endpoint: https://ai-gateway.vercel.sh/v1/chat/completions
-writer_fallback_auth_env: AI_GATEWAY_API_KEY
-writer_fallback_route: vercel
+writer_fallback_endpoint: https://opencode.ai/zen/v1/responses
+writer_fallback_auth_env: OPENCODE_API_KEY
+writer_fallback_route: opencode
 # No completion cap: requests omit max_tokens.
 
 # ── Plan-writer — master-plan skill (contract: prompts/master-plan-skill-v2.md)
 # Same Muse Spark routing as the writer.
 planner_model: muse-spark-1.3-contributor
-planner_fallback_model: meta/muse-spark-1.3-contributor
+planner_fallback_model: muse-spark-1.3-contributor-free
 planner_endpoint: https://opencode.ai/zen/go/v1/responses
 planner_auth_env: OPENCODE_GO_API_KEY
 planner_route: opencode-go
-planner_fallback_endpoint: https://ai-gateway.vercel.sh/v1/chat/completions
-planner_fallback_auth_env: AI_GATEWAY_API_KEY
-planner_fallback_route: vercel
+planner_fallback_endpoint: https://opencode.ai/zen/v1/responses
+planner_fallback_auth_env: OPENCODE_API_KEY
+planner_fallback_route: opencode
 planner_reasoning: high
 
 # ── Hypothesizer — loop/prompts/hypothesizer.md ──

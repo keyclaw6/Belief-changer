@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write quit-sugar chapters 01–18 for one replicate via Muse Spark (Zen, Vercel fallback)."""
+"""Write quit-sugar chapters for one replicate via Muse Spark (Go → Zen → Vercel)."""
 from __future__ import annotations
 
 import json

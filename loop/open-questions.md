@@ -66,19 +66,24 @@ Also: `prompts/style-guide.md` already says "the chapter reviewer judges the
 actual text" — a reviewer that does not exist. Fix that sentence when the
 writer-budget line lands, or when this item is built, whichever is first.
 
-## 5. Factory robustness (resume-after-stop) — harness work, not a loop iteration
+## 5. Factory robustness (resume-after-stop) — DONE (2026-09-04, 021+)
 
 Robustness is a harness property: the conversation must resume from the
-furthest on-disk marker after any stop. Improvements are made only in the
-harness bindings — pi: `pi-goal-x` goal settings (`/sisyphus-direct`,
-`/goal-direct`, `agent_settled`), `pi-provider-fallback`; Cursor:
-`.cursor/hooks/loop-continue.py` and its `loop_limit`s — or as a thin
-durability layer (Temporal-style) that re-enters the same conversation.
+furthest on-disk marker after any stop. 019/020 breaks were inside a runner
+or a tool-call stream (judge hang, Muse 429, write stream drop, judge
+`exit -9`), not a conversation death the stop hook missed. Three native
+fixes, no Temporal:
+
+1. `judge_replicate.py`: 600s timeout, one in-runner retry, a failed judge
+   does not abort siblings.
+2. `muse_client.py`: 429 in the transient set, 90s × up to 4 on that route.
+3. Each runner starts in its own tmux session; the conversation waits with
+   `while tmux has-session; do sleep 60; done` (not `tmux wait-for`).
+
 Never a Makefile / `run_factory.py` / cron driver, never a continue-loop
-encoded in prompts or skills, never a change to the KEEP object. Evidence
-for a fix is a stall in `loop/state.md`'s journal or a hook log; the fix is
-made outside campaign iterations (like judge calibration) and needs no
-baseline because it changes no factory prompt.
+encoded in prompts or skills, never a change to the KEEP object. No hook
+or `loop-continue.py` change. Revisit Temporal only if the journal shows a
+conversation death the hook did not re-enter.
 
 ## 6. Anti-slop skills (stop-slop, avoid-ai-writing) — PARKED (founder, 2026-09-04)
 
@@ -126,32 +131,26 @@ census PRIMARY is `factory-speech`, `assigned-verdict-hedge`, or
 primary hypothesis, never as a standalone iteration. A belief-mechanic or
 journey PRIMARY is never a trigger.
 
-## 7. Write replicate A and B in parallel — IMPLEMENTED (2026-09-04)
+## 7. Write replicate A and B in parallel — AUTHORIZED 2026-09-04, built for 021+
 
-Why serial today: PROGRAM §4 Step 3 writes A into the live
-`production-books/quit-sugar/chapters/`, snapshots, deletes the live
-chapters, and writes B into the same directory; `write_replicate.py` reads
-the previous chapter from that live dir and writes its `.partial` → rename
-marker there. Two replicates at once would collide on `chapter-NN.md`.
-That is the only reason. Within one book chapters stay sequential (each
-spawn receives the previous chapter); that does not change.
+Why it was serial: PROGRAM §4 Step 3 wrote A into the live
+`production-books/quit-sugar/chapters/`, snapshotted, wiped, then wrote B
+into the same directory. Two replicates at once collided on
+`chapter-NN.md`. Within one book chapters stay sequential (each spawn
+receives the previous chapter); that does not change.
 
-Decision: yes in principle. Not a measurement risk: A and B start from
-identical inputs and judges already read from the replicate tree (018 ran
-"Write B + judge A in parallel"). One operational caveat: two Muse Spark
-streams double the instantaneous load on Zen; a quota fallback to Vercel
-on one replicate is the existing intended-vs-actual confound in
-`metadata.json`, read as a confound as today, and made more likely by
-parallel runs.
+Not a measurement risk: A and B start from identical inputs and judges
+already read from the replicate tree. Caveat: two Muse streams double
+instantaneous Zen load → more 429s (item 5's 90s retry covers it) and a
+likelier Go→Zen or Zen→Vercel fallback on one replicate, logged as the
+existing route confound.
 
-Shape when built: each replicate writes directly into its own
-`loop/iterations/NNN/replicate-{a,b}/chapters/` and reads the previous
-chapter from there; the live dir is filled once at Step 6 from the
-accepted snapshot (A on KEEP, as PROGRAM already says). No worktrees. The
-`.partial` convention is unchanged. Two `REPLICATE` processes run at once;
-the orchestrator waits on both exits; judge A starts when write A exits.
+Shape: each replicate writes/reads
+`loop/iterations/NNN/replicate-{a,b}/chapters/`. Live dir is filled once at
+Step 6 from replicate A on KEEP. Two `write_replicate.py` processes, one
+tmux session each. No worktrees. Judge A starts when write A's session
+ends — wait on A's session alone, not on both.
 
-Status: implemented 2026-09-04. PROGRAM §4 Step 3 writes A and B into
-`loop/iterations/NNN/replicate-{a,b}/chapters/` in parallel; live dir filled
-at Step 6. `write_replicate.py` reads/writes that tree. `judge_replicate.py`
-fans out pending `agent` jobs. Pi adapter unchanged.
+Status: AUTHORIZED 2026-09-04, built for 021+. `write_replicate.py` uses
+the replicate chapter tree. `judge_replicate.py` runs 8-wide, one runner
+at a time. Pi adapter unchanged.
