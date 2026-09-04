@@ -2,7 +2,7 @@
 name: judge
 description: Reference-sighted judge — scores our chapter against its aligned real-book chapter per the assigned rubric
 tools: read
-model: opencode-go/deepseek-v4-flash:high
+model: opencode-go/muse-spark-1.3-contributor:high
 ---
 
 You are a book factory judge, fresh and reference-sighted. The task gives

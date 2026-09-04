@@ -10,8 +10,9 @@
 # fields marked [PI BINDING] are the pi-harness realization only — another
 # harness substitutes its own connection and ignores those fields.
 #   opencode-go  — [PI BINDING] OpenCode Go. Primary for Muse Spark roles
-#                  (writer, plan-writer) on paid contributor, and for every
-#                  other role on DeepSeek V4 Flash. Workspace must opt in.
+#                  (writer, plan-writer, plan-reviewer, research, analyzer)
+#                  on paid contributor. Workspace must opt in. Cursor chapter
+#                  judges stay composer-2.5 (live panel instrument).
 #   opencode     — [PI BINDING] OpenCode Zen. Muse mid-chain: contributor-free
 #                  with OPENCODE_API_KEY (do not put the Go key on Zen).
 #   vercel       — Vercel AI Gateway. Last coded fallback for Muse Spark roles
@@ -59,18 +60,19 @@ hypothesizer_model: claude-fable-5-1
 hypothesizer_route: harness-subagent
 hypothesizer_reasoning: high
 
-# ── Everything else runs on DeepSeek V4 Flash via the OpenCode Zen ──
-# ── subscription (opencode route). ──
+# ── Research, plan-review, analyzer: same Muse Spark 1.3 Go chain ──
+# Cursor chapter judges stay composer-2.5 (019/020 panel). Config default
+# for other harnesses is Muse; do not silently retune the Cursor panel.
 
 # Research — the orchestrator/lead AND the sub-agents it spawns.
-# DeepSeek V4 Flash via OpenCode Zen. Depth stays sacred and unlimited;
+# Muse Spark 1.3 contributor via OpenCode Go. Depth stays sacred and unlimited;
 # sub-agents search/fetch via scripts/loop-runner/web_tools.py.
-researcher_model: deepseek-v4-flash
-researcher_endpoint: https://opencode.ai/zen/go/v1
-researcher_auth_env: OPENCODE_API_KEY
+researcher_model: muse-spark-1.3-contributor
+researcher_endpoint: https://opencode.ai/zen/go/v1/responses
+researcher_auth_env: OPENCODE_GO_API_KEY
 researcher_route: opencode-go
 researcher_reasoning: high
-research_subagent_model: deepseek-v4-flash
+research_subagent_model: muse-spark-1.3-contributor
 research_subagent_reasoning: high
 research_subagent_route: opencode-go
 # Depth is sacred: no search/fetch limits. Go as wide as still brings results.
@@ -80,23 +82,25 @@ research_fetch_limit: unlimited
 # hypothesis changes the research stage or the brief (PROGRAM Step 3).
 
 # Plan-reviewer — the plan-review gate (contract: prompts/master-plan-reviewer-v2.md)
-plan_reviewer_model: deepseek-v4-flash
+# Cursor: scripts/loop-runner/plan_review.py via muse_client (same Go→Zen→Vercel chain).
+plan_reviewer_model: muse-spark-1.3-contributor
 plan_reviewer_reasoning: high
 plan_reviewer_route: opencode-go
 
 # Judges — the three chapter judges + book-arc (loop/judges/*.md)
-judge_model: deepseek-v4-flash
+# Preferred default for pi/opencode. Cursor live panel is composer-2.5.
+judge_model: muse-spark-1.3-contributor
 judge_reasoning: high
 judge_route: opencode-go
 
 # Trace-analyzer — loop/prompts/trace-analyzer.md
-analyzer_model: deepseek-v4-flash
+analyzer_model: muse-spark-1.3-contributor
 analyzer_reasoning: high
 analyzer_route: opencode-go
 
-# Shared OpenCode Zen endpoint/auth for every opencode-routed role above.
+# Shared OpenCode Go endpoint/auth for Muse-routed roles above.
 opencode_endpoint: https://opencode.ai/zen/go/v1
-opencode_auth_env: OPENCODE_API_KEY
+opencode_auth_env: OPENCODE_GO_API_KEY
 
 # Reference
 reference_dir: calibration/reference/gsbs

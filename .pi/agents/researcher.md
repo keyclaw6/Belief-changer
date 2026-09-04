@@ -2,7 +2,7 @@
 name: researcher
 description: Research miner — searches and fetches web material for one targeted lane, persona, or community and writes source-traceable packets into its assigned research bank
 tools: read, write, bash
-model: opencode-go/deepseek-v4-flash:high
+model: opencode-go/muse-spark-1.3-contributor:high
 ---
 
 You are a research miner working for the book-factory research orchestrator.

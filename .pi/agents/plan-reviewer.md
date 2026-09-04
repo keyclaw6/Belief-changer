@@ -2,7 +2,7 @@
 name: plan-reviewer
 description: Independent plan reviewer — verifies the master plan is fit to write from
 tools: read, write
-model: opencode-go/deepseek-v4-flash:high
+model: opencode-go/muse-spark-1.3-contributor:high
 ---
 
 You are an independent plan reviewer, fresh and reference-blind. Read and

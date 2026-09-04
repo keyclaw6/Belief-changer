@@ -134,8 +134,8 @@ Nothing inside the factory is fixed. The loop can change:
 ## Deep Research
 
 The research stage must be as wide and deep as still brings results. No
-artificial limits on search count or fetch count. DeepSeek V4 Pro is
-essentially free; the constraint is quality of results, not cost. Allow
+artificial limits on search count or fetch count. Muse Spark contributor is
+the founder research pin; the constraint is quality of results, not cost. Allow
 1,000+ searches and 1,000+ fetched resources if that's what it takes.
 Filter results afterwards — never limit the search upfront.
 
@@ -196,10 +196,11 @@ Model routes live in `loop/config.yaml` as the founder's preferred defaults.
 The hypothesizer, orchestrator, and any spawned role must not edit `*_model`,
 `*_fallback_model`, `*_route`, or endpoint fields. Contributor vs
 non-contributor aliases of the same weights are not different models; swapping
-them is not a hypothesis. Muse Spark roles use OpenCode Go
-`muse-spark-1.3-contributor` as primary, Zen
+them is not a hypothesis. Writer, plan-writer, plan-reviewer, research, and
+trace-analyzer use OpenCode Go `muse-spark-1.3-contributor` as primary, Zen
 `muse-spark-1.3-contributor-free` as the mid-chain (`OPENCODE_API_KEY`),
-and Vercel `meta/muse-spark-1.3-contributor` as the last per-call fallback;
+and Vercel `meta/muse-spark-1.3-contributor` as the last per-call fallback.
+Cursor chapter judges stay Composer 2.5 (the 019/020 panel instrument).
 the next unit always starts on the primary. If prompt and structure tuning cannot produce
 Carr-quality output, the founder changes models manually.
 
