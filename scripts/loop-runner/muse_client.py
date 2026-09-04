@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""OpenCode Zen Muse Spark client with one Vercel contributor fallback (PROGRAM §1)."""
+"""Muse Spark: Go contributor → Zen contributor-free → Vercel contributor."""
 from __future__ import annotations
 
 import json
@@ -9,6 +9,8 @@ import time
 import urllib.error
 import urllib.request
 
+GO_URL = "https://opencode.ai/zen/go/v1/responses"
+GO_MODEL = "muse-spark-1.3-contributor"
 ZEN_URL = "https://opencode.ai/zen/v1/responses"
 ZEN_MODEL = "muse-spark-1.3-contributor-free"
 VERCEL_URL = "https://ai-gateway.vercel.sh/v1/chat/completions"
@@ -18,6 +20,7 @@ UA = (
     "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
 )
 TIMEOUT = 600
+RETRY_SLEEPS = (15, 30)
 
 
 def http_json(url: str, payload: dict, headers: dict) -> tuple[int, dict | str]:
@@ -61,56 +64,91 @@ def extract_vercel(data: dict) -> str:
         return ""
 
 
-def call_muse(prompt: str, *, reasoning: str | None = None) -> tuple[str, str, dict]:
-    oc = os.environ["OPENCODE_API_KEY"]
-    zen_headers = {
-        "Authorization": f"Bearer {oc}",
+def _headers(key: str) -> dict:
+    return {
+        "Authorization": f"Bearer {key}",
         "Content-Type": "application/json",
         "User-Agent": UA,
     }
-    zen_payload: dict = {"model": ZEN_MODEL, "input": prompt}
-    if reasoning:
-        zen_payload["reasoning"] = {"effort": reasoning}
-    t0 = time.time()
-    code, data = http_json(ZEN_URL, zen_payload, zen_headers)
-    for _ in range(2):
-        if code == 200 and isinstance(data, dict) and extract_zen(data).strip():
+
+
+def _retryable(code: int) -> bool:
+    return code == 429 or code >= 500
+
+
+def _post(url: str, payload: dict, key: str) -> tuple[int, dict | str]:
+    code, data = http_json(url, payload, _headers(key))
+    for delay in RETRY_SLEEPS:
+        if code == 200 or not _retryable(code):
             break
-        if not (isinstance(code, int) and code >= 500):
-            break
-        time.sleep(15)
-        code, data = http_json(ZEN_URL, zen_payload, zen_headers)
+        time.sleep(delay)
+        code, data = http_json(url, payload, _headers(key))
+    return code, data
+
+
+def _zen_hit(code, data, model, route, t0):
     if code == 200 and isinstance(data, dict):
         text = extract_zen(data)
         if text.strip():
-            return text, "opencode", {
-                "model": ZEN_MODEL,
-                "route": "opencode",
+            return text, route, {
+                "model": data.get("model") or model,
+                "route": route,
                 "latency_s": round(time.time() - t0, 3),
                 "usage": data.get("usage") or {},
+                "http": code,
             }
+    return None
+
+
+def call_muse(prompt: str, *, reasoning: str | None = None) -> tuple[str, str, dict]:
+    go_key = (os.environ.get("OPENCODE_GO_API_KEY") or "").strip()
+    zen_key = os.environ["OPENCODE_API_KEY"]
+    zen_payload: dict = {"model": ZEN_MODEL, "input": prompt}
+    go_payload: dict = {"model": GO_MODEL, "input": prompt}
+    if reasoning:
+        zen_payload["reasoning"] = {"effort": reasoning}
+        go_payload["reasoning"] = {"effort": reasoning}
+
+    statuses: list[str] = []
+
+    def try_responses(url: str, payload: dict, key: str, model: str, route: str):
+        t0 = time.time()
+        code, data = _post(url, payload, key)
+        statuses.append(f"{route}={code}")
+        return _zen_hit(code, data, model, route, t0), code, data
+
+    if go_key:
+        hit, _, _ = try_responses(GO_URL, go_payload, go_key, GO_MODEL, "opencode-go")
+        if hit:
+            return hit
+        hit, _, _ = try_responses(ZEN_URL, zen_payload, go_key, ZEN_MODEL, "opencode")
+        if hit:
+            return hit
+    hit, zen_code, zen_data = try_responses(
+        ZEN_URL, zen_payload, zen_key, ZEN_MODEL, "opencode"
+    )
+    if hit:
+        return hit
+
     vg = os.environ["AI_GATEWAY_API_KEY"]
-    v_headers = {
-        "Authorization": f"Bearer {vg}",
-        "Content-Type": "application/json",
-        "User-Agent": UA,
-    }
     v_payload = {
         "model": VERCEL_MODEL,
         "messages": [{"role": "user", "content": prompt}],
     }
     t1 = time.time()
-    code2, data2 = http_json(VERCEL_URL, v_payload, v_headers)
+    code2, data2 = _post(VERCEL_URL, v_payload, vg)
+    statuses.append(f"vercel={code2}")
     if code2 == 200 and isinstance(data2, dict):
         text = extract_vercel(data2)
         if text.strip():
             return text, "vercel", {
-                "model": VERCEL_MODEL,
+                "model": data2.get("model") or VERCEL_MODEL,
                 "route": "vercel",
                 "latency_s": round(time.time() - t1, 3),
-                "zen_failed_status": code,
+                "zen_failed_status": zen_code,
                 "usage": data2.get("usage") or {},
+                "http": code2,
             }
     raise SystemExit(
-        f"muse failed zen={code} vercel={code2} zen_body={str(data)[:400]}"
+        f"muse failed {' '.join(statuses)} last={str(zen_data)[:400]}"
     )

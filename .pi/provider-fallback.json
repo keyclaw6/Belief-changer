@@ -1,6 +1,10 @@
 {
   "enabled": true,
   "providers": {
+    "opencode-go": {
+      "enabled": true,
+      "fallbacks": []
+    },
     "opencode": {
       "enabled": true,
       "fallbacks": []
