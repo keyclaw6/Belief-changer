@@ -14,7 +14,9 @@ GSBS = REPO / "calibration/reference/gsbs"
 JUDGES = REPO / "loop/judges"
 AGENT = Path.home() / ".local/bin/agent"
 LANES = ("belief-mechanic", "voice-emotion", "reader-journey")
-TIMEOUT = int(os.environ.get("JUDGE_TIMEOUT", "180"))
+# Fable 5.1 2026-09-04: 8-wide (~0.4 GB/agent, ~7 GB free); 600s (median 43s, 019 hung 43m).
+TIMEOUT = int(os.environ.get("JUDGE_TIMEOUT", "600"))
+JUDGE_PARALLEL = int(os.environ.get("JUDGE_PARALLEL", "8"))
 
 
 def parse_alignment(text: str) -> dict[int, int]:
@@ -197,10 +199,9 @@ Never reference scores, history, or prior judgments. Do not write any files. You
 """
 
 
-def run_agent(prompt: str, out: Path) -> None:
+def run_agent(prompt: str, out: Path, tag: str) -> bool:
     out.parent.mkdir(parents=True, exist_ok=True)
-    prompt_path = out.parent / "prompt.md"
-    prompt_path.write_text(prompt)
+    (out.parent / "prompt.md").write_text(prompt)
     partial = out.with_suffix(out.suffix + ".partial")
     cmd = [
         str(AGENT),
@@ -211,32 +212,28 @@ def run_agent(prompt: str, out: Path) -> None:
         "--output-format", "text",
         prompt,
     ]
-    t0 = time.time()
-    try:
-        r = subprocess.run(cmd, cwd=str(REPO), capture_output=True, text=True, timeout=TIMEOUT)
-    except subprocess.TimeoutExpired as e:
-        text = e.stdout if isinstance(e.stdout, str) else ""
-        partial.write_text((text or "") + f"\n\n(agent timeout after {TIMEOUT}s)")
+    for attempt in (1, 2):
+        t0 = time.time()
+        try:
+            r = subprocess.run(cmd, cwd=str(REPO), capture_output=True, text=True, timeout=TIMEOUT)
+        except subprocess.TimeoutExpired:
+            print(f"TIMEOUT {tag} attempt {attempt} {TIMEOUT}s", flush=True)
+            continue
+        text = r.stdout
+        if r.returncode != 0 and not text.strip():
+            text = (r.stderr or "") + f"\n\n(agent exit {r.returncode})"
         (out.parent / "metadata.json").write_text(
             '{"model":"composer-2.5","harness":"cursor-agent-cli",'
             f'"spawn":"agent --trust --model composer-2.5 --mode ask -p","latency_s":{round(time.time()-t0,3)},'
-            f'"exit":-1,"timeout_s":{TIMEOUT}}}\n'
+            f'"exit":{r.returncode},"attempt":{attempt}}}\n'
         )
-        raise RuntimeError(f"judge timeout {out}: {TIMEOUT}s")
-    text = r.stdout
-    if r.returncode != 0 and not text.strip():
-        text = (r.stderr or "") + f"\n\n(agent exit {r.returncode})"
-    partial.write_text(text)
-    meta = out.parent / "metadata.json"
-    meta.write_text(
-        '{"model":"composer-2.5","harness":"cursor-agent-cli",'
-        f'"spawn":"agent --trust --model composer-2.5 --mode ask -p","latency_s":{round(time.time()-t0,3)},'
-        f'"exit":{r.returncode}}}\n'
-    )
-    if r.returncode != 0 and not (text.lstrip().startswith("PASS") or text.lstrip().startswith("FAIL")):
-        raise RuntimeError(f"judge failed {out}: exit {r.returncode} {(r.stderr or '')[:400]}")
-    partial.rename(out)
-    print(f"OK {out.relative_to(REPO)} {round(time.time()-t0,1)}s", flush=True)
+        if r.returncode == 0 or text.lstrip().startswith(("PASS", "FAIL")):
+            partial.write_text(text)
+            partial.rename(out)
+            print(f"OK {out.relative_to(REPO)} {round(time.time()-t0,1)}s", flush=True)
+            return True
+        print(f"FAIL {tag} attempt {attempt} exit {r.returncode}", flush=True)
+    return False
 
 
 def main() -> None:
@@ -311,22 +308,14 @@ def main() -> None:
 
     if not filtered:
         return
-    # ponytail: no cap of 2; default is every pending job (~40). JUDGE_WORKERS to lower.
-    workers = int(os.environ.get("JUDGE_WORKERS", "0")) or len(filtered)
-    errors: list[str] = []
+    workers = min(JUDGE_PARALLEL, len(filtered))
     with ThreadPoolExecutor(max_workers=workers) as pool:
-        futs = {}
-        for tag, out, prompt in filtered:
+        futs = {pool.submit(run_agent, prompt, out, tag): tag for tag, out, prompt in filtered}
+        for tag, _, _ in filtered:
             print(f"spawn {tag}", flush=True)
-            futs[pool.submit(run_agent, prompt, out)] = tag
-        for fut in as_completed(futs):
-            tag = futs[fut]
-            try:
-                fut.result()
-            except BaseException as e:
-                errors.append(f"{tag}: {e}")
-    if errors:
-        raise SystemExit("judge failures:\n" + "\n".join(errors))
+        bad = [futs[fut] for fut in as_completed(futs) if not fut.result()]
+    if bad:
+        raise SystemExit(f"{len(bad)} judge(s) missing after retry: {bad} — re-run to retry; existing reports are skipped")
 
 
 if __name__ == "__main__":
