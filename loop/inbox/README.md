@@ -11,10 +11,16 @@ Name it anything, e.g. `2026-08-12-shorten-instructions.md`. Inside:
 ```markdown
 # Hypothesis: <one line>
 
-**Change:** <which editable file, what change>
+**Change 1 (PRIMARY):** <editable file> — class: <census class> — component: <root component> — <the instruction change>
+**Change 2:** <optional; same fields; bound to a census class>
+**Change 3:** <optional; same fields; bound to a census class>
 **Because:** <the failure or intuition you're acting on>
-**Prediction:** <what should improve, and how the judges will show it>
+**Prediction:** <PRIMARY class X falls in BOTH books; secondaries predicted, not decisive>
 ```
+
+A note may carry up to the current convergence budget (see
+`loop/prompts/hypothesizer.md`). Each change names its census class.
+Exactly one change is marked PRIMARY.
 
 ## Rules
 
@@ -25,6 +31,7 @@ Name it anything, e.g. `2026-08-12-shorten-instructions.md`. Inside:
   each iteration; the rest wait their turn.
 - When a file is picked up it is moved to `loop/inbox/used/` and recorded in
   the iteration, so the inbox only ever holds untested ideas.
-- A vague or multi-change note is not a hypothesis — the orchestrator moves it
-  to `loop/inbox/used/REJECTED-NNN-<name>.md` and tells you what to sharpen,
-  rather than guess.
+- A vague note, or a multi-change note without one change marked PRIMARY and
+  each change bound to a census class, is not a hypothesis — the orchestrator
+  moves it to `loop/inbox/used/REJECTED-NNN-<name>.md` and tells you what to
+  sharpen, rather than guess. Bound multi-change within the budget is valid.

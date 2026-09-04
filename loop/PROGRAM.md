@@ -229,11 +229,12 @@ order is arrival order). One inbox note per iteration — extra notes wait for
 the next iteration; they are never drained in a batch.
 
 1. **Validate** the oldest (lexicographically-first) file against
-   `loop/inbox/README.md`. If it is vague
-   or multi-change, do NOT guess: move it to `loop/inbox/used/REJECTED-NNN-<name>.md`,
+   `loop/inbox/README.md`. If it is vague, or multi-change without one
+   change marked PRIMARY and each change bound to a census class, do NOT
+   guess: move it to `loop/inbox/used/REJECTED-NNN-<name>.md`,
    note the defect to the founder, and fall through to the hypothesizer below.
 2. Otherwise **feed it to the hypothesizer** (not the orchestrator) as the
-   hypothesis source, alongside the normal inputs — so its one-causal-change
+   hypothesis source, alongside the normal inputs — so its convergence-budget
    and founder-only-model guards still apply. The founder note supplies the
    change and rationale; the trace analysis supplies the failure evidence.
 3. Save the hypothesizer's 4-field response as `loop/iterations/NNN/hypothesis.md`
@@ -251,9 +252,10 @@ Save its response unchanged as `loop/iterations/NNN/hypothesis.md`.
 
 ### Step 2: Apply the change
 
-Apply the hypothesis: one causal change in one editable file (duplicate
-representations of the same instruction may be replaced/deleted in the same
-file). Record the diff in `loop/iterations/NNN/change.diff`.
+Apply the hypothesis's 1–3 bound changes, each one instruction in one
+editable file (≤ 3 files), per the convergence budget in
+`loop/prompts/hypothesizer.md`. Record the diff in
+`loop/iterations/NNN/change.diff`.
 
 ### Step 3: Run the factory
 
@@ -544,7 +546,7 @@ there depends on the verdict — never `git add -A`:
   `git checkout campaign-001` in the main checkout, then
   `git merge --no-ff iter-NNN` (or `git checkout iter-NNN -- <paths>` for the
   pinned set below). One commit (`loop(iter-NNN): KEEP — short hypothesis`)
-  carrying: the one edited tuning file, the iteration records
+  carrying: the edited tuning files (≤ 3), the iteration records
   (`loop/iterations/NNN/`, the `results.tsv` row, the `learnings.md` and
   `ledger.md` entries, `loop/state.md`), and — unless Step 6 recorded that
   an untargeted systemic class still dominates the new book — the accepted
@@ -560,15 +562,19 @@ campaign branch carries what it should.
 
 ## 5. Rules
 
-- **One causal change per iteration.** One file. Duplicate representations of
-  the same instruction may be normalized together. Never a second behavior.
-- **3-strike rule.** Failure class = same causal cluster + same root
+- **Convergence budget.** Up to 1–3 bound changes per the budget in
+  `loop/prompts/hypothesizer.md`. KEEP/REVERT read the PRIMARY class only.
+  One-book blocking on a non-primary class is logged, never a veto. A new
+  blocking class in BOTH books is REVERT.
+- **3-strike rule.** Failure class = same PRIMARY class + same root
   component, counted only under one judge instrument. If 3 iterations
-  targeting one class produce no KEEP, PIVOT to a different component
-  level (prompt → structure → research). Never pivot to a model change;
-  stop and surface to the founder. The level is wrong; stop hammering
-  it. A judge change resets the clock — 001–008 3-strike/PIVOT notes do
-  not bind 009 onward. REVERT never deletes an idea.
+  with the same PRIMARY class + root component produce no KEEP, PIVOT
+  to a different component level (prompt → structure → research). Never
+  pivot to a model change; stop and surface to the founder. The level is
+  wrong; stop hammering it. A judge change resets the clock — 001–008
+  3-strike/PIVOT notes do not bind 009 onward. A re-baseline after a
+  founder model change resets the clock (as 009). REVERT never deletes
+  an idea.
 - **Never change models.** Hypothesizer and orchestrator must not edit
   `*_model`, `*_fallback_model`, `*_route`, or endpoint fields in
   `loop/config.yaml`. Models are founder-only.

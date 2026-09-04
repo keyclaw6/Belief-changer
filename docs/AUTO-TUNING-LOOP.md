@@ -52,8 +52,9 @@ matter only insofar as they serve belief change.
                    replicates are signal; a cluster in only one is noise.
 4. DIAGNOSE      — Map each gap to a factory component:
                    research? plan? writer prompt? style guide? model?
-5. HYPOTHESIZE   — One change to one factory component, with prediction:
-                   "If we change X, then gap Y will close because Z"
+5. HYPOTHESIZE   — 1–3 bound changes under the convergence budget (fewer
+                   and smaller as the census approaches zero), one PRIMARY
+                   with a prediction
 6. APPLY         — Make the change
 7. RE-RUN        — Re-run affected stage(s); write and judge two books
 8. COMPARE AGAIN — Same judge panel, same comparison, both replicates
@@ -166,8 +167,9 @@ creation machine.
 - **Simple orchestration, clever prompts.** The loop is agent orchestration
   with well-crafted prompts, not a large codebase. The intelligence lives in
   the prompts and the judges, not in Python machinery.
-- **One hypothesis per iteration.** Small, reversible changes. We can
-  attribute effect because we changed one thing.
+- **One PRIMARY KEEP object per iteration.** Secondary changes are
+  recorded predictions. Attribution is by prediction against the census,
+  not by isolation.
 - **Two books per iteration.** The same change is written and judged twice
   (same research, same plan, two independent full books). KEEP requires
   the improvement in both books; a one-book swing is noise, not a result.
