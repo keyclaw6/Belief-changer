@@ -6,6 +6,7 @@ import os
 import re
 import subprocess
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 REPO = Path(os.environ.get("BC_REPO", "/home/kab/Belief-changer"))
@@ -13,6 +14,7 @@ GSBS = REPO / "calibration/reference/gsbs"
 JUDGES = REPO / "loop/judges"
 AGENT = Path.home() / ".local/bin/agent"
 LANES = ("belief-mechanic", "voice-emotion", "reader-journey")
+TIMEOUT = int(os.environ.get("JUDGE_TIMEOUT", "180"))
 
 
 def parse_alignment(text: str) -> dict[int, int]:
@@ -210,7 +212,17 @@ def run_agent(prompt: str, out: Path) -> None:
         prompt,
     ]
     t0 = time.time()
-    r = subprocess.run(cmd, cwd=str(REPO), capture_output=True, text=True)
+    try:
+        r = subprocess.run(cmd, cwd=str(REPO), capture_output=True, text=True, timeout=TIMEOUT)
+    except subprocess.TimeoutExpired as e:
+        text = e.stdout if isinstance(e.stdout, str) else ""
+        partial.write_text((text or "") + f"\n\n(agent timeout after {TIMEOUT}s)")
+        (out.parent / "metadata.json").write_text(
+            '{"model":"composer-2.5","harness":"cursor-agent-cli",'
+            f'"spawn":"agent --trust --model composer-2.5 --mode ask -p","latency_s":{round(time.time()-t0,3)},'
+            f'"exit":-1,"timeout_s":{TIMEOUT}}}\n'
+        )
+        raise RuntimeError(f"judge timeout {out}: {TIMEOUT}s")
     text = r.stdout
     if r.returncode != 0 and not text.strip():
         text = (r.stderr or "") + f"\n\n(agent exit {r.returncode})"
@@ -222,7 +234,7 @@ def run_agent(prompt: str, out: Path) -> None:
         f'"exit":{r.returncode}}}\n'
     )
     if r.returncode != 0 and not (text.lstrip().startswith("PASS") or text.lstrip().startswith("FAIL")):
-        raise SystemExit(f"judge failed {out}: exit {r.returncode} {r.stderr[:400]}")
+        raise RuntimeError(f"judge failed {out}: exit {r.returncode} {(r.stderr or '')[:400]}")
     partial.rename(out)
     print(f"OK {out.relative_to(REPO)} {round(time.time()-t0,1)}s", flush=True)
 
@@ -297,9 +309,24 @@ def main() -> None:
             continue
         filtered.append((tag, out, prompt))
 
-    for tag, out, prompt in filtered:
-        print(f"spawn {tag}", flush=True)
-        run_agent(prompt, out)
+    if not filtered:
+        return
+    # ponytail: no cap of 2; default is every pending job (~40). JUDGE_WORKERS to lower.
+    workers = int(os.environ.get("JUDGE_WORKERS", "0")) or len(filtered)
+    errors: list[str] = []
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futs = {}
+        for tag, out, prompt in filtered:
+            print(f"spawn {tag}", flush=True)
+            futs[pool.submit(run_agent, prompt, out)] = tag
+        for fut in as_completed(futs):
+            tag = futs[fut]
+            try:
+                fut.result()
+            except BaseException as e:
+                errors.append(f"{tag}: {e}")
+    if errors:
+        raise SystemExit("judge failures:\n" + "\n".join(errors))
 
 
 if __name__ == "__main__":

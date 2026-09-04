@@ -126,7 +126,7 @@ census PRIMARY is `factory-speech`, `assigned-verdict-hedge`, or
 primary hypothesis, never as a standalone iteration. A belief-mechanic or
 journey PRIMARY is never a trigger.
 
-## 7. Write replicate A and B in parallel — PARKED (founder, 2026-09-04)
+## 7. Write replicate A and B in parallel — IMPLEMENTED (2026-09-04)
 
 Why serial today: PROGRAM §4 Step 3 writes A into the live
 `production-books/quit-sugar/chapters/`, snapshots, deletes the live
@@ -151,10 +151,7 @@ accepted snapshot (A on KEEP, as PROGRAM already says). No worktrees. The
 `.partial` convention is unchanged. Two `REPLICATE` processes run at once;
 the orchestrator waits on both exits; judge A starts when write A exits.
 
-Status: orchestration, not a hypothesis, never in `loop/inbox/`. Needs a
-founder-authorized PROGRAM §4 Step 3 edit plus a runner change
-(`scripts/loop-runner/write_replicate.py`; the pi adapter is unaffected).
-No baseline: it changes no prompt, judge, model, or input. Try after 019
-has completed once serially, so a runner bug is not debugged inside a
-model re-baseline. Cost: two Muse books against one quota at once.
-Benefit: write-stage wall-clock roughly halves.
+Status: implemented 2026-09-04. PROGRAM §4 Step 3 writes A and B into
+`loop/iterations/NNN/replicate-{a,b}/chapters/` in parallel; live dir filled
+at Step 6. `write_replicate.py` reads/writes that tree. `judge_replicate.py`
+fans out pending `agent` jobs. Pi adapter unchanged.

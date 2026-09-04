@@ -279,17 +279,18 @@ planning hypothesis is never judged without regenerated chapters.
 write and judge the book twice from those identical inputs (master plan,
 chapter cards, style guide). Research still runs once (reuse rule below).
 Planning still runs once — two plans would produce two different books and
-make cluster comparison unmeasurable. The two writes are replicate A then
-replicate B:
+make cluster comparison unmeasurable. The two writes are replicate A and
+replicate B in parallel (founder authorized, 2026-09-04):
 
-1. Write all chapters into `production-books/quit-sugar/chapters/`.
-2. Snapshot chapters + traces + judgments into
-   `loop/iterations/NNN/replicate-a/` (or `000/replicate-a/` at baseline).
-3. Delete the live chapter files (not the plan, not the research).
-4. Write all chapters again from the same plan; snapshot into
-   `loop/iterations/NNN/replicate-b/`.
-5. Leave `production-books/quit-sugar/chapters/` as replicate B until Step 6
-   chooses which snapshot to keep on KEEP.
+1. Write A into `loop/iterations/NNN/replicate-a/chapters/` (chapters 01 → last).
+2. Write B into `loop/iterations/NNN/replicate-b/chapters/` (chapters 01 → last).
+3. Run `REPLICATE=a` and `REPLICATE=b` writer processes at once. No extra
+   git worktrees.
+4. Do not fill `production-books/quit-sugar/chapters/` during this step.
+5. Live dir is filled at Step 6 from the KEEP snapshot (replicate A), or
+   left as today until then.
+
+Within one book, chapters stay sequential (01 → last).
 
 Each replicate is a complete book. Do not skip replicate B. Do not judge
 only one book and call the other a check. The pair is the measurement.
@@ -300,7 +301,7 @@ NOT poll it continuously. It updates `loop/state.md`, then waits — a long
 `sleep`, a scheduled wake, or a single wait — and on waking checks the stage's
 on-disk progress. **The progress markers are the real artifacts the stage
 produces**: research bank files under `production-books/<slug>/research/banks/`,
-chapter files under `production-books/<slug>/chapters/`, judgment files under
+chapter files under `loop/iterations/NNN/replicate-{a,b}/chapters/`, judgment files under
 `loop/iterations/NNN/replicate-a/judgments/` and
 `replicate-b/judgments/`. (The spawned writer produces no separate
 marker; the chapter file IS the marker.) New content since
@@ -376,7 +377,7 @@ book is complete. Each spawn receives exactly four inputs, with
   2. The target chapter card for chapter N (from the plan)
   3. The style guide: `prompts/style-guide.md`
   4. The previous chapter (for chapter 01: the plan's book-core section)
-Output: `production-books/quit-sugar/chapters/chapter-NN.md`
+Output: `loop/iterations/NNN/replicate-{a,b}/chapters/chapter-NN.md`
 
 **Trace format (mandatory):**
 ```
@@ -392,7 +393,7 @@ loop/iterations/NNN/
         metadata.json      # model, tokens, latency, errors; record fallback if used
       chapter-02/ ...
     judgments/
-    chapters/              # snapshot of the live chapter files
+    chapters/              # writer output (previous-chapter source)
   replicate-b/
     traces/ ...
     judgments/

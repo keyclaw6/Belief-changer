@@ -67,8 +67,8 @@ def assemble(writer: str, plan: str, style: str, card: str, prev: str, n: int) -
 
 def main() -> None:
     traces_root = REPO / "loop" / "iterations" / ITER / f"replicate-{REPLICATE}" / "traces"
-    live_dir = REPO / "production-books" / SLUG / "chapters"
-    live_dir.mkdir(parents=True, exist_ok=True)
+    chapters_dir = REPO / "loop" / "iterations" / ITER / f"replicate-{REPLICATE}" / "chapters"
+    chapters_dir.mkdir(parents=True, exist_ok=True)
     writer = (REPO / "prompts" / "chapter-writer.md").read_text()
     plan = (REPO / "production-books" / SLUG / "master-plan.md").read_text()
     style = (REPO / "prompts" / "style-guide.md").read_text()
@@ -82,11 +82,13 @@ def main() -> None:
         tdir = traces_root / f"chapter-{n:02d}"
         tdir.mkdir(parents=True, exist_ok=True)
         resp_path = tdir / "response.md"
-        live_path = live_dir / f"chapter-{n:02d}.md"
-        if resp_path.exists() and live_path.exists():
+        live_path = chapters_dir / f"chapter-{n:02d}.md"
+        if resp_path.exists():
+            if not live_path.exists():
+                live_path.write_text(resp_path.read_text())
             print(f"SKIP chapter-{n:02d} already written")
             continue
-        prev = core if n == 1 else (live_dir / f"chapter-{n-1:02d}.md").read_text()
+        prev = core if n == 1 else (chapters_dir / f"chapter-{n-1:02d}.md").read_text()
         prompt = assemble(writer, plan, style, cards[n], prev, n)
         (tdir / "prompt.md").write_text(prompt)
         (tdir / "chapter-card.md").write_text(cards[n])
