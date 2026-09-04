@@ -226,3 +226,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** BASELINE
 **Lesson:** Reviewer made length KEEP-visible: A 52182 / B 51144 vs 019 A 26984 (floor 48000 met both). All-PASS / zero blocking both books. New floors in both: comparison `missing` 3/3 (G06-M2, G15-M1, G20-M2), journey `re-argument` 12/10 (repaired class, still ≥8), willpower-lexicon 29/33, factory-speech 18/16. `coach-register` 3/8 (not ≥8 both). `method-promise-hedge` 0/0. 3-strike resets.
 **Next direction:** 026 anti-slop (chatbot openers / throat-clearing / summary closers / stacked-triplet padding) with PRIMARY `factory-speech` 18/16. Skip 027 (`coach-register` not ≥8 both). Skip 028 (hedge classes absent). Then comparison `missing` in both. Do not replay 020–024 wording.
+
+### iter-026 — anti-slop chatbot residue
+**Hypothesis:** PRIMARY: style-guide §B5 chatbot-residue operator so voice `factory-speech` falls in both vs 025 (18/16).
+**Change:** `prompts/style-guide.md` (§B5 operator 12 + §B9 checklist). Plan reused (019, 13 chapters). Research reused. Two books Spark 1.3 Go with reviewer. Judges composer-2.5, 53+53.
+**Verdict:** KEEP
+**Lesson:** factory-speech 18→13 / 16→8 (drop ≥2 both). Length floor met (50404/49067). Blocking 0/0. No new both-books class. Prediction partial (025 leaks were ease-operators/card titles; count still fell). Comparison `missing` 3→4 both (G04-M1 joined G06-M2/G15-M1/G20-M2). Skip further anti-slop (coach-register 8/6; hedges 0/0).
+**Next direction:** 027 PRIMARY comparison `missing` 4/4 (G04-M1, G06-M2, G15-M1, G20-M2). Do not replay 020–024 wording. Do not put GSBS in writer/planner/reviewer.

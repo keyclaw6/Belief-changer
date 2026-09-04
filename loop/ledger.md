@@ -418,3 +418,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Reviewer made length KEEP-visible: A 52182 / B 51144 vs 019 A 26984 (floor 48000 met both). All-PASS / zero blocking both books. New floors in both: comparison `missing` 3/3 (G06-M2, G15-M1, G20-M2), journey `re-argument` 12/10 (repaired class, still ≥8), willpower-lexicon 29/33, factory-speech 18/16. `coach-register` 3/8 (not ≥8 both). `method-promise-hedge` 0/0. 3-strike resets.
 
 **What this opens next.** 026 anti-slop PRIMARY `factory-speech`. Skip 027/028 (coach-register not ≥8 both; hedges absent). Then attack comparison `missing` in both. Do not replay 020–024 wording.
+
+### iter-026 — anti-slop chatbot residue  ·  2026-09-05  ·  KEEP
+
+**Hypothesis.** If Part B forbids chatbot openers, throat-clearing, summary closers, and stacked-triplet padding, voice `factory-speech` falls in both books versus 025 (A 18, B 16).
+
+**Change.** One operator plus one checklist bullet in `prompts/style-guide.md` (see `loop/iterations/026/change.diff`). Plan reused. Research reused. Two Spark 1.3 Go books with chapter-reviewer. Panel 53+53.
+
+**What happened.** factory-speech 18→13 (A) and 16→8 (B). Words 50404 / 49067. All chapter lanes 13/13 PASS, book-arc PASS, blocking 0/0. Comparison `missing` 3→4 both. Journey re-argument 12→5 / 10→15 (one book only). A-only `trap-question-label` 5. B-only `journey-stall` 3.
+
+**Verdict & why.** KEEP. PRIMARY improved materially in both books. No new both-books failure class. Prediction partial: the named chatbot list was not the 025 leak pattern, but the census class still fell.
+
+**What we learned.** factory-speech 18→13 / 16→8 (drop ≥2 both). Length floor met (50404/49067). Blocking 0/0. No new both-books class. Prediction partial (025 leaks were ease-operators/card titles; count still fell). Comparison `missing` 3→4 both (G04-M1 joined G06-M2/G15-M1/G20-M2). Skip further anti-slop (coach-register 8/6; hedges 0/0).
+
+**What this opens next.** Attack comparison `missing` 4/4. Do not replay 020–024 wording. Do not give GSBS to writer, planner, or chapter-reviewer.

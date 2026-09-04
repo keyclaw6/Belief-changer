@@ -1,172 +1,165 @@
 Chapter 3
 WHAT DOES IT DO FOR YOU
 
-**IN THIS CHAPTER**
-The kitchen table with yesterday's wrappers — The desk drawer at half past three — The bathroom mirror and the aching molar — The shop receipt pinned to the fridge — The full column beside the empty column
+**IN THIS CHAPTER** — dawn kitchen table with cold tea and crumbs, a lined notebook opened to two clean columns, bathroom mirror and toothbrush at night, till receipts soft in a coat pocket, sofa cushions with wrappers in the crack
 
-*Forget whether it harms you for a moment — tell me one true thing it ever did for you.*
+*Forget for a moment what it costs you — tell me one true thing it ever gives you.*
 
-### THE COURTROOM WHERE YOU ALWAYS LOSE
+The Wrong Courtroom
 
-You come in carrying one honest seeing from last night.
+You come to me now as a person cleared of one charge and still held by another, and I meet you there with warmth.
 
-You watched your own hand move before thought, break its own number while it was still being made, lower the wrapper noise so no one on the stairs would hear. You saw that free choice needs no hiding and no apology. You were caught, not weak. Hold that seeing close. We shall need it, because caught people argue in the wrong courtroom and always lose there.
+You have watched your own hand in the night kitchen. You have stood in daylight beside a child eating a peach and stopping from simple satisfaction. You know the reach was not weakness. You know a story laid over a tug can move a strong person to do what no free pleasure would ask.
 
-I know your argument by heart because it was mine for years.
+And still the thought holds. Let me speak it aloud, because it was mine for years and I know its weight in the mouth.
 
-We say, I know it rots teeth and piles on weight and eats money, but life would be greyer without sweet treats. At least it gives me something. At least it helps me through. At least I enjoy it.
+“All right. Perhaps I was caught. Perhaps it harms me. But it still does something for me. Life would be greyer without it.”
 
-That little but is the whole con talking.
+I do not blame you for that sentence. We all spoke it. We spoke of sugary somethings to get me through as if they were tools in a drawer. We spoke of treat when you feel you deserve one as if it were wisdom earned by living. I have said those lines in my own kitchen, in my own car, at my own desk, and I meant them at the time.
 
-While we weigh harm against benefit, the Trap is safe. Harm can be argued till midnight. One voice warns, another soothes. A friend says her grandfather ate sweets daily and lived to ninety. A packet says low fat. A bottle says made with real fruit. A label says only a little per serving, as if any of us ever takes only a little and stops. By supper we are tired of the debate and we take a dose to calm the noise of the debate. Harm invites delay. Harm invites tomorrow. Harm lets us say, I will cut down when the dentist speaks sternly, after the holidays, when money is tight, when work calms down.
+But look at the courtroom that sentence builds around you. Harm on one bench. Benefit on the other. Scales in the middle. Harm versus benefit. Cost versus pleasure. If harm grows heavy enough, one day you will act. If benefit still glows, you will wait a little longer.
 
-I lived that weighing and it never freed anyone I knew.
+That courtroom will hold you all your days if you let it stay open.
 
-I am not asking you to weigh harm. Weighing keeps you torn. Torn keeps you reaching. I am asking a plainer question, the one the story you learned young cannot answer.
+Harm can always be argued away. That is its nature in this trap. Harm is tomorrow. Harm is somebody else. Harm is a warning you can bargain with until morning. You can tell yourself you feel fine. You can tell yourself others take far more. You can tell yourself you brush well, walk well, work hard, and will handle tomorrow when tomorrow comes. In the harm courtroom the old story always finds a lawyer, and the lawyer always asks for one more adjournment.
 
-What does it actually do for you?
+Do you want to stop? Of course you do — that is why you are reading this book with a wary mind and a full cupboard. Then why would a free pleasure need a courtroom at all? You never weigh harm against benefit over a peach eaten hungry in August. You never hold scales over fresh bread eaten with appetite. You eat, you enjoy, you stop, you get on with your day. The question never rises because the good is present and obvious and needs no defence.
 
-Not what does it do to your teeth or your wallet or your waist or your afternoons. We will look at those because they are true, and soft talk there would cheat you. But they are not the test. Even if every dose were free and weightless and left teeth white as milk, the question would still stand. What good is there at all?
+Why does the question rise here? Why does this one powder need lawyers?
 
-A prisoner does not ask whether his cell is painted a cheerful colour. He asks why he is locked in at all.
+That flicker you feel as you read is not guilt. It is honesty waking up after a long sleep.
 
-So lay yesterday on the table and judge as an investigator, not as a defendant. Bring the real day, crumbs and all. No tidy eating for my benefit. I want the real desk, the real sofa, the real cupboard, so the seeing can be real too. Truth does not fear daylight. Only cons fear it.
+So I refuse that courtroom. I close its doors and I open a smaller, colder room with one chair and one page.
 
-You are not on trial here. I am warm toward you without limit. I am harsh toward the fraud that taught us to call a bright packet love. Let the blame sit where it belongs while we look. Shame says, I am the problem. Truth says, I was given a false map. Shame keeps you in the kitchen at ten, eating and accusing yourself in the same breath. Truth lets you step back and see the whole narrowing for what it is.
+I am not asking whether BAD SUGAR does more harm than good. Anybody can lose that debate for another week by feeling fine today. I am asking what good there is at all.
 
-We all learned the same lines before we could test them. Sweet means love. Sweet means reward. Sweet means energy, comfort, celebration. Kind hands pressed it on us when we were good, when we were sad, when we had earned a treat when you feel you deserve one, when the day had been hard and sugary somethings to get me through sounded like kindness. No child examines a gift from a smiling adult and asks for proof. We took, we trusted, we learned by heart. Everyone eats it. It is normal. One cannot hurt. You have earned it.
+Put harm to one side completely. Forget teeth for a moment. Forget weight. Forget money. Forget every lecture you have ever heard. Keep one column only. Benefit. What does it do FOR you?
 
-That learning sank deep. Then each bright dose left its own small echo an hour or two later and we read the echo as our own emptiness and answered with another dose. That wheel taught us to say treat and fuel with complete sincerity while living days that never felt treated or fuelled.
+A true friend does not need you to forget his thefts in order to praise him. A real joy does not need a harm debate to survive. If there is a real benefit in that packet, it should stand up alone in daylight without needing harm to look the other way.
 
-You were not foolish to believe it. We were all conned, as children are conned by honest faces. The shame belongs with the con, never with you.
+Ask from your own life, not from slogans. When you take a dose, what arrives that was not already yours before the wrapper opened?
 
-Now let us audit the day the con built.
+Did you choose this freely, or did the story choose for you while your hand obeyed? Which answer fits the evidence of your own evenings?
 
-### YESTERDAY ON THE TABLE
+A Tuesday On Paper
 
-Take an ordinary day. Not Christmas. Not a binge you are ashamed to name. A normal Tuesday with normal doses, the kind no one would call extreme.
+Let us do what investigators do. Let us take one ordinary Tuesday and put it on paper. Not a bad day. Not a shame day. A normal day, the kind you call moderate, the kind where you tell yourself you have it under control.
 
-Morning. Tea grown sweet, toast grown sweet, a spoon or two here, a spread there, a juice that calls itself healthy and drinks like syrup. You leave the house already humming with bright taste and already faintly hunting.
+Morning. Tea with sugars stirred in standing up, sweetened cereal eaten while scrolling, spoon moving almost without tasting. Mid-morning, a biscuit from the tin with the second cup, taken because the tin is there and the morning has a gap in it. Lunch plain enough, with a fizzy drink because water feels dull beside it. Afternoon, the drawer opens at three. Chocolate bar, ten bright minutes, then a fog that was not there before. Evening, pudding after dinner because it is there, because the day was long, because celebrating with chocolate is what tired people do. Night, a small handful from the cupboard while the television murmurs, eaten standing in the bright kitchen while the soft living room waits.
 
-Mid-morning at work or with chores, a biscuit with coffee, a bar from the drawer because the morning feels long. You eat without hunger, without sitting, without tasting past the first bite. The wrapper joins yesterday's wrappers in the bin, or in the pocket, or down the side of the desk.
+Nothing dramatic. No box emptied in shame. Just doses spaced through the day like fence posts holding up what you call normal.
 
-Lunch hurried, bread and something to finish, something sweet to close, a cold fizzy bottle from the machine that bites the tongue and leaves the teeth filmed. You tell yourself lunch was sensible. The sweet close barely counts. We all have a long list of closes that barely count.
+Now take a lined notebook, as I did when I first looked straight, and draw two columns. Left column: what it did TO you. Right column: what it did FOR you.
 
-Afternoon at the desk, the familiar tug near half past three. Two or three from the shared tin, eaten without looking up from the screen. Ten minutes bright, then the reading of the same line twice, the short temper on the call, the low hum behind the eyes.
+Left column fills fast, in your own hand, without my help.
 
-Evening, tired, a pudding earned because the day was hard, a handful while cooking that never reaches the table, a square while watching that never quite gets tasted because the programme is interesting and the hand moves on its own. Night, the ten o'clock reach we already witnessed, standing in socks on cold tiles, the tea going cold while the pack gets warm in the hand.
+Mouth sticky after each hit. Teeth filmed by midday. Mood up, then thin, then up, then thin again. That familiar roller coaster you name in your own dialect: short term lift then fast drop, then the I-need-to-eat-something-RIGHT-NOW feeling arriving an hour later wearing hunger's clothes. Patience shorter by late afternoon. Wallet lighter by coins you never count until the month ends. Time gone in small reaches and buys and unwrappings and tidying of traces. Sleep a little lighter. Morning mouth a little sour. Mind a little busier with promises about tomorrow.
 
-Now set two columns beside that day, as you would for any honest audit of any habit that takes money and hours and calls itself a friend.
+I speak here of the wide pattern across ordinary days, not a sentence on your body, and if changing food carries medical risk for you, your clinician leads while you use this book for the belief.
 
-In the first column, what it did TO you. Be plain. No drama, no lecture. Plain.
+Right column. Benefit. Be strict with me, as a friend is strict when something matters.
 
-Mood through the day: bright for minutes, then flat, then hunting again. That low hum by four, the fog when you try to follow a page, the snap at people you love followed at once by guilt. Teeth: the film after each dose, the ache when cold water hits the molar, the longer scrape each visit and the shake of the head. Wallet: the coins that never seem much until you pin a month of receipts to the fridge and see dinners eaten in wrappers. Time: the minutes hunting, queuing, unwrapping, hiding the evidence, promising morning-you will be good this week, scolding night-you for breaking it. Thought: the tug-of-thought from morning till night, thinking about sweets far more than any free eater ever thinks about food.
+Write only what BAD SUGAR itself added, nothing borrowed from the hour around it.
 
-That column fills fast. You know it. I know it. We all lived it.
+Morning cereal. Was the pleasure the powder, or was it breakfast after night hunger, warm kitchen, first quiet minutes before the noise? Mid-morning biscuit. Was it taste, or was it pause, stretch, chat, hands resting from keys? Fizzy drink at lunch. Was it joy, or was it cold and fizz and a break in a plain hour? Afternoon bar. Was it fuel, or was it ten minutes away from the screen, a breath, a change of air, a moment to be a person rather than a worker? Evening pudding. Was it love, or was it meal, company, sofa, laughter, the day closing its door?
 
-Now the second column. What it did FOR you.
+Do you see what happens when you separate them? Lift the dose out and the warmth stays with the scene. The scene gave. The dose rode along and took the thanks.
 
-Not what it stopped you feeling for ten minutes. Not what it saved you from that it had set up an hour before. A true gift, over and above what a person who never touched a sweet dose feels. A lift that leaves you higher than the start. A joy that stays after the swallow. A help that makes the hour richer than if you had never reached.
+We never noticed because we never separated them. We credited the powder for the work of the hour. We thanked the passenger for the journey of the car.
 
-Write it.
+I know this is hard to accept. That was my reaction too. Your mind protests because the teaching was laid early and deep. Keep your eyes on your own page a little longer. Look at your own Tuesday in your own hand. Where is the entry that belongs to the powder alone, with nothing borrowed from hunger met, rest taken, company enjoyed, pause allowed?
 
-Most readers sit with the pen hovering here. They write taste, then cross it out, because after the second mouthful taste barely registered and the jaw only moved. They write energy, then pause, because the hour after felt foggy, not bright. They write comfort, then stare, because comfort that ends in scolding is a strange comfort. They write reward because, well, celebrating with chocolate and a treat when you feel you deserve one is what we were taught to say, in our own dialect, word for word.
+You want to get off the roller coaster. You have whispered it. Look at the page and ask who built the track.
 
-I ask you to stay with that hovering pen. Do not rush to fill the column to be polite. Do not borrow a slogan to cover silence. Let the silence speak.
+Teeth, Till And Hours
 
-You tell me you believe it is a genuine treat or fuel. Those are your words for it, learned young, spoken with complete sincerity. A treat is a gift that makes an occasion sweeter by being there. Fuel is a power that lets the engine run stronger by being burned. A genuine treat would leave the evening warmer for having had it. Genuine fuel would leave the afternoon clearer for having burned it.
+Let us linger on three entries from the left column, because you can photograph them with your own eyes without taking my word for anything.
 
-Look at yesterday and tell me, where is the gift that stayed? Where is the power that lasted?
+First, teeth. The fact is, frequent free-sugar doses feed the acid in plaque that softens enamel through the day. Brushing and fluoride do real work — I do not deny them their honour — and still the mechanism runs underneath: sugar in, acid up, surface softened, decay given its opening where sweet doses come often. Ask your own mouth. That filmed feeling after a sweet drink that water does not leave. That dull edge after a sticky evening. That visit where you sit back in the chair and the dentist looks, pauses, and you already know what the pause means before a word is spoken. That small bill that was never in the plan. Is that doing something FOR you?
 
-Ask only from your own lived day, not from packets, not from songs.
+Second, measure. Public guidance for free sugars sets the daily ceiling low, below a tenth of calories, around fifty grams, with added benefit below half that again. The fact is, ordinary eating now sits far above that guidance, not because you are extreme but because sweet hits hide in everything — drinks, cereals, breads, sauces, snacks that do not even call themselves sweet. Feeling fine does not mean intake is low. Water can warm so slowly you never notice the heat until you look at the pot from outside. I speak of streets and shops and bins, not a verdict on your worth. But ask your own bin and your own pocket. How many wrappers left the house this week? How many bottles and bars and packs passed through the till uncounted because each one was small? Small, repeated often, is how large is built. Small, paid daily, is how heavy is carried.
 
-Did any dose yesterday leave you calmer, brighter, more yourself an hour later than if you had never taken it? Did any dose close hunger and let you walk away humming, as a real supper does, with no call back an hour later? Did any dose add anything to the hour that the hour did not already own — the laugh, the rest, the company, the break itself?
+Third, hours and pounds. Add the Tuesday doses across a year and look at the sum without flinching.
 
-Only one set of answers fits the day we all share.
+Money first. Two pounds here, three there, the bar with the petrol, the cake with the coffee, the sharing bag that was never shared, the pudding because the day was long. It looks like nothing until you multiply by weeks and months. Then time, which is dearer than money. The walk to the shop in rain to fetch back the very thing you told yourself you would not keep in the house. The minutes staring into the cupboard. The minutes unwrapping and chewing without tasting. The minutes regretting. The minutes promising to be good this week and planning Monday like a new life. All paid, daily, out of a life that is not rehearsed.
 
-There is noise in the first column and silence in the second. Plenty happening TO you. Nothing arriving FOR you.
+Lay those three photographs on the table: sink, receipt, clock. Filmed teeth in the morning mirror. Coins gone without pleasure remembered. Minutes gone without rest received.
 
-### THE COLUMN THAT FILLS BY ITSELF
+Which brings the question home with force. If a friend charged you daily for nothing, filmed your teeth, thinned your afternoons, emptied your pockets coin by coin, ate your hours minute by minute, and asked for thanks, would you call him a friend? Would you defend him at the table? Would you fear life would be greyer without him?
 
-Let me speak plainly about the TO side, because soft talk here would cheat you, and then I shall lift it off you at once.
+Could the hand that lifts you each afternoon be the same hand that laid you low that morning?
 
-Frequent free sugars feed the acid in plaque that carves teeth. That is mechanism, not moral. The mouth after a sweet dose turns sharp for a while, and frequent sharp hours carve. Brushing matters, care matters, a good dentist matters, and still frequent sweet doses keep the drill busy. Any dentist will show you the map in your own mouth. Other things shape teeth too — food, care, habits, luck — and still the sweet dose does its plain work each time it lands.
+Keep that question beside your notebook while we look at the name you give the thing.
 
-I state it flat because I owe you truth. The fact is, frequent BAD SUGAR keeps the mouth under acid and the body under load that no one would choose for fun.
+What You Think It Is
 
-Money and guidance tell the same story without drama. Guidance in this country says keep free sugars below a tenth of daily energy, near fifty grams, with further gain below half that, yet normal shelves and normal days carry most of us far above it. Feeling fine does not mean intake is low. The packs are built to feel normal. The till roll tells the truth the tongue forgets. Small daily doses, priced to feel like nothing, gathered into hundreds over a year, thousands over a decade. Add the minutes — the detour to the shop, the queue, the drawer raid, the evening promise and morning review — and ask what those hours bought.
+We need a name for the thing we are hunting, because a hunt without a name chases fog.
 
-If you live with diabetes or take anything that affects blood sugar or appetite, are pregnant, carry any history where changing food could carry risk, or ever feel faint or ill around food, talk to your clinician first and follow their advice.
+We call it pleasure. We call it comfort. We call it help. Listen to our own dialect, spoken in my voice as well as yours: I’ve managed to be good this week. Treat when you feel you deserve one. Sugary somethings to get me through. Those lines sounded like thinking. They were teaching laid over thinking until the two felt like one.
 
-Now hear me, because I do not want you quitting out of fear.
+Strip the kind words away and look at the object itself, as it behaved on your Tuesday. What do you believe BAD SUGAR is?
 
-Fright about teeth or money or guidance never freed anyone for long. Fear makes braced readers, and braced readers cannot see. I state the cost so you stop calling this harmless, not so you stop out of dread. You are not to leave this chapter frightened of BAD SUGAR. You are to leave it unimpressed by BAD SUGAR.
+You believe it is a genuine treat or fuel.
 
-There is a world of difference between those two, and your freedom lives in the second.
+Say that phrase slowly to yourself, because everything turns on those five words. A genuine treat or fuel. Treat means a real extra joy, something life would be poorer without. Fuel means real energy, something work would stop without. If it is either of those, your caution makes sense. Who would throw away joy or fuel?
 
-Fear says, I must escape because I am doomed. Seeing says, I can walk away because there is nothing to keep me. One braces the chest. The other lightens it. I want your chest light.
+But if it is neither, what is left to defend?
 
-Look once more at the full column. The film on teeth. The flat afternoon. The receipt pile. The night reach. The tug-of-thought from morning till night. The flat, foggy hunt an hour after each bright bite. Would any free eater trade a clear day for that list? Would any child with a peach trade hunger met and left behind for this humming wheel?
+Look at treat first, from your own diary, not from theory.
 
-We did not trade because we saw the list. We traded because we never laid the list beside the promise. We looked at harm in one room and benefit in another and never made them meet on the same table. On the same table, harm shouts and benefit stays silent.
+A genuine treat behaves in a certain way. It delights more when rare. It satisfies when done. It leaves gratitude behind. It does not demand repetition an hour later. It does not hide its traces. It does not leave faint disappointment that pleasure left before crumbs did.
 
-And silence, honestly faced, ends debates that noise never ends.
+Did your Tuesday treat behave like that? Did the first biscuit taste bright and the fourth taste brighter? Or did taste fade while reaching continued, joy falling as the hand kept moving? Did you finish with thanks and turn your mind to other things, or with rustle and a quick tidying so no one would know? Which one looks like a treat and which one looks like a pull wearing treat’s clothes?
 
-### THE COLUMN THAT STAYS EMPTY
+We were taught to call it a treat when you feel you deserve one. Notice the timing of that teaching. It arrives after effort, after virtue, after being good. It turns goodness into a debt that only a dose can pay. It turns a hard day into a bill presented at night. Is that the behaviour of joy? Or is that a story laid over a tug to make the tug feel noble?
 
-I know this is hard to accept, but sit with yesterday once more as the investigator you now are.
+Now look at fuel, again from your own afternoon, not from slogans on packets.
 
-We were brainwashed to call bright doses love and reward and energy. Kind hands taught us. Bright shelves taught us. Songs and parties taught us. We learned before we could test, as children learn honest faces. Then each dose left its own small echo an hour later and we read the echo as need and answered with another dose. That wheel taught us to say a genuine treat or fuel while living flat days that never felt treated or fuelled.
+Real fuel behaves in a certain way. It builds steadily. It lasts for hours. It leaves you clear. It does not drop you lower than before you took it. A plain meal eaten hungry does that. Bread eaten hungry does that. Rest does that. Hunger met with real food settles you for hours and leaves the mind quiet to work.
 
-Feel how strange that phrase grows when laid beside your own day.
+Did your three o’clock hit behave like that? Ten minutes bright, then fog, then the drawer opening again. Short brightness, fast fade, then the call for more. You called that energy because the lift was loud and the dip was quiet, and you blamed the dip on the day, the job, your age, the weather, anything but the lift that came before it. If fuel leaves you flatter and reaching again within the hour, in what sense is it fuel? In what sense is it help?
 
-A genuine treat would not need hiding. A genuine treat would not need a solemn number beforehand. A genuine treat would not leave regret arriving before the swallow ends. A genuine treat would not call you back an hour later with that empty, twitchy pull toward the cupboard. Gifts do not behave like that. Gifts arrive, warm the hour, and let you go.
+We spoke of sugary somethings to get me through. Through what? Look at the circle whole. Through the flatness that the last something left behind. We never saw the circle because we only looked at half of it at a time.
 
-Genuine fuel would not leave the engine foggier an hour after filling. Fuel that leaves you dimmer, slower, more hunting than before you burned it is not fuel. No driver would call that fuel. No householder would pay for heat that leaves the house colder.
+I speak to you warmly and flatly at once, as one who defended the same object with the same lines: the thing you defend has never behaved as the name you give it. It borrows the warmth of the moment and the brightness of brief relief, then sends the bill a little later when you are too tired to connect the two.
 
-So what did yesterday give that a free eater missed? Name it. Not in slogans. In hours.
+That is why the phrase matters. Once you see that a genuine treat or fuel would satisfy and strengthen, and this neither satisfies nor strengthens but leaves you seeking again, the name falls off. What falls off was never yours. It was paint.
 
-Was it the first bite? The first bite is bright, I grant you. Then the second barely registers and the hand keeps moving. Is a two-second brightness that buys an hour of flat hunting a gift? Would you thank a friend for such a gift? Would you pay for it for the rest of your life with money, hours, teeth, and night shame?
+Name One Thing
 
-Was it the break? The break is real — the chair, the breath, the laugh, the rest. But the break was there before the dose and stays after the dose is gone. The dose only ever sneaked a ride on the break. Take the same chair, the same breath, the same laugh, without the wrapper, and the warmth remains. Add the wrapper and the hour grows no warmer. It grows more torn.
+I press you now as a friend presses, kindly and without letting go, because kindness that lets go at this point is not kindness.
 
-Was it the reward? We all say, I have managed to be good this week, I deserve one. I honour the week. I lived those white-knuckle weeks. But does the earned square close the week with pride, or open the evening with rustle? Does morning-you thank night-you for the reward, or wince at the light pack on the counter? A reward that punishes the earner is not a reward. It is a trick with bright paper.
+Name one thing it does FOR you.
 
-What would you call a man who tripped you on the stairs each morning so he could offer you his hand and be thanked as a rescuer?
+Not TO you. FOR you.
 
-Hold that question lightly. Do not answer yet. Let it walk beside you while you look at the empty column.
+I hear your answers rising, because they were mine. Let me meet each one with a question, and you answer from what you have lived, not from what you were told.
 
-You pay with mood, teeth, wallet, time, thought, pride. You pay every single day. For what? For ten minutes that leave you lower than you started. For a brightness that guarantees its own dimming. For a gift that never stays past the swallow.
+“It gives me pleasure.” Does it? Or does it give you brief quiet from the flat, restless pull the last dose left, quiet you mistake for pleasure because the noise stops for minutes? When you eat a plain favourite meal truly hungry, pleasure rises, peaks, settles into satisfaction that lasts for hours. When you take a sweet hit between meals, brightness spikes, vanishes, and calls again. Which one looks like pleasure and which one looks like a bell rung to stop a noise the bell itself started? Can you point to one Tuesday pleasure that stayed with you into the next hour without asking for another dose to keep it alive?
 
-Do you want to keep paying, reaching, hiding, regretting, for the rest of your life for a column that never fills? Or do you want to be clear, calm, un-torn, happy to be free, for the rest of your life with food that answers hunger and lets you go?
+“It gets me through stress.” Does it? Or does it pause stress for the length of a chew while adding money worry and tooth worry and mood dip and self-reproach to the pile you must get through tomorrow? Did the strictest weeks bring the calmest evenings, or the loudest collapses? You own the evidence in your own diary. The thing that claims to carry you leaves you heavier each time you lean on it. Is that carrying?
 
-Both futures last the same length. Only one has anything in it.
+“It is my little reward.” Reward for what, decided by whom? Who taught you that being good this week earns a dose that makes next week harder to be good in? Who profits when virtue is paid in wrappers? Look at the arithmetic of that reward across a lifetime, both ways it can run. Paid daily for the rest of your life for a glow that fades before swallowing ends, with teeth and wallet and hours paying the difference. Or mornings clear and food enjoyed as favourite for the rest of your life, with no bill presented at night. Both are a rest-of-life. Both are on offer. Which rest-of-life do you want when both are laid bare on the same table?
+
+You see what those answers do. They do not shame you. They clear you. Each objection, honestly answered, hands credit back where it belongs: to the meal, the pause, the company, the body that was already yours before any packet spoke.
+
+We fell into the same hole together. I defended the same object with the same pride. I told myself I loved the taste while half the tastes I claimed to love arrived masked under sweetness I could not even separate. I told myself I needed the lift while never noticing the lift never rose above where I had stood before the first dose of the day. I was not lying. I was misreading, in good faith, on false information. A good-faith error corrects the moment better information lands. That moment is now, on your own page, in your own hand.
+
+Look at your Tuesday page again. Left column crowded with small, photographable costs. Right column empty when credit for warmth is handed back to the moment around the dose. Not thin. Empty.
+
+The verdict stands on evidence you already own.
 
 It does plenty TO you. It does nothing FOR you.
 
-Let that sentence arrive out of your own yesterday, not as a slogan. Plenty TO you — the film on teeth, the flat afternoon, the receipt pile, the night reach. Nothing FOR you — no true gift that stayed, no power that lasted, no hour made richer than its own break and laugh and rest. Speak it in your own mouth and feel how settled it sits. The debate ends where the benefit fails to appear.
+Let that verdict stand. Do not reopen it.
 
-It is the other way around from what we were taught. We thought harm was the price of benefit. The fact is, there is price without benefit. There is payment without gift. Once seen, it cannot be unseen.
-
-### JUDGE BY BENEFIT ALONE
-
-So here is the new courtroom, single question, no weighing. Bring your real days to it, crumbs and all. Watch the desk at three, the sofa at nine, the cupboard at ten, and ask, what did that dose do FOR me that stayed? You will find the hand still reaches from habit for a while, and the meaning has changed. The tug is not proof of value. The tug is echo.
-
-Read it slowly. Let it land as a spoken promise between us.
-
-**3. JUDGE ONLY BY WHAT IT DOES FOR YOU**
-Forget harm versus benefit and ask for the benefit
-
-Carry that empty column into tomorrow. Do not tidy your eating for my benefit. Eat your meals hungry. Enjoy them. Stop when satisfaction tells you enough is enough. Live your week exactly as normal while you read, so the seeing stays real. When the bright thought comes, meet it with the plain question, not with battle. What FOR? Name it. Watch it fail to appear. Feel the con loosen.
-
-You were caught, not weak. Caught people do not need scolding. They need to see the door. The door opens where the benefit fails, because a Trap with no gift is only a cage with bright paint.
-
-Hold your head high as you read on. Bring your doubts. Bring your evenings. Bring your most stubborn thought that says, but I like it. Lay each beside your own evidence and judge calmly. You will find, page by page, that liking was relief misread, and choosing was reaching misnamed, and the column that matters has been empty all along.
+3. JUDGE ONLY BY WHAT IT DOES FOR YOU
+Forget harm versus benefit and ask for the benefit.
 
 **SUMMARY**
-- Harm debate keeps the Trap safe by inviting delay and tomorrow, so the test is benefit alone.
-- A normal day fills fast with what sweet doses do to mood, teeth, wallet, hours and thought, while honest audit leaves the benefit side silent.
-- Frequent sweet doses keep plaque acid working on teeth despite brushing and care, and normal intake sits far above guidance while feeling fine misleads.
-- Treat and fuel promise a gift that stays and power that lasts, and neither appears an hour later in lived days.
-- Plenty arrives with each dose in cost and noise, and nothing true arrives in lasting good, so the old outweigh story cannot stand.
-- The hand may still reach from habit, but the meaning has changed from value to echo.
+- The harm debate keeps the trap alive because harm can be bargained with tomorrow.
+- One ordinary Tuesday on paper fills the harm side fast and leaves the benefit side empty.
+- Frequent sweet doses feed plaque acid while brushing does its own real work.
+- Ordinary intake sits far above low public guidance without feeling extreme.
+- Money and hours leak coin by coin for no remembered return.
+- Treat would satisfy and fuel would strengthen, and the daily dose does neither.
