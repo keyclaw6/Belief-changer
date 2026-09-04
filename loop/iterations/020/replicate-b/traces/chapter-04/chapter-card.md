@@ -1,0 +1,16 @@
+**C-04 — The Three O’Clock Rescue That Makes You Tired**
+- Primary job: enacted transition — the lift is a spike that creates the drop it pretends to fix.
+- Objection resolved: I need it for energy and focus.
+- Belief now: enters believing sweet is fuel; leaves knowing fuel misreads crash and true state is tired, flat and craving because of last dose.
+- Encounter: following one afternoon dose through lift, edgy hunger return, second reach, flat evening.
+- Evidence: E-01 plus E-13 plus E-14 hump/baseline parts; writer must not claim clinical low glucose and must keep reactive dip within stated limits; no fuel claim conceded.
+- New instruction: I-05 NOTICE WHAT FOLLOWS THE LIFT / Watch the drop, not just the rise.
+- Reserved-later fence: love/reward reserved for C05; hunger satisfaction reserved for C06; full inversion reserved for C07.
+- Arc / curve: mid demolition rise.
+- Reader-state: afternoon yo-yoer reaching to get through; encounter re-labels body in M-G words.
+- Mantras: M-D “a genuine pleasure, treat or lift” echo; M-G “an empty, slightly edgy hunger that feels like it needs something sweet” echo; M-J “tired, flat and craving” debut; M-C “the sugar trap” echo.
+- Scenes: SC-B debut full staging; SC-E token preview only as phrase, full reserved for C07.
+- Structural: none beyond demolition.
+- Guardrails: no diagnosis; SAFE-A silent; original analogy only.
+- Continuity: (a) enters from C03 benefit-on-trial lens. (b) receives axis and trap as closed tokens. (c) hands forward energy benefit dead and cost triple installed for C05.
+- Budget: 5000.

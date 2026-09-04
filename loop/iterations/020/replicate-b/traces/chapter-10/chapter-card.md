@@ -1,0 +1,17 @@
+**C-10 — The Sweetest Table**
+- Primary job: enacted transition — even the most seductive celebration pleasure was the people, moment and food, with sweet only sneaking a ride.
+- Objection resolved: But the shared dessert / cinema chocolate is genuinely sweet.
+- Belief now: enters guarding one precious scene; leaves knowing scene intact without dose and perception can lie.
+- Encounter: fully staged celebration re-run with attention on laughter, warmth, taste, then same scene without BAD SUGAR; plus brief perception exercise performed by reader.
+- Evidence: E-03 plus E-09 cue part within limits; writer must concede nothing real to sweet and must not restage earlier scenes fully.
+- New instruction: I-10 REFUSE THE SPECIAL OCCASION / No benefit often means no point occasionally.
+- Reserved-later fence: vow and ordinary life reserved for C11–C12; no new demolition after this.
+- Arc / curve: demolition end; freedom surge begins.
+- Reader-state: celebrant afraid to lose love; encounter returns love to owners.
+- Mantras: M-C echo; M-D echo; M-F echo.
+- Frozen token: T-A “Eat whatever real food you like, whenever you are hungry, and you will never miss BAD SUGAR.” returns here at pre-quit pivot as ground for totality.
+- Scenes: SC-C debut full staging; SC-D token echo only.
+- Structural: strongest-case room; perception-enacted room; embedded long-form testimony in main flow in its own room drawn from freedom honesty and stability arc, original prose.
+- Guardrails: credit reassignment complete; no disgust lingering; SAFE-A silent.
+- Continuity: (a) enters from C09 cleared field. (b) receives myths, identity, schedule as closed tokens. (c) hands forward totality accepted and readiness to vow for C11.
+- Budget: 5500.

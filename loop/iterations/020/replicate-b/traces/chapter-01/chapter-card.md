@@ -1,0 +1,13 @@
+**C-01 — The Sweet Invitation**
+- Primary job: non-argument — definition: BAD SUGAR line plus contract makes investigation safe and full read-through likely.
+- Objection resolved: This is another diet lecture that will demand suffering.
+- Arc / curve: first third opening; freedom promised, demolition not started.
+- Reader-state: wary dieter expecting rules; encounter is plain spoken contract and boxed definition handled as fact.
+- Mantras: M-A “you have absolutely nothing to lose and everything to gain”; M-B “easily, immediately and permanently”.
+- Frozen token: T-A “Eat whatever real food you like, whenever you are hungry, and you will never miss BAD SUGAR.” planted here.
+- Scenes: none debuted; SC-H reserved for later margin.
+- Structural: redefinition room; authority dossier; claim block T-A planted; instructions I-01, I-02, I-03 at climax.
+- New instructions: I-01 KEEP AN OPEN MIND / You haven’t heard it this way before. I-02 DON’T STOP OR CUT DOWN WHILE YOU READ / Carry on exactly as normal until the vow. I-03 BEGIN WITH EXCITEMENT, NOT DOOM / This is an escape.
+- Guardrails: original prose; SAFE-A boxed once here only; no medical promise; no willpower language.
+- Continuity: (a) enters from curiosity mixed with dread. (b) nothing settled yet to protect. (c) hands forward willing investigator who keeps consuming normally and holds BAD SUGAR definition and T-A promise for C02.
+- Budget: 4500.

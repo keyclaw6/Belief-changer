@@ -1,0 +1,12 @@
+**C-12 — Mornings, Shops, Food**
+- Primary job: non-argument — hand-off: ordinary days prove freedom using thoughts reader already owns.
+- Objection resolved: How will I live this.
+- Arc / curve: ordinary life; freedom bathed.
+- Reader-state: newly free person shopping and waking without loop; encounter is morning, shop, meal handled with ease.
+- Mantras: M-I echo; M-H echo in freedom valence; M-J echo as remembered rent.
+- Scenes: no debuts; SC-D and SC-B token echoes only as phrases.
+- Structural: ordinary-life chapter; pity-not-envy, reframe-not-suppress, slip-as-warning, no substitutes, no evangelism, change-nothing-else as speech, not manual.
+- New instruction: I-12 WHEN YOU THINK OF SUGAR, THINK FREEDOM / Meet the thought with joy.
+- Guardrails: no new demolition; no trigger-avoidance as resistance; original everyday prose.
+- Continuity: (a) enters from C11 free identity. (b) receives every demolition and both relapse doors as closed one-sentence tokens, never as bullets or scripts. (c) hands forward lived freedom and terminal habit for C13 recap.
+- Budget: 4500.

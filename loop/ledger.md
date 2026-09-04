@@ -334,3 +334,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Spark 1.3 on KEEP-014 prompts plus a new 13-chapter plan closed blocking in both books. The remaining KEEP surface is noted classes that appear in both books, led by late-arc `re-argument` (plan-card) and `factory-speech` (PERSISTENT).
 
 **What this opens next.** 020 hypothesizer (Fable 5.1 Cursor Task) from this trace. PRIMARY = highest-priority class in both books (belief → arc/journey → voice). Anti-slop may ride secondary only if PRIMARY is factory-speech or a hedge class.
+
+### iter-020 — continuity closed-list + fact-assertion  ·  2026-09-04  ·  INCONCLUSIVE
+
+**Hypothesis.** If every card names the preceding belief as closed and lists settled jobs as one-sentence token echoes only — especially after the vow — journey `re-argument` falls in both books because CH-11–13 stop re-running CH-10 demolitions as a second manual.
+
+**Change.** One bullet in `prompts/master-plan-skill-v2.md` (continuity intent). Secondary: `prompts/style-guide.md` §B5 fact-assertion. Plan regenerated. Research reused. Two Spark 1.3 books. Panel 40+40.
+
+**What happened.** Journey re-argument 7→4 (A) and 5→5 (B). Belief 13/13, journey 13/13, voice 13/13, book-arc PASS both; blocking 0/0. Factory-speech noted 6→6 / 21→4. Book-arc re-argument 3→3 / 2→1.
+
+**Verdict & why.** INCONCLUSIVE. PRIMARY improved in one book only. No both-books new blocking class. Do not promote.
+
+**What we learned.** Journey `re-argument` 7→4 (A) and 5→5 (B) — one book only. Blocking stayed 0/0. Secondary factory-speech 6→6 / 21→4 also one-book. Card-field bind is sampling-sensitive on Spark 1.3. Do not promote. Same PRIMARY eligible with a new mechanism.
+
+**What this opens next.** New mechanism on the same PRIMARY (plan-card re-argument), not this exact continuity sentence. Strikes: 1 on re-argument + plan-skill under Spark 1.3 census.

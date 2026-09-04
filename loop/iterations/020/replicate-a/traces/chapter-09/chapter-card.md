@@ -1,0 +1,16 @@
+**C-09 — The Last Hiding Places**
+- Primary job: enacted transition — remaining myths, identity excuses and method doubts do not survive: traits result from trap, objections are Confectioner scripts.
+- Objection resolved: But I’m wired this way / just one / cut down / tomorrow / method sounds too easy.
+- Belief now: enters with scattered leftovers; leaves with no foothold and method inoculated.
+- Encounter: rapid quoted objections answered briefly in reader’s own dialect, plus population commonness stated once.
+- Evidence: E-10 once only plus E-13/E-14 contested honesty and E-08 schedule; writer must state split honestly, keep prevalence single appearance, no diagnosis.
+- New instruction: I-09 IGNORE ADVICE THAT CONFLICTS WITH THIS METHOD / Other quitters quit by suffering.
+- Reserved-later fence: sweetest scene and vow reserved for C10–C11 only.
+- Arc / curve: demolition close; freedom language begins to rise.
+- Reader-state: negotiator reaching for exceptions; encounter pre-labels each as script.
+- Mantras: none new; M-C token echo only if natural.
+- Scenes: SC-F debut full; SC-H preview as phrase only, full in C11.
+- Structural: myths Q&A distinct room; identity-excuse room; meta-inoculation room; prevalence-once responsibility.
+- Guardrails: graceful concession preserved; original replies; no new scare.
+- Continuity: (a) enters from C08 method blamed and fear gone. (b) receives inversion, anti-method, fear as closed tokens. (c) hands forward cleared field with only sweetest scene left for C10.
+- Budget: 5000.

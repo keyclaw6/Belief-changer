@@ -2,13 +2,13 @@
 
 ## Position
 
-- **Iteration:** 019
+- **Iteration:** 020
 - **Stage:** Done
 - **Status:** IDLE
 - **Campaign branch:** `campaign-001`
-- **Worktree:** none (019 is a Spark 1.3 re-baseline on the campaign branch; 020+ use `../quit-sugar-iter-NNN`)
-- **Last completed unit:** Iteration 019 decision (BASELINE). 3-strike clock reset. Accepted snapshot = replicate A (13 chapters).
-- **Next unit:** 020 — worktree `../quit-sugar-iter-020`, Fable 5.1 hypothesizer, then factory. Inbox empty.
+- **Worktree:** none (020 INCONCLUSIVE; factory change not promoted)
+- **Last completed unit:** Iteration 020 decision (INCONCLUSIVE). Journey re-argument 7→4 / 5→5. 019 snapshot remains accepted.
+- **Next unit:** 021 — worktree `../quit-sugar-iter-021`, Fable hypothesizer. Inbox empty.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -23,14 +23,5 @@
 
 | Time | What | Next |
 |---|---|---|
-| 2026-08-30 16:52 | Judge B 46/46 exit 0. Census both. Trace + decision INCONCLUSIVE. Records last. | IDLE |
-| 2026-09-04 12:40 | Founder authorized 019→040. Prep merged onto campaign-001. Spark 1.3 BASELINE. | 019 research reuse + plan |
-| 2026-09-04 12:50 | 019 start. Inbox empty. Factory on disk = KEEP 014. Research REUSE. | plan-write initial |
-| 2026-09-04 12:53 | 019 plan-write initial OK (Spark 1.3 Zen, 13 cards). | plan-review r1 |
-| 2026-09-04 12:55 | 019 plan-review r1 fit to write from. Alignment rebuilt. | write A |
-| 2026-09-04 13:06 | Write A ch01–09 OK; stream dropped at ch10 prompt. Resume. | write A ch10–13 |
-| 2026-09-04 13:16 | Write A 13/13 Zen. Snapshot A. Wipe live. | write B + judge A |
-| 2026-09-04 13:46 | Write B 13/13 Zen. Judge A 40/40. Snapshot B. | judge B |
-| 2026-09-04 14:42 | Judge B crash exit -9 at journey-ch07. Resume. | judge B remainder |
-| 2026-09-04 15:00 | Judge B 40/40. Census: blocking 0 both; noted factory-speech 6/21. | trace-analyzer |
 | 2026-09-04 15:12 | 019 BASELINE recorded. Accepted snapshot A. Strikes reset. | 020 hypothesizer |
+| 2026-09-04 17:20 | 020 INCONCLUSIVE. Journey re-argument 4/5 vs 7/5. Records only. | 021 |
