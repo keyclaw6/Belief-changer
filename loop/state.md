@@ -3,12 +3,12 @@
 ## Position
 
 - **Iteration:** 025
-- **Stage:** Writing
+- **Stage:** Judging
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 019 plan reused)
-- **Last completed unit:** 025 ch07 both books (A 3842/5000, B 3745/5000). Running totals A 29127 / B 29187. Writers live on ch08 (A review, B rewrite).
-- **Next unit:** Finish 025 writes 08–13, then judge A when write A exits.
+- **Last completed unit:** 025 writes complete both books (A 52182 / B 51144; KEEP length floor 48000 met). Reviewer ACCEPTs: A ch11, B ch12; all other chapters REVISE→one rewrite.
+- **Next unit:** Judge A (j025a, 10-wide), then judge B, then census + decision.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -31,3 +31,5 @@
 | 2026-09-05 00:03 | 025 writing. Ch01–03 both books in band after reviewer. w025a/w025b on ch04. | 025 writes |
 | 2026-09-05 00:06 | 025 ch04 done both (A 4070/4800, B 4466/4800). Writers on ch05. | 025 writes |
 | 2026-09-05 00:20 | 025 ch05–07 done both. Reviewer REVISE→rewrite every chapter so far. Totals A 29127 / B 29187. Writers on ch08. | 025 writes |
+| 2026-09-05 00:35 | 025 ch08–12 done both. First ACCEPTs (A ch11, B ch12). Totals A 49495 / B 48021. Writers on ch13. | 025 ch13 then judge A |
+| 2026-09-05 00:42 | 025 writes done. A 52182 / B 51144. Starting judge A. | j025a then j025b |
