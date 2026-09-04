@@ -13,7 +13,7 @@ JUDGES=$REPO/loop/judges
 EFFORT=$(grep -E '^judge_reasoning:' "$CFG" | sed 's/^[^:]*: *//; s/ *#.*//')
 MODEL=$(grep -E '^judge_model:' "$CFG" | sed 's/^[^:]*: *//; s/ *#.*//')
 # Provider comes from config (judges stay on judge_route / OpenCode Go;
-# Muse Spark is writer/planner/hypothesizer only, never the judges); if
+# Muse Spark is writer/planner only, never the judges); if
 # config fails to declare it, stop rather than guess.
 PROVIDER=$(grep -E '^judge_route:' "$CFG" | sed 's/^[^:]*: *//; s/ *#.*//')
 [ -n "$PROVIDER" ] || { echo "run_preflight: judge_route missing from $CFG — refusing to guess a provider" >&2; exit 1; }

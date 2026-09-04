@@ -238,7 +238,8 @@ the next iteration; they are never drained in a batch.
    and founder-only-model guards still apply. The founder note supplies the
    change and rationale; the trace analysis supplies the failure evidence.
 3. Save the hypothesizer's 4-field response as `loop/iterations/NNN/hypothesis.md`
-   with `source: founder inbox`, and only then move the inbox file to
+   with `source: founder inbox` (and `hypothesis-metadata.json` `{model, harness,
+   spawn}`), and only then move the inbox file to
    `loop/inbox/used/NNN-<name>.md` (write the hypothesis first — never move
    before it is recorded).
 
@@ -248,7 +249,8 @@ If the inbox is empty, spawn the `hypothesizer` sub-agent (contract:
 - `loop/learnings.md`
 - the current editable factory files
 
-Save its response unchanged as `loop/iterations/NNN/hypothesis.md`.
+The orchestrator writes `loop/iterations/NNN/hypothesis.md` unchanged and
+`loop/iterations/NNN/hypothesis-metadata.json` `{model, harness, spawn}`.
 
 ### Step 2: Apply the change
 

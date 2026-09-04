@@ -10,7 +10,7 @@
 # fields marked [PI BINDING] are the pi-harness realization only — another
 # harness substitutes its own connection and ignores those fields.
 #   opencode     — [PI BINDING] OpenCode Zen. Primary for Muse Spark roles
-#                  (writer, plan-writer, hypothesizer) on the free contributor
+#                  (writer, plan-writer) on the free contributor
 #                  model, and for every other role on DeepSeek V4 Flash (Go).
 #   vercel       — Vercel AI Gateway. Coded fallback only for Muse Spark roles
 #                  (same contributor weights, paid). Never the non-contributor
@@ -45,15 +45,11 @@ planner_fallback_route: vercel
 planner_reasoning: high
 
 # ── Hypothesizer — loop/prompts/hypothesizer.md ──
-# Same Muse Spark routing as the writer.
-hypothesizer_model: muse-spark-1.2-contributor-free
-hypothesizer_fallback_model: meta/muse-spark-1.2-contributor
-hypothesizer_endpoint: https://opencode.ai/zen/v1/responses
-hypothesizer_auth_env: OPENCODE_API_KEY
-hypothesizer_route: opencode
-hypothesizer_fallback_endpoint: https://ai-gateway.vercel.sh/v1/chat/completions
-hypothesizer_fallback_auth_env: AI_GATEWAY_API_KEY
-hypothesizer_fallback_route: vercel
+# Claude Fable 5.1 as a fresh harness sub-agent (Cursor: Task spawn). The
+# harness spawn is the route; no HTTP endpoint, no Muse fallback. One call
+# per iteration: retry once on the same model, then escalate to the founder.
+hypothesizer_model: claude-fable-5-1
+hypothesizer_route: harness-subagent
 hypothesizer_reasoning: high
 
 # ── Everything else runs on DeepSeek V4 Flash via the OpenCode Zen ──
