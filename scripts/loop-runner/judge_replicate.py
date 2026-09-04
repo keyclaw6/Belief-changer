@@ -14,9 +14,6 @@ GSBS = REPO / "calibration/reference/gsbs"
 JUDGES = REPO / "loop/judges"
 AGENT = Path.home() / ".local/bin/agent"
 LANES = ("belief-mechanic", "voice-emotion", "reader-journey")
-# Fable 5.1 2026-09-04: 8-wide (~0.4 GB/agent, ~7 GB free); 600s (median 43s, 019 hung 43m).
-TIMEOUT = int(os.environ.get("JUDGE_TIMEOUT", "600"))
-JUDGE_PARALLEL = int(os.environ.get("JUDGE_PARALLEL", "8"))
 
 
 def parse_alignment(text: str) -> dict[int, int]:
@@ -214,13 +211,7 @@ def run_agent(prompt: str, out: Path, tag: str) -> bool:
     ]
     for attempt in (1, 2):
         t0 = time.time()
-        try:
-            r = subprocess.run(cmd, cwd=str(REPO), capture_output=True, text=True, timeout=TIMEOUT)
-        except subprocess.TimeoutExpired:
-            # ponytail: kills the agent child only; process-group if grandchildren hang
-            partial.write_text(f"TIMEOUT after {TIMEOUT}s attempt {attempt} — no verdict. Re-run this job.\n")
-            print(f"FAIL {tag} timeout {TIMEOUT}s attempt {attempt}", flush=True)
-            continue
+        r = subprocess.run(cmd, cwd=str(REPO), capture_output=True, text=True)
         text = r.stdout
         if r.returncode != 0 and not text.strip():
             text = (r.stderr or "") + f"\n\n(agent exit {r.returncode})"
@@ -310,8 +301,7 @@ def main() -> None:
 
     if not filtered:
         return
-    workers = min(JUDGE_PARALLEL, len(filtered))
-    with ThreadPoolExecutor(max_workers=workers) as pool:
+    with ThreadPoolExecutor(max_workers=len(filtered)) as pool:
         futs = {pool.submit(run_agent, prompt, out, tag): tag for tag, out, prompt in filtered}
         for tag, _, _ in filtered:
             print(f"spawn {tag}", flush=True)

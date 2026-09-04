@@ -415,7 +415,7 @@ Shared (once per iteration, not per replicate): `hypothesis.md`,
   primary. Still failing on all routes → iteration INCONCLUSIVE, or
   escalate to the founder when all routes are credential/route failures.
   Never fall back to a non-contributor `meta/muse-spark-*` alias.
-- Judge timeout: retryable unit failure (`.partial` only, no `response.md`); re-run that judge job.
+- Judge failure: retryable unit failure (`.partial` only, no `response.md`); the runner waits for each `agent` to exit, retries once, then re-invoke fills gaps.
 - Writer refusal: the exact refusal line is saved to
   `traces/chapter-NN/refusal.md` under the current replicate; no chapter file
   is written; the refusal's named owner is the iteration's finding;
