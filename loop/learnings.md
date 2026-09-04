@@ -184,3 +184,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** INCONCLUSIVE
 **Lesson:** Journey `re-argument` 7→6 (A) and 5→7 (B) — one book only; B rose. Blocking 0/0. Belief/arc re-argument also rose. Assembled runtime prompt still ends with the old "handoff seam" assignment from `write_replicate.py`. Do not promote. Same PRIMARY eligible with a new mechanism (assembled contract or plan-card), not this exact clause.
 **Next direction:** Do not replay this previous-chapter paragraph. If PRIMARY stays journey re-argument, change a different component (assembled writer assignment, or plan-card job overlap). Anti-slop still only if PRIMARY is factory-speech or hedge.
+
+### iter-022 — Binding craft 3 one-sentence handoff
+**Hypothesis:** PRIMARY: Binding craft 3 licenses one-sentence invoke of settled work as the whole handoff seam, so journey `re-argument` falls in both vs 019.
+**Change:** `prompts/chapter-writer.md` (Binding craft 3 only). Research reused. Plan reused (019, 13 chapters). Two books Spark 1.3 Go contributor. Judges composer-2.5.
+**Verdict:** INCONCLUSIVE
+**Lesson:** Journey `re-argument` 7→6 (A) and 5→7 (B) — one book only; B rose. Blocking 0/0. Plan-card CH-10/11 and late-arc overlaps survived. Do not promote. Writer-prompt + re-argument strike 2 under Spark 1.3 census.
+**Next direction:** Do not replay Binding craft 3 or the 021 previous-chapter clause. If PRIMARY stays journey re-argument, prefer plan-card (different component) — one more writer-prompt miss is a 3-strike PIVOT. Anti-slop still only if PRIMARY is factory-speech or hedge.

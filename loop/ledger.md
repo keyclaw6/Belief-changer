@@ -362,3 +362,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** The hypothesized sentence is not the whole assembled contract: `write_replicate.py` still injects "voice continuity and the handoff seam" as the last assignment line. N←N−1 remains the journey shape. Plan-card still assigns overlapping demolitions the writer cannot refuse.
 
 **What this opens next.** Do not replay this exact clause. Strike 1 on re-argument + writer-prompt (assembled) under Spark 1.3 census. Next mechanism must not be this paragraph alone.
+
+### iter-022 — Binding craft 3 one-sentence handoff  ·  2026-09-04  ·  INCONCLUSIVE
+
+**Hypothesis.** If Binding craft 3 defines settled work and makes one spoken sentence the whole handoff seam, journey `re-argument` falls in both books versus 019 (A 7, B 5).
+
+**Change.** One rule in `prompts/chapter-writer.md` (see `loop/iterations/022/change.diff`). Plan reused (019, 13 chapters). Research reused. Two Spark 1.3 Go-contributor books. Panel composer-2.5, 40+40.
+
+**What happened.** Journey re-argument 7→6 (A) and 5→7 (B). Belief 13/13, journey 13/13, voice 13/13, book-arc PASS both; blocking 0/0. Belief re-argument 3→3 / 1→2. Book-arc re-argument 3→1 / 2→2. Factory-speech noted 6→6 / 21→11. Journey-stall 1→3 / 0→2.
+
+**Verdict & why.** INCONCLUSIVE. PRIMARY improved in one book only. No both-books new blocking class. Do not promote.
+
+**What we learned.** Licensed one-sentence invoke did not close N←N−1 in both books. Plan-card double-ownership (CH-10/11, late-arc) still assigns rebuilds. B mid-arc seams rebuilt despite one-sentence openers.
+
+**What this opens next.** Do not replay Binding craft 3. Strike 2 on re-argument + writer-prompt under Spark 1.3 census. Prefer plan-card next if PRIMARY stays this class.

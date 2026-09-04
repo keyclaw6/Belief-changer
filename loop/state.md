@@ -2,13 +2,13 @@
 
 ## Position
 
-- **Iteration:** 021
+- **Iteration:** 022
 - **Stage:** Done
 - **Status:** IDLE
 - **Campaign branch:** `campaign-001`
-- **Worktree:** none (021 INCONCLUSIVE; factory change not promoted)
-- **Last completed unit:** Iteration 021 decision (INCONCLUSIVE). Journey re-argument 7→6 / 5→7. 019 snapshot remains accepted.
-- **Next unit:** 022 — worktree `../quit-sugar-iter-022`, Fable hypothesizer. Inbox empty. Do not replay 021 previous-chapter clause or 020 continuity bullet.
+- **Worktree:** none (022 INCONCLUSIVE; factory change not promoted)
+- **Last completed unit:** Iteration 022 decision (INCONCLUSIVE). Journey re-argument 7→6 / 5→7. 019 snapshot remains accepted.
+- **Next unit:** 023 — worktree `../quit-sugar-iter-023`, Fable hypothesizer. Inbox empty. Do not replay 021 previous-chapter clause, 020 continuity bullet, or 022 Binding craft 3.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -23,6 +23,6 @@
 
 | Time | What | Next |
 |---|---|---|
-| 2026-09-04 15:12 | 019 BASELINE recorded. Accepted snapshot A. Strikes reset. | 020 hypothesizer |
-| 2026-09-04 17:20 | 020 INCONCLUSIVE. Journey re-argument 4/5 vs 7/5. Records only. | 021 |
-| 2026-09-04 19:18 | 021 INCONCLUSIVE. Journey re-argument 6/7 vs 7/5. Records only. Consecutive no-KEEP: 2. | 022 |
+| 2026-09-04 17:20 | 020 INCONCLUSIVE. Journey re-argument 4/5 vs 7/5. | 021 |
+| 2026-09-04 19:18 | 021 INCONCLUSIVE. Journey re-argument 6/7 vs 7/5. | 022 |
+| 2026-09-04 20:09 | 022 INCONCLUSIVE. Journey re-argument 6/7 vs 7/5. Consecutive no-KEEP: 3. | 023 |

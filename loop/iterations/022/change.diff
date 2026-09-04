@@ -1,0 +1,23 @@
+diff --git i/prompts/chapter-writer.md w/prompts/chapter-writer.md
+index a6ff081..8206fd2 100644
+--- i/prompts/chapter-writer.md
++++ w/prompts/chapter-writer.md
+@@ -89,8 +89,16 @@ that can repair the defect. Never emit another refusal form.
+    assigned mantra is not a defect: do not invent one, and do not refuse.
+ 3. Repeat assigned mantras verbatim; repeat no other striking prose verbatim.
+    Previews, summaries, and assigned instruction recaps are licensed recap
+-   zones. Invoke settled prior work by speaking its frozen token as ordinary
+-   speech — never by chapter-number callbacks, "as promised," or ledger talk.
++   zones. Settled work is whatever the previous chapter, or any earlier card
++   in the plan, already landed: its verdicts, scenes, warnings, questions,
++   and transitions. Invoke settled work in one plain spoken sentence — its
++   frozen token where one exists, otherwise the settled conclusion stated as
++   fact — and that one sentence is the whole handoff seam. Never rebuild
++   settled work at any length, whether as an opening recap, a bridge, a
++   roll-call, or a fresh proof; never invoke it by chapter-number callbacks,
++   "as promised," or ledger talk. When your card's job or encounter overlaps
++   settled work, that is not a card defect — do not refuse; spend the chapter
++   on what remains after that one sentence.
+ 4. Use the trap register for the behavior and freedom register for stopping,
+    as the card and plan inventories assign. Do not use willpower-register
+    language such as `give up`, `resist`, `stay strong`, `discipline`,
