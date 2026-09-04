@@ -320,3 +320,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** A prefix ban can close trap-question labels without deleting the 014 ask-teaching. It does not hold the blocking factory-speech floor at 0/0 when A samples evidence-register at a climax. Plan-card still names `Socratic trap question`; neither book spoke it.
 
 **What this opens next.** Do not promote this line. Founder halt — do not start 019 unless asked.
+
+### iter-019 — Spark 1.3 BASELINE  ·  2026-09-04  ·  BASELINE
+
+**Hypothesis.** None — measurement after the founder pin to Muse Spark 1.3 contributor. Same 009 pattern: a founder model change requires a fresh baseline. Factory files stay at KEEP 014. 015–018 were not re-applied. Word-budget sentence not bundled.
+
+**Change.** None. Research reused. Plan regenerated (13 chapters, `fit to write from` on review r1). Two books on Zen `muse-spark-1.3-contributor-free` (every chapter both replicates; no Vercel fallback). Panel composer-2.5, 40+40. Card headers wrapped `**CH-NN**` after review so the writer parser locates them (014 format).
+
+**What happened.** All lanes PASS, blocking 0 both books. Belief 13/13 both; journey 13/13 both; voice 13/13 both; book-arc PASS both. Noted signal in both: willpower-lexicon 21/33, factory-speech 6/21, journey re-argument 7/5, book-arc re-argument 3/2, belief re-argument 3/1, coach-register 6/3, wrong-register 5/2, copied-mannerism 2/7, pre-debut-spend 1/1. A-only: trap-question-label 3, journey-stall 1. Trace analysis: late-arc plan-card re-owns CH-10 totality jobs in CH-11–13; factory-speech noted hydra persists (instruction-spine serialization + chapter-meta narration); willpower-lexicon is structurally required by the anti-method chapter.
+
+**Verdict & why.** BASELINE. No target cluster. Accepted snapshot is replicate A. 3-strike clock resets. North Star not met (noted floors remain). Continue 020–040.
+
+**What we learned.** Spark 1.3 on KEEP-014 prompts plus a new 13-chapter plan closed blocking in both books. The remaining KEEP surface is noted classes that appear in both books, led by late-arc `re-argument` (plan-card) and `factory-speech` (PERSISTENT).
+
+**What this opens next.** 020 hypothesizer (Fable 5.1 Cursor Task) from this trace. PRIMARY = highest-priority class in both books (belief → arc/journey → voice). Anti-slop may ride secondary only if PRIMARY is factory-speech or a hedge class.
