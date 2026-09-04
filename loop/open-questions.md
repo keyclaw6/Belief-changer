@@ -81,7 +81,7 @@ fixes, no Temporal:
    waits on that process (`tail --pid`), not a sleep timer.
 2. `muse_client.py`: 429 in the transient set, 90s × up to 4 on that route.
 3. Each runner starts in its own tmux session; the conversation waits with
-   `while tmux has-session; do sleep 60; done` (not `tmux wait-for`).
+   `tail --pid` of the runner pane (not `tmux wait-for`, not `sleep 60`).
 
 Never a Makefile / `run_factory.py` / cron driver, never a continue-loop
 encoded in prompts or skills, never a change to the KEEP object. No hook
