@@ -1,0 +1,2 @@
+REVISE
+LENGTHEN to B±15% — Delivered 2580 words vs Budget 5200 (acceptable 4420–5980). Add ~1840–3400 words to enact the desk-afternoon inversion, tight-shoes staging, and load sections fully without adding reserved-later jobs.
