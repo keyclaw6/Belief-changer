@@ -14,6 +14,8 @@ GSBS = REPO / "calibration/reference/gsbs"
 JUDGES = REPO / "loop/judges"
 AGENT = Path.home() / ".local/bin/agent"
 LANES = ("belief-mechanic", "voice-emotion", "reader-journey")
+# Founder 2026-09-04: keep 8-wide on this 15 GiB MemTotal box. 40-wide OOMs.
+JUDGE_PARALLEL = int(os.environ.get("JUDGE_PARALLEL", "8"))
 
 
 def parse_alignment(text: str) -> dict[int, int]:
@@ -301,7 +303,7 @@ def main() -> None:
 
     if not filtered:
         return
-    with ThreadPoolExecutor(max_workers=len(filtered)) as pool:
+    with ThreadPoolExecutor(max_workers=min(JUDGE_PARALLEL, len(filtered))) as pool:
         futs = {pool.submit(run_agent, prompt, out, tag): tag for tag, out, prompt in filtered}
         for tag, _, _ in filtered:
             print(f"spawn {tag}", flush=True)
