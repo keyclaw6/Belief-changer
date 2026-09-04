@@ -2,13 +2,13 @@
 
 ## Position
 
-- **Iteration:** 024
-- **Stage:** Done
+- **Iteration:** 025
+- **Stage:** Writing
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
-- **Worktree:** none (024 REVERT; factory change and regenerated 16-chapter plan not promoted)
-- **Last completed unit:** Iteration 024 decision (REVERT). Journey re-argument 7→7 / 5→5. 019 snapshot remains accepted. Consecutive no-KEEP: 5. `loop/iterations/024/convergence-report.md` written.
-- **Next unit:** 025 BASELINE writes (reviewer on, 019 plan, two books). Comparison PASS `missing` 0. CH-06 reviewer smoke: 1064→4080w (band). Heartbeat `loop-belief-changer-factory-resume` 20m.
+- **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 019 plan reused)
+- **Last completed unit:** 025 ch02 both books (A 4168/4200, 4653/5200; B 3596/4200, 4213/5200). Writers live on ch03.
+- **Next unit:** Finish 025 writes 03–13, then judge A when write A exits.
 
 ## Run authorization (founder, 2026-09-04)
 
