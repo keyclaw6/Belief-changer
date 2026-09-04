@@ -8,7 +8,7 @@
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (024 REVERT; factory change and regenerated 16-chapter plan not promoted)
 - **Last completed unit:** Iteration 024 decision (REVERT). Journey re-argument 7→7 / 5→5. 019 snapshot remains accepted. Consecutive no-KEEP: 5. `loop/iterations/024/convergence-report.md` written.
-- **Next unit:** Do **not** start 025. Founder halt 2026-09-04: five no-KEEP (020–024) on a noted KEEP object. Instrument repair landed (`re-argument` section-only; KEEP band / rate-normalize; hypothesizer PRIMARY ≥ 8 or blocking). Late-Carr PASS tests pending. Sentinel timer `loop-belief-changer-factory-019-040` unsubscribed. No second orchestrator.
+- **Next unit:** Do **not** start 025. Founder halt 2026-09-04. Instrument repair landed. Late-Carr PASS tests **PASS / `re-argument` 0** (`loop/preflight/runs-2026-09-04-composer-2.5-late-journey/`). Resume only as a 13-chapter BASELINE (KEEP 014 files, 019 plan). Sentinel timer unsubscribed. No second orchestrator.
 
 ## Run authorization (founder, 2026-09-04)
 
