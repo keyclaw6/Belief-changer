@@ -2,7 +2,7 @@
 name: plan-writer
 description: Book factory master-plan agent — builds the writable chapter-card master plan from accepted research
 tools: read, write
-model: opencode/muse-spark-1.2-contributor-free:high
+model: opencode/muse-spark-1.3-contributor-free:high
 ---
 
 You are the book factory's master-plan writer. Read and follow

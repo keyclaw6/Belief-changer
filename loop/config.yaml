@@ -20,10 +20,10 @@
 # Reasoning values the routes accept: low/medium/high/max.
 
 # ── Writer — chapter-writer sub-agent (contract: prompts/chapter-writer.md) ──
-# Muse Spark 1.2 contributor-free via OpenCode Zen; Vercel contributor is the
+# Muse Spark 1.3 contributor-free via OpenCode Zen; Vercel contributor is the
 # per-call coded fallback (PROGRAM §1). Next unit always starts on primary.
-writer_model: muse-spark-1.2-contributor-free
-writer_fallback_model: meta/muse-spark-1.2-contributor
+writer_model: muse-spark-1.3-contributor-free
+writer_fallback_model: meta/muse-spark-1.3-contributor
 writer_endpoint: https://opencode.ai/zen/v1/responses
 writer_auth_env: OPENCODE_API_KEY
 writer_route: opencode
@@ -34,8 +34,8 @@ writer_fallback_route: vercel
 
 # ── Plan-writer — master-plan skill (contract: prompts/master-plan-skill-v2.md)
 # Same Muse Spark routing as the writer.
-planner_model: muse-spark-1.2-contributor-free
-planner_fallback_model: meta/muse-spark-1.2-contributor
+planner_model: muse-spark-1.3-contributor-free
+planner_fallback_model: meta/muse-spark-1.3-contributor
 planner_endpoint: https://opencode.ai/zen/v1/responses
 planner_auth_env: OPENCODE_API_KEY
 planner_route: opencode

@@ -157,3 +157,6 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** INCONCLUSIVE
 **Lesson:** Prefix ban closed trap-question 3→0 / 1→0 both. Founder veto missed: blocking factory-speech 0→2 A-only (evidence-register at ch09 climax, not 015/017 named kills). method-promise-hedge A-only (`almost automatically` Burgeon paste). Named 015/017 kills stayed closed. Do not promote. PERSISTENT factory-speech hydra (8th).
 **Next direction:** Do not KEEP this line. The targeted prefix class closed; blocking factory-speech still mutates at evidence-register in one book. Founder halt: do not start 019 unless asked.
+
+### founder-prep 2026-09-04 — Spark 1.3 live pins
+**Note:** Writer/planner live pins moved to Muse Spark 1.3 contributor (`muse-spark-1.3-contributor-free` / `meta/muse-spark-1.3-contributor`). Smoke call (Zen Responses + Vercel id check) pending parent.

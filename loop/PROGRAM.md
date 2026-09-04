@@ -90,8 +90,8 @@ before the first Muse Spark spawn, export
 (so `pi-provider-fallback` loads the Zen→Vercel chain; without the export
 the plugin looks in `~/.pi/agent/extensions/` and stays disabled). On a route, quota, or unavailable failure the orchestrator
 retries that same unit once on the role's `*_fallback_model` (Muse Spark:
-OpenCode Zen `muse-spark-1.2-contributor-free` → Vercel
-`meta/muse-spark-1.2-contributor`). The next unit always starts on the
+OpenCode Zen `muse-spark-1.3-contributor-free` → Vercel
+`meta/muse-spark-1.3-contributor`). The next unit always starts on the
 primary — fallback is per-call, never sticky. Both routes failing → stop
 and escalate to the founder. Never swap contributor → non-contributor
 (same weights, ~20× cost). The hypothesizer never proposes a model,
@@ -395,8 +395,8 @@ Shared (once per iteration, not per replicate): `hypothesis.md`,
   once on the fallback. Record the model that actually ran in that unit's
   `metadata.json`. The next unit always starts on the primary. Still
   failing on both → iteration INCONCLUSIVE, or escalate to the founder when
-  both routes are credential/route failures. Never fall back to
-  `meta/muse-spark-1.2` (non-contributor).
+  both routes are credential/route failures. Never fall back to a
+  non-contributor `meta/muse-spark-*` alias.
 - Writer refusal: the exact refusal line is saved to
   `traces/chapter-NN/refusal.md` under the current replicate; no chapter file
   is written; the refusal's named owner is the iteration's finding;

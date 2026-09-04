@@ -195,8 +195,8 @@ The hypothesizer, orchestrator, and any spawned role must not edit `*_model`,
 `*_fallback_model`, `*_route`, or endpoint fields. Contributor vs
 non-contributor aliases of the same weights are not different models; swapping
 them is not a hypothesis. Muse Spark roles use OpenCode Zen
-`muse-spark-1.2-contributor-free` as primary and Vercel
-`meta/muse-spark-1.2-contributor` as the per-call fallback; the next unit
+`muse-spark-1.3-contributor-free` as primary and Vercel
+`meta/muse-spark-1.3-contributor` as the per-call fallback; the next unit
 always starts on the primary. If prompt and structure tuning cannot produce
 Carr-quality output, the founder changes models manually.
 
