@@ -14,8 +14,8 @@ GSBS = REPO / "calibration/reference/gsbs"
 JUDGES = REPO / "loop/judges"
 AGENT = Path.home() / ".local/bin/agent"
 LANES = ("belief-mechanic", "voice-emotion", "reader-journey")
-# Founder 2026-09-04: keep 8-wide on this 15 GiB MemTotal box. 40-wide OOMs.
-JUDGE_PARALLEL = int(os.environ.get("JUDGE_PARALLEL", "8"))
+# Founder 2026-09-04: 10-wide → 40 jobs in 4 waves on this 15 GiB MemTotal box.
+JUDGE_PARALLEL = int(os.environ.get("JUDGE_PARALLEL", "10"))
 
 
 def parse_alignment(text: str) -> dict[int, int]:
@@ -302,12 +302,14 @@ def main() -> None:
         filtered.append((tag, out, prompt))
 
     if not filtered:
+        print("PANEL DONE", flush=True)
         return
     with ThreadPoolExecutor(max_workers=min(JUDGE_PARALLEL, len(filtered))) as pool:
         futs = {pool.submit(run_agent, prompt, out, tag): tag for tag, out, prompt in filtered}
         for tag, _, _ in filtered:
             print(f"spawn {tag}", flush=True)
         bad = [futs[fut] for fut in as_completed(futs) if not fut.result()]
+    print("PANEL DONE", flush=True)
     if bad:
         raise SystemExit(f"{len(bad)} judge(s) missing after retry: {bad} — re-run to retry; existing reports are skipped")
 

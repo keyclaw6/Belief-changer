@@ -74,9 +74,11 @@ or a tool-call stream (judge hang, Muse 429, write stream drop, judge
 `exit -9`), not a conversation death the stop hook missed. Three native
 fixes, no Temporal:
 
-1. `judge_replicate.py`: spawn pending judges 8 at a time (15 GiB
-   MemTotal), wait for each `agent` to exit (no per-call timeout), one
-   in-runner retry, a failed judge does not abort siblings.
+1. `judge_replicate.py`: spawn pending judges 10 at a time (40 jobs in
+   4 waves on 15 GiB MemTotal), wait for each `agent` to exit (no
+   per-call timeout), one in-runner retry, a failed judge does not abort
+   siblings. The runner prints `PANEL DONE` and exits; the orchestrator
+   waits on that process (`tail --pid`), not a sleep timer.
 2. `muse_client.py`: 429 in the transient set, 90s × up to 4 on that route.
 3. Each runner starts in its own tmux session; the conversation waits with
    `while tmux has-session; do sleep 60; done` (not `tmux wait-for`).
@@ -153,6 +155,6 @@ tmux session each. No worktrees. Judge A starts when write A's session
 ends — wait on A's session alone, not on both.
 
 Status: AUTHORIZED 2026-09-04, built for 021+. `write_replicate.py` uses
-the replicate chapter tree. `judge_replicate.py` runs 8-wide and waits
+the replicate chapter tree. `judge_replicate.py` runs 10-wide and waits
 for each `agent` to exit. One judge runner at a time. Pi adapter
 unchanged.
