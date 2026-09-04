@@ -1,0 +1,12 @@
+**C-11 — The Last Ordinary Sweet**
+- Primary job: non-argument — bridge: readiness gate, last ordinary instance with attention on ugliness, solemn vow, instant freedom conferred.
+- Objection resolved: When will I actually be free.
+- Arc / curve: threshold; freedom detonated.
+- Reader-state: ready reader champing to cross; encounter is ordinary sweet taken normally, noticed fully, then vow spoken.
+- Mantras: M-I “FANTASTIC! I’M FREE!” debut; M-A echo; M-B echo; M-E echo as dying whine.
+- Scenes: SC-H debut full; SC-F token echo only.
+- Structural: vow ritual room; readiness gate; congratulation immediate.
+- New instruction: I-11 TAKE YOUR LAST ORDINARY SWEET AND MAKE THE SOLEMN VOW / Pay attention to the ugliness as you do.
+- Guardrails: gate kindly to re-read if not ready, never willpower push; original vow prose; SAFE-A silent.
+- Continuity: (a) enters from C10 totality accepted. (b) receives every demolition and both relapse doors — bad-day rescue and just-one thought — as closed, each as one-sentence token only, no structures reopened. (c) hands forward free identity and terminal thought for C12.
+- Budget: 4000.

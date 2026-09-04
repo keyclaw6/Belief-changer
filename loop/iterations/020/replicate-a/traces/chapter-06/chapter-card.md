@@ -1,0 +1,17 @@
+**C-06 — Hunger, Fullness and Favourite Food**
+- Primary job: enacted transition — inhabiting hunger, satisfaction and real food as favourite: hunger is clean signal, fullness arrives, real meals satisfy.
+- Objection resolved: Without sweets eating will be dull and I’ll never feel satisfied.
+- Belief now: enters fearing bland deprivation; leaves having felt ordinary hunger-to-fullness as pleasant and sufficient.
+- Encounter: eating a real meal slowly, noticing hunger quieten, fullness arrive, taste lively without sweet chase.
+- Evidence: E-14 manufacture/baseline part plus E-01 limit; writer must not prescribe diet and must keep baseline as freedom, not plan.
+- New instruction: I-06 LET HUNGER AND FULLNESS DO THEIR JOB / Your body knows enough.
+- Reserved-later fence: mechanism naming reserved for C07; willpower/fear reserved for C08.
+- Arc / curve: middle inhabit peak; demolition pauses for lived ease.
+- Reader-state: grazed-flat eater who forgot clean hunger; encounter restores body authority.
+- Mantras: M-G echo as recognition phrase.
+- Frozen token: T-A “Eat whatever real food you like, whenever you are hungry, and you will never miss BAD SUGAR.” re-quoted here mid-book as proven by inhabit.
+- Scenes: none new; SC-B token echo only.
+- Structural: inhabit-the-ordinary-doing chapter.
+- Guardrails: no diet mechanics; SAFE-A silent; original food prose.
+- Continuity: (a) enters from C05 reward dead. (b) receives energy and reward kills as closed tokens. (c) hands forward lived ease and body trust for C07 deepening.
+- Budget: 5000.

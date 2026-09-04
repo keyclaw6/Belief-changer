@@ -1,0 +1,16 @@
+**C-05 — The Reward That Never Loved You Back**
+- Primary job: enacted transition — celebration, comfort and deserve-it moments were loved for people and relief, never for sweet.
+- Objection resolved: It’s my treat, my comfort, my love.
+- Belief now: enters guarding reward; leaves seeing reward-frame as Confectioner story that rents affection.
+- Encounter: recalling cinema / hard-day pay-yourself moment and re-running it without sweet to find warmth intact.
+- Evidence: E-03 plus E-11 within men-only observational limit; writer must not moralize sweetness or promise mood cure.
+- New instruction: none.
+- Reserved-later fence: hunger joy reserved for C06; industry engineering reserved for C07; special-occasion logic reserved for C10.
+- Arc / curve: mid demolition.
+- Reader-state: comfort eater paying self with chocolate; encounter separates love from dose.
+- Mantras: M-D echo; M-C echo.
+- Scenes: none new; SC-B token echo as phrase only.
+- Structural: justification demolition.
+- Guardrails: warm, non-shaming; no forbidden joy claim.
+- Continuity: (a) enters from C04 energy dead. (b) receives energy kill and axis as closed tokens. (c) hands forward reward dead for C06 inhabit.
+- Budget: 5000.

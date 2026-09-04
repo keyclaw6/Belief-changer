@@ -1,0 +1,16 @@
+**C-02 — Caught Without Knowing It**
+- Primary job: enacted transition — being hooked is being conned on false information, not freely choosing or being weak.
+- Objection resolved: I choose this; I could stop if I wanted.
+- Belief now: enters believing sweet is chosen pleasure; leaves knowing trap removed choice and past failures were method.
+- Encounter: watching own hand reach at night and next morning; body as authority noticing heaviness; real food contrast at ordinary meal.
+- Evidence: E-02 plus E-08 and E-10 limits; writer must not label pathology and must not present scale as diagnosis; prevalence used only to absolve.
+- New instruction: none.
+- Reserved-later fence: energy mechanism reserved for C04; reward mechanism for C05; inversion detail for C07; moderation maths for C10.
+- Arc / curve: first third trap seen; demolition vocabulary begins; freedom restrained.
+- Reader-state: secret binger feeling ashamed after box emptied; encounter makes con visible without blame.
+- Mantras: M-C “the sugar trap”; M-E “the Crumb”; M-F “the Confectioner”; M-G “an empty, slightly edgy hunger that feels like it needs something sweet”; M-H “for the rest of your life”.
+- Scenes: SC-A debut full staging; SC-I as brief image debut.
+- Structural: creatures named in passing; body/instinct/real food encounters installed.
+- Guardrails: warm complicity; no contempt; original images; SAFE-A routed silently via E limits, no box pasted.
+- Continuity: (a) enters from C01 willingness and BAD SUGAR definition, does not reopen contract. (b) receives contract and definition and T-A promise as closed, echo in one sentence only. (c) hands forward reader who sees trap and owns Crumb/Confectioner vocabulary for C03.
+- Budget: 5000.

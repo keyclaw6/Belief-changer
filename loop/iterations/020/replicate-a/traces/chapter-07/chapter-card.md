@@ -1,0 +1,16 @@
+**C-07 — The Low That Pretends To Be a High**
+- Primary job: enacted transition — the high is relief from a low the last dose created, engineered and fed by brainwashing.
+- Objection resolved: The craving proves I need it.
+- Belief now: enters feeling craving as need; leaves seeing craving as Crumb whine fed by Confectioner story and schedule.
+- Encounter: tracing 24-hour loop from last sweet to edgy hunger to next sweet to dip, plus aisle cues firing before hunger.
+- Evidence: E-04, E-05, E-06, E-07, E-08, E-09, E-12, E-14 blunting/cue parts; writer must honour animal limits, wanting/liking distinction, contested label honesty, and relief after facts without fear close.
+- New instruction: I-07 SEE THE LOW AS THE TRAP’S WORK / It creates what it relieves.
+- Reserved-later fence: willpower/fear reserved for C08; leftovers/myths reserved for C09; sweetest scene reserved for C10.
+- Arc / curve: demolition crest; freedom still held back.
+- Reader-state: loop-seer ready for mechanism; encounter makes inversion unseeable.
+- Mantras: M-C echo; M-E echo; M-F echo; M-G echo; M-J echo; M-A echo as permission to continue.
+- Scenes: SC-E debut full; SC-D debut full; SC-I token echo; SC-F reserved.
+- Structural: mechanism + manufacture room; hard facts then relief.
+- Guardrails: no literature texture; original images.
+- Continuity: (a) enters from C06 body trust. (b) receives prior kills and inhabit as closed tokens. (c) hands forward inversion owned and industry anger directed away from self for C08.
+- Budget: 5500.

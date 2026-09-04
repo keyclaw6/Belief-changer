@@ -1,0 +1,16 @@
+**C-03 — What Is It Doing For You**
+- Primary job: enacted transition — the test switches from harm versus benefit to what benefit at all.
+- Objection resolved: It can’t be that bad; I get something from it.
+- Belief now: enters conceding harm but clinging to benefit; leaves demanding proof of any genuine benefit.
+- Encounter: ordinary day inventory spoken as quotes from dialect, then TO versus FOR spoken verdict applied to each.
+- Evidence: E-12 within population limits; writer must not turn guidance into personal sentence and must keep facts clean.
+- New instruction: I-04 JUDGE BY WHAT IT DOES FOR YOU / Ask what good is there at all.
+- Reserved-later fence: lift, reward, habit, social, concentration kills reserved for C04, C05, C09; manufacture reserved for C07.
+- Arc / curve: first-third close; demolition ground laid.
+- Reader-state: in-denial moderate negotiating treats; encounter forces single question they cannot dodge.
+- Mantras: M-D “a genuine pleasure, treat or lift”.
+- Scenes: none new; SC-A token echo only as phrase.
+- Structural: axis-switch room.
+- Guardrails: speak verdict, never ledger or worksheet; original prose.
+- Continuity: (a) enters from C02 conned-not-weak belief. (b) receives trap and creatures as closed one-sentence tokens. (c) hands forward benefit-on-trial lens for C04.
+- Budget: 3500.

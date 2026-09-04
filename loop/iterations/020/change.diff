@@ -1,0 +1,26 @@
+diff --git i/prompts/master-plan-skill-v2.md w/prompts/master-plan-skill-v2.md
+index 471b1fe..74549b7 100644
+--- i/prompts/master-plan-skill-v2.md
++++ w/prompts/master-plan-skill-v2.md
+@@ -111,7 +111,7 @@ Give every chapter a stable ID, number, and working title, then specify only its
+ - one or more concrete scene/analogy IDs: debut card carries the staging job; later cards that cite the ID mark it as token-echo only;
+ - structural responsibility, if any;
+ - method, safety, and originality guardrails specific to this move (safety-limit IDs and originality only — never speakable register/job operators, never a boxed CA-SAFE/CA-01 title);
+-- continuity intent: what understanding it receives and hands forward;
++- continuity intent, on every card including non-argument cards: (a) the belief the preceding card installed — this card enters from it and may not re-open, re-prove, or re-warn it; (b) the settled jobs, scenes, instructions, and relapse doors it receives as closed — each may appear on this card only as a one-sentence spoken token echo, never as a structure bullet, encounter, entering belief, or script to run; (c) what it hands forward. From the vow card onward, (b) includes every demolition and both relapse doors: the vow, ordinary-life, and recap cards carry no demolition, relapse-door, or thought-protocol bullets;
+ - one integer word budget matching the arc table (planner length arithmetic — not a writer padding target).
+ 
+ These are semantic authorities, not a prose template or mandatory chapter-section anatomy. Do not put device lists, persona codes, ALL-CAPS-peak inventories, a `scare-then-disown` field name, a `Voice:` register operator, `hard truth flat`, `deliver at full Carr force`, `explicitly disown`, or workshop don't-panic quotes as craft notes on cards. A card must be directly writable: every field it names must resolve against a plan-wide inventory with no ambiguity and no gap the writer would have to invent around. Inside a card, output only the permitted semantic fields: no headings, tables, connective prose, copied plan-wide rows, or prewritten chapter anatomy. Each plan-wide inventory remains in its single canonical section. The writer derives `IN THIS CHAPTER` (room/picture names, not a we-will itinerary and not a named pupil), the italic thesis as spoken Carr, section flow, ALL-CAPS landing, and SUMMARY (ordinary sentences of the belief that changed) from the style guide. Do not prewrite those prose elements in the plan.
+diff --git i/prompts/style-guide.md w/prompts/style-guide.md
+index 7f61fdb..34dc05d 100644
+--- i/prompts/style-guide.md
++++ w/prompts/style-guide.md
+@@ -520,7 +520,7 @@ Voice first — write to one reader. Do not count you/your, questions, or words
+ 
+ The operators:
+ 
+-1. **Fact-assertion** — deliver reframes as flat settled fact: "The fact is..." / "The reality is..." Never hedge ("studies suggest," "many people find" are banned for core claims).
++1. **Fact-assertion** — deliver reframes as flat settled fact in ordinary spoken words. "The fact is..." / "The reality is..." are occasional Carr cadences, never a sentence template and never a carrier for evidence scope: a fact whose ledger limit forbids a flat statement is rendered as one concrete picture inside its permitted inference, or left out — it is never introduced as "The fact is" and then qualified ("at population level," "linked with," "studies suggest," "many people find"). Hedged core claims are banned; a hedge dressed as a fact is banned too.
+ 2. **Self-answered question** — ask, then answer immediately with total confidence: "Do you want to stop? Of course you do – that's why you're reading this book."
+ 3. **Concession question** — pose one question whose only honest answer concedes the point; perform it in flat Carr voice without naming, announcing, or labeling the question type.
+ 4. **Ventriloquism** — quote the reader's inner voice in quotation marks (their justifications, their future temptations) and answer it. Early: print the full justification menu as quotes, then demolish one per chapter. Late: pre-play the future tempting thought so it arrives pre-refuted.

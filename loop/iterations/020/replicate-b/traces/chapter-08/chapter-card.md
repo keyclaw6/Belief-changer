@@ -1,0 +1,16 @@
+**C-08 — Why Willpower Had To Fail**
+- Primary job: enacted transition — past failures were the wrong method and fear is the trap’s rope, not proof you are broken.
+- Objection resolved: I’ve failed before; I’m afraid I’ll fail again / succeed into loss.
+- Belief now: enters dreading failure and success; leaves knowing Willpower Method has no finish line and both fears belong to trap.
+- Encounter: replaying a diet-collapse week and a fear-of-life-without-treats fantasy, then collapsing both with open-door image.
+- Evidence: E-07 hump smallness plus E-14 hump limits; writer must present hump as days-long mild passing, not ordeal; no streak logic.
+- New instruction: I-08 NEVER BLAME YOURSELF FOR FAILING THE WRONG METHOD / It had no finish line.
+- Reserved-later fence: identity/genetics and myths reserved for C09; sweetest scene reserved for C10.
+- Arc / curve: demolition to release pivot.
+- Reader-state: repeat attempter braced for shame; encounter absolves and steadies.
+- Mantras: M-B “easily, immediately and permanently” echo; M-C echo; M-F echo; M-H “for the rest of your life” echo in threat valence.
+- Scenes: SC-G debut full.
+- Structural: anti-method room plus fear room.
+- Guardrails: reframe strong will as evidence for reader; no willpower solution; SAFE-A silent.
+- Continuity: (a) enters from C07 inversion owned. (b) receives inversion and manufacture as closed tokens. (c) hands forward fear dismantled and method blamed for C09 clean-up.
+- Budget: 5000.

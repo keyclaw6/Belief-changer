@@ -1,0 +1,13 @@
+**C-13 — Free For Good**
+- Primary job: non-argument — recap: photographable instruction list, outward push, saved reframe revealed.
+- Objection resolved: Will it last.
+- Arc / curve: close; freedom crescendo peak.
+- Reader-state: free reader needing compact reminder and outward direction.
+- Mantras: hand-over of M-A through M-J as owned voice; M-I as final word; saved ending reframe appears here only.
+- Frozen token: T-A remembered as promise kept alongside instruction list, not re-argued.
+- Scenes: none; SC-H token phrase only.
+- Structural: short recap room; no teaching manual; page-skipper gate to start at beginning without chapter callbacks.
+- New instruction: I-13 GET ON WITH ENJOYING YOUR LIFE / Freedom needs no maintenance.
+- Guardrails: list spoken imperatives verbatim; no callbacks; original closing; SAFE-A not repeated.
+- Continuity: (a) enters from C12 lived ease. (b) receives all demolitions, vow and ordinary days as closed tokens in single sentences. (c) hands forward to life with terminal thought and recap in hand.
+- Budget: 2500.
