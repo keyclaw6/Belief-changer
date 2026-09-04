@@ -7,8 +7,8 @@
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 019 plan reused)
-- **Last completed unit:** 025 ch04 both books (A 4070/4800, B 4466/4800). Writers live on ch05.
-- **Next unit:** Finish 025 writes 05–13, then judge A when write A exits.
+- **Last completed unit:** 025 ch07 both books (A 3842/5000, B 3745/5000). Running totals A 29127 / B 29187. Writers live on ch08 (A review, B rewrite).
+- **Next unit:** Finish 025 writes 08–13, then judge A when write A exits.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -30,3 +30,4 @@
 | 2026-09-04 23:30 | Founder resume: Fable Carr plan. Reviewer + comparison + length floor. Goal + heartbeat on. | 025 BASELINE |
 | 2026-09-05 00:03 | 025 writing. Ch01–03 both books in band after reviewer. w025a/w025b on ch04. | 025 writes |
 | 2026-09-05 00:06 | 025 ch04 done both (A 4070/4800, B 4466/4800). Writers on ch05. | 025 writes |
+| 2026-09-05 00:20 | 025 ch05–07 done both. Reviewer REVISE→rewrite every chapter so far. Totals A 29127 / B 29187. Writers on ch08. | 025 writes |
