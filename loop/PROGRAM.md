@@ -175,6 +175,16 @@ founder-guided, not a loop iteration.
    properly bounded empirical claims (must not FAIL), two acknowledgments of
    the reader's present doubt (must not FAIL). Noted classes on P3–P6 must
    not flip the probe to FAIL.
+4. **Belief/journey honesty probe.** Six calls on isolated passage pairs
+   (do not flag missing chapter anatomy). Belief-mechanic: `probe-b1-credit-intact.md`
+   (must BLOCKING `credit-intact`), `probe-b2-harm-not-belief.md` (must
+   BLOCKING `harm-not-belief`), `probe-b3-bounded-pass.md` (must PASS).
+   Reader-journey: `probe-j1-transition-incomplete.md` (must BLOCKING
+   `journey-incomplete`), `probe-j2-pass.md` (must PASS). Repeat b1 once
+   for repeatability. This is a battery addition, not a judge-prompt edit,
+   and does not by itself require replaying the 18-call calibration. If a
+   must-FAIL probe PASSes, the lane is at ceiling — founder-guided repair,
+   then the full 18+6 battery in a fresh runs dir.
 
 ## 3. Baseline (iteration 000)
 
