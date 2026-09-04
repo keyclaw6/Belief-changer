@@ -36,7 +36,7 @@ ever started against the same campaign, nothing prevents conflicting writes.
 If parallel orchestrators ever become a real need, a lease/heartbeat guard
 would be added then.
 
-## 4. Chapter reviewer after each written chapter — PARKED (founder, 2026-09-04)
+## 4. Chapter reviewer after each written chapter — AUTHORIZED (founder, 2026-09-04 night)
 
 Idea: after the writer returns chapter N, a fresh `chapter-reviewer` sub-agent
 reads the accepted master plan, chapter N's card, and the written chapter, and
@@ -44,7 +44,10 @@ returns feedback on plan fidelity — including "lengthen"/"shorten" against the
 card's word budget — before the orchestrator writes the final `chapter-NN.md`
 (mirrors the plan-writer → plan-reviewer loop that already exists).
 
-Status: not built, not a hypothesis. It is a factory-architecture change (new
+Status: AUTHORIZED 2026-09-04 night. Fable plan: write → review → ≤1 rewrite.
+Cap remains one review, one rewrite. Reviewer never sees GSBS or judge
+prompts. Built as factory architecture (not a hypothesizer inbox item).
+Was: not built, not a hypothesis. It is a factory-architecture change (new
 role contract under `prompts/`, PROGRAM §4 Step 3 Writing stage today is
 "writer only, chapter 01 → last", a `.pi/agents/` adapter, a HARNESS capability
 row, a founder-chosen model in `loop/config.yaml`, and on Cursor a change to
@@ -88,7 +91,7 @@ encoded in prompts or skills, never a change to the KEEP object. No hook
 or `loop-continue.py` change. Revisit Temporal only if the journal shows a
 conversation death the hook did not re-enter.
 
-## 6. Anti-slop skills (stop-slop, avoid-ai-writing) — PARKED (founder, 2026-09-04)
+## 6. Anti-slop skills (stop-slop, avoid-ai-writing) — AUTHORIZED as iterations 026–028 (founder, 2026-09-04 night)
 
 Two public skills that strip generic LLM tells from prose:
 <https://github.com/hardikpandya/stop-slop> (bans throat-clearing, adverbs,

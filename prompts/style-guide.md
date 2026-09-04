@@ -570,7 +570,7 @@ The reviewer rejects a chapter that: mangles or paraphrases a mantra; re-argues 
 
 ## B8. What the master plan must carry (per-book sheets)
 
-Because chapter writers see only the master plan + previous chapter + this guide, the master plan is the carrier of all book-specific repetition. It is the **single source of truth**: every shared decision is defined exactly once under a stable ID and referenced by that ID from the compact chapter cards — never copied into competing representations. Do not duplicate occurrence counts, cumulative-state matrices, or audit tables into the plan; the chapter reviewer judges the actual text, so the plan carries the decision, not its bookkeeping. It must include:
+Because chapter writers see only the master plan + previous chapter + this guide, the master plan is the carrier of all book-specific repetition. It is the **single source of truth**: every shared decision is defined exactly once under a stable ID and referenced by that ID from the compact chapter cards — never copied into competing representations. Do not duplicate occurrence counts, cumulative-state matrices, or audit tables into the plan; the chapter reviewer (`prompts/chapter-reviewer.md`) reads the draft plus the card and a computed word-budget line — never GSBS — and may demand one rewrite for plan fidelity or length ±15%; the plan carries the decision, not its bookkeeping. It must include:
 
 1. **The mantra sheet** (§B2 format) — the frozen phrases, debut chapters, and natural-echo chapters. No per-chapter assignment quota.
 2. **The lexicon sheet** (§B4) — trap register, freedom register, banned list, community slang.

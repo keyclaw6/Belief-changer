@@ -15,6 +15,7 @@ RUNS = REPO / os.environ.get(
 CHECKS = (
     ("reader-journey", "pass-test-reader-journey-late.md", "pass-test-reader-journey-late"),
     ("belief-mechanic", "pass-test-belief-mechanic-late.md", "pass-test-belief-mechanic-late"),
+    ("chapter-comparison", "pass-test-chapter-comparison.md", "pass-test-chapter-comparison"),
 )
 
 

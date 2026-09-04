@@ -14,6 +14,7 @@ GSBS = REPO / "calibration/reference/gsbs"
 JUDGES = REPO / "loop/judges"
 AGENT = Path.home() / ".local/bin/agent"
 LANES = ("belief-mechanic", "voice-emotion", "reader-journey")
+COMPARISON = "chapter-comparison"
 # Founder 2026-09-04: 10-wide → 40 jobs in 4 waves on this 15 GiB MemTotal box.
 JUDGE_PARALLEL = int(os.environ.get("JUDGE_PARALLEL", "10"))
 
@@ -159,6 +160,56 @@ Assigned compliance:
 """
 
 
+def parse_moves(text: str) -> dict[int, str]:
+    out: dict[int, str] = {}
+    current: int | None = None
+    buf: list[str] = []
+    for line in text.splitlines():
+        hm = re.match(r"^## GSBS (\d+)", line)
+        if hm:
+            if current is not None:
+                out[current] = "\n".join(buf).strip()
+            current = int(hm.group(1))
+            buf = [line]
+            continue
+        if current is not None:
+            if line.startswith("## ") and not line.startswith("## GSBS"):
+                out[current] = "\n".join(buf).strip()
+                current = None
+                buf = []
+            else:
+                buf.append(line)
+    if current is not None:
+        out[current] = "\n".join(buf).strip()
+    if not out:
+        raise SystemExit("no reference-moves parsed")
+    return out
+
+
+def comparison_prompt(n: int, our: Path, real: Path, ctx: str, moves: str) -> str:
+    return f"""You are a book factory judge, fresh and reference-sighted. This is a single isolated judge call. There is no host task except this call.
+
+Read {JUDGES / "_shared.md"} first, then read and follow the rubric at {JUDGES / "chapter-comparison.md"} exactly. The shared file is law; the rubric adds class tests.
+
+OUR CHAPTER path: {our}
+THE REAL CHAPTER path: {real}
+
+BELIEF MOVES (closed list — use only these):
+
+{moves}
+
+Use this CHAPTER CONTEXT exactly (copied from the accepted plan card — do not improvise):
+
+{ctx}
+
+Read our chapter and the real chapter from those paths. Judge that pair against the rubric and shared law.
+
+Return your verdict exactly as the rubric demands, including CLUSTER CENSUS with every closed class listed (zeros included). Start your report with PASS. Quote the evidence for each MOVE line.
+
+Never reference scores, history, or prior judgments. Do not write any files. Do not search the rest of the repository beyond the named paths. Your entire reply IS the judge report.
+"""
+
+
 def lane_prompt(lane: str, n: int, our: Path, real: Path, ctx: str, prev: Path | None) -> str:
     prev_line = f"PREVIOUS CHAPTER path: {prev}\n" if prev else "PREVIOUS CHAPTER: none (chapter 1)\n"
     return f"""You are a book factory judge, fresh and reference-sighted. This is a single isolated judge call. There is no host task except this call.
@@ -243,6 +294,7 @@ def main() -> None:
     cards = extract_cards(plan)
     n_total = max(cards)
     align = parse_alignment((REPO / "loop/reference-alignment.md").read_text())
+    moves_by_gsbs = parse_moves((REPO / "loop/reference-moves.md").read_text())
     mantras = parse_inventory_table(plan, "**Mantras (repetition law")
     if not mantras:
         mantras = parse_inventory_table(plan, "Mantras (repetition law")
@@ -276,6 +328,12 @@ def main() -> None:
             out = judgments / tag / "response.md"
             prompt = lane_prompt(lane, n, our, real, ctx, prev)
             jobs.append((tag, out, prompt))
+        gsbs_n = align.get(n)
+        move_block = moves_by_gsbs.get(gsbs_n or -1)
+        if not move_block:
+            raise SystemExit(f"no reference-moves for GSBS {gsbs_n} (our ch {n})")
+        ctag = f"{COMPARISON}-ch{n:02d}"
+        jobs.append((ctag, judgments / ctag / "response.md", comparison_prompt(n, our, real, ctx, move_block)))
     arc_out = judgments / "book-arc" / "response.md"
     jobs.append(("book-arc", arc_out, book_arc_prompt(our_paths, sheets, REPO / "loop/reference-alignment.md")))
 

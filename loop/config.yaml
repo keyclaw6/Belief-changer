@@ -87,7 +87,14 @@ plan_reviewer_model: muse-spark-1.3-contributor
 plan_reviewer_reasoning: high
 plan_reviewer_route: opencode-go
 
-# Judges — the three chapter judges + book-arc (loop/judges/*.md)
+# Chapter-reviewer — write→review→≤1 rewrite (contract: prompts/chapter-reviewer.md)
+# Same Muse Spark 1.3 Go→Zen→Vercel chain as the writer. Never composer-2.5.
+reviewer_model: muse-spark-1.3-contributor
+reviewer_fallback_model: muse-spark-1.3-contributor-free
+reviewer_route: opencode-go
+reviewer_reasoning: high
+
+# Judges — the three chapter judges + comparison + book-arc (loop/judges/*.md)
 # Preferred default for pi/opencode. Cursor live panel is composer-2.5.
 judge_model: muse-spark-1.3-contributor
 judge_reasoning: high

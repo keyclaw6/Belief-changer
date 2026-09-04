@@ -212,3 +212,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** HALTED (instrument). Late-Carr Preflight PASS ×4, `re-argument` 0. Do not start 025 until a fresh 13-chapter BASELINE is recorded.
 **Lesson:** 020–023 were correctly INCONCLUSIVE under the old "any −1" reading of Step 6; read materially, 021–023 were REVERT and only 020 A (7→4) moved. KEEP object was journey `re-argument` at 5–7, inside the judges' ±1/chapter band, never calibrated on a late Carr chapter with its previous chapter. B never fell below 5. 023/024 compared raw counts on 15/16 chapters to a 13-chapter baseline. Voice floors that did move (024 willpower-lexicon 21→16 / 33→17, factory-speech 6→3 / 21→6) were locked out as PRIMARY.
 **Next direction:** Finish late-Carr Preflight (journey + belief, ×2). If `re-argument` > 0 on Carr, tighten the class again. Then BASELINE with factory files at KEEP 014, 019 13-chapter plan reused, new noted floors, 3-strike clock reset. No 025 plan-skill or writer sentence. No model swap.
+
+### founder-resume 2026-09-04 night — Carr comparison + reviewer + anti-slop
+**Hypothesis:** none yet — founder un-parked chapter reviewer and anti-slop, asked Fable for a Carr-convergence plan.
+**Change:** Fable plan implemented: chapter-reviewer (write→review→≤1 rewrite, length ±15%); chapter-comparison judge (GSBS belief-moves PRESENT/PARTIAL/MISSING, lecture lines); KEEP adds 80% plan-word floor and may use comparison `missing` ≥2 drop; hypothesizer PRIMARY order blocking → comparison missing → noted ≥8. Anti-slop scheduled 026–028 after 025 BASELINE.
+**Verdict:** RESUME (architecture). 025 is BASELINE with reviewer on, 019 13-chapter plan reused, two books, full panel + comparison.
+**Lesson:** 019 A is 26,984 words vs 60,000 planned. Length was invisible to KEEP. Census KEEP on `re-argument` 5–7 could not converge toward a Carr-length book.
+**Next direction:** Smoke CH-06 reviewer + comparison PASS tests, then 025 BASELINE. Do not replay 020–024 wording. Anti-slop only after 025 floors exist.

@@ -103,6 +103,7 @@ Spawned roles (role → contract prompt):
 - `plan-writer`, `plan-reviewer` — `prompts/master-plan-skill-v2.md` /
   `prompts/master-plan-reviewer-v2.md`
 - `chapter-writer` — `prompts/chapter-writer.md`
+- `chapter-reviewer` — `prompts/chapter-reviewer.md` (one review, one rewrite)
 - `judge` — `loop/judges/*.md`
 - `trace-analyzer` — `loop/prompts/trace-analyzer.md`
 - `hypothesizer` — `loop/prompts/hypothesizer.md`
@@ -378,6 +379,13 @@ book is complete. Each spawn receives exactly four inputs, with
   2. The target chapter card for chapter N (from the plan)
   3. The style guide: `prompts/style-guide.md`
   4. The previous chapter (for chapter 01: the plan's book-core section)
+Then the orchestrator spawns `chapter-reviewer` (`prompts/chapter-reviewer.md`)
+on that draft with exactly: accepted plan, chapter card, draft text, and
+one line `Delivered N words. Budget B.` Never GSBS, never a judge prompt,
+never the style guide, never the previous chapter. `ACCEPT` keeps the draft.
+`REVISE` triggers one writer rewrite (original four inputs + draft + review).
+The rewrite is final. Cursor: `write_replicate.py` runs draft → review →
+≤1 rewrite. Traces: `draft.md`, `review.md`, `rewrite-prompt.md`.
 Output: `loop/iterations/NNN/replicate-{a,b}/chapters/chapter-NN.md`
 
 **Trace format (mandatory):**
@@ -424,12 +432,15 @@ Shared (once per iteration, not per replicate): `hypothesis.md`,
 
 ### Step 4: Judge
 
-**Chapter judges** — run all three on EVERY generated chapter against its
+**Chapter judges** — run all four on EVERY generated chapter against its
 aligned GSBS chapter (`loop/reference-alignment.md`; WEAK alignments are
 judged lightly per that file):
 - `loop/judges/belief-mechanic.md`
 - `loop/judges/voice-emotion.md`
 - `loop/judges/reader-journey.md`
+- `loop/judges/chapter-comparison.md` (belief-moves from
+  `loop/reference-moves.md`; lecture lines are hypothesizer/trace input,
+  never writer/reviewer input)
 
 Each judge receives: the judge prompt, our chapter, the aligned real chapter,
 CHAPTER CONTEXT (below), and for chapters 2+ the previous chapter.
@@ -494,6 +505,13 @@ the owning lane's FAIL set.
   at the same chapter count is; when chapter counts differ, compare
   rates (count / n) and require a rate drop greater than `1 / n_old`.
   7→6 / 5→5 / 5→7 are REVERT, not INCONCLUSIVE.
+  [Founder amendment 2026-09-04 night — Carr convergence:]
+  KEEP also requires both books' delivered word total ≥ 80% of the plan
+  total (orchestrator sums `metadata.json` `words_final`; judges never
+  score length). PRIMARY may be a census class (band rules) **or**
+  comparison `missing` falling by ≥2 at the same chapter count in both
+  books. Hypothesizer order: blocking → comparison missing-in-both →
+  noted ≥8 both.
   - **both improved (beyond the band)** → candidate KEEP
   - **neither improved (both inside the band or flat/up)** → candidate REVERT
   - **one improved beyond the band, one did not** → INCONCLUSIVE (sampling noise)

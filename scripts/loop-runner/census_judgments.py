@@ -11,6 +11,7 @@ LANES = {
     "belief-mechanic": "belief",
     "voice-emotion": "voice",
     "reader-journey": "journey",
+    "chapter-comparison": "comparison",
     "book-arc": "book-arc",
 }
 

@@ -69,14 +69,13 @@ replicates."]
   zig-zag. Each change is one instruction in one file (exact duplicates
   may be normalized with it) and binds to ONE census class and ONE root
   component from the trace analysis. Mark exactly one change PRIMARY.
-  PRIMARY must be the highest-priority class present in both books
-  (Priority ordering below) that is KEEP-eligible: a BLOCKING class in
-  both books, or a NOTED class whose baseline count is ≥ 8 in both
-  books (above the `_shared.md` book-level noted band). A voice
-  noted-only class may be PRIMARY when belief, journey, and book-arc
-  have **no blocking** in both books — noted journey/arc classes do
-  not lock voice out. Do not make PRIMARY a 5–7-count noted class;
-  020–024 showed that object cannot KEEP.
+  PRIMARY must be the highest-priority KEEP-eligible class in both
+  books: (1) a BLOCKING class in both books; (2) comparison `missing`
+  present in both; (3) a NOTED class whose baseline count is ≥ 8 in
+  both books. A voice noted-only class may be PRIMARY when belief,
+  journey, and book-arc have **no blocking** in both books. Do not
+  make PRIMARY a 5–7-count noted class; 020–024 showed that object
+  cannot KEEP.
 
 - **Follow the diagnosis.** Target the root component named by the trace
   analyzer unless you can quote trace evidence that contradicts it. Do not
@@ -101,9 +100,11 @@ replicates."]
 If multiple clusters exist, prioritize:
 1. Systemic clusters that block belief change (the reader's belief doesn't
    shift, across many chapters)
-2. Clusters that break the cumulative journey or the arc (book-arc lane)
-3. Clusters in voice effect (reads like AI instead of landing Carr's effects)
-4. Everything else
+2. Comparison `missing` in both books (a GSBS belief-move our chapter
+   never performs)
+3. Clusters that break the cumulative journey or the arc (book-arc lane)
+4. Clusters in voice effect (reads like AI instead of landing Carr's effects)
+5. Everything else
 
 ## Output
 
