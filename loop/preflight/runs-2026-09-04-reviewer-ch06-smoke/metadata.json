@@ -1,0 +1,16 @@
+{
+  "words_draft": 1064,
+  "words_final": 4080,
+  "budget": 4800,
+  "band": [
+    4080,
+    5520
+  ],
+  "in_band": true,
+  "review_verdict": "REVISE",
+  "review_route": "opencode-go",
+  "rewrite_route": "opencode-go",
+  "review_latency_s": 17.695,
+  "rewrite_latency_s": 106.212,
+  "review_prompt_has_gsbs": false
+}

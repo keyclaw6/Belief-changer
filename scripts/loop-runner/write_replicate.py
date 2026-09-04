@@ -11,9 +11,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from muse_client import call_muse
 
-REPO = Path(os.environ["BC_REPO"])
-ITER = os.environ["ITER"]
-REPLICATE = os.environ["REPLICATE"]  # a | b
+REPO = Path(os.environ.get("BC_REPO", "/home/kab/Belief-changer"))
+ITER = os.environ.get("ITER", "")
+REPLICATE = os.environ.get("REPLICATE", "")  # a | b
 SLUG = "quit-sugar"
 
 CARD_SPLIT = re.compile(r"\n(?=(?:#{1,3}\s+|\*\*)(?:CH-|C-)\d{1,2}\s+—)")
@@ -106,6 +106,8 @@ def assemble(writer: str, plan: str, style: str, card: str, prev: str, n: int) -
 
 
 def main() -> None:
+    if not ITER or REPLICATE not in ("a", "b"):
+        raise SystemExit("ITER and REPLICATE=a|b required")
     traces_root = REPO / "loop" / "iterations" / ITER / f"replicate-{REPLICATE}" / "traces"
     chapters_dir = REPO / "loop" / "iterations" / ITER / f"replicate-{REPLICATE}" / "chapters"
     chapters_dir.mkdir(parents=True, exist_ok=True)

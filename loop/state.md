@@ -4,11 +4,11 @@
 
 - **Iteration:** 024
 - **Stage:** Done
-- **Status:** RESUME — founder 2026-09-04 night: Fable Carr-convergence plan, then implement. Chapter reviewer + anti-slop AUTHORIZED.
+- **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (024 REVERT; factory change and regenerated 16-chapter plan not promoted)
 - **Last completed unit:** Iteration 024 decision (REVERT). Journey re-argument 7→7 / 5→5. 019 snapshot remains accepted. Consecutive no-KEEP: 5. `loop/iterations/024/convergence-report.md` written.
-- **Next unit:** Do **not** start 025. Founder halt 2026-09-04. Instrument repair landed. Late-Carr PASS tests **PASS / `re-argument` 0** (`loop/preflight/runs-2026-09-04-composer-2.5-late-journey/`). Resume only as a 13-chapter BASELINE (KEEP 014 files, 019 plan). Sentinel timer unsubscribed. No second orchestrator.
+- **Next unit:** 025 BASELINE writes (reviewer on, 019 plan, two books). Comparison PASS `missing` 0. CH-06 reviewer smoke: 1064→4080w (band). Heartbeat `loop-belief-changer-factory-resume` 20m.
 
 ## Run authorization (founder, 2026-09-04)
 
