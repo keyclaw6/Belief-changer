@@ -7,8 +7,8 @@
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 019 plan reused)
-- **Last completed unit:** 025 BASELINE. A 52182 / B 51144. All-PASS, blocking 0/0. comparison missing 3/3 both. factory-speech 18/16.
-- **Next unit:** 026 anti-slop writes (PRIMARY factory-speech), then judge A when write A exits.
+- **Last completed unit:** 026 ch05 both (A 4089/5200, B 4619/5200). Running totals A 18435 / B 20905. Writers live on ch06.
+- **Next unit:** Finish 026 writes 06–13, then judge A when write A exits.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -34,3 +34,4 @@
 | 2026-09-05 00:35 | 025 ch08–12 done both. First ACCEPTs (A ch11, B ch12). Totals A 49495 / B 48021. Writers on ch13. | 025 ch13 then judge A |
 | 2026-09-05 00:42 | 025 writes done. A 52182 / B 51144. Starting judge A. | j025a then j025b |
 | 2026-09-05 00:55 | 025 BASELINE. All-PASS, blocking 0, words 52182/51144, missing 3/3. | 026 anti-slop |
+| 2026-09-05 01:05 | 026 ch01–05 both. Reviewer REVISE every chapter so far. Totals A 18435 / B 20905. | 026 writes |
