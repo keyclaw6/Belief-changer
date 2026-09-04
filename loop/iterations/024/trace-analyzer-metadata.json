@@ -1,0 +1,5 @@
+{
+  "model": "composer-2.5",
+  "harness": "cursor-agent-cli",
+  "spawn": "cursor-agent-ask"
+}

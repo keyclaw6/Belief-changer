@@ -198,3 +198,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** INCONCLUSIVE
 **Lesson:** Journey `re-argument` 7→6 (A) and 5→5 (B) — one book only. Named CH-10/11 tomorrow pair closed both. Blocking factory-speech A-only; journey-incomplete B-only. Do not promote. Plan-card + re-argument still open.
 **Next direction:** Do not replay this one-correction wording. If PRIMARY stays journey re-argument, new plan-card mechanism (evidence double-routing / token triple-ownership per 023 trace). Consecutive no-KEEP: 4. Anti-slop still only if PRIMARY is factory-speech or hedge.
+
+### iter-024 — room-name-only structural responsibility
+**Hypothesis:** PRIMARY: plan-skill Compact chapter cards `structural responsibility` is a room name only, so journey `re-argument` falls in both vs 019. Secondary: one ledger row per card; reviewer blocks repeated IDs and slot-list structure.
+**Change:** `prompts/master-plan-skill-v2.md` (structural responsibility + evidence routing); `prompts/master-plan-reviewer-v2.md` (writer-facing blockers). Plan regenerated (16 chapters). Research reused. Two books Spark 1.3 Go. Judges composer-2.5. Panel 49+49.
+**Verdict:** REVERT
+**Lesson:** Journey `re-argument` 7→7 (A) and 5→5 (B) — neither book. Blocking 0 A; B-only voice hedges + factory-speech. Room-name field applied; C-14 guardrails/AN-03/continuity still assigned the post-vow second manual. Evidence IDs were single-use; re-argument is adjacent-job + late-arc scene/guardrail overlap. Do not promote. Plan-card + re-argument 3-strike (020, 023, 024) — PIVOT off plan-skill card-field binds.
+**Next direction:** Do not replay room-name-only, 020 continuity, 021 previous-chapter, 022 craft 3, or 023 one-correction. PIVOT off plan-skill Compact-cards field swaps. Consecutive no-KEEP: 5 (`convergence-report.md`). Founder override: continue. Anti-slop still only if PRIMARY is factory-speech or hedge.

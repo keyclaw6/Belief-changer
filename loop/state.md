@@ -2,13 +2,13 @@
 
 ## Position
 
-- **Iteration:** 023
+- **Iteration:** 024
 - **Stage:** Done
 - **Status:** IDLE
 - **Campaign branch:** `campaign-001`
-- **Worktree:** none (023 INCONCLUSIVE; factory change and regenerated plan not promoted)
-- **Last completed unit:** Iteration 023 decision (INCONCLUSIVE). Journey re-argument 7→6 / 5→5. 019 snapshot remains accepted.
-- **Next unit:** 024 — worktree `../quit-sugar-iter-023` wait: `../quit-sugar-iter-024`, Fable hypothesizer. Inbox empty. Do not replay 020 continuity, 021 previous-chapter, 022 craft 3, or 023 one-correction wording.
+- **Worktree:** none (024 REVERT; factory change and regenerated 16-chapter plan not promoted)
+- **Last completed unit:** Iteration 024 decision (REVERT). Journey re-argument 7→7 / 5→5. 019 snapshot remains accepted. Consecutive no-KEEP: 5. `loop/iterations/024/convergence-report.md` written.
+- **Next unit:** 025 — worktree `../quit-sugar-iter-025`, Fable hypothesizer. Inbox empty. PIVOT off plan-skill card-field binds. Do not replay 020–024 named wording.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -25,3 +25,4 @@
 |---|---|---|
 | 2026-09-04 20:09 | 022 INCONCLUSIVE. Journey re-argument 6/7 vs 7/5. | 023 |
 | 2026-09-04 21:03 | 023 INCONCLUSIVE. Journey re-argument 6/5 vs 7/5. Consecutive no-KEEP: 4. | 024 |
+| 2026-09-04 22:12 | 024 REVERT. Journey re-argument 7/5 vs 7/5. Consecutive no-KEEP: 5. convergence-report.md. | 025 |

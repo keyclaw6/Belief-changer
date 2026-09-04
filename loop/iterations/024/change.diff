@@ -1,0 +1,35 @@
+diff --git i/prompts/master-plan-reviewer-v2.md w/prompts/master-plan-reviewer-v2.md
+index f599db3..0b2fc33 100644
+--- i/prompts/master-plan-reviewer-v2.md
++++ w/prompts/master-plan-reviewer-v2.md
+@@ -72,7 +72,7 @@ ownership. Block P-xx persona codes, unspeakable beat handles (device names,
+ ("hard truth flat", "deliver at full Carr force", "explicitly disown",
+ workshop don't-panic quotes), boxed CA-SAFE/CA-01 titles as card paste
+ instructions, a named pupil-persona (Maya or any proper-name handle) as
+-the card reader, and chapter-number ledger callbacks on cards. Every ID a card cites must resolve against a plan-wide inventory
++the card reader, chapter-number ledger callbacks on cards, an evidence-ledger ID cited on more than one card (list every repeated ID with its cards; an evidence PASS must state that no ID repeats), and a structural-responsibility field that lists doors, scripts, doctrines, or thoughts instead of naming one room. Every ID a card cites must resolve against a plan-wide inventory
+ with its exact payload. Evidence-unavailable work must remain unavailable
+ rather than be filled speculatively.
+ 
+diff --git i/prompts/master-plan-skill-v2.md w/prompts/master-plan-skill-v2.md
+index 471b1fe..038e857 100644
+--- i/prompts/master-plan-skill-v2.md
++++ w/prompts/master-plan-skill-v2.md
+@@ -53,7 +53,7 @@ For a row that binds multiple research units, each inference cell is the exact
+ canonical union of the units' sealed values: unique exact values sorted and
+ joined with `; `. Never paraphrase, omit, or add permission or prohibition text.
+ 
+-Exact quotations must match the synthesis. Interpretations stay unquoted. Do not copy a full synthesis or duplicate evidence inside chapter cards.
++Exact quotations must match the synthesis. Interpretations stay unquoted. Do not copy a full synthesis into chapter cards. Every ledger row is cited by exactly one chapter card — the card whose enacted transition that finding proves — and a research unit appears in only one row. Later chapters receive a settled finding only as the corrected belief it produced, spoken as its frozen token, never as the ID or the finding retold.
+ 
+ ### Mantra and frozen-token sheet
+ 
+@@ -109,7 +109,7 @@ Give every chapter a stable ID, number, and working title, then specify only its
+ - a planner-facing reader-state (who they are at this beat — not a proper-name handle, not a pupil-persona) and the concrete encounter that makes the move land; never a `Voice:` register/job operator;
+ - mantra and frozen-token IDs only when this chapter debuts or naturally echoes one, with the frozen quote pinned on the card;
+ - one or more concrete scene/analogy IDs: debut card carries the staging job; later cards that cite the ID mark it as token-echo only;
+-- structural responsibility, if any;
++- structural responsibility, if any: the name of the one style-guide room this chapter is (fear chapter, anti-method chapter, identity-excuse chapter, long testimony, myths Q&A, meta-inoculation, perception enacted, inhabit-the-ordinary-doing, last ordinary instance, ordinary life, short recap) — a room name only, never the room's contents: no list of relapse doors, guards, scripts, doctrines, speeches, or owned thoughts to deliver. The style guide owns what happens inside a room; a card that itemizes it hands the writer a second manual;
+ - method, safety, and originality guardrails specific to this move (safety-limit IDs and originality only — never speakable register/job operators, never a boxed CA-SAFE/CA-01 title);
+ - continuity intent: what understanding it receives and hands forward;
+ - one integer word budget matching the arc table (planner length arithmetic — not a writer padding target).

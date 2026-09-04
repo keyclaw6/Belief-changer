@@ -390,3 +390,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Folding delay into totality closed the 019 named pair. The class survived via other card overlaps (EV double-routing, T-H triple-ownership per trace). B incomplete landings are one-book.
 
 **What this opens next.** Do not replay this exact one-correction paragraph. Consecutive no-KEEP: 4. New plan-card mechanism if PRIMARY stays `re-argument`.
+
+### iter-024 — room-name-only cards + evidence single-cite  ·  2026-09-04  ·  REVERT
+
+**Hypothesis.** If Compact chapter cards name one style-guide room instead of listing relapse doors/scripts, and every ledger row is cited once, journey `re-argument` falls in both books versus 019 (A 7, B 5).
+
+**Change.** `prompts/master-plan-skill-v2.md` (room-name-only structural responsibility; evidence single-cite). `prompts/master-plan-reviewer-v2.md` (repeated-ID and slot-list blockers). Plan regenerated (16 chapters, r2 `fit to write from`). Research reused. Two Spark 1.3 Go books. Panel 49+49.
+
+**What happened.** Journey re-argument 7→7 (A) and 5→5 (B). Belief 16/16 both; journey 16/16 both; voice 16/16 A and 14/16 B; book-arc PASS both. Both-books late-arc: C-14–16 pink-elephant / blip / pity / FANTASTIC replay. Mid-arc: C-03→C-04 and C-06→C-07 mechanism reruns. Evidence IDs single-use. C-14 `structural responsibility: last ordinary instance` but guardrails still listed pity/slips and debuted AN-03.
+
+**Verdict & why.** REVERT. PRIMARY improved in neither book. B-only blocking is not a veto. Do not promote.
+
+**What we learned.** Binding one card field does not remove the second manual from guardrails, continuity, scene debut, or adjacent-job overlap. Plan-card remains PERSISTENT for this class after 020/023/024.
+
+**What this opens next.** PIVOT off plan-skill card-field binds (3-strike). Do not replay 020–024 named wording. `convergence-report.md` written. Continue 025 under founder override.

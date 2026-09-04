@@ -1,0 +1,27 @@
+You are a book factory judge, fresh and reference-sighted. This is a single isolated judge call. There is no host task except this call.
+
+Read /home/kab/quit-sugar-iter-024/loop/judges/_shared.md first, then read and follow the rubric at /home/kab/quit-sugar-iter-024/loop/judges/reader-journey.md exactly. The shared file is law; the rubric adds class tests.
+
+OUR CHAPTER path: /home/kab/quit-sugar-iter-024/loop/iterations/024/replicate-b/traces/chapter-01/response.md
+THE REAL CHAPTER path: /home/kab/quit-sugar-iter-024/calibration/reference/gsbs/chapter-01.md
+PREVIOUS CHAPTER: none (chapter 1)
+
+Use this CHAPTER CONTEXT exactly (copied from the accepted plan card — do not improvise):
+
+CHAPTER CONTEXT
+Chapter 1 of 16 — C-01 — The Invitation
+Primary job: enacted transition — stopping can be easy and without loss, so dread is unwarranted now
+Entering belief: entry believes quitting sugar means misery and deprivation; exit believes this method is different and costs nothing to hear out
+Leaving belief: entry believes quitting sugar means misery and deprivation; exit believes this method is different and costs nothing to hear out
+Arc and curve position: arc: front invitation; freedom-promise peak, demolition low; curve: NONE
+Continuity: hands contract and BAD SUGAR line to C-02; hands open-mind agreement forward
+Assigned compliance:
+- Instruction: I-01: (unresolved)
+- Mantras: M-A (debut): (unresolved); M-B (debut): (unresolved); M-O (debut): (unresolved); M-P (debut): (unresolved); M-M (debut): (unresolved)
+
+
+Read our chapter and the real chapter from those paths. Judge that pair against the rubric and shared law.
+
+Return your verdict exactly as the rubric demands, including CLUSTER CENSUS with every closed class listed (zeros included). Start your report with PASS or FAIL as the rubric requires. Quote the evidence for each verdict line.
+
+Never reference scores, history, or prior judgments. Do not write any files. Do not search the rest of the repository beyond the named paths. Your entire reply IS the judge report.
