@@ -1,0 +1,20 @@
+diff --git i/prompts/chapter-writer.md w/prompts/chapter-writer.md
+index a6ff081..39875d3 100644
+--- i/prompts/chapter-writer.md
++++ w/prompts/chapter-writer.md
+@@ -10,8 +10,13 @@ frozen tokens, reader state, and boundaries. Resolve every ID the card cites
+ (instruction spine, mantra sheet, evidence ledger, scene/analogy bank) against
+ the plan-wide inventories in the same plan; the plan is included precisely so
+ you can resolve them. This compact contract owns generic method and craft. The
+-immediately previous chapter exists only for voice continuity and the handoff
+-seam. Do not read or request anything beyond the four runtime inputs provided
++immediately previous chapter is supplied for two uses only: match its voice,
++and enter from the belief it left installed. Everything it argued, staged,
++asked, warned, or landed is closed for this chapter — do not re-run, re-prove,
++re-warn, restage, or roll-call any of it at any length, whether as an opening
++recap, a bridge, or a "we have seen" list. Enter in at most one plain spoken
++sentence (a frozen token where one exists), then advance. Do not read or
++request anything beyond the four runtime inputs provided
+ (master plan, your chapter card, style guide, previous chapter). Do not seek
+ source packets, other chapters, reference prose, analysis, review, score, or
+ judge feedback. If your card is missing, contradictory, or cites an inventory

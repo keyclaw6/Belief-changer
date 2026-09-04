@@ -348,3 +348,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Journey `re-argument` 7→4 (A) and 5→5 (B) — one book only. Blocking stayed 0/0. Secondary factory-speech 6→6 / 21→4 also one-book. Card-field bind is sampling-sensitive on Spark 1.3. Do not promote. Same PRIMARY eligible with a new mechanism.
 
 **What this opens next.** New mechanism on the same PRIMARY (plan-card re-argument), not this exact continuity sentence. Strikes: 1 on re-argument + plan-skill under Spark 1.3 census.
+
+### iter-021 — writer previous-chapter closed-list  ·  2026-09-04  ·  INCONCLUSIVE
+
+**Hypothesis.** If the writer previous-chapter clause names N−1 as closed except voice-match and one-sentence entry, journey `re-argument` falls in both books versus 019 (A 7, B 5).
+
+**Change.** One clause in `prompts/chapter-writer.md` (see `loop/iterations/021/change.diff`). Plan reused (019, 13 chapters). Research reused. Two Spark 1.3 books (A Zen contributor-free; B Go contributor). Panel composer-2.5, 40+40.
+
+**What happened.** Journey re-argument 7→6 (A) and 5→7 (B). Belief 13/13, journey 13/13, voice 13/13, book-arc PASS both; blocking 0/0. Belief re-argument 3→5 / 1→7. Book-arc re-argument 3→3 / 2→7. Factory-speech noted 6→15 / 21→8.
+
+**Verdict & why.** INCONCLUSIVE. PRIMARY improved in one book only. No both-books new blocking class. Do not promote.
+
+**What we learned.** The hypothesized sentence is not the whole assembled contract: `write_replicate.py` still injects "voice continuity and the handoff seam" as the last assignment line. N←N−1 remains the journey shape. Plan-card still assigns overlapping demolitions the writer cannot refuse.
+
+**What this opens next.** Do not replay this exact clause. Strike 1 on re-argument + writer-prompt (assembled) under Spark 1.3 census. Next mechanism must not be this paragraph alone.

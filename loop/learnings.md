@@ -177,3 +177,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** INCONCLUSIVE
 **Lesson:** Journey `re-argument` 7→4 (A) and 5→5 (B) — one book only. Blocking stayed 0/0. Secondary factory-speech 6→6 / 21→4 also one-book. Card-field bind is sampling-sensitive on Spark 1.3. Do not promote. Same PRIMARY eligible with a new mechanism.
 **Next direction:** New mechanism on journey/arc `re-argument` (plan-card) or re-read priority if hypothesizer picks a different both-books class. Do not replay this exact continuity bullet. Anti-slop still only if PRIMARY is factory-speech or hedge.
+
+### iter-021 — writer previous-chapter closed-list
+**Hypothesis:** PRIMARY: replace the previous-chapter clause so N cannot re-run, re-prove, or roll-call N−1, so journey `re-argument` falls in both vs 019.
+**Change:** `prompts/chapter-writer.md` (previous-chapter clause only). Research reused. Plan reused (019, 13 chapters). Two books Spark 1.3 (A Zen contributor-free; B Go contributor). Judges composer-2.5.
+**Verdict:** INCONCLUSIVE
+**Lesson:** Journey `re-argument` 7→6 (A) and 5→7 (B) — one book only; B rose. Blocking 0/0. Belief/arc re-argument also rose. Assembled runtime prompt still ends with the old "handoff seam" assignment from `write_replicate.py`. Do not promote. Same PRIMARY eligible with a new mechanism (assembled contract or plan-card), not this exact clause.
+**Next direction:** Do not replay this previous-chapter paragraph. If PRIMARY stays journey re-argument, change a different component (assembled writer assignment, or plan-card job overlap). Anti-slop still only if PRIMARY is factory-speech or hedge.

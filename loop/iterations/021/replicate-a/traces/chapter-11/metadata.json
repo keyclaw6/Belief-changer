@@ -1,0 +1,23 @@
+{
+  "model": "muse-spark-1.3-contributor-free",
+  "route": "opencode",
+  "latency_s": 88.585,
+  "usage": {
+    "input_tokens": 36063,
+    "output_tokens": 9747,
+    "total_tokens": 45810,
+    "input_tokens_details": {
+      "cached_tokens": 2147
+    },
+    "output_tokens_details": {
+      "reasoning_tokens": 8073
+    }
+  },
+  "failed_routes": {
+    "opencode-go": 403
+  },
+  "chapter": 11,
+  "replicate": "a",
+  "iteration": "021",
+  "chars": 7222
+}
