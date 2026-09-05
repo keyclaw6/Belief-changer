@@ -7,8 +7,8 @@
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 026–027 KEEP accepted)
-- **Last completed unit:** 028 writes done (A 52626 / B 52802, floor met).
-- **Next unit:** Judge A (j028a). Start judge B after judge A exits.
+- **Last completed unit:** 028 judge A done (factory-speech 18, was 13). Writes 52626/52802.
+- **Next unit:** Judge B (j028b), then census/decision.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -28,3 +28,4 @@
 | 2026-09-05 02:45 | 027 KEEP. comparison missing 4→1 / 4→0. | 028 |
 | 2026-09-05 02:48 | 028 hypothesis: card-header / workshop-staging factory-speech. Writers starting. | 028 writes |
 | 2026-09-05 03:37 | 028 writes done 52626/52802. Starting judge A. | j028a |
+| 2026-09-05 03:48 | 028 judge A done. factory-speech 18 (was 13). Starting judge B. | j028b |
