@@ -1,0 +1,11 @@
+diff --git i/prompts/chapter-reviewer.md w/prompts/chapter-reviewer.md
+index 8c4138f7..a6bff809 100644
+--- i/prompts/chapter-reviewer.md
++++ w/prompts/chapter-reviewer.md
+@@ -49,5 +49,5 @@ missing job, the missing wording, or the overclaim.
+ - Do not invent a word budget. Use B from the orchestrator line.
+ - Do not ask for another review round. The orchestrator decides whether
+   there is another rewrite (up to three).
+-- When you demand more words, quote which card job those words must serve.
++- When you demand more words, make the LENGTHEN finding an expansion assignment, not merely a quotation of the card's job: identify a specific unfinished encounter, unanswered objection, or undeveloped consequence belonging to this card, quote the draft location to extend, and state what new understanding or lived consequence that extension must deliver. Check that target against earlier cards and against conclusions already landed in this draft; neither an earlier proof in a new setting nor another proof of the same landed conclusion is a valid expansion target. For an ordinary-life card, extend what happens next with the settled understanding already assumed, not how that understanding is proved again. If you cannot identify an unspent target supported by the card and plan, report that limitation within LENGTHEN rather than inventing evidence or requesting generic additional examples; retain the computed budget and the existing ACCEPT requirements.
+ - Your entire reply IS the review.

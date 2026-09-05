@@ -3,12 +3,12 @@
 ## Position
 
 - **Iteration:** 037
-- **Stage:** hypothesizer
+- **Stage:** dual-subject writes
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`). Factory is Muse Spark 1.3; this chat is auto-research only.
 - **Last completed unit:** 036 KEEP. Journey re-argument 15→8 / 16→9. Residual 8/9 still ≥8 both. Reviewer RE-ARGUMENT promoted.
-- **Next unit:** 037 hypothesizer (Astra, Fable on quota). Apply every listed change. Start both writes. Sleep.
+- **Next unit:** 037 writes (LENGTHEN expansion assignment). Sleep until FACTORY DONE both, then judge (one at a time).
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -86,3 +86,4 @@
 | 2026-09-05 22:03 | Sugar 10/13 CH-10 CAP. Smoking 12/14 CH-12 ACCEPT. Smoking CH-13 A1 fired `RE-ARGUMENT` (CH-08 morning + CH-10 patio). Sugar on CH-11. Both Go. | rest of 036 writes |
 | 2026-09-05 22:20 | Smoking FACTORY DONE 14/14 54213w. CH-13 CAP 3608/4500 after RE-ARGUMENT. Start smoking panel. Sugar 11/13, CH-12 A1. | j036-quit-smoking |
 | 2026-09-05 22:50 | 036 KEEP. Journey re-argument 15→8 / 16→9. Residual 8/9. Hypothesizer 037 (Astra). | 037 writes |
+| 2026-09-05 23:00 | 037 Astra hypothesis applied (LENGTHEN expansion assignment). Start both writes. | f037 writes |

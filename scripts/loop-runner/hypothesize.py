@@ -61,6 +61,7 @@ def pack(it: str) -> tuple[str, str]:
         f"Iteration to propose: {it}. Previous: {prev}.",
         "Propose 1–4 bound changes, exactly one PRIMARY.",
         "The orchestrator will apply every listed Change N, not only PRIMARY.",
+        "Factory files: " + ", ".join(FACTORY),
         census(prev, "quit-sugar"),
         census(prev, "quit-smoking"),
         "## learnings.md\n" + read_repo("loop", "learnings.md"),
@@ -134,8 +135,6 @@ def astra(system: str, user: str) -> tuple[str, dict, str]:
     for attempt in (1, 2):
         code, data = http_json(ASTRA_URL, payload, headers)
         blob = data if isinstance(data, str) else json.dumps(data)
-        if quota_fail(code, data):
-            return "", {}, "quota"
         if code == 200 and isinstance(data, dict):
             text = extract_chat(data).strip()
             if text:
@@ -153,6 +152,9 @@ def astra(system: str, user: str) -> tuple[str, dict, str]:
                 }
                 return text, meta, ""
             last_reason = "empty"
+        elif quota_fail(code, data):
+            print(f"astra quota/limit http={code} {redacted(blob)[:400]}", flush=True)
+            return "", {}, "quota"
         else:
             last_reason = f"http_{code}"
             print(f"astra fail attempt {attempt} {last_reason} {redacted(blob)[:400]}", flush=True)
@@ -162,8 +164,15 @@ def astra(system: str, user: str) -> tuple[str, dict, str]:
     return "", {}, last_reason
 
 
-def fable(system: str, user: str, reason: str) -> tuple[str, dict]:
-    prompt = system + "\n\n" + user
+def fable(it: str, reason: str) -> tuple[str, dict]:
+    short = (
+        "You are the loop hypothesizer. Read and follow "
+        "loop/prompts/hypothesizer.md exactly. Then read "
+        f"loop/iterations/{it}/hypothesizer-input.md and every factory "
+        "file it names. Propose 1–4 bound changes, exactly one PRIMARY. "
+        "The orchestrator will apply every listed Change N. "
+        "Return only the 4-field hypothesis. Do not edit files."
+    )
     cmd = [
         str(AGENT),
         "--trust",
@@ -174,7 +183,7 @@ def fable(system: str, user: str, reason: str) -> tuple[str, dict]:
         "-p",
         "--output-format",
         "text",
-        prompt,
+        short,
     ]
     t0 = time.time()
     r = subprocess.run(cmd, cwd=str(REPO), capture_output=True, text=True, timeout=600)
@@ -232,10 +241,13 @@ def main() -> None:
         print(f"exists {dest.relative_to(REPO)}; pass --force to replace", flush=True)
         return
     system, user = pack(it)
+    inp = REPO / "loop" / "iterations" / it / "hypothesizer-input.md"
+    inp.parent.mkdir(parents=True, exist_ok=True)
+    inp.write_text(user)
     text, meta, reason = astra(system, user)
     if not text:
         print(f"astra fallback → fable reason={reason}", flush=True)
-        text, meta = fable(system, user, reason or "empty")
+        text, meta = fable(it, reason or "empty")
     write_out(it, text, meta)
 
 

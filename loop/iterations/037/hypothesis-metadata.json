@@ -1,0 +1,22 @@
+{
+  "model": "gpt-6-astra",
+  "harness": "experiential",
+  "spawn": "scripts/loop-runner/hypothesize.py",
+  "fallback_from": null,
+  "fallback_reason": null,
+  "reasoning_effort": "low",
+  "latency_s": 23.627,
+  "usage": {
+    "prompt_tokens": 49607,
+    "completion_tokens": 1193,
+    "total_tokens": 50800,
+    "prompt_tokens_details": {
+      "cached_tokens": 49604
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 36
+    },
+    "cost": 0.0
+  },
+  "attempt": 1
+}
