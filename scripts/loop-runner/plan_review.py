@@ -43,7 +43,7 @@ def main() -> None:
     )
     round_name = os.environ.get("PLAN_ROUND", "review")
     (traces / f"plan-reviewer-{round_name}-prompt.md").write_text(prompt)
-    text, route, meta = call_muse(prompt, reasoning="high")
+    text, route, meta = call_muse(prompt, reasoning="xhigh")
     partial = out.with_suffix(".md.partial")
     partial.write_text(text)
     partial.rename(out)

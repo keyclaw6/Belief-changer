@@ -119,6 +119,7 @@ def call_muse(prompt: str, *, reasoning: str | None = None) -> tuple[str, str, d
                 return text, name, {
                     "model": (data.get("model") or model) if isinstance(data, dict) else model,
                     "route": name,
+                    "reasoning_effort": reasoning,
                     "latency_s": round(time.time() - t0, 3),
                     "usage": (data.get("usage") or {}) if isinstance(data, dict) else {},
                     "failed_routes": failed,

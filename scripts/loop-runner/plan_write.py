@@ -55,7 +55,7 @@ def main() -> None:
         f"{extra}"
     )
     (traces / f"plan-writer-{round_name}-prompt.md").write_text(prompt)
-    text, route, meta = call_muse(prompt, reasoning="high")
+    text, route, meta = call_muse(prompt, reasoning="xhigh")
     partial = out.with_suffix(".md.partial")
     partial.write_text(text)
     partial.rename(out)
