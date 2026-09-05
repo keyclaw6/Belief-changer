@@ -1,0 +1,31 @@
+{
+  "model": "muse-spark-1.3-contributor",
+  "route": "opencode-go",
+  "latency_s": 206.378,
+  "usage": {
+    "input_tokens": 39320,
+    "output_tokens": 15762,
+    "total_tokens": 55082,
+    "input_tokens_details": {
+      "cached_tokens": 39267
+    },
+    "output_tokens_details": {
+      "reasoning_tokens": 11028
+    }
+  },
+  "failed_routes": {},
+  "chapter": 9,
+  "replicate": "b",
+  "iteration": "030",
+  "chars": 27307,
+  "words_draft": 3869,
+  "words_final": 4868,
+  "budget": 5800,
+  "review_verdict": "REVISE",
+  "review_route": "opencode-go",
+  "review_latency_s": 30.153,
+  "rewritten": true,
+  "rewrite_route": "opencode-go",
+  "draft_route": "opencode-go",
+  "rewrite_latency_s": 72.629
+}
