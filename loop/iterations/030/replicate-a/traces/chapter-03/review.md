@@ -1,0 +1,4 @@
+REVISE
+HEADER — draft opens with the workshop header `IN THIS CHAPTER` before spoken body: "IN THIS CHAPTER / A Tuesday notebook. A desk drawer at half past three..."
+LENGTHEN to 3800±15% — Delivered 2823 words. Budget 3800. 0.85×3800=3230. 2823 is below 3230.
+JOB — chapter continues into reserved-later job. Card reserves "energy, reward, comfort kills to CH-05 and CH-09" and full strongest-scene reassignment to CH-09. Draft stages CH-05 flagship full-staging "Think of the tight sweet shoes we all wore. All day we pinched our feet in shoes a size too small..." and enacts CH-09 reassignment "Joy belonged to the film and the friend beside me, not to the bar in my hand" / "Love belonged to the people at the table, not to the frosting" plus direct kills "It helps you function? ... It rewards you? ... It comforts? ..."
