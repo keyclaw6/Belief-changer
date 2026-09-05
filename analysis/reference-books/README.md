@@ -6,8 +6,10 @@ The source texts we reverse-engineered to extract the belief-change **philosophy
 |---|---|---|---|
 | *The Easy Way to Quit Caffeine* | Allen Carr's Easyway (Colleen Dwyer ed.) | Caffeine | [`../easyway-caffeine.md`](../easyway-caffeine.md) |
 | *Good Sugar Bad Sugar* | Allen Carr's Easyway (Arcturus, 2016) | Sugar | [`../sugar-prose-patterns.md`](../sugar-prose-patterns.md) |
-| *The Illustrated Easy Way to Stop Smoking* | Allen Carr / Bev Aisbett (Arcturus, 2011/2013) | Smoking | chapter extract in [`../../calibration/reference/easyway-smoking/`](../../calibration/reference/easyway-smoking/) |
+| *Allen Carr’s Easyway to Stop Smoking* (US) | Allen Carr (Clarity Marketing, 2011) | Smoking | chapter extract in [`../../calibration/reference/easyway-smoking/`](../../calibration/reference/easyway-smoking/) |
 | *The Freedom Model for Addictions* (Abridged) | Steven Slate, Mark Scheeren, Michelle Dunbar | Substance use / "addiction" | [`../freedom-model.md`](../freedom-model.md) |
 | *Burgeon* | Uncredited (neuroregen.org / burgeonbook.org) | Porn / masturbation (PMO) | [`../burgeon.md`](../burgeon.md) |
 
 These are **reference / source** material only — the books we learned the style *from*. Books the pipeline *produces* live in `/production-books/`.
+
+The illustrated Aisbett/Arcturus *Illustrated Easy Way to Stop Smoking* is **not** the judge reference. Do not re-add it.

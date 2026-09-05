@@ -2,13 +2,13 @@
 
 ## Position
 
-- **Iteration:** 032
-- **Stage:** Idle
-- **Status:** IDLE
+- **Iteration:** 033
+- **Stage:** Research
+- **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
-- **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 026–027 KEEP + 030 KEEP + 031 KEEP accepted; 032 REVERT)
-- **Last completed unit:** 032 REVERT. Founder A1+K1 cutover in progress. Easyway illustrated smoking reference extracted (8 chapters, ~6849w).
-- **Next unit:** Smoking research → plan → alignment/moves → 033 BASELINE (sugar + smoking, A1 reviewer loop). Do not write 033 until smoking plan is `fit to write from`. PRIMARY remains 031 floors factory-speech 14/10 until the dual baseline.
+- **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 026–027 KEEP + 030 KEEP + 031 KEEP accepted; 032 REVERT; A1+K1 cutover landed)
+- **Last completed unit:** US Easyway (Clarity 2011) extracted — 00-intro + ch01–45 + ch46 Final Instructions; illustrated extract deleted.
+- **Next unit:** Smoking research wave 1 (Carr-blind, P-01–P-04). Then integrate, synthesize, plan-write, alignment + moves, PASS probe (Ch6 and Ch22 as both ours and real), 033 BASELINE write. Do not write 033 until smoking plan is `fit to write from`.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -36,4 +36,6 @@
 | 2026-09-05 09:12 | 032 writes done A 51349 / B 50428. Judge A started. Founder asked reviewer-until-ACCEPT + dual-subject (sugar + Easyway smoking). Design memo returned; no 033 until founder answers. | judge A then B |
 | 2026-09-05 09:15 | 032 judge A PANEL DONE 53/53. Judge B started. | judge B then census |
 | 2026-09-05 09:22 | 032 REVERT. factory-speech 14→22 / 10→13. Header grep 0/0. Writer restored. | founder architecture answers |
-| 2026-09-05 09:45 | Founder A1 + K1 + multi-change. Illustrated Easyway smoking PDF extracted to calibration/reference/easyway-smoking/. Harness parameterized. | smoking research + plan |
+| 2026-09-05 09:45 | Founder A1 + K1 + multi-change. Illustrated Easyway extracted by mistake. Harness parameterized. | founder: wrong book |
+| 2026-09-05 09:52 | Smoking research wave 1 prepared (banks empty). Personas P-01–P-04 named. Halted for correct PDF. | correct Easyway |
+| 2026-09-05 10:00 | Received US Easyway (Clarity 2011, 199pp, ISBN 978-0-6154-8215-6). Extracted 62,846w (intro 5,080 + ch01–46 57,766). Illustrated PDF deleted. | smoking research wave 1 |

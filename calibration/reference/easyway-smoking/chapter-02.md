@@ -1,161 +1,43 @@
 # Chapter 2
 
-# THE TRAP
+# THE EASYWAY
 
-Becoming addicted to cigarettes is a bit like falling under a SPELL.
+The aim of this book is to get you into the frame of mind whereby instead of starting out on your smoke-free life with a feeling of doom, gloom, misery and depression, you can start right away with a feeling of elation, as if you have been cured of a terrible, life-threatening disease.
 
-MUST... HAVE... CIGARETTE...
+Smokers thinking about quitting are often intimidated by what they perceive to be the scale of the task they face. They feel as if they are attempting to scale Mount Everest single-handed. They believe that they will need to suffer terrible physical withdrawal pangs, that they are giving up their best friend and that they will, in all likelihood, fail anyway. Who could think of a worse frame of mind with which to take on this, or any other project? The smoker has already programmed him or herself to fail. But if you are able to replace those negative thoughts and feelings with an attitude of excitement and anticipation, then the task is made far easier. In fact, with the right frame of mind, it is not only easy, but also incredibly enjoyable to stop smoking. From then on, the further you go through life the more you will look at cigarettes and wonder how you had ever believed you needed to smoke. You will look at smokers with pity as opposed to envy.
 
-You think that you are in
+Provided that you are not already a non-smoker or an ex-smoker, it is essential to keep smoking until you have finished the book completely. This may appear to be something of a contradiction. Later I shall be explaining that cigarettes do absolutely nothing for you at all. In fact, one of the many puzzles about smoking is that when we are smoking a cigarette, we look at it and wonder what on earth we are doing: it is only when we can’t smoke that the cigarette becomes precious or desirable.
 
-CONTROL... | ONLY SMOKE A FEW- | CAN QUIT, EASILY!
+However, let us accept that, whether you like it or not, you believe you need to smoke and that you can’t relax or concentrate properly unless you are smoking. So do not attempt to stop smoking before you have finished the whole book. As you read further your desire to smoke will gradually be reduced until it disappears entirely. Let the book do its work. Remember, all you have to do is to follow the instructions.
 
-...until you try to QUIT.
+With the benefit of more than twenty years’ feedback since the book’s original publication, apart from Chapter 28 (‘Timing’), this instruction to continue to smoke has caused me more frustration than any other. When I first stopped smoking, many of my friends and relatives stopped, purely because I had done it. They thought ‘If he can do it, anyone can.’ Over the years, by dropping little hints I managed to persuade the ones who hadn’t stopped to realize just how nice it was to be free! When the book was first printed I gave copies to the hard core that were still puffing away. I worked on the basis that, even if it was the most boring book ever written, they would still read it, if only because it had been written by a friend. I was surprised and hurt to learn that, months later, they hadn’t bothered to read it. I even discovered that the original copy I had signed and given to someone who was then my closest friend had not only been ignored but actually given away. I was hurt at the time, but I had overlooked the dreadful fear that slavery to the weed instills in the smoker. It can transcend friendship. I nearly provoked a divorce because of it. My mother once said to my wife, ‘Why don’t you threaten to leave him if he doesn’t stop smoking?’ My wife said, ‘Because he’d leave me if I did.’ I’m ashamed to admit it, but I believe she was right, such is the fear that smokers suffer when confronted with the prospect of having to stop.
 
-WITHOUT MY
+I now realize that many smokers don’t finish the book because they feel they have got to stop smoking when they do. Some deliberately read only one line a day in order to postpone what they perceive to be the ‘evil’ day. Now I am fully aware that many readers are only reading this book because they have had their arm twisted to do so by people that love them. Look at it this way: what have you got to lose? If you don’t stop at the end of the book, you are no worse off than you are now. YOU HAVE ABSOLUTELY NOTHING TO LOSE AND SO MUCH TO GAIN!
 
-Cas!
+Incidentally, if you have not smoked for a few days or weeks but are not yet sure whether you are a smoker, an ex-smoker or a non-smoker, then don’t smoke while you read. In fact, you are already a non-smoker. All we have to do is to let your brain catch up with your body. By the end of the book you’ll be a happy non-smoker.
 
-The ADDICTION also traps you into thinking that smoking GIVES you something, and that you NEED cigarettes to provide that something.
+Basically my method is the complete opposite of the so-called ‘normal’ method of trying to stop. The ‘normal’ method is to list the considerable disadvantages of smoking and say, ‘If only I can go long enough without a cigarette, eventually the desire to smoke will subside. I then might be able to enjoy life again.’
 
-This trap of addiction is both POWERFUL and SUBTLE.
+On the surface, this appears to be a logical way to go about it, however, the truth is that over 95% of such quit attempts end in failure for the following reasons:
 
-Let’s take a look at how it works by using the example of the FLY and the PITCHER PLANT.
+1. By focusing on the disadvantages of smoking we are addressing the wrong issue.
 
-Here is a fly happily buzzing along. ee It doesn’t NEED [ino . anything to oe feel complete — (
+We should be focused on why we smoke, not why we shouldn’t smoke. Smokers already know they shouldn’t smoke, and if this knowledge were going to make them stop, it would have done so long ago. The real challenge is to understand the illusory reasons we do smoke, and deal with them.
 
-nature has provided < wow!
+2. Some of the things we use to motivate us to abstain do make us want to quit, but some of them also make us want to smoke. This sounds illogical but it isn’t. Take the biggest reason that smokers want to stop: health. If you see an anti-smoking commercial highlighting the dangers of smoking, for example showing a throat cancer sufferer continuing to smoke through a hole in her throat, it provokes an emotional response based around the fear and anxiety that the same might happen to you. This in turn creates stress and the smoker’s first response to stress is to want to light a cigarette. This is why so many quit smoking campaigns make it harder, not easier, for smokers to stop.
 
-abundantly to sustain the x fly’s existence. ( Y y But on this particular day, the fly happens to SUELO spot an 4 THERET
+3. It perpetuates the myth that the smoker is sacrificing something or depriving himself of something when he stops. This sense of deprivation makes us feel miserable and vulnerable, which in turn makes the cigarette appear desirable. We have to use willpower not to give in to this desire and we enter that familiar cycle of wanting to smoke but not being allowed to. This deepens the misery and stress, which of course further heightens the desire to smoke, and so it continues until we can eventually take no more, admit defeat and light up. The problem here is not the cigarette itself, but the desire to smoke. If the smoker retains the desire to smoke then so long as he is not smoking, he will be miserable. This poor soul doesn’t ever become a true non-smoker, but remains forever a smoker who is not allowed to smoke, a bit like the AA’s ‘dry drunk’.
 
-UNUSUAL, EXOTIC,
+The EASYWAY is basically this: to forget, for a time, the reasons we want to stop, to turn to face the cigarette and to ask ourselves the following questions:
 
-ENTICING BLOOM and it gets curious...
+1. What does the cigarette really do for me?
 
-The fly goes EXPLORING... ...only to find that this
+2. Do I really enjoy it?
 
-trip is ONE WAY. wHoors!
+3. Do I really need to go through life paying through the nose just to stick these things in my mouth and suffocate myself?
 
-GOING DOWN?
+The beautiful truth is that it does absolutely nothing for you at all. Let me make it quite clear, I do not mean that the disadvantages of being a smoker outweigh the advantages; all smokers know that all their lives. I mean there are NO advantages whatsoever to smoking. The only benefit it ever had was a dubious one to begin with— as a social lubricant—has long gone. Nowadays even smokers themselves regard it as antisocial.
 
-However, the fly isn’t particularly BOTHERED by this... in fact, he’s having a
+All smokers attempt to rationalize why they smoke but all of the reasons we use to justify our smoking are excuses or based on myths, fallacies and illusions.
 
-GRAND OLD TIME!
-
-But after some time the fly finds himself getting a bit FED UP with this.
-
-What started off as ENJOYABLE is now making him feel SICK... ...and it is then it dawns on him that something BAD is starting to happen here... ...he realizes that the delicious nectar he was eating before is
-
-now EATING HIM!
-
-aa All SMOKERS are like that fly at various stages of descent inside the plant: «<—— Occasional smoker OOS rarer = Addict <«— Colds and flu Sore Smokers’ cough ~«<—— Emphysema «— Cancer/stroke/heart attack =«—— Early death The most sinister aspect of this trap is that it creates several ILLUSIONS: @ THAT SMOKING IS ENJOYABLE ¢ THAT PEOPLE CHOOSE TO SMOKE ¢ THAT CIGARETTES TASTE GOOD ¢ THAT SMOKING RELIEVES BOREDOM ¢ THAT SMOKING AiDS CONCENTRATION ¢ THAT SMOKING ALLEVIATES STRESS ¢ THAT CASUAL SMOKERS ARE LESS HOOKED THAN HEAVY SMOKERS AND...THAT QUITTING IS DIFFICULT!
-
-Once you are trapped, you have handed over your POWER to cigarettes.
-
-Smokers do not CHOOSE to smoke.
-
-They feel COMPELLED to smoke.
-
-They need a FIX to ease the discomfort of not having a FIX.
-
-Smokers are DRUG ADDICTS.
-
-So you don’t think you’re Yaa an ADDICT? ec > ) Have you ever smoked
-
-oe BUTTS?
-
-Have you ever STOLEN
-
-someone else’s cigarettes?
-
-OH WELL... GIVE ME A PACK OF THAT HORSE DUNG THEN.
-
-If you couldn’t get your BRAND
-
-would you go WITHOUT?
-
-ad Have you ever LIED about how many cigarettes you actually
-
-smoke?
-
-Have you
-
-BROKEN PROMISES
-
-to others (and yourself)
-
-that you'll quit?
-
-| SORRY-M
-
-Have you PRETENDED Van you were out of cigarettes if someone asked you
-
-for one?
-
-If you ran out, to what LENGTHS would
-
-you go to get MORE?
-
-So, you STEAL, LIE, CHEAT, HOARD and
-
-COMPROMISE YOURSELF for cigarettes?
-
-Oh yes, you’re an ADDICT.
-
-ANATOMY OF A NICOTINE ADDICT FEELS STUPID/WEAK LACKS CONFIDENCE
-
-ax ASHAMED
-
-BAD BREATH LOW ENERGY OUT OF POCKET
-
-Act
-
-BREATHING PROBLEMS LETHARGY DIMINISHED HEALTH SMELLY
-
-eel a,
-
-POSSIBLE AMPUTATION EDGY FEARFUL
-
-id The worst part of being trapped inside the smoking prison is the sense of being constantly pulled in TOTALLY OPPOSITE directions.
-
-ee !
-
-) LIVE
-
-Le a meee
-
-SMOKING MAKES QUNTING REMAKES
-
-Me. MISELABLE. MISERABLE?
-
-But! WANT
-
-ANOTHER ALLTHIS WORRY BUT | CANT HANDLE
-
-Agout MY HEALTH STRESS WITHOUT
-
-IS So STRESSFUL! SMOKING!
-
-Sea, IT'S COSTING us BuT |! CAN)
-
-AFFORD IT! A FORTUME/ KS3 ANBS
-
-Cc Ss oo Eq BUT How CAN |
-
-| WISH | COULD ENIOY LIFE 5 BE FREE OF THIS. WITHOUT THEM.
-
-You end up reasoning that there must be something very POWERFUL about cigarettes that would keep you smoking despite all the WARNINGS, HEALTH SCARES, FEARS, DOUBTS and your own desire NOT TO.
-
-You think that smoking DOES SOMETHING
-
-for you and you think you NEED to smoke!
-
-In holding on to such ideas, you have
-
-NO CONTROL
-
-over your smoking.
-
-Instead, you are being controlled by the
-
-SMOKING MONSTER.
+The first thing we are going to do is to address and remove these myths, fallacies and illusions. In fact, you will quickly realize that there is nothing to give up. Not only is there nothing to give up, but there are many marvelous positive gains to be had from becoming a non-smoker, and health and money are just two of these gains. Once the illusion that life will never be quite as enjoyable without the cigarette is removed, once you realize that not only is life just as enjoyable without it but infinitely more so, once the feeling of being deprived or of missing out is eradicated, then we can reconsider health and money—and the dozens of other amazingly positive reasons for stopping smoking. These realizations will become powerful additional aids to help you achieve what every smoker really wants—to enjoy the whole of your life free from the slavery of smoking.

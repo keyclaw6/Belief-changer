@@ -1,0 +1,19 @@
+# Chapter 19
+
+# IT RELAXES ME AND GIVES ME CONFIDENCE
+
+This is the very worst fallacy of all about smoking, and for me it ranks alongside the ending of the slavery as being the greatest benefit to quitting—not to have to go through your whole life with the permanent feeling of insecurity that smokers suffer from.
+
+Some smokers find it difficult to believe that the cigarette actually causes that insecure, slightly panicky feeling you get when you are out late at night and realize that you’re running low on cigarettes. This is because we have been brainwashed into believing that smoking relieves this feeling. But non-smokers don’t ever have that feeling, so the only conclusion we can come to is that the cigarette creates it. We fall for a con trick: we acknowledge the slight boost that the cigarette gives us by partially removing the slight feeling of emptiness and insecurity when we light up, but we conveniently forget that it was withdrawing from the previous cigarette that created those symptoms in the first place.
+
+As a smoker the only thing we look forward to is the next opportunity to smoke, and we go out of our way to create such opportunities. This burden creates even more stress for the smoker on top of the existing stress of going through permanent nicotine withdrawal and the stress of bombarding your body with hundreds of toxic chemicals twenty times a day.
+
+It’s blatantly obvious to non-smokers that smoking is one of the more stressful and least relaxing pursuits. Even when smokers are smoking they aren’t relaxed, unless they’re in a situation where they can light up whenever they wish. This perhaps explains why so many smokers have problems with alcohol; they are forced to spend time in places where they are able to smoke. This attracts smokers to bars, one of the few places it is still possible (in some places) to smoke. You only need to see the smoke-filled rooms of AA meetings to appreciate the link between tobacco and alcohol. This also explains the smoker’s love of casinos and bingo halls!
+
+It is truly ironic that we look to the cigarette to relax us when in fact it creates the stress in the first place. Smoking for relaxation is like drinking bourbon to get sober.
+
+When I finally broke free from the smoking trap I was astonished to realize that I was far more relaxed and confident as a non-smoker. Such is the brainwashing that I thought that I would never be able to relax without a cigarette. The truth is that as a smoker, I didn’t know how it felt to really relax because I was in a permanent state of stress caused by smoking. And I was certain that cigarettes gave me confidence. I now realize that this was also an illusion. Because I got panicky when I couldn’t smoke, I assumed that the cigarette gave me courage and confidence. It never occurred to me that non-smokers don’t have that panic feeling and they therefore don’t need the artificial boost (of removing the symptoms of withdrawal created by the previous cigarette) the cigarette gives.
+
+In the last years of my smoking, I was a nervous wreck. I refused to have a medical checkup, because I was terrified of what it would reveal. If I wanted to buy life insurance or private health coverage I insisted on a ‘no medical’ product and paid far higher premiums as a result. I hated visiting hospitals, doctors and dentists. I also had a terrible fear of the future and of aging—as a smoker, I didn’t feel I was entitled to a future.
+
+I didn’t relate any of this to my smoking, but when I stopped I suddenly acquired the confidence and courage to face these issues head on. Nowadays I look forward to every day. Of course, bad things happen in my life—this is the human condition—and I am subject to the normal stress and strains, but it is wonderful to have the confidence and courage to deal with them. And the improved health, energy and freedom make the good times more enjoyable too.

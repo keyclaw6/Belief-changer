@@ -4,7 +4,7 @@
 **Status:** brief → researching
 **Created:** 2026-09-05
 
-Reference: `calibration/reference/easyway-smoking/` (*The Illustrated Easy Way to Stop Smoking*, Arcturus 2011/2013).
+Reference: `calibration/reference/easyway-smoking/` (*Allen Carr’s Easyway to Stop Smoking*, Clarity Marketing US 2011). Our produced book stays ~13 chapters; the reference is 45 chapters + Final Instructions.
 
 ## Artifacts
 - [x] `00-brief.md`
