@@ -3,12 +3,12 @@
 ## Position
 
 - **Iteration:** 036
-- **Stage:** Factory running
+- **Stage:** Smoking panel; sugar still writing
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`). Factory is Muse Spark 1.3; this chat is auto-research only.
 - **Last completed unit:** 035 QUANTIFY. Smoking factory-speech 12→3; sugar 6→8. Restored: no. §B5 op 9 stays.
-- **Next unit:** Wait FACTORY DONE both (sugar 13, smoking 14). Then one judge at a time. Do not write chapters in this chat.
+- **Next unit:** 036 smoking panel (composer-2.5). Sugar still writing CH-12. Do not start a second judge. Do not write chapters in this chat.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -84,3 +84,4 @@
 | 2026-09-05 21:37 | Sugar 8/13 CH-08 CAP (`RE-ARGUMENT` peach/SC-02). Smoking 9/14 CH-09 CAP. Smoking on CH-10 A1; sugar on CH-09. Both Go. | rest of 036 writes |
 | 2026-09-05 21:53 | Sugar 9/13 CH-09 CAP. Smoking 11/14 CH-11 ACCEPT (`RE-ARGUMENT` patio/CH-10). Smoking on CH-12 A1; sugar on CH-10. Both Go. | rest of 036 writes |
 | 2026-09-05 22:03 | Sugar 10/13 CH-10 CAP. Smoking 12/14 CH-12 ACCEPT. Smoking CH-13 A1 fired `RE-ARGUMENT` (CH-08 morning + CH-10 patio). Sugar on CH-11. Both Go. | rest of 036 writes |
+| 2026-09-05 22:20 | Smoking FACTORY DONE 14/14 54213w. CH-13 CAP 3608/4500 after RE-ARGUMENT. Start smoking panel. Sugar 11/13, CH-12 A1. | j036-quit-smoking |
