@@ -2,13 +2,13 @@
 
 ## Position
 
-- **Iteration:** 033
-- **Stage:** Done
-- **Status:** IDLE
+- **Iteration:** 034
+- **Stage:** Writing
+- **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
-- **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 026–027 KEEP + 030 KEEP + 031 KEEP accepted; 032 REVERT; 033 BASELINE dual-subject)
-- **Last completed unit:** 033 BASELINE recorded. Sugar 53208w all-PASS; smoking 54277w all-PASS; blocking 0/0. Floors: factory-speech 20/18; journey re-argument 16/8; willpower-lexicon 40/31 (not PRIMARY).
-- **Next unit:** 034 hypothesizer. PRIMARY factory-speech 20/18. Do not replay 020–024 / 028 / 029 / 030 / 032. Do not start willpower-lexicon PRIMARY.
+- **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 033 BASELINE dual-subject; 034 PRIMARY factory-speech via §B4 freedom-register)
+- **Last completed unit:** 033 BASELINE. Floors factory-speech 20/18. Hypothesis: replace §B4 Freedom-register token list so ease-operators are not spoken as tags.
+- **Next unit:** 034 writes both subjects (A1). Then judge one at a time. PRIMARY factory-speech 20/18 must fall both. Do not replay 020–024 / 028 / 029 / 030 / 032.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -56,3 +56,4 @@
 | 2026-09-05 13:50 | Sugar write DONE 13/13 53208w. Smoking 12/14; CH-13 started. | judge sugar; smoking write |
 | 2026-09-05 14:10 | Sugar PANEL DONE. Smoking write DONE 14/14 54277w. | judge smoking |
 | 2026-09-05 14:35 | 033 BASELINE recorded. factory-speech 20/18. | 034 hypothesizer |
+| 2026-09-05 14:50 | 034 hypothesis: §B4 Freedom-register ease-operators. Style-guide applied. | 034 dual-subject writes |
