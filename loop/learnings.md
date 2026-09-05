@@ -268,3 +268,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** KEEP
 **Lesson:** comparison `partial` 9→5 / 11→5 (drop ≥2 both). Length 52392/51940. Blocking 0/0. Underpaid halves G05-M1, G13-M2, G15-M2, G14-M2 closed both. G20-M3 stayed PARTIAL both (CH-13 1584/1462 still rebuilt sweetness/life-choice). factory-speech rose 9→14 / 7→10 (noted, not a veto).
 **Next direction:** PRIMARY factory-speech 14/10 (noted ≥8 both). Do not replay 028/029 style-guide header sentences or 030 HEADER. Do not replay 020–024 wording. willpower-lexicon stays non-PRIMARY. comparison `partial` 5/5 is below the ≥8 band.
+
+### iter-032 — writer anatomy drop IN THIS CHAPTER
+**Hypothesis:** PRIMARY: delete required `IN THIS CHAPTER` from writer anatomy and replace bare list-number instructions with a spoken number-in-words lead-in so voice `factory-speech` falls in both vs 031 (14/10).
+**Change:** `prompts/chapter-writer.md` (anatomy items 2–5 + Method-and-voice). Plan reused (031 Jobs). Two books Spark 1.3 Go with reviewer. Judges composer-2.5, 53+53.
+**Verdict:** REVERT
+**Lesson:** factory-speech 14→22 / 10→13 (both rose). Length 51349/50428. Blocking 0/0. Header grep 0/0 — the string died; the replacement lead-in (`So here is my sixth instruction:`) scored as factory-speech in both. A also rose on `Hear the verdict and let it stand:` formula. Writer restored to 031 KEEP text.
+**Next direction:** PRIMARY remains 031 floors factory-speech 14/10. Do not replay this writer-anatomy change. Do not replay 028/029/030 header mechanisms. Do not replay 020–024 wording. Architecture pivot (reviewer-until-ACCEPT + dual subject) is a founder gate — do not start 033 on the old two-sugar protocol.

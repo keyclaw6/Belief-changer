@@ -502,3 +502,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Cards that omit the second half of a comparison move produce PARTIAL every time. A reminders Job cannot KEEP G20-M3 while a 3800-word LENGTHEN still forces rebuild; cutting the budget stopped the 4000-word rewrite but a short second-pass argument still scored PARTIAL.
 
 **What this opens next.** New floors: factory-speech 14/10 (≥8 both — next PRIMARY). comparison `partial` 5/5 is below the band. willpower-lexicon 34/26 is not PRIMARY. Do not replay 028/029/030 header mechanisms. Do not replay 020–024 wording.
+
+### iter-032 — writer anatomy drop IN THIS CHAPTER  ·  2026-09-05  ·  REVERT
+
+**Hypothesis.** If the writer contract no longer requires `IN THIS CHAPTER` and instructions open with a spoken number-in-words lead-in instead of a bare list number, voice `factory-speech` falls in both versus 031 (A 14, B 10).
+
+**Change.** Anatomy items 2–5 plus the Method-and-voice you/we line in `prompts/chapter-writer.md` (see `loop/iterations/032/change.diff`). Plan reused. Research reused. Two Spark 1.3 Go books with chapter-reviewer. Panel 53+53.
+
+**What happened.** factory-speech 14→22 (A) and 10→13 (B). Words 51349 / 50428. All lanes 13/13 PASS, book-arc PASS, blocking 0/0. `IN THIS CHAPTER` grep 0/0 both. The new lead-in (`So here is my Nth instruction:`) was cited as factory-speech in both books. A also rose on a repeated unassigned refrain (`Hear the verdict and let it stand:`). comparison `partial` 5→4 / 5→6.
+
+**Verdict & why.** REVERT. PRIMARY rose in both. Header-string death is mechanism, not KEEP. Do not promote.
+
+**What we learned.** Deleting the required header from the writer contract does kill the header. The replacement instruction-bookkeeping sentence is itself factory-speech. Grep for `IN THIS CHAPTER` going to 0 is not KEEP.
+
+**What this opens next.** Do not replay this writer-anatomy change. PRIMARY stays 031 floors 14/10. Founder asked to stop small same-book iterations and cut over to a reviewer-until-ACCEPT loop plus dual-subject (sugar + Easyway smoking). That is a PROGRAM/HARNESS gate — do not start 033 on the old two-sugar protocol.
