@@ -77,13 +77,12 @@ def run(raw: str) -> str:
     msg = (
         f"loop/state.md is IN PROGRESS (iteration {active['iter']}). "
         f"Last: {active['last']}. Next: {active['next']}. "
-        "This conversation is auto-research, not the book factory. "
-        "The factory is a Muse Spark 1.3 conversation "
-        "(prompts/factory-orchestrator.md / OpenCode --agent factory). "
-        "If a factory session or leftover write_replicate.py is live: idle. "
-        "Do not run plan-writer, plan-reviewer, or chapter loops here. "
-        "When FACTORY DONE (chapter markers on disk), start that subject's judge. "
-        "Do not start a second factory orchestrator."
+        "Simple check only. If the current unit is unfinished and not stuck, "
+        "sleep; do not chapter-journal. This conversation is auto-research, "
+        "not the book factory. When FACTORY DONE, start that subject's judge "
+        "(one at a time) then sleep. When both PANEL DONE: KEEP/QUANTIFY, "
+        "hypothesize.py (Astra then Fable), apply every listed change, start "
+        "both writes, sleep. Do not start a second factory orchestrator."
     )
     return json.dumps({"followup_message": msg})
 

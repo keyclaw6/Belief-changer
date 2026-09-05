@@ -257,25 +257,31 @@ the next iteration; they are never drained in a batch.
    and founder-only-model guards still apply. The founder note supplies the
    change and rationale; the trace analysis supplies the failure evidence.
 3. Save the hypothesizer's 4-field response as `loop/iterations/NNN/hypothesis.md`
-   with `source: founder inbox` (and `hypothesis-metadata.json` `{model, harness,
-   spawn}`), and only then move the inbox file to
-   `loop/inbox/used/NNN-<name>.md` (write the hypothesis first — never move
-   before it is recorded).
+   with `source: founder inbox` (and `hypothesis-metadata.json` recording the
+   agent that actually ran: `{model, harness, spawn}`; plus `fallback_from`
+   / `fallback_reason` when the primary hypothesizer failed), and only then
+   move the inbox file to `loop/inbox/used/NNN-<name>.md` (write the
+   hypothesis first — never move before it is recorded).
 
-If the inbox is empty, spawn the `hypothesizer` sub-agent (contract:
+If the inbox is empty, spawn the `hypothesizer` (contract:
 `loop/prompts/hypothesizer.md`) with:
 - the previous iteration's `trace-analysis.md`
 - `loop/learnings.md`
 - the current editable factory files
 
+Cursor spawn: `scripts/loop-runner/hypothesize.py` (GPT-6 Astra via
+Experiential). On no-response or quota, the same script falls back once to
+Claude Fable 5.1. Do not send `temperature`. Optional Astra
+`reasoning_effort: low`.
+
 The orchestrator writes `loop/iterations/NNN/hypothesis.md` unchanged and
-`loop/iterations/NNN/hypothesis-metadata.json` `{model, harness, spawn}`.
+`loop/iterations/NNN/hypothesis-metadata.json` for the model that actually ran.
 
-### Step 2: Apply the change
+### Step 2: Apply the changes
 
-Apply the hypothesis's 1–3 bound changes, each one instruction in one
-editable file (≤ 3 files), per the convergence budget in
-`loop/prompts/hypothesizer.md`. Record the diff in
+Apply **every** listed change in the hypothesis (1–4 bound changes, each one
+instruction in one editable file, ≤ 3 files). Do not apply PRIMARY only.
+KEEP/QUANTIFY still read the PRIMARY class only. Record the combined diff in
 `loop/iterations/NNN/change.diff`.
 
 ### Step 3: Run the factory
@@ -321,6 +327,14 @@ does the orchestrator spawn a sub-agent to read the traces and confirm the
 wedge. A confirmed stuck run is retried once per §1, then INCONCLUSIVE or
 escalate. Doing nothing while a healthy run proceeds is correct behavior, not
 a wasted wake. Update `loop/state.md` before every wait.
+
+**Cursor cadence (founder 2026-09-05):** the wake check is FACTORY DONE /
+chapter counts (sugar 13, smoking 14), PANEL DONE, and whether the writer or
+judge process is live. If the current unit is unfinished and not stuck, sleep
+again. Do not chapter-journal. When a subject prints `FACTORY DONE`, start
+that subject's judge (one at a time) and sleep. When both panels exist:
+KEEP/QUANTIFY, hypothesizer, apply every listed change, start both writes,
+sleep.
 
 **A file only counts as a marker once it is complete.** The orchestrator never
 writes a finished artifact straight to its final name: it writes to a temp name

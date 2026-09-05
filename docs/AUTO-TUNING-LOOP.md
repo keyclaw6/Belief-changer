@@ -52,10 +52,10 @@ matter only insofar as they serve belief change.
                    replicates are signal; a cluster in only one is noise.
 4. DIAGNOSE      — Map each gap to a factory component:
                    research? plan? writer prompt? style guide? model?
-5. HYPOTHESIZE   — 1–3 bound changes under the convergence budget (fewer
+5. HYPOTHESIZE   — 1–4 bound changes under the convergence budget (fewer
                    and smaller as the census approaches zero), one PRIMARY
                    with a prediction
-6. APPLY         — Make the change
+6. APPLY         — Make every listed change (PRIMARY decides KEEP)
 7. RE-RUN        — Re-run affected stage(s); write and judge two books
 8. COMPARE AGAIN — Same judge panel, same comparison, both replicates
 9. KEEP/REVERT   — KEEP only when BOTH replicates show the targeted cluster

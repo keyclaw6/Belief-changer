@@ -3,12 +3,12 @@
 ## Position
 
 - **Iteration:** 036
-- **Stage:** Smoking panel; sugar still writing
+- **Stage:** Sugar panel
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`). Factory is Muse Spark 1.3; this chat is auto-research only.
-- **Last completed unit:** 035 QUANTIFY. Smoking factory-speech 12→3; sugar 6→8. Restored: no. §B5 op 9 stays.
-- **Next unit:** 036 smoking panel (composer-2.5). Sugar still writing CH-12. Do not start a second judge. Do not write chapters in this chat.
+- **Last completed unit:** 036 both books written (sugar 13/13 53680w; smoking 14/14 54213w). Smoking PANEL DONE. Sugar judge started.
+- **Next unit:** 036 sugar panel. Then KEEP/QUANTIFY vs 035 journey re-argument 15/16. Then 037 hypothesizer (Astra, Fable on quota). Apply every listed change. Sleep between units.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -85,3 +85,4 @@
 | 2026-09-05 21:53 | Sugar 9/13 CH-09 CAP. Smoking 11/14 CH-11 ACCEPT (`RE-ARGUMENT` patio/CH-10). Smoking on CH-12 A1; sugar on CH-10. Both Go. | rest of 036 writes |
 | 2026-09-05 22:03 | Sugar 10/13 CH-10 CAP. Smoking 12/14 CH-12 ACCEPT. Smoking CH-13 A1 fired `RE-ARGUMENT` (CH-08 morning + CH-10 patio). Sugar on CH-11. Both Go. | rest of 036 writes |
 | 2026-09-05 22:20 | Smoking FACTORY DONE 14/14 54213w. CH-13 CAP 3608/4500 after RE-ARGUMENT. Start smoking panel. Sugar 11/13, CH-12 A1. | j036-quit-smoking |
+| 2026-09-05 22:30 | Founder: sleep cadence; apply all 1–4; hypothesizer GPT-6 Astra then Fable; record model. Sugar FACTORY DONE 13/13 53680w. Start sugar panel. | j036-quit-sugar |

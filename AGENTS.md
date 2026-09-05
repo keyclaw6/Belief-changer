@@ -56,7 +56,7 @@ unit in the **same** factory session. Role runners (`plan_write.py`,
 They are not the factory.
 
 The **auto-research loop** (`loop/PROGRAM.md`) is a different conversation:
-hypothesize, apply a factory-file change, **start** one factory session per
+hypothesize, apply every listed factory-file change, **start** one factory session per
 subject, judge (`judge_replicate.py`), KEEP/REVERT. A Cursor Grok chat may
 run auto-research. It must not itself run the plan loop or the chapter loops.
 

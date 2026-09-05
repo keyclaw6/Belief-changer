@@ -65,12 +65,17 @@ planner_fallback_route: opencode
 planner_reasoning: xhigh
 
 # ── Hypothesizer — loop/prompts/hypothesizer.md ──
-# Claude Fable 5.1 as a fresh harness sub-agent (Cursor: Task spawn). The
-# harness spawn is the route; no HTTP endpoint, no Muse fallback. One call
-# per iteration: retry once on the same model, then escalate to the founder.
-hypothesizer_model: claude-fable-5-1
-hypothesizer_route: harness-subagent
-hypothesizer_reasoning: high
+# GPT-6 Astra via Experiential (chat/completions). Do not send temperature.
+# Optional reasoning_effort: low. On no-response or quota, Claude Fable 5.1
+# (Cursor agent --mode ask). Record the model that actually ran in
+# loop/iterations/NNN/hypothesis-metadata.json.
+hypothesizer_model: gpt-6-astra
+hypothesizer_fallback_model: claude-fable-5-1
+hypothesizer_endpoint: https://api.experientiallabs.ai/v1/chat/completions
+hypothesizer_auth_env: EXPERIENTIAL_API_KEY
+hypothesizer_route: experiential
+hypothesizer_fallback_route: harness-subagent
+hypothesizer_reasoning: low
 
 # ── Research, plan-review, analyzer: same Muse Spark 1.3 Go chain ──
 # Cursor chapter judges stay composer-2.5 (019/020 panel). Config default

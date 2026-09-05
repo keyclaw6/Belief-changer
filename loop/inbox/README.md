@@ -14,6 +14,7 @@ Name it anything, e.g. `2026-08-12-shorten-instructions.md`. Inside:
 **Change 1 (PRIMARY):** <editable file> — class: <census class> — component: <root component> — <the instruction change>
 **Change 2:** <optional; same fields; bound to a census class>
 **Change 3:** <optional; same fields; bound to a census class>
+**Change 4:** <optional; same fields; bound to a census class>
 **Because:** <the failure or intuition you're acting on>
 **Prediction:** <PRIMARY class X falls in BOTH books; secondaries predicted, not decisive>
 ```
