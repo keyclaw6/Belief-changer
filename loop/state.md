@@ -2,13 +2,13 @@
 
 ## Position
 
-- **Iteration:** 028
-- **Stage:** Decision
-- **Status:** IDLE
+- **Iteration:** 029
+- **Stage:** Writing
+- **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 026–027 KEEP accepted)
-- **Last completed unit:** 028 INCONCLUSIVE. factory-speech 13→18 / 16→10. Style-guide restored.
-- **Next unit:** 029 hypothesis from 027 factory-speech 13/16 (new mechanism: B10 anatomy, not operator 11).
+- **Last completed unit:** 028 INCONCLUSIVE. 029 hypothesis: B10 opening-pictures (vs 027 factory-speech 13/16).
+- **Next unit:** 029 writes, then judge A when write A exits.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -26,7 +26,5 @@
 | 2026-09-05 00:55 | 025 BASELINE. All-PASS, blocking 0, words 52182/51144, missing 3/3. | 026 |
 | 2026-09-05 01:50 | 026 KEEP. factory-speech 18→13 / 16→8. | 027 |
 | 2026-09-05 02:45 | 027 KEEP. comparison missing 4→1 / 4→0. | 028 |
-| 2026-09-05 02:48 | 028 hypothesis: card-header / workshop-staging factory-speech. Writers starting. | 028 writes |
-| 2026-09-05 03:37 | 028 writes done 52626/52802. Starting judge A. | j028a |
-| 2026-09-05 03:48 | 028 judge A done. factory-speech 18 (was 13). Starting judge B. | j028b |
 | 2026-09-05 03:58 | 028 INCONCLUSIVE. factory-speech 13→18 / 16→10. Style-guide restored. | 029 |
+| 2026-09-05 04:00 | 029 hypothesis: B10 opening-pictures, not operator 11. Writers starting. | 029 writes |
