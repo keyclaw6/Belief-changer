@@ -254,3 +254,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** INCONCLUSIVE
 **Lesson:** factory-speech 13→9 (A, including 1 blocking) and 16→18 (B) — one book only. Length 48477/51991. Both books still opened every chapter with `IN THIS CHAPTER`. A ch09 FAIL is a numbered instruction paste at mantra echo, not the preview header. Do not promote. Style-guide + factory-speech strike 2.
 **Next direction:** Do not replay 028 operator 11 or 029 B10 item 1. Next factory-speech mechanism must change a different component (reviewer or writer), not another style-guide header sentence. PRIMARY remains 027 floors 13/16. Do not replay 020–024 wording.
+
+### iter-030 — reviewer HEADER finding
+**Hypothesis:** PRIMARY: chapter-reviewer `HEADER` finding so voice `factory-speech` falls in both vs 027 (13/16).
+**Change:** `prompts/chapter-reviewer.md` (`HEADER` finding + ACCEPT gate). Plan reused (027 Jobs). Two books Spark 1.3 Go with reviewer. Judges composer-2.5, 53+53.
+**Verdict:** KEEP
+**Lesson:** factory-speech 13→9 / 16→7 (drop ≥2 both). Length 51753/51097. Blocking 0/0. Reviewer fired HEADER widely; one rewrite often kept `IN THIS CHAPTER` (grep 13/12). Census class still fell. Comparison `missing` 0/0. New floors: factory-speech no longer ≥8 both (9/7). willpower-lexicon 30/30 is not PRIMARY.
+**Next direction:** No KEEP-eligible PRIMARY except willpower-lexicon (forbidden). Do not replay 028/029 style-guide sentences or this HEADER finding. Do not replay 020–024 wording. Do not start a willpower-lexicon PRIMARY.

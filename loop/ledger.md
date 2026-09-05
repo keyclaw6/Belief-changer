@@ -474,3 +474,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Renaming the B10 slot does not stop the model from emitting Carr's GSBS preview header. Grep for the header is not KEEP. Numbered instruction paste can block even when the preview header is ignored by the judge.
 
 **What this opens next.** Do not replay 028 operator 11 or 029 B10 item 1. Style-guide + factory-speech strike 2 — next try a different component (chapter-reviewer or writer), not a third style-guide header sentence. PRIMARY stays 027 floors 13/16.
+
+### iter-030 — reviewer HEADER finding  ·  2026-09-05  ·  KEEP
+
+**Hypothesis.** If the chapter-reviewer can REVISE a draft that opens with `IN THIS CHAPTER` or a numbered plan-index with no spoken body, voice `factory-speech` falls in both versus 027 (A 13, B 16).
+
+**Change.** One finding type in `prompts/chapter-reviewer.md` (see `loop/iterations/030/change.diff`). Still one rewrite. Plan reused. Two Spark 1.3 Go books. Panel 53+53.
+
+**What happened.** factory-speech 13→9 (A) and 16→7 (B). Words 51753 / 51097. All chapter lanes PASS, book-arc PASS, blocking 0/0. Comparison `missing` 0/0. Reviewer fired HEADER on most drafts; rewrites kept the header in 13/13 A and 12/13 B.
+
+**Verdict & why.** KEEP. PRIMARY improved materially in both. No new both-books material class. Prediction accurate on the census class; grep for the header is not KEEP.
+
+**What we learned.** A one-rewrite HEADER gate can move factory-speech even when the header string survives. Style-guide header sentences (028/029) did not KEEP; the unused rewrite component did.
+
+**What this opens next.** New floors: factory-speech 9/7 (no longer ≥8 both). willpower-lexicon 30/30 is not PRIMARY. No other noted class is ≥8 in both. Do not replay this HEADER finding. Do not start a willpower PRIMARY.
