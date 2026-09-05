@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with the workshop header `**IN THIS CHAPTER**` followed by the contents list line `The cold floor and kettle, the toast, the midday shop queue...` before spoken body. Remove the header block and open in lived ordinary-day prose.

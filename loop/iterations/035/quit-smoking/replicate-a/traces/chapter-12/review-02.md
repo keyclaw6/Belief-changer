@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 3320 words. Budget 4000. 0.85×B = 3400. Delivered is below range [3400-4600]. Add ~180-1280 words serving the card's primary job: "enacted transition — smoker identity crosses to non-smoker in a joyful solemn act with freedom conferred now" — readiness gate, ordinary last cigarette watching, vow and instant conferral.
+HEADER — Draft opens with workshop header `IN THIS CHAPTER` / "The ordinary kitchen table, the yellowed filter, the lengthening ash, the stubbed end and the window air after". Remove opening header block.

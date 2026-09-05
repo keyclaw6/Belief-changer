@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` ("IN THIS CHAPTER / The Friday pudding saved all week. The cliff with a promised short fall..."). Remove the header block entirely; open with spoken body and keep the numbered ALL-CAPS instruction plus one rationale line at the end as the instruction, not a header.

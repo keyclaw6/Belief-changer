@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 2465 words. Budget 3600. Range 3060-4140. Add words to serve card job "waiting is the Trap; freedom is now as of this ordinary treat taken with attention and vow" / Resolves "I'll start after holidays / when ready someday."
+HEADER — Draft opens with workshop header "IN THIS CHAPTER — The kitchen table at dusk, the ordinary bar, the cloying mouth, the solemn vow, the first clear morning" — delete this header.

@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 3008 words. Budget 4000. 0.85×B = 3400. Add ~400-600 words to serve card job "smoker identity crosses to non-smoker in a joyful solemn act with freedom conferred now" and concrete encounter "ordinary last cigarette with full attention on stain, ash and stale end, then stubbed."
+HEADER — draft opens with workshop header `IN THIS CHAPTER` with line "The quiet table, the stained filter, the ash, the stubbed end". Remove header opening.

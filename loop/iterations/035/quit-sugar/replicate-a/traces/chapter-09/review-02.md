@@ -1,0 +1,3 @@
+REVISE
+- HEADER — draft opens with workshop header `IN THIS CHAPTER` after title, listing contents before spoken body. Remove header and open in spoken scene.
+- LENGTHEN to B±15% — Delivered 4930 words. Budget 6800. Range 5780-7820. Add ~850+ words serving card job: "even the most seductive celebration sweet gave nothing; scene gave everything; perception can lie; this escape is for you first — set aside the industry and everyone else's feelings; reverse the brainwashing from both sides at once".

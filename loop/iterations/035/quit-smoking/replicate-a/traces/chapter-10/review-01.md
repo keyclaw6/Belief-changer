@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` — "**IN THIS CHAPTER** / The late patio, the cold rail, the tray of lights, the offered hand, the laugh that runs on inside" — remove preview block; keep spoken body and the allowed numbered instruction only.
+LENGTHEN to B±15% — Delivered 2084 words. Budget 4000. Range 3400-4600. Add ~1300+ words to serve card job "the most seductive cigarette stops surviving as exception and proves sneaking a ride on night, drink and friendship" — expand patio encounter, drink-collapse, and heaven-timing proof, not later jobs.

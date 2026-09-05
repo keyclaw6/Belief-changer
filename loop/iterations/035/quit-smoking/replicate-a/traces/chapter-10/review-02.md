@@ -1,0 +1,3 @@
+REVISE
+- LENGTHEN to B±15% — Delivered 3272 words. Budget 4000. Need 3400-4600. Add ~130+ words to serve card job: "the most seductive cigarette stops surviving as exception and proves sneaking a ride on night, drink and friendship."
+- HEADER — Draft opens with workshop header `IN THIS CHAPTER` + cold-square preview block before spoken body. Remove opening header; numbered instruction `MEET THE BEST CIGARETTE HEAD-ON` + rationale line at end is allowed and is not HEADER.

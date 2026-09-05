@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 2614 words. Budget 3500. 0.85×B=2975, 1.15×B=4025. Delivered is below range. Add ~400-900 words to serve the card job: "cut down, special ones and tomorrow stop reading as safe compromises and start reading as trap kept alive" — expand cut-down diary creep, lamp/bottle rebuild, and tomorrow cost, not new curriculum.
+HEADER — draft opens with workshop header: `**IN THIS CHAPTER** — The cut-down diary, the lamp on the shelf and the cliff edge, the morning five months on, the myths table`. Remove IN THIS CHAPTER header; open in spoken body.

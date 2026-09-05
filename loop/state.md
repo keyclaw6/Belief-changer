@@ -3,12 +3,11 @@
 ## Position
 
 - **Iteration:** 035
-- **Stage:** Writing
+- **Stage:** Judging
 - **Status:** IN PROGRESS
-- **Campaign branch:** `campaign-001`
-- **Worktree:** none (running from `cursor/factory-instrument-halt-a530`). Factory is a Muse Spark 1.3 conversation (`prompts/factory-orchestrator.md`), not this Cursor chat. 035 leftover `write_replicate.py` may still be live; do not start a factory session on top of it.
-- **Last completed unit:** 035 hypothesis applied. This conversation stopped driving plan/chapter loops.
-- **Next unit:** Auto-research waits for leftover 035 writes or a Muse factory `FACTORY DONE`, then judges. Do not run plan/chapter loops in this chat.
+- **Worktree:** none (running from `cursor/factory-instrument-halt-a530`). Factory is Muse Spark 1.3; leftover 035 `write_replicate.py` both exited. This chat judges only (auto-research).
+- **Last completed unit:** 035 leftover writes DONE (sugar 13/13 55356w; smoking 14/14 56649w; I-02 in smoking CH-02).
+- **Next unit:** 035 smoking panel, then sugar panel. KEEP if smoking factory-speech 12→≤8 and sugar 6 does not rise above band.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -70,3 +69,4 @@
 | 2026-09-05 18:18 | Sugar CH-03 ACCEPT 3655/3800. Smoking CH-04 CAP 4243/4500, CH-05 ACCEPT 5190/5000. Sugar CH-04 / smoking CH-06 in A1. | rest of 035 writes |
 | 2026-09-05 18:51 | Sugar CH-04–06 (CH-06 ACCEPT). Smoking CH-06–08 ACCEPT. Sugar CH-07 / smoking CH-09 in A1. Both Go. | rest of 035 writes |
 | 2026-09-05 19:10 | Founder: this chat is not the factory. Factory = Muse Spark 1.3 conversation (plan loop then chapter loops). | do not drive writes here |
+| 2026-09-05 19:38 | Leftover 035 writes DONE. Sugar 55356w 13/13. Smoking 56649w 14/14. I-02 present. Start smoking panel. | j035-quit-smoking |

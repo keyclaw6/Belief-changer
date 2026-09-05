@@ -1,0 +1,4 @@
+REVISE
+LENGTHEN to B±15% — Delivered 4047 words. Budget 6800. Range 5780-7820. Add ~1700+ words to serve card job: "even the most seductive celebration sweet gave nothing; scene gave everything; perception can lie; this escape is for you first — set aside the industry and everyone else's feelings; reverse the brainwashing from both sides at once — see natural food as the marvellous thing it really is while the brainwashed favourite shows as the bland junk it always was"
+MANTRA — FT-E token not present verbatim. Required: "It does plenty TO you. It does nothing FOR you." Draft has variant: "It did plenty TO you. It does nothing FOR you."
+HEADER — Draft opens with workshop header `IN THIS CHAPTER` with list "Cinema seats, dim lights, laughter in the dark..."
