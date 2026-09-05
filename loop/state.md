@@ -3,12 +3,12 @@
 ## Position
 
 - **Iteration:** 028
-- **Stage:** Judging
-- **Status:** IN PROGRESS
+- **Stage:** Decision
+- **Status:** IDLE
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 026–027 KEEP accepted)
-- **Last completed unit:** 028 judge A done (factory-speech 18, was 13). Writes 52626/52802.
-- **Next unit:** Judge B (j028b), then census/decision.
+- **Last completed unit:** 028 INCONCLUSIVE. factory-speech 13→18 / 16→10. Style-guide restored.
+- **Next unit:** 029 hypothesis from 027 factory-speech 13/16 (new mechanism: B10 anatomy, not operator 11).
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -16,7 +16,7 @@
 - **Only hard stop:** repeated Muse Spark usage/quota exhaustion on **both** Zen and Vercel after the PROGRAM §1 retry. Then halt and tell the founder (new API key).
 - Founder override of PROGRAM §5 five-no-KEEP stop: write `convergence-report.md` if it fires, then **continue** toward 040.
 - North Star (census D=0 both books) is a success halt — record it and stop. Do not invent a hypothesis.
-- Chapter reviewer and anti-slop are **AUTHORIZED**. 025 BASELINE, 026 KEEP, 027 KEEP recorded.
+- Chapter reviewer and anti-slop are **AUTHORIZED**. 025 BASELINE, 026 KEEP, 027 KEEP recorded. 028 INCONCLUSIVE.
 - This parent thread owns the factory. Heartbeat `loop-belief-changer-factory-resume`. Do not start a second orchestrator.
 
 ## Journal
@@ -29,3 +29,4 @@
 | 2026-09-05 02:48 | 028 hypothesis: card-header / workshop-staging factory-speech. Writers starting. | 028 writes |
 | 2026-09-05 03:37 | 028 writes done 52626/52802. Starting judge A. | j028a |
 | 2026-09-05 03:48 | 028 judge A done. factory-speech 18 (was 13). Starting judge B. | j028b |
+| 2026-09-05 03:58 | 028 INCONCLUSIVE. factory-speech 13→18 / 16→10. Style-guide restored. | 029 |

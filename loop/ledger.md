@@ -446,3 +446,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** comparison `missing` 4→1 / 4→0. Targeted G06-M2, G15-M1, G20-M2 PRESENT; G04-M1 PARTIAL (A). Residual A miss is G06-M1 (untargeted). Length 52861/51952. Blocking 0/0. factory-speech 13/16 (B rose). Next PRIMARY is voice noted ≥8 both (willpower-lexicon 28/36 or factory-speech 13/16).
 
 **What this opens next.** 028 from 027 floors. Comparison missing is no longer a both-books PRIMARY. Do not replay 020–024 wording.
+
+### iter-028 — card-header paste ban in instruction voice  ·  2026-09-05  ·  INCONCLUSIVE
+
+**Hypothesis.** If operator 11 forbids pasting card headers, workshop staging, seed/later placeholders, and a numbered plan-index with no spoken body, voice `factory-speech` falls in both versus 027 (A 13, B 16).
+
+**Change.** One sentence on `prompts/style-guide.md` §B5 operator 11 plus one B9 bullet (see `loop/iterations/028/change.diff`). Plan reused. Research reused. Two Spark 1.3 Go books with chapter-reviewer. Panel 53+53.
+
+**What happened.** factory-speech 13→18 (A) and 16→10 (B). Words 52626 / 52802. All lanes 13/13 PASS, book-arc PASS, blocking 0/0. Comparison `missing` stayed 1/0. Every chapter in both books still opens `**IN THIS CHAPTER**` (§B10 anatomy item 1). 027 workshop/seed-later strings did not recur. A ch13 noted factory-speech 7 on a repeated "There is only one honest reading" refrain.
+
+**Verdict & why.** INCONCLUSIVE. PRIMARY improved in one book only. No both-books new material class. Do not promote.
+
+**What we learned.** Banning card-header paste in the sentence operator does not override B10's required `IN THIS CHAPTER` header. A can rise on a different factory-speech mechanism (formula repetition) in the same census class. Grep for the banned strings is not KEEP.
+
+**What this opens next.** Do not replay this operator-11 sentence. Next factory-speech mechanism should change §B10 anatomy (the header the writer is still required to emit), not operator 11 again. PRIMARY stays 027 floors 13/16. willpower-lexicon is not PRIMARY.

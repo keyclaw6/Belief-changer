@@ -240,3 +240,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** KEEP
 **Lesson:** comparison `missing` 4→1 / 4→0. Targeted G06-M2, G15-M1, G20-M2 PRESENT; G04-M1 PARTIAL (A). Residual A miss is G06-M1 (untargeted). Length 52861/51952. Blocking 0/0. factory-speech 13/16 (B rose). Next PRIMARY is voice noted ≥8 both (willpower-lexicon 28/36 or factory-speech 13/16).
 **Next direction:** 028 from 027 both-books floors. Comparison `missing` is no longer in both (1/0). Do not replay 020–024 wording.
+
+### iter-028 — card-header / workshop-staging factory-speech
+**Hypothesis:** PRIMARY: style-guide §B5 operator 11 ban on card-header paste, workshop staging, seed/later placeholders, and numbered plan-index with no spoken body, so voice `factory-speech` falls in both vs 027 (13/16).
+**Change:** `prompts/style-guide.md` (§B5 operator 11 + §B9). Plan reused (027 Jobs). Two books Spark 1.3 Go with reviewer. Judges composer-2.5, 53+53.
+**Verdict:** INCONCLUSIVE
+**Lesson:** factory-speech 13→18 (A) and 16→10 (B) — one book only. Length 52626/52802. Blocking 0/0. §B10 still requires `IN THIS CHAPTER` on every chapter; both books emitted it. A rose on ch13 formula-repetition (7) plus numbered-instruction leaks, not the 027 workshop/seed-later strings (those did not recur). Do not promote.
+**Next direction:** New mechanism on factory-speech (B10 anatomy vs operator 11). Do not replay this operator-11 sentence. PRIMARY remains 027 floors (13/16). willpower-lexicon stays non-PRIMARY (attack-the-illusion). Do not replay 020–024 wording.
