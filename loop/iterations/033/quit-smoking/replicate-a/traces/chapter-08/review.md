@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER`: "**IN THIS CHAPTER** — cold lino under bare feet, the kettle singing, the empty plate with taste lingering, the doorway to outside air with free hands" — remove header, keep spoken body.
+UNASSIGNED-REFRAIN — phrase "signed its name" recurs 4× verbatim: "to sign its name on it" / "signed its name where your name belonged" / "signed its name on pleasures that were never its to sign" / "signed its name on air" — subtract repeats to <3; do not keep as mantra.

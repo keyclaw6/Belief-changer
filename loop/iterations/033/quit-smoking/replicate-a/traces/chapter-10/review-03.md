@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `**IN THIS CHAPTER** — the late patio, the outstretched hand, the loosened rule, heaven for a puff, the night watched clean` before spoken body. Delete the header line entirely; enter on the patio scene.

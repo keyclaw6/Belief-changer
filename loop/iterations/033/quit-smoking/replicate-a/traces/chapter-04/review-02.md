@@ -1,0 +1,2 @@
+REVISE
+LENGTHEN to 4500±15% — Delivered 3461 words. Budget 4500. 0.85×4500=3825. Delivered is below 3825. Add ~400-1700 words serving the card job "stress relief stops reading as cure and starts reading as brief quiet of a need smoking created" / leaving belief "it leaves the problem untouched while briefly quieting its own tug" — e.g. extend SC-K stress-desk reach observation and E-07 replenishment-not-gift isolation, without adding C07 withdrawal-timing detail or C09 fear-of-life-without.

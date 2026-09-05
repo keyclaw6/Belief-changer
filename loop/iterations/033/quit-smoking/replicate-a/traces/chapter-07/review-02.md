@@ -1,0 +1,7 @@
+REVISE
+
+HEADER — draft opens with workshop header block `IN THIS CHAPTER` before body: "IN THIS CHAPTER / A grey-street meter eating coins, a day counted dose by dose..." Delete the block. The later `7. REFUSE TO BE INFLUENCED BY OTHER SMOKERS` plus rationale line is allowed and is not the violation.
+
+LENGTHEN to B±15% — Delivered 3363 words. Budget 4500. 0.85×B = 3825, 1.15×B = 5175. Delivered is below 3825. Add ~460-1800 words serving the card's primary job: "relief stops reading as rise above normal and starts reading as brief return toward non-smoker baseline that guarantees next low" — tracking doses fading, meter coins, itch inversion, trivial tug vs dominant belief.
+
+RESERVED-REACH — draft performs CH-10 — The Night Out That Proves It. Full patio proof with offer, drinks/laughter, and scene-credit argument: "Coats half on, laughter spilling, smoke curling, someone holding out a lit stick" plus "You often get offered a cigarette and in that kind of environment it's hard to turn down. You don't want to be the only one not smoking..." plus "The talk was the joy. The break was the joy. The night was the joy." Cut this C10 strongest-case demolition to at most one sentence. Keep I-07 as watching with clear eyes only.

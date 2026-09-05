@@ -1,0 +1,3 @@
+REVISE
+- LENGTHEN to B±15% — Delivered 2869 words. Budget 3500. Below 0.85×B [2975]. Add ~600 words to reach B, all serving card primary job: "install easy contract and hook so belief work can start without dread."
+- HEADER — Draft opens with workshop header `IN THIS CHAPTER` with bullets "A staircase, a landing window and a breath that will not lie" etc. Delete the header block; keep spoken body and the numbered instruction `KEEP AN OPEN MIND` with rationale as allowed.

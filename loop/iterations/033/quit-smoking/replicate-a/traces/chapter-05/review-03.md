@@ -1,0 +1,2 @@
+REVISE
+HEADER — the draft opens with the workshop header `IN THIS CHAPTER` after the title: `IN THIS CHAPTER / The classroom still warm after the bell, the finished paragraph read back clean, the car park after the shops...` Remove the preview block entirely; keep the spoken body and the allowed numbered instruction `IGNORE ANY ADVICE THAT CONFLICTS WITH THIS BOOK` plus its rationale line.

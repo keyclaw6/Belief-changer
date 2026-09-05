@@ -1,0 +1,3 @@
+REVISE
+- LENGTHEN to B±15% — Delivered 2524 words vs Budget 4500, below 0.85×B (3825). Target 3825-5175. Add ~1300+ words serving the card job "reader stops weighing harm versus benefit and demands what benefit at all" via the concrete encounter "listing own reasons aloud, then checking what cigarette added to food, pause, company."
+- HEADER — Draft opens with workshop header `**IN THIS CHAPTER** — The ledger on the kitchen table, your own reasons said out loud...` Remove the header open.

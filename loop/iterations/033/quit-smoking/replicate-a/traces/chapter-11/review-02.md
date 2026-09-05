@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER`: "IN THIS CHAPTER — a wedding table after five clean months, a pencilled diary on the kitchen counter, a small brass lamp, a cliff edge in mist..."
+LENGTHEN to B±15% — Delivered 2937 words. Budget 3500. Range 2975-4025. Delivered is below 0.85×B. Add ~100+ words serving the card's primary job: "cut down, special ones and tomorrow stop reading as safe compromises and start reading as trap kept alive."

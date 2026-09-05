@@ -1,0 +1,2 @@
+REVISE
+LENGTHEN to B±15% — Delivered 3312 words. Budget 4000. 0.85×B = 3400. 3312 is below range. Add ~90-1300 words serving the card job: "inhabiting ordinary smoke moments as breathing, tasting, free-handed favourite proves non-smoker pleasure is fuller."

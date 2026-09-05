@@ -1,0 +1,15 @@
+**CH-12 — Your Last Cigarette
+- primary job: enacted transition — smoker identity crosses to non-smoker in a joyful solemn act with freedom conferred now.
+- belief now: enters ready but still smoker; leaves free as instant identity, champing at bit.
+- concrete encounter: ordinary last cigarette with full attention on stain, ash and stale end, then stubbed.
+- evidence: E-11 peak is short and fading if smokefree; E-06 one never safe hence finality; limits typical not every reader.
+- new instruction: I-12 SMOKE YOUR FINAL CIGARETTE AND KNOW YOU ARE FREE
+- reserved-later fence: ordinary days living to C13; recap to C14 only.
+- arc position: threshold after demolitions; freedom detonated.
+- reader-state: ready quitter at gate, encountering farewell table.
+- mantra: echo M-A "you have nothing to lose and everything to gain"; echo M-B "easily, immediately and permanently"; echo M-C "the nicotine trap"; echo M-D "the Nipper"; echo M-I "All you have to do is follow all the instructions."; debut M-H "YIPPEE! I'M FREE!"
+- scene: debut SC-M, staging job: last farewell table.
+- structural responsibility: last ordinary instance, readiness gate, vow and instant conferral, warning against two relapse doors.
+- guardrails: safety CA-SAFE; originality: ritual ordinary not laboratory, attention on ugliness, congratulation immediate.
+- continuity intent: receives totality from C11; hands free identity to ordinary life C13.
+- budget: 4000

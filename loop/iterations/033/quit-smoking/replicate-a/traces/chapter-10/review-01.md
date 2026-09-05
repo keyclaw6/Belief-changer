@@ -1,0 +1,3 @@
+REVISE
+- LENGTHEN to B±15% — Delivered 3145 words. Budget 4000. 0.85xB=3400. Delivered is below 0.85xB. Add words serving the card's primary job: "the most seductive cigarette stops surviving as exception and proves sneaking a ride on night, drink and friendship."
+- HEADER — Draft opens with workshop header `IN THIS CHAPTER`: "**IN THIS CHAPTER** — the late patio after ten, the tray of lights and the outstretched hand, drink in the glass and laughter through smoke, heaven for a puff and ash by morning, my own night without"

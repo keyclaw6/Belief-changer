@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to 4500±15% — Delivered 1431 words. Budget 4500. 0.85×4500=3825. Add ~2400+ words serving card job: "relief stops reading as rise above normal and starts reading as brief return toward non-smoker baseline that guarantees next low" via tracking a day of doses fading within minutes, meter needing coins, plus trivial tug vs belief dominant.
+HEADER — draft opens with workshop header `IN THIS CHAPTER` plus line "The ticking meter on a grey street, a day of doses rising and fading..." before spoken body. Delete header block; keep spoken argument.

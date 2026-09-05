@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to 5000±15% — Delivered 1938 words. Budget 5000. 0.85×B = 4250. Add ~2312-3812 words to serve card job: "recap: photograph list of spoken instructions and hand reader outward into life with fresh reframe."
+HEADER — draft opens with workshop header: "IN THIS CHAPTER — the clean pocket, the morning window, twelve lines on one page, the empty ashtray on the table, the open street in clean air"

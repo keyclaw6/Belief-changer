@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` before spoken body: `IN THIS CHAPTER` followed by `The kitchen drawer of patches and gum, the calendar crossed and recrossed, the bar with whisky poured into a brandy glass, the fist still clenched at midnight`. Remove the header block; begin with spoken body.

@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft opens with workshop header `**IN THIS CHAPTER** — The half-open garage door, the Febreeze can and mints, the hand that lights before you decide.` Delete the header and open in spoken body.
+LENGTHEN to 4000±15% — Delivered 1631 words. Budget 4000. 0.85×4000=3400. Add ~1800-2900 words to serve the card job: "the reader stops seeing smoking as free choice and starts seeing a trap they were conned into."

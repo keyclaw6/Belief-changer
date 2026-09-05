@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to 4000±15% — Delivered 2767 words is below 0.85×4000 (3400). Add words serving the card's primary job: "enacted transition — the reader stops seeing smoking as free choice and starts seeing a trap they were conned into."
+HEADER — Draft opens with workshop header `**IN THIS CHAPTER** — the garage with the door half open, the spray and the mints, the hand that moves before thought, the heaven at the light and the stale after`. Remove header; open in spoken prose.

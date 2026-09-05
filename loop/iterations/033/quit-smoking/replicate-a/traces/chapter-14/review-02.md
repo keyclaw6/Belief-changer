@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER — the clean pocket, the morning window, the shop till, the empty ashtray on the table, the open street in clean air`. Remove the header line entirely.
+LENGTHEN to B±15% — Delivered 4059 words. Budget 5000. Range 4250-5750. Add ~200+ words serving the card's primary job: "recap: photograph list of spoken instructions and hand reader outward into life with fresh reframe."

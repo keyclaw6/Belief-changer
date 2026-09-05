@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 1867 words. Budget 4000. Required range 3400-4600. Add ~1550+ words serving the card's primary job: "enacted transition — smoker identity crosses to non-smoker in a joyful solemn act with freedom conferred now" — concrete encounter, readiness gate, vow and instant conferral, warning against two relapse doors.
+HEADER — Draft opens with workshop header `IN THIS CHAPTER — The quiet table, the stained fingers, the bitter ash and the stubbed end.` Remove opening header.

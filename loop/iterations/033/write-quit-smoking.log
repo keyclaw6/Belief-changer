@@ -1,0 +1,18 @@
+⟐ injected env (5) from .env
+no word budget for chapter 1
+☠ Command failed with exit code 1: /usr/bin/env BC_REPO=/home/kab/Belief-changer ITER=033 SLUG=quit-smoking REPLICATE=a python3 -u scripts/loop-runner/write_replicate.py
+⟐ injected env (5) from .env
+OK chapter-01 draft=2561w final=3273w budget=3500 ACCEPT rounds=3 opencode-go
+OK chapter-02 draft=1631w final=3685w budget=4000 CAP rounds=3 opencode-go
+OK chapter-03 draft=2524w final=4874w budget=4500 CAP rounds=3 opencode-go
+OK chapter-04 draft=1548w final=4169w budget=4500 CAP rounds=3 opencode-go
+OK chapter-05 draft=1658w final=4518w budget=5000 CAP rounds=3 opencode-go
+OK chapter-06 draft=1769w final=3083w budget=4500 CAP rounds=3 opencode-go
+OK chapter-07 draft=1431w final=3902w budget=4500 CAP rounds=3 opencode-go
+OK chapter-08 draft=2265w final=3630w budget=4000 CAP rounds=3 opencode-go
+OK chapter-09 draft=1728w final=4372w budget=4500 CAP rounds=3 opencode-go
+OK chapter-10 draft=3145w final=3444w budget=4000 CAP rounds=3 opencode-go
+OK chapter-11 draft=2097w final=3041w budget=3500 CAP rounds=3 opencode-go
+OK chapter-12 draft=1867w final=3576w budget=4000 ACCEPT rounds=3 opencode-go
+OK chapter-13 draft=3300w final=4333w budget=4500 CAP rounds=3 opencode-go
+OK chapter-14 draft=1938w final=4377w budget=5000 ACCEPT rounds=3 opencode-go

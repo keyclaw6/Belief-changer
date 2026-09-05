@@ -1,0 +1,2 @@
+REVISE
+HEADER — the draft opens with the workshop header `IN THIS CHAPTER`: `**IN THIS CHAPTER** — the kettle and the open window, the queue at the till, ten minutes in clean air, evening laughter that runs whole, the wisp that floats past` before any spoken body.

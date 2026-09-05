@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 1728 words. Budget 4500. Below 0.85×B (3825). Range required 3825–5175. Expand to serve card job: "desire stops reading as my nature and starts reading as manufactured package plus fear both held by trap" — holding pack as day's supply box, filter/mild theatre, and both fear ropes held by trap.
+HEADER — draft opens with workshop header `IN THIS CHAPTER` — "IN THIS CHAPTER / The pack on the kitchen table, the filter theatre and the mild promise, the two fears pulling in opposite directions" — remove workshop header.

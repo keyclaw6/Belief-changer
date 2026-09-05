@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with the workshop header `IN THIS CHAPTER — Kitchen table ledger, supper still warm, the step in fresh air, laughter round the table, the hug that will not let go` immediately after the chapter title. Remove the header line entirely; keep the spoken body and the numbered instruction `BEGIN BY FEELING GREAT TO BE ESCAPING` plus its rationale line, which is not HEADER.

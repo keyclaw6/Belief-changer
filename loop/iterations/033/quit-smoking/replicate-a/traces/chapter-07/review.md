@@ -1,0 +1,3 @@
+REVISE
+- LENGTHEN to B±15% — Delivered 3408 words vs Budget 4500. 0.85×B = 3825. Expand within 3825-5175 serving the card job: "relief stops reading as rise above normal and starts reading as brief return toward non-smoker baseline that guarantees next low."
+- HEADER — draft opens with workshop header `IN THIS CHAPTER` followed by "A grey-street meter eating coins, a day counted dose by dose..." Remove the header block and enter spoken body directly.
