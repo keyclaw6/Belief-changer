@@ -1,0 +1,14 @@
+⟐ injected env (5) from .env
+OK chapter-01 draft=2452w final=3620w budget=4200 CAP rounds=3 opencode-go
+OK chapter-02 draft=3750w final=4476w budget=5200 CAP rounds=3 opencode-go
+OK chapter-03 draft=2614w final=3359w budget=3800 CAP rounds=3 opencode-go
+OK chapter-04 draft=2979w final=4121w budget=4800 ACCEPT rounds=3 opencode-go
+OK chapter-05 draft=3872w final=5714w budget=6300 CAP rounds=3 opencode-go
+OK chapter-06 draft=2701w final=4401w budget=4800 ACCEPT rounds=2 opencode-go
+OK chapter-07 draft=3403w final=4547w budget=5000 CAP rounds=3 opencode-go
+OK chapter-08 draft=4231w final=4373w budget=5200 CAP rounds=3 opencode-go
+OK chapter-09 draft=3893w final=6265w budget=6800 CAP rounds=3 opencode-go
+OK chapter-10 draft=2767w final=3822w budget=4400 CAP rounds=3 opencode-go
+OK chapter-11 draft=3355w final=3326w budget=3600 ACCEPT rounds=2 opencode-go
+OK chapter-12 draft=1927w final=3693w budget=4200 ACCEPT rounds=3 opencode-go
+OK chapter-13 draft=1192w final=1491w budget=1700 ACCEPT rounds=2 opencode-go

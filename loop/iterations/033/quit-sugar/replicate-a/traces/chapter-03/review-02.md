@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` followed by `The noon table with yesterday's wrappers counted out, the bathroom mirror and the dentist's bill, the purse with its receipts and the dull head at four o'clock` with no spoken body. Remove the header block.
+LENGTHEN to B±15% — Delivered 3211 words. Budget 3800. 0.85×B = 3230. Range 3230-4370. Delivered is below 0.85×B. Add ~20-600 words serving the card job `sugar does plenty TO you and nothing FOR you; harm debate replaced by benefit demand; the empty "benefit" is a belief reading a tiny body echo as a gift` via the `ordinary day audit — sweets logged against mood, teeth, wallet, time — benefit column empty`.

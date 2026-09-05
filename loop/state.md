@@ -3,12 +3,12 @@
 ## Position
 
 - **Iteration:** 033
-- **Stage:** Writing
+- **Stage:** Judging (sugar); Writing (smoking)
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 026–027 KEEP + 030 KEEP + 031 KEEP accepted; 032 REVERT; A1+K1 cutover landed)
-- **Last completed unit:** 033 writes in flight. Sugar CH-01–07; smoking CH-01–06. Both on Go; A1 mostly CAP.
-- **Next unit:** Finish remaining chapters (sugar 08–13, smoking 07–14). Judge first subject that exits. One judge at a time. No KEEP.
+- **Last completed unit:** 033 sugar write DONE 13/13, 53,208 words, all Go. Smoking 12/14 landed; CH-13 in A1.
+- **Next unit:** Judge quit-sugar (one panel). Smoking write continues. Then smoking write finish → judge smoking. Census both. BASELINE row. No KEEP.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -53,3 +53,4 @@
 | 2026-09-05 12:19 | Sugar CH-01–03 CAP; smoking CH-01 ACCEPT + CH-02 CAP. Both still writing (sugar CH-04, smoking CH-03). | rest of 033 writes |
 | 2026-09-05 12:39 | Sugar CH-01–05 (CH-04 ACCEPT); smoking CH-01–04. Sugar CH-06 and smoking CH-05 in A1. | rest of 033 writes |
 | 2026-09-05 12:59 | Sugar CH-01–07; smoking CH-01–06. Sugar CH-08 and smoking CH-07 in A1. | rest of 033 writes |
+| 2026-09-05 13:50 | Sugar write DONE 13/13 53208w. Smoking 12/14; CH-13 started. | judge sugar; smoking write |

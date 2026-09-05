@@ -1,0 +1,2 @@
+REVISE
+LENGTHEN to B±15% — Delivered 4224 words. Budget 5000. 0.85×B = 4250. Delivered is below tolerance. Add words serving the card job "craving is a trivial dying Nibbler fed by a dominant Sweet Con belief; kill belief and body echo starves" — early-evening grumble observed and relabelled.

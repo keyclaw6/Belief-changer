@@ -1,0 +1,3 @@
+REVISE
+- LENGTHEN to B±15% — Delivered 2452 words. Budget 4200. Required range 3570-4830. Add ~1120+ words serving the card job: "boxes BAD SUGAR, installs contract and eat promise, converts audience to participant; the fact the reader is holding this book means the decision is already made, and what follows is only good news" and "Resolves: is this another diet lecture."
+- HEADER — Draft opens with workshop header `IN THIS CHAPTER` + 4-line plan-index: "The reader with a full cupboard and an open book — What BAD SUGAR means here — My own years in the sweet loop — Why this is not another lecture on willpower — The reading contract". Remove the block entirely.

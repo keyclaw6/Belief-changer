@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` with bullet list before spoken body: `**IN THIS CHAPTER** / - A kitchen table at noon with yesterday counted out in wrappers...`
+LENGTHEN to B±15% — Delivered 2614 words. Budget 3800. Need 3230-4370. Add ~616+ words to serve card job: `sugar does plenty TO you and nothing FOR you; harm debate replaced by benefit demand; the empty "benefit" is a belief reading a tiny body echo as a gift` and encounter `ordinary day audit — sweets logged against mood, teeth, wallet, time — benefit column empty`.

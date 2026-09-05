@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` before spoken body: "IN THIS CHAPTER / The Friday-allowance week, the cliff edge, the empty box, sweeteners in new coats, the seatbelt." Remove workshop header; open in spoken body.
+LENGTHEN to B±15% — Delivered 2767 words. Budget 4400. Required range 3740-5060 words (4400±15%). Add ~1000+ words serving card job: "inside BAD SUGAR there is no safe cut-down, special occasion, tomorrow or substitute; totality is only stable state; the substitute idea itself is the flaw — swap the product, sweeteners included, and you remain a user, still hooked".

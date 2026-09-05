@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` after title: "IN THIS CHAPTER / Saturday trolley in the bright river of packs..." Remove the header block and open in spoken body; the numbered instruction "IGNORE ANY ADVICE THAT CONFLICTS WITH THIS METHOD" alone is not HEADER.

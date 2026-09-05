@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 1192 words. Budget 1700. Range 1445-1955. Add ~260-760 words serving the card job: "photographable instruction list, outward push, saved growing reframe revealed" and "if a reader opened here, send them to the first chapter — this page is saved reminders, not the method" / Resolves: "I need ongoing teaching to stay free."
+HEADER — Draft opens with workshop header `IN THIS CHAPTER` / "The pocket list, the closed book, the meal ahead, the eater grown back" before spoken body. Delete header block.

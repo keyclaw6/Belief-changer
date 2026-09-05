@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` with standfirst line `Monday's cleared drawer, Wednesday's glowing shelf, the box at ten at night, the bragger and the whinger`. Remove header block; keep spoken body and the allowed numbered instruction `NEVER BLAME YOURSELF AGAIN / Every failure was the method, never you.`

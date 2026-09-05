@@ -1,0 +1,4 @@
+REVISE
+LENGTHEN to 5200±15% — Delivered 4231 words. Budget 5200. Range 4420-5980. Delivered is below 0.85×B. Add ~200+ words serving the card job: "desire was manufactured and fear of failing or succeeding is Trap-held tug-of-war; the body is a precision machine whose warning feelings are information, not bulbs to unscrew"
+HEADER — draft opens with workshop header `IN THIS CHAPTER` plus bullet list: "IN THIS CHAPTER / - Saturday trolley, bright aisle and checkout ambush." Remove workshop header and plan-index; keep numbered ALL-CAPS instruction plus one rationale line only.
+UNASSIGNED-REFRAIN — non-mantra phrase "There is only one honest set of answers." recurs 4× verbatim. Subtract repeats to at most 2; do not invent a new mantra.

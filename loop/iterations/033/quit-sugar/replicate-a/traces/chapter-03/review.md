@@ -1,0 +1,2 @@
+REVISE
+HEADER — the draft opens with the workshop header `IN THIS CHAPTER` followed by preview copy "The noon table with yesterday's wrappers counted out, the bathroom mirror and the dentist's bill..." Remove the header block entirely.

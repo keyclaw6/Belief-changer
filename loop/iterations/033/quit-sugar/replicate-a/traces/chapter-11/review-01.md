@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft opens with the workshop header `IN THIS CHAPTER` with standfirst "An ordinary table at an ordinary hour..." before spoken body. Remove header block.
+MANTRA — M-A "you have absolutely nothing to lose and everything to gain" not present verbatim. Draft has capitalized "You have absolutely nothing to lose and everything to gain by stepping through now." Restore exact lower-case wording.

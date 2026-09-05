@@ -1,0 +1,4 @@
+REVISE
+LENGTHEN to B±15% — Delivered 3094 words. Budget 4200. 0.85×B = 3570. Delivered is below 0.85×B. Add ~480-1100 words to serve the card job: "boxes BAD SUGAR, installs contract and eat promise, converts audience to participant; the fact the reader is holding this book means the decision is already made, and what follows is only good news".
+HEADER — Draft opens with workshop header `IN THIS CHAPTER`: "**IN THIS CHAPTER** — a full cupboard late at night, a boxed definition on the page, a desk drawer at three o'clock, bread and peaches eaten hungry" after title. Remove header opener.
+RESERVED-REACH — Draft performs CH-05 — The Lift That Makes the Low primary job: "the energy lift is relief of a low the last dose created" in more than one sentence: "The lift I chased was not a gift. It was relief from a low. The sweet was not solving my afternoon. It was creating it." Cut this overreach to at most one sentence.

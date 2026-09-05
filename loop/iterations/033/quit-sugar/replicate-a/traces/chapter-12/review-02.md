@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 3462 words. Budget 4200. 0.85×B = 3570. Delivered is below lower bound. Add words serving card job "inhabits mornings, shops, food with owned thoughts once, guarding belief without new thesis" — mornings, shops, food lived with ease.
+HEADER — Draft opens with workshop header `IN THIS CHAPTER` after title: "IN THIS CHAPTER / Morning kitchen and clear breakfast table, bright aisle and busy till, shared meal and quiet evening sofa". Remove opening header apparatus.

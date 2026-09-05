@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 3427 words. Budget 4200. Range 3570-4830. 3427 is below 0.85 x B. Add ~150+ words to serve the card job: "boxes BAD SUGAR, installs contract and eat promise, converts audience to participant; the fact the reader is holding this book means the decision is already made, and what follows is only good news" and "Resolves: is this another diet lecture."
+HEADER — Draft contains workshop header `IN THIS CHAPTER — late-night cupboard and quiet promise, boxed line on the page, market fruit and fresh bread, desk drawer at three o'clock` before spoken body. Remove it.

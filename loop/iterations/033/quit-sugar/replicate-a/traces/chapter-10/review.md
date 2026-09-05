@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with the workshop header `IN THIS CHAPTER` after the title: `**IN THIS CHAPTER** / Friday-allowance week, the empty box, the cliff edge, the clean cupboard, the swapped wrapper and the seatbelt.` Remove the header opening and enter in spoken body.

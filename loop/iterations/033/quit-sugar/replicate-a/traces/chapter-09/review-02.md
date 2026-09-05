@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER`: "**IN THIS CHAPTER** / Dark cinema and chocolate passed hand to hand..."
+LENGTHEN to B±15% — Delivered 4986 words. Budget 6800. 0.85×B=5780. Delivered is below range. Add ~800-1800 words to serve card job: "even the most seductive celebration sweet gave nothing; scene gave everything; perception can lie; this escape is for you first — set aside the industry and everyone else's feelings; reverse the brainwashing from both sides at once — see natural food as the marvellous thing it really is while the brainwashed favourite shows as the bland junk it always was"

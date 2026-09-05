@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft opens with workshop apparatus `IN THIS CHAPTER` followed by plan-index bullets "- Monday morning, the cleared drawer and the solemn promise" etc. before spoken body. Remove the header/index; the numbered ALL-CAPS instruction `NEVER BLAME YOURSELF AGAIN` is not the violation.
+LENGTHEN to B±15% — Delivered 2979 words. Budget 4800. Required range 4080-5520. Add ~1100-2500 words serving the card job "past failures prove the wrong method, not a broken self; strong will persisted against instinct" — diet-week diary, forbidden-must-have rebound, bragger/whinger, strong-will inversion and yo-yo form — not reserved-later jobs.
