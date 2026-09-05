@@ -488,3 +488,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** A one-rewrite HEADER gate can move factory-speech even when the header string survives. Style-guide header sentences (028/029) did not KEEP; the unused rewrite component did.
 
 **What this opens next.** New floors: factory-speech 9/7 (no longer ≥8 both). willpower-lexicon 30/30 is not PRIMARY. No other noted class is ≥8 in both. Do not replay this HEADER finding. Do not start a willpower PRIMARY.
+
+### iter-031 — unpaid comparison halves + CH-13 budget  ·  2026-09-05  ·  KEEP
+
+**Hypothesis.** If the CH-05/06/09/10 Jobs name the unpaid half of each aligned move, and CH-13's budget drops to 1700 so LENGTHEN cannot force a second demolition, comparison `partial` falls in both versus 030 (A 9, B 11).
+
+**Change.** Job and Budget fields in `production-books/quit-sugar/master-plan.md` (see `loop/iterations/031/change.diff`). Two Spark 1.3 Go books with reviewer. Panel 53+53.
+
+**What happened.** comparison `partial` 9→5 (A) and 11→5 (B). Words 52392 / 51940. All chapter lanes PASS, book-arc PASS, blocking 0/0. CH-13 landed 1584 / 1462. G20-M3 stayed PARTIAL both. factory-speech 14/10.
+
+**Verdict & why.** KEEP. PRIMARY improved materially in both. No new both-books blocking class. Prediction accurate on the census class; CH-13 mechanism only partial.
+
+**What we learned.** Cards that omit the second half of a comparison move produce PARTIAL every time. A reminders Job cannot KEEP G20-M3 while a 3800-word LENGTHEN still forces rebuild; cutting the budget stopped the 4000-word rewrite but a short second-pass argument still scored PARTIAL.
+
+**What this opens next.** New floors: factory-speech 14/10 (≥8 both — next PRIMARY). comparison `partial` 5/5 is below the band. willpower-lexicon 34/26 is not PRIMARY. Do not replay 028/029/030 header mechanisms. Do not replay 020–024 wording.

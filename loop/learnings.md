@@ -261,3 +261,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** KEEP
 **Lesson:** factory-speech 13→9 / 16→7 (drop ≥2 both). Length 51753/51097. Blocking 0/0. Reviewer fired HEADER widely; one rewrite often kept `IN THIS CHAPTER` (grep 13/12). Census class still fell. Comparison `missing` 0/0. New floors: factory-speech no longer ≥8 both (9/7). willpower-lexicon 30/30 is not PRIMARY.
 **Next direction:** No KEEP-eligible PRIMARY except willpower-lexicon (forbidden). Do not replay 028/029 style-guide sentences or this HEADER finding. Do not replay 020–024 wording. Do not start a willpower-lexicon PRIMARY.
+
+### iter-031 — unpaid comparison halves + CH-13 budget
+**Hypothesis:** PRIMARY: plan-card Job tails on CH-05/06/09/10 plus CH-13 budget 3800→1700 so comparison `partial` falls in both vs 030 (9/11).
+**Change:** `production-books/quit-sugar/master-plan.md` (four Job tails, CH-05/09/13 budgets, CH-01 Job ride). Two books Spark 1.3 Go with reviewer. Judges composer-2.5, 53+53.
+**Verdict:** KEEP
+**Lesson:** comparison `partial` 9→5 / 11→5 (drop ≥2 both). Length 52392/51940. Blocking 0/0. Underpaid halves G05-M1, G13-M2, G15-M2, G14-M2 closed both. G20-M3 stayed PARTIAL both (CH-13 1584/1462 still rebuilt sweetness/life-choice). factory-speech rose 9→14 / 7→10 (noted, not a veto).
+**Next direction:** PRIMARY factory-speech 14/10 (noted ≥8 both). Do not replay 028/029 style-guide header sentences or 030 HEADER. Do not replay 020–024 wording. willpower-lexicon stays non-PRIMARY. comparison `partial` 5/5 is below the ≥8 band.

@@ -1,230 +1,259 @@
 Chapter 7
 THE NIBBLER AND THE SWEET CON
 
-IN THIS CHAPTER
-Low light in the evening kitchen. A twitch by the cupboard. A ditch across the morning path. Shoes a size too small by the door. A bell ringing with no one answering. A wave rising and passing unfed.
+IN THIS CHAPTER — early-evening kitchen light, the hand hovering at the cupboard, the ditch and the outstretched hand, shoes a size too small eased off, the grumble watched to silence
 
-*That gnawing for something sweet is not hunger and not need — it is a tiny dying echo kept roaring by a false belief.*
+*That dreaded craving is not your body needing fuel; it is a tiny echo fading and a loud lie keeping it alive.*
 
-Welcome Back, Clear Eater
+THE GRUMBLE YOU DREAD
 
-Welcome back. You came to the market hungry and you ate till satisfied and you felt what clear feels like.
+You come to this room with good food inside you and clear hours behind you. You have eaten hungry. You have known the calm full stop. You have felt taste brighten where coating lifted.
 
-You know now hunger arrives slow and kind. You know satisfaction closes quietly in the middle of the meal. You know real food eaten hungry carries colour and smell and chew enough to make you close your eyes without deciding to. You felt love stay where love lived, in hands and faces and laughter, with no bright parcel needed to light the hour.
+And still, in the early evening, it comes.
 
-And still, as evening draws on, a shadow crosses. You say it low, almost embarrassed after such a clear meal:
+Seven o'clock. Plate cleared. Day done. The kitchen glows low and warm. You stand where you have stood a hundred times, hand half lifted toward the cupboard before thought catches up with hand, and a hollow opens under the ribs. Mouth waters for flash. Attention narrows to one bright address. Thoughts start their chant in your own voice:
 
-“Yes, but what about tonight? What about tomorrow night, and the night after, when the gnaw comes? I know food can be joy. I dread the want.”
+"I need something sweet now or I will not get through the night."
 
-I honour that dread, because we all carried it. Every one of us stood where you stand now, clear-headed after a good supper, and heard the old whisper: the body will howl, the nights will be unbearable, you will need the sweet to get through. I felt it myself. I believed craving was a mighty hunger in the blood that would grow till it broke me.
+"This I-need-to-eat-something-RIGHT-NOW feeling is back, so my body must be asking for fuel."
 
-The fact is the opposite. What you fear is two very different things tangled as one. Untangle them and fear falls away.
+"If one evening feels like this, nights without sweets will be unbearable."
 
-There is a tiny physical echo, already dying. And there is a loud belief that feeds it and makes it roar. Kill the belief and the echo starves on its own in days.
+Dear friend, I know that dread. We all knew it. We sat on sofas with that chant loud in the head and called it proof that BAD SUGAR held us by the body and would punish us for leaving. We feared the shakes, the edginess, the hollow that would grow and grow until work, sleep, kindness all broke. We feared we were built to need flash the way lungs need air.
 
-That is the whole of this room. See the split clearly and you will never fear the grumble again.
+Hear me with the authority of one who lived that fear and walked out of it: what you fear is not what you think it is.
 
-Two Things Tangled As One
+You fear a mighty physical need that will rage if denied. You fear days of torment, nights of tossing, nerves scraped raw. You fear you will have to clench your jaw and white-knuckle your way through hours while your body screams for what it must have.
 
-We have spoken till now as if craving were one thing. It is not. It is two.
+That picture is false. It was painted for you, not by you.
 
-Think of a fire. A few sparks on dry paper. And a pair of hands that keeps laying on wood and blowing. The sparks alone would go out in moments. The hands make the blaze.
+There are two things happening in you at seven o'clock, not one. Confuse them and you stay trapped. See them separate and you are already half free.
 
-Your craving is the same. The sparks are physical and trivial. The hands are mental and dominant. We give them names so you can see them apart and deal with each as it deserves.
+The first is tiny and physical. Call it by its true name: the Nibbler.
 
-The sparks I call the Nibbler.
+The second is huge and mental. Call it by its true name: the Sweet Con.
 
-The hands I call the Sweet Con.
+The Nibbler is a small creature with a small hunger. The Sweet Con is the belief-system that feeds it, dresses it up as need, and shouts through its tiny mouth with a loudspeaker. Starve the belief and the creature starves with it.
 
-Read those names carefully, because your freedom turns on keeping them separate. The Nibbler is a tiny creature in the body, hungry only for its next dose, already starving from the moment you stop laying wood. The Sweet Con is the lifelong brainwashing that tells you the dose gives you pleasure or energy, tells you the grumble means need, tells you life without hits will be grey.
+You do not face a lifelong battle with your body. You face a few days of faint grumbling from a dying echo, plus a loud lie you were taught. Kill the lie and the echo fades on its own.
 
-We were conned into hearing both as one voice. “I need something sweet.” That sentence sounds like your body speaking truth. It is not. It is the Nibbler grumbling through the mouthpiece of the Sweet Con.
+Let me show you both, living, in your own evening, so you never mistake one for the other again.
 
-You say, “But it feels like one need. How can you split it?”
+TWO LIVES IN ONE FEELING
 
-I ask you, friend to friend, with your supper still warm inside you:
+Sit with me a moment in that kitchen light and look at what you have called withdrawal.
 
-When the gnaw comes at half past nine, are you hollow with the slow opening that welcomes bread and soup and apples? Or are you full and coated and restless, with one narrow finger pointing at one bright packet?
+We used one word for it — craving — and the word lied by lumping. It packed a faint body tug and a loud mind story into one parcel and labelled the parcel need. No wonder it frightened us. Open the parcel and the fright goes.
 
-Does clear hunger twitch? Does it shake? Does it narrow to a brand name?
+First life: the body echo. After each sweet dose the body dips a little below clear. Brightness flashes for minutes, then flatness settles, then twitch calls for another flash. That dip is real. You felt it in afternoons that fogged after buzz, in evenings that hollowed after boxes. It is a true low following a true high, the rescuer showing up with the same hands that pushed you.
 
-Does clear hunger arrive an hour after a full meal, or does something else arrive then?
+Second life: the mind story laid over the dip. The story says the dip means danger. The story says the twitch means fuel is low. The story says the hollow means evenings will be grey, work will stall, kindness will snap, sleep will not come unless flash arrives. The story turns a faint gnaw into emergency.
 
-There is only one honest answer, and your body gave it long ago. Slow hunger feeds. Quick narrowing bills.
+Which half ever kept you at the cupboard at ten at night? Was it agony in the limbs? Or was it thought?
 
-Once you see the two apart, you stop fighting the wrong enemy. You do not battle sparks with clenched fists. You stop laying wood. The sparks go out by themselves.
+Ask yourself with the honesty of an investigator, while you read on exactly as normal:
 
-We all made the same error for years. We felt a faint bodily whisper and believed a loud mental story about it, then called the two together hunger, need, weakness, personality. We said we were weak at night. We said evenings required a fix. We said mornings would be impossible without a lift. All the while we were describing two separate events glued by con: a small echo plus a large lie. Pull the glue away and neither half can hold you.
+When did plain hunger ever fix on one packet and call everything else dull?
 
-That glue is belief. Belief that sweet lifts. Belief that sweet soothes. Belief that sweet rewards. Belief that nights without hits stretch grey. Wash the glue and the echo sits alone, small, unfamiliar, almost comical in its smallness. You look at it and wonder how you ever mistook it for a master.
+When did true hunger ever arrive at seven o'clock sharp because the lights went low and the sofa called?
 
-The Man In The Ditch
+When did a plain meal eaten hungry ever leave that coated mouth that waters while feeling full?
 
-Let me show you the trick in one picture, because pictures stay when argument fades.
+There is only one honest answer. True hunger is open, patient, glad of food. This evening visitor is narrow, urgent, fixed on flash, never closed by flash. Same mouth, opposite masters.
 
-Imagine a man meets you on your morning walk. Unknown to you, he runs ahead and digs a ditch across your path and covers it with leaves. You fall in, grazed and startled. He leans over, all smiles, and offers his hand. He pulls you out. You thank him warmly. What a kind stranger.
+We were conned, not weak, when we read the second as the first. We all were. We learned young that sweet means love, sweet means reward, sweet means fuel to get through. We heard it from loving hands and laughing screens and shelves stacked bright at every till. Then each dose dug its own hollow and the lesson gave the hollow its name: need.
 
-Next morning the same. And the next. Each morning you fall, each morning he lifts you, each morning you feel grateful. You even tell friends about his kindness. You carry a sweet for him as thanks. You defend him when anyone doubts him. You say he gets you through the day.
+See the two lives separate and the whole fear changes shape. The body part is small and already dying the moment feeding stops. The mind part is large but made wholly of belief, and belief dies the moment seeing arrives. You were never fighting your nature. You were obeying a reading of your nature that was planted in you.
 
-Then one morning you rise early and catch him digging.
+That is why this chapter does not ask you to brace yourself. I ask you to look. Look closely at the grumble and it shrinks. Look closely at the story and it breaks. What remains is an ordinary evening with ordinary hunger to be met by ordinary food, and a faint background hum losing power by the hour.
 
-How do you feel then? Warm? Grateful? Or cold with the shock of seeing? The rescuer was the perpetrator all along. Every fall he saved you from was a fall he dug for you. His kindness was the second half of his con.
+It does plenty TO you. It does nothing FOR you. Hold that while we walk into the ditch where you learned to thank the hands that pushed you.
 
-That is exactly what BAD SUGAR does to you.
+THE DITCH AND THE HAND
 
-Each dose digs tomorrow’s low. The lift you thank is the hand offered after the push. The buzz you call fuel is relief from the fog the last hit laid down. The calm you call comfort is quiet from the twitch the last fix left behind. You never rise above clear. You fall below clear, then get hauled back toward clear, and call the hauling kindness.
+Picture a man who means you harm and wants your thanks.
 
-I am harsh to the pusher, never to you. You were never foolish. We all thanked him. We all carried sweets for him. We were conned by phoney information laid down since childhood, by bright packs and kind voices telling us sweet means love and energy. Who would not thank the hand when the ditch aches? The shame belongs to the con, never to the fallen.
+Every morning before light he waits by your path. As you pass, half awake, he shoves you hard from behind into a deep ditch by the road. You land winded, muddy, shaken. Ribs aching. Breath short. Before you can look up, he leans over the edge with a warm smile and stretches down a strong hand.
 
-Look at your own afternoons and evenings with that ditch in mind and credit lands where credit belongs.
+"Poor friend," he says. "Let me help you out."
 
-Did the three o’clock hit lift a clear worker above clear? Or did it lift a fogged worker back toward the clear he had before he ever started grazing, then drop him lower by four?
+He pulls you up. Dusts your coat. You thank him from the heart. What a kind man to rescue you. What luck he happened to pass. The next morning the same shove, the same hand, the same thanks. After a hundred mornings you love him. You tell neighbours of his kindness. You fear days without him. What would happen to you in that ditch with no hand to lift you?
 
-Did the evening box soothe a clear body? Or did it quiet for minutes the restlessness the afternoon doses planted, then plant a louder restlessness for ten o’clock?
+Then one morning you turn a second too early and catch him in the act — shoulder forward, foot braced, caught mid-shove. The rescuer is the pusher.
 
-Did a child who never grazed feel that evening gnaw at all? Did clear hunger ever shout brand names?
+Ask the questions whose honest answers finish him:
 
-There is only one honest answer. The hand dug the hole. The rescuer laid the trap.
+Who put you in the ditch on the mornings you fell?
 
-See that fully and you stop thanking the hand. You stop laying thanks in the cupboard. You leave the ditch-digger with no one to lift.
+Who would have left you walking level and clear if he had never touched you?
 
-I want you to feel the anger shift where it belongs. We have been angry at ourselves for falling. We have called ourselves weak, greedy, childish at night. We were never the digger. We were the walker. The one who dug in secret while smiling in public deserves the anger. Keep your warmth for yourself and your household. Keep your sternness for the trick.
+What exactly did his hand ever give you, except a brief return toward the level road you were already on before he shoved you?
 
-When you see the trick plainly you cannot unsee it. Tomorrow when the afternoon fog rolls in you will not say, “I need a lift.” You will say, “There is the ditch I fell into at noon.” When the evening twitch starts you will not say, “I need comfort.” You will say, “There is the hand reaching down after digging my hole.” That seeing is freedom beginning. No ditch, no gratitude. No hole, no hand.
+There is only one honest answer. He gave nothing. He took and then briefly quieted his own taking, and called the quiet kindness.
 
-The Tiny Grumble
+That is BAD SUGAR in your body. That is the Sugar Trap in one picture.
 
-Now look close at the sparks alone, without the blowing. What is the Nibbler, truly?
+We dosed for lift and felt rescued. We never saw the shove the last dose gave. Each sweet flash lifts for minutes and then drops you a little lower than before you took it — emptier, flatter, more twitchy for the next flash. The low follows the high by its own chemistry. In the laboratory shape the pattern shows plain: binge, brief firing of wanting, then a real measured dip below baseline while the opposing signal rises. In your kitchen the felt shape is the same: flash, brief brightness, then flatness that calls for flash.
 
-It is small. Almost absurdly small. Not a great hunger. Not a cramp. Not illness. A faint bodily grumble after years of doses, a whisper that says feed me. When you stop laying wood, it complains for a little while as it dies. That is all.
+You never rise above the clear-headed eater you were before the Trap; you only climb briefly back toward him, then sink again and call the climb pleasure.
 
-You know its voice by heart: that empty, twitchy, slightly shaky, need-something-sweet-now feeling.
+It is the other way around. The dose does not cure the evening hollow. The dose dug it.
 
-Say those words slowly and recognise them for what they are. Empty, because the last hit emptied you after lifting you. Twitchy, because wanting was re-fired where satisfaction should have settled. Slightly shaky, because the surge passed and left its dip behind. Wanting something sweet now, because only one thing ever quieted that exact echo before.
+Think how we lived this without seeing. Morning dose to face the day, then mid-morning sag that seemed to prove the day was hard. Afternoon dose to get through work, then late-afternoon fog that seemed to prove work was draining. Evening dose to rest, then night restlessness that seemed to prove days are exhausting. At each step the hand lifted us from the ditch the last shove made, and at each step we thanked the hand.
 
-I speak of an echo after a dose, not illness in you. If you live with diabetes, take medicine that affects blood sugar or appetite, are pregnant, live with an eating disorder past or present, or carry any risk around food, talk to your clinician first and follow their word.
+Once seen, pity flows the right way. You do not pity yourself for missing the hand. You pity the years spent thanking the pusher. Harsh words for him, all of them earned. Not one harsh word for you. We were conned by a confidence trick run with loving faces, not foolish, not weak. Who would not thank a hand in a ditch before seeing the shove?
 
-The shape underneath is simple. Each binge re-fires wanting circuitry, then leaves a real measured dip after. The low follows the high. The high borrows the low. That is the ditch in miniature, lift then lack, hand then hole.
+And here is the relief in the same breath: ditches fill in fast when no one digs them. Leave the shove out and the road stays level. The body steadies. Hunger clears. Mornings open without a blast. I do not ask you to change from fear of ditches. I tell you the road is already waiting level and marvellous, and you walk free on it the moment the lie dies. Do not quit from fright. Escape from seeing.
 
-In you the dip arrives as that familiar gnaw an hour or two after a hit, louder in the evening when doses have piled, loudest where sight and smell and hour have learned to call it. Wrapper rustle from across the room. Sweet smell from a bag opened near you. The clock striking the old grazing hour. The sofa corner where the box always sat. The television jingle that always ran beside the bowl. The cue fires before the bite. It feels like command. It is only learning. Learned firing never removes choice. A bell can ring without you answering.
+Watch the next evening with this picture in mind. Feel the hollow open at seven. See the hand伸 out offering flash. Then look behind you for the shove. Yesterday's flashes dug today's hollow. Today's flash would dig tomorrow's. The kindness is the wound pausing to boast.
 
-And here is the calming truth that makes dread ridiculous: the physical part is mild and well-defined and tiny. It is a hump of a few days, not a fight for life. For most, the grumble peaks two to five days after the last regular grazing and then passes like a mild cloud. Small-scale. Time-limited. Already fading while you watch. You will notice it, you will smile at it, you will forget it for hours, you will remember and find it fainter.
+No mighty enemy stands before you demanding battle. A trick stands before you demanding to be seen. See it and it cannot hold you.
 
-Honest workers still argue over what to call this, and they are right to argue. Words matter. What no one who has watched the pattern doubts is what you have lived: schedule plus sweet drives binge, binge re-fires want, want fades in days when unfed. Call it what you like. The shape stays the same. Tiny echo, brief life, no power to hold you once belief stops feeding it.
+HOW TINY THE PHYSICAL ECHO IS
 
-You say, “But it feels huge at ten at night.” Of course it feels huge. A whisper in a silent room sounds like shouting when the Sweet Con holds a trumpet to it. An echo in an empty evening sounds like hunger when belief tells you hunger lives in wrappers.
+Now look the Nibbler in the face, because fear made him huge in the dark and light makes him small.
 
-Isolate the trumpet and hear the whisper truly.
+The Nibbler is the trivial physical loop left by the last dose, complaining faintly as it fades. A gnaw. A light edginess behind the eyes. A faint emptiness that calls itself hunger but will not welcome soup or bread or fruit. Perhaps you know that empty, twitchy, slightly shaky, need-something-sweet-now feeling that arrives before decision and borrows hunger's voice.
 
-When you ate that market supper hungry and stopped at satisfied, did the whisper command? Or did it wait till belief whispered first, “supper needs a bright ending,” and then borrow that voice?
+Watch it closer, as an investigator watches, while you read on exactly as normal.
 
-When you were busy and happy and forgot food for hours, did the body howl? Or did the gnaw arrive precisely where the old hour struck?
+Is it agony? Does it double you over? Does it burn, tear, blind you? Or is it small, nagging, oddly vague — a background hum that grows loud only when your thoughts feed it words?
 
-When you fed the gnaw last month, did it leave? Or did it return louder within the hour, proving feeding never feeds?
+Ask with me:
 
-There is only one honest answer. The sparks alone cannot hold you. It is the blowing that makes the blaze.
+When did this feeling ever arrive after a plain meal eaten truly hungry and stopped at enough?
 
-So do not fear the Nibbler. It is a starving creature, already dying from the moment you stop feeding it. Its grumbles are death throes, not demands. A dying thing makes noise as it goes. Let it grumble. Smile. It proves you are winning.
+When did it ever ask for a meal rather than for one fixed flash?
 
-You have felt this kind of relief before in miniature, like tight shoes kicked off at dusk after a long day in a size too small, only here the shoe was laced by the last dose and the relief was counted as pleasure.
+When did feeding it ever close it, rather than multiply it an hour later?
 
-Tell me plainly with that shoe in mind: did the shoe give you joy? Or did the shoe give you pain with pauses called joy? Take the shoe off for good and you do not lose joy. You lose pain. The foot forgets the pinch in days. The body forgets the echo in days. What lingers is not need. What lingers is memory of pinch mistaken for pleasure.
+There is only one honest answer. True hunger welcomes a meal and closes with thanks. This echo wants one hit and never says done.
 
-The Voice That Feeds It
+I tell you flat, to calm, not to frighten: the physical part is mild but well-defined, a light background complaint, not a mighty enemy. It is the tail end of the dip, the faint complaint of a loop unfed. It does not grow into torment. It starves.
 
-Now look at the hands that lay the wood. This is the real target. This is where freedom is won.
+For most who stop feeding it, any edginess is a days-long hump, rising for two to five days, then passing, small-scale, not a life sentence. A few evenings of noticing. A few afternoons of faint calling. Then quiet. I have watched eaters walk through it yawning rather than fighting, surprised at how little there was to feel once belief withdrew. If you live with diabetes, take anything that affects blood sugar or appetite, are pregnant, or carry medical risk around food, follow your clinician first — this book changes a belief, it touches no medical care.
 
-The Sweet Con is the belief-system that feeds the Nibbler. It is not in your blood. It is in your head, laid down layer by layer, and it speaks in your own voice so you mistake it for yourself.
+Hear my honesty as well, because honesty is what makes seeing last. Scientists still argue over what label to put on sugar and craving, and whether the word addiction fits the human pattern or belongs to scheduling and habit. I leave labels alone. Both sides of that argument grant what matters to you: binge behaviours occur, the lift-then-drop occurs, the faint call after stopping occurs and passes. What matters is not the label but what you feel in your kitchen, and what you feel is small.
 
-Listen to it. You know every line:
+Small does not mean imaginary. The Nibbler is real. The dip is real. The gnaw is real. Small means winnable without battle. It means you do not need a clinic, a plan, a count of days, a clenched jaw. You need to stop feeding a faint echo while you get on with enjoying your evening, and let it die for lack of orders.
 
-“I need to eat something right now or I cannot go on.”
-“Sugary somethings get me through the afternoon.”
-“A treat when you feel you deserve one.”
-“I have managed to be good this week, so one cannot hurt.”
-“I feel like i cant stop once I start, so I must be weak.”
-“Life without sweet hits will be grey and flat.”
+Think of your own evidence for smallness, because your evidence beats my sentences.
 
-Each sentence sounds like reasoning. Each is script. Each was installed.
+Recall nights you slept through without dosing and woke without damage. If need were fierce, sleep would be impossible. Recall long mornings caught in work or travel when no sweet was near and the call faded on its own by lunch. If need were command, fading would be impossible. Recall illnesses when you ate little for days and the sweet chant thinned rather than roared. If need were fuel-need, thinning would be impossible.
 
-Part was installed early, by kind hands. Sweet as love. Sweet as reward for being brave. Sweet as celebration when the family gathered. No blame to those hands. They were conned before you. They passed on what bright voices told them was kindness.
+Recall the opposite proof as well. Recall evenings you fed the call and found it back louder an hour later. Recall boxes that promised closure and gave multiplication. If flash were answer, return would be impossible.
 
-Part was installed daily, by bright packs at eye-line, by cartoon friends on boxes, by songs and sports stars selling fizz, by checkouts built as ambush, by adverts that poured summer and laughter over syrup and called the syrup the summer. Clever men tuned crunch and melt and bliss to make one never enough and more always call.
+The pattern is plain. Unfed, the echo fades. Fed, the echo breeds. That is not the behaviour of need. That is the behaviour of a loop.
 
-Part was installed by your own grazing. Each dose taught the brain to read the dip as proof the dose helps. Lift, crash, reach, brief quiet, louder crash. Round and round, till the roller coaster felt like weather. “I want to get off the roller coaster but I need the lift to bear the ride.” The ride is the lift. Step off and weather clears.
+So why did so small a thing feel so huge for so long? Because a loudspeaker spoke through it. That loudspeaker is our next room, and it is the real target.
 
-See what the Con does with the whisper of the Nibbler.
+WHY A FAINT ECHO ROARED
 
-The Nibbler says, faintly, “grumble.” The Con translates, loudly, “you need fuel.”
+A tiny twinge plus the thought "I cannot stand this" becomes torment. The same twinge plus the thought "good, it is dying" becomes relief. The twinge did not change. The reading changed.
 
-The Nibbler says, “twitch.” The Con translates, “you deserve a treat.”
+The Sweet Con is that reading. It is the belief-system that taught you to hear a faint echo as emergency, as fuel-need, as proof sweets love you and evenings need them.
 
-The Nibbler says, “empty.” The Con translates, “only sweet will fill this, and life without it will stay empty.”
+It was installed early and everywhere. Loving hands pressed a prize for being brave. Tired hands pressed a treat for being good this week. Screens laughed while chocolate glowed. Shelves stood bright at every till where patience is thinnest. The daily chant ran underneath everything: life needs its flash to be bearable, sweet is a genuine treat or fuel, grey waits without it.
 
-That last threat is the favourite lie, and it cuts both ways. It tells you stopping means grey and going on means bright. Both ropes belong to the same trick. There is no grey freedom and no bright slavery. There is foggy slavery now, and clear freedom waiting.
+No blame in naming this. The hands that taught were themselves taught. The voices that chanted were paid to chant. We all breathed it before we could think. Brainwashed is not a scold; it is a description of how desire was planted before choice could guard the door. I name the planters only to lift the shame from you and place it where it belongs — on the Trap that profited. The detail of who built what and how the bliss was engineered waits in its own room. Here it matters only as seed: you did not invent the loudspeaker. You inherited it.
 
-You say, “But everyone eats it. It must be fine. I must be the needy type.”
+See how the loudspeaker worked on an ordinary day.
 
-I answer as one who believed that too. Everyone ate it because everyone was conned, not because it is fine. Normal is not proof. Normal was built, pack by pack, jingle by jingle, till the abnormal looked ordinary. And needy types are made by dosing, not born. The traits you call weakness — the evening loss of control, the short term lift then fast drop, the creeping family size of the fix — are results of the loop, not causes of it. Put a clear child in the loop and the loop makes the same signs. Lift a grown grazer out and the signs go with the loop.
+Morning hollow after last night's box. Loudspeaker: you need a quick start. Midday dip after morning flash. Loudspeaker: sugary somethings to get me through. Afternoon fog after lunch dose. Loudspeaker: one lift to finish work. Evening hollow after day of flashes. Loudspeaker: you deserve one, you have been good. Night restlessness after evening box. Loudspeaker: see how wired days are, you need comfort.
 
-You say, “But I enjoy it. Surely that proves something real?”
+At each step the Nibbler gnawed faintly. At each step the Sweet Con translated faint into urgent, vague into fixed, echo into order. We obeyed the translation and called it listening to the body. We were listening to schooling while the body whispered underneath, asking for food, rest, water, air.
 
-I ask you, gently, with your own box open before you:
+Ask the questions that break the translation:
 
-Did you enjoy the last mouthfuls, or did you eat them coated and hurried with regret already rising before swallowing ended?
+If the feeling is true fuel-need, why does plain food eaten hungry never create it, only flash creates it?
 
-Did you enjoy being unable to stop, or did you call inability enjoyment after?
+If the flash is fuel, why does an hour after flash hold less energy, less patience, less light than an hour after a meal?
 
-Did a free child need that coating to laugh at the table?
+If the evening call proves love, why does love never say enough, while hunger met says enough gladly?
 
-There is only one honest answer. Enjoyment was the scene, the company, the hunger met. The dose rode along and billed you after.
+There is only one honest answer. The call is not love. The call is aftermath misread as need.
 
-You were never weak. We were outgunned by an engineered trap and misled by a false method that told us to fight sparks with will. No wonder evenings felt like battles. We aimed at the wrong enemy with the wrong weapon.
+Once you see the loudspeaker, you can hear it as loudspeaker rather than as self. That change is everything. A thought heard as self commands. The same thought heard as script informs. "I need a fix" heard as self marches feet to the cupboard. "The Con is speaking" heard as script lets feet stay still while the sentence passes like weather.
 
-Aim truly now. The Nibbler dies on its own. The Sweet Con dies by seeing. Seeing is all I ask of you.
+You were never fighting your body. You were obeying a lie about your body. Correct the lie and the body quiets on its own.
 
-Notice how the Con begs you to keep one small exception alive. It whispers that understanding is enough and a tiny Friday parcel will prove control. It whispers that knowledge needs testing. Do not argue with that whisper. See it as script. A con that can keep one cord plugged keeps the lamp lit. Pull every cord by seeing every line as line, not as you.
+THE BELLS THAT RING BEFORE THE BITE
 
-Smiled At, Not Fed
+There is one more voice of the Con to unmask, because it fooled us into believing craving comes from nowhere and therefore must be bodily fate.
 
-Come back to tonight, to the hour you dread. Let us live it differently, in your own kitchen, with your own hands, so triviality is felt, not argued.
+You know the moment. Wrapper rustle from another room and mouth waters. Sweet smell from a bakery doorway and feet slow. Clock-time on the sofa — eight o'clock light, programme starting — and attention swings to the cupboard without hunger rising first. The call arrives before the bite, triggered by sight, sound, smell, hour.
 
-Light low. Supper done and satisfied. Body clear, mind easy. Then it comes, faint at first, as it always comes. A twitch toward the cupboard. A picture of bright sweetness. A mouth-watering that is narrow, not open. Hands a little restless. Attention narrowing to drawer and packet.
+That firing is learned, not commanded. A bell that learned to ring at seven is still only a bell. It cannot move your hand.
 
-Old you called that order. New you calls it echo.
+We all learned these bells honestly. Eat flash on the sofa nightly and the sofa learns to call. Eat flash at the desk at three and three o'clock learns to call. Take flash with coffee, with film, with quarrel, with celebration, and coffee, film, quarrel, celebration learn to call. The wanting circuitry fires ahead of the act, brightening attention toward the old address. Then the dip after the last dose adds its faint gnaw underneath, and the pair feel like one strong order.
 
-Note it, as you would note rain on glass. “There is the grumble.” Do not argue with it. Do not lecture it. Do not measure it. Watch it the way you watched hunger sharpen at the market — with curiosity, not panic.
+They are not one order. They are echo plus bell, both small, both passing if unfed.
 
-Smile. Not through clenched teeth. Through knowing. “Good. That is the Nibbler starving. That is death throe, not demand.”
+Ask with me:
 
-Move gently. Rinse a glass. Put the kettle on. Talk. Laugh. Step to another room. Not to run from the cupboard. To get on with enjoying your evening. The cupboard needs no guarding when belief no longer bribes you toward it. Change nothing else in your life. Live the hour clearly and let the echo prove its nature.
+When did a bell ever feed you? Did the rustle nourish? Did the smell satisfy? Did the hour close hunger?
 
-Watch what happens. It rises a little, like a wave. It crests. It passes. Minutes, not hours. It leaves no damage behind, only a little more quiet and a little more pride. Tomorrow it comes fainter. The day after, fainter still. Within a few days the wave is a ripple, then flat water.
+When did obeying a bell ever silence bells, rather than train them to ring louder next time?
 
-Tell me honestly, with the wave passed unfed:
+When did a bell ring for soup with the same narrow urgency, or only for flash?
 
-Did you need will to survive minutes? Or did seeing do the work?
+There is only one honest answer. Bells ring where training laid wire. They fall silent where feeding stops.
 
-Did the evening grey without a hit? Or did it stay clear and yours, hands still, mind easy, sleep nearer?
+This is why a permitted sliver never helps. A sliver does not quiet bells; it oils them. It wakes the loop, refreshes the wire, hands the loudspeaker fresh proof. The evening box emptied after one promised biscuit taught this plainly: the craving, once triggered, carries the binge. Not because you are helpless — never think that insult — but because the Trap is built to turn a taste into a train. You do not test a bell by answering it. You let it ring while you get on with enjoying your life, and it learns there is no supper at its sound.
 
-Did the grumble prove mighty? Or did it prove tiny, already dying, kept alive till now only because belief kept laying wood?
+Hands choose. Bells only ring. Your hand stays yours.
 
-There is only one honest answer. You did not defeat a giant. You stopped feeding a whisper. That is why this is easy. That is why this holds.
+Feel the relief in that distinction. You do not need to move house, avoid shops, ban hours, police company. You need only to hear firing as firing — learned ringing, not need — while the Nibbler grumbles faintly underneath and both fade for lack of belief. The world can rustle and smell and glow around you while you walk clear through it, because clarity reads noise as noise.
 
-I promise you as an escaped eater who feared those nights too: the dread was the Con, not the body. The body asks little and forgets quickly. The Con asked everything and forgot nothing. Starve the Con of credit and the Nibbler starves of doses. Both fade together, because they were never two strengths. They were one trick with two faces.
+WATCH IT DIE AND REJOICE
 
-Hold that split through every future gnaw. When wrapper rustles across the room, hear learned firing, not order. When the old hour strikes, hear habit, not hunger. When the mouth narrows to sweet-only, hear echo, not invitation. Each time, lay no wood. Each time, smile. Each time, the sparks dimmer.
+Now you own the split, use it this very evening.
 
-You entered this room fearing physical need would break you. You leave knowing the physical part is a mild hump of days and the belief is the real target. The Sugar Trap held you by making tiny feel mighty. Seen plainly, tiny is tiny. Mighty was always the lie.
+You live in the Sugar Trap no longer as a blind prisoner but as an investigator who sees the wires. BAD SUGAR dug the hollow it pretended to fill. The Nibbler grumbles faintly as its food stops. The Sweet Con begs you to misread the grumble as need. Each part does its job unless you withdraw the only thing that powers them: belief.
+
+Do not argue with the echo. Do not feed it a little flash to test it. Watch it. Name it. Smile at it. Let it pass unfed while you get on with enjoying your evening. It cannot compel your hand. Learned bells ring; hands choose.
+
+Try it as lived experience, while you read on exactly as normal.
+
+Tonight, when the hollow opens after supper, pause. Note it the way you would note weather. There it is. Faint gnaw. Light edginess. Mouth calling for flash while belly asks for nothing. Say inwardly, with warmth: good, it is dying. Make tea. Talk. Read. Walk to another room. Notice how attention, left unfed, moves on. Notice how ten minutes softens what felt urgent. Notice how the mouth clears. Notice how sleep comes cleaner without a box talking through the programme.
+
+Tomorrow, when three o'clock hums, repeat the seeing. True hunger welcomes a meal. Echo-hunger wants flash and calls everything else dull. Answer true hunger with real food eaten gladly. Answer echo with a smile and no order. Like easing off shoes worn a size too small all day, the ache as pressure lifts is not proof the shoes helped you. It is proof they hurt you and the hurt fades when pressure leaves.
+
+And when the old thoughts surface — they will, for a few evenings — hear them as script, not as self:
+
+"This one evening deserves a treat."
+
+"I have been good this week, one will not matter."
+
+"I want to get off the roller coaster but not tonight."
+
+Those are not your reasoning. They are the Sweet Con speaking in your voice, the pusher offering his hand again. Answer with seeing, not with struggle. The warmth you want lives in rest, company, a clear head, hunger met by real food — never in the flash that coats the mouth while emptying the hour.
+
+I learned this on my own sofa with something like laughter. Night one, the grumble came at eight. Old me would have read it as command and marched to the cupboard. New me watched it: small, vague, oddly boring. I smiled at it. There you are, I thought. Die well. It nagged, it peaked, it thinned. By night three it had lost its voice. By week's end I sat in the same chair at the same hour with empty hands and a clear head and wondered what I had ever feared. The evenings had not gone grey. They had gone quiet. Talk, book, sleep arrived without a hand moving on its own.
+
+That is not effort. That is seeing. It takes no effort to watch a dying echo with joy once you know it is dying.
+
+Ask one last time, gently and flat:
+
+If the feeling is a need, why does plain food eaten hungry never create it, only flash creates it?
+
+If the flash is rescue, why does the rescued hour feel flatter than the clear hour before the Trap?
+
+If stopping is loss, why do free evenings feel lighter, not heavier, once the echo fades?
+
+The belief collapses under its own weight. The body echo starves for lack of orders.
+
+It never gave. It only took and briefly hushed its own noise.
+
+Hold that verdict. Let relief follow it. You face no unbearable nights, no fierce battle, no loss to mourn. You face a small grumble already fading and a big lie already seen. That is the whole dragon, and it is made of paper.
 
 7. SEE THE GRUMBLE AS DYING, NOT DEMANDING
 That feeling is the Nibbler starving.
 
 SUMMARY
-- Craving is two separate events glued as one, and the bodily part is small and brief.
-- Each dose digs the low it then relieves, so the lift never rises above clear.
-- A faint grumble rises like a wave and passes in minutes when watched without feeding.
-- The hump peaks in days and fades, leaving no lasting fight in the body.
-- Sights, smells and old hours can ring without ordering, and ringing needs no answer.
-- The loud voice calling the echo need and reward is old script, not your reason.
-- A grumble met with a smile proves by passing that starving was its nature.
+- The evening hollow is a small fading echo from the last dose, not a bodily need for fuel.
+- A loud learned belief reads that faint echo as emergency and calls the next flash rescue.
+- Each dose lifts briefly by returning toward clear, then drops lower and recreates the call for another.
+- Wrapper, smell and clock-time firing before the bite is learned ringing, not an order the hand must obey.
+- The discomfort after stopping is a brief days-long hump that peaks and passes, not a lasting fight.
+- Watched with joy as dying, the grumble loses power and evenings turn quiet and clear.
