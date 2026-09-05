@@ -3,12 +3,12 @@
 ## Position
 
 - **Iteration:** 027
-- **Stage:** Hypothesis
+- **Stage:** Writing
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 026 KEEP style-guide is accepted)
-- **Last completed unit:** 026 KEEP. factory-speech 18→13 / 16→8. Words 50404 / 49067. Accepted snapshot is 026 A.
-- **Next unit:** 027 hypothesis for comparison `missing` 4/4 (G04-M1, G06-M2, G15-M1, G20-M2), then two books.
+- **Last completed unit:** 027 ch06 A (4797/4800) / ch05 B (4469/5200). Totals A 25784 / B 20691. Writers live.
+- **Next unit:** Finish 027 writes, then judge A when write A exits.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -31,3 +31,4 @@
 | 2026-09-05 00:55 | 025 BASELINE. All-PASS, blocking 0, words 52182/51144, missing 3/3. | 026 anti-slop |
 | 2026-09-05 01:28 | 026 write A done 50404. B on ch13. Starting judge A. | j026a; wait B |
 | 2026-09-05 01:50 | 026 KEEP. factory-speech 18→13 / 16→8. | 027 comparison missing |
+| 2026-09-05 01:55 | 027 hypothesis: Job tails on CH-03/08/09/13. Writers starting. | 027 writes |
