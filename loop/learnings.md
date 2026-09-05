@@ -304,5 +304,12 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Lesson:** journey re-argument 15→8 / 16→9 (drop ≥2 both). Length 53680/54213. Blocking 0 both. Residual 8/9 still ≥8 both. factory-speech 8→9 / 3→2. willpower-lexicon 28/31 not PRIMARY.
 **Next direction:** PRIMARY remains journey re-argument 8/9. New mechanism on a different component or a sharper reviewer cut — do not replay this finding text. Do not replay 020–024 / 028–032. Do not start a willpower-lexicon PRIMARY.
 
+### iter-037 — LENGTHEN expansion assignment
+**Hypothesis:** PRIMARY: chapter-reviewer LENGTHEN must name an unspent expansion target (unfinished encounter / unanswered objection / undeveloped consequence), so journey `re-argument` falls in both vs 036 (8/9).
+**Change:** `prompts/chapter-reviewer.md` (Rules / LENGTHEN expansion assignment). 036 `RE-ARGUMENT` and ACCEPT gate unchanged. Plans reused. Writer Spark 1.3 Go, A1 K=3. Judges composer-2.5, 53+57. Hypothesizer: GPT-6 Astra.
+**Verdict:** KEEP
+**Lesson:** journey re-argument 8→6 / 9→5 (drop ≥2 both). Length 54612/57583. Sugar voice FAIL CH-01 method-promise-hedge 1 (one-book, not a veto); smoking blocking 0. Residual 6/5 is below ≥8 both. factory-speech 9→10 / 2→5. willpower-lexicon 26/19 not PRIMARY.
+**Next direction:** Empty KEEP-eligible intersection (willpower locked). PRIMARY is the top class of the worse subject: sugar factory-speech 10; smoking 5 is non-regression. Do not replay this LENGTHEN assignment, 036 RE-ARGUMENT, 020–024, or 028–032. Do not start a willpower-lexicon PRIMARY.
+
 
 

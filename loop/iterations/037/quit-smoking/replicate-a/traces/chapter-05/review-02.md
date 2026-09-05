@@ -1,0 +1,4 @@
+REVISE
+HEADER — draft opens with workshop preview `IN THIS CHAPTER — classroom door after the bell, finished paragraph on the desk, bags on the kitchen step, white filter with its ring of tiny holes, lips and fingers that cover them.` Remove this header block entirely.
+OVERCLAIM — overclaim: `Every light is a heavier draw through a holed paper, every mild a harder puff for the same fading top.` Bound for E-09 the card routes: machine-lower does not mean took less, and compensation is not identical for every smoker — hands differ, draws differ, days differ, no uniform-compensation claim and no safer-brand recommendation. Writer must keep the bound with the claim, not as a separate sentence elsewhere.
+UNASSIGNED-REFRAIN — non-mantra phrase `In the old pattern` recurs 5× verbatim. Subtract repeats to <3; do not invent a new mantra.

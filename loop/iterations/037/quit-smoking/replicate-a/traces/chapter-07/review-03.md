@@ -1,0 +1,2 @@
+REVISE
+HEADER — the draft opens with the workshop header `IN THIS CHAPTER` followed by `The kerb meter, the morning kettle to the post, the sliced afternoon to three, tight shoes and scratched skin, the loud second day, smokers at the door.` Remove the header block entirely; keep the numbered ALL-CAPS instruction `REFUSE TO BE INFLUENCED BY OTHER SMOKERS` plus its one spoken rationale line, which is not HEADER.

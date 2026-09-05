@@ -1,0 +1,14 @@
+**CH-05 — Parties, Pauses and Milds
+- primary job: enacted transition — reward, taste and mild stop reading as gifts and start reading as stolen credit and compensated puffing.
+- belief now: enters still keeping reward and enjoyment exceptions; leaves seeing party was work and mild was harder puffing.
+- concrete encounter: teaching, paragraph, grocery run each paid with pellet, then tasted without.
+- evidence: E-05 party is cigarette not work; E-09 machine lower does not mean took less; limits not identical for every smoker, no safer recommendation.
+- new instruction: I-05 IGNORE ANY ADVICE THAT CONFLICTS WITH THIS BOOK
+- reserved-later fence: substitutes to C06; strongest social reward to C10.
+- arc position: middle demolition; demolition high.
+- reader-state: pleasure-keeper defending little parties, encountering pellet chain and vent holes.
+- mantra: echo F-A "It does plenty TO you. It does nothing FOR you."
+- scene: debut SC-C, staging job: reward pellet chain; debut SC-H, staging job: hole in gas mask.
+- guardrails: safety CA-SAFE, E-09 safety limit; originality: gas-mask and pellet in new prose.
+- continuity intent: receives relax kill from C04; hands enjoyment cleared to anti-method C06.
+- budget: 5000

@@ -1,0 +1,14 @@
+**CH-03 — What Does It Actually Do For You
+- primary job: enacted transition — reader stops weighing harm versus benefit and demands what benefit at all.
+- belief now: enters seeing trap but still counting pleasures against risks; leaves asking what good remains once credit is questioned.
+- concrete encounter: listing own reasons aloud, then checking what cigarette added to food, pause, company.
+- evidence: E-04 plus limit enjoyment at light only; E-05 party is cigarette not work.
+- new instruction: I-03 BEGIN BY FEELING GREAT TO BE ESCAPING
+- reserved-later fence: variable isolation demos to C04, C05; strongest patio to C10.
+- arc position: first third axis switch; demolition rising.
+- reader-state: ledger-keeper weighing pros and cons, encountering hug image that rescuer may be perpetrator.
+- mantra: debut F-A "It does plenty TO you. It does nothing FOR you."
+- scene: debut SC-F, staging job: hug that won't let go.
+- guardrails: safety CA-SAFE; originality: speak TO/FOR, never as worksheet.
+- continuity intent: receives trap vocabulary from C02; hands axis to C04.
+- budget: 4500

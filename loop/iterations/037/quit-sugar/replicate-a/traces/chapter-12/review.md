@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop scaffolding `**IN THIS CHAPTER**` after the chapter title before any spoken body: "**IN THIS CHAPTER** / The morning kitchen and clean tongue, the market stall and bright aisle..." Remove the header entirely; begin in spoken voice.

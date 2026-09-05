@@ -3,12 +3,12 @@
 ## Position
 
 - **Iteration:** 037
-- **Stage:** dual-subject writes
-- **Status:** IN PROGRESS
+- **Stage:** decision recorded
+- **Status:** IDLE
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`). Factory is Muse Spark 1.3; this chat is auto-research only.
-- **Last completed unit:** 036 KEEP. Journey re-argument 15→8 / 16→9. Residual 8/9 still ≥8 both. Reviewer RE-ARGUMENT promoted.
-- **Next unit:** 037 writes (LENGTHEN expansion assignment). Sleep until FACTORY DONE both, then judge (one at a time).
+- **Last completed unit:** 037 KEEP. Journey re-argument 8→6 / 9→5. Residual 6/5 below ≥8 both. LENGTHEN expansion assignment promoted.
+- **Next unit:** 038 hypothesizer (Astra; Fable on quota/no-response). Empty KEEP-eligible intersection (willpower locked). Do not replay 037 LENGTHEN, 036 RE-ARGUMENT, 020–024, 028–032.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -74,16 +74,6 @@
 | 2026-09-05 19:55 | 035 QUANTIFY. Smoking factory-speech 12→3; sugar 6→8. Restored: no. | 036 hypothesizer |
 | 2026-09-05 20:20 | 036 hypothesis applied: reviewer `RE-ARGUMENT` (journey 15/16). Plan reuse. | start Muse factory |
 | 2026-09-05 20:24 | `opencode run --agent factory` failed (Go CLI opt-in + db lock). Factory used write_replicate.py A1 (factory-orchestrator fallback). Both live. | wait FACTORY DONE |
-| 2026-09-05 20:32 | 036 CH-01 ACCEPT both (sugar 3738/4200, smoking 3112/3500, 2 rounds, Go). HEADER only; no RE-ARGUMENT on ch1. Both on CH-02 draft. | rest of 036 writes |
-| 2026-09-05 20:38 | Smoking CH-02 ACCEPT 4050/4000 (LENGTHEN 2194→4050 + HEADER; no RE-ARGUMENT). Sugar CH-02 in A1 (LENGTHEN+HEADER). Smoking on CH-03. Both Go. | rest of 036 writes |
-| 2026-09-05 20:50 | Sugar CH-02 ACCEPT 4671/5200. Smoking CH-03 ACCEPT 3860/4500 (3 rounds). Sugar CH-03 A1 fired `RE-ARGUMENT` (CH-02 kitchen restage) + RESERVED-REACH + HEADER. Smoking on CH-04 A1. Both Go. | rest of 036 writes |
-| 2026-09-05 21:04 | Sugar 4/13 (CH-03 CAP after RE-ARGUMENT then LENGTHEN). Smoking 5/14 (CH-05 ACCEPT). Sugar on CH-05 draft; smoking CH-06 A1. Both Go. | rest of 036 writes |
-| 2026-09-05 21:12 | Sugar 5/13 CH-05 ACCEPT. Smoking 6/14 CH-06 ACCEPT. Sugar on CH-06; smoking CH-07 A1 (LENGTHEN+HEADER, no RE-ARGUMENT yet). Both Go. | rest of 036 writes |
-| 2026-09-05 21:21 | Sugar 6/13 CH-06 CAP. Smoking 7/14 CH-07 CAP. `RE-ARGUMENT` now on sugar CH-03 and CH-06, smoking CH-07 (hug restage). Both Go, still writing. | rest of 036 writes |
-| 2026-09-05 21:26 | Sugar 7/13 CH-07 ACCEPT. Smoking 8/14 CH-08 ACCEPT. Smoking CH-09 A1 `RE-ARGUMENT` (CH-08 morning inhabit). Sugar on CH-08. Both Go. | rest of 036 writes |
-| 2026-09-05 21:37 | Sugar 8/13 CH-08 CAP (`RE-ARGUMENT` peach/SC-02). Smoking 9/14 CH-09 CAP. Smoking on CH-10 A1; sugar on CH-09. Both Go. | rest of 036 writes |
-| 2026-09-05 21:53 | Sugar 9/13 CH-09 CAP. Smoking 11/14 CH-11 ACCEPT (`RE-ARGUMENT` patio/CH-10). Smoking on CH-12 A1; sugar on CH-10. Both Go. | rest of 036 writes |
-| 2026-09-05 22:03 | Sugar 10/13 CH-10 CAP. Smoking 12/14 CH-12 ACCEPT. Smoking CH-13 A1 fired `RE-ARGUMENT` (CH-08 morning + CH-10 patio). Sugar on CH-11. Both Go. | rest of 036 writes |
-| 2026-09-05 22:20 | Smoking FACTORY DONE 14/14 54213w. CH-13 CAP 3608/4500 after RE-ARGUMENT. Start smoking panel. Sugar 11/13, CH-12 A1. | j036-quit-smoking |
 | 2026-09-05 22:50 | 036 KEEP. Journey re-argument 15→8 / 16→9. Residual 8/9. Hypothesizer 037 (Astra). | 037 writes |
 | 2026-09-05 23:00 | 037 Astra hypothesis applied (LENGTHEN expansion assignment). Start both writes. | f037 writes |
+| 2026-09-06 01:05 | 037 KEEP. Journey re-argument 8→6 / 9→5. Sugar CH-01 method-promise-hedge 1 (not a veto). | 038 hypothesizer |

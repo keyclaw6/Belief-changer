@@ -1,0 +1,2 @@
+REVISE
+HEADER — the draft opens with the workshop header `IN THIS CHAPTER`: "IN THIS CHAPTER — the farewell table, the yellow stain and the grey ash, the stubbed butt, tea and the chair tonight, washed hands, teeth and bed with hands empty"

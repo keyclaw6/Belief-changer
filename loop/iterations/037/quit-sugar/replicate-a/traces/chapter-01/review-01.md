@@ -1,0 +1,2 @@
+REVISE
+HEADER — the draft opens with the workshop header `IN THIS CHAPTER` with bullets (`- The armchair with this book open and the kitchen cupboard full behind` / `- The boxed line that separates BAD SUGAR from real food` / etc.) before the spoken body. Delete the header block entirely; the allowed numbered ALL-CAPS instruction `1. KEEP AN OPEN MIND / Question what you think you know about sweetness.` is not a substitute header.

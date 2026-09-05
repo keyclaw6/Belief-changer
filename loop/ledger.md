@@ -573,5 +573,19 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 
 **What this opens next.** New floors: journey re-argument 8/9 (still ≥8 both — next PRIMARY). factory-speech 9/2 is not ≥8 both. willpower-lexicon 28/31 is not PRIMARY. Do not replay this finding text. Do not replay 020–024 / 028–032.
 
+### iter-037 — LENGTHEN expansion assignment  ·  2026-09-06  ·  KEEP
+
+**Hypothesis.** If the chapter-reviewer LENGTHEN rule commissions a specific unspent expansion (unfinished encounter, unanswered objection, or undeveloped consequence) instead of quoting a card job, LENGTHEN cannot buy word-count with another proof of a landed conclusion, so journey `re-argument` falls in both versus 036 (sugar 8, smoking 9).
+
+**Change.** One Rules bullet in `prompts/chapter-reviewer.md` (see `loop/iterations/037/change.diff`). 036 `RE-ARGUMENT` and ACCEPT gate left unchanged. Plans reused. Writer Spark 1.3 Go, A1 K=3. Panel 53+57 composer-2.5. Hypothesizer: GPT-6 Astra.
+
+**What happened.** journey re-argument 8→6 (sugar) and 9→5 (smoking). Words 54612 / 57583. Journey and belief and comparison all PASS; book-arc PASS. Sugar voice 12/13 (CH-01 FAIL method-promise-hedge 1). Smoking voice 14/14, blocking 0. A1 sugar 9 ACCEPT / 4 CAP; smoking 10 ACCEPT / 4 CAP. factory-speech 9→10 / 2→5. belief re-argument 11→9 / 3→3. book-arc re-argument 4→7 / 3→3.
+
+**Verdict & why.** KEEP. PRIMARY dropped ≥2 both. No new blocking class in both. Length floors met. LENGTHEN expansion assignment promoted.
+
+**What we learned.** Making LENGTHEN name an unspent target, rather than a job label, cuts residual rebuild after the 036 backward fence. Residual 6/5 is real and below the dual ≥8 band — further journey PRIMARY would be a 5–7 object.
+
+**What this opens next.** Journey re-argument 6/5 is not KEEP-eligible. willpower-lexicon 26/19 is not PRIMARY. Next PRIMARY is sugar factory-speech 10 (worse subject); smoking 5 is non-regression. Do not replay this LENGTHEN assignment. Do not replay 036 RE-ARGUMENT, 020–024, or 028–032.
+
 
 

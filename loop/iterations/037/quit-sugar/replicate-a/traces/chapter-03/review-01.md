@@ -1,0 +1,3 @@
+REVISE
+
+HEADER — draft opens with the workshop header `IN THIS CHAPTER` before any spoken body: "IN THIS CHAPTER / The table at seven in the morning — Yesterday's wrappers laid in a row — The dentist's mirror — The shop receipt in the pocket — The quiet question with two columns". Delete the header block entirely; the numbered instruction `3. JUDGE ONLY BY WHAT IT DOES FOR YOU` plus its rationale line is permitted and is not HEADER, but the top `IN THIS CHAPTER` table must go.

@@ -1,0 +1,60 @@
+{
+  "model": "muse-spark-1.3-contributor",
+  "route": "opencode-go",
+  "reasoning_effort": null,
+  "latency_s": 189.137,
+  "usage": {
+    "input_tokens": 40166,
+    "output_tokens": 16405,
+    "total_tokens": 56571,
+    "input_tokens_details": {
+      "cached_tokens": 2019
+    },
+    "output_tokens_details": {
+      "reasoning_tokens": 12376
+    }
+  },
+  "failed_routes": {},
+  "chapter": 5,
+  "replicate": "a",
+  "slug": "quit-sugar",
+  "iteration": "037",
+  "chars": 35664,
+  "words_draft": 3265,
+  "words_final": 6451,
+  "words_by_round": [
+    3265,
+    6451
+  ],
+  "budget": 6300,
+  "review_rounds": 2,
+  "review_verdicts": [
+    "REVISE",
+    "ACCEPT"
+  ],
+  "review_verdict": "ACCEPT",
+  "final_status": "ACCEPT",
+  "findings_by_round": [
+    [
+      "HEADER",
+      "LENGTHEN"
+    ],
+    []
+  ],
+  "review_routes": [
+    "opencode-go",
+    "opencode-go"
+  ],
+  "review_latencies_s": [
+    72.483,
+    71.234
+  ],
+  "rewritten": true,
+  "rewrite_routes": [
+    "opencode-go"
+  ],
+  "rewrite_latencies_s": [
+    197.455
+  ],
+  "draft_route": "opencode-go"
+}

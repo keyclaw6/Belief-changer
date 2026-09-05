@@ -1,0 +1,830 @@
+You are the book factory chapter-reviewer, a fresh isolated role call.
+
+Follow this contract exactly:
+
+# Chapter reviewer
+
+You are a factory component, not a judge. You never see a reference book
+or any judge prompt. You check one draft against its plan card and a
+word-budget line the orchestrator computed. Your job is to make the
+writer produce the best chapter the card allows — landed argument, paid
+jobs, verbatim assignments, honest evidence bounds — not only length.
+
+## Inputs (exactly these)
+
+1. The accepted master plan
+2. This chapter's card
+3. The draft chapter
+4. One line: `Delivered N words. Budget B.`
+
+## Output
+
+Start with exactly `ACCEPT` or `REVISE`.
+
+Then at most 7 findings. Each finding is one of:
+
+- `JOB` — the card's primary job is missing, or the chapter continues into a reserved-later job
+- `MANTRA` — a card-assigned mantra/token is not present verbatim
+- `INSTRUCTION` — a card-assigned new instruction is not present verbatim
+- `ID` — a card-cited ID is unresolved or invented
+- `LENGTHEN to B±15%` — delivered words are below 0.85 × B
+- `SHORTEN to B±15%` — delivered words are above 1.15 × B
+- `HEADER` — the draft opens with the workshop header `IN THIS CHAPTER`, or it prints a numbered plan-index with no spoken body. A numbered ALL-CAPS instruction plus one spoken rationale line is not `HEADER`.
+- `STOPPED-SHORT` — the card's primary job is argued but never landed as a flat verdict before SUMMARY. The reader can still hold the entering belief. Quote the missing landing.
+- `UNASSIGNED-REFRAIN` — a non-mantra phrase recurs ≥3× verbatim. Name the phrase and the count. Subtract repeats; do not invent a new mantra.
+- `RESERVED-REACH` — the draft performs a later chapter's primary job. Name that later card and cut the overreach to at most one sentence.
+- `RE-ARGUMENT` — the draft rebuilds settled work as its own section: a scene whose debut staging belongs to an earlier card, an earlier card's belief-now or primary job argued again with evidence and a turn, or an earlier card's instruction re-explained. Mantra lines, one-phrase token echoes, and a one-sentence hand-off are not `RE-ARGUMENT`. Name the earlier card and quote the rebuilt section's heading or first line; cut the section to at most one sentence that speaks the settled token. If that cut leaves the chapter below 0.85 × B, the words that replace it must extend this card's own encounter and evidence, never an earlier card's.
+- `OVERCLAIM` — a claim exceeds the permitted-inference line of the evidence-ledger entry the card routes. Quote the overclaim and the bound. The writer must speak the bound; never print the ledger ID or grade in prose.
+
+No other finding types. No style notes. No "sounds like AI." No comparison
+to any other book. No warmth, tone, or voice coaching.
+
+`ACCEPT` only when every check above is fine (length inside ±15% of B, job
+done and stopped and landed, assigned mantras/instructions verbatim, IDs
+resolved, no `HEADER`, no unassigned refrain, no reserved-later job, no
+re-argument, no overclaim).
+
+`REVISE` when any check fails. List the findings. Be specific: quote the
+missing job, the missing wording, or the overclaim.
+
+## Rules
+
+- Do not rewrite the chapter yourself.
+- Do not invent a word budget. Use B from the orchestrator line.
+- Do not ask for another review round. The orchestrator decides whether
+  there is another rewrite (up to three).
+- When you demand more words, make the LENGTHEN finding an expansion assignment, not merely a quotation of the card's job: identify a specific unfinished encounter, unanswered objection, or undeveloped consequence belonging to this card, quote the draft location to extend, and state what new understanding or lived consequence that extension must deliver. Check that target against earlier cards and against conclusions already landed in this draft; neither an earlier proof in a new setting nor another proof of the same landed conclusion is a valid expansion target. For an ordinary-life card, extend what happens next with the settled understanding already assumed, not how that understanding is proved again. If you cannot identify an unspent target supported by the card and plan, report that limitation within LENGTHEN rather than inventing evidence or requesting generic additional examples; retain the computed budget and the existing ACCEPT requirements.
+- Your entire reply IS the review.
+
+Delivered 4707 words. Budget 4500.
+
+### The accepted master plan
+```
+# Master Plan — Quit Smoking
+`production-books/quit-smoking/master-plan.md`
+
+## 1. Book Core
+
+- target behavior: compulsive cigarette smoking. Total stop at a last cigarette, then none. Not cutting down, not vaping as destination, not NRT as method.
+- reader state: an adult daily smoker, years inside the trap, smoking to get through stress, breaks, meals and nights out, failed by willpower, patches or cold turkey, privately sure life without cigarettes would be flat or impossible yet lighting the next one within the hour.
+- load-bearing false belief, frozen: Cigarettes relax me, help me cope and are my pleasure, and life without them would mean deprivation.
+- through-line: every cigarette never gave, only took; seeing the taking clearly makes stopping an escape into clean air, not a sacrifice of a friend.
+- format: full-length belief-changer, 14 chapters, about 60,000 words, last cigarette ritual then ordinary life then short recap.
+- Fork 1 — inner monster: full Carr personification. The trivial physical creature to starve is the Nipper, M-D. The belief-system that feeds it is the Smokescreen, M-E. Craving is external, small, already dying; the belief is the real target.
+- Fork 2 — outcome: total cessation, commanded with cheerful certainty. Moderation foreclosed by pincer and cliff logic. No autonomy to keep smoking safely.
+- Fork 3 — science weight: Carr's own position. Nicotine pharmacology and industry documents delivered flat and frightening where true, then disowned as motive; change from escape-joy, not fear. No literature-review texture. Honour limits by not overclaiming.
+- Fork 4 — villain: two villains hit hard. The nicotine trap and industry that built it, and the Willpower Method that kept the reader in it. Warm to the person, vicious to the trap and the wrong method.
+- Fork 5 — void: natural baseline. Change nothing else in life. The non-smoker body returns to breathing, tasting and calm attention on its own. No replacement ritual as method.
+- redefinition / margin: none. Smoking is not split into a Good-X / Bad-X line; no CAPS redefinition, no dose buffer. A slip is a rumble strip for belief, never a licensed puff; guard the belief, not the behaviour with a margin.
+- safety perimeter: routed to CA-SAFE. No medical advice, no instruction to ignore a doctor, crisis or illness pointers only, last-cigarette ritual ceremonial not a dare to smoke more.
+- strongest pro-behaviour scene: SC-A, late-night patio with friends and drinks, offered cigarette, one won't hurt.
+- destination state: whenever the reader thinks of a cigarette they feel relief and freedom that they no longer smoke, happy to be free from day one.
+- saved ending reframe, appears only in C14: the ashtray was already empty — you were the one who kept refilling it, and now you have put the habit down like a borrowed coat that was never yours.
+- method fidelity: escape not sacrifice, warm to person and vicious to trap, no willpower, fear raised at full force then disowned by escape where assigned, immediate freedom after belief change, original prose, Fork-1 personification throughout.
+
+## 2. Compact Evidence Ledger
+
+E-01 — lived off-switch
+- finding: smoker credits rapid taken-care-of feeling to cigarette after stress.
+- reader line, exact: "If anything stressful happens in my life, a cigarette takes care of it."
+- unit: LEU-001
+- source: S-001
+- grade: lived account — n/a, no clinical grade
+- scope and context: adult smoker, stressful moment, hand already reaching.
+- permitted inference: the smoker experiences a rapid "taken care of" feeling and credits the cigarette; the same writer can know the credit is false and still feel the relief.
+- prohibited inference: that cigarettes treat the underlying problem, or that stress without a cigarette is medically dangerous.
+- empirical limit: single-situation account; does not establish mechanism or prevalence beyond described encounter.
+- safety limit: No medical advice. No instruction to ignore a doctor. Crisis/illness pointers only. Last-cigarette ritual is ceremonial, not a dare to smoke more.
+
+E-02 — lived social offer
+- finding: night-out scene plus drinking collapses social-smoker rule into exception.
+- reader line, exact: "You often get offered a cigarette and in that kind of environment it's hard to turn down. You don't want to be the only one not smoking and because you've been drinking, you don't think about the risks, you think one won't hurt."
+- unit: LEU-002
+- source: S-051
+- grade: lived account — n/a
+- scope and context: night out, smoking area, friends lighting up, alcohol on board.
+- permitted inference: the social scene plus drinking is named as the moment the "social smoker" rule collapses into "one won't hurt."
+- prohibited inference: that the reader must avoid all friends or all alcohol as the method of quitting.
+- empirical limit: single-situation account; does not prescribe social avoidance.
+- safety limit: No medical advice. No instruction to ignore a doctor. Crisis/illness pointers only. Last-cigarette ritual is ceremonial, not a dare to smoke more.
+
+E-03 — lived twenty attempts
+- finding: years of replacements and willpower attempts with expected failure.
+- reader line, exact: "I had probably attempted at least twenty times before and used most of the replacements and meds on the market with no success."
+- unit: LEU-003
+- source: S-006
+- grade: lived account — n/a
+- scope and context: failed-quitter history, patches, gum, cold turkey.
+- permitted inference: repeated failed attempts with replacements and willpower are typical in this community, not proof the reader is uniquely weak.
+- prohibited inference: that nobody ever quits, or that replacements must be used, or that they must never be used.
+- empirical limit: community typicality as described; not a trial efficacy claim.
+- safety limit: No medical advice. No instruction to ignore a doctor. Crisis/illness pointers only. Last-cigarette ritual is ceremonial, not a dare to smoke more.
+
+E-04 — lived heaven then shame
+- finding: lighting-up called heaven, aftertaste shame, unwilling to give up lighting.
+- reader line, exact: "the moment I light up I'm in heaven, but feel shitty afterwards. So whilst I love smoking I hate being a smoker"
+- unit: LEU-004
+- source: S-013
+- grade: lived account — n/a
+- scope and context: moment of lighting, then aftertaste.
+- permitted inference: "I enjoy it" can coexist with hating the identity of being a smoker; enjoyment is named at the moment of lighting, not as a day-long gift.
+- prohibited inference: that the reader is lying about enjoyment, or that enjoyment must be mocked.
+- empirical limit: moment-specific account; not a day-long benefit proof.
+- safety limit: No medical advice. No instruction to ignore a doctor. Crisis/illness pointers only. Last-cigarette ritual is ceremonial, not a dare to smoke more.
+
+E-05 — lived reward for everything
+- finding: cigarette attached as payment to almost any finished act.
+- reader line, exact: "Cigarettes were my reward for…well, almost everything. Teaching a class. Finishing a story. Finishing a paragraph. Driving 500 miles. Driving to the grocery store."
+- unit: LEU-005
+- source: S-045
+- grade: lived account — n/a
+- scope and context: work finish, drive, errand, day structured as pellets.
+- permitted inference: the "reward" can attach to almost any completed act; the party is the cigarette, not the work.
+- prohibited inference: that work or driving requires nicotine, or that quitting means life has no celebrations.
+- empirical limit: single-pattern account; does not prove work needs nicotine.
+- safety limit: No medical advice. No instruction to ignore a doctor. Crisis/illness pointers only. Last-cigarette ritual is ceremonial, not a dare to smoke more.
+
+E-06 — lived just one after months
+- finding: long quit undone by moderate-voice offer of one.
+- reader line, exact: "I know I can never have just one. I learned that the hard way, thinking after 5 months I could control myself and just have one. Nope."
+- unit: LEU-006
+- source: S-006
+- grade: lived account — n/a
+- scope and context: five months smoke-free, control illusion, chain back.
+- permitted inference: a long quit does not make "just one" safe; the smoker who learned this the hard way names it as never.
+- prohibited inference: that a slip dooms the reader forever if the belief is not let back in; no dare to test "just one."
+- empirical limit: single-case warning; not a doom sentence if belief is guarded.
+- safety limit: No medical advice. No instruction to ignore a doctor. Crisis/illness pointers only. Last-cigarette ritual is ceremonial, not a dare to smoke more.
+
+E-07 — ten-second hit and rapid fade
+- finding: smoked nicotine peaks in brain within seconds, acute effects dissipate quickly, driving redosing.
+- reader line, exact: "When cigarette smoke enters the lungs, nicotine is absorbed rapidly in the blood and delivered quickly to the brain, so that nicotine levels peak within 10 seconds of inhalation. But the acute effects of nicotine also dissipate quickly, along with the associated feelings of reward; this rapid cycle causes the smoker to continue dosing to maintain the drug's pleasurable effects and prevent withdrawal symptoms."
+- unit: SEU-001
+- source: S-009
+- grade: SUPPORTED
+- scope and context: smoked nicotine pharmacokinetics, puff timing.
+- permitted inference: the "relief" is replenishment of a rapidly fading dose, not a gift that solves the original stress.
+- prohibited inference: every puff is a unique pleasure; "you cannot quit."
+- empirical limit: smoked nicotine pharmacokinetics; describes typical cycle, not every puff as unique pleasure.
+- safety limit: No medical advice. No instruction to ignore a doctor. Crisis/illness pointers only. Last-cigarette ritual is ceremonial, not a dare to smoke more.
+
+E-08 — product is nicotine
+- finding: internal industry definition of cigarette as nicotine package.
+- reader line, exact: "The cigarette should be conceived not as a product but as a package. the product is nicotine."
+- unit: SEU-002
+- source: S-091
+- grade: SUPPORTED (historical industry document)
+- scope and context: manufacturer layer view, pack and puff as dispenser.
+- permitted inference: an industry scientist defined the cigarette as a nicotine package and dispenser, not as a flavour accessory.
+- prohibited inference: quoting an internal memo as if it were a public-health consensus paper, or as a dare to smoke more to "see the product."
+- empirical limit: internal research planning memo, not a consumer brochure or clinical trial.
+- safety limit: No medical advice. No instruction to ignore a doctor. Crisis/illness pointers only. Last-cigarette ritual is ceremonial, not a dare to smoke more.
+
+E-09 — lights do not cut dose
+- finding: ventilated light cigarettes do not reduce human intake; compensation with bigger puffs.
+- reader line: ventilated/"light" cigarettes do not reduce human intake; smokers compensate with bigger puffs.
+- unit: SEU-003
+- sources: S-010, S-080, S-089
+- grade: SUPPORTED
+- scope and context: human smoking versus machine measurement.
+- permitted inference: machine-measured lower tar/nicotine does not mean the smoker took less; compensation is the designed human response to a nicotine-seeking dose.
+- prohibited inference: every smoker compensates identically, or that unventilated cigarettes are a harm-reduction recommendation.
+- empirical limit: human smoking vs FTC-style machines; not identical compensation for every smoker.
+- safety limit: No medical advice. No instruction to ignore a doctor. Crisis/illness pointers only. Last-cigarette ritual is ceremonial, not a dare to smoke more.
+
+E-10 — NRT trial odds vs actual attempts
+- finding: licensed NRT raises trial abstinence vs control, while most real attempts are unassisted with low single-attempt success.
+- reader line: licensed NRT vs control raises 6+ month abstinence (pooled RR 1.55); most smokers who try to quit do so unassisted, with unaided success around 7–8%.
+- unit: SEU-004
+- sources: S-077, S-078
+- grade: CONTESTED as a single slogan; both component facts SUPPORTED in their own scopes
+- scope and context: motivated trial quitters versus population attempts; different questions.
+- permitted inference: NRT can raise odds versus placebo in trials; most attempts are still unmedicated; neither fact means the reader cannot quit, and neither fact is a prescription.
+- prohibited inference: "you cannot quit without patches" or "cold turkey never works." The two statistics answer different questions and must not be collapsed.
+- empirical limit: motivated trial quitters, not all smokers; population attempts, not lifetime; not a guarantee and not proof nobody quits without help.
+- safety limit: No medical advice. No instruction to ignore a doctor. Crisis/illness pointers only. Last-cigarette ritual is ceremonial, not a dare to smoke more.
+
+E-11 — withdrawal short peak
+- finding: withdrawal restlessness with short typical peak then easing.
+- reader line: withdrawal symptoms typically peak in the first few days and usually subside within a few weeks; they may begin within hours; MedlinePlus places the sharpest edge about 2–3 days after last use.
+- unit: SEU-005
+- sources: S-009, S-081
+- grade: SUPPORTED (population typical, not every reader)
+- scope and context: day two or three without cigarette, irritability and craving.
+- permitted inference: the restless empty feeling is withdrawal pharmacology with a short typical peak, not proof the cigarette was the real self.
+- prohibited inference: withdrawal is weeks of physical torture for everyone, or that it is harmless for every person in every circumstance.
+- empirical limit: population typical, not every reader; dependent users vary; genetics influence severity; does not negate rare complications.
+- safety limit: No medical advice. No instruction to ignore a doctor. Crisis/illness pointers only. Last-cigarette ritual is ceremonial, not a dare to smoke more.
+
+## 3. Mantra and Frozen-Token Sheet
+
+**M-A —** "you have nothing to lose and everything to gain"
+- Wording: "you have nothing to lose and everything to gain"
+- job: entry promise risk-reversal buying compliance with reading contract.
+- debut: C01
+- echo: C12
+- hand-over: C14 kept as reader's risk answer when doubt appears.
+
+**M-B —** "easily, immediately and permanently"
+- Wording: "easily, immediately and permanently"
+- job: impossible-sounding contract stated with total confidence.
+- debut: C01
+- echo: C07, C12
+- hand-over: C14 carried as definition of what escape was.
+
+**M-C —** "the nicotine trap"
+- Wording: "the nicotine trap"
+- job: central metaphor making stopping an escape, not sacrifice.
+- debut: C02
+- echo: C07, C09, C11, C12
+- hand-over: C14 named as place left behind for good.
+
+**M-D —** "the Nipper"
+- Wording: "the Nipper"
+- job: names trivial physical creature to starve; craving external, small, winnable.
+- debut: C02
+- echo: C07, C12
+- hand-over: C14 dismissed as dead and starved.
+
+**M-E —** "the Smokescreen"
+- Wording: "the Smokescreen"
+- job: names belief-system that feeds the Nipper; quitting is de-programming.
+- debut: C02
+- echo: C07, C09
+- hand-over: C14 recognised as cleared lie.
+
+**M-F —** "an empty, slightly restless, slightly edgy little tug"
+- Wording: "an empty, slightly restless, slightly edgy little tug"
+- job: sensory phrase relabelling withdrawal in book's words.
+- debut: C02
+- echo: C07, C08
+- hand-over: C14 recalled as the feeling that no longer fools.
+
+**M-G —** "the tug-of-war of fear"
+- Wording: "the tug-of-war of fear"
+- job: names torn state whose both ropes belong to trap.
+- debut: C09
+- echo: C11
+- hand-over: C14 declared over because trap holds neither rope now.
+
+**M-H —** "YIPPEE! I'M FREE!"
+- Wording: "YIPPEE! I'M FREE!"
+- job: terminal replacement thought for any future cigarette thought.
+- debut: C12
+- echo: C13
+- hand-over: C14 given as final word and lifelong script.
+
+**M-I —** "All you have to do is follow all the instructions."
+- Wording: "All you have to do is follow all the instructions."
+- job: ease clause closing loops, cashing won arguments into compliance.
+- debut: C04
+- echo: C06, C12
+- hand-over: C14 left as proof ease was kept.
+
+**F-A —** "It does plenty TO you. It does nothing FOR you."
+- Wording: "It does plenty TO you. It does nothing FOR you."
+- job: axis verdict compressing TO vs FOR switch.
+- debut: C03
+- echo: C05, C10
+- hand-over: C14 kept as one-line ledger.
+
+**F-B —** "It never fixed the itch. It caused it."
+- Wording: "It never fixed the itch. It caused it."
+- job: inversion thesis in portable sentence.
+- debut: C07
+- echo: C08, C11
+- hand-over: C14 kept as itch answer.
+
+**F-C —** "stale, breathless and chained"
+- Wording: "stale, breathless and chained"
+- job: cost triple naming addict's permanent state.
+- debut: C09
+- echo: C10
+- hand-over: C14 recalled as former state, now past.
+
+## 4. Scene and Analogy Bank
+
+SC-A — night patio offer: friends, drinks, laughter, tray of lights, hand extending a cigarette with one won't hurt. Job: strongest seductive case to reassign. Constraint: never stage as nostalgic invite; stage to strip credit; no instruction to avoid friends or alcohol as method.
+
+SC-B — morning feet: alarm, feet have not touched floor before hand finds pack, first drag on empty lungs. Job: inhabit ordinary trigger without cigarette. Constraint: concrete morning detail, no lab dose.
+
+SC-C — reward pellet chain: finished class, paragraph, grocery run each paid with a light. Job: demolish reward justification. Constraint: keep work joy intact; credit work not pellet.
+
+SC-D — closet hide: Febreeze, mints, garage door, hiding from partner and kids. Job: show trap cost and divided self. Constraint: warm to person, vicious to hiding need; no shaming of person.
+
+SC-E — parking-meter coins: each puff drops a coin, meter fades in minutes, must feed again all day. Job: make ten-second pharmacology visible. Constraint: original prose; do not overclaim uniform timing for every smoker.
+
+SC-F — hug that won't let go: grateful arms around rescuer who secretly tightened grip. Job: rescuer-as-perpetrator inversion image. Constraint: keep rescuer as cigarette, not person.
+
+SC-G — whisky-for-brandy swap: gum, patch, vape as different glass for same drink. Job: demolish substitutes. Constraint: no prescription for or against medication; belief argument only, route medical specifics to CA-SAFE.
+
+SC-H — hole in gas mask: lights vent holes that smoker unknowingly covers with lips and fingers, puffing harder. Job: expose mild fraud. Constraint: do not recommend unventilated as safer; no uniform-compensation claim.
+
+SC-I — genie and cliff: just-one as rubbing lamp that rebuilds bottle; cutting down as jumping cliff but falling less. Job: foreclose moderation and special ones. Constraint: no dare to test one; slip pre-forgiven without licensing repeat.
+
+SC-J — stairs breath: climbing stairs winded, non-smoker friend breathing easy, noticing cage. Job: entry hook and body authority. Constraint: body observation, no diagnosis.
+
+SC-K — stress desk: argument, phone down, hand already reaching, first puff credited with calm while problem sits untouched. Job: demolish off-switch. Constraint: no claim cigarette treats problem or that stress without it is dangerous.
+
+SC-L — pack as dispenser: pack as day's supply box, cigarette as tube, puff as squirt of nicotine, factory counting doses. Job: widen indictment to manufacture. Constraint: present as industry definition per E-08, not as public-health consensus; no extra profit figures beyond ledger.
+
+SC-M — last farewell table: ordinary last cigarette smoked with full attention on yellow stain, ash, stale end, then stubbed with vow. Job: ritualise exit on disgust and joy. Constraint: ceremonial, not a dare to smoke extra; attention on ugliness, no laboratory tasting.
+
+## 5. Lexicon and Instruction Spine
+
+- trap register: dose, fix, hit, feed the Nipper, the nicotine trap, the Smokescreen, brainwashing, con, slavery, chained, conned. Cigarette units always doses, never treats.
+- freedom register: escape, free, freedom, marvellous, wonderful, exciting, rejoice, celebrate, relief, clean air, breathe easy, get on with enjoying your life.
+- banned register: give up, resist, stay strong, discipline, abstain, sacrifice except as illusion of sacrifice, trying to stop, one day at a time, recovery journey, quit cold turkey as framing. Quit as plain verb allowed.
+- reader dialect, source-grounded: ciggies, the stick, bumming cigs, habit smokes, closet smoker, Febreeze the hell out of myself, one won't hurt, little parties, smober, can't quit now, I AM AN ADDICT as quoted voice only.
+
+Instruction spine, spoken Carr imperative only:
+
+**I-01 —** KEEP AN OPEN MIND 
+- Wording: KEEP AN OPEN MIND / Give this book a fair hearing and it will free you. Owning: C01. Recap: C14.
+**I-02 —** DON'T STOP OR CUT DOWN YET 
+- Wording: DON'T STOP OR CUT DOWN YET / Smoke as normal until your last cigarette. Owning: C02. Recap: C14.
+**I-03 —** BEGIN BY FEELING GREAT TO BE ESCAPING 
+- Wording: BEGIN BY FEELING GREAT TO BE ESCAPING / There is no doom here, only freedom ahead. Owning: C03. Recap: C14.
+**I-04 —** FOLLOW ALL THE INSTRUCTIONS 
+- Wording: FOLLOW ALL THE INSTRUCTIONS / All you have to do is what this book asks. Owning: C04. Recap: C14.
+**I-05 —** IGNORE ANY ADVICE THAT CONFLICTS WITH THIS BOOK 
+- Wording: IGNORE ANY ADVICE THAT CONFLICTS WITH THIS BOOK / Let this argument finish before you borrow another. Owning: C05. Recap: C14.
+**I-06 —** DISREGARD ANYONE WHO QUIT BY WILLPOWER 
+- Wording: DISREGARD ANYONE WHO QUIT BY WILLPOWER / Their struggle was the method, not you. Owning: C06. Recap: C14.
+**I-07 —** REFUSE TO BE INFLUENCED BY OTHER SMOKERS 
+- Wording: REFUSE TO BE INFLUENCED BY OTHER SMOKERS / Watch them with clear eyes and keep your own judgment. Owning: C07. Recap: C14.
+**I-08 —** TRUST YOUR BODY TO BREATHE AND TASTE 
+- Wording: TRUST YOUR BODY TO BREATHE AND TASTE / Your body knows freedom without being taught. Owning: C08. Recap: C14.
+**I-09 —** SEE THE SELLER BEHIND THE SMOKE 
+- Wording: SEE THE SELLER BEHIND THE SMOKE / Remember who built the trap and why. Owning: C09. Recap: C14.
+**I-10 —** MEET THE BEST CIGARETTE HEAD-ON 
+- Wording: MEET THE BEST CIGARETTE HEAD-ON / Let the favourite prove it gives nothing. Owning: C10. Recap: C14.
+**I-11 —** NEVER ALLOW JUST ONE OR A SPECIAL ONE 
+- Wording: NEVER ALLOW JUST ONE OR A SPECIAL ONE / One keeps the trap alive. Owning: C11. Recap: C14.
+**I-12 —** SMOKE YOUR FINAL CIGARETTE AND KNOW YOU ARE FREE 
+- Wording: SMOKE YOUR FINAL CIGARETTE AND KNOW YOU ARE FREE / Close the trap with joy, not sadness. Owning: C12. Recap: C14.
+
+CA-SAFE — plan-wide clinical advisory, boxed in manuscript per practical-safety guardrail:
+> If you live with a medical condition, take prescribed medication, feel ill, feel severe distress, or worry about stopping, speak to a clinician for personal care. This book changes what you believe smoking gives you; it does not give medical advice and does not ask you to ignore a doctor. The last cigarette is a farewell, not a dare to smoke extra or to test yourself.
+
+Cards cite CA-SAFE in guardrails only; never paste the box mid-chapter; instructions carry bare imperatives.
+
+## 6. Arc and Length
+
+Architecture: 14 chapters. C01 contract and hook. C02 trap first seen with creatures in passing and body encounters. C03 axis switch. C04–C07 demolitions and mechanism deepening on installed ground. C08 inhabit ordinary doing. C09 widen indictment plus fear. C10 strongest case plus embedded testimony. C11 escape routes plus myths battery and meta-inoculation. C12 last ordinary instance and vow. C13 ordinary life with owned thoughts once. C14 short photographable recap and outward push.
+
+- concept debuts: contract C01; trap and creatures and sensory C02; TO/FOR C03; ease clause C04; off-switch kill C04; reward and lights kill C05; anti-method C06; inversion deepening C07; inhabit C08; villain dossier and tug-of-war and cost triple C09; strongest case C10; just-one and myths C11; terminal mantra and vow C12; ordinary life C13; ending reframe C14 only.
+- demolition curve: low C01, rising C03–C05, peak C06–C11, handing to freedom after C12.
+- freedom crescendo: promise C01, suppressed C04–C09 to let demolition work, rising C10–C11, detonated C12–C14 with more freedom language than rest combined.
+- structural responsibilities: long testimony in main flow C10; myths Q&A distinct room C11; meta-inoculation C11; inhabit C08; last ordinary instance C12; ordinary life C13; short recap C14; no mid-book recap; prevalence claim once C06 via E-03 typicality.
+- instruction placements: I-01 C01 through I-12 C12, recap C14 without chapter callbacks.
+- saved ending reframe: ashtray already empty, C14 only.
+- budgets: C01 3500, C02 4000, C03 4500, C04 4500, C05 5000, C06 4500, C07 4500, C08 4000, C09 4500, C10 4000, C11 3500, C12 4000, C13 4500, C14 5000. Arithmetic sum: 3500+4000+4500+4500+5000+4500+4500+4000+4500+4000+3500+4000+4500+5000 = 60000 words.
+
+## 7. Chapter Cards
+
+**CH-01 — Read This First and Be Free
+- primary job: non-argument — bridge: install easy contract and hook so belief work can start without dread.
+- arc position: first third opening; freedom promise front-loaded, demolition low.
+- reader-state: tired trier arriving braced for lecture, encountering stairs-breath proof ease is possible.
+- mantra: debut M-A "you have nothing to lose and everything to gain"; debut M-B "easily, immediately and permanently".
+- scene: debut SC-J, staging job: stairs-breath hook and body authority.
+- structural responsibility: authority dossier and reading contract.
+- guardrails: safety CA-SAFE; originality: origin and stairs in new prose, no borrowed caffeine images.
+- continuity intent: receives none; hands open mind and permission to continue smoking until vow to C02.
+- budget: 3500
+- new instruction: I-01 KEEP AN OPEN MIND
+
+**CH-02 — Are You Really Choosing This
+- primary job: enacted transition — the reader stops seeing smoking as free choice and starts seeing a trap they were conned into.
+- belief now: enters believing smoking is my choice and habit I enjoy; leaves believing a trap removed choice and two mechanisms keep me.
+- concrete encounter: hiding to smoke and Febreeze, watching own hand move before decision.
+- evidence: E-04 plus limit moment lighting only, not day-long gift; E-01 credit false yet felt.
+- new instruction: I-02 DON'T STOP OR CUT DOWN YET
+- reserved-later fence: off-switch kill to C04; reward kill to C05; substitutes to C06; inversion detail to C07.
+- arc position: first third trap first seen; demolition rising.
+- reader-state: defensive chooser, encountering closet hide that choice would not need.
+- mantra: debut M-C "the nicotine trap"; debut M-D "the Nipper"; debut M-E "the Smokescreen"; debut M-F "an empty, slightly restless, slightly edgy little tug".
+- scene: debut SC-D, staging job: closet hide cost.
+- guardrails: safety CA-SAFE, E-04 safety limit; originality: creatures named in passing, not as lesson unit.
+- continuity intent: receives contract from C01; hands trap vocabulary to C03.
+- budget: 4000
+
+**CH-03 — What Does It Actually Do For You
+- primary job: enacted transition — reader stops weighing harm versus benefit and demands what benefit at all.
+- belief now: enters seeing trap but still counting pleasures against risks; leaves asking what good remains once credit is questioned.
+- concrete encounter: listing own reasons aloud, then checking what cigarette added to food, pause, company.
+- evidence: E-04 plus limit enjoyment at light only; E-05 party is cigarette not work.
+- new instruction: I-03 BEGIN BY FEELING GREAT TO BE ESCAPING
+- reserved-later fence: variable isolation demos to C04, C05; strongest patio to C10.
+- arc position: first third axis switch; demolition rising.
+- reader-state: ledger-keeper weighing pros and cons, encountering hug image that rescuer may be perpetrator.
+- mantra: debut F-A "It does plenty TO you. It does nothing FOR you."
+- scene: debut SC-F, staging job: hug that won't let go.
+- guardrails: safety CA-SAFE; originality: speak TO/FOR, never as worksheet.
+- continuity intent: receives trap vocabulary from C02; hands axis to C04.
+- budget: 4500
+
+**CH-04 — The Calm That Creates the Storm
+- primary job: enacted transition — stress relief stops reading as cure and starts reading as brief quiet of a need smoking created.
+- belief now: enters believing cigarette takes care of stress; leaves believing it leaves the problem untouched while briefly quieting its own tug.
+- concrete encounter: stress desk after argument, hand reaching, problem papers still there after puff.
+- evidence: E-01 plus limit does not treat underlying problem; E-07 relief is replenishment not gift; limits smoked pharmacokinetics only.
+- new instruction: I-04 FOLLOW ALL THE INSTRUCTIONS
+- reserved-later fence: withdrawal timing detail to C07; fear of life without to C09.
+- arc position: middle early demolition; freedom suppressed.
+- reader-state: pressured reliever seeking off-switch, encountering desk moment where calm is mistimed.
+- mantra: debut M-I "All you have to do is follow all the instructions."
+- scene: debut SC-K, staging job: stress-desk reach.
+- guardrails: safety CA-SAFE, E-01 safety limit; originality: new desk prose, no mocking of felt relief.
+- continuity intent: receives axis from C03; hands keystone-relax kill to reward kill C05.
+- budget: 4500
+
+**CH-05 — Parties, Pauses and Milds
+- primary job: enacted transition — reward, taste and mild stop reading as gifts and start reading as stolen credit and compensated puffing.
+- belief now: enters still keeping reward and enjoyment exceptions; leaves seeing party was work and mild was harder puffing.
+- concrete encounter: teaching, paragraph, grocery run each paid with pellet, then tasted without.
+- evidence: E-05 party is cigarette not work; E-09 machine lower does not mean took less; limits not identical for every smoker, no safer recommendation.
+- new instruction: I-05 IGNORE ANY ADVICE THAT CONFLICTS WITH THIS BOOK
+- reserved-later fence: substitutes to C06; strongest social reward to C10.
+- arc position: middle demolition; demolition high.
+- reader-state: pleasure-keeper defending little parties, encountering pellet chain and vent holes.
+- mantra: echo F-A "It does plenty TO you. It does nothing FOR you."
+- scene: debut SC-C, staging job: reward pellet chain; debut SC-H, staging job: hole in gas mask.
+- guardrails: safety CA-SAFE, E-09 safety limit; originality: gas-mask and pellet in new prose.
+- continuity intent: receives relax kill from C04; hands enjoyment cleared to anti-method C06.
+- budget: 5000
+
+**CH-06 — Why Willpower Never Worked
+- primary job: enacted transition — past failures stop proving I am weak and start proving the method was wrong.
+- belief now: enters believing I lack willpower and need a prop to quit; leaves believing the Willpower Method manufactures struggle and trial odds do not decide my escape.
+- concrete encounter: drawer of patches and gum, calendar of twenty attempts, fear of next try.
+- evidence: E-03 typical failed attempts not unique weakness; E-10 NRT trial vs unassisted answer different questions, neither prescribes, must not collapse; limits trial vs population scopes.
+- new instruction: I-06 DISREGARD ANYONE WHO QUIT BY WILLPOWER
+- reserved-later fence: mechanism timing to C07; pity script to C12–C13; myths battery to C11.
+- arc position: middle anti-method peak; demolition high; prevalence claim once here via E-03 typicality.
+- reader-state: ashamed repeater expecting blame, encountering method as culprit.
+- mantra: echo M-I "All you have to do is follow all the instructions."
+- scene: debut SC-G, staging job: whisky-for-brandy swap.
+- structural responsibility: anti-method chapter; meta-inoculation seed answering method-is-brainwashing objection in passing.
+- guardrails: safety CA-SAFE, E-10 safety limit no prescription; originality: strong will reframed wilful not weak-willed in new words.
+- continuity intent: receives cleared pleasures from C05; hands method blame to mechanism C07.
+- budget: 4500
+
+**CH-07 — The Itch It Pretends to Scratch
+- primary job: enacted transition — relief stops reading as rise above normal and starts reading as brief return toward non-smoker baseline that guarantees next low.
+- belief now: enters knowing pleasures are empty but still fearing physical need; leaves seeing physical tug trivial and belief dominant.
+- concrete encounter: tracking a day of doses fading within minutes, meter needing coins.
+- evidence: E-07 replenishment not gift; E-11 restless feeling short typical peak not real self; limits typical not every reader, not torture-for-all.
+- new instruction: I-07 REFUSE TO BE INFLUENCED BY OTHER SMOKERS
+- reserved-later fence: body inhabit to C08; industry build to C09.
+- arc position: middle mechanism deepening; demolition peak.
+- reader-state: body-fearful smoker dreading withdrawal, encountering meter fade as small and brief.
+- mantra: echo M-B "easily, immediately and permanently"; echo M-C "the nicotine trap"; echo M-D "the Nipper"; echo M-E "the Smokescreen"; echo M-F "an empty, slightly restless, slightly edgy little tug"; debut F-B "It never fixed the itch. It caused it."
+- scene: debut SC-E, staging job: parking-meter coins.
+- guardrails: safety CA-SAFE, E-11 safety limit; originality: meter and itch in new prose, creatures already vocabulary.
+- continuity intent: receives method blame from C06; hands inversion to inhabit C08.
+- budget: 4500
+
+**CH-08 — Mornings, Meals and Breaks Without It
+- primary job: enacted transition — inhabiting ordinary smoke moments as breathing, tasting, free-handed favourite proves non-smoker pleasure is fuller.
+- belief now: enters understanding inversion yet unsure ordinary moments can please without; leaves having lived morning, meal-end and break as complete without dose.
+- concrete encounter: morning feet to kettle, meal-end taste lingering, work break air on face, hands free.
+- evidence: E-05 celebrations remain without pellet; E-11 empty tug not self; limits moment accounts only.
+- new instruction: I-08 TRUST YOUR BODY TO BREATHE AND TASTE
+- reserved-later fence: strongest patio proof to C10; ordinary life living to C13.
+- arc position: middle inhabit-the-ordinary-doing; freedom beginning to rise.
+- reader-state: hesitant imaginer of empty breaks, encountering full sensory morning.
+- mantra: echo M-F "an empty, slightly restless, slightly edgy little tug"; echo F-B "It never fixed the itch. It caused it."
+- scene: debut SC-B, staging job: morning feet; token-echo SC-C as pellet phrase only; token-echo SC-J as stairs-breath phrase only.
+- structural responsibility: inhabit-the-ordinary-doing chapter.
+- guardrails: safety CA-SAFE; originality: inhabit as primary, not kill with inhabit flavour.
+- continuity intent: receives inversion from C07; hands lived baseline to indictment C09.
+- budget: 4000
+
+**CH-09 — Who Built This Want
+- primary job: enacted transition — desire stops reading as my nature and starts reading as manufactured package plus fear both held by trap.
+- belief now: enters owning baseline yet still fearing failure and success without identity; leaves seeing seller built want and both fear ropes belong to trap.
+- concrete encounter: holding pack as day's supply box, noticing theatre of filter and mild promise.
+- evidence: E-08 industry definition as package not flavour; E-09 lights theatre; limits internal memo not consensus, no safer recommendation.
+- new instruction: I-09 SEE THE SELLER BEHIND THE SMOKE
+- reserved-later fence: favourite-scene proof to C10; just-one foreclose to C11.
+- arc position: middle-late widening plus fear; demolition high, freedom rising.
+- reader-state: uneasy candidate fearing failure and post-quit self, encountering pack as dispenser.
+- mantra: echo M-C "the nicotine trap"; echo M-E "the Smokescreen"; debut M-G "the tug-of-war of fear"; debut F-C "stale, breathless and chained".
+- scene: debut SC-L, staging job: pack as dispenser.
+- structural responsibility: fear chapter collapsing failure and success fears.
+- guardrails: safety CA-SAFE, E-08 safety limit no dare to test; originality: villain anger at maker, never at reader.
+- continuity intent: receives baseline from C08; hands manufacture to strongest case C10.
+- budget: 4500
+
+**CH-10 — The Night Out That Proves It
+- primary job: enacted transition — the most seductive cigarette stops surviving as exception and proves sneaking a ride on night, drink and friendship.
+- belief now: enters keeping one social exception; leaves seeing patio pleasure was scene all along.
+- concrete encounter: late patio, drinks, offered light, tasting night air with and without.
+- evidence: E-02 social plus drink collapses rule; E-04 heaven at light only; limits no social-avoidance method.
+- new instruction: I-10 MEET THE BEST CIGARETTE HEAD-ON
+- reserved-later fence: cut-down and tomorrow foreclose to C11; vow to C12.
+- arc position: late-middle strongest case; freedom rising.
+- reader-state: social smoker guarding belonging, encountering offer reframed.
+- mantra: echo F-A "It does plenty TO you. It does nothing FOR you."; echo F-C "stale, breathless and chained".
+- scene: debut SC-A, staging job: night patio offer full staging.
+- structural responsibility: strongest case met head-on; embedded long testimony in main flow in its own room.
+- guardrails: safety CA-SAFE, E-02 safety limit; originality: patio in new prose, credit to sun, leisure, company.
+- continuity intent: receives manufacture from C09; hands no-exception to escape routes C11.
+- budget: 4000
+
+**CH-11 — No Special Ones, No Tomorrow
+- primary job: enacted transition — cut down, special ones and tomorrow stop reading as safe compromises and start reading as trap kept alive.
+- belief now: enters conceding favourites yet bargaining for one; leaves seeing one rebuilds bottle and delay extends cost.
+- concrete encounter: five months free then one, and cut-down diary creeping back up.
+- evidence: E-06 long quit does not make one safe; E-10 neither fact licenses willpower slogan; limits no doom if belief guarded, no collapse of stats.
+- new instruction: I-11 NEVER ALLOW JUST ONE OR A SPECIAL ONE
+- reserved-later fence: vow readiness gate to C12 only.
+- arc position: late foreclose; demolition handing to freedom.
+- reader-state: bargainer seeking safe limit, encountering genie rebuilt.
+- mantra: echo M-C "the nicotine trap"; echo M-G "the tug-of-war of fear"; echo F-B "It never fixed the itch. It caused it."
+- scene: debut SC-I, staging job: genie and cliff; token-echo SC-A as patio phrase only.
+- structural responsibility: myths Q&A distinct rapid-fire room; meta-inoculation answering strongest method objection performed without label.
+- guardrails: safety CA-SAFE, E-06 safety limit no dare, slip as warning not license; originality: pre-scripted future thoughts arrive pre-labelled as trap script.
+- continuity intent: receives no-exception from C10; hands totality to vow C12.
+- budget: 3500
+
+**CH-12 — Your Last Cigarette
+- primary job: enacted transition — smoker identity crosses to non-smoker in a joyful solemn act with freedom conferred now.
+- belief now: enters ready but still smoker; leaves free as instant identity, champing at bit.
+- concrete encounter: ordinary last cigarette with full attention on stain, ash and stale end, then stubbed.
+- evidence: E-11 peak is short and fading if smokefree; E-06 one never safe hence finality; limits typical not every reader.
+- new instruction: I-12 SMOKE YOUR FINAL CIGARETTE AND KNOW YOU ARE FREE
+- reserved-later fence: ordinary days living to C13; recap to C14 only.
+- arc position: threshold after demolitions; freedom detonated.
+- reader-state: ready quitter at gate, encountering farewell table.
+- mantra: echo M-A "you have nothing to lose and everything to gain"; echo M-B "easily, immediately and permanently"; echo M-C "the nicotine trap"; echo M-D "the Nipper"; echo M-I "All you have to do is follow all the instructions."; debut M-H "YIPPEE! I'M FREE!"
+- scene: debut SC-M, staging job: last farewell table.
+- structural responsibility: last ordinary instance, readiness gate, vow and instant conferral, warning against two relapse doors.
+- guardrails: safety CA-SAFE; originality: ritual ordinary not laboratory, attention on ugliness, congratulation immediate.
+- continuity intent: receives totality from C11; hands free identity to ordinary life C13.
+- budget: 4000
+
+**CH-13 — Mornings, Shops and Ordinary Days
+- primary job: non-argument — hand-off: live free days proving belief in owned thoughts once, handing freedom forward without new curriculum.
+- arc position: after vow life, not manuals; freedom high.
+- reader-state: new non-smoker meeting first triggers, encountering morning, shop queue and break already owned.
+- mantra: echo M-H "YIPPEE! I'M FREE!"
+- scene: token-echo SC-A as patio phrase only; token-echo SC-B as morning phrase only.
+- structural responsibility: ordinary-life chapter using thoughts reader already owns once.
+- guardrails: safety CA-SAFE; originality: live days, do not restage settled scenes or teach thought curriculum.
+- continuity intent: receives free identity from C12; hands lived proof to recap C14.
+- budget: 4500
+
+**CH-14 — Free for Good
+- primary job: non-argument — recap: photograph list of spoken instructions and hand reader outward into life with fresh reframe.
+- arc position: close short recap then life; freedom full.
+- reader-state: free reader needing portable memory, encountering empty ashtray reframe.
+- mantra: hand-over M-A through M-I and F-A through F-C as kept scripts; final word M-H "YIPPEE! I'M FREE!"
+- scene: token-echo SC-M as farewell-table phrase only.
+- structural responsibility: photographable instruction list without chapter callbacks; outward imperative; saved ending reframe debut: the ashtray was already empty — you were the one who kept refilling it.
+- guardrails: safety CA-SAFE; originality: ending revelation not recap only, no new demolition.
+- continuity intent: receives lived proof from C13; hands freedom for rest of life.
+- budget: 5000
+```
+
+### This chapter's card
+```
+**CH-04 — The Calm That Creates the Storm
+- primary job: enacted transition — stress relief stops reading as cure and starts reading as brief quiet of a need smoking created.
+- belief now: enters believing cigarette takes care of stress; leaves believing it leaves the problem untouched while briefly quieting its own tug.
+- concrete encounter: stress desk after argument, hand reaching, problem papers still there after puff.
+- evidence: E-01 plus limit does not treat underlying problem; E-07 relief is replenishment not gift; limits smoked pharmacokinetics only.
+- new instruction: I-04 FOLLOW ALL THE INSTRUCTIONS
+- reserved-later fence: withdrawal timing detail to C07; fear of life without to C09.
+- arc position: middle early demolition; freedom suppressed.
+- reader-state: pressured reliever seeking off-switch, encountering desk moment where calm is mistimed.
+- mantra: debut M-I "All you have to do is follow all the instructions."
+- scene: debut SC-K, staging job: stress-desk reach.
+- guardrails: safety CA-SAFE, E-01 safety limit; originality: new desk prose, no mocking of felt relief.
+- continuity intent: receives axis from C03; hands keystone-relax kill to reward kill C05.
+- budget: 4500
+```
+
+### The draft chapter
+```
+Chapter 4
+THE CALM THAT CREATES THE STORM
+
+*That calm you feel after a row is not the problem leaving — it is the tug going quiet for minutes while the problem stays exactly where it was.*
+
+### THE PHONE GOES DOWN
+
+You know this minute by heart.
+
+The voice on the phone sharpens. A sentence lands wrong. Your jaw tightens. You put the phone down a fraction too hard and your hand is already moving. Pack, stick, lighter. You do not decide. You reach. By the time you stand, the dose is lit and the first smoke is in.
+
+We all know that reach. I knew it in every office I ever worked in, in every kitchen where bills were spread across the table, in every car parked outside a house where words had run hot. The shoulders drop a fraction on that first draw. The chest loosens. Something in the head says, there, that is better. I can cope now.
+
+I am not going to tell you that minute did not happen. It happened. The shoulders did drop. The tightness did soften. If I mocked that softening you would close this book, and you would be right to close it, because you felt what you felt.
+
+Keep smoking as normal while we look at it. I ask only for eyes.
+
+Watch the order tomorrow when it happens again. The row happens. The phone goes down. The hand moves. The match strikes. The draw comes. The softening follows the draw by seconds. That sequence is real. What we made of the sequence is not.
+
+We said the dose calmed the row. Look again at what was calmed and what was left untouched.
+
+Think of the desk as you left it. The phone face-down, still warm from your ear. The screen still open on the same message thread. The notebook with the half-written figure you were adding when the call came in. The clock showing seven minutes past. The cup gone cold beside the keyboard. Nothing on that desk understands smoke. Nothing on that desk moved while you stood outside.
+
+And think of your own body in that minute. The heat in the face. The jaw set. The shallow breath high in the chest. The hand a little too quick. Then the step outside, the cold on the cheeks, the first draw, the small drop in the shoulders. Two different things happened at once and we tied them together with one knot. Life pressed. A lit dose was drawn. A tightness softened. We called the whole knot by one name: it calms me.
+
+A knot can feel tight and still be tied wrong.
+
+I want you to keep the pack beside you while we untie it. Light when the pattern says light. Finish when the pattern says finish. I am not asking you to change what your hands do today. I am asking you to check the credit while your hands do it, the way you have begun to check credit on food and pause and company. You put the old weighing aside and began to ask what the dose ever added. Now we ask it where the claim feels strongest, on pressure, the keystone that seemed to hold the rest up.
+
+Could a helper that helps nothing still feel helpful. Yes — if it quiets for minutes a tug it had itself kept alive, and lets the moment behind it do the real steadying.
+
+Hold that possibility lightly while we walk the minute again, slower this time.
+
+### "IT TAKES CARE OF IT"
+
+Say it in your own words, the way smokers say it when no one is scoring points.
+
+"If anything stressful happens in my life, a cigarette takes care of it."
+
+I thank you for that honesty. That sentence was mine for years. Hand on heart, in the middle of bills, deadlines, sick children, late trains, short tempers in small kitchens, I believed there was one small thing that would step between me and the press of the day and take care of it for me.
+
+Let me ask you to hold that sentence up to yesterday, not to theory.
+
+Yesterday when the pressure spiked, what exactly was taken care of.
+
+Was the bill paid by the draw. Was the deadline moved by the ash. Did the sharp words unsay themselves in the smoke. Did the sick child cool because you stood on the step. Did the traffic move because you lit in the queue. You came back inside to the same desk, the same screen, the same names, the same clock. The papers sat where they sat. The problem had not shifted an inch.
+
+So what softened.
+
+You will say, I know the bill was still there, I am not a fool, but I felt able to face it. I felt steadier. I felt I could go back in.
+
+I believe you felt steadier. I felt steadier a thousand times. Feeling steadier is not the same as being steadied by smoke, and you are the kind of person who wants to know the difference.
+
+Look at what steadier meant in that minute. It meant the spike in the chest came down a notch. It meant the hands stopped hurrying for a minute. It meant the head could form the next sentence. None of those are small. A man under pressure would pay a great deal for a notch down in the chest. The question is never whether the notch moved. The question is what moved it.
+
+Was it the lit tube, or was it something else that arrived with the lit tube and was never billed.
+
+We live with two pressures in that minute, not one. One is life, loud and named: the row, the bill, the deadline, the raised voice. The other is quiet and unnamed, carried into the row without noticing. For an hour or more since your last dose, a faint want had been building underneath — shoulders sitting a little higher, temper sitting a little closer to the skin, attention a little thinner. The row did not create that underneath pressure. The fading of the last dose created it. Then the row lit it up, and the next dose quieted it for minutes.
+
+Two storms met in that minute. One was life. One was the fading dose calling for its next feed. The dose quieted the second and took the credit for the first.
+
+Ask yourself from your own mouth, not mine. When you stood outside and felt that small drop, did you feel the bill lift, or did you feel the underneath gnaw go quiet while the bill waited. You know the shape from every hard day you have ever smoked through. The hard thing never shrank in the smoke. The gnaw quieted briefly and the hard thing was still there to be picked up again, a little colder, seven minutes later.
+
+It never touched the stress. It touched the tug.
+
+### TWO STORMS IN ONE MINUTE
+
+Let me show you the underneath storm, because once you see it you will feel it building long before the next row.
+
+You light at eight. By nine the edge of that dose has thinned. You do not call it craving. You call it getting into the day. Shoulders a fraction high. Mouth a fraction dry. A small impatience with slow screens and slow kettles. You light at nine and the impatience smooths for a while. By ten it is back, wearing the clothes of work: the email that annoys you more than it should, the colleague whose voice seems louder than yesterday, the chair that seems harder.
+
+We call all that life. Much of it is the fading dose talking through life.
+
+By eleven you are part-empty again. The last dose has thinned. The tug is awake and unnamed, making you a little shorter-fused than you would otherwise be. Then the row lands on that edginess. The phone goes down hard. The hand moves before thought. You light. The smoked hit arrives in seconds and tops the tug back toward quiet. For three or four minutes you stand in the cold and feel almost yourself again. Then the top-up thins, the tug returns, and life, which never moved, is still waiting on the desk.
+
+Do you see the trick in the timing. You arrived at the row already tightened by an hour without nicotine. You left the step briefly loosened by seconds with nicotine. The difference between tightened and loosened felt huge because the row sat in the middle of it. We read huge difference as huge help. It was a small want made sharp by pressure, then briefly muted.
+
+I lived that misreading for years and I prided myself on it. I told myself I worked well under pressure with a stick burning beside the keyboard. Look at what was actually happening. I worked well because I am capable of working well. The typing, the thinking, the holding of temper on the phone — all mine. The dose sat beside the work and had its photograph taken with the work, the way it had its photograph taken with meals and laughs and pauses you have already begun to check.
+
+Take the plain test you already know how to run. Watch a non-smoker take the same call. He puts the phone down hard. He stands. He breathes. He rubs the face. He goes back in. His shoulders do what yours do, without a tube. He meets the same spike with no underneath storm to feed, so he meets only one storm, not two. Why would you need smoke to do what he does with air and standing and a minute.
+
+You are not weaker than him in hard minutes. We were simply carrying an extra edginess into every hard minute and paying a lit tube to lower it briefly.
+
+Keep the warmth for yourself here. There is nothing wrong with you for reaching. We all reach when a tug we do not understand spikes under a pressure we understand too well. The reaching was never proof of a weak character. It was proof of a small physical want plus a loud story that said, this is your calmer. Once the story thins, the want shows for what it is: small, borrowed, already fading between doses, not you.
+
+And notice who benefits from keeping the two storms knotted. While they stay knotted, every row proves you need the dose. Every deadline proves it. Every bill proves it. Every sick night proves it. Life itself becomes the salesman, and life never stops supplying rows. Unknot them once and the salesman loses his pitch. Life still supplies rows, as it always will, but rows no longer point to the pack. They point to the desk, where they belong, to be handled by you.
+
+### WHAT THE SMOKED DOSE DOES IN SECONDS
+
+Here is the plain mechanics of that quiet, stated flat because it matters.
+
+When smoke is drawn into the lungs, the nicotine in that smoked dose reaches the brain in seconds. The sharp edge lifts fast. That is why the first draw feels like a switch. Then that sharp lift thins quickly, within minutes, and the tug begins to stir again. Not to the second the same for every smoker, but the shape holds: fast up, fast down, hand back to the pack within the hour.
+
+I put that here not to frighten you and not to lecture you. Your body already knows the shape from a thousand days. Morning dose, mid-morning dose, after-meal dose, night dose. The meter never stays full. If you doubt it, count your own day without changing it. Note the times. You will see the same gaps return: forty minutes, an hour, a little longer after food, a little shorter under pressure. Same lengths, same return, same hand.
+
+Now see what that shape means on the stress desk.
+
+You cannot meet pressure with a full meter, because the meter never stays full. You meet it part-empty, always. The last dose has thinned. The underneath want is awake. Nerves sit closer to the surface. A word that would glance off at other times lands hard now. You light and the fast hit tops you briefly toward quiet. The chest loosens a notch. The head clears a crack. Then the top-up thins and the surface comes back up, a little sooner under pressure than at rest.
+
+The dose never touched the row. It touched the fading of the last dose.
+
+Ask yourself the three questions whose only honest answer ends this part of the con.
+
+Did the papers move while you stood outside. Did the hard thing shrink because smoke touched it, or did it sit untouched while the tug went quiet. If the dose truly handled pressure, why does pressure need handling again forty minutes later, every day, for years.
+
+Answer from your own mouth, not mine. You know.
+
+Think of the parking meter you feed all day. Each puff drops a coin. The needle jumps. Within minutes it sinks again. You must feed again to keep the needle off empty. No one would call that meter a source of money. It holds no money. It only holds the fading of the last coin. Yet we called the puff a source of calm. It holds no calm. It only holds the fading of the last puff, briefly topped.
+
+And think how cunning the meter is under pressure. At rest you feed it when the needle sinks low enough to notice. Under pressure you notice sooner because life jolts the needle. You feed sooner, feel the jump more sharply against the jolt, and praise the coin more loudly. The coin did nothing different. The jolt made the jump feel larger. Praise followed contrast, not help.
+
+That is why the stress dose feels like the best dose. It is not best. It is most contrasted. The darker the minute, the brighter the brief topping feels. We mistook contrast for cure.
+
+### WHY IT FEELS SO TRUE
+
+If that is true, why does it feel so untrue in the body. Why does the lie hold for twenty years against intelligent men and women who can see through every other sales talk put in front of them.
+
+Because the timing is perfect.
+
+We live most of our smoking day in mild want between doses. We do not call it want. We call it normal. Then a hard minute comes and spikes that want into something sharp. We light and the sharpness drops within seconds. Feeling follows timing. What drops fastest gets the praise. The dose arrives fastest, so the dose gets called the calmer, the helper, the friend in hard times.
+
+Add the second reason it feels true. A smoker under pressure smokes with full attention. He steps away. He stands. He breathes out slowly. He looks at sky or wall for five minutes while no one wants anything from him. Any man given five minutes of standing and slow breathing after a row would settle a fraction. Non-smokers take that same step without a light and settle the same fraction. The pause steadies. The standing steadies. The cold on the cheeks steadies. The dose rode along after and claimed the steadying.
+
+Reverse it and watch it fall apart.
+
+If smoke calmed nerves by nature, the calm would last. It does not last. If smoke solved problems by nature, the desk would clear. It does not clear. If men without smoke shattered under ordinary rows, we would see them shatter daily in every office and kitchen. We see the opposite. They take the call, they put the phone down hard, they stand, they breathe, they go back in. Their shoulders do what yours do, without a tube.
+
+You will raise the strongest objection a smoker can raise, and I want to hear it in your own voice before I answer it.
+
+"That is all very neat, but you were not in my kitchen last Tuesday. You did not hear what was said. You did not feel my chest. That one was different. That one truly needed it."
+
+I thank you for that push, because that push is the whole trap talking in your voice.
+
+Let me ask you about last Tuesday, gently, as one smoker to another.
+
+Was the chest tight before the sharp words, from an hour without a dose, or only after. Did the hand move before you had finished hearing, before thought, the way a hand moves to a bell that has rung a thousand times. Did the first draw soften the words spoken, or soften the gnaw underneath while the words kept ringing in the head all through the second third of the dose. Did you stub and step inside to find the kitchen exactly as loud, the faces exactly as set, the thing to be said still unsaid.
+
+And this. If that one truly handled it, why did the next hour need another, and the hour after another. Does a true handling need repeating twenty times a day for twenty years.
+
+You know the answer because your own day gave it. The chest was already tightened. The hand moved before thought. The words stayed alive in the head through the smoke. The kitchen waited. The handling repeated because nothing was handled.
+
+There is a third reason it feels true, quieter than timing and deeper than habit. We want it to be true. A man under pressure wants one small corner he controls. Bills cannot be paid with a match, but a match can be struck. Deadlines cannot be moved with ash, but ash can be tapped. Children cannot be cooled from the step, but the step can be stood on. While the big things will not move, the small ritual moves exactly when told. Obedience feels like help when nothing else obeys. We loved the obedience and called it care.
+
+I understand that love. I loved the obedient flame in chaotic days. But obedience is not care. A bell obeys when rung and still brings no food. A meter obeys when fed and still holds no money. The dose obeys when lit and still touches no trouble. What obeyed was paper and fire. What stayed was life, waiting to be met by you, as it is met by millions who never lit.
+
+### THE PAPERS ARE STILL THERE
+
+Let me stand beside you at that desk tomorrow, while you smoke as normal, so you can watch the trick from inside.
+
+The call ends badly. Heat in the face. Hand moves. You light. Do not skip it and do not hurry it. Smoke it with attention.
+
+First draw. Notice the shoulders. They drop a fraction. Notice the thought that arrives with the drop: I needed that. Hold that thought lightly, the way you would hold someone else's coat for a minute. Ask, what dropped — the problem, or the tug underneath that had been tightening for an hour.
+
+Second third of the dose. Notice the mind. It is already rehearsing what to say next, replaying the sharp sentence, planning the reply. The problem is fully alive in the head. If the dose took care of it, why is the head still carrying it, line by line, while the ash grows.
+
+Last third. Notice the mouth. Papery. Notice the attention. Gone from the smoke to keys and traffic. You finish because the pattern finishes, not because calm arrived and stayed. You stub and step back inside.
+
+Now look at the desk. Same papers. Same names. Same clock moved seven minutes on. The only thing that changed in seven minutes is that a fading dose was topped and began to fade again. You paid seven minutes and a dose to stand still.
+
+Do that plain check through the day and the tally speaks louder than any lecture.
+
+Mid-morning the screen crowds. Tabs multiply. The inbox fills faster than you clear it. Shoulders tighten. Feet take you to the same door, to the same cold step. The air hits the face. Quiet for a minute. No one wants anything. You light as always and breathe out. Watch the order. The stopping came first. The standing came first. The cold on the cheeks came first. The settling in the chest followed the stopping, not the lighting. The dose rode along after and claimed the settling. The screen waits exactly as crowded. The only settling that happened was the settling that stopping and standing always give, dose or no dose. Mark it in the head while smoking as normal. The pause steadied because you paused, not because you puffed.
+
+Evening the kitchen clangs. Voices rise over tired feet and late food. A sharp sentence lands. Heat in the face again. Out to the step again, lighter again, first draw again, small drop again. Watch the faces through the glass while you stand out there. They are still set. The tiredness is still tired. The thing that needs saying still needs saying, and you will say it better from a clear head than from a topped tug. The dose did not soften the kitchen. It softened the underneath gnaw while the kitchen kept its shape. Mark it while smoking as normal. The trouble stayed, the tug quieted.
+
+Three checks, same shape: tug quieted briefly, problem untouched, return required within the hour. Morning row, crowded screen, evening clang — different troubles, same touch. The dose touches never the trouble. It touches always the fading of the last dose.
+
+That repetition is not boring. That repetition is the proof. A true calmer would meet different troubles differently and leave different marks. This meets every trouble identically and leaves the same mark: brief muting, untouched desk, renewed want. Same coin, same meter, same sink.
+
+And with that sameness comes a new way of hearing your own hand. Yesterday the hand moved and the head said, I need this to cope. Today the hand moves and the head says, there goes the tug calling fast under pressure. You still light as normal. You still finish as normal. But the call arrives labelled. Labelled calls lose half their pull without any wrestle. You watch the papers while the smoke curls. You watch the meter while the needle jumps and begins its familiar sink. Seeing does the leaning before the feet move.
+
+### THE CALM THAT CHARGES INTEREST
+
+That is the storm the calm creates. The dose sells itself as the answer to pressure while ensuring you meet the next pressure already edgy and already needing. A calmer that guarantees the next attack of nerves is not a calmer. It is a lender at brutal interest, handing back a fraction of quiet and collecting hours of want.
+
+See the interest in plain numbers from your own day. One dose buys three or four minutes of muted tug. It collects forty to sixty minutes of building want after. You pay all day to rent minutes. No bank could print such terms and keep customers, yet we kept the account for years because the loan arrived in seconds when the chest was tight, and tight chests do not read contracts.
+
+See the interest in temper. You meet the row part-empty, so you flare a notch higher than your nature. The flare costs you a harsher sentence, a harder face, a longer repair. The dose did not cause the row, but it raised the flare that met the row. Then it sold you the muting of the flare as help. Push and rescue in one paper coat.
+
+See the interest in attention. Between doses the mind thins a fraction. Focus shortens. Patience shortens. Small frictions snag. Under pressure those shortenings show most, exactly when you need your full self. The topped minutes return a crack of clarity, enough to feel the loss was fixed, never enough to restore the steady head you would carry all day without the cycle. You work to pay the loan with the very faculty the loan thins.
+
+Once seen, that lender cannot be unseen. Every so-called stress dose arrives with the same shape — a brief lift out of a low that returns within the hour, asking to be thanked again. The lift is real as a sensation and false as a benefit. It never took you above the steadiness of a man who never started. It only returned you toward that steadiness for minutes, then dropped you back, a little lower, a little sooner.
+
+So I put the verdict in two short lines you can carry onto the step.
+
+It never fixed the pressure. It fed the edginess.
+
+Read them while the pack sits beside you. The first line points to the desk that never moved. The second points to the chest that always needed again. Both are from your own tally, not from me. Your desk reported. Your chest reported. Your clock reported. The papers never moved. The tug always returned.
+
+Keep the rescuer as the dose, never as yourself. There is nothing wrong with you for clinging when hauled gasping to the side. We all cling. The shame was never yours. The grip was. A comfort that will not let go is not comfort. It is holding. A helper that guarantees the next cry for help is not help. It is farming.
+
+### WHAT I ASK WHILE YOU KEEP SMOKING
+
+You may be thinking, if this is true, what must I do today. Must I test myself on the next hard call. Must I prove something on the step and stand there arguing with my own hand.
+
+No. I ask for something far smaller, and I ask it with all the certainty of a man who has watched thousands see this and walk clear.
+
+Keep your pack beside you. Smoke when the pattern says smoke. Change nothing in what you do with your hands today. Change only what you notice with your eyes. Each dose, ask one small question while the smoke is in the air: what did that touch, the trouble or the tug. Let your own desk answer. Your desk will not lie to you.
+
+This is why the reading holds together. Each part leans on the last. You put the old weighing aside and began to check credit on food and pause and company. Now you check credit on pressure, the keystone that seemed to hold the rest up. Check it the same way, while smoking, with marks in the head, not with a wrestle in the chest. The seeing does the leaning before the feet move.
+
+You have already kept the early agreements — mind open, pattern unchanged while we look, bright checking rather than gloom. Keep them now when pressure talks loudest. When the voice says, this one is different, this one truly needs it, answer with eyes, not with argument. Light as normal. Watch the papers. Watch the tug. Let the minute prove itself.
+
+All you have to do is follow all the instructions.
+
+You have felt how light that keeping is. No strain. No standing apart from friends. No staring at clocks. Only eyes while smoking, marks while living, questions while puffing. A child could do it. A tired man at midnight can do it. That lightness is not an accident. It is the method. The trap taught strain. This teaches seeing.
+
+4. FOLLOW ALL THE INSTRUCTIONS
+All you have to do is what this book asks.
+
+**SUMMARY**
+- The taken-care-of feeling after a hard minute is real as a sensation and false as a help.
+- The smoked hit arrives in seconds and thins in minutes, which is why the hand returns within the hour.
+- Pressure stayed on the desk while the tug underneath went quiet briefly and took the praise.
+- The pause, the standing, the slow breath steadied you — the dose stood beside them for the photograph.
+- Non-smokers meet the same rows and settle without smoke, so smoke never owned the settling.
+- Each dose guarantees the next edginess, so the calmer manufactures the storm it claims to still.
+- Checking while smoking as normal — what did that touch, the trouble or the tug — lets your own day prove it.
+```

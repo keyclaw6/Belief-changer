@@ -1,0 +1,2 @@
+REVISE
+HEADER — the draft opens with the workshop header `IN THIS CHAPTER` with bullets `IN THIS CHAPTER / - Bare feet to kettle and cold lino / - A cleared plate and a hot cup held quiet`. Remove the header block entirely; keep the numbered instruction `TRUST YOUR BODY TO BREATHE AND TASTE` plus rationale line, which is not HEADER.
