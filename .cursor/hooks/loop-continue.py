@@ -1,13 +1,8 @@
 #!/usr/bin/env python3
-"""Resume the factory conversation while loop/state.md is IN PROGRESS.
+"""Resume auto-research while loop/state.md is IN PROGRESS.
 
-Cursor analog of pi-goal-x autoContinue on agent_settled. PROGRAM.md stays
-the sequencer. This hook only re-enters the same conversation.
-
-stdin: Cursor stop / subagentStop JSON.
-stdout: {} or {"followup_message": "..."}.
-
-User abort (status=aborted) is a halt — do not fight it.
+Does not tell this conversation to run plan/chapter loops. The factory is a
+Muse Spark 1.3 session (prompts/factory-orchestrator.md).
 """
 from __future__ import annotations
 
@@ -69,43 +64,39 @@ def collect_states(payload: dict) -> list[dict]:
     return out
 
 
-def main() -> None:
-    raw = sys.stdin.read()
+def run(raw: str) -> str:
     try:
         payload = json.loads(raw) if raw.strip() else {}
     except json.JSONDecodeError:
-        print("{}")
-        return
+        return "{}"
     if payload.get("status") == "aborted":
-        print("{}")
-        return
+        return "{}"
     active = next((s for s in collect_states(payload) if s.get("status") == "IN PROGRESS"), None)
     if not active:
-        print("{}")
-        return
-    event = payload.get("hook_event_name") or ""
-    if event == "subagentStop":
-        msg = (
-            f"The factory orchestrator subagent stopped while loop/state.md is "
-            f"IN PROGRESS (iteration {active['iter']}; last: {active['last']}; "
-            f"next: {active['next']}). Resume from the furthest on-disk marker "
-            f"(PROGRAM §0). Do not restart completed units. Do not wait for a "
-            f"human continue. A multi-chapter runner is one unit: wait for "
-            f"process exit, not the first OK line. Do not background "
-            f"write_replicate.py or judge_replicate.py."
-        )
-    else:
-        msg = (
-            f"loop/state.md is IN PROGRESS (iteration {active['iter']}). "
-            f"You ended a turn between factory units. Last completed: "
-            f"{active['last']}. Next: {active['next']}. Read PROGRAM.md §0, "
-            f"confirm markers, continue from the furthest unit. Do not rewrite "
-            f"completed units. Do not wait for a human continue. Wait for each "
-            f"runner process to exit (last chapter marker), not the first OK "
-            f"line. Finish through decision.md + results.tsv + campaign records."
-        )
-    print(json.dumps({"followup_message": msg}))
+        return "{}"
+    msg = (
+        f"loop/state.md is IN PROGRESS (iteration {active['iter']}). "
+        f"Last: {active['last']}. Next: {active['next']}. "
+        "This conversation is auto-research, not the book factory. "
+        "The factory is a Muse Spark 1.3 conversation "
+        "(prompts/factory-orchestrator.md / OpenCode --agent factory). "
+        "If a factory session or leftover write_replicate.py is live: idle. "
+        "Do not run plan-writer, plan-reviewer, or chapter loops here. "
+        "When FACTORY DONE (chapter markers on disk), start that subject's judge. "
+        "Do not start a second factory orchestrator."
+    )
+    return json.dumps({"followup_message": msg})
+
+
+def main() -> None:
+    print(run(sys.stdin.read()))
 
 
 if __name__ == "__main__":
-    main()
+    if sys.argv[1:] == ["self-check"]:
+        assert run('{"status":"aborted"}') == "{}"
+        assert run("{") == "{}"
+        assert "book factory" in run("{}") or run("{}") == "{}"
+        print("ok")
+    else:
+        main()

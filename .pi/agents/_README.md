@@ -1,16 +1,16 @@
-# `.pi/agents/` — the pi-harness adapter
-
-These files are the **pi coding agent's adapter** for the auto-research loop's
-roles. They are harness-specific plumbing, not the loop's definition.
+These files are the **pi coding agent's adapter** for factory roles and the
+auto-research loop. They are harness-specific plumbing, not the loop's
+definition.
 
 - The **harness-neutral source of truth** for each role is its contract prompt
-  under `prompts/`, `loop/prompts/`, or `loop/judges/`, plus the runbook
+  under `prompts/`, `loop/prompts/`, or `loop/judges/`. The factory sequencer
+  is `prompts/factory-orchestrator.md`. The auto-research runbook is
   `loop/PROGRAM.md`.
 - Each file here is a thin pi wrapper: it points at that contract prompt and
   pins a model (the frontmatter `model:`), which is pi's spawn-time binding for
-  the role. Muse Spark roles pin OpenCode Zen
-  `opencode/muse-spark-1.2-contributor-free`. Per-call fallback to Vercel
-  `vercel/meta/muse-spark-1.2-contributor` is `.pi/provider-fallback.json`
+  the role. Muse Spark roles pin
+  `opencode-go/muse-spark-1.3-contributor`. Per-call fallback to Vercel
+  `vercel/meta/muse-spark-1.3-contributor` is `.pi/provider-fallback.json`
   (extension `pi-provider-fallback` in `.pi/settings.json`) plus PROGRAM §1.
   Pi reads that JSON only when `PI_PROVIDER_FALLBACK_CONFIG` points at it
   (otherwise it looks in `~/.pi/agent/extensions/provider-fallback.json`).
@@ -23,8 +23,8 @@ roles. They are harness-specific plumbing, not the loop's definition.
 See `loop/HARNESS.md` for the role→capability map, the spawn contract, and how
 model precedence (config vs this adapter) is resolved.
 
-Conversation robustness for the **orchestrator** (factory lead and research
-lead) is `npm:pi-goal-x` in `.pi/settings.json`, not these role wrappers.
-`/sisyphus-direct` for one PROGRAM iteration; `/goal-direct` for a research
-lead. Continuation is on `agent_settled`. Do not put a continue-loop into
-`prompts/` or these role files.
+Conversation robustness for the **factory orchestrator** is a Muse Spark 1.3
+session (`factory-orchestrator.md`, OpenCode `--agent factory`, or
+`/sisyphus-direct` on that prompt). Auto-research (`loop/PROGRAM.md`) is a
+separate conversation. Do not put a continue-loop into `prompts/` or these
+role files.

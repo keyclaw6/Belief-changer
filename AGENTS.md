@@ -45,10 +45,29 @@ Write no documentation by default. A doc must be load-bearing (an agent cannot c
 An explicit founder request to run the loop authorizes iterations. `loop/PROGRAM.md` is the sole operational runbook. Every iteration writes and judges two independent books from the same plan (`replicate-a` and `replicate-b`); KEEP requires the targeted cluster to improve in both. `loop/config.yaml` holds the founder's *preferred* role defaults (models are
 founder-only; remaining parameters are the loop's tuning surface); `loop/HARNESS.md` is the role→capability map and per-harness binding. During a campaign, only files the runbook marks editable may change, inside the iteration's worktree. Judges, trace analysis, hypothesizing, plan review, writer, research, and planner all run as spawned sub-agents in whatever harness is running the loop (pi's adapter is `.pi/agents/*.md`). A role call carries only its role prompt and listed inputs: no hosted agent, no host system prompt. Calibration candidates produced by the loop use the runbook's judge gate and are not published or advanced as accepted book chapters.
 
-## Agent-conversation lock (factory and research)
-The **factory** (plan → two books → judges) and the **research** stage are agent conversations. A coding-agent session is the orchestrator: it spawns each role, waits for that role's on-disk marker, then starts the next unit in the **same** session. Role runners (`plan_write.py`, `write_replicate.py`, `judge_replicate.py`, `web_tools.py`) are tools that conversation calls. They are not the orchestrator.
+## Agent-conversation lock (factory vs auto-research)
 
-**Forbidden:** replacing that conversation with a hidden process the agent cannot inspect or change (Makefile, `run_factory.py`-style exit-and-sequence drivers). **Allowed:** Temporal or similar only as a thin durability layer that resumes the same agent conversation, with `loop/PROGRAM.md` still the sole sequencer. Robustness belongs in the **harness** (pi 0.84.x: `pi-goal-x` with `/goal-direct` or `/sisyphus-direct` — continuation on `agent_settled`; Cursor: `.cursor/hooks/loop-continue.py` on `stop`/`subagentStop` while `loop/state.md` is `IN PROGRESS` — do not detach the factory into a background Task and end the parent turn). Do not encode the continue-loop into factory prompts or skills. `npm:pi-agent-goal` is the same idea but peer-blocked on pi ≥0.81.
+The **factory** is a Muse Spark 1.3 contributor conversation
+(`prompts/factory-orchestrator.md`): plan-writer ↔ plan-reviewer until
+`fit to write from`, then chapter-writer ↔ chapter-reviewer until the book
+is done. Spawn each role, wait for that role's on-disk marker, then the next
+unit in the **same** factory session. Role runners (`plan_write.py`,
+`write_replicate.py`, `web_tools.py`) are tools that conversation may call.
+They are not the factory.
+
+The **auto-research loop** (`loop/PROGRAM.md`) is a different conversation:
+hypothesize, apply a factory-file change, **start** one factory session per
+subject, judge (`judge_replicate.py`), KEEP/REVERT. A Cursor Grok chat may
+run auto-research. It must not itself run the plan loop or the chapter loops.
+
+**Forbidden:** replacing either conversation with a hidden process the agent
+cannot inspect or change (Makefile, `run_factory.py`-style exit-and-sequence
+drivers). **Allowed:** Temporal or similar only as thin durability that
+resumes the same agent conversation. Robustness belongs in the **harness**
+(pi: `pi-goal-x` `/sisyphus-direct` on the factory prompt or on PROGRAM;
+OpenCode `--agent factory`; Cursor auto-research:
+`.cursor/hooks/loop-continue.py` — do not make that hook drive chapters).
+Do not encode the continue-loop into factory prompts or skills.
 
 ## Dependencies
 Understand or recreate: prefer dependencies fully reasoned about in-repo; reimplement small subsets over adopting frameworks. The auto-research loop is **harness-neutral**: it runs in any agent harness that can read this repo, spawn a sub-agent per role, write files, and run a repo script. Model/route bindings are harness-specific; `loop/config.yaml` holds the founder's *preferred* role defaults (models and routes are founder-only), and `loop/HARNESS.md` defines the role→capability map, the spawn contract, and per-harness adapters (the pi coding agent's adapter is `.pi/agents/*.md`). Credentials always come from environment variables / the harness's own auth; no provider keys belong in this repo. On a route/quota/unavailable failure the executor retries that unit once on the role's coded fallback (Muse Spark: OpenCode Go contributor → Zen contributor-free → Vercel contributor), then stops and calls the founder if all routes fail.

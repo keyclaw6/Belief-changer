@@ -102,9 +102,13 @@ and escalate to the founder. Never swap contributor → non-contributor
 fallback, or route change.
 
 Spawned roles (role → contract prompt):
+- `factory-orchestrator` — `prompts/factory-orchestrator.md` (Muse Spark 1.3
+  conversation: plan-writer ↔ plan-reviewer until `fit to write from`, then
+  chapter loops until the book is done). Extractable from this auto-research
+  loop.
 - `researcher` — `prompts/research-agent.md` (lead) + research sub-agents
 - `plan-writer`, `plan-reviewer` — `prompts/master-plan-skill-v2.md` /
-  `prompts/master-plan-reviewer-v2.md`
+  `prompts/master-plan-reviewer-v2.md` (spawned **by the factory orchestrator**)
 - `chapter-writer` — `prompts/chapter-writer.md`
 - `chapter-reviewer` — `prompts/chapter-reviewer.md` (A1: review→rewrite until ACCEPT or K=3)
 - `judge` — `loop/judges/*.md`
@@ -280,16 +284,17 @@ Rerun the changed stage and every downstream stage **through full chapter
 generation, twice**. Reuse only artifacts upstream of the change. A research or
 planning hypothesis is never judged without regenerated chapters.
 
-**Two-subject pair (mandatory).** After each subject's accepted plan is in
-hand, write and judge one book per subject from those inputs (master plan,
-chapter cards, style guide). Research and planning run once per subject
-(reuse rule below). The two writes are `quit-sugar` and `quit-smoking` in
-parallel (founder authorized, 2026-09-05):
+**Two-subject pair (mandatory).** Start one Muse Spark 1.3 factory
+orchestrator conversation per subject (`prompts/factory-orchestrator.md`).
+Each conversation owns that subject's plan loop then chapter loops. Research
+runs once per subject (reuse rule below). The two factory sessions are
+`quit-sugar` and `quit-smoking` in parallel (founder authorized, 2026-09-05):
 
-1. Write both subjects concurrently, each into
+1. Start both factory conversations concurrently. Each writes into
    `loop/iterations/NNN/<slug>/replicate-a/chapters/` (chapters 01 → last).
    Env: `SLUG`, `ITER`, `REPLICATE=a`. No extra git worktrees.
-2. Judge a subject when that write's runner exits. One judge runner at a
+2. Judge a subject when that factory conversation prints `FACTORY DONE`
+   (chapter markers on disk). One judge runner at a
    time. Env: `SLUG`, `REF_DIR`, `ALIGNMENT`, `MOVES` from `loop/subjects.md`.
 3. Live `production-books/<slug>/chapters/` stays untouched until Step 6
    (KEEP copies that subject's replicate-a).
@@ -361,7 +366,13 @@ research artifacts and copy them into each replicate's `traces/research/`.
   integrate it and re-dispatch only what's still thin; never re-mine from zero
   just because the layout predates `banks/`.
 
-**Stage: Planning** — the orchestrator spawns the `plan-writer` sub-agent
+**Stage: Factory (plan + chapters)** — spawn one Muse Spark 1.3
+`factory-orchestrator` conversation per subject (`prompts/factory-orchestrator.md`).
+That conversation owns the plan loop and the chapter loops. Auto-research
+does not itself call `plan-writer`, `plan-reviewer`, or `chapter-writer`.
+Wait for `FACTORY DONE` (and the on-disk chapter markers). Then judge.
+
+**Stage: Planning** — the factory orchestrator spawns the `plan-writer` sub-agent
 (follows `prompts/master-plan-skill-v2.md`; the initial call carries exactly
 four file inputs — style guide, brief, lived-experience, scientific-evidence
 — no reference contamination), then the `plan-reviewer` sub-agent
@@ -371,7 +382,7 @@ to a fresh `plan-writer` call, then dispatches a fresh reviewer; repeat until
 `master-plan-review.md` ends `fit to write from`. When the accepted plan
 changed, rebuild `loop/reference-alignment.md` before judging.
 
-**Stage: Writing (sequential, chapter 01 → last)** — the orchestrator spawns
+**Stage: Writing (sequential, chapter 01 → last)** — the factory orchestrator spawns
 the `chapter-writer` sub-agent one chapter at a time, in order, until the
 book is complete. Each spawn receives exactly four inputs, with
 `prompts/chapter-writer.md` as the contract:
@@ -389,7 +400,8 @@ only). Repeat review → rewrite until `ACCEPT` or three rewrites (K=3). After
 the third rewrite no further review runs; the third rewrite is the chapter.
 Traces per chapter: `draft.md`, `review-01.md`, `rewrite-prompt-01.md`,
 `rewrite-01.md`, `review-02.md`, … `rewrite-03.md`. `response.md` = final
-text. Cursor: `write_replicate.py`. Output:
+text. The factory conversation may call `write_replicate.py` as a bundled
+chapter-loop **tool** when it cannot spawn Muse chapter roles. Output:
 `loop/iterations/NNN/<slug>/replicate-a/chapters/chapter-NN.md`
 
 **Trace format (mandatory):**

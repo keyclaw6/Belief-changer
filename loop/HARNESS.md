@@ -27,6 +27,7 @@ change. A harness substitutes what it has, per role:
 
 | Role | Capability the role needs | Config default |
 |---|---|---|
+| factory-orchestrator | agent conversation that loops plan-writer ↔ plan-reviewer then chapter-writer ↔ chapter-reviewer | Muse Spark 1.3 contributor (OpenCode Go primary; same chain as the writer) |
 | chapter-writer | strongest prose + long context, no completion cap | Muse Spark 1.3 contributor (OpenCode Go primary; Zen contributor-free then Vercel contributor fallback) |
 | plan-writer | strong structured reasoning, long coherent output | Muse Spark 1.3 contributor (OpenCode Go primary; Zen contributor-free then Vercel contributor fallback) |
 | hypothesizer | high reasoning, bounded multi-change precision under the convergence budget | Claude Fable 5.1 (harness sub-agent; Cursor Task) |
@@ -66,17 +67,21 @@ intended-vs-actual mismatch is logged as a **confound**, not read as a result.
 
 | Harness | Role adapter | Spawn mechanism | Notes |
 |---|---|---|---|
-| **pi coding agent** | `.pi/agents/*.md` (frontmatter `model:`) | the `subagent` tool | endpoint/auth/route bindings are the `[PI BINDING]` fields in `loop/config.yaml`. Muse Spark roles pin `opencode-go/muse-spark-1.3-contributor` (OpenCode Go Responses API, `OPENCODE_GO_API_KEY`). Cursor HTTP (`muse_client.py`) is Go contributor (`OPENCODE_GO_API_KEY`) → Zen contributor-free (`OPENCODE_API_KEY`) → Vercel contributor (`AI_GATEWAY_API_KEY`). 403/401/402 fall through immediately; 429 retries up to 4 × 90s on that route, then next. Never rotate the Go key onto Zen. Official pi has no native fallback chain; this repo installs `pi-provider-fallback` and `pi-goal-x` project-locally (`.pi/settings.json`). Export `PI_PROVIDER_FALLBACK_CONFIG` to `.pi/provider-fallback.json` so the extension reads the repo chain (Vercel contributor enabled as the other-provider fallback; OpenCode / OpenCode Go same-provider fallbacks stay empty). The plugin is session-sticky; each chapter is a fresh spawn, so the next unit still starts on Go. PROGRAM §1 is the harness-neutral retry if the extension does not fire. Preflight runs via `scripts/loop-runner/run_preflight.sh`. Hypothesizer: `opencode/claude-fable-5-1:high` — verify the pi opencode provider exposes this id before a pi run; Cursor is the active harness. Factory and research stay one pi conversation — see **Conversation robustness** below. |
+| **pi coding agent** | `.pi/agents/*.md` (frontmatter `model:`) | the `subagent` tool | Factory conversation: `.pi/agents/factory-orchestrator.md` on Muse Spark 1.3 (`/sisyphus-direct` on `prompts/factory-orchestrator.md`). Auto-research is a separate PROGRAM conversation that starts factory sessions. Muse Spark roles pin `opencode-go/muse-spark-1.3-contributor`. Export `PI_PROVIDER_FALLBACK_CONFIG` to `.pi/provider-fallback.json`. Preflight: `scripts/loop-runner/run_preflight.sh`. Hypothesizer: `opencode/claude-fable-5-1:high`. |
 | Hyperagent | spawn roles per the capability table above | the `task` tool | map each role to a model the workspace can reach; no `.pi/` files used; run preflight by spawning the judge role directly against `loop/preflight/inputs/` per PROGRAM §2 |
 | opencode | judges, trace-analyzer, plan-reviewer, research sub-agents, and (via the opencode harness's own reach) the `task` tool | the `task` sub-agent tool, pinned to `opencode-go/muse-spark-1.3-contributor` for plan-reviewer/trace-analyzer/research (`alibaba-token-plan/deepseek-v4-flash-0731` failed judge repeatability 2026-08-17 — historical note only) | clean-context sub-agent per role call holding only its role prompt + the exact named inputs; no `.pi/` files used; run preflight by spawning the judge role directly against `loop/preflight/inputs/` per PROGRAM §2. Writer/plan-writer/plan-reviewer: primary `opencode-go/muse-spark-1.3-contributor` at `https://opencode.ai/zen/go/v1/responses`; mid-chain Zen `muse-spark-1.3-contributor-free`; last fallback Vercel `meta/muse-spark-1.3-contributor`. |
-| Cursor | judges spawned as fresh `agent --model composer-2.5` processes; Muse Spark writer/plan-writer/plan-reviewer/chapter-reviewer via OpenCode Go then Zen contributor-free then Vercel HTTP; hypothesizer as a fresh Cursor Task (`claude-fable-5-1-thinking-high`) | Cursor `agent` CLI / Task spawn | PROGRAM §2 preflight is spawned directly against `loop/preflight/inputs/` (do not run `run_preflight.sh`). Durable runners: `scripts/loop-runner/write_replicate.py` (A1: draft→review→rewrite until ACCEPT or K=3), `judge_replicate.py` (four chapter lanes + book-arc; `SLUG`/`REF_DIR`/`ALIGNMENT`/`MOVES`), `census_judgments.py` (not `/tmp`). Start each runner in its own tmux session; wait on the pane PID with `tail --pid`. Do not `sleep 60` and do not use `tmux wait-for`. Write both subjects at once (`w$I-$SLUG`); judge a subject when its write exits. One judge runner at a time. See `loop/subjects.md`. Judges run 10-wide inside the runner (4 waves of 40); one judge runner at a time. Writer/plan-writer/chapter-reviewer: Go `muse-spark-1.3-contributor` (`OPENCODE_GO_API_KEY`) → Zen `muse-spark-1.3-contributor-free` (`OPENCODE_API_KEY`) → Vercel `meta/muse-spark-1.3-contributor` (`AI_GATEWAY_API_KEY`). 403/401/402 fall through immediately; 429 retries up to 4 × 90s on that route, then next. Never the non-contributor alias. Never rotate the Go key onto Zen. **Hypothesizer spawn:** a fresh Cursor Task, model `claude-fable-5-1-thinking-high`. Prompt = `loop/prompts/hypothesizer.md` verbatim, then the three PROGRAM input paths, then: "Read-only. Do not edit any file. Return the complete hypothesis as your final message. Nothing else." The orchestrator writes `loop/iterations/NNN/hypothesis.md` unchanged and sidecar `hypothesis-metadata.json` `{model, harness, spawn: "cursor-task"}`. A Cursor Task carries Cursor's system prompt, exactly as `agent --model composer-2.5` judges already do — accepted harness baggage, not a per-iteration confound. **Conversation robustness:** this live conversation is the orchestrator. Durability is `.cursor/hooks.json` `stop` / `subagentStop` (`.cursor/hooks/loop-continue.py`) — Cursor's `agent_settled`: while `loop/state.md` is `IN PROGRESS` and the turn `completed`, inject PROGRAM §0 resume. User `aborted` is a halt. After a runner **exits**, start the next unit here (`needs changes first` → next plan-write; last chapter written → snapshot). Do not spawn a background Task and end the parent turn. Do not `block_until_ms: 0` a multi-chapter runner and AwaitShell the first OK line — that unit is the process exit. Do not add a process driver. |
+| Cursor | **Factory:** a Muse Spark 1.3 `factory` / `factory-orchestrator` conversation (OpenCode `opencode run --agent factory` or pi with `.pi/agents/factory-orchestrator.md`). **Auto-research:** this Cursor conversation hypothesizes, applies factory-file changes, starts one factory conversation per subject, then judges (`judge_replicate.py`, composer-2.5). It does **not** itself run plan-writer ↔ plan-reviewer or chapter loops. Hypothesizer: Cursor Task `claude-fable-5-1-thinking-high`. | Cursor `agent` CLI / Task spawn + OpenCode/pi factory session | PROGRAM §2 preflight is spawned directly against `loop/preflight/inputs/` (do not run `run_preflight.sh`). Factory start (one book): `dotenvx run -f .env -- opencode run --dir "$PWD" --agent factory --model opencode-go/muse-spark-1.3-contributor --variant xhigh --auto --title "factory $SLUG" "Read prompts/factory-orchestrator.md. SLUG=$SLUG. Research is on disk. Plan loop then chapter loops until FACTORY DONE."` Start both subjects as two factory sessions (`f$I-$SLUG`). Judge a subject when that factory session prints `FACTORY DONE` (or leftover `write_replicate.py` exits). One judge runner at a time. See `loop/subjects.md`. Writer/plan-writer/chapter-reviewer **inside** the factory conversation: Go `muse-spark-1.3-contributor` → Zen `muse-spark-1.3-contributor-free` → Vercel `meta/muse-spark-1.3-contributor`. **Hypothesizer spawn:** a fresh Cursor Task, model `claude-fable-5-1-thinking-high`. **Conversation robustness:** auto-research may live in this Cursor chat; the factory is a different Muse Spark conversation. Do not make this Grok chat the plan/chapter loop. Thin durability for auto-research: `.cursor/hooks/loop-continue.py` on `stop` / `subagentStop` while `loop/state.md` is `IN PROGRESS`. User `aborted` is a halt. |
 
 ## Conversation robustness (factory and research)
 
-The orchestrator is an **agent conversation**. Role runners are tools that
-conversation starts; they do not replace it. Do not add a hidden process
-driver. Temporal (or similar) is allowed only as thin durability that
-resumes this same conversation; `loop/PROGRAM.md` remains the sequencer.
+The **factory** is a Muse Spark 1.3 agent conversation (`prompts/factory-orchestrator.md`).
+The **auto-research loop** is a different conversation (`loop/PROGRAM.md`):
+hypothesize, apply, start the factory, judge, KEEP/REVERT. Role runners are
+tools a conversation starts; they do not replace it. Do not add a hidden
+process driver (`run_factory.py`). Temporal (or similar) is allowed only as
+thin durability that resumes the same conversation; `loop/PROGRAM.md`
+remains the auto-research sequencer, and `prompts/factory-orchestrator.md`
+remains the factory sequencer.
 
 **pi (this repo's 0.84.x binding):** `npm:pi-goal-x` (peers `>=0.83 <0.85`).
 `/goal-direct` and `/sisyphus-direct` create a focused goal with autoContinue
@@ -89,10 +94,14 @@ export PI_PROVIDER_FALLBACK_CONFIG="$(pwd)/.pi/provider-fallback.json"
 pi
 ```
 
-- Factory (ordered PROGRAM units): `/sisyphus-direct` — run one iteration of
-  `loop/PROGRAM.md` to KEEP or REVERT. Spawn each role as a fresh sub-agent;
-  wait for that unit's on-disk marker; then the next unit. Do not exit while
-  `loop/state.md` is `IN PROGRESS`.
+- Factory (one book: plan loop then chapter loops): a Muse Spark 1.3 session
+  with `prompts/factory-orchestrator.md` (OpenCode `--agent factory`, or pi
+  `.pi/agents/factory-orchestrator.md` + `/sisyphus-direct`). Spawn each role
+  as a fresh sub-agent; wait for that unit's on-disk marker; then the next
+  unit. Do not exit while the book is unfinished.
+- Auto-research (PROGRAM iteration: hypothesize → factory → judge → KEEP):
+  `/sisyphus-direct` on `loop/PROGRAM.md`. That conversation starts factory
+  sessions; it does not itself write chapters.
 - Research (open-ended until artifacts exist): `/goal-direct` — execute
   `prompts/research-agent.md` as research lead. Spawn `.pi/agents/researcher.md`
   miners in parallel; no search/fetch ceilings; stop only when the accepted
@@ -104,30 +113,27 @@ conversation-goal design but peer-blocked on pi ≥0.81 (`<0.81` ceiling).
 Fallback if `pi-goal-x` cannot load: `npm:@narumitw/pi-goal` (also
 `agent_settled`).
 
-**Cursor:** this conversation is the orchestrator. Do not detach the factory
-into a background Task and stop. Start each runner in its own tmux session so
-a dropped tool stream does not kill the writer or judge. `$W` = iteration
-worktree, `$I` = NNN, `$r` = a|b:
+**Cursor:** auto-research may live in this conversation. The factory is a
+Muse Spark 1.3 session — start it, wait for `FACTORY DONE`, then judge.
+Do not run plan/chapter loops here. Start each factory session in its own
+tmux session (`f$I-$SLUG`). `$W` = iteration worktree, `$I` = NNN:
 
 ```bash
-tmux new -d -s w$I-$SLUG "cd $W && dotenvx run -f .env -- env BC_REPO=$W ITER=$I SLUG=$SLUG REPLICATE=a \
-  python3 scripts/loop-runner/write_replicate.py >> loop/iterations/$I/write-$SLUG.log 2>&1"
-pid=$(tmux list-panes -t "w$I$r" -F '#{pane_pid}' 2>/dev/null)
+tmux new -d -s f$I-$SLUG "cd $W && dotenvx run -f .env -- opencode run --dir $W \
+  --agent factory --model opencode-go/muse-spark-1.3-contributor --variant xhigh --auto \
+  --title factory-$I-$SLUG \
+  \"Read prompts/factory-orchestrator.md. SLUG=$SLUG ITER=$I REPLICATE=a. Research is on disk. Plan loop then chapter loops until FACTORY DONE.\" \
+  >> loop/iterations/$I/factory-$SLUG.log 2>&1"
+pid=$(tmux list-panes -t "f$I-$SLUG" -F '#{pane_pid}' 2>/dev/null)
 [ -n "$pid" ] && tail --pid="$pid" -f /dev/null
 ```
 
-Same pattern for `judge_replicate.py` (`j$I$r`). `tail --pid` blocks until that
-shell exits, which is when the runner process exits — last chapter written or
-`PANEL DONE`. No sleep loop. Do not use `tmux wait-for` (a signal is consumed
-by the first waiter; a resumed wait blocks forever). On resume: if the session
-is gone, skip the wait and read markers; if it is still up, take the pane PID
-and `tail --pid` again. Then check markers: chapter files in
-`replicate-$r/chapters/`, last log line `OK chapter-NN` or `PANEL DONE`.
-Judges run 10-wide inside one runner; one judge runner at a time. Thin
-durability: `.cursor/hooks/loop-continue.py` on `stop` and `subagentStop`
-re-enters this conversation while `loop/state.md` is `IN PROGRESS` (skip
-`aborted`). That is the Cursor binding of pi's `agent_settled`. The founder
-can walk away; a user abort still halts.
+Same wait pattern for `judge_replicate.py` (`j$I-$SLUG`). `tail --pid` blocks
+until that shell exits. No sleep loop. Do not use `tmux wait-for`. Thin
+durability for auto-research: `.cursor/hooks/loop-continue.py` on `stop`
+and `subagentStop` re-enters this conversation while `loop/state.md` is
+`IN PROGRESS` (skip `aborted`). It must **not** tell this chat to write
+chapters. The founder can walk away; a user abort still halts.
 
 **Preflight is harness-coupled:** judge repeatability depends on the model and
 sampling, so re-run preflight when the *harness or model* changes, not only

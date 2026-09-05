@@ -6,9 +6,9 @@
 - **Stage:** Writing
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
-- **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 034 KEEP §B4; 035 PRIMARY smoking factory-speech via §B5 op 9)
-- **Last completed unit:** 035 hypothesis applied (§B5 permission paradox). Dual-subject writes in progress (sugar CH-01–06; smoking CH-01–08).
-- **Next unit:** 035 writes. KEEP if smoking factory-speech 12→≤8 and sugar 6 does not rise above band.
+- **Worktree:** none (running from `cursor/factory-instrument-halt-a530`). Factory is a Muse Spark 1.3 conversation (`prompts/factory-orchestrator.md`), not this Cursor chat. 035 leftover `write_replicate.py` may still be live; do not start a factory session on top of it.
+- **Last completed unit:** 035 hypothesis applied. This conversation stopped driving plan/chapter loops.
+- **Next unit:** Auto-research waits for leftover 035 writes or a Muse factory `FACTORY DONE`, then judges. Do not run plan/chapter loops in this chat.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -17,7 +17,7 @@
 - Founder override of PROGRAM §5 five-no-KEEP stop: write `convergence-report.md` if it fires, then **continue** toward 040.
 - North Star (census D=0 both books) is a success halt — record it and stop. Do not invent a hypothesis.
 - Chapter reviewer and anti-slop are **AUTHORIZED**. 025 BASELINE, 026 KEEP, 027 KEEP, 030 KEEP, 031 KEEP recorded. 028–029 INCONCLUSIVE.
-- This parent thread owns the factory. Heartbeat `loop-belief-changer-factory-resume`. Do not start a second orchestrator.
+- This parent thread is **auto-research**, not the book factory. Factory = Muse Spark 1.3 conversation (`prompts/factory-orchestrator.md`).
 
 ## Journal
 
@@ -69,3 +69,4 @@
 | 2026-09-05 18:03 | Sugar CH-02 CAP 4896/5200. Smoking CH-03 ACCEPT 4578/4500 (2 rounds). Sugar CH-03 / smoking CH-04 in A1. | rest of 035 writes |
 | 2026-09-05 18:18 | Sugar CH-03 ACCEPT 3655/3800. Smoking CH-04 CAP 4243/4500, CH-05 ACCEPT 5190/5000. Sugar CH-04 / smoking CH-06 in A1. | rest of 035 writes |
 | 2026-09-05 18:51 | Sugar CH-04–06 (CH-06 ACCEPT). Smoking CH-06–08 ACCEPT. Sugar CH-07 / smoking CH-09 in A1. Both Go. | rest of 035 writes |
+| 2026-09-05 19:10 | Founder: this chat is not the factory. Factory = Muse Spark 1.3 conversation (plan loop then chapter loops). | do not drive writes here |

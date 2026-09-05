@@ -9,11 +9,13 @@ iteration (replicate-a). Founder 2026-09-05: K1.
 | `quit-sugar` | `calibration/reference/gsbs` | `loop/reference-alignment-quit-sugar.md` | `loop/reference-moves-quit-sugar.md` |
 | `quit-smoking` | `calibration/reference/easyway-smoking` | `loop/reference-alignment-quit-smoking.md` | `loop/reference-moves-quit-smoking.md` |
 
-Write:
+Write (auto-research starts a factory conversation per subject; it does not
+itself write chapters):
 
 ```bash
-dotenvx run -f .env -- env BC_REPO="$PWD" ITER=NNN SLUG=quit-sugar REPLICATE=a \
-  python3 -u scripts/loop-runner/write_replicate.py
+dotenvx run -f .env -- opencode run --dir "$PWD" --agent factory \
+  --model opencode-go/muse-spark-1.3-contributor --variant xhigh --auto \
+  "Read prompts/factory-orchestrator.md. SLUG=quit-sugar ITER=NNN REPLICATE=a. Research is on disk. Plan loop then chapter loops until FACTORY DONE."
 ```
 
 Judge:
