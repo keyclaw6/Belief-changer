@@ -25,7 +25,7 @@ CARD_SPLIT = re.compile(r"\n(?=(?:#{1,3}\s+|\*\*)(?:CH-|C-)\d{1,2}\s+—)")
 CARD_HEAD = re.compile(r"(?:#{1,3}\s+|\*\*)(?:CH-|C-)(\d{1,2})\s+—")
 FINDING_HEAD = re.compile(
     r"^(JOB|MANTRA|INSTRUCTION|ID|LENGTHEN|SHORTEN|HEADER|STOPPED-SHORT|"
-    r"UNASSIGNED-REFRAIN|RESERVED-REACH|OVERCLAIM)\b",
+    r"UNASSIGNED-REFRAIN|RESERVED-REACH|RE-ARGUMENT|OVERCLAIM)\b",
     re.I | re.M,
 )
 

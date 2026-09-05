@@ -2,13 +2,13 @@
 
 ## Position
 
-- **Iteration:** 035
-- **Stage:** Recorded
+- **Iteration:** 036
+- **Stage:** Factory running
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`). Factory is Muse Spark 1.3; this chat is auto-research only.
 - **Last completed unit:** 035 QUANTIFY. Smoking factory-speech 12→3; sugar 6→8. Restored: no. §B5 op 9 stays.
-- **Next unit:** 036 hypothesizer. Then apply and start Muse factory sessions — do not write chapters in this chat.
+- **Next unit:** 036 Muse factory sessions (quit-sugar + quit-smoking). Hypothesis applied: chapter-reviewer `RE-ARGUMENT`. Do not write chapters in this chat.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -72,3 +72,4 @@
 | 2026-09-05 19:10 | Founder: this chat is not the factory. Factory = Muse Spark 1.3 conversation (plan loop then chapter loops). | do not drive writes here |
 | 2026-09-05 19:38 | Leftover 035 writes DONE. Sugar 55356w 13/13. Smoking 56649w 14/14. I-02 present. Start smoking panel. | j035-quit-smoking |
 | 2026-09-05 19:55 | 035 QUANTIFY. Smoking factory-speech 12→3; sugar 6→8. Restored: no. | 036 hypothesizer |
+| 2026-09-05 20:20 | 036 hypothesis applied: reviewer `RE-ARGUMENT` (journey 15/16). Plan reuse. Start Muse factory sessions. | f036 both subjects |

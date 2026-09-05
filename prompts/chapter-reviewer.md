@@ -29,6 +29,7 @@ Then at most 7 findings. Each finding is one of:
 - `STOPPED-SHORT` — the card's primary job is argued but never landed as a flat verdict before SUMMARY. The reader can still hold the entering belief. Quote the missing landing.
 - `UNASSIGNED-REFRAIN` — a non-mantra phrase recurs ≥3× verbatim. Name the phrase and the count. Subtract repeats; do not invent a new mantra.
 - `RESERVED-REACH` — the draft performs a later chapter's primary job. Name that later card and cut the overreach to at most one sentence.
+- `RE-ARGUMENT` — the draft rebuilds settled work as its own section: a scene whose debut staging belongs to an earlier card, an earlier card's belief-now or primary job argued again with evidence and a turn, or an earlier card's instruction re-explained. Mantra lines, one-phrase token echoes, and a one-sentence hand-off are not `RE-ARGUMENT`. Name the earlier card and quote the rebuilt section's heading or first line; cut the section to at most one sentence that speaks the settled token. If that cut leaves the chapter below 0.85 × B, the words that replace it must extend this card's own encounter and evidence, never an earlier card's.
 - `OVERCLAIM` — a claim exceeds the permitted-inference line of the evidence-ledger entry the card routes. Quote the overclaim and the bound. The writer must speak the bound; never print the ledger ID or grade in prose.
 
 No other finding types. No style notes. No "sounds like AI." No comparison
@@ -37,7 +38,7 @@ to any other book. No warmth, tone, or voice coaching.
 `ACCEPT` only when every check above is fine (length inside ±15% of B, job
 done and stopped and landed, assigned mantras/instructions verbatim, IDs
 resolved, no `HEADER`, no unassigned refrain, no reserved-later job, no
-overclaim).
+re-argument, no overclaim).
 
 `REVISE` when any check fails. List the findings. Be specific: quote the
 missing job, the missing wording, or the overclaim.
