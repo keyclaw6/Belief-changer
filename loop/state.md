@@ -7,8 +7,8 @@
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 026–027 KEEP + 030 KEEP + 031 KEEP accepted; 032 REVERT; A1+K1 cutover landed)
-- **Last completed unit:** 033 writes in flight. Sugar CH-01–03 landed (all CAP K=3, Go). Smoking CH-01 ACCEPT + CH-02 CAP; CH-03 in A1.
-- **Next unit:** Finish 033 BASELINE writes (sugar through 13, smoking 14). Then judge one subject at a time. No KEEP.
+- **Last completed unit:** 033 writes in flight. Sugar CH-01–05 (CH-04 ACCEPT; others CAP). Smoking CH-01–04 (CH-01 ACCEPT). Both on Go.
+- **Next unit:** Finish 033 BASELINE writes. Judge the first subject that exits. One judge runner at a time. No KEEP.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -51,3 +51,4 @@
 | 2026-09-05 11:52 | Smoking writer died: `no word budget for chapter 1` (`- budget: 3500` vs `Budget:`). Sugar still writing. Parser accepts `- budget:` / `C01 N`. | restart smoking writer |
 | 2026-09-05 12:01 | Sugar CH-01 OK 3620w CAP K=3 Go; sugar CH-02 started. Smoking CH-01 rewrite in A1. Both Muse Go. | rest of 033 writes |
 | 2026-09-05 12:19 | Sugar CH-01–03 CAP; smoking CH-01 ACCEPT + CH-02 CAP. Both still writing (sugar CH-04, smoking CH-03). | rest of 033 writes |
+| 2026-09-05 12:39 | Sugar CH-01–05 (CH-04 ACCEPT); smoking CH-01–04. Sugar CH-06 and smoking CH-05 in A1. | rest of 033 writes |
