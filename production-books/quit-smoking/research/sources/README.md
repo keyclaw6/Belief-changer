@@ -1,23 +1,121 @@
 # Source Packets — Quit Smoking
 
-One Markdown packet per distinct accepted URL. Minimum excerpt only.
-Reddit excluded. No Allen Carr / Easyway / EasyPeasy pages.
+One Markdown packet per distinct accepted URL where an excerpt is retained.
+Minimum excerpt only. Reddit excluded. No Allen Carr / Easyway / EasyPeasy pages.
 
-Wave 2 (orchestrator harvest, 2026-09-05) accepted URLs:
+Wave 2–3 ledger (2026-09-05). Full packets exist for S-001 and S-009; remaining IDs are ledger locators for bank quotes until excerpts are spilled.
 
 | ID | URL | Type |
 |---|---|---|
 | S-001 | https://noahie.xyz/blog/ioktikn/how-i-quit-nicotine/ | community |
 | S-002 | https://www.teesche.com/blog/how_i_quit_smoking | community |
+| S-005 | https://lorenzod8n.wordpress.com/2008/03/30/i-need-to-quit-smoking/ | community |
 | S-003 | https://www.unfinishedman.com/why-do-people-smoke-cigarettes/ | community |
 | S-004 | https://tossingitout.blogspot.com/2013/06/how-i-quit-smoking-in-one-day.html | community |
-| S-005 | https://lorenzod8n.wordpress.com/2008/03/30/i-need-to-quit-smoking/ | community |
-| S-006 | https://whyquit.com/whyquit/turkeys_16.html | community |
 | S-007 | https://www.quittrain.com/blogs/entry/1207-joes-quit-story/ | community |
-| S-008 | https://www.d7xtech.com/how-i-quit-smoking-and-what-i-do-for-nicotine-now/ | community |
-| S-009 | https://nida.nih.gov/publications/research-reports/tobacco-nicotine-e-cigarettes/nicotine-addictive | report |
-| S-010 | https://en.wikipedia.org/wiki/Nicotine_marketing | investigative |
-| S-011 | https://whyquit.com/whyquit/LinksAAddiction.html | community/educator |
+| S-006 | https://whyquit.com/whyquit/turkeys_16.html | community |
+| S-013 | https://www.mumsnet.com/talk/_chat/4507625-How-did-you-give-up-smoking | community |
+| S-014 | https://www.mumsnet.com/talk/stop-smoking/5369804-i-need-help-quitting-smoking-cigarettes | community |
+| S-015 | https://www.mumsnet.com/talk/_chat/5087334-anyone-successfully-stopped-smoking-how | community |
+| S-016 | https://www.quittrain.com/blogs/entry/1229-denaliblues-quit-story/ | community |
+| S-017 | https://whyquit.com/whyquit/turkeys_43.html | community |
+| S-018 | https://whyquit.com/whyquit/turkeys_8.html | community |
+| S-019 | https://www.thedailynovel.com/?p=28 | community |
+| S-020 | https://bycommonconsent.com/2006/05/23/tobacco-memories/ | community |
+| S-021 | https://whyquit.com/john/junkie-thinking.html | community |
+| S-022 | https://www.steadyhealth.com/topics/i-am-trying-to-quit-smoking-anyone-want-to-join-me | community |
 | S-012 | https://www.woofmang.com/tales/40_quit_tips.shtml | community |
+| S-023 | https://squareman.substack.com/p/it-really-sucks-to-quit-smoking | community |
+| S-024 | https://morestina.net/463/quit-smoking-in-one-step | community |
+| S-025 | https://whyquit.com/whyquit/turkeys_2.html | community |
+| S-026 | https://whyquit.com/whyquit/turkeys_1.html | community |
+| S-027 | https://theshapeofamother.com/blog/advice-requested-anonymous/ | community |
+| S-028 | https://cfrankdavis.wordpress.com/2011/02/07/quit-smoking-drop-dead/ | community |
+| S-029 | https://whyquit.com/pr/122711.html | community |
+| S-009 | https://nida.nih.gov/publications/research-reports/tobacco-nicotine-e-cigarettes/nicotine-addictive | report |
+| S-030 | https://baturin.org/blog/smoking/ | community |
+| S-031 | https://whyquit.com/whyquit/turkeys.html | community |
+| S-032 | https://whyquit.com/joel/Joel_02_02_widow_in_isolation.html | community |
+| S-033 | https://smokinchoices.wordpress.com/stop-smoking-free/ | community |
+| S-034 | https://whyquit.com/ffn/03b-infected.html | community |
+| S-035 | https://whyquit.com/ffn/04c-stress.html | community |
+| S-036 | https://mentalhealthdaily.com/2014/02/27/how-to-quit-smoking-cigarettes-permanently/ | community |
+| S-008 | https://www.d7xtech.com/how-i-quit-smoking-and-what-i-do-for-nicotine-now/ | community |
+| S-037 | https://whyquit.com/joels-videos/are-there-social-smokers-2/ | community |
+| S-038 | https://whyquit.com/whyquit/turkeys_18.html | community |
+| S-039 | https://the-orbit.net/almostdiamonds/2009/04/23/quitters-blog/ | community |
+| S-040 | https://cyclonegirl.com/i-quit-smoking-to-avoid-looking-like-a-leather-handbag/ | community |
+| S-041 | https://www.quittrain.com/profile/3230-octain/content/page/65/ | community |
+| S-042 | https://kerckhoff.blogspot.com/2006/01/nicotine-replacement-therapy-gums.html | community |
+| S-043 | https://whyquit.com/whyquit/turkeys_20.html | community |
+| S-044 | https://whyquit.com/whyquit/turkeys_24.html | community |
+| S-045 | https://cathyday.com/2013/06/how-i-quit-smoking-on-62306/ | community |
+| S-046 | https://www.ilovephilosophy.com/t/quit-smoking/45623 | community |
+| S-047 | https://whyquit.com/whyquit/turkeys_9.html | community |
+| S-048 | https://www.puckermob.com/moblog/9-reasons-to-cut-back-on-or-even-quit-smoking/ | community |
+| S-049 | https://discourse.prongs.org/t/smokers/1407 | community |
+| S-050 | https://junejuice.bearblog.dev/cigarette-candies/ | community |
+| S-051 | https://uk.style.yahoo.com/can-body-ever-really-recover-quit-social-smoking-121404446.html | community |
+| S-052 | https://www.folxhealth.com/library/smoking-cessation-guide-for-lgbtqia-folks | community |
+| S-053 | https://whyquit.com/whyquit/turkeys_10.html | community |
+| S-054 | https://www.minid.net/2012/10/12/how-i-stopped-smoking | community |
+| S-055 | https://jhatax.blogspot.com/2004/09/does-cold-turkey-work.html | community |
+| S-056 | https://camelsnose.wordpress.com/2008/07/06/got-a-touch-of-copd-how-to-quit-smoking/ | community |
+| S-057 | https://whyquit.com/whyquit/turkeys_17.html | community |
+| S-058 | https://www.unfinishedman.com/why-do-people-smoke-after-sex/ | community |
+| S-059 | https://www.quittrain.com/profile/83-iamdoingit/content/page/2/ | community |
+| S-060 | https://maurotoselli.substack.com/p/i-quit-smoking-what-happened-totally | community |
+| S-061 | https://keyboardplaying.org/stories/cigarette-break/ | community |
+| S-062 | https://randomgeekery.org/post/2018/06/two-weeks-without-cigarettes/ | community |
+| S-063 | https://craigjamieson.com/i-quit-smoking-21-years-ago/ | community |
+| S-064 | https://www.ipcvision.com/page05/phil-smk-01.htm | community |
+| S-065 | https://whyquit.com/joel/Joel_04_05_pneumonia.html | community |
+| S-066 | https://whyquit.com/joel/Joel_03_34_Alcohol.html | community |
+| S-067 | https://websta.me/can-vaping-help-to-quit-smoking/ | community |
+| S-068 | https://whyquit.com/freedom/hermit-quitting.html | community |
+| S-069 | https://whyquit.com/whyquit/A_NicodemonsLies.html | community |
+| S-070 | https://bop.unibe.ch/linguistik-online/article/view/4174 | community |
+| S-011 | https://whyquit.com/whyquit/LinksAAddiction.html | community |
+| S-010 | https://en.wikipedia.org/wiki/Nicotine_marketing | community |
+| S-071 | https://whyquit.com/whyquit/turkeys_7.html | community |
+| S-072 | https://www.quittrain.com/ | community |
+| S-073 | https://talesfromthequit.com/you-come-too | community |
+| S-074 | https://talesfromthequit.com/freedom-is-the-journey | community |
+| S-075 | https://cfrankdavis.wordpress.com/2013/09/23/e-cigs-and-filters/ | community |
+| S-076 | https://whyquit.com/whyquit/A_Benefits_Time_Table.html | community |
+| S-077 | https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD000146.pub5/abstract | report |
+| S-078 | https://www.ncbi.nlm.nih.gov/books/NBK555596/ | report |
+| S-079 | https://www.cancer.gov/about-cancer/causes-prevention/risk/tobacco/quit-smoking-hp-pdq | report |
+| S-080 | https://www.cancer.gov/about-cancer/causes-prevention/risk/tobacco/light-cigarettes-fact-sheet | report |
+| S-081 | https://smokefree.gov/challenges-when-quitting/withdrawal/managing-nicotine-withdrawal | report |
+| S-082 | https://www.cancer.gov/about-cancer/causes-prevention/risk/tobacco/withdrawal-fact-sheet | report |
+| S-083 | https://www.ncbi.nlm.nih.gov/books/NBK537066/ | report |
+| S-084 | https://www.fda.gov/tobacco-products/health-effects-tobacco-use/nicotine-why-tobacco-products-are-addictive | report |
+| S-085 | https://medlineplus.gov/ency/article/000953.htm | report |
+| S-086 | https://www.nice.org.uk/guidance/ng209 | report |
+| S-087 | https://www.who.int/news-room/fact-sheets/detail/tobacco | report |
+| S-088 | https://www.fda.gov/tobacco-products/products-ingredients-components/cigarettes | report |
+| S-089 | https://tobaccocontrol.bmj.com/content/11/suppl_1/i40 | investigative |
+| S-090 | https://www.industrydocuments.ucsf.edu/docs/gxhh0045 | investigative |
+| S-091 | https://www.industrydocuments.ucsf.edu/docs/ffjm0150 | investigative |
+| S-092 | https://www.industrydocuments.ucsf.edu/docs/tggp0125 | investigative |
+| S-093 | https://www.industrydocuments.ucsf.edu/docs/ffcm0128 | investigative |
+| S-094 | https://www.industrydocuments.ucsf.edu/docs/qrfk0053 | investigative |
+| S-095 | https://www.industrydocuments.ucsf.edu/docs/qgpn0067 | investigative |
+| S-096 | https://multinationalmonitor.org/hyper/issues/1992/01/mm0192_07.html | investigative |
+| S-097 | https://truthinitiative.org/research-resources/topic/tobacco-industry-marketing | investigative |
+| S-098 | https://www.cancer.gov/about-cancer/causes-prevention/risk/tobacco/cessation-fact-sheet | report |
+| S-099 | https://multinationalmonitor.org/hyper/mm0192.html | investigative |
+| S-100 | https://en.wiktionary.org/wiki/gasper | lexicon |
+| S-101 | https://en.wiktionary.org/wiki/fag | lexicon |
+| S-102 | https://en.wiktionary.org/wiki/jones | lexicon |
+| S-103 | https://whyquit.com/freedom/tell-a-newbie/tell-a-newbie-06.html | community |
+| S-104 | https://www.killthecan.org/additional-resources/recovery-tips-summary/ | community |
+| S-105 | https://www.nhs.uk/live-well/quit-smoking/ | community |
+| S-106 | https://www.manythings.org/voa/health/4023.html | community |
+| S-107 | https://www.quittrain.com/blogs/entry/1220-you-dont-just-get-off-the-quit-train/ | community |
+| S-108 | https://whyquit.com/whyquit/turkeys_41.html | community |
+| S-109 | https://saltandlight.sg/faith/how-i-quit-smoking-by-going-cold-turkey/ | community |
 
-Rejected this wave: any Easyway/Carr/Blinkist hit; CDC tobacco index (HTTP 403); Bing-fallback garbage SERPs without a brand anchor.
+Rejected: Easyway/Carr/Blinkist; Gemzee testimony T-015 (named Allen Carr); CDC tobacco index HTTP 403; Bing-fallback garbage SERPs without a brand anchor.
+

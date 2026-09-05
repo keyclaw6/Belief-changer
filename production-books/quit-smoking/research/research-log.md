@@ -78,5 +78,5 @@ Wave 3 (2026-09-05 ~10:50): gap-fill miners wrote into this checkout (P-04 lived
 | 09 lexicon | 100 | **clears ≥100** (D-001–D-100; D-075–D-100 harvested from banked lived quotes) |
 | 10 freedom testimonies | 29 | T-015 dropped (Carr named); T-001–T-030 with gap |
 
-Still short of §7 floors: none of the count floors. Next: synthesize `lived-experience.md` + `scientific-evidence.md` + sources ledger, then plan-write. Do not write 033 until smoking plan is `fit to write from`.
+§5 count floors: J=130, A=50, D=100, L=180, M=40 (M-001–M-040). Synthesis written 2026-09-05: `lived-experience.md` (LEU-001–006), `scientific-evidence.md` (SEU-001–005), `sources/README.md` (S-001–S-109). Next: plan-write/review until `fit to write from`. Do not write 033 until smoking plan is `fit to write from`.
 

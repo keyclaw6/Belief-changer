@@ -3,12 +3,12 @@
 ## Position
 
 - **Iteration:** 033
-- **Stage:** Research
+- **Stage:** Planning
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 026–027 KEEP + 030 KEEP + 031 KEEP accepted; 032 REVERT; A1+K1 cutover landed)
-- **Last completed unit:** Wave-1 miner recovery onto parent. Count floors now clear (J=130, A=50, D=100, L=180). Next is synthesis, not 033 write.
-- **Next unit:** Synthesize `lived-experience.md` + `scientific-evidence.md` + sources ledger; then plan-write/review until `fit to write from`; alignment + moves; PASS probe (Ch6 and Ch22 as both ours and real); 033 BASELINE write. Do not write 033 until smoking plan is `fit to write from`.
+- **Last completed unit:** Smoking research synthesis on disk (LEU-001–006, SEU-001–005, sources S-001–S-109).
+- **Next unit:** Plan-write/review for `quit-smoking` until `fit to write from`; then alignment + moves; PASS probe (Easyway Ch6 and Ch22 as both ours and real); 033 BASELINE write (sugar + smoking). Do not write 033 until smoking plan is `fit to write from`.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -44,3 +44,4 @@
 | 2026-09-05 10:55 | Wave 3: lived miner recovered L-061–L-180; P-04/scenes/PM memo/science also landed. T-015 dropped (Carr). Floors still short. | recover other wave-1 banks; gap-fill J/A/D |
 | 2026-09-05 11:10 | Remaining wave-1 banks recovered onto parent. J=130 (floor clear). Analogies 45 / lexicon 74 still short. | gap-fill A+D then synthesize |
 | 2026-09-05 11:15 | A=50 D=100 from banked lived quotes. Count floors clear. | synthesize lived-experience + science |
+| 2026-09-05 11:20 | Heartbeat: no runner. Synthesis + source ledger written. M-035–M-040 added. | smoking plan-write |
