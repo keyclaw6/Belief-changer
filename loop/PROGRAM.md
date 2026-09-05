@@ -2,10 +2,12 @@
 
 > The operating system for the book factory tuning loop. A coding agent reads
 > this and executes it. One iteration per run. North Star: `docs/AUTO-TUNING-LOOP.md`.
-> Every iteration generates and judges TWO independent whole books from the
-> same plan (replicate A and B) — chapters change what they optimize across
-> the arc, so partial runs measure the wrong thing, and a single book
-> confuses writer/judge noise with a real effect.
+> Every iteration generates and judges TWO different Carr-style books from the
+> same factory files: `quit-sugar` (vs GSBS) and `quit-smoking` (vs Easyway
+> smoking). The pair is the measurement — a change must transfer across
+> subjects, not overfit one behavior. One book per subject (replicate-a).
+> Adding replicate-b per subject is optional later if subject-noise is
+> unreadable. [Founder 2026-09-05: K1 + A1 reviewer loop.]
 
 ## 0. Recovery
 
@@ -67,7 +69,8 @@ A hypothesis changes the factory that produces them, never the artifact itself.
 - `docs/AUTO-TUNING-LOOP.md`, `docs/BOOK-FACTORY-VISION.md`
 - `loop/PROGRAM.md` (this file)
 - `loop/judges/` (judge calibration is a separate founder-guided activity)
-- `loop/reference-alignment.md` (rebuilt only when the accepted plan changes)
+- `loop/reference-alignment-<slug>.md` (rebuilt only when that subject's accepted plan changes)
+- `loop/reference-moves-<slug>.md` (rebuilt only when that subject's reference or alignment changes)
 
 **Config authority:** `loop/config.yaml` holds the founder's preferred role
 defaults (models, routes, parameters). Models and routes are **founder-only**
@@ -103,7 +106,7 @@ Spawned roles (role → contract prompt):
 - `plan-writer`, `plan-reviewer` — `prompts/master-plan-skill-v2.md` /
   `prompts/master-plan-reviewer-v2.md`
 - `chapter-writer` — `prompts/chapter-writer.md`
-- `chapter-reviewer` — `prompts/chapter-reviewer.md` (one review, one rewrite)
+- `chapter-reviewer` — `prompts/chapter-reviewer.md` (A1: review→rewrite until ACCEPT or K=3)
 - `judge` — `loop/judges/*.md`
 - `trace-analyzer` — `loop/prompts/trace-analyzer.md`
 - `hypothesizer` — `loop/prompts/hypothesizer.md`
@@ -277,25 +280,24 @@ Rerun the changed stage and every downstream stage **through full chapter
 generation, twice**. Reuse only artifacts upstream of the change. A research or
 planning hypothesis is never judged without regenerated chapters.
 
-**Two-book replicate (mandatory).** After the accepted plan is in hand,
-write and judge the book twice from those identical inputs (master plan,
-chapter cards, style guide). Research still runs once (reuse rule below).
-Planning still runs once — two plans would produce two different books and
-make cluster comparison unmeasurable. The two writes are replicate A and
-replicate B in parallel (founder authorized, 2026-09-04):
+**Two-subject pair (mandatory).** After each subject's accepted plan is in
+hand, write and judge one book per subject from those inputs (master plan,
+chapter cards, style guide). Research and planning run once per subject
+(reuse rule below). The two writes are `quit-sugar` and `quit-smoking` in
+parallel (founder authorized, 2026-09-05):
 
-1. Write A and B concurrently, each into its own
-   `loop/iterations/NNN/replicate-{a,b}/chapters/` (chapters 01 → last).
-   No extra git worktrees.
-2. Judge A when write A's runner exits; judge B when write B's exits.
-   Do not wait for both writes before starting the first judge.
-3. Live `production-books/quit-sugar/chapters/` stays untouched until
-   Step 6 (KEEP copies replicate A).
+1. Write both subjects concurrently, each into
+   `loop/iterations/NNN/<slug>/replicate-a/chapters/` (chapters 01 → last).
+   Env: `SLUG`, `ITER`, `REPLICATE=a`. No extra git worktrees.
+2. Judge a subject when that write's runner exits. One judge runner at a
+   time. Env: `SLUG`, `REF_DIR`, `ALIGNMENT`, `MOVES` from `loop/subjects.md`.
+3. Live `production-books/<slug>/chapters/` stays untouched until Step 6
+   (KEEP copies that subject's replicate-a).
 
 Within one book, chapters stay sequential (01 → last).
 
-Each replicate is a complete book. Do not skip replicate B. Do not judge
-only one book and call the other a check. The pair is the measurement.
+Each subject is a complete book. Do not skip smoking. Do not judge only
+sugar and call smoking a check. The pair is the measurement.
 
 **Patience (the runner never busy-loops).** Stages are slow — a full-book run
 takes hours. When a stage or a spawned role is running, the orchestrator does
@@ -303,9 +305,8 @@ NOT poll it continuously. It updates `loop/state.md`, then waits — a long
 `sleep`, a scheduled wake, or a single wait — and on waking checks the stage's
 on-disk progress. **The progress markers are the real artifacts the stage
 produces**: research bank files under `production-books/<slug>/research/banks/`,
-chapter files under `loop/iterations/NNN/replicate-{a,b}/chapters/`, judgment files under
-`loop/iterations/NNN/replicate-a/judgments/` and
-`replicate-b/judgments/`. (The spawned writer produces no separate
+chapter files under `loop/iterations/NNN/<slug>/replicate-a/chapters/`, judgment files under
+`loop/iterations/NNN/<slug>/replicate-a/judgments/`. (The spawned writer produces no separate
 marker; the chapter file IS the marker.) New content since
 the last wake = still working = wait again. There is no fixed per-stage
 timeout: deep research is sacred and unlimited, so the *research* stage is
@@ -380,33 +381,41 @@ book is complete. Each spawn receives exactly four inputs, with
   3. The style guide: `prompts/style-guide.md`
   4. The previous chapter (for chapter 01: the plan's book-core section)
 Then the orchestrator spawns `chapter-reviewer` (`prompts/chapter-reviewer.md`)
-on that draft with exactly: accepted plan, chapter card, draft text, and
-one line `Delivered N words. Budget B.` Never GSBS, never a judge prompt,
-never the style guide, never the previous chapter. `ACCEPT` keeps the draft.
-`REVISE` triggers one writer rewrite (original four inputs + draft + review).
-The rewrite is final. Cursor: `write_replicate.py` runs draft → review →
-≤1 rewrite. Traces: `draft.md`, `review.md`, `rewrite-prompt.md`.
-Output: `loop/iterations/NNN/replicate-{a,b}/chapters/chapter-NN.md`
+on the draft with exactly: accepted plan, chapter card, draft text, and one
+line `Delivered N words. Budget B.` Never GSBS, Easyway, a judge prompt, the
+style guide, or the previous chapter. `ACCEPT` keeps the draft. `REVISE`
+triggers a writer rewrite (original four inputs + current draft + this review
+only). Repeat review → rewrite until `ACCEPT` or three rewrites (K=3). After
+the third rewrite no further review runs; the third rewrite is the chapter.
+Traces per chapter: `draft.md`, `review-01.md`, `rewrite-prompt-01.md`,
+`rewrite-01.md`, `review-02.md`, … `rewrite-03.md`. `response.md` = final
+text. Cursor: `write_replicate.py`. Output:
+`loop/iterations/NNN/<slug>/replicate-a/chapters/chapter-NN.md`
 
 **Trace format (mandatory):**
 ```
 loop/iterations/NNN/
-  replicate-a/
-    traces/
-      research/            # exact accepted research inputs used by this run
-      plan.md              # accepted master plan used (copy)
-      chapter-01/
-        chapter-card.md
-        prompt.md
-        response.md
-        metadata.json      # model, tokens, latency, errors; record fallback if used
-      chapter-02/ ...
-    judgments/
-    chapters/              # writer output (previous-chapter source)
-  replicate-b/
-    traces/ ...
-    judgments/
-    chapters/
+  quit-sugar/
+    replicate-a/
+      traces/
+        research/
+        plan.md
+        chapter-01/
+          chapter-card.md
+          prompt.md
+          draft.md
+          review-01.md
+          rewrite-01.md
+          response.md
+          metadata.json
+        chapter-02/ ...
+      judgments/
+      chapters/
+  quit-smoking/
+    replicate-a/
+      traces/ ...
+      judgments/
+      chapters/
 ```
 Shared (once per iteration, not per replicate): `hypothesis.md`,
 `change.diff`, `trace-analysis.md`, `decision.md`.
@@ -433,14 +442,14 @@ Shared (once per iteration, not per replicate): `hypothesis.md`,
 ### Step 4: Judge
 
 **Chapter judges** — run all four on EVERY generated chapter against its
-aligned GSBS chapter (`loop/reference-alignment.md`; WEAK alignments are
-judged lightly per that file):
+aligned reference chapter (`loop/reference-alignment-<slug>.md`; WEAK
+alignments are judged lightly per that file):
 - `loop/judges/belief-mechanic.md`
 - `loop/judges/voice-emotion.md`
 - `loop/judges/reader-journey.md`
 - `loop/judges/chapter-comparison.md` (belief-moves from
-  `loop/reference-moves.md`; lecture lines are hypothesizer/trace input,
-  never writer/reviewer input)
+  `loop/reference-moves-<slug>.md`; lecture lines are hypothesizer/trace
+  input, never writer/reviewer input)
 
 Each judge receives: the judge prompt, our chapter, the aligned real chapter,
 CHAPTER CONTEXT (below), and for chapters 2+ the previous chapter.
@@ -459,9 +468,9 @@ Assigned compliance:
 - Mantras: [exact frozen wording of each mantra assigned here, marked debut or echo, or NONE]
 ```
 
-**Book judge** — run `loop/judges/book-arc.md` once per replicate on that
-complete book (all chapters in order) with the plan's mantra sheet, instruction
-spine, and curve map, plus the reference-alignment table as the GSBS skeleton.
+**Book judge** — run `loop/judges/book-arc.md` once per subject book (all
+chapters in order) with the plan's mantra sheet, instruction spine, and
+curve map, plus that subject's reference-alignment table as the skeleton.
 
 All judges, the trace analyzer, and the hypothesizer are spawned sub-agents
 (see Role calls, §1). Judge calls are independent — the orchestrator spawns
@@ -487,66 +496,66 @@ in judge reports.
 ### Step 6: Decide
 
 A decision is valid only when every judge report completed on **both**
-replicates (after retries). Otherwise the
-iteration is INCONCLUSIVE — never decide on partial evidence or on one book.
+subjects (after retries). Otherwise the iteration is INCONCLUSIVE — never
+decide on partial evidence or on one subject.
 
 Answer one question: **did the predicted causal cluster improve materially
-in both books?** Named-symptom close counts. The class does not have to leave
-the owning lane's FAIL set.
+in both subjects?** Named-symptom close counts. The class does not have to
+leave the owning lane's FAIL set.
 
 - The judge lane that owns the targeted cluster decides whether it improved,
   from `CLUSTER CENSUS` class counts (blocking + noted of that class,
-  summed across chapters) in both books — not from that lane's chapter
-  PASS rate. Named-symptom close counts. A drop in a NOTED class in both
-  books is improvement even if PASS/N is unchanged or worse.
-  [Founder amendment 2026-09-04 — instrument halt after 020–024:]
+  summed across chapters) in both subjects — not from that lane's chapter
+  PASS rate. A drop in a NOTED class in both subjects is improvement even
+  if PASS/N is unchanged or worse.
   **Materially** means beyond the `_shared.md` book-level noted band,
   rate-normalized: a same-n drop of 1 is not improvement; a drop of 2+
   at the same chapter count is; when chapter counts differ, compare
   rates (count / n) and require a rate drop greater than `1 / n_old`.
-  7→6 / 5→5 / 5→7 are REVERT, not INCONCLUSIVE.
-  [Founder amendment 2026-09-04 night — Carr convergence:]
-  KEEP also requires both books' delivered word total ≥ 80% of the plan
-  total (orchestrator sums `metadata.json` `words_final`; judges never
-  score length). PRIMARY may be a census class (band rules) **or**
-  comparison `missing` falling by ≥2 at the same chapter count in both
-  books. Hypothesizer order: blocking → comparison missing-in-both →
-  noted ≥8 both.
-  - **both improved (beyond the band)** → candidate KEEP
-  - **neither improved (both inside the band or flat/up)** → candidate REVERT
-  - **one improved beyond the band, one did not** → INCONCLUSIVE (sampling noise)
+  KEEP also requires each subject's delivered word total ≥ 80% of that
+  subject's own plan total (orchestrator sums `metadata.json` `words_final`;
+  judges never score length). PRIMARY may be a census class (band rules)
+  **or** comparison `missing` falling by ≥2 at the same chapter count in
+  both subjects. Hypothesizer order: intersection of KEEP-eligible classes
+  across both subjects (blocking → comparison missing-in-both → noted ≥8
+  both). Empty intersection → PRIMARY is the top class of the worse
+  subject; the other is scored as non-regression only (declare
+  `PRIMARY scope` in hypothesis.md).
+  [Founder 2026-09-05 — K1 + QUANTIFY:]
+  - **both subjects improved (beyond the band)** → KEEP
+  - **otherwise, with valid evidence** → QUANTIFY (not automatic restore)
 - Other lanes may veto only a material REGRESSION that appears in **both**
-  replicates: a NEW **BLOCKING** class *name* that was 0 last iteration and
+  subjects: a NEW **BLOCKING** class *name* that was 0 last iteration and
   is >0 in both new books. A new scene ID under `re-argument` is not a new
   class.
 - No voting, no averaging of PASS rates.
 
 Verdicts:
-- **KEEP** — both replicates show the targeted cluster improved materially
-  AND neither book-pair shares a new material failure class. Improvement
+- **KEEP** — both subjects show the targeted cluster improved materially
+  AND neither subject shows a new material blocking class. Improvement
   arriving through an unpredicted mechanism is still KEEP; record the
-  prediction as wrong. Promote the factory change. Copy the chapters of
-  replicate A into `production-books/<slug>/chapters/` (A is the accepted
-  snapshot; B remains evidence under `loop/iterations/NNN/replicate-b/`)
-  unless an untargeted systemic class still dominates **both** new books at
-  scale (record that exception and keep those chapters only under
-  `loop/iterations/NNN/`). Promote `research/` with the factory change.
-- **REVERT** — neither replicate shows the targeted cluster improved, OR
-  both replicates show the same new material failure class.
-- **INCONCLUSIVE** — invalid evidence, the two books disagree on whether
-  the cluster improved, or a would-be new class appears in only one book.
+  prediction as wrong. Promote the factory change. Copy each subject's
+  replicate-a chapters into `production-books/<slug>/chapters/`. Promote
+  `research/` with the factory change.
+- **QUANTIFY** — valid evidence, but PRIMARY did not improve in both
+  subjects. Do **not** restore the factory change unless a restore trigger
+  fires (below). Write in `decision.md`: per-subject PRIMARY table; which
+  subject failed the band; which classes moved; what the change
+  mechanically did (grep/trace); one sentence "next additional change
+  toward KEEP"; `Carried forward: <file> change>`. Ledger ends the same
+  way. Then try a new or additional change — do not treat the idea as dead.
+- **INCONCLUSIVE** — missing judge report in any subject book.
+- **Restore triggers** (still verdict QUANTIFY, `Restored: yes — reason`):
+  a new BLOCKING class in both subjects, OR PRIMARY worsens by ≥ band in
+  both subjects, OR the length floor breaks on both subjects. Only then
+  restore the factory files to the last KEEP/BASELINE text.
 
-KEEP: the factory change is the new accepted state — promote it to the
-campaign branch (Step 7). REVERT /
-INCONCLUSIVE: the change is not promoted — the iteration's worktree and its
-factory change are discarded, but the iteration directory
-(`loop/iterations/NNN/`) and the ledger entry are always kept on the campaign
-branch so later iterations know what was tried and under which instrument.
-REVERT is not a ban: a reverted factory change remains eligible, including
-exact prior wording, especially after a judge change. Do not blindly re-run
-the identical hypothesis against the same census class on the same
-instrument without a new mechanism. Founder-only model/route swaps stay
-forbidden.
+RESTORE is not a ban. Do not blindly re-run the identical hypothesis
+against the same census class on the same instrument without a new
+mechanism. Founder-only model/route swaps stay forbidden.
+
+The first dual-subject iteration after this cutover is **BASELINE** (no
+KEEP, no PRIMARY). It sets the two-subject floors.
 
 Record prediction accuracy: "Predicted X. Observed Y (A: …; B: …). [accurate/partial/wrong]."
 Write `loop/iterations/NNN/decision.md` with the verdict, both replicates'
@@ -583,19 +592,14 @@ Mark the iteration done in `loop/state.md` (status `IDLE`, last completed unit
 = iteration NNN decision). The commit lands on the campaign branch; how it gets
 there depends on the verdict — never `git add -A`:
 
-- **KEEP** — promote from the iteration worktree onto the campaign branch:
-  `git checkout campaign-001` in the main checkout, then
-  `git merge --no-ff iter-NNN` (or `git checkout iter-NNN -- <paths>` for the
-  pinned set below). One commit (`loop(iter-NNN): KEEP — short hypothesis`)
-  carrying: the edited tuning files (≤ 3), the iteration records
-  (`loop/iterations/NNN/`, the `results.tsv` row, the `learnings.md` and
-  `ledger.md` entries, `loop/state.md`), and — unless Step 6 recorded that
-  an untargeted systemic class still dominates the new book — the accepted
-  book (`production-books/<slug>/chapters/` and `research/`). Nothing else.
-- **REVERT / INCONCLUSIVE** — do NOT merge the iteration branch. On the
-  campaign branch, commit only the records (`loop/iterations/NNN/`,
-  `results.tsv`, `learnings.md`, `ledger.md`, `state.md`) — never the factory
-  change or the rejected book.
+- **KEEP** — one commit (`loop(iter-NNN): KEEP — short hypothesis`) carrying
+  the edited tuning files, the iteration records (`loop/iterations/NNN/`,
+  `results.tsv`, `learnings.md`, `ledger.md`, `state.md`), and both accepted
+  books (`production-books/quit-sugar/` and `production-books/quit-smoking/`
+  chapters + research). Nothing else.
+- **QUANTIFY / INCONCLUSIVE** — commit the records plus the factory change
+  if it was not restored. If a restore trigger fired, commit records only
+  and leave the factory files at the last KEEP/BASELINE text.
 
 After committing, verify with `git show --stat` that the file set matches and
 holds no stray artifact. Remove the iteration worktree and its branch once the
@@ -603,10 +607,10 @@ campaign branch carries what it should.
 
 ## 5. Rules
 
-- **Convergence budget.** Up to 1–3 bound changes per the budget in
-  `loop/prompts/hypothesizer.md`. KEEP/REVERT read the PRIMARY class only.
-  One-book blocking on a non-primary class is logged, never a veto. A new
-  blocking class in BOTH books is REVERT.
+- **Convergence budget.** 1–4 bound changes per the budget in
+  `loop/prompts/hypothesizer.md`. KEEP/QUANTIFY read the PRIMARY class only.
+  One-subject blocking on a non-primary class is logged, never a veto. A new
+  blocking class in BOTH subjects is a restore trigger.
 - **3-strike rule.** Failure class = same PRIMARY class + same root
   component, counted only under one judge instrument. If 3 iterations
   with the same PRIMARY class + root component produce no KEEP, PIVOT
@@ -614,7 +618,7 @@ campaign branch carries what it should.
   pivot to a model change; stop and surface to the founder. The level is
   wrong; stop hammering it. A judge change resets the clock — 001–008
   3-strike/PIVOT notes do not bind 009 onward. A re-baseline after a
-  founder model change resets the clock (as 009). REVERT never deletes
+  founder model change resets the clock (as 009). QUANTIFY never deletes
   an idea.
 - **Never change models.** Hypothesizer and orchestrator must not edit
   `*_model`, `*_fallback_model`, `*_route`, or endpoint fields in
@@ -627,35 +631,30 @@ campaign branch carries what it should.
   (founder-guided, re-run Preflight) and a fresh baseline is established.
 - **Never edit this PROGRAM.md.** The loop follows it; it does not change it.
 - **Prediction informs, evidence decides.** Wrong prediction + real
-  improvement in both books = KEEP (note it). Right prediction + no
-  improvement in both books = REVERT. The two books disagree = INCONCLUSIVE.
-  "Improvement" uses the Step 6 band (founder 2026-09-04): ±1 at the same
-  chapter count is not disagreement — it is REVERT.
-- **Iterations are slow on purpose.** A two-book run takes longer than a
-  one-book run. Prefer one well-evidenced hypothesis over three shallow ones.
+  improvement in both subjects = KEEP (note it). PRIMARY not improved in
+  both subjects = QUANTIFY (diagnose and try a new/additional change).
+  Missing reports = INCONCLUSIVE. "Improvement" uses the Step 6 band.
+- **Iterations are slow on purpose.** A two-subject run takes longer than a
+  one-book run. Prefer one well-evidenced PRIMARY plus recorded secondaries
+  over a scatter of unrelated edits.
 - **Single operator.** One orchestrator drives the loop at a time; resume
   always continues from the on-disk markers. Deferred founder decisions (e.g.
   stop-guard authority, unbounded sub-loops) live in `loop/open-questions.md`.
 
-## 6. Generalization check
+## 6. Dual-subject generalization
 
-After the panel finds no material gap on the quit-sugar book:
-
-1. Create `production-books/quit-smoking/` with a brief for smoking cessation
-2. Run the factory END TO END with ZERO subject-specific tuning
-   (two independent books from the same plan, same as calibration)
-3. Judge against a smoking reference if the founder supplies one; otherwise
-   the panel judges against the Carr method definitions in the judge prompts
-   (generalization only — calibration judging always uses the real book)
-4. If it passes: the factory works. If not: continue tuning with both
-   subjects as signal.
+Smoking is in the loop now, not after sugar is done. Same factory files;
+different brief, research, plan, reference, alignment (`loop/subjects.md`).
+Do not put subject-specific Job tails or budgets on the hypothesis surface
+— those go in `prompts/master-plan-skill-v2.md` if they must be factory
+craft. `production-books/<slug>/master-plan.md` is evidence, not a hypothesis.
 
 ## 7. What success looks like
 
 The loop succeeds when:
-1. The panel — three chapter lanes and the book lane — finds no material gap
-   in belief-change work, reader-state transition, or voice effect between
-   our book and GSBS
+1. The panel finds no material gap in belief-change work, reader-state
+   transition, or voice effect between our quit-sugar book and GSBS, and
+   between our quit-smoking book and the Easyway smoking reference
 2. The factory produces a convincing Carr-style book for a novel subject
-   with zero subject-specific tuning
+   from the same factory files
 3. `loop/learnings.md` explains WHY the factory works, not just THAT it works

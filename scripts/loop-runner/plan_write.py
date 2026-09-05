@@ -11,7 +11,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from muse_client import call_muse
 
 REPO = Path(os.environ["BC_REPO"])
-SLUG = "quit-sugar"
+SLUG = os.environ.get("SLUG", "quit-sugar")
 
 
 def main() -> None:

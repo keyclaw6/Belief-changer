@@ -11,4 +11,4 @@ This is the calibration ground truth the judge panel compares against.
 - ~59,500 words total.
 
 Read-only. Never edited by the loop. Chapter mapping to our book is
-content-based via `loop/reference-alignment.md` — never mechanical offset.
+content-based via `loop/reference-alignment-quit-sugar.md` — never mechanical offset.

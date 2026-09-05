@@ -10,7 +10,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 REPO = Path(os.environ.get("BC_REPO", "/home/kab/Belief-changer"))
-GSBS = REPO / "calibration/reference/gsbs"
+SLUG = os.environ.get("SLUG", "quit-sugar")
+REF_DIR = Path(os.environ.get("REF_DIR", str(REPO / "calibration/reference/gsbs")))
 JUDGES = REPO / "loop/judges"
 AGENT = Path.home() / ".local/bin/agent"
 LANES = ("belief-mechanic", "voice-emotion", "reader-journey")
@@ -165,7 +166,7 @@ def parse_moves(text: str) -> dict[int, str]:
     current: int | None = None
     buf: list[str] = []
     for line in text.splitlines():
-        hm = re.match(r"^## GSBS (\d+)", line)
+        hm = re.match(r"^## (?:GSBS|EASYWAY|REF) (\d+)", line)
         if hm:
             if current is not None:
                 out[current] = "\n".join(buf).strip()
@@ -173,7 +174,7 @@ def parse_moves(text: str) -> dict[int, str]:
             buf = [line]
             continue
         if current is not None:
-            if line.startswith("## ") and not line.startswith("## GSBS"):
+            if line.startswith("## ") and not re.match(r"^## (?:GSBS|EASYWAY|REF) ", line):
                 out[current] = "\n".join(buf).strip()
                 current = None
                 buf = []
@@ -286,15 +287,27 @@ def main() -> None:
     it = os.environ["ITER"]
     rep = os.environ["REPLICATE"]
     only = os.environ.get("ONLY")
-    root = REPO / "loop/iterations" / it / f"replicate-{rep}"
+    slug = os.environ.get("SLUG", SLUG)
+    ref_dir = Path(os.environ.get("REF_DIR", str(REF_DIR)))
+    alignment = Path(os.environ.get("ALIGNMENT", str(REPO / f"loop/reference-alignment-{slug}.md")))
+    if not alignment.exists():
+        alignment = REPO / "loop/reference-alignment.md"
+    moves_path = Path(os.environ.get("MOVES", str(REPO / f"loop/reference-moves-{slug}.md")))
+    if not moves_path.exists():
+        moves_path = REPO / "loop/reference-moves.md"
+    root = REPO / "loop/iterations" / it / slug / f"replicate-{rep}"
+    if not (root / "traces").exists():
+        legacy = REPO / "loop/iterations" / it / f"replicate-{rep}"
+        if (legacy / "traces").exists():
+            root = legacy
     traces = root / "traces"
     judgments = root / "judgments"
     judgments.mkdir(parents=True, exist_ok=True)
-    plan = (traces / "plan.md").read_text() if (traces / "plan.md").exists() else (REPO / "production-books/quit-sugar/master-plan.md").read_text()
+    plan = (traces / "plan.md").read_text() if (traces / "plan.md").exists() else (REPO / "production-books" / slug / "master-plan.md").read_text()
     cards = extract_cards(plan)
     n_total = max(cards)
-    align = parse_alignment((REPO / "loop/reference-alignment.md").read_text())
-    moves_by_gsbs = parse_moves((REPO / "loop/reference-moves.md").read_text())
+    align = parse_alignment(alignment.read_text())
+    moves_by_ref = parse_moves(moves_path.read_text())
     mantras = parse_inventory_table(plan, "**Mantras (repetition law")
     if not mantras:
         mantras = parse_inventory_table(plan, "Mantras (repetition law")
@@ -317,10 +330,10 @@ def main() -> None:
     for n in sorted(cards):
         our = traces / f"chapter-{n:02d}" / "response.md"
         our_paths.append(our)
-        gsbs = align.get(n)
-        if not gsbs:
-            raise SystemExit(f"no GSBS alignment for chapter {n}")
-        real = GSBS / f"chapter-{gsbs:02d}.md"
+        ref_n = align.get(n)
+        if not ref_n:
+            raise SystemExit(f"no reference alignment for {slug} chapter {n}")
+        real = ref_dir / f"chapter-{ref_n:02d}.md"
         ctx = chapter_context(n, n_total, cards[n], mantras, instructions, tokens)
         prev = traces / f"chapter-{n-1:02d}" / "response.md" if n > 1 else None
         for lane in LANES:
@@ -328,14 +341,13 @@ def main() -> None:
             out = judgments / tag / "response.md"
             prompt = lane_prompt(lane, n, our, real, ctx, prev)
             jobs.append((tag, out, prompt))
-        gsbs_n = align.get(n)
-        move_block = moves_by_gsbs.get(gsbs_n or -1)
+        move_block = moves_by_ref.get(ref_n or -1)
         if not move_block:
-            raise SystemExit(f"no reference-moves for GSBS {gsbs_n} (our ch {n})")
+            raise SystemExit(f"no reference-moves for {slug} ref {ref_n} (our ch {n})")
         ctag = f"{COMPARISON}-ch{n:02d}"
         jobs.append((ctag, judgments / ctag / "response.md", comparison_prompt(n, our, real, ctx, move_block)))
     arc_out = judgments / "book-arc" / "response.md"
-    jobs.append(("book-arc", arc_out, book_arc_prompt(our_paths, sheets, REPO / "loop/reference-alignment.md")))
+    jobs.append(("book-arc", arc_out, book_arc_prompt(our_paths, sheets, alignment)))
 
     if only:
         jobs = [j for j in jobs if j[0] == only or j[0].startswith(only)]

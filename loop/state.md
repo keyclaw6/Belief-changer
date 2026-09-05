@@ -7,8 +7,8 @@
 - **Status:** IDLE
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 026–027 KEEP + 030 KEEP + 031 KEEP accepted; 032 REVERT)
-- **Last completed unit:** 032 REVERT. factory-speech 14→22 / 10→13. Writer restored to 031 KEEP. Accepted snapshot stays 031 A (52392).
-- **Next unit:** Founder architecture gate (reviewer-until-ACCEPT + dual-subject). Do not start 033 on the old two-sugar protocol. PRIMARY remains 031 floors factory-speech 14/10.
+- **Last completed unit:** 032 REVERT. Founder A1+K1 cutover in progress. Easyway illustrated smoking reference extracted (8 chapters, ~6849w).
+- **Next unit:** Smoking research → plan → alignment/moves → 033 BASELINE (sugar + smoking, A1 reviewer loop). Do not write 033 until smoking plan is `fit to write from`. PRIMARY remains 031 floors factory-speech 14/10 until the dual baseline.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -36,3 +36,4 @@
 | 2026-09-05 09:12 | 032 writes done A 51349 / B 50428. Judge A started. Founder asked reviewer-until-ACCEPT + dual-subject (sugar + Easyway smoking). Design memo returned; no 033 until founder answers. | judge A then B |
 | 2026-09-05 09:15 | 032 judge A PANEL DONE 53/53. Judge B started. | judge B then census |
 | 2026-09-05 09:22 | 032 REVERT. factory-speech 14→22 / 10→13. Header grep 0/0. Writer restored. | founder architecture answers |
+| 2026-09-05 09:45 | Founder A1 + K1 + multi-change. Illustrated Easyway smoking PDF extracted to calibration/reference/easyway-smoking/. Harness parameterized. | smoking research + plan |

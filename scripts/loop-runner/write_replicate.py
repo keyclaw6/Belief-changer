@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Write quit-sugar chapters for one replicate via Muse Spark (Go → Zen → Vercel)."""
+"""Write one subject's chapters via Muse Spark (Go → Zen → Vercel).
+
+A1 loop: draft → review → rewrite until ACCEPT or K=3 rewrites.
+After the third rewrite no further review runs; that rewrite is the chapter.
+"""
 from __future__ import annotations
 
 import json
@@ -14,10 +18,16 @@ from muse_client import call_muse
 REPO = Path(os.environ.get("BC_REPO", "/home/kab/Belief-changer"))
 ITER = os.environ.get("ITER", "")
 REPLICATE = os.environ.get("REPLICATE", "")  # a | b
-SLUG = "quit-sugar"
+SLUG = os.environ.get("SLUG", "quit-sugar")
+MAX_REWRITES = 3
 
 CARD_SPLIT = re.compile(r"\n(?=(?:#{1,3}\s+|\*\*)(?:CH-|C-)\d{1,2}\s+—)")
 CARD_HEAD = re.compile(r"(?:#{1,3}\s+|\*\*)(?:CH-|C-)(\d{1,2})\s+—")
+FINDING_HEAD = re.compile(
+    r"^(JOB|MANTRA|INSTRUCTION|ID|LENGTHEN|SHORTEN|HEADER|STOPPED-SHORT|"
+    r"UNASSIGNED-REFRAIN|RESERVED-REACH|OVERCLAIM)\b",
+    re.I | re.M,
+)
 
 
 def parse_cards(plan: str) -> dict[int, str]:
@@ -56,6 +66,10 @@ def parse_budget(card: str, plan: str, n: int) -> int:
     raise SystemExit(f"no word budget for chapter {n}")
 
 
+def finding_types(review: str) -> list[str]:
+    return [m.group(1).upper() for m in FINDING_HEAD.finditer(review)]
+
+
 def review_prompt(contract: str, plan: str, card: str, draft: str, n_words: int, budget: int) -> str:
     return (
         "You are the book factory chapter-reviewer, a fresh isolated role call.\n\n"
@@ -75,9 +89,13 @@ def rewrite_prompt(writer: str, plan: str, style: str, card: str, prev: str, n: 
     base = assemble(writer, plan, style, card, prev, n)
     return (
         f"{base.rstrip()}\n\n"
-        "### Draft to revise (one rewrite — this output is final)\n"
+        "### Draft to revise\n"
         f"```\n{draft.rstrip()}\n```\n\n"
-        "### Chapter-reviewer findings (obey LENGTHEN/SHORTEN and listed gaps; do not add new jobs)\n"
+        "### Chapter-reviewer findings\n"
+        "Findings are instructions to you, never text to print. "
+        "Never surface finding names, ledger IDs, or grades in the chapter. "
+        "Obey LENGTHEN/SHORTEN and listed gaps; do not add new jobs; "
+        "do not continue into a reserved-later job.\n"
         f"```\n{review.rstrip()}\n```\n"
     )
 
@@ -105,11 +123,18 @@ def assemble(writer: str, plan: str, style: str, card: str, prev: str, n: int) -
     )
 
 
+def replicate_root() -> Path:
+    return REPO / "loop" / "iterations" / ITER / SLUG / f"replicate-{REPLICATE}"
+
+
 def main() -> None:
     if not ITER or REPLICATE not in ("a", "b"):
         raise SystemExit("ITER and REPLICATE=a|b required")
-    traces_root = REPO / "loop" / "iterations" / ITER / f"replicate-{REPLICATE}" / "traces"
-    chapters_dir = REPO / "loop" / "iterations" / ITER / f"replicate-{REPLICATE}" / "chapters"
+    if not SLUG:
+        raise SystemExit("SLUG required (quit-sugar | quit-smoking)")
+    root = replicate_root()
+    traces_root = root / "traces"
+    chapters_dir = root / "chapters"
     chapters_dir.mkdir(parents=True, exist_ok=True)
     writer = (REPO / "prompts" / "chapter-writer.md").read_text()
     reviewer = (REPO / "prompts" / "chapter-reviewer.md").read_text()
@@ -117,7 +142,7 @@ def main() -> None:
     style = (REPO / "prompts" / "style-guide.md").read_text()
     cards = parse_cards(plan)
     core = book_core(plan)
-    (traces_root / "plan.md").parent.mkdir(parents=True, exist_ok=True)
+    traces_root.mkdir(parents=True, exist_ok=True)
     if not (traces_root / "plan.md").exists():
         (traces_root / "plan.md").write_text(plan)
 
@@ -141,22 +166,51 @@ def main() -> None:
             raise SystemExit(f"refusal chapter-{n:02d}: {draft[:200]}")
         (tdir / "draft.md").write_text(draft)
         budget = parse_budget(cards[n], plan, n)
-        words_draft = word_count(draft)
-        rprompt = review_prompt(reviewer, plan, cards[n], draft, words_draft, budget)
-        (tdir / "review-prompt.md").write_text(rprompt)
-        review, rroute, rmeta = call_muse(rprompt, reasoning="high")
-        (tdir / "review.md").write_text(review)
-        verdict = review.strip().splitlines()[0].strip().upper() if review.strip() else "REVISE"
         text = draft
-        rewrite_route = None
-        rewrite_meta = {}
-        if not verdict.startswith("ACCEPT"):
-            wprompt = rewrite_prompt(writer, plan, style, cards[n], prev, n, draft, review)
-            (tdir / "rewrite-prompt.md").write_text(wprompt)
+        words_by_round = [word_count(draft)]
+        review_verdicts: list[str] = []
+        findings_by_round: list[list[str]] = []
+        rewrite_routes: list[str | None] = []
+        rewrite_latencies: list[float | None] = []
+        review_routes: list[str | None] = []
+        review_latencies: list[float | None] = []
+        final_status = "ACCEPT"
+        last_verdict = "ACCEPT"
+
+        for rnd in range(1, MAX_REWRITES + 1):
+            n_words = word_count(text)
+            rprompt = review_prompt(reviewer, plan, cards[n], text, n_words, budget)
+            (tdir / f"review-prompt-{rnd:02d}.md").write_text(rprompt)
+            if rnd == 1:
+                (tdir / "review-prompt.md").write_text(rprompt)
+            review, rroute, rmeta = call_muse(rprompt, reasoning="high")
+            (tdir / f"review-{rnd:02d}.md").write_text(review)
+            (tdir / "review.md").write_text(review)
+            review_routes.append(rroute)
+            review_latencies.append(rmeta.get("latency_s"))
+            verdict = review.strip().splitlines()[0].strip().upper() if review.strip() else "REVISE"
+            last_verdict = verdict.split()[0]
+            review_verdicts.append(last_verdict)
+            findings_by_round.append(finding_types(review))
+            if last_verdict.startswith("ACCEPT"):
+                final_status = "ACCEPT"
+                break
+            wprompt = rewrite_prompt(writer, plan, style, cards[n], prev, n, text, review)
+            (tdir / f"rewrite-prompt-{rnd:02d}.md").write_text(wprompt)
+            if rnd == 1:
+                (tdir / "rewrite-prompt.md").write_text(wprompt)
             text, rewrite_route, rewrite_meta = call_muse(wprompt)
             if text.strip().startswith("ROUTE REFUSAL:"):
                 (tdir / "refusal.md").write_text(text)
-                raise SystemExit(f"refusal rewrite chapter-{n:02d}: {text[:200]}")
+                raise SystemExit(f"refusal rewrite chapter-{n:02d} r{rnd}: {text[:200]}")
+            (tdir / f"rewrite-{rnd:02d}.md").write_text(text)
+            rewrite_routes.append(rewrite_route)
+            rewrite_latencies.append(rewrite_meta.get("latency_s"))
+            words_by_round.append(word_count(text))
+            if rnd == MAX_REWRITES:
+                final_status = "CAP"
+                last_verdict = "CAP"
+
         partial = live_path.with_suffix(".md.partial")
         partial.write_text(text)
         partial.rename(live_path)
@@ -165,25 +219,30 @@ def main() -> None:
             {
                 "chapter": n,
                 "replicate": REPLICATE,
+                "slug": SLUG,
                 "iteration": ITER,
                 "chars": len(text),
-                "words_draft": words_draft,
+                "words_draft": words_by_round[0],
                 "words_final": word_count(text),
+                "words_by_round": words_by_round,
                 "budget": budget,
-                "review_verdict": verdict.split()[0],
-                "review_route": rroute,
-                "review_latency_s": rmeta.get("latency_s"),
-                "rewritten": rewrite_route is not None,
-                "rewrite_route": rewrite_route,
+                "review_rounds": len(review_verdicts),
+                "review_verdicts": review_verdicts,
+                "review_verdict": last_verdict,
+                "final_status": final_status,
+                "findings_by_round": findings_by_round,
+                "review_routes": review_routes,
+                "review_latencies_s": review_latencies,
+                "rewritten": bool(rewrite_routes),
+                "rewrite_routes": rewrite_routes,
+                "rewrite_latencies_s": rewrite_latencies,
                 "draft_route": route,
             }
         )
-        if rewrite_meta:
-            meta["rewrite_latency_s"] = rewrite_meta.get("latency_s")
         (tdir / "metadata.json").write_text(json.dumps(meta, indent=2) + "\n")
         print(
-            f"OK chapter-{n:02d} draft={words_draft}w final={meta['words_final']}w "
-            f"budget={budget} {verdict.split()[0]} {route}",
+            f"OK chapter-{n:02d} draft={words_by_round[0]}w final={meta['words_final']}w "
+            f"budget={budget} {final_status} rounds={len(review_verdicts)} {route}",
             flush=True,
         )
 

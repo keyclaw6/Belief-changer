@@ -34,7 +34,7 @@ replacement text`. Mark exactly one `Change 1 (PRIMARY)`.]
 than a different one?]
 
 ## Predicted impact
-[PRIMARY class X falls in BOTH books; secondary Y, Z predicted to fall
+[PRIMARY class X falls in BOTH subjects; secondary Y, Z predicted to fall
 (recorded, not decisive).]
 [What might regress: "This could weaken Y because..."]
 [How we'll know it worked: "The PRIMARY class count must fall in BOTH
@@ -60,22 +60,19 @@ replicates."]
   prompt and structure cannot close the cluster, say so and stop;
   do not invent a model swap.
 
-- **Convergence budget.** Count D = distinct census classes present (≥1,
-  blocking or noted) in BOTH books of the accepted baseline. D ≥ 3: up to
-  three changes in up to three editable files. D = 2: up to two. D ≤ 1:
-  exactly one change in one file — replace or delete one instruction; an
-  addition must name the text it supersedes. The closer the census is to
-  Carr's all-zero census, the smaller the change: we converge, we do not
-  zig-zag. Each change is one instruction in one file (exact duplicates
-  may be normalized with it) and binds to ONE census class and ONE root
-  component from the trace analysis. Mark exactly one change PRIMARY.
-  PRIMARY must be the highest-priority KEEP-eligible class in both
-  books: (1) a BLOCKING class in both books; (2) comparison `missing`
-  present in both; (3) a NOTED class whose baseline count is ≥ 8 in
-  both books. A voice noted-only class may be PRIMARY when belief,
-  journey, and book-arc have **no blocking** in both books. Do not
+- **Convergence budget.** Propose 1–4 changes across ≤3 editable files.
+  Each change is one instruction, bound to one census class and one root
+  component, and states which subject(s) it targets. Exactly one is
+  PRIMARY and decides KEEP; the others are recorded, never scored. Never
+  two changes to the same instruction. Prefer fewer: D≤1 in both subjects
+  ⇒ exactly one change. PRIMARY is the intersection of KEEP-eligible
+  classes across both subjects: (1) a BLOCKING class in both; (2)
+  comparison `missing` in both; (3) a NOTED class ≥ 8 in both. Empty
+  intersection → PRIMARY is the top class of the worse subject; declare
+  `PRIMARY scope` and score the other as non-regression only. Do not
   make PRIMARY a 5–7-count noted class; 020–024 showed that object
-  cannot KEEP.
+  cannot KEEP. Do not edit `production-books/<slug>/master-plan.md` as a
+  hypothesis — plans are evidence.
 
 - **Follow the diagnosis.** Target the root component named by the trace
   analyzer unless you can quote trace evidence that contradicts it. Do not
@@ -91,7 +88,7 @@ replicates."]
   delete its exact duplicate in the same file."
 
 - **Predict specifically.** Not "voice will improve." Name the census
-  class whose count must fall in BOTH replicates (blocking + noted).
+  class whose count must fall in BOTH subjects (blocking + noted).
   Forbidden KEEP-bits: owning-lane PASS, voice ≥ N/20, or grep-only
   success with no reader-effect claim.
 

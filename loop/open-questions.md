@@ -44,9 +44,11 @@ returns feedback on plan fidelity — including "lengthen"/"shorten" against the
 card's word budget — before the orchestrator writes the final `chapter-NN.md`
 (mirrors the plan-writer → plan-reviewer loop that already exists).
 
-Status: AUTHORIZED 2026-09-04 night. Fable plan: write → review → ≤1 rewrite.
-Cap remains one review, one rewrite. Reviewer never sees GSBS or judge
-prompts. Built as factory architecture (not a hypothesizer inbox item).
+Status: AUTHORIZED 2026-09-04 night; **A1 loop + value findings AUTHORIZED
+2026-09-05**. Write → review → rewrite until ACCEPT or K=3. Reviewer never
+sees GSBS, Easyway, or judge prompts. Findings include JOB/MANTRA/INSTRUCTION/
+ID/LENGTH/HEADER plus STOPPED-SHORT, UNASSIGNED-REFRAIN, RESERVED-REACH,
+OVERCLAIM. Built as factory architecture (not a hypothesizer inbox item).
 Was: not built, not a hypothesis. It is a factory-architecture change (new
 role contract under `prompts/`, PROGRAM §4 Step 3 Writing stage today is
 "writer only, chapter 01 → last", a `.pi/agents/` adapter, a HARNESS capability
@@ -63,7 +65,8 @@ PROGRAM §5's 3-strike PIVOT from prompt → structure fires for that class.
 Try once, as a baseline (research + plan reused, writing stage changed, two
 books, full panel). Reviewer sees plan + card + chapter only — never GSBS,
 never a judge prompt (judges measure; the reviewer is a factory component).
-Cap: one review, one rewrite per chapter, no open loop.
+Cap: A1 — review→rewrite until ACCEPT or three rewrites; last rewrite at cap
+is the chapter.
 
 Also: `prompts/style-guide.md` already says "the chapter reviewer judges the
 actual text" — a reviewer that does not exist. Fix that sentence when the
