@@ -4,11 +4,11 @@
 
 - **Iteration:** 033
 - **Stage:** Planning
-- **Status:** IN PROGRESS
+- **Status:** HALTED (PASS probe)
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 026–027 KEEP + 030 KEEP + 031 KEEP accepted; 032 REVERT; A1+K1 cutover landed)
-- **Last completed unit:** Smoking research synthesis on disk (LEU-001–006, SEU-001–005, sources S-001–S-109).
-- **Next unit:** Plan-write/review for `quit-smoking` until `fit to write from`; then alignment + moves; PASS probe (Easyway Ch6 and Ch22 as both ours and real); 033 BASELINE write (sugar + smoking). Do not write 033 until smoking plan is `fit to write from`.
+- **Last completed unit:** Smoking PASS probe 7/8 PASS; reader-journey Easyway Ch6 FAIL (`compliance-missing` vs our CH-07 tokens).
+- **Next unit:** Founder gate. Do not start 033 writes. Journey FAIL is Easyway Ch6 scored against factory I-07 / Nipper / Smokescreen / exact M-F wording Carr never used. Re-run “as real” with Carr-native context, or drop factory-token compliance when the text is the reference.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -45,3 +45,5 @@
 | 2026-09-05 11:10 | Remaining wave-1 banks recovered onto parent. J=130 (floor clear). Analogies 45 / lexicon 74 still short. | gap-fill A+D then synthesize |
 | 2026-09-05 11:15 | A=50 D=100 from banked lived quotes. Count floors clear. | synthesize lived-experience + science |
 | 2026-09-05 11:20 | Heartbeat: no runner. Synthesis + source ledger written. M-035–M-040 added. | smoking plan-write |
+| 2026-09-05 11:25 | Smoking plan accepted r1 (`fit to write from`, 14 ch). Alignment + moves written. | PASS probe Ch6/Ch22 |
+| 2026-09-05 11:35 | PASS probe 8 calls. 7 PASS. reader-journey Easyway Ch6 FAIL compliance-missing (factory tokens vs Carr text). | founder: do not write 033 |
