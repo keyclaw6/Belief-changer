@@ -1,162 +1,162 @@
 Chapter 1
 READ THIS FIRST AND BE FREE
 
-*You can stop smoking without misery, because there is nothing real to lose and a marvellous freedom to walk into.*
+*You can stop smoking without misery, and find the reading itself a pleasure.*
 
-### YOU HAVE EVERY RIGHT TO DOUBT THIS
+## The Stairs That Told the Truth
 
-I know how you come to a book like this.
+I want to start not with advice, but with a pair of legs and a set of stairs.
 
-You come tired. You come braced. You have lit the next cigarette within the hour of swearing it would be the last, and you have done it more times than you can count. You have promised yourself, promised your family, promised the mirror. You have lasted hours. You have lasted days. Once you lasted weeks. Then you were back at full rate, and each return left you a little more certain that life without cigarettes would be flat and grey and impossible to enjoy.
+It was a wet Tuesday, the kind of morning when the rain gets into the brick of the building where I worked. I was late. I took the stairs two at a time from the ground floor to the second, a packet in my top pocket, a lighter rattling beside my keys, my mind already on the meeting upstairs.
 
-So part of you hopes. Part of you scoffs.
+Halfway up the second flight I had to stop.
 
-“If it sounds too good to be true, it probably is.”
+Not dramatically. I did not clutch my chest. I did not make a scene. I simply stopped, one hand on the rail, puffing like a man who had just run for a bus. My heart was thumping in my ears. My mouth tasted of last night's ashtray. I stood there while footsteps came up behind me.
 
-Is that what you are thinking? Good. I welcome it. I would be worried if you did not think it. Any daily smoker who has smoked through stress and meals and breaks and nights out for years has earned the right to be sceptical of one more promise.
+It was Brian from accounts. Brian, who has never smoked a cigarette in his life. He was fifty-two then, not athletic, not a runner, a man fond of pies and late television. He came up those same stairs without breaking stride, nodded good morning, and continued to breathe easy while I stood puffing at the top.
 
-I was that smoker. I am not a doctor wagging a finger from a clean desk. I am not a theorist who read about smoking in a textbook. I smoked heavily every day for years. First thought in the morning. Last thing at night. A chain of doses in between to get me through everything — work and worry and waiting and waking and sleeping. I know the panic when the pack is light. I know the little mathematics of will this last me till morning. I know the cough you clear before a phone call so no one hears it.
+I laughed it off. We all do. I said something about being unfit, about age, about needing another coffee. He smiled and went on to his desk. No lecture. No look.
 
-And I know the dread that sits underneath it. Not just the cough and the cost. The deeper dread. The quiet sense that something has taken hold of you.
+But I stood at that window on the landing for a long minute, looking down at the car park, with my hand already moving toward my pocket for a cigarette to steady myself after the stairs.
 
-Do you feel that? That you would love to be free, and yet you cannot picture being free and happy at the same time? Of course you do. That is why you are holding this book.
+Ask yourself what that moment meant.
 
-Let me set the tone at once. This is not a lecture. There is no doom here. There is no need to feel miserable while you read. Cast all feelings of gloom aside. I want you to feel excited from the very first page. You are about to go on an exciting adventure, and at the end of it you will walk out into clean air.
+Did my body need a cigarette to climb stairs? Did Brian climb them better because he had some secret strength I lacked? Or had thirty years of doses done something to my wind that his lungs had never known?
 
-Does that sound outrageous? Ask yourself this. If freedom were truly impossible for you, why did you pick up this book at all? Why are you still reading this page? And if some smokers do get free — completely free, happy to be non-smokers, never looking back with envy — what makes you so certain you cannot be one of them?
+I am not talking about illness. I am not your doctor and I am not here to frighten you with names of diseases. I am talking about what you already know in your own chest. The tightness after two flights. The morning cough in the bathroom that you clear before anyone hears. The way you choose the lift when no one is watching. The way you tell yourself you are out of shape, getting older, a little unfit, while a non-smoker ten years older walks past you talking normally.
 
-There is only one honest answer. You cannot be certain. You are still here because a part of you knows escape might be possible.
+We tell ourselves stories to cover that moment. We say we like smoking. We say we choose it. We say it steadies us. And then a stairwell shows us, in plain daylight, that our legs and lungs are working harder than they should to do an ordinary thing.
 
-Hold that part gently. It is enough to begin.
+Why do I begin here? Because I need you to see that I am not speaking from a textbook. I smoked heavily for over thirty years. I know the rattle of a packet in the morning, the search through coat pockets, the panic at midnight when the shops are shut. I know the office window cracked open in winter, the rain blowing in while you finish a quick one before the boss looks round. I know the little rituals you think are yours.
 
-I do not ask you to believe me yet. I ask only that you stay curious a little longer than your disappointment tells you to. You have been disappointed by stern speeches and dates and deals with yourself. You have been disappointed by patches and gum and white-knuckle days. Your disappointment is honest. It proves you tried. It does not prove you cannot be free. It proves the way you were shown was wrong.
+And I know the tiredness you bring to a book like this. You have been lectured. You have been warned. You have been told to be afraid, to count the cost, to think of your family, to be ashamed. You are braced for another scolding.
 
-### THE STAIRS DO NOT LIE
+You will not get one from me.
 
-Let me take you to an ordinary staircase.
+I am on your side completely. I liked being a smoker in the way a man likes a familiar coat, even when the coat is heavy and wet and smells. I defended it. I argued for it in pubs. I told non-smokers they did not understand pressure, deadlines, small children, long drives. I believed, as you may believe now, that cigarettes did something for me that I could not do for myself.
 
-Not a clinic. Not a laboratory. The stairs up to your flat. The stairs in the station. The stairs in the office building where the lift is slow and you think, I will walk.
+The stairs told another story. My body told it before my mind would listen.
 
-You start up with a bag in one hand and a phone in the other. By the second flight you are breathing through your mouth. By the third you have to pause at the landing window. You pretend to look out at the street while you catch your breath. Your chest feels tight. Your heart thumps in your ears.
+You have a body too. It has been telling you. The short breath on the hill. The dull taste after the evening packet. The restless hand in the queue. Listen to it now, not with fear, but with curiosity. What if that body is not weak or broken? What if it is simply asking to be heard?
 
-Beside you a non-smoker of about your age, no younger than you, no fitter, no athlete, climbs without a pause. He breathes easy. He does not notice the stairs at all. He is still talking mid-sentence while you nod and try not to wheeze.
+You do not have to answer yet. You only have to keep reading.
 
-You know that moment. We all know it. We smokers know the landing window very well.
+## Why I Know Exactly How You Feel
 
-Now let me ask you plainly, as one smoker to another. In that moment on the landing, did you feel like a free person enjoying a genuine pleasure? Or did you feel, just for a second, like a person in a cage who had paid for his own bars?
+I smoked my first cigarette at sixteen because the older boys did. I coughed, felt dizzy, and told myself I looked grown. Within months I was a daily smoker. Within years I was a confirmed, defensive, lifelong smoker.
 
-Be honest. No one is judging you. I stood on that landing a hundred times. I told myself stories. Getting older. Unfit. Busy. Tired. Anything rather than hear what my own body was shouting.
+We all learn the same catechism. A cigarette with coffee. A cigarette after food. A cigarette on a break. A cigarette when the phone rings with bad news. A cigarette to celebrate good news. A cigarette while waiting. A cigarette to think. A cigarette to stop thinking. Soon the day is not a day at all. It is a string of pauses joined by doses.
 
-Your body is not your enemy. Your body is the most honest friend you have. It does not moralize. It does not lecture. It simply tries to breathe and taste and keep you alive and alert. When smoke fills it, it coughs. It tightens. It struggles for clean air. That struggle on the stairs is not a character flaw. It is authority. It is your own lungs telling you a truth your mind has been trained not to hear.
+I built a life around those pauses. I chose jobs with outdoor areas. I chose seats near doors. I carried mints, sprays, eye drops. I stood in rain, snow, wind. I missed parts of parties, parts of football matches, parts of my children's bedtime, to stand alone with a glowing tip. I told myself this was my choice, my pleasure, my right.
 
-Think of the marvellous work your body does without being taught. It breathes while you sleep. It heals a cut while you get on with your day. It wakes you hungry and tells you when you have had enough. It wants clean air with the same quiet certainty that it wants water. You do not have to train it to be free. You only have to stop confusing it.
+At the same time I felt the slow closing in. Money going up in smoke week after week, year after year. The smell in my hair, my car, my curtains. The yellow between my fingers that no soap quite shifted. The embarrassment when my daughter waved smoke from her face and I snapped at her for coughing. The private arithmetic at night: how many left in the pack, how many until morning, can I make them last.
 
-Here is the question that changes everything. If cigarettes relaxed you and helped you and pleased you, why did they leave you breathless on an ordinary staircase while a non-smoker walked up laughing? What exactly was the pleasure doing for you there?
+Do you recognise any of that? Of course you do. That is why you picked up this book.
 
-And here is the second question. If you had never lit that first cigarette, would you be standing on that landing gasping now? Or would you be the one still talking mid-sentence?
+I attempted to stop more times than I can count. I used the chemist's shelves. I used promises to my wife. I used Monday mornings and New Years and birthdays as lines in the sand. Each attempt left me irritable, hollow, convinced I had lost something vital. Each failure left me more certain that I lacked something other people possessed.
 
-You know the answer. We both do.
+Then one evening changed everything. Not a clinic. Not a scare. A conversation with an old shipmate who had smoked as heavily as I had and then simply stopped. He was not miserable. He was not white-knuckled. He was cheerful, present, fully himself, talking with his hands free and his laugh loud. He described an afternoon when he had sat in his garden, smoked what he knew would be his last cigarette, stubbed it out with a kind of puzzled pity, and walked back into his house as if nothing had happened — because, as he put it, nothing had been taken from him.
 
-I am not showing you the stairs to frighten you. I do not want you to stop because you are frightened of the stairs. Fear never freed anyone for long. I show you the stairs because your body already knows you were not born to breathe like that, and remembering it makes the rest of this book easy to hear. The relief is already waiting on the other side of clear seeing.
+I argued with him for two hours. I gave him every reason I owned. Stress. Work. Habit. Pleasure. He listened, nodded, and answered each one with a simple question that made my reasons sound thin even to my own ears.
 
-### I WAS YOU
+That night I went home and did what I am going to ask you to do. I read what he gave me with a genuinely open mind. I did not agree in advance. I did not fight it either. I followed the argument step by step, testing it against my own days and nights.
 
-You have a right to know who is speaking to you.
+Within days I smoked my last cigarette. Not with dread, but with a sense of quiet recognition, like putting down a heavy bag I had carried so long I had forgotten its weight. I expected craving to drag me back. I expected gloom. What I felt was different: mornings came back sharp and clear, food had edges again, breaks were breaks, and I could watch other smokers without envy or superiority — only with the calm knowledge that I had walked out of a small, stuffy room into ordinary daylight.
 
-I started as most of us start. Curiosity. Showing off. Belonging. The first cigarettes tasted foul. They made me dizzy and sick. No child picks up a first cigarette because it is marvellous. We persist because we are told, over and over, that there is something adult and relaxing and sociable in it, and because after a little while we begin to feel edgy without one and mistake that edginess for proof we need one.
+I have spent the years since helping other long-term smokers do the same. Men who smoked on building sites in January. Women who smoked through night shifts and school runs. Young fathers who hid on balconies. Older women who thought it was too late. The details change. The pattern does not. Once they see what cigarettes never did for them, they stop. They do not force themselves. They do not count days on a calendar. They simply stop and get on with their lives.
 
-That is how we all fall in. Not because we are stupid. Not because we are weak. Because we were conned by phoney information before we knew enough to question it.
+I tell you this now for one reason. You need to know you are not listening to a theorist or a preacher. You are listening to a man who stood where you stand, pocket full, chest tight, mind full of excuses, and who now lives on the other side of that evening. I know the pull of the packet. I also know how quickly that pull fades when the belief behind it is removed.
 
-I became the classic daily smoker. Stress? Light up. Meal finished? Light up. Phone call? Break? Drink? Waiting for a bus? Good news? Bad news? Nothing to do? Light up. My day was not a day with cigarettes in it. It was cigarettes with a day fitted around them.
+You may think your case is different. You may think you smoke more, enjoy it more, need it more. Every smoker thinks that. I thought that. May I ask you to set that thought aside for a few hours? Not forever. Only while you read.
 
-And like you, I tried to get out. I made the stern speeches. I set the dates. I cut down for a week and smoked double the week after. I hid the evidence. I told lies about numbers. I lasted hours, days, once a few weeks. Then the little voice would start: “You have been so good. One will not hurt. You can handle one now.” And I would have one. And within days I was back to full rate, hating the trap more than before.
+There is a way out that does not ask you to be miserable. I found it as a confirmed smoker with no faith left. You can test it in the same condition — packet in pocket, lighter at hand, doubts intact.
 
-Do you know that voice? “One will not hurt.” “I will stop tomorrow.” “Now is not the right time.”
+## Too Good to Be True?
 
-Whose voice do you think that is? Yours? Or the voice of the trap speaking through you?
+"This sounds too good to be true."
 
-After each failure I believed what most smokers believe: that I lacked will. That other people had some toughness I did not. That I would smoke for the rest of my life and die chained to doses I despised.
+I hear that sentence almost every week, sometimes spoken, more often sitting unspoken behind polite eyes. Let me voice it properly for you, because you have earned the right to be sceptical.
 
-Then, almost by accident, I began to look not at why I should stop, but at why I smoked. Not the warnings. Not the money. The supposed benefits. Relaxation. Concentration. Pleasure. Company. Nerve-steadying. One by one I examined them in my own daily life, while I was still smoking, and one by one they fell apart. There was nothing there.
+"You are telling me I can stop easily, immediately and permanently, without feeling deprived, without using force, after years of failing. I have tried before. It was hell. Why should this time be different?"
 
-When I saw that clearly, something extraordinary happened. I smoked my last cigarette — not in tears, not in terror, but with relief and even joy — and I walked free. The desire left. Not after three weeks. At once. From day one I was happy to be a non-smoker.
+That is a fair question. I asked it myself.
 
-I tell you this not to boast. I tell you because you need to know that ease is possible. You have been told so often that stopping is agony that you assume agony is the price. It is not. The agony comes from believing you are losing a friend. When you see you are escaping a con, there is no agony. There is only clean air and a wonderful sense of getting your life back.
+Let me ask you this in return. Answer honestly, not to me, but to yourself.
 
-I was the last person who expected ease. I had failed too often to believe in it. I picked at every promise. I argued with every page. And still the understanding came, quiet and complete, like morning coming through a curtain you did not know was thin. If it could happen for a confirmed daily smoker like me, why would it not happen for you?
+If you were truly happy smoking, truly content to go on exactly as you are for the rest of your days, would you be reading a book called by such a title? Would you have spent money and evening time to hear a stranger talk about stopping?
 
-Now you may ask: if it is so easy, why does everyone say it is so hard? For the same reason you once believed cigarettes calmed your nerves. Because everyone was taught the same story, and a story repeated by everyone begins to sound like fact. It is not fact. It is brainwashing, and brainwashing dissolves the moment you look straight at it.
+When you tried before and felt wretched, was the wretchedness caused by the absence of smoke in your lungs, or by the feeling that you were missing something precious while others still enjoyed it? Think of the evenings you sat watching smokers through a window, feeling left out. Was the pain in your body or in your belief about what they had?
 
-You were not weak. You were misled. That is the whole truth about your past.
+Have you ever, even once, finished a cigarette and felt that it solved the thing that made you light it? The bill still waited. The argument still waited. The deadline still waited. The night still waited to be slept through. What exactly did the cigarette fix?
 
-### WHAT YOU RISK BY READING ON
+You know the answers. You picked up this book because some part of you already suspects the truth: you are not happily choosing. You are repeating. You tried to stop and felt low because you believed you were losing a friend. The low feeling then seemed to prove you needed the friend. Round and round.
 
-Let me remove the dread that makes smokers put books like this down.
+It was not your fault. We all entered this repetition as teenagers on false information, copying adults who themselves were copying. No one explained the cycle. Everyone around us smoked, advertised, joked, offered. How could we have known?
 
-You do not have to stop while you read. You do not have to cut down. You do not have to smoke your “last” cigarette with trembling hands on page one and then suffer through the rest. While you read, go on smoking exactly as normal. Smoke when you want. Smoke where you want. I ask nothing heroic of you yet.
+The fact is simple and I state it flatly: stopping feels hard only while you believe you are losing something real. Change what you believe it gives you, and stopping stops being hard.
 
-Why? Because this book changes what you want before it asks you to change what you do. How could you investigate fairly what cigarettes really do for you if you were already in a panic about doing without them? You cannot. So there will be no panic. Read as a smoker, curious and comfortable, and let the argument do the work.
+I know this is hard to accept. Your mind will protest. It will say: but it calms me, but it helps me think, but I like the taste, but what will I do with my hands. Good. Bring those objections with you. Do not push them away. This book was built to meet each one in daylight and answer it, not with slogans, but with your own experience held up to the light.
 
-I remember the fear of even reading. To read felt dangerous, as if each page brought me closer to the day of execution. If I finished, then I would have to act. If I acted, I would suffer. Better not to finish. Better to leave the book on the shelf.
+You do not have to believe me now. You only have to allow the possibility that a lifelong smoker who failed as often as you have could find the exit easy. If he could, what does that say about the nature of the exit? Perhaps the door was never locked. Perhaps we were pushing when we should have pulled.
 
-Does that sound familiar? “I cannot quit now. Too much stress. Too much company. Too much boredom. I will read it later.”
+You are not broken. You were never shown how easy this could be.
 
-Whose caution is that? Yours? Or the trap protecting itself?
+## What This Book Will Not Ask of You
 
-I felt that caution every time someone offered me a way out. I kept the book closed because to open it felt like signing a sentence. I understand that feeling from the inside, and I promise you there is no sentence here. There is no cliff you are being marched toward. There is a door you are being invited to look through, while you still hold in your hand exactly what you hold now.
+Let me make the contract plain, so your shoulders can drop.
 
-Let me answer the caution with simple arithmetic that no smoker can argue with. What do you risk by reading? A few hours of your time. That is all. Just think about it for a moment and you will see that you have nothing to lose and everything to gain.
+This book will not lecture you. It will not shame you. It will not ask you to be afraid of your own shadow. It will not tell you that you are weak, or ill, or lacking character. I have only warmth for the smoker reading these words, because I was that smoker.
 
-Look at the two sides clearly. On one side, the worst that can happen is you finish the book, you understand smoking better than you do now, and you carry on as before. Nothing taken. Nothing forced. On the other side, the best that can happen is you walk free and you never crave cigarettes again. Health, money, energy, self-respect, mornings without coughing, nights without planning where to smoke — all of that is bonus. The real prize is joy. To look at other smokers and feel not envy but relief. To think of a cigarette and feel glad, deeply glad, that you no longer need it.
+It will not ask you to stop smoking while you read. Smoke as you normally do while you turn these pages. Light up when you want one. There is no call to change your routine, count your doses, cut down, or prove anything yet. Why? Because I am not after your behaviour first. I am after the belief that drives it. Behaviour forced before belief is changed only breeds gloom and fantasy. Belief changed first makes behaviour simple.
 
-Is that not worth a few hours with an open mind?
+It will not ask you to memorise facts or study diagrams. There are no tests. You do not need a strong memory or a strong will. You need only to follow an argument about your own life and see if it holds true.
 
-Think how proud you will feel to breathe easy again. Think how wonderful it will be to get on with enjoying your life without counting doses, without watching the clock, without stepping outside into the rain to feed a need you never chose. That feeling is not distant. It is close. It begins the moment you allow yourself to investigate.
+And it will not ask you to take my word on trust. Test everything against your stairwell moments, your midnight packet counts, your office windows. If a sentence does not match your experience, mark it and keep reading. The whole will judge the parts.
 
-Rejoice that the price of admission is so small. You are not signing for pain. You are not signing for loss. You are giving a few quiet hours to a fair hearing, and in return you may receive your freedom. No honest person would call that a bad bargain.
+Now the promise that makes that contract safe. I promise you that you have nothing to lose and everything to gain by giving these pages a fair hearing.
 
-### EASY, AT ONCE, AND FOR GOOD
+Think what that means in practice. If I am wrong, you will have lost a few hours of reading and will smoke exactly as before, no worse off. No one will know. No record will be kept. If I am right, you will gain something no money can buy: the ability to leave cigarettes behind without feeling you have left yourself behind.
 
-You still doubt that stopping can be easy. I understand.
+Is there any other purchase you have made with those odds? A few hours against a lifetime of packets, coughs, hiding, planning, spending. A small attention against mornings that taste clearer.
 
-“easily, immediately and permanently” sounds like advertising. It sounded like advertising to me. Nothing in your history tells you that freedom comes easy. Everything tells you the opposite. The cravings. The mood. The failures. The friend who stopped for a month and was miserable the whole time. The neighbour who still talks about missing it after years.
+I felt a small sense of relief when I first understood I did not have to dread the reading. Dread had been my habit with every previous attempt — dread of the day I would stop, dread of the evening craving, dread of failure. Here was a book telling me to carry on smoking until the end, to read with curiosity, to enjoy the process of discovery. My cynicism softened. I thought: very well, I will play along, but I will watch closely.
 
-“I know this is hard to accept,” you say, “but my case is different. You do not know my stress. You do not know my life.”
+I ask the same of you. Play along, but watch closely.
 
-I do know your stress. I lived it. Bills and bosses and children and traffic and grief. And I know this too: if stopping were truly a matter of toughness, why do the toughest people you know — people who run businesses, raise children, work night shifts, survive grief — still fail to stop by force? And why do some ordinary smokers, no stronger than you, stop overnight and never look back?
+You have been told quitting must hurt to work. That is the cruellest part of the old approach. It teaches you to expect pain, so you create pain, so you conclude you cannot stop. This book reverses that teaching. Expect clarity. Expect recognition. Expect the odd laugh at yourself as you catch a familiar excuse in familiar clothes.
 
-Could it be that ease has nothing to do with character and everything to do with understanding?
+Bring your doubts, your packet, your lighter. Bring your hardest cases — the morning dose with tea, the meal-closer, the drink with friends, the deadline panic. We will meet each one. None will be ducked.
 
-The fact is, when the false belief goes, the struggle goes with it. I mean that you can stop easily, immediately and permanently. Not after a year of counting days. Not as a sentence to be served. At once, as an identity. A non-smoker from the moment the last cigarette goes out, happy to be free from day one.
+For now, there is only one agreement between us, and it comes at the end of the next short section. Read that section slowly. Then decide.
 
-Hold that thought lightly for now. You do not have to believe it fully yet. You only have to allow that it might be true for you. That permission is enough to begin.
+## How to Read These Pages
 
-Do you see how different this is from everything you have tried? Before, you were asked to hold your breath and suffer and hope the want faded. Here you are asked to see clearly and let the want fall away by itself. Before, freedom was a distant prize after months of misery. Here freedom starts the moment the belief changes. Which sounds more like escape? Which sounds more like truth?
+There is an art to reading a belief-changer, and it is very simple.
 
-I make you this promise as a fellow escapee who has watched others walk out the same way. There is no pain waiting for you here. There is no loss waiting for you here. There is only the marvellous moment when you see the trick and the want falls away by itself. Rejoice at that prospect. Celebrate it. Let yourself feel excited that you may never have to smoke again.
+Read in order. Do not skip to the end to see how it finishes. A mystery spoils if you read the last page first. This argument builds like a walk up a gentle hill. Each turn prepares the next view. Miss a turn and the view makes less sense.
 
-### HOW THIS BOOK WORKS
+Read with your own life beside you. When I describe the morning search for the packet, picture your bedroom, your kitchen, your kettle. When I describe the desk after an argument, picture your phone, your papers, your hand moving. The argument works only when it touches concrete detail. Abstract agreement changes nothing.
 
-Perhaps you have read other advice. Perhaps friends have told you to use will, to distract yourself, to avoid pubs and coffee and smokers, to chew and suck and patch your way through cravings.
+Read without arguing aloud until you have heard the whole point. Our minds love to interrupt. Halfway through a paragraph the inner lawyer stands up: yes, but my job is different, yes, but I only smoke ten a day, yes, but my grandfather smoked till ninety. Thank the lawyer, ask him to sit down, and let the paragraph finish. There will be time to judge when the case is complete.
 
-I blame no one who gave you that advice. They meant well. But notice what all of it assumes: that cigarettes give you something real, and that to live without them you must fight yourself forever.
+The tea on my desk was hot and strong while I turned the pages of the book that freed my thinking, and I remember thinking how ordinary the moment was. No thunder. No vow. Only a man in a chair, reading, smoking if he wanted, beginning to see.
 
-This book assumes the opposite, because the opposite is true. Every so-called benefit you feel will be examined in daylight, in your ordinary life — stress, breaks, meals, nights out — and you will see for yourself where the pleasure really came from. It came from the moment, the pause, the company, the food, the drink, the breath. We will take each illusion in turn. We will be thorough. A lock with ten tumblers does not open because you picked nine. We will pick them all, and the door will swing wide by itself.
+You can do the same. Find a quiet chair when you can. Keep your cigarettes with you. Do not create a sense of emergency around the reading. If you feel restless, have a dose and continue. If you feel sceptical, note it and continue. Continuity matters more than mood.
 
-All I need from you is that you read in order, without skipping ahead, and that you let each chapter finish before you borrow another opinion about quitting. Other voices will crowd in — the friend who suffered, the advert for another crutch, the smoker in the pub who swears he enjoys it. Let them wait. Give this argument a fair hearing first. If it is wrong, you will know. If it is right, you will be free.
+And watch for the moments of recognition. They arrive quietly. A sentence will describe exactly what you do with your hands after food. Another will describe exactly what you say to yourself in the pub garden. You will think: how does he know? I know because we have all lived the same days. That recognition is the engine. Each one loosens the belief a little more.
 
-Read with joy, not with dread. Begin by feeling great to be on the way out. There is no doom in these pages. There is only the steady uncovering of a trick, and the growing excitement of a person who senses the cage door is already open.
+Do not try to stop those thoughts. Do not try to force them either. Let them come.
 
-So here is my contract with you. I will never shame you. I will never talk down to you. I will never ask you to rely on toughness. I will show you, step by step, that there is nothing to lose by stopping and everything to gain by escaping, and I will make it so clear that stopping feels like relief.
+I will make you one more pledge. I will never ask you to act on a belief you do not yet hold. Every step I ask you to take will rest on ground we have already covered together. By the time I ask you to smoke your last cigarette, you will be ready, even impatient, for it. If you are not ready, you will simply re-read the pages that matter and become ready. No cliff edge. No test of character.
 
-In return, I ask one thing, and one thing only at this stage. It is the key that opens every other door.
+So here is our first and foundational agreement. It underlies all the others that will follow in later pages. Without it, nothing works. With it, everything becomes possible.
 
 1. KEEP AN OPEN MIND
 Give this book a fair hearing and it will free you.
 
 **SUMMARY**
-- Stopping can be joyful from the start, not a misery to be endured.
-- Your body already tells the truth on ordinary stairs, and that truth is on your side.
-- Past failures were not proof you are weak, they were proof the approach was wrong.
-- Reading costs only a little time while freedom offers a whole life.
-- A curious and fair hearing lets the rest of the book do its work.
+- Stopping can be straightforward when the belief behind smoking is seen clearly.
+- A tired history of failed attempts does not mean you are weak or beyond help.
+- Dread is not required for change; curiosity does the work better.
+- Reading on costs nothing and risks nothing while you smoke as normal.
+- An open mind lets each familiar moment speak for itself.

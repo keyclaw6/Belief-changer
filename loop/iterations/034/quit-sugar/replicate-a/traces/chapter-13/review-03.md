@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` before spoken body: `**IN THIS CHAPTER** / The back page, the handed-back peach, the shut book and the meal ahead.` Remove the header; keep the SUMMARY numbered ALL-CAPS instruction list as spoken recap.

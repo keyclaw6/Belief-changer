@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `**IN THIS CHAPTER**` followed by "The pencil-marked diary, the brass lamp on the shelf, the cliff path in morning fog..." Remove the preview box; keep spoken body and the exempt closing instruction `NEVER ALLOW JUST ONE OR A SPECIAL ONE / One keeps the trap alive.`

@@ -1,179 +1,212 @@
 Chapter 5
-PARTIES, PAUSES AND MILDS
+THE LITTLE PARTIES AND THE HOLED MASK
 
-IN THIS CHAPTER
-The classroom still warm after the bell, the finished paragraph read back clean, the car park after the shops, the little dish set out after everything, the pale pack with pinholes round the filter
+IN THIS CHAPTER — the cooling corridor outside the classroom, the paragraph desk and pushed-back chair, the grocery car park with the engine off, the meal table and the morning coffee cup, the white filter with its ring of tiny holes
 
-*The lift was the work finished and the pause itself — the dose only sent you the bill for tasting them.*
+*The work pleased you and the food tasted good on its own — the tube only took the credit and taught you to puff harder.*
 
-### THE DISH AFTER EVERYTHING
+## THE REACH WE HAVE ALREADY SEEN THROUGH
 
-You watched the desk with me. The trouble sat untouched while the tug went quiet for minutes. Out there nothing moved. In here something dulled. That was not help. That was hush.
+We have looked at the desk together.
 
-Now look where you still believe it gives. Not in trouble now. In sweetness.
+Phone down too hard. Shoulders up near the ears. Hand moving before any decision. The first draw and a minute of loosening. Then back to the same papers, the same bill, the same waiting answer, exactly where we left them.
 
-For me it was after everything. I finished the hard call and my hand went out. I finished the page and my hand went out. I drove the children somewhere and drove home again and my hand went out. I called them little parties. I had earned them. I deserved ten minutes with my friend.
+I am not going to re-argue that minute. It is settled between us. The trouble was never touched. A fading dose cried to be fed, the new dose fed it for a minute, and we called the feeding care.
 
-You have your own list. Say it plainly and you will hear how tender it is, how loyal. There is nothing stupid in it. A good worker loves a full stop.
+What is still standing, for most of us at this point, is softer and more tender. Not the crisis dose. The little one. The earned one. The one after.
 
-“Cigarettes were my reward for…well, almost everything. Teaching a class. Finishing a story. Finishing a paragraph. Driving 500 miles. Driving to the grocery store.”
+Finished the class, step outside, light. Finished the paragraph, push the chair back, light. Drove the road, switch off, light. Ate the meal, push the plate away, light. Coffee poured, light. A pause arrives, light.
 
-I lived that sentence. I am not mocking it for a second. Teaching a class takes everything you have. You walk in with a plan and thirty faces and the air thick. You find the thread. You lose it. You find it again. You hold them for an hour. The bell goes and your chest is high and your hands are still warm and you think, I did that. Finishing a story is the same. Finishing a paragraph is the same in small. You wrestle a sentence for an hour, you move three words, and suddenly it sings, and you read it back and you smile without deciding to smile. Driving 500 miles is the same. The road long, the eyes tired, the last junction taken right. Driving to the grocery store is the same in small. List done. Bags in the boot. Milk, bread, the thing you almost forgot remembered. Little triumph of ordinary life managed. Sun on the car park. Shoulders back.
+We do not defend those the way we defended the crisis dose. We smile when we defend them. Of course I know it does not solve problems, we say. But do not take my little parties. Do not take the taste after food. Do not take my mild with coffee. Those are mine.
 
-Of course you want to mark it. Of course you put a little dish out after.
+I understand that smile. I wore it for thirty years. I am not going to mock it and I am not going to lecture you about danger. I am going to ask you to look at one ordinary chain of parties in daylight, as an investigator and not as a judge, and to press where the pleasure lived.
 
-We all did. We finished, we felt the lift, and we lit. Finish anything, light. Finish anything, light. Class, paragraph, story, long drive, short drive. The day became a string of finishes each tied with smoke. I told myself the smoke was the ribbon. You told yourself the smoke was the party.
+Smoke as normal while we look. I am asking for eyes, not effort.
 
-I want you to watch one of those parties with clear eyes, while you smoke as normal. I am not asking you to change it. I am not asking you to skip it or spoil it. Only to see who brought what to it.
+## THE PELLETS AFTER EVERYTHING
 
-Take the teaching. Walk out with me. The room behind you still warm. Chalk on your fingers. Voice still warm from talking. Heart still up from holding them. That lift in the chest — when did it start? Before the lighter or after it? You felt it in the corridor, did you not, before the pack was out, before the door was open, while the bell was still ringing. You were already smiling. The work had already paid you.
+We paid ourselves in smoke.
 
-Take the paragraph. Sit with me at that desk. The page fought you for an hour. Then it came clean. You read it back. It sings. That straightening in the shoulders, that quiet pride that needs no witness — when did it arrive? While your eyes were still on the screen. While your hands were still on the keys. The pleasure was already in the room before smoke entered it.
+"Cigarettes were my reward for…well, almost everything. Teaching a class. Finishing a story. Finishing a paragraph. Driving 500 miles. Driving to the grocery store."
 
-Take the grocery run. Stand with me by the boot. Bags in. List done. The small, solid satisfaction of a job closed. Sun on metal. Air moving. You breathe out. That breath out — was it empty until smoke filled it? Or was it already sweet because finished work is sweet?
+Do you hear your own list inside that list? I hear mine. Coffee done, page done, call done, lawn done, row survived, dinner eaten, keys in the door. A pellet after every little trick, as regular as a bell. We did not call it a bell. We called it rounding the moment off. A ciggie to finish properly. The stick to mark the ending. A habit smoke that felt earned.
 
-We did the work, felt the lift, and signed the lift over to the tube.
+I am not going to tell you the pleasure of finishing was not real. It was real. I want us to give it back to its owner.
 
-I know this is hard to accept, because the two have arrived together for years. But keep your own audit today and answer honestly. Did the stick teach the class? Did the stick find the sentence? Did the stick drive the miles and remember the milk? You know. We both do. No.
+Take the classroom door first, because it is concrete enough to hold still.
 
-It is you that achieves, not the dose. It is you that enjoys finishing, not the dose.
+Forty faces gone. Boards wiped. Your throat dry from talking. The hour held together by you alone — the slow question at the back coaxed out, the restless middle kept awake, the plan abandoned halfway and rebuilt on your feet. You close the door. The corridor is cool after the warm room. The packet is already in the hand. Strike. Draw. Stand by the window and watch the street go by below.
 
-See how widely the reward can stick itself and you will see it is not reward. A long drive and a short drive earn the same light. A class that took a week to plan and an errand that took ten minutes earn the same light. A story that took months and a paragraph that took an hour earn the same light. What kind of payment pays the same for 500 miles and for milk? What kind of prize cares nothing for the size of the win?
+What pleased you in those ten minutes? The teaching, or the tube?
 
-It pays because the clock pays. An hour or so since the last feed, the empty tug stirs. Whatever you have just finished gets blamed for the hunger and credited for the quiet. You finish, you feed, you drop from two hungers to one, you call the drop a party.
+Isolate it cleanly. Take away the lighting and leave everything else exactly as it was — the class taught, the hour carried, the room that listened, the weight off your shoulders — and what would be missing? Would the class be less taught? Would the done-ness be less done? Would the street be less bright outside the window? Would your shoulders not drop because no paper burned?
 
-Try it with your own day. Notice the same finished paragraph feels flat and needs no marking when you have just lit, and feels worthy of a party when you have not lit for an hour. The paragraph did not change. The interval changed. Notice the boring errand that demands no party on holiday when doses come freely, and demands a party at work when doses are forbidden. The errand did not change. The tug did. Notice the class that leaves you glowing even when you cannot light at once because a parent waits to talk, a colleague stops you, the rain keeps you in — the glow stays without smoke, and when you finally light twenty minutes later it adds nothing to the glow, it only quiets the tug that grew while you waited.
+Now do the reverse, because the reverse is the test we never ran. Take away the teaching and leave the lighting exactly as it was — stand in the same cold and draw the same dose with no work behind it, no paragraph, no drive, nothing finished — and would it be a party? You know that minute. The dose between doses. The one with nothing behind it. It tastes thin and stale and leaves you watching the clock for the next thing to happen.
 
-Picture the chain as it really ran. Bell, light. Sentence found, light. Bags in boot, light. Mended tap, light. Phone call returned, light. Each bead the same size on the string though the deeds were different sizes. A child would see through that prize-giving in a minute. A dog trained to press for a pellet presses for any bell because the pellet follows the bell, not because the bell deserved it. We pressed after every bell because hunger followed the hour, not because the hour deserved smoke. The finish only lent a respectable name to feeding time.
+Both pictures point one way. With work and without smoke, the pleasure stands. With smoke and without work, it falls flat.
 
-That is not reward. That is rent collected at every full stop.
+We were conned into giving the work's wages to the tube. The taught class pleases. The finished thing pleases. The body likes done. That liking is yours. It was there before the first cough behind the sheds, and it never left you except in the story that pasted a light over every ending.
 
-A true reward leaves you richer. This leaves you staler, a little more edgy for the next hour, a little more certain you cannot enjoy finishing without lighting. It does plenty TO you. It does nothing FOR you.
+Take the paragraph next, because it is smaller and therefore harder to hide behind.
 
-### THE WORK WAS ALREADY SWEET
+You wrestled a sentence for twenty minutes. You cut the weak line. You kept the true one. You read it back and it turned clean. You pushed the chair back and your shoulders dropped and breath came deeper. You lit and told yourself the dose sealed the thinking.
 
-“But surely I enjoy finishing more with it? Surely it rounds it off?”
+Did the dose type a letter of it? Did it find the word you had been hunting? Did it sit with the ugly draft while you stayed? The dose sat in the packet while you did it. It contributed no sentence, no patience, no judgment. Then, in the minute when the lift from finishing was already rising in you, it arrived late to take the applause.
 
-I hear you. I said it for years. I loved the ritual of it. The step aside. The click. The hands knowing what to do. It felt like putting a frame round the picture.
+Isolate the worker from the watcher. Think of any day you could not step out — the long meeting, the train with no stop, the house with a sleeping baby where you could not leave the room — and did you type worse? You typed and finished and felt the same lift, only without the bell. The lift did not need the bell. The bell needed the lift to hide inside.
 
-Look closer with me at that frame. Does the frame paint the picture?
+Ask yourself plainly, and answer only to yourself. On the days the words came easily and you forgot to step out for an hour, was the page less sweet? On the days you chained three pellets over one stubborn paragraph, did the paragraph come faster, or did you sit longer in smoke with the same blank screen? You know. The work kept its own time. The lightings kept the time of the last dose.
 
-Take a day when doses come freely. Holiday. No one watching the clock. You finish a swim, a walk, a chapter of a book you love. You light because the hour says light, not because the finish says party. Does the finish feel less finished? No. The pleasure of done stands up without help. Take a day when doses are forbidden. Long meeting. Long flight. Long morning in a place you cannot slip out. You finish something small in your head — you solve a line, you remember a name, you get through the hour. No light possible. Does the small lift still come? Yes. Muted by tug, perhaps, edged by want, but there. The lift comes because finishing is sweet to a human mind. Children glow when they finish a tower. Dogs prance when they fetch. No tube taught them that.
+Take the grocery run last, because it is so ordinary we never thought to question it.
 
-We were taught to doubt our own sweetness. The Smokescreen is a brilliant teacher. It taught us young that smoke seals pleasure, and then it gave us a need that only smoke quiets for minutes. Every quiet after a finish feels like proof of the lesson. Every stir before a finish feels like need for the prize. Round and round, and we call the circle reward.
+List remembered in a loud shop. Bags lifted. Boot closed. Shelves stocked for people you love. Engine off in the car park. Two minutes with nothing to do before going in. You lit and called it a pause that was earned.
 
-I sat in that circle for years. I told myself the page needed its smoke the way supper needs salt. Then I watched plainly. Morning page, night page, same work, different intervals. Morning page after the night's hunger, lit at once, heaven. Night page after a chain of lights, lit at once, flat. Same man. Same page. Same hands. Only the clock since the last feed had moved. How could the same smoke crown one finish and spoil another unless the crown was the clock, not the smoke?
+Who drove both ways through traffic? Who remembered the list when the shop was loud? Who carried the weight up the steps? You did. The dose carried nothing. The quiet that done already brings was already on its way to you before the match struck.
 
-Ask your own mouth. Do you light after everything because everything deserves it, or because an hour has passed since the last feed and everything is a good excuse? Do you light after the class you loved and the class that bored you? After the paragraph that sings and the email that limps? After the 500 miles that tired you and the milk run that did not? If smoke were a true prize for effort, effort would decide it. Effort does not decide it. Hunger decides it. The finish only lends it a name.
+That is the whole chain when seen straight: class, paragraph, errand, light, class, paragraph, errand, light. Work, work, work, bell. We did the work from first to last.
 
-Consider the gardener who will not credit the wheelbarrow for the roses. He pushed it, he dug, he weeded, his back ached and his hands knew soil. Would he thank the barrow for the bloom? You taught, you wrote, you drove, you remembered, you carried. Your nerves held the room. Your eye caught the wrong word. Your hands steered true. Would you thank the stick for the work your own body and mind performed? The stick sat dead in the pack while you did it all, then lit after and asked for applause.
+It is the other way around. The pellet never paid for the work. The work paid for the pellet, and the pellet took the applause.
 
-Consider the non-smoker beside you at work. She teaches the same class. She finishes the same paragraph. She drives to the same shops. She feels the same lift — chest high, shoulders back, smile without deciding — and she does not reach. She stacks the papers. She closes the file. She puts the bags in the boot. She breathes. Does her pleasure look thin to you? Does she look cheated of the frame? Or does she look complete, with both hands free and clean air in her chest, already turning to the next thing while you stand aside to pay for turning?
+I know this is hard to accept. Your mind answers: but mine is different. I enjoy the break after. It rounds the moment off. It helps me think between bursts.
 
-Once you see who did the work, the reward story cannot stand. The party was the work. The lift was yours before the lighter caught. The tube arrived after your joy began and took the bow.
+I do not doubt you felt something round. I doubt only what rounded it. What rounded it was a fading edginess going quiet for a minute, laid exactly over the minute when the lift from finishing was already rising. Two liftings at once, one from life and one from the tube going quiet, misnamed as one gift from paper.
 
-### THE PAUSE THAT NEEDED NO SMOKE
+Watch a non-smoker finish the same work. She teaches the same hour, closes the same door, stands at the same window with empty hands. She stretches, looks out, smiles at nothing in particular. No equipment. No clock. Her minute is shorter and fresher, because nothing is fed inside it. She does not feel the ending is missing a tube, because her endings never contained one.
 
-“But the pause itself. Surely the break is better with it? Surely I enjoy the stop more?”
+Your endings never needed one either. The tube inserted itself into your endings, taxed them, then claimed them.
 
-I understand that one most of all. I loved my breaks. Morning kettle. Mid-morning step out. Meal done, chair pushed back. The day would tighten and I would think, soon I can step out. The thought carried me.
+## WHAT THE FINISHED MINUTE REALLY HOLDS
 
-Stay in that break with clear eyes, because daylight here is kind and it shows everything.
+Press the finished minute for detail, because the slogan lives in vagueness and dies in detail.
 
-Morning kettle. You wait for the boil. You step to the door. Air on the face. Hands free. Nothing burning. The shoulders drop. The head clears. The day not yet begun sits clean. That drop — was it empty until smoke filled it? Non-smokers take that minute all day and call it nothing special, because it is nothing special, it is just air and time and a minute to breathe.
+What is actually in that minute when effort stops? Tired feet. Dry throat. Buzzing head. Then breath coming lower as the strain ends. Eyes finding something distant to rest on. A quiet pride that asks for no words. The system settling because the effort has ceased.
 
-Work break. You push back. You stand. You walk. Blood moves. Eyes leave the screen. The tight band round the forehead loosens because you stood and looked far. The same loosening comes to the non-smoker at the next window. He stretches, he breathes, he watches the street. Annoyed perhaps, tired perhaps, but not pulled. He does not need to buy the pause. The pause was always free.
+Now put a light inside that same minute. All of the settling is still there, but with heat and ash added, the chest tightening by halfway, the mouth drying, part of the attention counting burn-time, part planning the bin and the wash before the next room.
 
-Meal done. Plate warm. Taste lingering. You push back and think the taste needs sealing. Watch what sealing does. First three puffs, familiar. Then the taste of food wiped out, replaced by ash and heat. You told yourself smoke crowns a meal. It tramples it. The non-smoker sits a minute longer with the flavour still in the mouth, clean and complete. Which mouth honours the cook?
+Which minute honours the work? Which one leaves you clearer for what comes next?
 
-Isolate it and the credit falls apart. Same chair, same sun on the step, same three slow breaths. With a fresh dose in you, you can sit and enjoy the step without lighting. With an old dose in you, you cannot sit without reaching. Did the step change? No. The tug changed. You are measuring the age of the last feed and calling it the beauty of the pause.
+We told ourselves the dose stretches the interval. Look closely and it narrows it. The two minutes you had for air and eyes become minutes for finding, stepping out, drawing, watching, stubbing, airing the hands. You come back a fraction tighter and duller, and you read the quieting of the gnaw inside as freshening.
 
-I found my breaks grew longer and sweeter when they stopped being feeds. No clock counting down to the next light. No standing in rain to finish a hot end. No hurrying back with stale mouth while the tea goes cold. Just the break itself. The work tasted of work. The rest tasted of rest. Air was air. Time was time. I learned what I had forgotten since I was young — that a pause pleases because stopping pleases, because lungs love air, because eyes love distance, because legs love moving after sitting. No lesson needed. No tube needed.
+Think of a true interval apart from reward. Kettle just boiled. Papers waiting. Nothing urgent for a breath or two. The woman who does not smoke does not assemble anything. She stays where she is, lets her shoulders fall, looks through the glass, breathes, and goes back. Nothing lit. Nothing carried out. Nothing to time.
 
-We were conned into paying for what was free. The pause did the work. The dose sneaked a ride on time and air and called their work its own.
+The interval with smoke is not that. It is a small errand to feed a need, with its checking and its cold step and its eye on the clock, finished with a drier mouth and a heavier chest. Did that errand rest you, or did it still the tug left by the last dose and borrow the name of rest?
 
-Think of all the pauses you feared would be empty. The kettle wait. The interval between jobs. The minute after food when the body sighs. You met them lit, but you met them with hurried breath and a hand that had to feed before it could rest. Did the feed make the minute longer? Or did it shorten it to the length of a burn, cut it with cough and hurry, fill it with counting puffs? Non-smokers meet the same minute with clean air and both arms free. They do not do it perfectly. They do it present. Presence was never in the tube.
+A true pause leaves you lighter than it found you. This one leaves you a touch heavier, a touch tighter, a touch closer to the next errand. That is not rest. That is service dressed as rest.
 
-And when the pause passes, as pauses do, what is left? The rest received. The tug stays. Within the hour the hand moves again though nothing was finished and nothing was paused. If smoke were the pause, a rested hour would need no smoke. Yet the rested hour calls just the same. The call was never rest. The call was feeding time dressed as rest.
+And because that dressed-up service was the only interval we permitted ourselves, a day without smoke began to look like a day without air. What would the hands do. Where would I stand when the call ends. How would the circling thoughts stop. As if air at a window were made of paper. As if two minutes with empty hands needed a permit. As if breath without heat were unbearable.
 
-So I ask you gently, as one smoker to another, with no blame in my voice. If the pause were the smoke, why would you feel the drop before the lighter catches, the second you decide to step out? Why would standing, moving away, breathing out before the first full pull already soften the noise? That beginning is the truth trying to show itself. Your body settles at the thought of stepping aside, before any smoke has done anything. How could that be help from smoke if it starts before smoke?
+You know better from your own life. On the long flight, in the corridor where lighting was impossible, in the meeting that would not break, you still paused. You stood, you breathed, you looked away, you returned. No bell. The work did not collapse. The thoughts did not run wild forever. The interval did its work because intervals do their work on their own.
 
-You stood at the same window and breathed the same air and felt the same shoulders drop a half inch — and then you signed that drop over to the stick. Take back the signature. The air was yours. The minute was yours. The steadiness was yours.
+Your intervals were his intervals before the trap taught you otherwise. They were yours before the first dose, and they never stopped being yours except in the story.
 
-### HEAVEN FOR SECONDS, STALE FOR MINUTES
+This matters for the pellets because most of what we called reward was not feast but stack — small efforts laid one on another with no clean air between. When every gap is a feeding, the stack never gets air and the chest never gets true ease. Each taxed gap leaves the chest tighter for the next effort, and the tighter chest is read as more need for reward. Round and round. Not because work grew harder, but because the gap was taxed while the work was praised.
 
-Hold the taste honestly with me, because this is where many of us still keep a last exception.
+See the theft and the chain changes shape. The work is still there — teaching, typing, driving — but it is now one pleasure, not two, and it can be closed in clean air that leaves you clearer, not staler.
 
-“The moment I light up I’m in heaven.” I said it. I meant it. The first touch of warmth, familiar, hands doing what hands know, the world narrowing to a glow. For seconds it felt like coming home.
+Who met the effort while you were smoking? You did. Who held the room, who found the sentence, who drove the miles? You did. The coping and the creating were yours from first to last. The tube only taxed them and called the tax help.
 
-And then? Be true. The middle hurried. The end hot. The ashtray taste creeping in. The last puffs hardly tasted, only burned, and you finished because to leave it felt wasteful, not because it was sweet. Heaven for seconds, then stale. Love the lighting, hate being the smoker who must light. Love the lighting, hate the cough in the morning, the yellow on the fingers, the Febreeze and mints and stepping out while life goes on inside.
+## DID YOU EVER LIKE THE TASTE
 
-If the taste were the gift, why would you hurry the middle and hardly taste the end? If the pleasure were in the flavour, why would non-smokers, given the same flavour blind, cough and recoil? Why would your own first tries have choked you? You learned the taste the way you learn a hard chair — by sitting till numb. That is not enjoyment. That is training.
+Say it as we said it.
 
-I remember my first ones. Bitter, hot, sickening. Eyes watering. Throat burning. I coughed till friends laughed. No child takes to that flavour as he takes to milk or bread. We persisted because belonging and curiosity and the grown-up look pulled us on, and because after a week the throat stopped protesting and we called the stopping pleasure. Numbness is not flavour. Habit is not taste. If heaven were in the leaf, the first one would have been heaven. It was hell, and we trained ourselves to call later hells heaven for three puffs.
+"I love the taste after food." "Nothing finishes a meal like a ciggie." "I like a mild one with coffee."
 
-Watch a dose the way you have never watched it. Light as normal. Notice the first three puffs strongest, the next thinner, the last stale and hot. Notice you stub and within minutes the mouth wants clearing, the hands want washing, the throat wants water. What gift leaves you wanting to wash it away? Food leaves you grateful. Rest leaves you supple. Music leaves you humming. This leaves you rinsing.
+Do you hear the tenderness in those lines? I spoke them. I defended my brand the way a man defends his team. Strong. Mild. Menthol. The one with the gold band. We all had a favourite, and we all told ourselves the favourite proved enjoyment.
 
-I am not asking you to hate the lighting. Hate is not needed. Seeing is enough. The lighting felt like heaven because two hungers met at once — the lift of a finish or the relief of a pause, plus the quiet of a tug that had grown for an hour. The drop from two to one feels huge. The Smokescreen points at the tube and says, that, that was taste.
+I want you to look at what liking consisted of, in the mouth and not in the slogan.
 
-It was not taste. It was quiet dressed as taste.
+Remember the first one. The cough. The burn. The eyes watering. The throat closing. The head turning light in a sick way. Did you like the taste then? No child likes it. No first body likes it. We learned it. We practised through the cough until the cough stopped warning us, and called the stopping pleasure.
 
-Ask your own day and answer true. Does the same brand taste heavenly an hour after the last feed and flat ten minutes after the last feed? Does the same stick taste sweet with coffee after hunger and bitter with coffee after a chain? The stick did not change. The hunger changed. You are tasting the age of the want and calling it flavour.
+Remember the morning one. Feet not yet on the floor, hand already finding the packet, first draw on empty lungs. Stale mouth from the night. Stale end on the tongue. Ash on the lip. Did that taste good, or did it end the night's gnaw and borrow the word good?
 
-It is the other way around. The dose does not add taste to the minute. It borrows the taste of the minute — finished work, clean air, hot food, cold morning — and charges you stale breath for the borrowing.
+Remember the meal one we praise most. The mouth full of food's taste — rich, warm, complete — then paper and heat laid over it, drying it, souring it, replacing it with ash. Which taste did the dose improve? Let the meal stand with no lighting after it, taste lingering, tongue clean, breath full. Then light ten minutes later on a clean mouth with nothing to cover. Which minute honours food? We told ourselves smoke seals a meal. Seals it from what? From its own taste?
 
-### THE PALE PACK WITH PINHOLES
+Watch what we do when we are not defending. We mask the taste all day. Coffee with it. Drink with it. Mint after it. Spray in the car. Windows down in January. Febreeze the hell out of myself before going back inside to the partner and the kids. Does a genuine pleasure need to be washed off the clothes, scraped off the tongue, blown out of the house before the people you love come in? Have you ever seen a non-smoker finish something delicious and rush to stain his fingers yellow to keep the taste?
 
-And then there is the mild.
+Ask yourself, and answer only to yourself: if the taste is the reward, why do you taste less with every year and need more to chase it? Why does the sealed meal leave you staler than the unsealed one, with food's edge taken off and ash put in its place? Why does the closet smoker hide to enjoy something he calls enjoyment?
 
-You were told, as we all were, that the light one, the mild one, the one with the pale pack and the neat gold ring, is softer, cleaner, a little less. You drew it and it felt airy. You told yourself, at least this one does less to me. At least I have chosen the kinder one.
+There is only one honest answer. You never liked smoke the way you like food. You liked the minute a restless tug eased, laid over food's pleasure and misnamed as flavour. The food pleased. The company pleased. The sitting down pleased. The tube only dried the mouth and called the drying rounding off.
 
-Look with me at the filter in your hand while you still smoke as normal. Hold it up. Turn it.
+Think of the ashtray the morning after a party at someone else's house. Cold ends. Grey ash. Stale smell that turns the stomach. That is the taste without the hunger to hide it. That is what the mouth meets when belief is not there to dress it. We lived with that smell on our fingers and called it pleasure because the alternative — that we paid good work and good food to be made staler — was too insulting to face while we still believed.
 
-Round the paper, in a neat row, are tiny vent holes. You can hardly see them until you look. On the machine they work beautifully. The machine takes its neat little puff, the air rushes in through the holes, the numbers come out low. Low tar. Low nicotine. Mild. The brochure smiles.
+Face it now, gently, without insult to yourself. You were conned, not foolish. The world handed you the words taste and treat before you had reason to doubt them, then the tube taught your body a small tug between doses, and you fitted the old words to the new tug and called the fit proof.
 
-You are not a machine.
+It does plenty TO you. It does nothing FOR you.
 
-Put that filter between living lips, hold it between living fingers, and the holes close without you knowing. Lips cover them. Fingers cover them. I covered them for years without once thinking, here are my lips covering holes. Who thinks of holes while thinking of a break? And because the dose comes thin, you do what any hungry smoker does without thinking — you pull harder, you draw deeper, you keep it longer, you smoke it a fraction further down to get what the want is asking for.
+Once that is seen, the brand loyalty falls apart. Strong or mild, plain or menthol, gold band or white — different papers around the same squirt, different words around the same gap. No favourite ever gave. Each only took in its own costume.
 
-Picture a mask meant to protect you in smoke, with pinholes punched round the edge to let clean air in. Put it on and breathe. Your mouth seals the edge. Your hands press the sides without meaning to. You suck harder to get air through, and you pull more smoke through the middle. Would you call that protection? Would you thank the maker for the holes? Or would you call it a trick that makes you work harder for the same breath while believing you breathed cleaner?
+And press the coffee pairing we loved to cite as proof. Coffee is warm, bitter, fragrant. It lifts the morning on its own. The drinker who does not smoke tastes it fully — the heat, the edge, the clean finish. The smoker tastes it through paper, then tastes paper through coffee, then calls the muddle marriage. Which tongue honours the cup?
 
-That is the mild. A mask with holes you seal with your own mouth.
+Isolate the variable again. Drink the cup with no lighting, tongue clean, nose clear, breath easy. Notice the heat and the bitter edge and how the aftertaste stays clean. Then, another day, drink it with the usual accompaniment and notice what is added and what is taken. What is added is heat and a minute without the gnaw. What is taken is coffee's own edge, breath, and aftertaste. We paid good coffee to be made duller and called the dulling liking.
 
-It never gave you less. It taught you to take it harder. Bigger puff. Deeper pull. Fingers unknowingly over the holes. The machine smoked air mixed with a whisper. You smoked the dose with air mixed in, then pulled again to make up the whisper.
+So with drink in the evening, so with food at noon, so with the morning cup. The pattern never varies once seen. The true flavour pleases. The tube dries, stains, and borrows the word.
 
-I believed the pale pack was kinder. I drew airy and felt virtuous. Then I watched my own hands. I held further up the filter on cold days. I pinched without knowing. I dragged till the glow burned bright and the heat touched the throat. I smoked each one a little further down than the red pack before it. My timetable never changed. Morning light, mid-morning lights, after-lunch lights, afternoon lights, evening lights. If the mild truly did less to me, why did my day not change? Why did the hand still move on its old hour? Why did the tug still call at the same minutes?
+If the flavour truly lived in the paper, why must it always arrive with the tug at its highest? Why does the after-food one shine only when the gap since the last dose is longest? Why does the same brand taste flat when you chain two together with no gap, and harsh when you are already ill? A true taste does not keep the clock of the last dose. Only relief keeps that clock, because only relief rises as the gap rises and falls as the gap is filled.
 
-You know. The timetable follows the want, not the pack colour. The colour changed the story in the head while the hunger kept its old hours in the body.
+## THE HOLE IN THE MASK
 
-The factory did not soften the trap. It painted it pale and punched holes in the paper and let your own lips do the rest. And we, warm loyal smokers, thanked it for being gentler while we puffed harder to feed the same hunger.
+Now the milds. The lights. The low-tar promise that let so many of us keep the pellets with a cleaner conscience.
 
-Is that kindness? Or is that a con with air holes?
+I smoked them. Many of us switched when the cough grew heavy or the chest grew tight, telling ourselves at least this one is lighter, at least this one takes less, at least I have cut something while keeping my little parties. It felt sensible. It felt like care.
 
-### YOUR MOUTH DOES WHAT THE MACHINE CANNOT
+Look at the white filter with clear eyes.
 
-Stay with the holes a moment longer, because this clears the last hiding place.
+Around the paper, in a neat ring, a row of tiny vent holes. On the machine that tests them, those holes stay open to clean air. The machine draws, air slips in through the vents, the reading comes out low. Mild on paper. Light by number.
 
-The numbers on the pack are machine numbers. Neat puffs at neat intervals, nothing covered, nothing hurried, nothing human. Your smoking is not neat. Your puffs are not machine puffs. Some days you sip. Some days you drag. Some days you chain because the tug is loud. Some days you hold long because the door will be shut for an hour. Not every pair of lips covers the same holes in the same way, not every hand holds the same way — of course we differ in the small — but as a rule the living mouth compensates where the machine does not, because the living mouth feeds a living want and the machine feeds nothing.
+Now put a human mouth where the machine mouth was.
 
-That is the designed human response to a thin dose. Thin the soup and the hungry drink deeper. It is not weakness. It is hunger doing its job. I did it. You do it. We all did it without lessons, without deciding, the way a child sucks harder on a blocked straw.
+Lips close over the very ring they are meant to leave open. Fingers press where the holder never pressed. The draw comes harder and longer without thinking, because the body is not reading numbers. It is asking for its usual squirt. The smoke runs hotter, deeper, longer to pull it through the narrowed path. What the vents dilute on the bench, the lips and fingers close in life, and the lungs make up the rest without asking your permission. This is about how the tube is built, not a sentence on you.
 
-Ask your own mouth and answer true. Do you smoke a mild the same dainty way from first puff to stub, or do you drag it harder and hold it longer when the hour is late? Do you smoke fewer because the pack says light, or do you find the same chain at the same hours? Do you leave more unsmoked, or do you chase it further down? If the mild truly did less to you, the chain would loosen. The chain does not loosen. The chain keeps its old hours because the want keeps its old hours. A thinner straw does not mean less drunk when the thirsty suck harder and longer to finish the glass.
+Picture it as it is, not as the packet paints it. A mask with holes punched for fresh air, handed to you in smoke, and your own lips sealing the holes to get the hit through. You puff harder through a holed mask and call the harder puff milder. The harder puff is the proof. If the mild truly gave less, why would the body work more to take it? If the light truly satisfied lighter, why would the day still count twenty?
 
-Feel what that means. You did not enjoy more because one tasted smoother. Smooth was thin, and thin made you pull. You did not breathe safer because one was called light. Light was leaky, and leaky made you seal. You smoked the same hunger through a leaky mask and paid with harder work for the privilege of believing you paid less. The airy feeling on the tongue was air through holes, not kindness in smoke, and the moment the tongue felt airy the lungs worked harder to find the dose behind it.
+Let me be precise, because precision is what frees you here without frightening you. A ventilated dose as smoked does not mean a smaller dose as taken. The lower machine reading does not mean you took less. That is the shape of human smoking versus bench smoking. I am not saying every hand covers the ring in exactly the same way on every dose — we are human, not machines, and hands move differently, and draws differ day to day. I am saying the design invites the covering, and the covering defeats the number. The compensation is the designed human response to a nicotine-seeking dose, not a failure in you.
 
-There is no kinder trap. There is no safer colour. I say this not to frighten you into change — I do not want you to change from fear — and not to tell you to smoke the strong ones. I am not recommending any pack, pale or red, and I am not giving medical advice. I am telling you what your own lips and fingers already know. The mild never cut the dose. It cut your suspicion while you did the compensating yourself.
+Answer this from your own life, honestly and only to yourself. When you switched to lights, did the wanting fall? Did the day need fewer? Did the dawn call quieter, did the car park pellet disappear, did the after-food one lose its urgency? Did your chest feel clearer by evening, or did you learn a deeper draw and a new grip with the fingertips?
 
-Once seen, the exceptions cannot stand. The party was the work. The pause was the air. The taste was seconds of familiar lighting, then stale hurry. The mild was harder puffing through hidden holes. Stolen credit and compensated puffing, not benefits to keep.
+You know the answer because you lived it. The count stayed. The dawn stayed. The throat learned a deeper draw and the fingers learned a new grip, and the packet took credit for care while the body did extra work to keep the level where the trap needed it.
 
-You do not need to untangle it by effort. You do not need to test yourself or count puffs or study filters. Keep smoking exactly as normal. Keep your mind open. Let this argument finish before you borrow another. There is a whole noise of voices out there — friends, articles, old advice from failed tries — each pulling at your sleeve while this book is still speaking. Give this book its fair hearing first.
+Watch the hands the next time you light your usual, only as an observer. Where do the fingers sit? Where do the lips land? How long is the draw compared to the draw you take when you are not thinking about it? How soon after stubbing out does the thought of the next one stir? You will see the work your body does to keep the level topped up, work the machine never does. The machine sips. You pull. The machine leaves the vents open. You close them without meaning to. The number on the packet describes the machine's smoke. It never described yours.
+
+That is the mild fraud in one picture. Not a kinder tube. A holed tube that teaches harder puffing and calls the teaching lightness.
+
+And see what the fraud protected. It protected the pellets. It let the classroom door, the paragraph, the grocery run keep their bell. It whispered, at least this party is safer, at least this pause is cleaner, so the question of what the party ever gave never had to be asked. Once the whisper is heard for what it is — paper theatre around the same squirt — the bell has nowhere to hide. The party was never mild or strong. It was never in the tube at all.
+
+Do not mistake this for advice to smoke the strong ones. Strong papers are not a remedy and I am not pointing you back to them. There is no safer paper here, only the same taking in different dress. The point is not to choose a costume. The point is to see there never was a gift inside any of them to choose. Keep your usual while we finish; do not switch or cut or shop for a cleaner cage. Only see the mask for what it is.
+
+Would a genuine gift need a holed mask to look smaller than it is? Would a genuine pleasure need the lips to seal its own air holes to be felt? Pleasure does not hide its size. Only a dose hides its size, because its size is the thing it must deny while it keeps you feeding.
+
+## THE WORK WAS YOURS ALL ALONG
+
+Come back to the three pellets we opened with and close them one by one, with credit returned.
+
+The class. Who held the room? Who found the words when the plan slipped? Who stayed kind to the slow question at the back? You did. The dose waited outside and did no teaching.
+
+The paragraph. Who stayed with the sentence until it turned clean? Who cut the weak line and kept the true one? You did. The dose typed nothing.
+
+The grocery run. Who drove both ways, remembered the list, carried the bags, stocked the shelves for people you love? You did. The dose carried nothing.
+
+Isolate the worker from the watcher in every pellet you ever paid, and the watcher always arrives late to applaud work it never touched. That late applause is the whole reward story. It is like a man who stands beside you while you dig a garden, hands you nothing, then at the end puts his arm around you and says, we did well, and charges you for the hug.
+
+We all paid the charge. We paid in money, in breath, in mornings that started stale, in pauses that left us tighter, in food whose taste we dried out to seal it. We paid good work to be made to feel like need. That is not your shame. That is the con, and it worked because it flattered the minute you were proudest of and stole the wages while you smiled.
+
+Did the paragraph need the pellet to be finished? Did the drive need the pellet to be driven? Did you teach worse on the days you could not step out, or did you teach and then miss the bell? There is only one honest answer, and it returns your own work to you.
+
+You do not have to prove this to yourself by standing in the cold arguing with your own nerves. That would be the old method talking — the method that turns everything into a test of grit and then blames you when grit runs out. This is not a test. This is seeing.
+
+Smoke as you normally do while we look. Only watch the order with the eyes of an investigator: finish first, lift already rising second, lighting third, brief easing of the gnaw fourth, same finished work fifth, a little staler. Watch it three times, four times, in your ordinary day. You will see the easing arrive too fast to be flavour and fade too fast to be rest, and the work will tell you the rest. It was yours.
+
+And while you watch, keep one boundary clean. There is noise everywhere about what you should do — cut down, switch, chew, suck, puff something else, listen to the man who suffered for months and calls his suffering proof. Let that noise wait outside this room. An argument half-heard is an argument half-kept, and you owe yourself the whole of this one before you borrow another. This is about smoking opinions crowding your judgment, not about your clinician's care for illness, which remains yours to follow.
 
 5. IGNORE ANY ADVICE THAT CONFLICTS WITH THIS BOOK
 Let this argument finish before you borrow another.
 
-**SUMMARY**
-- The lift after teaching, writing, driving or shopping was the sweetness of work finished, not a gift from the dose.
-- The pause pleases because air and time please, and the dose only rode on them while adding stale.
-- The taste is familiar lighting for seconds, then hurry and ash, not lasting enjoyment.
-- Pale ventilated sticks do not mean less was taken, because lips and fingers close the holes and the pull grows harder without thinking.
-- Seen clearly, parties, pauses and milds take credit for what work, rest and air already gave.
+SUMMARY
+- The pellet after teaching, writing, or driving added nothing to the work; the lift of finishing was already rising before the match struck.
+- With work and without smoke the pleasure stands; with smoke and without work it falls flat.
+- A pause with smoke leaves the chest tighter, not fresher, because feeding a need is not resting.
+- Food and coffee pleased on their own; smoke dried the mouth and borrowed the word pleasure.
+- No brand ever gave flavour; the taste praised most was relief laid over food and misnamed.
+- Vented filters read low on machines and do not mean less is taken when lips and fingers close the vents in life.
+- Harder puffing on a mild shows the body seeking its usual squirt, not enjoying a smaller one.
+- Strong or mild are different papers around the same taking, not different gifts.
+- The party, the pause, and the flavour were your own moments with a tax laid over them.

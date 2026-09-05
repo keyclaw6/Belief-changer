@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER — the small table by the ashtray, yellow fingers and grey ash, the readiness question` before spoken body. Remove header; enter in voice.
+LENGTHEN to B±15% — Delivered 1821 words. Budget 4000. Range 3400-4600. Add ~1600+ words serving card job `smoker identity crosses to non-smoker in a joyful solemn act with freedom conferred now` and concrete encounter `ordinary last cigarette with full attention on stain, ash and stale end, then stubbed`.

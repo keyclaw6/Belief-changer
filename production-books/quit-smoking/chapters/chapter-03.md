@@ -1,253 +1,233 @@
 Chapter 3
-WHAT DOES IT ACTUALLY DO FOR YOU
+WHAT DOES IT ACTUALLY DO FOR YOU?
 
-*When you stop asking what it costs and start asking what it ever gave, the bargain comes apart.*
+*No cigarette ever did anything for you — it only seemed to help because it had hurt you first.*
 
-### THE WEIGHING THAT KEEPS YOU
+## THE SCALES THAT KEEP YOU LIT
 
-You have seen the bars now. That matters.
+We all carry a private set of scales.
 
-We fell in curious and wanting to belong. We stayed in because a tiny tug learned to call and old stories learned to answer. We hid and hurried and watched our own hands move before we had decided anything. We felt heaven at the light and flat after. We felt taken care of for a minute while the problem sat untouched. That place that keeps us has a name, and you already know it in your mouth. The place is the nicotine trap.
+On one side we pile the harm. The cough in the morning. The stairs that leave us short of breath. The money burned week after week, month after month, year after year. The yellow on the fingers, the smell in the coat, the smell in the hair, the hiding in the garage we looked at together. The doctor's warning folded in the drawer. The look on a child's face when we step outside again.
 
-Most smokers stop there and say a very reasonable thing, and I want you to say it out loud with me so we can look at it together.
+On the other side we pile what we tell ourselves we get. The calm. The pause. The reward after work. The taste after a meal. The company on a night out. The little lift when we are flat. The help when nerves bite.
 
-All right, I am caught. But it must do something for me. I would not pay this price for nothing.
+And then we weigh.
 
-That is the ledger-keeper in you. Harm on one side. Pleasure on the other. Risk on one side. Reward on the other. Short breath on stairs on one side, a moment of calm on the other. Money burned on one side, company and pause on the other. Standing outside your own home in the cold on one side, my little reward on the other.
+"I know it harms me, but I enjoy it." "I know I should stop, but what would I do for stress?" "I know it costs, but it is my pleasure." "I know it is stupid, but it helps me cope."
 
-While you weigh it that way, the trap is safe. It can whisper, yes, it costs, but look what you get. It can let you add up coughs and coin and hiding and still answer, worth it for what it gives me.
+I know that weighing well. I did it for thirty years. I did it every time the price rose. I did it every time I coughed sour phlegm into a sink at dawn. I did it every time my children waved smoke from their faces with small hands and smiled to soften it. Yes, it harms me, I would say, but what would life be without it? Flat. Grey. No breaks. No reward. No help when the day turns.
 
-I want to lift that ledger clean off the table.
+Listen to what that weighing assumes. It assumes there is something good on the second pan. It assumes the cigarette does harm, true, and also does good, true, and you must decide whether the good is worth the harm. It assumes you are choosing between health on one side and pleasure on the other, and pleasure keeps winning because pleasure feels close while harm feels distant.
 
-I am not asking whether smoking does more harm than good. You know that answer by heart. Stale mouth in the morning. Breath short when you hurry. Coat that must be shaken at the door. The quick spray and the mints and the lie about numbers that comes out smooth because you have said it so often. We both know the TO side. We have lived it.
+The fact is, the second pan is empty.
 
-I am asking something plainer and far more dangerous to the trap.
+I am not asking you whether smoking does more harm than good. Any smoker can lose that argument for an hour and win it back in a minute by lighting. I am asking a plainer question, and I want you to let it sit without answering too quickly.
 
-What good is there at all?
+What good does it do at all?
 
-Put harm to one side. Forget lectures and warnings. Leave all of that outside the room. Tell me what the dose itself adds. What does it actually do for you?
+If a man sold you a coat that let in rain, tore at the seams, stank of chemicals, and cost you a month's wages every year, you would not stand weighing whether the coat was worth it because you liked the colour of one button. You would ask what the coat does for you as a coat. Does it keep you warm and dry? If not, the colour of the button is not a benefit. It is decoration on a failure.
 
-A real benefit has to do something. It has to add flavour where there was no flavour. Add rest where there was no rest. Add warmth where there was no warmth. It has to be in the paper tube itself, not in the hour around it.
+So it is with the dose. Do not weigh harm against pleasure yet. First ask whether the pleasure is there at all.
 
-If I tell you water quenched my thirst, you can test it. Drink, and thirst goes. If I tell you bread fed my hunger, you can test it. Eat, and hunger goes. If I tell you the dose relaxed me, you should be able to test it too. Where is the calm apart from the minute after the tug? Where is the pleasure apart from the light after the want?
+Have you ever examined a single supposed gift without the smoke around it? Have you ever asked, of food, of a pause, of company, what did the paper tube add that was not already there? That is what we will do together now, calmly, without asking you to change anything you do.
 
-Keep smoking exactly as normal while we look. I only ask you to look with clear eyes at your own reasons and check them against your own day. There is no doom here. There is only the marvellous relief of finding that what you feared losing never gave you anything to lose.
+You came to this book braced for a lecture about danger. I have no lecture. You already know the danger better than any doctor could tell you, because you live it in your chest each morning. Danger never kept you lit. The supposed good kept you lit. Take away the supposed good and there is nothing left to weigh.
 
-Do you feel how different that question is? Harm versus benefit keeps you bargaining. Benefit versus nothing sets you free. The first question leaves the trap room to haggle. The second leaves it nowhere to stand.
+Ask yourself, as an investigator and not as a judge:
 
-We smokers love to haggle because haggling feels honest. We say, I know it stains and costs and chains me, but it helps me cope. We say, I know I hide, but I enjoy it. We say, I know I should stop, but not yet, not without this. Every but is a rope the trap holds. Cut the benefit and the rope falls. There is nothing left to weigh.
+If the second pan truly held pleasure, why must you keep re-stocking it with arguments while a non-smoker lives a full day and never once feels the lack? If the good were in the paper, would the man without the paper not miss it?
 
-So let us stop weighing cost and start checking credit. Who really gave you the good moments you signed over to the tube?
+And if each dose truly gave what you name, why does the wanting return an hour later exactly as strong, whatever gift you just took? What gift must be taken twenty times a day and still leaves you empty by the next hour?
 
-### SAY THEM OUT LOUD
+That return is the clue. A true gift stays given. Food stays eaten. Drink stays drunk. Rest stays rested. Only the dose leaves you as empty as it found you, then a little emptier, then calls you back to fill again what it emptied.
 
-Say your list out loud. I will say mine with you, because we all carry the same short list.
+We fell for that return together. I weighed my scales every New Year, every birthday, every chest infection, and always found a reason to keep the second pan heavy. It took me years to see I had never checked whether anything was on it at all. I had taken the label for the thing.
+
+Look with me now at the label, piece by piece, in ordinary daylight.
+
+## SAY ALOUD WHAT YOU THINK YOU GET
+
+Be an investigator for a minute. Say your reasons aloud, in your own words, as you have said them to yourself a hundred times.
 
 "It relaxes me."
 
-"It helps me cope."
+"It is my reward. My little party after I finish something."
 
-"It is my little reward. My little party when work is done."
+"I like the taste, especially after a meal."
 
-"I like the taste."
+"It helps me concentrate. It gives me a break."
 
-"It gives me a pause."
+"It is sociable. It belongs with a drink and friends."
 
-"It helps me belong."
+"It fills the gap when I am bored or flat."
 
-"It cures boredom."
+I have heard every one of those sentences from my own mouth. I said them loudly in pubs when a non-smoker raised an eyebrow. I said them quietly at kitchen tables when the bill lay unopened. I believed them because I felt something when I lit. I am not telling you that you feel nothing. I am asking you to look at where that feeling really comes from.
 
-"I just enjoy it."
+Take your strongest one. Hold it up. Do not defend it yet and do not attack it. Just hold it as you would hold a dose between fingers and look at it.
 
-Good. That is honest. I have said every one of those sentences while I stood in the rain feeding the Nipper and calling the feed enjoyment. I have said them in garages and doorways and car parks. I have said them fast between tasks and slow after meals. I say them now only to hold them up to daylight.
+If I asked you when you first started, as a boy or girl coughing behind the bike sheds, eyes watering, head spinning, throat burning, would you have listed any of those gifts? Did you say, ah, this steadies my nerves? Did you say, what concentration, what taste, what company? Did you say, what a fine reward for hard work?
 
-Because daylight is kind. Daylight does not scold. It only shows.
+You said nothing of the sort. You coughed and your head spun and your stomach turned. Your body said, clearly, no. You persisted not because it was good, but because the older ones looked certain and grown, because the world told you this meant calm and belonging, because to refuse felt childish and to copy felt adult. That was phoney information, and we all took it.
 
-Take taste first, because taste feels so personal no one can argue with it. Did you love the taste at the start? No. We coughed. Our eyes watered. It was hot and bitter and foul. It made us dizzy and sick. If taste were true, the first dose would have been delicious. It was not.
+We learned the gifts afterwards. The nicotine trap taught us the words after it had caught us, and we fitted the words to the lighting the way a secretary invents minutes for a meeting that never happened. First came the lighting, hour after hour, day after day. Then came the need to explain the lighting to ourselves without feeling foolish. So we borrowed the words around us: reward, break, pleasure, help, company.
 
-You learned to call that burn flavour the way you learn to call any signal that ends a want pleasant. What you love now is not flavour. What you love now is the second the light comes after the want. The shoulders drop because the tug quiets for three minutes, and the Smokescreen points at the tube and says, that, that was taste.
+Did you fear life without concentration when you lit your first dose? Did you fear missing taste? Did you fear having no reward? You feared none of those things. You had concentration, taste, reward, company already, without smoke, and you never thought to doubt them until the trap gave you new words for old hungers.
 
-Ask your own mouth. Do you savour the middle of the dose the way you savour the middle of a meal? Or do you hurry it? Do you hold clean air in your lungs to enjoy it? Or do you fill clean air with smoke and then cough to clear it? Do you love the ashtray smell on your fingers? Do you love the stale end? Smokers taste less, not more. The tongue is coated. The nose is dulled. The very thing you credit with flavour blunts the instrument that tastes.
+"I can't quit now. Work is too stressful." "Ciggies are my little parties." "I am a closet smoker, but the stick helps me think." "Just habit smokes, but I need them to pause."
 
-If a friend cooked you a meal that left your mouth foul an hour later, would you praise the cooking? You would not. You would say the cooking failed. Yet with the tube we praise the first three puffs and excuse the stale hour that follows. That is not tasting. That is thanking a brief quiet and calling the quiet flavour.
+Do you hear your own dialect in those lines? I do. I spoke them. Bumming cigs outside pubs. Habit smokes with coffee. Little parties after every done thing. One won't hurt on a night out. Can't quit now with all this on.
 
-Take belong. I smoked to belong. We all did. Older kids smoked. Films smoked. The break outside looked like friendship. The offered stick looked like kindness. I understand that pull because I felt it in my chest as a boy and as a man.
+Now press each line for detail. When you say it relaxes you, what was tense before you lit? When you say it rewards you, what was unrewarded in the work itself? When you say it helps you think, what thought was missing before the hand moved? When you say it is sociable, who was unsociable before the lighter clicked?
 
-Now look at what belonging costs inside the trap. To belong you step outside alone while laughter goes on inside without you. To belong you leave the table where the warmth is and stand in the cold where the wind is. To belong you borrow and lend little white sticks and call the lending bond, as if bumming cigs were friendship rather than joint feeding.
+A non-smoker feels tense, finishes work, thinks hard, meets friends, waits for a bus, feels bored, feels flat — and never once feels a gap where a paper tube should be. He is not missing a gift. He is not brave or disciplined. He simply never put the gap there to begin with.
 
-Is that belonging? Or is that leaving?
+If these gifts were real, why would the man without them not miss them? And if the dose gives you what you name, why must you keep taking it to stay where the non-smoker stays without taking anything?
 
-True belonging does not need spray and mints. True company does not pause while you feed a tug. Watch any table of friends. The laugh lives in faces and stories and an evening off work. The tube adds no story. It interrupts the story. You miss the punchline while you light. You miss the look on her face while you puff. You come back tasting ash and call that togetherness.
+I know this is hard to accept. Your mind will answer: but I do enjoy some of them. Surely you cannot deny I enjoy it.
 
-We confused being side by side in the smoking area with being together. Side by side is not heart to heart. Two people feeding the same tug in the same cold air are not sharing a pleasure. They are sharing a need.
+I do not deny what you feel. I deny only what you are told it means.
 
-Take boredom. It cures boredom, we say. The empty afternoon. The long wait. The queue. Light, and time passes.
+## THE MEAL THAT WAS ALREADY FINISHED
 
-Look closer. Does the dose fill time or does it mark time? Between lights the mind grows edgy and flat because the tug is back. You feel an empty, slightly restless, slightly edgy little tug and you misread it as boredom. You light. The tug quiets for minutes. Time feels less heavy for minutes. Then the tug returns and time feels heavy again.
+Think of a meal just finished.
 
-That is not curing boredom. That is creating an itch between doses and then scratching it and calling the scratch amusement. A non-smoker waits in the same queue with his own thoughts and his own sky. He does not need to pay to make minutes pass. You did not need to either, before the trap taught your hands to reach whenever nothing was asked of you.
+The plate cleared. The taste still on the tongue. The body settling. Warmth spreading. A natural full stop. You lean back in the chair. For a non-smoker that moment is complete in itself. The food was the pleasure. The sitting still is the body enjoying having eaten. The taste lingers because nothing drives it away.
 
-Hold your list gently. I am not mocking a single line on it. I felt each one. I defended each one. I am only asking you to keep each line in daylight a moment longer, because daylight shows who really gave what you credited to smoke.
+What does the smoker do at that same full stop? He breaks it to light. He stands, or steps out, or leans to the ashtray. He fills his mouth with hot paper and stale ash. He draws heat across a tongue that was holding flavour. He dulls the very taste he claims to crown. He coughs, clears his throat, drinks water to wash away what he just paid to put there. Twenty minutes later his mouth is dry and sour in a way the non-smoker's is not.
 
-### THE HEAVEN ONLY LIVES AT THE LIGHT
+Did the dose add to the food, or did it interrupt it?
 
-The moment I light up I am in heaven, but feel shitty afterwards. So whilst I love smoking I hate being a smoker.
+We tell ourselves the cigarette finishes the meal. The fact is, the meal was already finished. The pleasure was the food, the cooking, the hunger met, the company at the table, the sitting still. The dose only sneaked a ride on a pleasure that was complete without it, then claimed the credit and charged its fee in aftertaste.
 
-Those are not my words. They are the true words of smokers like you and me, spoken honestly about the same ten minutes. I keep them here because they prove you are not lying and you are not blind. You feel a flash of heaven at the light. Of course you do. Then minutes later comes the aftertaste, the stale mouth, the faint flatness, the knowledge you will need to do it again in an hour. Heaven, then flat. Love the light, hate the life.
+Watch yourself next time, not to test yourself, but to see. Eat as normal. Smoke as normal. Only notice the order.
 
-I believe you about that heaven. I felt it a thousand times. A flash at the light. Shoulders dropping for a minute. The world manageable for a minute. I do not mock it for a second. Denying it would make this book a lie and you would close it.
+First, hunger. Then food. Then satisfaction. That satisfaction arrives before you light. It is there in the pause when you put the fork down. It is there when you lean back. The body says done. Then the hand moves, the match strikes, and smoke covers what was done. The tongue that held garlic, gravy, sweetness, coffee, now holds ash.
 
-Look only at where it lives.
+If the dose truly crowned taste, would it not sharpen taste? Would a man who loves music blast noise over the last note to crown it? Would a man who loves a view fog the window to finish it?
 
-It lives only at the light. Three minutes of quiet, then the stale mouth, the flat feeling, the need again within the hour. Morning light on empty lungs, harsh and dizzy, yet chased. Mid-morning light between tasks, smoked fast. After-meal light, longer, with coffee. Afternoon lights to break the stretch. Evening lights to mark the end of this and the start of that. Night light before bed, stale and tired. Which one would you keep if you could keep only one and lose the need for the rest?
+Ask the plain question and answer only to yourself. Take the food and leave the paper out of the picture. What is missing? The flavour is still there. The fullness is still there. The sitting is still there. What is missing is only the nip being quieted for a minute, and the sour mouth that follows.
 
-Every smoker picks a favourite and every favourite, examined, is the same heaven minute followed by the same flat hour. The favourite does not prove benefit. The favourite proves the trap taught you to treasure the quietest link in a heavy chain.
+It is the other way around. You do not enjoy the meal because you smoke. You smoke at the meal and believe afterwards that smoking made the meal.
 
-If the dose gave a real gift, would the gift live only in the lighting and then turn to cost? Would a true friend lift you for three minutes and chain you for the rest of the day? Would a genuine pleasure need to be snatched before thought, hidden from love, and repeated within the hour?
+The same is true of the morning cup, the evening drink, the coffee on the step. The drink is the drink. The moment is the moment. The dose sits at the edge and takes the bow for a show it did not perform.
 
-You know the answer. We both do.
+## THE DONE THAT WAS YOURS ALREADY
 
-That heaven never lasts the day. It cannot last, because it was never a day-long gift. It was a moment at the light, when a tug that the tube itself keeps alive quiets for minutes. The quiet feels like heaven because the tug felt like hell. Take away the tug and there is no hell to be lifted from and no heaven to chase. There is only normal, which is what non-smokers live all day without lighting anything.
+Think of work finished.
 
-Think of the closet routine again with clear eyes. You hide, you light, you feel heaven, you feel flat, you hide the evidence. Which part of that chain looks like a free pleasure? The hiding? The hurry? The aftertaste? The need to repeat? If one link were joy and the rest were cost, would a free person keep the chain? Or would a trapped person call the one quiet link joy because the trap taught him to?
+Teaching the class that went well. Closing the paragraph after an hour of wrestling the sentence right. Driving the long miles and pulling in tired and pleased. Driving the short run to the shop and getting it done between other jobs. You finish, you stretch, your shoulders drop, you feel that clean lift of done. That lift is yours. You earned it with attention and effort.
 
-You are not divided because you are weak. You are divided because you feel two true things at once. The light feels good. The life of needing it feels bad. Both feelings are honest. What is false is the lesson the Smokescreen draws from the first feeling — that the stick is a friend. A friend does not make you hide in your own garage. A friend does not make you lie about numbers. A friend does not leave you flat an hour later and ask to be thanked.
+"Cigarettes were my reward for…well, almost everything. Teaching a class. Finishing a story. Finishing a paragraph. Driving 500 miles. Driving to the grocery store."
 
-Let that stand as settled fact, not as a scolding. The light brings a brief heaven. The heaven fades. The need returns. That circle is not choice. That circle is feeding.
+Do you hear it? Almost everything. The reward attached itself to any finished act, not because the act needed it, but because the trap needs to be paid after any stretch without. The pause after work is always the longest gap since the last dose, so the tug is always loudest there. We misread the loudest tug as the greatest need for celebration.
 
-I lived for that three minutes. I chased it through rain and lies and midnight maths. I told myself stories about taste and ritual and my moment. Look at those stories in daylight and they fall apart without cruelty. Did you love the taste when you began? No. You coughed. Did you love the smell on your coat? No. You sprayed it. Did you love stepping out alone while laughter went on inside? No. You hurried. Did you love the little parties you told yourself each dose would be? No. You paid for each party with an hour of need.
+The party was not the work. The party was the lighting. The work was already the pleasure, and the dose stole the applause on the way out.
 
-### WHO DID THE WORK
+Keep the pleasure of the work intact. I am not asking you to like your job less or your drive less or your finished paragraph less. I am asking you to see who did the work and who took the bow.
 
-Cigarettes were my reward for — well, almost everything. Teaching a class. Finishing a story. Finishing a paragraph. Driving 500 miles. Driving to the grocery store.
+Who taught that class? You did. Who found the right word? You did. Who drove those miles safely? You did. The dose sat in the packet while you did it. It contributed no attention, no skill, no care. Then, in the minute after, it stepped forward to be thanked.
 
-Do you hear yourself in that? I do. I hear us both.
+Isolate it. Think of a day you finished something well and, for whatever reason, could not light at once — a meeting overran, a child needed you, the rain was too hard. Did the satisfaction vanish? No. You carried it with you, buzzing quietly, until the hand could move. The done stayed done without smoke. The only thing that waited was the nip, growing louder, to be quieted and misnamed as celebration.
 
-We paid ourselves for every finished act with a light. Finished the email, light. Parked the car, light. Put the kids to bed, light. Closed the deal, light. Washed the car, light. We called them little parties. We said, I earned this. We said, this is mine.
+What gift must gatecrash every finished thing to prove its worth? What true reward needs to be taken after teaching and after shopping and after driving and after writing, as if teaching and shopping and driving and writing were the same hunger? A true reward fits its act. This one fits any act because it fits none. It fits the gap, not the deed.
 
-Ask the plain question, and answer it as you would to a friend you trust.
+Ask yourself:
 
-Who did the work?
+If the dose truly rewarded effort, why does the non-smoker who taught the same class, wrote the same paragraph, drove the same miles, feel the same clean lift without it, and feel it more clearly because his mouth is clear and his chest is clear?
 
-Who taught, who wrote, who drove, who carried the shopping in? You did. The patience was yours. The skill was yours. The humour that held the class was yours. The sentence that finally came right was yours. The long road held in rain was yours. The relief of finishing was already yours before the match struck. The dose arrived after the joy and took the applause.
+And if the dose truly marked the finish, why does the wanting return an hour later with nothing finished to mark? What reward must be re-taken before the next work is even begun?
 
-The fact is the party was never in the tube. The party was in the finished work, and the tube signed its own name on your effort.
+Both answers point one way. The lift came from finishing. The lighting only quieted the emptiness left by the last lighting, and called that quieting a party.
 
-See how the trick works. Work ends. Tension breaks. Pleasure rises naturally because completion is pleasant. At that exact second the tug, which has been building while you worked, calls loudest. You light. The tug quiets. Two good feelings arrive together — the pride of finishing and the quiet of the tug — and the Smokescreen staples them together and says, the quiet came from the stick, so the pride must have too.
+## THE PAUSE AND THE COMPANY
 
-It is the other way around.
+Think of the pause. The phone down. The kettle on. Two minutes with nothing to do. Papers waiting. Hands empty.
 
-You were already pleased before you lit. The child who finishes a drawing does not need smoke to beam. The runner who finishes a run does not need ash to glow. The cook who serves supper does not need a dose to feel the table warm. Completion pleases. Relief pleases. Rest pleases. Those are yours by nature. The tube sneaks a ride on them and then sends you the bill.
+The non-smoker stretches, looks out of the window, breathes, lets his eyes rest, and returns. Two minutes. Nothing taken. Nothing burned. The mind settles because pausing settles it.
 
-Consider driving to the shops. Keys, engine, road, park, list, till, bags, home. Small triumph of ordinary life. You light on the way back and think, earned. Did the stick drive? Did the stick remember the list? Did the stick carry the bags? No. Your hands and head did. Your planning did. Your care for your people did. The light added nothing to the errand except stale air in the car you must then spray before anyone notices.
+The smoker spends the two minutes feeding a need. He checks the packet. He finds the lighter. He steps out or leans out. He watches the clock while he draws. Half his mind is outside in the cold, half is on the next thing waiting inside. He returns with a tighter chest and a drier mouth and calls that a break.
 
-Consider the paragraph, the page, the class. The mind wrestles, finds the line, lands it. Lovely ache of done. You light and think the light seals it. Take the light away and does the line go unwritten? No. The line stands. The class stood. The work stood. What falls away without the light is not the achievement but the tug you had to quiet to notice the achievement clearly.
+Did the pause rest you, or did the lighting end the restlessness that the last dose had left, and call that ending rest?
 
-I know this is hard to accept, because the two arrived together for years. Finished task, lit dose. The brain joined them like neighbours. But neighbours are not family. The joy belonged to hunger met and work done and rest earned.
+We were conned into calling the quieting of a need a break. A true break leaves you fresher than before. This break leaves you a little staler than before, a little tighter, a little more in need of the next break. That is not rest. That is service dressed as rest.
 
-Do you see what that means for every little party you fear losing? You lose nothing. The work stays. The pride stays. The relief of done stays. What goes is the rent you paid on your own applause.
+Now think of company. Laughter. The table full. Glasses low. Talk flowing. You believe the dose joins you in, seals belonging, makes you one of the circle.
 
-Think of all the pellets we dropped into ourselves to mark a day. Morning pellet for getting up. Mid-morning pellet for coping. Noon pellet for lunch done. Afternoon pellets for hours passed. Evening pellet for children down. Night pellet for day survived. A whole day priced in lights. Who collected? Not you. You did the living. The trap collected.
+But company was company before you ever smoked. The first time you sat with friends as a child, high on talk and secrets, no one needed smoke to belong. Drink, talk, warmth, teasing, stories — none of those was made of smoke. The non-smoker at that same table laughs as hard, stays as late, remembers more clearly, tastes more fully, and never once feels an outsider for breathing clear.
 
-Once you see that, the reward excuse cannot stand. It was never a reward. It was a tax on rewarding yourself.
+The dose sat at the edge of the pleasure and took credit for the night, the way a man who jumps into a wedding photograph claims he made the wedding.
 
-### WHAT DID IT ADD TO SUPPER, TO REST, TO FRIENDS
+Isolate it for a second. Take the friends and leave the paper out of the picture. What is missing? The joke is still funny. The story is still good. The warmth is still warm. The night is still the night. What is missing is only stepping out to feed the tug while the talk goes on without you, and returning to catch up on what you missed.
 
-Let us touch three ordinary gifts you credit to the dose. Food. Rest. Company. See who really gave them. Smoke as normal while you read. I only ask you to check with your own mouth and hands today.
+Have you ever left a good conversation to stand alone, and called that sociable? Have you ever missed the punchline because you were outside, and called that belonging? Have you ever chosen the cold chair near the door in October, not because you love October, but because you need the dose, and called that choice?
 
-Supper. Plate down. Food still warm in you. Taste lingering. Your body settling into that full, easy satisfaction every animal knows. And then — hand out. Stick. Lighter. Puff.
+It is the other way around. You do not enjoy these moments because you smoke. You smoke during these moments and believe afterwards that smoking made them.
 
-What did the dose add to the meal? Did it sharpen flavour? Smokers taste less, not more. The tongue is coated. The nose is dulled. The first puff scorches the very taste you claim to celebrate. The meal was the pleasure. The dose was the interruption.
+Food, finished work, pause, company — each was complete without smoke. Each is complete now when you see where the credit belongs: to the food, to your hands that finished, to the pause itself, to the friends themselves. The paper added nothing but the quieting of its own hunger and the ash that follows.
 
-I know the two arrived together for years. Finished plate, lit dose. The brain joined them. But the joy belonged to hunger met. Hunger met pleases without smoke. The body knows how to settle after food. Dogs settle. Children settle. Old men who never smoked settle with a sigh and taste the gravy still. You settled too, before the trap taught you that settling means reaching.
+## HEAVEN AT THE LIGHT
 
-Watch tonight. Eat slowly. Notice the moment the edge leaves hunger. Notice the warmth spread. Notice the sigh. That sigh is yours. It needs no paper tube to finish it. Light if you must while you are still smoking, but watch what the light does. It does not deepen the sigh. It replaces the sigh with a cough and a hurry and a stale film over the very flavour you loved.
+"the moment I light up I'm in heaven, but feel shitty afterwards. So whilst I love smoking I hate being a smoker"
 
-The meal pleased you. The dose interrupted you and took the credit.
+If that is your voice, I have warmth for you, because it was mine for years. It sounds like a contradiction. It is exact reporting, and I will not mock a word of it.
 
-Now the pause. Mid-morning. Head full. You step out. Air on your face. Nothing asked of you for five minutes. Sky, stretch, quiet. Lovely.
+Press that heaven for detail, as an investigator. When does it arrive, and how long does it stay, and what does it cost to rent?
 
-Was the lovely in the tube or in the stopping? Was it in nicotine or in sky and stretch and quiet? Non-smokers take the same pause and feel the same ease, often more, because they do not spend the pause feeding a tug. They lean on the wall and breathe clean air and let the head clear. You lean on the same wall and breathe smoke and spend half the break counting how fast you must puff before you go back in.
+It arrives at the strike. The first draw after a gap. For a few seconds there is a settling, an ah, that is better. The shoulders drop a fraction. The tug quietens. The mind says at last.
 
-The pause was the rest. The dose was rent you paid for resting.
+Then what? The second draw is duller. The edge is already off the supposed pleasure. By the middle the stick is hot and the taste is stale paper and ash. By the end you are drawing because it is there, not because it gives. You put it out with a small sense of waste and gladness that it is done. The mouth is sour. The chest is tight. The fingers smell. You feel, in your own true word, shitty afterwards — not lifted, not crowned, not helped, but used.
 
-Try it with clear eyes today. Step out as normal. Feel the cold or the sun. Roll the shoulders. Breathe. Notice how the relief begins before the light, the second you stop and stand. That beginning is the truth. The rest is the tug quieting and the Smokescreen shouting, that was the cigarette. It was not. It was stopping, air, quiet — all yours without paying.
+That little flare at the start is real. I will never tell you that you imagine it. You feel it as truly as warmth from a fire. To deny what you feel would be to lie to you, and I will never do that.
 
-Now company. Friends. Drink in hand. Someone funny. Warmth spreading. You light and think, this is it, this is why I smoke.
+What I want you to see is how small its home is, and how large the rent is.
 
-Look closer, with love for your friends and no blame for yourself. Where is the warmth coming from? From faces you love. From an evening off work. From music and stories and freedom to be silly for an hour. Take the dose out and does the evening collapse? No. The company did not miss the smoke. The laugh did not need ash. The drink did not need a lighter to be cold and welcome.
+The enjoyment you name lives at the light only. It does not stretch across the day. It does not live at three in the afternoon with a raw throat. It does not live at midnight with an ashtray mouth carried to bed. It does not live at dawn, clearing and coughing before the first dose, tasting stale before you begin. There is no heaven there. There is only being a smoker for the whole day to rent three seconds at the tip.
 
-Do you see the pattern? It is always the same. The situation gives. The dose takes the credit. Food, rest, friendship, finished work — all real gifts, all yours already — and the Smokescreen points at the light and says, that good moment, that was the cigarette.
+Ask yourself two plain questions and answer only to yourself.
 
-It is the other way around.
+If the thing itself were heaven, would attention make it worse? Smoke one with full attention next time, tasting only it, thinking of nothing else. Does the pleasure grow as you attend, the way music grows when you listen or food grows when you taste, or does it fall apart into heat and paper and ash? What pleasure fades when you look at it straight?
 
-When you lit that very first dose, did you mean to sign for midnight counting and hiding and needing? When you light now, do you feel like a host enjoying a guest or like a tenant paying rent to someone you never invited in? And if these little parties were true enjoyment, why would the thought of never needing another one bring panic rather than a shrug?
+And if that first puff truly gives, why must it be paid for with hating being a smoker for the rest of the day? What gift demands hiding on cold steps, planning around shop hours, counting how many till morning, choosing seats near doors, standing in rain, spraying the jacket, chewing mints, lying about fresh air, clearing the throat before anyone hears? Does a gift make you hide from those you love?
 
-You know the answers. We both do. A shrug is what freedom feels like. Panic is what a catch feels like.
+Both feelings you named are true and they belong together. You love the lighting because after a gap the body cries to be fed and the first puff quiets the cry for seconds. You hate being a smoker because for the rest of the day you carry the chain that makes the cry certain. The heaven does not prove the dose gives. It proves how tightly the taking has hold.
 
-I felt that check as relief, not as loss. I had feared meals would go flat and breaks would go empty and friends would go dull. I saw meals glow brighter when taste came back. I saw breaks rest deeper when air was clean. I saw friends shine clearer when I did not have to leave them to feed. Nothing I loved lost its shine. The shine was never in the tube.
+Hold that together without gloom. You are not foolish for feeling the flare. We all felt it. You are simply seeing now that a flare that lasts seconds cannot justify a chain worn all day.
 
-### THE HUG THAT WILL NOT LET GO
+## THE HUG THAT WILL NOT LET GO
 
-Picture this, because it is exactly what we have lived.
+Picture a man pulled shivering from a river, wrapped in strong arms, grateful beyond words. He clings. He thanks his rescuer. He says, you saved me, you steadied me, I could not have got through without you. His teeth chatter against the shoulder that holds him.
 
-You are out of your depth in deep water. Young, curious, told the water is fine and the arms are kind. You slip. You are frightened. Strong arms go round you from behind and hold you up. You gasp with gratitude. You cling. You thank your rescuer with all your heart.
+Then, in the cold light on the bank, he sees the same arms were the ones that held his head under moments before. The rescue was a pause in a drowning the rescuer himself was doing. The gratitude was real. The rescue was not. The arms that warm him are the arms that chilled him.
 
-Then you feel the same arms tighten. They do not lift you to the bank. They hold you where you are. Upright but never out. Comforted but never safe. And every time you sink a little lower, they squeeze a little and you thank them again for the squeeze.
+That is your position with the paper tube, and I say it with complete warmth for the swimmer, because we all swam there. The cigarette is that rescuer. Not a person, not a friend, not an enemy with a face to hate — the dose itself, playing both parts in one small white tube.
 
-That is what the dose does.
+You reach in stress and feel taken care of for a minute. You reach after food and feel the meal crowned for a minute. You reach among friends and feel joined for a minute. You reach after work and feel rewarded for a minute. The arms close. The tug quietens. You feel grateful and you speak gratitude: my calm, my reward, my break, my company.
 
-We fell into the water young and curious, breathing phoney glamour about calm and adult pleasure. The first doses left a faint emptiness behind. The next dose quieted that emptiness for minutes. We called the quiet kindness. We hugged the arms that held us under.
+What you are not shown in that minute is the other half of the arms: the same dosing that made the tug certain an hour later, that dried the mouth, that tightened the chest, that broke the pause, that dulled the taste, that divided you onto the cold step with mints in your pocket. The same hands that lift you are the hands that pushed you in.
 
-I do not say that to frighten you. I say it to free you, because once you feel those arms clearly you stop thanking them.
+We were conned into reading the quieting of a need as a gift. Once you see the need was made by the very thing that quiets it, the gift disappears and only the taking remains.
 
-Think of your day as being held. Morning tug, morning dose, brief quiet. Hour passes, tug returns, dose, brief quiet. Meal, tug, dose, brief quiet. Night, tug, dose, stale sleep. The arms never lift you out. They only stop you sinking for minutes, then let you sink again so you will cling again.
-
-Is that rescue? Or is that keeping?
-
-A true rescuer puts you on dry land and lets go. A true friend does not need you edgy between meetings. A true pleasure does not need hiding and spray and mints and lies about numbers. A true reward does not leave you flat an hour later. A true pause does not charge you a coin of breath and taste.
-
-The cigarette is the hug that will not let go. Warm at first. Tight forever.
-
-Feel how different this makes you feel toward yourself. You are not ungrateful. You are not weak. You are a warm, loyal person who thanked what seemed to help. We all did. Any kind heart would thank arms in the water. The fault was never in your thanking. The fault was in arms that never meant to let go.
-
-And now the freeing part. Those arms are not strong. The tug they use is small, an empty, slightly restless, slightly edgy little tug that comes and goes between doses. The fog they use is borrowed, old stories about calm and reward and belong that were breathed into us before we could question them. You are not held by iron. You are held by a story about iron. See the story and the grip loosens by itself.
-
-I have held arms like that and I have stepped onto dry land. I know the second the grip shows itself. You do not fight it. You do not wrestle water. You see it. You stand. You breathe. The water was never deep. The arms were never strong. The thanking was the chain, and seeing ends the thanking.
-
-Hold that picture while you smoke today. Each light, ask gently, is this lifting me out or holding me in? Each quiet, ask, am I on the bank or am I still in the water being allowed to breathe for three minutes? You already know. We both do. A lift ends. A hold repeats. Yours repeats.
-
-### NOTHING ON THE SCALES
-
-Look at your list again. Relax. Cope. Reward. Taste. Pause. Belong. Enjoy.
-
-Which one survived? Relax did not survive the hiding — free relaxation does not hide in garages. Cope did not survive the untouched desk — the problem waits after the puff as before. Reward did not survive the finished paragraph — you did the work, the dose took the bow. Taste did not survive the first cough — the tongue is dulled, not delighted. Pause did not survive the clean-air rest — stopping rested you, smoke charged you. Belong did not survive stepping outside alone while laughter went on inside. Enjoy did not survive heaven for a minute, flat for an hour.
-
-Not one of them added anything that was not already yours.
-
-And yet look what the dose does to you all day. It keeps you slightly edgy between lights. It shortens temper until fed and then calls the quieting kindness. It teaches the hand to move before the mind decides. It divides you into the smoker outside and the actor inside. It stains breath and coats taste. It turns finished work into an excuse to feed and friendship into a reason to leave the table. It makes mornings harsh, meals interrupted, breaks expensive, evenings divided.
-
-That is not nothing. That is plenty.
-
-The food was yours. The rest was yours. The laugh was yours. The work done was yours. The dose gave none of it. It only took while you were enjoying it and left you needing to thank it for pausing the taking.
+Say that slowly to yourself, not as a slogan, as a description of what you have just watched in your own day.
 
 It does plenty TO you. It does nothing FOR you.
 
-Let that stand as settled fact. Not as a slogan. Not as a worksheet. As what your own supper and pause and laugh just proved with your own mouth and hands today.
+The TO is enormous. The dry mouth, the tight chest, the stale end, the planning, the hiding, the counting, the cough cleared before anyone hears, the yellow, the smell carried into clean rooms, the money burned, the evenings bent around packets, the mornings that begin with clearing, the chain worn all day for three seconds at the light. That TO touches breath, clothes, money, mornings, love.
 
-Once that lands, the ledger changes for good. You are no longer weighing harm against benefit. You are asking with clear, cheerful eyes, what benefit at all? And the trap has no answer, because there never was one. There was only taking dressed as giving, keeping dressed as rescue.
+The FOR is empty. The food was the food. The done was yours. The pause was rest already. The company was company. The calm after the puff left every cause untouched where you left it, waiting on the desk, waiting on the mat, waiting in the other room. That FOR is not small. It is empty.
 
-I felt that moment as pure relief, not loss. I had feared I must surrender a friend. I saw there was no friend to surrender, only arms that had held me under while I thanked them. Who mourns stepping onto dry land? To see the taking clearly is to feel the want fall away by itself.
+That is the switch. Not harm against benefit, weighed forever on scales that never settle. Harm only, once the false benefit is removed.
 
-So begin the next part in the right spirit. You are not heading toward deprivation. You are heading toward clean air, mornings that taste clean, breaks that rest, laughter you do not have to leave. There is everything to enjoy free. Breathe easy and keep watching with kind eyes. The trap taught you to thank it. Seeing teaches you to walk.
+You have carried those scales for years. You can put them down now, not by force, not by counting, but by seeing they held nothing on one side. There is no contest left to judge. There is only a con seen clear, and a swimmer beginning to see whose arms held him under.
 
 3. BEGIN BY FEELING GREAT TO BE ESCAPING
 There is no doom here, only freedom ahead.
 
-**SUMMARY**
-- The harm-against-pleasure weigh is false because no real pleasure was ever on the scales.
-- Your own reasons fall in daylight — the heaven lives only at the light, then turns flat within the hour.
-- The work pleased you and finished the task — the dose arrived after and signed your name on it.
-- Supper pleased you, the pause rested you, friends warmed you — the dose only interrupted and took the credit.
-- Each dose quiets like arms that hold you in the water while you thank them, keeping alive the very need it soothes.
-- It does plenty TO you and nothing FOR you, so there is nothing to miss and everything to enjoy free.
+SUMMARY
+- The scales of harm against pleasure keep you lit because they assume a pleasure is there.
+- The gifts you name were learned after you were caught, not reasons you started.
+- Food was already complete before the dose interrupted it.
+- Finished work already held its lift before the dose took the bow.
+- Pauses rested on their own and company warmed on its own.
+- What you love lives only at the light for seconds, then turns stale.
+- Loving the light can live beside hating being a smoker all day.
+- The rescuer that quiets the tug is the same thing that caused it.

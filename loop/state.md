@@ -2,13 +2,13 @@
 
 ## Position
 
-- **Iteration:** 034
-- **Stage:** Judging
+- **Iteration:** 035
+- **Stage:** Hypothesis
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 033 BASELINE dual-subject; 034 PRIMARY factory-speech via §B4 freedom-register)
-- **Last completed unit:** 034 quit-sugar PANEL DONE. Smoking write DONE 14/14.
-- **Next unit:** Smoking panel. Then dual-subject census vs factory-speech 20/18.
+- **Last completed unit:** 034 KEEP. factory-speech 20→6 / 18→12. Snapshots in production-books.
+- **Next unit:** 035 hypothesizer. factory-speech no longer ≥8 both (6/12). Residual smoking 12 as PRIMARY scope. Do not replay 028–032. willpower-lexicon not PRIMARY.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -62,3 +62,4 @@
 | 2026-09-05 16:30 | Heartbeat: writers live. Sugar CH-01–09; smoking CH-01–10. Sugar CH-10 and smoking CH-11 in A1 rewrite. Both Go. | rest of 034 writes |
 | 2026-09-05 17:07 | Sugar write DONE 13/13. Smoking still on last chapter. Start sugar panel. | j034-quit-sugar |
 | 2026-09-05 17:15 | Sugar PANEL DONE. Smoking write DONE 14/14. Start smoking panel. | j034-quit-smoking |
+| 2026-09-05 17:22 | 034 KEEP. factory-speech 20→6 / 18→12. Ease grep 0/0. | 035 hypothesizer |

@@ -1,0 +1,2 @@
+REVISE
+LENGTHEN to B±15% — Delivered 1427 words. Budget 1700. Allowed range 1445-1955. Add ~20-250 words serving the card job "photographable instruction list, outward push, saved growing reframe revealed" — e.g. expand outward push / handed-back sweetness without new thesis, new evidence, or new scenes.

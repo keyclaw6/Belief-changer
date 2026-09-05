@@ -1,202 +1,242 @@
 Chapter 4
 THE CALM THAT CREATES THE STORM
 
-*No dose ever calmed your trouble; it only hushed for a minute the need it keeps alive while your trouble waited.*
+*No dose ever sorted the trouble — it only quieted for a minute the hunger it had made and left the trouble exactly where it was.*
 
-### THE HAND THAT MOVES FIRST
+## THE PHONE DOWN, THE HAND MOVING
 
-You know this minute by heart.
+You know this minute.
 
-The voice on the phone turns sharp. Or the email lands wrong. Or the row in the kitchen that you thought was finished starts again, louder. You put the phone down too hard. Your chest tightens. Your head fills with noise.
+The row. The voice still sharp in the room after the call has ended. The phone down too hard on the desk. Heat up the neck. Shoulders up near the ears. Jaw tight. Papers spread. Screen still lit. The bill. The deadline. The message you wish you had not sent. The child crying in the next room. The boss waiting for an answer.
 
-And your hand is already moving.
+And before you have decided anything, the hand is moving.
 
-It finds the pack before you have told it to. It finds the lighter. You are up, you are at the door, you are at the desk window, you are out on the step. The first puff goes in and the shoulders drop a half inch and a thought comes, warm and certain:
+To the pocket. To the packet. To the lighter. To the door. To the step outside. We all know that reach. I knew it for thirty years. I did not think, I reached. The body moved a half-second ahead of the mind, as if it knew where the switch lived.
+
+We were taught to call that reach sensible. Stress bites, you light, you steady. Work piles, you light, you cope. Nerves scream, you light, you calm. That is the story the world told us, and we told each other, and we told ourselves while the smoke curled up.
+
+I am not going to tell you that you imagine what happens next. I am going to ask you to look at when it happens, and what it touches, and what is still there when the smoke is gone.
+
+Smoke as normal while we look. I am not asking you to change anything you do. Only to watch one ordinary minute with clear eyes.
+
+Next time the phone goes down and the hand moves, notice the order. First the trouble. Then the reach. Then the strike and the first draw. Then a minute of something loosening. Then the stubbing out. Then the return to the desk.
+
+And on the desk, what has moved?
+
+Nothing has moved. That is the whole story, and we are going to look at it until it cannot be unseen.
+
+Think of the last time in detail, not as an idea but as a picture. Where were your feet. Where was the packet. Did you stand or sit. Did you go outside or lean to the window. How long since the last dose. What was the first thought after the first draw. What was the last thought as you stubbed out. Who was waiting when you went back inside.
+
+We lived thousands of those minutes together, you and I. I lit after rows with my wife when the air in the house was still hot. I lit before hard meetings with papers damp in my hand. I lit in traffic with the window cracked in January and ash blowing back in my face. I lit when money ran short and when work ran long and when the night would not let me sleep. Each time my hand told me it knew what to do. Each time the minute after lighting felt a fraction looser. Each time I went back to the same desk, the same house, the same bill, the same waiting answer.
+
+I believed the loosening proved the help. We all did. That belief is the hinge of this chapter, and I want us to take it off its hinge gently, without denying what you felt.
+
+You did feel something loosen. I felt it too. To say otherwise would be to lie to you, and I will never do that. The question is not whether you felt it. The question is what you felt loosen, and what was left untouched while it loosened.
+
+Keep that picture of the desk in front of you while we speak. We will come back to it paper by paper.
+
+## "A CIGARETTE TAKES CARE OF IT"
+
+Say it in your own words, as you have said it to yourself.
 
 "If anything stressful happens in my life, a cigarette takes care of it."
 
-I believe you felt that. I felt it a thousand times. I am not mocking it for a second. That taken-care-of feeling arrives fast and it arrives real. Deny it and this book would be a lie and you would close it.
+"I can't think straight until I've had one."
 
-Look with me only at what it took care of.
+"Ciggies keep me steady when everything else is falling apart."
 
-We all have the same desk. Yours may be wood and bills and a screen still glowing with words you cannot unsend. Mine was deadlines and a ringing phone and a house that never stayed quiet when I needed quiet. Yours may be a steering wheel in traffic, a hospital corridor, a shop floor with a manager watching the clock. The furniture changes. The minute does not.
+"The stick is the only thing that gets me through the day."
 
-Pressure rises. Hand moves. Smoke goes in. Noise softens for three minutes.
+"Can't quit now. Work is too stressful."
 
-I want you to stay in that minute with clear eyes, because this is where the nicotine trap lives most kindly and lies most sweetly. It does not shout here. It puts a hand on your shoulder and says, there, I have got you. And because you are a warm, loyal person, you thank it.
+Do you hear your own voice in those lines? I do. I spoke them. I spoke them after rows. I spoke them before bills. I spoke them when my children were small and loud and needing and I told myself I needed five minutes outside to be a better father, then came back tighter in the chest and shorter in temper than before. I believed them because I felt something loosen in the minute after lighting. That loosening is real. I will never mock it and I will never tell you that you make it up.
 
-We fell in curious and wanting to belong. We stayed in because a tiny tug learned to call and old stories learned to answer. You already saw how taste was learned and how company was borrowed. This is the biggest story of all, the one that has kept more smokers lit than any other. The story that smoke steadies nerves.
+What I want you to press, as an investigator and not as a judge, is what that loosening really is, and what it leaves untouched.
 
-Smoke as normal while we look. I only ask you to watch one dose the way you have never watched it. Not to fight it. Not to change it. Only to see it.
+Take the last hard minute you lived through. Hold it still.
 
-### THE PAPERS ARE STILL THERE
+The argument happened. Words were said that cannot be unsaid by smoke. The bill arrived. Figures on paper do not change shape because you stood outside. The boss spoke. The deadline did not move itself an inch while you were gone. The traffic stopped and started without asking about your packet. The child needed what the child needed whether you drew or not.
 
-Light when the pressure is high. Let the first puff do its work. Feel what it does. Then, with clear eyes, check the desk.
+You lit. You drew. For a minute your shoulders dropped a fraction. Your mind said, at last. You felt taken care of.
 
-Did the dose pay one bill?
-Did it unsay one sharp word?
-Did it clear one paper, mend one row, shorten one queue, soften one boss?
+Taken care of from what? From the bill? The bill sat where you left it. From the row? The row sat in the other room exactly as hot as before. From the deadline? The clock ticked on without you while you stood in the cold.
 
-You know the answer. We both do. No.
+If the dose takes care of stress, why does the stress sit untouched to greet you on return? What kind of care leaves the thing cared for exactly as it was?
 
-The problem sat untouched while you stood aside with smoke. The trouble waited patiently through the puff and was still waiting when the stub went out. Nothing out there moved a half inch.
+Ask yourself, and answer only to yourself:
 
-What moved was in here. The jagged edge inside you dulled for minutes. You called that dullness calm and you signed the calm over to the tube.
+When the smoke clears, is the problem smaller? Is the row mended? Is the money owed less?
 
-That is the whole trick of stress smoking. It lets you mistake a brief hush inside for help outside.
+And if the dose truly steadied your nerves, why must you steady them again an hour later with nothing new having happened? What steadying wears off before the next cup has cooled?
 
-Think of your own day. Row, dose, brief ease, row still there. Bill, dose, brief ease, bill still there. Deadline, dose, brief ease, deadline nearer. Each time the world untouched, each time yourself a little staler, a little more edgy for the next hour, a little more certain you cannot face the next hit of life without a light.
+Both answers point one way. The trouble was never touched. Something else was touched for a minute, and misnamed as help.
 
-We learned to call that coping. Any kind heart would thank a hand in rough water.
+We were conned into reading the quieting of a need as care. The words did the con. Takes care of it. Gets me through. Steadies me. Gets are doing words. They promise action on the trouble. Smoke performs no action on the trouble. It performs a brief action on the tug left by the last smoke, and borrows the language of care to describe it.
 
-But a hand that helps lifts you out. This hand holds you where you are.
+Listen to how we speak when we are not defending. We say, I need one. We do not say, the bill needs one. We say, I am climbing the walls. We do not say, the papers are climbing the walls. The body asks, not the desk. The desk never asked for smoke. The desk asked for an answer, a payment, an apology, a line of work. The body asked for its top-up and called the top-up an answer.
 
-I sat at that desk for years with my head in my hands. Money real. Rows real. Sick parents and tired children and work that would not wait real. I do not pretend trouble is imaginary. Trouble is not imaginary. I understand why you reach. I reached until my fingers were yellow.
+That misnaming is innocent. We all learned it. The world handed us the words before we had reason to doubt them. Calm. Break. Pause. Cope. Every packet, every film, every older hand at work told us the tube meant those words. Then the tube taught our bodies a small edginess between doses, and we fitted the old words to the new edginess and called the fit proof.
 
-I am asking you to notice the timing. The reach comes after pressure, yes, but it also comes after an hour without a dose. The tug was already building while you worked. Pressure only shouts over it and then gets blamed for it. You light at the exact second two hungers meet — life pressing from outside, want pressing from inside — and when one hunger quiets for minutes you thank the tube for both.
+But press cope for detail. What did coping consist of on that step outside? Standing. Drawing. Watching ash fall. Thinking the same circling thoughts with smoke around them. Returning with a dry mouth and a tighter chest to the same desk with less time to meet it.
 
-Did you ever notice you do not reach the same way when you have just lit? The same sharp word ten minutes after a dose stings, but the hand does not fly. The same bill an hour after a dose burns, and the hand flies before thought. Is the bill different? No. The tug is different. The tug was quiet then. The tug is loud now. You are reading the loudness of the tug as the size of the trouble.
+A true helper changes the helped thing. Food changes hunger. Drink changes thirst. Rest changes tiredness. Sleep changes exhaustion. What did this helper change except the cry left by the last helper?
 
-Ask your own day and answer honestly. Do you smoke most when life is worst, or do you smoke most when doses have been farthest apart — first thing in the morning, after a long meeting with no break, after a flight, after a night's sleep? If smoke fixed trouble, a calm day would need no doses. Yet a calm day needs its chain just the same. Morning dose, mid-morning dose, after-lunch dose, afternoon doses, evening doses, night dose. Trouble comes and goes. The chain does not. The chain follows its own clock.
+It did plenty to your mouth, your chest, your fingers, your minutes. It did nothing to the papers.
 
-That clock is the clue.
+## WHAT WAS STILL THERE WHEN YOU CAME BACK
 
-### WATCH THE NEXT DOSE WITH CLEAR EYES
+Come back to the desk and look with me, paper by paper.
 
-Stay at that desk a moment longer, because daylight here is kind and it shows everything.
+Here is the letter unopened. Did smoke open it? Here is the apology owed. Did smoke speak it? Here is the work waiting. Did smoke type a line of it? Here is the sick child, the late rent, the sharp word, the fear at three in the morning. Which one did smoke lift, mend, pay, or answer?
 
-The phone goes down hard. Heat in the face. Jaw tight. You push back the chair. You are already half standing before you have decided to stand. Hand to pocket. Pack. Lighter. Door. Step. Cupped hand against wind. First drag deep. Hold. Out.
+We tell ourselves the dose helps us think. Press think for detail. What thought arrived out there that could not arrive in here? The same mind went out with you. The same facts. The same choices. The only difference out there was heat and paper and a minute without the tug screaming. You did not think better because smoke is wise. You thought a fraction clearer for a minute because the second hunger went quiet and left you with only the first hunger to meet, and even that clarity faded by the middle of the dose into stale taste and watching the clock.
 
-Watch what happens in your body and on your desk as two separate films.
+Think of the non-smoker at the next desk in the same row, the same traffic, the same deadline. He feels the same punch in the chest. His shoulders rise. His jaw tightens. Then he breathes, he answers, he acts, he waits, and the punch passes as trouble passes. At no point does he feel a second punch underneath demanding a paper tube. He is not brave. He is not calm by character. He simply has only one problem to meet, where you had two.
 
-On the desk, nothing moves. The name on the screen still glows. The number on the bill still waits. The message you must answer still waits for words you have not found. The traffic outside still crawls. The queue still stands. The sick child still calls from the next room. The row still hangs in the air between you and the person you love. Smoke has touched none of it.
+We had two hungers and called them one. The trouble on the desk, and the fading dose under the skin. The lighting quieted the second and took credit for the first.
 
-In the body, something moves fast. Shoulders drop. Jaw loosens. Hands stop shaking quite so much. Noise softens. For three minutes you can look at the papers without flinching because you have stepped aside from them.
+I know this is hard to accept. Your mind will answer: but mine is different. My stress is real. My job would break a non-smoker. My nerves are bad. My childhood. My shift. My bills.
 
-We call that stepping aside coping. It is not coping. It is stepping aside.
+I do not doubt your trouble is real. I doubt only that smoke touches it. Your trouble is heavier than many, lighter than some, yours in its detail, and not one line of it is met by paper and ash. The heavier the trouble, the crueler the con that sells you a minute of loosening while the trouble waits and grows in the waiting.
 
-See the reach itself. It comes before thought. You do not say, this trouble needs a chemical, I shall administer one. Your fingers are there first. You light on the walk to the door. You puff before the door shuts. The relief begins in the standing, in the moving away, in the breath out before the first full inhalation. How much of that relief was smoke and how much was leave? How much was dose and how much was distance?
+Ask the plain question of any hard day you remember well. Take away the lightings, leave everything else exactly as it was — the row, the waiting, the money, the noise — and what would have been unmeet­able? You met it all, late, with less time, with a tighter chest, with eyes stinging, and you still met it. The meeting was yours. The delay was the tube's.
 
-Watch the middle of the dose. First three puffs, the hush is strongest. Middle puffs, you hurry. Last puffs, stale and hot, you hardly taste. You stub and go back in. The papers greet you exactly as you left them. The trouble has not shrunk. You have shrunk your looking at it for minutes and called the shrinking help.
+And take away the trouble, leave the lightings exactly as they were — twenty doses on a calm holiday with no row, no bill, no boss — and would the wanting stop? You know it would not. On the laziest beach you still watched the clock. On the easiest Sunday you still stepped out. If the dose answered trouble, why does it call just as loudly when there is no trouble to answer?
 
-Now watch the hour after. Ten minutes, still dull. Thirty minutes, edge creeping back. Sixty minutes, hand restless again, temper shorter, mind louder. Nothing new has happened on the desk. Yet you feel less able than you did at the stub. Why would ability fall if nothing on the desk changed? Because something in you changed. The hush wore off. The tug woke. And the Smokescreen taught you to read its waking as proof the day is hard.
+Both pictures tell the same truth from opposite ends. With trouble and without it, the wanting keeps its own time. It does not follow life. It follows the last dose.
 
-I know this is hard to accept, because the two have arrived together for years. But keep smoking exactly as normal and keep this audit with you today. Each pressured light, ask gently, what did it move out there, what did it hush in here? You will find the same answer every time. Out there, nothing. In here, minutes.
+That is why the papers never moved. They were never touched. Only the tug was touched, for a minute, and misnamed.
 
-### SECONDS TO QUIET, MINUTES TO CALL AGAIN
+## THE HIT THAT FADES
 
-The fact is smoked nicotine reaches the brain within seconds and the sharp edge fades quickly, so the call comes round again.
+The fact is, a smoked dose gets to the brain within seconds, and its sharp effect fades quickly.
 
-That is why the taken-care-of feeling feels so convincing and leaves so fast. The dose goes in quick. The tug goes quiet quick. Quiet feels like rescue. Then the dose fades. The tug stirs again. You read the stir as new stress and you reach again.
+That is not a slogan. That is how the paper tube is built to work. The puff goes to the lungs, the nicotine rides the blood to the brain in seconds, there is a brief chemical flare, and then it slips away. Within a short while the body asks for another squirt to top it up. That quick up and quick down is why twenty a day never feels like enough and never feels like plenty. Each lighting tops up what the last lighting let fall.
 
-It was never a gift that solved the original stress. It was replenishment of a rapidly fading dose.
+We lived that rhythm together. Light, flare, fade. Light, flare, fade. Morning to midnight. The meter never stays full.
 
-Watch the rhythm today and you will see it. Morning dose quiets the night's want. A little later the want is back and you call it pressure. Mid-morning dose quiets it. A little later it is back and you call it nerves. Argument dose quiets it on top of the argument. A little later both are back and you swear the day is unusually hard.
+Now see what that rhythm does to a stressful minute.
 
-The day is not unusually hard. The clock is running its old circle.
+You go longest without a dose when trouble holds you — the row runs ten minutes, the meeting runs an hour, the traffic holds you, the child needs you. While trouble holds you, the last dose is fading. A second hunger is building under the trouble: the fading dose crying to be fed.
 
-See how quick the circle is. You do not light and stay quiet till evening. You light and stay quiet minutes, then hunger stirs. Puff by puff the hush thins. Hour by hour the hand learns its timetable. That shortness is the proof. A true helper would stay helping. A true calm would stay calm. What fades within minutes and must be fed all day was never help. It was a loan repaid with interest you pay in breath and edge.
+Then you step out and light. The new dose tops up the fading one. The cry quietens for a minute. Your shoulders drop. Your mind says, better.
 
-I know the loan feels kind at the second it lands. Of course it does. Two hungers met at once and one went quiet. The drop feels huge. But follow it. The quiet does not hold. The want returns whether trouble returns or not. Good news or bad news, busy desk or quiet Sunday, the hand moves on its own hour. If the dose fixed trouble, an easy hour would need no dose. Yet the easy hour calls just the same.
+Better from what? From the row, or from the fading?
 
-Isolate it and the credit falls apart. Same trouble with a fresh dose in you feels bearable. Same trouble with an old dose in you feels unbearable. The trouble did not change size. The interval changed. You are measuring the age of the last feed and calling it the size of life.
+Isolate it. Think of a morning you started already edgy before the day had given you a single reason. Feet not yet on the floor, hand already finding the packet, first draw on empty lungs. What stress was that dose taking care of? There was no row yet, no bill yet, no boss yet. There was only the night without, and the body calling for its top-up. We named that call stress, because we had no other word for edginess, and we lit and called the quieting steadiness.
 
-Put your hand on your own chest in that minute and tell me true. Is the calm a clearing of the mind, a plan forming, a strength rising? Or is it a dulling, a softening, a stepping aside? True calm makes you more able — eyes clearer, speech steadier, hands surer. This hush makes you less able and calls the less able relief. You stare. You drift. You put off the call you must make. You feel able to bear the papers precisely because for three minutes you have stopped looking at them.
+Then the day gave us real trouble, and we used the same word for a different hunger, and lit again, and called it the same steadiness.
 
-Is that coping? Or is that pausing?
+That is the con. One word, calm, pasted over two different hungers, one made by life and one made by the tube. The tube quiets only the one it made, and leaves the one life made exactly where it found it.
 
-A non-smoker meets the same row, the same bill, the same traffic. He feels one storm: life. You feel two storms laid on top of each other: life, plus the empty tug between doses that the Smokescreen teaches you to read as life. No wonder you feel you need help. You were given an extra need and then sold the brief quiet of that need as help.
+It is like wearing tight shoes all day for the pleasure of loosening the laces for a minute. The loosening feels wonderful to the foot — no one denies the foot feels it — but the shoe put the pinch there. Take the shoe off and you do not need the minute of loosening. You stand as the non-smoker stands: with feet that never asked for it.
 
-It is the other way around.
+So it is with the dose and the nerve. The dose puts the edginess there between lightings, then quiets its own edginess in the minute after lighting, and calls that quieting calm. True calm leaves you clearer to meet the trouble. This calm leaves the trouble untouched and you a little duller, a little tighter in the chest, a little more in need of the next quieting an hour later.
 
-The tube does not still the water. It makes waves and then sells you three minutes of less waving. Take away the tube and there is no extra wave to still. There is only the trouble itself, plain and workable, the way non-smokers meet it all day without lighting anything.
+Did the smoke make you able, or did it make you able to stand the minute it had made unbearable?
 
-### TWO STORMS, ONE LIE
+Watch the timing once and you cannot miss it again. The loosening arrives too fast to be wisdom and fades too fast to be help. Wisdom does not arrive in seven seconds and leave in seven minutes. Help does not need re-taking twenty times a day. Only a fading hit needs that rhythm, because only a fading hit creates the gap it then briefly fills.
 
-Picture the desk again, because seeing it once changes everything.
+## TWO HUNGERS, ONE WORD
 
-You sit with trouble. Trouble is real. I have sat there with my head in my hands and wanted the world to stop for five minutes. You reach, you light, the second storm quiets. For three minutes you have only one storm instead of two. That drop from two to one feels like heaven. The Smokescreen points at the tube and says, that, that was calm.
+We need to separate the two hungers cleanly, because the single word hid them.
 
-It was not calm. It was one need pausing while the other need waited.
+Hunger one is life. The row. The money. The noise. The waiting. The fear at night. It comes and goes as life comes and goes. It is sometimes sharp, sometimes dull, sometimes gone for hours on a good afternoon. Every human meets it, smoker and non-smoker alike. It asks for action, or patience, or an apology, or work, or rest.
 
-See how the lie pays itself. Each quiet guarantees the next stir. Each stir feels like proof life is unbearable without smoke. Each proof sends you back for another quiet. Round and round, day after day, while the papers never move and the breath shortens and the hand learns to move before thought.
+Hunger two is the tube. The small edginess between doses. The faint Anfängliche Unruhe that grows the longer since the last light. It comes on its own clock, trouble or no trouble. It asks for one thing only: another dose. It goes quiet for minutes after lighting and then starts building again.
 
-It never touched the trouble. It only touched the tug.
+We called both by one name: stress. Nerves. Tension. Need a break. Need air. Need to steady. The single name made the single cure seem sensible. If all edginess is stress, and the dose quiets edginess for a minute, then the dose must quiet stress.
 
-Let that stand as settled fact. Not as scolding. As what your own desk proved with your own mouth and hands. The dose leaves the problem untouched while briefly quieting its own tug. Once seen, that cannot be unseen.
+But the names were never one. Life edginess rises with trouble and falls when trouble is met or passes. Tube edginess rises with time since the last dose and falls for minutes after lighting whatever life is doing. On a calm day with no trouble, tube edginess still rises and still calls. In a hard minute after just lighting, tube edginess is quiet and life edginess screams on untouched — you have smoked and you are still shaking, still angry, still afraid, and you tell yourself you need another, when what you need is to meet the trouble with clear hands.
 
-Feel what that means for you. You do not face life worse than non-smokers. You face life plus a manufactured restlessness they do not carry. Lift that second weight and you do not become less able to cope. You become what you were before the trap taught your hands to reach — a person who can be shaken and still think, still speak, still act, without paying a coin of breath for three minutes of hush.
+Have you ever lit in the middle of a row and stayed angry through the whole dose? Have you ever stepped out shaking and come back shaking, with only a sour mouth added? Have you ever chained two together because the first did not do it, and felt duller but no calmer? What happened to takes care of it then?
 
-I lived that lift as relief, not loss. I had feared pressure would crush me bare-handed. I found pressure clearer without the extra stir, my head quicker, my temper slower to snap. The trouble did not vanish. I met it with clean air and both hands free. That is coping. The other was renting quiet.
+And have you ever been kept from lighting in trouble — a long flight, a hospital corridor, a meeting that would not end — and found the trouble still meetable, the shaking still passing, the answer still coming, without a minute outside? What happened to can't cope without it then?
 
-Ask your own body. Do you feel steady between doses, or do you feel an empty, slightly restless, slightly edgy little tug that grows until fed? Do non-smokers queue in that same queue clawing for a door to stand behind? Or do they stand in their own thoughts, annoyed perhaps, but not pulled?
+Both memories live in you. We all carry them. They did not fit the slogan, so we filed them away. Bring them back now and let them speak. They prove the separation the slogan hid: trouble can be met without smoke, and smoke can be taken without trouble being touched.
 
-You already know. We both do. The pull was never character. The pull was feeding time.
+I want you to feel the weight of that separation, because it changes who gets the credit for your whole life of coping.
 
-### WHAT THE NON-SMOKER FEELS AT THE SAME DESK
+Who met the row while you were smoking? You did. Who drove through the night, who paid what could be paid, who sat up with the child, who answered the boss, who carried the grief and still got up? You did. The dose sat in the packet while you did it. It contributed no courage, no skill, no patience, no words. Then, in the minute after, it stepped forward to be thanked.
 
-Isolate the variable and the credit comes apart by itself.
+Isolate the worker from the watcher. Think of any hard year you came through — and you have come through hard years, we all have — and ask what part smoke played except to interrupt the work to be fed. Did it type, or did you? Did it apologize, or did you? Did it wait in the corridor, or did you? The coping was yours from first to last. The tube only taxed the coping and called the tax help.
 
-Take the same sharp phone call. Same words. Same heat in the face. Give it to a non-smoker at the next desk. He puts the phone down too hard. His chest tightens. His head fills with noise. He does not reach. He swears under his breath. He stands, he walks to the window, he breathes, he thinks, what do I say next. Annoyed, yes. Shaken, yes. Pulled toward a door? No. Empty tug calling under the annoyance? No. He has one storm to weather, not two.
+It is the other way around. You do not cope because you smoke. You smoke while you cope and believe afterwards that smoking did the coping.
 
-Give the same call to you an hour after a dose and to you three hours after a dose. Same call. Different hands. An hour after, you swear and think. Three hours after, you swear and reach. Did the call change? No. The interval changed. The tug was low then. The tug is high now. You call the high tug proof you cannot cope bare-handed. It is proof you are carrying an extra hunger he is not carrying.
+Once that credit is returned to its owner, the off-switch story falls apart. There never was a switch on the desk. There was only a second hunger under the skin that went quiet for a minute and let you hear, for a minute, your own steadiness that was there all along.
 
-I watched this in myself for weeks before I saw it. I kept a plain eye on my own reach. Bad news at ten, just after a light — I handled it. Bad news at eleven, long after a light — I must light to handle it. Same man. Same nerves. Same bills. Only the clock since the last feed had moved. How could the same nerves need smoke at eleven and not at ten unless the need was the clock, not the nerves?
+## MORNINGS WITH NOTHING TO COPE WITH
 
-Try it with your own eyes today while you still smoke as normal. Notice when the hand flies fastest. Is it when trouble is biggest, or when the last dose is oldest? Notice the morning row that feels unbearable before the first light and manageable after it, though nothing was said or mended in between. Notice the afternoon that feels impossible until you step out, though the stepping out changed nothing on the desk. Notice how the relief begins before the first full puff, the second you decide to light, the second you stand and step aside. That beginning is the truth trying to show itself. The tug quiets because relief is promised, before any smoke has done anything. The mind was already settling at the thought of feeding. How could that be help from smoke if it starts before smoke?
+Look at a morning with nothing in it to prove the point cleanly.
 
-The non-smoker knows this settling without paying for it. He steps aside and breathes and lets the noise pass. He does not need to buy the pause. The pause was always free. Air was always there. The window was always there. The three slow breaths were always there. You stood at the same window and breathed the same air and felt the same shoulders drop a half inch before the lighter even caught — and then you signed that drop over to the tube.
+Alarm. Grey light. Feet not yet on the floor. Hand already finding the packet on the chair. Lighter cold. First draw on empty lungs before a word has been spoken to anyone, before a bill has been opened, before a boss has breathed.
 
-It is you that steadies, not the dose. It is you that thinks, not the dose. It is you that endures the awkward call back and finds the words, not the dose. The dose arrived after your steadiness began and took the bow.
+What stress is that dose answering? Name it. There is none yet. The day has not spoken. The house is quiet. The trouble of yesterday is done or waiting downstairs, but nothing is biting now. Yet the edginess is there, real, gnawing, and the lighting quiets it for a minute and we call that starting the day right.
 
-Consider the drive home after a hard day. Engine hot. Road slow. Head full. You light and think, I need this to unwind. Now take the same drive with the same head but ten minutes after a dose. You do not think you need it. You drive, you breathe, you play the radio, you unwind without reaching. Same head. Same road. Same tiredness. Only the tug quiet. Unwinding was yours all along. The tube only charged you for it when the tug was loud.
+That morning minute convicts the slogan without a witness. If the dose answered life trouble, it would have nothing to answer at dawn. But it answers loudly at dawn, because what it answers is the night without. The body went hours unfed, the fading hit fell low, the tug woke before you woke. You fed it and called the feeding calm.
 
-Consider the row that wakes you at night. Words said. Silence thick. Heart thumping. You slip out for a light and come back able to speak softly. What softened you? The smoke, or the stepping out, the cold air, the minute alone, the breath, the time for heat to pass? Non-smokers take the same minute without lighting and come back softened too. Lovers have stepped onto balconies to cool for a hundred years without nicotine. The minute heals. The air cools. Time does its kind work. The dose sneaks a ride on time and air and calls their work its own.
+Now follow that morning forward. Second dose with coffee. Third on the way to work. Each on a day not yet hard. Each quieting the gap left by the last. By ten o'clock you have taken three or four and met no crisis, yet each felt needed. Needed for what? For the gaps, not for the day.
 
-Take the hospital corridor, take the traffic jam, take the shop floor when the manager watches. Same pressured minute, two people side by side. One paces for a door, counting minutes till he can slip out, half his mind on the trouble and half on the feed. The other stays with the trouble, frowning, breathing, thinking. Which one looks calmer? Which one looks owned? Which one is adding a second problem to the first and calling the adding help?
+Then the day turns hard at eleven, and you use the same hand, the same packet, the same strike for a different hunger, and because the minute after feels the same brief loosening, you call it the same help. One gesture, two hungers, one name.
 
-Once you see who did the work, the off-switch story cannot stand.
+We all did this without seeing. I lit at dawn for thirty years and told myself I liked the taste, liked the start, needed to wake. I did not wake because of smoke. I woke and then quieted the night's gap and called the quieting waking. A non-smoker wakes without that gap. He coughs less, tastes more, breathes deeper on the stairs, and never once feels the dawn is missing a tube. He is not stronger. He simply never dug the hole the dawn dose fills.
 
-### THE EXTRA EDGE YOU MISTAKE FOR LIFE
+Keep that dawn picture beside the desk picture. Together they show the full circle. Dawn proves the need exists without trouble. Desk proves trouble remains without being touched. Between them they leave the slogan nowhere to stand. The need follows the last dose. The trouble follows life. The lighting follows the need and claims the trouble.
 
-Between doses we live slightly edgy and call it personality.
+Ask yourself one more plain question and answer only to yourself.
 
-Shorter temper until fed, then quiet, then short again. Quicker to snap at the child, then sorry after the light. Less patient in the queue, then patient for minutes, then restless again. We tell ourselves, that is just me under pressure. I am highly strung. I need my crutch.
+If the dose truly took care of life trouble, would dawn need it most when life trouble is least? And if dawn needs it without trouble, what does that prove about the desk need an hour later? Does the tube change its job between dawn and desk, or does it do one job all day — topping up its own fading — while life goes on untouched beside it?
 
-Look kinder and closer. Are you highly strung all day, or highly strung on a clock? Do you snap most when life is hardest, or when feeding is longest overdue? Does the edge rise after food and fall after lighting though food did not change? Does the edge rise in a long film and fall in the interval though the film did not change? Does the edge vanish on holiday when doses come freely and return at work when doses are forbidden, though you love your family in both places?
+There is only one honest answer, and it returns your own steadiness to you. You woke every day and met the gap and still got up. You met trouble every week and met the trouble and still stood. The meeting was always yours.
 
-That is not temperament. That is a tug misread as temperament.
+## THE SMOKE THAT STOLE THE PAUSE
 
-We misread it because the Smokescreen is a brilliant teacher. It taught us young that smoke calms, and then it gave us a need that only smoke quiets for minutes. Every quiet feels like proof of the lesson. Every stir feels like proof life needs smoke. Round and round, and we call the circle our nerves.
+There is a smaller theft inside the large one that keeps the large one alive.
 
-I know that circle. I lived inside it. I prided myself on handling pressure while I fed pressure. I told myself the office would fall apart without my step outside. The office did not fall apart when I stopped stepping out. My head fell quieter. My sleep fell deeper. My temper fell slower to rise. Nothing about my job had changed except I no longer carried a second storm into every meeting.
+The pause.
 
-Think of all the moments you feared you could not face bare-handed. The difficult call. The late bill. The sick child crying while supper burns. You faced them lit, but you faced them with stale mouth and hurried breath and a hand that had to feed before it could comfort. Did the feed make your voice kinder? Or did it make you keep the child waiting while you finished the dose? Did it make your mind clearer? Or did it fill the minute you needed for thinking with cough and hurry? Non-smokers face the same crying child with clean air and both arms free. They do not do it perfectly. They do it present. Presence was never in the tube.
+Phone down. Kettle on. Two minutes with nothing to do. Papers waiting. Hands empty. The non-smoker stretches, looks out of the window, breathes, lets his eyes rest, and returns. Two minutes. Nothing taken. Nothing burned. The mind settles because pausing settles it.
 
-And when the trouble passes, as trouble does, what is left? The trouble lifts. The tug stays. That is the cruellest proof. Good news comes, the row mends, the bill is paid, the child sleeps — and within the hour the hand moves again. If smoke fixed trouble, fixed trouble would need no smoke. Yet fixed trouble still calls. The call was never trouble. The call was feeding time dressed as trouble.
+The smoker spends the two minutes feeding a need. He checks the packet. He finds the lighter. He steps out or leans out. He watches the clock while he draws. Half his mind is outside in the cold, half is on the next thing waiting inside. He returns with a tighter chest and a drier mouth and calls that a break.
 
-So I ask you gently, as one smoker to another, with no blame in my voice. If the calm were real, why would it need repeating within the hour? If the help were real, why would the papers never move? If the friend were real, why would you hide to meet him? And if bare hands were truly unable, how do millions of non-smokers meet the same desks, the same rows, the same nights, without lighting anything?
+Did the pause settle you, or did the lighting end the edginess that the last dose had left, and call that ending settling?
 
-You know the answers. We both do. A real calm lasts. A real help moves. A real friend does not need hiding. Bare hands were never unable. They were only occupied holding a story.
+We were conned into calling the quieting of a need a pause. A true pause leaves you fresher than before. This pause leaves you a little staler than before, a little tighter, a little more in need of the next pause. That is not rest. That is service dressed as rest.
 
-Feel how different this makes you feel toward yourself. You are not weak under pressure. You are a strong person carrying extra pressure. You are not bad at coping. You are good at coping while paying rent on coping. Lift the rent and the coping stays. The coping was always yours.
+And because the false pause is the only pause we allowed ourselves, we came to fear a day without smoke as a day without pauses. What would I do with my hands. Where would I go when the phone goes down. How would I stop the circling thoughts. As if pausing were made of paper. As if breathing at a window needed a license. As if two minutes with empty hands were unbearable without heat.
 
-### YOU DO NOT HAVE TO PUZZLE THIS ALONE
+Test it without testing, only by watching others. Watch a non-smoker pause. He does not perform a ritual. He does not need equipment. He stands, he breathes, he looks, he returns. No packet. No clock. No cold step. His pause is shorter and fresher because nothing is fed inside it. He does not miss a tube in his pause because his pause never contained one.
 
-I know the two storms felt like one for years. Tug plus trouble felt like a single ache. The brain joined them like neighbours. But neighbours are not family.
+Your pause never needed one either. The tube inserted itself into your pause, taxed it, then claimed it. Return the pause to its owner. It was yours before the first cough behind the sheds, and it never stopped being yours except in the story.
 
-You do not need to untangle it by effort. You do not need to test yourself or watch yourself or find the perfect thought to think when pressure hits. We smokers tried that for years and it left us tired and lit.
+This matters for stress because most of what we call stress at work is not crisis but pile — small troubles stacked with no gap between them to breathe. The smoker's gaps are not gaps but feedings, so the pile never gets a true gap and the edginess never gets true rest. Each false pause leaves the chest tighter for the next pile, and the tighter chest is read as more stress needing more pauses. Round and round. Not because life piled higher, but because the pause was stolen.
 
-We fell in curious and stayed in because stories answered a tug. You get out the same way you got in — by seeing clearly and letting the seeing do the work. Keep smoking exactly as normal. Keep your mind open. Keep checking with your own eyes at your own desk. Let this argument finish.
+See the theft and the pile changes shape. The pile is still there — bills, bosses, noise — but it is now one pile, not two, and it can be met in true pauses that leave you clearer, not staler. You have paused well all your life whenever smoke was impossible. You can pause well now whenever smoke is irrelevant, which is always, once the credit is returned.
 
-All you have to do is follow all the instructions.
+## YOU DO NOT HAVE TO PROVE THIS IN THE COLD
+
+You do not have to prove this to yourself by standing in the rain arguing with your own nerves. You do not have to white-knuckle the next row to see if I am right. That would be the old method talking — the method that turns everything into a test of grit and then blames you when grit runs out.
+
+This is not a test. This is seeing.
+
+Keep smoking as normal until we finish. Keep reaching when the phone goes down. Only watch the order with the eyes of an investigator: trouble first, gap since last dose second, lighting third, brief quiet fourth, same trouble fifth. Watch it three times, four times, in your ordinary day. You will see the quiet arrive too fast to be wisdom and fade too fast to be help, and the papers will tell you the rest. They never moved.
+
+And keep an open mind while you watch. Let the argument finish before you borrow another. You came braced for a lecture about danger and a demand for effort. I have no lecture and I demand no effort. I am only asking you to let one false credit fall where it belongs: to the tube for making the edginess, to life for making the trouble, to you for meeting trouble all these years while carrying both.
+
+I know your mind is already moving ahead to the other gifts — the reward after work, the taste after food, the company on a night out. Leave them where they are. We will meet each in its turn, calmly, without asking you to change anything yet. One false credit at a time is enough, and this one is the keystone. If smoke does not help stress, the day loses its manager. If it leaves the desk untouched, the other rooms lose their excuse.
+
+There is a clean way through this book, and it asks nothing hard of you. You only have to keep reading, smoke as normal, and let each piece land before you pick up the next. All you have to do is follow all the instructions.
 
 4. FOLLOW ALL THE INSTRUCTIONS
 All you have to do is what this book asks.
 
-**SUMMARY**
-- The taken-care-of feeling after a puff is real, but it touches only the inner tug, never the outer trouble.
-- The papers stay where they were, the row stays said, the bill stays unpaid while the smoke clears.
-- Smoked nicotine quiets quickly and fades quickly, so relief is brief replenishment, not help.
-- You carry two storms where the non-smoker carries one, and you mistake the drop from two to one for calm.
-- Seen clearly, the dose creates the very edginess it is credited with soothing, while life waits untouched.
+SUMMARY
+- The hand after a row moves before you decide, and that reach was taught, not chosen.
+- Feeling taken care of for a minute is real, and it was misnamed.
+- A smoked dose arrives in seconds and fades quickly, which is why the wanting always returns.
+- The brief quiet quiets the hunger left by the last dose, not the trouble on the desk.
+- The bill, the row, the deadline and the message sit exactly where you left them after the stubbing out.
+- A non-smoker meets the same trouble with one problem to carry, not two.
+- Dawn proves the need exists without trouble, and the desk proves trouble remains without being touched.
+- Watching the order three or four times in your ordinary day shows the credit was given to the wrong source.
+```

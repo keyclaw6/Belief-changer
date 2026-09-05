@@ -1,196 +1,186 @@
 Chapter 9
 WHO BUILT THIS WANT
 
-**IN THIS CHAPTER** — the box on the table, the white tip held to the light, two ropes pulling opposite ways, stairs and the garage doorway
+**IN THIS CHAPTER**
+The pack weighed in the palm, the lit shelf behind the till, the white filter held to the light, two ropes pulling opposite ways, the small rented room with stale air
 
-*That want was never your nature. It was built for you, and sold back to you as you.*
+*You did not grow this want inside yourself; it was packed and sold to you, and both fears that pull at you were packed with it.*
 
-### THE BOX ON THE TABLE
+## THE BOX IN YOUR POCKET
 
-Keep smoking as you read. I ask nothing of your hands yet. I ask only that you look at what is in your hand with clear eyes, as you have learned to look at morning and food and the break.
+Take the pack out and hold it in the palm and look at it straight.
 
-You have breathed morning clean and watched the kettle do the waking. You have let flavour linger and clear on its own after food. You have stood outside with free hands and felt air and movement do the work of the pause. Hold that seeing, because it makes the next seeing possible.
+We do not hold pleasure in the hand. We hold a day's supply box. Twenty white tubes in a row, each tube wound tight, each tube tipped with brown, each tube waiting to be burned to release its squirt. The cardboard keeps them from crushing. The foil keeps them from drying. The cellophane keeps the smell in until money has changed hands.
 
-Pick up your pack. Hold it a moment, not as a smoker reaching, but as an investigator weighing something.
+I carried that box for years without seeing it. I patted for it before keys, before money, before leaving any room. I counted what was left by feel through cloth. Four left means buy soon. Two left means buy now. None left means panic at midnight and a walk to the garage in rain. I told myself I carried my pleasure and my prop. I carried my rations.
 
-What is it, truly? Twenty paper tubes in a coloured box. Same length. Same filter. Same burn. Each puff the same small squirt. Factory counted. Factory sealed. A day's supply box that empties by the clock and is bought again.
+Stand at the till with me and watch where the box lives.
 
-Turn it over in the palm. Feel the cellophane crackle. Hear the rattle. Look at the colour, the gold leaf, the clean white lettering, the proud name. It looks like a personal thing. A choice. A taste. It feels private in the pocket, close to the body, always there like a friend.
+It lives behind glass, lit from above, row upon row of colour, red and gold and white and green, at the exact height your eyes fall while you wait for change. Bread is down the aisle. Milk is in the cold corner. The box is at the hand. The shutter clicks up, the hand reaches, the money moves. No leaf is shown. No plant is shown. Only the clean packet, the clean name, the clean promise in white letters. You never see a field. You see a shelf built to be found by a hand that is already searching.
 
-It is not private. It was never yours in the way your laugh is yours or your hunger is yours.
+No friend waits behind that glass. A dispenser waits.
 
-Who counted it into twenties? You did not sit down as a boy or girl and say, I need twenty hits a day spaced forty minutes apart, fading quickly so I must feed again and again. You did not design the fade. You only live it. Someone else designed it, measured it, and taught your body to live by it.
+Think what a dispenser does. It counts. It measures. It keeps the next dose ready before the last one has faded. The pack does that for the day. Twenty means a day. Ten left means half a day gone. None left means buy or suffer the empty pocket. The tube does that for the minute. Paper wrapped round cut leaf, filter at the mouth end, burn at the other end, five minutes to finish before it burns the fingers. The puff does that for the seconds. One pull, the lack quietens, the quiet thins, the next pull called. You were not meeting company twenty times a day. You were opening a measured squirt, using it, and waiting for the lack to call for the next squirt.
 
-We never chose the timetable. We chose the first one out of curiosity or showing off or wanting to belong, coughing, eyes watering, throat burning, body saying no in plain language. Then the second and the third, until the body learned to ask on the hour. We call that asking me. I did for years. I speak with warmth for you because I know that feeling from inside. The hand moves before thought and the mind kindly signs our name underneath, as if it were character.
+Feel the packet warm from your pocket and ask what your own day proves.
 
-Whose timetable moves the hand? Yours breathes and eats and sleeps and wakes without teaching. Theirs lights every hour to keep the fade topped up. That timetable is the nicotine trap.
+Did you choose to need twenty timed hits before you ever lit, or did the need to count and carry arrive after you started? Did a non-smoker ever pat his coat for rations before he can leave the house? Did you, before the first one behind the sheds? You know you walked out empty-handed for years and never counted. What changed was not your nature. What changed was the box in the pocket training the day into intervals.
 
-The fact is this, and I put it flat because you deserve it straight. In their own planning rooms, their own scientists described the cigarette not as a flavour or a pleasure or a companion, but as a package. The product is nicotine. The paper, the filter, the taste, the brand — the wrapping. The dose inside — the business.
+Look at the interval it trains.
 
-Read that again in your own kitchen, with the box in your hand. Package outside. Drug inside. Dose by puff. Doses by day. Days by life.
+First of the day on empty lungs to still the night lack. One with the kettle to mark starting. One with the plate to mark finishing. One at the kerb to mark pausing. One with drink to mark belonging. One before sleep to mark closing. Twenty small bells through waking hours, each rung to quiet a gnaw, each quiet lasting minutes, each fading calling the next. The packet counts them for you. The packet numbers them for you.
 
-Ask yourself plainly, with the box in your palm, investigator to investigator.
+I know that pocket-check. Coat, jeans, shirt, bag, back again. Hand patting cloth fifty times a day without thought, the way a mother pats for a child in a crowd. We called that habit. It was not habit. It was a timed lack looking at the clock through our fingers.
 
-Did you choose to need a drug that arrives in seconds and fades quickly so you must dose all day to stay nearly normal?
+The fact is, that is what it was made to be.
 
-Did you choose the stale mouth and the hourly tug as your nature, the way you chose your laugh or your love of music?
+In one of their own planning papers, a maker put it plain: the cigarette should be conceived not as a product but as a package. The product is nicotine. Not taste. Not leaf. Not company. A package for a dose, and the paper tube is the needle without steel.
 
-If this was your nature, why did your first ones taste foul and make you cough until your eyes ran?
+Read that again in your own hand. The filter tips it, the paper wraps it, the pack counts it, the shop lights it from behind glass so your eyes find it before bread. You were not meeting a friend twenty times a day. You were opening a measured squirt, using it, and waiting for the lack to call for the next squirt.
 
-It was the other way around. You did not build a want and find a product to meet it. They built a product that creates want and taught you to call that want you.
+Ask yourself only what your own fingers know.
 
-Think of the cleverness, and let anger go where it belongs. Not at you. Never at you. At the maker who counts doses for a living while you pay per puff to stay nearly normal. We were all conned, you and I, not foolish, not weak — conned by men in suits who never smoke the timetable they sell. The hand that moves to the pack feels like my hand because the timetable was installed in my body long ago. Seeing whose timetable it is does not shame you. It frees you from blame so you can see clear.
+Did flavour ever require counting? Did friendship ever require foil to keep it fresh? Did pleasure ever panic at midnight because the shop shut? Hunger does not panic that way. Thirst does not panic that way. Love does not panic that way. Only a dosed lack panics when its box runs low.
 
-Hold the pack up to the morning you have now met clean. Cold floor. Kettle singing. Window cracked and clean air coming thin and sweet. Which of those did the box make? None. The box only inserted itself between you and them and charged per use. The light through the blind was there before the box. The water on the tongue was there before the box. The air widening the ribs was there before the box. The box borrowed morning and sold it back.
+That is the nicotine trap.
 
-Hold it up to the meal you have now tasted clean. Heat rising. Salt. Full belly. Pause when the fork goes down. Not one of those came from paper and glue. The cooking made heat. The eating made fullness. The stopping made pause. The box dried the mouth it claimed to satisfy and laid ash over the taste it claimed to seal, then called the burial a finish.
+We fell into it together, you and I, not because we were weak but because we were conned on false information. The pretty pack said mild and light and menthol and king size, as if it sold flavour and style. It sold timed lack and timed pause. The hand learned to reach. The mind learned to call the reach mine. That misreading is the Smokescreen.
 
-Hold it up to the break you have now breathed clean. Legs wanting to move. Lungs wanting air. Mind wanting rest. Laughter wanting ears. The box built none of that. Stopping made rest. Air made clarity. Movement made blood move. Company made warmth. The box only quietened its own complaint for minutes and claimed it had made the rest.
+Keep the box in the palm a minute longer while you still smoke as normal. Feel its weight. It is light. What is heavy is what it makes you carry: money counted out day after day for something you burn, minutes counted out in doorways, breath counted out on stairs. The box does not carry you. You carry it, and you pay for the carrying.
 
-Do you see? A package that creates the hunger it then rents back to you, twenty times a day, every single day, until you call the renting nature. That is not nature. That is manufacture.
+## THE HANDS BEHIND THE GLASS
 
-I want you to feel the weight of the box differently now. Not heavy with pleasure. Heavy with design. Each tube the same. Each puff the same. Each fade the same. Counted to empty daily. Emptied to be bought again. You were never holding a friend. You were holding a day's supply box from a factory that needs you hungry by the hour.
+A packet does not grow on a shelf. Hands put it there.
 
-Once that is seen, the old sentence, I need one, changes its meaning. It no longer means, my body needs its missing half. It means, the top-up is due. The meter has slid. The last squirt has faded. The tenant is complaining. That complaint feels like me only because the Smokescreen taught me to read every dip as proof the dose gives something. It gives nothing. It rents back quiet it took.
+I want you to see those hands clearly, because we have blamed our own hands long enough. Your hand shaking at midnight is not the villain. The hand that designed the shake is.
 
-### THE WHITE THEATRE
+Who decided a dose should burn in five minutes and fade within the hour, so the day must be fed again and again? Who decided twenty to a box, a number that fits waking hours into neat bells? Who chose paper that will not go out if left, so it must be smoked to the stub or waste money? Who chose the smell to cling to hair and coat, so every room knows you paid, yet the packet to stay clean and bright, so every till invites you to pay again?
 
-“But mine are mild. Mine are light. I chose the softer ones. I was careful.”
+Not you. You never sat at a table and drew that design.
 
-I hear you. I said it myself when the cough grew heavy in winter and the stairs began to talk. Let us look at that softness with the filter between finger and thumb, with the same clear eyes you brought to morning.
+They did. Chemists who measure dose against fade. Artists who dress lack as style. Merchants who pay for the lit shelf and the film laugh and the poster sunset with smoke curled beside it. An industry that learned a century ago that a man who buys pleasure buys once, but a man caught in timed lack buys every day for life.
 
-Hold one up to the light. That white tip looks clean. Scientific. Safe-ish. The word light on the pack sounds kind. Lower numbers on the side sound kind. Gold and silver and pale blue sound kind. Kind is the theatre.
+I am harsh about them and I make no apology for it. Be angry at the maker, never at yourself. You were a child behind sheds, a lad offered paper to look grown, a girl offered white tips to look slim, a worker offered a break to look easy. You took one on false information. The trap did the rest. We all believed because belief was manufactured and doubt was buried.
 
-A machine smokes differently from a human. The machine takes small neat puffs at set times and reads low on its paper. It does not want. It does not hurry. It does not wake in deficit. It does not stand in rain to finish. It does not cover tiny holes with lips and fingers without knowing. We do.
+See how young the reaching started and whose profit it served. None of us smoked for taste. We coughed and felt dizzy and felt sick on the tongue and were told we would learn to like it. We learned to chase the pause after the cough and to call the chase liking. The factory did not need us to enjoy the first one. It needed us to keep going until the lack had a clock, and then the clock would do the selling. Every year that clock stayed in the pocket, coins moved one way and ash stayed the other.
 
-The human wants the dose the body was taught to seek. So many of us — you and I, in real kitchens and real cars and real doorways — find ourselves puffing bigger, drawing deeper, holding longer without thinking, topping ourselves back up toward what we were taught to seek while the dial says low. Not every smoker does it puff for puff the same — but the design invites it. The number is from the machine. The hunger is from the body. That is why a low number on the pack is no proof you took little.
+Hear the voice they lent you and see whose mouth moves.
 
-Tell me from your own smoking, not from their label, smoker to escaped smoker.
+"I smoke because I like it." Did you like the first one? Coughing, dizzy, sick on the tongue — did you like that? Of course you did not. You learned to call the pause after the cough liking.
 
-Have you ever smoked a light and felt satisfied with less, truly satisfied, and smoked fewer and thought less about the next one?
+"I smoke because I choose it." If you choose it, why do you count and pat and panic? Choice does not pat pockets fifty times a day. Choice does not stand in rain at midnight. Who is in charge if you must ask a box for leave to leave the house?
 
-If light meant little, why does the hand so often move just as often, and why does the tug so often return just as fast, and why does the box so often empty just the same?
+"I am just a smoker by nature." Were you born patting for foil? Did your mother find you counting tubes at six? You walked and ran and laughed and ate and slept for years with clean lungs and busy hands. Nature was breath. The box taught counting.
 
-Have you ever known a light smoker who smoked only two a day for years and never thought about the rest, never hurried one, never bummed one, never counted?
+It is the other way around.
 
-You know the answer because you have lived it ten thousand times. The theatre need not cut what you take. It cuts the alarm while you keep feeding. That whisper that says this one is softer, this one is cleaner, this one is almost sensible, is the Smokescreen at its smoothest.
+You did not build a want and ask the shop to feed it. The shop built a want and taught you to call it yours. The packet is not the servant of your desire. Your desire is the servant of the packet. The factory counts doses while you count coins, and both counts rise together year after year.
 
-The filter never filtered the need. It filtered your worry so you would keep feeding without asking. The holes never made it mild. They made it look mild while inviting you to work harder for the hit. The colour never made it kind. It made it kind-looking while the bargain stayed hard. No kinder bargain — only better dressed. I say it hard against the maker, never against you. You chose kindness to your chest and they sold you paint.
+Look at the profit in your own pocket without needing any figures from me. Take what you pay a day and times it by a week. Times that by a year. Times that by the years you have already paid. Now look at what you bought: ash on a sill, stubs in a tray, film on a tongue, tightness in a chest. Who kept the money and who kept the ash? You know the answer without my telling. The seller kept the money. You kept the ash and thanked him for the trade.
 
-Strip the paint and what is left? The same tube. The same squirt. The same quick fade. The same box counting down the day. A con with a white collar is still a con.
+Does that make you foolish? No. It makes you conned, as I was conned, as we all were conned. A lone smoker at a till never stood a chance against laboratories and lit shelves until eyes open. Now eyes open. Let anger go upward where it belongs.
 
-Look closer at the ritual of choosing the brand, because the brainwashing lives there too. We say, I am a lights man. I am a menthol girl. I like this taste. As if we chose a wine. Did you choose the taste on day one, when it burned and made you dizzy and sick? Or did you learn to call burn taste after the need arrived? Watch your own behaviour as evidence against the story. If you loved the taste, why do you hurry it in rain? Why do you half-finish it when the phone rings and light another later? Why do you smoke it with a cold when food has no taste at all? Lovers do not treat a loved taste like that. Tenants pay rent like that.
+## THE WHITE THEATRE
 
-And watch the morning test you already ran. Feet to lino. Kettle on. Window open a crack. Breathe before you light. Taste water before you light. Did the light one wake you differently from the full one? Did it carry past the kettle? No. Both repaid arrears. Both borrowed morning. Both faded. The softness was in the word, not in the body.
+Now look closer at the white end and the word that sold it.
 
-I do not ask you to switch brands or to study holes. I ask you to see the theatre as theatre and drop it. There is no soft version of a timetable. There is only the timetable, dressed up or dressed down. Seeing the dressing ends the trick of feeling careful while staying chained.
+Lights. Mild. Smooth. Low tar. The filter whiter than the paper, the little holes ringed round it too small to see, the smoke tasting thinner on the tongue. We believed the tale because we wanted it true. This one is kinder. This one takes less. This one I can stay with.
 
-### AFRAID TO FAIL, AFRAID TO BE FREE
+It is theatre.
 
-This is where the second part of the build shows, and I want you to stay with me because this is the room where many turn back. They did not only build the dose. They built the fear around it, both sides, so whichever way you lean you stay and buy again.
+On machines they read lower. In human hands that reading does not mean you took less. The lips can close over the tiny vent holes without knowing. The fingers can cover them without meaning to. The pull can grow deeper and longer to find the dose the body was taught to expect, and the lungs take what the machine never took. I did it myself without ever noticing, drawing harder on the white ones, holding a fraction longer, lighting the next one sooner, calling the thin taste clean while the cough stayed the same.
 
-Listen to the two voices that pull at night when the house is quiet and the pack is low.
+Watch your own hand prove it while you still smoke as normal.
 
-One says: what if I try and fail again, patches in the drawer, gum in the bag, calendar crossed out, telling no one this time because telling makes failing worse. Better not to promise. Better to stay where I am than prove I cannot do it. I can't quit now. Not with work like this. Not with nerves like mine.
+Take a white one and smoke it with full attention, not for pleasure but for evidence. Notice where lips sit. Notice where fingers sit. Notice the draw. Is it short and easy, or long and hard to find the old hit? Notice the throat. Does thin taste mean no scratch, or a scratch dressed in cotton? Notice the clock. Does the gnaw stay away longer, or does it return on time as always within the hour? Your own mouth is a better witness than any packet word.
 
-The other says, quieter, almost ashamed: what if I do stop — who will I be on the break laughing, after food leaning back, with a drink while others light. Will life be flat? Will I be someone else, boring, missing my little friend, watching from outside while life goes on? I am not sure I want the life after, even if I could have it.
+I smoked milds for two years telling myself I had cut down without cutting down. Same cough in the morning. Same panic at midnight. Same doorway exile while talk went on inside. The packet said light and my hope did the rest. I drew like a man drinking the last of a thick shake through a thin straw, cheeks hollowing, chest pulling, and told myself the thinness meant kindness. The clock told the truth. The gnaw came back when it always came back. The stair cost what it always cost.
 
-“I can’t quit now. I would fail. And I’m not sure I want the life after.”
+Did the mild word ever change what your day demanded? Count from your own packet. Did you smoke fewer of the white ones, or the same twenty, or more because they felt safe to smoke? Did the tight chest loosen because the tip was white, or did the tug quiet minutes and return on time as always? Did taste improve, or did ash still film the tongue after the plate? You know from your own mouth that the promise sat in the word, not in the lung.
 
-I know both voices. I lived pulled between them for years, promising on Mondays and mourning on Fridays, brave at noon and beaten by six. Let us test them against your own life, not against dread, investigator to investigator.
+Ask and answer plain.
 
-If failure proved you were weak, why did strong, stubborn, successful people fail the same way, again and again, on the same method — white-knuckling through evenings, counting days, fighting hands and mood, then lighting in a doorway and hating themselves? Was every one of them weak? Or was the method that manufactures struggle calling its own failure you?
+If the holes made it safe, why would lips and fingers close them on the first puff without teaching? If the thin taste meant little taken, why would the gnaw return within the hour? If mild meant kind, why would mornings still start stale and stairs still cost wind? There is only one reading that fits all three. The vent did not cut the dose. It cut the machine number.
 
-You are not weak. It takes a stubborn will to persist for years in something that leaves the mouth stale and the chest tight and the pocket light, against all your instincts. Your will is strong. It was hired by the wrong method and set to fight the wrong enemy. Blame the method, not the man or woman who used it.
+No kinder tube exists in that box, and I am not asking you to hunt for one. The unventilated end is no answer and no refuge. The whole box is the same package with different paint. Anger belongs with the painter, never with you. You were not foolish to believe printed words and white paper. We all believed. An industry of chemists and artists spent millions to make belief easy and doubt hard, and a lone smoker at a till never stood a chance against that weight until eyes open.
 
-If success meant losing yourself, answer me from your own beginning. When were you most yourself — before your first one, when you laughed and ate and paused clean, ran and breathed to the bottom without thinking, or after, when the day was cut into segments by the clock and evenings were timed by hunger? Did the dose add a self, or borrow the self and charge rent?
+See who drilled the holes and the holes stop looking like kindness. They were drilled for the machine mouth, not for yours. Your mouth closed them on the first puff and never knew. The dose found you anyway because the dose is the product and the paper is only its carrier.
 
-Which voice ever gave you a free evening? The first keeps you smoking to avoid shame. Smoke now, try later, do not risk proof. The second keeps you smoking to avoid loss. Smoke now, freedom would be flat, do not risk emptiness. Both keep you smoking. Both are paid for by the same hands that count the box. Both empty the box either way, and buy it again either way.
+## THE TWO ROPES IN YOUR HANDS
 
-Do you see the geometry, clear as ropes in hands? A rope in each hand, pulling opposite ways, and the same trap holding both ends. Fail and you smoke to soothe shame. Succeed-and-lose and you smoke to keep the friend. Fear to stay, fear to leave — and the meter fades either way, and the hand moves either way.
+You own the morning now. You have watched the kettle boil without crediting ash, watched taste linger without sealing it, watched the kerb restore without lighting it. The body has shown it knows its old work.
 
-That is the tug-of-war of fear.
+And still two fears pull.
 
-Once seen it cannot be unseen. The fear of failure is not your cowardice. It is the memory of the wrong method that made quitting feel like torment and called the torment you. The fear of success is not your truth. It is brainwashing that dressed absence as emptiness after you had already proved, in your own kitchen and at your own table and on your own break, that morning and meal and pause are fuller clean.
+On one arm: "I can't quit now. I have failed too often. What if I try and fail again and prove I am broken?"
 
-I felt both ropes burn my palms. I feared the next try because the last tries had hurt, and I feared a life without my pauses because I could not picture them. Both fears felt like wisdom. Both were scripts. The trap held the failure rope by keeping the method cruel, so I would dread trying. It held the success rope by whispering that clean life is flat, so I would dread winning. Two fears, one holder.
+On the other arm: "Who will I be if I do? What will breaks be without my prop? What will nights be without my badge? What if life goes flat?"
 
-Let both ropes drop. There is nothing to hold. You are not choosing between failure and loss. You are seeing that both fears belong to the trap, not to you. A rope with no hand on your end is just string on the floor.
+I know both pulls because I hung between them for years. I told myself the first proved I was weak and the second proved I loved it. Both felt like mine. Both felt like sense.
 
-Ask the trap questions and answer from life, not dread.
+Hear each rope in your own voice, because I heard both in mine.
 
-Has dreading failure ever made a dose pleasurable, or only made it feel necessary?
+First rope: failure. The drawer of gums and patches. The calendar crossed off and torn up. The Monday vow broken by Wednesday. The shame at the garage till buying after swearing never again. The thought says, better not try than try and prove the break is in me. Better stay with known lack than risk new proof I cannot do it.
 
-Has picturing a flat future ever proved the future flat, when your own clean breath this week proved it fuller?
+Second rope: success. The picture of a flat life. No pause that is mine. No badge on nights out. No friend in the doorway when talk gets loud. No steadiness when phones ring cruel. The thought says, even if I could stop, I would lose the only thing that steadies and seasons. Better a chained self I know than an empty self I do not.
 
-If both fears vanished tomorrow, would you still need the box, or would the box stand revealed as a day's supply of fading squirts you never needed?
+Hear them as I heard them, in your own voice:
 
-It is the other way around. You do not smoke because you are afraid to fail and afraid to be free. You are afraid to fail and afraid to be free because you smoke, and the smoke taught both fears to keep you smoking. Remove the teaching and the fears have no holder.
+"What if the edgy minute never leaves and I cannot work or sleep?"
 
-### STALE, BREATHLESS AND CHAINED
+"What if I lose the only pause that is truly mine and become dull and restless forever?"
 
-Look now, without flinching, at what the bargain really cost while the ropes held you. I will tell it flat because you deserve truth from one who lived it, and then I will tell you why truth is not what frees you. Stay with me to the relief.
+Now ask who holds the other end of each rope.
 
-Morning mouth like an ashtray licked clean. Tongue furred. Throat dry. First spit foul. Clothes, hair, car, curtains holding yesterday's smoke no mint can bury, no spray can lift for long. You Febreeze the hell out of yourself and still catch it on the sleeve at noon. Throat clearing in meetings while you hope no one counts. Cough in the cold that was not a cold. Nose half-closed to food until the second coffee. Fingers yellowed at the edge. Lips dry.
+Who taught you that failure was yours? The same seller who taught you that twenty attempts with patches and gum and gritted teeth meant you lacked will, never that the method manufactured struggle. Who taught you that success means flatness? The same seller who paid for every film patio and every poster laugh to print smoke beside friendship, so that air without ash looks empty. Pull left and you feed the box to avoid shame. Pull right and you feed the box to avoid loss. Left or right, the hand that takes your coin is the same.
 
-Stairs taken in stages while a non-smoker friend breathes easy at the top and waits, kindly pretending not to notice, kindly slowing, kindly saying take your time. You laugh it off. Inside you do the maths you hate. Fewer stairs. Slower. Another doorway later to pay for the climb.
+It is not failure against success. It is trap against trap. Left rope, right rope, one holder.
 
-Money burned to ash every single day forever for something you never needed. Count it once, honestly, not to frighten but to see. Pack a day. Week by week. Year by year. Holidays not taken. Coats not bought. A car paid for in ash. And the dearer cost beneath money — time cut into twenty segments, attention cut into twenty hungers, evenings cut by the clock, conversations left mid-sentence to stand outside.
+That lived pull, failure on one side and loss of self on the other, both owned by the same seller, is the tug-of-war of fear.
 
-Rainy doorways stood in alone while talk and warmth went on inside without you. Balconies in winter while life laughed through glass. Garage doors half-open, cold seeping in, spraying, chewing, lying with a smile about where you were to partner and kids. The divided self — loving them clean, feeding apart. Warm person. Cruel need. Not your shame. The hiding the trap makes necessary.
+See it once and it cannot hold shape. A war needs two sides. This has one. The box created the edgy minute it offers to quiet, then called the quiet proof you cannot cope without it. The box stole credit for kettle and plate and kerb, then called the theft proof life needs it. Failing never proved you broken. It proved you were pulling a rope the seller held. Loving never proved paper gave. It proved paper stood beside giving minutes and took wages.
 
-Tell me honestly, smoker to escaped smoker, with the box on the table between us.
+You are not torn between two truths. You are held by one con with two slogans. Loosen either slogan and both arms fall free at once, because neither rope was ever tied to you.
 
-Was any of that pleasure? Was any of that you at your best, tasting, breathing, laughing free?
+Test the ropes against your own watched days.
 
-If it was a friend, why did it leave you like this, counting stairs, hiding in garages, timing joy?
+If failure proved you broken, why did standing and pouring and breathing happen without paper while you watched? Broken hands do not boil kettles and hold cups steady. Yours did. If success meant flatness, why did taste linger sweet at the plate and air bite kind at the kerb while you watched? Flat minutes do not taste and bite. Yours did. The ropes say you cannot cope and cannot live. Your own kitchen and kerb say you already cope and already live. Which witness do you trust — the seller's slogan or your own morning?
 
-If it relaxed you, why were you edgier each year, needing more pauses to do the same tiny job of feeling nearly normal for minutes?
+I trusted slogans for years and hung still. When I trusted the kettle minute, the ropes went slack in a day. Not because I grew strong. Because I saw the holder.
 
-It leaves every long smoker in the same permanent state, not sick in bed today, not dying today — but never clean, never clear, never unhooked. You live stale, breathless and chained.
+The holder needs both fears to live. Kill one and the other starves. See failure as method, not self, and success stops looking like loss. See success as return to breath and taste, and failure stops looking like fate. They are not opposite dangers. They are twin handles on the same box, and the hand that fitted them is not yours.
 
-I land that hard because soft words would lie to you, and I am done lying to smokers after lying to myself for years. See the chain as chain. See the stale as stale. See the breath short where it was once long.
+## THE STATE YOU RENT
 
-If you feel ill or you worry about stopping, speak to your doctor for your own care. I speak only of belief.
+Look at what the rent buys while the ropes still pull, because the seller never shows this picture on the pack.
 
-And now the turn, in the same breath, because I do not want you quitting out of fright. Fear never freed anyone. It only makes the next dose feel like rescue and tightens both ropes. I do not want you to stop because you are frightened of the cost. Fright fades by morning and the trap is still there. I want you to stop because you see there was never rescue, only rent — and seeing rent, you can walk out rejoicing.
+Morning mouth like an ashtray licked clean with tea. The tongue filmed after food that should have lingered sweet. The stairs that leave the chest heaving while the non-smoker beside you breathes through the nose and talks on. The coat that must be aired, the car that must be sprayed, the fingers yellowing at the nail, the cough that clears nothing. The pocket patted fifty times a day. The hour split into counting down to the doorway and counting drags till the stub. The night out paused mid-laugh to stand in cold with paper while talk goes on inside.
 
-The cost was never the price of pleasure. It was the price of the tug being briefly quieted. They kept the profit. You kept the ash. That is not a moral sentence on you. It is a business sentence on them. And a business you see clearly is a business you can leave with your head high and your lungs opening.
+I lived that rent and called it normal. Stairs proved age, I said. Morning taste proved late nights, I said. The doorway proved I liked air, I said. I lied because the Smokescreen lent me lies and I paid rent to keep lying.
 
-You do not need to become someone else to walk out. You need to come back to who you were before the first con — the body that breathes without teaching, the tongue that tastes without teaching, the legs that stretch, the eyes that look far, the person who laughed without timing it by a pack. Nothing missing. Everything returned. The chain was never part of you. It was put on you, link by link, dose by dose, fear by fear. What was put on can be taken off, not by force, but by seeing.
+Count the rent in your own day without my adding a figure.
 
-Feel the relief waiting inside the hard seeing. The mouth can be clean in days. The stairs can be yours again. The clothes can smell of nothing but cloth. The evenings need not be cut. The garage need not be a chapel. The money can stay where it belongs. Not as a bribe. As a bonus to freedom, never the motive. The motive is joy — clean air, clear taste, free hands, a mind undivided.
+Money out before bread. Time out before talk. Breath out before climb. Taste out before sweet. Smell out before rain. Sleep out before rest, because night cough wakes and morning mouth wakes earlier. Company out before warmth, because you leave the table for the step and leave the laugh for the cold. Each paid daily, each paid willingly, each paid to quiet a lack that returns within the hour to bill again.
 
-### THE SELLER STEPS INTO LIGHT
+Add the hiding to the bill, because hiding bills dearest. The spray in the bag. The mint on the tongue that cannot cover the coat. The garage door shut before lighting. The lie to the partner about popping out for air. The lie to the child about where you were. No free chooser hides his choice. We hid because we knew we were chained and could not bear to be seen rattling the chain. Warm hearts hid, not bad hearts. The chain made hiding needful, and hiding made the chain heavier.
 
-So stand back and see the whole build at once, as an investigator steps back from the table covered in pieces.
+The fact is brutal and simple, and I will put it without softening: paper drags you below the line a non-smoker walks daily, hands you a brief climb toward that line while it burns, then drops you lower for the next hour. Stale mouth, short breath, pocket watch, doorway exile — not once, but every single day for something you never needed. If that picture turns the stomach, let it turn. I am not asking you to change because it frightens you. Fear never showed anyone out. I am asking you to see that the fright is a con you can walk out of with clear eyes and steady breath, and the walk is joy, not doom.
 
-A factory counts a drug into twenties and wraps it in colour and kind words. A filter and holes dress the timetable as mild. A whisper teaches you to call topping-up you, and to call fear wisdom. Two ropes pull — fail, lose — both held by the same hands that profit when the box empties. A life grows stale around the edges while you call the stale pleasure.
+Do you want to rent that state for the rest of your life to keep a seller rich? Of course you do not — that is why you hold this book.
 
-Who built this want? Not you. Not your nerves. Not your character. The seller built the want and sold it back to you as you, then charged you per use to quiet it.
+Name the rent in its true words and the ropes go slack. No pleasure ever weighed against that cost because no pleasure ever stood there. Only pause in lack stood there, dressed as pleasure, while the lack was remade between every dose. The minutes gave. Paper took wages and left you stale, breathless and chained.
 
-And who can unbuild it? You can, not by fighting the want, but by seeing the builder. When you see the builder, the want stops reading as nature and starts reading as what it is — a manufactured package plus borrowed fear, both held by the trap.
+Hold that sentence against your own day and it holds. Stale after the seal that promised finish. Breathless on the climb that air should have eased. Chained to counting and carrying and stepping out. That triple is not you. That triple is what the package does to you while doing nothing for you.
 
-We fell for it together, you and I, millions of us, decent people conned by an engineered hunger. There is no blame in being conned. There is only freedom in seeing the con. The shame you carried was part of the build. Put it down with the box. It was never yours to carry.
+Look once more at the box in the palm with that triple in mind.
 
-You have already proved the ground where freedom stands. Morning woke you before paper. Food finished itself before ash. Air restored you before smoke. Those are not theories. They are your senses testifying in daylight. The seller needed you to forget your own senses. Remember them and the build shakes.
-
-Think how it feels to drop both ropes at once. No dread of trying, because trying is no longer torment but escape. No dread of winning, because winning is no longer flat but fuller. Hands open. Palms cool. Breath wide. The box on the table suddenly small — paper, leaves, glue — against the large fact of a body that knows how to live without it.
-
-Rejoice in that smallness. A giant want has become a small box from a factory. A fate has become a timetable. A self has become a whisper. Small things are easy to leave. You do not need to be strong to leave a small box. You need to see it small.
-
-Look at other smokers now with new eyes, not envy, not scorn — clear pity that is really recognition. The man hurrying in rain is not enjoying a pleasure you will miss. He is paying rent you no longer owe. The woman laughing in the doorway with a light is not freer than you. She is chained between laughs. You know because you stood there. Warmth for them. Contempt only for the build that put them there.
-
-You are not losing a friend on the patio or at the table or on the break. You are losing a landlord who charged for rooms you owned. The patio was sun and leisure and company. The table was warmth and flavour and rest. The break was air and movement and laughter. All yours. All still yours. The landlord only stood in front and took the bow.
-
-Let joy do the freeing now, not fright. Fright showed the chain. Joy removes it. Breathe and feel air go clean to the bottom without permission. Drink water and feel the mouth clear itself. Stretch and feel blood find the feet. These small proofs are the large proof — life without doses is not less life, but more, and it begins the moment the belief changes, not after days counted.
+It does plenty TO you. It films the tongue. It shortens the stair. It empties the pocket. It breaks the hour. It does nothing FOR you. It never woke the legs. It never cooked the plate. It never calmed the trouble. It only paused its own gnaw and charged the day for the pause. Seeing that clearly is not misery. It is the door swinging open on a lit shelf that no longer names you.
 
 9. SEE THE SELLER BEHIND THE SMOKE
 Remember who built the trap and why.
 
 **SUMMARY**
-- The want was not born in you; a counted package creates a quick-fading need and teaches you to call the topping-up your nature.
-- A low machine number does not prove you took little; the white tip and holes are theatre that invites harder puffing, and no white tip changes the bargain.
-- Fear of failing and fear of being free are not two truths; both ropes are pulled by the same build to keep the box emptying either way.
-- The long price is a stale mouth, short breath and an hourly chain, not pleasure, and that price was profit to the seller, never gain to you.
-- Seeing the seller ends blame on yourself and leaves escape as joy, not fright, with morning, food and air fuller clean.
+- The pack is a day's supply box for timed doses, defined by its own maker as a package for nicotine, not as flavour or company.
+- White filters and mild words do not cut what human hands take; lips and fingers close the vents and the pull deepens to find the dose.
+- Fear of failing and fear of life without are two ropes held by the same seller, not two truths about you.
+- The daily rent is a filmed tongue, short breath and doorway counting, paid for pause in lack, never for a real gift.

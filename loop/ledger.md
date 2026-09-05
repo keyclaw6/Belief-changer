@@ -531,3 +531,18 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 
 **What this opens next.** PRIMARY factory-speech 20/18. Journey re-argument 16/8 secondary. Do not replay 020–024 / 028 / 029 / 030 / 032. Do not start a willpower-lexicon PRIMARY.
 
+### iter-034 — §B4 Freedom-register ease-operators  ·  2026-09-05  ·  KEEP
+
+**Hypothesis.** If §B4 Freedom-register forbids ease-operator tags (`with ease`, `Think how exciting…`, `Rejoice that…`, `let visible ease do the recruiting`) and requires pictured moments plus frozen mantra, voice `factory-speech` falls in both versus 033 (sugar 20, smoking 18).
+
+**Change.** One bullet in `prompts/style-guide.md` §B4 (see `loop/iterations/034/change.diff`). Plans reused. Writer Spark 1.3 Go, A1 K=3. Panel 53+57 composer-2.5.
+
+**What happened.** factory-speech 20→6 (sugar) and 18→12 (smoking). Words 53366 / 56466. Ease-operator grep 0/0 both. Sugar all chapter lanes PASS, blocking 0. Smoking voice 13/14 (CH-01 FAIL method-promise-hedge 1). comparison partial 2→4 / 9→11. A1 sugar 4 ACCEPT / 9 CAP; smoking 9 ACCEPT / 5 CAP.
+
+**Verdict & why.** KEEP. PRIMARY dropped ≥2 both. No new blocking class in both. Grep and census moved together.
+
+**What we learned.** The §B4 token list was the source of the late-arc ease refrain. Banning the tags kills the strings and the census class falls. Residual factory-speech is the untargeted header/meta remainder, louder in smoking.
+
+**What this opens next.** factory-speech 6/12 is no longer ≥8 both. willpower-lexicon 26/28 is not PRIMARY. Next factory-speech mechanism must target the residual (smoking-worse), not 028–032. Do not replay 020–024.
+
+

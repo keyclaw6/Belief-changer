@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 3618 words. Budget 4500. 3618 is below 0.85×B (3825). Add ~207-1557 words to reach 3825-5175. Those words must serve the card job: "live free days proving belief in owned thoughts once, handing freedom forward without new curriculum" — morning, shop queue, break, plate, waits, loud hour, evening chairs already owned.
+HEADER — draft opens with the workshop header `IN THIS CHAPTER` followed by "Cold kitchen and kettle, shop queue with milk, finished paragraph and cleared plate, bus stop and evening chairs." Remove the header block; open in spoken body.

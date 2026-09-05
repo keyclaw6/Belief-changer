@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` after title: `**IN THIS CHAPTER** / Evening kitchen table, an ordinary bar, a noticed mouthful, a spoken vow.` Remove header block.
+LENGTHEN to B±15% — Delivered 2505 words. Budget 3600. Range 3060-4140. Need ~555+ words to reach range. Serve card job `enacted transition — waiting is the Trap; freedom is now as of this ordinary treat taken with attention and vow` — expand Encounter `last ordinary sweet taken normally, attention on cloying ugliness, solemn vow, instant rejoicing` and readiness gate, not later ordinary-life material.

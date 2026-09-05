@@ -281,5 +281,13 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Change:** None. Factory files at 031 KEEP. Sugar plan reused. Smoking plan accepted. Writer A1 K=3. Judges composer-2.5, 53+57.
 **Verdict:** BASELINE
 **Lesson:** All-PASS, blocking 0 both. Words 53208 / 54277. Floors in both: factory-speech 20/18, willpower-lexicon 40/31 (not PRIMARY), journey re-argument 16/8. Comparison missing 0/2 and partial 2/9 are not ≥8 both. PASS probe factory-token FAIL was setup; Carr-native Ch6 journey PASS.
-**Next direction:** PRIMARY factory-speech 20/18. Journey re-argument 16/8 is secondary eligible. Do not replay 020–024 / 028 / 029 / 030 HEADER / 032 writer anatomy. Do not start a willpower-lexicon PRIMARY.
+**Next direction:** PRIMARY factory-speech 20/18. Journey re-argument 16/8 secondary. Do not replay 020–024 / 028 / 029 / 030 HEADER / 032 writer anatomy. Do not start a willpower-lexicon PRIMARY.
+
+### iter-034 — §B4 Freedom-register ease-operators
+**Hypothesis:** PRIMARY: replace style-guide §B4 Freedom-register token list so Spark cannot satisfy the crescendo with ease-operator tags, so voice `factory-speech` falls in both vs 033 (20/18).
+**Change:** `prompts/style-guide.md` (§B4 Freedom-register bullet). Plan reused both subjects. Writer Spark 1.3 Go, A1 K=3. Judges composer-2.5, 53+57.
+**Verdict:** KEEP
+**Lesson:** factory-speech 20→6 / 18→12. Ease-operator grep 0/0 both and census fell with it. Length 53366/56466. Sugar blocking 0; smoking CH-01 voice FAIL method-promise-hedge 1 (one-book, not a veto). Comparison partial 2→4 / 9→11 (noted). New floors: factory-speech no longer ≥8 both (6/12).
+**Next direction:** factory-speech residual is smoking-worse (12); sugar 6 is below band. willpower-lexicon 26/28 is not PRIMARY. Do not replay 028/029/030/032. Do not replay 020–024. Do not start a willpower-lexicon PRIMARY.
+
 

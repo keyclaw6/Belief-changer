@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` with bullets "The photographed list on the kitchen table. / The closed book by the door. / Bread, soup, fruit and the meal ahead." before spoken body. Remove it.
+LENGTHEN to 1700±15% — Delivered 1353 words is below 0.85×1700 (1445). Add 100+ words serving the card job "photographable instruction list, outward push, saved growing reframe revealed" — expand outward push / handed-back sweetness without new thesis.

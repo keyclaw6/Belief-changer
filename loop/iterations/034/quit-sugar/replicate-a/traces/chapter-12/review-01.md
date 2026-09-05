@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER — Morning kettle and breakfast bowl, bright aisle and checkout till, plain meal and clear plate, evening sofa and passing thought.` Remove header and open in spoken body.
+LENGTHEN to 4200±15% — Delivered 2150 words is below 0.85×4200 = 3570 (range 3570-4830). Add ~1500+ words serving card job "inhabits mornings, shops, food with owned thoughts once, guarding belief without new thesis" — expand lived morning/shop/meal/sofa inhabitation, owned pity-not-envy, slip-as-rumble lesson, and change-nothing-else, without new thesis.

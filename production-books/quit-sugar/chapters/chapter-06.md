@@ -1,221 +1,230 @@
 Chapter 6
-HUNGER, SATISFACTION AND REAL FOOD
+THE FOOD YOU WERE BORN TO LOVE
 
-*Food without BAD SUGAR is not grey. Hunger met by real food is the favourite itself.*
+*Real food eaten hungry satisfies you completely, and no dose ever told the truth about pleasure.*
 
-YOU COME IN FEARING GREY
+### The Grey Fear You Can Speak Aloud
 
-You come into this room forgiven and with the fuel story dead.
+You have seen the lift for what it was.
 
-We watched the afternoon together. We saw the lift cover a low the last dose made. You know with your own hand that a bar never gave power. That is settled and we do not reopen it.
+You watched the desk at three borrow ten bright minutes and charge two fogged hours. You felt the tight shoe pinch all day and call the evening removal a comfort. You know BAD SUGAR fed nothing and lent nothing your body did not already own.
 
-And still a cold question sits under the ribs as you put the bar down:
+And still a cold thought stands at the back of the kitchen.
 
-Yes, but what will eating be now? Will food go grey?
+Fine, you think. Call it a con. Call it empty. But without the sweet close to the meal, will eating turn grey? Will dinners sit flat? Will I sit at a table of plain things chewing dutifully while the joy has gone out of the room?
 
-I know that fear because I carried it. We all carried it. We told ourselves dessert was love. We told ourselves a meal without a sweet finish was unfinished, a day without grazing was dull, a life without chocolate on the tongue was a life with the colour washed out. We called dessert love and called love dessert till the two words stuck together.
+Say it plainer, as you say it to yourself at night. You fear your favourite food was sweet, and I am playing with words when I say food will be your favourite.
 
-Let me voice the suspicion plainly, in your own voice, so it cannot hide behind politeness:
+I hear that fear because we all stood with it. I am not going to pat it and leave it standing. I am going to answer it flat.
 
-You are playing with words. You say favourite food, real food, hunger satisfied. You mean cabbage and chewing. You mean I must learn to love dullness and call it joy.
+There is no catch. The pleasure is real. Eating itself is joy without BAD SUGAR.
 
-I hear you. I would have said the same.
+You think sweet made food loveable. The fact is, hunger made food loveable, satisfaction made it complete, and BAD SUGAR only shouted over both.
 
-The fact is, there is no play on words and no catch. The pleasure is real. Hunger is real. Satisfaction is real. A meal eaten hungry and left when satisfied fills and quiets you in a way no sweet graze ever did. You do not have to learn to love dullness. You have only to meet food with the appetite you were built with and let it do what it always did before the sweet drill taught the day to yo-yo.
+Look at your own life for proof before I show you mine.
 
-Come with me to the market and to the table and feel it. I will put bread in your hand.
+When did a plain meal eaten truly hungry ever taste dull? When did bread eaten after cold air and honest emptiness ever need a sweet coat to taste good? When did a sweet dose eaten on a coated tongue, on a full stomach, in a fogged afternoon ever taste marvellous at all?
 
-MARKET MORNING
+Answer honestly and there is only one honest answer. The dullness you fear never came from plain food. It came from a mouth coated by doses, a stomach never allowed to empty, a head never allowed to quiet.
 
-Come with me to Saturday morning.
+We were never bored by food. We were blocked from tasting it.
 
-Rain in the night, light washed clean. The market hall smells of earth and yeast and citrus. Crates of greens still wet at the edges. Tomatoes warm from the glass, smelling of summer even in October. Apples stacked red and gold, skins tight, breath sweet when you lift one to your nose. A loaf table at the end, loaves split open for tasting, steam still rising in the cool air, crust crackling as it cools.
+Ask the fear its own question. If BAD SUGAR made eating joyful, why did the steadiest sweet eaters enjoy meals least? Why did the plate go cold while the packet was hunted? Why did dessert eaten as love leave the mouth hunting before the plates were cleared? If sweet crowned the meal, why did the meal shrink as the sweet grew?
 
-You have not eaten since last night. True hunger is awake in you, clean and simple, a hollow that asks, not a hum that nags. The belly feels empty and ready. The mouth waters at the smell of bread. The eyes go bright at colour.
+You know why. The crown ate the king.
 
-You tear a corner from the offered crust. Listen. Crack. Chew. The outside shatters, the inside pulls soft and warm, faintly sour, faintly sweet in the grain way that needs no packet. You close your eyes without deciding to. Flavour runs the whole mouth. You swallow and the stomach answers with warmth, with thanks, with more room asking for more.
+Is favourite food a trick of language? Am I calling plain food favourite to console you for loss? Is this wordplay to make a smaller life sound large?
 
-You walk on. A wedge of peach from the fruit woman, juice running down the wrist, flesh giving under teeth, skin tart then honey. A handful of green beans snapped raw, loud and grassy between the teeth. A plum, tart skin and honey flesh, eaten over your hand so the juice does not spill. Nothing counted. Nothing weighed. Nothing earned. Hunger leading, food answering, mouth awake.
+No trick. No console. No loss. Favourite means what hunger meets with joy and satisfaction closes with peace. By that plain measure, real food eaten hungry is favourite daily, while the celebrated hit thins with each repeat and leaves you hunting. One grows with attention. The other fades with use.
 
-Tell me honestly, with bread still warm on your tongue:
+I make you this plain promise as one who lived both sides. You have not lost flavour. You are about to meet it for the first time in years.
 
-Did that bread taste dull? Did hunger need teaching to enjoy it, or did enjoyment arrive before thought? Did you miss a wrapper in that minute, or did the minute feel complete without one?
+Think of the table you fear. A plain table, no packet, no bright wrapper, no sweet close. You picture yourself chewing while others glow. You picture duty where glow was.
 
-You know the honest answers. The bread tasted marvellous because hunger met it. Enjoyment arrived before thought because the machine knows its work. And no wrapper was missed because nothing was missing.
+Now ask where that picture came from. Did it come from a hungry meal, or from a coated meal? Did you ever sit hungry to a plain table and find it grey, or did you sit coated, fogged, half-full of sweet, to a plain table and blame the table? Did the grey sit in the food, or in the mouth that met it?
 
-Stay longer in the hall, because one bite does not prove a life and I want you to feel abundance, not absence.
+We judged plain food with a tongue that could not taste, the way a man with blocked ears judges music. Clean the ears and the verdict changes. Clean the tongue and the table changes without changing a dish.
 
-Walk the vegetable aisle slow. The carrots in a heap, tops still on, earth on their shoulders, orange so deep it looks lit from inside. The potatoes in sacks, skins rough, promising gold inside. The greens in bundles, leaves lifting as the door opens, smelling of rain and field. Pick up a tomato and hold its weight. It is heavy for its size. It smells of vine at the stem. Cut it with a plastic knife from the tasting board, salt on top, juice beading. Put it on your tongue hungry and it sings — acid, sweet, green, sun, all at once, all clean, all gone in a swallow that leaves the mouth fresh and asking for more, not coated and asking for water.
+### Morning Market With Clear Eyes
 
-Now the bread table again. Not one loaf but five. Dark rye, sour and close. White farmhouse, open and airy. Seeded, crunching between the teeth. The baker tears without ceremony and presses a warm piece into your palm. You eat standing, crumbs on your coat, butter melting into the holes, salt on top. The crust sounds in your ears as you chew. The belly warms outward. Hunger does not vanish at once. It softens and brightens and says, yes, more, this is right, keep going.
+Come with me to an ordinary morning before the shutters rattle up fully.
 
-Now the fruit to finish the walk. Apples cut in moons. Pears soft at the neck. Grapes cold from the crate, popping sweet and sharp. A slice of melon, water and perfume together. You eat a fig whole, skin and seed and honey heart, and you stop without deciding to stop and laugh at nothing because the mouth is happy. That laugh is not learned. It is appetite met.
+The market air is cool and damp and full of green smell. Crates stand wet at the edges. Tomatoes sit heavy and warm-coloured even in cool air, skins tight, smelling of vine and earth. Leaves stand up crisp, not wilted, beaded with water. Potatoes dusty and solid in the hand. Apples piled high, red and yellow, smelling faintly sweet without shouting. Pears soft at the neck. Berries dark and tender in shallow trays.
 
-Ask yourself with juice on your wrist:
+A baker two stalls down pulls a tray and the crust cracks audibly. The loaf is warm through the paper. Torn open, the crumb steams. The crust shatters and then chews. The smell fills the nose and chest. Not a wrapper smell that hits and leaves. A deep smell that settles.
 
-Was there grey in that hall? Was there anything to endure? Did any bite need a rule, a point, a permission, a penance after?
+No one in that aisle is counting, measuring, bargaining with themselves. A woman tastes a slice of peach and closes her eyes for a second. A man breaks bread and eats the heel as he walks, crumbs on his coat. A girl laughs with juice on her chin.
 
-There was no grey. There was colour, noise, smell, juice, crunch, warmth. Hunger made every stall brighter. Hunger was the sauce you did not have to buy.
+Stand there with a clear tongue and tell me eating looks grey.
 
-HUNGER IS THE SAUCE
+We walked that market for years with a coated mouth and called plain things dull. We bought bread and ate sweet on the way home. We bought fruit and let it soften in the bowl while we hunted packets. We said fruit sounds like a joke, soup sounds wrong, bread sounds dull. That was not the tongue speaking. That was the last dose speaking through the tongue.
 
-Hunger has been slandered.
+Wash the coat off and the market changes without changing.
 
-We were taught to fear it, to head it off, to nibble before it arrives, to call every twitch hunger and cover it with a dose. We lost the clean thing itself.
+The fact is, your tongue was built to read real food in high colour. Sweet in a peach arrives wrapped in water, fibre, scent, bite, season. Sweet in bread arrives wrapped in chew, warmth, crust, crumb. Each bite changes as you chew. Sour lifts sweet. Bitter steadies it. Warmth opens it. Hunger sharpens it. A dose arrives as one loud note struck again and again till hearing dulls. Real food arrives as music.
 
-Clean hunger is not pain. It is readiness. An empty belly, a light head, senses sharpened, smells brighter, patience thinner in the happy way that says food will be good. It grows slowly toward a meal, it does not pounce at eleven and three and ten with twitchy urgency. It waits. It builds appetite the way dusk builds lamplight, gradual and welcome.
+Which sounds grey? The single note hammered all day, or the music heard hungry?
 
-And satisfaction is not fullness to bursting. It is quiet. Warmth spreading. Flavours turning from vivid to gentle. The hand slowing. A small sigh, unforced. Enough, lovely, done. The plate can wait. The mouth is fresh. The mind forgets food entirely and turns to talk, to work, to laughter. Forgetting food is the mark of being fed.
+Walk the aisle slowly and let the senses do the arguing. Hold a tomato and feel weight for size. Break a leaf and hear it snap. Smell herbs bruised between finger and thumb. Press bread and hear crust sing back. Taste a grape and follow it from bright to round to clean. No hurry sits in these acts. No wrapper rustle hurries the hand. No coated thirst follows the swallow. The mouth stays willing. The nose stays open.
 
-Have you not lived both states and confused them?
+We called this dull because dull was all we could taste through coating. A coated tongue reads everything as faint except the loudest hit. It is not that plain food went quiet. It is that the dose turned the volume so high for minutes that ordinary volume sounded like silence after. Lower the noise and ordinary volume returns as rich sound.
 
-Which left you able to forget food for hours — the lunch eaten hungry and left satisfied, or the bar eaten on hum that left you opening cupboards within the hour? Which left the mouth clean — the supper that ended with a sigh, or the graze that ended with stickiness calling for more? Which left you kind and steady — hunger met and quieted, or hum covered and replanted?
+You do not need to believe me yet. Borrow the eyes of the people who never dosed daily. Watch them shop. They linger. They smell. They taste and nod. They carry home leaves upright like flowers. Does that look like duty chewing? Does that look like a life made grey by want of packets? They are not brave. They are not deprived. They are hungry at the right hours and clear in the mouth, and the market meets them halfway.
 
-You lived the answers. One ends hunger. The other rehearses it.
+### A Plain Favourite Meal, Hour By Hour
 
-BAD SUGAR never ends it. A dose pauses the hum and plants the next hum. It shouts over hunger so you cannot hear hunger, then leaves you both full and hollow, sweet-soured, thinking of food while full of food. Real food does the opposite. It meets hunger, answers it, closes it. The signal clears. You are free to live till hunger calls clean again.
+Take one plain favourite meal eaten hungry and live it hour by hour, because this is the encounter that settles the fear.
 
-Think of your own clearest memory of satisfaction, not my talk. A bowl of soup after cold air, eaten slow, steam on the face, bread to wipe the bowl, the moment the spoon slowed by itself. A roast table with noise and second helpings refused with laughter because enough was better than more. Corn on the cob, butter running, salt on the lips, nothing else needed. Was that grey? Was that a lesson in loving dullness?
+You have worked, walked, breathed. The morning has been plain and full. Midday has passed without grazing. The stomach has emptied slowly without drama. No shaking. No panic. Only a broad, patient opening. The mind turns to food without naming a brand. Bread sounds good. Soup sounds good. Vegetables sound good. Fruit sounds good.
 
-Of course not. That was joy with no wrapper on it.
+You sit. The plate is plain and full. Market vegetables cooked simply, still bright, still with bite. Fresh bread torn, not sliced thin. A bowl of soup that steams the face. Fruit for the close. Nothing counted. Nothing forbidden. Nothing earned.
 
-Learn the difference in your own belly and you will never need a rule to tell you. Clean hunger comes slow, grows kind, sharpens smell, empties the belly, brightens the eye. The covered hum comes fast, nags, tightens the chest, thickens the mouth, points always to one taste, sweet, now. One says, food will be good. The other says, this one thing will fix me. One is answered by a meal and closes. The other is answered by a dose and returns within the hour, louder. Once felt, the two cannot be mistaken again.
+The first bite lands clean. Hunger meets flavour and both rise. You notice. You chew. You taste salt, oil, earth, warmth. You tear more bread because the hand wants it, not because the head orders it. You pause. You talk. You return. The soup warms hands and chest and clears the head toward evening. The vegetables bite and then yield, each different, each noticed. The signal narrows slowly toward done. You stop when satisfied, not when the packet ends, not when shame ends it. The mouth feels clean. The head feels clear. The stomach feels closed for hours.
 
-And satisfaction has its own signature you already know. Real satisfaction arrives without effort. The bites slow by themselves. The flavours soften by themselves. The hand puts the fork down without a speech. There is no bargaining, no last-one-then-done, no pushing the plate away while the eyes stay on it. There is warmth, quiet, freshness, forgetfulness. The covered pause never gives that. It gives brightness for minutes, then stickiness, then thought of more before the last is swallowed. One leaves you free of food. The other leaves you full of thought of food.
+No fog follows. No hunt follows. No coated thirst that water cannot clear. The mind forgets food and returns to life.
 
-Which do you want to live inside for the rest of your meals?
+Stay with that hour longer, because the detail is the proof. At ten minutes in, hunger still heightens taste. At twenty minutes, taste deepens as hunger softens. At thirty minutes, talk grows because food no longer fills talk. At forty minutes, the hand rests without being told. No one announces the end. The body announces it by quiet. The plate may hold food still. Leaving it feels natural, not wasteful, not virtuous. Full is a place, and you have arrived.
 
-THE TABLE THAT QUIETS
+Compare that hour to the sweet close you called love.
 
-Sit down now to the plain favourite, eaten hungry, because the market only wakes appetite and the table proves it.
+Dessert after a coated day arrives on a tongue already tired. The first spoon wakes. The third spoon hurries. The fifth spoon coats. Pleasure thins as the portion grows. If this were joy, would more taste less? If this were love, would love need a larger bowl each month to feel the same? The thinning is the body telling the truth while the old sentence repeats.
 
-It is evening and you are truly hungry. No grazing since lunch. Work done, air taken, belly empty and ready. On the board: soup on heat, deep and steaming. Bread torn, not sliced. Greens bright from the market, potatoes gold from the oven, butter, salt, lemon. Fruit in a bowl for after — apples, pears, grapes, nothing dressed up.
+It was never the meal that was grey. It was the dose that painted it grey and sold you colour back for ten minutes.
 
-You sit. You do not start with rules. You start with hunger.
+Run the evening that follows each meal and judge by doing. After the plain hungry meal, the evening runs clear. Dishes done. Walk taken. Mouth clean. Mind on work, on people, on rest. Hunger stays quiet for hours, then returns broad and kind toward the next meal. After the sweet close, the evening hunts. Sofa, cupboard, bin. Mouth busy, stomach unclosed, head loud with dose-talk about tomorrow. Which evening looks fed and which looks interrupted?
 
-First spoon hot and deep. The heat runs down and the shoulders drop an inch without orders. Bread torn, crust loud in the ears, crumb soft to pull, butter melting into holes. You chew slow without trying to chew slow because flavour holds you. The soup is onion and carrot and thyme, sweet in the vegetable way that needs no packet, salt lifting it, bread wiping the bowl. Hunger meets warmth and talk slows, then returns richer.
+Ask the table three plain questions and let the table answer. When did bread eaten hungry ever call you back shaking within the hour for more bread to stay upright? When did soup eaten hungry ever leave you foggier than hunger did? When did fruit eaten hungry ever coat the tongue and demand water and more fruit at once? You know the answers because your body gave them daily while the mind was busy blaming character.
 
-Then the plate. Potatoes crisp outside, floury inside, salt crackling. Greens with lemon and oil, bitter and bright, chewing clean. You eat and hunger softens bite by bite. Flavours vivid at first, then gentle. The hand slows by itself. Half the plate left and enough feels better than full. You stop. Not because you should. Because enough is lovely. Mouth fresh. Belly warm and quiet. Mind forgetful of food, ready for sofa and sleep and morning.
+### Hunger Knows What To Do
 
-Then fruit, because you want it, not because a meal must finish sweet. An apple cut in moons, juice sharp, crunch loud. A few grapes, cold and popping. A pear shared, soft and perfumed. The mouth clears. The belly says, done, thank you, quiet now. No coating. No calling for more. No opening of cupboards in an hour for something you cannot name.
+We lost trust in hunger because we stopped meeting it.
 
-Watch the whole arc and answer plainly:
+We called every tug hunger and so misread both hungers. Broad hunger and narrow tug wear different clothes. Learn them by their manners and you will never confuse them again.
 
-Did the meal need a sweet finish to feel finished, or did finished arrive by itself as quiet? Did the flavours taste muted beside memory of cake, or brighter because the mouth was hungry and clean? Did you leave the table thinking of food, or forgetting food?
+Broad hunger arrives without drama. The stomach lightens. The mind turns to food without naming a packet, shelf, drawer. Many plain things sound good. Eat, and the signal closes for hours. The mind forgets food.
 
-You know. Finished arrived as quiet. Flavours tasted brighter. And forgetting food proved you were fed.
+Narrow tug arrives with drama. The mouth waters for one taste only. The mind names the packet, the shop, the drawer. Bread sounds dull. Soup sounds wrong. Fruit sounds like a joke. Feed it sweet, and it quiets for minutes, then returns louder, pickier, more urgent.
 
-Now watch the same evening under the old grazing and feel the gap. Six o'clock biscuit to get through cooking. Sweet tea while stirring. Tasting that is not tasting but covering. By seven the belly is full and hollow together, the mouth sweet-soured, the hunger that should have led the meal drowned under hum. You pick at the soup, leave the potatoes, call the greens dull, push the plate, then eat ice cream standing at the freezer and call it the best part. Was the meal dull? Or was the mouth coated and the hunger buried so no food could sing through? Was the ice cream best? Or was it only the brightest cover on the dullest mouth of the day?
+That return is the giveaway. Real need, met, goes quiet. False need, met, comes back stronger.
 
-You know. The meal was innocent. The graze dulled it. The cover claimed the prize for a joy it stole.
+We said I-need-to-eat-something-RIGHT-NOW at four when dinner sat two hours off and the body had taken sweet all day. We were not empty. We were dipping from the last spike. The stomach was full without being fed. That loudness was not the body calling for fuel. It was the last hit calling for company.
 
-Eat hungry and the plain table beats the graze every time — not because plain is virtuous, but because hunger met sings and hum covered mutes. That is not theory. It is your own table witnessed.
+Trust the broad one. Let the narrow one pass unfed and watch what it does.
 
-BUT IS FAVOURITE A TRICK?
+On a plain day, wait through the four o'clock tug with water and air and movement and see. It peaks, it nags, it passes in under an hour, and dinner tastes brighter for the wait. On a sweet day, feed the tug and see. It quiets for ten minutes, it returns at five, it drags you to the kitchen at six, it hunts at ten.
 
-Still you press me, and I welcome it. Doubt named is doubt half gone.
+Which response looks like need met and which looks like a loan renewed?
 
-You say: Favourite. You keep saying favourite. My favourite was chocolate fudge cake. My favourite was cola with ice. My favourite was the biscuit tin at ten. Are you telling me my favourite will now be carrots? Is that not brainwashing with a kind face?
+Your body already knows how to do this. You were born knowing. Watch any small unwatched eater, like the small child who leaves the peach half-eaten to run back to play, and you see the whole method without words.
 
-I will answer flat, with no softening and no lecture.
+No lecture taught that child. Hunger called. She ate hungrily, joyfully, noisily. Satisfaction came mid-bite. She stopped. She ran. No guilt. No bargaining. No second helping to finish the plate because pudding waits. The body led and pleasure followed.
 
-I am not telling you carrots are cake. I am telling you cake was never your favourite. Your favourite was eating hungry and stopping satisfied. Cake only rode on that joy and claimed it.
+We all ate that way before the con taught us to eat by the clock, by the packet, by the rule, by the reward. The con did not improve on that child. It buried her under dose-talk.
 
-Look at your fudge cake memory with new eyes. When did it taste best? Starving after a long day, first fork, cold milk beside, company laughing, hunger roaring. First three bites marvellous. Next three pleasant. Next three heavy. After that, picking, pushing, mouth coated, regret arriving before swallow ends. Was the marvellous in the cake or in the hunger meeting food? Would those first three bites have been marvellous on any rich food eaten that hungry? And why did the marvellous fade while the cake stayed the same?
+You do not need to learn hunger. You need to stop shouting over her.
 
-You know. Hunger made the marvellous. Hunger left, marvellous left with it, cake stayed and dulled.
+I lived years deaf to her. I ate by time, by sight, by wrapper, by mood. I ate full and felt unmet. I ate sweet and felt hungry within the hour. I called myself broken around food. I was not broken. I was coated.
 
-Now look at the cola memory. Frost on the glass, hiss, first cold burn on a hot day, thirst roaring. Was the joy in the syrup or in cold answering thirst, in pause answering heat, in breath answering hurry? Would cold water with lemon, drunk that thirsty in that sun, have sung nearly as loud? And why did the second glass never sing like the first?
+When the daily hits stop, hunger returns within days, clear and broad and kind. Plain breakfast eaten hungry holds till lunch. Plain lunch eaten hungry holds till dinner. Dinner eaten hungry closes the day. Between meals the mouth rests clean. That is not control. That is nature resuming when noise stops.
 
-You know. Thirst and pause and sun sang. The syrup only sneaked a ride under a bright label, then charged you with stickiness and second reach.
+If hunger were broken, why does she return so fast when doses stop? If satisfaction were lost, why does a plain meal eaten hungry close the signal for hours while a sweet feast leaves it open? If the body needed teaching, why does the child need no teacher?
 
-That is the credit inversion where it belongs. Every drop of good in the sweet hour belonged elsewhere — to hunger, to thirst, to break, to company, to daylight through blinds, to laughter, to the body answering truly. Give the credit back where it belongs and nothing is lost. Take the good things without the rider and they do not fade into a pit. A pause still rests you. Air still clears you. Hunger met by food that satisfies still steadies you for hours.
+Notice how satisfaction feels in the body when it is allowed to arrive. Not stuffed. Not heavy. A quiet closing, like a door settling. The stomach full without pressure. The mouth done without coating. The head turning away from food toward life without a wrench. We forgot that closing because doses never gave it. Doses give a pause, not a close. A pause begs to be renewed. A close holds.
 
-So no, I am not asking you to call dullness favourite. I am telling you favourite was always hunger satisfied, and hunger satisfied is waiting to be yours again, vivid and daily.
+Practise reading that close at the plain table. Pause mid-meal and ask the stomach where it stands. Still open and calling? Eat and notice again. Nearing done, with tastes still bright but less urgent? Slow. Done, with food still good but no longer pulling? Stop. No rule holds the hand. Hunger opened. Satisfaction closes. Pleasure lives between.
 
-And hear me on sweetness itself, because I moralize nothing. Sweetness is not forbidden as a taste. The fruit woman's peach is sweet. Berries are sweet. An apple is sweet. A roasted carrot is sweet. A meal can finish sweet with fruit and leave you clean and done. I do not forbid joy and I do not rank foods as virtuous or wicked. What we leave is BAD SUGAR — the refined hit, the added free dose, the junk carb eaten as a sweet hit — because it never satisfies and always replants hum. What we keep is eating, all of it, enjoyed hungry and left satisfied. Celebrating with chocolate taught us to call self-payment love. Love was the pause, the faces, the hunger met together. Love stays. The wrapper goes.
+The body is a precision eater when the shouting stops.
 
-Do you see there is no catch? The catch would be if I asked you to endure grey and call it colour. I ask the opposite. I ask you to meet hunger and let colour come. The pleasure is not a trick of words. It is bread crackling, juice running, belly warming, mouth freshening, mind forgetting food because food did its work. No play. No price. Real.
+### What The Body Makes Without Permission
 
-YOUR BODY ALREADY KNOWS HOW
+Here is a plain fact to set under your feet so the fear has nowhere to stand.
 
-You say: But will the body cope without sweet fuel? Will blood not sink? Will mind not dim?
+Your body manufactures the glucose it needs from plain food, from protein and glycerol, holding the blood steady between meals without any BAD SUGAR at all. Clean living without BAD SUGAR is physiologically coherent. No deprivation sits in it.
 
-I stood where you stand and asked the same with real fear.
+I say that to free you, not to frighten you. If you live with diabetes or take medicine that touches blood sugar or appetite, are pregnant, or carry medical risk around food, your clinician stays in charge while you read and this book stays belief work.
 
-The fact is, your body makes its own steady supply for the blood from plain eating and carries you without a sweet overseer. The lamp was lit before the overseer arrived. Leave the hits out and the machine does not go dark. It burns steadier when noise is off. Clean meals satisfy, hunger returns clean, satisfaction closes clean. That is not theory. It is the memory in your own limbs from holidays walking, busy Saturdays building, days drinking water and eating plain, when you ate little sweet and felt clearer than on fuelled weeks.
+Hear what that fact means in the kitchen, not in a laboratory.
 
-I say that as the picture for free eaters, not as a sentence on you, and I am not telling you what to eat — if you live with diabetes, take medicine that moves blood sugar or appetite, are pregnant, carry an eating disorder past or present, or carry medical risk, your clinician leads and this book only changes belief.
+It means the steadiness you begged sweet to lend was already owned. The blood knew how to hold. The breath knew how to steady. Plain meals support that work. Sweet noise interrupts it, spikes it high, drops it low, then calls the low proof you need more.
 
-Do you see the relief in that? You need no plan, no counting, no rules pinned to the fridge. Eat what you want, when you are hungry, stop when you are satisfied, and never punish yourself again.
+We believed sweet was concentrated power. Concentrated is true. Power is false. It is concentrated speed of arrival, not concentrated worth. Speed was mistaken for strength. A spark is fast. A log is slow. Which heats the house through the night?
 
-Read that again slowly, because it is the whole eating contract in one breath. Want is allowed. Hunger leads. Satisfaction closes. Punishment ends. No Monday restart. No good week to be ruined by one biscuit. No penance run to pay for pleasure. We ate and punished and ate to soothe punishment till eating itself felt like a crime. Crime ends here. Eating returns to joy.
+You can take in hundreds of sweet calories by three and still feel unfuelled at four, because unfuelled is what you are. Calories counted, feeding not done. A plain meal feeds. It fills, it holds, it clears the head for hours. A sweet hit coats, spikes, wakes the wanting, leaves the body still unfed beneath the noise.
 
-Ask the plain questions and let your own table answer:
+That is why the roller coaster never travelled. The coaster you named so well — I want to get off the roller coaster, you said — circled the drawer. Lift, sag, reach. Lift, sag, reach. Each lift borrowed brightness against flatness, then called flatness proof you need another hit.
 
-Did punishment ever thin the hum, or did forbidden-must-have always rebound louder? Did counting ever end the thinking of food, or did thinking of food fill the counted day? Did the weeks of being good till Friday end in calm suppers, or in Friday floods that undid the week in an hour?
+Step off and the ground holds. The body makes what it needs from real eating. Hunger opens, food enters, satisfaction closes, steadiness rolls. Morning clear, midday steady, three o'clock dip small and human and passing, evening calm.
 
-You know. Banning fed the glow. Counting fed the thinking. Good-till-Friday fed the flood. Freedom thins what banning fattens.
+If BAD SUGAR fed, why are its steadiest users the emptiest at four? If it gave power, why does power fade fastest where doses fall thickest? If it nourished, why does the nourished mouth hunt before dinner is cold?
 
-So there is no eating plan here and no good-food sermon. I will not weigh your plate or time your meals or list permitted greens. Hunger times. Satisfaction stops. Want chooses. The body you were built with does the rest without a sweet overseer shouting orders. Trust it as you would trust thirst to know water, sleep to know night, breath to know air.
+You were never fuelled by sweet. You were interrupted by it.
 
-Think of the proof you already own. The days you ate plain because life was full — walking a city, working with hands, laughing long over a table — and forgot sweet without effort. The mornings after a plain supper, waking light, belly calm, mouth fresh, breakfast tasting bright. The afternoons after a real lunch, steady for hours, no drawer watched, no clock counted. Were those days deprivation? Or were they the machine running as made, quiet and strong, asking for nothing till hunger called clean?
+Think of the plain day lived through. Breakfast eaten hungry, full and unhurried, till satisfied. Mid-morning clear, mouth clean, head on work. Lunch eaten hungry, full and noticed, till satisfied. Three o'clock dip small, passing with water and air. Dinner eaten hungry, bright with talk, closed at satisfied. Evening quiet, no hunt, sleep deep. No packet improved that day. No packet was missed in it. The steadiness through it was made by the body from plain eating, without permission, without praise.
 
-They were the machine running as made. They are coming back to stay.
+Hold that day beside the sweet day and judge by what each does for you. One day fed. One day whipped. Both lived by the same body, with the same sleep, the same work, the same weather. Only the dose differs. Watch who does the carrying.
 
-WHERE LOVE REALLY LIVED
+### Love Was The Meal All Along
 
-Sit with me at the table now, because comfort lived here and comfort must be found here.
+Now meet the tenderest objection, because tenderness deserves plain sight.
 
-Evening. Soup on heat. Bread on board. Greens bright from the market, potatoes gold, fruit in a bowl for after. You are truly hungry from work and air and no grazing. You sit. You eat.
+Celebrating, rewarding myself, going to the cinema with chocolate. Treat when you feel you deserve one. Dessert as love. Food as comfort after a hard day.
 
-First spoon hot and deep. Bread torn, not sliced, crust loud. Hunger meets warmth and the shoulders drop an inch without orders. Talk slows, then returns richer. Flavours vivid at first, then gentle. Hand slows by itself. Bowl half left and enough feels better than full. You stop. Mouth fresh. Belly warm and quiet. Mind forgetful of food, ready for sofa and sleep and morning.
+We all said it with warmth. We meant it with warmth. No shame sits on that memory. The warmth was real.
 
-Was love missing from that table? Was company thinner for no packet? Was celebration duller for no fudge?
+Only the address was wrong.
 
-You know. Love was the hunger met, the warmth shared, the stop at satisfied. The table gave. No rider needed.
+Think of the birthday table you guard. Candles lit. Faces bright. Laughter spilling. The child leaning in to blow. The room holds love you can feel on the skin. A cake stands in the middle with chocolate dark and sweet-smelling.
 
-I ate such a supper the week I walked free and laughed out loud at the table, alone, because the food tasted brighter than fuelled meals ever had. I had feared grey. I found colour. The greens tasted grassy and alive. The bread tasted of field and fire. The apple after tasted like autumn clearing the mouth. I stopped mid-bowl and sat, surprised at quiet, surprised at no call for more, surprised that forgetting food felt like relief and not loss. That surprise is waiting for you. It is not rare. It is natural baseline returning on its own when noise is off.
+What made that moment glow? Was it the sugar in the sponge, or the faces round it, the laughter, the leisure, the pride, the belonging? Take the cake away in mind and leave the faces, and warmth remains. Take the faces away and leave the cake alone on a cold table under a bare bulb, and what glows? A sponge.
 
-Watch a child at a birthday table and remember the authority you once obeyed without teaching — she eats the peach hungrily, stops mid-bite and runs off to play, no counting, no guilt, body leading.
+It was you that glowed, not the dose. It was the scene that gave, sneaking a ride in your memory under a sweet coat.
 
-We were once that certain. We can be again, not by becoming children, but by letting the built-in signals lead again. Hunger calls. Food answers. Satisfaction closes. Joy arrives without a wrapper to mediate it.
+Think of the evening you called comfort. Hard day. Door closed. Feet up. Bowl in hand. For twenty minutes the world softens.
 
-And pity will replace envy when you see the lit rows, because you will know what they sell. Bright packs promise lightness and deliver load. Cola promises lift and delivers sour mouth and second reach. The biscuit promises comfort and delivers crumbs and fog. The promise is printed. The load is lived. Once you have felt a hungry meal satisfy, you cannot unfeel the gap.
+What softened it? Was it the spoon, or the sitting, the warmth, the quiet, the being done, the being home, the being held by routine? Eat the same bowl standing in a cold queue under strip light with a sore back and a shouting queue behind, and where is the comfort? The comfort was the rest, the pause, the care you gave yourself after effort. The dose took the bow for work the pause did.
 
-So meet the old comfort thought when it comes, as it will, dressed as tenderness: I deserve one, I have been good, food is love.
+I am not saying you may never enjoy sweet taste. Joy in sweet food belongs to life. Fruit bright after hunger, a meal shared, a flavour noticed — enjoyment stays. What never helped was using a BAD SUGAR hit as payment for virtue, as proof of love, as the point of the occasion.
 
-Answer it with lived truth, not with scolding. You do deserve love. Love is a meal eaten hungry and left satisfied, company kept, body trusted, no punishment after. A dose never loved you. It muted you for minutes and billed you after. Let the table love you truly and leave you quiet.
+Payment that charges the paid is no payment.
 
-Ask the questions that settle it for good:
+We paid for reward with flat limbs, foggy head, coated mouth, restless night, hunger signals drowned till full could not be heard. We called dessert love while love sat round the table unthanked. The meal gave. Company gave. Hunger met gave. The hit only shouted loudest and claimed the credit.
 
-When did you feel most loved at a table — when you were urged to have just one more sweet to show love, or when you were fed till satisfied and left in peace? When did a celebration feel warmest — when the sweet arrived as proof, or when faces, laughter, pause and hunger met together made the room glow whether cake sang or not? And if sweet were love, why did love leave stickiness, fog and self-reproach, while a plain meal eaten hungry left warmth, quiet and kindness?
+Run your own audit without blame. Recall a celebration meal eaten hungry, with people you love, with time to taste. Recall the brightness of first bites, the talk, the ease of lingering, the satisfied stop. Recall how long satisfaction held. Recall how clean the mouth stayed after.
 
-There is only one honest set of answers. Love fed and freed. The proof never loved. And the room glowed from faces, not frosting.
+Recall a celebration sweet eaten on a coated tongue, hurried, half-noticed, followed by hunt. Recall how fast brightness thinned, how soon fog came, how loud the head grew.
 
-EAT AS YOU WERE BUILT
+Which one loved you back?
 
-You walk into the next days with appetite alive and no dread on it.
+The fact is, eating itself is joy when hunger leads and satisfaction closes. Not joy as a loud ten minutes. Joy as a staying warmth. Bread torn hungry that quiets the stomach for hours without a second thought. Soup after cold air that warms the hands and clears the head till evening. Vegetables bright and full that leave the mouth clean. An apple eaten slow on a walk that leaves no hunt behind. No coating. No thirst water cannot clear. That is feeding. That is pleasure that does not bill you after.
 
-Mornings will teach you first. Hunger waking clean, breakfast tasting bright, no mid-morning twitch drilling the hour. You will sit to eggs and toast, or porridge and fruit, or bread and cheese, eaten hungry, left satisfied, and walk out forgetting food till lunch. The mouth fresh. The head clear. The belly quiet. Compare that to the sweet-cereal morning, bright for minutes then gnawing by eleven, cupboards opening, mind on food while hands try to work. Which morning fed you? Which morning rehearsed hunger?
+You feared plain eating would be duty chewing. Duty chewing is what the trap made of eating — grazing, sipping, unwrapping, tasting without tasting, full without fed. Real eating is attention. Notice, savour, stop at satisfied. Three plain acts the con stole. Three plain acts that return the hour doses stop shouting.
 
-Afternoons will teach you next. Flat hours met with water and air and stretch, then a real meal waited for and enjoyed. You will drink water, stand, roll the shoulders, open the window, let air cross the face. Dull for a while, humanly dull, then clear without a second reach. Compare that to the bar afternoon, bright for ten minutes then lower, second reach certain and weaker, wrappers to hide, fog to explain. Which afternoon steadied you? Which afternoon spent you?
+So voice the play-on-words suspicion once more and let it die in daylight.
 
-Evenings will teach you last. Supper hungry, stop satisfied, mouth fresh, sleep unbroken by thirst, waking clear. You will cook without covering, eat without bargaining, stop without speech, sit on the sofa quiet in belly and kind in head. Compare that to the graze evening, sweet from six to ten, wired and tired together, mouth dry at midnight, waking thick. Which evening loved you? Which evening billed you?
+Is favourite food a trick of language? Am I calling plain food favourite to console you for loss?
 
-You change nothing else in life to earn this. Same shops. Same kitchen. Same chair. Hunger leads, satisfaction closes, joy arrives unforced. The body you distrusted is the very witness that frees you.
+No trick. No console. No loss.
 
-The first clear days may feel strange, light, almost too light, listening for a call that does not come. Then strangeness turns to ease. Ease turns to joy. You will wonder, with real laughter, how you ever called the cover power and the wrapper love.
+Favourite means what hunger meets with joy and satisfaction closes with peace. By that plain measure, real food eaten hungry is favourite daily, while the celebrated hit thins with each repeat and leaves you hunting. One grows with attention. The other fades with use. Which sounds like a favourite and which sounds like a loan?
 
-You came fearing grey. You leave with colour in hand — market colour, table colour, hunger colour. Favourite was never the packet. Favourite was hunger satisfied. That joy stays fully yours, daily, without price, without punishment, without end.
+Eating returns to hunger, satisfaction and real food enjoyed as favourite. That is not a sentence to serve. That is freedom resuming.
+
+I promise you this as settled fact from a life lived both ways: Eat what you want, when you are hungry, stop when you are satisfied, and never punish yourself again.
+
+No counting. No earning. No being good this week to deserve one. No punishment after. Hunger opens, satisfaction closes, pleasure lives between. That is the whole eating contract, and it needs no guard.
+
+Live one hungry meal that way and you will know more than paragraphs can give. Eat hungry. Notice. Savour. Stop at satisfied. Watch how long peace holds. Watch how clean the mouth stays. Watch how fully the mind leaves food till hunger calls again. That knowing is not learned. It is remembered.
 
 6. TRUST HUNGER AND SATISFACTION
 Eat when hungry, stop when satisfied, enjoy real food.
 
 **SUMMARY**
-- Food without sweet hits is not grey. Hunger met by a plain meal tastes bright and complete.
-- Clean hunger is slow readiness and clean satisfaction is quiet closing. A meal ends hunger, a sweet dose only rehearses it.
-- Favourite was never the packet. Favourite was hunger satisfied, and that joy stays fully yours.
-- The body keeps steady supply from plain eating, so leaving the hits is not deprivation.
-- Love lived in the meal, the company and hunger met together, not in the sweet payment on top.
-- Hunger leads, satisfaction stops, want is allowed, and punishment ends.
+
+- Food without BAD SUGAR does not turn grey, plain meals eaten hungry taste bright and complete.
+- The dullness feared in plain food was a coated mouth and a stomach never allowed to empty.
+- A market meal noticed and savoured and stopped at satisfied closes hunger for hours with a clean mouth and clear head.
+- Broad patient hunger welcomes plain food and goes quiet when fed, narrow sudden tug wants sweet only and returns louder when fed.
+- The body makes the steadiness it needs from real eating, sweet hits interrupt that work and leave unfed beneath the noise.
+- Warmth at birthdays and tired evenings came from people, rest, pause and hunger met, the hit only took the bow.
+- Sweet taste enjoyed in fruit and meals stays part of life, using a hit as reward or love charged the very person it claimed to pay.
+- Hunger opens, satisfaction closes, and eating lived that way is joy that holds.

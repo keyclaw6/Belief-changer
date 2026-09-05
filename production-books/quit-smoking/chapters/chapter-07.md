@@ -1,154 +1,172 @@
 Chapter 7
 THE ITCH IT PRETENDS TO SCRATCH
 
-*The lift you feel is never a lift above life — it is the brief quiet of a hunger the last dose left behind.*
+*The dose never lifted you above how a non-smoker feels; it only quieted for minutes the unease it had planted.*
 
-### THE METER THAT ALWAYS RUNS OUT
+## THE METER THAT NEVER STAYS FED
 
-The drawer is closed. The war of force is over. What stands now is cleaner and smaller than you feared.
+We left the drawer as a museum. The curled patches, the soft leaflets, the pencil corrections by March. We settled that the orders failed you, not the other way around. You are wilful enough to have held for years against cough and cost and stairs. What still holds your attention is not the drawer. It is the body. You still half-believe the dose does something in the blood that you cannot meet with empty hands.
 
-Keep smoking as normal while we look together. I want nothing from your hands yet, only your clear eyes for one ordinary day.
+I know that half-belief because I lived inside it. I told myself the morning dose steadied my hands. I told myself the midday dose cleared my head. I told myself the evening dose rewarded the day. I carried those stories for thirty years while the meter ran down under every one of them.
 
-I want you to picture a parking meter on a grey street.
+Picture the meter with me, because your day runs on it.
 
-You drop a coin in. The needle jumps. You feel paid up, safe, taken care of. Your shoulders drop a little. You walk away believing you have bought something. Within minutes the needle is sliding. Not to the same second for each of us, but always in the same direction. Down. Ten minutes, twenty, forty — the street has not changed, the car has not moved, yet you are digging for another coin. Not because the first coin gave you something wonderful, but because the meter only knows how to run out.
+On a wet side street near my old office stood a parking meter with a cracked face. You dropped a coin and the needle jumped. You walked away feeling paid up. Within minutes the needle sank. By the hour it blinked red. No one stood there cursing the meter for stealing. Everyone understood the terms. The coin never bought the space. It only rented silence from the warden for a little while, and the silence was priced to expire.
 
 That is your day on doses.
 
-We have all lived that slide without naming it. We lit at seven and felt settled. By eight the edge was back. We lit at the break and felt steady. By the next break the steadiness had thinned. Lunch, afternoon, phone call, kettle, doorstep, night. Coin after coin. Needle up, needle down, needle up, needle down. We called the moment the needle jumped pleasure. We never named the hours it spent sliding.
+The fact is smoke puts nicotine into blood and up to the brain within seconds, to a sharp point within ten seconds of the puff, and the sharpness fades within minutes, which is why the hand goes back. For most of us the fade is quick, for some quicker, for others a touch slower, but the shape never changes. Rise, fade, reach. Rise, fade, reach. You never climb above the line where a non-smoker stands all day without thinking. You climb halfway out of a dip the last dose dug, touch near-normal for a breath or two, then slide back toward the dip while the problem that made you reach sits exactly where you left it.
 
-The fact is the hit reaches the brain within seconds and the sharp edge of it thins within minutes, so the mind learns to call for another to keep the feeling topped up. That is not a gift that lifts you. That is replenishment of a rapidly fading dose. The last dose created the emptiness, the next dose briefly quietens it, and the quiet guarantees another emptiness.
+Watch one ordinary day closely and the meter shows.
 
-Look at what the meter never does. It never overpays. It never gives you an hour free because you fed it well yesterday. It never leaves the needle high at closing time to thank you for your custom. It takes, it shows full for minutes, it slides, it asks again. A non-smoker parked on the same street pays nothing and his car stays where he left it. He walks the same grey pavement without checking his pocket. We paid all day to stand where he stood for nothing.
+Seven in the morning, feet not yet on cold lino, hand already moving. The lungs take the first hit on empty air and the head spins a fraction. You call that waking up. It is the overnight dip briefly filling. The mouth tastes stale, the chest feels tight, the eyes are still half shut, and the paper is credited with bringing you back to yourself. What brought you back was blood filling a lack that night-smoking had dug. A non-smoker wakes to the same cold lino without a dip to fill and calls that normal.
 
-Tell me honestly and answer from your own pocket.
+Eight-thirty, bus queue, second dose. The edge from the first has already thinned. You stand with collar up, cupping the light against wind, watching the timetable, telling yourself this one steadies the nerves for the day. Watch what steadies what. The bus is still late. The day is still the day. The only thing that changed in four drags is the needle jumped again and began to sink again.
 
-Did any single dose ever lift you above a non-smoker, or did it only bring you back toward normal for minutes?
-Did it solve the morning, or did it only quiet the unease the night without had left?
-If it truly gave calm, why did the calm always need another coin within the hour?
+Ten, after the row with the phone, third dose, credited with calm while the papers on the desk stay untouched. The voice on the phone was sharp. Your shoulders went high. Your hand moved before you decided. The first puff pulls deep and the shoulders drop a fraction. You say the stick handled it. Look at the desk. The papers have not moved. The number is still to be called back. The knot in the stomach is still there under the quieted tug. What quieted was the tug between doses, not the row.
 
-You know the answer because you have lived the timetable a thousand times. The dose never paid for the street. It only rented the meter for minutes and guaranteed you would have to pay again. That is the nicotine trap working exactly as built — a hunger manufactured on the hour, then sold back to you as relief.
+Twelve, meal done, fourth dose, credited with sealing the taste while the tongue dries. The food tasted before ash touched it. You know it did. The first bite after hunger always tastes. Then the plate empties, the mouth looks for a full stop, the mind reads the small lack as meaning the meal is unfinished. You light, draw, cough once, and call the dryness a seal. Taste the truth straight. Food put flavour in. Ash took the edge off flavour and was thanked for the flavour.
 
-Have you ever fed a meter and felt grateful to it? We did. Every day. We thanked the coin for the needle jumping, and forgot the meter was the reason the needle ever fell. We thanked the dose for taking away the edginess, and forgot the dose was the reason the edginess ever arrived.
+Three, paragraph finished, fifth dose, credited with reward while the work already pleased before the light. You typed the last line, you read it back, you felt that small lift of done. Then the old minute called and you paid it before standing. You stood in the doorway, blew smoke at cold air, and told yourself the day had given you a little party. The party was the finished paragraph. The dose only paused its own nag while you stood there.
 
-Once that timetable is seen, you can walk out of it easily, immediately and permanently. Not by force. By seeing there was never a lift, only a fade briefly interrupted.
+Five, school gate, shops, traffic, sixth dose taken on the move. You tell yourself it kills the fidget of waiting. Watch the wait. Other parents wait without it, check phones, stamp feet, talk about nothing. They fidget and do not light. You fidget and read the fidget as an order. Same wait. Different reading. The reading was installed long before you could question it.
 
-### A DAY COUNTED IN COINS
+Six, pint in hand, seventh and eighth close together because talk and drink shorten the interval. Here the meter spins fastest. One to go out with, one to come back with, one because he lit, one because the glass emptied. You laugh before the light, you talk after the ash falls, and the puff in the middle is credited with making the hour kind. The hour was kind already. Drink, warmth, company made it kind. The dose only rented the needle while kindness did the work.
 
-Let us walk your day together, coin by coin, and watch what the dose does inside the hour. Not what you were told it does. What it does.
+Nine, sofa, ninth and tenth to close the evening that never needed closing. The day is done. The body wants rest. The mind reads the day-end dip as need for a final seal. You light, watch the news through a haze, stub out, light again because the last did not hold. Each coin lifts the needle. None repairs the meter.
 
-Seven in the morning. The mouth is stale, the head is thick, the hand finds the pack before the feet have found the floor. The first drag on empty lungs feels huge. Huge. We say, there, that is what I needed. But what did the night give a non-smoker? Unbroken breathing, a body waking clean. What did the night give us? Hours without a feed, so we wake emptier than any non-smoker ever wakes. The first dose does not lift us above him. It drags us from our low back toward where he started. We mistake the climb out of our own hole for a flight.
+Eleven, teeth brushed, last one at the back door. Cold bites the ankles. The house is quiet. You tell yourself this one sends you to sleep. Sleep needs no sender. Children sleep without senders. Non-smokers sleep without senders. You stand in cold to feed a dip so you can lie down with a quieter dip for an hour, then wake at seven to fill the night's digging all over again.
 
-Think of that first one as a debt collector knocking early. All night the meter ran down with no coins going in. You wake in deficit. The non-smoker wakes at zero. You pay to get to zero and call getting to zero a bonus. Have you ever watched a non-smoker wake and scramble for anything before his feet touch the floor? No. He stretches, he coughs once clear, he puts the kettle on. His morning needs no key. Ours needed a coin before the day had even asked anything of us. That is not help. That is arrears.
+Ask the plain questions and answer only to yourself.
 
-Eight fifteen. Kettle, keys, traffic. The edge stirs again. We tell ourselves it is the day pressing on us. Is it? The day has barely begun. The papers are the same papers. The road is the same road. What changed in forty minutes? Only the meter slid. We feed it and call the quiet focus. The non-smoker at the next desk has focus without feeding. We had to pay to feel normal for half an hour. Look closer at that focus. It is not sharpness added. It is edginess removed for minutes. Real focus stays and builds. Ours arrived with a light and left before the emails were answered, leaving a thinner edge than before. We paid for normal and received normal on loan.
+Did the seven o'clock dose give you morning, or did morning give you the dose a place to stand? Did the ten o'clock dose move the papers, lower the shoulders, answer the phone? Did the after-food dose put flavour into food that already tasted before ash touched it? Did the pint-hour doses put laughter into friends who laughed before you lit? You know from your own mouth that food tasted before the light, that the paragraph pleased before the pellet, that the row stayed row after the puff. What did the coin buy except a few minutes without the nag it had left behind?
 
-Ask yourself what kind of helper needs to be rehired every forty minutes to do the same tiny job. Would you call a plumber who fixed the leak for twelve minutes and then flooded the kitchen again? Would you call him back twenty times a day and thank him each time? We did. We called the leak fixed because we only looked while he held his thumb over it.
+That turning circle is the nicotine trap.
 
-Ten thirty. Break. Legs want moving, lungs want air, mind wants pause. We go out with the others and light. For minutes the chatter feels warmer, the air feels sharper. We credit the stick. Strip it out and look again. The legs still wanted moving. The lungs still wanted air. The mind still wanted pause. The dose only quietened the tug it had planted before we arrived, then took credit for the whole rest. Ask yourself what part of the break needed smoke. Did your legs need it to stretch? Did your eyes need it to look at sky? Did your ears need it to hear a friend laugh? No. The break worked because you stopped, breathed, stepped away. The dose rode along and signed its name on pleasures that were never its to sign.
+We were conned into reading the lift of the needle as a gift. Brainwashing named the lift calm, focus, pleasure, pause. Family, films, hoardings, the lit huddle outside every door taught the names before we could spell them. The con needs those names because without them a sane person would see a rented needle and walk away. With them we stand in rain, in cold doorways, in garage air thick with spray, feeding coins and calling the feeding life.
 
-I want you to see the theft clearly. The sun did not come from the lighter. The laugh did not come from the paper. The air did not come from the ash. The rest did the work. The dose only silenced its own complaint long enough for you to notice the rest, then claimed it had made the rest.
+You stand at that meter now and see the only sane move is escape with empty pockets and eyes open.
 
-Twelve forty. Food done. The plate is empty and the hand moves by itself. We say a meal is not finished without it, that it seals the taste. Does it? Taste the meal again in memory. The warmth, the salt, the full belly, the pause. Where did smoke improve that? It dried the mouth it claimed to satisfy and laid ash over the taste it claimed to seal. What it sealed was not the meal. It sealed the hour since the last feed. The meter had run down through lunch and demanded a coin to stop complaining. Notice the timing. It is always the same interval, hungry or full, tasty meal or dull sandwich, feast or snack. If it sealed taste, a dull meal would need no seal. But the hand moves just the same. It is not the plate calling. It is the clock.
+Once seeing is complete you can leave that street behind easily, immediately and permanently, not by force but by no longer misreading the needle. Smoke as normal while we finish the seeing. I ask for eyes, not effort.
 
-Three o'clock. The slump. Eyes sandy, temper short, inbox full. We light and feel we can go on. We say it helps concentration. Look with clear eyes. The non-smoker in the same chair at three o'clock is tired too, and his tiredness lifts with air and movement and water. Ours lifts for twelve minutes with smoke and then returns heavier, plus a new edginess. We did not cure the afternoon. We rented twelve minutes of normal and paid with a deeper dip. And what did we concentrate on in those twelve minutes? Half the mind was on the relief itself, on the hand, the throat, the exhale. Real concentration forgets itself. Ours kept checking the meter.
+## THE PLASTER THAT MAKES ITS OWN ITCH
 
-Five thirty. Doors, bags, train, car. The day releases us and we light for reward. We made it through, we tell ourselves, this is mine. Whose reward needs to be paid for every single day for life? A true reward ends the effort. This one restarts it. Within the hour the reward will be asking for its own reward. A true reward you remember fondly at midnight. This one you barely remember at six, except as ash and a faint sourness and the knowledge you will need another before supper is done. That is not a prize. That is a subscription.
+We all know the heel with the bad plaster.
 
-Evening. Phone call that stings. Bill. Argument about nothing. Hand already reaching while the phone is still warm. First puff and we say, it takes care of it. I do not mock that feeling. I lived inside it for years. But look at the papers on the desk after the puff. The problem sits untouched. The person is still waiting for an answer. The bill is still on the mat. What was taken care of? Only the tug, which had been gnawing for fifty minutes and spiked when the shock hit. We quietened our own manufactured hunger and called it coping. If the dose coped, the coping would still be there when the ash cooled. It is not there. The shoulders tighten again before the mug is empty. The mind returns to the same worry, only now with less air and less money and a fresh timer running.
+You put it on for a blister on a long walk. At first it helps. By mile three it rubs. By mile five it itches under the edge where sweat gathers. You hook a finger and scratch through the gauze and for two seconds it feels marvellous to scratch — no, it feels necessary, almost sweet. Then the itch returns hotter. You scratch again. By evening the skin under the glue is red and angry, and you say the plaster is the only thing getting you home, because each scratch gives a second of quiet.
 
-Night. One for the road. One because the room went quiet. One because tomorrow will be hard. Then sleep, where the meter runs down all night to make sure morning will feel desperate again.
+Would you keep that plaster for life to keep the scratch?
 
-Count the coins. Fifteen, twenty, twenty-five paper tubes to stand still. Did you ever, on your heaviest day, feel high above life? Or did you spend the whole day climbing from low to nearly normal and falling back to low? The non-smoker lived that same day without climbing and without falling. He woke clear, paused clear, ate clear, worked clear, argued clear. You paid all day to imitate him for minutes at a time.
+That is what the dose does to your nerves.
 
-That is the spine of it. Relief stops reading as a rise above normal the moment you track it. It starts reading as a brief return toward the non-smoker baseline you had before you ever started — a return that guarantees the next low.
+Before the first paper behind the sheds you had no nag between hours. No empty gnaw at ten, no edgy crawl at three, no night-time reach. You waited for buses without checking pockets. You finished work and felt done without paying for done. You ate and tasted and sat a while without needing a full stop made of smoke. The first doses taught the body to expect its squirt, then left a small lack wherever the squirt wore off. Each later dose quieted that lack for minutes and was credited with gifts it never brought. Calm for a row it did not settle. Focus for work it did not type. Company for a night it did not make kind.
 
-### THE BITE YOU LEARNED TO LOVE SCRATCHING
+What you called relief was only the plaster pausing its own rub for minutes.
 
-We all know the bite that itches worse because we scratch it.
+Hear the objection as you say it, because I said it for years.
 
-You are out in summer. Something nips your ankle, so small you barely see it. You scratch and for a second it feels marvellous. Done, you think. Fixed. An hour later it itches harder. You scratch harder. By night it is raw and you are still telling yourself scratching helps, because you only remember the second of ease and forget the day of itch that followed. If a friend watched you scratch till you bled, would he say scratching healed you? He would say scratching fed it.
+“But I feel it in my body. My chest tightens. My hands fidget. Surely that proves the need is huge and physical?”
 
-Smoking is that bite with smoke on it.
+I do not mock that feeling. The tightening is real. The fidget is real. What is false is the size the costume gives it, and the authorship. The body learned a small lack. The mind, taught since childhood that smoke calms and crowns, dressed that lack as need for calm, need for crown. Take the costume away and the lack is a molehill. Keep the costume and the molehill casts a mountain shadow.
 
-The first doses of your life created a faint restlessness where none lived before. Then each new dose quietened that restlessness for minutes while deepening it for hours. We learned to call the second of quiet pleasure. We forgot to count the day of itch that made the quiet feel needed. We forgot that before we smoked, mornings did not have that gnaw, breaks did not have that pull, meals did not end with a hand moving by itself.
+Think of the plaster at mile eight. The skin is not cut to the bone. The blood is not pouring. The pain is not surgery. It is sweat and rub and glue, nagging, nagging, nagging, until the mind calls nagging agony because scratching gives a second of quiet and quiet feels like cure. We did the same with paper. A faint empty gnaw between lights, a slight edge under the ribs, a hand-memory that says now — and because a puff quiets it for minutes, we called the quiet proof of a giant need. The giant was the reading, not the rub.
 
-Think back to those very first ones. They tasted foul. They made you cough and feel dizzy and sick. No one thought, ah, this is calm, this is pleasure. We persisted to look grown, to belong, to steal a moment with the older ones. The pleasure was the belonging, the moment, the daring — never the smoke. But while we posed, the tiny hunger hatched underneath. By the time the posing stopped, the itch had started. Then we mistook the scratch for the reason we had started posing. It is the other way around. The posing installed the itch. The itch then pretended to be the reason.
+Did a non-smoker feel that ten o'clock gnaw while waiting for the same bus? Does a child need a squirt to finish a paragraph and feel pleased? Did you need it before you started? You know the answer because you lived the before. The itch arrived after the plaster, not before. It grows between doses because doses train it, not because life requires it.
 
-Ask yourself when the itch ever left you richer. Did scratching make the ankle stronger? Did it make the skin cleaner? Did it make the evening longer? No. It made the ankle sorer, the skin angrier, the evening shorter because half the evening was spent scratching. So with smoke. Did the dose make the morning calmer than a non-smoker's morning? No. It made the morning less calm, then briefly less uncalm. Did it make the break happier? No. It made the break anxious until fed, then briefly less anxious.
+Look at the scratch itself and the lie comes apart in your hands.
 
-Listen to the voice that rises when the hour calls:
+You scratch and for two seconds the itch sleeps. Do you say the fingernail healed the heel? You know the nail tore a little more skin and guaranteed the next itch. You know the plaster keeps the sweat where the sweat itches. Yet with paper we said the opposite. We said the puff healed the row, sealed the meal, crowned the work, when the puff only scratched a lack the last puff had left and guaranteed the next lack within the hour. Same scratch. Opposite story. The story was installed. The heel was never the teacher.
 
-“But my body needs it. You can talk about mind all you like — I feel it in my chest.”
+Ask again, and let your own day answer.
 
-I do not mock that feeling. I felt it for years in my own chest, behind my ribs, in my fingers. I am telling you what it is, smoker to escaped smoker, without a speck of contempt for you. What you feel is not hunger or true need. It is an empty, slightly restless, slightly edgy little tug, the complaint of a tiny physical creature as its feed fades. That little stir is the Nipper complaining as it starts to starve. It is small. It is already dying between doses. What makes it roar is not its size. It is the Smokescreen that taught you to read that stir as proof you need a dose to cope, to pause, to belong.
-
-Remove the reading and the stir shrinks to what it is. Keep the reading and the stir feels like life itself.
-
-Would you call a mosquito bite proof that scratching nourishes you? Then why call the tug proof that smoke nourishes you? Both are the same trick. The irritation creates the demand for its own repetition. The relief is real for seconds, and false as a cure.
-
-Here is the settled shape of it, seen from your own day and your own ankle. The scratch never healed the bite. The scratch fed the bite and sold you the second of ease as cure.
+If the plaster cured, why did the itch return hotter each time you scratched? If the dose gave calm, why did the shoulders tighten again before the hour was out? If the dose gave focus, why did the head cloud again before the paragraph after next? If the dose gave company, why did you step away from company to serve it, and return to find company had warmed without you? There is only one reading that fits all four. The quiet was borrowed from the next hour. The next hour always collects.
 
 It never fixed the itch. It caused it.
 
-### SMALL, BRIEF AND NOT YOU
+Hold that sentence against your whole day and the day rearranges. The morning dose did not cure night. It ended night-lack that night-smoking had built. The row dose did not cure row. It paused lack while the row waited. The meal dose did not crown food. It paused lack while taste faded under ash. Every credit belongs elsewhere — to morning, to your own hands on the papers, to food, to the paragraph — and the dose stands beside each minute taking wages for work it never did.
 
-“But withdrawal will be awful. I dread the hole it leaves.”
+## THE SMALL TUG IN COSTUME
 
-Let us give that dread daylight, because dread grows in the dark and dies in it too.
+We need plain names now, because plain names keep the sizes honest.
 
-When the hourly feed stops, that restless edge typically begins within hours, sharpens for the first few days, sharpest around day two or three for most of us, then eases over the next few weeks until the body forgets the timetable. Not to the same day for each of us. Not the same strength. Some feel little more than a vague emptiness. Some feel edgy and fidgety and strange in their own skin for a spell. But the shape is the same shape: a short typical peak, then fading. If you feel ill or you worry, speak to your doctor for your own care. I speak only of belief: that stir is withdrawal with a short typical peak, not proof the dose was your real self.
+Between doses what you feel is an empty, slightly restless, slightly edgy little tug. Not pain. Not collapse. Not a pit that swallows the day. A tug. A faint empty nag, a slight edge under the ribs, a hand-memory that says now. Non-smokers feel versions of that tug every day — hunger before lunch, tiredness before bed, impatience in a queue — and call them signals, not orders. We were taught to call this one proof we must light.
 
-Think of your real self for a moment.
+That tug is the Nipper asking to be fed.
 
-Is your real self edgy every forty minutes for life? Were you born checking pockets, counting sticks, tapping packs, stepping out into rain to feed a paper tube? No. Before you were conned you breathed without thinking, tasted without hurry, sat through a phone call without a hand reaching, slept through the night without waking to feed. The non-smoker in you is still there underneath the timetable. The tug is not you. It is a tenant complaining while it is being starved out.
+I use that name on purpose. The physical creature is tiny, stupid, already dying whenever unfed. It cannot think, cannot argue, cannot keep you awake, cannot ruin work. It can only tug a little and wait to be starved. You have starved it every night without knowing — through sleep, through flu, through long flights and meetings — and woken still yourself. A giant would not sleep through its own hunger. A nipper does.
 
-I smoked through colds that rattled my chest and still lit. I smoked through nights I had promised my own children I would not. I stood in doorways in winter while life went on inside without me. Not because my body demanded torture, but because my mind believed the tug meant I cannot cope, cannot pause, cannot be me without a fix. When the belief went, the tug stayed small and brief and then went. It had no army behind it.
+Think what you have already proved about its size without meaning to.
 
-Tell me what hole you fear. Is it the faint empty stir itself? You have felt that stir a thousand times between doses — in meetings, on trains, in cinemas where you could not light. You lived through it then without horror. It passed. It always passed. The only difference now is you will not feed it, so it will pass and then fade for good instead of returning on the hour.
+You slept seven hours and did not wake screaming for a squirt. You sat through a three-hour film and forgot the packet until the lights came up. You flew long-haul, belt fastened, no-smoking sign on, and lived. You nursed a sick child through a night, you sat in a morning of interviews, you stood in a church where lighting was unthinkable — and the tug waited. It sulked, it nagged, then it thinned because unfed. If the need were huge in the blood, those hours would have been impossible. They were not impossible. They were ordinary. The body held. The mind only cried louder where lighting was allowed because there the costume had permission to shout.
 
-Or is the hole the fear of missing the scratch itself? That is not a hole in the body. That is the Smokescreen mourning its own voice. A man who stops banging his head against a wall does not leave a hole where the bang was. He leaves room for quiet.
+What makes the nipper roar like a lion is costume.
 
-Ask yourself the question that ends it.
+That costume is the Smokescreen talking, the lifelong brainwashing that says the tug means you need calm, taste, pause, reward, company, courage. Family, films, hoardings, the lit huddle outside every door taught you to read lack as meaning. The reading is the lie, not the tug. Kill the reading and the tug starves in days to nothing. Feed the reading and the tug wears a crown and calls itself you.
 
-If the tug proves the dose gave you something real, why does a non-smoker never feel that tug and never miss what you miss?
-If the dose truly calmed you, why were your most relaxed days the days you fed most often?
-If it truly helped you cope, why did the coping always expire before the problem did?
+See the split in your own minutes and the fear shrinks to size.
 
-It is the other way around. You do not crave because it gave. You crave because it took. The craving is the taking felt from inside.
+The tug says, something is faintly missing. The Smokescreen says, only a dose fixes a row, a meal, a break, a night. The first is true and trivial. The second is false and huge. We spent years answering the first as if we were answering the second, dropping coins for rows that needed hands, for meals that needed tongues, for breaks that needed air on the face. No wonder we felt chained. We chained a mouse with iron stories.
 
-See how small that leaves the fear. You are not facing weeks of torture. You are not facing a hole in yourself. You are facing a faint, empty stir with a short typical peak, already dying, misread for years as need. The body does its little shiver and forgets. The mind was doing all the shouting.
+I remember standing at my office window with that costume on. Tug nagged. Mind translated: you cannot write this letter without help. I lit, stared at the car park, typed nothing for ten minutes, stubbed out, then wrote the letter in twenty minutes flat. What wrote it? The dose or me? The dose sat in the tray as ash. I sat at the keys as author. Yet I thanked the ash on the way back to my chair. That thanking is the Smokescreen at work — taking wages for my typing.
 
-### WHY A TUG FEELS LIKE A NEED
+Ask again, quietly, and let honesty answer.
 
-This is where we separate the two creatures, because they were named in passing and now you need them working.
+If the trouble were the tug alone, why did sleep never frighten you, though sleep starves it for hours? If the trouble were blood alone, why did the same blood feel fine on holiday mornings until the mind remembered the packet? If the trouble were character, why did character hold at work, at bills, at sickbeds, and wobble only where paper burned? There is one answer that fits all three. The body holds a small lack. The mind holds a large story. The story is the trap.
 
-We fell into the trap together. We all tried the first ones to look grown, to belong, to steal a moment. The smoke tasted foul and made us cough, and we persisted because the grown-ups and the posters told us there was something in it. That is the brainwashing at work. Then the little creature hatched: a trivial physical hunger that complains when unfed. Feed it and it quietens for minutes. Starve it and it tugs. On its own it could never hold you. It is too small. It is already half-starved every morning.
+You were never held by muscle; a child could step over this tug with empty hands and stay free in the same minute you see through the costume.
 
-What holds you is the big lie that feeds it meaning.
+## THE SECOND AND THIRD DAY
 
-The Smokescreen takes that tiny tug and translates it. Tug becomes I need to concentrate. Tug becomes I need to calm down. Tug becomes I deserve a little party. Tug becomes I cannot belong without one. Tug becomes I am a smoker, this is me. Each translation sends the hand to the pack, the pack feeds the Nipper, the Nipper quietens for minutes, the quiet feels like proof the translation was true. Round and round. The little creature drinks. The big lie grows fat.
+Now look at the days you dread, because dread paints them larger than life.
 
-Break the circle at the belief and the whole engine stalls.
+You fear that without doses the tug will climb and climb until you cannot think or sleep or be decent to love. That picture was painted by mourning weeks, by bright Mondays and heavy Thursdays, by counting chalk on walls while still believing gifts were lost. We are not counting. We are seeing.
 
-Watch it happen in one hour. The tug stirs at forty minutes. Old reading says, I am losing control, I need a fix to cope. Hand moves, coin drops, needle jumps, mind says, you see, it helped. New reading says, there is the empty stir, already dying, misread for years. Hand stays, coin stays, needle still slides — and then, without a feed, it slides less. An hour passes. The stir passes. No problem was solved by smoke because smoke never solved problems. No pause was ruined because the pause was air and time, never ash.
+The fact is the restless empty feeling usually begins within hours of the last dose, as the meter empties for the last time, and for most quitters the sharpest edge sits about two or three days in, then loosens across the first days and settles within a few weeks to nothing. Some feel less and wonder where the storm went. Some feel more for a night or two and then feel it thin. That is the usual pattern, not a sentence on you — and if you feel ill or carry worry about stopping, keep your clinician’s care for the body while we handle belief here.
 
-Do that once and you have proved what twenty calendars could not. The tug without the belief is a whisper. The belief without the tug would still find a tug to ride on. It was never the body that kept you. It was the meaning you were taught to give the body.
+Hear what that pattern means. It means the tug has a short peak because it is a small creature dying, not a wound deepening. It means the second morning may nag louder than the first, and the third evening may fidget, and then the intervals of quiet lengthen on their own without training or props. It does not mean weeks of torture for everyone. It never did. Torture was tug plus grief for invented gifts, chalked and mourned under bright lights. Take grief away and the days are weather, not climate.
 
-Have you ever believed a headache meant you needed a certain pill, then learned the headache passed with water and rest just the same? The pain did not change. The meaning changed. Have you ever believed you could not sleep without a certain noise, then slept clean in a quiet house and woke surprised? The night did not change. The belief changed. So it is here, only smaller and kinder, because the Nipper is already starving between every dose.
+I sat through those days myself with the old story still on, and I called them hell. I sat through them again with the story off, after seeing the meter and the plaster, and they were a faint empty hum I kept forgetting to notice while making tea, answering post, walking to the shop. Same body. Same hours. Different belief. The difference was not grit. It was sight.
 
-I am not asking you to be brave. I am not asking you to endure. I am telling you there is nothing to endure once the credit is removed. A man who believes scratching heals will scratch till he bleeds and call the bleeding proof he must scratch. Show him scratching caused it and he stops — not by grit, but by seeing. His ankle still tingles for a day or two. He smiles at the tingle because he knows what it is: healing, not hunger.
+Picture those days as they will actually come when belief is clear.
 
-So it is here. The restless stir may visit at the old minutes for a little while. Let it visit. It is not a command. It is a dying complaint losing its translator. Each time it comes and you see it clearly, the Smokescreen thins and the Nipper starves a little more. That is not suffering. That is escape happening inside your own ribs.
+Day one, the meter empties. Morning nag, midday nag, evening nag, each a little emptier than a between-dose nag because no coin is coming to re-dig the dip. You drink tea, you wash up, you answer two letters. Between tasks the hand lifts half an inch toward a pocket that holds no packet, then drops because the mind remembers there is nothing to miss. Not a battle. A misdialled number, then the receiver put down.
 
-Other smokers will still light around you while you read. Watch them with clear eyes and keep your own counsel for now.
+Day two, the Nipper loosens its mouth. The edge may sit a touch sharper by afternoon. You walk to the shop, you feel the air on the face at the kerb, you notice the stairs breath a fraction easier because no fresh smoke sits on the lungs. Evening fidget comes, goes, comes again thinner. You go to bed at the usual hour and sleep. Sleep does not ask for a coin. It never did.
+
+Day three, quiet lengthens. An hour forgotten here, two hours forgotten there. Hunger feels like hunger again, not like an order. Tiredness feels like tiredness. The tug, when it comes, feels almost quaint — a faint echo from a street you no longer live on. You do not measure it for proof. You notice it the way you notice a clock ticking in another room, then return to the meal, the talk, the work in front of you.
+
+Do not measure those days for proof you still need the dose. Measure them for proof the dose needed you. Each nag is the Nipper loosening its mouth. Each forgotten hour is your own system returning to the baseline where non-smokers live all day without thinking. You do not climb toward health by suffering. You slide back to it by not re-digging the dip.
+
+What waits beyond those days is the steady body you knew before the first paper, living in freedom without equipment and without counting.
+
+Let the meter empty once and stay empty. The needle will wobble, then rest at zero where it belongs, and zero will feel like yourself.
+
+## THE LIGHTS AROUND YOU
+
+There remains the corner where others light, and the corner can shout louder than the body.
+
+You will see it tonight or tomorrow. A doorway, a patio, a bus stop in cold air. Laughter, glasses, a hand offering paper with the old line behind the eyes, one won’t hurt. The smoke curls. The faces soften for a second after the puff. The brainwashing leans in and whispers, they have something you will miss, you cannot be easy among lights while empty-handed.
+
+Watch with clear eyes and the corner testifies against itself.
+
+Watch the timing, not the faces. They laughed before the light. They talk after the ash falls. The soft second after the puff is the needle jumping on their meter, not joy entering the night. Within minutes one will shift, check a pocket, step half away to judge when to feed again. Another will light from the last and cough and laugh the cough away. Another will stand alone while the table warms inside without him. Does that look like a gift being enjoyed, or a meter being served between sentences?
+
+Watch the hands, not the story. The hand moves at the old minute whether the night is kind or cruel, whether the drink is first or fourth, whether the company is dear or dull. The minute calls and the hand obeys. We called that choice for years. Choice does not check pockets in the cold while friends stay warm. Choice does not apologise to kids with spray and mint. That is slavery in evening dress.
+
+I stood in those corners for years and envied the lit circle. I see it now and the envy runs the other way. The circle steps out to feed, the table thins, the talk pauses till they return smelling of ash. The ones who stay inside keep the thread of the story. The ones who went out return and ask what they missed. What did paper add to belonging that belonging did not already hold? Nothing. It taxed belonging and called the tax a ticket.
+
+You will hear your own old voice offering translation. “They can take or leave it. I am the one who cannot.” Look closer. The taker lights twenty times a day and calls each taking. The leaver counts days and mourns. Both serve the same meter under different costumes. Pity the service; do not envy the costume. You are not missing a party. You are seeing hired waiters toast their employer between wages.
+
+Stay inside with your coffee untouched and know the night is yours in clean air that needs no coin, while their meters tick down behind laughter.
+
+You do not need their lights to prove your minutes. Your morning proved the work was yours. Your meal proved taste was food’s. Your day proved the fade was built in. Keep that watched day in your pocket when the hand extends paper. Their puff proves only that their tug nags on schedule. It proves nothing about your tug, your night, your worth.
 
 7. REFUSE TO BE INFLUENCED BY OTHER SMOKERS
 Watch them with clear eyes and keep your own judgment.
 
-**SUMMARY**
-- Each dose fades within minutes, so the day becomes a chain of brief quiet followed by renewed call.
-- The quiet never lifts above normal; it only returns briefly toward normal and guarantees the next low.
-- The scratch never healed anything; it fed the restlessness and sold the second of ease as cure.
-- The restless stir is small with a short typical peak, not the voice of the real self.
-- Belief turns the stir into felt need; when the credit is removed the sensation loses its meaning.
+SUMMARY
+- The day runs as rise and fade between doses, touching near-normal for minutes then sliding back toward lack.
+- Morning, row, meal and paragraph held their own worth before ash; the dose added no calm, flavour, pause or crown.
+- The between-dose nag is small and empty, dressed huge by a taught story that names lack as need.
+- The nag usually starts within hours, sharpens for a day or two, then loosens and fades to nothing when unfed.
+- Other lights show meters being served on schedule, not nights made kind or company made close.

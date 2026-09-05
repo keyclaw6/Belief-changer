@@ -1,0 +1,2 @@
+REVISE
+HEADER — the draft opens with the workshop header `IN THIS CHAPTER` immediately after the title (`**IN THIS CHAPTER** / Morning kettle and bread, shop aisle and till...`). Remove the workshop header and open in spoken body.
