@@ -61,3 +61,22 @@ Wave 2 (2026-09-05 ~10:30): orchestrator harvest via `scripts/loop-runner/web_to
 
 Floors not cleared. Next gap-fill: P-04 lived daily cost; after-sex / first-morning scenes; Philip Morris nicotine-as-product memo (UCSF); more non-WhyQuit testimonies; app-store quit-app reviews; more graded science (Cochrane NRT, Surgeon General).
 
+Wave 3 (2026-09-05 ~10:50): gap-fill miners wrote into this checkout (P-04 lived L-036–L-060; morning/sex/meal/car scenes S-015–S-031; Mumsnet justifications J-027–J-045; Cochrane/SG science M-013–M-020; Dunn/Teague UCSF villain V-012–V-019; testimonies T-011–T-017 minus T-015 dropped for naming Allen Carr). Wave-1 lived miner first wrote into an isolated worktree (0 packets on parent). Resume recovered 120 packets onto parent as L-061–L-180 plus `/tmp/bank-03-lived-from-miner.md`. Other wave-1 miners still unrecovered (justifications/scenes/escapes/beliefs/lexicon/analogies/villain/science/freedom claimed counts not trusted until parent files grow).
+
+### Wave 3 packet counts (approx., parent checkout)
+
+| Bank | Packets | Notes |
+|---|---|---|
+| 01 justifications | 45 | +19 P-04/P-02; still far under ≥100 |
+| 02 belief-map | 12 | keystone neighborhood present |
+| 03 lived-experience | 180 | L-001–L-180; P-04 daily-cost filled |
+| 04 special-moments | 31 | first-morning, after-sex, after-meal, in-car |
+| 05 escape-routes | 16 | still thin vs every-route |
+| 06 analogies | 16 | need ≥50 |
+| 07 mechanism-science | 20 | Cochrane NRT + SG unaided rates; more CONTESTED still useful |
+| 08 villain | 19 | Dunn "product is nicotine" + Teague dosage-form now on disk |
+| 09 lexicon | 25 | need ≥100 |
+| 10 freedom testimonies | 16 | T-015 dropped (Carr named); long-form present |
+
+Still short of §7 floors: justifications, analogies, lexicon, escape-route coverage, more CONTESTED science. Do not synthesize until those clear or scarcity is documented.
+

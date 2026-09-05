@@ -7,8 +7,8 @@
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 026–027 KEEP + 030 KEEP + 031 KEEP accepted; 032 REVERT; A1+K1 cutover landed)
-- **Last completed unit:** US Easyway extract on disk. Smoking research wave 2 banked (~177 packets); floors not cleared.
-- **Next unit:** Research gap-fill (P-04 lived; morning/sex scenes; PM nicotine-product memo; more testimonies/science). Then synthesize, plan-write, alignment + moves, PASS probe (Ch6 and Ch22 as both ours and real), 033 BASELINE write. Do not write 033 until smoking plan is `fit to write from`.
+- **Last completed unit:** Smoking research wave 3 on disk (lived 180; PM Dunn memo; morning/sex scenes). Floors not cleared (justifications/analogies/lexicon still short).
+- **Next unit:** Recover remaining wave-1 miner packets onto this checkout; gap-fill justifications (≥100), analogies (≥50), lexicon (≥100), escape routes. Then synthesize, plan-write, alignment + moves, PASS probe (Ch6 and Ch22 as both ours and real), 033 BASELINE write. Do not write 033 until smoking plan is `fit to write from`.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -41,3 +41,4 @@
 | 2026-09-05 10:00 | Received US Easyway (Clarity 2011, 199pp, ISBN 978-0-6154-8215-6). Extracted 62,846w (intro 5,080 + ch01–46 57,766). Illustrated PDF deleted. | smoking research wave 1 |
 | 2026-09-05 10:24 | Heartbeat: banks still empty; Cursor wave-1 miners produced 0 packets. | orchestrator harvest |
 | 2026-09-05 10:40 | Wave 2 harvest banked ~177 packets (10 banks). Floors not cleared. | gap-fill research |
+| 2026-09-05 10:55 | Wave 3: lived miner recovered L-061–L-180; P-04/scenes/PM memo/science also landed. T-015 dropped (Carr). Floors still short. | recover other wave-1 banks; gap-fill J/A/D |
