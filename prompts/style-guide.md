@@ -530,7 +530,7 @@ The operators:
 8. **Upcoming-moment prediction** — predict the reader's specific upcoming thought, situation, and moment of revelation as lived experience; never coach-stage the prediction ("let me future-pace you", "future-pace this with me") or use factory labels as verbs.
 9. **Permission paradox** — explicitly permit the behavior while reading ("carry on exactly as normal until you finish"). Disarms resistance and proves this isn't willpower.
 10. **Credit reassignment scene** — take a cherished scene, strip the behavior out of it, show the pleasure was the scene all along ("it was only ever sneaking a ride").
-11. **Instruction voice** — numbered, imperative, ALL-CAPS headline followed immediately by one short spoken rationale line; no "Warm rationale" header, craft label, or assignment-fulfillment narration around either line. Instructions are thought-substitution rules: "rather than think [old thought], think [mantra]."
+11. **Instruction voice** — numbered, imperative, ALL-CAPS headline followed immediately by one short spoken rationale line; no "Warm rationale" header, craft label, or assignment-fulfillment narration around either line. Instructions are thought-substitution rules: "rather than think [old thought], think [mantra]." Never paste a card header into reader prose ("IN THIS CHAPTER", "This room we stage", "This naming we do", "stays seed here", "full road belongs later", a numbered plan-index with no spoken body). The spoken instruction is the only numbered line the reader may see.
 12. **Chatbot residue** — never open a beat with throat-clearing or chatbot framing ("Here's the thing", "Let's dive in", "Great question", "What if I told you"). Never close a beat with a summary stamp ("In conclusion", "Ultimately", "At the end of the day", "Let's recap"). Never pad a landed point with a third stacked synonym that adds no new picture. Start the argument; stop when it lands. Do not name this rule in reader prose. Do not import a ban on Not-X-It's-Y, every/always/never, live questions, fragments, or adverbs.
 
 ---
@@ -597,6 +597,7 @@ Because chapter writers see only the master plan + previous chapter + this guide
 - Does the chapter's freedom-language level match its position on the crescendo?
 - Would this chapter still make stopping feel like *escape* if read in isolation?
 - Any chatbot opener, throat-clearing, summary closer, or stacked-triplet padding? Cut it. Start the argument; stop when it lands.
+- Any card header, workshop staging, or seed/later placeholder in reader prose? Cut it. The spoken instruction is the only numbered line.
 
 ---
 
