@@ -1,0 +1,16 @@
+--- a/prompts/chapter-reviewer.md
++++ b/prompts/chapter-reviewer.md
+@@ -23,13 +23,14 @@ Then at most 7 findings. Each finding is one of:
+ - `LENGTHEN to B±15%` — delivered words are below 0.85 × B
+ - `SHORTEN to B±15%` — delivered words are above 1.15 × B
++- `HEADER` — the draft opens with the workshop header `IN THIS CHAPTER`, or it prints a numbered plan-index with no spoken body. A numbered ALL-CAPS instruction plus one spoken rationale line is not `HEADER`.
+ 
+ No other finding types. No style notes. No "sounds like AI." No comparison
+ to any other book.
+ 
+ `ACCEPT` only when every check above is fine (length inside ±15% of B, job
+-done and stopped, assigned mantras/instructions verbatim, IDs resolved).
++done and stopped, assigned mantras/instructions verbatim, IDs resolved, no `HEADER`).
+ 
+ `REVISE` when any check fails. List the findings. The writer will get one
+ rewrite. Be specific: quote the missing job or the missing wording.
