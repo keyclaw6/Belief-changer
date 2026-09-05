@@ -460,3 +460,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Banning card-header paste in the sentence operator does not override B10's required `IN THIS CHAPTER` header. A can rise on a different factory-speech mechanism (formula repetition) in the same census class. Grep for the banned strings is not KEEP.
 
 **What this opens next.** Do not replay this operator-11 sentence. Next factory-speech mechanism should change §B10 anatomy (the header the writer is still required to emit), not operator 11 again. PRIMARY stays 027 floors 13/16. willpower-lexicon is not PRIMARY.
+
+### iter-029 — B10 opening-pictures instead of IN THIS CHAPTER  ·  2026-09-05  ·  INCONCLUSIVE
+
+**Hypothesis.** If §B10 no longer requires the workshop header `IN THIS CHAPTER`, voice `factory-speech` falls in both versus 027 (A 13, B 16).
+
+**Change.** One anatomy line in `prompts/style-guide.md` §B10 (see `loop/iterations/029/change.diff`). Plan reused. Research reused. Two Spark 1.3 Go books with chapter-reviewer. Panel 53+53.
+
+**What happened.** factory-speech 13→9 (A, 8 noted + 1 blocking) and 16→18 (B). Words 48477 / 51991. Voice A 12/13 (ch09 FAIL). Comparison `missing` 0/1. Every chapter still opens `IN THIS CHAPTER`. A blocking quote is `10. IGNORE ANYONE WHO QUIT BY WILLPOWER` at a mantra echo.
+
+**Verdict & why.** INCONCLUSIVE. PRIMARY improved in one book only. One-book blocking is not a veto. Do not promote.
+
+**What we learned.** Renaming the B10 slot does not stop the model from emitting Carr's GSBS preview header. Grep for the header is not KEEP. Numbered instruction paste can block even when the preview header is ignored by the judge.
+
+**What this opens next.** Do not replay 028 operator 11 or 029 B10 item 1. Style-guide + factory-speech strike 2 — next try a different component (chapter-reviewer or writer), not a third style-guide header sentence. PRIMARY stays 027 floors 13/16.

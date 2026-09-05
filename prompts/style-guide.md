@@ -605,7 +605,7 @@ Because chapter writers see only the master plan + previous chapter + this guide
 The pocket-book format (§B6) compresses these away; at full length Carr runs them explicitly. The master plan decides per book which rooms apply. Do not emit a chapter per slot. Source analysis: `analysis/sugar-prose-patterns.md`.
 
 ### The chapter anatomy (every chapter, no exceptions)
-1. **Opening pictures** — names of the rooms/pictures in this chapter, spoken, not the workshop header "IN THIS CHAPTER", not a syllabus of what we will do, not "we will / you will," not a named pupil.
+1. **"IN THIS CHAPTER"** — names of the rooms/pictures in this chapter, not a syllabus of what we will do, not "we will / you will," not a named pupil.
 2. **Italic thesis line** — a spoken Carr sentence of the reframe, not a paste of the card's leaving-belief field.
 3. **Body** — ONE belief-move, built through titled sections, landing on ALL-CAPS verdict lines.
 4. **The chapter's instruction** (when assigned) — the numbered spoken ALL-CAPS imperative at the climax, plus at most one short spoken rationale line. Never a "Warm rationale" header or backticks.

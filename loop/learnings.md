@@ -247,3 +247,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** INCONCLUSIVE
 **Lesson:** factory-speech 13→18 (A) and 16→10 (B) — one book only. Length 52626/52802. Blocking 0/0. §B10 still requires `IN THIS CHAPTER` on every chapter; both books emitted it. A rose on ch13 formula-repetition (7) plus numbered-instruction leaks, not the 027 workshop/seed-later strings (those did not recur). Do not promote.
 **Next direction:** New mechanism on factory-speech (B10 anatomy vs operator 11). Do not replay this operator-11 sentence. PRIMARY remains 027 floors (13/16). willpower-lexicon stays non-PRIMARY (attack-the-illusion). Do not replay 020–024 wording.
+
+### iter-029 — B10 opening-pictures instead of IN THIS CHAPTER
+**Hypothesis:** PRIMARY: style-guide §B10 anatomy item 1 no longer requires the workshop header `IN THIS CHAPTER`, so voice `factory-speech` falls in both vs 027 (13/16).
+**Change:** `prompts/style-guide.md` (§B10 chapter anatomy item 1). Plan reused (027 Jobs). Two books Spark 1.3 Go with reviewer. Judges composer-2.5, 53+53.
+**Verdict:** INCONCLUSIVE
+**Lesson:** factory-speech 13→9 (A, including 1 blocking) and 16→18 (B) — one book only. Length 48477/51991. Both books still opened every chapter with `IN THIS CHAPTER`. A ch09 FAIL is a numbered instruction paste at mantra echo, not the preview header. Do not promote. Style-guide + factory-speech strike 2.
+**Next direction:** Do not replay 028 operator 11 or 029 B10 item 1. Next factory-speech mechanism must change a different component (reviewer or writer), not another style-guide header sentence. PRIMARY remains 027 floors 13/16. Do not replay 020–024 wording.
