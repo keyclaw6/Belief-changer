@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 3756 words. Budget 4500. Range 3825-5175. Short by at least 69 words. Add words serving the card job "past failures stop proving I am weak and start proving the method was wrong" — drawer/calendar encounter and method-manufactures-struggle verdict, not new jobs.
+HEADER — draft opens with workshop header `**IN THIS CHAPTER** — the bedside drawer, a calendar full of crosses, a glass that still holds whisky`. Remove opening header; the numbered instruction `6. DISREGARD ANYONE WHO QUIT BY WILLPOWER` plus rationale line alone is allowed.

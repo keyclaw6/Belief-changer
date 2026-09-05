@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `**IN THIS CHAPTER**` plus tagline `Market air at eight, the paper bread-bag, the hungry table, the quiet full stop` before spoken body. Remove that header block entirely; the numbered instruction `TRUST HUNGER AND SATISFACTION` plus rationale line is allowed and is not the issue.

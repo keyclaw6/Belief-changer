@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `**IN THIS CHAPTER** — The meter on the rainy pavement, the kettle and the clock, the tug behind the ribs, smokers on the office steps.` before any spoken body. Remove the header; keep the numbered instruction `7. REFUSE TO BE INFLUENCED BY OTHER SMOKERS` with its rationale line, which is not HEADER.

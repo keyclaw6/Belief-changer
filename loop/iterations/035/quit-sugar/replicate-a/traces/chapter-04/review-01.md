@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 3080 words. Budget 4800. 0.85×B = 4080. Range required 4080-5520. Add ~1000+ words serving card job "past failures prove the wrong method, not a broken self; strong will persisted against instinct" via diet-week diary / white-knuckle days / forbidden-must-have rebound / Monday restart and braggers and whingers.
+HEADER — Draft opens with workshop header `**IN THIS CHAPTER** — the Monday drawer, the Thursday rebound, the 10pm box, the bragger at the party, the whinger on the sofa`. Remove preview header.

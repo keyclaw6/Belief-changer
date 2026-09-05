@@ -1,0 +1,3 @@
+REVISE
+HEADER — Draft opens with workshop header `IN THIS CHAPTER — Early market air, paper bread-bag, bright stalls, a hungry table, the quiet full stop`. Remove it. The numbered `TRUST HUNGER AND SATISFACTION` + rationale line is allowed and is not HEADER.
+LENGTHEN to B±15% — Delivered 2408 words. Budget 4800. Range 4080-5520. Add words to serve the card job: "inhabit hunger, satisfaction and real food as favourite; eating itself is joy without BAD SUGAR; voice the reader's suspicion that 'favourite food' is a play on words and answer it flat — there is no catch, the pleasure is real" via the Encounter: "plain favourite meal eaten hungry — market vegetables, fresh bread, fruit — noticed, savoured, stopped at satisfied."

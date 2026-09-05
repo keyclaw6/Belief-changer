@@ -7,7 +7,7 @@
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 034 KEEP §B4; 035 PRIMARY smoking factory-speech via §B5 op 9)
-- **Last completed unit:** 035 hypothesis applied (§B5 permission paradox). Dual-subject writes in progress (sugar CH-01–02; smoking CH-01–03).
+- **Last completed unit:** 035 hypothesis applied (§B5 permission paradox). Dual-subject writes in progress (sugar CH-01–06; smoking CH-01–08).
 - **Next unit:** 035 writes. KEEP if smoking factory-speech 12→≤8 and sugar 6 does not rise above band.
 
 ## Run authorization (founder, 2026-09-04)
@@ -67,3 +67,5 @@
 | 2026-09-05 17:53 | 035 CH-01 CAP both (sugar 4013/4200, smoking 2881/3500). Both on CH-02 A1. Writers live. | rest of 035 writes |
 | 2026-09-05 17:56 | Smoking CH-02 ACCEPT 3637/4000 (I-02 present). Sugar CH-02 in A1 rewrite. Smoking CH-03 started. | rest of 035 writes |
 | 2026-09-05 18:03 | Sugar CH-02 CAP 4896/5200. Smoking CH-03 ACCEPT 4578/4500 (2 rounds). Sugar CH-03 / smoking CH-04 in A1. | rest of 035 writes |
+| 2026-09-05 18:18 | Sugar CH-03 ACCEPT 3655/3800. Smoking CH-04 CAP 4243/4500, CH-05 ACCEPT 5190/5000. Sugar CH-04 / smoking CH-06 in A1. | rest of 035 writes |
+| 2026-09-05 18:51 | Sugar CH-04–06 (CH-06 ACCEPT). Smoking CH-06–08 ACCEPT. Sugar CH-07 / smoking CH-09 in A1. Both Go. | rest of 035 writes |

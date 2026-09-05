@@ -1,0 +1,3 @@
+REVISE
+- LENGTHEN to 4500±15% — Delivered 2089 words. Budget 4500. Below 0.85×B (3825). Needed range 3825-5175. Add ~1800+ words serving card job: "relief stops reading as rise above normal and starts reading as brief return toward non-smoker baseline that guarantees next low" via concrete encounter "tracking a day of doses fading within minutes, meter needing coins."
+- HEADER — Draft opens with workshop header `IN THIS CHAPTER`: "**IN THIS CHAPTER** — The meter on the rainy pavement, the kettle and the clock, the tug behind the ribs, smokers on the office steps."

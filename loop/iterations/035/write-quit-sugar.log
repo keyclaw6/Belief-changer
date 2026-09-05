@@ -2,3 +2,7 @@
 OK chapter-01 draft=3111w final=4013w budget=4200 CAP rounds=3 opencode-go
 OK chapter-02 draft=4166w final=4896w budget=5200 CAP rounds=3 opencode-go
 OK chapter-03 draft=2481w final=3655w budget=3800 ACCEPT rounds=2 opencode-go
+OK chapter-04 draft=3080w final=4230w budget=4800 CAP rounds=3 opencode-go
+OK chapter-05 draft=2586w final=5350w budget=6300 CAP rounds=3 opencode-go
+OK chapter-06 draft=2408w final=5137w budget=4800 ACCEPT rounds=3 opencode-go
+OK chapter-07 draft=3650w final=4457w budget=5000 ACCEPT rounds=2 opencode-go

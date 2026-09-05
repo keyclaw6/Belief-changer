@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER — The drawer of patches and gum, the calendar with twenty crossed dates, the whisky poured into a brandy glass`. Remove the header opening; begin in spoken body.
+LENGTHEN to B±15% — Delivered 2260 words. Budget 4500. Required range 3825–5175. Add ~1600+ words serving the card's primary job: "past failures stop proving I am weak and start proving the method was wrong" — drawer/calendar encounter, whisky-for-brandy swap, Willpower Method manufactures struggle, and trial odds do not decide escape.

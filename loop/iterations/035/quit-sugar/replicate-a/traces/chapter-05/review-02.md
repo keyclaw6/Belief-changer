@@ -1,0 +1,2 @@
+REVISE
+LENGTHEN to B±15% — Delivered 4822 words. Budget 6300. Range 5355-7245. Add ~550+ words serving the card job: "the energy lift is relief of a low the last dose created; real energy is the body, not the fix; BAD SUGAR is empty calories that nourish nothing and gift no energy the body did not already own; and escaping means the want is removed for good, not a resistance that fails the day the want comes back" — in particular expand the desk-afternoon encounter witnessed hour by hour and the empty-calories / real-energy contrast before SUMMARY.
