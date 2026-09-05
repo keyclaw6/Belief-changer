@@ -75,3 +75,4 @@
 | 2026-09-05 20:20 | 036 hypothesis applied: reviewer `RE-ARGUMENT` (journey 15/16). Plan reuse. | start Muse factory |
 | 2026-09-05 20:24 | `opencode run --agent factory` failed (Go CLI opt-in + db lock). Factory used write_replicate.py A1 (factory-orchestrator fallback). Both live. | wait FACTORY DONE |
 | 2026-09-05 20:32 | 036 CH-01 ACCEPT both (sugar 3738/4200, smoking 3112/3500, 2 rounds, Go). HEADER only; no RE-ARGUMENT on ch1. Both on CH-02 draft. | rest of 036 writes |
+| 2026-09-05 20:38 | Smoking CH-02 ACCEPT 4050/4000 (LENGTHEN 2194→4050 + HEADER; no RE-ARGUMENT). Sugar CH-02 in A1 (LENGTHEN+HEADER). Smoking on CH-03. Both Go. | rest of 036 writes |
