@@ -7,8 +7,8 @@
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 026–027 KEEP + 030 KEEP + 031 KEEP accepted; 032 REVERT; A1+K1 cutover landed)
-- **Last completed unit:** 033 sugar CH-01 landed (3620w / budget 4200, CAP K=3, Go). Smoking still on CH-01 A1. Carr-native Ch6 journey PASS stands.
-- **Next unit:** Finish 033 BASELINE writes (sugar 13 + smoking 14). Then judge one subject at a time. No KEEP. Do not replay 020–024 / 028 / 029 / 032.
+- **Last completed unit:** 033 writes in flight. Sugar CH-01–03 landed (all CAP K=3, Go). Smoking CH-01 ACCEPT + CH-02 CAP; CH-03 in A1.
+- **Next unit:** Finish 033 BASELINE writes (sugar through 13, smoking 14). Then judge one subject at a time. No KEEP.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -50,3 +50,4 @@
 | 2026-09-05 11:47 | As-real Ch6 journey PASS (Instruction NONE; little monster / nicotine trap / slightly empty, restless feeling). Original FAIL was setup. | 033 BASELINE writes |
 | 2026-09-05 11:52 | Smoking writer died: `no word budget for chapter 1` (`- budget: 3500` vs `Budget:`). Sugar still writing. Parser accepts `- budget:` / `C01 N`. | restart smoking writer |
 | 2026-09-05 12:01 | Sugar CH-01 OK 3620w CAP K=3 Go; sugar CH-02 started. Smoking CH-01 rewrite in A1. Both Muse Go. | rest of 033 writes |
+| 2026-09-05 12:19 | Sugar CH-01–03 CAP; smoking CH-01 ACCEPT + CH-02 CAP. Both still writing (sugar CH-04, smoking CH-03). | rest of 033 writes |
