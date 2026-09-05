@@ -7,8 +7,8 @@
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 026–027 KEEP + 030 KEEP + 031 KEEP accepted; 032 REVERT; A1+K1 cutover landed)
-- **Last completed unit:** US Easyway (Clarity 2011) extracted — 00-intro + ch01–45 + ch46 Final Instructions; illustrated extract deleted.
-- **Next unit:** Smoking research wave 1 (Carr-blind, P-01–P-04). Then integrate, synthesize, plan-write, alignment + moves, PASS probe (Ch6 and Ch22 as both ours and real), 033 BASELINE write. Do not write 033 until smoking plan is `fit to write from`.
+- **Last completed unit:** US Easyway extract on disk. Smoking research wave 2 banked (~177 packets); floors not cleared.
+- **Next unit:** Research gap-fill (P-04 lived; morning/sex scenes; PM nicotine-product memo; more testimonies/science). Then synthesize, plan-write, alignment + moves, PASS probe (Ch6 and Ch22 as both ours and real), 033 BASELINE write. Do not write 033 until smoking plan is `fit to write from`.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -39,3 +39,5 @@
 | 2026-09-05 09:45 | Founder A1 + K1 + multi-change. Illustrated Easyway extracted by mistake. Harness parameterized. | founder: wrong book |
 | 2026-09-05 09:52 | Smoking research wave 1 prepared (banks empty). Personas P-01–P-04 named. Halted for correct PDF. | correct Easyway |
 | 2026-09-05 10:00 | Received US Easyway (Clarity 2011, 199pp, ISBN 978-0-6154-8215-6). Extracted 62,846w (intro 5,080 + ch01–46 57,766). Illustrated PDF deleted. | smoking research wave 1 |
+| 2026-09-05 10:24 | Heartbeat: banks still empty; Cursor wave-1 miners produced 0 packets. | orchestrator harvest |
+| 2026-09-05 10:40 | Wave 2 harvest banked ~177 packets (10 banks). Floors not cleared. | gap-fill research |
