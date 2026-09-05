@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` followed by `The bargain table — Yesterday emptied onto the table — The mirror and the till receipt — The tripping hand — Two lines forward`. Remove the header block entirely; the numbered instruction `JUDGE ONLY BY WHAT IT DOES FOR YOU / Forget harm versus benefit and ask for the benefit.` with its one rationale line is permitted and is not the violation.

@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with the workshop header `IN THIS CHAPTER` after the title: `IN THIS CHAPTER / Yesterday's wrappers spread on the table, the bathroom mirror in the morning, the till receipt in the pocket, the hand offered in the ditch`. Remove the preview block; open in spoken body.

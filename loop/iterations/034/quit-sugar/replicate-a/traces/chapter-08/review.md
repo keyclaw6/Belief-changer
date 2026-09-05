@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER — The bright aisle at eye height, the mirror that says type, the low mood ledger, the open cell and the pacing lion`. Remove the header and open in spoken body.

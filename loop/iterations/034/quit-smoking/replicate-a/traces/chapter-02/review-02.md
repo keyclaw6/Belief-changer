@@ -1,0 +1,2 @@
+REVISE
+HEADER — the draft opens with the workshop header `IN THIS CHAPTER` followed by index lines with no spoken body: "IN THIS CHAPTER / The garage door at midnight. The mint tin and the sprayed jacket. The hand that lights before you decide." Remove the header block and open in spoken prose. The numbered instruction "2. DON'T STOP OR CUT DOWN YET / Smoke as normal until your last cigarette." is allowed and is not HEADER.

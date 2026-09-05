@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft opens with workshop header `**IN THIS CHAPTER** — The cold lino underfoot, the kettle steam at the window, the plate pushed an inch, the kerb air on the face`. Delete the header block; keep spoken body and the numbered instruction at end.
+UNASSIGNED-REFRAIN — non-mantra phrase "Paper came second." recurs 3× verbatim in one paragraph: "Waking came from standing, water, light. Paper came second." / "Flavour came from hunger and food. Paper came second." / "Rest came from standing, stretching, looking far. Paper came second." Keep at most one; subtract the other repeats, do not keep as new mantra.

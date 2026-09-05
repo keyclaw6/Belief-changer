@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 3063 words. Budget 4400. Range 3740-5060. Add minimum ~677 words to enter range. Those words must serve the card job: "inside BAD SUGAR there is no safe cut-down, special occasion, tomorrow or substitute; totality is only stable state; the substitute idea itself is the flaw — swap the product, sweeteners included, and you remain a user, still hooked"
+HEADER — Draft opens with workshop header `IN THIS CHAPTER` followed by "The Friday drawer and the long wait till Friday, the cliff edge with a measured fall, the house-rule kitchen, the sweetener shelf, the steady car with a seatbelt." Remove the header block; a numbered ALL-CAPS instruction plus one rationale line alone is not HEADER, this opening is.

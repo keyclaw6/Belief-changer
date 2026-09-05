@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 2891 words. Budget 4800. Range 4080-5520. Add ~1200+ words to serve card job "past failures prove the wrong method, not a broken self; strong will persisted against instinct" via diet-week diary encounter, SC-04 evening-box proof, and bragger/whinger anti-method work.
+HEADER — Draft opens with workshop header `**IN THIS CHAPTER** — The Monday kitchen, the diet-week diary on the fridge, the permitted biscuit and the empty box, the bragger at work and the whinger on the sofa`. Remove header and open in spoken voice.

@@ -1,0 +1,2 @@
+REVISE
+HEADER — the draft opens with the workshop header `IN THIS CHAPTER` followed by `The late patio with heaters and string lights, the tray of cold drinks, the extended hand with a lit end, the cold step outside the laugh, my own winter night that fooled me for years` before spoken body. Remove the preview box; keep the numbered instruction `MEET THE BEST CIGARETTE HEAD-ON` plus rationale line as allowed.

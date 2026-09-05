@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER — The office desk at three, the top drawer, shoes a size too small by the door, the kitchen at dusk` before spoken body. Remove header; keep spoken body and the numbered instruction `BEGIN WITH ELATION, NOT DREAD` as the only allowed ALL-CAPS line.

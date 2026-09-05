@@ -1,0 +1,2 @@
+REVISE
+- LENGTHEN to B±15% — Delivered 3565 words. Budget 4200. Range 3570-4830. Add ~200+ words to sit safely inside B±15%, serving only the card job: "non-argument — definition — boxes BAD SUGAR, installs contract and eat promise, converts audience to participant; the fact the reader is holding this book means the decision is already made, and what follows is only good news | Resolves: is this another diet lecture."

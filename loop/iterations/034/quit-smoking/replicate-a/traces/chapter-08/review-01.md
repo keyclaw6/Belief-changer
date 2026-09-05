@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER — Cold lino and the kettle, the window ajar, the finished plate, the kerb and the air on the face`. Remove the workshop header.
+LENGTHEN to B±15% — Delivered 1856 words. Budget 4000. Required range 3400-4600. Add ~1600+ words serving the card job: `inhabiting ordinary smoke moments as breathing, tasting, free-handed favourite proves non-smoker pleasure is fuller` — morning feet to kettle, meal-end taste lingering, work break air on face, hands free.

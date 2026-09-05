@@ -1,0 +1,2 @@
+REVISE
+LENGTHEN to B±15% — Delivered 3229 words. Budget 3800. 0.85×B=3230, range 3230-4370. Delivered is below range. Add words serving card job: "sugar does plenty TO you and nothing FOR you; harm debate replaced by benefit demand" via "ordinary day audit — sweets logged against mood, teeth, wallet, time — benefit column empty."

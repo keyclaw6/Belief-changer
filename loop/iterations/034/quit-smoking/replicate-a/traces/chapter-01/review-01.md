@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `**IN THIS CHAPTER**` plus bullet list before spoken body; remove the header apparatus, keep the spoken stairs hook and the numbered instruction as body.

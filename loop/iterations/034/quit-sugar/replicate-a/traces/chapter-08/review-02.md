@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER — Fluorescent aisle at eye height, bright packs with cartoon tigers, checkout ambush of bars, mirror that says personality, open cell door, pacing lion, dashboard lights`. Remove header.
+LENGTHEN to 5200±15% — Delivered 4205 words. Budget 5200. 0.85×B = 4420. Serve card job: `desire was manufactured and fear of failing or succeeding is Trap-held tug-of-war; the body is a precision machine whose warning feelings are information, not bulbs to unscrew`.

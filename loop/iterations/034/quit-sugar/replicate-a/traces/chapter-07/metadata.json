@@ -1,0 +1,75 @@
+{
+  "model": "muse-spark-1.3-contributor",
+  "route": "opencode-go",
+  "latency_s": 163.987,
+  "usage": {
+    "input_tokens": 39749,
+    "output_tokens": 14819,
+    "total_tokens": 54568,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens_details": {
+      "reasoning_tokens": 10194
+    }
+  },
+  "failed_routes": {},
+  "chapter": 7,
+  "replicate": "a",
+  "slug": "quit-sugar",
+  "iteration": "034",
+  "chars": 23513,
+  "words_draft": 3750,
+  "words_final": 4336,
+  "words_by_round": [
+    3750,
+    4142,
+    4360,
+    4336
+  ],
+  "budget": 5000,
+  "review_rounds": 3,
+  "review_verdicts": [
+    "REVISE",
+    "REVISE",
+    "REVISE"
+  ],
+  "review_verdict": "CAP",
+  "final_status": "CAP",
+  "findings_by_round": [
+    [
+      "LENGTHEN",
+      "HEADER",
+      "MANTRA",
+      "UNASSIGNED-REFRAIN"
+    ],
+    [
+      "LENGTHEN"
+    ],
+    [
+      "HEADER"
+    ]
+  ],
+  "review_routes": [
+    "opencode-go",
+    "opencode-go",
+    "opencode-go"
+  ],
+  "review_latencies_s": [
+    44.113,
+    72.574,
+    36.951
+  ],
+  "rewritten": true,
+  "rewrite_routes": [
+    "opencode-go",
+    "opencode-go",
+    "opencode-go"
+  ],
+  "rewrite_latencies_s": [
+    63.702,
+    97.319,
+    50.062
+  ],
+  "draft_route": "opencode-go"
+}

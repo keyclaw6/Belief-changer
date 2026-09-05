@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 2377 words. Budget 6300. Range 5355-7245. Add ~3000+ words to serve the card job: "the energy lift is relief of a low the last dose created; real energy is the body, not the fix; BAD SUGAR is empty calories that nourish nothing and gift no energy the body did not already own; and escaping means the want is removed for good, not a resistance that fails the day the want comes back"
+HEADER — draft opens with workshop header before spoken body: "IN THIS CHAPTER — The 3pm desk, the top drawer, the ten-minute buzz, tight shoes by the door, the kitchen at dusk"

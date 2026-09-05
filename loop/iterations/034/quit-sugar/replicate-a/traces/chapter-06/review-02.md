@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with the workshop header `IN THIS CHAPTER`: "**IN THIS CHAPTER** — Cool market air at dawn, bread torn steaming, a plain table eaten hungry, broad hunger and narrow tug told apart" immediately after the chapter title. Remove the header; keep the numbered instruction `TRUST HUNGER AND SATISFACTION / Eat when hungry, stop when satisfied, enjoy real food.` which alone is not HEADER.

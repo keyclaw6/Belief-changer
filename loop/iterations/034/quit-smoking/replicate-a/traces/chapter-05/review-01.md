@@ -1,0 +1,4 @@
+REVISE
+LENGTHEN to B±15% — Delivered 3283 words. Budget 5000. Need 4250-5750. Add ~1000+ words serving card job “reward, taste and mild stop reading as gifts and start reading as stolen credit and compensated puffing” — teaching/paragraph/grocery-run pellet with credit returned, and vent-hole compensated puffing.
+HEADER — Draft opens with workshop header `IN THIS CHAPTER` after title: “IN THIS CHAPTER / The classroom door still warm from teaching...” Remove header block. The numbered instruction at end is allowed and is not the violation.
+UNASSIGNED-REFRAIN — Non-mantra phrase “Ask yourself, and answer only to yourself:” recurs 3× verbatim. Keep at most one; cut/rephrase the repeats.

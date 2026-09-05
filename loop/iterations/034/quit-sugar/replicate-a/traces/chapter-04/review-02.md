@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 3997 words. Budget 4800. 0.85xB = 4080. Delivered is below 0.85xB by 83 words. Add words to reach 4080-5520 serving card job "past failures prove the wrong method, not a broken self; strong will persisted against instinct" — e.g. expand diet-week diary / bragger-whinger proof, not reserved-later material.
+UNASSIGNED-REFRAIN — non-mantra phrase "There is only one honest answer" recurs 3x verbatim, plus 2x close variant "There is only one honest verdict." for 5x stem "There is only one honest". Keep at most one landing verdict; subtract repeats; do not invent a new mantra.

@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER`: `**IN THIS CHAPTER** / The kitchen diary with pencil counts, the brass lamp on the shelf...` Remove header block entirely.
+LENGTHEN to 3500±15% — Delivered 1322 words. Budget 3500. Range 2975-4025. Serve expanded words to card job: `cut down, special ones and tomorrow stop reading as safe compromises and start reading as trap kept alive` — five months free then one, cut-down diary creeping back up, and tomorrow-delay with genie/cliff, myths room and meta-inoculation intact.

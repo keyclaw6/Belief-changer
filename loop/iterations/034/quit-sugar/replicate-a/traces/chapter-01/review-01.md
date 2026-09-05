@@ -1,0 +1,3 @@
+REVISE
+- LENGTHEN to B±15% — Delivered 3147 words. Budget 4200. 0.85×B = 3570. 3147 is below 0.85×B. Add ~425-1680 words to reach B±15% [3570-4830]. Those words must serve the card job: "boxes BAD SUGAR, installs contract and eat promise, converts audience to participant; the fact the reader is holding this book means the decision is already made, and what follows is only good news | Resolves: is this another diet lecture."
+- HEADER — Draft opens body with workshop header: "**IN THIS CHAPTER** — The kitchen cupboard still full, the boxed meaning of BAD SUGAR, my own sweet years, the plain meal eaten hungry, the reading contract." Remove the `IN THIS CHAPTER` header line entirely.

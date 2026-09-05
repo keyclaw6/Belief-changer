@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER — The fridge diary, the ten-o-clock kitchen and the empty box, the bragger at work, the whinger on the sofa, the forbidden-must-have rebound, a few flat days.` Remove the header preview and open in spoken argument.

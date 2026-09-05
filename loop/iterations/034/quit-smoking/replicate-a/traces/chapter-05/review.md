@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `**IN THIS CHAPTER** — the cooling corridor outside the classroom, the paragraph desk and pushed-back chair, the grocery car park with the engine off, the meal table and the morning coffee cup, the white filter with its ring of tiny holes` before any spoken body. Remove the header; keep the numbered instruction `IGNORE ANY ADVICE THAT CONFLICTS WITH THIS BOOK` + rationale line as allowed spoken instruction, not a header.

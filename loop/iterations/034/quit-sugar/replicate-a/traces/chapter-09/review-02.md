@@ -1,0 +1,2 @@
+REVISE
+- LENGTHEN to B±15% — Delivered 5462 words. Budget 6800. Range 5780-7820. Add 320+ words serving the card job: "even the most seductive celebration sweet gave nothing; scene gave everything; perception can lie; this escape is for you first — set aside the industry and everyone else's feelings; reverse the brainwashing from both sides at once — see natural food as the marvellous thing it really is while the brainwashed favourite shows as the bland junk it always was"

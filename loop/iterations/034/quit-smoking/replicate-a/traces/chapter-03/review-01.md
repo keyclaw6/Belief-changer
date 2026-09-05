@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 2403 words. Budget 4500. 0.85xB = 3825, 1.15xB = 5175. Add ~1400+ words that serve the card's primary job: "reader stops weighing harm versus benefit and demands what benefit at all" / "leaves asking what good remains once credit is questioned" via listing own reasons aloud, then checking what cigarette added to food, pause, company.
+HEADER — draft opens with workshop header `IN THIS CHAPTER`: "IN THIS CHAPTER / The ledger on the kitchen table, the plate just cleared, the pause between jobs, the hug that will not let go." Remove the header block; keep spoken body and the numbered instruction `BEGIN BY FEELING GREAT TO BE ESCAPING` plus rationale line.

@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER — The meter on the wet pavement. The plastered heel. The day measured in fading doses.`
+LENGTHEN to B±15% — Delivered 2740 words. Budget 4500. Need 3825-5175. Additional words must serve card primary job: "relief stops reading as rise above normal and starts reading as brief return toward non-smoker baseline that guarantees next low" via concrete encounter "tracking a day of doses fading within minutes, meter needing coins."

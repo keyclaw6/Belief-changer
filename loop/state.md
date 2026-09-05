@@ -7,7 +7,7 @@
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 033 BASELINE dual-subject; 034 PRIMARY factory-speech via §B4 freedom-register)
-- **Last completed unit:** 034 writes in flight. Sugar CH-01–07; smoking CH-01–09. Both Go.
+- **Last completed unit:** 034 writes in flight. Sugar CH-01–09; smoking CH-01–10. Both Go. Sugar CH-10 and smoking CH-11 in A1 rewrite.
 - **Next unit:** Finish remaining chapters. Judge first subject that exits. PRIMARY factory-speech 20/18.
 
 ## Run authorization (founder, 2026-09-04)
@@ -59,3 +59,4 @@
 | 2026-09-05 14:50 | 034 hypothesis: §B4 Freedom-register ease-operators. Style-guide applied. | 034 dual-subject writes |
 | 2026-09-05 15:18 | 034 sugar CH-01–02; smoking CH-01–03 (more ACCEPT than 033). | rest of 034 writes |
 | 2026-09-05 16:12 | 034 sugar CH-01–07; smoking CH-01–09. Sugar CH-08 and smoking CH-10 in A1. | rest of 034 writes |
+| 2026-09-05 16:30 | Heartbeat: writers live. Sugar CH-01–09; smoking CH-01–10. Sugar CH-10 and smoking CH-11 in A1 rewrite. Both Go. | rest of 034 writes |

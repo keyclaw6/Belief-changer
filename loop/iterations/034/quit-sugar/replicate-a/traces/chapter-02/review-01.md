@@ -1,0 +1,3 @@
+REVISE
+- LENGTHEN to B±15% — Delivered 3624 words. Budget 5200. 0.85×B = 4420. Add ~800-2356 words to reach B±15% [4420-5980]. Those words must serve the card job: "you did not choose freely and are not weak; you were conned into a trap that removed choice" — 10pm kitchen reach, cupboard evidence, child-peach body authority.
+- HEADER — draft opens with the workshop header `IN THIS CHAPTER` followed by `The 10pm kitchen. The half-empty cupboard. The child with the peach.` Remove header and open in spoken body.

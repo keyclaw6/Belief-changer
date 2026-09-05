@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 1950 words. Budget 4500. Range 3825-5175. Add ~1900+ words to serve the card job "desire stops reading as my nature and starts reading as manufactured package plus fear both held by trap" — holding pack as day's supply box, white filter/mild theatre, and collapsing both failure and success fears.
+HEADER — Draft opens with workshop header "**IN THIS CHAPTER** — The shelf behind the till, the pack warm in the palm, the white filter and the mild word". Remove it; open in spoken body.

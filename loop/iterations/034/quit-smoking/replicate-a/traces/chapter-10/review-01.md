@@ -1,0 +1,4 @@
+REVISE
+- LENGTHEN to 4000±15% — Delivered 2423 words. Budget 4000. 0.85×4000=3400. Add ~1000+ words serving the card's primary job: "the most seductive cigarette stops surviving as exception and proves sneaking a ride on night, drink and friendship."
+- HEADER — Draft prints the workshop header `IN THIS CHAPTER` as opening block: "**IN THIS CHAPTER** / The late patio with heaters and string lights, the tray of cold drinks, the extended hand..."
+- UNASSIGNED-REFRAIN — Non-mantra phrase "while you still smoke as normal" recurs 3× verbatim: "look at it straight while you still smoke as normal" / "what actually happens while you still smoke as normal" / "in your own hand while you still smoke as normal." Subtract repeats; do not promote to mantra.

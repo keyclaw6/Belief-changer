@@ -1,0 +1,3 @@
+REVISE
+
+LENGTHEN to B±15% — Delivered 3554 words. Budget 4500. Lower bound 0.85×B = 3825. Add ~300+ words to reach 3825-5175. Those words must serve the card's primary job: "desire stops reading as my nature and starts reading as manufactured package plus fear both held by trap" — concrete encounter holding pack as day's supply box, noticing theatre of filter and mild promise, and fear chapter collapsing failure and success fears.
