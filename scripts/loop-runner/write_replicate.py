@@ -57,10 +57,13 @@ def word_count(text: str) -> int:
 
 
 def parse_budget(card: str, plan: str, n: int) -> int:
-    m = re.search(r"(?im)^Budget:\s*(\d+)\s*$", card)
+    m = re.search(r"(?im)^(?:[-*]\s*)?budget:\s*(\d+)\s*$", card)
     if m:
         return int(m.group(1))
     m = re.search(rf"CH-{n:02d}\s+(\d+)", plan)
+    if m:
+        return int(m.group(1))
+    m = re.search(rf"\bC{n:02d}\s+(\d+)", plan)
     if m:
         return int(m.group(1))
     raise SystemExit(f"no word budget for chapter {n}")

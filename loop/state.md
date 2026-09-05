@@ -8,7 +8,7 @@
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 026–027 KEEP + 030 KEEP + 031 KEEP accepted; 032 REVERT; A1+K1 cutover landed)
 - **Last completed unit:** Carr-native as-real reader-journey Easyway Ch6 PASS. Factory-token FAIL was setup (CH-07 I-07/Nipper/Smokescreen/M-F vs Carr text). Instrument holds when context matches the chapter.
-- **Next unit:** 033 BASELINE writes (quit-sugar + quit-smoking, replicate-a, A1). Then judge one subject at a time. No KEEP. Do not replay 020–024 / 028 / 029 / 032.
+- **Next unit:** 033 BASELINE writes in flight. Sugar live (ch01 draft+review). Smoking restarted after budget-parse fix. Then judge one subject at a time. No KEEP. Do not replay 020–024 / 028 / 029 / 032.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -48,3 +48,4 @@
 | 2026-09-05 11:25 | Smoking plan accepted r1 (`fit to write from`, 14 ch). Alignment + moves written. | PASS probe Ch6/Ch22 |
 | 2026-09-05 11:35 | PASS probe 8 calls. 7 PASS. reader-journey Easyway Ch6 FAIL compliance-missing (factory tokens vs Carr text). | founder: do not write 033 |
 | 2026-09-05 11:47 | As-real Ch6 journey PASS (Instruction NONE; little monster / nicotine trap / slightly empty, restless feeling). Original FAIL was setup. | 033 BASELINE writes |
+| 2026-09-05 11:52 | Smoking writer died: `no word budget for chapter 1` (`- budget: 3500` vs `Budget:`). Sugar still writing. Parser accepts `- budget:` / `C01 N`. | restart smoking writer |
