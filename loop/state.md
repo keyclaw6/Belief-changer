@@ -2,13 +2,13 @@
 
 ## Position
 
-- **Iteration:** 030
-- **Stage:** Decision
-- **Status:** IDLE
+- **Iteration:** 031
+- **Stage:** Writing
+- **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 026–027 KEEP + 030 KEEP accepted)
 - **Last completed unit:** 030 KEEP. factory-speech 13→9 / 16→7. Reviewer HEADER kept. Accepted snapshot 030 A (51753).
-- **Next unit:** No KEEP-eligible PRIMARY except willpower-lexicon 30/30 (not PRIMARY). Do not start willpower. Do not replay 028–030 header mechanisms.
+- **Next unit:** 031 write A/B. PRIMARY comparison `partial` 9/11. Plan-card Job tails CH-05/06/09/10 + CH-13 budget 3800→1700 (words to CH-05/09) + CH-01 Job ride.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -28,4 +28,5 @@
 | 2026-09-05 02:45 | 027 KEEP. comparison missing 4→1 / 4→0. | 028 |
 | 2026-09-05 03:58 | 028 INCONCLUSIVE. factory-speech 13→18 / 16→10. Style-guide restored. | 029 |
 | 2026-09-05 05:08 | 029 INCONCLUSIVE. factory-speech 13→9 / 16→18. Style-guide restored. | 030 |
-| 2026-09-05 06:10 | 030 KEEP. factory-speech 13→9 / 16→7. Reviewer HEADER kept. | no legal PRIMARY |
+| 2026-09-05 06:10 | 030 KEEP. factory-speech 13→9 / 16→7. Reviewer HEADER kept. | 031 |
+| 2026-09-05 06:40 | 031 started. Fable PRIMARY comparison `partial` 9/11. Job tails + CH-13 budget. | write A/B |

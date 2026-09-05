@@ -1,0 +1,74 @@
+diff --git i/production-books/quit-sugar/master-plan.md w/production-books/quit-sugar/master-plan.md
+index c71f4d60..5831f417 100644
+--- i/production-books/quit-sugar/master-plan.md
++++ w/production-books/quit-sugar/master-plan.md
+@@ -389,14 +389,14 @@ Saved reframe: growing-back reveal appears only in CH-13.
+ Structural responsibilities: redefinition box CH-01. Long testimony in main flow in own room CH-09. Myths Q&A distinct room CH-09. Meta-inoculation answering method-objection CH-09 into CH-10. Inhabit-the-ordinary-doing CH-06. Last ordinary treat CH-11. Ordinary life CH-12. Short recap CH-13. Prevalence once CH-08. No mid-book recap. No pre-endgame teaching manual.
+ 
+ Budgets (integer words):
+-CH-01 4200, CH-02 5200, CH-03 3800, CH-04 4800, CH-05 5200, CH-06 4800, CH-07 5000, CH-08 5200, CH-09 5800, CH-10 4400, CH-11 3600, CH-12 4200, CH-13 3800.
+-Arithmetic sum: 4200+5200+3800+4800+5200+4800+5000+5200+5800+4400+3600+4200+3800 = 60000. Planned total 60,000 within 54,000–66,000.
++CH-01 4200, CH-02 5200, CH-03 3800, CH-04 4800, CH-05 6300, CH-06 4800, CH-07 5000, CH-08 5200, CH-09 6800, CH-10 4400, CH-11 3600, CH-12 4200, CH-13 1700.
++Arithmetic sum: 4200+5200+3800+4800+6300+4800+5000+5200+6800+4400+3600+4200+1700 = 60000. Planned total 60,000 within 54,000–66,000.
+ 
+ ## 7. COMPACT CHAPTER CARDS
+ 
+ **CH-01 — The Invitation**
+ ID: CH-01 / Number: 1 / Title: The Invitation
+-Job: non-argument — definition — boxes BAD SUGAR, installs contract and eat promise, converts audience to participant | Resolves: is this another diet lecture.
++Job: non-argument — definition — boxes BAD SUGAR, installs contract and eat promise, converts audience to participant; the fact the reader is holding this book means the decision is already made, and what follows is only good news | Resolves: is this another diet lecture.
+ Arc-position: first third, contract open | Freedom low promise only, Demolition not yet.
+ Reader-state: wary sweet-lover half-hoping half-scoffing, clutching moderation rules | Encounter: reading these pages with a full cupboard, told not to change anything yet.
+ Mantras: M-A — "you have absolutely nothing to lose and everything to gain" / M-B — "easily, immediately and permanently" / FT-B — "All you have to do is follow all the instructions." / FT-C — "Eat what you want, when you are hungry, stop when you are satisfied, and never punish yourself again."
+@@ -458,7 +458,7 @@ Budget: 4800
+ 
+ **CH-05 — The Lift That Makes the Low**
+ ID: CH-05 / Number: 5 / Title: The Lift That Makes the Low
+-Job: enacted transition — the energy lift is relief of a low the last dose created; real energy is the body, not the fix | Resolves: I need sugar to function.
++Job: enacted transition — the energy lift is relief of a low the last dose created; real energy is the body, not the fix; BAD SUGAR is empty calories that nourish nothing and gift no energy the body did not already own; and escaping means the want is removed for good, not a resistance that fails the day the want comes back | Resolves: I need sugar to function.
+ Belief-now: enters believing sweet is fuel for afternoon; leaves knowing lift is spike-then-drop misread as energy.
+ Encounter: desk afternoon — sweet top-up, brief buzz, fog and second reach witnessed hour by hour.
+ Evidence: EV-01 lived lift-then-drop, no glucose diagnosis; EV-15 crash mechanism within contested limit; EV-05 dopamine re-fire magnitude limit; EV-13 deferred load population language.
+@@ -470,11 +470,11 @@ Mantras: M-D — "a genuine treat or fuel" / M-G — "that empty, twitchy, sligh
+ Scenes: SC-03 debut full staging; SC-07 debut full staging as tight sweet shoes.
+ Guardrails: safety CA-SAFE, EV-15 limit must not overclaim clinical low; originality: office-hour staging original.
+ Continuity: receives forgiven investigator; hands fuel-killed to CH-06.
+-Budget: 5200
++Budget: 6300
+ 
+ **CH-06 — Hunger, Satisfaction and Real Food**
+ ID: CH-06 / Number: 6 / Title: Hunger, Satisfaction and Real Food
+-Job: enacted transition — inhabit hunger, satisfaction and real food as favourite; eating itself is joy without BAD SUGAR | Resolves: without sweets eating will be grey.
++Job: enacted transition — inhabit hunger, satisfaction and real food as favourite; eating itself is joy without BAD SUGAR; voice the reader's suspicion that "favourite food" is a play on words and answer it flat — there is no catch, the pleasure is real | Resolves: without sweets eating will be grey.
+ Belief-now: enters fearing food joy was sugar; leaves having inhabited ordinary hunger satisfied by real meal as favourite.
+ Encounter: plain favourite meal eaten hungry — market vegetables, fresh bread, fruit — noticed, savoured, stopped at satisfied.
+ Evidence: EV-16 body manufactures glucose, no diet prescription; EV-03 reward frame limit not forbidding sweet food enjoyment.
+@@ -525,7 +525,7 @@ Budget: 5200
+ 
+ **CH-09 — The Sweetest Moment**
+ ID: CH-09 / Number: 9 / Title: The Sweetest Moment
+-Job: enacted transition — even the most seductive celebration sweet gave nothing; scene gave everything; perception can lie; this escape is for you first — set aside the industry and everyone else's feelings | Resolves: but the cinema / birthday chocolate is real love.
++Job: enacted transition — even the most seductive celebration sweet gave nothing; scene gave everything; perception can lie; this escape is for you first — set aside the industry and everyone else's feelings; reverse the brainwashing from both sides at once — see natural food as the marvellous thing it really is while the brainwashed favourite shows as the bland junk it always was | Resolves: but the cinema / birthday chocolate is real love.
+ Belief-now: enters guarding one precious exception; leaves knowing exception was scene sneaking a ride.
+ Encounter: cinema lights dim, laughter, shared chocolate — same warmth replayed without dose, sweetness unchanged.
+ Evidence: EV-03 reward frame, not forbidding enjoyment; EV-18 split honesty narrow window, not adult course; EV-10 contested honesty.
+@@ -538,11 +538,11 @@ Scenes: SC-05 debut full staging; SC-10 debut full enactment as perception test.
+ Structure: strongest-case room plus perception enactment plus myths Q&A battery plus embedded long-form testimony in own room in main flow.
+ Guardrails: safety CA-SAFE; originality: cinema staging and tea-test wording original, single staging only.
+ Continuity: receives manufactured-desire cleared; hands exception-killed to CH-10.
+-Budget: 5800
++Budget: 6800
+ 
+ **CH-10 — No Safe Sweet**
+ ID: CH-10 / Number: 10 / Title: No Safe Sweet
+-Job: enacted transition — inside BAD SUGAR there is no safe cut-down, special occasion, tomorrow or substitute; totality is only stable state | Resolves: I'll allow Fridays / just one / I'll wean.
++Job: enacted transition — inside BAD SUGAR there is no safe cut-down, special occasion, tomorrow or substitute; totality is only stable state; the substitute idea itself is the flaw — swap the product, sweeteners included, and you remain a user, still hooked | Resolves: I'll allow Fridays / just one / I'll wean.
+ Belief-now: enters negotiating carve-outs; leaves knowing carve-out keeps belief alive.
+ Encounter: Friday-allowance week — anticipation, intensified glow, creep to Thursday and Saturday.
+ Evidence: EV-02 one-bite carries binge, no permanent helplessness; EV-08 schedule trap; FT-E verdict invoked via token.
+@@ -596,4 +596,4 @@ Scenes: none new; no token-echo needed.
+ Structure: short recap list of spoken imperatives without callbacks; outward imperative; saved reframe debut: sweetness stolen now returned, growing not quitting.
+ Guardrails: safety CA-SAFE routed; originality: closing reframe appears here only.
+ Continuity: receives lived freedom; hands reader to life.
+-Budget: 3800
++Budget: 1700
