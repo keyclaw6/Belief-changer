@@ -8,7 +8,7 @@
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`). Factory is Muse Spark 1.3; this chat is auto-research only.
 - **Last completed unit:** 035 QUANTIFY. Smoking factory-speech 12→3; sugar 6→8. Restored: no. §B5 op 9 stays.
-- **Next unit:** 036 Muse factory sessions (quit-sugar + quit-smoking). Hypothesis applied: chapter-reviewer `RE-ARGUMENT`. Do not write chapters in this chat.
+- **Next unit:** Wait FACTORY DONE both (sugar 13, smoking 14). Then one judge at a time. Do not write chapters in this chat.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -74,3 +74,4 @@
 | 2026-09-05 19:55 | 035 QUANTIFY. Smoking factory-speech 12→3; sugar 6→8. Restored: no. | 036 hypothesizer |
 | 2026-09-05 20:20 | 036 hypothesis applied: reviewer `RE-ARGUMENT` (journey 15/16). Plan reuse. | start Muse factory |
 | 2026-09-05 20:24 | `opencode run --agent factory` failed (Go CLI opt-in + db lock). Factory used write_replicate.py A1 (factory-orchestrator fallback). Both live. | wait FACTORY DONE |
+| 2026-09-05 20:32 | 036 CH-01 ACCEPT both (sugar 3738/4200, smoking 3112/3500, 2 rounds, Go). HEADER only; no RE-ARGUMENT on ch1. Both on CH-02 draft. | rest of 036 writes |
