@@ -3,12 +3,12 @@
 ## Position
 
 - **Iteration:** 030
-- **Stage:** Writing
+- **Stage:** Judging
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 026–027 KEEP accepted)
-- **Last completed unit:** 029 INCONCLUSIVE. 030 hypothesis: reviewer HEADER finding (vs 027 factory-speech 13/16).
-- **Next unit:** 030 writes, then judge A when write A exits.
+- **Last completed unit:** 030 writes done (A 51753 / B 51097, floor met).
+- **Next unit:** Judge A (j030a). Start judge B after judge A exits.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -29,3 +29,4 @@
 | 2026-09-05 03:58 | 028 INCONCLUSIVE. factory-speech 13→18 / 16→10. Style-guide restored. | 029 |
 | 2026-09-05 05:08 | 029 INCONCLUSIVE. factory-speech 13→9 / 16→18. Style-guide restored. | 030 |
 | 2026-09-05 05:10 | 030 hypothesis: reviewer HEADER finding. Writers starting. | 030 writes |
+| 2026-09-05 05:50 | 030 writes done 51753/51097. Starting judge A. | j030a |
