@@ -5,6 +5,7 @@
 - **Iteration:** 035
 - **Stage:** Judging
 - **Status:** IN PROGRESS
+- **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`). Factory is Muse Spark 1.3; leftover 035 `write_replicate.py` both exited. This chat judges only (auto-research).
 - **Last completed unit:** 035 leftover writes DONE (sugar 13/13 55356w; smoking 14/14 56649w; I-02 in smoking CH-02).
 - **Next unit:** 035 smoking panel, then sugar panel. KEEP if smoking factory-speech 12→≤8 and sugar 6 does not rise above band.
