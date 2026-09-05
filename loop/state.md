@@ -72,4 +72,5 @@
 | 2026-09-05 19:10 | Founder: this chat is not the factory. Factory = Muse Spark 1.3 conversation (plan loop then chapter loops). | do not drive writes here |
 | 2026-09-05 19:38 | Leftover 035 writes DONE. Sugar 55356w 13/13. Smoking 56649w 14/14. I-02 present. Start smoking panel. | j035-quit-smoking |
 | 2026-09-05 19:55 | 035 QUANTIFY. Smoking factory-speech 12→3; sugar 6→8. Restored: no. | 036 hypothesizer |
-| 2026-09-05 20:20 | 036 hypothesis applied: reviewer `RE-ARGUMENT` (journey 15/16). Plan reuse. Start Muse factory sessions. | f036 both subjects |
+| 2026-09-05 20:20 | 036 hypothesis applied: reviewer `RE-ARGUMENT` (journey 15/16). Plan reuse. | start Muse factory |
+| 2026-09-05 20:24 | `opencode run --agent factory` failed (Go CLI opt-in + db lock). Factory used write_replicate.py A1 (factory-orchestrator fallback). Both live. | wait FACTORY DONE |
