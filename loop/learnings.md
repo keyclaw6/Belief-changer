@@ -290,4 +290,12 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Lesson:** factory-speech 20→6 / 18→12. Ease-operator grep 0/0 both and census fell with it. Length 53366/56466. Sugar blocking 0; smoking CH-01 voice FAIL method-promise-hedge 1 (one-book, not a veto). Comparison partial 2→4 / 9→11 (noted). New floors: factory-speech no longer ≥8 both (6/12).
 **Next direction:** factory-speech residual is smoking-worse (12); sugar 6 is below band. willpower-lexicon 26/28 is not PRIMARY. Do not replay 028/029/030/032. Do not replay 020–024. Do not start a willpower-lexicon PRIMARY.
 
+### iter-035 — §B5 permission paradox spine-owned
+**Hypothesis:** PRIMARY scope quit-smoking: replace style-guide §B5 operator 9 so standing permission is spine-owned, not a per-chapter tag, so smoking factory-speech 12→≤8. Sugar 6 is non-regression (≤7).
+**Change:** `prompts/style-guide.md` (§B5 operator 9). Plan reused both. Writer Spark 1.3 Go, A1 K=3. Judges composer-2.5, 53+57.
+**Verdict:** QUANTIFY
+**Lesson:** smoking factory-speech 12→3 (PRIMARY hit). Sugar 6→8 (non-regression miss). Length 55356/56649. Blocking 0 both. Restored: no. A1 sugar 9 ACCEPT / 4 CAP; smoking 11 ACCEPT / 3 CAP.
+**Next direction:** §B5 op 9 stays. Journey re-argument 15/16 is ≥8 both (KEEP-eligible). factory-speech 8/3 is not ≥8 both. willpower-lexicon 33/21 not PRIMARY. Do not replay 028–032 / 020–024.
+
+
 

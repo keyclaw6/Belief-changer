@@ -545,4 +545,19 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 
 **What this opens next.** factory-speech 6/12 is no longer ≥8 both. willpower-lexicon 26/28 is not PRIMARY. Next factory-speech mechanism must target the residual (smoking-worse), not 028–032. Do not replay 020–024.
 
+### iter-035 — §B5 permission paradox spine-owned  ·  2026-09-05  ·  QUANTIFY
+
+**Hypothesis.** If §B5 operator 9 makes standing permission spine-owned (owning chapter + recap) instead of a per-chapter tag, smoking voice `factory-speech` falls 12→≤8. Sugar 6 is non-regression (≤7).
+
+**Change.** One operator in `prompts/style-guide.md` §B5 (see `loop/iterations/035/change.diff`). Plans reused. Writer Spark 1.3 Go, A1 K=3. Panel 53+57 composer-2.5.
+
+**What happened.** factory-speech 6→8 (sugar) and 12→3 (smoking). Words 55356 / 56649. Blocking 0 both. Smoking `as normal` 17→3 with census drop. I-02 present in smoking CH-02. A1 sugar 9 ACCEPT / 4 CAP; smoking 11 ACCEPT / 3 CAP.
+
+**Verdict & why.** QUANTIFY. PRIMARY (smoking) hit. Sugar non-regression failed (6→8). No restore trigger (PRIMARY did not worsen in both; no new blocking both; length floors met). Change stays.
+
+**What we learned.** Spine-owning permission kills the smoking tag refrain and the census class. Sugar picked up factory-speech elsewhere (8). Dual-subject KEEP needs both the PRIMARY drop and the non-regression ceiling.
+
+**What this opens next.** Carried forward: §B5 op 9. Journey re-argument 15/16 is ≥8 both. factory-speech 8/3 is not. willpower-lexicon 33/21 not PRIMARY. Do not replay 028–032 / 020–024.
+
+
 

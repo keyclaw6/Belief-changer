@@ -3,12 +3,12 @@
 ## Position
 
 - **Iteration:** 035
-- **Stage:** Judging
+- **Stage:** Recorded
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
-- **Worktree:** none (running from `cursor/factory-instrument-halt-a530`). Factory is Muse Spark 1.3; leftover 035 `write_replicate.py` both exited. This chat judges only (auto-research).
-- **Last completed unit:** 035 leftover writes DONE (sugar 13/13 55356w; smoking 14/14 56649w; I-02 in smoking CH-02).
-- **Next unit:** 035 smoking panel, then sugar panel. KEEP if smoking factory-speech 12→≤8 and sugar 6 does not rise above band.
+- **Worktree:** none (running from `cursor/factory-instrument-halt-a530`). Factory is Muse Spark 1.3; this chat is auto-research only.
+- **Last completed unit:** 035 QUANTIFY. Smoking factory-speech 12→3; sugar 6→8. Restored: no. §B5 op 9 stays.
+- **Next unit:** 036 hypothesizer. Then apply and start Muse factory sessions — do not write chapters in this chat.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -71,3 +71,4 @@
 | 2026-09-05 18:51 | Sugar CH-04–06 (CH-06 ACCEPT). Smoking CH-06–08 ACCEPT. Sugar CH-07 / smoking CH-09 in A1. Both Go. | rest of 035 writes |
 | 2026-09-05 19:10 | Founder: this chat is not the factory. Factory = Muse Spark 1.3 conversation (plan loop then chapter loops). | do not drive writes here |
 | 2026-09-05 19:38 | Leftover 035 writes DONE. Sugar 55356w 13/13. Smoking 56649w 14/14. I-02 present. Start smoking panel. | j035-quit-smoking |
+| 2026-09-05 19:55 | 035 QUANTIFY. Smoking factory-speech 12→3; sugar 6→8. Restored: no. | 036 hypothesizer |
