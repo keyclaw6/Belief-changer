@@ -2,13 +2,13 @@
 
 ## Position
 
-- **Iteration:** 037
-- **Stage:** decision recorded
-- **Status:** IDLE
+- **Iteration:** 038
+- **Stage:** dual-subject writes
+- **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`). Factory is Muse Spark 1.3; this chat is auto-research only.
 - **Last completed unit:** 037 KEEP. Journey re-argument 8→6 / 9→5. Residual 6/5 below ≥8 both. LENGTHEN expansion assignment promoted.
-- **Next unit:** 038 hypothesizer (Astra; Fable on quota/no-response). Empty KEEP-eligible intersection (willpower locked). Do not replay 037 LENGTHEN, 036 RE-ARGUMENT, 020–024, 028–032.
+- **Next unit:** 038 writes (OVERCLAIM repair: sugar factory-speech 10, smoking non-regression ≤6). Sleep until FACTORY DONE both, then judge (one at a time).
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -77,3 +77,4 @@
 | 2026-09-05 22:50 | 036 KEEP. Journey re-argument 15→8 / 16→9. Residual 8/9. Hypothesizer 037 (Astra). | 037 writes |
 | 2026-09-05 23:00 | 037 Astra hypothesis applied (LENGTHEN expansion assignment). Start both writes. | f037 writes |
 | 2026-09-06 01:05 | 037 KEEP. Journey re-argument 8→6 / 9→5. Sugar CH-01 method-promise-hedge 1 (not a veto). | 038 hypothesizer |
+| 2026-09-06 01:12 | 038 Astra hypothesis applied (OVERCLAIM repair, sugar factory-speech). Start both writes. | f038 writes |
