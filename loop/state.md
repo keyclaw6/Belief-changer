@@ -3,12 +3,12 @@
 ## Position
 
 - **Iteration:** 035
-- **Stage:** Hypothesis
+- **Stage:** Writing
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
-- **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 033 BASELINE dual-subject; 034 PRIMARY factory-speech via §B4 freedom-register)
-- **Last completed unit:** 034 KEEP. factory-speech 20→6 / 18→12. Snapshots in production-books.
-- **Next unit:** 035 hypothesizer. factory-speech no longer ≥8 both (6/12). Residual smoking 12 as PRIMARY scope. Do not replay 028–032. willpower-lexicon not PRIMARY.
+- **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 034 KEEP §B4; 035 PRIMARY smoking factory-speech via §B5 op 9)
+- **Last completed unit:** 035 hypothesis applied (§B5 permission paradox). Dual-subject writes starting.
+- **Next unit:** 035 writes. KEEP if smoking factory-speech 12→≤8 and sugar 6 does not rise above band.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -63,3 +63,4 @@
 | 2026-09-05 17:07 | Sugar write DONE 13/13. Smoking still on last chapter. Start sugar panel. | j034-quit-sugar |
 | 2026-09-05 17:15 | Sugar PANEL DONE. Smoking write DONE 14/14. Start smoking panel. | j034-quit-smoking |
 | 2026-09-05 17:22 | 034 KEEP. factory-speech 20→6 / 18→12. Ease grep 0/0. | 035 hypothesizer |
+| 2026-09-05 17:36 | 035 PRIMARY: §B5 op 9 permission paradox. Dual-subject writes started. | 035 writes |
