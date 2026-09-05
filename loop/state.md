@@ -2,13 +2,13 @@
 
 ## Position
 
-- **Iteration:** 029
-- **Stage:** Decision
-- **Status:** IDLE
+- **Iteration:** 030
+- **Stage:** Writing
+- **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 026–027 KEEP accepted)
-- **Last completed unit:** 029 INCONCLUSIVE. factory-speech 13→9 / 16→18. Style-guide restored.
-- **Next unit:** 030 hypothesis from 027 factory-speech 13/16 (new component: chapter-reviewer, not style-guide).
+- **Last completed unit:** 029 INCONCLUSIVE. 030 hypothesis: reviewer HEADER finding (vs 027 factory-speech 13/16).
+- **Next unit:** 030 writes, then judge A when write A exits.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -28,3 +28,4 @@
 | 2026-09-05 02:45 | 027 KEEP. comparison missing 4→1 / 4→0. | 028 |
 | 2026-09-05 03:58 | 028 INCONCLUSIVE. factory-speech 13→18 / 16→10. Style-guide restored. | 029 |
 | 2026-09-05 05:08 | 029 INCONCLUSIVE. factory-speech 13→9 / 16→18. Style-guide restored. | 030 |
+| 2026-09-05 05:10 | 030 hypothesis: reviewer HEADER finding. Writers starting. | 030 writes |
