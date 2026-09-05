@@ -1,118 +1,116 @@
 Chapter 13
 GET ON WITH ENJOYING LIFE
 
-IN THIS CHAPTER
-Photographed list on the kitchen table, closed book, meal ahead, open street in morning light
+*You have not lost sweetness at all — sweetness was taken from you and now it has been handed back.*
 
-*You lose nothing by leaving BAD SUGAR; sweetness comes home to you and life waits to be lived.*
+IF YOU STARTED ON THIS PAGE
 
-IF YOU OPENED HERE, START AT THE BEGINNING
+If you opened the book here, close this page and start at the beginning.
 
-If you opened the book here, put this page down for a moment. This is not the method. This is the pocket memory of free eaters.
+I mean that kindly and I mean it firmly. This page is saved reminders, not the method. Photographed on its own it will look like orders. Read in order it is joy. The freedom you want lives in the seeing that comes before, page by page, till the last ordinary treat and the vow. Go to the first page with an open mind and read through as you live. Then come back here and this list will sing.
 
-You cannot get free from a list. Freedom came from seeing, page by page, that BAD SUGAR gave you nothing and took everything while calling it a treat. The list keeps what seeing won. The seeing must come first.
+Do not try to use this last page as a shortcut. A list cannot do the seeing for you. The seeing is what removes the want, and the want removed is what makes the list easy. Read first, then carry. That order matters. You have absolutely nothing to lose and everything to gain by reading it whole.
 
-So start at the first page and read with an open mind and an ordinary appetite. Carry on exactly as normal while you read. Let each room do its work. Question what you think you know about sweetness and let the answer arrive as your own discovery. When you reach your last ordinary treat you will vow with joy because you mean it, not because a list told you to. All you have to do is follow all the instructions.
+You who have read through, basket easy, head clear, morning yours — this is your pocket memory. Take a picture of it. Close the book. Go and eat.
 
-If you have read and you are free, stay with me for a few minutes more. Photograph the list at the end, close the book, and walk toward supper. I will not keep you in lessons. I will not keep you in watching. I will hand you back your life.
+We were all conned together. We all circled the same bright paper. We all paid the same evening tax. You have seen the Sugar Trap for what it is and the Sweet Con for what it is. You need no further teaching to stay free. You need only to live.
 
-We all came here hunted, counting bites, borrowing lift from fog to pay fog. We woke coated. We hunted evenings. We called hollow love and fog fuel. You came to get free. You are free. Let this last chapter make that plain and outward, then let the book close and the eater live.
+WHAT YOU CARRY
 
-SWEETNESS WAS STOLEN. NOW IT IS HANDED BACK
+You carry no rules for hard days. You carry no clock and no arithmetic. You carry seeing.
 
-Hear the whole truth as settled fact.
+BAD SUGAR once posed as love and fuel and reward. You know now it did plenty TO your mouth and mood and teeth and hours and did nothing FOR your hunger or joy. The lift was a short buzz billed as fog. The treat was paper round dull eating. The comfort was fog laid over trouble with a fresh low billed for tomorrow.
 
-You are not leaving sweetness behind. Sweetness was taken from you.
+Do you miss that bargain? Ask it plain with clear eyes.
 
-Think with your own clear mouth. When did a loud hit ever taste as sweet as hunger tastes food? A peach eaten hungry by a small child, juice running, stopped mid-bite for play — that is sweet. Bread, warm from the oven, chewed slowly — that is sweet. Berries, soup, warm milk, market fruit in sun — that is sweet. The body knew sweetness long before bright packs taught it to shout.
+Did that dose ever carry you through the day? Or did it carry you to the next dose and drop you heavier?
 
-We were conned into calling coating sweet. We paid for buzz with fog, for seconds of loud with hours flat, and called the debt a treat. We chased family size to feel the first second again and felt it less each time. We told ourselves sugary somethings get me through, a treat when you feel you deserve one, celebrating with chocolate, and each time the scene gave the warmth and the dose only rode.
+Would a free eater call that bright paper pleasure? Or would a free eater call that slavery with slogans?
 
-Ask, and answer honest:
+There is only one honest answer. You know. That knowing holds you without hands.
 
-When did the dose ever add love to company that was already laughing?
+All you have to do is follow all the instructions. You have followed them. Keep them photographed and live inside them lightly. They are not chains. They are the shape of seeing.
 
-When did the dose ever add energy that lasted past the hour?
+Do not turn them into a course to re-study every night. They are not homework. They are what you already saw, kept small enough to fit in a pocket. Glance and smile, then lift your eyes to life. The list does not keep you free. The seeing keeps you free, and the list only reminds you that you see.
 
-When did the dose ever close hunger, rather than open hollow that called for more?
+If you live with diabetes or take medicine that affects blood sugar or appetite, are pregnant, or live with an eating disorder past or present, follow your clinician first and use this book for the belief only.
 
-There is only one honest answer. It added nothing. It does plenty TO you. It does nothing FOR you in the only place that matters.
+THE SWEETNESS HANDED BACK
 
-See what that means. The Sugar Trap did not lend you joy and ask it back. It stole natural sweetness, dulled hunger, coated the mouth, fogged afternoons, and sold you relief from its own low as if relief were gift. It taught the tongue to want loud and the belly to forget quiet. It taught bright packs to glow where hunger once spoke clear. Now the thief is gone. Taste returns. Hunger returns. Satisfaction returns. Mornings wake clean. Food sings plain.
+Hear the last truth, the one I saved for this hour.
 
-This was never quitting. This was growing back into the eater you were before the con found you.
+You have not given up sweetness. Sweetness was stolen from you by the Trap and has now been handed back.
 
-I tell you as one who watched thousands cross: they expected grey and found colour. They expected a gap and found the day wider. They laughed to find fruit sweet again, bread rich again, meals closed with thanks again. They sat at plain tables and found talk easier, cheeks warmer, bellies quieter, evenings longer without a timetable of reaches. You will laugh the same laugh. It is a wonderful laugh, free and surprised, the laugh of home.
+Think how a hungry child eats. Bright bite, full stop, run off to play. Taste noticed. Enough heard. Hands forgetting. That was you before the slogans and the bliss-point packs and the checkout ambush taught your mouth to hunt. That eater did not die. That eater was buried under doses and has now grown back.
 
-Which life do you want? A life hooked, hunting and fogged for the rest of your life, paying every day for hollow called sweet? Or a life free, hungry and satisfied and clear for the rest of your life, enjoying real food as favourite with nothing hunting underneath? You have chosen. Hold the choice with joy and never reopen it.
+This was never about quitting. This was about growing back into the eater you were.
 
-Feel the size of that choice for a moment, then let it rest. Hooked means every morning coated, every aisle a hunt, every evening a bargain, every year the same low rented as relief. Free means hunger that asks and thanks, shops walked with clear eyes, suppers eaten with appetite and left with thanks, streets brighter because no buzz sits between you and them. One road narrows. One road widens. You stand on the wide one now. Walk it outward and do not look back for orders.
+We believed sweet coating made life sweeter. The fact is coating laid fog over taste and called the fog glow. Take the fog away and taste brightens. Hunger sharpens the first bites. Satisfaction quiets the last bites. Fruit delights because noticed. Bread delights because hunger meets it. A meal closes and frees attention for talk and work and sky. A dose echoes and holds attention for hunt and fog. One closes. The other bills. You have chosen the close.
 
-GET ON WITH ENJOYING YOUR LIFE
+That is why ordinary food now surprises you. Not because you have trained yourself to like it. Because you have stopped dulling it. The tongue was never broken. The signal was only drowned. Wash the coating away and the signal sounds clear again, honest and simple, asking for food when hungry and quieting when satisfied. You did not learn a new taste. You recovered an old one.
 
-So get on with enjoying your life.
+"I will need ongoing teaching to stay free." Do you hear that whisper? That is dead script, not your reasoning.
 
-You need no more teaching to stay free. You need no vigil, no counting, no fear of shops or birthdays or tired evenings. You need the same life, lived clear. Eat what you want, when you are hungry, stop when you are satisfied, and never punish yourself again.
+Did teaching make your mornings clear? Or did seeing make your mornings clear?
 
-Change nothing else. Same kitchen. Same work. Same people. Same streets. Walk aisles with clear eyes and pity where you once felt envy. Sit evenings whole and answer any passing flash with relief. Let the body do what it does perfectly when no low sits underneath demanding lift.
+Would more lessons keep you free? Or would living free keep you free?
 
-Mornings will prove it first. You wake clean. You eat hungry. You stop satisfied. You walk out with light hands and a clear mouth. Shops will prove it next. Bright packs glow by design, small bars whisper at the till, bottles promise lift, and you hear them as sound, not as orders. Tables will prove it most. Soup warming, bread satisfying, vegetables sweet in their own true way, fruit closing with thanks — hunger leading, satisfaction closing, no loud hit shouting over either.
+Could a child who runs from a peach to play need a lecture to stay free? Or does the child stay free because eating closed and play calls louder?
 
-You will think of BAD SUGAR at times. Let the thought come. A thought is weather passing, not an order. Do not scold it. Do not chew it. Greet it as news of a dead enemy and think with warmth from the belly:
+You know. Seeing keeps you. Living proves it.
+
+Picture the two lives and choose which rest you want. Hooked, it meant circling the cupboard and the till for the rest of your life. Free, it means eating noticed and walking light for the rest of your life. Same hours. Opposite emotion. Only celebration holds.
+
+That is why there is no loss to mourn. A thief returned what was yours. You do not thank the thief. You do not visit the cell to check the door. You rejoice you are out and get on with the marvellous ordinary.
+
+GO AND LIVE
+
+So go and live. That is the whole order now.
+
+Eat what you want, when you are hungry, stop when you are satisfied, and never punish yourself again.
+
+Eat hungry. Stop at satisfied. Drink water when thirst calls. Rest when tired calls. Feel life clean when feeling calls. Change nothing else in your life. Same kitchen. Same street. Same tables. Same birthdays. Freedom lets the old life shine without fog.
+
+I tell you as one who stood where you stand and as one who has watched thousands stand there — you are free the moment the belief lifts, not after some test of time. Do not wait to be free. You already are. Rejoice at once.
+
+Do not measure this freedom by hours or days. It is not a streak to protect. It is a sight to enjoy. You do not hold it up with effort. You look out through it with relief. Mornings stay clear because no dose writes on them. Shops stay quiet because no hum runs under them. Meals close because hunger is heard. Evenings hold because attention stays whole. That is not vigilance. That is ease doing its own work.
+
+And the moment BAD SUGAR crosses your mind, in any form, at any hour, for any reason, think at once with full chest and grin:
 
 BRILLIANT! I'M FREE!
 
-Feel what that does. The old flash said loss. The answer says gain. Same flash, opposite emotion. One keeps slavery. One celebrates escape. Joy tells the mind there is nothing to solve, and thoughts arrive less often until whole weeks pass without one. When one comes after long clear time, it arrives as pity for trapped users, then as relief, then as nothing at all. Freedom becomes ordinary, which is the most marvellous thing of all.
+Think it in the shop. Think it at the party. Think it on the tired evening. Think it and move on with ease. It will fire faster each time till it fires on its own. That joyful thought guards the belief and the behaviour follows with ease.
 
-Do not preach. Live free where all can see. Eat with appetite and stop with thanks. Laugh at birthdays without a wrapper in the hand. Meet the hard day with rest and soup and sleep, not with coating that borrows softness from tomorrow. Meet the bright day with hunger and sun and talk, not with buzz that rents joy for ten minutes. Visible ease does the recruiting that words cannot.
+Close the book now. Leave others free. Let visible ease do the talking. Love the person, hate the con. Offer the book if asked. Drop the subject if pressed. No preaching at the table. No debate on the sofa. No envy for circling hands, only warm pity and glad relief that you walk clear.
 
-I promise you with total authority: you have absolutely nothing to lose and everything to gain by staying free, easily, immediately and permanently, from this moment on. The con is dead. The eater lives. The sweetness you thought lived in packs lives in hunger met, in food enjoyed, in mornings clear and evenings whole.
+Breakfast waits. Dinner waits. Mornings, shops, meals with ease — ordinary, clear, yours. Get on with enjoying your life.
 
-Close the book. Keep the list. Go to your meal hungry. Walk the open street with light step and clear eyes. Life waits, marvellous and plain and yours.
-
-SUMMARY
-- If you landed here first, this page is memory only. Start at the beginning and read whole to get free.
-- Sweetness was stolen by the Trap and is handed back now. Growing back, not losing, is what happened.
-- Hunger and satisfaction lead from here. Real food enjoyed hungry is favourite.
-- Any passing sweet thought is a dead enemy. Answer with relief and live outward.
-- Photograph this list. It is all you need to keep:
-
-KEEP AN OPEN MIND
+**SUMMARY**
+1. KEEP AN OPEN MIND
 Question what you think you know about sweetness.
-
-DON'T STOP OR CUT DOWN UNTIL YOU FINISH
+2. DON'T STOP OR CUT DOWN UNTIL YOU FINISH
 Carry on exactly as normal while you read.
-
-JUDGE ONLY BY WHAT IT DOES FOR YOU
+3. JUDGE ONLY BY WHAT IT DOES FOR YOU
 Forget harm versus benefit and ask for the benefit.
-
-NEVER BLAME YOURSELF AGAIN
+4. NEVER BLAME YOURSELF AGAIN
 Every failure was the method, never you.
-
-BEGIN WITH ELATION, NOT DREAD
+5. BEGIN WITH ELATION, NOT DREAD
 You are escaping, not losing.
-
-TRUST HUNGER AND SATISFACTION
+6. TRUST HUNGER AND SATISFACTION
 Eat when hungry, stop when satisfied, enjoy real food.
-
-SEE THE GRUMBLE AS DYING, NOT DEMANDING
+7. SEE THE GRUMBLE AS DYING, NOT DEMANDING
 That feeling is the Nibbler starving.
-
-IGNORE ANY ADVICE THAT CONFLICTS WITH THIS METHOD
+8. IGNORE ANY ADVICE THAT CONFLICTS WITH THIS METHOD
 Other voices rebuild the Con.
-
-IGNORE ANYONE WHO QUIT BY WILLPOWER
+9. IGNORE ANYONE WHO QUIT BY WILLPOWER
 Their struggle was the wrong method talking.
-
-NEVER KEEP A SPECIAL SWEET
+10. NEVER KEEP A SPECIAL SWEET
 One exception keeps the whole Trap alive.
-
-TAKE YOUR LAST ORDINARY TREAT AND VOW FREEDOM
+11. TAKE YOUR LAST ORDINARY TREAT AND VOW FREEDOM
 Pay attention to the ugliness, then rejoice you are free.
-
-NEVER REOPEN THE DECISION
+12. NEVER REOPEN THE DECISION
 A passing thought is a dead enemy, not an order.
 
-Close the book and get on with enjoying your life:
+Keep this list. Close the book. Live free.
 
 BRILLIANT! I'M FREE!

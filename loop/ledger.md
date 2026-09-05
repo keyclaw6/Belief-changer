@@ -516,3 +516,18 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Deleting the required header from the writer contract does kill the header. The replacement instruction-bookkeeping sentence is itself factory-speech. Grep for `IN THIS CHAPTER` going to 0 is not KEEP.
 
 **What this opens next.** Do not replay this writer-anatomy change. PRIMARY stays 031 floors 14/10. Founder asked to stop small same-book iterations and cut over to a reviewer-until-ACCEPT loop plus dual-subject (sugar + Easyway smoking). That is a PROGRAM/HARNESS gate — do not start 033 on the old two-sugar protocol.
+
+### iter-033 — dual-subject BASELINE (A1 + K1)  ·  2026-09-05  ·  BASELINE
+
+**Hypothesis.** None — measurement after A1+K1 cutover.
+
+**Change.** None. Factory files at 031 KEEP. Sugar 13-chapter plan reused. Smoking 14-chapter plan accepted. Writer Spark 1.3 Go with A1 (K=3). Panel 53+57 composer-2.5.
+
+**What happened.** All lanes PASS, blocking 0/0. Words 53208 / 54277. factory-speech 20 / 18. willpower-lexicon 40 / 31. journey re-argument 16 / 8. comparison missing 0 / 2, partial 2 / 9. Sugar A1 mostly CAP; smoking mixed ACCEPT/CAP. Easyway PASS probe: factory-token Ch6 journey FAIL was setup; Carr-native as-real PASS.
+
+**Verdict & why.** BASELINE. No KEEP. Dual-subject floors set.
+
+**What we learned.** Dual-subject + A1 produces all-PASS books at length. factory-speech survives HEADER/A1 as ease-operators (sugar) and meta/SUMMARY tails (smoking). willpower-lexicon is louder than factory-speech and remains non-PRIMARY.
+
+**What this opens next.** PRIMARY factory-speech 20/18. Journey re-argument 16/8 secondary. Do not replay 020–024 / 028 / 029 / 030 / 032. Do not start a willpower-lexicon PRIMARY.
+

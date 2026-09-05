@@ -1,256 +1,241 @@
 Chapter 5
 THE LIFT THAT MAKES THE LOW
 
-IN THIS CHAPTER — the forgiven desk at half past three, the humming drawer, the ten-minute buzz and the four o'clock fog, tight shoes at noon, the plain meal remembered, the deferred load, wanting re-fired
+*The lift you feel is not energy given to you. It is the low from the last dose being briefly covered, and the cover always wears thin.*
 
-*The lift you feel is not energy given; it is the low from the last dose briefly lifting.*
+YOU WALK IN FORGIVEN
 
-YOU ARRIVE FORGIVEN
+You walk into this afternoon forgiven.
 
-You arrive in this room with empty hands and a light heart, and I honour you for coming this far with an open mind.
+The saw is on the floor. The wood was never the problem. You are not weak-willed. You are wilful in the wrong war, strong enough to carry Monday and Tuesday on backbone alone, strong enough to start again after every flood. We have settled that, you and I, and we do not reopen it.
 
-You did the audit and found the benefit column empty. You walked Monday to Sunday and saw the rule create the rebound. You sat with the midnight box and watched the hand move before thought finished. You heard the braggers boast of hell and the whingers sigh of grey, and you saw both still call the dose precious.
+Now we look at the one belief that still makes the afternoon feel impossible without a sweet hit. It sits at the desk with you. It sits in the car. It sits in the kitchen while you cook tea. It says, in your own tired voice at three o'clock:
 
-You carry one standing order from that clearing. Every failure was the method, never you. You are wilful, not weak-willed. You fought hard with the wrong weapon. Blame has left the house.
+"I need sugar to function. I need sugary somethings to get me through."
 
-What remains is the one excuse that still feels like common sense. It speaks in daylight, not at midnight. It speaks at the desk, in the car, in the kitchen with work still to do.
+I know that voice. I lived inside it for years. I obeyed it the way you obey a clock. I believed work stopped unless a dose arrived, believed thought thinned unless sweetness thickened it, believed kindness to myself meant chocolate at four. We all believed it together, because the whole street believes it, because every advertisement tells it, because every tired body seems to prove it when the bar lifts the fog for ten bright minutes.
 
-I need sugar to function.
+The fact is, the ten bright minutes prove nothing for the bar and everything against it.
 
-Sugary somethings to get me through.
+This afternoon we will watch those minutes hour by hour, with your own hand as witness. You do not need my word. You have lived the yo-yo a thousand times. I will only ask you to look at what you lived with new eyes, and to answer three plain questions honestly. If the answers do not free you, nothing I say will. If they do, the fuel story dies here, and what dies here hands you to real food with appetite intact.
 
-Without a sweet hit in the afternoon I cannot concentrate, I cannot be pleasant, I cannot get through the day.
+You are a forgiven investigator now. You carry no blame into this room. You carry only attention. That is enough. Attention will do what years of holding never did.
 
-I know that voice. I lived inside it for years. We all did. We reached for something quick and sweet in the flat part of the afternoon and called the brief buzz proof. We mistook a spike-then-drop for fuel. We called the rescuer what was, all along, the perpetrator wearing a kind mask.
+Let me tell you where we are going, plainly, so dread does not follow you in. We are going to see that the lift never gave power. We are going to feel why the drop always follows on schedule. We are going to meet your own body as the owner of fuel, quiet and steady, asking for no afternoon tax. And we are going to see that when the false fuel is seen, the want for it does not stay large to be fought for life. It thins and passes. You do not need to fear this afternoon. You need only to watch it truly, perhaps for the first time.
 
-Today we look hour by hour. We watch the lift make the low. We see that BAD SUGAR is empty calories that nourish nothing and gift no energy the body did not already own. We see that leaving it behind removes the want for good, and that is a different world from holding out while the want grows louder.
+THREE O'CLOCK AT THE DESK
 
-Bring your investigator eyes. Bring elation, not dread. You are not about to lose a prop. You are about to see there was never a prop there.
+Come with me to three o'clock.
 
-THE DESK AT HALF PAST THREE
+The morning is gone. You ate breakfast, you worked, you answered, you carried. Lunch was two hours ago, a sandwich at the desk or a bowl in the canteen, eaten fast between messages. Now the light has gone flat outside the window. The screen swims a little when you stare. The shoulders ache from hunching. The mind feels chewy, slow to turn over, quick to snap.
 
-Come with me to the desk. This is not theory. This is your Tuesday, your Thursday, my twenty years.
+You know this hour. Every working eater knows it.
 
-It is half past two. Lunch was two hours ago, a sandwich eaten quickly between messages, a sweet drink alongside because that is what we do. Work hums. Then, without announcement, the light changes inside the head.
+In the top drawer, or in the bag by your feet, or in the machine down the hall with its lit row, waits the answer you were taught. A bar. A pack of biscuits. A cola with sweat on the can. Something quick and sweet. Your hand knows the way before talk begins. You tell yourself, I will have something quick and sweet to get through the next hour. Just a small lift. Just to concentrate. Just to be kind and keep going.
 
-You know that empty, twitchy, slightly shaky, need-something-sweet-now feeling at half past three.
+You take it.
 
-It starts as a thinness behind the eyes. Attention frays at the edges. Words on the screen blur and re-sharpen. The shoulders tighten. The belly sends up a hollow signal that food an hour ago should have quieted, yet here it is. A thought slides in, smooth as habit: I-need-to-eat-something-RIGHT-NOW feeling. Something quick. Something sweet.
+For eight, ten, twelve minutes there is brightness. The fog lifts. The fingers move faster. The joke in the next cubicle sounds funnier. You sit up straighter. You think, there, you see, I was right, I did need it, this is fuel, this is working. The sweet sits on the tongue and the world feels oiled. You breathe out and say inside, thank goodness for that.
 
-We have all heard the drawer hum. The tin in the next room. The machine down the hall. The shop across the road suddenly very close. The mind does swift accounts. Just one to get through the afternoon. Just a taste to concentrate. Just this meeting, this deadline, this tiredness.
+Watch what happens next, because you have watched it a thousand times and called it normal.
 
-You take the dose. A biscuit. A bar. A can. Three spoons in tea. Sweet and intense on the tongue for seconds. A rush of brightness. For ten minutes the fog lifts. Typing quickens. You smile. You think, there, you see, I needed that. That is fuel.
+By ten past four the brightness thins. It does not fade gently the way a good meal fades into calm fullness. It drops. The eyelids grow heavy. The head feels thick behind the eyes. Attention leaks at the edges again, only lower now than before the bar. The mouth is sticky. The stomach feels both full and hollow, sweet-sour, asking for water and then for more sweet at once. The shoulders slump lower than at three. A thin edginess comes up from the ribs, a restlessness in the hands, a feeling that something is missing although you only just ate.
 
-Watch what happens next, because the Trap counts on you not watching.
+And the thought comes, entire and reasonable and urgent:
 
-Let me stay with you inside those minutes, because the devil of this con lives in minutes you were too busy to time. At half past two you were dull but steady, a little flat, still capable. You could read, you could answer, you could drive home safely. The dullness felt like the beginning of collapse, and the Trap taught you to read beginning collapse as urgent need. In truth it was a small dip, a passing thinness, the kind the body rides through daily between real meals without drama.
+More. Something else. Another small one to get through to five.
 
-At twenty-five to three the mind starts bargaining. It does not say, I want a treat. It says, I need function. That word function is important. Function sounds adult. Function sounds responsible. I am not greedy, you tell yourself, I am keeping the show on the road. The Sweet Con loves that word. It dresses a craving as duty. It turns a fix into a tool.
+You take the second. It does not lift like the first. It lifts half as high for half as long and leaves you lower. By five you are flat and dull and faintly annoyed with yourself, staring at wrappers you do not remember choosing, promising an early night, wondering why work felt so hard today, wondering why you feel so tired when you fuelled yourself twice.
 
-At twenty to three you stand. You have stood a thousand times. Legs move toward the drawer before thought has signed the order. You tell yourself you choose. Look closely. Choice would weigh, pause, consider real food, consider water, consider air, consider rest. This does not weigh. This leans. The body leans toward the bright packet because the last bright packet taught it to lean. We have all leaned. There is no shame in the lean once you see who tilted the floor.
+Do you know that day? Have you not lived it in every office, every kitchen table with bills, every car at the lights with a packet on the passenger seat?
 
-At quarter to three the tongue gets its flash. Oh, the flash. Cold can, sweet fizz, chocolate melt, biscuit crunch with hot tea. For seconds the mouth sings. The head clears as if a window opened. Shoulders drop half an inch. You breathe out. You think, marvellous, I am back. You turn to the screen with fresh kindness. You answer the mail you stared at. You feel almost fond of the afternoon.
+Stay with that car for a moment, because the desk is not the only witness. Four forty on the ring road. Traffic crawling. The packet on the passenger seat torn open at the corner. You tell yourself one to stay alert. The first sweet melts and the radio sounds brighter for a song. Then the brightness thins before the junction. The eyes grit. The hands grow restless on the wheel. You reach again without deciding to reach. By the time you pull onto your street there are crumbs on your coat and a dull head and a vow to eat properly tonight, and tonight the proper meal tastes muted because the mouth is still sweet-soured. The same curve. The same schedule. Different room, same trap.
 
-Ask the investigator question right there in the brightness, while the brightness still glows. What exactly returned? Was it new energy arriving from outside, or old discomfort pausing for a moment? Did the dose build anything, or did it quiet something? Hold the question. Do not answer yet with theory. Answer with the clock.
+Stay with the kitchen too. Six thirty, cooking tea, tired legs, pan on heat. The recipe asks for twenty minutes. You cannot wait twenty minutes, so you take a biscuit to get through the cooking. The biscuit brightens the chopping for five minutes. Then the fog comes down lower while the onions soften. You take another while stirring, telling yourself tasting counts as cooking. By the time you sit down to the real meal you are already full and empty together, picking at the food you made, leaving half, then blaming the food for being dull. The food was not dull. The cover had worn thin and taken appetite with it.
 
-THE BUZZ AND THE FOG
+Tell me plainly, as a forgiven investigator now, with no scolding anywhere in the question:
 
-Ten minutes of buzz. That is the honest measure. Time it once with clear eyes and you will never unsee it.
+When the lift arrived, did it give you power you did not own at nine that morning when you were fresh, or did it only return you for ten minutes toward the fresh you already were before the morning dose wore off? When the drop came, did it fall on a free body out of a clear sky, or did it fall exactly where the lift had lifted, exactly as high as the lift had lifted, exactly when the lift wore thin? And if sweet were fuel, why did two fuels leave you emptier than no fuel, and why does the day you fuel most end with you most tired?
 
-At ten past three you are bright. At twenty past three the brightness thins. At half past three the head feels heavier than before the dose. Eyes flat. Thoughts thick. Mouth coated and calling for water, yet calling for more sweet at the same time. A strange double hunger: blown and empty together.
-
-At four o'clock the fog sits down beside you. You stare at the same sentence three times. You reread the same mail. Patience shortens. You snap inwardly at slow colleagues. You tell yourself the morning was fine, the afternoon is always hard, age, sleep, weather, character. Anything but the dose an hour ago.
-
-Then the hand moves. A second reach. Smaller than the first in excuse, larger in fact. Just the other half of the packet. Just a sip to finish the can. Just one more to get to five. The second lift is shorter, duller, more frantic. The second fog is deeper.
-
-By five you are flat, foggy and never satisfied.
-
-Read that phrase slowly, because it is your afternoon written in five words. Flat in the head where brightness was promised. Foggy in thought where focus was promised. Never satisfied in the belly where fuel was promised. You ate energy and ended with less energy. You ate satisfaction and ended with more want. You did everything right by the fuel story, and the fuel story left you emptier.
-
-We lived that yo-yo for years and called it our rhythm. Short term lift then fast drop. Up, down, up, down. I want to get off the roller coaster. That cry from your own mouth is accurate reporting. The roller coaster is not life. The roller coaster is the dose creating the drop it then briefly lifts.
-
-Ask yourself with the desk still warm around you:
-
-If the dose gave energy, why are you more tired at four than you were at three before the dose?
-
-If it fuelled work, why does work demand a second dose an hour later to do what the first dose claimed to do?
-
-If it nourished you, why are you hungrier for more after eating, not quieter?
-
-There is only one answer that fits all three. The lift did not give. It borrowed, marked up the loan, and collected within the hour.
+You know the honest answers because your hand lived them. The lift never took you above your own morning fresh. It only covered a low for minutes. The drop never came from work or weather or character. It came from the cover wearing thin. And two doses never built energy. They spent it and billed you after.
 
 It was never a genuine treat or fuel.
 
-There. Said plain. It pretended to be fuel and acted as a drain. It pretended to be a treat and acted as a trigger for more. The benefit column stays empty even here, in its strongest daylight disguise.
+Read that short. Let it stand. It was never fuel. It was a loan dressed as a gift, and the loan collects the same afternoon.
 
-Let me widen the desk to the whole day so you see the roller coaster is not an afternoon accident. Morning starts steadier than you remember. You wake relatively clear. The first sweet of the day — juice, spooned sugar, frosted cereal, sweetened coffee — puts on the first tightness. Mid-morning dips, and you read the dip as need for elevenses. Elevenses lifts briefly, then midday sags. Lunch with sweet drink lifts briefly, then half past three crashes. Half past three lifts briefly, then four o'clock fogs. Four o'clock lifts briefly, then five o'clock empties. Evening box empties joylessly, then night feels wired and tired together, sleep comes late and light, morning comes heavy, and heaviness asks for a sweet start. Round and round. Each lift lays its own low. Each low calls its own lift.
+ELEVEN, THREE, NINE — THE YO-YO YOU CAN SET YOUR WATCH BY
 
-I would have something quick and sweet but now know that will only give a short term lift which will inevitably be followed by a fast drop. That sentence from one who walked out is your day described without varnish. Short lift. Fast drop. Mistaken fuel. Real fog.
+Look wider than one afternoon and the pattern shouts.
 
-Notice how the Trap hides this circle by naming only half of it. It names the lift — boost, pick-me-up, energy, focus. It never names the low as its own work. The low gets other names: my slump, my age, my blood, my personality, my busy life. We learned to blame the fog on everything but the buzz that bought it. Once you name both halves with one owner, the con cannot stand. The same hand that lifted you dropped you. The same dose that brightened ten minutes clouded sixty.
+Eleven in the morning. The breakfast brightness has thinned. A faint gnaw rises, not clean hunger but a twitchy hum. You answer with a biscuit with coffee. Bright for minutes. Then lower.
+
+Three in the afternoon. The hum returns louder. You answer with a bar. Bright for minutes. Then lower.
+
+Nine at night. The hum returns loudest, dressed as need for comfort. You answer with ice cream on the sofa. Bright for minutes. Then flat into sleep, mouth dry, waking thick.
+
+Short term lift then fast drop. Have you not said those very words about yourself? I would have something quick and sweet but now know that will only give a short term lift which will inevitably be followed by a fast drop. That sentence is not my theory. It is your diary. It is the lived confession of thousands of afternoon yo-yo eaters who watched the same clock and finally named it.
+
+Ask the killer questions and let your own days answer:
+
+Did the mornings you started with plain breakfast and no sweet drill hold steadier till lunch than the mornings you started with sweet cereal and juice and then needed a biscuit by eleven? Did the afternoons you were out walking, busy with hands and eyes, drinking water, forgetting the drawer, pass lighter than the afternoons you sat watching the clock, counting to the permitted dose, rehearsing the wrapper? Did the evenings you ate a real supper hungry and left it satisfied end calmer than the evenings you grazed sweet from six to ten and went to bed wired and tired together?
+
+You lived the answers. Plain held. Busy forgot. Real satisfied. Sweet drilled the very hunger it claimed to answer.
+
+That is not character. That is schedule. Sweet on schedule teaches the day to yo-yo. Take sweet off schedule and the day forgets the dance.
+
+THE LIFT IS RELIEF, NOT POWER
+
+Let us say the mechanism plainly, in ordinary words, with no panic and no diagnosis.
+
+We eat a sweet hit and the blood carries a rush. The body, which is a precision machine and not a fool, answers the rush with its own surge to clear it, to bring you back to balance. For some, that answer overshoots a little and drags you into a real dip for a while, the hands a touch shaky, the head a touch swimmy, the mood dipped with it. Your everyday three o'clock heaviness is not a medical verdict on your blood — I am not diagnosing your blood, and if you live with diabetes or take anything that moves blood sugar or appetite, your clinician leads and this book only changes a belief — but the shape holds for all of us whether the dip can be measured or only felt: lift, answer, sag. Up on a spike. Down on the answer. Up on the next spike because down feels unbearable.
+
+Each binge re-fires the wanting and calls for the next. The wanting is not joy. The wanting is the echo of the last answer asking to be covered again. It is a small re-firing, not a mighty blast, a learned hum asking for cover, not a giant commanding you. Small is enough when belief calls it fuel. Small, believed, moves the hand to the drawer.
+
+Do you see the trick? The dose creates the very emptiness it then covers for ten minutes. It digs the hole and sells you the ladder for ten minutes and calls the ladder energy. No free eater needs a ladder on flat ground. Only the eater standing in the hole believes the ladder is wings.
+
+Ask the questions that kill it:
+
+Did the non-user at the next desk fall into your hole at four, or did she work through the flat hour with water and a stretch and a proper meal later, dull for a while and then clear without a second reach? Did your own fresh morning need sweet to think, or did thought come clean till the first hit taught the day to yo-yo? And if the bar gave power, why must power be paid for twice — once in the buying and once in the fog — while real power, sleep and breath and food that satisfies, asks no afternoon tax?
+
+There is only one honest set of answers. She did not fall because she was not in the hole. Your morning thought clean because no cover had yet worn thin. And the bar charges twice because it never gave. It lent.
+
+The fact is, the energy you felt was your own energy returning for minutes under cover, not new energy arriving from sugar. BAD SUGAR nourishes nothing. It carries empty calories that build no tissue, mend no wear, keep no lamp lit. The body owns its fuel already and makes good blood from plain eating. The hit only borrows the feeling of fuel by muting the low it made.
+
+It does plenty TO you. It does nothing FOR you in power. The lift makes the low.
+
+Follow that TO and FOR with your own audit and you do not need my adjectives. What did the bar do TO your mouth? Left it sticky and sour, calling for water. What did it do TO your head? Left it thick behind the eyes by five. What did it do TO your purse and your time? Took coins and minutes in queues and wrappers and regret. What did it do TO your evening meal? Dulled it, so real food tasted flat by comparison. Now the other column. What did it do FOR your strength? Added no tissue, mended no wear, lengthened no steady hour. What did it do FOR your thought? Lent ten bright minutes and took sixty dull ones as interest. What did it do FOR your hunger? Muted true hunger and planted hum in its place.
+
+TO is crowded. FOR is empty. That empty column is the whole fuel lie exposed in your own handwriting.
 
 TIGHT SWEET SHOES
 
-Let me give you a picture to carry to every desk you will ever sit at, because pictures hold what arguments only point to.
+I want you to feel this in your feet, not only follow it in your head, because the head has been talked at for years and the feet tell truth at once.
 
-Imagine you wear shoes a size too small from morning to noon. Tight across the toes. Pinching at the heel. Each step a small negotiation. By noon the ache climbs into the calves and the mood. You cannot think of much else. Work drags because half the mind is in the feet.
+Imagine you are told that a certain pair of shoes will make you comfortable. They are bright. Everyone wears them. The advertisement shows light feet dancing. You put them on in the morning. They are a size too small.
 
-At noon you slip them off in a quiet corner. Ahh. Relief floods. Warmth. Lightness. A sigh you feel in the shoulders. For a minute the world looks kinder. You think, what marvellous shoes, to give such pleasure when removed.
+All day they pinch. The toes press. The heel rubs. By noon there is a dull throb with every step. By three the throb is a burn. You limp a little and tell yourself the day is hard, work is hard, age is hard. At five you sit down on the low wall outside the office and pull the shoes off. Ah. The air on the sore feet. The blood returning. The exquisite relief rolling up the legs. You sigh out loud. You think, what wonderful shoes, what a comfort to take them off.
 
-Do you praise the shoes? Do you thank the shoes for the relief? Do you plan to wear them again tomorrow for the joy of taking them off?
+Would you call those shoes comfort? Would you thank the maker for the relief? Would you wear a tighter pair tomorrow to earn a larger sigh at dusk?
 
-Of course not. You see the trick at once. The shoes created the pain they then relieved. The relief was real, but the gift was fraud. No one calls tight shoes a treat. No one calls them fuel for walking. They hindered walking all morning and then took credit for stopping the hindrance for a minute.
+Of course you would not. You would see in one flash that the shoes never gave comfort. They gave pain all day and then lent you your own bare feet for a minute and called the lending a gift. The relief was real. The shoes were still a con. The relief proved the pinch, not the kindness.
 
-BAD SUGAR is tight sweet shoes worn inside the blood and the mood.
+We wore tight sweet shoes for years, you and I.
 
-We put them on with the morning dose, tightened them with the midday dose, and felt the pinch as that thin, restless afternoon signal. Then we slipped them off for ten minutes with the three o'clock dose and called the relief energy. It was not energy. It was the brief easing of a discomfort the earlier doses had built. The non-user at the next desk, shoeless and steady, walked all afternoon without the pinch and without the sigh, and never needed to thank a shoe.
+We put them on with the first dose of the day. All morning they pinched quietly while we called the pinch normal — that empty, twitchy, slightly shaky, need-something-sweet-now feeling creeping up toward eleven, toward three, toward ten at night. We called it hunger. We called it tiredness. We called it need for fuel. It was pinch. Then we pulled the shoes off for ten minutes with a bar, felt our own bare feet again, our own clear blood for ten minutes, and thanked the shoes. Thanked the very pinch-maker for the pause in pinching. Called the pause energy. Called the pause treat. Went back into the pinch to earn the next pause.
 
-I wore those shoes for years and praised them daily. I told myself the afternoon lift proved the value. I never asked why the morning needed no lift before the Trap taught the nerves to ask, why children at play run bright for hours on plain food and sleep, why I could fly long-haul or work a busy shift and forget doses without agony until the mind remembered to mourn. The body never needed the shoe. The shoe taught the foot to ache.
+Ask yourself, with the shoes in your hands:
 
-See it once and you cannot unsee it. The buzz is the shoe slipping off. The fog is the shoe forced back on. The second reach is the foot begging for another minute without pressure, not knowing the pressure comes from the shoe itself.
+If the relief were true energy, why does it need renewed pinching to be felt again by four, and again by nine, and again tomorrow at eleven? If bare feet are miserable, why did your feet feel marvellous as a child before you ever laced the sweet shoes, running on plain meals and stopping when satisfied? And who profits from your calling the ten-minute unpinching a benefit — your body, which begs to walk bare, or the maker who sells tight shoes on every corner in bright rows?
 
-There is no fuel in the fix. The fix only quiets, briefly, the low the last fix laid down.
+You know. The relief needs renewed pinch because relief is not gift but pause. Your feet felt marvellous before because bare was natural and still is. And the profit never touched your legs. It touched another man's till.
 
-Stay with the shoes a little longer, because they answer every daylight objection before you voice it. But the relief feels so good, you say. How can relief so good be no gift? Dear friend, the relief of removing tight shoes feels wonderful precisely because the pain was real. No one denies the relief. We deny the shoe deserves thanks for it. The ten-minute brightness after a sweet dose feels real because the flatness before it was real. The flatness was real, and it was made by the same sweet. Feel the relief, by all means, and then thank the right party: not the new dose, but the coming freedom that will stop fitting the shoe at all.
+Take the shoes off and leave them off. Do not polish them. Do not keep a cherished tight pair for Fridays. A free foot does not need one ceremonial pinch a week to remember freedom. It needs no pinch at all.
 
-But I walk better for a minute after I take them off, you say. Surely that minute proves value? You walk better than in pinched shoes, yes. Do you walk better than barefoot all day? Never. The sweet eater after a dose works better than in the low for ten minutes. Does the sweet eater work better than the free eater steady all afternoon? Never. The comparison that sells the shoe is always shoe-pain versus shoe-off-minute. The honest comparison is shoe all day versus no shoe at all.
+Hear the shoe truth in two more rooms, so the feet cannot forget.
 
-But everyone wears them, you say. Normal shoes pinch? Look around the office at half past three. Who sits steady? The colleague with water and a plain lunch who never visits the machine, eyes clear, temper even, work flowing without fanfare. Who sits rocking between buzz and fog? The kind, clever people queuing at the machine, unwrapping, sipping, brightening, clouding, reaching again. Normal is not shoeless. Normal is commonly pinched. Common pain still comes from shoes.
+First, the morning queue. You stand sleepy with coins in hand, buying the bright shoes again, telling yourself today the pinch will be kinder because you chose a smaller size, a lighter bar, a diet can. Does a smaller pinch stop being pinch? Does a lighter shoe a half-size too small stop throbbing by three? You know it throbs on schedule whatever the wrapper promises. Light, diet, low-fat, energy — the adjectives change the box, not the pinch.
 
-Carry the picture to the car, to the kitchen, to the sofa. Morning shoe, noon shoe, three o'clock shoe off and on. The foot never blames the shoe because the shoe brings its own relief. That is the whole fuel myth in leather. Once seen, the pity flows the right way. You do not envy the bright minute of the user at the next desk. You pity the pinch that made the minute shine.
+Second, the office birthday. Cake on a paper plate, candles blown, everyone clapping. You take a slice to join in and feel the ten-minute unpinching while laughter lifts the room. Then the pinch returns under the laughter, demanding more cake after cake, while the laughter itself would have lifted you without any plate. Was it the sponge that warmed you? Or the faces, the pause in work, the shared joke, the daylight through the blinds? The room gave. The shoes only rented your own joy back to you for minutes and billed you after.
 
-WHAT THE BODY ALREADY OWNED
+WHAT REAL ENERGY IS
 
-But food is energy, you say. Sugar is carbohydrate. How can you say it gives nothing? Surely it must give something.
+I can hear you thinking, even forgiven, even seeing the shoes:
 
-I welcome the objection, because it sounds like science and deserves a straight answer in plain words.
+But I do feel low without it. Something real drops in me. Are you saying the tiredness is imaginary?
 
-Real food eaten when hungry steadies you. Bread, vegetables, fruit, a plain meal taken with appetite and stopped at satisfaction — that eating quiets hunger for hours, warms the hands, clears the head by removing true need. You know that steadiness. You felt it as a child and you feel it still on days the Trap leaves you alone for a morning.
+I am saying the opposite. The tiredness is entirely real. Its meaning is upside down.
 
-BAD SUGAR doses do not eat like that. They flash across the tongue, spike bright for minutes, and leave hunger louder underneath. They coat, they crave, they call for company. One never stays one. The packet empties while satisfaction never arrives. That is not nourishment. That is teasing dressed as feeding.
+You do feel low. The low is the answer to the last hit still ringing in you, plus a normal human afternoon that every free eater meets and walks through. Free bodies tire a little after lunch. Free minds dull a little in flat light. They drink water. They move. They breathe. They wait for hunger and then eat a meal that satisfies and leaves them clear. Their curve is a shallow wave. Ours was a spike and a pit, a spike and a pit, till we called the pit normal tiredness and the spike normal rescue.
 
-Think of your own evidence, not my words.
+Real energy never spikes you and pits you. Real energy is quiet. It wakes with you, steadies after food, dips gently and returns. A child fed on plain food runs, rests, eats hungrily, stops mid-bite and runs again. No counting. No dread. No second reach. Hunger comes clean. Satisfaction comes clean. The machine knows its work and does it without a sweet overseer shouting orders.
 
-When did a bar ever keep you full to evening the way a real meal keeps you full? When did a can ever steady you through a long task the way water and rest and a proper bite steady you? When did a box of biscuits ever close the matter with a sigh of enough?
+Your body owns that machine still. It owned it before the first sweet drill taught it to yo-yo. BAD SUGAR did not install power in you. It installed noise over power, and you mistook the brief muting of noise for power arriving.
 
-Never. The dose opens appetite while pretending to close it. It bypasses the quiet signals that tell you enough and leaves the loud signal ringing for more. It gives empty calories that nourish nothing and lends a brightness that the body pays for within the hour from funds the body already owned.
+Think of your own best days, not my talk. Which mornings felt lightest in the limbs — the mornings after an evening of grazing and sipping sweet to stay awake, or the mornings after a plain supper eaten hungry and left when satisfied, with sleep unbroken by thirst and waking clear? Which afternoons held attention longest — the afternoons of bar and cola and bar again, bright for ten minutes and then gone, or the afternoons of water and air and a real meal waiting till hunger called, dull for a while and then steady? Which stomach left you able to work and laugh — the stomach fizzing with sweet sourness, calling for more before the last was swallowed, or the stomach warmly filled and quiet, asking for nothing till true hunger returned?
 
-Your energy was always yours. The steadiness of morning before the first sweet, the second wind after a walk, the clear head after plain food — that is the body doing its own marvellous work. The dose never added to that account. It drew from it and charged interest.
+You lived the answers. Plain left you lighter. Steady outlasted bright. Quiet satisfied longer than loud relieved. The body you distrust is the very witness that convicts the fuel story. It remembers bare feet.
 
-Ask again with food in view:
+And hear the credit inversion where it belongs, because every drop of good in the sweet hour belongs elsewhere.
 
-If BAD SUGAR nourished, why do the best-fed afternoons feel the worst-fed?
+The brightness after the bar was not the bar. It was your own blood rising to meet a pause in pinch, your own breath deepening as you stopped work for a minute, your own break, your own stretch, your own laugh with the next desk, sneaking a ride under a sweet wrapper. The break gave the relief. The stretch gave the air. The company gave the warmth. The body gave the power. The dose only ever sneaked a ride on good things that were yours already, then charged you for the ride with fog.
 
-If it gave what the body lacked, why does the body ask louder after receiving, not softer?
+Take the good things without the rider and they do not fade into a pit. A pause without a dose still rests you. Air without cola still clears you. Hunger met by real food still steadies you for hours. Nothing real is lost when the rider is left behind. Only the pit is lost, and the pit was never yours by nature. It was rent you paid for shoes that pinched.
 
-If hunger met is satisfaction, why does dose hunger never meet, only multiply?
+EMPTY CALORIES THAT NOURISH NOTHING
 
-The honest answer is one line. The body feeds you. The dose feeds on you.
+Let us be blunt about nourishment, because fuel talk hides hunger talk.
 
-Let me make the body vivid again, because the Trap dimmed it for years. Remember the child eating a peach, juice down the chin, eyes bright with hunger met, stopping mid-bite to run off when enough arrived. No counting. No bargaining. Hunger, joy, stop. That is not a sweet memory. That is your design. Hunger arrives as information, food answers as comfort, satisfaction arrives as a quiet full stop. No fog follows. No second reach follows. The machine knows its work.
+BAD SUGAR brings calories without cargo. No building blocks that mend muscle. No steady store that holds attention. No satisfaction signal that tells the mouth, enough, lovely, done. It rushes in, shouts, and leaves, and the body is left to clear the rush with its own effort. That clearing effort is not free. It costs ease. It costs clarity. It costs true appetite for the meal that would have satisfied.
 
-Now watch the adult with BAD SUGAR. Hunger arrives, but the answer is not food, it is flash. Flash answers with spike, spike answers with dip, dip answers with louder hunger that is not true hunger but echo hunger. The belly feels blown and empty together. The head feels wired and tired together. Satisfaction never lands because the dose never addressed true need. We called that double state my appetite, my cravings, myself. It was not self. It was shoes.
+Your body asks for food that ends hunger. Sweet hits never end it. They pause the hum and plant the next hum. Have you not watched the proof at your own table? A proper meal eaten hungry leaves you quiet for hours, able to forget food entirely. A sweet graze leaves you thinking of food within the hour, opening cupboards, gazing into the fridge for something you cannot name. One ends hunger. The other rehearses it.
 
-The body can make what it needs from plain meals to keep the blood steady and the brain lit. It does so daily without your instruction, marvellously, while you get on with living. It does not need a bright flood to function. The flood hinders function for a minute of brightness, then leaves the steadiness to clean up. Give the body plain food when hungry, water when thirsty, rest when tired, and it returns the favour with hours of even energy you had forgotten were normal.
+Tell me, as a plain eater now:
 
-I learned this like a revelation, though it was only return. On mornings I once dosed early and crashed by ten, I began to eat plainly and found ten o'clock clear. On afternoons I once timed by the machine, I found half past three pass like any hour, a little ebb, a breath, a walk to the window, and onward. No heroics. No policing. The steady current was there all along beneath the spikes, waiting for the spikes to stop drowning it.
+Which left you able to forget food — the lunch that filled and quieted, or the bar that brightened and beckoned? Which left you proud walking past the shop — the day of steady meals, or the day of bright covers and dull pits? Which left you kind at home — the evening of hunger met and left, or the evening of hum covered and replanted?
 
-Do not take my word for it. Test it while you read on exactly as normal. Note the hours real food carries you versus the minutes a sweet carries you. Note the sigh of enough after a meal versus the call for more after a dose. Note the hands warm after eating hungry versus the mouth coated after dosing restless. Your own hours will teach faster than my sentences. The body is the authority, and it testifies daily.
+You know. Forgetting food is the mark of being fed. Thinking of food all afternoon is the mark of being pinched. BAD SUGAR keeps you thinking of food because it never feeds you. It only covers.
 
-THE DEFERRED LOAD
+Your body makes good blood from plain eating. It has done so since you were small. It needs no sweet overseer to keep the lamp lit. The lamp was lit before the overseer arrived, and it burns steadier when he leaves. Trust the lamp. Trust hunger to call clean. Trust satisfaction to arrive and quiet you. Those trusts are not theories. They are memories in your own limbs from days the shoes stayed off by accident — holidays walking, busy Saturdays building, sick days sipping water — when you ate little sweet and felt clearer than on fuelled weeks. The clearer days convict the fuel story without my help.
 
-Now I must speak flatly of the load, because you deserve the whole truth in daylight, and then I will lift the dread in the same breath.
+THE BILL THAT COMES LATER
 
-Across whole populations, heavy sweet intake walks with heavier hearts. The lift you feel on the tongue lands later as load elsewhere — liver worked hard to handle the flood, pressure pushed higher, low-grade fire kept lit in the tissues, appetite signals scrambled so enough stops registering. The fact is stark when viewed across thousands of lives: the bright minute is not free. It is deferred cost wearing a bright mask. I speak of crowds across years here, not of you after one bar.
+Now I must tell you flat what the lift costs beyond four o'clock, because you deserve the whole truth before you choose, and then I will tell you in the same breath not to choose from fear.
 
-Feel the weight of that for a second. Let it land. The same flood that spikes brightness must be cleared, stored, carried. The liver takes the first burden. The vessels take the next. The quiet fire of inflammation stays lit longer than the buzz stays bright. The control of appetite, that marvellous childlike stop at enough, gets bypassed again and again until enough goes quiet. None of this is felt at half past three. All of this is paid after half past three, in organs you cannot bargain with and hours you will not get back.
+Across populations, men and women who live on high added-sugar days carry heavier later load — heart and stroke pressed harder, liver forced to warehouse overload, pressure edged up, a low simmer of inflammation that dulls appetite control itself till the eater wants more while feeling less fed. I say that as the picture across populations, not as a sentence on you. No single bar writes disease on any single eater. No teaspoon figure decides your fate. Cavity too is a real bodily stake of frequent free-sugar baths, acid on enamel after every sip and suck, though brushing and fluoride and meals mediate it. The mouth keeps the books even when the mind forgets.
 
-That is frightening, and I do not soften it. Poison in a sweet coat remains poison, however gaily wrapped, however normal the shop makes it look.
+Feel the weight of that for one honest second. The lift is not free. It is deferred load. What feels like lightness at three is heaviness booked for later, moved off the desk and onto the body, paid in quiet instalments you do not feel till the statements arrive years on.
 
-And hear me in the same breath, with warmth and total certainty: I do not ask you to change from fear.
+And now set fear down, because I do not want you escaping from fright.
 
-Fear never freed anyone. Fear posts a guard at the door and calls the guard freedom. You are not escaping because the road is dark ahead. You are escaping because there is nothing to keep you on the road at all. Even if the road were smooth, even if no load waited, the desk at four o'clock would still prove the con. The dose gives nothing. That alone is enough to walk away rejoicing.
+Do not walk out because you are scared of the statements. Walk out because there is nothing to stay for. A con that gives nothing and bills later is not more frightening than a con that gives nothing and bills now. It is the same nothing, only with interest. Fear would only make the shoes feel mighty and your feet feel small. You are not small. The shoes are small. Leave them because bare is marvellous, because food is waiting to be enjoyed, because mornings are waiting to be clear, because you are done paying rent on a hole you never dug by nature.
 
-Let fear fall off your shoulders now. You do not need dread to see. You need clear eyes and a light heart. The load is real, and you are stepping off the road that carries it — not cowering off, but striding off, glad to be free of the toll.
+I say that as an escaped eater, not as a judge. I paid the rent for years. I know the dull tooth ache explained away, the belt notch explained away, the four o'clock fog explained away, the purse leaking coins explained away. Explaining away is what trapped eaters do to keep loving the shoes. Seeing plain is what free eaters do to walk home bare and laugh that they ever paid.
 
-Keep the load in proportion, because proportion is part of truth. One bar does not make a disease. One can does not write a future. The Trap loves personal sentences — you already ruined yourself, you already missed your chance — because sentences breed shame, and shame breeds reaching. I hand you no sentence. I hand you a pattern: bright minute now, load later, repeated daily for years across crowds who felt fine while the load gathered. Feeling fine never meant intake was low. Feeling bright for ten minutes never meant the minute was free.
+Hear one more plain truth about load, so pity replaces envy when you see the lit rows. The bright packs on the end of the aisle promise lightness. They deliver load. The cola promises lift. It delivers sour mouth and second reach. The biscuit promises comfort. It delivers crumbs and fog. The promise is printed. The load is lived. Once you have felt both, you cannot unfeel the gap. The gap is freedom entering.
 
-WANTING RE-FIRED
+THE WANT LIFTED FOR GOOD
 
-There is one more daylight trick to expose, the one that makes the second reach feel like choice.
+One last knot holds the afternoon together, and I will cut it now so you do not carry it into the next room.
 
-Each binge re-fires wanting. Not pleasure. Wanting.
+You say, even if fuel is a con, the want will still come. I will still hear the call at three. I will have to hold out while it calls, and one day when I am tired or sad the call will win. Escape sounds lovely, but life sounds like holding.
 
-Notice the difference with your own tongue as witness. The first square of chocolate after hours without can taste intense. The second tastes duller. The fifth tastes waxy. The tenth is chewed with a heavy heart while the hand still moves. If the dose gave pleasure, pleasure would grow with more. It does not grow. It fades while wanting grows. The circuit that says get more lights up even as enjoyment dies down. That is why the box empties joylessly. Wanting outlives liking by hours.
+I know that dread. It belongs to the old method, not to this escape.
 
-I am not saying a mighty force seizes you. I am saying a small learned flare fires, and the mind, still taught to read flare as need, obeys. The flare is tiny. The reading is huge. Change the reading and the flare passes like a cloud shadow.
+With the Willpower Method, want stays large because belief stays large. You keep loving the dose, keep calling it fuel and friend, keep banning it while praising it, and then you hold your breath against love all day. Of course the held breath bursts. Of course the day the want comes back strong, the holding fails. Holding against love always fails in the end, because love finds a reason. Tired finds a reason. Sad finds a reason. Friday finds a reason.
 
-You have lived the proof a hundred times. A permitted sliver in the evening calls the binge. The taste that was supposed to settle reopens wide. I feel like i cant stop. That sentence is not character. That is wanting re-fired by a dose while pleasure flatlines. The dose did not satisfy a need. It manufactured the need it pretended to meet.
+This is different. This is not holding against love. This is ceasing to love.
 
-For some of us the surge after a sweet rush can bring a real dip behind it as the body answers with its own clean-up crew; for most everyday afternoon slumps there is no clinically low blood sugar to blame, only the spike-then-drop misread as need. If you live with diabetes or take anything that affects blood sugar, follow your clinician first — this book changes a belief, not a prescription.
+When you see that the lift makes the low, when you feel the shoes and name the pinch, when you give the credit for every bright minute back to break and breath and body where it belongs, there is nothing left to hold against. The want does not sit inside you as a mighty enemy demanding battle. It thins to an echo, a brief hum from an empty drawer, a memory of pinch from feet already bare. You do not battle an echo. You smile at it and get on with your afternoon. The echo passes whether you feed it or not, and each unfed passing thins the next till the afternoons run clear without thinking.
 
-Hold that limit with clear eyes. It dignifies you. You are not ill every afternoon. You are not broken. You are a well person misreading a self-made dip as a call for more dip-maker. Correct the reading and the call loses its voice.
+Have you not felt that thinning already in your own life, in hours you forgot to watch? The call loudest when you stared at the drawer and fought the drawer, thinnest when you were busy and happy and forgot to listen? A mighty need does not thin when unwatched. An echo does. A learned hum does.
 
-Watch the re-fire hour by hour so it loses mystery. First dose: brightness ten minutes, pleasure sharp, wanting lit. Second dose an hour later: brightness five minutes, pleasure dull, wanting brighter. Third dose: brightness a flicker, pleasure gone, wanting loudest, mood lowest, shame rising. Each round pleasure pays less and wanting charges more. By evening you chase wanting alone, with no pleasure left to chase. That is not fuel. That is a loop feeding on its own echo.
+Picture Tuesday next week, lived free. Three o'clock comes. The light goes flat. You drink water. You stand, roll the shoulders, open the window, let air cross the face. The hum rises for a minute, says its old line about sugary somethings, and passes while you answer a message. Four o'clock comes and you are a touch dull, humanly dull, not pitted. You breathe, stretch, laugh at the next desk. Five comes and you are tired in the good way, ready for a real meal, hungry clean. No second reach. No wrappers to hide. No fog to explain. You walk home lighter than on fuelled days, wondering why you ever called the cover power.
 
-I lived the misreading exactly. Late afternoons I reached, brightened, fogged, reached again, and called the reaching proof of need. The proof was opposite. The reaching proved the last dose failed. A true fuel would carry you further each time. This fuel carries you shorter each time. A true helper would quiet the call. This helper amplifies the call. The failure is not yours. The failure is the fuel story, tested and found false by your own clock.
+Picture the drive home too. The packet absent from the passenger seat and not missed. The radio bright on its own. The hands quiet on the wheel. Hunger arriving honest near home, met by food that satisfies, leaving you quiet on the sofa, sleepy in the true way, waking clear.
 
-THE CRASH WITHIN LIMITS
+Picture the kitchen while tea cooks. No biscuit to get through the chopping. The chopping itself steady, the onions softening, the hunger growing clean toward the meal, the meal enjoyed and left. The evening unbroken by grazing, the mouth fresh, the head clear.
 
-Let me speak carefully of the dip, because care is part of honesty and honesty is what frees you.
+So do not picture yourself white-knuckling three o'clock for life. Picture yourself walking through three o'clock free, with water, with air, with work that holds you, with hunger waited for and then met by food that satisfies. The first clear afternoons may feel strange the way bare feet feel strange after shoes — light, almost too light, listening for pinch that does not come. Then strangeness turns to ease. Ease turns to joy. You will wonder, with real laughter, how a ten-minute cover ever passed for power.
 
-After a sweet flood the body sends its clean-up crew. Insulin works to clear the surge, and the clearing can overshoot for some, leaving a real after-dip behind the brightness. That after-dip is part of why four o'clock feels heavier than three. The lift carried its own down inside it, chemically, not only in mood.
+The fact is, you end these yo-yo days flat, foggy and never satisfied. That triple is the signature of the Trap, not of your nature. Flat because the spike spent you. Foggy because the answer dulled you. Never satisfied because a cover cannot satisfy, only mute. Free eaters end the day tired in the good way and satisfied in the true way, ready for sleep and morning. That good tiredness is waiting for you the moment the shoes stay off.
 
-For most of us most days there is no illness in that down. No clinical low to name, no disease to claim. Symptoms often arrive without any low measure to match them. The contested edge stays contested, and I claim no more than truth allows. What is settled is kinder and enough: the spike-then-drop pattern is real, the low follows the high by design of the surge and its answer, and the everyday slump is misread need, not broken blood.
+I promise you this as one who walked out. The want lifts for good when love lifts. Love lifts when sight comes. Sight has come this afternoon. You will not need to be brave at three o'clock for life. You will need only to remember what you saw at three o'clock once: the lift made the low, the shoes made the pinch, the body owned the power all along.
 
-Hear what that means and what it does not mean. It means the fog has an owner — the dose and its aftermath — so you can stop blaming age and character. It does not mean you are fragile. It does not mean afternoons must be feared. It means a small bodily echo plus a large false reading equals a loud call for more maker of echo. Correct the reading, let the small echo pass, and the loud call loses its amplifier.
+BEGIN WITH JOY
 
-You do not need to measure anything. You do not need to test anything. You need to watch the clock you already own. Brightness minutes, fog hours. That ledger alone convicts the fuel story without a single number. The body whispers for a little while after a flood. The mind, still conned, shouts. Soon the mind stops shouting, and the whisper fades for lack of orders.
+You came to this chapter braced for loss. Every diet taught you that afternoons without sweet mean grey endurance, dull hours earned by character, joy postponed till Friday. Cast that whole dread off now. It belongs to the method we put on the floor.
 
-THE WANT GOES, NOT GROWS
+You are not losing fuel. You are losing pinch. You are not losing a friend. You are losing a bill-collector dressed as a friend. You are not facing grey afternoons. You are facing your own clear blood, your own owned breaks, your own meals enjoyed hungry and left satisfied, afternoons that do not pit you at five.
 
-Here is the turn that makes this chapter different from every diet week you ever survived.
-
-With the old method you held out while the want stayed precious. Each no made the glow brighter. Each bright glow made the next no harder. That is why thirty counted days felt like thirty locked doors, and why the thirty-first day opened the flood. The want was guarded, not removed.
-
-This way the want is removed for good, because the belief that lit it is removed.
-
-See the shoe and you no longer crave the shoe's removal as a treat. You laugh that you ever praised the shoe. See the lift as the low lifting briefly and you no longer chase the lift as fuel. You pity the pinch while you still feel its echo, and the echo fades for lack of orders from above.
-
-Do you feel the difference in your chest as you read? Holding out tightens. Seeing loosens. Tightening needs thought-police at every party, every aisle, every advert. Loosening needs nothing but clear memory: that was never energy. That was relief from discomfort the dose itself maintains.
-
-I promise you as one who escaped after years of white-knuckle weeks: when the belief falls, afternoons do not become a corridor of doors to hold shut. They become ordinary hours again. Work blurs less because half the mind is no longer holding doors. Rest rests because rest is no longer danger. Hunger returns as honest hunger, met by real food, closed by satisfaction. Energy returns as the body's own steady current, not a borrowed spike.
-
-You will still feel a grumble for a little while in the early days. A whisper of emptiness. A habit-hour tug. Smile at it. It is not a mighty enemy demanding force. It is a small echo losing its instructions. It passes while you get on with enjoying your life.
-
-You do not need to police the thought. You need to re-read the thought correctly whenever it crosses. Ah. The shoe pinches. Good. That proves the shoe is the problem, not the cure. Brilliant. The spell thins each time you see it straight.
-
-Think of the days ahead without the shoe. Morning clear without a flood to clear. Midday steady without a bargain at eleven. Half past three an ordinary hour, a breath at the window, water, movement, onward. Four o'clock work flowing, not staring. Five o'clock hunger honest, welcoming a meal. Evening sofa without rustle and regret. Night sleep deeper. Morning lighter. Not superpowers. Not miracles. Ordinary steadiness returned, marvellous because it was always yours and now no one takes a cut.
-
-BEGIN IN JOY
-
-You came to this chapter braced for another warning to dread afternoons without sweets. You receive the opposite.
-
-Cast aside all gloom about the desk, the drive, the long meeting. There is no grey afternoon waiting to be endured. There is a steady afternoon waiting to be reclaimed — the one you knew before the Trap taught you to spike and crash, the one free eaters inhabit daily without heroics.
-
-I know this is hard to accept while the drawer still hums. Doubt is welcome. Keep the open mind you brought. Test everything hour by hour while you read on exactly as normal. Time the buzz. Time the fog. Count the second reaches. Watch pleasure fade while wanting flares. You will collect your own laboratory notes, and they will all point one way.
-
-The fact is settled and kind: BAD SUGAR never fuelled you. You fuelled you, and it took the credit while handing you the bill.
-
-Let that settle as gain, not loss. You lose no helper. You lose a hindrance that posed as helper. You lose flat afternoons, foggy thinking, double hunger. You keep mornings, meals, clear eyes, honest appetite.
-
-So take your standing order for the rest of this book, spoken with cheer and total confidence:
+You walk into the next room with fuel dead and appetite alive. That is the order freedom needs. First see the con. Then meet food with clean hunger. Then the rest follows easily. The body you thought betrayed you at three was telling truth all along. It was tired of covers. It was asking for water, air, pause, and later a meal that quiets. Give it those honest things and it will carry you steadier than any bar ever lent.
 
 5. BEGIN WITH ELATION, NOT DREAD
 You are escaping, not losing.
 
-Walk on light. The fuel excuse is dead. The body remains, marvellous and sufficient, waiting to be trusted again.
-
 SUMMARY
-- The three o'clock buzz lasts minutes and is followed by heavier fog, so the dose borrows energy and collects with interest.
-- Relief after tight shoes does not prove shoes give anything, and the sweet lift does not prove BAD SUGAR gives energy.
-- Real meals eaten hungry steady for hours and close with satisfaction, while sweet doses open want and never close it.
-- Heavy sweet intake loads liver, pressure, tissues and appetite control across populations, and that load is not the reason to escape, only further proof there is nothing to miss.
-- Each dose re-fires wanting while pleasure fades, which is why one never stays one and the box empties joylessly.
-- Everyday slumps are misread dips, not illness, and correcting the reading removes the want rather than guarding it.
-- Afternoons ahead are met with elation, because nothing real is lost and steady energy already belongs to the body.
+- The three o'clock lift never gave new power. It covered for minutes the low the last dose made.
+- Each cover wears thin on schedule and bills you lower, so the second reach is certain and weaker.
+- Tight shoes explain the whole afternoon: pinch all day, relief for minutes, thanks given to the pincher.
+- Real energy is quiet and owned by the body, steadied by plain meals, breaks, air and sleep.
+- The lift is deferred load across populations, not free gift, but fear is not the reason to leave.
+- The want does not stay large to be held for life. Unloved, it thins to an echo and passes.

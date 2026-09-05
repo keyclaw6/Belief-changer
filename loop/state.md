@@ -3,12 +3,12 @@
 ## Position
 
 - **Iteration:** 033
-- **Stage:** Judging (smoking)
-- **Status:** IN PROGRESS
+- **Stage:** Done
+- **Status:** IDLE
 - **Campaign branch:** `campaign-001`
-- **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 026–027 KEEP + 030 KEEP + 031 KEEP accepted; 032 REVERT; A1+K1 cutover landed)
-- **Last completed unit:** Sugar write+panel DONE (53208w, PANEL DONE). Smoking write DONE 14/14, 54277w.
-- **Next unit:** Judge quit-smoking. Then census both, BASELINE row. No KEEP.
+- **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 026–027 KEEP + 030 KEEP + 031 KEEP accepted; 032 REVERT; 033 BASELINE dual-subject)
+- **Last completed unit:** 033 BASELINE recorded. Sugar 53208w all-PASS; smoking 54277w all-PASS; blocking 0/0. Floors: factory-speech 20/18; journey re-argument 16/8; willpower-lexicon 40/31 (not PRIMARY).
+- **Next unit:** 034 hypothesizer. PRIMARY factory-speech 20/18. Do not replay 020–024 / 028 / 029 / 030 / 032. Do not start willpower-lexicon PRIMARY.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -55,3 +55,4 @@
 | 2026-09-05 12:59 | Sugar CH-01–07; smoking CH-01–06. Sugar CH-08 and smoking CH-07 in A1. | rest of 033 writes |
 | 2026-09-05 13:50 | Sugar write DONE 13/13 53208w. Smoking 12/14; CH-13 started. | judge sugar; smoking write |
 | 2026-09-05 14:10 | Sugar PANEL DONE. Smoking write DONE 14/14 54277w. | judge smoking |
+| 2026-09-05 14:35 | 033 BASELINE recorded. factory-speech 20/18. | 034 hypothesizer |

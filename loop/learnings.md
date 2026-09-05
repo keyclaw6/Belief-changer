@@ -275,3 +275,11 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** REVERT
 **Lesson:** factory-speech 14→22 / 10→13 (both rose). Length 51349/50428. Blocking 0/0. Header grep 0/0 — the string died; the replacement lead-in (`So here is my sixth instruction:`) scored as factory-speech in both. A also rose on `Hear the verdict and let it stand:` formula. Writer restored to 031 KEEP text.
 **Next direction:** PRIMARY remains 031 floors factory-speech 14/10. Do not replay this writer-anatomy change. Do not replay 028/029/030 header mechanisms. Do not replay 020–024 wording. Architecture pivot (reviewer-until-ACCEPT + dual subject) is a founder gate — do not start 033 on the old two-sugar protocol.
+
+### iter-033 — dual-subject BASELINE (A1 + K1)
+**Hypothesis:** None — first dual-subject BASELINE after A1 reviewer loop and K1 (quit-sugar + quit-smoking).
+**Change:** None. Factory files at 031 KEEP. Sugar plan reused. Smoking plan accepted. Writer A1 K=3. Judges composer-2.5, 53+57.
+**Verdict:** BASELINE
+**Lesson:** All-PASS, blocking 0 both. Words 53208 / 54277. Floors in both: factory-speech 20/18, willpower-lexicon 40/31 (not PRIMARY), journey re-argument 16/8. Comparison missing 0/2 and partial 2/9 are not ≥8 both. PASS probe factory-token FAIL was setup; Carr-native Ch6 journey PASS.
+**Next direction:** PRIMARY factory-speech 20/18. Journey re-argument 16/8 is secondary eligible. Do not replay 020–024 / 028 / 029 / 030 HEADER / 032 writer anatomy. Do not start a willpower-lexicon PRIMARY.
+

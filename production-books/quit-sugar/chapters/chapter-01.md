@@ -1,224 +1,142 @@
 Chapter 1
 THE INVITATION
 
-**IN THIS CHAPTER** — lamplight and a full kitchen cupboard, a boxed definition on the table, an old diet diary, a simple reading contract
+**IN THIS CHAPTER** — your hands holding this book, the boxed line that settles sweetness, a peach eaten hungry, supper eaten satisfied
 
-*You are not about to be scolded about food, you are about to walk out of it free.*
+*You are not about to lose anything you love, you are about to see a fraud clearly and walk out of it with your appetite intact.*
 
-A WORD BEFORE WE BEGIN
+THE FACT YOU ARE HOLDING THIS BOOK
 
-I know exactly how you feel as you open this book.
+Let me begin where it matters, because everything follows from it.
 
-Part of you is hoping. Part of you is scoffing. Part of you is tired of being told what to eat, tired of rules that start on Monday and collapse by Thursday, tired of feeling foolish around something as ordinary as biscuits and chocolate and fizzy drinks.
+If you were happy and free around sweetness, living exactly the life you want, you would not be holding this book. You would be out living that happy life. You would have no curiosity about stopping. Nobody hunts down a book about stopping something they do with complete joy and complete freedom.
 
-Let me put your mind at rest at once.
+Nobody needs a book about how to stop eating fresh peaches when hungry. Nobody needs a course in how to stop enjoying a morning walk. Nobody sits up late searching for a way out of something that leaves them light and satisfied.
 
-This is not another diet lecture. It is not a health sermon. It is not a list of forbidden foods with a wagging finger attached.
+You are holding this book because some quiet part of you already knows you are not free around sweetness. That is not an accusation. It is wonderful news. It means the decision you fear you will have to make is already made.
 
-I have been where you are. I lived for years inside the daily grazing and the evening binge, the drawer in the desk, the packet opened for the children that somehow emptied in my own hands, the bright resolve in the morning and the strange defeat at night. I tried moderation. I tried being good. I tried white-knuckle weeks. Each collapse left me more convinced that something was wrong with me.
+Ask yourself honestly, and let the answer arrive by itself. If you truly loved your daily grazing and your evening packet and your lift-crash-repeat, why would you need help with it? Why would the thought of a life with sweet treats in it every day leave you uneasy rather than calm? Why would you have rules about it at all?
 
-Nothing was wrong with me. Something was wrong with what I believed.
+The fact is, a free habit needs no rules, no bargains, no brave Mondays. The very drawer you keep tidying, the very packet you keep hiding, the very promises you keep restarting tell the truth about who is in charge. Your hand moves before your decision has finished forming. That strange fraud where choice seems to disappear for a second is not your character. It is the mark of being conned.
 
-That is why you are holding this book, and that is why I am so happy you are holding it. The very fact that you picked it up, opened it, started this first chapter — that tells me something important about you. You already sense that the sweet life is not as sweet as it pretends to be. You already want to be free. You have, in your heart, already made the decision.
+I use that word deliberately, and warmly toward you. You were not foolish. We were all handed phoney information from the day we could walk. That sweetness is love. That sweetness is reward. That sweetness is fuel. That a birthday without cake is not quite a birthday. That comfort comes in a wrapper. That energy comes in a can. Kind people told us. Clever packets told us. Bright adverts told us. How could you question it? How could I?
 
-What follows is only good news.
+We fell into the same loop together, you and I and millions of others. Not through weakness. Through fraud. Once you see that, shame has nowhere to live. And once shame goes, your mind opens.
 
-I am not going to ask you to suffer. I am not going to ask you to count, to weigh, to measure, to carry a chart around, to confess your lapses, to brace yourself for months of misery. There is none of that here.
+I know what is happening in your mind right now, because it happened in mine. One voice half-hopes, What if this really is different? Another voice scoffs, Too good to be true. I have heard easy before. And a third voice clutches the moderation rules to its chest, just in case. I have managed to be good this week. I only keep a little for Fridays. I do not keep it in the house. Those are not thoughts to be embarrassed about. They are the common dialect of every trapped sweet eater. I have thought them all.
 
-In fact I am going to ask something that will surprise you. Keep your cupboard exactly as it is while you read. Eat exactly as normal while you read. There is no need to throw anything away, to hide anything, to start being careful before you understand what you are looking at. Read with a clear head and a full stomach if you like. This read is the work. The freedom comes from seeing, not from suffering first.
+Bring them with you. I do not want blind faith from you. I want you to question what you think you know about sweetness and test everything I say against your own lived experience. You already own a thousand pieces of evidence. The drawer. The fog at four o'clock. The box that was meant to last the week. I will simply help you read that evidence straight.
 
-Do you find that hard to believe? Of course you do. That was my reaction too when I first heard that anyone could walk out of the sweet loop without misery.
+And hear this from the first page, because it sets the feeling for all that follows. What lies ahead is only good news. There is no need to brace yourself for misery. There is no need to gather grit for a fight. You have a trap to see through, and then you walk free. That is why reading on means you have absolutely nothing to lose and everything to gain.
 
-All I ask is this. Read on with a fair and open spirit. Remember, you have absolutely nothing to lose and everything to gain by doing so.
+You are probably thinking, Can anyone really get free easily, immediately and permanently? I thought that too. I had done the white-knuckle weeks. I had done the strict weekdays and the secret weekends. I knew how hard it felt when the method was wrong. So your wariness makes complete sense. Keep your wariness. Keep your intelligence. Lend me only your attention, in order, to the end, and let the conclusion arrive by itself.
 
-If I am wrong, what have you lost? An hour or two of reading. If I am right, you gain your whole sweet life back — and I mean back as joy, not as rules.
+Do you want to stop feeling controlled by sweetness? Of course you do, that is why you are reading this book. And do you want to love food and love mornings and love your life more, not less? Of course you do. Those two wants are not enemies. They are the same want. You have only been told they pull apart.
 
-Do you want to stop living in the craving-snacking loop? Of course you do — that is why you are reading this book. And I do not blame you for wanting out. Who would choose to live with buzzing head, sticky hands, and quiet regret if they saw a clear way out?
+That is the shift from audience to participant. You are not here to nod at ideas. You are here to run a calm investigation on your own life, with your own memory as witness. I will ask the questions. You will supply the answers. No conviction lasts like the one you work out yourself. The reader who investigates owns the finding forever, while the reader who is lectured borrows it for a day.
 
-Too good to be true? That was my reaction too. Stay with me. Test everything against your own afternoons and evenings. You are not being asked to believe me. You are being asked to look with me.
+WHAT THIS BOOK MEANS BY SUGAR
 
-THAT SINKING QUESTION: IS THIS ANOTHER DIET?
+We must fix our terms now, or nothing else will hold.
 
-“I’ve read them all. Why should this be different?”
-
-“I know sugar is bad for me. Must I be punished for liking it?”
-
-“I don’t want to live a grey life with no treats. Will you take my pleasures away?”
-
-Let me answer you directly, as one former sweet-lover to another.
-
-Diets start from the idea that the cake, the chocolate bar, the cola, the frosted cereal, the evening biscuits are pleasures you must deny yourself for the sake of health or weight or virtue. They assume the sweet hit is a reward, and that a serious person rations it with strength of character.
-
-This book starts from the opposite place. It asks a far simpler and far kinder question: what if those things never gave you what you thought they gave?
-
-I am not asking you to accept that on trust. I am asking you to investigate it with me, page by page, with your own experience as the evidence. You are not my pupil. You are an investigator with me beside you, pointing to things you have already lived a hundred times and inviting you to look at them afresh.
-
-There will be no scolding here. I will never look down on you. How could I? We all fell for the same fraud. We all grew up hearing the same messages: sweet means love, sweet means reward, sweet means energy, sweet means celebration, sweet means comfort when the day has been hard. We heard it from parents with kind faces, from adverts with bright colours, from friends passing the tin around the office, from films where the happy ending comes with ice cream.
-
-We believed because there was every reason to believe. We were not foolish. We were conned.
-
-That word matters. Conned. There is a fraud at work in our modern sweet life, a vast, clever, well-funded fraud that profits when we reach again and again. I am harsh about that fraud. I will be harsh about it throughout this book, because it deserves harshness. Toward you I feel only warmth and complicity. You are my friend in this, not my target.
-
-So let this first relief settle on you: there is nothing wrong with your character. Your past failures with cutting down, your broken Monday promises, your “I’ve managed to be good this week” followed by the late-night empty packet — none of that proves weakness. It proves you were using the wrong approach on a trick you had not yet seen through.
-
-Once you see the trick, you do not need character to beat it. You need clear eyes.
-
-And there is something else diets never tell you. They keep you in dread. They tell you the best days are behind you, that from now on life will be careful and dull. I tell you the opposite. Cast aside all feelings of doom and gloom. You are not marching toward deprivation. You are walking toward release, toward mornings that feel lighter, toward meals that satisfy, toward a mind no longer buzzing with “sugary somethings to get me through.”
-
-Does that sound too good to be true? I know this is hard to accept, but stay with me. You will soon see for yourself.
-
-You are not here to learn how to be good. You are here to see clearly. That is a wholly different adventure, and a marvellous one.
-
-WHAT WE MEAN BY BAD SUGAR
-
-Before we go a step further, we must be crystal clear about our target, because confusion here keeps thousands of kind, intelligent people trapped.
-
-> WHAT BAD SUGAR MEANS IN THIS BOOK
+> BAD SUGAR means refined sugar plus added free sugars plus junk processed carbs and starchy snack-carbs eaten as sweet hits, including sugary drinks, confectionery, biscuits, cakes, desserts, sweetened cereals and equivalent grazing doses.
 >
 > When this book says sugar, take it to mean BAD SUGAR.
 >
-> BAD SUGAR means refined sugar plus added free sugars plus junk processed carbs and starchy snack-carbs eaten as sweet hits, including sugary drinks, confectionery, biscuits, cakes, desserts, sweetened cereals and equivalent grazing doses.
->
-> Natural sugars inside whole fruit, vegetables and plain meals are not the target. They belong to real food, eaten when hungry, enjoyed to satisfaction.
->
-> Inside the BAD SUGAR line there is no healthy level sought other than zero sought. An accidental crumb the body can cope with. A deliberate dose the mind cannot afford. Guard the belief and the body looks after itself.
+> Natural sugars inside whole fruit, vegetables and plain meals are not the target. They belong to real food, to hunger satisfied, to the body left to do its marvellous work.
 
-Read that box twice. It is the foundation of everything.
+Read that box twice. Everything depends on it.
 
-I am not talking about an apple. I am not talking about a carrot, a potato in a proper meal, a bowl of plain rice with vegetables, a peach eaten hungry in the sun. Real food is your friend. Real food is joy. Real food will become more enjoyable, not less, as this book does its work.
+I am not talking about food. I am not talking about eating. I am not talking about hunger, or meals, or appetite, or the pleasure of sitting down hungry to something you love. I am talking about one narrow engineered product that pushed its way into your eating and pretended to be eating.
 
-I am talking about the engineered sweet hit: the white powder and syrups added by factories to make packs fly off shelves, the chocolate bar built to melt and vanish and call for another, the biscuit that is never one biscuit, the fizzy drink that hisses and bites and leaves thirst still standing, the breakfast that is dessert wearing a healthy mask, the cake that promises celebration and delivers fog.
+Think of the difference you already know in your body. There is eating, which is hunger met and satisfaction felt. You eat. You enjoy. You stop. You get on with your life. And there is dosing, which is a hit taken to quiet a restlessness that the last hit created. You take the hit. You get a brief buzz. You drop lower. You reach again. They look similar from the outside. They feel entirely different from the inside. This book is about dosing, not eating.
 
-Why draw the line there? For a simple reason that your own life will confirm. Nobody binges on plain apples in shame at 10pm with the kitchen light glaring and a hand that seems to move before any decision has been made. Nobody hides broccoli wrappers. Nobody thinks “I feel like i cant stop” over a bowl of soup. The loss of control, the short term lift then fast drop, the roller coaster — those belong to BAD SUGAR doses, not to food.
+That is why fruit is sugar too so nothing matters fools nobody once you see it plainly. A child picks up a peach, eats hungrily, stops mid-bite and runs off to play. No counting. No guilt. No second reach. Body leads, joy follows, done. Now picture a desk at three o'clock. A sweet top-up for energy. A ten-minute buzz. A fog at four. A second reach. Those two events have nothing in common except that clever language calls them both sugar. One is eating. One is a dose. Your body knows the difference even when your mind has been taught to blur it.
 
-Do you see? We are not against sweetness. We are not against eating. We are against a con that stole sweetness and sold it back to us in packets.
+So when I say BAD SUGAR, I mean the sweet hit. The dose. The fix that promises to lift you and leaves you lower. The cola, the bar, the biscuit taken not from hunger but from that crawling need-something-now feeling. I do not mean the apple in your bag. I do not mean the carrots in the market. I do not mean the bread on your table or the potato in your stew. I do not mean dinner with people you love.
 
-You may ask about fruit. “Fruit is sugar too so nothing matters, right?” No. That blur is part of the fraud. An orange eaten hungry satisfies and ends. A pack of sweets eaten hungry excites and multiplies. Your own evenings know the difference. We leave real food free because real food leaves you free. We close the line around BAD SUGAR because inside that line freedom never comes from managing the dose. Freedom comes from seeing the dose has nothing to offer.
+Do you see how much fear falls away the moment the line is drawn? This is not a war on food. This is not a war on hunger. This is not a war on pleasure. Hunger stays. Meals stay. Fruit stays. Satisfaction stays. Only the dose goes, and the dose never satisfied you anyway.
 
-A brief and caring note as we define our terms. If you live with diabetes or pre-diabetes, take medication that affects blood sugar or appetite, are pregnant, live with an eating disorder past or present, or have any medical condition where changing what you eat could carry risk, talk to your clinician before changing anything and follow their advice first.
+I want you to feel the ground firm under you here. Your body already knows how to run itself without BAD SUGAR. It makes the fuel it needs from ordinary food. It tells you when it is hungry. It tells you when it is satisfied. It does not need a packet to translate. The packet only drowned out the signals and then sold itself back to you as the signal.
 
-That care sits quietly beside our work. This book changes a belief. It does not replace your doctor.
+Hold that line in mind as you read. Whenever you hear the old worry, But I love food, answer it with the line. You love food. Good. Food stays. Whenever you hear, But fruit has sugar, answer it with the line. Fruit is food. Food stays. We are dealing with one thing only, the sweet hit dressed as food. Keep the line clear and the rest of the book stays clear.
 
-With that care in place, the definition stands clear. You now know exactly what we are talking about. And you have already done the hardest part of the definition work: you have stopped blurring real food with factory sweet hits.
+MY OWN SWEET YEARS
 
-Keep that clarity. It will hand you freedom later without any struggle.
+You deserve to know where I speak from, so you know I will never look down on you.
 
-WHY I KNOW THIS CAN BE EASY
+I was not a light, casual sweet nibbler who dabbled and then wrote a book. I was deep in it for years. Morning pastries with crumbs on the keyboard. Chocolate kept in the desk drawer for emergencies that arrived every day at the same hour. Biscuits that began as one with tea and ended with the packet staring back at me, empty, while I sat in that familiar mixture of fullness and emptiness at once. Full stomach, empty feeling.
 
-You may wonder who I am to promise anything so bold.
+I told myself the stories we all tell. Sugary somethings to get me through. A treat when you feel you deserve one. I have managed to be good this week. I want to get off the roller coaster, but what if mornings are grey without it? Do those sentences sound familiar? They should. They are not proof of your weakness. They are proof of a shared con. I hear them from every trapped eater because the trap hands out the same script.
 
-I am not a guru on a mountain. I am not a nutrition policeman. I am someone who escaped.
+I tried what you have tried. I tried cutting down to weekdays. I tried allowing the weekend and calling it balance. I tried not keeping it in the house, which is a peculiar game when you both hide it and know where you hid it. I tried stern talks in the mirror and bright new Mondays. Each attempt ended the same way, and each ending left me more convinced the fault was mine.
 
-For years I lived the loop you know so well. The afternoon reach. The “treat when you feel you deserve one.” The cinema chocolate that felt like part of the love in the room. The celebrating with chocolate that felt like the celebration itself. The I-need-to-eat-something-RIGHT-NOW feeling that arrived like an order and left like regret.
+The fact is, it never was. My will was strong. Your will is strong. It takes a strong will to persist for years in something that leaves you flat and reaching again, against all your instincts. Our failure was not in ourselves. Our method was wrong. It left the belief intact that sweetness was a pleasure we must now have less of, and then asked us to live in missing. Who could live happily while mourning? Who could white-knuckle a mourning forever?
 
-I tried to be moderate. Who has not? One with tea. None in the house — except the emergency pack for visitors. None on weekdays, whatever we like at weekends. Each rule made the next dose glow brighter and taste more precious. Each rule turned a simple packet into forbidden treasure.
+I know this is hard to accept, but look at your own record for a moment. How many Mondays did you start full of resolve? How many Fridays did you end full of regret? Was that lack of character? Or was it the predictable result of being asked to want something dearly and have it rarely? The more precious you make each permitted sliver, the louder it calls. That is not failure. That is arithmetic.
 
-Then, through a chain of lucky conversations and hard looking at my own behaviour, I saw the fraud for what it was. It was not dramatic. It was quiet. I noticed that the lift always paid itself back with interest. I noticed that the comfort never comforted, only postponed. I noticed that the pleasure I credited to the sweet belonged to the moment around it — the rest, the laugh, the pause, the company.
+I remember standing in my own kitchen late, tired, telling myself just one to be sociable with myself, then watching the packet thin out while some other part of me watched from a distance and wondered why my arm kept moving. I remember the morning after vows, the fresh resolve, the quiet vow to be good, and the same drawer opening by mid-afternoon as if the morning had never happened. If you know that split feeling, you know mine. We lived the same loop.
 
-And when that seeing completed itself, something marvellous happened. The want fell away. Not after thirty days. Not after a heroic fight. At once, as understanding. I took my last ordinary sweet without ceremony and without fear, and found I did not mourn it. I rejoiced.
+I escaped, not through struggle, but through seeing. One ordinary day, after years of yo-yoing, I saw with complete clarity how little the last sweet had done for me. I paid attention to the cloying mouth, the heavy stomach, the restless mind already planning the next one. Once that was seen, it could not be unseen. The glow I had remembered was not in the wrapper. It was in my memory of the wrapper, polished by years of talk.
 
-Since then I have helped many others see the same thing. Again and again I have watched the same surprise cross a face: “Is that all it was?” Yes. That is all it was.
+I have since walked many others through the same simple investigation you are about to do. Not by frightening them. Not by shaming them. By asking the plain questions in the right order until the answer stood up by itself. That is why I can speak to you with complete confidence. I know how this feels from the inside, and I know how marvellous it feels to step outside it.
 
-That is why I speak to you with total certainty. I do not offer this as theory. I offer it as lived fact, confirmed in my own body and in the lives of others who walked out easily, immediately and permanently.
+If you feel a tug of hope as you read that, let it grow. If you feel a tug of doubt, bring that too. Doubt is welcome here. I will meet it head-on, with your own experience as witness. Did the last sweet truly leave you satisfied? Did the last box truly leave you proud and light? Did the last celebration truly need the chocolate to be warm? You already know. You have lived the answers a thousand times. We only need to read them straight together.
 
-Read those three words again, because I mean them exactly as I say them: easily, immediately and permanently. Not with effort over time. Not after you have proved yourself. Now, through seeing, for good.
+WHY THIS IS NOT ANOTHER DIET LECTURE
 
-You may ask: how can you be so sure about me? You have never met me.
+Let me remove the fear that this will be another miserable course in denial, because that fear closes the mind I need open.
 
-I am sure because the trap is the same for us all, even when our stories dress it differently. The office worker and the night-shift nurse, the student and the grandmother, the fitness fan and the self-declared chocoholic — all describe the same roller coaster, the same short buzz and long fog, the same “just one” that never stays one. Our details differ. The con does not.
+Have you noticed what every diet and moderation rule has in common? They all start by agreeing with the trap. They tell you sweetness is a pleasure you must now have less of. Less pleasure. Smaller pleasure. Rarer pleasure. Be good. Earn it. Deserve it. Count it. Pay for it later. They leave the belief untouched, that you love it, that you need it, and then ask you to live in a state of permanent missing, holding your breath for Friday.
 
-And I am sure because I know the objection already forming in your mind, and I welcome it.
+No wonder you failed. No wonder I failed. Who could succeed at missing forever? The forbidden-must-have rebound is built into the order. The bigger the glow around each allowed treat, the harder the crash after it, the louder the call for the next one. That is not your character failing. That is the method working exactly as a trap method works.
 
-“But I like it. I really like it.”
+This book does the opposite. It does not ask you to want sweetness less often. It shows you there is nothing there to want. It removes the want itself, so there is nothing to miss and nothing to fight. You do not need to become a smaller, sadder, more obedient version of yourself. You need to see one thing straight, and then your appetite returns to its natural owners: hunger and satisfaction.
 
-Of course you feel that you like it. If you felt otherwise you would not be reading. The question we will examine together, calmly and kindly, is whether what you like is the dose itself or the relief, the scene, the pause, the permission to stop for a moment — all good things that the dose merely rode on the back of.
+That is why you will find no meal plans here. No calorie tables. No allowed lists and banned lists to carry in your wallet. No talk of days counted or streaks kept as a way of life. That entire apparatus belongs to the Willpower Method, and the Willpower Method is the guard that keeps the door locked. It tells you freedom must be earned through suffering. It lies. Suffering never freed anyone. Seeing frees.
 
-“But I need something to get through the afternoon.”
+Hear how different the feeling is. A diet says, You may not have. It leaves you staring at the packet, dreaming about Friday, polishing the very thing it forbids. This book says, Look closely. It leaves you staring at the packet and seeing the fraud, the buzz that borrows from tomorrow, the pay that never pays. One creates a dream. The other removes it. Which sounds like relief?
 
-We will look at afternoons together, hour by hour, and you will judge for yourself what gets you through and what drags you down.
+Here is the liberating truth you will prove to yourself as you read. Your body already knows how to eat. Hunger tells you when. Satisfaction tells you when to stop. Real food, eaten hungry, is favourite in a way no packet can imitate. You do not need to learn that. You need to unlearn the noise that drowned it out.
 
-“But mine is not that bad. I am not like those people.”
-
-I am glad if your suffering is lighter than some. The fraud does not need you to be extreme to keep you. It only needs you to believe that life would be greyer without it. That belief is the whole leash, whether the leash is long or short.
-
-Ask yourself these plain questions, and answer honestly in your own heart:
-
-If sweet hits genuinely made life brighter, why do bright moments so often end with flatness and a reach for more?
-
-If you were truly free around them, why would you need a book about them at all?
-
-If moderation worked, why has every sensible rule you ever made quietly collapsed, leaving you blaming yourself for a failure that was never yours?
-
-You do not need to answer in words. Your life has already answered. You are here. That is answer enough.
-
-YOU HAVE ALREADY DECIDED
-
-There is a logic trap here, and it is a kind one.
-
-Nobody reads a book about escaping BAD SUGAR for fun. Nobody curious about freedom from the craving-snacking loop keeps reading page after page unless some part of them already wants out. You do not pick up a book titled to quit something you love freely and joyfully without a flicker of doubt.
-
-That flicker is wisdom. Listen to it.
-
-We instinctively sense when something has taken hold of us. We feel the hand moving toward the cupboard before we have chosen. We feel the odd compulsion to finish the box once opened, the regret arriving before the last swallow has even finished. We tell ourselves it is free choice, and yet we need help to stop choosing it. Do you see the contradiction?
-
-If it were pure joy, you would not need help. The fact you are holding this book means you already know, underneath the noise, that the joy story does not add up.
-
-So let me say this with warmth and with authority: your decision is already made. You want to be free. My job is not to bully you into deciding. My job is to show you that your decision is safe, and wonderful, and far easier than you were taught to fear.
-
-Think how proud you will feel to walk past the aisle with calm indifference. Think how exciting it will be to eat a proper meal hungry and stop, satisfied, without the buzzing debate in your head. Think of the weight off your shoulders when the evening no longer holds that tug.
-
-Those are not fantasies. They are the natural state returning. Your body already knows how to hunger and how to be satisfied. Your tongue already knows real flavour. Your energy already knows how to rise and fall gently with day and night, without spike and crash. Nothing needs to be added. Something false needs to be removed.
-
-And removal, when it is seeing, is joy.
-
-You came here suspecting the whole approach of diets and willpower weeks is wrong. You are right. You came hoping there is a way that does not punish you. There is. You came fearing you would be asked to live grey. You will live brighter. All that stands between you and that brightness is a little clear looking, done in order, with an open mind.
-
-THE CONTRACT THAT SETS YOU FREE
-
-Every method has a contract. Mine is unusually pleasant.
-
-I do not ask for money beyond this book. I do not ask for pain. I do not ask for weeks of preparation. I ask only that you read in a certain spirit, so that your mind stays open long enough for the seeing to happen.
-
-All you have to do is follow all the instructions.
-
-That sentence will return throughout our time together. It is not small print. It is the whole method in one line. The instructions are few and simple, and each will arrive exactly when you need it. Follow them all, in order, with an open mind, and the rest takes care of itself.
-
-The second part of our contract concerns food itself, and I want you to hear it clearly because it surprises every dieter:
+So hear this contract, because it underlies everything and I will return to it:
 
 Eat what you want, when you are hungry, stop when you are satisfied, and never punish yourself again.
 
-Read it again slowly. That is not a trick. That is my solemn promise about how you will eat in freedom.
+Read it again. Slowly. It is not a trick. It is not permission to binge on BAD SUGAR disguised as kindness. It is the natural law of eating, restored once the fraud is gone. While you read, eat normally. Enjoy your meals. If you feel hungry, eat. If you feel satisfied, stop. Do not diet while you read. Do not punish. If you live with diabetes or take medication that affects blood sugar, are pregnant, or live with any risk around food, talk to your clinician first and follow their advice first, and use this book for the belief change only.
 
-No weighing. No counting. No good-food versus bad-food moral drama around real meals. No punishment after pleasure. Hunger is your guide to start. Satisfaction is your guide to stop. Your body is a marvellous authority when the sweet noise is gone. Trust it. Enjoy it. Real food, eaten hungry, is one of life’s great delights — bread with real crust, soup that steams, fruit that juices down your chin, a meal shared and lingered over. Nothing grey about it.
+Can it really be that simple? you ask. Yes. Because the difficulty was never in your body. It was in a belief. And beliefs, once corrected, change in a moment. All you have to do is follow all the instructions.
 
-Do you worry that sounds like a play on words? “Favourite food without sweets — how could that be favourite?” I understand the suspicion. Keep it for now. We will inhabit real eating together later, and you will taste the answer rather than take my word for it.
+You will hear that sentence from me more than once, because it is the whole contract in one line. I do not ask you to believe me yet. I ask you to follow the reading as it is laid out, in order, with an open mind, and let the conclusion arrive by itself.
 
-For now, hold the promise as promise: you will not live by rules. You will live by hunger and satisfaction, freely.
+Think how proud you will feel to eat like a free eater again. Think of a market stall piled high, vegetables bright, bread warm, fruit fragrant. Think of sitting down hungry and tasting properly, stopping because you are satisfied, getting on with your afternoon light. That is not a dream diet. That is your natural state peeking through. We buried it under doses. We will dig it out by seeing, not by force.
 
-The third part of our contract is about spirit. Begin — and continue — with elation, not dread. There is no need to be miserable while you read. In fact misery would only cloud the seeing. This is an exciting adventure you started the moment you opened these pages. Day one is today, not some grim future date when you will be “ready.” You are ready to look. Looking is enough.
+HOW TO READ THIS BOOK SO IT WORKS
 
-You may feel the old voice whisper: “This cannot work for me. My case is different.” Welcome that doubt. Doubt is not disobedience. It is your mind protecting you from disappointment. Bring the doubt with you. Test everything I say against your own lived afternoons and evenings. If something rings false, mark it and read on. The full picture will correct the detail.
+There is a right way to read this book and a wrong way, and the difference matters more than you think.
 
-But do not close the door early. To find it easy to be free, you must allow yourself the frame of mind where, whenever sweet craving crosses your thoughts, you feel relief that you no longer feed it. That frame is built one clear seeing at a time. An open mind is the soil it grows in.
+The wrong way is to skim, to skip to the end, to argue from the second sentence without hearing the whole case. That is like trying a combination lock with three numbers when there are four. Miss one piece and the door stays shut, not because you are stupid, but because the mechanism needs every tumbler. I have seen bright people stay trapped for one missed tumbler. Do not let that be you.
 
-So here is my hand. Take it.
+The right way is simple. Read in order. Keep questioning. Let each idea land before you reach for the next. Do not rush to change anything you eat while you read, not because I want you to take more BAD SUGAR, but because I want your mind clear and unthreatened while it investigates. A mind braced for deprivation cannot think straight. A mind at ease can see straight.
 
-You came fearing a lecture. You found an invitation.
+I know the order not to change anything yet feels strange. Should I not start at once? The answer is no. If you try to force yourself through the first chapters while fighting your appetite, you will turn an investigation into a test of endurance, and you will miss the perception shift that makes endurance unnecessary. Read first. See first. Freedom follows seeing. The behaviour changes by itself when the belief changes.
 
-You came clutching rules. You may lay them down.
+And read with excitement, not dread. Cast aside all feelings of gloom. You are not about to lose a friend. You are about to expose an enemy that posed as a friend. There is a world of difference. One brings grief. The other brings relief. You are starting an exciting adventure out, not a sentence to be served.
 
-You came half-hoping, half-scoffing. Stay half-scoffing if you must — only keep reading.
+Do you feel the tug of doubt again? I want to get off the roller coaster, but what if life is greyer without sweet treats? Good. Keep that question in your pocket. I do not want you to swallow anything whole. I want you to test it. When we come to energy, ask whether the last lift lasted. When we come to reward, ask whether the last treat truly paid you. When we come to comfort, ask whether the last evening box truly soothed you or left you flat. Your life has already run the experiment. We will simply read the results honestly.
 
-The fraud that lived off you is about to lose its cover. The eater you were before the noise — hungry when hungry, satisfied when satisfied, delighted by real flavour — is still there, waiting to be recognized.
+We fell into this together, you and I and millions of others, not through choice but through con. We will walk out of it in the same way, not through force, but through clarity. You do not need to become a different person. You need to grow back into the eater you were before the noise began: hungry when hungry, satisfied when satisfied, free when a sweet thought crosses your mind.
 
-Walk with me. See with me. Rejoice with me.
+That is the adventure you start today. Not a lecture. An escape. Not a smaller life. A larger one. And you have absolutely nothing to lose and everything to gain by staying with me to the last page, easily, immediately and permanently free.
+
+And it begins with a single agreement between us.
 
 1. KEEP AN OPEN MIND
 Question what you think you know about sweetness.
 
-**SUMMARY**
-- This book is not a diet lecture and never scolds the reader.
-- The target has a clear boxed meaning that leaves real food free and joyful.
-- Holding and reading this book already shows the wish to be free.
-- The method works by clear seeing while living normally, not by suffering first.
-- Food in freedom is guided by hunger and satisfaction, never by punishment.
+SUMMARY
+- This is an investigation into what sweetness does for you, not a diet and not a lecture on control.
+- Sugar in this book means BAD SUGAR, the sweet hit and junk snack dose, not whole fruit, vegetables or plain meals.
+- Holding this book already tells the truth that choice has been tampered with, and that truth removes shame.
+- Hunger and satisfaction remain the guides for eating, and real food eaten hungry stays favourite.
+- Belief changes first by seeing straight, and freedom follows seeing.
