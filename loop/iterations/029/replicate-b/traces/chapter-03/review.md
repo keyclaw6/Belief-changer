@@ -1,0 +1,2 @@
+REVISE
+ID — Uses evidence not cited on card: "lays load on the liver, nudges blood pressure upward, keeps low-grade inflammation simmering, and bypasses the appetite controls that plain food obeys" / "The lift you feel is not free power. It is deferred load." Card cites only EV-20 and EV-14.
