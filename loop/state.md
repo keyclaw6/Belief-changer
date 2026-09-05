@@ -7,8 +7,8 @@
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 026–027 KEEP accepted)
-- **Last completed unit:** 029 writes done (A 48477 / B 51991, floor met).
-- **Next unit:** Judge A (j029a). Start judge B after judge A exits.
+- **Last completed unit:** 029 judge A done (factory-speech noted 8 + blocking 1 = 9, was 13). Writes 48477/51991.
+- **Next unit:** Judge B (j029b), then census/decision.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -29,3 +29,4 @@
 | 2026-09-05 03:58 | 028 INCONCLUSIVE. factory-speech 13→18 / 16→10. Style-guide restored. | 029 |
 | 2026-09-05 04:00 | 029 hypothesis: B10 opening-pictures, not operator 11. Writers starting. | 029 writes |
 | 2026-09-05 04:48 | 029 writes done 48477/51991. Starting judge A. | j029a |
+| 2026-09-05 04:58 | 029 judge A done. factory-speech 9 (8+1 blocking). Starting judge B. | j029b |
