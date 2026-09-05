@@ -61,22 +61,22 @@ Wave 2 (2026-09-05 ~10:30): orchestrator harvest via `scripts/loop-runner/web_to
 
 Floors not cleared. Next gap-fill: P-04 lived daily cost; after-sex / first-morning scenes; Philip Morris nicotine-as-product memo (UCSF); more non-WhyQuit testimonies; app-store quit-app reviews; more graded science (Cochrane NRT, Surgeon General).
 
-Wave 3 (2026-09-05 ~10:50): gap-fill miners wrote into this checkout (P-04 lived L-036–L-060; morning/sex/meal/car scenes S-015–S-031; Mumsnet justifications J-027–J-045; Cochrane/SG science M-013–M-020; Dunn/Teague UCSF villain V-012–V-019; testimonies T-011–T-017 minus T-015 dropped for naming Allen Carr). Wave-1 lived miner first wrote into an isolated worktree (0 packets on parent). Resume recovered 120 packets onto parent as L-061–L-180 plus `/tmp/bank-03-lived-from-miner.md`. Other wave-1 miners still unrecovered (justifications/scenes/escapes/beliefs/lexicon/analogies/villain/science/freedom claimed counts not trusted until parent files grow).
+Wave 3 (2026-09-05 ~10:50): gap-fill miners wrote into this checkout (P-04 lived L-036–L-060; morning/sex/meal/car scenes S-015–S-031; Mumsnet justifications J-027–J-045; Cochrane/SG science M-013–M-020; Dunn/Teague UCSF villain V-012–V-019; testimonies T-011–T-017 minus T-015 dropped for naming Allen Carr). Wave-1 miners first wrote into isolated worktrees. Resume onto parent recovered lived L-061–L-180 plus the other five banks (justifications J-046–J-130, scenes S-032–S-067, escapes E-017–E-061, beliefs B-013–B-038, lexicon D-026–D-074, analogies A-017–A-045, villain V-020–V-049, science M-021–M-034, testimonies T-018–T-030). Dumps also at `/tmp/belief-changer-miner-dumps/`.
 
-### Wave 3 packet counts (approx., parent checkout)
+### Wave 3 packet counts (parent checkout after recovery)
 
 | Bank | Packets | Notes |
 |---|---|---|
-| 01 justifications | 45 | +19 P-04/P-02; still far under ≥100 |
-| 02 belief-map | 12 | keystone neighborhood present |
+| 01 justifications | 130 | **clears ≥100**; four personas |
+| 02 belief-map | 38 | keystone neighborhood + variants |
 | 03 lived-experience | 180 | L-001–L-180; P-04 daily-cost filled |
-| 04 special-moments | 31 | first-morning, after-sex, after-meal, in-car |
-| 05 escape-routes | 16 | still thin vs every-route |
-| 06 analogies | 16 | need ≥50 |
-| 07 mechanism-science | 20 | Cochrane NRT + SG unaided rates; more CONTESTED still useful |
-| 08 villain | 19 | Dunn "product is nicotine" + Teague dosage-form now on disk |
-| 09 lexicon | 25 | need ≥100 |
-| 10 freedom testimonies | 16 | T-015 dropped (Carr named); long-form present |
+| 04 special-moments | 67 | first-morning, after-sex, after-meal, in-car |
+| 05 escape-routes | 61 | gum/patch/vape/just-one/cut-down/tomorrow plus more |
+| 06 analogies | 50 | **clears ≥50** (A-001–A-050; two INVENTED tagged) |
+| 07 mechanism-science | 34 | Cochrane NRT + SG unaided rates |
+| 08 villain | 49 | Dunn "product is nicotine" + Teague dosage-form |
+| 09 lexicon | 100 | **clears ≥100** (D-001–D-100; D-075–D-100 harvested from banked lived quotes) |
+| 10 freedom testimonies | 29 | T-015 dropped (Carr named); T-001–T-030 with gap |
 
-Still short of §7 floors: justifications, analogies, lexicon, escape-route coverage, more CONTESTED science. Do not synthesize until those clear or scarcity is documented.
+Still short of §7 floors: none of the count floors. Next: synthesize `lived-experience.md` + `scientific-evidence.md` + sources ledger, then plan-write. Do not write 033 until smoking plan is `fit to write from`.
 

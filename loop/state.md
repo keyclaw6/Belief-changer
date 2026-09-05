@@ -7,8 +7,8 @@
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 026–027 KEEP + 030 KEEP + 031 KEEP accepted; 032 REVERT; A1+K1 cutover landed)
-- **Last completed unit:** Smoking research wave 3 on disk (lived 180; PM Dunn memo; morning/sex scenes). Floors not cleared (justifications/analogies/lexicon still short).
-- **Next unit:** Recover remaining wave-1 miner packets onto this checkout; gap-fill justifications (≥100), analogies (≥50), lexicon (≥100), escape routes. Then synthesize, plan-write, alignment + moves, PASS probe (Ch6 and Ch22 as both ours and real), 033 BASELINE write. Do not write 033 until smoking plan is `fit to write from`.
+- **Last completed unit:** Wave-1 miner recovery onto parent. Count floors now clear (J=130, A=50, D=100, L=180). Next is synthesis, not 033 write.
+- **Next unit:** Synthesize `lived-experience.md` + `scientific-evidence.md` + sources ledger; then plan-write/review until `fit to write from`; alignment + moves; PASS probe (Ch6 and Ch22 as both ours and real); 033 BASELINE write. Do not write 033 until smoking plan is `fit to write from`.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -42,3 +42,5 @@
 | 2026-09-05 10:24 | Heartbeat: banks still empty; Cursor wave-1 miners produced 0 packets. | orchestrator harvest |
 | 2026-09-05 10:40 | Wave 2 harvest banked ~177 packets (10 banks). Floors not cleared. | gap-fill research |
 | 2026-09-05 10:55 | Wave 3: lived miner recovered L-061–L-180; P-04/scenes/PM memo/science also landed. T-015 dropped (Carr). Floors still short. | recover other wave-1 banks; gap-fill J/A/D |
+| 2026-09-05 11:10 | Remaining wave-1 banks recovered onto parent. J=130 (floor clear). Analogies 45 / lexicon 74 still short. | gap-fill A+D then synthesize |
+| 2026-09-05 11:15 | A=50 D=100 from banked lived quotes. Count floors clear. | synthesize lived-experience + science |
