@@ -1,0 +1,6 @@
+{
+  "model": "claude-fable-5-1-thinking-high",
+  "harness": "cursor",
+  "spawn": "cursor-task",
+  "agent_id": "bc-1d4970f0-ff53-5fb2-b298-004fad33e4a1"
+}

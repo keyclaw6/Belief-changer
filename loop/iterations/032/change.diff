@@ -1,0 +1,49 @@
+diff --git i/prompts/chapter-writer.md w/prompts/chapter-writer.md
+index a6ff0818..0b0a0dfc 100644
+--- i/prompts/chapter-writer.md
++++ w/prompts/chapter-writer.md
+@@ -57,8 +57,8 @@ that can repair the defect. Never emit another refusal form.
+   one spoken clause — never paste the boxed workshop title (`CA-SAFE`,
+   `CA-01`, `PRACTICAL SAFETY GUARDRAIL`) mid-chapter, and never add "this
+   notice is not part of the belief argument." Address the reader as you/we
+-  only: never name a plan handle or pupil in vocative, third person, or
+-  IN THIS CHAPTER. Never surface workshop vocabulary: no ledger or source
++  only: never name a plan handle or pupil in vocative or third person.
++  Never surface workshop vocabulary: no ledger or source
+   IDs, no SE-/S-/E- labels, no
+   SUPPORTED/MIXED/CONTESTED grades, no persona codes or P-xx, no scene,
+   mantra, or device-code strings, no beat names, no chapter-number callbacks
+@@ -115,17 +115,22 @@ that can repair the defect. Never emit another refusal form.
+ Use every element in this order:
+ 
+ 1. `Chapter [N]` and an original working title in capitals.
+-2. **IN THIS CHAPTER** — names of the rooms/pictures in this chapter (places,
+-   objects, encounters), not a syllabus, not "we will / you will," not a
+-   named pupil.
+-3. One italic thesis line: a spoken Carr sentence of the reframe, not a paste
+-   of the card's leaving-belief field.
+-4. Titled body sections building the one move and landing its peak verdicts.
+-5. When an instruction is assigned: the numbered ALL-CAPS spoken imperative at
+-   the climax, followed by at most one short spoken rationale line. Never a
+-   "Warm rationale" header, backticks, or craft label. Omit this element when
+-   no instruction is assigned.
+-6. **SUMMARY** — clipped bullets stating, in ordinary sentences, the belief
++2. One italic thesis line directly under the title: a spoken Carr sentence of
++   the reframe, not a paste of the card's leaving-belief field. Write no
++   `IN THIS CHAPTER` line and no list of the chapter's rooms, pictures,
++   places, objects, or encounters anywhere in the chapter. This supersedes
++   the style guide's chapter-anatomy item "IN THIS CHAPTER"; the body's
++   first titled section is where the reader enters the room.
++3. Titled body sections building the one move and landing its peak verdicts.
++4. When an instruction is assigned: at the climax, one spoken first-person
++   lead-in sentence that carries the cumulative number in words ("So here is
++   my sixth instruction:"), then the card's ALL-CAPS imperative verbatim on
++   its own line, then at most one short spoken rationale line. Never a bare
++   list-number ("6."), a "Warm rationale" header, backticks, or craft label.
++   The final recap chapter's photographable list is the one place the
++   instructions may appear as a numbered list. Omit this element when no
++   instruction is assigned.
++5. **SUMMARY** — clipped bullets stating, in ordinary sentences, the belief
+    that changed. Not a token roll-call, instruction recap, or study-design
+    note. The final recap chapter is the exception: it may list the
+    photographable instruction set.

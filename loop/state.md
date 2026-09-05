@@ -2,13 +2,13 @@
 
 ## Position
 
-- **Iteration:** 031
-- **Stage:** Decision
-- **Status:** IDLE
+- **Iteration:** 032
+- **Stage:** Writing
+- **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 026–027 KEEP + 030 KEEP + 031 KEEP accepted)
 - **Last completed unit:** 031 KEEP. comparison `partial` 9→5 / 11→5. Accepted snapshot 031 A (52392).
-- **Next unit:** 032 PRIMARY factory-speech 14/10. New mechanism only — not 028/029 style-guide header, not 030 HEADER replay, not 020–024 wording. Do not start willpower.
+- **Next unit:** 032 write A/B. PRIMARY factory-speech 14/10. Writer anatomy: drop required IN THIS CHAPTER; spoken instruction lead-in.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -32,3 +32,4 @@
 | 2026-09-05 06:40 | 031 started. Fable PRIMARY comparison `partial` 9/11. Job tails + CH-13 budget. | write A/B |
 | 2026-09-05 07:20 | 031 writes complete A 52392 / B 51940. CH-13 1584/1462. | judge A |
 | 2026-09-05 08:05 | 031 KEEP. comparison `partial` 9→5 / 11→5. Accepted 031 A. | 032 factory-speech 14/10 |
+| 2026-09-05 08:15 | 032 started. Writer anatomy drop IN THIS CHAPTER. | write A/B |
