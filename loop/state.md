@@ -78,3 +78,4 @@
 | 2026-09-05 20:38 | Smoking CH-02 ACCEPT 4050/4000 (LENGTHEN 2194→4050 + HEADER; no RE-ARGUMENT). Sugar CH-02 in A1 (LENGTHEN+HEADER). Smoking on CH-03. Both Go. | rest of 036 writes |
 | 2026-09-05 20:50 | Sugar CH-02 ACCEPT 4671/5200. Smoking CH-03 ACCEPT 3860/4500 (3 rounds). Sugar CH-03 A1 fired `RE-ARGUMENT` (CH-02 kitchen restage) + RESERVED-REACH + HEADER. Smoking on CH-04 A1. Both Go. | rest of 036 writes |
 | 2026-09-05 21:04 | Sugar 4/13 (CH-03 CAP after RE-ARGUMENT then LENGTHEN). Smoking 5/14 (CH-05 ACCEPT). Sugar on CH-05 draft; smoking CH-06 A1. Both Go. | rest of 036 writes |
+| 2026-09-05 21:12 | Sugar 5/13 CH-05 ACCEPT. Smoking 6/14 CH-06 ACCEPT. Sugar on CH-06; smoking CH-07 A1 (LENGTHEN+HEADER, no RE-ARGUMENT yet). Both Go. | rest of 036 writes |
