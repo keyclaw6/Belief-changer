@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft retains workshop header `IN THIS CHAPTER` with standfirst `The kitchen notebook, the desk drawer at four o'clock, the dentist's mirror, the till receipt, the quiet question in the dark` before spoken body. Delete header block.
+LENGTHEN to B±15% — Delivered 2481 words. Budget 3800. Range 3230-4370. Add ~750+ words to serve card job `sugar does plenty TO you and nothing FOR you; harm debate replaced by benefit demand; the empty "benefit" is a belief reading a tiny body echo as a gift` via Encounter `ordinary day audit — sweets logged against mood, teeth, wallet, time — benefit column empty`.

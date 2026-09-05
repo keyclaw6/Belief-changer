@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with the workshop header `IN THIS CHAPTER` immediately after the title (`READ THIS FIRST AND BE FREE` / `IN THIS CHAPTER` / `The office stairs and the held door...`). Remove the `IN THIS CHAPTER` preview block entirely; begin with spoken body (stairs hook). The numbered `1. KEEP AN OPEN MIND` + rationale line is not HEADER and may stay.

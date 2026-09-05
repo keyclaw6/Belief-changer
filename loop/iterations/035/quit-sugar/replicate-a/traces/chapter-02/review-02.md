@@ -1,0 +1,2 @@
+REVISE
+HEADER — the draft opens with the workshop header `IN THIS CHAPTER — The 10pm kitchen, the folded packet, the drawer that keeps its own accounts, a child with a peach on a summer step` before spoken body. Remove the header block entirely.

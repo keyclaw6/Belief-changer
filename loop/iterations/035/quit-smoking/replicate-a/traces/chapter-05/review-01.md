@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 2376 words. Budget 5000. Required range 4250-5750. Add words to serve the card's primary job: "reward, taste and mild stop reading as gifts and start reading as stolen credit and compensated puffing" — including concrete encounter "teaching, paragraph, grocery run each paid with pellet, then tasted without."
+HEADER — draft opens with the workshop header `IN THIS CHAPTER`: "**IN THIS CHAPTER** — The classroom door still warm, the half-written paragraph, the grocery bags on the step..."

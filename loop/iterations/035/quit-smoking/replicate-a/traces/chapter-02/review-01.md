@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER`: "IN THIS CHAPTER / The garage doorway after midnight, the Febreeze bottle and the mint tin..." Remove the header block and open in spoken body. The numbered instruction "2. DON'T STOP OR CUT DOWN YET / Smoke as normal until your last cigarette." is not HEADER and may stay.
+LENGTHEN to B±15% — Delivered 3049 words. Budget 4000. 0.85×B = 3400. Add ~350-1550 words to reach 3400-4600. Those words must serve the card's primary job: "the reader stops seeing smoking as free choice and starts seeing a trap they were conned into."

@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER — The classroom door still warm, the half-written paragraph, the grocery bags on the step, the pale pack and the mask with pinholes`. Remove the header; start in spoken body.
