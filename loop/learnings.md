@@ -233,3 +233,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Verdict:** KEEP
 **Lesson:** factory-speech 18→13 / 16→8 (drop ≥2 both). Length floor met (50404/49067). Blocking 0/0. No new both-books class. Prediction partial (025 leaks were ease-operators/card titles; count still fell). Comparison `missing` 3→4 both (G04-M1 joined G06-M2/G15-M1/G20-M2). Skip further anti-slop (coach-register 8/6; hedges 0/0).
 **Next direction:** 027 PRIMARY comparison `missing` 4/4 (G04-M1, G06-M2, G15-M1, G20-M2). Do not replay 020–024 wording. Do not put GSBS in writer/planner/reviewer.
+
+### iter-027 — unpaid belief-moves on four Jobs
+**Hypothesis:** PRIMARY: Job tails on CH-03/08/09/13 so comparison `missing` falls in both vs 026 (4/4).
+**Change:** `production-books/quit-sugar/master-plan.md` (four Job clauses). Plan reused otherwise. Two books Spark 1.3 Go with reviewer. Judges composer-2.5, 53+53.
+**Verdict:** KEEP
+**Lesson:** comparison `missing` 4→1 / 4→0. Targeted G06-M2, G15-M1, G20-M2 PRESENT; G04-M1 PARTIAL (A). Residual A miss is G06-M1 (untargeted). Length 52861/51952. Blocking 0/0. factory-speech 13/16 (B rose). Next PRIMARY is voice noted ≥8 both (willpower-lexicon 28/36 or factory-speech 13/16).
+**Next direction:** 028 from 027 both-books floors. Comparison `missing` is no longer in both (1/0). Do not replay 020–024 wording.

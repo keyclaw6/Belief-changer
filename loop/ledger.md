@@ -432,3 +432,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** factory-speech 18→13 / 16→8 (drop ≥2 both). Length floor met (50404/49067). Blocking 0/0. No new both-books class. Prediction partial (025 leaks were ease-operators/card titles; count still fell). Comparison `missing` 3→4 both (G04-M1 joined G06-M2/G15-M1/G20-M2). Skip further anti-slop (coach-register 8/6; hedges 0/0).
 
 **What this opens next.** Attack comparison `missing` 4/4. Do not replay 020–024 wording. Do not give GSBS to writer, planner, or chapter-reviewer.
+
+### iter-027 — unpaid belief-moves on four Jobs  ·  2026-09-05  ·  KEEP
+
+**Hypothesis.** If CH-03/08/09/13 Jobs name the four unpaid comparison moves, `missing` falls in both versus 026 (4/4).
+
+**Change.** Four Job tails in `production-books/quit-sugar/master-plan.md` (see `loop/iterations/027/change.diff`). No GSBS IDs. Plan otherwise reused. Two Spark 1.3 Go books with reviewer. Panel 53+53.
+
+**What happened.** comparison `missing` 4→1 (A) and 4→0 (B). G06-M2, G15-M1, G20-M2 PRESENT on A; G04-M1 PARTIAL. A residual miss G06-M1 only. Words 52861 / 51952. All lanes PASS, blocking 0/0. factory-speech 13 / 16 (B rose from 8).
+
+**Verdict & why.** KEEP. PRIMARY improved materially in both. No new both-books material class. Prediction accurate on the three stable misses.
+
+**What we learned.** comparison `missing` 4→1 / 4→0. Targeted G06-M2, G15-M1, G20-M2 PRESENT; G04-M1 PARTIAL (A). Residual A miss is G06-M1 (untargeted). Length 52861/51952. Blocking 0/0. factory-speech 13/16 (B rose). Next PRIMARY is voice noted ≥8 both (willpower-lexicon 28/36 or factory-speech 13/16).
+
+**What this opens next.** 028 from 027 floors. Comparison missing is no longer a both-books PRIMARY. Do not replay 020–024 wording.
