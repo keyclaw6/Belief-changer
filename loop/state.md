@@ -7,8 +7,8 @@
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`; 026 KEEP style-guide is accepted)
-- **Last completed unit:** 027 ch06 A (4797/4800) / ch05 B (4469/5200). Totals A 25784 / B 20691. Writers live.
-- **Next unit:** Finish 027 writes, then judge A when write A exits.
+- **Last completed unit:** 027 write A complete (52861, floor met). B on ch13 (48927 already over floor).
+- **Next unit:** Judge A (j027a). Start judge B after write B and judge A both exit.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -32,3 +32,4 @@
 | 2026-09-05 01:28 | 026 write A done 50404. B on ch13. Starting judge A. | j026a; wait B |
 | 2026-09-05 01:50 | 026 KEEP. factory-speech 18→13 / 16→8. | 027 comparison missing |
 | 2026-09-05 01:55 | 027 hypothesis: Job tails on CH-03/08/09/13. Writers starting. | 027 writes |
+| 2026-09-05 02:10 | 027 A ch01–06 (two ACCEPTs). B ch01–05. | 027 writes |
