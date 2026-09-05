@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 2974 words. Budget 4000. 0.85×B = 3400. Draft is 426 words below range 3400-4600. Those added words must extend this card's primary job: "the most seductive cigarette stops surviving as exception and proves sneaking a ride on night, drink and friendship" — late patio, drinks, offered light, tasting night air with and without.
+HEADER — draft opens with the workshop header `IN THIS CHAPTER` followed by "The late patio, cold glasses, the tray of lights, the hand that offers, night air tasted twice, a story that stayed till closing". Remove the header block.

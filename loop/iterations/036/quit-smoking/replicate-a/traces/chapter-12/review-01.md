@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 1428 words. Budget 4000. 0.85×B = 3400. Add ~2000+ words inside 3400–4600 serving the card job "enacted transition — smoker identity crosses to non-smoker in a joyful solemn act with freedom conferred now" and its concrete encounter "ordinary last cigarette with full attention on stain, ash and stale end, then stubbed," plus readiness gate, vow/instant conferral and two shut doors, not C13/C14 material.
+HEADER — draft opens with workshop header `IN THIS CHAPTER` / "The kitchen table, the stained filter, the cold ash and the stubbed end." Delete that block; the numbered instruction `12. SMOKE YOUR FINAL CIGARETTE AND KNOW YOU ARE FREE` + one spoken rationale line is allowed and is not the violation.

@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 2340 words. Budget 4500. 0.85×B = 3825. Add words serving the card's primary job: "stress relief stops reading as cure and starts reading as brief quiet of a need smoking created" — extend the stress-desk encounter, the papers-still-there check, and E-01/E-07 relief-is-replenishment-not-gift, not later-chapter jobs.
+HEADER — draft opens with workshop header `IN THIS CHAPTER` — "IN THIS CHAPTER / The ringing phone, the cold coffee, the reaching hand, the full ashtray, the pile of papers that never moved." Remove the header block. The numbered instruction "4. FOLLOW ALL THE INSTRUCTIONS / All you have to do is what this book asks." is not HEADER.

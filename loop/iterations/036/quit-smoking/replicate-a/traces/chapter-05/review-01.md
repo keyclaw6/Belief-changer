@@ -1,0 +1,4 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` under the title. Remove the header block entirely.
+LENGTHEN to B±15% — Delivered 1381 words. Budget 5000. 0.85×B = 4250. Add ~2900+ words to reach B±15% (4250-5750), and those words must serve the card job: "reward, taste and mild stop reading as gifts and start reading as stolen credit and compensated puffing" — extend this card's own pellet-chain encounter and vent-hole evidence, not earlier or later cards.
+UNASSIGNED-REFRAIN — non-mantra phrase "That dose is called the reward for" recurs 3× verbatim. Subtract repeats to <3; do not invent a new mantra.

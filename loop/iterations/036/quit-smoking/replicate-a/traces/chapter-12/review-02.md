@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 2869 words. Budget 4000. Range 3400-4600, 0.85xB=3400. Add 531+ words serving card job: "enacted transition — smoker identity crosses to non-smoker in a joyful solemn act with freedom conferred now" — extend the farewell-table encounter and instant conferral, not earlier or later cards.
+HEADER — draft opens with workshop header `IN THIS CHAPTER` after title: "IN THIS CHAPTER / The quiet room after the bargaining, the ordinary table, the stained filter and the cold stub" — delete header.

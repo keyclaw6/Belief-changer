@@ -1,0 +1,3 @@
+REVISE
+- LENGTHEN to B±15% — Delivered 2419 words. Budget 4800. Range 4080-5520. Delivered is below 0.85 x B. Add ~1660+ words to extend this card's own encounter and evidence, never an earlier card's: "past failures prove the wrong method, not a broken self; strong will persisted against instinct" — diet-week diary, white-knuckle days, forbidden-must-have rebound, Monday restart, bragger/whinger, SC-04 evening-box proof.
+- HEADER — Draft opens with workshop header `IN THIS CHAPTER` after title: "IN THIS CHAPTER / Monday rules on the fridge door — the drawer at four o'clock — the single biscuit and the empty box —" Remove header block; open in spoken body.

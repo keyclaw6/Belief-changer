@@ -1,0 +1,15 @@
+**CH-06 — Why Willpower Never Worked
+- primary job: enacted transition — past failures stop proving I am weak and start proving the method was wrong.
+- belief now: enters believing I lack willpower and need a prop to quit; leaves believing the Willpower Method manufactures struggle and trial odds do not decide my escape.
+- concrete encounter: drawer of patches and gum, calendar of twenty attempts, fear of next try.
+- evidence: E-03 typical failed attempts not unique weakness; E-10 NRT trial vs unassisted answer different questions, neither prescribes, must not collapse; limits trial vs population scopes.
+- new instruction: I-06 DISREGARD ANYONE WHO QUIT BY WILLPOWER
+- reserved-later fence: mechanism timing to C07; pity script to C12–C13; myths battery to C11.
+- arc position: middle anti-method peak; demolition high; prevalence claim once here via E-03 typicality.
+- reader-state: ashamed repeater expecting blame, encountering method as culprit.
+- mantra: echo M-I "All you have to do is follow all the instructions."
+- scene: debut SC-G, staging job: whisky-for-brandy swap.
+- structural responsibility: anti-method chapter; meta-inoculation seed answering method-is-brainwashing objection in passing.
+- guardrails: safety CA-SAFE, E-10 safety limit no prescription; originality: strong will reframed wilful not weak-willed in new words.
+- continuity intent: receives cleared pleasures from C05; hands method blame to mechanism C07.
+- budget: 4500

@@ -1,0 +1,2 @@
+REVISE
+HEADER — the draft opens with the workshop header `IN THIS CHAPTER` with bullet list ("- The kitchen light left on late, the cupboard door ajar / - A plain box that draws the line around BAD SUGAR / - A short contract laid on the table, pen beside it"). Remove the workshop header block. The numbered `KEEP AN OPEN MIND / Question what you think you know about sweetness.` instruction plus rationale line is not HEADER and stays.

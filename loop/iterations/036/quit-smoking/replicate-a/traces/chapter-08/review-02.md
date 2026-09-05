@@ -1,0 +1,5 @@
+REVISE
+HEADER — draft opens with the workshop header `IN THIS CHAPTER` followed by `The cold bedroom floor and the kettle, the cleared plate and the lingering taste, the work doorway and empty hands`. Remove the header block entirely.
+RE-ARGUMENT — earlier card CH-05 — Parties, Pauses and Milds. Rebuilt section first line: `We attached that little pellet after the finished paragraph and called it reward.` Card allows token-echo SC-C as pellet phrase only. Cut this pellet-chain rebuild to at most one sentence that speaks the settled token, no evidence and turn.
+RE-ARGUMENT — earlier card CH-01 — Read This First and Be Free. Rebuilt section first line: `Think of the stairs where you were left short of breath while the man beside you walked on steady.` Card allows token-echo SC-J as stairs-breath phrase only. Cut this stairs restaging to at most one sentence that speaks the settled token.
+UNASSIGNED-REFRAIN — non-mantra phrase `No test. No count. Simple noticing` recurs 3x verbatim. Keep at most one instance; delete the repeats, do not invent a new mantra.

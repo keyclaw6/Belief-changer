@@ -1,0 +1,5 @@
+REVISE
+
+HEADER — draft opens with workshop header `IN THIS CHAPTER` before body: "**IN THIS CHAPTER** / The dark cinema row and the birthday table..." Remove the header block entirely.
+
+LENGTHEN to 6800±15% — Delivered 5750 words. Budget 6800. 0.85×B = 5780. 5750 < 5780, outside ±15% (range 5780-7820). Add at least 30 words to reach range, serving card job: "even the most seductive celebration sweet gave nothing; scene gave everything; perception can lie; this escape is for you first — set aside the industry and everyone else's feelings; reverse the brainwashing from both sides at once — see natural food as the marvellous thing it really is while the brainwashed favourite shows as the bland junk it always was" — extend this card's own cinema encounter and evidence, not earlier-card material.

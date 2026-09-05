@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` after title: "IN THIS CHAPTER / The empty ashtray, the farewell table, the pocket list, the open door." Remove header.
+LENGTHEN to 5000±15% — Delivered 1271 words. Budget 5000. Delivered is below 0.85×B (4250). Add ~2979-4479 words serving card job "non-argument — recap: photograph list of spoken instructions and hand reader outward into life with fresh reframe" — extend photographable instruction list use, outward imperative, and saved reframe encounter, never earlier-card demolition.

@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` followed by index line `The Monday paper on the fridge — white-knuckle Tuesday — the glowing packet — one biscuit at nine o'clock — the bragger by the kettle — the whinger at the table — wilful, not weak-willed`. Remove the header/index block entirely and open in spoken body.

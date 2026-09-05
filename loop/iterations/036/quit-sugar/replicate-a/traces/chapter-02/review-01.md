@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 3930 words. Budget 5200. 0.85×B = 4420. 3930 is below 4420. Add ~490-2050 words to serve the card job "you did not choose freely and are not weak; you were conned into a trap that removed choice" — extend this card's own encounter and evidence, the 10pm kitchen reach before decision and cupboard evidence against free-choice story, EV-02 / EV-08 within limits.
+HEADER — the draft opens with the workshop header `IN THIS CHAPTER`: "IN THIS CHAPTER / The 10pm kitchen and the open cupboard. The hand moving before thought. A small child with a peach at midday." Remove the header block entirely.

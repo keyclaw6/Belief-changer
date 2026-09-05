@@ -1,0 +1,2 @@
+REVISE
+HEADER — the draft opens with the workshop header `**IN THIS CHAPTER**` followed by "The bright aisle and the low till row, the tuned recipe and hurrying pack..." Remove the header/list opening and open in spoken encounter prose.

@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 2050 words. Budget 3500. 0.85×B is 2975. Add ~925-1975 words serving the card job "cut down, special ones and tomorrow stop reading as safe compromises and start reading as trap kept alive" — extend this card's own encounter and evidence, genie/cliff/tomorrow and myths Q&A.
+HEADER — draft opens with workshop header `IN THIS CHAPTER — the rubbed lamp and the rebuilt bottle, the cliff edge in fog, the cut-down diary, the five-month evening, short answers at the kitchen table` with no spoken body before it.

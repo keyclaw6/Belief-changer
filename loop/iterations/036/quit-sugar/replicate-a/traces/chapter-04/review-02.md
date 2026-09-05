@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 3818 words. Budget 4800. Range 4080-5520. Add ~1000 words to serve the card job "past failures prove the wrong method, not a broken self; strong will persisted against instinct" via the diet-week diary — white-knuckle days, forbidden-must-have rebound, Monday restart — and braggers/whingers.
+HEADER — Draft opens with the workshop header `IN THIS CHAPTER` — "The Monday paper on the fridge — white-knuckle Tuesday — the glowing packet — one biscuit at nine o'clock — the bragger by the kettle — the whinger at the table" — remove opening index block and enter in spoken body.

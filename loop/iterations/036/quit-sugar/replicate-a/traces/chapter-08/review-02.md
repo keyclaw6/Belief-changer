@@ -1,0 +1,3 @@
+REVISE
+- LENGTHEN to B±15% — Delivered 4114 words. Budget 5200. Range 4420-5980. 4114 is below 0.85×B. Add ~300+ words to extend this card's own encounter and evidence, never an earlier card's: "desire was manufactured and fear of failing or succeeding is Trap-held tug-of-war; the body is a precision machine whose warning feelings are information, not bulbs to unscrew"
+- UNASSIGNED-REFRAIN — non-mantra phrase "Hand the praise back." recurs 3× verbatim. Subtract to max 1 occurrence; do not invent a new mantra.

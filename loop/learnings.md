@@ -297,5 +297,12 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Lesson:** smoking factory-speech 12→3 (PRIMARY hit). Sugar 6→8 (non-regression miss). Length 55356/56649. Blocking 0 both. Restored: no. A1 sugar 9 ACCEPT / 4 CAP; smoking 11 ACCEPT / 3 CAP.
 **Next direction:** §B5 op 9 stays. Journey re-argument 15/16 is ≥8 both (KEEP-eligible). factory-speech 8/3 is not ≥8 both. willpower-lexicon 33/21 not PRIMARY. Do not replay 028–032 / 020–024.
 
+### iter-036 — reviewer RE-ARGUMENT backward fence
+**Hypothesis:** PRIMARY: chapter-reviewer `RE-ARGUMENT` finding so journey `re-argument` falls in both vs 035 (15/16).
+**Change:** `prompts/chapter-reviewer.md` (`RE-ARGUMENT` after `RESERVED-REACH` + ACCEPT gate). Runner parse includes `RE-ARGUMENT`. Plans reused. Writer Spark 1.3 Go, A1 K=3. Judges composer-2.5, 53+57. Hypothesizer: Fable 5.1.
+**Verdict:** KEEP
+**Lesson:** journey re-argument 15→8 / 16→9 (drop ≥2 both). Length 53680/54213. Blocking 0 both. Residual 8/9 still ≥8 both. factory-speech 8→9 / 3→2. willpower-lexicon 28/31 not PRIMARY.
+**Next direction:** PRIMARY remains journey re-argument 8/9. New mechanism on a different component or a sharper reviewer cut — do not replay this finding text. Do not replay 020–024 / 028–032. Do not start a willpower-lexicon PRIMARY.
+
 
 

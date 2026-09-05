@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` after title block: `**IN THIS CHAPTER** / Dusk kitchen, biscuit tin, coated tongue, spoken vow, still morning`. Remove header block; keep spoken body.
+LENGTHEN to B±15% — Delivered 2454 words. Budget 3600. Range 3060-4140. Delivered is below 0.85×B. Add ~600-1600 words to serve card job `waiting is the Trap; freedom is now as of this ordinary treat taken with attention and vow` — extend this card's own encounter `last ordinary sweet taken normally, attention on cloying ugliness, solemn vow, instant rejoicing` and evidence `EV-17 hump as days-long echo, not dread; EV-07 mildness to calm`, never an earlier card's job.

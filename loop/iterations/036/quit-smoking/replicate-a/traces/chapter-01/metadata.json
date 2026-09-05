@@ -1,0 +1,59 @@
+{
+  "model": "muse-spark-1.3-contributor",
+  "route": "opencode-go",
+  "reasoning_effort": null,
+  "latency_s": 218.829,
+  "usage": {
+    "input_tokens": 33651,
+    "output_tokens": 18205,
+    "total_tokens": 51856,
+    "input_tokens_details": {
+      "cached_tokens": 2019
+    },
+    "output_tokens_details": {
+      "reasoning_tokens": 14503
+    }
+  },
+  "failed_routes": {},
+  "chapter": 1,
+  "replicate": "a",
+  "slug": "quit-smoking",
+  "iteration": "036",
+  "chars": 16474,
+  "words_draft": 3148,
+  "words_final": 3112,
+  "words_by_round": [
+    3148,
+    3112
+  ],
+  "budget": 3500,
+  "review_rounds": 2,
+  "review_verdicts": [
+    "REVISE",
+    "ACCEPT"
+  ],
+  "review_verdict": "ACCEPT",
+  "final_status": "ACCEPT",
+  "findings_by_round": [
+    [
+      "HEADER"
+    ],
+    []
+  ],
+  "review_routes": [
+    "opencode-go",
+    "opencode-go"
+  ],
+  "review_latencies_s": [
+    45.847,
+    29.962
+  ],
+  "rewritten": true,
+  "rewrite_routes": [
+    "opencode-go"
+  ],
+  "rewrite_latencies_s": [
+    46.086
+  ],
+  "draft_route": "opencode-go"
+}

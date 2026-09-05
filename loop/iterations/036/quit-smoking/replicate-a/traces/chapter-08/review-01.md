@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 1777 words. Budget 4000. Need 3400-4600 words. The added words must serve the card job: "inhabiting ordinary smoke moments as breathing, tasting, free-handed favourite proves non-smoker pleasure is fuller" — extend morning feet to kettle, meal-end taste lingering, work break air on face, hands free encounter and evidence, not earlier cards.
+HEADER — Draft opens with workshop header `IN THIS CHAPTER` with bullet list "Cold bedroom floor, the bedside pack, the kettle steam" etc. Remove header opening; keep numbered ALL-CAPS instruction plus one spoken rationale line only.

@@ -1,0 +1,2 @@
+REVISE
+LENGTHEN to 4500±15% — Delivered 3557 words is below 0.85×4500 (3825). Add words serving the card's primary job: "stress relief stops reading as cure and starts reading as brief quiet of a need smoking created."

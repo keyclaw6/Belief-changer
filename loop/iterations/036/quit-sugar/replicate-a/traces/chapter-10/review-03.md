@@ -1,0 +1,2 @@
+REVISE
+HEADER — the draft opens with the workshop header `IN THIS CHAPTER` after the title: `**IN THIS CHAPTER** / The Friday calendar, the cliff path, the single square, the empty cupboard, tomorrow's box, the bright swap packet, the quiet road and the belt.` Remove the header block entirely; the numbered instruction `NEVER KEEP A SPECIAL SWEET` plus its one rationale line is not HEADER and stays.

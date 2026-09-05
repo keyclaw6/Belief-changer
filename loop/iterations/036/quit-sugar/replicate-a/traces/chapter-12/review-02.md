@@ -1,0 +1,2 @@
+REVISE
+LENGTHEN to B±15% — Delivered 3525 words. Budget 4200. Acceptable range 3570-4830. Delivered is below 0.85 x B. Add words extending this card's own job: "inhabits mornings, shops, food with owned thoughts once, guarding belief without new thesis" — breakfast, aisle, checkout, evening sofa lived with ease.

@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` after the title (`**IN THIS CHAPTER** / The late desk, the cold coffee...`). Remove the workshop header; keep spoken body and the numbered instruction as the only ALL-CAPS line.

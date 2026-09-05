@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 3461 words. Budget 5000. 0.85×B = 4250. Add ~789+ words to serve the card job: "craving is a trivial dying Nibbler fed by a dominant Sweet Con belief; kill belief and body echo starves" — extend this card's own early-evening grumble encounter and evidence, not an earlier card's.
+HEADER — Draft opens with workshop header `**IN THIS CHAPTER** — early-evening kitchen, the ditch at dawn, tight shoes by the door, the laboratory bench, wrappers in lamplight` before any spoken body. Delete the header block.

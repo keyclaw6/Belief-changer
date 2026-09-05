@@ -1,0 +1,4 @@
+REVISE
+HEADER — draft opens with workshop header `**IN THIS CHAPTER**` + contents line `Morning kettle and plain plate, bright aisle and till, supper table, office tin and sofa bar, passing hollow and uninvited touch.` Remove the header block; open in spoken body.
+RE-ARGUMENT — earlier card CH-09 — The Sweetest Moment. Rebuilt section headed `When You See Them Eating It` restages the celebration sweet with full staging from `Watch the office tin.` through `Watch the sofa bar.` / `Stand at that birthday table a moment in your mind and watch it plain.` Cut that restaging to at most one sentence that speaks the settled token, e.g. scene gave everything.
+UNASSIGNED-REFRAIN — non-mantra phrase `film and hurry` recurs 3× verbatim. Subtract repeats to one occurrence; do not invent a new mantra.

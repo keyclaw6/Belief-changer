@@ -1,0 +1,3 @@
+REVISE
+- LENGTHEN to B±15% — Delivered 1782 words. Budget 4500. 0.85×B = 3825. Add ~2043-3393 words to reach B±15% (3825-5175). Those words must serve this card's primary job: "relief stops reading as rise above normal and starts reading as brief return toward non-smoker baseline that guarantees next low" via the concrete encounter "tracking a day of doses fading within minutes, meter needing coins" — extend this card's own encounter and evidence, never an earlier card's.
+- HEADER — Draft opens with workshop header `IN THIS CHAPTER`: "**IN THIS CHAPTER** / The corner meter in the rain, the day's clock of fading doses, the doorway watcher with his hand in motion". Delete the header opener.

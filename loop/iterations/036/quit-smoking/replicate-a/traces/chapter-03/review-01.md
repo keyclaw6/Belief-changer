@@ -1,0 +1,3 @@
+REVISE
+LENGTHEN to B±15% — Delivered 2542 words. Budget 4500. Below 0.85 × B (3825). Add words serving the card's primary job: "reader stops weighing harm versus benefit and demands what benefit at all" via the concrete encounter "listing own reasons aloud, then checking what cigarette added to food, pause, company."
+HEADER — Draft opens with workshop header: "IN THIS CHAPTER — a pencil ledger on the kitchen table, a hug that tightens when you thank it, a finished plate, a pause on the back step, laughter among friends"

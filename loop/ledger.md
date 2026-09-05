@@ -559,5 +559,19 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 
 **What this opens next.** Carried forward: §B5 op 9. Journey re-argument 15/16 is ≥8 both. factory-speech 8/3 is not. willpower-lexicon 33/21 not PRIMARY. Do not replay 028–032 / 020–024.
 
+### iter-036 — reviewer RE-ARGUMENT backward fence  ·  2026-09-05  ·  KEEP
+
+**Hypothesis.** If the chapter-reviewer gains a backward fence (`RE-ARGUMENT`) matching the existing forward fence (`RESERVED-REACH`), LENGTHEN cannot restage settled cards as new sections, so journey `re-argument` falls in both versus 035 (sugar 15, smoking 16).
+
+**Change.** Finding list + ACCEPT gate in `prompts/chapter-reviewer.md`; `FINDING_HEAD` in `scripts/loop-runner/write_replicate.py` (see `loop/iterations/036/change.diff`). Plans reused. Writer Spark 1.3 Go, A1 K=3. Panel 53+57 composer-2.5. Hypothesizer: Claude Fable 5.1.
+
+**What happened.** journey re-argument 15→8 (sugar) and 16→9 (smoking). Words 53680 / 54213. All chapter lanes PASS, book-arc PASS, blocking 0/0. A1 sugar 6 ACCEPT / 7 CAP; smoking 9 ACCEPT / 5 CAP. factory-speech 8→9 / 3→2. belief re-argument 8→11 / 8→3. book-arc re-argument 4→4 / 5→3.
+
+**Verdict & why.** KEEP. PRIMARY dropped ≥2 both. No new blocking class in both. Length floors met. Reviewer `RE-ARGUMENT` promoted.
+
+**What we learned.** A backward finding on the reviewer stops the LENGTHEN restage that 020–024 (plan/writer sentences) never moved. Residual 8/9 means the fence is real and incomplete — later cards still rebuild some settled work inside K=3.
+
+**What this opens next.** New floors: journey re-argument 8/9 (still ≥8 both — next PRIMARY). factory-speech 9/2 is not ≥8 both. willpower-lexicon 28/31 is not PRIMARY. Do not replay this finding text. Do not replay 020–024 / 028–032.
+
 
 

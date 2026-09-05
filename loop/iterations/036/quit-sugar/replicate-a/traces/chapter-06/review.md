@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` after the title, with list `Morning market air and crates — hot bread torn hungry — tomatoes, oranges and juice on hands — hunger arriving kindly — the slowing hands and the latch — supper after a clear day — the plain midday meal that closes cleanly`. Remove the header block; keep the numbered ALL-CAPS instruction plus rationale line as spoken body.

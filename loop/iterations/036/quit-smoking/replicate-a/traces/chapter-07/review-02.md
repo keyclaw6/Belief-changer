@@ -1,0 +1,3 @@
+REVISE
+RE-ARGUMENT — CH-03 What Does It Actually Do For You owns SC-F debut. Rebuilt section beginning "Think of the hug that will not let go." stages 4+ sentences of rescuer-as-perpetrator hug again to argue inversion. Cut that section to at most one sentence that speaks the settled token. If that cut leaves the chapter below 0.85 × B, the words that replace it must extend this card's own encounter and evidence — tracking a day of doses fading within minutes, meter needing coins — never an earlier card's.
+UNASSIGNED-REFRAIN — non-mantra phrase "You feed it. Flag up." recurs 3× verbatim. Subtract repeats to <3; do not invent a new mantra.

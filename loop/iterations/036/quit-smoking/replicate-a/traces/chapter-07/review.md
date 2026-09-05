@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` immediately after title: "IN THIS CHAPTER / The rain-wet meter, the day-long clock of fading doses, the watcher at the doorway". Remove the header block entirely; keep the numbered ALL-CAPS instruction at end which is not HEADER.

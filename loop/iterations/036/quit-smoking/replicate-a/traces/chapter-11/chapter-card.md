@@ -1,0 +1,15 @@
+**CH-11 — No Special Ones, No Tomorrow
+- primary job: enacted transition — cut down, special ones and tomorrow stop reading as safe compromises and start reading as trap kept alive.
+- belief now: enters conceding favourites yet bargaining for one; leaves seeing one rebuilds bottle and delay extends cost.
+- concrete encounter: five months free then one, and cut-down diary creeping back up.
+- evidence: E-06 long quit does not make one safe; E-10 neither fact licenses willpower slogan; limits no doom if belief guarded, no collapse of stats.
+- new instruction: I-11 NEVER ALLOW JUST ONE OR A SPECIAL ONE
+- reserved-later fence: vow readiness gate to C12 only.
+- arc position: late foreclose; demolition handing to freedom.
+- reader-state: bargainer seeking safe limit, encountering genie rebuilt.
+- mantra: echo M-C "the nicotine trap"; echo M-G "the tug-of-war of fear"; echo F-B "It never fixed the itch. It caused it."
+- scene: debut SC-I, staging job: genie and cliff; token-echo SC-A as patio phrase only.
+- structural responsibility: myths Q&A distinct rapid-fire room; meta-inoculation answering strongest method objection performed without label.
+- guardrails: safety CA-SAFE, E-06 safety limit no dare, slip as warning not license; originality: pre-scripted future thoughts arrive pre-labelled as trap script.
+- continuity intent: receives no-exception from C10; hands totality to vow C12.
+- budget: 3500

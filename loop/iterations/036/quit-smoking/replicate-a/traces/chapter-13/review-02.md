@@ -1,0 +1,2 @@
+REVISE
+LENGTHEN to B±15% — Delivered 3761 words. Budget 4500. 0.85×B = 3825. Delivered is below 0.85×B. Add words that extend this card's own primary job: "live free days proving belief in owned thoughts once, handing freedom forward without new curriculum" — mornings, shops and ordinary days lived free — to reach 3825-5175 words.

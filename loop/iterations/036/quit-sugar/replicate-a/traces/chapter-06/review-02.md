@@ -1,0 +1,2 @@
+REVISE
+LENGTHEN to 4800±15% — Delivered 3986 words is below 0.85×4800 (4080-5520). Add ~100-1500 words that extend this card's own job only: "inhabit hunger, satisfaction and real food as favourite; eating itself is joy without BAD SUGAR" via the "plain favourite meal eaten hungry — market vegetables, fresh bread, fruit — noticed, savoured, stopped at satisfied," never an earlier card's fuel or willpower argument.

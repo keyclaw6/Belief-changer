@@ -1,0 +1,3 @@
+REVISE
+- LENGTHEN to B±15% — Delivered 2194 words. Budget 4000. Need 3400-4600 words (±15% of B). Add ~1200+ words that serve the card's primary job: "the reader stops seeing smoking as free choice and starts seeing a trap they were conned into" — concrete encounter "hiding to smoke and Febreeze, watching own hand move before decision" and evidence E-04/E-01 with limits, not later jobs.
+- HEADER — Draft opens with workshop header after title: "**IN THIS CHAPTER** — the garage step after midnight, the Febreeze bottle and the mints, the hand that lights before you decide, the second called heaven". Remove this header block entirely.
