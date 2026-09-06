@@ -1,0 +1,7 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER`. Delete the block:
+`**IN THIS CHAPTER** / The bedroom floor, the kettle and the first breath; the plate after the last bite and the taste that stays; the work doorway, the cold air and empty hands`
+Keep only spoken body. The later `8. TRUST YOUR BODY TO BREATHE AND TASTE` + rationale line is permitted and is not the violation.
+LENGTHEN to 4000±15% — Delivered 1918 words. Budget 4000. Required range 3400-4600. Add ~1500+ words by extending this card's own unspent consequence, not by re-proving the landed verdict.
+Target: the doorway break return is unfinished. Quote location to extend: `Hands in pockets, nothing to hold, nothing to tap, nothing to time.` / `Two minutes in, the mind clears — because you stepped away, because blood moved, because noise dropped.`
+Assignment: assuming the clearing already proved — do not prove again that smoke added nothing — live what happens next in the same pre-vow mental rehearsal: walk back inside, sit, first 20-30 minutes of work with free hands, tea/coffee tasting to the end, nose breathing and far-eyes attention carried into the task. Deliver the lived consequence that morning/meal/break without a dose are not only complete in the moment but fuller going forward into work. Stay in C08 inhabit-rehearsal (morning feet to kettle, meal-end lingering, break air/hands free, SC-B debut); do not rebuild C04 stress-desk off-switch, C05 pellet/vent kill, C07 meter timing, or C10 patio proof, and do not stage post-vow ordinary days reserved to C13.

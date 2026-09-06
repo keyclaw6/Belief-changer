@@ -1,0 +1,2 @@
+REVISE
+HEADER — the draft opens with the workshop header `IN THIS CHAPTER` — "IN THIS CHAPTER — morning kettle and quiet hunger, bright shop aisle and plain basket, evening sofa and warm cup..." Delete that header line and open in spoken voice; the numbered `13. NEVER REOPEN THE DECISION` with its rationale line is not HEADER and may stay.

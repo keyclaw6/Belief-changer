@@ -1,0 +1,5 @@
+REVISE
+
+UNASSIGNED-REFRAIN — non-mantra phrase "One won't hurt" recurs 4x verbatim. Occurrences: "Go on. One won't hurt." / "don't think about it. One won't hurt." / "Go on. One won't hurt." under "Watch the offer the next time" / "One won't hurt is the lamp-rub that rebuilds the bottle". Subtract repeats to at most 2 total occurrences; do not invent a new mantra.
+
+RESERVED-REACH — draft performs CH-11 — No Special Ones, No Tomorrow primary job of foreclosing just-one. Overreach beginning "You know what one does after months clean?" through "re-lays grey on morning water" plus "One won't hurt is the lamp-rub that rebuilds the bottle in one quiet evening." uses CH-11 encounter "five months free then one" and SC-I genie lamp-rebuilds-bottle, fenced to C11 as "cut-down and tomorrow foreclose to C11". Cut this overreach to at most one sentence.

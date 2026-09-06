@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER`: "**IN THIS CHAPTER** — The gate question, the farewell table with stain and ash, the minute after stubbing, the spoken vow, the two knocks at the door." Delete the header line; keep the spoken body and the numbered instruction line `12. SMOKE YOUR FINAL CIGARETTE AND KNOW YOU ARE FREE` plus rationale, which is not HEADER.

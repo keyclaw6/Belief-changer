@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` plus a numbered plan-index with no spoken body: `IN THIS CHAPTER / The bargain after the patio, the wedding morning after five months, the brass lamp and the cliff edge, the crowded tomorrow, straight answers`. Delete that block; keep the numbered ALL-CAPS instruction `NEVER ALLOW JUST ONE OR A SPECIAL ONE` plus rationale as the only permitted list.

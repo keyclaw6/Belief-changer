@@ -1,0 +1,4 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` with bullet list `- Aisle-end seat, dim lights, foil in laps` etc before spoken body. Delete the header/index; open with spoken body.
+UNASSIGNED-REFRAIN — non-mantra phrase "second reach" recurs 4× verbatim: "Second reach came fourth, to cover sour." / "sleep thinned, second reach taught." / "Dose adds sour, fog, second reach, broken sleep." / "timetable teaching second reach." Keep at most one; subtract repeats; do not invent a new mantra.
+RESERVED-REACH — draft performs CH-10 — No Safe Sweet primary job in `"I only have it at the cinema. That's controlled."` answer — "Controlled means choice stays..." through "...leak into Thursday and Saturday." including Friday-allowance timetable. Cut that overreach to at most one sentence; reserve totality / no-safe-cut-down foreclosure to CH-10.

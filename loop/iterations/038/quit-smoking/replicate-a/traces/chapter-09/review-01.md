@@ -1,0 +1,7 @@
+REVISE
+
+LENGTHEN to B±15% — Delivered 2156 words. Budget 4500. Need 3825-5175. Extend the undeveloped consequence belonging to this card at "Who benefits when you are pulled both ways? Not you. A man pulled both ways stands still. Standing still buys another pack." The draft lands that both ropes are held by the maker but leaves unanswered what standing still does tomorrow with the pack in the pocket once the seller is seen. Extend that stillness forward into the next day's timetable with the seller named — reaching, counting, buying — to deliver the lived understanding that neutrality is purchase and that an empty palm after both ropes drop is actionable daylight, not waiting. This target is not an earlier card's proof in a new setting — not C04 off-switch, not C05 reward/mild pleasure, not C08 morning inhabiting — and not another proof of conclusions already landed in this draft — pack as day's supply box, vents change the dial not the timetable, BOTH ROPES BELONG TO THE TRAP.
+
+HEADER — Draft opens with the workshop header `IN THIS CHAPTER`:
+"IN THIS CHAPTER / The pack weighed in the palm, the filter and the mild promise, the mouth and chest in the morning mirror, the two fears pulling opposite ways"
+Delete the header block. The numbered instruction at the end — "9. SEE THE SELLER BEHIND THE SMOKE / Remember who built the trap and why." — is permitted and is not HEADER.

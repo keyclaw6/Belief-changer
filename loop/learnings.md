@@ -311,5 +311,12 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Lesson:** journey re-argument 8→6 / 9→5 (drop ≥2 both). Length 54612/57583. Sugar voice FAIL CH-01 method-promise-hedge 1 (one-book, not a veto); smoking blocking 0. Residual 6/5 is below ≥8 both. factory-speech 9→10 / 2→5. willpower-lexicon 26/19 not PRIMARY.
 **Next direction:** Empty KEEP-eligible intersection (willpower locked). PRIMARY is the top class of the worse subject: sugar factory-speech 10; smoking 5 is non-regression. Do not replay this LENGTHEN assignment, 036 RE-ARGUMENT, 020–024, or 028–032. Do not start a willpower-lexicon PRIMARY.
 
+### iter-038 — OVERCLAIM repair
+**Hypothesis:** PRIMARY scope quit-sugar: chapter-reviewer `OVERCLAIM` must delete or narrow the unsupported claim instead of transplanting the evidence bound into prose, so sugar factory-speech 10→≤8. Smoking 5 is non-regression (≤6).
+**Change:** `prompts/chapter-reviewer.md` (`OVERCLAIM` repair instruction). Plans reused. Writer Spark 1.3 Go, A1 K=3. Judges composer-2.5, 53+57. Hypothesizer: GPT-6 Astra.
+**Verdict:** QUANTIFY
+**Lesson:** sugar factory-speech blocking+noted 10→10 (noted 10→9 + blocking 1). Smoking non-regression 5→8 (noted 5→7 + blocking 1). Length 55336/56793. New blocking factory-speech both (sugar CH-09 numbered mantra echo; smoking CH-03 numbered instruction header). `OVERCLAIM` fired once (smoking CH-12). Restored: yes. Consecutive no-KEEP: 1.
+**Next direction:** PRIMARY is blocking factory-speech 1/1 both (KEEP-eligible intersection). Numbered instruction/mantra headers. Do not replay this OVERCLAIM repair. Do not replay 037 LENGTHEN / 036 RE-ARGUMENT / 020–024 / 028–032. willpower-lexicon 30/31 is not PRIMARY.
+
 
 

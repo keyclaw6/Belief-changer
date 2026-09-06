@@ -1,0 +1,2 @@
+REVISE
+HEADER — Draft opens with workshop header `**IN THIS CHAPTER** — the kitchen table and the blue ledger, the hug from behind, the classroom and the finished paragraph, the hot dinner plate, the desk with the stuck letter` immediately after the chapter title. Delete that preview-index line entirely and open with spoken body; the numbered ALL-CAPS instruction `BEGIN BY FEELING GREAT TO BE ESCAPING` plus its rationale line is permitted and is not HEADER.

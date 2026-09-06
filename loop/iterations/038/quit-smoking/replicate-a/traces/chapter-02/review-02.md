@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` bullet preview before spoken body: "IN THIS CHAPTER / - The midnight garage with spray and mints / - The hand that reaches before thought..." Delete the preview block; enter on spoken body.

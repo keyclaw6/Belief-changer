@@ -1,0 +1,6 @@
+REVISE
+
+LENGTHEN to B±15% — Delivered 2025 words. Budget 4000. Required range 3400-4600. Add ~1400+ words extending this card's own threshold work, not earlier proofs.
+- Unspent target belonging to CH-12: the structural responsibility "warning against two relapse doors" and instant-conferral lived consequence. Quote draft location to extend: "One comes on a hard hour when the old line says a dose steadies — desk calm was tug-quieting only, the papers sitting untouched all along." / "One comes with a smile when drink and mates make an offer glow — patio pleasure was the night and company all along, and I know I can never have just one because one lit match reopens what one stubbed end closed."
+- Extend those two knocks from one-sentence labels into fully inhabited first-hour handling at the farewell table and just after: what the reader does, says, and thinks with pocket flat and YIPPEE! I'M FREE! as replacement, how the short typical peak from E-11 is recognized as thinning Nipper not need, and how E-06 finality is held as done identity.
+- The extension must deliver new lived consequence: what staying shut feels like as a non-smoker now, not another proof that desk calm or patio pleasure gave nothing. Do not rebuild C04 stress-desk evidence, C10 patio staging, or C11 genie/cliff argument; assume settled sight and show next-minute use.

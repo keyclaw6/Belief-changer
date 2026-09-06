@@ -587,5 +587,19 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 
 **What this opens next.** Journey re-argument 6/5 is not KEEP-eligible. willpower-lexicon 26/19 is not PRIMARY. Next PRIMARY is sugar factory-speech 10 (worse subject); smoking 5 is non-regression. Do not replay this LENGTHEN assignment. Do not replay 036 RE-ARGUMENT, 020–024, or 028–032.
 
+### iter-038 — OVERCLAIM repair  ·  2026-09-06  ·  QUANTIFY
+
+**Hypothesis.** If the chapter-reviewer `OVERCLAIM` finding requires the writer to delete or narrow the unsupported claim rather than speak the evidence bound, sugar voice `factory-speech` falls 10→≤8. Smoking 5 is non-regression (≤6).
+
+**Change.** One Output bullet in `prompts/chapter-reviewer.md` (see `loop/iterations/038/change.diff`). HEADER, RE-ARGUMENT, LENGTHEN, and ACCEPT left unchanged. Plans reused. Writer Spark 1.3 Go, A1 K=3. Panel 53+57 composer-2.5. Hypothesizer: GPT-6 Astra.
+
+**What happened.** factory-speech blocking+noted 10→10 (sugar) and 5→8 (smoking). Noted 10→9 / 5→7. Blocking factory-speech 0→1 both (sugar CH-09 `"10. IGNORE ANYONE WHO QUIT BY WILLPOWER"`; smoking CH-03 `"3. BEGIN BY FEELING GREAT TO BE ESCAPING"`). Words 55336 / 56793. Sugar voice 12/13; smoking 13/14. A1 sugar 9 ACCEPT / 4 CAP; smoking 7 ACCEPT / 7 CAP. `OVERCLAIM` finding fired once (smoking CH-12, three-minute withdrawal clock). Journey re-argument 6→8 / 5→6. willpower-lexicon 26→30 / 19→31.
+
+**Verdict & why.** QUANTIFY. PRIMARY (sugar) missed ≤8. Smoking exceeded ≤6. Restore trigger: new BLOCKING class `factory-speech` in both. `OVERCLAIM` returned to 037 KEEP text. Production chapters stay 037.
+
+**What we learned.** Changing how the reviewer commissions an evidence repair does not cut factory-speech when the KEEP-visible residue is numbered instruction/mantra headers. The hypothesized evidence-register hydra was not the 038 blocking object.
+
+**What this opens next.** Blocking factory-speech 1/1 both is the KEEP-eligible intersection. Noted 9/7 is not ≥8 both. Journey re-argument 8/6 is not. willpower-lexicon 30/31 is not PRIMARY. New mechanism on numbered instruction/mantra headers; do not replay this OVERCLAIM repair, 037 LENGTHEN, 036 RE-ARGUMENT, 020–024, or 028–032.
+
 
 

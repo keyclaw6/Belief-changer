@@ -1,0 +1,5 @@
+REVISE
+
+LENGTHEN to B±15% — Delivered 4991 words. Budget 6300. Range 5355-7245. Need +364 minimum, ~+1300 to budget.
+Undeveloped consequence belonging to this card: with the fuel inversion already landed, the plain-fuel dividend after 5pm is asserted but not lived. Extend from this draft location: "Those eighty minutes stayed in the day and did quiet work."
+Add ~800-1300 words there living the same desk afternoon forward with the settled understanding already assumed — closed work, error caught same day, bag light with no hiding/brushing, clean-tired head usable into evening — so the reader feels what body-owned power returns, not another demonstration that the buzz fails. Check: this does not rebuild CH-02 trap/choice, CH-03 benefit ledger, or CH-04 willpower diary in a new setting, and it does not re-prove the already-landed conclusion in "The dose did not give you the afternoon. The dose gave you the ten minutes and took the other fifty" / "BAD SUGAR never added energy you did not already own." It extends consequence, with all mantras/instruction/evidence bounds still required.

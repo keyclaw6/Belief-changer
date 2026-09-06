@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` with bullet index before spoken body: "IN THIS CHAPTER / - The three o'clock desk, the humming drawer and the second reach..." Delete the header/index block and open in spoken encounter; a numbered ALL-CAPS instruction `BEGIN WITH ELATION, NOT DREAD` plus its one rationale line is permitted and is not HEADER.

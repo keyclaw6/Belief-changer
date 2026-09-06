@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` followed by `The sofa at half past seven with cooling tea — the ditch by the lane and the offered hand — the bell that rings without orders`. Delete the `IN THIS CHAPTER` header line and teaser list; enter directly in spoken body.

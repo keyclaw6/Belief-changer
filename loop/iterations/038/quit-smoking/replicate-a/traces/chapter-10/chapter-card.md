@@ -1,0 +1,15 @@
+**CH-10 — The Night Out That Proves It
+- primary job: enacted transition — the most seductive cigarette stops surviving as exception and proves sneaking a ride on night, drink and friendship.
+- belief now: enters keeping one social exception; leaves seeing patio pleasure was scene all along.
+- concrete encounter: late patio, drinks, offered light, tasting night air with and without.
+- evidence: E-02 social plus drink collapses rule; E-04 heaven at light only; limits no social-avoidance method.
+- new instruction: I-10 MEET THE BEST CIGARETTE HEAD-ON
+- reserved-later fence: cut-down and tomorrow foreclose to C11; vow to C12.
+- arc position: late-middle strongest case; freedom rising.
+- reader-state: social smoker guarding belonging, encountering offer reframed.
+- mantra: echo F-A "It does plenty TO you. It does nothing FOR you."; echo F-C "stale, breathless and chained".
+- scene: debut SC-A, staging job: night patio offer full staging.
+- structural responsibility: strongest case met head-on; embedded long testimony in main flow in its own room.
+- guardrails: safety CA-SAFE, E-02 safety limit; originality: patio in new prose, credit to sun, leisure, company.
+- continuity intent: receives manufacture from C09; hands no-exception to escape routes C11.
+- budget: 4000

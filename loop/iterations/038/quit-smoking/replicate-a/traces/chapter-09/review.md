@@ -1,0 +1,2 @@
+REVISE
+HEADER — the draft opens with the workshop header `IN THIS CHAPTER`: `**IN THIS CHAPTER** — The pack weighed in the palm, the filter vents held to the light, the bathroom mirror, the stairs at midday, both ends of the rope, tomorrow with the same hours.` Delete the preview header/plan-index line and enter the chapter in spoken body; the end instruction `9. SEE THE SELLER BEHIND THE SMOKE / Remember who built the trap and why.` is allowed and is not the violation.

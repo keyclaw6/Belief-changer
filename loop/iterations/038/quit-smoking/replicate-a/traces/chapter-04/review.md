@@ -1,0 +1,2 @@
+REVISE
+HEADER — the draft opens with the workshop header `IN THIS CHAPTER` followed by index line "The phone put down too hard, the unpaid papers, the hand already moving, three minutes watched puff by puff, the hour after, the man at the next desk". Delete the header block entirely; the numbered instruction "FOLLOW ALL THE INSTRUCTIONS / All you have to do is what this book asks." is permitted and is not the violation.

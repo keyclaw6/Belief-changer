@@ -1,0 +1,2 @@
+REVISE
+HEADER — the draft opens with the workshop header `IN THIS CHAPTER` before spoken body: "IN THIS CHAPTER / Late patio with heaters and cold glasses, the outstretched lit hand, the first flare and the hour after..." Remove the header block and open in spoken voice. The numbered ALL-CAPS instruction at the end is not HEADER per exception.
