@@ -3,12 +3,12 @@
 ## Position
 
 - **Iteration:** 040
-- **Stage:** smoking write (sugar panel done)
+- **Stage:** smoking panel (sugar panel done)
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`). Factory is Muse Spark 1.3; this chat is auto-research only.
-- **Last completed unit:** 040 sugar PANEL DONE (53/53). Smoking still writing CH-14.
-- **Next unit:** smoking write DONE, then j040-quit-smoking. KEEP/QUANTIFY vs 039 factory-speech 13/10 (also report vs 037 10/5). Halt after 040. No 041.
+- **Last completed unit:** 040 smoking write DONE 14/14. Sugar PANEL DONE 53/53.
+- **Next unit:** smoking PANEL DONE, then census KEEP/QUANTIFY vs 039 factory-speech 13/10 (also report vs 037 10/5). Halt after 040. No 041.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -86,3 +86,4 @@
 | 2026-09-06 05:45 | 040 Astra hypothesis applied (writer anatomy item 5 instruction landing). Start both writes. | f040 writes |
 | 2026-09-06 07:40 | 040 sugar write DONE 13/13 ACCEPT CH-13. Smoking 12/14. Start sugar panel. | j040-quit-sugar |
 | 2026-09-06 07:45 | 040 sugar PANEL DONE 53/53. Smoking 13/14, CH-14 started. | smoking write then j040-quit-smoking |
+| 2026-09-06 07:53 | 040 smoking write DONE 14/14 ACCEPT CH-14. Start smoking panel. | j040-quit-smoking |
