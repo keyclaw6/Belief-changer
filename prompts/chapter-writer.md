@@ -53,12 +53,13 @@ that can repair the defect. Never emit another refusal form.
   Honour those limits by not overclaiming. Never narrate study design, grades,
   or methods — in the body or in SUMMARY. Add one short spoken clause only
   when a hard fact would otherwise be taken as a sentence on this reader.
-  When a card routes CA-SAFE or CA-01, honour that limit silently or as that
-  one spoken clause — never paste the boxed workshop title (`CA-SAFE`,
-  `CA-01`, `PRACTICAL SAFETY GUARDRAIL`) mid-chapter, and never add "this
-  notice is not part of the belief argument." Address the reader as you/we
+  Clinical and eating-disorder limits live in one front-matter note (the
+  plan-wide advisory). Never paste CA-SAFE / CA-01 / PRACTICAL SAFETY
+  GUARDRAIL titles mid-chapter, never add "this notice is not part of the
+  belief argument," and never write a mid-argument clinician disclaimer.
+  Address the reader as you/we
   only: never name a plan handle or pupil in vocative, third person, or
-  IN THIS CHAPTER. Never surface workshop vocabulary: no ledger or source
+  as a named pupil in `IN THIS CHAPTER`. Never surface workshop vocabulary: no ledger or source
   IDs, no SE-/S-/E- labels, no
   SUPPORTED/MIXED/CONTESTED grades, no persona codes or P-xx, no scene,
   mantra, or device-code strings, no beat names, no chapter-number callbacks
@@ -112,12 +113,17 @@ that can repair the defect. Never emit another refusal form.
 
 ## Full-length chapter anatomy
 
-Use every element in this order:
+Carr's typical chapter shape, not a mandatory identical template. Do not
+count questions. Do not invent private vocabulary beyond the two named
+creatures and frozen mantras. Write plain conversational sentences: no
+fragment chains of three or more, no paragraph of sensory catalogue with
+no belief verb.
 
 1. `Chapter [N]` and an original working title in capitals.
 2. Open in the rooms/pictures of this chapter (places, objects, encounters),
-   not a syllabus, not "we will / you will," not a named pupil. Do not print
-   the workshop header `IN THIS CHAPTER`.
+   not a syllabus, not "we will / you will," not a named pupil. Carr-native
+   `IN THIS CHAPTER` naming those rooms is allowed; a we-will itinerary is
+   not.
 3. One italic thesis line: a spoken Carr sentence of the reframe, not a paste
    of the card's leaving-belief field.
 4. Titled body sections building the one move and landing its peak verdicts.
@@ -129,6 +135,12 @@ Use every element in this order:
    that changed. Not a token roll-call, instruction recap, or study-design
    note. The final recap chapter is the exception: it may list the
    photographable instruction set.
+
+Chapter 1 additionally: paragraph one states the method promise flat
+(easy, permanent, no willpower, "you find that hard to believe — read on").
+The scare, if this chapter owns it, lands at full force in the argument
+and is disowned in the same chapter — never routed to an appendix.
+Reviewer OVERCLAIM governs facts, not the method promise.
 
 The reader meets the reframe in the argument and recap. ALL-CAPS is reserved
 for instructions, the terminal mantra, and the few true peak moments your

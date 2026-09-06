@@ -31,11 +31,12 @@ If research artifacts are missing, stop and say so. Do not research here
 ## Plan loop
 
 1. Spawn `plan-writer` (`prompts/master-plan-skill-v2.md`). Initial call
-   carries exactly four file inputs: style guide, brief, lived-experience,
-   scientific-evidence. No reference book. Write
+   carries: style guide, brief, lived-experience, scientific-evidence,
+   and the research banks under `production-books/<slug>/research/banks/`.
+   No reference book. Write
    `production-books/<slug>/master-plan.md` (`.partial` then rename).
 2. Spawn `plan-reviewer` (`prompts/master-plan-reviewer-v2.md`) on that
-   candidate plus the same four files. Write
+   candidate plus the same inputs. Write
    `production-books/<slug>/master-plan-review.md`.
 3. Read the reviewer's **last line**.
    - `needs changes first` — spawn a **fresh** plan-writer with the current
@@ -62,7 +63,11 @@ For each chapter N:
 3. `ACCEPT` — keep the draft. `REVISE` — spawn the writer again with the
    original four inputs plus current draft plus this review only. Repeat
    review → rewrite until `ACCEPT` or three rewrites (K=3). After the third
-   rewrite, no further review; that rewrite is the chapter.
+   rewrite, spawn one final review. `ACCEPT` keeps it. Functional `REVISE`
+   (JOB, MANTRA, INSTRUCTION, ID, OVERCLAIM, STOPPED-SHORT, RESERVED-REACH,
+   RE-ARGUMENT) → write `upstream.md` and do not treat that chapter as
+   accepted. Length/HEADER-only `REVISE` → keep the rewrite as `CAP`.
+   Never skip the final review.
 4. Write `chapter-NN.md` via `.partial` then rename. Skip a chapter only when
    that final file already exists.
 

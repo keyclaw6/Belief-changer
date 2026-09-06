@@ -43,7 +43,7 @@ reader in the entering-belief is `journey-incomplete`.
 **blocking:** `journey-incomplete`, `journey-reverse`, `continuity-break`,
 `compliance-missing`, `recognition-miss`
 
-**noted:** `journey-stall`, `re-argument`, `placement-miss`
+**noted:** `journey-stall`, `re-argument`
 
 ## Blocking tests
 
@@ -55,11 +55,18 @@ reader in the entering-belief is `journey-incomplete`.
 - **continuity-break** — chapters 2+: previous leaving-belief treated as
   unproved *and* the reader is asked to re-enter the previous entering
   belief. Ch.1 cannot take this class.
-- **compliance-missing** — assigned instruction or mantra wording is not
-  present verbatim. Paraphrase of a frozen mantra is this class.
-- **recognition-miss** — only when the card's primary job is recognition
-  and the chapter only describes the behavior from outside, with no lived
-  particular. Do not force this class on demolition chapters.
+- **compliance-missing** — assigned instruction or identity handover is
+  missing as a *function*: the command is never issued, or the terminal
+  identity mantra never appears as a thought the reader can keep.
+  Exact-string / frozen punctuation / header conformity is factory QA,
+  not this class. A Carr-shaped spoken command that does the assigned
+  job is success even if capitalization differs.
+- **recognition-miss** — the chapter relies on recognition (the reader
+  must feel seen) and only describes the behavior from outside, with no
+  lived particular. Inspect where the chapter actually relies on
+  recognition, not only where the card labels recognition its primary
+  job. Do not force this class on demolition chapters that do not rely
+  on it.
 
 ## Noted tests (never FAIL the chapter)
 
@@ -67,10 +74,9 @@ reader in the entering-belief is `journey-incomplete`.
   leaving-belief still arrives.
 - **re-argument** — this chapter rebuilds a prior transition as its own
   section (argument + evidence + turn). Token echoes, mantra reprises,
-  one-paragraph callbacks, and Carr-method recurrence of a settled
-  image are the method: count 0. Assigned leaving-belief still lands.
-- **placement-miss** — assigned instruction/mantra is present verbatim but
-  sits at the wrong moment.
+  one-paragraph callbacks, consolidating callbacks, and Carr-method
+  recurrence of a settled image are the method: count 0. Assigned
+  leaving-belief still lands. Never PRIMARY.
 
 ## Your verdict gate
 
@@ -87,9 +93,10 @@ including zeros. Gap 1 is the first BLOCKING class.
 
 For each material gap:
 
-1. **Does ours create recognition?** Ask this only when the card's
-   primary job is recognition. Otherwise skip. Do not fire
-   `recognition-miss` on demolition chapters.
+1. **Does ours create recognition?** Ask this when the chapter relies
+   on recognition, not only when the card's primary job field says so.
+   Otherwise skip. Do not fire `recognition-miss` on demolition chapters
+   that do not rely on recognition.
 
 2. **Does ours create cumulative movement?** Flag a calm passage as
    `journey-stall` (NOTED) only when it fails to consolidate. Do not FAIL.
@@ -110,8 +117,8 @@ For each material gap:
    cumulative book is the aim; a chapter that advances from the
    handed-forward state is not a "standalone failure."
 
-7. **Assigned placement:** Verbatim missing → `compliance-missing`
-   (BLOCKING). Present but wrong moment → `placement-miss` (NOTED).
+7. **Assigned instruction/identity:** Missing as a function →
+   `compliance-missing` (BLOCKING). Exact wording is factory QA.
 
 ## What you do NOT evaluate
 
@@ -119,8 +126,8 @@ For each material gap:
 - Register at specific moments (voice-emotion judge) — you own the overall
   movement and momentum
 - Banned-register wording and anatomy craft labels are **not yours**
-  (voice). You verify assigned instruction/mantra **verbatim presence**
-  only (`compliance-missing`).
+  (voice). You verify assigned instruction/identity **as a function**
+  (`compliance-missing`). Exact frozen wording is factory QA.
 - Sentence length, word count, formatting
 
 ## Your output format

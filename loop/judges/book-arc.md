@@ -11,25 +11,29 @@ ending. The three chapter judges cannot see these; you own them.
 1. **OUR BOOK** — every chapter, in order
 2. **THE PLAN'S BOOK-LEVEL SHEETS** — mantra sheet (debut/echo/hand-over
    schedule), instruction spine, curve and concept map
-3. **REFERENCE SKELETON** — the reference-alignment table: GSBS's chapter
-   sequence and the belief-move each real chapter performs
+3. **REFERENCE SKELETON** — the reference-alignment table
+4. **REFERENCE OPENING** — the real book's chapter aligned to our
+   chapter 1 (verbatim)
+5. **REFERENCE ENDING** — the real book's chapter aligned to our last
+   chapter (verbatim)
 
-You do not receive the full real book. You compare our book's cumulative
-behavior against the skeleton and against the Carr method: escalating
-demolition, immediate freedom, escape not sacrifice, the crescendo of
-relief.
+You compare our book's cumulative behavior against the skeleton *and*
+against those real opening and ending pages: escalating demolition,
+immediate freedom, escape not sacrifice, the crescendo of relief, the
+flat opening promise.
 
 ## Closed classes
 
 **blocking:** `journey-incomplete`, `ending-maintenance`,
 `mantra-system-break`
 
-**noted:** `re-argument`, `curve-flatten`, `pre-debut-spend`,
+**noted:** `re-argument`, `curve-flatten`,
 `skeleton-hole`
 
 **Hydra lock:** same job done by a new scene ID, token, or chapter number
 is `re-argument`, count += 1, never a new class, never a book FAIL by
-itself.
+itself. Count redundant argumentative work, not section length.
+Consolidating callbacks are count 0. This class is never PRIMARY.
 
 `PASS` even if `re-argument` is 12, as long as every blocking count is 0.
 
@@ -43,25 +47,26 @@ itself.
   something to serve: streaks, coping skills, stay strong, ongoing
   recovery, white-knuckle avoidance *as the strategy*. A portable
   instruction recap *after* freedom is conferred is OK.
-- **mantra-system-break** — a sheet-marked debut never appears verbatim
-  anywhere, or the terminal identity mantra never appears, or the
-  instruction spine is never issued as commands. Echo mistiming is not
-  this class.
+- **mantra-system-break** — a sheet-marked debut never appears as a
+  function anywhere, or the terminal identity mantra never appears as a
+  thought the reader can keep, or the instruction spine is never issued as
+  commands. Exact-string / frozen punctuation is factory QA. Echo
+  mistiming is not this class.
 
 ## Noted tests (never FAIL the book)
 
 - **re-argument** — a later chapter rebuilds a settled verdict/scene-job
   as its own section (argument + evidence + turn). Count extra *jobs*,
-  not IDs. Token/mantra/one-paragraph echoes are the method: count 0.
-  Cinema twice doing the same credit-extraction as a full restaging =
-  `re-argument 1`.
+  not IDs. Token/mantra/one-paragraph echoes and consolidating callbacks
+  are the method: count 0. Cinema twice doing the same credit-extraction
+  as a full restaging = `re-argument 1`. Never PRIMARY.
 - **curve-flatten** — demolition peaks early or the middle sags, but the
   inversion still completes and the ending is still escape.
-- **pre-debut-spend** — ending ammunition appears in full before its
-  scheduled chapter.
 - **skeleton-hole** — GSBS belief-move our book never performs, plan did
   not omit it, but the inversion still completes. If the omitted move *is*
-  the inversion, that is `journey-incomplete`.
+  the inversion, that is `journey-incomplete`. A plan's "reserved-later"
+  or "plan omitted it" note does not exempt an important reader objection
+  that the whole book never closes.
 
 ## Your verdict gate
 
@@ -88,9 +93,10 @@ including zeros. Gap 1 is the first BLOCKING class.
    same job twice? (Verbatim repetition is also yours to verify — there is no
    mechanical validator.)
 
-3. **Mantra system in execution.** Verify presence yourself (each assigned
-   mantra verbatim at its scheduled chapter) and judge execution: does each
-   debut get its full argue-then-compress beat?
+3. **Mantra system in execution.** Verify functional presence (each
+   assigned mantra as a thought the reader can keep at its scheduled
+   chapter) and judge execution: does each debut get its full
+   argue-then-compress beat? Exact wording is factory QA.
    Are echoes brief, un-re-argued, and placed where they reinforce? Does
    the hand-over in the final movement land?
 
@@ -113,9 +119,10 @@ including zeros. Gap 1 is the first BLOCKING class.
 
 - Within-chapter quality of any single chapter (the three chapter judges
   own that; do not repeat their findings)
-- Anatomy presence, verbatim repetition facts, and mantra/instruction
-  presence are your checks too — there is no mechanical validator
+- Anatomy presence, mantra/instruction presence as a *function* — exact
+  frozen wording is factory QA
 - Prose register at specific moments (voice-emotion judge)
+- Whether the book is indistinguishable from Carr (carr-distance judge)
 
 ## Your output format
 

@@ -33,7 +33,7 @@ change. A harness substitutes what it has, per role:
 | hypothesizer | high reasoning, bounded multi-change precision under the convergence budget | GPT-6 Astra (Experiential HTTP); fallback Claude Fable 5.1 |
 | plan-reviewer | independent clean-context review, high reasoning | Muse Spark 1.3 contributor (same Go→Zen→Vercel chain as the writer) |
 | chapter-reviewer | plan-fidelity + length vs card budget; never sees GSBS | Muse Spark 1.3 contributor (same Go→Zen→Vercel chain as the writer) |
-| judges (3 + book-arc + chapter-comparison) | reference-sighted scoring, repeatable verdicts | Cursor live panel: Composer 2.5. Other harnesses: Muse Spark 1.3 contributor |
+| judges (chapter lanes + comparison + book-arc + carr-distance) | reference-sighted scoring, repeatable verdicts | Cursor live panel: Composer 2.5. Other harnesses: Muse Spark 1.3 contributor |
 | trace-analyzer | reads traces, maps clusters to components | Muse Spark 1.3 contributor |
 | research lead + sub-agents | cheapest-adequate, high parallelism, needs web | Muse Spark 1.3 contributor |
 

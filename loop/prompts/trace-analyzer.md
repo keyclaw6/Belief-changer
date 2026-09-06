@@ -27,7 +27,7 @@ KEEP/REVERT veto.
 
 Merge `CLUSTER CENSUS` first: same class name in both books, sum the
 counts. BLOCKING classes that survive both books are the KEEP object.
-NOTED count drops (e.g. `trap-question-label` 17→3) are improvement even
+NOTED count drops (e.g. `factory-speech` 17→3) are improvement even
 when chapter PASS/N is worse. Same job under a new scene ID is
 `re-argument`, not a new class.
 

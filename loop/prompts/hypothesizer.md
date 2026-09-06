@@ -54,14 +54,23 @@ replicates."]
   retry a reverted change, say so and name the instrument it was scored
   under.
 
+- **Judge defect suspected is a legal verdict.** If the voice (or any)
+  judge is counting Carr-native constructs as defects, or PRIMARY quotes
+  are Carr-shaped, return `judge defect suspected` and stop. Do not
+  spend dual-subject writes on a broken class.
+
 - **factory-speech is inventory diction, not Carr commands.** Numbered
-  ALL-CAPS spoken imperatives that are the assigned instruction/mantra
-  wording are Carr method (GSBS). Do not make PRIMARY "ban ALL-CAPS" or
-  "flag all caps." factory-speech is `I-01 —`, `IN THIS CHAPTER`, ordinal
-  announcements, ledger IDs, and craft labels. If the voice judge is
-  counting Carr-native numbered commands as factory-speech, that is a
-  judge defect — stop and name it; do not spend dual-subject writes
-  trying to delete Carr's instruction typography.
+  ALL-CAPS spoken imperatives and Carr-native `IN THIS CHAPTER` are
+  Carr method (GSBS). Do not make PRIMARY "ban ALL-CAPS" or "flag all
+  caps." factory-speech is `I-01 —`, ordinal announcements, ledger IDs,
+  craft labels, move-naming, token roll-calls, mid-argument clinician
+  disclaimers. If the voice judge is counting Carr-native numbered
+  commands as factory-speech, that is a judge defect — stop and name it.
+
+- **Never PRIMARY:** `re-argument` (Carr repeats on purpose), naming the
+  willpower illusion, copied mannerism (deleted). Comparison
+  `missing`/`partial` and Carr-distance `score-deficit` are eligible
+  KEEP objects. Exact-string compliance is factory QA.
 
 - **Never change models or routes.** Do not propose edits to `*_model`,
   `*_fallback_model`, `*_route`, or endpoint fields. Those are founder-only.
@@ -70,19 +79,20 @@ replicates."]
   prompt and structure cannot close the cluster, say so and stop;
   do not invent a model swap.
 
-- **Convergence budget.** Propose 1–4 changes across ≤3 editable files.
-  Each change is one instruction, bound to one census class and one root
-  component, and states which subject(s) it targets. Exactly one is
-  PRIMARY and decides KEEP; the others are recorded, never scored. Never
-  two changes to the same instruction. Prefer fewer: D≤1 in both subjects
-  ⇒ exactly one change. PRIMARY is the intersection of KEEP-eligible
-  classes across both subjects: (1) a BLOCKING class in both; (2)
-  comparison `missing` in both; (3) a NOTED class ≥ 8 in both. Empty
-  intersection → PRIMARY is the top class of the worse subject; declare
-  `PRIMARY scope` and score the other as non-regression only. Do not
-  make PRIMARY a 5–7-count noted class; 020–024 showed that object
-  cannot KEEP. Do not edit `production-books/<slug>/master-plan.md` as a
-  hypothesis — plans are evidence.
+- **Convergence budget.** Propose 1–4 changes across ≤3 editable files
+  (editable includes `prompts/chapter-reviewer.md`). Each change is one
+  instruction, bound to one census class and one root component, and
+  states which subject(s) it targets. Exactly one is PRIMARY and decides
+  KEEP; the others are recorded, never scored. Never two changes to the
+  same instruction. Prefer fewer. PRIMARY is the intersection of
+  KEEP-eligible classes across both subjects: (1) a BLOCKING class in
+  both; (2) comparison `missing` or `partial` in both; (3)
+  Carr-distance `score-deficit` in both; (4) a NOTED class ≥ 12 in both
+  that is PRIMARY-eligible. Empty intersection → **stop**. Do not fall
+  back to the worse subject's top class. Do not make PRIMARY a 5–11-count
+  noted class. Do not edit `production-books/<slug>/master-plan.md` as a
+  hypothesis — plans are evidence. Bind the candidate to `parent:` (git
+  HEAD) and the instrument date in the hypothesis.
 
 - **Follow the diagnosis.** Target the root component named by the trace
   analyzer unless you can quote trace evidence that contradicts it. Do not
@@ -107,12 +117,24 @@ replicates."]
 If multiple clusters exist, prioritize:
 1. Systemic clusters that block belief change (the reader's belief doesn't
    shift, across many chapters)
-2. Comparison `missing` in both books (a GSBS belief-move our chapter
-   never performs)
+2. Comparison `missing`/`partial` in both books, or Carr-distance
+   `score-deficit`
 3. Clusters that break the cumulative journey or the arc (book-arc lane)
+   — not `re-argument` as PRIMARY
 4. Clusters in voice effect (reads like AI instead of landing Carr's effects)
 5. Everything else
 
 ## Output
 
-Write the complete hypothesis in the 4-field format above. Nothing else.
+Write the complete hypothesis in the 4-field format above, plus:
+
+```
+parent: <git HEAD of the campaign tip>
+instrument: 2026-09-06 Carr-distance panel
+```
+
+If you cannot name an eligible PRIMARY, output exactly:
+
+`STOP: empty PRIMARY intersection`
+
+Nothing else.

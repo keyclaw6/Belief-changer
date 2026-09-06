@@ -4,18 +4,22 @@ You are the book's master planner. Own the architecture. Think as deeply and cre
 
 ## Exact planning-call inputs (non-negotiable)
 
-The initial planning call receives exactly this prompt plus these four files, and no other context:
+The initial planning call receives this prompt plus these inputs, and no
+other context:
 
 - The complete style guide — `prompts/style-guide.md`
 - The brief — `production-books/<slug>/00-brief.md`
 - The accepted lived-experience synthesis — `production-books/<slug>/research/lived-experience.md`
 - The accepted scientific-evidence synthesis — `production-books/<slug>/research/scientific-evidence.md`
+- The research banks — `production-books/<slug>/research/banks/` (verbatim
+  packets). If lived-experience has no `## Verbatim confessions` section,
+  the banks are mandatory.
 
 On a revision call, the orchestrator additionally provides the current
 candidate plan and the latest reviewer's findings; these are the only
 additional permitted inputs.
 
-Do not read a reference book, anything under `analysis/` or `calibration/reference/`, calibration reference text, judge output, source packets, other chapters, or another book artifact. If a required input is missing, empty, too thin, or accompanied by forbidden context, STOP and report the exact-input contract failure. Do not gather new context inside planning.
+Do not read a reference book, anything under `analysis/` or `calibration/reference/`, calibration reference text, judge output, other chapters, or another book artifact. If a required input is missing, empty, too thin, or accompanied by forbidden context, STOP and report the exact-input contract failure. Do not gather new context inside planning.
 
 ## Mission
 
@@ -87,7 +91,9 @@ Clinical and eating-disorder limits that could conflict with method advice belon
 
 ### Arc and length
 
-Choose the chapter count and architecture that best deliver the behavior-specific belief change. Not a chapter-per-function course. First third: easy contract, already hooked, two creatures named in passing when the trap is first seen, body/instinct/real food as concrete encounters (watch eating; the body as authority) — not a three-word refrain. Middle: demolitions on that ground, and at least one chapter whose primary job is inhabit-the-ordinary-doing (hunger, satisfaction, real food as favourite) — not a justification kill with inhabit as flavor. After the vow: the last ordinary instance (not a laboratory dose), one ordinary-life chapter (mornings, shops, food; thoughts the reader already owns, once), then a short recap — not three teaching manuals. Merge, reshape, or omit freely inside that spine. A prevalence claim appears once. Long testimony lives in the main flow, in its own room — not a labelled appendix.
+Choose the chapter count and architecture that best deliver the behavior-specific belief change. Not a chapter-per-function course. First third: easy contract, already hooked, two creatures named in passing when the trap is first seen, body/instinct/real food as concrete encounters (watch eating; the body as authority) — not a three-word refrain. Middle: demolitions on that ground, and at least one chapter whose primary job is inhabit-the-ordinary-doing (hunger, satisfaction, real food as favourite) — not a justification kill with inhabit as flavor. After the vow: the last ordinary instance (not a laboratory dose), one ordinary-life chapter (mornings, shops, food; thoughts the reader already owns, once), then a short recap — not three teaching manuals. Merge, reshape, or omit freely inside that spine. A prevalence claim appears once. Long testimony lives in the main flow, in its own room — not a labelled appendix. Do not assign a plan option of routing harm-lists or the scare to an appendix.
+
+**Chapter 1 card (mandatory).** The first argument-bearing card assigns: (1) the method promise stated flat in paragraph one — easy, permanent, no willpower, "you find that hard to believe — read on"; (2) a full-force scare-then-disown in that chapter's argument, never deferred. Reviewer OVERCLAIM governs facts, not the method promise. Narrator autobiography appears only when research packets support it.
 
 Every argument-bearing chapter must be composition-feasible within its budget as one completed, value-bearing correction to what the reader believes the behavior gives, costs, means, or requires, grounded only in evidence and logic that chapter owns. Declare that primary job as `enacted transition — <the correction completed now>`. The clause names the belief correction, never a delivery register or workshop job (`deliver at full Carr force`, `explicitly disown`, `hard truth flat`). On the inhabit-the-ordinary-doing chapter, that clause names the inhabit (hunger, satisfaction, real food as favourite), not a justification kill. Setup, topic coverage, a future-investigation prospectus, a catalogue for later demolition, or leaving the reader only willing to keep reading cannot be that job. A completed correction must make the prior valuation less credible now through the chapter's owned evidence or logic. Trust, definition, scope, safety, recap, bridge, and hand-off functions may support or consolidate the movement without becoming a second thesis. A necessary non-argument card declares `non-argument — <definition | safety | recap | bridge | hand-off> ...`; it must advance, protect, or hand over the surrounding persuasive movement rather than replace or defer it.
 
@@ -114,7 +120,7 @@ Give every chapter a stable ID, number, and working title, then specify only its
 - continuity intent: what understanding it receives and hands forward;
 - one integer word budget matching the arc table (planner length arithmetic — not a writer padding target).
 
-These are semantic authorities, not a prose template or mandatory chapter-section anatomy. Do not put device lists, persona codes, ALL-CAPS-peak inventories, a `scare-then-disown` field name, a `Voice:` register operator, `hard truth flat`, `deliver at full Carr force`, `explicitly disown`, or workshop don't-panic quotes as craft notes on cards. A card must be directly writable: every field it names must resolve against a plan-wide inventory with no ambiguity and no gap the writer would have to invent around. Inside a card, output only the permitted semantic fields: no headings, tables, connective prose, copied plan-wide rows, or prewritten chapter anatomy. Each plan-wide inventory remains in its single canonical section. The writer derives `IN THIS CHAPTER` (room/picture names, not a we-will itinerary and not a named pupil), the italic thesis as spoken Carr, section flow, ALL-CAPS landing, and SUMMARY (ordinary sentences of the belief that changed) from the style guide. Do not prewrite those prose elements in the plan.
+These are semantic authorities, not a prose template or mandatory chapter-section anatomy. Do not put device lists, persona codes, ALL-CAPS-peak inventories, a `scare-then-disown` field name, a `Voice:` register operator, `hard truth flat`, `deliver at full Carr force`, `explicitly disown`, or workshop don't-panic quotes as craft notes on cards. A card must be directly writable: every field it names must resolve against a plan-wide inventory with no ambiguity and no gap the writer would have to invent around. Inside a card, output only the permitted semantic fields: no headings, tables, connective prose, copied plan-wide rows, or prewritten chapter anatomy. Each plan-wide inventory remains in its single canonical section. The writer derives `IN THIS CHAPTER` (room/picture names, not a we-will itinerary and not a named pupil), the italic thesis as spoken Carr, section flow, ALL-CAPS landing, and SUMMARY (ordinary sentences of the belief that changed) from the style guide. Do not prewrite those prose elements in the plan. The chapter-1 card still assigns the flat method promise and scare-then-disown as semantic jobs.
 
 ## Normalization law
 

@@ -1,7 +1,8 @@
 # Judge shared law — census, blocking vs noted, KEEP object
 
-Every chapter judge and the book-arc judge obeys this file. Lane prompts
-add class tests; they do not weaken these rules.
+Every chapter judge, the book-arc judge, and the Carr-distance judge
+obeys this file. Lane prompts add class tests; they do not weaken
+these rules.
 
 ## What success is
 
@@ -33,7 +34,7 @@ zeros. Integer counts. One quoted sentence per count later in the report.
 
 ```
 CLUSTER CENSUS
-lane: <belief | voice | journey | book-arc>
+lane: <belief | voice | journey | comparison | book-arc | carr-distance>
 scope: <chapter-NN | book | probe>
 verdict: <PASS | FAIL>
 blocking:
@@ -43,26 +44,36 @@ noted:
 ```
 
 `verdict: FAIL` iff any blocking count is ≥ 1. Do not list a class under
-both buckets except `willpower-lexicon` and `factory-speech` (voice): those
-split per-quote by the lane's sentence test.
+both buckets except `factory-speech` (voice): that class splits
+per-quote by the lane's sentence test.
 
 Repeatability: same PASS/FAIL and the same BLOCKING class set. NOTED
 counts may differ by ±1 per class **per chapter report**. Gap titles
-need not match.
+need not match. That declared noise is ±13 on a 13-chapter book: it is
+not a KEEP band.
 
-**Book-level noted band (KEEP):** compare **rates**, not raw sums, when
-chapter counts differ. Rate = class count / chapter count (chapter
-lanes) or the single book-arc count (book-arc). A same-n drop of 1 is
-inside the band (not material). Material improvement is a drop of **2
-or more** at the same chapter count, or a rate drop **greater than
-1 / n_old** when n differs. A noted class whose baseline in either
-book is below 8 sits inside this band for PRIMARY selection — do not
-use it as the KEEP object.
+**Book-level KEEP band:** compare **rates**, not raw sums, when chapter
+counts differ. Rate = class count / chapter count (chapter lanes) or
+the single book-level count (book-arc, carr-distance). A same-n drop
+of 1–3 is inside noise (not material). Material improvement is a rate
+drop of **≥ 25% and ≥ 4 counts** at n≈13, or a drop on a BLOCKING
+class, comparison `missing`/`partial` (book totals), or Carr-distance
+`score-deficit`. A noted class whose baseline in either book is below
+12 sits inside this band for PRIMARY selection — do not use it as the
+KEEP object. `re-argument` is never PRIMARY.
 
 PASS test (real GSBS as both texts, including a late chapter with its
-real previous chapter): all counts 0, verdict PASS. Carr-method
+real previous chapter): all counts 0, verdict PASS. Carr-distance
+probe: GSBS vs GSBS = score 100, score-deficit 0. Carr-method
 recurrence (Little Monster, brainwashing, freedom refrain) is not a
 finding. A sharpening opportunity in Carr is not a finding.
+
+Also run, as founder-guided calibration not as KEEP: (a) Carr as OUR
+text against a functionally matched other Carr chapter — counts need
+not be zero, but the test must not invent BLOCKING on Carr-method
+recurrence; (b) one genuinely defective positive control (a hedge on the
+assigned method promise) that must fire. Source identity alone is not
+the sole calibration standard.
 
 Cap BLOCKING gap write-ups at 5. NOTED classes do not consume gap slots
 and do not flip assigned-line MATERIAL. Assigned-line MATERIAL is allowed

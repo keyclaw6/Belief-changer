@@ -28,3 +28,13 @@ __pycache__/
 
 # pi-goal-x runtime objectives (session-local; never repository truth).
 .pi/goals/
+.pi/npm/
+.opencode/goals/
+
+# Loop runner noise — never campaign truth.
+loop/iterations/*/hypothesizer-input.md
+loop/iterations/*/*.err
+loop/iterations/*/judge-*.log
+loop/iterations/*/write-*.log
+loop/iterations/*/factory-*.log
+

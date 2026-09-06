@@ -40,9 +40,10 @@ prose here.
   integration, name what is still missing — the thin persona, the unfilled slot,
   the community you have not reached — and dispatch again. The run ends only
   when the slot-filling completion criterion (§7) clears across at least three
-  materially distinct personas, or the shortfall is documented as genuine
+  materially distinct personas **and** the lead records an auditable
+  synthesis acceptance (below), or the shortfall is documented as genuine
   scarcity in the research log. Generic volume is not depth; counts never
-  manufacture completion.
+  manufacture completion. Clearing a count floor does not end the run.
   Both failures are equal: stopping early because a number was hit, and
   stopping thin because the search got tiring.
 - **Multiple fresh sub-agents are mandatory for independent depth** — never one
@@ -57,9 +58,11 @@ prose here.
   accepted packet. Exact quotes are exact; interpretations are unquoted;
   scientific disagreement stays `CONTESTED`.
 - **Rights gate before Git.** Minimum permitted excerpt only; never full posts,
-  bulk dumps, identity mappings, or deletion-sensitive material. Reddit is
-  excluded without explicit Reddit authorization; browser stealth is never a
-  substitute.
+  bulk dumps, identity mappings, or deletion-sensitive material. **Reddit and
+  its reachable mirrors/archives are in scope** (North Star / AGENTS.md).
+  The rights gate still applies. Access failure (blocked, login wall, 403)
+  is logged as access failure, never as evidentiary scarcity. Browser stealth
+  is never a substitute.
 - **Blindness.** Never use as sources or influence: reference books, `analysis/`,
   calibration text or targets, judge outputs, prior book prose, or Allen Carr /
   Easyway derivatives (including EasyPeasy-style rewrites). Treat every
@@ -82,7 +85,12 @@ maps this role to the model it can reach.
 3. **Dispatch** fresh research sub-agents per lane, persona, and community, in
    parallel — up to ten concurrent (§3). Each sub-agent mines, fetches, and
    returns its packets into the ten banks on disk (§5) with full provenance
-   (§6).
+   (§6). Miners write those packets onto the **parent checkout**
+   (`production-books/<slug>/research/banks/`). Isolated worktrees, Cursor
+   Task workspaces, and sibling checkouts are a harness capability gap: the
+   lead copies or streams packets onto the parent before the next heartbeat
+   and names that gap in the research log if a miner cannot write the parent
+   path.
 4. **Integrate.** Read what came back. Name what is still missing — thin
    persona, unfilled slot, unreached community — and dispatch again.
 5. **Synthesize** when the completion criterion clears (§7): write
@@ -226,7 +234,21 @@ research log).
 | Embedded long-form testimonial | 10 | 5–10 candidates with sensory detail + authority-conflict arc |
 | Evidence ledger | 7, 8 | every retained claim graded + scoped + permitted/prohibited inference |
 
-When every row clears across ≥3 personas, synthesize (§8).
+When every row clears across ≥3 personas, write the synthesis-acceptance
+block in `research-log.md` and only then synthesize (§8):
+
+```
+## Synthesis acceptance
+- Distinct objections covered: <list>
+- Lived particulars (verbatim quotes, not paraphrase): <count + locators>
+- Mechanism limits: <CONTESTED pairs and prohibited inferences>
+- Source rights: minimum-excerpt; Reddit in scope; access failures named
+- Single-domain rule: evidenced (no lane >50% one domain) / failed
+- Narrator autobiography: packet IDs or NONE (omit if unsupported)
+```
+
+Do not declare completion from count floors alone. Presence of bank files
+is not readiness.
 
 ## §8 — Output
 
@@ -234,9 +256,15 @@ When every row clears across ≥3 personas, synthesize (§8).
   history, and the gap-fill loop record (what was dispatched, what came back,
   what stayed thin).
 - `lived-experience.md` and `scientific-evidence.md` — the curated synthesis of
-  the ten banks, written for the master-plan stage to consume directly. The raw,
-  append-only packets live under `research/banks/` (§4); these two files, not
-  `research/banks/`, are the planning contract the master-plan stage reads.
+  the ten banks, written for the master-plan stage. `lived-experience.md`
+  must include a `## Verbatim confessions` section of character-for-character
+  quotes (target ≥40 kB across that file, or the planner also reads the
+  banks). The raw append-only packets live under `research/banks/` (§4).
+  The planner reads synthesis **and** the banks.
+- Compact source-backed capsules in the synthesis: objection, exact usable
+  detail, source locator, permitted inference, counterevidence.
+- Narrator origin-story / autobiography is omitted unless packet IDs
+  support it. Never invent a narrator life.
 - `sources/` — the source ledger with locators.
 
 **Belief wording during research.** The brief fixes the keystone *neighborhood*,

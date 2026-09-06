@@ -24,8 +24,13 @@ voice, length, or factory-speech.
 `partial` counts a listed move that is gestured at but does not land
 (named without the turn, or the turn without the recognition).
 
+`missing` and `partial` are visible diagnostics. This lane never FAILs a
+chapter. Book-level KEEP may use the book's summed `missing`/`partial`
+as a co-gate (PROGRAM Step 6). Never a per-chapter failure gate.
+
 A move the card marks reserved-later, or that belongs to a later aligned
-GSBS chapter, is not counted.
+GSBS chapter, is not counted *here*. If the whole book never closes that
+objection, book-arc `skeleton-hole` owns it.
 
 ## Verdict gate
 
@@ -55,10 +60,11 @@ prescribe factory file edits.
 ## What you do NOT evaluate
 
 - Word count, sentence length, literary polish
-- Factory-speech, willpower-lexicon, hedges (voice lane)
+- Factory-speech, hedges (voice lane)
 - Whether the belief argument is sound (belief-mechanic)
 - Whether the assigned leaving-belief lands (journey)
 - The whole-book arc (book-arc)
+- Indistinguishable-from-Carr score (carr-distance)
 
 ## Boundaries
 

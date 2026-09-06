@@ -23,6 +23,16 @@ def main() -> None:
     brief = (REPO / "production-books" / SLUG / "00-brief.md").read_text()
     lived = (REPO / "production-books" / SLUG / "research" / "lived-experience.md").read_text()
     science = (REPO / "production-books" / SLUG / "research" / "scientific-evidence.md").read_text()
+    banks_dir = REPO / "production-books" / SLUG / "research" / "banks"
+    bank_files = sorted(banks_dir.glob("bank-*.md")) if banks_dir.is_dir() else []
+    total = sum(p.stat().st_size for p in bank_files)
+    bank_parts = []
+    for p in bank_files:
+        text = p.read_text()
+        if total > 100_000 and "lived" not in p.name:
+            text = text[:2000] + "\n…[truncated for plan context; full file on disk]\n"
+        bank_parts.append(f"#### {p.name}\n{text}")
+    banks = "\n\n".join(bank_parts) if bank_parts else "(no research/banks/)"
     revision_plan = os.environ.get("PLAN_CANDIDATE")
     revision_review = os.environ.get("PLAN_REVIEW")
     if revision_plan and revision_review:
@@ -51,7 +61,9 @@ def main() -> None:
         "### Lived-experience synthesis\n"
         f"```\n{lived.rstrip()}\n```\n\n"
         "### Scientific-evidence synthesis\n"
-        f"```\n{science.rstrip()}\n```\n"
+        f"```\n{science.rstrip()}\n```\n\n"
+        "### Research banks (verbatim packets)\n"
+        f"```\n{banks.rstrip()}\n```\n"
         f"{extra}"
     )
     (traces / f"plan-writer-{round_name}-prompt.md").write_text(prompt)

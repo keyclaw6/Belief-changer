@@ -2,7 +2,8 @@
 """Write one subject's chapters via Muse Spark (Go → Zen → Vercel).
 
 A1 loop: draft → review → rewrite until ACCEPT or K=3 rewrites.
-After the third rewrite no further review runs; that rewrite is the chapter.
+After the third rewrite, one final review still runs (CAP ≠ ACCEPT).
+Functional REVISE → UPSTREAM. Length/HEADER-only REVISE → CAP.
 """
 from __future__ import annotations
 
@@ -23,6 +24,18 @@ MAX_REWRITES = 3
 
 CARD_SPLIT = re.compile(r"\n(?=(?:#{1,3}\s+|\*\*)(?:CH-|C-)\d{1,2}\s+—)")
 CARD_HEAD = re.compile(r"(?:#{1,3}\s+|\*\*)(?:CH-|C-)(\d{1,2})\s+—")
+FUNCTIONAL_FINDINGS = frozenset(
+    {
+        "JOB",
+        "MANTRA",
+        "INSTRUCTION",
+        "ID",
+        "OVERCLAIM",
+        "STOPPED-SHORT",
+        "RESERVED-REACH",
+        "RE-ARGUMENT",
+    }
+)
 FINDING_HEAD = re.compile(
     r"^(JOB|MANTRA|INSTRUCTION|ID|LENGTHEN|SHORTEN|HEADER|STOPPED-SHORT|"
     r"UNASSIGNED-REFRAIN|RESERVED-REACH|RE-ARGUMENT|OVERCLAIM)\b",
@@ -211,8 +224,28 @@ def main() -> None:
             rewrite_latencies.append(rewrite_meta.get("latency_s"))
             words_by_round.append(word_count(text))
             if rnd == MAX_REWRITES:
-                final_status = "CAP"
-                last_verdict = "CAP"
+                n_words = word_count(text)
+                fprompt = review_prompt(reviewer, plan, cards[n], text, n_words, budget)
+                (tdir / f"review-prompt-{rnd + 1:02d}.md").write_text(fprompt)
+                review, rroute, rmeta = call_muse(fprompt, reasoning="high")
+                (tdir / f"review-{rnd + 1:02d}.md").write_text(review)
+                (tdir / "review.md").write_text(review)
+                review_routes.append(rroute)
+                review_latencies.append(rmeta.get("latency_s"))
+                verdict = review.strip().splitlines()[0].strip().upper() if review.strip() else "REVISE"
+                last_verdict = verdict.split()[0]
+                review_verdicts.append(last_verdict)
+                kinds = finding_types(review)
+                findings_by_round.append(kinds)
+                if last_verdict.startswith("ACCEPT"):
+                    final_status = "ACCEPT"
+                elif FUNCTIONAL_FINDINGS.intersection(kinds):
+                    final_status = "UPSTREAM"
+                    last_verdict = "UPSTREAM"
+                    (tdir / "upstream.md").write_text(review)
+                else:
+                    final_status = "CAP"
+                    last_verdict = "CAP"
 
         partial = live_path.with_suffix(".md.partial")
         partial.write_text(text)

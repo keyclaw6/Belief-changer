@@ -40,9 +40,9 @@ matter only insofar as they serve belief change.
 1. RUN FACTORY   — research → plan → write ALL chapters
                    (the whole book, every iteration — chapters change what
                    they optimize across the arc, so partial runs mislead)
-                   TWO independent books per iteration from the same plan
-                   (replicate A and B) so writer/judge sampling is not
-                   mistaken for a real effect
+                   TWO books per iteration: one quit-sugar and one
+                   quit-smoking from the same factory files (K1). Adding
+                   replicate-b per subject is optional later.
 2. COMPARE       — Judge panel reads each replicate + real GSBS chapters
                    "Which belief-change function, reader effect, or chapter
                    transition is weaker than in the matched reference?"
@@ -58,13 +58,13 @@ matter only insofar as they serve belief change.
 6. APPLY         — Make every listed change (PRIMARY decides KEEP)
 7. RE-RUN        — Re-run affected stage(s); write and judge two books
 8. COMPARE AGAIN — Same judge panel, same comparison, both replicates
-9. KEEP/REVERT   — KEEP only when BOTH replicates show the targeted cluster
+9. KEEP/REVERT   — KEEP only when BOTH subjects show the targeted cluster
                    improved materially (beyond the `_shared.md` book-level
-                   noted band, rate-normalized when chapter counts differ).
-                   REVERT when NEITHER improved, or BOTH show the same new
-                   failure class. Disagreement between A and B is
-                   INCONCLUSIVE (noise). A same-n drop of 1 is not material.
-                   Owning-lane FAIL is not itself a veto.
+                   KEEP band: ≥25% and ≥4 at n≈13, or a blocking class /
+                   comparison / Carr-distance score). QUANTIFY when evidence
+                   is valid but PRIMARY did not improve in both. Restore only
+                   on the restore triggers in PROGRAM. A same-n drop of 1–3
+                   is not material. Owning-lane FAIL is not itself a veto.
 10. RECORD       — What we tried, what happened, what we learned
 11. REPEAT       — Next gap. 3-strike rule (same failure 3× under the same
                    judge instrument → abandon that approach). REVERT is not
@@ -100,12 +100,16 @@ get the wrong results. The panel must be tuned carefully.
   reader-facing effects?)
 - One focused on the reader journey (does the assigned reader-state
   transition complete?)
+- One focused on closed GSBS belief-moves (chapter-comparison)
 - One reading the whole book (the cumulative arc, the mantra system in
   execution, escalation across chapters, the ending)
+- One scoring indistinguishable-from-Carr (whole book vs whole reference,
+  0–100; GSBS-vs-GSBS = 100)
 
 If the judges are wrong, we fix the judges — as a separate founder-guided
 calibration activity, never inside a factory iteration. A judge change
-stops the campaign and requires a fresh baseline.
+stops the campaign and requires a fresh baseline. Census PASS is not
+Carr-likeness.
 
 ## Trace Analysis
 
@@ -172,9 +176,10 @@ creation machine.
 - **One PRIMARY KEEP object per iteration.** Secondary changes are
   recorded predictions. Attribution is by prediction against the census,
   not by isolation.
-- **Two books per iteration.** The same change is written and judged twice
-  (same research, same plan, two independent full books). KEEP requires
-  the improvement in both books; a one-book swing is noise, not a result.
+- **Two books per iteration.** The same change is written and judged on
+  quit-sugar and quit-smoking. KEEP requires the improvement in both;
+  a one-subject swing is not a result. This tests transfer, not
+  within-subject writer variance.
 - **Prediction-based attribution.** Every hypothesis predicts what will
   improve. Prediction guides attribution; observed material improvement
   in both replicates decides KEEP. An inaccurate prediction is recorded as a learning.
@@ -210,7 +215,8 @@ Carr-quality output, the founder changes models manually.
 
 The loop succeeds when:
 1. The judge panel reads our GSBS chapters and says they do belief change the
-   way the real book does
+   way the real book does, **and** a knowledgeable Carr reader would take
+   the book for Carr (Carr-distance; 037 was 42% indistinguishable)
 2. The factory produces a convincing Carr-style book for a novel subject
    (generalization check) without subject-specific tuning
 3. The loop's learnings explain WHY the factory works, not just THAT it works

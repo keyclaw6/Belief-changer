@@ -37,8 +37,9 @@ The specific moves Carr makes:
   trap that creates the very need it appears to satisfy.
 - **Sacrifice removal:** there is nothing to give up. The reader is not
   losing a friend. They are escaping a prison they mistook for a home.
-- **The reader does the work:** Carr asks questions whose only honest answer
-  completes the inversion. The reader convinces themselves.
+- **The reader does the work:** Carr gives the reader an intelligible
+  route to the inversion — a question, analogy, contradiction, or
+  recognition. The reader convinces themselves.
 
 ## Closed classes
 
@@ -62,13 +63,20 @@ not MATERIAL. `PASS` requires zero BLOCKING census counts.
 - **sacrifice-standing** — last third, author's voice, stopping as loss
   the reader must bear, not inverted in the next two sentences. Attacking
   the *illusion* of sacrifice is OK.
-- **reframe-unsettled** — assigned leaving-belief wrapped as a verdict in
-  seems/may/perhaps/for some people. Factual limits on numbers are voice.
-- **reader-does-not-work** — assigned inversion fully asserted; no question
-  whose only honest answer is the inversion. Absence of the string
-  `trap question` is not this class. A live forcing question is success.
+- **reframe-unsettled** — assigned leaving-belief still unresolved in the
+  author's voice at chapter end. Judge whether the verdict is left
+  open, not whether a qualifying word occurs. Factual limits on numbers
+  are voice.
+- **reader-does-not-work** — assigned inversion is fully asserted with no
+  intelligible route for the reader to complete it. A question whose
+  only honest answer is the inversion is sufficient but not required;
+  analogy, contradiction, and recognition can do the same job. Absence
+  of the string `trap question` is not this class.
 - **scare-not-disowned** — card assigns scare-then-disown, and either the
-  scare is softened away or fear is left as the reason to stop.
+  scare is abandoned (stakes never land) or fear is left as the reason
+  to stop. A quieter scare that still lands and is disowned is not this
+  class. Assignment compliance is not independently evidence of weaker
+  belief change.
 - **willpower-method** — author's voice prescribes grit/resist/discipline
   as how *this* reader changes. Naming willpower as the enemy is OK.
 
@@ -76,8 +84,10 @@ not MATERIAL. `PASS` requires zero BLOCKING census counts.
 
 - **re-argument** — Continuity names a settled token; this chapter
   rebuilds that proof as its own section (argument + evidence + turn).
-  A one-paragraph reprise or token echo is the method: count 0.
-  Ch.1 / Continuity NONE: count 0.
+  A one-paragraph reprise, token echo, or consolidating callback is
+  the method: count 0. Ch.1 / Continuity NONE: count 0. This class is
+  visible NOTED only; it is never a KEEP PRIMARY (Carr's method is
+  counter-brainwashing by repetition).
 
 ## Your verdict gate
 
@@ -134,9 +144,11 @@ Prioritize gaps where a BLOCKING test fires on a quoted sentence:
    qualified wording that belongs to factual limits rather than to the
    reframe itself.
 
-5. **Does the reader do the work?** Does our chapter ask questions whose
-   only honest answer forces the inversion? Or does it lecture? The
-   *label* "trap question" is a voice-noted leak, not a belief failure.
+5. **Does the reader do the work?** Does our chapter give the reader an
+   intelligible route to the inversion, or does it lecture the
+   conclusion with no way in? A question is neither necessary nor
+   sufficient. The *label* "trap question" is factory-speech, not a
+   belief failure.
 
 6. **Scare-then-disown, when this chapter owns it:** If CHAPTER CONTEXT
    assigns a supported scare, does the fact land at full force and then get

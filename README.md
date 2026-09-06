@@ -15,4 +15,4 @@ People already choose what they believe is their happiest option in the moment. 
 
 - **`loop/PROGRAM.md`** — the auto-tuning loop: generate the whole book → reference-sighted judge panel against the real Carr book → one causal change → keep/revert → repeat. North Star: `docs/AUTO-TUNING-LOOP.md`.
 
-The canonical repo gate is **`bash scripts/check.sh`**. Current focus: **factory calibration** — tuning the factory on the quit-sugar book until the judge panel finds no material gap against *Good Sugar Bad Sugar* (quit-porn resumes after the generalization check passes).
+The canonical repo gate is **`bash scripts/check.sh`**. Current focus: **auto-research on `campaign-001`** — next session starts at `loop/CONTINUE.md` (041 = rejudge frozen 037 under the Carr-distance instrument).

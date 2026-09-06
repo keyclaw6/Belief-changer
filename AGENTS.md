@@ -42,7 +42,7 @@ Write no documentation by default. A doc must be load-bearing (an agent cannot c
 - Published books are immutable artifacts; corrections produce new versions.
 
 ## Auto-tuning campaign
-An explicit founder request to run the loop authorizes iterations. `loop/PROGRAM.md` is the sole operational runbook. Every iteration writes and judges two independent books from the same plan (`replicate-a` and `replicate-b`); KEEP requires the targeted cluster to improve in both. `loop/config.yaml` holds the founder's *preferred* role defaults (models are
+An explicit founder request to run the loop authorizes iterations. `loop/PROGRAM.md` is the sole operational runbook. `loop/CONTINUE.md` is the campaign handoff for the next auto-research session. Every iteration writes and judges one `quit-sugar` book and one `quit-smoking` book from the same factory files (K1). KEEP requires the targeted cluster to improve in both. `loop/config.yaml` holds the founder's *preferred* role defaults (models are
 founder-only; remaining parameters are the loop's tuning surface); `loop/HARNESS.md` is the role→capability map and per-harness binding. During a campaign, only files the runbook marks editable may change, inside the iteration's worktree. Judges, trace analysis, hypothesizing, plan review, writer, research, and planner all run as spawned sub-agents in whatever harness is running the loop (pi's adapter is `.pi/agents/*.md`). A role call carries only its role prompt and listed inputs: no hosted agent, no host system prompt. Calibration candidates produced by the loop use the runbook's judge gate and are not published or advanced as accepted book chapters.
 
 ## Agent-conversation lock (factory vs auto-research)
@@ -89,7 +89,7 @@ Use the codebase-memory-mcp tools: blast-radius (`detect_changes`) before modify
 2. Conventional Commits, straight to `main`, push after each logical change. The auto-tuning loop is the explicit exception: each iteration runs in an isolated git worktree and only a KEEP is promoted to the campaign branch, one commit per KEPT iteration (`loop/PROGRAM.md` §1); only the founder merges winning amendments to `main`.
 
 ## Calibration Recovery
-The auto-tuning loop is `loop/PROGRAM.md`. After any context compaction, task resume, or operator handoff, follow its §0 Recovery: read the runbook, the North Star, the tail of `loop/learnings.md`, and the last data row of `loop/results.tsv`; state the last iteration, its verdict, and the next hypothesis before acting.
+The auto-tuning loop is `loop/PROGRAM.md`. After any context compaction, task resume, or operator handoff, follow its §0 Recovery: read the runbook, `loop/CONTINUE.md`, the North Star, the tail of `loop/learnings.md`, and the last data row of `loop/results.tsv`; state the last iteration, its verdict, and the next hypothesis before acting.
 
 ## Harness Rule
 When a task fails or confuses, don't just retry: name the missing capability (context, spec, test, tool, check), then fix it as part of the task or record it in the active exec plan.

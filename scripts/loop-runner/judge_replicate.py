@@ -16,6 +16,7 @@ JUDGES = REPO / "loop/judges"
 AGENT = Path.home() / ".local/bin/agent"
 LANES = ("belief-mechanic", "voice-emotion", "reader-journey")
 COMPARISON = "chapter-comparison"
+CARR_DISTANCE = "carr-distance"
 # Founder 2026-09-04: 10-wide → 40 jobs in 4 waves on this 15 GiB MemTotal box.
 JUDGE_PARALLEL = int(os.environ.get("JUDGE_PARALLEL", "10"))
 
@@ -232,7 +233,13 @@ Never reference scores, history, or prior judgments. Do not write any files. Do 
 """
 
 
-def book_arc_prompt(our_chapters: list[Path], sheets: Path, alignment: Path) -> str:
+def book_arc_prompt(
+    our_chapters: list[Path],
+    sheets: Path,
+    alignment: Path,
+    opening: Path,
+    ending: Path,
+) -> str:
     lines = "\n".join(f"- Ch{i}: {p}" for i, p in enumerate(our_chapters, 1))
     return f"""You are a book factory judge, fresh and reference-sighted. This is a single isolated book-arc judge call. There is no host task except this call.
 
@@ -243,8 +250,33 @@ OUR BOOK — every chapter in order (writer output):
 
 THE PLAN'S BOOK-LEVEL SHEETS: {sheets}
 REFERENCE SKELETON: {alignment}
+REFERENCE OPENING (verbatim real chapter aligned to our chapter 1): {opening}
+REFERENCE ENDING (verbatim real chapter aligned to our last chapter): {ending}
 
-Return your verdict exactly as the rubric demands, including CLUSTER CENSUS with every closed class listed (zeros included). Start with PASS or FAIL. Hydra lock: same job done by a new scene ID is re-argument noted, never a new class, never a book FAIL by itself. PASS even if re-argument is 12, as long as every blocking count is 0.
+Return your verdict exactly as the rubric demands, including CLUSTER CENSUS with every closed class listed (zeros included). Start with PASS or FAIL. Hydra lock: same job done by a new scene ID is re-argument noted, never a new class, never a book FAIL by itself. PASS even if re-argument is 12, as long as every blocking count is 0. re-argument is never PRIMARY.
+
+Never reference scores, history, or prior judgments. Do not write any files. Your entire reply IS the judge report.
+"""
+
+
+def carr_distance_prompt(our_chapters: list[Path], ref_dir: Path, opening: Path, ending: Path) -> str:
+    our = "\n".join(f"- Ch{i}: {p}" for i, p in enumerate(our_chapters, 1))
+    refs = sorted(ref_dir.glob("chapter-*.md"))
+    real = "\n".join(f"- {p.name}: {p}" for p in refs)
+    return f"""You are a book factory judge, fresh and reference-sighted. This is a single isolated Carr-distance judge call. There is no host task except this call.
+
+Read {JUDGES / "_shared.md"} first, then read and follow {JUDGES / "carr-distance.md"} exactly.
+
+OUR BOOK — every chapter in order:
+{our}
+
+THE REAL BOOK — every chapter in order:
+{real}
+
+REFERENCE OPENING: {opening}
+REFERENCE ENDING: {ending}
+
+Return your verdict exactly as the rubric demands, including CARR DISTANCE score and CLUSTER CENSUS with score-deficit. Start with PASS. Three quoted reasons are mandatory.
 
 Never reference scores, history, or prior judgments. Do not write any files. Your entire reply IS the judge report.
 """
@@ -274,7 +306,7 @@ def run_agent(prompt: str, out: Path, tag: str) -> bool:
             f'"spawn":"agent --trust --model composer-2.5 --mode ask -p","latency_s":{round(time.time()-t0,3)},'
             f'"exit":{r.returncode},"attempt":{attempt}}}\n'
         )
-        if r.returncode == 0 or text.lstrip().startswith(("PASS", "FAIL")):
+        if r.returncode == 0 or text.lstrip().startswith(("PASS", "FAIL", "CARR DISTANCE")):
             partial.write_text(text)
             partial.rename(out)
             print(f"OK {out.relative_to(REPO)} {round(time.time()-t0,1)}s", flush=True)
@@ -346,8 +378,19 @@ def main() -> None:
             raise SystemExit(f"no reference-moves for {slug} ref {ref_n} (our ch {n})")
         ctag = f"{COMPARISON}-ch{n:02d}"
         jobs.append((ctag, judgments / ctag / "response.md", comparison_prompt(n, our, real, ctx, move_block)))
+    first_n = min(cards)
+    last_n = max(cards)
+    opening = ref_dir / f"chapter-{align[first_n]:02d}.md"
+    ending = ref_dir / f"chapter-{align[last_n]:02d}.md"
     arc_out = judgments / "book-arc" / "response.md"
-    jobs.append(("book-arc", arc_out, book_arc_prompt(our_paths, sheets, alignment)))
+    jobs.append(("book-arc", arc_out, book_arc_prompt(our_paths, sheets, alignment, opening, ending)))
+    jobs.append(
+        (
+            CARR_DISTANCE,
+            judgments / CARR_DISTANCE / "response.md",
+            carr_distance_prompt(our_paths, ref_dir, opening, ending),
+        )
+    )
 
     if only:
         jobs = [j for j in jobs if j[0] == only or j[0].startswith(only)]
@@ -356,7 +399,7 @@ def main() -> None:
 
     filtered = []
     for tag, out, prompt in jobs:
-        if tag != "book-arc":
+        if tag not in ("book-arc", CARR_DISTANCE):
             n = int(re.search(r"ch(\d+)", tag).group(1))
             if not (traces / f"chapter-{n:02d}" / "response.md").exists():
                 print(f"defer {tag} (chapter not written)", flush=True)
@@ -364,7 +407,7 @@ def main() -> None:
         else:
             missing = [p for p in our_paths if not p.exists()]
             if missing:
-                print(f"defer book-arc missing {len(missing)} chapters", flush=True)
+                print(f"defer {tag} missing {len(missing)} chapters", flush=True)
                 continue
         if out.exists():
             print(f"skip {tag}", flush=True)

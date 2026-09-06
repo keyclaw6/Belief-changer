@@ -49,30 +49,36 @@ they serve the arc. Check whether the register is RIGHT FOR THIS MOMENT.
 ## Closed classes
 
 **blocking:** `assigned-verdict-hedge`, `method-promise-hedge`,
-`shame-the-reader`, `instruction-paperwork`
+`shame-the-reader`, `instruction-paperwork`, `willpower-lexicon`
 
-**blocking-or-noted (per-quote test):** `willpower-lexicon`, `factory-speech`
+**blocking-or-noted (per-quote test):** `factory-speech`
 
-**noted:** `trap-question-label`, `coach-register`, `wrong-register`,
-`copied-mannerism`
+**noted:** `coach-register`, `wrong-register`, `literary-stylization`
 
 `MATERIAL` on an assigned-moment line is allowed only when a BLOCKING
-test fires. Unassigned factory-speech, trap-question labels, and
-coach-register are NOTED and must not FAIL the chapter.
+test fires. Unassigned factory-speech and coach-register are NOTED and
+must not FAIL the chapter. Naming the willpower illusion is count 0.
+Copied Carr mannerism is success under the Fidelity Doctrine — there
+is no `copied-mannerism` class.
 
 ## Blocking tests
 
-- **assigned-verdict-hedge** — hedge wraps the *assigned core verdict*
-  (seems/may/for many people/your experience may vary). Strip the hedge:
-  if what remains is the verdict, BLOCKING. Preflight P1 must fire this.
+- **assigned-verdict-hedge** — the *assigned core verdict* remains
+  unresolved in the author's voice (seems/may/for many people, or any
+  other wrapper that leaves the verdict unlanded). Judge the effect,
+  not whether a qualifying word occurs. Preflight P1 must fire this.
   "Right now you find that hard to believe" is OK (reader's present
   doubt).
-- **method-promise-hedge** — hedge wraps the *assigned method promise*
-  (what this method will do for this reader: easy, permanent, complete,
-  no willpower). Probabilistic wrappers (*good chance, results vary, it
-  can help*) are BLOCKING. Preflight P2 must fire this. A hedge on how
-  strong a physical echo or withdrawal is, a bounded statistic, or a
-  trap verdict after honest numbers is not this class (P3/P4).
+- **method-promise-hedge** — the *assigned method promise* (easy,
+  permanent, complete, no willpower) is not made. Judge whether the
+  promise is stated, not whether the word "can" appears. "It *can* be
+  easy" / "does not *have to* be a struggle" / "good chance" / "results
+  vary" / "it can help" are this class when they are the method promise.
+  Carr's "merely consider it as a possibility" is about enjoying being
+  free, not about whether the method is easy — that is not this class.
+  Preflight P2 must fire this. A hedge on how strong a physical echo or
+  withdrawal is, a bounded statistic, or a trap verdict after honest
+  numbers is not this class (P3/P4).
 - **shame-the-reader** — author's voice treats the *person* as weak,
   disgusting, or morally failed. Contempt for the trap/industry is OK.
 - **instruction-paperwork** — assigned instruction sentence could appear
@@ -82,34 +88,40 @@ coach-register are NOTED and must not FAIL the chapter.
 
 ## Per-quote split
 
-- **willpower-lexicon** — BLOCKING if banned words are prescribed as the
-  *method*; NOTED if used to name/attack the willpower illusion.
+- **willpower-lexicon** — BLOCKING only if banned words are prescribed as
+  the *method*. Naming or attacking the willpower illusion is count 0
+  (Carr writes "requires discipline and perseverance" and quotes
+  "giving up"). There is no noted charge for this class.
 - **factory-speech** — BLOCKING if the leak sits inside an assigned
   instruction, mantra line, or primary-job verdict; NOTED in unassigned
-  passages (evidence grades, P-xx, S-xx, killer-line, ease-operator,
-  "your card assigns", echo placeholders). One unassigned "ease-operator"
-  is NOTED; chapter can still PASS.
-  A numbered ALL-CAPS spoken imperative, with at most one spoken rationale
-  line, that is the assigned instruction or mantra wording is Carr method
-  (GSBS: `1. FOLLOW ALL THE INSTRUCTIONS.` / `SECOND INSTRUCTION: KEEP AN
-  OPEN MIND`). Count it 0. factory-speech is inventory/process diction on
-  or next to that line: plan IDs (`I-01 —`), workshop headers (`IN THIS
-  CHAPTER`), ordinal announcements (`So here is my Nth instruction`),
-  craft labels, ledger grades, persona codes. If a Carr-shaped command
-  carries a factory prefix, count the prefix, not the imperative.
+  passages. Inventory/process diction only: plan IDs (`I-01 —`),
+  ordinal announcements (`So here is my Nth instruction`), craft labels,
+  ledger grades, persona codes, move-naming in reader prose ("the
+  reframe", "the one-line account"), body-text token roll-calls
+  ("Say *the nicotine trap* as…"), mid-argument clinician disclaimers
+  and CA-SAFE/CA-01 workshop titles, stage-direction prefixes (`Ask a
+  trap question:`). A numbered ALL-CAPS spoken imperative, with at most
+  one spoken rationale line, is Carr method (GSBS: `1. FOLLOW ALL THE
+  INSTRUCTIONS.` / `SECOND INSTRUCTION: KEEP AN OPEN MIND` / `3. BEGIN
+  BY FEELING GREAT TO BE ESCAPING`). Count it 0. Carr-native `IN THIS
+  CHAPTER` (rooms/pictures, not a syllabus) is Carr method; count 0.
+  If a Carr-shaped command carries a factory prefix (`I-01 —`), count
+  the prefix, not the imperative. Exact frozen-mantra punctuation
+  belongs to factory QA, not this class.
 
 ## Noted tests (never FAIL the chapter)
 
-- **trap-question-label** — stage-direction prefix (`Ask a trap question:`)
-  in front of a question. Count prefixes, not questions. A live Carr
-  question without the label is 0. Grep is not a voice failure.
-- **coach-register** — *let's explore, consider this, it's worth noting,
-  you've got this* in the author's voice.
+- **coach-register** — generic coaching that weakens the assigned effect
+  (*let's explore, you've got this*, hollow invitation). Judge the
+  effect, not the string "consider this": Carr invites consideration.
 - **wrong-register** — confrontation when the moment needs warmth, or
   apology to the trap when the moment needs force — short of shaming.
   Calm valleys are OK.
-- **copied-mannerism** — Carr-pastiche that does not strengthen the
-  assigned effect. Original method with new wording is success.
+- **literary-stylization** — fragment chains of ≥3 in a row, or a
+  paragraph of sensory catalogue with no belief verb, or invented
+  private vocabulary used as if the reader already owns it (beyond the
+  two named creatures and frozen mantras). PASS test on GSBS must be
+  0. Plain Carr sentences are success.
 
 ## Voice honesty probe
 
@@ -179,7 +191,7 @@ For each material failure:
 
 6. **Banned register check.** Map each hit through `willpower-lexicon`:
    prescribed as the method → BLOCKING; naming/attacking the illusion →
-   NOTED. Do not FAIL the chapter for a NOTED hit.
+   0. Do not FAIL the chapter for naming the enemy.
 
 ## What you do NOT evaluate
 

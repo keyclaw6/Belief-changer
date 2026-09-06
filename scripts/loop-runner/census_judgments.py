@@ -13,6 +13,7 @@ LANES = {
     "reader-journey": "journey",
     "chapter-comparison": "comparison",
     "book-arc": "book-arc",
+    "carr-distance": "carr-distance",
 }
 
 
@@ -55,7 +56,9 @@ def main() -> None:
             head = text.lstrip()[:8]
             verdict = "PASS" if head.startswith("PASS") else ("FAIL" if head.startswith("FAIL") else "?")
             c = {"verdict": verdict, "blocking": {}, "noted": {}}
-        lane = "book-arc" if tag == "book-arc" else next((LANES[k] for k in LANES if tag.startswith(k)), tag)
+        lane = tag if tag in ("book-arc", "carr-distance") else next(
+            (LANES[k] for k in LANES if tag.startswith(k)), tag
+        )
         if c["verdict"] == "PASS":
             pass_fail[lane][0] += 1
         elif c["verdict"] == "FAIL":

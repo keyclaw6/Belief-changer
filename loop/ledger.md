@@ -643,6 +643,21 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 
 **What this opens next.** Founder call. No 041 unless asked.
 
+### campaign-001 close-out — Carr-distance instrument  ·  2026-09-06
+
+**Hypothesis.** None. Founder ordered the combined Astra + Fable 5.1 recommendations applied, git cleaned to campaign + main, and a handoff for the next auto-research session.
+
+**Change.** Judges, PROGRAM, hypothesizer, CAP ≠ ACCEPT, factory CH-01 and style-guide Part B, research Reddit + parent-checkout miners + plan reads banks, `loop/CONTINUE.md`. See `loop/learnings.md` `campaign-001 close-out`.
+
+**What happened.** No new books. Production stays 037. 038 OVERCLAIM kept. 039/040 dropped.
+
+**Verdict & why.** Founder instrument-and-rules fix. Indistinguishable-from-Carr on 037 remains the consult figure: 42%. Engine present 60–73%.
+
+**What we learned.** The factory has the Easyway engine and lacks Carr's opening force and register. The old KEEP object could not see that. The next loop must score Carr-distance, not factory-speech hygiene.
+
+**What this opens next.** Next session: `loop/CONTINUE.md`. 041 = rejudge frozen 037. Then 10–20 iterations on this instrument.
+
+
 
 
 

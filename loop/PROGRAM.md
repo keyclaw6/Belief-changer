@@ -11,7 +11,7 @@
 
 ## 0. Recovery
 
-Read this file, `docs/AUTO-TUNING-LOOP.md`, `loop/state.md`, `loop/learnings.md`
+Read this file, `docs/AUTO-TUNING-LOOP.md`, `loop/CONTINUE.md`, `loop/state.md`, `loop/learnings.md`
 (tail), and the last DATA row of `loop/results.tsv`, ignoring the header. If no
 data row exists, state `baseline pending` and run Section 3. Otherwise state
 the last completed iteration, its verdict, and the next hypothesis before
@@ -55,6 +55,7 @@ updates `loop/state.md` at every stage boundary and before every long wait (see
 - `prompts/master-plan-skill-v2.md`
 - `prompts/master-plan-reviewer-v2.md`
 - `prompts/chapter-writer.md`
+- `prompts/chapter-reviewer.md`
 - `loop/config.yaml` (non-model parameters only — reasoning, search/fetch
   limits). **Never** `*_model`, `*_fallback_model`, `*_route`, or endpoint
   fields. Models and routes are founder-only.
@@ -110,8 +111,8 @@ Spawned roles (role → contract prompt):
 - `plan-writer`, `plan-reviewer` — `prompts/master-plan-skill-v2.md` /
   `prompts/master-plan-reviewer-v2.md` (spawned **by the factory orchestrator**)
 - `chapter-writer` — `prompts/chapter-writer.md`
-- `chapter-reviewer` — `prompts/chapter-reviewer.md` (A1: review→rewrite until ACCEPT or K=3)
-- `judge` — `loop/judges/*.md`
+- `chapter-reviewer` — `prompts/chapter-reviewer.md` (A1: review→rewrite until ACCEPT or K=3; the K=3 rewrite still gets one final review — CAP ≠ ACCEPT)
+- `judge` — `loop/judges/*.md` (chapter lanes + comparison + book-arc + carr-distance)
 - `trace-analyzer` — `loop/prompts/trace-analyzer.md`
 - `hypothesizer` — `loop/prompts/hypothesizer.md`
 
@@ -171,20 +172,27 @@ founder-guided, not a loop iteration.
 
 1. **PASS test.** Give each chapter judge one real GSBS chapter as BOTH
    "our chapter" and "the real chapter", with honest context. Run twice per
-   judge. Every run must return PASS. A manufactured material gap means the
-   judge cannot recognize success and must be recalibrated first.
-2. **Repeatability.** Run each judge twice on one identical generated chapter
+   judge. Every run must return PASS, all counts 0. A manufactured material
+   gap means the judge cannot recognize success and must be recalibrated
+   first. Carr-distance: GSBS vs GSBS = score 100, score-deficit 0.
+2. **Carr-as-OUR and defective positive controls.** Also run Carr as OUR
+   text against a functionally matched other Carr chapter (must not invent
+   BLOCKING on Carr-method recurrence) and one defective positive control
+   (a hedge on the assigned method promise) that must fire. The all-zero
+   probe is necessary, not sufficient.
+3. **Repeatability.** Run each judge twice on one identical generated chapter
    with identical context. Same PASS/FAIL both times; the BLOCKING class set
    in `CLUSTER CENSUS` must be identical. NOTED counts may differ by ±1 per
    class. If not, tighten that judge's blocking test — do not add scoring
    machinery. [Founder amendment 2026-08-24: KEEP reads census classes,
-   not chapter PASS rate; repeatability matches that object.]
-3. **Voice honesty probe.** Give the voice judge six isolated passage pairs:
+   not chapter PASS rate; repeatability matches that object.] The KEEP
+   band is **not** this ±1; see `_shared.md` and Step 6.
+4. **Voice honesty probe.** Give the voice judge six isolated passage pairs:
    two core-verdict hedges (must BLOCKING `assigned-verdict-hedge`), two
    properly bounded empirical claims (must not FAIL), two acknowledgments of
    the reader's present doubt (must not FAIL). Noted classes on P3–P6 must
    not flip the probe to FAIL.
-4. **Belief/journey honesty probe.** Six calls on isolated passage pairs
+5. **Belief/journey honesty probe.** Six calls on isolated passage pairs
    (do not flag missing chapter anatomy). Belief-mechanic: `probe-b1-credit-intact.md`
    (must BLOCKING `credit-intact`), `probe-b2-harm-not-belief.md` (must
    BLOCKING `harm-not-belief`), `probe-b3-bounded-pass.md` (must PASS).
@@ -387,9 +395,12 @@ does not itself call `plan-writer`, `plan-reviewer`, or `chapter-writer`.
 Wait for `FACTORY DONE` (and the on-disk chapter markers). Then judge.
 
 **Stage: Planning** — the factory orchestrator spawns the `plan-writer` sub-agent
-(follows `prompts/master-plan-skill-v2.md`; the initial call carries exactly
-four file inputs — style guide, brief, lived-experience, scientific-evidence
-— no reference contamination), then the `plan-reviewer` sub-agent
+(follows `prompts/master-plan-skill-v2.md`; the initial call carries: style
+guide, brief, lived-experience, scientific-evidence, **and** the research
+banks under `production-books/<slug>/research/banks/` — no reference
+contamination). Lived-experience must include a verbatim-confessions
+section so the planner hears lived voice, not only a thin abstract. Then
+the `plan-reviewer` sub-agent
 (`prompts/master-plan-reviewer-v2.md`). On `needs changes first`, the
 orchestrator passes the current candidate plan and the reviewer's findings
 to a fresh `plan-writer` call, then dispatches a fresh reviewer; repeat until
@@ -410,8 +421,13 @@ on the draft with exactly: accepted plan, chapter card, draft text, and one
 line `Delivered N words. Budget B.` Never GSBS, Easyway, a judge prompt, the
 style guide, or the previous chapter. `ACCEPT` keeps the draft. `REVISE`
 triggers a writer rewrite (original four inputs + current draft + this review
-only). Repeat review → rewrite until `ACCEPT` or three rewrites (K=3). After
-the third rewrite no further review runs; the third rewrite is the chapter.
+only). Repeat review → rewrite until `ACCEPT` or three rewrites (K=3).
+**CAP ≠ ACCEPT:** after the third rewrite, spawn one final review. `ACCEPT`
+keeps it. `REVISE` with JOB, MANTRA, INSTRUCTION, ID, OVERCLAIM,
+STOPPED-SHORT, RESERVED-REACH, or RE-ARGUMENT → `UPSTREAM` (write
+`upstream.md`; that chapter is not an acceptance). `REVISE` on length or
+HEADER only → `CAP` (keep the rewrite, record findings). Never silently
+accept an unreviewed third rewrite.
 Traces per chapter: `draft.md`, `review-01.md`, `rewrite-prompt-01.md`,
 `rewrite-01.md`, `review-02.md`, … `rewrite-03.md`. `response.md` = final
 text. The factory conversation may call `write_replicate.py` as a bundled
@@ -534,26 +550,40 @@ leave the owning lane's FAIL set.
   summed across chapters) in both subjects — not from that lane's chapter
   PASS rate. A drop in a NOTED class in both subjects is improvement even
   if PASS/N is unchanged or worse.
-  **Materially** means beyond the `_shared.md` book-level noted band,
-  rate-normalized: a same-n drop of 1 is not improvement; a drop of 2+
-  at the same chapter count is; when chapter counts differ, compare
-  rates (count / n) and require a rate drop greater than `1 / n_old`.
+  **Materially** means beyond the `_shared.md` book-level KEEP band,
+  rate-normalized. A same-n drop of 1–3 is inside noise. Material is a
+  rate drop of **≥ 25% and ≥ 4 counts** at n≈13, or a drop on a BLOCKING
+  class, comparison `missing`/`partial` (book totals), or Carr-distance
+  `score-deficit`. Until frozen 037 is rejudged under this instrument,
+  do not defend a tighter band.
   KEEP also requires each subject's delivered word total ≥ 80% of that
   subject's own plan total (orchestrator sums `metadata.json` `words_final`;
-  judges never score length). PRIMARY may be a census class (band rules)
-  **or** comparison `missing` falling by ≥2 at the same chapter count in
-  both subjects. Hypothesizer order: intersection of KEEP-eligible classes
-  across both subjects (blocking → comparison missing-in-both → noted ≥8
-  both). Empty intersection → PRIMARY is the top class of the worse
-  subject; the other is scored as non-regression only (declare
-  `PRIMARY scope` in hypothesis.md).
+  judges never score length). Any chapter with `final_status=UPSTREAM`
+  in either subject makes the iteration INCONCLUSIVE.
+  PRIMARY may be a BLOCKING class in both, comparison `missing` or
+  `partial` falling in both, Carr-distance `score-deficit` falling in both,
+  or a PRIMARY-eligible NOTED class ≥ 12 in both.
+  **Never PRIMARY:** `re-argument`, naming-the-enemy willpower, copied
+  mannerism (deleted). `factory-speech` only after the GSBS control
+  below shows the class is inventory diction, not Carr commands.
+  Hypothesizer order: intersection of KEEP-eligible classes across both
+  subjects (blocking → comparison missing/partial-in-both →
+  carr-distance → noted ≥12 both). Empty intersection → **stop**. Do not
+  fall back to the worse subject's top class.
   [Founder 2026-09-05 — K1 + QUANTIFY:]
   - **both subjects improved (beyond the band)** → KEEP
   - **otherwise, with valid evidence** → QUANTIFY (not automatic restore)
+- **Pre-spend GSBS control.** Before any paid dual run or restore keyed
+  to a noted, inventory, or newly-blocking PRIMARY, run the owning judge
+  on the matching GSBS (or Easyway) chapter as both OUR and REAL
+  (`ONLY=<lane>-chNN` with REF as both texts). Any count > 0 on a
+  Carr-native construct is a judge defect: halt for founder calibration
+  and a fresh baseline. Print the PRIMARY class's blocking quotes in
+  `decision.md`. A Carr-shaped quote is a halt.
 - Other lanes may veto only a material REGRESSION that appears in **both**
   subjects: a NEW **BLOCKING** class *name* that was 0 last iteration and
-  is >0 in both new books. A new scene ID under `re-argument` is not a new
-  class.
+  is >0 in both new books. A new scene ID under `re-argument` is not a
+  new class.
 - No voting, no averaging of PASS rates.
 
 Verdicts:
@@ -565,11 +595,13 @@ Verdicts:
   `research/` with the factory change.
 - **QUANTIFY** — valid evidence, but PRIMARY did not improve in both
   subjects. Do **not** restore the factory change unless a restore trigger
-  fires (below). Write in `decision.md`: per-subject PRIMARY table; which
-  subject failed the band; which classes moved; what the change
-  mechanically did (grep/trace); one sentence "next additional change
-  toward KEEP"; `Carried forward: <file> change>`. Ledger ends the same
-  way. Then try a new or additional change — do not treat the idea as dead.
+  fires (below). QUANTIFY bundles stay out of `production-books/`. Write in
+  `decision.md`: per-subject PRIMARY table; the PRIMARY class's blocking
+  quotes; which subject failed the band; which classes moved; what the
+  change mechanically did (grep/trace); one sentence "next additional change
+  toward KEEP"; `Carried forward: <file> change>`; `parent: <git HEAD>`.
+  Ledger ends the same way. Then try a new or additional change — do not
+  treat the idea as dead.
 - **INCONCLUSIVE** — missing judge report in any subject book.
 - **Restore triggers** (still verdict QUANTIFY, `Restored: yes — reason`):
   a new BLOCKING class in both subjects, OR PRIMARY worsens by ≥ band in
@@ -594,7 +626,7 @@ Append to `loop/learnings.md`:
 ### iter-NNN — [short title]
 **Hypothesis:** [one line]
 **Change:** [file + what changed]
-**Verdict:** BASELINE/KEEP/REVERT/INCONCLUSIVE
+**Verdict:** BASELINE/KEEP/REVERT/INCONCLUSIVE/QUANTIFY
 **Lesson:** [what we learned about the factory]
 **Next direction:** [what to try next based on this]
 ```
@@ -637,14 +669,15 @@ campaign branch carries what it should.
   `loop/prompts/hypothesizer.md`. KEEP/QUANTIFY read the PRIMARY class only.
   One-subject blocking on a non-primary class is logged, never a veto. A new
   blocking class in BOTH subjects is a restore trigger.
-- **3-strike rule.** Failure class = same PRIMARY class + same root
-  component, counted only under one judge instrument. If 3 iterations
-  with the same PRIMARY class + root component produce no KEEP, PIVOT
-  to a different component level (prompt → structure → research). Never
-  pivot to a model change; stop and surface to the founder. The level is
-  wrong; stop hammering it. A judge change resets the clock — 001–008
-  3-strike/PIVOT notes do not bind 009 onward. A re-baseline after a
-  founder model change resets the clock (as 009). QUANTIFY never deletes
+- **3-strike rule.** Failure class = same PRIMARY **class** (not class +
+  root component), counted only under one judge instrument. If 3
+  iterations with the same PRIMARY class produce no KEEP, PIVOT to a
+  different component level (prompt → structure → research) or return
+  `judge defect suspected`. Never pivot to a model change; stop and
+  surface to the founder. Rotating the file (reviewer → writer) on the
+  same class does not reset the clock. A judge change resets the clock —
+  001–008 3-strike/PIVOT notes do not bind 009 onward. A re-baseline after
+  a founder instrument change resets the clock. QUANTIFY never deletes
   an idea.
 - **Never change models.** Hypothesizer and orchestrator must not edit
   `*_model`, `*_fallback_model`, `*_route`, or endpoint fields in
@@ -653,8 +686,10 @@ campaign branch carries what it should.
   Write `loop/iterations/NNN/convergence-report.md` and surface to the
   founder.
 - **Judge separation.** Never edit judges during an iteration. A suspected
-  judge defect stops the campaign; the judge is repaired separately
-  (founder-guided, re-run Preflight) and a fresh baseline is established.
+  judge defect stops the campaign; the hypothesizer may return `judge
+  defect suspected` instead of a factory change. The judge is repaired
+  separately (founder-guided, re-run Preflight) and a fresh baseline is
+  established.
 - **Never edit this PROGRAM.md.** The loop follows it; it does not change it.
 - **Prediction informs, evidence decides.** Wrong prediction + real
   improvement in both subjects = KEEP (note it). PRIMARY not improved in
@@ -680,7 +715,10 @@ craft. `production-books/<slug>/master-plan.md` is evidence, not a hypothesis.
 The loop succeeds when:
 1. The panel finds no material gap in belief-change work, reader-state
    transition, or voice effect between our quit-sugar book and GSBS, and
-   between our quit-smoking book and the Easyway smoking reference
+   between our quit-smoking book and the Easyway smoking reference, **and**
+   Carr-distance `score` is in the range a knowledgeable Carr reader would
+   take for Carr (the 2026-09-06 consult set indistinguishable-from-Carr
+   at 42% on 037; that is the distance to close)
 2. The factory produces a convincing Carr-style book for a novel subject
    from the same factory files
 3. `loop/learnings.md` explains WHY the factory works, not just THAT it works

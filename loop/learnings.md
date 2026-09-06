@@ -339,6 +339,14 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Lesson:** 038–040 restorations used a class that included Carr's instruction typography. Blocking quotes were `3. BEGIN BY FEELING GREAT TO BE ESCAPING` and `10. IGNORE ANYONE WHO QUIT BY WILLPOWER`. 040 `I-01 —` prefixes remain real factory-speech under the corrected judge.
 **Next direction:** Do not start 041 unless the founder asks. PRIMARY on the corrected instrument is remaining inventory diction, not ALL-CAPS commands.
 
+### campaign-001 close-out — Carr-distance instrument (2026-09-06)
+**Hypothesis:** none — founder-guided instrument-and-rules change from the Astra + Fable consult. Not a dual-subject KEEP.
+**Change:** judges (factory-speech = inventory only, including Carr `IN THIS CHAPTER` and numbered ALL-CAPS = 0; drop noted willpower-lexicon and copied-mannerism; demote `re-argument` from PRIMARY; `literary-stylization`; Carr-distance 0–100 judge; KEEP band ≥25% and ≥4; 3-strike by class; empty intersection → stop; GSBS control; CAP ≠ ACCEPT; chapter-reviewer editable; CH-01 flat promise; style-guide plain Carr; Reddit in scope; miners write parent; plan-writer reads banks). Handoff: `loop/CONTINUE.md`.
+**Verdict:** founder instrument fix
+**Lesson:** 037 is ~42% indistinguishable from Carr and ~60–73% Easyway-engine-present. The census was near-perfect because the remaining distance (CH-01 hedge, fragment prose, private vocabulary, clinician disclaimers) was off-instrument. 038–040 spent three paid dual runs on a class that included Carr's instruction typography. KEEP of 2 was inside declared noise. Research quality was capped by a 25 kB synthesis funnel and a Reddit exclusion that contradicted the North Star. CAP silently accepted K=3 unreviewed rewrites.
+**Next direction:** Next session starts at `loop/CONTINUE.md`. 041 = dual BASELINE: rejudge frozen 037 under this instrument, no factory wording. First hypothesis after that: CH-01 + Part B already in the files, scored on Carr-distance and comparison `partial`. Empty PRIMARY intersection → stop. Do not replay 039/040. 038 OVERCLAIM stays.
+
+
 
 
 
