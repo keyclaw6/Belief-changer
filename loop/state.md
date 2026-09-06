@@ -8,7 +8,7 @@
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`). Factory is Muse Spark 1.3; this chat is auto-research only.
 - **Last completed unit:** 040 QUANTIFY. Founder instrument fix: Carr ALL-CAPS is not factory-speech. 038 OVERCLAIM re-applied. 039 HEADER and 040 writer landing stay dropped.
-- **Next unit:** founder call. No 041 unless asked.
+- **Next unit:** founder review of Astra/Fable Carr-distance consult. No 041 until instrument-and-rules edits authorized.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -89,3 +89,4 @@
 | 2026-09-06 07:53 | 040 smoking write DONE 14/14 ACCEPT CH-14. Start smoking panel. | j040-quit-smoking |
 | 2026-09-06 08:00 | 040 QUANTIFY. factory-speech 13→25 / 10→19. Writer anatomy item 5 restored. Consecutive no-KEEP: 3. Halt. | none |
 | 2026-09-06 09:15 | Founder: voice judge was scoring Carr ALL-CAPS as factory-speech. Patched judge. Astra consult 038 KEEP / 039 DROP / 040 DROP. OVERCLAIM re-applied. | founder |
+| 2026-09-06 10:00 | Astra + Fable 5.1 Carr-distance review. Combined indistinguishable 42%; engine 60–70%. READY yes-after. No 041. | founder |
