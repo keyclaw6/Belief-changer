@@ -33,6 +33,8 @@ Do not print API keys. Do not `pgrep -af 'agent --'`.
 ## 041 — dual BASELINE (do this first)
 
 No factory wording change. No new hypothesis. No plan rewrite.
+Pi `run_preflight.sh` is still the old 18-call battery; do not treat it
+as the Carr-distance probe. 041's dual rejudge *is* the first sample.
 
 1. Copy frozen 037 chapters into `loop/iterations/041/<slug>/replicate-a/`
    (traces `response.md` + chapters). Reuse 037 plans.

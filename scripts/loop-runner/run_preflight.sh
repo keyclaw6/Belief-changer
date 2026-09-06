@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
-# PROGRAM §2 preflight battery: 18 judge calls (6 PASS-test, 6 repeatability,
-# 6 voice-probe). Each judge call is a spawned `judge` sub-agent (pi
-# subagent tool, `.pi/agents/judge.md`); model/reasoning from
-# loop/config.yaml.
+# PROGRAM §2 preflight battery (pi harness). Cursor auto-research does not
+# run this script; it uses judge_replicate.py. After the 2026-09-06
+# Carr-distance instrument, 041 rejudges frozen 037 (that is the first
+# carr-distance sample). Add carr-distance / Carr-as-OUR / defective-positive
+# probe files here in a founder-guided preflight refresh — do not reuse a
+# stale PREFLIGHT_RUNS_DIR.
+# Legacy body: 18 judge calls (6 PASS-test, 6 repeatability, 6 voice-probe).
 set -u
 HERE="$(cd "$(dirname "$0")" && pwd)"
 REPO=${BC_REPO:-"$(cd "$HERE/../.." && pwd)"}
