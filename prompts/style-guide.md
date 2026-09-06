@@ -10,7 +10,7 @@
 
 **THE REPETITION LAW (governs everything):** *Mantras are repeated VERBATIM when the frozen line is the natural next sentence, exactly as frozen in the master plan's mantra sheet. There is no per-chapter quota. Everything else is never repeated verbatim.* (Full system: §B1–§B2.)
 
-**Structure:** **PART A — THE METHOD** (the worldview, the engine, the forks, the moves, the arc). **PART B — THE PROSE ENGINE** (the binding writing contract: the mantra system, repetition schedule, lexicon, sentence operators, per-chapter contract). Where Part B is more specific, Part B wins.
+**Structure:** **PART A — THE METHOD** (the worldview, the engine, the forks, the moves, the arc). **PART B — THE PROSE ENGINE** (the binding writing contract: the mantra system, repetition schedule, lexicon, sentence operators, per-chapter contract). Where Part B is more specific, Part B wins. **Runtime contract:** execute Carr's DEFAULT on every fork and Part B. §§1B/1C and non-DEFAULT fork lines are brief-level overrides only — not competing instructions at write time.
 
 ---
 

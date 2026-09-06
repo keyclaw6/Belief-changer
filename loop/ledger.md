@@ -647,7 +647,7 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 
 **Hypothesis.** None. Founder ordered the combined Astra + Fable 5.1 recommendations applied, git cleaned to campaign + main, and a handoff for the next auto-research session.
 
-**Change.** Judges, PROGRAM, hypothesizer, CAP ≠ ACCEPT, factory CH-01 and style-guide Part B, research Reddit + parent-checkout miners + plan reads banks, `loop/CONTINUE.md`. See `loop/learnings.md` `campaign-001 close-out`.
+**Change.** Judges, PROGRAM, hypothesizer, CAP ≠ ACCEPT, factory CH-01 and style-guide Part B + Carr DEFAULT runtime lock, research Reddit + parent-checkout miners + plan reads banks in full, Git cleaned to `campaign-001` + `main`, `loop/CONTINUE.md`. See `loop/learnings.md` `campaign-001 close-out`.
 
 **What happened.** No new books. Production stays 037. 038 OVERCLAIM kept. 039/040 dropped.
 

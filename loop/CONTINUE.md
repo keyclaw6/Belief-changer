@@ -17,6 +17,10 @@ Do not print API keys. Do not `pgrep -af 'agent --'`.
 ## Position
 
 - **Campaign branch:** `campaign-001` (work here; never on `main`).
+  After this close-out Git has only `main` and `campaign-001`
+  (local and `origin`). Create iteration worktrees from
+  `campaign-001` per PROGRAM. Do not recreate `iter-*` or
+  `cursor/*` leftover branches.
 - **Production books:** 037 KEEP (`production-books/quit-sugar/` 54612w,
   `quit-smoking/` 57583w). 038 OVERCLAIM is in the reviewer. 039 HEADER
   ownership and 040 writer landing stay dropped.
@@ -96,6 +100,17 @@ Do not re-arm 20-minute timers. `git add` named files only — never
 
 Judges, PROGRAM KEEP band, 3-strike by class, GSBS control, CAP ≠ ACCEPT,
 chapter-reviewer on the editable list, CH-01 card rule, style-guide
-plain Carr, Reddit in scope, miners write the parent checkout, plan-writer
-reads banks, Carr-distance judge. Full lesson: `loop/learnings.md`
+plain Carr + runtime Carr DEFAULT lock, Reddit in scope, miners write
+the parent checkout, plan-writer/plan-reviewer read banks in full (no
+100 kB truncate), Carr-distance judge. Full lesson: `loop/learnings.md`
 entry `campaign-001 close-out`.
+
+## Known leftovers (do not treat as unfinished instrument)
+
+- Pi `run_preflight.sh` is still the old 18-call battery. Cursor does
+  not run it. Do not block 041 on rewriting it.
+- Style-guide Part A still documents Freedom Model / Burgeon as
+  brief-level overrides. Runtime contract is Carr DEFAULT + Part B.
+- Plan-writer now receives full banks (~0.3–0.6 MB). If Muse refuses
+  the context, record the failure — do not silently truncate.
+- 041 has not been run. That is the next session.

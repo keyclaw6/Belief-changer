@@ -26,13 +26,9 @@ def main() -> None:
     science = (REPO / "production-books" / SLUG / "research" / "scientific-evidence.md").read_text()
     banks_dir = REPO / "production-books" / SLUG / "research" / "banks"
     bank_files = sorted(banks_dir.glob("bank-*.md")) if banks_dir.is_dir() else []
-    total = sum(p.stat().st_size for p in bank_files)
-    bank_parts = []
-    for p in bank_files:
-        text = p.read_text()
-        if total > 100_000 and "lived" not in p.name:
-            text = text[:2000] + "\n…[truncated for plan context; full file on disk]\n"
-        bank_parts.append(f"#### {p.name}\n{text}")
+    bank_parts = [
+        f"#### {p.name}\n{p.read_text()}" for p in bank_files
+    ]
     banks = "\n\n".join(bank_parts) if bank_parts else "(no research/banks/)"
     prompt = (
         "You are the book factory plan-reviewer, a fresh isolated role call.\n\n"

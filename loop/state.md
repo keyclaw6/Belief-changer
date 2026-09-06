@@ -10,13 +10,13 @@
 - **Last completed unit:** 040 QUANTIFY. Founder close-out: Astra+Fable combined instrument applied. 038 OVERCLAIM kept. 039/040 dropped. Production stays 037.
 - **Next unit:** 041 dual BASELINE — rejudge frozen 037 under the new panel. See `loop/CONTINUE.md`.
 
-## Run authorization (founder, 2026-09-04)
+## Run authorization (founder, 2026-09-04; close-out 2026-09-06)
 
-- Drive the factory through **iteration 040**. Do not stop at 019.
+- Drive through **040** is done. Halt-at-040 is lifted. Next session: `loop/CONTINUE.md` (041 BASELINE, then 10–20 on this instrument).
 - **Only hard stop:** repeated Muse Spark usage/quota exhaustion on **both** Zen and Vercel after the PROGRAM §1 retry. Then halt and tell the founder (new API key).
-- Founder override of PROGRAM §5 five-no-KEEP stop: write `convergence-report.md` if it fires, then **continue** toward 040.
-- North Star (census D=0 both books) is a success halt — record it and stop. Do not invent a hypothesis.
-- Chapter reviewer and anti-slop are **AUTHORIZED**. 025 BASELINE, 026 KEEP, 027 KEEP, 030 KEEP, 031 KEEP recorded. 028–029 INCONCLUSIVE.
+- Founder override of PROGRAM §5 five-no-KEEP stop: write `convergence-report.md` if it fires, then continue (do not invent a hygiene PRIMARY).
+- North Star (census D=0 both books **and** Carr-distance not the remaining gap) is a success halt — record it and stop. Do not invent a hypothesis.
+- Chapter reviewer and anti-slop are **AUTHORIZED**. 025 BASELINE, 026 KEEP, 027 KEEP, 030 KEEP, 031 KEEP recorded. 028–029 INCONCLUSIVE. 038 OVERCLAIM kept. 039/040 dropped.
 - This parent thread is **auto-research**, not the book factory. Factory = Muse Spark 1.3 conversation (`prompts/factory-orchestrator.md`).
 
 ## Journal
@@ -91,3 +91,4 @@
 | 2026-09-06 09:15 | Founder: voice judge was scoring Carr ALL-CAPS as factory-speech. Patched judge. Astra consult 038 KEEP / 039 DROP / 040 DROP. OVERCLAIM re-applied. | founder |
 | 2026-09-06 10:00 | Astra + Fable 5.1 Carr-distance review. Combined indistinguishable 42%; engine 60–70%. READY yes-after. No 041. | founder |
 | 2026-09-06 12:30 | Close-out: all combined Astra/Fable fixes landed. Handoff `loop/CONTINUE.md`. Next session: 041 BASELINE. | 041 |
+| 2026-09-06 13:15 | Remaining funnel/docs: full banks to planner, Carr DEFAULT runtime lock, stale 040 auth + CAP notes. Git cleanup to campaign-001 + main. | 041 |

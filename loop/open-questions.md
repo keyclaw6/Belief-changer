@@ -65,12 +65,12 @@ PROGRAM §5's 3-strike PIVOT from prompt → structure fires for that class.
 Try once, as a baseline (research + plan reused, writing stage changed, two
 books, full panel). Reviewer sees plan + card + chapter only — never GSBS,
 never a judge prompt (judges measure; the reviewer is a factory component).
-Cap: A1 — review→rewrite until ACCEPT or three rewrites; last rewrite at cap
-is the chapter.
+Cap: A1 — review→rewrite until ACCEPT or three rewrites; the K=3 rewrite
+still gets one final review (CAP ≠ ACCEPT). Functional REVISE after that
+review is `UPSTREAM`, not silent acceptance. Length/HEADER-only REVISE
+at cap is `CAP`.
 
-Also: `prompts/style-guide.md` already says "the chapter reviewer judges the
-actual text" — a reviewer that does not exist. Fix that sentence when the
-writer-budget line lands, or when this item is built, whichever is first.
+The chapter reviewer exists (`prompts/chapter-reviewer.md`, A1). This item is built.
 
 ## 5. Factory robustness (resume-after-stop) — DONE (2026-09-04, 021+)
 
@@ -154,13 +154,15 @@ instantaneous Zen load → more 429s (item 5's 90s retry covers it) and a
 likelier Go→Zen or Zen→Vercel fallback on one replicate, logged as the
 existing route confound.
 
-Shape: each replicate writes/reads
-`loop/iterations/NNN/replicate-{a,b}/chapters/`. Live dir is filled once at
-Step 6 from replicate A on KEEP. Two `write_replicate.py` processes, one
-tmux session each. No worktrees. Judge A starts when write A's session
-ends — wait on A's session alone, not on both.
+Shape: each subject writes/reads
+`loop/iterations/NNN/<slug>/replicate-a/chapters/`. Live dir is filled once at
+Step 6 from replicate-a on KEEP. Two factory sessions (quit-sugar +
+quit-smoking). No same-subject replicate-b unless the founder adds it.
+Judge a subject when that factory prints `FACTORY DONE`. One judge
+runner at a time.
 
-Status: AUTHORIZED 2026-09-04, built for 021+. `write_replicate.py` uses
-the replicate chapter tree. `judge_replicate.py` runs 10-wide and waits
-for each `agent` to exit. One judge runner at a time. Pi adapter
-unchanged.
+Status: AUTHORIZED 2026-09-04, built for 021+; K1 (founder 2026-09-05)
+is one quit-sugar + one quit-smoking, not two sugar replicates.
+`write_replicate.py` uses the replicate chapter tree. `judge_replicate.py`
+runs 10-wide and waits for each `agent` to exit. One judge runner at a
+time. Pi adapter unchanged.

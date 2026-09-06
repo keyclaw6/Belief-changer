@@ -161,8 +161,12 @@ Spawn the judge role for each check below per the harness's spawn capability
 (in pi: `scripts/loop-runner/run_preflight.sh`). **A non-pi harness must NOT run
 `run_preflight.sh`** (it is pi-CLI-bound) — instead it spawns the `judge` role
 directly against the inputs in `loop/preflight/inputs/` per the checks below
-(18 judge calls: 6 PASS-test, 6 repeatability, 6 voice-probe) and writes the
-results to `loop/preflight/`. **Re-running after a model/harness change:** the
+(PASS-test, Carr-as-OUR, defective positive, repeatability, voice honesty,
+belief/journey honesty, and after this instrument a Carr-distance
+GSBS-vs-GSBS = 100 probe) and writes the results to `loop/preflight/`.
+Pi's `run_preflight.sh` is still the pre-instrument 18-call battery —
+Cursor does not run it; 041's dual rejudge is the first Carr-distance
+sample. **Re-running after a model/harness change:** the
 runner skips any check whose `response.md` already exists, so a stale battery
 would be silently reused — run preflight into a FRESH directory instead
 (`PREFLIGHT_RUNS_DIR=loop/preflight/runs-<date>-<model>`), never into one with
