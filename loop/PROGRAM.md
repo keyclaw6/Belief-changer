@@ -510,9 +510,12 @@ Assigned compliance:
 - Mantras: [exact frozen wording of each mantra assigned here, marked debut or echo, or NONE]
 ```
 
-**Book judge** — run `loop/judges/book-arc.md` once per subject book (all
-chapters in order) with the plan's mantra sheet, instruction spine, and
-curve map, plus that subject's reference-alignment table as the skeleton.
+**Book judge** — run `loop/judges/book-arc.md` and `loop/judges/carr-distance.md`
+once each per subject book (all chapters in order). Book-arc receives the
+plan's mantra sheet, instruction spine, and curve map, plus that subject's
+reference-alignment table as the skeleton, and the verbatim real opening
+and ending chapters. Carr-distance receives the complete our-book and the
+complete reference book. `judge_replicate.py` runs both.
 
 All judges, the trace analyzer, and the hypothesizer are spawned sub-agents
 (see Role calls, §1). Judge calls are independent — the orchestrator spawns

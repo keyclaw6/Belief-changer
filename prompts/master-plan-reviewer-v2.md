@@ -81,7 +81,10 @@ rather than be filled speculatively.
 The sequence must remain warm to the reader, harsh to the trap, willpower-free,
 original, evidence-honest, and medically safe. Fear may do assigned perception
 work but cannot remain the reason to change. Clinical care cannot be framed as
-method failure.
+method failure. Chapter 1 must assign the method promise flat in paragraph one
+(easy, permanent, no willpower) and a scare-then-disown in that chapter's
+argument — never deferred, never routed to an appendix. OVERCLAIM governs
+facts, not the method promise.
 
 ### Architecture and length
 

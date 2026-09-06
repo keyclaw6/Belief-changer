@@ -279,7 +279,9 @@ The caffeine book's architecture is our proven scaffold, generalized to **any** 
 - A photographable list of the spoken instructions, then an outward imperative ("get on with enjoying your life"). Not three teaching manuals. Not chapter-number callbacks.
 
 ### Two recurring structural devices to reuse
-- **Quarantine hard evidence** (raw citations, stats) into a back-matter appendix so the main prose stays emotionally clean (Burgeon).
+- **Quarantine raw citations** (study titles, journal names) into
+  back-matter if the book needs them. The scare itself stays in the
+  argument — never send harm-lists or the scare to an appendix (Part B10).
 - **A short recap list** at the end — the spoken instructions, photographable — not a mid-book instruction recap and not a portable teaching manual.
 
 ---

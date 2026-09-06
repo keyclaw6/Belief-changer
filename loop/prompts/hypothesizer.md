@@ -57,7 +57,10 @@ replicates."]
 - **Judge defect suspected is a legal verdict.** If the voice (or any)
   judge is counting Carr-native constructs as defects, or PRIMARY quotes
   are Carr-shaped, return `judge defect suspected` and stop. Do not
-  spend dual-subject writes on a broken class.
+  spend dual-subject writes on a broken class. Before proposing a noted,
+  inventory, or newly-blocking PRIMARY, name the matching GSBS/Easyway
+  chapter for the pre-spend control in PROGRAM Step 6. If that control
+  would fire, output `judge defect suspected` instead of a factory change.
 
 - **factory-speech is inventory diction, not Carr commands.** Numbered
   ALL-CAPS spoken imperatives and Carr-native `IN THIS CHAPTER` are
