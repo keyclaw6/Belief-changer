@@ -2,13 +2,13 @@
 
 ## Position
 
-- **Iteration:** 038
-- **Stage:** recorded
-- **Status:** IDLE
+- **Iteration:** 039
+- **Stage:** dual-subject writes
+- **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`). Factory is Muse Spark 1.3; this chat is auto-research only.
 - **Last completed unit:** 038 QUANTIFY. Sugar factory-speech 10→10; smoking 5→8. Restored OVERCLAIM (blocking factory-speech both).
-- **Next unit:** 039 hypothesizer (blocking factory-speech 1/1 both). Apply every Change N, then both writes.
+- **Next unit:** 039 writes (HEADER ownership test: factory-speech 10/8 vs 038, also report vs 037 10/5). Sleep until FACTORY DONE both, then judge (one at a time).
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -79,3 +79,4 @@
 | 2026-09-06 01:05 | 037 KEEP. Journey re-argument 8→6 / 9→5. Sugar CH-01 method-promise-hedge 1 (not a veto). | 038 hypothesizer |
 | 2026-09-06 01:12 | 038 Astra hypothesis applied (OVERCLAIM repair, sugar factory-speech). Start both writes. | f038 writes |
 | 2026-09-06 03:13 | 038 QUANTIFY. factory-speech 10→10 / 5→8. Blocking 1/1 both. OVERCLAIM restored. | 039 hypothesizer |
+| 2026-09-06 03:20 | 039 Astra hypothesis applied (HEADER ownership test). Start both writes. | f039 writes |
