@@ -1,0 +1,3 @@
+REVISE
+HEADER — draft opens with workshop header `**IN THIS CHAPTER** — The rinsed saucer at seven, breakfast that closes itself, the aisle without the hunt, the till and the sideways glance, supper and the sofa lamp.` Remove the header line entirely.
+UNASSIGNED-REFRAIN — non-mantra phrase "second list" recurs 4× verbatim: "with the second list gone" / "You do not guard against the second list." / "You have no second list." / "The head has no second list to run". Keep at most 2 occurrences and subtract repeats; do not invent a new mantra.

@@ -1,0 +1,5 @@
+REVISE
+
+HEADER — draft opens with workshop header `IN THIS CHAPTER` after title: `IN THIS CHAPTER / - The office staircase and the breath that gave me away.` Remove the workshop block; keep SC-J staging in spoken prose only.
+
+LENGTHEN to 3500±15% — Delivered 1602 words. Budget 3500. Range 2975-4025. Extend this unfinished SC-J / contract encounter belonging to this card, quoted location to extend: `By the third I had to stop and pretend to check my phone while I got my breath back.` Stay on those stairs and on the authority-dossier moment `I stood exactly where you stand now` to develop the unanswered tired-trier dread — braced for lecture, expecting misery — into lived curiosity that the body signal is an invitation to read, not a verdict on character. That extension must deliver new understanding not yet landed: what the reading contract asks and what it does not ask before belief work starts, so dread drops. Check: C01 has no earlier cards to repeat; this does not re-prove the already-landed `You can stop smoking easily, immediately and permanently` conclusion, it extends the hook encounter that makes the contract readable.

@@ -1,0 +1,8 @@
+REVISE
+
+HEADER — draft opens with workshop header `IN THIS CHAPTER — The classroom door, the finished paragraph, the grocery bags on the counter, the tin of pellets, the filter with tiny holes under thumb and lip.` Delete that header line and open with spoken body. A numbered ALL-CAPS instruction plus rationale is allowed; this header is not.
+
+LENGTHEN to B±15% — Delivered 2166 words. Budget 5000. Required range 4250-5750. Add ~2100+ words by extending this card's own unfinished taste-timing encounter, not by repeating landed conclusions.
+Unfinished location to extend, quoted: `why does the same pause on a day when the gap is short feel flat, and on a day when the gap is long feel urgent — in exact time with the interval, not with the coffee?`
+Assignment: stay in that same coffee/break pause and walk the reader through two same-day pauses — one after a short gap and one after a long gap — tracking how flatness vs urgency and how coffee taste rise and fall with dose-interval, not with coffee/food itself. The extension must deliver the new understanding that the felt empty-pause need is the interval voting, completing the taste kill under E-05.
+Target check: this is not C04 stress-desk, not C03 axis, not C02 choice/trap; it does not restage an earlier scene and does not re-explain an earlier instruction. It does not repeat the already-landed conclusions in this draft — `The work was the party. The dose was the thief.` for reward, and machine-number vs mouth-number with thumb over holes for mild — but finishes the taste-timing proof the draft only poses as questions. Extend this card's encounter and evidence only.

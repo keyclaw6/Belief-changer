@@ -1,0 +1,2 @@
+REVISE
+HEADER — the draft opens with the workshop header `**IN THIS CHAPTER** — the pack in the palm, the count to midnight, the filter with holes, the pull both ways, the stale stairs` immediately after the chapter title. Remove the workshop header; open in spoken body.

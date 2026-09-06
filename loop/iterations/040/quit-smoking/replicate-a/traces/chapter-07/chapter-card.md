@@ -1,0 +1,14 @@
+**CH-07 — The Itch It Pretends to Scratch
+- primary job: enacted transition — relief stops reading as rise above normal and starts reading as brief return toward non-smoker baseline that guarantees next low.
+- belief now: enters knowing pleasures are empty but still fearing physical need; leaves seeing physical tug trivial and belief dominant.
+- concrete encounter: tracking a day of doses fading within minutes, meter needing coins.
+- evidence: E-07 replenishment not gift; E-11 restless feeling short typical peak not real self; limits typical not every reader, not torture-for-all.
+- new instruction: I-07 REFUSE TO BE INFLUENCED BY OTHER SMOKERS
+- reserved-later fence: body inhabit to C08; industry build to C09.
+- arc position: middle mechanism deepening; demolition peak.
+- reader-state: body-fearful smoker dreading withdrawal, encountering meter fade as small and brief.
+- mantra: echo M-B "easily, immediately and permanently"; echo M-C "the nicotine trap"; echo M-D "the Nipper"; echo M-E "the Smokescreen"; echo M-F "an empty, slightly restless, slightly edgy little tug"; debut F-B "It never fixed the itch. It caused it."
+- scene: debut SC-E, staging job: parking-meter coins.
+- guardrails: safety CA-SAFE, E-11 safety limit; originality: meter and itch in new prose, creatures already vocabulary.
+- continuity intent: receives method blame from C06; hands inversion to inhabit C08.
+- budget: 4500

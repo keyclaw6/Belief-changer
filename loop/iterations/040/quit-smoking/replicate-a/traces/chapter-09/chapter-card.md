@@ -1,0 +1,15 @@
+**CH-09 — Who Built This Want
+- primary job: enacted transition — desire stops reading as my nature and starts reading as manufactured package plus fear both held by trap.
+- belief now: enters owning baseline yet still fearing failure and success without identity; leaves seeing seller built want and both fear ropes belong to trap.
+- concrete encounter: holding pack as day's supply box, noticing theatre of filter and mild promise.
+- evidence: E-08 industry definition as package not flavour; E-09 lights theatre; limits internal memo not consensus, no safer recommendation.
+- new instruction: I-09 SEE THE SELLER BEHIND THE SMOKE
+- reserved-later fence: favourite-scene proof to C10; just-one foreclose to C11.
+- arc position: middle-late widening plus fear; demolition high, freedom rising.
+- reader-state: uneasy candidate fearing failure and post-quit self, encountering pack as dispenser.
+- mantra: echo M-C "the nicotine trap"; echo M-E "the Smokescreen"; debut M-G "the tug-of-war of fear"; debut F-C "stale, breathless and chained".
+- scene: debut SC-L, staging job: pack as dispenser.
+- structural responsibility: fear chapter collapsing failure and success fears.
+- guardrails: safety CA-SAFE, E-08 safety limit no dare to test; originality: villain anger at maker, never at reader.
+- continuity intent: receives baseline from C08; hands manufacture to strongest case C10.
+- budget: 4500

@@ -1,0 +1,3 @@
+REVISE
+RESERVED-REACH — Draft performs CH-12 — Ordinary Days primary job: inhabit mornings, shops, food with ease. Section beginning "Now run the same Friday week with no line to patrol..." through evening saucer test — "Monday morning under the whole line.", "Tuesday under the whole line.", "Wednesday under the whole line.", "Thursday night under the whole line.", "Friday itself under the whole line.", "Then watch Saturday morning...", "Carry that into the shop a week later...", "Carry it into the evening hour..." — enacts breakfast, aisle, checkout, evening sofa lived with ease. Cut this overreach to at most one sentence.
+UNASSIGNED-REFRAIN — Non-mantra phrase "under the whole line." recurs 5× verbatim. Subtract repeats to max 2; do not invent a new mantra.

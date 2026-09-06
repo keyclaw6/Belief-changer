@@ -1,0 +1,8 @@
+REVISE
+
+HEADER — Draft opens with workshop header before body: `IN THIS CHAPTER / The stairwell, the landing, the phone in the hand. / *You can stop smoking without misery by seeing it clearly while you read.*` Delete this block. The numbered instruction at end `I-01 — KEEP AN OPEN MIND` plus rationale line is allowed and is not HEADER.
+
+LENGTHEN to 3500±15% — Delivered 2678 words. Budget 3500. Required range 2975-4025. Add ~300-800 words by extending this card's own unfinished encounter, not by re-proving a landed conclusion.
+Target: the stairs aftermath is unfinished. Draft leaves it at quote: `I followed a minute later, still settling my breathing, still arranging my face.` The meeting hour after — sitting with tight chest, coat smell, counting to the next break while the non-smoker colleague stays easy — is undeveloped, and the tired-trier objection at quote: `You turn the first pages already defending yourself inside: this will not work, I have heard it all, do not ask me to suffer again.` is unanswered as lived consequence.
+Extension must deliver: what it feels like to stay in that meeting with curiosity instead of self-blame, and how that curiosity makes the reading contract — open mind, judge at end, no immediate fight — doable without dread, handing open mind to C02.
+Check: no earlier cards exist to conflict; do not repeat the already-landed verdict that past failures were wrong approach, do not add a second proof of ease, and do not perform reserved-later jobs — no trap/Nipper/Smokescreen naming, no off-switch kill, no reward/mild kill, no I-02 wording. Retain budget and all ACCEPT requirements: M-A, M-B, I-01 verbatim, SC-J staging, no refrain, no overreach.

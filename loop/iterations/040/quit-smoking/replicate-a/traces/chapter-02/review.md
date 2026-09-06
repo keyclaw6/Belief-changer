@@ -1,0 +1,2 @@
+REVISE
+HEADER — the draft opens its body with the workshop header `IN THIS CHAPTER` before any spoken prose: "IN THIS CHAPTER — The garage with the cracked door. The sofa with two jobs. The kettle, the phone, the doorway, the car lights, the shop queue." Cut that header block and open in voice with the garage encounter.

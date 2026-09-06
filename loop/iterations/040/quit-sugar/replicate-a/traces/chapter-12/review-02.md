@@ -1,0 +1,2 @@
+REVISE
+UNASSIGNED-REFRAIN — "all three." recurs 5× verbatim ("One straight line answers all three." / "One honest answer fits all three." / "One straight look answers all three." / "One honest line runs through all three." / "One straight life answers all three."). Subtract repeats to <3 total, no replacement mantra.

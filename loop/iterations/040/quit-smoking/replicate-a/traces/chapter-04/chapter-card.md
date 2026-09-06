@@ -1,0 +1,14 @@
+**CH-04 — The Calm That Creates the Storm
+- primary job: enacted transition — stress relief stops reading as cure and starts reading as brief quiet of a need smoking created.
+- belief now: enters believing cigarette takes care of stress; leaves believing it leaves the problem untouched while briefly quieting its own tug.
+- concrete encounter: stress desk after argument, hand reaching, problem papers still there after puff.
+- evidence: E-01 plus limit does not treat underlying problem; E-07 relief is replenishment not gift; limits smoked pharmacokinetics only.
+- new instruction: I-04 FOLLOW ALL THE INSTRUCTIONS
+- reserved-later fence: withdrawal timing detail to C07; fear of life without to C09.
+- arc position: middle early demolition; freedom suppressed.
+- reader-state: pressured reliever seeking off-switch, encountering desk moment where calm is mistimed.
+- mantra: debut M-I "All you have to do is follow all the instructions."
+- scene: debut SC-K, staging job: stress-desk reach.
+- guardrails: safety CA-SAFE, E-01 safety limit; originality: new desk prose, no mocking of felt relief.
+- continuity intent: receives axis from C03; hands keystone-relax kill to reward kill C05.
+- budget: 4500

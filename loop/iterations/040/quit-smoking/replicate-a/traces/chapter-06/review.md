@@ -1,0 +1,7 @@
+REVISE
+
+HEADER — draft opens with workshop header block `IN THIS CHAPTER — The drawer that proves nothing, the different glass on top of it, the two numbers on their shelf, the braggers and the groaners at the door` before spoken body. Delete the header line entirely.
+
+LENGTHEN to 4500±15% — Delivered 3072 words. Budget 4500. Range 3825-5175. Draft is below 0.85×B.
+Expansion assignment: extend the unfinished I-06 refusal encounter at `Picture it small and near. Tomorrow in the work kitchen the bragger lifts his mug and says, "Still on the sticks? I quit by willpower. Worst three months of my life. Get the patches. Tell the wife to hide your cigs."` Carry that same kitchen/door/laughter-outside sequence forward through the next cues without opening argument or counting days, showing what keeping judgment looks like hour-by-hour when mourning is absent. That extension must deliver the undeveloped consequence belonging to this card: fear of the next try dissolves because there is no loss to endure, only voices to leave outside — disregard as quiet judgment, not another trial of backbone.
+Target check: this extends CH-06 I-06 / method-blame forward use, not C04 off-switch, not C05 reward/lights, not C07 timing/baseline, and not another drawer/calendar proof that `It was not you that failed. It was the method that failed you.`

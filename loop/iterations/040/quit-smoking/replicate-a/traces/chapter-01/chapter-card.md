@@ -1,0 +1,11 @@
+**CH-01 — Read This First and Be Free
+- primary job: non-argument — bridge: install easy contract and hook so belief work can start without dread.
+- arc position: first third opening; freedom promise front-loaded, demolition low.
+- reader-state: tired trier arriving braced for lecture, encountering stairs-breath proof ease is possible.
+- mantra: debut M-A "you have nothing to lose and everything to gain"; debut M-B "easily, immediately and permanently".
+- scene: debut SC-J, staging job: stairs-breath hook and body authority.
+- structural responsibility: authority dossier and reading contract.
+- guardrails: safety CA-SAFE; originality: origin and stairs in new prose, no borrowed caffeine images.
+- continuity intent: receives none; hands open mind and permission to continue smoking until vow to C02.
+- budget: 3500
+- new instruction: I-01 KEEP AN OPEN MIND

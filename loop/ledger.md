@@ -615,5 +615,19 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 
 **What this opens next.** factory-speech noted 13/8 is ≥8 both. Blocking factory-speech 0/2 is not in both. Journey re-argument 11/7 is not. willpower-lexicon 32/20 is not PRIMARY. New mechanism; do not replay this HEADER ownership test, 038 OVERCLAIM, 037 LENGTHEN, 036 RE-ARGUMENT, 020–024, or 028–032.
 
+### iter-040 — writer instruction landing  ·  2026-09-06  ·  QUANTIFY
+
+**Hypothesis.** If writer anatomy item 5 places the numbered ALL-CAPS imperative immediately after the concrete decision the preceding body passage resolved, voice `factory-speech` falls in both versus 039 (sugar 13, smoking 10).
+
+**Change.** One anatomy bullet in `prompts/chapter-writer.md` (see `loop/iterations/040/change.diff`). Reviewer HEADER, frozen-token, evidence, and other anatomy items left unchanged. Plans reused. Writer Spark 1.3 Go, A1 K=3. Panel 53+57 composer-2.5. Hypothesizer: GPT-6 Astra.
+
+**What happened.** factory-speech blocking+noted 13→25 (sugar) and 10→19 (smoking). Blocking 0→1 / 2→12. Words 53858 / 57512. Sugar voice 12/13 (CH-01 FAIL `"I-01 — KEEP AN OPEN MIND"`). Smoking voice 5/14 (nine FAILs, factory-speech blocking 12). A1 sugar 7 ACCEPT / 6 CAP; smoking 7 ACCEPT / 7 CAP. Grep `I-NN —` is present in both 040 books and absent from production 037. Journey smoking 11/14 FAIL 3 → 14/14; `instruction-paperwork` 1→0 (secondary). willpower-lexicon 32→32 / 20→21.
+
+**Verdict & why.** QUANTIFY. PRIMARY rose in both (missed ≤11 / ≤8). Restore trigger: PRIMARY worsened by ≥ band in both. Anatomy item 5 returned to 037 KEEP text. Production chapters stay 037.
+
+**What we learned.** Telling the writer to preserve exact wording and number plus land the command after a resolved decision produced plan-inventory prefixes (`I-03 — BEGIN BY FEELING GREAT TO BE ESCAPING`), which the voice judge scored as factory-speech. Placement-without-ID was not what Spark emitted.
+
+**What this opens next.** Halt at 040. Do not invent 041. Do not replay this writer anatomy item 5, 039 HEADER ownership, 038 OVERCLAIM, 037 LENGTHEN, 036 RE-ARGUMENT, 020–024, or 028–032.
+
 
 

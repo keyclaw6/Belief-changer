@@ -1,0 +1,2 @@
+REVISE
+RE-ARGUMENT — Rebuilds CH-04 — The Willpower Method Kept You Trapped SC-04 debut full staging as its own argued section, exceeding card allowance of SC-04 token-echo one phrase only. Rebuilt section heading: "ONE MEANS ALL" / first line: "Now take the smallest promise of all. Not Friday. One." — multi-paragraph saucer-to-crumbs staging with three-question turn and verdict. Cut that section to at most one sentence that speaks the settled token, e.g. the one-bite-carries-binge signature already landed.

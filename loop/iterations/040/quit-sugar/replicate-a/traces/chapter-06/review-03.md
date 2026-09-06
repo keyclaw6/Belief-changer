@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER`: "**IN THIS CHAPTER** — Saturday market stalls; the kitchen table at noon; the evening table with company and the quiet kitchen after" — remove workshop header; keep spoken body.

@@ -1,0 +1,9 @@
+REVISE
+
+LENGTHEN to B±15% — Delivered 5398 words. Budget 6800. 0.85×B = 5780, 1.15×B = 7820. Need +382 minimum to re-enter range, retain B=6800 and all other ACCEPT requirements.
+Expansion assignment: Extend the undeveloped yours-first consequence, not another scene-vs-dose proof. Draft lands "Scene kept. Dose dropped." / "Love stayed. Dose fell." but leaves unanswered this card's own objection: choosing for self first in company feels selfish / deprives the host / spoils children's joy.
+Extend at: "Other plates stay theirs. Pity their bells without obeying them." and "You do not correct her. You do not quote a book. You do not turn the table into a lesson."
+Deliver: what happens next with the settled sight already assumed when others keep eating — how love/talk/singing stay intact without lecture or mirroring, how pity-not-envy holds without loss, how the next invitation is met without dread. That is the card's "for you first — set aside the industry and everyone else's feelings" lived consequence.
+Check: This is not CH-06 inhabit-peach/market-meal proof, not CH-08 manufacture/aisle proof, not CH-05 fuel proof, not CH-10 Friday/cliff/seatbelt totality, not CH-11 vow, not CH-12 mornings-shops thesis. It does not re-prove "Labels taught. Tongue obeyed." or "Scene kept. Dose dropped." already landed; it lives what holding that vote costs and keeps in relationship. No new evidence, no generic examples.
+
+UNASSIGNED-REFRAIN — Non-mantra phrase "You feel fine." recurs 3× verbatim in the slow-pot year — end of October, end of November, end of December. Subtract to 1 kept instance, paraphrase the others. Do not promote to mantra.

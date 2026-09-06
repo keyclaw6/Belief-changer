@@ -325,5 +325,12 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Lesson:** factory-speech blocking+noted 10→13 / 8→10 (vs 038; vs 037 10→13 / 5→10). Length 55404/55597. Sugar blocking 0 (CH-09 numbered mantra now noted willpower). Smoking CH-03 still blocking factory-speech + instruction-paperwork on the same numbered instruction. HEADER fired on `IN THIS CHAPTER` openings. Restored: yes — PRIMARY worsened ≥ band both. Consecutive no-KEEP: 2.
 **Next direction:** factory-speech noted 13/8 is ≥8 both. Do not replay this HEADER ownership test. Do not replay 038 OVERCLAIM / 037 LENGTHEN / 036 RE-ARGUMENT / 020–024 / 028–032. willpower-lexicon 32/20 is not PRIMARY.
 
+### iter-040 — writer instruction landing
+**Hypothesis:** PRIMARY both subjects: rewrite writer anatomy item 5 so the numbered ALL-CAPS imperative completes the preceding concrete decision, so factory-speech 13→≤11 / 10→≤8 vs 039. Also report vs 037 10/5.
+**Change:** `prompts/chapter-writer.md` (Full-length chapter anatomy item 5). Plans reused. Writer Spark 1.3 Go, A1 K=3. Judges composer-2.5, 53+57. Hypothesizer: GPT-6 Astra.
+**Verdict:** QUANTIFY
+**Lesson:** factory-speech blocking+noted 13→25 / 10→19 (vs 039; vs 037 10→25 / 5→19). Length 53858/57512. Blocking 0→1 / 2→12. Writer prefixed assigned commands with plan IDs (`I-01 — KEEP AN OPEN MIND`). Restored: yes — PRIMARY worsened ≥ band both. Consecutive no-KEEP: 3. Halt at 040.
+**Next direction:** Halt. Do not invent 041. Do not replay this writer anatomy item 5, 039 HEADER ownership, 038 OVERCLAIM, 037 LENGTHEN, 036 RE-ARGUMENT, 020–024, or 028–032. willpower-lexicon 32/21 is not PRIMARY.
+
 
 

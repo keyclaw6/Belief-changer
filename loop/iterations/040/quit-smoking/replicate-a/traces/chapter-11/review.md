@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` with bullet list before spoken body: "IN THIS CHAPTER / - The cut-down diary on the kitchen table / - The brass lamp on the shelf..." Remove the header block entirely; enter on the card's encounter without workshop scaffolding.

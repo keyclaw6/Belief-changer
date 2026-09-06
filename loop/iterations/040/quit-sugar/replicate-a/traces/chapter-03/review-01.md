@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` plus teaser list ("The notebook on the kitchen table, the drawer at three o'clock, the dentist's mirror, the till receipt, the question by the ditch, the two columns that will not balance"). Remove the `IN THIS CHAPTER` block entire; open on spoken body.
