@@ -3,12 +3,12 @@
 ## Position
 
 - **Iteration:** 039
-- **Stage:** dual-subject writes
+- **Stage:** sugar panel; smoking still writing
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`). Factory is Muse Spark 1.3; this chat is auto-research only.
-- **Last completed unit:** 038 QUANTIFY. Sugar factory-speech 10→10; smoking 5→8. Restored OVERCLAIM (blocking factory-speech both).
-- **Next unit:** 039 writes (HEADER ownership test: factory-speech 10/8 vs 038, also report vs 037 10/5). Sleep until FACTORY DONE both, then judge (one at a time).
+- **Last completed unit:** 039 sugar write DONE 13/13. Smoking 13/14 (CH-14 in A1).
+- **Next unit:** j039-quit-sugar. After PANEL DONE, smoking write then smoking panel. KEEP vs 038 10/8 and report vs 037 10/5.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -80,3 +80,4 @@
 | 2026-09-06 01:12 | 038 Astra hypothesis applied (OVERCLAIM repair, sugar factory-speech). Start both writes. | f038 writes |
 | 2026-09-06 03:13 | 038 QUANTIFY. factory-speech 10→10 / 5→8. Blocking 1/1 both. OVERCLAIM restored. | 039 hypothesizer |
 | 2026-09-06 03:20 | 039 Astra hypothesis applied (HEADER ownership test). Start both writes. | f039 writes |
+| 2026-09-06 05:26 | 039 sugar write DONE 13/13 ACCEPT CH-13. Smoking 13/14, CH-14 started. Start sugar panel. | j039-quit-sugar |
