@@ -332,5 +332,13 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Lesson:** factory-speech blocking+noted 13→25 / 10→19 (vs 039; vs 037 10→25 / 5→19). Length 53858/57512. Blocking 0→1 / 2→12. Writer prefixed assigned commands with plan IDs (`I-01 — KEEP AN OPEN MIND`). Restored: yes — PRIMARY worsened ≥ band both. Consecutive no-KEEP: 3. Halt at 040.
 **Next direction:** Halt. Do not invent 041. Do not replay this writer anatomy item 5, 039 HEADER ownership, 038 OVERCLAIM, 037 LENGTHEN, 036 RE-ARGUMENT, 020–024, or 028–032. willpower-lexicon 32/21 is not PRIMARY.
 
+### iter-040-instrument — Carr ALL-CAPS is not factory-speech
+**Hypothesis:** The voice judge was the defect. Numbered ALL-CAPS assigned commands are Carr method, not factory-speech.
+**Change:** `loop/judges/voice-emotion.md` (factory-speech + instruction-paperwork). Writer: no `I-01 —`, no `IN THIS CHAPTER`. Reviewer HEADER: `I-NN —` is HEADER. Hypothesizer: do not PRIMARY-ban ALL-CAPS. 038 OVERCLAIM re-applied. 039 HEADER and 040 item 5 stay dropped.
+**Verdict:** founder instrument fix (not a dual-subject KEEP)
+**Lesson:** 038–040 restorations used a class that included Carr's instruction typography. Blocking quotes were `3. BEGIN BY FEELING GREAT TO BE ESCAPING` and `10. IGNORE ANYONE WHO QUIT BY WILLPOWER`. 040 `I-01 —` prefixes remain real factory-speech under the corrected judge.
+**Next direction:** Do not start 041 unless the founder asks. PRIMARY on the corrected instrument is remaining inventory diction, not ALL-CAPS commands.
+
+
 
 

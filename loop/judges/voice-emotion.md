@@ -77,6 +77,8 @@ coach-register are NOTED and must not FAIL the chapter.
   disgusting, or morally failed. Contempt for the trap/industry is OK.
 - **instruction-paperwork** — assigned instruction sentence could appear
   in a terms-of-service or clinical consent form. NONE ASSIGNED → 0.
+  A numbered ALL-CAPS spoken imperative that is the assigned instruction's
+  wording is Carr method, not paperwork.
 
 ## Per-quote split
 
@@ -87,6 +89,14 @@ coach-register are NOTED and must not FAIL the chapter.
   passages (evidence grades, P-xx, S-xx, killer-line, ease-operator,
   "your card assigns", echo placeholders). One unassigned "ease-operator"
   is NOTED; chapter can still PASS.
+  A numbered ALL-CAPS spoken imperative, with at most one spoken rationale
+  line, that is the assigned instruction or mantra wording is Carr method
+  (GSBS: `1. FOLLOW ALL THE INSTRUCTIONS.` / `SECOND INSTRUCTION: KEEP AN
+  OPEN MIND`). Count it 0. factory-speech is inventory/process diction on
+  or next to that line: plan IDs (`I-01 —`), workshop headers (`IN THIS
+  CHAPTER`), ordinal announcements (`So here is my Nth instruction`),
+  craft labels, ledger grades, persona codes. If a Carr-shaped command
+  carries a factory prefix, count the prefix, not the imperative.
 
 ## Noted tests (never FAIL the chapter)
 

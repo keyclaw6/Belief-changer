@@ -54,6 +54,15 @@ replicates."]
   retry a reverted change, say so and name the instrument it was scored
   under.
 
+- **factory-speech is inventory diction, not Carr commands.** Numbered
+  ALL-CAPS spoken imperatives that are the assigned instruction/mantra
+  wording are Carr method (GSBS). Do not make PRIMARY "ban ALL-CAPS" or
+  "flag all caps." factory-speech is `I-01 —`, `IN THIS CHAPTER`, ordinal
+  announcements, ledger IDs, and craft labels. If the voice judge is
+  counting Carr-native numbered commands as factory-speech, that is a
+  judge defect — stop and name it; do not spend dual-subject writes
+  trying to delete Carr's instruction typography.
+
 - **Never change models or routes.** Do not propose edits to `*_model`,
   `*_fallback_model`, `*_route`, or endpoint fields. Those are founder-only.
   Contributor vs non-contributor aliases of the same weights are the same

@@ -629,5 +629,20 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 
 **What this opens next.** Halt at 040. Do not invent 041. Do not replay this writer anatomy item 5, 039 HEADER ownership, 038 OVERCLAIM, 037 LENGTHEN, 036 RE-ARGUMENT, 020–024, or 028–032.
 
+### founder instrument — Carr ALL-CAPS is not factory-speech  ·  2026-09-06
+
+**Hypothesis.** The 038–040 factory-speech PRIMARY was contaminated: the voice judge counted GSBS-style numbered ALL-CAPS assigned commands as factory-speech.
+
+**Change.** `loop/judges/voice-emotion.md`. Writer/reviewer bans on `I-01 —` and `IN THIS CHAPTER`. 038 OVERCLAIM re-applied. 039 HEADER ownership and 040 writer landing stay dropped (Astra + parent agree).
+
+**What happened.** Consult recorded in `loop/iterations/040/astra-038-040-keep-verdict.md`. No new books.
+
+**Verdict & why.** Instrument fix. 038 KEEP as a prompt. 039 DROP. 040 DROP.
+
+**What we learned.** Dual-subject writes cannot close a class that includes Carr's own instruction typography. Fix the judge; do not spend three iterations deleting ALL-CAPS.
+
+**What this opens next.** Founder call. No 041 unless asked.
+
+
 
 

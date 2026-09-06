@@ -115,16 +115,16 @@ that can repair the defect. Never emit another refusal form.
 Use every element in this order:
 
 1. `Chapter [N]` and an original working title in capitals.
-2. **IN THIS CHAPTER** — names of the rooms/pictures in this chapter (places,
-   objects, encounters), not a syllabus, not "we will / you will," not a
-   named pupil.
+2. Open in the rooms/pictures of this chapter (places, objects, encounters),
+   not a syllabus, not "we will / you will," not a named pupil. Do not print
+   the workshop header `IN THIS CHAPTER`.
 3. One italic thesis line: a spoken Carr sentence of the reframe, not a paste
    of the card's leaving-belief field.
 4. Titled body sections building the one move and landing its peak verdicts.
 5. When an instruction is assigned: the numbered ALL-CAPS spoken imperative at
    the climax, followed by at most one short spoken rationale line. Never a
-   "Warm rationale" header, backticks, or craft label. Omit this element when
-   no instruction is assigned.
+   "Warm rationale" header, backticks, craft label, or plan ID (`I-01 —`).
+   Omit this element when no instruction is assigned.
 6. **SUMMARY** — clipped bullets stating, in ordinary sentences, the belief
    that changed. Not a token roll-call, instruction recap, or study-design
    note. The final recap chapter is the exception: it may list the
