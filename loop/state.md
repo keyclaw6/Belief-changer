@@ -3,12 +3,12 @@
 ## Position
 
 - **Iteration:** 040
-- **Stage:** hypothesizer
+- **Stage:** dual-subject writes
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`). Factory is Muse Spark 1.3; this chat is auto-research only.
-- **Last completed unit:** 039 QUANTIFY. factory-speech 10→13 / 8→10. Restored HEADER (PRIMARY worsened ≥ band both).
-- **Next unit:** 040 hypothesizer (factory-speech 13/8 noted ≥8 both). Halt at 040 or D=0 both. Do not replay 039 HEADER ownership.
+- **Last completed unit:** 039 QUANTIFY. factory-speech 10→13 / 8→10. Restored HEADER.
+- **Next unit:** 040 writes (writer anatomy item 5 instruction landing: factory-speech 13/10 vs 039, also report vs 037 10/5). Halt after 040 KEEP/QUANTIFY or D=0.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -83,3 +83,4 @@
 | 2026-09-06 05:26 | 039 sugar write DONE 13/13 ACCEPT CH-13. Smoking 13/14, CH-14 started. Start sugar panel. | j039-quit-sugar |
 | 2026-09-06 05:33 | 039 sugar PANEL DONE. Smoking write DONE 14/14. Start smoking panel. | j039-quit-smoking |
 | 2026-09-06 05:40 | 039 QUANTIFY. factory-speech 10→13 / 8→10. HEADER restored. Consecutive no-KEEP: 2. | 040 hypothesizer |
+| 2026-09-06 05:45 | 040 Astra hypothesis applied (writer anatomy item 5 instruction landing). Start both writes. | f040 writes |

@@ -121,10 +121,17 @@ Use every element in this order:
 3. One italic thesis line: a spoken Carr sentence of the reframe, not a paste
    of the card's leaving-belief field.
 4. Titled body sections building the one move and landing its peak verdicts.
-5. When an instruction is assigned: the numbered ALL-CAPS spoken imperative at
-   the climax, followed by at most one short spoken rationale line. Never a
-   "Warm rationale" header, backticks, or craft label. Omit this element when
-   no instruction is assigned.
+5. When an instruction is assigned, make its exact numbered ALL-CAPS
+   imperative complete the concrete decision the preceding body passage
+   has resolved. Place it immediately after that passage, not as a separate
+   inventory entry attached to the chapter's general verdict. The passage
+   must make clear what the reader now understands about this particular
+   action and why it follows; use the argument already owned by this card,
+   not a new proof of earlier work. Preserve every assigned instruction's
+   exact wording and number. Do not announce its ordinal, label its arrival,
+   or append a generic rationale: the preceding passage supplies the reason.
+   Omit this element when no instruction is assigned. The final
+   photographable instruction recap remains a list.
 6. **SUMMARY** — clipped bullets stating, in ordinary sentences, the belief
    that changed. Not a token roll-call, instruction recap, or study-design
    note. The final recap chapter is the exception: it may list the
