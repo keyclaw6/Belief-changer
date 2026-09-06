@@ -1,0 +1,2 @@
+REVISE
+HEADER — Draft opens with workshop header `IN THIS CHAPTER — A quiet morning table, the midday aisle and till, the three o'clock desk, supper and the sofa, a slip from habit, bedtime and the second morning` followed by inventory tagline `*You eat when hungry, stop when satisfied, and walk past old doses like they belong to someone else.*` Remove the header/tagline inventory and enter directly in this card's encounter that must earn it, opening at `You wake to a quiet house.`

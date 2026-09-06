@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with the workshop header `IN THIS CHAPTER` before any argument, not as an earned spoken command. Quote: `IN THIS CHAPTER / - The pocket and the clear tongue / - The doorway left behind / - The farewell table and the empty tray / - The card on the fridge`. Remove the inventory header; the final photographable instruction recap `THE CARD ON THE FRIDGE — FIRST SIX / SECOND SIX` is not HEADER and is retained.

@@ -1,0 +1,2 @@
+REVISE
+HEADER — Draft opens with workshop header `IN THIS CHAPTER` inventory. Quote: "IN THIS CHAPTER / The desk after a row, the reaching hand, the window with smoke, the untouched bill and letter, the second six-minutes with air and pen". Delete the header block entire. Open directly in the assigned encounter that must earn entry, quoted: "The row is still in the air. / Voice raised in the next room, or on the phone."

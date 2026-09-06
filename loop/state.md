@@ -2,13 +2,13 @@
 
 ## Position
 
-- **Iteration:** 039
-- **Stage:** smoking panel
+- **Iteration:** 040
+- **Stage:** hypothesizer
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none (running from `cursor/factory-instrument-halt-a530`). Factory is Muse Spark 1.3; this chat is auto-research only.
-- **Last completed unit:** 039 sugar PANEL DONE (53). Smoking write DONE 14/14.
-- **Next unit:** j039-quit-smoking. Then KEEP vs 038 factory-speech 10/8 and report vs 037 10/5.
+- **Last completed unit:** 039 QUANTIFY. factory-speech 10→13 / 8→10. Restored HEADER (PRIMARY worsened ≥ band both).
+- **Next unit:** 040 hypothesizer (factory-speech 13/8 noted ≥8 both). Halt at 040 or D=0 both. Do not replay 039 HEADER ownership.
 
 ## Run authorization (founder, 2026-09-04)
 
@@ -82,3 +82,4 @@
 | 2026-09-06 03:20 | 039 Astra hypothesis applied (HEADER ownership test). Start both writes. | f039 writes |
 | 2026-09-06 05:26 | 039 sugar write DONE 13/13 ACCEPT CH-13. Smoking 13/14, CH-14 started. Start sugar panel. | j039-quit-sugar |
 | 2026-09-06 05:33 | 039 sugar PANEL DONE. Smoking write DONE 14/14. Start smoking panel. | j039-quit-smoking |
+| 2026-09-06 05:40 | 039 QUANTIFY. factory-speech 10→13 / 8→10. HEADER restored. Consecutive no-KEEP: 2. | 040 hypothesizer |

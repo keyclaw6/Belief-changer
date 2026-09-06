@@ -1,0 +1,3 @@
+REVISE
+RE-ARGUMENT — CH-10 — The Night Out That Proves It debut SC-A rebuilt as its own section. Quote: "Saturday comes with its own test." / "On the night, friends, drinks, laughter, tray of lights, hand extending with one won't hurt." This card assigns only token-echo SC-M as farewell-table phrase only. Cut the patio staging to at most one sentence that speaks the settled token, not a full night-out staging.
+UNASSIGNED-REFRAIN — non-mantra phrase "keys, phone, coins" recurs 5x verbatim: "a pocket with keys, phone, coins." / "The pocket holds keys, phone, coins." / "Pocket holds keys, phone, coins." / "Dress. Keys, phone, coins." / "Pocket with keys, phone, coins." Keep one, subtract the repeats; do not invent a new mantra.

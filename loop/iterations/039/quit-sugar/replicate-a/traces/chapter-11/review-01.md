@@ -1,0 +1,12 @@
+REVISE
+
+HEADER — draft opens with workshop header `**IN THIS CHAPTER**` with inventory lines:
+> **IN THIS CHAPTER**
+> - A wall calendar with tomorrow circled in red ink
+> - An ordinary bar on a plain kitchen table at dusk, held up to lamplight
+> - A vow spoken aloud and a bell rung for the first clear morning
+Remove the header/bullets and the tagline `*There is no safer tomorrow waiting for you — this ordinary sweet seen truly closes the trap now.*` Earn the vow as spoken conclusion to the argument already made in `TOMORROW NEVER COMES` / `ARE YOU CHAMPING TO CROSS?` — waiting feeds want, ordinary dose shows ugly — not as inventory. The numbered new instruction `12. TAKE YOUR LAST ORDINARY TREAT AND VOW FREEDOM / Pay attention to the ugliness, then rejoice you are free.` meets the NEW condition and is not HEADER; preserve its number and exact imperative and let the concrete connection already written — `So speak now. Stand at the table. Look at the ordinary tail. Speak aloud, steady, cheerful, total: this was the last ordinary treat; the line around BAD SUGAR closes clean; no benefit remains to moderate; no date remains to wait for.` — carry it.
+
+LENGTHEN to B±15% — Delivered 2930 words. Budget 3600. Need 3060-4140. Extend this card's own vow-conferral, not an earlier proof. Unfinished encounter: the instant rejoicing after the vow is asserted but not inhabited. Quote location to extend:
+> So speak now. Stand at the table. Look at the ordinary tail. Speak aloud, steady, cheerful, total: this was the last ordinary treat; the line around BAD SUGAR closes clean; no benefit remains to moderate; no date remains to wait for.
+Add ~400-800 words staying in the minutes/hours after speaking in that kitchen at dusk — calendar, wrapper left ugly on table, chest/bell, first clear morning that follows — delivering the lived consequence that freedom is now-conferred, not tomorrow-promised. Do not use the extension to re-prove that waiting fattens want already landed in `TOMORROW NEVER COMES`, nor to re-prove fuel-lift, glow-scene, or Friday/one/house/swap totality settled in CH-05/CH-09/CH-10 in a new kitchen setting, nor to add another proof that delay feeds want. Extension must assume those kills and show what happens next with the settled sight already assumed.

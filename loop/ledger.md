@@ -601,5 +601,19 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 
 **What this opens next.** Blocking factory-speech 1/1 both is the KEEP-eligible intersection. Noted 9/7 is not ≥8 both. Journey re-argument 8/6 is not. willpower-lexicon 30/31 is not PRIMARY. New mechanism on numbered instruction/mantra headers; do not replay this OVERCLAIM repair, 037 LENGTHEN, 036 RE-ARGUMENT, 020–024, or 028–032.
 
+### iter-039 — HEADER ownership test  ·  2026-09-06  ·  QUANTIFY
+
+**Hypothesis.** If the chapter-reviewer `HEADER` exemption is replaced with an ownership-and-earned-landing test, voice `factory-speech` falls in both versus 038 (sugar 10, smoking 8), including blocking 1→0 each.
+
+**Change.** One Output bullet in `prompts/chapter-reviewer.md` (see `loop/iterations/039/change.diff`). ACCEPT, RE-ARGUMENT, LENGTHEN, OVERCLAIM left unchanged. Plans reused. Writer Spark 1.3 Go, A1 K=3. Panel 53+57 composer-2.5. Hypothesizer: GPT-6 Astra.
+
+**What happened.** factory-speech blocking+noted 10→13 (sugar) and 8→10 (smoking). Blocking 1→0 / 1→2. Words 55404 / 55597. Sugar voice 13/13. Smoking voice 12/14 (CH-03 numbered instruction still blocking; CH-07 evidence-bound qualification). Smoking journey FAIL 3 (`compliance-missing`). A1 sugar 7 ACCEPT / 6 CAP; smoking 7 ACCEPT / 7 CAP. HEADER fired on `IN THIS CHAPTER` openings. Journey re-argument 8→11 / 6→7. willpower-lexicon 30→32 / 31→20.
+
+**Verdict & why.** QUANTIFY. PRIMARY rose in both (missed ≤8 / ≤6). Restore trigger: PRIMARY worsened by ≥ band in both. `HEADER` returned to 037 KEEP text. Production chapters stay 037.
+
+**What we learned.** Tightening HEADER around ownership and earned landing does not convert numbered instruction headers into spoken commands. The reviewer spent the new test on workshop openings (`IN THIS CHAPTER`). The 038 smoking object survived unchanged.
+
+**What this opens next.** factory-speech noted 13/8 is ≥8 both. Blocking factory-speech 0/2 is not in both. Journey re-argument 11/7 is not. willpower-lexicon 32/20 is not PRIMARY. New mechanism; do not replay this HEADER ownership test, 038 OVERCLAIM, 037 LENGTHEN, 036 RE-ARGUMENT, 020–024, or 028–032.
+
 
 

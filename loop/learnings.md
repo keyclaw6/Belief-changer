@@ -318,5 +318,12 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 **Lesson:** sugar factory-speech blocking+noted 10→10 (noted 10→9 + blocking 1). Smoking non-regression 5→8 (noted 5→7 + blocking 1). Length 55336/56793. New blocking factory-speech both (sugar CH-09 numbered mantra echo; smoking CH-03 numbered instruction header). `OVERCLAIM` fired once (smoking CH-12). Restored: yes. Consecutive no-KEEP: 1.
 **Next direction:** PRIMARY is blocking factory-speech 1/1 both (KEEP-eligible intersection). Numbered instruction/mantra headers. Do not replay this OVERCLAIM repair. Do not replay 037 LENGTHEN / 036 RE-ARGUMENT / 020–024 / 028–032. willpower-lexicon 30/31 is not PRIMARY.
 
+### iter-039 — HEADER ownership test
+**Hypothesis:** PRIMARY both subjects: replace the reviewer HEADER exemption (“numbered ALL-CAPS + one rationale line is not HEADER”) with an ownership-and-earned-landing test, so factory-speech 10→≤8 / 8→≤6 and blocking 1→0 each vs 038. Also report vs 037 10/5.
+**Change:** `prompts/chapter-reviewer.md` (HEADER bullet). Plans reused. Writer Spark 1.3 Go, A1 K=3. Judges composer-2.5, 53+57. Hypothesizer: GPT-6 Astra.
+**Verdict:** QUANTIFY
+**Lesson:** factory-speech blocking+noted 10→13 / 8→10 (vs 038; vs 037 10→13 / 5→10). Length 55404/55597. Sugar blocking 0 (CH-09 numbered mantra now noted willpower). Smoking CH-03 still blocking factory-speech + instruction-paperwork on the same numbered instruction. HEADER fired on `IN THIS CHAPTER` openings. Restored: yes — PRIMARY worsened ≥ band both. Consecutive no-KEEP: 2.
+**Next direction:** factory-speech noted 13/8 is ≥8 both. Do not replay this HEADER ownership test. Do not replay 038 OVERCLAIM / 037 LENGTHEN / 036 RE-ARGUMENT / 020–024 / 028–032. willpower-lexicon 32/20 is not PRIMARY.
+
 
 

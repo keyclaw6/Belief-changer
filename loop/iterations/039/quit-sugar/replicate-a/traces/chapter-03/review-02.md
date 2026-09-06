@@ -1,0 +1,2 @@
+REVISE
+INSTRUCTION — Card-assigned I-03 requires verbatim headline + rationale "JUDGE ONLY BY WHAT IT DOES FOR YOU / Forget harm versus benefit and ask for the benefit." Draft delivers headline as "3. JUDGE ONLY BY WHAT IT DOES FOR YOU" but replaces frozen rationale with "Read every packet by your Tuesday audit — crowded cost, empty gift." Restore the assigned rationale verbatim in the instruction block.

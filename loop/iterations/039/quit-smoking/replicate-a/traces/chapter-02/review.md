@@ -1,0 +1,6 @@
+REVISE
+
+LENGTHEN to B±15% — Delivered 3250 words. Budget 4000. Range required 3400-4600. Add ~150-1350 words to land inside range.
+Expansion assignment: extend this card's own supply-planning consequence, not a later kill. Draft location to extend: "I kept a tin in the car and a dose in the coat lining and a spare in the toolbox, not because I loved planning, but because I dreaded being caught short."
+What to add there: live out one ordinary day of counting, patting the pocket, buying ahead, and dreading being caught short, showing logistics organized around feeding as proof choice left while life stays the same. New understanding to deliver: the reader sees planning itself — not lighting — as servitude, and feels the division between watcher and chain before any stress-cure, reward-taste, substitute, or withdrawal-timing argument.
+Check against earlier and landed work: this does not restage C01 stairs-breath/contract hook, and does not re-prove conclusions already landed in this draft — hiding proves non-choice, hand moves before reason, heaven lives only in the lighting second, circle of tug plus story. Extend what choice-loss costs next in owned logistics; do not rebuild those proofs and do not perform C04 off-switch kill, C05 reward/mild kill, C06 substitutes, or C07 inversion-timing detail.

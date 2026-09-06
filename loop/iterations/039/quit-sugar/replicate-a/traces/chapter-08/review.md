@@ -1,0 +1,3 @@
+REVISE
+UNASSIGNED-REFRAIN — phrase "Only one honest answer fits" recurs 3x verbatim: "Only one honest answer fits." / "Only one honest answer fits a year of trying." / "Only one honest answer fits both." Subtract repeats to one instance; do not invent a new mantra.
+UNASSIGNED-REFRAIN — phrase "Mouth waters a fraction" recurs 3x verbatim: "Mouth waters a fraction at a smell from a bakery vent, then rests." / "Mouth waters a fraction. Fingers shift on the bag handle." / "Hands shift once. Mouth waters a fraction." Subtract repeats; do not invent a new mantra.

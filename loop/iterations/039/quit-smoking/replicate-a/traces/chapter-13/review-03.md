@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` inventory entry instead of entering the lived day. Quote: `**IN THIS CHAPTER**` / `The cup at the window, the queue at the till, the doorway pause, the shutting-down and the ride home, supper and the phone, the evening chair and the patio message, bed and the second kettle.` Delete the header block entirely and start in scene with the settled morning already owned; no numbered instruction outside the final SUMMARY requires earning in this draft, and the SUMMARY bullets are not numbered commands.

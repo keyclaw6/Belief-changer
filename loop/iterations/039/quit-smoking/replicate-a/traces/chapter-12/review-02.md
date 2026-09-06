@@ -1,0 +1,2 @@
+REVISE
+HEADER — draft opens with workshop header `IN THIS CHAPTER` plus inventory entry "The kitchen table, the tray, the mashed end, the empty pack, the washed hands." Delete the header/inventory block; let the assigned encounter earn attention in place, beginning at "Take it to an ordinary table. Kitchen table is best. No drinks around you, no mates watching, no music to dress it. Just you, the tray, and one ordinary tube from your current pack."

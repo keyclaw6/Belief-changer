@@ -1,0 +1,955 @@
+You are the book factory chapter-reviewer, a fresh isolated role call.
+
+Follow this contract exactly:
+
+# Chapter reviewer
+
+You are a factory component, not a judge. You never see a reference book
+or any judge prompt. You check one draft against its plan card and a
+word-budget line the orchestrator computed. Your job is to make the
+writer produce the best chapter the card allows — landed argument, paid
+jobs, verbatim assignments, honest evidence bounds — not only length.
+
+## Inputs (exactly these)
+
+1. The accepted master plan
+2. This chapter's card
+3. The draft chapter
+4. One line: `Delivered N words. Budget B.`
+
+## Output
+
+Start with exactly `ACCEPT` or `REVISE`.
+
+Then at most 7 findings. Each finding is one of:
+
+- `JOB` — the card's primary job is missing, or the chapter continues into a reserved-later job
+- `MANTRA` — a card-assigned mantra/token is not present verbatim
+- `INSTRUCTION` — a card-assigned new instruction is not present verbatim
+- `ID` — a card-cited ID is unresolved or invented
+- `LENGTHEN to B±15%` — delivered words are below 0.85 × B
+- `SHORTEN to B±15%` — delivered words are above 1.15 × B
+- `HEADER` — the draft opens with the workshop header `IN THIS CHAPTER`, or presents a plan-inventory entry instead of an earned spoken command. For each numbered instruction outside the final photographable recap, check that this card assigns it as NEW and that the immediately preceding argument makes its particular imperative the reader's warranted next conclusion; a generic rationale line does not establish either condition. Quote the header and the passage that should earn it. If it is an assigned echo rather than a new instruction, require the frozen words to remain verbatim as a brief spoken sentence in the current context, without an inventory number or a new-instruction announcement. If it is a new instruction, preserve its number and exact imperative, but replace the generic lead-in or rationale with the concrete connection to the argument already made; do not rebuild an earlier proof or announce the instruction's ordinal in words. A numbered command that meets these conditions, and the final photographable instruction recap, are not HEADER.
+- `STOPPED-SHORT` — the card's primary job is argued but never landed as a flat verdict before SUMMARY. The reader can still hold the entering belief. Quote the missing landing.
+- `UNASSIGNED-REFRAIN` — a non-mantra phrase recurs ≥3× verbatim. Name the phrase and the count. Subtract repeats; do not invent a new mantra.
+- `RESERVED-REACH` — the draft performs a later chapter's primary job. Name that later card and cut the overreach to at most one sentence.
+- `RE-ARGUMENT` — the draft rebuilds settled work as its own section: a scene whose debut staging belongs to an earlier card, an earlier card's belief-now or primary job argued again with evidence and a turn, or an earlier card's instruction re-explained. Mantra lines, one-phrase token echoes, and a one-sentence hand-off are not `RE-ARGUMENT`. Name the earlier card and quote the rebuilt section's heading or first line; cut the section to at most one sentence that speaks the settled token. If that cut leaves the chapter below 0.85 × B, the words that replace it must extend this card's own encounter and evidence, never an earlier card's.
+- `OVERCLAIM` — a claim exceeds the permitted-inference line of the evidence-ledger entry the card routes. Quote the overclaim and the bound. The writer must speak the bound; never print the ledger ID or grade in prose.
+
+No other finding types. No style notes. No "sounds like AI." No comparison
+to any other book. No warmth, tone, or voice coaching.
+
+`ACCEPT` only when every check above is fine (length inside ±15% of B, job
+done and stopped and landed, assigned mantras/instructions verbatim, IDs
+resolved, no `HEADER`, no unassigned refrain, no reserved-later job, no
+re-argument, no overclaim).
+
+`REVISE` when any check fails. List the findings. Be specific: quote the
+missing job, the missing wording, or the overclaim.
+
+## Rules
+
+- Do not rewrite the chapter yourself.
+- Do not invent a word budget. Use B from the orchestrator line.
+- Do not ask for another review round. The orchestrator decides whether
+  there is another rewrite (up to three).
+- When you demand more words, make the LENGTHEN finding an expansion assignment, not merely a quotation of the card's job: identify a specific unfinished encounter, unanswered objection, or undeveloped consequence belonging to this card, quote the draft location to extend, and state what new understanding or lived consequence that extension must deliver. Check that target against earlier cards and against conclusions already landed in this draft; neither an earlier proof in a new setting nor another proof of the same landed conclusion is a valid expansion target. For an ordinary-life card, extend what happens next with the settled understanding already assumed, not how that understanding is proved again. If you cannot identify an unspent target supported by the card and plan, report that limitation within LENGTHEN rather than inventing evidence or requesting generic additional examples; retain the computed budget and the existing ACCEPT requirements.
+- Your entire reply IS the review.
+
+Delivered 5171 words. Budget 5200.
+
+### The accepted master plan
+```
+# Master Plan — Quit Sugar
+`production-books/quit-sugar/master-plan.md`
+
+## 1. BOOK CORE
+
+Target behavior: Compulsive consumption of refined / added sugar and junk carbs — the craving-snacking loop, the lift-crash-repeat, the evening binge and daily grazing, not nutrition pedantry.
+
+Reader (planner-facing state): An adult who feels quietly trapped in the sweet loop, has tried diets, moderation rules and white-knuckle weeks and watched each collapse, suspects the whole approach is wrong, and still believes life would be greyer without sweet treats. No proper-name handle. No pupil-persona.
+
+Load-bearing false belief: Bad sugar is a genuine treat or fuel that makes life sweeter and more bearable, and life without it would be deprivation.
+
+Through-line: Bad sugar gives nothing; the Sugar Trap creates the emptiness, fatigue and need it pretends to solve; see the con, starve the tiny physical echo, and eating returns to hunger, satisfaction and real food enjoyed as favourite — escape, not sacrifice.
+
+Format: Full-length Carr book, 13 chapters, 60,000 words planned. Front matter authority dossier assumed. Back-matter appendix quarantines raw citations. One ordinary-life chapter after the vow, then short photographable recap.
+
+Fork 1 — Inner monster: Full Carr personification, default. Little creature to starve: THE NIBBLER, called the Nibbler. Belief-system that feeds it: THE SWEET CON, called the Sweet Con. Craving is external, small, already dying; its grumbles are death throes to rejoice at, never a mighty enemy demanding willpower.
+
+Fork 2 — Outcome: Total cessation inside a redrawn line, commanded with cheerful certainty. BAD SUGAR is the quit target. Moderation foreclosed with pincer and cliff image. No autonomy-to-moderate close; close is commanded vow and instant congratulation.
+
+Fork 3 — Science weight: Hard facts at full Carr force, flat and frightening where true, then relief that change is not from fear. Facts arrive as settled fact, never literature review. Raw citations quarantined. Evidence limits honoured by not overclaiming; human sugar withdrawal never claimed as diagnosis; animal work never sold as human proof.
+
+Fork 4 — Villain: Two villains, both hit hard. The engineered trap — sugar industry, bliss-point formulation, advertising and ubiquity that manufactured desire — and the named anti-method — the Willpower Method and its diet-restriction kin — that kept the reader in it. Warm to the person, vicious to the trap and the wrong method. Never contempt for the reader.
+
+Fork 5 — Void: Change nothing else in life. Natural baseline returns on its own. Body, hunger, satisfaction, instinct and real food are the positive authority, met as concrete encounters in the first third. No replacement system, no void-filling programme, no trigger-avoidance as strategy.
+
+Redefinition and margin-for-error doctrine: BAD SUGAR means refined sugar plus added free sugars plus junk processed carbs and starchy snack-carbs eaten as sweet hits, including sugary drinks, confectionery, biscuits, cakes, desserts, sweetened cereals and equivalent grazing doses. Definition boxed in CH-01 and decreed: when this book says sugar, take it to mean BAD SUGAR. Natural sugars inside whole fruit, vegetables and plain meals are not the target and belong to the positive authority menu. Full total-abstinence trap logic runs inside the line: there is no healthy level other than zero sought. Margin: the body can cope with an occasional accidental blip, but the mind cannot afford a deliberate one; a slip revives nothing unless the Sweet Con belief is let back in. Seatbelt logic. Guard the belief, not the behaviour with panic.
+
+Clinical / eating-disorder safety perimeter: Plan-wide advisory CA-SAFE defined once in §5. Routed on safety cards and in ledger safety limits. Never fused into instruction wording. No diabetes management, no medical nutrition therapy, no eating-disorder treatment, no weight-loss mechanics. Crisis-pointer territory, not method territory. Method advice never overrides clinician advice; any reader with diabetes, on glucose-affecting medication, pregnant, with history of eating disorder, or with medical risk talks to their clinician and uses this book for belief change only.
+
+Strongest pro-behavior scene: The deserved celebration — late afternoon or evening, cinema or sofa or birthday table, the chocolate / dessert presented as love, reward and the point of the occasion. Saved for CH-09 and reassigned drop by drop.
+
+Destination state: Whenever sweet craving or sweet memory crosses the mind, the reader feels relief and freedom that they no longer feed the Sugar Trap — happy to be free, pitying trapped users, never reopening the decision, inhabiting mornings, shops and meals with ease.
+
+Fresh ending reframe (saved for CH-13 only): You have not given up sweetness; sweetness was stolen from you by the Trap and has now been handed back — this was never about quitting, it was about growing back into the eater you were.
+
+Method preserved: escape not sacrifice; warm to the person / vicious to the trap; no willpower as solution; fear raised at full force then disowned by the escape wherever assigned; immediate freedom after belief change; autonomy of self-discovery inside a commanded frame; original prose; Fork-1 line per style guide.
+
+## 2. COMPACT EVIDENCE LEDGER
+
+Each row is single-unit unless noted. Writer may use only IDs cited on their card, within stated limits.
+
+EV-01 — Lived fuel misread.
+Finding: Mid-afternoon dip answered with a sweet top-up believed to be functioning.
+Reader line: "I would have something quick and sweet but now know that will only give a short term lift which will inevitably be followed by a fast drop."
+Research unit: LEU-001. Source: bank-02 B-003. Grade: lived account.
+Scope: afternoon yo-yo routine, recovered-writer description.
+Permitted inference: the lift–crash cycle is self-described by recovered writers; the fuel misreads a spike-then-drop as genuine energy.
+Prohibited inference: that every reader has clinically low blood sugar, or that sugar is ever real fuel.
+Empirical limit: lived description, not glucose measurement.
+Safety limit: no medical diagnosis from this quote; honour CA-SAFE.
+
+EV-02 — Lived one-bite-becomes-box.
+Finding: A permitted sliver triggers an unstoppable binge; loss of control as trap signature.
+Reader line: "I just crave sweets and when i eat them, i feel like i cant stop."
+Research unit: LEU-002. Source: bank-02 BM-3. Grade: lived account.
+Scope: evening at home, moderation-rule collapse.
+Permitted inference: the craving, once triggered, carries the binge; the loss-of-control is the trap's signature.
+Prohibited inference: that sugar condemns anyone to helplessness permanently.
+Empirical limit: lived description of triggered binge.
+Safety limit: no pathological labeling of the reader; honour CA-SAFE.
+
+EV-03 — Lived deserved reward.
+Finding: Sweet as self-payment for stress, virtue or celebration.
+Reader line: "celebrating, rewarding myself, going to the cinema, etc with chocolate."
+Research unit: LEU-003. Source: bank-09 LX-158. Grade: lived account.
+Scope: celebration / cinema / after-hard-day reward moment.
+Permitted inference: dessert as self-payment for virtue is a community-named frame; the reward-frame keeps the loop alive.
+Prohibited inference: that no one may ever enjoy sweet food.
+Empirical limit: lived frame, not proof of universal motive.
+Safety limit: do not moralize sweetness as universally forbidden.
+
+EV-04 — Intermittent-binge model.
+Finding: Intermittent sugar access produces bingeing, craving, withdrawal signs and cross-sensitization with sugar as reinforcer.
+Research unit: S-1. Source: S-1. Grade: SUPPORTED.
+Scope: animals, intermittent 12-h access.
+Permitted inference: schedule-plus-sugar can drive binge pattern in this model.
+Prohibited inference: that this proves human sugar addiction diagnosis.
+Empirical limit: rat model, intermittent 12-h access; translates cautiously to humans.
+Safety limit: no human withdrawal diagnosis; honour CA-SAFE.
+
+EV-05 — Dopamine release on binge.
+Finding: Each sugar binge releases dopamine in nucleus accumbens, re-triggering reward circuit.
+Research unit: S-2. Source: S-2. Grade: SUPPORTED.
+Scope: animals, microdialysis.
+Permitted inference: binge re-fires wanting circuitry in this model.
+Prohibited inference: that dopamine equals pleasure or that magnitude equals drugs of abuse.
+Empirical limit: animal microdialysis; magnitude smaller than drugs of abuse.
+Safety limit: mechanism visibility only; honour CA-SAFE.
+
+EV-06 — Measured dip after sugar.
+Finding: After sugar bingeing, low accumbens dopamine with rise in opposing transmitter — real measured dip after the sugar.
+Research unit: S-3. Source: S-3. Grade: SUPPORTED.
+Scope: animals, withdrawal phase.
+Permitted inference: the low follows the high in this model; supports rescuer-as-perpetrator shape.
+Prohibited inference: that human sugar withdrawal is a diagnosis.
+Empirical limit: opiate-like, naloxone-precipitated; human sugar withdrawal not a diagnosis.
+Safety limit: do not label reader as in clinical withdrawal; honour CA-SAFE.
+
+EV-07 — Mild but well-defined.
+Finding: Overall neurochemical dependency characterized by pro-addiction lab as mild but well-defined.
+Research unit: S-4. Source: S-4. Grade: SUPPORTED.
+Scope: rat model summary characterisation.
+Permitted inference: may defuse fear of quitting without denying a grip; trivial physical part.
+Prohibited inference: that quitting requires medical detox or willpower battle.
+Empirical limit: rat model; small magnitude; defuses fear without denying a grip.
+Safety limit: use to calm, not to frighten; honour CA-SAFE.
+
+EV-08 — Schedule is the trap form.
+Finding: Intermittent access drives escalation and binge volume; ad-lib access does not produce dependency signs.
+Research unit: S-5. Source: S-5. Grade: SUPPORTED.
+Scope: animal control-group comparison.
+Permitted inference: restriction-binge yo-yo echoes human diet-binge pattern as trap form.
+Prohibited inference: that ad-lib BAD SUGAR is safe.
+Empirical limit: animal control-group comparison; echoes the human diet-binge yo-yo.
+Safety limit: no diet prescription; honour CA-SAFE.
+
+EV-09 — Opioid / cue analogue.
+Finding: Sugar loop runs on body's own opioid system and cue/reactivity circuits, analogue for lingering cue-driven craving.
+Research unit: S-6. Source: S-6. Grade: SUPPORTED.
+Scope: rodents; naloxone-precipitated signs and cue work.
+Permitted inference: may name lingering wrapper / smell / time-of-day cue firing before the bite.
+Prohibited inference: that cues compel use or that physiology removes choice.
+Empirical limit: rodent; no human physiologic withdrawal proven.
+Safety limit: cues as learned firing, not compulsion; honour CA-SAFE.
+
+EV-10 — Open scientific question.
+Finding: Leading review argues animal bingeing reflects access pattern not sugar neurochemistry and human evidence is thin; sugar-is-addictive is open question.
+Research unit: S-11. Source: S-11. Grade: CONTESTED.
+Scope: perspective review, cross-species.
+Permitted inference: may state honestly that consensus is open while binge behaviours occur under intermittent access.
+Prohibited inference: that contest settles that sugar is harmless or that dependence is proven.
+Empirical limit: perspective review; both camps grant binge behaviors occur under intermittent access; dopamine is not pleasure, wanting / liking distinction.
+Safety limit: use for honesty, not to license continued use; honour CA-SAFE.
+
+EV-11 — Prevalence once.
+Finding: Populations meet addiction-like criteria for highly palatable food on validated scales, pooled prevalence about 14% adults / 12% children, comparable to alcohol / tobacco.
+Research unit: S-12. Source: S-12. Grade: SUPPORTED.
+Scope: population self-report scales.
+Permitted inference: reader is not uniquely weak; trap is common.
+Prohibited inference: that scale score equals DSM-5 diagnosis.
+Empirical limit: self-report; not a DSM-5 diagnosis. Use once only, in CH-08.
+Safety limit: normalise without pathologising; honour CA-SAFE.
+
+EV-12 — Mood predicts, not relief.
+Finding: Higher sugar intake from sweets linked with higher later odds of common mental disorder in men; daily treat predicts future mood, reverse causation checked and not found.
+Research unit: S-15. Source: S-15. Grade: SUPPORTED.
+Scope: longitudinal cohort, men for incident disorder.
+Permitted inference: daily treat predicts later low mood rather than fixing mood.
+Prohibited inference: that sugar causes depression in all readers or that effect is immediate.
+Empirical limit: observational; men only for incident CMD.
+Safety limit: no mental-health diagnosis or promise; honour CA-SAFE.
+
+EV-13 — Deferred load, not free energy.
+Finding: High added-sugar intake linked with higher heart / stroke risk via liver overload, raised blood pressure, chronic inflammation and appetite-control bypass.
+Research unit: S-17. Source: S-17. Grade: SUPPORTED.
+Scope: institutional summaries, population level.
+Permitted inference: lift is deferred load, not free energy.
+Prohibited inference: that any single dose causes disease or that teaspoon figures are exact for the reader.
+Empirical limit: population-level causal language; teaspoon figures approximate.
+Safety limit: population risk, not personal sentence; honour CA-SAFE.
+
+EV-14 — Cavity as bodily stake.
+Finding: Free sugars drive plaque acid and decay; clear healthy-diet guidance to limit free sugars.
+Research unit: S-20. Source: S-20. Grade: SUPPORTED.
+Scope: dental mechanism plus guidance.
+Permitted inference: cavity is a real bodily stake of frequent free-sugar doses.
+Prohibited inference: that brushing / fluoride are irrelevant.
+Empirical limit: caries is mechanism claim; other factors mediate.
+Safety limit: state mechanism, not dental advice; honour CA-SAFE.
+
+EV-15 — Crash mechanism with limit.
+Finding: Post-meal reactive dip gives mechanism for 3pm crash; lift is insulin working and same surge can produce real after-dip, but everyday slumps are not clinically low glucose.
+Research unit: S-21. Source: S-21. Grade: SUPPORTED / MIXED as sealed.
+Scope: healthy non-diabetics, post-meal window.
+Permitted inference: may explain crash as insulin aftermath for some, within limit.
+Prohibited inference: that everyday slump equals clinical hypoglycemia.
+Empirical limit: symptoms often without measured low glucose; reactive hypoglycemia in healthy non-diabetics is contested; clinical hypoglycemia is rare.
+Safety limit: no glucose diagnosis; anyone with diabetes / medication follows clinician; honour CA-SAFE.
+
+EV-16 — Not essential import.
+Finding: Glucose is a nutrient the body manufactures from protein and glycerol; eliminating BAD SUGAR is not deprivation.
+Research unit: S-22. Source: S-22. Grade: SUPPORTED.
+Scope: basic physiology.
+Permitted inference: clean baseline without BAD SUGAR is physiologically coherent.
+Prohibited inference: that this prescribes ketogenic diet or any eating plan.
+Empirical limit: supports clean-baseline; not a prescription of ketogenic diets.
+Safety limit: no diet prescription; honour CA-SAFE.
+
+EV-17 — Days-long hump.
+Finding: Highly palatable food withdrawal modeled in animals and scale-measured in humans, symptoms peaking 2–5 days after cutting down then passing.
+Research unit: S-23. Source: S-23. Grade: SUPPORTED.
+Scope: animal model plus preliminary human scales.
+Permitted inference: discomfort is time-limited hump, days-long, small-scale, not lifelong fight.
+Prohibited inference: that hump is severe, universal or medical withdrawal.
+Empirical limit: human evidence preliminary plus retrospective; the hump is days-long, small-scale.
+Safety limit: normalise without medicalising; honour CA-SAFE.
+
+EV-18 — Split abstinence experiments.
+Finding: Two adolescent sweet-drink abstinence experiments disagree on whether withdrawal improves or worsens symptoms.
+Research unit: S-24. Source: S-24. Grade: CONTESTED.
+Scope: teens, sweet drinks only, 3-day windows.
+Permitted inference: honest line is evidence is split in this narrow window.
+Prohibited inference: that either result proves adult BAD SUGAR course.
+Empirical limit: teens, SSB only, 3-day windows.
+Safety limit: do not generalise to reader course; honour CA-SAFE.
+
+EV-19 — Crowding and cue firing.
+Finding: Reward-circuit crowding / blunting named for escalation and needing family size, while cue-driven hyper-reactivity to wrappers / smells fires before the bite.
+Research unit: S-26. Source: S-26. Grade: MIXED.
+Scope: much imaging in obesity / binge-eating samples.
+Permitted inference: may name needing more for same effect and cue firing as learned trap features.
+Prohibited inference: that imaging proves compulsion.
+Empirical limit: much imaging in obesity / BED; interpretation consistent with, not proven by, imaging.
+Safety limit: describe experience, not brain destiny; honour CA-SAFE.
+
+EV-20 — Ceiling exceeded.
+Finding: WHO sets below 10% / 50g daily free-sugar ceiling and below 5% additional-benefit target because current consumption far exceeds both.
+Research unit: S-16. Source: S-16. Grade: SUPPORTED.
+Scope: population recommendation.
+Permitted inference: normal intake sits far above guidance; feeling fine does not mean intake is low.
+Prohibited inference: that any dose below ceiling is safe or that ceiling is toxicity threshold.
+Empirical limit: population-level recommendation; not sugar is toxic at any dose.
+Safety limit: guidance context, not personal prescription; honour CA-SAFE.
+
+## 3. MANTRA AND FROZEN-TOKEN SHEET
+
+Mantras M-A to M-I. Nine total. Exact wording frozen including punctuation and capitalisation.
+
+M-A — Entry promise. Wording: "you have absolutely nothing to lose and everything to gain"
+Job: Risk-reversal buying compliance with instructions at outrageous claims.
+Debut: CH-01. Echo: CH-02, CH-11.
+Hand-over: In CH-13 final list memory, recalled whenever doubt whispers cost.
+
+M-B — Promise triad. Wording: "easily, immediately and permanently"
+Job: Impossible-sounding contract stated with total confidence.
+Debut: CH-01. Echo: CH-04, CH-11.
+Hand-over: In CH-13 as contract remembered, then assumed.
+
+M-C — Trap metaphor. Wording: "the Sugar Trap"
+Job: Makes stopping an escape, not a sacrifice; one noun re-invokes whole con.
+Debut: CH-02. Echo: CH-07, CH-08, CH-10, CH-12.
+Hand-over: Name it to rejoice at escape whenever sweet thought arises.
+
+M-D — Illusion phrase. Wording: "a genuine treat or fuel"
+Job: Names perceived benefit as single object to demolish; thereafter benefit only called by this token.
+Debut: CH-03. Echo: CH-05, CH-09.
+Hand-over: Reader tests any lingering glow against this phrase in CH-13.
+
+M-E — Little creature. Wording: "the Nibbler"
+Job: Trivial physical loop externalised, small and winnable; grumble relabelled as dying.
+Debut in passing: CH-02. Argued: CH-07. Echo: CH-07, CH-10, CH-12.
+Hand-over: In CH-11 to CH-12, greet grumble as dying Nibbler and rejoice.
+
+M-F — Big creature. Wording: "the Sweet Con"
+Job: Belief-system that feeds the Nibbler; real target of counter-brainwashing.
+Debut in passing: CH-02. Argued: CH-07. Echo: CH-08, CH-10.
+Hand-over: In CH-13, see any sweet thought as Sweet Con script, not own reasoning.
+
+M-G — Sensory phrase. Wording: "that empty, twitchy, slightly shaky, need-something-sweet-now feeling"
+Job: Canonical relabel of withdrawal / craving so reader re-labels body in book words.
+Debut: CH-02. Echo: CH-05, CH-07.
+Hand-over: In CH-12, recognise it once as Nibbler dying, then forget it.
+
+M-H — Stakes phrase, dual valence. Wording: "for the rest of your life"
+Job: Time-horizon as both threat and reward; hooked versus free.
+Debut: CH-03. Echo: CH-08, CH-13. Both valences must appear.
+Hand-over: In CH-13, choose which rest-of-life is wanted.
+
+M-I — Replacement thought, terminal. Wording: "BRILLIANT! I'M FREE!"
+Job: Thought script kept forever; joyful response replacing craving.
+Debut: CH-11. Echo: CH-12, CH-13. Book final word on subject.
+Hand-over: Explicit transfer — whenever sugar crosses mind, think this.
+
+Frozen tokens FT-A to FT-E. Settled-claim phrases invoked verbatim, not mantras.
+
+FT-A — Cost formula. Wording: "flat, foggy and never satisfied"
+Debut: CH-05. Echo: CH-08.
+
+FT-B — Ease clause. Wording: "All you have to do is follow all the instructions."
+Debut: CH-01. Echo: CH-11, CH-13.
+
+FT-C — Claim block, eat contract. Wording: "Eat what you want, when you are hungry, stop when you are satisfied, and never punish yourself again."
+Debut: CH-01. Echo: CH-06, CH-13.
+
+FT-D — Conflict image. Wording: "the tug-of-war of craving and fear"
+Debut: CH-08. Echo: CH-11.
+
+FT-E — TO / FOR verdict. Wording: "It does plenty TO you. It does nothing FOR you."
+Debut: CH-03. Echo: CH-09, CH-10.
+
+## 4. SCENE AND ANALOGY BANK
+
+SC-01 — Kitchen-cupboard con. Concrete: adult at 10pm told one biscuit is free choice, cupboard already half-empty, hand moving before decision. Job: confidence-trick without blame; who's-in-charge trap. Constraint: original prose; warm to person, fraud is the Trap; no shaming gluttony.
+
+SC-02 — Child eating from hunger. Concrete: small child eats peach hungrily, stops mid-bite, runs off; no counting, no guilt, body leads. Job: installs body / hunger / satisfaction / real food as encountered authority. Constraint: concrete encounter, not slogan; do not delay authority to late chapter.
+
+SC-03 — 3pm office lift-crash. Concrete: desk at 3pm, sweet top-up, ten-minute buzz, 4pm fog and second reach. Job: inversion demo for fuel claim. Constraint: honour EV-15 limit; never diagnose glucose.
+
+SC-04 — Evening box emptied. Concrete: permitted single biscuit, wrapper rustle, box empty, regret before swallow ends. Job: genie-in-bottle; moderation absurdity seed. Constraint: no pathological label; use EV-02 only.
+
+SC-05 — Cinema celebration sweet. Concrete: lights dim, shared chocolate at funny scene, warmth, laughter, love in the room — sweet in hand. Job: strongest-case reassignment; pleasure reassigned to scene. Debut full staging only in CH-09. Constraint: meet best case head-on; concede nothing to sugar; original staging once.
+
+SC-06 — Cliff-jump for sweets. Concrete: invited to jump off cliff provided you fall only a few metres; Friday-dessert allowance as safe fall. Job: forecloses cut-down / special ones. Constraint: original sugar wording; absurdity, not instruction to risk.
+
+SC-07 — Tight sweet shoes. Concrete: wearing shoes a size too small all day for the relief of taking them off; relief mistaken for pleasure. Job: flagship illusion-exposer for lift / reward. Constraint: original sugar fit; do not reuse porn / caffeine wording.
+
+SC-08 — Secret pusher and grateful friend. Concrete: someone secretly pushes you into a ditch each morning then offers a hand out; you thank the rescuer who is the perpetrator. Job: rescuer-as-perpetrator emotional compression. Constraint: harsh to pusher, never to reader.
+
+SC-09 — Prison door ajar and hovering lion. Concrete: cell door open, prisoner begs to stay from fear of outside; freed lion paces by open cage from habit, not need. Job: collapses fear-of-failure and fear-of-success; post-change wobble as cage-habit. Constraint: both ropes belong to Trap; no new fear installed.
+
+SC-10 — Sweet-tea perception test and slow pot. Concrete: reader tastes two identical teas mislabelled treat / healthy and swears one is better; water warming so slowly frog never notices. Job: hands-on proof perception lies; gradual harm why feeling fine misleads. Debut full enactment only in CH-09. Constraint: enactment, not homework label; honour evidence limits.
+
+SC-11 — Seatbelt blip. Concrete: seatbelt exists for accidental jolt, not for driving erratically; body absorbs accidental crumb, mind must not steer into it. Job: carries margin-for-error doctrine. Constraint: never licenses deliberate repeat; safety-guarded by CA-SAFE.
+
+## 5. LEXICON AND INSTRUCTION SPINE
+
+Lexicon — Trap register (always for behavior): BAD SUGAR, dose, fix, hit, feed the Nibbler, the Sugar Trap, the Sweet Con, brainwashed, conned, trapped, slavery, con, poison in sweet coat where plausible. Units renamed as doses. Community-normal as brainwashing.
+
+Lexicon — Freedom register (always for stopping): escape, free, freedom, marvellous, wonderful, exciting, rejoice, celebrate, relief, brilliant, get on with enjoying your life, happy to be free.
+
+Lexicon — Banned register: give up, resist, stay strong, discipline, abstain, abstinence, sacrifice except naming illusion of sacrifice, trying to stop, one day at a time, day-counting, streaks, recovery journey, quit cold turkey as framing, instead, I can't have X, giving up. Quit as plain verb allowed.
+
+Reader dialect (source-grounded, for ventriloquised inner voice only): the roller coaster; sugary somethings to get me through; treat when you feel you deserve one; I've managed to be good this week; I want to get off the roller coaster; I-need-to-eat-something-RIGHT-NOW feeling; short term lift then fast drop; I feel like i cant stop; celebrating with chocolate.
+
+Justification menu mapped to demolition:
+just a treat / once a week is fine — CH-10.
+I don't keep it in the house — CH-10.
+I need sugar to function / sugary somethings to get me through — CH-05.
+It rewards me / I deserve one / celebrating with chocolate — CH-09.
+It comforts stress / food is love — CH-09.
+It helps concentration / gets me through afternoon — CH-05.
+Everyone eats it / it's normal — CH-08.
+I'll quit tomorrow / after birthday / after holidays — CH-10.
+Fruit is sugar too so nothing matters — CH-01 definition, CH-06 inhabit.
+
+Clinical advisory CA-SAFE — defined once, boxed:
+> If you live with diabetes or pre-diabetes, take medication that affects blood sugar or appetite, are pregnant, live with an eating disorder past or present, or have any medical condition where changing what you eat could carry risk, talk to your clinician before changing anything and follow their advice first. This book changes a belief about BAD SUGAR; it does not give medical, diabetes, or eating-disorder care. If you ever feel faint, ill, or distressed around food, seek care promptly and put this book aside until you are cleared to continue.
+
+Instruction spine — frozen spoken imperatives only. Headline plus at most one rationale line. Owning chapter shown. All recapped verbatim without chapter callbacks in CH-13 final list. No mid-book recap.
+
+I-01 — Owning CH-01. Wording: KEEP AN OPEN MIND / Question what you think you know about sweetness.
+Recap: final list.
+
+I-02 — Owning CH-02. Wording: DON'T STOP OR CUT DOWN UNTIL YOU FINISH / Carry on exactly as normal while you read.
+Recap: final list.
+
+I-03 — Owning CH-03. Wording: JUDGE ONLY BY WHAT IT DOES FOR YOU / Forget harm versus benefit and ask for the benefit.
+Recap: final list.
+
+I-04 — Owning CH-04. Wording: NEVER BLAME YOURSELF AGAIN / Every failure was the method, never you.
+Recap: final list.
+
+I-05 — Owning CH-05. Wording: BEGIN WITH ELATION, NOT DREAD / You are escaping, not losing.
+Recap: final list.
+
+I-06 — Owning CH-06. Wording: TRUST HUNGER AND SATISFACTION / Eat when hungry, stop when satisfied, enjoy real food.
+Recap: final list.
+
+I-07 — Owning CH-07. Wording: SEE THE GRUMBLE AS DYING, NOT DEMANDING / That feeling is the Nibbler starving.
+Recap: final list.
+
+I-09 — Owning CH-08. Wording: IGNORE ANY ADVICE THAT CONFLICTS WITH THIS METHOD / Other voices rebuild the Con.
+Recap: final list.
+
+I-10 — Owning CH-09. Wording: IGNORE ANYONE WHO QUIT BY WILLPOWER / Their struggle was the wrong method talking.
+Recap: final list.
+
+I-11 — Owning CH-10. Wording: NEVER KEEP A SPECIAL SWEET / One exception keeps the whole Trap alive.
+Recap: final list.
+
+I-12 — Owning CH-11. Wording: TAKE YOUR LAST ORDINARY TREAT AND VOW FREEDOM / Pay attention to the ugliness, then rejoice you are free.
+Recap: final list.
+
+I-13 — Owning CH-12. Wording: NEVER REOPEN THE DECISION / A passing thought is a dead enemy, not an order.
+Recap: final list.
+
+Final photographable recap (CH-13, no callbacks): the twelve imperatives above in order, bare headlines with their single rationale lines, closing with M-I.
+
+## 6. ARC AND LENGTH
+
+Concept debuts: BAD SUGAR line + entry promise + triad + ease clause + eat contract in CH-01. Trap + both creatures in passing + sensory phrase in CH-02. TO/FOR + illusion phrase + stakes phrase in CH-03. Willpower Method named CH-04. Fuel inversion + cost formula CH-05. Inhabit authority CH-06. Mechanism split argued CH-07. Manufacture + fear + identity + prevalence once CH-08. Strongest scene + perception enactment + myths + testimony CH-09. Totality CH-10. Vow + terminal mantra CH-11. Ordinary speech + no-reopen CH-12. Recap + saved growing reframe CH-13.
+
+Demolition curve: low in first third, rising CH-04 to CH-05, peak CH-07 to CH-10, handing to freedom after vow.
+Freedom crescendo: promise in CH-01, deliberately suppressed through middle demolitions, detonated in final quarter CH-11 to CH-13; last fifth holds more freedom language than rest combined.
+Promise front-load: easy-register clustered at entry, then assumed.
+Command frame: reading instructions open, freedom instructions close, both recapped verbatim at very end.
+Saved reframe: growing-back reveal appears only in CH-13.
+
+Structural responsibilities: redefinition box CH-01. Long testimony in main flow in own room CH-09. Myths Q&A distinct room CH-09. Meta-inoculation answering method-objection CH-09 into CH-10. Inhabit-the-ordinary-doing CH-06. Last ordinary treat CH-11. Ordinary life CH-12. Short recap CH-13. Prevalence once CH-08. No mid-book recap. No pre-endgame teaching manual.
+
+Budgets (integer words):
+CH-01 4200, CH-02 5200, CH-03 3800, CH-04 4800, CH-05 6300, CH-06 4800, CH-07 5000, CH-08 5200, CH-09 6800, CH-10 4400, CH-11 3600, CH-12 4200, CH-13 1700.
+Arithmetic sum: 4200+5200+3800+4800+6300+4800+5000+5200+6800+4400+3600+4200+1700 = 60000. Planned total 60,000 within 54,000–66,000.
+
+## 7. COMPACT CHAPTER CARDS
+
+**CH-01 — The Invitation**
+ID: CH-01 / Number: 1 / Title: The Invitation
+Job: non-argument — definition — boxes BAD SUGAR, installs contract and eat promise, converts audience to participant; the fact the reader is holding this book means the decision is already made, and what follows is only good news | Resolves: is this another diet lecture.
+Arc-position: first third, contract open | Freedom low promise only, Demolition not yet.
+Reader-state: wary sweet-lover half-hoping half-scoffing, clutching moderation rules | Encounter: reading these pages with a full cupboard, told not to change anything yet.
+Mantras: M-A — "you have absolutely nothing to lose and everything to gain" / M-B — "easily, immediately and permanently" / FT-B — "All you have to do is follow all the instructions." / FT-C — "Eat what you want, when you are hungry, stop when you are satisfied, and never punish yourself again."
+Scenes: SC-01 token-seed only, fraud named without full staging.
+Structure: redefinition box; authority dossier; reading contract.
+Guardrails: safety CA-SAFE routed silently; originality: original sweet-contract wording, no caffeine import.
+Continuity: receives brief expectation; hands open mind and defined target to CH-02.
+Budget: 4200
+
+**CH-02 — Caught, Not Weak**
+ID: CH-02 / Number: 2 / Title: Caught, Not Weak
+Job: enacted transition — you did not choose freely and are not weak; you were conned into a trap that removed choice | Resolves: I choose this, I just lack discipline.
+Belief-now: enters believing sweet use proves free choice and weak will; leaves knowing the Sugar Trap removed choice and shame belongs to the con.
+Encounter: 10pm kitchen reach before decision, cupboard evidence against free-choice story.
+Evidence: EV-02 limits no permanent helplessness, no pathology label; EV-08 schedule as trap form, animal caution.
+New-instruction: I-02 — DON'T STOP OR CUT DOWN UNTIL YOU FINISH / Carry on exactly as normal while you read.
+Reserved-later: fuel reassignment to CH-05; mechanism split to CH-07; moderation kill to CH-10; sweetest scene to CH-09.
+Arc-position: first third, trap first seen | Freedom low, Demolition ground-laying.
+Reader-state: secret evening binger ashamed of empty box | Encounter makes move land as own hand witnessed.
+Mantras: M-A — "you have absolutely nothing to lose and everything to gain" / M-C — "the Sugar Trap" / M-E — "the Nibbler" / M-F — "the Sweet Con" / M-G — "that empty, twitchy, slightly shaky, need-something-sweet-now feeling"
+Scenes: SC-01 debut full staging; SC-02 debut full staging as body authority encountered.
+Structure: names both creatures in passing; installs body, hunger, real food as encounters.
+Guardrails: safety CA-SAFE; originality: kitchen-con and child-eating images original, no tight-shoes yet.
+Continuity: receives defined BAD SUGAR and open mind; hands trapped-not-weak to CH-03.
+Budget: 5200
+
+**CH-03 — What Does It Do FOR You**
+ID: CH-03 / Number: 3 / Title: What Does It Do FOR You
+Job: enacted transition — sugar does plenty TO you and nothing FOR you; harm debate replaced by benefit demand; the empty "benefit" is a belief reading a tiny body echo as a gift — name both halves here, leave the full creature split for CH-07 | Resolves: it may harm but benefits outweigh.
+Belief-now: enters conceding harm but clinging to benefit; leaves having to name one real benefit and finding none.
+Encounter: ordinary day audit — sweets logged against mood, teeth, wallet, time — benefit column empty.
+Evidence: EV-20 ceiling exceeded, population guidance not toxicity; EV-14 cavity mechanism with brushing mediation; limits must not overclaim personal sentence.
+New-instruction: I-03 — JUDGE ONLY BY WHAT IT DOES FOR YOU / Forget harm versus benefit and ask for the benefit.
+Reserved-later: energy, reward, comfort kills to CH-05 and CH-09; manufacture to CH-08.
+Arc-position: first third to middle hinge | Freedom still low, Demolition axis set.
+Reader-state: in-denial moderate counting treats as harmless | Encounter forces benefit ledger, not harm ledger.
+Mantras: M-D — "a genuine treat or fuel" / M-H — "for the rest of your life" / FT-E — "It does plenty TO you. It does nothing FOR you."
+Scenes: SC-08 seed only as question, full staging reserved for CH-07.
+Guardrails: safety CA-SAFE population risk not personal sentence; originality: day-audit original, no cliff yet.
+Continuity: receives trapped-not-weak; hands empty benefit column to CH-04.
+Budget: 3800
+
+**CH-04 — The Willpower Method Kept You Trapped**
+ID: CH-04 / Number: 4 / Title: The Willpower Method Kept You Trapped
+Job: enacted transition — past failures prove the wrong method, not a broken self; strong will persisted against instinct | Resolves: I failed so I am hopeless.
+Belief-now: enters believing failure is self; leaves knowing willpower plus restriction is the Trap guard.
+Encounter: diet-week diary — white-knuckle days, forbidden-must-have rebound, Monday restart.
+Evidence: EV-08 schedule echo diet-binge yo-yo, animal caution; EV-17 hump days-long small-scale, not lifelong fight.
+New-instruction: I-04 — NEVER BLAME YOURSELF AGAIN / Every failure was the method, never you.
+Reserved-later: schedule detail to CH-07; moderation absurdity to CH-10.
+Arc-position: middle early | Freedom low, Demolition rising.
+Reader-state: repeated dieter braced for another lecture on discipline | Encounter reframes strong will as evidence for them.
+Mantras: M-B — "easily, immediately and permanently"
+Scenes: SC-04 debut full staging as evening-box proof against willpower.
+Structure: anti-method chapter; braggers and whingers as sub-characters.
+Guardrails: safety CA-SAFE no diet prescription; originality: diet-diary original, no borrowed caffeine braggers wording.
+Continuity: receives empty benefit; hands self-forgiven investigator to CH-05.
+Budget: 4800
+
+**CH-05 — The Lift That Makes the Low**
+ID: CH-05 / Number: 5 / Title: The Lift That Makes the Low
+Job: enacted transition — the energy lift is relief of a low the last dose created; real energy is the body, not the fix; BAD SUGAR is empty calories that nourish nothing and gift no energy the body did not already own; and escaping means the want is removed for good, not a resistance that fails the day the want comes back | Resolves: I need sugar to function.
+Belief-now: enters believing sweet is fuel for afternoon; leaves knowing lift is spike-then-drop misread as energy.
+Encounter: desk afternoon — sweet top-up, brief buzz, fog and second reach witnessed hour by hour.
+Evidence: EV-01 lived lift-then-drop, no glucose diagnosis; EV-15 crash mechanism within contested limit; EV-05 dopamine re-fire magnitude limit; EV-13 deferred load population language.
+New-instruction: I-05 — BEGIN WITH ELATION, NOT DREAD / You are escaping, not losing.
+Reserved-later: full mechanism split to CH-07; cue firing to CH-08; strongest reward to CH-09.
+Arc-position: middle demolition | Freedom suppressed, Demolition climbing.
+Reader-state: afternoon yo-yoer convinced without sweet work stops | Encounter makes inversion bodily, not abstract.
+Mantras: M-D — "a genuine treat or fuel" / M-G — "that empty, twitchy, slightly shaky, need-something-sweet-now feeling" / FT-A — "flat, foggy and never satisfied"
+Scenes: SC-03 debut full staging; SC-07 debut full staging as tight sweet shoes.
+Guardrails: safety CA-SAFE, EV-15 limit must not overclaim clinical low; originality: office-hour staging original.
+Continuity: receives forgiven investigator; hands fuel-killed to CH-06.
+Budget: 6300
+
+**CH-06 — Hunger, Satisfaction and Real Food**
+ID: CH-06 / Number: 6 / Title: Hunger, Satisfaction and Real Food
+Job: enacted transition — inhabit hunger, satisfaction and real food as favourite; eating itself is joy without BAD SUGAR; voice the reader's suspicion that "favourite food" is a play on words and answer it flat — there is no catch, the pleasure is real | Resolves: without sweets eating will be grey.
+Belief-now: enters fearing food joy was sugar; leaves having inhabited ordinary hunger satisfied by real meal as favourite.
+Encounter: plain favourite meal eaten hungry — market vegetables, fresh bread, fruit — noticed, savoured, stopped at satisfied.
+Evidence: EV-16 body manufactures glucose, no diet prescription; EV-03 reward frame limit not forbidding sweet food enjoyment.
+New-instruction: I-06 — TRUST HUNGER AND SATISFACTION / Eat when hungry, stop when satisfied, enjoy real food.
+Reserved-later: mechanism naming to CH-07; manufacture detail to CH-08.
+Arc-position: middle inhabit centre | Freedom warming slightly, Demolition paused for inhabit.
+Reader-state: comfort eater who calls dessert love | Encounter proves love was meal, company, hunger met.
+Mantras: FT-C — "Eat what you want, when you are hungry, stop when you are satisfied, and never punish yourself again."
+Scenes: SC-02 token-echo one phrase only.
+Structure: inhabit-the-ordinary-doing chapter; primary job is inhabit, not kill.
+Guardrails: safety CA-SAFE no eating plan, no good-food / bad-food moralising; originality: market-meal staging original.
+Continuity: receives fuel-killed; hands inhabited eater to CH-07.
+Budget: 4800
+
+**CH-07 — The Nibbler and the Sweet Con**
+ID: CH-07 / Number: 7 / Title: The Nibbler and the Sweet Con
+Job: enacted transition — craving is a trivial dying Nibbler fed by a dominant Sweet Con belief; kill belief and body echo starves | Resolves: withdrawal will be unbearable.
+Belief-now: enters fearing physical need; leaves knowing physical part is mild hump and belief is real target.
+Encounter: early-evening grumble observed and relabelled — twitch noted, smiled at, passing without feed.
+Evidence: EV-06 measured dip, no human diagnosis; EV-07 mild but well-defined small magnitude; EV-17 hump 2-5 days preliminary; EV-09 cue firing learned not compulsion; EV-10 contested honesty.
+New-instruction: I-07 — SEE THE GRUMBLE AS DYING, NOT DEMANDING / That feeling is the Nibbler starving.
+Reserved-later: industry installers detail to CH-08; perception proof to CH-09.
+Arc-position: middle deepening | Freedom still held, Demolition high.
+Reader-state: evening grazer dreading nights without sweets | Encounter makes triviality felt.
+Mantras: M-C — "the Sugar Trap" / M-E — "the Nibbler" / M-F — "the Sweet Con" / M-G — "that empty, twitchy, slightly shaky, need-something-sweet-now feeling"
+Scenes: SC-08 debut full staging; SC-07 token-echo one phrase.
+Structure: mechanism deepening, not debut unit; splits trivial physical from dominant belief; names brainwashing installers in seed.
+Guardrails: safety CA-SAFE no detox claim; originality: Nibbler / Sweet Con vocabulary only, no little / big monster borrowing.
+Continuity: receives inhabited eater; hands split mechanism to CH-08.
+Budget: 5000
+
+**CH-08 — Who Built the Want**
+ID: CH-08 / Number: 8 / Title: Who Built the Want
+Job: enacted transition — desire was manufactured and fear of failing or succeeding is Trap-held tug-of-war; the body is a precision machine whose warning feelings are information, not bulbs to unscrew | Resolves: everyone eats it so it must be fine, and I am the addictive type.
+Belief-now: enters believing want is personal and fear is wisdom; leaves knowing want was engineered and both fear ropes belong to Trap.
+Encounter: supermarket aisle — bliss-point packs, cartoon mascots, checkout ambush — plus mirror of identity excuse.
+Evidence: EV-11 prevalence once only, self-report not diagnosis; EV-12 mood predicts not relief, men-only observational; EV-19 crowding plus cue firing, imaging not proof; EV-04 binge model caution.
+New-instruction: I-09 — IGNORE ANY ADVICE THAT CONFLICTS WITH THIS METHOD / Other voices rebuild the Con.
+Reserved-later: sweetest scene reassignment to CH-09; totality to CH-10.
+Arc-position: middle widening | Demolition peak, Freedom about to rise.
+Reader-state: normal-seeming daily grazer citing family habit and personality | Encounter externalises blame to makers.
+Mantras: M-C — "the Sugar Trap" / M-F — "the Sweet Con" / M-H — "for the rest of your life" / FT-A — "flat, foggy and never satisfied" / FT-D — "the tug-of-war of craving and fear"
+Scenes: SC-09 debut full staging; SC-11 seed for margin, full staging reserved CH-10.
+Structure: fear chapter plus identity-excuse inversion plus prevalence-once room.
+Guardrails: safety CA-SAFE no mental-health diagnosis; originality: aisle staging original, no borrowed lion wording beyond function.
+Continuity: receives split mechanism; hands manufactured-desire cleared to CH-09.
+Budget: 5200
+
+**CH-09 — The Sweetest Moment**
+ID: CH-09 / Number: 9 / Title: The Sweetest Moment
+Job: enacted transition — even the most seductive celebration sweet gave nothing; scene gave everything; perception can lie; this escape is for you first — set aside the industry and everyone else's feelings; reverse the brainwashing from both sides at once — see natural food as the marvellous thing it really is while the brainwashed favourite shows as the bland junk it always was | Resolves: but the cinema / birthday chocolate is real love.
+Belief-now: enters guarding one precious exception; leaves knowing exception was scene sneaking a ride.
+Encounter: cinema lights dim, laughter, shared chocolate — same warmth replayed without dose, sweetness unchanged.
+Evidence: EV-03 reward frame, not forbidding enjoyment; EV-18 split honesty narrow window, not adult course; EV-10 contested honesty.
+New-instruction: I-10 — IGNORE ANYONE WHO QUIT BY WILLPOWER / Their struggle was the wrong method talking.
+Reserved-later: escape-route foreclosure to CH-10; vow readiness to CH-11.
+Arc-position: middle late strongest-case | Demolition peak, Freedom stirring.
+Reader-state: celebration eater protecting deserved treat | Encounter meets best case head-on.
+Mantras: M-D — "a genuine treat or fuel" / FT-E — "It does plenty TO you. It does nothing FOR you."
+Scenes: SC-05 debut full staging; SC-10 debut full enactment as perception test.
+Structure: strongest-case room plus perception enactment plus myths Q&A battery plus embedded long-form testimony in own room in main flow.
+Guardrails: safety CA-SAFE; originality: cinema staging and tea-test wording original, single staging only.
+Continuity: receives manufactured-desire cleared; hands exception-killed to CH-10.
+Budget: 6800
+
+**CH-10 — No Safe Sweet**
+ID: CH-10 / Number: 10 / Title: No Safe Sweet
+Job: enacted transition — inside BAD SUGAR there is no safe cut-down, special occasion, tomorrow or substitute; totality is only stable state; the substitute idea itself is the flaw — swap the product, sweeteners included, and you remain a user, still hooked | Resolves: I'll allow Fridays / just one / I'll wean.
+Belief-now: enters negotiating carve-outs; leaves knowing carve-out keeps belief alive.
+Encounter: Friday-allowance week — anticipation, intensified glow, creep to Thursday and Saturday.
+Evidence: EV-02 one-bite carries binge, no permanent helplessness; EV-08 schedule trap; FT-E verdict invoked via token.
+New-instruction: I-11 — NEVER KEEP A SPECIAL SWEET / One exception keeps the whole Trap alive.
+Reserved-later: readiness gate to CH-11 only; nothing else deferred.
+Arc-position: middle close | Demolition complete, Freedom ready.
+Reader-state: negotiator with house-rule and tomorrow promise | Encounter proves moderation makes precious.
+Mantras: M-C — "the Sugar Trap" / M-E — "the Nibbler" / M-F — "the Sweet Con" / FT-E — "It does plenty TO you. It does nothing FOR you."
+Scenes: SC-06 debut full staging; SC-04 token-echo one phrase; SC-11 debut full staging as seatbelt.
+Structure: escape-route foreclosure; meta-inoculation completed.
+Guardrails: safety CA-SAFE margin never licenses repeat; originality: cliff and seatbelt sugar wordings original.
+Continuity: receives exception-killed; hands totality to CH-11.
+Budget: 4400
+
+**CH-11 — The Last Ordinary Treat**
+ID: CH-11 / Number: 11 / Title: The Last Ordinary Treat
+Job: enacted transition — waiting is the Trap; freedom is now as of this ordinary treat taken with attention and vow | Resolves: I'll start after holidays / when ready someday.
+Belief-now: enters lingering that tomorrow is safer; leaves knowing delay is the Con and freedom is conferred now.
+Encounter: last ordinary sweet taken normally, attention on cloying ugliness, solemn vow, instant rejoicing.
+Evidence: EV-17 hump as days-long echo, not dread; EV-07 mildness to calm.
+New-instruction: I-12 — TAKE YOUR LAST ORDINARY TREAT AND VOW FREEDOM / Pay attention to the ugliness, then rejoice you are free.
+Reserved-later: none; only ordinary life and recap follow as named.
+Arc-position: after vow threshold | Freedom detonation begins.
+Reader-state: convinced reader hovering at edge, wanting certainty | Encounter gates on genuine readiness, champing to cross.
+Mantras: M-A — "you have absolutely nothing to lose and everything to gain" / M-B — "easily, immediately and permanently" / M-I — "BRILLIANT! I'M FREE!" / FT-B — "All you have to do is follow all the instructions." / FT-D — "the tug-of-war of craving and fear"
+Scenes: SC-09 token-echo one phrase only.
+Structure: last ordinary instance, not laboratory dose; readiness gate; instant conferral; two relapse doors warned.
+Guardrails: safety CA-SAFE silent; originality: vow staging original, no lab-dose.
+Continuity: receives totality; hands free identity to CH-12.
+Budget: 3600
+
+**CH-12 — Ordinary Days**
+ID: CH-12 / Number: 12 / Title: Ordinary Days
+Job: non-argument — bridge — inhabits mornings, shops, food with owned thoughts once, guarding belief without new thesis | Resolves: life without sweets will be vigilance.
+Arc-position: after vow, ordinary life | Freedom high, Demolition handed to tokens.
+Reader-state: newly free eater walking first sweet-free morning, shop, meal | Encounter: breakfast, aisle, checkout, evening sofa lived with ease.
+Mantras: M-C — "the Sugar Trap" / M-E — "the Nibbler" / M-I — "BRILLIANT! I'M FREE!"
+Scenes: SC-02 token-echo one phrase; SC-05 token-echo one phrase, no restaging.
+Structure: one ordinary-life chapter; pity-not-envy script; reframe-thought-not-suppress speech; slip-forgiven as rumble lesson; no evangelising; change-nothing-else lived.
+Guardrails: safety CA-SAFE cited; originality: morning-shop-meal vignettes original, no settled-scene restaging, no thought-curriculum.
+Continuity: receives free identity; hands lived freedom to CH-13.
+Budget: 4200
+
+**CH-13 — Get On With Enjoying Life**
+ID: CH-13 / Number: 13 / Title: Get On With Enjoying Life
+Job: non-argument — recap — photographable instruction list, outward push, saved growing reframe revealed; if a reader opened here, send them to the first chapter — this page is saved reminders, not the method | Resolves: I need ongoing teaching to stay free.
+Arc-position: close | Freedom crescendo peak.
+Reader-state: free eater needing portable memory and permission to live | Encounter: list photographed, book closed, meal ahead.
+Mantras: M-H — "for the rest of your life" / M-I — "BRILLIANT! I'M FREE!" / FT-B — "All you have to do is follow all the instructions." / FT-C — "Eat what you want, when you are hungry, stop when you are satisfied, and never punish yourself again."
+Scenes: none new; no token-echo needed.
+Structure: short recap list of spoken imperatives without callbacks; outward imperative; saved reframe debut: sweetness stolen now returned, growing not quitting.
+Guardrails: safety CA-SAFE routed; originality: closing reframe appears here only.
+Continuity: receives lived freedom; hands reader to life.
+Budget: 1700
+```
+
+### This chapter's card
+```
+**CH-08 — Who Built the Want**
+ID: CH-08 / Number: 8 / Title: Who Built the Want
+Job: enacted transition — desire was manufactured and fear of failing or succeeding is Trap-held tug-of-war; the body is a precision machine whose warning feelings are information, not bulbs to unscrew | Resolves: everyone eats it so it must be fine, and I am the addictive type.
+Belief-now: enters believing want is personal and fear is wisdom; leaves knowing want was engineered and both fear ropes belong to Trap.
+Encounter: supermarket aisle — bliss-point packs, cartoon mascots, checkout ambush — plus mirror of identity excuse.
+Evidence: EV-11 prevalence once only, self-report not diagnosis; EV-12 mood predicts not relief, men-only observational; EV-19 crowding plus cue firing, imaging not proof; EV-04 binge model caution.
+New-instruction: I-09 — IGNORE ANY ADVICE THAT CONFLICTS WITH THIS METHOD / Other voices rebuild the Con.
+Reserved-later: sweetest scene reassignment to CH-09; totality to CH-10.
+Arc-position: middle widening | Demolition peak, Freedom about to rise.
+Reader-state: normal-seeming daily grazer citing family habit and personality | Encounter externalises blame to makers.
+Mantras: M-C — "the Sugar Trap" / M-F — "the Sweet Con" / M-H — "for the rest of your life" / FT-A — "flat, foggy and never satisfied" / FT-D — "the tug-of-war of craving and fear"
+Scenes: SC-09 debut full staging; SC-11 seed for margin, full staging reserved CH-10.
+Structure: fear chapter plus identity-excuse inversion plus prevalence-once room.
+Guardrails: safety CA-SAFE no mental-health diagnosis; originality: aisle staging original, no borrowed lion wording beyond function.
+Continuity: receives split mechanism; hands manufactured-desire cleared to CH-09.
+Budget: 5200
+```
+
+### The draft chapter
+```
+Chapter 8
+WHO BUILT THE WANT
+
+*Your want was built in a factory long before you felt it, and the fear that holds you was built with it.*
+
+### THE AISLE THAT WANTS FOR YOU
+
+Walk with me down the bright aisle at noon.
+
+Strip light hums. Packs shout in red and gold. A cartoon tiger winks from a box at child height. A laughing family pours slow chocolate on a screen above the shelf. At the end, by the till, small bars wait like toll collectors. You came for bread and milk. Your hand hovers over a pack you did not plan to touch.
+
+We all know that hover. We lived it. We told ourselves it proved hunger, or habit, or human nature.
+
+The fact is, it proves engineering.
+
+I worked no laboratory, but I have stood where you stand and learned to read what stands there. Each colour was tested. Each crunch was tuned. Each sweetness level was adjusted until tasters ate most and stopped least. That point has a trade name among makers. I will not lend them poetry. Call it plain: they built the dose to make the hand return before the mouth has swallowed.
+
+Ask the aisle cold.
+
+When did a peach ever need a tiger to sell it? When did plain bread ever pay for a laugh-track and a slow pour? When did hunger ever need a checkout ambush to be heard?
+
+Only one honest answer fits. Hunger never needed help. The pack needed help, because the pack does nothing hunger asks.
+
+You walked into the Sugar Trap before you could read the packs.
+
+That is not blame of you. Warm blood, kind heart, empty stomach at noon, child tugging the sleeve — who would not hover? You were conned, never foolish. The con deserves harsh words. You deserve kind ones. Separate them and shame falls away.
+
+See the makers plain and the hover loses rank. It was never proof you love BAD SUGAR. It was proof BAD SUGAR was built to be hovered over.
+
+Stand a minute longer and read the shelf like a ledger of intent. The small packs at the till are not there by accident. The tall bags at eye level are not there by accident. The cartoon at knee height is not there by accident. The end-cap with two-for-one is not there by accident. Men and women in clean rooms argued for weeks where your eyes would fall first, what your thumb would touch, what your child would grab while you count coins. Your noon hunger did not design that aisle. Their hunger for your hand did.
+
+We tell ourselves we chose. We all told that story. We walked past bright rows and felt a pull and called the pull our own taste. A pull built in a test kitchen and tuned on a hundred tasters is not your taste. It is their craft arriving in your arm.
+
+Ask whose hand it is.
+
+When did your body ever ask for red and gold before it asked for food? When did your stomach ever point to a tiger? When did a plain meal ever need a screen to be wanted?
+
+There is only one answer that holds in daylight. The body pointed to a meal. The aisle pointed to a dose. You mistook the second pointing for the first because both arrive as a hover in the arm. Once seen, the two hovers cannot be confused again. One comes from under the ribs. One comes from over the shelf.
+
+### NOT YOUR NATURE
+
+Then comes the mirror excuse, spoken low in your own dialect.
+
+"Everyone eats it so it must be fine. And me — I have always been the addictive type. Sweet runs in the family. I need sugary somethings to get me through."
+
+Hear it fully before it falls, for it sounds like wisdom and acts like a lock.
+
+The fact is, common does not mean sound. Shared does not mean true. We all learned to dose because we all were taught, not because we all were born to it.
+
+Look around any full carriage or office. About one adult in seven and about one child in eight answer yes to enough signs on food questionnaires to look like food addiction on paper, at a rate like drink and smoke. That paper is not a verdict on you, and it is not a disease stamped for life. It is a count of how many hands hover.
+
+Do you see what that count proves? Not that you are broken. That the trap is common.
+
+That library voice is the Sweet Con, not your body.
+
+You are clear of blame in this, and that truth steadies the hands.
+
+Cause runs the other way round from what the mirror says. You did not binge because you were born restless and moody and weak around packets. You grew restless and moody and hunt-though-full because you dosed daily. The traits we call personality were the bill, not the order.
+
+In rats given sweet access that came and went in timed bursts, the pattern drove binge volume, hunt, and low after high, with cross-fire to other rewards. I give you that animal caution flat, because rats are not people and a timed feeder is not a life. What it shows is form: coming-and-going plus sweet drives hunt. Our diet weeks and pay-day treats and forbidden-until-Friday rules copied that form exactly. Restrict, crave, permit a sliver, empty the box. That yo-yo is trap form, not character.
+
+So ask the mirror cold.
+
+When did your so-called addictive nature ever fire at plain meals that close level for hours? When did family habit ever prove benefit, rather than prove teaching? When did calling yourself the type ever calm a single evening, rather than hand you a reason to open the packet?
+
+Only one verdict fits all three. The want was planted, then called nature to stop you pulling it out.
+
+Take the family table plain. Your mother put cake where love was. Your father bought bars on long drives to keep peace in the back seat. Your gran pressed biscuits into your palm at the door because her gran did the same. No villainy in those hands. Love was in them. Yet the lesson landed all the same: sweet means love, sweet means peace, sweet means home. You learned the lesson before you had teeth to question it. A lesson learned before language is not nature. It is early teaching that feels like nature because you never saw its first day.
+
+I learned my own mirror line and laughed when I heard it aloud. I told friends I had no stop button. I told myself others could take one square and I could not, so I must be built different. Then I watched those same others at midnight with the same rustle and the same sour mouth and the same talk about tomorrow. Different faces, same hunt. Different stories, same box. My special flaw was a shared script. Shared scripts are not genes. They are lessons repeated until they sound like blood.
+
+Ask blood itself.
+
+When did your blood ever ask for a wrapper? When did your grandmother's biscuits ever teach your stomach, rather than teach your heart to read sugar as love? When did a shared family habit ever prove a body need, rather than prove a shared kitchen?
+
+One answer returns every time. Teaching runs in families. Need does not. The mirror shows training, not fate.
+
+### MORE, NOT LESS
+
+There is a second lie inside the first, and you have lived it without words.
+
+The first bar used to be enough to quiet the talk for an hour. Then it took two. Then the family pack. Then the pack plus a drink. You told yourself taste had grown, or stress had grown, or you had grown greedy.
+
+The fact is, the circuit dulled while the bells sharpened.
+
+Call it plain, without brain destiny. After months of hits, the same dose gives less lift, so hands reach for more to chase the first buzz. At the same hour, wrapper rustle, smell from two seats away, clock time, feet on a certain path, fire the mouth before the bite. Wanting parts from liking. Mouth hunts what heart does not even enjoy.
+
+Brain pictures in heavy samples show both halves — dulling to the dose plus flare at the cue — but pictures suggest, they do not compel. No scan removes choice. What matters is lived time: need more for the same effect, called earlier by sight and smell.
+
+Ask your own evenings.
+
+When did the second helping ever taste better than the third bite of the first? When did needing family size ever prove pleasure, rather than prove dulling? When did mouth watering at rustle ever point to bread and soup and close, rather than point to a bright corner and open?
+
+Only one answer holds across every sofa you ever sat on. More proved less. The lift shrank while the call grew louder.
+
+That is not a flaw in you. That is a trap doing its work inside you. We ended flat, foggy and never satisfied after every box and bottle.
+
+See dulling plus bell as one trick and the shame story dies. You were not greedy. You were crowded and cued.
+
+Follow that dulling across a year and you will see why will-talk never fit. January: one small bar with tea quiets the head till supper. March: one small bar leaves the head loud, so hands add biscuits. June: biscuits plus bar leave the mouth furry, so hands add a cold bottle from the fridge to wash it down. October: the whole pile leaves you dull by eight and hunting by nine. Taste did not grow. Stress did not triple. The circuit asked for a larger key to turn the same lock, while bells learned to ring at smaller sounds. A rustle that once passed unheard now waters the mouth. A clock time that once held no meaning now tightens the shoulders. Less lift, louder call. That pair is not appetite. That pair is training.
+
+I heard my own bells sharpen month by month. First it was hunger-talk only at ten at night. Then at three in the afternoon. Then at eleven in the morning when the post trolley rattled. Then at the petrol pump, at the cinema queue, at the school gate with other parents unwrapping. Each new bell felt like proof I needed more. Each new bell was proof the call had learned a new corner. The mouth learned drawers the way dogs learn bells. Drawers are not orders.
+
+Ask the larger pack cold.
+
+When did a larger pack ever close the night the small pack once closed? When did a louder bell ever bring a larger pleasure, rather than bring an earlier hunt? When did chasing the first buzz with double ever catch it, rather than push it a day further off?
+
+Only one honest answer fits a year of trying. Double never caught it. Double buried it. The chase proves the dulling, not the delight.
+
+### THE SWEET THAT DARKENS
+
+Now meet the comfort story where it lives, for it keeps many hands hovering.
+
+"I know it drops me later. But it lifts a dark hour. It gets me through. Surely a small treat when you feel you deserve one cannot harm mood."
+
+I hear you. Dark hours are real. Tired mothers, long shifts, bills on the table, rain on glass — who would not want a kind hand in that hour?
+
+The fact is, the kind hand is the one that darkens the next day.
+
+Men who ate sweet food and drink daily were more likely to sit low years later, even when low mood at the start was taken into account. Daily treat predicted later low, not later lift. That is no sentence on you, and if low mood troubles you, see your clinician promptly and put book talk aside. I give you the shape without fear coating: the dose sold as rescue shows as burden on the calendar.
+
+Paper does not eat, but days do. Short term lift then fast drop. Roller coaster mornings. Evening hunt though full. Morning fur. When did rescue ever behave like that? When did a true comfort ever bill you the next day and the next year?
+
+Only one answer fits. It comforts the way a ditch comforts a fall — by being the place you land after the shove.
+
+Your body is a precision machine. Low, tired, irritable, mouth loud at dusk — those are dials, not faults. They report timing, last dose, missed meal, short sleep, long strain. Unscrew the bulb and the engine still knocks. Read the dial and you learn. BAD SUGAR unscrews bulbs. It mutes the signal for an hour while loading the next day. A machine deserves clean signals, not sweet paint over warning lights.
+
+Ask the dark hour cold.
+
+When did a dose ever fix the bill, the shift, the rain? When did it ever leave the next morning clearer than a night without it? When did deserving-one ever stop at one without opening hunt?
+
+One honest answer returns every time. The hour stayed. The eater dimmed.
+
+Sit with a true dark hour and you will feel the difference between a dial and a cure. The baby wakes at three and again at five. The inbox holds a letter you cannot pay without counting twice. The kitchen stays cold till the meter is fed. Shoulders ache from lifting, eyes burn from lack of sleep, head talks low about failing. A bar on the side promises ten minutes of quiet in the head. Ten minutes arrive, sweet on the tongue, then go, leaving shoulders still aching, eyes still burning, letter still unopened, plus a furry mouth and a fresh hunt at dusk. Nothing in the hour moved. Only the dial was painted over for ten minutes. Paint is not repair.
+
+A true comfort moves the hour or moves you to meet it. A hot bath loosens shoulders for the night. A plain meal eaten hungry steadies hands for hours. A call to a friend loosens the chest. Sleep, even short, clears the eyes. Each leaves the next hour lighter to carry. The dose leaves the next hour heavier to carry and calls the heaviness proof you need another. That is not comfort. That is a loan signed in a dark room at cruel interest.
+
+Ask the loan cold.
+
+When did the loan ever get repaid in daylight? When did ten minutes of quiet ever buy ten hours of level? When did borrowing from tomorrow ever make today kinder by morning?
+
+One answer holds across every tired week you ever lived. Borrowing never repaid. It billed. The calendar shows the billing: low days following sweet days more often than sweet days following low days, even when the starting low is set aside. That order matters. It says the treat predicts the low, not the low the treat. Rescue does not behave like that. Burden does.
+
+### THE TWO FEARS
+
+This is where the book is won or lost, so stay with me close.
+
+Two fears hold the hand over the pack. They sound opposite. They are one rope cut in two.
+
+First rope speaks in your dialect: "I want to get off the roller coaster, but I will fail again. I failed diets. I failed Monday rules. I failed the good week. Proof I cannot."
+
+Second rope speaks softer: "If I do stop, life will be grey. No pay for hard days. No love at birthdays. No rounding the night. Parties flat. Sofas bare. Who am I without my treat?"
+
+Failure fear pulls one arm. Success fear pulls the other. Hands freeze mid-air. Freeze is read as wisdom. Freeze is trap work.
+
+Stay inside that frozen second and feel what it is made of, for this second decides years.
+
+You stand at noon in the bright aisle with bread under one arm and milk cold against the palm. The other hand holds a pack you lifted without deciding to lift. Strip light hums. A child wails two bays down. A screen laughs above the shelf. Your hand holds the pack mid-air, neither in the basket nor back on the shelf. Shoulders lock. Breath shortens. Head talks fast.
+
+First voice says put it back and you will grab it tomorrow in a worse hour, shaking, proving you cannot live without. Second voice says put it in the basket and grey waits at home, a life of plain days with no pay, proving you cannot live with. Both voices sound like care. Both sound like prudence. Both advise wait. Wait till Monday. Wait till after the birthday. Wait till stress eases. Wait till you feel stronger.
+
+Waiting feels wise. Waiting is the freeze. Freeze keeps the hand holding the pack and the mind holding the belief, and the belief keeps the hand returning. No choice is made in freeze, so the old choice rides on by default. That is how years pass in an aisle: not by choosing the pack, but by freezing over it.
+
+I know both ropes because I pulled both. I feared the black week of craving and I feared the grey life without. I told myself waiting was prudent. Waiting was the con talking.
+
+The fact is, both fears were planted by the same seller.
+
+Fear of failing was taught by the Willpower Method and its diet kin, the white-knuckle weeks that made packets precious and crashes certain. Of course you failed that method. That method fails everyone who tries it honestly, because it leaves the belief intact and starves the body by rule. Your strong will persisted for days against instinct. That proves will, not lack of it.
+
+Fear of succeeding was taught by bright packs and kind repeaters who called a dose love and reward and normal. Of course grey threatens when glow is promised by every screen. That glow was never in the dose. Scene, company, leisure, laughter, rest — those owned the glow. The dose only sneaked a ride.
+
+Ask both ropes cold, side by side.
+
+When did fearing fail ever predict your future once belief changed, rather than repeat your past under the wrong method? When did fearing grey ever describe a meal eaten hungry and closed at satisfied? When did holding both fears ever free a single evening, rather than freeze the hand over the pack for another year?
+
+Only one honest answer fits both. Neither rope is yours. This is the tug-of-war of craving and fear.
+
+Feel the size change once named. Two mighty warnings shrink to two planted sentences. Planted sentences cannot hold a life. They can only freeze a hand until seen.
+
+Do you want to dose and crash for the rest of your life? Picture mornings clear and level for the rest of your life.
+
+One is a threat the trap wrote. One is a state your body already knows. Choose with eyes open and the ropes fall slack, for both ends were held by the same hand.
+
+### THE PACK LOWERED
+
+Keep that slack-rope minute and live what happens next, for this is the part fear never lets you rehearse.
+
+Your hand still holds the pack mid-air in the bright aisle. Breath short. Shoulders high. The two voices still talk, but now you hear them as voices, not as verdicts. Fail-voice says you will shake tomorrow. Grey-voice says home will be bare tonight. You hear both as lines learned elsewhere: one from diet weeks that starved and blamed you, one from screens that poured chocolate in slow motion over laughter. Neither line comes from under your ribs. Hunger under your ribs points low and round to bread and milk already in your arms. The pack points bright and sharp to nothing hunger asks.
+
+You lower the pack.
+
+No clench. No lecture. No white grip on the trolley handle. The arm that froze mid-air unfreezes because seeing unfreezes. Fingers loosen. The pack tips forward a fraction. Plastic crinkles once under the thumb. Weight leaves the palm. Shelf edge takes it with a soft knock. The tiger winks up at you from knee height, suddenly small, suddenly loud, suddenly plain as paint. You leave it winking and push the trolley on.
+
+Mark what did not happen. No pang tore the chest. No black wave rose through the floor. No voice screamed. The aisle did not tilt. The hand did not shake from loss. It shook for three seconds from unaccustomed movement, then steadied on the trolley bar, cool metal under the palm. That steadiness is not strength summoned. It is sight doing what strength never could. Strength would have held the pack and argued. Sight let it go and walked on.
+
+You pass the rest of the aisle with eyes open. Biscuits in gold. Cakes in clear domes. Bottles sweating cold. Each calls with its learned bell. Each bell rings and spends itself in air because no belief feeds it. Mouth waters a fraction at a smell from a bakery vent, then rests. Feet keep time on tile. Breath lengthens. The trolley wheels tick over a strip in the floor. A child tugs a sleeve for a tiger box and the mother says not today, love, and the child wails and then quiets by the next bay. Quiet comes without a dose. You note that and push on.
+
+Now the checkout ambush, the last toll.
+
+Small bars line both sides at hand height, built to catch the tired minute when waiting loosens the will. Queue shuffles. Belt moves. Beeps sound. A magazine shouts about flat stomachs beside a bar that promises bliss. Your old hand would have added one for the queue and one for the bag, telling itself the shop was long and the afternoon longer. Today the hand rests on the trolley bar. Eyes slide to bright rows from habit, then return to the belt. Slide and return. No debate held in the queue. No lecture about being good this week. No pang nursed. The bell rings with no meal behind it and spends itself before the cashier lifts the milk.
+
+You pay for bread and milk and food. Coins cold. Notes soft. Till beeps. Receipt curls. Bag takes weight. You lift it and feel bread warm through paper, milk cold through plastic, weight honest in the arm. No rustle under talk. No second bag for secret eating in the car. No furry promise folded small. Hands carry food, not fix. That difference weighs more than the bag.
+
+Walk home in daylight and let the wobble come, for wobble will come and wobble proves nothing against you.
+
+First street: shoulders light, steps quick, head quiet. Second street: thin thought arrives, no louder than dust. Should have grabbed one for later. Night will drag. You hear it as line, not as order. Mouth waters a fraction. Fingers shift on the bag handle. No debate starts. Debate fed it for years. Noting lets it spend. By the corner shop the thought thins. By the bus stop it is gone, replaced by notice of cold air, traffic, a dog pulling at a lead, rain spots on pavement. Ordinary time does what argument never could: it passes while you live it.
+
+Third street: second wobble, slyer, dressed as prudence. You will fail tomorrow, so today means nothing. Hear that line as the old diet teacher talking, the one who taught freeze as wisdom. Ask it cold while walking. When did a pack lowered today ever make tomorrow harder, rather than make tomorrow shorter? When did walking home with bread and milk ever prove failure, rather than prove sight? Only one answer fits the pavement under your feet. Today lowered makes tomorrow lighter, because timing untaught itself a fraction with no feed. That is pacing unteaching itself, not will holding out.
+
+You turn your key with mouth clean and hands steady. Hall cool. Bag on the side. Kettle on. That clean mouth is not a prize for courage. It is the state of an arm that was never truly choosing, now seen.
+
+### THE EVENING WITHOUT GREY
+
+Evening arrives without ambush and fear says grey must follow. Stay and watch grey fail to arrive.
+
+Lamp warm on wood. Talk low about small things, price of pears, rain coming, work tomorrow. Hands still in the lap or round the mug. Tea warms the palm. Glass fogs a finger width and clears. Television plays low in the next room. Shoulders touch on the sofa. Laughter comes at the same line. No rustle under talk. No crumbs to fold small into the bin. No hunt though full.
+
+The thin thought comes at half past seven, as it always did where doses used to land. Something sweet to round the night. Hands shift once. Mouth waters a fraction. Head offers its old sentence about deserving. You hear sentence as sentence. You note twitch present, faint, at dusk, as expected where doses used to land. You do not debate. You do not lecture. You note and stay with the room. Kettle hisses. Steam touches the face. Palms take heat. The crest comes like a small wave that believed itself a tide, holds through the theme tune, thins before the pour. You carry tea back, sit in the same dip, follow talk without hunger pulling at the words. Mouth calm returns, not shouted calm, level calm.
+
+Ask the grey threat cold from inside that calm.
+
+When did laughter need a wrapper to sound? When did shoulders touching need sugar to warm? When did story need a dose to hold? When did hands still in the lap ever feel bare, rather than feel restful?
+
+Only one answer holds across the hour. Nothing felt bare. Songs the packet took bows for played on without the rider. Funny stayed funny. Warm stayed warm. Rest came without sour stomach. Eyes grew heavy in the worked way toward ten. Stairs steady. Bed cool. Mouth clean at midnight. House ticks.
+
+That is not a grey evening. That is an evening with its paint washed off, colour underneath brighter. Grey was the threat the seller wrote to keep the hand frozen. Lived time writes the correction: talk, faces, warmth, rest, story, still hands, quiet mouth, sleep that comes clean. Take bows away and songs remain.
+
+Morning proves the night, as morning always does when bells go unfed. You wake with hunger low and patient under the ribs, clear, not panicked. Water cold on the tongue. Light through the blind. The low gnaw points to breakfast the way evening pointed to sleep, a signal to meet, not a flaw to blunt. No morning fur. No hunt carried over. No shame account to settle before the day starts. Feet find the floor with plain relief that the night needed no rescue. That lightness is not a reward for holding out. It is the state of a machine whose dials were read, not painted.
+
+Hold aisle noon beside sofa dusk beside morning light and judge by lived time, not by fear. Noon: pack lowered without struggle, till paid for food, walk home with wobble thinning by the bus stop. Dusk: bell ringing and spent while the kettle boiled, talk followed, tail heard as tail. Morning: hunger low and round, pointing to food and closing when met. Three hours, one lesson. The frozen hand unfreezes by sight. The grey life never arrives. Wobble is pacing unteaching itself. Each pass unfed makes the next fainter because nothing re-teaches it. That is not battle. That is unteaching. One path out of the cell is the seeing you just did.
+
+### THE OPEN DOOR
+
+Picture a small cell with the door ajar.
+
+Light falls through the gap onto stone. Air moves. A prisoner sits on the bunk with hands round knees, staring at the light, begging to stay.
+
+"Outside I will fail. Outside I will be no one. Outside the nights will nag and never end. Leave me inside where at least I know the walls."
+
+The door never locked. The fear locked.
+
+Picture beside it an open cage on grass. Bars swung wide since morning. A lion, fed through bars for years, paces out three steps, turns, paces back, lies by the empty bowl from habit, not need. No chain holds. Timing holds. Pacing is memory in muscle, not hunger in belly.
+
+We were both figures. We begged to keep the packet from fear of failing without it and from fear of grey without it. We paced to cupboard and till by clock and path long after hunger closed. Pacing proved training, never need.
+
+Stay in that lane until it does its work, for this is the fear chapter collapsing to one picture.
+
+Cell habit says stay. Cage habit says pace. Both habits belong to training, not to truth. Failure fear is the prisoner talking. Success fear is the lion pacing. Two postures, one keeper. The keeper is the con that built the want and sold the fear with it.
+
+I tell you flat as one who sat on both floors. The door stands open now because belief opened it. Habit pacing fades in days when unfed by belief. No muscle holds you. Seeing holds you.
+
+A seatbelt rides for a sudden jolt, not for steering at walls; a body rides a stray crumb, but a mind never drives at it.
+
+That seed will grow in its own room later. Take only this now: margin never means permission. Guard the belief and the feet stay clear without white knuckles.
+
+The wobble after opening is not proof you belong inside. It is pacing unteaching itself. Let it ring and pass. Each pass unfed makes the next fainter. Ordinary time does the rest — lamp warm, talk low, hands still, sleep clean.
+
+You have seen who built the want and who forged the two fears to guard it. Makers built the hover. Kind repeaters spread the library that reads echo as love. Diet teachers forged freeze as wisdom and called your strong will weak. All three voices will speak again on screens, at tables, in queues. Hear them as training talking and they lose rank. That is why the next command stands where it stands. It is not a rule to carry. It is sight to keep.
+
+9. IGNORE ANY ADVICE THAT CONFLICTS WITH THIS METHOD
+Other voices rebuild the Con.
+
+**SUMMARY**
+- The hover in the bright aisle was built by makers, not born in hunger.
+- Common use proves common teaching, not personal flaw or fate.
+- Needing more for the same lift while bells fire earlier is dulling plus cue, not greed.
+- Daily sweet sold as rescue predicts later low in men followed for years, not later lift.
+- Failure fear and grey-life fear are two ropes held by one keeper.
+- The open door needs sight to walk through, and wobble after is pacing unteaching itself.
+```
