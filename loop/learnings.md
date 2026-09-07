@@ -350,3 +350,10 @@ Baseline established. Top causal clusters: (1) evidence-grading scaffold leaked 
 
 
 
+
+### iter-041 — dual BASELINE on the Carr-distance instrument
+**Hypothesis:** none — rejudge frozen 037 under the 2026-09-06 panel with Muse Spark 1.3 judges (recalibrated 2026-09-07).
+**Change:** none. 037 chapters + plans copied identically. New judge runner `scripts/loop-runner/judge_replicate_spark.py` (opencode-run spawns; Cursor composer-2.5 script unusable on this harness).
+**Verdict:** BASELINE
+**Lesson:** All-PASS / zero blocking both books on Muse judges too (54 + 58 reports, no retries). New floors: factory-speech 6/9, literary-stylization 5/1, comparison partial 3/4 (+missing 2 smoking-only), book-arc re-argument 1/1, Carr-distance 60/72 (deficits 40/28). No noted class ≥12 both — empty census intersection. The Carr-distance reasons name the real gap (appendix-banished scare, sensory catalogue, clinician disclaimers, private vocab, fragment chains, soft-contract promise) — all already addressed by the unmeasured CH-01 rule + Part B in the files.
+**Next direction:** 042 regenerates plans + chapters so CH-01 + Part B fire; PRIMARY Carr-distance deficit, secondary comparison partial. Research reuse. Do not PRIMARY factory-speech / willpower / re-argument. Do not replay 039/040.

@@ -661,3 +661,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 
 
 
+
+### iter-041 — dual BASELINE on the Carr-distance instrument  ·  2026-09-07
+
+**Hypothesis.** None. Rejudge frozen 037 under the 2026-09-06 panel with the newly calibrated Muse Spark 1.3 judges. First full-book Carr-distance sample.
+
+**Change.** No factory change. 037 chapters + plans copied identically (sugar 54612w / smoking 57583w). New harness adapter `scripts/loop-runner/judge_replicate_spark.py` — the Cursor composer-2.5 runner cannot spawn on this harness (raw-HTTP Muse fails: Go needs the OpenCode session header, Zen-free is OpenCode-only, Vercel is 402).
+
+**What happened.** Panel 54 sugar + 58 smoking reports, all PASS, blocking 0 everywhere. Noted floors: factory-speech 6/9, literary-stylization 5/1, comparison partial 3/4 (missing 2 smoking-only), book-arc re-argument 1/1. Carr-distance: sugar 60 (deficit 40), smoking 72 (deficit 28). The judge's quoted reasons: scare banished to an appendix instead of run-then-disowned; belief-free sensory catalogue and fragment chains instead of plain table-talk; repeated mid-argument clinician disclaimers and private vocabulary (Nibbler, Sweet Con) instead of flat commands; method promise inside a soft contract instead of flat dogmatic elation. No noted class ≥12 in both — empty census intersection.
+
+**Verdict & why.** BASELINE. No KEEP, no PRIMARY, no restore. This census is the new dual-subject floor and the first noise sample on this instrument.
+
+**What we learned.** The Muse panel reproduces the close-out diagnosis with receipts: the engine is present (census near-clean) and the register is not (deficits 40/28 on exactly the CH-01/Part-B symptoms). The instrument change from composer-2.5 moved old floors (journey re-argument 6→1 sugar) — cross-instrument deltas are confounds, never results.
+
+**What this opens next.** 042 regenerates plans + chapters under the current files so the unmeasured CH-01 flat-promise rule and Part B plain-Carr fire. PRIMARY Carr-distance score-deficit, secondary comparison partial. Research reuse. Never factory-speech, willpower-lexicon, or re-argument as PRIMARY.

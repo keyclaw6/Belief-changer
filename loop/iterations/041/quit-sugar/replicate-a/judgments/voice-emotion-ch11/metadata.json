@@ -1,0 +1,1 @@
+{"model": "muse-spark-1.3-contributor", "harness": "opencode-run", "spawn": "opencode run --model opencode-go/muse-spark-1.3-contributor --variant high --auto", "latency_s": 46.789, "attempt": 1, "accepted": true, "error": "", "chars": 4314}

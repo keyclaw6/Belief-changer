@@ -2,13 +2,13 @@
 
 ## Position
 
-- **Iteration:** 040
-- **Stage:** IDLE (Carr-distance instrument landed; campaign handoff)
+- **Iteration:** 041
+- **Stage:** IDLE (041 BASELINE recorded)
 - **Status:** IDLE
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none. Factory is Muse Spark 1.3; this chat is auto-research only.
-- **Last completed unit:** 040 QUANTIFY. Founder close-out: Astra+Fable combined instrument applied. 038 OVERCLAIM kept. 039/040 dropped. Production stays 037.
-- **Next unit:** 041 dual BASELINE — rejudge frozen 037 under the new panel. See `loop/CONTINUE.md`.
+- **Last completed unit:** 041 BASELINE (Muse panel 54+58, all-PASS, deficits 40/28; new floors recorded).
+- **Next unit:** 042 — regenerate plans + chapters so CH-01 + Part B fire; PRIMARY Carr-distance deficit.
 
 ## Run authorization (founder, 2026-09-04; close-out 2026-09-06)
 
