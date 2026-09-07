@@ -1,0 +1,1 @@
+{"model":"muse-spark-1.3-contributor","harness":"opencode-run","spawn":"opencode run --model opencode-go/muse-spark-1.3-contributor --variant high --auto","lane":"belief-mechanic","input":"repeat-belief-mechanic.md","started":"2026-09-07T12:43:13Z"}
