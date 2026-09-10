@@ -2,13 +2,13 @@
 
 ## Position
 
-- **Iteration:** 042
-- **Stage:** factory writes resumed (plans accepted; chapter loops running)
+- **Iteration:** 043
+- **Stage:** factory writes (both subjects regenerating plans + chapters)
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none. Factory is Muse Spark 1.3; this chat is auto-research only.
-- **Last completed unit:** 041 BASELINE. 042 hypothesis (Fable): clinician-disclaimer subtraction, PRIMARY carr-distance deficit. 042 factory change applied (change.diff); both 042 plans regenerated and `fit to write from`; writes halted mid-run.
-- **Next unit:** Resume 042 factory writes (sugar 0/13 chapters, smoking 1/14 — chapter-01 done, chapter-02 partial) when founder says go. Uncommitted: 042 factory files + both production plans/reviews + 042 smoking chapter-01.
+- **Last completed unit:** 042 QUANTIFY (deficit 40→24 / 28→32; clinician kill verified; sugar comparison regressed plan-level). Carried forward: 042 subtraction.
+- **Next unit:** 043 hypothesize → apply → factory → judge → decide.
 
 ## Run authorization (founder, 2026-09-04; close-out 2026-09-06)
 

@@ -105,3 +105,9 @@ Easyway extract.
 
 - E42-M1: Others walked out — former users report the same escape
 - E42-M2: Witness over promise — lived cases carry what claims cannot
+
+## EASYWAY 12 — RELAXATION
+
+- E12-M1: Meal smoke feeds the tug — the after-dinner cigarette answers its own lack, not the feast
+- E12-M2: Stimulant misread as calm — the drug quickens the pulse; ease is borrowed back
+- E12-M3: Icing fallacy — the smoke is taken as the finish while only closing its own gap

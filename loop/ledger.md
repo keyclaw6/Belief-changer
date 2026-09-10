@@ -689,3 +689,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** The subtraction fires exactly as predicted where the deficit had clinician headroom (sugar −16). Where it didn't (smoking), residuals the hypothesis never touched outweighed it within band. Plan regeneration re-cuts comparison coverage — a regen is never free on `missing`/`partial`.
 
 **What this opens next.** 043 PRIMARY from deficit / missing 6/2 / partial 8/4. Never factory-speech, willpower, re-argument. Do not chase smoking +4. Do not replay 039/040.
+
+### iter-043 — planner coverage law  ·  2026-09-10
+
+**Hypothesis.** PRIMARY comparison `missing`: the planner drops justifications on regen (merge/omit license) with no coverage obligation. Bind every lived justification to one card + reviewer coverage gate.
+
+**Change.** `prompts/master-plan-skill-v2.md`, `prompts/master-plan-reviewer-v2.md`. Both plans regenerated (15 ch each). Research reused. `change.diff` recorded.
+
+**What happened.** Missing 6→11 / 2→1. Partial 8→6 / 4→7. Deficit 24→18 (82) / 32→22 (78). Blocking 0 both. Words 59366/58199 (90/97%). Trace: planner satisfied the law on J-justifications while GSBS moves stayed unowned; re-cut added G01-M3/G04-M1/G16/G20 slots and double-counted G15-M1. Partials are one-prong owners. Deficit fell via in-argument side-channel. One SIGUSR2 kill per factory session mid-run; resumed from markers.
+
+**Verdict & why.** QUANTIFY. PRIMARY missed (sugar worsened, smoking missed 0). No restore trigger. Carried forward: 043 coverage law. `parent: 13ad2af2`.
+
+**What we learned.** A coverage law on the planner's ontology cannot score on the judge's ontology. Two regens chased comparison and worsened sugar missing twice while deficit fell three straight runs without being targeted.
+
+**What this opens next.** 044 PRIMARY from deficit 18/22 residuals or a prong-as-evidence repair. Never assignment laws, factory-speech, willpower, re-argument. Do not replay 039/040.

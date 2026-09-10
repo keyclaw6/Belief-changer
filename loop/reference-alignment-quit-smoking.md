@@ -1,23 +1,22 @@
 # Reference Alignment — Our Chapters ↔ Easyway (Clarity 2011 US)
 
-Rebuilt 2026-09-08 from the accepted 042 quit-smoking master plan (15 chapters: C-01…C-15 plus front matter) against
+Rebuilt 2026-09-10 from the accepted 043 quit-smoking master plan (15 chapters: C01…C15 plus FM) against
 `calibration/reference/easyway-smoking/`. Content-based belief-move mapping from plan cards.
-Our book stays 15 chapters against Easyway’s 45 + Final Instructions (many-to-one).
 
 | Our Ch | Our primary job (from card) | Easyway Ch | Easyway belief-move | Quality |
 |--------|-----------------------------|---------|------------------|---------|
-| 01     | invitation, ease contract, three rules (I-01..I-03) | Ch2 THE EASYWAY | invitation, start in elation not doom | STRONG |
-| 02     | trap seen — Ember Mite + Smokescreen named | Ch4 THE SINISTER TRAP | trap first seen, not free choice | STRONG |
-| 03     | what good at all — demand any real benefit, answered none | Ch14 WHAT AM I GIVING UP? | giving up nothing; fear of deprivation | STRONG |
-| 04     | stress disillusion — cigarette creates the edginess it ends | Ch9 STRESS | stress relief is an illusion | STRONG |
-| 05     | pleasure/reward reassigned — the moment was the pleasure | Ch8 RELIEVING WITHDRAWAL PANGS | relief of pangs mistaken for a gift | PARTIAL |
-| 06     | belonging without smoke — the night was the belonging | Ch27 A SOCIAL HABIT? | social exception unmasked | STRONG |
-| 07     | mechanism — small dying tug fed by a large false story | Ch6 NICOTINE ADDICTION | drug loop, dispenser, slight emptiness | STRONG |
-| 08     | who built the want — engineered dose, lights fraud | Ch7 BRAINWASHING AND THE SLEEPING PARTNER | want was installed by outside voices | PARTIAL |
-| 09     | wrong method + substitutes — willpower was the failure | Ch22 THE WILLPOWER METHOD OF STOPPING | named anti-method | STRONG |
-| 10     | ordinary moments intact — coffee, break, meal complete | Ch29 WILL I MISS THE CIGARETTE? | life is fuller without it | STRONG |
-| 11     | every back door shut — just-one/tomorrow/cut-down pre-answered | Ch24 JUST ONE CIGARETTE | just-one myth | STRONG |
-| 12     | a life walked out — witness consolidation | Ch42 OVER TWENTY YEARS OF FEEDBACK | others walked out; witness over promise | PARTIAL |
-| 13     | last ordinary cigarette, vow, instant freedom | Ch40 THE FINAL CIGARETTE | last cigarette, check essentials | STRONG |
-| 14     | mornings, shops, life — ordinary life without tribute | Ch33 THE WITHDRAWAL PERIOD | first days, thoughts without a new manual | PARTIAL |
-| 15     | photograph recap, push outward | Ch46 FINAL INSTRUCTIONS | portable instruction list | STRONG |
+| 01     | promise that sounds impossible; open-mind contract | Ch2 THE EASYWAY | invitation, start in elation not doom | STRONG |
+| 02     | caught, not weak — con removed choice | Ch4 THE SINISTER TRAP | trap first seen, not free choice | STRONG |
+| 03     | harm bargaining replaced by demand for any benefit | Ch14 WHAT AM I GIVING UP? | giving up nothing; fear of deprivation | STRONG |
+| 04     | stress relief re-credited to replenishment | Ch9 STRESS | stress relief is an illusion | STRONG |
+| 05     | reward, filler, thinking-aid re-credited to moment/worker | Ch8 RELIEVING WITHDRAWAL PANGS | relief of pangs mistaken for a gift | PARTIAL |
+| 06     | social pleasure re-credited to people and moment | Ch27 A SOCIAL HABIT? | social exception unmasked | STRONG |
+| 07     | lighting pleasure + controlled-mild use as first dosing | Ch8 RELIEVING WITHDRAWAL PANGS | first relief is replenishment, not control | PARTIAL |
+| 08     | emptiness as brief mite hunger, not self | Ch6 NICOTINE ADDICTION | drug loop, dispenser, slight emptiness | STRONG |
+| 09     | no loophole — cut-down, substitutes, tomorrow, just-one | Ch24 JUST ONE CIGARETTE | just-one myth | STRONG |
+| 10     | designed dispenser; milds defraud | Ch7 BRAINWASHING AND THE SLEEPING PARTNER | want was installed by outside voices | PARTIAL |
+| 11     | perfect evening re-credited to food, company, leisure | Ch12 RELAXATION | meal smoke feeds its own lack, not the feast | STRONG |
+| 12     | ordinary Tuesday inhabited as complete | Ch29 WILL I MISS THE CIGARETTE? | life is fuller without it | STRONG |
+| 13     | last cigarette, stash surrendered, vow, instant identity | Ch40 THE FINAL CIGARETTE | last cigarette, check essentials | STRONG |
+| 14     | first free days on owned thoughts | Ch33 THE WITHDRAWAL PERIOD | first days, thoughts without a new manual | PARTIAL |
+| 15     | portable lines, saved reframe, outward push | Ch46 FINAL INSTRUCTIONS | portable instruction list | STRONG |

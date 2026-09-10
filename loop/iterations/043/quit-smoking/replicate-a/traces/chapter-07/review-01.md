@@ -1,0 +1,2 @@
+REVISE
+UNASSIGNED-REFRAIN — phrase "Once the marks are sorted," recurs 3× verbatim closing parallel verdicts — meter section ("Once the marks are sorted, the day keeps only its rooms and talk..."), mild section ("Once the marks are sorted, the mild keeps only its paler paper..."), final section ("Once the marks are sorted, the day keeps only its work and rest..."). Subtract repeats to at most 2 occurrences; rephrase the third closing in ordinary language; do not invent a new mantra.

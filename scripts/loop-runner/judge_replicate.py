@@ -33,10 +33,10 @@ def parse_alignment(text: str) -> dict[int, int]:
 
 
 def extract_cards(plan: str) -> dict[int, str]:
-    parts = re.split(r"\n(?=(?:#{1,3}\s+|\*\*|Card |)(?:CH-|C-)\d{1,2}\s+—)", plan)
+    parts = re.split(r"\n(?=(?:#{1,3}\s+|\*\*|Card |)(?:CH-|C-?)\d{1,2}\s+—)", plan)
     cards: dict[int, str] = {}
     for p in parts:
-        m = re.match(r"(?:#{1,3}\s+|\*\*|Card |)(?:CH-|C-)(\d{1,2})\s+—", p)
+        m = re.match(r"(?:#{1,3}\s+|\*\*|Card |)(?:CH-|C-?)(\d{1,2})\s+—", p)
         if m:
             cards[int(m.group(1))] = p.strip()
     return cards
@@ -95,6 +95,8 @@ def ids_in(blob: str) -> list[str]:
 def chapter_context(n: int, n_total: int, card: str, mantras: dict[str, str], instructions: dict[str, str], tokens: dict[str, str]) -> str:
     title = card.splitlines()[0].replace("**", "").strip()
     job = field(card, "primary job")
+    if job == "NONE":
+        job = field(card, "job")
     entering = field(card, "entering belief")
     leaving = field(card, "leaving belief")
     if entering == "NONE" and leaving == "NONE":

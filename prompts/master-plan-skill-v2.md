@@ -99,7 +99,7 @@ Every argument-bearing chapter must be composition-feasible within its budget as
 
 For every argument-bearing card, make explicit: the belief now (what is true for the reader at entry, and what this chapter makes true); the concrete subject-specific encounter; evidence IDs plus the limits the writer must not overclaim; any NEW instruction (spoken imperative only); and the reserved-later fence (work assigned only to named later chapter cards). The next argument-bearing card enters from the belief now just installed. Adjacent cards must use distinct encounters and build cumulatively rather than repeat a plan-wide inventory.
 
-Use your judgment to merge, reshape, move, or omit material that cannot meet this boundary honestly and compellingly.
+Every reader justification in the lived-experience synthesis must be owned by exactly one argument-bearing card as that card's demolished objection, in that card's distinct concrete encounter; no justification is catalogued for later, merged away, or left unowned, and no two argument-bearing cards share the same principal encounter. Merge, reshape, or omit only material that has no owning justification after this coverage is met.
 
 Map concept debuts, qualitative demolition and freedom curves, structural responsibilities that genuinely apply, instruction placements, the saved ending reframe, and one integer word budget per chapter.
 

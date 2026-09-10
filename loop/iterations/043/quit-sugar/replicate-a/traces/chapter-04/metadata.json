@@ -1,0 +1,25 @@
+{
+  "chapter": 4,
+  "replicate": "a",
+  "slug": "quit-sugar",
+  "iteration": "043",
+  "chars": 22156,
+  "words_draft": 4134,
+  "words_final": 4134,
+  "words_by_round": [
+    4134
+  ],
+  "budget": 4800,
+  "review_rounds": 1,
+  "review_verdicts": [
+    "ACCEPT"
+  ],
+  "review_verdict": "ACCEPT",
+  "final_status": "ACCEPT",
+  "findings_by_round": [
+    []
+  ],
+  "harness": "opencode-task",
+  "spawn": "fresh-task-subagent-per-role",
+  "rewritten": false
+}

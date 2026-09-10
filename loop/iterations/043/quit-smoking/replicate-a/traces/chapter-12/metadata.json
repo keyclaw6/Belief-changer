@@ -1,0 +1,32 @@
+{
+  "chapter": 12,
+  "replicate": "a",
+  "slug": "quit-smoking",
+  "iteration": "043",
+  "chars": 23368,
+  "words_draft": 4261,
+  "words_final": 4235,
+  "words_by_round": [
+    4261,
+    4235
+  ],
+  "budget": 3800,
+  "review_rounds": 2,
+  "review_verdicts": [
+    "REVISE",
+    "ACCEPT"
+  ],
+  "review_verdict": "ACCEPT",
+  "final_status": "ACCEPT",
+  "findings_by_round": [
+    [
+      "JOB"
+    ],
+    []
+  ],
+  "draft_route": "opencode-go/muse-spark-1.3-contributor",
+  "review_routes": [
+    "opencode-go/muse-spark-1.3-contributor",
+    "opencode-go/muse-spark-1.3-contributor"
+  ]
+}

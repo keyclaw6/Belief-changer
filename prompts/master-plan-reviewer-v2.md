@@ -48,7 +48,11 @@ real food as concrete encounters — is persuasive work now, not setup.
 Every later argument-bearing card must build from the preceding belief now.
 Block adjacent cards that repeat the same principal encounter, re-argue
 settled work, restage a debuted scene's full job (later cards token-echo
-only), break a handoff, or reserve work backward. After the vow, block a
+only), break a handoff, or reserve work backward. Block any reader
+justification from the lived-experience synthesis that has no single owning
+demolition card with its own distinct concrete encounter, and block any
+argument-bearing card whose primary job names no owned justification
+demolished in its own encounter. After the vow, block a
 second manual: no restaged settled scenes, no new thought-curriculum. The complete sequence
 must reach the declared destination rather than merely exhaust topics.
 The first third must install the contract, the already-hooked fact, the two
