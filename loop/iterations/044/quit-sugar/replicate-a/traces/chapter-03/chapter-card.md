@@ -1,0 +1,16 @@
+C-03 | Ch 3 | What good is there at all
+- job: enacted transition — harm-versus-benefit bargaining abandoned; reader now demands one real benefit and finds the taste claim empty
+- objection: JM-02 taste ("it tastes so good, dessert is best part, I L.O.V.E sugar")
+- belief now: entry weighs pleasure against harm; exit asks what pleasure survived inspection
+- encounter: breakroom plate of stale leftover cake eaten standing for tiredness, the first bites heavenly then mechanical, sweetness already cloying
+- evidence: L-09, L-25 plus limits never to forbid whole fruit and never claim individual addiction
+- new instruction: I-03 "BEGIN WITH ELATION." / "There is no doom here to be brave about."
+- fence: fuel rescue to C-04; reward to C-05; love to C-06; loop chemistry to C-08
+- arc/curve: first-third axis; demolition rising
+- reader-state: pleasure-defender clutching the one honest virtue they believe survives
+- mantra: M-D "a treat, a fuel or a comfort" (debut as the single object); T-B "The fact is" (echo)
+- scenes: SC-01 breakroom plate (debut staging); AN-05 sugar haze (debut staging)
+- responsibility: speaks TO versus FOR verdict once, never as ledger
+- guardrails: isolate the variable (taste without tiredness, sweetness without occasion); reassign credit to hunger, rest and company
+- continuity: receives a reader doubting normal from C-02; hands the switched axis to C-04
+- budget: 3800

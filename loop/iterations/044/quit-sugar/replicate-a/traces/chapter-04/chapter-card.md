@@ -1,0 +1,16 @@
+C-04 | Ch 4 | The lift that steals the afternoon
+- job: enacted transition — sugar-as-fuel becomes sugar-as-thief of energy
+- objection: JM-03 fuel ("I need it to get through the slump, to function, to concentrate")
+- belief now: entry reads the 3pm dip as fuel shortage; exit reads it as the morning fix collecting interest
+- encounter: 2pm desk drawer and office drizzle, followed through the crash, headache and second reach till evening
+- evidence: L-01, L-18, L-19, L-20 plus limits never clinical hypoglycemia and never diet prescription
+- new instruction: I-04 "NOTICE THE AFTERNOON." / "Watch what the fix does to the hours after it."
+- fence: reward to C-05; comfort to C-06; schedule mechanics to C-08
+- arc/curve: middle demolition on installed ground
+- reader-state: depleted worker who believes the drawer gets them to six
+- mantra: M-D "a treat, a fuel or a comfort" (echo); M-E "the Sugar Mite" (echo); T-E "foggy, irritable and drained" (debut)
+- scenes: SC-01 token-echo only (staged C-03); AN-02 roller coaster (debut staging)
+- responsibility: first perception exercise (the 3pm watch) enacted in-scene
+- guardrails: keep crash as regulatory swing, never fuel deficit; honor contested edges without hedging the reframe
+- continuity: receives switched axis from C-03; hands a reader whose fuel excuse is bankrupt to C-05
+- budget: 4200

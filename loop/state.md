@@ -2,13 +2,13 @@
 
 ## Position
 
-- **Iteration:** 043
-- **Stage:** factory writes (both subjects regenerating plans + chapters)
-- **Status:** IN PROGRESS
+- **Iteration:** 044
+- **Stage:** IDLE (044 QUANTIFY recorded, factory+plans restored to 041)
+- **Status:** IDLE
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none. Factory is Muse Spark 1.3; this chat is auto-research only.
-- **Last completed unit:** 042 QUANTIFY (deficit 40→24 / 28→32; clinician kill verified; sugar comparison regressed plan-level). Carried forward: 042 subtraction.
-- **Next unit:** 043 hypothesize → apply → factory → judge → decide.
+- **Last completed unit:** 044 QUANTIFY + restore (deficit 18→32 / 22→30; awe unfired; Change 2 backfired; anatomy floor diagnosed; factory+plans at 041 text).
+- **Next unit:** 045 hypothesize (anatomy floor / hedge guard; 042 ban eligible) → apply → factory → judge → decide.
 
 ## Run authorization (founder, 2026-09-04; close-out 2026-09-06)
 

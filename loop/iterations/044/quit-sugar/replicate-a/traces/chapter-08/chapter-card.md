@@ -1,0 +1,16 @@
+C-08 | Ch 8 | The rescue is the perpetrator
+- job: enacted transition — "one bite is controllable" becomes "one bite reopens the loop because the lift is relief from the last dose"
+- objection: JM-06 one-bite/handle-it ("I can handle it this time, just one, it's been long enough")
+- belief now: entry believes the binge is appetite or weakness; exit sees the chemistry running back to front — the fix fires the want and the dip demands the next
+- encounter: midnight dark-kitchen raid — half-package of soft cookies with milk in the dark, first bites heavenly then mechanical past pleasure
+- evidence: L-02, L-10, L-11, L-12, L-14, L-22, L-23, L-24 plus limits animal-model modesty, mild magnitude, never human diagnosis, never dopamine-equals-pleasure, no permanence claims
+- new instruction: I-08 "SEE THE LOOP BACK TO FRONT." / "The rescue is the perpetrator."
+- fence: moderation arithmetic to C-09; swaps to C-10; cue ubiquity proof to C-11
+- arc/curve: middle inversion peak; demolition at full height; freedom still suppressed
+- reader-state: midnight eater bewildered that the box emptied past enjoyment, ready to hear it was never appetite
+- mantra: M-C "the Bad Sugar trap" (echo); M-E "the Sugar Mite" (echo); M-F "the Sweet Talker" (echo); T-D "a faint, empty, slightly edgy gnaw" (echo); T-B "The fact is" (echo)
+- scenes: SC-02 midnight raid (debut staging); AN-03 arsonist firefighter (debut staging); AN-01 house-party gatecrasher (debut staging)
+- responsibility: mechanism deepening on vocabulary already installed; splits trivial physical creature from dominant belief
+- guardrails: keep the Mite small and dying, never a mighty enemy; keep wanting-language, never pleasure-chemistry
+- continuity: receives grounded reader from C-07; hands a reader who sees one bite as re-entry to C-09
+- budget: 4200

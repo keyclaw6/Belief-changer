@@ -1,0 +1,16 @@
+C-15 | Ch 15 | The last ordinary meal
+- job: enacted transition — waiting-to-be-free becomes free-from-the-moment-of-the-vow
+- objection: none owned; threshold, not a kill (two relapse doors warned shut)
+- belief now: entry is convinced but uncommitted, champing yet unvowed; exit is free — the decision made once and never reopened
+- encounter: last ordinary evening meal eaten as normal with attention on the ugliness of the fix, closed with the solemn vow and immediate congratulation
+- evidence: L-21, L-07 plus limits hump days-long and small-scale, never exact-date promise, never medical withdrawal language
+- new instruction: I-14 "TAKE YOUR LAST ORDINARY MEAL AND MAKE THE SOLEMN VOW." / "You are free from the moment you mean it."
+- fence: nothing reserved; ordinary days follow
+- arc/curve: threshold; freedom detonated — final fifth holds more freedom language than the rest combined
+- reader-state: ready reader, champing at the bit, needing only the gate and the words
+- mantra: M-H "FANTASTIC! I'M FREE FROM BAD SUGAR!" (debut); M-A "You have nothing to lose and everything to gain." (echo); M-B "Easy, immediate and permanent." (echo); M-C "the Bad Sugar trap" (echo); M-E "the Sugar Mite" (echo); M-F "the Sweet Talker" (echo); M-G "There is nothing to give up." (echo); T-F "Eat what you love; you will never miss BAD SUGAR." (returns at pivot); T-C "for the rest of your life" (free valence); T-D "a faint, empty, slightly edgy gnaw" (echo as dying); T-G "the tug-of-war" (echo, ropes cut); T-H "All you have to do is follow all the instructions." (echo)
+- scenes: SC-06 token-echo only (staged C-07)
+- responsibility: readiness gate (not ready → re-read, never willpower); last ordinary instance with solemn vow, never a laboratory dose; instant conferral of freedom; two relapse doors warned (bad-day rescue; just-one thought); one plain spoken doctor sentence for readers on medication (second and last CA-SAFE citation)
+- guardrails: keep the meal ordinary and the vow solemn; let few new lines in, thoughts already owned
+- continuity: receives witnessed reader from C-14; hands a free reader to ordinary days C-16
+- budget: 3500

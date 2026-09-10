@@ -1,0 +1,16 @@
+C-05 | Ch 5 | The paycheck that eats you
+- job: enacted transition — sugar-as-earned-reward becomes self-payment in counterfeit coin
+- objection: JM-04 reward ("I deserve it, I earned it, paycheck, grades, hard training")
+- belief now: entry believes the sweet settles the debt of effort; exit sees effort was real and the coin was fake
+- encounter: Friday office cookie plate for a hard week plus the home kitchen paying a hard day with chocolate
+- evidence: L-03, L-05 plus limits never to forbid enjoyment of real food
+- new instruction: I-05 "QUESTION THE REWARD." / "Ask what the treat actually paid you."
+- fence: love/comfort to C-06; one-bite mechanics to C-08
+- arc/curve: middle demolition
+- reader-state: dutiful earner who believes denial after virtue would be unjust
+- mantra: M-D "a treat, a fuel or a comfort" (echo)
+- scenes: SC-08 Friday tradition (debut staging)
+- responsibility: exposes retrofitted rationalization (was the reward the original motive or the afterthought)
+- guardrails: use the reader's own arithmetic (ninety seconds against twenty-four hours) without moralizing dessert
+- continuity: receives fuel-bankrupt reader from C-04; hands reward-bankrupt reader to C-06
+- budget: 3800

@@ -1,0 +1,26 @@
+diff --git i/prompts/master-plan-skill-v2.md w/prompts/master-plan-skill-v2.md
+index 5f6642eb..6916840b 100644
+--- i/prompts/master-plan-skill-v2.md
++++ w/prompts/master-plan-skill-v2.md
+@@ -110,7 +110,7 @@ For a calibration plan, chapter budgets must sum exactly to 54,000–66,000 word
+ Give every chapter a stable ID, number, and working title, then specify only its semantic work order:
+ 
+ - the primary persuasive job declaration and the objection or justification it resolves;
+-- for every argument-bearing card: belief now, concrete subject-specific encounter, evidence-ledger IDs plus the limits the writer must not overclaim, any NEW instruction (spoken imperative only — CA-01), and the reserved-later fence;
++- for every argument-bearing card: belief now, concrete subject-specific encounter, evidence-ledger IDs for every prong of the owned justification plus the limits the writer must not overclaim, any NEW instruction (spoken imperative only — CA-01), and the reserved-later fence; a card whose evidence set stages one prong and gestures the second is incomplete — route the second prong's ledger row onto the same owning card and stage it in the same encounter;
+ - arc position and qualitative curve position;
+ - a planner-facing reader-state (who they are at this beat — not a proper-name handle, not a pupil-persona) and the concrete encounter that makes the move land; never a `Voice:` register/job operator;
+ - mantra and frozen-token IDs only when this chapter debuts or naturally echoes one, with the frozen quote pinned on the card;
+diff --git i/prompts/style-guide.md w/prompts/style-guide.md
+index 4fa14049..faa7bb1e 100644
+--- i/prompts/style-guide.md
++++ w/prompts/style-guide.md
+@@ -206,7 +206,7 @@ The argument changes the belief; the *framing* makes the belief feel safe to ado
+ - **Engineer pride and excitement as the reward.** "Think how proud you'll feel." "You can get *excited* about this." Substitute a positive future emotion for the fear of loss.
+ - **Make the *status quo* feel like the burden.** Quantify the lifetime cost — money, hours, health, "every single day forever for something you don't even need." Reframe *continuing*, not quitting, as the painful ongoing sacrifice.
+ - **Cast the reader as the heroic underdog.** They weren't weak — they were a lone individual against "armies of scientists weaponizing abundance" (Burgeon). Absolves and dignifies.
+-- **Use awe as persuasion.** A reverent catalogue of the body's/mind's natural sophistication makes overriding it with a crude external fix feel like vandalism. Emotion (awe) doing the work of argument.
++- **Use awe as persuasion.** State awe in one concrete body/mind encounter the reader has already lived, with the belief verb in the same sentence — never a reverent catalogue paragraph of the body's sophistication with no belief verb. Emotion (awe) doing the work of argument in one observed moment, not in inventory.
+ - **Hope as near-certainty, concretely.** "9 out of 10 people get past this on their own." A repeatable statistic normalizes self-change and discredits the fragility model.
+ - **Relief is available *now*.** Relocate the payoff to the present moment — "the immediate benefit is the weight off your shoulders" — sidestepping "but I won't feel better for months."
+ - **Money/practical gains are a *bonus*, never the motive.** Demote the practical incentive deliberately: quit because *you'll enjoy life more*. A money-motivated quitter still secretly believes they sacrificed a pleasure.

@@ -1,0 +1,16 @@
+C-13 | Ch 13 | Not weak — outgunned, and not afraid
+- job: enacted transition — "I am broken, born this way, the desire never leaves, quitting is frightening" becomes "the traits are the result, the fear is the trap's last rope, and the method never needed will"
+- objection: JM-11 broken-self ("I was born this way, I have no willpower, different for me, the desire will never go away")
+- belief now: entry believes the person is the problem and the future is fear; exit sees every rope of the tug held by the same hands and stands absolved
+- encounter: night-kitchen inventory of failed diets, cheat days, pills and Monday restarts — the reader's own archaeological shelf of the Willpower Method
+- evidence: L-13, L-16, L-17 plus limits mild magnitude honestly held, contest honestly held, prevalence once only here, never diagnosis
+- new instruction: I-13 "NEVER DOUBT THE DECISION." / "Doubt is the trap knocking."
+- fence: nothing reserved; testimony then vow follow
+- arc/curve: fear/anti-method/identity room; demolition closes; freedom detonation armed
+- reader-state: veteran of every diet, braced to be told they are the fault, secretly hoping the fault was the method
+- mantra: M-C "the Bad Sugar trap" (echo); M-F "the Sweet Talker" (echo); T-G "the tug-of-war" (debut); T-A "the Willpower Method" (full demolition)
+- scenes: AN-07 tug rope (debut staging)
+- responsibility: fear chapter plus anti-method chapter plus identity-excuse plus meta-inoculation (strongest objection to the method ventriloquized and answered); prevalence claim's single appearance
+- guardrails: reframe strong will as evidence for the reader, never against; collapse both fears without leaving a rope in hand
+- continuity: receives exception-free reader from C-12; hands a reader with nothing left to believe in the trap to testimony C-14
+- budget: 4000

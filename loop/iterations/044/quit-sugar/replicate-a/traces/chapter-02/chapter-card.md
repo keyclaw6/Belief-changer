@@ -1,0 +1,16 @@
+C-02 | Ch 2 | Who is eating whom
+- job: enacted transition — "I freely choose this" becomes "I was conned and the choice was removed"
+- objection: JM-01 normalization ("everyone does it, I'm trim, no harm yet, it's how I eat every night")
+- belief now: entry trusts normal as healthy; exit sees normal as engineered default and themselves as deceived, never defective
+- encounter: supermarket checkout line where the loaded cart matches every neighbor's, plus home pantry audit finding sweet in bread, sauce and yoghurt
+- evidence: L-30, L-32 plus limits never to name brands and never personal fate
+- new instruction: I-02 "DO NOT CUT DOWN YET." / "Eat your BAD SUGAR exactly as normal while we look."
+- fence: axis switch to C-03; body authority deepened C-07; industry proof to C-11
+- arc/curve: first-third world; demolition begins; freedom suppressed
+- reader-state: respectable moderate who believes the habit is ordinary and therefore innocent
+- mantra: M-C "the Bad Sugar trap" (echo); M-E "the Sugar Mite" (debut in passing); M-F "the Sweet Talker" (debut in passing); T-D "a faint, empty, slightly edgy gnaw" (debut); T-A "the Willpower Method" (passing name only, demolition reserved to C-13)
+- scenes: SC-03 token-echo only (staged C-01); SC-07 seeded pantry (debut staging)
+- responsibility: names both creatures in passing when trap first seen; installs body/instinct/real food as concrete encounters (watch the next meal; the body as authority), never as refrain
+- guardrails: keep creatures to passing vocabulary here, not a lesson; hold warmth for the conned
+- continuity: receives bounded target from C-01; hands a reader who no longer trusts normal to C-03
+- budget: 3800

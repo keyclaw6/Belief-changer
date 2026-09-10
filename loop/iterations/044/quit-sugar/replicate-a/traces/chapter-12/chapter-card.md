@@ -1,0 +1,16 @@
+C-12 | Ch 12 | The table that never needed it
+- job: enacted transition — the most seductive scene (celebration dessert as love made edible) becomes proof the evening was the pleasure and the spoon only sneaked a ride
+- objection: JM-10 special-occasion ("birthdays, holidays, Fridays, weddings — surely those don't count")
+- belief now: entry believes refusing the celebration sweet refuses the celebration; exit has watched the beloved evening keep every drop of joy with the sweet removed
+- encounter: birthday table — molten chocolate dessert laughing mid-family — braided with the standing Friday nuggets-and-ice-cream tradition
+- evidence: L-03, L-05, L-08, L-25 plus limits never rupture family bonds, never instruct a retaste dose, never forbid whole fruit
+- new instruction: I-12 "PITY THE EATERS; NEVER ENVY THEM." / "They are still inside it."
+- fence: broken-self and fear to C-13; testimony to C-14
+- arc/curve: strongest case met head-on late; demolition's last wall falls
+- reader-state: celebrant afraid freedom means standing apart while everyone laughs
+- mantra: M-D "a treat, a fuel or a comfort" (echo); M-G "There is nothing to give up." (echo)
+- scenes: SC-05 birthday mousse (debut staging); SC-08 token-echo only (staged C-05)
+- responsibility: strongest-case head-on plus myths Q&A distinct room (each myth as quoted reader-voice line, demolished briefly)
+- guardrails: reassign every drop to people, leisure and evening; keep the family's love intact while the meaning is conned
+- continuity: receives absolved reader from C-11; hands a reader with no cherished exception left to C-13
+- budget: 4200

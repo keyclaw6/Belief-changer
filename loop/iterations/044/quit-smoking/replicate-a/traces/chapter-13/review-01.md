@@ -1,0 +1,3 @@
+REVISE
+
+- UNASSIGNED-REFRAIN — phrase "without my voice raised" recurs 7× verbatim in this draft: 2× in THE COUSIN'S WEDDING ("Ask from your own plate without my voice raised." / "Your own mouth answers without my voice raised."), 1× in THE GREY AFTERNOON ("Your own desk answers without my voice raised."), 2× in THE BAR A MONTH ON ("Ask from your own bar stool without my voice raised." / "Your own mornings answer without my voice raised."), 2× in THE SHOP QUEUE ("Ask from the queue without my voice raised." / "Your own basket answers without my voice raised."). It is not a card-assigned mantra/token. Subtract repeats to fewer than 3 total verbatim occurrences — retain at most 2, delete or vary the rest in ordinary language; do not invent a new mantra.

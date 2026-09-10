@@ -1,0 +1,16 @@
+C-07 | Ch 7 | Hunger, satisfaction, favourite
+- job: enacted transition — inhabiting the ordinary meal: hunger trusted, satisfaction recognized, real food tasted as favourite
+- objection: none owned; inhabit, not a kill
+- belief now: entry fears life without sweets is flavourless vigilance; exit has lived one watched meal where hunger came, food satisfied, and sweetness arrived unforced in fruit
+- encounter: watched morning meal eaten slowly — berries, eggs, bread — hunger wave noticed, fullness noticed, taste noticed
+- evidence: L-20, L-25 plus limits never diet prescription and never forbid whole fruit
+- new instruction: I-07 "EAT REAL FOOD WITH ATTENTION." / "Your body is the authority here."
+- fence: mechanism deepening to C-08; moderation foreclosure to C-09
+- arc/curve: middle inhabit valley; demolition pauses, freedom tasted in miniature
+- reader-state: vigilant dieter braced to count and resist, afraid pleasure left with the sweets
+- mantra: M-B "Easy, immediate and permanent." (echo); T-F "Eat what you love; you will never miss BAD SUGAR." (re-quoted)
+- scenes: SC-06 3pm kettle (debut staging — the break that was rest, tea and stretch, never the biscuit)
+- responsibility: inhabit-the-ordinary-doing chapter; body/instinct/real food as lived authority
+- guardrails: keep the meal ordinary and watched, never a meal plan or curriculum
+- continuity: receives heart-cleared reader from C-06; hands a reader who has tasted ordinary satisfaction to C-08
+- budget: 3800

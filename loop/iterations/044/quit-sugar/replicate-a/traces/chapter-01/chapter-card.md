@@ -1,0 +1,16 @@
+C-01 | Ch 1 | Eat nothing different until we finish
+- job: enacted transition — BAD SUGAR bounded as a leavable subset and quitting reframed as easy, immediate and permanent without willpower
+- objection: none owned; complacency pierced by definition + cost
+- belief now: entry believes sugar-in-general is food and quitting means joyless restraint; exit knows the target is BAD SUGAR only and the method promises freedom without sacrifice, finding that hard to believe
+- encounter: morning bathroom mirror (furred teeth, thick head) plus one cola can's teaspoons counted against the WHO ceiling
+- evidence: L-26, L-27, L-28 plus limits not to present ceilings as toxic-at-any-dose and never individual fate
+- new instruction: I-01 "KEEP AN OPEN MIND." / "You have nothing to judge yet."
+- fence: choice mechanics reserved to C-02; taste reassignment to C-03; fuel to C-04; reward to C-05; comfort to C-06; loop chemistry to C-08; moderation to C-09; swaps to C-10; industry to C-11; celebration to C-12; broken-self to C-13
+- arc/curve: first-third contract; freedom promised then suppressed; demolition opens
+- reader-state: defensive sweet-eater expecting deprivation lecture, counting reasons this cannot work for them
+- mantra: M-A "You have nothing to lose and everything to gain." (debut); M-B "Easy, immediate and permanent." (debut); M-C "the Bad Sugar trap" (debut); T-H "All you have to do is follow all the instructions." (debut); T-B "The fact is" (debut); T-C "for the rest of your life" (debut, hooked valence); T-F "Eat what you love; you will never miss BAD SUGAR." (planted)
+- scenes: SC-03 supermarket tour (debut staging)
+- responsibility: redefinition box + definitional decree; paragraph-one flat method promise; full-force owned harm facts landed then relief in same chapter (fear not left as motive)
+- guardrails: keep definition to the boxed line; let cost facts arrive flat without literature texture
+- continuity: receives willingness from C-00; hands bounded target plus standing permission to keep eating as normal to C-02
+- budget: 3800

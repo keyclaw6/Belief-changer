@@ -1,0 +1,16 @@
+C-09 | Ch 9 | The bargain that keeps the cage
+- job: enacted transition — moderation ("just one a day, weekends only, special ones kept") becomes the schedule that manufactures the loop
+- objection: JM-07 moderation/just-a-treat ("just a treat, once a week is fine, one sweet thing a day")
+- belief now: entry believes a kept rule proves control; exit sees the rule as the deprivation-binge timetable — the yo-yo is the trap's form
+- encounter: the desk-drawer "one sweet thing a day" rule collapsing by Thursday into the weekend S-day of desserts twice plus late pizza
+- evidence: L-15, L-14, L-04 plus limits never present moderation as safe, never determinism about individuals
+- new instruction: I-09 "REFUSE THE MODERATION BARGAIN." / "One is never one."
+- fence: swaps and delays to C-10; hidden-sugar audit to C-11; celebration exception to C-12
+- arc/curve: late-middle escape foreclosure; demolition handing toward freedom
+- reader-state: rule-keeper exhausted by negotiating rations, secretly relieved to hear the rule was the problem
+- mantra: M-A "You have nothing to lose and everything to gain." (echo); M-C "the Bad Sugar trap" (echo); T-A "the Willpower Method" (echo); T-H "All you have to do is follow all the instructions." (echo)
+- scenes: AN-04 cliff-jump (debut staging); AN-01 token-echo only (staged C-08)
+- responsibility: totality logic landed — total cessation of BAD SUGAR as the only stable state
+- guardrails: foreclose with the pincer and the image, never with scolding; keep fruit and meals fully permitted
+- continuity: receives one-bite-proof reader from C-08; hands a reader with no rule left to C-10
+- budget: 3800

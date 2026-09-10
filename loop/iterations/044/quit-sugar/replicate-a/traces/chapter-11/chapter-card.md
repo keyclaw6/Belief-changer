@@ -1,0 +1,16 @@
+C-11 | Ch 11 | The kitchen you never chose
+- job: enacted transition — "my cravings are mine" becomes "my cravings were manufactured, stocked and advertised into me"
+- objection: JM-09 carve-out ("I don't keep it in the house, only natural sugar, soymilk and yoghurt are fine, trim so fine")
+- belief now: entry believes the loop lives in their character; exit sees the lab, the shelf and the screen holding the ropes
+- encounter: home pantry and label audit — bread, sauce, yoghurt, cereal each surrendering teaspoons — plus the checkout aisle built as a war zone
+- evidence: L-29, L-30, L-31, L-32, L-26 plus limits anger at trap only, single quotes never proof of intent to addict, ceilings never toxic-at-any-dose
+- new instruction: I-11 "DISREGARD ANYONE WHO QUIT BY THE WILLPOWER METHOD." / "Their struggle is not your evidence."
+- fence: celebration exception to C-12; broken-self to C-13
+- arc/curve: indictment peak; demolition hands to the strongest case
+- reader-state: diligent shopper discovering the "fine" foods were the drip feed all along
+- mantra: T-B "The fact is" (echo); T-E "foggy, irritable and drained" (echo)
+- scenes: AN-06 bliss-point lab (debut staging); SC-03 token-echo only (staged C-01)
+- responsibility: manufacture-of-desire indictment; second perception exercise (label-read) enacted in-scene; second epistemic firewall
+- guardrails: name no brands and no individuals; hold contempt for the engineering, warmth for the engineered
+- continuity: receives swap-free reader from C-10; hands an outwardly angry, inwardly absolved reader to C-12
+- budget: 4000

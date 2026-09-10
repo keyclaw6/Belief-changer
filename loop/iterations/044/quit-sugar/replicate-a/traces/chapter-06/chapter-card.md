@@ -1,0 +1,16 @@
+C-06 | Ch 6 | Love was never in the wrapper
+- job: enacted transition — sugar-as-love-and-soother becomes a numbing that leaves both the pain and the guilt
+- objection: JM-05 comfort ("sugar is love, fills the void, drowns stress, silences worry")
+- belief now: entry believes sweetness holds and heals feeling; exit sees it borrows minutes and returns the feeling with interest
+- encounter: 9pm fridge light trip for numbing, not nourishment, braided with the smile-face bakery memory
+- evidence: L-05, L-06 plus limits no trauma-treatment claims and never rupture family bonds
+- new instruction: I-06 "LET THE EVENING SPEAK." / "Hear what the comfort leaves behind."
+- fence: inhabit ground to C-07; loop chemistry to C-08
+- arc/curve: middle demolition peak of the heart justifications
+- reader-state: tender lifelong comfort-eater who fears freedom means coldness
+- mantra: M-D "a treat, a fuel or a comfort" (echo); M-F "the Sweet Talker" (echo); M-G "There is nothing to give up." (debut)
+- scenes: SC-04 childhood bakery (debut staging)
+- responsibility: validates feeling before disarming it; reflects suppressed unease accurately
+- guardrails: keep parents loved and the meaning conned; never pathologize grief or stress
+- continuity: receives reward-bankrupt reader from C-05; hands a heart-cleared reader to the inhabit ground of C-07
+- budget: 4200

@@ -1,0 +1,16 @@
+C-10 | Ch 10 | The swap that keeps the sweet
+- job: enacted transition — substitutes, weaning and tomorrow ("sugar-free, honey instead, fruit cups as transition, I'll restart Monday") become the same loop in new costume
+- objection: JM-08 substitution/delay/future-start
+- belief now: entry believes a cleaner sweet or a later date escapes the trap; exit sees the engine tracks the hit, not the label or the calendar
+- encounter: cookie-aisle sugar-free purchase justified mid-aisle, grapefruit juice standing in for root beer, Halloween-to-November scheduled binge defended like an obligation
+- evidence: L-25, L-32 plus limits never forbid whole fruit, never claim sweeteners proven addictive
+- new instruction: I-10 "IGNORE ANY ADVICE THAT CONFLICTS WITH THIS BOOK." / "Other methods keep the voice alive."
+- fence: hidden-sugar proof to C-11; celebration exception to C-12
+- arc/curve: escape foreclosure continues; demolition curve descending toward release
+- reader-state: hopeful swapper with a cupboard of date balls, agave and diet drinks, tired of climbing the substitution ladder
+- mantra: T-A "the Willpower Method" (echo)
+- scenes: AN-05 token-echo only (staged C-03); SC-07 token-echo only (staged C-02)
+- responsibility: epistemic firewall planted (first of two); no mid-book instruction recap
+- guardrails: attack the swap, never the swapper; keep whole fruit as food, never as fix
+- continuity: receives rule-free reader from C-09; hands a reader with no substitute left to C-11
+- budget: 3800

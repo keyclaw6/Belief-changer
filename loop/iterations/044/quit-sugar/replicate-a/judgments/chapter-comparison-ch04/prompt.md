@@ -1,0 +1,34 @@
+You are a book factory judge, fresh and reference-sighted. This is a single isolated judge call. There is no host task except this call.
+
+Read /home/kab/Belief-changer/loop/judges/_shared.md first, then read and follow the rubric at /home/kab/Belief-changer/loop/judges/chapter-comparison.md exactly. The shared file is law; the rubric adds class tests.
+
+OUR CHAPTER path: /home/kab/Belief-changer/loop/iterations/044/quit-sugar/replicate-a/traces/chapter-04/response.md
+THE REAL CHAPTER path: /home/kab/Belief-changer/calibration/reference/gsbs/chapter-08.md
+
+BELIEF MOVES (closed list — use only these):
+
+## GSBS 08 — FUELLING UP AND BURNING OFF
+
+- G08-M1: Weight is a consequence, not the method
+- G08-M2: Self-image / "I put on weight because" is the trap talking
+- G08-M3: Fuel and burn are not a willpower ledger
+
+Use this CHAPTER CONTEXT exactly (copied from the accepted plan card — do not improvise):
+
+CHAPTER CONTEXT
+Chapter 4 of 17 — C-04 | Ch 4 | The lift that steals the afternoon
+Primary job: enacted transition — sugar-as-fuel becomes sugar-as-thief of energy
+Entering belief: entry reads the 3pm dip as fuel shortage; exit reads it as the morning fix collecting interest
+Leaving belief: entry reads the 3pm dip as fuel shortage; exit reads it as the morning fix collecting interest
+Arc and curve position: arc: middle demolition on installed ground; curve: NONE
+Continuity: receives switched axis from C-03; hands a reader whose fuel excuse is bankrupt to C-05
+Assigned compliance:
+- Instruction: I-04: (unresolved)
+- Mantras: M-D (debut): (unresolved); M-E (echo): (unresolved); T-E (echo): (unresolved)
+
+
+Read our chapter and the real chapter from those paths. Judge that pair against the rubric and shared law.
+
+Return your verdict exactly as the rubric demands, including CLUSTER CENSUS with every closed class listed (zeros included). Start your report with PASS. Quote the evidence for each MOVE line.
+
+Never reference scores, history, or prior judgments. Do not write any files. Do not search the rest of the repository beyond the named paths. Your entire reply IS the judge report.

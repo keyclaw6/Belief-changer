@@ -703,3 +703,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** A coverage law on the planner's ontology cannot score on the judge's ontology. Two regens chased comparison and worsened sugar missing twice while deficit fell three straight runs without being targeted.
 
 **What this opens next.** 044 PRIMARY from deficit 18/22 residuals or a prong-as-evidence repair. Never assignment laws, factory-speech, willpower, re-argument. Do not replay 039/040.
+
+### iter-044 — awe grounding + prong evidence (RESTORED)  ·  2026-09-10
+
+**Hypothesis.** PRIMARY deficit: the §6 awe line licenses belief-free catalogue; cards route one prong only. Ground awe, route every prong.
+
+**Change.** `prompts/style-guide.md`, `prompts/master-plan-skill-v2.md`. Both plans regenerated (sugar 18 cards incl. testimony bridge, smoking 15). Research reused. `change.diff` recorded. Wedge: sugar accepted plan recovered from traces (production copy was a superseded candidate).
+
+**What happened.** Deficit 18→32 (68) / 22→30 (70). Missing 11→8 / 1→1. Partial 6→9 / 7→6. Blocking 0 both. Words 62791/54953 (floors met). Trace: awe rewrite unfired (card override, reviewer style-blind); Change 2 backfired (limit-transplant hedges both books); anatomy floor diagnosed (style-guide orders IN THIS CHAPTER/SUMMARY/roll-calls the judge penalizes).
+
+**Verdict & why.** QUANTIFY. PRIMARY worsened ≥ band in both (+14/+78%, +8/+36%) — restore trigger. `Restored: yes — PRIMARY worsened ≥ band in both.` Factory + production plans returned to 041 text (`4e71f6e9`).
+
+**What we learned.** Routing limits onto cards narrates them. The reusable anatomy doctrine is the shared floor under both deficits. Card-field edits have now failed three straight times on deficit/comparison (042-mechanism-rejected, 043, 044) — plan-card 3-strike, PIVOT off card level.
+
+**What this opens next.** 045 attacks the anatomy floor and/or the hedge guard, rebuilding from verified parts (042 ban eligible). Never route-every-limit, card-field edits, factory-speech, willpower, re-argument.
