@@ -1,0 +1,34 @@
+You are a book factory judge, fresh and reference-sighted. This is a single isolated judge call. There is no host task except this call.
+
+Read /home/kab/Belief-changer/loop/judges/_shared.md first, then read and follow the rubric at /home/kab/Belief-changer/loop/judges/chapter-comparison.md exactly. The shared file is law; the rubric adds class tests.
+
+OUR CHAPTER path: /home/kab/Belief-changer/loop/iterations/046/quit-smoking/replicate-a/traces/chapter-03/response.md
+THE REAL CHAPTER path: /home/kab/Belief-changer/calibration/reference/easyway-smoking/chapter-14.md
+
+BELIEF MOVES (closed list — use only these):
+
+## EASYWAY 14 — WHAT AM I GIVING UP?
+
+- E14-M1: You surrender nothing real — only a fear of going without
+- E14-M2: Pleasant times were the occasion, not the burning paper
+- E14-M3: Coping without it is the baseline you already had before the first one
+
+Use this CHAPTER CONTEXT exactly (copied from the accepted plan card — do not improvise):
+
+CHAPTER CONTEXT
+Chapter 3 of 14 — CH-03 — What Pleasure — 4000
+Primary job: enacted transition — smoking gives no genuine reward, it only briefly ends the want it created.
+Entering belief: entry cigarettes reward me, mark pause, taste good; exit pause/meal/break did rewarding, smoking only sneaked ride and re-created flatness.
+Leaving belief: entry cigarettes reward me, mark pause, taste good; exit pause/meal/break did rewarding, smoking only sneaked ride and re-created flatness.
+Arc and curve position: arc: early demolition on C02 ground; freedom first positive turn.; curve: NONE
+Continuity: receives mechanism vocabulary; hands reader who doubts reward story to C04.
+Assigned compliance:
+- Instruction: I-03: (unresolved)
+- Mantras: M-A (debut): (unresolved); M-C (debut): (unresolved)
+
+
+Read our chapter and the real chapter from those paths. Judge that pair against the rubric and shared law.
+
+Return your verdict exactly as the rubric demands, including CLUSTER CENSUS with every closed class listed (zeros included). Start your report with PASS. Quote the evidence for each MOVE line.
+
+Never reference scores, history, or prior judgments. Do not write any files. Do not search the rest of the repository beyond the named paths. Your entire reply IS the judge report.

@@ -1,0 +1,16 @@
+- **ID C10, number 10, working title Made To Want.**
+  - job: enacted transition — the reader sees desire manufactured by formula, ubiquity and hidden supply, and watches the most beloved celebration sweet fail to deliver.
+  - objection resolved: the industry only meets my natural sweet tooth.
+  - belief now: entry thinks craving starts inside; exit sees craving started in labs and aisles.
+  - encounter: bliss-point formula, fast-melt mouthfeel and label maze plus celebration-table sweet re-tasted after weeks steady and left unfinished.
+  - evidence: L-20 engineering plus L-21 vanishing density and supply share plus L-22 suppression receipts plus L-17 and L-18 bodily stakes with same-chapter relief plus L-19 dose math. Limits: journalistic industry accounts not court findings; population stakes not personal fate; supply share estimate.
+  - new instruction: none.
+  - reserved-later fence: vow mechanics to C11; daily freedom to C12.
+  - arc: late indictment plus strongest-case head-on; freedom beginning to rise.
+  - reader-state: conscientious shopper shocked by labels; encounter lands by moving anger from self to design while keeping tenderness for people.
+  - mantra: echo M-A "You have nothing to lose by reading on, and a whole life to gain."; echo M-C "the sugar trap."; echo M-D "a genuine pleasure, comfort or lift."
+  - scenes: debut SC-D with staging job; SC-G three-week turn with staging job; SC-C token echo only; AN-E, AN-G and AN-H token echoes only; owns third perception exercise as cue observation.
+  - structural: owns manufacture-of-desire room plus embedded long-form testimony in main flow as its own room.
+  - guardrails: anger at design, warmth to people; relief landed same chapter so motive stays escape.
+  - continuity: receives totality; hands forward manufactured-desire cleared plus strongest case felled to C11.
+  - budget: 5500.

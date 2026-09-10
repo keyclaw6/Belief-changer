@@ -731,3 +731,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Header presence is instrument property (voice 0 vs distance quote; deletion control-protected) — stop chasing it. The SUMMARY cap's first loss point is the writer contract. Private vocab is the cleanest untried both-signal but collides with originality doctrine.
 
 **What this opens next.** 046: vocab discipline (doctrine-aware) or SUMMARY cap+finding. Never card edits, route-every-limit, factory-speech, willpower, re-argument.
+
+### iter-046 — vocab discipline + SUMMARY cap  ·  2026-09-11
+
+**Hypothesis.** PRIMARY deficit: Fork-1 mints penalized brands; SUMMARY cap dropped at writer contract. Discipline the mint, cap + gate the recap.
+
+**Change.** `prompts/style-guide.md`, `prompts/chapter-writer.md`, `prompts/chapter-reviewer.md`. Sugar plan regenerated (13); smoking reused (037). Research reused. `change.diff` recorded. Wedge a third time (recovered from traces).
+
+**What happened.** Deficit 30→20 (80) / 26→28 (72). Missing 5→5 / 3→4. Partial 9→6 / 5→5. Blocking 0 both. Words 56339/59487. Brands gone both; SUMMARY compliant both with findings firing; tight-shoes misfire confirmed; headers still quoted (instrument property); smoking Latinate crescendo new (no register gate); re-argument counts on 037 adjacency.
+
+**Verdict & why.** QUANTIFY. PRIMARY band only in sugar. No restore trigger. Carried forward: 046 discipline + cap/finding. `parent: 27951551`. Consecutive no-KEEP: 5 → convergence-report.md written; founder override continues.
+
+**What we learned.** All three 046 edits fired as built — the first iteration where every listed change verified. The remaining deficit is register (no Latinate rule anywhere), plan-vintage moves (smoking 037 cards), and instrument property (headers). Comparison residue is unassigned moves on unedited cards.
+
+**What this opens next.** 047: REGISTER rule and/or smoking vintage. Never card edits, route-every-limit, factory-speech, willpower, re-argument, headers, tight-shoes.

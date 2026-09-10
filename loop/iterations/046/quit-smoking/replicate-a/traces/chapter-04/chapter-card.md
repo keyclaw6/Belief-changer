@@ -1,0 +1,15 @@
+**CH-04 — Doing To, Not For — 4500**
+- primary job: enacted transition — smoking does nothing for you in company or stress, it does plenty to you while moment does work.
+- belief now: entry smoking helps belong and steadies nerves on nights out; exit belonging/steadiness came from people/music/pause/courage already mine; smoking took credit and added cost.
+- concrete encounter: night-out strongest case — drinks, laughter, stepping out — replayed with and without cigarette, pleasure staying with people/setting.
+- evidence: E-02 LEU-002 S-051. Limits: lived social context only; must not claim all sociability identical without smoking, must not shame social smokers.
+- new instruction: I-04 FOLLOW ALL THE INSTRUCTIONS
+- reserved-later fence: product/lights to C05; willpower-method/prevalence to C06; refusal/just-one to C07; inhabit to C08.
+- arc/curve: middle demolition; strongest social justification falls, autonomy rises.
+- reader-state: social smoker fearing dullness without cigarettes sees night worked because of friends/break, not smoke.
+- mantra: debut M-B "It never did anything FOR you; it only did things TO you."; echo M-A "You give up nothing; you escape everything."
+- scenes: debut SC-03 night-out strongest full staging; token-echo SC-05 reward phrase only.
+- structural responsibility: collects reader justifications verbatim then isolates variable in each.
+- guardrails: CA-SAFE; E-02 context limit; warm to smoker friends, harsh to trap.
+- continuity intent: receives reward-doubter; hands reader who follows all instructions as smart choice to C05.
+- budget: 4500

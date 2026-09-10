@@ -1,0 +1,16 @@
+- **ID C9, number 9, working title No Loophole.**
+  - job: enacted transition — the reader sees every moderation, special-occasion, tomorrow and swap plan as stairs back into the same loop.
+  - objection resolved: I can keep the special ones, cut down, start Monday, or switch to a lighter sweet.
+  - belief now: entry negotiates the exception; exit sees the exception as the belief surviving intact.
+  - encounter: weekend-free-day arithmetic, freezer-deferred cake, office-birthday slice, honey-juice and diet-fare swaps tested and collapsed.
+  - evidence: L-23 hidden carriers plus L-24 substitution boundary plus L-19 dose math. Limits: carrier lists illustrative; sweetener guidance conditional not toxic panic.
+  - new instruction: I-09.
+  - reserved-later fence: villain motive to C10; celebration head-on to C10; vow to C11.
+  - arc: late foreclosure; demolition closing.
+  - reader-state: skilled negotiator with a calendar of allowances; encounter lands by showing the collapse arc already lived.
+  - mantra: echo M-C "the sugar trap."; echo M-G "the Willpower Method."
+  - scenes: debut AN-D cliff jump with staging job; AN-A token echo only.
+  - structural: owns escape-route foreclosure plus myths Q and A battery as distinct rapid-fire room.
+  - guardrails: no deprivation language; pity never envy for those still negotiating.
+  - continuity: receives cleared blame; hands forward loophole-free totality to C10.
+  - budget: 5500.

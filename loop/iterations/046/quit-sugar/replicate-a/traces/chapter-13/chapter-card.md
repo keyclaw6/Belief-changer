@@ -1,0 +1,16 @@
+- **ID C13, number 13, working title Free.**
+  - job: non-argument — recap handing over the method as a photographable list and an outward push.
+  - objection resolved: I will forget this when life gets loud.
+  - belief now: entry holds lived proof loosely; exit holds a portable list and a final reframe.
+  - encounter: short list plus single outward imperative into life.
+  - evidence: none new.
+  - new instruction: none; recaps I-01 to I-11 verbatim without callbacks.
+  - reserved-later fence: none.
+  - arc: close; freedom assumed.
+  - reader-state: free adult needing nothing further; encounter lands by brevity.
+  - mantra: hand-over M-B "easily, at once, and for good."; M-C "the sugar trap."; M-D "a genuine pleasure, comfort or lift."; M-F "BRILLIANT! I'M FREE!"; M-H "Eat as much of the real food you love as you want, whenever you want it, and never count a bite again."
+  - scenes: none.
+  - structural: owns short photographable recap; no teaching manuals; no chapter-number callbacks.
+  - guardrails: gain-framed outward push only.
+  - continuity: receives lived proof; hands forward life.
+  - budget: 2000.

@@ -1,0 +1,15 @@
+**CH-01 — Invitation to Escape — 4500**
+- primary job: non-argument — bridge installing contract for easy permanent escape; carries flat promise in paragraph one and full-strength frightening health material closed by escape relief inside this chapter.
+- belief now: entry quitting is hard, requires suffering, this book is another lecture; exit this book offers easy permanent escape with nothing to lose, worth reading with open mind.
+- concrete encounter: reader's own failed attempts set against plain account of lifelong smoking ending overnight without struggle.
+- evidence: E-01 LEU-001 S-001; E-04 LEU-004 S-013. Limits: lived tier only; must not state success rate, must not present heaven feeling as medical fact, must not promise personal outcome.
+- new instruction: I-01 KEEP AN OPEN MIND
+- reserved-later fence: mechanisms detail to C02; reward to C03; social to C04; product/lights to C05; anti-method/prevalence to C06; just-one to C07; inhabit to C08; ritual/life to C10–C14.
+- arc/curve: front-third contract; demolition zero, trust rising.
+- reader-state: tired daily smoker braced for shame hears skepticism spoken first, then meets hospital facts and meter ticking.
+- mantra: debut M-H "Nothing to lose and everything to gain."; debut T-2 "happy to be free".
+- scenes: debut SC-07 hospital corridor full staging; debut AN-01 meter coins full staging.
+- structural responsibility: paragraph one states easy, permanent, no willpower, you find that hard to believe — read on; holds frightening facts plus immediate relief-closing same chapter; never defers either.
+- guardrails: CA-SAFE; E-01/E-04 limits; warm to person, harsh only to trap/industry; original images only.
+- continuity intent: receives skepticism; hands willing investigator with open mind to C02.
+- budget: 4500

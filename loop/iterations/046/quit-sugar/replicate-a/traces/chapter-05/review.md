@@ -1,0 +1,13 @@
+ACCEPT
+
+Job landed: reward/comfort/deserved-pay inversion enacted — bakery doorway (SC-E) reassigned to hand/hour, payday parcel/tin reassigned to pay/rest/pride/voice, nine-o'clock kitchen reassigned to rest/quiet/sitting, family table glimpse reassigned to faces/songs/sufficiency, tight-shoes (AN-C) verdict plus wanting-without-liking turn; exit belief landed as occasion paid / sweet rode along.
+Length inside budget: delivered 4438 vs budget 5000 is inside B±15% (4250-5750).
+MANTRA verbatim: M-C "the sugar trap." present ("That is the sugar trap."); M-D "a genuine pleasure, comfort or lift." present ("was never a genuine pleasure, comfort or lift.").
+INSTRUCTION: none assigned, none introduced with numbered headline.
+No HEADER: no I-NN prefix; IN THIS CHAPTER lists rooms/pictures ("a bakery doorway, a payday kitchen, a nine o'clock light and a family table"), not a syllabus.
+No STOPPED-SHORT: flat verdicts before SUMMARY ("What you took through all these years for help at low hours was never a genuine pleasure, comfort or lift." + "The occasion paid you. The sweet rode along." + gathered rooms), reader cannot hold entering paid/soothed belief.
+No UNASSIGNED-REFRAIN: no 4+-word slogan repeats >=3x verbatim (4/5/6/7/8-grams checked; only scaffolding "lives in you because you" recurs); "rode along" variants change subject (sweet/toffee/box/wrap/BAD SUGAR) and "only rode along" is 3 words, not a slogan refrain; assigned M-C/M-D repeats only.
+No RESERVED-REACH: no C6 inhabit room (plain meal/satisfaction appears as one-line setup, not hunger-versus-craving sitting); no C7 cue-depth room (no wrapper-and-smell observation, no doorbell/whisper/paid-actor debuts; tiny-tug/voice split stays as passing common-noun split); family table stays as love-reassignment glimpse without C10 formula/mouthfeel/label-maze or weeks-steady re-taste left-unfinished.
+No RE-ARGUMENT: no earlier-card section rebuilt; C4 fuel inversion appears only as one-sentence hand-off ("lifts loud for minutes and drops flat after"); AN-A gatecrasher appears only as one sentence ("texts its friends"); justification quotes are this card's mapped reward cluster, not C3 menu rebuild.
+No OVERCLAIM: stays inside routed L-03 (reward frame, no never-enjoy claim — explicitly "Sweet taste can please the mouth for a moment. I claim no otherwise.") and L-15 (wanting versus liking as learned pull, no dopamine-equals-pleasure, no brain-damage, no addiction-diagnosis); no prevalence, engineering, carrier, substitution-toxicity, or clinical-hypoglycemia claims.
+SUMMARY clean: three one-sentence "I now believe" bullets, each with belief verb stating changed belief, no roll-call, recap, preview, or study-design note.

@@ -1,0 +1,16 @@
+- **ID C3, number 3, working title What Good At All.**
+  - job: enacted transition — the reader abandons harm-versus-benefit maths and demands one genuine benefit, finding none yet proven.
+  - objection resolved: it cannot be that bad if everyone does it.
+  - belief now: entry weighs pros and cons; exit asks for any real pro at all.
+  - encounter: printed justification menu as quoted list plus variable-isolation tasting comparison enacted without announcement.
+  - evidence: L-03 reward frame plus L-23 hidden carriers showing benefit talk ignores hidden supply. Limits: community language not proof of mechanism; carrier list illustrative.
+  - new instruction: I-05.
+  - reserved-later fence: fuel variables to C4; reward variables to C5; wanting proof to C7.
+  - arc: first-third axis switch; demolition rising.
+  - reader-state: bargaining adult with a drawer of rules; encounter lands by hearing own excuses printed back.
+  - mantra: debut M-D "a genuine pleasure, comfort or lift."
+  - scenes: SC-A referenced only as menu item, full staging reserved to C4; AN-H haze filter previewed only as tasting note, debut reserved to C6.
+  - structural: owns justification-menu room; owns first perception exercise.
+  - guardrails: gain-framed; no neutral ledger language.
+  - continuity: receives trap name; hands forward illusion token plus menu to C4.
+  - budget: 4500.

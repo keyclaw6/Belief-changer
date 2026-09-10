@@ -1,0 +1,7 @@
+ACCEPT
+
+Delivered 3555 words against Budget 4000 (±15% = 3400-4600): inside; prior LENGTHEN target met by tonight-only first-hours extension, no mornings/shops survey.
+Primary job landed: readiness gated ("The fact is readiness is not a mood that visits you — it is a decision you speak."), ordinary-meal ugliness watched close, vow spoken ("this was my last BAD SUGAR meal and I am free."), freedom conferred at once ("You are free as of now, not from Monday...").
+Mantras verbatim: "BRILLIANT! I'M FREE!"; "easily, at once, and for good."; "the sugar trap."; "Eat as much of the real food you love as you want, whenever you want it, and never count a bite again."
+Instructions verbatim with spoken rationale lines, no I-NN prefix: 10. TAKE YOUR LAST ORDINARY MEAL AND MAKE THE VOW. / Eat as usual, notice the ugliness, step over gladly. 11. WHEN THE THOUGHT COMES, THINK BRILLIANT! I'M FREE! / Let the old tug fire your relief.
+No HEADER, no ID issue, no unassigned refrain (prior "There is one plain answer" now 1x; "the fact is" is verdict syntax, remaining 3-grams generic or mantra substrings, no 5-gram repeats), no reserved-reach to C12/C13, no re-argument section, no overclaim beyond card-routed L-14 (peak 2-5 days then passes, small/brief, some-mouths qualified) and L-13 (own supply line from protein and glycerol, no diet prescription) bounds, SUMMARY three one-sentence belief bullets with belief verbs.

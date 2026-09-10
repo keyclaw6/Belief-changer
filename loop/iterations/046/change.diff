@@ -1,0 +1,50 @@
+diff --git i/prompts/chapter-reviewer.md w/prompts/chapter-reviewer.md
+index 821ebecb..49fe46c4 100644
+--- i/prompts/chapter-reviewer.md
++++ w/prompts/chapter-reviewer.md
+@@ -31,6 +31,7 @@ Then at most 7 findings. Each finding is one of:
+ - `RESERVED-REACH` — the draft performs a later chapter's primary job. Name that later card and cut the overreach to at most one sentence.
+ - `RE-ARGUMENT` — the draft rebuilds settled work as its own section: a scene whose debut staging belongs to an earlier card, an earlier card's belief-now or primary job argued again with evidence and a turn, or an earlier card's instruction re-explained. Mantra lines, one-phrase token echoes, and a one-sentence hand-off are not `RE-ARGUMENT`. Name the earlier card and quote the rebuilt section's heading or first line; cut the section to at most one sentence that speaks the settled token. If that cut leaves the chapter below 0.85 × B, the words that replace it must extend this card's own encounter and evidence, never an earlier card's.
+ - `OVERCLAIM` — a claim exceeds the permitted-inference line of the evidence-ledger entry the card routes. Quote the overclaim and the bound in the review. Require the writer to delete the unsupported claim or narrow the sentence to what the evidence actually supports, rather than append commentary about the evidence, its scope, or what it can establish. The bound governs the repair; it is not text to transplant into the chapter. Retain any qualification needed for factual accuracy or reader safety, expressed directly in ordinary language; never remove a necessary limitation merely to sound certain, and never print the ledger ID or grade in prose. OVERCLAIM governs facts, not the assigned method promise (easy, permanent, no willpower).
++- `SUMMARY` — SUMMARY has more than three bullets, a bullet without the belief verb stating the belief that changed, or a token roll-call / instruction recap / preview list / study-design note. Quote the violating bullet; require at most three one-sentence belief bullets.
+ 
+ No other finding types. No style notes. No "sounds like AI." No comparison
+ to any other book. No warmth, tone, or voice coaching.
+@@ -38,7 +39,7 @@ to any other book. No warmth, tone, or voice coaching.
+ `ACCEPT` only when every check above is fine (length inside ±15% of B, job
+ done and stopped and landed, assigned mantras/instructions verbatim, IDs
+ resolved, no `HEADER`, no unassigned refrain, no reserved-later job, no
+-re-argument, no overclaim).
++re-argument, no overclaim, no SUMMARY violation).
+ 
+ `REVISE` when any check fails. List the findings. Be specific: quote the
+ missing job, the missing wording, or the overclaim.
+diff --git i/prompts/chapter-writer.md w/prompts/chapter-writer.md
+index 731eda74..b3c6ec7f 100644
+--- i/prompts/chapter-writer.md
++++ w/prompts/chapter-writer.md
+@@ -137,10 +137,7 @@ no belief verb.
+    the climax, followed by at most one short spoken rationale line. Never a
+    "Warm rationale" header, backticks, craft label, or plan ID (`I-01 —`).
+    Omit this element when no instruction is assigned.
+-6. **SUMMARY** — clipped bullets stating, in ordinary sentences, the belief
+-   that changed. Not a token roll-call, instruction recap, or study-design
+-   note. The final recap chapter is the exception: it may list the
+-   photographable instruction set.
++6. **SUMMARY** — at most three bullets, each one ordinary sentence stating the belief that changed with the belief verb in the sentence — never a token roll-call, instruction recap, preview list, or study-design note. The final recap chapter is the exception: it may list the photographable instruction set.
+ 
+ Chapter 1 additionally: paragraph one states the method promise flat
+ (easy, permanent, no willpower, "you find that hard to believe — read on").
+diff --git i/prompts/style-guide.md w/prompts/style-guide.md
+index d1ffe96c..4881fd11 100644
+--- i/prompts/style-guide.md
++++ w/prompts/style-guide.md
+@@ -94,7 +94,7 @@ The three books genuinely disagree on several mechanisms. A writer must know the
+ ### Fork 1 — Is there an "inner monster" to personify, or not?
+ - **Carr:** Yes — the Little Monster is a vivid, near-living parasite you "starve to death" and whose "death throes" you "revel in." Personification makes the craving *external* and *winnable*.
+ - **Burgeon:** Explicitly **rejects** this — a "monster" creates a "Me vs Them" fight with an "imaginary enemy"; "it was me all along." You don't fight, you understand.
+-- **DEFAULT (Carr):** **Personify, exactly as Carr does.** Every book names its two mechanism characters — the trivial physical creature the reader will starve to death (the Little-Monster equivalent) and the belief-system that feeds it (the Big-Monster equivalent) — with original, behavior-fitted names frozen in the mantra sheet. The personification makes the craving *external, small, and winnable*; its "death throes" become something to revel in. It is never a mighty enemy the reader must battle with willpower — it is a starving parasite already dying. Burgeon's no-monster stance is a brief-level override, never a default.
++- **DEFAULT (Carr):** **Personify, exactly as Carr does.** Every book names its two mechanism characters — the trivial physical creature the reader will starve to death (the Little-Monster equivalent) and the belief-system that feeds it (the Big-Monster equivalent) — with no frozen proper names: refer to the two mechanisms only in plain everyday description as common nouns (the tiny physical craving and the brainwashing voice), never as capitalized branded creatures, never frozen on the mantra sheet, never invented Mite/Talker/Nipper-style tokens. The personification makes the craving *external, small, and winnable*; its "death throes" become something to revel in. It is never a mighty enemy the reader must battle with willpower — it is a starving parasite already dying. Burgeon's no-monster stance is a brief-level override, never a default.
+ 
+ ### Fork 2 — Total abstinence, or radical autonomy (moderation allowed)?
+ - **Carr & Burgeon:** **Total cessation** is the only stable state. One "special" exception means the belief is intact; moderation makes the thing more precious (forbidden-fruit) and guarantees creep. "Unplug every cord."

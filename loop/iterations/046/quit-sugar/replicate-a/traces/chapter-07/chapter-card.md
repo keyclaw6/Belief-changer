@@ -1,0 +1,16 @@
+- **ID C7, number 7, working title The Loop.**
+  - job: enacted transition — the reader understands the high is relief from a low the loop created and that wanting outlives liking, with the physical part small and the belief part dominant.
+  - objection resolved: the craving proves I need it.
+  - belief now: entry fears withdrawal as proof of need; exit sees a brief small dip plus a loud learned want.
+  - encounter: wrapper-and-smell observation plus finishing past enjoyment, mapped to cue firing before the bite.
+  - evidence: L-05 reward re-trigger plus L-06 dip plus L-07 mild magnitude plus L-15 wanting distinction plus L-16 cue strength singly applied. Limits: animal magnitudes never human numbers; dopamine is wanting signal not pleasure; no permanent-damage claims.
+  - new instruction: none.
+  - reserved-later fence: method blame to C8; substitution tricks to C9.
+  - arc: middle deepening; demolition peak.
+  - reader-state: analytical adult braced for a hard physical fight; encounter lands by shrinking the physical fight and exposing the belief fight.
+  - mantra: echo M-C "the sugar trap."; echo M-D "a genuine pleasure, comfort or lift."
+  - scenes: debut SC-B with staging job; debut AN-E whisper to shout, AN-F doorbell and AN-G paid actor with staging jobs; AN-C token echo only.
+  - structural: owns mechanism deepening, not a debut unit.
+  - guardrails: SAFE-1; honesty about open question per L-09 cited in passing without re-arguing contest.
+  - continuity: receives trusted appetite; hands forward loop model to C8.
+  - budget: 5000.

@@ -1,0 +1,15 @@
+**CH-03 — What Pleasure — 4000**
+- primary job: enacted transition — smoking gives no genuine reward, it only briefly ends the want it created.
+- belief now: entry cigarettes reward me, mark pause, taste good; exit pause/meal/break did rewarding, smoking only sneaked ride and re-created flatness.
+- concrete encounter: after-meal and break cigarette re-seen — same food, same pause, smoker vs non-smoker finish.
+- evidence: E-05 LEU-005 S-045. Limits: lived account of illusory reward; must not claim neurochemical proof, must not deny felt moment, only reassign source.
+- new instruction: I-03 START OFF FEELING PLEASED TO BE ESCAPING
+- reserved-later fence: social belonging to C04; product/lights to C05; anti-method to C06; offers/just-one to C07; inhabit to C08.
+- arc/curve: early demolition on C02 ground; freedom first positive turn.
+- reader-state: break-time smoker convinced he earns each cigarette tests pellet moment and finds relief is ending of want, not gift.
+- mantra: debut M-A "You give up nothing; you escape everything."; debut M-C "It's the other way around."
+- scenes: debut SC-05 reward-pellet full staging; token-echo SC-01 morning phrase only.
+- structural responsibility: switches evaluation axis from harm-versus-benefit to what benefit at all.
+- guardrails: CA-SAFE; E-05 lived limit; reassign credit to situation/body/moment; never concede one real irreplaceable benefit.
+- continuity intent: receives mechanism vocabulary; hands reader who doubts reward story to C04.
+- budget: 4000

@@ -1,0 +1,16 @@
+- **ID C11, number 11, working title The Last Meal.**
+  - job: enacted transition — the reader crosses from understanding to identity, taking an ordinary meal as the final BAD SUGAR meal with a solemn vow and immediate freedom.
+  - objection resolved: I am not ready and freedom comes later.
+  - belief now: entry understands but hesitates; exit has vowed and is free as of now.
+  - encounter: last ordinary meal eaten as usual with attention on ugliness, vow spoken, congratulation immediate.
+  - evidence: L-14 hump reframed as brief and small plus L-13 baseline reassurance. Limits: hump small-scale days-long; no medical promises.
+  - new instructions: I-10, I-11.
+  - reserved-later fence: daily proof to C12; list recap to C13.
+  - arc: threshold; readiness gated, freedom conferred.
+  - reader-state: convinced adult lingering at the edge; encounter lands by ritualizing an ordinary act, not a test.
+  - mantra: debut M-F "BRILLIANT! I'M FREE!"; echo M-B "easily, at once, and for good."; echo M-C "the sugar trap."; echo M-H "Eat as much of the real food you love as you want, whenever you want it, and never count a bite again."
+  - scenes: no new staging; AN-D token echo only.
+  - structural: owns readiness gate plus vow plus instant conferral; warns against the two relapse doors as already-owned thoughts reframed, not new curriculum.
+  - guardrails: SAFE-1 for hump language; gate kindly sends the unready to re-read, never to strain.
+  - continuity: receives cleared ground; hands forward free identity to C12.
+  - budget: 4000.

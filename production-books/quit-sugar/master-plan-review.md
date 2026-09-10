@@ -1,14 +1,15 @@
-SLUG: quit-sugar | ITER: 045 | REPLICATE: a
-SHA-256: 0f6b864d0460bb69ef48fc56d97e748d5971ed5cf2a9a95dd6b10131031b7ddd
-Contract: prompts/master-plan-reviewer-v2.md
-
-first-three-cumulative-walk: PASS — CH-01 installs contract plus BAD SUGAR line plus flat promise plus same-chapter scare-returned-to-joy; CH-02 converts investigator to con via supermarket sameness with creatures in passing plus body/real-food encounters; CH-03 forces benefit-proof via stale-cake failure plus TO/FOR axis — each does belief work now, not setup.
-whole-book-cumulative-walk: PASS — CH-04 to CH-10 demolish fuel, reward, mechanism, method, industry, strongest-case in order with token-only echoes and clean handoffs; CH-06 primary is inhabit-ordinary-meal; CH-11 testimony, CH-12 fear, CH-13 myths clearance, CH-14 vow, CH-15 one ordinary-life plus short recap — reaches relief-freedom destination, no second manual.
-writer-facing-authority: PASS — all E-IDs resolve E-01 to E-31 with limits; all M-IDs M-A to M-M lettered with frozen quotes matching sheet; all SC/AN cites resolve with single-debut token-only discipline; I-01 to I-08 owned with spoken wording and rationale; budgets, continuity, guardrails, ownership on every card; no P-codes, Voice operators, boxed paste titles, named persona, or chapter callbacks.
-method-fidelity: PASS — warm to person harsh to trap plus two villains, willpower-free with Willpower Method blame, TO/FOR spine with rescuer-as-perpetrator, gain-framed escape, immediate freedom via last ordinary meal, CH-01 promise flat in paragraph one plus same-chapter scare-then-relief.
-evidence-honesty: PASS — animal limits kept on E-04 to E-10, mild-magnitude E-07 defuses dread, CONTESTED E-11/E-22 stated as open/split, MIXED E-13/E-18 hedged, self-report and n-of-1 limits on lived units, no consensus or equivalence claims.
-safety: PASS — AD-A plan-wide in front matter cited by ID across cards never fused into instructions, no diagnosis or diet prescription, crash/withdrawal routed to AD-A, margin seatbelt only with redefinition and vow, family warmth preserved.
-originality: PASS — original Mite/Talker naming and trap register, analogies staged in original prose with sourced lines never quoted verbatim, testimony composited from bank facts without copying reference prose.
-architecture-and-length: PASS — 15-chapter spine with contract/world/demolition/inhabit/vow/life/recap, deliberate mantra repetition without quotas, curves front-loaded then detonated CH-14 to CH-15, budgets 4200+4200+4000+4400+4400+4200+4200+4000+4200+4000+4200+4000+3800+3800+2400=60000.
+SLUG: quit-sugar
+ITER: 046
+REPLICATE: a
+PLAN: loop/iterations/046/quit-sugar/replicate-a/traces/plan-candidate-r1.md
+PLAN-SHA256: 9f6f01f9395ed7d4269721dbd07ec77aa52a5694cb08dd61da291716b11dba4c
+F1-first-three-cumulative: PASS — C1 enacts contract plus BAD SUGAR decree plus full-strength harm with same-chapter relief; C2 enacts choice-dissolution via normal-day cues; C3 enacts axis-switch plus tasting comparison, not mere catalogue for later.
+F2-whole-book-handoffs: PASS — C4 fuel inversion through C10 manufactured-desire each builds from preceding exit belief; no adjacent principal-encounter repeat; scenes and analogies debut once with token-echoes only; fences point forward.
+F3-install-inhabit-post-vow-destination: PASS — first third installs contract, already-hooked, two creatures in passing as common nouns, body/instinct/real food in C2; C6 primary job inhabits eating; C11 last ordinary instance plus C12 ordinary-life once plus C13 short recap only; reaches relief-gladness destination.
+F4-writer-authority-ids-ownership: PASS — every cited M-A–M-H, I-01–I-11, L-01–L-24, SC-A–SC-G, AN-A–AN-H, SAFE-1 resolves with exact payload; frozen mantra quotes pinned on assigning cards; spoken instruction lines, scene jobs, limits, continuity, budgets owned per card.
+F5-writer-authority-prohibitions: PASS — no P-xx codes, pupil names, Voice operators, beat handles, boxed paste titles, or chapter-ledger callbacks; M-letter IDs avoid I-number collision; recap verbatim without callbacks.
+F6-method-warmth-promise-scare: PASS — warm to person harsh to trap, escape-not-sacrifice, willpower-free lexicon; C1 owns easy-permanent contract plus M-B triad and harm-then-relief in same argument, never deferred or appendix-routed.
+F7-evidence-safety: PASS — ledger grades with permitted/prohibited/limits honoured including L-09 contest held without re-argue and L-12 threshold boundary; SAFE-1 front matter plus guardrails on appetite/crash/hump/body cards; no diagnosis, fate, or diet prescription.
+F8-architecture-length: PASS — one escape spine with deliberate repetition and qualitative curves; 13 positive budgets sum 61500 and match stated total within 54000–66000; saved reframe only C12–C13.
 
 fit to write from

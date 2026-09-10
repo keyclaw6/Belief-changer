@@ -1,0 +1,15 @@
+**CH-02 — Already Hooked — 4500**
+- primary job: enacted transition — you are not weak-willed, you are caught by a tiny physical craving kept alive by a brainwashing voice.
+- belief now: entry I smoke because I choose to and cannot stop because I lack control; exit trivial body restlessness plus implanted beliefs drive every cigarette, past failures indict method not me.
+- concrete encounter: body as authority — morning reach, empty restlessness between cigarettes, watching non-smoker sit through same moment with no discomfort.
+- evidence: E-11 SEU-005 S-009/081 SUPPORTED typical; E-07 SEU-001 S-009 SUPPORTED. Limits: typical mild short-lived urge only; must not claim zero sensation for all, must not give medical withdrawal advice beyond CA-SAFE, must not extend ten seconds into universal timer.
+- new instruction: I-02 DON'T STOP OR CUT DOWN YET
+- reserved-later fence: reward to C03; social to C04; product/lights to C05; willpower-method/prevalence to C06; just-one to C07; inhabit to C08.
+- arc/curve: first-third world install; demolition lifts as shame falls.
+- reader-state: smoker ashamed of morning automaticity recognizes reach as small craving misread by brainwashing voice.
+- mantra: debut M-E "You were conned, not weak."; debut M-F "The empty feeling is the cure starting, not something to cure."
+- scenes: debut SC-01 morning reach full staging; token-echo AN-01 meter phrase only.
+- structural responsibility: names both mechanisms in passing in plain nouns only — the tiny physical craving and the brainwashing voice — then leaves as vocabulary; no invented names.
+- guardrails: CA-SAFE; E-11/E-07 typicality limits; never present craving as dangerous; never counsel grit.
+- continuity intent: receives investigator; hands participant who keeps smoking for now by instruction and can name mechanisms without fear to C03.
+- budget: 4500

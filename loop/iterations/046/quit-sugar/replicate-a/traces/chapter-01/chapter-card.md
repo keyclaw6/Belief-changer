@@ -1,0 +1,16 @@
+- **ID C1, number 1, working title Invitation.**
+  - job: enacted transition — the reader stops bracing for deprivation and accepts an easy permanent escape is possible if instructions are followed.
+  - objection resolved: this sounds too good to be true and quitting means suffering.
+  - belief now: entry believes freedom requires struggle and loss; exit believes an easy method exists and reading on is risk-free.
+  - encounter: ordinary pantry and daily sweet inventory plus boxed BAD SUGAR definition and decree.
+  - evidence: L-10 scope note only as normalization hint is forbidden here; use L-07 honesty boundary plus L-17 and L-18 harm stakes at full strength with same-chapter relief; L-19 dose tangibility. Limits: population language only, no personal fate, no diagnosis.
+  - new instructions: I-01, I-02, I-03.
+  - reserved-later fence: trap mechanics to C2; benefit proofs to C4 and C5; schedule debate to C8; moderation to C9; engineering to C10.
+  - arc: opening contract; freedom promise high, demolition low.
+  - reader-state: wary adult who has failed every strict plan and expects another lecture; encounter makes the move land by naming the exact daily sweets without scolding.
+  - mantra: debut M-A "You have nothing to lose by reading on, and a whole life to gain."; debut M-B "easily, at once, and for good."; debut M-G "the Willpower Method."; plant M-H "Eat as much of the real food you love as you want, whenever you want it, and never count a bite again."
+  - scenes: debut SC-F cost glimpse only as morning body state; staging job for full SC-F reserved to C6 and C12.
+  - structural: front-matter authority plus contract; owns opening harm passage with same-chapter relief; owns redefinition box.
+  - guardrails: safety SAFE-1 cited for harm passage; originality requires all images new; gain-framed throughout.
+  - continuity: receives none; hands forward open mind plus permission to continue while reading plus BAD SUGAR line to C2.
+  - budget: 5000.

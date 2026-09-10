@@ -1,0 +1,16 @@
+- **ID C8, number 8, working title The Wrong Method.**
+  - job: enacted transition — the reader stops blaming character and blames the strain-based method and the fear it installed, seeing strong will as evidence for freedom.
+  - objection resolved: I failed so I am weak, and I will fail again.
+  - belief now: entry carries shame and fear of trying; exit carries anger at the method and confidence in understanding.
+  - encounter: catalogue of past diets, curfews, app counts and white-knuckle weeks reread as proof the method manufactures the loop.
+  - evidence: L-08 schedule manufacture plus L-14 failed-attempt correlation from withdrawal-scale work. Limits: correlational self-report; schedule animal data cautiously translated.
+  - new instructions: I-06, I-07, I-08.
+  - reserved-later fence: specific moderation scripts to C9; engineering receipts to C10.
+  - arc: middle collapse of fear; demolition high, freedom about to rise.
+  - reader-state: serial restarter who calls self broken; encounter lands by returning dignity and relocating blame.
+  - mantra: echo M-B "easily, at once, and for good."; echo M-C "the sugar trap."; echo M-E "for every day from now on."; echo M-G "the Willpower Method."
+  - scenes: no new staging; AN-D previewed only as sentence, full staging reserved to C9.
+  - structural: owns anti-method room, fear room and identity-excuse room merged; owns meta-inoculation answering the strongest method objection unlabeled.
+  - guardrails: non-shaming absolute; no personal fate language.
+  - continuity: receives loop model; hands forward method-blame cleared to C9.
+  - budget: 5000.

@@ -1,0 +1,32 @@
+{
+  "chapter": 11,
+  "replicate": "a",
+  "slug": "quit-sugar",
+  "iteration": "046",
+  "chars": 19730,
+  "words_draft": 2729,
+  "words_final": 3555,
+  "words_by_round": [
+    2729,
+    3555
+  ],
+  "budget": 4000,
+  "review_rounds": 2,
+  "review_verdicts": [
+    "REVISE",
+    "ACCEPT"
+  ],
+  "review_verdict": "ACCEPT",
+  "final_status": "ACCEPT",
+  "findings_by_round": [
+    [
+      "LENGTHEN",
+      "UNASSIGNED-REFRAIN"
+    ],
+    []
+  ],
+  "harness": "opencode-task",
+  "spawn": "fresh-task-subagent-per-role",
+  "rewritten": true,
+  "draft_route": "opencode-task/muse-spark"
+}

@@ -1,0 +1,18 @@
+ACCEPT
+
+Chapter CH-02 (Already Hooked) checked against plan card + budget line Delivered 4333 / Budget 4500 (range 3825-5175).
+
+- JOB: done. Morning reach enacted as hand-before-thought ("It finds the pack on the bedside table ... before your feet touch the floor"), empty tug followed through the day including the LENGTHEN-assigned hour (hands, ribs, pocket-checks, minute-counting, corridor/doorway rehearsal while the non-smoker sits level), non-smoker contrast staged; primary transition landed — choice/weakness reassigned to small want plus implanted belief. No reserved-later job performed.
+- MANTRA: both debuts verbatim present. M-E: "You were conned, not weak." M-F: "The empty feeling is the cure starting, not something to cure." No assigned mantra missing.
+- INSTRUCTION: I-02 verbatim present as "2. DON'T STOP OR CUT DOWN YET" + "Smoke as you normally do until your last cigarette." Bare imperative + one rationale line, no ID cross-ref.
+- ID: E-11 resolved as typical mild short-lived tug peaking within days and easing across weeks ("for most, it arrives as restlessness ... then it peaks within days of stopping and eases across weeks into quiet"); E-07 resolved as fast arrival/fast fade without universal timer ("The smoke carries nicotine to the brain fast ... and the fading that follows arrives fast as well"). SC-01 fully staged; AN-01 only token-echo phrase ("that old coin in the meter dropping and fading again"). No invented IDs, no ledger IDs printed in prose.
+- LENGTH: 4333 inside 3825-5175. No LENGTHEN, no SHORTEN. Expansion stays inside the assigned single hour and lands the new understanding that the timetable was learned with the trap ("It sits in training." / "It was issued by repetition"); it does not re-prove the landed softening-thins verdict in a new setting.
+- HEADER: none. "IN THIS CHAPTER: a bedside pack before feet touch the floor, an empty tug between doses, and a neighbour who sits easy through the same hour." is Carr-native rooms/pictures, not syllabus. "2. DON'T STOP OR CUT DOWN YET" + one rationale line is allowed (not an I-NN plan-ID prefix, not an index without body).
+- STOPPED-SHORT: landed. Flat verdicts before SUMMARY ("You smoke not from choice and not from weakness; a small restlessness calls and old false beliefs answer." + both mantras as fact); reader cannot still hold entry choice/weakness belief as valid.
+- UNASSIGNED-REFRAIN: none. Zero 4/5/6/7/8-grams repeat >=3x verbatim. Assigned mechanism nouns ("the tiny physical craving", "the brainwashing voice") are card vocabulary, not slogan refrains.
+- RESERVED-REACH: none. Waking/steadying reassignment stays inside C02 craving-voice ground, does not perform C03 reward inversion as its own section; past-attempt reassignment stays inside M-E con-not-weak, never names "the willpower method" (T-3 reserved C06) and states no prevalence; new hour-extension names no social/product/just-one/inhabit staging.
+- RE-ARGUMENT: none. C01 hospital corridor not restaged; AN-01 only token phrase, never second staging; C01 contract/promise not rebuilt; I-01 not re-explained. Mantra lines and one-sentence hand-offs only.
+- OVERCLAIM: none. Typicality guarded ("typically mild, typically brief," "for most," "for the typical smoker"), no zero-sensation-for-all claim, no medical withdrawal advice beyond naming/recognising, no ten-second universal timer, craving never presented as dangerous, no grit counselled. Method promise exempt per contract.
+- SUMMARY: compliant. 3 bullets, each one sentence with belief verb (see / understand / believe); no roll-call, instruction recap, preview, or study note.
+
+Verdict: ACCEPT; all checks pass.

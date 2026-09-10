@@ -1,0 +1,9 @@
+REVISE
+
+LENGTHEN to 4500±15% — Delivered 3340 words. Budget 4500. Range 3825-5175. Need ~500-1100+ words to enter range, aiming 4500.
+
+Expansion assignment — extend what happens next with the settled understanding already assumed, not another proof:
+- Unfinished encounter: the shop walk ends at the street and the shared table ends at the sink, so continuity across days is undeveloped. Quote the locations to extend: "You pay, you take your bags, the door bell goes again behind you, and the street air tastes of rain and petrol and leaves." and "Eat, laugh, stay late, help with the washing, carry the chairs back."
+- What to add there: unpacking the basket into dinner, cooking and closing a plain meal at home with appetite, staying late at the shared table into walking home, sleeping and waking next morning steady — lived as free identity already owned, firing relief where old sentences cross, carrying proof lightly for every day from now on in its reward valence only.
+- What this must deliver: the card's objection answered across time — mornings, shops and tables stay full on successive days — consolidating exit belief that steady afternoons, quiet aisles and closed meals are now lived with relief.
+- Check against earlier cards and this draft: this extends C12's own ordinary-days encounter forward. It must not rebuild C4 fuel inversion, C5 reward reassignment, C9 exception collapse, C10 manufacture, or C11 vow doors in a new setting, and must not add another proof of conclusions already landed here ("a steady afternoon met," "a quiet aisle walked," "a closed meal shared," "getting yourself back"). Assume those settled; show next hours/days with them. Use only token echoes for SC-F/SC-G/SC-A and AN-B/AN-F/AN-H; no full re-staging, no new claims, no C13 list recap. Retain budget 4500±15% and all other ACCEPT requirements.

@@ -1,0 +1,16 @@
+- **ID C5, number 5, working title Reward.**
+  - job: enacted transition — the reader stops believing sweets are love, comfort or deserved pay and sees the ceremony and memory holding the pleasure, not the sweet.
+  - objection resolved: it comforts me and I have earned it.
+  - belief now: entry feels paid and soothed by dessert; exit feels the occasion paid and the sweet rode along.
+  - encounter: family ceremony and office-week reward reassigned piece by piece to people, rest, music and sunlight.
+  - evidence: L-03 plus L-15 wanting versus liking. Limits: wanting language not pleasure chemistry; no claim sweet food never enjoyable.
+  - new instruction: none.
+  - reserved-later fence: hunger inhabiting to C6; cue depth to C7.
+  - arc: middle demolition.
+  - reader-state: generous adult who pays hard days in chocolate and fears a gray life; encounter lands by keeping the love while demoting the sweet.
+  - mantra: echo M-C "the sugar trap."; echo M-D "a genuine pleasure, comfort or lift."
+  - scenes: debut SC-E with staging job; debut SC-D glimpse only as table image, full head-on reserved to C10; debut AN-C tight shoes with staging job.
+  - structural: none beyond demolition.
+  - guardrails: tenderness toward memory; no contempt for the reader.
+  - continuity: receives fuel inversion; hands forward reward inversion to C6.
+  - budget: 5000.
