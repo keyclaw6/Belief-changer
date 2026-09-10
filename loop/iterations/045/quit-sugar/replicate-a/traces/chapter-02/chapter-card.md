@@ -1,0 +1,15 @@
+CH-02 — Are you really choosing.
+- primary: enacted transition — the casual grazer sees daily grazing as life inside a trap rather than free choice. Resolves: I eat normally, I could stop if I wanted.
+- belief now: entry holds investigator stance from CH-01; exit holds con position — the loop removed choice without fault.
+- encounter: supermarket tour with cart-load and checkout-line sameness.
+- evidence: E-12 with once-only prevalence and no-diagnosis limit; E-08 with schedule-only limit; E-28 with single-comment limit.
+- new instructions: none.
+- reserved-later: benefit audit to CH-03; fuel, love, mechanism, moderation, industry, strongest scene, fear, vow as named.
+- arc: first-third world install; creatures join vocabulary; demolition vocabulary begins.
+- reader-state: the shopper who thought everyone eats like this; the identical neighbouring carts make the move land.
+- mantras: M-C with the Sugar Trap. M-D with the Sugar Mite. M-E with the Sweet Talker. M-G with a faint, empty, slightly edgy feeling. M-L with the tug-of-war.
+- scenes: SC-06 staging debut; AN-07 staging debut.
+- responsibility: prevalence once; creatures named in passing; body, hunger and real food as concrete encounters.
+- guardrails: AD-A cited; blame method and trap only; no fate claim.
+- continuity: receives contract and line; hands trap, creatures, sensory phrase and body authority to CH-03.
+- budget: 4200.

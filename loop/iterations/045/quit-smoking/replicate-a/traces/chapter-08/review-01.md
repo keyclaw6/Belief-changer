@@ -1,0 +1,6 @@
+ACCEPT
+
+Length 3760 inside B±15% (3400–4600). Job done and landed: morning feet to kettle, meal-end taste lingering, work break air on face with free hands all lived through as complete, closed by flat verdict before SUMMARY — "Morning wakes without lighting. The meal ends without sealing. The break rests without burning." / "No pleasure was lost from those rooms."
+Mantra M-F verbatim present: "an empty, slightly restless, slightly edgy little tug". Mantra F-B verbatim present: "It never fixed the itch. It caused it."
+Instruction I-08 verbatim present with rationale: "TRUST YOUR BODY TO BREATHE AND TASTE" / "Your body knows freedom without being taught." — numbered ALL-CAPS plus one spoken line, explicitly not HEADER.
+IDs resolved, no invented IDs. No HEADER. No unassigned refrain — no 4-gram repeats ≥3x, no distinctive sentence repeats ≥3x. No RESERVED-REACH — no night-patio full staging (C10), no post-vow living (C13). No RE-ARGUMENT — morning/meal/break are this card's SC-B debut; pellet and stairs-breath appear only as phrase-level token-echoes; I-07 reference is a one-sentence hand-off. No OVERCLAIM — tug described as small/brief with "In most bodies" and "I fix no calendar over your skin" inside E-11 typical-not-every-reader bound; pellet/meal claims stay inside E-05 permitted inference.

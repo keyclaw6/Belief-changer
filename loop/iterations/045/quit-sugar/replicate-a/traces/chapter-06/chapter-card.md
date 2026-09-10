@@ -1,0 +1,15 @@
+CH-06 — Eat like you were built to eat.
+- primary: enacted transition — inhabit hunger, satisfaction and real food as favourite in an ordinary meal. Resolves: without sugar there is nothing enjoyable left.
+- belief now: entry fears bland life; exit has eaten a real meal with attention and found sufficiency.
+- encounter: ordinary lunch eaten hungry to satisfied; ride-home apple chosen over candy call; homecoming table without sugary capstone.
+- evidence: E-20 with manufacture-not-prescription limit; E-30 with n-of-1 limit.
+- new instructions: I-04 with Your body knows hunger from the mite.
+- reserved-later: mechanism depth to CH-07; industry to CH-09; strongest scene stays to CH-10.
+- arc: middle inhabit-the-ordinary-doing; demolition pauses, freedom glimpsed.
+- reader-state: the dieter who no longer trusts appetite; a single attended meal makes the move land.
+- mantras: M-M echo with Eat as much real food as you want, whenever you are hungry, and never crave sugar again.
+- scenes: AN-03 staging debut.
+- responsibility: inhabit chapter; perception enacted through tasting.
+- guardrails: AD-A cited; no diet rules beyond book line; no substitute curriculum.
+- continuity: receives cleared benefit ground; hands lived sufficiency to mechanism.
+- budget: 4200.

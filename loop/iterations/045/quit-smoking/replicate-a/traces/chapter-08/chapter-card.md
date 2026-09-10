@@ -1,0 +1,15 @@
+**CH-08 — Mornings, Meals and Breaks Without It
+- primary job: enacted transition — inhabiting ordinary smoke moments as breathing, tasting, free-handed favourite proves non-smoker pleasure is fuller.
+- belief now: enters understanding inversion yet unsure ordinary moments can please without; leaves having lived morning, meal-end and break as complete without dose.
+- concrete encounter: morning feet to kettle, meal-end taste lingering, work break air on face, hands free.
+- evidence: E-05 celebrations remain without pellet; E-11 empty tug not self; limits moment accounts only.
+- new instruction: I-08 TRUST YOUR BODY TO BREATHE AND TASTE
+- reserved-later fence: strongest patio proof to C10; ordinary life living to C13.
+- arc position: middle inhabit-the-ordinary-doing; freedom beginning to rise.
+- reader-state: hesitant imaginer of empty breaks, encountering full sensory morning.
+- mantra: echo M-F "an empty, slightly restless, slightly edgy little tug"; echo F-B "It never fixed the itch. It caused it."
+- scene: debut SC-B, staging job: morning feet; token-echo SC-C as pellet phrase only; token-echo SC-J as stairs-breath phrase only.
+- structural responsibility: inhabit-the-ordinary-doing chapter.
+- guardrails: safety CA-SAFE; originality: inhabit as primary, not kill with inhabit flavour.
+- continuity intent: receives inversion from C07; hands lived baseline to indictment C09.
+- budget: 4000

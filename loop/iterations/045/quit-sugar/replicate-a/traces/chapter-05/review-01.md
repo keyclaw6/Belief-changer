@@ -1,0 +1,11 @@
+REVISE
+
+CH-05 draft vs card + plan.md §7 CH-05. Budget 4400, delivered 3423 — length pass, no padding needed.
+
+1. [Blocking — reserved-later breach: strongest scene to CH-10] draft.md L82-83 stages SC-04: "The mousse everyone orders because to sit out feels like sitting out of love itself." Plan SC-04 debuts only in CH-10; card reserves "strongest love-scene to CH-10." This is the birthday-table mousse beat in miniature. Fix: delete the mousse sentence. Keep the generic home pudding + cinema box that belong to E-03 scope, e.g.: "At home it is the pudding after the meal when everyone has pudding." Leave fancy-restaurant mousse-order-to-avoid-sitting-out unstaged for CH-10.
+
+2. [Blocking — reserved-later encroachment: inhabit to CH-06] draft.md L116-117 stages a full CH-06 perception enactment: "You put food on, real food, and you ate it sitting, hungry to satisfied, tasting salt and butter and crisp edge with a clean tongue." Card reserves inhabit + tasting to CH-06; CH-05 hands cleared ground only. Fix: trim to pause/rest contrast without the attended-meal tasting, e.g.: "Only this time you sat down. You drank water. You changed your clothes. You let the day end and the pause do its work." Reserve hungry-to-satisfied tasting and AN-03 filter work for CH-06.
+
+3. [Must-fix — E-14 limit exceeded] draft.md L152: "As a loan created by the dose, the darkening ends when the dosing ends. The body levels on its own." E-14 permits only men-only observational association + checked reverse direction; prohibits personal fate and causal cure claims. Draft elsewhere handles this correctly (L138-140, L150-151). Fix: hedge to association and remove individual recovery promise, e.g.: "Once seen, it frees rather than frightens. You do not change from fear of the dark. You change from joy at escaping the lender." Delete "the darkening ends when the dosing ends. The body levels on its own."
+
+Passes: M-E echo correct (L46); E-03 quoted exactly with no-moralizing limit kept (L60, L64, L74); E-14 association + reverse-direction stated with men-only qualifier (L138-139); SC-03 staged at full length as observed ritual with no instruction (L16-36); family memory kept warm, anger at conditioning only (L60, L168-169); no new instructions; TO/FOR spine intact; freedom Pictures one per section.

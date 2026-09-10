@@ -717,3 +717,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Routing limits onto cards narrates them. The reusable anatomy doctrine is the shared floor under both deficits. Card-field edits have now failed three straight times on deficit/comparison (042-mechanism-rejected, 043, 044) — plan-card 3-strike, PIVOT off card level.
 
 **What this opens next.** 045 attacks the anatomy floor and/or the hedge guard, rebuilding from verified parts (042 ban eligible). Never route-every-limit, card-field edits, factory-speech, willpower, re-argument.
+
+### iter-045 — anatomy reshape + clinician-ban reprise  ·  2026-09-10
+
+**Hypothesis.** PRIMARY deficit: the recap furniture (Change 1) + re-apply the verified clinician ban (Changes 2–3) on restored text.
+
+**Change.** `prompts/style-guide.md` (§B10), `prompts/chapter-writer.md`. Sugar plan regenerated (15); smoking reused (037). Research reused. `change.diff` recorded. Wedge repeated: sugar accepted plan recovered from traces.
+
+**What happened.** Deficit 32→30 (70) / 30→26 (74). Missing 8→5 / 1→3. Partial 9→9 / 6→5. Blocking 0 both. Words 54268/57894. Headers rooms-form but presence still quoted (smoking R3); SUMMARY cap fired ~2/3 (writer contract drops it); clinician line back once in sugar CH-15 (model local); private vocab both R2; smoking moved on identical plan (variance).
+
+**Verdict & why.** QUANTIFY. PRIMARY missed band both. No restore trigger (improved both, no both-blocking, floors met). Carried forward: 045 reshape + ban. `parent: ae1afba5`. Consecutive no-KEEP: 4.
+
+**What we learned.** Header presence is instrument property (voice 0 vs distance quote; deletion control-protected) — stop chasing it. The SUMMARY cap's first loss point is the writer contract. Private vocab is the cleanest untried both-signal but collides with originality doctrine.
+
+**What this opens next.** 046: vocab discipline (doctrine-aware) or SUMMARY cap+finding. Never card edits, route-every-limit, factory-speech, willpower, re-argument.

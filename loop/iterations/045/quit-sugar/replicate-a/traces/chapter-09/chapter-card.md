@@ -1,0 +1,15 @@
+CH-09 — They built it to hook you.
+- primary: enacted transition — the self-blamer sees desire as manufactured by labs, aisles and ads rather than appetite. Resolves: if it is everywhere and everyone eats it, it must be normal and my fault.
+- belief now: entry owns shame; exit holds conned-not-foolish with named beneficiaries.
+- encounter: bliss lab bench, vanishing-density melt, Lunchables trays, stomach-share table, suppressed reviews.
+- evidence: E-16 with population-approximate limit; E-17 with hygiene-mediated limit; E-25 with interview-not-trial limit; E-26 with journalistic-reconstruction limit; E-27 with historical-document limit; E-15 with ceiling-not-taboo limit.
+- new instructions: none.
+- reserved-later: strongest scene to CH-10; fear to CH-12.
+- arc: middle widening; demolition peak handing to release.
+- reader-state: the parent who thought lunchbox treats were care; the measured optimum and hidden teaspoons make the move land.
+- mantras: M-C echo with the Sugar Trap. M-H echo with for the rest of your life. M-K echo with tired, foggy and heavy.
+- scenes: AN-04 staging debut.
+- responsibility: manufacture-of-desire room; awe at body doing the persuasion work.
+- guardrails: intent only where sourced; anger at industry, warmth to reader; facts then relief same chapter.
+- continuity: receives totality; hands external villain to strongest-case test.
+- budget: 4200.

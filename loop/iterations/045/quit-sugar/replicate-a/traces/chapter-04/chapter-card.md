@@ -1,0 +1,15 @@
+CH-04 — The lift that steals the afternoon.
+- primary: enacted transition — the afternoon slumper sees the sweet top-up as the cause of the slump rather than its fuel. Resolves: I need sugar for energy and focus.
+- belief now: entry uses sugar as daytime fuel; exit holds lift is deferred load.
+- encounter: timetabled desk chocolates plus spoonfuls-of-syrup rescue and 20-minute lie-down.
+- evidence: E-01 with self-report-no-diagnosis limit; E-18 with mechanism-not-diagnosis limit; E-19 with rare-clinical limit; E-20 with no-diet-prescription limit.
+- new instructions: none.
+- reserved-later: love to CH-05; mechanism depth to CH-07; substitutes to CH-08.
+- arc: middle demolition on installed ground; demolition curve rising.
+- reader-state: the worker who cannot reach 6pm without sweets; the rescue that floors instead of lifts makes the move land.
+- mantras: M-F echo with a genuine treat or lift. M-K with tired, foggy and heavy.
+- scenes: AN-02 staging debut.
+- responsibility: fuel demolition.
+- guardrails: AD-A cited; no hypoglycaemia diagnosis; no diet prescription.
+- continuity: receives illusion token; hands crash mechanism to CH-07 and cost triple forward.
+- budget: 4400.

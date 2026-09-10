@@ -1,0 +1,14 @@
+**CH-02 — Are You Really Choosing This
+- primary job: enacted transition — the reader stops seeing smoking as free choice and starts seeing a trap they were conned into.
+- belief now: enters believing smoking is my choice and habit I enjoy; leaves believing a trap removed choice and two mechanisms keep me.
+- concrete encounter: hiding to smoke and Febreeze, watching own hand move before decision.
+- evidence: E-04 plus limit moment lighting only, not day-long gift; E-01 credit false yet felt.
+- new instruction: I-02 DON'T STOP OR CUT DOWN YET
+- reserved-later fence: off-switch kill to C04; reward kill to C05; substitutes to C06; inversion detail to C07.
+- arc position: first third trap first seen; demolition rising.
+- reader-state: defensive chooser, encountering closet hide that choice would not need.
+- mantra: debut M-C "the nicotine trap"; debut M-D "the Nipper"; debut M-E "the Smokescreen"; debut M-F "an empty, slightly restless, slightly edgy little tug".
+- scene: debut SC-D, staging job: closet hide cost.
+- guardrails: safety CA-SAFE, E-04 safety limit; originality: creatures named in passing, not as lesson unit.
+- continuity intent: receives contract from C01; hands trap vocabulary to C03.
+- budget: 4000

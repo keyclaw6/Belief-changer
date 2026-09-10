@@ -1,0 +1,15 @@
+CH-13 — Every excuse, answered.
+- primary: enacted transition — the haggler with leftover objections runs out of objections. Resolves: cut down, keep special ones, quit tomorrow, wean, switch to honey, juice, fruit confusion.
+- belief now: entry holds a pocket of clever exceptions; exit holds no route left standing.
+- encounter: rapid-fire quoted reader lines at a table, each answered in sentences.
+- evidence: E-24 with preliminary-ranking limit for highly-processed concentration with never-the-strawberry turn, plus boxed BAD SUGAR line for honey and juice as BAD SUGAR and fruit as not; E-08 with schedule-only limit for cut-down; E-29 with single-blog limit for substitution collapse.
+- new instructions: none.
+- reserved-later: vow to CH-14 only.
+- arc: pre-quit clearance; distinct myths room plus meta-inoculation as final myth on the method itself.
+- reader-state: the negotiator with one more clever swap; the grams-arithmetic that becomes the next bag makes the move land.
+- mantras: M-J echo with the Willpower Method.
+- scenes: AN-05 token echo as cliff named.
+- responsibility: myths battery distinct room; meta-inoculation performed without label.
+- guardrails: close each myth without opening new curriculum; no substitute prescription.
+- continuity: receives steady reader; hands objector-free reader to vow.
+- budget: 3800.

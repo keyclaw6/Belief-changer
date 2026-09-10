@@ -1,0 +1,15 @@
+CH-12 — Fear is the last rope.
+- primary: enacted transition — the frightened starter sees fear of failure and fear of success as the trap's final pull rather than signals to wait. Resolves: what if I fail again, who am I without it.
+- belief now: entry fears attempting; exit holds every rope belongs to the trap and the attempt is safe.
+- encounter: prison-door scene and released-convict morning plus 1:30am worry night ending in morning vow.
+- evidence: E-21 with days-long limit; E-22 with split-evidence limit; E-11 with open-question limit.
+- new instructions: I-06 with Doubt is the only danger left.
+- reserved-later: myths to CH-13; vow to CH-14.
+- arc: pre-quit fear room; demolition hands to freedom.
+- reader-state: the reader stalling at the threshold; the worry that arrives on sugar nights and lifts off it makes the move land.
+- mantras: M-C echo with the Sugar Trap. M-H echo with for the rest of your life. M-J echo with the Willpower Method. M-K echo with tired, foggy and heavy. M-L echo with the tug-of-war.
+- scenes: AN-02 token echo as ride named, not restaged.
+- responsibility: fear room; tug-of-war collapsed.
+- guardrails: AD-A cited; validate fear before disarming; never leave in dread.
+- continuity: receives credibility; hands steady reader to myths clearance.
+- budget: 4000.

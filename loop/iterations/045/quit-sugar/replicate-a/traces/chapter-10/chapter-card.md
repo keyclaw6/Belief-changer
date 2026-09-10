@@ -1,0 +1,15 @@
+CH-10 — The birthday table.
+- primary: enacted transition — the celebrant sees even the most seductive shared dessert as scene pleasure with sugar only sneaking a ride. Resolves: but the special ones, the holidays, love itself.
+- belief now: entry reserves one exception; exit holds no exception survives because no benefit survived.
+- encounter: birthday-table mousse eaten all of it to avoid sitting out; wedding-cake handover joke.
+- evidence: E-31 with single-retaste limit; E-03 with no-moralizing limit; E-24 with preliminary limit for never-the-strawberry turn.
+- new instructions: none.
+- reserved-later: testimony to CH-11; fear and myths to CH-12 to CH-13; vow to CH-14.
+- arc: late middle strongest case; last demolition before release.
+- reader-state: the host who fears being no fun without dessert; the too-sweet retaste that stops after bites makes the move land.
+- mantras: M-F echo with a genuine treat or lift.
+- scenes: SC-04 staging debut; AN-03 token echo as filter lifted.
+- responsibility: strongest case head-on plus hands-on perception proof.
+- guardrails: preserve family warmth; no second staging of earlier scenes.
+- continuity: receives villain frame; hands closed benefit case to testimony.
+- budget: 4000.

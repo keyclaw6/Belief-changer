@@ -1,0 +1,15 @@
+CH-14 — The last ordinary meal.
+- primary: enacted transition — the ready reader crosses from understanding to identity and becomes free as of now. Resolves: I will miss it, I should wait until Monday.
+- belief now: entry is convinced but still feeding; exit is free with vow made and mite starving.
+- encounter: last ordinary family Friday meal eaten with attention on the ugliness, vow spoken, congratulation immediate.
+- evidence: E-21 with days-long limit for revel-in-throes framing; E-07 with mild-magnitude limit to defuse dread.
+- new instructions: I-07 with Rejoice at a dead enemy. I-08 with Cross joyful, never nostalgic.
+- reserved-later: nothing reserved; only ordinary days and recap remain.
+- arc: threshold; freedom detonated.
+- reader-state: the reader champing to finish; readiness gated, reluctance sent to re-read, never to willpower.
+- mantras: M-A echo with You have nothing to lose and everything to gain. M-B echo with easily, immediately and permanently. M-C echo with the Sugar Trap. M-D echo with the Sugar Mite. M-E echo with the Sweet Talker. M-G echo with a faint, empty, slightly edgy feeling. M-H echo with for the rest of your life. M-I debut with FANTASTIC! I'M FREE! M-L echo with the tug-of-war.
+- scenes: AN-06 token echo as seatbelt remembered.
+- responsibility: vow room; last ordinary instance, not laboratory dose.
+- guardrails: AD-A cited; gate on readiness; few new post-quit lines; pity-not-envy seeded.
+- continuity: receives objector-free reader; hands freed identity to ordinary days.
+- budget: 3800.

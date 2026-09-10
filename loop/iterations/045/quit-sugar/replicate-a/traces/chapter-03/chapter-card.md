@@ -1,0 +1,15 @@
+CH-03 — What good at all.
+- primary: enacted transition — the harm-weigher stops asking harm versus benefit and demands any benefit at all. Resolves: it cannot be that bad if I enjoy it.
+- belief now: entry concedes trap exists but keeps private benefit; exit holds benefit must prove itself.
+- encounter: 2pm breakroom stale cake with float fantasy alongside.
+- evidence: E-24 with preliminary-ranking limit; E-23 with wanting-not-liking limit.
+- new instructions: none.
+- reserved-later: fuel demolition to CH-04; love to CH-05; inhabit to CH-06; mechanism to CH-07.
+- arc: first-third axis switch; freedom still suppressed.
+- reader-state: the ledger-keeper tallying pleasure against cost; the stale cake that fails its own advertised pleasure makes the move land.
+- mantras: M-F with a genuine treat or lift.
+- scenes: SC-02 staging debut.
+- responsibility: axis switch spoken without ledger worksheet.
+- guardrails: concede no real benefit; gain-framed.
+- continuity: receives trap vocabulary; hands illusion token to demolitions.
+- budget: 4000.

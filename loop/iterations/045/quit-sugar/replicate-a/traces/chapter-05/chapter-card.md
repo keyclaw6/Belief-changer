@@ -1,0 +1,15 @@
+CH-05 — Love was never in the wrapper.
+- primary: enacted transition — the comfort eater sees reward, love and stress-soothing as the Talker's translation rather than the sweet's gift. Resolves: it rewards me, it loves me, it calms me, I deserve it.
+- belief now: entry still pays hard days with dessert; exit holds payment never arrived.
+- encounter: 9pm fridge-light numbing trip beside payday-candy and bakery-smile memories.
+- evidence: E-03 with no-moralizing limit; E-14 with men-only-observational limit.
+- new instructions: none.
+- reserved-later: inhabit to CH-06; mechanism to CH-07; strongest love-scene to CH-10.
+- arc: middle demolition; demolition high.
+- reader-state: the earner who was fed for grades and now feeds the self for coping; the few moments of numbing that leave pain plus guilt make the move land.
+- mantras: M-E echo with the Sweet Talker.
+- scenes: SC-03 staging debut.
+- responsibility: reward and food-equals-love demolition.
+- guardrails: AD-A cited; never shame family food memory; anger at conditioning, warmth to person.
+- continuity: receives fuel correction; hands cleared ground to inhabit chapter.
+- budget: 4400.

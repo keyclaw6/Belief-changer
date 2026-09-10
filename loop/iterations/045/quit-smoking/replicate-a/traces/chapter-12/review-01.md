@@ -1,0 +1,3 @@
+ACCEPT
+
+Length inside budget (3857 vs 4000, range 3400-4600). Primary job done and landed: readiness gate, ordinary farewell table with full attention on stain/ash/stale end, instant conferral ("Congratulations. You are free." / "you are a non-smoker, wholly and at once"), two doors shut, SUMMARY verdicts. Assigned mantras verbatim: M-A, M-B, M-C, M-D, M-I, debut M-H (2x). New instruction I-12 present verbatim with rationale line, not HEADER per exception. IDs E-11/E-06 used within bounds with slip pre-forgiven, no overclaim. No unassigned refrain at sentence level, no reserved-later performance, no re-argument section.

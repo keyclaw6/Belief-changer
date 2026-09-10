@@ -1,0 +1,15 @@
+CH-01 — Invitation and the line.
+- primary: enacted transition — the hopeless dieter becomes a willing investigator who accepts BAD SUGAR has a definition and the method has a contract. Resolves: nothing has worked so why would this.
+- belief now: entry believes quitting means sacrifice and willpower and doubts easy; exit believes there is a defined trap, a set of instructions, and a risk-free read.
+- encounter: kitchen table with the book still closed; BAD SUGAR boxed and named.
+- evidence: E-15 plus E-12 with ceiling-not-taboo and no-diagnosis limits; E-04 with animal-only limit.
+- new instructions: I-01 with You have nothing to lose by hearing me out. I-02 with Let the belief change first. I-03 with There is no need to feel miserable.
+- reserved-later: choice machinery to CH-02; fuel to CH-04; love to CH-05; mechanism to CH-07; moderation to CH-08; industry to CH-09; strongest scene to CH-10; fear to CH-12; vow to CH-14.
+- arc: opening contract; freedom curve promise planted then suppressed; demolition not yet begun.
+- reader-state: the reader who has failed every diet and expects another scolding; the boxed line and spoken contract make the move land because the target shrinks to something quittable.
+- mantras: M-A with You have nothing to lose and everything to gain. M-B with easily, immediately and permanently. M-H with for the rest of your life. M-J with the Willpower Method. M-M with Eat as much real food as you want, whenever you are hungry, and never crave sugar again.
+- scenes: SC-01 staging debut as normalization glimpse, token only thereafter; AN-06 staging debut as seatbelt with redefinition, token only thereafter.
+- responsibility: redefinition box; entry contract; method promise flat in paragraph one; heaviest heart and teeth facts stated plainly in the argument with return to escape-joy same chapter.
+- guardrails: AD-A cited; no diagnosis; original prose; gain-framed.
+- continuity: hands BAD SUGAR meaning, M-A, M-B, M-J, M-M and standing permission to CH-02.
+- budget: 4200.

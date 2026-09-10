@@ -1,0 +1,15 @@
+CH-07 — How the loop actually runs.
+- primary: enacted transition — the puzzled craver sees the high as relief from a low the last dose created, run by wanting not liking. Resolves: the pleasure must come from somewhere.
+- belief now: entry knows benefits fail singly but lacks the engine; exit holds rescuer-as-perpetrator as spine.
+- encounter: midnight pantry raid with forensic wrapper hiding, eaten past pleasure to mechanical finishing.
+- evidence: E-05 with animal-magnitude limit; E-06 with no-human-diagnosis limit; E-07 with mild-magnitude limit; E-09 with rodent-inference limit; E-10 with animal-cue limit; E-23 with neural-distinction limit.
+- new instructions: none.
+- reserved-later: anti-method to CH-08; industry to CH-09; fear to CH-12.
+- arc: middle deepening; creatures already vocabulary; demolition peak.
+- reader-state: the night eater who finishes the box joylessly; the heavenly first bites turning mechanical make the move land.
+- mantras: M-B echo with easily, immediately and permanently. M-C echo with the Sugar Trap. M-D echo with the Sugar Mite. M-E echo with the Sweet Talker. M-G echo with a faint, empty, slightly edgy feeling.
+- scenes: AN-01 staging debut.
+- responsibility: mechanism deepening; trivial physical split from dominant belief; brainwashing named.
+- guardrails: preserve E-11 honesty fence for CH-09; grip not equivalence; no brain-damage fate.
+- continuity: receives sufficiency; hands engine to anti-method and villain chapters.
+- budget: 4200.

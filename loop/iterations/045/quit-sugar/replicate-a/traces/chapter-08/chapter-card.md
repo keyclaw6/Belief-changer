@@ -1,0 +1,15 @@
+CH-08 — The method that kept you trapped.
+- primary: enacted transition — the strong-willed failure sees repeated defeat as proof the method was wrong rather than the self weak. Resolves: I lack willpower, I am different.
+- belief now: entry blames character; exit blames the Willpower Method and reclaims strength.
+- encounter: 2:30pm reach-till-night plus white-knuckle week-one collapse and Monday-restart ritual.
+- evidence: E-21 with preliminary-retrospective limit; E-29 with single-blog moderation-failure-contrast limit as lived proof without generalization.
+- new instructions: I-05 with The old method kept you trapped.
+- reserved-later: industry to CH-09; strongest scene to CH-10; fear to CH-12; myths to CH-13.
+- arc: middle escape-route foreclosure begins; totality logic lands.
+- reader-state: the disciplined professional owned by one food; the rule that intensifies the want makes the move land.
+- mantras: M-A echo with You have nothing to lose and everything to gain. M-C echo with the Sugar Trap. M-J echo with the Willpower Method.
+- scenes: AN-05 staging debut.
+- responsibility: anti-method room; will reframed as evidence for the reader; cliff-jump totality.
+- guardrails: never white-knuckle as strategy; never contempt for dieters.
+- continuity: receives engine; hands totality to villain and strongest-case chapters.
+- budget: 4000.

@@ -1,0 +1,15 @@
+CH-11 — Lives that stopped negotiating.
+- primary: enacted transition — the doubter sees freedom as ordinary, durable lives rather than theory. Resolves: easy for others, not for me, not for long.
+- belief now: entry believes argument but doubts durability; exit holds ordinary people live free and taste returns.
+- encounter: year-long quit journal with strange dreams then stronger energy; six-week correspondent with label shock; Hawaii bite with confession and return.
+- evidence: E-30 with n-of-1 limit; E-31 with single-retaste limit; bank-10 long arcs used as lived proof without efficacy generalization.
+- new instructions: none.
+- reserved-later: fear to CH-12; myths to CH-13; vow to CH-14.
+- arc: late middle testimony room in main flow; freedom curve begins rise.
+- reader-state: the reader who has understood but not yet trusted; concrete numbers and sensory return make the move land.
+- mantras: none debuted or echoed; tokens invoked only.
+- scenes: SC-07 staging debut as comic turn to disgust inside testimony voice.
+- responsibility: embedded long-form testimonial room, original prose from bank facts.
+- guardrails: no outcome promise; no willpower moral; AD-A cited for withdrawal variance.
+- continuity: receives closed case; hands credibility to fear and clearance chapters.
+- budget: 4200.

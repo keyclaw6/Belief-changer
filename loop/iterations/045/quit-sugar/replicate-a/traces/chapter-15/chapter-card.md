@@ -1,0 +1,13 @@
+CH-15 — Mornings, shops, food; then life.
+- non-argument — hand-off plus recap: lives the first free days and hands over thought scripts and photographable instructions.
+- encounter: 3pm kettle taken plain, quiet supermarket aisle walked past the war-zone, market trip with steady energy, fridge opened without negotiation.
+- evidence: none new; invokes installed tokens only.
+- new instructions: none; carries photographable list of I-01 to I-08 plus M-M verbatim without chapter callbacks.
+- arc: ordinary life plus short recap; freedom crescendo; demolition vocabulary retired.
+- reader-state: the newly free reader testing mornings and shops; owned thoughts rehearsed once make the move land.
+- mantras: M-D echo with the Sugar Mite. M-I echo with FANTASTIC! I'M FREE!
+- scenes: SC-05 staging debut as lived morning; SC-01 token echo as quiet aisle; SC-02 token echo as breakroom passed.
+- responsibility: ordinary-life room plus short recap list; outward imperative to live; saved reframe appears here only: you buried an enemy that posed as a friend — grieve nothing.
+- guardrails: AD-A cited; pre-forgive slips without licensing; pity-not-envy; no new teaching; original prose.
+- continuity: receives freed identity; hands reader to life with scripts in hand.
+- budget: 2400.
