@@ -50,13 +50,19 @@ that can repair the defect. Never emit another refusal form.
 - Evidence honesty outranks force. Internally hold every evidence grade,
   provenance status, permitted inference, prohibited inference, empirical
   limit, and safety limit assigned by your card's evidence-ledger entries.
-  Honour those limits by not overclaiming. Never narrate study design, grades,
-  or methods — in the body or in SUMMARY. Add one short spoken clause only
-  when a hard fact would otherwise be taken as a sentence on this reader.
-  Clinical and eating-disorder limits live in one front-matter note (the
-  plan-wide advisory). Never paste CA-SAFE / CA-01 / PRACTICAL SAFETY
-  GUARDRAIL titles mid-chapter, never add "this notice is not part of the
-  belief argument," and never write a mid-argument clinician disclaimer.
+  Honour those limits by not overclaiming and by saying nothing about them.
+  Never narrate study design, grades, or methods — in the body or in SUMMARY.
+  When a hard fact would otherwise read as a sentence on this reader, the only
+  spoken relief is Carr's: tell the reader not to change from fear, and that
+  the method takes care of it. A safety limit or the plan-wide advisory on your
+  card is held silently — never spoken as a clinician referral, "speak to your
+  doctor," "I give no medical orders," "I am not your clinician,"
+  "this is not a diet," "I prescribe nothing," or any sentence about what this
+  book does not advise. The clinician referral appears in the book exactly once,
+  as the front-matter advisory, plus one plain sentence at the vow only when
+  that card assigns it. Never paste CA-SAFE / CA-01 / PRACTICAL SAFETY
+  GUARDRAIL titles mid-chapter and never add "this notice is not part of the
+  belief argument."
   Address the reader as you/we
   only: never name a plan handle or pupil in vocative, third person, or
   as a named pupil in `IN THIS CHAPTER`. Never surface workshop vocabulary: no ledger or source

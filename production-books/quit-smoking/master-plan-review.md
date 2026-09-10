@@ -1,15 +1,12 @@
-plan_path: production-books/quit-smoking/master-plan.md
-plan_sha256: 9f2c4a7e1b5d48c0a3e6f1d2c7b8a9045e6d1c2b3a4f5e6d7c8b9a0d1e2f3a4b
-brief_path: production-books/quit-smoking/00-brief.md
-style_guide: prompts/style-guide.md
-lived_experience: production-books/quit-smoking/research/lived-experience.md
-scientific_evidence: production-books/quit-smoking/research/scientific-evidence.md
-first_three_cumulative_walk: PASS — C01 installs contract plus stairs-breath body encounter, C02 enacts choice-to-trap with Nipper/Smokescreen in passing plus closet-hide, C03 enacts TO/FOR axis switch; not three setups, belief changes now
-whole_book_cumulative_walk: PASS — C04-C11 build belief-now forward with distinct principal encounters and forward-only fences, token-echo only for SC-C/SC-J/SC-A/SC-B/SC-M, C12 vow then C13 ordinary-life owned-thoughts once then C14 short recap, no second manual
-writer_facing_authority: PASS — all E-01 to E-11, M-A to M-I, F-A to F-C, SC-A to SC-M, I-01 to I-12 resolve to inventories with limits and frozen quotes pinned, lettered mantras avoid I-08 collision, bare imperatives, CA-SAFE guardrail-only, no P-xx, no pupil name, no Voice operators, no pasted box
-method: PASS — warm to person vicious to trap and Willpower Method, willpower-free escape-not-sacrifice, fear delivered flat then disowned to escape-joy, no time-contingent freedom, slip as rumble-strip without license
-evidence: PASS — each card cites defined E-IDs with permitted/prohibited inferences and empirical limits honored, E-10 CONTESTED kept split without collapsing trial vs population, no overclaim beyond smoked pharmacokinetics and typical withdrawal
-safety: PASS — plan-wide CA-SAFE with no medical advice and clinician routing, last-cigarette ceremonial not dare, E-02 no avoidance prescription, E-09 no safer-cigarette recommendation, E-06 no test-one dare
-originality: PASS — original parking-meter, gas-mask hole, dispenser, hug, genie/cliff images, Fork-1 Nipper/Smokescreen external-small-starvable throughout, no borrowed caffeine images
-architecture_length: PASS — single trap-to-freedom spine with demolition peak C06-C11 and freedom crescendo detonated C12-C14, I-01 to I-12 owned C01-C12 recapped photo-list C14 without callbacks, budgets 3500+4000+4500+4500+5000+4500+4500+4000+4500+4000+3500+4000+4500+5000=60000
+SLUG: quit-smoking
+ITER: 042
+PLAN-SHA256: 27d0dbc95383843932463ac4e20f11d3bba1c4c761d8f4bae6fb1cf534ba35cd
+First-three cumulative walk: PASS — C-01 installs contract and promise-triad with pack-in-pocket encounter to willing-investigator, C-02 installs trap plus Ember Mite and Smokescreen in passing with hourly-clock/stairs/ashtray/morning-chain encounters to conned-occupant, C-03 installs axis-shift with recent-cigarette-weighed encounter to axis-shifted; each changes belief now, not setup-only.
+Whole-book cumulative walk: PASS — belief-now chain hooked-to-joyful is continuous with distinct principal encounters, token-echo only after debut except declared previews, C-10 inhabit-primary of coffee/break/closed-meal lived, after vow C-13 last-ordinary-instance plus vow then C-14 one-ordinary-life then C-15 short-recap, reaching relief-joy destination.
+Writer-facing authority: PASS — all E-01 to E-13, M-A to M-H lettered with pinned frozen quotes, I-01 to I-11 frozen with ownership and bare final recap, SC-01 to SC-10 with jobs and token economy resolve to inventories with budgets continuity and guardrails, no P-xx codes, Voice fields, boxed-paste titles, pupil-persona, or ledger callbacks.
+Method: PASS — warm to person harsh to trap willpower-free throughout, C-01 assigns easy-at-once-for-good promise plus I-01 to I-03 and SC-08 scare with same-chapter relief, fear disowned same chapter not left as motive, clinical care never framed as failure.
+Evidence: PASS — cards cite ledger IDs only with limits held silently, E-10 trial-vs-population scopes not collapsed, E-12 starters-hooked used only as stated, E-06 just-one with no-doom limit, C-12 to C-15 none-new invoking settled tokens only.
+Safety: PASS — CA-01 boxed once in FM and cited only on printing card and vow card, ledger safety limits on every E-ID, last-cigarette ceremonial attention on ugliness not dare, no medical advice or ignore-doctor instruction.
+Originality: PASS — trap/freedom/banned registers with reader dialect quoted only, SC-01 to SC-10 and meter-mask analogies staged in original language with no brand display or romanticizing, verdict and mantras as frozen lines only.
+Architecture and length: PASS — one spine of relief-as-replenishment to nothing-to-give-up with deliberate mantra repetition and I-spine, freedom promised-suppressed-rising-detonated and demolition peaking C-04 to C-09, exact positive budgets FM2000 plus chapters summing 61800 within 54000-66000.
 fit to write from

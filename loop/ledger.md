@@ -675,3 +675,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** The Muse panel reproduces the close-out diagnosis with receipts: the engine is present (census near-clean) and the register is not (deficits 40/28 on exactly the CH-01/Part-B symptoms). The instrument change from composer-2.5 moved old floors (journey re-argument 6→1 sugar) — cross-instrument deltas are confounds, never results.
 
 **What this opens next.** 042 regenerates plans + chapters under the current files so the unmeasured CH-01 flat-promise rule and Part B plain-Carr fire. PRIMARY Carr-distance score-deficit, secondary comparison partial. Research reuse. Never factory-speech, willpower-lexicon, or re-argument as PRIMARY.
+
+### iter-042 — clinician-disclaimer subtraction  ·  2026-09-08
+
+**Hypothesis.** PRIMARY Carr-distance `score-deficit`: three instructions jointly produce one disclaimer per chapter (writer license + every-card safety guardrail + style-guide duplicate). Delete the license, unroute to two cards, remove the duplicate.
+
+**Change.** `prompts/chapter-writer.md`, `prompts/master-plan-skill-v2.md` (×2), `prompts/style-guide.md`. Both plans regenerated (sugar 13 ch, smoking 15 ch). Research reused. `change.diff` recorded.
+
+**What happened.** Sugar deficit 40→24 (score 76); smoking 28→32 (score 68). Blocking 0 both. Words 57296/59042 (floors 92/95.5%). Clinician grep 1/13 and 0/15 chapters; Reason 3 gone both. Factory-speech 6→0 / 9→1. Sugar comparison missing 0→6, partial 3→8 (G08 weight, G12 senses/margin, G06 machine, G15 selfish — new cards don't assign them). Literary-stylization 5→6 / 1→9. Trace analysis: clinician kill verified (writer-prompt, PERSISTENT); sugar omission root plan (PERSISTENT); smoking uptick root model/noise.
+
+**Verdict & why.** QUANTIFY. PRIMARY improved only in sugar. No restore trigger. Carried forward: 042 subtraction. `parent: 4e71f6e9`.
+
+**What we learned.** The subtraction fires exactly as predicted where the deficit had clinician headroom (sugar −16). Where it didn't (smoking), residuals the hypothesis never touched outweighed it within band. Plan regeneration re-cuts comparison coverage — a regen is never free on `missing`/`partial`.
+
+**What this opens next.** 043 PRIMARY from deficit / missing 6/2 / partial 8/4. Never factory-speech, willpower, re-argument. Do not chase smoking +4. Do not replay 039/040.

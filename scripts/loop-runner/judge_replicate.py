@@ -33,10 +33,10 @@ def parse_alignment(text: str) -> dict[int, int]:
 
 
 def extract_cards(plan: str) -> dict[int, str]:
-    parts = re.split(r"\n(?=(?:#{1,3}\s+|\*\*)(?:CH-|C-)\d{1,2}\s+—)", plan)
+    parts = re.split(r"\n(?=(?:#{1,3}\s+|\*\*|Card |)(?:CH-|C-)\d{1,2}\s+—)", plan)
     cards: dict[int, str] = {}
     for p in parts:
-        m = re.match(r"(?:#{1,3}\s+|\*\*)(?:CH-|C-)(\d{1,2})\s+—", p)
+        m = re.match(r"(?:#{1,3}\s+|\*\*|Card |)(?:CH-|C-)(\d{1,2})\s+—", p)
         if m:
             cards[int(m.group(1))] = p.strip()
     return cards
@@ -337,6 +337,7 @@ def main() -> None:
     judgments.mkdir(parents=True, exist_ok=True)
     plan = (traces / "plan.md").read_text() if (traces / "plan.md").exists() else (REPO / "production-books" / slug / "master-plan.md").read_text()
     cards = extract_cards(plan)
+    cards = {n: c for n, c in cards.items() if n >= 1}  # CH-00 front matter is not judged
     n_total = max(cards)
     align = parse_alignment(alignment.read_text())
     moves_by_ref = parse_moves(moves_path.read_text())

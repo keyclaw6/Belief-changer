@@ -1,22 +1,15 @@
-**book_slug:** quit-sugar  
-**master_plan_sha256:** c04e20911c96491f5195b98f26576aa6b78a8a7797bf06d436d20c33267926b7  
-**planned_total_words:** 60000  
-**chapter_count:** 13  
+SLUG: quit-sugar
+ITER: 042
+SHA-256: 9a1584bf46094b0459ce4ef218fead38b1aad7b7dfe0e3345d7c009cace3c5bb
+CARDS: CH-00..CH-13 (14 cards)
 
-**first_three_cumulative_walk:** PASS — Chapters 1–3 each complete belief work now: CH-01 boxes BAD SUGAR and installs the reading contract; CH-02 lands trapped-not-weak via SC-01/SC-02 with trap, both creatures, and body authority encountered; CH-03 switches TO/FOR and empties the benefit column in the day-audit encounter. No opening triad of preview-only setup.
-
-**whole_book_cumulative_walk:** PASS — The cumulative spine builds without adjacent full restaging: specific justifications (fuel CH-05, inhabit CH-06, mechanism CH-07, manufacture/fear CH-08, celebration CH-09, totality CH-10) extend prior belief-now rather than re-arguing settled cards; post-vow sequence is last ordinary instance (CH-11), one ordinary-life inhabit chapter (CH-12), short photographable recap (CH-13), not a second teaching manual.
-
-**writer_facing_authority:** PASS — Cards carry budgets, continuity, scene jobs, pinned mantra/FT wording, evidence IDs with stated limits, CA-SAFE routing, and lettered mantras (M-A–M-I) that do not collide with instructions; EV-01–EV-20, SC-01–SC-11, I-01–I-13 (I-08 omitted by design), and FT-A–FT-E all resolve in plan inventories; no P-xx persona codes, Voice operators, or unspeakable beat handles on cards.
-
-**method_integrity:** PASS — Carr forks are explicit (Nibbler/Sweet Con personification, commanded total cessation, fear-then-relief doctrine, dual villains, change-nothing-else void); sequence is willpower-free, warm-to-reader/vicious-to-trap, and reaches commanded vow plus instant freedom identity before ordinary-life guardrails.
-
-**evidence_honesty:** PASS — Card citations stay inside ledger permitted inference and empirical limits (animal caution, contested EV-10/EV-18 used honestly, EV-11 once in CH-08, EV-15 crash bounded, no human withdrawal diagnosis claimed); unavailable claims are not speculatively filled.
-
-**safety_perimeter:** PASS — CA-SAFE is defined once in §5, routed on cards without fusing into instruction rows; clinical/eating-disorder territory stays advisory; margin-for-error (SC-11) never licenses deliberate repeat; method does not frame clinician care as method failure.
-
-**originality:** PASS — Scenes, creatures, and analogies are behavior-fitted originals with explicit no-import guardrails; strongest-case and perception enactments are single-staging assignments (SC-05/SC-10 CH-09 only).
-
-**architecture_and_length:** PASS — One coherent 13-chapter spine with first-third world install (contract, trap, creatures, body/real food), mid-book inhabit centre (CH-06 primary job inhabit), demolition curve through CH-10, freedom crescendo CH-11–13, saved CH-13 reframe only; chapter budgets sum to 60,000 as declared.
+First-three cumulative walk: PASS — CH-01 enacts escape-gain with BAD SUGAR decree plus scare-then-relief same chapter, CH-02 enacts conned-not-choosing via supermarket plus creatures in passing plus body encounters, CH-03 enacts TO-vs-FOR via night raid; each does belief work now, installs contract/already-hooked/creatures/body ground.
+Whole-book cumulative walk: PASS — encounters distinct per card with SC-04 in CH-07 and SC-10 in CH-11 as token-echo only, forward handoffs with no backward reserve, CH-06 primary-job inhabit, after vow CH-11 last ordinary sweet plus CH-12 ordinary days plus CH-13 recap with no second manual, reaches relief-freedom destination with saved reframe only CH-13.
+Writer-facing authority: PASS — all EV/SC/M/I IDs resolve with limits, frozen mantra quotes and spoken instruction wording pinned, M-A..M-O avoids M-08/I-08 collision, no P-xx, no Voice operators, no pupil name, no reader callbacks, budgets/continuity/guardrails/ownership per card.
+Method: PASS — warm to person harsh to trap, willpower as symptom with banned register excluded, gain-frame escape, Ch-01 paragraph-one easy-permanent-no-willpower promise plus full-strength fear then same-chapter relief never to appendix.
+Evidence: PASS — EV-01..EV-33 with permitted/prohibited/limits intact, animal magnitudes and contested lines preserved (EV-04/05 smaller, EV-09 open question, EV-19 split, EV-17 slump not clinical low), prevalence EV-10 once in CH-05, wanting-not-liking language.
+Safety: PASS — CA-SAFE boxed in front matter outside argument cited in CH-11 with plain doctor sentence, no clinical tails or diagnosis labeling, EV-15/16 clean-baseline not diet prescription with medicated/pregnant/type-1 routed out, seatbelt margin guards belief.
+Originality: PASS — original Sugar Mite/Sweet Spell/Sugar Trap plus single-debut scenes, justification menu as quoted reader voice then demolished, no invented autobiography, authority from method plus lived lines.
+Architecture and length: PASS — one spine contract to recap with deliberate mantra debut/echo/hand-over, I-01..I-11 owning plus CH-13 photographable recap with no mid-book recap, qualitative curves defined, budgets 2000+4500+5000+4000+5000+5000+5000+4500+5000+5500+5000+4000+4500+3000=62000 matches total within range.
 
 fit to write from

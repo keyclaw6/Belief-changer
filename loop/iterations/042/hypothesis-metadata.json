@@ -1,0 +1,9 @@
+{
+  "model": "claude-fable-5-1-thinking-high",
+  "harness": "cursor",
+  "spawn": "agent --trust --model claude-fable-5-1-thinking-high --mode ask -p",
+  "fallback_from": "gpt-6-astra",
+  "fallback_reason": "quota",
+  "latency_s": 352.413,
+  "exit": 0
+}

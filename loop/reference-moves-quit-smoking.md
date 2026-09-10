@@ -94,3 +94,14 @@ Easyway extract.
 - E46-M1: Carry the spoken list; do not reopen the decision
 - E46-M2: Future cigarette-thoughts get the free-script, not a debate
 - E46-M3: Help others by the same argument, never by scare or nagging
+
+## EASYWAY 7 — BRAINWASHING AND THE SLEEPING PARTNER
+
+- E7-M1: Want was installed — outside voices taught the craving, not nature
+- E7-M2: Sellers shaped the image — the habit arrived dressed as normal life
+- E7-M3: Hidden persuasion counts — unnoticed messages still steer the hand
+
+## EASYWAY 42 — OVER TWENTY YEARS OF FEEDBACK
+
+- E42-M1: Others walked out — former users report the same escape
+- E42-M2: Witness over promise — lived cases carry what claims cannot

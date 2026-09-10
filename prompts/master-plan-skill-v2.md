@@ -87,7 +87,7 @@ Define the book-specific trap register, freedom register, banned willpower regis
 
 Define each numbered instruction once with a stable ID, frozen wording, owning chapter, and recap placement. Frozen instruction wording is the spoken Carr imperative only — one numbered ALL-CAPS headline plus at most one short spoken rationale line (per style-guide §B5 operator 11). Never fuse clinical disclaimers, liability tails, semicolon-chained compliance clauses, or instruction-ID cross-references (e.g. "as in I-05") into instruction spine rows.
 
-Clinical and eating-disorder limits that could conflict with method advice belong in a separate plan-wide clinical advisory defined once (stable ID, boxed advisory text per style-guide §B10 practical-safety guardrail). Route it on non-argument safety cards and in evidence-ledger safety limits — not inside instruction frozen wording. When an instruction's belief job needs a qualified limit, state it once in plain spoken prose on that advisory; cards cite the advisory ID in their safety guardrails field only — they never paste the boxed workshop title (`CA-SAFE`, `CA-01`, `PRACTICAL SAFETY GUARDRAIL`) or instruct the writer to box it mid-chapter. Instruction peaks and verbatim recaps carry the bare imperative. Do not fuse clinical tails back into instruction rows.
+Clinical and eating-disorder limits that could conflict with method advice belong in a separate plan-wide clinical advisory defined once (stable ID, boxed advisory text per style-guide §B10 practical-safety guardrail). Route it on non-argument safety cards and in evidence-ledger safety limits — not inside instruction frozen wording. When an instruction's belief job needs a qualified limit, state it once in plain spoken prose on that advisory; cards cite the advisory ID in their safety guardrails field only on the two owning cards — they never paste the boxed workshop title (`CA-SAFE`, `CA-01`, `PRACTICAL SAFETY GUARDRAIL`) or instruct the writer to box it mid-chapter. Instruction peaks and verbatim recaps carry the bare imperative. Do not fuse clinical tails back into instruction rows.
 
 ### Arc and length
 
@@ -116,7 +116,7 @@ Give every chapter a stable ID, number, and working title, then specify only its
 - mantra and frozen-token IDs only when this chapter debuts or naturally echoes one, with the frozen quote pinned on the card;
 - one or more concrete scene/analogy IDs: debut card carries the staging job; later cards that cite the ID mark it as token-echo only;
 - structural responsibility, if any;
-- method, safety, and originality guardrails specific to this move (safety-limit IDs and originality only — never speakable register/job operators, never a boxed CA-SAFE/CA-01 title);
+- originality guardrails specific to this move (never speakable register/job operators, never a boxed CA-SAFE/CA-01 title). The clinical advisory ID is cited on exactly two cards: the card that prints the boxed front-matter advisory, and the vow card, which may assign one plain spoken sentence telling a reader on medication to involve their doctor. No other card carries a safety field; ledger safety limits are held by the writer silently and are never restated on cards;
 - continuity intent: what understanding it receives and hands forward;
 - one integer word budget matching the arc table (planner length arithmetic — not a writer padding target).
 
