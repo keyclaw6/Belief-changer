@@ -2,12 +2,12 @@
 
 ## Position
 
-- **Iteration:** 047
-- **Stage:** IDLE (047 QUANTIFY recorded, factory+plans restored to 041)
-- **Status:** IDLE
+- **Iteration:** 048
+- **Stage:** factory writes (both subjects regenerating plans + chapters)
+- **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none. Factory is Muse Spark 1.3; this chat is auto-research only.
-- **Last completed unit:** 047 QUANTIFY + restore (deficit 20→35 / 28→35; Latinate→fragment avoidance; metaphor proliferation; card-routed advisories; blind gate; factory+plans at 041 text).
+- **Last completed unit:** 047 QUANTIFY + restore (deficit 20→35 / 28→35; fragment avoidance; metaphor proliferation; card-routed advisories; factory+plans at 041 text). Consecutive no-KEEP: 6.
 - **Next unit:** 048 hypothesize (fragment finding, debut relief, advisory-presence) → apply → factory → judge → decide.
 
 ## Run authorization (founder, 2026-09-04; close-out 2026-09-06)

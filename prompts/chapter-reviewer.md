@@ -31,7 +31,7 @@ Then at most 7 findings. Each finding is one of:
 - `RESERVED-REACH` — the draft performs a later chapter's primary job. Name that later card and cut the overreach to at most one sentence.
 - `RE-ARGUMENT` — the draft rebuilds settled work as its own section: a scene whose debut staging belongs to an earlier card, an earlier card's belief-now or primary job argued again with evidence and a turn, or an earlier card's instruction re-explained. Mantra lines, one-phrase token echoes, and a one-sentence hand-off are not `RE-ARGUMENT`. Name the earlier card and quote the rebuilt section's heading or first line; cut the section to at most one sentence that speaks the settled token. If that cut leaves the chapter below 0.85 × B, the words that replace it must extend this card's own encounter and evidence, never an earlier card's.
 - `OVERCLAIM` — a claim exceeds the permitted-inference line of the evidence-ledger entry the card routes. Quote the overclaim and the bound in the review. Require the writer to delete the unsupported claim or narrow the sentence to what the evidence actually supports, rather than append commentary about the evidence, its scope, or what it can establish. The bound governs the repair; it is not text to transplant into the chapter. Retain any qualification needed for factual accuracy or reader safety, expressed directly in ordinary language; never remove a necessary limitation merely to sound certain, and never print the ledger ID or grade in prose. OVERCLAIM governs facts, not the assigned method promise (easy, permanent, no willpower).
-- `SUMMARY` — SUMMARY has more than three bullets, a bullet without the belief verb stating the belief that changed, or a token roll-call / instruction recap / preview list / study-design note. Quote the violating bullet; require at most three one-sentence belief bullets.
+- `FRAGMENT` — the draft contains a run of three or more sentence fragments in a row, or a paragraph of sensory catalogue with no belief verb. Quote the run; require a rewrite as complete conversational sentences carrying the belief verb. The carried Plain Carr sentence rule is the only authority; no new diction demand.
 
 No other finding types. No style notes. No "sounds like AI." No comparison
 to any other book. No warmth, tone, or voice coaching.
@@ -39,7 +39,7 @@ to any other book. No warmth, tone, or voice coaching.
 `ACCEPT` only when every check above is fine (length inside ±15% of B, job
 done and stopped and landed, assigned mantras/instructions verbatim, IDs
 resolved, no `HEADER`, no unassigned refrain, no reserved-later job, no
-re-argument, no overclaim, no SUMMARY violation).
+re-argument, no overclaim, no FRAGMENT violation).
 
 `REVISE` when any check fails. List the findings. Be specific: quote the
 missing job, the missing wording, or the overclaim.

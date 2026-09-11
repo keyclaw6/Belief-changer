@@ -137,7 +137,10 @@ no belief verb.
    the climax, followed by at most one short spoken rationale line. Never a
    "Warm rationale" header, backticks, craft label, or plan ID (`I-01 —`).
    Omit this element when no instruction is assigned.
-6. **SUMMARY** — at most three bullets, each one ordinary sentence stating the belief that changed with the belief verb in the sentence — never a token roll-call, instruction recap, preview list, or study-design note. The final recap chapter is the exception: it may list the photographable instruction set.
+6. **SUMMARY** — clipped bullets stating, in ordinary sentences, the belief
+   that changed. Not a token roll-call, instruction recap, or study-design
+   note. The final recap chapter is the exception: it may list the
+   photographable instruction set.
 
 Chapter 1 additionally: paragraph one states the method promise flat
 (easy, permanent, no willpower, "you find that hard to believe — read on").

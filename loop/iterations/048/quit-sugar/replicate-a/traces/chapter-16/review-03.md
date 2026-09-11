@@ -1,0 +1,3 @@
+REVISE
+UNASSIGNED-REFRAIN — phrase "sweetness bossing the day" recurs 3x verbatim: "to step out of sweetness bossing the day, not to change its costume" / "kept sweetness bossing the day" / SUMMARY "keeps sweetness bossing the day without closing the search". Subtract repeats to fewer than 3 total; do not invent a new mantra.
+UNASSIGNED-REFRAIN — phrase "after liking ended" recurs 3x verbatim: "keeps the wanting alive after liking ended" / "the dark bar finishes after liking ended" / SUMMARY "drive the hand after liking ended". Subtract repeats to fewer than 3 total; do not invent a new mantra.

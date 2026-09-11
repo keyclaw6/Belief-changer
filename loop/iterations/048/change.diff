@@ -1,0 +1,78 @@
+diff --git i/prompts/chapter-reviewer.md w/prompts/chapter-reviewer.md
+index 49fe46c4..ca36d59d 100644
+--- i/prompts/chapter-reviewer.md
++++ w/prompts/chapter-reviewer.md
+@@ -31,7 +31,7 @@ Then at most 7 findings. Each finding is one of:
+ - `RESERVED-REACH` — the draft performs a later chapter's primary job. Name that later card and cut the overreach to at most one sentence.
+ - `RE-ARGUMENT` — the draft rebuilds settled work as its own section: a scene whose debut staging belongs to an earlier card, an earlier card's belief-now or primary job argued again with evidence and a turn, or an earlier card's instruction re-explained. Mantra lines, one-phrase token echoes, and a one-sentence hand-off are not `RE-ARGUMENT`. Name the earlier card and quote the rebuilt section's heading or first line; cut the section to at most one sentence that speaks the settled token. If that cut leaves the chapter below 0.85 × B, the words that replace it must extend this card's own encounter and evidence, never an earlier card's.
+ - `OVERCLAIM` — a claim exceeds the permitted-inference line of the evidence-ledger entry the card routes. Quote the overclaim and the bound in the review. Require the writer to delete the unsupported claim or narrow the sentence to what the evidence actually supports, rather than append commentary about the evidence, its scope, or what it can establish. The bound governs the repair; it is not text to transplant into the chapter. Retain any qualification needed for factual accuracy or reader safety, expressed directly in ordinary language; never remove a necessary limitation merely to sound certain, and never print the ledger ID or grade in prose. OVERCLAIM governs facts, not the assigned method promise (easy, permanent, no willpower).
+-- `SUMMARY` — SUMMARY has more than three bullets, a bullet without the belief verb stating the belief that changed, or a token roll-call / instruction recap / preview list / study-design note. Quote the violating bullet; require at most three one-sentence belief bullets.
++- `FRAGMENT` — the draft contains a run of three or more sentence fragments in a row, or a paragraph of sensory catalogue with no belief verb. Quote the run; require a rewrite as complete conversational sentences carrying the belief verb. The carried Plain Carr sentence rule is the only authority; no new diction demand.
+ 
+ No other finding types. No style notes. No "sounds like AI." No comparison
+ to any other book. No warmth, tone, or voice coaching.
+@@ -39,7 +39,7 @@ to any other book. No warmth, tone, or voice coaching.
+ `ACCEPT` only when every check above is fine (length inside ±15% of B, job
+ done and stopped and landed, assigned mantras/instructions verbatim, IDs
+ resolved, no `HEADER`, no unassigned refrain, no reserved-later job, no
+-re-argument, no overclaim, no SUMMARY violation).
++re-argument, no overclaim, no FRAGMENT violation).
+ 
+ `REVISE` when any check fails. List the findings. Be specific: quote the
+ missing job, the missing wording, or the overclaim.
+diff --git i/prompts/chapter-writer.md w/prompts/chapter-writer.md
+index b3c6ec7f..731eda74 100644
+--- i/prompts/chapter-writer.md
++++ w/prompts/chapter-writer.md
+@@ -137,7 +137,10 @@ no belief verb.
+    the climax, followed by at most one short spoken rationale line. Never a
+    "Warm rationale" header, backticks, craft label, or plan ID (`I-01 —`).
+    Omit this element when no instruction is assigned.
+-6. **SUMMARY** — at most three bullets, each one ordinary sentence stating the belief that changed with the belief verb in the sentence — never a token roll-call, instruction recap, preview list, or study-design note. The final recap chapter is the exception: it may list the photographable instruction set.
++6. **SUMMARY** — clipped bullets stating, in ordinary sentences, the belief
++   that changed. Not a token roll-call, instruction recap, or study-design
++   note. The final recap chapter is the exception: it may list the
++   photographable instruction set.
+ 
+ Chapter 1 additionally: paragraph one states the method promise flat
+ (easy, permanent, no willpower, "you find that hard to believe — read on").
+diff --git i/prompts/style-guide.md w/prompts/style-guide.md
+index 4881fd11..d1d44df0 100644
+--- i/prompts/style-guide.md
++++ w/prompts/style-guide.md
+@@ -94,7 +94,7 @@ The three books genuinely disagree on several mechanisms. A writer must know the
+ ### Fork 1 — Is there an "inner monster" to personify, or not?
+ - **Carr:** Yes — the Little Monster is a vivid, near-living parasite you "starve to death" and whose "death throes" you "revel in." Personification makes the craving *external* and *winnable*.
+ - **Burgeon:** Explicitly **rejects** this — a "monster" creates a "Me vs Them" fight with an "imaginary enemy"; "it was me all along." You don't fight, you understand.
+-- **DEFAULT (Carr):** **Personify, exactly as Carr does.** Every book names its two mechanism characters — the trivial physical creature the reader will starve to death (the Little-Monster equivalent) and the belief-system that feeds it (the Big-Monster equivalent) — with no frozen proper names: refer to the two mechanisms only in plain everyday description as common nouns (the tiny physical craving and the brainwashing voice), never as capitalized branded creatures, never frozen on the mantra sheet, never invented Mite/Talker/Nipper-style tokens. The personification makes the craving *external, small, and winnable*; its "death throes" become something to revel in. It is never a mighty enemy the reader must battle with willpower — it is a starving parasite already dying. Burgeon's no-monster stance is a brief-level override, never a default.
++- **DEFAULT (Carr):** **Personify, exactly as Carr does.** Every book names its two mechanism characters — the trivial physical creature the reader will starve to death (the Little-Monster equivalent) and the belief-system that feeds it (the Big-Monster equivalent) — with original, behavior-fitted names frozen in the mantra sheet. The personification makes the craving *external, small, and winnable*; its "death throes" become something to revel in. It is never a mighty enemy the reader must battle with willpower — it is a starving parasite already dying. Burgeon's no-monster stance is a brief-level override, never a default.
+ 
+ ### Fork 2 — Total abstinence, or radical autonomy (moderation allowed)?
+ - **Carr & Burgeon:** **Total cessation** is the only stable state. One "special" exception means the belief is intact; moderation makes the thing more precious (forbidden-fruit) and guarantees creep. "Unplug every cord."
+@@ -563,7 +563,7 @@ Every chapter delivered by a chapter writer must satisfy ALL of:
+ 1. **One job.** The chapter makes exactly one belief-move (from the master plan), lands it, and stops. No second thesis.
+ 2. **Mantras when they belong.** If this chapter debuts a mantra, run the full argue→compress lifecycle. If a debuted mantra is the natural next sentence, echo it verbatim and briefly — never re-argue it. There is no per-chapter must-assign quota. Invent none.
+ 3. **Curve-aware vocabulary.** Use the lexicon registers; respect where the chapter sits on the freedom-crescendo and demolition curves (a mid-book chapter doesn't bathe in freedom language; a final-quarter chapter does).
+-4. **At least one concrete analogy or scene** doing the chapter's argumentative work (from the master plan's analogy assignment or the analogy bank).
++4. **Only an assigned analogy or scene, never a quota.** Use a concrete analogy or scene only when the card assigns one for this chapter's job; never invent one to fill a chapter. Reuse the book's settled pictures and two creatures where the job allows; a chapter with no assigned analogy is not a defect.
+ 5. **Carr-voice prose** per §B5 (a silent peak verdict at the argument peak, ventriloquism where the reader would object, no hedging) — never surface craft labels in reader prose.
+ 6. **Triangle discipline**: "we" for the trap, "you" for the escape, "I" for testimony and instruction.
+ 7. **Non-shaming and gain-framed throughout** (Part A guardrails all apply).
+@@ -617,7 +617,7 @@ The pocket-book format (§B6) compresses these away; at full length Carr runs th
+ 
+ **Chapter 1.** Paragraph one states the method promise flat: it will be easy, permanent, no willpower; the reader finds that hard to believe — read on. The scare this chapter owns lands at full force in the argument and is disowned in the same chapter. Do not route harm-lists to an appendix. Reviewer OVERCLAIM governs facts, not the method promise.
+ 
+-The reader meets the reframe in the argument and once in SUMMARY. IN THIS CHAPTER stays: one line naming only this chapter's rooms/pictures. SUMMARY stays: at most three bullets, each one ordinary sentence stating the belief that changed with the belief verb in the sentence — never a token roll-call, instruction recap, preview list, or study-design note. No preview list beyond the one IN THIS CHAPTER line; summaries are not exempt inventory zones.
++The reader meets every reframe at least twice per chapter (argued + recapped). **Previews and summaries are licensed recap zones — exempt from the no-verbatim-repetition rule, exactly like mantras.**
+ 
+ ### The instruction spine
+ - Instructions are **doled out one per chapter at the chapter's climax**, numbered cumulatively, as spoken Carr imperatives only (CA-01: no clinical tails fused into the line).
+@@ -641,7 +641,7 @@ When the behavior category is essential or unquittable (eating, screens for work
+ - **The embedded long-form testimonial**: 1–2 pages of first-person escape story with concrete numbers and sensory details, in the main flow, in its own room — not a labelled appendix. Drawn from the research banks' freedom testimonies; written original.
+ - **The myths Q&A battery**: a rapid-fire distinct room — each myth as a quoted reader-voice line, each demolished in 2–6 sentences.
+ - **The meta-inoculation**: ventriloquize the strongest objection TO THE METHOD ITSELF and answer it. Perform it; do not label it.
+-- **Hard facts, then relief**: where hard facts must appear, deliver them. The only spoken relief is Carr's own: tell the reader not to change from fear. Never a clinician referral or a sentence about what this book does not advise. Honour evidence limits by not overclaiming; never narrate study design. Never announce the move.
++- **Hard facts, then relief**: where hard facts must appear, deliver them, then tell the reader not to change from fear. One short spoken clause only if the scare would otherwise be taken as a personal sentence. Honour evidence limits by not overclaiming; never narrate study design. Never announce the move.
+ - **Perception enacted**: 1–3 physical exercises the reader performs. The belief change is enacted, not just read. Never announce it as homework.
+ - **The vow**: the ritual is the last ordinary meal (or last ordinary instance), not a laboratory dose — attention on the ugliness, the solemn vow, instant conferral. Few new post-quit lines; the thoughts are ones the reader already owns. Then one ordinary-life chapter (mornings, shops, food) and a short recap, not three teaching manuals.
+ - **Practical-safety guardrail** (when the behavior touches medication/health): one plan-wide front-matter note (CA-01 split: clinical limits live here, never fused into instruction rows) routing medical specifics to a professional, kept outside the belief argument. Never paste the boxed workshop title mid-chapter. Never a mid-argument clinician disclaimer.

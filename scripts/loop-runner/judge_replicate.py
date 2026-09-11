@@ -34,17 +34,17 @@ def parse_alignment(text: str) -> dict[int, int]:
 
 def extract_cards(plan: str) -> dict[int, str]:
     parts = re.split(
-        r"\n(?=(?:#{1,3}\s+|\*\*|Card |)(?:CH-|C-?)\d{1,2}\s+(?:—|\|)|- Card C-\d{1,2},|- \*\*ID C\d{1,2},)",
+        r"\n(?=(?:#{1,3}\s+|\*\*|Card |)(?:CH-|C-?)\d{1,2}\s+(?:—|\|)|- Card C-\d{1,2},|- \*\*ID C\d{1,2},|- C-\d{2} ·|- C-\d{2} — number|C-\d{2} .+\. Number \d+\. Working title:)",
         plan,
     )
     cards: dict[int, str] = {}
     for p in parts:
         m = re.match(
-            r"(?:#{1,3}\s+|\*\*|Card |)(?:CH-|C-?)(\d{1,2})\s+(?:—|\|)|- Card C-(\d{1,2}),|- \*\*ID C(\d{1,2}),",
+            r"(?:#{1,3}\s+|\*\*|Card |)(?:CH-|C-?)(\d{1,2})\s+(?:—|\|)|- Card C-(\d{1,2}),|- \*\*ID C(\d{1,2}),|- C-(\d{2}) ·|- C-(\d{2}) — number|C-(\d{2}) .+\. Number \d+\. Working title:",
             p,
         )
         if m:
-            cards[int(m.group(1) or m.group(2) or m.group(3))] = p.strip()
+            cards[int(next(g for g in m.groups() if g))] = p.strip()
     return cards
 
 

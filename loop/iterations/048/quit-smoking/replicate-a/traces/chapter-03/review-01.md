@@ -1,0 +1,7 @@
+REVISE
+
+- FRAGMENT — draft contains a run of six sentence fragments in a row with no belief verb (price catalogue, "The Accountant At The Table" section):
+  "The cough in the morning. The stairs that leave you short of breath. The money handed over at the till day after day. The smell on your coat and your hair and your breath. The time outside in the cold while life goes on inside without you. The small wash at the sink before you let anyone close."
+  Require rewrite as complete conversational sentences carrying the belief verb (e.g. you pay / you feel / you lose), retaining the same price items and order. No new diction demand beyond the Plain Carr sentence rule.
+
+Checks passed (no finding): JOB done (ledger abandoned, single-gift demand set and landed via FT-A); M-D and FT-A present verbatim; I-05 present verbatim as numbered ALL-CAPS headline plus one rationale line (explicitly not HEADER per contract); length 4424 inside 3400–4600; no HEADER, no STOPPED-SHORT (landed at "It is doing plenty TO you. It is doing nothing FOR you." before SUMMARY), no UNASSIGNED-REFRAIN (repeats are assigned FT-A or local anaphora), no RESERVED-REACH (menu illustrated and held — "I am not asking you to throw away a single reason yet" — later encounters not staged), no RE-ARGUMENT (trap names only as token echoes), no OVERCLAIM (EV-04/EV-05 within moment-not-day and attachability bounds, enjoyment validated and never mocked).

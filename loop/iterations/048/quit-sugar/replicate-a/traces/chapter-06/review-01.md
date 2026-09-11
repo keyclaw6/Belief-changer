@@ -1,0 +1,2 @@
+REVISE
+FRAGMENT — Draft contains a run of eight sentence fragments in a row: "Fizzy drinks. Chocolate. Biscuits. Pastries. Sweetened cereals. Flavoured yoghurts. Ice cream. Rolls that vanish to nothing in the mouth." Require a rewrite as complete conversational sentences carrying the belief verb (what the mouth liked/wanted and what the loop kept wanting), retaining the E-21 ranking content. The Plain Carr sentence rule is the only authority.

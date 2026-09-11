@@ -1,0 +1,3 @@
+REVISE
+
+- FRAGMENT — the draft opens the drawer as a run of five sentence fragments in a row with no belief verb carrying them: "The half-used box of patches with the corners curling. The blister pack of gum with two strips missing. The lighter you threw away on a Monday and replaced on a Tuesday. The calendar with the brave circle around the date you chose and the small tear where the plan broke three days later. The note you wrote to yourself about control and fresh starts." Require a rewrite of this run as complete conversational sentences carrying the belief verb — each drawer item spoken as what was believed and what it proved about the method, not as bare noun-phrase labels.

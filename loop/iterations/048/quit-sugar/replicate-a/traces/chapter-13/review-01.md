@@ -1,0 +1,2 @@
+REVISE
+FRAGMENT — Draft contains two runs of three sentence fragments in a row. Run 1: "Not ajar. Not locked with a key you must earn. Open, with light falling across the stone and the sound of ordinary life beyond it, buses and talk and spoons in bowls." Run 2: "Money gone. Mornings dulled. Teeth drilled." Require rewrite of each run as complete conversational sentences carrying the belief verb, per the Plain Carr sentence rule only.

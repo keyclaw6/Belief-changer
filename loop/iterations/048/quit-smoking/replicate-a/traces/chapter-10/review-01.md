@@ -1,0 +1,3 @@
+REVISE
+
+- UNASSIGNED-REFRAIN — phrase "There is only one honest answer" recurs 5x verbatim. Occurrences: "There is only one honest answer and it changes everything without asking anything hard of you." / "There is only one honest answer and it asks for anger in the right direction." / "There is only one honest answer and it removes the last stone of self blame." / "There is only one honest answer and it lands as relief once you let it land." / "There is only one honest answer and it must be spoken against the makers and never against you." Subtract repeats to at most 2 occurrences; rephrase the rest as ordinary varied sentences. Do not invent a new mantra.

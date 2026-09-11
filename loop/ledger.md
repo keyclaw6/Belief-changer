@@ -759,3 +759,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Closing one ditch (Latinate) under unchanged novelty + bluntness pressure opens the adjacent ditch (fragments, one-off metaphors). Gates must measure distance, not bans. Advisory presence on cards beats silence rules upstream.
 
 **What this opens next.** 048: fragment finding without bluntness pressure; debut-quota relief; advisory-presence rule. Never card edits, route-every-limit, Latinate-ban-alone, factory-speech, willpower, re-argument.
+
+### iter-048 — FRAGMENT finding + quota relief + silence line  ·  2026-09-11
+
+**Hypothesis.** PRIMARY deficit: enforce the carried fragment ban via reviewer FRAGMENT finding (no new pressure) + remove the analogy quota at style level + re-apply the silence line.
+
+**Change.** `prompts/chapter-reviewer.md`, `prompts/style-guide.md`, `prompts/chapter-writer.md`. Both plans regenerated (sugar 19, smoking 15). Research reused. `change.diff` recorded.
+
+**What happened.** Deficit 35→28 (72) / 35→35 (65). Missing 5→11 / 3→2. Partial 5→10 / 3→3. Blocking 0 both. Words 60899/59301. FRAGMENT fired both with repairs; quota half-relieved (writer sentence retained); Nipper back via restore-wipe + omitted rebuild; redefinition is brief doctrine; timetables unclosable at writer level; headers quoted again.
+
+**Verdict & why.** QUANTIFY. PRIMARY missed band both. No restore trigger. Carried forward: FRAGMENT + quota relief + silence. `parent: 033607ce`. Consecutive no-KEEP: 7.
+
+**What we learned.** Restores delete verified gains too — the next direction must name the rebuild list explicitly. Gates that enforce carried bans work (FRAGMENT); pressure-raising bans backfire (047). Brief-doctrine deviations from GSBS are not factory defects.
+
+**What this opens next.** 049: Fork-1 re-applied + craft-7 aligned + FRAGMENT carried. Never card edits, route-every-limit, Latinate-ban-alone, factory-speech, willpower, re-argument.
