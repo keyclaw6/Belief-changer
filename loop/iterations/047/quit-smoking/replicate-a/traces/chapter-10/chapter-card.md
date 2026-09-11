@@ -1,0 +1,17 @@
+- C-10 · Chapter 10 · "Every way to keep smoking, closed"
+- job: enacted transition — every remaining route back inside fails on inspection: cutting down, the milder product, social-only, just one, substitutes, and tomorrow.
+- resolves: "I can keep the special ones / switch the product / quit tomorrow."
+- belief now: enters understanding the loop but shopping for a softer exit; leaves routeless, holding totality as plain logic.
+- encounter: the escalation ladder month by month beside the milder pack held to the light (SC-06 debut — staging job: party-to-daily ladder, each rung dated).
+- evidence: EV-S03 with limits (compensation designed, never identical in all; never a recommendation of stronger products); EV-S04 with limits (trial versus population scopes never collapsed; neither slogan licensed); EV-L06 with limits (one is never safe; a slip never dooms unless the belief returns); EV-V05 with limits (advocacy language, never lab fact).
+- new instruction: I-09 — USE NO SUBSTITUTES / No gum, patch, vape, or food ritual can free you; each feeds the same want differently.
+- reserved-later: industry motive → C-11; lived impossibility proof → C-12; vow → C-13.
+- arc: late gate-closing; distinct rapid-fire myths room closes the chapter.
+- curves: demolition vocabulary at final peak before hand-off.
+- reader-state: a negotiator offering the trap smaller and smaller parcels of themselves and calling it compromise.
+- mantras: echo M-C — "the nicotine trap"; echo M-G — "All you have to do is follow all the instructions."; token echo FT-A — "the Willpower Method".
+- scenes: SC-06 debut (staging job above); AN-01 debut (whisky for gin); AN-05 debut (hole in the mask); AN-08 debut (cliff jump with a metre limit).
+- structure: carries the myths battery as a distinct rapid-fire room; no mid-book instruction recap.
+- guardrails: pre-play each future rationalization so it arrives pre-labeled as trap script; never a dare to test any rung or product.
+- continuity: receives the unafraid reader; hands a routeless reader to C-11.
+- budget: 4500

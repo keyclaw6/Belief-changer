@@ -1,0 +1,17 @@
+- C-07 · Chapter 7 · "The best night of your smoking life"
+- job: enacted transition — the drink-lit night among friends was good through sun, leisure, talk, and music, with the cigarette sneaking a ride; the same night is better without the chain and the offered one.
+- resolves: "Drink, friends, and smoke belong together; one won't hurt."
+- belief now: enters uniformless yet certain this one scene cannot be touched; leaves with every drop of the night reassigned, inoculated against the offered one, pitying the lit circle instead of envying it.
+- encounter: the smoking area on a good night, full staging (SC-02 debut — staging job: roar, offered cigarettes, lowered guard, last-night-on-earth swell, then component-by-component reassignment) plus the enacted components exercise, unannounced.
+- evidence: EV-L02 with limits (scene-plus-drink collapse named; never prescribes avoiding friends or evenings); EV-M02 with limits (learned cue scope; cue never proof of need).
+- new instruction: I-07 — NEVER HAVE JUST ONE / There is no such thing as one dose of the trap.
+- reserved-later: moderation ladder → C-10; substitutes → C-10; industry design → C-11; vow → C-13.
+- arc: middle demolition crown; the single most seductive case met head-on after the easy kills.
+- curves: demolition vocabulary at peak; promise returning (M-A natural here).
+- reader-state: a social smoker sure the book understands work and stress but cannot touch the good nights.
+- mantras: echo M-A — "You have nothing to lose and everything to gain."; echo M-D — "a genuine pleasure or crutch"; token debut FT-B — "Does that really look like enjoyment?".
+- scenes: SC-02 debut (staging job above).
+- structure: carries the hands-on perception demonstration for this behavior.
+- guardrails: meet the strongest case with full strength; never half-answer it; keep friends, drink, and evenings fully permitted.
+- continuity: receives the uniformless reader; hands someone with no defended pleasure left to C-08.
+- budget: 4500

@@ -1,0 +1,16 @@
+- **ID C12, number 12, working title Mornings Shops Food.**
+  - job: non-argument — hand-off consolidating free identity through ordinary days.
+  - objection resolved: life without it will feel empty at mornings, shops and tables.
+  - belief now: entry is newly free but untested; exit has lived steady afternoons, quiet aisles and closed meals with relief.
+  - encounter: mornings, shops and shared food with thoughts already owned, stated once.
+  - evidence: lived freedom banks applied as texture only through scenes; no new claims.
+  - new instruction: none.
+  - reserved-later fence: list recap to C13 only.
+  - arc: after-vow life; freedom crescendo peak.
+  - reader-state: newly free adult meeting old triggers; encounter lands by recognition, not instruction.
+  - mantra: echo M-A "You have nothing to lose by reading on, and a whole life to gain."; echo M-C "the sugar trap."; echo M-E "for every day from now on."; echo M-F "BRILLIANT! I'M FREE!"; echo M-G "the Willpower Method."; echo M-H "Eat as much of the real food you love as you want, whenever you want it, and never count a bite again."
+  - scenes: SC-F plus SC-G plus SC-A as token echoes only; AN-B, AN-F and AN-H token echoes only.
+  - structural: owns ordinary-life chapter; owns hand-over of all mantras as thought scripts; owns saved ending reframe debut.
+  - guardrails: SAFE-1 for body-trust language; slip pre-forgiven as warning never license; pity never envy; no evangelism doctrine.
+  - continuity: receives free identity; hands forward lived proof to C13.
+  - budget: 4500.

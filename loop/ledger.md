@@ -745,3 +745,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** All three 046 edits fired as built — the first iteration where every listed change verified. The remaining deficit is register (no Latinate rule anywhere), plan-vintage moves (smoking 037 cards), and instrument property (headers). Comparison residue is unassigned moves on unedited cards.
 
 **What this opens next.** 047: REGISTER rule and/or smoking vintage. Never card edits, route-every-limit, factory-speech, willpower, re-argument, headers, tight-shoes.
+
+### iter-047 — REGISTER rule (RESTORED)  ·  2026-09-11
+
+**Hypothesis.** PRIMARY deficit: §B5 never bans Latinate; reviewer has no register finding. Ban + gate.
+
+**Change.** `prompts/style-guide.md`, `prompts/chapter-reviewer.md`. Both plans regenerated (sugar 13, smoking 15). Research reused. `change.diff` recorded.
+
+**What happened.** Deficit 20→35 (65) / 28→35 (65). Missing 5→5 / 4→3. Partial 6→5 / 5→3. Blocking 0 both. Words 58674/58603. Latinate zero both; fragments replaced it (R1 both); metaphor proliferation (R2 sugar); card-routed advisories spoken (R3 both); REGISTER fired once.
+
+**Verdict & why.** QUANTIFY. PRIMARY worsened ≥ band in both (+15/+75%, +7/+25%) — restore trigger. `Restored: yes — PRIMARY worsened ≥ band in both.` Factory + plans to 041 (`4e71f6e9`).
+
+**What we learned.** Closing one ditch (Latinate) under unchanged novelty + bluntness pressure opens the adjacent ditch (fragments, one-off metaphors). Gates must measure distance, not bans. Advisory presence on cards beats silence rules upstream.
+
+**What this opens next.** 048: fragment finding without bluntness pressure; debut-quota relief; advisory-presence rule. Never card edits, route-every-limit, Latinate-ban-alone, factory-speech, willpower, re-argument.

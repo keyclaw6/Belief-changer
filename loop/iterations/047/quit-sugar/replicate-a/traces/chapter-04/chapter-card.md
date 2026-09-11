@@ -1,0 +1,16 @@
+- **ID C4, number 4, working title The Lift That Borrows.**
+  - job: enacted transition — the reader stops believing sweets fuel the afternoon and sees the lift creates the crash it then relieves.
+  - objection resolved: I need it for energy and focus.
+  - belief now: entry reads the dip as fuel shortage; exit reads the dip as the last dose wearing off.
+  - encounter: timed afternoon desk stretch with breakroom leftovers eaten standing, then the same hour weeks later steady.
+  - evidence: L-01 lived cycle plus L-11 mechanism plus L-12 threshold boundary plus L-14 hump promise. Limits: slump is regulatory swing not clinical low; hump days-long small-scale; no diagnosis.
+  - new instruction: none.
+  - reserved-later fence: comfort wiring to C5; cue neuroscience to C7; drink math to C10.
+  - arc: middle demolition; freedom suppressed.
+  - reader-state: tired worker who calls sweets survival fuel; encounter lands by replaying the exact hour without the fix.
+  - mantra: echo M-C "the sugar trap."; echo M-D "a genuine pleasure, comfort or lift."; echo M-G "the Willpower Method."
+  - scenes: debut SC-A with staging job; debut AN-A gatecrasher and AN-B roller coaster with staging jobs.
+  - structural: none beyond demolition.
+  - guardrails: SAFE-1 for crash and withdrawal language; originality requires afternoon specifics distinct from night kitchen.
+  - continuity: receives illusion token; hands forward fuel inversion to C5.
+  - budget: 5500.

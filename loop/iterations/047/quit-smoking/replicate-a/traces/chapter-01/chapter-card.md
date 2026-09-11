@@ -1,0 +1,19 @@
+- C-01 · Chapter 1 · "The easy contract"
+- job: enacted transition — quitting by force is not the reader's failure and not the reader's future; freedom here is easy, immediate, and permanent, which the reader finds hard to believe and is asked to keep reading to test.
+- resolves: "I have failed too often; this will be another miserable attempt requiring force."
+- belief now: enters braced for lecture and deprivation; leaves willing to investigate, holding the method promise and the named anti-method for past failures.
+- encounter: the hospital corridor (SC-11 debut — staging job: one flat human scare, unadorned) set beside the reader's own failed-attempt biography.
+- evidence: EV-L03 with limits (typical, not proof of weakness; no must/must-not on replacements); EV-V03 with limits (population burden; body-count never the method of change, never a dare).
+- new instruction: I-01 — KEEP AN OPEN MIND / Nothing here asks for belief yet, only a fair hearing.
+- new instruction: I-02 — DON'T STOP OR CUT DOWN UNTIL YOU FINISH THE BOOK / Let the belief change first, so stopping costs you nothing.
+- new instruction: I-03 — BEGIN WITH A FEELING OF EXCITEMENT, NOT DOOM / You are starting an escape, not serving a sentence.
+- reserved-later: choice mechanics → C-02; benefit demolitions → C-04 through C-07; moderation and substitutes → C-10; industry and method blame → C-11; ritual → C-13.
+- arc: opening contract, first argument-bearing card; paragraph one states the method promise flat (easy, permanent, no force; hard to believe — read on); the owned harm facts land at full weight and are relieved in the same chapter through the escape.
+- curves: promise cluster at maximum; freedom promised then withheld; demolition vocabulary just opening.
+- reader-state: a long-term daily smoker holding this book as a last resort, certain quitting means suffering, secretly hoping to be wrong.
+- mantras: debut M-A — "You have nothing to lose and everything to gain."; debut M-B — "Easily, immediately and permanently."; debut M-E — "for the rest of your life" (threat valence here).
+- scenes: SC-11 debut (staging job above).
+- structure: carries the authority dossier in composite form, the reading contract, and the printed verbatim justification menu.
+- guardrails: warm to the person, contempt for the trap only; never mock the heaven-then-shame split; relief must land in-chapter; ADV-01 cited for any health pointer.
+- continuity: receives the brief; hands a willing investigator with a promise and three standing instructions to C-02.
+- budget: 4500

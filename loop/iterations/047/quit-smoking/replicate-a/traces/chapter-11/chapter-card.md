@@ -1,0 +1,17 @@
+- C-11 · Chapter 11 · "The two villains"
+- job: enacted transition — the blame moves off the reader forever: an industry engineered the want and a named wrong method farmed the failures; the fear of trying again is the trap holding its hostage, both ropes in its hands.
+- resolves: "I am weak; trying again will fail like the twenty times before, and part of me does not want to succeed."
+- belief now: enters routeless but self-accusing and afraid; leaves cleared, angry at the right parties, trusting the method, unafraid of fear itself.
+- encounter: the memo room — dosage-form planning, reassure-and-retain advertising, starter-image strategy — read beside the reader's own twenty-attempt biography.
+- evidence: EV-V01 with limits (historical advertising intent; no personal-targeting claim); EV-L03 with limits (typical failures, never proof of weakness).
+- new instruction: none.
+- reserved-later: lived proof → C-12; ritual → C-13.
+- arc: late widening of the indictment; anti-method room, fear room, and unlabelled method-defense room in one movement.
+- curves: demolition vocabulary final peak; freedom language gathering for release.
+- reader-state: someone who collected methods like souvenirs of shame and fears both failing again and succeeding into strangeness.
+- mantras: echo M-G — "All you have to do is follow all the instructions."; token echo FT-A — "the Willpower Method".
+- scenes: AN-11 debut (both ropes, one holder); AN-06 debut (grief for a friend, turned); AN-01 token-echo; AN-03 token-echo.
+- structure: carries the anti-method room (failures reattributed; strong will reframed as evidence for the reader), the fear room (failure and success fears collapsed), and the method-defense room (the counter-brainwashing answer, performed not labeled).
+- guardrails: all contempt at industry and method, none at the reader; strong will praised as persistence misused, never as defect.
+- continuity: receives the routeless reader; hands a cleared and willing reader to C-12.
+- budget: 4500

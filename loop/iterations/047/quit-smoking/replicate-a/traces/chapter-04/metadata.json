@@ -1,0 +1,31 @@
+{
+  "chapter": 4,
+  "replicate": "a",
+  "slug": "quit-smoking",
+  "iteration": "047",
+  "chars": 21927,
+  "words_draft": 2651,
+  "words_final": 4101,
+  "words_by_round": [
+    2651,
+    4101
+  ],
+  "budget": 4500,
+  "review_rounds": 2,
+  "review_verdicts": [
+    "REVISE",
+    "ACCEPT"
+  ],
+  "review_verdict": "ACCEPT",
+  "final_status": "ACCEPT",
+  "findings_by_round": [
+    [
+      "LENGTHEN"
+    ],
+    []
+  ],
+  "harness": "opencode-task",
+  "spawn": "fresh-task-subagent-per-role",
+  "rewritten": true,
+  "draft_route": "opencode-task/muse-spark"
+}

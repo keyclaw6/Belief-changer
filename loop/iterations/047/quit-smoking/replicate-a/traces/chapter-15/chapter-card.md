@@ -1,0 +1,13 @@
+- C-15 · Chapter 15 · "The list and the open door"
+- non-argument — recap: hands over the photographable instruction set, the replacement thought, and the saved reframe, then pushes outward into life.
+- encounter: the list itself, then the door.
+- new instruction: none (recaps the bare imperatives below, no callbacks).
+- arc: short close; revelation, not repetition.
+- curves: freedom language final chord; the book's last word is the terminal mantra.
+- reader-state: someone free for days, holding the list, ready to stop reading about smoking forever.
+- mantras: echo M-H — "FANTASTIC! I'M FREE!".
+- scenes: none.
+- structure: carries the photographable recap (bare imperatives: KEEP AN OPEN MIND; DON'T STOP OR CUT DOWN UNTIL YOU FINISH THE BOOK; BEGIN WITH A FEELING OF EXCITEMENT, NOT DOOM; FOLLOW ALL THE INSTRUCTIONS; IGNORE ANY ADVICE THAT CONFLICTS WITH THIS METHOD; TAKE NO NOTICE OF OTHER SMOKERS' QUITTING TALK; NEVER HAVE JUST ONE; NOTICE WHAT THE MOMENT ITSELF GIVES YOU; USE NO SUBSTITUTES; SMOKE YOUR FINAL CIGARETTE CONSCIOUSLY, THEN CLOSE THE DOOR; WHEN THE THOUGHT OF A CIGARETTE COMES, ANSWER IT WITH JOY), the page-skipper gate (start at the beginning), the saved returned-property reframe, and the single outward imperative; ADV-01 routed here.
+- guardrails: no new demolitions; no callbacks; no teaching manual; the reframe appears here first and last.
+- continuity: receives the equipped reader; hands a free person their life.
+- budget: 2000

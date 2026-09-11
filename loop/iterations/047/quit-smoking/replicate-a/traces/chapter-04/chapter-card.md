@@ -1,0 +1,17 @@
+- C-04 · Chapter 4 · "The off-switch that causes the fire"
+- job: enacted transition — the cigarette does not relieve stress but creates the tension it then briefly interrupts; the off-switch is the wiring of the fire.
+- resolves: "If anything stressful happens, a cigarette takes care of it."
+- belief now: enters holding the verdict but exempting stress; leaves knowing the calm was replenishment speed, feeling the reversal.
+- encounter: the stressful lunch break and the patio ceremony after it (SC-01 debut — staging job: recliner, lighter, first puff as supposed engine of thought, ugliness kept visible).
+- evidence: EV-L01 with limits (felt relief real, credit false; never claims cigarettes treat problems); EV-S01 with limits (replenishment, not a gift; pharmacokinetics only); EV-S05 with limits (short typical peak; population course, never torture-for-all).
+- new instruction: none.
+- reserved-later: drink-night stress → C-07; just-one under stress → C-07 with I-07; villain design of relief → C-11.
+- arc: middle demolition on installed ground, first keystone kill.
+- curves: demolition vocabulary high; freedom quiet.
+- reader-state: someone whose hand moves before thought in hard moments, embarrassed to admit the movement feels like help.
+- mantras: echo M-D — "a genuine pleasure or crutch"; echo M-F — "winded, chained and poorer".
+- scenes: SC-01 debut (staging job above).
+- structure: none beyond the single kill.
+- guardrails: validate the felt relief before reassigning its source; never clinical language for stress; ADV-01 cited for any crisis pointer.
+- continuity: receives the verdict-holder; hands a reader whose main excuse is gone to C-05.
+- budget: 4500

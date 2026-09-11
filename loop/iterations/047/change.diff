@@ -1,0 +1,34 @@
+diff --git i/prompts/chapter-reviewer.md w/prompts/chapter-reviewer.md
+index 49fe46c4..e284a327 100644
+--- i/prompts/chapter-reviewer.md
++++ w/prompts/chapter-reviewer.md
+@@ -32,6 +32,7 @@ Then at most 7 findings. Each finding is one of:
+ - `RE-ARGUMENT` — the draft rebuilds settled work as its own section: a scene whose debut staging belongs to an earlier card, an earlier card's belief-now or primary job argued again with evidence and a turn, or an earlier card's instruction re-explained. Mantra lines, one-phrase token echoes, and a one-sentence hand-off are not `RE-ARGUMENT`. Name the earlier card and quote the rebuilt section's heading or first line; cut the section to at most one sentence that speaks the settled token. If that cut leaves the chapter below 0.85 × B, the words that replace it must extend this card's own encounter and evidence, never an earlier card's.
+ - `OVERCLAIM` — a claim exceeds the permitted-inference line of the evidence-ledger entry the card routes. Quote the overclaim and the bound in the review. Require the writer to delete the unsupported claim or narrow the sentence to what the evidence actually supports, rather than append commentary about the evidence, its scope, or what it can establish. The bound governs the repair; it is not text to transplant into the chapter. Retain any qualification needed for factual accuracy or reader safety, expressed directly in ordinary language; never remove a necessary limitation merely to sound certain, and never print the ledger ID or grade in prose. OVERCLAIM governs facts, not the assigned method promise (easy, permanent, no willpower).
+ - `SUMMARY` — SUMMARY has more than three bullets, a bullet without the belief verb stating the belief that changed, or a token roll-call / instruction recap / preview list / study-design note. Quote the violating bullet; require at most three one-sentence belief bullets.
++- `REGISTER` — a peak, crescendo, or verdict built from Latinate abstraction instead of short Anglo-Saxon plain exclaimed bluntness (judgement, repose, homily, lucid, facilitate, contemplate, and their kin), or a lyrical inventory/catalogue standing in for a blunt analogy. Quote the Latinate passage; require a rewrite in plain everyday words ending in a short blunt verdict. Numbered ALL-CAPS instructions plus one rationale line and the terminal mantra are not `REGISTER`.
+ 
+ No other finding types. No style notes. No "sounds like AI." No comparison
+ to any other book. No warmth, tone, or voice coaching.
+@@ -39,7 +40,7 @@ to any other book. No warmth, tone, or voice coaching.
+ `ACCEPT` only when every check above is fine (length inside ±15% of B, job
+ done and stopped and landed, assigned mantras/instructions verbatim, IDs
+ resolved, no `HEADER`, no unassigned refrain, no reserved-later job, no
+-re-argument, no overclaim, no SUMMARY violation).
++re-argument, no overclaim, no SUMMARY violation, no REGISTER violation).
+ 
+ `REVISE` when any check fails. List the findings. Be specific: quote the
+ missing job, the missing wording, or the overclaim.
+diff --git i/prompts/style-guide.md w/prompts/style-guide.md
+index 4881fd11..09e47df0 100644
+--- i/prompts/style-guide.md
++++ w/prompts/style-guide.md
+@@ -518,7 +518,7 @@ The vocabulary does the reframing in every sentence, whether or not that sentenc
+ 
+ Voice first — write to one reader. Do not count you/your, questions, or words as a quota. Short sentences cluster at peaks. Questions close traps. Pictures do the argument. ALL-CAPS: instructions, the terminal mantra, and a few true peaks — no more.
+ 
+-**Plain Carr sentence.** Write as one person talking across a table. Complete conversational sentences. Do not write fragment chains of three or more ("Blast never built. Blast billed. Film, thirst."). Do not write a paragraph of sensory catalogue with no belief verb. Invented private vocabulary is allowed only for the two named creatures and the frozen mantras — everyday words for everything else.
++**Plain Carr sentence.** Write as one person talking across a table. Complete conversational sentences. Do not write fragment chains of three or more ("Blast never built. Blast billed. Film, thirst."). Do not write a paragraph of sensory catalogue with no belief verb. Never build a crescendo, peak, or verdict from Latinate abstraction (judgement, repose, homily, lucid, facilitate, contemplate, and their kin): build peaks only from short Anglo-Saxon plain words in blunt exclaimed verdict sentences. Invented private vocabulary is allowed only for the two named creatures and the frozen mantras — everyday words for everything else. Carr-native numbered ALL-CAPS instructions plus one spoken rationale line and the terminal mantra are exempt from this ban.
+ 
+ **The pronoun triangle (non-shaming machine):** **"I"** = the guide's authority — testimony, promises, warnings. **"we"** = every description of falling into and living in the trap — the confession voice that makes ruthless critique shame-free because the author is inside it. **"you"** = instructions, promises, and the escape. **Falling into the trap is "we"; escaping it is "you."**
+ 

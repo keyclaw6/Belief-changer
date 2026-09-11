@@ -1,0 +1,17 @@
+- C-05 · Chapter 5 · "The reward that stole the work"
+- job: enacted transition — reward, focus, and boredom cigarettes add nothing; the work, the break, and the day were the givers all along, with the dose sneaking a ride.
+- resolves: "It rewards me, helps me think, and fills the empty time."
+- belief now: enters with stress disarmed but defending pleasure and utility; leaves with the pellet chain reassigned to the moments and to themselves.
+- encounter: one ordinary workday's pellet chain — the stuck-task reach, the match-struck pause, the drive-time dose, the grocery-run payoff (SC-04 debut — staging job: post-meeting exit with measured puffs; SC-07 debut — staging job: five-hour smoke and gas-station deodorize ritual landing on the trap).
+- evidence: EV-L05 with limits (party was the cigarette, not the work; never claims work needs nicotine); EV-M03 with limits (MIXED transient lift versus net decline; never sold as a thinking drug).
+- new instruction: none.
+- reserved-later: belonging pleasures → C-06; drink-night peak → C-07; ordinary complete day → C-08.
+- arc: middle demolition, merged utility kills on one workday.
+- curves: demolition vocabulary high; freedom quiet.
+- reader-state: a competent worker who decorated every finished thing with smoke and fears the days will go flat and grey.
+- mantras: echo M-D — "a genuine pleasure or crutch"; echo M-F — "winded, chained and poorer".
+- scenes: SC-04 debut and SC-07 debut (staging jobs above); AN-07 debut (celebration stolen down to a pellet).
+- structure: none beyond the merged kill; after-sex pricing answered only as a one-line myth pointer fenced to C-10, never staged here.
+- guardrails: isolate each variable (situation works with any drink or none; children carry the same energy drug-free); never concede one real utility.
+- continuity: receives the stress-freed reader; hands a reader with only social pleasures left defended to C-06.
+- budget: 4500

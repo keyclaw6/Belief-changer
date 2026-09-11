@@ -1,0 +1,17 @@
+- C-03 · Chapter 3 · "What good is there at all"
+- job: enacted transition — the harm-versus-benefit debate is refused; the cigarette must show one positive benefit, and its doing-to versus doing-for verdict closes the old ledger.
+- resolves: "It may harm me, but the pleasure is worth the risk."
+- belief now: enters seeing the loop yet still pricing pleasure against harm; leaves demanding a positive benefit and holding the two-column verdict.
+- encounter: tonight's own lighting-up watched closely — the burn, the mask of flavor, the heaven that lasts a puff.
+- evidence: EV-L04 with limits (enjoyment at lighting only, never mocked; never stretched into a day-long gift).
+- new instruction: I-05 — IGNORE ANY ADVICE THAT CONFLICTS WITH THIS METHOD / Mixed methods mix beliefs, and mixed beliefs keep the trap alive.
+- reserved-later: each named pleasure killed on its own ground → C-04 through C-07; mechanism deepening → C-09.
+- arc: first third, axis switch before any single-benefit demolition.
+- curves: demolition vocabulary climbing; freedom quiet.
+- reader-state: a bargainer weighing risk against pleasure, ready to have the scales taken away rather than rebalanced.
+- mantras: debut M-D — "a genuine pleasure or crutch"; echo M-C — "the nicotine trap".
+- scenes: none debuting; AN-grounded credit logic only (staging deferred to demolition chapters).
+- structure: speaks the TO/FOR verdict as settled sentences, never as a ledger or worksheet.
+- guardrails: concede no real benefit anywhere in the chapter; one surviving good reason would re-power the whole trap.
+- continuity: receives a reader who sees the loop; hands a reader holding the verdict to C-04.
+- budget: 3500

@@ -1,0 +1,16 @@
+- **ID C6, number 6, working title Eating.**
+  - job: enacted transition — the reader inhabits hunger, satisfaction and real food as favourite, feeling appetite trustworthy without sweets.
+  - objection resolved: without sweets eating will be dull and I will never feel satisfied.
+  - belief now: entry fears blandness and endless hunger; exit has felt a plain meal satisfy and fruit taste sweet.
+  - encounter: unhurried plain meal eaten to satisfaction plus hunger-versus-craving sitting enacted without announcement.
+  - evidence: L-13 clean baseline plus L-24 juice-versus-fruit boundary for what stays available. Limits: supports baseline not diet prescription; juice still free sugar, whole fruit distinct.
+  - new instruction: none.
+  - reserved-later fence: mechanism naming to C7; industry proof to C10.
+  - arc: middle inhabit peak; first genuine freedom taste, still restrained.
+  - reader-state: skeptical eater who has not trusted appetite for years; encounter lands by bodily satisfaction not argument.
+  - mantra: echo M-H "Eat as much of the real food you love as you want, whenever you want it, and never count a bite again."
+  - scenes: debut SC-F with staging job; debut AN-H haze filter with staging job; SC-B night kitchen referenced only as contrast token, full staging reserved to C7 and C10.
+  - structural: owns inhabit-the-ordinary-doing room; owns second perception exercise.
+  - guardrails: SAFE-1 for hunger language; no diet mechanics.
+  - continuity: receives both inversions; hands forward trusted appetite to C7.
+  - budget: 5000.

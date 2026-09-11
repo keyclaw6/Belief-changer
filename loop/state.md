@@ -2,13 +2,13 @@
 
 ## Position
 
-- **Iteration:** 046
-- **Stage:** factory writes (both subjects regenerating plans + chapters)
-- **Status:** IN PROGRESS
+- **Iteration:** 047
+- **Stage:** IDLE (047 QUANTIFY recorded, factory+plans restored to 041)
+- **Status:** IDLE
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none. Factory is Muse Spark 1.3; this chat is auto-research only.
-- **Last completed unit:** 045 QUANTIFY (deficits 32→30 / 30→26; headers = instrument property; SUMMARY cap dropped at writer contract; private vocab flagged with doctrine tension). Carried forward: 045 reshape + ban. Consecutive no-KEEP: 4.
-- **Next unit:** 046 hypothesize (vocab discipline or SUMMARY cap+finding) → apply → factory → judge → decide.
+- **Last completed unit:** 047 QUANTIFY + restore (deficit 20→35 / 28→35; Latinate→fragment avoidance; metaphor proliferation; card-routed advisories; blind gate; factory+plans at 041 text).
+- **Next unit:** 048 hypothesize (fragment finding, debut relief, advisory-presence) → apply → factory → judge → decide.
 
 ## Run authorization (founder, 2026-09-04; close-out 2026-09-06)
 

@@ -1,0 +1,17 @@
+- C-09 · Chapter 9 · "Ten seconds up, twenty minutes down"
+- job: enacted transition — the loop is understood cold: a ten-second replenishment, a fast fade, a trivial physical itch fed by a loud belief-voice; fear of withdrawal ends because there is almost nothing physical to fear.
+- resolves: "Withdrawal will be unbearable; the craving proves I need it."
+- belief now: enters wanting the free day but fearing the itch; leaves splitting the trivial physical part from the dominant belief part and dismissing the itch as brief noise.
+- encounter: yesterday's hourly clock traced puff by puff — speed of arrival, speed of leaving, the next hour already calling.
+- evidence: EV-S01 with limits (replenishment, not a gift; pharmacokinetics only); EV-M04 with limits (mechanics explain escalation; agency never removed).
+- new instruction: none.
+- reserved-later: route-closing → C-10; blame and fear → C-11; readiness gate → C-13.
+- arc: middle-to-late deepening; the mechanism chapter leans on vocabulary installed since C-02, never a debut unit.
+- curves: demolition vocabulary high; freedom held for the release.
+- reader-state: someone who believed the discomfort was personality and is ready to rename it chemistry with a short fuse.
+- mantras: echo M-C — "the nicotine trap"; echo M-D — "a genuine pleasure or crutch".
+- scenes: AN-09 debut (lifeguard who sold the breath); AN-04 debut (meter fed with nicotine coins).
+- structure: carries the trivial-physical versus dominant-belief split.
+- guardrails: name the brainwashing and its installers without lecturing; small-and-dying parasite framing for the itch, never a mighty enemy; ADV-01 cited for any health pointer.
+- continuity: receives someone who tasted the day; hands a reader unafraid of the itch to C-10.
+- budget: 4500

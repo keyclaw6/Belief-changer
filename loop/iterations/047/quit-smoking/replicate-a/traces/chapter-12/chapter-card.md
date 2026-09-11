@@ -1,0 +1,17 @@
+- C-12 · Chapter 12 · "Someone exactly like you walked out"
+- job: enacted transition — impossibility dies by witness: a decades-long hider with every excuse intact walked out on an ordinary day and never looked back, so the reader's case is not special.
+- resolves: "People like me cannot quit; my case is different."
+- belief now: enters cleared but still excepting themselves; leaves holding one ordinary exit as their own possible past, ready and impatient.
+- encounter: the garage-to-dog-walk exit, fully staged once (SC-10 debut — staging job: hidden years, two left in the pack, ordinary walk, quiet finish, wife told a week later).
+- evidence: EV-M01 with limits (annual rates, never lifetime fate; the book's sole prevalence sentence, stated here only); EV-S04 with limits (scopes never collapsed; neither slogan licensed).
+- new instruction: none.
+- reserved-later: ritual → C-13; ordinary life → C-14.
+- arc: late consolidation; the embedded long-form testimony in the main flow, in its own room.
+- curves: demolition handing off; freedom language swelling.
+- reader-state: a self-declared exception, tired of being one, looking for a door cut to their size.
+- mantras: echo M-A — "You have nothing to lose and everything to gain."; echo M-E — "for the rest of your life" (reward valence here).
+- scenes: SC-10 debut (staging job above).
+- structure: carries the long testimony room and the single prevalence claim; no appendix, no second staging elsewhere.
+- guardrails: testimony as gentle proof in original prose, never data; composite honesty kept; numbers concrete, brand names out.
+- continuity: receives the cleared reader; hands someone champing at the bit to C-13.
+- budget: 4000

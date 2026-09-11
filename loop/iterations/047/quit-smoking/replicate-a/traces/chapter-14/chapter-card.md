@@ -1,0 +1,15 @@
+- C-14 · Chapter 14 · "Mornings, drives, shops, evenings"
+- non-argument — bridge: carries the newly free reader through the first ordinary days on thoughts they already own, guarding the belief without teaching a new curriculum.
+- resolves: "The first week will ambush me; I need new rules for every situation."
+- encounter: three smokefree mornings, the drive, the shop queue, the pub garden — each thought stated once.
+- new instruction: I-11 — WHEN THE THOUGHT OF A CIGARETTE COMES, ANSWER IT WITH JOY / Let every reminder fire the replacement thought.
+- reserved-later: recap and outward push → C-15.
+- arc: after the vow, one ordinary-life chapter; thoughts the reader owns, once each: never reopen the decision, reframe the pang as celebration, rejoice at a dead enemy, ban instead-talk, pity the lit circle, skip evangelism, forgive slips as warnings, change nothing else.
+- curves: freedom language at full flood; demolition silent.
+- reader-state: a brand-new non-smoker waiting for the ambush that never quite arrives, surprised by how ordinary freedom feels.
+- mantras: echo M-H — "FANTASTIC! I'M FREE!"; echo M-E — "for the rest of your life" (reward valence); token echo FT-B — "Does that really look like enjoyment?".
+- scenes: SC-03 token-echo; SC-08 token-echo; SC-T2 token-echo.
+- structure: carries ordinary life as speech, not doctrine; slip-forgiveness without license; pity without preaching.
+- guardrails: no avoidance-as-resistance; inhabit every old context confidently; ADV-01 cited for any health pointer.
+- continuity: receives a free non-smoker; hands an equipped one to C-15.
+- budget: 3500

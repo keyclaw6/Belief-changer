@@ -1,0 +1,17 @@
+- C-02 · Chapter 2 · "Conned, not choosing"
+- job: enacted transition — the reader was not freely choosing but conned on false information into a loop; the loop has two plain-named parts, and the body already testifies against it.
+- resolves: "I smoke because I choose to; nobody forces me."
+- belief now: enters willing but still owning the habit; leaves seeing the con, holding both mechanism names as vocabulary, feeling the hourly clock and the stairs.
+- encounter: the first-morning chain and the stairs (SC-03 debut — staging job: bed-before-feet reach, hourly ticking, winded flight).
+- evidence: EV-S02 with limits (internal memo, not consensus paper; never a dare); EV-V02 with limits (historical planning memo; image-first starts, tolerance-built demand).
+- new instruction: I-04 — FOLLOW ALL THE INSTRUCTIONS / Each one is small, and together they are the method.
+- reserved-later: axis verdict → C-03; stress and reward kills → C-04, C-05; villain receipts → C-11.
+- arc: first third, world installation; the two mechanisms arrive in passing as vocabulary, then the body encounters land.
+- curves: demolition vocabulary rising; promise assumed; freedom quiet.
+- reader-state: someone who prided themselves on independence, beginning to suspect the independence was staged.
+- mantras: debut M-C — "the nicotine trap"; debut M-F — "winded, chained and poorer"; debut M-G — "All you have to do is follow all the instructions."; echo M-A — "You have nothing to lose and everything to gain."
+- scenes: SC-03 debut (staging job above); AN-02 debut (embrace that keeps holding); AN-03 debut (clock that calls itself company).
+- structure: names both mechanisms in passing; installs body, breath, and clock as concrete encounters, not refrains.
+- guardrails: dissolve choice without blame; con-words for the trap, never fool-words for the reader; original images only.
+- continuity: receives a willing investigator; hands a reader who sees the loop to C-03.
+- budget: 4500

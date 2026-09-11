@@ -1,0 +1,17 @@
+- C-06 · Chapter 6 · "Who you were before the uniform"
+- job: enacted transition — smoking never made the reader belong, look grown, or be themselves; the identity was rented from an image and paid for with hiding.
+- resolves: "It is part of who I am; without it I am nobody in the group."
+- belief now: enters with utilities gone but clutching belonging; leaves seeing the uniform as costume, holding the starter-truth and the cause-effect reversal.
+- encounter: the garage hide and the rainy party exile (SC-05 debut — staging job: hidden smoking from children, then alone outside in the rain mid-party).
+- evidence: EV-V02 with limits (historical planning scope; image-first starts); EV-V04 with limits (marketing literature; no personal-targeting claim).
+- new instruction: I-06 — TAKE NO NOTICE OF OTHER SMOKERS' QUITTING TALK / Their struggle is the wrong method talking, not your future.
+- reserved-later: drink-night peak → C-07; fear of an identity without cigarettes → C-11; lived proof of ordinary exits → C-12.
+- arc: middle demolition, identity kill carrying the cause-effect inversion room (shared traits as result of the trap, graceful concession that the method frees regardless).
+- curves: demolition vocabulary near peak; freedom quiet.
+- reader-state: someone who learned every doorway and joke through smoke and cannot picture their own face in the group without it.
+- mantras: echo M-C — "the nicotine trap"; echo M-D — "a genuine pleasure or crutch".
+- scenes: SC-05 debut (staging job above).
+- structure: carries the identity-excuse room (inversion plus starter history plus concession).
+- guardrails: warmth to the person in every exile image; contempt for the image-makers only; original prose throughout.
+- continuity: receives a reader with pleasures reassigned; hands someone without a uniform to C-07.
+- budget: 4000

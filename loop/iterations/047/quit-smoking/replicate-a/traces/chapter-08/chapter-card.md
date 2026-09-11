@@ -1,0 +1,17 @@
+- C-08 · Chapter 8 · "A whole ordinary day, complete"
+- job: enacted transition (inhabit, not a kill) — a full ordinary smokefree day is inhabited in reading: morning coffee, work pauses, finished meals, evening quiet, each complete and kinder without the dose.
+- resolves: the unspoken dread "ordinary days will feel empty without it" by living one, not by arguing one.
+- belief now: enters with every pleasure demolished and nothing yet built; leaves having spent a day inside freedom and wanting that day.
+- encounter: coffee that tastes of coffee and a dinner that ends clean (SC-08 debut — staging job: taste, company, completion) closing on the returned patio (SC-T2 debut — staging job: same place, no clock, one deep breath).
+- evidence: EV-M04 with limits (reward-circuit mechanics; never identical neurobiology in every smoker, never loss of agency).
+- new instruction: I-08 — NOTICE WHAT THE MOMENT ITSELF GIVES YOU / The pleasure sits in the coffee, the break, the company. Watch and see.
+- reserved-later: loop mechanics → C-09; vow and ordinary life → C-13, C-14.
+- arc: middle, the inhabit-the-ordinary-doing chapter; attention exercised, unannounced.
+- curves: first controlled release of freedom language since the opening.
+- reader-state: someone convinced the pleasures were borrowed and hungry to feel one ordinary hour that belongs to them.
+- mantras: echo M-C — "the nicotine trap".
+- scenes: SC-08 debut and SC-T2 debut (staging jobs above).
+- structure: carries the inhabit assignment; no kill, no catalogue, no prospectus.
+- guardrails: inhabit only; never smuggle a justification kill into this chapter; freedom shown as moments, named only by frozen lines.
+- continuity: receives a reader with demolitions complete; hands someone who has tasted the day to C-09.
+- budget: 4000

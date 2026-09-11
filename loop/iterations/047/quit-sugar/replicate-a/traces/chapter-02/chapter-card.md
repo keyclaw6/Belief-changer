@@ -1,0 +1,16 @@
+- **ID C2, number 2, working title Already Caught.**
+  - job: enacted transition — the reader stops seeing daily grazing as free choice and sees a con that removed choice without blame.
+  - objection resolved: I choose this and I am fine.
+  - belief now: entry trusts normal; exit distrusts normal and holds trap vocabulary.
+  - encounter: watching a normal eating day, body signals, instinct, real food as authority; supermarket normality observation.
+  - evidence: L-10 prevalence once only with self-report limit and no-diagnosis prohibition; L-04 schedule-blindness hint without overclaim; L-13 clean-baseline glimpse. Limits: animal data never stated as human proof; prevalence never as diagnosis.
+  - new instruction: I-04.
+  - reserved-later fence: axis language to C3; fuel proof to C4; love proof to C5; mechanism split to C7.
+  - arc: first-third world install; freedom low, demolition rising.
+  - reader-state: capable adult embarrassed by night eating who calls it habit; encounter lands by showing the day runs on cues not hunger.
+  - mantra: debut M-C "the sugar trap."; debut M-E "for every day from now on."; echo M-G "the Willpower Method."
+  - scenes: debut SC-C supermarket tour with staging job; debut SC-E childhood bakery glimpse only as memory flash, full staging reserved to C5; introduce tiny craving and brainwashing voice in passing as common nouns.
+  - structural: owns prevalence-once slot; owns body-instinct-real-food encounters.
+  - guardrails: SAFE-1 for appetite language; originality forbids reusing later scenes in full.
+  - continuity: receives contract and BAD SUGAR line; hands forward trap name plus body authority to C3.
+  - budget: 5000.

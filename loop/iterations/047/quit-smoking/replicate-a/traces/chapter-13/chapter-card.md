@@ -1,0 +1,17 @@
+- C-13 · Chapter 13 · "The last one, on purpose"
+- job: enacted transition — waiting ends: the reader smokes the final ordinary cigarette with full attention on what it really is, makes the solemn vow, and becomes a non-smoker as of now.
+- resolves: "I am almost ready; perhaps after this pack, this week, this stress."
+- belief now: enters impatient and ready; leaves free as of this cigarette, holding the replacement thought and the two guarded doors.
+- encounter: the reader's own final ordinary cigarette — attention on taste, smell, and ash, never a laboratory dose, never nostalgia.
+- evidence: EV-S05 with limits (typical peak course; readiness gated, never scheduled); EV-L06 with limits (totality; the two doors named: the bad-day rescue offer and the just-one thought).
+- new instruction: I-10 — SMOKE YOUR FINAL CIGARETTE CONSCIOUSLY, THEN CLOSE THE DOOR / Give it your full attention, make the solemn vow, and become a non-smoker as of now.
+- reserved-later: ordinary days → C-14; recap and outward push → C-15.
+- arc: the threshold; readiness gated (the unready re-read), freedom conferred instantly with congratulation.
+- curves: freedom detonation begins; demolition vocabulary done.
+- reader-state: someone who has waited the whole book for permission to finish and needs the ending to feel like a beginning.
+- mantras: debut M-H — "FANTASTIC! I'M FREE!"; echo M-B — "Easily, immediately and permanently."; echo M-E — "for the rest of your life" (reward valence); echo M-G — "All you have to do is follow all the instructions."; token echo FT-C — "the tug-of-war".
+- scenes: AN-06 token-echo (enemy's death, celebrated).
+- structure: carries the staged ritual (gate, last ordinary instance, vow, instant conferral, two-door warning).
+- guardrails: ceremonial attention, never a dare to smoke more; no nostalgia lighting; ADV-01 cited beside the ritual.
+- continuity: receives the impatient reader; hands a free non-smoker to C-14.
+- budget: 3000
