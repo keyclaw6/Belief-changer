@@ -1,13 +1,13 @@
 {
   "status": "OFFLINE_DEMO_PASSED",
   "calls_to_live_models": 0,
-  "book": "/home/kab/belief-changer-audit-20260911-FRULvb/v2-final-demo/runs/offline-demo/book.md",
+  "book": "/home/kab/belief-changer-audit-20260911-FRULvb/v2-archivefix-demo/runs/offline-demo/book.md",
   "verification": {
     "status": "COMPLETE_UNRELEASED",
     "fixture": true,
     "run_id": "offline-demo",
     "book_sha256": "f0e8da5767dcaa340e0c3004154fd2d65c8542eceda2dd231d4af91044a864f4",
-    "factory_digest": "5e8e9c719808212a00f1286718fb4beb53815ae9731b2235245474b7e1e49ccf",
+    "factory_digest": "31c1bd0311450f7efa82fd9b99e1bc0b0c7f453485e79e4ddad3916b8161f4ea",
     "efficacy": "NOT_MEASURED"
   },
   "warning": "Synthetic software fixture. Not research, human calibration, publishable content or proof of reader outcomes."

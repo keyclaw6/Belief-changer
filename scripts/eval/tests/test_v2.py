@@ -270,6 +270,28 @@ class EditingAndProviderTests(Base):
             self.assertIsNone(z.testzip())
             self.assertTrue(all(info.date_time == (2026,9,11,0,0,0) for info in z.infolist()))
         self.assertEqual(s['sha256'],file_hash(out))
+    def test_archive_internal_symlink_materialized(self):
+        (self.repo/'target.md').write_text('Safe retained reference alias.')
+        (self.repo/'alias.md').symlink_to('target.md')
+        out=Path(self.tmp.name)/'internal.zip';build(self.repo,out)
+        with zipfile.ZipFile(out) as z:
+            self.assertEqual(z.read('Belief-changer/alias.md'),b'Safe retained reference alias.')
+            manifest=json.loads(z.read('Belief-changer/ARCHIVE-MANIFEST.json'))
+            self.assertEqual(manifest['dereferenced_symlinks'],{'alias.md':'target.md'})
+    def test_archive_external_symlink_rejected(self):
+        outside=Path(self.tmp.name)/'private.txt';outside.write_text('Never export outside tree')
+        (self.repo/'alias.txt').symlink_to(outside)
+        with self.assertRaises(FactoryError): build(self.repo,Path(self.tmp.name)/'external.zip')
+    def test_archive_credential_alias_rejected(self):
+        (self.repo/'.env').write_text('Never export credentials')
+        (self.repo/'alias.txt').symlink_to('.env')
+        with self.assertRaises(FactoryError): build(self.repo,Path(self.tmp.name)/'credential.zip')
+    def test_archive_directory_symlink_rejected(self):
+        (self.repo/'alias').symlink_to('scripts',target_is_directory=True)
+        with self.assertRaises(FactoryError): build(self.repo,Path(self.tmp.name)/'directory.zip')
+    def test_archive_broken_symlink_rejected(self):
+        (self.repo/'alias.txt').symlink_to('missing-file.txt')
+        with self.assertRaises(FactoryError): build(self.repo,Path(self.tmp.name)/'broken.zip')
     def test_archive_reproducible(self):
         a=Path(self.tmp.name)/'a.zip';b=Path(self.tmp.name)/'b.zip'
         self.assertEqual(build(self.repo,a)['sha256'],build(self.repo,b)['sha256'])

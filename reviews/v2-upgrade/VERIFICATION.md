@@ -5,7 +5,7 @@ Upgrade branch: `upgrade/truth-first-factory-v2`.
 
 ## Executed checks
 
-- All **75 offline regression tests passed** on the full repository. The mandatory gate also validates runtime contracts, compiles the Python code, tests the CLI and confirms the legacy continuation hook is disabled.
+- All **80 offline regression tests passed** on the full repository. The mandatory gate also validates runtime contracts, compiles the Python code, tests the CLI and confirms the legacy continuation hook is disabled.
 - A complete synthetic two-chapter pipeline passed: evidence gate, plan/review, sequential draft/review/state, whole-book edit, assembly, independent-shaped final audit and complete verification. Live model calls: **0**. This is a software fixture, not a generated research book.
 - The exact frozen code snapshot independently verified the same assembled manuscript hash.
 - Calling the legacy judge without a v2 run returned exit 2 and explicitly made no model calls. It did not print PANEL DONE.
@@ -19,3 +19,7 @@ Upgrade branch: `upgrade/truth-first-factory-v2`.
 No paid generation campaign, independent live-provider compatibility test, human calibration, qualified health/rights review, source-by-source re-verification or reader-outcome study was performed. Software gate success does not prove better prose, medical safety, copyright clearance or belief-change effectiveness. The external evaluator is deliberately unconfigured; release is blocked until the documented independent evaluation and actual review requirements are met.
 
 See `verification.json` and the accompanying raw logs. `docs/UPGRADE-MAP.md` maps each audited problem to its implementation and tests. `docs/FACTORY-V2.md` explains operation and remaining setup. The GitHub workflow records verification of the committed tree and publishes the complete credential-free ZIP artifact.
+
+## CI packaging correction
+
+The first GitHub run passed the 75-test gate and demo but failed archive creation on two historical relative symlinks. The archive builder now materializes only safe internal regular-file targets and records those aliases. Five new tests verify internal aliases, external targets, credential aliases, directories and broken links. All 80 tests pass after this correction. CI is rerun on the corrected commit.

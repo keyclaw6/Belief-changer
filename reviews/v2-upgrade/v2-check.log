@@ -6,7 +6,12 @@ test_generator_cannot_switch_to_review_family (test_v2.AdditionalSafetyTests.tes
 test_illustration_cannot_prove_empirical_claim (test_v2.AdditionalSafetyTests.test_illustration_cannot_prove_empirical_claim) ... ok
 test_nan_latency_rejected (test_v2.AdditionalSafetyTests.test_nan_latency_rejected) ... ok
 test_unverified_live_dossier_cannot_be_accepted (test_v2.AdditionalSafetyTests.test_unverified_live_dossier_cannot_be_accepted) ... ok
+test_archive_broken_symlink_rejected (test_v2.EditingAndProviderTests.test_archive_broken_symlink_rejected) ... ok
+test_archive_credential_alias_rejected (test_v2.EditingAndProviderTests.test_archive_credential_alias_rejected) ... ok
+test_archive_directory_symlink_rejected (test_v2.EditingAndProviderTests.test_archive_directory_symlink_rejected) ... ok
 test_archive_excludes_credentials (test_v2.EditingAndProviderTests.test_archive_excludes_credentials) ... ok
+test_archive_external_symlink_rejected (test_v2.EditingAndProviderTests.test_archive_external_symlink_rejected) ... ok
+test_archive_internal_symlink_materialized (test_v2.EditingAndProviderTests.test_archive_internal_symlink_materialized) ... ok
 test_archive_reproducible (test_v2.EditingAndProviderTests.test_archive_reproducible) ... ok
 test_authority_screen (test_v2.EditingAndProviderTests.test_authority_screen) ... ok
 test_capitalization_regression_detected (test_v2.EditingAndProviderTests.test_capitalization_regression_detected) ... ok
@@ -76,7 +81,7 @@ test_single_fenced_json (test_v2.SerializationTests.test_single_fenced_json) ...
 test_symlink_rejected (test_v2.SerializationTests.test_symlink_rejected) ... ok
 
 ----------------------------------------------------------------------
-Ran 75 tests in 5.646s
+Ran 80 tests in 5.655s
 
 OK
 ok

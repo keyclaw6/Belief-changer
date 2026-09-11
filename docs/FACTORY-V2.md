@@ -130,3 +130,7 @@ python3 scripts/factory.py archive --output ../Belief-changer-v2-full.zip
 ```
 
 The archive includes the full working source tree and retained historical research/manuscripts, excluding `.git`, real environment/private-key files, caches and archive output. ARCHIVE-MANIFEST.json contains file hashes. A sidecar records the ZIP hash; extraction and CRC checks complement the regression suite. Third-party assets remain under their own rights and may not be publicly redistributed merely because present in a repository.
+
+### Portable full-repository archives
+
+The ZIP builder materializes internal regular-file symlinks as copies of their targets, recording each alias in `ARCHIVE-MANIFEST.json`. This preserves the two historical reference aliases on systems that cannot restore ZIP symlinks. External, broken, directory and credential-targeting symlinks fail the archive build. Runtime run-input paths still reject all symlinks.
