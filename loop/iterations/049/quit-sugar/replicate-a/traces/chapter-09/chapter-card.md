@@ -1,0 +1,16 @@
+C09 — No middle way
+- primary job: enacted transition — cutting down, keeping specials, waiting for tomorrow and swapping sweets all keep the loop alive
+- objection resolved: I can manage it with rules and lighter swaps
+- belief now: enters negotiating rations and dates; exits seeing rations as stairs back to the box
+- encounter: the weekend treat, the freezer piece saved for a special day, the diet drink and honey swap, the Monday restart
+- evidence: E-09 collapse arc, E-10 just-one failure, E-11 one-bite admission, E-24 hump versus lifelong fight; limits: lived arcs, not dose proof; swaps addressed through loop relation rather than toxicology
+- new instruction: I-09 with frozen wording pinned
+- reserved-later fence: method failure autopsy to C10, fear work to C11
+- arc and curve: escape-route foreclosure; demolition vocabulary still high
+- reader-state: rule-maker exhausted by tracking; encounter lands through own three-boxes-by-weekend arithmetic
+- mantras: M-A echo "you risk nothing and gain everything", M-C echo "the sugar trap", M-I echo "the Willpower Method"
+- scenes: none debuted; SC-01 token-echo only where secrecy recurs
+- structural responsibility: myths battery as distinct rapid-fire room answering moderation, substitution, delay and special-occasion lines in a few sentences each
+- guardrails: foreclose without shaming rule-makers; originality forbids new scare lists beyond assigned evidence; safety cites CLIN-01 for therapeutic swaps
+- continuity intent: hands forward a reader with no standing loophole and only the method question left
+- budget: 4500

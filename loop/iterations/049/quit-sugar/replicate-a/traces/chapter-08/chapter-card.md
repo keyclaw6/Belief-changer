@@ -1,0 +1,16 @@
+C08 — Made to crave
+- primary job: enacted transition — desire was manufactured and placed around the reader, not grown inside character
+- objection resolved: if it is everywhere it must be normal and my fault for taking it
+- belief now: enters self-blaming for availability; exits angry at design and tender toward self
+- encounter: supermarket aisle, checkout queue and hidden sugars in ordinary foods, plus the tuning-lab picture
+- evidence: E-30 engineered stop-signal removal, E-31 stomach share and child targeting, E-32 suppressed-review history once, E-28 deferred load, E-29 ceiling gap, E-21 processed concentration; limits: trade reporting and population summaries, never personal causation or brand accusation
+- new instruction: I-08 with frozen wording pinned
+- reserved-later fence: escape-route foreclosure to C09, method defense to C10
+- arc and curve: indictment widening; stakes language active
+- reader-state: adult who thought ubiquity proved innocence; encounter lands through hidden-dose arithmetic and childhood recruitment
+- mantras: M-C echo "the sugar trap", M-G echo "tired, flat and craving", M-F echo "for every day for the rest of your life", M-J echo "It is doing plenty TO you. It is doing nothing FOR you."
+- scenes: SC-07 debut with full staging; SC-05 debut with full staging
+- structural responsibility: manufacture-of-desire room
+- guardrails: attribute receipts to stated speakers and publications; anger at design only; safety avoids personal fate prediction
+- continuity intent: hands forward a reader who no longer defends the environment and is ready to close the middle way
+- budget: 4500

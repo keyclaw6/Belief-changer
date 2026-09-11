@@ -1,0 +1,16 @@
+C04 — The energy lie
+- primary job: enacted transition — the lift is seen as the start of the dip rather than genuine fuel
+- objection resolved: I need it to function in the afternoon
+- belief now: enters believing the sweet powers work; exits seeing the slump as bought by the earlier sweet
+- encounter: the 2pm desk top-up and the hour-later fog, headache and renewed reaching
+- evidence: E-01 lift-crash self-description, E-25 honest swing versus clinical threshold, E-26 liquid on-top energy, E-24 hump timeline for hope; limits: no hypoglycemia diagnosis, no per-person energy prediction, hump described as days and small
+- new instruction: I-04 with frozen wording pinned
+- reserved-later fence: mechanism depth to C07, manufacture detail to C08, substitutes to C09
+- arc and curve: first demolition; cost language active
+- reader-state: tired worker who reads fatigue as fuel shortage; encounter lands through own lift-then-dip timing
+- mantras: M-D echo "a real treat or lift", M-E echo "a faint, empty, slightly edgy feeling", M-G "tired, flat and craving" debut
+- scenes: SC-02 debut with full staging; SC-06 debut with full staging
+- structural responsibility: none beyond demolition
+- guardrails: state bodily costs flatly then return to escape-joy in the same chapter; safety cites CLIN-01 for diabetes signs or faintness
+- continuity intent: hands forward a reader who no longer credits the sweet for energy
+- budget: 4500

@@ -1,0 +1,16 @@
+CH-09 | Chapter 9 | The loop that feeds on itself
+- primary job: enacted transition — the ten-second replenishment plus fast fade is understood as the whole engine, with the physical part trivial and the belief part dominant
+- resolves: withdrawal proves I need it, the craving is too strong to be mental
+- belief now: enters inhabiting mornings yet fearing the echo means need; leaves reading the echo as dying noise and the story feeding it as the target
+- encounter: hourly dosing watched against the clock, first-week edge named, later cue want separated from physical need
+- evidence: E-07, E-11; must not claim every puff unique pleasure; must not stretch typical peak into months of torture
+- new instruction: I-08 WELCOME THE FAINT ECHO AS PROOF THE TRAP IS DYING / It is noise fading, not need calling.
+- reserved-later: exceptions to CH-10, industry design to CH-11, substitutes to CH-12
+- arc: middle deepening; demolition at peak; freedom still held back
+- reader-state: someone who felt the faint edgy wave and called it self; timed fade plus cue separation corrects the label
+- mantra: echo M-C "the nicotine trap"; echo M-E "a faint, empty, slightly edgy feeling that comes and goes"
+- scenes: AN-03 debut full staging; AN-06 debut full staging; AN-02 not restaged
+- structural: carries enacted perception exercise of watching the clock and the wave; splits trivial physical from dominant belief using vocabulary from CH-02
+- guardrails: safety ADV-01; originality keeps images original and mechanism in plain common nouns
+- continuity: receives grounded inhabitant; hands loop-seer ready for totality to CH-10
+- budget: 4500

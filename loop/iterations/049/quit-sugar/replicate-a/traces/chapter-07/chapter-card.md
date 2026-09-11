@@ -1,0 +1,16 @@
+C07 — How the loop holds
+- primary job: enacted transition — the high is relief from a self-created low and wanting outlives liking
+- objection resolved: the first bites really please me so it cannot be illusion
+- belief now: enters still trusting felt pleasure; exits distinguishing wanting from liking and the trivial physical part from the dominant belief part
+- encounter: the box finished past pleasure, first bites heavenly then mechanical, hands continuing
+- evidence: E-13 animal loop, E-14 dopamine retrigger, E-15 dip chemistry, E-16 mild-but-defined calm, E-18 cue lingering, E-22 wanting versus liking, E-23 clean baseline; limits: animals versus humans kept explicit, mild magnitude honored, open question held per E-19 where relevant
+- new instruction: I-07 with frozen wording pinned
+- reserved-later fence: industry detail to C08, middle-way to C09
+- arc and curve: mechanism deepening; demolition vocabulary at full height
+- reader-state: adult puzzled by eating past enjoyment; encounter lands through own heavenly-then-mechanical sequence
+- mantras: M-C echo "the sugar trap", M-E echo "a faint, empty, slightly edgy feeling"
+- scenes: SC-08 debut with full staging; SC-06 token-echo only
+- structural responsibility: demystification of addiction language without diagnosing
+- guardrails: explain without lecturing in physiology; originality requires own lender and ride images only; safety keeps withdrawal small and passing with CLIN-01 for severe symptoms
+- continuity intent: hands forward a reader who can name the loop back to front and is ready to see who built it
+- budget: 4500

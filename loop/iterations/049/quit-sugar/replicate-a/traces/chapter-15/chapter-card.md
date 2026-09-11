@@ -1,0 +1,14 @@
+C15 — Short recap, then life
+- non-argument — recap: photographable instruction list, then outward push
+- encounter: the list itself and the next ordinary day
+- evidence: none
+- new instruction: none; verbatim recap of I-01 through I-13 with no chapter callbacks
+- reserved-later fence: none
+- arc and curve: closing photograph; freedom assumed
+- reader-state: free adult needing only a pocket reminder; encounter lands through brevity
+- mantras: hand-over of M-A "you risk nothing and gain everything", M-B "easily, at once and for good", M-C "the sugar trap", M-D "a real treat or lift", M-E "a faint, empty, slightly edgy feeling", M-F "for every day for the rest of your life", M-H "BRILLIANT! I'M FREE!", M-J "It is doing plenty TO you. It is doing nothing FOR you.", M-K "All you have to do is follow all the instructions.", M-L "BAD SUGAR"
+- scenes: none
+- structural responsibility: short recap; carries the saved ending reframe and the single outward imperative
+- guardrails: list only, no new argument, no teaching manual; originality keeps the closing reframe fresh and unpreviewed
+- continuity intent: hands the reader back to life with the replacement thought for any future sweet thought
+- budget: 3000

@@ -1,0 +1,16 @@
+C03 — What good is there at all
+- primary job: enacted transition — the question changes from harm versus benefit to whether any benefit exists
+- objection resolved: it must do something for me or I would not do it
+- belief now: enters weighing pros and cons; exits demanding one real benefit and finding the ledger empty
+- encounter: the after-dinner dessert window where dinner is forgotten and dessert is awaited
+- evidence: E-03 reward frame, E-12 love fusion; limits: community phrasing, never universal family claims
+- new instruction: I-03 with frozen wording pinned
+- reserved-later fence: specific benefit kills to C04 and C05, strongest case to C12
+- arc and curve: axis switch; demolition vocabulary rising
+- reader-state: fair-minded adult willing to audit pleasure; encounter lands by printing the justification menu as quoted inner voice
+- mantras: M-D "a real treat or lift" debut, M-J "It is doing plenty TO you. It is doing nothing FOR you." debut
+- scenes: none debuted; justification menu printed here for later demolition
+- structural responsibility: justification menu room
+- guardrails: keep the switch spoken rather than ledger-like; originality requires plain conversational sentences
+- continuity intent: hands forward a reader who now calls the benefit by its token and awaits item-by-item audit
+- budget: 3500

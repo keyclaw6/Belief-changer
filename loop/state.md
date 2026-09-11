@@ -2,13 +2,13 @@
 
 ## Position
 
-- **Iteration:** 048
+- **Iteration:** 049
 - **Stage:** factory writes (both subjects regenerating plans + chapters)
 - **Status:** IN PROGRESS
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none. Factory is Muse Spark 1.3; this chat is auto-research only.
-- **Last completed unit:** 047 QUANTIFY + restore (deficit 20→35 / 28→35; fragment avoidance; metaphor proliferation; card-routed advisories; factory+plans at 041 text). Consecutive no-KEEP: 6.
-- **Next unit:** 048 hypothesize (fragment finding, debut relief, advisory-presence) → apply → factory → judge → decide.
+- **Last completed unit:** 048 QUANTIFY (deficit 35→28 / 35→35; FRAGMENT fired; Nipper back via omitted rebuild; redefinition = brief doctrine; timetables unclosable). Carried forward: FRAGMENT + quota relief (guide) + silence. Consecutive no-KEEP: 7.
+- **Next unit:** 049 hypothesize (explicit rebuild: Fork-1 + craft-7 + FRAGMENT) → apply → factory → judge → decide.
 
 ## Run authorization (founder, 2026-09-04; close-out 2026-09-06)
 

@@ -1,0 +1,16 @@
+CH-10 | Chapter 10 | No safe kept one
+- primary job: enacted transition — every kept exception is seen as the same belief surviving, so only none is stable
+- resolves: I will cut down, keep social ones, allow just one, start tomorrow
+- belief now: enters seeing the loop yet bargaining for a small kept share; leaves knowing one keeps the whole story alive
+- encounter: party ladder from one a month to a pack on vacation, bar thought that one will not hurt, Monday-morning tomorrow ritual
+- evidence: E-06, E-10; must not collapse trial versus population facts; must not dare a test puff; must not license a deliberate repeat while forgiving slips as warnings
+- new instruction: I-09 MAKE NO EXCEPTION, NOT EVEN ONE / One keeps the belief alive.
+- reserved-later: design fraud detail to CH-11, substitute demolition to CH-12, strongest night proof to CH-13
+- arc: late-middle totality gate; fear of failure and fear of success collapse here as support; stakes in reward valence begin to rise
+- reader-state: someone negotiating a smaller cage; the ladder plus tomorrow loop proves creep and preciousness
+- mantra: echo M-A "You have nothing to lose and everything to gain."; echo M-F "for the rest of your life"
+- scenes: AN-07 debut full staging; AN-03 token-echo only
+- structural: carries fear collapse and leftover-myth battery as support for the same totality correction, not as second theses
+- guardrails: safety ADV-01; originality keeps moderation absurdity in smoking terms, no borrowed lecture
+- continuity: receives loop-seer; hands exception-free reader to villain widening in CH-11
+- budget: 4200

@@ -109,8 +109,7 @@ that can repair the defect. Never emit another refusal form.
 6. Use the pronoun triangle: `we` for falling into and living in the trap,
    `you` for instructions, promises, and escape, and `I` for testimony,
    authority, promises, and warnings.
-7. Use at least one card-assigned concrete analogy or scene to do the
-   argumentative job your card declares for it. Execute every assigned
+7. Only an assigned analogy or scene, never a quota. Use a concrete analogy or scene only when the card assigns one for this chapter's job; never invent one to fill a chapter. A chapter with no assigned analogy is not a defect. Execute every assigned
    rhetorical move silently in Carr voice — render direct lived experience
    and verdict only; never label, count, coach, or announce the move, and never
    write meta-commentary about the assignment.

@@ -1,0 +1,27 @@
+diff --git i/prompts/chapter-writer.md w/prompts/chapter-writer.md
+index 731eda74..cdc22081 100644
+--- i/prompts/chapter-writer.md
++++ w/prompts/chapter-writer.md
+@@ -109,8 +109,7 @@ that can repair the defect. Never emit another refusal form.
+ 6. Use the pronoun triangle: `we` for falling into and living in the trap,
+    `you` for instructions, promises, and escape, and `I` for testimony,
+    authority, promises, and warnings.
+-7. Use at least one card-assigned concrete analogy or scene to do the
+-   argumentative job your card declares for it. Execute every assigned
++7. Only an assigned analogy or scene, never a quota. Use a concrete analogy or scene only when the card assigns one for this chapter's job; never invent one to fill a chapter. A chapter with no assigned analogy is not a defect. Execute every assigned
+    rhetorical move silently in Carr voice — render direct lived experience
+    and verdict only; never label, count, coach, or announce the move, and never
+    write meta-commentary about the assignment.
+diff --git i/prompts/style-guide.md w/prompts/style-guide.md
+index d1d44df0..30c54dad 100644
+--- i/prompts/style-guide.md
++++ w/prompts/style-guide.md
+@@ -94,7 +94,7 @@ The three books genuinely disagree on several mechanisms. A writer must know the
+ ### Fork 1 — Is there an "inner monster" to personify, or not?
+ - **Carr:** Yes — the Little Monster is a vivid, near-living parasite you "starve to death" and whose "death throes" you "revel in." Personification makes the craving *external* and *winnable*.
+ - **Burgeon:** Explicitly **rejects** this — a "monster" creates a "Me vs Them" fight with an "imaginary enemy"; "it was me all along." You don't fight, you understand.
+-- **DEFAULT (Carr):** **Personify, exactly as Carr does.** Every book names its two mechanism characters — the trivial physical creature the reader will starve to death (the Little-Monster equivalent) and the belief-system that feeds it (the Big-Monster equivalent) — with original, behavior-fitted names frozen in the mantra sheet. The personification makes the craving *external, small, and winnable*; its "death throes" become something to revel in. It is never a mighty enemy the reader must battle with willpower — it is a starving parasite already dying. Burgeon's no-monster stance is a brief-level override, never a default.
++- **DEFAULT (Carr):** **Personify, exactly as Carr does.** Every book names its two mechanism characters — the trivial physical creature the reader will starve to death (the Little-Monster equivalent) and the belief-system that feeds it (the Big-Monster equivalent) — with no frozen proper names: refer to the two mechanisms only in plain everyday description as common nouns (the tiny physical craving and the brainwashing voice), never as capitalized branded creatures, never frozen on the mantra sheet, never invented Mite/Talker/Nipper-style tokens. The personification makes the craving *external, small, and winnable*; its "death throes" become something to revel in. It is never a mighty enemy the reader must battle with willpower — it is a starving parasite already dying. Burgeon's no-monster stance is a brief-level override, never a default.
+ 
+ ### Fork 2 — Total abstinence, or radical autonomy (moderation allowed)?
+ - **Carr & Burgeon:** **Total cessation** is the only stable state. One "special" exception means the belief is intact; moderation makes the thing more precious (forbidden-fruit) and guarantees creep. "Unplug every cord."

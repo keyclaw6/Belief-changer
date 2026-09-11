@@ -1,0 +1,16 @@
+CH-14 | Chapter 14 | The final cigarette
+- primary job: non-argument — hand-off across the threshold on joy with the belief already changed
+- resolves: gate of readiness, fear of the moment, which cigarette and how
+- belief now: enters with no surviving gift and asks if ready; leaves free as of the vow
+- encounter: ordinary walk with ordinary brand, attention on the smell and harshness, solemn vow taken, remaining pack left behind
+- evidence: E-06, E-11; must not dare a test puff; must treat any future slip as warning from belief let back in, never as doom
+- new instruction: I-12 SMOKE YOUR FINAL CIGARETTE WITH A SOLEMN VOW AND KNOW YOU ARE FREE / You cross on joy, not loss.
+- reserved-later: ordinary days and recap to CH-15 only
+- arc: threshold; freedom detonated; demolition done
+- reader-state: someone eager to close, needing only timing and wording; ordinary ugliness plus congratulation confer identity at once
+- mantra: debut M-H "WONDERFUL! I'M FREE!"; echo M-B "You can stop easily, immediately and for good."; echo F-B "There is nothing to give up; you are escaping."
+- scenes: SA-06 debut full staging as last ordinary instance, not a laboratory dose
+- structural: carries readiness gate and instant conferral; re-read direction for lingering reluctance without summoning strain
+- guardrails: safety ADV-01 that ritual is ceremonial not extra smoking; originality keeps vow wording to frozen instruction plus terminal script
+- continuity: receives gift-free reader; hands newly free reader to ordinary days in CH-15
+- budget: 3200

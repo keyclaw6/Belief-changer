@@ -1,0 +1,16 @@
+C10 — The method that failed you
+- primary job: enacted transition — past failures belong to the strain method, not to character, and the method itself is the villain to leave
+- objection resolved: I am weak because diets and effort never held
+- belief now: enters carrying self-blame for white-knuckle weeks; exits seeing strong will misapplied to a wrong task
+- encounter: the diet, app-count and gum-and-fruit weeks that collapsed by Thursday, plus the neighbor who handles sweets with ease
+- evidence: E-05 restriction link, E-19 open question held honestly; limits: no settled-science claims, no diagnosis, scale estimates not personal labels
+- new instruction: I-10 with frozen wording pinned
+- reserved-later fence: fear and identity story to C11, sweetest moment to C12
+- arc and curve: anti-method turn; demolition handing toward release
+- reader-state: adult tired of starting over; encounter lands through reattribution of effort to the wrong instructions
+- mantras: M-I echo "the Willpower Method"
+- scenes: SC-08 token-echo only
+- structural responsibility: anti-method chapter; carries meta-inoculation answering the strongest objection to this method itself in the chapter's own voice
+- guardrails: reframe strong will as evidence for the reader; contempt for the method only; safety avoids promising effortlessness as medical fact
+- continuity intent: hands forward a reader no longer defending strain and ready to face dread of life without the sweet
+- budget: 4000

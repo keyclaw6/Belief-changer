@@ -1,0 +1,14 @@
+C14 — Ordinary days
+- non-argument — bridge: mornings, shops and meals lived with thoughts the reader already owns
+- encounter: steady afternoon, quiet aisle, family table and evening sofa without negotiation
+- evidence: none newly argued; lived freedom texture only through scenes and settled tokens
+- new instruction: none
+- reserved-later fence: none
+- arc and curve: life after; freedom crescendo sustained
+- reader-state: newly free adult meeting old cues; encounter lands through pre-refuted tempting thoughts arriving already labeled
+- mantras: M-E echo "a faint, empty, slightly edgy feeling", M-G echo "tired, flat and craving", M-H echo "BRILLIANT! I'M FREE!"
+- scenes: SC-02 token-echo only; SC-03 token-echo only; SC-05 token-echo only; SC-09 token-echo only; SC-10 token-echo only; SC-01 token-echo only where relevant
+- structural responsibility: ordinary-life chapter; guards the belief through pity-not-envy scripting, thought reframing, substitute refusal, evangelism restraint and slip forgiveness without licensing repeats
+- guardrails: live those days without restaging settled scenes or teaching a new curriculum; safety cites CLIN-01 by ID only
+- continuity intent: hands forward a steady reader ready for the short list
+- budget: 4000

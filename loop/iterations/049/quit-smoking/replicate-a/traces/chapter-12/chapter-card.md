@@ -1,0 +1,16 @@
+CH-12 | Chapter 12 | The wrong method
+- primary job: enacted transition — strained quitting plus gum, patch and vape are seen as the same loop in new wrapping, with past failures belonging to method
+- resolves: I lack will, I need a replacement, vaping is quitting
+- belief now: enters seeing industry design yet still shopping for an easier crutch; leaves knowing another delivery keeps the belief alive and strain proves method wrong
+- encounter: gum chewed to jaw pain then back to cigarettes to leave the gum, patch rationed by the box, vape pen carried everywhere as permanent kit
+- evidence: E-03, E-10; must not collapse trial versus population facts; must not prescribe or forbid medication, only expose same-drug logic
+- new instruction: I-11 REFUSE EVERY SUBSTITUTE THAT KEEPS NICOTINE COMING / A different delivery is not freedom.
+- reserved-later: strongest night proof to CH-13, final vow to CH-14, ordinary days to CH-15
+- arc: late-middle anti-method room; demolition handing toward release
+- reader-state: someone who tried every aid and calls the self a loser; same-drug receipts plus method reframe restore hope without prescription
+- mantra: echo M-I "the Willpower Method"
+- scenes: AN-01 debut full staging as gin-for-whisky; SA-05 token-echo only as butt cost without restaging
+- structural: carries anti-method room and meta-inoculation that ease sounds too good, answered as support for the same correction
+- guardrails: safety ADV-01 routing medication questions to a doctor; originality keeps substitute demolition to replenishment logic, no clinical tail in instruction
+- continuity: receives trap-seer; hands method-free reader who expects no aid to CH-13
+- budget: 4000

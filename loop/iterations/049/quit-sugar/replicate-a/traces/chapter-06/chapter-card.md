@@ -1,0 +1,16 @@
+C06 — Eating as it is
+- primary job: enacted transition — hunger, satisfaction and real food as favourite are inhabited, not argued
+- objection resolved: plain food will be dull without the sweet
+- belief now: enters fearing blandness; exits having tasted plain food as vivid and enough
+- encounter: a simple hungry meal eaten slowly to satisfaction, noticing the quiet stop signal
+- evidence: E-33 taste filter lifting, E-34 quieting within weeks; limits: single accounts, no promised timeline
+- new instruction: I-06 with frozen wording pinned
+- reserved-later fence: mechanism naming to C07, social proof to C14
+- arc and curve: inhabit peak amid demolitions; freedom language briefly allowed as lived taste
+- reader-state: adult braced for deprivation; encounter lands through sensory return rather than debate
+- mantras: M-K echo "All you have to do is follow all the instructions."
+- scenes: SC-09 debut with full staging
+- structural responsibility: inhabit-the-ordinary-doing chapter; carries the embedded long-form escape story in its own room in the main flow
+- guardrails: inhabit rather than kill; no second staging of earlier scenes; safety cites CLIN-01 for therapeutic-diet readers
+- continuity intent: hands forward a reader with a bodily memory of enough to support the mechanism deepening
+- budget: 4500

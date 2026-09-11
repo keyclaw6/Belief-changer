@@ -1,0 +1,16 @@
+C02 — Already hooked
+- primary job: enacted transition — the reader was conned rather than weak, and choice is already gone
+- objection resolved: I choose this and I am fine
+- belief now: enters doubting ease but defending choice; exits seeing daily grazing and night eating as trap behavior rather than character
+- encounter: watching one's own evening and desk grazing across a normal week, plus body signals and real food as concrete encounters
+- evidence: E-04 secrecy, E-06 office ritual, E-10 just-one failure, E-20 prevalence once only; limits: lived voices as texture, prevalence as population estimate never diagnosis
+- new instruction: I-02 with frozen wording pinned
+- reserved-later fence: axis to C03, energy to C04, reward to C05, mechanism split to C07, manufacture to C08
+- arc and curve: world installation; demolition vocabulary begins
+- reader-state: daily grazer who minimizes the habit; encounter lands through recognition of own unwatched bites
+- mantras: M-C "the sugar trap" debut, M-E "a faint, empty, slightly edgy feeling" debut, M-I "the Willpower Method" debut
+- scenes: SC-01 debut with full staging; SC-02 preview withheld for C04
+- structural responsibility: names the tiny physical craving and the brainwashing voice in passing; installs body, instinct and real food as encounters
+- guardrails: tenderness toward family and self; originality forbids borrowed caffeine or tobacco pictures; safety cites CLIN-01 for disorder history
+- continuity intent: hands forward a reader who owns the trap label and the two-mechanism vocabulary without yet needing the full split
+- budget: 4500

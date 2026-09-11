@@ -1,0 +1,14 @@
+C13 — The last ordinary meal
+- non-argument — hand-off: readiness gated, threshold crossed, freedom conferred as instant identity
+- encounter: ordinary dinner closed with attention on the ugliness of the old finish, solemn vow, immediate congratulation
+- evidence: none newly argued; settled tokens only
+- new instruction: I-13 with frozen wording pinned
+- reserved-later fence: none; all argument closed
+- arc and curve: release detonation; freedom language dominant
+- reader-state: convinced adult champing for the end of the loop; encounter lands through disgust plus resolve rather than nostalgia
+- mantras: M-A echo "you risk nothing and gain everything", M-B echo "easily, at once and for good", M-F echo "for every day for the rest of your life", M-H "BRILLIANT! I'M FREE!" debut, M-K echo "All you have to do is follow all the instructions.", M-M echo "the tug-of-war"
+- scenes: SC-10 debut with full staging
+- structural responsibility: vow room; readiness gate asking the unsure to reread from the start
+- guardrails: ordinary instance only; no laboratory dose; safety cites CLIN-01 by ID only for readers with medical constraints
+- continuity intent: hands forward a free reader who needs only ordinary days and a short list
+- budget: 4000

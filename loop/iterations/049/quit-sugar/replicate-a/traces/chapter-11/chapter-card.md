@@ -1,0 +1,16 @@
+C11 — Fear and the born-this-way story
+- primary job: enacted transition — dread of failure and of success, plus the story of being built to need sweets, are both held by the trap
+- objection resolved: I will fail again, and even success would leave me empty or wrong for my nature
+- belief now: enters fearing the attempt and the afterlife; exits seeing both ropes pulled by the same belief
+- encounter: the prison-door hesitation before starting and the released-convict worry about who one is without the evening ritual
+- evidence: E-02 loss-of-control voice reframed as trap signature not fate, E-35 ninety-seconds versus twenty-four-hours ledger; limits: lived voices, never permanence claims
+- new instruction: I-11 with frozen wording pinned
+- reserved-later fence: sweetest-moment proof to C12, threshold to C13
+- arc and curve: fear collapse; freedom vocabulary beginning to rise
+- reader-state: adult who calls the pattern identity; encounter lands by inverting cause and effect and conceding grace even if susceptibility were real
+- mantras: M-C echo "the sugar trap", M-F echo "for every day for the rest of your life", M-M "the tug-of-war" debut
+- scenes: SC-01 token-echo only
+- structural responsibility: fear chapter and identity-excuse room combined as one correction about the future without the sweet
+- guardrails: validate fear before loosening it; no trait labels; safety cites CLIN-01 for anxiety or disorder history without mid-argument clinical detour
+- continuity intent: hands forward a reader with fear named and identity freed, ready to meet the sweetest memory honestly
+- budget: 4000

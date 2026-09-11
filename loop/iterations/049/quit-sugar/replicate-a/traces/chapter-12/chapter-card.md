@@ -1,0 +1,16 @@
+C12 — The sweetest moment, met head-on
+- primary job: enacted transition — even the most beloved sweet scene gives nothing the moment could not give alone
+- objection resolved: the celebration cake with loved ones is worth keeping
+- belief now: enters protecting one cherished exception; exits crediting sun, leisure, company and memory while the sweet keeps none
+- encounter: the birthday and wedding table sweet, tasted with attention to what actually pleases
+- evidence: E-08 nostalgia for reassignment, E-33 filter lifting, E-07 social joke for pity-not-envy scripting; limits: memoir and single accounts, never universal taste claims
+- new instruction: I-12 with frozen wording pinned
+- reserved-later fence: threshold to C13 only; no further demolition reserved
+- arc and curve: late proof; demolition closing, freedom about to detonate
+- reader-state: adult guarding belonging itself; encounter lands by stripping the sweet from the scene and finding the scene brighter
+- mantras: M-D echo "a real treat or lift", M-J echo "It is doing plenty TO you. It is doing nothing FOR you."
+- scenes: SC-03 debut with full staging; SC-04 token-echo only; SC-09 token-echo only
+- structural responsibility: strongest-case room with hands-on reassignment and a brief perception exercise performed by the reader
+- guardrails: keep hosts and memory honored; originality requires this book's own table picture; safety keeps pity warm rather than superior
+- continuity intent: hands forward a reader with no surviving good reason and eagerness for the threshold
+- budget: 4500

@@ -1,0 +1,2 @@
+REVISE
+FRAGMENT — Draft contains a run of seven sentence fragments in a row in the closing recap paragraph: "Ordinary pavement. Ordinary brand. Ordinary dog pulling ahead. Attention paid straight. Ugliness seen. Vow spoken. Pack left." Require a rewrite of this run as complete conversational sentences carrying the belief verb (what the walk proved/owned), per the Plain Carr sentence rule. Retain the meaning — ordinary setting, attention paid, vow spoken, pack left — but give each sentence a finite verb and belief carrier; do not keep verbless catalogue.

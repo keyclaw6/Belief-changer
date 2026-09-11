@@ -773,3 +773,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Restores delete verified gains too — the next direction must name the rebuild list explicitly. Gates that enforce carried bans work (FRAGMENT); pressure-raising bans backfire (047). Brief-doctrine deviations from GSBS are not factory defects.
 
 **What this opens next.** 049: Fork-1 re-applied + craft-7 aligned + FRAGMENT carried. Never card edits, route-every-limit, Latinate-ban-alone, factory-speech, willpower, re-argument.
+
+### iter-049 — Fork-1 rebuild + craft-7 alignment  ·  2026-09-11
+
+**Hypothesis.** PRIMARY deficit: restore-rebuild of the verified 046 line (restore-wiped) + complete the quota relief at runtime.
+
+**Change.** `prompts/style-guide.md`, `prompts/chapter-writer.md`. Both plans regenerated (15 + 15). Research reused. `change.diff` recorded.
+
+**What happened.** Deficit 28→30 (70) / 35→40 (60). Missing 11→8 / 2→5. Partial 10→6 / 3→5. Blocking 0 both. Words 65493/58475. Brands gone both; FRAGMENT firing; new residuals (pastoral refrain, drilled-you, vow clinician, headers); comparison regen-divergent.
+
+**Verdict & why.** QUANTIFY. PRIMARY missed both. No restore trigger (below band). Carried forward: rebuild + FRAGMENT + relief + silence. `parent: 845286c1`. Consecutive no-KEEP: 8.
+
+**What we learned.** Verified rebuilds fire reliably; deficits move on whatever residual is largest that run. Two new mannerism classes located (refrain family, drilled-you). Guide holds a live contradiction (:224 vs Fork-1).
+
+**What this opens next.** 050 final: refrain discipline and/or I-distribution and/or contradiction cleanup. Never card edits, route-every-limit, diction pressure, factory-speech, willpower, re-argument.

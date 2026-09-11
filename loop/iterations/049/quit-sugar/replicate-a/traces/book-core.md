@@ -1,0 +1,14 @@
+## 1. Book core
+
+- Target behavior: compulsive consumption of refined and added sugar and junk carbs eaten as treats and fixes — the craving and snacking loop, not nutrition pedantry.
+- Reader: an adult who feels trapped in the daily sweet loop, has tried diets and moderation rules and watched them fail, and suspects the whole approach is wrong. At entry this reader believes stopping means losing something and doubts ease is possible; at exit this reader lives without counting days.
+- Load-bearing false belief: bad sugar is a pleasure and lift that makes life sweeter and would be deprivation to lose.
+- Through-line: there is nothing to give up; the lift is relief from a low the last sweet created, the treat is credit stolen from the moment, and freedom is immediate once the belief is seen.
+- Format: full-length belief-change book, short single-purpose chapters with titled sections, one belief correction per chapter, then last ordinary instance, one ordinary-life chapter, short recap with photographable instruction list.
+- Method kept throughout: escape not sacrifice; warm to the person and harsh to the trap, never contempt for the reader; no willpower as solution; fear raised at full force where the plan assigns it, then removed as a motive by the escape in the same chapter; immediate freedom after belief change; autonomy inside a commanded destination; original prose only.
+- The two mechanisms appear only in plain everyday description as common nouns: the tiny physical craving and the brainwashing voice. They are small, external and winnable, never capitalized branded creatures, never frozen lines, never invented tokens. They are named in passing when the trap is first seen, then used as vocabulary.
+- Reframing spine: isolate the variable in every claimed benefit, then reassign the credit to its true source — the situation, the body, the moment, the person — so the sweet is shown as sneaking a ride.
+- Safety perimeter: everyday trap only. No medical nutrition therapy, no diabetes management advice, no eating-disorder treatment. Crisis pointers and medication questions route to a professional through the plan-wide advisory. No diagnosis of the reader, no pathological labels, no shaming.
+- Strongest pro-behavior scene: the birthday table rich chocolate cake shared with people you love, where refusing feels like refusing belonging.
+- Destination state: whenever the thought of bad sugar arises, the reader feels relief at being free, eats when hungry, stops when satisfied, finds real food sweet, walks past old triggers with pity for users rather than envy, never reopens the decision, treats a slip as a warning rather than proof of failure.
+- Fresh ending reframe, saved for the final movement only: the child who could enjoy without needing sugar was never gone; you are not losing the sweet in life, you are getting your own sweetness back.

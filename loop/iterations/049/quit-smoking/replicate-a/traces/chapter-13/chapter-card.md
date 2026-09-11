@@ -1,0 +1,16 @@
+CH-13 | Chapter 13 | The last night on earth
+- primary job: enacted transition — the most seductive drink-plus-smoke night is reassigned wholly to company, music and air, leaving the dose with no share
+- resolves: but that night with drinks and friends really is better with it
+- belief now: enters method-free yet saving one glowing night as proof of a gift; leaves knowing every drop belonged to the night and the dose only rode along
+- encounter: late smoking area with numbing drinks, good vibes and buzzing cigarette, trying to stretch the feeling before morning
+- evidence: E-02, E-04; must not instruct avoiding all friends or alcohol; must not mock enjoyment, only relocate it
+- new instruction: none; uses installed rules by token
+- reserved-later: vow to CH-14, ordinary days and recap to CH-15
+- arc: late strongest-case proof; demolition closing; freedom about to detonate
+- reader-state: someone who surrendered stress, pleasure and identity claims but guards the party night; hands-on reassignment of that night removes the final foothold
+- mantra: echo M-D "a genuine pleasure or crutch"
+- scenes: SA-04 token-echo only without restaging; AN-05 token-echo only as party image without restaging
+- structural: carries closing rapid-fire leftover myths as support for the same reassignment, not a second thesis
+- guardrails: safety ADV-01; originality strips the dose from the scene without staging avoidance as the method
+- continuity: receives method-free reader; hands reader with no surviving gift to CH-14
+- budget: 4200

@@ -1,0 +1,16 @@
+C05 — The reward and love lie
+- primary job: enacted transition — the sweet is not love, comfort or deserved pay
+- objection resolved: I deserve it and it loves me back
+- belief now: enters defending the evening treat as earned affection; exits crediting people, rest and the day itself
+- encounter: celebration table and late-night numbing trip, examined bite by bite for who actually soothed
+- evidence: E-03 reward frame, E-12 love fusion, E-08 payday nostalgia, E-05 restriction-binge link; limits: memoir scope, no claim about all families
+- new instruction: I-05 with frozen wording pinned
+- reserved-later fence: inhabit proof to C06, strongest love case to C12
+- arc and curve: second demolition; demolition vocabulary high
+- reader-state: adult who pays hard days with sweets and confuses the pay with care; encounter lands by reassigning warmth to hosts and memory
+- mantras: M-D echo "a real treat or lift"
+- scenes: SC-04 debut with full staging
+- structural responsibility: none beyond demolition
+- guardrails: keep affection for people intact while removing credit from the sweet; originality forbids moralizing sweetness itself
+- continuity intent: hands forward a reader whose reward language is loosened and ready to inhabit plain eating
+- budget: 4500

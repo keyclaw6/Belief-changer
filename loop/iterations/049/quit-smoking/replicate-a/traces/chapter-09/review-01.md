@@ -1,0 +1,13 @@
+ACCEPT
+- JOB: ten-second replenishment plus fast fade as whole engine with physical trivial and belief dominant is enacted through hourly clock watch, ten-second arrival versus fade, lifeguard hold image, first-week wave, and hunger versus voice split, landed before SUMMARY as dying noise plus story as target.
+- MANTRA: M-C "the nicotine trap" present verbatim; M-E "a faint, empty, slightly edgy feeling that comes and goes" present verbatim.
+- INSTRUCTION: I-08 "WELCOME THE FAINT ECHO AS PROOF THE TRAP IS DYING" plus "It is noise fading, not need calling." present verbatim as numbered ALL-CAPS instruction plus one spoken rationale line, not HEADER.
+- ID: E-07 arrival within seconds plus fast fade used within permitted replenishment line; E-11 peak in first few days and usually eases within weeks used within typical-course bound; no unresolved or invented ID.
+- LENGTH: Delivered 3940 words against Budget 4500 is inside B±15% (3825-5175).
+- HEADER: no I-NN prefix; numbered instruction carries spoken rationale; IN THIS CHAPTER is rooms/pictures, not syllabus.
+- STOPPED-SHORT: landed flat before SUMMARY: "Read that feeling as dying noise and the story over it as the target, and the loop loses its office."
+- UNASSIGNED-REFRAIN: no non-mantra portable line recurs >=3x verbatim in full.
+- RESERVED-REACH: no CH-10 exception logic, no CH-11 industry design, no CH-12 substitute argument performed beyond one-sentence hand-off scope.
+- RE-ARGUMENT: no earlier scene restaged; AN-03 and AN-06 debut full staging only; CH-08 inhabit referenced as assumed owned hours, not rebuilt with evidence and turn.
+- OVERCLAIM: no claim beyond E-07/E-11 permitted lines; typical course retained with individual variation; no every-puff-identical claim; no months-of-torture claim.
+- FRAGMENT: no run of three or more sentence fragments; closes are complete conversational sentences carrying the belief verb.

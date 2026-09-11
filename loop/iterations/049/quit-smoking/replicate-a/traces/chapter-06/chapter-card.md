@@ -1,0 +1,15 @@
+CH-06 | Chapter 6 | Belonging without the corner
+- primary job: enacted transition — company and identity are seen as the scene lending pleasure while the cigarette only rode along
+- resolves: it is how I belong, it is part of who I am, I am the sociable type because I smoke
+- belief now: enters fearing exile to the rain outside; leaves knowing the talk, air and pause were the hosts
+- encounter: friendly smoking corner with drinks where refusing feels like refusing the group
+- evidence: E-02; must not instruct avoiding all friends or alcohol as the method
+- new instruction: I-06 LET OTHERS SMOKE WITHOUT ENVY OR ARGUMENT / Visible ease does the recruiting.
+- reserved-later: reward to CH-07, clock cues to CH-09, social-only exception to CH-10, youth recruitment proof to CH-11
+- arc: middle demolition; identity inversion placed here
+- reader-state: someone whose friendships and poses grew around the pack; the corner scene makes reassignment concrete
+- scenes: SA-04 debut full staging; AN-08 debut full staging as bereavement preload
+- structural: carries identity cause-effect inversion that shared traits result from the trap, with graceful concession that method frees regardless
+- guardrails: safety ADV-01; originality keeps pity for users warm, never contempt for the reader
+- continuity: receives pleasure-disillusioned reader; hands socially freed reader to CH-07
+- budget: 4500

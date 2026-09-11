@@ -1,0 +1,1 @@
+chapter-writer CH-14 quit-smoking replicate-a iteration 049. Inputs: traces/plan.md (card CH-14 authority), traces/chapter-14/chapter-card.md, prompts/style-guide.md, chapters/chapter-13.md. Contract: prompts/chapter-writer.md. Output: traces/chapter-14/draft.md, budget 3200.

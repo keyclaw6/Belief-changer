@@ -1,15 +1,17 @@
-# Plan Review — quit-sugar ITER=048 r2
-ITER: 048
-Slug: quit-sugar
-Candidate: loop/iterations/048/quit-sugar/replicate-a/traces/plan-candidate-r2.md
-SHA-256: 55402f7def1a41da7211b4652e4632779a2705ddca2a9a62658c6400964c60a3
-Budgets sum: 61100 / 61100
-F1 first-three cumulative walk: PASS — C-01 installs contract plus BAD SUGAR line plus flat promise with cost-as-burden relief, C-02 dissolves chosen-by-discipline via watched grazing plus conned-choice and body authority, C-03 empties benefit ledger via TO-versus-FOR verdict on finished dessert; each does persuasive work now, not setup.
-F2 whole-book progression and handoffs: PASS — fuel to reward to taste to inhabit to mechanism to moderation to anti-method to manufacture to strongest-case builds from preceding belief now; reserved-later fences point forward only, continuity intents chain C-01 through C-19, adjacent full stagings never repeat with token-echo only for SC-01 SC-02 SC-03 SC-04 SC-05 SC-06 SC-07 SC-09 SC-10 SC-11.
-F3 post-vow life not manuals: PASS — C-17 last ordinary sweet meal with vow and instant freedom gated on readiness, C-18 one week of mornings shops food with owned thoughts once plus saved sweetness-as-cover reframe debut here only, C-19 short 2100-word photographable bare-imperative list with outward push and no teaching manual or chapter callbacks; destination relief-freedom reached.
-F4 writer authority IDs and inventory: PASS — every cited E-01 through E-32 resolves in ledger with permitted limit plus safety limit, M-A through M-I lettered so no M-08 beside I-08 collision with verbatim frozen quotes, I-01 through I-12 each once with frozen imperative plus owning chapter plus recap seed, SC-01 through SC-12 each with job plus constraints and single full staging, ADV-01 plus budget plus encounter on every card.
-F5 writer authority speakability bans: PASS — no P-xx codes, no Maya or proper-name reader, no Voice register operators, no scare-then-disown or device handles on cards, no CA-SAFE boxed titles, no ledger callbacks; C-19 recap explicitly bare imperatives with no chapter callbacks.
-F6 method promise and tone: PASS — C-01 carries entry promise plus T-01 easily immediately permanently plus no-willpower contract, hard facts at full force then relief in C-01 C-04 C-08 C-11 execution, warm to person harsh to trap throughout, C-01 scare owned in-argument never appendix-routed, total cessation commanded with pincer plus cliff logic.
-F7 evidence honesty and safety: PASS — animal-to-human limits stated on E-04 E-05 E-06 E-08 E-09 E-10, open-question E-11 plus men-only E-28 plus self-report E-12 E-29 E-30 limits honoured, everyday swing distinguished from clinical low on E-18, ADV-01 front-matter boxed with per-card routing and no purging instruction or diagnosis or slip-licensing.
-F8 architecture and length: PASS — one trap-to-freedom spine with 19 chapters, C-07 inhabit-ordinary-doing as primary job, long testimony C-15 in main flow, myths battery C-16 distinct room with meta-inoculation close, fear C-13 with single prevalence claim, positive integer budgets summing 61100 within 54000 to 66000.
+SLUG: quit-sugar
+ITER: 049
+REPLICATE: a
+CANDIDATE: loop/iterations/049/quit-sugar/replicate-a/traces/plan-candidate-r2.md
+SHA-256: 089e06a236988896c2ef4ab3269ad0c67801641ec81dab5a3694a3f0692527ec
+INPUTS: plan-candidate-r2.md + prompts/style-guide.md + 00-brief.md + lived-experience.md + scientific-evidence.md only
+
+first-three-cumulative-walk: PASS — C01 enacts escape-not-sacrifice with flat paragraph-one promise, C02 enacts already-hooked with con-not-weak plus tiny-craving/brainwashing-voice in passing plus body/real-food encounters, C03 enacts axis-switch to what-good-at-all; no three-setup opening.
+whole-book-cumulative-walk: PASS — C04-C12 each build from prior belief with distinct principal encounters, single full staging then token-echo only for SC-01/SC-02/SC-06/SC-04/SC-09/SC-08/SC-03, C06 primary-job inhabit-not-kill, C13 vow then C14 ordinary-life with owned-thoughts-only then C15 short recap; reaches declared relief-at-thought destination.
+writer-authority: PASS — all E-01 to E-35, M-A to M-M lettered, SC-01 to SC-10, I-01 to I-13, CLIN-01 resolve with exact payloads; every mantra card pins frozen quote; no M-08/I-08 collision; no P-xx, no Maya, no Voice operators, no CA-SAFE paste, no chapter-ledger callbacks; budgets, continuity, guardrails, limits on every card.
+method: PASS — warm-to-person harsh-to-trap throughout, willpower-free with Willpower-Method villain and reattribution, escape-not-sacrifice, C01 promise-flat plus same-chapter scare-then-relief, fear never left as motive, clinical care never framed as failure.
+evidence: PASS — E-13 to E-29 grades/limits match synthesis including mild magnitude, animal-vs-human explicit, E-19 open-question held honestly with meta-inoculation in C10, E-20 once-only in C02, lived quotes used as texture with prohibited inferences honored.
+safety: PASS — everyday-trap perimeter only, CLIN-01 boxed once and cited by ID never fused/boxed mid-chapter, no diagnosis/labeling, hump small-days-only, no personal fate prediction, no diet/dental/medication prescription.
+originality: PASS — original prose only, own roller-coaster/lender/trap/table pictures, no caffeine/tobacco borrowing, credit-reassignment throughout, saved child-sweetness reframe only in C15.
+architecture-length: PASS — one spine invitation-trap-axis-demolitions-inhabit-mechanism-manufacture-escape-anti-method-fear-strongest-vow-life-recap with demolition rise then freedom release from C13, I-01 to I-13 owned and photographable in C15, budgets 5000+4500+3500+4500+4500+4500+4500+4500+4500+4000+4000+4500+4000+4000+3000=63500 within 54000-66000.
+
 fit to write from

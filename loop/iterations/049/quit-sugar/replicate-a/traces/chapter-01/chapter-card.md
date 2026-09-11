@@ -1,0 +1,16 @@
+C01 — Invitation and the easy contract
+- primary job: enacted transition — stopping now reads as easy escape rather than hard sacrifice
+- objection resolved: this sounds too good to be true
+- belief now: entry believes quitting means struggle and loss; exit believes ease and permanence are possible and worth testing by reading on
+- encounter: ordinary reader holding the book while still eating as normal, asked to keep reading before changing anything
+- evidence: E-29 ceiling orientation, E-27 tooth stake, E-28 deferred load; limits: population guidance and mechanism summaries, never personal fate or toxic-at-any-dose claims
+- new instruction: I-01 with frozen wording pinned
+- reserved-later fence: trap detail to C02, benefit kills to C04 and C05, middle-way kill to C09, vow to C13
+- arc and curve: opening contract; promise high, freedom promised but not bathed in
+- reader-state: skeptical adult who has failed diets and expects another lecture; encounter lands through flat paragraph-one promise and same-chapter bodily costs followed by relief
+- mantras: M-A "you risk nothing and gain everything", M-B "easily, at once and for good", M-F "for every day for the rest of your life", M-K "All you have to do is follow all the instructions.", M-L "BAD SUGAR"
+- scenes: none debuted; definitional decree staged here without borrowing later pictures
+- structural responsibility: redefinition box and reading contract
+- guardrails: keep stakes sober and reversible by relief in the same chapter; originality requires own sweet-loop images only; safety cites CLIN-01 where illness or medication could apply
+- continuity intent: hands forward a willing investigator who holds permission to continue while reading and a boxed bad-subset line
+- budget: 5000
