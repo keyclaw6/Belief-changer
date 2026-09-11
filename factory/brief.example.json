@@ -1,0 +1,20 @@
+{
+  "schema_version": 2,
+  "subject": "replace-with-your-subject",
+  "title": "Replace with an original title",
+  "audience": "A consenting adult examining a belief about practice",
+  "reader_goal": "Replace with the consenting reader's actual goal",
+  "target_belief": "Replace with the belief to examine, not a conclusion the evidence must endorse",
+  "target_kind": "belief",
+  "outcome_mode": "reframe",
+  "risk_level": "low",
+  "safety_advisory": "",
+  "narrator": {
+    "mode": "informed_author",
+    "name": "",
+    "allowed_claims": []
+  },
+  "scope_exclusions": [
+    "Clinical or educational outcome guarantees"
+  ]
+}

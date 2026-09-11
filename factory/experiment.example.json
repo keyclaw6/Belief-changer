@@ -1,0 +1,55 @@
+{
+  "schema_version": 2,
+  "id": "study-001",
+  "parent_release": null,
+  "hypothesis": "Preregister a supported architectural hypothesis before generation",
+  "primary_dimension": "argument",
+  "allowed_change_paths": [
+    "prompts/chapter-writer.md"
+  ],
+  "subjects": [
+    "subject-a",
+    "subject-b"
+  ],
+  "samples_per_subject": 3,
+  "pairs": [
+    {
+      "id": "subject-a-1",
+      "subject": "subject-a",
+      "parent_run": "parent-subject-a-1",
+      "candidate_run": "candidate-subject-a-1"
+    },
+    {
+      "id": "subject-a-2",
+      "subject": "subject-a",
+      "parent_run": "parent-subject-a-2",
+      "candidate_run": "candidate-subject-a-2"
+    },
+    {
+      "id": "subject-a-3",
+      "subject": "subject-a",
+      "parent_run": "parent-subject-a-3",
+      "candidate_run": "candidate-subject-a-3"
+    },
+    {
+      "id": "subject-b-1",
+      "subject": "subject-b",
+      "parent_run": "parent-subject-b-1",
+      "candidate_run": "candidate-subject-b-1"
+    },
+    {
+      "id": "subject-b-2",
+      "subject": "subject-b",
+      "parent_run": "parent-subject-b-2",
+      "candidate_run": "candidate-subject-b-2"
+    },
+    {
+      "id": "subject-b-3",
+      "subject": "subject-b",
+      "parent_run": "parent-subject-b-3",
+      "candidate_run": "candidate-subject-b-3"
+    }
+  ],
+  "freeze_plan": true,
+  "confirmatory": true
+}

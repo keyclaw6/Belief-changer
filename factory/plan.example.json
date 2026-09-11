@@ -1,0 +1,37 @@
+{
+  "schema_version": 2,
+  "subject": "replace-with-your-subject",
+  "title": "One Attempt Is Not a Verdict (SOFTWARE FIXTURE)",
+  "thesis": "A limited observation does not alone establish a universal conclusion",
+  "limits": "Logical illustration only; no measured effects",
+  "chapters": [
+    {
+      "id": "chapter-01",
+      "title": "What follows",
+      "objective": "Separate one observation from a universal conclusion",
+      "entering_belief": "An error proves inability",
+      "strongest_objection": "The unsuccessful attempt did happen",
+      "evidence_ids": [],
+      "supported_conclusion": "One attempt alone is not a universal proof",
+      "remaining_objection": "What to choose next",
+      "dependencies": [],
+      "scenes": [],
+      "word_budget": null
+    },
+    {
+      "id": "chapter-02",
+      "title": "A bounded choice",
+      "objective": "Preserve agency without promising success",
+      "entering_belief": "A new attempt must guarantee success",
+      "strongest_objection": "The unsuccessful attempt did happen",
+      "evidence_ids": [],
+      "supported_conclusion": "Choosing another attempt need not promise its result",
+      "remaining_objection": "No further claim is established",
+      "dependencies": [
+        "chapter-01"
+      ],
+      "scenes": [],
+      "word_budget": null
+    }
+  ]
+}

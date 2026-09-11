@@ -1,0 +1,9 @@
+{
+  "schema_version": 2,
+  "instrument_hash": "REPLACE with frozen instrument SHA256",
+  "model": "REPLACE with actual chosen judge",
+  "family": "REPLACE with actual independent family",
+  "human_raters": [],
+  "cases": [],
+  "provenance_note": "EXAMPLE ONLY. Collect real independent human ratings and retain the case artifacts before this can validate anything."
+}
