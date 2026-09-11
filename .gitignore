@@ -38,3 +38,9 @@ loop/iterations/*/judge-*.log
 loop/iterations/*/write-*.log
 loop/iterations/*/factory-*.log
 
+
+# v2: credentials are local-only; examples are distributable.
+.env
+.env.*
+!.env.example
+dist/

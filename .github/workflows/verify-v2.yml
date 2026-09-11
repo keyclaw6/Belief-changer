@@ -1,0 +1,30 @@
+name: Verify and package v2
+on:
+  push:
+    branches: ["upgrade/truth-first-factory-v2"]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-verification:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Checkout exact commit
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4, resolved at upgrade
+      - name: Mandatory offline regression gate
+        run: bash scripts/check.sh
+      - name: End-to-end synthetic demo
+        run: python3 scripts/factory.py demo --output "$RUNNER_TEMP/belief-v2-demo"
+      - name: Package full repository without credentials or Git internals
+        run: python3 scripts/factory.py archive --output "$RUNNER_TEMP/Belief-changer-v2-full.zip"
+      - name: Upload verified full ZIP
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4, resolved at upgrade
+        with:
+          name: Belief-changer-v2-full
+          path: |
+            ${{ runner.temp }}/Belief-changer-v2-full.zip
+            ${{ runner.temp }}/Belief-changer-v2-full.zip.json
+          if-no-files-found: error
+          retention-days: 14

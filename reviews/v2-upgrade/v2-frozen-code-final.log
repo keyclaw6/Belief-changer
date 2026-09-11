@@ -1,0 +1,8 @@
+{
+  "status": "COMPLETE_UNRELEASED",
+  "fixture": true,
+  "run_id": "offline-demo",
+  "book_sha256": "f0e8da5767dcaa340e0c3004154fd2d65c8542eceda2dd231d4af91044a864f4",
+  "factory_digest": "5e8e9c719808212a00f1286718fb4beb53815ae9731b2235245474b7e1e49ccf",
+  "efficacy": "NOT_MEASURED"
+}

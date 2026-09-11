@@ -1,0 +1,32 @@
+{
+  "schema_version": 2,
+  "subject": "replace-with-your-subject",
+  "sources": [
+    {
+      "id": "demo-illustration",
+      "kind": "illustration",
+      "source": "synthetic-software-fixture-not-a-retrieved-source",
+      "locator": "demo.py",
+      "retrieved_at": "NOT RETRIEVED: SOFTWARE FIXTURE",
+      "excerpt": "A deliberately invented attempt at a puzzle.",
+      "claim": "Illustration only; no empirical claim",
+      "population": "No observed participants",
+      "permitted_inference": "Illustrate a logical distinction only",
+      "prohibited_inferences": [
+        "Any claim of observed learning or book efficacy"
+      ],
+      "counterevidence": [
+        "No empirical data were collected"
+      ],
+      "rights_basis": "Original synthetic illustration for testing",
+      "verification": "unverified"
+    }
+  ],
+  "open_questions": [
+    "Actual reader effects are unmeasured"
+  ],
+  "strongest_countercase": "Practice does not guarantee every desired outcome.",
+  "coverage": {
+    "status": "EXAMPLE ONLY \u2014 replace with real, diverse research and documented gaps"
+  }
+}

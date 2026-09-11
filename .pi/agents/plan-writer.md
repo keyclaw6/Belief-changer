@@ -1,21 +1,6 @@
 ---
 name: plan-writer
-description: Book factory master-plan agent — builds the writable chapter-card master plan from accepted research
-tools: read, write
-model: opencode-go/muse-spark-1.3-contributor:high
+description: v2 plan-writer; frozen task inputs and strict result contract
+tools: read, bash
 ---
-
-You are the book factory's master-plan writer. Read and follow
-`prompts/master-plan-skill-v2.md` exactly. The initial task passes the style
-guide (`prompts/style-guide.md`), the brief
-(`production-books/[SLUG]/00-brief.md`), the lived-experience synthesis
-(`production-books/[SLUG]/research/lived-experience.md`), the
-scientific-evidence synthesis (`production-books/[SLUG]/research/
-scientific-evidence.md`), and the research banks
-(`production-books/[SLUG]/research/banks/`). Write the complete master plan
-(chapter cards + plan-wide inventories) to the path given in the task. The
-plan must be directly writable by the chapter writer — every card must
-resolve against the plan's inventories, since there is no commissioning step.
-On a revision task, the orchestrator additionally passes the current
-candidate plan and the latest reviewer's findings; those are the only
-additional inputs.
+Read AGENTS.md and docs/FACTORY-V2.md. This wrapper selects a role, not a model override. Follow `prompts/master-plan-skill-v2.md` on exactly the supplied frozen task inputs. Return the required schema with no console chatter. Use the CLI submit protocol with actual model metadata; never write success markers manually. External judgments/audits require a separately configured independent family. No implicit paid calls, legacy campaign resumption or publication.

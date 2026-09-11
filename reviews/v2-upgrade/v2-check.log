@@ -1,0 +1,84 @@
+Runtime contracts present; 1 mandatory test module(s).
+test_config_cannot_store_api_key_values (test_v2.AdditionalSafetyTests.test_config_cannot_store_api_key_values) ... ok
+test_config_endpoint_cannot_embed_credential (test_v2.AdditionalSafetyTests.test_config_endpoint_cannot_embed_credential) ... ok
+test_editor_move_merge_replace (test_v2.AdditionalSafetyTests.test_editor_move_merge_replace) ... ok
+test_generator_cannot_switch_to_review_family (test_v2.AdditionalSafetyTests.test_generator_cannot_switch_to_review_family) ... ok
+test_illustration_cannot_prove_empirical_claim (test_v2.AdditionalSafetyTests.test_illustration_cannot_prove_empirical_claim) ... ok
+test_nan_latency_rejected (test_v2.AdditionalSafetyTests.test_nan_latency_rejected) ... ok
+test_unverified_live_dossier_cannot_be_accepted (test_v2.AdditionalSafetyTests.test_unverified_live_dossier_cannot_be_accepted) ... ok
+test_archive_excludes_credentials (test_v2.EditingAndProviderTests.test_archive_excludes_credentials) ... ok
+test_archive_reproducible (test_v2.EditingAndProviderTests.test_archive_reproducible) ... ok
+test_authority_screen (test_v2.EditingAndProviderTests.test_authority_screen) ... ok
+test_capitalization_regression_detected (test_v2.EditingAndProviderTests.test_capitalization_regression_detected) ... ok
+test_complete_response_extracted (test_v2.EditingAndProviderTests.test_complete_response_extracted) ... ok
+test_editor_cannot_delete_all (test_v2.EditingAndProviderTests.test_editor_cannot_delete_all) ... ok
+test_editor_unique_anchor (test_v2.EditingAndProviderTests.test_editor_unique_anchor) ... ok
+test_external_profile_missing_fails_before_spend (test_v2.EditingAndProviderTests.test_external_profile_missing_fails_before_spend) ... ok
+test_incomplete_responses_rejected (test_v2.EditingAndProviderTests.test_incomplete_responses_rejected) ... ok
+test_no_paid_call_without_flag (test_v2.EditingAndProviderTests.test_no_paid_call_without_flag) ... ok
+test_overlap_is_only_review_queue (test_v2.EditingAndProviderTests.test_overlap_is_only_review_queue) ... ok
+test_refused_response_rejected (test_v2.EditingAndProviderTests.test_refused_response_rejected) ... ok
+test_safety_and_source_notes_assembled (test_v2.EditingAndProviderTests.test_safety_and_source_notes_assembled) ... ok
+test_truncated_chat_rejected (test_v2.EditingAndProviderTests.test_truncated_chat_rejected) ... ok
+test_champion_remains_when_approval_fails (test_v2.ExperimentTests.test_champion_remains_when_approval_fails) ... ok
+test_confirmatory_cannot_be_posthoc (test_v2.ExperimentTests.test_confirmatory_cannot_be_posthoc) ... ok
+test_fixture_never_promotes (test_v2.ExperimentTests.test_fixture_never_promotes) ... ok
+test_instrument_change_after_registration_rejected (test_v2.ExperimentTests.test_instrument_change_after_registration_rejected) ... ok
+test_missing_human_calibration_rejected (test_v2.ExperimentTests.test_missing_human_calibration_rejected) ... ok
+test_one_subject_regression_blocks (test_v2.ExperimentTests.test_one_subject_regression_blocks) ... ok
+test_pair_task_is_blinded (test_v2.ExperimentTests.test_pair_task_is_blinded) ... ok
+test_register_reused_book_as_replicate_rejected (test_v2.ExperimentTests.test_register_reused_book_as_replicate_rejected) ... ok
+test_same_family_pair_judge_rejected (test_v2.ExperimentTests.test_same_family_pair_judge_rejected) ... ok
+test_three_wins_not_statistical_sufficiency (test_v2.ExperimentTests.test_three_wins_not_statistical_sufficiency) ... ok
+test_zero_judgments_not_panel_done (test_v2.ExperimentTests.test_zero_judgments_not_panel_done) ... ok
+test_cap_cannot_be_acceptance (test_v2.RunTests.test_cap_cannot_be_acceptance) ... ok
+test_current_prompt_does_not_change_frozen_task (test_v2.RunTests.test_current_prompt_does_not_change_frozen_task) ... ok
+test_fabricated_fixture_metadata_cannot_be_live (test_v2.RunTests.test_fabricated_fixture_metadata_cannot_be_live) ... ok
+test_failed_review_blocks_state (test_v2.RunTests.test_failed_review_blocks_state) ... ok
+test_freeze_cannot_overwrite (test_v2.RunTests.test_freeze_cannot_overwrite) ... ok
+test_frozen_input_tamper_fails (test_v2.RunTests.test_frozen_input_tamper_fails) ... ok
+test_frozen_prompt_tamper_fails (test_v2.RunTests.test_frozen_prompt_tamper_fails) ... ok
+test_full_pipeline_offline (test_v2.RunTests.test_full_pipeline_offline) ... ok
+test_live_production_plan_not_used (test_v2.RunTests.test_live_production_plan_not_used) ... ok
+test_missing_final_audit_not_complete (test_v2.RunTests.test_missing_final_audit_not_complete) ... ok
+test_missing_metadata_rejected (test_v2.RunTests.test_missing_metadata_rejected) ... ok
+test_no_chapter_two_before_state_one (test_v2.RunTests.test_no_chapter_two_before_state_one) ... ok
+test_no_plan_before_research_review (test_v2.RunTests.test_no_plan_before_research_review) ... ok
+test_post_audit_book_mutation_rejected (test_v2.RunTests.test_post_audit_book_mutation_rejected) ... ok
+test_result_is_not_filename_cache (test_v2.RunTests.test_result_is_not_filename_cache) ... ok
+test_same_family_evidence_reviewer_blocked (test_v2.RunTests.test_same_family_evidence_reviewer_blocked) ... ok
+test_stale_task_dependency_rejected (test_v2.RunTests.test_stale_task_dependency_rejected) ... ok
+test_zero_chapters_not_complete (test_v2.RunTests.test_zero_chapters_not_complete) ... ok
+test_accept_with_fragment_rejected (test_v2.SchemaTests.test_accept_with_fragment_rejected) ... ok
+test_accept_with_hidden_failure_rejected (test_v2.SchemaTests.test_accept_with_hidden_failure_rejected) ... ok
+test_budget_is_not_required (test_v2.SchemaTests.test_budget_is_not_required) ... ok
+test_duplicate_source_rejected (test_v2.SchemaTests.test_duplicate_source_rejected) ... ok
+test_fragment_shared_parser (test_v2.SchemaTests.test_fragment_shared_parser) ... ok
+test_health_requires_advisory (test_v2.SchemaTests.test_health_requires_advisory) ... ok
+test_invented_review_quote_rejected (test_v2.SchemaTests.test_invented_review_quote_rejected) ... ok
+test_missing_plan_evidence_rejected (test_v2.SchemaTests.test_missing_plan_evidence_rejected) ... ok
+test_narrator_cannot_invent_credentials (test_v2.SchemaTests.test_narrator_cannot_invent_credentials) ... ok
+test_plan_forward_dependency_rejected (test_v2.SchemaTests.test_plan_forward_dependency_rejected) ... ok
+test_source_scene_requires_evidence (test_v2.SchemaTests.test_source_scene_requires_evidence) ... ok
+test_state_must_quote_delivered_text (test_v2.SchemaTests.test_state_must_quote_delivered_text) ... ok
+test_unknown_finding_rejected (test_v2.SchemaTests.test_unknown_finding_rejected) ... ok
+test_unknown_json_finding_rejected (test_v2.SchemaTests.test_unknown_json_finding_rejected) ... ok
+test_verified_author_needs_author_specific_source (test_v2.SchemaTests.test_verified_author_needs_author_specific_source) ... ok
+test_writer_map_quote_must_exist (test_v2.SchemaTests.test_writer_map_quote_must_exist) ... ok
+test_duplicate_json_key (test_v2.SerializationTests.test_duplicate_json_key) ... ok
+test_lock_not_stolen (test_v2.SerializationTests.test_lock_not_stolen) ... ok
+test_marker_string_is_not_report (test_v2.SerializationTests.test_marker_string_is_not_report) ... ok
+test_nan_rejected (test_v2.SerializationTests.test_nan_rejected) ... ok
+test_path_traversal (test_v2.SerializationTests.test_path_traversal) ... ok
+test_seal_is_immutable (test_v2.SerializationTests.test_seal_is_immutable) ... ok
+test_sealed_tamper_detected (test_v2.SerializationTests.test_sealed_tamper_detected) ... ok
+test_single_fenced_json (test_v2.SerializationTests.test_single_fenced_json) ... ok
+test_symlink_rejected (test_v2.SerializationTests.test_symlink_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 75 tests in 5.646s
+
+OK
+ok
+
+OFFLINE GATE PASSED — software checks only; no efficacy or release claim.

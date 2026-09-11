@@ -1,0 +1,15 @@
+{
+  "reviewer": "REPLACE with real accountable reviewer",
+  "qualification": "REPLACE with actual qualified review scope for health/high-risk subjects",
+  "book_hashes": {
+    "subject-a": "REPLACE with selected book SHA256",
+    "subject-b": "REPLACE with selected book SHA256"
+  },
+  "checks": {
+    "final_book_read": false,
+    "rights_reviewed": false,
+    "truth_and_scope_reviewed": false,
+    "no_unmeasured_efficacy_claims": false
+  },
+  "note": "EXAMPLE ONLY. Do not mark checks true without performing the review."
+}

@@ -1,0 +1,31 @@
+{
+  "status": "PLANNING_TEMPLATE_NOT_COLLECTED_DATA",
+  "subject": null,
+  "consent_and_privacy_plan": null,
+  "qualified_review": null,
+  "primary_outcome": null,
+  "comparator": null,
+  "allocation": null,
+  "sample_size_rationale": null,
+  "baseline_measures": [
+    "target belief and confidence",
+    "strongest objection",
+    "chosen goal",
+    "relevant behavior",
+    "anticipated sacrifice"
+  ],
+  "post_read_measures": [
+    "comprehension",
+    "belief confidence calibration",
+    "recognition",
+    "agency",
+    "relief",
+    "shame or rigidity",
+    "unsupported new beliefs"
+  ],
+  "followup_schedule": null,
+  "attrition_plan": null,
+  "harm_and_stop_criteria": null,
+  "analysis_preregistered": false,
+  "participant_data_committed_to_git": false
+}
