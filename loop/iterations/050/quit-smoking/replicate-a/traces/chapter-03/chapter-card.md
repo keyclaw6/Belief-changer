@@ -1,0 +1,16 @@
+CH-03 | Chapter 3 | What good is there at all
+- primary job: enacted transition — the test changes from harm versus benefit to whether any benefit exists
+- resolves: it cannot be that bad if I still get something from it
+- belief now: enters asking if harm outweighs gifts; leaves demanding one real gift be shown
+- encounter: quoted justification menu on the page, lighter flick and ashtray reassurance watched as ritual
+- evidence: E-04; must not mock enjoyment; must keep enjoyment located at the light, not a day-long gift
+- new instruction: I-03 BEGIN WITH ELATION, NOT DREAD / There is no need to feel miserable about what comes next.
+- reserved-later: each quoted line assigned to CH-04 through CH-07, mechanism proof to CH-09, moderation to CH-10
+- arc: first third axis set; demolition vocabulary stepping up; freedom still low
+- reader-state: someone bargaining with harm counts; the menu read back verbatim proves the book knows the mind
+- mantra: debut M-D "a genuine pleasure or crutch"; debut F-A "It is doing plenty TO you. It is doing nothing FOR you."; debut F-B "There is nothing to give up; you are escaping."
+- scenes: SA-01 token of lighter ritual, staging deferred to CH-04 debut
+- structural: carries verbatim justification menu for later demolition
+- guardrails: safety ADV-01 not to moralize health fate; originality keeps verdict sentences original, no bank line lifted
+- continuity: receives conned reader; hands axis-holder ready for single-benefit kills to CH-04
+- budget: 3200

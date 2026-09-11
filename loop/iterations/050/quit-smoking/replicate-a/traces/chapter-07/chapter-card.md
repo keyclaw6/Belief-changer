@@ -1,0 +1,14 @@
+CH-07 | Chapter 7 | The reward that stole the work
+- primary job: enacted transition — concentration, boredom relief and reward are reassigned to the finished act and the pause, leaving the cigarette with no credit
+- resolves: it helps me think, fills dead time, rewards everything I finish
+- belief now: enters paying each completion with a dose; leaves knowing the party was the completion, not the smoke
+- encounter: class taught, paragraph finished, grocery run done, each paid with a dose; coffee and beer pairings watched
+- evidence: E-05; must not claim work requires nicotine; must not claim life has no celebrations after
+- new instruction: I-07 CREDIT THE MOMENT, NOT THE CIGARETTE / The pleasure was the scene all along.
+- reserved-later: mechanism timing to CH-09, cut-down scheduling to CH-10, design proof to CH-11
+- arc: middle demolition closing the menu; inhabit foreshadowed but not staged here
+- reader-state: someone who punctuates effort with lights; the pellet list proves attachment to everything, hence to nothing real
+- scenes: SA-03 debut full staging; AN-05 debut full staging
+- guardrails: safety ADV-01; originality uses variable isolation on the reader own day, no bank paragraph copied
+- continuity: receives socially freed reader; hands menu-cleared reader ready to inhabit to CH-08
+- budget: 4200

@@ -1,0 +1,15 @@
+CH-11 — Chapter 11: The birthday table. 4000 words.
+- Job: enacted transition — the reader watches the single most seductive scene surrender every drop of its pleasure to its true owners, leaving the loop no foothold.
+- Objection resolved: but the celebration cake, the grandmother's baking, the shared joy — surely that is real.
+- Belief now: enters protecting one sacred exception; leaves knowing the sun, the people, the ritual, and the food itself carried it all, with the sweet only riding along.
+- Encounter: the birthday table with candles and song, plus a small hands-on perception proof that felt certainty can be flatly wrong.
+- Evidence: EV-29 and EV-32 used lightly with framework limits; EV-40 for the reunion-that-disappoints pattern without instructing retastes.
+- New instruction: I-13.
+- Reserved-later fence: fear collapse to CH-12, method defense to CH-14, vow to CH-15.
+- Arc and curve: late head-on demonstration after easy demolitions; freedom vocabulary begins rising.
+- Reader-state and encounter: a loving family member afraid freedom means coldness, shown the warmth was never in the sugar.
+- Mantra pins: M-D echo A genuine treat or lift, final demolition use.
+- Scenes: SC-F debut with full birthday-table staging; SC-A token-echo, one phrase.
+- Structural responsibility: owns the strongest-case meeting and the enacted perception proof.
+- Guardrails: the scene treated with full tenderness, never mocked; no retaste instructed; original images only.
+- Continuity: receives the system-angry reader; hands one with nothing left to defend to CH-12.

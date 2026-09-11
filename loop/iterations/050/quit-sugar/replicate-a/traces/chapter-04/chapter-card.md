@@ -1,0 +1,15 @@
+CH-04 — Chapter 4: The lift that steals the afternoon. 4200 words.
+- Job: enacted transition — the reader stops believing sugar is fuel and sees the afternoon slump as the previous dose coming due.
+- Objection resolved: I need it to function; the 3pm crash proves I am running on empty.
+- Belief now: enters reaching for the drawer as a gauge reading; leaves reading the same hour as withdrawal's invoice, with the body exonerated.
+- Encounter: the office desk between two and five, tired and bored, eating cake that is not even good while planning the next sweet.
+- Evidence: EV-01 with self-report limits, EV-21 with contested-frequency limits, EV-22 as the honesty guardrail that the slump is regulation not clinical need, EV-24 against need-sugar-to-think; EV-39 for the common freedom pattern without promising timelines.
+- New instruction: I-06.
+- Reserved-later fence: full inversion mechanics to CH-08, substitute swaps to CH-09, steady-afternoon proof to CH-16.
+- Arc and curve: first demolition peak; cost triple debuts; freedom suppressed.
+- Reader-state and encounter: an afternoon yo-yoer at the drawer, shown their own cycle in their own words.
+- Mantra pins: M-G Tired, foggy and craving debut; M-D echo A genuine treat or lift.
+- Scenes: SC-B debut with full coaster staging; SC-C debut with full drawer staging.
+- Structural responsibility: owns the energy demolition and the reader's own roller-coaster diagnosis honored.
+- Guardrails: ADV-01 cited; no glucose diagnosis; no diet prescription; original images only.
+- Continuity: receives the reader holding the new test; hands one who has lost the fuel excuse to CH-05.

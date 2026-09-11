@@ -1,0 +1,15 @@
+CH-01 — Chapter 1: The invitation. 4200 words.
+- Job: enacted transition — the reader stops bracing for another diet and accepts this book as an easy investigation with nothing to lose.
+- Objection resolved: this is too good to be true, and quitting means deprivation.
+- Belief now: enters believing freedom would be wonderful but impossible without suffering; leaves holding the contract, knowing exactly what BAD SUGAR means, and carrying the bodily stakes inside an escape frame.
+- Encounter: a reader at a kitchen table with the whole book ahead, asked to keep eating exactly as normal, shown the dental chair and the overloaded liver plainly, then handed relief.
+- Evidence: EV-18, EV-19, EV-20 with their population-level and mechanism limits; the stakes are stated as mainstream sober facts, never as personal diagnoses.
+- New instruction: I-01 with frozen headline You risk nothing by reading on, and you stand to gain everything pinned as M-A; I-02; I-03; claim token T-C planted.
+- Reserved-later fence: mechanism proof to CH-08, moderation kill to CH-09, villain receipts to CH-10, fear work to CH-12.
+- Arc and curve: opening contract, promise front-load peak, freedom promised then withheld.
+- Reader-state and encounter: a guarded repeat dieter at the table, shown the stakes and offered a risk-free read while still eating normally.
+- Mantra pins: M-A You risk nothing by reading on, and you stand to gain everything; M-B Easily, immediately, and permanently; M-F For the rest of your life in its hooked valence; M-I All you have to do is follow all the instructions.
+- Scenes: SC-H debut with the full morning-after body staging; SC-G foreshadowed only by continuity, never staged.
+- Structural responsibility: carries the redefinition box, the entry instruction trio, the flat method promise in paragraph one, and the chapter-owned bodily stakes closed on escape-relief.
+- Guardrails: ADV-01 cited; no diagnosis, no diet order, original images only.
+- Continuity: receives the brief's trapped reader; hands a contracted investigator who knows the target's name to CH-02.

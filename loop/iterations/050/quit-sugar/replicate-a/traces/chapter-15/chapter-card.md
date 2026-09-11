@@ -1,0 +1,15 @@
+CH-15 — Chapter 15: The last ordinary meal. 3200 words.
+- Job: enacted transition — the reader crosses from understanding into identity, closing the loop with a solemn ordinary dessert and opening free life on the same evening.
+- Objection resolved: am I really ready; how will I know I am free.
+- Belief now: enters convinced but uncommitted; leaves free as of now, with the two relapse doors warned and the coming steady days predicted.
+- Encounter: an ordinary dessert eaten with full attention on its ugliness, the vow spoken, congratulations immediate.
+- Evidence: EV-25 for the days-long hump scale without medicalizing, EV-30 for the fading promise without guarantees, EV-39 for the common quieting pattern.
+- New instruction: I-17.
+- Reserved-later fence: nothing deferred; ordinary days belong to CH-16 by design.
+- Arc and curve: ritual peak; freedom detonation begins; trap vocabulary ends here.
+- Reader-state and encounter: a convinced reader at one last ordinary table, guided across a joyful threshold rather than a deprivation.
+- Mantra pins: M-H debut FANTASTIC! I'M FREE!; M-A echo You risk nothing by reading on, and you stand to gain everything; M-F echo For the rest of your life in its free valence; T-C re-quote Eat real food when you are hungry, stop when you are satisfied, and never think about bad sugar again; T-B echo the tug-of-war.
+- Scenes: SC-I predicted, never staged; SC-F token-echo, one phrase.
+- Structural responsibility: owns the readiness gate, the last ordinary instance with attention on the ugliness, instant conferral of freedom, and both relapse doors warned.
+- Guardrails: ADV-01 cited; lingering reluctance sent back to re-read, never to force; slips pre-forgiven without licensing repeats; original images only.
+- Continuity: receives the inoculated reader; hands a free reader into ordinary days in CH-16.

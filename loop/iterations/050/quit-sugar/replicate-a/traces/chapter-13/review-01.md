@@ -1,0 +1,2 @@
+REVISE
+- LENGTHEN to 3800±15% (3230-4370): Delivered 3097 words. Budget 3800. Add ~133+ words toward 3800. Expansion: extend at "You take your virtues back from the wrong method with BAD SUGAR." Show what freed steadiness does in drawer-closed kitchen tomorrow — plain eating without managing — delivering lived consequence persistence available for walking out. Not CH-07/09/08 re-proof, not another rules-failed demo; assume seeing.

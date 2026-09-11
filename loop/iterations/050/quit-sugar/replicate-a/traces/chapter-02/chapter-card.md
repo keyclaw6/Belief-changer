@@ -1,0 +1,15 @@
+CH-02 — Chapter 2: Who took your choice. 4200 words.
+- Job: enacted transition — the reader stops believing they freely choose sugar and sees the con that removed the choice, without a shred of self-blame.
+- Objection resolved: I could stop if I wanted; this is just my habit and my fault.
+- Belief now: enters as a contracted investigator who still trusts their sense of normal; leaves understanding they were conned on phoney information and that the night kitchen is the trap working, not character failing.
+- Encounter: the night kitchen raid and the checkout line where a loaded cart looks like everyone else's.
+- Evidence: EV-15 for the single prevalence claim, EV-04 with animal-only limits, EV-23 for the clean baseline; the dispute in EV-13 is disclosed in passing as honest context for later.
+- New instruction: I-04.
+- Reserved-later fence: benefit kills to CH-04 through CH-06, inversion deepening to CH-08, villain proof to CH-10.
+- Arc and curve: first-third world installation; demolition vocabulary begins rising; freedom suppressed.
+- Reader-state and encounter: a reader who thought nightly eating was just how they are, watching their own hidden ritual described back to them with warmth.
+- Mantra pins: M-C The sugar trap debut; M-E A faint, empty, slightly edgy feeling debut with the two mechanisms named in passing.
+- Scenes: SC-D debut with full night-kitchen staging; SC-E foreshadowed only.
+- Structural responsibility: owns the book's single prevalence claim and the in-passing naming of both mechanisms.
+- Guardrails: ADV-01 cited; shame relocated to the trap; no pathological labels; original images only.
+- Continuity: receives the contracted investigator; hands a reader who no longer trusts normal to CH-03.

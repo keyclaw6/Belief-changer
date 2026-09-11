@@ -1,0 +1,14 @@
+{
+  "chapter": 6,
+  "slug": "quit-smoking",
+  "iteration": "050",
+  "replicate": "a",
+  "words_draft": 4124,
+  "words_final": 4124,
+  "budget": 4500,
+  "review_rounds": 1,
+  "review_verdicts": [
+    "ACCEPT"
+  ],
+  "final_status": "ACCEPT"
+}

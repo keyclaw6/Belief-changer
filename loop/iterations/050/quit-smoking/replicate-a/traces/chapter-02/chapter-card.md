@@ -1,0 +1,16 @@
+CH-02 | Chapter 2 | Who is in charge
+- primary job: enacted transition — the smoker sees loss of choice as a con, not a flaw, and meets the body as authority
+- resolves: I choose this, I could stop if I wanted, my failures prove I am weak
+- belief now: enters willing to investigate but still calling smoking choice; leaves knowing the schedule owns choice and past failures belong to method
+- encounter: garage hide while family inside, hourly clock, leaving the house without a pack after decades
+- evidence: E-03, E-11; must not claim nobody ever quits; must not stretch typical peak into torture-for-all
+- new instruction: I-02 SMOKE AS NORMAL UNTIL YOUR FINAL CIGARETTE / So belief changes before behavior does.
+- reserved-later: axis to CH-03, stress to CH-04, pleasure to CH-05, belonging to CH-06, reward to CH-07, inversion deepening to CH-09, exceptions to CH-10
+- arc: first third world install; freedom suppressed; demolition rising; prevalence stated here once only
+- reader-state: someone who hid use, counted hours and called it habit; concrete schedule proves the point without accusation
+- mantra: debut M-C "the nicotine trap"; debut M-E "a faint, empty, slightly edgy feeling that comes and goes"; debut M-F "for the rest of your life"; debut M-G "tired, wheezy and chained to the next cigarette"; debut M-I "the Willpower Method"
+- scenes: SA-02 debut full staging; AN-02 debut full staging as hold image in plain words
+- structural: names the tiny physical craving and the brainwashing voice in passing as vocabulary; installs body encounters for later kills
+- guardrails: safety ADV-01; originality keeps mechanism description in everyday common nouns, no invented tokens
+- continuity: receives willing investigator; hands conned-not-weak reader who holds permission to continue until the close to CH-03
+- budget: 4200

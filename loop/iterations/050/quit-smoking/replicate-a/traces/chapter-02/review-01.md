@@ -1,0 +1,2 @@
+REVISE
+FRAGMENT — Draft contains a run of three sentence fragments in a row: "Faint, not overwhelming. Empty, not painful in any grand sense. Slightly edgy, not dangerous." Second run: "Tired, because the hour interrupts rest and work alike. Wheezy, because the lungs report the smoke they never asked to house. Chained to the next cigarette, because the hour always returns with its hand out." Require rewrite of both runs as complete conversational sentences carrying the belief verb.

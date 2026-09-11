@@ -1,0 +1,14 @@
+CH-09 — Chapter 9: No special ones, no tomorrow. 4000 words.
+- Job: enacted transition — the reader stops believing a managed exception can survive and accepts total freedom as the only stable state.
+- Objection resolved: just one, just weekends, just the good stuff, just after I finish the box, just from tomorrow.
+- Belief now: enters negotiating rations and calendar slots; leaves seeing every exception as the intact belief guaranteeing return, and the cliff logic as plain sense.
+- Evidence: EV-02 with no-permanent-helplessness limits, EV-09 and EV-10 with animal-schedule limits used as trap-form illustration, EV-33 for the normalcy of failed attempts without labeling.
+- New instruction: I-11.
+- Reserved-later fence: substitute chemistry to CH-10 context only, villain history to CH-10, fear of failure to CH-12.
+- Arc and curve: escape-route foreclosure; demolition vocabulary high; freedom still caged until the vow.
+- Reader-state and encounter: a skilled negotiator meeting the office birthday and the weekend free day as the same door.
+- Mantra pins: M-A echo You risk nothing by reading on, and you stand to gain everything; M-F echo For the rest of your life.
+- Scenes: SC-E foreshadowed only; SC-C token-echo, one phrase.
+- Structural responsibility: owns totality logic with the pincer and the cliff image, including house-clearing exposed as belief-preserving avoidance.
+- Guardrails: no white-knuckle avoidance strategy taught; no shaming of past negotiations; original images only.
+- Continuity: receives the mechanism holder; hands one with no exit left but the door to CH-10.

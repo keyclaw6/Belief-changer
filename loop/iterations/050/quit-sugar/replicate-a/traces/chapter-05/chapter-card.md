@@ -1,0 +1,15 @@
+CH-05 — Chapter 5: The taste that was never in the sugar. 3800 words.
+- Job: enacted transition — the reader stops believing the pleasure lives in the sweet and sees the palate as hazed, with real flavor waiting underneath.
+- Objection resolved: but it tastes wonderful; dessert is the best part of the meal.
+- Belief now: enters defending the best bite; leaves understanding the meal carried the pleasure and the sweet rode along.
+- Encounter: one honest bite taken on purpose, then the same food met again through cleared taste.
+- Evidence: EV-32 with preliminary-study limits, EV-40 for the retaste letdown without instructing retastes; no sweetness-chemistry claims beyond the reader's mouth.
+- New instruction: I-07.
+- Reserved-later fence: love-and-reward roots to CH-06, wanting-without-liking mechanics to CH-08, full table scene to CH-11.
+- Arc and curve: demolition continues; freedom vocabulary still low.
+- Reader-state and encounter: a convinced food-lover asked to run one small honest experiment in attention.
+- Mantra pins: M-D echo A genuine treat or lift.
+- Scenes: SC-A debut with full house-party staging for the grazing pull; SC-B token-echo, one phrase.
+- Structural responsibility: owns the taste demolition by variable isolation and credit reassignment.
+- Guardrails: foods described, never poisoned; no borrowed pictures; original images only.
+- Continuity: receives the reader minus the fuel excuse; hands one whose favorite bite is in doubt to CH-06.

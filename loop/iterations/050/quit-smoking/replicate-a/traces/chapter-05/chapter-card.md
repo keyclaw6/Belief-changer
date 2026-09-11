@@ -1,0 +1,15 @@
+CH-05 | Chapter 5 | Heaven at the light, nothing in the pack
+- primary job: enacted transition — enjoyment shrinks to the moment of closing withdrawal, not a property of tobacco
+- resolves: I love it, it tastes good, a few a day are different for me
+- belief now: enters defending love of the light; leaves knowing love coexists with hate because only the light was ever credited
+- encounter: the light-up called heaven and the aftertaste already shame, coffee can of butts kept from the dog but not the self
+- evidence: E-04; must not claim the reader lies about enjoyment; must not mock enjoyment
+- new instruction: I-05 IGNORE ANY ADVICE THAT CONFLICTS WITH THIS BOOK / Other voices pull the old belief back in.
+- reserved-later: identity to CH-06, reward to CH-07, dose fraud detail to CH-11, one-exception to CH-10
+- arc: middle demolition; demolition vocabulary high; freedom low
+- reader-state: someone who says love while hiding smell and cough; split moment proves the gift was timing
+- mantra: echo M-D "a genuine pleasure or crutch"
+- scenes: SA-05 token of butt accumulation, staging deferred to CH-11 debut
+- guardrails: safety ADV-01; originality isolates the variable with the reader own masking and aftertaste evidence
+- continuity: receives stress-disillusioned reader; hands pleasure-disillusioned reader to CH-06
+- budget: 4500

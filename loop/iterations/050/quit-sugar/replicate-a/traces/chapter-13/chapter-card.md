@@ -1,0 +1,15 @@
+CH-13 — Chapter 13: Why force could never work. 3800 words.
+- Job: enacted transition — the reader stops crediting strong will and sees every diet, rule, and substitute as the wrong method, with their own persistence reframed as evidence for them.
+- Objection resolved: I just need more discipline, a better plan, a cleaner substitute.
+- Belief now: enters respecting effort and clever swaps; leaves understanding the effort was spent inside the trap and the swaps kept the habit in costume.
+- Encounter: the diet drawer — rules, scales, gum, sugar-free boxes — inventoried as a museum of the wrong method.
+- Evidence: EV-25 for the diet-failure correlation without causal claims, EV-26 for the honest split, EV-10 for the schedule trap illustration; EV-39 for the stopping-beats-cutting pattern without timelines.
+- New instruction: I-15.
+- Reserved-later fence: neighbor voices to CH-14, vow and readiness to CH-15.
+- Arc and curve: anti-method movement; freedom vocabulary rising; release approaching.
+- Reader-state and encounter: an exhausted self-improver shown their strong will was the proof they can walk out, not the proof they are broken.
+- Mantra pins: T-A echo the Willpower Method; M-I echo All you have to do is follow all the instructions.
+- Scenes: SC-E token-echo, one phrase; SC-G token-echo, one phrase.
+- Structural responsibility: owns the named anti-method chapter and carries the embedded long-form escape story of the multi-year quitter in its own room as proof, not as a second thesis.
+- Guardrails: past efforts honored, never mocked; substitutes refused without chemistry lectures; original images only.
+- Continuity: receives the unfrightened reader; hands one done with methods to CH-14.

@@ -1,0 +1,12 @@
+CH-16 — Chapter 16: Mornings, shops, food — and the list. 2800 words.
+- Job: non-argument — recap and hand-off. Consolidates the movement, lives one ordinary week, issues the photographable instruction list, and releases the reader with the saved reframe.
+- Encounter: mornings, shops, and shared food across one unremarkable week, using only thoughts the reader already owns.
+- Evidence: EV-39 and EV-40 echoed as lived pattern without new claims or timelines.
+- New instruction: none; carries the verbatim headline list of I-01 through I-17 without chapter callbacks.
+- Arc and curve: ordinary-life chapter plus short recap; freedom flood; the book's final word is the terminal mantra.
+- Reader-state and encounter: a free reader living proof days, meeting pity-without-envy moments and reframed thoughts as recurring relief.
+- Mantra pins: M-H echo FANTASTIC! I'M FREE!; M-F echo For the rest of your life in its free valence.
+- Scenes: SC-I debut with full steady-afternoon staging; SC-C token-echo, one phrase.
+- Structural responsibility: owns ordinary life, the short photographable recap, the outward imperative, and the saved homecoming reframe appearing here for the first time.
+- Guardrails: ADV-01 cited once; no new curriculum, no restaged settled scenes, no thought-training manual; original images only.
+- Continuity: receives the free reader; hands them onward into life with the thought script installed.

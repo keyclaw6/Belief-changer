@@ -1,0 +1,16 @@
+CH-11 | Chapter 11 | Designed to keep you
+- primary job: enacted transition — the cigarette is seen as an engineered nicotine dose with fraud built into mildness, sold by interests opposed to leaving
+- resolves: lights are safer, the industry just meets demand, the cost is the price of my pleasure
+- belief now: enters exception-free yet still seeing the pack as a product with safer versions; leaves knowing the pack is a day's supply of doses and mildness was a machine-rating workaround
+- encounter: five-hour drive smoking through the miles then gas-station deodorize stop, set against internal planning lines defining the cigarette as layers around a dose
+- evidence: E-08, E-09; must not present a memo as consensus paper; must not claim every smoker compensates identically or recommend unventilated types
+- new instruction: I-10 IGNORE ANYONE WHO QUIT BY STRAINING AND MISSING IT / Their struggle was the wrong method.
+- reserved-later: substitutes to CH-12, strongest night proof to CH-13, final vow to CH-14
+- arc: late-middle widening; demolition at peak; freedom still held for release
+- reader-state: someone ready to blame only habit while trusting milds and marketing; measured compensation plus design receipts shift blame to the trap without shaming the user
+- mantra: echo M-C "the nicotine trap"; echo F-A "It is doing plenty TO you. It is doing nothing FOR you."
+- scenes: SA-05 debut full staging as drive and deodorize cost; AN-04 debut full staging as mask-hole illustration of E-09
+- structural: carries embedded long-form escape testimony in the main flow in its own room; hard facts in this argument closed by relief in the same chapter
+- guardrails: safety ADV-01 for illness pointer only; originality keeps consequence stated flat once then relief, no bank sentence lifted
+- continuity: receives exception-free reader; hands trap-seer who trusts neither milds nor marketing to CH-12
+- budget: 4500

@@ -1,0 +1,15 @@
+CH-07 — Chapter 7: Hunger, satisfaction, and real food. 3800 words.
+- Job: enacted transition — the reader inhabits an ordinary hunger-to-satisfaction meal and learns the body already knows how to eat, which the loop had drowned out.
+- Objection resolved: without sugar rules I would not know when to stop.
+- Belief now: enters afraid of appetite without guardrails; leaves having lived one meal governed by hunger and satisfaction, with real food as the favorite.
+- Encounter: a plain home meal eaten hungry, finished satisfied, remembered fondly the next day.
+- Evidence: EV-23 and EV-24 with physiology-not-prescription limits; EV-39 for the common steadying pattern without promised timelines.
+- New instruction: I-09.
+- Reserved-later fence: mechanism naming stays in CH-08; no escape-route or villain material pulled forward.
+- Arc and curve: middle inhabit chapter; demolition vocabulary rests; first quiet taste of freedom vocabulary.
+- Reader-state and encounter: a rule-tired eater given one unguarded meal and finding the brakes were built in.
+- Mantra pins: T-C re-quote Eat real food when you are hungry, stop when you are satisfied, and never think about bad sugar again.
+- Scenes: SC-I predicted only by continuity, never staged; SC-H token-echo, one phrase.
+- Structural responsibility: owns the inhabit-the-ordinary-doing movement; primary job is inhabiting, not killing.
+- Guardrails: ADV-01 cited; no meal plan, no portions, no diet order; original images only.
+- Continuity: receives the unrewarded reader; hands one who has felt the baseline to CH-08.

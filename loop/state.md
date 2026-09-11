@@ -2,13 +2,13 @@
 
 ## Position
 
-- **Iteration:** 049
-- **Stage:** factory writes (both subjects regenerating plans + chapters)
-- **Status:** IN PROGRESS
+- **Iteration:** 050
+- **Stage:** IDLE (041–050 drive complete; summary written)
+- **Status:** IDLE
 - **Campaign branch:** `campaign-001`
 - **Worktree:** none. Factory is Muse Spark 1.3; this chat is auto-research only.
-- **Last completed unit:** 048 QUANTIFY (deficit 35→28 / 35→35; FRAGMENT fired; Nipper back via omitted rebuild; redefinition = brief doctrine; timetables unclosable). Carried forward: FRAGMENT + quota relief (guide) + silence. Consecutive no-KEEP: 7.
-- **Next unit:** 049 hypothesize (explicit rebuild: Fork-1 + craft-7 + FRAGMENT) → apply → factory → judge → decide.
+- **Last completed unit:** 050 QUANTIFY (deficit 30→58 / 40→28; sugar crash on pre-existing CAPS law + ID override; smoking band on variance; 050 edits exonerated). Drive complete.
+- **Next unit:** Founder authorization required for 051+. See `loop/iterations/050/CAMPAIGN-SUMMARY.md`.
 
 ## Run authorization (founder, 2026-09-04; close-out 2026-09-06)
 

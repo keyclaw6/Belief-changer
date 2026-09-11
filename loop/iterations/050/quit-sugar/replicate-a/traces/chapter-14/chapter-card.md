@@ -1,0 +1,15 @@
+CH-14 — Chapter 14: The voices you will hear. 3600 words.
+- Job: enacted transition — the reader hears every leftover objection, including the neighbor's moderation and the method's own doubters, arrive pre-labeled as the trap's script rather than their own reasoning.
+- Objection resolved: most people handle it; I was born this way; this book is just another scheme.
+- Belief now: enters braced for social static; leaves with each myth answered in sentences and the method-level doubt ventriloquized and settled.
+- Encounter: the neighbor's kitchen-table confidence that everyone else manages fine.
+- Evidence: EV-13 stated once as the honest open question, EV-32 for which foods with preliminary limits, EV-34 against born-this-way fatalism with scale limits, EV-28 for cue power with population limits.
+- New instruction: I-16.
+- Reserved-later fence: nothing argumentative remains; only the vow and ordinary life ahead.
+- Arc and curve: clearing room; demolition vocabulary closing; freedom vocabulary dominant.
+- Reader-state and encounter: a nearly-free reader inoculated against the exact sentences the world will say next week.
+- Mantra pins: M-C echo The sugar trap.
+- Scenes: SC-G token-echo, one phrase; SC-E token-echo, one phrase.
+- Structural responsibility: owns the rapid-fire myths battery as one distinct room, the identity-excuse inversion with the graceful concession, and the method-level objection answered without labels.
+- Guardrails: dispute stated without recruiting; no personality diagnoses; no shaming of doubters; original images only.
+- Continuity: receives the method-done reader; hands a fully inoculated reader, champing at the bit, to CH-15.

@@ -1,0 +1,3 @@
+REVISE
+- FRAGMENT — Quote the run: "Sweetness on the tip. Air through side holes. A smoother first pull that coughs less and invites a second." Three sentence fragments in a row with no belief verb. Require a rewrite as complete conversational sentences carrying the belief verb (what the softening proves about dress versus dose).
+- FRAGMENT — Quote the run: "Gold for the cautious. Silver for the careful. Green for the fresh. Slim for the neat hand." Four sentence fragments in a row with no belief verb. Require a rewrite as complete conversational sentences carrying the belief verb (what the colours/names prove about dress versus dose).

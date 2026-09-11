@@ -1,0 +1,15 @@
+CH-03 — Chapter 3: What good is there at all. 3200 words.
+- Job: enacted transition — the reader abandons the harm-versus-benefit scale and demands the loop justify one real benefit, which reframes everything after.
+- Objection resolved: surely a little sweetness does something for me.
+- Belief now: enters still weighing pleasure against cost; leaves holding the doing-to versus doing-for verdict as the only test that matters.
+- Encounter: the reader's own justification menu printed back in quotes, then turned around one line at a time.
+- Evidence: EV-32 with ranking-study limits; no mechanism claims beyond the reader's own words.
+- New instruction: I-05.
+- Reserved-later fence: each quoted line assigned to its demolition chapter; the birthday table explicitly reserved to CH-11 unstaged.
+- Arc and curve: axis switch, demolition ground laid, freedom still withheld.
+- Reader-state and encounter: a fair-minded bargainer asked to change the question rather than the answer.
+- Mantra pins: M-D A genuine treat or lift debut as the sole name for the claimed benefit from here on.
+- Scenes: SC-C token-echo only, one phrase, no staging.
+- Structural responsibility: carries the verbatim justification menu and its demolition mapping.
+- Guardrails: no benefit conceded; no second staging of reserved scenes; original images only.
+- Continuity: receives the de-normalized reader; hands a reader armed with the single test to CH-04.

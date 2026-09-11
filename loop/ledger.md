@@ -787,3 +787,17 @@ The A/A rerun of chapter 01 (identical inputs, same model) came back belief-mech
 **What we learned.** Verified rebuilds fire reliably; deficits move on whatever residual is largest that run. Two new mannerism classes located (refrain family, drilled-you). Guide holds a live contradiction (:224 vs Fork-1).
 
 **What this opens next.** 050 final: refrain discipline and/or I-distribution and/or contradiction cleanup. Never card edits, route-every-limit, diction pressure, factory-speech, willpower, re-argument.
+
+### iter-050 — chorus discipline + contradiction cleanup  ·  2026-09-11
+
+**Hypothesis.** PRIMARY deficit: variant-ending refrain families evade the verbatim gate; freeze chorus to mantra echoes + delete the dead contradiction.
+
+**Change.** `prompts/style-guide.md` (×2). Both plans regenerated (sugar 16, smoking 15). Research reused. `change.diff` recorded.
+
+**What happened.** Deficit 30→58 (42) / 40→28 (72). Missing 8→10 / 5→3. Partial 6→9 / 5→5. Blocking 0 both. Words 57810/59740. Sugar crashed on plan CAPS-every-sentence law + paraphrase suffixing + reviewer ID override + overlap re-argument. Smoking band-met on variance. Chorus discipline untested in this draw.
+
+**Verdict & why.** QUANTIFY. PRIMARY band only in smoking. No restore trigger (smoking improved materially; no both-blocking; floors met). Carried forward: everything. `parent: 6c2928ed`. Consecutive no-KEEP: 9. Drive complete.
+
+**What we learned.** Identical edits, opposite outcomes — the plan draw dominates book scores. Runtime findings override upstream contracts (ID vs silence). Pre-existing plan doctrine, not recent edits, drives crashes.
+
+**What this opens next.** Founder authorization required for 051+. See CAMPAIGN-SUMMARY.md.

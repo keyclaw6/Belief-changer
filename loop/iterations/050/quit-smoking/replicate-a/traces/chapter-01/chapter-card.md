@@ -1,0 +1,16 @@
+CH-01 | Chapter 1 | The easy promise
+- primary job: enacted transition — stopping reads as easy escape worth investigating, not hard sacrifice to dread
+- resolves: too good to be true, nothing works for me
+- belief now: enters certain quitting means strain and loss; leaves willing to test that ease is possible and that past failures blamed the wrong thing
+- encounter: paragraph-one flat promise, then a smoker coughing through the night and reaching for the pack at dawn
+- evidence: E-03, E-11; must not claim nobody ever quits; must not promise exact withdrawal hours for this reader
+- new instruction: I-01 KEEP AN OPEN MIND / So you can investigate instead of defending.
+- reserved-later: choice mechanics to CH-02, axis to CH-03, all benefit kills to CH-04 through CH-07, mechanism to CH-09, moderation to CH-10, industry to CH-11, substitutes to CH-12, strongest night scene to CH-13
+- arc: opening contract; freedom promised; demolition not yet risen
+- reader-state: a daily smoker braced for another lecture, hand already defending the light-up; encounter makes the promise land before defenses engage
+- mantra: debut M-A "You have nothing to lose and everything to gain."; debut M-B "You can stop easily, immediately and for good."
+- scenes: SA-02 token of dawn reach, staging deferred to CH-02 debut; full staging here is the night cough and dawn pack only
+- structural: carries entry contract and five reading rules in seed form; hard facts in this argument closed by relief in same chapter
+- guardrails: safety ADV-01 for illness pointer; originality builds an original dawn scene, no bank sentence copied
+- continuity: receives brief contract; hands willing investigator to CH-02
+- budget: 3500

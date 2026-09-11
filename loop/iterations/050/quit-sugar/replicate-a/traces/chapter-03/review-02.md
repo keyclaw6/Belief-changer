@@ -1,0 +1,3 @@
+REVISE
+
+- SHORTEN to 3200±15% — Delivered 4216 words. Budget 3200. Allowed range 2720-3680. Delivered is 131.8% of B, 536 words over top. Cut ~540-620 words to land inside range while keeping job, verbatim menu lines 57-79, M-D `A genuine treat or lift`, and I-05 `ASK WHAT GOOD THERE IS AT ALL. Not whether harm outweighs it.` Cut by condensing the scales recitals that restate the same weighing point: e.g. the fair-bargain opening, the why-scales-cannot-free-you haggle, and the TO/FOR calendar restatements. Do not cut the justification table, the single-name landing, the TO vs FOR verdict, or the birthday-table reservation for its own full light.

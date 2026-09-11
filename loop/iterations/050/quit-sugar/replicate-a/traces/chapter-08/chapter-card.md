@@ -1,0 +1,15 @@
+CH-08 — Chapter 8: The rescue that makes the low. 4200 words.
+- Job: enacted transition — the reader sees the whole inversion at once: the high is relief from a low the behavior created, and willpower was fighting the wrong half of the machine.
+- Objection resolved: the relief feels so real it must be doing something.
+- Belief now: enters with demolished excuses but no unified mechanism; leaves holding the rescuer-as-perpetrator picture with the trivial physical pang split off from the dominant belief.
+- Encounter: the urgent need-something-now shake, watched as wanting fire before any bite.
+- Evidence: EV-05, EV-06, EV-07 with animal-only limits, EV-11 and EV-12 as cue analogues with human limits, EV-14 and EV-31 as the honest wanting frame, EV-30 for the fading-hump promise without guarantees, EV-13 disclosed once as the open question.
+- New instruction: I-10.
+- Reserved-later fence: moderation arithmetic to CH-09, industry proof to CH-10, fear collapse to CH-12.
+- Arc and curve: mechanism deepening on installed ground; demolition vocabulary at full height; ease becomes credible.
+- Reader-state and encounter: a reader ready for the single picture that explains every prior chapter.
+- Mantra pins: M-B echo Easily, immediately, and permanently; M-C echo The sugar trap; M-I echo All you have to do is follow all the instructions.
+- Scenes: SC-A token-echo, one phrase; SC-B token-echo, one phrase.
+- Structural responsibility: owns the inversion, the trivial-versus-dominant split using established vocabulary, and the brainwashing naming.
+- Guardrails: grades preserved exactly; no human brain numbers; no fate language; original images only.
+- Continuity: receives the reader who has felt the baseline; hands one holding the unified mechanism to CH-09.

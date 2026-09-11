@@ -1,0 +1,3 @@
+REVISE
+FRAGMENT — Run in ARE YOU READY TO CLOSE IT: "No party. No crisis. No ceremony borrowed from anyone else. Only the walk you have taken a hundred times with a lit end filming the air around you." Four sentence fragments in a row with no main verb. Rewrite as complete conversational sentences carrying the belief verb.
+FRAGMENT — Run in NEVER JUST ONE: "Only tonight. Only with drinks. Only one to prove you are in charge now. Only a puff from a friend who offers without knowing your vow." Four sentence fragments in a row with no finite verb. Rewrite as complete conversational sentences carrying the belief verb.

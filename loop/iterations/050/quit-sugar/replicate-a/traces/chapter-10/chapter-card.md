@@ -1,0 +1,15 @@
+CH-10 — Chapter 10: How the trap was built for you. 4200 words.
+- Job: enacted transition — the reader stops blaming appetite or character and sees an optimized supply environment with themselves as the target, converting shame into anger at the system.
+- Objection resolved: if it were engineered, someone would have said so.
+- Belief now: enters suspecting personal greed; leaves knowing the dials, the melt, the hidden carriers, and the buried doubts, with symptoms reread as warning lights.
+- Encounter: the supermarket aisle and the children's cereal shelf, read with new eyes.
+- Evidence: EV-35, EV-36, EV-37, EV-38 with journalism and historical-analysis limits; EV-16 with interpretation limits; EV-34 to unhook the pattern from weight.
+- New instruction: I-12.
+- Reserved-later fence: strongest-case warmth to CH-11, fear work to CH-12, neighbor objections to CH-14.
+- Arc and curve: indictment widening; demolition vocabulary handing toward release.
+- Reader-state and encounter: a reader walking the familiar aisle and realizing the shelves were arranged before they arrived.
+- Mantra pins: M-C echo The sugar trap; M-G echo Tired, foggy and craving.
+- Scenes: SC-G debut with full tuning-lab staging; SC-E debut with full supermarket-tour staging.
+- Structural responsibility: owns the manufacture-of-desire movement and the only-true-beneficiary reveal, with awe at the body's sophistication doing argumentative work.
+- Guardrails: receipts paraphrased honestly, no invented dialogue as fact; parents as fellow conned; original images only.
+- Continuity: receives the reader with closed exits; hands an angry-at-the-system reader to CH-11.

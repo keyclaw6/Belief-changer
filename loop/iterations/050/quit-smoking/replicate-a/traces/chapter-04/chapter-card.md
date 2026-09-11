@@ -1,0 +1,15 @@
+CH-04 | Chapter 4 | The off-switch that creates the noise
+- primary job: enacted transition — stress relief is seen as closing a loop the dose reopened, not calming life
+- resolves: it calms me down, I need it when stressed
+- belief now: enters crediting the first puff after strain; leaves knowing the credited calm timed replenishment speed
+- encounter: post-meeting outdoor break with matches, precise puffs, bitter last puff, then back to work
+- evidence: E-01, E-07, E-11; must not claim cigarettes treat the underlying problem; must not claim every puff identical pleasure
+- new instruction: I-04 FOLLOW ALL THE INSTRUCTIONS / Miss one piece and the trap stays shut.
+- reserved-later: pleasure to CH-05, belonging to CH-06, reward to CH-07, clock proof to CH-09, delay uses of stress to CH-10
+- arc: middle demolition on installed ground; freedom suppressed
+- reader-state: someone who reaches before thinking when strain spikes; the timed break makes the loop visible
+- mantra: echo M-G "tired, wheezy and chained to the next cigarette"
+- scenes: SA-01 debut full staging; AN-02 token-echo only
+- guardrails: safety ADV-01 for stress and medical boundary; originality reassigns credit to the pause and air, not to nicotine
+- continuity: receives axis-holder; hands reader who no longer trusts stress as proof to CH-05
+- budget: 4500

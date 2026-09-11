@@ -1,0 +1,2 @@
+REVISE
+LENGTHEN to 4000±15% — Delivered 3254 words vs Budget 4000. Range 3400-4600. Expand at: "You will bring appetite for supper and ears for stories and arms for kin with BAD SUGAR." Extend forward ~150-750 words showing one continuous next birthday lived with settled division already assumed — arriving, singing, speaking no lecture, staying late, waking clear — to deliver lived consequence that strongest room stays whole and warmer. Not CH-07/10/08/05 re-proof, assume verdicts, do not re-prove rider-vs-givers.

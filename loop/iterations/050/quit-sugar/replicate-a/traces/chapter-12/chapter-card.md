@@ -1,0 +1,15 @@
+CH-12 — Chapter 12: Fear is the trap talking. 3400 words.
+- Job: enacted transition — the reader stops fearing failure and success as verdicts on themselves and sees both ropes pulled by the same hands.
+- Objection resolved: what if I fail again; what if freedom changes who I am.
+- Belief now: enters torn between dread of trying and dread of succeeding; leaves with the torn state named and its geometry resolved.
+- Encounter: a sleepless night before a planned start, the prison door imagined from both sides.
+- Evidence: EV-25 with preliminary-human limits for the hump's scale, EV-30 for fading without guarantees, EV-33 for normalizing past attempts without labeling.
+- New instruction: I-14.
+- Reserved-later fence: anti-method proof to CH-13, residual doubts to CH-14, readiness gate to CH-15.
+- Arc and curve: fear chapter; demolition vocabulary yields; freedom vocabulary rising.
+- Reader-state and encounter: a reader stalled at the threshold, shown the stall itself is manufactured.
+- Mantra pins: T-B debut the tug-of-war; M-E echo A faint, empty, slightly edgy feeling; M-F echo For the rest of your life in its free valence.
+- Scenes: SC-D token-echo, one phrase; SC-B token-echo, one phrase.
+- Structural responsibility: owns the fear-of-failure and fear-of-success collapse, including the released-convict and prison-door pictures.
+- Guardrails: ADV-01 cited for distress; fear validated before disarming; no guarantees about symptoms; original images only.
+- Continuity: receives the undefended reader; hands one unafraid of the door to CH-13.

@@ -1,0 +1,15 @@
+CH-08 | Chapter 8 | Mornings, breath and hands
+- primary job: enacted transition — ordinary breath, morning coffee and short breaks are inhabited as complete and favourite without cigarettes
+- resolves: nothing stated to kill; missing edge that ordinary moments feel thin without it
+- belief now: enters knowing each gift was empty but not yet feeling ordinary moments as full; leaves having lived breath, taste and pause as sufficient
+- encounter: waking without reaching, stairs without wheeze, coffee tasted, short walk and pause with nothing lit
+- evidence: E-11; must not promise identical symptoms for all; must not present food or drink as required substitute
+- new instruction: none; uses installed rules by token
+- reserved-later: timing proof to CH-09, exception logic to CH-10, villain proof to CH-11
+- arc: middle inhabit room; demolition pauses; freedom vocabulary allowed to warm slightly
+- reader-state: someone cleared of reasons but unsure ordinary hours will satisfy; lived morning proves sufficiency
+- scenes: SA-01 token-echo only; SA-03 token-echo only; no new staging, inhabit is the staging
+- structural: carries the inhabit-the-ordinary-doing room as primary job, not a kill with inhabit flavor
+- guardrails: safety ADV-01; originality keeps sensory moments concrete and belief-bearing, no catalogue without a belief verb
+- continuity: receives menu-cleared reader; hands grounded inhabitant to mechanism deepening in CH-09
+- budget: 3800

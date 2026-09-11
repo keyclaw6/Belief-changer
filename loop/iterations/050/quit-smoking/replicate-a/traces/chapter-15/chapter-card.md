@@ -1,0 +1,14 @@
+CH-15 | Chapter 15 | Mornings, shops and the life after
+- primary job: non-argument — recap and hand-over to ordinary life with the belief guarded
+- resolves: how days, shops, weddings, bars and bad news go without reopening the question
+- encounter: mornings without reaching, shops passed without counting, wedding stayed inside, bad day met without rescue offer, travel and money reclaimed
+- evidence: E-02, E-06 by token only; must not re-argue settled kills; must not teach a new thought curriculum
+- new instruction: none; photographable list of I-01 through I-12 verbatim without chapter callbacks
+- arc: after-vow ordinary life plus short recap; freedom crescendo full; demolition silent
+- reader-state: someone newly free meeting first triggers; owned thoughts rehearsed once hand durable scripts
+- mantra: echo M-H "WONDERFUL! I'M FREE!"; hand-over M-A "You have nothing to lose and everything to gain." in reward valence; hand-over M-B "You can stop easily, immediately and for good."; hand-over M-C "the nicotine trap" as what was left; terminal script given explicitly for any future thought
+- scenes: SA-02 token-echo only as clock gone; SA-06 token-echo only as closed threshold; AN-08 token-echo only as mourned companion now absurd
+- structural: carries one ordinary-life room using thoughts the reader already owns once, then short photographable recap, then single outward imperative; saved ending reframe appears here only
+- guardrails: safety ADV-01 as pointer only; originality keeps future thoughts as pre-labeled scripts arriving already answered, no new cures taught
+- continuity: receives newly free reader; hands outward a person happy to be free for the rest of life in reward valence
+- budget: 4000

@@ -1,17 +1,11 @@
-SLUG: quit-sugar
-ITER: 049
-REPLICATE: a
-CANDIDATE: loop/iterations/049/quit-sugar/replicate-a/traces/plan-candidate-r2.md
-SHA-256: 089e06a236988896c2ef4ab3269ad0c67801641ec81dab5a3694a3f0692527ec
-INPUTS: plan-candidate-r2.md + prompts/style-guide.md + 00-brief.md + lived-experience.md + scientific-evidence.md only
-
-first-three-cumulative-walk: PASS — C01 enacts escape-not-sacrifice with flat paragraph-one promise, C02 enacts already-hooked with con-not-weak plus tiny-craving/brainwashing-voice in passing plus body/real-food encounters, C03 enacts axis-switch to what-good-at-all; no three-setup opening.
-whole-book-cumulative-walk: PASS — C04-C12 each build from prior belief with distinct principal encounters, single full staging then token-echo only for SC-01/SC-02/SC-06/SC-04/SC-09/SC-08/SC-03, C06 primary-job inhabit-not-kill, C13 vow then C14 ordinary-life with owned-thoughts-only then C15 short recap; reaches declared relief-at-thought destination.
-writer-authority: PASS — all E-01 to E-35, M-A to M-M lettered, SC-01 to SC-10, I-01 to I-13, CLIN-01 resolve with exact payloads; every mantra card pins frozen quote; no M-08/I-08 collision; no P-xx, no Maya, no Voice operators, no CA-SAFE paste, no chapter-ledger callbacks; budgets, continuity, guardrails, limits on every card.
-method: PASS — warm-to-person harsh-to-trap throughout, willpower-free with Willpower-Method villain and reattribution, escape-not-sacrifice, C01 promise-flat plus same-chapter scare-then-relief, fear never left as motive, clinical care never framed as failure.
-evidence: PASS — E-13 to E-29 grades/limits match synthesis including mild magnitude, animal-vs-human explicit, E-19 open-question held honestly with meta-inoculation in C10, E-20 once-only in C02, lived quotes used as texture with prohibited inferences honored.
-safety: PASS — everyday-trap perimeter only, CLIN-01 boxed once and cited by ID never fused/boxed mid-chapter, no diagnosis/labeling, hump small-days-only, no personal fate prediction, no diet/dental/medication prescription.
-originality: PASS — original prose only, own roller-coaster/lender/trap/table pictures, no caffeine/tobacco borrowing, credit-reassignment throughout, saved child-sweetness reframe only in C15.
-architecture-length: PASS — one spine invitation-trap-axis-demolitions-inhabit-mechanism-manufacture-escape-anti-method-fear-strongest-vow-life-recap with demolition rise then freedom release from C13, I-01 to I-13 owned and photographable in C15, budgets 5000+4500+3500+4500+4500+4500+4500+4500+4500+4000+4000+4500+4000+4000+3000=63500 within 54000-66000.
-
+candidate: loop/iterations/050/quit-sugar/replicate-a/traces/plan-candidate-r1.md
+sha256: 0d4da4688a07355764a27a842a0057ff71385fe9e1bc8d49c1594f14e889a1da
+first_three_cumulative_walk: PASS — C-01 contract plus bodily stakes with relief, C-02 con plus night-kitchen, C-03 axis-switch each do persuasive work now, not three setups
+whole_book_cumulative_walk: PASS — each card builds from preceding belief now, encounters debut once then token-echo only, handoffs continuous, no backward reservation
+first_third_installation: PASS — contract and BAD SUGAR in C-01, already-hooked in C-02, two mechanisms in passing in C-02 as lowercase nouns, body ground via SC-H/SC-D/SC-C/SC-B encounters
+mid_book_inhabit: PASS — C-07 primary job is inhabit-the-ordinary-doing hunger-to-satisfaction meal, not a kill with inhabit flavor
+post_vow_restriction: PASS — C-15 last ordinary instance with vow, C-16 one ordinary-life week plus short photographable recap in same chapter, no second manual or new curriculum
+writer_facing_authority: PASS — M-A to M-I lettered, all cited IDs resolve with frozen quotes, one instruction per climax, continuity budgets guardrails ownership present, no P-xx Voice pupil-persona CA titles or ledger callbacks
+method_evidence_safety_originality: PASS — warm to reader harsh to trap willpower-free, C-01 flat promise in paragraph one plus chapter-owned scare closed on relief, grades limits ADV-01 honored, original images only
+architecture_length: PASS — one spine with deliberate repetition curves, 16 budgets sum 60800 matching total inside 54000-66000 band
 fit to write from

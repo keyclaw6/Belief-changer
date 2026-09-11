@@ -1,0 +1,15 @@
+CH-06 — Chapter 6: The reward that punishes. 4200 words.
+- Job: enacted transition — the reader stops believing sugar is love, comfort, or deserved pay and sees the weeknight reward as the loop's kindest mask.
+- Objection resolved: I deserve it; it soothes me; it fills the gap on hard days.
+- Belief now: enters paying themselves in sweets after stress and victory; leaves seeing the pay packet empty, the problems untouched, the guilt as the trap's engine.
+- Encounter: the 9pm fridge light when no one watches, trip taken for numbing rather than nourishment.
+- Evidence: EV-03 with community-frame limits, EV-17 with men-only observational limits kept population-level, EV-29 introduced gently as the wanting insight without technical weight.
+- New instruction: I-08.
+- Reserved-later fence: hunger-versus-craving lived proof to CH-07, cue mechanics to CH-08, fear and identity work to CH-12 and CH-14.
+- Arc and curve: emotional demolition peak; demolition vocabulary high; freedom withheld.
+- Reader-state and encounter: a comfort eater in a hard week, met with full validation of the feeling before the frame is removed.
+- Mantra pins: M-D echo A genuine treat or lift.
+- Scenes: SC-D token-echo, one phrase; no staging of the birthday table.
+- Structural responsibility: owns the love and reward demolition with the reader's suppressed unease reflected back.
+- Guardrails: ADV-01 cited; comfort eating never moralized; distress routed to professionals; original images only.
+- Continuity: receives the reader doubting taste; hands one whose reward story is broken to CH-07.
