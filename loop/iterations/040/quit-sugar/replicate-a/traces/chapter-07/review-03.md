@@ -1,2 +1,0 @@
-REVISE
-UNASSIGNED-REFRAIN — non-mantra sentence "A bell rung often will turn heads." recurs 3× verbatim. Keep at most 2 occurrences in total, rephrase the others in ordinary language; do not retain it as a repeated slogan or new mantra.

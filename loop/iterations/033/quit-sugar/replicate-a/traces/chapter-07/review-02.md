@@ -1,2 +1,0 @@
-REVISE
-HEADER — draft opens with workshop header `IN THIS CHAPTER` before spoken body: "Early-evening kitchen with kettle steam and cupboard hum. A morning lane with a ditch and an offered hand." Remove the header block; open in spoken voice.

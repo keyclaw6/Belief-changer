@@ -17,7 +17,7 @@ PROMPTS = {"planner": "master-plan-skill-v2.md", "plan-reviewer": "master-plan-r
            "writer": "chapter-writer.md", "chapter-reviewer": "chapter-reviewer.md",
            "evidence-reviewer": "evidence-reviewer.md", "state-editor": "reader-state.md",
            "book-editor": "book-editor.md", "final-auditor": "final-auditor.md"}
-REQUIRED_CODE = ["scripts/factory.py", "factory/config.json"]
+REQUIRED_CODE = ["scripts/factory.py", "factory/config.json", "factory/research-access.json"]
 
 
 def active_files(repo: Path) -> list[str]:
@@ -28,13 +28,17 @@ def active_files(repo: Path) -> list[str]:
 
 
 def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | None = None,
-            fixture: bool = False) -> Path:
+            fixture: bool = False, research_preflight: dict | None = None) -> Path:
     repo = repo.resolve()
     identifier(run_id)
     if parent is not None:
         identifier(parent)
     validate_brief(brief)
     validate_research(research, brief)
+    if not fixture:
+        from .research_access import config as access_config, validate_preflight, validate_coverage
+        validate_preflight(research_preflight or {}, access_config(repo), brief['subject'])
+        validate_coverage(research)
     root = confined(repo, f"runs/{run_id}")
     require(not root.exists(), f"Run already exists: {run_id}. Reuse with status/task; never overwrite a frozen run.")
     config = read_json(repo / "factory/config.json")
@@ -52,13 +56,16 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
                 entries[rel] = file_hash(dest)
             for name, data in (("brief.json", brief), ("research.json", research)):
                 atomic_bytes(root / "inputs" / name, canonical(data) + b"\n")
+            if research_preflight is not None:
+                atomic_bytes(root / "inputs/research-preflight.json", canonical(research_preflight) + b"\n")
             rev = subprocess.run(["git", "rev-parse", "HEAD"], cwd=repo, capture_output=True, text=True)
             manifest = {"schema_version": 2, "run_id": run_id, "subject": brief["subject"],
                         "created_at": now(), "parent": parent, "fixture": fixture,
                         "origin_commit": rev.stdout.strip() if rev.returncode == 0 else None,
                         "factory_files": entries, "factory_digest": digest(entries),
                         "brief_sha256": file_hash(root / "inputs/brief.json"),
-                        "research_sha256": file_hash(root / "inputs/research.json")}
+                        "research_sha256": file_hash(root / "inputs/research.json"),
+                        "research_preflight_sha256": file_hash(root / "inputs/research-preflight.json") if research_preflight is not None else None}
             seal(root / "manifest.json", manifest)
     except BaseException:
         # Preserve unfinished input files for diagnosis; a missing manifest prevents use.
@@ -79,6 +86,8 @@ class Run:
         for name in ("brief", "research"):
             path = self.root / "inputs" / f"{name}.json"
             require(file_hash(path) == self.manifest[f"{name}_sha256"], f"Frozen {name} changed")
+        if self.manifest.get("research_preflight_sha256"):
+            require(file_hash(self.root / "inputs/research-preflight.json") == self.manifest["research_preflight_sha256"], "Frozen research preflight changed")
         self.brief = read_json(self.root / "inputs/brief.json")
         self.research = read_json(self.root / "inputs/research.json")
         validate_brief(self.brief)

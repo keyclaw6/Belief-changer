@@ -1,2 +1,0 @@
-REVISE
-HEADER — draft opens with workshop header `IN THIS CHAPTER`: "**IN THIS CHAPTER** — A full cupboard late at night, supper plates in the rack, a drawer that never stayed full" — remove workshop header, keep spoken body.

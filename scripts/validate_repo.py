@@ -11,7 +11,10 @@ def main():
                 'scripts/factory.py','scripts/bc_factory/schema.py','scripts/bc_factory/runs.py',
                 'scripts/bc_factory/experiments.py','factory/config.json','factory/champion.json',
                 'factory/calibration.json','loop/judges/pairwise.md','prompts/evidence-reviewer.md',
-                'prompts/book-editor.md','prompts/final-auditor.md']
+                'prompts/book-editor.md','prompts/final-auditor.md','factory/research-access.json',
+                'scripts/bc_factory/research_access.py','scripts/bc_factory/research_setup.py',
+                'docs/RESEARCH-ACCESS.md','docs/PUBLISH-MAIN.md','scripts/publish_main.py',
+                'scripts/eval/tests/test_research_access.py','scripts/eval/tests/test_publish_main.py']
     errors = [f'Missing required v2 file: {p}' for p in required if not (ROOT/p).is_file()]
     tests = list((ROOT/'scripts/eval/tests').glob('test_*.py'))
     if not tests: errors.append('Mandatory regression suite is absent')
@@ -28,6 +31,12 @@ def main():
         external=cfg.get('profiles',{}).get('external')
         if external and external.get('family') == cfg['profiles']['factory'].get('family'):
             errors.append('External profile duplicates generating family')
+    history = ROOT/'loop/iterations'
+    if history.exists():
+        allowed = {'decision.md','hypothesis.md','change.diff','CAMPAIGN-SUMMARY.md','convergence-report.md'}
+        for path in history.rglob('*'):
+            if path.is_file() and (len(path.relative_to(history).parts)!=2 or path.name not in allowed):
+                errors.append('Intermediate campaign artifact re-entered source tree: '+str(path.relative_to(ROOT)))
     if errors:
         print('\n'.join(errors),file=sys.stderr);return 1
     print(f'Runtime contracts present; {len(tests)} mandatory test module(s).')

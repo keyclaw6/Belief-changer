@@ -33,7 +33,11 @@ class Base(unittest.TestCase):
     def tearDown(self):
         self.tmp.cleanup()
     def newrun(self, name="r1", fixture=True):
-        prepare(self.repo, name, self.brief, self.research, fixture=fixture)
+        if fixture:
+            prepare(self.repo, name, self.brief, self.research, fixture=True)
+        else:
+            with patch('bc_factory.research_access.validate_preflight'), patch('bc_factory.research_access.validate_coverage'):
+                prepare(self.repo, name, self.brief, self.research, fixture=False)
         return Run(self.repo, name)
     def to_plan(self, run):
         for role, output in (("evidence-reviewer", accepted()), ("planner", self.plan), ("plan-reviewer", accepted())):

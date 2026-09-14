@@ -1,1 +1,0 @@
-{"model":"composer-2.5","harness":"cursor-agent-cli","spawn":"agent --model composer-2.5 --mode ask -p","latency_s":96.255,"exit":0}

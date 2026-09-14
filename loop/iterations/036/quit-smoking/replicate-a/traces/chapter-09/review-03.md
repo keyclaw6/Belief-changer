@@ -1,2 +1,0 @@
-REVISE
-HEADER — draft opens with workshop header `IN THIS CHAPTER` with bullet list ("- The first pull and the cough over the sink" etc.) before spoken body. Remove the header/index; keep spoken encounter and argument as the opening.

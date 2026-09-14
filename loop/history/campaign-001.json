@@ -1,0 +1,516 @@
+{
+  "historical_source_commit": "6a90ffcdddad3c908144014cc41e51d693df7f9e",
+  "status": "closed historical campaign; not a v2 benchmark",
+  "iterations": [
+    {
+      "iter": "000",
+      "date": "2026-08-17",
+      "hypothesis": "BASELINE (no hypothesis)",
+      "component_changed": "-",
+      "predicted_impact": "-",
+      "judge_verdict": "Panel complete (58/58 calls): belief-mechanic 18/18 PASS, reader-journey 13/18 PASS, book-arc PASS (2 cross-chapter reps), voice-emotion 4/18 PASS (14 FAIL); trace-analysis: 4 causal clusters (writer-prompt x2 systemic: evidence-grading + internal-taxonomy leaks; plan x1 positional: cross-chapter re-argument; model x1 local: C02 grammar)",
+      "decision": "BASELINE",
+      "lesson": "Factory belief-mechanics sound, voice lane fails at scale: writer-prompt leaks evidence-grade & internal-ID language into reader prose; A/A shows single-chapter voice verdicts are sampling-sensitive."
+    },
+    {
+      "iter": "001",
+      "date": "2026-08-21",
+      "hypothesis": "scaffold firewall: internally hold grades/limits, never surface ledger vocabulary",
+      "component_changed": "prompts/chapter-writer.md (evidence-honesty clause)",
+      "predicted_impact": "voice Clusters 1+2 close",
+      "judge_verdict": "Panel complete (55/55: 54 chapter + book-arc) on composer-2.5 (confound vs 000 DeepSeek): belief 17/18 PASS (C13 FAIL), reader 16/18 PASS (C13,C15 FAIL), voice 4/18 PASS (14 FAIL), book-arc FAIL; targeted clusters 1+2 partially closed (labels mostly gone; P-0x/Killer-line/card-assigns remain; research-report register remains)",
+      "decision": "REVERT",
+      "lesson": "Banning ledger labels is not the same as banning factory speech. Verbatim SUPPORTED/Permitted-inference dumps largely vanished, but Binding chapter craft still uses speakable diction (`killer-line pair`, `argue-to-compress`, `your card assigns`, persona codes) and the model emits it; Cluster 1 mutated into research-report register. Voice FAIL count stayed 14/18. Do not repeat the evidence-honesty clause swap. Next writer-prompt change must make craft instructions execute-silently, or the 3-strike clock on this component continues."
+    },
+    {
+      "iter": "002",
+      "date": "2026-08-21",
+      "hypothesis": "debut-once echo-by-token for mantras, scenes (S-xx), and evidence rows (E-xx)",
+      "component_changed": "prompts/master-plan-skill-v2.md (repetition law sentence)",
+      "predicted_impact": "book-arc Cluster 4 close",
+      "judge_verdict": "Panel complete (58/58: 57 chapter + book-arc) on composer-2.5: belief 18/19 PASS (F03 FAIL), reader 19/19 PASS, voice 0/19 PASS, book-arc FAIL; Cluster 4 partially closed (001 S/E instances gone; class mutated: wanting/liking rebuild, Willpower re-install, mantra debut-order); NEW voice class `by name in one sentence here`",
+      "decision": "REVERT",
+      "lesson": "Debut-once on S-xx/E-xx closed the named 001 instances (ledger re-walk, 100-cord restage, scare loop; reader 19/19 PASS) but book-arc still FAIL on the same class mutated (wanting/liking rebuilt at Sunlit Table; Willpower Method re-installed; M-09/M-10 before debut). Voice 0/19 PASS with a NEW class: echo-law placeholders (`by name in one sentence here`) copied from card parentheticals into prose. Do not repeat this plan-skill sentence swap. Next plan change must bind chapter jobs and evidence re-lists without writing speakable echo templates onto cards; writer-prompt factory speech still dominates voice."
+    },
+    {
+      "iter": "003",
+      "date": "2026-08-21",
+      "hypothesis": "card job/evidence re-own ban: settled jobs/evidence token-echo only; no speakable echo parentheticals",
+      "component_changed": "prompts/master-plan-skill-v2.md (Compact chapter cards)",
+      "predicted_impact": "book-arc Cluster 5 close",
+      "judge_verdict": "Panel complete (61/61: 60 chapter + book-arc) on composer-2.5: belief 20/20 PASS, reader 19/20 PASS (C20 FAIL), voice 6/20 PASS, book-arc FAIL; 002 Cluster 5 symptoms closed (wanting/liking + Willpower re-def + echo placeholders gone); class mutated via A01 scene re-perform, T04 pre-debut, C16→C17 readiness dup",
+      "decision": "REVERT",
+      "lesson": "Binding job/evidence re-lists closed named 002 symptoms but book-arc still FAIL on same class via scene IDs and seam ownership. Do not repeat this Compact-cards wording. Writer-prompt factory speech still dominates voice. STOP for founder reconsideration — do not start 004."
+    },
+    {
+      "iter": "004",
+      "date": "2026-08-21",
+      "hypothesis": "scene-bank debut-once: one full staging per scene ID; later cards token-echo only",
+      "component_changed": "prompts/master-plan-skill-v2.md (Scene and analogy bank)",
+      "predicted_impact": "book-arc Cluster 1 (A01 double) close",
+      "judge_verdict": "Panel complete (64/64: 63 chapter + book-arc) on composer-2.5: belief 21/21 PASS, reader 16/21 PASS, voice 3/21 PASS, book-arc FAIL; A01 symptom closed; class mutated (FM inversion early, A-07 doubled, token pre-debut, C16 re-litigation)",
+      "decision": "REVERT",
+      "lesson": "Scene debut-once closed named A01 double but book-arc still FAIL on same class mutated. Third plan-skill REVERT on re-argument (002–004) — PIVOT off plan-skill. Writer-prompt Binding craft still dominates voice. Continue through 008."
+    },
+    {
+      "iter": "005",
+      "date": "2026-08-22",
+      "hypothesis": "Binding craft silent-execution: ban speakable craft diction in chapter-writer",
+      "component_changed": "prompts/chapter-writer.md (Method and voice + Binding bullets 2,7)",
+      "predicted_impact": "voice Cluster 6 close; voice PASS rise",
+      "judge_verdict": "Panel 55/55: belief 17/18 PASS, reader 13/18 PASS, voice 0/18 PASS, book-arc FAIL; Cluster 6 regressed",
+      "decision": "REVERT",
+      "lesson": "Writer silent-execution failed on voice lane (0/18). Continue 006–008."
+    },
+    {
+      "iter": "006",
+      "date": "2026-08-22",
+      "hypothesis": "plan-reviewer Gate 4 Speakable Card Sanitization",
+      "component_changed": "prompts/master-plan-reviewer-v2.md (Gate 4)",
+      "predicted_impact": "voice Cluster 6 + persona Cluster 3 close",
+      "judge_verdict": "belief 20/20, reader 18/20, voice 5/20, book-arc FAIL; P-xx gone; trap question 17/20",
+      "decision": "REVERT",
+      "lesson": "Partial: persona closed, voice improved not closed. Continue 007-008."
+    },
+    {
+      "iter": "007",
+      "date": "2026-08-22",
+      "hypothesis": "style-guide speakable craft ban",
+      "component_changed": "prompts/style-guide.md",
+      "predicted_impact": "voice Cluster 1 close; trap question→0",
+      "judge_verdict": "belief 20/20, reader 19/20, voice 1/20, book-arc FAIL; trap question 3/20",
+      "decision": "REVERT",
+      "lesson": "Partial leak fix; voice regressed. Final iter 008."
+    },
+    {
+      "iter": "008",
+      "date": "2026-08-22",
+      "hypothesis": "writer non-contributor model switch",
+      "component_changed": "loop/config.yaml writer_model",
+      "predicted_impact": "voice ≥8/20; trap question ≤3",
+      "judge_verdict": "belief 19/20, reader 18/20, voice 5/20, book-arc FAIL; trap question 17/20",
+      "decision": "REVERT",
+      "lesson": "FINAL iter. Campaign IDLE."
+    },
+    {
+      "iter": "009",
+      "date": "2026-08-24",
+      "hypothesis": "BASELINE (census judges, no factory hypothesis)",
+      "component_changed": "-",
+      "predicted_impact": "-",
+      "judge_verdict": "Panel 110/110 composer-2.5: belief 18/18 both, journey 18/18 both, book-arc PASS both, voice 11/18 both; KEEP objects factory-speech blocking 18+19, instruction-paperwork 2+5; FAIL chapter overlap ch01 only",
+      "decision": "BASELINE",
+      "lesson": "Belief/arc hold. Voice KEEP object is factory-speech at writer-prompt Binding craft. instruction-paperwork is plan frozen-instruction tails. 001-007 wording eligible. Next: writer-prompt factory-speech."
+    },
+    {
+      "iter": "010",
+      "date": "2026-08-25",
+      "hypothesis": "silent craft + workshop-token translation supremacy",
+      "component_changed": "prompts/chapter-writer.md (Method/voice + Binding 2,7)",
+      "predicted_impact": "factory-speech blocking drop both books",
+      "judge_verdict": "A: belief 18/18 journey 18/18 voice 13/18 book-arc PASS; factory-speech 6 (was 18), paperwork 3; B: belief 18/18 journey 18/18 voice 11/18 book-arc PASS; factory-speech 8 (was 19), paperwork 6, method-promise-hedge 1 (B-only)",
+      "decision": "KEEP",
+      "lesson": "factory-speech improved both (18→6, 19→8), not closed. Residual: plan workshop tokens + anatomy checklist. instruction-paperwork slight up. Next: new mechanism on residual factory-speech or plan paperwork."
+    },
+    {
+      "iter": "011",
+      "date": "2026-08-25",
+      "hypothesis": "style-guide silent operators (B5/B7/B9)",
+      "component_changed": "prompts/style-guide.md (B5 ops 3,6,8,11 + B7.5 + B9)",
+      "predicted_impact": "factory-speech blocking drop both books",
+      "judge_verdict": "A: belief 18/18 journey 18/18 voice 15/18 book-arc PASS; factory-speech 4 (was 6), paperwork 5; B: belief 18/18 journey 18/18 voice 16/18 book-arc PASS; factory-speech 2 (was 8), paperwork 5",
+      "decision": "KEEP",
+      "lesson": "factory-speech improved both (6→4, 8→2). Operator-label peaks closed. Residual: plan I-06 ID cross-ref + paperwork on frozen safety tails. Founder halt: do not start 012."
+    },
+    {
+      "iter": "012",
+      "date": "2026-08-27",
+      "hypothesis": "plan-skill instruction-spine split (spoken imperative vs CA-01)",
+      "component_changed": "prompts/master-plan-skill-v2.md (lexicon/instruction spine)",
+      "predicted_impact": "instruction-paperwork blocking drop both books",
+      "judge_verdict": "A: belief 17/17 journey 16/17 voice 15/17 book-arc PASS; paperwork 0 (was 5), factory-speech 3; B: belief 17/17 journey 16/17 voice 13/17 book-arc PASS; paperwork 0 (was 5), factory-speech 9, compliance-missing 1",
+      "decision": "KEEP",
+      "lesson": "paperwork closed both (5→0). Residual factory-speech is craft-label/ledger not I-06 tails. Founder halt: do not start 013."
+    },
+    {
+      "iter": "013",
+      "date": "2026-08-27",
+      "hypothesis": "founder-batch spine + packet hygiene + lettered mantra IDs",
+      "component_changed": "prompts/chapter-writer.md + master-plan-skill-v2.md + master-plan-reviewer-v2.md + style-guide.md",
+      "predicted_impact": "factory-speech blocking drop both; compliance-missing close both",
+      "judge_verdict": "A: belief 14/14 journey 14/14 voice 13/14 book-arc PASS; factory-speech 2 (was 3), compliance-missing 0; B: belief 14/14 journey 14/14 voice 13/14 book-arc PASS; factory-speech 2 (was 9), compliance-missing 0",
+      "decision": "KEEP",
+      "lesson": "factory-speech improved both (3→2, 9→2); compliance-missing closed (2→0, 1→0). Residual: CH-08 plan-card Voice announcement. Founder halt: do not start 014."
+    },
+    {
+      "iter": "014",
+      "date": "2026-08-28",
+      "hypothesis": "founder-batch card operators + rooms (no Maya, no Voice: register, CA-SAFE title not pasted)",
+      "component_changed": "prompts/chapter-writer.md + master-plan-skill-v2.md + master-plan-reviewer-v2.md + style-guide.md",
+      "predicted_impact": "factory-speech blocking drop both (2→0)",
+      "judge_verdict": "A: belief 15/15 journey 15/15 voice 15/15 book-arc PASS; factory-speech blocking 0 (was 2), noted 17; B: belief 15/15 journey 15/15 voice 15/15 book-arc PASS; factory-speech blocking 0 (was 2), noted 38",
+      "decision": "KEEP",
+      "lesson": "factory-speech blocking closed both (2→0). Residual noted floor hydra (evidence-limit register, frozen-echo paste). Founder halt: do not start 015."
+    },
+    {
+      "iter": "015",
+      "date": "2026-08-29",
+      "hypothesis": "founder-batch seed subtraction + semantic job-ownership",
+      "component_changed": "prompts/chapter-writer.md + master-plan-skill-v2.md + master-plan-reviewer-v2.md + style-guide.md",
+      "predicted_impact": "noted factory-speech drop both (17/38) AND book-arc re-argument drop both (5/4)",
+      "judge_verdict": "A: belief 16/16 journey 16/16 voice 15/16 book-arc PASS; factory-speech blocking 1 (was 0), noted 20 (was 17); re-argument 6 (was 5); B: belief 16/16 journey 16/16 voice 14/16 book-arc PASS; factory-speech blocking 3 (was 0), noted 13 (was 38); re-argument 5 (was 4)",
+      "decision": "REVERT",
+      "lesson": "KEEP conjunction failed. Noted factory-speech 17→20 / 38→13 (not both). Book-arc re-argument 5→6 / 4→5. Blocking factory-speech reopened 0→1 / 0→3. trap-question-label closed. Founder halt: do not start 016."
+    },
+    {
+      "iter": "016",
+      "date": "2026-08-30",
+      "hypothesis": "founder-batch trap-question keep + echo density alter + Carr extras",
+      "component_changed": "prompts/chapter-writer.md + master-plan-skill-v2.md + master-plan-reviewer-v2.md + style-guide.md",
+      "predicted_impact": "trap-question 3/1→0/0 both AND noted factory-speech drop both (A<17, B<38)",
+      "judge_verdict": "A: belief 15/15 journey 15/15 voice 15/15 book-arc PASS; factory-speech blocking 0, noted 23 (was 17); trap-question 0 (was 3); B: belief 15/15 journey 15/15 voice 14/15 book-arc PASS; factory-speech blocking 1 (was 0), noted 13 (was 38); trap-question 1 (was 1)",
+      "decision": "INCONCLUSIVE",
+      "lesson": "KEEP conjunction split. Trap-question 3→0 / 1→1. Noted factory-speech 17→23 / 38→13. Blocking 0/1 is one-book. Echo-density cut A ch14 7→2. Do not promote. Founder halt: do not start 017."
+    },
+    {
+      "iter": "017",
+      "date": "2026-08-30",
+      "hypothesis": "trap-question formula deletion only (015 S1–S5; W1 strip land-one-short-verdict)",
+      "component_changed": "prompts/chapter-writer.md + prompts/style-guide.md",
+      "predicted_impact": "trap-question 3/1→0/0 both; blocking factory-speech stay 0/0",
+      "judge_verdict": "A: belief 15/15 journey 14/15 voice 14/15 book-arc PASS; trap-question 0 (was 3); factory-speech blocking 1 (was 0), noted 18; B: belief 15/15 journey 15/15 voice 14/15 book-arc PASS; trap-question 1 (was 1); factory-speech blocking 1 (was 0), noted 10",
+      "decision": "REVERT",
+      "lesson": "KEEP object failed 0/1. Blocking factory-speech reopened 0→1 both (A chapter-job meta; B warmth-policy quote). Do not promote. Founder halt: do not start 018."
+    },
+    {
+      "iter": "018",
+      "date": "2026-08-30",
+      "hypothesis": "trap-question prefix ban (one never-surface line; 014 factory)",
+      "component_changed": "prompts/chapter-writer.md (never-surface)",
+      "predicted_impact": "trap-question 3/1→0/0 both; blocking factory-speech stay 0/0",
+      "judge_verdict": "A: belief 15/15 journey 15/15 voice 13/15 book-arc PASS; trap-question 0 (was 3); factory-speech blocking 2 (was 0), noted 17; method-promise-hedge blocking 1; B: belief 15/15 journey 15/15 voice 15/15 book-arc PASS; trap-question 0 (was 1); factory-speech blocking 0, noted 12 (was 38)",
+      "decision": "INCONCLUSIVE",
+      "lesson": "KEEP object closed 0/0 both. Founder veto failed: blocking factory-speech 0→2 A-only (evidence-register, not 015/017 kills). method-promise-hedge A-only. Do not promote. Founder halt: do not start 019."
+    },
+    {
+      "iter": "019",
+      "date": "2026-09-04",
+      "hypothesis": "BASELINE (Spark 1.3, no factory hypothesis)",
+      "component_changed": "-",
+      "predicted_impact": "-",
+      "judge_verdict": "Panel 80/80 composer-2.5: belief 13/13 both, journey 13/13 both, book-arc PASS both, voice 13/13 both; blocking 0 both; noted both-books: willpower-lexicon 21+33, factory-speech 6+21, journey re-argument 7+5, book-arc re-argument 3+2, belief re-argument 3+1, coach-register 6+3, wrong-register 5+2, copied-mannerism 2+7, pre-debut-spend 1+1; A-only trap-question-label 3, journey-stall 1",
+      "decision": "BASELINE",
+      "lesson": "Spark 1.3 on a fresh 13-chapter plan produces all-PASS / zero blocking in both books (belief 13/13, journey 13/13, voice 13/13, book-arc PASS). KEEP objects (blocking in both) are empty. Noted floors that appear in both: willpower-lexicon 21/33, factory-speech 6/21, journey re-argument 7/5, book-arc re-argument 3/2, belief re-argument 3/1, coach-register 6/3, wrong-register 5/2, copied-mannerism 2/7, pre-debut-spend 1/1. A-only noise: trap-question-label 3, journey-stall 1. Trace: late-arc plan-card re-argument (CH-10→13 re-owns settled jobs) and noted factory-speech hydra (PERSISTENT) are the 020 signal. 3-strike resets."
+    },
+    {
+      "iter": "020",
+      "date": "2026-09-04",
+      "hypothesis": "continuity closed-list so late cards cannot re-own settled demolitions",
+      "component_changed": "prompts/master-plan-skill-v2.md (continuity) + prompts/style-guide.md (fact-assertion)",
+      "predicted_impact": "journey re-argument 7/5 → fall both",
+      "judge_verdict": "A: belief 13/13 journey 13/13 voice 13/13 book-arc PASS; journey re-argument 4 (was 7); factory-speech noted 6; B: belief 13/13 journey 13/13 voice 13/13 book-arc PASS; journey re-argument 5 (was 5); factory-speech noted 4 (was 21); blocking 0 both",
+      "decision": "INCONCLUSIVE",
+      "lesson": "Journey `re-argument` 7→4 (A) and 5→5 (B) — one book only. Blocking stayed 0/0. Secondary factory-speech 6→6 / 21→4 also one-book. Card-field bind is sampling-sensitive on Spark 1.3. Do not promote. Same PRIMARY eligible with a new mechanism."
+    },
+    {
+      "iter": "021",
+      "date": "2026-09-04",
+      "hypothesis": "previous-chapter closed-list so N cannot re-run N−1",
+      "component_changed": "prompts/chapter-writer.md (previous-chapter clause)",
+      "predicted_impact": "journey re-argument 7/5 → fall both",
+      "judge_verdict": "A: belief 13/13 journey 13/13 voice 13/13 book-arc PASS; journey re-argument 6 (was 7); factory-speech noted 15; B: belief 13/13 journey 13/13 voice 13/13 book-arc PASS; journey re-argument 7 (was 5); factory-speech noted 8 (was 21); blocking 0 both",
+      "decision": "INCONCLUSIVE",
+      "lesson": "Journey `re-argument` 7→6 (A) and 5→7 (B) — one book only; B rose. Blocking 0/0. Assembled prompt still ends with old handoff-seam assignment. Do not promote. Same PRIMARY eligible with a new mechanism."
+    },
+    {
+      "iter": "022",
+      "date": "2026-09-04",
+      "hypothesis": "Binding craft 3 one-sentence handoff seam for settled work",
+      "component_changed": "prompts/chapter-writer.md (Binding craft 3)",
+      "predicted_impact": "journey re-argument 7/5 → fall both",
+      "judge_verdict": "A: belief 13/13 journey 13/13 voice 13/13 book-arc PASS; journey re-argument 6 (was 7); factory-speech noted 6; B: belief 13/13 journey 13/13 voice 13/13 book-arc PASS; journey re-argument 7 (was 5); factory-speech noted 11 (was 21); blocking 0 both",
+      "decision": "INCONCLUSIVE",
+      "lesson": "Journey `re-argument` 7→6 (A) and 5→7 (B) — one book only; B rose. Blocking 0/0. Plan-card overlaps survived. Do not promote. Writer-prompt + re-argument strike 2."
+    },
+    {
+      "iter": "023",
+      "date": "2026-09-04",
+      "hypothesis": "one-correction-one-card so later cards cannot re-open a demolished door",
+      "component_changed": "prompts/master-plan-skill-v2.md + master-plan-reviewer-v2.md",
+      "predicted_impact": "journey re-argument 7/5 → fall both",
+      "judge_verdict": "A: belief 15/15 journey 15/15 voice 14/15 book-arc PASS; journey re-argument 6 (was 7); factory-speech blocking 1; B: belief 15/15 journey 12/15 voice 15/15 book-arc PASS; journey re-argument 5 (was 5); journey-incomplete blocking 3; blocking factory-speech 0",
+      "decision": "INCONCLUSIVE",
+      "lesson": "Journey `re-argument` 7→6 (A) and 5→5 (B) — one book only. Named tomorrow pair closed. Do not promote. Consecutive no-KEEP: 4."
+    },
+    {
+      "iter": "024",
+      "date": "2026-09-04",
+      "hypothesis": "room-name-only structural responsibility so post-vow cards cannot assign a second manual",
+      "component_changed": "prompts/master-plan-skill-v2.md + master-plan-reviewer-v2.md",
+      "predicted_impact": "journey re-argument 7/5 → fall both",
+      "judge_verdict": "A: belief 16/16 journey 16/16 voice 16/16 book-arc PASS; journey re-argument 7 (was 7); factory-speech noted 3; B: belief 16/16 journey 16/16 voice 14/16 book-arc PASS; journey re-argument 5 (was 5); factory-speech blocking 1; assigned-verdict-hedge 1; method-promise-hedge 1",
+      "decision": "REVERT",
+      "lesson": "Journey `re-argument` 7→7 (A) and 5→5 (B) — neither book. Room-name field applied; guardrails/continuity/scene debut still assigned post-vow scripts. Evidence IDs single-use. Do not promote. Plan-card 3-strike. Consecutive no-KEEP: 5. convergence-report.md. Continue 025."
+    },
+    {
+      "iter": "025",
+      "date": "2026-09-05",
+      "hypothesis": "BASELINE (reviewer + comparison + length floor, no factory wording)",
+      "component_changed": "-",
+      "predicted_impact": "-",
+      "judge_verdict": "Panel 53+53 composer-2.5: belief 13/13 both, journey 13/13 both, voice 13/13 both, comparison 13/13 both, book-arc PASS both; blocking 0 both; words 52182+51144 (floor 48000); noted both-books: comparison missing 3+3, journey re-argument 12+10, willpower-lexicon 29+33, factory-speech 18+16, belief re-argument 9+6, book-arc re-argument 3+3, copied-mannerism 4+9, coach-register 3+8, comparison partial 8+9, curve-flatten 1+1, wrong-register 2+1; A-only pre-debut-spend 1; B-only journey-stall 1",
+      "decision": "BASELINE",
+      "lesson": "Reviewer made length KEEP-visible: A 52182 / B 51144 vs 019 A 26984 (floor 48000 met both). All-PASS / zero blocking both books. New floors in both: comparison `missing` 3/3 (G06-M2, G15-M1, G20-M2), journey `re-argument` 12/10 (repaired class, still ≥8), willpower-lexicon 29/33, factory-speech 18/16. `coach-register` 3/8 (not ≥8 both). `method-promise-hedge` 0/0. 3-strike resets."
+    },
+    {
+      "iter": "026",
+      "date": "2026-09-05",
+      "hypothesis": "chatbot residue (openers/throat-clearing/summary closers/triplet padding)",
+      "component_changed": "prompts/style-guide.md (§B5 op 12 + §B9)",
+      "predicted_impact": "factory-speech 18/16 → fall both by ≥2",
+      "judge_verdict": "Panel 53+53 composer-2.5: belief 13/13 both, journey 13/13 both, voice 13/13 both, comparison 13/13 both, book-arc PASS both; blocking 0 both; words 50404+49067; factory-speech 13+8 (was 18+16); comparison missing 4+4 (was 3+3); willpower-lexicon 36+34; coach-register 8+6; A-only trap-question-label 5; B-only journey-stall 3",
+      "decision": "KEEP",
+      "lesson": "factory-speech 18→13 / 16→8 (drop ≥2 both). Length floor met (50404/49067). Blocking 0/0. No new both-books class. Prediction partial (025 leaks were ease-operators/card titles; count still fell). Comparison `missing` 3→4 both (G04-M1 joined G06-M2/G15-M1/G20-M2). Skip further anti-slop (coach-register 8/6; hedges 0/0)."
+    },
+    {
+      "iter": "027",
+      "date": "2026-09-05",
+      "hypothesis": "unpaid belief-moves on CH-03/08/09/13 Jobs",
+      "component_changed": "production-books/quit-sugar/master-plan.md (four Job tails)",
+      "predicted_impact": "comparison missing 4/4 → fall both by ≥2",
+      "judge_verdict": "Panel 53+53 composer-2.5: belief 13/13 both, journey 13/13 both, voice 13/13 both, comparison 13/13 both, book-arc PASS both; blocking 0 both; words 52861+51952; comparison missing 1+0 (was 4+4); factory-speech 13+16; willpower-lexicon 28+36; journey re-argument 7+14",
+      "decision": "KEEP",
+      "lesson": "comparison `missing` 4→1 / 4→0. Targeted G06-M2, G15-M1, G20-M2 PRESENT; G04-M1 PARTIAL (A). Residual A miss is G06-M1 (untargeted). Length 52861/51952. Blocking 0/0. factory-speech 13/16 (B rose). Next PRIMARY is voice noted ≥8 both (willpower-lexicon 28/36 or factory-speech 13/16)."
+    },
+    {
+      "iter": "028",
+      "date": "2026-09-05",
+      "hypothesis": "card-header / workshop-staging ban in instruction voice",
+      "component_changed": "prompts/style-guide.md (§B5 op 11 + §B9)",
+      "predicted_impact": "factory-speech 13/16 → fall both by ≥2",
+      "judge_verdict": "Panel 53+53 composer-2.5: belief 13/13 both, journey 13/13 both, voice 13/13 both, comparison 13/13 both, book-arc PASS both; blocking 0 both; words 52626+52802; factory-speech 18+10 (was 13+16); willpower-lexicon 35+28; comparison missing 1+0; journey re-argument 10+7",
+      "decision": "INCONCLUSIVE",
+      "lesson": "factory-speech 13→18 (A) and 16→10 (B) — one book only. Length floor met. Blocking 0/0. §B10 still requires IN THIS CHAPTER; both books emitted it. A rose on ch13 formula-repetition, not the targeted 027 workshop/seed-later leaks. Do not promote. Style-guide restored. Consecutive no-KEEP: 1."
+    },
+    {
+      "iter": "029",
+      "date": "2026-09-05",
+      "hypothesis": "B10 opening-pictures instead of required IN THIS CHAPTER",
+      "component_changed": "prompts/style-guide.md (§B10 anatomy item 1)",
+      "predicted_impact": "factory-speech 13/16 → fall both by ≥2",
+      "judge_verdict": "Panel 53+53 composer-2.5: belief 13/13 both, journey 13/13 both, voice A 12/13 B 13/13, comparison 13/13 both, book-arc PASS both; A blocking factory-speech 1; words 48477+51991; factory-speech 9+18 (was 13+16); willpower-lexicon 34+28; comparison missing 0+1",
+      "decision": "INCONCLUSIVE",
+      "lesson": "factory-speech 13→9 (A) and 16→18 (B) — one book only. Length floor met. Both books still opened every chapter IN THIS CHAPTER. A ch09 FAIL is numbered instruction paste at mantra echo. Do not promote. Style-guide restored. Consecutive no-KEEP: 2. Style-guide+factory-speech strike 2."
+    },
+    {
+      "iter": "030",
+      "date": "2026-09-05",
+      "hypothesis": "reviewer HEADER finding (IN THIS CHAPTER / plan-index)",
+      "component_changed": "prompts/chapter-reviewer.md (HEADER)",
+      "predicted_impact": "factory-speech 13/16 → fall both by ≥2",
+      "judge_verdict": "Panel 53+53 composer-2.5: belief 13/13 both, journey 13/13 both, voice 13/13 both, comparison 13/13 both, book-arc PASS both; blocking 0 both; words 51753+51097; factory-speech 9+7 (was 13+16); willpower-lexicon 30+30; comparison missing 0+0; journey re-argument 10+7",
+      "decision": "KEEP",
+      "lesson": "factory-speech 13→9 / 16→7 (drop ≥2 both). Length floor met. Blocking 0/0. Reviewer HEADER fired widely; rewrites often kept the header string (grep not KEEP). Comparison missing 0/0. New floors: factory-speech no longer ≥8 both (9/7). willpower-lexicon 30/30 is not PRIMARY. Consecutive no-KEEP: 0."
+    },
+    {
+      "iter": "031",
+      "date": "2026-09-05",
+      "hypothesis": "unpaid comparison halves + CH-13 budget",
+      "component_changed": "production-books/quit-sugar/master-plan.md (Jobs + budgets)",
+      "predicted_impact": "comparison partial 9/11 → fall both by ≥2",
+      "judge_verdict": "Panel 53+53 composer-2.5: belief 13/13 both, journey 13/13 both, voice 13/13 both, comparison 13/13 both, book-arc PASS both; blocking 0 both; words 52392+51940; comparison partial 5+5 (was 9+11); factory-speech 14+10 (was 9+7); willpower-lexicon 34+26; journey re-argument 6+8",
+      "decision": "KEEP",
+      "lesson": "comparison partial 9→5 / 11→5 (drop ≥2 both). Length floor met. Blocking 0/0. Underpaid halves closed both except G05-M3 A-only and G20-M3 still PARTIAL both. factory-speech rose 9→14 / 7→10 (noted, not veto). Next PRIMARY factory-speech 14/10. Consecutive no-KEEP: 0."
+    },
+    {
+      "iter": "032",
+      "date": "2026-09-05",
+      "hypothesis": "writer anatomy drop required IN THIS CHAPTER + spoken instruction lead-in",
+      "component_changed": "prompts/chapter-writer.md (anatomy items 2–5)",
+      "predicted_impact": "factory-speech 14/10 → fall both by ≥2",
+      "judge_verdict": "Panel 53+53 composer-2.5: belief 13/13 both, journey 13/13 both, voice 13/13 both, comparison 13/13 both, book-arc PASS both; blocking 0 both; words 51349+50428; factory-speech 22+13 (was 14+10); willpower-lexicon 38+33; comparison partial 4+6; journey re-argument 10+10",
+      "decision": "REVERT",
+      "lesson": "factory-speech 14→22 / 10→13 — both rose. Length floor met. Blocking 0/0. Header grep 0/0 (mechanism, not KEEP). Replacement lead-in \"So here is my Nth instruction:\" scored factory-speech both. Writer restored to 031 KEEP. Do not replay. Consecutive no-KEEP: 1. No 033 until founder answers architecture gate."
+    },
+    {
+      "iter": "033",
+      "date": "2026-09-05",
+      "hypothesis": "BASELINE (A1+K1 dual-subject sugar+smoking, no factory wording)",
+      "component_changed": "-",
+      "predicted_impact": "-",
+      "judge_verdict": "Panel 53+57 composer-2.5: belief 13/13 and 14/14, journey 13/13 and 14/14, voice 13/13 and 14/14, comparison 13/13 and 14/14, book-arc PASS both; blocking 0 both; words 53208+54277 (floor 48000); noted both-books: factory-speech 20+18, willpower-lexicon 40+31, journey re-argument 16+8; comparison missing 0+2, partial 2+9; sugar-only copied-mannerism 4 vs 1",
+      "decision": "BASELINE",
+      "lesson": "First dual-subject floors. All-PASS / zero blocking. factory-speech 20/18 is next PRIMARY (>=8 both). willpower-lexicon 40/31 not PRIMARY. journey re-argument 16/8 secondary eligible. A1 mostly CAP on sugar. Do not replay 020-024/028/029/030/032."
+    },
+    {
+      "iter": "034",
+      "date": "2026-09-05",
+      "hypothesis": "§B4 Freedom-register: picture ease, never tag it",
+      "component_changed": "prompts/style-guide.md (§B4 Freedom-register)",
+      "predicted_impact": "factory-speech 20/18 → fall both by ≥2",
+      "judge_verdict": "Panel 53+57 composer-2.5: belief 13/13 and 14/14, journey 13/13 and 14/14, voice 13/13 and 13/14 (smoking CH-01 FAIL method-promise-hedge 1), comparison 13/13 and 14/14, book-arc PASS both; words 53366+56466 (floor 48000); factory-speech 6+12 (was 20+18); willpower-lexicon 26+28; journey re-argument 12+6; comparison partial 4+11; ease-operator grep 0/0 both",
+      "decision": "KEEP",
+      "lesson": "factory-speech 20→6 / 18→12 (drop ≥2 both). Length floor met. Smoking-only blocking method-promise-hedge 1 is not a veto. Ease-operator grep 0/0 with census drop. New floors: factory-speech no longer ≥8 both (6/12). willpower-lexicon 26/28 not PRIMARY. Consecutive no-KEEP: 0."
+    },
+    {
+      "iter": "035",
+      "date": "2026-09-05",
+      "hypothesis": "§B5 op 9 permission paradox spine-owned",
+      "component_changed": "prompts/style-guide.md (§B5 operator 9)",
+      "predicted_impact": "smoking factory-speech 12→≤8; sugar 6 non-regression ≤7",
+      "judge_verdict": "Panel 53+57 composer-2.5: belief 13/13 and 14/14, journey 13/13 and 14/14, voice 13/13 and 14/14, comparison 13/13 and 14/14, book-arc PASS both; blocking 0 both; words 55356+56649 (floor 48000); factory-speech 8+3 (was 6+12); willpower-lexicon 33+21; journey re-argument 15+16; comparison partial 5+8",
+      "decision": "QUANTIFY",
+      "lesson": "PRIMARY smoking 12→3 (hit ≤8). Sugar non-regression 6→8 (above ≤7). Not KEEP. Restored: no. Length floor met. Blocking 0 both. Consecutive no-KEEP: 1. Carried forward: §B5 op 9. Next: journey re-argument 15/16 is ≥8 both; do not replay 028-032."
+    },
+    {
+      "iter": "036",
+      "date": "2026-09-05",
+      "hypothesis": "reviewer RE-ARGUMENT backward fence",
+      "component_changed": "prompts/chapter-reviewer.md (RE-ARGUMENT + ACCEPT)",
+      "predicted_impact": "journey re-argument 15/16 → fall both by ≥2",
+      "judge_verdict": "Panel 53+57 composer-2.5: belief 13/13 and 14/14, journey 13/13 and 14/14, voice 13/13 and 14/14, comparison 13/13 and 14/14, book-arc PASS both; blocking 0 both; words 53680+54213 (floor 48000); journey re-argument 8+9 (was 15+16); factory-speech 9+2; willpower-lexicon 28+31; comparison missing 1+2, partial 3+9",
+      "decision": "KEEP",
+      "lesson": "journey re-argument 15→8 / 16→9 (drop ≥2 both). Length floor met. Blocking 0/0. Residual 8/9 still ≥8 both. Consecutive no-KEEP: 0. Promoted reviewer RE-ARGUMENT. Next PRIMARY journey re-argument 8/9; do not replay this finding or 020-024/028-032."
+    },
+    {
+      "iter": "037",
+      "date": "2026-09-06",
+      "hypothesis": "LENGTHEN expansion assignment (unspent encounter/objection/consequence)",
+      "component_changed": "prompts/chapter-reviewer.md (LENGTHEN expansion assignment)",
+      "predicted_impact": "journey re-argument 8/9 → fall both by ≥2",
+      "judge_verdict": "Panel 53+57 composer-2.5: belief 13/13 and 14/14, journey 13/13 and 14/14, voice 12/13 (sugar CH-01 FAIL method-promise-hedge 1) and 14/14, comparison 13/13 and 14/14, book-arc PASS both; words 54612+57583 (floor 48000); journey re-argument 6+5 (was 8+9); factory-speech 10+5; willpower-lexicon 26+19; comparison missing 0+2, partial 6+6",
+      "decision": "KEEP",
+      "lesson": "journey re-argument 8→6 / 9→5 (drop ≥2 both). Length floor met. Sugar-only method-promise-hedge 1 is not a veto. Residual 6/5 below ≥8 both. Consecutive no-KEEP: 0. Promoted LENGTHEN expansion assignment. Next: empty KEEP-eligible intersection (willpower locked); PRIMARY worse-subject sugar factory-speech 10, smoking 5 non-regression; do not replay 037 LENGTHEN / 036 RE-ARGUMENT / 020-024/028-032."
+    },
+    {
+      "iter": "038",
+      "date": "2026-09-06",
+      "hypothesis": "OVERCLAIM repair (delete/narrow, do not transplant bound)",
+      "component_changed": "prompts/chapter-reviewer.md (OVERCLAIM)",
+      "predicted_impact": "sugar factory-speech 10→≤8; smoking non-regression ≤6",
+      "judge_verdict": "Panel 53+57 composer-2.5: belief 13/13 and 14/14, journey 13/13 and 14/14, voice 12/13 (sugar CH-09 FAIL factory-speech 1) and 13/14 (smoking CH-03 FAIL factory-speech 1), comparison 13/13 and 14/14, book-arc PASS both; words 55336+56793 (floor 48000); factory-speech noted 9+7 (was 10+5) blocking 1+1 (was 0+0); willpower-lexicon 30+31; journey re-argument 8+6",
+      "decision": "QUANTIFY",
+      "lesson": "PRIMARY sugar blocking+noted 10→10 (missed ≤8). Smoking non-regression 5→8 (above ≤6). New blocking factory-speech both (CH-09/CH-03 numbered instruction headers). Restored: yes — new BLOCKING class in both. Consecutive no-KEEP: 1. Do not replay OVERCLAIM. Next PRIMARY blocking factory-speech 1/1 both."
+    },
+    {
+      "iter": "039",
+      "date": "2026-09-06",
+      "hypothesis": "HEADER ownership-and-earned-landing test",
+      "component_changed": "prompts/chapter-reviewer.md (HEADER)",
+      "predicted_impact": "factory-speech 10→≤8 / 8→≤6; blocking 1→0 each",
+      "judge_verdict": "Panel 53+57 composer-2.5: belief 13/13 and 14/14, journey 13/13 and 11/14 (smoking FAIL 3 compliance-missing), voice 13/13 and 12/14 (smoking CH-03 FAIL factory-speech+instruction-paperwork, CH-07 FAIL factory-speech), comparison 13/13 and 14/14, book-arc PASS both; words 55404+55597 (floor 48000); factory-speech blocking+noted 13+10 (was 10+8) blocking 0+2 (was 1+1); willpower-lexicon 32+20; journey re-argument 11+7",
+      "decision": "QUANTIFY",
+      "lesson": "PRIMARY factory-speech 10→13 / 8→10 (vs 038; vs 037 10→13 / 5→10). Missed ≤8/≤6. Restored: yes — PRIMARY worsened ≥ band both. HEADER returned to 037 KEEP. Consecutive no-KEEP: 2. Do not replay HEADER ownership. Next: factory-speech noted 13/8 ≥8 both."
+    },
+    {
+      "iter": "040",
+      "date": "2026-09-06",
+      "hypothesis": "writer anatomy item 5 instruction landing",
+      "component_changed": "prompts/chapter-writer.md (anatomy item 5)",
+      "predicted_impact": "factory-speech 13→≤11 / 10→≤8 vs 039; also vs 037 10/5",
+      "judge_verdict": "Panel 53+57 composer-2.5: belief 13/13 and 14/14, journey 13/13 and 14/14, voice 12/13 (sugar CH-01 FAIL factory-speech 1) and 5/14 (smoking FAIL 9 factory-speech blocking 12), comparison 13/13 and 14/14, book-arc PASS both; words 53858+57512 (floor 48000); factory-speech blocking+noted 25+19 (was 13+10) blocking 1+12 (was 0+2); willpower-lexicon 32+21; journey re-argument 5+4",
+      "decision": "QUANTIFY",
+      "lesson": "PRIMARY factory-speech 13→25 / 10→19 (vs 039; vs 037 10→25 / 5→19). Missed ≤11/≤8. Restored: yes — PRIMARY worsened ≥ band both. Writer anatomy item 5 returned to 037 KEEP. Consecutive no-KEEP: 3. Halt at 040. Do not invent 041. Do not replay this writer landing, 039 HEADER, 038 OVERCLAIM, 037 LENGTHEN, 036 RE-ARGUMENT, 020-024, or 028-032."
+    },
+    {
+      "iter": "041",
+      "date": "2026-09-07",
+      "hypothesis": "BASELINE (rejudge frozen 037, no factory hypothesis)",
+      "component_changed": "-",
+      "predicted_impact": "-",
+      "judge_verdict": "Panel 54+58 Muse Spark 1.3: belief 13/13 and 14/14, journey 13/13 and 14/14, voice 13/13 and 14/14, comparison 13/13 and 14/14, book-arc PASS both, carr-distance 60+72 (deficits 40+28); blocking 0 both; words 54612+57583; noted both-books: factory-speech 6+9, literary-stylization 5+1, comparison partial 3+4, book-arc re-argument 1+1; smoking-only comparison missing 2",
+      "decision": "BASELINE",
+      "lesson": "All-PASS zero-blocking on Muse judges. New floors: no noted class >=12 both (empty census intersection). Carr-distance reasons name the gap (appendix scare, sensory catalogue, clinician disclaimers, private vocab, fragment chains). Next: 042 regenerates plans+chapters so CH-01+Part B fire; PRIMARY carr-distance deficit."
+    },
+    {
+      "iter": "042",
+      "date": "2026-09-08",
+      "hypothesis": "clinician-disclaimer subtraction (writer license + two-card advisory + style relief)",
+      "component_changed": "prompts/chapter-writer.md + prompts/master-plan-skill-v2.md + prompts/style-guide.md",
+      "predicted_impact": "carr-distance deficit 40→≤32 / 28→≤22",
+      "judge_verdict": "Panel 54+62 Muse Spark: sugar deficit 40→24 (score 76), smoking 28→32 (score 68); blocking 0 both; words 57296+59042 (92/95.5% plan); factory-speech 6→0 / 9→1; sugar comparison missing 0→6 partial 3→8; literary 5→6 / 1→9",
+      "decision": "QUANTIFY",
+      "lesson": "Mechanism verified (Reason 3 gone both) but PRIMARY split: sugar improved, smoking noise-worsened. No restore. Carried forward: 042 subtraction. Next: 043 PRIMARY from deficit/missing/partial intersection."
+    },
+    {
+      "iter": "043",
+      "date": "2026-09-10",
+      "hypothesis": "planner J-coverage law + reviewer coverage block",
+      "component_changed": "prompts/master-plan-skill-v2.md + prompts/master-plan-reviewer-v2.md",
+      "predicted_impact": "comparison missing 6→≤4 / 2→0",
+      "judge_verdict": "Panel 62+62 Muse Spark: missing 6→11 / 2→1; partial 8→6 / 4→7; deficit 24→18 (82) / 32→22 (78); blocking 0 both; words 59366+58199 (90/97%); one SIGUSR2 factory kill per subject, resumed",
+      "decision": "QUANTIFY",
+      "lesson": "Law obeyed on wrong ontology (J owned, GSBS moves unowned); mechanism rejected. Deficit fell both as side-channel. No restore. Carried forward: 043 law. Next: deficit residuals or prong-as-evidence repair."
+    },
+    {
+      "iter": "044",
+      "date": "2026-09-10",
+      "hypothesis": "awe grounding + prong ledger routing",
+      "component_changed": "prompts/style-guide.md + prompts/master-plan-skill-v2.md",
+      "predicted_impact": "deficit 18→≤13 / 22→≤16",
+      "judge_verdict": "Panel 70+58 Muse Spark: deficit 18→32 (68) / 22→30 (70); missing 11→8 / 1→1; partial 6→9 / 7→6; blocking 0 both; words 62791+54953; sugar plan-loop wedge (accepted plan recovered from traces)",
+      "decision": "QUANTIFY",
+      "lesson": "Awe unfired (card override); Change 2 backfired (limit-transplant hedges). Anatomy floor diagnosed. Restored: yes — PRIMARY worsened ≥ band both → factory+plans to 041 text. Next: anatomy floor / hedge guard."
+    },
+    {
+      "iter": "045",
+      "date": "2026-09-10",
+      "hypothesis": "anatomy reshape + clinician-ban reprise",
+      "component_changed": "prompts/style-guide.md + prompts/chapter-writer.md",
+      "predicted_impact": "deficit 32→≤24 / 30→≤22",
+      "judge_verdict": "Panel 62+58 Muse Spark: deficit 32→30 (70) / 30→26 (74); missing 8→5 / 1→3; partial 9→9 / 6→5; blocking 0 both; words 54268+57894; sugar traces/production plan wedge again",
+      "decision": "QUANTIFY",
+      "lesson": "Half-fired (rooms-form yes, presence still quoted); SUMMARY cap dropped at writer contract; clinician disobeyed once (model local); private vocab both (doctrine tension flagged). No restore. Consecutive no-KEEP: 4. Next: vocab discipline or SUMMARY cap+finding."
+    },
+    {
+      "iter": "046",
+      "date": "2026-09-11",
+      "hypothesis": "Fork-1 no-brand discipline + SUMMARY cap/finding",
+      "component_changed": "prompts/style-guide.md + prompts/chapter-writer.md + prompts/chapter-reviewer.md",
+      "predicted_impact": "deficit 30→≤22 / 26→≤19",
+      "judge_verdict": "Panel 54+58 Muse Spark: deficit 30→20 (80) / 26→28 (72); missing 5→5 / 3→4; partial 9→6 / 5→5; blocking 0 both; words 56339+59487; tight-shoes misfire confirmed; sugar wedge a third time",
+      "decision": "QUANTIFY",
+      "lesson": "All three edits verified firing; sugar band hit, smoking noise. No restore. Consecutive no-KEEP: 5 → convergence report + override continue. Next: REGISTER rule and/or smoking vintage."
+    },
+    {
+      "iter": "047",
+      "date": "2026-09-11",
+      "hypothesis": "Latinate ban + reviewer REGISTER finding",
+      "component_changed": "prompts/style-guide.md + prompts/chapter-reviewer.md",
+      "predicted_impact": "deficit 20→≤15 / 28→≤21",
+      "judge_verdict": "Panel 54+62 Muse Spark: deficit 20→35 (65) / 28→35 (65); missing 5→5 / 4→3; partial 6→5 / 5→3; blocking 0 both; words 58674+58603",
+      "decision": "QUANTIFY",
+      "lesson": "Mechanism caused shared harm (fragment avoidance, metaphor proliferation, card-routed advisories; blind gate). Restored: yes — PRIMARY worsened ≥ band both → 041 text. Next: fragment finding, debut relief, advisory-presence."
+    },
+    {
+      "iter": "048",
+      "date": "2026-09-11",
+      "hypothesis": "reviewer FRAGMENT finding + quota relief + silence line",
+      "component_changed": "prompts/chapter-reviewer.md + prompts/style-guide.md + prompts/chapter-writer.md",
+      "predicted_impact": "deficit 35→≤26 / 35→≤26",
+      "judge_verdict": "Panel 78+62 Muse Spark: deficit 35→28 (72) / 35→35 (65); missing 5→11 / 3→2; partial 5→10 / 3→3; blocking 0 both; words 60899+59301",
+      "decision": "QUANTIFY",
+      "lesson": "FRAGMENT fired both; quota half-relieved; Nipper back via restore-wipe + omitted rebuild (process failure); redefinition = brief doctrine, not defect. No restore. Consecutive no-KEEP: 7. Next: explicit rebuild list."
+    },
+    {
+      "iter": "049",
+      "date": "2026-09-11",
+      "hypothesis": "Fork-1 no-brand rebuild + craft-7 alignment",
+      "component_changed": "prompts/style-guide.md + prompts/chapter-writer.md",
+      "predicted_impact": "deficit 28→≤21 / 35→≤26",
+      "judge_verdict": "Panel 62+62 Muse Spark: deficit 28→30 (70) / 35→40 (60); missing 11→8 / 2→5; partial 10→6 / 3→5; blocking 0 both; words 65493+58475",
+      "decision": "QUANTIFY",
+      "lesson": "Rebuild fired both; deficits moved on new residuals (refrain family, drilled-you, vow clinician, headers). No restore (below band). Consecutive no-KEEP: 8. Next: 050 final."
+    },
+    {
+      "iter": "050",
+      "date": "2026-09-11",
+      "hypothesis": "chorus discipline + contradiction cleanup",
+      "component_changed": "prompts/style-guide.md (×2)",
+      "predicted_impact": "deficit 30→≤22 / 40→≤30",
+      "judge_verdict": "Panel 66+62 Muse Spark: deficit 30→58 (42) / 40→28 (72); missing 8→10 / 5→3; partial 6→9 / 5→5; blocking 0 both; words 57810+59740",
+      "decision": "QUANTIFY",
+      "lesson": "Smoking band-met on variance; sugar crashed on pre-existing CAPS law + ID override + overlap (050 edits exonerated). No restore. Consecutive no-KEEP: 9. Drive complete; CAMPAIGN-SUMMARY.md written."
+    }
+  ]
+}

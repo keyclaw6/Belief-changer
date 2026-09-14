@@ -1,8 +1,9 @@
-name: Verify and package v2
+name: Verify and package v2.1
 on:
   push:
-    branches: ["upgrade/truth-first-factory-v2"]
+    branches: ["main"]
   pull_request:
+    branches: ["main"]
   workflow_dispatch:
 permissions:
   contents: read
@@ -18,13 +19,13 @@ jobs:
       - name: End-to-end synthetic demo
         run: python3 scripts/factory.py demo --output "$RUNNER_TEMP/belief-v2-demo"
       - name: Package full repository without credentials or Git internals
-        run: python3 scripts/factory.py archive --output "$RUNNER_TEMP/Belief-changer-v2-full.zip"
+        run: python3 scripts/factory.py archive --output "$RUNNER_TEMP/Belief-changer-v2.1-clean.zip"
       - name: Upload verified full ZIP
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4, resolved at upgrade
         with:
-          name: Belief-changer-v2-full
+          name: Belief-changer-v2.1-clean
           path: |
-            ${{ runner.temp }}/Belief-changer-v2-full.zip
-            ${{ runner.temp }}/Belief-changer-v2-full.zip.json
+            ${{ runner.temp }}/Belief-changer-v2.1-clean.zip
+            ${{ runner.temp }}/Belief-changer-v2.1-clean.zip.json
           if-no-files-found: error
           retention-days: 14

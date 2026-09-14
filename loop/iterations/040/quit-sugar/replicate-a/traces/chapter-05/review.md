@@ -1,2 +1,0 @@
-REVISE
-HEADER — draft opens with workshop header `IN THIS CHAPTER`: "**IN THIS CHAPTER** — The three o'clock desk, the drawer and the fog; shoes a size too small; what the buzz really is; supper eaten blind; the deferred load faced and left"

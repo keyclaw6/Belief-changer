@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "status": "LEGACY_UNVALIDATED",
-  "release_eligible": false,
-  "original_commit": "cd730abc9d902f6394a529144ce54c400ae50751",
-  "note": "Historical manuscript/research preserved unchanged. Not a v2 evidence-approved run or efficacy claim."
+  "status": "LEGACY_RESEARCH_UNVALIDATED",
+  "generated_chapters": "removed from working tree by requested history compaction",
+  "recovery_commit": "6a90ffcdddad3c908144014cc41e51d693df7f9e",
+  "next": "Research must pass current access, coverage and independent evidence gates; regenerate a fresh v2 run."
 }

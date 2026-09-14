@@ -4,7 +4,7 @@
 Read AGENTS.md, docs/FACTORY-V2.md, factory/champion.json, the relevant immutable run/experiment registration and actual artifacts. Use CLI status/verify; do not infer completion from a marker in a conversation. The 000–050 campaign is closed. The upgrade authorizes code changes and offline tests, not new paid runs.
 
 ## Baseline and separate candidates
-There is no validated v2 champion yet. Preserve historical 037/043/046/050 books as candidates for investigation, not automatic winners. First prepare fresh v2 baseline/candidate runs with parent=null and obtain valid evidence, plan and publication audits. Both arms of an initial experiment must be completed and human-reviewed before any release; the same promotion gate applies even with a null initial parent.
+There is no validated v2 champion yet. Historical 037/043/046/050 books are recoverable from the pre-compaction Git commit, not working-tree candidates or automatic winners. First prepare fresh v2 baseline/candidate runs with parent=null and obtain valid evidence, plan and publication audits. Both arms of an initial experiment must be completed and human-reviewed before any release; the same promotion gate applies even with a null initial parent.
 
 A run snapshots brief, research, actual code, prompts and config. Changing anything upstream means a new run ID. A candidate can remain on an experimental branch after an inconclusive result, but factory/champion.json changes only through promote. No KEEP/QUANTIFY rule may silently modify that pointer.
 
@@ -29,3 +29,7 @@ If the champion changes, compare against the new real parent. Restoring files pl
 
 ## Next architectural study
 Test the four conditions documented in docs/EXPERIMENTS-AND-READERS.md: current/simplified contract × local/manuscript-informed editing, with matched research and plans, repeated independent generations, predeclared outcomes and held-out transfer. The v2 software is the new candidate architecture, not evidence that it wins.
+
+
+## Research-access gate (2026-09-11)
+Before the next real campaign, follow `docs/RESEARCH-ACCESS.md`: install the pinned Agent-Reach/OpenCLI/CloakBrowser tools, load NopeCHA, complete the authorized local X and Reddit logins, and run fresh live preflight for each subject. Every real `prepare` requires `--research-preflight`. Research expands to full web + substantial Reddit + substantial X passes; default added-effort allocation is 1:1:1, with documented subject-specific adjustment, never reduced general-web research. Browser access must use the dedicated CloakBrowser profile. Do not publish keys, cookie values or bulk recovery-thread captures. Offline fixtures remain credential-free and cannot certify live access.

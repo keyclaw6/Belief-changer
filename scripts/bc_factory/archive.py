@@ -7,12 +7,12 @@ import zipfile
 from pathlib import Path
 from .common import FactoryError, atomic_json, canonical, confined, file_hash, require
 
-OMIT_DIRS = {".git", "__pycache__", ".venv", "node_modules", ".codebase-memory-mcp", ".codex", "dist"}
+OMIT_DIRS = {".git", "__pycache__", ".venv", "node_modules", ".codebase-memory-mcp", ".codex", "dist", "venv", "profile", "browser-profile", "browser-profiles", ".agent-reach", ".opencli", "extensions", "research-runtime"}
 
 def excluded(rel: str) -> bool:
     p = Path(rel)
-    return (bool(set(p.parts) & OMIT_DIRS) or (p.name.startswith(".env") and p.name != ".env.example")
-            or p.name.endswith((".pem", ".key", ".pyc", ".partial")) or p.name in ("id_rsa", "id_ed25519", ".factory.lock"))
+    return (bool(p.parts and p.parts[0] in ("runs", "experiments")) or bool(set(p.parts) & OMIT_DIRS) or (p.name.startswith(".env") and p.name != ".env.example")
+            or p.name.endswith((".pem", ".key", ".pyc", ".partial")) or p.name in ("id_rsa", "id_ed25519", ".factory.lock", "cookies.json", "Cookies", "Login Data", "Local State", "storage-state.json", "credential.json", "research-preflight.local.json"))
 
 
 def build(repo: Path, output: Path) -> dict:
@@ -24,7 +24,7 @@ def build(repo: Path, output: Path) -> dict:
     else:
         # rglob does not descend into symlinked directories. Validate file links below.
         paths = sorted(p.relative_to(repo).as_posix() for p in repo.rglob("*") if (p.is_file() or p.is_symlink()) and not excluded(p.relative_to(repo).as_posix()))
-    paths = [p for p in paths if not excluded(p)]
+    paths = [p for p in paths if not excluded(p) and p != "ARCHIVE-MANIFEST.json"]
     require(bool(paths) and "scripts/factory.py" in paths, "No v2 source tree to archive")
     files = {}
     dereferenced_symlinks = {}

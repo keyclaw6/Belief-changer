@@ -1,2 +1,0 @@
-REVISE
-LENGTHEN to 5200±15% — Delivered 2754 words. Budget 5200. 0.85×5200=4420.

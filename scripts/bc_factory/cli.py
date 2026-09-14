@@ -24,7 +24,7 @@ def parser() -> argparse.ArgumentParser:
     sub = p.add_subparsers(dest="command", required=True)
     s = sub.add_parser("prepare", help="Freeze brief, research, code, prompts and config")
     s.add_argument("--run", required=True); s.add_argument("--brief", required=True); s.add_argument("--research", required=True)
-    s.add_argument("--parent"); s.add_argument("--fixture", action="store_true")
+    s.add_argument("--parent"); s.add_argument("--fixture", action="store_true"); s.add_argument("--research-preflight")
     s = sub.add_parser("task", help="Construct and freeze the next role's input without model calls")
     s.add_argument("--run", required=True); s.add_argument("--role", required=True)
     s.add_argument("--chapter", type=int); s.add_argument("--round", type=int, default=1); s.add_argument("--out")
@@ -54,6 +54,18 @@ def parser() -> argparse.ArgumentParser:
     sub.add_parser("archive").add_argument("--output", type=Path, required=True)
     s = sub.add_parser("demo", help="Offline two-chapter fixture pipeline, never publication evidence")
     s.add_argument("--output", type=Path, required=True)
+    s = sub.add_parser("research-bootstrap", help="Plan or explicitly install pinned research tools outside the repository")
+    s.add_argument("--apply", action="store_true")
+    s = sub.add_parser("research-login", help="Interactive authorized login in dedicated CloakBrowser")
+    s.add_argument("--allow-captcha", action="store_true")
+    s = sub.add_parser("research-preflight", help="Verify tools, logins, search, threads and CAPTCHA before a campaign")
+    s.add_argument("--subject", required=True); s.add_argument("--live", action="store_true")
+    s.add_argument("--allow-captcha", action="store_true"); s.add_argument("--out"); s.add_argument("--probe-query")
+    s = sub.add_parser("research-query", help="Read-only web/Reddit/X search or thread reading in CloakBrowser")
+    s.add_argument("--subject", required=True); s.add_argument("--lane", choices=("web","reddit","x"), required=True)
+    s.add_argument("--action", choices=("search","read"), required=True); s.add_argument("--value", required=True)
+    s.add_argument("--limit", type=int, default=10); s.add_argument("--preflight", required=True)
+    s.add_argument("--allow-captcha", action="store_true")
     return p
 
 
@@ -63,7 +75,7 @@ def main(argv: list[str] | None = None) -> int:
     try:
         cmd = args.command
         if cmd == "prepare":
-            root = prepare(repo, args.run, document(args.brief), document(args.research), args.parent, args.fixture)
+            root = prepare(repo, args.run, document(args.brief), document(args.research), args.parent, args.fixture, document(args.research_preflight) if args.research_preflight else None)
             result = {"status": "FROZEN", "run": str(root)}
         elif cmd == "task":
             result = Run(repo, args.run).task(args.role, args.chapter, args.round)
@@ -114,6 +126,18 @@ def main(argv: list[str] | None = None) -> int:
             result = {"status": "RECORDED", "task_hash": record["task_hash"]}
         elif cmd == "decide": result = experiments.decide(repo, args.experiment, document(args.calibration) if args.calibration else None)
         elif cmd == "promote": result = {"release": str(experiments.promote(repo, args.experiment, args.release, document(args.calibration), document(args.approval)))}
+        elif cmd == "research-bootstrap":
+            from .research_setup import bootstrap
+            result = bootstrap(repo, args.apply)
+        elif cmd == "research-login":
+            from .research_access import login
+            result = login(repo, args.allow_captcha)
+        elif cmd == "research-preflight":
+            from .research_access import preflight
+            result = preflight(repo, args.subject, args.live, args.allow_captcha, args.probe_query)
+        elif cmd == "research-query":
+            from .research_access import query
+            result = query(repo,args.subject,args.lane,args.action,args.value,args.limit,document(args.preflight),args.allow_captcha)
         elif cmd == "archive": result = archive.build(repo, args.output)
         elif cmd == "demo":
             from .demo import run_demo
@@ -124,11 +148,12 @@ def main(argv: list[str] | None = None) -> int:
             print(json.dumps({"written": str(Path(args.out).resolve())}))
         else:
             print(json.dumps(result, indent=2, ensure_ascii=False))
-        if result.get("status") == "INCOMPLETE" or result.get("decision") in ("INCONCLUSIVE", "REJECT"):
+        if result.get("status") in ("INCOMPLETE", "BLOCKED") or result.get("decision") in ("INCONCLUSIVE", "REJECT"):
             return 2
         return 0
-    except (FactoryError, FileNotFoundError, KeyError, TypeError, OSError) as exc:
-        print(json.dumps({"status": "ERROR", "error": str(exc)}, ensure_ascii=False), file=sys.stderr)
+    except Exception as exc:
+        from .research_access import safe_error
+        print(json.dumps({"status": "ERROR", "error": safe_error(exc)}, ensure_ascii=False), file=sys.stderr)
         return 2
 
 if __name__ == "__main__":

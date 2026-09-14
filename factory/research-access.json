@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "required_lanes": [
+    "web",
+    "reddit",
+    "x"
+  ],
+  "default_effort_weights": {
+    "web": 1,
+    "reddit": 1,
+    "x": 1
+  },
+  "preflight_max_age_hours": 24,
+  "browser": "cloakbrowser",
+  "headless": false,
+  "humanize": true,
+  "agent_reach_commit": "da5044d26fc6adddb6554d5679c94ac22e76e428",
+  "cloakbrowser_version": "0.5.10",
+  "opencli_version": "1.8.8",
+  "nopecha_version": "0.6.1",
+  "nopecha_asset_url": "https://github.com/NopeCHALLC/nopecha-extension/releases/download/0.6.1/chromium.zip",
+  "nopecha_sha256": "cfbbe7b3a3d28939abe92fd7b194ae89e39aad6a286d1df89b9eed9ea2bf612e",
+  "general_search_url": "https://www.bing.com/search?q={query}",
+  "request_timeout_s": 90,
+  "captcha_timeout_s": 120,
+  "min_request_interval_s": 3,
+  "note": "Pins are reviewed 2026-09-11. These are dependencies, not vendored binaries. Revalidate upgrades and actual site access before campaigns."
+}

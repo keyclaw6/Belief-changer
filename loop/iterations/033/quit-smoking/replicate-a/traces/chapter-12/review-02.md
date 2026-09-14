@@ -1,2 +1,0 @@
-REVISE
-HEADER — draft opens the body with workshop header `IN THIS CHAPTER` followed by "The quiet table, the stained fingers, the bitter ash and the stubbed end." Remove the header block; keep spoken body and the allowed numbered instruction at the end.

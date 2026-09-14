@@ -34,3 +34,13 @@ Automated validation enforces structure, scope declarations, artifact integrity 
 The external evaluator has not been chosen for the owner. Human calibration and qualified publication approval have not been invented. The legacy source corpus has not been reverified, and old manuscripts have not been silently rewritten. The new architecture's quality improvement must be measured in the next authorized controlled campaign. No medical/behavioral effectiveness claim follows from this upgrade.
 
 Verification results and the inspected commit/tree identities are recorded under reviews/v2-upgrade/. The full ZIP retains historical evidence under its existing rights while excluding credential files and Git internals.
+
+
+## v2.1 research access and compaction
+- `research_access.py`: mandatory CloakBrowser/NopeCHA session, read-only OpenCLI social commands, twelve real preflight checks, fresh subject/config binding, separate additive social coverage.
+- `research_setup.py`: isolated exact-version installs and SHA-verified NopeCHA ZIP, no silent account/credential extraction.
+- Research/evidence prompts: full web work retained; equally serious Reddit and X passes, thread context, counterexamples, subject-adaptive effort, no source-count inflation.
+- `loop/history/compaction.json`: removals and byte-identical preserved vision hashes. Exact historic decisions/hypotheses/change patches remain where supplied originally.
+- `scripts/publish_main.py`: guarded single-main publication with upstream-head checks and atomic branch deletion; no merge occurs until explicitly run with write credentials.
+
+The prior v2 verification report records its own point in time; its statement that all intermediate artifacts were then retained is historical, superseded by the owner's later compaction request. Current live browser/login/CAPTCHA status must be measured on the campaign host, never inferred from unit tests.

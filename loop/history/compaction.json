@@ -1,0 +1,31 @@
+{
+  "source_commit": "6a90ffcdddad3c908144014cc41e51d693df7f9e",
+  "original_tracked_files": 30837,
+  "removed_original_files": 30341,
+  "original_files_remaining": 496,
+  "historical_iterations_indexed": 51,
+  "preserved_vision_sha256": {
+    "docs/VISION.md": "2cfb360de1ba41e71d05849c89556cf27726896a148376c1801ff7a60a2568a8",
+    "docs/BOOK-FACTORY-VISION.md": "37f367bd489526f74b394ff0cdfd2331c453374cbe6677d94428c558f05baa7e",
+    "docs/AUTO-TUNING-LOOP.md": "158507e934b439534b560103ef0ccde2daaca8f45eb3d012b4070b86639153bb",
+    "archive/campaign-001-runtime/docs/VISION.md": "84427066d8f93bb95b03f888aefcced264e69312b7b297dd703b048fbd1e0ff8",
+    "archive/campaign-001-runtime/docs/BOOK-FACTORY-VISION.md": "eff70a7e4518493389fa51bb4bb395facefd5af125d52130b548fbd547adcd4b",
+    "archive/campaign-001-runtime/docs/AUTO-TUNING-LOOP.md": "607dc65fb602ea7f2ad8702657847e042518494bce05b78620c4b458f0450490"
+  },
+  "removed_categories": [
+    "repeated drafts, chapter outputs, assembled prompts and per-call traces",
+    "obsolete judge/preflight probe outputs",
+    "calibration trial drafts",
+    "duplicate archived runtime implementations",
+    "old generated production chapters and plans",
+    "superseded raw research-round staging and run logs"
+  ],
+  "retained": [
+    "verdicts, hypotheses, exact change patches, aggregate ledgers and learnings",
+    "current and original project vision/strategy",
+    "curated reusable research, source ledgers and references",
+    "active v2 code, tests, prompts and configurations"
+  ],
+  "history_rewrite": false,
+  "note": "Compaction applies to the current source tree. Git ancestors retain recovery data; use a shallow clone for a small checkout."
+}

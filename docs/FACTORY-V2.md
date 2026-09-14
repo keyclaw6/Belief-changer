@@ -134,3 +134,7 @@ The archive includes the full working source tree and retained historical resear
 ### Portable full-repository archives
 
 The ZIP builder materializes internal regular-file symlinks as copies of their targets, recording each alias in `ARCHIVE-MANIFEST.json`. This preserves the two historical reference aliases on systems that cannot restore ZIP symlinks. External, broken, directory and credential-targeting symlinks fail the archive build. Runtime run-input paths still reject all symlinks.
+
+
+## v2.1 mandatory research access
+Before every real `prepare`, complete docs/RESEARCH-ACCESS.md and supply `--research-preflight /external/path/subject-preflight.json`. Fill research.json.coverage with the separate web/Reddit/X/recovery-forum lanes. Earlier prepare examples above require this additional argument for non-fixture runs. Offline demonstrations remain fixtures. The repository now targets main only; old chapters and trial traces were compacted while decisions, changes, curated research and vision remain.

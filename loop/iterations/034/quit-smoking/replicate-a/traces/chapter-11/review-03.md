@@ -1,2 +1,0 @@
-REVISE
-HEADER — draft opens with workshop header `**IN THIS CHAPTER**` followed by index line `The pencil-marked diary, the brass lamp on the shelf, the cliff path in morning fog, the wedding toast after five months with no puff, quick answers scribbled on the back of a receipt` before spoken body. Remove header/index and open in spoken voice.

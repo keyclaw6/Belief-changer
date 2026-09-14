@@ -1,2 +1,0 @@
-REVISE
-HEADER — draft opens with workshop header `IN THIS CHAPTER` with bullet list "- Morning kitchen, kettle, plain bread and clear mouth" etc. before any spoken body. Remove header and enter in scene.

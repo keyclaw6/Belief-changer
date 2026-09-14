@@ -44,3 +44,35 @@ loop/iterations/*/factory-*.log
 .env.*
 !.env.example
 dist/
+
+# Research accounts and transient browser artifacts are local only.
+venv/
+browser-profile/
+browser-profiles/
+profile/
+research-runtime/
+.agent-reach/
+.opencli/
+extensions/
+cookies.json
+Cookies
+Login Data
+Local State
+storage-state.json
+credential.json
+research-preflight.local.json
+ARCHIVE-MANIFEST.json
+# Experiments retain compact verdict/change records in Git, not intermediate outputs.
+/loop/iterations/*/*/
+/loop/preflight/
+/calibration/runs/*/*/
+
+# Completed campaigns retain compact records; large active evidence is local or external.
+/runs/
+/experiments/
+/loop/preflight/*/
+/loop/iterations/*/traces/
+/loop/iterations/*/replicate-*/
+/loop/iterations/*/quit-*/
+/production-books/*/research/_rounds/
+ARCHIVE-MANIFEST.json

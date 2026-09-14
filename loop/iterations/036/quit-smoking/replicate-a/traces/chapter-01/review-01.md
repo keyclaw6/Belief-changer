@@ -1,2 +1,0 @@
-REVISE
-HEADER — draft opens with the workshop header `**IN THIS CHAPTER** / The staircase and the tight chest. The friend waiting at the top...` before any spoken body. Delete that preview box and open in spoken body; the closing `1. KEEP AN OPEN MIND / Give this book a fair hearing and it will free you.` plus rationale line is allowed and is not HEADER.

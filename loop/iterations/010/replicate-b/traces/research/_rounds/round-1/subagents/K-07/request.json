@@ -1,6 +1,0 @@
-{
-  "endpoint": "https://opencode.ai/zen/go/v1/chat/completions",
-  "model": "minimax-m3",
-  "auth": "[REDACTED]",
-  "reasoning_effort": "high"
-}

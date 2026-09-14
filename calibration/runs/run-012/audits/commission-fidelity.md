@@ -1,5 +1,0 @@
-- C-01 — FAITHFUL
-- C-02 — FAITHFUL
-- C-03 — FAITHFUL
-
-Set gate — ALL FAITHFUL

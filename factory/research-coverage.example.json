@@ -1,0 +1,48 @@
+{
+  "general_web_preserved": true,
+  "effort_weights": {
+    "web": 1,
+    "reddit": 1,
+    "x": 1
+  },
+  "allocation_reason": "Initial equal additional effort; adapt only after substantive subject discovery.",
+  "saturation_rationale": "REPLACE with actual objection/reader-situation coverage and remaining gaps.",
+  "lanes": {
+    "web": {
+      "queries": [
+        "REPLACE with actual executed query"
+      ],
+      "source_ids": [],
+      "unfilled_slots": [],
+      "access_failures": [],
+      "scarcity_reason": ""
+    },
+    "reddit": {
+      "queries": [
+        "REPLACE with actual executed query"
+      ],
+      "source_ids": [],
+      "unfilled_slots": [],
+      "access_failures": [],
+      "scarcity_reason": ""
+    },
+    "x": {
+      "queries": [
+        "REPLACE with actual executed query"
+      ],
+      "source_ids": [],
+      "unfilled_slots": [],
+      "access_failures": [],
+      "scarcity_reason": ""
+    },
+    "recovery_forums": {
+      "queries": [
+        "REPLACE with actual executed query"
+      ],
+      "source_ids": [],
+      "unfilled_slots": [],
+      "access_failures": [],
+      "scarcity_reason": ""
+    }
+  }
+}

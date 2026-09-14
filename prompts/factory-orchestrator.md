@@ -11,3 +11,7 @@ Read AGENTS.md, docs/FACTORY-V2.md and loop/PROGRAM.md. Work through explicit, i
 7. `verify --run ID` must exit zero before reporting factory completion. Its COMPLETE_UNRELEASED status is not publication or proof of effectiveness. The optimizer uses separate preregistered pairwise tasks and promotion gates.
 
 Roles return strict JSON; narrative prose remains natural in its text field. Store the actual model, family, route, harness and usage (null when unknown). External reviews must not fall back to the generating family. On context overflow, transport failure or invalid output, retain the failed unit as unfinished; never truncate inputs silently, print a success marker or skip ahead. Inspect `status`; do not infer success from file presence or elapsed time.
+
+
+## Research-access gate (2026-09-11)
+Before the next real campaign, follow `docs/RESEARCH-ACCESS.md`: install the pinned Agent-Reach/OpenCLI/CloakBrowser tools, load NopeCHA, complete the authorized local X and Reddit logins, and run fresh live preflight for each subject. Every real `prepare` requires `--research-preflight`. Research expands to full web + substantial Reddit + substantial X passes; default added-effort allocation is 1:1:1, with documented subject-specific adjustment, never reduced general-web research. Browser access must use the dedicated CloakBrowser profile. Do not publish keys, cookie values or bulk recovery-thread captures. Offline fixtures remain credential-free and cannot certify live access.

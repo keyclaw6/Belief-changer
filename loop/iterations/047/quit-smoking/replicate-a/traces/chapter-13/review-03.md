@@ -1,1 +1,0 @@
-REVISE INSTRUCTION I-10 rationale
