@@ -1,0 +1,126 @@
+{
+  "probe": "052-frozen-replay",
+  "head": "66967521d11e0b53ba6500071728c8cc1086e110",
+  "files": {
+    "production-books/quit-sugar/research/research-log.md": "d293d8fd8cf519b882cb4ee1607c824087bc430c155dda3b9371b77a18898782",
+    "production-books/quit-smoking/research/research-log.md": "17315ef977811b77a5a5facd35b786cbaa6fc64043fa2749d158608efdbf005d",
+    "production-books/quit-porn/research/research-log.md": "3c52f41c4ce54a97efe5d1e0c8801f2adf87fc59331c51565a026aa7aa5f1d71",
+    "production-books/quit-porn/research/sources/exa-neuroscience.md": "c6c8bce026f63a6c792f5050f227482187795e93b5c2a9d96b669c69122d3c45",
+    "production-books/quit-porn/research/scientific-evidence.md": "0cb3a874cc56533d5ee51740fdd0aef768cc01eadc8b8589de7e7a85bd65325f",
+    "production-books/quit-smoking/research/banks/bank-07-mechanism-science.md": "0720a578dfcca8377e747a32be6651902d4e626187b136b0a322c4bb7399e7c1",
+    "production-books/quit-smoking/research/sources/README.md": "bfec843020c59605c1ae6708f0c1c4750cd80275499752e3ca3b587eef853ac6",
+    "production-books/quit-sugar/STATUS.json": "90550c42982aaf618f39e03d62e2479bd7eeed5a04a2a4b195553fff24357943",
+    "scripts/bc_factory/schema.py": "04b08836f9ecb31f29ea4461520b186cb2031fb15bc00a759e4ab7f537ad673a",
+    "scripts/bc_factory/runs.py": "ee765994c295f8765ae57ca3184c1dea32e4b6ec8ea38dde3d086a8574c80614",
+    "scripts/bc_factory/research_access.py": "1b1c35d060e15339b23e801bdf187876e4b9cb3ae88cfa60403d297a51d41a20",
+    "scripts/bc_factory/demo.py": "9631cc9fa372fad99af2d546fe7af1fa1a48ef270906209369894ae036a6cc7d",
+    "prompts/evidence-reviewer.md": "bd6e76dd046cde74e76b4eb2b5f000e8b3272df0240d378d7730715f31c1861c",
+    "prompts/research-agent.md": "9b460945d73714ab8a80a5a31fad77067d53dbc1f8baf3338b3054b12df694f3",
+    "factory/research-coverage.example.json": "f0db7fe15053672e0452659332aecfe0c86c5657e6684edd446e84d485d2392a",
+    "loop/iterations/051/evidence.json": "10280d3edaa2b05615a6ff136f1bf60927c6308e69a70e3c008f2c7eb8a165d6"
+  },
+  "A1": {
+    "old_faithful_block": "FactoryError: Every lane needs actual exploratory queries",
+    "old_faithful_blocked": true,
+    "rights_label_still_blocked": "FactoryError: Every lane needs actual exploratory queries",
+    "rights_label_blocked": true,
+    "fig_leaf_one_query": null,
+    "fig_leaf_passes": true,
+    "preflight_status": "BLOCKED",
+    "preflight_all_false": true,
+    "validate_preflight_block": "FactoryError: Live research access preflight is required before a non-fixture run",
+    "prepare_no_preflight_block": "FactoryError: Preflight subject mismatch",
+    "no_run_created": true,
+    "positive_control_block": null,
+    "positive_control_passes": true,
+    "A1_HOLDS": true
+  },
+  "A2": {
+    "inventory": {
+      "M-013_Cochrane_quit-smoking_bank-07": {
+        "present": [
+          "claim",
+          "grade->?",
+          "scope->population?",
+          "permitted",
+          "prohibited",
+          "url->source",
+          "date"
+        ],
+        "absent_as_v2_judgments": [
+          "verification",
+          "counterevidence(list)",
+          "rights_basis",
+          "excerpt",
+          "retrieved_at(only 'retrieved DATE' sometimes)"
+        ],
+        "locator": "production-books/quit-smoking/research/banks/bank-07-mechanism-science.md:M-013"
+      },
+      "Pitchers-2010_quit-porn_exa-neuroscience": {
+        "present": [
+          "KEY_CLAIM",
+          "POPULATION/CONTEXT",
+          "GAP(caveat)",
+          "URL",
+          "DATE",
+          "STRENGTH",
+          "STANCE"
+        ],
+        "absent_as_v2_judgments": [
+          "verification",
+          "permitted_inference(bounded entailment)",
+          "prohibited_inferences(list)",
+          "counterevidence(list)",
+          "rights_basis",
+          "excerpt(verbatim)",
+          "retrieved_at"
+        ],
+        "locator": "production-books/quit-porn/research/sources/exa-neuroscience.md:5-13"
+      },
+      "S-012_locator-only_quit-smoking_sources-README": {
+        "present": [
+          "id",
+          "url",
+          "type"
+        ],
+        "absent_as_v2_judgments": [
+          "excerpt",
+          "retrieved_at",
+          "verification",
+          "all inference/counterevidence/rights fields"
+        ],
+        "locator": "production-books/quit-smoking/research/sources/README.md"
+      }
+    },
+    "key_absent_block": "FactoryError: source: missing=['counterevidence', 'excerpt', 'locator', 'permitted_inference', 'population', 'prohibited_inferences', 'retrieved_at', 'rights_basis', 'verification'], unknown=[]",
+    "key_absent_blocked": true,
+    "hollow_but_present_block": null,
+    "hollow_passes_schema": true,
+    "A2_HOLDS": true
+  },
+  "B": {
+    "caveated_passes_schema": true,
+    "caveated_block": null,
+    "overbroad_passes_schema": true,
+    "overbroad_block": null,
+    "adversarial_labeled_synthetic": true,
+    "planner_before_review_block": "FactoryError: Missing or symlinked file: /tmp/tmp1yyzwnac/repo/runs/overreach/results/evidence-reviewer-r01.json",
+    "planner_before_review_blocked": true,
+    "planner_after_revise_block": "FactoryError: Research needs independent evidence acceptance",
+    "planner_after_revise_blocked": true,
+    "accept_empty_findings_passes": "ACCEPT",
+    "planner_unblocked_after_accept": true,
+    "tests_asserting_inference_semantics": [],
+    "live_runs_in_tree": false,
+    "sequencing_forces_review": true,
+    "semantic_catch_untested": true,
+    "B_HOLDS": false
+  },
+  "verdict_rule": "SUPPORT iff A1 and A2 and B all hold; missing essential leg yields REFUTE",
+  "support_holds": false,
+  "verdict": "REFUTE",
+  "iteration": "052",
+  "generated_at_utc": "2026-09-14T22:15:40Z",
+  "probe_script_sha256": "24c8653cfe7ccb2d886af342359d3a77f1c6d2ea152a51525f7c8ee0fe690bef",
+  "probe_script_note": "Probe executed from /tmp (outside repo); stdout captured to /tmp/probe_052_out.json; this file is that stdout plus envelope."
+}

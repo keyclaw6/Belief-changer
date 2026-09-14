@@ -1,0 +1,296 @@
+{
+  "probe": "051-frozen-replay",
+  "head": "66967521d11e0b53ba6500071728c8cc1086e110",
+  "files": {
+    "042/decision.md": "a7150f75985c4bb5ff723685c2919e7bbda147d4e03f175346578cf6f2070bcd",
+    "042/hypothesis.md": "7f4052394b7699a7b395cc6400d46fd18a6bd4d0ac185c19abe3a8106cee8374",
+    "043/decision.md": "5efafbf78c74f5e9dca7d331c3ef6e41a49ce8d2cedef0e77d88ef672c2e15f6",
+    "043/hypothesis.md": "fb39d94cf5159991eaa63ea60ac6fc3c1ed9fc2ac02f624633705aa48f99389d",
+    "044/decision.md": "e2b049c5904edef402f6b5ae23a3acccc30ec297464613d9614cfed9c37727f2",
+    "044/hypothesis.md": "b01f516f5185d65acbdcf6989e85118a2adf7083fbff7c68d32548d972644a86",
+    "045/decision.md": "62f811879d80ef7640f78f8008c76588080273937620a7c700402d62552580c9",
+    "045/hypothesis.md": "e348204b23123383020b174e9ec9fd728f71e9580500f29e6680146fcc54187e",
+    "046/decision.md": "35c6948e1fef303d217563dbab25a9ec53fd21757337d1e9c5a2e3fa56c011d5",
+    "046/hypothesis.md": "1305f66ef49e679b0cb0f7f98ab61ddc562d3d31b5cf33535defe59159382374",
+    "047/decision.md": "7e8dadf705ec637d332cb5e2990c937523ef9fe2cf9f5ca8c05200e34e5cfbd7",
+    "047/hypothesis.md": "464dc7012d8537f33301bedda58cd88b63cc178bb23af59e735cfbdff85e7ff7",
+    "048/decision.md": "20f715f51d9e64284d3f1a07894ae7ae8628a2974f8fc7ec399a4146b5f0d40c",
+    "048/hypothesis.md": "5bf396fd7f07b7588ad602614bea8df650c4140686fc0dee669dab325b7ba1ba",
+    "049/decision.md": "32378b7379f368b9e3386eddc9e9339c3b0287171a3625b1bd86205402b02332",
+    "049/hypothesis.md": "7f1a8152ae3fbf928f899e18ca4b058078b83dfd57fba3270455505084d20e0e",
+    "050/decision.md": "3d2fd28458360bc602ceca7ee4fa75b19e182959f3350a638a91a54aca165707",
+    "050/hypothesis.md": "155f546d2a9acd992060db8040bcf78209f0a6befb9bb353e1bf55f20f6792df",
+    "scripts/bc_factory/experiments.py": "0bb51ca060c7518e492ec464b771206c7bbb6b96897bd779e3cba7bc40a09956",
+    "loop/results.tsv": "f30dde7e89f4909ecd3c804eb910d2d9ce6c86d591597ea85c3ab650f02864c3",
+    "factory/calibration.json": "a40aa174c9968fb6855166fd2f080214ca122e7601862bfaf5a733c16f983238",
+    "factory/champion.json": "d18aede83b9d9f6538ef9d5727c422437e35a0b8d53886c0cfd8500a88f6d2a0"
+  },
+  "series": {
+    "042": {
+      "sugar": [
+        40,
+        24
+      ],
+      "smoking": [
+        28,
+        32
+      ]
+    },
+    "043": {
+      "sugar": [
+        24,
+        18
+      ],
+      "smoking": [
+        32,
+        22
+      ],
+      "missing": {
+        "sugar": [
+          6,
+          11
+        ],
+        "smoking": [
+          2,
+          1
+        ]
+      }
+    },
+    "044": {
+      "sugar": [
+        18,
+        32
+      ],
+      "smoking": [
+        22,
+        30
+      ]
+    },
+    "045": {
+      "sugar": [
+        32,
+        30
+      ],
+      "smoking": [
+        30,
+        26
+      ]
+    },
+    "046": {
+      "sugar": [
+        30,
+        20
+      ],
+      "smoking": [
+        26,
+        28
+      ]
+    },
+    "047": {
+      "sugar": [
+        20,
+        35
+      ],
+      "smoking": [
+        28,
+        35
+      ]
+    },
+    "048": {
+      "sugar": [
+        35,
+        28
+      ],
+      "smoking": [
+        35,
+        35
+      ]
+    },
+    "049": {
+      "sugar": [
+        28,
+        30
+      ],
+      "smoking": [
+        35,
+        40
+      ]
+    },
+    "050": {
+      "sugar": [
+        30,
+        58
+      ],
+      "smoking": [
+        40,
+        28
+      ]
+    }
+  },
+  "primary_eval": {
+    "042": {
+      "kind": "deficit",
+      "sugar": "40->24 (target <=32): MET",
+      "smoking": "28->32 (target <=22): MISS",
+      "both": false,
+      "locator": "loop/iterations/042/hypothesis.md:Predicted impact"
+    },
+    "043": {
+      "kind": "missing",
+      "sugar": "6->11 (target <=4): MISS",
+      "smoking": "2->1 (target <=0): MISS",
+      "both": false,
+      "locator": "loop/iterations/043/hypothesis.md:Predicted impact"
+    },
+    "044": {
+      "kind": "deficit",
+      "sugar": "18->32 (target <=13): MISS",
+      "smoking": "22->30 (target <=16): MISS",
+      "both": false,
+      "locator": "loop/iterations/044/hypothesis.md:Predicted impact"
+    },
+    "045": {
+      "kind": "deficit",
+      "sugar": "32->30 (target <=24): MISS",
+      "smoking": "30->26 (target <=22): MISS",
+      "both": false,
+      "locator": "loop/iterations/045/hypothesis.md:Predicted impact"
+    },
+    "046": {
+      "kind": "deficit",
+      "sugar": "30->20 (target <=22): MET",
+      "smoking": "26->28 (target <=19): MISS",
+      "both": false,
+      "locator": "loop/iterations/046/hypothesis.md:Predicted impact"
+    },
+    "047": {
+      "kind": "deficit",
+      "sugar": "20->35 (target <=15): MISS",
+      "smoking": "28->35 (target <=21): MISS",
+      "both": false,
+      "locator": "loop/iterations/047/hypothesis.md:Predicted impact"
+    },
+    "048": {
+      "kind": "deficit",
+      "sugar": "35->28 (target <=26): MISS",
+      "smoking": "35->35 (target <=26): MISS",
+      "both": false,
+      "locator": "loop/iterations/048/hypothesis.md:Predicted impact"
+    },
+    "049": {
+      "kind": "deficit",
+      "sugar": "28->30 (target <=21): MISS",
+      "smoking": "35->40 (target <=26): MISS",
+      "both": false,
+      "locator": "loop/iterations/049/hypothesis.md:Predicted impact"
+    },
+    "050": {
+      "kind": "deficit",
+      "sugar": "30->58 (target <=22): MISS",
+      "smoking": "40->28 (target <=30): MET",
+      "both": false,
+      "locator": "loop/iterations/050/hypothesis.md:Predicted impact"
+    }
+  },
+  "gate": {
+    "wilson_lower_3_3": 0.4385029682449545,
+    "wilson_lower_2_2": 0.3423802275066531,
+    "wilson_lower_9_9": 0.700854951580456,
+    "production_file_sha256": "0bb51ca060c7518e492ec464b771206c7bbb6b96897bd779e3cba7bc40a09956",
+    "all_below_half": true,
+    "nine_of_nine_passes": true,
+    "calibration_status": "PENDING_REAL_HUMAN_CALIBRATION",
+    "calibration_pending": true,
+    "champion_status": "NO_VALIDATED_V2_CHAMPION"
+  },
+  "baseline_041": {
+    "sugar": 40,
+    "smoking": 28
+  },
+  "F1_zero_of_nine_both_met": true,
+  "F2_exhibit": {
+    "sugar_delta": 28,
+    "smoking_delta": -12,
+    "opposite_sign": true,
+    "exoneration_quoted": true,
+    "locator": "loop/iterations/050/decision.md:12-40"
+  },
+  "F3_no_accumulation": {
+    "sugar_041": 40,
+    "sugar_050": 58,
+    "smoking_041": 28,
+    "smoking_050": 28,
+    "sugar_worse": true,
+    "smoking_flat_or_worse": true
+  },
+  "concordance": {
+    "042": {
+      "sugar_delta": -16,
+      "smoking_delta": 4,
+      "concordant": false
+    },
+    "043": {
+      "sugar_delta": -6,
+      "smoking_delta": -10,
+      "concordant": true
+    },
+    "044": {
+      "sugar_delta": 14,
+      "smoking_delta": 8,
+      "concordant": true
+    },
+    "045": {
+      "sugar_delta": -2,
+      "smoking_delta": -4,
+      "concordant": true
+    },
+    "046": {
+      "sugar_delta": -10,
+      "smoking_delta": 2,
+      "concordant": false
+    },
+    "047": {
+      "sugar_delta": 15,
+      "smoking_delta": 7,
+      "concordant": true
+    },
+    "048": {
+      "sugar_delta": -7,
+      "smoking_delta": 0,
+      "concordant": false
+    },
+    "049": {
+      "sugar_delta": 2,
+      "smoking_delta": 5,
+      "concordant": true
+    },
+    "050": {
+      "sugar_delta": 28,
+      "smoking_delta": -12,
+      "concordant": false
+    }
+  },
+  "A3": {
+    "strongest_old_both_books_drop": {
+      "iter": "010",
+      "class": "factory-speech blocking",
+      "sugar": "18->6 (-12)",
+      "smoking": "19->8 (-11)",
+      "locator": "loop/history/campaign-001.json:110-111"
+    },
+    "regen_swing": {
+      "sugar": 28,
+      "smoking": 12,
+      "locator": "loop/iterations/050/decision.md:12-20"
+    },
+    "old_exceeds_new": false,
+    "caveat": "cross-instrument comparison (census noted counts vs Carr-distance deficit); weak leg, reported only"
+  },
+  "support_holds": true,
+  "falsified": false,
+  "verdict": "SUPPORT",
+  "iteration": "051",
+  "generated_at_utc": "2026-09-14T22:07:49Z",
+  "probe_script_sha256": "18c1986117f676b84cca90ac2d0dbd5dc576b0571e6cbca88d2bb3b30ea051c5",
+  "probe_script_note": "Probe executed from /tmp (outside repo); stdout captured to /tmp/probe_051_out.json; this file is that stdout plus envelope."
+}

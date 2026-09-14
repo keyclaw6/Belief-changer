@@ -33,7 +33,7 @@ def main():
             errors.append('External profile duplicates generating family')
     history = ROOT/'loop/iterations'
     if history.exists():
-        allowed = {'decision.md','hypothesis.md','change.diff','CAMPAIGN-SUMMARY.md','convergence-report.md'}
+        allowed = {'decision.md','hypothesis.md','change.diff','CAMPAIGN-SUMMARY.md','convergence-report.md','evidence.json'}
         for path in history.rglob('*'):
             if path.is_file() and (len(path.relative_to(history).parts)!=2 or path.name not in allowed):
                 errors.append('Intermediate campaign artifact re-entered source tree: '+str(path.relative_to(ROOT)))
