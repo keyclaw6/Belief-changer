@@ -3,6 +3,12 @@
 ## Recovery and authorization
 Read AGENTS.md, docs/FACTORY-V2.md, factory/champion.json, the relevant immutable run/experiment registration and actual artifacts. Use CLI status/verify; do not infer completion from a marker in a conversation. The 000–050 campaign is closed. The upgrade authorizes code changes and offline tests, not new paid runs.
 
+
+## Execution ownership for auto-research iterations
+When an auto-research iteration is explicitly authorized, one persistent factory/OpenCode executor owns the entire creation pipeline. The orchestrator starts or resumes that executor, then stays hands-off while it is healthy. Evidence-review revisions, plan-review revisions, chapter rewrites, state updates and editor loops are expected autonomous factory work; they are not heartbeat intervention points.
+
+The heartbeat may inspect progress, but must not become a shadow writer or manually synthesize normal stage outputs. It intervenes only to repair a genuine execution failure (tooling, auth, provider, browser, parser, session, or a mechanical deadlock / fail-closed violation), and then resumes the SAME durable session from existing artifacts. At the boundary where both complete books for an iteration are assembled, audited and verified, the supervisor performs the independent judgment/quality-gate work and selects one generalizable learning intervention for the next iteration.
+
 ## Baseline and separate candidates
 There is no validated v2 champion yet. Historical 037/043/046/050 books are recoverable from the pre-compaction Git commit, not working-tree candidates or automatic winners. First prepare fresh v2 baseline/candidate runs with parent=null and obtain valid evidence, plan and publication audits. Both arms of an initial experiment must be completed and human-reviewed before any release; the same promotion gate applies even with a null initial parent.
 
@@ -32,4 +38,4 @@ Test the four conditions documented in docs/EXPERIMENTS-AND-READERS.md: current/
 
 
 ## Research-access gate (2026-09-11)
-Before the next real campaign, follow `docs/RESEARCH-ACCESS.md`: verify live read behavior (general web, Reddit, X) over the default bridge route or, where needed, install the pinned Agent-Reach/OpenCLI/CloakBrowser tools, load NopeCHA, complete the authorized local X and Reddit logins, and run fresh live preflight for each subject. Every real `prepare` requires `--research-preflight`. Research expands to full web + substantial Reddit + substantial X passes; default added-effort allocation is 1:1:1, with documented subject-specific adjustment, never reduced general-web research. Browser access must use the dedicated CloakBrowser profile. Do not publish keys, cookie values or bulk recovery-thread captures. Offline fixtures remain credential-free and cannot certify live access.
+Before the next real campaign, follow `docs/RESEARCH-ACCESS.md`: verify live read behavior (general web, Reddit, X) over the default bridge route or, where needed, install the pinned Agent-Reach/OpenCLI/CloakBrowser tools, load NopeCHA, complete the authorized local X and Reddit logins, and run fresh live preflight for each subject. Every real `prepare` requires `--research-preflight`. Research expands to full web + substantial Reddit + substantial X passes; default added-effort allocation is 1:1:1, with documented subject-specific adjustment, never reduced general-web research. Browser access uses the working signed-in Chromium/OpenCLI bridge by default; the dedicated CloakBrowser profile is an optional fallback for constrained hosts. Do not publish keys, cookie values or bulk recovery-thread captures. Offline fixtures remain credential-free and cannot certify live access.
