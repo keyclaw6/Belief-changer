@@ -23,7 +23,7 @@ Pinned dependencies are in `factory/research-access.json`:
 |---|---|---|
 | Agent-Reach | `da5044d26fc6adddb6554d5679c94ac22e76e428` | Official GitHub commit, not the unrelated PyPI name |
 | CloakBrowser Python wrapper | `0.5.10` | Exact package version; its own verified browser download |
-| OpenCLI | `1.8.8` | Exact `@jackwener/opencli` package |
+| OpenCLI | `1.8.7` | Exact `@jackwener/opencli` package |
 | NopeCHA | `0.6.1` | Official `chromium.zip`, SHA-256 checked before extraction |
 
 Browser and extension binaries are **not bundled**. Their licenses and service terms remain upstream's; the wrapper being open source does not relicense its separately distributed browser. CloakBrowser's current binary may need its own license/sign-in, and NopeCHA needs working service quota. No purchases or subscriptions are made automatically. Update pins deliberately, rerun tests and repeat live preflight; do not silently install “latest.”

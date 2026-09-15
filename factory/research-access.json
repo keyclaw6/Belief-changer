@@ -16,7 +16,7 @@
   "humanize": true,
   "agent_reach_commit": "da5044d26fc6adddb6554d5679c94ac22e76e428",
   "cloakbrowser_version": "0.5.10",
-  "opencli_version": "1.8.8",
+  "opencli_version": "1.8.7",
   "nopecha_version": "0.6.1",
   "nopecha_asset_url": "https://github.com/NopeCHALLC/nopecha-extension/releases/download/0.6.1/chromium.zip",
   "nopecha_sha256": "cfbbe7b3a3d28939abe92fd7b194ae89e39aad6a286d1df89b9eed9ea2bf612e",
