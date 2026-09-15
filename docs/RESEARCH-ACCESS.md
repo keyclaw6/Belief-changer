@@ -2,7 +2,18 @@
 
 ## Required architecture
 
-Agent-Reach is the discovery/installation/diagnostic layer. Its selected **OpenCLI** backend performs Reddit and X searches, authenticated identity checks and thread/comment reads. These commands connect by **local CDP to a dedicated CloakBrowser persistent profile**, not the user's normal Chrome session. **NopeCHA's Chromium extension is mandatory** in that profile. None of this promises that every website or private recovery community is accessible. Respect permissions, rate limits, source rights, service terms and access denials. No posts, votes, follows, comments, private messages, joins or account creation are automated by this integration.
+Agent-Reach is the discovery/installation/diagnostic layer. The default **bridge**
+route performs real read-only behavior checks with the working signed-in
+Chromium/OpenCLI setup: plain-HTTPS general-web search/read plus direct
+OpenCLI Reddit and X authenticated identity checks, searches and
+thread/comment reads. The **CloakBrowser** persistent profile with the
+**NopeCHA** extension remains an optional alternative route
+(`--via cloak`) for constrained hosts; it never blocks READY when the
+required behaviors are already live over the bridge. These commands never
+bypass access controls: none of this promises that every website or private
+recovery community is accessible. Respect permissions, rate limits, source
+rights, service terms and access denials. No posts, votes, follows, comments,
+private messages, joins or account creation are automated by this integration.
 
 The initial research allocation is **full general web + an equally substantial Reddit pass + an equally substantial X pass** (1:1:1 added effort, not splitting the old budget). Independent recovery forums, primary science, blogs and long-form testimony remain in scope. Read the research prompt for subject-adaptive gap filling, countercases and provenance. A platform's poor yield can justify reallocation after real searches, but an expired login or CAPTCHA cannot be called scarcity.
 
@@ -23,7 +34,7 @@ Pinned dependencies are in `factory/research-access.json`:
 |---|---|---|
 | Agent-Reach | `da5044d26fc6adddb6554d5679c94ac22e76e428` | Official GitHub commit, not the unrelated PyPI name |
 | CloakBrowser Python wrapper | `0.5.10` | Exact package version; its own verified browser download |
-| OpenCLI | `1.8.7` | Exact `@jackwener/opencli` package |
+| OpenCLI | `1.8.7` minimum floor | Exact `@jackwener/opencli` package; the gate tests behavior, so newer releases must not block READY |
 | NopeCHA | `0.6.1` | Official `chromium.zip`, SHA-256 checked before extraction |
 
 Browser and extension binaries are **not bundled**. Their licenses and service terms remain upstream's; the wrapper being open source does not relicense its separately distributed browser. CloakBrowser's current binary may need its own license/sign-in, and NopeCHA needs working service quota. No purchases or subscriptions are made automatically. Update pins deliberately, rerun tests and repeat live preflight; do not silently install “latest.”
@@ -54,7 +65,13 @@ PREFLIGHT="$BC_RESEARCH_HOME/quit-smoking-preflight.json"
   --subject quit-smoking --live --allow-captcha --out "$PREFLIGHT"
 ```
 
-Exit 0 / `READY` requires **all twelve** checks: Agent-Reach pinned origin and doctor; actual CloakBrowser launch; NopeCHA loaded; successful challenge on NopeCHA's own demo; general-web search and read; Reddit authenticated identity/search/thread read; X authenticated identity/search/thread read. Auth identities and raw excerpts are not written in this report. The default access probe searches the subject with slug separators converted to spaces. A documented `--probe-query "broader topic"` can check technical access for an exceptionally sparse subject; record it honestly and still research the actual subject separately. Reports are bound to subject/configuration and expire after 24 hours. A package install, extension manifest or “doctor succeeded” alone cannot pass the gate.
+Exit 0 / `READY` requires every check on the selected route: the eight
+bridge behavior checks (general-web search and read; Reddit authenticated
+identity/search/thread read; X authenticated identity/search/thread read),
+or, with `--via cloak`, all twelve cloak checks (bridge eight plus
+Agent-Reach pinned origin and doctor, actual CloakBrowser launch, NopeCHA
+loaded, and a successful challenge on NopeCHA's own demo). Auth identities
+and raw excerpts are not written in this report. The default access probe searches the subject with slug separators converted to spaces. A documented `--probe-query "broader topic"` can check technical access for an exceptionally sparse subject; record it honestly and still research the actual subject separately. Reports are bound to subject/configuration and expire after 24 hours. A package install, extension manifest or “doctor succeeded” alone cannot pass the gate.
 
 Calling without `--live` writes a `BLOCKED` report and exits 2. Failed tools, incorrect versions, missing keys, expired sessions, unresolved challenges and rate/access failures block the campaign. Fix locally and rerun. There are no silent browser/account fallbacks and no aggressive retry storms. Upstream API/DOM changes may require a reviewed adapter update; preflight is designed to expose them before a campaign spends on books.
 

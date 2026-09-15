@@ -58,14 +58,15 @@ def parser() -> argparse.ArgumentParser:
     s.add_argument("--apply", action="store_true")
     s = sub.add_parser("research-login", help="Interactive authorized login in dedicated CloakBrowser")
     s.add_argument("--allow-captcha", action="store_true")
-    s = sub.add_parser("research-preflight", help="Verify tools, logins, search, threads and CAPTCHA before a campaign")
+    s = sub.add_parser("research-preflight", help="Verify live search/thread reads work before a campaign")
     s.add_argument("--subject", required=True); s.add_argument("--live", action="store_true")
     s.add_argument("--allow-captcha", action="store_true"); s.add_argument("--out"); s.add_argument("--probe-query")
-    s = sub.add_parser("research-query", help="Read-only web/Reddit/X search or thread reading in CloakBrowser")
+    s.add_argument("--via", choices=("bridge", "cloak"))
+    s = sub.add_parser("research-query", help="Read-only web/Reddit/X search or thread reading")
     s.add_argument("--subject", required=True); s.add_argument("--lane", choices=("web","reddit","x"), required=True)
     s.add_argument("--action", choices=("search","read"), required=True); s.add_argument("--value", required=True)
     s.add_argument("--limit", type=int, default=10); s.add_argument("--preflight", required=True)
-    s.add_argument("--allow-captcha", action="store_true")
+    s.add_argument("--allow-captcha", action="store_true"); s.add_argument("--via", choices=("bridge", "cloak"))
     return p
 
 
@@ -134,10 +135,10 @@ def main(argv: list[str] | None = None) -> int:
             result = login(repo, args.allow_captcha)
         elif cmd == "research-preflight":
             from .research_access import preflight
-            result = preflight(repo, args.subject, args.live, args.allow_captcha, args.probe_query)
+            result = preflight(repo, args.subject, args.live, args.allow_captcha, args.probe_query, args.via)
         elif cmd == "research-query":
             from .research_access import query
-            result = query(repo,args.subject,args.lane,args.action,args.value,args.limit,document(args.preflight),args.allow_captcha)
+            result = query(repo,args.subject,args.lane,args.action,args.value,args.limit,document(args.preflight),args.allow_captcha,args.via)
         elif cmd == "archive": result = archive.build(repo, args.output)
         elif cmd == "demo":
             from .demo import run_demo

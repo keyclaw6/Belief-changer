@@ -24,6 +24,10 @@ class Base(unittest.TestCase):
         return {'schema_version':1,'subject':subject,'created_at':datetime.now(timezone.utc).isoformat(),
                 'config_sha256':digest(self.c),'status':'READY','live':True,
                 'checks':{c:True for c in A.CHECKS},'failures':[],'tools':{'fixture':'mocked; not live'}}
+    def bridge_report(self,subject='practice-belief'):
+        return {'schema_version':1,'subject':subject,'created_at':datetime.now(timezone.utc).isoformat(),
+                'config_sha256':digest(self.c),'status':'READY','live':True,'via':'bridge',
+                'checks':{c:True for c in A.BRIDGE_CHECKS},'failures':[],'tools':{'fixture':'mocked; not live'}}
     def dossier(self):
         b,r,_=inputs(); src=r['sources'][0]
         r['sources']=[]; lanes={}
@@ -82,6 +86,10 @@ class AccessContractTests(Base):
         for data in ([],[{}],{'error':'auth'},{'success':False},[{'status':'ok'}],{'username':'anon','authenticated':False}):
             with self.assertRaises(FactoryError):A.rows(data)
     def test_nested_results_parsed(self):self.assertEqual(A.rows({'data':{'rows':[{'text':'Actual text'}]}}),[{'text':'Actual text'}])
+    def test_field_value_auth_accepted(self):
+        self.assertEqual(A.auth_rows([{'field':'Username','value':'u/test'},{'field':'ID','value':'t2_x'}]),[{'username':'u/test'}])
+        with self.assertRaises(FactoryError):A.auth_rows([{'field':'Username','value':' '}])
+        with self.assertRaises(FactoryError):A.auth_rows([{'field':'Karma','value':'1'}])
     def test_first_canonical_post_url(self):self.assertEqual(A.first_url([{'id':'t3_abc123'}],'reddit'),'https://www.reddit.com/comments/abc123')
     def test_redacts_keys_and_setup_url(self):
         with patch.dict(os.environ,{'NOPECHA_API_KEY':'local-secret-value'}):
@@ -113,31 +121,66 @@ class PreflightTests(Base):
             r=self.report();r[key]=value
             with self.assertRaises(FactoryError):A.validate_preflight(r,self.c,'practice-belief')
     def test_doctor_alone_cannot_pass(self):
-        with patch.object(A,'installed',return_value={'doctor':'ok'}),patch.object(A,'CloakSession',side_effect=FactoryError('Missing browser')):
-            report=A.preflight(self.repo,'practice-belief',True,True)
-        self.assertEqual(report['status'],'BLOCKED');self.assertTrue(report['checks']['agent_reach']);self.assertFalse(report['checks']['x_auth'])
-    def test_mocked_full_live_probe_calls_all_lanes(self):
-        class Browser:
-            browser_version='synthetic';calls=[]
-            def __init__(self,*args):pass
-            def __enter__(self):return self
-            def __exit__(self,*args):pass
-            def captcha_probe(self):self.calls.append('captcha')
-            def read_web(self,*args):self.calls.append('web_read');return {'text':'Test'}
-            def search_web(self,*args):self.calls.append('web_search');return [{'url':'https://example.org'}]
-            def social(self,lane,action,*args):
-                self.calls.append(lane+'_'+action)
-                return [{'id':'abc123' if lane=='reddit' else '123','text':'Test-only mocked content'}]
-        with patch.object(A,'installed',return_value={'doctor':'mock'}),patch.object(A,'CloakSession',Browser):
-            r=A.preflight(self.repo,'practice-belief',True,True)
-        self.assertEqual(r['status'],'READY');self.assertEqual(len(Browser.calls),9)
-    def test_failed_auth_blocks_read_and_campaign(self):
-        from contextlib import nullcontext
         from unittest.mock import Mock
-        b=Mock();b.browser_version='synthetic';b.social.side_effect=FactoryError('Expired login')
-        with patch.object(A,'installed',return_value={}),patch.object(A,'CloakSession',return_value=nullcontext(b)):
-            r=A.preflight(self.repo,'practice-belief',True,True)
-        self.assertEqual(r['status'],'BLOCKED');self.assertFalse(r['checks']['x_read']);self.assertFalse(r['checks']['reddit_read'])
+        version = Mock(returncode=0, stdout='opencli 1.8.7')
+        with patch.object(A, 'command', return_value=version), \
+             patch.object(A, 'bridge_social', side_effect=FactoryError('Expired login')), \
+             patch.object(A, 'bridge_search_web', return_value=[{'title': 't', 'url': 'https://example.org'}]), \
+             patch.object(A, 'bridge_read_web', return_value={'url': 'https://example.com/', 'title': 't', 'text': 'x' * 50, 'retrieved_at': '', 'truncated': False}):
+            report = A.preflight(self.repo, 'practice-belief', True, True)
+        self.assertEqual(report['status'], 'BLOCKED')
+        self.assertTrue(report['checks']['web_search'])
+        self.assertFalse(report['checks']['x_auth'])
+    def test_mocked_full_live_probe_calls_all_lanes(self):
+        from unittest.mock import Mock
+        calls = []
+        def social(c, state, lane, action, *args):
+            calls.append(lane + '_' + action)
+            return [{'id': 'abc123' if lane == 'reddit' else '123', 'text': 'Test-only mocked content'}]
+        def web_search(c, query, limit=10):
+            calls.append('web_search')
+            return [{'title': 't', 'url': 'https://example.org'}]
+        def web_read(c, url):
+            calls.append('web_read')
+            return {'url': url, 'title': 't', 'text': 'x' * 50, 'retrieved_at': '', 'truncated': False}
+        version = Mock(returncode=0, stdout='opencli 1.8.7')
+        with patch.object(A, 'command', return_value=version), \
+             patch.object(A, 'bridge_social', side_effect=social), \
+             patch.object(A, 'bridge_search_web', side_effect=web_search), \
+             patch.object(A, 'bridge_read_web', side_effect=web_read):
+            r = A.preflight(self.repo, 'practice-belief', True, True)
+        self.assertEqual(r['status'], 'READY')
+        self.assertEqual(r['via'], 'bridge')
+        self.assertEqual(len(calls), 8)
+    def test_failed_auth_blocks_read_and_campaign(self):
+        from unittest.mock import Mock
+        version = Mock(returncode=0, stdout='opencli 1.8.7')
+        with patch.object(A, 'command', return_value=version), \
+             patch.object(A, 'bridge_search_web', return_value=[{'title': 't', 'url': 'https://example.org'}]), \
+             patch.object(A, 'bridge_read_web', return_value={'url': 'x', 'title': 't', 'text': 'y' * 50, 'retrieved_at': '', 'truncated': False}), \
+             patch.object(A, 'bridge_social', side_effect=FactoryError('Expired login')):
+            r = A.preflight(self.repo, 'practice-belief', True, True)
+        self.assertEqual(r['status'], 'BLOCKED')
+        self.assertFalse(r['checks']['x_read'])
+        self.assertFalse(r['checks']['reddit_read'])
+    def test_opencli_minimum_floor(self):
+        from unittest.mock import Mock
+        self.assertTrue(A.version_tuple('opencli 1.8.9') >= A.version_tuple('1.8.7'))
+        self.assertFalse(A.version_tuple('opencli 1.8.6') >= A.version_tuple('1.8.7'))
+        self.c['opencli_version'] = '9.9.9'
+        (self.repo / 'factory/research-access.json').write_text(json.dumps(self.c))
+        version = Mock(returncode=0, stdout='opencli 1.8.7')
+        with patch.object(A, 'command', return_value=version):
+            r = A.preflight(self.repo, 'practice-belief', True, True)
+        self.assertEqual(r['status'], 'BLOCKED')
+        self.assertIn('minimum', r['failures'][0])
+    def test_bridge_ready_report_validates(self):
+        A.validate_preflight(self.bridge_report(), self.c, 'practice-belief')
+    def test_cloak_report_without_via_still_validates(self):
+        A.validate_preflight(self.report(), self.c, 'practice-belief')
+    def test_query_route_mismatch_rejected(self):
+        with self.assertRaises(FactoryError):
+            A.query(self.repo, 'practice-belief', 'web', 'search', 'test', 5, self.bridge_report(), True, via='cloak')
     def test_real_prepare_cannot_skip_preflight(self):
         b,r=self.dossier()
         with self.assertRaises(FactoryError):prepare(self.repo,'blocked',b,r,fixture=False)

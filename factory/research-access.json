@@ -11,7 +11,7 @@
     "x": 1
   },
   "preflight_max_age_hours": 24,
-  "browser": "cloakbrowser",
+  "browser": "bridge",
   "headless": false,
   "humanize": true,
   "agent_reach_commit": "da5044d26fc6adddb6554d5679c94ac22e76e428",
@@ -24,5 +24,5 @@
   "request_timeout_s": 90,
   "captcha_timeout_s": 120,
   "min_request_interval_s": 3,
-  "note": "Pins are reviewed 2026-09-11. These are dependencies, not vendored binaries. Revalidate upgrades and actual site access before campaigns."
+  "note": "Capability-based gate: preflight passes on real web/Reddit/X read behavior over the bridge route (opencli_version is a minimum floor, 1.8.7 verified published 2026-09-15). CloakBrowser/Agent-Reach/NopeCHA pins remain exact and are enforced only when the optional cloak route is used. Revalidate upgrades and actual site access before campaigns."
 }

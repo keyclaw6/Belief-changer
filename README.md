@@ -18,7 +18,7 @@ The demo uses synthetic responses and makes no model calls. Its outputs cannot b
 
 ## Research access and clean publication
 
-Read **docs/RESEARCH-ACCESS.md** before the next campaign. Agent-Reach, OpenCLI, CloakBrowser and NopeCHA are integrated with explicit local setup, authorized logins and twelve real access checks. Research adds serious Reddit and X passes without reducing general-web effort.
+Read **docs/RESEARCH-ACCESS.md** before the next campaign. The default bridge route verifies real web/Reddit/X read behavior; Agent-Reach, OpenCLI, CloakBrowser and NopeCHA remain available as an optional `--via cloak` route with explicit local setup, authorized logins and twelve real access checks. Research adds serious Reddit and X passes without reducing general-web effort.
 
 For this delivered upgrade, **docs/PUBLISH-MAIN.md** explains the guarded, tested publication command. It merges the known campaign/upgrade ancestry into main and removes the two old remote branches atomically only after verification; merely downloading this archive does not change GitHub.
 
