@@ -227,10 +227,11 @@ class Run:
     def validate_output(self, task: dict, output: dict) -> None:
         role, inputs = task["role"], task["inputs"]
         if role in REVIEW_ROLES:
-            source_text = (inputs["assembled_book"] if role == "final-auditor" else
-                           inputs["draft"]["text"] if role == "chapter-reviewer" else
-                           json.dumps(inputs.get("plan", self.research), ensure_ascii=False))
-            validate_review(output, source_text, final=role == "final-auditor")
+            # Finding quotes may come from any reviewed input (brief, plan, draft,
+            # research); only final-audit claim checks are bound to the book text.
+            inputs_text = json.dumps(inputs, ensure_ascii=False)
+            book_text = inputs["assembled_book"] if role == "final-auditor" else None
+            validate_review(output, inputs_text, final=role == "final-auditor", claim_text=book_text)
             if role == "evidence-reviewer" and output["verdict"] == "ACCEPT" and not self.manifest["fixture"]:
                 require(all(e["verification"] != "unverified" for e in self.research["sources"]), "Unverified sources cannot pass live evidence review; verify retrieval and prepare a new run")
             if role == "final-auditor":

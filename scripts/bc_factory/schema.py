@@ -118,7 +118,7 @@ def validate_plan(p: dict, brief: dict, research: dict) -> None:
                 require(bool(s["evidence_ids"]), "Sourced scene needs evidence")
 
 
-def validate_review(r: dict, source_text: str, final: bool = False) -> None:
+def validate_review(r: dict, source_text: str, final: bool = False, claim_text: str | None = None) -> None:
     required = {"schema_version", "verdict", "checks", "findings"}
     if final:
         required |= {"claim_checks", "screening_resolutions"}
@@ -144,7 +144,7 @@ def validate_review(r: dict, source_text: str, final: bool = False) -> None:
         for c in r["claim_checks"]:
             exact_keys(c, {"quote", "evidence_ids", "support", "explanation"}, label="claim check")
             nonempty(c["quote"], "Checked claim")
-            require(c["quote"] in source_text, "Audited claim not present in final book")
+            require(c["quote"] in (claim_text if claim_text is not None else source_text), "Audited claim not present in final book")
             require(c["support"] in ("supported", "bounded", "nonempirical", "unsupported"), "Invalid support status")
             nonempty(c["explanation"], "Support explanation")
             require(isinstance(c["evidence_ids"], list), "Claim IDs must be a list")

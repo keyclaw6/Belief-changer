@@ -92,6 +92,17 @@ class SchemaTests(Base):
     def test_invented_review_quote_rejected(self):
         r=accepted();r['verdict']='REVISE';r['findings']=[{'kind':'OVERCLAIM','severity':'critical','quote':'not here','explanation':'Overclaim','repair':'Narrow'}]
         with self.assertRaises(FactoryError): validate_review(r,'actual text')
+    def test_finding_may_quote_any_reviewed_input(self):
+        r=accepted();r['verdict']='REVISE';r['findings']=[{'kind':'SCOPE','severity':'material','quote':'brief goal','explanation':'Scope','repair':'Narrow'}]
+        validate_review(r,'{"brief": "brief goal", "research": "actual text"}')
+        with self.assertRaises(FactoryError): validate_review(r,'{"research": "actual text"}')
+    def test_final_claims_stay_bound_to_book_text(self):
+        r=accepted();r['verdict']='REVISE';r['findings']=[{'kind':'EVIDENCE','severity':'material','quote':'brief goal','explanation':'Gap','repair':'Add'}]
+        r['claim_checks']=[{'quote':'book sentence','evidence_ids':[],'support':'nonempirical','explanation':'Logic'}]
+        r['screening_resolutions']={}
+        validate_review(r,'{"brief": "brief goal"}',final=True,claim_text='book sentence')
+        with self.assertRaises(FactoryError):
+            validate_review(r,'{"brief": "brief goal"}',final=True,claim_text='other text')
     def test_unknown_json_finding_rejected(self):
         r=accepted();r['verdict']='REVISE';r['findings']=[{'kind':'SUPERSTYLE','severity':'minor','quote':'text','explanation':'x','repair':'x'}]
         with self.assertRaises(FactoryError): validate_review(r,'text')
