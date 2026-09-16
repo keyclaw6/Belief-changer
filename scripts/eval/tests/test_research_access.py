@@ -217,11 +217,30 @@ class PreflightTests(Base):
             with patch.object(A, 'command', return_value=self.ddg([])):
                 with self.assertRaises(FactoryError):
                     A.bridge_search_web(self.c, Path(self.temp.name), 'q', 3)
-            for bad in (0, 1001, '-x'):
+            for bad in (0, 101, 1001):
                 with self.assertRaises(FactoryError):
                     A.bridge_search_web(self.c, Path(self.temp.name), 'q', bad)
             with self.assertRaises(FactoryError):
                 A.bridge_search_web(self.c, Path(self.temp.name), '   ', 3)
+    def test_web_limit_above_contract_rejected_explicitly(self):
+        # The bounded 1..100 contract must fail loudly, never silently truncate.
+        with patch.object(A, 'tool', return_value='opencli'):
+            with self.assertRaises(FactoryError) as ctx:
+                A.bridge_search_web(self.c, Path(self.temp.name), 'quit smoking', 150)
+            self.assertIn('1..100', str(ctx.exception))
+    def test_query_string_cannot_become_cli_options(self):
+        with patch.object(A, 'tool', return_value='opencli'):
+            with self.assertRaises(FactoryError):
+                A.bridge_search_web(self.c, Path(self.temp.name), '--post', 3)
+            with self.assertRaises(FactoryError):
+                A.bridge_search_web(self.c, Path(self.temp.name), '  --limit 5', 3)
+        rows = [{'rank': 1, 'title': 't', 'url': 'https://example.org/a', 'snippet': 's', 'resultType': 'web'}]
+        with patch.object(A, 'tool', return_value='opencli') as tool, \
+             patch.object(A, 'command', return_value=self.ddg(rows)) as cmd:
+            out = A.bridge_search_web(self.c, Path(self.temp.name), 'quit-smoking relapse', 3)
+        self.assertEqual(out, [{'title': 't', 'url': 'https://example.org/a'}])
+        argv = cmd.call_args.args[0]
+        self.assertEqual(argv.count('quit-smoking relapse'), 1)
     def test_structured_web_search_paginates(self):
         from unittest.mock import Mock
         page = lambda n: [{'rank': n + i, 'title': f't{n + i}', 'url': f'https://example.org/{n + i}',
@@ -248,6 +267,15 @@ class PreflightTests(Base):
         A.validate_preflight(self.bridge_report(), self.c, 'practice-belief')
     def test_cloak_report_without_via_still_validates(self):
         A.validate_preflight(self.report(), self.c, 'practice-belief')
+    def test_bridge_backend_labels_truthful_per_action(self):
+        state = Path(self.temp.name) / 'state'
+        with patch.object(A, 'state_root', return_value=state), \
+             patch.object(A, 'bridge_search_web', return_value=[{'title': 't', 'url': 'https://example.org'}]) as sw, \
+             patch.object(A, 'bridge_read_web', return_value={'url': 'https://example.org/', 'title': 't', 'text': 'x' * 50, 'retrieved_at': '', 'truncated': False}):
+            out = A.query(self.repo, 'practice-belief', 'web', 'search', 'q', 5, self.bridge_report(), True)
+            self.assertEqual(out['backend'], 'bridge/opencli-duckduckgo')
+            out = A.query(self.repo, 'practice-belief', 'web', 'read', 'https://example.org/', 5, self.bridge_report(), True)
+            self.assertEqual(out['backend'], 'bridge/direct-https')
     def test_query_route_mismatch_rejected(self):
         with self.assertRaises(FactoryError):
             A.query(self.repo, 'practice-belief', 'web', 'search', 'test', 5, self.bridge_report(), True, via='cloak')

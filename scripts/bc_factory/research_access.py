@@ -258,11 +258,12 @@ def bridge_social(c: dict, state: Path, lane: str, action: str, value: str = '',
 def bridge_search_web(c: dict, state: Path, query: str, limit: int = 10) -> list[dict]:
     """General-web search through the reviewed structured OpenCLI DuckDuckGo
     adapter (rank/title/url/snippet rows), never by parsing search-engine HTML.
-    Paginates the adapter's 10-row pages up to the requested limit. Fails
-    closed on transport errors, malformed JSON, error envelopes and unusable
-    rows; an empty usable set is an access/degradation signal, never scarcity."""
+    Genuinely paginates the adapter's 10-row pages up to the requested limit
+    within the bounded 1..100 contract. Fails closed on transport errors,
+    malformed JSON, error envelopes and unusable rows; an empty usable set is
+    an access/degradation signal, never scarcity."""
     require(bool(query.strip()), 'Search query required')
-    require(type(limit) is int and 1 <= limit <= 1000, 'Web search limit must be 1..1000')
+    require(type(limit) is int and 1 <= limit <= 100, 'Web search limit must be 1..100')
     query_text = query.strip()
     require(not query_text.startswith('-'), 'Nonempty query required; command options are not queries')
     usable, seen_urls, offset = [], set(), 0
@@ -602,11 +603,17 @@ def query(repo: Path,subject: str,lane: str,action: str,value: str,limit: int,re
     require(type(limit) is int and 1<=limit<=1000, 'Per-request limit must be 1..1000')
     use_via = via or report.get('via', 'cloak')
     require(use_via == report.get('via', 'cloak'), 'Query route must match the frozen preflight route')
+    if use_via == 'bridge' and lane == 'web' and action == 'search':
+        require(limit <= 100, 'Bridge web search limit must be 1..100; page further with repeated bounded queries')
     if use_via == 'bridge':
         state = state_root(repo)
         if lane == 'web':
-            data = bridge_search_web(c, state, value, limit) if action == 'search' else bridge_read_web(c, value)
-            backend = 'bridge/direct-https'
+            if action == 'search':
+                data = bridge_search_web(c, state, value, limit)
+                backend = 'bridge/opencli-duckduckgo'
+            else:
+                data = bridge_read_web(c, value)
+                backend = 'bridge/direct-https'
         else:
             data = bridge_social(c, state, lane, action, value, limit)
             backend = 'bridge/opencli+signed-chromium'
