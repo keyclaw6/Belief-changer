@@ -443,6 +443,26 @@ class RunTests(Base):
         self.assertEqual((run.root / "book.md").read_bytes(), book_before)
     def front_revise(self, run, quote="Examine what one unsuccessful attempt can logically establish"):
         return self.to_book_revise(run, quote=quote)
+    def test_retitle_repairs_rendered_header(self):
+        run = self.newrun()
+        self.to_book_revise(run)
+        run.submit(run.task("book-editor", round_no=2), {"schema_version": 2, "operations": [
+            {"op": "retitle", "chapter": "chapter-01", "title": "Repaired Header",
+             "reason": "Audit repair."}],
+            "explanation": "Header fix."}, metadata())
+        second = run.assemble()
+        self.assertIn("## 1. Repaired Header", second["assembly"]["text"])
+        self.assertNotIn("## 1. What follows", second["assembly"]["text"])
+        v1 = unseal(run.root / "assembly/assembly-r01.json")
+        self.assertIn("## 1. What follows", v1["text"])
+        with self.assertRaises(FactoryError):
+            run.submit(run.task("book-editor", round_no=3), {"schema_version": 2, "operations": [
+                {"op": "retitle", "chapter": "chapter-99", "title": "Nope",
+                 "reason": "Bad chapter."}], "explanation": "Must fail."}, metadata())
+        with self.assertRaises(FactoryError):
+            run.submit(run.task("book-editor", round_no=3), {"schema_version": 2, "operations": [
+                {"op": "retitle", "chapter": "chapter-01", "title": "   ",
+                 "reason": "Empty title."}], "explanation": "Must fail."}, metadata())
     def test_front_matter_repair_converges_in_lineage(self):
         run = self.newrun()
         first = self.front_revise(run)

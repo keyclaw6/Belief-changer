@@ -84,6 +84,15 @@ def edit_book(chapters: list[dict], response: dict) -> list[dict]:
             first["source_chapters"] += second["source_chapters"]
             first["claim_map"] += second["claim_map"]
             result.remove(second)
+        elif op["op"] == "retitle":
+            # Rendered chapter headers come from plan cards, so an auditor-flagged
+            # header wording is otherwise unrepairable in-run. Retitle changes only
+            # the assembly rendering, never the frozen plan.
+            exact_keys(op, {"op", "chapter", "title", "reason"})
+            c = get(op["chapter"])
+            require(isinstance(op["title"], str) and bool(op["title"].strip()), "Retitle must be nonempty")
+            require(op["title"] != c["title"], "Retitle must change the header")
+            c["title"] = op["title"]
         else:
             require(False, f"Unknown editorial operation: {op['op']}")
     require(bool(result), "An editor cannot remove the entire book")
