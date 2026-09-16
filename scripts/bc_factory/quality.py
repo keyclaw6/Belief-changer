@@ -50,6 +50,20 @@ def edit_book(chapters: list[dict], response: dict) -> list[dict]:
     return result
 
 
+KIND_LABELS = {"research": "Research synthesis", "lived_experience": "First-person report",
+               "authority": "Official or organizational guidance", "illustration": "Illustration"}
+
+
+def reader_locator(locator: str) -> str:
+    """Reader-facing retrieval note: keep method/provenance, drop internal envelope/ledger filenames."""
+    text = re.sub(r"\s*[;,]?\s*(?:retrieval\s+)?envelope\s+\S+?\.json", "", locator)
+    text = re.sub(r"\s*[;,]?\s*ledger\s+\S+?\.json", "", text)
+    text = re.sub(r"\(\s*[;,]", "(", text)
+    text = re.sub(r"[;,]\s*\)", ")", text)
+    text = re.sub(r"\(\s*\)", "", text)
+    return re.sub(r"\s+", " ", text).strip()
+
+
 def assemble_book(brief: dict, research: dict, plan: dict, chapters: list[dict]) -> str:
     n = brief["narrator"]
     if n["mode"] == "informed_author":
@@ -67,8 +81,8 @@ def assemble_book(brief: dict, research: dict, plan: dict, chapters: list[dict])
     for i, c in enumerate(chapters, 1):
         sections += [f"## {i}. {c['title']}", c["text"].strip()]
     sections += ["## Source notes", "Source notes distinguish reports, research, and illustrations. Inclusion is not a claim that a source proves every inference in this book."]
-    for e in research["sources"]:
-        sections.append(f"### {e['id']} — {e['kind']}\n{e['source']}\nLocator: {e['locator']}\nScope: {e['population']}\nSupported use: {e['permitted_inference']}")
+    for num, e in enumerate(research["sources"], 1):
+        sections.append(f"{num}. {KIND_LABELS.get(e['kind'], e['kind'])} — {e['source']}\nRetrieval: {reader_locator(e['locator'])}\nScope: {e['population']}\nSupported use: {e['permitted_inference']}")
     return "\n\n".join(sections).rstrip() + "\n"
 
 

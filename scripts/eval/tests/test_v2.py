@@ -343,6 +343,15 @@ class EditingAndProviderTests(Base):
         text=assemble_book(b,self.research,self.plan,[{'title':'Chapter','text':'Actual text'}])
         self.assertLess(text.index('IMPORTANT TEST ADVISORY'),text.index('Actual text'))
         self.assertIn('Source notes',text)
+    def test_source_notes_are_reader_facing(self):
+        b=copy.deepcopy(self.brief)
+        r=copy.deepcopy(self.research)
+        r['sources'][0]['locator']='Example review (abstract via example; envelope test-capture.json; ledger test-ledger.json)'
+        text=assemble_book(b,r,self.plan,[{'title':'Chapter','text':'Actual text'}])
+        notes=text[text.index('Source notes'):]
+        self.assertNotIn(r['sources'][0]['id'],notes)
+        self.assertNotIn('.json',notes)
+        self.assertIn('abstract via example',notes)
     def test_no_paid_call_without_flag(self):
         with patch('urllib.request.urlopen') as call:
             with self.assertRaises(FactoryError): execute({'role':'writer'},read_json(self.repo/'factory/config.json'))
