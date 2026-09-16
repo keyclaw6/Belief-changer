@@ -9,6 +9,10 @@ When an auto-research iteration is explicitly authorized, one persistent factory
 
 The heartbeat may inspect progress, but must not become a shadow writer or manually synthesize normal stage outputs. It intervenes only to repair a genuine execution failure (tooling, auth, provider, browser, parser, session, or a mechanical deadlock / fail-closed violation), and then resumes the SAME durable session from existing artifacts. At the boundary where both complete books for an iteration are assembled, audited and verified, the supervisor performs the independent judgment/quality-gate work and selects one generalizable learning intervention for the next iteration.
 
+The persistent OpenCode job's configured controller model is part of that execution identity. Do not switch it to work around provider/context trouble unless the owner explicitly authorizes a model change.
+
+Evidence research has a finite convergence loop. A non-ACCEPT evidence review is repaired in a new immutable research snapshot using `prepare --research-revision-of PRIOR_RUN`; this carries the previous independent findings forward. Successor review first checks that finite blocking set. It does not reopen repaired findings or introduce release-stage/title/manuscript requirements. New findings beyond the inherited set are reserved for newly revealed critical truth/safety contradictions. Gaps in adjacent topics that can be safely excluded from the eventual plan are non-blocking open questions, not reasons to keep widening research.
+
 ## Baseline and separate candidates
 There is no validated v2 champion yet. Historical 037/043/046/050 books are recoverable from the pre-compaction Git commit, not working-tree candidates or automatic winners. First prepare fresh v2 baseline/candidate runs with parent=null and obtain valid evidence, plan and publication audits. Both arms of an initial experiment must be completed and human-reviewed before any release; the same promotion gate applies even with a null initial parent.
 

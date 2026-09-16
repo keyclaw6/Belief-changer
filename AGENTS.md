@@ -23,6 +23,10 @@ A heartbeat/orchestrator is a lightweight supervisor, not a writer or stage oper
 
 Intervene only when the autonomous run has actually stopped or is mechanically unable to proceed because of infrastructure/tooling/provider/browser/authentication/parser/session failure, or when it is violating fail-closed rules, fabricating outputs, or otherwise no longer executing the defined pipeline. Repair the smallest underlying failure and resume the SAME durable executor/session from its existing immutable state. Never solve a broken stage by manufacturing the stage output yourself.
 
+Never change the persistent OpenCode controller model as a recovery shortcut. Preserve the model recorded for the durable job/session unless the owner explicitly asks for a model change. A provider/context failure should be diagnosed or compacted/retried on that configured model; do not silently substitute another model.
+
+Research revision must converge. If independent evidence review returns `REVISE` or `BLOCKED`, any successor research snapshot must be prepared with `--research-revision-of PRIOR_RUN`. That freezes the prior independent findings into the successor evidence-review task. The evidence gate asks whether the dossier can support at least one bounded safe plan; it must not demand downstream manuscript/title/publication artifacts or exhaustively research adjacent topics that the plan can exclude. The prior review is the finite blocking set; a successor reviewer may widen it only for a newly revealed critical truth/safety contradiction.
+
 The supervisor becomes substantively active again at complete-book / complete-iteration boundaries: inspect the assembled books and audit artifacts, run or inspect the independent blinded/reversed judgment round, assess order effects/grounding/variance, and make the single high-information learning decision that governs the next iteration. This boundary is intentional: the factory creates; the supervisor repairs infrastructure and judges finished iterations.
 
 ## Research and publication

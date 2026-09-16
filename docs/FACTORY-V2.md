@@ -73,6 +73,17 @@ Metadata has exactly model, family, route, harness, usage and latency_s. Do not 
 
 Sequence: evidence-reviewer → planner → plan-reviewer. Then for each chapter: writer → chapter-reviewer → state-editor. Then book-editor → assemble → final-auditor → verify.
 
+The evidence reviewer is a **bounded-plan readiness gate**, not a publication audit. It asks whether the frozen brief/research can support at least one safe evidence-honest plan. It must not require downstream manuscript/title/trademark/publication-clearance artifacts, and adjacent unsupported topics may be excluded rather than researched forever. Open questions can remain when they are outside the bounded argument.
+
+If evidence review is `REVISE` or `BLOCKED` and research must change, preserve the failed run and prepare the revised dossier as a successor with:
+
+```bash
+python3 scripts/factory.py prepare --run NEW-ID --brief BRIEF --research REVISED-RESEARCH \
+  --research-preflight PREFLIGHT --research-revision-of PRIOR-RUN
+```
+
+This freezes the previous independent evidence review into the successor task. The successor reviewer first verifies that finite blocking set and must not move the goalposts with new nice-to-have research; genuinely new findings are limited to newly revealed critical truth/safety contradictions. An accepted evidence review cannot be used as a research-revision parent.
+
 ```bash
 python3 scripts/factory.py task --run baseline-topic-a --role writer --chapter 1 --out /tmp/writer.json
 python3 scripts/factory.py task --run baseline-topic-a --role chapter-reviewer --chapter 1 --out /tmp/review.json

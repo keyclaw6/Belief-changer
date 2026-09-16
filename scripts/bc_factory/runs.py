@@ -28,11 +28,27 @@ def active_files(repo: Path) -> list[str]:
 
 
 def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | None = None,
-            fixture: bool = False, research_preflight: dict | None = None) -> Path:
+            fixture: bool = False, research_preflight: dict | None = None,
+            research_revision_of: str | None = None) -> Path:
     repo = repo.resolve()
     identifier(run_id)
     if parent is not None:
         identifier(parent)
+    evidence_feedback = None
+    if research_revision_of is not None:
+        identifier(research_revision_of)
+        prior = Run(repo, research_revision_of)
+        require(prior.brief["subject"] == brief.get("subject"), "Research revision subject mismatch")
+        prior_result = prior.result("evidence-reviewer")
+        require(prior_result["output"]["verdict"] != "ACCEPT",
+                "Accepted evidence needs no research-revision successor")
+        result_path = prior.root / "results/evidence-reviewer-r01.json"
+        evidence_feedback = {
+            "source_run": research_revision_of,
+            "source_result_sha256": file_hash(result_path),
+            "review": prior_result["output"],
+            "reviewer_metadata": prior_result["metadata"],
+        }
     validate_brief(brief)
     validate_research(research, brief)
     if not fixture:
@@ -58,6 +74,8 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
                 atomic_bytes(root / "inputs" / name, canonical(data) + b"\n")
             if research_preflight is not None:
                 atomic_bytes(root / "inputs/research-preflight.json", canonical(research_preflight) + b"\n")
+            if evidence_feedback is not None:
+                atomic_bytes(root / "inputs/evidence-feedback.json", canonical(evidence_feedback) + b"\n")
             rev = subprocess.run(["git", "rev-parse", "HEAD"], cwd=repo, capture_output=True, text=True)
             manifest = {"schema_version": 2, "run_id": run_id, "subject": brief["subject"],
                         "created_at": now(), "parent": parent, "fixture": fixture,
@@ -65,7 +83,9 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
                         "factory_files": entries, "factory_digest": digest(entries),
                         "brief_sha256": file_hash(root / "inputs/brief.json"),
                         "research_sha256": file_hash(root / "inputs/research.json"),
-                        "research_preflight_sha256": file_hash(root / "inputs/research-preflight.json") if research_preflight is not None else None}
+                        "research_preflight_sha256": file_hash(root / "inputs/research-preflight.json") if research_preflight is not None else None,
+                        "research_revision_of": research_revision_of,
+                        "evidence_feedback_sha256": file_hash(root / "inputs/evidence-feedback.json") if evidence_feedback is not None else None}
             seal(root / "manifest.json", manifest)
     except BaseException:
         # Preserve unfinished input files for diagnosis; a missing manifest prevents use.
@@ -88,6 +108,15 @@ class Run:
             require(file_hash(path) == self.manifest[f"{name}_sha256"], f"Frozen {name} changed")
         if self.manifest.get("research_preflight_sha256"):
             require(file_hash(self.root / "inputs/research-preflight.json") == self.manifest["research_preflight_sha256"], "Frozen research preflight changed")
+        if self.manifest.get("evidence_feedback_sha256"):
+            require(file_hash(self.root / "inputs/evidence-feedback.json") == self.manifest["evidence_feedback_sha256"], "Frozen evidence feedback changed")
+            self.evidence_feedback = read_json(self.root / "inputs/evidence-feedback.json")
+            require(self.evidence_feedback.get("source_run") == self.manifest.get("research_revision_of"), "Evidence-feedback lineage mismatch")
+            require(self.evidence_feedback.get("review", {}).get("verdict") in ("REVISE", "BLOCKED"), "Research revision needs prior non-ACCEPT feedback")
+            validate_metadata(self.evidence_feedback.get("reviewer_metadata", {}))
+        else:
+            self.evidence_feedback = None
+            require(self.manifest.get("research_revision_of") is None, "Research-revision lineage is missing evidence feedback")
         self.brief = read_json(self.root / "inputs/brief.json")
         self.research = read_json(self.root / "inputs/research.json")
         validate_brief(self.brief)
@@ -161,6 +190,12 @@ class Run:
         inputs = {"brief": self.brief, "research": self.research}
         if role == "evidence-reviewer":
             require(round_no == 1, "Research revision requires a new snapshot/run")
+            if self.evidence_feedback is not None:
+                inputs["previous_evidence_review"] = self.evidence_feedback["review"]
+                inputs["previous_evidence_review_source"] = {
+                    "source_run": self.evidence_feedback["source_run"],
+                    "source_result_sha256": self.evidence_feedback["source_result_sha256"],
+                }
         else:
             evidence = self.deps_add(deps, "evidence-reviewer")
             require(evidence["verdict"] == "ACCEPT", "Research needs independent evidence acceptance")

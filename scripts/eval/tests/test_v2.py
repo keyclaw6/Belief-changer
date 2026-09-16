@@ -185,7 +185,44 @@ class RunTests(Base):
         (self.repo/'prompts/evidence-reviewer.md').write_text('different live prompt')
         self.assertEqual(run.task('evidence-reviewer'),task)
     def test_no_plan_before_research_review(self):
-        with self.assertRaises(FactoryError): self.newrun().task('planner')
+        run=self.newrun()
+        task=run.task('evidence-reviewer')
+        self.assertEqual(set(task['inputs']), {'brief','research'})
+        with self.assertRaises(FactoryError): run.task('planner')
+    def test_evidence_reviewer_contract_is_bounded_and_convergent(self):
+        contract=(self.repo/'prompts/evidence-reviewer.md').read_text()
+        for phrase in ('bounded-plan readiness gate', 'do not create findings that require',
+                       'previous_evidence_review', 'finite blocking set',
+                       'not exhaustive coverage of every adjacent subtopic'):
+            self.assertIn(phrase, contract)
+    def test_research_revision_carries_finite_prior_feedback(self):
+        run=self.newrun('r1')
+        review=accepted();review['verdict']='REVISE';review['checks']['completeness']=False
+        review['findings']=[{'kind':'EVIDENCE','severity':'material','quote':'',
+                            'explanation':'One load-bearing evidence gap remains.',
+                            'repair':'Add or explicitly scope out that one gap.'}]
+        run.submit(run.task('evidence-reviewer'),review,metadata(True))
+        prepare(self.repo,'r2',self.brief,self.research,fixture=True,research_revision_of='r1')
+        successor=Run(self.repo,'r2');task=successor.task('evidence-reviewer')
+        self.assertEqual(task['inputs']['previous_evidence_review'],review)
+        self.assertEqual(task['inputs']['previous_evidence_review_source']['source_run'],'r1')
+        self.assertEqual(successor.manifest['research_revision_of'],'r1')
+        self.assertTrue(successor.manifest['evidence_feedback_sha256'])
+    def test_research_revision_of_accepted_review_is_rejected(self):
+        run=self.newrun('r1')
+        run.submit(run.task('evidence-reviewer'),accepted(),metadata(True))
+        with self.assertRaises(FactoryError):
+            prepare(self.repo,'r2',self.brief,self.research,fixture=True,research_revision_of='r1')
+    def test_research_revision_feedback_is_immutable(self):
+        run=self.newrun('r1')
+        review=accepted();review['verdict']='BLOCKED';review['checks']['truth']=False
+        review['findings']=[{'kind':'EVIDENCE','severity':'critical','quote':'',
+                            'explanation':'Required evidence cannot currently support the brief.',
+                            'repair':'Repair the finite blocking evidence set.'}]
+        run.submit(run.task('evidence-reviewer'),review,metadata(True))
+        prepare(self.repo,'r2',self.brief,self.research,fixture=True,research_revision_of='r1')
+        p=self.repo/'runs/r2/inputs/evidence-feedback.json';p.write_text('{}')
+        with self.assertRaises(FactoryError): Run(self.repo,'r2')
     def test_same_family_evidence_reviewer_blocked(self):
         run=self.newrun()
         with self.assertRaises(FactoryError): run.submit(run.task('evidence-reviewer'),accepted(),metadata())
