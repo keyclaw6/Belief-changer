@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "max_rounds": 4,
+  "max_rounds": 6,
   "profiles": {
     "factory": {
       "adapter": "http",

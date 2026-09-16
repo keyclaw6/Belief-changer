@@ -223,6 +223,53 @@ class RunTests(Base):
         prepare(self.repo,'r2',self.brief,self.research,fixture=True,research_revision_of='r1')
         p=self.repo/'runs/r2/inputs/evidence-feedback.json';p.write_text('{}')
         with self.assertRaises(FactoryError): Run(self.repo,'r2')
+    def test_revision_rounds_carry_cumulative_history(self):
+        run=self.newrun()
+        run.submit(run.task('evidence-reviewer'),accepted(),metadata(True))
+        revise=accepted();revise['verdict']='REVISE';revise['checks']['argument']=False
+        revise['findings']=[{'kind':'JOB','severity':'material','quote':'',
+                            'explanation':'A bounded repair is still needed.',
+                            'repair':'Repair this specific issue without regressions.'}]
+        run.submit(run.task('planner',round_no=1),self.plan,metadata())
+        run.submit(run.task('plan-reviewer',round_no=1),revise,metadata(True))
+        p2=run.task('planner',round_no=2)
+        self.assertEqual([h['round'] for h in p2['inputs']['revision_history']],[1])
+        self.assertEqual(p2['inputs']['feedback'],revise)
+        run.submit(p2,self.plan,metadata())
+        pr2=run.task('plan-reviewer',round_no=2)
+        self.assertEqual([h['round'] for h in pr2['inputs']['revision_history']],[1])
+        run.submit(pr2,revise,metadata(True))
+        p3=run.task('planner',round_no=3)
+        self.assertEqual([h['round'] for h in p3['inputs']['revision_history']],[1,2])
+
+    def test_chapter_revision_rounds_carry_cumulative_history(self):
+        run=self.newrun();self.to_plan(run)
+        revise=accepted();revise['verdict']='REVISE';revise['checks']['argument']=False
+        revise['findings']=[{'kind':'JOB','severity':'material','quote':'',
+                            'explanation':'A bounded chapter repair is still needed.',
+                            'repair':'Repair this issue and preserve prior fixes.'}]
+        draft={'schema_version':2,'chapter_id':'chapter-01','text':'A bounded draft.','claim_map':[]}
+        run.submit(run.task('writer',1,1),draft,metadata())
+        run.submit(run.task('chapter-reviewer',1,1),revise,metadata(True))
+        w2=run.task('writer',1,2)
+        self.assertEqual([h['round'] for h in w2['inputs']['revision_history']],[1])
+        run.submit(w2,draft,metadata())
+        cr2=run.task('chapter-reviewer',1,2)
+        self.assertEqual([h['round'] for h in cr2['inputs']['revision_history']],[1])
+        run.submit(cr2,revise,metadata(True))
+        w3=run.task('writer',1,3)
+        self.assertEqual([h['round'] for h in w3['inputs']['revision_history']],[1,2])
+
+    def test_revision_prompts_define_convergence_contract(self):
+        checks={
+            'prompts/master-plan-skill-v2.md':('revision_history','preserve earlier repairs'),
+            'prompts/master-plan-reviewer-v2.md':('revision_history','do not reopen a repaired issue'),
+            'prompts/chapter-writer.md':('revision_history','reintroducing an older one'),
+            'prompts/chapter-reviewer.md':('revision_history','do not reopen a repaired issue'),
+        }
+        for rel,phrases in checks.items():
+            text=(self.repo/rel).read_text()
+            for phrase in phrases:self.assertIn(phrase,text)
     def test_same_family_evidence_reviewer_blocked(self):
         run=self.newrun()
         with self.assertRaises(FactoryError): run.submit(run.task('evidence-reviewer'),accepted(),metadata())
@@ -243,12 +290,13 @@ class RunTests(Base):
         with self.assertRaises(FactoryError): run.task('state-editor',1)
     def test_cap_cannot_be_acceptance(self):
         run=self.newrun();self.to_plan(run)
-        for n in range(1,5):
+        cap=run.config['max_rounds']
+        for n in range(1,cap+1):
             task=run.task('writer',1,n)
             run.submit(task,{'schema_version':2,'chapter_id':'chapter-01','text':'A partial argument.','claim_map':[]},metadata())
             r=accepted();r['verdict']='REVISE';r['checks']['argument']=False
             run.submit(run.task('chapter-reviewer',1,n),r,metadata())
-        with self.assertRaises(FactoryError): run.task('writer',1,5)
+        with self.assertRaises(FactoryError): run.task('writer',1,cap+1)
         with self.assertRaises(FactoryError): run.accepted_chapter(1)
     def test_result_is_not_filename_cache(self):
         run=self.newrun();self.to_plan(run)

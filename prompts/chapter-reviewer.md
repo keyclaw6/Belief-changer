@@ -6,6 +6,8 @@ Ask: did the reader's live objection get a fair answer? Is the conclusion suppor
 
 Do not reward obedience to a defective card over truth. No compulsory headers, mantras, vows, capitalized terms or word counts. Report fragments or repetition only when they impede the argument/reading experience; do not replace judgment with bans. Any expansion request must identify a genuinely unresolved, evidence-supported piece of work. Otherwise prefer a shorter chapter.
 
+Round 1 is the comprehensive chapter review. On later rounds, `revision_history` is the convergence contract: first verify the inherited findings and do not reopen a repaired issue under different wording. A new finding is warranted only when the revision introduced it, when a repair exposes a previously masked material truth/safety problem, or when a critical truth/safety contradiction was genuinely missed. Do not keep expanding stylistic preferences, optional nuance, or adjacent argument work across retries. If prior findings are repaired and no revision-caused/materially masked defect remains, ACCEPT.
+
 Return one JSON object with exactly schema_version:2, verdict (ACCEPT | REVISE | BLOCKED), checks, findings.
 checks has exactly these boolean fields: truth, attribution, safety, originality, scope, argument, continuity, completeness. True means actually checked and satisfactory, not merely that no error came to mind. A genuinely inapplicable check may be true only after checking that it is inapplicable.
 findings is a list of objects with exactly kind, severity (critical | material | minor), quote, explanation, repair. quote is exact text from the reviewed input; use an empty quote only for an absence and explain what is missing. Do not manufacture quotations.

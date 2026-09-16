@@ -201,11 +201,26 @@ class Run:
             require(evidence["verdict"] == "ACCEPT", "Research needs independent evidence acceptance")
         if role == "planner":
             if round_no > 1:
-                inputs["previous_plan"] = self.deps_add(deps, "planner", round_no=round_no-1)
-                inputs["feedback"] = self.deps_add(deps, "plan-reviewer", round_no=round_no-1)
+                history = []
+                for prior_round in range(1, round_no):
+                    prior_plan = self.deps_add(deps, "planner", round_no=prior_round)
+                    prior_review = self.deps_add(deps, "plan-reviewer", round_no=prior_round)
+                    history.append({"round": prior_round, "plan": prior_plan, "review": prior_review})
+                inputs["revision_history"] = history
+                inputs["previous_plan"] = history[-1]["plan"]
+                inputs["feedback"] = history[-1]["review"]
                 require(inputs["feedback"]["verdict"] != "ACCEPT", "Cannot revise an accepted plan in place; create a new run")
         elif role == "plan-reviewer":
             inputs["plan"] = self.deps_add(deps, "planner", round_no=round_no)
+            if round_no > 1:
+                history = []
+                for prior_round in range(1, round_no):
+                    history.append({
+                        "round": prior_round,
+                        "plan": self.deps_add(deps, "planner", round_no=prior_round),
+                        "review": self.deps_add(deps, "plan-reviewer", round_no=prior_round),
+                    })
+                inputs["revision_history"] = history
         elif role not in ("evidence-reviewer",):
             pr, plan = self.accepted_plan()
             inputs["plan"] = self.deps_add(deps, "planner", round_no=pr)
@@ -225,11 +240,28 @@ class Run:
                                  "source_chapters": [c["chapter_id"]]})
             inputs["delivered_previous_chapters"] = previous
             if role == "writer" and round_no > 1:
-                inputs["draft"] = self.deps_add(deps, "writer", chapter, round_no-1)
-                inputs["feedback"] = self.deps_add(deps, "chapter-reviewer", chapter, round_no-1)
+                history = []
+                for prior_round in range(1, round_no):
+                    history.append({
+                        "round": prior_round,
+                        "draft": self.deps_add(deps, "writer", chapter, prior_round),
+                        "review": self.deps_add(deps, "chapter-reviewer", chapter, prior_round),
+                    })
+                inputs["revision_history"] = history
+                inputs["draft"] = history[-1]["draft"]
+                inputs["feedback"] = history[-1]["review"]
                 require(inputs["feedback"]["verdict"] != "ACCEPT", "Accepted chapters cannot be rewritten in place")
             if role in ("chapter-reviewer", "state-editor"):
                 inputs["draft"] = self.deps_add(deps, "writer", chapter, round_no)
+            if role == "chapter-reviewer" and round_no > 1:
+                history = []
+                for prior_round in range(1, round_no):
+                    history.append({
+                        "round": prior_round,
+                        "draft": self.deps_add(deps, "writer", chapter, prior_round),
+                        "review": self.deps_add(deps, "chapter-reviewer", chapter, prior_round),
+                    })
+                inputs["revision_history"] = history
             if role == "state-editor":
                 review = self.deps_add(deps, "chapter-reviewer", chapter, round_no)
                 require(review["verdict"] == "ACCEPT", "Reader state can only describe accepted delivered text")

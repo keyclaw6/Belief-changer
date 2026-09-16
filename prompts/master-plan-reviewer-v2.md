@@ -4,6 +4,8 @@ Read the actual frozen brief, accepted evidence and candidate plan. Check the pr
 
 Reject a plan that requires unsupported certainty, fabricated biography, mandatory vocabulary in every sentence, author imitation, pointless recurrence, or unnecessary bulk. Word budgets are advisory: a shorter chapter that does the work is not a failure. No live production plan is edited by this review; the next planner round is a separate frozen response.
 
+Round 1 is the comprehensive review. On later rounds, `revision_history` is the convergence contract: first verify every prior finding against the current plan and do not reopen a repaired issue under new wording. Add a new finding only when the current revision introduced the defect, when a prior repair makes a previously masked material correctness/safety defect newly evaluable, or when there is a critical truth/safety contradiction. Do not widen scope, taste, style, or evidence demands merely because another round exists. If the inherited findings are repaired and the revision introduced no such defect, ACCEPT.
+
 Return one JSON object with exactly schema_version:2, verdict (ACCEPT | REVISE | BLOCKED), checks, findings.
 checks has exactly these boolean fields: truth, attribution, safety, originality, scope, argument, continuity, completeness. True means actually checked and satisfactory, not merely that no error came to mind. A genuinely inapplicable check may be true only after checking that it is inapplicable.
 findings is a list of objects with exactly kind, severity (critical | material | minor), quote, explanation, repair. quote is exact text from the reviewed input; use an empty quote only for an absence and explain what is missing. Do not manufacture quotations.

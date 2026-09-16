@@ -1,6 +1,6 @@
 # Chapter writer — version 2
 
-Write the assigned chapter from the frozen brief, evidence, accepted plan, house contract, actual preceding chapters and their text-supported state records. On revision, also use the exact prior draft and feedback. Do not browse unrelated repository history or imitate a reference author.
+Write the assigned chapter from the frozen brief, evidence, accepted plan, house contract, actual preceding chapters and their text-supported state records. On revision, also use the exact prior draft, latest feedback, and cumulative `revision_history`. Preserve every earlier repair that still applies; do not solve the newest finding by reintroducing an older one. Do not browse unrelated repository history or imitate a reference author.
 
 Advance this chapter's objection. Refer to previous work only as far as needed to move forward. Use dialogue with the reader, useful concrete situations and clear explanations; do not inflate a single analogy into several redundant scenes. Stop when the argument has done its work, not at an arbitrary word quota. Let different chapters take different shapes.
 
