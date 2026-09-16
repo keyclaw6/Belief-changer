@@ -137,7 +137,7 @@ class PreflightTests(Base):
         def social(c, state, lane, action, *args):
             calls.append(lane + '_' + action)
             return [{'id': 'abc123' if lane == 'reddit' else '123', 'text': 'Test-only mocked content'}]
-        def web_search(c, query, limit=10):
+        def web_search(c, state, query, limit=10):
             calls.append('web_search')
             return [{'title': 't', 'url': 'https://example.org'}]
         def web_read(c, url):
@@ -163,6 +163,76 @@ class PreflightTests(Base):
         self.assertEqual(r['status'], 'BLOCKED')
         self.assertFalse(r['checks']['x_read'])
         self.assertFalse(r['checks']['reddit_read'])
+    def test_reddit_auth_failure_is_diagnostic_not_blocking(self):
+        from unittest.mock import Mock
+        version = Mock(returncode=0, stdout='opencli 1.8.7')
+        def social(c, state, lane, action, *args):
+            if lane == 'reddit' and action == 'auth':
+                raise FactoryError('Exit 77; no login session')
+            if action == 'search':
+                if lane == 'x':
+                    return [{'id': '123456', 'text': 'Test-only mocked post'}]
+                return [{'id': 'abc123', 'title': 't', 'url': 'https://www.reddit.com/comments/abc123'}]
+            return [{'id': 'abc123', 'text': 'Test-only mocked content'}]
+        with patch.object(A, 'command', return_value=version), \
+             patch.object(A, 'bridge_social', side_effect=social), \
+             patch.object(A, 'bridge_search_web', return_value=[{'title': 't', 'url': 'https://example.org'}]), \
+             patch.object(A, 'bridge_read_web', return_value={'url': 'x', 'title': 't', 'text': 'y' * 50, 'retrieved_at': '', 'truncated': False}):
+            r = A.preflight(self.repo, 'practice-belief', True, True)
+        self.assertEqual(r['status'], 'READY')
+        self.assertTrue(r['checks']['reddit_search'])
+        self.assertTrue(r['checks']['reddit_read'])
+        self.assertIn('public-only', r['tools']['reddit_auth'])
+        A.validate_preflight(r, self.c, 'practice-belief')
+    def test_public_reddit_rows_need_no_login(self):
+        public = [{'id': 'abc123', 'title': 't', 'subreddit': 'r/x', 'author': 'u', 'score': 5,
+                   'comments': 2, 'url': 'https://www.reddit.com/r/x/comments/abc123/t/'}]
+        self.assertEqual(A.rows(public), public)
+        with self.assertRaises(FactoryError):
+            A.rows([{'id': 'abc123', 'title': 't', 'authenticated': False}])
+    def ddg(self, rows, code=0):
+        from unittest.mock import Mock
+        return Mock(returncode=code, stdout=json.dumps(rows))
+    def test_structured_web_search_maps_title_url(self):
+        rows = [{'rank': 1, 'title': 'Lung Help', 'url': 'https://www.lung.org/q', 'snippet': 's', 'resultType': 'web'},
+                {'rank': 2, 'title': 'Ad', 'url': 'https://ads.example.org/', 'snippet': 's', 'resultType': 'ads'},
+                {'rank': 3, 'title': 'Bad', 'url': 'javascript:alert(1)', 'snippet': 's', 'resultType': 'web'},
+                {'rank': 4, 'title': ' ', 'url': 'https://example.org/empty', 'snippet': 's', 'resultType': 'web'}]
+        with patch.object(A, 'tool', return_value='opencli'), \
+             patch.object(A, 'command', return_value=self.ddg(rows)):
+            out = A.bridge_search_web(self.c, Path(self.temp.name), 'quit smoking', 5)
+        self.assertEqual(out, [{'title': 'Lung Help', 'url': 'https://www.lung.org/q'}])
+    def test_structured_web_search_failures_close(self):
+        with patch.object(A, 'tool', return_value='opencli'):
+            with patch.object(A, 'command', return_value=self.ddg([], code=1)):
+                with self.assertRaises(FactoryError):
+                    A.bridge_search_web(self.c, Path(self.temp.name), 'q', 3)
+            with patch.object(A, 'command', return_value=self.ddg({'ok': False, 'error': {'code': 'X'}})):
+                with self.assertRaises(FactoryError):
+                    A.bridge_search_web(self.c, Path(self.temp.name), 'q', 3)
+            from unittest.mock import Mock
+            with patch.object(A, 'command', return_value=Mock(returncode=0, stdout='not json')):
+                with self.assertRaises(FactoryError):
+                    A.bridge_search_web(self.c, Path(self.temp.name), 'q', 3)
+            with patch.object(A, 'command', return_value=self.ddg([])):
+                with self.assertRaises(FactoryError):
+                    A.bridge_search_web(self.c, Path(self.temp.name), 'q', 3)
+            for bad in (0, 1001, '-x'):
+                with self.assertRaises(FactoryError):
+                    A.bridge_search_web(self.c, Path(self.temp.name), 'q', bad)
+            with self.assertRaises(FactoryError):
+                A.bridge_search_web(self.c, Path(self.temp.name), '   ', 3)
+    def test_structured_web_search_paginates(self):
+        from unittest.mock import Mock
+        page = lambda n: [{'rank': n + i, 'title': f't{n + i}', 'url': f'https://example.org/{n + i}',
+                           'snippet': 's', 'resultType': 'web'} for i in range(10)]
+        cmd = Mock(side_effect=[Mock(returncode=0, stdout=json.dumps(page(1))),
+                                Mock(returncode=0, stdout=json.dumps(page(11)))])
+        with patch.object(A, 'tool', return_value='opencli'), patch.object(A, 'command', cmd):
+            out = A.bridge_search_web(self.c, Path(self.temp.name), 'q', 15)
+        self.assertEqual(len(out), 15)
+        offsets = [call.args[0][7] for call in cmd.call_args_list]
+        self.assertEqual(offsets, ['0', '10'])
     def test_opencli_minimum_floor(self):
         from unittest.mock import Mock
         self.assertTrue(A.version_tuple('opencli 1.8.9') >= A.version_tuple('1.8.7'))

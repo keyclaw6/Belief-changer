@@ -3,10 +3,15 @@
 ## Required architecture
 
 Agent-Reach is the discovery/installation/diagnostic layer. The default **bridge**
-route performs real read-only behavior checks with the working signed-in
-Chromium/OpenCLI setup: plain-HTTPS general-web search/read plus direct
-OpenCLI Reddit and X authenticated identity checks, searches and
-thread/comment reads. The **CloakBrowser** persistent profile with the
+route performs real read-only behavior checks: structured general-web search
+(OpenCLI DuckDuckGo adapter rows, never search-engine HTML parsing) plus
+plain-HTTPS reads; OpenCLI Reddit searches and thread/comment reads, which
+succeed publicly and therefore do not require a login; and OpenCLI X
+authenticated identity checks, searches and thread reads, which still require
+the signed-in session because substantive X search/thread behavior is
+login-walled. Bridge readiness is required behavior per lane, not login
+state: a Reddit login check is recorded as a diagnostic only, while X login
+remains mandatory until substantive public X behavior is verified. The **CloakBrowser** persistent profile with the
 **NopeCHA** extension remains an optional alternative route
 (`--via cloak`) for constrained hosts; it never blocks READY when the
 required behaviors are already live over the bridge. These commands never
@@ -65,12 +70,14 @@ PREFLIGHT="$BC_RESEARCH_HOME/quit-smoking-preflight.json"
   --subject quit-smoking --live --allow-captcha --out "$PREFLIGHT"
 ```
 
-Exit 0 / `READY` requires every check on the selected route: the eight
-bridge behavior checks (general-web search and read; Reddit authenticated
-identity/search/thread read; X authenticated identity/search/thread read),
-or, with `--via cloak`, all twelve cloak checks (bridge eight plus
-Agent-Reach pinned origin and doctor, actual CloakBrowser launch, NopeCHA
-loaded, and a successful challenge on NopeCHA's own demo). Auth identities
+Exit 0 / `READY` requires every check on the selected route: the seven
+bridge behavior checks (general-web search and read; Reddit search/thread
+read; X authenticated identity/search/thread read), or, with `--via cloak`,
+all twelve cloak checks (bridge seven plus Agent-Reach pinned origin and
+doctor, actual CloakBrowser launch, NopeCHA loaded, and a successful
+challenge on NopeCHA's own demo, with cloak Reddit/X auth still required on
+that route). A Reddit login probe runs on the bridge route as a diagnostic
+only. Auth identities
 and raw excerpts are not written in this report. The default access probe searches the subject with slug separators converted to spaces. A documented `--probe-query "broader topic"` can check technical access for an exceptionally sparse subject; record it honestly and still research the actual subject separately. Reports are bound to subject/configuration and expire after 24 hours. A package install, extension manifest or “doctor succeeded” alone cannot pass the gate.
 
 Calling without `--live` writes a `BLOCKED` report and exits 2. Failed tools, incorrect versions, missing keys, expired sessions, unresolved challenges and rate/access failures block the campaign. Fix locally and rerun. There are no silent browser/account fallbacks and no aggressive retry storms. Upstream API/DOM changes may require a reviewed adapter update; preflight is designed to expose them before a campaign spends on books.

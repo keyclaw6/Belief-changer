@@ -31,8 +31,12 @@ from urllib.parse import urlsplit, urlunsplit, quote, parse_qsl, urlencode
 from .common import FactoryError, atomic_json, digest, lock, now, read_json, require
 
 VIAS = ('bridge', 'cloak')
+# Bridge readiness is required BEHAVIOR, not login state: public Reddit
+# search/thread reads satisfy the Reddit lane (verified live), while X still
+# needs its login for substantive search/thread behavior. Reddit auth is a
+# recorded diagnostic only, never a gate.
 BRIDGE_CHECKS = ('web_search', 'web_read',
-                 'reddit_auth', 'reddit_search', 'reddit_read',
+                 'reddit_search', 'reddit_read',
                  'x_auth', 'x_search', 'x_read')
 CHECKS = ('agent_reach', 'cloakbrowser', 'nopecha_loaded', 'nopecha_challenge',
           'web_search', 'web_read', 'reddit_auth', 'reddit_search', 'reddit_read',
@@ -188,35 +192,6 @@ BROWSER_UA = ('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 '
               '(KHTML, like Gecko) Chrome/146.0 Safari/537.36')
 MAX_PAGE_BYTES = 2 * 1024 * 1024
 
-class _BingLinks(HTMLParser):
-    """Collect li.b_algo h2 a title/href pairs from a search page."""
-    def __init__(self):
-        super().__init__(convert_charrefs=True)
-        self.links = []
-        self._in_algo = False
-        self._in_h2 = False
-        self._cur = None
-    def handle_starttag(self, tag, attrs):
-        d = dict(attrs)
-        if tag == 'li' and 'b_algo' in d.get('class', '').split():
-            self._in_algo = True
-        if self._in_algo and tag == 'h2':
-            self._in_h2 = True
-        if self._in_algo and self._in_h2 and tag == 'a' and d.get('href') and self._cur is None:
-            self._cur = {'url': d['href'], 'title': ''}
-    def handle_data(self, data):
-        if self._cur is not None:
-            self._cur['title'] += data
-    def handle_endtag(self, tag):
-        if tag == 'a' and self._cur is not None:
-            if self._cur['title'].strip():
-                self.links.append(self._cur)
-            self._cur = None
-        if tag == 'h2':
-            self._in_h2 = False
-        if tag == 'li':
-            self._in_algo = False
-
 class _PageText(HTMLParser):
     """Extract document title and visible body text; scripts/styles skipped."""
     def __init__(self):
@@ -245,15 +220,6 @@ class _PageText(HTMLParser):
     @property
     def text(self):
         return '\n'.join(self.parts)
-
-def decode_search_url(href: str) -> str:
-    # Bing commonly wraps external URLs as /ck/a?u=a1<base64url>.
-    parsed = urlsplit(href)
-    wrapped = dict(parse_qsl(parsed.query)).get('u', '')
-    if parsed.hostname in ('bing.com', 'www.bing.com') and wrapped.startswith('a1'):
-        payload = wrapped[2:]
-        href = base64.urlsafe_b64decode(payload + '=' * (-len(payload) % 4)).decode()
-    return safe_url(href)
 
 def fetch_page(url: str, timeout: int) -> tuple:
     """Plain-HTTPS GET with guards; returns (final_url, raw_bytes)."""
@@ -289,18 +255,47 @@ def bridge_social(c: dict, state: Path, lane: str, action: str, value: str = '',
         raise FactoryError('OpenCLI returned invalid JSON; no result counted') from None
     return auth_rows(data) if action == 'auth' else rows(data)
 
-def bridge_search_web(c: dict, query: str, limit: int = 10) -> list[dict]:
+def bridge_search_web(c: dict, state: Path, query: str, limit: int = 10) -> list[dict]:
+    """General-web search through the reviewed structured OpenCLI DuckDuckGo
+    adapter (rank/title/url/snippet rows), never by parsing search-engine HTML.
+    Paginates the adapter's 10-row pages up to the requested limit. Fails
+    closed on transport errors, malformed JSON, error envelopes and unusable
+    rows; an empty usable set is an access/degradation signal, never scarcity."""
     require(bool(query.strip()), 'Search query required')
-    url = c['general_search_url'].replace('{query}', quote(query, safe=''))
-    _, raw = fetch_page(url, c['request_timeout_s'])
-    parser = _BingLinks()
-    parser.feed(raw.decode('utf-8', 'replace'))
-    usable = []
-    for link in parser.links:
+    require(type(limit) is int and 1 <= limit <= 1000, 'Web search limit must be 1..1000')
+    query_text = query.strip()
+    require(not query_text.startswith('-'), 'Nonempty query required; command options are not queries')
+    usable, seen_urls, offset = [], set(), 0
+    while len(usable) < limit and offset <= 90:
+        r = command([tool(state, 'opencli'), 'duckduckgo', 'search', query_text,
+                     '--limit', '10', '--offset', str(offset), '-f', 'json'],
+                    bridge_env(), c['request_timeout_s'])
+        require(r.returncode == 0, f'Web search failed (exit {r.returncode}); no response counted as evidence')
         try:
-            usable.append({'title': link['title'].strip(), 'url': decode_search_url(link['url'])})
-        except (FactoryError, ValueError, UnicodeError):
-            continue
+            data = json.loads(r.stdout)
+        except ValueError:
+            raise FactoryError('Web search returned invalid JSON; no result counted') from None
+        page = rows(data)
+        fresh = False
+        for row in page:
+            if row.get('resultType', 'web') != 'web':
+                continue
+            try:
+                url = safe_url(row.get('url', ''))
+            except (FactoryError, ValueError, UnicodeError):
+                continue
+            title = str(row.get('title') or '').strip()
+            if not title or url in seen_urls:
+                continue
+            seen_urls.add(url)
+            usable.append({'title': title, 'url': url})
+            fresh = True
+            if len(usable) >= limit:
+                break
+        if not fresh:
+            break
+        offset += 10
+        time.sleep(c['min_request_interval_s'])
     return rows(usable[:limit])
 
 def bridge_read_web(c: dict, url: str) -> dict:
@@ -519,7 +514,7 @@ def _bridge_preflight(c: dict, state: Path, report: dict, checks: dict, probe_qu
         report['failures'].append(safe_error(exc))
         return report
     for name, fn in (
-        ('web_search', lambda: bridge_search_web(c, probe_query, 3)),
+        ('web_search', lambda: bridge_search_web(c, state, probe_query, 3)),
         ('web_read', lambda: bridge_read_web(c, 'https://example.com/')),
     ):
         try:
@@ -527,10 +522,17 @@ def _bridge_preflight(c: dict, state: Path, report: dict, checks: dict, probe_qu
             checks[name] = True
         except Exception as exc:
             report['failures'].append(name + ': ' + safe_error(exc))
+    try:
+        bridge_social(c, state, 'reddit', 'auth')
+        report['tools']['reddit_auth'] = 'authenticated session present (identity not recorded)'
+    except Exception:
+        # Diagnostic only: public search/thread reads below are the actual gate.
+        report['tools']['reddit_auth'] = 'public-only; no login session (identity not recorded)'
     for lane in ('reddit', 'x'):
         try:
-            bridge_social(c, state, lane, 'auth')
-            checks[lane + '_auth'] = True
+            if lane == 'x':
+                bridge_social(c, state, lane, 'auth')
+                checks[lane + '_auth'] = True
             found = bridge_social(c, state, lane, 'search', probe_query, 5)
             checks[lane + '_search'] = True
             bridge_social(c, state, lane, 'read', first_url(found, lane))
@@ -603,7 +605,7 @@ def query(repo: Path,subject: str,lane: str,action: str,value: str,limit: int,re
     if use_via == 'bridge':
         state = state_root(repo)
         if lane == 'web':
-            data = bridge_search_web(c, value, limit) if action == 'search' else bridge_read_web(c, value)
+            data = bridge_search_web(c, state, value, limit) if action == 'search' else bridge_read_web(c, value)
             backend = 'bridge/direct-https'
         else:
             data = bridge_social(c, state, lane, action, value, limit)
