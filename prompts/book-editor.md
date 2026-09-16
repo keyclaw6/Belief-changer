@@ -10,3 +10,7 @@ Each operation is one of:
 - {"op":"merge","first":"chapter-01","second":"chapter-02","title":"Merged title","reason":"Why"}
 
 Operations apply in order. Anchors must occur exactly once at the point of application. IDs remain stable while editing. You cannot remove all chapters. Empty operations is acceptable only after reading the complete book and explaining why no edits are warranted. Do not introduce unsupported facts, invented narrator experience, signature phrases or guarantees. Any changed inference remains subject to independent final audit. Front matter and safety information are assembled from the brief and cannot be silently deleted by these operations.
+
+## Revision rounds (whole-book convergence)
+
+If `previous_assembly` and `audit_history` are present, this is a bounded revision round after a prior final-audit REVISE — not a fresh edit. First apply every prior audit finding that is still open: each repair must be justified by the finite inherited finding set, and earlier repairs remain constraints (do not reopen or undo them). Then re-read the whole book for defects your own changes introduced. You may not widen the work with new restructuring, new claims, or nice-to-have polish beyond the inherited set. Accepted chapters, frozen research/plan, and prior assemblies are immutable: your operations transform copies at assembly time and every assembly version is preserved. Rounds are bounded; unresolved defects stop the run, and the round budget never turns a defect into acceptance.

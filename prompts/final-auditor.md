@@ -15,3 +15,7 @@ For this FINAL role add exactly these two additional fields:
 - screening_resolutions: an object keyed by every screening flag ID, with a substantive explanation for each. No omitted or invented IDs.
 
 An ACCEPT is an editorial/evidence judgment, not an efficacy finding or release authorization. A separate human release approval and calibrated experiment gate still apply.
+
+## Successor audits (whole-book convergence)
+
+If `audit_history` is present, this is a bounded re-audit of a revised assembly — not a fresh review. First verify every prior finding against the revised book: a prior issue is repaired when the text now satisfies it, and repaired issues must not be reopened under new wording. The inherited prior audits are the finite blocking set. You may add a genuinely new finding only for a defect introduced by the revision itself, or a newly revealed critical truth/safety contradiction that could not reasonably have been identified before. Do not move the goalposts with new nice-to-have requirements, release-stage checks, or progressively narrower demands. Rounds are bounded; an unresolved defect still blocks completion, and the round budget never turns a defect into acceptance.

@@ -317,6 +317,112 @@ class RunTests(Base):
     def test_missing_final_audit_not_complete(self):
         run=self.newrun();finish(run,self.plan);(run.root/'results/final-auditor-r01.json').unlink()
         self.assertEqual(run.status()['status'],'INCOMPLETE')
+    def to_book_revise(self, run, quote="Body sentence 1."):
+        self.to_plan(run)
+        for n, card in enumerate(self.plan["chapters"], 1):
+            text = f"Body sentence {n}. Second sentence {n}."
+            run.submit(run.task("writer", n),
+                       {"schema_version": 2, "chapter_id": card["id"], "text": text, "claim_map": []}, metadata())
+            run.submit(run.task("chapter-reviewer", n), accepted(), metadata())
+            run.submit(run.task("state-editor", n),
+                       {"schema_version": 2, "chapter_id": card["id"],
+                        "established": [{"belief": card["supported_conclusion"], "quote": f"Body sentence {n}."}],
+                        "unresolved": [card["remaining_objection"]], "used_examples": []}, metadata())
+        run.submit(run.task("book-editor"),
+                   {"schema_version": 2, "operations": [], "explanation": "First assembly; no edits."}, metadata())
+        first = run.assemble()
+        audit = accepted(); audit["verdict"] = "REVISE"; audit["checks"]["continuity"] = False
+        audit["findings"] = [{"kind": "EVIDENCE", "severity": "material", "quote": quote,
+                              "explanation": "Needs a bounded revision.", "repair": "Revise in place."}]
+        audit["claim_checks"] = [{"quote": quote, "evidence_ids": [], "support": "nonempirical",
+                                  "explanation": "Fixture sentence."}]
+        audit["screening_resolutions"] = {f["id"]: "Fixture triage." for f in first["assembly"]["screening"]}
+        run.submit(run.task("final-auditor"), audit, metadata(True))
+        return first
+    def test_final_audit_revise_converges_in_run(self):
+        run = self.newrun()
+        first = self.to_book_revise(run)
+        self.assertEqual(run.status()["status"], "INCOMPLETE")
+        editor_task = run.task("book-editor", round_no=2)
+        self.assertEqual(editor_task["inputs"]["audit_history"][0]["audit"]["verdict"], "REVISE")
+        self.assertEqual(editor_task["inputs"]["previous_assembly"]["text"], first["assembly"]["text"])
+        v1bytes = (run.root / "assembly/assembly-r01.json").read_bytes()
+        run.submit(editor_task, {"schema_version": 2, "operations": [
+            {"op": "replace", "chapter": "chapter-01", "old": "Body sentence 1.",
+             "new": "Revised body sentence 1.", "reason": "Audit repair."}],
+            "explanation": "One justified whole-book fix."}, metadata())
+        second = run.assemble()
+        self.assertEqual((run.root / "assembly/assembly-r01.json").read_bytes(), v1bytes)
+        self.assertNotEqual(second["assembly"]["text"], first["assembly"]["text"])
+        self.assertEqual((run.root / "book.md").read_text(), second["assembly"]["text"])
+        auditor_task = run.task("final-auditor", round_no=2)
+        self.assertEqual(len(auditor_task["inputs"]["audit_history"]), 1)
+        self.assertIn("Revised body sentence 1.", auditor_task["inputs"]["assembled_book"])
+        final = accepted()
+        final["claim_checks"] = [{"quote": "Revised body sentence 1.", "evidence_ids": [],
+                                  "support": "nonempirical", "explanation": "Fixture sentence."}]
+        final["screening_resolutions"] = {f["id"]: "Fixture triage." for f in second["assembly"]["screening"]}
+        run.submit(auditor_task, final, metadata(True))
+        result = run.complete()
+        self.assertEqual(result["status"], "COMPLETE_UNRELEASED")
+        self.assertEqual(result["book_sha256"], second["assembly"]["text_sha256"])
+    def test_audit_blocked_stops_whole_book_revision(self):
+        run = self.newrun()
+        self.to_book_revise(run)
+        (run.root / "results/final-auditor-r01.json").unlink()
+        audit = accepted(); audit["verdict"] = "BLOCKED"; audit["checks"]["truth"] = False
+        audit["findings"] = [{"kind": "SAFETY", "severity": "critical", "quote": "",
+                              "explanation": "Unfixable by editing.", "repair": "New run upstream."}]
+        audit["claim_checks"] = [{"quote": "Body sentence 1.", "evidence_ids": [],
+                                  "support": "nonempirical", "explanation": "Fixture."}]
+        first = run.assemble()
+        audit["screening_resolutions"] = {f["id"]: "Fixture triage." for f in first["assembly"]["screening"]}
+        run.submit(run.task("final-auditor"), audit, metadata(True))
+        with self.assertRaises(FactoryError):
+            run.task("book-editor", round_no=2)
+        self.assertEqual(run.status()["status"], "INCOMPLETE")
+    def test_unaudited_edits_cannot_complete(self):
+        run = self.newrun()
+        self.to_book_revise(run)
+        run.submit(run.task("book-editor", round_no=2),
+                   {"schema_version": 2, "operations": [], "explanation": "No-op second edit."}, metadata())
+        run.assemble()
+        with self.assertRaises(FactoryError):
+            run.complete()
+    def test_revision_preserves_frozen_artifacts(self):
+        run = self.newrun()
+        first = self.to_book_revise(run)
+        before = {str(p.relative_to(run.root)): file_hash(p)
+                  for p in list((run.root / "inputs").glob("*.json")) + list((run.root / "results").glob("*.json"))}
+        chapter_texts = {n: run.result("writer", n)["output"]["text"] for n in (1, 2)}
+        run.submit(run.task("book-editor", round_no=2),
+                   {"schema_version": 2, "operations": [
+                       {"op": "replace", "chapter": "chapter-01", "old": "Body sentence 1.",
+                        "new": "Revised body sentence 1.", "reason": "Audit repair."}],
+                    "explanation": "One fix."}, metadata())
+        run.assemble()
+        after = {k: file_hash(run.root / k) for k in before}
+        self.assertEqual(before, after)
+        for n in (1, 2):
+            self.assertEqual(run.result("writer", n)["output"]["text"], chapter_texts[n])
+        self.assertEqual(first["assembly"]["text_sha256"],
+                         run.assembly_version(1)["assembly"]["text_sha256"])
+    def test_whole_book_round_cap(self):
+        run = self.newrun()
+        with self.assertRaises(FactoryError):
+            run.key("book-editor", None, run.config["max_rounds"] + 1)
+        with self.assertRaises(FactoryError):
+            run.key("final-auditor", None, run.config["max_rounds"] + 1)
+    def test_assembly_recomputation_drift_fails_closed(self):
+        run = self.newrun()
+        self.to_book_revise(run)
+        before = (run.root / "assembly/assembly-r01.json").read_bytes()
+        book_before = (run.root / "book.md").read_bytes()
+        with patch("bc_factory.runs.assemble_book", return_value="drifted text\n"):
+            with self.assertRaises(FactoryError):
+                run.assemble()
+        self.assertEqual((run.root / "assembly/assembly-r01.json").read_bytes(), before)
+        self.assertEqual((run.root / "book.md").read_bytes(), book_before)
     def test_live_production_plan_not_used(self):
         run=self.newrun();self.to_plan(run)
         p=self.repo/'production-books/practice-belief/master-plan.md';p.parent.mkdir(parents=True);p.write_text('Wrong mutable legacy plan')

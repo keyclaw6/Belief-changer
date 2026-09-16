@@ -107,7 +107,7 @@ def pair_task(repo: Path, eid: str, pair_id: str, order: str) -> dict:
                     for p in (run.root / "results").glob("*.json") for x in [unseal(p)]
                     if x["role"] in ("planner", "writer", "book-editor")}
         require(generators(parent) == generators(candidate), "Undeclared generation model/route confound")
-    pa, ca = parent.assemble(), candidate.assemble()
+    pa, ca = parent.assemble()["assembly"], candidate.assemble()["assembly"]
     a, b = (pa["text"], ca["text"]) if order == "AB" else (ca["text"], pa["text"])
     # Crucially no run names, ages, scores, author identities or label mapping in model inputs.
     task = {"schema_version": 2, "role": "pair-judge", "contract": reg["instrument"]["contract"], "style": "",

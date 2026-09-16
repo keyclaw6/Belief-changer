@@ -266,15 +266,46 @@ class Run:
                 review = self.deps_add(deps, "chapter-reviewer", chapter, round_no)
                 require(review["verdict"] == "ACCEPT", "Reader state can only describe accepted delivered text")
             if role == "book-editor":
-                require(round_no == 1, "Editorial revision requires new run; never overwrite accepted source chapters")
+                if round_no > 1:
+                    # Bounded whole-book revision: the previous final audit must have
+                    # asked for fixes (REVISE). BLOCKED stops the run; accepted
+                    # chapters are never rewritten in place — edits apply to copies.
+                    prior_audit = self.deps_add(deps, "final-auditor", round_no=round_no-1)
+                    require(prior_audit["verdict"] == "REVISE",
+                            "Whole-book revision needs a prior REVISE audit; BLOCKED stops the run")
+                    editor_history = []
+                    for prior_round in range(1, round_no):
+                        editor_history.append({
+                            "round": prior_round,
+                            "edits": self.deps_add(deps, "book-editor", round_no=prior_round),
+                            "audit": self.deps_add(deps, "final-auditor", round_no=prior_round),
+                        })
+                    inputs["revision_history"] = editor_history
+                    inputs["audit_history"] = editor_history
+                    prev = self.assembly_version(round_no-1)
+                    deps[prev["rel"]] = prev["sha256"]
+                    inputs["previous_assembly"] = {"assembly_round": round_no-1,
+                                                   "text": prev["assembly"]["text"],
+                                                   "text_sha256": prev["assembly"]["text_sha256"]}
                 inputs["screening"] = screen("\n\n".join(c["text"] for c in previous))
             if role == "final-auditor":
-                require(round_no == 1, "Final-audit revision requires a new run")
-                assembled = self.assemble()
-                deps["assembly.json"] = file_hash(self.root / "assembly.json")
-                inputs["assembled_book"] = assembled["text"]
-                inputs["screening"] = assembled["screening"]
-                inputs["editorial_changes"] = self.deps_add(deps, "book-editor")
+                if round_no > 1:
+                    # Successor audit: the matching revised edit round must exist;
+                    # earlier audits travel as the finite blocking set.
+                    self.deps_add(deps, "book-editor", round_no=round_no)
+                    audit_history = []
+                    for prior_round in range(1, round_no):
+                        audit_history.append({
+                            "round": prior_round,
+                            "audit": self.deps_add(deps, "final-auditor", round_no=prior_round),
+                        })
+                    inputs["audit_history"] = audit_history
+                assembled = self.assemble(round_no if role == "final-auditor" and round_no > 1 else None)
+                deps[assembled["rel"]] = assembled["sha256"]
+                inputs["assembled_book"] = assembled["assembly"]["text"]
+                inputs["screening"] = assembled["assembly"]["screening"]
+                inputs["editorial_changes"] = self.deps_add(deps, "book-editor",
+                                                            round_no=round_no if round_no > 1 else 1)
         task = {"schema_version": 2, "key": key, "role": role, "chapter": chapter, "round": round_no,
                 "run_manifest_sha256": digest(self.manifest), "dependency_hashes": deps,
                 "contract": self.snapshot("prompts/" + PROMPTS[role]),
@@ -341,7 +372,25 @@ class Run:
             seal(self.root / "results" / f"{task['key']}.json", record)
         return record
 
-    def assemble(self) -> dict:
+    def assembly_path(self, version: int) -> Path:
+        require(type(version) is int and version >= 1, "Assembly version must be a positive integer")
+        return self.root / "assembly" / f"assembly-r{version:02d}.json"
+
+    def assembly_version(self, version: int) -> dict:
+        """Load one immutable assembly version; verifies seal and returns its hash."""
+        path = self.assembly_path(version)
+        rel = path.relative_to(self.root).as_posix()
+        require(path.is_file(), f"Missing assembly version: {rel}")
+        return {"rel": rel, "sha256": file_hash(path), "assembly": unseal(path)}
+
+    def latest_assembly_version(self) -> int:
+        files = sorted((self.root / "assembly").glob("assembly-r*.json")) if (self.root / "assembly").is_dir() else []
+        require(bool(files), "Missing result: assembly-r")
+        numbers = [int(p.stem.rsplit("-r", 1)[1]) for p in files]
+        require(numbers == list(range(1, max(numbers) + 1)), "Gap in assembly versions")
+        return numbers[-1]
+
+    def assemble(self, editor_round: int | None = None) -> dict:
         _, plan = self.accepted_plan()
         deps = {}
         self.deps_add(deps, "evidence-reviewer")
@@ -356,29 +405,55 @@ class Run:
             self.deps_add(deps, "state-editor", n, cr)
             chapters.append({"id": card["id"], "title": card["title"], "text": c["text"],
                              "claim_map": c["claim_map"], "source_chapters": [card["id"]]})
-        editor = self.deps_add(deps, "book-editor")
+        if editor_round is None:
+            editor_round, _ = self.latest("book-editor")
+        editor = self.deps_add(deps, "book-editor", round_no=editor_round)
         edited = edit_book(chapters, editor)
         text = assemble_book(self.brief, self.research, plan, edited)
         screening = screen("\n\n".join(c["text"] for c in edited))
-        assembly = {"schema_version": 2, "run_manifest_sha256": digest(self.manifest), "dependency_hashes": deps,
+        assembly = {"schema_version": 2, "assembly_round": editor_round,
+                    "run_manifest_sha256": digest(self.manifest), "dependency_hashes": deps,
                     "text": text, "text_sha256": text_hash(text), "chapters": edited, "screening": screening}
         with lock(self.root):
-            seal(self.root / "assembly.json", assembly)
+            (self.root / "assembly").mkdir(exist_ok=True)
+            vpath = self.assembly_path(editor_round)
+            preexisting = vpath.is_file()
+            if preexisting:
+                sealed = unseal(vpath)
+                require(sealed["text"] == text,
+                        "Assembly recomputation diverged from sealed history; use the run's frozen snapshot runtime")
+            else:
+                seal(vpath, assembly)
+            latest = self.latest_assembly_version()
+            latest_text = unseal(self.assembly_path(latest))["text"]
             dest = self.root / "book.md"
             if dest.exists():
-                require(dest.read_text(encoding="utf-8") == text, "Assembled book was modified")
+                cur = dest.read_text(encoding="utf-8")
+                if cur != latest_text:
+                    if (editor_round == latest and latest > 1
+                            and cur == unseal(self.assembly_path(latest - 1))["text"]):
+                        # Normal advancement: move the live pointer to the new version.
+                        atomic_bytes(dest, latest_text.encode("utf-8"))
+                    elif not preexisting and editor_round == latest:
+                        require(False, "Existing book predates versioned assemblies; inspect it with the run's frozen snapshot runtime")
+                    else:
+                        require(False, "Assembled book was modified")
             else:
-                atomic_bytes(dest, text.encode("utf-8"))
-        return assembly
+                require(latest == 1 and not preexisting, "Assembled book was modified")
+                atomic_bytes(dest, latest_text.encode("utf-8"))
+        path = self.assembly_path(editor_round)
+        return {"rel": path.relative_to(self.root).as_posix(), "sha256": file_hash(path), "assembly": assembly}
 
     def complete(self) -> dict:
-        assembly = self.assemble()
-        audit = self.result("final-auditor")
+        er, _ = self.latest("book-editor")
+        assembly = self.assembly_version(er)
+        au, audit = self.latest("final-auditor")
+        require(au == er, "Latest edits are unaudited; audit the current assembly before completion")
         require(audit["output"]["verdict"] == "ACCEPT", "Final audit did not accept the assembled publication")
         require(audit["metadata"]["family"] not in self.generating_families(), "Final audit is not independent")
-        require((self.root / "book.md").read_text(encoding="utf-8") == assembly["text"], "Assembled publication changed after audit")
+        require((self.root / "book.md").read_text(encoding="utf-8") == assembly["assembly"]["text"], "Assembled publication changed after audit")
         return {"status": "COMPLETE_UNRELEASED", "fixture": self.manifest["fixture"],
-                "run_id": self.manifest["run_id"], "book_sha256": assembly["text_sha256"],
+                "run_id": self.manifest["run_id"], "book_sha256": assembly["assembly"]["text_sha256"],
                 "factory_digest": self.manifest["factory_digest"], "efficacy": "NOT_MEASURED"}
 
     def status(self) -> dict:

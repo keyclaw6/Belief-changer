@@ -61,7 +61,7 @@ def finish(run: Run, plan: dict) -> dict:
     a = run.assemble()
     final = accepted()
     final.update({"claim_checks": [{"quote": texts[0].split(". ")[0]+".", "evidence_ids": [], "support": "nonempirical", "explanation": "Logical illustration, not an observed outcome."}],
-                  "screening_resolutions": {f["id"]: "Synthetic fixture inspected; not empirical evidence." for f in a["screening"]}})
+                  "screening_resolutions": {f["id"]: "Synthetic fixture inspected; not empirical evidence." for f in a["assembly"]["screening"]}})
     put("final-auditor", final)
     return run.complete()
 

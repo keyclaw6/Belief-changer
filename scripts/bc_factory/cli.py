@@ -104,7 +104,7 @@ def main(argv: list[str] | None = None) -> int:
         elif cmd == "verify": result = Run(repo, args.run).complete()
         elif cmd == "assemble":
             r = Run(repo, args.run); a = r.assemble()
-            result = {"status": "ASSEMBLED_UNAUDITED", "path": str(r.root / "book.md"), "sha256": a["text_sha256"]}
+            result = {"status": "ASSEMBLED_UNAUDITED", "path": str(r.root / "book.md"), "sha256": a["assembly"]["text_sha256"]}
         elif cmd == "register-experiment": result = {"registered": str(experiments.register(repo, document(args.spec)))}
         elif cmd == "pair-task": result = experiments.pair_task(repo, args.experiment, args.pair, args.order)
         elif cmd in ("pair-submit", "pair-execute"):
