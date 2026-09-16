@@ -12,7 +12,7 @@ from .common import (FactoryError, atomic_bytes, canonical, confined, digest, ex
                      identifier, lock, nonempty, now, read_json, require, seal, text_hash, unseal)
 from .schema import (EXTERNAL_ROLES, ROLES, REVIEW_ROLES, validate_brief, validate_plan, validate_research,
                      validate_review, validate_state, validate_writer, validate_config, validate_metadata)
-from .quality import assemble_book, apply_front_repairs, base_front_matter, edit_book, screen, split_operations
+from .quality import assemble_book, apply_front_repairs, base_front_matter, edit_book, screen, screen_wrappers, split_operations
 
 PROMPTS = {"planner": "master-plan-skill-v2.md", "plan-reviewer": "master-plan-reviewer-v2.md",
            "writer": "chapter-writer.md", "chapter-reviewer": "chapter-reviewer.md",
@@ -505,6 +505,7 @@ class Run:
             front_repairs = new_repairs
         text = assemble_book(self.brief, self.research, plan, edited, front_matter=front_matter)
         screening = screen("\n\n".join(c["text"] for c in edited))
+        screening = screening + screen_wrappers(front_matter, [c["title"] for c in edited])
         assembly = {"schema_version": 2, "assembly_round": editor_round,
                     "run_manifest_sha256": digest(self.manifest), "dependency_hashes": deps,
                     "front_matter": front_matter, "front_matter_repairs": front_repairs,

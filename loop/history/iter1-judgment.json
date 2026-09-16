@@ -1,0 +1,276 @@
+{
+ "schema_version": 1,
+ "round": "iter1-judgment",
+ "protocol": {
+  "protocol": "iter1-judgment",
+  "design": "For each subject, blinded pairwise comparison of the remediated COMPLETE book vs its rejected base assembly (v1), using the frozen loop/judges/pairwise.md instrument, in AB and BA label orders. Judges receive only A/B texts plus reader_goal/audience; no run identities, hashes, or history.",
+  "judge_family": "openai (gpt-5.6-sol via codex-role adapter), independent of the meta generator family",
+  "order_control": "Both AB and BA label orders judged independently; order-effect analysis compares winners across orders.",
+  "grounding": "Every quoted passage verified by code against the labeled book text it is attributed to.",
+  "scope": "Exploratory learning judgment for Iteration 2. Non-promotional: no calibration, no promotion, no efficacy claims.",
+  "schema_version": 1
+ },
+ "label_map": {
+  "sugar": {
+   "seed": 20260916,
+   "AB": {
+    "A": "remediated",
+    "B": "base"
+   },
+   "BA": {
+    "A": "base",
+    "B": "remediated"
+   }
+  },
+  "smoking": {
+   "seed": 20260916,
+   "AB": {
+    "A": "base",
+    "B": "remediated"
+   },
+   "BA": {
+    "A": "remediated",
+    "B": "base"
+   }
+  }
+ },
+ "judgments": {
+  "sugar-AB": {
+   "output": {
+    "schema_version": 2,
+    "preferences": {
+     "argument": {
+      "winner": "tie",
+      "a_quote": "What uncertainty blocks is prescription \u2014 nobody may tell you, from this evidence, that you must eliminate everything or that a program is mandatory. What it does not block is your own reported difficulty, which needs no review's permission to be real.",
+      "b_quote": "What uncertainty blocks is prescription \u2014 nobody may tell you, from this evidence, that you must eliminate everything or that a program is mandatory. What it does not block is your own reported difficulty, which needs no review's permission to be real.",
+      "reason": "Both books make the same carefully bounded argument, distinguish uncertainty from dismissal, address strong objections explicitly, and preserve the reader's agency without turning anecdotes or unsettled science into prescriptions."
+     },
+     "recognition": {
+      "winner": "tie",
+      "a_quote": "If your weeks looked like this, you have company \u2014 and one caution travels with it: severe or persistent physical symptoms, depression, or significant distress should be professionally assessed rather than assumed to be sugar withdrawal. If they did not, nothing is wrong with you.",
+      "b_quote": "If your weeks looked like this, you have company \u2014 and one caution travels with it: severe or persistent physical symptoms, depression, or significant distress should be professionally assessed rather than assumed to be sugar withdrawal. If they did not, nothing is wrong with you.",
+      "reason": "Both books recognize difficult and divergent experiences without shaming the reader, diagnosing them, or presenting one person's course as the norm."
+     },
+     "progression": {
+      "winner": "A",
+      "a_quote": "So what can you actually do, if nothing here is a prescription? That is the next and last chapter's question: observations you can note down, and lines you do not cross alone.",
+      "b_quote": "So what can you actually do, if nothing here is a prescription? That is the next and last chapter's question: observations you can note down, and lines you do not cross alone.",
+      "reason": "The chapter sequence is otherwise identical and cumulative, but A follows this transition with the accurately aligned title \u201cObservations you can note, lines you do not cross alone.\u201d B instead labels the chapter \u201cExperiments you can observe\u201d while immediately disclaiming that the prompts are experiments, creating a small conceptual discontinuity."
+     },
+     "voice": {
+      "winner": "tie",
+      "a_quote": "It has \u2014 abdicated the throne it never owned. No presidency over your pantry was ever on offer from this evidence",
+      "b_quote": "It has \u2014 abdicated the throne it never owned. No presidency over your pantry was ever on offer from this evidence",
+      "reason": "Both use the same direct, memorable, and natural voice, balancing rhetorical energy with disciplined qualifications. B's isolated capitalization error does not materially alter the voice."
+     },
+     "emotional_movement": {
+      "winner": "tie",
+      "a_quote": "You came in believing you had no say \u2014 white-knuckle abstinence or failure. The evidence does not grant you control it cannot measure. It returns something adjacent: questions worth asking, observations worth noting down, lines worth not crossing alone, and the knowledge that a lapse is information, not a verdict.",
+      "b_quote": "You came in believing you had no say \u2014 white-knuckle abstinence or failure. The evidence does not grant you control it cannot measure. It returns something adjacent: questions worth asking, observations worth noting down, lines worth not crossing alone, and the knowledge that a lapse is information, not a verdict.",
+      "reason": "Both achieve the same credible movement from shame and fatalism toward bounded agency, while avoiding promises, pressure, or false reassurance."
+     },
+     "economy": {
+      "winner": "A",
+      "a_quote": "## 6. Observations you can note, lines you do not cross alone",
+      "b_quote": "## 6. Experiments you can observe, lines you do not cross alone",
+      "reason": "The books are otherwise essentially identical in length and development. A's title states the chapter's limited function precisely; B's word \u201cExperiments\u201d requires the opening paragraph to negate that framing, introducing a small but avoidable inefficiency."
+     }
+    },
+    "critical": {
+     "A": [],
+     "B": []
+    }
+   },
+   "model": "gpt-5.6-sol",
+   "family": "openai",
+   "route": "codex-exec/chatgpt-subscription/sandbox-read-only",
+   "usage": null
+  },
+  "sugar-BA": {
+   "output": {
+    "schema_version": 2,
+    "preferences": {
+     "argument": {
+      "winner": "tie",
+      "a_quote": "What uncertainty blocks is prescription \u2014 nobody may tell you, from this evidence, that you must eliminate everything or that a program is mandatory. What it does not block is your own reported difficulty, which needs no review's permission to be real.",
+      "b_quote": "What uncertainty blocks is prescription \u2014 nobody may tell you, from this evidence, that you must eliminate everything or that a program is mandatory. What it does not block is your own reported difficulty, which needs no review's permission to be real.",
+      "reason": "Both books present the same evidence-bounded argument, address the same serious objections, and distinguish uncertainty about mechanisms and methods from the reality of the reader's difficulty."
+     },
+     "recognition": {
+      "winner": "tie",
+      "a_quote": "failed attempts across months and years are a real, reported pattern, not evidence of a defective character.",
+      "b_quote": "failed attempts across months and years are a real, reported pattern, not evidence of a defective character.",
+      "reason": "Both recognize repeated attempts, lapses, and distress without shaming the reader or converting anecdotal experiences into diagnoses."
+     },
+     "progression": {
+      "winner": "B",
+      "a_quote": "## 6. Experiments you can observe, lines you do not cross alone",
+      "b_quote": "## 6. Observations you can note, lines you do not cross alone",
+      "reason": "The books otherwise have the same cumulative sequence, but B's final chapter title accurately continues the prior distinction between permissible observation and unsupported experimentation. A labels the material as experiments even though the chapter immediately says it is not offering a validated experiment."
+     },
+     "voice": {
+      "winner": "B",
+      "a_quote": "A replier cited an inpatient carbohydrate trial; the thread shows public disagreement, and The cited trial was not available for review here, so it carries no evidentiary weight here.",
+      "b_quote": "A replier cited an inpatient carbohydrate trial; the thread shows public disagreement, and the cited trial was not available for review here, so it carries no evidentiary weight here.",
+      "reason": "B removes A's distracting mid-sentence capitalization error. Apart from that correction, both use the same direct, measured, and occasionally memorable voice."
+     },
+     "emotional_movement": {
+      "winner": "tie",
+      "a_quote": "It returns something adjacent: questions worth asking, observations worth noting down, lines worth not crossing alone, and the knowledge that a lapse is information, not a verdict.",
+      "b_quote": "It returns something adjacent: questions worth asking, observations worth noting down, lines worth not crossing alone, and the knowledge that a lapse is information, not a verdict.",
+      "reason": "Both produce the same credible movement from a punitive binary toward bounded agency, while refusing promises of control or pressure toward a particular diet or program."
+     },
+     "economy": {
+      "winner": "B",
+      "a_quote": "Its questions are optional prompts for describing your concerns and preparing a professional conversation \u2014 not a validated method, experiment, or instrument, and not a way to establish personal patterns",
+      "b_quote": "Its questions are optional prompts for describing your concerns and preparing a professional conversation \u2014 not a validated method, experiment, or instrument, and not a way to establish personal patterns",
+      "reason": "The bodies are effectively identical and somewhat repetitive in their caveats, but B's more precise final chapter title avoids spending conceptual effort introducing an 'experiments' label that the shared text must immediately disclaim."
+     }
+    },
+    "critical": {
+     "A": [],
+     "B": []
+    }
+   },
+   "model": "gpt-5.6-sol",
+   "family": "openai",
+   "route": "codex-exec/chatgpt-subscription/sandbox-read-only",
+   "usage": null
+  },
+  "smoking-AB": {
+   "output": {
+    "schema_version": 2,
+    "preferences": {
+     "argument": {
+      "winner": "B",
+      "a_quote": "No method works for everyone; relapse is common and is information, not a verdict.",
+      "b_quote": "No method works for everyone; relapse can occur and is information, not a verdict.",
+      "reason": "B preserves the useful distinction between relapse and personal failure without asserting an unsupported prevalence claim. A says relapse is common despite expressly stating that the book cannot establish how common any trajectory is."
+     },
+     "recognition": {
+      "winner": "tie",
+      "a_quote": "Second, write down what prior attempts gave you and what they cost \u2014 benefits and problems in your own words, without grading yourself.",
+      "b_quote": "Second, write down what prior attempts gave you and what they cost \u2014 benefits and problems in your own words, without grading yourself.",
+      "reason": "Both recognize the reader\u2019s prior efforts without shame, invite reflection rather than self-grading, and acknowledge that different methods can carry both benefits and costs."
+     },
+     "progression": {
+      "winner": "tie",
+      "a_quote": "These accounts do not establish one exclusive road, and judging methods needs the comparative evidence the next chapter takes up \u2014 what the trials show for NRT, vaping, and combined support, with their horizons and limits intact.",
+      "b_quote": "These accounts do not establish one exclusive road, and judging methods needs the comparative evidence the next chapter takes up \u2014 what the trials show for NRT, vaping, and combined support, with their horizons and limits intact.",
+      "reason": "Both follow the same cumulative sequence from lived reports to comparative evidence, clinical trade-offs, relapse, available help, and a bounded next-step procedure, with dependencies and chapter transitions made explicit."
+     },
+     "voice": {
+      "winner": "tie",
+      "a_quote": "Take the pledge structure, leave the label policing. Take the day-at-a-time horizon, leave the cold-turkey creed.",
+      "b_quote": "Take the pledge structure, leave the label policing. Take the day-at-a-time horizon, leave the cold-turkey creed.",
+      "reason": "Both use the same direct, memorable, and independent voice. The parallel phrasing makes selective engagement with peer support concrete without becoming coercive."
+     },
+     "emotional_movement": {
+      "winner": "tie",
+      "a_quote": "A later relapse does not retroactively erase the documented years of abstinence, and it does not determine the next choice \u2014 that is what the record supports, without any medical claim attached.",
+      "b_quote": "A later relapse does not retroactively erase the documented years of abstinence, and it does not determine the next choice \u2014 that is what the record supports, without any medical claim attached.",
+      "reason": "Both credibly move the reader from fear of irreversible failure toward renewed agency while carefully avoiding promises, minimizing relapse, or pressuring the reader toward one method."
+     },
+     "economy": {
+      "winner": "tie",
+      "a_quote": "That list \u2014 not answers, but questions sharp enough to carry into a consulting room \u2014 is the book's final product: which options fit given your health and prior attempts, what benefits and harms each carries, what follow-up exists, and what to do if you slip.",
+      "b_quote": "That list \u2014 not answers, but questions sharp enough to carry into a consulting room \u2014 is the book's final product: which options fit given your health and prior attempts, what benefits and harms each carries, what follow-up exists, and what to do if you slip.",
+      "reason": "The books are otherwise textually identical and deliver the same practical product. Both are substantially repetitive in restating evidentiary limits, but neither is more economical than the other."
+     }
+    },
+    "critical": {
+     "A": [
+      {
+       "kind": "OVERCLAIM",
+       "quote": "No method works for everyone; relapse is common and is information, not a verdict.",
+       "explanation": "The claim that relapse is common is a prevalence assertion not established by the supplied evidence and conflicts with the book's own stated limit that it cannot establish how common any trajectory is. Because this appears in the safety information, readers may reasonably treat it as an evidence-backed fact."
+      }
+     ],
+     "B": []
+    }
+   },
+   "model": "gpt-5.6-sol",
+   "family": "openai",
+   "route": "codex-exec/chatgpt-subscription/sandbox-read-only",
+   "usage": null
+  },
+  "smoking-BA": {
+   "output": {
+    "schema_version": 2,
+    "preferences": {
+     "argument": {
+      "winner": "A",
+      "a_quote": "No method works for everyone; relapse can occur and is information, not a verdict.",
+      "b_quote": "No method works for everyone; relapse is common and is information, not a verdict.",
+      "reason": "A makes the bounded claim that relapse can occur, consistent with the book's evidence and stated limits. B asserts an unsupported prevalence claim despite stating that it cannot establish how common any trajectory is."
+     },
+     "recognition": {
+      "winner": "tie",
+      "a_quote": "Second, write down what prior attempts gave you and what they cost \u2014 benefits and problems in your own words, without grading yourself.",
+      "b_quote": "Second, write down what prior attempts gave you and what they cost \u2014 benefits and problems in your own words, without grading yourself.",
+      "reason": "Both recognize prior attempts without shame, preserve the reader's own account of benefits and costs, and avoid treating relapse or repeated attempts as moral failure."
+     },
+     "progression": {
+      "winner": "tie",
+      "a_quote": "That list \u2014 not answers, but questions sharp enough to carry into a consulting room \u2014 is the book's final product: which options fit given your health and prior attempts, what benefits and harms each carries, what follow-up exists, and what to do if you slip.",
+      "b_quote": "That list \u2014 not answers, but questions sharp enough to carry into a consulting room \u2014 is the book's final product: which options fit given your health and prior attempts, what benefits and harms each carries, what follow-up exists, and what to do if you slip.",
+      "reason": "Both follow the same cumulative sequence from beliefs and comparative evidence through clinical boundaries, relapse, community support, and a final decision procedure."
+     },
+     "voice": {
+      "winner": "tie",
+      "a_quote": "Take the pledge structure, leave the label policing. Take the day-at-a-time horizon, leave the cold-turkey creed.",
+      "b_quote": "Take the pledge structure, leave the label policing. Take the day-at-a-time horizon, leave the cold-turkey creed.",
+      "reason": "Both use the same direct, memorable, and independent voice, balancing firm guidance with resistance to method orthodoxy."
+     },
+     "emotional_movement": {
+      "winner": "A",
+      "a_quote": "A later relapse does not retroactively erase the documented years of abstinence, and it does not determine the next choice \u2014 that is what the record supports, without any medical claim attached.",
+      "b_quote": "No method works for everyone; relapse is common and is information, not a verdict.",
+      "reason": "Both move away from shame and toward renewed choice, but A does so with a carefully bounded reassurance. B's unsupported statement that relapse is common may offer normalization, yet it can also create avoidable discouragement or fatalism."
+     },
+     "economy": {
+      "winner": "tie",
+      "a_quote": "First, decide which kind of help you want to explore: behavioral support, a cessation product, or both.",
+      "b_quote": "First, decide which kind of help you want to explore: behavioral support, a cessation product, or both.",
+      "reason": "The books are otherwise identical and deliver the same concise four-part next-step procedure; neither has an economy advantage."
+     }
+    },
+    "critical": {
+     "A": [],
+     "B": [
+      {
+       "kind": "OVERCLAIM",
+       "quote": "No method works for everyone; relapse is common and is information, not a verdict.",
+       "explanation": "The supplied material establishes that relapse can occur but provides no prevalence basis for calling it common. The claim also conflicts with the book's explicit limit that it cannot establish how common any trajectory is, making it a material unsupported assertion in a health-related context."
+      }
+     ]
+    }
+   },
+   "model": "gpt-5.6-sol",
+   "family": "openai",
+   "route": "codex-exec/chatgpt-subscription/sandbox-read-only",
+   "usage": null
+  }
+ },
+ "analysis": {
+  "order_effects": {
+   "sugar": "Remediated wins progression+economy in BOTH orders; voice flips to remediated only in BA (weak, single-order). No pro-base win in either order.",
+   "smoking": "Remediated wins argument in BOTH orders; emotional_movement flips to remediated only in BA (weak). The same OVERCLAIM critical ('relapse is common') tracks the BASE book in both orders. No pro-base win in either order."
+  },
+  "variance": "Low: decisive dimensions replicate across orders; only minor single-order flips (voice/emotional_movement).",
+  "grounding": "50/50 quoted passages resolve by code against the attributed labeled texts.",
+  "residual_weaknesses": [
+   "Both books lean heavily on repeated caveat restatement (economy ties note repetitiveness).",
+   "Wrapper prose (front matter, headers, transitions) was the defect locus in both audits, not evidence-bound bodies."
+  ],
+  "conclusion": "Remediation strictly improved both books with no observed regressions. Both Iteration-1 books stand as complete."
+ },
+ "learning_decision": {
+  "decision_id": "iter1-learning-01",
+  "rule": "Exactly one generalizable intervention for Iteration 2.",
+  "decision": "Extend evidence-mapping discipline to ALL generated wrapper prose (brief-derived front matter, plan-derived chapter headers, chapter opening/closing transitions): every empirical-sounding sentence outside claim-mapped body prose must either carry an explicit evidence citation resolvable in the dossier or be rephrased to non-empirical language before assembly.",
+  "evidence": "Both final audits' material findings concentrated in wrappers (front-matter prevalence claim; header experiment-status; transition universals), never in evidence-bound chapter bodies. Both remediation rounds repaired wrappers only.",
+  "implementation": "Deterministic advisory wrapper screen (screen_wrappers) appended to assembly screening so the final auditor must triage wrapper flags; performer discipline in Iteration-2 drafting.",
+  "scope": "Applies to both Iteration-2 subjects and all future runs. Non-promotional study; no efficacy claim."
+ }
+}

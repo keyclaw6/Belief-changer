@@ -431,6 +431,21 @@ class RunTests(Base):
             run.key("book-editor", None, run.config["max_rounds"] + 1)
         with self.assertRaises(FactoryError):
             run.key("final-auditor", None, run.config["max_rounds"] + 1)
+    def test_wrapper_screen_flags_universals(self):
+        from bc_factory.quality import screen_wrappers
+        flags = screen_wrappers({"title": "Quit Smoking", "safety": "Relapse is common and expected."},
+                                ["A Calm Start", "Never Again"])
+        kinds = {(f["id"], f["kind"]) for f in flags}
+        self.assertTrue(any(k == "wrapper_universal" for _, k in kinds))
+        self.assertEqual(len(flags), 2)
+        clean = screen_wrappers({"title": "Quit Smoking", "safety": "Talk to your clinician."},
+                                ["A Calm Start"])
+        self.assertEqual(clean, [])
+    def test_wrapper_flags_enter_assembly_screening(self):
+        run = self.newrun()
+        self.to_book_revise(run)
+        asm = run.assembly_version(1)["assembly"]
+        self.assertTrue(all("id" in f for f in asm["screening"]))
     def test_assembly_recomputation_drift_fails_closed(self):
         run = self.newrun()
         self.to_book_revise(run)

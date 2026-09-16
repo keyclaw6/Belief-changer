@@ -181,3 +181,26 @@ def overlap_screen(text: str, references: dict[str, str], n: int = 12) -> list[d
         if hits:
             found.append({"reference": name, "matched_windows": len(hits), "requires_review": True})
     return found
+
+
+WRAPPER_UNIVERSALS = (r"\bcommon\b", r"\btypically\b", r"\busually\b", r"\bnever\b",
+                      r"\balways\b", r"\beveryone\b", r"\bno one\b", r"\bguarantee[sd]?\b")
+
+
+def screen_wrappers(front_matter: dict, titles: list[str]) -> list[dict]:
+    """Advisory review queue for generated wrapper prose (front matter fields
+    and rendered chapter headers), which carries no claim_map. Flags universal
+    or prevalence-sounding wording for explicit auditor triage; flags are not
+    verdicts and contextual false positives are resolved with explanation."""
+    findings = []
+    spots = [(f"front:{field}", str(text)) for field, text in (front_matter or {}).items()]
+    spots += [(f"title:{i + 1}", title) for i, title in enumerate(titles or [])]
+    for spot, text in spots:
+        for pattern in WRAPPER_UNIVERSALS:
+            match = re.search(pattern, text, flags=re.I)
+            if match:
+                findings.append({"id": f"wrap-{len(findings) + 1:03d}", "kind": "wrapper_universal",
+                                 "quote": match.group(0),
+                                 "explanation": f"Universal/prevalence wording in {spot}; confirm evidence backing or rephrase."})
+                break
+    return findings
