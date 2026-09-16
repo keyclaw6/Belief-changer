@@ -441,6 +441,115 @@ class RunTests(Base):
                 run.assemble()
         self.assertEqual((run.root / "assembly/assembly-r01.json").read_bytes(), before)
         self.assertEqual((run.root / "book.md").read_bytes(), book_before)
+    def front_revise(self, run, quote="Examine what one unsuccessful attempt can logically establish"):
+        return self.to_book_revise(run, quote=quote)
+    def test_front_matter_repair_converges_in_lineage(self):
+        run = self.newrun()
+        first = self.front_revise(run)
+        goal = self.brief["reader_goal"]
+        editor_task = run.task("book-editor", round_no=2)
+        self.assertIn(goal, editor_task["inputs"]["previous_assembly"]["text"])
+        run.submit(editor_task, {"schema_version": 2, "operations": [
+            {"op": "front", "field": "reader_goal", "old": goal,
+             "new": "Examine what one unsuccessful attempt can logically establish, and nothing more.",
+             "reason": "Audit repair."}],
+            "explanation": "Narrow the overclaiming promise."}, metadata())
+        second = run.assemble()
+        self.assertIn("and nothing more.", second["assembly"]["text"])
+        v1text = unseal(run.root / "assembly/assembly-r01.json")["text"]
+        self.assertEqual(v1text, first["assembly"]["text"])
+        self.assertEqual(second["assembly"]["front_matter_repairs"][0]["field"], "reader_goal")
+        auditor_task = run.task("final-auditor", round_no=2)
+        final = accepted()
+        final["claim_checks"] = [{"quote": "Body sentence 1.", "evidence_ids": [],
+                                  "support": "nonempirical", "explanation": "Fixture."}]
+        final["screening_resolutions"] = {f["id"]: "Fixture triage." for f in second["assembly"]["screening"]}
+        run.submit(auditor_task, final, metadata(True))
+        result = run.complete()
+        self.assertEqual(result["status"], "COMPLETE_UNRELEASED")
+        self.assertIn("and nothing more.", (run.root / "book.md").read_text())
+    def test_front_repair_survives_later_round(self):
+        run = self.newrun()
+        self.front_revise(run)
+        run.submit(run.task("book-editor", round_no=2), {"schema_version": 2, "operations": [
+            {"op": "front", "field": "reader_goal", "old": self.brief["reader_goal"],
+             "new": "Narrowed promise.", "reason": "Audit repair."}],
+            "explanation": "Front repair."}, metadata())
+        mid = run.assemble()
+        second_audit = accepted(); second_audit["verdict"] = "REVISE"; second_audit["checks"]["continuity"] = False
+        second_audit["findings"] = [{"kind": "EVIDENCE", "severity": "material",
+                                     "quote": "Body sentence 2.",
+                                     "explanation": "Chapter needs a bounded fix.", "repair": "Fix in place."}]
+        second_audit["claim_checks"] = [{"quote": "Body sentence 2.", "evidence_ids": [],
+                                         "support": "nonempirical", "explanation": "Fixture."}]
+        second_audit["screening_resolutions"] = {f["id"]: "Fixture triage." for f in mid["assembly"]["screening"]}
+        run.submit(run.task("final-auditor", round_no=2), second_audit, metadata(True))
+        run.submit(run.task("book-editor", round_no=3), {"schema_version": 2, "operations": [
+            {"op": "replace", "chapter": "chapter-02", "old": "Body sentence 2.",
+             "new": "Edited body sentence 2.", "reason": "Later fix."}],
+            "explanation": "Chapter fix."}, metadata())
+        third = run.assemble()
+        self.assertIn("Narrowed promise.", third["assembly"]["text"])
+        self.assertIn("Edited body sentence 2.", third["assembly"]["text"])
+        self.assertEqual(len(third["assembly"]["front_matter_repairs"]), 1)
+    def test_safety_front_matter_cannot_be_deleted(self):
+        run = self.newrun()
+        self.front_revise(run)
+        task = run.task("book-editor", round_no=2)
+        for bad in ("", "   "):
+            with self.assertRaises(FactoryError):
+                run.submit(task, {"schema_version": 2, "operations": [
+                    {"op": "front", "field": "safety", "old": "", "new": bad,
+                     "reason": "Deletion attempt."}], "explanation": "Must fail."}, metadata())
+        with self.assertRaises(FactoryError):
+            run.submit(task, {"schema_version": 2, "operations": [
+                {"op": "front", "field": "subtitle", "old": "x", "new": "y",
+                 "reason": "Unknown field."}], "explanation": "Must fail."}, metadata())
+        with self.assertRaises(FactoryError):
+            run.submit(task, {"schema_version": 2, "operations": [
+                {"op": "front", "field": "reader_goal", "old": "wrong anchor",
+                 "new": "Narrowed promise.", "reason": "Stale anchor."}], "explanation": "Must fail."}, metadata())
+    def test_remediation_continues_frozen_run(self):
+        src = self.newrun("src1")
+        first = self.front_revise(src)
+        src_files = {}
+        for dp, _, fns in os.walk(src.root):
+            for f in fns:
+                p = Path(dp) / f
+                src_files[str(p.relative_to(src.root))] = file_hash(p)
+        with patch("bc_factory.research_access.validate_coverage"):
+            prepare(self.repo, "rem1", self.brief, self.research,
+                    fixture=True, remediation_of="src1")
+        rem = Run(self.repo, "rem1")
+        self.assertEqual(rem.manifest["remediation_of"], "src1")
+        self.assertEqual(rem.manifest["remediation_source"]["source_assembly_sha256"],
+                         file_hash(src.root / "assembly/assembly-r01.json"))
+        # Upstream stages are inherited, never replayed.
+        for role in ("evidence-reviewer", "planner", "writer"):
+            with self.assertRaises(FactoryError):
+                rem.task(role, 1 if role == "writer" else None)
+        goal = self.brief["reader_goal"]
+        rem.submit(rem.task("book-editor", round_no=2), {"schema_version": 2, "operations": [
+            {"op": "front", "field": "reader_goal", "old": goal,
+             "new": "Remediated promise.", "reason": "Audit repair."}],
+            "explanation": "Front repair in remediation."}, metadata())
+        second = rem.assemble()
+        self.assertIn("Remediated promise.", second["assembly"]["text"])
+        good = accepted()
+        good["claim_checks"] = [{"quote": "Body sentence 1.", "evidence_ids": [],
+                                 "support": "nonempirical", "explanation": "Fixture."}]
+        good["screening_resolutions"] = {f["id"]: "Fixture triage." for f in second["assembly"]["screening"]}
+        rem.submit(rem.task("final-auditor", round_no=2), good, metadata(True))
+        result = rem.complete()
+        self.assertEqual(result["status"], "COMPLETE_UNRELEASED")
+        self.assertNotEqual(result["book_sha256"], first["assembly"]["text_sha256"])
+        self.assertEqual(rem.accepted_assembly()["assembly"]["assembly_round"], 2)
+        self.assertTrue(str(rem.accepted_audit_file()).endswith("final-auditor-r02.json"))
+        # Source historical bytes are unchanged.
+        for rel, h in src_files.items():
+            self.assertEqual(file_hash(src.root / rel), h, rel)
+        self.assertEqual(rem.manifest["brief_sha256"], src.manifest["brief_sha256"])
+        self.assertEqual(rem.manifest["research_sha256"], src.manifest["research_sha256"])
     def test_live_production_plan_not_used(self):
         run=self.newrun();self.to_plan(run)
         p=self.repo/'production-books/practice-belief/master-plan.md';p.parent.mkdir(parents=True);p.write_text('Wrong mutable legacy plan')

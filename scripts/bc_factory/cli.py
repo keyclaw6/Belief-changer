@@ -26,6 +26,7 @@ def parser() -> argparse.ArgumentParser:
     s.add_argument("--run", required=True); s.add_argument("--brief", required=True); s.add_argument("--research", required=True)
     s.add_argument("--parent"); s.add_argument("--fixture", action="store_true"); s.add_argument("--research-preflight")
     s.add_argument("--research-revision-of", help="Prior non-ACCEPT run whose evidence findings this successor must close")
+    s.add_argument("--remediation-of", help="Post-audit continuation: inherit a REVISE-audited run byte-identical, continue only whole-book rounds")
     s = sub.add_parser("task", help="Construct and freeze the next role's input without model calls")
     s.add_argument("--run", required=True); s.add_argument("--role", required=True)
     s.add_argument("--chapter", type=int); s.add_argument("--round", type=int, default=1); s.add_argument("--out")
@@ -78,7 +79,8 @@ def main(argv: list[str] | None = None) -> int:
         cmd = args.command
         if cmd == "prepare":
             root = prepare(repo, args.run, document(args.brief), document(args.research), args.parent, args.fixture,
-                           document(args.research_preflight) if args.research_preflight else None, args.research_revision_of)
+                           document(args.research_preflight) if args.research_preflight else None,
+                           args.research_revision_of, args.remediation_of)
             result = {"status": "FROZEN", "run": str(root)}
         elif cmd == "task":
             result = Run(repo, args.run).task(args.role, args.chapter, args.round)

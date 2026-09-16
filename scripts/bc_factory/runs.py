@@ -5,13 +5,14 @@ module starts background jobs, changes a champion, or reads a legacy live plan.
 """
 from __future__ import annotations
 import json
+import shutil
 import subprocess
 from pathlib import Path
 from .common import (FactoryError, atomic_bytes, canonical, confined, digest, exact_keys, file_hash,
                      identifier, lock, nonempty, now, read_json, require, seal, text_hash, unseal)
 from .schema import (EXTERNAL_ROLES, ROLES, REVIEW_ROLES, validate_brief, validate_plan, validate_research,
                      validate_review, validate_state, validate_writer, validate_config, validate_metadata)
-from .quality import assemble_book, edit_book, screen
+from .quality import assemble_book, apply_front_repairs, base_front_matter, edit_book, screen, split_operations
 
 PROMPTS = {"planner": "master-plan-skill-v2.md", "plan-reviewer": "master-plan-reviewer-v2.md",
            "writer": "chapter-writer.md", "chapter-reviewer": "chapter-reviewer.md",
@@ -29,12 +30,34 @@ def active_files(repo: Path) -> list[str]:
 
 def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | None = None,
             fixture: bool = False, research_preflight: dict | None = None,
-            research_revision_of: str | None = None) -> Path:
+            research_revision_of: str | None = None, remediation_of: str | None = None) -> Path:
     repo = repo.resolve()
     identifier(run_id)
     if parent is not None:
         identifier(parent)
     evidence_feedback = None
+    remediation = None
+    if remediation_of is not None:
+        identifier(remediation_of)
+        require(run_id != remediation_of, "Remediation needs a new run ID; source runs are immutable")
+        require(research_revision_of is None, "Remediation inherits frozen research; it is not a research revision")
+        require(research_preflight is None, "Remediation retrieves nothing new; no fresh preflight is consumed")
+        source = Run(repo, remediation_of)
+        require(source.manifest["run_id"] == remediation_of, "Source run identity mismatch")
+        src_audit_no, src_audit = source.latest("final-auditor")
+        require(src_audit["output"]["verdict"] == "REVISE",
+                "Remediation needs a prior fixable REVISE audit; BLOCKED stops the run and ACCEPT needs nothing")
+        src_asm_no = source.latest_assembly_version()
+        require(src_asm_no == src_audit_no,
+                "Source audit does not match its latest assembly; remediate only clean audit states")
+        require(digest(brief) == digest(source.brief), "Remediation brief must equal the source frozen brief")
+        require(digest(research) == digest(source.research), "Remediation research must equal the source frozen research")
+        remediation = {"source_run": remediation_of,
+                       "source_manifest_sha256": digest(source.manifest),
+                       "source_audit_key": f"final-auditor-r{src_audit_no:02d}",
+                       "source_audit_sha256": file_hash(source.root / "results" / f"final-auditor-r{src_audit_no:02d}.json"),
+                       "source_assembly_rel": f"assembly/assembly-r{src_asm_no:02d}.json",
+                       "source_assembly_sha256": file_hash(source.root / "assembly" / f"assembly-r{src_asm_no:02d}.json")}
     if research_revision_of is not None:
         identifier(research_revision_of)
         prior = Run(repo, research_revision_of)
@@ -51,7 +74,14 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
         }
     validate_brief(brief)
     validate_research(research, brief)
-    if not fixture:
+    if remediation is not None:
+        # Nothing is retrieved: frozen research is inherited byte-identical, so
+        # the live preflight gate (freshness for NEW retrieval) does not apply.
+        # Coverage is revalidated deterministically below.
+        if not fixture:
+            from .research_access import validate_coverage
+            validate_coverage(research)
+    elif not fixture:
         from .research_access import config as access_config, validate_preflight, validate_coverage
         validate_preflight(research_preflight or {}, access_config(repo), brief['subject'])
         validate_coverage(research)
@@ -76,6 +106,22 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
                 atomic_bytes(root / "inputs/research-preflight.json", canonical(research_preflight) + b"\n")
             if evidence_feedback is not None:
                 atomic_bytes(root / "inputs/evidence-feedback.json", canonical(evidence_feedback) + b"\n")
+            if remediation is not None:
+                # Inherit sealed history byte-identical: tasks, results,
+                # versioned assemblies and the live book pointer. Upstream
+                # stages are never replayed; only new whole-book rounds append.
+                src_root = repo / "runs" / remediation["source_run"]
+                for sub in ("tasks", "results", "assembly"):
+                    src, dest = src_root / sub, root / sub
+                    require(src.is_dir(), f"Source run is missing sealed directory: {sub}")
+                    shutil.copytree(src, dest)
+                for name in ("book.md",):
+                    require((src_root / name).is_file(), "Source run is missing its assembled book")
+                    shutil.copyfile(src_root / name, root / name)
+                # The inherited pointer must equal the inherited latest assembly.
+                latest = sorted((root / "assembly").glob("assembly-r*.json"))[-1]
+                require(text_hash((root / "book.md").read_text(encoding="utf-8"))
+                        == unseal(latest)["text_sha256"], "Inherited book does not match inherited assembly")
             rev = subprocess.run(["git", "rev-parse", "HEAD"], cwd=repo, capture_output=True, text=True)
             manifest = {"schema_version": 2, "run_id": run_id, "subject": brief["subject"],
                         "created_at": now(), "parent": parent, "fixture": fixture,
@@ -85,8 +131,15 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
                         "research_sha256": file_hash(root / "inputs/research.json"),
                         "research_preflight_sha256": file_hash(root / "inputs/research-preflight.json") if research_preflight is not None else None,
                         "research_revision_of": research_revision_of,
-                        "evidence_feedback_sha256": file_hash(root / "inputs/evidence-feedback.json") if evidence_feedback is not None else None}
+                        "evidence_feedback_sha256": file_hash(root / "inputs/evidence-feedback.json") if evidence_feedback is not None else None,
+                        "remediation_of": remediation["source_run"] if remediation is not None else None,
+                        "remediation_source": remediation}
             seal(root / "manifest.json", manifest)
+            if remediation is not None:
+                src_root = repo / "runs" / remediation["source_run"]
+                for name in ("brief.json", "research.json"):
+                    require(file_hash(root / "inputs" / name) == file_hash(src_root / "inputs" / name),
+                            f"Remediation {name} diverged from source")
     except BaseException:
         # Preserve unfinished input files for diagnosis; a missing manifest prevents use.
         raise
@@ -149,7 +202,13 @@ class Run:
         task = unseal(self.root / "tasks" / f"{result['task_digest']}.json")
         require(result["key"] == key and task["key"] == key, "Result identity mismatch")
         require(digest(task) == result["task_digest"] and result["output_sha256"] == digest(result["output"]), "Result/input hash mismatch")
-        require(task["run_manifest_sha256"] == digest(self.manifest), "Result from a different frozen run")
+        if task["run_manifest_sha256"] != digest(self.manifest):
+            # Content-addressed inheritance: a remediation run accepts results
+            # sealed under its recorded source manifest, byte-identical.
+            require(self.manifest.get("remediation_of") is not None, "Result from a different frozen run")
+            require(task["run_manifest_sha256"]
+                    == self.manifest["remediation_source"]["source_manifest_sha256"],
+                    "Result from an unbound run")
         for dep, sha in task["dependency_hashes"].items():
             path = confined(self.root, dep)
             require(path.is_file() and file_hash(path) == sha, f"Dependency changed or missing: {dep}")
@@ -186,6 +245,9 @@ class Run:
         self.assert_runtime()
         key = self.key(role, chapter, round_no)
         require(not (self.root / "results" / f"{key}.json").exists(), f"Result already exists: {key}. It is immutable.")
+        if self.manifest.get("remediation_of") is not None and role in (
+                "evidence-reviewer", "planner", "plan-reviewer", "writer", "chapter-reviewer", "state-editor"):
+            require(False, "Remediation inherits upstream stages byte-identical from its source run; only book-editor and final-auditor rounds continue here")
         deps: dict[str, str] = {}
         inputs = {"brief": self.brief, "research": self.research}
         if role == "evidence-reviewer":
@@ -351,11 +413,17 @@ class Run:
             validate_state(output, f"chapter-{task['chapter']:02d}", inputs["draft"]["text"])
         elif role == "book-editor":
             base = inputs["delivered_previous_chapters"]
+            front_base = base_front_matter(self.brief, self.accepted_plan()[1])
             if task["round"] > 1:
                 # Revision anchors bind to the previous immutable edited
                 # assembly, not the accepted originals (cumulative edits).
-                base = self.assembly_version(task["round"] - 1)["assembly"]["chapters"]
-            edit_book(base, output)
+                prev_asm = self.assembly_version(task["round"] - 1)["assembly"]
+                base = prev_asm["chapters"]
+                front_base = prev_asm.get("front_matter") or front_base
+            chapter_ops, front_ops = split_operations(output["operations"])
+            edit_book(base, {"schema_version": output.get("schema_version", 2),
+                             "operations": chapter_ops, "explanation": output.get("explanation", "n/a")})
+            apply_front_repairs(front_base, front_ops, task["round"])
 
     def submit(self, task: dict, output: dict, metadata: dict) -> dict:
         self.assert_runtime()
@@ -414,6 +482,8 @@ class Run:
             prev = self.assembly_version(editor_round - 1)
             deps[prev["rel"]] = prev["sha256"]
             chapters = prev["assembly"]["chapters"]
+            front_base = prev["assembly"].get("front_matter") or base_front_matter(self.brief, plan)
+            prior_repairs = list(prev["assembly"].get("front_matter_repairs", []))
         else:
             chapters = []
             for n, card in enumerate(plan["chapters"], 1):
@@ -424,11 +494,20 @@ class Run:
                 chapters.append({"id": card["id"], "title": card["title"], "text": c["text"],
                                  "claim_map": c["claim_map"], "source_chapters": [card["id"]]})
         editor = self.deps_add(deps, "book-editor", round_no=editor_round)
-        edited = edit_book(chapters, editor)
-        text = assemble_book(self.brief, self.research, plan, edited)
+        chapter_ops, front_ops = split_operations(editor["operations"])
+        edited = edit_book(chapters, {"schema_version": 2, "operations": chapter_ops,
+                                      "explanation": editor.get("explanation", "n/a")})
+        if editor_round > 1:
+            front_matter, new_repairs = apply_front_repairs(front_base, front_ops, editor_round)
+            front_repairs = prior_repairs + new_repairs
+        else:
+            front_matter, new_repairs = apply_front_repairs(base_front_matter(self.brief, plan), front_ops, editor_round)
+            front_repairs = new_repairs
+        text = assemble_book(self.brief, self.research, plan, edited, front_matter=front_matter)
         screening = screen("\n\n".join(c["text"] for c in edited))
         assembly = {"schema_version": 2, "assembly_round": editor_round,
                     "run_manifest_sha256": digest(self.manifest), "dependency_hashes": deps,
+                    "front_matter": front_matter, "front_matter_repairs": front_repairs,
                     "text": text, "text_sha256": text_hash(text), "chapters": edited, "screening": screening}
         with lock(self.root):
             (self.root / "assembly").mkdir(exist_ok=True)

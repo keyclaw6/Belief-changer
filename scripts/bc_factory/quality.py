@@ -4,6 +4,46 @@ import copy
 import re
 from .common import exact_keys, nonempty, require, version
 
+FRONT_FIELDS = ("title", "reader_goal", "limits", "safety")
+FRONT_LABELS = {"title": "title", "reader_goal": "Reader's chosen goal",
+                "limits": "Scope and limits", "safety": "Important safety information"}
+
+
+def base_front_matter(brief: dict, plan: dict) -> dict:
+    """Brief/plan-derived generated prose, keyed by repairable field."""
+    return {"title": plan["title"],
+            "reader_goal": brief["reader_goal"],
+            "limits": plan["limits"],
+            "safety": brief.get("safety_advisory") or ""}
+
+
+def apply_front_repairs(base: dict, operations: list, round_no: int) -> tuple[dict, list]:
+    """Validate and apply exact-anchored front-matter repairs. Required safety
+    text can be narrowed but never deleted or emptied."""
+    front = dict(base)
+    repairs = []
+    for op in operations:
+        if not isinstance(op, dict) or op.get("op") != "front":
+            continue
+        exact_keys(op, {"op", "field", "old", "new", "reason"}, label="front-matter repair")
+        require(op["field"] in FRONT_FIELDS, f"Front-matter field not repairable: {op.get('field')}")
+        require(op["field"] in front, "Front-matter base missing field")
+        require(op["old"] == front[op["field"]], "Front-matter anchor does not match current text")
+        require(isinstance(op["new"], str) and bool(op["new"].strip()), "Front-matter replacement must be nonempty; required safety text cannot be deleted")
+        require(op["new"] != op["old"], "Front-matter repair must change the text")
+        nonempty(op.get("reason"), "Front-matter repair reason")
+        front[op["field"]] = op["new"]
+        repairs.append({"field": op["field"], "old": op["old"], "new": op["new"],
+                        "reason": op["reason"], "round": round_no})
+    return front, repairs
+
+
+def split_operations(operations: list) -> tuple[list, list]:
+    """Separate chapter operations from front-matter repairs."""
+    require(isinstance(operations, list), "Editor operations must be a list")
+    return ([o for o in operations if isinstance(o, dict) and o.get("op") != "front"],
+            [o for o in operations if isinstance(o, dict) and o.get("op") == "front"])
+
 
 def edit_book(chapters: list[dict], response: dict) -> list[dict]:
     exact_keys(response, {"schema_version", "operations", "explanation"}, label="book editor")
@@ -64,20 +104,26 @@ def reader_locator(locator: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
-def assemble_book(brief: dict, research: dict, plan: dict, chapters: list[dict]) -> str:
+def assemble_book(brief: dict, research: dict, plan: dict, chapters: list[dict],
+                  front_matter: dict | None = None) -> str:
     n = brief["narrator"]
     if n["mode"] == "informed_author":
         author_note = "This book is an evidence-informed explanation, not the personal recovery story or clinical practice of its narrator. Illustrative scenes are not testimonials."
     else:
         author_note = f"Author: {n['name']}. Verified author-specific claims: " + "; ".join(c["claim"] for c in n["allowed_claims"])
-    sections = [f"# {plan['title']}", "## About this book", author_note,
-                f"Reader's chosen goal: {brief['reader_goal']}",
+    fm = dict(base_front_matter(brief, plan))
+    if front_matter is not None:
+        for key, value in front_matter.items():
+            require(key in FRONT_FIELDS, f"Front-matter field not repairable: {key}")
+            fm[key] = value
+    sections = [f"# {fm['title']}", "## About this book", author_note,
+                f"Reader's chosen goal: {fm['reader_goal']}",
                 "This book does not guarantee a particular outcome. Its arguments remain open to evidence and to the reader's considered judgment.",
-                f"Scope and limits: {plan['limits']}"]
+                f"Scope and limits: {fm['limits']}"]
     if brief["scope_exclusions"]:
         sections.append("Outside scope: " + "; ".join(brief["scope_exclusions"]))
-    if brief["safety_advisory"]:
-        sections += ["## Important safety information", brief["safety_advisory"]]
+    if fm["safety"]:
+        sections += ["## Important safety information", fm["safety"]]
     for i, c in enumerate(chapters, 1):
         sections += [f"## {i}. {c['title']}", c["text"].strip()]
     sections += ["## Source notes", "Source notes distinguish reports, research, and illustrations. Inclusion is not a claim that a source proves every inference in this book."]
