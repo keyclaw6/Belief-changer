@@ -287,7 +287,9 @@ class Run:
                     inputs["previous_assembly"] = {"assembly_round": round_no-1,
                                                    "text": prev["assembly"]["text"],
                                                    "text_sha256": prev["assembly"]["text_sha256"]}
-                inputs["screening"] = screen("\n\n".join(c["text"] for c in previous))
+                    inputs["screening"] = screen("\n\n".join(c["text"] for c in prev["assembly"]["chapters"]))
+                else:
+                    inputs["screening"] = screen("\n\n".join(c["text"] for c in previous))
             if role == "final-auditor":
                 if round_no > 1:
                     # Successor audit: the matching revised edit round must exist;
@@ -348,7 +350,12 @@ class Run:
         elif role == "state-editor":
             validate_state(output, f"chapter-{task['chapter']:02d}", inputs["draft"]["text"])
         elif role == "book-editor":
-            edit_book(inputs["delivered_previous_chapters"], output)
+            base = inputs["delivered_previous_chapters"]
+            if task["round"] > 1:
+                # Revision anchors bind to the previous immutable edited
+                # assembly, not the accepted originals (cumulative edits).
+                base = self.assembly_version(task["round"] - 1)["assembly"]["chapters"]
+            edit_book(base, output)
 
     def submit(self, task: dict, output: dict, metadata: dict) -> dict:
         self.assert_runtime()
@@ -398,15 +405,24 @@ class Run:
         self.deps_add(deps, "planner", round_no=pr)
         self.deps_add(deps, "plan-reviewer", round_no=pr)
         chapters = []
-        for n, card in enumerate(plan["chapters"], 1):
-            cr, c = self.accepted_chapter(n)
-            self.deps_add(deps, "writer", n, cr)
-            self.deps_add(deps, "chapter-reviewer", n, cr)
-            self.deps_add(deps, "state-editor", n, cr)
-            chapters.append({"id": card["id"], "title": card["title"], "text": c["text"],
-                             "claim_map": c["claim_map"], "source_chapters": [card["id"]]})
         if editor_round is None:
             editor_round, _ = self.latest("book-editor")
+        if editor_round > 1:
+            # Cumulative revision: later edits transform the previous immutable
+            # edited assembly, never the accepted originals — earlier repairs
+            # survive unless the inherited audit explicitly changes them.
+            prev = self.assembly_version(editor_round - 1)
+            deps[prev["rel"]] = prev["sha256"]
+            chapters = prev["assembly"]["chapters"]
+        else:
+            chapters = []
+            for n, card in enumerate(plan["chapters"], 1):
+                cr, c = self.accepted_chapter(n)
+                self.deps_add(deps, "writer", n, cr)
+                self.deps_add(deps, "chapter-reviewer", n, cr)
+                self.deps_add(deps, "state-editor", n, cr)
+                chapters.append({"id": card["id"], "title": card["title"], "text": c["text"],
+                                 "claim_map": c["claim_map"], "source_chapters": [card["id"]]})
         editor = self.deps_add(deps, "book-editor", round_no=editor_round)
         edited = edit_book(chapters, editor)
         text = assemble_book(self.brief, self.research, plan, edited)
@@ -418,6 +434,14 @@ class Run:
             (self.root / "assembly").mkdir(exist_ok=True)
             vpath = self.assembly_path(editor_round)
             preexisting = vpath.is_file()
+            dest = self.root / "book.md"
+            if not preexisting and dest.exists():
+                prior = sorted((self.root / "assembly").glob("assembly-r*.json"))
+                if not prior and dest.read_text(encoding="utf-8") != text:
+                    # Legacy layout (assembly.json-era book): refuse to seal over it
+                    # or move its pointer. Inspect with the frozen snapshot runtime.
+                    # No file is written on this path.
+                    require(False, "Existing book predates versioned assemblies; inspect it with the run's frozen snapshot runtime")
             if preexisting:
                 sealed = unseal(vpath)
                 require(sealed["text"] == text,
@@ -434,8 +458,6 @@ class Run:
                             and cur == unseal(self.assembly_path(latest - 1))["text"]):
                         # Normal advancement: move the live pointer to the new version.
                         atomic_bytes(dest, latest_text.encode("utf-8"))
-                    elif not preexisting and editor_round == latest:
-                        require(False, "Existing book predates versioned assemblies; inspect it with the run's frozen snapshot runtime")
                     else:
                         require(False, "Assembled book was modified")
             else:
@@ -443,6 +465,25 @@ class Run:
                 atomic_bytes(dest, latest_text.encode("utf-8"))
         path = self.assembly_path(editor_round)
         return {"rel": path.relative_to(self.root).as_posix(), "sha256": file_hash(path), "assembly": assembly}
+
+    def accepted_audit(self) -> tuple[int, dict]:
+        """Latest ACCEPTED final audit. Downstream consumers (judgment, release,
+        archive) must bind this — never round 1 by convention."""
+        au, audit = self.latest("final-auditor")
+        require(audit["output"]["verdict"] == "ACCEPT", "No accepted final audit")
+        self.assembly_version(au)
+        return au, audit
+
+    def accepted_audit_file(self) -> Path:
+        au, _ = self.accepted_audit()
+        return self.root / "results" / f"final-auditor-r{au:02d}.json"
+
+    def accepted_assembly(self) -> dict:
+        """Latest accepted immutable assembly — exactly what complete() certifies."""
+        er, _ = self.latest("book-editor")
+        au, _ = self.accepted_audit()
+        require(au == er, "Latest edits are unaudited")
+        return self.assembly_version(er)
 
     def complete(self) -> dict:
         er, _ = self.latest("book-editor")

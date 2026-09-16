@@ -107,7 +107,7 @@ def pair_task(repo: Path, eid: str, pair_id: str, order: str) -> dict:
                     for p in (run.root / "results").glob("*.json") for x in [unseal(p)]
                     if x["role"] in ("planner", "writer", "book-editor")}
         require(generators(parent) == generators(candidate), "Undeclared generation model/route confound")
-    pa, ca = parent.assemble()["assembly"], candidate.assemble()["assembly"]
+    pa, ca = parent.accepted_assembly()["assembly"], candidate.accepted_assembly()["assembly"]
     a, b = (pa["text"], ca["text"]) if order == "AB" else (ca["text"], pa["text"])
     # Crucially no run names, ages, scores, author identities or label mapping in model inputs.
     task = {"schema_version": 2, "role": "pair-judge", "contract": reg["instrument"]["contract"], "style": "",
@@ -115,8 +115,8 @@ def pair_task(repo: Path, eid: str, pair_id: str, order: str) -> dict:
                        "audience": parent.brief["audience"], "primary_dimension": reg["spec"]["primary_dimension"]}}
     record = {"task": task, "pair_id": pair_id, "order": order, "instrument_hash": reg["instrument_hash"],
               "parent_book_sha256": pa["text_sha256"], "candidate_book_sha256": ca["text_sha256"],
-              "parent_audit_sha256": file_hash(parent.root / "results/final-auditor-r01.json"),
-              "candidate_audit_sha256": file_hash(candidate.root / "results/final-auditor-r01.json")}
+              "parent_audit_sha256": file_hash(parent.accepted_audit_file()),
+              "candidate_audit_sha256": file_hash(candidate.accepted_audit_file())}
     with lock(root):
         seal(root / "tasks" / f"{identifier(pair_id)}-{order}.json", record)
     return task
@@ -299,9 +299,12 @@ def promote(repo: Path, eid: str, release_id: str, calibration: dict, approval: 
                 run = Run(repo, rid)
                 dest = staging / "books" / subject
                 dest.mkdir(parents=True)
-                for name in ("book.md", "assembly.json", "manifest.json"):
-                    shutil.copyfile(run.root / name, dest / name)
-                shutil.copyfile(run.root / "results/final-auditor-r01.json", dest / "final-auditor.json")
+                asm = run.accepted_assembly()
+                shutil.copyfile(run.root / asm["rel"], dest / Path(asm["rel"]).name)
+                shutil.copyfile(run.root / "book.md", dest / "book.md")
+                shutil.copyfile(run.root / "manifest.json", dest / "manifest.json")
+                audit_file = run.accepted_audit_file()
+                shutil.copyfile(audit_file, dest / audit_file.name)
                 manifests[subject] = run.complete()
             first = Run(repo, next(iter(selected.values())))
             shutil.copytree(first.root / "snapshot", staging / "factory-snapshot")

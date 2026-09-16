@@ -317,7 +317,7 @@ class RunTests(Base):
     def test_missing_final_audit_not_complete(self):
         run=self.newrun();finish(run,self.plan);(run.root/'results/final-auditor-r01.json').unlink()
         self.assertEqual(run.status()['status'],'INCOMPLETE')
-    def to_book_revise(self, run, quote="Body sentence 1."):
+    def to_book_revise(self, run, quote="Body sentence 1.", edit_a=False):
         self.to_plan(run)
         for n, card in enumerate(self.plan["chapters"], 1):
             text = f"Body sentence {n}. Second sentence {n}."
@@ -328,8 +328,17 @@ class RunTests(Base):
                        {"schema_version": 2, "chapter_id": card["id"],
                         "established": [{"belief": card["supported_conclusion"], "quote": f"Body sentence {n}."}],
                         "unresolved": [card["remaining_objection"]], "used_examples": []}, metadata())
+        if edit_a:
+            ops = [{"op": "replace", "chapter": f"chapter-0{n}",
+                    "old": f"Second sentence {n}.", "new": f"Edited second sentence {n}.",
+                    "reason": "First assembly edit."} for n in (1, 2)]
+            quote = "Edited second sentence 1."
+        else:
+            ops = []
         run.submit(run.task("book-editor"),
-                   {"schema_version": 2, "operations": [], "explanation": "First assembly; no edits."}, metadata())
+                   {"schema_version": 2, "operations": ops,
+                    "explanation": "First assembly with real edit A." if edit_a else "First assembly; no edits."},
+                   metadata())
         first = run.assemble()
         audit = accepted(); audit["verdict"] = "REVISE"; audit["checks"]["continuity"] = False
         audit["findings"] = [{"kind": "EVIDENCE", "severity": "material", "quote": quote,
@@ -341,25 +350,34 @@ class RunTests(Base):
         return first
     def test_final_audit_revise_converges_in_run(self):
         run = self.newrun()
-        first = self.to_book_revise(run)
+        first = self.to_book_revise(run, edit_a=True)
         self.assertEqual(run.status()["status"], "INCOMPLETE")
         editor_task = run.task("book-editor", round_no=2)
         self.assertEqual(editor_task["inputs"]["audit_history"][0]["audit"]["verdict"], "REVISE")
         self.assertEqual(editor_task["inputs"]["previous_assembly"]["text"], first["assembly"]["text"])
         v1bytes = (run.root / "assembly/assembly-r01.json").read_bytes()
+        # Anchors for r02 bind to the previous assembly (which contains edit A),
+        # not the accepted originals: an anchor spanning text edit A removed fails.
+        with self.assertRaises(FactoryError):
+            run.submit(editor_task, {"schema_version": 2, "operations": [
+                {"op": "replace", "chapter": "chapter-01", "old": "Body sentence 1. Second sentence 1.",
+                 "new": "Broken anchor.", "reason": "Stale anchor test."}],
+                "explanation": "Must fail validation."}, metadata())
         run.submit(editor_task, {"schema_version": 2, "operations": [
-            {"op": "replace", "chapter": "chapter-01", "old": "Body sentence 1.",
-             "new": "Revised body sentence 1.", "reason": "Audit repair."}],
-            "explanation": "One justified whole-book fix."}, metadata())
+            {"op": "replace", "chapter": "chapter-01", "old": "Edited second sentence 1.",
+             "new": "Twice revised sentence 1.", "reason": "Audit repair."}],
+            "explanation": "One justified whole-book fix on top of edit A."}, metadata())
         second = run.assemble()
         self.assertEqual((run.root / "assembly/assembly-r01.json").read_bytes(), v1bytes)
-        self.assertNotEqual(second["assembly"]["text"], first["assembly"]["text"])
+        self.assertIn("Edited second sentence 2.", second["assembly"]["text"])
+        self.assertIn("Twice revised sentence 1.", second["assembly"]["text"])
+        self.assertNotIn("Edited second sentence 1.", second["assembly"]["text"])
         self.assertEqual((run.root / "book.md").read_text(), second["assembly"]["text"])
         auditor_task = run.task("final-auditor", round_no=2)
         self.assertEqual(len(auditor_task["inputs"]["audit_history"]), 1)
-        self.assertIn("Revised body sentence 1.", auditor_task["inputs"]["assembled_book"])
+        self.assertIn("Twice revised sentence 1.", auditor_task["inputs"]["assembled_book"])
         final = accepted()
-        final["claim_checks"] = [{"quote": "Revised body sentence 1.", "evidence_ids": [],
+        final["claim_checks"] = [{"quote": "Twice revised sentence 1.", "evidence_ids": [],
                                   "support": "nonempirical", "explanation": "Fixture sentence."}]
         final["screening_resolutions"] = {f["id"]: "Fixture triage." for f in second["assembly"]["screening"]}
         run.submit(auditor_task, final, metadata(True))
@@ -583,6 +601,68 @@ class ExperimentTests(Base):
         with patch('bc_factory.experiments.decide',return_value={'decision':'KEEP_ELIGIBLE'}):
             with self.assertRaises(FactoryError): promote(self.repo,'exp1','bad-approval',{}, {})
         self.assertEqual(file_hash(self.repo/'factory/champion.json'),before)
+    def test_pair_task_binds_latest_accepted_audit(self):
+        runs = {}
+        for subject in ('s1', 's2'):
+            self.brief, self.research, self.plan = inputs(subject)
+            for n in range(3):
+                for arm in ('p', 'c'):
+                    r = self.newrun(f'{subject}-{arm}{n}')
+                    runs[f'{subject}-{arm}{n}'] = r
+                    if not (subject == 's1' and arm == 'c' and n == 0):
+                        finish(r, self.plan)
+        cand = runs['s1-c0']
+        self.brief, self.research, self.plan = inputs('s1')
+        self.to_plan(cand)
+        for n, card in enumerate(self.plan["chapters"], 1):
+            text = f"Body sentence {n}. Second sentence {n}."
+            cand.submit(cand.task("writer", n),
+                        {"schema_version": 2, "chapter_id": card["id"], "text": text, "claim_map": []}, metadata())
+            cand.submit(cand.task("chapter-reviewer", n), accepted(), metadata())
+            cand.submit(cand.task("state-editor", n),
+                        {"schema_version": 2, "chapter_id": card["id"],
+                         "established": [{"belief": card["supported_conclusion"], "quote": f"Body sentence {n}."}],
+                         "unresolved": [card["remaining_objection"]], "used_examples": []}, metadata())
+        cand.submit(cand.task("book-editor"),
+                    {"schema_version": 2, "operations": [], "explanation": "First assembly."}, metadata())
+        v1 = cand.assemble()
+        bad = accepted(); bad["verdict"] = "REVISE"; bad["checks"]["continuity"] = False
+        bad["findings"] = [{"kind": "EVIDENCE", "severity": "material", "quote": "Body sentence 1.",
+                            "explanation": "Needs revision.", "repair": "Revise."}]
+        bad["claim_checks"] = [{"quote": "Body sentence 1.", "evidence_ids": [],
+                                "support": "nonempirical", "explanation": "Fixture."}]
+        bad["screening_resolutions"] = {f["id"]: "Fixture triage." for f in v1["assembly"]["screening"]}
+        cand.submit(cand.task("final-auditor"), bad, metadata(True))
+        cand.submit(cand.task("book-editor", round_no=2),
+                    {"schema_version": 2, "operations": [
+                        {"op": "replace", "chapter": "chapter-01", "old": "Body sentence 1.",
+                         "new": "Fixed sentence 1.", "reason": "Audit repair."}],
+                     "explanation": "Audit repair."}, metadata())
+        v2 = cand.assemble()
+        good = accepted()
+        good["claim_checks"] = [{"quote": "Fixed sentence 1.", "evidence_ids": [],
+                                 "support": "nonempirical", "explanation": "Fixture."}]
+        good["screening_resolutions"] = {f["id"]: "Fixture triage." for f in v2["assembly"]["screening"]}
+        cand.submit(cand.task("final-auditor", round_no=2), good, metadata(True))
+        self.assertEqual(cand.complete()["status"], "COMPLETE_UNRELEASED")
+        pairs = [{'id': f'{subject}-{n}', 'subject': subject,
+                  'parent_run': f'{subject}-p{n}', 'candidate_run': f'{subject}-c{n}'}
+                 for subject in ('s1', 's2') for n in range(3)]
+        spec = {'schema_version': 2, 'id': 'expB', 'parent_release': None,
+                'hypothesis': 'Late-audit binding fixture', 'primary_dimension': 'argument',
+                'allowed_change_paths': ['prompts/chapter-writer.md'], 'subjects': ['s1', 's2'],
+                'samples_per_subject': 3, 'pairs': pairs,
+                'freeze_plan': True, 'confirmatory': False}
+        register(self.repo, spec)
+        pair_task(self.repo, 'expB', 's1-0', 'AB')
+        rec = unseal(self.repo / 'experiments/expB/tasks/s1-0-AB.json')
+        r01 = file_hash(self.repo / 'runs/s1-c0/results/final-auditor-r01.json')
+        r02 = file_hash(self.repo / 'runs/s1-c0/results/final-auditor-r02.json')
+        self.assertNotEqual(r01, r02)
+        self.assertEqual(rec['candidate_audit_sha256'], r02)
+        self.assertEqual(rec['parent_audit_sha256'],
+                         file_hash(self.repo / 'runs/s1-p0/results/final-auditor-r01.json'))
+        self.assertEqual(rec['candidate_book_sha256'], cand.complete()['book_sha256'])
 
     def test_three_wins_not_statistical_sufficiency(self):
         self.assertLess(wilson_lower(3,3),0.5)
