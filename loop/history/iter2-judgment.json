@@ -1,0 +1,290 @@
+{
+ "schema_version": 1,
+ "round": "iter2-judgment",
+ "protocol": {
+  "protocol": "iter2-judgment",
+  "design": "Per subject, blinded pairwise comparison of the Iteration-2 COMPLETE book vs the Iteration-1 COMPLETE book, frozen pairwise instrument, AB and BA orders. Judges receive only A/B texts plus reader_goal/audience.",
+  "judge_family": "openai (gpt-5.6-sol via codex-role adapter), independent of the meta generator family",
+  "scope": "Exploratory learning judgment for the final study analysis. Non-promotional: no calibration, no promotion, no efficacy claims.",
+  "schema_version": 1
+ },
+ "label_map": {
+  "sugar": {
+   "seed": 20260919,
+   "AB": {
+    "A": "iter2",
+    "B": "iter1"
+   },
+   "BA": {
+    "A": "iter1",
+    "B": "iter2"
+   }
+  },
+  "smoking": {
+   "seed": 20260919,
+   "AB": {
+    "A": "iter1",
+    "B": "iter2"
+   },
+   "BA": {
+    "A": "iter2",
+    "B": "iter1"
+   }
+  }
+ },
+ "judgments": {
+  "sugar-AB": {
+   "output": {
+    "schema_version": 2,
+    "preferences": {
+     "argument": {
+      "winner": "A",
+      "a_quote": "Notice what these reports establish and what they do not. People report lapses and relapses \u2014 including after reported long quits \u2014 and sometimes describe the aftermath as feeling like proof of powerlessness; these are reports, without measure of how common they are and with no empirical weight beyond being reported.",
+      "b_quote": "Notice what these reports establish and what they do not. They establish that lapses and relapses happen \u2014 including after long quits \u2014 and that the aftermath can feel like proof of powerlessness; these reports describe that feeling without measuring how common it is.",
+      "reason": "A consistently keeps unverified accounts at the level of reported experience. B briefly converts those reports into established events, weakening an otherwise careful argument. Both address strong objections, but A answers them with tighter evidentiary discipline."
+     },
+     "recognition": {
+      "winner": "B",
+      "a_quote": "The first two are stories of people who tried repeatedly, sometimes for months.",
+      "b_quote": "These are not stories of people who never tried. They are stories of people who tried repeatedly, sometimes for months.",
+      "reason": "B more directly identifies and counters the shaming implication that repeated difficulty means insufficient effort. A recognizes the same persistence, but B states the reader-facing correction more clearly."
+     },
+     "progression": {
+      "winner": "A",
+      "a_quote": "What these reports give you is a shelf of possible experiences to compare against your own present or past \u2014 noticing similarities or differences without treating either as evidence of what will happen next. Note too that these accounts use different definitions \u2014 one removed refined sugar while keeping alternatives \u2014 and the four-week X report does not define the term, which is another reason their weeks cannot be stacked into a course \u2014 plus one discipline: never promote an anecdote into a calendar.",
+      "b_quote": "What these reports give you is a shelf of possible experiences to compare against your own present or past \u2014 noticing similarities or differences without treating either as evidence of what will happen next \u2014 plus one discipline: never promote an anecdote into a calendar.",
+      "reason": "A supplies the missing logical dependency: accounts using incompatible or undefined meanings of sugar-free cannot be combined into a timeline. That discovery strengthens the transition from anecdotes to the final chapter's bounded observations; B reaches the conclusion without developing this reason."
+     },
+     "voice": {
+      "winner": "A",
+      "a_quote": "The abdication charge deserves a direct answer: A book that prescribes nothing has abdicated. It has \u2014 abdicated the throne it never owned.",
+      "b_quote": "Here is the strongest objection, faced directly. A book that prescribes nothing has abdicated. It has \u2014 abdicated the throne it never owned.",
+      "reason": "A integrates objections through varied, subject-specific phrasing. B repeatedly announces them with the same \u201cHere is the strongest objection\u201d construction, making an otherwise direct voice feel more templated."
+     },
+     "emotional_movement": {
+      "winner": "tie",
+      "a_quote": "You came in believing you had no say \u2014 white-knuckle abstinence or failure. The evidence does not grant you control it cannot measure. It returns something adjacent: questions worth asking, observations worth noting down, lines worth not crossing alone, and the knowledge that a lapse is information, not a verdict. That is not everything. It was never nothing.",
+      "b_quote": "You came in believing you had no say \u2014 white-knuckle abstinence or failure. The evidence does not grant you control it cannot measure. It returns something adjacent: questions worth asking, observations worth noting down, lines worth not crossing alone, and the knowledge that a lapse is information, not a verdict. That is not everything. It was never nothing.",
+      "reason": "Both books complete the same credible movement from shame and binary judgment toward bounded agency. Neither promises control, pressures the reader toward a method, or treats relief as guaranteed."
+     },
+     "economy": {
+      "winner": "B",
+      "a_quote": "One four-week account arrived with its counter-voices attached. One poster writes that after quitting sugar for 4 weeks, energy, skin, digestion, and sleep all improved \u2014 and asks who is trying it next. The same thread answers back in three directions: one reply agrees about sleep being the biggest change, another reports years on the path with only the occasional dessert, and a third cautions that benefits vary from person to person. The list and its limits travel together, in one place, from unverified strangers. Presenting the benefit list beside its countervoices is more honest than quoting the list alone \u2014 while remaining unverified and non-predictive.",
+      "b_quote": "Then the shorter forms. A four-week benefit list and a 45-of-46 reframe circulate as single reports \u2014 recognition, never prediction. Energy, skin, digestion, sleep: listed by one person, caused by nothing established. The arithmetic of 45 out of 46 belongs to one commenter answering one lapse. Replies show interest, not corroboration.",
+      "reason": "B communicates the reports' status, causal limits, and lack of corroboration more compactly. A's fuller inventory adds some nuance but repeats evidentiary cautions already established elsewhere."
+     }
+    },
+    "critical": {
+     "A": [],
+     "B": []
+    }
+   },
+   "model": "gpt-5.6-sol",
+   "family": "openai",
+   "route": "codex-exec/chatgpt-subscription/sandbox-read-only",
+   "usage": null
+  },
+  "sugar-BA": {
+   "output": {
+    "schema_version": 2,
+    "preferences": {
+     "argument": {
+      "winner": "B",
+      "a_quote": "Start with the trial that closed one narrow door: no basis for choosing between these two weight-loss diets, or matching them by genotype or baseline insulin secretion, in adults without diabetes.",
+      "b_quote": "In adults aged 18 to 50 with BMI 28 to 40 and without diabetes, neither the healthy low-fat nor the healthy low-carbohydrate diet produced significantly different mean 12-month weight loss, and neither the specified genotype pattern nor the baseline insulin-secretion measure identified who lost more.",
+      "reason": "Both reason cautiously and address serious objections, but B states the trial population, interventions, outcome, and tested matching variables more precisely; A's compressed claim of \u201cno basis for choosing\u201d is broader than the trial result it later qualifies."
+     },
+     "recognition": {
+      "winner": "B",
+      "a_quote": "If your weeks looked like this, you have company \u2014 and one caution travels with it: severe or persistent physical symptoms, depression, or significant distress should be professionally assessed rather than assumed to be sugar withdrawal. If they did not, nothing is wrong with you.",
+      "b_quote": "If your weeks looked like this, you have company \u2014 and one caution travels with it: severe or persistent physical symptoms, depression, or significant distress should be professionally assessed rather than assumed to be sugar withdrawal. If your experience was different, that difference alone is not evidence that you failed.",
+      "reason": "Both offer compassionate recognition without normalizing dangerous symptoms. B's reassurance is more accurately bounded to the feared conclusion of failure, whereas A's global assurance that \u201cnothing is wrong with you\u201d reaches beyond what the account can establish."
+     },
+     "progression": {
+      "winner": "tie",
+      "a_quote": "So what can you actually do, if nothing here is a prescription? That is the next and last chapter's question: observations you can note down, and lines you do not cross alone.",
+      "b_quote": "So what can you actually do, if nothing here is a prescription? That is the next and last chapter's question: observations you can note, and lines you do not cross alone.",
+      "reason": "Both build the same coherent sequence: challenge the shame verdict, examine addiction evidence, establish medical boundaries, assess fellowship claims, limit anecdotes, and only then introduce bounded reflection and professional routing. Neither skips a material dependency."
+     },
+     "voice": {
+      "winner": "A",
+      "a_quote": "What the reframe names, and the shame arithmetic hides, is that the 44 completed days happened. They are not nothing because the next day went wrong.",
+      "b_quote": "Within the poster's account, those 44 completed days remain part of the record. They are not nothing because the next day went wrong \u2014 inside that account, at least.",
+      "reason": "A expresses the evidentiary point in vivid, natural language while retaining the needed limit. B's repeated account-level qualification is careful but noticeably more legalistic and less fluid."
+     },
+     "emotional_movement": {
+      "winner": "tie",
+      "a_quote": "You came in believing you had no say \u2014 white-knuckle abstinence or failure. The evidence does not grant you control it cannot measure. It returns something adjacent: questions worth asking, observations worth noting down, lines worth not crossing alone, and the knowledge that a lapse is information, not a verdict. That is not everything. It was never nothing.",
+      "b_quote": "You came in believing you had no say \u2014 white-knuckle abstinence or failure. The evidence does not grant you control it cannot measure. It returns something adjacent: questions worth asking, observations worth noting down, lines worth not crossing alone, and the knowledge that a lapse is information, not a verdict. That is not everything. It was never nothing.",
+      "reason": "Both complete the same credible movement from self-condemnation toward bounded agency, preserving uncertainty and safety instead of manufacturing confidence or pressuring the reader toward a method."
+     },
+     "economy": {
+      "winner": "A",
+      "a_quote": "Its questions are optional prompts for describing your concerns and preparing a professional conversation \u2014 not a validated method, experiment, or instrument, and not a way to establish personal patterns: tracking as a method is unvalidated, as this book has stated throughout.",
+      "b_quote": "Its questions are optional prompts for describing your concerns and preparing a professional conversation \u2014 not a validated method, experiment, or instrument, and not a way to establish personal patterns. No evidence reviewed for this book validates these prompts as a tracking method or as a way to establish personal patterns.",
+      "reason": "A conveys the limitation once in a compact formulation. B immediately restates substantially the same limitation, and similar repeated safety and evidentiary qualifications elsewhere make it somewhat less economical despite often adding useful precision."
+     }
+    },
+    "critical": {
+     "A": [],
+     "B": []
+    }
+   },
+   "model": "gpt-5.6-sol",
+   "family": "openai",
+   "route": "codex-exec/chatgpt-subscription/sandbox-read-only",
+   "usage": null
+  },
+  "smoking-AB": {
+   "output": {
+    "schema_version": 2,
+    "preferences": {
+     "argument": {
+      "winner": "B",
+      "a_quote": "Against NRT, nicotine vaping won more quits at six months or longer \u2014 roughly four extra quitters per hundred \u2014 in the version-pinned Cochrane review at high certainty; its plain-language summary puts that as about 8 to 10 quitters per 100 with vaping versus about 6 per 100 with NRT, and most participants in both groups did not achieve the measured outcome; the NRT review likewise covered abstinence at six months or longer with high confidence.",
+      "b_quote": "Against NRT, nicotine vaping won more quits at six months or longer in the 2026 v11 review (search to January 2026): RR 1.61 at high certainty, about four additional quitters per 100 (95% CI 1 to 7 more).",
+      "reason": "Both distinguish relative from absolute effects and preserve uncertainty, but B supplies the specific review version, search horizon, relative risk, confidence interval, and product scope. B also more clearly reconciles the relapse-prevention result with the earlier combined-support evidence."
+     },
+     "recognition": {
+      "winner": "B",
+      "a_quote": "Shame or coercion are risks a reader should watch for, not recorded outcomes \u2014 which is exactly why borrowing selectively is the chapter's whole advice.",
+      "b_quote": "The criticism thread records one poster feeling defeated and another feeling that something was wrong with them \u2014 relevant reports of self-blame, which establish nothing about coercion, causation, prevalence, or effects across communities.",
+      "reason": "A offers non-shaming guidance, but B more accurately recognizes the reported experience of defeat and self-blame while explicitly refusing to inflate those reports into claims about coercion, causation, or prevalence."
+     },
+     "progression": {
+      "winner": "B",
+      "a_quote": "Pharmacotherapy-extension results were mixed across agents and populations; extended varenicline benefited assisted abstainers in a clinically managed base. Unaided and long-term relapse claims stay bounded. Nothing here predicts any individual, and no behavioral method of any kind is established by this review.",
+      "b_quote": "The behavioral finding concerned recognition-and-coping relapse-prevention interventions in assisted abstainers only, so it does not overturn the earlier evidence about behavioral support combined with pharmacotherapy \u2014 and it says nothing about any individual reader.",
+      "reason": "B explicitly connects the later relapse-prevention finding to the earlier combined-support finding and prevents an apparent contradiction. A supplies bounds but leaves that cumulative dependency less clearly resolved."
+     },
+     "voice": {
+      "winner": "A",
+      "a_quote": "The pause before answering \u2014 years quit, a cigarette offered at a celebration \u2014 is where this chapter lives.",
+      "b_quote": "The decision point this chapter examines: years quit, a cigarette offered at a celebration, a pause before answering.",
+      "reason": "A's phrasing is more vivid, fluid, and distinctive while remaining direct. B conveys the same scene clearly but in a more report-like construction."
+     },
+     "emotional_movement": {
+      "winner": "B",
+      "a_quote": "Fourth, optionally set a next support contact in advance \u2014 a service, a forum thread, a booked appointment \u2014 as a practical choice that makes reaching out easier; whether it changes any outcome is unestablished, and no service or forum effectiveness is claimed.",
+      "b_quote": "Fourth, optionally set a next support contact in advance \u2014 a service, a forum thread, a booked appointment \u2014 as a practical choice, if having a contact arranged would feel easier to you; whether it changes any outcome is unestablished, and no service or forum effectiveness is claimed.",
+      "reason": "Both end with a manageable, optional action and no outcome promise. B better preserves informed agency by making the claimed ease contingent on the reader's own experience rather than asserting that arranging contact will be easier."
+     },
+     "economy": {
+      "winner": "A",
+      "a_quote": "Start with the service example, geographically bounded. The cited UK page says local services are free, usually support people for up to twelve weeks, and may measure carbon monoxide at meetings \u2014 an example whose local offerings vary, describing nothing elsewhere.",
+      "b_quote": "Start with the service example, geographically bounded. One country's service page describes free services that usually offer support for up to twelve weeks, with carbon-monoxide monitoring \u2014 an example whose local offerings vary. Product lists, prescription routes, and program names belong to that system, not to every reader's town. The cited UK page says local services are free, usually support people for up to twelve weeks, and may measure carbon monoxide at meetings; availability and details vary by area, and nothing here describes services elsewhere.",
+      "reason": "A states the service facts and geographic limitation once. B repeats both the service description and the locality caveat in the same paragraph, adding length without a corresponding new distinction."
+     }
+    },
+    "critical": {
+     "A": [],
+     "B": [
+      {
+       "kind": "OVERCLAIM",
+       "quote": "No method works for everyone; relapse is common and is information, not a verdict.",
+       "explanation": "The unqualified prevalence claim that relapse is common is not established by the supplied evidence and conflicts with the book's stated limit that it cannot establish how common any trajectory is. Its placement in the safety notice gives the unsupported generalization material authority."
+      }
+     ]
+    }
+   },
+   "model": "gpt-5.6-sol",
+   "family": "openai",
+   "route": "codex-exec/chatgpt-subscription/sandbox-read-only",
+   "usage": null
+  },
+  "smoking-BA": {
+   "output": {
+    "schema_version": 2,
+    "preferences": {
+     "argument": {
+      "winner": "A",
+      "a_quote": "The behavioral finding concerned recognition-and-coping relapse-prevention interventions in assisted abstainers only, so it does not overturn the earlier evidence about behavioral support combined with pharmacotherapy \u2014 and it says nothing about any individual reader.",
+      "b_quote": "Nothing here predicts any individual, and no behavioral method of any kind is established by this review.",
+      "reason": "A preserves the review's population and intervention boundaries and reconciles the result with earlier combined-support evidence. B's broader phrase, \u201cno behavioral method of any kind,\u201d outruns the specific relapse-prevention comparison and risks obscuring relevant evidence."
+     },
+     "recognition": {
+      "winner": "tie",
+      "a_quote": "The criticism thread records one poster feeling defeated and another feeling that something was wrong with them \u2014 relevant reports of self-blame, which establish nothing about coercion, causation, prevalence, or effects across communities.",
+      "b_quote": "Shame or coercion are risks a reader should watch for, not recorded outcomes \u2014 which is exactly why borrowing selectively is the chapter's whole advice. Take the pledge structure, leave the label policing. Take the day-at-a-time horizon, leave the cold-turkey creed.",
+      "reason": "A accurately recognizes reported self-blame without generalizing it; B turns the same concern into direct, non-shaming permission to reject unsuitable norms. Each offers a comparably strong form of recognition."
+     },
+     "progression": {
+      "winner": "B",
+      "a_quote": "Picture a kitchen table with a short written list on it \u2014 a general decision list for the week ahead. For readers with product or health questions, part of that list is questions for a clinician visit: which options are medically appropriate given your health and prior attempts, what benefits and harms each carries, what follow-up exists, and what to do if you slip. Nonclinical behavioral or peer-support exploration needs no appointment; that list sits at a new imagined table, not a callback to anywhere.",
+      "b_quote": "Return to the kitchen table from the first chapter, now with a short written list of questions for a clinician visit. That list \u2014 not answers, but questions sharp enough to carry into a consulting room \u2014 is the book's final product: which options fit given your health and prior attempts, what benefits and harms each carries, what follow-up exists, and what to do if you slip. The table is a callback, not a report.",
+      "reason": "B's return to its opening image makes the final decision procedure feel earned by the preceding inquiry. A delivers the procedure clearly but explicitly forgoes that cumulative callback."
+     },
+     "voice": {
+      "winner": "B",
+      "a_quote": "Beginnings differ, and the contrast matters more than any single story. One quitter counts twenty years of attempts \u2014 patches, gum, a hypnotist, an app, white-knuckling \u2014 while another posted a quit intention within days of a collapsed lung and surgery. No single account covers the others; what follows stays with individual reports, not patterns.",
+      "b_quote": "Count the attempts on your fingers, if you have them to count: patches, gum, the hypnotist smoked all the way home from, the app downloaded and deleted. No one reported that exact kitchen-table moment \u2014 it stands in for something several people describe in their own words.",
+      "reason": "B is more immediate, concrete, and conversational while candidly identifying its invented scene. A is clear but has the more report-like cadence."
+     },
+     "emotional_movement": {
+      "winner": "A",
+      "a_quote": "Fourth, optionally set a next support contact in advance \u2014 a service, a forum thread, a booked appointment \u2014 as a practical choice, if having a contact arranged would feel easier to you; whether it changes any outcome is unestablished, and no service or forum effectiveness is claimed.",
+      "b_quote": "Fourth, optionally set a next support contact in advance \u2014 a service, a forum thread, a booked appointment \u2014 as a practical choice that makes reaching out easier; whether it changes any outcome is unestablished, and no service or forum effectiveness is claimed.",
+      "reason": "A conditions the suggestion on the reader's own experience, creating a credible route toward agency without promising that it will feel easier. B turns that possible benefit into a general assertion."
+     },
+     "economy": {
+      "winner": "B",
+      "a_quote": "Start with the service example, geographically bounded. One country's service page describes free services that usually offer support for up to twelve weeks, with carbon-monoxide monitoring \u2014 an example whose local offerings vary. Product lists, prescription routes, and program names belong to that system, not to every reader's town. The cited UK page says local services are free, usually support people for up to twelve weeks, and may measure carbon monoxide at meetings; availability and details vary by area, and nothing here describes services elsewhere.",
+      "b_quote": "Start with the service example, geographically bounded. The cited UK page says local services are free, usually support people for up to twelve weeks, and may measure carbon monoxide at meetings \u2014 an example whose local offerings vary, describing nothing elsewhere. Product lists, prescription routes, and program names belong to that system, not to every reader's town.",
+      "reason": "B states the service facts and geographic limitation once. A repeats the duration, monitoring, and locality qualifications in adjacent sentences without adding a substantive distinction."
+     }
+    },
+    "critical": {
+     "A": [
+      {
+       "kind": "OVERCLAIM",
+       "quote": "No method works for everyone; relapse is common and is information, not a verdict.",
+       "explanation": "The book elsewhere says it cannot establish how common any trajectory is, and its supplied evidence presents no relapse-prevalence estimate. Calling relapse \u201ccommon\u201d therefore exceeds its stated evidentiary boundary and may shape readers' risk expectations."
+      }
+     ],
+     "B": [
+      {
+       "kind": "OVERCLAIM",
+       "quote": "That framing is one person's, and the retained record doesn't support generalizing it \u2014 slips do not generally dissolve illusion, timing does not transfer, and anything about patches or counts outside the retained passage stays outside this book.",
+       "explanation": "After correctly saying that one report cannot be generalized, the passage makes the unsupported general claim that slips do not generally dissolve an illusion. The case establishes neither the usual presence nor absence of that response."
+      },
+      {
+       "kind": "OVERCLAIM",
+       "quote": "A single reporter, not two corroborating voices \u2014 and day-thirty status predicts nothing, with no outcome evidence either way.",
+       "explanation": "The report cannot establish sustained abstinence or app effectiveness, but \u201cpredicts nothing\u201d is an absolute predictive claim unsupported by the supplied evidence and unnecessarily dismisses an early status measure."
+      },
+      {
+       "kind": "OVERCLAIM",
+       "quote": "The dossier cannot identify what keeps anyone quit \u2014 only what support remains available, with effectiveness unclaimed throughout.",
+       "explanation": "As written, this sweeps beyond the community snapshots and conflicts with the book's own review-based claims that NRT, vaping versus NRT, and combined support improve average cessation outcomes. Individual method matching is unestablished, but effectiveness is not wholly unclaimed."
+      }
+     ]
+    }
+   },
+   "model": "gpt-5.6-sol",
+   "family": "openai",
+   "route": "codex-exec/chatgpt-subscription/sandbox-read-only",
+   "usage": null
+  }
+ },
+ "analysis": {
+  "order_effects": {
+   "sugar": "argument\u2192iter2 both orders; recognition\u2192B-label both orders (position bias, no conclusion); voice\u2192A-label both orders (position bias); economy\u2192iter1 both orders (iter1 win); progression\u2192iter2 once + tie (weak iter2 lean); emotional_movement tie both.",
+   "smoking": "argument\u2192iter2 both orders; emotional_movement\u2192iter2 both orders; voice\u2192iter1 both orders; economy\u2192iter1 both orders; recognition\u2192iter2 once + tie; progression splits by order (sensitive)."
+  },
+  "consistent_wins": {
+   "iter2": [
+    "argument (both subjects, both orders)",
+    "smoking emotional_movement"
+   ],
+   "iter1": [
+    "voice (both subjects, both orders)",
+    "economy (both subjects, both orders)"
+   ]
+  },
+  "criticals": "Smoking iter2 flagged in BOTH orders for the brief-derived safety phrase 'relapse is common' (unsupported prevalence in safety front matter). Smoking iter1 flagged once for a chapter passage already revised in iter2. Sugar: no criticals either book.",
+  "residual_defect": "iter2-smoking-a/book.md line 'relapse is common' (safety front matter regenerated verbatim from the frozen brief). The identical defect was repaired in iter1-smoking-axr1 via front-matter repair, but the repair did not propagate to the fresh Iteration-2 lineage built from the same brief. Books stand as audited; recorded here, not rebuilt.",
+  "grounding": "53/53 quoted passages resolve by code against attributed labeled texts; all four judges gpt-5.6-sol/openai.",
+  "variance": "Moderate: decisive dimensions (argument, voice, economy) replicate across orders; recognition/progression show position bias or splits.",
+  "interpretation": "Iteration 2 improved evidentiary precision (argument) at a small cost in polish (voice/economy): the wrapper-discipline learning made iter2 wording more qualified and less vivid. No regressions in safety handling beyond the noted front-matter carryover."
+ }
+}
