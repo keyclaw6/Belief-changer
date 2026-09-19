@@ -38,11 +38,55 @@ def apply_front_repairs(base: dict, operations: list, round_no: int) -> tuple[di
     return front, repairs
 
 
-def split_operations(operations: list) -> tuple[list, list]:
-    """Separate chapter operations from front-matter repairs."""
+def split_operations(operations: list) -> tuple[list, list, list]:
+    """Separate chapter operations, front-matter repairs and source-note repairs."""
     require(isinstance(operations, list), "Editor operations must be a list")
-    return ([o for o in operations if isinstance(o, dict) and o.get("op") != "front"],
-            [o for o in operations if isinstance(o, dict) and o.get("op") == "front"])
+    chapter = [o for o in operations if isinstance(o, dict) and o.get("op") not in ("front", "notes")]
+    front = [o for o in operations if isinstance(o, dict) and o.get("op") == "front"]
+    notes = [o for o in operations if isinstance(o, dict) and o.get("op") == "notes"]
+    require(len(chapter) + len(front) + len(notes) == len(operations), "Invalid editorial operation")
+    return chapter, front, notes
+
+
+def render_source_notes(research: dict) -> list[dict]:
+    """Render reader-facing source notes from frozen research. Bodies carry no
+    numbering; numbering is applied at assembly time so note removal cannot
+    leave gaps."""
+    notes = []
+    for e in research["sources"]:
+        notes.append({"id": e["id"],
+                      "body": f"{KIND_LABELS.get(e['kind'], e['kind'])} — {e['source']}\nRetrieval: {reader_locator(e['locator'])}\nScope: {e['population']}\nSupported use: {e['permitted_inference']}"})
+    return notes
+
+
+def apply_note_repairs(notes: list[dict], operations: list, round_no: int) -> tuple[list, list]:
+    """Validate and apply exact-anchored repairs to rendered source notes.
+    A repair either replaces an exactly-once substring of one note or removes
+    a whole note (new == "" requires old to equal the note's full body, so
+    removal is always audited against seen text). At least one note survives."""
+    notes = [dict(n) for n in notes]
+    repairs = []
+    for op in operations:
+        if not isinstance(op, dict) or op.get("op") != "notes":
+            continue
+        exact_keys(op, {"op", "id", "old", "new", "reason"}, label="source-note repair")
+        hits = [n for n in notes if n["id"] == op["id"]]
+        require(len(hits) == 1, f"Source-note repair refers to missing/nonunique note {op.get('id')}")
+        note = hits[0]
+        require(isinstance(op["old"], str) and bool(op["old"]), "Source-note anchor must be nonempty")
+        require(isinstance(op["new"], str), "Source-note replacement must be text")
+        require(op["new"] != op["old"], "Source-note repair must change the text")
+        nonempty(op.get("reason"), "Source-note repair reason")
+        if op["new"] == "":
+            require(op["old"] == note["body"], "Whole-note removal requires the full note text as anchor")
+            require(len(notes) > 1, "Source-note repair cannot remove the last note")
+            notes.remove(note)
+        else:
+            require(note["body"].count(op["old"]) == 1, "Source-note anchor must occur exactly once")
+            note["body"] = note["body"].replace(op["old"], op["new"], 1)
+        repairs.append({"id": op["id"], "old": op["old"], "new": op["new"],
+                        "reason": op["reason"], "round": round_no})
+    return notes, repairs
 
 
 def edit_book(chapters: list[dict], response: dict) -> list[dict]:
@@ -114,7 +158,7 @@ def reader_locator(locator: str) -> str:
 
 
 def assemble_book(brief: dict, research: dict, plan: dict, chapters: list[dict],
-                  front_matter: dict | None = None) -> str:
+                  front_matter: dict | None = None, source_notes: list | None = None) -> str:
     n = brief["narrator"]
     if n["mode"] == "informed_author":
         author_note = "This book is an evidence-informed explanation, not the personal recovery story or clinical practice of its narrator. Illustrative scenes are not testimonials."
@@ -136,8 +180,9 @@ def assemble_book(brief: dict, research: dict, plan: dict, chapters: list[dict],
     for i, c in enumerate(chapters, 1):
         sections += [f"## {i}. {c['title']}", c["text"].strip()]
     sections += ["## Source notes", "Source notes distinguish reports, research, and illustrations. Inclusion is not a claim that a source proves every inference in this book."]
-    for num, e in enumerate(research["sources"], 1):
-        sections.append(f"{num}. {KIND_LABELS.get(e['kind'], e['kind'])} — {e['source']}\nRetrieval: {reader_locator(e['locator'])}\nScope: {e['population']}\nSupported use: {e['permitted_inference']}")
+    rendered = source_notes if source_notes is not None else render_source_notes(research)
+    for num, note in enumerate(rendered, 1):
+        sections.append(f"{num}. {note['body']}")
     return "\n\n".join(sections).rstrip() + "\n"
 
 

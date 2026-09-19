@@ -478,6 +478,63 @@ class RunTests(Base):
             run.submit(run.task("book-editor", round_no=3), {"schema_version": 2, "operations": [
                 {"op": "retitle", "chapter": "chapter-01", "title": "   ",
                  "reason": "Empty title."}], "explanation": "Must fail."}, metadata())
+    def test_notes_repairs_converge_in_lineage(self):
+        import copy
+        research = copy.deepcopy(self.research)
+        extra = copy.deepcopy(research['sources'][0])
+        extra['id'] = 'demo-second'
+        research['sources'].append(extra)
+        prepare(self.repo, 'notesrun', self.brief, research, fixture=True)
+        run = Run(self.repo, 'notesrun')
+        self.to_book_revise(run)
+        first = run.assembly_version(1)["assembly"]
+        self.assertEqual(len(first["source_notes"]), 2)
+        # Relabel one note and remove another; removal needs the full note text.
+        second_body = first["source_notes"][1]["body"]
+        run.submit(run.task("book-editor", round_no=2), {"schema_version": 2, "operations": [
+            {"op": "notes", "id": first["source_notes"][0]["id"], "old": "synthetic",
+             "new": "test-only", "reason": "Audit repair."},
+            {"op": "notes", "id": "demo-second", "old": second_body, "new": "",
+             "reason": "Unused note."}],
+            "explanation": "Note fixes."}, metadata())
+        second = run.assemble()
+        self.assertIn("test-only", second["assembly"]["text"])
+        self.assertNotIn("synthetic", second["assembly"]["text"].split("## Source notes")[1])
+        self.assertEqual(len(second["assembly"]["source_notes"]), 1)
+        self.assertEqual(len(second["assembly"]["source_note_repairs"]), 2)
+        v1bytes = (run.root / "assembly/assembly-r01.json").read_bytes()
+        # A later chapter-only round preserves the note repairs cumulatively.
+        revise = accepted(); revise["verdict"] = "REVISE"; revise["checks"]["continuity"] = False
+        revise["findings"] = [{"kind": "EVIDENCE", "severity": "material", "quote": "Body sentence 2.",
+                               "explanation": "Needs a bounded fix.", "repair": "Fix in place."}]
+        revise["claim_checks"] = [{"quote": "Body sentence 2.", "evidence_ids": [],
+                                   "support": "nonempirical", "explanation": "Fixture."}]
+        revise["screening_resolutions"] = {f["id"]: "Fixture triage." for f in second["assembly"]["screening"]}
+        run.submit(run.task("final-auditor", round_no=2), revise, metadata(True))
+        run.submit(run.task("book-editor", round_no=3), {"schema_version": 2, "operations": [
+            {"op": "replace", "chapter": "chapter-01", "old": "Body sentence 1.",
+             "new": "Edited body sentence 1.", "reason": "Later fix."}],
+            "explanation": "Chapter fix."}, metadata())
+        third = run.assemble()
+        self.assertIn("test-only", third["assembly"]["text"])
+        self.assertEqual(len(third["assembly"]["source_notes"]), 1)
+        self.assertEqual((run.root / "assembly/assembly-r01.json").read_bytes(), v1bytes)
+        # Unknown ids, partial-removal anchors and last-note removal fail closed.
+        revise3 = accepted(); revise3["verdict"] = "REVISE"; revise3["checks"]["continuity"] = False
+        revise3["findings"] = [{"kind": "EVIDENCE", "severity": "material", "quote": "Edited body sentence 1.",
+                                "explanation": "Needs more.", "repair": "Fix again."}]
+        revise3["claim_checks"] = [{"quote": "Edited body sentence 1.", "evidence_ids": [],
+                                    "support": "nonempirical", "explanation": "Fixture."}]
+        revise3["screening_resolutions"] = {f["id"]: "Fixture triage." for f in third["assembly"]["screening"]}
+        run.submit(run.task("final-auditor", round_no=3), revise3, metadata(True))
+        with self.assertRaises(FactoryError):
+            run.submit(run.task("book-editor", round_no=4), {"schema_version": 2, "operations": [
+                {"op": "notes", "id": "no-such-note", "old": "x", "new": "y",
+                 "reason": "Bad id."}], "explanation": "Must fail."}, metadata())
+        with self.assertRaises(FactoryError):
+            run.submit(run.task("book-editor", round_no=4), {"schema_version": 2, "operations": [
+                {"op": "notes", "id": "demo-illustration", "old": "test",
+                 "new": "", "reason": "Partial removal."}], "explanation": "Must fail."}, metadata())
     def test_front_matter_repair_converges_in_lineage(self):
         run = self.newrun()
         first = self.front_revise(run)

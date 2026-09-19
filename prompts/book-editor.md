@@ -18,6 +18,10 @@ The old anchor must equal the current field text exactly. Replacement must be no
 
 Rendered chapter headers come from plan cards, so use `retitle` (never a frozen-plan edit) when the audit flags header wording; the new header must be nonempty and different. Like front repairs, retitle is for audit-justified fixes only.
 
+Generated source notes are also repairable in-run when the audit flags them:
+- {"op":"notes","id":"SG-X1","old":"Exact current note text","new":"Replacement text","reason":"Why"}
+The anchor must occur exactly once inside that note. To remove a whole unused note, set "new" to "" with "old" equal to the note's full text; at least one note must survive. Never invent sources or locators; repairs only correct labels, scope language, and production-metadata leakage already visible in the rendered note.
+
 ## Revision rounds (whole-book convergence)
 
 If `previous_assembly` and `audit_history` are present, this is a bounded revision round after a prior final-audit REVISE — not a fresh edit. First apply every prior audit finding that is still open: each repair must be justified by the finite inherited finding set, and earlier repairs remain constraints (do not reopen or undo them). Then re-read the whole book for defects your own changes introduced. You may not widen the work with new restructuring, new claims, or nice-to-have polish beyond the inherited set. Accepted chapters, frozen research/plan, and prior assemblies are immutable: your operations transform copies at assembly time and every assembly version is preserved. Rounds are bounded; unresolved defects stop the run, and the round budget never turns a defect into acceptance.

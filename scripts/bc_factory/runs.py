@@ -12,7 +12,7 @@ from .common import (FactoryError, atomic_bytes, canonical, confined, digest, ex
                      identifier, lock, nonempty, now, read_json, require, seal, text_hash, unseal)
 from .schema import (EXTERNAL_ROLES, ROLES, REVIEW_ROLES, validate_brief, validate_plan, validate_research,
                      validate_review, validate_state, validate_writer, validate_config, validate_metadata)
-from .quality import assemble_book, apply_front_repairs, base_front_matter, edit_book, screen, screen_wrappers, split_operations
+from .quality import assemble_book, apply_front_repairs, apply_note_repairs, base_front_matter, edit_book, render_source_notes, screen, screen_wrappers, split_operations
 
 PROMPTS = {"planner": "master-plan-skill-v2.md", "plan-reviewer": "master-plan-reviewer-v2.md",
            "writer": "chapter-writer.md", "chapter-reviewer": "chapter-reviewer.md",
@@ -414,16 +414,19 @@ class Run:
         elif role == "book-editor":
             base = inputs["delivered_previous_chapters"]
             front_base = base_front_matter(self.brief, self.accepted_plan()[1])
+            notes_base = render_source_notes(self.research)
             if task["round"] > 1:
                 # Revision anchors bind to the previous immutable edited
                 # assembly, not the accepted originals (cumulative edits).
                 prev_asm = self.assembly_version(task["round"] - 1)["assembly"]
                 base = prev_asm["chapters"]
                 front_base = prev_asm.get("front_matter") or front_base
-            chapter_ops, front_ops = split_operations(output["operations"])
+                notes_base = prev_asm.get("source_notes") or notes_base
+            chapter_ops, front_ops, notes_ops = split_operations(output["operations"])
             edit_book(base, {"schema_version": output.get("schema_version", 2),
                              "operations": chapter_ops, "explanation": output.get("explanation", "n/a")})
             apply_front_repairs(front_base, front_ops, task["round"])
+            apply_note_repairs(notes_base, notes_ops, task["round"])
 
     def submit(self, task: dict, output: dict, metadata: dict) -> dict:
         self.assert_runtime()
@@ -484,6 +487,8 @@ class Run:
             chapters = prev["assembly"]["chapters"]
             front_base = prev["assembly"].get("front_matter") or base_front_matter(self.brief, plan)
             prior_repairs = list(prev["assembly"].get("front_matter_repairs", []))
+            notes_base = prev["assembly"].get("source_notes") or render_source_notes(self.research)
+            prior_note_repairs = list(prev["assembly"].get("source_note_repairs", []))
         else:
             chapters = []
             for n, card in enumerate(plan["chapters"], 1):
@@ -494,21 +499,27 @@ class Run:
                 chapters.append({"id": card["id"], "title": card["title"], "text": c["text"],
                                  "claim_map": c["claim_map"], "source_chapters": [card["id"]]})
         editor = self.deps_add(deps, "book-editor", round_no=editor_round)
-        chapter_ops, front_ops = split_operations(editor["operations"])
+        chapter_ops, front_ops, notes_ops = split_operations(editor["operations"])
         edited = edit_book(chapters, {"schema_version": 2, "operations": chapter_ops,
                                       "explanation": editor.get("explanation", "n/a")})
         if editor_round > 1:
             front_matter, new_repairs = apply_front_repairs(front_base, front_ops, editor_round)
             front_repairs = prior_repairs + new_repairs
+            source_notes, new_note_repairs = apply_note_repairs(notes_base, notes_ops, editor_round)
+            note_repairs = prior_note_repairs + new_note_repairs
         else:
             front_matter, new_repairs = apply_front_repairs(base_front_matter(self.brief, plan), front_ops, editor_round)
             front_repairs = new_repairs
-        text = assemble_book(self.brief, self.research, plan, edited, front_matter=front_matter)
+            source_notes, new_note_repairs = apply_note_repairs(render_source_notes(self.research), notes_ops, editor_round)
+            note_repairs = new_note_repairs
+        text = assemble_book(self.brief, self.research, plan, edited, front_matter=front_matter,
+                             source_notes=source_notes)
         screening = screen("\n\n".join(c["text"] for c in edited))
         screening = screening + screen_wrappers(front_matter, [c["title"] for c in edited])
         assembly = {"schema_version": 2, "assembly_round": editor_round,
                     "run_manifest_sha256": digest(self.manifest), "dependency_hashes": deps,
                     "front_matter": front_matter, "front_matter_repairs": front_repairs,
+                    "source_notes": source_notes, "source_note_repairs": note_repairs,
                     "text": text, "text_sha256": text_hash(text), "chapters": edited, "screening": screening}
         with lock(self.root):
             (self.root / "assembly").mkdir(exist_ok=True)
