@@ -126,3 +126,7 @@ Real runs cannot bypass the coverage/freshness gate. The preflight report is fro
 - NopeCHA release and published asset digest: https://github.com/NopeCHALLC/nopecha-extension/releases/tag/0.6.1
 
 The integration's offline tests validate our commands, gates and handling of simulated failures. They are not evidence that the current host is logged in or that a live upstream site is reachable. Run the live preflight on the campaign host.
+
+
+### Named Browser Bridge profile
+Belief Changer pins `bridge_profile` in `factory/research-access.json`; authenticated research never depends on OpenCLI's global default profile. If a Chromium profile is cloned, reset only OpenCLI extension-local identity state before first use so the clone generates a unique `context_id`, then alias it with `opencli profile rename <contextId> <alias>`. Preserve site cookies and never copy/expose cookie values.

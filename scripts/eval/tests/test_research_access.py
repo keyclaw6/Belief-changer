@@ -56,6 +56,18 @@ class AccessContractTests(Base):
         link=Path(self.temp.name)/'profile';link.symlink_to(self.repo,target_is_directory=True)
         with patch.dict(os.environ,{'BC_RESEARCH_HOME':str(link)}):
             with self.assertRaises(FactoryError):A.state_root(self.repo)
+    def test_bridge_profile_alias_required_and_safe(self):
+        self.assertEqual(self.c['bridge_profile'], 'belief-changer-research')
+        for bad in ('', '../bad', 'space name', '--option'):
+            c=copy.deepcopy(self.c); c['bridge_profile']=bad
+            (self.repo/'factory/research-access.json').write_text(json.dumps(c))
+            with self.assertRaises(FactoryError): A.config(self.repo)
+    def test_bridge_env_pins_research_profile_and_clears_foreign_targets(self):
+        with patch.dict(os.environ, {'OPENCLI_PROFILE':'wrong','OPENCLI_CDP_TARGET':'stale','OPENCLI_VERBOSE':'1'}):
+            env=A.bridge_env(self.c)
+        self.assertEqual(env['OPENCLI_PROFILE'], 'belief-changer-research')
+        self.assertNotIn('OPENCLI_CDP_TARGET', env)
+        self.assertNotIn('OPENCLI_VERBOSE', env)
     def test_no_bootstrap_side_effect_without_apply(self):
         state=Path(self.temp.name)/'external'
         with patch.dict(os.environ,{'BC_RESEARCH_HOME':str(state)}),patch('bc_factory.research_setup.command') as cmd:

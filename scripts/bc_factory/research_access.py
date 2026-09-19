@@ -50,6 +50,7 @@ def config(repo: Path) -> dict:
     c = read_json(repo / 'factory/research-access.json')
     require(c.get('schema_version') == 1, 'Unknown research access schema')
     require(c.get('browser') in ('bridge', 'cloakbrowser'), 'Research route must be bridge or cloakbrowser')
+    require(re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]{0,63}', c.get('bridge_profile','')) is not None, 'Bridge profile alias is required and must be a safe OpenCLI profile name')
     require(set(c.get('required_lanes', [])) == {'web','reddit','x'}, 'Web, Reddit and X are mandatory lanes')
     require(re.fullmatch(r'[0-9a-f]{40}', c['agent_reach_commit']) is not None, 'Agent-Reach must be commit-pinned')
     for k in ('cloakbrowser_version','opencli_version','nopecha_version'):
@@ -235,19 +236,21 @@ def fetch_page(url: str, timeout: int) -> tuple:
     require(len(raw) <= MAX_PAGE_BYTES, 'Page exceeds size guard')
     return final, raw
 
-def bridge_env() -> dict:
-    # Never inherit a dead/foreign cloak CDP endpoint; the bridge uses the
-    # working signed-in Chromium through OpenCLI's own session handling.
+def bridge_env(c: dict) -> dict:
+    # Never inherit a dead/foreign browser target. The bridge uses one explicit
+    # named Chromium/OpenCLI profile so authenticated research does not depend
+    # on whichever Browser Bridge context happens to be globally default.
     env = os.environ.copy()
     for name in ('OPENCLI_PROFILE', 'OPENCLI_CDP_TARGET', 'OPENCLI_CDP_ENDPOINT',
                  'OPENCLI_SITE_SESSION', 'DEBUG_SNAPSHOT', 'OPENCLI_VERBOSE'):
         env.pop(name, None)
+    env['OPENCLI_PROFILE'] = c['bridge_profile']
     return env
 
 def bridge_social(c: dict, state: Path, lane: str, action: str, value: str = '', limit: int = 10) -> list[dict]:
     args = social_args(lane, action, value, limit)
     time.sleep(c['min_request_interval_s'])
-    r = command([tool(state, 'opencli'), *args], bridge_env(), c['request_timeout_s'])
+    r = command([tool(state, 'opencli'), *args], bridge_env(c), c['request_timeout_s'])
     require(r.returncode == 0, f'{lane}/{action} failed (exit {r.returncode}); check login, access or rate limit; no retry storm')
     try:
         data = json.loads(r.stdout)
@@ -270,7 +273,7 @@ def bridge_search_web(c: dict, state: Path, query: str, limit: int = 10) -> list
     while len(usable) < limit and offset <= 90:
         r = command([tool(state, 'opencli'), 'duckduckgo', 'search', query_text,
                      '--limit', '10', '--offset', str(offset), '-f', 'json'],
-                    bridge_env(), c['request_timeout_s'])
+                    bridge_env(c), c['request_timeout_s'])
         require(r.returncode == 0, f'Web search failed (exit {r.returncode}); no response counted as evidence')
         try:
             data = json.loads(r.stdout)
