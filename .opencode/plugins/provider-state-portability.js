@@ -1,6 +1,16 @@
 /**
  * Keep durable OpenCode sessions portable across provider-caller rotations.
  *
+ * LIMITATION (verified 2026-09-19): this outbound hook
+ * (`experimental.chat.messages.transform`) does NOT run before the provider
+ * rejects stale reasoning `encrypted_content` — the failure occurs before
+ * project chat hooks execute. Do not rely on it alone for recovery.
+ *
+ * Durable path: `python3 scripts/opencode_provider_state_recover.py`
+ * performs a bounded idle-only backup plus targeted sanitation of ONLY the
+ * provider-private `metadata.openai.itemId` /
+ * `metadata.openai.reasoningEncryptedContent` keys in pre-cutoff reasoning
+ * parts of the session store, with ID/count verification and an audit entry.
  * RDC sets a one-shot historical cutoff only after the provider explicitly
  * rejects persisted reasoning state as belonging to another caller. The
  * stored transcript remains immutable; this hook edits only the in-memory
