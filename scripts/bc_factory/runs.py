@@ -400,11 +400,15 @@ class Run:
                 flags = {f["id"] for f in inputs["screening"]}
                 require(set(output["screening_resolutions"]) == flags, "Every screening flag needs explicit semantic triage")
                 ids = {e["id"] for e in self.research["sources"]}
+                segregated = {e["id"] for e in self.research["coverage"].get("rejected_records", [])}
                 for claim in output["claim_checks"]:
-                    require(set(claim["evidence_ids"]) <= ids, "Final claim refers to unknown evidence")
-                    if claim["support"] in ("supported", "bounded"):
+                    require(set(claim["evidence_ids"]) <= ids | segregated, "Final claim refers to unknown evidence")
+                    if claim["support"] == "supported":
                         source_map = {e["id"]: e for e in self.research["sources"]}
-                        require(all(source_map[e]["kind"] != "illustration" and source_map[e]["verification"] != "unverified" for e in claim["evidence_ids"]), "An illustration or unverified source cannot support a final empirical claim")
+                        require(bool(claim["evidence_ids"]) and all(e in source_map and source_map[e]["kind"] != "illustration" and source_map[e]["verification"] != "unverified" for e in claim["evidence_ids"]), "A supported final claim needs retained verified evidence; segregated records document exclusions only")
+                    elif claim["support"] == "bounded":
+                        source_map = {e["id"]: e for e in self.research["sources"]}
+                        require(all(e in segregated or (e in source_map and source_map[e]["kind"] != "illustration" and source_map[e]["verification"] != "unverified") for e in claim["evidence_ids"]), "An illustration or unverified source cannot support a final empirical claim")
         elif role == "planner":
             validate_plan(output, self.brief, self.research)
         elif role == "writer":

@@ -317,6 +317,34 @@ class RunTests(Base):
     def test_missing_final_audit_not_complete(self):
         run=self.newrun();finish(run,self.plan);(run.root/'results/final-auditor-r01.json').unlink()
         self.assertEqual(run.status()['status'],'INCOMPLETE')
+    def test_segregated_records_citable_only_for_bounded_exclusions(self):
+        import copy
+        research = copy.deepcopy(self.research)
+        research["coverage"]["rejected_records"] = [{"id": "demo-rejected", "reason": "Fixture segregation."}]
+        prepare(self.repo, "segrun", self.brief, research, fixture=True)
+        run = Run(self.repo, "segrun")
+        finish(run, self.plan)
+        run.root.joinpath("results/final-auditor-r01.json").unlink()
+        asm = run.assemble()["assembly"]
+        base = {"quote": "One unsuccessful attempt is one observation.", "evidence_ids": ["demo-rejected"],
+                "support": "bounded", "explanation": "Exclusion documented against the segregated record."}
+        good = accepted()
+        good["claim_checks"] = [base]
+        good["screening_resolutions"] = {f["id"]: "Fixture triage." for f in asm["screening"]}
+        run.submit(run.task("final-auditor"), good, metadata(True))
+        self.assertEqual(run.complete()["status"], "COMPLETE_UNRELEASED")
+        run.root.joinpath("results/final-auditor-r01.json").unlink()
+        bad = accepted()
+        bad["claim_checks"] = [dict(base, support="supported")]
+        bad["screening_resolutions"] = dict(good["screening_resolutions"])
+        with self.assertRaises(FactoryError):
+            run.submit(run.task("final-auditor"), bad, metadata(True))
+        run.root.joinpath("results/final-auditor-r01.json").unlink() if (run.root / "results/final-auditor-r01.json").exists() else None
+        worse = accepted()
+        worse["claim_checks"] = [dict(base, evidence_ids=["no-such-record"])]
+        worse["screening_resolutions"] = dict(good["screening_resolutions"])
+        with self.assertRaises(FactoryError):
+            run.submit(run.task("final-auditor"), worse, metadata(True))
     def to_book_revise(self, run, quote="Body sentence 1.", edit_a=False):
         self.to_plan(run)
         for n, card in enumerate(self.plan["chapters"], 1):
