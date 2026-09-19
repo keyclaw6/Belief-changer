@@ -11,7 +11,7 @@ PLUGIN = ROOT / ".opencode/plugins/provider-state-portability.js"
 class ProviderStatePortabilityPluginTests(unittest.TestCase):
     def test_plugin_strips_only_stale_reasoning_provider_state(self):
         script = r'''
-import { ProviderStatePortability } from PROCESS_PLUGIN;
+import ProviderStatePortability from PROCESS_PLUGIN;
 process.env.OPENCODE_RDC_PROVIDER_STATE_SESSION_ID = "ses_test";
 process.env.OPENCODE_RDC_PROVIDER_STATE_CUTOFF_MS = "200";
 const hooks = await ProviderStatePortability();
@@ -36,7 +36,7 @@ console.log(JSON.stringify(output));
 
     def test_plugin_is_noop_without_recovery_marker(self):
         script = r'''
-import { ProviderStatePortability } from PROCESS_PLUGIN;
+import ProviderStatePortability from PROCESS_PLUGIN;
 delete process.env.OPENCODE_RDC_PROVIDER_STATE_SESSION_ID;
 delete process.env.OPENCODE_RDC_PROVIDER_STATE_CUTOFF_MS;
 const hooks = await ProviderStatePortability();

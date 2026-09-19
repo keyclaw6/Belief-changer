@@ -6,7 +6,7 @@
  * stored transcript remains immutable; this hook edits only the in-memory
  * message copy that is about to be lowered into a provider request.
  */
-export const ProviderStatePortability = async () => ({
+const ProviderStatePortability = async () => ({
   "experimental.chat.messages.transform": async (_input, output) => {
     const sessionID = process.env.OPENCODE_RDC_PROVIDER_STATE_SESSION_ID;
     const cutoff = Number(process.env.OPENCODE_RDC_PROVIDER_STATE_CUTOFF_MS);
@@ -31,3 +31,5 @@ export const ProviderStatePortability = async () => ({
     }
   },
 });
+
+export default ProviderStatePortability;
