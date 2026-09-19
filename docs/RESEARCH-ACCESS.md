@@ -128,5 +128,7 @@ Real runs cannot bypass the coverage/freshness gate. The preflight report is fro
 The integration's offline tests validate our commands, gates and handling of simulated failures. They are not evidence that the current host is logged in or that a live upstream site is reachable. Run the live preflight on the campaign host.
 
 
-### Named Browser Bridge profile
-Belief Changer pins `bridge_profile` in `factory/research-access.json`; authenticated research never depends on OpenCLI's global default profile. If a Chromium profile is cloned, reset only OpenCLI extension-local identity state before first use so the clone generates a unique `context_id`, then alias it with `opencli profile rename <contextId> <alias>`. Preserve site cookies and never copy/expose cookie values.
+### Named Browser Bridge profiles
+Belief Changer never depends on OpenCLI's global default profile. `bridge_profile` remains the backward-compatible fallback, while `bridge_profiles` may pin separate safe aliases for exactly `web`, `reddit`, and `x`. This matters because authenticated X and public web/Reddit can legitimately live in different durable Chromium contexts; forcing one browser profile to satisfy every lane is not a readiness requirement.
+
+Each bridge command clears inherited OpenCLI target/session overrides and selects the alias for its own lane. Live preflight must therefore pass all required behavior checks simultaneously using the configured lane mapping. If a Chromium profile is cloned, give the clone its own OpenCLI extension identity/context before use, alias that context with `opencli profile rename <contextId> <alias>`, and reference only the alias in config. Preserve site-cookie state without printing or storing cookie values in Git, logs, prompts, or research artifacts.

@@ -62,12 +62,24 @@ class AccessContractTests(Base):
             c=copy.deepcopy(self.c); c['bridge_profile']=bad
             (self.repo/'factory/research-access.json').write_text(json.dumps(c))
             with self.assertRaises(FactoryError): A.config(self.repo)
-    def test_bridge_env_pins_research_profile_and_clears_foreign_targets(self):
+    def test_per_lane_bridge_profiles_are_complete_and_safe(self):
+        self.assertEqual(self.c['bridge_profiles'], {'web':'belief-changer-public','reddit':'belief-changer-public','x':'belief-changer-research'})
+        for profiles in ({'web':'a','reddit':'b'}, {'web':'a','reddit':'b','x':'../bad'}, {'web':'a','reddit':'b','x':'c','extra':'d'}):
+            c=copy.deepcopy(self.c); c['bridge_profiles']=profiles
+            (self.repo/'factory/research-access.json').write_text(json.dumps(c))
+            with self.assertRaises(FactoryError): A.config(self.repo)
+    def test_bridge_env_pins_lane_profile_and_clears_foreign_targets(self):
         with patch.dict(os.environ, {'OPENCLI_PROFILE':'wrong','OPENCLI_CDP_TARGET':'stale','OPENCLI_VERBOSE':'1'}):
-            env=A.bridge_env(self.c)
-        self.assertEqual(env['OPENCLI_PROFILE'], 'belief-changer-research')
-        self.assertNotIn('OPENCLI_CDP_TARGET', env)
-        self.assertNotIn('OPENCLI_VERBOSE', env)
+            web=A.bridge_env(self.c, 'web'); reddit=A.bridge_env(self.c, 'reddit'); x=A.bridge_env(self.c, 'x')
+        self.assertEqual(web['OPENCLI_PROFILE'], 'belief-changer-public')
+        self.assertEqual(reddit['OPENCLI_PROFILE'], 'belief-changer-public')
+        self.assertEqual(x['OPENCLI_PROFILE'], 'belief-changer-research')
+        self.assertNotIn('OPENCLI_CDP_TARGET', x)
+        self.assertNotIn('OPENCLI_VERBOSE', x)
+    def test_bridge_env_legacy_single_profile_fallback(self):
+        c=copy.deepcopy(self.c); c.pop('bridge_profiles')
+        self.assertEqual(A.bridge_env(c, 'web')['OPENCLI_PROFILE'], 'belief-changer-research')
+        self.assertEqual(A.bridge_env(c, 'x')['OPENCLI_PROFILE'], 'belief-changer-research')
     def test_no_bootstrap_side_effect_without_apply(self):
         state=Path(self.temp.name)/'external'
         with patch.dict(os.environ,{'BC_RESEARCH_HOME':str(state)}),patch('bc_factory.research_setup.command') as cmd:

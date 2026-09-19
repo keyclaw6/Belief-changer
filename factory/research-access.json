@@ -25,5 +25,10 @@
   "captcha_timeout_s": 120,
   "min_request_interval_s": 3,
   "note": "Capability-based gate: preflight passes on real web/Reddit/X read behavior over the bridge route (opencli_version is a minimum floor, 1.8.7 verified published 2026-09-15). CloakBrowser/Agent-Reach/NopeCHA pins remain exact and are enforced only when the optional cloak route is used. Revalidate upgrades and actual site access before campaigns.",
-  "bridge_profile": "belief-changer-research"
+  "bridge_profile": "belief-changer-research",
+  "bridge_profiles": {
+    "web": "belief-changer-public",
+    "reddit": "belief-changer-public",
+    "x": "belief-changer-research"
+  }
 }
