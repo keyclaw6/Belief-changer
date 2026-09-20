@@ -14,6 +14,12 @@ jobs:
     steps:
       - name: Checkout exact commit
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4, resolved at upgrade
+      - name: Install offline OpenCLI version-probe shim
+        run: |
+          mkdir -p "$RUNNER_TEMP/offline-bin"
+          printf '%s\n' '#!/usr/bin/env sh' 'echo "opencli 1.8.7"' > "$RUNNER_TEMP/offline-bin/opencli"
+          chmod +x "$RUNNER_TEMP/offline-bin/opencli"
+          echo "$RUNNER_TEMP/offline-bin" >> "$GITHUB_PATH"
       - name: Mandatory offline regression gate
         run: bash scripts/check.sh
       - name: End-to-end synthetic demo
