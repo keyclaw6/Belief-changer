@@ -8,7 +8,7 @@ from . import __version__
 from .common import FactoryError, atomic_json, read_json, reply_json, require, unseal, lock, seal, digest, now
 from .runs import Run, prepare
 from .adapters import execute
-from . import archive, experiments
+from . import archive, experiments, learning, regression
 
 
 def document(path: str) -> dict:
@@ -27,6 +27,7 @@ def parser() -> argparse.ArgumentParser:
     s.add_argument("--parent"); s.add_argument("--fixture", action="store_true"); s.add_argument("--research-preflight")
     s.add_argument("--research-revision-of", help="Prior non-ACCEPT run whose evidence findings this successor must close")
     s.add_argument("--remediation-of", help="Post-audit continuation: inherit a REVISE-audited run byte-identical, continue only whole-book rounds")
+    s.add_argument("--learning-from", help="Completed baseline run holding a sealed learning-next packet")
     s = sub.add_parser("task", help="Construct and freeze the next role's input without model calls")
     s.add_argument("--run", required=True); s.add_argument("--role", required=True)
     s.add_argument("--chapter", type=int); s.add_argument("--round", type=int, default=1); s.add_argument("--out")
@@ -53,6 +54,15 @@ def parser() -> argparse.ArgumentParser:
     s = sub.add_parser("promote")
     s.add_argument("--experiment", required=True); s.add_argument("--release", required=True)
     s.add_argument("--calibration", required=True); s.add_argument("--approval", required=True)
+    s = sub.add_parser("learning-seed", help="Bootstrap a sealed cross-iteration learning packet")
+    s.add_argument("--run", required=True); s.add_argument("--lessons", required=True)
+    s = sub.add_parser("regression-task", help="Create a blinded baseline-vs-candidate no-regression task")
+    s.add_argument("--run", required=True); s.add_argument("--order", choices=("AB", "BA"), required=True); s.add_argument("--out")
+    s = sub.add_parser("regression-submit")
+    s.add_argument("--run", required=True); s.add_argument("--order", choices=("AB", "BA"), required=True)
+    s.add_argument("--response", required=True); s.add_argument("--metadata", required=True)
+    sub.add_parser("regression-decide").add_argument("--run", required=True)
+    sub.add_parser("advance-baseline").add_argument("--run", required=True)
     sub.add_parser("archive").add_argument("--output", type=Path, required=True)
     s = sub.add_parser("demo", help="Offline two-chapter fixture pipeline, never publication evidence")
     s.add_argument("--output", type=Path, required=True)
@@ -80,7 +90,7 @@ def main(argv: list[str] | None = None) -> int:
         if cmd == "prepare":
             root = prepare(repo, args.run, document(args.brief), document(args.research), args.parent, args.fixture,
                            document(args.research_preflight) if args.research_preflight else None,
-                           args.research_revision_of, args.remediation_of)
+                           args.research_revision_of, args.remediation_of, args.learning_from)
             result = {"status": "FROZEN", "run": str(root)}
         elif cmd == "task":
             result = Run(repo, args.run).task(args.role, args.chapter, args.round)
@@ -131,6 +141,13 @@ def main(argv: list[str] | None = None) -> int:
             result = {"status": "RECORDED", "task_hash": record["task_hash"]}
         elif cmd == "decide": result = experiments.decide(repo, args.experiment, document(args.calibration) if args.calibration else None)
         elif cmd == "promote": result = {"release": str(experiments.promote(repo, args.experiment, args.release, document(args.calibration), document(args.approval)))}
+        elif cmd == "learning-seed": result = learning.seed(repo, args.run, document(args.lessons))
+        elif cmd == "regression-task": result = regression.task(repo, args.run, args.order)
+        elif cmd == "regression-submit":
+            record = regression.submit(repo, args.run, args.order, document(args.response), document(args.metadata))
+            result = {"status": "RECORDED", "task_hash": record["task_hash"]}
+        elif cmd == "regression-decide": result = regression.decide(repo, args.run)
+        elif cmd == "advance-baseline": result = learning.advance(repo, args.run)
         elif cmd == "research-bootstrap":
             from .research_setup import bootstrap
             result = bootstrap(repo, args.apply)
@@ -153,7 +170,7 @@ def main(argv: list[str] | None = None) -> int:
             print(json.dumps({"written": str(Path(args.out).resolve())}))
         else:
             print(json.dumps(result, indent=2, ensure_ascii=False))
-        if result.get("status") in ("INCOMPLETE", "BLOCKED") or result.get("decision") in ("INCONCLUSIVE", "REJECT"):
+        if result.get("status") in ("INCOMPLETE", "BLOCKED") or result.get("decision") in ("INCONCLUSIVE", "REJECT", "REPAIR_REQUIRED"):
             return 2
         return 0
     except Exception as exc:
