@@ -1,0 +1,26 @@
+{
+  "schema_version": 2,
+  "subject": "quit-sugar",
+  "preserve": [
+    {
+      "dimension": "argument",
+      "instruction": "Preserve Iteration-2's tighter evidentiary precision: keep lived-experience reports explicitly bounded, state populations and tested variables precisely, and do not convert anecdotes into established general courses.",
+      "evidence": "The completed Iteration-2 blinded AB/BA judgment preferred Iteration 2 on argument in both label orders."
+    }
+  ],
+  "improve": [
+    {
+      "dimension": "voice",
+      "instruction": "Recover the more natural, vivid, less templated voice of the earlier book without weakening Iteration-2 evidence discipline.",
+      "evidence": "The completed blinded comparison preferred Iteration 1 on voice in both label orders."
+    },
+    {
+      "dimension": "economy",
+      "instruction": "Reduce repeated evidentiary caveats once a limit has been clearly established; keep necessary qualifications but avoid restating the same boundary in adjacent prose.",
+      "evidence": "The completed blinded comparison preferred Iteration 1 on economy in both label orders."
+    }
+  ],
+  "recurring_repairs": [],
+  "research_gaps": [],
+  "note": "Bootstrap editorial learning extracted from loop/history/iter2-judgment.json. Recognition/progression findings were order-sensitive or weak, so they are not promoted into durable directional constraints."
+}
