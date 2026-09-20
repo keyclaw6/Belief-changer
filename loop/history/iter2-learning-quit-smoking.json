@@ -1,0 +1,37 @@
+{
+  "schema_version": 2,
+  "subject": "quit-smoking",
+  "preserve": [
+    {
+      "dimension": "argument",
+      "instruction": "Preserve Iteration-2's tighter review/version/population boundaries and explicit reconciliation of apparently conflicting findings.",
+      "evidence": "The completed Iteration-2 blinded AB/BA judgment preferred Iteration 2 on argument in both label orders."
+    },
+    {
+      "dimension": "emotional_movement",
+      "instruction": "Preserve the reader-agency improvement: practical choices should remain optional and contingent on the reader's own experience, without implied outcome promises.",
+      "evidence": "The completed blinded comparison preferred Iteration 2 on smoking emotional movement in both label orders."
+    }
+  ],
+  "improve": [
+    {
+      "dimension": "voice",
+      "instruction": "Recover the more vivid, conversational voice of the earlier book while retaining Iteration-2 evidentiary precision.",
+      "evidence": "The completed blinded comparison preferred Iteration 1 on voice in both label orders."
+    },
+    {
+      "dimension": "economy",
+      "instruction": "Remove repeated locality, safety, and evidentiary qualifications when one precise statement already carries the required limit.",
+      "evidence": "The completed blinded comparison preferred Iteration 1 on economy in both label orders."
+    }
+  ],
+  "recurring_repairs": [
+    {
+      "kind": "OVERCLAIM",
+      "instruction": "Do not state that relapse is common, typical, expected, or otherwise assign prevalence unless current retained evidence directly supports that prevalence for the stated population and horizon. Keep the non-shaming 'information, not a verdict' framing separate from unsupported frequency claims.",
+      "evidence": "Iteration 2 regenerated the safety-front-matter phrase 'relapse is common' after an earlier lineage had already repaired the same unsupported prevalence move; the final blinded judgment flagged it in both label orders."
+    }
+  ],
+  "research_gaps": [],
+  "note": "Bootstrap editorial learning extracted from loop/history/iter2-judgment.json. Recognition/progression findings were order-sensitive, so they are not treated as durable directional wins."
+}

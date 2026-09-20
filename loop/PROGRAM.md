@@ -11,6 +11,22 @@ The heartbeat may inspect progress, but must not become a shadow writer or manua
 
 The persistent OpenCode job's configured controller model is part of that execution identity. Do not switch it to work around provider/context trouble unless the owner explicitly authorizes a model change.
 
+## Cross-iteration learning and no-regression baseline
+
+Iteration learning is an explicit frozen input, not a memory/prompt convention. After a completed baseline, create a sealed packet containing: dimensions to preserve, dimensions to improve, recurring repairs that must not reappear, and targeted research gaps. For the first migration into this architecture, `learning-seed` may bind an explicitly reviewed historical lessons file to one exact COMPLETE baseline. Thereafter only `advance-baseline` may create the next packet.
+
+Prepare the next candidate with `--learning-from BASELINE_RUN`. Preparation verifies the baseline's completed book hash and accepted-audit hash, rejects fixture/live mixing, freezes the packet under the candidate inputs, and supplies it to every role. The packet is editorial/evaluation feedback only; it never counts as empirical evidence and cannot establish a manuscript claim.
+
+After the candidate's own final audit ACCEPTS its latest assembly, run a blinded comparison against that inherited baseline in both AB and BA orders using the independent pairwise instrument. The internal baseline gate is deliberately stricter and simpler than a release experiment:
+- a consistent baseline win on ANY quality dimension -> `REPAIR_REQUIRED`;
+- any critical candidate finding -> `REPAIR_REQUIRED`;
+- order disagreement on any dimension -> `INCONCLUSIVE`;
+- only no losses, no criticals and stable AB/BA observations -> `PASS`.
+
+`REPAIR_REQUIRED` may reopen the book-editor only in the SAME logical run and only against the sealed accepted assembly plus the bound regression decision. Accepted chapters remain immutable; assembly edits remain versioned. The resulting assembly must receive a new independent final audit and a fresh AB/BA no-regression gate; the earlier gate becomes stale by construction. `INCONCLUSIVE` authorizes neither repair nor advancement. A round-cap failure remains a system defect, not permission to reset the lineage.
+
+Only a `PASS` may run `advance-baseline`, which emits the next content-addressed learning packet bound to the exact candidate book/audit. This optimization baseline is NOT the release champion. It does not update `factory/champion.json`, cannot substitute for confirmatory experiments, human calibration/review, or claim efficacy.
+
 Evidence research has a finite convergence loop. A non-ACCEPT evidence review is repaired in a new immutable research snapshot using `prepare --research-revision-of PRIOR_RUN`; this carries the previous independent findings forward. Successor review first checks that finite blocking set. It does not reopen repaired findings or introduce release-stage/title/manuscript requirements. New findings beyond the inherited set are reserved for newly revealed critical truth/safety contradictions. Gaps in adjacent topics that can be safely excluded from the eventual plan are non-blocking open questions, not reasons to keep widening research.
 
 Whole-book revision has a finite in-place convergence loop. A final-audit REVISE is repaired by the next book-editor round in the SAME run against the previous assembly plus cumulative audit findings — never by restarting the pipeline, rewriting accepted chapters, or hand-editing book.md. Chapter anchors, exact-anchored front-matter repairs (title/reader-promise/limits/safety; safety narrowed, never deleted), retitle for rendered headers, and exact-anchored source-note repairs transform copies at assembly time. Assemblies are immutable and versioned; successor audits verify the finite inherited set and may widen it only for revision-caused defects or newly revealed critical truth/safety contradictions. A frozen pre-architecture run with a fixable REVISE audit continues via `prepare --remediation-of SOURCE` (sealed history inherited byte-identical; whole-book rounds only). A final-audit BLOCKED, an exhausted round budget, or any unresolved defect stops the run; CAP is never acceptance.

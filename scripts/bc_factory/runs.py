@@ -30,13 +30,15 @@ def active_files(repo: Path) -> list[str]:
 
 def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | None = None,
             fixture: bool = False, research_preflight: dict | None = None,
-            research_revision_of: str | None = None, remediation_of: str | None = None) -> Path:
+            research_revision_of: str | None = None, remediation_of: str | None = None,
+            learning_from: str | None = None) -> Path:
     repo = repo.resolve()
     identifier(run_id)
     if parent is not None:
         identifier(parent)
     evidence_feedback = None
     remediation = None
+    learning_packet = None
     if remediation_of is not None:
         identifier(remediation_of)
         require(run_id != remediation_of, "Remediation needs a new run ID; source runs are immutable")
@@ -52,6 +54,13 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
                 "Source audit does not match its latest assembly; remediate only clean audit states")
         require(digest(brief) == digest(source.brief), "Remediation brief must equal the source frozen brief")
         require(digest(research) == digest(source.research), "Remediation research must equal the source frozen research")
+        if source.learning is not None:
+            require(learning_from in (None, source.manifest.get("learning_from")),
+                    "Remediation must inherit the source cross-iteration baseline")
+            learning_from = source.manifest["learning_from"]
+            learning_packet = source.learning
+        else:
+            require(learning_from is None, "Remediation cannot add cross-iteration learning absent from its source")
         remediation = {"source_run": remediation_of,
                        "source_manifest_sha256": digest(source.manifest),
                        "source_audit_key": f"final-auditor-r{src_audit_no:02d}",
@@ -74,6 +83,15 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
         }
     validate_brief(brief)
     validate_research(research, brief)
+    if learning_from is not None and learning_packet is None:
+        identifier(learning_from)
+        from .learning import load_next, validate_packet_binding
+        learning_source = Run(repo, learning_from)
+        learning_packet = load_next(learning_source)
+        validate_packet_binding(repo, learning_packet, brief["subject"], fixture)
+    elif learning_packet is not None:
+        from .learning import validate_packet_binding
+        validate_packet_binding(repo, learning_packet, brief["subject"], fixture)
     if remediation is not None:
         # Nothing is retrieved: frozen research is inherited byte-identical, so
         # the live preflight gate (freshness for NEW retrieval) does not apply.
@@ -106,6 +124,8 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
                 atomic_bytes(root / "inputs/research-preflight.json", canonical(research_preflight) + b"\n")
             if evidence_feedback is not None:
                 atomic_bytes(root / "inputs/evidence-feedback.json", canonical(evidence_feedback) + b"\n")
+            if learning_packet is not None:
+                atomic_bytes(root / "inputs/cross-iteration-learning.json", canonical(learning_packet) + b"\n")
             if remediation is not None:
                 # Inherit sealed history byte-identical: tasks, results,
                 # versioned assemblies and the live book pointer. Upstream
@@ -132,6 +152,8 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
                         "research_preflight_sha256": file_hash(root / "inputs/research-preflight.json") if research_preflight is not None else None,
                         "research_revision_of": research_revision_of,
                         "evidence_feedback_sha256": file_hash(root / "inputs/evidence-feedback.json") if evidence_feedback is not None else None,
+                        "learning_from": learning_from,
+                        "learning_sha256": file_hash(root / "inputs/cross-iteration-learning.json") if learning_packet is not None else None,
                         "remediation_of": remediation["source_run"] if remediation is not None else None,
                         "remediation_source": remediation}
             seal(root / "manifest.json", manifest)
@@ -140,6 +162,10 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
                 for name in ("brief.json", "research.json"):
                     require(file_hash(root / "inputs" / name) == file_hash(src_root / "inputs" / name),
                             f"Remediation {name} diverged from source")
+                if learning_packet is not None:
+                    require(file_hash(root / "inputs/cross-iteration-learning.json")
+                            == file_hash(src_root / "inputs/cross-iteration-learning.json"),
+                            "Remediation cross-iteration learning diverged from source")
     except BaseException:
         # Preserve unfinished input files for diagnosis; a missing manifest prevents use.
         raise
@@ -174,6 +200,17 @@ class Run:
         self.research = read_json(self.root / "inputs/research.json")
         validate_brief(self.brief)
         validate_research(self.research, self.brief)
+        if self.manifest.get("learning_sha256"):
+            lpath = self.root / "inputs/cross-iteration-learning.json"
+            require(file_hash(lpath) == self.manifest["learning_sha256"], "Frozen cross-iteration learning changed")
+            self.learning = read_json(lpath)
+            require(self.learning.get("baseline_run") == self.manifest.get("learning_from"),
+                    "Cross-iteration learning lineage mismatch")
+            from .learning import validate_packet_binding
+            validate_packet_binding(self.repo, self.learning, self.brief["subject"], self.manifest["fixture"])
+        else:
+            self.learning = None
+            require(self.manifest.get("learning_from") is None, "Learning lineage is missing its frozen packet")
         self.config = read_json(self.root / "snapshot/factory/config.json")
         validate_config(self.config)
 
@@ -250,6 +287,8 @@ class Run:
             require(False, "Remediation inherits upstream stages byte-identical from its source run; only book-editor and final-auditor rounds continue here")
         deps: dict[str, str] = {}
         inputs = {"brief": self.brief, "research": self.research}
+        if self.learning is not None:
+            inputs["cross_iteration_learning"] = self.learning
         if role == "evidence-reviewer":
             require(round_no == 1, "Research revision requires a new snapshot/run")
             if self.evidence_feedback is not None:
@@ -333,8 +372,14 @@ class Run:
                     # asked for fixes (REVISE). BLOCKED stops the run; accepted
                     # chapters are never rewritten in place — edits apply to copies.
                     prior_audit = self.deps_add(deps, "final-auditor", round_no=round_no-1)
-                    require(prior_audit["verdict"] == "REVISE",
-                            "Whole-book revision needs a prior REVISE audit; BLOCKED stops the run")
+                    if prior_audit["verdict"] == "ACCEPT":
+                        from .regression import repair_feedback
+                        feedback = repair_feedback(self, round_no - 1)
+                        deps[feedback["rel"]] = feedback["sha256"]
+                        inputs["regression_feedback"] = feedback["decision"]
+                    else:
+                        require(prior_audit["verdict"] == "REVISE",
+                                "Whole-book revision needs prior REVISE or a sealed no-regression repair; BLOCKED stops the run")
                     editor_history = []
                     for prior_round in range(1, round_no):
                         editor_history.append({
@@ -370,9 +415,13 @@ class Run:
                 inputs["screening"] = assembled["assembly"]["screening"]
                 inputs["editorial_changes"] = self.deps_add(deps, "book-editor",
                                                             round_no=round_no if round_no > 1 else 1)
+        contract = self.snapshot("prompts/" + PROMPTS[role])
+        if self.learning is not None:
+            from .learning import LEARNING_CONTRACT
+            contract = contract + "\n\n" + LEARNING_CONTRACT + "\n"
         task = {"schema_version": 2, "key": key, "role": role, "chapter": chapter, "round": round_no,
                 "run_manifest_sha256": digest(self.manifest), "dependency_hashes": deps,
-                "contract": self.snapshot("prompts/" + PROMPTS[role]),
+                "contract": contract,
                 "style": self.snapshot("prompts/style-guide.md"), "inputs": inputs}
         with lock(self.root):
             seal(self.root / "tasks" / f"{digest(task)}.json", task)
