@@ -58,6 +58,9 @@ def parser() -> argparse.ArgumentParser:
     s.add_argument("--run", required=True); s.add_argument("--lessons", required=True)
     s = sub.add_parser("research-guidance", help="Emit inherited learning context BEFORE research starts")
     s.add_argument("--learning-from", required=True); s.add_argument("--brief", required=True); s.add_argument("--out")
+    s = sub.add_parser("factory-learning-evidence", help="Freeze exact completed training evidence before the outer learner runs")
+    s.add_argument("--cycle", required=True); s.add_argument("--run", dest="runs", action="append", required=True)
+    s.add_argument("--artifact", dest="artifacts", action="append", default=[])
     s = sub.add_parser("factory-learning-register", help="Seal reviewed transferable factory intervention before edits")
     s.add_argument("--cycle", required=True); s.add_argument("--learner", required=True); s.add_argument("--learner-metadata", required=True)
     s.add_argument("--review", required=True); s.add_argument("--reviewer-metadata", required=True)
@@ -154,6 +157,8 @@ def main(argv: list[str] | None = None) -> int:
         elif cmd == "promote": result = {"release": str(experiments.promote(repo, args.experiment, args.release, document(args.calibration), document(args.approval)))}
         elif cmd == "learning-seed": result = learning.seed(repo, args.run, document(args.lessons))
         elif cmd == "research-guidance": result = learning.guidance_for(repo, args.learning_from, document(args.brief))
+        elif cmd == "factory-learning-evidence":
+            result = factory_learning.freeze_evidence(repo, args.cycle, args.runs, args.artifacts)
         elif cmd == "factory-learning-register":
             result = {"registered": str(factory_learning.register(repo, args.cycle, document(args.learner),
                         document(args.learner_metadata), document(args.review), document(args.reviewer_metadata)))}
