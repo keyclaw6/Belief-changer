@@ -7,6 +7,13 @@ from pathlib import Path
 from .common import confined, digest, exact_keys, file_hash, identifier, lock, nonempty, now, read_json, require, seal, unseal
 from .schema import DIMENSIONS, validate_config, validate_metadata
 
+PLAN_AFFECTING_PATHS = {
+    "prompts/evidence-reviewer.md",
+    "prompts/master-plan-skill-v2.md",
+    "prompts/master-plan-reviewer-v2.md",
+    "prompts/style-guide.md",
+}
+
 SELF_OPTIMIZABLE_PRODUCTION_PATHS = {
     "prompts/evidence-reviewer.md",
     "prompts/master-plan-skill-v2.md",
@@ -429,6 +436,16 @@ def bind_experiment(repo: Path, cycle_id: str, experiment_id: str) -> dict:
             "Transfer experiment subjects must equal the independently selected held-out set")
     require(exp["spec"]["primary_dimension"] == reg["learner"]["proposed_factory_change"]["primary_dimension"],
             "Transfer experiment changed the predeclared primary quality dimension")
+    require(exp["spec"]["confirmatory"] is True,
+            "Factory-learning transfer must be preregistered confirmatory")
+    require(exp["spec"].get("freeze_research", True) is True,
+            "Factory-learning safe surface does not alter research generation; research must be byte-frozen between arms")
+    changed_paths = set(change["changed_paths"])
+    expected_freeze_plan = not bool(changed_paths.intersection(PLAN_AFFECTING_PATHS))
+    require(exp["spec"]["freeze_plan"] is expected_freeze_plan,
+            "Transfer experiment freeze_plan does not match whether the frozen intervention can affect planning")
+    require(experiments.wilson_lower(exp["spec"]["samples_per_subject"], exp["spec"]["samples_per_subject"]) > 0.5,
+            "Transfer sample allocation cannot possibly satisfy strict_transfer_v1 even with all candidate wins")
     require(set(exp["spec"]["allowed_change_paths"]) <= set(reg["approved_change_surface"]),
             "Transfer experiment declares paths outside approved factory change surface")
     for pair in exp["spec"]["pairs"]:
