@@ -35,7 +35,7 @@ class NoRegressionRepairTests(unittest.TestCase):
         packet = load_next(base)
         guidance = research_guidance(packet, self.brief)
         research = copy.deepcopy(self.research)
-        research["learning_context"] = {"guidance_sha256": digest(guidance), "baseline_run": "baseline",
+        research["learning_context"] = {"guidance_sha256": guidance["guidance_sha256"], "baseline_run": "baseline",
                                         "gap_resolutions": []}
         prepare(self.repo, "candidate", self.brief, research, fixture=True, learning_from="baseline")
         self.candidate = Run(self.repo, "candidate")
