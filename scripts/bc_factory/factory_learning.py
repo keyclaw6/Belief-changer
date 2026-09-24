@@ -136,6 +136,16 @@ def _cycle(repo: Path, cycle_id: str) -> Path:
     return confined(repo, f"factory-learning/{identifier(cycle_id)}")
 
 
+def _factory_snapshot(repo: Path) -> dict[str, str]:
+    from .runs import active_files
+    files = {}
+    for rel in active_files(repo):
+        path = confined(repo, rel)
+        require(path.is_file(), f"Active factory file missing: {rel}")
+        files[rel] = file_hash(path)
+    return files
+
+
 def registration(repo: Path, cycle_id: str) -> tuple[Path, dict]:
     root = _cycle(repo, cycle_id)
     record = unseal(root / "registration.json")
@@ -180,11 +190,13 @@ def register(repo: Path, cycle_id: str, learner: dict, learner_meta: dict, revie
     for rel in sorted(approved):
         path = confined(repo, rel)
         base_hashes[rel] = file_hash(path) if path.is_file() else None
+    base_factory_files = _factory_snapshot(repo)
     record = {"schema_version": 2, "cycle_id": cycle_id, "registered_at": now(), "base_commit": base_commit,
               "experimental_branch": branch_name,
               "learner": learner, "learner_metadata": learner_meta, "review": reviewer,
               "reviewer_metadata": reviewer_meta, "approved_change_surface": sorted(approved),
-              "base_path_hashes": base_hashes}
+              "base_path_hashes": base_hashes, "base_factory_files": base_factory_files,
+              "base_factory_digest": digest(base_factory_files)}
     with lock(root):
         seal(root / "registration.json", record)
     return root
@@ -211,8 +223,10 @@ def freeze_change(repo: Path, cycle_id: str) -> dict:
     for rel in sorted(changed):
         path = confined(repo, rel)
         hashes[rel] = file_hash(path) if path.is_file() else None
+    factory_files = _factory_snapshot(repo)
     doc = {"schema_version": 2, "cycle_id": cycle_id, "base_commit": reg["base_commit"],
-           "head_commit": head, "changed_paths": sorted(changed), "path_hashes": hashes, "frozen_at": now()}
+           "head_commit": head, "changed_paths": sorted(changed), "path_hashes": hashes,
+           "factory_files": factory_files, "factory_digest": digest(factory_files), "frozen_at": now()}
     with lock(root):
         seal(root / "change.json", doc)
     return doc
@@ -295,12 +309,12 @@ def bind_experiment(repo: Path, cycle_id: str, experiment_id: str) -> dict:
             "Transfer experiment declares paths outside approved factory change surface")
     for pair in exp["spec"]["pairs"]:
         parent, candidate = Run(repo, pair["parent_run"]), Run(repo, pair["candidate_run"])
-        for rel, expected in reg["base_path_hashes"].items():
-            require(parent.manifest["factory_files"].get(rel) == expected,
-                    f"Transfer parent does not match pre-intervention factory at {rel}")
-        for rel, expected in change["path_hashes"].items():
-            require(candidate.manifest["factory_files"].get(rel) == expected,
-                    f"Transfer candidate does not match frozen intervention at {rel}")
+        require(parent.manifest["factory_files"] == reg["base_factory_files"]
+                and parent.manifest["factory_digest"] == reg["base_factory_digest"],
+                "Transfer parent is not the exact pre-intervention factory snapshot")
+        require(candidate.manifest["factory_files"] == change["factory_files"]
+                and candidate.manifest["factory_digest"] == change["factory_digest"],
+                "Transfer candidate is not the exact frozen intervention factory snapshot")
     doc = {"schema_version": 2, "cycle_id": cycle_id, "experiment_id": experiment_id,
            "registration_sha256": digest(exp), "holdout_sha256": digest(holdout),
            "change_sha256": digest(change), "bound_at": now()}
