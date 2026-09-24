@@ -166,6 +166,23 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
         with self.assertRaises(FactoryError):
             register(self.repo, "cycle-fixture", learner, self.meta("learner"), reviewer, bad)
 
+    def test_evidence_manifest_freezes_only_safe_active_change_surface(self):
+        evidence = freeze_evidence(self.repo, "cycle-surface", self.training_runs)
+        self.assertIn("prompts/chapter-writer.md", evidence["eligible_change_surface"])
+        self.assertNotIn("scripts/bc_factory/learning.py", evidence["eligible_change_surface"])
+        self.assertNotIn("loop/judges/pairwise.md", evidence["eligible_change_surface"])
+        self.assertNotIn("README.md", evidence["eligible_change_surface"])
+
+    def test_non_runtime_intervention_cannot_be_registered(self):
+        learner = self.learner()
+        learner["proposed_factory_change"]["change_surface"] = ["README.md"]
+        review = self.reviewer()
+        review["approved_change_surface"] = ["README.md"]
+        _, learner, review = self.bound_docs("cycle-nonruntime", learner, review)
+        with self.assertRaises(FactoryError):
+            register(self.repo, "cycle-nonruntime", learner, self.meta("learner"),
+                     review, self.meta("reviewer"))
+
     def test_self_optimizer_cannot_edit_learning_or_evaluation_control_plane(self):
         learner = self.learner()
         learner["proposed_factory_change"]["change_surface"] = ["scripts/bc_factory/learning.py"]
