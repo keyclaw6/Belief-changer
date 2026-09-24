@@ -23,6 +23,8 @@ class FactoryLearningPromptTests(unittest.TestCase):
         ):
             self.assertIn(token, p)
         self.assertIn("what general factory mechanism", p)
+        self.assertIn("evidence_sha256", p)
+        self.assertIn("sealed evidence manifest", p.lower())
 
     def test_independent_factory_learning_reviewer_is_anti_overfit(self):
         p = self.text("loop/prompts/factory-learning-reviewer.md")
@@ -36,6 +38,8 @@ class FactoryLearningPromptTests(unittest.TestCase):
         ):
             self.assertIn(token, p)
         self.assertIn("Do not write book prose", p)
+        self.assertIn("evidence_sha256", p)
+        self.assertIn("learner_sha256", p)
 
     def test_inner_roles_do_not_treat_learning_as_template_or_evidence(self):
         expected = {
@@ -123,6 +127,7 @@ class FactoryLearningPromptTests(unittest.TestCase):
         self.assertIn("factory-learner.md", program)
         self.assertIn("factory-learning-reviewer.md", program)
         for p in (orchestrator, program, agents):
+            self.assertIn("factory-learning-evidence", p)
             self.assertIn("factory-learning-register", p)
             self.assertIn("factory-learning-freeze-change", p)
             self.assertIn("holdout", p.lower())
