@@ -24,7 +24,6 @@ SELF_OPTIMIZABLE_PRODUCTION_PATHS = {
     "prompts/book-editor.md",
     "prompts/final-auditor.md",
     "prompts/style-guide.md",
-    "scripts/bc_factory/quality.py",
 }
 
 PROTECTED_EVALUATION_PATHS = {
