@@ -161,6 +161,23 @@ class CrossIterationLearningTests(unittest.TestCase):
         self.assertEqual(packet["baseline_run"], "candidate")
         self.assertTrue(any(x["dimension"] == "voice" for x in packet["preserve"]))
 
+    def test_stale_candidate_cannot_overwrite_newer_learning_revision(self):
+        baseline = self.seed_baseline()
+        candidate_a = self.completed("candidate-a", learning_from="baseline")
+        candidate_b = self.completed("candidate-b", learning_from="baseline")
+        for order in ("AB", "BA"):
+            frozen = task(self.repo, "candidate-a", order)
+            submit(self.repo, "candidate-a", order, self.judgment(frozen), metadata(True))
+        self.assertEqual(decide(self.repo, "candidate-a")["decision"], "PRESERVE_BASELINE")
+        advance(self.repo, "candidate-a")
+        self.assertNotEqual(load_next(baseline), candidate_b.learning)
+        for order, winner in (("AB", "B"), ("BA", "A")):
+            frozen = task(self.repo, "candidate-b", order)
+            submit(self.repo, "candidate-b", order, self.judgment(frozen, winner), metadata(True))
+        self.assertEqual(decide(self.repo, "candidate-b")["decision"], "ADVANCE")
+        with self.assertRaises(FactoryError):
+            advance(self.repo, "candidate-b")
+
     def test_accepted_candidate_cannot_reopen_without_regression_failure(self):
         self.seed_baseline()
         candidate = self.completed("candidate", learning_from="baseline")
