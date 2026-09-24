@@ -280,7 +280,10 @@ def transfer_decide(repo: Path, eid: str) -> dict:
                 "order_instability": [], "judge_models": [], "registration_hash": None, "fixture": None,
                 "efficacy": "NOT_MEASURED", "release_eligible": False}
     reasons = [r for r in measured["reasons"] if r != "Real human calibration not supplied"]
-    if measured["critical"] or any("secondary-dimension regression" in r for r in reasons):
+    primary_regression = any(subject["primary_losses"] > 0 for subject in measured["subjects"].values())
+    if measured["critical"] or primary_regression or any("secondary-dimension regression" in r for r in reasons):
+        if primary_regression:
+            reasons.append("Observed primary-dimension regression in at least one held-out subject")
         verdict = "REJECT_TRANSFER"
     elif reasons:
         verdict = "INCONCLUSIVE"
