@@ -97,9 +97,16 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
     elif learning_packet is not None:
         from .learning import validate_packet_binding
         validate_packet_binding(repo, learning_packet, brief["subject"], fixture)
+    research_guidance_sha256 = None
     if learning_packet is not None:
-        from .learning import validate_research_learning
-        validate_research_learning(research, learning_packet, brief)
+        legacy_remediation = remediation is not None and source.manifest.get("research_guidance_sha256") is None
+        if legacy_remediation:
+            require("learning_context" not in research,
+                    "Legacy remediation must inherit its source research byte-identically")
+        else:
+            from .learning import validate_research_learning
+            validate_research_learning(research, learning_packet, brief)
+            research_guidance_sha256 = research["learning_context"]["guidance_sha256"]
     else:
         require("learning_context" not in research, "Research learning context requires --learning-from")
     if remediation is not None:
@@ -164,6 +171,7 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
                         "evidence_feedback_sha256": file_hash(root / "inputs/evidence-feedback.json") if evidence_feedback is not None else None,
                         "learning_from": learning_from,
                         "learning_sha256": file_hash(root / "inputs/cross-iteration-learning.json") if learning_packet is not None else None,
+                        "research_guidance_sha256": research_guidance_sha256,
                         "remediation_of": remediation["source_run"] if remediation is not None else None,
                         "remediation_source": remediation}
             seal(root / "manifest.json", manifest)
@@ -218,7 +226,14 @@ class Run:
                     "Cross-iteration learning lineage mismatch")
             from .learning import validate_packet_binding, validate_research_learning
             validate_packet_binding(self.repo, self.learning, self.brief["subject"], self.manifest["fixture"])
-            validate_research_learning(self.research, self.learning, self.brief)
+            if self.manifest.get("research_guidance_sha256") is not None:
+                validate_research_learning(self.research, self.learning, self.brief)
+                require(self.research["learning_context"]["guidance_sha256"] == self.manifest["research_guidance_sha256"],
+                        "Frozen research guidance receipt changed")
+            else:
+                # Backward compatibility: runs frozen before pre-research receipts remain readable.
+                require("learning_context" not in self.research,
+                        "Legacy learning run has an unbound research learning context")
         else:
             self.learning = None
             require(self.manifest.get("learning_from") is None, "Learning lineage is missing its frozen packet")
