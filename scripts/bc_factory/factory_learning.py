@@ -204,13 +204,13 @@ def bind_experiment(repo: Path, cycle_id: str, experiment_id: str) -> dict:
     return doc
 
 
-def decide(repo: Path, cycle_id: str, calibration: dict | None = None) -> dict:
+def decide(repo: Path, cycle_id: str) -> dict:
     from . import experiments
     root, _ = registration(repo, cycle_id)
     binding = unseal(root / "experiment.json")
-    result = experiments.decide(repo, binding["experiment_id"], calibration)
-    verdict = ("KEEP_FACTORY_CHANGE" if result["decision"] == "KEEP_ELIGIBLE"
-               else "REJECT_FACTORY_CHANGE" if result["decision"] == "REJECT"
+    result = experiments.transfer_decide(repo, binding["experiment_id"])
+    verdict = ("KEEP_FACTORY_CHANGE" if result["decision"] == "TRANSFER_ELIGIBLE_NONPROMOTIONAL"
+               else "REJECT_FACTORY_CHANGE" if result["decision"] == "REJECT_TRANSFER"
                else "INCONCLUSIVE")
     doc = {"schema_version": 2, "cycle_id": cycle_id, "decision": verdict,
            "experiment_decision": result, "binding_sha256": digest(binding), "decided_at": now()}
