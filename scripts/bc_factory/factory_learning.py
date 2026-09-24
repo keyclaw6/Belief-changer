@@ -150,6 +150,11 @@ def _factory_snapshot(repo: Path) -> dict[str, str]:
     return files
 
 
+def _eligible_change_surface(repo: Path) -> list[str]:
+    from .runs import active_files
+    return sorted(set(active_files(repo)) - PROTECTED_EVALUATION_PATHS)
+
+
 def evidence(repo: Path, cycle_id: str) -> tuple[Path, dict]:
     root = _cycle(repo, cycle_id)
     return root, unseal(root / "evidence.json")
@@ -190,6 +195,8 @@ def freeze_evidence(repo: Path, cycle_id: str, run_ids: list[str], artifact_path
         _validate_frozen_evidence(repo, existing)
         require(_factory_snapshot(repo) == existing["base_factory_files"],
                 "Active factory changed after training evidence was frozen")
+        require(_eligible_change_surface(repo) == existing["eligible_change_surface"],
+                "Eligible factory-learning change surface changed after evidence freeze")
         return existing
     require(not _git(repo, "status", "--porcelain"), "Freeze training evidence from a clean source tree")
     branch_name = _git(repo, "branch", "--show-current")
@@ -216,6 +223,7 @@ def freeze_evidence(repo: Path, cycle_id: str, run_ids: list[str], artifact_path
     doc = {"schema_version": 2, "cycle_id": cycle_id, "frozen_at": now(),
            "base_commit": _git(repo, "rev-parse", "HEAD"), "experimental_branch": branch_name,
            "training_subjects": sorted(subjects), "runs": runs, "artifacts": artifacts,
+           "eligible_change_surface": _eligible_change_surface(repo),
            "base_factory_files": base_factory_files, "base_factory_digest": digest(base_factory_files)}
     with lock(root):
         seal(root / "evidence.json", doc)
@@ -263,12 +271,9 @@ def register(repo: Path, cycle_id: str, learner: dict, learner_meta: dict, revie
     proposed = set(learner["proposed_factory_change"]["change_surface"])
     approved = set(reviewer["approved_change_surface"])
     require(approved <= proposed, "Reviewer approved paths outside the learner proposal")
-    from .runs import active_files
-    active = set(active_files(repo))
-    require(approved <= active,
-            f"Factory intervention paths must be active snapshotted factory files: {sorted(approved-active)}")
-    require(not approved.intersection(PROTECTED_EVALUATION_PATHS),
-            "Factory self-optimization cannot edit its own evaluator, routing, or learning control plane")
+    eligible = set(frozen_evidence["eligible_change_surface"])
+    require(approved <= eligible,
+            f"Factory intervention paths are outside the frozen eligible production surface: {sorted(approved-eligible)}")
     test = learner["falsification_test"]; reviewed = reviewer["held_out_test"]
     for key in ("holdout_requirements", "success_criteria", "failure_signals"):
         require(reviewed[key] == test[key], f"Reviewer changed frozen {key}; revise learner proposal instead")
