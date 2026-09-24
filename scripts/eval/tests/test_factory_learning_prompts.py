@@ -113,17 +113,22 @@ class FactoryLearningPromptTests(unittest.TestCase):
         self.assertIn("bash: deny", oc_selector)
         self.assertIn("task: deny", oc_selector)
 
-    def test_orchestrator_and_program_require_held_out_transfer(self):
+    def test_orchestrator_and_program_require_sealed_held_out_transfer(self):
         orchestrator = self.text("prompts/factory-orchestrator.md")
         program = self.text("loop/PROGRAM.md")
         agents = self.text("AGENTS.md")
+        self.assertIn("factory-learner.md", orchestrator)
+        self.assertIn("factory-learning-reviewer.md", orchestrator)
+        self.assertIn("factory-learner.md", program)
+        self.assertIn("factory-learning-reviewer.md", program)
         for p in (orchestrator, program, agents):
-            self.assertIn("factory-learner.md", p)
-            self.assertIn("factory-learning-reviewer.md", p)
-            self.assertIn("held-out", p.lower())
-        self.assertIn("A training-only improvement is evidence of possible overfit", orchestrator)
-        self.assertIn("holdout", program.lower())
-        self.assertIn("independently", program.lower())
+            self.assertIn("factory-learning-register", p)
+            self.assertIn("factory-learning-freeze-change", p)
+            self.assertIn("holdout", p.lower())
+        self.assertIn("factory-learning-holdout-submit", orchestrator)
+        self.assertIn("factory-learning-holdout-submit", program)
+        self.assertIn("Training-only gains are possible overfit", orchestrator)
+        self.assertIn("independent selector", program.lower())
 
 
 if __name__ == "__main__":
