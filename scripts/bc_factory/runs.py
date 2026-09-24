@@ -23,8 +23,13 @@ REQUIRED_CODE = ["scripts/factory.py", "factory/config.json", "factory/research-
 
 def active_files(repo: Path) -> list[str]:
     paths = [*REQUIRED_CODE]
-    for glob in ("scripts/bc_factory/*.py", "prompts/*.md", "loop/judges/*.md"):
+    for glob in ("scripts/bc_factory/*.py", "prompts/*.md", "loop/judges/*.md", "loop/prompts/*.md",
+                 ".opencode/agents/*.md", ".pi/agents/*.md"):
         paths.extend(p.relative_to(repo).as_posix() for p in repo.glob(glob) if p.is_file())
+    for rel in ("AGENTS.md", "loop/PROGRAM.md", "loop/subjects.md", "docs/CROSS-ITERATION-LEARNING.md",
+                ".opencode/agent/factory.md"):
+        if (repo / rel).is_file():
+            paths.append(rel)
     return sorted(set(paths))
 
 
