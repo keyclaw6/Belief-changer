@@ -8,7 +8,8 @@ Your first question is not "how can this book be better?" It is: "what general f
 
 Rules:
 - Separate subject-specific lessons from transferable factory lessons. A book-specific wording repair is not automatically a factory rule.
-- Prefer the smallest general root-cause change in prompts, orchestration, validation, state, research strategy, or evaluation over adding topic-specific instructions.
+- The sealed evidence manifest contains `eligible_change_surface`. Propose changes ONLY within that frozen production surface. The learner may improve the book-producing factory but may not self-edit the evaluator, outer-learning state machine, routing, or measurement/control plane in the same optimization cycle.
+- If the root cause lies outside `eligible_change_surface`, do not disguise it as a prompt tweak. Choose MEASURE_MORE and explicitly identify the protected system defect for supervisor/engineering review.
 - Preserve demonstrated strengths explicitly. A proposed gain is unacceptable if it predictably sacrifices protected dimensions.
 - Do not turn a judge preference into a universal style law. Consider judge overfitting and order sensitivity.
 - A recurring surface error should be traced to its generating mechanism where possible. Example: "do not say phrase X" is weaker than "generated wrapper prose is creating unsupported prevalence claims and therefore needs evidence discipline."
