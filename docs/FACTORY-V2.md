@@ -140,7 +140,7 @@ Factory-level changes are now a sealed runtime workflow, separate from per-book 
 7. After all blinded/reversed judgments, run:
    `python3 scripts/factory.py factory-learning-decide --cycle CYCLE`
 
-`KEEP_FACTORY_CHANGE` is an internal engineering decision only. It requires strict held-out transfer evidence but does not require or replace human release calibration, never updates `factory/champion.json`, and never establishes reader efficacy. Publication still uses the separate release gate below.
+`KEEP_FACTORY_CHANGE` is an internal engineering decision only. The transfer experiment must use the learner's predeclared primary dimension. Research stays byte-identical between arms unless a research-process intervention explicitly preregisters `freeze_research=false`; a retained cycle's transfer-judge family cannot validate the next retained cycle. The gate does not require or replace human release calibration, never updates `factory/champion.json`, and never establishes reader efficacy. Publication still uses the separate release gate below.
 
 ## Experiments and promotion
 
