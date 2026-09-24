@@ -32,7 +32,7 @@ A stable candidate win on at least one protected quality dimension with zero los
 
 The no-regression packet protects what the next book must not forget; it does not by itself decide how the FACTORY should change. Factory changes use a separate outer learning boundary after complete iteration judgments are frozen.
 
-1. Run `loop/prompts/factory-learner.md` on TRAINING-subject books/research/audits/judgments/traces. The learner must separate subject-local lessons from transferable mechanisms and may return CHANGE_FACTORY, KEEP_FACTORY, or MEASURE_MORE. It specifies generic holdout requirements, never the exact held-out topics.
+1. Run `loop/prompts/factory-learner.md` on TRAINING-subject books/research/audits/judgments/traces. The learner must separate subject-local lessons from transferable mechanisms and may return CHANGE_FACTORY, KEEP_FACTORY, or MEASURE_MORE. It freezes the intended primary quality dimension and generic holdout requirements, never the exact held-out topics.
 2. Run `loop/prompts/factory-learning-reviewer.md` independently. Only an ACCEPTed proposal may become a factory intervention.
 3. Create/switch to an isolated experimental branch (never `main`). Before edits, seal both outputs plus their actual model metadata with `factory-learning-register`. Runtime checks reviewer-family independence, records that branch, and freezes the approved change surface and generic transfer criteria. A rejected intervention branch is discarded; only `KEEP_FACTORY_CHANGE` is eligible to merge back to `main`.
 4. Implement only the approved paths, commit the intervention, then run `factory-learning-freeze-change`. Runtime rejects undeclared changed paths.
