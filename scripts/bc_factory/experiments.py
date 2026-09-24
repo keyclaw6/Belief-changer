@@ -35,6 +35,7 @@ def register(repo: Path, spec: dict) -> Path:
     nonempty(spec["hypothesis"], "Hypothesis")
     require(type(spec["samples_per_subject"]) is int and spec["samples_per_subject"] >= 3, "At least three independent generation pairs per subject for screening")
     require(type(spec["freeze_plan"]) is bool and type(spec["confirmatory"]) is bool, "Invalid design switches")
+    require(type(spec.get("freeze_research", True)) is bool, "freeze_research must be boolean")
     require(isinstance(spec["subjects"], list) and len(set(spec["subjects"])) == len(spec["subjects"]) >= 2, "At least two distinct subjects required")
     require(isinstance(spec["allowed_change_paths"], list) and bool(spec["allowed_change_paths"]), "Preregister the intervention files")
     require(isinstance(spec["pairs"], list), "Pairs must be a list")
