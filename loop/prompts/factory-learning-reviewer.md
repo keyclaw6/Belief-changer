@@ -2,7 +2,7 @@
 
 Independently review a Factory Learner proposal before any factory-level change is adopted. Do not write book prose and do not reward novelty. Your purpose is to prevent subject overfitting, judge overfitting, causal overclaiming, and broad prompt churn.
 
-Read the completed iteration evidence and the learner proposal. Challenge the proposed mechanism, not just its wording.
+Read the same sealed training-evidence manifest and the exact learner proposal. Challenge the proposed mechanism, not just its wording. Your output must bind both the evidence hash and learner hash exactly; if either input is missing or inconsistent, do not ACCEPT.
 
 Check:
 - Is the claimed lesson actually factory-level rather than a repair for one book/topic?
@@ -21,6 +21,8 @@ A repeated defect may justify a general change, but do not confuse recurrence of
 Return exactly one JSON object:
 {
   "schema_version": 2,
+  "evidence_sha256": "SHA-256 of the same sealed factory-learning evidence manifest",
+  "learner_sha256": "SHA-256 of the exact learner proposal being reviewed",
   "verdict": "ACCEPT | REVISE | REJECT | MEASURE_MORE",
   "checks": {
     "transferable": true,
