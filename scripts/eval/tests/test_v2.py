@@ -794,6 +794,26 @@ class ExperimentTests(Base):
         self.setup_experiment()
         self.assertEqual(decide(self.repo,'exp1')['decision'],'INCONCLUSIVE')
         self.assertEqual(len(decide(self.repo,'exp1')['missing']),12)
+    def test_research_process_intervention_must_be_preregistered(self):
+        pairs=[]
+        for subject in ('rs1','rs2'):
+            brief,research,plan=inputs(subject)
+            for n in range(3):
+                prepare(self.repo,f'{subject}-p{n}',brief,research,fixture=True)
+                changed=copy.deepcopy(research)
+                changed['open_questions']=list(changed['open_questions'])+[f'candidate research question {n}']
+                prepare(self.repo,f'{subject}-c{n}',brief,changed,fixture=True)
+                pairs.append({'id':f'{subject}-{n}','subject':subject,
+                              'parent_run':f'{subject}-p{n}','candidate_run':f'{subject}-c{n}'})
+        spec={'schema_version':2,'id':'research-open','parent_release':None,
+              'hypothesis':'Research-process intervention fixture','primary_dimension':'argument',
+              'allowed_change_paths':['prompts/research-agent.md'],'subjects':['rs1','rs2'],
+              'samples_per_subject':3,'pairs':pairs,'freeze_plan':False,
+              'freeze_research':False,'confirmatory':True}
+        register(self.repo,spec)
+        strict=copy.deepcopy(spec);strict['id']='research-frozen';strict['freeze_research']=True
+        with self.assertRaises(FactoryError): register(self.repo,strict)
+
     def test_register_reused_book_as_replicate_rejected(self):
         spec=self.setup_experiment();spec['id']='exp2';spec['pairs'][1]['parent_run']=spec['pairs'][0]['parent_run']
         with self.assertRaises(FactoryError): register(self.repo,spec)
