@@ -45,6 +45,8 @@ Use `factory/brief.example.json` as a schema example. The brief fixes subject, a
 
 `factory/research.example.json` is deliberately UNVERIFIED and NOT research ready for generation. Replace it with real source-backed material. `prompts/research-agent.md` defines research.json; preserve detailed banks/synthesis/source locators for human audit. Do not convert a URL, `SUPPORTED` label, count floor or source file's existence into verification. Every excerpt and inference requires checking. Sources that are illustrations cannot establish empirical claims.
 
+For a cross-iteration successor, research now starts from a deterministic guidance artifact rather than from memory. Prepare the brief, run `python3 scripts/factory.py research-guidance --learning-from BASELINE_RUN --brief BRIEF --out GUIDANCE`, and give GUIDANCE to the research lead before retrieval. Its research.json must bind `guidance_sha256`/`baseline_run` and provide one explicit `gap_resolutions` entry for every inherited research gap. `prepare --learning-from ...` recomputes this guidance and fails if research was produced against a different/stale packet.
+
 ```bash
 python3 scripts/factory.py prepare --run baseline-topic-a --brief path/to/brief.json --research path/to/research.json
 ```
@@ -118,6 +120,27 @@ python3 scripts/factory.py status --run baseline-topic-a
 ```
 
 Zero exit status and COMPLETE_UNRELEASED mean the workflow completed its checks. They do not authorize publication or assert efficacy. INCOMPLETE/error returns exit code 2. There is no successful PANEL DONE for missing work.
+
+## Factory-learning cycles
+
+Factory-level changes are now a sealed runtime workflow, separate from per-book `learning-next.json` and separate from release promotion.
+
+1. Run the Factory Learner on training-subject artifacts; it names only generic holdout requirements, never exact test topics.
+2. Run the independent Factory-Learning Reviewer.
+3. Before edits, seal both outputs and actual execution metadata:
+   `python3 scripts/factory.py factory-learning-register --cycle CYCLE --learner LEARNER.json --learner-metadata LEARNER-META.json --review REVIEW.json --reviewer-metadata REVIEWER-META.json`
+4. Implement only the approved paths, commit the intervention, then freeze the actual Git diff:
+   `python3 scripts/factory.py factory-learning-freeze-change --cycle CYCLE`
+5. Only after that freeze, run the read-only Factory Holdout Selector and submit at least two exact unseen topics:
+   `python3 scripts/factory.py factory-learning-holdout-submit --cycle CYCLE --selection HOLDOUT.json --metadata SELECTOR-META.json`
+   Runtime rejects training-topic overlap, reuse of any topic revealed by a previous cycle, and selectors from the learner/reviewer families.
+6. Register the confirmatory transfer experiment on exactly that held-out set, then bind it:
+   `python3 scripts/factory.py factory-learning-bind-experiment --cycle CYCLE --experiment EXPERIMENT`
+   Runtime verifies parent/candidate factory hashes against the pre-intervention and frozen-intervention states and rejects undeclared changed paths.
+7. After all blinded/reversed judgments, run:
+   `python3 scripts/factory.py factory-learning-decide --cycle CYCLE`
+
+`KEEP_FACTORY_CHANGE` is an internal engineering decision only. It requires strict held-out transfer evidence but does not require or replace human release calibration, never updates `factory/champion.json`, and never establishes reader efficacy. Publication still uses the separate release gate below.
 
 ## Experiments and promotion
 
