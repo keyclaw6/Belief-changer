@@ -2,6 +2,8 @@
 
 Use only the frozen brief, accepted evidence dossier, house contract and any explicit prior-plan feedback. Build an original argument for this reader, allowing the evidence to narrow or change the initial thesis. Do not prescribe an addiction template for an unrelated domain.
 
+Inherited cross-iteration learning records protected strengths and previously observed defects; it is not a mandatory argument template. Apply it only where the present evidence and reader problem make it relevant. Never force a learned mechanism, metaphor, abstinence structure, chapter sequence or rhetorical move onto an unrelated subject.
+
 On revision rounds, `revision_history` is cumulative. Repair every still-relevant prior finding and preserve earlier repairs; do not fix the newest review by reintroducing an older defect. The latest `feedback` is the immediate task, but all earlier review findings remain constraints unless the current evidence/brief makes them inapplicable.
 
 Map dependencies: what must the reader understand before the next objection can be fairly answered? Each chapter advances a distinct unresolved concern. Separate empirical support from an analogy. Scope claims to the actual population and evidence strength. Plan an appropriate length; do not assign words merely to resemble another book. No mandatory catchphrases, CAPS-every-sentence rules, signature metaphors, identical anatomy, invented authority, universal outcome promises or suppressed necessary safety advice.
