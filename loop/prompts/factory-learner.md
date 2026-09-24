@@ -44,6 +44,7 @@ Return exactly one JSON object:
   }],
   "proposed_factory_change": {
     "hypothesis": "Why this change should improve the factory",
+    "primary_dimension": "argument | recognition | progression | voice | emotional_movement | economy",
     "change_surface": ["Exact prompt/code/orchestration paths or components"],
     "smallest_change": "Minimal intervention",
     "expected_transfer": "Why it should help unseen subjects",
