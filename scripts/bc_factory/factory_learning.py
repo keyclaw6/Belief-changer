@@ -7,6 +7,16 @@ from pathlib import Path
 from .common import confined, digest, exact_keys, file_hash, identifier, lock, nonempty, now, read_json, require, seal, unseal
 from .schema import DIMENSIONS, validate_config, validate_metadata
 
+PROTECTED_EVALUATION_PATHS = {
+    "factory/config.json",
+    "loop/judges/pairwise.md",
+    "scripts/bc_factory/adapters.py",
+    "scripts/bc_factory/experiments.py",
+    "scripts/bc_factory/factory_learning.py",
+    "scripts/bc_factory/regression.py",
+    "scripts/bc_factory/schema.py",
+}
+
 
 def _strings(value, label: str, minimum: int = 0) -> list[str]:
     require(isinstance(value, list) and len(value) >= minimum and all(isinstance(x, str) and x.strip() for x in value),
@@ -117,6 +127,8 @@ def register(repo: Path, cycle_id: str, learner: dict, learner_meta: dict, revie
     proposed = set(learner["proposed_factory_change"]["change_surface"])
     approved = set(reviewer["approved_change_surface"])
     require(approved <= proposed, "Reviewer approved paths outside the learner proposal")
+    require(not approved.intersection(PROTECTED_EVALUATION_PATHS),
+            "Factory self-optimization cannot edit its own evaluator, routing, or learning control plane")
     test = learner["falsification_test"]; reviewed = reviewer["held_out_test"]
     for key in ("holdout_requirements", "success_criteria", "failure_signals"):
         require(reviewed[key] == test[key], f"Reviewer changed frozen {key}; revise learner proposal instead")
