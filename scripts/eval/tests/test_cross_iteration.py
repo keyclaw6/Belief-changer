@@ -10,7 +10,7 @@ import unittest
 SOURCE = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(SOURCE / "scripts"))
 
-from bc_factory.common import FactoryError, digest, unseal
+from bc_factory.common import FactoryError, canonical, file_hash, seal, unseal
 from bc_factory.demo import finish, inputs, metadata, scaffold
 from bc_factory.learning import advance, load_next, research_guidance, seed, validate_lessons
 from bc_factory.regression import decide, submit, task
@@ -101,6 +101,21 @@ class CrossIterationLearningTests(unittest.TestCase):
         with self.assertRaises(FactoryError):
             Run(self.repo, "candidate")
 
+    def test_legacy_learning_run_without_research_receipt_remains_readable(self):
+        self.seed_baseline()
+        root = prepare(self.repo, "legacy-candidate", self.brief, self.research_for("baseline"),
+                       fixture=True, learning_from="baseline")
+        manifest = unseal(root / "manifest.json")
+        legacy_research = copy.deepcopy(self.research)
+        (root / "inputs/research.json").write_bytes(canonical(legacy_research) + b"\n")
+        manifest["research_sha256"] = file_hash(root / "inputs/research.json")
+        manifest.pop("research_guidance_sha256", None)
+        (root / "manifest.json").unlink()
+        seal(root / "manifest.json", manifest)
+        run = Run(self.repo, "legacy-candidate")
+        self.assertEqual(run.learning["baseline_run"], "baseline")
+        self.assertNotIn("learning_context", run.research)
+
     def test_seed_rejects_wrong_subject_and_conflicting_dimension(self):
         self.completed("baseline")
         bad = self.lessons(); bad["subject"] = "other-subject"
@@ -127,6 +142,7 @@ class CrossIterationLearningTests(unittest.TestCase):
         packet = load_next(baseline)
         self.assertEqual(packet["baseline_run"], "baseline")
         self.assertEqual(packet["provenance"]["mode"], "no_regression_preserve")
+        self.assertIn("Reader effects remain unmeasured.", packet["research_gaps"])
         prepare(self.repo, "next", self.brief, self.research_for("baseline"),
                 fixture=True, learning_from="baseline")
         self.assertEqual(Run(self.repo, "next").learning["baseline_run"], "baseline")
