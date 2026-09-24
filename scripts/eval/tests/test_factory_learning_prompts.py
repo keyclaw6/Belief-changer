@@ -84,6 +84,8 @@ class FactoryLearningPromptTests(unittest.TestCase):
         reviewer = self.text(".pi/agents/factory-learning-reviewer.md")
         oc_learner = self.text(".opencode/agents/factory-learner.md")
         oc_reviewer = self.text(".opencode/agents/factory-learning-reviewer.md")
+        selector = self.text(".pi/agents/factory-holdout-selector.md")
+        oc_selector = self.text(".opencode/agents/factory-holdout-selector.md")
         self.assertIn("loop/prompts/factory-learner.md", learner)
         self.assertIn("never writes book prose", learner)
         self.assertIn("tools: read", learner)
@@ -104,6 +106,12 @@ class FactoryLearningPromptTests(unittest.TestCase):
         self.assertIn("edit: deny", oc_reviewer)
         self.assertIn("bash: deny", oc_reviewer)
         self.assertIn("task: deny", oc_reviewer)
+        self.assertIn("tools: read", selector)
+        self.assertNotIn("bash", selector.split("---", 2)[1])
+        self.assertIn("mode: subagent", oc_selector)
+        self.assertIn("edit: deny", oc_selector)
+        self.assertIn("bash: deny", oc_selector)
+        self.assertIn("task: deny", oc_selector)
 
     def test_orchestrator_and_program_require_held_out_transfer(self):
         orchestrator = self.text("prompts/factory-orchestrator.md")
