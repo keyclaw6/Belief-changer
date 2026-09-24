@@ -10,10 +10,14 @@ from .schema import DIMENSIONS, validate_config, validate_metadata
 PROTECTED_EVALUATION_PATHS = {
     "factory/config.json",
     "loop/judges/pairwise.md",
+    "scripts/factory.py",
     "scripts/bc_factory/adapters.py",
+    "scripts/bc_factory/cli.py",
+    "scripts/bc_factory/common.py",
     "scripts/bc_factory/experiments.py",
     "scripts/bc_factory/factory_learning.py",
     "scripts/bc_factory/regression.py",
+    "scripts/bc_factory/runs.py",
     "scripts/bc_factory/schema.py",
 }
 
