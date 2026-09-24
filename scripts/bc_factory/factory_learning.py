@@ -7,6 +7,19 @@ from pathlib import Path
 from .common import confined, digest, exact_keys, file_hash, identifier, lock, nonempty, now, read_json, require, seal, unseal
 from .schema import DIMENSIONS, validate_config, validate_metadata
 
+SELF_OPTIMIZABLE_PRODUCTION_PATHS = {
+    "prompts/evidence-reviewer.md",
+    "prompts/master-plan-skill-v2.md",
+    "prompts/master-plan-reviewer-v2.md",
+    "prompts/chapter-writer.md",
+    "prompts/chapter-reviewer.md",
+    "prompts/reader-state.md",
+    "prompts/book-editor.md",
+    "prompts/final-auditor.md",
+    "prompts/style-guide.md",
+    "scripts/bc_factory/quality.py",
+}
+
 PROTECTED_EVALUATION_PATHS = {
     "AGENTS.md",
     "docs/CROSS-ITERATION-LEARNING.md",
@@ -158,7 +171,10 @@ def _factory_snapshot(repo: Path) -> dict[str, str]:
 
 def _eligible_change_surface(repo: Path) -> list[str]:
     from .runs import active_files
-    return sorted(set(active_files(repo)) - PROTECTED_EVALUATION_PATHS)
+    active = set(active_files(repo))
+    require(SELF_OPTIMIZABLE_PRODUCTION_PATHS <= active,
+            f"Configured self-optimizable production files are missing: {sorted(SELF_OPTIMIZABLE_PRODUCTION_PATHS-active)}")
+    return sorted(SELF_OPTIMIZABLE_PRODUCTION_PATHS)
 
 
 def evidence(repo: Path, cycle_id: str) -> tuple[Path, dict]:
