@@ -167,6 +167,16 @@ def submit_holdout(repo: Path, cycle_id: str, selection: dict, metadata: dict) -
     require(len(subjects) == len(set(subjects)), "Duplicate held-out subject")
     training = set(reg["learner"]["falsification_test"]["training_subjects"])
     require(not training.intersection(subjects), "A training subject cannot also be held out in the same cycle")
+    previously_revealed = set()
+    state_root = repo / "factory-learning"
+    if state_root.is_dir():
+        for path in state_root.glob("*/holdout.json"):
+            if path == root / "holdout.json":
+                continue
+            prior = unseal(path)
+            previously_revealed.update(prior["selection"]["subjects"])
+    require(not previously_revealed.intersection(subjects),
+            "A previously revealed held-out topic cannot count as unseen transfer evidence again")
     nonempty(selection["rationale"], "held-out selection rationale")
     validate_metadata(metadata)
     require(metadata["family"] not in {reg["learner_metadata"]["family"], reg["reviewer_metadata"]["family"]},
