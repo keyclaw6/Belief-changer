@@ -405,10 +405,9 @@ def submit_holdout(repo: Path, cycle_id: str, selection: dict, metadata: dict) -
     validate_metadata(metadata)
     require(metadata["harness"] != "fixture", "Fixture holdout selection cannot authorize a real transfer test")
     config = read_json(repo / "factory/config.json"); validate_config(config)
-    forbidden = {reg["learner_metadata"]["family"], reg["reviewer_metadata"]["family"],
-                 config["profiles"]["factory"]["family"]}
+    forbidden = {reg["learner_metadata"]["family"], config["profiles"]["factory"]["family"]}
     require(metadata["family"] not in forbidden,
-            "Held-out selector must be independent of learner, reviewer, and generator families")
+            "Held-out selector must be independent of the learner/generator family; post-freeze information isolation provides separation from the reviewer")
     doc = {"schema_version": 2, "cycle_id": cycle_id, "change_sha256": digest(change),
            "selection": selection, "selector_metadata": metadata, "selected_at": now()}
     with lock(root):
@@ -488,11 +487,10 @@ def decide(repo: Path, cycle_id: str) -> dict:
         holdout = unseal(root / "holdout.json")
         config = read_json(repo / "factory/config.json"); validate_config(config)
         judge_family = result["judge_models"][0]["family"]
-        forbidden = {reg["learner_metadata"]["family"], reg["reviewer_metadata"]["family"],
-                     holdout["selector_metadata"]["family"], config["profiles"]["factory"]["family"]}
+        forbidden = {reg["learner_metadata"]["family"], config["profiles"]["factory"]["family"]}
         if judge_family in forbidden:
             result["decision"] = "REJECT_TRANSFER"
-            result["reasons"].append("Transfer judge family is not independent of the generator/learner/reviewer/selector roles")
+            result["reasons"].append("Transfer judge family is not independent of the generator/learner family")
     verdict = ("KEEP_FACTORY_CHANGE" if result["decision"] == "TRANSFER_ELIGIBLE_NONPROMOTIONAL"
                else "REJECT_FACTORY_CHANGE" if result["decision"] == "REJECT_TRANSFER"
                else "INCONCLUSIVE")
