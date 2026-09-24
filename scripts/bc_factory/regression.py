@@ -162,7 +162,11 @@ def decide(repo: Path, run_id: str) -> dict:
         findings = results[order]["output"]["critical"][_candidate_label(order)]
         if findings:
             critical.append({"order": order, "findings": findings})
-    gate = "REPAIR_REQUIRED" if critical or losses else "INCONCLUSIVE" if instability else "PASS"
+    has_improvement = any(x["outcome"] == "candidate_win" for x in outcomes.values())
+    gate = ("REPAIR_REQUIRED" if critical or losses else
+            "INCONCLUSIVE" if instability else
+            "ADVANCE" if has_improvement else
+            "PRESERVE_BASELINE")
     ca = candidate.accepted_assembly()["assembly"]
     baseline = validate_packet_binding(repo, candidate.learning, candidate.brief["subject"], candidate.manifest["fixture"])
     decision = {
