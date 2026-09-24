@@ -26,7 +26,8 @@ def instrument(repo: Path) -> dict:
 
 def register(repo: Path, spec: dict) -> Path:
     exact_keys(spec, {"schema_version", "id", "parent_release", "hypothesis", "primary_dimension", "allowed_change_paths",
-                      "subjects", "samples_per_subject", "pairs", "freeze_plan", "confirmatory"}, label="experiment specification")
+                      "subjects", "samples_per_subject", "pairs", "freeze_plan", "confirmatory"},
+               {"freeze_research"}, label="experiment specification")
     require(spec["schema_version"] == 2, "Experiment schema must be v2")
     identifier(spec["id"])
     require(spec["parent_release"] is None or isinstance(spec["parent_release"], str), "Invalid parent release")
@@ -63,8 +64,11 @@ def register(repo: Path, spec: dict) -> Path:
             arm_hashes[arm].add(run.manifest["factory_digest"])
             sides.append(run)
         parent, candidate = sides
-        for k in ("brief_sha256", "research_sha256"):
-            require(parent.manifest[k] == candidate.manifest[k], f"Confounded pair: {k} differs")
+        require(parent.manifest["brief_sha256"] == candidate.manifest["brief_sha256"],
+                "Confounded pair: brief_sha256 differs")
+        if spec.get("freeze_research", True):
+            require(parent.manifest["research_sha256"] == candidate.manifest["research_sha256"],
+                    "Confounded pair: research_sha256 differs despite freeze_research")
         a, b = parent.manifest["factory_files"], candidate.manifest["factory_files"]
         changes = {p for p in set(a) | set(b) if a.get(p) != b.get(p)}
         require(changes <= set(spec["allowed_change_paths"]), f"Undeclared intervention files: {sorted(changes-set(spec['allowed_change_paths']))}")
