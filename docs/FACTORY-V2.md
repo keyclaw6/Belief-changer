@@ -127,7 +127,7 @@ Factory-level changes are now a sealed runtime workflow, separate from per-book 
 
 1. Run the Factory Learner on training-subject artifacts; it names only generic holdout requirements, never exact test topics.
 2. Run the independent Factory-Learning Reviewer.
-3. Before edits, seal both outputs and actual execution metadata:
+3. Create/switch to an isolated experimental branch; unproven interventions must never be committed directly to `main`. Before edits, seal both outputs and actual execution metadata:
    `python3 scripts/factory.py factory-learning-register --cycle CYCLE --learner LEARNER.json --learner-metadata LEARNER-META.json --review REVIEW.json --reviewer-metadata REVIEWER-META.json`
 4. Implement only the approved paths, commit the intervention, then freeze the actual Git diff:
    `python3 scripts/factory.py factory-learning-freeze-change --cycle CYCLE`
