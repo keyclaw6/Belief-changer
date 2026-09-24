@@ -42,7 +42,7 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
     @staticmethod
     def meta(family):
         return {"model": family + "-model", "family": family, "route": "offline-fixture",
-                "harness": "fixture", "usage": None, "latency_s": 0.0}
+                "harness": "offline-test", "usage": None, "latency_s": 0.0}
 
     @staticmethod
     def learner():
@@ -102,6 +102,13 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
         with self.assertRaises(FactoryError):
             register(self.repo, "cycle-main", self.learner(), self.meta("learner"),
                      self.reviewer(), self.meta("reviewer"))
+
+    def test_fixture_outer_agents_cannot_authorize_factory_change(self):
+        bad = self.meta("reviewer")
+        bad["harness"] = "fixture"
+        with self.assertRaises(FactoryError):
+            register(self.repo, "cycle-fixture", self.learner(), self.meta("learner"),
+                     self.reviewer(), bad)
 
     def test_self_optimizer_cannot_edit_its_own_evaluation_control_plane(self):
         learner = self.learner()
