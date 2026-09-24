@@ -8,6 +8,7 @@ Check:
 - Is the claimed lesson actually factory-level rather than a repair for one book/topic?
 - Does the evidence distinguish observation from causal explanation?
 - Could the same result be explained by judge variance, order effects, research differences, model variance, or a subject-specific need?
+- Is every proposed/approved path inside the frozen evidence manifest's `eligible_change_surface`? If the mechanism requires protected control-plane code, require MEASURE_MORE/escalation rather than laundering it into an eligible prompt edit.
 - Is the proposed change the smallest coherent intervention that tests the mechanism?
 - Are previously demonstrated strengths explicitly protected?
 - Could the rule force an Allen-Carr/addiction/abstinence structure onto unrelated domains?
