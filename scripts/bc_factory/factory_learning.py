@@ -118,6 +118,16 @@ def registration(repo: Path, cycle_id: str) -> tuple[Path, dict]:
 def register(repo: Path, cycle_id: str, learner: dict, learner_meta: dict, reviewer: dict, reviewer_meta: dict) -> Path:
     repo = repo.resolve(); identifier(cycle_id)
     validate_learner(learner); validate_reviewer(reviewer)
+    root = _cycle(repo, cycle_id)
+    if (root / "registration.json").exists():
+        existing = unseal(root / "registration.json")
+        require(existing["learner"] == learner and existing["learner_metadata"] == learner_meta
+                and existing["review"] == reviewer and existing["reviewer_metadata"] == reviewer_meta,
+                "Factory-learning cycle already exists with different frozen inputs")
+        require(existing["base_commit"] == _git(repo, "rev-parse", "HEAD")
+                and existing["experimental_branch"] == _git(repo, "branch", "--show-current"),
+                "Existing factory-learning registration belongs to another source state")
+        return root
     validate_metadata(learner_meta); validate_metadata(reviewer_meta)
     require(learner["decision"] == "CHANGE_FACTORY", "Only CHANGE_FACTORY can register an intervention")
     require(reviewer["verdict"] == "ACCEPT", "Factory intervention requires an ACCEPTed independent review")
@@ -146,8 +156,6 @@ def register(repo: Path, cycle_id: str, learner: dict, learner_meta: dict, revie
               "learner": learner, "learner_metadata": learner_meta, "review": reviewer,
               "reviewer_metadata": reviewer_meta, "approved_change_surface": sorted(approved),
               "base_path_hashes": base_hashes}
-    root = _cycle(repo, cycle_id)
-    require(not (root / "registration.json").exists(), "Factory-learning cycle already registered")
     with lock(root):
         seal(root / "registration.json", record)
     return root
@@ -155,6 +163,12 @@ def register(repo: Path, cycle_id: str, learner: dict, learner_meta: dict, revie
 
 def freeze_change(repo: Path, cycle_id: str) -> dict:
     repo = repo.resolve(); root, reg = registration(repo, cycle_id)
+    if (root / "change.json").exists():
+        existing = unseal(root / "change.json")
+        require(_git(repo, "branch", "--show-current") == reg["experimental_branch"]
+                and existing["head_commit"] == _git(repo, "rev-parse", "HEAD"),
+                "Existing frozen intervention does not match current branch/HEAD")
+        return existing
     require(_git(repo, "branch", "--show-current") == reg["experimental_branch"],
             "Factory-learning cycle moved to another branch")
     require(not _git(repo, "status", "--porcelain"), "Freeze only a committed, clean intervention")
@@ -178,6 +192,12 @@ def freeze_change(repo: Path, cycle_id: str) -> dict:
 def submit_holdout(repo: Path, cycle_id: str, selection: dict, metadata: dict) -> dict:
     root, reg = registration(repo, cycle_id)
     change = unseal(root / "change.json")
+    if (root / "holdout.json").exists():
+        existing = unseal(root / "holdout.json")
+        require(existing["selection"] == selection and existing["selector_metadata"] == metadata
+                and existing["change_sha256"] == digest(change),
+                "Held-out selection is already frozen with different inputs")
+        return existing
     require(_git(repo, "branch", "--show-current") == reg["experimental_branch"],
             "Held-out selection must occur on the frozen experimental branch")
     require(change["head_commit"] == _git(repo, "rev-parse", "HEAD"), "Factory changed after intervention freeze")
@@ -225,6 +245,12 @@ def bind_experiment(repo: Path, cycle_id: str, experiment_id: str) -> dict:
     from . import experiments
     from .runs import Run
     root, reg = registration(repo, cycle_id)
+    if (root / "experiment.json").exists():
+        existing = unseal(root / "experiment.json")
+        require(existing["experiment_id"] == experiment_id,
+                "Factory-learning cycle already binds a different transfer experiment")
+        experiments.registration(repo, experiment_id)
+        return existing
     require(_git(repo, "branch", "--show-current") == reg["experimental_branch"],
             "Transfer binding must occur on the frozen experimental branch")
     change = unseal(root / "change.json"); holdout = unseal(root / "holdout.json")
@@ -252,6 +278,12 @@ def bind_experiment(repo: Path, cycle_id: str, experiment_id: str) -> dict:
 def decide(repo: Path, cycle_id: str) -> dict:
     from . import experiments
     root, reg = registration(repo, cycle_id)
+    if (root / "decision.json").exists():
+        existing = unseal(root / "decision.json")
+        binding = unseal(root / "experiment.json")
+        require(existing["binding_sha256"] == digest(binding),
+                "Stored factory-learning decision is bound to another experiment state")
+        return existing
     require(_git(repo, "branch", "--show-current") == reg["experimental_branch"],
             "Factory-learning decision must occur on its frozen experimental branch")
     change = unseal(root / "change.json")
