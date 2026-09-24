@@ -87,8 +87,11 @@ def validate_learner(data: dict) -> None:
     nonempty(change["smallest_change"], "smallest change"); nonempty(change["expected_transfer"], "expected transfer")
     _strings(change["possible_regressions"], "possible regressions")
     test = data["falsification_test"]
-    exact_keys(test, {"training_subjects", "holdout_requirements", "success_criteria", "failure_signals", "leakage_rule"},
+    exact_keys(test, {"training_subjects", "holdout_requirements", "acceptance_policy",
+                      "success_criteria", "failure_signals", "leakage_rule"},
                label="falsification test")
+    require(test["acceptance_policy"] == "strict_transfer_v1",
+            "Factory-learning acceptance policy is fixed to strict_transfer_v1")
     subjects = _strings(test["training_subjects"], "training subjects", 1)
     require(len(subjects) == len(set(subjects)), "Duplicate training subject")
     _strings(test["holdout_requirements"], "holdout requirements", 1)
@@ -120,7 +123,10 @@ def validate_reviewer(data: dict) -> None:
         nonempty(item["explanation"], "finding explanation"); nonempty(item["repair"], "finding repair")
     _strings(data["approved_change_surface"], "approved change surface")
     holdout = data["held_out_test"]
-    exact_keys(holdout, {"holdout_requirements", "success_criteria", "failure_signals"}, label="reviewed holdout test")
+    exact_keys(holdout, {"holdout_requirements", "acceptance_policy", "success_criteria", "failure_signals"},
+               label="reviewed holdout test")
+    require(holdout["acceptance_policy"] == "strict_transfer_v1",
+            "Reviewer must preserve strict_transfer_v1 acceptance policy")
     _strings(holdout["holdout_requirements"], "reviewed holdout requirements", 1)
     _strings(holdout["success_criteria"], "reviewed success criteria", 1)
     _strings(holdout["failure_signals"], "reviewed failure signals", 1)
@@ -275,7 +281,7 @@ def register(repo: Path, cycle_id: str, learner: dict, learner_meta: dict, revie
     require(approved <= eligible,
             f"Factory intervention paths are outside the frozen eligible production surface: {sorted(approved-eligible)}")
     test = learner["falsification_test"]; reviewed = reviewer["held_out_test"]
-    for key in ("holdout_requirements", "success_criteria", "failure_signals"):
+    for key in ("holdout_requirements", "acceptance_policy", "success_criteria", "failure_signals"):
         require(reviewed[key] == test[key], f"Reviewer changed frozen {key}; revise learner proposal instead")
     require(not _git(repo, "status", "--porcelain"), "Register factory learning from a clean working tree before intervention edits")
     branch_name = _git(repo, "branch", "--show-current")
