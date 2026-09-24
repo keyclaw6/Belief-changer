@@ -59,6 +59,7 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
                                       "evidence": "Stable prior advantage."}],
             "proposed_factory_change": {
                 "hypothesis": "Separating jobs should recover voice without weakening argument.",
+                "primary_dimension": "voice",
                 "change_surface": ["prompts/chapter-writer.md"],
                 "smallest_change": "Clarify one prompt boundary.",
                 "expected_transfer": "The conflict is role-level rather than topic-level.",
