@@ -72,9 +72,11 @@ def validate_learner(data: dict) -> None:
         require(item["dimension"] in DIMENSIONS, "Unknown protected dimension")
         nonempty(item["constraint"], "protected constraint"); nonempty(item["evidence"], "protected evidence")
     change = data["proposed_factory_change"]
-    exact_keys(change, {"hypothesis", "change_surface", "smallest_change", "expected_transfer", "possible_regressions"},
+    exact_keys(change, {"hypothesis", "primary_dimension", "change_surface", "smallest_change", "expected_transfer", "possible_regressions"},
                label="proposed factory change")
-    nonempty(change["hypothesis"], "factory hypothesis"); _strings(change["change_surface"], "change surface")
+    nonempty(change["hypothesis"], "factory hypothesis")
+    require(change["primary_dimension"] in DIMENSIONS, "Unknown factory-change primary dimension")
+    _strings(change["change_surface"], "change surface")
     nonempty(change["smallest_change"], "smallest change"); nonempty(change["expected_transfer"], "expected transfer")
     _strings(change["possible_regressions"], "possible regressions")
     test = data["falsification_test"]
@@ -282,6 +284,8 @@ def bind_experiment(repo: Path, cycle_id: str, experiment_id: str) -> dict:
     exp_root, exp = experiments.registration(repo, experiment_id)
     require(set(exp["spec"]["subjects"]) == set(holdout["selection"]["subjects"]),
             "Transfer experiment subjects must equal the independently selected held-out set")
+    require(exp["spec"]["primary_dimension"] == reg["learner"]["proposed_factory_change"]["primary_dimension"],
+            "Transfer experiment changed the predeclared primary quality dimension")
     require(set(exp["spec"]["allowed_change_paths"]) <= set(reg["approved_change_surface"]),
             "Transfer experiment declares paths outside approved factory change surface")
     for pair in exp["spec"]["pairs"]:
