@@ -78,6 +78,7 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
             "falsification_test": {
                 "training_subjects": ["train-a", "train-b"],
                 "holdout_requirements": ["One unseen habit topic and one unseen non-habit belief topic."],
+                "acceptance_policy": "strict_transfer_v1",
                 "success_criteria": ["No protected regression and a stable gain on the target dimension."],
                 "failure_signals": ["Any held-out protected regression."],
                 "leakage_rule": "Exact held-out topics are selected only after the intervention is frozen.",
@@ -97,6 +98,7 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
             "findings": [], "approved_change_surface": ["prompts/chapter-writer.md"],
             "held_out_test": {
                 "holdout_requirements": l["falsification_test"]["holdout_requirements"],
+                "acceptance_policy": l["falsification_test"]["acceptance_policy"],
                 "success_criteria": l["falsification_test"]["success_criteria"],
                 "failure_signals": l["falsification_test"]["failure_signals"],
             },
