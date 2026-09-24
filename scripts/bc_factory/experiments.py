@@ -264,6 +264,22 @@ def decide(repo: Path, eid: str, calibration: dict | None = None) -> dict:
             "fixture": fixture, "efficacy": "NOT_MEASURED"}
 
 
+def transfer_decide(repo: Path, eid: str) -> dict:
+    """Strict engineering transfer gate. It can retain a factory change, never authorize publication."""
+    measured = decide(repo, eid, None)
+    reasons = [r for r in measured["reasons"] if r != "Real human calibration not supplied"]
+    if measured["critical"] or any("secondary-dimension regression" in r for r in reasons):
+        verdict = "REJECT_TRANSFER"
+    elif reasons:
+        verdict = "INCONCLUSIVE"
+    else:
+        verdict = "TRANSFER_ELIGIBLE_NONPROMOTIONAL"
+    return {"decision": verdict, "reasons": reasons, "subjects": measured["subjects"],
+            "critical": measured["critical"], "order_instability": measured["order_instability"],
+            "registration_hash": measured["registration_hash"], "fixture": measured["fixture"],
+            "efficacy": "NOT_MEASURED", "release_eligible": False}
+
+
 def promote(repo: Path, eid: str, release_id: str, calibration: dict, approval: dict) -> Path:
     repo = repo.resolve()
     identifier(release_id)
