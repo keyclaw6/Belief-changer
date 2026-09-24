@@ -16,6 +16,7 @@ class FactoryLearningPromptTests(unittest.TestCase):
             "subject_specific_lessons",
             "holdout_requirements",
             "MEASURE_MORE",
+            "primary_dimension",
             "smallest_change",
             "possible_regressions",
             "Exact held-out subjects are NOT chosen or revealed to you",
