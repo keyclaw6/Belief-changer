@@ -112,13 +112,21 @@ def learning_path(run) -> Path:
     return run.root / "regression" / "learning-next.json"
 
 
+def _revision_number(path: Path) -> int:
+    stem = path.stem
+    require(stem.startswith("learning-r") and stem[10:].isdigit(), f"Invalid learning revision filename: {path.name}")
+    return int(stem[10:])
+
+
 def _revision_paths(run) -> list[Path]:
     root = run.root / "regression" / "learning-revisions"
-    return sorted(root.glob("learning-r*.json")) if root.is_dir() else []
+    return sorted(root.glob("learning-r*.json"), key=_revision_number) if root.is_dir() else []
 
 
 def _next_revision_path(run) -> Path:
-    return run.root / "regression" / "learning-revisions" / f"learning-r{len(_revision_paths(run))+1:02d}.json"
+    paths = _revision_paths(run)
+    next_no = (_revision_number(paths[-1]) + 1) if paths else 1
+    return run.root / "regression" / "learning-revisions" / f"learning-r{next_no:02d}.json"
 
 
 def load_next(run) -> dict:
