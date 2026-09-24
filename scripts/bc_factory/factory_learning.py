@@ -121,12 +121,16 @@ def register(repo: Path, cycle_id: str, learner: dict, learner_meta: dict, revie
     for key in ("holdout_requirements", "success_criteria", "failure_signals"):
         require(reviewed[key] == test[key], f"Reviewer changed frozen {key}; revise learner proposal instead")
     require(not _git(repo, "status", "--porcelain"), "Register factory learning from a clean working tree before intervention edits")
+    branch_name = _git(repo, "branch", "--show-current")
+    require(bool(branch_name) and branch_name != "main",
+            "Factory-learning interventions must run on an isolated experimental branch; merge to main only after KEEP_FACTORY_CHANGE")
     base_commit = _git(repo, "rev-parse", "HEAD")
     base_hashes = {}
     for rel in sorted(approved):
         path = confined(repo, rel)
         base_hashes[rel] = file_hash(path) if path.is_file() else None
     record = {"schema_version": 2, "cycle_id": cycle_id, "registered_at": now(), "base_commit": base_commit,
+              "experimental_branch": branch_name,
               "learner": learner, "learner_metadata": learner_meta, "review": reviewer,
               "reviewer_metadata": reviewer_meta, "approved_change_surface": sorted(approved),
               "base_path_hashes": base_hashes}
@@ -139,6 +143,8 @@ def register(repo: Path, cycle_id: str, learner: dict, learner_meta: dict, revie
 
 def freeze_change(repo: Path, cycle_id: str) -> dict:
     repo = repo.resolve(); root, reg = registration(repo, cycle_id)
+    require(_git(repo, "branch", "--show-current") == reg["experimental_branch"],
+            "Factory-learning cycle moved to another branch")
     require(not _git(repo, "status", "--porcelain"), "Freeze only a committed, clean intervention")
     head = _git(repo, "rev-parse", "HEAD")
     require(head != reg["base_commit"], "No factory change exists to freeze")
@@ -160,6 +166,8 @@ def freeze_change(repo: Path, cycle_id: str) -> dict:
 def submit_holdout(repo: Path, cycle_id: str, selection: dict, metadata: dict) -> dict:
     root, reg = registration(repo, cycle_id)
     change = unseal(root / "change.json")
+    require(_git(repo, "branch", "--show-current") == reg["experimental_branch"],
+            "Held-out selection must occur on the frozen experimental branch")
     require(change["head_commit"] == _git(repo, "rev-parse", "HEAD"), "Factory changed after intervention freeze")
     exact_keys(selection, {"schema_version", "subjects", "rationale"}, label="held-out selection")
     require(selection["schema_version"] == 2, "Held-out selection schema must be v2")
@@ -167,6 +175,16 @@ def submit_holdout(repo: Path, cycle_id: str, selection: dict, metadata: dict) -
     require(len(subjects) == len(set(subjects)), "Duplicate held-out subject")
     training = set(reg["learner"]["falsification_test"]["training_subjects"])
     require(not training.intersection(subjects), "A training subject cannot also be held out in the same cycle")
+    prior_run_subjects = set()
+    runs_root = repo / "runs"
+    if runs_root.is_dir():
+        for manifest in runs_root.glob("*/manifest.json"):
+            try:
+                prior_run_subjects.add(unseal(manifest)["subject"])
+            except Exception:
+                continue
+    require(not prior_run_subjects.intersection(subjects),
+            "Held-out topics must be unseen: a selected subject already has run history")
     previously_revealed = set()
     state_root = repo / "factory-learning"
     if state_root.is_dir():
@@ -179,8 +197,11 @@ def submit_holdout(repo: Path, cycle_id: str, selection: dict, metadata: dict) -
             "A previously revealed held-out topic cannot count as unseen transfer evidence again")
     nonempty(selection["rationale"], "held-out selection rationale")
     validate_metadata(metadata)
-    require(metadata["family"] not in {reg["learner_metadata"]["family"], reg["reviewer_metadata"]["family"]},
-            "Held-out selector must be independent of learner and reviewer families")
+    config = read_json(repo / "factory/config.json"); validate_config(config)
+    forbidden = {reg["learner_metadata"]["family"], reg["reviewer_metadata"]["family"],
+                 config["profiles"]["factory"]["family"]}
+    require(metadata["family"] not in forbidden,
+            "Held-out selector must be independent of learner, reviewer, and generator families")
     doc = {"schema_version": 2, "cycle_id": cycle_id, "change_sha256": digest(change),
            "selection": selection, "selector_metadata": metadata, "selected_at": now()}
     with lock(root):
@@ -192,6 +213,8 @@ def bind_experiment(repo: Path, cycle_id: str, experiment_id: str) -> dict:
     from . import experiments
     from .runs import Run
     root, reg = registration(repo, cycle_id)
+    require(_git(repo, "branch", "--show-current") == reg["experimental_branch"],
+            "Transfer binding must occur on the frozen experimental branch")
     change = unseal(root / "change.json"); holdout = unseal(root / "holdout.json")
     exp_root, exp = experiments.registration(repo, experiment_id)
     require(set(exp["spec"]["subjects"]) == set(holdout["selection"]["subjects"]),
@@ -216,7 +239,12 @@ def bind_experiment(repo: Path, cycle_id: str, experiment_id: str) -> dict:
 
 def decide(repo: Path, cycle_id: str) -> dict:
     from . import experiments
-    root, _ = registration(repo, cycle_id)
+    root, reg = registration(repo, cycle_id)
+    require(_git(repo, "branch", "--show-current") == reg["experimental_branch"],
+            "Factory-learning decision must occur on its frozen experimental branch")
+    change = unseal(root / "change.json")
+    require(change["head_commit"] == _git(repo, "rev-parse", "HEAD"),
+            "Factory changed after the intervention was frozen")
     binding = unseal(root / "experiment.json")
     result = experiments.transfer_decide(repo, binding["experiment_id"])
     verdict = ("KEEP_FACTORY_CHANGE" if result["decision"] == "TRANSFER_ELIGIBLE_NONPROMOTIONAL"
