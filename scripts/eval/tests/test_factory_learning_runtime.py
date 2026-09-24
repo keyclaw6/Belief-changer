@@ -172,6 +172,8 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
         evidence = freeze_evidence(self.repo, "cycle-surface", self.training_runs)
         self.assertIn("prompts/chapter-writer.md", evidence["eligible_change_surface"])
         self.assertNotIn("scripts/bc_factory/learning.py", evidence["eligible_change_surface"])
+        self.assertNotIn("prompts/research-agent.md", evidence["eligible_change_surface"])
+        self.assertIn("scripts/bc_factory/quality.py", evidence["eligible_change_surface"])
         self.assertNotIn("loop/judges/pairwise.md", evidence["eligible_change_surface"])
         self.assertNotIn("README.md", evidence["eligible_change_surface"])
 
