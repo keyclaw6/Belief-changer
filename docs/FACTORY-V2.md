@@ -125,19 +125,21 @@ Zero exit status and COMPLETE_UNRELEASED mean the workflow completed its checks.
 
 Factory-level changes are now a sealed runtime workflow, separate from per-book `learning-next.json` and separate from release promotion.
 
-1. Run the Factory Learner on training-subject artifacts; it names only generic holdout requirements, never exact test topics.
-2. Run the independent Factory-Learning Reviewer.
-3. Create/switch to an isolated experimental branch; unproven interventions must never be committed directly to `main`. Before edits, seal both outputs and actual execution metadata:
+1. Create/switch to an isolated experimental branch; unproven interventions must never be committed directly to `main`. Freeze the exact completed training runs and optional extra judgment/trace artifacts before either outer agent runs:
+   `python3 scripts/factory.py factory-learning-evidence --cycle CYCLE --run RUN_A --run RUN_B [--artifact PATH ...]`
+2. Give that sealed evidence manifest and only its named artifacts to the Factory Learner. Its JSON must copy the evidence SHA-256 exactly and name only generic holdout requirements.
+3. Give the same evidence plus exact learner proposal to the independent Factory-Learning Reviewer. Its JSON must bind both the evidence SHA-256 and learner SHA-256.
+4. Before edits, seal both hash-bound outputs and actual execution metadata:
    `python3 scripts/factory.py factory-learning-register --cycle CYCLE --learner LEARNER.json --learner-metadata LEARNER-META.json --review REVIEW.json --reviewer-metadata REVIEWER-META.json`
-4. Implement only the approved paths, commit the intervention, then freeze the actual Git diff:
+5. Implement only the approved paths, commit the intervention, then freeze the actual Git diff:
    `python3 scripts/factory.py factory-learning-freeze-change --cycle CYCLE`
-5. Only after that freeze, run the read-only Factory Holdout Selector and submit at least two exact unseen topics:
+6. Only after that freeze, run the read-only Factory Holdout Selector and submit at least two exact unseen topics:
    `python3 scripts/factory.py factory-learning-holdout-submit --cycle CYCLE --selection HOLDOUT.json --metadata SELECTOR-META.json`
    Runtime rejects training-topic overlap, reuse of any topic revealed by a previous cycle, and selectors from the learner/reviewer families.
-6. Register the confirmatory transfer experiment on exactly that held-out set, then bind it:
+7. Register the confirmatory transfer experiment on exactly that held-out set, then bind it:
    `python3 scripts/factory.py factory-learning-bind-experiment --cycle CYCLE --experiment EXPERIMENT`
    Runtime verifies parent/candidate factory hashes against the pre-intervention and frozen-intervention states and rejects undeclared changed paths.
-7. After all blinded/reversed judgments, run:
+8. After all blinded/reversed judgments, run:
    `python3 scripts/factory.py factory-learning-decide --cycle CYCLE`
 
 `KEEP_FACTORY_CHANGE` is an internal engineering decision only. The transfer experiment must use the learner's predeclared primary dimension. Research stays byte-identical between arms unless a research-process intervention explicitly preregisters `freeze_research=false`; a retained cycle's transfer-judge family cannot validate the next retained cycle. The gate does not require or replace human release calibration, never updates `factory/champion.json`, and never establishes reader efficacy. Publication still uses the separate release gate below.
