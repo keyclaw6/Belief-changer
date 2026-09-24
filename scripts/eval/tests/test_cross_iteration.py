@@ -35,6 +35,9 @@ class CrossIterationLearningTests(unittest.TestCase):
         source = Run(self.repo, learning_from)
         packet = load_next(source)
         guidance = research_guidance(packet, self.brief)
+        for gap in packet["research_gaps"]:
+            if gap not in research["open_questions"]:
+                research["open_questions"].append(gap)
         research["learning_context"] = {
             "guidance_sha256": guidance["guidance_sha256"],
             "baseline_run": packet["baseline_run"],
@@ -115,6 +118,18 @@ class CrossIterationLearningTests(unittest.TestCase):
         run = Run(self.repo, "legacy-candidate")
         self.assertEqual(run.learning["baseline_run"], "baseline")
         self.assertNotIn("learning_context", run.research)
+
+    def test_scoped_out_inherited_gap_cannot_resurrect_through_open_questions(self):
+        self.seed_baseline()
+        research = self.research_for("baseline")
+        gap = self.lessons()["research_gaps"][0]
+        research["learning_context"]["gap_resolutions"][0]["status"] = "scoped_out"
+        research["open_questions"] = [q for q in research["open_questions"] if q != gap]
+        prepare(self.repo, "scoped", self.brief, research, fixture=True, learning_from="baseline")
+        bad = self.research_for("baseline")
+        bad["learning_context"]["gap_resolutions"][0]["status"] = "scoped_out"
+        with self.assertRaises(FactoryError):
+            prepare(self.repo, "scoped-bad", self.brief, bad, fixture=True, learning_from="baseline")
 
     def test_seed_rejects_wrong_subject_and_conflicting_dimension(self):
         self.completed("baseline")
