@@ -195,6 +195,12 @@ def validate_research_learning(research: dict, packet: dict, brief: dict) -> Non
                 "Research gap resolution cites unknown evidence")
         if item["status"] == "addressed":
             require(bool(item["evidence_ids"]), "Addressed research gap needs current-subject evidence IDs")
+        if item["status"] == "unresolved":
+            require(item["gap"] in research["open_questions"],
+                    "An unresolved inherited gap must remain in research.open_questions")
+        else:
+            require(item["gap"] not in research["open_questions"],
+                    "An addressed/scoped-out inherited gap must leave research.open_questions")
         nonempty(item["note"], "research gap resolution note")
     require(seen == set(expected), "Inherited research gap coverage is incomplete")
 
