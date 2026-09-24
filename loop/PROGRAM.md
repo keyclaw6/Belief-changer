@@ -15,13 +15,14 @@ The persistent OpenCode job's configured controller model is part of that execut
 
 Iteration learning is an explicit frozen input, not a memory/prompt convention. After a completed baseline, create a sealed packet containing: dimensions to preserve, dimensions to improve, recurring repairs that must not reappear, and targeted research gaps. For the first migration into this architecture, `learning-seed` may bind an explicitly reviewed historical lessons file to one exact COMPLETE baseline. Thereafter only `advance-baseline` may create the next packet.
 
-Prepare the next candidate with `--learning-from BASELINE_RUN`. Preparation verifies the baseline's completed book hash and accepted-audit hash, rejects fixture/live mixing, freezes the packet under the candidate inputs, and supplies it to every role. The packet is editorial/evaluation feedback only; it never counts as empirical evidence and cannot establish a manuscript claim.
+For an optimization successor, prepare the brief first and run `research-guidance --learning-from BASELINE_RUN --brief BRIEF --out GUIDANCE` BEFORE retrieval. Give GUIDANCE to the research lead. The returned research.json must bind the exact guidance hash and explicitly resolve every inherited research gap. Then prepare the candidate with `--learning-from BASELINE_RUN`. Preparation recomputes the guidance, rejects stale/unbound research, verifies the baseline's completed book/audit hashes and fixture/live trust, freezes the packet, and supplies it to every later role. The packet is editorial/evaluation feedback only; it never counts as empirical evidence and cannot establish a manuscript claim.
 
 After the candidate's own final audit ACCEPTS its latest assembly, run a blinded comparison against that inherited baseline in both AB and BA orders using the independent pairwise instrument. The internal baseline gate is deliberately stricter and simpler than a release experiment:
 - a consistent baseline win on ANY quality dimension -> `REPAIR_REQUIRED`;
 - any critical candidate finding -> `REPAIR_REQUIRED`;
 - order disagreement on any dimension -> `INCONCLUSIVE`;
-- only no losses, no criticals and stable AB/BA observations -> `PASS`.
+- no losses/criticals/order instability plus at least one stable candidate win -> `ADVANCE`;
+- stable all-tie observations -> `PRESERVE_BASELINE` (no book replacement).
 
 `REPAIR_REQUIRED` may reopen the book-editor only in the SAME logical run and only against the sealed accepted assembly plus the bound regression decision. Accepted chapters remain immutable; assembly edits remain versioned. The resulting assembly must receive a new independent final audit and a fresh AB/BA no-regression gate; the earlier gate becomes stale by construction. `INCONCLUSIVE` authorizes neither repair nor advancement. A round-cap failure remains a system defect, not permission to reset the lineage.
 
@@ -31,13 +32,15 @@ A stable candidate win on at least one protected quality dimension with zero los
 
 The no-regression packet protects what the next book must not forget; it does not by itself decide how the FACTORY should change. Factory changes use a separate outer learning boundary after complete iteration judgments are frozen.
 
-1. Run `loop/prompts/factory-learner.md` on TRAINING-subject books/research/audits/judgments/traces. The learner must separate subject-local lessons from transferable mechanisms and may return CHANGE_FACTORY, KEEP_FACTORY, or MEASURE_MORE.
-2. Run `loop/prompts/factory-learning-reviewer.md` independently on the learner proposal and underlying evidence. Only an ACCEPTed proposal may become a factory intervention.
-3. Persist both exact outputs before changing code/prompts. The accepted review fixes the allowed change surface, protected strengths, expected transfer mechanism, training subjects, held-out subjects, judge/instrument, and falsification criteria.
-4. Held-out subjects are a sealed test set. Their books, judgments, traces and failure details must not be inspected to design or tune the current intervention. Freeze the intervention and criteria first; open held-out results only for evaluation.
-5. A change that improves training subjects but regresses or fails to transfer on held-out subjects is NOT a factory improvement. Reject/revise it for the next cycle rather than tuning the same intervention against the revealed test results.
-6. Never globalize a one-book wording repair unless the learner/reviewer identifies and accepts the deeper generating mechanism. Never use a held-out topic as both development feedback and held-out evidence in the same cycle.
-7. When competing mechanisms remain plausible, prefer MEASURE_MORE or a controlled ablation over multiple prompt tweaks.
+1. Run `loop/prompts/factory-learner.md` on TRAINING-subject books/research/audits/judgments/traces. The learner must separate subject-local lessons from transferable mechanisms and may return CHANGE_FACTORY, KEEP_FACTORY, or MEASURE_MORE. It specifies generic holdout requirements, never the exact held-out topics.
+2. Run `loop/prompts/factory-learning-reviewer.md` independently. Only an ACCEPTed proposal may become a factory intervention.
+3. Before edits, seal both outputs plus their actual model metadata with `factory-learning-register`. Runtime checks reviewer-family independence and freezes the approved change surface and generic transfer criteria.
+4. Implement only the approved paths, commit the intervention, then run `factory-learning-freeze-change`. Runtime rejects undeclared changed paths.
+5. Only AFTER that freeze, an independent selector chooses at least two exact unseen topics with `factory-learning-holdout-submit`. Training topics cannot reappear as held-out topics in that cycle, and the selector family cannot be the learner/reviewer family.
+6. Prepare/register the transfer experiment on exactly that sealed held-out set, then bind it with `factory-learning-bind-experiment`. Runtime checks parent/candidate factory hashes against the pre-intervention and frozen-intervention states.
+7. `factory-learning-decide` retains the factory change only when the bound held-out experiment is KEEP_ELIGIBLE under the existing calibrated transfer gate. Training-only improvement or held-out failure is not a factory win.
+8. Revealed held-out topics are contaminated for future unseen testing: their results may inform the NEXT cycle, but that next cycle must use fresh unseen held-out topics. Never retroactively tune the current intervention against its revealed test set.
+9. Never globalize a one-book wording repair unless the learner/reviewer identifies and accepts the deeper generating mechanism. When competing mechanisms remain plausible, prefer MEASURE_MORE or a controlled ablation over prompt churn.
 
 The outer loop's optimization target is transferable factory quality across unseen suitable subjects, not maximum score on the current book and not resemblance to any named author. Carr-inspired belief-change mechanisms may be studied as abstract argument moves, but no addiction/abstinence anatomy is mandatory across domains.
 
