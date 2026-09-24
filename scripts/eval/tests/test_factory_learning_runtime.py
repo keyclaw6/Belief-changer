@@ -125,6 +125,19 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
                     "scripts/bc_factory/learning.py", "scripts/bc_factory/factory_learning.py"):
             self.assertIn(rel, files)
 
+    def test_frozen_training_evidence_is_idempotent_only_for_same_inputs_and_revalidated(self):
+        evidence = freeze_evidence(self.repo, "cycle-idem", self.training_runs)
+        self.assertEqual(freeze_evidence(self.repo, "cycle-idem", list(reversed(self.training_runs))), evidence)
+        with self.assertRaises(FactoryError):
+            freeze_evidence(self.repo, "cycle-idem", [self.training_runs[0]])
+        # Tampering with a sealed run artifact invalidates the evidence receipt.
+        run = Run(self.repo, self.training_runs[0])
+        audit = run.accepted_audit_file()
+        original = audit.read_bytes()
+        audit.write_bytes(original + b"\n")
+        with self.assertRaises(FactoryError):
+            freeze_evidence(self.repo, "cycle-idem", self.training_runs)
+
     def test_training_evidence_binds_learner_and_reviewer(self):
         evidence = freeze_evidence(self.repo, "cycle-evidence", self.training_runs)
         learner = self.learner()
