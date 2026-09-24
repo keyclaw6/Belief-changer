@@ -102,6 +102,15 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
             register(self.repo, "cycle-main", self.learner(), self.meta("learner"),
                      self.reviewer(), self.meta("reviewer"))
 
+    def test_self_optimizer_cannot_edit_its_own_evaluation_control_plane(self):
+        learner = self.learner()
+        learner["proposed_factory_change"]["change_surface"] = ["loop/judges/pairwise.md"]
+        review = self.reviewer()
+        review["approved_change_surface"] = ["loop/judges/pairwise.md"]
+        with self.assertRaises(FactoryError):
+            register(self.repo, "cycle-score", learner, self.meta("learner"),
+                     review, self.meta("reviewer"))
+
     def test_reviewed_change_freezes_before_independent_holdout_selection(self):
         register(self.repo, "cycle-1", self.learner(), self.meta("learner"),
                  self.reviewer(), self.meta("reviewer"))
