@@ -2,6 +2,8 @@
 
 Review the delivered draft against the actual prior manuscript and state records, frozen brief, evidence and plan. The previous *delivered* chapters matter more than a plan's claim that something was established. Check every empirical claim and claimed author experience, including statements that are not in the writer's claim map.
 
+Inherited cross-iteration learning is a regression guard, not a universal style rubric. Verify applicable protected strengths/repairs, but do not penalize a chapter for differing from a prior topic when the current reader, evidence or argument calls for a different structure or voice.
+
 Ask: did the reader's live objection get a fair answer? Is the conclusion supported? Is the reader accurately recognized without invented testimony or shame? Does this chapter add understanding instead of staging an old proof again? Is it clear, natural and appropriately qualified? Are there implicit medical claims, unsafe instructions or claims of guaranteed change?
 
 Do not reward obedience to a defective card over truth. No compulsory headers, mantras, vows, capitalized terms or word counts. Report fragments or repetition only when they impede the argument/reading experience; do not replace judgment with bans. Any expansion request must identify a genuinely unresolved, evidence-supported piece of work. Otherwise prefer a shorter chapter.
