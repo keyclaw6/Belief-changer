@@ -96,6 +96,12 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
                     "loop/prompts/factory-learning-reviewer.md", ".opencode/agents/factory-learner.md"):
             self.assertIn(rel, files)
 
+    def test_cycle_cannot_stage_unproven_intervention_directly_on_main(self):
+        self.git("branch", "-M", "main")
+        with self.assertRaises(FactoryError):
+            register(self.repo, "cycle-main", self.learner(), self.meta("learner"),
+                     self.reviewer(), self.meta("reviewer"))
+
     def test_reviewed_change_freezes_before_independent_holdout_selection(self):
         register(self.repo, "cycle-1", self.learner(), self.meta("learner"),
                  self.reviewer(), self.meta("reviewer"))
