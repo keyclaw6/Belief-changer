@@ -22,11 +22,11 @@ The INNER BOOK LOOP owns one subject: research -> evidence review -> planning ->
 The OUTER FACTORY LOOP runs only at complete iteration boundaries. After complete-book judgments are frozen:
 1. Run `loop/prompts/factory-learner.md` over the completed training-subject evidence. It must distinguish subject-specific repairs from transferable factory mechanisms and propose either one smallest coherent factory change, KEEP_FACTORY, or MEASURE_MORE.
 2. Give that proposal and its evidence to an independent `loop/prompts/factory-learning-reviewer.md`. Do not adopt a factory change until the reviewer ACCEPTs the transfer hypothesis/change surface.
-3. Freeze the proposed intervention, protected strengths, training subjects, held-out subjects, evaluator/instrument and success/failure criteria BEFORE opening any held-out results.
-4. Apply only the approved general factory change. Do not smuggle book-specific wording into global prompts unless the reviewer accepted the deeper transferable mechanism.
-5. Evaluate on development/training subjects and then on genuinely held-out subjects. Held-out artifacts/judgments are sealed from development feedback until the intervention and criteria are frozen.
-6. Keep a factory change only when it preserves protected dimensions and transfers under the predeclared held-out test. A training-only improvement is evidence of possible overfit, not a factory win.
-7. Held-out failures may inform the NEXT optimization cycle after the current intervention has been accepted/rejected; never retroactively tune the current intervention against its test set.
+3. Seal the accepted proposal plus both agents' actual execution metadata with `factory-learning-register` BEFORE edits. Exact held-out topics must still be unknown.
+4. Apply only the approved general factory change, commit it, and run `factory-learning-freeze-change`. Do not smuggle book-specific wording into global prompts or touch undeclared files.
+5. After the intervention is frozen, use an independent selector to choose exact unseen topics satisfying the generic holdout requirements and submit them with `factory-learning-holdout-submit`.
+6. Register the transfer experiment on exactly that held-out set, bind it with `factory-learning-bind-experiment`, and retain the change only if `factory-learning-decide` returns KEEP_FACTORY_CHANGE.
+7. Training-only gains are possible overfit. A revealed held-out topic is contaminated for future unseen testing; failures may inform the NEXT cycle, which must use fresh held-out topics. Never retroactively tune the current intervention against its revealed test set.
 
 Never change the factory merely because a single current book improves. Every factory-level intervention must state its expected transfer mechanism, regression risks, and a falsification test. Prefer measurement over prompt churn when competing causal explanations remain unresolved.
 
