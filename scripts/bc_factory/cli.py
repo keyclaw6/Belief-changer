@@ -66,8 +66,7 @@ def parser() -> argparse.ArgumentParser:
     s.add_argument("--cycle", required=True); s.add_argument("--selection", required=True); s.add_argument("--metadata", required=True)
     s = sub.add_parser("factory-learning-bind-experiment")
     s.add_argument("--cycle", required=True); s.add_argument("--experiment", required=True)
-    s = sub.add_parser("factory-learning-decide")
-    s.add_argument("--cycle", required=True); s.add_argument("--calibration")
+    sub.add_parser("factory-learning-decide").add_argument("--cycle", required=True)
     s = sub.add_parser("regression-task", help="Create a blinded baseline-vs-candidate no-regression task")
     s.add_argument("--run", required=True); s.add_argument("--order", choices=("AB", "BA"), required=True); s.add_argument("--out")
     s = sub.add_parser("regression-submit")
@@ -162,8 +161,7 @@ def main(argv: list[str] | None = None) -> int:
         elif cmd == "factory-learning-holdout-submit":
             result = factory_learning.submit_holdout(repo, args.cycle, document(args.selection), document(args.metadata))
         elif cmd == "factory-learning-bind-experiment": result = factory_learning.bind_experiment(repo, args.cycle, args.experiment)
-        elif cmd == "factory-learning-decide":
-            result = factory_learning.decide(repo, args.cycle, document(args.calibration) if args.calibration else None)
+        elif cmd == "factory-learning-decide": result = factory_learning.decide(repo, args.cycle)
         elif cmd == "regression-task": result = regression.task(repo, args.run, args.order)
         elif cmd == "regression-submit":
             record = regression.submit(repo, args.run, args.order, document(args.response), document(args.metadata))
