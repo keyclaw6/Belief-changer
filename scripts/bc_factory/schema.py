@@ -59,7 +59,8 @@ def validate_brief(b: dict) -> None:
 
 
 def validate_research(r: dict, brief: dict) -> None:
-    exact_keys(r, {"schema_version", "subject", "sources", "open_questions", "strongest_countercase", "coverage"}, label="research")
+    exact_keys(r, {"schema_version", "subject", "sources", "open_questions", "strongest_countercase", "coverage"},
+               {"learning_context"}, label="research")
     version(r)
     require(r["subject"] == brief["subject"], "Research/brief subject mismatch")
     require(isinstance(r["sources"], list) and bool(r["sources"]), "Research needs sources; do not manufacture them")
