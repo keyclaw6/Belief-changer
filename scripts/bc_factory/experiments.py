@@ -267,6 +267,11 @@ def decide(repo: Path, eid: str, calibration: dict | None = None) -> dict:
 def transfer_decide(repo: Path, eid: str) -> dict:
     """Strict engineering transfer gate. It can retain a factory change, never authorize publication."""
     measured = decide(repo, eid, None)
+    if "reasons" not in measured:
+        return {"decision": "INCONCLUSIVE", "reasons": [measured.get("reason", "Incomplete transfer panel")],
+                "missing": measured.get("missing", []), "subjects": {}, "critical": [],
+                "order_instability": [], "registration_hash": None, "fixture": None,
+                "efficacy": "NOT_MEASURED", "release_eligible": False}
     reasons = [r for r in measured["reasons"] if r != "Real human calibration not supplied"]
     if measured["critical"] or any("secondary-dimension regression" in r for r in reasons):
         verdict = "REJECT_TRANSFER"
