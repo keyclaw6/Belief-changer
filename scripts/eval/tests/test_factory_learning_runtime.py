@@ -28,6 +28,7 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
         self.git("config", "user.name", "Fixture")
         self.git("add", "-A")
         self.git("commit", "-m", "baseline")
+        self.git("branch", "-M", "factory-learning-test")
 
     def tearDown(self):
         self.tmp.cleanup()
