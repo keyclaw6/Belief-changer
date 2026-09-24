@@ -233,6 +233,10 @@ def register(repo: Path, cycle_id: str, learner: dict, learner_meta: dict, revie
     proposed = set(learner["proposed_factory_change"]["change_surface"])
     approved = set(reviewer["approved_change_surface"])
     require(approved <= proposed, "Reviewer approved paths outside the learner proposal")
+    from .runs import active_files
+    active = set(active_files(repo))
+    require(approved <= active,
+            f"Factory intervention paths must be active snapshotted factory files: {sorted(approved-active)}")
     require(not approved.intersection(PROTECTED_EVALUATION_PATHS),
             "Factory self-optimization cannot edit its own evaluator, routing, or learning control plane")
     test = learner["falsification_test"]; reviewed = reviewer["held_out_test"]
@@ -285,6 +289,8 @@ def freeze_change(repo: Path, cycle_id: str) -> dict:
         path = confined(repo, rel)
         hashes[rel] = file_hash(path) if path.is_file() else None
     factory_files = _factory_snapshot(repo)
+    require(digest(factory_files) != reg["base_factory_digest"],
+            "Committed intervention did not change the active factory snapshot")
     doc = {"schema_version": 2, "cycle_id": cycle_id, "base_commit": reg["base_commit"],
            "head_commit": head, "changed_paths": sorted(changed), "path_hashes": hashes,
            "factory_files": factory_files, "factory_digest": digest(factory_files), "frozen_at": now()}
