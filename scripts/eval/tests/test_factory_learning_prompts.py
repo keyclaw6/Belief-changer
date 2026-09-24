@@ -27,6 +27,7 @@ class FactoryLearningPromptTests(unittest.TestCase):
         self.assertIn("sealed evidence manifest", p.lower())
         self.assertIn("eligible_change_surface", p)
         self.assertIn("MEASURE_MORE", p)
+        self.assertIn("strict_transfer_v1", p)
 
     def test_independent_factory_learning_reviewer_is_anti_overfit(self):
         p = self.text("loop/prompts/factory-learning-reviewer.md")
@@ -42,6 +43,7 @@ class FactoryLearningPromptTests(unittest.TestCase):
         self.assertIn("Do not write book prose", p)
         self.assertIn("evidence_sha256", p)
         self.assertIn("learner_sha256", p)
+        self.assertIn("strict_transfer_v1", p)
 
     def test_inner_roles_do_not_treat_learning_as_template_or_evidence(self):
         expected = {
