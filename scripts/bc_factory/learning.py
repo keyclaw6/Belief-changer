@@ -276,6 +276,10 @@ def advance(repo: Path, run_id: str) -> dict:
     require(decision["decision"] in ("ADVANCE", "PRESERVE_BASELINE"),
             f"Baseline update blocked: {decision['decision']}")
     old = candidate.learning
+    current_baseline = Run(repo, old["baseline_run"])
+    current_learning = load_next(current_baseline)
+    require(digest(current_learning) == digest(old),
+            "Candidate was generated from a stale learning packet; do not advance or append over newer baseline learning")
     decisions = [unseal(p) for p in sorted((candidate.root / "regression").glob("decision-r*.json"))]
     preserve_list, improve_list, repairs = _accumulate(candidate, old, decisions)
     preserve = {x["dimension"]: x for x in preserve_list}
