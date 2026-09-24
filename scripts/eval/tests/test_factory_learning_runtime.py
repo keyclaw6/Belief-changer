@@ -123,7 +123,7 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
         freeze_change(self.repo, "cycle-2")
         with self.assertRaises(FactoryError):
             submit_holdout(self.repo, "cycle-2",
-                           {"schema_version": 2, "subjects": ["held-a"], "rationale": "unseen"},
+                           {"schema_version": 2, "subjects": ["held-a", "held-b"], "rationale": "unseen"},
                            self.meta("learner"))
 
     def test_change_surface_is_enforced_from_git_diff(self):
