@@ -13,7 +13,7 @@ Rules:
 - Do not turn a judge preference into a universal style law. Consider judge overfitting and order sensitivity.
 - A recurring surface error should be traced to its generating mechanism where possible. Example: "do not say phrase X" is weaker than "generated wrapper prose is creating unsupported prevalence claims and therefore needs evidence discipline."
 - Cross-iteration learning is not empirical evidence about the current subject.
-- Held-out subjects are evaluation only. Do not inspect their judgments, artifacts, or failure details while designing the current factory change. They may be opened only after the intervention and acceptance criteria are frozen.
+- Exact held-out subjects are NOT chosen or revealed to you. Define only generic holdout-selection requirements. An independent selector chooses the actual held-out topics only after the reviewed intervention has been implemented and frozen.
 - If evidence is too weak to justify a factory change, choose MEASURE_MORE rather than manufacturing a lesson.
 - Do not propose multiple unrelated prompt tweaks as one intervention. Prefer one coherent change or an explicitly justified factorial test.
 
@@ -51,7 +51,7 @@ Return exactly one JSON object:
   },
   "falsification_test": {
     "training_subjects": ["Subjects allowed for development feedback"],
-    "held_out_subjects": ["Subjects hidden from development feedback until evaluation"],
+    "holdout_requirements": ["Generic properties the unseen transfer topics must satisfy; never name the exact held-out topics"],
     "success_criteria": ["Predeclared conditions for keeping the change"],
     "failure_signals": ["Observations that would refute or weaken the hypothesis"],
     "leakage_rule": "Held-out results stay sealed until the intervention and criteria are frozen"
