@@ -129,13 +129,23 @@ def _next_revision_path(run) -> Path:
     return run.root / "regression" / "learning-revisions" / f"learning-r{next_no:02d}.json"
 
 
-def load_next(run) -> dict:
+def advancement_path(run) -> Path:
+    return run.root / "regression" / "advancement.json"
+
+
+def _load_latest_packet(run) -> dict:
     revisions = _revision_paths(run)
     path = revisions[-1] if revisions else learning_path(run)
     packet = unseal(path)
     validate_packet(packet)
     require(packet["baseline_run"] == run.manifest["run_id"], "Learning packet is bound to another run")
     return packet
+
+
+def load_next(run) -> dict:
+    require(not advancement_path(run).exists(),
+            f"Baseline {run.manifest['run_id']} has already advanced; use its recorded successor")
+    return _load_latest_packet(run)
 
 
 def validate_packet_binding(repo: Path, packet: dict, expected_subject: str, fixture: bool):
@@ -283,7 +293,7 @@ def advance(repo: Path, run_id: str) -> dict:
             f"Baseline update blocked: {decision['decision']}")
     old = candidate.learning
     current_baseline = Run(repo, old["baseline_run"])
-    current_learning = load_next(current_baseline)
+    current_learning = _load_latest_packet(current_baseline)
     require(digest(current_learning) == digest(old),
             "Candidate was generated from a stale learning packet; do not advance or append over newer baseline learning")
     decisions = [unseal(p) for p in sorted((candidate.root / "regression").glob("decision-r*.json"))]
@@ -305,29 +315,65 @@ def advance(repo: Path, run_id: str) -> dict:
                 "evidence": evidence}
 
     dpath = decision_path(candidate, candidate.accepted_assembly()["assembly"]["assembly_round"])
-    if decision["decision"] == "ADVANCE":
-        baseline = candidate; mode = "no_regression_advance"
-        note = "Candidate became the new baseline only after a stable improvement and zero protected regressions."
-        path = learning_path(candidate); status = "BASELINE_ADVANCED"
-    else:
-        baseline = Run(repo, old["baseline_run"]); mode = "no_regression_preserve"
-        note = (f"Candidate {candidate.manifest['run_id']} did not demonstrate a stable improvement; "
-                "the prior book baseline was preserved while newly observed lessons were appended.")
-        decision_sha = file_hash(dpath)
-        for existing_path in _revision_paths(baseline):
-            existing = unseal(existing_path)
-            if existing["provenance"]["source_sha256"] == decision_sha:
-                return {"status": "BASELINE_PRESERVED_LEARNING_UPDATED", "run_id": run_id,
-                        "baseline_run": baseline.manifest["run_id"],
-                        "path": existing_path.relative_to(repo).as_posix(),
-                        "learning_sha256": digest(existing)}
-        path = _next_revision_path(baseline); status = "BASELINE_PRESERVED_LEARNING_UPDATED"
+    decision_sha = file_hash(dpath)
+    source_lock = current_baseline.root / "regression"
+    with lock(source_lock):
+        # Recheck under one predecessor lock so two siblings cannot both become the successor.
+        current_learning = _load_latest_packet(current_baseline)
+        require(digest(current_learning) == digest(old),
+                "Candidate was generated from a stale learning packet; predecessor learning changed before update")
+        apath = advancement_path(current_baseline)
+        if apath.exists():
+            receipt = unseal(apath)
+            if decision["decision"] == "ADVANCE" and receipt["successor_run"] == candidate.manifest["run_id"]:
+                packet = _load_latest_packet(candidate)
+                return {"status": "BASELINE_ADVANCED", "run_id": run_id,
+                        "baseline_run": candidate.manifest["run_id"],
+                        "path": learning_path(candidate).relative_to(repo).as_posix(),
+                        "learning_sha256": digest(packet)}
+            require(False, f"Baseline {current_baseline.manifest['run_id']} already advanced to {receipt['successor_run']}")
 
-    packet = _packet_for(
-        baseline, list(preserve.values()), list(improve.values()), repairs, _next_research_gaps(candidate),
-        {"mode": mode, "source_sha256": file_hash(dpath), "note": note},
-    )
-    with lock(baseline.root / "regression"):
-        seal(path, packet)
+        if decision["decision"] == "ADVANCE":
+            baseline = candidate
+            mode = "no_regression_advance"
+            note = "Candidate became the new baseline only after a stable improvement and zero protected regressions."
+            path = learning_path(candidate)
+            status = "BASELINE_ADVANCED"
+            packet = _packet_for(
+                baseline, list(preserve.values()), list(improve.values()), repairs, _next_research_gaps(candidate),
+                {"mode": mode, "source_sha256": decision_sha, "note": note},
+            )
+            with lock(candidate.root / "regression"):
+                seal(path, packet)
+            receipt = {
+                "schema_version": 2,
+                "source_run": current_baseline.manifest["run_id"],
+                "source_learning_sha256": digest(old),
+                "successor_run": candidate.manifest["run_id"],
+                "successor_manifest_sha256": digest(candidate.manifest),
+                "decision_sha256": decision_sha,
+                "successor_learning_sha256": digest(packet),
+            }
+            seal(apath, receipt)
+        else:
+            baseline = current_baseline
+            mode = "no_regression_preserve"
+            note = (f"Candidate {candidate.manifest['run_id']} did not demonstrate a stable improvement; "
+                    "the prior book baseline was preserved while newly observed lessons were appended.")
+            for existing_path in _revision_paths(baseline):
+                existing = unseal(existing_path)
+                if existing["provenance"]["source_sha256"] == decision_sha:
+                    return {"status": "BASELINE_PRESERVED_LEARNING_UPDATED", "run_id": run_id,
+                            "baseline_run": baseline.manifest["run_id"],
+                            "path": existing_path.relative_to(repo).as_posix(),
+                            "learning_sha256": digest(existing)}
+            path = _next_revision_path(baseline)
+            status = "BASELINE_PRESERVED_LEARNING_UPDATED"
+            packet = _packet_for(
+                baseline, list(preserve.values()), list(improve.values()), repairs, _next_research_gaps(candidate),
+                {"mode": mode, "source_sha256": decision_sha, "note": note},
+            )
+            seal(path, packet)
+
     return {"status": status, "run_id": run_id, "baseline_run": baseline.manifest["run_id"],
             "path": path.relative_to(repo).as_posix(), "learning_sha256": digest(packet)}
