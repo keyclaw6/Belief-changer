@@ -8,13 +8,14 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 SOURCE = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(SOURCE / "scripts"))
 
 from bc_factory.common import FactoryError, digest
 from bc_factory.demo import finish, inputs, scaffold
-from bc_factory.factory_learning import freeze_change, freeze_evidence, register, submit_holdout
+from bc_factory.factory_learning import bind_experiment, freeze_change, freeze_evidence, register, submit_holdout
 from bc_factory.runs import active_files, Run, prepare
 
 
@@ -233,6 +234,63 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
             submit_holdout(self.repo, "cycle-2",
                            {"schema_version": 2, "subjects": ["held-c", "held-d"], "rationale": "unseen"},
                            self.meta("learner"))
+
+    def test_transfer_binding_rejects_confounded_or_impossible_designs(self):
+        _, learner, _ = self.register_cycle("cycle-bind")
+        p = self.repo / "prompts/chapter-writer.md"
+        p.write_text(p.read_text() + "\n<!-- fixture intervention -->\n")
+        self.git("add", "prompts/chapter-writer.md"); self.git("commit", "-m", "intervention")
+        change = freeze_change(self.repo, "cycle-bind")
+        submit_holdout(self.repo, "cycle-bind",
+                       {"schema_version": 2, "subjects": ["held-a", "held-b"],
+                        "rationale": "Selected only after intervention freeze."},
+                       self.meta("selector"))
+
+        from bc_factory.factory_learning import registration as cycle_registration
+        _, cycle = cycle_registration(self.repo, "cycle-bind")
+
+        class FakeRun:
+            def __init__(self, rid):
+                candidate = rid.startswith("candidate-")
+                files = change["factory_files"] if candidate else cycle["base_factory_files"]
+                fdigest = change["factory_digest"] if candidate else cycle["base_factory_digest"]
+                self.manifest = {"factory_files": files, "factory_digest": fdigest}
+
+        def spec(*, freeze_research=True, freeze_plan=True, samples=4):
+            return {"spec": {
+                "subjects": ["held-a", "held-b"],
+                "primary_dimension": learner["proposed_factory_change"]["primary_dimension"],
+                "allowed_change_paths": ["prompts/chapter-writer.md"],
+                "confirmatory": True,
+                "freeze_research": freeze_research,
+                "freeze_plan": freeze_plan,
+                "samples_per_subject": samples,
+                "pairs": [
+                    {"id": "a", "subject": "held-a", "parent_run": "parent-a", "candidate_run": "candidate-a"},
+                    {"id": "b", "subject": "held-b", "parent_run": "parent-b", "candidate_run": "candidate-b"},
+                ],
+            }}
+
+        with patch("bc_factory.experiments.registration", return_value=(self.repo / "experiments/fake", spec(freeze_research=False))), \
+             patch("bc_factory.runs.Run", side_effect=FakeRun):
+            with self.assertRaises(FactoryError):
+                bind_experiment(self.repo, "cycle-bind", "exp-research")
+
+        with patch("bc_factory.experiments.registration", return_value=(self.repo / "experiments/fake", spec(freeze_plan=False))), \
+             patch("bc_factory.runs.Run", side_effect=FakeRun):
+            with self.assertRaises(FactoryError):
+                bind_experiment(self.repo, "cycle-bind", "exp-plan")
+
+        with patch("bc_factory.experiments.registration", return_value=(self.repo / "experiments/fake", spec(samples=3))), \
+             patch("bc_factory.runs.Run", side_effect=FakeRun):
+            with self.assertRaises(FactoryError):
+                bind_experiment(self.repo, "cycle-bind", "exp-small")
+
+        valid = spec()
+        with patch("bc_factory.experiments.registration", return_value=(self.repo / "experiments/fake", valid)), \
+             patch("bc_factory.runs.Run", side_effect=FakeRun):
+            bound = bind_experiment(self.repo, "cycle-bind", "exp-valid")
+        self.assertEqual(bound["experiment_id"], "exp-valid")
 
     def test_change_surface_is_enforced_from_git_diff(self):
         self.register_cycle("cycle-3")
