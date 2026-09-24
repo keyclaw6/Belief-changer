@@ -4,7 +4,7 @@ This layer makes repeated book iterations a controlled optimization process. It 
 
 ## 1. Freeze what the previous iteration taught
 
-A completed baseline may emit one sealed `regression/learning-next.json`. The first baseline is bootstrapped from an explicitly reviewed lessons file with `learning-seed`. Later packets are produced only by `advance-baseline` after a no-regression PASS.
+A completed baseline may emit one sealed `regression/learning-next.json`. The first baseline is bootstrapped from an explicitly reviewed lessons file with `learning-seed`. Later immutable learning revisions may be appended even when the book baseline is preserved; a candidate replaces the book baseline only after a no-regression `ADVANCE`.
 
 A learning packet can contain:
 - quality dimensions to preserve;
@@ -42,7 +42,8 @@ The decision is fail-closed:
 - consistent candidate loss on any quality dimension -> `REPAIR_REQUIRED`;
 - any critical candidate defect -> `REPAIR_REQUIRED`;
 - AB/BA disagreement on any dimension -> `INCONCLUSIVE`;
-- stable ties or candidate wins, with no criticals -> `PASS`.
+- at least one stable candidate win, with no losses/criticals/order instability -> `ADVANCE`;
+- stable ties on every dimension -> `PRESERVE_BASELINE`.
 
 Ties are acceptable. The purpose is to stop regressions, not to manufacture a win.
 
@@ -54,19 +55,19 @@ Ties are acceptable. The purpose is to stop regressions, not to manufacture a wi
 
 The previous comparison is stale once the book changes.
 
-`INCONCLUSIVE` authorizes neither repair nor advancement.
+`INCONCLUSIVE` authorizes neither repair nor baseline update.
 
-Only `PASS` allows `advance-baseline`. That command emits the next sealed learning packet bound to the exact accepted candidate book and audit.
+`advance-baseline` accepts only `ADVANCE` or `PRESERVE_BASELINE`. On ADVANCE, it binds the next packet to the exact candidate book/audit. On PRESERVE_BASELINE, it keeps the prior book baseline and appends a new immutable learning revision there, so repaired defects and new research gaps are remembered without neutral book drift.
 
 ## 6. Learn about the factory, separately
 
 The per-book learning packet and no-regression gate protect a book lineage. Factory improvement happens one level higher, after complete iteration judgments are frozen.
 
-Run `loop/prompts/factory-learner.md` on development/training subjects. It must separate local book repairs from transferable factory mechanisms, protect demonstrated strengths, propose the smallest coherent intervention, and predeclare what would falsify it.
+Run `loop/prompts/factory-learner.md` on development/training subjects. It separates local repairs from transferable mechanisms and specifies only generic holdout requirements. Run the independent Factory-Learning Reviewer, then seal both outputs and their execution metadata with `factory-learning-register` BEFORE changing code/prompts.
 
-Then run `loop/prompts/factory-learning-reviewer.md` independently. Only an ACCEPTed transfer hypothesis/change surface may be implemented as a factory-level change.
+Implement only the approved change surface and commit it. `factory-learning-freeze-change` binds the actual Git diff. Only after that freeze may an independent selector name the exact unseen topics through `factory-learning-holdout-submit`. Register the transfer experiment on exactly those topics, bind it with `factory-learning-bind-experiment`, and evaluate with `factory-learning-decide`. The change is retained only if the bound held-out experiment passes the existing calibrated transfer gate.
 
-Held-out subjects are a sealed test set. Their books, judgments, traces and failure details stay unavailable to the learner while the intervention is designed. Freeze the intervention, evaluators and success/failure criteria first; only then evaluate transfer. A change that improves training books but does not transfer is not retained as a general factory improvement. Revealed held-out failures can inform the next cycle, not retroactive tuning against the same test set.
+Once a held-out topic has been revealed, it is no longer unseen and cannot serve as fresh holdout evidence in a later cycle. Its failure may inform the NEXT cycle; never tune the already-frozen intervention against the same revealed test set.
 
 Lower-level researchers, planners, writers and reviewers remain book-focused. They receive only the frozen transferable constraints relevant to the current run; they do not redesign the factory while generating a manuscript.
 
