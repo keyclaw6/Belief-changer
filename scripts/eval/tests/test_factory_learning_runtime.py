@@ -14,6 +14,7 @@ sys.path.insert(0, str(SOURCE / "scripts"))
 from bc_factory.common import FactoryError
 from bc_factory.demo import scaffold
 from bc_factory.factory_learning import freeze_change, register, submit_holdout
+from bc_factory.runs import active_files
 
 
 class FactoryLearningRuntimeTests(unittest.TestCase):
@@ -88,6 +89,12 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
             },
             "reasoning_summary": "The change is narrow enough to test.",
         }
+
+    def test_new_runs_freeze_outer_orchestration_contracts(self):
+        files = set(active_files(SOURCE))
+        for rel in ("AGENTS.md", "loop/PROGRAM.md", "loop/prompts/factory-learner.md",
+                    "loop/prompts/factory-learning-reviewer.md", ".opencode/agents/factory-learner.md"):
+            self.assertIn(rel, files)
 
     def test_reviewed_change_freezes_before_independent_holdout_selection(self):
         register(self.repo, "cycle-1", self.learner(), self.meta("learner"),
