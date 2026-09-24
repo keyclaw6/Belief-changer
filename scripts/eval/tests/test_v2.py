@@ -21,7 +21,7 @@ from bc_factory.runs import Run, prepare
 from bc_factory.quality import assemble_book, edit_book, overlap_screen, screen
 from bc_factory.demo import accepted, finish, inputs, metadata, scaffold, run_demo
 from bc_factory.adapters import execute, extract
-from bc_factory.experiments import CALIBRATION_CATEGORIES, decide, pair_task, promote, register, submit_pair, validate_calibration, wilson_lower
+from bc_factory.experiments import CALIBRATION_CATEGORIES, decide, pair_task, promote, register, submit_pair, transfer_decide, validate_calibration, wilson_lower
 from bc_factory.archive import build, excluded
 
 class Base(unittest.TestCase):
@@ -794,6 +794,10 @@ class ExperimentTests(Base):
         self.setup_experiment()
         self.assertEqual(decide(self.repo,'exp1')['decision'],'INCONCLUSIVE')
         self.assertEqual(len(decide(self.repo,'exp1')['missing']),12)
+        transfer=transfer_decide(self.repo,'exp1')
+        self.assertEqual(transfer['decision'],'INCONCLUSIVE')
+        self.assertEqual(len(transfer['missing']),12)
+        self.assertEqual(transfer['judge_models'],[])
     def test_research_process_intervention_must_be_preregistered(self):
         pairs=[]
         for subject in ('rs1','rs2'):
