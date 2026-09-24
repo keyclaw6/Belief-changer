@@ -295,6 +295,14 @@ def advance(repo: Path, run_id: str) -> dict:
         baseline = Run(repo, old["baseline_run"]); mode = "no_regression_preserve"
         note = (f"Candidate {candidate.manifest['run_id']} did not demonstrate a stable improvement; "
                 "the prior book baseline was preserved while newly observed lessons were appended.")
+        decision_sha = file_hash(dpath)
+        for existing_path in _revision_paths(baseline):
+            existing = unseal(existing_path)
+            if existing["provenance"]["source_sha256"] == decision_sha:
+                return {"status": "BASELINE_PRESERVED_LEARNING_UPDATED", "run_id": run_id,
+                        "baseline_run": baseline.manifest["run_id"],
+                        "path": existing_path.relative_to(repo).as_posix(),
+                        "learning_sha256": digest(existing)}
         path = _next_revision_path(baseline); status = "BASELINE_PRESERVED_LEARNING_UPDATED"
 
     packet = _packet_for(
