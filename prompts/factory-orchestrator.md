@@ -22,7 +22,7 @@ The INNER BOOK LOOP owns one subject: research -> evidence review -> planning ->
 The OUTER FACTORY LOOP runs only at complete iteration boundaries. After complete-book judgments are frozen:
 1. Run `loop/prompts/factory-learner.md` over the completed training-subject evidence. It must distinguish subject-specific repairs from transferable factory mechanisms and propose either one smallest coherent factory change, KEEP_FACTORY, or MEASURE_MORE.
 2. Give that proposal and its evidence to an independent `loop/prompts/factory-learning-reviewer.md`. Do not adopt a factory change until the reviewer ACCEPTs the transfer hypothesis/change surface.
-3. Seal the accepted proposal plus both agents' actual execution metadata with `factory-learning-register` BEFORE edits. Exact held-out topics must still be unknown.
+3. Create/switch to an isolated experimental branch; do not stage an unproven intervention on `main`. Seal the accepted proposal plus both agents' actual execution metadata with `factory-learning-register` BEFORE edits. Exact held-out topics must still be unknown.
 4. Apply only the approved general factory change, commit it, and run `factory-learning-freeze-change`. Do not smuggle book-specific wording into global prompts or touch undeclared files.
 5. After the intervention is frozen, use an independent selector to choose exact unseen topics satisfying the generic holdout requirements and submit them with `factory-learning-holdout-submit`.
 6. Register the transfer experiment on exactly that held-out set, bind it with `factory-learning-bind-experiment`, and retain the change only if `factory-learning-decide` returns KEEP_FACTORY_CHANGE.
