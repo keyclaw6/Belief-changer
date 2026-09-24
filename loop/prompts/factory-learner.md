@@ -55,7 +55,8 @@ Return exactly one JSON object. Copy the sealed evidence manifest hash exactly; 
   "falsification_test": {
     "training_subjects": ["Subjects allowed for development feedback"],
     "holdout_requirements": ["Generic properties the unseen transfer topics must satisfy; never name the exact held-out topics"],
-    "success_criteria": ["Predeclared conditions for keeping the change"],
+    "acceptance_policy": "strict_transfer_v1",
+    "success_criteria": ["Explanatory expected-success observations; runtime acceptance is fixed by strict_transfer_v1"],
     "failure_signals": ["Observations that would refute or weaken the hypothesis"],
     "leakage_rule": "Held-out results stay sealed until the intervention and criteria are frozen"
   },
@@ -63,4 +64,4 @@ Return exactly one JSON object. Copy the sealed evidence manifest hash exactly; 
   "reasoning_summary": "Concise evidence-based explanation"
 }
 
-When decision is KEEP_FACTORY or MEASURE_MORE, proposed_factory_change may describe no change and explain why. Never claim that software/judge improvements establish real-world reader efficacy.
+The acceptance policy is fixed: always output `strict_transfer_v1`. You may explain expected success/failure signals, but you cannot redefine the runtime transfer threshold. When decision is KEEP_FACTORY or MEASURE_MORE, proposed_factory_change may describe no change and explain why. Never claim that software/judge improvements establish real-world reader efficacy.
