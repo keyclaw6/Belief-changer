@@ -264,7 +264,9 @@ def decide(repo: Path, eid: str, calibration: dict | None = None) -> dict:
         reasons.append("Fixture experiment is software testing, never production evidence")
     verdict = "REJECT" if critical or regressions else "INCONCLUSIVE" if reasons else "KEEP_ELIGIBLE"
     return {"decision": verdict, "reasons": reasons, "subjects": subjects, "critical": critical,
-            "order_instability": unstable, "calibration": cal, "registration_hash": digest(reg),
+            "order_instability": unstable,
+            "judge_models": [{"model": model, "family": family} for model, family in sorted(judge_models)],
+            "calibration": cal, "registration_hash": digest(reg),
             "fixture": fixture, "efficacy": "NOT_MEASURED"}
 
 
@@ -274,7 +276,7 @@ def transfer_decide(repo: Path, eid: str) -> dict:
     if "reasons" not in measured:
         return {"decision": "INCONCLUSIVE", "reasons": [measured.get("reason", "Incomplete transfer panel")],
                 "missing": measured.get("missing", []), "subjects": {}, "critical": [],
-                "order_instability": [], "registration_hash": None, "fixture": None,
+                "order_instability": [], "judge_models": [], "registration_hash": None, "fixture": None,
                 "efficacy": "NOT_MEASURED", "release_eligible": False}
     reasons = [r for r in measured["reasons"] if r != "Real human calibration not supplied"]
     if measured["critical"] or any("secondary-dimension regression" in r for r in reasons):
@@ -285,6 +287,7 @@ def transfer_decide(repo: Path, eid: str) -> dict:
         verdict = "TRANSFER_ELIGIBLE_NONPROMOTIONAL"
     return {"decision": verdict, "reasons": reasons, "subjects": measured["subjects"],
             "critical": measured["critical"], "order_instability": measured["order_instability"],
+            "judge_models": measured["judge_models"],
             "registration_hash": measured["registration_hash"], "fixture": measured["fixture"],
             "efficacy": "NOT_MEASURED", "release_eligible": False}
 
