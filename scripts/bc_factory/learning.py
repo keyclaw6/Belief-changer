@@ -82,7 +82,7 @@ def validate_packet(data: dict) -> None:
             all(isinstance(x, str) and x.strip() for x in data["research_gaps"]),
             "research_gaps must be nonempty strings")
     exact_keys(data["provenance"], {"mode", "source_sha256", "note"}, label="learning provenance")
-    require(data["provenance"]["mode"] in ("bootstrap", "no_regression_advance", "no_regression_preserve"),
+    require(data["provenance"]["mode"] in ("bootstrap", "no_regression_pass", "no_regression_advance", "no_regression_preserve"),
             "Unknown learning provenance")
     _sha(data["provenance"]["source_sha256"], "Learning provenance source_sha256")
     nonempty(data["provenance"]["note"], "Learning provenance note")
