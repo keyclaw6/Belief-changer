@@ -163,7 +163,7 @@ def submit_holdout(repo: Path, cycle_id: str, selection: dict, metadata: dict) -
     require(change["head_commit"] == _git(repo, "rev-parse", "HEAD"), "Factory changed after intervention freeze")
     exact_keys(selection, {"schema_version", "subjects", "rationale"}, label="held-out selection")
     require(selection["schema_version"] == 2, "Held-out selection schema must be v2")
-    subjects = _strings(selection["subjects"], "held-out subjects", 1)
+    subjects = _strings(selection["subjects"], "held-out subjects", 2)
     require(len(subjects) == len(set(subjects)), "Duplicate held-out subject")
     training = set(reg["learner"]["falsification_test"]["training_subjects"])
     require(not training.intersection(subjects), "A training subject cannot also be held out in the same cycle")
