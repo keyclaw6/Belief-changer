@@ -245,6 +245,19 @@ def _accumulate(candidate, old: dict, decisions: list[dict]) -> tuple[list[dict]
     return list(preserve.values()), list(improve.values()), repairs
 
 
+def _next_research_gaps(candidate) -> list[str]:
+    gaps = []
+    for gap in candidate.research["open_questions"]:
+        if gap not in gaps:
+            gaps.append(gap)
+    context = candidate.research.get("learning_context")
+    if context:
+        for item in context["gap_resolutions"]:
+            if item["status"] == "unresolved" and item["gap"] not in gaps:
+                gaps.append(item["gap"])
+    return gaps
+
+
 def advance(repo: Path, run_id: str) -> dict:
     from .regression import decide, decision_path
     from .runs import Run
@@ -284,7 +297,7 @@ def advance(repo: Path, run_id: str) -> dict:
         path = _next_revision_path(baseline); status = "BASELINE_PRESERVED_LEARNING_UPDATED"
 
     packet = _packet_for(
-        baseline, list(preserve.values()), list(improve.values()), repairs, list(candidate.research["open_questions"]),
+        baseline, list(preserve.values()), list(improve.values()), repairs, _next_research_gaps(candidate),
         {"mode": mode, "source_sha256": file_hash(dpath), "note": note},
     )
     with lock(baseline.root / "regression"):
