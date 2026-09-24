@@ -92,6 +92,11 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
     elif learning_packet is not None:
         from .learning import validate_packet_binding
         validate_packet_binding(repo, learning_packet, brief["subject"], fixture)
+    if learning_packet is not None:
+        from .learning import validate_research_learning
+        validate_research_learning(research, learning_packet, brief)
+    else:
+        require("learning_context" not in research, "Research learning context requires --learning-from")
     if remediation is not None:
         # Nothing is retrieved: frozen research is inherited byte-identical, so
         # the live preflight gate (freshness for NEW retrieval) does not apply.
@@ -206,11 +211,13 @@ class Run:
             self.learning = read_json(lpath)
             require(self.learning.get("baseline_run") == self.manifest.get("learning_from"),
                     "Cross-iteration learning lineage mismatch")
-            from .learning import validate_packet_binding
+            from .learning import validate_packet_binding, validate_research_learning
             validate_packet_binding(self.repo, self.learning, self.brief["subject"], self.manifest["fixture"])
+            validate_research_learning(self.research, self.learning, self.brief)
         else:
             self.learning = None
             require(self.manifest.get("learning_from") is None, "Learning lineage is missing its frozen packet")
+            require("learning_context" not in self.research, "Frozen research learning context has no learning lineage")
         self.config = read_json(self.root / "snapshot/factory/config.json")
         validate_config(self.config)
 
