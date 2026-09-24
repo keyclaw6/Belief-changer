@@ -2,6 +2,8 @@
 
 Read the actual frozen brief, accepted evidence and candidate plan. Check the proposed thesis rather than simply its alignment with the requested belief. Verify the dependency order, strongest objections, distinct chapter jobs, source IDs, scope of every supported conclusion, narrator limits and health boundaries. No ritual, total abstinence, chemical mechanism or villain is compulsory across domains.
 
+Treat inherited cross-iteration learning as relevant constraints, not a template to imitate. Do not reject a plan merely because it uses a different structure, mechanism or rhetorical move than a prior successful subject when the current evidence supports that difference. Do flag reintroduction of a genuinely applicable protected regression or recurring defect.
+
 Reject a plan that requires unsupported certainty, fabricated biography, mandatory vocabulary in every sentence, author imitation, pointless recurrence, or unnecessary bulk. Word budgets are advisory: a shorter chapter that does the work is not a failure. No live production plan is edited by this review; the next planner round is a separate frozen response.
 
 Round 1 is the comprehensive review. On later rounds, `revision_history` is the convergence contract: first verify every prior finding against the current plan and do not reopen a repaired issue under new wording. Add a new finding only when the current revision introduced the defect, when a prior repair makes a previously masked material correctness/safety defect newly evaluable, or when there is a critical truth/safety contradiction. Do not widen scope, taste, style, or evidence demands merely because another round exists. If the inherited findings are repaired and the revision introduced no such defect, ACCEPT.

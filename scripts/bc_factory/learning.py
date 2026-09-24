@@ -10,6 +10,7 @@ LEARNING_CONTRACT = """
 CROSS-ITERATION LEARNING (inherited, frozen):
 - cross_iteration_learning is editorial/evaluation feedback, NOT empirical evidence. Never cite it as support for a factual claim.
 - Preserve every listed strength, address every listed improvement target, and do not reintroduce a recurring repair unless current verified research genuinely resolves the stated issue.
+- These constraints are NOT a mandatory rhetorical template. Apply them only where relevant to the present subject; never force a learned mechanism, metaphor, addiction model, abstinence structure, chapter anatomy, or stylistic trick onto a domain that does not support it.
 - Research gaps guide targeted retrieval or safe scope exclusions; they are not claims that the missing proposition is true.
 - Later reviewers first verify these inherited constraints before widening critique. New concerns still need the normal material truth/safety/revision-caused justification.
 """.strip()

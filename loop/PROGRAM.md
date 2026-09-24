@@ -27,6 +27,20 @@ After the candidate's own final audit ACCEPTS its latest assembly, run a blinded
 
 Only a `PASS` may run `advance-baseline`, which emits the next content-addressed learning packet bound to the exact candidate book/audit. This optimization baseline is NOT the release champion. It does not update `factory/champion.json`, cannot substitute for confirmatory experiments, human calibration/review, or claim efficacy.
 
+### Factory-learning boundary
+
+The no-regression packet protects what the next book must not forget; it does not by itself decide how the FACTORY should change. Factory changes use a separate outer learning boundary after complete iteration judgments are frozen.
+
+1. Run `loop/prompts/factory-learner.md` on TRAINING-subject books/research/audits/judgments/traces. The learner must separate subject-local lessons from transferable mechanisms and may return CHANGE_FACTORY, KEEP_FACTORY, or MEASURE_MORE.
+2. Run `loop/prompts/factory-learning-reviewer.md` independently on the learner proposal and underlying evidence. Only an ACCEPTed proposal may become a factory intervention.
+3. Persist both exact outputs before changing code/prompts. The accepted review fixes the allowed change surface, protected strengths, expected transfer mechanism, training subjects, held-out subjects, judge/instrument, and falsification criteria.
+4. Held-out subjects are a sealed test set. Their books, judgments, traces and failure details must not be inspected to design or tune the current intervention. Freeze the intervention and criteria first; open held-out results only for evaluation.
+5. A change that improves training subjects but regresses or fails to transfer on held-out subjects is NOT a factory improvement. Reject/revise it for the next cycle rather than tuning the same intervention against the revealed test results.
+6. Never globalize a one-book wording repair unless the learner/reviewer identifies and accepts the deeper generating mechanism. Never use a held-out topic as both development feedback and held-out evidence in the same cycle.
+7. When competing mechanisms remain plausible, prefer MEASURE_MORE or a controlled ablation over multiple prompt tweaks.
+
+The outer loop's optimization target is transferable factory quality across unseen suitable subjects, not maximum score on the current book and not resemblance to any named author. Carr-inspired belief-change mechanisms may be studied as abstract argument moves, but no addiction/abstinence anatomy is mandatory across domains.
+
 Evidence research has a finite convergence loop. A non-ACCEPT evidence review is repaired in a new immutable research snapshot using `prepare --research-revision-of PRIOR_RUN`; this carries the previous independent findings forward. Successor review first checks that finite blocking set. It does not reopen repaired findings or introduce release-stage/title/manuscript requirements. New findings beyond the inherited set are reserved for newly revealed critical truth/safety contradictions. Gaps in adjacent topics that can be safely excluded from the eventual plan are non-blocking open questions, not reasons to keep widening research.
 
 Whole-book revision has a finite in-place convergence loop. A final-audit REVISE is repaired by the next book-editor round in the SAME run against the previous assembly plus cumulative audit findings — never by restarting the pipeline, rewriting accepted chapters, or hand-editing book.md. Chapter anchors, exact-anchored front-matter repairs (title/reader-promise/limits/safety; safety narrowed, never deleted), retitle for rendered headers, and exact-anchored source-note repairs transform copies at assembly time. Assemblies are immutable and versioned; successor audits verify the finite inherited set and may widen it only for revision-caused defects or newly revealed critical truth/safety contradictions. A frozen pre-architecture run with a fixable REVISE audit continues via `prepare --remediation-of SOURCE` (sealed history inherited byte-identical; whole-book rounds only). A final-audit BLOCKED, an exhausted round budget, or any unresolved defect stops the run; CAP is never acceptance.

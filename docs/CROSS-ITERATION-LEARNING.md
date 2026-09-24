@@ -54,6 +54,18 @@ The previous comparison is stale once the book changes.
 
 Only `PASS` allows `advance-baseline`. That command emits the next sealed learning packet bound to the exact accepted candidate book and audit.
 
-## 6. Release gate remains separate
+## 6. Learn about the factory, separately
+
+The per-book learning packet and no-regression gate protect a book lineage. Factory improvement happens one level higher, after complete iteration judgments are frozen.
+
+Run `loop/prompts/factory-learner.md` on development/training subjects. It must separate local book repairs from transferable factory mechanisms, protect demonstrated strengths, propose the smallest coherent intervention, and predeclare what would falsify it.
+
+Then run `loop/prompts/factory-learning-reviewer.md` independently. Only an ACCEPTed transfer hypothesis/change surface may be implemented as a factory-level change.
+
+Held-out subjects are a sealed test set. Their books, judgments, traces and failure details stay unavailable to the learner while the intervention is designed. Freeze the intervention, evaluators and success/failure criteria first; only then evaluate transfer. A change that improves training books but does not transfer is not retained as a general factory improvement. Revealed held-out failures can inform the next cycle, not retroactive tuning against the same test set.
+
+Lower-level researchers, planners, writers and reviewers remain book-focused. They receive only the frozen transferable constraints relevant to the current run; they do not redesign the factory while generating a manuscript.
+
+## 7. Release gate remains separate
 
 This optimization baseline never publishes a book, updates `factory/champion.json`, proves efficacy, replaces preregistered confirmatory experiments, or replaces human/qualified release review. It only controls what the next iteration is allowed to inherit as the current best-known book baseline.
