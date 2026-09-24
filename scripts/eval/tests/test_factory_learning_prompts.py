@@ -69,11 +69,18 @@ class FactoryLearningPromptTests(unittest.TestCase):
     def test_factory_learning_roles_are_registered(self):
         learner = self.text(".pi/agents/factory-learner.md")
         reviewer = self.text(".pi/agents/factory-learning-reviewer.md")
+        oc_learner = self.text(".opencode/agents/factory-learner.md")
+        oc_reviewer = self.text(".opencode/agents/factory-learning-reviewer.md")
         self.assertIn("loop/prompts/factory-learner.md", learner)
         self.assertIn("never writes book prose", learner)
         self.assertIn("loop/prompts/factory-learning-reviewer.md", reviewer)
         self.assertIn("independent evaluator family", reviewer)
         self.assertIn("sealed held-out results", reviewer)
+        self.assertIn("mode: subagent", oc_learner)
+        self.assertIn("factory-learner.md", oc_learner)
+        self.assertIn("mode: subagent", oc_reviewer)
+        self.assertIn("independent", oc_reviewer.lower())
+        self.assertIn("do not ACCEPT", oc_reviewer)
 
     def test_orchestrator_and_program_require_held_out_transfer(self):
         orchestrator = self.text("prompts/factory-orchestrator.md")
