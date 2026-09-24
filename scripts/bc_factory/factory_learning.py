@@ -155,13 +155,42 @@ def evidence(repo: Path, cycle_id: str) -> tuple[Path, dict]:
     return root, unseal(root / "evidence.json")
 
 
+def _validate_frozen_evidence(repo: Path, doc: dict) -> None:
+    from .runs import Run
+    require(doc.get("schema_version") == 2, "Factory-learning evidence schema must be v2")
+    for item in doc["runs"]:
+        run = Run(repo, item["run_id"])
+        complete = run.complete()
+        require(run.brief["subject"] == item["subject"]
+                and run.manifest["fixture"] == item["fixture"]
+                and digest(run.manifest) == item["manifest_sha256"]
+                and complete["book_sha256"] == item["book_sha256"]
+                and file_hash(run.accepted_audit_file()) == item["audit_sha256"],
+                f"Frozen training evidence changed: {item['run_id']}")
+    for item in doc["artifacts"]:
+        path = confined(repo, item["path"])
+        require(path.is_file() and file_hash(path) == item["sha256"],
+                f"Frozen training evidence artifact changed: {item['path']}")
+
+
 def freeze_evidence(repo: Path, cycle_id: str, run_ids: list[str], artifact_paths: list[str] | None = None) -> dict:
     from .runs import Run
     repo = repo.resolve(); identifier(cycle_id)
     root = _cycle(repo, cycle_id)
     require(not (root / "registration.json").exists(), "Training evidence must be frozen before learner/reviewer registration")
     if (root / "evidence.json").exists():
-        return unseal(root / "evidence.json")
+        existing = unseal(root / "evidence.json")
+        require(set(run_ids) == {x["run_id"] for x in existing["runs"]},
+                "Factory-learning evidence is already frozen with different run IDs")
+        require(set(artifact_paths or []) == {x["path"] for x in existing["artifacts"]},
+                "Factory-learning evidence is already frozen with different artifact paths")
+        require(existing["base_commit"] == _git(repo, "rev-parse", "HEAD")
+                and existing["experimental_branch"] == _git(repo, "branch", "--show-current"),
+                "Frozen training evidence belongs to another branch/source state")
+        _validate_frozen_evidence(repo, existing)
+        require(_factory_snapshot(repo) == existing["base_factory_files"],
+                "Active factory changed after training evidence was frozen")
+        return existing
     require(not _git(repo, "status", "--porcelain"), "Freeze training evidence from a clean source tree")
     branch_name = _git(repo, "branch", "--show-current")
     require(bool(branch_name) and branch_name != "main",
@@ -203,6 +232,7 @@ def register(repo: Path, cycle_id: str, learner: dict, learner_meta: dict, revie
     repo = repo.resolve(); identifier(cycle_id)
     validate_learner(learner); validate_reviewer(reviewer)
     root, frozen_evidence = evidence(repo, cycle_id)
+    _validate_frozen_evidence(repo, frozen_evidence)
     require(frozen_evidence["base_commit"] == _git(repo, "rev-parse", "HEAD")
             and frozen_evidence["experimental_branch"] == _git(repo, "branch", "--show-current"),
             "Factory-learning evidence belongs to another source state")
