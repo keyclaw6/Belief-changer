@@ -44,10 +44,11 @@ Return exactly one JSON object:
   "approved_change_surface": ["Paths/components that may change if ACCEPT"],
   "held_out_test": {
     "holdout_requirements": ["Generic properties the unseen transfer topics must satisfy"],
-    "success_criteria": ["Predeclared transfer conditions"],
+    "acceptance_policy": "strict_transfer_v1",
+    "success_criteria": ["Explanatory expected-success observations"],
     "failure_signals": ["Conditions that reject the factory change"]
   },
   "reasoning_summary": "Concise independent assessment"
 }
 
-ACCEPT requires every check true and findings empty. REVISE means the transfer hypothesis may be salvageable with a smaller/clearer proposal. REJECT means the proposed lesson should not become a factory rule. MEASURE_MORE means evidence is insufficient and the next action should be measurement, not prompt churn.
+The reviewer must preserve `strict_transfer_v1`; it cannot weaken or replace the runtime transfer threshold. ACCEPT requires every check true and findings empty. REVISE means the transfer hypothesis may be salvageable with a smaller/clearer proposal. REJECT means the proposed lesson should not become a factory rule. MEASURE_MORE means evidence is insufficient and the next action should be measurement, not prompt churn.
