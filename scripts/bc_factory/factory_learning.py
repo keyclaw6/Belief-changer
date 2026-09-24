@@ -50,10 +50,12 @@ def _strings(value, label: str, minimum: int = 0) -> list[str]:
 
 
 def validate_learner(data: dict) -> None:
-    exact_keys(data, {"schema_version", "decision", "observations", "candidate_root_causes",
+    exact_keys(data, {"schema_version", "evidence_sha256", "decision", "observations", "candidate_root_causes",
                       "subject_specific_lessons", "transferable_factory_lessons", "protected_strengths",
                       "proposed_factory_change", "falsification_test", "confidence", "reasoning_summary"},
                label="factory learner")
+    require(isinstance(data["evidence_sha256"], str) and len(data["evidence_sha256"]) == 64,
+            "Factory learner must bind the frozen training evidence hash")
     require(data["schema_version"] == 2, "Factory learner schema must be v2")
     require(data["decision"] in ("CHANGE_FACTORY", "KEEP_FACTORY", "MEASURE_MORE"), "Invalid factory learner decision")
     _strings(data["observations"], "observations")
@@ -99,8 +101,10 @@ def validate_learner(data: dict) -> None:
 
 
 def validate_reviewer(data: dict) -> None:
-    exact_keys(data, {"schema_version", "verdict", "checks", "findings", "approved_change_surface",
-                      "held_out_test", "reasoning_summary"}, label="factory-learning reviewer")
+    exact_keys(data, {"schema_version", "evidence_sha256", "learner_sha256", "verdict", "checks", "findings",
+                      "approved_change_surface", "held_out_test", "reasoning_summary"}, label="factory-learning reviewer")
+    for key in ("evidence_sha256", "learner_sha256"):
+        require(isinstance(data[key], str) and len(data[key]) == 64, f"{key} must be a SHA-256")
     require(data["schema_version"] == 2, "Factory-learning reviewer schema must be v2")
     require(data["verdict"] in ("ACCEPT", "REVISE", "REJECT", "MEASURE_MORE"), "Invalid reviewer verdict")
     check_names = {"transferable", "not_subject_overfit", "causal_honesty", "minimal_change",
@@ -146,6 +150,49 @@ def _factory_snapshot(repo: Path) -> dict[str, str]:
     return files
 
 
+def evidence(repo: Path, cycle_id: str) -> tuple[Path, dict]:
+    root = _cycle(repo, cycle_id)
+    return root, unseal(root / "evidence.json")
+
+
+def freeze_evidence(repo: Path, cycle_id: str, run_ids: list[str], artifact_paths: list[str] | None = None) -> dict:
+    from .runs import Run
+    repo = repo.resolve(); identifier(cycle_id)
+    root = _cycle(repo, cycle_id)
+    require(not (root / "registration.json").exists(), "Training evidence must be frozen before learner/reviewer registration")
+    if (root / "evidence.json").exists():
+        return unseal(root / "evidence.json")
+    require(not _git(repo, "status", "--porcelain"), "Freeze training evidence from a clean source tree")
+    branch_name = _git(repo, "branch", "--show-current")
+    require(bool(branch_name) and branch_name != "main",
+            "Factory-learning evidence must be frozen on an isolated experimental branch")
+    require(isinstance(run_ids, list) and len(set(run_ids)) == len(run_ids) and len(run_ids) >= 2,
+            "Training evidence needs at least two distinct completed run IDs")
+    runs = []
+    subjects = set()
+    for rid in run_ids:
+        run = Run(repo, identifier(rid))
+        complete = run.complete()
+        subjects.add(run.brief["subject"])
+        runs.append({"run_id": rid, "subject": run.brief["subject"], "fixture": run.manifest["fixture"],
+                     "manifest_sha256": digest(run.manifest), "book_sha256": complete["book_sha256"],
+                     "audit_sha256": file_hash(run.accepted_audit_file())})
+    require(len(subjects) >= 2, "Transferable factory learning needs evidence from at least two distinct training subjects")
+    artifacts = []
+    for rel in artifact_paths or []:
+        path = confined(repo, rel)
+        require(path.is_file(), f"Training evidence artifact missing: {rel}")
+        artifacts.append({"path": rel, "sha256": file_hash(path)})
+    base_factory_files = _factory_snapshot(repo)
+    doc = {"schema_version": 2, "cycle_id": cycle_id, "frozen_at": now(),
+           "base_commit": _git(repo, "rev-parse", "HEAD"), "experimental_branch": branch_name,
+           "training_subjects": sorted(subjects), "runs": runs, "artifacts": artifacts,
+           "base_factory_files": base_factory_files, "base_factory_digest": digest(base_factory_files)}
+    with lock(root):
+        seal(root / "evidence.json", doc)
+    return doc
+
+
 def registration(repo: Path, cycle_id: str) -> tuple[Path, dict]:
     root = _cycle(repo, cycle_id)
     record = unseal(root / "registration.json")
@@ -155,7 +202,17 @@ def registration(repo: Path, cycle_id: str) -> tuple[Path, dict]:
 def register(repo: Path, cycle_id: str, learner: dict, learner_meta: dict, reviewer: dict, reviewer_meta: dict) -> Path:
     repo = repo.resolve(); identifier(cycle_id)
     validate_learner(learner); validate_reviewer(reviewer)
-    root = _cycle(repo, cycle_id)
+    root, frozen_evidence = evidence(repo, cycle_id)
+    require(frozen_evidence["base_commit"] == _git(repo, "rev-parse", "HEAD")
+            and frozen_evidence["experimental_branch"] == _git(repo, "branch", "--show-current"),
+            "Factory-learning evidence belongs to another source state")
+    require(learner["evidence_sha256"] == digest(frozen_evidence),
+            "Factory learner output is not bound to the frozen training evidence")
+    require(reviewer["evidence_sha256"] == digest(frozen_evidence)
+            and reviewer["learner_sha256"] == digest(learner),
+            "Factory-learning review is not bound to the frozen evidence and learner proposal")
+    require(set(learner["falsification_test"]["training_subjects"]) == set(frozen_evidence["training_subjects"]),
+            "Learner training subjects differ from the frozen evidence manifest")
     if (root / "registration.json").exists():
         existing = unseal(root / "registration.json")
         require(existing["learner"] == learner and existing["learner_metadata"] == learner_meta
@@ -191,8 +248,12 @@ def register(repo: Path, cycle_id: str, learner: dict, learner_meta: dict, revie
         path = confined(repo, rel)
         base_hashes[rel] = file_hash(path) if path.is_file() else None
     base_factory_files = _factory_snapshot(repo)
+    require(base_factory_files == frozen_evidence["base_factory_files"]
+            and digest(base_factory_files) == frozen_evidence["base_factory_digest"],
+            "Factory changed after training evidence was frozen")
     record = {"schema_version": 2, "cycle_id": cycle_id, "registered_at": now(), "base_commit": base_commit,
               "experimental_branch": branch_name,
+              "evidence_sha256": digest(frozen_evidence),
               "learner": learner, "learner_metadata": learner_meta, "review": reviewer,
               "reviewer_metadata": reviewer_meta, "approved_change_surface": sorted(approved),
               "base_path_hashes": base_hashes, "base_factory_files": base_factory_files,
