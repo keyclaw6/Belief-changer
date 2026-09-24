@@ -14,11 +14,15 @@ A learning packet can contain:
 
 Learning is editorial/evaluation feedback. It is never empirical evidence and cannot support a factual manuscript claim.
 
-## 2. Prepare the next candidate from that exact baseline
+## 2. Give learning to research before retrieval
 
-Prepare the next run with `--learning-from BASELINE_RUN`. The factory verifies the baseline manifest, completed book hash, accepted final-audit hash, subject, and fixture/live trust before freezing the packet into the new run.
+Prepare the brief first, then emit deterministic pre-research guidance:
 
-Every role receives that same frozen packet. A changed or missing baseline artifact fails closed.
+`python3 scripts/factory.py research-guidance --learning-from BASELINE_RUN --brief BRIEF --out GUIDANCE`
+
+Give GUIDANCE to the research lead before retrieval. The resulting research.json must bind the exact guidance hash and explicitly resolve every inherited research gap as addressed, scoped_out, or unresolved. Only then prepare the next run with `--learning-from BASELINE_RUN`. Preparation recomputes the guidance and rejects stale/unbound research.
+
+Every later role receives that same frozen learning packet. A changed or missing baseline artifact fails closed.
 
 ## 3. Finish the candidate normally
 
