@@ -176,6 +176,24 @@ class CrossIterationLearningTests(unittest.TestCase):
         self.assertEqual(packet["baseline_run"], "candidate")
         self.assertTrue(any(x["dimension"] == "voice" for x in packet["preserve"]))
 
+    def test_only_one_sibling_can_advance_and_superseded_baseline_refuses_new_successors(self):
+        baseline = self.seed_baseline()
+        candidate_a = self.completed("advance-a", learning_from="baseline")
+        candidate_b = self.completed("advance-b", learning_from="baseline")
+        for rid in ("advance-a", "advance-b"):
+            for order, winner in (("AB", "B"), ("BA", "A")):
+                frozen = task(self.repo, rid, order)
+                submit(self.repo, rid, order, self.judgment(frozen, winner), metadata(True))
+            self.assertEqual(decide(self.repo, rid)["decision"], "ADVANCE")
+        result = advance(self.repo, "advance-a")
+        self.assertEqual(result["baseline_run"], "advance-a")
+        receipt = unseal(baseline.root / "regression/advancement.json")
+        self.assertEqual(receipt["successor_run"], "advance-a")
+        with self.assertRaises(FactoryError):
+            advance(self.repo, "advance-b")
+        with self.assertRaises(FactoryError):
+            self.research_for("baseline")
+
     def test_stale_candidate_cannot_overwrite_newer_learning_revision(self):
         baseline = self.seed_baseline()
         candidate_a = self.completed("candidate-a", learning_from="baseline")
