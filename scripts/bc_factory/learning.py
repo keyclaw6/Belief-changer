@@ -147,7 +147,7 @@ def validate_packet_binding(repo: Path, packet: dict, expected_subject: str, fix
 def research_guidance(packet: dict, brief: dict) -> dict:
     validate_packet(packet)
     require(packet["subject"] == brief["subject"], "Research guidance subject mismatch")
-    return {
+    core = {
         "schema_version": 2,
         "subject": brief["subject"],
         "baseline_run": packet["baseline_run"],
@@ -155,6 +155,7 @@ def research_guidance(packet: dict, brief: dict) -> dict:
         "research_gaps": list(packet["research_gaps"]),
         "instruction": "Treat these as search priorities only. Re-establish every question from fresh current-subject sources; prior learning is not evidence.",
     }
+    return {**core, "guidance_sha256": digest(core)}
 
 
 def guidance_for(repo: Path, baseline_run: str, brief: dict) -> dict:
@@ -170,7 +171,7 @@ def validate_research_learning(research: dict, packet: dict, brief: dict) -> Non
     context = research.get("learning_context")
     require(isinstance(context, dict), "A learning successor must bind the pre-research learning context")
     exact_keys(context, {"guidance_sha256", "baseline_run", "gap_resolutions"}, label="research learning context")
-    require(context["guidance_sha256"] == digest(guidance), "Research used stale or different cross-iteration guidance")
+    require(context["guidance_sha256"] == guidance["guidance_sha256"], "Research used stale or different cross-iteration guidance")
     require(context["baseline_run"] == packet["baseline_run"], "Research learning baseline mismatch")
     resolutions = context["gap_resolutions"]
     require(isinstance(resolutions, list), "gap_resolutions must be a list")
