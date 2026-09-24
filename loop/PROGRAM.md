@@ -25,7 +25,7 @@ After the candidate's own final audit ACCEPTS its latest assembly, run a blinded
 
 `REPAIR_REQUIRED` may reopen the book-editor only in the SAME logical run and only against the sealed accepted assembly plus the bound regression decision. Accepted chapters remain immutable; assembly edits remain versioned. The resulting assembly must receive a new independent final audit and a fresh AB/BA no-regression gate; the earlier gate becomes stale by construction. `INCONCLUSIVE` authorizes neither repair nor advancement. A round-cap failure remains a system defect, not permission to reset the lineage.
 
-Only a `PASS` may run `advance-baseline`, which emits the next content-addressed learning packet bound to the exact candidate book/audit. This optimization baseline is NOT the release champion. It does not update `factory/champion.json`, cannot substitute for confirmatory experiments, human calibration/review, or claim efficacy.
+A stable candidate win on at least one protected quality dimension with zero losses/critical defects yields `ADVANCE`. A stable all-tie result yields `PRESERVE_BASELINE`: the old book remains the comparison baseline, but newly discovered material repairs/research gaps are appended to a new immutable learning revision on that baseline. `advance-baseline` handles both outcomes; it never replaces the book baseline on an all-tie comparison. This optimization baseline is NOT the release champion. It does not update `factory/champion.json`, cannot substitute for confirmatory experiments, human calibration/review, or claim efficacy.
 
 ### Factory-learning boundary
 
