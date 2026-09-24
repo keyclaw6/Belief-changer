@@ -66,6 +66,15 @@ class FactoryLearningPromptTests(unittest.TestCase):
         self.assertIn("a tie is a successful preservation result", p)
         self.assertIn("do not manufacture a winner", p)
 
+    def test_factory_learning_roles_are_registered(self):
+        learner = self.text(".pi/agents/factory-learner.md")
+        reviewer = self.text(".pi/agents/factory-learning-reviewer.md")
+        self.assertIn("loop/prompts/factory-learner.md", learner)
+        self.assertIn("never writes book prose", learner)
+        self.assertIn("loop/prompts/factory-learning-reviewer.md", reviewer)
+        self.assertIn("independent evaluator family", reviewer)
+        self.assertIn("sealed held-out results", reviewer)
+
     def test_orchestrator_and_program_require_held_out_transfer(self):
         orchestrator = self.text("prompts/factory-orchestrator.md")
         program = self.text("loop/PROGRAM.md")
