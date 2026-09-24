@@ -36,7 +36,7 @@ class CrossIterationLearningTests(unittest.TestCase):
         packet = load_next(source)
         guidance = research_guidance(packet, self.brief)
         research["learning_context"] = {
-            "guidance_sha256": digest(guidance),
+            "guidance_sha256": guidance["guidance_sha256"],
             "baseline_run": packet["baseline_run"],
             "gap_resolutions": [{
                 "gap": gap, "status": "unresolved", "evidence_ids": [],
