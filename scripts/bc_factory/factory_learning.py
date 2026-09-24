@@ -191,10 +191,10 @@ def submit_holdout(repo: Path, cycle_id: str, selection: dict, metadata: dict) -
     runs_root = repo / "runs"
     if runs_root.is_dir():
         for manifest in runs_root.glob("*/manifest.json"):
-            try:
-                prior_run_subjects.add(unseal(manifest)["subject"])
-            except Exception:
-                continue
+            prior = unseal(manifest)
+            require(isinstance(prior.get("subject"), str) and prior["subject"].strip(),
+                    f"Historical run manifest lacks a valid subject: {manifest.parent.name}")
+            prior_run_subjects.add(prior["subject"])
     require(not prior_run_subjects.intersection(subjects),
             "Held-out topics must be unseen: a selected subject already has run history")
     previously_revealed = set()
