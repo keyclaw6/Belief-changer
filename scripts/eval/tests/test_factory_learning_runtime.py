@@ -13,9 +13,9 @@ from unittest.mock import patch
 SOURCE = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(SOURCE / "scripts"))
 
-from bc_factory.common import FactoryError, digest
+from bc_factory.common import FactoryError, digest, now, seal, unseal
 from bc_factory.demo import finish, inputs, scaffold
-from bc_factory.factory_learning import bind_experiment, freeze_change, freeze_evidence, register, submit_holdout
+from bc_factory.factory_learning import bind_experiment, decide as learning_decide, freeze_change, freeze_evidence, register, submit_holdout
 from bc_factory.runs import active_files, Run, prepare
 
 
@@ -292,6 +292,44 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
              patch("bc_factory.runs.Run", side_effect=FakeRun):
             bound = bind_experiment(self.repo, "cycle-bind", "exp-valid")
         self.assertEqual(bound["experiment_id"], "exp-valid")
+
+    def test_missing_transfer_panel_is_not_sealed_as_terminal(self):
+        self.register_cycle("cycle-decision")
+        p = self.repo / "prompts/chapter-writer.md"
+        p.write_text(p.read_text() + "\n<!-- fixture intervention -->\n")
+        self.git("add", "prompts/chapter-writer.md"); self.git("commit", "-m", "intervention")
+        change = freeze_change(self.repo, "cycle-decision")
+        holdout = submit_holdout(
+            self.repo, "cycle-decision",
+            {"schema_version": 2, "subjects": ["held-a", "held-b"],
+             "rationale": "Selected after freeze."},
+            self.meta("selector"))
+        fake_exp = {"spec": {"subjects": ["held-a", "held-b"]}}
+        root = self.repo / "factory-learning/cycle-decision"
+        binding = {"schema_version": 2, "cycle_id": "cycle-decision", "experiment_id": "exp",
+                   "registration_sha256": digest(fake_exp), "holdout_sha256": digest(holdout),
+                   "change_sha256": digest(change), "bound_at": now()}
+        seal(root / "experiment.json", binding)
+
+        incomplete = {"decision": "INCONCLUSIVE", "missing": ["pair-a-AB"],
+                      "judge_models": [], "reasons": ["missing"], "subjects": {},
+                      "critical": [], "order_instability": [], "fixture": False,
+                      "efficacy": "NOT_MEASURED", "release_eligible": False}
+        with patch("bc_factory.experiments.transfer_decide", return_value=incomplete):
+            first = learning_decide(self.repo, "cycle-decision")
+        self.assertFalse(first["terminal"])
+        self.assertFalse((root / "decision.json").exists())
+
+        rejected = dict(incomplete)
+        rejected.update({"decision": "REJECT_TRANSFER", "missing": [], "reasons": ["measured regression"]})
+        with patch("bc_factory.experiments.transfer_decide", return_value=rejected):
+            second = learning_decide(self.repo, "cycle-decision")
+        self.assertTrue(second["terminal"])
+        self.assertTrue((root / "decision.json").exists())
+
+        with patch("bc_factory.experiments.registration", return_value=(self.repo / "experiments/exp", fake_exp)):
+            cached = learning_decide(self.repo, "cycle-decision")
+        self.assertEqual(cached["decision"], "REJECT_FACTORY_CHANGE")
 
     def test_change_surface_is_enforced_from_git_diff(self):
         self.register_cycle("cycle-3")
