@@ -69,8 +69,7 @@ def validate_packet(data: dict) -> None:
                       "baseline_book_sha256", "baseline_audit_sha256", "preserve", "improve",
                       "recurring_repairs", "research_gaps", "provenance"}, label="cross-iteration learning packet")
     require(data["schema_version"] == 2, "Learning packet schema must be v2")
-    identifier(data["subject"])
-    identifier(data["baseline_run"])
+    identifier(data["subject"]); identifier(data["baseline_run"])
     _sha(data["baseline_manifest_sha256"], "baseline_manifest_sha256")
     _sha(data["baseline_book_sha256"], "baseline_book_sha256")
     _sha(data["baseline_audit_sha256"], "baseline_audit_sha256")
@@ -83,21 +82,22 @@ def validate_packet(data: dict) -> None:
             all(isinstance(x, str) and x.strip() for x in data["research_gaps"]),
             "research_gaps must be nonempty strings")
     exact_keys(data["provenance"], {"mode", "source_sha256", "note"}, label="learning provenance")
-    require(data["provenance"]["mode"] in ("bootstrap", "no_regression_pass"), "Unknown learning provenance")
+    require(data["provenance"]["mode"] in ("bootstrap", "no_regression_advance", "no_regression_preserve"),
+            "Unknown learning provenance")
     _sha(data["provenance"]["source_sha256"], "Learning provenance source_sha256")
     nonempty(data["provenance"]["note"], "Learning provenance note")
 
 
-def _packet_for(run, preserve: list[dict], improve: list[dict], recurring: list[dict],
+def _packet_for(baseline, preserve: list[dict], improve: list[dict], recurring: list[dict],
                 research_gaps: list[str], provenance: dict) -> dict:
-    complete = run.complete()
+    complete = baseline.complete()
     packet = {
         "schema_version": 2,
-        "subject": run.brief["subject"],
-        "baseline_run": run.manifest["run_id"],
-        "baseline_manifest_sha256": digest(run.manifest),
+        "subject": baseline.brief["subject"],
+        "baseline_run": baseline.manifest["run_id"],
+        "baseline_manifest_sha256": digest(baseline.manifest),
         "baseline_book_sha256": complete["book_sha256"],
-        "baseline_audit_sha256": file_hash(run.accepted_audit_file()),
+        "baseline_audit_sha256": file_hash(baseline.accepted_audit_file()),
         "preserve": preserve,
         "improve": improve,
         "recurring_repairs": recurring,
@@ -112,8 +112,19 @@ def learning_path(run) -> Path:
     return run.root / "regression" / "learning-next.json"
 
 
+def _revision_paths(run) -> list[Path]:
+    root = run.root / "regression" / "learning-revisions"
+    return sorted(root.glob("learning-r*.json")) if root.is_dir() else []
+
+
+def _next_revision_path(run) -> Path:
+    return run.root / "regression" / "learning-revisions" / f"learning-r{len(_revision_paths(run))+1:02d}.json"
+
+
 def load_next(run) -> dict:
-    packet = unseal(learning_path(run))
+    revisions = _revision_paths(run)
+    path = revisions[-1] if revisions else learning_path(run)
+    packet = unseal(path)
     validate_packet(packet)
     require(packet["baseline_run"] == run.manifest["run_id"], "Learning packet is bound to another run")
     return packet
@@ -133,11 +144,56 @@ def validate_packet_binding(repo: Path, packet: dict, expected_subject: str, fix
     return baseline
 
 
+def research_guidance(packet: dict, brief: dict) -> dict:
+    validate_packet(packet)
+    require(packet["subject"] == brief["subject"], "Research guidance subject mismatch")
+    return {
+        "schema_version": 2,
+        "subject": brief["subject"],
+        "baseline_run": packet["baseline_run"],
+        "learning_sha256": digest(packet),
+        "research_gaps": list(packet["research_gaps"]),
+        "instruction": "Treat these as search priorities only. Re-establish every question from fresh current-subject sources; prior learning is not evidence.",
+    }
+
+
+def guidance_for(repo: Path, baseline_run: str, brief: dict) -> dict:
+    from .runs import Run
+    source = Run(repo, identifier(baseline_run))
+    packet = load_next(source)
+    validate_packet_binding(repo, packet, brief["subject"], source.manifest["fixture"])
+    return research_guidance(packet, brief)
+
+
+def validate_research_learning(research: dict, packet: dict, brief: dict) -> None:
+    guidance = research_guidance(packet, brief)
+    context = research.get("learning_context")
+    require(isinstance(context, dict), "A learning successor must bind the pre-research learning context")
+    exact_keys(context, {"guidance_sha256", "baseline_run", "gap_resolutions"}, label="research learning context")
+    require(context["guidance_sha256"] == digest(guidance), "Research used stale or different cross-iteration guidance")
+    require(context["baseline_run"] == packet["baseline_run"], "Research learning baseline mismatch")
+    resolutions = context["gap_resolutions"]
+    require(isinstance(resolutions, list), "gap_resolutions must be a list")
+    expected = list(packet["research_gaps"])
+    require(len(resolutions) == len(expected), "Every inherited research gap needs one explicit resolution")
+    seen = set(); source_ids = {x["id"] for x in research["sources"]}
+    for item in resolutions:
+        exact_keys(item, {"gap", "status", "evidence_ids", "note"}, label="research gap resolution")
+        require(item["gap"] in expected and item["gap"] not in seen, "Unknown or duplicate inherited research gap")
+        seen.add(item["gap"])
+        require(item["status"] in ("addressed", "scoped_out", "unresolved"), "Unknown research gap status")
+        require(isinstance(item["evidence_ids"], list) and set(item["evidence_ids"]) <= source_ids,
+                "Research gap resolution cites unknown evidence")
+        if item["status"] == "addressed":
+            require(bool(item["evidence_ids"]), "Addressed research gap needs current-subject evidence IDs")
+        nonempty(item["note"], "research gap resolution note")
+    require(seen == set(expected), "Inherited research gap coverage is incomplete")
+
+
 def seed(repo: Path, run_id: str, lessons: dict) -> dict:
     from .runs import Run
     validate_lessons(lessons)
-    run = Run(repo, identifier(run_id))
-    run.complete()
+    run = Run(repo, identifier(run_id)); run.complete()
     require(run.brief["subject"] == lessons["subject"], "Seed lessons subject mismatch")
     packet = _packet_for(
         run, lessons["preserve"], lessons["improve"], lessons["recurring_repairs"], lessons["research_gaps"],
@@ -150,17 +206,58 @@ def seed(repo: Path, run_id: str, lessons: dict) -> dict:
             "path": path.relative_to(repo).as_posix(), "learning_sha256": digest(packet)}
 
 
+def _accumulate(candidate, old: dict, decisions: list[dict]) -> tuple[list[dict], list[dict], list[dict]]:
+    preserve = {x["dimension"]: dict(x) for x in old["preserve"]}
+    improve = {x["dimension"]: dict(x) for x in old["improve"]}
+    repairs = [dict(x) for x in old["recurring_repairs"]]
+    repair_keys = {(x["kind"], x["instruction"]) for x in repairs}
+
+    for decision in decisions:
+        for dimension in decision.get("losses", []):
+            if dimension not in preserve and dimension not in improve:
+                improve[dimension] = {
+                    "dimension": dimension,
+                    "instruction": f"Avoid the previously observed {dimension} regression while preserving protected strengths.",
+                    "evidence": f"No-regression round {decision['assembly_round']} consistently preferred the prior baseline on {dimension} before repair.",
+                }
+        for block in decision.get("critical", []):
+            for finding in block.get("findings", []):
+                instruction = finding["explanation"]
+                key = (finding["kind"], instruction)
+                if key not in repair_keys:
+                    repairs.append({"kind": finding["kind"], "instruction": instruction,
+                                    "evidence": f"Independent no-regression judge flagged: {finding['quote']}"})
+                    repair_keys.add(key)
+
+    for path in sorted((candidate.root / "results").glob("final-auditor-r*.json")):
+        record = unseal(path); output = record["output"]
+        if output["verdict"] == "ACCEPT":
+            continue
+        for finding in output["findings"]:
+            if finding["severity"] not in ("material", "critical"):
+                continue
+            instruction = finding["repair"]
+            key = (finding["kind"], instruction)
+            if key not in repair_keys:
+                evidence = finding["explanation"] + (f" Quote: {finding['quote']}" if finding["quote"] else "")
+                repairs.append({"kind": finding["kind"], "instruction": instruction, "evidence": evidence})
+                repair_keys.add(key)
+    return list(preserve.values()), list(improve.values()), repairs
+
+
 def advance(repo: Path, run_id: str) -> dict:
     from .regression import decide, decision_path
     from .runs import Run
-    candidate = Run(repo, identifier(run_id))
-    candidate.complete()
-    require(candidate.learning is not None, "Baseline advancement requires inherited learning")
+    candidate = Run(repo, identifier(run_id)); candidate.complete()
+    require(candidate.learning is not None, "Baseline update requires inherited learning")
     decision = decide(repo, run_id)
-    require(decision["decision"] == "PASS", f"Baseline advancement blocked: {decision['decision']}")
+    require(decision["decision"] in ("ADVANCE", "PRESERVE_BASELINE"),
+            f"Baseline update blocked: {decision['decision']}")
     old = candidate.learning
-    preserve = {x["dimension"]: dict(x) for x in old["preserve"]}
-    improve = {x["dimension"]: dict(x) for x in old["improve"]}
+    decisions = [unseal(p) for p in sorted((candidate.root / "regression").glob("decision-r*.json"))]
+    preserve_list, improve_list, repairs = _accumulate(candidate, old, decisions)
+    preserve = {x["dimension"]: x for x in preserve_list}
+    improve = {x["dimension"]: x for x in improve_list}
     for dimension, outcome in decision["dimension_outcomes"].items():
         if outcome["outcome"] != "candidate_win":
             continue
@@ -174,15 +271,23 @@ def advance(repo: Path, run_id: str) -> dict:
             preserve[dimension] = {"dimension": dimension,
                 "instruction": f"Preserve the demonstrated {dimension} advantage without weakening other protected dimensions.",
                 "evidence": evidence}
+
     dpath = decision_path(candidate, candidate.accepted_assembly()["assembly"]["assembly_round"])
+    if decision["decision"] == "ADVANCE":
+        baseline = candidate; mode = "no_regression_advance"
+        note = "Candidate became the new baseline only after a stable improvement and zero protected regressions."
+        path = learning_path(candidate); status = "BASELINE_ADVANCED"
+    else:
+        baseline = Run(repo, old["baseline_run"]); mode = "no_regression_preserve"
+        note = (f"Candidate {candidate.manifest['run_id']} did not demonstrate a stable improvement; "
+                "the prior book baseline was preserved while newly observed lessons were appended.")
+        path = _next_revision_path(baseline); status = "BASELINE_PRESERVED_LEARNING_UPDATED"
+
     packet = _packet_for(
-        candidate, list(preserve.values()), list(improve.values()),
-        [dict(x) for x in old["recurring_repairs"]], list(candidate.research["open_questions"]),
-        {"mode": "no_regression_pass", "source_sha256": file_hash(dpath),
-         "note": "Advanced only after an independent blinded AB/BA no-regression PASS."},
+        baseline, list(preserve.values()), list(improve.values()), repairs, list(candidate.research["open_questions"]),
+        {"mode": mode, "source_sha256": file_hash(dpath), "note": note},
     )
-    path = learning_path(candidate)
-    with lock(candidate.root / "regression"):
+    with lock(baseline.root / "regression"):
         seal(path, packet)
-    return {"status": "BASELINE_ADVANCED", "run_id": run_id,
+    return {"status": status, "run_id": run_id, "baseline_run": baseline.manifest["run_id"],
             "path": path.relative_to(repo).as_posix(), "learning_sha256": digest(packet)}
