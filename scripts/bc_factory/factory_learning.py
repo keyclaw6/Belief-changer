@@ -471,6 +471,9 @@ def decide(repo: Path, cycle_id: str) -> dict:
         binding = unseal(root / "experiment.json")
         require(existing["binding_sha256"] == digest(binding),
                 "Stored factory-learning decision is bound to another experiment state")
+        _, current_exp = experiments.registration(repo, binding["experiment_id"])
+        require(digest(current_exp) == binding["registration_sha256"],
+                "Stored factory-learning decision's experiment registration changed")
         return existing
     require(_git(repo, "branch", "--show-current") == reg["experimental_branch"],
             "Factory-learning decision must occur on its frozen experimental branch")
@@ -495,6 +498,12 @@ def decide(repo: Path, cycle_id: str) -> dict:
                else "INCONCLUSIVE")
     doc = {"schema_version": 2, "cycle_id": cycle_id, "decision": verdict,
            "experiment_decision": result, "binding_sha256": digest(binding), "decided_at": now()}
+    # Missing judgments are an unfinished panel, not an immutable experimental conclusion.
+    # Once the preregistered panel is complete, KEEP/REJECT or a measured INCONCLUSIVE is terminal.
+    if result.get("missing"):
+        doc["terminal"] = False
+        return doc
+    doc["terminal"] = True
     with lock(root):
         seal(root / "decision.json", doc)
     return doc
