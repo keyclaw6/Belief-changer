@@ -259,6 +259,30 @@ def decide(repo: Path, cycle_id: str) -> dict:
             "Factory changed after the intervention was frozen")
     binding = unseal(root / "experiment.json")
     result = experiments.transfer_decide(repo, binding["experiment_id"])
+    if result["decision"] == "TRANSFER_ELIGIBLE_NONPROMOTIONAL":
+        require(len(result["judge_models"]) == 1, "Transfer retention requires one stable judge model/family")
+        holdout = unseal(root / "holdout.json")
+        config = read_json(repo / "factory/config.json"); validate_config(config)
+        judge_family = result["judge_models"][0]["family"]
+        forbidden = {reg["learner_metadata"]["family"], reg["reviewer_metadata"]["family"],
+                     holdout["selector_metadata"]["family"], config["profiles"]["factory"]["family"]}
+        if judge_family in forbidden:
+            result["decision"] = "REJECT_TRANSFER"
+            result["reasons"].append("Transfer judge family is not independent of the generator/learner/reviewer/selector roles")
+        prior_kept = []
+        state_root = repo / "factory-learning"
+        if state_root.is_dir():
+            for path in state_root.glob("*/decision.json"):
+                if path == root / "decision.json":
+                    continue
+                prior = unseal(path)
+                if prior.get("decision") == "KEEP_FACTORY_CHANGE":
+                    models = prior.get("experiment_decision", {}).get("judge_models", [])
+                    if len(models) == 1:
+                        prior_kept.append((prior.get("decided_at", ""), models[0]["family"]))
+        if prior_kept and max(prior_kept)[1] == judge_family:
+            result["decision"] = "INCONCLUSIVE"
+            result["reasons"].append("Rotate the transfer judge family after a retained factory change to reduce judge overfitting")
     verdict = ("KEEP_FACTORY_CHANGE" if result["decision"] == "TRANSFER_ELIGIBLE_NONPROMOTIONAL"
                else "REJECT_FACTORY_CHANGE" if result["decision"] == "REJECT_TRANSFER"
                else "INCONCLUSIVE")
