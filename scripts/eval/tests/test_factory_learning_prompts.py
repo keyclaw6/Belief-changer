@@ -25,6 +25,8 @@ class FactoryLearningPromptTests(unittest.TestCase):
         self.assertIn("what general factory mechanism", p)
         self.assertIn("evidence_sha256", p)
         self.assertIn("sealed evidence manifest", p.lower())
+        self.assertIn("eligible_change_surface", p)
+        self.assertIn("MEASURE_MORE", p)
 
     def test_independent_factory_learning_reviewer_is_anti_overfit(self):
         p = self.text("loop/prompts/factory-learning-reviewer.md")
