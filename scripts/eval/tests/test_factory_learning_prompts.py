@@ -14,11 +14,11 @@ class FactoryLearningPromptTests(unittest.TestCase):
         for token in (
             "transferable_factory_lessons",
             "subject_specific_lessons",
-            "held_out_subjects",
+            "holdout_requirements",
             "MEASURE_MORE",
             "smallest_change",
             "possible_regressions",
-            "Held-out subjects are evaluation only",
+            "Exact held-out subjects are NOT chosen or revealed to you",
         ):
             self.assertIn(token, p)
         self.assertIn("what general factory mechanism", p)
@@ -48,6 +48,19 @@ class FactoryLearningPromptTests(unittest.TestCase):
         for path, token in expected.items():
             with self.subTest(path=path):
                 self.assertIn(token, self.text(path))
+
+    def test_research_prompt_requires_pre_research_learning_receipt(self):
+        p = self.text("prompts/research-agent.md")
+        self.assertIn("learning_context", p)
+        self.assertIn("guidance_sha256", p)
+        self.assertIn("gap_resolutions", p)
+        self.assertIn("prior-book material never counts as evidence", p)
+
+    def test_learner_does_not_choose_exact_holdout_topics(self):
+        p = self.text("loop/prompts/factory-learner.md")
+        self.assertIn("holdout_requirements", p)
+        self.assertNotIn('"held_out_subjects"', p)
+        self.assertIn("independent selector", p)
 
     def test_runtime_learning_contract_forbids_cross_topic_template_transfer(self):
         p = self.text("scripts/bc_factory/learning.py")
@@ -101,7 +114,8 @@ class FactoryLearningPromptTests(unittest.TestCase):
             self.assertIn("factory-learning-reviewer.md", p)
             self.assertIn("held-out", p.lower())
         self.assertIn("A training-only improvement is evidence of possible overfit", orchestrator)
-        self.assertIn("Held-out subjects are a sealed test set", program)
+        self.assertIn("holdout", program.lower())
+        self.assertIn("independently", program.lower())
 
 
 if __name__ == "__main__":
