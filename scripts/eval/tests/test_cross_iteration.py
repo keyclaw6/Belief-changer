@@ -162,6 +162,23 @@ class CrossIterationLearningTests(unittest.TestCase):
                 fixture=True, learning_from="baseline")
         self.assertEqual(Run(self.repo, "next").learning["baseline_run"], "baseline")
 
+    def test_new_local_open_question_does_not_become_cross_iteration_priority(self):
+        baseline = self.seed_baseline()
+        research = self.research_for("baseline")
+        research["open_questions"].append("A new dossier-local question that the accepted plan may safely scope out.")
+        prepare(self.repo, "local-open", self.brief, research, fixture=True, learning_from="baseline")
+        candidate = Run(self.repo, "local-open")
+        finish(candidate, self.plan)
+        for order in ("AB", "BA"):
+            frozen = task(self.repo, "local-open", order)
+            submit(self.repo, "local-open", order, self.judgment(frozen), metadata(True))
+        self.assertEqual(decide(self.repo, "local-open")["decision"], "PRESERVE_BASELINE")
+        advance(self.repo, "local-open")
+        packet = load_next(baseline)
+        self.assertIn("Reader effects remain unmeasured.", packet["research_gaps"])
+        self.assertNotIn("A new dossier-local question that the accepted plan may safely scope out.",
+                         packet["research_gaps"])
+
     def test_stable_candidate_win_advances_baseline(self):
         self.seed_baseline()
         candidate = self.completed("candidate", learning_from="baseline")
