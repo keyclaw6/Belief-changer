@@ -270,16 +270,16 @@ def _accumulate(candidate, old: dict, decisions: list[dict]) -> tuple[list[dict]
     return list(preserve.values()), list(improve.values()), repairs
 
 
-def _next_research_gaps(candidate) -> list[str]:
-    gaps = []
-    for gap in candidate.research["open_questions"]:
-        if gap not in gaps:
-            gaps.append(gap)
+def _next_research_gaps(candidate, old: dict) -> list[str]:
+    """Carry only explicitly unresolved inherited priorities; ordinary open questions stay local."""
     context = candidate.research.get("learning_context")
-    if context:
-        for item in context["gap_resolutions"]:
-            if item["status"] == "unresolved" and item["gap"] not in gaps:
-                gaps.append(item["gap"])
+    if not context:
+        # Backward-compatible frozen runs predate explicit gap receipts.
+        return list(old["research_gaps"])
+    gaps = []
+    for item in context["gap_resolutions"]:
+        if item["status"] == "unresolved" and item["gap"] not in gaps:
+            gaps.append(item["gap"])
     return gaps
 
 
@@ -340,7 +340,7 @@ def advance(repo: Path, run_id: str) -> dict:
             path = learning_path(candidate)
             status = "BASELINE_ADVANCED"
             packet = _packet_for(
-                baseline, list(preserve.values()), list(improve.values()), repairs, _next_research_gaps(candidate),
+                baseline, list(preserve.values()), list(improve.values()), repairs, _next_research_gaps(candidate, old),
                 {"mode": mode, "source_sha256": decision_sha, "note": note},
             )
             with lock(candidate.root / "regression"):
