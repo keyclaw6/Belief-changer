@@ -450,6 +450,12 @@ def submit_holdout(repo: Path, cycle_id: str, selection: dict, metadata: dict) -
             prior = unseal(path)
             previously_revealed.update(prior["subjects"])
             previously_revealed.update(prior.get("training_subjects", []))
+    history_root = repo / "loop/factory-learning-history"
+    if history_root.is_dir():
+        for path in history_root.glob("*.json"):
+            prior = unseal(path)
+            previously_revealed.update(prior.get("holdout_subjects", []))
+            previously_revealed.update(prior.get("training_subjects", []))
     require(not previously_revealed.intersection(subjects),
             "A previously revealed held-out topic cannot count as unseen transfer evidence again")
     nonempty(selection["rationale"], "held-out selection rationale")
