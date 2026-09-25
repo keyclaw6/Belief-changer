@@ -139,7 +139,7 @@ class FactoryLearningPromptTests(unittest.TestCase):
         self.assertIn("factory-learning-holdout-submit", orchestrator)
         self.assertIn("factory-learning-holdout-submit", program)
         self.assertIn("Training-only gains are possible overfit", orchestrator)
-        self.assertIn("independent selector", program.lower())
+        self.assertIn("selector must use a family independent", program.lower())
 
 
 if __name__ == "__main__":
