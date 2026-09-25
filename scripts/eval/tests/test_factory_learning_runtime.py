@@ -251,7 +251,8 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
         _, cycle = cycle_registration(self.repo, "cycle-bind")
 
         class FakeRun:
-            def __init__(self, rid):
+            def __init__(self, *args):
+                rid = args[-1]
                 candidate = rid.startswith("candidate-")
                 files = change["factory_files"] if candidate else cycle["base_factory_files"]
                 fdigest = change["factory_digest"] if candidate else cycle["base_factory_digest"]
