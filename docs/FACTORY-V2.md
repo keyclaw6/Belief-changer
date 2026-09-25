@@ -117,11 +117,11 @@ python3 scripts/factory.py verify --run baseline-topic-a
 python3 scripts/factory.py status --run baseline-topic-a
 ```
 
-Zero exit status and COMPLETE_UNRELEASED mean the workflow completed its checks. They do not authorize publication or assert efficacy. INCOMPLETE/error returns exit code 2. There is no successful PANEL DONE for missing work.
+Zero exit status and `COMPLETE_UNRELEASED` are the reusable factory's terminal output. They do not authorize publication or assert efficacy. INCOMPLETE/error returns exit code 2. There is no successful PANEL DONE for missing work.
 
 ## Factory output boundary
 
-Zero exit status and `COMPLETE_UNRELEASED` are the reusable factory's terminal output. The caller receives the immutable completed run here.
+The caller receives the immutable completed run here.
 
 Autoresearch comparison, AB/BA judging, cross-iteration baseline decisions, Factory Learner/Reviewer, held-out experiments, promotion analysis and choosing the next factory intervention are outside the Pi factory runtime. They are documented in `loop/PROGRAM.md` and may call this factory again when another book or a bounded repair is needed.
 
