@@ -127,9 +127,10 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
 
     def test_new_runs_freeze_outer_orchestration_contracts(self):
         files = set(active_files(SOURCE))
-        for rel in ("AGENTS.md", "loop/PROGRAM.md", "loop/prompts/factory-learner.md",
-                    "loop/prompts/factory-learning-reviewer.md", ".opencode/agents/factory-learner.md",
-                    "scripts/bc_factory/learning.py", "scripts/bc_factory/factory_learning.py"):
+        for rel in ("AGENTS.md", "loop/PROGRAM.md", "docs/FACTORY-V2.md",
+                    "loop/prompts/factory-learner.md", "loop/prompts/factory-learning-reviewer.md",
+                    ".opencode/agents/factory-learner.md", "scripts/bc_factory/learning.py",
+                    "scripts/bc_factory/factory_learning.py"):
             self.assertIn(rel, files)
 
     def test_frozen_training_evidence_is_idempotent_only_for_same_inputs_and_revalidated(self):
