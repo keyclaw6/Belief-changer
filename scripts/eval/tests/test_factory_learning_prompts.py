@@ -71,6 +71,13 @@ class FactoryBoundaryTests(unittest.TestCase):
         self.assertIn("factory-learning-reviewer.md", program)
         self.assertIn("exact unseen held-out subjects", program)
 
+    def test_factory_cli_does_not_hard_import_outer_utilities(self):
+        head = "\n".join(self.text("scripts/bc_factory/cli.py").splitlines()[:15])
+        self.assertIn("from . import archive", head)
+        self.assertNotIn("experiments", head)
+        self.assertNotIn("learning", head)
+        self.assertNotIn("regression", head)
+
     def test_factory_docs_define_extractable_boundary(self):
         docs = self.text("docs/FACTORY-V2.md")
         self.assertIn("Factory output boundary", docs)
