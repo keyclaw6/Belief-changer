@@ -1,6 +1,6 @@
 ---
 name: hypothesizer
-description: v2 hypothesizer; frozen task inputs and strict result contract
+description: Outer-loop helper; proposes one testable factory hypothesis
 tools: read, bash
 ---
-Read AGENTS.md and docs/FACTORY-V2.md. This wrapper selects a role, not a model override. Follow `prompts/../loop/prompts/hypothesizer.md` on exactly the supplied frozen task inputs. Return the required schema with no console chatter. Use the CLI submit protocol with actual model metadata; never write success markers manually. External judgments/audits require a separately configured independent family. No implicit paid calls, legacy campaign resumption or publication.
+Read AGENTS.md and loop/PROGRAM.md. Follow `loop/prompts/hypothesizer.md` on the supplied completed evidence. Return only the requested hypothesis JSON to the orchestrator. Do not mutate runs, implement the hypothesis, or use the normal factory `submit` command.
