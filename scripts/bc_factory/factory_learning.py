@@ -187,6 +187,23 @@ def _require_only_holdout_history_after_freeze(repo: Path, change: dict) -> None
             f"Only committed learning-history records may follow intervention freeze: {changed}")
 
 
+def _status_paths(repo: Path) -> list[str]:
+    paths = []
+    for line in _git(repo, "status", "--porcelain").splitlines():
+        if len(line) >= 4:
+            paths.append(line[3:].strip())
+    return paths
+
+
+def _require_clean_or_missing_history(repo: Path, history_path: Path) -> None:
+    dirty = _status_paths(repo)
+    if not dirty:
+        return
+    rel = history_path.relative_to(repo).as_posix()
+    require(set(dirty) == {rel} and not history_path.exists(),
+            f"Stored factory-learning decision requires a clean tree except a recoverable missing history mirror: {dirty}")
+
+
 def _factory_snapshot(repo: Path) -> dict[str, str]:
     from .runs import active_files
     files = {}
@@ -621,8 +638,8 @@ def decide(repo: Path, cycle_id: str) -> dict:
         existing = unseal(root / "decision.json")
         require(_git(repo, "branch", "--show-current") == reg["experimental_branch"],
                 "Stored factory-learning decision belongs to another branch")
-        require(not _git(repo, "status", "--porcelain"),
-                "Stored factory-learning decision requires a clean frozen intervention tree")
+        history_path = _history_record_path(repo, cycle_id)
+        _require_clean_or_missing_history(repo, history_path)
         change = unseal(root / "change.json")
         _require_only_holdout_history_after_freeze(repo, change)
         require(_factory_snapshot(repo) == change["factory_files"],
@@ -637,7 +654,6 @@ def decide(repo: Path, cycle_id: str) -> dict:
         require(digest(current_exp) == binding["registration_sha256"],
                 "Stored factory-learning decision's experiment registration changed")
         holdout = unseal(root / "holdout.json")
-        history_path = _history_record_path(repo, cycle_id)
         expected_history = _terminal_history(reg, change, holdout, binding, existing)
         if history_path.exists():
             history = unseal(history_path)
