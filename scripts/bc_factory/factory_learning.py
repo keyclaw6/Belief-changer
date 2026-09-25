@@ -169,6 +169,10 @@ def _holdout_record_path(repo: Path, cycle_id: str) -> Path:
     return confined(repo, f"loop/holdout-registry/{identifier(cycle_id)}.json")
 
 
+def _history_record_path(repo: Path, cycle_id: str) -> Path:
+    return confined(repo, f"loop/factory-learning-history/{identifier(cycle_id)}.json")
+
+
 def _post_freeze_paths(repo: Path, change_head: str) -> list[str]:
     current = _git(repo, "rev-parse", "HEAD")
     if current == change_head:
@@ -178,8 +182,9 @@ def _post_freeze_paths(repo: Path, change_head: str) -> list[str]:
 
 def _require_only_holdout_history_after_freeze(repo: Path, change: dict) -> None:
     changed = _post_freeze_paths(repo, change["head_commit"])
-    require(all(p.startswith("loop/holdout-registry/") for p in changed),
-            f"Only committed holdout-retirement records may follow intervention freeze: {changed}")
+    allowed = ("loop/holdout-registry/", "loop/factory-learning-history/")
+    require(all(p.startswith(allowed) for p in changed),
+            f"Only committed learning-history records may follow intervention freeze: {changed}")
 
 
 def _factory_snapshot(repo: Path) -> dict[str, str]:
@@ -580,6 +585,29 @@ def bind_experiment(repo: Path, cycle_id: str, experiment_id: str) -> dict:
     return doc
 
 
+def _terminal_history(reg: dict, change: dict, holdout: dict, binding: dict, decision: dict) -> dict:
+    return {
+        "schema_version": 2,
+        "cycle_id": reg["cycle_id"],
+        "decision": decision["decision"],
+        "evidence_sha256": reg["evidence_sha256"],
+        "learner_sha256": digest(reg["learner"]),
+        "review_sha256": digest(reg["review"]),
+        "base_commit": reg["base_commit"],
+        "intervention_commit": change["head_commit"],
+        "approved_change_surface": list(reg["approved_change_surface"]),
+        "training_subjects": list(reg["learner"]["falsification_test"]["training_subjects"]),
+        "holdout_subjects": list(holdout["selection"]["subjects"]),
+        "holdout_retirement_sha256": binding["holdout_retirement_sha256"],
+        "holdout_retirement_commit": binding["holdout_retirement_commit"],
+        "experiment_id": binding["experiment_id"],
+        "experiment_registration_sha256": binding["registration_sha256"],
+        "binding_sha256": digest(binding),
+        "experiment_decision": decision["experiment_decision"],
+        "decided_at": decision["decided_at"],
+    }
+
+
 def decide(repo: Path, cycle_id: str) -> dict:
     from . import experiments
     root, reg = registration(repo, cycle_id)
@@ -602,7 +630,17 @@ def decide(repo: Path, cycle_id: str) -> dict:
         _, current_exp = experiments.registration(repo, binding["experiment_id"])
         require(digest(current_exp) == binding["registration_sha256"],
                 "Stored factory-learning decision's experiment registration changed")
-        return existing
+        holdout = unseal(root / "holdout.json")
+        history_path = _history_record_path(repo, cycle_id)
+        expected_history = _terminal_history(reg, change, holdout, binding, existing)
+        if history_path.exists():
+            history = unseal(history_path)
+            require(history == expected_history, "Tracked factory-learning history differs from terminal decision")
+        else:
+            history = expected_history
+            seal(history_path, history)
+        return {**existing, "history_record": history_path.relative_to(repo).as_posix(),
+                "history_sha256": digest(history), "requires_commit": bool(_git(repo, "status", "--porcelain"))}
     require(_git(repo, "branch", "--show-current") == reg["experimental_branch"],
             "Factory-learning decision must occur on its frozen experimental branch")
     require(not _git(repo, "status", "--porcelain"), "Factory-learning decision requires a clean frozen intervention tree")
@@ -633,6 +671,11 @@ def decide(repo: Path, cycle_id: str) -> dict:
         doc["terminal"] = False
         return doc
     doc["terminal"] = True
+    holdout = unseal(root / "holdout.json")
+    history_path = _history_record_path(repo, cycle_id)
+    history = _terminal_history(reg, change, holdout, binding, doc)
     with lock(root):
         seal(root / "decision.json", doc)
-    return doc
+        seal(history_path, history)
+    return {**doc, "history_record": history_path.relative_to(repo).as_posix(),
+            "history_sha256": digest(history), "requires_commit": True}
