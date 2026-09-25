@@ -8,7 +8,7 @@ from . import __version__
 from .common import FactoryError, atomic_json, read_json, reply_json, require, unseal, lock, seal, digest, now
 from .runs import Run, prepare
 from .adapters import execute
-from . import archive, experiments, learning, regression
+from . import archive, experiments, learning, regression, factory_learning
 
 
 def document(path: str) -> dict:
@@ -56,6 +56,25 @@ def parser() -> argparse.ArgumentParser:
     s.add_argument("--calibration", required=True); s.add_argument("--approval", required=True)
     s = sub.add_parser("learning-seed", help="Bootstrap a sealed cross-iteration learning packet")
     s.add_argument("--run", required=True); s.add_argument("--lessons", required=True)
+    s = sub.add_parser("research-guidance", help="Emit inherited learning context BEFORE research starts")
+    s.add_argument("--learning-from", required=True); s.add_argument("--brief", required=True); s.add_argument("--out")
+    s = sub.add_parser("factory-learning-evidence", help="Freeze exact completed training evidence before the outer learner runs")
+    s.add_argument("--cycle", required=True); s.add_argument("--run", dest="runs", action="append", required=True)
+    s.add_argument("--artifact", dest="artifacts", action="append", default=[])
+    s = sub.add_parser("factory-learning-register", help="Seal reviewed transferable factory intervention before edits")
+    s.add_argument("--cycle", required=True); s.add_argument("--learner", required=True); s.add_argument("--learner-metadata", required=True)
+    s.add_argument("--review", required=True); s.add_argument("--reviewer-metadata", required=True)
+    sub.add_parser("factory-learning-freeze-change").add_argument("--cycle", required=True)
+    s = sub.add_parser("factory-learning-holdout-submit", help="Select exact held-out subjects only after intervention freeze")
+    s.add_argument("--cycle", required=True); s.add_argument("--selection", required=True); s.add_argument("--metadata", required=True)
+    s = sub.add_parser("factory-learning-prepare-arm",
+                       help="Prepare a held-out parent/candidate run from the cycle's sealed factory commit")
+    s.add_argument("--cycle", required=True); s.add_argument("--arm", choices=("parent", "candidate"), required=True)
+    s.add_argument("--run", required=True); s.add_argument("--brief", required=True); s.add_argument("--research", required=True)
+    s.add_argument("--parent"); s.add_argument("--fixture", action="store_true"); s.add_argument("--research-preflight")
+    s = sub.add_parser("factory-learning-bind-experiment")
+    s.add_argument("--cycle", required=True); s.add_argument("--experiment", required=True)
+    sub.add_parser("factory-learning-decide").add_argument("--cycle", required=True)
     s = sub.add_parser("regression-task", help="Create a blinded baseline-vs-candidate no-regression task")
     s.add_argument("--run", required=True); s.add_argument("--order", choices=("AB", "BA"), required=True); s.add_argument("--out")
     s = sub.add_parser("regression-submit")
@@ -142,6 +161,21 @@ def main(argv: list[str] | None = None) -> int:
         elif cmd == "decide": result = experiments.decide(repo, args.experiment, document(args.calibration) if args.calibration else None)
         elif cmd == "promote": result = {"release": str(experiments.promote(repo, args.experiment, args.release, document(args.calibration), document(args.approval)))}
         elif cmd == "learning-seed": result = learning.seed(repo, args.run, document(args.lessons))
+        elif cmd == "research-guidance": result = learning.guidance_for(repo, args.learning_from, document(args.brief))
+        elif cmd == "factory-learning-evidence":
+            result = factory_learning.freeze_evidence(repo, args.cycle, args.runs, args.artifacts)
+        elif cmd == "factory-learning-register":
+            result = {"registered": str(factory_learning.register(repo, args.cycle, document(args.learner),
+                        document(args.learner_metadata), document(args.review), document(args.reviewer_metadata)))}
+        elif cmd == "factory-learning-freeze-change": result = factory_learning.freeze_change(repo, args.cycle)
+        elif cmd == "factory-learning-holdout-submit":
+            result = factory_learning.submit_holdout(repo, args.cycle, document(args.selection), document(args.metadata))
+        elif cmd == "factory-learning-prepare-arm":
+            result = factory_learning.prepare_arm(
+                repo, args.cycle, args.arm, args.run, document(args.brief), document(args.research),
+                args.parent, args.fixture, document(args.research_preflight) if args.research_preflight else None)
+        elif cmd == "factory-learning-bind-experiment": result = factory_learning.bind_experiment(repo, args.cycle, args.experiment)
+        elif cmd == "factory-learning-decide": result = factory_learning.decide(repo, args.cycle)
         elif cmd == "regression-task": result = regression.task(repo, args.run, args.order)
         elif cmd == "regression-submit":
             record = regression.submit(repo, args.run, args.order, document(args.response), document(args.metadata))
@@ -170,7 +204,7 @@ def main(argv: list[str] | None = None) -> int:
             print(json.dumps({"written": str(Path(args.out).resolve())}))
         else:
             print(json.dumps(result, indent=2, ensure_ascii=False))
-        if result.get("status") in ("INCOMPLETE", "BLOCKED") or result.get("decision") in ("INCONCLUSIVE", "REJECT", "REPAIR_REQUIRED"):
+        if result.get("status") in ("INCOMPLETE", "BLOCKED") or result.get("decision") in ("INCONCLUSIVE", "REJECT", "REPAIR_REQUIRED", "REJECT_FACTORY_CHANGE"):
             return 2
         return 0
     except Exception as exc:

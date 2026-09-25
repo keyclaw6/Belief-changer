@@ -26,7 +26,8 @@ def instrument(repo: Path) -> dict:
 
 def register(repo: Path, spec: dict) -> Path:
     exact_keys(spec, {"schema_version", "id", "parent_release", "hypothesis", "primary_dimension", "allowed_change_paths",
-                      "subjects", "samples_per_subject", "pairs", "freeze_plan", "confirmatory"}, label="experiment specification")
+                      "subjects", "samples_per_subject", "pairs", "freeze_plan", "confirmatory"},
+               {"freeze_research"}, label="experiment specification")
     require(spec["schema_version"] == 2, "Experiment schema must be v2")
     identifier(spec["id"])
     require(spec["parent_release"] is None or isinstance(spec["parent_release"], str), "Invalid parent release")
@@ -34,6 +35,7 @@ def register(repo: Path, spec: dict) -> Path:
     nonempty(spec["hypothesis"], "Hypothesis")
     require(type(spec["samples_per_subject"]) is int and spec["samples_per_subject"] >= 3, "At least three independent generation pairs per subject for screening")
     require(type(spec["freeze_plan"]) is bool and type(spec["confirmatory"]) is bool, "Invalid design switches")
+    require(type(spec.get("freeze_research", True)) is bool, "freeze_research must be boolean")
     require(isinstance(spec["subjects"], list) and len(set(spec["subjects"])) == len(spec["subjects"]) >= 2, "At least two distinct subjects required")
     require(isinstance(spec["allowed_change_paths"], list) and bool(spec["allowed_change_paths"]), "Preregister the intervention files")
     require(isinstance(spec["pairs"], list), "Pairs must be a list")
@@ -58,13 +60,22 @@ def register(repo: Path, spec: dict) -> Path:
             require(run.manifest["subject"] == pair["subject"], "Pair subject mismatch")
             require(run.manifest["parent"] == spec["parent_release"], "Run has wrong declared parent release")
             if spec["confirmatory"]:
-                require(not (run.root / "results").exists() or not list((run.root / "results").glob("writer-*.json")), "Confirmatory specification must be registered before generation")
+                require(not (run.root / "results").exists() or not list((run.root / "results").glob("*.json")),
+                        "Confirmatory specification must be registered before any role output is observed")
             runs[rid] = digest(run.manifest)
             arm_hashes[arm].add(run.manifest["factory_digest"])
             sides.append(run)
         parent, candidate = sides
-        for k in ("brief_sha256", "research_sha256"):
-            require(parent.manifest[k] == candidate.manifest[k], f"Confounded pair: {k} differs")
+        require(parent.manifest["fixture"] == candidate.manifest["fixture"],
+                "Confounded pair: fixture/live trust differs")
+        require(parent.manifest.get("learning_from") == candidate.manifest.get("learning_from")
+                and parent.manifest.get("learning_sha256") == candidate.manifest.get("learning_sha256"),
+                "Confounded pair: inherited cross-iteration learning differs")
+        require(parent.manifest["brief_sha256"] == candidate.manifest["brief_sha256"],
+                "Confounded pair: brief_sha256 differs")
+        if spec.get("freeze_research", True):
+            require(parent.manifest["research_sha256"] == candidate.manifest["research_sha256"],
+                    "Confounded pair: research_sha256 differs despite freeze_research")
         a, b = parent.manifest["factory_files"], candidate.manifest["factory_files"]
         changes = {p for p in set(a) | set(b) if a.get(p) != b.get(p)}
         require(changes <= set(spec["allowed_change_paths"]), f"Undeclared intervention files: {sorted(changes-set(spec['allowed_change_paths']))}")
@@ -260,8 +271,35 @@ def decide(repo: Path, eid: str, calibration: dict | None = None) -> dict:
         reasons.append("Fixture experiment is software testing, never production evidence")
     verdict = "REJECT" if critical or regressions else "INCONCLUSIVE" if reasons else "KEEP_ELIGIBLE"
     return {"decision": verdict, "reasons": reasons, "subjects": subjects, "critical": critical,
-            "order_instability": unstable, "calibration": cal, "registration_hash": digest(reg),
+            "order_instability": unstable,
+            "judge_models": [{"model": model, "family": family} for model, family in sorted(judge_models)],
+            "calibration": cal, "registration_hash": digest(reg),
             "fixture": fixture, "efficacy": "NOT_MEASURED"}
+
+
+def transfer_decide(repo: Path, eid: str) -> dict:
+    """Strict engineering transfer gate. It can retain a factory change, never authorize publication."""
+    measured = decide(repo, eid, None)
+    if "reasons" not in measured:
+        return {"decision": "INCONCLUSIVE", "reasons": [measured.get("reason", "Incomplete transfer panel")],
+                "missing": measured.get("missing", []), "subjects": {}, "critical": [],
+                "order_instability": [], "judge_models": [], "registration_hash": None, "fixture": None,
+                "efficacy": "NOT_MEASURED", "release_eligible": False}
+    reasons = [r for r in measured["reasons"] if r != "Real human calibration not supplied"]
+    primary_regression = any(subject["primary_losses"] > 0 for subject in measured["subjects"].values())
+    if measured["critical"] or primary_regression or any("secondary-dimension regression" in r for r in reasons):
+        if primary_regression:
+            reasons.append("Observed primary-dimension regression in at least one held-out subject")
+        verdict = "REJECT_TRANSFER"
+    elif reasons:
+        verdict = "INCONCLUSIVE"
+    else:
+        verdict = "TRANSFER_ELIGIBLE_NONPROMOTIONAL"
+    return {"decision": verdict, "reasons": reasons, "subjects": measured["subjects"],
+            "critical": measured["critical"], "order_instability": measured["order_instability"],
+            "judge_models": measured["judge_models"],
+            "registration_hash": measured["registration_hash"], "fixture": measured["fixture"],
+            "efficacy": "NOT_MEASURED", "release_eligible": False}
 
 
 def promote(repo: Path, eid: str, release_id: str, calibration: dict, approval: dict) -> Path:

@@ -21,7 +21,7 @@ from bc_factory.runs import Run, prepare
 from bc_factory.quality import assemble_book, edit_book, overlap_screen, screen
 from bc_factory.demo import accepted, finish, inputs, metadata, scaffold, run_demo
 from bc_factory.adapters import execute, extract
-from bc_factory.experiments import CALIBRATION_CATEGORIES, decide, pair_task, promote, register, submit_pair, validate_calibration, wilson_lower
+from bc_factory.experiments import CALIBRATION_CATEGORIES, decide, pair_task, promote, register, submit_pair, transfer_decide, validate_calibration, wilson_lower
 from bc_factory.archive import build, excluded
 
 class Base(unittest.TestCase):
@@ -794,11 +794,90 @@ class ExperimentTests(Base):
         self.setup_experiment()
         self.assertEqual(decide(self.repo,'exp1')['decision'],'INCONCLUSIVE')
         self.assertEqual(len(decide(self.repo,'exp1')['missing']),12)
+        transfer=transfer_decide(self.repo,'exp1')
+        self.assertEqual(transfer['decision'],'INCONCLUSIVE')
+        self.assertEqual(len(transfer['missing']),12)
+        self.assertEqual(transfer['judge_models'],[])
+    def test_research_process_intervention_must_be_preregistered(self):
+        pairs=[]
+        for subject in ('rs1','rs2'):
+            brief,research,plan=inputs(subject)
+            for n in range(3):
+                prepare(self.repo,f'{subject}-p{n}',brief,research,fixture=True)
+                changed=copy.deepcopy(research)
+                changed['open_questions']=list(changed['open_questions'])+[f'candidate research question {n}']
+                prepare(self.repo,f'{subject}-c{n}',brief,changed,fixture=True)
+                pairs.append({'id':f'{subject}-{n}','subject':subject,
+                              'parent_run':f'{subject}-p{n}','candidate_run':f'{subject}-c{n}'})
+        spec={'schema_version':2,'id':'research-open','parent_release':None,
+              'hypothesis':'Research-process intervention fixture','primary_dimension':'argument',
+              'allowed_change_paths':['prompts/research-agent.md'],'subjects':['rs1','rs2'],
+              'samples_per_subject':3,'pairs':pairs,'freeze_plan':False,
+              'freeze_research':False,'confirmatory':True}
+        register(self.repo,spec)
+        strict=copy.deepcopy(spec);strict['id']='research-frozen';strict['freeze_research']=True
+        with self.assertRaises(FactoryError): register(self.repo,strict)
+
+    def test_register_rejects_fixture_live_trust_confound(self):
+        spec=self.setup_experiment()
+        candidate=self.repo/'runs/s1-c0/manifest.json'
+        manifest=unseal(candidate)
+        candidate.unlink()
+        manifest['fixture']=False
+        seal(candidate,manifest)
+        spec['id']='trust-confound'
+        with self.assertRaises(FactoryError): register(self.repo,spec)
+
+    def test_register_rejects_inherited_learning_confound_even_when_research_may_differ(self):
+        pairs=[]
+        manifests={}
+        for subject in ('la','lb'):
+            for n in range(3):
+                for arm in ('p','c'):
+                    rid=f'{subject}-{arm}{n}'
+                    files={'prompts/chapter-writer.md':'a' if arm=='p' else 'b'}
+                    manifests[rid]={'run_id':rid,'subject':subject,'parent':None,'fixture':False,
+                                    'brief_sha256':'1'*64,'research_sha256':('2' if arm=='p' else '3')*64,
+                                    'learning_from':None if arm=='p' else 'other-baseline',
+                                    'learning_sha256':None if arm=='p' else '4'*64,
+                                    'factory_files':files,'factory_digest':digest(files)}
+                pairs.append({'id':f'{subject}-{n}','subject':subject,
+                              'parent_run':f'{subject}-p{n}','candidate_run':f'{subject}-c{n}'})
+        class FakeRun:
+            def __init__(self, _repo, rid): self.manifest=manifests[rid]
+        spec={'schema_version':2,'id':'learning-confound','parent_release':None,
+              'hypothesis':'Reject inherited-learning confound','primary_dimension':'argument',
+              'allowed_change_paths':['prompts/chapter-writer.md'],'subjects':['la','lb'],
+              'samples_per_subject':3,'pairs':pairs,'freeze_plan':False,
+              'freeze_research':False,'confirmatory':False}
+        with patch('bc_factory.experiments.Run',side_effect=FakeRun):
+            with self.assertRaises(FactoryError): register(self.repo,spec)
+
     def test_register_reused_book_as_replicate_rejected(self):
         spec=self.setup_experiment();spec['id']='exp2';spec['pairs'][1]['parent_run']=spec['pairs'][0]['parent_run']
         with self.assertRaises(FactoryError): register(self.repo,spec)
     def test_confirmatory_cannot_be_posthoc(self):
         spec=self.setup_experiment(True);spec['id']='exp2';spec['confirmatory']=True
+        with self.assertRaises(FactoryError): register(self.repo,spec)
+
+    def test_confirmatory_cannot_register_after_even_evidence_review_output(self):
+        pairs=[]
+        for subject in ('pre1','pre2'):
+            brief,research,plan=inputs(subject)
+            for n in range(3):
+                for arm in ('p','c'):
+                    rid=f'{subject}-{arm}{n}'
+                    prepare(self.repo,rid,brief,research,fixture=True)
+                    run=Run(self.repo,rid)
+                    t=run.task('evidence-reviewer')
+                    run.submit(t,accepted(),metadata(True))
+                pairs.append({'id':f'{subject}-{n}','subject':subject,
+                              'parent_run':f'{subject}-p{n}','candidate_run':f'{subject}-c{n}'})
+        spec={'schema_version':2,'id':'pre-observed','parent_release':None,
+              'hypothesis':'Must be frozen before observing role outputs','primary_dimension':'argument',
+              'allowed_change_paths':['prompts/chapter-writer.md'],'subjects':['pre1','pre2'],
+              'samples_per_subject':3,'pairs':pairs,'freeze_plan':True,
+              'freeze_research':True,'confirmatory':True}
         with self.assertRaises(FactoryError): register(self.repo,spec)
     def test_pair_task_is_blinded(self):
         spec=self.setup_experiment(True);t=pair_task(self.repo,'exp1','s1-0','AB')

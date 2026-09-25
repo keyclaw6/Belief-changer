@@ -9,7 +9,7 @@ import shutil
 import subprocess
 from pathlib import Path
 from .common import (FactoryError, atomic_bytes, canonical, confined, digest, exact_keys, file_hash,
-                     identifier, lock, nonempty, now, read_json, require, seal, text_hash, unseal)
+                     identifier, lock, nonempty, now, parse_json, read_json, require, seal, text_hash, unseal)
 from .schema import (EXTERNAL_ROLES, ROLES, REVIEW_ROLES, validate_brief, validate_plan, validate_research,
                      validate_review, validate_state, validate_writer, validate_config, validate_metadata)
 from .quality import assemble_book, apply_front_repairs, apply_note_repairs, base_front_matter, edit_book, render_source_notes, screen, screen_wrappers, split_operations
@@ -23,17 +23,27 @@ REQUIRED_CODE = ["scripts/factory.py", "factory/config.json", "factory/research-
 
 def active_files(repo: Path) -> list[str]:
     paths = [*REQUIRED_CODE]
-    for glob in ("scripts/bc_factory/*.py", "prompts/*.md", "loop/judges/*.md"):
+    for glob in ("scripts/bc_factory/*.py", "prompts/*.md", "loop/judges/*.md", "loop/prompts/*.md",
+                 ".opencode/agents/*.md", ".pi/agents/*.md"):
         paths.extend(p.relative_to(repo).as_posix() for p in repo.glob(glob) if p.is_file())
+    for rel in ("AGENTS.md", "loop/PROGRAM.md", "loop/subjects.md", "docs/FACTORY-V2.md",
+                "docs/CROSS-ITERATION-LEARNING.md", ".opencode/agent/factory.md"):
+        if (repo / rel).is_file():
+            paths.append(rel)
     return sorted(set(paths))
 
 
 def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | None = None,
             fixture: bool = False, research_preflight: dict | None = None,
             research_revision_of: str | None = None, remediation_of: str | None = None,
-            learning_from: str | None = None) -> Path:
+            learning_from: str | None = None, factory_ref: str | None = None) -> Path:
     repo = repo.resolve()
     identifier(run_id)
+    if factory_ref is not None:
+        require(remediation_of is None and research_revision_of is None,
+                "Historical factory snapshots are only for fresh controlled arms, not successor/remediation lineages")
+        require(learning_from is None,
+                "Held-out factory arms cannot import a subject-specific learning lineage")
     if parent is not None:
         identifier(parent)
     evidence_feedback = None
@@ -92,6 +102,18 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
     elif learning_packet is not None:
         from .learning import validate_packet_binding
         validate_packet_binding(repo, learning_packet, brief["subject"], fixture)
+    research_guidance_sha256 = None
+    if learning_packet is not None:
+        legacy_remediation = remediation is not None and source.manifest.get("research_guidance_sha256") is None
+        if legacy_remediation:
+            require("learning_context" not in research,
+                    "Legacy remediation must inherit its source research byte-identically")
+        else:
+            from .learning import validate_research_learning
+            validate_research_learning(research, learning_packet, brief)
+            research_guidance_sha256 = research["learning_context"]["guidance_sha256"]
+    else:
+        require("learning_context" not in research, "Research learning context requires --learning-from")
     if remediation is not None:
         # Nothing is retrieved: frozen research is inherited byte-identical, so
         # the live preflight gate (freshness for NEW retrieval) does not apply.
@@ -105,18 +127,34 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
         validate_coverage(research)
     root = confined(repo, f"runs/{run_id}")
     require(not root.exists(), f"Run already exists: {run_id}. Reuse with status/task; never overwrite a frozen run.")
-    config = read_json(repo / "factory/config.json")
-    validate_config(config)
     files = active_files(repo)
-    require(all((repo / rel).is_file() for rel in files), "Required factory code/config missing")
+    source_commit = None
+    source_bytes: dict[str, bytes] = {}
+    if factory_ref is not None:
+        resolved = subprocess.run(["git", "rev-parse", "--verify", f"{factory_ref}^{{commit}}"],
+                                  cwd=repo, capture_output=True, text=True)
+        require(resolved.returncode == 0 and bool(resolved.stdout.strip()), "Unknown factory snapshot commit")
+        source_commit = resolved.stdout.strip()
+        for rel in files:
+            blob = subprocess.run(["git", "show", f"{source_commit}:{rel}"],
+                                  cwd=repo, capture_output=True)
+            require(blob.returncode == 0, f"Factory snapshot commit is missing required file: {rel}")
+            source_bytes[rel] = blob.stdout
+        config = parse_json(source_bytes["factory/config.json"].decode("utf-8"))
+    else:
+        require(all((repo / rel).is_file() for rel in files), "Required factory code/config missing")
+        source_bytes = {rel: confined(repo, rel).read_bytes() for rel in files}
+        config = read_json(repo / "factory/config.json")
+        rev = subprocess.run(["git", "rev-parse", "HEAD"], cwd=repo, capture_output=True, text=True)
+        source_commit = rev.stdout.strip() if rev.returncode == 0 else None
+    validate_config(config)
     root.mkdir(parents=True)
     try:
         with lock(root):
             entries = {}
             for rel in files:
-                src = confined(repo, rel)
                 dest = confined(root / "snapshot", rel)
-                atomic_bytes(dest, src.read_bytes())
+                atomic_bytes(dest, source_bytes[rel])
                 entries[rel] = file_hash(dest)
             for name, data in (("brief.json", brief), ("research.json", research)):
                 atomic_bytes(root / "inputs" / name, canonical(data) + b"\n")
@@ -142,10 +180,9 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
                 latest = sorted((root / "assembly").glob("assembly-r*.json"))[-1]
                 require(text_hash((root / "book.md").read_text(encoding="utf-8"))
                         == unseal(latest)["text_sha256"], "Inherited book does not match inherited assembly")
-            rev = subprocess.run(["git", "rev-parse", "HEAD"], cwd=repo, capture_output=True, text=True)
             manifest = {"schema_version": 2, "run_id": run_id, "subject": brief["subject"],
                         "created_at": now(), "parent": parent, "fixture": fixture,
-                        "origin_commit": rev.stdout.strip() if rev.returncode == 0 else None,
+                        "origin_commit": source_commit,
                         "factory_files": entries, "factory_digest": digest(entries),
                         "brief_sha256": file_hash(root / "inputs/brief.json"),
                         "research_sha256": file_hash(root / "inputs/research.json"),
@@ -154,6 +191,7 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
                         "evidence_feedback_sha256": file_hash(root / "inputs/evidence-feedback.json") if evidence_feedback is not None else None,
                         "learning_from": learning_from,
                         "learning_sha256": file_hash(root / "inputs/cross-iteration-learning.json") if learning_packet is not None else None,
+                        "research_guidance_sha256": research_guidance_sha256,
                         "remediation_of": remediation["source_run"] if remediation is not None else None,
                         "remediation_source": remediation}
             seal(root / "manifest.json", manifest)
@@ -206,11 +244,20 @@ class Run:
             self.learning = read_json(lpath)
             require(self.learning.get("baseline_run") == self.manifest.get("learning_from"),
                     "Cross-iteration learning lineage mismatch")
-            from .learning import validate_packet_binding
+            from .learning import validate_packet_binding, validate_research_learning
             validate_packet_binding(self.repo, self.learning, self.brief["subject"], self.manifest["fixture"])
+            if self.manifest.get("research_guidance_sha256") is not None:
+                validate_research_learning(self.research, self.learning, self.brief)
+                require(self.research["learning_context"]["guidance_sha256"] == self.manifest["research_guidance_sha256"],
+                        "Frozen research guidance receipt changed")
+            else:
+                # Backward compatibility: runs frozen before pre-research receipts remain readable.
+                require("learning_context" not in self.research,
+                        "Legacy learning run has an unbound research learning context")
         else:
             self.learning = None
             require(self.manifest.get("learning_from") is None, "Learning lineage is missing its frozen packet")
+            require("learning_context" not in self.research, "Frozen research learning context has no learning lineage")
         self.config = read_json(self.root / "snapshot/factory/config.json")
         validate_config(self.config)
 
