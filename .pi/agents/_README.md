@@ -24,6 +24,8 @@ Runtime role → Pi wrapper:
 - book-editor → book-editor
 - final-auditor → final-auditor
 
+The Pi `factory-orchestrator` is the reusable factory controller. A host harness may launch or supervise it, but the factory runtime itself is Pi plus these prompts/skills and the deterministic CLI.
+
 Autoresearch lives under `loop/` and is executed by the outer controller, not through Pi wrappers. That includes pairwise judging, hypothesizing, trace analysis, Factory Learner/Reviewer, baseline comparison and held-out experiments.
 
 Factory-runtime rules:
