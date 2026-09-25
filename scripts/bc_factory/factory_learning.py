@@ -397,6 +397,7 @@ def submit_holdout(repo: Path, cycle_id: str, selection: dict, metadata: dict) -
         retirement_path = _holdout_record_path(repo, cycle_id)
         retirement = unseal(retirement_path)
         require(set(retirement["subjects"]) == set(selection["subjects"])
+                and set(retirement.get("training_subjects", [])) == set(reg["learner"]["falsification_test"]["training_subjects"])
                 and retirement["selection_sha256"] == digest(selection)
                 and retirement["change_sha256"] == digest(change),
                 "Tracked holdout-retirement record differs from frozen selection")
@@ -435,6 +436,7 @@ def submit_holdout(repo: Path, cycle_id: str, selection: dict, metadata: dict) -
         for path in registry_root.glob("*.json"):
             prior = unseal(path)
             previously_revealed.update(prior["subjects"])
+            previously_revealed.update(prior.get("training_subjects", []))
     require(not previously_revealed.intersection(subjects),
             "A previously revealed held-out topic cannot count as unseen transfer evidence again")
     nonempty(selection["rationale"], "held-out selection rationale")
@@ -448,6 +450,7 @@ def submit_holdout(repo: Path, cycle_id: str, selection: dict, metadata: dict) -
     doc = {"schema_version": 2, "cycle_id": cycle_id, "change_sha256": digest(change),
            "selection": selection, "selector_metadata": metadata, "selected_at": now()}
     retirement = {"schema_version": 2, "cycle_id": cycle_id, "subjects": list(subjects),
+                  "training_subjects": sorted(training),
                   "selection_sha256": digest(selection), "change_sha256": digest(change),
                   "selector_family": metadata["family"], "selected_at": doc["selected_at"]}
     with lock(root):
@@ -491,6 +494,7 @@ def bind_experiment(repo: Path, cycle_id: str, experiment_id: str) -> dict:
     retirement_path = _holdout_record_path(repo, cycle_id)
     retirement = unseal(retirement_path)
     require(set(retirement["subjects"]) == set(holdout["selection"]["subjects"])
+            and set(retirement.get("training_subjects", [])) == set(reg["learner"]["falsification_test"]["training_subjects"])
             and retirement["selection_sha256"] == digest(holdout["selection"]),
             "Committed holdout-retirement record is not bound to this selection")
     exp_root, exp = experiments.registration(repo, experiment_id)
