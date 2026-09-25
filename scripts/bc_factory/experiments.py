@@ -60,7 +60,8 @@ def register(repo: Path, spec: dict) -> Path:
             require(run.manifest["subject"] == pair["subject"], "Pair subject mismatch")
             require(run.manifest["parent"] == spec["parent_release"], "Run has wrong declared parent release")
             if spec["confirmatory"]:
-                require(not (run.root / "results").exists() or not list((run.root / "results").glob("writer-*.json")), "Confirmatory specification must be registered before generation")
+                require(not (run.root / "results").exists() or not list((run.root / "results").glob("*.json")),
+                        "Confirmatory specification must be registered before any role output is observed")
             runs[rid] = digest(run.manifest)
             arm_hashes[arm].add(run.manifest["factory_digest"])
             sides.append(run)
