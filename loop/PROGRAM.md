@@ -21,11 +21,12 @@ After the candidate's own final audit ACCEPTS its latest assembly, run a blinded
 - a consistent baseline win on ANY quality dimension -> `REPAIR_REQUIRED`;
 - any critical candidate finding -> `REPAIR_REQUIRED`;
 - order disagreement on any dimension -> `INCONCLUSIVE`;
-- only no losses, no criticals and stable AB/BA observations -> `PASS`.
+- at least one stable candidate win with no losses/criticals/order instability -> `ADVANCE`;
+- stable ties on every dimension -> `PRESERVE_BASELINE`.
 
 `REPAIR_REQUIRED` may reopen the book-editor only in the SAME logical run and only against the sealed accepted assembly plus the bound regression decision. Accepted chapters remain immutable; assembly edits remain versioned. The resulting assembly must receive a new independent final audit and a fresh AB/BA no-regression gate; the earlier gate becomes stale by construction. `INCONCLUSIVE` authorizes neither repair nor advancement. A round-cap failure remains a system defect, not permission to reset the lineage.
 
-Only a `PASS` may run `advance-baseline`, which emits the next content-addressed learning packet bound to the exact candidate book/audit. This optimization baseline is NOT the release champion. It does not update `factory/champion.json`, cannot substitute for confirmatory experiments, human calibration/review, or claim efficacy.
+`advance-baseline` advances only on `ADVANCE`. On `PRESERVE_BASELINE`, the old book remains the baseline and no new baseline state is created. This optimization baseline is NOT the release champion. It does not update `factory/champion.json`, cannot substitute for confirmatory experiments, human calibration/review, or claim efficacy.
 
 ### Factory-learning boundary
 
@@ -33,8 +34,8 @@ The no-regression packet protects what the next book must not forget; it does no
 
 1. Run `loop/prompts/factory-learner.md` on TRAINING-subject books/research/audits/judgments/traces. The learner must separate subject-local lessons from transferable mechanisms and may return CHANGE_FACTORY, KEEP_FACTORY, or MEASURE_MORE.
 2. Run `loop/prompts/factory-learning-reviewer.md` independently on the learner proposal and underlying evidence. Only an ACCEPTed proposal may become a factory intervention.
-3. Persist both exact outputs before changing code/prompts. The accepted review fixes the allowed change surface, protected strengths, expected transfer mechanism, training subjects, held-out subjects, judge/instrument, and falsification criteria.
-4. Held-out subjects are a sealed test set. Their books, judgments, traces and failure details must not be inspected to design or tune the current intervention. Freeze the intervention and criteria first; open held-out results only for evaluation.
+3. Persist both exact outputs before changing code/prompts. The accepted review fixes the change surface, protected strengths, expected transfer mechanism, training subjects, generic holdout requirements, judge/instrument, and falsification criteria.
+4. After the intervention and criteria are frozen, the orchestrator chooses exact unseen held-out subjects matching those requirements. Do not use their results to tune the same intervention.
 5. A change that improves training subjects but regresses or fails to transfer on held-out subjects is NOT a factory improvement. Reject/revise it for the next cycle rather than tuning the same intervention against the revealed test results.
 6. Never globalize a one-book wording repair unless the learner/reviewer identifies and accepts the deeper generating mechanism. Never use a held-out topic as both development feedback and held-out evidence in the same cycle.
 7. When competing mechanisms remain plausible, prefer MEASURE_MORE or a controlled ablation over multiple prompt tweaks.
