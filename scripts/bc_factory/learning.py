@@ -157,7 +157,10 @@ def advance(repo: Path, run_id: str) -> dict:
     candidate.complete()
     require(candidate.learning is not None, "Baseline advancement requires inherited learning")
     decision = decide(repo, run_id)
-    require(decision["decision"] == "PASS", f"Baseline advancement blocked: {decision['decision']}")
+    if decision["decision"] == "PRESERVE_BASELINE":
+        return {"status": "BASELINE_PRESERVED", "run_id": run_id,
+                "baseline_run": candidate.learning["baseline_run"]}
+    require(decision["decision"] == "ADVANCE", f"Baseline advancement blocked: {decision['decision']}")
     old = candidate.learning
     preserve = {x["dimension"]: dict(x) for x in old["preserve"]}
     improve = {x["dimension"]: dict(x) for x in old["improve"]}
@@ -177,9 +180,9 @@ def advance(repo: Path, run_id: str) -> dict:
     dpath = decision_path(candidate, candidate.accepted_assembly()["assembly"]["assembly_round"])
     packet = _packet_for(
         candidate, list(preserve.values()), list(improve.values()),
-        [dict(x) for x in old["recurring_repairs"]], list(candidate.research["open_questions"]),
+        [dict(x) for x in old["recurring_repairs"]], list(old["research_gaps"]),
         {"mode": "no_regression_pass", "source_sha256": file_hash(dpath),
-         "note": "Advanced only after an independent blinded AB/BA no-regression PASS."},
+         "note": "Advanced only after a stable blinded AB/BA candidate improvement with no regression."},
     )
     path = learning_path(candidate)
     with lock(candidate.root / "regression"):
