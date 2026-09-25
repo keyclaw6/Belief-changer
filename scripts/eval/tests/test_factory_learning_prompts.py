@@ -66,10 +66,19 @@ class FactoryBoundaryTests(unittest.TestCase):
     def test_autoresearch_owns_outer_learning(self):
         program = self.text("loop/PROGRAM.md")
         self.assertIn("Autoresearch is the OUTER controller", program)
+        self.assertIn("persistent Pi `factory-orchestrator`", program)
+        self.assertNotIn("factory/OpenCode executor", program)
         self.assertIn("never as Pi factory agents", program)
         self.assertIn("factory-learner.md", program)
         self.assertIn("factory-learning-reviewer.md", program)
         self.assertIn("exact unseen held-out subjects", program)
+
+    def test_pi_orchestrator_is_the_portable_factory_controller(self):
+        readme = self.text(".pi/agents/_README.md")
+        agents = self.text("AGENTS.md")
+        self.assertIn("Pi `factory-orchestrator` is the reusable factory controller", readme)
+        self.assertIn("Pi `factory-orchestrator` is the factory controller", agents)
+        self.assertNotIn("OpenCode is the persistent factory controller", agents)
 
     def test_factory_cli_does_not_hard_import_outer_utilities(self):
         head = "\n".join(self.text("scripts/bc_factory/cli.py").splitlines()[:15])

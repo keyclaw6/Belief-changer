@@ -7,7 +7,7 @@ Read AGENTS.md, docs/FACTORY-V2.md, factory/champion.json, the relevant immutabl
 ## Execution ownership for auto-research iterations
 Autoresearch is the OUTER controller. It invokes the reusable book factory as a component; autoresearch agents themselves do not run as Pi agents.
 
-For each requested book, start or resume one persistent factory/OpenCode executor. Inside that factory call, Pi agents own research, evidence review, planning, writing/review, state, whole-book editing and final audit. Autoresearch stays hands-off while the factory is healthy. The factory returns control when `verify` reaches `COMPLETE_UNRELEASED`.
+For each requested book, start or resume one persistent Pi `factory-orchestrator`. Inside that factory call, only the factory roles under `.pi/agents/` own research, evidence review, planning, writing/review, state, whole-book editing and final audit. The autoresearch controller itself stays outside Pi and stays hands-off while the factory is healthy. The factory returns control when `verify` reaches `COMPLETE_UNRELEASED`.
 
 Only after that handoff does autoresearch resume: run blinded comparisons, baseline/no-regression decisions, Factory Learner/Reviewer, held-out evaluation and selection of the next intervention. If no-regression evaluation returns `REPAIR_REQUIRED`, autoresearch may call the SAME factory run back for its bounded whole-book repair, then take control again after the repaired book is independently audited and verified.
 
