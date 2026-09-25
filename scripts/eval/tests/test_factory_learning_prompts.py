@@ -43,6 +43,18 @@ class FactoryBoundaryTests(unittest.TestCase):
                      "trace-analyzer", "judge"):
             self.assertFalse((ROOT / f".pi/agents/{name}.md").exists())
 
+    def test_pi_factory_agents_do_not_read_autoresearch_contracts(self):
+        for p in (ROOT / ".pi/agents").glob("*.md"):
+            if p.name == "_README.md":
+                continue
+            text = p.read_text(encoding="utf-8")
+            self.assertNotIn("AGENTS.md", text, p.name)
+            self.assertNotIn("loop/PROGRAM.md", text, p.name)
+        orchestrator = self.text("prompts/factory-orchestrator.md")
+        self.assertIn(".pi/agents/_README.md", orchestrator)
+        self.assertNotIn("AGENTS.md", orchestrator)
+        self.assertNotIn("loop/PROGRAM.md", orchestrator)
+
     def test_factory_orchestrator_stops_at_completed_book(self):
         p = self.text("prompts/factory-orchestrator.md")
         self.assertIn("COMPLETE_UNRELEASED", p)
