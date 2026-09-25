@@ -69,6 +69,24 @@ class FactoryLearningPromptTests(unittest.TestCase):
                 self.assertTrue(p.is_file())
                 self.assertIn(prompt, p.read_text(encoding="utf-8"))
 
+    def test_helper_wrappers_match_their_real_surfaces(self):
+        researcher = self.text(".pi/agents/researcher.md")
+        hypothesizer = self.text(".pi/agents/hypothesizer.md")
+        trace = self.text(".pi/agents/trace-analyzer.md")
+        judge = self.text(".pi/agents/judge.md")
+        self.assertIn("not a factory task/result role", researcher)
+        self.assertIn("Do not mutate runs", hypothesizer)
+        self.assertIn("Do not mutate runs", trace)
+        self.assertIn("pair-submit", judge)
+        self.assertIn("regression-submit", judge)
+
+    def test_factory_learning_defaults_to_prompt_skill_changes(self):
+        learner = self.text("loop/prompts/factory-learner.md")
+        reviewer = self.text("loop/prompts/factory-learning-reviewer.md")
+        self.assertIn("Default to the smallest prompt or skill change", learner)
+        self.assertIn("existing prompt/skill", reviewer)
+        self.assertIn("require the simpler change", reviewer)
+
     def test_meta_agents_are_pi_only_and_read_only(self):
         for name in ("factory-learner", "factory-learning-reviewer"):
             p = self.text(f".pi/agents/{name}.md")
