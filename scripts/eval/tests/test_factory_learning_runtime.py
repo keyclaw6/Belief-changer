@@ -235,6 +235,10 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
             submit_holdout(self.repo, "cycle-2",
                            {"schema_version": 2, "subjects": ["held-c", "held-d"], "rationale": "unseen"},
                            self.meta("learner"))
+        with self.assertRaises(FactoryError):
+            submit_holdout(self.repo, "cycle-2",
+                           {"schema_version": 2, "subjects": ["held-c", "held-d"], "rationale": "unseen"},
+                           self.meta("reviewer"))
 
     def test_transfer_binding_rejects_confounded_or_impossible_designs(self):
         _, learner, _ = self.register_cycle("cycle-bind")
