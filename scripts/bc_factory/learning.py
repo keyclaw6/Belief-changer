@@ -378,7 +378,7 @@ def advance(repo: Path, run_id: str) -> dict:
             path = _next_revision_path(baseline)
             status = "BASELINE_PRESERVED_LEARNING_UPDATED"
             packet = _packet_for(
-                baseline, list(preserve.values()), list(improve.values()), repairs, _next_research_gaps(candidate),
+                baseline, list(preserve.values()), list(improve.values()), repairs, _next_research_gaps(candidate, old),
                 {"mode": mode, "source_sha256": decision_sha, "note": note},
             )
             seal(path, packet)
