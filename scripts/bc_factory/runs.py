@@ -9,7 +9,7 @@ import shutil
 import subprocess
 from pathlib import Path
 from .common import (FactoryError, atomic_bytes, canonical, confined, digest, exact_keys, file_hash,
-                     identifier, lock, nonempty, now, read_json, require, seal, text_hash, unseal)
+                     identifier, lock, nonempty, now, parse_json, read_json, require, seal, text_hash, unseal)
 from .schema import (EXTERNAL_ROLES, ROLES, REVIEW_ROLES, validate_brief, validate_plan, validate_research,
                      validate_review, validate_state, validate_writer, validate_config, validate_metadata)
 from .quality import assemble_book, apply_front_repairs, apply_note_repairs, base_front_matter, edit_book, render_source_notes, screen, screen_wrappers, split_operations
@@ -36,9 +36,14 @@ def active_files(repo: Path) -> list[str]:
 def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | None = None,
             fixture: bool = False, research_preflight: dict | None = None,
             research_revision_of: str | None = None, remediation_of: str | None = None,
-            learning_from: str | None = None) -> Path:
+            learning_from: str | None = None, factory_ref: str | None = None) -> Path:
     repo = repo.resolve()
     identifier(run_id)
+    if factory_ref is not None:
+        require(remediation_of is None and research_revision_of is None,
+                "Historical factory snapshots are only for fresh controlled arms, not successor/remediation lineages")
+        require(learning_from is None,
+                "Held-out factory arms cannot import a subject-specific learning lineage")
     if parent is not None:
         identifier(parent)
     evidence_feedback = None
@@ -122,18 +127,34 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
         validate_coverage(research)
     root = confined(repo, f"runs/{run_id}")
     require(not root.exists(), f"Run already exists: {run_id}. Reuse with status/task; never overwrite a frozen run.")
-    config = read_json(repo / "factory/config.json")
-    validate_config(config)
     files = active_files(repo)
-    require(all((repo / rel).is_file() for rel in files), "Required factory code/config missing")
+    source_commit = None
+    source_bytes: dict[str, bytes] = {}
+    if factory_ref is not None:
+        resolved = subprocess.run(["git", "rev-parse", "--verify", f"{factory_ref}^{{commit}}"],
+                                  cwd=repo, capture_output=True, text=True)
+        require(resolved.returncode == 0 and bool(resolved.stdout.strip()), "Unknown factory snapshot commit")
+        source_commit = resolved.stdout.strip()
+        for rel in files:
+            blob = subprocess.run(["git", "show", f"{source_commit}:{rel}"],
+                                  cwd=repo, capture_output=True)
+            require(blob.returncode == 0, f"Factory snapshot commit is missing required file: {rel}")
+            source_bytes[rel] = blob.stdout
+        config = parse_json(source_bytes["factory/config.json"].decode("utf-8"))
+    else:
+        require(all((repo / rel).is_file() for rel in files), "Required factory code/config missing")
+        source_bytes = {rel: confined(repo, rel).read_bytes() for rel in files}
+        config = read_json(repo / "factory/config.json")
+        rev = subprocess.run(["git", "rev-parse", "HEAD"], cwd=repo, capture_output=True, text=True)
+        source_commit = rev.stdout.strip() if rev.returncode == 0 else None
+    validate_config(config)
     root.mkdir(parents=True)
     try:
         with lock(root):
             entries = {}
             for rel in files:
-                src = confined(repo, rel)
                 dest = confined(root / "snapshot", rel)
-                atomic_bytes(dest, src.read_bytes())
+                atomic_bytes(dest, source_bytes[rel])
                 entries[rel] = file_hash(dest)
             for name, data in (("brief.json", brief), ("research.json", research)):
                 atomic_bytes(root / "inputs" / name, canonical(data) + b"\n")
@@ -159,10 +180,9 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
                 latest = sorted((root / "assembly").glob("assembly-r*.json"))[-1]
                 require(text_hash((root / "book.md").read_text(encoding="utf-8"))
                         == unseal(latest)["text_sha256"], "Inherited book does not match inherited assembly")
-            rev = subprocess.run(["git", "rev-parse", "HEAD"], cwd=repo, capture_output=True, text=True)
             manifest = {"schema_version": 2, "run_id": run_id, "subject": brief["subject"],
                         "created_at": now(), "parent": parent, "fixture": fixture,
-                        "origin_commit": rev.stdout.strip() if rev.returncode == 0 else None,
+                        "origin_commit": source_commit,
                         "factory_files": entries, "factory_digest": digest(entries),
                         "brief_sha256": file_hash(root / "inputs/brief.json"),
                         "research_sha256": file_hash(root / "inputs/research.json"),
