@@ -859,6 +859,26 @@ class ExperimentTests(Base):
     def test_confirmatory_cannot_be_posthoc(self):
         spec=self.setup_experiment(True);spec['id']='exp2';spec['confirmatory']=True
         with self.assertRaises(FactoryError): register(self.repo,spec)
+
+    def test_confirmatory_cannot_register_after_even_evidence_review_output(self):
+        pairs=[]
+        for subject in ('pre1','pre2'):
+            brief,research,plan=inputs(subject)
+            for n in range(3):
+                for arm in ('p','c'):
+                    rid=f'{subject}-{arm}{n}'
+                    prepare(self.repo,rid,brief,research,fixture=True)
+                    run=Run(self.repo,rid)
+                    t=run.task('evidence-reviewer')
+                    run.submit(t,accepted(),metadata(True))
+                pairs.append({'id':f'{subject}-{n}','subject':subject,
+                              'parent_run':f'{subject}-p{n}','candidate_run':f'{subject}-c{n}'})
+        spec={'schema_version':2,'id':'pre-observed','parent_release':None,
+              'hypothesis':'Must be frozen before observing role outputs','primary_dimension':'argument',
+              'allowed_change_paths':['prompts/chapter-writer.md'],'subjects':['pre1','pre2'],
+              'samples_per_subject':3,'pairs':pairs,'freeze_plan':True,
+              'freeze_research':True,'confirmatory':True}
+        with self.assertRaises(FactoryError): register(self.repo,spec)
     def test_pair_task_is_blinded(self):
         spec=self.setup_experiment(True);t=pair_task(self.repo,'exp1','s1-0','AB')
         self.assertNotIn('s1-p0',json.dumps(t));self.assertNotIn('s1-c0',json.dumps(t));self.assertNotIn('parent_run',json.dumps(t))
