@@ -11,7 +11,8 @@ from pathlib import Path
 from .common import (FactoryError, atomic_bytes, canonical, confined, digest, exact_keys, file_hash,
                      identifier, lock, nonempty, now, read_json, require, seal, text_hash, unseal)
 from .schema import (EXTERNAL_ROLES, ROLES, REVIEW_ROLES, validate_brief, validate_plan, validate_research,
-                     validate_review, validate_state, validate_writer, validate_config, validate_metadata)
+                     validate_review, validate_state, validate_writer, validate_config, validate_metadata,
+                     validate_learning_packet)
 from .quality import assemble_book, apply_front_repairs, apply_note_repairs, base_front_matter, edit_book, render_source_notes, screen, screen_wrappers, split_operations
 
 PROMPTS = {"planner": "master-plan-skill-v2.md", "plan-reviewer": "master-plan-reviewer-v2.md",
@@ -23,9 +24,45 @@ REQUIRED_CODE = ["scripts/factory.py", "factory/config.json", "factory/research-
 
 def active_files(repo: Path) -> list[str]:
     paths = [*REQUIRED_CODE]
-    for glob in ("scripts/bc_factory/*.py", "prompts/*.md", "loop/judges/*.md"):
-        paths.extend(p.relative_to(repo).as_posix() for p in repo.glob(glob) if p.is_file())
+    outer_modules = {"experiments.py", "learning.py", "regression.py"}
+    paths.extend(p.relative_to(repo).as_posix() for p in repo.glob("scripts/bc_factory/*.py")
+                 if p.is_file() and p.name not in outer_modules)
+    paths.extend(p.relative_to(repo).as_posix() for p in repo.glob("prompts/*.md") if p.is_file())
     return sorted(set(paths))
+
+
+def load_learning_packet(run) -> dict:
+    packet = unseal(run.root / "regression" / "learning-next.json")
+    validate_learning_packet(packet)
+    require(packet["baseline_run"] == run.manifest["run_id"], "Learning packet is bound to another run")
+    return packet
+
+
+def validate_learning_binding(repo: Path, packet: dict, expected_subject: str, fixture: bool):
+    validate_learning_packet(packet)
+    baseline = Run(repo, packet["baseline_run"])
+    complete = baseline.complete()
+    require(baseline.brief["subject"] == expected_subject == packet["subject"], "Learning baseline subject mismatch")
+    require(baseline.manifest["fixture"] == fixture, "Learning baseline fixture/live trust mismatch")
+    require(digest(baseline.manifest) == packet["baseline_manifest_sha256"], "Learning baseline manifest changed")
+    require(complete["book_sha256"] == packet["baseline_book_sha256"], "Learning baseline book changed")
+    require(file_hash(baseline.accepted_audit_file()) == packet["baseline_audit_sha256"],
+            "Learning baseline audit changed")
+    return baseline
+
+
+def load_repair_feedback(run, assembly_round: int) -> dict:
+    path = run.root / "regression" / f"decision-r{assembly_round:02d}.json"
+    require(path.is_file(), "Accepted assembly needs sealed caller feedback before post-audit repair")
+    decision = unseal(path)
+    require(decision["decision"] == "REPAIR_REQUIRED", "Accepted assembly can reopen only for required repair")
+    assembly = run.assembly_version(assembly_round)["assembly"]
+    require(decision["candidate_book_sha256"] == assembly["text_sha256"], "Repair feedback is stale")
+    audit_round, _ = run.accepted_audit()
+    require(audit_round == assembly_round and decision["candidate_audit_sha256"] == file_hash(run.accepted_audit_file()),
+            "Repair feedback is not bound to the accepted audit")
+    rel = path.relative_to(run.root).as_posix()
+    return {"rel": rel, "sha256": file_hash(path), "decision": decision}
 
 
 def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | None = None,
@@ -85,13 +122,11 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
     validate_research(research, brief)
     if learning_from is not None and learning_packet is None:
         identifier(learning_from)
-        from .learning import load_next, validate_packet_binding
         learning_source = Run(repo, learning_from)
-        learning_packet = load_next(learning_source)
-        validate_packet_binding(repo, learning_packet, brief["subject"], fixture)
+        learning_packet = load_learning_packet(learning_source)
+        validate_learning_binding(repo, learning_packet, brief["subject"], fixture)
     elif learning_packet is not None:
-        from .learning import validate_packet_binding
-        validate_packet_binding(repo, learning_packet, brief["subject"], fixture)
+        validate_learning_binding(repo, learning_packet, brief["subject"], fixture)
     if remediation is not None:
         # Nothing is retrieved: frozen research is inherited byte-identical, so
         # the live preflight gate (freshness for NEW retrieval) does not apply.
@@ -206,8 +241,7 @@ class Run:
             self.learning = read_json(lpath)
             require(self.learning.get("baseline_run") == self.manifest.get("learning_from"),
                     "Cross-iteration learning lineage mismatch")
-            from .learning import validate_packet_binding
-            validate_packet_binding(self.repo, self.learning, self.brief["subject"], self.manifest["fixture"])
+            validate_learning_binding(self.repo, self.learning, self.brief["subject"], self.manifest["fixture"])
         else:
             self.learning = None
             require(self.manifest.get("learning_from") is None, "Learning lineage is missing its frozen packet")
@@ -373,8 +407,7 @@ class Run:
                     # chapters are never rewritten in place — edits apply to copies.
                     prior_audit = self.deps_add(deps, "final-auditor", round_no=round_no-1)
                     if prior_audit["verdict"] == "ACCEPT":
-                        from .regression import repair_feedback
-                        feedback = repair_feedback(self, round_no - 1)
+                        feedback = load_repair_feedback(self, round_no - 1)
                         deps[feedback["rel"]] = feedback["sha256"]
                         inputs["regression_feedback"] = feedback["decision"]
                     else:
@@ -416,9 +449,6 @@ class Run:
                 inputs["editorial_changes"] = self.deps_add(deps, "book-editor",
                                                             round_no=round_no if round_no > 1 else 1)
         contract = self.snapshot("prompts/" + PROMPTS[role])
-        if self.learning is not None:
-            from .learning import LEARNING_CONTRACT
-            contract = contract + "\n\n" + LEARNING_CONTRACT + "\n"
         task = {"schema_version": 2, "key": key, "role": role, "chapter": chapter, "round": round_no,
                 "run_manifest_sha256": digest(self.manifest), "dependency_hashes": deps,
                 "contract": contract,

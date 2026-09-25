@@ -17,6 +17,62 @@ REVIEW_ROLES = {"evidence-reviewer", "plan-reviewer", "chapter-reviewer", "final
 EXTERNAL_ROLES = {"evidence-reviewer", "final-auditor", "pair-judge"}
 
 
+def _sha256(value: object, label: str) -> str:
+    require(isinstance(value, str) and len(value) == 64 and all(c in "0123456789abcdef" for c in value),
+            f"{label} must be a lowercase SHA-256")
+    return value
+
+
+def _learning_dimension_items(items: object, label: str) -> list[dict]:
+    require(isinstance(items, list), f"{label} must be a list")
+    out, seen = [], set()
+    for item in items:
+        exact_keys(item, {"dimension", "instruction", "evidence"}, label=label)
+        require(item["dimension"] in DIMENSIONS, f"Unknown learning dimension: {item['dimension']}")
+        require(item["dimension"] not in seen, f"Duplicate {label} dimension: {item['dimension']}")
+        seen.add(item["dimension"])
+        nonempty(item["instruction"], f"{label} instruction")
+        nonempty(item["evidence"], f"{label} evidence")
+        out.append(item)
+    return out
+
+
+def _learning_repair_items(items: object) -> list[dict]:
+    require(isinstance(items, list), "recurring_repairs must be a list")
+    out = []
+    for item in items:
+        exact_keys(item, {"kind", "instruction", "evidence"}, label="recurring repair")
+        require(item["kind"] in FINDINGS, f"Unknown recurring repair kind: {item['kind']}")
+        nonempty(item["instruction"], "Recurring repair instruction")
+        nonempty(item["evidence"], "Recurring repair evidence")
+        out.append(item)
+    return out
+
+
+def validate_learning_packet(data: dict) -> None:
+    exact_keys(data, {"schema_version", "subject", "baseline_run", "baseline_manifest_sha256",
+                      "baseline_book_sha256", "baseline_audit_sha256", "preserve", "improve",
+                      "recurring_repairs", "research_gaps", "provenance"}, label="cross-iteration learning packet")
+    require(data["schema_version"] == 2, "Learning packet schema must be v2")
+    identifier(data["subject"])
+    identifier(data["baseline_run"])
+    _sha256(data["baseline_manifest_sha256"], "baseline_manifest_sha256")
+    _sha256(data["baseline_book_sha256"], "baseline_book_sha256")
+    _sha256(data["baseline_audit_sha256"], "baseline_audit_sha256")
+    preserve = _learning_dimension_items(data["preserve"], "preserve")
+    improve = _learning_dimension_items(data["improve"], "improve")
+    require({x["dimension"] for x in preserve}.isdisjoint({x["dimension"] for x in improve}),
+            "A dimension cannot be both preserve and improve")
+    _learning_repair_items(data["recurring_repairs"])
+    require(isinstance(data["research_gaps"], list) and
+            all(isinstance(x, str) and x.strip() for x in data["research_gaps"]),
+            "research_gaps must be nonempty strings")
+    exact_keys(data["provenance"], {"mode", "source_sha256", "note"}, label="learning provenance")
+    require(data["provenance"]["mode"] in ("bootstrap", "no_regression_pass"), "Unknown learning provenance")
+    _sha256(data["provenance"]["source_sha256"], "Learning provenance source_sha256")
+    nonempty(data["provenance"]["note"], "Learning provenance note")
+
+
 def finding_types(text: str) -> list[str]:
     """Strict legacy diagnostic helper. New production roles use JSON reviews."""
     found = []

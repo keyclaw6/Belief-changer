@@ -760,6 +760,14 @@ class EditingAndProviderTests(Base):
 
 class ExperimentTests(Base):
     _finished_cache = None
+
+    def setUp(self):
+        super().setUp()
+        outer = self.repo / "scripts/bc_factory/experiments.py"
+        shutil.copyfile(SOURCE / "scripts/bc_factory/experiments.py", outer)
+        judge = self.repo / "loop/judges/pairwise.md"
+        judge.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(SOURCE / "loop/judges/pairwise.md", judge)
     @classmethod
     def tearDownClass(cls):
         if cls._finished_cache is not None:

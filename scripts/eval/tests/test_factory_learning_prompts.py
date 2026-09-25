@@ -87,6 +87,17 @@ class FactoryBoundaryTests(unittest.TestCase):
         self.assertNotIn("learning", head)
         self.assertNotIn("regression", head)
 
+    def test_factory_run_core_does_not_depend_on_outer_autoresearch(self):
+        runs = self.text("scripts/bc_factory/runs.py")
+        self.assertNotIn("from .learning", runs)
+        self.assertNotIn("from .regression", runs)
+        self.assertNotIn("loop/judges", runs)
+        from bc_factory.runs import active_files
+        frozen = set(active_files(ROOT))
+        self.assertFalse({"scripts/bc_factory/experiments.py", "scripts/bc_factory/learning.py",
+                          "scripts/bc_factory/regression.py"} & frozen)
+        self.assertFalse(any(path.startswith("loop/") for path in frozen))
+
     def test_factory_docs_define_extractable_boundary(self):
         docs = self.text("docs/FACTORY-V2.md")
         self.assertIn("Factory output boundary", docs)
@@ -96,10 +107,13 @@ class FactoryBoundaryTests(unittest.TestCase):
     def test_learning_is_constraint_not_evidence_or_template(self):
         expected = {
             "prompts/research-agent.md": "SEARCH PRIORITY",
-            "prompts/master-plan-skill-v2.md": "not a mandatory argument template",
-            "prompts/master-plan-reviewer-v2.md": "not a template to imitate",
-            "prompts/chapter-writer.md": "does not prescribe prose anatomy",
-            "prompts/chapter-reviewer.md": "not a universal style rubric",
+            "prompts/evidence-reviewer.md": "NOT empirical evidence",
+            "prompts/master-plan-skill-v2.md": "not empirical evidence",
+            "prompts/master-plan-reviewer-v2.md": "never as empirical evidence",
+            "prompts/chapter-writer.md": "not empirical evidence",
+            "prompts/chapter-reviewer.md": "not empirical evidence",
+            "prompts/reader-state.md": "editorial feedback rather than evidence",
+            "prompts/book-editor.md": "never factual evidence",
             "prompts/final-auditor.md": "never factual evidence",
         }
         for path, token in expected.items():

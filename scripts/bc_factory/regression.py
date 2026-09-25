@@ -9,9 +9,18 @@ from .schema import DIMENSIONS, FINDINGS, validate_metadata
 
 
 def _instrument(run) -> dict:
-    contract = run.snapshot("loop/judges/pairwise.md")
-    return {"schema_version": 2, "contract": contract, "dimensions": list(DIMENSIONS),
-            "policy": "cross-iteration-no-regression-v1"}
+    path = run.root / "regression" / "instrument.json"
+    if path.is_file():
+        return unseal(path)
+    contract_path = run.repo / "loop" / "judges" / "pairwise.md"
+    require(contract_path.is_file(), "Missing outer autoresearch pairwise contract")
+    instrument = {"schema_version": 2, "contract": contract_path.read_text(encoding="utf-8"),
+                  "dimensions": list(DIMENSIONS), "policy": "cross-iteration-no-regression-v1"}
+    with lock(run.root / "regression"):
+        if path.is_file():
+            return unseal(path)
+        seal(path, instrument)
+    return instrument
 
 
 def _round(run) -> int:
@@ -188,18 +197,3 @@ def decide(repo: Path, run_id: str) -> dict:
     with lock(candidate.root / "regression"):
         seal(dpath, decision)
     return decision
-
-
-def repair_feedback(run, assembly_round: int) -> dict:
-    path = decision_path(run, assembly_round)
-    require(path.is_file(), "Accepted assembly needs a sealed no-regression decision before post-audit repair")
-    decision = unseal(path)
-    require(decision["decision"] == "REPAIR_REQUIRED",
-            "Accepted assembly can only reopen for a material no-regression failure")
-    assembly = run.assembly_version(assembly_round)["assembly"]
-    require(decision["candidate_book_sha256"] == assembly["text_sha256"], "No-regression feedback is stale")
-    au, _ = run.accepted_audit()
-    require(au == assembly_round and decision["candidate_audit_sha256"] == file_hash(run.accepted_audit_file()),
-            "No-regression feedback is not bound to the accepted audit")
-    rel = path.relative_to(run.root).as_posix()
-    return {"rel": rel, "sha256": file_hash(path), "decision": decision}

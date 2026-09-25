@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import shutil
 import sys
 import tempfile
 import unittest
@@ -22,6 +23,9 @@ class CrossIterationLearningTests(unittest.TestCase):
         self.tmp = tempfile.TemporaryDirectory()
         self.repo = Path(self.tmp.name) / "repo"
         scaffold(SOURCE, self.repo)
+        judge = self.repo / "loop/judges/pairwise.md"
+        judge.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(SOURCE / "loop/judges/pairwise.md", judge)
         self.brief, self.research, self.plan = inputs()
 
     def tearDown(self):
