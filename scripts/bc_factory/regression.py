@@ -126,7 +126,7 @@ def decide(repo: Path, run_id: str) -> dict:
         require(stored["candidate_book_sha256"] == candidate.accepted_assembly()["assembly"]["text_sha256"],
                 "Stored no-regression decision is stale")
         return stored
-    missing, results = [], {}
+    missing, results, judge_profiles = [], {}, set()
     for order in ("AB", "BA"):
         task(repo, run_id, order)
         path = judgment_path(candidate, round_no, order)
@@ -136,6 +136,8 @@ def decide(repo: Path, run_id: str) -> dict:
         task_record = unseal(task_path(candidate, round_no, order))
         result = unseal(path)
         require(result["task_hash"] == digest(task_record), "No-regression judgment has stale task inputs")
+        meta = result["metadata"]
+        judge_profiles.add((meta["model"], meta["family"], meta["route"], meta["harness"]))
         results[order] = result
     if missing:
         return {"decision": "INCONCLUSIVE", "run_id": run_id, "assembly_round": round_no,
@@ -163,7 +165,9 @@ def decide(repo: Path, run_id: str) -> dict:
         if findings:
             critical.append({"order": order, "findings": findings})
     has_improvement = any(x["outcome"] == "candidate_win" for x in outcomes.values())
-    gate = ("REPAIR_REQUIRED" if critical or losses else
+    mixed_judges = len(judge_profiles) != 1
+    gate = ("INCONCLUSIVE" if mixed_judges else
+            "REPAIR_REQUIRED" if critical or losses else
             "INCONCLUSIVE" if instability else
             "ADVANCE" if has_improvement else
             "PRESERVE_BASELINE")
@@ -178,6 +182,9 @@ def decide(repo: Path, run_id: str) -> dict:
         "baseline_audit_sha256": file_hash(baseline.accepted_audit_file()),
         "dimension_outcomes": outcomes, "losses": losses, "critical": critical,
         "order_instability": instability,
+        "judge_profiles": [{"model": m, "family": f, "route": r, "harness": h}
+                           for m, f, r, h in sorted(judge_profiles)],
+        "judge_instrument_mixed": mixed_judges,
         "judgment_sha256": {o: file_hash(judgment_path(candidate, round_no, o)) for o in ("AB", "BA")},
         "created_at": now(),
     }
