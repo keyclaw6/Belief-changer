@@ -412,10 +412,25 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
             second = learning_decide(self.repo, "cycle-decision")
         self.assertTrue(second["terminal"])
         self.assertTrue((root / "decision.json").exists())
+        history_path = self.repo / second["history_record"]
+        history = unseal(history_path)
+        self.assertEqual(history["decision"], "REJECT_FACTORY_CHANGE")
+        self.assertEqual(set(history["holdout_subjects"]), {"held-a", "held-b"})
+        self.git("add", "loop/factory-learning-history")
+        self.git("commit", "-m", "record terminal factory-learning decision")
 
         with patch("bc_factory.experiments.registration", return_value=(self.repo / "experiments/exp", fake_exp)):
             cached = learning_decide(self.repo, "cycle-decision")
         self.assertEqual(cached["decision"], "REJECT_FACTORY_CHANGE")
+        self.assertFalse(cached["requires_commit"])
+        history_path.unlink()
+        with patch("bc_factory.experiments.registration", return_value=(self.repo / "experiments/exp", fake_exp)):
+            recovered = learning_decide(self.repo, "cycle-decision")
+        self.assertTrue(history_path.is_file())
+        self.assertEqual(unseal(history_path), history)
+        self.assertTrue(recovered["requires_commit"])
+        self.git("add", "loop/factory-learning-history")
+        self.git("commit", "-m", "restore terminal history mirror")
 
         # A cached terminal decision must never authorize a later source mutation.
         p.write_text(p.read_text() + "\n<!-- untested post-decision mutation -->\n")
