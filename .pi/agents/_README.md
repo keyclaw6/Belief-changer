@@ -26,4 +26,11 @@ Runtime role → Pi wrapper:
 
 Autoresearch lives under `loop/` and is executed by the outer controller, not through Pi wrappers. That includes pairwise judging, hypothesizing, trace analysis, Factory Learner/Reviewer, baseline comparison and held-out experiments.
 
-Wrappers do not choose substitute evaluators or bypass frozen task/result validation. Use factory/config.json and explicit operator authorization. Read docs/FACTORY-V2.md for the standalone factory contract.
+Factory-runtime rules:
+- operate only from the supplied/frozen book-factory inputs;
+- use the configured routes; never silently substitute a model family;
+- external evidence/final reviewers remain independent of the generating family;
+- no implicit paid calls, fabricated task outputs, publication, or autoresearch decisions;
+- return control at `COMPLETE_UNRELEASED`.
+
+Wrappers do not bypass frozen task/result validation. Use `factory/config.json`, explicit operator authorization, and `docs/FACTORY-V2.md` as the standalone factory contract.
