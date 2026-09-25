@@ -165,6 +165,23 @@ def _cycle(repo: Path, cycle_id: str) -> Path:
     return confined(repo, f"factory-learning/{identifier(cycle_id)}")
 
 
+def _holdout_record_path(repo: Path, cycle_id: str) -> Path:
+    return confined(repo, f"loop/holdout-registry/{identifier(cycle_id)}.json")
+
+
+def _post_freeze_paths(repo: Path, change_head: str) -> list[str]:
+    current = _git(repo, "rev-parse", "HEAD")
+    if current == change_head:
+        return []
+    return [x for x in _git(repo, "diff", "--name-only", change_head, current).splitlines() if x]
+
+
+def _require_only_holdout_history_after_freeze(repo: Path, change: dict) -> None:
+    changed = _post_freeze_paths(repo, change["head_commit"])
+    require(all(p.startswith("loop/holdout-registry/") for p in changed),
+            f"Only committed holdout-retirement records may follow intervention freeze: {changed}")
+
+
 def _factory_snapshot(repo: Path) -> dict[str, str]:
     from .runs import active_files
     files = {}
@@ -370,7 +387,14 @@ def submit_holdout(repo: Path, cycle_id: str, selection: dict, metadata: dict) -
         require(existing["selection"] == selection and existing["selector_metadata"] == metadata
                 and existing["change_sha256"] == digest(change),
                 "Held-out selection is already frozen with different inputs")
-        return existing
+        retirement_path = _holdout_record_path(repo, cycle_id)
+        retirement = unseal(retirement_path)
+        require(set(retirement["subjects"]) == set(selection["subjects"])
+                and retirement["selection_sha256"] == digest(selection)
+                and retirement["change_sha256"] == digest(change),
+                "Tracked holdout-retirement record differs from frozen selection")
+        return {**existing, "retirement_record": retirement_path.relative_to(repo).as_posix(),
+                "retirement_sha256": digest(retirement), "requires_commit": bool(_git(repo, "status", "--porcelain"))}
     require(_git(repo, "branch", "--show-current") == reg["experimental_branch"],
             "Held-out selection must occur on the frozen experimental branch")
     require(not _git(repo, "status", "--porcelain"), "Held-out selection requires the frozen intervention tree to be clean")
@@ -399,6 +423,11 @@ def submit_holdout(repo: Path, cycle_id: str, selection: dict, metadata: dict) -
                 continue
             prior = unseal(path)
             previously_revealed.update(prior["selection"]["subjects"])
+    registry_root = repo / "loop/holdout-registry"
+    if registry_root.is_dir():
+        for path in registry_root.glob("*.json"):
+            prior = unseal(path)
+            previously_revealed.update(prior["subjects"])
     require(not previously_revealed.intersection(subjects),
             "A previously revealed held-out topic cannot count as unseen transfer evidence again")
     nonempty(selection["rationale"], "held-out selection rationale")
@@ -411,9 +440,14 @@ def submit_holdout(repo: Path, cycle_id: str, selection: dict, metadata: dict) -
             "Held-out selector must be independent of learner, reviewer, and generator families")
     doc = {"schema_version": 2, "cycle_id": cycle_id, "change_sha256": digest(change),
            "selection": selection, "selector_metadata": metadata, "selected_at": now()}
+    retirement = {"schema_version": 2, "cycle_id": cycle_id, "subjects": list(subjects),
+                  "selection_sha256": digest(selection), "change_sha256": digest(change),
+                  "selector_family": metadata["family"], "selected_at": doc["selected_at"]}
     with lock(root):
         seal(root / "holdout.json", doc)
-    return doc
+        seal(_holdout_record_path(repo, cycle_id), retirement)
+    return {**doc, "retirement_record": _holdout_record_path(repo, cycle_id).relative_to(repo).as_posix(),
+            "retirement_sha256": digest(retirement), "requires_commit": True}
 
 
 def bind_experiment(repo: Path, cycle_id: str, experiment_id: str) -> dict:
@@ -428,8 +462,17 @@ def bind_experiment(repo: Path, cycle_id: str, experiment_id: str) -> dict:
         return existing
     require(_git(repo, "branch", "--show-current") == reg["experimental_branch"],
             "Transfer binding must occur on the frozen experimental branch")
-    require(not _git(repo, "status", "--porcelain"), "Transfer binding requires the frozen intervention tree to be clean")
+    require(not _git(repo, "status", "--porcelain"),
+            "Commit the holdout-retirement record before binding the transfer experiment")
     change = unseal(root / "change.json"); holdout = unseal(root / "holdout.json")
+    _require_only_holdout_history_after_freeze(repo, change)
+    require(_factory_snapshot(repo) == change["factory_files"],
+            "Active factory changed after intervention freeze")
+    retirement_path = _holdout_record_path(repo, cycle_id)
+    retirement = unseal(retirement_path)
+    require(set(retirement["subjects"]) == set(holdout["selection"]["subjects"])
+            and retirement["selection_sha256"] == digest(holdout["selection"]),
+            "Committed holdout-retirement record is not bound to this selection")
     exp_root, exp = experiments.registration(repo, experiment_id)
     require(set(exp["spec"]["subjects"]) == set(holdout["selection"]["subjects"]),
             "Transfer experiment subjects must equal the independently selected held-out set")
@@ -457,6 +500,7 @@ def bind_experiment(repo: Path, cycle_id: str, experiment_id: str) -> dict:
                 "Transfer candidate is not the exact frozen intervention factory snapshot")
     doc = {"schema_version": 2, "cycle_id": cycle_id, "experiment_id": experiment_id,
            "registration_sha256": digest(exp), "holdout_sha256": digest(holdout),
+           "holdout_retirement_sha256": digest(retirement),
            "change_sha256": digest(change), "bound_at": now()}
     with lock(root):
         seal(root / "experiment.json", doc)
@@ -479,8 +523,9 @@ def decide(repo: Path, cycle_id: str) -> dict:
             "Factory-learning decision must occur on its frozen experimental branch")
     require(not _git(repo, "status", "--porcelain"), "Factory-learning decision requires a clean frozen intervention tree")
     change = unseal(root / "change.json")
-    require(change["head_commit"] == _git(repo, "rev-parse", "HEAD"),
-            "Factory changed after the intervention was frozen")
+    _require_only_holdout_history_after_freeze(repo, change)
+    require(_factory_snapshot(repo) == change["factory_files"],
+            "Active factory changed after the intervention was frozen")
     binding = unseal(root / "experiment.json")
     result = experiments.transfer_decide(repo, binding["experiment_id"])
     if result["decision"] == "TRANSFER_ELIGIBLE_NONPROMOTIONAL":
