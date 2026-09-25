@@ -468,6 +468,44 @@ def submit_holdout(repo: Path, cycle_id: str, selection: dict, metadata: dict) -
             "retirement_sha256": digest(retirement), "requires_commit": True}
 
 
+def prepare_arm(repo: Path, cycle_id: str, arm: str, run_id: str, brief: dict, research: dict,
+                parent: str | None = None, fixture: bool = False, research_preflight: dict | None = None) -> dict:
+    """Prepare one held-out generation arm from exactly the cycle's frozen parent/candidate factory."""
+    from .runs import Run, prepare
+    require(arm in ("parent", "candidate"), "Factory-learning arm must be parent or candidate")
+    root, reg = registration(repo, cycle_id)
+    require(_git(repo, "branch", "--show-current") == reg["experimental_branch"],
+            "Factory-learning arm preparation belongs on the experimental branch")
+    require(not _git(repo, "status", "--porcelain"),
+            "Commit the holdout-retirement record before preparing transfer arms")
+    change = unseal(root / "change.json")
+    holdout = unseal(root / "holdout.json")
+    _require_only_holdout_history_after_freeze(repo, change)
+    require(_factory_snapshot(repo) == change["factory_files"],
+            "Active factory changed after intervention freeze")
+    retirement = unseal(_holdout_record_path(repo, cycle_id))
+    require(set(retirement["subjects"]) == set(holdout["selection"]["subjects"]),
+            "Tracked holdout retirement differs from frozen selection")
+    subject = brief.get("subject")
+    require(subject in set(holdout["selection"]["subjects"]),
+            "Transfer arm subject is not in the frozen held-out set")
+    require(research.get("subject") == subject, "Transfer arm research/brief subject mismatch")
+    factory_ref = reg["base_commit"] if arm == "parent" else change["head_commit"]
+    expected_files = reg["base_factory_files"] if arm == "parent" else change["factory_files"]
+    expected_digest = reg["base_factory_digest"] if arm == "parent" else change["factory_digest"]
+    run_root = prepare(repo, run_id, brief, research, parent, fixture, research_preflight,
+                       factory_ref=factory_ref)
+    run = Run(repo, run_id)
+    require(run.manifest["factory_files"] == expected_files
+            and run.manifest["factory_digest"] == expected_digest,
+            f"Prepared {arm} arm does not match its frozen factory snapshot")
+    require(run.manifest["origin_commit"] == factory_ref,
+            f"Prepared {arm} arm origin commit is not the cycle's frozen factory commit")
+    return {"status": "ARM_FROZEN", "cycle_id": cycle_id, "arm": arm, "run_id": run_id,
+            "subject": subject, "factory_ref": factory_ref, "factory_digest": expected_digest,
+            "run": str(run_root)}
+
+
 def bind_experiment(repo: Path, cycle_id: str, experiment_id: str) -> dict:
     from . import experiments
     from .runs import Run
