@@ -48,6 +48,10 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
             raise AssertionError(p.stderr)
         return p.stdout.strip()
 
+    def commit_holdout_registry(self):
+        self.git("add", "loop/holdout-registry")
+        self.git("commit", "-m", "retire held-out topics")
+
     @staticmethod
     def meta(family):
         return {"model": family + "-model", "family": family, "route": "offline-fixture",
@@ -250,6 +254,8 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
                        {"schema_version": 2, "subjects": ["held-a", "held-b"],
                         "rationale": "Selected only after intervention freeze."},
                        self.meta("selector"))
+        self.assertTrue(self.git("status", "--porcelain"))
+        self.commit_holdout_registry()
 
         from bc_factory.factory_learning import registration as cycle_registration
         _, cycle = cycle_registration(self.repo, "cycle-bind")
@@ -309,6 +315,7 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
             {"schema_version": 2, "subjects": ["held-a", "held-b"],
              "rationale": "Selected after freeze."},
             self.meta("selector"))
+        self.commit_holdout_registry()
         fake_exp = {"spec": {"subjects": ["held-a", "held-b"]}}
         root = self.repo / "factory-learning/cycle-decision"
         binding = {"schema_version": 2, "cycle_id": "cycle-decision", "experiment_id": "exp",
@@ -335,6 +342,37 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
         with patch("bc_factory.experiments.registration", return_value=(self.repo / "experiments/exp", fake_exp)):
             cached = learning_decide(self.repo, "cycle-decision")
         self.assertEqual(cached["decision"], "REJECT_FACTORY_CHANGE")
+
+    def test_committed_holdout_registry_survives_loss_of_local_cycle_state(self):
+        self.register_cycle("cycle-retire")
+        p = self.repo / "prompts/chapter-writer.md"
+        original = p.read_text()
+        p.write_text(original + "\n<!-- fixture intervention -->\n")
+        self.git("add", "prompts/chapter-writer.md"); self.git("commit", "-m", "intervention")
+        freeze_change(self.repo, "cycle-retire")
+        submit_holdout(
+            self.repo, "cycle-retire",
+            {"schema_version": 2, "subjects": ["retired-a", "retired-b"],
+             "rationale": "Selected after intervention freeze."},
+            self.meta("selector"))
+        self.commit_holdout_registry()
+        self.assertTrue((self.repo / "loop/holdout-registry/cycle-retire.json").is_file())
+
+        # Simulate loss of ignored local runtime state and restore the production prompt.
+        shutil.rmtree(self.repo / "factory-learning/cycle-retire")
+        p.write_text(original)
+        self.git("add", "prompts/chapter-writer.md"); self.git("commit", "-m", "restore production prompt")
+
+        self.register_cycle("cycle-next")
+        p.write_text(original + "\n<!-- next fixture intervention -->\n")
+        self.git("add", "prompts/chapter-writer.md"); self.git("commit", "-m", "next intervention")
+        freeze_change(self.repo, "cycle-next")
+        with self.assertRaises(FactoryError):
+            submit_holdout(
+                self.repo, "cycle-next",
+                {"schema_version": 2, "subjects": ["retired-a", "fresh-b"],
+                 "rationale": "Attempted reuse after local state loss."},
+                self.meta("selector"))
 
     def test_change_surface_is_enforced_from_git_diff(self):
         self.register_cycle("cycle-3")
