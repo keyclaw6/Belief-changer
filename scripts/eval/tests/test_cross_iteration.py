@@ -231,6 +231,23 @@ class CrossIterationLearningTests(unittest.TestCase):
         with self.assertRaises(FactoryError):
             advance(self.repo, "candidate-b")
 
+    def test_mixed_ab_ba_judge_instruments_are_inconclusive(self):
+        self.seed_baseline()
+        candidate = self.completed("candidate-mixed-judge", learning_from="baseline")
+        t = task(self.repo, "candidate-mixed-judge", "AB")
+        submit(self.repo, "candidate-mixed-judge", "AB", self.judgment(t, "B"), metadata(True))
+        t = task(self.repo, "candidate-mixed-judge", "BA")
+        other = metadata(True)
+        other["model"] = "synthetic-external-other"
+        other["route"] = "offline-fixture-other"
+        submit(self.repo, "candidate-mixed-judge", "BA", self.judgment(t, "A"), other)
+        gate = decide(self.repo, "candidate-mixed-judge")
+        self.assertEqual(gate["decision"], "INCONCLUSIVE")
+        self.assertTrue(gate["judge_instrument_mixed"])
+        self.assertEqual(len(gate["judge_profiles"]), 2)
+        with self.assertRaises(FactoryError):
+            advance(self.repo, "candidate-mixed-judge")
+
     def test_accepted_candidate_cannot_reopen_without_regression_failure(self):
         self.seed_baseline()
         candidate = self.completed("candidate", learning_from="baseline")
