@@ -11,8 +11,8 @@ Check:
 - Is the proposed change the smallest coherent intervention that tests the mechanism?
 - Are previously demonstrated strengths explicitly protected?
 - Could the rule force an Allen-Carr/addiction/abstinence structure onto unrelated domains?
-- Are held-out subjects genuinely sealed from development feedback?
-- Are success/failure criteria fixed before held-out evaluation?
+- Does the learner specify generic holdout requirements instead of choosing the exact test topics?
+- Are success/failure criteria fixed before exact held-out topics are selected and evaluated?
 - Does the proposal resist optimizing to one judge or one wording preference?
 - If the evidence is weak, would another measurement discriminate between competing explanations better than a code/prompt change?
 
@@ -40,7 +40,7 @@ Return exactly one JSON object:
   }],
   "approved_change_surface": ["Paths/components that may change if ACCEPT"],
   "held_out_test": {
-    "sealed_until": "What must be frozen before held-out results are viewed",
+    "holdout_requirements": ["Generic requirements for unseen transfer subjects"],
     "success_criteria": ["Predeclared transfer conditions"],
     "failure_signals": ["Conditions that reject the factory change"]
   },
