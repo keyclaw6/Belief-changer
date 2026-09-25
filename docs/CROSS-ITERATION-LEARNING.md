@@ -4,7 +4,7 @@ This layer makes repeated book iterations a controlled optimization process. It 
 
 ## 1. Freeze what the previous iteration taught
 
-A completed baseline may emit one sealed `regression/learning-next.json`. The first baseline is bootstrapped from an explicitly reviewed lessons file with `learning-seed`. Later packets are produced only by `advance-baseline` after a no-regression PASS.
+A completed baseline may emit one sealed `regression/learning-next.json`. The first baseline is bootstrapped from an explicitly reviewed lessons file with `learning-seed`. Later packets are produced only when the candidate demonstrates a stable improvement.
 
 A learning packet can contain:
 - quality dimensions to preserve;
@@ -38,7 +38,8 @@ The decision is fail-closed:
 - consistent candidate loss on any quality dimension -> `REPAIR_REQUIRED`;
 - any critical candidate defect -> `REPAIR_REQUIRED`;
 - AB/BA disagreement on any dimension -> `INCONCLUSIVE`;
-- stable ties or candidate wins, with no criticals -> `PASS`.
+- at least one stable candidate win with no losses/criticals/order instability -> `ADVANCE`;
+- stable ties on every dimension -> `PRESERVE_BASELINE`.
 
 Ties are acceptable. The purpose is to stop regressions, not to manufacture a win.
 
@@ -52,7 +53,7 @@ The previous comparison is stale once the book changes.
 
 `INCONCLUSIVE` authorizes neither repair nor advancement.
 
-Only `PASS` allows `advance-baseline`. That command emits the next sealed learning packet bound to the exact accepted candidate book and audit.
+`advance-baseline` replaces the baseline only on ADVANCE. On PRESERVE_BASELINE it simply reports that the previous baseline remains current.
 
 ## 6. Learn about the factory, separately
 
@@ -62,7 +63,7 @@ Run `loop/prompts/factory-learner.md` on development/training subjects. It must 
 
 Then run `loop/prompts/factory-learning-reviewer.md` independently. Only an ACCEPTed transfer hypothesis/change surface may be implemented as a factory-level change.
 
-Held-out subjects are a sealed test set. Their books, judgments, traces and failure details stay unavailable to the learner while the intervention is designed. Freeze the intervention, evaluators and success/failure criteria first; only then evaluate transfer. A change that improves training books but does not transfer is not retained as a general factory improvement. Revealed held-out failures can inform the next cycle, not retroactive tuning against the same test set.
+The learner states generic holdout requirements, not the exact test topics. Freeze the intervention, evaluator and success/failure criteria first; then choose genuinely unseen held-out subjects and evaluate transfer. A change that improves training books but does not transfer is not retained as a general factory improvement. Revealed held-out failures can inform the next cycle, not retroactive tuning against the same test set.
 
 Lower-level researchers, planners, writers and reviewers remain book-focused. They receive only the frozen transferable constraints relevant to the current run; they do not redesign the factory while generating a manuscript.
 
