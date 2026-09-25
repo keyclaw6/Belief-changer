@@ -37,6 +37,9 @@ def task(repo: Path, run_id: str, order: str) -> dict:
     candidate.complete()
     require(candidate.learning is not None, "No-regression gate requires a frozen cross-iteration baseline")
     baseline = validate_packet_binding(repo, candidate.learning, candidate.brief["subject"], candidate.manifest["fixture"])
+    from .learning import load_next
+    require(digest(load_next(baseline)) == digest(candidate.learning),
+            "Candidate inherited stale baseline learning; do not spend another no-regression judgment")
     require(baseline.manifest["run_id"] != candidate.manifest["run_id"], "Candidate cannot compare to itself")
     ba, ca = baseline.accepted_assembly()["assembly"], candidate.accepted_assembly()["assembly"]
     round_no = ca["assembly_round"]
