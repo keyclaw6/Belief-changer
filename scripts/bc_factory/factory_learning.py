@@ -351,9 +351,11 @@ def freeze_change(repo: Path, cycle_id: str) -> dict:
     repo = repo.resolve(); root, reg = registration(repo, cycle_id)
     if (root / "change.json").exists():
         existing = unseal(root / "change.json")
-        require(_git(repo, "branch", "--show-current") == reg["experimental_branch"]
-                and existing["head_commit"] == _git(repo, "rev-parse", "HEAD"),
-                "Existing frozen intervention does not match current branch/HEAD")
+        require(_git(repo, "branch", "--show-current") == reg["experimental_branch"],
+                "Existing frozen intervention belongs to another branch")
+        _require_only_holdout_history_after_freeze(repo, existing)
+        require(_factory_snapshot(repo) == existing["factory_files"],
+                "Active factory no longer matches the frozen intervention")
         return existing
     require(_git(repo, "branch", "--show-current") == reg["experimental_branch"],
             "Factory-learning cycle moved to another branch")
@@ -498,9 +500,12 @@ def bind_experiment(repo: Path, cycle_id: str, experiment_id: str) -> dict:
         require(candidate.manifest["factory_files"] == change["factory_files"]
                 and candidate.manifest["factory_digest"] == change["factory_digest"],
                 "Transfer candidate is not the exact frozen intervention factory snapshot")
+    retirement_rel = retirement_path.relative_to(repo).as_posix()
+    retirement_commit = _git(repo, "log", "-1", "--format=%H", "--", retirement_rel)
+    require(bool(retirement_commit), "Holdout-retirement record must be committed before transfer binding")
     doc = {"schema_version": 2, "cycle_id": cycle_id, "experiment_id": experiment_id,
            "registration_sha256": digest(exp), "holdout_sha256": digest(holdout),
-           "holdout_retirement_sha256": digest(retirement),
+           "holdout_retirement_sha256": digest(retirement), "holdout_retirement_commit": retirement_commit,
            "change_sha256": digest(change), "bound_at": now()}
     with lock(root):
         seal(root / "experiment.json", doc)
@@ -541,7 +546,8 @@ def decide(repo: Path, cycle_id: str) -> dict:
                else "REJECT_FACTORY_CHANGE" if result["decision"] == "REJECT_TRANSFER"
                else "INCONCLUSIVE")
     doc = {"schema_version": 2, "cycle_id": cycle_id, "decision": verdict,
-           "experiment_decision": result, "binding_sha256": digest(binding), "decided_at": now()}
+           "experiment_decision": result, "binding_sha256": digest(binding),
+           "holdout_retirement_commit": binding["holdout_retirement_commit"], "decided_at": now()}
     # Missing judgments are an unfinished panel, not an immutable experimental conclusion.
     # Once the preregistered panel is complete, KEEP/REJECT or a measured INCONCLUSIVE is terminal.
     if result.get("missing"):
