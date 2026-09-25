@@ -405,9 +405,10 @@ def submit_holdout(repo: Path, cycle_id: str, selection: dict, metadata: dict) -
     validate_metadata(metadata)
     require(metadata["harness"] != "fixture", "Fixture holdout selection cannot authorize a real transfer test")
     config = read_json(repo / "factory/config.json"); validate_config(config)
-    forbidden = {reg["learner_metadata"]["family"], config["profiles"]["factory"]["family"]}
+    forbidden = {reg["learner_metadata"]["family"], reg["reviewer_metadata"]["family"],
+                 config["profiles"]["factory"]["family"]}
     require(metadata["family"] not in forbidden,
-            "Held-out selector must be independent of the learner/generator family; post-freeze information isolation provides separation from the reviewer")
+            "Held-out selector must be independent of learner, reviewer, and generator families")
     doc = {"schema_version": 2, "cycle_id": cycle_id, "change_sha256": digest(change),
            "selection": selection, "selector_metadata": metadata, "selected_at": now()}
     with lock(root):
