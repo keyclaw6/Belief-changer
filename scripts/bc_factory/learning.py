@@ -293,6 +293,16 @@ def advance(repo: Path, run_id: str) -> dict:
             f"Baseline update blocked: {decision['decision']}")
     old = candidate.learning
     current_baseline = Run(repo, old["baseline_run"])
+    dpath = decision_path(candidate, candidate.accepted_assembly()["assembly"]["assembly_round"])
+    decision_sha = file_hash(dpath)
+    if decision["decision"] == "PRESERVE_BASELINE":
+        for existing_path in _revision_paths(current_baseline):
+            existing = unseal(existing_path)
+            if existing["provenance"]["source_sha256"] == decision_sha:
+                return {"status": "BASELINE_PRESERVED_LEARNING_UPDATED", "run_id": run_id,
+                        "baseline_run": current_baseline.manifest["run_id"],
+                        "path": existing_path.relative_to(repo).as_posix(),
+                        "learning_sha256": digest(existing)}
     current_learning = _load_latest_packet(current_baseline)
     require(digest(current_learning) == digest(old),
             "Candidate was generated from a stale learning packet; do not advance or append over newer baseline learning")
@@ -314,8 +324,6 @@ def advance(repo: Path, run_id: str) -> dict:
                 "instruction": f"Preserve the demonstrated {dimension} advantage without weakening other protected dimensions.",
                 "evidence": evidence}
 
-    dpath = decision_path(candidate, candidate.accepted_assembly()["assembly"]["assembly_round"])
-    decision_sha = file_hash(dpath)
     source_lock = current_baseline.root / "regression"
     with lock(source_lock):
         # Recheck under one predecessor lock so two siblings cannot both become the successor.
