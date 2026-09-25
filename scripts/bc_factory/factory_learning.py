@@ -384,6 +384,7 @@ def freeze_change(repo: Path, cycle_id: str) -> dict:
 def submit_holdout(repo: Path, cycle_id: str, selection: dict, metadata: dict) -> dict:
     root, reg = registration(repo, cycle_id)
     change = unseal(root / "change.json")
+    training = set(reg["learner"]["falsification_test"]["training_subjects"])
     if (root / "holdout.json").exists():
         existing = unseal(root / "holdout.json")
         require(existing["selection"] == selection and existing["selector_metadata"] == metadata
@@ -395,9 +396,17 @@ def submit_holdout(repo: Path, cycle_id: str, selection: dict, metadata: dict) -
         require(_factory_snapshot(repo) == change["factory_files"],
                 "Active factory changed after held-out selection was frozen")
         retirement_path = _holdout_record_path(repo, cycle_id)
-        retirement = unseal(retirement_path)
+        if retirement_path.exists():
+            retirement = unseal(retirement_path)
+        else:
+            # Crash-safe replay: holdout.json is authoritative once sealed; recreate only its missing ledger mirror.
+            retirement = {"schema_version": 2, "cycle_id": cycle_id, "subjects": list(selection["subjects"]),
+                          "training_subjects": sorted(training),
+                          "selection_sha256": digest(selection), "change_sha256": digest(change),
+                          "selector_family": metadata["family"], "selected_at": existing["selected_at"]}
+            seal(retirement_path, retirement)
         require(set(retirement["subjects"]) == set(selection["subjects"])
-                and set(retirement.get("training_subjects", [])) == set(reg["learner"]["falsification_test"]["training_subjects"])
+                and set(retirement.get("training_subjects", [])) == training
                 and retirement["selection_sha256"] == digest(selection)
                 and retirement["change_sha256"] == digest(change),
                 "Tracked holdout-retirement record differs from frozen selection")
@@ -411,7 +420,6 @@ def submit_holdout(repo: Path, cycle_id: str, selection: dict, metadata: dict) -
     require(selection["schema_version"] == 2, "Held-out selection schema must be v2")
     subjects = _strings(selection["subjects"], "held-out subjects", 2)
     require(len(subjects) == len(set(subjects)), "Duplicate held-out subject")
-    training = set(reg["learner"]["falsification_test"]["training_subjects"])
     require(not training.intersection(subjects), "A training subject cannot also be held out in the same cycle")
     prior_run_subjects = set()
     runs_root = repo / "runs"
