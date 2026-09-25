@@ -4,7 +4,7 @@ This layer makes repeated book iterations a controlled optimization process. It 
 
 ## 1. Freeze what the previous iteration taught
 
-A completed baseline may emit one sealed `regression/learning-next.json`. The first baseline is bootstrapped from an explicitly reviewed lessons file with `learning-seed`. Later immutable learning revisions may be appended even when the book baseline is preserved; a candidate replaces the book baseline only after a no-regression `ADVANCE`.
+A completed baseline may emit one sealed `regression/learning-next.json`. The first baseline is bootstrapped from an explicitly reviewed lessons file with `learning-seed`. Later packets are produced only by `advance-baseline` after a no-regression PASS.
 
 A learning packet can contain:
 - quality dimensions to preserve;
@@ -14,15 +14,11 @@ A learning packet can contain:
 
 Learning is editorial/evaluation feedback. It is never empirical evidence and cannot support a factual manuscript claim.
 
-## 2. Give learning to research before retrieval
+## 2. Prepare the next candidate from that exact baseline
 
-Prepare the brief first, then emit deterministic pre-research guidance:
+Prepare the next run with `--learning-from BASELINE_RUN`. The factory verifies the baseline manifest, completed book hash, accepted final-audit hash, subject, and fixture/live trust before freezing the packet into the new run.
 
-`python3 scripts/factory.py research-guidance --learning-from BASELINE_RUN --brief BRIEF --out GUIDANCE`
-
-Give GUIDANCE to the research lead before retrieval. The resulting research.json must bind the exact guidance hash and explicitly resolve every inherited research gap as addressed, scoped_out, or unresolved. Only then prepare the next run with `--learning-from BASELINE_RUN`. Preparation recomputes the guidance and rejects stale/unbound research.
-
-Every later role receives that same frozen learning packet. A changed or missing baseline artifact fails closed.
+Every role receives that same frozen packet. A changed or missing baseline artifact fails closed.
 
 ## 3. Finish the candidate normally
 
@@ -42,8 +38,7 @@ The decision is fail-closed:
 - consistent candidate loss on any quality dimension -> `REPAIR_REQUIRED`;
 - any critical candidate defect -> `REPAIR_REQUIRED`;
 - AB/BA disagreement on any dimension -> `INCONCLUSIVE`;
-- at least one stable candidate win, with no losses/criticals/order instability -> `ADVANCE`;
-- stable ties on every dimension -> `PRESERVE_BASELINE`.
+- stable ties or candidate wins, with no criticals -> `PASS`.
 
 Ties are acceptable. The purpose is to stop regressions, not to manufacture a win.
 
@@ -55,19 +50,19 @@ Ties are acceptable. The purpose is to stop regressions, not to manufacture a wi
 
 The previous comparison is stale once the book changes.
 
-`INCONCLUSIVE` authorizes neither repair nor baseline update.
+`INCONCLUSIVE` authorizes neither repair nor advancement.
 
-`advance-baseline` accepts only `ADVANCE` or `PRESERVE_BASELINE`. On ADVANCE, it binds the next packet to the exact candidate book/audit. On PRESERVE_BASELINE, it keeps the prior book baseline and appends a new immutable learning revision there, so repaired defects and new research gaps are remembered without neutral book drift.
+Only `PASS` allows `advance-baseline`. That command emits the next sealed learning packet bound to the exact accepted candidate book and audit.
 
 ## 6. Learn about the factory, separately
 
 The per-book learning packet and no-regression gate protect a book lineage. Factory improvement happens one level higher, after complete iteration judgments are frozen.
 
-On an isolated experimental branch, first run `factory-learning-evidence` with the exact completed training run IDs and any additional judgment/trace artifacts. This seals their manifests/books/audits and extra artifact hashes. Give only that manifest and its named evidence to the Factory Learner; its output must bind the evidence SHA-256. Give the same manifest plus exact learner output to the independent Factory-Learning Reviewer; its output must bind both hashes. Only then may `factory-learning-register` seal the intervention proposal and metadata BEFORE changing code/prompts.
+Run `loop/prompts/factory-learner.md` on development/training subjects. It must separate local book repairs from transferable factory mechanisms, protect demonstrated strengths, propose the smallest coherent intervention, and predeclare what would falsify it.
 
-Implement only the approved change surface and commit it. `factory-learning-freeze-change` binds the actual Git diff. Only after that freeze may a selector from a family independent of the learner, reviewer, and generator name the exact unseen topics through `factory-learning-holdout-submit`. That command creates both ignored cycle state and a tracked immutable `loop/holdout-registry/CYCLE.json`; commit the registry record before transfer binding. Register the transfer experiment on exactly those topics, bind it with `factory-learning-bind-experiment`, and evaluate with `factory-learning-decide`. The change is retained only if the bound held-out experiment passes the fixed `strict_transfer_v1` non-promotional engineering transfer gate. Learner/reviewer prose can explain expected success/failure signals but cannot redefine the machine threshold. This gate intentionally omits human release calibration; it can guide factory development but cannot publish, promote, or claim reader efficacy.
+Then run `loop/prompts/factory-learning-reviewer.md` independently. Only an ACCEPTed transfer hypothesis/change surface may be implemented as a factory-level change.
 
-Once a held-out topic has been revealed, it is no longer unseen. The tracked retirement record is the portable source of that fact. Once the transfer panel is complete, `factory-learning-decide` also writes a compact tracked `loop/factory-learning-history/CYCLE.json` containing only content hashes, subjects, frozen commits and the terminal engineering decision. Commit it immediately. A rejected or terminally inconclusive intervention still requires its ledger/history-only commits to be preserved on `main` before the experimental branch is discarded. Its failure may inform the NEXT cycle; never tune the already-frozen intervention against the same revealed test set.
+Held-out subjects are a sealed test set. Their books, judgments, traces and failure details stay unavailable to the learner while the intervention is designed. Freeze the intervention, evaluators and success/failure criteria first; only then evaluate transfer. A change that improves training books but does not transfer is not retained as a general factory improvement. Revealed held-out failures can inform the next cycle, not retroactive tuning against the same test set.
 
 Lower-level researchers, planners, writers and reviewers remain book-focused. They receive only the frozen transferable constraints relevant to the current run; they do not redesign the factory while generating a manuscript.
 

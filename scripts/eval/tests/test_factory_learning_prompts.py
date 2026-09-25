@@ -14,20 +14,14 @@ class FactoryLearningPromptTests(unittest.TestCase):
         for token in (
             "transferable_factory_lessons",
             "subject_specific_lessons",
-            "holdout_requirements",
+            "held_out_subjects",
             "MEASURE_MORE",
-            "primary_dimension",
             "smallest_change",
             "possible_regressions",
-            "Exact held-out subjects are NOT chosen or revealed to you",
+            "Held-out subjects are evaluation only",
         ):
             self.assertIn(token, p)
         self.assertIn("what general factory mechanism", p)
-        self.assertIn("evidence_sha256", p)
-        self.assertIn("sealed evidence manifest", p.lower())
-        self.assertIn("eligible_change_surface", p)
-        self.assertIn("MEASURE_MORE", p)
-        self.assertIn("strict_transfer_v1", p)
 
     def test_independent_factory_learning_reviewer_is_anti_overfit(self):
         p = self.text("loop/prompts/factory-learning-reviewer.md")
@@ -41,9 +35,6 @@ class FactoryLearningPromptTests(unittest.TestCase):
         ):
             self.assertIn(token, p)
         self.assertIn("Do not write book prose", p)
-        self.assertIn("evidence_sha256", p)
-        self.assertIn("learner_sha256", p)
-        self.assertIn("strict_transfer_v1", p)
 
     def test_inner_roles_do_not_treat_learning_as_template_or_evidence(self):
         expected = {
@@ -57,19 +48,6 @@ class FactoryLearningPromptTests(unittest.TestCase):
         for path, token in expected.items():
             with self.subTest(path=path):
                 self.assertIn(token, self.text(path))
-
-    def test_research_prompt_requires_pre_research_learning_receipt(self):
-        p = self.text("prompts/research-agent.md")
-        self.assertIn("learning_context", p)
-        self.assertIn("guidance_sha256", p)
-        self.assertIn("gap_resolutions", p)
-        self.assertIn("prior-book material never counts as evidence", p)
-
-    def test_learner_does_not_choose_exact_holdout_topics(self):
-        p = self.text("loop/prompts/factory-learner.md")
-        self.assertIn("holdout_requirements", p)
-        self.assertNotIn('"held_out_subjects"', p)
-        self.assertIn("independent selector", p)
 
     def test_runtime_learning_contract_forbids_cross_topic_template_transfer(self):
         p = self.text("scripts/bc_factory/learning.py")
@@ -93,8 +71,6 @@ class FactoryLearningPromptTests(unittest.TestCase):
         reviewer = self.text(".pi/agents/factory-learning-reviewer.md")
         oc_learner = self.text(".opencode/agents/factory-learner.md")
         oc_reviewer = self.text(".opencode/agents/factory-learning-reviewer.md")
-        selector = self.text(".pi/agents/factory-holdout-selector.md")
-        oc_selector = self.text(".opencode/agents/factory-holdout-selector.md")
         self.assertIn("loop/prompts/factory-learner.md", learner)
         self.assertIn("never writes book prose", learner)
         self.assertIn("tools: read", learner)
@@ -115,31 +91,17 @@ class FactoryLearningPromptTests(unittest.TestCase):
         self.assertIn("edit: deny", oc_reviewer)
         self.assertIn("bash: deny", oc_reviewer)
         self.assertIn("task: deny", oc_reviewer)
-        self.assertIn("tools: read", selector)
-        self.assertNotIn("bash", selector.split("---", 2)[1])
-        self.assertIn("mode: subagent", oc_selector)
-        self.assertIn("edit: deny", oc_selector)
-        self.assertIn("bash: deny", oc_selector)
-        self.assertIn("task: deny", oc_selector)
 
-    def test_orchestrator_and_program_require_sealed_held_out_transfer(self):
+    def test_orchestrator_and_program_require_held_out_transfer(self):
         orchestrator = self.text("prompts/factory-orchestrator.md")
         program = self.text("loop/PROGRAM.md")
         agents = self.text("AGENTS.md")
-        self.assertIn("factory-learner.md", orchestrator)
-        self.assertIn("factory-learning-reviewer.md", orchestrator)
-        self.assertIn("factory-learner.md", program)
-        self.assertIn("factory-learning-reviewer.md", program)
         for p in (orchestrator, program, agents):
-            self.assertIn("factory-learning-evidence", p)
-            self.assertIn("factory-learning-register", p)
-            self.assertIn("factory-learning-freeze-change", p)
-            normalized = p.lower().replace("held-out", "holdout")
-            self.assertIn("holdout", normalized)
-        self.assertIn("factory-learning-holdout-submit", orchestrator)
-        self.assertIn("factory-learning-holdout-submit", program)
-        self.assertIn("Training-only gains are possible overfit", orchestrator)
-        self.assertIn("selector must use a family independent", program.lower())
+            self.assertIn("factory-learner.md", p)
+            self.assertIn("factory-learning-reviewer.md", p)
+            self.assertIn("held-out", p.lower())
+        self.assertIn("A training-only improvement is evidence of possible overfit", orchestrator)
+        self.assertIn("Held-out subjects are a sealed test set", program)
 
 
 if __name__ == "__main__":
