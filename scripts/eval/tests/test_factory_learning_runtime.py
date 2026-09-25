@@ -424,6 +424,8 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
         self.assertEqual(cached["decision"], "REJECT_FACTORY_CHANGE")
         self.assertFalse(cached["requires_commit"])
         history_path.unlink()
+        self.assertIn("loop/factory-learning-history/cycle-decision.json",
+                      [line[2:].strip() for line in self.git("status", "--porcelain").splitlines()])
         with patch("bc_factory.experiments.registration", return_value=(self.repo / "experiments/exp", fake_exp)):
             recovered = learning_decide(self.repo, "cycle-decision")
         self.assertTrue(history_path.is_file())
