@@ -136,9 +136,12 @@ Factory-level changes are now a sealed runtime workflow, separate from per-book 
 6. Only after that freeze, run the read-only Factory Holdout Selector and submit at least two exact unseen topics:
    `python3 scripts/factory.py factory-learning-holdout-submit --cycle CYCLE --selection HOLDOUT.json --metadata SELECTOR-META.json`
    Runtime rejects training-topic overlap, reuse of any topic revealed by prior local or tracked history, and selectors from the learner/reviewer/generator families. The command also writes the immutable tracked `loop/holdout-registry/CYCLE.json`; commit that ledger-only file immediately.
-7. Register the confirmatory transfer experiment on exactly that held-out set, then bind it:
+7. Prepare each matched held-out arm without checking out another branch:
+   `python3 scripts/factory.py factory-learning-prepare-arm --cycle CYCLE --arm parent --run PARENT_RUN --brief BRIEF --research RESEARCH [--research-preflight PREFLIGHT]`
+   `python3 scripts/factory.py factory-learning-prepare-arm --cycle CYCLE --arm candidate --run CANDIDATE_RUN --brief BRIEF --research RESEARCH [--research-preflight PREFLIGHT]`
+   The command chooses only the cycle's sealed pre-intervention or frozen-intervention commit. Parent/candidate pairs use byte-identical brief/research inputs. Then register the confirmatory transfer experiment on exactly that held-out set and bind it:
    `python3 scripts/factory.py factory-learning-bind-experiment --cycle CYCLE --experiment EXPERIMENT`
-   Binding refuses an uncommitted retirement record. Runtime verifies parent/candidate factory hashes against the pre-intervention and frozen-intervention states and rejects undeclared changed paths; after intervention freeze, only tracked `loop/holdout-registry/` commits are allowed.
+   Binding refuses an uncommitted retirement record. Runtime verifies full parent/candidate factory snapshots and rejects undeclared changed paths; after intervention freeze, only tracked `loop/holdout-registry/` commits are allowed.
 8. After all blinded/reversed judgments, run:
    `python3 scripts/factory.py factory-learning-decide --cycle CYCLE`
 
