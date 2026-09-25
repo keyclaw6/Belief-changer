@@ -190,8 +190,11 @@ def _require_only_holdout_history_after_freeze(repo: Path, change: dict) -> None
 def _status_paths(repo: Path) -> list[str]:
     paths = []
     for line in _git(repo, "status", "--porcelain").splitlines():
-        if len(line) >= 4:
-            paths.append(line[3:].strip())
+        if len(line) >= 3:
+            # Porcelain v1 is two status columns followed by whitespace/path.
+            # Slice after the status columns and trim whitespace rather than
+            # assuming exactly one separator character.
+            paths.append(line[2:].strip())
     return paths
 
 
