@@ -230,6 +230,24 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
         with self.assertRaises(FactoryError):
             submit_holdout(self.repo, "cycle-1", selection, self.meta("selector"))
 
+    def test_holdout_replay_recovers_missing_tracked_ledger_mirror(self):
+        self.register_cycle("cycle-holdout-replay")
+        p = self.repo / "prompts/chapter-writer.md"
+        p.write_text(p.read_text() + "\n<!-- fixture intervention -->\n")
+        self.git("add", "prompts/chapter-writer.md"); self.git("commit", "-m", "intervention")
+        freeze_change(self.repo, "cycle-holdout-replay")
+        selection = {"schema_version": 2, "subjects": ["replay-a", "replay-b"],
+                     "rationale": "Selected after intervention freeze."}
+        first = submit_holdout(self.repo, "cycle-holdout-replay", selection, self.meta("selector"))
+        ledger = self.repo / first["retirement_record"]
+        original = unseal(ledger)
+        self.assertEqual(set(original["training_subjects"]), {"train-a", "train-b"})
+        ledger.unlink()
+        replay = submit_holdout(self.repo, "cycle-holdout-replay", selection, self.meta("selector"))
+        self.assertEqual(unseal(ledger), original)
+        self.assertEqual(replay["retirement_sha256"], digest(original))
+        self.assertTrue(replay["requires_commit"])
+
     def test_reviewer_and_selector_must_be_independent(self):
         evidence, learner, reviewer = self.bound_docs("cycle-bad")
         with self.assertRaises(FactoryError):
