@@ -224,10 +224,9 @@ class CrossIterationLearningTests(unittest.TestCase):
         self.assertEqual(decide(self.repo, "candidate-a")["decision"], "PRESERVE_BASELINE")
         advance(self.repo, "candidate-a")
         self.assertNotEqual(load_next(baseline), candidate_b.learning)
-        for order, winner in (("AB", "B"), ("BA", "A")):
-            frozen = task(self.repo, "candidate-b", order)
-            submit(self.repo, "candidate-b", order, self.judgment(frozen, winner), metadata(True))
-        self.assertEqual(decide(self.repo, "candidate-b")["decision"], "ADVANCE")
+        # Staleness is caught before any more external AB/BA evaluator spend.
+        with self.assertRaises(FactoryError):
+            task(self.repo, "candidate-b", "AB")
         with self.assertRaises(FactoryError):
             advance(self.repo, "candidate-b")
 
