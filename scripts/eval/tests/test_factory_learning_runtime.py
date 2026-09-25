@@ -15,7 +15,8 @@ sys.path.insert(0, str(SOURCE / "scripts"))
 
 from bc_factory.common import FactoryError, digest, now, seal, unseal
 from bc_factory.demo import finish, inputs, scaffold
-from bc_factory.factory_learning import bind_experiment, decide as learning_decide, freeze_change, freeze_evidence, register, submit_holdout
+from bc_factory.factory_learning import (bind_experiment, decide as learning_decide, freeze_change,
+                                         freeze_evidence, prepare_arm, register, submit_holdout)
 from bc_factory.runs import active_files, Run, prepare
 
 
@@ -267,6 +268,42 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
             submit_holdout(self.repo, "cycle-2",
                            {"schema_version": 2, "subjects": ["held-c", "held-d"], "rationale": "unseen"},
                            self.meta("reviewer"))
+
+    def test_heldout_parent_and_candidate_arms_prepare_from_the_two_frozen_factories(self):
+        evidence, _, _ = self.register_cycle("cycle-arms")
+        prompt = self.repo / "prompts/chapter-writer.md"
+        original = prompt.read_text()
+        marker = "\n<!-- candidate factory marker -->\n"
+        prompt.write_text(original + marker)
+        self.git("add", "prompts/chapter-writer.md"); self.git("commit", "-m", "intervention")
+        change = freeze_change(self.repo, "cycle-arms")
+        submit_holdout(
+            self.repo, "cycle-arms",
+            {"schema_version": 2, "subjects": ["held-a", "held-b"],
+             "rationale": "Selected after the intervention was frozen."},
+            self.meta("selector"))
+        self.commit_holdout_registry()
+
+        brief, research, plan = inputs("held-a")
+        parent_info = prepare_arm(self.repo, "cycle-arms", "parent", "held-a-parent",
+                                  brief, research, fixture=True)
+        candidate_info = prepare_arm(self.repo, "cycle-arms", "candidate", "held-a-candidate",
+                                     brief, research, fixture=True)
+        parent = Run(self.repo, "held-a-parent")
+        candidate = Run(self.repo, "held-a-candidate")
+        self.assertEqual(parent.manifest["brief_sha256"], candidate.manifest["brief_sha256"])
+        self.assertEqual(parent.manifest["research_sha256"], candidate.manifest["research_sha256"])
+        self.assertEqual(parent.manifest["factory_files"], evidence["base_factory_files"])
+        self.assertEqual(candidate.manifest["factory_files"], change["factory_files"])
+        self.assertEqual(parent_info["factory_ref"], evidence["base_commit"])
+        self.assertEqual(candidate_info["factory_ref"], change["head_commit"])
+        self.assertNotIn("candidate factory marker", parent.snapshot("prompts/chapter-writer.md"))
+        self.assertIn("candidate factory marker", candidate.snapshot("prompts/chapter-writer.md"))
+        # Both frozen arms remain executable because self-optimization cannot alter runtime code.
+        finish(parent, plan)
+        finish(candidate, plan)
+        self.assertEqual(parent.complete()["status"], "COMPLETE_UNRELEASED")
+        self.assertEqual(candidate.complete()["status"], "COMPLETE_UNRELEASED")
 
     def test_transfer_binding_rejects_confounded_or_impossible_designs(self):
         _, learner, _ = self.register_cycle("cycle-bind")
