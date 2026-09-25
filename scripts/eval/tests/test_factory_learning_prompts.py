@@ -54,6 +54,13 @@ class FactoryBoundaryTests(unittest.TestCase):
         self.assertIn(".pi/agents/_README.md", orchestrator)
         self.assertNotIn("AGENTS.md", orchestrator)
         self.assertNotIn("loop/PROGRAM.md", orchestrator)
+        # Pi subprocesses auto-load the repository context file even when a
+        # project agent wrapper never names it, so the root contract itself
+        # must not contain host/autoresearch execution mechanics.
+        agents = self.text("AGENTS.md")
+        self.assertNotIn("The supervisor becomes substantively active", agents)
+        self.assertNotIn("OpenCode-host recovery", agents)
+        self.assertNotIn("provider-state-portability", agents)
 
     def test_factory_orchestrator_stops_at_completed_book(self):
         p = self.text("prompts/factory-orchestrator.md")
@@ -76,9 +83,25 @@ class FactoryBoundaryTests(unittest.TestCase):
     def test_pi_orchestrator_is_the_portable_factory_controller(self):
         readme = self.text(".pi/agents/_README.md")
         agents = self.text("AGENTS.md")
+        wrapper = self.text(".pi/agents/factory-orchestrator.md")
+        prompt = self.text("prompts/factory-orchestrator.md")
+        host = self.text(".opencode/agent/factory.md")
         self.assertIn("Pi `factory-orchestrator` is the reusable factory controller", readme)
-        self.assertIn("Pi `factory-orchestrator` is the factory controller", agents)
+        self.assertIn("saved top-level Pi session", readme)
+        self.assertIn("`subagent` extension", readme)
+        self.assertIn("Pi `factory-orchestrator` owns those stages", agents)
         self.assertNotIn("OpenCode is the persistent factory controller", agents)
+        self.assertIn("tools: read, bash, subagent", wrapper)
+        self.assertIn('agentScope: "project"', wrapper)
+        self.assertIn('agentScope: "project"', prompt)
+        self.assertIn("host harness only", host)
+        self.assertIn("Do not execute factory roles", host)
+
+    def test_independent_pi_wrappers_do_not_self_review_by_inheritance(self):
+        for rel in (".pi/agents/evidence-reviewer.md", ".pi/agents/final-auditor.md"):
+            text = self.text(rel)
+            self.assertIn("inherited Pi model is controller-only", text)
+            self.assertIn("configured independent family", text)
 
     def test_factory_cli_does_not_hard_import_outer_utilities(self):
         head = "\n".join(self.text("scripts/bc_factory/cli.py").splitlines()[:15])

@@ -10,6 +10,8 @@ The upgrade has not run paid live models, reverified the historical research, re
 
 Python 3.11 or newer, standard library only. Git is needed to clone/push and optional for runtime; ZIP exports work without Git. Do not install provider services or supply credentials merely to run tests.
 
+Agentic factory execution uses Pi Coding Agent with its `subagent` extension enabled; that extension is a Pi extension rather than a built-in tool. Run the factory controller as a saved top-level Pi session loaded with `.pi/agents/factory-orchestrator.md`; do not run the controller itself as a subagent, because subagent children are ephemeral. That controller dispatches only child project roles with `agentScope: "project"`; a missing extension is a hard stop, never a reason to fall back to the host harness. Deterministic CLI checks and the offline demo do not require Pi.
+
 ```bash
 bash scripts/check.sh
 python3 scripts/factory.py demo --output /tmp/belief-changer-v2-demo
