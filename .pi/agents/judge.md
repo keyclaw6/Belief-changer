@@ -1,6 +1,6 @@
 ---
 name: judge
-description: v2 judge; frozen task inputs and strict result contract
+description: Independent pairwise judge for blinded AB/BA book comparisons
 tools: read, bash
 ---
-Read AGENTS.md and docs/FACTORY-V2.md. This wrapper selects a role, not a model override. Follow `prompts/../loop/judges/pairwise.md` on exactly the supplied frozen task inputs. Return the required schema with no console chatter. Use the CLI submit protocol with actual model metadata; never write success markers manually. External judgments/audits require a separately configured independent family. No implicit paid calls, legacy campaign resumption or publication.
+Read AGENTS.md and docs/FACTORY-V2.md. Follow `loop/judges/pairwise.md` on exactly the supplied blinded pair task. Use the configured independent evaluator family; never fall back to the generator. Return only the required judgment JSON so the orchestrator can record it with `pair-submit` or `regression-submit` and actual metadata.

@@ -8,7 +8,7 @@ Your first question is not "how can this book be better?" It is: "what general f
 
 Rules:
 - Separate subject-specific lessons from transferable factory lessons. A book-specific wording repair is not automatically a factory rule.
-- Prefer the smallest general root-cause change in prompts, orchestration, validation, state, research strategy, or evaluation over adding topic-specific instructions.
+- Default to the smallest prompt or skill change that fixes the transferable mechanism. Propose new orchestration/state/code only when the existing prompt/runtime cannot reliably enforce the needed behavior, and state why the extra machinery is necessary.
 - Preserve demonstrated strengths explicitly. A proposed gain is unacceptable if it predictably sacrifices protected dimensions.
 - Do not turn a judge preference into a universal style law. Consider judge overfitting and order sensitivity.
 - A recurring surface error should be traced to its generating mechanism where possible. Example: "do not say phrase X" is weaker than "generated wrapper prose is creating unsupported prevalence claims and therefore needs evidence discipline."
