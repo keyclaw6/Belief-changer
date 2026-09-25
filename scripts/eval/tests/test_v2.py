@@ -818,6 +818,41 @@ class ExperimentTests(Base):
         strict=copy.deepcopy(spec);strict['id']='research-frozen';strict['freeze_research']=True
         with self.assertRaises(FactoryError): register(self.repo,strict)
 
+    def test_register_rejects_fixture_live_trust_confound(self):
+        spec=self.setup_experiment()
+        candidate=self.repo/'runs/s1-c0/manifest.json'
+        manifest=unseal(candidate)
+        candidate.unlink()
+        manifest['fixture']=False
+        seal(candidate,manifest)
+        spec['id']='trust-confound'
+        with self.assertRaises(FactoryError): register(self.repo,spec)
+
+    def test_register_rejects_inherited_learning_confound_even_when_research_may_differ(self):
+        pairs=[]
+        manifests={}
+        for subject in ('la','lb'):
+            for n in range(3):
+                for arm in ('p','c'):
+                    rid=f'{subject}-{arm}{n}'
+                    files={'prompts/chapter-writer.md':'a' if arm=='p' else 'b'}
+                    manifests[rid]={'run_id':rid,'subject':subject,'parent':None,'fixture':False,
+                                    'brief_sha256':'1'*64,'research_sha256':('2' if arm=='p' else '3')*64,
+                                    'learning_from':None if arm=='p' else 'other-baseline',
+                                    'learning_sha256':None if arm=='p' else '4'*64,
+                                    'factory_files':files,'factory_digest':digest(files)}
+                pairs.append({'id':f'{subject}-{n}','subject':subject,
+                              'parent_run':f'{subject}-p{n}','candidate_run':f'{subject}-c{n}'})
+        class FakeRun:
+            def __init__(self, _repo, rid): self.manifest=manifests[rid]
+        spec={'schema_version':2,'id':'learning-confound','parent_release':None,
+              'hypothesis':'Reject inherited-learning confound','primary_dimension':'argument',
+              'allowed_change_paths':['prompts/chapter-writer.md'],'subjects':['la','lb'],
+              'samples_per_subject':3,'pairs':pairs,'freeze_plan':False,
+              'freeze_research':False,'confirmatory':False}
+        with patch('bc_factory.experiments.Run',side_effect=FakeRun):
+            with self.assertRaises(FactoryError): register(self.repo,spec)
+
     def test_register_reused_book_as_replicate_rejected(self):
         spec=self.setup_experiment();spec['id']='exp2';spec['pairs'][1]['parent_run']=spec['pairs'][0]['parent_run']
         with self.assertRaises(FactoryError): register(self.repo,spec)
