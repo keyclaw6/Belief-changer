@@ -219,11 +219,16 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
             submit_holdout(self.repo, "cycle-1",
                            {"schema_version": 2, "subjects": ["train-a", "held-b"], "rationale": "bad overlap"},
                            self.meta("selector"))
-        result = submit_holdout(self.repo, "cycle-1",
-                                {"schema_version": 2, "subjects": ["held-a", "held-b"],
-                                 "rationale": "Selected after freeze to satisfy the generic transfer criteria."},
-                                self.meta("selector"))
+        selection = {"schema_version": 2, "subjects": ["held-a", "held-b"],
+                     "rationale": "Selected after freeze to satisfy the generic transfer criteria."}
+        result = submit_holdout(self.repo, "cycle-1", selection, self.meta("selector"))
         self.assertEqual(result["selection"]["subjects"], ["held-a", "held-b"])
+        self.commit_holdout_registry()
+
+        p.write_text(p.read_text() + "\n<!-- untested post-holdout mutation -->\n")
+        self.git("add", "prompts/chapter-writer.md"); self.git("commit", "-m", "untested post-holdout mutation")
+        with self.assertRaises(FactoryError):
+            submit_holdout(self.repo, "cycle-1", selection, self.meta("selector"))
 
     def test_reviewer_and_selector_must_be_independent(self):
         evidence, learner, reviewer = self.bound_docs("cycle-bad")
@@ -304,6 +309,13 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
             bound = bind_experiment(self.repo, "cycle-bind", "exp-valid")
         self.assertEqual(bound["experiment_id"], "exp-valid")
 
+        # A cached binding must not bless later untested source changes.
+        p.write_text(p.read_text() + "\n<!-- untested post-bind mutation -->\n")
+        self.git("add", "prompts/chapter-writer.md"); self.git("commit", "-m", "untested post-bind mutation")
+        with patch("bc_factory.experiments.registration", return_value=(self.repo / "experiments/fake", valid)):
+            with self.assertRaises(FactoryError):
+                bind_experiment(self.repo, "cycle-bind", "exp-valid")
+
     def test_missing_transfer_panel_is_not_sealed_as_terminal(self):
         self.register_cycle("cycle-decision")
         p = self.repo / "prompts/chapter-writer.md"
@@ -318,8 +330,14 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
         self.commit_holdout_registry()
         fake_exp = {"spec": {"subjects": ["held-a", "held-b"]}}
         root = self.repo / "factory-learning/cycle-decision"
+        retirement_path = self.repo / "loop/holdout-registry/cycle-decision.json"
+        retirement = unseal(retirement_path)
+        retirement_commit = self.git("log", "-1", "--format=%H", "--", "loop/holdout-registry/cycle-decision.json")
         binding = {"schema_version": 2, "cycle_id": "cycle-decision", "experiment_id": "exp",
-                   "registration_sha256": digest(fake_exp), "holdout_sha256": digest(holdout),
+                   "registration_sha256": digest(fake_exp), "holdout_sha256": digest({k: v for k, v in holdout.items()
+                       if k not in ("retirement_record", "retirement_sha256", "requires_commit")}),
+                   "holdout_retirement_sha256": digest(retirement),
+                   "holdout_retirement_commit": retirement_commit,
                    "change_sha256": digest(change), "bound_at": now()}
         seal(root / "experiment.json", binding)
 
@@ -342,6 +360,13 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
         with patch("bc_factory.experiments.registration", return_value=(self.repo / "experiments/exp", fake_exp)):
             cached = learning_decide(self.repo, "cycle-decision")
         self.assertEqual(cached["decision"], "REJECT_FACTORY_CHANGE")
+
+        # A cached terminal decision must never authorize a later source mutation.
+        p.write_text(p.read_text() + "\n<!-- untested post-decision mutation -->\n")
+        self.git("add", "prompts/chapter-writer.md"); self.git("commit", "-m", "untested post-decision mutation")
+        with patch("bc_factory.experiments.registration", return_value=(self.repo / "experiments/exp", fake_exp)):
+            with self.assertRaises(FactoryError):
+                learning_decide(self.repo, "cycle-decision")
 
     def test_committed_holdout_registry_survives_loss_of_local_cycle_state(self):
         self.register_cycle("cycle-retire")
