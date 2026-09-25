@@ -2,7 +2,7 @@
 
 ## What is implemented, and what is not established
 
-The tools implement immutable run preparation, explicit role tasks, strict output validation, dependency-bound results, retries through explicit revision rounds, actual-text reader state, whole-book edits, front matter/source assembly, independent final audit, blinded/reversed paired evaluation, conservative promotion and reproducible ZIP packaging.
+The reusable factory implements immutable run preparation, explicit role tasks, strict output validation, dependency-bound results, retries through explicit revision rounds, actual-text reader state, whole-book edits, front matter/source assembly, independent final audit, verification and reproducible ZIP packaging. The repository also contains autoresearch comparison/promotion utilities, but they are outside the Pi factory contract.
 
 The upgrade has not run paid live models, reverified the historical research, regenerated production books, chosen a new external model, collected human ratings, or measured reader outcomes. Default generator route names come from the owner's existing configuration; live availability is not claimed. Historical drafts are preserved, not republished as safe/effective books. Software checks cannot prove prose quality, factual truth, legal clearance or behavioral effectiveness.
 
