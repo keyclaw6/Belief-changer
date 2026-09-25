@@ -430,9 +430,8 @@ class FactoryLearningRuntimeTests(unittest.TestCase):
             recovered = learning_decide(self.repo, "cycle-decision")
         self.assertTrue(history_path.is_file())
         self.assertEqual(unseal(history_path), history)
-        self.assertTrue(recovered["requires_commit"])
-        self.git("add", "loop/factory-learning-history")
-        self.git("commit", "-m", "restore terminal history mirror")
+        self.assertFalse(recovered["requires_commit"])
+        self.assertFalse(self.git("status", "--porcelain"))
 
         # A cached terminal decision must never authorize a later source mutation.
         p.write_text(p.read_text() + "\n<!-- untested post-decision mutation -->\n")
