@@ -70,10 +70,13 @@ class FactoryLearningPromptTests(unittest.TestCase):
                 self.assertIn(prompt, p.read_text(encoding="utf-8"))
 
     def test_helper_wrappers_match_their_real_surfaces(self):
+        orchestrator = self.text(".pi/agents/factory-orchestrator.md")
         researcher = self.text(".pi/agents/researcher.md")
         hypothesizer = self.text(".pi/agents/hypothesizer.md")
         trace = self.text(".pi/agents/trace-analyzer.md")
         judge = self.text(".pi/agents/judge.md")
+        self.assertIn("not itself a factory task/result", orchestrator)
+        self.assertIn("canonical Pi role wrappers", orchestrator)
         self.assertIn("not a factory task/result role", researcher)
         self.assertIn("Do not mutate runs", hypothesizer)
         self.assertIn("Do not mutate runs", trace)
