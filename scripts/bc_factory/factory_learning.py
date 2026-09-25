@@ -389,6 +389,11 @@ def submit_holdout(repo: Path, cycle_id: str, selection: dict, metadata: dict) -
         require(existing["selection"] == selection and existing["selector_metadata"] == metadata
                 and existing["change_sha256"] == digest(change),
                 "Held-out selection is already frozen with different inputs")
+        require(_git(repo, "branch", "--show-current") == reg["experimental_branch"],
+                "Frozen held-out selection belongs to another branch")
+        _require_only_holdout_history_after_freeze(repo, change)
+        require(_factory_snapshot(repo) == change["factory_files"],
+                "Active factory changed after held-out selection was frozen")
         retirement_path = _holdout_record_path(repo, cycle_id)
         retirement = unseal(retirement_path)
         require(set(retirement["subjects"]) == set(selection["subjects"])
@@ -460,7 +465,20 @@ def bind_experiment(repo: Path, cycle_id: str, experiment_id: str) -> dict:
         existing = unseal(root / "experiment.json")
         require(existing["experiment_id"] == experiment_id,
                 "Factory-learning cycle already binds a different transfer experiment")
-        experiments.registration(repo, experiment_id)
+        require(_git(repo, "branch", "--show-current") == reg["experimental_branch"],
+                "Stored transfer binding belongs to another branch")
+        require(not _git(repo, "status", "--porcelain"),
+                "Stored transfer binding requires a clean frozen intervention tree")
+        change = unseal(root / "change.json")
+        _require_only_holdout_history_after_freeze(repo, change)
+        require(_factory_snapshot(repo) == change["factory_files"],
+                "Active factory changed after transfer binding")
+        retirement = unseal(_holdout_record_path(repo, cycle_id))
+        require(existing["holdout_retirement_sha256"] == digest(retirement),
+                "Stored transfer binding's holdout-retirement record changed")
+        _, current_exp = experiments.registration(repo, experiment_id)
+        require(existing["registration_sha256"] == digest(current_exp),
+                "Stored transfer binding's experiment registration changed")
         return existing
     require(_git(repo, "branch", "--show-current") == reg["experimental_branch"],
             "Transfer binding must occur on the frozen experimental branch")
@@ -517,9 +535,20 @@ def decide(repo: Path, cycle_id: str) -> dict:
     root, reg = registration(repo, cycle_id)
     if (root / "decision.json").exists():
         existing = unseal(root / "decision.json")
+        require(_git(repo, "branch", "--show-current") == reg["experimental_branch"],
+                "Stored factory-learning decision belongs to another branch")
+        require(not _git(repo, "status", "--porcelain"),
+                "Stored factory-learning decision requires a clean frozen intervention tree")
+        change = unseal(root / "change.json")
+        _require_only_holdout_history_after_freeze(repo, change)
+        require(_factory_snapshot(repo) == change["factory_files"],
+                "Active factory changed after the factory-learning decision")
         binding = unseal(root / "experiment.json")
         require(existing["binding_sha256"] == digest(binding),
                 "Stored factory-learning decision is bound to another experiment state")
+        retirement = unseal(_holdout_record_path(repo, cycle_id))
+        require(binding["holdout_retirement_sha256"] == digest(retirement),
+                "Stored factory-learning decision's holdout-retirement record changed")
         _, current_exp = experiments.registration(repo, binding["experiment_id"])
         require(digest(current_exp) == binding["registration_sha256"],
                 "Stored factory-learning decision's experiment registration changed")
