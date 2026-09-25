@@ -76,6 +76,3 @@ ARCHIVE-MANIFEST.json
 /loop/iterations/*/quit-*/
 /production-books/*/research/_rounds/
 ARCHIVE-MANIFEST.json
-
-# Runtime outer-learning cycle records are sealed state, not source code.
-/factory-learning/

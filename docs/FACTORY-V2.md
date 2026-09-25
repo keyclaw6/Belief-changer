@@ -45,8 +45,6 @@ Use `factory/brief.example.json` as a schema example. The brief fixes subject, a
 
 `factory/research.example.json` is deliberately UNVERIFIED and NOT research ready for generation. Replace it with real source-backed material. `prompts/research-agent.md` defines research.json; preserve detailed banks/synthesis/source locators for human audit. Do not convert a URL, `SUPPORTED` label, count floor or source file's existence into verification. Every excerpt and inference requires checking. Sources that are illustrations cannot establish empirical claims.
 
-For a cross-iteration successor, research now starts from a deterministic guidance artifact rather than from memory. Prepare the brief, run `python3 scripts/factory.py research-guidance --learning-from BASELINE_RUN --brief BRIEF --out GUIDANCE`, and give GUIDANCE to the research lead before retrieval. Its research.json must bind `guidance_sha256`/`baseline_run` and provide one explicit `gap_resolutions` entry for every inherited research gap. `prepare --learning-from ...` recomputes this guidance and fails if research was produced against a different/stale packet.
-
 ```bash
 python3 scripts/factory.py prepare --run baseline-topic-a --brief path/to/brief.json --research path/to/research.json
 ```
@@ -120,32 +118,6 @@ python3 scripts/factory.py status --run baseline-topic-a
 ```
 
 Zero exit status and COMPLETE_UNRELEASED mean the workflow completed its checks. They do not authorize publication or assert efficacy. INCOMPLETE/error returns exit code 2. There is no successful PANEL DONE for missing work.
-
-## Factory-learning cycles
-
-Factory-level changes are now a sealed runtime workflow, separate from per-book `learning-next.json` and separate from release promotion.
-
-1. Create/switch to an isolated experimental branch; unproven interventions must never be committed directly to `main`. Freeze the exact completed training runs and optional extra judgment/trace artifacts before either outer agent runs:
-   `python3 scripts/factory.py factory-learning-evidence --cycle CYCLE --run RUN_A --run RUN_B [--artifact PATH ...]`
-2. Give that sealed evidence manifest and only its named artifacts to the Factory Learner. Its JSON must copy the evidence SHA-256 exactly and name only generic holdout requirements.
-3. Give the same evidence plus exact learner proposal to the independent Factory-Learning Reviewer. Its JSON must bind both the evidence SHA-256 and learner SHA-256.
-4. Before edits, seal both hash-bound outputs and actual execution metadata:
-   `python3 scripts/factory.py factory-learning-register --cycle CYCLE --learner LEARNER.json --learner-metadata LEARNER-META.json --review REVIEW.json --reviewer-metadata REVIEWER-META.json`
-5. Implement only the approved paths, commit the intervention, then freeze the actual Git diff:
-   `python3 scripts/factory.py factory-learning-freeze-change --cycle CYCLE`
-6. Only after that freeze, run the read-only Factory Holdout Selector and submit at least two exact unseen topics:
-   `python3 scripts/factory.py factory-learning-holdout-submit --cycle CYCLE --selection HOLDOUT.json --metadata SELECTOR-META.json`
-   Runtime rejects training-topic overlap, reuse of any topic revealed by prior local or tracked history, and selectors from the learner/reviewer/generator families. The command also writes the immutable tracked `loop/holdout-registry/CYCLE.json`; commit that ledger-only file immediately.
-7. Prepare each matched held-out arm without checking out another branch:
-   `python3 scripts/factory.py factory-learning-prepare-arm --cycle CYCLE --arm parent --run PARENT_RUN --brief BRIEF --research RESEARCH [--research-preflight PREFLIGHT]`
-   `python3 scripts/factory.py factory-learning-prepare-arm --cycle CYCLE --arm candidate --run CANDIDATE_RUN --brief BRIEF --research RESEARCH [--research-preflight PREFLIGHT]`
-   The command chooses only the cycle's sealed pre-intervention or frozen-intervention commit. Parent/candidate pairs use byte-identical brief/research inputs. Then register the confirmatory transfer experiment on exactly that held-out set and bind it:
-   `python3 scripts/factory.py factory-learning-bind-experiment --cycle CYCLE --experiment EXPERIMENT`
-   Binding refuses an uncommitted retirement record. Runtime verifies full parent/candidate factory snapshots and rejects undeclared changed paths; after intervention freeze, only tracked `loop/holdout-registry/` commits are allowed.
-8. After all blinded/reversed judgments, run:
-   `python3 scripts/factory.py factory-learning-decide --cycle CYCLE`
-
-A complete transfer panel also writes tracked `loop/factory-learning-history/CYCLE.json`; commit it immediately. This compact record binds the terminal decision to the evidence/proposal/review/intervention/holdout/experiment hashes without committing bulky run artifacts. `KEEP_FACTORY_CHANGE` is an internal engineering decision only. The transfer experiment must use the learner's predeclared primary dimension. Research stays byte-identical between outer self-optimization arms; research-generation changes are outside the current measurable self-optimization surface and require explicit engineering until that stage has its own sealed execution receipt. `freeze_plan` must match whether the intervention can affect planning, and the outer binder rejects sample allocations that cannot possibly clear `strict_transfer_v1`. Keep the blinded transfer judge/instrument stable when possible for comparability, while auditing that proxy separately through calibration/challenger evaluation rather than mandatory per-cycle model churn. The gate does not require or replace human release calibration, never updates `factory/champion.json`, and never establishes reader efficacy. If an intervention is rejected or terminally inconclusive, preserve/cherry-pick its holdout-retirement and factory-learning-history commits onto `main` before deleting the experimental branch; the test topics and decision trail remain durable. Publication still uses the separate release gate below.
 
 ## Experiments and promotion
 

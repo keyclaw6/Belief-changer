@@ -51,6 +51,5 @@
     }
   ],
   "freeze_plan": true,
-  "confirmatory": true,
-  "freeze_research": true
+  "confirmatory": true
 }
