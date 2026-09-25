@@ -9,6 +9,7 @@ Check:
 - Does the evidence distinguish observation from causal explanation?
 - Could the same result be explained by judge variance, order effects, research differences, model variance, or a subject-specific need?
 - Is the proposed change the smallest coherent intervention that tests the mechanism?
+- Could the same fix be expressed cleanly in an existing prompt/skill instead of adding orchestration, state, wrappers, or runtime code? If yes, require the simpler change.
 - Are previously demonstrated strengths explicitly protected?
 - Could the rule force an Allen-Carr/addiction/abstinence structure onto unrelated domains?
 - Does the learner specify generic holdout requirements instead of choosing the exact test topics?
