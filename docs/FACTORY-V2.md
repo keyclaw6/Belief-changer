@@ -2,7 +2,7 @@
 
 ## What is implemented, and what is not established
 
-The tools implement immutable run preparation, explicit role tasks, strict output validation, dependency-bound results, retries through explicit revision rounds, actual-text reader state, whole-book edits, front matter/source assembly, independent final audit, blinded/reversed paired evaluation, conservative promotion and reproducible ZIP packaging.
+The reusable factory implements immutable run preparation, explicit role tasks, strict output validation, dependency-bound results, retries through explicit revision rounds, actual-text reader state, whole-book edits, front matter/source assembly, independent final audit, verification and reproducible ZIP packaging. The repository also contains autoresearch comparison/promotion utilities, but they are outside the Pi factory contract.
 
 The upgrade has not run paid live models, reverified the historical research, regenerated production books, chosen a new external model, collected human ratings, or measured reader outcomes. Default generator route names come from the owner's existing configuration; live availability is not claimed. Historical drafts are preserved, not republished as safe/effective books. Software checks cannot prove prose quality, factual truth, legal clearance or behavioral effectiveness.
 
@@ -117,29 +117,15 @@ python3 scripts/factory.py verify --run baseline-topic-a
 python3 scripts/factory.py status --run baseline-topic-a
 ```
 
-Zero exit status and COMPLETE_UNRELEASED mean the workflow completed its checks. They do not authorize publication or assert efficacy. INCOMPLETE/error returns exit code 2. There is no successful PANEL DONE for missing work.
+Zero exit status and `COMPLETE_UNRELEASED` are the reusable factory's terminal output. They do not authorize publication or assert efficacy. INCOMPLETE/error returns exit code 2. There is no successful PANEL DONE for missing work.
 
-## Experiments and promotion
+## Factory output boundary
 
-See loop/PROGRAM.md and factory/experiment.example.json. First prepare all paired runs with frozen per-arm inputs; register a confirmatory specification before writing any chapters. Each arm is one factory across all subjects. Follow the paired input/model policy. A plan-affecting intervention must explicitly set freeze_plan=false; do not describe a regenerated-plan study as a writer-only comparison.
+The caller receives the immutable completed run here.
 
-```bash
-python3 scripts/factory.py register-experiment --spec path/to/experiment.json
-python3 scripts/factory.py pair-task --experiment study-001 --pair subject-a-1 --order AB --out /tmp/pair.json
-python3 scripts/factory.py pair-submit --experiment study-001 --pair subject-a-1 --order AB --response /tmp/judgment.json --metadata /tmp/judge-meta.json
-# Repeat with order BA and all preregistered independent generation pairs.
-python3 scripts/factory.py decide --experiment study-001 --calibration path/to/real-calibration.json
-```
+Autoresearch comparison, AB/BA judging, cross-iteration baseline decisions, Factory Learner/Reviewer, held-out experiments, promotion analysis and choosing the next factory intervention are outside the Pi factory runtime. They are documented in `loop/PROGRAM.md` and may call this factory again when another book or a bounded repair is needed.
 
-`pair-execute --allow-paid` is available for a configured independent provider. Calibration data must refer to the exact frozen instrument hash and actual judge model/family, at least two identified human raters, required controls and retained case artifact hashes. The code validates supplied rating consistency, not the identity of humans or veracity of submitted claims. Retain the underlying original cases/ratings and review them. `factory/calibration.json` remains PENDING until real data exist.
-
-Promotion requires KEEP_ELIGIBLE and a human approval from factory/release-approval.example.json bound to the actual chosen book hashes. Health/high-risk work needs appropriately qualified review. First registered candidate per subject is selected by a fixed rule, not cherry-picked after scores.
-
-```bash
-python3 scripts/factory.py promote --experiment study-001 --release release-001 --calibration path/to/real-calibration.json --approval path/to/human-approval.json
-```
-
-The tool checks that the current champion is the declared parent, builds the immutable release, then atomically advances factory/champion.json. It does not publish externally, overwrite historical books or make Git commits. Inconclusive/exploratory/fixture data never promote. A released code snapshot is preserved separately from the current development checkout.
+This separation is intentional: the book factory should be extractable without carrying the autoresearch loop with it.
 
 ## Recovery and portability
 

@@ -1,6 +1,6 @@
 # Cross-iteration learning and no-regression gate
 
-This layer makes repeated book iterations a controlled optimization process. It is separate from release promotion and from `factory/champion.json`.
+This is an AUTORESEARCH-side layer around the reusable book factory. The Pi factory itself ends at `COMPLETE_UNRELEASED`; this layer compares completed factory outputs and decides what, if anything, should change next. It is separate from release promotion and from `factory/champion.json`.
 
 ## 1. Freeze what the previous iteration taught
 

@@ -5,11 +5,13 @@ Read AGENTS.md, docs/FACTORY-V2.md, factory/champion.json, the relevant immutabl
 
 
 ## Execution ownership for auto-research iterations
-When an auto-research iteration is explicitly authorized, one persistent factory/OpenCode executor owns the entire creation pipeline. The orchestrator starts or resumes that executor, then stays hands-off while it is healthy. Evidence-review revisions, plan-review revisions, chapter rewrites, state updates and editor loops are expected autonomous factory work; they are not heartbeat intervention points.
+Autoresearch is the OUTER controller. It invokes the reusable book factory as a component; autoresearch agents themselves do not run as Pi agents.
 
-The heartbeat may inspect progress, but must not become a shadow writer or manually synthesize normal stage outputs. It intervenes only to repair a genuine execution failure (tooling, auth, provider, browser, parser, session, or a mechanical deadlock / fail-closed violation), and then resumes the SAME durable session from existing artifacts. At the boundary where both complete books for an iteration are assembled, audited and verified, the supervisor performs the independent judgment/quality-gate work and selects one generalizable learning intervention for the next iteration.
+For each requested book, start or resume one persistent factory/OpenCode executor. Inside that factory call, Pi agents own research, evidence review, planning, writing/review, state, whole-book editing and final audit. Autoresearch stays hands-off while the factory is healthy. The factory returns control when `verify` reaches `COMPLETE_UNRELEASED`.
 
-The persistent OpenCode job's configured controller model is part of that execution identity. Do not switch it to work around provider/context trouble unless the owner explicitly authorizes a model change.
+Only after that handoff does autoresearch resume: run blinded comparisons, baseline/no-regression decisions, Factory Learner/Reviewer, held-out evaluation and selection of the next intervention. If no-regression evaluation returns `REPAIR_REQUIRED`, autoresearch may call the SAME factory run back for its bounded whole-book repair, then take control again after the repaired book is independently audited and verified.
+
+The heartbeat may inspect progress, but must not become a shadow writer or manually synthesize factory-stage outputs. It intervenes only to repair genuine infrastructure/tooling/provider/browser/auth/parser/session failures or a fail-closed violation, then resumes the same durable factory session. The factory controller model remains fixed unless the owner explicitly authorizes a change.
 
 ## Cross-iteration learning and no-regression baseline
 
@@ -30,7 +32,7 @@ After the candidate's own final audit ACCEPTS its latest assembly, run a blinded
 
 ### Factory-learning boundary
 
-The no-regression packet protects what the next book must not forget; it does not by itself decide how the FACTORY should change. Factory changes use a separate outer learning boundary after complete iteration judgments are frozen.
+This section is AUTORESEARCH, not book-factory runtime. The no-regression packet protects what the next book must not forget; it does not by itself decide how the FACTORY should change. Factory changes use this outer learning boundary after complete iteration judgments are frozen. These roles are executed by the autoresearch controller directly from `loop/prompts/` / `loop/judges/`, never as Pi factory agents.
 
 1. Run `loop/prompts/factory-learner.md` on TRAINING-subject books/research/audits/judgments/traces. The learner must separate subject-local lessons from transferable mechanisms and may return CHANGE_FACTORY, KEEP_FACTORY, or MEASURE_MORE.
 2. Run `loop/prompts/factory-learning-reviewer.md` independently on the learner proposal and underlying evidence. Only an ACCEPTed proposal may become a factory intervention.

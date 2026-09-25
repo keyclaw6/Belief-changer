@@ -8,7 +8,7 @@ from . import __version__
 from .common import FactoryError, atomic_json, read_json, reply_json, require, unseal, lock, seal, digest, now
 from .runs import Run, prepare
 from .adapters import execute
-from . import archive, experiments, learning, regression
+from . import archive
 
 
 def document(path: str) -> dict:
@@ -117,9 +117,14 @@ def main(argv: list[str] | None = None) -> int:
         elif cmd == "assemble":
             r = Run(repo, args.run); a = r.assemble()
             result = {"status": "ASSEMBLED_UNAUDITED", "path": str(r.root / "book.md"), "sha256": a["assembly"]["text_sha256"]}
-        elif cmd == "register-experiment": result = {"registered": str(experiments.register(repo, document(args.spec)))}
-        elif cmd == "pair-task": result = experiments.pair_task(repo, args.experiment, args.pair, args.order)
+        elif cmd == "register-experiment":
+            from . import experiments
+            result = {"registered": str(experiments.register(repo, document(args.spec)))}
+        elif cmd == "pair-task":
+            from . import experiments
+            result = experiments.pair_task(repo, args.experiment, args.pair, args.order)
         elif cmd in ("pair-submit", "pair-execute"):
+            from . import experiments
             if cmd == "pair-execute":
                 task = experiments.pair_task(repo, args.experiment, args.pair, args.order)
                 _, reg = experiments.registration(repo, args.experiment)
@@ -139,15 +144,28 @@ def main(argv: list[str] | None = None) -> int:
                 output, meta = document(args.response), document(args.metadata)
                 record = experiments.submit_pair(repo, args.experiment, args.pair, args.order, output, meta)
             result = {"status": "RECORDED", "task_hash": record["task_hash"]}
-        elif cmd == "decide": result = experiments.decide(repo, args.experiment, document(args.calibration) if args.calibration else None)
-        elif cmd == "promote": result = {"release": str(experiments.promote(repo, args.experiment, args.release, document(args.calibration), document(args.approval)))}
-        elif cmd == "learning-seed": result = learning.seed(repo, args.run, document(args.lessons))
-        elif cmd == "regression-task": result = regression.task(repo, args.run, args.order)
+        elif cmd == "decide":
+            from . import experiments
+            result = experiments.decide(repo, args.experiment, document(args.calibration) if args.calibration else None)
+        elif cmd == "promote":
+            from . import experiments
+            result = {"release": str(experiments.promote(repo, args.experiment, args.release, document(args.calibration), document(args.approval)))}
+        elif cmd == "learning-seed":
+            from . import learning
+            result = learning.seed(repo, args.run, document(args.lessons))
+        elif cmd == "regression-task":
+            from . import regression
+            result = regression.task(repo, args.run, args.order)
         elif cmd == "regression-submit":
+            from . import regression
             record = regression.submit(repo, args.run, args.order, document(args.response), document(args.metadata))
             result = {"status": "RECORDED", "task_hash": record["task_hash"]}
-        elif cmd == "regression-decide": result = regression.decide(repo, args.run)
-        elif cmd == "advance-baseline": result = learning.advance(repo, args.run)
+        elif cmd == "regression-decide":
+            from . import regression
+            result = regression.decide(repo, args.run)
+        elif cmd == "advance-baseline":
+            from . import learning
+            result = learning.advance(repo, args.run)
         elif cmd == "research-bootstrap":
             from .research_setup import bootstrap
             result = bootstrap(repo, args.apply)
