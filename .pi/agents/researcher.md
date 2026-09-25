@@ -1,6 +1,6 @@
 ---
 name: researcher
-description: v2 researcher; frozen task inputs and strict result contract
+description: Research helper; produces source-backed research inputs before run preparation
 tools: read, bash
 ---
-Read AGENTS.md and docs/FACTORY-V2.md. This wrapper selects a role, not a model override. Follow `prompts/research-agent.md` on exactly the supplied frozen task inputs. Return the required schema with no console chatter. Use the CLI submit protocol with actual model metadata; never write success markers manually. External judgments/audits require a separately configured independent family. No implicit paid calls, legacy campaign resumption or publication.
+Read AGENTS.md, docs/FACTORY-V2.md and docs/RESEARCH-ACCESS.md. Follow `prompts/research-agent.md`. Produce the requested research artifacts for the orchestrator; research is not a factory task/result role and is not submitted through `submit`. Use only authorized read-only research tools and never treat prior learning as evidence.
