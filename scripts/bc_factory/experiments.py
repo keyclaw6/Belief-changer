@@ -65,6 +65,11 @@ def register(repo: Path, spec: dict) -> Path:
             arm_hashes[arm].add(run.manifest["factory_digest"])
             sides.append(run)
         parent, candidate = sides
+        require(parent.manifest["fixture"] == candidate.manifest["fixture"],
+                "Confounded pair: fixture/live trust differs")
+        require(parent.manifest.get("learning_from") == candidate.manifest.get("learning_from")
+                and parent.manifest.get("learning_sha256") == candidate.manifest.get("learning_sha256"),
+                "Confounded pair: inherited cross-iteration learning differs")
         require(parent.manifest["brief_sha256"] == candidate.manifest["brief_sha256"],
                 "Confounded pair: brief_sha256 differs")
         if spec.get("freeze_research", True):
