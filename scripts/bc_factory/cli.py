@@ -67,6 +67,11 @@ def parser() -> argparse.ArgumentParser:
     sub.add_parser("factory-learning-freeze-change").add_argument("--cycle", required=True)
     s = sub.add_parser("factory-learning-holdout-submit", help="Select exact held-out subjects only after intervention freeze")
     s.add_argument("--cycle", required=True); s.add_argument("--selection", required=True); s.add_argument("--metadata", required=True)
+    s = sub.add_parser("factory-learning-prepare-arm",
+                       help="Prepare a held-out parent/candidate run from the cycle's sealed factory commit")
+    s.add_argument("--cycle", required=True); s.add_argument("--arm", choices=("parent", "candidate"), required=True)
+    s.add_argument("--run", required=True); s.add_argument("--brief", required=True); s.add_argument("--research", required=True)
+    s.add_argument("--parent"); s.add_argument("--fixture", action="store_true"); s.add_argument("--research-preflight")
     s = sub.add_parser("factory-learning-bind-experiment")
     s.add_argument("--cycle", required=True); s.add_argument("--experiment", required=True)
     sub.add_parser("factory-learning-decide").add_argument("--cycle", required=True)
@@ -165,6 +170,10 @@ def main(argv: list[str] | None = None) -> int:
         elif cmd == "factory-learning-freeze-change": result = factory_learning.freeze_change(repo, args.cycle)
         elif cmd == "factory-learning-holdout-submit":
             result = factory_learning.submit_holdout(repo, args.cycle, document(args.selection), document(args.metadata))
+        elif cmd == "factory-learning-prepare-arm":
+            result = factory_learning.prepare_arm(
+                repo, args.cycle, args.arm, args.run, document(args.brief), document(args.research),
+                args.parent, args.fixture, document(args.research_preflight) if args.research_preflight else None)
         elif cmd == "factory-learning-bind-experiment": result = factory_learning.bind_experiment(repo, args.cycle, args.experiment)
         elif cmd == "factory-learning-decide": result = factory_learning.decide(repo, args.cycle)
         elif cmd == "regression-task": result = regression.task(repo, args.run, args.order)
