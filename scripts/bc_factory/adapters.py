@@ -42,10 +42,13 @@ def extract(data: dict, api: str) -> str:
     return nonempty(choice.get("message", {}).get("content"), "Provider output")
 
 
-def execute(task: dict, config: dict, allow_paid: bool = False) -> tuple[dict, dict]:
+def execute(task: dict, config: dict, allow_paid: bool = False,
+            profile_name: str | None = None) -> tuple[dict, dict]:
     require(allow_paid, "Model execution requires --allow-paid. No paid calls were made.")
     validate_config(config)
-    profile_name = "external" if task["role"] in EXTERNAL_ROLES else "factory"
+    if profile_name is None:
+        profile_name = "external" if task["role"] in EXTERNAL_ROLES else "factory"
+    require(profile_name in ("factory", "external"), "Execution profile must be factory or external")
     profile = config["profiles"].get(profile_name)
     require(isinstance(profile, dict), f"Configure profiles.{profile_name} explicitly; no automatic substitution is allowed")
     family = nonempty(profile.get("family"), "Model family")

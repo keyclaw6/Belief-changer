@@ -121,11 +121,15 @@ python3 scripts/factory.py status --run baseline-topic-a
 
 Zero exit status and `COMPLETE_UNRELEASED` are the reusable factory's terminal output. They do not authorize publication or assert efficacy. INCOMPLETE/error returns exit code 2. There is no successful PANEL DONE for missing work.
 
+## Factory caller-input boundary
+
+An optional `--caller-context FILE` is generic caller-owned guidance. The factory requires only a nonempty JSON object, freezes and hashes it, passes it to role tasks as `caller_context`, and inherits it byte-identically through remediation. It does not parse baseline lineage, comparison results, provenance modes, or other autoresearch decision semantics. Caller context is guidance, never empirical evidence.
+
 ## Factory output boundary
 
-The caller receives the immutable completed run here.
+The caller receives an immutable accepted assembly/audit snapshot here. The run history is append-only: a later explicitly sealed caller repair may add another bounded whole-book round without rewriting any prior artifact.
 
-Autoresearch comparison, AB/BA judging, cross-iteration baseline decisions, Factory Learner/Reviewer, held-out experiments, promotion analysis and choosing the next factory intervention are outside the Pi factory runtime. They are documented in `loop/PROGRAM.md` and may call this factory again when another book or a bounded repair is needed.
+Autoresearch comparison, AB/BA judging, cross-iteration baseline decisions, Factory Learner/Reviewer, held-out experiments, promotion analysis and choosing the next factory intervention are outside the Pi factory runtime. Their deterministic command surface is `python3 scripts/autoresearch.py ...`, with implementation under `scripts/bc_autoresearch/`, documented in `loop/PROGRAM.md`; it may call this factory again when another book or a bounded repair is needed. For a post-audit repair, the caller seals a generic request under `caller-feedback/` bound to the exact accepted book and audit; the factory validates that binding and treats the enclosed feedback as opaque editorial constraints rather than depending on the caller's decision format. `scripts/bc_autoresearch/` is not part of a frozen factory snapshot.
 
 This separation is intentional: the book factory should be extractable without carrying the autoresearch loop with it.
 
@@ -133,7 +137,7 @@ This separation is intentional: the book factory should be extractable without c
 
 Use status to locate the first missing/invalid dependency. Result files include input and output hashes; existence alone cannot skip work. A stale lock is not stolen automatically: inspect the recorded PID/host context and remove it only after confirming the process is gone. Provider failures do not create complete results. Use a new explicitly authorized attempt; do not repeatedly sample judges until one passes.
 
-Execution code must match the frozen run. To run with its code snapshot, invoke `runs/ID/snapshot/scripts/factory.py --repo /absolute/repository ...`; do not silently execute a different algorithm over old tasks. Read-only artifact verification does not reinterpret old author-similarity reports as new measurements.
+Execution code and the live Pi runtime contracts (`AGENTS.md`, `.pi/settings.json`, `.pi/provider-fallback.json`, `.pi/pi-goal-x-settings.json`, `.pi/agents/*`, `prompts/factory-orchestrator.md`, this operational guide, and `docs/RESEARCH-ACCESS.md` used by the Pi researcher) must match the frozen run. Stage prompts are read from the snapshot already. If those live contracts changed, continue from `runs/ID/snapshot/` as the Pi project root and invoke `runs/ID/snapshot/scripts/factory.py --repo /absolute/repository ...`; do not mix current wrappers/contracts with old tasks. Read-only artifact verification does not reinterpret old author-similarity reports as new measurements.
 
 ```bash
 python3 scripts/factory.py archive --output ../Belief-changer-v2-full.zip

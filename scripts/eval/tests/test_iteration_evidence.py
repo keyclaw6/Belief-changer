@@ -8,7 +8,7 @@ from pathlib import Path
 
 SOURCE = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(SOURCE / "scripts"))
-from bc_factory.experiments import wilson_lower
+from bc_autoresearch.experiments import wilson_lower
 
 
 class PromotionGateTest(unittest.TestCase):

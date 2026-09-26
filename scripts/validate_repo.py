@@ -9,7 +9,9 @@ ROOT = Path(sys.argv[1] if len(sys.argv)>1 else '.').resolve()
 def main():
     required = ['AGENTS.md','README.md','docs/FACTORY-V2.md','docs/UPGRADE-MAP.md',
                 'scripts/factory.py','scripts/bc_factory/schema.py','scripts/bc_factory/runs.py',
-                'scripts/bc_factory/experiments.py','factory/config.json','factory/champion.json',
+                'scripts/autoresearch.py','scripts/bc_autoresearch/cli.py',
+                'scripts/bc_autoresearch/experiments.py','scripts/bc_autoresearch/learning.py',
+                'scripts/bc_autoresearch/regression.py','factory/config.json','factory/champion.json',
                 'factory/calibration.json','loop/judges/pairwise.md','prompts/evidence-reviewer.md',
                 'prompts/book-editor.md','prompts/final-auditor.md','factory/research-access.json',
                 'scripts/bc_factory/research_access.py','scripts/bc_factory/research_setup.py',

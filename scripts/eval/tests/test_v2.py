@@ -21,7 +21,7 @@ from bc_factory.runs import Run, prepare
 from bc_factory.quality import assemble_book, edit_book, overlap_screen, screen
 from bc_factory.demo import accepted, finish, inputs, metadata, scaffold, run_demo
 from bc_factory.adapters import execute, extract
-from bc_factory.experiments import CALIBRATION_CATEGORIES, decide, pair_task, promote, register, submit_pair, validate_calibration, wilson_lower
+from bc_autoresearch.experiments import CALIBRATION_CATEGORIES, decide, pair_task, promote, register, submit_pair, validate_calibration, wilson_lower
 from bc_factory.archive import build, excluded
 
 class Base(unittest.TestCase):
@@ -763,8 +763,9 @@ class ExperimentTests(Base):
 
     def setUp(self):
         super().setUp()
-        outer = self.repo / "scripts/bc_factory/experiments.py"
-        shutil.copyfile(SOURCE / "scripts/bc_factory/experiments.py", outer)
+        outer = self.repo / "scripts/bc_autoresearch/experiments.py"
+        outer.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(SOURCE / "scripts/bc_autoresearch/experiments.py", outer)
         judge = self.repo / "loop/judges/pairwise.md"
         judge.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(SOURCE / "loop/judges/pairwise.md", judge)
@@ -835,7 +836,7 @@ class ExperimentTests(Base):
     def test_champion_remains_when_approval_fails(self):
         self.setup_experiment()
         before=file_hash(self.repo/'factory/champion.json')
-        with patch('bc_factory.experiments.decide',return_value={'decision':'KEEP_ELIGIBLE'}):
+        with patch('bc_autoresearch.experiments.decide',return_value={'decision':'KEEP_ELIGIBLE'}):
             with self.assertRaises(FactoryError): promote(self.repo,'exp1','bad-approval',{}, {})
         self.assertEqual(file_hash(self.repo/'factory/champion.json'),before)
     def test_pair_task_binds_latest_accepted_audit(self):

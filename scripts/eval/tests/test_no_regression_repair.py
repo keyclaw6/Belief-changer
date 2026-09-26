@@ -9,10 +9,10 @@ import unittest
 SOURCE = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(SOURCE / "scripts"))
 
-from bc_factory.common import FactoryError
+from bc_factory.common import FactoryError, unseal
 from bc_factory.demo import accepted, finish, inputs, metadata, scaffold
-from bc_factory.learning import advance, seed
-from bc_factory.regression import decide, submit, task
+from bc_autoresearch.learning import advance, context_path, seed
+from bc_autoresearch.regression import decide, submit, task
 from bc_factory.runs import Run, prepare
 from bc_factory.schema import DIMENSIONS
 
@@ -36,7 +36,8 @@ class NoRegressionRepairTests(unittest.TestCase):
                                 "evidence": "Prior comparison."}],
                    "recurring_repairs": [], "research_gaps": [], "note": "Fixture bootstrap."}
         seed(self.repo, "baseline", lessons)
-        prepare(self.repo, "candidate", self.brief, self.research, fixture=True, learning_from="baseline")
+        prepare(self.repo, "candidate", self.brief, self.research, fixture=True,
+                caller_context=unseal(context_path(base)))
         self.candidate = Run(self.repo, "candidate")
         finish(self.candidate, self.plan)
 
@@ -54,16 +55,25 @@ class NoRegressionRepairTests(unittest.TestCase):
 
     def test_consistent_loss_allows_only_bounded_whole_book_repair(self):
         for order, winner in (("AB", "A"), ("BA", "B")):
-            frozen = task(self.repo, "candidate", order)
-            submit(self.repo, "candidate", order, self.judgment(frozen, winner), metadata(True))
-        gate = decide(self.repo, "candidate")
+            frozen = task(self.repo, "candidate", "baseline", order)
+            submit(self.repo, "candidate", "baseline", order, self.judgment(frozen, winner), metadata(True))
+        gate = decide(self.repo, "candidate", "baseline")
         self.assertEqual(gate["decision"], "REPAIR_REQUIRED")
         self.assertEqual(gate["losses"], ["voice"])
         editor = self.candidate.task("book-editor", round_no=2)
-        self.assertEqual(editor["inputs"]["regression_feedback"]["decision"], "REPAIR_REQUIRED")
-        self.assertIn("regression/decision-r01.json", editor["dependency_hashes"])
+        feedback = editor["inputs"]["caller_repair_feedback"]
+        self.assertEqual(feedback["schema_version"], 2)
+        self.assertEqual(feedback["editorial_constraints"][0]["area"], "voice")
+        self.assertIn("One unsuccessful attempt is one observation.",
+                      feedback["editorial_constraints"][0]["candidate_quotes"])
+        for outer_key in ("decision", "baseline_run", "dimension_outcomes",
+                          "candidate_book_sha256", "baseline_book_sha256",
+                          "order_instability", "judgment_sha256"):
+            self.assertNotIn(outer_key, feedback)
+        self.assertIn("caller-feedback/repair-r01.json", editor["dependency_hashes"])
+        self.assertNotIn("regression_feedback", editor["inputs"])
         self.candidate.submit(editor, {"schema_version": 2, "operations": [],
-                                       "explanation": "Synthetic no-regression repair."}, metadata())
+                                       "explanation": "Synthetic caller-requested repair."}, metadata())
         second = self.candidate.assemble()
         with self.assertRaises(FactoryError):
             self.candidate.complete()
@@ -74,24 +84,24 @@ class NoRegressionRepairTests(unittest.TestCase):
         audit["screening_resolutions"] = {f["id"]: "Synthetic fixture triage."
                                            for f in second["assembly"]["screening"]}
         self.candidate.submit(self.candidate.task("final-auditor", round_no=2), audit, metadata(True))
-        fresh = decide(self.repo, "candidate")
+        fresh = decide(self.repo, "candidate", "baseline")
         self.assertEqual(fresh["decision"], "INCONCLUSIVE")
         self.assertEqual(set(fresh["missing"]), {"AB", "BA"})
         with self.assertRaises(FactoryError):
-            advance(self.repo, "candidate")
+            advance(self.repo, "candidate", "baseline")
 
     def test_order_instability_neither_advances_nor_authorizes_repair(self):
-        frozen = task(self.repo, "candidate", "AB")
-        submit(self.repo, "candidate", "AB", self.judgment(frozen, "B"), metadata(True))
-        frozen = task(self.repo, "candidate", "BA")
-        submit(self.repo, "candidate", "BA", self.judgment(frozen, "tie"), metadata(True))
-        gate = decide(self.repo, "candidate")
+        frozen = task(self.repo, "candidate", "baseline", "AB")
+        submit(self.repo, "candidate", "baseline", "AB", self.judgment(frozen, "B"), metadata(True))
+        frozen = task(self.repo, "candidate", "baseline", "BA")
+        submit(self.repo, "candidate", "baseline", "BA", self.judgment(frozen, "tie"), metadata(True))
+        gate = decide(self.repo, "candidate", "baseline")
         self.assertEqual(gate["decision"], "INCONCLUSIVE")
         self.assertIn("voice", gate["order_instability"])
         with self.assertRaises(FactoryError):
             self.candidate.task("book-editor", round_no=2)
         with self.assertRaises(FactoryError):
-            advance(self.repo, "candidate")
+            advance(self.repo, "candidate", "baseline")
 
 
 if __name__ == "__main__":

@@ -58,6 +58,8 @@ class FactoryBoundaryTests(unittest.TestCase):
         # project agent wrapper never names it, so the root contract itself
         # must not contain host/autoresearch execution mechanics.
         agents = self.text("AGENTS.md")
+        self.assertNotIn("Read `docs/FACTORY-V2.md`, `docs/BOOK-FACTORY-VISION.md` and `loop/PROGRAM.md`", agents)
+        self.assertIn("Pi factory agents must not load that outer-loop contract", agents)
         self.assertNotIn("The supervisor becomes substantively active", agents)
         self.assertNotIn("OpenCode-host recovery", agents)
         self.assertNotIn("provider-state-portability", agents)
@@ -66,6 +68,11 @@ class FactoryBoundaryTests(unittest.TestCase):
         p = self.text("prompts/factory-orchestrator.md")
         self.assertIn("COMPLETE_UNRELEASED", p)
         self.assertIn("hand the completed run back to the caller", p)
+        self.assertIn("caller-feedback/repair-rNN.json", p)
+        self.assertIn("opaque editorial constraints", p)
+        self.assertIn("--caller-context FILE", p)
+        self.assertNotIn("--learning-from", p)
+        self.assertNotIn("REPAIR_REQUIRED", p)
         self.assertNotIn("OUTER FACTORY LOOP", p)
         self.assertNotIn("factory-learner.md", p)
         self.assertNotIn("factory-learning-reviewer.md", p)
@@ -103,23 +110,65 @@ class FactoryBoundaryTests(unittest.TestCase):
             self.assertIn("inherited Pi model is controller-only", text)
             self.assertIn("configured independent family", text)
 
-    def test_factory_cli_does_not_hard_import_outer_utilities(self):
-        head = "\n".join(self.text("scripts/bc_factory/cli.py").splitlines()[:15])
-        self.assertIn("from . import archive", head)
-        self.assertNotIn("experiments", head)
-        self.assertNotIn("learning", head)
-        self.assertNotIn("regression", head)
+    def test_factory_cli_has_no_outer_autoresearch_commands(self):
+        factory_cli = self.text("scripts/bc_factory/cli.py")
+        outer_cli = self.text("scripts/bc_autoresearch/cli.py")
+        commands = ("register-experiment", "pair-task", "pair-submit", "pair-execute", "decide", "promote",
+                    "learning-seed", "regression-task", "regression-submit",
+                    "regression-decide", "advance-baseline")
+        for command in commands:
+            self.assertNotIn(f'"{command}"', factory_cli)
+            self.assertIn(f'"{command}"', outer_cli)
+        self.assertTrue((ROOT / "scripts/autoresearch.py").is_file())
+        self.assertIn("from . import experiments, learning, regression", outer_cli)
+        self.assertNotIn("from bc_factory import experiments", outer_cli)
 
     def test_factory_run_core_does_not_depend_on_outer_autoresearch(self):
         runs = self.text("scripts/bc_factory/runs.py")
         self.assertNotIn("from .learning", runs)
         self.assertNotIn("from .regression", runs)
         self.assertNotIn("loop/judges", runs)
+        self.assertNotIn('"regression" /', runs)
+        self.assertNotIn("REPAIR_REQUIRED", runs)
+        self.assertNotIn("regression_feedback", runs)
+        self.assertNotIn("learning_from", runs)
+        self.assertNotIn("cross_iteration_learning", runs)
+        self.assertNotIn("validate_learning", runs)
+        self.assertIn("caller_context", runs)
+        self.assertIn("caller_repair_feedback", runs)
+        factory_cli = self.text("scripts/bc_factory/cli.py")
+        self.assertNotIn("REPAIR_REQUIRED", factory_cli)
+        self.assertNotIn('result.get("decision")', factory_cli)
+        self.assertNotIn("--learning-from", factory_cli)
+        self.assertIn("--caller-context", factory_cli)
+        schema = self.text("scripts/bc_factory/schema.py")
+        self.assertNotIn('"pair-judge"', schema)
+        self.assertNotIn("no_regression_pass", schema)
+        self.assertNotIn("validate_learning_packet", schema)
         from bc_factory.runs import active_files
         frozen = set(active_files(ROOT))
+        for name in ("experiments.py", "learning.py", "regression.py"):
+            outer = self.text(f"scripts/bc_autoresearch/{name}")
+            legacy = self.text(f"scripts/bc_factory/{name}")
+            self.assertIn("def ", outer)
+            self.assertNotIn("def ", legacy)
         self.assertFalse({"scripts/bc_factory/experiments.py", "scripts/bc_factory/learning.py",
                           "scripts/bc_factory/regression.py"} & frozen)
+        self.assertFalse(any(path.startswith("scripts/bc_autoresearch/") for path in frozen))
         self.assertFalse(any(path.startswith("loop/") for path in frozen))
+
+    def test_frozen_run_binds_pi_runtime_contracts(self):
+        from bc_factory.runs import active_files
+        frozen = set(active_files(ROOT))
+        self.assertIn("AGENTS.md", frozen)
+        self.assertIn("docs/FACTORY-V2.md", frozen)
+        self.assertIn("docs/RESEARCH-ACCESS.md", frozen)
+        self.assertIn("prompts/factory-orchestrator.md", frozen)
+        wrappers = {p.relative_to(ROOT).as_posix() for p in (ROOT / ".pi/agents").glob("*.md")}
+        self.assertTrue(wrappers <= frozen)
+        for rel in (".pi/settings.json", ".pi/provider-fallback.json", ".pi/pi-goal-x-settings.json"):
+            self.assertIn(rel, frozen)
+        self.assertFalse(any(path.startswith(".opencode/") for path in frozen))
 
     def test_factory_docs_define_extractable_boundary(self):
         docs = self.text("docs/FACTORY-V2.md")
@@ -135,7 +184,7 @@ class FactoryBoundaryTests(unittest.TestCase):
             "prompts/master-plan-reviewer-v2.md": "never as empirical evidence",
             "prompts/chapter-writer.md": "not empirical evidence",
             "prompts/chapter-reviewer.md": "not empirical evidence",
-            "prompts/reader-state.md": "editorial feedback rather than evidence",
+            "prompts/reader-state.md": "caller-owned editorial guidance rather than evidence",
             "prompts/book-editor.md": "never factual evidence",
             "prompts/final-auditor.md": "never factual evidence",
         }
@@ -152,8 +201,11 @@ class FactoryBoundaryTests(unittest.TestCase):
 
     def test_no_regression_contract_remains_small(self):
         editor = self.text("prompts/book-editor.md")
+        wrapper = self.text(".pi/agents/book-editor.md")
         judge = self.text("loop/judges/pairwise.md")
-        self.assertIn("If `regression_feedback` is present", editor)
+        self.assertIn("If `caller_repair_feedback` is present", editor)
+        self.assertNotIn("no-regression", editor.lower())
+        self.assertNotIn("no-regression", wrapper.lower())
         self.assertIn("smallest whole-book operations", editor)
         self.assertIn("a tie is a successful preservation result", judge)
         self.assertIn("do not manufacture a winner", judge)

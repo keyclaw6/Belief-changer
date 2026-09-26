@@ -1,4 +1,4 @@
-"""Small offline tests for cross-iteration learning and no-regression."""
+"""Small offline tests for caller-owned cross-iteration learning and no-regression."""
 from __future__ import annotations
 
 from pathlib import Path
@@ -12,8 +12,8 @@ sys.path.insert(0, str(SOURCE / "scripts"))
 
 from bc_factory.common import FactoryError, unseal
 from bc_factory.demo import finish, inputs, metadata, scaffold
-from bc_factory.learning import advance, seed
-from bc_factory.regression import decide, submit, task
+from bc_autoresearch.learning import advance, context_path, seed
+from bc_autoresearch.regression import decide, submit, task
 from bc_factory.runs import Run, prepare
 from bc_factory.schema import DIMENSIONS
 
@@ -31,8 +31,9 @@ class CrossIterationLearningTests(unittest.TestCase):
     def tearDown(self):
         self.tmp.cleanup()
 
-    def completed(self, name, learning_from=None):
-        prepare(self.repo, name, self.brief, self.research, fixture=True, learning_from=learning_from)
+    def completed(self, name, baseline=None):
+        caller_context = unseal(context_path(Run(self.repo, baseline))) if baseline else None
+        prepare(self.repo, name, self.brief, self.research, fixture=True, caller_context=caller_context)
         run = Run(self.repo, name)
         finish(run, self.plan)
         return run
@@ -69,57 +70,63 @@ class CrossIterationLearningTests(unittest.TestCase):
             "critical": {"A": [], "B": []},
         }
 
-    def test_learning_packet_is_frozen_into_book_roles(self):
-        self.seed_baseline()
-        prepare(self.repo, "candidate", self.brief, self.research, fixture=True, learning_from="baseline")
+    def test_learning_becomes_generic_frozen_caller_context(self):
+        baseline = self.seed_baseline()
+        context = unseal(context_path(baseline))
+        prepare(self.repo, "candidate", self.brief, self.research, fixture=True, caller_context=context)
         run = Run(self.repo, "candidate")
         frozen = run.task("evidence-reviewer")
-        self.assertEqual(frozen["inputs"]["cross_iteration_learning"], run.learning)
+        self.assertEqual(frozen["inputs"]["caller_context"], context)
+        self.assertNotIn("baseline_run", context)
+        self.assertNotIn("provenance", context)
         self.assertIn("NOT empirical evidence", frozen["contract"])
-        (run.root / "inputs/cross-iteration-learning.json").write_text("{}")
+        (run.root / "inputs/caller-context.json").write_text("{}")
         with self.assertRaises(FactoryError):
             Run(self.repo, "candidate")
 
     def test_all_ties_preserve_existing_book_baseline(self):
         baseline = self.seed_baseline()
-        self.completed("candidate", learning_from="baseline")
+        self.completed("candidate", baseline="baseline")
         for order in ("AB", "BA"):
-            t = task(self.repo, "candidate", order)
-            submit(self.repo, "candidate", order, self.judgment(t), metadata(True))
-        self.assertEqual(decide(self.repo, "candidate")["decision"], "PRESERVE_BASELINE")
-        result = advance(self.repo, "candidate")
+            t = task(self.repo, "candidate", "baseline", order)
+            submit(self.repo, "candidate", "baseline", order, self.judgment(t), metadata(True))
+        self.assertEqual(decide(self.repo, "candidate", "baseline")["decision"], "PRESERVE_BASELINE")
+        result = advance(self.repo, "candidate", "baseline")
         self.assertEqual(result["status"], "BASELINE_PRESERVED")
         self.assertEqual(result["baseline_run"], "baseline")
-        self.assertFalse((self.repo / "runs/candidate/regression/learning-next.json").exists())
-        self.assertTrue((baseline.root / "regression/learning-next.json").exists())
+        self.assertFalse((self.repo / "runs/candidate/caller-feedback/learning-next.json").exists())
+        self.assertTrue((baseline.root / "caller-feedback/learning-next.json").exists())
 
     def test_stable_improvement_advances_baseline(self):
         self.seed_baseline()
-        candidate = self.completed("candidate", learning_from="baseline")
+        candidate = self.completed("candidate", baseline="baseline")
         for order, winner in (("AB", "B"), ("BA", "A")):
-            t = task(self.repo, "candidate", order)
-            submit(self.repo, "candidate", order, self.judgment(t, winner), metadata(True))
-        self.assertEqual(decide(self.repo, "candidate")["decision"], "ADVANCE")
-        self.assertEqual(advance(self.repo, "candidate")["status"], "BASELINE_ADVANCED")
-        packet = unseal(candidate.root / "regression/learning-next.json")
+            t = task(self.repo, "candidate", "baseline", order)
+            submit(self.repo, "candidate", "baseline", order, self.judgment(t, winner), metadata(True))
+        self.assertEqual(decide(self.repo, "candidate", "baseline")["decision"], "ADVANCE")
+        self.assertEqual(advance(self.repo, "candidate", "baseline")["status"], "BASELINE_ADVANCED")
+        packet = unseal(candidate.root / "caller-feedback/learning-next.json")
         self.assertEqual(packet["baseline_run"], "candidate")
         self.assertTrue(any(x["dimension"] == "voice" for x in packet["preserve"]))
+        context = unseal(candidate.root / "caller-feedback/factory-context.json")
+        self.assertNotIn("baseline_run", context)
+        self.assertTrue(any(x["area"] == "voice" for x in context["editorial_constraints"]))
 
     def test_mixed_ab_ba_judges_are_inconclusive(self):
         self.seed_baseline()
-        self.completed("candidate", learning_from="baseline")
-        t = task(self.repo, "candidate", "AB")
-        submit(self.repo, "candidate", "AB", self.judgment(t, "B"), metadata(True))
-        t = task(self.repo, "candidate", "BA")
+        self.completed("candidate", baseline="baseline")
+        t = task(self.repo, "candidate", "baseline", "AB")
+        submit(self.repo, "candidate", "baseline", "AB", self.judgment(t, "B"), metadata(True))
+        t = task(self.repo, "candidate", "baseline", "BA")
         other = metadata(True)
         other["model"] = "other-judge"
         other["route"] = "other-route"
-        submit(self.repo, "candidate", "BA", self.judgment(t, "A"), other)
-        gate = decide(self.repo, "candidate")
+        submit(self.repo, "candidate", "baseline", "BA", self.judgment(t, "A"), other)
+        gate = decide(self.repo, "candidate", "baseline")
         self.assertEqual(gate["decision"], "INCONCLUSIVE")
         self.assertTrue(gate["judge_instrument_mixed"])
         with self.assertRaises(FactoryError):
-            advance(self.repo, "candidate")
+            advance(self.repo, "candidate", "baseline")
 
 
 if __name__ == "__main__":

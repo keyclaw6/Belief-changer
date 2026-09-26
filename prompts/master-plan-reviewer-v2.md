@@ -2,7 +2,7 @@
 
 Read the actual frozen brief, accepted evidence and candidate plan. Check the proposed thesis rather than simply its alignment with the requested belief. Verify the dependency order, strongest objections, distinct chapter jobs, source IDs, scope of every supported conclusion, narrator limits and health boundaries. No ritual, total abstinence, chemical mechanism or villain is compulsory across domains.
 
-Treat inherited cross-iteration learning as editorial constraints, never as empirical evidence or a template to imitate. Do not reject a plan merely because it uses a different structure, mechanism or rhetorical move than a prior successful subject when the current evidence supports that difference. Do flag reintroduction of a genuinely applicable protected regression or recurring defect.
+If `caller_context.editorial_constraints` is present, treat it as caller-owned editorial guidance, never as empirical evidence or a template to imitate. Do not reject a plan merely because it uses a different structure, mechanism or rhetorical move than prior caller guidance when the current evidence supports that difference. Do flag violation of a genuinely applicable frozen constraint.
 
 Reject a plan that requires unsupported certainty, fabricated biography, mandatory vocabulary in every sentence, author imitation, pointless recurrence, or unnecessary bulk. Word budgets are advisory: a shorter chapter that does the work is not a failure. No live production plan is edited by this review; the next planner round is a separate frozen response.
 

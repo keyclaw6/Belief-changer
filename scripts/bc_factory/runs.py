@@ -11,8 +11,7 @@ from pathlib import Path
 from .common import (FactoryError, atomic_bytes, canonical, confined, digest, exact_keys, file_hash,
                      identifier, lock, nonempty, now, read_json, require, seal, text_hash, unseal)
 from .schema import (EXTERNAL_ROLES, ROLES, REVIEW_ROLES, validate_brief, validate_plan, validate_research,
-                     validate_review, validate_state, validate_writer, validate_config, validate_metadata,
-                     validate_learning_packet)
+                     validate_review, validate_state, validate_writer, validate_config, validate_metadata)
 from .quality import assemble_book, apply_front_repairs, apply_note_repairs, base_front_matter, edit_book, render_source_notes, screen, screen_wrappers, split_operations
 
 PROMPTS = {"planner": "master-plan-skill-v2.md", "plan-reviewer": "master-plan-reviewer-v2.md",
@@ -20,62 +19,48 @@ PROMPTS = {"planner": "master-plan-skill-v2.md", "plan-reviewer": "master-plan-r
            "evidence-reviewer": "evidence-reviewer.md", "state-editor": "reader-state.md",
            "book-editor": "book-editor.md", "final-auditor": "final-auditor.md"}
 REQUIRED_CODE = ["scripts/factory.py", "factory/config.json", "factory/research-access.json"]
+PI_RUNTIME_CONFIG = [".pi/settings.json", ".pi/provider-fallback.json", ".pi/pi-goal-x-settings.json"]
 
 
 def active_files(repo: Path) -> list[str]:
-    paths = [*REQUIRED_CODE]
+    paths = [*REQUIRED_CODE, *PI_RUNTIME_CONFIG, "AGENTS.md", "docs/FACTORY-V2.md", "docs/RESEARCH-ACCESS.md"]
     outer_modules = {"experiments.py", "learning.py", "regression.py"}
     paths.extend(p.relative_to(repo).as_posix() for p in repo.glob("scripts/bc_factory/*.py")
                  if p.is_file() and p.name not in outer_modules)
     paths.extend(p.relative_to(repo).as_posix() for p in repo.glob("prompts/*.md") if p.is_file())
+    paths.extend(p.relative_to(repo).as_posix() for p in repo.glob(".pi/agents/*.md") if p.is_file())
     return sorted(set(paths))
 
 
-def load_learning_packet(run) -> dict:
-    packet = unseal(run.root / "regression" / "learning-next.json")
-    validate_learning_packet(packet)
-    require(packet["baseline_run"] == run.manifest["run_id"], "Learning packet is bound to another run")
-    return packet
-
-
-def validate_learning_binding(repo: Path, packet: dict, expected_subject: str, fixture: bool):
-    validate_learning_packet(packet)
-    baseline = Run(repo, packet["baseline_run"])
-    complete = baseline.complete()
-    require(baseline.brief["subject"] == expected_subject == packet["subject"], "Learning baseline subject mismatch")
-    require(baseline.manifest["fixture"] == fixture, "Learning baseline fixture/live trust mismatch")
-    require(digest(baseline.manifest) == packet["baseline_manifest_sha256"], "Learning baseline manifest changed")
-    require(complete["book_sha256"] == packet["baseline_book_sha256"], "Learning baseline book changed")
-    require(file_hash(baseline.accepted_audit_file()) == packet["baseline_audit_sha256"],
-            "Learning baseline audit changed")
-    return baseline
-
-
-def load_repair_feedback(run, assembly_round: int) -> dict:
-    path = run.root / "regression" / f"decision-r{assembly_round:02d}.json"
-    require(path.is_file(), "Accepted assembly needs sealed caller feedback before post-audit repair")
-    decision = unseal(path)
-    require(decision["decision"] == "REPAIR_REQUIRED", "Accepted assembly can reopen only for required repair")
+def load_caller_repair(run, assembly_round: int) -> dict:
+    path = run.root / "caller-feedback" / f"repair-r{assembly_round:02d}.json"
+    require(path.is_file(), "Accepted assembly needs sealed caller repair feedback before reopening")
+    request = unseal(path)
+    exact_keys(request, {"schema_version", "assembly_round", "book_sha256", "audit_sha256", "feedback"},
+               label="caller repair feedback")
+    require(request["schema_version"] == 2 and request["assembly_round"] == assembly_round,
+            "Caller repair feedback targets another assembly round")
+    require(isinstance(request["feedback"], dict) and request["feedback"],
+            "Caller repair feedback must be a nonempty object")
     assembly = run.assembly_version(assembly_round)["assembly"]
-    require(decision["candidate_book_sha256"] == assembly["text_sha256"], "Repair feedback is stale")
+    require(request["book_sha256"] == assembly["text_sha256"], "Caller repair feedback is stale")
     audit_round, _ = run.accepted_audit()
-    require(audit_round == assembly_round and decision["candidate_audit_sha256"] == file_hash(run.accepted_audit_file()),
-            "Repair feedback is not bound to the accepted audit")
+    require(audit_round == assembly_round and request["audit_sha256"] == file_hash(run.accepted_audit_file()),
+            "Caller repair feedback is not bound to the accepted audit")
     rel = path.relative_to(run.root).as_posix()
-    return {"rel": rel, "sha256": file_hash(path), "decision": decision}
+    return {"rel": rel, "sha256": file_hash(path), "feedback": request["feedback"]}
 
 
 def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | None = None,
             fixture: bool = False, research_preflight: dict | None = None,
             research_revision_of: str | None = None, remediation_of: str | None = None,
-            learning_from: str | None = None) -> Path:
+            caller_context: dict | None = None) -> Path:
     repo = repo.resolve()
     identifier(run_id)
     if parent is not None:
         identifier(parent)
     evidence_feedback = None
     remediation = None
-    learning_packet = None
     if remediation_of is not None:
         identifier(remediation_of)
         require(run_id != remediation_of, "Remediation needs a new run ID; source runs are immutable")
@@ -91,13 +76,13 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
                 "Source audit does not match its latest assembly; remediate only clean audit states")
         require(digest(brief) == digest(source.brief), "Remediation brief must equal the source frozen brief")
         require(digest(research) == digest(source.research), "Remediation research must equal the source frozen research")
-        if source.learning is not None:
-            require(learning_from in (None, source.manifest.get("learning_from")),
-                    "Remediation must inherit the source cross-iteration baseline")
-            learning_from = source.manifest["learning_from"]
-            learning_packet = source.learning
+        if source.caller_context is not None:
+            if caller_context is not None:
+                require(digest(caller_context) == digest(source.caller_context),
+                        "Remediation caller context must equal the source frozen caller context")
+            caller_context = source.caller_context
         else:
-            require(learning_from is None, "Remediation cannot add cross-iteration learning absent from its source")
+            require(caller_context is None, "Remediation cannot add caller context absent from its source")
         remediation = {"source_run": remediation_of,
                        "source_manifest_sha256": digest(source.manifest),
                        "source_audit_key": f"final-auditor-r{src_audit_no:02d}",
@@ -120,13 +105,9 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
         }
     validate_brief(brief)
     validate_research(research, brief)
-    if learning_from is not None and learning_packet is None:
-        identifier(learning_from)
-        learning_source = Run(repo, learning_from)
-        learning_packet = load_learning_packet(learning_source)
-        validate_learning_binding(repo, learning_packet, brief["subject"], fixture)
-    elif learning_packet is not None:
-        validate_learning_binding(repo, learning_packet, brief["subject"], fixture)
+    if caller_context is not None:
+        require(isinstance(caller_context, dict) and bool(caller_context),
+                "Caller context must be a nonempty JSON object")
     if remediation is not None:
         # Nothing is retrieved: frozen research is inherited byte-identical, so
         # the live preflight gate (freshness for NEW retrieval) does not apply.
@@ -159,8 +140,8 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
                 atomic_bytes(root / "inputs/research-preflight.json", canonical(research_preflight) + b"\n")
             if evidence_feedback is not None:
                 atomic_bytes(root / "inputs/evidence-feedback.json", canonical(evidence_feedback) + b"\n")
-            if learning_packet is not None:
-                atomic_bytes(root / "inputs/cross-iteration-learning.json", canonical(learning_packet) + b"\n")
+            if caller_context is not None:
+                atomic_bytes(root / "inputs/caller-context.json", canonical(caller_context) + b"\n")
             if remediation is not None:
                 # Inherit sealed history byte-identical: tasks, results,
                 # versioned assemblies and the live book pointer. Upstream
@@ -187,8 +168,7 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
                         "research_preflight_sha256": file_hash(root / "inputs/research-preflight.json") if research_preflight is not None else None,
                         "research_revision_of": research_revision_of,
                         "evidence_feedback_sha256": file_hash(root / "inputs/evidence-feedback.json") if evidence_feedback is not None else None,
-                        "learning_from": learning_from,
-                        "learning_sha256": file_hash(root / "inputs/cross-iteration-learning.json") if learning_packet is not None else None,
+                        "caller_context_sha256": file_hash(root / "inputs/caller-context.json") if caller_context is not None else None,
                         "remediation_of": remediation["source_run"] if remediation is not None else None,
                         "remediation_source": remediation}
             seal(root / "manifest.json", manifest)
@@ -197,10 +177,10 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
                 for name in ("brief.json", "research.json"):
                     require(file_hash(root / "inputs" / name) == file_hash(src_root / "inputs" / name),
                             f"Remediation {name} diverged from source")
-                if learning_packet is not None:
-                    require(file_hash(root / "inputs/cross-iteration-learning.json")
-                            == file_hash(src_root / "inputs/cross-iteration-learning.json"),
-                            "Remediation cross-iteration learning diverged from source")
+                if caller_context is not None:
+                    require(file_hash(root / "inputs/caller-context.json")
+                            == file_hash(src_root / "inputs/caller-context.json"),
+                            "Remediation caller context diverged from source")
     except BaseException:
         # Preserve unfinished input files for diagnosis; a missing manifest prevents use.
         raise
@@ -235,25 +215,26 @@ class Run:
         self.research = read_json(self.root / "inputs/research.json")
         validate_brief(self.brief)
         validate_research(self.research, self.brief)
-        if self.manifest.get("learning_sha256"):
-            lpath = self.root / "inputs/cross-iteration-learning.json"
-            require(file_hash(lpath) == self.manifest["learning_sha256"], "Frozen cross-iteration learning changed")
-            self.learning = read_json(lpath)
-            require(self.learning.get("baseline_run") == self.manifest.get("learning_from"),
-                    "Cross-iteration learning lineage mismatch")
-            validate_learning_binding(self.repo, self.learning, self.brief["subject"], self.manifest["fixture"])
+        if self.manifest.get("caller_context_sha256"):
+            cpath = self.root / "inputs/caller-context.json"
+            require(file_hash(cpath) == self.manifest["caller_context_sha256"], "Frozen caller context changed")
+            self.caller_context = read_json(cpath)
+            require(isinstance(self.caller_context, dict) and bool(self.caller_context),
+                    "Caller context must be a nonempty JSON object")
         else:
-            self.learning = None
-            require(self.manifest.get("learning_from") is None, "Learning lineage is missing its frozen packet")
+            self.caller_context = None
         self.config = read_json(self.root / "snapshot/factory/config.json")
         validate_config(self.config)
 
     def assert_runtime(self) -> None:
-        # Prompts are read from snapshot. Execution code must also match it.
-        frozen = {p: h for p, h in self.manifest["factory_files"].items() if p.startswith("scripts/")}
+        # Stage prompts are read directly from the snapshot. Pi project config,
+        # wrappers and the auto-loaded repository contract are live execution
+        # context, so bind them to the run like deterministic execution code.
+        runtime_paths = lambda p: p.startswith(("scripts/", ".pi/agents/")) or p in {*PI_RUNTIME_CONFIG, "AGENTS.md", "docs/FACTORY-V2.md", "docs/RESEARCH-ACCESS.md", "prompts/factory-orchestrator.md"}
+        frozen = {p: h for p, h in self.manifest["factory_files"].items() if runtime_paths(p)}
         runtime_root = Path(__file__).resolve().parents[2]
-        current = {p: file_hash(runtime_root / p) for p in active_files(runtime_root) if p.startswith("scripts/")}
-        require(frozen == current, "Execution code differs from frozen run. Use its code snapshot or prepare a new run.")
+        current = {p: file_hash(runtime_root / p) for p in active_files(runtime_root) if runtime_paths(p)}
+        require(frozen == current, "Factory execution contracts differ from frozen run. Use its snapshot or prepare a new run.")
 
     def snapshot(self, rel: str) -> str:
         return confined(self.root / "snapshot", rel).read_text(encoding="utf-8")
@@ -321,8 +302,8 @@ class Run:
             require(False, "Remediation inherits upstream stages byte-identical from its source run; only book-editor and final-auditor rounds continue here")
         deps: dict[str, str] = {}
         inputs = {"brief": self.brief, "research": self.research}
-        if self.learning is not None:
-            inputs["cross_iteration_learning"] = self.learning
+        if self.caller_context is not None:
+            inputs["caller_context"] = self.caller_context
         if role == "evidence-reviewer":
             require(round_no == 1, "Research revision requires a new snapshot/run")
             if self.evidence_feedback is not None:
@@ -407,12 +388,12 @@ class Run:
                     # chapters are never rewritten in place — edits apply to copies.
                     prior_audit = self.deps_add(deps, "final-auditor", round_no=round_no-1)
                     if prior_audit["verdict"] == "ACCEPT":
-                        feedback = load_repair_feedback(self, round_no - 1)
+                        feedback = load_caller_repair(self, round_no - 1)
                         deps[feedback["rel"]] = feedback["sha256"]
-                        inputs["regression_feedback"] = feedback["decision"]
+                        inputs["caller_repair_feedback"] = feedback["feedback"]
                     else:
                         require(prior_audit["verdict"] == "REVISE",
-                                "Whole-book revision needs prior REVISE or a sealed no-regression repair; BLOCKED stops the run")
+                                "Whole-book revision needs prior REVISE or sealed caller repair feedback; BLOCKED stops the run")
                     editor_history = []
                     for prior_round in range(1, round_no):
                         editor_history.append({

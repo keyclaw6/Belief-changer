@@ -1,24 +1,18 @@
 # Cross-iteration learning and no-regression gate
 
-This is an AUTORESEARCH-side layer around the reusable book factory. The Pi factory itself ends at `COMPLETE_UNRELEASED`; this layer compares completed factory outputs and decides what, if anything, should change next. It is separate from release promotion and from `factory/champion.json`.
+This is an AUTORESEARCH-side layer around the reusable book factory. The Pi factory itself ends at `COMPLETE_UNRELEASED`; this layer compares completed factory outputs and decides what, if anything, should change next. Its deterministic commands use `python3 scripts/autoresearch.py ...`, not `scripts/factory.py`. It is separate from release promotion and from `factory/champion.json`.
 
 ## 1. Freeze what the previous iteration taught
 
-A completed baseline may emit one sealed `regression/learning-next.json`. The first baseline is bootstrapped from an explicitly reviewed lessons file with `learning-seed`. Later packets are produced only when the candidate demonstrates a stable improvement.
+Autoresearch stores one sealed `caller-feedback/learning-next.json` beside the completed baseline. The first packet is bootstrapped from an explicitly reviewed lessons file with `learning-seed`; later packets are produced only when a candidate demonstrates a stable improvement. Autoresearch also derives `caller-feedback/factory-context.json`, a deliberately smaller generic handoff containing only research priorities and editorial constraints.
 
-A learning packet can contain:
-- quality dimensions to preserve;
-- dimensions to improve;
-- recurring repairs that must not reappear;
-- targeted research gaps.
-
-Learning is editorial/evaluation feedback. It is never empirical evidence and cannot support a factual manuscript claim.
+The learning packet may contain quality dimensions to preserve or improve, recurring repairs, targeted research gaps, and the baseline hashes/provenance that justify them. Those lineage and decision fields remain autoresearch-owned. The generic factory context strips them before crossing the factory boundary. Neither artifact is empirical evidence.
 
 ## 2. Prepare the next candidate from that exact baseline
 
-Prepare the next run with `--learning-from BASELINE_RUN`. The factory verifies the baseline manifest, completed book hash, accepted final-audit hash, subject, and fixture/live trust before freezing the packet into the new run.
+Autoresearch validates the baseline packet against the completed baseline book/audit and then prepares the next run with `--caller-context runs/BASELINE_RUN/caller-feedback/factory-context.json`. The reusable factory only freezes, hashes, and passes that generic context through to its roles; it does not know which comparison, baseline rule, or optimization decision produced it.
 
-Every role receives that same frozen packet. A changed or missing baseline artifact fails closed.
+Every role receives the same frozen `caller_context`. A changed context fails the factory's hash binding. The later outer no-regression commands take `--baseline BASELINE_RUN` explicitly and verify that the candidate's frozen caller context matches the selected baseline's validated learning packet.
 
 ## 3. Finish the candidate normally
 
@@ -32,7 +26,7 @@ After the candidate's latest assembly has an independent ACCEPT audit, create pa
 - AB
 - BA
 
-Use an independent evaluator family, then submit the two judgments with `regression-submit` and evaluate them with `regression-decide`.
+Use an independent evaluator family. Every `regression-task`, `regression-submit`, `regression-decide`, and `advance-baseline` call names the selected baseline explicitly with `--baseline BASELINE_RUN`; this keeps baseline lineage entirely in autoresearch.
 
 The decision is fail-closed:
 - consistent candidate loss on any quality dimension -> `REPAIR_REQUIRED`;
@@ -45,7 +39,7 @@ Ties are acceptable. The purpose is to stop regressions, not to manufacture a wi
 
 ## 5. Repair or advance
 
-`REPAIR_REQUIRED` may reopen only the whole-book editor in the same logical run. The editor receives the sealed regression feedback and edits the accepted assembly copy; accepted chapters and earlier assemblies remain immutable. The repaired assembly then requires:
+`REPAIR_REQUIRED` may reopen only the whole-book editor in the same logical run. Autoresearch seals its decision inside the factory's generic caller-repair envelope, bound to the exact accepted book and audit; the editor receives that feedback as opaque editorial constraints and edits the accepted assembly copy. Accepted chapters and earlier assemblies remain immutable. The repaired assembly then requires:
 1. a new independent final audit;
 2. a fresh AB/BA no-regression gate.
 

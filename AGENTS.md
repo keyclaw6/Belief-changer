@@ -3,7 +3,7 @@
 ## Mission
 Help consenting readers examine a belief and make a better-informed change through original, compelling, evidence-honest books. Warmth, clear argument, reader recognition and relief-oriented reframing remain central. Author imitation and unmeasured effectiveness claims are not the target.
 
-The repository owner explicitly authorized this v2 upgrade after the campaign-001 audit. Active authority is: truth/safety → reader's informed goal → evidence-approved plan → house style. Read `docs/FACTORY-V2.md`, `docs/BOOK-FACTORY-VISION.md` and `loop/PROGRAM.md`. Original vision/strategy remains in `archive/campaign-001-runtime/docs/` for historical context; it does not override current runtime safety.
+The repository owner explicitly authorized this v2 upgrade after the campaign-001 audit. Active authority is: truth/safety → reader's informed goal → evidence-approved plan → house style. Read `docs/FACTORY-V2.md`. `docs/BOOK-FACTORY-VISION.md` is strategy/context, not a live runtime instruction. Outer autoresearch controllers read `loop/PROGRAM.md` separately; Pi factory agents must not load that outer-loop contract. Original vision/strategy remains in `archive/campaign-001-runtime/docs/` for historical context; it does not override current runtime safety.
 
 ## Immutable evidence and honest status
 The owner authorized compaction of campaign-001. Keep exact decisions, hypotheses, diffs, aggregate ledgers and learnings under `loop/`; the old intermediate manuscripts/traces are recoverable from Git history, not current source files. Curated research and reference assets remain unvalidated raw material. Never rewrite verdicts to make old results look better. `factory/champion.json` is the accepted-release pointer; an experiment, QUANTIFY verdict, newest commit or highest old similarity score is not a champion.
@@ -27,7 +27,7 @@ Whole-book revision must converge in place. A final-audit `REVISE` is repaired b
 
 Plan and chapter revision must converge too. Revision tasks carry the full prior plan/draft + review history. Writers/planners preserve earlier repairs; later reviewers verify inherited findings before adding anything new and may widen the blocking set only for revision-caused defects, newly unmasked material correctness/safety defects, or genuinely new critical truth/safety contradictions. The live factory allows six bounded rounds. If a stage repeatedly exhausts that budget, diagnose the shared system cause instead of spawning fresh memoryless runs. Frozen pre-fix runs remain valid and must be operated with their own snapshotted runtime when live factory code has changed.
 
-Only the reusable BOOK FACTORY uses Pi as its agent runtime. `.pi/agents/` contains factory roles only: research, evidence review, planning, writing/review, state, whole-book editing, final audit, and the factory controller. The Pi `factory-orchestrator` owns those stages and returns control at `COMPLETE_UNRELEASED`. Autoresearch/meta-optimization is caller-owned outside Pi and is documented in `loop/PROGRAM.md`; factory agents never compare iterations, choose baselines, run factory-learning/held-out evaluation, or select the next intervention. The factory must remain extractable without the outer loop.
+Only the reusable BOOK FACTORY uses Pi as its agent runtime. `.pi/agents/` contains factory roles only: research, evidence review, planning, writing/review, state, whole-book editing, final audit, and the factory controller. The Pi `factory-orchestrator` owns those stages and returns control at `COMPLETE_UNRELEASED`. Autoresearch/meta-optimization is caller-owned outside Pi and is documented in `loop/PROGRAM.md`; factory agents never compare iterations, choose baselines, run factory-learning/held-out evaluation, or select the next intervention. If a caller asks the completed factory to reopen an accepted assembly for bounded repair, it supplies a generic sealed repair request bound to that exact book and audit; the factory does not know or parse the caller's decision schema. The factory must remain extractable without the outer loop.
 
 ## Research and publication
 Research deeply across lived experience, counterevidence and appropriate primary sources. Counts diagnose gaps, never manufacture completion. Research may revise the requested thesis. Do not universalize an addiction model or strip factual/safety limits to sound certain. No fabricated narrator history, personal testimonials or guaranteed outcomes. Sources retain their own rights.
@@ -44,7 +44,8 @@ Credentials come from the environment or local harness. Real `.env` files (inclu
 
 ## Repository map
 - `prompts/`: concise active v2 stage contracts.
-- `scripts/bc_factory/`: deterministic runtime, schemas, adapters, experimental gates and packaging.
+- `scripts/bc_factory/`: reusable deterministic factory runtime, schemas, adapters, research access and packaging.
+- `scripts/bc_autoresearch/`: outer experiments, cross-iteration learning, no-regression evaluation and promotion.
 - `factory/`: public provider configuration, champion/calibration status and templates.
 - `runs/`: immutable input snapshots, tasks, validated responses and assemblies.
 - `experiments/`: frozen registrations and blinded comparisons.
