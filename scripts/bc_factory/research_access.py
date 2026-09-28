@@ -260,7 +260,16 @@ def bridge_env(c: dict, lane: str) -> dict:
 def bridge_social(c: dict, state: Path, lane: str, action: str, value: str = '', limit: int = 10) -> list[dict]:
     args = social_args(lane, action, value, limit)
     time.sleep(c['min_request_interval_s'])
-    r = command([tool(state, 'opencli'), *args], bridge_env(c, lane), c['request_timeout_s'])
+    env = bridge_env(c, lane)
+    r = command([tool(state, 'opencli'), *args], env, c['request_timeout_s'])
+    # OpenCLI's optional Reddit morechildren expansion can fail on orphaned
+    # comment records even when the base public thread is readable. Retry once
+    # without expansion only for that parser signature; auth/access/rate errors
+    # still fail closed and never trigger a fallback account or browser.
+    failure_text = f'{r.stdout}\n{r.stderr}'.lower()
+    if r.returncode != 0 and lane == 'reddit' and action == 'read' and 'unplaceable comments' in failure_text:
+        fallback_args = args[:3] + ['--limit', str(limit), '--depth', '3', '--replies', '10', '--max-length', '20000', '-f', 'json']
+        r = command([tool(state, 'opencli'), *fallback_args], env, c['request_timeout_s'])
     require(r.returncode == 0, f'{lane}/{action} failed (exit {r.returncode}); check login, access or rate limit; no retry storm')
     try:
         data = json.loads(r.stdout)

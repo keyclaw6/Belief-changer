@@ -92,6 +92,14 @@ class AccessContractTests(Base):
     def test_read_command_expands_comments_and_reports_limit(self):
         args=A.social_args('reddit','read','https://www.reddit.com/r/test/comments/abc123/title',50)
         self.assertEqual(args[:3],['reddit','read','abc123']);self.assertIn('--expand-more',args);self.assertIn('20000',args);self.assertIn('50',args)
+    def test_reddit_read_retries_once_without_morechildren_on_parser_failure(self):
+        from unittest.mock import Mock
+        first=Mock(returncode=1,stdout='',stderr='Reddit /api/morechildren returned unplaceable comments: orphan')
+        second=Mock(returncode=0,stdout=json.dumps([{'text':'usable thread'}]),stderr='')
+        with patch.object(A,'tool',return_value='opencli'), patch.object(A.time,'sleep'), patch.object(A,'command',side_effect=[first,second]) as cmd:
+            out=A.bridge_social(self.c,Path(self.temp.name),'reddit','read','https://www.reddit.com/r/test/comments/abc123/title',5)
+        self.assertEqual(out,[{'text':'usable thread'}])
+        self.assertIn('--expand-more',cmd.call_args_list[0].args[0]);self.assertNotIn('--expand-more',cmd.call_args_list[1].args[0])
     def test_social_search_no_shell_interpolation(self):
         query='recovery; $(touch nope)'
         self.assertEqual(A.social_args('x','search',query)[2],query)
