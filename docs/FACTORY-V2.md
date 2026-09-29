@@ -24,17 +24,16 @@ The demo emits synthetic, short prose and synthetic role responses to exercise e
 
 `factory/config.json` is the single public runtime configuration. **All live model execution uses OpenCode Go only.** The factory profile contains only the `opencode-go` route, with no OpenCode Zen, Vercel, ChatGPT, OpenCodex/OpenCode-CLI-agent, or other provider fallback. Credentials are looked up by `auth_env`; no values belong in JSON, Git, logs or ZIPs. The only model-provider credential documented by this repository is `OPENCODE_GO_API_KEY`.
 
-The external profile is deliberately null until an explicitly selected independent model family is available through OpenCode Go. Independence is about model family, not permission to change provider. If no suitable independent family is available through OpenCode Go, live evidence/final review or judging that requires independence must stop.
-
-A compatible external profile therefore uses the OpenCode Go endpoint and the same credential, with an independently chosen model family:
+The external profile is configured to **DeepSeek V4.1 Flash** through OpenCode Go. The exact model ID is `deepseek-v4.1-flash`, family `deepseek`, using the OpenCode Go chat-completions endpoint and the same `OPENCODE_GO_API_KEY` credential as the factory. This provides model-family independence from the Meta/Muse generator without introducing another provider.
 
 ```json
-{"adapter":"http","family":"INDEPENDENT-FAMILY","reasoning":"high","timeout_s":600,
- "routes":[{"name":"opencode-go-independent","endpoint":"https://opencode.ai/zen/go/v1/responses",
- "model":"INDEPENDENT-MODEL-AVAILABLE-ON-OPENCODE-GO","auth_env":"OPENCODE_GO_API_KEY","api":"responses"}]}
+{"adapter":"http","family":"deepseek","timeout_s":600,
+ "routes":[{"name":"opencode-go-deepseek-v4.1-flash",
+ "endpoint":"https://opencode.ai/zen/go/v1/chat/completions",
+ "model":"deepseek-v4.1-flash","auth_env":"OPENCODE_GO_API_KEY","api":"chat"}]}
 ```
 
-The model name/family above is a placeholder until explicitly selected and verified. Do not silently use the generator family when independence is required, and do not add a second provider to get around a failed or unavailable evaluator.
+Independence is about model family, not permission to change provider. Do not silently use the generator family when independence is required, and do not add a second provider to get around a failed evaluator. If DeepSeek V4.1 Flash is unavailable through OpenCode Go, stop and repair/verify that route rather than substituting another service.
 
 A trusted command adapter is allowed only when it is merely a local wrapper around OpenCode Go and still returns exactly `{output,model,family,route,usage}` JSON on stdout. It is not permission to invoke another model service. Unknown usage is null. Do not let a judge read previous scores/history or ambient project instructions.
 
