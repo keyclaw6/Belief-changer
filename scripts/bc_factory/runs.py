@@ -19,7 +19,7 @@ PROMPTS = {"planner": "master-plan-skill-v2.md", "plan-reviewer": "master-plan-r
            "evidence-reviewer": "evidence-reviewer.md", "state-editor": "reader-state.md",
            "book-editor": "book-editor.md", "final-auditor": "final-auditor.md"}
 REQUIRED_CODE = ["scripts/factory.py", "factory/config.json", "factory/research-access.json"]
-PI_RUNTIME_CONFIG = [".pi/settings.json", ".pi/provider-fallback.json", ".pi/pi-goal-x-settings.json"]
+PI_RUNTIME_CONFIG = [".pi/settings.json", ".pi/pi-goal-x-settings.json"]
 
 
 def active_files(repo: Path) -> list[str]:
