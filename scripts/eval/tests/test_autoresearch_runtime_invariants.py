@@ -58,6 +58,25 @@ class AutoResearchRuntimeInvariantTests(unittest.TestCase):
                                for line in skill.splitlines() if line.startswith("description: "))
             self.assertIn(f"**{name}** — {description}", catalog)
 
+    def test_external_evaluator_is_deepseek_v41_flash_via_opencode_go(self):
+        config = json.loads((ROOT / "factory" / "config.json").read_text(encoding="utf-8"))
+        external = config["profiles"]["external"]
+        self.assertEqual(external["family"], "deepseek")
+        self.assertEqual(len(external["routes"]), 1)
+        route = external["routes"][0]
+        self.assertEqual(route["model"], "deepseek-v4.1-flash")
+        self.assertEqual(route["auth_env"], "OPENCODE_GO_API_KEY")
+        self.assertEqual(route["api"], "chat")
+        self.assertEqual(route["endpoint"], "https://opencode.ai/zen/go/v1/chat/completions")
+
+    def test_host_controller_owns_hypothesis_formation(self):
+        program = (ROOT / "loop" / "PROGRAM.md").read_text(encoding="utf-8")
+        hypothesis = (ROOT / "loop" / "prompts" / "hypothesizer.md").read_text(encoding="utf-8")
+        backlog = (ROOT / "loop" / "FUTURE-HYPOTHESES.md").read_text(encoding="utf-8")
+        self.assertIn("human-facing host autoresearch controller itself is the hypothesizer", program)
+        self.assertIn("executed directly by the human-facing host autoresearch controller", hypothesis)
+        self.assertIn("unfrozen, untested hypotheses", backlog)
+
 
 if __name__ == "__main__":
     unittest.main()
