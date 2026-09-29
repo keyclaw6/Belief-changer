@@ -26,7 +26,7 @@ For this delivered upgrade, **docs/PUBLISH-MAIN.md** explains the guarded, teste
 
 Frozen, content-hashed runs replace mutable live plans. Strict shared schemas replace marker-string acceptance. Missing work cannot print successful completion. Reviewer caps remain failures. Output guarantees and narrator credentials are evidence-checked. Original prose and argument quality replace author indistinguishability. Blinded, order-reversed, independent judging and calibrated promotion preserve a champion instead of allowing experimental drift.
 
-Default generator route names are preserved in factory/config.json. Independent evaluator configuration is intentionally unset until explicitly selected. `--allow-paid` is required for model execution. No live provider requests are part of tests/CI.
+OpenCode Go is the only live model-provider route in `factory/config.json`; there is no Zen, Vercel, ChatGPT or other provider fallback. Independent evaluator configuration is intentionally unset until an independent model family available through OpenCode Go is explicitly selected. `--allow-paid` is required for model execution. No live provider requests are part of tests/CI. Autoresearch supervisors must read `skills/running-auto-research-loop/SKILL.md` before arming a recurring heartbeat.
 
 Credentials are local only; copy `.env.example` and configure your environment or existing encrypted local dotenvx setup. The download archive omits `.env`, private keys, caches and `.git`. Third-party research/reference assets retain their existing rights; their presence is not a license grant.
 
