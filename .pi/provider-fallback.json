@@ -4,19 +4,6 @@
     "opencode-go": {
       "enabled": true,
       "fallbacks": []
-    },
-    "opencode": {
-      "enabled": true,
-      "fallbacks": []
-    },
-    "vercel": {
-      "enabled": true,
-      "fallbacks": [
-        {
-          "model": "meta/muse-spark-1.3-contributor",
-          "priority": 1
-        }
-      ]
     }
   }
 }
