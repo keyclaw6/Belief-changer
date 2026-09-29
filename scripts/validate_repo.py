@@ -18,6 +18,9 @@ def main():
                 'docs/RESEARCH-ACCESS.md','docs/PUBLISH-MAIN.md','scripts/publish_main.py',
                 'scripts/eval/tests/test_research_access.py','scripts/eval/tests/test_publish_main.py',
                 'scripts/eval/tests/test_autoresearch_runtime_invariants.py',
+                'skills/README.md','skills/upgrade/SKILL.md',
+                'skills/upgrade/references/review-prompts.md',
+                'skills/upgrade/references/agent-skills-spec.md',
                 'skills/running-auto-research-loop/SKILL.md']
     errors = [f'Missing required v2 file: {p}' for p in required if not (ROOT/p).is_file()]
     tests = list((ROOT/'scripts/eval/tests').glob('test_*.py'))
