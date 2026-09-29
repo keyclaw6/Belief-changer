@@ -22,24 +22,23 @@ The demo emits synthetic, short prose and synthetic role responses to exercise e
 
 ## Provider configuration
 
-`factory/config.json` is the single public runtime configuration. The factory profile preserves the configured generator family and routes. Credentials are looked up by `auth_env`; no values belong in JSON, Git, logs or ZIPs. Existing local dotenvx-encrypted `.env` files may still be used locally but are now untracked.
+`factory/config.json` is the single public runtime configuration. **All live model execution uses OpenCode Go only.** The factory profile contains only the `opencode-go` route, with no OpenCode Zen, Vercel, ChatGPT, OpenCodex/OpenCode-CLI-agent, or other provider fallback. Credentials are looked up by `auth_env`; no values belong in JSON, Git, logs or ZIPs. The only model-provider credential documented by this repository is `OPENCODE_GO_API_KEY`.
 
-The external profile is deliberately null. Configure an explicitly selected, authorized independent family before preparing a live run. Do not change models silently. For a compatible HTTPS provider, the profile shape is:
+The external profile is deliberately null until an explicitly selected independent model family is available through OpenCode Go. Independence is about model family, not permission to change provider. If no suitable independent family is available through OpenCode Go, live evidence/final review or judging that requires independence must stop.
 
-```json
-{"adapter":"http","family":"ACTUAL-INDEPENDENT-FAMILY","reasoning":"high","timeout_s":600,
- "routes":[{"name":"chosen-evaluator","endpoint":"https://PROVIDER-ENDPOINT","model":"EXACT-CHOSEN-MODEL","auth_env":"EVALUATOR_API_KEY","api":"chat"}]}
-```
-
-Set api to chat or responses to match that provider. Remove unsupported optional reasoning settings. Endpoint/model strings above are placeholders, not a purchase recommendation or verified live integration. Profiles may instead use a trusted command adapter:
+A compatible external profile therefore uses the OpenCode Go endpoint and the same credential, with an independently chosen model family:
 
 ```json
-{"adapter":"command","family":"ACTUAL-INDEPENDENT-FAMILY","argv":["/absolute/path/to/your-adapter"],"pass_env":["EVALUATOR_API_KEY"],"timeout_s":600}
+{"adapter":"http","family":"INDEPENDENT-FAMILY","reasoning":"high","timeout_s":600,
+ "routes":[{"name":"opencode-go-independent","endpoint":"https://opencode.ai/zen/go/v1/responses",
+ "model":"INDEPENDENT-MODEL-AVAILABLE-ON-OPENCODE-GO","auth_env":"OPENCODE_GO_API_KEY","api":"responses"}]}
 ```
 
-It receives `{task,prompt}` JSON on stdin and returns exactly `{output,model,family,route,usage}` JSON on stdout. output is the role's JSON object (or a JSON string); metadata must identify the actual execution, not requested aliases. Unknown usage is null. A command runs without a shell in a fresh temporary directory with an allowlisted environment; this is not a security sandbox. Supply appropriate operating-system isolation for tool-enabled adapters. Do not let a judge read previous scores/history or ambient project instructions.
+The model name/family above is a placeholder until explicitly selected and verified. Do not silently use the generator family when independence is required, and do not add a second provider to get around a failed or unavailable evaluator.
 
-The existing agent harness can instead read a frozen task, execute an isolated role with appropriate source/browser capabilities and submit the result plus actual metadata. Imported metadata is an operator assertion, not cryptographic attestation. If a source cannot actually be checked from supplied provenance/browser access, the evidence reviewer must report that gap rather than certify it. A plain HTTP text call does not gain browser access automatically.
+A trusted command adapter is allowed only when it is merely a local wrapper around OpenCode Go and still returns exactly `{output,model,family,route,usage}` JSON on stdout. It is not permission to invoke another model service. Unknown usage is null. Do not let a judge read previous scores/history or ambient project instructions.
+
+The human-facing host can read frozen tasks, inspect state, schedule heartbeats and submit honestly recorded results, but it is not a model-provider fallback and must not synthesize a missing Pi factory role. The live book factory itself is one persistent top-level Pi Coding Agent.
 
 ## Prepare inputs
 
