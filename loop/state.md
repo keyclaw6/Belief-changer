@@ -7,7 +7,8 @@
 - **Worker invariant:** one persistent top-level Pi Coding Agent per requested book.
 - **Model-provider invariant:** OpenCode Go only. No OpenCode Zen, Vercel, ChatGPT, OpenCodex/OpenCode-CLI worker, or alternate-provider fallback.
 - **Champion:** factory/champion.json; no validated v2 release at migration.
-- **Calibration:** pending actual human ratings for a chosen independent evaluator family available through OpenCode Go.
+- **Evaluator:** DeepSeek V4.1 Flash (`deepseek-v4.1-flash`) through OpenCode Go, family `deepseek`, using the same `OPENCODE_GO_API_KEY` as the factory. This is independent from the Meta/Muse generator family.
+- **Calibration:** pending actual human ratings for the configured DeepSeek V4.1 Flash evaluation instrument.
 - **Heartbeat:** disabled. Before any future autoresearch campaign or recurring schedule, read `skills/running-auto-research-loop/SKILL.md` and prove a successful Pi/OpenCode-Go model response plus durable state advancement before arming the heartbeat.
 - **Next action:** none until separately authorized. Preserve the 053 preregistration and abort record as historical evidence.
 - **Effectiveness:** not established by software tests, model judgments, or the aborted optimization campaign.
