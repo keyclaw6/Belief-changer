@@ -709,6 +709,31 @@ class EditingAndProviderTests(Base):
         with patch('urllib.request.urlopen') as call:
             with self.assertRaises(FactoryError): execute({'role':'writer'},read_json(self.repo/'factory/config.json'))
             call.assert_not_called()
+    def test_opencode_go_http_identifies_client_and_stabilizes_session(self):
+        run = self.newrun()
+        self.to_plan(run)
+        task = run.task('writer', 1)
+        seen = []
+        body = json.dumps({
+            'status': 'completed',
+            'model': 'muse-spark-1.3-contributor',
+            'output_text': '{"ok":true}',
+            'usage': {'total_tokens': 1},
+        }).encode()
+        class Response:
+            def __enter__(self): return self
+            def __exit__(self, *args): return False
+            def read(self): return body
+        def fake_urlopen(req, timeout=None):
+            seen.append({k.lower(): v for k, v in req.header_items()})
+            return Response()
+        with patch.dict(os.environ, {'OPENCODE_GO_API_KEY': 'synthetic-test-key'}, clear=False):
+            with patch('urllib.request.urlopen', side_effect=fake_urlopen):
+                execute(task, read_json(self.repo/'factory/config.json'), True)
+                execute(task, read_json(self.repo/'factory/config.json'), True)
+        expected_session = f"belief-changer-{digest(task)[:32]}"
+        self.assertEqual([h['x-opencode-session'] for h in seen], [expected_session, expected_session])
+        self.assertEqual([h['user-agent'] for h in seen], ['belief-changer-factory/2'] * 2)
     def test_external_profile_missing_fails_before_spend(self):
         with patch('urllib.request.urlopen') as call:
             with self.assertRaises(FactoryError): execute({'role':'final-auditor'},read_json(self.repo/'factory/config.json'),True)

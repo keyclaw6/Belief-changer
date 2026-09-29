@@ -8,7 +8,7 @@ import time
 import urllib.error
 import urllib.request
 from pathlib import Path
-from .common import FactoryError, canonical, nonempty, require, reply_json
+from .common import FactoryError, canonical, digest, nonempty, require, reply_json
 from .schema import EXTERNAL_ROLES, validate_config
 
 
@@ -93,9 +93,16 @@ def execute(task: dict, config: dict, allow_paid: bool = False,
                 payload["reasoning"] = {"effort": profile["reasoning"]}
         else:
             payload["messages"] = [{"role": "user", "content": prompt}]
+        headers = {
+            "Authorization": f"Bearer {key}",
+            "Content-Type": "application/json",
+            "User-Agent": "belief-changer-factory/2",
+        }
+        if route["endpoint"].startswith("https://opencode.ai/zen/go/"):
+            headers["X-OpenCode-Session"] = f"belief-changer-{digest(task)[:32]}"
         for attempt in range(2):
             req = urllib.request.Request(route["endpoint"], data=canonical(payload), method="POST",
-                                         headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"})
+                                         headers=headers)
             try:
                 with urllib.request.urlopen(req, timeout=profile.get("timeout_s", 600)) as response:
                     data = json.loads(response.read())

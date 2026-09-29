@@ -15,6 +15,7 @@ Use this skill whenever starting, resuming, or scheduling a Belief-Changer autor
 - External evaluator/reviewer roles use DeepSeek V4.1 Flash (`deepseek-v4.1-flash`, family `deepseek`) through OpenCode Go. It is the evaluator/judge, not the hypothesizer.
 - The human-facing host autoresearch controller itself is the hypothesizer. It loads `loop/prompts/hypothesizer.md`, reasons over frozen outer-loop evidence, and persists the next falsifiable hypothesis before starting another Pi run. Do not delegate hypothesizing to Pi or the evaluator.
 - Never change the Pi controller model/provider merely to get past a failure.
+- Launch the top-level Pi worker under a real pseudo-terminal (PTY). A pipe-only/non-PTY launch can stall before provider I/O even in print mode; treat a missing PTY as a launch defect, not a provider failure. Preserve the saved Pi session ID when retrying after correcting the launch surface.
 
 ## Do not arm the heartbeat until startup is proven
 

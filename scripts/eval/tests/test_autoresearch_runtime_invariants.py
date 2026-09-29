@@ -35,6 +35,7 @@ class AutoResearchRuntimeInvariantTests(unittest.TestCase):
         skill = (ROOT / "skills" / "running-auto-research-loop" / "SKILL.md").read_text(encoding="utf-8")
         required = (
             "OpenCode Go only",
+            "real pseudo-terminal (PTY)",
             "Do not arm the heartbeat until startup is proven",
             "A heartbeat is a watchdog, not a retry engine",
             "attempt to restore forward progress",
