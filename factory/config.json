@@ -11,6 +11,13 @@
         {"name": "opencode-go", "endpoint": "https://opencode.ai/zen/go/v1/responses", "model": "muse-spark-1.3-contributor", "auth_env": "OPENCODE_GO_API_KEY", "api": "responses"}
       ]
     },
-    "external": null
+    "external": {
+      "adapter": "http",
+      "family": "deepseek",
+      "timeout_s": 600,
+      "routes": [
+        {"name": "opencode-go-deepseek-v4.1-flash", "endpoint": "https://opencode.ai/zen/go/v1/chat/completions", "model": "deepseek-v4.1-flash", "auth_env": "OPENCODE_GO_API_KEY", "api": "chat"}
+      ]
+    }
   }
 }
