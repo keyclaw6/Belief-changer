@@ -92,17 +92,16 @@ class FactoryBoundaryTests(unittest.TestCase):
         agents = self.text("AGENTS.md")
         wrapper = self.text(".pi/agents/factory-orchestrator.md")
         prompt = self.text("prompts/factory-orchestrator.md")
-        host = self.text(".opencode/agent/factory.md")
         self.assertIn("Pi `factory-orchestrator` is the reusable factory controller", readme)
         self.assertIn("saved top-level Pi session", readme)
         self.assertIn("`subagent` extension", readme)
         self.assertIn("Pi `factory-orchestrator` owns those stages", agents)
-        self.assertNotIn("OpenCode is the persistent factory controller", agents)
+        self.assertIn("one persistent top-level Pi Coding Agent", agents)
+        self.assertIn("OpenCode Go only", agents)
         self.assertIn("tools: read, bash, subagent", wrapper)
         self.assertIn('agentScope: "project"', wrapper)
         self.assertIn('agentScope: "project"', prompt)
-        self.assertIn("host harness only", host)
-        self.assertIn("Do not execute factory roles", host)
+        self.assertFalse((ROOT / ".opencode/agent/factory.md").exists())
 
     def test_independent_pi_wrappers_do_not_self_review_by_inheritance(self):
         for rel in (".pi/agents/evidence-reviewer.md", ".pi/agents/final-auditor.md"):
@@ -166,8 +165,10 @@ class FactoryBoundaryTests(unittest.TestCase):
         self.assertIn("prompts/factory-orchestrator.md", frozen)
         wrappers = {p.relative_to(ROOT).as_posix() for p in (ROOT / ".pi/agents").glob("*.md")}
         self.assertTrue(wrappers <= frozen)
-        for rel in (".pi/settings.json", ".pi/provider-fallback.json", ".pi/pi-goal-x-settings.json"):
+        for rel in (".pi/settings.json", ".pi/pi-goal-x-settings.json"):
             self.assertIn(rel, frozen)
+        self.assertNotIn(".pi/provider-fallback.json", frozen)
+        self.assertFalse((ROOT / ".pi/provider-fallback.json").exists())
         self.assertFalse(any(path.startswith(".opencode/") for path in frozen))
 
     def test_factory_docs_define_extractable_boundary(self):
