@@ -1,6 +1,6 @@
 ---
 name: running-auto-research-loop
-description: Run and supervise Belief-Changer autoresearch campaigns with one persistent Pi Coding Agent, OpenCode Go models only, bounded heartbeats, durable progress checks, and circuit breakers.
+description: Run and supervise Belief-Changer autoresearch campaigns with one persistent Pi Coding Agent, OpenCode Go models only, bounded heartbeats, durable progress checks, proactive root-cause repair, and circuit breakers.
 ---
 
 # Running the Auto Research Loop
