@@ -12,7 +12,8 @@ Use this skill whenever starting, resuming, or scheduling a Belief-Changer autor
 - The book-factory worker is **one persistent top-level Pi Coding Agent** using `.pi/agents/factory-orchestrator.md`.
 - Live model execution uses **OpenCode Go only**. Do not use OpenCode Zen, Vercel, ChatGPT, OpenCodex, OpenCode CLI agents, or any other provider/agent as a fallback worker.
 - The outer host may inspect durable state, schedule wake-ups, perform deterministic orchestration, and decide what should happen next. It must not impersonate a factory role or substitute itself for the Pi worker.
-- External evaluator/reviewer roles must also be powered through OpenCode Go. Independence means an independently configured model family, not a different provider. If an independent family is unavailable through OpenCode Go, stop rather than substitute.
+- External evaluator/reviewer roles use DeepSeek V4.1 Flash (`deepseek-v4.1-flash`, family `deepseek`) through OpenCode Go. It is the evaluator/judge, not the hypothesizer.
+- The human-facing host autoresearch controller itself is the hypothesizer. It loads `loop/prompts/hypothesizer.md`, reasons over frozen outer-loop evidence, and persists the next falsifiable hypothesis before starting another Pi run. Do not delegate hypothesizing to Pi or the evaluator.
 - Never change the Pi controller model/provider merely to get past a failure.
 
 ## Do not arm the heartbeat until startup is proven
