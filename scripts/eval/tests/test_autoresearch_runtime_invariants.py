@@ -48,12 +48,15 @@ class AutoResearchRuntimeInvariantTests(unittest.TestCase):
 
     def test_upgrade_skill_governs_repository_changes(self):
         upgrade = (ROOT / "skills" / "upgrade" / "SKILL.md").read_text(encoding="utf-8")
+        running = (ROOT / "skills" / "running-auto-research-loop" / "SKILL.md").read_text(encoding="utf-8")
         agents = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
         catalog = (ROOT / "skills" / "README.md").read_text(encoding="utf-8")
         self.assertIn("before making any change to this repository", upgrade.lower())
         self.assertIn("skills/upgrade/SKILL.md", agents)
-        self.assertIn("**upgrade**", catalog)
-        self.assertIn("**running-auto-research-loop**", catalog)
+        for name, skill in (("upgrade", upgrade), ("running-auto-research-loop", running)):
+            description = next(line.removeprefix("description: ").strip()
+                               for line in skill.splitlines() if line.startswith("description: "))
+            self.assertIn(f"**{name}** — {description}", catalog)
 
 
 if __name__ == "__main__":
