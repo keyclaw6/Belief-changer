@@ -1,12 +1,13 @@
 # Current operational state — v2
 
-- **Status:** ACTIVE — five-iteration autoresearch campaign authorized (053–057).
+- **Status:** STOPPED — iteration 053 aborted before the first successful factory model response.
 - **Legacy campaign:** campaign-001, completed through 050; preserved without rewriting results.
+- **Aborted campaign attempt:** the authorized 053–057 campaign was stopped by the owner after 053 failed at startup. 053 is not a completed iteration and 054–057 were never started.
 - **Active architecture:** truth-first factory v2.
-- **Current iteration:** 053 — Condition A architectural baseline (current/complex writer contract + local chapter review).
+- **Worker invariant:** one persistent top-level Pi Coding Agent per requested book.
+- **Model-provider invariant:** OpenCode Go only. No OpenCode Zen, Vercel, ChatGPT, OpenCodex/OpenCode-CLI worker, or alternate-provider fallback.
 - **Champion:** factory/champion.json; no validated v2 release at migration.
-- **Calibration:** pending actual human ratings for the chosen external model/instrument; 053–057 remain exploratory/optimization work unless real calibration is supplied.
-- **Outer evaluator:** GPT-5.6 Sol / OpenAI family through the host ChatGPT harness; must remain independent of the generator family and be recorded honestly in task metadata.
-- **Next action:** run live research preflight for the 053 development subjects, then start/resume one persistent Pi factory-orchestrator per requested book. The outer controller stays hands-off while healthy and resumes at COMPLETE_UNRELEASED.
-- **Campaign continuation:** an hourly host heartbeat is authorized to resume durable state until five new iterations are fully frozen.
-- **Effectiveness:** not established by software tests, model judgments, or this optimization campaign.
+- **Calibration:** pending actual human ratings for a chosen independent evaluator family available through OpenCode Go.
+- **Heartbeat:** disabled. Before any future autoresearch campaign or recurring schedule, read `skills/running-auto-research-loop/SKILL.md` and prove a successful Pi/OpenCode-Go model response plus durable state advancement before arming the heartbeat.
+- **Next action:** none until separately authorized. Preserve the 053 preregistration and abort record as historical evidence.
+- **Effectiveness:** not established by software tests, model judgments, or the aborted optimization campaign.
