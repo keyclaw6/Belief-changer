@@ -16,7 +16,9 @@ def main():
                 'prompts/book-editor.md','prompts/final-auditor.md','factory/research-access.json',
                 'scripts/bc_factory/research_access.py','scripts/bc_factory/research_setup.py',
                 'docs/RESEARCH-ACCESS.md','docs/PUBLISH-MAIN.md','scripts/publish_main.py',
-                'scripts/eval/tests/test_research_access.py','scripts/eval/tests/test_publish_main.py']
+                'scripts/eval/tests/test_research_access.py','scripts/eval/tests/test_publish_main.py',
+                'scripts/eval/tests/test_autoresearch_runtime_invariants.py',
+                'skills/running-auto-research-loop/SKILL.md']
     errors = [f'Missing required v2 file: {p}' for p in required if not (ROOT/p).is_file()]
     tests = list((ROOT/'scripts/eval/tests').glob('test_*.py'))
     if not tests: errors.append('Mandatory regression suite is absent')
@@ -30,12 +32,21 @@ def main():
     if (ROOT/'factory/config.json').exists():
         cfg=json.loads((ROOT/'factory/config.json').read_text())
         if cfg.get('schema_version') != 2: errors.append('Wrong runtime config version')
+        factory=cfg.get('profiles',{}).get('factory',{})
+        routes=factory.get('routes',[])
+        if len(routes) != 1 or routes[0].get('name') != 'opencode-go':
+            errors.append('Factory model route must be OpenCode Go only')
+        elif (routes[0].get('auth_env') != 'OPENCODE_GO_API_KEY'
+              or not str(routes[0].get('endpoint','')).startswith('https://opencode.ai/zen/go/')):
+            errors.append('OpenCode Go route has an unexpected endpoint or credential')
+        if any(token in json.dumps(cfg).lower() for token in ('vercel','ai_gateway','opencode-zen','chatgpt','opencodex')):
+            errors.append('Forbidden alternate model provider in runtime config')
         external=cfg.get('profiles',{}).get('external')
-        if external and external.get('family') == cfg['profiles']['factory'].get('family'):
+        if external and external.get('family') == factory.get('family'):
             errors.append('External profile duplicates generating family')
     history = ROOT/'loop/iterations'
     if history.exists():
-        allowed = {'decision.md','hypothesis.md','change.diff','CAMPAIGN-SUMMARY.md','convergence-report.md','evidence.json'}
+        allowed = {'decision.md','hypothesis.md','change.diff','CAMPAIGN-SUMMARY.md','convergence-report.md','evidence.json','ABORTED.md'}
         for path in history.rglob('*'):
             if path.is_file() and (len(path.relative_to(history).parts)!=2 or path.name not in allowed):
                 errors.append('Intermediate campaign artifact re-entered source tree: '+str(path.relative_to(ROOT)))
