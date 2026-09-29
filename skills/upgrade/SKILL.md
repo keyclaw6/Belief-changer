@@ -5,7 +5,7 @@ description: Upgrade or refactor the Belief-Changer repository itself—skills, 
 
 # Upgrade Belief Changer
 
-Use this skill **before making any change to this repository**. It governs capability changes, fixes for repeated friction, prompt/runtime changes, provider/harness changes, autoresearch changes, and architectural cleanup.
+Use this skill **before changing the Belief-Changer system itself**. It governs source/configuration changes: capabilities, skills, prompts, runtime code, provider/harness routing, autoresearch behavior, schemas, tests, documentation, and architectural cleanup. Normal immutable factory run artifacts produced under the existing runtime contract do not activate this skill unless their schema/process is being changed.
 
 The goal is not more machinery. The goal is a more capable and reliable system with less accidental complexity. Prefer deleting, moving, consolidating, or clarifying existing material over adding another layer.
 
