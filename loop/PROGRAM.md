@@ -3,6 +3,11 @@
 ## Recovery and authorization
 Read AGENTS.md, docs/FACTORY-V2.md, factory/champion.json, the relevant immutable run/experiment registration and actual artifacts. Use CLI status/verify; do not infer completion from a marker in a conversation. The 000–050 campaign is closed. The upgrade authorizes code changes and offline tests, not new paid runs.
 
+## Mandatory runner skill and provider invariant
+Before starting, resuming, or scheduling any autoresearch campaign, read `skills/running-auto-research-loop/SKILL.md`. The recurring heartbeat is a watchdog, not a retry engine, and must obey that skill's startup proof, durable-progress checks, one-repair limit and circuit breakers.
+
+The reusable factory worker is one persistent top-level Pi Coding Agent. Live model execution uses OpenCode Go only. Never substitute an OpenCode/OpenCodex CLI worker, ChatGPT model execution, Vercel, OpenCode Zen, or another provider path. A host may inspect state and schedule wake-ups, but it does not become a factory role. If an independent evaluator cannot be configured as an independent model family through OpenCode Go, stop rather than weakening independence.
+
 
 ## Execution ownership for auto-research iterations
 Autoresearch is the OUTER controller. It invokes the reusable book factory as a component; autoresearch agents themselves do not run as Pi agents. Deterministic outer comparison/baseline/release commands use `python3 scripts/autoresearch.py ...`; they are intentionally not commands of `scripts/factory.py`.
@@ -11,7 +16,7 @@ For each requested book, start or resume one persistent Pi `factory-orchestrator
 
 Only after that handoff does autoresearch resume: run blinded comparisons, baseline/no-regression decisions, Factory Learner/Reviewer, held-out evaluation and selection of the next intervention. If no-regression evaluation returns `REPAIR_REQUIRED`, autoresearch seals a generic caller-repair request bound to the exact accepted book and audit, then may call the SAME factory run back for its bounded whole-book repair. The factory consumes only that generic handoff and does not parse the autoresearch decision schema; autoresearch takes control again after the repaired book is independently audited and verified.
 
-The heartbeat may inspect progress, but must not become a shadow writer or manually synthesize factory-stage outputs. It intervenes only to repair genuine infrastructure/tooling/provider/browser/auth/parser/session failures or a fail-closed violation, then resumes the same durable factory session. The factory controller model remains fixed unless the owner explicitly authorizes a change.
+The heartbeat may inspect progress, but must not become a shadow writer or manually synthesize factory-stage outputs. On every wake-up it first compares the current durable progress marker with the previous one. If the Pi worker is healthy and advancing, it leaves it alone. It may make one bounded root-cause repair for a genuine infrastructure/tooling/provider/browser/auth/parser/session defect and resume the same Pi session. The same error twice, two consecutive no-progress wake-ups, no successful first model response, auth/quota/credential/provider misconfiguration, required human action, or a wrong-provider invariant violation trips the circuit breaker: mark the run blocked, disable the schedule, preserve the session, and report the blocker. The factory controller model/provider remains fixed unless the owner explicitly authorizes a change.
 
 ## Cross-iteration learning and no-regression baseline
 
