@@ -51,7 +51,7 @@ class AutoResearchRuntimeInvariantTests(unittest.TestCase):
         running = (ROOT / "skills" / "running-auto-research-loop" / "SKILL.md").read_text(encoding="utf-8")
         agents = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
         catalog = (ROOT / "skills" / "README.md").read_text(encoding="utf-8")
-        self.assertIn("before making any change to this repository", upgrade.lower())
+        self.assertIn("before changing the belief-changer system itself", upgrade.lower())
         self.assertIn("skills/upgrade/SKILL.md", agents)
         for name, skill in (("upgrade", upgrade), ("running-auto-research-loop", running)):
             description = next(line.removeprefix("description: ").strip()
