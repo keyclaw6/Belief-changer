@@ -31,18 +31,29 @@ class AutoResearchRuntimeInvariantTests(unittest.TestCase):
         self.assertNotIn("OPENCODE_API_KEY=", env)
         self.assertNotIn("AI_GATEWAY_API_KEY=", env)
 
-    def test_autoresearch_supervisor_skill_has_circuit_breakers(self):
+    def test_autoresearch_supervisor_skill_repairs_before_stopping(self):
         skill = (ROOT / "skills" / "running-auto-research-loop" / "SKILL.md").read_text(encoding="utf-8")
         required = (
             "OpenCode Go only",
             "Do not arm the heartbeat until startup is proven",
             "A heartbeat is a watchdog, not a retry engine",
-            "no successful model response since campaign startup",
-            "two consecutive heartbeat checks with no durable progress",
+            "attempt to restore forward progress",
+            "A blocker is not grounds to stop until",
+            "Repair before stop",
+            "same failure fingerprint recurs after a real repair",
             "disable the recurring schedule",
         )
         for phrase in required:
             self.assertIn(phrase, skill)
+
+    def test_upgrade_skill_governs_repository_changes(self):
+        upgrade = (ROOT / "skills" / "upgrade" / "SKILL.md").read_text(encoding="utf-8")
+        agents = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
+        catalog = (ROOT / "skills" / "README.md").read_text(encoding="utf-8")
+        self.assertIn("before making any change to this repository", upgrade.lower())
+        self.assertIn("skills/upgrade/SKILL.md", agents)
+        self.assertIn("**upgrade**", catalog)
+        self.assertIn("**running-auto-research-loop**", catalog)
 
 
 if __name__ == "__main__":
