@@ -30,3 +30,11 @@ This is a deterministic runtime-identity repair, not a writing-system interventi
 - replacement counted replicate: `iter054-sugar-a-r1`;
 - the same saved Pi session `363bee36-1634-4d2d-8aef-ef9fedf074e8` must be resumed; no replacement worker;
 - heartbeat remains disabled until the successor run again proves a successful real model response plus durable factory advancement.
+## Successor startup proof
+
+The mechanical repair was committed and pushed as `c05a8be3`. The exact saved Pi session `363bee36-1634-4d2d-8aef-ef9fedf074e8` was resumed from its dedicated `pi-runtime` session store; no replacement top-level session was created.
+
+Replacement counted run `iter054-sugar-a-r1` was prepared from the same quit-sugar brief/research and the fresh READY preflight. Its first real result is `evidence-reviewer-r01`: `ACCEPT`, zero findings, metadata `deepseek-v4.1-flash` / `deepseek` / `opencode-go-deepseek-v4.1-flash` / `http-v2`. This re-proved a successful live model response plus durable factory advancement after the repair.
+
+The hourly watchdog was re-enabled only after that proof.
+
