@@ -379,6 +379,7 @@ class Run:
                     })
                 inputs["revision_history"] = history
             if role == "state-editor":
+                inputs["target_chapter_id"] = f"chapter-{chapter:02d}"
                 review = self.deps_add(deps, "chapter-reviewer", chapter, round_no)
                 require(review["verdict"] == "ACCEPT", "Reader state can only describe accepted delivered text")
             if role == "book-editor":

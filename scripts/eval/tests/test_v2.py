@@ -288,6 +288,23 @@ class RunTests(Base):
         r=accepted();r['verdict']='REVISE';r['checks']['argument']=False
         run.submit(run.task('chapter-reviewer',1),r,metadata())
         with self.assertRaises(FactoryError): run.task('state-editor',1)
+    def test_state_task_binds_nonfirst_target_chapter_id(self):
+        run=self.newrun();self.to_plan(run)
+        first={"schema_version":2,"chapter_id":"chapter-01","text":"First delivered chapter.","claim_map":[]}
+        run.submit(run.task('writer',1),first,metadata())
+        run.submit(run.task('chapter-reviewer',1),accepted(),metadata())
+        state1=run.task('state-editor',1)
+        self.assertEqual(state1['inputs']['target_chapter_id'],'chapter-01')
+        run.submit(state1,{"schema_version":2,"chapter_id":"chapter-01",
+                           "established":[{"belief":"First conclusion","quote":"First delivered chapter."}],
+                           "unresolved":[],"used_examples":[]},metadata())
+        second={"schema_version":2,"chapter_id":"chapter-02","text":"Second delivered chapter.","claim_map":[]}
+        run.submit(run.task('writer',2),second,metadata())
+        run.submit(run.task('chapter-reviewer',2),accepted(),metadata())
+        state2=run.task('state-editor',2)
+        self.assertEqual(state2['inputs']['target_chapter_id'],'chapter-02')
+        self.assertNotIn('"chapter_id":"chapter-01"', state2['contract'])
+        self.assertIn('target_chapter_id', state2['contract'])
     def test_cap_cannot_be_acceptance(self):
         run=self.newrun();self.to_plan(run)
         cap=run.config['max_rounds']
