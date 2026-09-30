@@ -4,10 +4,10 @@
 
 Agent-Reach is the discovery/installation/diagnostic layer. The default **bridge**
 route performs real read-only behavior checks: structured general-web search
-(OpenCLI DuckDuckGo adapter rows, never search-engine HTML parsing) plus
-plain-HTTPS reads; OpenCLI Reddit searches and thread/comment reads, which
-succeed publicly and therefore do not require a login; and OpenCLI X
-authenticated identity checks, searches and thread reads, which still require
+(OpenCLI Google adapter rows, never search-engine HTML parsing in the factory runtime) plus
+plain-HTTPS reads; public Reddit Atom search and thread/comment feeds, which do
+not require a login; and OpenCLI X authenticated identity checks, searches and
+thread reads, which still require
 the signed-in session because substantive X search/thread behavior is
 login-walled. Bridge readiness is required behavior per lane, not login
 state: a Reddit login check is recorded as a diagnostic only, while X login
@@ -76,8 +76,8 @@ read; X authenticated identity/search/thread read), or, with `--via cloak`,
 all twelve cloak checks (bridge seven plus Agent-Reach pinned origin and
 doctor, actual CloakBrowser launch, NopeCHA loaded, and a successful
 challenge on NopeCHA's own demo, with cloak Reddit/X auth still required on
-that route). A Reddit login probe runs on the bridge route as a diagnostic
-only. Auth identities
+that route). A Reddit login probe runs on the bridge route as a diagnostic only; public
+Atom search/thread reads are the actual Reddit readiness gate. Auth identities
 and raw excerpts are not written in this report. The default access probe searches the subject with slug separators converted to spaces. A documented `--probe-query "broader topic"` can check technical access for an exceptionally sparse subject; record it honestly and still research the actual subject separately. Reports are bound to subject/configuration and expire after 24 hours. A package install, extension manifest or “doctor succeeded” alone cannot pass the gate.
 
 Calling without `--live` writes a `BLOCKED` report and exits 2. Failed tools, incorrect versions, missing keys, expired sessions, unresolved challenges and rate/access failures block the campaign. Fix locally and rerun. There are no silent browser/account fallbacks and no aggressive retry storms. Upstream API/DOM changes may require a reviewed adapter update; preflight is designed to expose them before a campaign spends on books.

@@ -63,7 +63,7 @@ class AccessContractTests(Base):
             (self.repo/'factory/research-access.json').write_text(json.dumps(c))
             with self.assertRaises(FactoryError): A.config(self.repo)
     def test_per_lane_bridge_profiles_are_complete_and_safe(self):
-        self.assertEqual(self.c['bridge_profiles'], {'web':'belief-changer-public','reddit':'belief-changer-public','x':'belief-changer-research'})
+        self.assertEqual(self.c['bridge_profiles'], {'web':'belief-changer-research','reddit':'belief-changer-research','x':'belief-changer-research'})
         for profiles in ({'web':'a','reddit':'b'}, {'web':'a','reddit':'b','x':'../bad'}, {'web':'a','reddit':'b','x':'c','extra':'d'}):
             c=copy.deepcopy(self.c); c['bridge_profiles']=profiles
             (self.repo/'factory/research-access.json').write_text(json.dumps(c))
@@ -71,8 +71,8 @@ class AccessContractTests(Base):
     def test_bridge_env_pins_lane_profile_and_clears_foreign_targets(self):
         with patch.dict(os.environ, {'OPENCLI_PROFILE':'wrong','OPENCLI_CDP_TARGET':'stale','OPENCLI_VERBOSE':'1'}):
             web=A.bridge_env(self.c, 'web'); reddit=A.bridge_env(self.c, 'reddit'); x=A.bridge_env(self.c, 'x')
-        self.assertEqual(web['OPENCLI_PROFILE'], 'belief-changer-public')
-        self.assertEqual(reddit['OPENCLI_PROFILE'], 'belief-changer-public')
+        self.assertEqual(web['OPENCLI_PROFILE'], 'belief-changer-research')
+        self.assertEqual(reddit['OPENCLI_PROFILE'], 'belief-changer-research')
         self.assertEqual(x['OPENCLI_PROFILE'], 'belief-changer-research')
         self.assertNotIn('OPENCLI_CDP_TARGET', x)
         self.assertNotIn('OPENCLI_VERBOSE', x)
@@ -92,14 +92,44 @@ class AccessContractTests(Base):
     def test_read_command_expands_comments_and_reports_limit(self):
         args=A.social_args('reddit','read','https://www.reddit.com/r/test/comments/abc123/title',50)
         self.assertEqual(args[:3],['reddit','read','abc123']);self.assertIn('--expand-more',args);self.assertIn('20000',args);self.assertIn('50',args)
-    def test_reddit_read_retries_once_without_morechildren_on_parser_failure(self):
-        from unittest.mock import Mock
-        first=Mock(returncode=1,stdout='',stderr='Reddit /api/morechildren returned unplaceable comments: orphan')
-        second=Mock(returncode=0,stdout=json.dumps([{'text':'usable thread'}]),stderr='')
-        with patch.object(A,'tool',return_value='opencli'), patch.object(A.time,'sleep'), patch.object(A,'command',side_effect=[first,second]) as cmd:
-            out=A.bridge_social(self.c,Path(self.temp.name),'reddit','read','https://www.reddit.com/r/test/comments/abc123/title',5)
-        self.assertEqual(out,[{'text':'usable thread'}])
-        self.assertIn('--expand-more',cmd.call_args_list[0].args[0]);self.assertNotIn('--expand-more',cmd.call_args_list[1].args[0])
+    def test_bridge_reddit_search_and_read_use_public_atom(self):
+        search = b"""<feed xmlns="http://www.w3.org/2005/Atom"><entry><id>t5_skip</id><link href="https://www.reddit.com/r/test/"/><title>community</title></entry><entry><id>t3_abc123</id><link href="https://www.reddit.com/r/test/comments/abc123/title/"/><title>post</title><content type="html">&lt;p&gt;post body&lt;/p&gt;</content></entry></feed>"""
+        thread = b"""<feed xmlns="http://www.w3.org/2005/Atom"><entry><id>t3_abc123</id><link href="https://www.reddit.com/r/test/comments/abc123/title/"/><title>post</title></entry><entry><id>t1_comment</id><link href="https://www.reddit.com/r/test/comments/abc123/title/comment/"/><title>u/test on post</title><content type="html">&lt;p&gt;useful comment&lt;/p&gt;</content></entry></feed>"""
+        with patch.object(A.time,'sleep'), patch.object(A,'_fetch_reddit_atom',side_effect=[('https://www.reddit.com/search.rss?q=test',search),('https://www.reddit.com/r/test/comments/abc123/title/.rss',thread)]) as fetch, patch.object(A,'command') as cmd:
+            found=A.bridge_social(self.c,Path(self.temp.name),'reddit','search','test',5)
+            self.assertEqual(found[0]['id'],'t3_abc123')
+            self.assertEqual(found[0]['text'],'post body')
+            out=A.bridge_social(self.c,Path(self.temp.name),'reddit','read',found[0]['url'],5)
+        self.assertEqual(out[1]['id'],'t1_comment')
+        self.assertEqual(out[1]['text'],'useful comment')
+        self.assertEqual(fetch.call_count,2)
+        cmd.assert_not_called()
+    def test_bridge_reddit_read_requires_full_canonical_slug(self):
+        with self.assertRaises(FactoryError):
+            A.bridge_reddit_public(self.c,'read','https://www.reddit.com/comments/abc123',5)
+    def test_reddit_atom_retries_429_once_using_reset_header(self):
+        from unittest.mock import MagicMock
+        url='https://www.reddit.com/search.rss?q=test'
+        err=A.urllib.error.HTTPError(url,429,'rate limited',{'x-ratelimit-reset':'0'},None)
+        response=MagicMock()
+        response.status=200
+        response.read.return_value=b'<feed xmlns="http://www.w3.org/2005/Atom"></feed>'
+        response.geturl.return_value=url
+        response.__enter__.return_value=response
+        with patch.object(A.urllib.request,'urlopen',side_effect=[err,response]) as open_, patch.object(A.time,'sleep') as sleep:
+            final,raw=A._fetch_reddit_atom(url,30)
+        self.assertEqual(final,url)
+        self.assertIn(b'<feed',raw)
+        self.assertEqual(open_.call_count,2)
+        sleep.assert_called_once()
+    def test_reddit_atom_repeated_429_fails_closed(self):
+        url='https://www.reddit.com/search.rss?q=test'
+        first=A.urllib.error.HTTPError(url,429,'rate limited',{'x-ratelimit-reset':'0'},None)
+        second=A.urllib.error.HTTPError(url,429,'rate limited',{'x-ratelimit-reset':'0'},None)
+        with patch.object(A.urllib.request,'urlopen',side_effect=[first,second]), patch.object(A.time,'sleep') as sleep:
+            with self.assertRaises(FactoryError):
+                A._fetch_reddit_atom(url,30)
+        sleep.assert_called_once()
     def test_social_search_no_shell_interpolation(self):
         query='recovery; $(touch nope)'
         self.assertEqual(A.social_args('x','search',query)[2],query)
@@ -226,10 +256,10 @@ class PreflightTests(Base):
         from unittest.mock import Mock
         return Mock(returncode=code, stdout=json.dumps(rows))
     def test_structured_web_search_maps_title_url(self):
-        rows = [{'rank': 1, 'title': 'Lung Help', 'url': 'https://www.lung.org/q', 'snippet': 's', 'resultType': 'web'},
-                {'rank': 2, 'title': 'Ad', 'url': 'https://ads.example.org/', 'snippet': 's', 'resultType': 'ads'},
-                {'rank': 3, 'title': 'Bad', 'url': 'javascript:alert(1)', 'snippet': 's', 'resultType': 'web'},
-                {'rank': 4, 'title': ' ', 'url': 'https://example.org/empty', 'snippet': 's', 'resultType': 'web'}]
+        rows = [{'title': 'Lung Help', 'url': 'https://www.lung.org/q', 'snippet': 's', 'type': 'result'},
+                {'title': 'Question', 'url': '', 'snippet': '', 'type': 'paa'},
+                {'title': 'Bad', 'url': 'javascript:alert(1)', 'snippet': 's', 'type': 'result'},
+                {'title': ' ', 'url': 'https://example.org/empty', 'snippet': 's', 'type': 'result'}]
         with patch.object(A, 'tool', return_value='opencli'), \
              patch.object(A, 'command', return_value=self.ddg(rows)):
             out = A.bridge_search_web(self.c, Path(self.temp.name), 'quit smoking', 5)
@@ -266,24 +296,26 @@ class PreflightTests(Base):
                 A.bridge_search_web(self.c, Path(self.temp.name), '--post', 3)
             with self.assertRaises(FactoryError):
                 A.bridge_search_web(self.c, Path(self.temp.name), '  --limit 5', 3)
-        rows = [{'rank': 1, 'title': 't', 'url': 'https://example.org/a', 'snippet': 's', 'resultType': 'web'}]
+        rows = [{'title': 't', 'url': 'https://example.org/a', 'snippet': 's', 'type': 'result'}]
         with patch.object(A, 'tool', return_value='opencli') as tool, \
              patch.object(A, 'command', return_value=self.ddg(rows)) as cmd:
             out = A.bridge_search_web(self.c, Path(self.temp.name), 'quit-smoking relapse', 3)
         self.assertEqual(out, [{'title': 't', 'url': 'https://example.org/a'}])
         argv = cmd.call_args.args[0]
         self.assertEqual(argv.count('quit-smoking relapse'), 1)
-    def test_structured_web_search_paginates(self):
+    def test_structured_web_search_uses_google_full_limit_once(self):
         from unittest.mock import Mock
-        page = lambda n: [{'rank': n + i, 'title': f't{n + i}', 'url': f'https://example.org/{n + i}',
-                           'snippet': 's', 'resultType': 'web'} for i in range(10)]
-        cmd = Mock(side_effect=[Mock(returncode=0, stdout=json.dumps(page(1))),
-                                Mock(returncode=0, stdout=json.dumps(page(11)))])
+        page = [{'title': f't{i}', 'url': f'https://example.org/{i}',
+                 'snippet': 's', 'type': 'result'} for i in range(20)]
+        cmd = Mock(return_value=Mock(returncode=0, stdout=json.dumps(page)))
         with patch.object(A, 'tool', return_value='opencli'), patch.object(A, 'command', cmd):
             out = A.bridge_search_web(self.c, Path(self.temp.name), 'q', 15)
         self.assertEqual(len(out), 15)
-        offsets = [call.args[0][7] for call in cmd.call_args_list]
-        self.assertEqual(offsets, ['0', '10'])
+        self.assertEqual(cmd.call_count, 1)
+        argv = cmd.call_args.args[0]
+        self.assertEqual(argv[1:3], ['google', 'search'])
+        self.assertEqual(argv[argv.index('--limit') + 1], '15')
+        self.assertNotIn('--offset', argv)
     def test_opencli_minimum_floor(self):
         from unittest.mock import Mock
         self.assertTrue(A.version_tuple('opencli 1.8.9') >= A.version_tuple('1.8.7'))
@@ -305,9 +337,12 @@ class PreflightTests(Base):
              patch.object(A, 'bridge_search_web', return_value=[{'title': 't', 'url': 'https://example.org'}]) as sw, \
              patch.object(A, 'bridge_read_web', return_value={'url': 'https://example.org/', 'title': 't', 'text': 'x' * 50, 'retrieved_at': '', 'truncated': False}):
             out = A.query(self.repo, 'practice-belief', 'web', 'search', 'q', 5, self.bridge_report(), True)
-            self.assertEqual(out['backend'], 'bridge/opencli-duckduckgo')
+            self.assertEqual(out['backend'], 'bridge/opencli-google')
             out = A.query(self.repo, 'practice-belief', 'web', 'read', 'https://example.org/', 5, self.bridge_report(), True)
             self.assertEqual(out['backend'], 'bridge/direct-https')
+            with patch.object(A, 'bridge_social', return_value=[{'id':'t3_abc123','url':'https://www.reddit.com/r/x/comments/abc123/t/','title':'t'}]):
+                out = A.query(self.repo, 'practice-belief', 'reddit', 'search', 'q', 5, self.bridge_report(), True)
+            self.assertEqual(out['backend'], 'bridge/reddit-public-atom')
     def test_query_route_mismatch_rejected(self):
         with self.assertRaises(FactoryError):
             A.query(self.repo, 'practice-belief', 'web', 'search', 'test', 5, self.bridge_report(), True, via='cloak')
