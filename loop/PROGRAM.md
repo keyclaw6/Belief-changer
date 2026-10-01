@@ -4,9 +4,9 @@
 Read AGENTS.md, docs/FACTORY-V2.md, factory/champion.json, the relevant immutable run/experiment registration and actual artifacts. Use CLI status/verify; do not infer completion from a marker in a conversation. The 000–050 campaign is closed. The upgrade authorizes code changes and offline tests, not new paid runs.
 
 ## Mandatory runner skill and provider invariant
-Before starting, resuming, or scheduling any autoresearch campaign, read `skills/running-auto-research-loop/SKILL.md`. Its heartbeat/repair policy is authoritative: the supervisor is a watchdog **and an active recovery agent**. It must diagnose and attempt safe root-cause repair before stopping, while remaining bounded by durable-progress checks and circuit breakers. Repository changes made during recovery must follow `skills/upgrade/SKILL.md`.
+Before starting, resuming, or scheduling autoresearch, read `skills/running-auto-research-loop/SKILL.md`. It owns execution/recovery and scientific-scope provenance. The host drives normal progress; an optional watchdog recovers host failure. Repository repairs follow `skills/upgrade/SKILL.md`.
 
-The reusable factory worker is one persistent top-level Pi Coding Agent. Live model execution uses OpenCode Go only. Never substitute an OpenCode/OpenCodex CLI worker, ChatGPT model execution, Vercel, OpenCode Zen, or another provider path. A host may inspect state and schedule wake-ups, but it does not become a factory role. If an independent evaluator cannot be configured as an independent model family through OpenCode Go, stop rather than weakening independence.
+The reusable factory worker is one persistent top-level Pi Coding Agent per active book, not per campaign. Live model execution uses OpenCode Go only. Never substitute an OpenCode/OpenCodex CLI worker, ChatGPT model execution, Vercel, OpenCode Zen, or another provider path. A host may inspect state and schedule wake-ups, but it does not become a factory role. If an independent evaluator cannot be configured as an independent model family through OpenCode Go, stop rather than weakening independence.
 
 
 ## Execution ownership for auto-research iterations
@@ -18,7 +18,7 @@ For each requested book, start or resume one persistent Pi `factory-orchestrator
 
 Only after that handoff does autoresearch resume: run blinded comparisons, baseline/no-regression decisions, Factory Learner/Reviewer, held-out evaluation and selection of the next intervention. If no-regression evaluation returns `REPAIR_REQUIRED`, autoresearch seals a generic caller-repair request bound to the exact accepted book and audit, then may call the SAME factory run back for its bounded whole-book repair. The factory consumes only that generic handoff and does not parse the autoresearch decision schema; autoresearch takes control again after the repaired book is independently audited and verified.
 
-The heartbeat may inspect progress, but must not become a shadow writer or manually synthesize factory-stage outputs. On every wake-up it compares the current durable progress marker with the previous one. If the Pi worker is healthy and advancing, it leaves it alone. If progress is blocked, it follows `skills/running-auto-research-loop/SKILL.md`: diagnose from evidence, attempt the smallest safe autonomous repair, validate it, and resume the same Pi session. It stops only after the skill's repair budget/circuit-breaker conditions are actually met. The factory controller model/provider remains fixed unless the owner explicitly authorizes a change.
+After each verified book, checkpoint its exact artifact identity and preserve its session. Start a new independent session for the next authorized book. Run outer comparisons only when due under the frozen design; do not require a final iteration verdict after the first replicate of a multi-book collection. The runner skill owns crash recovery and same-book continuation. The factory controller model/provider remains fixed while its supporting infrastructure is repairable.
 
 ## Cross-iteration learning and no-regression baseline
 
@@ -60,9 +60,11 @@ Planner and chapter retries use the same convergence principle inside a run: eac
 ## Baseline and separate candidates
 There is no validated v2 champion yet. Historical 037/043/046/050 books are recoverable from the pre-compaction Git commit, not working-tree candidates or automatic winners. First prepare fresh v2 baseline/candidate runs with parent=null and obtain valid evidence, plan and publication audits. Both arms of an initial experiment must be completed and human-reviewed before any release; the same promotion gate applies even with a null initial parent.
 
-A run snapshots brief, research, actual code, prompts and config. Changing anything upstream means a new run ID. A candidate can remain on an experimental branch after an inconclusive result, but factory/champion.json changes only through promote. No KEEP/QUANTIFY rule may silently modify that pointer.
+A run snapshots brief, research, actual code, prompts and config. Changing anything upstream means a new run ID. A candidate remains an immutable experimental run on main after an inconclusive result, but factory/champion.json changes only through promote. No KEEP/QUANTIFY rule may silently modify that pointer.
 
 ## Preregister
+
+Preregistration freezes an authorized scientific decision; it is not a grant of authority. Record the human source/delegated campaign envelope separately from proposed subjects, book counts, conditions and derived run IDs. Confirm material changes outside that envelope before generation. The paired allocation below is the promotion-study protocol, not an automatic six-book minimum for every exploratory iteration. Exploratory scope and its cost must be explicitly authorized.
 Create an experiment specification from factory/experiment.example.json. State the parent release, actual intervention paths, primary quality dimension, matched brief/research policy, plan-freeze policy, at least two subjects and at least three independent generated pairs per subject. Register confirmatory experiments BEFORE writing chapters. An exploratory historical comparison may be registered with confirmatory=false, but cannot promote.
 
 All pairs use one parent factory and one candidate factory. Reusing a book under another sample ID is rejected. Default fixed-plan tests compare byte-identical canonical plans. Model/route changes require factory/config.json in the declared intervention; otherwise actual generator metadata must match.
@@ -82,8 +84,9 @@ Bind a human approval to the exact selected book hashes. Selection is fixed befo
 If the champion changes, compare against the new real parent. Restoring files plus a new edit is a combined intervention, not merely the edit. Preserve all failed/unfinished artifacts and actual confounds. Reports distinguish supported observations from proposed causal explanations.
 
 ## Next architectural study
-Test the four conditions documented in docs/EXPERIMENTS-AND-READERS.md: current/simplified contract × local/manuscript-informed editing, with matched research and plans, repeated independent generations, predeclared outcomes and held-out transfer. The v2 software is the new candidate architecture, not evidence that it wins.
+Proposed, not automatically authorized: test the four conditions documented in docs/EXPERIMENTS-AND-READERS.md: current/simplified contract × local/manuscript-informed editing, with matched research and plans, repeated independent generations, predeclared outcomes and held-out transfer. The v2 software is the new candidate architecture, not evidence that it wins.
 
 
-## Research-access gate (2026-09-11)
-Before the next real campaign, follow `docs/RESEARCH-ACCESS.md`: verify live read behavior (general web, Reddit, X) over the default bridge route or, where needed, install the pinned Agent-Reach/OpenCLI/CloakBrowser tools, load NopeCHA, complete the authorized local X login (Reddit login is diagnostic-only on the bridge route), and run fresh live preflight for each subject. Every real `prepare` requires `--research-preflight`. Research expands to full web + substantial Reddit + substantial X passes; default added-effort allocation is 1:1:1, with documented subject-specific adjustment, never reduced general-web research. Browser access uses the working signed-in Chromium/OpenCLI bridge by default; the dedicated CloakBrowser profile is an optional fallback for constrained hosts. Do not publish keys, cookie values or bulk recovery-thread captures. Offline fixtures remain credential-free and cannot certify live access.
+## Research access
+
+Follow `docs/RESEARCH-ACCESS.md` for fresh subject preflight and the default bridge/optional cloak routes. Repair access failures under the runner skill; never relabel them as scarcity or fabricate readiness. Historical frozen preflight reports do not have to be fresh again merely to resume or verify existing work.

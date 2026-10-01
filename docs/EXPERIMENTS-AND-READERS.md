@@ -8,6 +8,7 @@ Use the calibration.example.json schema. Its case hashes must resolve to retaine
 Measure same-text judge variation separately from repeated-generation variation. A model switch, changed rubric, prompt or context policy needs a fresh registration/calibration. The generator's family may not substitute for the external judge. Human ratings, executable validators and independent model reviews serve different purposes; none alone establishes efficacy.
 
 ## Architectural ablation
+These protocols are proposals, not standing authorization to generate their samples. Freeze the human-approved scope first; chapter screening and complete-book sampling are different material allocations.
 The initial comparison is the archived factory against v2, treated as a bundled exploratory intervention, NOT a claim that one individual patch caused improvement. Do not silently execute retired unsafe code in production. Any historical reproduction must be isolated, explicitly authorized, prevented from publication and paid only under the owner's budget decision.
 
 Then test a preregistered factorial study:

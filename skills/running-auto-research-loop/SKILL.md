@@ -1,153 +1,61 @@
 ---
 name: running-auto-research-loop
-description: Run and supervise Belief-Changer autoresearch campaigns with one persistent Pi Coding Agent, OpenCode Go models only, bounded heartbeats, durable progress checks, proactive root-cause repair, and circuit breakers.
+description: Start, resume and recover authorized Belief-Changer autoresearch from durable state, with one persistent Pi session per book, OpenCode Go only, explicit scientific scope and autonomous operational repair.
 ---
 
-# Running the Auto Research Loop
+# Run and recover autoresearch
 
-Use this skill whenever starting, resuming, or scheduling a Belief-Changer autoresearch campaign.
+The host owns the iteration; Pi owns one book. This is the canonical host procedure for starting, continuing, repairing and stopping. Read `loop/state.md` first, then the current iteration's `progress.json` and frozen `hypothesis.md`. Read `loop/PROGRAM.md` when designing or evaluating an experiment, and `skills/upgrade/SKILL.md` before changing repository code/contracts. Do not reconstruct operational rules from old incident reports.
 
-## Runtime invariant
+## Authority: frozen science, repairable machinery
 
-- The book-factory worker is **one persistent top-level Pi Coding Agent** using `.pi/agents/factory-orchestrator.md`.
-- Live model execution uses **OpenCode Go only**. Do not use OpenCode Zen, Vercel, ChatGPT, OpenCodex, OpenCode CLI agents, or any other provider/agent as a fallback worker.
-- The outer host may inspect durable state, schedule wake-ups, perform deterministic orchestration, and decide what should happen next. It must not impersonate a factory role or substitute itself for the Pi worker.
-- External evaluator/reviewer roles use DeepSeek V4.1 Flash (`deepseek-v4.1-flash`, family `deepseek`) through OpenCode Go. It is the evaluator/judge, not the hypothesizer.
-- The human-facing host autoresearch controller itself is the hypothesizer. It loads `loop/prompts/hypothesizer.md`, reasons over frozen outer-loop evidence, and persists the next falsifiable hypothesis before starting another Pi run. Do not delegate hypothesizing to Pi or the evaluator.
-- Never change the Pi controller model/provider merely to get past a failure.
-- Launch the top-level Pi worker under a real pseudo-terminal (PTY). A pipe-only/non-PTY launch can stall before provider I/O even in print mode; treat a missing PTY as a launch defect, not a provider failure. Preserve the saved Pi session ID when retrying after correcting the launch surface.
+**Scientific authority comes from the human, not from preregistration.** Establish the authorized campaign length, subjects, book/replicate allocation, conditions, success/stopping criteria and model/evaluator requirements before generation. A campaign delegation may authorize choosing hypotheses within a stated envelope; preserve that delegation rather than asking again for each mechanical step. Material expansion outside it needs explicit approval. A proposal, a learner's ACCEPT, a Git commit or an agent-written “authorized” label is not a human decision. Screening samples do not silently become complete books.
 
-## Do not arm the heartbeat until startup is proven
+Keep three things distinct in the hypothesis/handoff: human-authorized scope with its source; agent-proposed scientific details; derived run IDs/bookkeeping. The existing `progress.json` holds `execution_status` (`STOPPED`, `ACTIVE`, `COMPLETE`) and `authorization` (`status`, `reference`, `quote`, `scope_sha256`). Its `allocation` uses actual subject slugs and counts books, not judge label orders. The scope hash binds the hypothesis file and allocation. Obtain it with `iteration-status`; mark APPROVED only after reading the actual human source and confirming it covers that scope. Hashes check consistency, not authenticity. Missing/contested authority stays UNCONFIRMED. Historical hypotheses remain unchanged; supersede explicitly rather than rewriting results or retroactively inventing consent.
 
-Start the worker once under direct supervision before creating a recurring schedule.
+**Operational authority is broad once the work is authorized.** Repair browser/profile setup, Agent-Reach/X/Reddit/web access, PTYs, sessions, local services/controllers, proxies, existing credential routing, parsers, stale paths and deterministic repository defects. Install/reconnect/restart the required local support machinery when authorized and necessary. No additional permission is needed merely because the defective component is called a harness or supervisor. Preserve genuine account/host access boundaries; a host safety denial is not permission to hide or reroute a prohibited action. Stop at actual unavailable human login/MFA, new spending, or another external dependency, not at an internal instruction that can be repaired.
 
-Require all of the following:
-1. the intended Pi session exists and its identity is recorded;
-2. its configured provider is OpenCode Go;
-3. at least one real model request has returned a non-empty successful response;
-4. the factory has advanced at least one durable state marker.
+Live model execution remains **OpenCode Go only**. Keep the frozen generator and independent evaluator family; repairing their wiring is not changing their identity. Never substitute ChatGPT, OpenCode CLI agents, OpenCode Zen, Vercel or another provider for Pi/factory roles. Never manufacture a missing role output. Keep W1–W4 inactive unless separately selected within authorized experimental scope.
 
-A process that exists, a session that is "running", repeated provider retries, or new log lines are **not** startup proof.
+## One lifecycle
 
-If the first successful model response does not arrive, **do not immediately give up**. Diagnose the startup path while still under direct supervision: inspect the Pi session, OpenCode Go route/configuration, credentials wiring, provider response, process state, and relevant logs; repair the smallest safe root cause; verify the repair; and retry the same Pi session. Only classify the campaign as `STARTUP_BLOCKED` when the same blocker survives a real repair attempt or no safe autonomous repair path exists. Do not arm a recurring heartbeat until startup is actually proven.
+1. **Reconcile before execution.** `python3 scripts/autoresearch.py iteration-status --iteration NNN` reads the owner stop and scope. STOPPED means no launch or watchdog until the owner resumes. `loop/state.md` is the entry-point index, not a competing result ledger. `progress.json` owns the current scope, exclusions, checkpoint and next-action pointers. Frozen run manifests/results plus factory `status`/`verify` own completion; sealed outer judgments/decisions own experimental conclusions. A service name, PID, Pi transcript or watchdog observation never overrides those artifacts.
+2. **Prepare one authorized book.** Use the exact frozen scientific inputs and `factory.py prepare` with a fresh subject research preflight under `docs/RESEARCH-ACCESS.md`. Use `iterNNN-...` run IDs so the launcher can reconcile allocation. Do not prepare several future books speculatively. Producing missing research remains the existing Pi researcher's job under the factory contract, not the host's opportunity to synthesize a dossier. The helper below operates prepared runs; preserve/import that book's native preparation session when continuing through it. A resume of existing frozen work does not need a fresh preflight merely because its historical report aged; new retrieval/new prepare does. A failed live preflight means repair the access layer and rerun it, not fabricate READY or reduce research.
+3. **Start or resume Pi through the command below.** It uses a real pseudo-terminal (PTY), the run's snapshot as project root, explicitly frozen context, and native Pi session storage. The default is inspection only; `--allow-paid` actually runs it. Use the existing host durable command service when execution must survive disconnection; no second controller is required.
+4. **Let healthy Pi work.** Pi dispatches project-local roles and owns research through verified `COMPLETE_UNRELEASED`. The host does not co-write, synthesize results or send repeated generic nudges. If Pi exits unfinished, inspect actual artifacts/logs, repair the cause, and resume that book.
+5. **Advance books, then the iteration.** After completion, verify and checkpoint the exact run/hash. Preserve its session history and start a **new session for the next book**. Perform only the outer checks due under the frozen design; a multi-book baseline does not require a final iteration verdict after its first book. Once all required collection/judgments are finished, freeze the decision and required learning/reviewer output, then the next falsifiable hypothesis. Only then start the next authorized iteration. Aborts and blockers do not count as completed iterations or authorize extra samples. Count against the human's campaign limit, not the highest directory number.
 
-## A heartbeat is a watchdog, not a retry engine
+## Session and launch mechanics
 
-Every wake-up starts by reading durable state and asking:
+Persistence belongs to **one logical book**, not the whole campaign. Resume its saved session after a process/PTY failure. A completed session is evidence, not an active worker and not a constraint on another book's identity. A sealed caller-repair request may reopen the same accepted book through its bounded factory repair path; it does not start another replicate.
 
-> **What durable progress marker changed since the previous wake-up?**
+```bash
+python3 scripts/autoresearch.py launch-book --iteration NNN --run iterNNN-SUBJECT-a \
+  --agent-dir /absolute/private/pi-runtime \
+  --extension /absolute/pi/examples/extensions/subagent/index.ts
+# Add --allow-paid only for the authorized execution, not for inspection/tests.
+```
 
-Durable progress means something such as:
-- a new validated factory result;
-- a run/status stage advancing;
-- a new accepted plan/chapter/assembly/audit;
-- `COMPLETE_UNRELEASED`;
-- a frozen outer judgment, decision, learning packet, or next hypothesis.
+The launcher pins a native session ID and directory per run under ignored `.loop-work/pi/`, checks allocation/provider independence, and holds a kernel lock while that iteration's worker runs. Duplicate launch is refused; stale lock-file text is not ownership. Do not unlink an actively held lock. The lock survives into Pi and releases when its actual owners exit, regardless of a stale service receipt. `COMPLETE_UNRELEASED` comes from verification, never the worker's exit code. Console logs remain local.
 
-These do **not** count as progress:
-- the same PID/session still existing;
-- the same task being retried;
-- another 429/503/auth failure;
-- repeated "continue" messages;
-- more logs without a new validated artifact;
-- another scheduler wake-up.
+On this host the existing private agent directory is `/home/kab/.local/share/belief-changer/pi-runtime`; the subagent extension is `/home/kab/.local/share/mise/installs/pi/latest/pi/examples/extensions/subagent/index.ts`. Use the already-authorized local credential source `/home/kab/.config/belief-changer-go.env` without printing values. These are deployment paths to repair if stale, not scientific invariants. Old per-book `run.sh` scripts in the private runtime are historical evidence, not the current launch path.
 
-### If healthy progress exists
-Leave the Pi worker alone. Do not send a generic nudge and do not start another worker.
+For a pre-launcher active session, first prove the old worker has exited; preserve/import its native session into that book's session directory and use its identity rather than spawning a second owner. A genuinely lost/corrupt session may be reconstructed from frozen artifacts after fencing the old worker and recording the loss. Do not regenerate accepted content or change models to repair transport. Never copy a completed book's conversational state into an independent new replicate.
 
-### If the worker completed
-Take control at the outer boundary: verify `COMPLETE_UNRELEASED`, run the intended independent judging/decision/learning work, freeze the result, and only then consider the next iteration.
+## Recover instead of interpreting every failure as permanent BLOCKED
 
-### If there is an infrastructure defect
-Be proactive. A scheduled agent is the only actor available between owner messages, so its job is to **attempt to restore forward progress**, not merely report a problem.
+Classify the actual failure and inspect its immediate dependencies. Make an evidence-driven repair, verify it, then continue. A repeated failure means the previous diagnosis/repair was insufficient; it is not by itself a terminal stop. Do not blindly repeat an unchanged failing request. Bounded transient retries are appropriate; a longer repair can require several distinct steps. A wake-up's time budget is not a campaign-wide repair budget.
 
-1. classify the failure from evidence rather than guessing;
-2. inspect the directly connected runtime/config/log/state paths;
-3. try the smallest safe autonomous repair that preserves the architecture;
-4. add or update a regression test when the defect is general/deterministic;
-5. run the relevant verification gate;
-6. resume the **same** Pi session;
-7. verify that the repair created a successful model response or new durable factory progress.
+A missing/dead systemd unit is an execution receipt problem: inspect the current native controller/job, process and lock first. Adopt the actual live owner, or recreate the required service/launch through the existing durable command route once the old owner is gone. Do not resurrect an obsolete supervisor alongside its replacement. Research defaults to the working bridge; a broken optional CloakBrowser route does not veto working required access.
 
-Examples of appropriate autonomous repair:
-- repair a stale path, broken config, missing wiring, parser bug, dead local process, expired non-human session, or recoverable tool state;
-- restart/reconnect a required local component when safe;
-- correct credential **routing** when an already-authorized credential exists but is wired incorrectly;
-- repair the Pi session/runtime state without changing its identity/model/provider;
-- fix repository code/config and tests when the failure is a reproducible system defect.
+Frozen scientific inputs and accepted artifacts remain immutable during repair. Run old work with its own snapshot. If a deterministic fix requires a successor run, preserve the failed attempt, record why it is diagnostic/excluded and which existing slot it replaces, and record changed factory hashes/confounds. This cannot enlarge the sample or justify discarding a disappointing valid result. Content BLOCKED, independent negative findings and exhausted review rounds remain real failures, not infrastructure excuses to reset the experiment.
 
-Do **not** fabricate credentials, bypass authorization, silently change model/provider, create a replacement worker, or synthesize factory output.
+Stop only for the owner's stop/completed campaign, a material scientific decision outside delegated scope, a genuine external/human dependency with no available authorized repair, or an unresolved scientific gate that cannot be completed honestly. Record the evidence, attempted repairs and exact next action. A locally repairable defect remains recovery work; it does not become permanent BLOCKED merely because one repair failed.
 
-A blocker is not grounds to stop until the supervisor has either attempted the relevant safe repair path or established from evidence that no autonomous repair is possible.
+## Optional watchdog
 
-## Repair budget and circuit breakers
+The host drives normal progress continuously. A watchdog only recovers a disconnected/crashed host; it is not another normal-progress engine. Do not arm one before startup proves a successful real configured model response **and** validated factory progress. Keep at most the already-authorized host continuation, inspect durable state on re-entry, leave healthy workers alone and follow this same procedure. Do not start another scheduler or worker because logs stopped scrolling. Disable the recurring schedule on an owner stop, completed campaign or genuine unresolved external checkpoint.
 
-The heartbeat must be proactive **and** bounded. It should try to fix what is broken, but never devolve into an unattended retry storm.
+A sufficient future instruction is:
 
-### Repair before stop
-
-Before tripping a circuit breaker, the supervisor must record one of:
-- **repair attempted:** the concrete root-cause repair it performed and how it verified the result; or
-- **no autonomous repair exists:** the evidence showing why the next step requires unavailable credentials, owner action, provider-side recovery, or another external dependency it cannot safely perform.
-
-For a recoverable blocker, allow up to **two distinct evidence-driven repair actions in one wake-up** when the first repair reveals a different underlying blocker. Do not repeat the same repair twice. A transient network/provider error may receive one bounded retry after checking current state.
-
-Examples:
-- invalid credential *wiring* → locate the already-authorized credential source/config and repair the wiring;
-- dead tool/process → restart or reconnect it safely and verify health;
-- provider misconfiguration → correct the OpenCode Go route/config and verify with a real response;
-- parser/session/runtime defect → fix the defect, add regression coverage if general, and resume the same Pi session;
-- human login/2FA/CAPTCHA → navigate/recover as far as safely possible, then stop only at the actual human checkpoint;
-- account/provider quota exhaustion → confirm it is genuinely provider-side and not a routing/config mistake; if no OpenCode-Go-compatible repair exists, stop.
-
-### Stop conditions
-
-Stop and disable the heartbeat when any of these is true:
-- the **same failure fingerprint recurs after a real repair**;
-- two consecutive heartbeat checks produce no durable progress **and** the current wake-up cannot identify and execute a new evidence-backed repair;
-- startup still has no successful model response after the startup repair path has been exercised;
-- the remaining blocker requires owner/human action that the agent cannot perform;
-- the remaining blocker is confirmed account/provider quota exhaustion with no permitted OpenCode Go repair;
-- an independent evaluator family required by the experiment is unavailable through OpenCode Go after checking the available permitted configuration;
-- preserving the runtime invariant would require switching provider/worker/model without authorization.
-
-A merely running process is not progress. A repeated `continue` is not a repair.
-
-When a circuit breaker trips:
-- mark the campaign/run `BLOCKED` or `STARTUP_BLOCKED` in durable state;
-- preserve the existing Pi session and artifacts;
-- disable the recurring schedule;
-- report what failed, what autonomous repair was attempted, what evidence remained, and the smallest next action;
-- do not silently switch provider, model, harness, or worker.
-
-## Iteration boundary
-
-Do not start iteration N+1 until iteration N has:
-1. reached verified `COMPLETE_UNRELEASED` for all required books;
-2. completed the preregistered outer judgments;
-3. frozen the deterministic decision;
-4. frozen transferable learning/reviewer output where required;
-5. frozen the next falsifiable hypothesis.
-
-A blocker does not count as an iteration.
-
-## Heartbeat prompt template
-
-Use wording at least this strict when scheduling an autoresearch continuation:
-
-> Inspect durable repository state before doing anything. This heartbeat is a watchdog, not a retry loop. First determine exactly what durable progress marker changed since the previous wake-up. If the Pi Coding Agent is healthy and progressing, leave it alone. The only worker is the existing persistent Pi Coding Agent and all model execution must use OpenCode Go; never substitute ChatGPT, OpenCodex, OpenCode CLI, OpenCode Zen, Vercel, or another provider/model path.
->
-> If there is no durable progress, do not blindly send another `continue`. Classify the blocker from logs/state and proactively attempt the smallest safe root-cause repair while preserving the same Pi session and OpenCode Go-only architecture. Repair broken wiring/config/process/session/parser/tool state when possible, add regression coverage for general deterministic defects, verify the repair, and resume the same Pi session. You may perform up to two distinct evidence-driven repairs in one wake-up when fixing one issue reveals another; never repeat the same repair blindly.
->
-> Stop only after the same failure recurs after repair, two consecutive no-progress wake-ups leave no new evidence-backed repair, startup still has no successful model response after its repair path, or the remaining blocker genuinely requires unavailable human action/provider-side quota/credentials that cannot be safely repaired. Before stopping, record what you tried or why no autonomous repair exists. Then mark the run blocked, disable this schedule, preserve the session, and report the exact blocker.
->
-> When the factory reaches verified `COMPLETE_UNRELEASED`, perform the outer judgment/decision/learning boundary and freeze it before starting the next iteration. Stop the schedule when the requested campaign count is complete or any circuit breaker fires.
-
-## Campaign completion
-
-The schedule must disable itself when:
-- the requested number of iterations is complete;
-- a circuit breaker fires;
-- the owner says stop.
-
-Persistence is useful only while the system is making real progress. A scheduler must never turn a blocked provider or broken worker into an unattended retry storm.
+> Continue authorized autoresearch from durable state using the running-auto-research-loop skill. Preserve the frozen experiment, OpenCode Go and evaluator independence. Repair the local machinery autonomously, advance through the authorized books/iterations, and stop only at the owner's boundary or a genuine unresolved external/scientific checkpoint.

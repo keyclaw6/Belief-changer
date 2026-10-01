@@ -10,6 +10,7 @@ def main():
     required = ['AGENTS.md','README.md','docs/FACTORY-V2.md','docs/UPGRADE-MAP.md',
                 'scripts/factory.py','scripts/bc_factory/schema.py','scripts/bc_factory/runs.py',
                 'scripts/autoresearch.py','scripts/bc_autoresearch/cli.py',
+                'scripts/bc_autoresearch/operations.py','scripts/eval/tests/test_autoresearch_operations.py',
                 'scripts/bc_autoresearch/experiments.py','scripts/bc_autoresearch/learning.py',
                 'scripts/bc_autoresearch/regression.py','factory/config.json','factory/champion.json',
                 'factory/calibration.json','loop/judges/pairwise.md','prompts/evidence-reviewer.md',
@@ -49,10 +50,17 @@ def main():
             errors.append('External profile duplicates generating family')
     history = ROOT/'loop/iterations'
     if history.exists():
-        allowed = {'decision.md','hypothesis.md','change.diff','CAMPAIGN-SUMMARY.md','convergence-report.md','evidence.json','ABORTED.md'}
+        allowed = {'decision.md','hypothesis.md','change.diff','CAMPAIGN-SUMMARY.md','convergence-report.md','evidence.json','ABORTED.md','progress.json'}
         for path in history.rglob('*'):
             if path.is_file() and (len(path.relative_to(history).parts)!=2 or path.name not in allowed):
                 errors.append('Intermediate campaign artifact re-entered source tree: '+str(path.relative_to(ROOT)))
+    # A compact handoff is allowed; it is not a final iteration verdict.
+    from bc_autoresearch.operations import progress_record
+    for path in history.glob('*/progress.json'):
+        try:
+            progress_record(ROOT, path.parent.name)
+        except Exception as exc:
+            errors.append('Invalid iteration handoff: '+str(path.relative_to(ROOT))+': '+str(exc))
     if errors:
         print('\n'.join(errors),file=sys.stderr);return 1
     print(f'Runtime contracts present; {len(tests)} mandatory test module(s).')

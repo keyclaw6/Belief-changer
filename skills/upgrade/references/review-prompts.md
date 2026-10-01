@@ -26,7 +26,7 @@ Use lanes 1–3 by default when independent reviewers are available. Add lane 4 
 
 ### 4. Runtime/provider portability
 
-> Check that the portable core still uses one persistent Pi Coding Agent for the book factory and OpenCode Go only for live model execution. Identify leaked assumptions about a host, alternate provider, CLI worker, scheduler, browser, or bridge. Host conveniences must not become alternate truth paths.
+> Check that the portable core still uses one persistent Pi Coding Agent per active book, with new sessions for independent books and OpenCode Go only for live model execution. Identify leaked assumptions about a host, alternate provider, CLI worker, scheduler, browser, or bridge. Host conveniences must not become alternate truth paths.
 
 ### 5. Mechanical correctness
 

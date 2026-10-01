@@ -10,7 +10,7 @@ The upgrade has not run paid live models, reverified the historical research, re
 
 Python 3.11 or newer, standard library only. Git is needed to clone/push and optional for runtime; ZIP exports work without Git. Do not install provider services or supply credentials merely to run tests.
 
-Agentic factory execution uses Pi Coding Agent with its `subagent` extension enabled; that extension is a Pi extension rather than a built-in tool. Run the factory controller as a saved top-level Pi session loaded with `.pi/agents/factory-orchestrator.md`; do not run the controller itself as a subagent, because subagent children are ephemeral. That controller dispatches only child project roles with `agentScope: "project"`; a missing extension is a hard stop, never a reason to fall back to the host harness. Deterministic CLI checks and the offline demo do not require Pi.
+Agentic factory execution uses Pi Coding Agent with its `subagent` extension enabled; that extension is a Pi extension rather than a built-in tool. Run the factory controller as a saved top-level Pi session loaded with `.pi/agents/factory-orchestrator.md`; do not run the controller itself as a subagent, because subagent children are ephemeral. That controller dispatches only child project roles with `agentScope: "project"`; a missing extension pauses role dispatch and returns an infrastructure defect to the host for repair, never a reason to impersonate a role or fall back to the host harness. Deterministic CLI checks and the offline demo do not require Pi.
 
 ```bash
 bash scripts/check.sh
@@ -37,7 +37,7 @@ Independence is about model family, not permission to change provider. Do not si
 
 A trusted command adapter is allowed only when it is merely a local wrapper around OpenCode Go and still returns exactly `{output,model,family,route,usage}` JSON on stdout. It is not permission to invoke another model service. Unknown usage is null. Do not let a judge read previous scores/history or ambient project instructions.
 
-The human-facing host can read frozen tasks, inspect state, schedule heartbeats and submit honestly recorded results, but it is not a model-provider fallback and must not synthesize a missing Pi factory role. The live book factory itself is one persistent top-level Pi Coding Agent.
+The human-facing host can read frozen tasks, inspect state, schedule heartbeats and submit honestly recorded results, but it is not a model-provider fallback and must not synthesize a missing Pi factory role. The live book factory itself is one persistent top-level Pi Coding Agent per active book. Its caller preserves completed sessions and starts independent new sessions for new books; process or service repair does not change the scientific inputs.
 
 ## Prepare inputs
 

@@ -58,7 +58,7 @@ read -r -s -p 'NopeCHA key: ' NOPECHA_API_KEY; printf '\n'; export NOPECHA_API_K
 "$RPY" scripts/factory.py research-login --allow-captcha
 ```
 
-The login command opens the dedicated headed browser and both login pages. Complete the authorized logins yourself, including any required MFA, then press Enter in the terminal. It checks both account sessions without saving identities to the project. It does not extract cookies from another browser. A CLI agent that cannot operate a displayed login must stop for the owner to do that local step.
+The login command opens the dedicated headed browser and both login pages. Complete the authorized logins yourself, including any required MFA, then press Enter in the terminal. It checks both account sessions without saving identities to the project. It does not extract cookies from another browser. A runtime agent may repair the browser and recover already-authorized account access itself; escalate only the actual human-only login/MFA step it cannot complete. This cloak-specific login procedure does not block a working bridge route.
 
 NopeCHA configuration uses its official setup page; the key remains in the external profile. `--allow-captcha` explicitly permits the service to consume available quota. The adapter never prints solved CAPTCHA response tokens. A stable local fingerprint seed is retained with the dedicated profile. Profiles are exclusive-use: serialize requests through one research worker; concurrent use is rejected rather than stealing another process's browser lock.
 

@@ -36,13 +36,12 @@ class AutoResearchRuntimeInvariantTests(unittest.TestCase):
         required = (
             "OpenCode Go only",
             "real pseudo-terminal (PTY)",
-            "Do not arm the heartbeat until startup is proven",
-            "A heartbeat is a watchdog, not a retry engine",
-            "attempt to restore forward progress",
-            "A blocker is not grounds to stop until",
-            "Repair before stop",
-            "same failure fingerprint recurs after a real repair",
-            "disable the recurring schedule",
+            "Scientific authority comes from the human",
+            "Operational authority is broad",
+            "new session for the next book",
+            "A repeated failure means the previous diagnosis/repair was insufficient",
+            "A watchdog only recovers a disconnected/crashed host",
+            "Disable the recurring schedule",
         )
         for phrase in required:
             self.assertIn(phrase, skill)

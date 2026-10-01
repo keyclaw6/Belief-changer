@@ -5,7 +5,7 @@ import json
 import sys
 from pathlib import Path
 
-from . import experiments, learning, regression
+from . import experiments, learning, regression, operations
 from bc_factory.adapters import execute
 from bc_factory.common import FactoryError, atomic_json, digest, lock, now, read_json, require, seal, unseal
 from bc_factory.runs import Run
@@ -22,6 +22,15 @@ def parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description="Belief-Changer outer autoresearch controls")
     p.add_argument("--repo", type=Path, default=Path(__file__).resolve().parents[2])
     sub = p.add_subparsers(dest="command", required=True)
+
+    sub.add_parser("iteration-status", help="Inspect scope and owner stop; no model calls").add_argument("--iteration", required=True)
+    s = sub.add_parser("launch-book", help="Inspect or explicitly launch one prepared book in a persistent Pi PTY")
+    s.add_argument("--iteration", required=True)
+    s.add_argument("--run", required=True)
+    s.add_argument("--agent-dir", type=Path, required=True)
+    s.add_argument("--extension", type=Path, required=True)
+    s.add_argument("--pi", default="pi")
+    s.add_argument("--allow-paid", action="store_true")
 
     sub.add_parser("register-experiment").add_argument("--spec", required=True)
     for name in ("pair-task", "pair-submit", "pair-execute"):
@@ -75,7 +84,12 @@ def main(argv: list[str] | None = None) -> int:
     repo = args.repo.resolve()
     try:
         cmd = args.command
-        if cmd == "register-experiment":
+        if cmd == "iteration-status":
+            result = operations.iteration_status(repo, args.iteration)
+        elif cmd == "launch-book":
+            result = operations.launch_book(repo, args.iteration, args.run,
+                                           args.agent_dir, args.extension, args.pi, args.allow_paid)
+        elif cmd == "register-experiment":
             result = {"registered": str(experiments.register(repo, document(args.spec)))}
 
         elif cmd == "pair-task":
@@ -136,7 +150,7 @@ def main(argv: list[str] | None = None) -> int:
             print(json.dumps({"written": str(Path(args.out).resolve())}))
         else:
             print(json.dumps(result, indent=2, ensure_ascii=False))
-        if result.get("decision") in ("INCONCLUSIVE", "REJECT", "REPAIR_REQUIRED"):
+        if result.get("status") == "NEEDS_INSPECTION" or result.get("decision") in ("INCONCLUSIVE", "REJECT", "REPAIR_REQUIRED"):
             return 2
         return 0
     except Exception as exc:

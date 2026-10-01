@@ -2,4 +2,4 @@
 schema_version: 2
 runtime_config: factory/config.json
 program: loop/PROGRAM.md
-status: idle_no_paid_runs_authorized_by_upgrade
+state: loop/state.md

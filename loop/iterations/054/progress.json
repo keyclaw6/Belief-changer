@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "iteration": "054",
+  "preregistration_sha256": "49f0568a9e8725fc086b498ad8e57c5225f9776120df3644d1a23a834df6acda",
+  "status": "IN_PROGRESS",
+  "allocation": {
+    "quit-sugar": 3,
+    "quit-smoking": 3
+  },
+  "completed_counted_runs": 1,
+  "excluded_runs": [
+    {
+      "run_id": "iter054-sugar-a",
+      "reason": "Diagnostic-only partial run excluded after deterministic state-editor chapter-ID defect; see loop/history/iter054-state-editor-repair.md."
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "iter054-sugar-a-r1",
+      "subject": "quit-sugar",
+      "slot": "sugar-a replacement",
+      "factory_status": "COMPLETE_UNRELEASED",
+      "verify_exit_code": 0,
+      "book_sha256": "2ecaf1abd130d8c231a908cb08022a6f91c1071da3ace0c5e0615650281f1c1e",
+      "factory_digest": "8efd8b09c01cd9aed9c75d9dbdbf5d6a59d0906d816bad720f24c52378008209",
+      "assembly_r02_sha256": "02d2e2975fb34599ea93d66ccfaf84bd0d2641d730942b9a26f1b1c6c9be3227",
+      "evidence_review": {
+        "verdict": "ACCEPT",
+        "findings": 0,
+        "file_sha256": "cefa23e977d92358f36f73b0a42e86e734b2679bf065ea18ccdc10434687018a",
+        "model": "deepseek-v4.1-flash",
+        "family": "deepseek",
+        "route": "opencode-go-deepseek-v4.1-flash",
+        "harness": "http-v2"
+      },
+      "final_audit": {
+        "round_1": {
+          "verdict": "REVISE",
+          "findings": 2
+        },
+        "round_2": {
+          "verdict": "ACCEPT",
+          "findings": 0,
+          "file_sha256": "ea0908499e74e186c8cbeb5149d81cda346b30074a42e2f9a53dba0384f54365",
+          "model": "deepseek-v4.1-flash",
+          "family": "deepseek",
+          "route": "opencode-go-deepseek-v4.1-flash",
+          "harness": "http-v2"
+        }
+      },
+      "convergence": {
+        "book_editor_rounds": 2,
+        "final_audit_rounds": 2,
+        "state_editor_chapter_identity_recurred": false,
+        "transient_provider_validation_failure_count": 1,
+        "transient_failure_file_sha256": "c775698c49e6dfbd62048218e9d36724b9fa394c2ac59d7e4ae5eb08399aee78"
+      },
+      "metadata_validation": {
+        "validated_results": 31,
+        "mismatches": 0
+      }
+    }
+  ],
+  "outer_boundary": {
+    "pairwise_blinded_judgment": "NOT_YET_APPLICABLE_ONE_COMPLETE_SAME_CONDITION_BOOK",
+    "deterministic_decision": "PENDING_PREREGISTERED_ALLOCATION",
+    "factory_learning": "PENDING_PREREGISTERED_ALLOCATION",
+    "rationale": "Iteration 054 measures repeated-generation variance. A blinded same-condition pairwise diagnostic requires at least two completed books for the subject; no intervention decision or transferable learning is frozen from a single draw."
+  },
+  "efficacy": "NOT_MEASURED",
+  "execution_status": "STOPPED",
+  "authorization": {
+    "status": "UNCONFIRMED",
+    "reference": null,
+    "quote": null,
+    "scope_sha256": null,
+    "reason": "The six-complete-book allocation is retained as an agent-proposed design, not verified human authority. The owner stopped execution. Confirm remaining scope and resume before any live work."
+  },
+  "next_action": "Await owner resume and confirmation of the remaining scientific scope; do not restart the completed session for a different book."
+}
