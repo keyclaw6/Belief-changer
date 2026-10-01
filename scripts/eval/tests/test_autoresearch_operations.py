@@ -11,6 +11,11 @@ import unittest
 from pathlib import Path
 from unittest.mock import Mock, patch
 
+UPSTREAM_STUB = '\n'.join([
+    'import { discoverAgents } from "./agents.ts";',
+    'const args: string[] = ["--mode", "json", "-p", "--no-session"];',
+])
+
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "scripts"))
 from bc_autoresearch import operations as ops
@@ -44,7 +49,8 @@ class OperationsTests(unittest.TestCase):
         }}}
         self.save_provider()
         self.extension = self.repo / "subagent.ts"
-        self.extension.write_text("// offline path fixture; never executed\n")
+        self.extension.write_text(UPSTREAM_STUB)
+        (self.extension.parent / "agents.ts").write_text("// Offline discovery fixture")
         self.runs = {}
         self.addCleanup(patch.stopall)
         patch.object(ops, "Run", side_effect=lambda repo, run_id: self.runs[run_id]).start()
@@ -221,7 +227,7 @@ class OperationsTests(unittest.TestCase):
         self.extension.unlink()
         with self.assertRaisesRegex(FactoryError, "Repair/install"):
             self.plan()
-        self.extension.write_text("// repaired offline path")
+        self.extension.write_text(UPSTREAM_STUB)
         self.provider["providers"]["opencode-go"]["baseUrl"] = "https://example.invalid"
         self.save_provider()
         with self.assertRaisesRegex(FactoryError, "Repair the Pi"):
@@ -240,6 +246,43 @@ class OperationsTests(unittest.TestCase):
         self.assertEqual(result["status"], "NEEDS_INSPECTION")
         self.assertEqual((self.iteration / "progress.json").read_bytes(), original)
         self.assertEqual(self.plan()["status"], "READY_TO_LAUNCH")
+
+    def test_model_specific_overrides_cannot_change_provider_or_api(self):
+        for where in ("model", "modelOverrides"):
+            for field, value in (("baseUrl", "https://other-provider.invalid/v1"),
+                                 ("api", "anthropic-messages")):
+                with self.subTest(where=where, field=field):
+                    original = copy.deepcopy(self.provider)
+                    provider = self.provider["providers"]["opencode-go"]
+                    model = provider["models"][0]
+                    target = model if where == "model" else provider.setdefault("modelOverrides", {}).setdefault(model["id"], {})
+                    target[field] = value
+                    self.save_provider()
+                    with self.assertRaisesRegex(FactoryError, "model-specific route"):
+                        self.plan()
+                    self.provider = original
+                    self.save_provider()
+        self.worker.assert_not_called()
+
+    def test_child_startup_isolated_without_copying_orchestrator_prompt(self):
+        plan = self.plan()
+        text = ops.isolated_subagent_source(self.extension, Path(plan["cwd"]))
+        for flag in ("--no-context-files", "--no-extensions", "--no-skills", "--no-prompt-templates", "--approve"):
+            self.assertIn(flag, text)
+        self.assertIn(str(self.a.root / "snapshot/AGENTS.md"), text)
+        self.assertNotIn("factory-orchestrator.md", text)
+        self.assertIn(str(self.extension.parent / "agents.ts"), text)
+        self.assertEqual(self.extension.read_text(), UPSTREAM_STUB)
+        self.assertFalse(Path(plan["subagent"]["path"]).exists())
+        with patch.dict(os.environ, {"OPENCODE_GO_API_KEY": "offline-test-only"}):
+            self.plan(allow_paid=True)
+        self.assertEqual(Path(plan["subagent"]["path"]).read_text(), text)
+
+    def test_changed_upstream_subagent_needs_compatibility_repair(self):
+        self.extension.write_text("// incompatible upstream revision")
+        with self.assertRaisesRegex(FactoryError, "startup compatibility"):
+            self.plan()
+        self.worker.assert_not_called()
 
     def test_cli_defaults_to_inspection(self):
         args = parser().parse_args(["launch-book", "--iteration", "901", "--run", "iter901-sugar-a", "--agent-dir", "/tmp/test", "--extension", "/tmp/test.ts"])

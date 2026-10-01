@@ -45,3 +45,27 @@ The first full gate after the initial changes passed 249 tests. After the review
 Read-only `iteration-status --iteration 054` reports STOPPED, UNCONFIRMED and AWAIT_OWNER_RESUME. Re-running `factory.py verify --run iter054-sugar-a-r1` after all source edits returned COMPLETE_UNRELEASED with the unchanged book/factory hashes above. `git diff --check HEAD` exited 0. Active-contract searching found no remaining cross-book same-session mandate, two-repair stop rule, unset-evaluator claim or cloak-only requirement in the inspected entry points.
 
 Offline tests do not certify live browser account readiness, provider availability, model quality or end-to-end autonomous performance; those were deliberately not exercised by this task. The report, compact inherited checkpoint and targeted source changes are committed together on main; the final user-facing closeout records the actual commit and push result.
+
+
+## Second pass — native launch boundary (2026-10-01)
+
+Rechecked commit `9a1d740a` against the installed Pi 0.99.2 executable and its actual subagent extension, rather than trusting the mocked launcher tests alone. Two additional defects were reproduced and corrected:
+
+1. **Child context leakage:** a zero-network native probe put an unmistakable sentinel in the current repository's parent context while keeping the run snapshot unchanged. The parent correctly excluded it, but the native child loaded it (`parent.outerContext=false`, `child.outerContext=true`). Pi's supplied subagent example creates its own child argv without the parent's isolation flags. The launcher now derives a local per-book copy of that installed tool, narrowly replacing the child startup defaults and resolving its existing agent-discovery import. Both processes load the frozen contract; children retain their own role wrapper and do not inherit the orchestrator prompt. No shared Pi installation, new subagent framework or factory-writing contract was changed. Unsupported upstream entry-point changes require an explicit compatibility repair rather than silently reverting to ambient context.
+2. **Effective model routing:** a model-specific `baseUrl` or `api` override passed the old launcher check even though it differed from the frozen provider configuration. Validation now checks the selected model and its override block as well as provider defaults, and rejects ambiguous duplicate model entries. Focused tests cover both override locations and endpoint/API changes before any worker starts.
+
+The canonical launch example also selects the versioned Pi binary explicitly: the local `/home/kab/.local/bin/pi` shim invokes `mise use -g` before launch. Avoiding that shim prevents an incidental global tool-selection operation; it does not change the configured model or provider.
+
+Added three focused operations tests and an opt-in installed-Pi test (`scripts/eval/tests/test_pi_startup.py`). The latter uses a temporary fixture repository, dummy authentication, a network namespace, the actual PTY driver, and the installed Pi/subagent code. Startup-only instrumentation captures parent/child context and route, then exits before inference. It is not a generated book, paid provider probe, or simulated claim of provider availability. The earlier exploratory shutdown hook did not stop Pi promptly; network isolation blocked those connection attempts. The retained test exits explicitly and completed without entering model execution.
+
+Verification with the installed test enabled: `bash scripts/check.sh` passed **254 tests**, exit 0. Both real parent and child reported the frozen context, no ancestor sentinel, the same intended snapshot working directory, and the configured Muse/OpenCode Go model/API/endpoint. The native subagent dispatch exited successfully. The ordinary suite remains independent of an installed Pi and skips that one opt-in test.
+
+Reproduction on this host (no credentials needed):
+
+```bash
+BC_PI_EXECUTABLE=/home/kab/.local/share/mise/installs/pi/0.99.2/pi/pi \
+BC_PI_SUBAGENT_EXTENSION=/home/kab/.local/share/mise/installs/pi/0.99.2/pi/examples/extensions/subagent/index.ts \
+bash scripts/check.sh
+```
+
+Scientific scope, the owner stop, hypothesis 054, prior run artifacts, provider configuration, champion and calibration remain untouched. This pass does not establish live research/browser access, paid generation or reader effectiveness. Its conclusions concern the tested operating boundaries.

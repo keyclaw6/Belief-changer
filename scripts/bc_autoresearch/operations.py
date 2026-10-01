@@ -7,13 +7,14 @@ from __future__ import annotations
 
 import contextlib
 import errno
+import json
 import os
 import shutil
 import uuid
 from pathlib import Path
 
 from bc_factory.common import (FactoryError, confined, digest, file_hash, identifier,
-                               nonempty, parse_json, read_json, require)
+                               nonempty, parse_json, read_json, require, atomic_bytes, text_hash)
 from bc_factory.runs import Run, load_caller_repair
 
 
@@ -110,6 +111,26 @@ def pending_caller_repair(run: Run) -> bool:
     return True
 
 
+def isolated_subagent_source(extension: Path, snapshot: Path) -> str:
+    """Reuse Pi's installed tool; narrow only its child startup defaults.
+
+    The upstream example does not forward the parent's isolation flags. Keep
+    its dispatch/discovery implementation instead of maintaining another tool.
+    An unsupported upstream shape needs a reviewed compatibility repair.
+    """
+    text = extension.read_text(encoding="utf-8")
+    anchor = 'const args: string[] = ["--mode", "json", "-p", "--no-session"];'
+    discovery = 'from "./agents.ts";'
+    require(text.count(anchor) == 1 and text.count(discovery) == 1 and
+            (extension.parent / "agents.ts").is_file(),
+            "Repair Pi subagent startup compatibility; its installed entry point changed")
+    child_args = ["--mode", "json", "-p", "--no-session", "--approve",
+                  "--no-context-files", "--no-extensions", "--no-skills", "--no-prompt-templates",
+                  "--append-system-prompt", str(snapshot / "AGENTS.md")]
+    return text.replace(anchor, "const args: string[] = " + json.dumps(child_args) + ";").replace(
+        discovery, "from " + json.dumps(str(extension.parent / "agents.ts")) + ";")
+
+
 def launch_plan(repo: Path, iteration: str, run_id: str, agent_dir: Path,
                 extension: Path, pi: str = "pi") -> dict:
     repo = repo.resolve()
@@ -132,8 +153,16 @@ def launch_plan(repo: Path, iteration: str, run_id: str, agent_dir: Path,
     require(provider.get("baseUrl", "").rstrip("/") == "https://opencode.ai/zen/go/v1" and
             provider.get("api") == {"responses": "openai-responses", "chat": "openai-completions"}[factory_route["api"]],
             "Repair the Pi OpenCode Go provider mapping to match the frozen factory")
-    require(any(m.get("id") == model for m in provider.get("models", [])),
-            "Repair the Pi model catalog for the frozen generator; do not substitute a model")
+    selected = [m for m in provider.get("models", []) if isinstance(m, dict) and m.get("id") == model]
+    require(len(selected) == 1,
+            "Repair the Pi model catalog for the frozen generator; select exactly one model")
+    overrides = provider.get("modelOverrides", {})
+    require(isinstance(overrides, dict), "Repair the Pi model overrides")
+    for settings in (selected[0], overrides.get(model, {})):
+        base_url = settings.get("baseUrl", provider["baseUrl"]) if isinstance(settings, dict) else None
+        require(isinstance(base_url, str) and base_url.rstrip("/") == provider["baseUrl"].rstrip("/") and
+                settings.get("api", provider["api"]) == provider["api"],
+                "Repair the Pi model-specific route; it must match the frozen OpenCode Go API/endpoint")
     root = confined(repo, f".loop-work/pi/{identifier(run_id)}")
     session_id = str(uuid.uuid5(uuid.NAMESPACE_URL, str(repo / "runs" / run_id)))
     sessions = sorted(root.glob("*.jsonl"))
@@ -149,6 +178,8 @@ def launch_plan(repo: Path, iteration: str, run_id: str, agent_dir: Path,
     snapshot = run.root / "snapshot"
     wrapper = snapshot / ".pi/agents/factory-orchestrator.md"
     require(wrapper.is_file(), "Frozen factory wrapper is missing; repair the snapshot lineage")
+    subagent = isolated_subagent_source(extension, snapshot)
+    subagent_path = root / "subagent.ts"
     prompt = (
         f"Operate only the already-prepared book {run_id}. Its repository is {repo}. "
         f"Use this snapshot as the project root, and invoke scripts/factory.py --repo {repo} "
@@ -165,13 +196,15 @@ def launch_plan(repo: Path, iteration: str, run_id: str, agent_dir: Path,
     argv = [executable, "--provider", "opencode-go", "--model", model,
             "--models", f"opencode-go/{model}", "--thinking", "high", "--mode", "json",
             *session_options, "--approve",
-            "--no-extensions", "--extension", str(extension), "--no-skills",
+            "--no-extensions", "--extension", str(subagent_path), "--no-skills",
             "--no-prompt-templates", "--no-context-files",
             "--append-system-prompt", str(snapshot / "AGENTS.md"),
             "--append-system-prompt", str(wrapper), "-p", prompt]
     return {"status": "READY_TO_LAUNCH", "run_id": run_id, "cwd": str(snapshot),
             "argv": argv, "agent_dir": str(agent_dir), "log": str(root / "console.log"),
-            "session_id": session_id, "session_dir": str(root)}
+            "session_id": session_id, "session_dir": str(root),
+            "subagent": {"source": str(extension), "source_sha256": file_hash(extension),
+                         "path": str(subagent_path), "sha256": text_hash(subagent)}}
 
 
 @contextlib.contextmanager
@@ -237,6 +270,9 @@ def launch_book(repo: Path, iteration: str, run_id: str, agent_dir: Path,
             return plan
         require(bool(os.environ.get("OPENCODE_GO_API_KEY", "").strip()),
                 "Repair the existing authorized OPENCODE_GO_API_KEY wiring before launch")
+        subagent = isolated_subagent_source(Path(plan["subagent"]["source"]), Path(plan["cwd"]))
+        require(text_hash(subagent) == plan["subagent"]["sha256"], "Pi extension changed since launch inspection")
+        atomic_bytes(Path(plan["subagent"]["path"]), subagent.encode("utf-8"))
         code = _pty_run(plan)
         run = Run(repo, run_id)
         status = run.status()
