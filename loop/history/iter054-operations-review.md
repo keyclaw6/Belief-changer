@@ -167,3 +167,49 @@ unchanged hypothesis/progress, owner stop, provider configuration, champion and 
 contracts. `git diff --check` passed. No browser login/preflight, new book, watchdog,
 W1–W4 activation or scope approval occurred. Remaining human work is still the owner's
 resume and actual remaining scientific scope, not permission to repair local machinery.
+
+
+## Fifth pass — saved-session structure and recovery (2026-10-01)
+
+Baseline: clean main at `1482e4bc90413ff0d60c186643e098add4d4b53e`, synchronized
+with origin. Its full gate passed 267 tests before this change.
+
+A valid session header was the launcher's only transcript check. Offline regressions
+reproduced acceptance of a truncated JSON record, null/empty records, a second session
+header and duplicate JSON keys in the body. Invalid UTF-8 produced an unhelpful raw
+Unicode error instead. These are launcher findings; no claim is made that an actual
+campaign lost context in one of these ways.
+
+`operations.py` now streams through the saved JSONL structure before returning a resume
+plan. It uses the existing strict JSON parser, preserves unknown typed extension records,
+allows blank lines and a valid final record without a newline, and never rewrites or
+salvages the session. Damaged input returns an actionable repair error without exposing
+transcript text. The actual launch runs this check under the existing worker lock.
+
+The runner skill's existing recovery paragraph now makes the ownership distinction
+explicit: a read-only inspection may catch an active append, so reconcile ownership and
+leave healthy workers alone. Once the old worker is fenced, preserve damaged history and
+recover context from intact native history or frozen artifacts. This is operational repair,
+not an automatic owner stop, new experiment, new book, or permission to regenerate accepted
+content. No recovery framework, controller, state file or automatic deletion was introduced.
+
+Three focused regressions cover malformed records in both inspection and enabled-launch
+paths (the worker is mocked and never invoked), non-mutating acceptance of valid records,
+and explicit fixture repair preserving session identity and scope. The operations module
+passes 28 tests. The full gate with installed-Pi checks enabled passes **270 tests**, exit 0;
+the existing three native checks cover valid startup/dispatch, killed-child reporting and
+valid saved-session restoration. Repository validation and `git diff --check` pass. The
+optional `skills-ref` executable is not installed.
+
+An additional disposable native malformed-session probe was blocked by the host before
+execution; it was not rerouted or counted as a successful test. Malformed-session protection
+is verified at the launcher boundary, not through that unexecuted Pi scenario. Syntactic
+validation also cannot prove that whole valid records were never lost, authenticate history,
+or certify live model/browser availability. No experimental model calls were made.
+
+Residual review checked the active-append distinction, unknown-record compatibility,
+no session mutation, same-book recovery and preservation of the existing authority gates.
+Read-only verification still reports iteration 054 STOPPED / UNCONFIRMED / AWAIT_OWNER_RESUME,
+and `iter054-sugar-a-r1` COMPLETE_UNRELEASED with the unchanged book/factory hashes above.
+The frozen hypothesis/progress, owner stop, factory implementation/prompts, Pi wrappers,
+provider configuration and champion are unchanged. No book, watchdog or campaign resumed.

@@ -175,10 +175,26 @@ def launch_plan(repo: Path, iteration: str, run_id: str, agent_dir: Path,
     session_options = ["--session-id", session_id, "--session-dir", str(root)]
     if sessions:
         require(not sessions[0].is_symlink(), "Native session must not be a symlink")
-        with sessions[0].open() as stream:
-            header = parse_json(stream.readline())
-        require(isinstance(header, dict) and header.get("type") == "session", "Recover the damaged native session header")
-        session_id = nonempty(header.get("id"), "Native Pi session identity")
+        line_no = 1
+        try:
+            with sessions[0].open(encoding="utf-8") as stream:
+                header = parse_json(stream.readline())
+                require(isinstance(header, dict) and header.get("type") == "session",
+                        "Invalid native session header")
+                session_id = nonempty(header.get("id"), "Native Pi session identity")
+                # A valid header is not an intact transcript. Inspect structure only;
+                # preserve unknown extension records and never silently drop a tail.
+                for line_no, line in enumerate(stream, 2):
+                    if not line.strip():
+                        continue
+                    entry = parse_json(line)
+                    require(isinstance(entry, dict) and
+                            isinstance(entry.get("type"), str) and bool(entry["type"].strip()) and
+                            entry["type"] != "session", "Invalid native session record")
+        except (FactoryError, UnicodeError) as exc:
+            raise FactoryError(f"Repair damaged native session near line {line_no}: reconcile worker ownership; "
+                               "once idle, preserve the original and recover from intact history/frozen artifacts "
+                               "before resuming this book") from exc
         session_options = ["--session", str(sessions[0]), "--session-dir", str(root)]
     snapshot = run.root / "snapshot"
     wrapper = snapshot / ".pi/agents/factory-orchestrator.md"

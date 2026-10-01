@@ -95,6 +95,57 @@ class OperationsTests(unittest.TestCase):
         self.assertIn(str(session), again["argv"])
         self.assertEqual(session.read_text(), content)
 
+    def test_damaged_session_records_cannot_be_silently_resumed(self):
+        first = self.plan()
+        root = Path(first["session_dir"])
+        root.mkdir(parents=True)
+        session = root / "saved.jsonl"
+        header = json.dumps({"type": "session", "id": first["session_id"]}).encode() + b"\n"
+        for body in (b'{"type":"message","message":', b'null\n', b'{}\n',
+                     b'{"type":"session","id":"another-book"}\n',
+                     b'{"type":"message","type":"custom"}\n', b'\xff\n'):
+            with self.subTest(body=body):
+                original = header + body
+                session.write_bytes(original)
+                for allow_paid in (False, True):
+                    with patch.dict(os.environ, {"OPENCODE_GO_API_KEY": "offline-test-only"}):
+                        with self.assertRaisesRegex(FactoryError, "Repair damaged native session"):
+                            self.plan(allow_paid=allow_paid)
+                    self.assertEqual(session.read_bytes(), original)
+        self.worker.assert_not_called()
+
+    def test_valid_session_extensions_and_missing_final_newline_are_preserved(self):
+        first = self.plan()
+        root = Path(first["session_dir"])
+        root.mkdir(parents=True)
+        session = root / "saved.jsonl"
+        content = (json.dumps({"type": "session", "id": first["session_id"]}) + "\n\n" +
+                   json.dumps({"type": "custom-extension-record", "data": {"future_field": True}}))
+        session.write_text(content)
+        again = self.plan()
+        self.assertEqual(again["session_id"], first["session_id"])
+        self.assertIn(str(session), again["argv"])
+        self.assertEqual(session.read_text(), content)
+        self.worker.assert_not_called()
+
+    def test_repaired_session_can_resume_without_changing_scope_or_identity(self):
+        first = self.plan()
+        root = Path(first["session_dir"])
+        root.mkdir(parents=True)
+        session = root / "saved.jsonl"
+        intact = json.dumps({"type": "session", "id": first["session_id"]}) + "\n"
+        progress = (self.iteration / "progress.json").read_bytes()
+        session.write_text(intact + '{"type":"message",')
+        with self.assertRaisesRegex(FactoryError, "Repair damaged native session"):
+            self.plan()
+        # Explicit fixture repair from known original bytes, not automatic salvage.
+        session.write_text(intact)
+        repaired = self.plan()
+        self.assertEqual(repaired["status"], "READY_TO_LAUNCH")
+        self.assertEqual(repaired["session_id"], first["session_id"])
+        self.assertEqual((self.iteration / "progress.json").read_bytes(), progress)
+        self.worker.assert_not_called()
+
     def test_completed_book_history_does_not_block_new_book(self):
         first = self.plan()
         session_dir = Path(first["session_dir"])
