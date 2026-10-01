@@ -75,17 +75,24 @@ def main(argv: list[str] | None = None) -> int:
         elif cmd in ("submit", "execute"):
             run, task = Run(repo, args.run), document(args.task)
             if cmd == "execute":
-                # Check dependencies BEFORE spending, as well as when accepting the response.
-                require(run.task(task["role"], task["chapter"], task["round"]) == task, "Stale task")
-                # One provider invocation owns this unit at a time. Stale claims are never auto-stolen.
-                with lock(run.root / "inflight" / task["key"]):
-                    try:
-                        output, meta = execute(task, run.config, args.allow_paid)
-                        record = run.submit(task, output, meta)
-                    except FactoryError as exc:
-                        failure = {"task_digest": digest(task), "role": task["role"], "error": str(exc), "created_at": now(), "usage": None}
-                        seal(run.root / "failures" / (digest(failure) + ".json"), failure)
-                        raise
+                key = run.key(task["role"], task["chapter"], task["round"])
+                require(task["key"] == key, "Task identity mismatch")
+                # Reconcile only after acquiring ownership: an earlier invocation
+                # may have completed since the caller last inspected the task.
+                # Stale claims are never auto-stolen.
+                with lock(run.root / "inflight" / key):
+                    if (run.root / "results" / f"{key}.json").exists():
+                        record = run.result(task["role"], task["chapter"], task["round"])
+                        require(record["task_digest"] == digest(task), "Recorded result belongs to another task")
+                    else:
+                        require(run.task(task["role"], task["chapter"], task["round"]) == task, "Stale task")
+                        try:
+                            output, meta = execute(task, run.config, args.allow_paid)
+                            record = run.submit(task, output, meta)
+                        except FactoryError as exc:
+                            failure = {"task_digest": digest(task), "role": task["role"], "error": str(exc), "created_at": now(), "usage": None}
+                            seal(run.root / "failures" / (digest(failure) + ".json"), failure)
+                            raise
             else:
                 output, meta = document(args.response), document(args.metadata)
                 record = run.submit(task, output, meta)

@@ -63,6 +63,8 @@ This makes no paid call. It verifies prerequisites and saves the exact task inte
 python3 scripts/factory.py execute --run baseline-topic-a --task /tmp/task.json --allow-paid
 ```
 
+Replaying `execute` for the exact frozen task after its validated result is stored returns the original `RECORDED` receipt without another model call or rewriting that result. Result/task/dependency hashes are rechecked, and the result check is inside the execution lock so a concurrent completion cannot trigger a second call. A mismatched task or damaged result still fails; stale execution locks are never automatically stolen.
+
 An isolated external agent can instead supply `response.json` and `metadata.json`:
 
 ```bash

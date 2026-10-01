@@ -26,6 +26,15 @@ from bc_factory.runs import prepare
                      "Set installed Pi executable/subagent paths for the zero-network startup check")
 class InstalledPiStartupTests(unittest.TestCase):
     def test_parent_and_actual_child_use_only_frozen_context(self):
+        self.check_startup()
+
+    def test_killed_child_is_not_reported_as_success(self):
+        self.check_startup(child_crash=True)
+
+    def test_native_resume_preserves_session_and_does_not_leak_to_child(self):
+        self.check_startup(resume=True)
+
+    def check_startup(self, child_crash=False, resume=False):
         self.assertTrue(shutil.which("unshare"), "A network namespace is required; do not run this probe online")
         check = subprocess.run(["unshare", "--user", "--map-root-user", "--net", "true"],
                                capture_output=True, timeout=5)
@@ -56,8 +65,23 @@ class InstalledPiStartupTests(unittest.TestCase):
                 "baseUrl": "https://opencode.ai/zen/go/v1", "api": "openai-responses",
                 "apiKey": "offline-placeholder", "models": [{"id": model, "reasoning": True}]}}}))
             plan = launch_plan(repo, "901", "iter901-a", agent, upstream, str(executable))
+            if resume:
+                # A native-format saved user message, confined to this synthetic
+                # fixture. No assistant/role response is manufactured.
+                session_dir = Path(plan["session_dir"])
+                session_dir.mkdir(parents=True)
+                saved = session_dir / "saved.jsonl"
+                header = {"type": "session", "version": 3, "id": plan["session_id"],
+                          "timestamp": "2026-10-01T00:00:00.000Z", "cwd": plan["cwd"]}
+                entry = {"type": "message", "id": "fixture-user", "parentId": None,
+                         "timestamp": "2026-10-01T00:00:01.000Z",
+                         "message": {"role": "user", "content": [{"type": "text", "text": "SAVED_SESSION_PROBE"}],
+                                     "timestamp": 1790812801000}}
+                saved.write_text(json.dumps(header) + "\n" + json.dumps(entry) + "\n")
+                plan = launch_plan(repo, "901", "iter901-a", agent, upstream, str(executable))
+                self.assertIn(str(saved), plan["argv"])
             generated = Path(plan["subagent"]["path"])
-            generated.parent.mkdir(parents=True)
+            generated.parent.mkdir(parents=True, exist_ok=True)
             probe = agent / "extensions/probe.ts"
             source = isolated_subagent_source(upstream, Path(plan["cwd"]))
             # Instrumentation only: explicitly load a startup probe in the otherwise
@@ -75,6 +99,8 @@ export default function(pi) {
  pi.on("before_agent_start",()=>process.exit(91));
  pi.on("session_start",async(_event,ctx)=>{
    const row={kind:child?"child":"parent",cwd:ctx.cwd,model:ctx.model?.id,
+     sessionId:ctx.sessionManager.getSessionId(),
+     restored:JSON.stringify(ctx.sessionManager.getBranch()).includes("SAVED_SESSION_PROBE"),
      provider:ctx.model?.provider,api:ctx.model?.api,baseUrl:ctx.model?.baseUrl,
      frozenContext:ctx.getSystemPrompt().includes("Immutable evidence and honest status"),
      outerContext:ctx.getSystemPrompt().includes("OUTER_CONTEXT_SENTINEL_DO_NOT_INHERIT")};
@@ -83,6 +109,7 @@ export default function(pi) {
      const result=await tool.execute("offline-probe",{agent:"chapter-writer",task:"Offline startup only.",agentScope:"project"},undefined,undefined,ctx);
      fs.appendFileSync(process.env.BC_PROBE_OUT,JSON.stringify({kind:"dispatch",error:result.isError??false,exitCode:result.details?.results?.[0]?.exitCode})+"\\n");
    }
+   if(child && process.env.BC_PROBE_CHILD_CRASH === "1") process.kill(process.pid, "SIGKILL");
    process.exit(0);
  });
 }
@@ -94,7 +121,8 @@ export default function(pi) {
             (base / "home").mkdir()
             env = {"HOME": str(base / "home"), "PATH": str(executable.parent) + ":/usr/bin:/bin",
                    "LANG": "C.UTF-8", "PI_OFFLINE": "1", "BC_PROBE_OUT": str(out),
-                   "PYTHONPATH": str(ROOT / "scripts")}
+                   "PYTHONPATH": str(ROOT / "scripts"),
+                   "BC_PROBE_CHILD_CRASH": "1" if child_crash else "0"}
             driver = "import json,sys; from bc_autoresearch.operations import _pty_run; sys.exit(_pty_run(json.loads(sys.argv[1])))"
             proc = subprocess.Popen([sys.executable, "-c", driver, json.dumps(plan)], env=env,
                                     stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True)
@@ -115,7 +143,11 @@ export default function(pi) {
                 self.assertEqual(row["model"], model)
                 self.assertEqual((row["provider"], row["api"], row["baseUrl"]),
                                  ("opencode-go", "openai-responses", "https://opencode.ai/zen/go/v1"))
-            self.assertEqual(rows[-1], {"kind": "dispatch", "error": False, "exitCode": 0})
+            self.assertEqual(rows[0]["sessionId"], plan["session_id"])
+            self.assertEqual(rows[0]["restored"], resume)
+            self.assertFalse(rows[1]["restored"], "Independent child must not inherit the parent's transcript")
+            self.assertNotEqual(rows[0]["sessionId"], rows[1]["sessionId"])
+            self.assertEqual(rows[-1], {"kind": "dispatch", "error": child_crash, "exitCode": 1 if child_crash else 0})
 
 
 if __name__ == "__main__":

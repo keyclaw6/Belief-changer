@@ -112,7 +112,7 @@ def pending_caller_repair(run: Run) -> bool:
 
 
 def isolated_subagent_source(extension: Path, snapshot: Path) -> str:
-    """Reuse Pi's installed tool; narrow only its child startup defaults.
+    """Reuse Pi's installed tool; isolate children and retain failure status.
 
     The upstream example does not forward the parent's isolation flags. Keep
     its dispatch/discovery implementation instead of maintaining another tool.
@@ -121,14 +121,19 @@ def isolated_subagent_source(extension: Path, snapshot: Path) -> str:
     text = extension.read_text(encoding="utf-8")
     anchor = 'const args: string[] = ["--mode", "json", "-p", "--no-session"];'
     discovery = 'from "./agents.ts";'
+    close_result = 'resolve(code ?? 0);'
     require(text.count(anchor) == 1 and text.count(discovery) == 1 and
+            text.count(close_result) == 1 and
             (extension.parent / "agents.ts").is_file(),
             "Repair Pi subagent startup compatibility; its installed entry point changed")
     child_args = ["--mode", "json", "-p", "--no-session", "--approve",
                   "--no-context-files", "--no-extensions", "--no-skills", "--no-prompt-templates",
                   "--append-system-prompt", str(snapshot / "AGENTS.md")]
+    # A signal-killed child has no numeric exit code. It is a failed call,
+    # never an empty successful role result.
     return text.replace(anchor, "const args: string[] = " + json.dumps(child_args) + ";").replace(
-        discovery, "from " + json.dumps(str(extension.parent / "agents.ts")) + ";")
+        discovery, "from " + json.dumps(str(extension.parent / "agents.ts")) + ";").replace(
+        close_result, 'resolve(code ?? 1);')
 
 
 def launch_plan(repo: Path, iteration: str, run_id: str, agent_dir: Path,

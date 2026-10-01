@@ -69,3 +69,50 @@ bash scripts/check.sh
 ```
 
 Scientific scope, the owner stop, hypothesis 054, prior run artifacts, provider configuration, champion and calibration remain untouched. This pass does not establish live research/browser access, paid generation or reader effectiveness. Its conclusions concern the tested operating boundaries.
+
+
+## Third pass — crash reporting and execution replay (2026-10-01)
+
+Review baseline: clean `main` at `89ab1cdf7a4ef2002d2b66141291e2d77b5c2c7c`.
+The scope remains operations review only. No campaign continuation, book generation,
+model inference, scope approval, W1–W4 activation or provider configuration change.
+
+Two concrete failures were reproduced before fixing them:
+
+1. **A killed native child was reported successful.** The installed Pi 0.99.2
+   subagent tool used `resolve(code ?? 0)` for the process-close event. A signal-killed
+   child has no numeric exit code; the test killed its own disposable child with
+   SIGKILL, and the returned dispatch was `error=false, exitCode=0`. The existing
+   per-book compatibility copy now maps that case to a nonzero failure. The shared
+   Pi installation is unchanged, and the existing upstream-shape check covers this
+   compatibility seam. This fixes failure reporting, not factory acceptance criteria.
+2. **A completion between inspection and execution-lock acquisition could trigger
+   another provider call.** The factory CLI checked task/result state before taking
+   ownership. A deterministic fixture recorded the competing completion at that exact
+   boundary and observed a second attempted call to the mocked provider. Reconciliation
+   now occurs inside the lock, before any provider invocation. Repeating an already
+   recorded exact task returns its original verified receipt. Changed tasks and damaged
+   results fail closed without another call; immutable results are never overwritten.
+
+The installed-Pi fixture now also loads a saved native-format session containing a
+synthetic user message. The real parent restored the requested session ID and message;
+its real child received a separate session without that transcript. This exercises native
+resume rather than merely inspecting launch arguments. No assistant/factory role output
+was fabricated. The tests use temporary repositories, dummy auth, disabled networking
+and startup callbacks that exit before inference.
+
+Validation after the code fixes: `bash scripts/check.sh` passed **261 tests**, including
+all **three installed-Pi integration checks** (not skipped) and **five new execution
+recovery regressions**. Exact deployment selection:
+
+```bash
+BC_PI_EXECUTABLE=/home/kab/.local/share/mise/installs/pi/0.99.2/pi/pi \
+BC_PI_SUBAGENT_EXTENSION=/home/kab/.local/share/mise/installs/pi/0.99.2/pi/examples/extensions/subagent/index.ts \
+bash scripts/check.sh
+```
+
+The residual review checked that no automatic retry, new service/controller/state file,
+model substitution or changed book-quality rule was introduced. Scientific review gates
+and immutable snapshots remain intact. Existing runs continue with their own snapshots;
+this source upgrade does not silently retrofit historical runtime code. A successful
+infrastructure test remains distinct from a live end-to-end campaign validation.

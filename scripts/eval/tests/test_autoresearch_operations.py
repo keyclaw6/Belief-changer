@@ -14,6 +14,7 @@ from unittest.mock import Mock, patch
 UPSTREAM_STUB = '\n'.join([
     'import { discoverAgents } from "./agents.ts";',
     'const args: string[] = ["--mode", "json", "-p", "--no-session"];',
+    'resolve(code ?? 0);',
 ])
 
 ROOT = Path(__file__).resolve().parents[3]
