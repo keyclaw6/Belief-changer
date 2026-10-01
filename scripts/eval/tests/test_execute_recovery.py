@@ -38,6 +38,81 @@ class ExecuteRecoveryTests(unittest.TestCase):
                              "--task", str(self.path), "--allow-paid"])
         return code, out.getvalue(), err.getvalue()
 
+    def invoke_submit(self):
+        response, meta = self.repo / "response.json", self.repo / "metadata.json"
+        atomic_json(response, self.output)
+        atomic_json(meta, self.meta)
+        with contextlib.redirect_stdout(io.StringIO()) as out, contextlib.redirect_stderr(io.StringIO()) as err:
+            with patch.object(cli, "execute") as provider:
+                code = cli.main(["--repo", str(self.repo), "submit", "--run", "recovery-fixture",
+                                 "--task", str(self.path), "--response", str(response), "--metadata", str(meta)])
+                provider.assert_not_called()
+        return code, out.getvalue(), err.getvalue()
+
+    def test_submit_replay_returns_original_receipt_without_rewriting(self):
+        code, first, err = self.invoke_submit()
+        self.assertEqual(code, 0, err)
+        path = self.run.root / "results/evidence-reviewer-r01.json"
+        before = path.read_bytes()
+        code, second, err = self.invoke_submit()
+        self.assertEqual(code, 0, err)
+        self.assertEqual(json.loads(first), json.loads(second))
+        self.assertEqual(path.read_bytes(), before)
+
+    def test_submit_replay_rejects_changed_response_or_metadata(self):
+        self.run.submit(self.task, self.output, self.meta)
+        path = self.run.root / "results/evidence-reviewer-r01.json"
+        before = path.read_bytes()
+        for target, field, value in ((self.output, "verdict", "BLOCKED"),
+                                     (self.meta, "model", "different-model")):
+            with self.subTest(field=field):
+                original = target[field]
+                target[field] = value
+                code, _, err = self.invoke_submit()
+                target[field] = original
+                self.assertEqual(code, 2)
+                self.assertIn("Recorded result differs", err)
+                self.assertEqual(path.read_bytes(), before)
+
+    def test_submit_replay_rejects_changed_task(self):
+        self.run.submit(self.task, self.output, self.meta)
+        self.task["inputs"]["brief"]["title"] = "Different task"
+        atomic_json(self.path, self.task)
+        code, _, err = self.invoke_submit()
+        self.assertEqual(code, 2)
+        self.assertIn("task", err.lower())
+
+    def test_submit_replay_rejects_corrupt_result(self):
+        self.run.submit(self.task, self.output, self.meta)
+        path = self.run.root / "results/evidence-reviewer-r01.json"
+        broken = json.loads(path.read_text())
+        broken["payload"]["output"]["verdict"] = "BLOCKED"
+        atomic_json(path, broken)
+        code, _, err = self.invoke_submit()
+        self.assertEqual(code, 2)
+        self.assertIn("Checksum mismatch", err)
+
+    def test_submit_cannot_publish_while_execute_owns_same_task(self):
+        with lock(self.run.root / "inflight" / self.task["key"]):
+            code, _, err = self.invoke_submit()
+        self.assertEqual(code, 2)
+        self.assertIn("Workspace locked", err)
+        self.assertFalse((self.run.root / "results/evidence-reviewer-r01.json").exists())
+
+    def test_submit_reconciles_completion_before_lock_acquisition(self):
+        acquisitions = []
+        @contextlib.contextmanager
+        def completed_before_acquisition(root):
+            acquisitions.append(root)
+            self.run.submit(self.task, self.output, self.meta)
+            with lock(root):
+                yield
+        with patch.object(cli, "lock", completed_before_acquisition):
+            code, out, err = self.invoke_submit()
+        self.assertEqual(code, 0, err)
+        self.assertEqual(json.loads(out)["status"], "RECORDED")
+        self.assertEqual(acquisitions, [self.run.root / "inflight" / self.task["key"]])
+
     def test_recorded_task_replay_never_calls_provider(self):
         self.run.submit(self.task, self.output, self.meta)
         before = (self.run.root / "results/evidence-reviewer-r01.json").read_bytes()

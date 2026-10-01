@@ -74,28 +74,30 @@ def main(argv: list[str] | None = None) -> int:
             result = Run(repo, args.run).task(args.role, args.chapter, args.round)
         elif cmd in ("submit", "execute"):
             run, task = Run(repo, args.run), document(args.task)
-            if cmd == "execute":
-                key = run.key(task["role"], task["chapter"], task["round"])
-                require(task["key"] == key, "Task identity mismatch")
-                # Reconcile only after acquiring ownership: an earlier invocation
-                # may have completed since the caller last inspected the task.
-                # Stale claims are never auto-stolen.
-                with lock(run.root / "inflight" / key):
-                    if (run.root / "results" / f"{key}.json").exists():
-                        record = run.result(task["role"], task["chapter"], task["round"])
-                        require(record["task_digest"] == digest(task), "Recorded result belongs to another task")
-                    else:
-                        require(run.task(task["role"], task["chapter"], task["round"]) == task, "Stale task")
-                        try:
-                            output, meta = execute(task, run.config, args.allow_paid)
-                            record = run.submit(task, output, meta)
-                        except FactoryError as exc:
-                            failure = {"task_digest": digest(task), "role": task["role"], "error": str(exc), "created_at": now(), "usage": None}
-                            seal(run.root / "failures" / (digest(failure) + ".json"), failure)
-                            raise
-            else:
+            if cmd == "submit":
                 output, meta = document(args.response), document(args.metadata)
-                record = run.submit(task, output, meta)
+            key = run.key(task["role"], task["chapter"], task["round"])
+            require(task["key"] == key, "Task identity mismatch")
+            # Both CLI entry points share ownership and reconcile after acquiring
+            # it. A lost receipt is not a new sample; stale claims are not stolen.
+            with lock(run.root / "inflight" / key):
+                if (run.root / "results" / f"{key}.json").exists():
+                    record = run.result(task["role"], task["chapter"], task["round"])
+                    require(record["task_digest"] == digest(task), "Recorded result belongs to another task")
+                    if cmd == "submit":
+                        require(record["output"] == output and record["metadata"] == meta,
+                                "Recorded result differs from supplied response/metadata; it is immutable")
+                elif cmd == "execute":
+                    require(run.task(task["role"], task["chapter"], task["round"]) == task, "Stale task")
+                    try:
+                        output, meta = execute(task, run.config, args.allow_paid)
+                        record = run.submit(task, output, meta)
+                    except FactoryError as exc:
+                        failure = {"task_digest": digest(task), "role": task["role"], "error": str(exc), "created_at": now(), "usage": None}
+                        seal(run.root / "failures" / (digest(failure) + ".json"), failure)
+                        raise
+                else:
+                    record = run.submit(task, output, meta)
             result = {"status": "RECORDED", "key": record["key"], "output_sha256": record["output_sha256"]}
         elif cmd == "status": result = Run(repo, args.run).status()
         elif cmd == "verify": result = Run(repo, args.run).complete()

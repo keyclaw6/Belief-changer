@@ -116,3 +116,54 @@ model substitution or changed book-quality rule was introduced. Scientific revie
 and immutable snapshots remain intact. Existing runs continue with their own snapshots;
 this source upgrade does not silently retrofit historical runtime code. A successful
 infrastructure test remains distinct from a live end-to-end campaign validation.
+
+
+## Fourth pass — submission receipt recovery (2026-10-01)
+
+Review baseline: clean `main` at `6c1b5a4f4dda6a5eb3e8b182fd9527098d96e845`.
+The three prior operational fixes were already present; this pass did not recreate or
+claim them as new work. Rechecked the relevant operating contracts, iteration 052–054
+history, native Pi dispatch/session code, research preflight, state ownership, launcher,
+factory task/result paths and tests. No autoresearch execution or paid inference was started.
+
+Two remaining failures in the same CLI boundary were reproduced with network-isolated,
+synthetic fixtures before editing production code:
+
+1. Repeating a successful `submit` after losing its response returned `Result already
+   exists` instead of the saved receipt. The preceding `execute` recovery fix did not
+   cover this second, documented entry point.
+2. `submit` did not acquire the per-task execution lock. A fixture holding that lock
+   still admitted a concurrent submission, allowing publication while an execution
+   owned the same task.
+
+The existing `submit`/`execute` CLI branch now shares the existing per-task lock and
+reconciles recorded results after acquisition. Exact retries return the original verified
+receipt without altering the result. Submission replay additionally checks the original
+response and actual metadata; different tasks/responses/metadata or corrupt records fail
+closed. New submissions retain the existing semantic and independence validators. This
+adds no controller, state file, automatic retry, scientific decision rule or model route.
+`docs/FACTORY-V2.md` documents this one behavior in its existing recovery paragraph.
+
+Added six focused submission regressions covering exact replay, changed response/metadata,
+changed task, corrupt record, held execution lock and completion immediately before lock
+acquisition. The focused recovery module passed all 11 tests. The full gate with the exact
+installed Pi paths shown above passed **267 tests**, including the three actual installed-Pi
+startup/dispatch/session checks, exit 0. Those native checks use dummy authentication,
+network isolation and startup-only exits; they do not measure live provider availability.
+
+Residual review confirmed that the shared lock removes the entry-point inconsistency
+without moving orchestration into the factory or adding another retry mechanism. The
+low-level `Run.submit` contract remains unchanged; factory agents use the documented CLI.
+Old frozen runs retain their old CLI code. For those runs, inspect the persisted result
+after an ambiguous response instead of mutating the snapshot or regenerating accepted work.
+
+Read-only checks after the edits still report 054 as STOPPED / UNCONFIRMED /
+AWAIT_OWNER_RESUME. `factory.py verify --run iter054-sugar-a-r1` still returns
+COMPLETE_UNRELEASED with book hash
+`2ecaf1abd130d8c231a908cb08022a6f91c1071da3ace0c5e0615650281f1c1e`
+and the unchanged factory digest recorded above. The prior native job remains
+finished/stopped, legacy-process, with no current systemd unit. Git comparison confirms
+unchanged hypothesis/progress, owner stop, provider configuration, champion and Pi role
+contracts. `git diff --check` passed. No browser login/preflight, new book, watchdog,
+W1–W4 activation or scope approval occurred. Remaining human work is still the owner's
+resume and actual remaining scientific scope, not permission to repair local machinery.

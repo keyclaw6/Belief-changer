@@ -63,7 +63,7 @@ This makes no paid call. It verifies prerequisites and saves the exact task inte
 python3 scripts/factory.py execute --run baseline-topic-a --task /tmp/task.json --allow-paid
 ```
 
-Replaying `execute` for the exact frozen task after its validated result is stored returns the original `RECORDED` receipt without another model call or rewriting that result. Result/task/dependency hashes are rechecked, and the result check is inside the execution lock so a concurrent completion cannot trigger a second call. A mismatched task or damaged result still fails; stale execution locks are never automatically stolen.
+Both `execute` and `submit` acquire the same per-task execution lock before reconciling stored results. Replaying `execute` for the exact frozen task, or `submit` for that same task plus identical response and actual metadata, returns the original verified `RECORDED` receipt without another model call or rewriting the result. Result/task/dependency hashes are rechecked. Changed tasks, responses, metadata or damaged records fail closed; never alter a saved response to make a retry pass. A concurrent CLI submission cannot publish over an in-flight execution, and stale execution locks are never automatically stolen. This is receipt recovery, not permission to regenerate a completed role. Existing runs retain their snapshotted CLI behavior; inspect their stored result after an ambiguous response rather than replacing their snapshot to gain this convenience.
 
 An isolated external agent can instead supply `response.json` and `metadata.json`:
 
