@@ -153,6 +153,8 @@ def launch_plan(repo: Path, iteration: str, run_id: str, agent_dir: Path,
     require(extension.is_file(), "Repair/install the Pi subagent extension before launch")
     executable = shutil.which(pi)
     require(executable is not None, "Repair/install the Pi executable before launch")
+    # Pin before changing cwd; preserve the chosen symlink/venv invocation.
+    executable = os.path.join(os.getcwd(), executable)
     provider = read_json(agent_dir / "models.json").get("providers", {}).get("opencode-go", {})
     factory_route = run.config["profiles"]["factory"]["routes"][0]
     require(provider.get("baseUrl", "").rstrip("/") == "https://opencode.ai/zen/go/v1" and
@@ -258,10 +260,17 @@ def _pty_run(plan: dict) -> int:
     with os.fdopen(fd, "ab") as output:
         pid, master = pty.fork()
         if pid == 0:
+            phase = "chdir"
             try:
                 os.chdir(plan["cwd"])
+                phase = "exec"
                 os.execvpe(plan["argv"][0], plan["argv"], env)
-            except Exception:
+            except Exception as exc:
+                # Log mechanics, not exception text/argv/env that may contain secrets.
+                diagnostic = (f"Pi launch failed during {phase}: {type(exc).__name__} "
+                              f"(errno={getattr(exc, 'errno', None)})\n")
+                with contextlib.suppress(OSError):
+                    os.write(2, diagnostic.encode("utf-8"))
                 os._exit(127)
         try:
             while True:

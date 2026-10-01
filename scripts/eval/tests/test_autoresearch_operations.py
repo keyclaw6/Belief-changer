@@ -83,6 +83,34 @@ class OperationsTests(unittest.TestCase):
         self.worker.assert_not_called()
         self.assertFalse((self.repo / ".loop-work").exists())
 
+    def test_relative_executable_is_pinned_before_snapshot_chdir(self):
+        relative = os.path.relpath(sys.executable)
+        for requested in (relative, Path(sys.executable).name):
+            with self.subTest(requested=requested), patch.dict(os.environ, {"PATH": str(Path(relative).parent)}):
+                plan = ops.launch_plan(self.repo, "901", "iter901-sugar-a", self.agent,
+                                       self.extension, requested)
+                self.assertTrue(os.path.isabs(plan["argv"][0]))
+                self.assertTrue(os.path.samefile(plan["argv"][0], sys.executable))
+                self.assertEqual(plan["cwd"], str(self.a.root / "snapshot"))
+        self.worker.assert_not_called()
+
+    @unittest.skipUnless(os.name == "posix", "Native executable symlink check")
+    def test_pinning_executable_preserves_selected_symlink(self):
+        runtime = self.repo / "runtime"
+        (runtime / "nested").mkdir(parents=True)
+        executable = runtime / "selected-pi"
+        executable.symlink_to(sys.executable)
+        via = self.repo / "via"
+        via.symlink_to(runtime / "nested", target_is_directory=True)
+        # Do not resolve the interpreter link or lexically collapse a symlink/.. path.
+        for requested in (str(executable), str(via / ".." / "selected-pi")):
+            with self.subTest(requested=requested):
+                plan = ops.launch_plan(self.repo, "901", "iter901-sugar-a", self.agent,
+                                       self.extension, requested)
+                self.assertEqual(plan["argv"][0], requested)
+                self.assertTrue(os.path.samefile(plan["argv"][0], sys.executable))
+        self.worker.assert_not_called()
+
     def test_same_book_resume_preserves_native_session(self):
         first = self.plan()
         session_dir = Path(first["session_dir"])
@@ -374,6 +402,26 @@ class NativeMechanicsTests(unittest.TestCase):
                 if child is not None and child.poll() is None:
                     child.kill()
                     child.communicate(timeout=5)
+
+    def test_startup_failure_reports_phase_without_disclosing_paths(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            private_marker = "SYNTHETIC_PRIVATE_PATH"
+            executable = root / private_marker
+            executable.write_text("#!" + str(root / "missing-interpreter") + "\n")
+            executable.chmod(0o700)
+            cases = (("chdir", str(root / "missing" / private_marker), [sys.executable]),
+                     ("exec", directory, [str(executable)]))
+            for phase, cwd, argv in cases:
+                with self.subTest(phase=phase):
+                    log = root / (phase + ".log")
+                    plan = {"cwd": cwd, "agent_dir": directory, "log": str(log), "argv": argv}
+                    self.assertEqual(ops._pty_run(plan), 127)
+                    diagnostic = log.read_text()
+                    self.assertIn("Pi launch failed during " + phase, diagnostic)
+                    self.assertIn("FileNotFoundError (errno=2)", diagnostic)
+                    self.assertNotIn(private_marker, diagnostic)
+                    self.assertNotIn(directory, diagnostic)
 
     def test_launcher_provides_real_pty_and_preserves_exit_code(self):
         with tempfile.TemporaryDirectory() as directory:

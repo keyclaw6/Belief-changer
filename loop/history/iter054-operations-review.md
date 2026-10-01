@@ -213,3 +213,33 @@ Read-only verification still reports iteration 054 STOPPED / UNCONFIRMED / AWAIT
 and `iter054-sugar-a-r1` COMPLETE_UNRELEASED with the unchanged book/factory hashes above.
 The frozen hypothesis/progress, owner stop, factory implementation/prompts, Pi wrappers,
 provider configuration and champion are unchanged. No book, watchdog or campaign resumed.
+
+
+## Sixth pass — executable startup and actionable failures (2026-10-01)
+
+Baseline: clean `main` at `b74b43aa7455689117d7ae2ee730d4ee8584abf8`; all 270 tests passed.
+Reproduced two pre-model startup failures with disposable local executables: a relative
+executable found by `shutil.which` became invalid after the launcher's snapshot `chdir`,
+and a missing executable interpreter returned 127 with an empty console log. New tests
+also reproduced the empty diagnostic for a failed working-directory change.
+
+The launcher now makes the selected executable path absolute before changing directory,
+without dereferencing its symlink or collapsing symlink/.. semantics. Failed child setup
+records its phase, exception class and errno in the existing console log before exiting
+127; it does not print raw exception text, argv or environment. No automatic retry, new
+state/controller, permission rule, model route or factory-writing behavior was added.
+The implementation diff is 11 lines; existing operating instructions remain applicable.
+
+Three added regressions cover explicit relative paths and relative PATH lookup, executable
+symlink preservation, and actual PTY startup failures with non-disclosing diagnostics.
+The full gate passed **273 tests**, including all three installed-Pi startup/session checks;
+repository validation and `git diff --check` passed. An extra standalone positive probe
+was blocked before execution and is not counted as evidence or retried through another
+route. The retained tests verify path selection and actual failure logging separately;
+they do not certify live provider/browser readiness or a full autonomous campaign.
+
+Residual review preserved the selected executable's filesystem semantics and all prior
+locking, receipt, session and scope behavior. Iteration 054 remains STOPPED / UNCONFIRMED;
+the completed book still verifies with the unchanged book/factory hashes above. Protected
+experimental state, frozen factory code/prompts, Pi wrappers, configuration and champion
+are unchanged. No live experimental model call, book, watchdog or campaign was started.
