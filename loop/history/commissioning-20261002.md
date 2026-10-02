@@ -1,6 +1,6 @@
 # Separate live commissioning — 2026-10-02
 
-Status: IN PROGRESS; no live-verification verdict yet. Direct owner brief
+Verdict: **NOT YET LIVE VERIFIED**. Zero of two qualifying cycles completed. Direct owner brief
 `ffbe2129-502f-429e-a0a8-c03893829b28` authorizes simplification, temporary
 engineering agents, local repair and provisioned live execution. Its SHA-256 is
 `45e90fc3576a38c6588046f526b33dd135295da7d654fed453a2addddc1ee189`.
@@ -134,3 +134,58 @@ Source validation now follows Git's source inventory, permitting ignored private
 learning evidence while rejecting source-tree intermediates. Offline tests clear
 the model credential only in their child process. The original blocker records
 were moved byte-identical to ignored diagnostic storage with a hash ledger.
+
+## Final observed boundary and resume
+
+Executable source is `81bd3446327a3fa13af870440f64725c0f92335e`, fingerprint
+`535bbf6db4de8b63a0a85f4805abe4034894d721d198f9b03c23fba4b84bbb80`.
+All 52 recorded files match. Mandatory gate passed 333 tests including the four
+installed-Pi checks. Pi 0.99.2; Codex 0.159.3; Python 3.14.7. Evidence-only record
+commits do not change this executable fingerprint.
+
+Diagnostic `iter055-quit-sugar-a-rem1` verified exit zero, nonfixture
+COMPLETE_UNRELEASED; independent DeepSeek/Go final-audit r02 ACCEPT, zero findings.
+Exact book hash `c3f0b40e929781401483b1caceeac25a83abea0581c84581cbd16941f4260acc`.
+Same Pi session `8c319bb6-5464-5f38-8f0f-b14f485123ce`, inherited accepted history
+byte-identical; repaired model output uses the actual IDs. It is diagnostic,
+not a qualifying completed cycle or released book.
+
+Fresh 056 has Pi session `2020ba5a-e37b-5991-8652-80d4ca44c6be`, 25 real sources,
+and an independent evidence-review REVISE. The review's incorrect May 9 current-date
+assertion is retained, alongside actual timestamp-provenance uncertainty. Pi prepared
+receipt-exact correction, not yet independently accepted. No assembled 056 book,
+AB/BA judgment, decision, learner/reviewer or checkpoint exists; 057 is unstarted.
+Thus complete autonomous cycle advancement and two-cycle boundary completion are
+**not proved**. Normal same-book remediation, actual model/research access,
+independent exact-assembly audit and recorded recovery seams are observed separately.
+
+The native outer owner `belief-changer-commissioning-20261002`, session
+`01a0fbb6-b29d-71a0-bd9c-1ab1274cc49b`, run 2, stopped after preserving progress.
+It used gpt-6.1-sol/high in an independent systemd service. No fresh engineer role
+outputs were supplied during qualifying work. Owner cancellation of a Pi cooldown
+occurred only after checking no semantic request was in flight. All temporary
+review/test/repair workers and disposable tabs are finished; no watchdog is armed.
+The existing research browser remains intentionally provisioned.
+
+Local access repair loaded existing NopeCHA 0.6.1 into that dedicated service and
+restored X from explicitly provisioned owner credentials without exporting values.
+Its existing free tier showed 89% remaining, so a missing/new paid key is not an
+established requirement. Final fresh preflight at **2026-10-02 12:16:47.771851 UTC**
+passes six checks; Google search still fails on unusual-traffic reCAPTCHA.
+Repair report hash `c309d1a9a2126156a469db26068bc213f710c4666949ca0cb601711b985a4d28`;
+preflight hash `fc92d6e55c206f69aa6decb8de6757c5e7c3efa7e4cae8fef50e170987478615`.
+Dedicated service hash changed from `ebf42f1356ccd62650d164833a6cc357fd75809cc577508172d8497605a948b1`
+to `5315e440ee734b5d086005bdc1e6ab174fdfa0c9e1b9707434ff12eefbaf57e5`.
+Backup and exact deployment receipts stay ignored; no purchase/account/OAuth or
+model/provider change occurred. Captcha approval was not fabricated.
+
+Restore legitimate Google verification in the dedicated profile, or wait for the
+restriction to clear. Run a fresh passing preflight, then
+`python3 scripts/autoresearch.py resume --allow-paid`. The normal entrypoint resumes
+the existing outer/Pi histories, research successor, full 056 pipeline, evaluation
+and learning; only its valid checkpoint permits 057. Current progress/campaign
+pointers contain exact resume details. No monitoring or automatic restart is promised.
+
+Run `python3 scripts/autoresearch.py status` for actual ownership/evidence. Initial
+pre-existing `test_cross_iteration.py` edits remain uncommitted and preserved.
+No release/champion update, efficacy or calibrated quality improvement is claimed.

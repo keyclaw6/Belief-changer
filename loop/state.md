@@ -3,8 +3,8 @@
 The separate October 2 commissioning scope is `loop/commissioning.json`; its
 acceptance/evidence record is `loop/history/commissioning-20261002.md`. Read
 `skills/running-auto-research-loop/SKILL.md` and use `python3 scripts/autoresearch.py
-status` for its actual durable owner and checkpoint pointers. Integration is in
-progress; no completed commissioning cycle is claimed.
+status` for its actual durable owner and checkpoint pointers. Current verdict is **NOT YET LIVE VERIFIED**: 056 is blocked on Google verification,
+057 is unstarted, and the native owner is idle. No completed qualifying cycle is claimed.
 
 The disputed old iteration 054 remains **STOPPED / UNCONFIRMED** in
 `loop/iterations/054/progress.json`. Its hypothesis/allocation and retained

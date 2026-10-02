@@ -1,0 +1,19 @@
+{
+  "allocation": {
+    "quit-sugar": 1
+  },
+  "authorization": {
+    "quote": "This assignment authorizes repository changes, temporary engineering sub-agents, project-local infrastructure repair, and the reasonable live model/research execution necessary to demonstrate the system with already-provisioned credentials and accounts.",
+    "reference": "Direct owner commissioning brief, attachment ffbe2129-502f-429e-a0a8-c03893829b28, sections 2 and 8; preserved locally at .loop-work/commissioning-20261002/owner-brief.txt; sections 2 and 8 B/E authorize reasonable necessary live commissioning and final-version proof",
+    "scope_sha256": "9b9cdc610d800a9607b5031e3c10a49dec45afa94458ce3a81a3688af1fe57f3",
+    "status": "APPROVED"
+  },
+  "excluded_runs": [],
+  "execution_status": "ACTIVE",
+  "iteration": "056",
+  "next_action": "NOT YET LIVE VERIFIED: 0/2 qualifying cycles. Local research browser now loads pinned NopeCHA 0.6.1; scoped existing X authentication/search/thread access restored. Fresh final preflight 2026-10-02T12:16:47.771851Z passes six checks; Google web_search remains blocked by unusual-traffic reCAPTCHA despite available solver quota. Legitimately verify Google in the dedicated belief-changer-research profile (CDP 9226), or wait for the restriction to clear, then pass fresh seven-check quit-sugar preflight and run python3 scripts/autoresearch.py resume --allow-paid. Resume the same outer/Pi sessions and linked research correction; no new 056 book or 054 restart. Owner/book workers are stopped; no schedule is armed. Details .loop-work/commissioning20261002/access-repair/access-repair-report.json and retained outer-owner blocker-056-research-access.",
+  "preregistration_sha256": "18cb009e31867656e6018ba11c0932e7bd6b1d048b2e0f5913637b6dbf52a211",
+  "runs": [],
+  "schema_version": 1,
+  "status": "IN_PROGRESS"
+}
