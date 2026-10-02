@@ -74,4 +74,6 @@ authorized scope. Follow `skills/upgrade/SKILL.md` before source changes; a chan
 to qualifying execution invalidates its affected live proof. Preserve accepted
 outputs and negatives. Stop for owner intent, completed scope, exhausted quota,
 unavailable required human/account access, or an unresolved substantive gate.
-Record the exact blocker/resume action; a local defect remains repair work.
+Record the exact blocker/resume action in the existing progress/campaign handoff;
+keep detailed captures under the run or ignored `.loop-work/`. A local defect
+remains repair work; never invent another source-tree status ledger.

@@ -1,29 +1,48 @@
 #!/usr/bin/env python3
 """Active-contract and test-presence gate. Does not claim factual/book quality."""
 import json
+import os
+import subprocess
 from pathlib import Path
 import sys
 
 ROOT = Path(sys.argv[1] if len(sys.argv)>1 else '.').resolve()
 
+REQUIRED_FILES = ['AGENTS.md','README.md','docs/FACTORY-V2.md','docs/UPGRADE-MAP.md',
+            'scripts/factory.py','scripts/bc_factory/schema.py','scripts/bc_factory/runs.py',
+            'scripts/autoresearch.py','scripts/bc_autoresearch/cli.py',
+            'scripts/bc_autoresearch/operations.py','scripts/eval/tests/test_autoresearch_operations.py',
+            'scripts/bc_autoresearch/experiments.py','scripts/bc_autoresearch/learning.py',
+            'scripts/bc_autoresearch/regression.py','factory/config.json','factory/champion.json',
+            'factory/calibration.json','loop/judges/pairwise.md','prompts/evidence-reviewer.md',
+            'prompts/book-editor.md','prompts/final-auditor.md','factory/research-access.json',
+            'scripts/bc_factory/research_access.py','scripts/bc_factory/research_setup.py',
+            'docs/RESEARCH-ACCESS.md','docs/PUBLISH-MAIN.md','scripts/publish_main.py',
+            'scripts/eval/tests/test_research_access.py','scripts/eval/tests/test_publish_main.py',
+            'scripts/eval/tests/test_autoresearch_runtime_invariants.py',
+            'skills/README.md','skills/upgrade/SKILL.md',
+            'skills/upgrade/references/review-prompts.md',
+            'skills/upgrade/references/agent-skills-spec.md',
+            'skills/running-auto-research-loop/SKILL.md']
+
+def source_files(root: Path, relative: str) -> list[Path]:
+    """Tracked and unignored source; exports without Git use strict filesystem checks."""
+    try:
+        top = subprocess.run(["git", "-C", str(root), "rev-parse", "--show-toplevel"],
+                             capture_output=True, text=True, timeout=10)
+        if top.returncode == 0 and Path(top.stdout.strip()).resolve() == root:
+            listed = subprocess.run(
+                ["git", "-C", str(root), "ls-files", "--cached", "--others",
+                 "--exclude-standard", "-z", "--", relative],
+                capture_output=True, check=True, timeout=10)
+            return [root / os.fsdecode(name) for name in listed.stdout.split(b"\0") if name]
+    except (OSError, subprocess.SubprocessError):
+        pass
+    return [path for path in (root / relative).rglob("*") if path.is_file()]
+
+
 def main():
-    required = ['AGENTS.md','README.md','docs/FACTORY-V2.md','docs/UPGRADE-MAP.md',
-                'scripts/factory.py','scripts/bc_factory/schema.py','scripts/bc_factory/runs.py',
-                'scripts/autoresearch.py','scripts/bc_autoresearch/cli.py',
-                'scripts/bc_autoresearch/operations.py','scripts/eval/tests/test_autoresearch_operations.py',
-                'scripts/bc_autoresearch/experiments.py','scripts/bc_autoresearch/learning.py',
-                'scripts/bc_autoresearch/regression.py','factory/config.json','factory/champion.json',
-                'factory/calibration.json','loop/judges/pairwise.md','prompts/evidence-reviewer.md',
-                'prompts/book-editor.md','prompts/final-auditor.md','factory/research-access.json',
-                'scripts/bc_factory/research_access.py','scripts/bc_factory/research_setup.py',
-                'docs/RESEARCH-ACCESS.md','docs/PUBLISH-MAIN.md','scripts/publish_main.py',
-                'scripts/eval/tests/test_research_access.py','scripts/eval/tests/test_publish_main.py',
-                'scripts/eval/tests/test_autoresearch_runtime_invariants.py',
-                'skills/README.md','skills/upgrade/SKILL.md',
-                'skills/upgrade/references/review-prompts.md',
-                'skills/upgrade/references/agent-skills-spec.md',
-                'skills/running-auto-research-loop/SKILL.md']
-    errors = [f'Missing required v2 file: {p}' for p in required if not (ROOT/p).is_file()]
+    errors = [f'Missing required v2 file: {p}' for p in REQUIRED_FILES if not (ROOT/p).is_file()]
     tests = list((ROOT/'scripts/eval/tests').glob('test_*.py'))
     if not tests: errors.append('Mandatory regression suite is absent')
     for rel in ['README.md','AGENTS.md','prompts/style-guide.md','prompts/chapter-reviewer.md','loop/PROGRAM.md']:
@@ -51,7 +70,7 @@ def main():
     history = ROOT/'loop/iterations'
     if history.exists():
         allowed = {'decision.md','hypothesis.md','change.diff','CAMPAIGN-SUMMARY.md','convergence-report.md','evidence.json','ABORTED.md','progress.json'}
-        for path in history.rglob('*'):
+        for path in source_files(ROOT, 'loop/iterations'):
             if path.is_file() and (len(path.relative_to(history).parts)!=2 or path.name not in allowed):
                 errors.append('Intermediate campaign artifact re-entered source tree: '+str(path.relative_to(ROOT)))
     # A compact handoff is allowed; it is not a final iteration verdict.

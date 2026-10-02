@@ -571,6 +571,53 @@ class PreparedLineageTests(unittest.TestCase):
         self.assertEqual(later["book_id"], self.source_id)
         self.assertEqual(later["session_id"], first["session_id"])
 
+    def test_remediation_can_repair_runtime_and_preserve_initial_preparation_and_stages(self):
+        from bc_factory.demo import finish
+        from bc_factory.runs import Run, prepare
+        preparation = {"root": str(self.repo / ".loop-work/pi" / self.source_id / "preparation"),
+                       "record": {"schema_version": 1, "run_id": self.source_id,
+                                  "factory_files": self.source.manifest["factory_files"]},
+                       "brief": self.brief, "caller_context": None, "frozen": False}
+        ops._freeze_preparation(self.repo, preparation)
+        first = self.plan()
+        saved = Path(first["session_dir"]) / "saved.jsonl"
+        history = json.dumps({"type": "session", "id": first["session_id"],
+                              "cwd": str(self.source.root / "snapshot")}) + "\n"
+        saved.write_text(history)
+        real_submit = self.source.submit
+        def final_revise(task, output, meta):
+            if task["role"] == "final-auditor":
+                output = copy.deepcopy(output)
+                output["verdict"] = "REVISE"
+                output["checks"]["truth"] = False
+                output["findings"] = [{"kind": "EVIDENCE", "severity": "material",
+                    "quote": "One unsuccessful attempt is one observation.",
+                    "explanation": "Synthetic fixable audit.", "repair": "Bounded whole-book repair."}]
+            return real_submit(task, output, meta)
+        with patch.object(self.source, "submit", side_effect=final_revise):
+            with self.assertRaises(FactoryError):
+                finish(self.source, self.chapter_plan)
+        original = {p.relative_to(self.source.root): p.read_bytes()
+                    for p in self.source.root.rglob("*") if p.is_file()}
+        contract = self.repo / "prompts/book-editor.md"
+        contract.write_text(contract.read_text() + "\nSynthetic runtime repair: use supplied source-note identities.\n")
+        child = prepare(self.repo, "iter901-topic-a-rem", self.brief, self.research,
+                        fixture=True, remediation_of=self.source_id)
+        repaired = Run(self.repo, child.name)
+        self.assertNotEqual(repaired.manifest["factory_files"]["prompts/book-editor.md"],
+                            self.source.manifest["factory_files"]["prompts/book-editor.md"])
+        later = self.plan()  # A stale root pointer resolves the validated successor.
+        self.assertEqual(later["run_id"], child.name)
+        self.assertEqual(later["book_id"], self.source_id)
+        self.assertEqual(later["session_id"], first["session_id"])
+        self.assertEqual(later["cwd"], str(child / "snapshot"))
+        self.assertEqual(saved.read_text(), history)
+        self.assertEqual(original, {p.relative_to(self.source.root): p.read_bytes()
+                                    for p in self.source.root.rglob("*") if p.is_file()})
+        for rel, contents in original.items():
+            if rel.parts[0] in ("tasks", "results", "assembly") or rel.as_posix() == "book.md":
+                self.assertEqual((child / rel).read_bytes(), contents, str(rel))
+
     def next_brief(self):
         path = self.repo / "next-brief.json"
         path.write_text(json.dumps(self.brief))

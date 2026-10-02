@@ -11,7 +11,7 @@ The full brief and disposable evidence remain in ignored
 
 | Preserved outcome | Source | Redesign implication |
 |---|---|---|
-| Separate two-cycle live exercise; 054 remains stopped/unconfirmed | Direct brief §§2,8; 053 `58595ef0` screening versus 054 `ef14425d` unconditional allocation | Two new books in 055/056; no old allocation approval or historical rewrite |
+| Separate two-cycle live exercise; 054 remains stopped/unconfirmed | Direct brief §§2,8; 053 `58595ef0` screening versus 054 `ef14425d` unconditional allocation | Final qualifying books in 056/057 after diagnostic 055; no old allocation approval or historical rewrite |
 | Saved Pi context per book; outer hypothesizer owns learning/next work | Direct brief §3; separation `ae2d89b8`, `61ac05cc` | One durable outer host, one bounded Pi call; independent books have new sessions |
 | Go Muse/meta and independent Go DeepSeek evaluation | Direct brief §3; configuration history `a8aa2771` through `e9ee55a2` | Verify actual identities; no silent substitutions |
 | Substantive research, complete writing/review/edit/audit, honest negatives | Direct brief §§3,8; stage contracts; 052 REFUTE | Keep role prompts and mechanical bindings; test semantic boundary separately |
@@ -108,3 +108,29 @@ its bounded target. All temporary test workers are stopped.
 
 Qualifying two-cycle live execution, final artifact identities and push verification
 remain pending. No completed commissioning cycle is claimed.
+
+## Diagnostic stop and final-version revalidation
+
+The first fixed-version attempt 055 produced six accepted chapters and an assembly.
+Its independent audit requested five fixes; four editor responses used invalid
+`SG-*` note IDs. Validation rejected them, preserving every response and the
+negative audit. Zero cycles completed. This is a local contract/input defect,
+not quota exhaustion: observed Go use was 2% five-hour, 79% weekly, 85% monthly.
+
+The repair exposes current rendered front matter and opaque note IDs/bodies to
+the editor, removes the subject-specific example, and preserves strict validation.
+The launcher binds initial preparation to the lineage root so a validated
+same-book remediation can freeze corrected contracts. Accepted stages stay
+byte-identical; the diagnostic book keeps its native session and finite audit set.
+
+Final proof will use two fresh cycles 056/057 under the corrected version. This
+adds one independent generation, total limit three including diagnostic 055;
+the two-cycle acceptance count is unchanged. The actual authority is the direct
+brief's reasonable live execution and final-version proof requirements (§§2,8).
+Old registration and hypothesis remain retained, not rewritten into success.
+`loop/commissioning.json` binds the revised plan before further model calls.
+
+Source validation now follows Git's source inventory, permitting ignored private
+learning evidence while rejecting source-tree intermediates. Offline tests clear
+the model credential only in their child process. The original blocker records
+were moved byte-identical to ignored diagnostic storage with a hash ledger.

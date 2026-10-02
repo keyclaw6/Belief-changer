@@ -408,7 +408,9 @@ class Run:
                     deps[prev["rel"]] = prev["sha256"]
                     inputs["previous_assembly"] = {"assembly_round": round_no-1,
                                                    "text": prev["assembly"]["text"],
-                                                   "text_sha256": prev["assembly"]["text_sha256"]}
+                                                   "text_sha256": prev["assembly"]["text_sha256"],
+                                                   "front_matter": prev["assembly"].get("front_matter") or base_front_matter(self.brief, plan),
+                                                   "source_notes": prev["assembly"].get("source_notes") or render_source_notes(self.research)}
                     inputs["screening"] = screen("\n\n".join(c["text"] for c in prev["assembly"]["chapters"]))
                 else:
                     inputs["screening"] = screen("\n\n".join(c["text"] for c in previous))

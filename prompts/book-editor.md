@@ -14,13 +14,13 @@ Operations apply in order. Anchors must occur exactly once at the point of appli
 
 A fifth operation repairs generated front matter (title, reader_goal, limits, safety) when the audit flags it:
 - {"op":"front","field":"reader_goal","old":"Exact current front-matter text","new":"Replacement text","reason":"Why"}
-The old anchor must equal the current field text exactly. Replacement must be nonempty — required safety text can be narrowed but never deleted or emptied. Use front repairs only for audit-justified fixes, never for restyling.
+The old anchor must equal the current field text exactly. In revision rounds, copy it from `previous_assembly.front_matter`, which includes prior repairs. Replacement must be nonempty — required safety text can be narrowed but never deleted or emptied. Use front repairs only for audit-justified fixes, never for restyling.
 
 Rendered chapter headers come from plan cards, so use `retitle` (never a frozen-plan edit) when the audit flags header wording; the new header must be nonempty and different. Like front repairs, retitle is for audit-justified fixes only.
 
 Generated source notes are also repairable in-run when the audit flags them:
-- {"op":"notes","id":"SG-X1","old":"Exact current note text","new":"Replacement text","reason":"Why"}
-The anchor must occur exactly once inside that note. To remove a whole unused note, set "new" to "" with "old" equal to the note's full text; at least one note must survive. Never invent sources or locators; repairs only correct labels, scope language, and production-metadata leakage already visible in the rendered note.
+- {"op":"notes","id":"COPY_EXACT_SOURCE_ID","old":"Exact current note text","new":"Replacement text","reason":"Why"}
+Copy the exact `id` and current `body` from `previous_assembly.source_notes`; IDs are opaque, and the example placeholder is not an actual ID. The anchor must occur exactly once inside that note. To remove a whole unused note, set "new" to "" with "old" equal to the note's full text; at least one note must survive. Never invent sources or locators; repairs only correct labels, scope language, and production-metadata leakage already visible in the rendered note.
 
 ## Caller-requested post-audit repair
 

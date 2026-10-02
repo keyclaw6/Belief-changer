@@ -527,6 +527,7 @@ class RunTests(Base):
     def test_notes_repairs_converge_in_lineage(self):
         import copy
         research = copy.deepcopy(self.research)
+        research['sources'][0]['id'] = 'opaque.73-L9'
         extra = copy.deepcopy(research['sources'][0])
         extra['id'] = 'demo-second'
         research['sources'].append(extra)
@@ -535,9 +536,17 @@ class RunTests(Base):
         self.to_book_revise(run)
         first = run.assembly_version(1)["assembly"]
         self.assertEqual(len(first["source_notes"]), 2)
+        editor_task = run.task("book-editor", round_no=2)
+        self.assertEqual(editor_task["inputs"]["previous_assembly"]["source_notes"], first["source_notes"])
+        self.assertEqual(editor_task["inputs"]["previous_assembly"]["front_matter"], first["front_matter"])
+        for wrong_id in ("SG-X1", "COPY_EXACT_SOURCE_ID", "opaque-L9"):
+            with self.subTest(id=wrong_id), self.assertRaisesRegex(FactoryError, "missing/nonunique note"):
+                run.submit(editor_task, {"schema_version": 2, "operations": [
+                    {"op": "notes", "id": wrong_id, "old": "synthetic", "new": "test-only",
+                     "reason": "Guessed source identity must fail."}], "explanation": "Invalid ID."}, metadata())
         # Relabel one note and remove another; removal needs the full note text.
         second_body = first["source_notes"][1]["body"]
-        run.submit(run.task("book-editor", round_no=2), {"schema_version": 2, "operations": [
+        run.submit(editor_task, {"schema_version": 2, "operations": [
             {"op": "notes", "id": first["source_notes"][0]["id"], "old": "synthetic",
              "new": "test-only", "reason": "Audit repair."},
             {"op": "notes", "id": "demo-second", "old": second_body, "new": "",
@@ -549,7 +558,7 @@ class RunTests(Base):
         self.assertEqual(len(second["assembly"]["source_notes"]), 1)
         self.assertEqual(len(second["assembly"]["source_note_repairs"]), 2)
         v1bytes = (run.root / "assembly/assembly-r01.json").read_bytes()
-        # A later chapter-only round preserves the note repairs cumulatively.
+        # A later round uses the repaired note's current identity and anchors.
         revise = accepted(); revise["verdict"] = "REVISE"; revise["checks"]["continuity"] = False
         revise["findings"] = [{"kind": "EVIDENCE", "severity": "material", "quote": "Body sentence 2.",
                                "explanation": "Needs a bounded fix.", "repair": "Fix in place."}]
@@ -557,12 +566,21 @@ class RunTests(Base):
                                    "support": "nonempirical", "explanation": "Fixture."}]
         revise["screening_resolutions"] = {f["id"]: "Fixture triage." for f in second["assembly"]["screening"]}
         run.submit(run.task("final-auditor", round_no=2), revise, metadata(True))
-        run.submit(run.task("book-editor", round_no=3), {"schema_version": 2, "operations": [
+        next_editor = run.task("book-editor", round_no=3)
+        current_notes = next_editor["inputs"]["previous_assembly"]["source_notes"]
+        self.assertEqual(current_notes, second["assembly"]["source_notes"])
+        self.assertNotEqual(current_notes, first["source_notes"])
+        current_note = current_notes[0]
+        self.assertEqual(current_note["id"], 'opaque.73-L9')
+        run.submit(next_editor, {"schema_version": 2, "operations": [
             {"op": "replace", "chapter": "chapter-01", "old": "Body sentence 1.",
-             "new": "Edited body sentence 1.", "reason": "Later fix."}],
+             "new": "Edited body sentence 1.", "reason": "Later fix."},
+            {"op": "notes", "id": current_note["id"], "old": current_note["body"],
+             "new": current_note["body"].replace("test-only", "audited fixture", 1),
+             "reason": "Repair the current rendered note using its exact task anchor."}],
             "explanation": "Chapter fix."}, metadata())
         third = run.assemble()
-        self.assertIn("test-only", third["assembly"]["text"])
+        self.assertIn("audited fixture", third["assembly"]["text"])
         self.assertEqual(len(third["assembly"]["source_notes"]), 1)
         self.assertEqual((run.root / "assembly/assembly-r01.json").read_bytes(), v1bytes)
         # Unknown ids, partial-removal anchors and last-note removal fail closed.
@@ -579,7 +597,7 @@ class RunTests(Base):
                  "reason": "Bad id."}], "explanation": "Must fail."}, metadata())
         with self.assertRaises(FactoryError):
             run.submit(run.task("book-editor", round_no=4), {"schema_version": 2, "operations": [
-                {"op": "notes", "id": "demo-illustration", "old": "test",
+                {"op": "notes", "id": "opaque.73-L9", "old": "audited",
                  "new": "", "reason": "Partial removal."}], "explanation": "Must fail."}, metadata())
     def test_front_matter_repair_converges_in_lineage(self):
         run = self.newrun()
@@ -587,6 +605,7 @@ class RunTests(Base):
         goal = self.brief["reader_goal"]
         editor_task = run.task("book-editor", round_no=2)
         self.assertIn(goal, editor_task["inputs"]["previous_assembly"]["text"])
+        self.assertEqual(editor_task["inputs"]["previous_assembly"]["front_matter"], first["assembly"]["front_matter"])
         run.submit(editor_task, {"schema_version": 2, "operations": [
             {"op": "front", "field": "reader_goal", "old": goal,
              "new": "Examine what one unsuccessful attempt can logically establish, and nothing more.",
@@ -622,7 +641,10 @@ class RunTests(Base):
                                          "support": "nonempirical", "explanation": "Fixture."}]
         second_audit["screening_resolutions"] = {f["id"]: "Fixture triage." for f in mid["assembly"]["screening"]}
         run.submit(run.task("final-auditor", round_no=2), second_audit, metadata(True))
-        run.submit(run.task("book-editor", round_no=3), {"schema_version": 2, "operations": [
+        next_editor = run.task("book-editor", round_no=3)
+        self.assertEqual(next_editor["inputs"]["previous_assembly"]["front_matter"], mid["assembly"]["front_matter"])
+        self.assertEqual(next_editor["inputs"]["previous_assembly"]["front_matter"]["reader_goal"], "Narrowed promise.")
+        run.submit(next_editor, {"schema_version": 2, "operations": [
             {"op": "replace", "chapter": "chapter-02", "old": "Body sentence 2.",
              "new": "Edited body sentence 2.", "reason": "Later fix."}],
             "explanation": "Chapter fix."}, metadata())

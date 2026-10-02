@@ -61,6 +61,9 @@ class NoRegressionRepairTests(unittest.TestCase):
         self.assertEqual(gate["decision"], "REPAIR_REQUIRED")
         self.assertEqual(gate["losses"], ["voice"])
         editor = self.candidate.task("book-editor", round_no=2)
+        prior_assembly = self.candidate.accepted_assembly()["assembly"]
+        self.assertEqual(editor["inputs"]["previous_assembly"]["front_matter"], prior_assembly["front_matter"])
+        self.assertEqual(editor["inputs"]["previous_assembly"]["source_notes"], prior_assembly["source_notes"])
         feedback = editor["inputs"]["caller_repair_feedback"]
         self.assertEqual(feedback["schema_version"], 2)
         self.assertEqual(feedback["editorial_constraints"][0]["area"], "voice")

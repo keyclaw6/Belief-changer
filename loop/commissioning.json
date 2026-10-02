@@ -1,50 +1,20 @@
 {
-  "schema_version": 1,
-  "id": "commissioning-20261002",
-  "execution_status": "ACTIVE",
   "authorization": {
-    "reference": "Direct owner commissioning brief, attachment ffbe2129-502f-429e-a0a8-c03893829b28, sections 2 and 8; preserved locally at .loop-work/commissioning-20261002/owner-brief.txt",
     "quote": "This assignment authorizes repository changes, temporary engineering sub-agents, project-local infrastructure repair, and the reasonable live model/research execution necessary to demonstrate the system with already-provisioned credentials and accounts.",
-    "source_sha256": "45e90fc3576a38c6588046f526b33dd135295da7d654fed453a2addddc1ee189",
-    "scope_sha256": "8563188763285769d2ff8ab61e4c96e42761d52cb38030c6830fd9c29b81e340"
+    "reference": "Direct owner commissioning brief, attachment ffbe2129-502f-429e-a0a8-c03893829b28, sections 2 and 8; preserved locally at .loop-work/commissioning-20261002/owner-brief.txt; sections 2 and 8 B/E authorize reasonable necessary live commissioning and final-version proof",
+    "scope_sha256": "a9c7c7f293e0d11023940835d083db40b48f5af1a109fdfe7d47fada15abf846",
+    "source_sha256": "45e90fc3576a38c6588046f526b33dd135295da7d654fed453a2addddc1ee189"
   },
+  "completed": [],
+  "controller_started": true,
+  "execution_status": "ACTIVE",
+  "id": "commissioning-20261002",
   "iterations": [
-    "055",
-    "056"
+    "056",
+    "057"
   ],
+  "next_action": "Finish non-qualifying same-book 055 remediation after the ID/data fix; then run fresh qualifying 056 and 057 through the corrected normal path. Original 055 measurement is diagnostic, 054 remains stopped.",
   "plan": {
-    "mode": "exploratory_operational_commissioning",
-    "new_complete_books": 2,
-    "books_per_cycle": 1,
-    "subject": "quit-sugar",
-    "brief": ".loop-work/commissioning-20261002/brief.json",
-    "brief_sha256": "1cb926d58bd3d69574876055fa87f81de236ceb2f1c63fc41232874a30427dbd",
-    "baseline_run": "iter2-sugar-ar2",
-    "baseline_book_sha256": "411b71bab7a248846fcbf3c91c4d409b7e3ee2db7746c13905d87ccbff8e006c",
-    "generator": {
-      "model": "muse-spark-1.3-contributor",
-      "family": "meta",
-      "provider": "opencode-go"
-    },
-    "evaluator": {
-      "model": "deepseek-v4.1-flash",
-      "family": "deepseek",
-      "provider": "opencode-go"
-    },
-    "factory_change": "none during qualifying execution; declared measurement of the commissioned runtime",
-    "research": "Pi owns fresh live web/Reddit/X/recovery searches, original reads, counterevidence and inference limits; retained research is input only",
-    "stage_rounds": 6,
-    "extra_live_diagnostic_calls": 4,
-    "limits": {
-      "go_used_percent_at_2026_10_02_070917_UTC": {
-        "five_hour": 6,
-        "weekly": 77,
-        "monthly": 84
-      },
-      "dollar_cap": "unobservable; no purchases, overages or new financial commitments authorized",
-      "stop": "stop on provider quota exhaustion; no provider/model substitution or added sample",
-      "usage_source": ".loop-work/commissioning-20261002/dependencies/opencode-go-quota.json"
-    },
     "acceptance": [
       "two consecutive complete new-book cycles through one durable outer owner",
       "live configured generator and independent reviewer, substantial real research",
@@ -55,6 +25,11 @@
       "targeted independent reviewer adversarial/control animal-to-human inference challenge",
       "final executable/config identity, no hidden engineer steering; material residual review clean"
     ],
+    "baseline_book_sha256": "411b71bab7a248846fcbf3c91c4d409b7e3ee2db7746c13905d87ccbff8e006c",
+    "baseline_run": "iter2-sugar-ar2",
+    "books_per_cycle": 1,
+    "brief": ".loop-work/commissioning-20261002/brief.json",
+    "brief_sha256": "1cb926d58bd3d69574876055fa87f81de236ceb2f1c63fc41232874a30427dbd",
     "claims_excluded": [
       "statistical study",
       "transferable factory-quality improvement",
@@ -62,9 +37,44 @@
       "reader efficacy",
       "054 approval or continuation",
       "W1-W4 activation"
-    ]
+    ],
+    "evaluator": {
+      "family": "deepseek",
+      "model": "deepseek-v4.1-flash",
+      "provider": "opencode-go"
+    },
+    "extra_live_diagnostic_calls": 4,
+    "factory_change": "none during qualifying execution; declared measurement of the commissioned runtime",
+    "generator": {
+      "family": "meta",
+      "model": "muse-spark-1.3-contributor",
+      "provider": "opencode-go"
+    },
+    "limits": {
+      "dollar_cap": "unobservable; no purchases, overages or new financial commitments authorized",
+      "go_used_percent_at_2026_10_02_070917_UTC": {
+        "five_hour": 6,
+        "monthly": 84,
+        "weekly": 77
+      },
+      "stop": "stop on provider quota exhaustion; no provider/model substitution or added sample",
+      "usage_source": ".loop-work/commissioning-20261002/dependencies/opencode-go-quota.json",
+      "go_used_percent_after_diagnostic_055": {
+        "five_hour": 2,
+        "weekly": 79,
+        "monthly": 85
+      }
+    },
+    "mode": "exploratory_operational_commissioning",
+    "new_complete_books": 2,
+    "research": "Pi owns fresh live web/Reddit/X/recovery searches, original reads, counterevidence and inference limits; retained research is input only",
+    "stage_rounds": 6,
+    "subject": "quit-sugar",
+    "diagnostic_iterations": [
+      "055"
+    ],
+    "total_independent_generations_limit": 3,
+    "additional_generation_reason": "Initial source-note ID repair path failed before a complete cycle. Two fresh complete cycles on the corrected final runtime require one additional generation; 055 stays diagnostic and its accepted stages are preserved by bounded same-book remediation."
   },
-  "completed": [],
-  "controller_started": false,
-  "next_action": "Complete implementation/independent checks, freeze executable identity, then start the final normal path"
+  "schema_version": 1
 }

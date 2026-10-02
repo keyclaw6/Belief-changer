@@ -318,7 +318,9 @@ def launch_plan(repo: Path, iteration: str, run_id: str, agent_dir: Path,
     preparation = None
     if run_id in books:
         run, lineage = books[run_id]
-        _check_handoff(repo, lineage[0], run)
+        # Preparation binds the initial run. Validated same-book successors may
+        # freeze repaired runtime contracts while preserving their source history.
+        _check_handoff(repo, lineage[0], Run(repo, lineage[0]))
         if brief is not None:
             require(digest(document(brief)) == digest(run.brief), "Requested brief differs from this frozen book")
         if caller_context is not None:
