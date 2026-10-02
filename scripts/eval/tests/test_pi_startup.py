@@ -34,7 +34,10 @@ class InstalledPiStartupTests(unittest.TestCase):
     def test_native_resume_preserves_session_and_does_not_leak_to_child(self):
         self.check_startup(resume=True)
 
-    def check_startup(self, child_crash=False, resume=False):
+    def test_actual_child_retains_lock_after_parent_descriptors_close(self):
+        self.check_startup(child_ownership=True)
+
+    def check_startup(self, child_crash=False, resume=False, child_ownership=False):
         self.assertTrue(shutil.which("unshare"), "A network namespace is required; do not run this probe online")
         check = subprocess.run(["unshare", "--user", "--map-root-user", "--net", "true"],
                                capture_output=True, timeout=5)
@@ -88,10 +91,20 @@ class InstalledPiStartupTests(unittest.TestCase):
             # isolated child and exit before inference. Dispatch is the real Pi tool.
             source = source.replace('"--no-session",', '"--no-session", "--extension", ' + json.dumps(str(probe)) + ',', 1)
             generated.write_text(source)
-            probe.write_text('import fs from "node:fs";\nimport subagent from ' + json.dumps(str(generated)) + ';\n' + '''
+            probe.write_text('import fs from "node:fs";\nimport {spawnSync} from "node:child_process";\nimport subagent from ' + json.dumps(str(generated)) + ';\n' + '''
+function waitForFile(file) {
+ return new Promise(resolve=>{
+   const watcher=fs.watch(process.env.BC_PROBE_DIR,()=>{
+     if(fs.existsSync(file)){watcher.close();resolve();}
+   });
+   if(fs.existsSync(file)){watcher.close();resolve();}
+ });
+}
 export default function(pi) {
  let tool;
  const child=process.argv.includes("--no-session");
+ const ownership=process.env.BC_PROBE_LOCK === "1";
+ const lockFd=Number(process.env.BC_PI_WORKER_LOCK_FD);
  if(!child) subagent(new Proxy(pi,{get(target,key){
    if(key==="registerTool") return(def)=>{tool=def;return target.registerTool(def)};
    return Reflect.get(target,key);
@@ -104,10 +117,30 @@ export default function(pi) {
      provider:ctx.model?.provider,api:ctx.model?.api,baseUrl:ctx.model?.baseUrl,
      frozenContext:ctx.getSystemPrompt().includes("Immutable evidence and honest status"),
      outerContext:ctx.getSystemPrompt().includes("OUTER_CONTEXT_SENTINEL_DO_NOT_INHERIT")};
+   if(ownership){
+     try{row.lockInode=fs.fstatSync(lockFd).ino;}catch{row.lockInode=null;}
+   }
    fs.appendFileSync(process.env.BC_PROBE_OUT,JSON.stringify(row)+"\\n");
    if(!child){
-     const result=await tool.execute("offline-probe",{agent:"chapter-writer",task:"Offline startup only.",agentScope:"project"},undefined,undefined,ctx);
+     const ready=ownership?waitForFile(process.env.BC_PROBE_READY):null;
+     const pending=tool.execute("offline-probe",{agent:"chapter-writer",task:"Offline startup only.",agentScope:"project"},undefined,undefined,ctx);
+     if(ownership){
+       await ready;
+       await waitForFile(process.env.BC_PROBE_TEST_RELEASE);
+       await waitForFile(process.env.BC_PROBE_DRIVER_RELEASE);
+       fs.closeSync(lockFd);
+       const check=spawnSync(process.env.BC_PROBE_PYTHON,["-c",
+         "import fcntl,sys; f=open(sys.argv[1],'r+'); fcntl.flock(f,fcntl.LOCK_EX|fcntl.LOCK_NB)",
+         process.env.BC_PROBE_LOCK_PATH]);
+       fs.appendFileSync(process.env.BC_PROBE_OUT,JSON.stringify({kind:"ownership",
+         blocked:check.status===1 && check.stderr.toString().includes("BlockingIOError")})+"\\n");
+       fs.writeFileSync(process.env.BC_PROBE_RELEASE,"release");
+     }
+     const result=await pending;
      fs.appendFileSync(process.env.BC_PROBE_OUT,JSON.stringify({kind:"dispatch",error:result.isError??false,exitCode:result.details?.results?.[0]?.exitCode})+"\\n");
+   }else if(ownership){
+     fs.writeFileSync(process.env.BC_PROBE_READY,"ready");
+     await waitForFile(process.env.BC_PROBE_RELEASE);
    }
    if(child && process.env.BC_PROBE_CHILD_CRASH === "1") process.kill(process.pid, "SIGKILL");
    process.exit(0);
@@ -122,10 +155,43 @@ export default function(pi) {
             env = {"HOME": str(base / "home"), "PATH": str(executable.parent) + ":/usr/bin:/bin",
                    "LANG": "C.UTF-8", "PI_OFFLINE": "1", "BC_PROBE_OUT": str(out),
                    "PYTHONPATH": str(ROOT / "scripts"),
-                   "BC_PROBE_CHILD_CRASH": "1" if child_crash else "0"}
-            driver = "import json,sys; from bc_autoresearch.operations import _pty_run; sys.exit(_pty_run(json.loads(sys.argv[1])))"
-            proc = subprocess.Popen([sys.executable, "-c", driver, json.dumps(plan)], env=env,
-                                    stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True)
+                   "BC_PROBE_CHILD_CRASH": "1" if child_crash else "0",
+                   "BC_PROBE_LOCK": "1" if child_ownership else "0",
+                   "BC_PROBE_DIR": str(base), "BC_PROBE_READY": str(base / "child-ready"),
+                   "BC_PROBE_RELEASE": str(base / "release-child"),
+                   "BC_PROBE_TEST_RELEASE": str(base / "test-released"),
+                   "BC_PROBE_DRIVER_RELEASE": str(base / "driver-released"),
+                   "BC_PROBE_PYTHON": sys.executable,
+                   "BC_PROBE_LOCK_PATH": str(repo / ".loop-work/pi/iteration-901.lock")}
+            driver = '''
+import json,os,pty,sys
+from pathlib import Path
+from bc_autoresearch.operations import _pty_run
+plan=json.loads(sys.argv[1])
+if os.environ.get("BC_PROBE_LOCK") == "1":
+    native_fork=pty.fork
+    def relinquishing_fork():
+        pid,master=native_fork()
+        if pid:
+            os.close(plan["lock_fd"])
+            Path(os.environ["BC_PROBE_DRIVER_RELEASE"]).write_text("closed")
+        return pid,master
+    pty.fork=relinquishing_fork
+sys.exit(_pty_run(plan))
+'''
+            import contextlib
+            from bc_autoresearch.operations import worker_lock
+            with contextlib.ExitStack() as owner:
+                pass_fds = ()
+                if child_ownership:
+                    fd = owner.enter_context(worker_lock(repo, "901"))
+                    plan["lock_fd"] = fd
+                    inode = os.fstat(fd).st_ino
+                    pass_fds = (fd,)
+                proc = subprocess.Popen([sys.executable, "-c", driver, json.dumps(plan)], env=env,
+                                        stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                                        start_new_session=True, pass_fds=pass_fds)
+            (base / "test-released").write_text("closed")
             try:
                 stdout, stderr = proc.communicate(timeout=20)
             except subprocess.TimeoutExpired:
@@ -135,7 +201,15 @@ export default function(pi) {
             self.assertEqual(proc.returncode, 0, stderr.decode(errors="replace")[-2000:])
             self.assertTrue(out.exists(), "Pi did not load the startup probe")
             rows = [json.loads(line) for line in out.read_text().splitlines()]
-            self.assertEqual([row["kind"] for row in rows], ["parent", "child", "dispatch"])
+            self.assertEqual([row["kind"] for row in rows],
+                             ["parent", "child", "ownership", "dispatch"] if child_ownership
+                             else ["parent", "child", "dispatch"])
+            if child_ownership:
+                self.assertEqual(rows[-2], {"kind": "ownership", "blocked": True})
+                for row in rows[:2]:
+                    self.assertEqual(row["lockInode"], inode, row["kind"])
+                with worker_lock(repo, "901"):
+                    pass  # All actual native owners exited; the old lock file is reusable.
             for row in rows[:2]:
                 self.assertFalse(row["outerContext"], row["kind"])
                 self.assertTrue(row["frozenContext"], row["kind"])

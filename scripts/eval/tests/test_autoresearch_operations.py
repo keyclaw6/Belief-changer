@@ -15,6 +15,7 @@ UPSTREAM_STUB = '\n'.join([
     'import { discoverAgents } from "./agents.ts";',
     'const args: string[] = ["--mode", "json", "-p", "--no-session"];',
     'resolve(code ?? 0);',
+    'stdio: ["ignore", "pipe", "pipe"],',
 ])
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -367,6 +368,141 @@ class OperationsTests(unittest.TestCase):
     def test_cli_defaults_to_inspection(self):
         args = parser().parse_args(["launch-book", "--iteration", "901", "--run", "iter901-sugar-a", "--agent-dir", "/tmp/test", "--extension", "/tmp/test.ts"])
         self.assertFalse(args.allow_paid)
+
+
+class PreparedLineageTests(unittest.TestCase):
+    """Real frozen-run fixtures, not mocked lineage/acceptance labels."""
+    def setUp(self):
+        from bc_factory.demo import inputs, scaffold
+        from bc_factory.runs import Run, prepare
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.repo = Path(self.tmp.name) / "repo"
+        scaffold(ROOT, self.repo)
+        self.brief, self.research, self.chapter_plan = inputs()
+        self.source_id = "iter901-topic-a"
+        prepare(self.repo, self.source_id, self.brief, self.research, fixture=True)
+        self.source = Run(self.repo, self.source_id)
+        iteration = self.repo / "loop/iterations/901"
+        iteration.mkdir(parents=True)
+        (iteration / "hypothesis.md").write_text("One synthetic book; no live execution.")
+        progress = {"schema_version": 1, "iteration": "901", "execution_status": "ACTIVE",
+                    "preregistration_sha256": file_hash(iteration / "hypothesis.md"),
+                    "allocation": {self.brief["subject"]: 1},
+                    "authorization": {"status": "APPROVED", "reference": "fixture-only",
+                                      "quote": "Synthetic infrastructure testing only."}}
+        progress["authorization"]["scope_sha256"] = ops.scope_digest(progress)
+        (iteration / "progress.json").write_text(json.dumps(progress))
+        self.agent = self.repo / "private-pi"
+        self.agent.mkdir()
+        route = self.source.config["profiles"]["factory"]["routes"][0]
+        (self.agent / "models.json").write_text(json.dumps({"providers": {"opencode-go": {
+            "baseUrl": "https://opencode.ai/zen/go/v1", "api": "openai-responses",
+            "models": [{"id": route["model"]}]}}}))
+        self.extension = self.agent / "subagent.ts"
+        self.extension.write_text(UPSTREAM_STUB)
+        (self.agent / "agents.ts").write_text("// synthetic discovery fixture")
+
+    def plan(self, run_id=None, **kwargs):
+        return ops.launch_book(self.repo, "901", run_id or self.source_id,
+                               self.agent, self.extension, sys.executable, **kwargs)
+
+    def reject_evidence(self):
+        from bc_factory.demo import accepted, metadata
+        review = accepted()
+        review.update(verdict="REVISE", findings=[{
+            "kind": "EVIDENCE", "severity": "material", "quote": self.brief["reader_goal"],
+            "explanation": "Synthetic missing research.", "repair": "Revise the fixture dossier."}])
+        review["checks"]["truth"] = False
+        self.source.submit(self.source.task("evidence-reviewer"), review, metadata(True))
+
+    def successor(self, name="iter901-topic-a-r1", **kwargs):
+        from bc_factory.runs import prepare
+        return prepare(self.repo, name, kwargs.pop("brief", self.brief), self.research,
+                       fixture=True, research_revision_of=self.source_id, **kwargs)
+
+    def test_research_successor_is_one_book_and_resumes_its_session(self):
+        first = self.plan()
+        history = Path(first["session_dir"]) / "saved.jsonl"
+        history.parent.mkdir(parents=True)
+        original = json.dumps({"type": "session", "id": first["session_id"]}) + "\n"
+        history.write_text(original)
+        self.reject_evidence()
+        source_hash = file_hash(self.source.root / "manifest.json")
+        child = self.successor()
+        later = self.plan(child.name)
+        self.assertEqual(later["session_id"], first["session_id"])
+        self.assertEqual(later["cwd"], str(child / "snapshot"))
+        self.assertEqual(later["book_id"], self.source_id)
+        self.assertEqual(history.read_text(), original)
+        self.assertEqual(file_hash(self.source.root / "manifest.json"), source_hash)
+        with self.assertRaisesRegex(FactoryError, "successor"):
+            self.plan()
+        duplicate = self.repo / ".loop-work/pi" / child.name / "other.jsonl"
+        duplicate.parent.mkdir(parents=True)
+        duplicate.write_text(original)
+        with self.assertRaisesRegex(FactoryError, "multiple native sessions"):
+            self.plan(child.name)
+
+    def test_research_handoff_returns_the_exact_successor_without_launching_it(self):
+        self.reject_evidence()
+        plan = self.plan()
+        self.assertIn("--research-revision-of", plan["argv"][-1])
+        with patch.object(ops, "_pty_run", side_effect=lambda _: (self.successor(), 0)[1]) as worker:
+            with patch.dict(os.environ, {"OPENCODE_GO_API_KEY": "offline-only"}):
+                result = self.plan(allow_paid=True)
+        worker.assert_called_once()
+        self.assertEqual(result["status"], "NEEDS_INSPECTION")
+        self.assertEqual(result["next_run"], "iter901-topic-a-r1")
+
+    def test_one_slot_cannot_hide_branching_research_successors(self):
+        self.reject_evidence()
+        self.successor()
+        self.successor("iter901-topic-a-r2")
+        with self.assertRaisesRegex(FactoryError, "branch"):
+            self.plan("iter901-topic-a-r1")
+
+    def test_linked_successor_cannot_change_frozen_brief(self):
+        self.reject_evidence()
+        changed = {**self.brief, "reader_goal": "A different experimental goal"}
+        self.successor(brief=changed)
+        with self.assertRaisesRegex(FactoryError, "scope|brief"):
+            self.plan("iter901-topic-a-r1")
+
+    def test_linked_successor_requires_original_source_evidence(self):
+        from bc_factory.common import atomic_json, digest, read_json
+        self.reject_evidence()
+        self.successor()
+        path = self.source.root / "results/evidence-reviewer-r01.json"
+        record = read_json(path)
+        record["payload"]["created_at"] = "different-source-receipt"
+        record["sha256"] = digest(record["payload"])
+        atomic_json(path, record)
+        with self.assertRaisesRegex(FactoryError, "source|lineage"):
+            self.plan("iter901-topic-a-r1")
+
+    def test_remediation_successor_uses_the_same_book_slot(self):
+        from bc_factory.demo import finish
+        from bc_factory.runs import prepare
+        first = self.plan()
+        real_submit = self.source.submit
+        def final_revise(task, output, meta):
+            if task["role"] == "final-auditor":
+                output = copy.deepcopy(output)
+                output["verdict"] = "REVISE"
+                output["checks"]["truth"] = False
+                output["findings"] = [{"kind": "EVIDENCE", "severity": "material",
+                    "quote": "One unsuccessful attempt is one observation.",
+                    "explanation": "Synthetic fixable audit.", "repair": "Bounded whole-book repair."}]
+            return real_submit(task, output, meta)
+        with patch.object(self.source, "submit", side_effect=final_revise):
+            with self.assertRaises(FactoryError):
+                finish(self.source, self.chapter_plan)
+        child = prepare(self.repo, "iter901-topic-a-rem", self.brief, self.research,
+                        fixture=True, remediation_of=self.source_id)
+        later = self.plan(child.name)
+        self.assertEqual(later["book_id"], self.source_id)
+        self.assertEqual(later["session_id"], first["session_id"])
 
 
 @unittest.skipUnless(os.name == "posix", "PTY/kernel launch locks are POSIX host facilities")

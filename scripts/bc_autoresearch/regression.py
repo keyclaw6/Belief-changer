@@ -165,7 +165,15 @@ def submit(repo: Path, run_id: str, baseline_run_id: str, order: str,
     result = {"schema_version": 2, "task_hash": digest(record), "output": output,
               "metadata": metadata, "created_at": now()}
     with lock(candidate.root / "regression"):
-        seal(judgment_path(candidate, round_no, order), result)
+        path = judgment_path(candidate, round_no, order)
+        if path.exists():
+            stored = unseal(path)
+            require(stored["task_hash"] == result["task_hash"] and
+                    digest(stored["output"]) == digest(output) and
+                    digest(stored["metadata"]) == digest(metadata),
+                    "Recorded judgment differs from supplied task/response/metadata; it is immutable")
+            return stored
+        seal(path, result)
     return result
 
 
@@ -180,14 +188,7 @@ def decide(repo: Path, run_id: str, baseline_run_id: str) -> dict:
     baseline, _ = baseline_for_candidate(repo, candidate, baseline_run_id)
     round_no = _round(candidate)
     dpath = decision_path(candidate, round_no)
-    if dpath.exists():
-        stored = unseal(dpath)
-        require(stored["candidate_book_sha256"] == candidate.accepted_assembly()["assembly"]["text_sha256"],
-                "Stored no-regression decision is stale")
-        require(stored["baseline_run"] == baseline.manifest["run_id"],
-                "Stored no-regression decision belongs to another baseline")
-        _publish_factory_repair(candidate, stored)
-        return stored
+    stored = unseal(dpath) if dpath.exists() else None
     missing, results, judge_profiles = [], {}, set()
     for order in ("AB", "BA"):
         task(repo, run_id, baseline_run_id, order)
@@ -201,6 +202,22 @@ def decide(repo: Path, run_id: str, baseline_run_id: str) -> dict:
         meta = result["metadata"]
         judge_profiles.add((meta["model"], meta["family"], meta["route"], meta["harness"]))
         results[order] = result
+    if stored is not None:
+        # A cached conclusion is not independent evidence. Reconcile its exact
+        # books, audits and both retained judgments before advancing or repairing.
+        require(not missing, "Stored no-regression decision is missing its judgment evidence")
+        bindings = {
+            "run_id": run_id, "baseline_run": baseline.manifest["run_id"], "assembly_round": round_no,
+            "candidate_book_sha256": candidate.accepted_assembly()["assembly"]["text_sha256"],
+            "baseline_book_sha256": baseline.accepted_assembly()["assembly"]["text_sha256"],
+            "candidate_audit_sha256": file_hash(candidate.accepted_audit_file()),
+            "baseline_audit_sha256": file_hash(baseline.accepted_audit_file()),
+            "judgment_sha256": {o: file_hash(judgment_path(candidate, round_no, o)) for o in ("AB", "BA")},
+        }
+        require(all(stored.get(key) == value for key, value in bindings.items()),
+                "Stored no-regression decision has stale evidence")
+        _publish_factory_repair(candidate, stored)
+        return stored
     if missing:
         return {"decision": "INCONCLUSIVE", "run_id": run_id, "assembly_round": round_no,
                 "missing": missing, "reason": "Both blinded label orders are required; no baseline advancement"}

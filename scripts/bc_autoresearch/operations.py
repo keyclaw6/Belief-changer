@@ -62,26 +62,78 @@ def iteration_status(repo: Path, iteration: str) -> dict:
             "handoff": f"loop/iterations/{iteration}/progress.json"}
 
 
-def _allocated_runs(repo: Path, iteration: str, p: dict) -> dict[str, Run]:
+def _allocated_runs(repo: Path, iteration: str, p: dict) -> dict[str, tuple[Run, list[str]]]:
+    """Count books, not their validated research/remediation snapshots.
+
+    Return each active leaf with its existing manifest lineage. No extra registry;
+    unrelated or branching attempts cannot hide inside one authorized book slot.
+    """
     excluded = p.get("excluded_runs", [])
     require(isinstance(excluded, list), "Excluded runs must be explicit records")
     excluded_ids = set()
     for record in excluded:
         excluded_ids.add(identifier(record["run_id"]))
         nonempty(record.get("reason"), "Exclusion reason")
-    runs = {}
+    prefix = f"iter{iteration}-"
+    runs = {root.name: Run(repo, root.name) for root in sorted((repo / "runs").glob(prefix + "*"))
+            if root.is_dir() and root.name not in excluded_ids}
+    known, lineages = dict(runs), {}
+    for run_id in runs:
+        chain, current = [], run_id
+        while True:
+            require(current not in chain, "Cyclic book successor lineage")
+            chain.append(current)
+            run = known[current]
+            links = [(kind, run.manifest.get(kind)) for kind in ("research_revision_of", "remediation_of")
+                     if run.manifest.get(kind) is not None]
+            require(len(links) <= 1, "A book successor has conflicting lineage types")
+            # Prior-iteration research is input history, not a shared book/session.
+            if not links or not identifier(links[0][1]).startswith(prefix):
+                break
+            kind, source_id = links[0]
+            if source_id not in known:
+                known[source_id] = Run(repo, source_id)
+            source = known[source_id]
+            for field in ("subject", "brief_sha256", "parent", "fixture", "caller_context_sha256"):
+                require(run.manifest.get(field) == source.manifest.get(field),
+                        f"Linked successor changed frozen scope: {field}")
+            for profile in ("factory", "external"):
+                child_profile, source_profile = run.config["profiles"].get(profile), source.config["profiles"].get(profile)
+                require(isinstance(child_profile, dict) and isinstance(source_profile, dict) and
+                        child_profile.get("family") == source_profile.get("family") and
+                        [r.get("model") for r in child_profile.get("routes", [])] ==
+                        [r.get("model") for r in source_profile.get("routes", [])],
+                        "Linked successor changed frozen model identity")
+            if kind == "research_revision_of":
+                receipt = source.result("evidence-reviewer")
+                feedback = run.evidence_feedback
+                require(receipt["output"]["verdict"] in ("REVISE", "BLOCKED") and feedback is not None and
+                        feedback["source_result_sha256"] == file_hash(source.root / "results/evidence-reviewer-r01.json") and
+                        digest(feedback["review"]) == digest(receipt["output"]) and
+                        digest(feedback["reviewer_metadata"]) == digest(receipt["metadata"]),
+                        "Research successor source evidence no longer matches its frozen lineage")
+            else:
+                round_no, audit = source.latest("final-auditor")
+                meta = run.manifest.get("remediation_source") or {}
+                require(audit["output"]["verdict"] == "REVISE" and
+                        meta.get("source_manifest_sha256") == digest(source.manifest) and
+                        meta.get("source_audit_sha256") == file_hash(source.root / "results" / f"final-auditor-r{round_no:02d}.json") and
+                        meta.get("source_assembly_sha256") == file_hash(source.assembly_path(round_no)),
+                        "Remediation successor source evidence no longer matches its frozen lineage")
+            current = source_id
+        lineages[run_id] = list(reversed(chain))
+    predecessors = {rid for chain in lineages.values() for rid in chain[:-1]}
+    books = {rid: (runs[rid], chain) for rid, chain in lineages.items() if rid not in predecessors}
+    roots = [chain[0] for _, chain in books.values()]
+    require(len(roots) == len(set(roots)), "Reconcile branching book successors; do not hide extra samples in one slot")
     counts = {subject: 0 for subject in p["allocation"]}
-    for root in sorted((repo / "runs").glob(f"iter{iteration}-*")):
-        if not root.is_dir() or root.name in excluded_ids:
-            continue
-        run = Run(repo, root.name)
+    for run, _ in books.values():
         subject = run.manifest["subject"]
         require(subject in counts, "Prepared run has a subject outside the approved allocation")
         counts[subject] += 1
-        runs[root.name] = run
     require(all(n <= p["allocation"][subject] for subject, n in counts.items()),
             "Prepared runs exceed the approved allocation; reconcile exclusions, do not enlarge scope")
-    return runs
+    return books
 
 
 def _go_routes(config: dict) -> str:
@@ -122,8 +174,9 @@ def isolated_subagent_source(extension: Path, snapshot: Path) -> str:
     anchor = 'const args: string[] = ["--mode", "json", "-p", "--no-session"];'
     discovery = 'from "./agents.ts";'
     close_result = 'resolve(code ?? 0);'
+    child_stdio = 'stdio: ["ignore", "pipe", "pipe"],'
     require(text.count(anchor) == 1 and text.count(discovery) == 1 and
-            text.count(close_result) == 1 and
+            text.count(close_result) == 1 and text.count(child_stdio) == 1 and
             (extension.parent / "agents.ts").is_file(),
             "Repair Pi subagent startup compatibility; its installed entry point changed")
     child_args = ["--mode", "json", "-p", "--no-session", "--approve",
@@ -133,16 +186,25 @@ def isolated_subagent_source(extension: Path, snapshot: Path) -> str:
     # never an empty successful role result.
     return text.replace(anchor, "const args: string[] = " + json.dumps(child_args) + ";").replace(
         discovery, "from " + json.dumps(str(extension.parent / "agents.ts")) + ";").replace(
-        close_result, 'resolve(code ?? 1);')
+        close_result, 'resolve(code ?? 1);').replace(
+        child_stdio,
+        # Node closes unlisted descriptors. Preserve the same kernel ownership in
+        # the role child as fd 3, with its environment pointing to the new number.
+        'stdio: process.env.BC_PI_WORKER_LOCK_FD ? ["ignore", "pipe", "pipe", '
+        'Number(process.env.BC_PI_WORKER_LOCK_FD)] : ["ignore", "pipe", "pipe"],\n'
+        'env: {...process.env, ...(process.env.BC_PI_WORKER_LOCK_FD ? {BC_PI_WORKER_LOCK_FD: "3"} : {})},')
 
 
 def launch_plan(repo: Path, iteration: str, run_id: str, agent_dir: Path,
                 extension: Path, pi: str = "pi") -> dict:
     repo = repo.resolve()
     p = progress_record(repo, iteration, for_launch=True)
-    runs = _allocated_runs(repo, iteration, p)
-    require(run_id in runs, "Prepare this authorized run first, using a fresh research preflight")
-    run = runs[run_id]
+    books = _allocated_runs(repo, iteration, p)
+    successors = [rid for rid, (_, chain) in books.items() if run_id in chain[:-1]]
+    require(not successors, f"Run has an existing successor: {', '.join(successors)}; resume that same book")
+    require(run_id in books, "Prepare this authorized run first, using a fresh research preflight")
+    run, lineage = books[run_id]
+    book_id = lineage[0]
     status = run.status()
     if status["status"] == "COMPLETE_UNRELEASED" and not pending_caller_repair(run):
         return {"status": "ALREADY_COMPLETE", "factory": status}
@@ -170,10 +232,13 @@ def launch_plan(repo: Path, iteration: str, run_id: str, agent_dir: Path,
         require(isinstance(base_url, str) and base_url.rstrip("/") == provider["baseUrl"].rstrip("/") and
                 settings.get("api", provider["api"]) == provider["api"],
                 "Repair the Pi model-specific route; it must match the frozen OpenCode Go API/endpoint")
-    root = confined(repo, f".loop-work/pi/{identifier(run_id)}")
-    session_id = str(uuid.uuid5(uuid.NAMESPACE_URL, str(repo / "runs" / run_id)))
-    sessions = sorted(root.glob("*.jsonl"))
+    roots = [confined(repo, f".loop-work/pi/{identifier(rid)}") for rid in lineage]
+    sessions = sorted(path for directory in roots for path in directory.glob("*.jsonl"))
     require(len(sessions) <= 1, "Reconcile multiple native sessions for this book; never guess the latest")
+    # Reuse the one existing native history, including a pre-upgrade successor's
+    # location. A new logical book never imports another book's conversation.
+    root = sessions[0].parent if sessions else roots[0]
+    session_id = str(uuid.uuid5(uuid.NAMESPACE_URL, str(repo / "runs" / book_id)))
     session_options = ["--session-id", session_id, "--session-dir", str(root)]
     if sessions:
         require(not sessions[0].is_symlink(), "Native session must not be a symlink")
@@ -204,9 +269,15 @@ def launch_plan(repo: Path, iteration: str, run_id: str, agent_dir: Path,
     subagent = isolated_subagent_source(extension, snapshot)
     subagent_path = root / "subagent.ts"
     prompt = (
-        f"Operate only the already-prepared book {run_id}. Its repository is {repo}. "
+        f"Operate snapshot {run_id} of the already-prepared logical book {book_id}. Its repository is {repo}. "
         f"Use this snapshot as the project root, and invoke scripts/factory.py --repo {repo} "
-        f"with --run {run_id}. Inspect status before doing work. Do not prepare another run. "
+        f"with --run {run_id}. Inspect status before doing work. Do not start an unrelated book or sample. "
+        "If independent evidence review requires revised research, dispatch the researcher to close its findings. "
+        f"You may prepare one linked successor with --research-revision-of {run_id} and an iter{iteration}- run ID, "
+        "a fresh subject research preflight, the same brief, parent release, fixture/live status and caller context, "
+        "and unchanged model identities. Preserve the prior snapshot and findings. After preparation, return "
+        "the successor run ID to the host without executing its stages here: the host relaunches this same "
+        "book/session against the successor snapshot so runtime context is not mixed. "
         "If status is complete, reopen only for a valid sealed caller-feedback repair request; "
         "otherwise hand back the verified result. Follow the factory-orchestrator contract "
         "and dispatch project-local roles with agentScope=project. "
@@ -223,7 +294,7 @@ def launch_plan(repo: Path, iteration: str, run_id: str, agent_dir: Path,
             "--no-prompt-templates", "--no-context-files",
             "--append-system-prompt", str(snapshot / "AGENTS.md"),
             "--append-system-prompt", str(wrapper), "-p", prompt]
-    return {"status": "READY_TO_LAUNCH", "run_id": run_id, "cwd": str(snapshot),
+    return {"status": "READY_TO_LAUNCH", "run_id": run_id, "book_id": book_id, "cwd": str(snapshot),
             "argv": argv, "agent_dir": str(agent_dir), "log": str(root / "console.log"),
             "session_id": session_id, "session_dir": str(root),
             "subagent": {"source": str(extension), "source_sha256": file_hash(extension),
@@ -244,7 +315,7 @@ def worker_lock(repo: Path, iteration: str):
         except BlockingIOError as exc:
             raise FactoryError("A Pi launch still owns this iteration; inspect it, do not duplicate it") from exc
         os.set_inheritable(fd, True)
-        yield
+        yield fd
     finally:
         # No unlink/explicit unlock: an orphaned child can still own the same
         # open-file description until it genuinely exits.
@@ -256,6 +327,9 @@ def _pty_run(plan: dict) -> int:
     log = Path(plan["log"])
     log.parent.mkdir(parents=True, exist_ok=True)
     env = {**os.environ, "PI_CODING_AGENT_DIR": plan["agent_dir"]}
+    env.pop("BC_PI_WORKER_LOCK_FD", None)
+    if plan.get("lock_fd") is not None:
+        env["BC_PI_WORKER_LOCK_FD"] = str(plan["lock_fd"])
     fd = os.open(log, os.O_WRONLY | os.O_APPEND | os.O_CREAT, 0o600)
     with os.fdopen(fd, "ab") as output:
         pid, master = pty.fork()
@@ -294,10 +368,11 @@ def launch_book(repo: Path, iteration: str, run_id: str, agent_dir: Path,
                 extension: Path, pi: str = "pi", allow_paid: bool = False) -> dict:
     if not allow_paid:
         return launch_plan(repo, iteration, run_id, agent_dir, extension, pi)
-    with worker_lock(repo, iteration):
+    with worker_lock(repo, iteration) as lock_fd:
         plan = launch_plan(repo, iteration, run_id, agent_dir, extension, pi)
         if plan["status"] == "ALREADY_COMPLETE":
             return plan
+        plan["lock_fd"] = lock_fd
         require(bool(os.environ.get("OPENCODE_GO_API_KEY", "").strip()),
                 "Repair the existing authorized OPENCODE_GO_API_KEY wiring before launch")
         subagent = isolated_subagent_source(Path(plan["subagent"]["source"]), Path(plan["cwd"]))
@@ -306,7 +381,11 @@ def launch_book(repo: Path, iteration: str, run_id: str, agent_dir: Path,
         code = _pty_run(plan)
         run = Run(repo, run_id)
         status = run.status()
-        complete = status["status"] == "COMPLETE_UNRELEASED" and not pending_caller_repair(run)
+        books = _allocated_runs(repo, iteration, progress_record(repo, iteration))
+        next_run = next((rid for rid, (_, chain) in books.items() if run_id in chain), run_id)
+        complete = (next_run == run_id and status["status"] == "COMPLETE_UNRELEASED"
+                    and not pending_caller_repair(run))
         return {"status": "COMPLETE_UNRELEASED" if complete
                 else "NEEDS_INSPECTION", "worker_exit_code": code, "factory": status,
+                "book_id": plan["book_id"], "next_run": next_run,
                 "log": plan["log"], "session_id": plan["session_id"], "session_dir": plan["session_dir"]}

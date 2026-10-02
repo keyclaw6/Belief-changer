@@ -112,6 +112,80 @@ class CrossIterationLearningTests(unittest.TestCase):
         self.assertNotIn("baseline_run", context)
         self.assertTrue(any(x["area"] == "voice" for x in context["editorial_constraints"]))
 
+    def test_judgment_retry_preserves_receipt_and_rejects_conflicts(self):
+        from unittest.mock import patch
+        self.seed_baseline()
+        candidate = self.completed("candidate", baseline="baseline")
+        t = task(self.repo, "candidate", "baseline", "AB")
+        output, meta = self.judgment(t, "B"), metadata(True)
+        with patch("bc_autoresearch.regression.now", return_value="first-receipt"):
+            first = submit(self.repo, "candidate", "baseline", "AB", output, meta)
+        path = candidate.root / "regression/judgments/r01-AB.json"
+        before = path.read_bytes()
+        with patch("bc_autoresearch.regression.now", return_value="later-retry"):
+            self.assertEqual(submit(self.repo, "candidate", "baseline", "AB", output, meta), first)
+        for target, key, value in ((output["preferences"]["voice"], "winner", "tie"),
+                                    (meta, "model", "different-judge")):
+            original = target[key]
+            target[key] = value
+            with self.assertRaises(FactoryError):
+                submit(self.repo, "candidate", "baseline", "AB", output, meta)
+            target[key] = original
+        self.assertEqual(path.read_bytes(), before)
+
+    def test_cached_decision_requires_its_retained_judgments(self):
+        from bc_factory.common import atomic_json, digest, read_json
+        self.seed_baseline()
+        candidate = self.completed("candidate", baseline="baseline")
+        for order, winner in (("AB", "B"), ("BA", "A")):
+            t = task(self.repo, "candidate", "baseline", order)
+            submit(self.repo, "candidate", "baseline", order, self.judgment(t, winner), metadata(True))
+        first = decide(self.repo, "candidate", "baseline")
+        self.assertEqual(first["decision"], "ADVANCE")
+        path = candidate.root / "regression/judgments/r01-AB.json"
+        original = path.read_bytes()
+        decision_file = candidate.root / "regression/decision-r01.json"
+        original_decision = decision_file.read_bytes()
+        for damage in ("missing", "corrupt", "changed-sealed-record"):
+            with self.subTest(damage=damage):
+                path.write_bytes(original)
+                if damage == "missing":
+                    path.unlink()
+                else:
+                    data = read_json(path)
+                    data["payload"]["metadata"]["model"] = "different-judge"
+                    if damage == "changed-sealed-record":
+                        data["sha256"] = digest(data["payload"])
+                    atomic_json(path, data)
+                with self.assertRaises(FactoryError):
+                    advance(self.repo, "candidate", "baseline")
+                self.assertEqual(decision_file.read_bytes(), original_decision)
+                self.assertFalse((candidate.root / "caller-feedback/learning-next.json").exists())
+        path.write_bytes(original)
+        self.assertEqual(decide(self.repo, "candidate", "baseline"), first)
+        advanced = advance(self.repo, "candidate", "baseline")
+        packet = (candidate.root / "caller-feedback/learning-next.json").read_bytes()
+        self.assertEqual(advance(self.repo, "candidate", "baseline"), advanced)
+        self.assertEqual((candidate.root / "caller-feedback/learning-next.json").read_bytes(), packet)
+
+    def test_cached_decision_requires_same_accepted_audit(self):
+        from bc_factory.common import atomic_json, digest, read_json
+        self.seed_baseline()
+        candidate = self.completed("candidate", baseline="baseline")
+        for order, winner in (("AB", "B"), ("BA", "A")):
+            t = task(self.repo, "candidate", "baseline", order)
+            submit(self.repo, "candidate", "baseline", order, self.judgment(t, winner), metadata(True))
+        self.assertEqual(decide(self.repo, "candidate", "baseline")["decision"], "ADVANCE")
+        path = candidate.accepted_audit_file()
+        record = read_json(path)
+        record["payload"]["created_at"] = "changed-audit-receipt"
+        record["sha256"] = digest(record["payload"])
+        atomic_json(path, record)
+        # A valid sealed audit is not the same audit the decision examined.
+        self.assertEqual(candidate.complete()["status"], "COMPLETE_UNRELEASED")
+        with self.assertRaises(FactoryError):
+            advance(self.repo, "candidate", "baseline")
+
     def test_mixed_ab_ba_judges_are_inconclusive(self):
         self.seed_baseline()
         self.completed("candidate", baseline="baseline")

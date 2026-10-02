@@ -854,6 +854,85 @@ class ExperimentTests(Base):
     def test_pair_task_is_blinded(self):
         spec=self.setup_experiment(True);t=pair_task(self.repo,'exp1','s1-0','AB')
         self.assertNotIn('s1-p0',json.dumps(t));self.assertNotIn('s1-c0',json.dumps(t));self.assertNotIn('parent_run',json.dumps(t))
+    def invoke_pair_cli(self, command, output=None, meta=None):
+        import contextlib
+        import io
+        from bc_autoresearch import cli
+        args = ['--repo', str(self.repo), command, '--experiment', 'exp1',
+                '--pair', 's1-0', '--order', 'AB']
+        if command == 'pair-submit':
+            atomic_json(self.repo / 'response.json', output)
+            atomic_json(self.repo / 'metadata.json', meta)
+            args += ['--response', str(self.repo / 'response.json'),
+                     '--metadata', str(self.repo / 'metadata.json')]
+        with contextlib.redirect_stdout(io.StringIO()) as out, contextlib.redirect_stderr(io.StringIO()) as err:
+            code = cli.main(args)
+        return code, out.getvalue(), err.getvalue()
+
+    def test_pair_cli_replay_preserves_receipt_and_rejects_conflicts(self):
+        self.setup_experiment(True)
+        t = pair_task(self.repo, 'exp1', 's1-0', 'AB')
+        output, meta = self.pair_report(t, 'AB'), metadata(True)
+        code, first, err = self.invoke_pair_cli('pair-submit', output, meta)
+        self.assertEqual(code, 0, err)
+        path = self.repo / 'experiments/exp1/judgments/s1-0-AB.json'
+        before = path.read_bytes()
+        with patch('bc_autoresearch.cli.execute') as provider:
+            for command in ('pair-submit', 'pair-execute'):
+                code, out, err = self.invoke_pair_cli(command, output, meta)
+                self.assertEqual(code, 0, err)
+                self.assertEqual(json.loads(out), json.loads(first))
+            provider.assert_not_called()
+        for target, key, value in ((output['preferences']['voice'], 'winner', 'A'),
+                                   (meta, 'model', 'different-judge')):
+            original = target[key]
+            target[key] = value
+            code, _, _ = self.invoke_pair_cli('pair-submit', output, meta)
+            self.assertEqual(code, 2)
+            target[key] = original
+        self.assertEqual(path.read_bytes(), before)
+
+    def test_pair_submit_respects_inflight_execution(self):
+        self.setup_experiment(True)
+        t = pair_task(self.repo, 'exp1', 's1-0', 'AB')
+        with lock(self.repo / 'experiments/exp1/inflight/s1-0-AB'):
+            code, _, err = self.invoke_pair_cli('pair-submit', self.pair_report(t, 'AB'), metadata(True))
+        self.assertEqual(code, 2)
+        self.assertIn('locked', err)
+        self.assertFalse((self.repo / 'experiments/exp1/judgments/s1-0-AB.json').exists())
+
+    def test_pair_execute_reconciles_completion_inside_lock(self):
+        import contextlib
+        self.setup_experiment(True)
+        t = pair_task(self.repo, 'exp1', 's1-0', 'AB')
+        @contextlib.contextmanager
+        def concurrent_completion(root):
+            submit_pair(self.repo, 'exp1', 's1-0', 'AB', self.pair_report(t, 'AB'), metadata(True))
+            with lock(root):
+                yield
+        with patch('bc_autoresearch.cli.lock', concurrent_completion), patch('bc_autoresearch.cli.execute') as provider:
+            code, out, err = self.invoke_pair_cli('pair-execute')
+        self.assertEqual(code, 0, err)
+        self.assertEqual(json.loads(out)['status'], 'RECORDED')
+        provider.assert_not_called()
+
+    def test_pair_replay_rejects_corrupt_or_stale_receipt(self):
+        self.setup_experiment(True)
+        t = pair_task(self.repo, 'exp1', 's1-0', 'AB')
+        submit_pair(self.repo, 'exp1', 's1-0', 'AB', self.pair_report(t, 'AB'), metadata(True))
+        path = self.repo / 'experiments/exp1/judgments/s1-0-AB.json'
+        original = read_json(path)
+        for valid_seal in (False, True):
+            damaged = copy.deepcopy(original)
+            damaged['payload']['task_hash'] = '0' * 64
+            if valid_seal:
+                damaged['sha256'] = digest(damaged['payload'])
+            atomic_json(path, damaged)
+            with patch('bc_autoresearch.cli.execute') as provider:
+                code, _, _ = self.invoke_pair_cli('pair-execute')
+            self.assertEqual(code, 2)
+            provider.assert_not_called()
+
     def test_same_family_pair_judge_rejected(self):
         self.setup_experiment(True);t=pair_task(self.repo,'exp1','s1-0','AB')
         with self.assertRaises(FactoryError): submit_pair(self.repo,'exp1','s1-0','AB',self.pair_report(t,'AB'),metadata())

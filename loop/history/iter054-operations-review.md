@@ -243,3 +243,67 @@ locking, receipt, session and scope behavior. Iteration 054 remains STOPPED / UN
 the completed book still verifies with the unchanged book/factory hashes above. Protected
 experimental state, frozen factory code/prompts, Pi wrappers, configuration and champion
 are unchanged. No live experimental model call, book, watchdog or campaign was started.
+
+
+## Convergent review — recovery across the full operating lifecycle (2026-10-02)
+
+Kristian requested continued review/fix/test cycles until a complete residual review had
+no further concrete material findings, not another stop after the first repaired defect.
+Baseline was clean `main` at `4e370499a8780f8d65c11702dfb7a4d8e4c7054a`, with 273 tests passing.
+
+Four connected failure mechanisms were repaired without changing factory writing behavior:
+
+- **Outer receipt recovery:** pair-submit/pair-execute did not share recovery behavior,
+  and identical regression submissions acquired fresh timestamps. The existing CLI task
+  lock now fences both pair entry points; exact retries recover the original verified
+  receipt without another provider call or rewriting evidence. Regression submission
+  reconciles under its existing lock. Conflicts, stale tasks and damaged seals still fail.
+  `experiments.py` and the registered evaluator instrument were deliberately unchanged.
+- **Cached decision evidence:** a stored ADVANCE could advance a baseline even after a
+  judgment disappeared or its audit changed. Re-entry now checks the exact retained
+  judgments, task bindings, both books and both audits before returning the stored
+  conclusion or publishing a repair handoff. No scoring or scientific decision rule changed.
+- **Same-book successors:** the launch prompt forbade the research-revision prepare the
+  factory requires, while allocation counted every snapshot as another book. Existing
+  manifest research/remediation links now identify one validated, unbranched logical book.
+  Source findings remain retained, scope/model identities are checked, and a successor
+  resumes the one saved session against its own snapshot. Pi may prepare the linked
+  research successor and return; the host receives exact `next_run` and owns re-entry.
+  Branching attempts, changed scope or ambiguous sessions require reconciliation rather
+  than being hidden as one sample. Prior-iteration research does not share a book session.
+- **Actual child ownership:** the upstream subagent spawn closed the inherited lock fd.
+  The existing per-book compatibility copy now passes that same kernel lock to the actual
+  role child. There is no new supervisor, lease store or daemon. A native startup-only
+  test reproduced replacement lock acquisition while the child was alive before the fix;
+  afterward it verifies the same lock inode survives all parent descriptor closures and
+  becomes reusable only after the child exits.
+
+Verification used existing temporary synthetic fixtures and no experimental inference.
+The outer red run reproduced 7 failures plus 1 error; repaired focused outer tests passed
+25 tests. Real frozen-run lineage fixtures reproduced invalid extra-book counting and
+handoff contradictions, then the full operations module passed 37 tests. The four installed
+Pi startup checks plus operations passed 41 tests. The final installed-runtime full gate
+passed **287 tests**, exit 0. The ordinary portable gate also passed: 287 discovered,
+283 passed and only the four explicitly opt-in installed-Pi checks skipped. Repository
+validation and `git diff --check` passed. Fourteen focused tests were added in total.
+
+An independent read-only Codex code reviewer examined the original frozen baseline and
+identified the successor/allocation and actual-child ownership defects. After repairs,
+the reviewer checked the exact baseline-plus-diff SHA-256
+`ff131bc8d7f67e0439faa7b7259a529535cd4ee121b0583c4e362a544e42ae56`,
+reconstructed all eight changed source/test/skill files, and returned **CLEAN ENOUGH: yes**
+with no additional concrete material findings. That residual review covered lineage,
+exclusions/branching, session/snapshot handoff, descriptor lifetime, repair authority,
+receipt replay and cached evidence bindings. It was source/test inspection, not a second
+independent execution of the test suite. Parent review also revisited the connected
+research-access and entrypoint contracts. The code reviewer was not a Pi factory role or
+an experimental evaluator; no factory provider configuration was altered to run it.
+
+Read-only inspection still reports 054 STOPPED / UNCONFIRMED / AWAIT_OWNER_RESUME. The
+retained `iter054-sugar-a-r1` verifies COMPLETE_UNRELEASED with the unchanged book/factory
+hashes above, and the real read-only inventory identifies that one nonexcluded book.
+AGENTS, factory code/prompts/configuration, Pi wrappers, frozen iteration state, evaluator
+instrument and champion remain unchanged. No live book, preflight, watchdog, W1–W4 action
+or campaign was started. Native tests isolate networking, use dummy authentication and
+exit before inference. The clean residual review is a bounded operational-code conclusion,
+not proof of live browser/provider availability, an end-to-end campaign, or reader efficacy.

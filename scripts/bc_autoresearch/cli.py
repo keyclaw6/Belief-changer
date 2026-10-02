@@ -95,27 +95,37 @@ def main(argv: list[str] | None = None) -> int:
         elif cmd == "pair-task":
             result = experiments.pair_task(repo, args.experiment, args.pair, args.order)
         elif cmd in ("pair-submit", "pair-execute"):
-            if cmd == "pair-execute":
+            exp_root, reg = experiments.registration(repo, args.experiment)
+            pair = next((p for p in reg["spec"]["pairs"] if p["id"] == args.pair), None)
+            require(pair is not None, "Unknown pair")
+            unit = f"{pair['id']}-{args.order}"
+            if cmd == "pair-submit":
+                output, meta = document(args.response), document(args.metadata)
+            # Transport recovery does not alter the registered evaluator instrument.
+            # Both entry points fence the same work and recheck evidence before replay.
+            with lock(exp_root / "inflight" / unit):
                 task = experiments.pair_task(repo, args.experiment, args.pair, args.order)
-                _, reg = experiments.registration(repo, args.experiment)
-                first = reg["spec"]["pairs"][0]["parent_run"]
-                exp_root, _ = experiments.registration(repo, args.experiment)
-                unit = f"{args.pair}-{args.order}"
-                with lock(exp_root / "inflight" / unit):
-                    require(not (exp_root / "judgments" / (unit + ".json")).exists(), "Judgment already recorded")
+                path = exp_root / "judgments" / (unit + ".json")
+                if path.exists():
+                    record = unseal(path)
+                    task_record = unseal(exp_root / "tasks" / (unit + ".json"))
+                    require(record["task_hash"] == digest(task_record), "Judgment has stale task inputs")
+                    if cmd == "pair-submit":
+                        require(digest(record["output"]) == digest(output) and
+                                digest(record["metadata"]) == digest(meta),
+                                "Recorded judgment differs from supplied response/metadata; it is immutable")
+                elif cmd == "pair-execute":
                     try:
-                        output, meta = execute(task, Run(repo, first).config, args.allow_paid, profile_name="external")
+                        output, meta = execute(task, Run(repo, pair["parent_run"]).config,
+                                               args.allow_paid, profile_name="external")
                         record = experiments.submit_pair(repo, args.experiment, args.pair, args.order, output, meta)
                     except FactoryError as exc:
                         failure = {"task_digest": digest(task), "role": "pairwise", "error": str(exc),
                                    "created_at": now(), "usage": None}
                         seal(exp_root / "failures" / (digest(failure) + ".json"), failure)
                         raise
-            else:
-                record = experiments.submit_pair(
-                    repo, args.experiment, args.pair, args.order,
-                    document(args.response), document(args.metadata),
-                )
+                else:
+                    record = experiments.submit_pair(repo, args.experiment, args.pair, args.order, output, meta)
             result = {"status": "RECORDED", "task_hash": record["task_hash"]}
         elif cmd == "decide":
             result = experiments.decide(
