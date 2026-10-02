@@ -11,18 +11,12 @@ import unittest
 from pathlib import Path
 from unittest.mock import Mock, patch
 
-UPSTREAM_STUB = '\n'.join([
-    'import { discoverAgents } from "./agents.ts";',
-    'const args: string[] = ["--mode", "json", "-p", "--no-session"];',
-    'resolve(code ?? 0);',
-    'stdio: ["ignore", "pipe", "pipe"],',
-])
 
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "scripts"))
 from bc_autoresearch import operations as ops
 from bc_autoresearch.cli import parser
-from bc_factory.common import FactoryError, file_hash
+from bc_factory.common import FactoryError, digest, file_hash
 
 
 class OperationsTests(unittest.TestCase):
@@ -51,8 +45,6 @@ class OperationsTests(unittest.TestCase):
         }}}
         self.save_provider()
         self.extension = self.repo / "subagent.ts"
-        self.extension.write_text(UPSTREAM_STUB)
-        (self.extension.parent / "agents.ts").write_text("// Offline discovery fixture")
         self.runs = {}
         self.addCleanup(patch.stopall)
         patch.object(ops, "Run", side_effect=lambda repo, run_id: self.runs[run_id]).start()
@@ -65,6 +57,16 @@ class OperationsTests(unittest.TestCase):
     def save_provider(self):
         (self.agent / "models.json").write_text(json.dumps(self.provider))
 
+    def commissioning(self, status="ACTIVE", iterations=None, completed=None):
+        data = {"id": "offline-commissioning", "execution_status": status,
+                "iterations": iterations or ["901", "902"],
+                "completed": completed or [], "plan": {"subject": "quit-sugar", "books_per_cycle": 1},
+                "authorization": {"reference": "offline-test-fixture",
+                                  "quote": "Synthetic commissioning boundary, no model execution."}}
+        data["authorization"]["scope_sha256"] = digest({"iterations": data["iterations"], "plan": data["plan"]})
+        (self.repo / "loop/commissioning.json").write_text(json.dumps(data))
+        return data
+
     def add_run(self, name, subject="quit-sugar", complete=False):
         root = self.repo / "runs" / name
         (root / "snapshot/.pi/agents").mkdir(parents=True)
@@ -73,6 +75,7 @@ class OperationsTests(unittest.TestCase):
         run = Mock(root=root, config=copy.deepcopy(self.config), manifest={"subject": subject})
         run.status.return_value = {"status": "COMPLETE_UNRELEASED" if complete else "INCOMPLETE", "run_id": name}
         run.accepted_audit.return_value = (1, {})
+        run.complete.return_value = run.status.return_value
         self.runs[name] = run
         return run
 
@@ -191,7 +194,6 @@ class OperationsTests(unittest.TestCase):
 
     def test_completed_book_does_not_require_live_runtime_to_verify(self):
         self.a.status.return_value["status"] = "COMPLETE_UNRELEASED"
-        self.extension.unlink()
         (self.agent / "models.json").unlink()
         self.assertEqual(self.plan()["status"], "ALREADY_COMPLETE")
         self.worker.assert_not_called()
@@ -232,6 +234,47 @@ class OperationsTests(unittest.TestCase):
         self.save()
         self.assertEqual(ops.iteration_status(self.repo, "901")["next_action"], "AWAIT_OWNER_RESUME")
         with self.assertRaisesRegex(FactoryError, "Owner stop"):
+            self.plan(allow_paid=True)
+        self.worker.assert_not_called()
+
+    def test_campaign_stop_and_completion_refuse_direct_book_launch(self):
+        original = (self.iteration / "progress.json").read_bytes()
+        for state in ("STOPPED", "COMPLETE"):
+            with self.subTest(state=state):
+                self.commissioning(status=state)
+                with self.assertRaisesRegex(FactoryError, "Commissioning stop/completion"):
+                    self.plan(allow_paid=True)
+                self.assertEqual((self.iteration / "progress.json").read_bytes(), original)
+        self.worker.assert_not_called()
+
+    def test_direct_launch_cannot_reopen_checkpointed_or_future_cycle(self):
+        self.commissioning(completed=[{"iteration": "901"}])
+        with self.assertRaisesRegex(FactoryError, "next authorized commissioning"):
+            self.plan(allow_paid=True)
+        self.commissioning(iterations=["900", "901"])
+        with self.assertRaisesRegex(FactoryError, "next authorized commissioning"):
+            self.plan(allow_paid=True)
+        self.worker.assert_not_called()
+
+    def test_active_current_cycle_can_launch_but_other_campaign_does_not_govern_it(self):
+        self.commissioning()
+        self.assertEqual(self.plan()["status"], "READY_TO_LAUNCH")
+        self.commissioning(status="STOPPED", iterations=["902", "903"])
+        self.assertEqual(self.plan()["status"], "READY_TO_LAUNCH")
+        self.worker.assert_not_called()
+
+    def test_direct_launch_validates_the_commissioning_scope(self):
+        data = self.commissioning()
+        data["plan"]["books_per_cycle"] = 3
+        (self.repo / "loop/commissioning.json").write_text(json.dumps(data))
+        with self.assertRaisesRegex(FactoryError, "Campaign scope changed"):
+            self.plan(allow_paid=True)
+        self.worker.assert_not_called()
+
+    def test_next_cycle_requires_the_prior_checkpoint_evidence(self):
+        self.commissioning(iterations=["900", "901"],
+                           completed=[{"iteration": "900", "run_id": "missing-prior-book"}])
+        with self.assertRaisesRegex(FactoryError, "Missing or symlinked file"):
             self.plan(allow_paid=True)
         self.worker.assert_not_called()
 
@@ -304,11 +347,9 @@ class OperationsTests(unittest.TestCase):
                 with self.assertRaises(FactoryError):
                     self.plan()
 
-    def test_missing_extension_and_broken_pi_mapping_are_repairable(self):
-        self.extension.unlink()
-        with self.assertRaisesRegex(FactoryError, "Repair/install"):
-            self.plan()
-        self.extension.write_text(UPSTREAM_STUB)
+    def test_native_launch_needs_no_extension_and_broken_mapping_is_repairable(self):
+        self.assertFalse(self.extension.exists())
+        self.assertNotIn("--extension", self.plan()["argv"])
         self.provider["providers"]["opencode-go"]["baseUrl"] = "https://example.invalid"
         self.save_provider()
         with self.assertRaisesRegex(FactoryError, "Repair the Pi"):
@@ -345,24 +386,21 @@ class OperationsTests(unittest.TestCase):
                     self.save_provider()
         self.worker.assert_not_called()
 
-    def test_child_startup_isolated_without_copying_orchestrator_prompt(self):
+    def test_stage_dispatch_has_no_generated_child_extension(self):
         plan = self.plan()
-        text = ops.isolated_subagent_source(self.extension, Path(plan["cwd"]))
-        for flag in ("--no-context-files", "--no-extensions", "--no-skills", "--no-prompt-templates", "--approve"):
-            self.assertIn(flag, text)
-        self.assertIn(str(self.a.root / "snapshot/AGENTS.md"), text)
-        self.assertNotIn("factory-orchestrator.md", text)
-        self.assertIn(str(self.extension.parent / "agents.ts"), text)
-        self.assertEqual(self.extension.read_text(), UPSTREAM_STUB)
-        self.assertFalse(Path(plan["subagent"]["path"]).exists())
+        self.assertNotIn("--extension", plan["argv"])
+        self.assertNotIn("subagent", plan)
+        self.assertIn("frozen task/execute", plan["argv"][-1])
         with patch.dict(os.environ, {"OPENCODE_GO_API_KEY": "offline-test-only"}):
             self.plan(allow_paid=True)
-        self.assertEqual(Path(plan["subagent"]["path"]).read_text(), text)
+        self.assertFalse((Path(plan["session_dir"]) / "subagent.ts").exists())
 
-    def test_changed_upstream_subagent_needs_compatibility_repair(self):
-        self.extension.write_text("// incompatible upstream revision")
-        with self.assertRaisesRegex(FactoryError, "startup compatibility"):
-            self.plan()
+    def test_existing_execution_lock_refuses_a_second_controller(self):
+        lock = self.a.root / "inflight/writer-ch01-r01/.factory.lock"
+        lock.parent.mkdir(parents=True)
+        lock.write_text(json.dumps({"pid": os.getpid()}))
+        with self.assertRaisesRegex(FactoryError, "role execution lock"):
+            self.plan(allow_paid=True)
         self.worker.assert_not_called()
 
     def test_cli_defaults_to_inspection(self):
@@ -400,8 +438,6 @@ class PreparedLineageTests(unittest.TestCase):
             "baseUrl": "https://opencode.ai/zen/go/v1", "api": "openai-responses",
             "models": [{"id": route["model"]}]}}}))
         self.extension = self.agent / "subagent.ts"
-        self.extension.write_text(UPSTREAM_STUB)
-        (self.agent / "agents.ts").write_text("// synthetic discovery fixture")
 
     def plan(self, run_id=None, **kwargs):
         return ops.launch_book(self.repo, "901", run_id or self.source_id,
@@ -436,24 +472,55 @@ class PreparedLineageTests(unittest.TestCase):
         self.assertEqual(later["book_id"], self.source_id)
         self.assertEqual(history.read_text(), original)
         self.assertEqual(file_hash(self.source.root / "manifest.json"), source_hash)
-        with self.assertRaisesRegex(FactoryError, "successor"):
-            self.plan()
+        resumed = self.plan()
+        self.assertEqual(resumed["run_id"], child.name)
+        self.assertEqual(resumed["session_id"], first["session_id"])
         duplicate = self.repo / ".loop-work/pi" / child.name / "other.jsonl"
         duplicate.parent.mkdir(parents=True)
         duplicate.write_text(original)
         with self.assertRaisesRegex(FactoryError, "multiple native sessions"):
             self.plan(child.name)
 
-    def test_research_handoff_returns_the_exact_successor_without_launching_it(self):
+    def test_research_handoff_automatically_resumes_the_exact_successor(self):
+        from bc_factory.demo import finish
+        from bc_factory.runs import Run
         self.reject_evidence()
-        plan = self.plan()
-        self.assertIn("--research-revision-of", plan["argv"][-1])
-        with patch.object(ops, "_pty_run", side_effect=lambda _: (self.successor(), 0)[1]) as worker:
+        plans = []
+        def worker(plan):
+            plans.append(plan)
+            if len(plans) == 1:
+                self.successor()
+            else:
+                finish(Run(self.repo, "iter901-topic-a-r1"), self.chapter_plan)
+            return 0
+        with patch.object(ops, "_pty_run", side_effect=worker):
             with patch.dict(os.environ, {"OPENCODE_GO_API_KEY": "offline-only"}):
                 result = self.plan(allow_paid=True)
-        worker.assert_called_once()
-        self.assertEqual(result["status"], "NEEDS_INSPECTION")
+        self.assertEqual(len(plans), 2)
+        self.assertEqual(plans[0]["session_id"], plans[1]["session_id"])
+        self.assertEqual(result["status"], "COMPLETE_UNRELEASED")
         self.assertEqual(result["next_run"], "iter901-topic-a-r1")
+
+    def test_campaign_stop_at_research_boundary_prevents_automatic_handoff(self):
+        self.reject_evidence()
+        boundary = {"id": "offline-commissioning", "execution_status": "ACTIVE",
+                    "iterations": ["901", "902"], "completed": [],
+                    "plan": {"subject": self.brief["subject"], "books_per_cycle": 1},
+                    "authorization": {"reference": "offline-test-only", "quote": "Synthetic boundary fault."}}
+        boundary["authorization"]["scope_sha256"] = digest({"iterations": boundary["iterations"], "plan": boundary["plan"]})
+        path = self.repo / "loop/commissioning.json"
+        path.write_text(json.dumps(boundary))
+        original = (self.repo / "loop/iterations/901/progress.json").read_bytes()
+        def worker(plan):
+            self.successor()
+            boundary["execution_status"] = "STOPPED"
+            path.write_text(json.dumps(boundary))
+            return 0
+        with patch.object(ops, "_pty_run", side_effect=worker) as launch, patch.dict(os.environ, {"OPENCODE_GO_API_KEY": "offline-only"}):
+            with self.assertRaisesRegex(FactoryError, "Commissioning stop/completion"):
+                self.plan(allow_paid=True)
+        launch.assert_called_once()
+        self.assertEqual((self.repo / "loop/iterations/901/progress.json").read_bytes(), original)
 
     def test_one_slot_cannot_hide_branching_research_successors(self):
         self.reject_evidence()
@@ -503,6 +570,131 @@ class PreparedLineageTests(unittest.TestCase):
         later = self.plan(child.name)
         self.assertEqual(later["book_id"], self.source_id)
         self.assertEqual(later["session_id"], first["session_id"])
+
+    def next_brief(self):
+        path = self.repo / "next-brief.json"
+        path.write_text(json.dumps(self.brief))
+        progress_path = self.repo / "loop/iterations/901/progress.json"
+        progress = json.loads(progress_path.read_text())
+        progress["allocation"][self.brief["subject"]] = 2
+        progress["authorization"]["scope_sha256"] = ops.scope_digest(progress)
+        progress_path.write_text(json.dumps(progress))
+        return path
+
+    def test_bootstrap_inspection_is_read_only_and_requires_frozen_science(self):
+        with self.assertRaisesRegex(FactoryError, "Supply --brief"):
+            self.plan("iter901-topic-b")
+        plan = self.plan("iter901-topic-b", brief=self.next_brief())
+        self.assertIn("/preparation", plan["cwd"])
+        self.assertFalse(Path(plan["cwd"]).exists())
+        self.assertIn("prompts/research-agent.md", plan["argv"][-1])
+        self.assertNotIn("--extension", plan["argv"])
+
+    def test_bootstrap_freezes_inputs_and_resumes_same_session_through_completion(self):
+        from bc_factory.demo import finish
+        from bc_factory.runs import Run
+        from bc_autoresearch.learning import context_path, seed
+        from bc_factory.common import unseal
+        plans = []
+        finish(self.source, self.chapter_plan)
+        seed(self.repo, self.source_id, {
+            "schema_version": 2, "subject": self.brief["subject"], "preserve": [], "improve": [],
+            "recurring_repairs": [], "research_gaps": ["Retain the bounded valid countercase"],
+            "note": "Synthetic baseline learning for the actual sealed-context handoff.",
+        })
+        guidance = context_path(self.source)
+        context_payload = unseal(guidance)
+        self.assertEqual(set(json.loads(guidance.read_text())), {"payload", "sha256"})
+        def worker(plan):
+            plans.append(plan)
+            if len(plans) == 1:
+                preparation = Path(plan["cwd"])
+                self.assertTrue((preparation / "preparation.json").is_file())
+                saved = Path(plan["session_dir"]) / "saved.jsonl"
+                saved.write_text(json.dumps({"type": "session", "id": plan["session_id"],
+                                             "cwd": str(preparation)}) + "\n")
+                context = json.loads((preparation / "inputs/caller-context.json").read_text())
+                self.assertEqual(context, context_payload)
+                self.assertNotIn("payload", context)
+                resumed = self.plan("iter901-topic-b", caller_context=guidance)
+                self.assertEqual(resumed["preparation"]["caller_context"], context_payload)
+                self.assertEqual(resumed["session_id"], plan["session_id"])
+                dossier = preparation / "inputs/research.json"
+                dossier.write_text(json.dumps(self.research))
+                command = [sys.executable, str(preparation / "scripts/factory.py"),
+                           "--repo", str(self.repo), "prepare", "--run", "iter901-topic-b",
+                           "--brief", str(preparation / "inputs/brief.json"), "--research", str(dossier),
+                           "--fixture", "--caller-context", str(preparation / "inputs/caller-context.json")]
+                receipt = subprocess.run(command, capture_output=True, text=True, timeout=10)
+                self.assertEqual(receipt.returncode, 0, receipt.stderr)
+            else:
+                self.assertIn("--session", plan["argv"])
+                finish(Run(self.repo, "iter901-topic-b"), self.chapter_plan)
+            return 0
+        with patch.object(ops, "_pty_run", side_effect=worker), patch.dict(os.environ, {"OPENCODE_GO_API_KEY": "offline-only"}):
+            result = self.plan("iter901-topic-b", brief=self.next_brief(), caller_context=guidance, allow_paid=True)
+        self.assertEqual(len(plans), 2)
+        self.assertEqual(plans[0]["session_id"], plans[1]["session_id"])
+        self.assertEqual(plans[1]["cwd"], str(self.repo / "runs/iter901-topic-b/snapshot"))
+        self.assertEqual(result["status"], "COMPLETE_UNRELEASED")
+        candidate = Run(self.repo, "iter901-topic-b")
+        self.assertEqual(candidate.caller_context, context_payload)
+        frozen = Path(plans[0]["cwd"]) / "inputs/caller-context.json"
+        self.assertEqual(candidate.manifest["caller_context_sha256"], file_hash(frozen))
+        # The canonical sealed artifact is accepted identically when resuming
+        # preparation and when checking a completed prepared book.
+        self.assertEqual(self.plan("iter901-topic-b", caller_context=guidance)["status"], "ALREADY_COMPLETE")
+
+    def test_sealed_caller_context_rejects_a_bad_checksum_before_inference(self):
+        from bc_factory.common import seal
+        guidance = self.repo / "sealed-context.json"
+        seal(guidance, {"research_priorities": ["A valid control"]})
+        record = json.loads(guidance.read_text())
+        record["payload"]["research_priorities"] = ["Unsealed tampering"]
+        guidance.write_text(json.dumps(record))
+        with patch.object(ops, "_pty_run") as worker:
+            with self.assertRaisesRegex(FactoryError, "Checksum mismatch"):
+                self.plan("iter901-topic-b", brief=self.next_brief(), caller_context=guidance)
+        worker.assert_not_called()
+
+    def test_preparation_cannot_be_rebound_to_changed_science_or_extra_sample(self):
+        brief = self.next_brief()
+        with patch.object(ops, "_pty_run", return_value=0), patch.dict(os.environ, {"OPENCODE_GO_API_KEY": "offline-only"}):
+            result = self.plan("iter901-topic-b", brief=brief, allow_paid=True)
+        self.assertEqual(result["factory"]["status"], "UNPREPARED")
+        changed = {**self.brief, "reader_goal": "An unregistered new goal"}
+        brief.write_text(json.dumps(changed))
+        with self.assertRaisesRegex(FactoryError, "Requested brief differs"):
+            self.plan("iter901-topic-b", brief=brief)
+        brief.write_text(json.dumps(self.brief))
+        with self.assertRaisesRegex(FactoryError, "exceed"):
+            self.plan("iter901-topic-c", brief=brief)
+
+    def test_code_change_during_research_blocks_the_automatic_stage_handoff(self):
+        from bc_factory.runs import prepare
+        def worker(plan):
+            prompt = self.repo / "prompts/research-agent.md"
+            prompt.write_text(prompt.read_text() + "\nSynthetic concurrent code change.\n")
+            prepare(self.repo, "iter901-topic-b", self.brief, self.research, fixture=True)
+            return 0
+        with patch.object(ops, "_pty_run", side_effect=worker) as launch, patch.dict(os.environ, {"OPENCODE_GO_API_KEY": "offline-only"}):
+            with self.assertRaisesRegex(FactoryError, "source changed during research"):
+                self.plan("iter901-topic-b", brief=self.next_brief(), allow_paid=True)
+        launch.assert_called_once()
+
+    def test_owner_stop_at_preparation_boundary_prevents_stage_execution(self):
+        from bc_factory.runs import prepare
+        def worker(plan):
+            prepare(self.repo, "iter901-topic-b", self.brief, self.research, fixture=True)
+            path = self.repo / "loop/iterations/901/progress.json"
+            progress = json.loads(path.read_text())
+            progress["execution_status"] = "STOPPED"
+            path.write_text(json.dumps(progress))
+            return 0
+        with patch.object(ops, "_pty_run", side_effect=worker) as launch, patch.dict(os.environ, {"OPENCODE_GO_API_KEY": "offline-only"}):
+            result = self.plan("iter901-topic-b", brief=self.next_brief(), allow_paid=True)
+        self.assertEqual(result["status"], "STOPPED")
+        launch.assert_called_once()
 
 
 @unittest.skipUnless(os.name == "posix", "PTY/kernel launch locks are POSIX host facilities")

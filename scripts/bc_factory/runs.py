@@ -503,6 +503,9 @@ class Run:
         validate_metadata(metadata)
         if not self.manifest["fixture"]:
             require(metadata["harness"] != "fixture" and metadata["family"] != "fixture", "Fixture output cannot enter a live run")
+            from .adapters import validate_identity
+            validate_identity(metadata, self.config,
+                              "external" if task["role"] in EXTERNAL_ROLES else "factory")
         if task["role"] in EXTERNAL_ROLES:
             require(metadata["family"] not in self.generating_families(), "Independent review cannot silently fall back to the generating model family")
         if task["role"] in ("planner", "writer", "book-editor"):

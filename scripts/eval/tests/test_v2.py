@@ -1,6 +1,7 @@
 """Offline regression tests. No API credentials, providers or network are used."""
 from __future__ import annotations
 import copy
+import io
 import json
 import math
 import os
@@ -751,6 +752,33 @@ class EditingAndProviderTests(Base):
         expected_session = f"belief-changer-{digest(task)[:32]}"
         self.assertEqual([h['x-opencode-session'] for h in seen], [expected_session, expected_session])
         self.assertEqual([h['user-agent'] for h in seen], ['belief-changer-factory/2'] * 2)
+    def test_provider_must_report_the_actual_requested_model(self):
+        task = {'role': 'writer', 'contract': 'Return JSON.', 'inputs': {}}
+        config = read_json(self.repo/'factory/config.json')
+        for reported in (None, '', 'different-model'):
+            body = {'status': 'completed', 'output_text': '{"ok":true}'}
+            if reported is not None:
+                body['model'] = reported
+            with self.subTest(reported=reported):
+                with patch.dict(os.environ, {'OPENCODE_GO_API_KEY': 'synthetic-test-key'}):
+                    with patch('urllib.request.urlopen', return_value=io.BytesIO(json.dumps(body).encode())) as provider:
+                        with self.assertRaises(FactoryError): execute(task, config, True)
+                        provider.assert_called_once()
+    def test_live_submission_binds_model_route_and_family_to_frozen_profile(self):
+        self.research['sources'][0]['verification'] = 'retrieved'
+        run = self.newrun(fixture=False)
+        task = run.task('evidence-reviewer')
+        profile = run.config['profiles']['external']
+        route = profile['routes'][0]
+        actual = {'model': route['model'], 'family': profile['family'], 'route': route['name'],
+                  'harness': 'http-v2', 'usage': None, 'latency_s': 0}
+        for field in ('model', 'route', 'family'):
+            changed = dict(actual)
+            changed[field] = 'unexpected-identity'
+            with self.subTest(field=field), self.assertRaisesRegex(FactoryError, 'frozen profile'):
+                run.submit(task, accepted(), changed)
+        result = run.submit(task, accepted(), actual)
+        self.assertEqual(result['metadata'], actual)
     def test_external_profile_missing_fails_before_spend(self):
         with patch('urllib.request.urlopen') as call:
             with self.assertRaises(FactoryError): execute({'role':'final-auditor'},read_json(self.repo/'factory/config.json'),True)

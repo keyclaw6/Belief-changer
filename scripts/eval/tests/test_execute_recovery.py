@@ -4,6 +4,7 @@ from __future__ import annotations
 import contextlib
 import io
 import json
+import os
 from pathlib import Path
 import sys
 import tempfile
@@ -13,7 +14,8 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "scripts"))
 from bc_factory import cli
-from bc_factory.common import atomic_json, lock
+from bc_factory.adapters import execute
+from bc_factory.common import FactoryError, atomic_json, lock, unseal
 from bc_factory.demo import accepted, inputs, metadata, scaffold
 from bc_factory.runs import Run, prepare
 
@@ -32,10 +34,10 @@ class ExecuteRecoveryTests(unittest.TestCase):
         atomic_json(self.path, self.task)
         self.output, self.meta = accepted(), metadata(external=True)
 
-    def invoke(self):
+    def invoke(self, new_attempt=False):
         with contextlib.redirect_stdout(io.StringIO()) as out, contextlib.redirect_stderr(io.StringIO()) as err:
             code = cli.main(["--repo", str(self.repo), "execute", "--run", "recovery-fixture",
-                             "--task", str(self.path), "--allow-paid"])
+                             "--task", str(self.path), "--allow-paid", *(["--new-attempt"] if new_attempt else [])])
         return code, out.getvalue(), err.getvalue()
 
     def invoke_submit(self):
@@ -163,6 +165,133 @@ class ExecuteRecoveryTests(unittest.TestCase):
         self.assertEqual(code, 0, err)
         provider.assert_called_once()
         self.assertEqual(self.run.result("evidence-reviewer")["output"], self.output)
+
+    def response(self, output=None):
+        return io.BytesIO(json.dumps({"model": "deepseek-v4.1-flash", "choices": [{
+            "finish_reason": "stop", "message": {"content": json.dumps(output or self.output)}}],
+            "usage": {"total_tokens": 3}}).encode())
+
+    def test_received_response_survives_local_submission_failure(self):
+        with patch.dict(os.environ, {"OPENCODE_GO_API_KEY": "synthetic-test-key"}):
+            with patch("urllib.request.urlopen", return_value=self.response()) as provider:
+                with patch.object(Run, "submit", side_effect=OSError("Simulated local save failure")):
+                    code, _, _ = self.invoke()
+                self.assertEqual(code, 2)
+                provider.assert_called_once()
+            with patch("urllib.request.urlopen") as provider:
+                code, _, err = self.invoke()
+                provider.assert_not_called()
+        self.assertEqual(code, 0, err)
+        result = self.run.result("evidence-reviewer")
+        self.assertEqual(result["output"], self.output)
+        self.assertEqual(result["metadata"]["model"], "deepseek-v4.1-flash")
+        self.assertEqual(result["metadata"]["usage"], {"total_tokens": 3})
+
+    def test_missing_or_corrupt_saved_response_cannot_be_replayed(self):
+        for damage in ("missing", "corrupt"):
+            with self.subTest(damage=damage), tempfile.TemporaryDirectory() as directory:
+                receipts = Path(directory)
+                with patch.dict(os.environ, {"OPENCODE_GO_API_KEY": "synthetic-test-key"}):
+                    with patch("urllib.request.urlopen", return_value=self.response()):
+                        execute(self.task, self.run.config, True, receipt_dir=receipts)
+                    response = next(receipts.glob("*/response-*.json"))
+                    if damage == "missing":
+                        response.unlink()
+                    else:
+                        record = json.loads(response.read_text())
+                        record["payload"]["response"]["body"] = '{"invented": true}'
+                        atomic_json(response, record)
+                    with patch("urllib.request.urlopen") as provider:
+                        with self.assertRaises(FactoryError):
+                            execute(self.task, self.run.config, True, receipt_dir=receipts)
+                        provider.assert_not_called()
+
+    def test_saved_response_without_request_cannot_authorize_replay(self):
+        receipts = self.run.root / "requests"
+        with patch.dict(os.environ, {"OPENCODE_GO_API_KEY": "synthetic-test-key"}):
+            with patch("urllib.request.urlopen", return_value=self.response()):
+                execute(self.task, self.run.config, True, receipt_dir=receipts)
+            next(receipts.glob("*/request-*.json")).unlink()
+            with patch("urllib.request.urlopen") as provider:
+                with self.assertRaisesRegex(FactoryError, "missing its request"):
+                    execute(self.task, self.run.config, True, receipt_dir=receipts)
+                provider.assert_not_called()
+
+    def test_transport_uncertainty_is_recorded_and_never_blindly_retried(self):
+        receipts = self.run.root / "requests"
+        with patch.dict(os.environ, {"OPENCODE_GO_API_KEY": "synthetic-test-key"}):
+            with patch("urllib.request.urlopen", side_effect=TimeoutError("Synthetic timeout")) as provider:
+                with self.assertRaisesRegex(FactoryError, "outcome unknown"):
+                    execute(self.task, self.run.config, True, receipt_dir=receipts)
+                provider.assert_called_once()
+            with patch("urllib.request.urlopen") as provider:
+                with self.assertRaisesRegex(FactoryError, "no saved response"):
+                    execute(self.task, self.run.config, True, receipt_dir=receipts)
+                provider.assert_not_called()
+        failure = unseal(next(receipts.glob("*/failure-*.json")))
+        self.assertEqual(failure["outcome"], "UNKNOWN")
+
+    def test_explicit_retry_retains_rejected_response_and_request(self):
+        receipts = self.run.root / "requests"
+        with patch.dict(os.environ, {"OPENCODE_GO_API_KEY": "synthetic-test-key"}):
+            with patch("urllib.request.urlopen", return_value=io.BytesIO(b'{"model":"wrong-model"}')):
+                with self.assertRaisesRegex(FactoryError, "actual model differs"):
+                    execute(self.task, self.run.config, True, receipt_dir=receipts)
+            original = {p.name: p.read_bytes() for p in receipts.glob("*/*.json")}
+            with patch("urllib.request.urlopen", return_value=self.response()) as provider:
+                output, _ = execute(self.task, self.run.config, True,
+                                    receipt_dir=receipts, new_attempt=True)
+                provider.assert_called_once()
+        self.assertEqual(output, self.output)
+        for path in receipts.glob("*/*.json"):
+            if path.name in original:
+                self.assertEqual(path.read_bytes(), original[path.name])
+        self.assertEqual(len(list(receipts.glob("*/request-*.json"))), 2)
+
+    def test_role_output_rejection_needs_a_deliberate_new_attempt(self):
+        with patch.dict(os.environ, {"OPENCODE_GO_API_KEY": "synthetic-test-key"}):
+            with patch("urllib.request.urlopen", return_value=self.response({"invalid_review": True})) as provider:
+                code, _, _ = self.invoke()
+                provider.assert_called_once()
+                self.assertEqual(code, 2)
+            self.assertTrue(list((self.run.root / "failures").glob("*.json")))
+            with patch("urllib.request.urlopen") as provider:
+                code, _, _ = self.invoke()
+                self.assertEqual(code, 2)
+                provider.assert_not_called()
+            with patch("urllib.request.urlopen", return_value=self.response()) as provider:
+                code, _, err = self.invoke(new_attempt=True)
+                provider.assert_called_once()
+        self.assertEqual(code, 0, err)
+        self.assertEqual(len(list((self.run.root / "requests").glob("*/response-*.json"))), 2)
+
+    def test_negative_valid_review_is_immutable_and_does_not_trigger_retry(self):
+        output = json.loads(json.dumps(self.output))
+        output["verdict"] = "BLOCKED"
+        output["checks"][next(iter(output["checks"]))] = False
+        with patch.dict(os.environ, {"OPENCODE_GO_API_KEY": "synthetic-test-key"}):
+            with patch("urllib.request.urlopen", return_value=self.response(output)) as provider:
+                code, _, err = self.invoke()
+                self.assertEqual(code, 0, err)
+                provider.assert_called_once()
+            with patch("urllib.request.urlopen") as provider:
+                code, _, err = self.invoke(new_attempt=True)
+                self.assertEqual(code, 0, err)
+                provider.assert_not_called()
+        self.assertEqual(self.run.result("evidence-reviewer")["output"], output)
+
+    def test_saved_response_is_bound_to_exact_task_and_configuration(self):
+        receipts = self.run.root / "requests"
+        config = json.loads(json.dumps(self.run.config))
+        with patch.dict(os.environ, {"OPENCODE_GO_API_KEY": "synthetic-test-key"}):
+            with patch("urllib.request.urlopen", return_value=self.response()) as provider:
+                execute(self.task, config, True, receipt_dir=receipts)
+                provider.assert_called_once()
+            config["profiles"]["external"]["timeout_s"] += 1
+            with patch("urllib.request.urlopen", return_value=self.response()) as provider:
+                execute(self.task, config, True, receipt_dir=receipts)
+                provider.assert_called_once()
+        self.assertEqual(len(list(receipts.glob("*/request-*.json"))), 2)
 
 
 if __name__ == "__main__":

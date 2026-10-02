@@ -5,7 +5,7 @@ import json
 import sys
 from pathlib import Path
 
-from . import experiments, learning, regression, operations
+from . import experiments, learning, regression, operations, controller, evaluation
 from bc_factory.adapters import execute
 from bc_factory.common import FactoryError, atomic_json, digest, lock, now, read_json, require, seal, unseal
 from bc_factory.runs import Run
@@ -23,13 +23,30 @@ def parser() -> argparse.ArgumentParser:
     p.add_argument("--repo", type=Path, default=Path(__file__).resolve().parents[2])
     sub = p.add_subparsers(dest="command", required=True)
 
-    sub.add_parser("iteration-status", help="Inspect scope and owner stop; no model calls").add_argument("--iteration", required=True)
-    s = sub.add_parser("launch-book", help="Inspect or explicitly launch one prepared book in a persistent Pi PTY")
+    for name in ("start", "status", "stop", "resume"):
+        s = sub.add_parser(name, help="Durable outer controller lifecycle")
+        s.add_argument("--campaign", type=Path)
+        if name in ("start", "resume"):
+            s.add_argument("--allow-paid", action="store_true")
+    s = sub.add_parser("checkpoint")
+    s.add_argument("--campaign", type=Path)
     s.add_argument("--iteration", required=True)
     s.add_argument("--run", required=True)
-    s.add_argument("--agent-dir", type=Path, required=True)
-    s.add_argument("--extension", type=Path, required=True)
-    s.add_argument("--pi", default="pi")
+    s.add_argument("--baseline", required=True)
+    s = sub.add_parser("freeze-iteration", help="Freeze the outer host's next declared commissioning measurement")
+    s.add_argument("--campaign", type=Path)
+    s.add_argument("--iteration", required=True)
+    s.add_argument("--hypothesis", type=Path, required=True)
+
+    sub.add_parser("iteration-status", help="Inspect scope and owner stop; no model calls").add_argument("--iteration", required=True)
+    s = sub.add_parser("launch-book", help="Inspect or run research through a complete book in one persistent Pi PTY")
+    s.add_argument("--iteration", required=True)
+    s.add_argument("--run", required=True)
+    s.add_argument("--agent-dir", type=Path)
+    s.add_argument("--extension", type=Path, help=argparse.SUPPRESS)
+    s.add_argument("--pi")
+    s.add_argument("--brief", type=Path)
+    s.add_argument("--caller-context", type=Path)
     s.add_argument("--allow-paid", action="store_true")
 
     sub.add_parser("register-experiment").add_argument("--spec", required=True)
@@ -70,6 +87,18 @@ def parser() -> argparse.ArgumentParser:
     s.add_argument("--order", choices=("AB", "BA"), required=True)
     s.add_argument("--response", required=True)
     s.add_argument("--metadata", required=True)
+    s = sub.add_parser("regression-execute")
+    s.add_argument("--run", required=True)
+    s.add_argument("--baseline", required=True)
+    s.add_argument("--order", choices=("AB", "BA"), required=True)
+    s.add_argument("--allow-paid", action="store_true")
+    s.add_argument("--new-attempt", action="store_true")
+    s = sub.add_parser("learn")
+    s.add_argument("--iteration", required=True)
+    s.add_argument("--run", required=True)
+    s.add_argument("--baseline", required=True)
+    s.add_argument("--allow-paid", action="store_true")
+    s.add_argument("--new-attempt", action="store_true")
     s = sub.add_parser("regression-decide")
     s.add_argument("--run", required=True)
     s.add_argument("--baseline", required=True)
@@ -84,11 +113,25 @@ def main(argv: list[str] | None = None) -> int:
     repo = args.repo.resolve()
     try:
         cmd = args.command
-        if cmd == "iteration-status":
+        if cmd in ("start", "resume"):
+            require(args.allow_paid, "Starting the authorized outer model requires --allow-paid")
+            result = controller.lifecycle(repo, cmd, args.campaign)
+        elif cmd == "stop":
+            result = controller.lifecycle(repo, cmd, args.campaign)
+        elif cmd == "status":
+            result = controller.status(repo, args.campaign)
+        elif cmd == "checkpoint":
+            result = controller.checkpoint(repo, args.iteration, args.run, args.baseline, args.campaign)
+        elif cmd == "freeze-iteration":
+            result = controller.freeze_iteration(repo, args.iteration, args.hypothesis, args.campaign)
+        elif cmd == "iteration-status":
             result = operations.iteration_status(repo, args.iteration)
         elif cmd == "launch-book":
+            settings = controller.deployment(repo) if not args.agent_dir or not args.pi else {}
             result = operations.launch_book(repo, args.iteration, args.run,
-                                           args.agent_dir, args.extension, args.pi, args.allow_paid)
+                                           args.agent_dir or Path(settings["agent_dir"]), args.extension,
+                                           args.pi or settings["pi"], args.allow_paid,
+                                           brief=args.brief, caller_context=args.caller_context)
         elif cmd == "register-experiment":
             result = {"registered": str(experiments.register(repo, document(args.spec)))}
 
@@ -150,6 +193,12 @@ def main(argv: list[str] | None = None) -> int:
             result = {"status": "RECORDED", "task_hash": record["task_hash"]}
         elif cmd == "regression-decide":
             result = regression.decide(repo, args.run, args.baseline)
+        elif cmd == "regression-execute":
+            result = evaluation.compare(repo, args.run, args.baseline, args.order,
+                                        args.allow_paid, args.new_attempt)
+        elif cmd == "learn":
+            result = evaluation.learn(repo, args.iteration, args.run, args.baseline,
+                                      args.allow_paid, args.new_attempt)
         elif cmd == "advance-baseline":
             result = learning.advance(repo, args.run, args.baseline)
         else:

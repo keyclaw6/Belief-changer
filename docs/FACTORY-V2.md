@@ -4,13 +4,13 @@
 
 The reusable factory implements immutable run preparation, explicit role tasks, strict output validation, dependency-bound results, retries through explicit revision rounds, actual-text reader state, whole-book edits, front matter/source assembly, independent final audit, verification and reproducible ZIP packaging. The repository also contains autoresearch comparison/promotion utilities, but they are outside the Pi factory contract.
 
-The upgrade has not run paid live models, reverified the historical research, regenerated production books, chosen a new external model, collected human ratings, or measured reader outcomes. Default generator route names come from the owner's existing configuration; live availability is not claimed. Historical drafts are preserved, not republished as safe/effective books. Software checks cannot prove prose quality, factual truth, legal clearance or behavioral effectiveness.
+Exact run artifacts and independent audits establish each book's observed status. Operational commissioning evidence is retained separately in `loop/history/commissioning-20261002.md`; this guide is not a live-verification verdict. Historical drafts remain historical. Software checks and model judgments do not establish reader outcomes, human calibration or release approval.
 
 ## Requirements and first checks
 
 Python 3.11 or newer, standard library only. Git is needed to clone/push and optional for runtime; ZIP exports work without Git. Do not install provider services or supply credentials merely to run tests.
 
-Agentic factory execution uses Pi Coding Agent with its `subagent` extension enabled; that extension is a Pi extension rather than a built-in tool. Run the factory controller as a saved top-level Pi session loaded with `.pi/agents/factory-orchestrator.md`; do not run the controller itself as a subagent, because subagent children are ephemeral. That controller dispatches only child project roles with `agentScope: "project"`; a missing extension pauses role dispatch and returns an infrastructure defect to the host for repair, never a reason to impersonate a role or fall back to the host harness. Deterministic CLI checks and the offline demo do not require Pi.
+Run one saved top-level Pi Coding Agent loaded with `.pi/agents/factory-orchestrator.md` per logical book. It performs substantive research from `prompts/research-agent.md`, then invokes frozen semantic role tasks directly through the configured HTTP executors. Every stage keeps its own contract/inputs and real model output; independent external reviewers keep their own family. The controller never authors a missing stage report or manuscript. Intermediate Pi stage controllers and the subagent extension are unnecessary. Deterministic CLI checks and the offline demo do not require Pi.
 
 ```bash
 bash scripts/check.sh
@@ -37,7 +37,7 @@ Independence is about model family, not permission to change provider. Do not si
 
 A trusted command adapter is allowed only when it is merely a local wrapper around OpenCode Go and still returns exactly `{output,model,family,route,usage}` JSON on stdout. It is not permission to invoke another model service. Unknown usage is null. Do not let a judge read previous scores/history or ambient project instructions.
 
-The human-facing host can read frozen tasks, inspect state, schedule heartbeats and submit honestly recorded results, but it is not a model-provider fallback and must not synthesize a missing Pi factory role. The live book factory itself is one persistent top-level Pi Coding Agent per active book. Its caller preserves completed sessions and starts independent new sessions for new books; process or service repair does not change the scientific inputs.
+The outer host owns lifecycle and experimental reasoning, not factory prose or reports. A durable host is still outside the factory. Its caller preserves completed Pi sessions and starts independent new sessions for new books; operational repair does not change scientific inputs.
 
 ## Prepare inputs
 
@@ -63,7 +63,7 @@ This makes no paid call. It verifies prerequisites and saves the exact task inte
 python3 scripts/factory.py execute --run baseline-topic-a --task /tmp/task.json --allow-paid
 ```
 
-Both `execute` and `submit` acquire the same per-task execution lock before reconciling stored results. Replaying `execute` for the exact frozen task, or `submit` for that same task plus identical response and actual metadata, returns the original verified `RECORDED` receipt without another model call or rewriting the result. Result/task/dependency hashes are rechecked. Changed tasks, responses, metadata or damaged records fail closed; never alter a saved response to make a retry pass. A concurrent CLI submission cannot publish over an in-flight execution, and stale execution locks are never automatically stolen. This is receipt recovery, not permission to regenerate a completed role. Existing runs retain their snapshotted CLI behavior; inspect their stored result after an ambiguous response rather than replacing their snapshot to gain this convenience.
+`execute` and `submit` share the existing task lock and recheck task/result/dependency bindings. Exact accepted results replay unchanged. Bound raw-provider responses are saved before submission, so local submission loss reuses the real response. An unanswered request remains unknown and never automatically retries. Missing/corrupt receipts block replay. After explicit reconciliation, `execute --new-attempt` records another attempt while retaining earlier evidence; it cannot overwrite an accepted result or resample a genuine negative verdict. Actual model, route and family must match the frozen profile. Never remove an active execution lock.
 
 An isolated external agent can instead supply `response.json` and `metadata.json`:
 

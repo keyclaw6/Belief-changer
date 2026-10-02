@@ -1,64 +1,77 @@
 ---
 name: running-auto-research-loop
-description: Start, resume and recover authorized Belief-Changer autoresearch from durable state, with one persistent Pi session per book, OpenCode Go only, explicit scientific scope and autonomous operational repair.
+description: Start, inspect, stop or resume authorized Belief-Changer autoresearch with a durable outer owner, one Pi session per book, independent evaluation and retained learning.
 ---
 
-# Run and recover autoresearch
+# Run autoresearch
 
-The host owns the iteration; Pi owns one book. This is the canonical host procedure for starting, continuing, repairing and stopping. Read `loop/state.md` first, then the current iteration's `progress.json` and frozen `hypothesis.md`. Read `loop/PROGRAM.md` when designing or evaluating an experiment, and `skills/upgrade/SKILL.md` before changing repository code/contracts. Do not reconstruct operational rules from old incident reports.
-
-## Authority: frozen science, repairable machinery
-
-**Scientific authority comes from the human, not from preregistration.** Establish the authorized campaign length, subjects, book/replicate allocation, conditions, success/stopping criteria and model/evaluator requirements before generation. A campaign delegation may authorize choosing hypotheses within a stated envelope; preserve that delegation rather than asking again for each mechanical step. Material expansion outside it needs explicit approval. A proposal, a learner's ACCEPT, a Git commit or an agent-written “authorized” label is not a human decision. Screening samples do not silently become complete books.
-
-Keep three things distinct in the hypothesis/handoff: human-authorized scope with its source; agent-proposed scientific details; derived run IDs/bookkeeping. The existing `progress.json` holds `execution_status` (`STOPPED`, `ACTIVE`, `COMPLETE`) and `authorization` (`status`, `reference`, `quote`, `scope_sha256`). Its `allocation` uses actual subject slugs and counts books, not judge label orders. The scope hash binds the hypothesis file and allocation. Obtain it with `iteration-status`; mark APPROVED only after reading the actual human source and confirming it covers that scope. Hashes check consistency, not authenticity. Missing/contested authority stays UNCONFIRMED. Historical hypotheses remain unchanged; supersede explicitly rather than rewriting results or retroactively inventing consent.
-
-**Operational authority is broad once the work is authorized.** Repair browser/profile setup, Agent-Reach/X/Reddit/web access, PTYs, sessions, local services/controllers, proxies, existing credential routing, parsers, stale paths and deterministic repository defects. Install/reconnect/restart the required local support machinery when authorized and necessary. No additional permission is needed merely because the defective component is called a harness or supervisor. Preserve genuine account/host access boundaries; a host safety denial is not permission to hide or reroute a prohibited action. Stop at actual unavailable human login/MFA, new spending, or another external dependency, not at an internal instruction that can be repaired.
-
-Live model execution remains **OpenCode Go only**. Keep the frozen generator and independent evaluator family; repairing their wiring is not changing their identity. Never substitute ChatGPT, OpenCode CLI agents, OpenCode Zen, Vercel or another provider for Pi/factory roles. Never manufacture a missing role output. Keep W1–W4 inactive unless separately selected within authorized experimental scope.
-
-## One lifecycle
-
-1. **Reconcile before execution.** `python3 scripts/autoresearch.py iteration-status --iteration NNN` reads the owner stop and scope. STOPPED means no launch or watchdog until the owner resumes. `loop/state.md` is the entry-point index, not a competing result ledger. `progress.json` owns the current scope, exclusions, checkpoint and next-action pointers. Frozen run manifests/results plus factory `status`/`verify` own completion; sealed outer judgments/decisions own experimental conclusions. A service name, PID, Pi transcript or watchdog observation never overrides those artifacts.
-2. **Prepare one authorized book.** Use the exact frozen scientific inputs and `factory.py prepare` with a fresh subject research preflight under `docs/RESEARCH-ACCESS.md`. Use `iterNNN-...` run IDs so the launcher can reconcile allocation. Do not prepare several future books speculatively. Producing missing research remains the existing Pi researcher's job under the factory contract, not the host's opportunity to synthesize a dossier. The helper below operates prepared runs; preserve/import that book's native preparation session when continuing through it. A resume of existing frozen work does not need a fresh preflight merely because its historical report aged; new retrieval/new prepare does. A failed live preflight means repair the access layer and rerun it, not fabricate READY or reduce research.
-3. **Start or resume Pi through the command below.** It uses a real pseudo-terminal (PTY), the run's snapshot as project root, explicitly frozen context, and native Pi session storage. The default is inspection only; `--allow-paid` actually runs it. Use the existing host durable command service when execution must survive disconnection; no second controller is required.
-4. **Let healthy Pi work.** Pi dispatches project-local roles and owns research through verified `COMPLETE_UNRELEASED`. The host does not co-write, synthesize results or send repeated generic nudges. A required research revision stays inside the same logical book: Pi dispatches the researcher, prepares one successor with `--research-revision-of` and fresh preflight, then returns before executing successor stages. The launcher reports the exact `next_run`; after ownership is released, re-enter that successor with this book's saved session and the successor's snapshot. Otherwise inspect an unfinished exit, repair its cause, and resume the book.
-5. **Advance books, then the iteration.** After completion, verify and checkpoint the exact run/hash. Preserve its session history and start a **new session for the next book**. Perform only the outer checks due under the frozen design; a multi-book baseline does not require a final iteration verdict after its first book. Once all required collection/judgments are finished, freeze the decision and required learning/reviewer output, then the next falsifiable hypothesis. Only then start the next authorized iteration. Aborts and blockers do not count as completed iterations or authorize extra samples. Count against the human's campaign limit, not the highest directory number.
-
-## Session and launch mechanics
-
-Persistence belongs to **one logical book**, not the whole campaign. Resume its saved session after a process/PTY failure. A completed session is evidence, not an active worker and not a constraint on another book's identity. A sealed caller-repair request may reopen the same accepted book through its bounded factory repair path; it does not start another replicate.
+Normal use:
 
 ```bash
-python3 scripts/autoresearch.py launch-book --iteration NNN --run iterNNN-SUBJECT-a \
-  --pi /absolute/versioned/pi \
-  --agent-dir /absolute/private/pi-runtime \
-  --extension /absolute/pi/examples/extensions/subagent/index.ts
-# Add --allow-paid only for the authorized execution, not for inspection/tests.
+python3 scripts/autoresearch.py status
+python3 scripts/autoresearch.py start --allow-paid
+python3 scripts/autoresearch.py stop
+python3 scripts/autoresearch.py resume --allow-paid
 ```
 
-The launcher uses existing manifest links to count a validated, unbranched research/remediation lineage as one book slot, preserving its source findings rather than relabeling them as excluded diagnostics. Brief, caller context, parent release, fixture/live trust and model identities stay fixed within that lineage. It resumes the one native session under ignored `.loop-work/pi/`; ambiguous histories or branching successors require reconciliation, not guessing. A new independent book gets a new session. Duplicate launch is fenced by the same kernel lock inherited by top-level Pi and its actual role children; stale lock-file text is not ownership. Do not unlink an actively held lock. It releases when the real owners exit, regardless of stale service receipts. `COMPLETE_UNRELEASED` comes from verification, never the worker's exit code. Console logs remain local. The launcher derives a local per-book copy of the installed Pi subagent tool, preserving upstream dispatch while isolating child startup and reporting signal-terminated children as failures; it never edits the shared Pi installation. Child roles receive the frozen contract without current parent-directory instructions or ambient extensions/skills. An incompatible upstream entry point is a support-tool repair, not permission to fall back to unisolated children.
+The existing native host controller runs one durable outer Codex owner, preserving
+its session/model across resume. Its service survives the originating client.
+`loop/commissioning.json` is the authorized scope, stop intent and checkpoint
+index; exact run, judgment and learning artifacts prove outcomes. `loop/state.md`
+is a discovery pointer. Native receipts establish execution, never scientific
+success. Local paths are discovered once in ignored `.loop-work/deployment.json`;
+conditional deployment/recovery details are in `loop/HARNESS.md`.
 
-On this host the existing private agent directory is `/home/kab/.local/share/belief-changer/pi-runtime`. The verified Pi 0.99.2 executable is `/home/kab/.local/share/mise/installs/pi/0.99.2/pi/pi`; its subagent extension is the sibling `examples/extensions/subagent/index.ts`. Select the concrete executable with `--pi`, rather than the local `pi` shim that runs `mise use -g` on launch. Use the already-authorized local credential source `/home/kab/.config/belief-changer-go.env` without printing values. These are deployment paths to repair if stale, not scientific invariants. Old per-book `run.sh` scripts in the private runtime are historical evidence, not the current launch path.
+## Outer owner's cycle
 
-For a pre-launcher active session, first prove the old worker has exited; preserve/import its native session into that book's session directory and use its identity rather than spawning a second owner. Inspection validates saved JSONL without mutation. On a locked launch, only the header's `cwd` is rebound to the target snapshot; the original header is retained in the existing console log and transcript bytes remain unchanged. A failed inspection is not permission to interrupt a healthy worker that may still be appending: reconcile ownership first. Once the old worker is fenced, preserve the damaged original and recover lost/corrupt context from intact native history or frozen artifacts, recording the loss. This is operational recovery, not an owner STOPPED state or a new experiment. Do not regenerate accepted content or change models to repair transport. Never copy a completed book's conversational state into an independent new replicate.
+Read the campaign record and actual preceding evidence. Honor STOPPED and the
+fixed cycle/book boundary. You are the hypothesizer; use
+`loop/prompts/hypothesizer.md` to freeze the next permitted hypothesis or declared
+exploratory measurement. Write the reasoning to a file, then use
+`freeze-iteration --iteration NNN --hypothesis FILE` to create the existing frozen
+hypothesis/progress handoff from the campaign's actual scope and authorization source. Never overwrite
+a frozen hypothesis. A registration is not consent.
+The separate commissioning scope never resumes or approves iteration 054.
 
-After changing installed Pi/extension wiring, run `bash scripts/check.sh` with `BC_PI_EXECUTABLE` and `BC_PI_SUBAGENT_EXTENSION` set to those exact paths. The opt-in installed test uses a network namespace, dummy credentials and startup-only probes; it checks real parent/child dispatch, child-crash failure reporting, child-held lock ownership after parent descriptors close, and saved-session restoration without model inference. The normal offline gate skips this deployment-specific test. Neither result certifies live provider availability.
+1. Validate the selected complete baseline. Bootstrap explicitly reviewed lessons
+   with `learning-seed` when needed. Supply that exact baseline's generic factory
+   context. Retained learning is guidance, never empirical subject evidence.
+2. Call `launch-book --iteration NNN --run iterNNN-SUBJECT-a --brief FILE
+   --caller-context FILE --allow-paid`. Pi owns substantial research, fresh live
+   preflight, preparation and the full factory workflow. The launcher follows
+   same-book snapshot/research handoffs with the same session automatically.
+   New independent books get new sessions. Leave healthy Pi work alone.
+3. Verify the exact book with its frozen CLI. Run `regression-execute` in both
+   AB and BA orders against the explicit baseline, then `regression-decide`.
+   Repair only through the sealed same-book handoff. Honest negative/tie/
+   inconclusive exploratory outcomes remain usable evidence; they do not advance
+   a baseline. `advance-baseline` enforces the existing no-regression rule.
+4. Run `learn --iteration NNN --run ID --baseline BASELINE --allow-paid` for the
+   actual Factory Learner and independent Reviewer. Retain both outputs. Use the
+   accepted or inconclusive learning when reasoning about the next measurement;
+   never globalize a book-specific repair or tune against revealed holdouts.
+5. `checkpoint --iteration NNN --run ID --baseline BASELINE` validates completion,
+   comparisons and learning before recording this cycle. If more work is
+   authorized, freeze the next hypothesis and execute its new book automatically.
+   At the boundary, stop; do not merely write “next iteration ready.”
 
-## Recover instead of interpreting every failure as permanent BLOCKED
+`loop/PROGRAM.md` owns experimental interpretation and stronger quality/release
+gates. Use OpenCode Go only; the frozen generator/independent evaluator identities stay
+fixed. Pi never designs the outer experiment; the host never writes factory role
+reports. No W1–W4 activation, publication, new subscription or financial commitment
+is implied by running a commissioning cycle.
 
-Classify the actual failure and inspect its immediate dependencies. Make an evidence-driven repair, verify it, then continue. A repeated failure means the previous diagnosis/repair was insufficient; it is not by itself a terminal stop. Do not blindly repeat an unchanged failing request. Bounded transient retries are appropriate; a longer repair can require several distinct steps. A wake-up's time budget is not a campaign-wide repair budget.
+## Recover accepted progress
 
-A missing/dead systemd unit is an execution receipt problem: inspect the current native controller/job, process and lock first. Adopt the actual live owner, or recreate the required service/launch through the existing durable command route once the old owner is gone. Do not resurrect an obsolete supervisor alongside its replacement. Research defaults to the working bridge; a broken optional CloakBrowser route does not veto working required access.
+Inspect actual artifacts and the existing native receipt before retrying. The
+same native job/session resumes outer work; Pi resumes the same logical book.
+Saved validated results and bound raw-response receipts replay without another
+model request. An unfinished remote request is honestly unknown, not a safe
+automatic replay. Use `--new-attempt` only after explicit outcome reconciliation.
 
-Frozen scientific inputs and accepted artifacts remain immutable during repair. Run old work with its own snapshot. If a deterministic fix requires a successor run, preserve the failed attempt, record why it is diagnostic/excluded and which existing slot it replaces, and record changed factory hashes/confounds. This cannot enlarge the sample or justify discarding a disappointing valid result. Content BLOCKED, independent negative findings and exhausted review rounds remain real failures, not infrastructure excuses to reset the experiment.
-
-Stop only for the owner's stop/completed campaign, a material scientific decision outside delegated scope, a genuine external/human dependency with no available authorized repair, or an unresolved scientific gate that cannot be completed honestly. Record the evidence, attempted repairs and exact next action. A locally repairable defect remains recovery work; it does not become permanent BLOCKED merely because one repair failed.
-
-## Optional watchdog
-
-The host drives normal progress continuously. A watchdog only recovers a disconnected/crashed host; it is not another normal-progress engine. Do not arm one before startup proves a successful real configured model response **and** validated factory progress. Keep at most the already-authorized host continuation, inspect durable state on re-entry, leave healthy workers alone and follow this same procedure. Do not start another scheduler or worker because logs stopped scrolling. Disable the recurring schedule on an owner stop, completed campaign or genuine unresolved external checkpoint.
-
-A sufficient future instruction is:
-
-> Continue authorized autoresearch from durable state using the running-auto-research-loop skill. Preserve the frozen experiment, OpenCode Go and evaluator independence. Repair the local machinery autonomously, advance through the authorized books/iterations, and stop only at the owner's boundary or a genuine unresolved external/scientific checkpoint.
+Repair project-local services, paths, sessions and credential routing within the
+authorized scope. Follow `skills/upgrade/SKILL.md` before source changes; a change
+to qualifying execution invalidates its affected live proof. Preserve accepted
+outputs and negatives. Stop for owner intent, completed scope, exhausted quota,
+unavailable required human/account access, or an unresolved substantive gate.
+Record the exact blocker/resume action; a local defect remains repair work.

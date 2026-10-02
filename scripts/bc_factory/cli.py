@@ -38,6 +38,7 @@ def parser() -> argparse.ArgumentParser:
             s.add_argument("--response", required=True); s.add_argument("--metadata", required=True)
         else:
             s.add_argument("--allow-paid", action="store_true")
+            s.add_argument("--new-attempt", action="store_true", help="Explicit retry after inspecting retained failed/uncertain attempt evidence")
     for name in ("status", "verify", "assemble"):
         sub.add_parser(name).add_argument("--run", required=True)
     sub.add_parser("archive").add_argument("--output", type=Path, required=True)
@@ -90,7 +91,9 @@ def main(argv: list[str] | None = None) -> int:
                 elif cmd == "execute":
                     require(run.task(task["role"], task["chapter"], task["round"]) == task, "Stale task")
                     try:
-                        output, meta = execute(task, run.config, args.allow_paid)
+                        output, meta = execute(task, run.config, args.allow_paid,
+                                               receipt_dir=run.root / "requests",
+                                               new_attempt=getattr(args, "new_attempt", False))
                         record = run.submit(task, output, meta)
                     except FactoryError as exc:
                         failure = {"task_digest": digest(task), "role": task["role"], "error": str(exc), "created_at": now(), "usage": None}
