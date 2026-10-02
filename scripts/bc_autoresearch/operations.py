@@ -332,6 +332,18 @@ def _pty_run(plan: dict) -> int:
         env["BC_PI_WORKER_LOCK_FD"] = str(plan["lock_fd"])
     fd = os.open(log, os.O_WRONLY | os.O_APPEND | os.O_CREAT, 0o600)
     with os.fdopen(fd, "ab") as output:
+        # Pi restores header.cwd on resume, overriding the process directory.
+        # The caller holds the worker lock; retain metadata history in the existing log.
+        if "--session" in plan["argv"]:
+            session = Path(plan["argv"][plan["argv"].index("--session") + 1])
+            original_header, _, history = session.read_bytes().partition(b"\n")
+            header = parse_json(original_header.decode("utf-8"))
+            if header.get("cwd") != plan["cwd"]:
+                output.write(b"Pi workspace rebind; previous session header: " + original_header + b"\n")
+                output.flush()
+                os.fsync(output.fileno())
+                header["cwd"] = plan["cwd"]
+                atomic_bytes(session, json.dumps(header, ensure_ascii=False).encode("utf-8") + b"\n" + history)
         pid, master = pty.fork()
         if pid == 0:
             phase = "chdir"

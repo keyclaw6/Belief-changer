@@ -539,6 +539,35 @@ class NativeMechanicsTests(unittest.TestCase):
                     child.kill()
                     child.communicate(timeout=5)
 
+    def test_resume_binds_workspace_without_rewriting_history(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            target = root / "snapshot"
+            target.mkdir()
+            session = root / "saved.jsonl"
+            # Deliberate formatting and no final newline must survive unchanged.
+            history = b'\n{"type": "custom", "data": {"preserve": true}}'
+            for old_cwd in (str(root), str(target)):
+                with self.subTest(old_cwd=old_cwd):
+                    header = {"type": "session", "version": 3, "id": "same-book",
+                              "cwd": old_cwd, "extra": {"keep": True}}
+                    original_header = json.dumps(header).encode()
+                    original = original_header + b"\n" + history
+                    session.write_bytes(original)
+                    log = root / ("changed.log" if old_cwd != str(target) else "same.log")
+                    plan = {"cwd": str(target), "agent_dir": directory, "log": str(log),
+                            "argv": [sys.executable, "-c", "pass", "--session", str(session)]}
+                    with ops.worker_lock(root, "901"):
+                        self.assertEqual(ops._pty_run(plan), 0)
+                    current_header, _, current_history = session.read_bytes().partition(b"\n")
+                    self.assertEqual(json.loads(current_header), {**header, "cwd": str(target)})
+                    self.assertEqual(current_history, history)
+                    if old_cwd != str(target):
+                        self.assertIn(original_header, log.read_bytes())
+                    else:
+                        self.assertEqual(session.read_bytes(), original)
+                        self.assertEqual(log.read_bytes(), b"")
+
     def test_startup_failure_reports_phase_without_disclosing_paths(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

@@ -74,8 +74,10 @@ class InstalledPiStartupTests(unittest.TestCase):
                 session_dir = Path(plan["session_dir"])
                 session_dir.mkdir(parents=True)
                 saved = session_dir / "saved.jsonl"
+                # Resume a preparation/prior-snapshot session from another cwd.
+                # The native CLI restores header.cwd, not merely process.cwd().
                 header = {"type": "session", "version": 3, "id": plan["session_id"],
-                          "timestamp": "2026-10-01T00:00:00.000Z", "cwd": plan["cwd"]}
+                          "timestamp": "2026-10-01T00:00:00.000Z", "cwd": str(repo)}
                 entry = {"type": "message", "id": "fixture-user", "parentId": None,
                          "timestamp": "2026-10-01T00:00:01.000Z",
                          "message": {"role": "user", "content": [{"type": "text", "text": "SAVED_SESSION_PROBE"}],
