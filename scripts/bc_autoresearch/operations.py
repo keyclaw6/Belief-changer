@@ -133,7 +133,9 @@ def _allocated_runs(repo: Path, iteration: str, p: dict) -> dict[str, tuple[Run,
                 require(audit["output"]["verdict"] == "REVISE" and
                         meta.get("source_manifest_sha256") == digest(source.manifest) and
                         meta.get("source_audit_sha256") == file_hash(source.root / "results" / f"final-auditor-r{round_no:02d}.json") and
-                        meta.get("source_assembly_sha256") == file_hash(source.assembly_path(round_no)),
+                        meta.get("source_audit_key") == f"final-auditor-r{round_no:02d}" and
+                        meta.get("source_assembly_rel") == f"assembly/assembly-r{source.latest_assembly_version():02d}.json" and
+                        meta.get("source_assembly_sha256") == file_hash(source.assembly_path(source.latest_assembly_version())),
                         "Remediation successor source evidence no longer matches its frozen lineage")
             current = source_id
         lineages[run_id] = list(reversed(chain))

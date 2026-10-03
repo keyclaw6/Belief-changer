@@ -549,7 +549,7 @@ class PreparedLineageTests(unittest.TestCase):
             self.plan("iter901-topic-a-r1")
 
     def test_remediation_successor_uses_the_same_book_slot(self):
-        from bc_factory.demo import finish
+        from bc_factory.demo import finish, metadata
         from bc_factory.runs import prepare
         first = self.plan()
         real_submit = self.source.submit
@@ -565,6 +565,10 @@ class PreparedLineageTests(unittest.TestCase):
         with patch.object(self.source, "submit", side_effect=final_revise):
             with self.assertRaises(FactoryError):
                 finish(self.source, self.chapter_plan)
+        self.source.submit(self.source.task("book-editor", round_no=2), {
+            "schema_version": 2, "operations": [],
+            "explanation": "Synthetic completed editor round awaiting audit."}, metadata())
+        self.source.assemble(2)
         child = prepare(self.repo, "iter901-topic-a-rem", self.brief, self.research,
                         fixture=True, remediation_of=self.source_id)
         later = self.plan(child.name)

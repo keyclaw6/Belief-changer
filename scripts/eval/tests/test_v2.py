@@ -421,11 +421,20 @@ class RunTests(Base):
         self.assertEqual((run.root / "book.md").read_text(), second["assembly"]["text"])
         auditor_task = run.task("final-auditor", round_no=2)
         self.assertEqual(len(auditor_task["inputs"]["audit_history"]), 1)
+        self.assertNotIn("delivered_previous_chapters", auditor_task["inputs"])
+        self.assertEqual([e["round"] for e in auditor_task["inputs"]["editorial_changes"]], [1, 2])
+        self.assertEqual(auditor_task["inputs"]["editorial_changes"][0]["edits"],
+                         run.result("book-editor", round_no=1)["output"])
+        self.assertIn("results/writer-ch01-r01.json", auditor_task["dependency_hashes"])
         self.assertIn("Twice revised sentence 1.", auditor_task["inputs"]["assembled_book"])
         final = accepted()
         final["claim_checks"] = [{"quote": "Twice revised sentence 1.", "evidence_ids": [],
                                   "support": "nonempirical", "explanation": "Fixture sentence."}]
         final["screening_resolutions"] = {f["id"]: "Fixture triage." for f in second["assembly"]["screening"]}
+        historical = copy.deepcopy(final)
+        historical["claim_checks"][0]["quote"] = "Edited second sentence 1."
+        with self.assertRaisesRegex(FactoryError, "Audited claim not present"):
+            run.validate_output(auditor_task, historical)
         run.submit(auditor_task, final, metadata(True))
         result = run.complete()
         self.assertEqual(result["status"], "COMPLETE_UNRELEASED")
@@ -710,6 +719,40 @@ class RunTests(Base):
             self.assertEqual(file_hash(src.root / rel), h, rel)
         self.assertEqual(rem.manifest["brief_sha256"], src.manifest["brief_sha256"])
         self.assertEqual(rem.manifest["research_sha256"], src.manifest["research_sha256"])
+    def test_remediation_resumes_an_already_edited_pending_audit(self):
+        src = self.newrun("pending-src")
+        self.to_book_revise(src, edit_a=True)
+        src.submit(src.task("book-editor", round_no=2), {
+            "schema_version": 2, "operations": [
+                {"op": "replace", "chapter": "chapter-01", "old": "Edited second sentence 1.",
+                 "new": "Current repaired sentence.", "reason": "Prior independent finding."}],
+            "explanation": "Completed edits awaiting audit."}, metadata())
+        second = src.assemble()
+        src.task("final-auditor", round_no=2)
+        preserved = {str(p.relative_to(src.root)): file_hash(p)
+                     for p in src.root.rglob("*") if p.is_file()}
+        with patch("bc_factory.research_access.validate_coverage"):
+            prepare(self.repo, "pending-rem", self.brief, self.research,
+                    fixture=True, remediation_of="pending-src")
+        rem = Run(self.repo, "pending-rem")
+        self.assertEqual(rem.manifest["remediation_source"]["source_audit_key"], "final-auditor-r01")
+        self.assertEqual(rem.manifest["remediation_source"]["source_assembly_rel"], "assembly/assembly-r02.json")
+        self.assertEqual(rem.assembly_version(2)["sha256"], second["sha256"])
+        self.assertEqual(rem.result("book-editor", round_no=2), src.result("book-editor", round_no=2))
+        with self.assertRaises(FactoryError):
+            rem.complete()
+        with self.assertRaisesRegex(FactoryError, "Result already exists"):
+            rem.task("book-editor", round_no=2)
+        task = rem.task("final-auditor", round_no=2)
+        self.assertEqual(task["inputs"]["audit_history"][0]["audit"], src.result("final-auditor")["output"])
+        final = accepted()
+        final["claim_checks"] = [{"quote": "Current repaired sentence.", "evidence_ids": [],
+                                  "support": "nonempirical", "explanation": "Fixture sentence."}]
+        final["screening_resolutions"] = {f["id"]: "Fixture triage." for f in second["assembly"]["screening"]}
+        rem.submit(task, final, metadata(True))
+        self.assertEqual(rem.complete()["book_sha256"], second["assembly"]["text_sha256"])
+        for rel, sha in preserved.items():
+            self.assertEqual(file_hash(src.root / rel), sha, rel)
     def test_live_production_plan_not_used(self):
         run=self.newrun();self.to_plan(run)
         p=self.repo/'production-books/practice-belief/master-plan.md';p.parent.mkdir(parents=True);p.write_text('Wrong mutable legacy plan')

@@ -189,3 +189,29 @@ pointers contain exact resume details. No monitoring or automatic restart is pro
 Run `python3 scripts/autoresearch.py status` for actual ownership/evidence. Initial
 pre-existing `test_cross_iteration.py` edits remain uncommitted and preserved.
 No release/champion update, efficacy or calibrated quality improvement is claimed.
+
+## October 3 audit-input repair
+
+The resumed 056 book reached assembly r02 with 24 validated results, but five
+received final-audit r02 responses audited old chapter wording; interrupted
+attempt 3 remains UNKNOWN. Strict current-text validation correctly rejected
+those reports. The frozen run and all 143 shutdown-checkpoint artifacts remain
+unchanged; no invalid response is normalized into acceptance.
+
+The prospective repair removes complete pre-edit chapters from final-audit
+inputs, retains their dependency bindings, and supplies the full ordered exact
+editor operations plus finite prior audit history. The current assembly is the
+sole manuscript authority; source/evidence/safety and exact-quote gates remain.
+The existing immutable remediation path now binds a pending revised assembly
+separately from its preceding REVISE audit, preserving completed edits and the
+same book/session instead of replaying them. Its connected lineage check agrees.
+
+Independent bounded residual review found no material issue. The mandatory gate
+passed 334 tests, including installed Pi checks. These are software checks; live
+proof remains pending. Commissioning still requires the exact current-assembly
+independent audit, frozen verify, autonomous comparisons/learning/checkpoint and
+057 on the final version. The repair occurred while qualifying execution was
+idle; only the affected pending audit/handoff path is repeated prospectively.
+No upstream accepted role contract, generated book text, model identity, book
+allocation, frozen hypothesis, negative audit or unknown request is rewritten.
+Detailed hashes, review and checks remain in ignored audit-input-repair evidence.

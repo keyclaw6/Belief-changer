@@ -72,8 +72,11 @@ def prepare(repo: Path, run_id: str, brief: dict, research: dict, parent: str | 
         require(src_audit["output"]["verdict"] == "REVISE",
                 "Remediation needs a prior fixable REVISE audit; BLOCKED stops the run and ACCEPT needs nothing")
         src_asm_no = source.latest_assembly_version()
-        require(src_asm_no == src_audit_no,
-                "Source audit does not match its latest assembly; remediate only clean audit states")
+        require(src_asm_no in (src_audit_no, src_audit_no + 1),
+                "Remediation needs the reviewed assembly or its one pending revised assembly")
+        source.assembly_version(src_asm_no)
+        if src_asm_no > src_audit_no:
+            source.result("book-editor", round_no=src_asm_no)
         require(digest(brief) == digest(source.brief), "Remediation brief must equal the source frozen brief")
         require(digest(research) == digest(source.research), "Remediation research must equal the source frozen research")
         if source.caller_context is not None:
@@ -354,7 +357,8 @@ class Run:
                 previous.append({"id": c["chapter_id"], "title": plan["chapters"][n-1]["title"],
                                  "text": c["text"], "claim_map": c["claim_map"], "state": state,
                                  "source_chapters": [c["chapter_id"]]})
-            inputs["delivered_previous_chapters"] = previous
+            if role != "final-auditor":
+                inputs["delivered_previous_chapters"] = previous
             if role == "writer" and round_no > 1:
                 history = []
                 for prior_round in range(1, round_no):
@@ -430,8 +434,10 @@ class Run:
                 deps[assembled["rel"]] = assembled["sha256"]
                 inputs["assembled_book"] = assembled["assembly"]["text"]
                 inputs["screening"] = assembled["assembly"]["screening"]
-                inputs["editorial_changes"] = self.deps_add(deps, "book-editor",
-                                                            round_no=round_no if round_no > 1 else 1)
+                inputs["editorial_changes"] = [
+                    {"round": n, "edits": self.deps_add(deps, "book-editor", round_no=n)}
+                    for n in range(1, assembled["assembly"]["assembly_round"] + 1)
+                ]
         contract = self.snapshot("prompts/" + PROMPTS[role])
         task = {"schema_version": 2, "key": key, "role": role, "chapter": chapter, "round": round_no,
                 "run_manifest_sha256": digest(self.manifest), "dependency_hashes": deps,

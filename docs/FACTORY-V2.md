@@ -109,7 +109,7 @@ python3 scripts/factory.py prepare --remediation-of SOURCE-RUN --run NEW-ID \
   --brief SOURCE-BRIEF --research SOURCE-RESEARCH
 ```
 
-The remediation run inherits the source's sealed tasks/results/assemblies/book byte-identical (bound by hash to the source manifest), copies no new research and consumes no fresh preflight, and only book-editor/final-auditor rounds continue there; upstream roles are refused. The source run is never mutated. Judgment, verification, promotion, and archiving always bind the latest ACCEPTED audit and accepted immutable assembly via `complete()`, never round 1 by convention.
+The remediation run inherits the source's sealed tasks/results/assemblies/book byte-identical (bound by hash to the source manifest), copies no new research and consumes no fresh preflight, and only book-editor/final-auditor rounds continue there; upstream roles are refused. It may resume the assembly with the source's fixable audit, or the one already-edited successor assembly whose audit is still pending. In the latter case it inherits the completed editor result and resumes that pending audit; it does not replay edits or count another book. The source run is never mutated. Final auditors receive the current assembled text, cumulative exact editorial operations and prior audit history, rather than complete pre-edit chapters competing with the current manuscript. Judgment, verification, promotion, and archiving always bind the latest ACCEPTED audit and accepted immutable assembly via `complete()`, never round 1 by convention.
 
 ```bash
 python3 scripts/factory.py assemble --run baseline-topic-a
