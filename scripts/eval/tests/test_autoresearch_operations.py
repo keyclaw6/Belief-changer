@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "scripts"))
 from bc_autoresearch import operations as ops
 from bc_autoresearch.cli import parser
-from bc_factory.common import FactoryError, digest, file_hash
+from bc_factory.common import FactoryError, digest, file_hash, seal
 
 
 class OperationsTests(unittest.TestCase):
@@ -210,21 +210,38 @@ class OperationsTests(unittest.TestCase):
 
     def test_noop_worker_cannot_claim_pending_caller_repair_complete(self):
         self.a.status.return_value["status"] = "COMPLETE_UNRELEASED"
-        root = self.a.root / "caller-feedback"
-        root.mkdir()
-        (root / "repair-r01.json").write_text("{}")
-        with patch.object(ops, "load_caller_repair", return_value={}), patch.dict(os.environ, {"OPENCODE_GO_API_KEY": "offline-test-only"}):
+        descriptor = self.repair_descriptor()
+        with patch.object(ops, "load_caller_repair", return_value=descriptor), patch.dict(os.environ, {"OPENCODE_GO_API_KEY": "offline-test-only"}):
             result = self.plan(allow_paid=True)
         self.assertEqual(result["status"], "NEEDS_INSPECTION")
 
+    def repair_descriptor(self):
+        path = self.a.root / "caller-feedback/repair-r01.json"
+        request = {"schema_version": 2, "assembly_round": 1, "book_sha256": "a" * 64,
+                   "audit_sha256": "b" * 64,
+                   "feedback": {"editorial_constraints": ["Fixture editorial feedback stays in the file."]}}
+        seal(path, request)
+        return {"rel": "caller-feedback/repair-r01.json", "sha256": file_hash(path),
+                "feedback": request["feedback"]}
+
     def test_bound_caller_repair_can_reopen_same_book(self):
+        first = self.plan()
         self.a.status.return_value["status"] = "COMPLETE_UNRELEASED"
-        root = self.a.root / "caller-feedback"
-        root.mkdir()
-        (root / "repair-r01.json").write_text("{}")
-        with patch.object(ops, "load_caller_repair", return_value={}) as validate:
-            self.assertEqual(self.plan()["status"], "READY_TO_LAUNCH")
-            validate.assert_called_once_with(self.a, 1)
+        descriptor = self.repair_descriptor()
+        with patch.object(ops, "load_caller_repair", return_value=descriptor) as validate:
+            plan = self.plan()
+            self.assertEqual(plan["status"], "READY_TO_LAUNCH")
+            validate.assert_any_call(self.a, 1)
+            self.assertEqual(plan["session_id"], first["session_id"])
+            prompt = plan["argv"][-1]
+            self.assertIn(str(self.a.root / descriptor["rel"]), prompt)
+            self.assertIn(descriptor["sha256"], prompt)
+            self.assertIn('"assembly_round": 1', prompt)
+            self.assertIn('"book_sha256": "' + "a" * 64 + '"', prompt)
+            self.assertIn('"audit_sha256": "' + "b" * 64 + '"', prompt)
+            self.assertIn("explicitly requests reopening", prompt)
+            self.assertNotIn("Fixture editorial feedback stays in the file.", prompt)
+            self.assertNotIn("REPAIR_REQUIRED", prompt)
         with patch.object(ops, "load_caller_repair", side_effect=FactoryError("stale repair")):
             with self.assertRaisesRegex(FactoryError, "stale repair"):
                 self.plan()

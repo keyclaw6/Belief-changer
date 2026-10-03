@@ -250,3 +250,18 @@ advancement or unapproved proposal is allowed. Existing checkpoint mechanics are
 unchanged. Independent bounded residual review is clean; 335 tests pass. The
 normal outer owner must still demonstrate the negative checkpoint and automatic
 already-authorized 057 transition using retained learning on the final version.
+
+## October 3 concrete caller-repair delivery
+
+057 independently completed its fresh research-to-audit book, but twice returned
+the prior accepted assembly without consuming a valid generic repair request.
+The caller supplied only a conditional reopening instruction. The host launcher
+now supplies the actual validated request path, full file hash and exact
+assembly/book/audit binding, explicitly requesting bounded reopening. Feedback
+remains in its sealed file and normal frozen task; no role prose, factory source,
+model, round budget or generation allocation changes. All old artifacts persist.
+
+51 focused and 335 mandatory checks pass; independent residual review is clean.
+The actual normal launch plan selects the same Pi session and unchanged snapshot.
+Live proof of this corrected host callback and remaining 057 outer stages is
+pending; earlier callback successes are not recast as proof of this new source.

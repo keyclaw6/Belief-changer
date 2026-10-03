@@ -333,6 +333,22 @@ def launch_plan(repo: Path, iteration: str, run_id: str, agent_dir: Path,
         if status["status"] == "COMPLETE_UNRELEASED" and not pending_caller_repair(run):
             return {"status": "ALREADY_COMPLETE", "run_id": run_id, "book_id": lineage[0],
                     "next_run": run_id, "factory": run.complete()}
+        repair_handoff = ""
+        if status["status"] == "COMPLETE_UNRELEASED":
+            round_no, _ = run.accepted_audit()
+            repair = load_caller_repair(run, round_no)
+            request_path = run.root / repair["rel"]
+            request = unseal(request_path)
+            binding = {"path": str(request_path), "file_sha256": repair["sha256"],
+                       "assembly_round": request["assembly_round"],
+                       "book_sha256": request["book_sha256"], "audit_sha256": request["audit_sha256"]}
+            repair_handoff = (
+                " This call explicitly requests reopening the accepted book for its sealed generic caller repair: "
+                + json.dumps(binding) + ". Read that request and complete its bounded repair, new assembly, "
+                "independent audit and verification through the frozen CLI. The current COMPLETE_UNRELEASED "
+                "is the entry state, not completion of this requested repair. Return after the request is consumed "
+                "and the revised book verifies, or report the concrete blocking gate."
+            )
         snapshot, config = run.root / "snapshot", run.config
         repo_arg = shlex.quote(str(repo))
         prompt = (
@@ -347,7 +363,7 @@ def launch_plan(repo: Path, iteration: str, run_id: str, agent_dir: Path,
             "Reopen a complete book only for a valid sealed caller-feedback repair. "
             "Return at verified COMPLETE_UNRELEASED or a concrete unresolved gate/infrastructure failure. "
             "Configured model calls and read-only research are authorized. The outer controller owns hypothesis, evaluation and advancement."
-        )
+        ) + repair_handoff
     else:
         preparation = _preparation(repo, iteration, run_id, p, books, brief, caller_context)
         lineage = [run_id]
