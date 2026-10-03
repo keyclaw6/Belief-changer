@@ -304,6 +304,26 @@ class AutoResearchControllerTests(unittest.TestCase):
                 controller.lifecycle(self.repo, "resume")
             native.assert_not_called()
 
+    def test_negative_measurement_checkpoint_preserves_loss_and_baseline(self):
+        baseline_files = {p.relative_to(self.baseline.root): p.read_bytes()
+                          for p in self.baseline.root.rglob("*") if p.is_file()}
+        self.comparisons(voices=("A", "B"))  # Baseline wins in both orders.
+        decision = regression.decide(self.repo, self.candidate.root.name, "baseline")
+        self.assertEqual(decision["decision"], "REPAIR_REQUIRED")
+        self.retain_learning()
+        with patch("urllib.request.urlopen") as provider:
+            record = controller.checkpoint(self.repo, "901", self.candidate.root.name, "baseline")
+            provider.assert_not_called()
+        self.assertEqual(record["decision"], "REPAIR_REQUIRED")
+        self.assertEqual(read_json(self.campaign_path)["completed"][0]["decision"], "REPAIR_REQUIRED")
+        self.assertEqual(read_json(self.campaign_path)["execution_status"], "ACTIVE")
+        for rel, content in baseline_files.items():
+            self.assertEqual((self.baseline.root / rel).read_bytes(), content, str(rel))
+        # A negative comparative result cannot excuse missing factory acceptance.
+        (self.candidate.root / "results/final-auditor-r01.json").unlink()
+        with self.assertRaises(FactoryError):
+            controller.validate_checkpoints(self.repo, read_json(self.campaign_path))
+
     def test_fixture_book_cannot_count_toward_live_commissioning(self):
         data = read_json(self.campaign_path)
         data["iterations"] = ["903"]

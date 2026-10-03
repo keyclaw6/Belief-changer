@@ -232,3 +232,21 @@ are refrozen prospectively under the corrected contract; old judgments are not
 reused or reinterpreted. Independent residual review is clean; 334 mandatory
 checks pass. The affected evaluation path must be demonstrated live again, then
 complete decision/learning/checkpoint and 057. Zero complete cycles are claimed.
+
+## October 3 negative-outcome boundary reconciliation
+
+The completed r06 book still loses argument in both orders, and its six-round
+repair budget is exhausted. This remains REPAIR_REQUIRED, not convergence or a
+quality win. Factory audit/verify ACCEPT/COMPLETE_UNRELEASED, actual comparisons
+and learning are complete; the independent learning reviewer returned MEASURE_MORE
+with no approved change. The book hash is
+`905d812fc49a3622f4cb5485a050083d780626b9990619ee6c7d75917f903c8f`.
+
+The direct owner brief §§3.7/8B explicitly permits negative completed operational
+measurements without manufacturing superior books. PROGRAM now distinguishes
+that outcome from an incomplete/BLOCKED/critical factory gate. The cap, negative
+decision, old blocker and all evidence remain intact; no extra repair, baseline
+advancement or unapproved proposal is allowed. Existing checkpoint mechanics are
+unchanged. Independent bounded residual review is clean; 335 tests pass. The
+normal outer owner must still demonstrate the negative checkpoint and automatic
+already-authorized 057 transition using retained learning on the final version.
