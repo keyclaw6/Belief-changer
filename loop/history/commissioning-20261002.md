@@ -215,3 +215,20 @@ idle; only the affected pending audit/handoff path is repeated prospectively.
 No upstream accepted role contract, generated book text, model identity, book
 allocation, frozen hypothesis, negative audit or unknown request is rewritten.
 Detailed hashes, review and checks remain in ignored audit-input-repair evidence.
+
+## October 3 comparison quotation repair
+
+The corrected Go/DeepSeek final audit ACCEPTed assembly r02 with zero findings
+and 31 checked claims; frozen verify returned COMPLETE_UNRELEASED, exact book
+hash `813df502834ee52be25f2698a53d6cdf2e617eed9d9adbc8d08305460b2a05a3`.
+The next outer gate rejected three BA responses that joined paragraphs with a
+space. Its valid mixed AB and all rejected BA evidence remain byte-identical in
+run-local regression-history, with a full path/hash retention ledger.
+
+Only the pairwise contract now clarifies contiguous single-paragraph literal
+quotations and JSON newline escaping. Validators, quality dimensions, books,
+audits, model identities and allocation remain unchanged. Both actual orders
+are refrozen prospectively under the corrected contract; old judgments are not
+reused or reinterpreted. Independent residual review is clean; 334 mandatory
+checks pass. The affected evaluation path must be demonstrated live again, then
+complete decision/learning/checkpoint and 057. Zero complete cycles are claimed.
