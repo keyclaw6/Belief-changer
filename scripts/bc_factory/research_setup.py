@@ -38,16 +38,22 @@ def unpack_extension(data: bytes, dest: Path, sha256: str) -> dict:
 def bootstrap(repo: Path,apply: bool=False) -> dict:
     c=config(repo); state=state_root(repo,apply)
     py=state/'venv/bin/python'
+    managed = c.get('browser_engine') == 'clearcote'
+    packages = (['clearcote=='+c['clearcote_version'], 'cryptography=='+c['cryptography_version']]
+                if managed else ['cloakbrowser=='+c['cloakbrowser_version']])
+    node_packages = ['@jackwener/opencli@'+c['opencli_version']]
+    if managed: node_packages.append('playwright-core@'+c['playwright_core_version'])
     steps=[
-        [str(py),'-m','pip','install','git+https://github.com/Panniantong/Agent-Reach.git@'+c['agent_reach_commit'], 'cloakbrowser=='+c['cloakbrowser_version']],
-        ['npm','install','--prefix',str(state/'node'),'--save-exact','@jackwener/opencli@'+c['opencli_version']],
-        [str(py),'-m','cloakbrowser','install']]
+        [str(py),'-m','pip','install','git+https://github.com/Panniantong/Agent-Reach.git@'+c['agent_reach_commit'], *packages],
+        ['npm','install','--prefix',str(state/'node'),'--save-exact',*node_packages],
+        [str(py),'-c','from clearcote._commands import _console_main; _console_main()', 'install'] if managed
+        else [str(py),'-m','cloakbrowser','install']]
     result={'status':'INSTALL_PLAN','state_outside_repo':str(state),'commands':steps,
             'nopecha_asset':c['nopecha_asset_url'],'sha256':c['nopecha_sha256'],
             'notes':['No global/system packages, account creation, cookie extraction or paid subscriptions.',
                      'Node >=20.18.1 and Git must already be available. Linux needs browser system libraries and a display/Xvfb.',
                      'No browser/extension binaries are bundled or relicensed. Review upstream licenses before deployment.',
-                     'Set NOPECHA_API_KEY locally; any CloakBrowser license is also local. Then login and run live preflight.']}
+                     'Managed Clearcote uses NopeCHA free/IP mode; no paid key is required. Login state stays private and encrypted outside the repo.']}
     if not apply: return result
     require(shutil.which('git') and shutil.which('npm'),'Git and npm must already be installed')
     n=command(['node','--version'],timeout=10)
@@ -56,7 +62,9 @@ def bootstrap(repo: Path,apply: bool=False) -> dict:
     require(n.returncode==0 and version>=(20,18,1),'Node >=20.18.1 is required')
     venv.EnvBuilder(with_pip=True).create(state/'venv')
     for args in steps:
-        r=command(args,timeout=900)
+        env=os.environ.copy()
+        if managed: env['CLEARCOTE_CACHE']=str(state/'clearcote-cache')
+        r=command(args,env=env,timeout=900)
         require(r.returncode==0,f'Installation failed at {Path(args[0]).name}; inspect the installation locally. No credentials printed.')
     req=urllib.request.Request(c['nopecha_asset_url'],headers={'User-Agent':'Belief-Changer-research-setup/2.1'})
     with urllib.request.urlopen(req,timeout=90) as response:
@@ -73,6 +81,19 @@ def bootstrap(repo: Path,apply: bool=False) -> dict:
         if dest.exists(): shutil.rmtree(dest)
         shutil.move(stage,dest)
         atomic_json(parent/'nopecha-install.json',{'asset_sha256':c['nopecha_sha256'],'files':hashes})
+    if managed:
+        url=('https://github.com/jackwener/OpenCLI/releases/download/v'+c['opencli_version']+
+             '/opencli-extension-v'+c['opencli_extension_version']+'.zip')
+        with urllib.request.urlopen(url,timeout=90) as response: data=response.read(8*1024*1024+1)
+        require(len(data)<=8*1024*1024,'Browser Bridge extension exceeds size guard')
+        with tempfile.TemporaryDirectory(dir=parent) as td:
+            stage=Path(td)/'opencli'; hashes=unpack_extension(data,stage,c['opencli_extension_sha256'])
+            require(read_json(stage/'manifest.json').get('version')==c['opencli_extension_version'], 'Browser Bridge version mismatch')
+            dest=parent/'opencli'; require(not dest.is_symlink(),'Unsafe Browser Bridge path')
+            if dest.exists(): shutil.rmtree(dest)
+            shutil.move(stage,dest)
+            atomic_json(parent/'opencli-install.json',{'asset_sha256':c['opencli_extension_sha256'],'files':hashes})
     result['status']='INSTALLED_NOT_AUTHENTICATED'
-    result['next']=[str(py),str(repo/'scripts/factory.py'),'research-login','--allow-captcha']
+    result['next']=([str(py),str(repo/'scripts/factory.py'),'research-browser','install'] if managed
+                    else [str(py),str(repo/'scripts/factory.py'),'research-login','--allow-captcha'])
     return result

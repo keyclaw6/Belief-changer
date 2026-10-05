@@ -21,3 +21,18 @@ Campaign-001 closed through 050; 053 aborted. W1–W4 remain inactive.
 `factory/config.json` retains Go Muse/meta generation and independent Go DeepSeek
 review. `factory/champion.json` has no validated v2 release. No human calibration,
 transferable improvement or reader efficacy is claimed.
+
+## October 5 next-agent preparation
+
+Fresh research uses the inspected BotOps Clearcote backend with Agent-Reach,
+owned OpenCLI/CDP binding and private encrypted research-domain login state.
+See `docs/RESEARCH-ACCESS.md` for bootstrap and portable restore; a physical
+second-host test is not claimed. 342 mandatory tests and an independent Luna
+verification agent's live seven-check preflight passed. Old commissioning
+snapshots and outcomes remain historical and unchanged.
+
+`docs/NEXT-AGENT-PROMPT.md` is the short proactive handoff. It records the owner's
+prospective Luna trace/chapter judging and Sol hypothesis/learning/whole-book
+comparison experiments, while keeping Muse/OpenCode Go writers/planner. Current
+model profiles remain unchanged until prospective routes/trials are explicitly
+frozen. No new book scope or background loop is running.

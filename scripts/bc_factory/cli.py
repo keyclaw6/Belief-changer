@@ -48,6 +48,10 @@ def parser() -> argparse.ArgumentParser:
     s.add_argument("--apply", action="store_true")
     s = sub.add_parser("research-login", help="Interactive authorized login in dedicated CloakBrowser")
     s.add_argument("--allow-captcha", action="store_true")
+    s = sub.add_parser("research-browser", help="Manage isolated Clearcote and private portable login state")
+    s.add_argument("operation", choices=("install", "start", "stop", "serve", "doctor", "auth-export", "auth-import", "bundle-export", "bundle-import"))
+    s.add_argument("--allow-captcha", action="store_true")
+    s.add_argument("--bundle", type=Path); s.add_argument("--key-file", type=Path)
     s = sub.add_parser("research-preflight", help="Verify live search/thread reads work before a campaign")
     s.add_argument("--subject", required=True); s.add_argument("--live", action="store_true")
     s.add_argument("--allow-captcha", action="store_true"); s.add_argument("--out"); s.add_argument("--probe-query")
@@ -113,6 +117,18 @@ def main(argv: list[str] | None = None) -> int:
         elif cmd == "research-login":
             from .research_access import login
             result = login(repo, args.allow_captcha)
+        elif cmd == "research-browser":
+            from . import research_browser as browser
+            op = args.operation
+            if op == "install": result = browser.install_service(repo)
+            elif op == "start": result = browser.start(repo, args.allow_captcha)
+            elif op == "stop": result = browser.stop(repo)
+            elif op == "doctor": result = browser.doctor(repo)
+            elif op == "serve": browser.serve(repo); result = {"status": "STOPPED"}
+            elif op.startswith("auth-"): result = browser.transfer(repo, op.removeprefix("auth-"))
+            else:
+                require(args.bundle is not None, "Supply an external --bundle path")
+                result = browser.portable(repo, op.removeprefix("bundle-"), args.bundle, args.key_file)
         elif cmd == "research-preflight":
             from .research_access import preflight
             result = preflight(repo, args.subject, args.live, args.allow_captcha, args.probe_query, args.via)

@@ -12,11 +12,11 @@
   },
   "preflight_max_age_hours": 24,
   "browser": "bridge",
-  "headless": false,
+  "headless": true,
   "humanize": true,
   "agent_reach_commit": "da5044d26fc6adddb6554d5679c94ac22e76e428",
   "cloakbrowser_version": "0.5.10",
-  "opencli_version": "1.8.7",
+  "opencli_version": "1.8.8",
   "nopecha_version": "0.6.1",
   "nopecha_asset_url": "https://github.com/NopeCHALLC/nopecha-extension/releases/download/0.6.1/chromium.zip",
   "nopecha_sha256": "cfbbe7b3a3d28939abe92fd7b194ae89e39aad6a286d1df89b9eed9ea2bf612e",
@@ -24,11 +24,24 @@
   "request_timeout_s": 90,
   "captcha_timeout_s": 120,
   "min_request_interval_s": 3,
-  "note": "Capability-based gate: preflight passes on real web/Reddit/X read behavior over the bridge route (opencli_version is a minimum floor, 1.8.7 verified published 2026-09-15). CloakBrowser/Agent-Reach/NopeCHA pins remain exact and are enforced only when the optional cloak route is used. Revalidate upgrades and actual site access before campaigns.",
+  "note": "Managed Clearcote matches the inspected BotOps backend. Agent-Reach supplies discovery/doctor and OpenCLI supplies structured read-only browser adapters. Auth state is encrypted outside the repository and research-domain scoped; actual fresh seven-lane checks determine readiness. Legacy frozen Cloak runs retain their own snapshots.",
   "bridge_profile": "belief-changer-research",
   "bridge_profiles": {
     "web": "belief-changer-research",
     "reddit": "belief-changer-research",
     "x": "belief-changer-research"
-  }
+  },
+  "browser_engine": "clearcote",
+  "browser_port": 9226,
+  "clearcote_version": "0.31.1",
+  "playwright_core_version": "1.63.0",
+  "cryptography_version": "50.0.1",
+  "opencli_extension_version": "1.0.24",
+  "opencli_extension_sha256": "bad9163f32a66224404e302f52f35391672341d2bd0bf30c8bbaae3c6e6e246c",
+  "auth_domains": [
+    "x.com",
+    "twitter.com",
+    "reddit.com",
+    "google.com"
+  ]
 }

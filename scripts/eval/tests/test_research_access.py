@@ -164,6 +164,11 @@ class AccessContractTests(Base):
             with self.assertRaises(FactoryError):A.social_args('reddit','search','test',n)
 
 class PreflightTests(Base):
+    def setUp(self):
+        super().setUp()
+        self.addCleanup(patch.stopall)
+        patch('bc_factory.research_browser.ensure', return_value={'ready':True,'engine':'clearcote','fixture':'mocked'}).start()
+        patch.object(A,'installed',return_value={'agent_reach':'mocked; not live readiness'}).start()
     def test_offline_never_ready(self):
         with patch.object(A,'CloakSession') as b:
             report=A.preflight(self.repo,'practice-belief');b.assert_not_called()
@@ -184,7 +189,7 @@ class PreflightTests(Base):
             with self.assertRaises(FactoryError):A.validate_preflight(r,self.c,'practice-belief')
     def test_doctor_alone_cannot_pass(self):
         from unittest.mock import Mock
-        version = Mock(returncode=0, stdout='opencli 1.8.7')
+        version = Mock(returncode=0, stdout='opencli 1.8.8')
         with patch.object(A, 'command', return_value=version), \
              patch.object(A, 'bridge_social', side_effect=FactoryError('Expired login')), \
              patch.object(A, 'bridge_search_web', return_value=[{'title': 't', 'url': 'https://example.org'}]), \
@@ -205,7 +210,7 @@ class PreflightTests(Base):
         def web_read(c, url):
             calls.append('web_read')
             return {'url': url, 'title': 't', 'text': 'x' * 50, 'retrieved_at': '', 'truncated': False}
-        version = Mock(returncode=0, stdout='opencli 1.8.7')
+        version = Mock(returncode=0, stdout='opencli 1.8.8')
         with patch.object(A, 'command', return_value=version), \
              patch.object(A, 'bridge_social', side_effect=social), \
              patch.object(A, 'bridge_search_web', side_effect=web_search), \
@@ -214,9 +219,11 @@ class PreflightTests(Base):
         self.assertEqual(r['status'], 'READY')
         self.assertEqual(r['via'], 'bridge')
         self.assertEqual(len(calls), 8)
+        self.assertNotIn('state_outside_repo',r['tools']['managed_browser'])
+        self.assertNotIn('key_present',r['tools']['managed_browser'])
     def test_failed_auth_blocks_read_and_campaign(self):
         from unittest.mock import Mock
-        version = Mock(returncode=0, stdout='opencli 1.8.7')
+        version = Mock(returncode=0, stdout='opencli 1.8.8')
         with patch.object(A, 'command', return_value=version), \
              patch.object(A, 'bridge_search_web', return_value=[{'title': 't', 'url': 'https://example.org'}]), \
              patch.object(A, 'bridge_read_web', return_value={'url': 'x', 'title': 't', 'text': 'y' * 50, 'retrieved_at': '', 'truncated': False}), \
@@ -227,7 +234,7 @@ class PreflightTests(Base):
         self.assertFalse(r['checks']['reddit_read'])
     def test_reddit_auth_failure_is_diagnostic_not_blocking(self):
         from unittest.mock import Mock
-        version = Mock(returncode=0, stdout='opencli 1.8.7')
+        version = Mock(returncode=0, stdout='opencli 1.8.8')
         def social(c, state, lane, action, *args):
             if lane == 'reddit' and action == 'auth':
                 raise FactoryError('Exit 77; no login session')
@@ -322,7 +329,7 @@ class PreflightTests(Base):
         self.assertFalse(A.version_tuple('opencli 1.8.6') >= A.version_tuple('1.8.7'))
         self.c['opencli_version'] = '9.9.9'
         (self.repo / 'factory/research-access.json').write_text(json.dumps(self.c))
-        version = Mock(returncode=0, stdout='opencli 1.8.7')
+        version = Mock(returncode=0, stdout='opencli 1.8.8')
         with patch.object(A, 'command', return_value=version):
             r = A.preflight(self.repo, 'practice-belief', True, True)
         self.assertEqual(r['status'], 'BLOCKED')

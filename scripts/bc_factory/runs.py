@@ -18,7 +18,8 @@ PROMPTS = {"planner": "master-plan-skill-v2.md", "plan-reviewer": "master-plan-r
            "writer": "chapter-writer.md", "chapter-reviewer": "chapter-reviewer.md",
            "evidence-reviewer": "evidence-reviewer.md", "state-editor": "reader-state.md",
            "book-editor": "book-editor.md", "final-auditor": "final-auditor.md"}
-REQUIRED_CODE = ["scripts/factory.py", "factory/config.json", "factory/research-access.json"]
+REQUIRED_CODE = ["scripts/factory.py", "factory/config.json", "factory/research-access.json",
+                 "scripts/bc_factory/research_state.cjs"]
 PI_RUNTIME_CONFIG = [".pi/settings.json", ".pi/pi-goal-x-settings.json"]
 
 
